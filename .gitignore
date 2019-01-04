@@ -16,9 +16,6 @@ node_modules
 *.tar.gz
 *.rar
 
-# Visual Studio Workspace specific settings
-.vscode/
-
 # We don't use npm, we use yarn
 package-lock.json
 

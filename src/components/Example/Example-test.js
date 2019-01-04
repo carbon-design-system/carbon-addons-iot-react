@@ -1,6 +1,7 @@
 import React from 'react';
-import Example from '../Example';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
+
+import Example from './Example';
 
 describe('Example', () => {
   describe('Renders as expected', () => {

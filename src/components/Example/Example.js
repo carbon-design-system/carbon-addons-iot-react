@@ -16,10 +16,10 @@ const Example = ({ children, className, ...other }) => {
 };
 
 Example.propTypes = {
-  children: PropTypes.node,
+  children: PropTypes.node.isRequired,
   className: PropTypes.string,
 };
 
-Example.defaultProps = {};
+Example.defaultProps = { className: null };
 
 export default Example;

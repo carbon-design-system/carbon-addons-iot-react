@@ -1,0 +1,8 @@
+button.buttonEnhanced {
+  display: inline-flex;
+  flex-flow: row nowrap;
+}
+
+.buttonEnhanced:global(.bx--btn--primary) :global(.bx--loading__svg) {
+  stroke: white;
+}

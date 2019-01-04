@@ -1,0 +1,110 @@
+{
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true,
+    "jest": true
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+      "modules": true,
+      "jsx": true
+    }
+  },
+  "plugins": [
+    "babel",
+    "react",
+    "jsx-a11y",
+    "react-intl",
+    "import",
+    "jest",
+    "lodash"
+  ],
+  "settings": {
+    "import/resolver": {
+      "babel-module": {}
+    },
+    "react": {
+      "version": "16.4" // React version, default to the latest React stable release
+    }
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:jsx-a11y/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:jest/recommended",
+    "airbnb",
+    "prettier"
+  ],
+  "globals": {
+    "__WEBPACK__": true,
+    "__DEV__": false
+  },
+  "rules": {
+    "react/prop-types": [
+      2,
+      {
+        "ignore": [
+          "intl",
+          "initialize",
+          "handleSubmit",
+          "location",
+          "match",
+          "history",
+          "input"
+        ]
+      }
+    ],
+    "react/jsx-closing-bracket-location": 0,
+    "import/first": [
+      2,
+      {
+        "absolute-first": true
+      }
+    ],
+    "import/order": [
+      2,
+      {
+        "newlines-between": "always"
+      }
+    ],
+    "react/jsx-filename-extension": 0, // allow js extensions
+    "react-intl/string-is-marked-for-translation": 1,
+    "react-intl/is-valid-icu-message-syntax": 2,
+    "no-prototype-builtins": 0, // not needed as we never mess with prototype
+    "react/jsx-one-expression-per-line": 0,
+    "react/no-did-update-set-state": 0, //not needed after react 16: https://github.com/yannickcr/eslint-plugin-react/issues/1754
+    "import/prefer-default-export": 0,
+    // https://nolanlawson.com/2018/03/20/smaller-lodash-bundles-with-webpack-and-babel/
+    "lodash/chaining": [2, "never"],
+    "lodash/import-scope": [2, "method"]
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/*-fixture.{js,jsx}",
+        "**/*-test.{js,jsx}",
+        "**/*-story.{js,jsx}",
+        "cosmos.proxies.js"
+      ],
+      "rules": {
+        "react-intl/string-is-marked-for-translation": 0,
+        "react-intl/is-valid-icu-message-syntax": 0,
+        "import/no-extraneous-dependencies": [
+          "error",
+          { "devDependencies": true }
+        ],
+        "no-underscore-dangle": 0,
+        "no-shadow": 0,
+        "no-console": 0,
+        "no-extend-native": 0,
+        "no-template-curly-in-string": 0,
+        "react/prop-types": 0,
+        "react/jsx-no-bind": 0
+      }
+    }
+  ]
+}
