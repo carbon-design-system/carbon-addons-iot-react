@@ -1,0 +1,26 @@
+# Coverage directory used by tools like istanbul
+coverage
+
+# Compiled binary addons (http://nodejs.org/api/addons.html)
+lib
+
+# Dependency directory
+# https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
+node_modules
+
+# Package Files #
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# Visual Studio Workspace specific settings
+.vscode/
+
+# We don't use npm, we use yarn
+package-lock.json
+
+# Mac OS Specific files
+.DS_Store

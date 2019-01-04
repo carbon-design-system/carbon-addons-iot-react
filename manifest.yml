@@ -1,0 +1,8 @@
+---
+applications:
+  - name: carbon-addons-iot-react
+    memory: 64M
+    buildpack: https://github.com/cloudfoundry/staticfile-buildpack.git
+    routes:
+      - route: carbon-addons-iot-react-storybook.mybluemix.net
+      - route: cloud.carbondesignsystem.com
