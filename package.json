@@ -1,13 +1,17 @@
 {
   "name": "carbon-addons-iot-react",
   "main": "lib/index.js",
-  "repository": "git@github.com:IBM/carbon-addons-iot-react.git",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/IBM/carbon-addons-iot-react.git"
+  },
   "license": "Apache-2",
-  "files": [
-    "lib"
-  ],
+  "files": ["lib"],
+  "bugs": {
+    "url": "https://github.com/IBM/carbon-addons-iot-react/issues"
+  },
   "scripts": {
-    "build": "babel -q -d lib --ignore \"__tests__,__fixtures__,__mocks__,*fixture.jsx,*-story.jsx,*-test.jsx\" src",
+    "build": "babel -q -d lib src",
     "build:storybook": "build-storybook",
     "ci-check": "yarn format:diff && yarn test --runInBand",
     "commitmsg": "commitlint -e $GIT_PARAMS",
@@ -20,8 +24,6 @@
     "test": "jest"
   },
   "dependencies": {
-    "@babel/core": "^7.0.0",
-    "babel-loader": "7",
     "babel-plugin-react-css-modules": "^5.0.0",
     "classnames": "^2.2.5",
     "prop-types": "^15.6.2"
@@ -33,6 +35,7 @@
   "devDependencies": {
     "@babel/cli": "^7.0.0",
     "@babel/core": "^7.0.0",
+    "babel-loader": "7",
     "@babel/plugin-proposal-class-properties": "^7.0.0",
     "@babel/plugin-proposal-decorators": "^7.0.0",
     "@babel/plugin-proposal-do-expressions": "^7.0.0",
@@ -101,18 +104,11 @@
     "whatwg-fetch": "^3.0.0"
   },
   "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
+    "extends": ["@commitlint/config-conventional"]
   },
   "lint-staged": {
-    "*.{jsx,js}": [
-      "eslint --fix"
-    ],
-    "*.{scss,css,js,md}": [
-      "yarn format",
-      "git add"
-    ]
+    "*.{jsx,js}": ["eslint --fix"],
+    "*.{scss,css,js,md}": ["yarn format", "git add"]
   },
   "babel": {
     "presets": [
@@ -120,6 +116,7 @@
       "@babel/preset-react",
       "@babel/preset-flow"
     ],
+    "ignore": ["__mocks__", "**/*-fixture.js", "**/*-story.js", "**/*-test.js"],
     "plugins": [
       "react-css-modules",
       "@babel/plugin-syntax-dynamic-import",
@@ -156,9 +153,7 @@
     "trailingComma": "es5"
   },
   "jest": {
-    "collectCoverageFrom": [
-      "components/**/*.js?(x)"
-    ],
+    "collectCoverageFrom": ["components/**/*.js?(x)"],
     "setupFiles": [
       "<rootDir>/config/polyfills.js",
       "<rootDir>/config/jest/setup.js"
@@ -173,19 +168,9 @@
       "^.+\\.s?css$": "<rootDir>/config/jest/cssTransform.js",
       "^(?!.*\\.(js|jsx|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
     },
-    "testPathIgnorePatterns": [
-      "/config/",
-      "/lib/"
-    ],
-    "transformIgnorePatterns": [
-      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"
-    ],
-    "moduleFileExtensions": [
-      "js",
-      "json"
-    ],
-    "snapshotSerializers": [
-      "enzyme-to-json/serializer"
-    ]
+    "testPathIgnorePatterns": ["/config/", "/lib/"],
+    "transformIgnorePatterns": ["[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"],
+    "moduleFileExtensions": ["js", "json"],
+    "snapshotSerializers": ["enzyme-to-json/serializer"]
   }
 }

@@ -16,8 +16,5 @@ storiesOf('ButtonEnhanced', module).add(
     <ButtonEnhanced {...ButtonEnhancedProps}>
       Test ButtonEnhanced
     </ButtonEnhanced>
-  ),
-  {
-    info: 'ButtonEnhanced allows you to add a loading state to Carbon buttons.',
-  }
+  )
 );

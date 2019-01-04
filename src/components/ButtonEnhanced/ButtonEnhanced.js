@@ -5,9 +5,13 @@ import { Button as CarbonButton, Loading } from 'carbon-components-react';
 import './ButtonEnhanced.css';
 
 const propTypes = {
-  disabled: PropTypes.bool,
+  /** Show loading spinner, only new prop */
   loading: PropTypes.bool,
+  /** Disable the button will be auto disabled when loading */
+  disabled: PropTypes.bool,
+  /** Button label */
   children: PropTypes.node.isRequired,
+  /** click handler */
   onClick: PropTypes.func.isRequired,
 };
 
