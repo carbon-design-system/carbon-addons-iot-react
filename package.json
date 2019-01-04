@@ -6,7 +6,9 @@
     "url": "https://github.com/IBM/carbon-addons-iot-react.git"
   },
   "license": "Apache-2",
-  "files": ["lib"],
+  "files": [
+    "lib"
+  ],
   "bugs": {
     "url": "https://github.com/IBM/carbon-addons-iot-react/issues"
   },
@@ -35,7 +37,6 @@
   "devDependencies": {
     "@babel/cli": "^7.0.0",
     "@babel/core": "^7.0.0",
-    "babel-loader": "7",
     "@babel/plugin-proposal-class-properties": "^7.0.0",
     "@babel/plugin-proposal-decorators": "^7.0.0",
     "@babel/plugin-proposal-do-expressions": "^7.0.0",
@@ -57,6 +58,7 @@
     "@babel/runtime": "^7.0.0",
     "@commitlint/cli": "^7.2.1",
     "@commitlint/config-conventional": "^7.1.2",
+    "@storybook/addon-a11y": "^4.1.4",
     "@storybook/addon-actions": "^4.1.4",
     "@storybook/addon-info": "^4.1.4",
     "@storybook/addon-links": "^4.1.4",
@@ -66,6 +68,7 @@
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^23.4.2",
+    "babel-loader": "7",
     "carbon-addons-cloud": "^3.1.1",
     "carbon-components": "^9.62.6",
     "carbon-components-react": "^6.70.0",
@@ -99,16 +102,22 @@
     "rimraf": "^2.6.3",
     "sass-loader": "^7.1.0",
     "semantic-release": "^15.13.2",
-    "storybook-addon-a11y": "^3.1.9",
     "style-loader": "^0.23.1",
     "whatwg-fetch": "^3.0.0"
   },
   "commitlint": {
-    "extends": ["@commitlint/config-conventional"]
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
   },
   "lint-staged": {
-    "*.{jsx,js}": ["eslint --fix"],
-    "*.{scss,css,js,md}": ["yarn format", "git add"]
+    "*.{jsx,js}": [
+      "eslint --fix"
+    ],
+    "*.{scss,css,js,md}": [
+      "yarn format",
+      "git add"
+    ]
   },
   "babel": {
     "presets": [
@@ -116,7 +125,12 @@
       "@babel/preset-react",
       "@babel/preset-flow"
     ],
-    "ignore": ["__mocks__", "**/*-fixture.js", "**/*-story.js", "**/*-test.js"],
+    "ignore": [
+      "__mocks__",
+      "**/*-fixture.js",
+      "**/*-story.js",
+      "**/*-test.js"
+    ],
     "plugins": [
       "react-css-modules",
       "@babel/plugin-syntax-dynamic-import",
@@ -153,7 +167,9 @@
     "trailingComma": "es5"
   },
   "jest": {
-    "collectCoverageFrom": ["components/**/*.js?(x)"],
+    "collectCoverageFrom": [
+      "components/**/*.js?(x)"
+    ],
     "setupFiles": [
       "<rootDir>/config/polyfills.js",
       "<rootDir>/config/jest/setup.js"
@@ -168,9 +184,19 @@
       "^.+\\.s?css$": "<rootDir>/config/jest/cssTransform.js",
       "^(?!.*\\.(js|jsx|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
     },
-    "testPathIgnorePatterns": ["/config/", "/lib/"],
-    "transformIgnorePatterns": ["[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"],
-    "moduleFileExtensions": ["js", "json"],
-    "snapshotSerializers": ["enzyme-to-json/serializer"]
+    "testPathIgnorePatterns": [
+      "/config/",
+      "/lib/"
+    ],
+    "transformIgnorePatterns": [
+      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "json"
+    ],
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
   }
 }
