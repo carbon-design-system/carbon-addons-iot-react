@@ -1,8 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Button as CarbonButton, Loading } from 'carbon-components-react';
+import styled from 'styled-components';
 
-import './ButtonEnhanced.css';
+const StyledButton = styled(CarbonButton)`
+  &&& {
+    display: inline-flex;
+    flex-flow: row nowrap;
+    svg {
+      stroke: ${props => (props.kind === 'primary' ? 'white' : null)};
+    }
+  }
+`;
 
 const propTypes = {
   /** Show loading spinner, only new prop */
@@ -13,26 +22,30 @@ const propTypes = {
   children: PropTypes.node.isRequired,
   /** click handler */
   onClick: PropTypes.func.isRequired,
+  className: PropTypes.string,
+  kind: PropTypes.string,
 };
 
 const defaultProps = {
   loading: false,
   disabled: false,
+  className: null,
+  kind: 'primary',
 };
 
 /**
  * Carbon button with added ability to show loading state
  */
 const ButtonEnhanced = props => {
-  const { children, loading, disabled, ...other } = props;
+  const { children, loading, disabled, className, ...other } = props;
   return (
-    <CarbonButton
-      styleName="buttonEnhanced"
+    <StyledButton
       {...other}
+      className={className}
       disabled={disabled || (loading !== undefined && loading !== false)}>
       {loading ? <Loading small withOverlay={false} /> : null}
       {children}
-    </CarbonButton>
+    </StyledButton>
   );
 };
 
