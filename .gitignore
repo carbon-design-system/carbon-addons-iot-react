@@ -16,6 +16,9 @@ node_modules
 *.tar.gz
 *.rar
 
+# log files
+*.log
+
 # We don't use npm, we use yarn
 package-lock.json
 

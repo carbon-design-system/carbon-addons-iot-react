@@ -12,19 +12,8 @@
       "jsx": true
     }
   },
-  "plugins": [
-    "babel",
-    "react",
-    "jsx-a11y",
-    "react-intl",
-    "import",
-    "jest",
-    "lodash"
-  ],
+  "plugins": ["babel", "react", "jsx-a11y", "import", "jest", "lodash"],
   "settings": {
-    "import/resolver": {
-      "babel-module": {}
-    },
     "react": {
       "version": "16.4" // React version, default to the latest React stable release
     }
@@ -72,8 +61,6 @@
       }
     ],
     "react/jsx-filename-extension": 0, // allow js extensions
-    "react-intl/string-is-marked-for-translation": 1,
-    "react-intl/is-valid-icu-message-syntax": 2,
     "no-prototype-builtins": 0, // not needed as we never mess with prototype
     "react/jsx-one-expression-per-line": 0,
     "react/no-did-update-set-state": 0, //not needed after react 16: https://github.com/yannickcr/eslint-plugin-react/issues/1754
@@ -82,6 +69,7 @@
     "lodash/chaining": [2, "never"],
     "lodash/import-scope": [2, "method"]
   },
+  // Testcases have less eslint rules applied to them
   "overrides": [
     {
       "files": [
@@ -91,8 +79,6 @@
         "cosmos.proxies.js"
       ],
       "rules": {
-        "react-intl/string-is-marked-for-translation": 0,
-        "react-intl/is-valid-icu-message-syntax": 0,
         "import/no-extraneous-dependencies": [
           "error",
           { "devDependencies": true }
