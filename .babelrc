@@ -2,6 +2,7 @@
   "presets": ["@babel/preset-env", "@babel/preset-react", "@babel/preset-flow"],
   "ignore": ["__mocks__", "**/*-fixture.js", "**/*-story.js", "**/*-test.js"],
   "plugins": [
+    "babel-plugin-styled-components",
     "@babel/plugin-syntax-dynamic-import",
     "@babel/plugin-syntax-import-meta",
     "@babel/plugin-proposal-class-properties",
