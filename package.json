@@ -6,9 +6,7 @@
     "url": "https://github.com/IBM/carbon-addons-iot-react.git"
   },
   "license": "Apache-2",
-  "files": [
-    "lib"
-  ],
+  "files": ["lib"],
   "bugs": {
     "url": "https://github.com/IBM/carbon-addons-iot-react/issues"
   },
@@ -17,7 +15,6 @@
     "build:storybook": "build-storybook",
     "cosmos": "cosmos",
     "ci-check": "yarn format:diff && yarn test --runInBand",
-    "commitmsg": "commitlint -e $GIT_PARAMS",
     "format": "prettier --write \"**/*.{scss,css,js,jsx,md,ts}\"",
     "format:diff": "prettier --list-different \"**/*.{scss,css,js,jsx,md,ts}\"",
     "precommit": "lint-staged",
@@ -25,6 +22,12 @@
     "semantic-release": "semantic-release",
     "storybook": "start-storybook -p 3000",
     "test": "jest"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && yarn test",
+      "commit-msg": "commitlint -E $HUSKY_GIT_PARAMS"
+    }
   },
   "dependencies": {
     "classnames": "^2.2.5",
@@ -109,18 +112,11 @@
     "whatwg-fetch": "^3.0.0"
   },
   "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
+    "extends": ["@commitlint/config-conventional"]
   },
   "lint-staged": {
-    "*.{jsx,js}": [
-      "eslint --fix"
-    ],
-    "*.{scss,css,js,md}": [
-      "yarn format",
-      "git add"
-    ]
+    "*.{jsx,js}": ["eslint --fix"],
+    "*.{scss,css,js,md}": ["yarn format", "git add"]
   },
   "prettier": {
     "jsxBracketSameLine": true,
@@ -136,12 +132,7 @@
       "!**/lib/**",
       "!**/coverage/**"
     ],
-    "coverageReporters": [
-      "json",
-      "lcov",
-      "html",
-      "text-summary"
-    ],
+    "coverageReporters": ["json", "lcov", "html", "text-summary"],
     "setupFiles": [
       "<rootDir>/config/polyfills.js",
       "<rootDir>/config/jest/setup.js"
@@ -156,19 +147,9 @@
       "^.+\\.s?css$": "<rootDir>/config/jest/cssTransform.js",
       "^(?!.*\\.(js|jsx|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
     },
-    "testPathIgnorePatterns": [
-      "/config/",
-      "/lib/"
-    ],
-    "transformIgnorePatterns": [
-      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"
-    ],
-    "moduleFileExtensions": [
-      "js",
-      "json"
-    ],
-    "snapshotSerializers": [
-      "enzyme-to-json/serializer"
-    ]
+    "testPathIgnorePatterns": ["/config/", "/lib/"],
+    "transformIgnorePatterns": ["[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"],
+    "moduleFileExtensions": ["js", "json"],
+    "snapshotSerializers": ["enzyme-to-json/serializer"]
   }
 }
