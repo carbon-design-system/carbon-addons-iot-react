@@ -8,11 +8,12 @@ module.exports = {
     rules: [
       {
         test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
+        exclude: [/node_modules/, /coverage/],
         use: 'babel-loader',
       },
       {
         test: /\.s?css$/,
+        exclude: [/node_modules/, /coverage/],
         use: [
           { loader: 'style-loader' },
           {

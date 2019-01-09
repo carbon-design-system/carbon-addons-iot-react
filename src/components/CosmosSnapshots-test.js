@@ -1,0 +1,40 @@
+import runTests from 'react-cosmos-telescope';
+import ReactDOM from 'react-dom';
+
+const realFindDOMNode = ReactDOM.findDOMNode;
+const RealDate = Date;
+function mockDate(isoDate) {
+  global.Date = class extends RealDate {
+    constructor() {
+      super();
+      return new RealDate(isoDate);
+    }
+  };
+}
+
+describe(`Cosmos Fixture Snapshot tests and console checks`, () => {
+  const spy = {};
+  beforeAll(done => {
+    ReactDOM.findDOMNode = jest.fn(); // needed for this issue: https://github.com/facebook/react/issues/7371
+
+    spy.console = jest.spyOn(console, 'error').mockImplementation(e => {
+      done.fail(e);
+    });
+
+    done();
+  });
+
+  beforeEach(() => {
+    mockDate('2018-10-28T12:34:56z');
+    jest.setTimeout(15000);
+  });
+  runTests();
+
+  afterAll(() => {
+    spy.console.mockRestore();
+    ReactDOM.findDOMNode = realFindDOMNode;
+  });
+  afterEach(() => {
+    global.Date = RealDate;
+  });
+});

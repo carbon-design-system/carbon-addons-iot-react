@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Cosmos Fixture Snapshot tests and console checks Cosmos fixtures: ButtonEnhanced:loading 1`] = `
+<button
+  className="ButtonEnhanced__StyledButton-sc-1eobxkt-0 fvOVqG bx--btn bx--btn--primary"
+  disabled={true}
+  onClick={[Function]}
+  tabIndex={0}
+  type="button"
+>
+  <div
+    aria-live="assertive"
+    className="bx--loading bx--loading--small"
+  >
+    <svg
+      className="bx--loading__svg"
+      viewBox="-75 -75 150 150"
+    >
+      <circle
+        cx="0"
+        cy="0"
+        r="37.5"
+      />
+    </svg>
+  </div>
+  Click Me!
+</button>
+`;
+
+exports[`Cosmos Fixture Snapshot tests and console checks Cosmos fixtures: ButtonEnhanced:notloading 1`] = `
+<button
+  className="ButtonEnhanced__StyledButton-sc-1eobxkt-0 fvOVqG bx--btn bx--btn--primary"
+  disabled={false}
+  onClick={[Function]}
+  tabIndex={0}
+  type="button"
+>
+  Click Me!
+</button>
+`;
