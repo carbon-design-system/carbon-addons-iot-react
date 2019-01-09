@@ -1,8 +1,16 @@
 const path = require('path');
+const isDev = true;
 
 module.exports = {
+  mode: isDev ? 'development' : 'production',
+  devtool: isDev ? '#cheap-module-eval-source-map' : 'source-map',
   module: {
     rules: [
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: 'babel-loader',
+      },
       {
         test: /\.s?css$/,
         use: [

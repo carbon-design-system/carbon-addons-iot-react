@@ -1,1 +1,1 @@
-export Example from './components/Example';
+export ButtonEnhanced from './components/ButtonEnhanced';
