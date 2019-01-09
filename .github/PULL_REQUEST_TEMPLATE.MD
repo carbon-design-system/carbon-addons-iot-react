@@ -1,4 +1,3 @@
-<!-- External Dashboard PR -->
 <!-- Please fill in areas below: -->
 
 **Summary**
@@ -12,7 +11,8 @@
 **Related Issues**
 
 <!-- replace NUMBER with issue number to auto-close on merge -->
-- Closes Watson-IoT/connection-service#NUMBER
+
+- Closes IBM/carbon-addons-iot-react#NUMBER
 
 **Acceptance Test (how to verify the PR)**
 

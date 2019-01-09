@@ -13,10 +13,8 @@
 # Unless a later match takes precedence, the users below will be
 # requested for review when someone opens a pull request.
 
-*      @Magnus-Luttmann @cgirani @alexandre-quinteiro @taylorjones @rdconner @scottsd @ckao
-
 #####
 # These users own any files in the following directory at the root of
 # the repository and any of its subdirectories.
 
-/docs/ @taylorjones @rdconner @scottsd @lmarinj
+@bryancboyd @scottdickerson
