@@ -14,10 +14,8 @@
     "build": "babel -q -d lib src",
     "build:storybook": "build-storybook",
     "cosmos": "cosmos",
-    "ci-check": "yarn format:diff && yarn test --runInBand",
     "format": "prettier --write \"**/*.{scss,css,js,jsx,md,ts}\"",
     "format:diff": "prettier --list-different \"**/*.{scss,css,js,jsx,md,ts}\"",
-    "precommit": "lint-staged",
     "prepublish": "yarn build",
     "semantic-release": "semantic-release",
     "storybook": "start-storybook -p 3000",
@@ -25,8 +23,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged && yarn test",
-      "commit-msg": "commitlint -E $HUSKY_GIT_PARAMS"
+      "pre-commit": "yarn format && yarn lint-staged && yarn test --runInBand",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
   "dependencies": {
