@@ -22,13 +22,14 @@ install:
 
 script:
   - yarn test
-  # - yarn deploy
-# deploy:
-#   - provider: script
-#     script: './buildScripts/publish-docker.sh'
-#     skip_cleanup: true
-#     on:
-#       branch:
-#         - master
-#         - development
 
+jobs:
+  include:
+    # Define the release stage that runs semantic-release
+    - stage: release
+      node_js: lts/*
+      deploy:
+        provider: script
+        skip_cleanup: true
+        script:
+          - npx semantic-release
