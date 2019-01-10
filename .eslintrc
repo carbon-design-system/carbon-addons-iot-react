@@ -75,8 +75,7 @@
       "files": [
         "**/*-fixture.{js,jsx}",
         "**/*-test.{js,jsx}",
-        "**/*-story.{js,jsx}",
-        "cosmos.proxies.js"
+        "**/*-story.{js,jsx}"
       ],
       "rules": {
         "import/no-extraneous-dependencies": [

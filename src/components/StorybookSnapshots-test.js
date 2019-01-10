@@ -1,4 +1,4 @@
-import runTests from 'react-cosmos-telescope';
+import initStoryshots from '@storybook/addon-storyshots';
 import ReactDOM from 'react-dom';
 
 const realFindDOMNode = ReactDOM.findDOMNode;
@@ -12,7 +12,7 @@ function mockDate(isoDate) {
   };
 }
 
-describe(`Cosmos Fixture Snapshot tests and console checks`, () => {
+describe(`Storybook Snapshot tests and console checks`, () => {
   const spy = {};
   beforeAll(done => {
     ReactDOM.findDOMNode = jest.fn(); // needed for this issue: https://github.com/facebook/react/issues/7371
@@ -28,7 +28,9 @@ describe(`Cosmos Fixture Snapshot tests and console checks`, () => {
     mockDate('2018-10-28T12:34:56z');
     jest.setTimeout(15000);
   });
-  runTests();
+  initStoryshots({
+    /* configuration options */
+  });
 
   afterAll(() => {
     spy.console.mockRestore();
