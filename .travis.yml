@@ -2,9 +2,10 @@
 # [major]  Make the version tag to 2.0.0
 sudo: true
 language: node_js
+node_js:
+  - node
 
 before_install:
-  - nvm install 9.10.0
   - node --version
   # Repo for Yarn
   - sudo apt-key adv --fetch-keys http://dl.yarnpkg.com/debian/pubkey.gpg
