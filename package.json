@@ -24,7 +24,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn format && yarn lint-staged && yarn test --runInBand",
+      "pre-commit": "yarn lint-staged && yarn test --runInBand",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
@@ -126,13 +126,16 @@
     ]
   },
   "lint-staged": {
-    "*.{jsx,js}": [
-      "eslint --fix"
-    ],
-    "*.{scss,css,js,md,jsx,json}": [
-      "yarn format",
-      "git add"
-    ]
+    "linters": {
+      "*.{jsx,js}": [
+        "eslint --fix"
+      ],
+      "*.{scss,css,js,md,jsx,json}": [
+        "yarn format",
+        "git add"
+      ]
+    },
+    "concurrent": false
   },
   "jest": {
     "collectCoverage": true,
