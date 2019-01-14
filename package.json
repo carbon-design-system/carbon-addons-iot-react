@@ -6,9 +6,7 @@
     "url": "https://github.com/IBM/carbon-addons-iot-react.git"
   },
   "license": "Apache-2",
-  "files": [
-    "lib"
-  ],
+  "files": ["lib"],
   "bugs": {
     "url": "https://github.com/IBM/carbon-addons-iot-react/issues"
   },
@@ -30,13 +28,9 @@
     }
   },
   "dependencies": {
-    "carbon-components": "^9.48.2",
-    "carbon-components-react": "6.74.0",
-    "carbon-icons": "^7.0.5",
     "classnames": "^2.2.5",
     "polished": "^2.3.3",
     "prop-types": "^15.6.2",
-    "react-router": "^4.3.1",
     "styled-components": "^4.1.3"
   },
   "peerDependencies": {
@@ -82,6 +76,9 @@
     "babel-jest": "^23.6.0",
     "babel-loader": "^8.0.5",
     "babel-plugin-styled-components": "^1.10.0",
+    "carbon-components": "^9.48.2",
+    "carbon-components-react": "6.74.0",
+    "carbon-icons": "^7.0.5",
     "css-loader": "^2.1.0",
     "enzyme": "^3.8.0",
     "enzyme-adapter-react-16": "^1.7.1",
@@ -104,11 +101,11 @@
     "postcss-loader": "^3.0.0",
     "prettier": "^1.15.3",
     "promise": "^8.0.2",
-    "react": "^16.4.0",
+    "react": "^16.7.0",
     "react-cosmos": "^4.6.4",
     "react-cosmos-fetch-proxy": "^4.6.1",
     "react-cosmos-router-proxy": "^4.6.1",
-    "react-dom": "^16.4.0",
+    "react-dom": "^16.7.0",
     "rimraf": "^2.6.3",
     "sass-loader": "^7.1.0",
     "semantic-release": "^15.13.2",
@@ -116,18 +113,11 @@
     "whatwg-fetch": "^3.0.0"
   },
   "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
+    "extends": ["@commitlint/config-conventional"]
   },
   "lint-staged": {
-    "*.{jsx,js}": [
-      "eslint --fix"
-    ],
-    "*.{scss,css,js,md}": [
-      "yarn format",
-      "git add"
-    ]
+    "*.{jsx,js}": ["eslint --fix"],
+    "*.{scss,css,js,md}": ["yarn format", "git add"]
   },
   "prettier": {
     "jsxBracketSameLine": true,
@@ -143,12 +133,7 @@
       "!**/lib/**",
       "!**/coverage/**"
     ],
-    "coverageReporters": [
-      "json",
-      "lcov",
-      "html",
-      "text-summary"
-    ],
+    "coverageReporters": ["json", "lcov", "html", "text-summary"],
     "setupFiles": [
       "<rootDir>/config/polyfills.js",
       "<rootDir>/config/jest/setup.js"
@@ -163,19 +148,9 @@
       "^.+\\.s?css$": "<rootDir>/config/jest/cssTransform.js",
       "^(?!.*\\.(js|jsx|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
     },
-    "testPathIgnorePatterns": [
-      "/config/",
-      "/lib/"
-    ],
-    "transformIgnorePatterns": [
-      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"
-    ],
-    "moduleFileExtensions": [
-      "js",
-      "json"
-    ],
-    "snapshotSerializers": [
-      "enzyme-to-json/serializer"
-    ]
+    "testPathIgnorePatterns": ["/config/", "/lib/"],
+    "transformIgnorePatterns": ["[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"],
+    "moduleFileExtensions": ["js", "json"],
+    "snapshotSerializers": ["enzyme-to-json/serializer"]
   }
 }
