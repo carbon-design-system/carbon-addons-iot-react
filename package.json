@@ -18,7 +18,7 @@
     "cosmos": "cosmos",
     "format": "prettier --write \"**/*.{scss,css,js,jsx,md,ts}\"",
     "format:diff": "prettier --list-different \"**/*.{scss,css,js,jsx,md,ts}\"",
-    "prepublish": "yarn build",
+    "prepare": "yarn build",
     "storybook": "start-storybook -p 3000",
     "test": "jest"
   },
@@ -133,12 +133,6 @@
       "yarn format",
       "git add"
     ]
-  },
-  "prettier": {
-    "jsxBracketSameLine": true,
-    "printWidth": 80,
-    "singleQuote": true,
-    "trailingComma": "es5"
   },
   "jest": {
     "collectCoverage": true,
