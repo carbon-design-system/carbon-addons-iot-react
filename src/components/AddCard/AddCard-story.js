@@ -9,8 +9,6 @@ const AddCardProps = {
   title: 'Click Me',
 };
 
-storiesOf('AddCard', module).add(
-  'handles click',
-
-  () => <AddCard {...AddCardProps}>Test AddCard</AddCard>
-);
+storiesOf('AddCard', module).add('handles click', () => (
+  <AddCard {...AddCardProps} />
+));

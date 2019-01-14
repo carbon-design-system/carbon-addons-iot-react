@@ -14,7 +14,9 @@ const StyledTile = styled(ClickableTile)`
     align-items: center;
     background-color: ${COLORS.superLightGray};
     min-width: ${rem(200)};
+    max-width: ${rem(300)};
     max-height: ${rem(250)};
+    text-align: center;
     :focus,
     :hover {
       border: 1px solid ${COLORS.blue};
