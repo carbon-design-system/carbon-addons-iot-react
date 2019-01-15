@@ -1,0 +1,4 @@
+diff a/src/components/Table/Pagination/Pagination.js b/src/components/Table/Pagination/Pagination.js	(rejected hunks)
+@@ -4 +4 @@ import PropTypes from 'prop-types';
+-const propTypes = { 
++const propTypes = {
