@@ -25,14 +25,9 @@ fail because the snapshots will no longer match. You will be prevented from push
 To update the snapshot, type `u` after the snapshot difference has been detected by our unit test engine.
 _Do not blindly update snapshots to pass the testcase._ Make sure the detected change is intentional and not unintentional before updating the snapshot.
 
-## Manually unit testing components
-
-To explore each of our components outside of the UI, you can use our test tool "react-cosmos". To start the cosmos server, run:
-`yarn cosmos` and open a browser to http://localhost:8989. If you add or modify an existing component, please add a new Cosmos fixture to it, so our unit tests will cover it. https://github.com/react-cosmos/react-cosmos/blob/master/docs/fixtures.md
-
 ## Minimum Code Coverage
 
-We enforce code coverage thresholds in our project. If you add code but do not cover it with unit tests, the git push may fail because we have fallen under our code coverage thresholds. Please add cosmos fixtures or unit tests to cover your new code before checking in. _Do not reduce the code coverage threshold to get around this constraint._
+We enforce code coverage thresholds in our project. If you add code but do not cover it with unit tests, the git push may fail because we have fallen under our code coverage thresholds. Please add storybook stories or unit tests to cover your new code before checking in. _Do not reduce the code coverage threshold to get around this constraint._
 To understand what lines of code are NOT covered by our current testcases, open the coverage/index.html file in a browser and investigate.
 
 ## Setting up VSCode to share our Settings/Extensions

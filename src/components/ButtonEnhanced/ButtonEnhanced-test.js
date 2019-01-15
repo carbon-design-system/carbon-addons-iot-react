@@ -16,9 +16,7 @@ describe('ButtonEnhanced', () => {
       </ButtonEnhanced>
     );
     expect(wrapper.find(Loading)).toHaveLength(1);
-    const notLoadingWrapper = mount(
-      <ButtonEnhanced {...commonProps}>Click Me</ButtonEnhanced>
-    );
+    const notLoadingWrapper = mount(<ButtonEnhanced {...commonProps}>Click Me</ButtonEnhanced>);
     expect(notLoadingWrapper.find(Loading)).toHaveLength(0);
   });
 });

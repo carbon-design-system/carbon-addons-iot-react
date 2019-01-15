@@ -1,0 +1,1640 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storybook Snapshot tests and console checks Storyshots ButtonEnhanced loading 1`] = `
+<div>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <button
+      className="ButtonEnhanced__StyledButton-sc-1eobxkt-0 fvOVqG bx--btn bx--btn--primary"
+      disabled={true}
+      onClick={[Function]}
+      tabIndex={0}
+      type="button"
+    >
+      <div
+        aria-live="assertive"
+        className="bx--loading bx--loading--small"
+      >
+        <svg
+          className="bx--loading__svg"
+          viewBox="-75 -75 150 150"
+        >
+          <circle
+            cx="0"
+            cy="0"
+            r="37.5"
+          />
+        </svg>
+      </div>
+      Test ButtonEnhanced
+    </button>
+  </div>
+  <button
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#28c",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+  <div
+    style={
+      Object {
+        "background": "white",
+        "bottom": 0,
+        "display": "none",
+        "left": 0,
+        "overflow": "auto",
+        "padding": "0 40px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+        "zIndex": 99999,
+      }
+    }
+  >
+    <button
+      onClick={[Function]}
+      style={
+        Object {
+          "background": "#28c",
+          "border": "none",
+          "borderRadius": "0 0 0 5px",
+          "color": "#fff",
+          "cursor": "pointer",
+          "display": "block",
+          "fontFamily": "sans-serif",
+          "fontSize": "12px",
+          "padding": "5px 15px",
+          "position": "fixed",
+          "right": 0,
+          "top": 0,
+        }
+      }
+      type="button"
+    >
+      ×
+    </button>
+    <div>
+      <div
+        style={
+          Object {
+            "WebkitFontSmoothing": "antialiased",
+            "backgroundColor": "#fff",
+            "border": "1px solid #eee",
+            "borderRadius": "2px",
+            "color": "#444",
+            "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+            "fontSize": "15px",
+            "fontWeight": 300,
+            "lineHeight": 1.45,
+            "marginBottom": "20px",
+            "marginTop": "20px",
+            "padding": "20px 40px 40px",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "borderBottom": "1px solid #eee",
+              "marginBottom": 10,
+              "paddingTop": 10,
+            }
+          }
+        >
+          <h1
+            style={
+              Object {
+                "fontSize": "35px",
+                "margin": 0,
+                "padding": 0,
+              }
+            }
+          >
+            ButtonEnhanced
+          </h1>
+          <h2
+            style={
+              Object {
+                "fontSize": "22px",
+                "fontWeight": 400,
+                "margin": "0 0 10px 0",
+                "padding": 0,
+              }
+            }
+          >
+            loading
+          </h2>
+        </div>
+        
+        <div>
+          <h1
+            style={
+              Object {
+                "borderBottom": "1px solid #EEE",
+                "fontSize": "25px",
+                "margin": "20px 0 0 0",
+                "padding": "0 0 5px 0",
+              }
+            }
+          >
+            Story Source
+          </h1>
+          <pre
+            className="css-r8d96o eyvlbql0"
+          >
+            <div>
+              <div>
+                <div
+                  style={
+                    Object {
+                      "paddingLeft": 18,
+                      "paddingRight": 3,
+                    }
+                  }
+                >
+                  <span
+                    style={
+                      Object {
+                        "color": "#444",
+                      }
+                    }
+                  >
+                    &lt;
+                    ButtonEnhanced
+                  </span>
+                  <span>
+                    <span>
+                       
+                      <span
+                        style={Object {}}
+                      >
+                        onClick
+                      </span>
+                      <span>
+                        =
+                        <span
+                          style={Object {}}
+                        >
+                          {
+                          <span
+                            style={
+                              Object {
+                                "color": "#170",
+                              }
+                            }
+                          >
+                            click
+                          </span>
+                          }
+                        </span>
+                      </span>
+                    </span>
+                    <span>
+                       
+                      <span
+                        style={Object {}}
+                      >
+                        loading
+                      </span>
+                      
+                    </span>
+                  </span>
+                  <span
+                    style={
+                      Object {
+                        "color": "#444",
+                      }
+                    }
+                  >
+                    &gt;
+                  </span>
+                </div>
+                <div
+                  style={
+                    Object {
+                      "paddingLeft": 33,
+                      "paddingRight": 3,
+                    }
+                  }
+                >
+                  <span
+                    style={
+                      Object {
+                        "color": "#444",
+                      }
+                    }
+                  >
+                    Test ButtonEnhanced
+                  </span>
+                </div>
+                <div
+                  style={
+                    Object {
+                      "paddingLeft": 18,
+                      "paddingRight": 3,
+                    }
+                  }
+                >
+                  <span
+                    style={
+                      Object {
+                        "color": "#444",
+                      }
+                    }
+                  >
+                    &lt;/
+                    ButtonEnhanced
+                    &gt;
+                  </span>
+                </div>
+              </div>
+            </div>
+            <button
+              className="css-1naocv3 eva467m0"
+              onClick={[Function]}
+            >
+              <div
+                className="css-lvl6aa eva467m1"
+              >
+                <div
+                  style={
+                    Object {
+                      "marginBottom": 6,
+                    }
+                  }
+                >
+                  Copied!
+                </div>
+                <div>
+                  Copy
+                </div>
+              </div>
+            </button>
+          </pre>
+        </div>
+        <div>
+          <h1
+            style={
+              Object {
+                "borderBottom": "1px solid #EEE",
+                "fontSize": "25px",
+                "margin": "20px 0 0 0",
+                "padding": "0 0 5px 0",
+              }
+            }
+          >
+            Prop Types
+          </h1>
+          <div>
+            <h2
+              style={
+                Object {
+                  "margin": "20px 0 0 0",
+                }
+              }
+            >
+              "
+              ButtonEnhanced
+              " Component
+            </h2>
+            <table
+              className="css-1uhv8nx e1vdo5380"
+            >
+              <thead>
+                <tr>
+                  <th
+                    className="css-11b5gui e6fp4ir1"
+                  >
+                    property
+                  </th>
+                  <th
+                    className="css-11b5gui e6fp4ir1"
+                  >
+                    propType
+                  </th>
+                  <th
+                    className="css-11b5gui e6fp4ir1"
+                  >
+                    required
+                  </th>
+                  <th
+                    className="css-11b5gui e6fp4ir1"
+                  >
+                    default
+                  </th>
+                  <th
+                    className="css-11b5gui e6fp4ir1"
+                  >
+                    description
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td
+                    className="css-1qcb1f7 e6fp4ir0"
+                  >
+                    loading
+                  </td>
+                  <td
+                    className="css-1qcb1f7 e6fp4ir0"
+                  >
+                    <span />
+                  </td>
+                  <td
+                    className="css-11b5gui e6fp4ir0"
+                  >
+                    -
+                  </td>
+                  <td
+                    className="css-11b5gui e6fp4ir0"
+                  >
+                    <span
+                      style={
+                        Object {
+                          "color": "#a11",
+                        }
+                      }
+                    >
+                      false
+                    </span>
+                  </td>
+                  <td
+                    className="css-11b5gui e6fp4ir0"
+                  />
+                </tr>
+                <tr>
+                  <td
+                    className="css-1qcb1f7 e6fp4ir0"
+                  >
+                    disabled
+                  </td>
+                  <td
+                    className="css-1qcb1f7 e6fp4ir0"
+                  >
+                    <span />
+                  </td>
+                  <td
+                    className="css-11b5gui e6fp4ir0"
+                  >
+                    -
+                  </td>
+                  <td
+                    className="css-11b5gui e6fp4ir0"
+                  >
+                    <span
+                      style={
+                        Object {
+                          "color": "#a11",
+                        }
+                      }
+                    >
+                      false
+                    </span>
+                  </td>
+                  <td
+                    className="css-11b5gui e6fp4ir0"
+                  />
+                </tr>
+                <tr>
+                  <td
+                    className="css-1qcb1f7 e6fp4ir0"
+                  >
+                    children
+                  </td>
+                  <td
+                    className="css-1qcb1f7 e6fp4ir0"
+                  >
+                    <span />
+                  </td>
+                  <td
+                    className="css-11b5gui e6fp4ir0"
+                  >
+                    yes
+                  </td>
+                  <td
+                    className="css-11b5gui e6fp4ir0"
+                  >
+                    -
+                  </td>
+                  <td
+                    className="css-11b5gui e6fp4ir0"
+                  />
+                </tr>
+                <tr>
+                  <td
+                    className="css-1qcb1f7 e6fp4ir0"
+                  >
+                    onClick
+                  </td>
+                  <td
+                    className="css-1qcb1f7 e6fp4ir0"
+                  >
+                    <span />
+                  </td>
+                  <td
+                    className="css-11b5gui e6fp4ir0"
+                  >
+                    yes
+                  </td>
+                  <td
+                    className="css-11b5gui e6fp4ir0"
+                  >
+                    -
+                  </td>
+                  <td
+                    className="css-11b5gui e6fp4ir0"
+                  />
+                </tr>
+                <tr>
+                  <td
+                    className="css-1qcb1f7 e6fp4ir0"
+                  >
+                    className
+                  </td>
+                  <td
+                    className="css-1qcb1f7 e6fp4ir0"
+                  >
+                    <span />
+                  </td>
+                  <td
+                    className="css-11b5gui e6fp4ir0"
+                  >
+                    -
+                  </td>
+                  <td
+                    className="css-11b5gui e6fp4ir0"
+                  >
+                    <span
+                      style={
+                        Object {
+                          "color": "#444",
+                        }
+                      }
+                    >
+                      null
+                    </span>
+                  </td>
+                  <td
+                    className="css-11b5gui e6fp4ir0"
+                  />
+                </tr>
+                <tr>
+                  <td
+                    className="css-1qcb1f7 e6fp4ir0"
+                  >
+                    kind
+                  </td>
+                  <td
+                    className="css-1qcb1f7 e6fp4ir0"
+                  >
+                    <span />
+                  </td>
+                  <td
+                    className="css-11b5gui e6fp4ir0"
+                  >
+                    -
+                  </td>
+                  <td
+                    className="css-11b5gui e6fp4ir0"
+                  >
+                    <span
+                      style={
+                        Object {
+                          "color": "#22a",
+                          "wordBreak": "break-word",
+                        }
+                      }
+                    >
+                      primary
+                    </span>
+                  </td>
+                  <td
+                    className="css-11b5gui e6fp4ir0"
+                  />
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots ButtonEnhanced loading with secondary 1`] = `
+<div>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <button
+      className="ButtonEnhanced__StyledButton-sc-1eobxkt-0 fSyKsi bx--btn bx--btn--secondary"
+      disabled={true}
+      onClick={[Function]}
+      tabIndex={0}
+      type="button"
+    >
+      <div
+        aria-live="assertive"
+        className="bx--loading bx--loading--small"
+      >
+        <svg
+          className="bx--loading__svg"
+          viewBox="-75 -75 150 150"
+        >
+          <circle
+            cx="0"
+            cy="0"
+            r="37.5"
+          />
+        </svg>
+      </div>
+      Test ButtonEnhanced
+    </button>
+  </div>
+  <button
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#28c",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+  <div
+    style={
+      Object {
+        "background": "white",
+        "bottom": 0,
+        "display": "none",
+        "left": 0,
+        "overflow": "auto",
+        "padding": "0 40px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+        "zIndex": 99999,
+      }
+    }
+  >
+    <button
+      onClick={[Function]}
+      style={
+        Object {
+          "background": "#28c",
+          "border": "none",
+          "borderRadius": "0 0 0 5px",
+          "color": "#fff",
+          "cursor": "pointer",
+          "display": "block",
+          "fontFamily": "sans-serif",
+          "fontSize": "12px",
+          "padding": "5px 15px",
+          "position": "fixed",
+          "right": 0,
+          "top": 0,
+        }
+      }
+      type="button"
+    >
+      ×
+    </button>
+    <div>
+      <div
+        style={
+          Object {
+            "WebkitFontSmoothing": "antialiased",
+            "backgroundColor": "#fff",
+            "border": "1px solid #eee",
+            "borderRadius": "2px",
+            "color": "#444",
+            "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+            "fontSize": "15px",
+            "fontWeight": 300,
+            "lineHeight": 1.45,
+            "marginBottom": "20px",
+            "marginTop": "20px",
+            "padding": "20px 40px 40px",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "borderBottom": "1px solid #eee",
+              "marginBottom": 10,
+              "paddingTop": 10,
+            }
+          }
+        >
+          <h1
+            style={
+              Object {
+                "fontSize": "35px",
+                "margin": 0,
+                "padding": 0,
+              }
+            }
+          >
+            ButtonEnhanced
+          </h1>
+          <h2
+            style={
+              Object {
+                "fontSize": "22px",
+                "fontWeight": 400,
+                "margin": "0 0 10px 0",
+                "padding": 0,
+              }
+            }
+          >
+            loading with secondary
+          </h2>
+        </div>
+        
+        <div>
+          <h1
+            style={
+              Object {
+                "borderBottom": "1px solid #EEE",
+                "fontSize": "25px",
+                "margin": "20px 0 0 0",
+                "padding": "0 0 5px 0",
+              }
+            }
+          >
+            Story Source
+          </h1>
+          <pre
+            className="css-r8d96o eyvlbql0"
+          >
+            <div>
+              <div>
+                <div
+                  style={
+                    Object {
+                      "paddingLeft": 18,
+                      "paddingRight": 3,
+                    }
+                  }
+                >
+                  <span
+                    style={
+                      Object {
+                        "color": "#444",
+                      }
+                    }
+                  >
+                    &lt;
+                    ButtonEnhanced
+                  </span>
+                  <span>
+                    <span>
+                       
+                      <span
+                        style={Object {}}
+                      >
+                        onClick
+                      </span>
+                      <span>
+                        =
+                        <span
+                          style={Object {}}
+                        >
+                          {
+                          <span
+                            style={
+                              Object {
+                                "color": "#170",
+                              }
+                            }
+                          >
+                            click
+                          </span>
+                          }
+                        </span>
+                      </span>
+                    </span>
+                    <span>
+                       
+                      <span
+                        style={Object {}}
+                      >
+                        kind
+                      </span>
+                      <span>
+                        =
+                        <span
+                          style={Object {}}
+                        >
+                          "
+                          <span
+                            style={
+                              Object {
+                                "color": "#22a",
+                                "wordBreak": "break-word",
+                              }
+                            }
+                          >
+                            secondary
+                          </span>
+                          "
+                        </span>
+                      </span>
+                    </span>
+                    <span>
+                       
+                      <span
+                        style={Object {}}
+                      >
+                        loading
+                      </span>
+                      
+                    </span>
+                  </span>
+                  <span
+                    style={
+                      Object {
+                        "color": "#444",
+                      }
+                    }
+                  >
+                    &gt;
+                  </span>
+                </div>
+                <div
+                  style={
+                    Object {
+                      "paddingLeft": 33,
+                      "paddingRight": 3,
+                    }
+                  }
+                >
+                  <span
+                    style={
+                      Object {
+                        "color": "#444",
+                      }
+                    }
+                  >
+                    Test ButtonEnhanced
+                  </span>
+                </div>
+                <div
+                  style={
+                    Object {
+                      "paddingLeft": 18,
+                      "paddingRight": 3,
+                    }
+                  }
+                >
+                  <span
+                    style={
+                      Object {
+                        "color": "#444",
+                      }
+                    }
+                  >
+                    &lt;/
+                    ButtonEnhanced
+                    &gt;
+                  </span>
+                </div>
+              </div>
+            </div>
+            <button
+              className="css-1naocv3 eva467m0"
+              onClick={[Function]}
+            >
+              <div
+                className="css-lvl6aa eva467m1"
+              >
+                <div
+                  style={
+                    Object {
+                      "marginBottom": 6,
+                    }
+                  }
+                >
+                  Copied!
+                </div>
+                <div>
+                  Copy
+                </div>
+              </div>
+            </button>
+          </pre>
+        </div>
+        <div>
+          <h1
+            style={
+              Object {
+                "borderBottom": "1px solid #EEE",
+                "fontSize": "25px",
+                "margin": "20px 0 0 0",
+                "padding": "0 0 5px 0",
+              }
+            }
+          >
+            Prop Types
+          </h1>
+          <div>
+            <h2
+              style={
+                Object {
+                  "margin": "20px 0 0 0",
+                }
+              }
+            >
+              "
+              ButtonEnhanced
+              " Component
+            </h2>
+            <table
+              className="css-1uhv8nx e1vdo5380"
+            >
+              <thead>
+                <tr>
+                  <th
+                    className="css-11b5gui e6fp4ir1"
+                  >
+                    property
+                  </th>
+                  <th
+                    className="css-11b5gui e6fp4ir1"
+                  >
+                    propType
+                  </th>
+                  <th
+                    className="css-11b5gui e6fp4ir1"
+                  >
+                    required
+                  </th>
+                  <th
+                    className="css-11b5gui e6fp4ir1"
+                  >
+                    default
+                  </th>
+                  <th
+                    className="css-11b5gui e6fp4ir1"
+                  >
+                    description
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td
+                    className="css-1qcb1f7 e6fp4ir0"
+                  >
+                    loading
+                  </td>
+                  <td
+                    className="css-1qcb1f7 e6fp4ir0"
+                  >
+                    <span />
+                  </td>
+                  <td
+                    className="css-11b5gui e6fp4ir0"
+                  >
+                    -
+                  </td>
+                  <td
+                    className="css-11b5gui e6fp4ir0"
+                  >
+                    <span
+                      style={
+                        Object {
+                          "color": "#a11",
+                        }
+                      }
+                    >
+                      false
+                    </span>
+                  </td>
+                  <td
+                    className="css-11b5gui e6fp4ir0"
+                  />
+                </tr>
+                <tr>
+                  <td
+                    className="css-1qcb1f7 e6fp4ir0"
+                  >
+                    disabled
+                  </td>
+                  <td
+                    className="css-1qcb1f7 e6fp4ir0"
+                  >
+                    <span />
+                  </td>
+                  <td
+                    className="css-11b5gui e6fp4ir0"
+                  >
+                    -
+                  </td>
+                  <td
+                    className="css-11b5gui e6fp4ir0"
+                  >
+                    <span
+                      style={
+                        Object {
+                          "color": "#a11",
+                        }
+                      }
+                    >
+                      false
+                    </span>
+                  </td>
+                  <td
+                    className="css-11b5gui e6fp4ir0"
+                  />
+                </tr>
+                <tr>
+                  <td
+                    className="css-1qcb1f7 e6fp4ir0"
+                  >
+                    children
+                  </td>
+                  <td
+                    className="css-1qcb1f7 e6fp4ir0"
+                  >
+                    <span />
+                  </td>
+                  <td
+                    className="css-11b5gui e6fp4ir0"
+                  >
+                    yes
+                  </td>
+                  <td
+                    className="css-11b5gui e6fp4ir0"
+                  >
+                    -
+                  </td>
+                  <td
+                    className="css-11b5gui e6fp4ir0"
+                  />
+                </tr>
+                <tr>
+                  <td
+                    className="css-1qcb1f7 e6fp4ir0"
+                  >
+                    onClick
+                  </td>
+                  <td
+                    className="css-1qcb1f7 e6fp4ir0"
+                  >
+                    <span />
+                  </td>
+                  <td
+                    className="css-11b5gui e6fp4ir0"
+                  >
+                    yes
+                  </td>
+                  <td
+                    className="css-11b5gui e6fp4ir0"
+                  >
+                    -
+                  </td>
+                  <td
+                    className="css-11b5gui e6fp4ir0"
+                  />
+                </tr>
+                <tr>
+                  <td
+                    className="css-1qcb1f7 e6fp4ir0"
+                  >
+                    className
+                  </td>
+                  <td
+                    className="css-1qcb1f7 e6fp4ir0"
+                  >
+                    <span />
+                  </td>
+                  <td
+                    className="css-11b5gui e6fp4ir0"
+                  >
+                    -
+                  </td>
+                  <td
+                    className="css-11b5gui e6fp4ir0"
+                  >
+                    <span
+                      style={
+                        Object {
+                          "color": "#444",
+                        }
+                      }
+                    >
+                      null
+                    </span>
+                  </td>
+                  <td
+                    className="css-11b5gui e6fp4ir0"
+                  />
+                </tr>
+                <tr>
+                  <td
+                    className="css-1qcb1f7 e6fp4ir0"
+                  >
+                    kind
+                  </td>
+                  <td
+                    className="css-1qcb1f7 e6fp4ir0"
+                  >
+                    <span />
+                  </td>
+                  <td
+                    className="css-11b5gui e6fp4ir0"
+                  >
+                    -
+                  </td>
+                  <td
+                    className="css-11b5gui e6fp4ir0"
+                  >
+                    <span
+                      style={
+                        Object {
+                          "color": "#22a",
+                          "wordBreak": "break-word",
+                        }
+                      }
+                    >
+                      primary
+                    </span>
+                  </td>
+                  <td
+                    className="css-11b5gui e6fp4ir0"
+                  />
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots ButtonEnhanced not loading 1`] = `
+<div>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <button
+      className="ButtonEnhanced__StyledButton-sc-1eobxkt-0 fvOVqG bx--btn bx--btn--primary"
+      disabled={false}
+      onClick={[Function]}
+      tabIndex={0}
+      type="button"
+    >
+      Test ButtonEnhanced
+    </button>
+  </div>
+  <button
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#28c",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+  <div
+    style={
+      Object {
+        "background": "white",
+        "bottom": 0,
+        "display": "none",
+        "left": 0,
+        "overflow": "auto",
+        "padding": "0 40px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+        "zIndex": 99999,
+      }
+    }
+  >
+    <button
+      onClick={[Function]}
+      style={
+        Object {
+          "background": "#28c",
+          "border": "none",
+          "borderRadius": "0 0 0 5px",
+          "color": "#fff",
+          "cursor": "pointer",
+          "display": "block",
+          "fontFamily": "sans-serif",
+          "fontSize": "12px",
+          "padding": "5px 15px",
+          "position": "fixed",
+          "right": 0,
+          "top": 0,
+        }
+      }
+      type="button"
+    >
+      ×
+    </button>
+    <div>
+      <div
+        style={
+          Object {
+            "WebkitFontSmoothing": "antialiased",
+            "backgroundColor": "#fff",
+            "border": "1px solid #eee",
+            "borderRadius": "2px",
+            "color": "#444",
+            "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+            "fontSize": "15px",
+            "fontWeight": 300,
+            "lineHeight": 1.45,
+            "marginBottom": "20px",
+            "marginTop": "20px",
+            "padding": "20px 40px 40px",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "borderBottom": "1px solid #eee",
+              "marginBottom": 10,
+              "paddingTop": 10,
+            }
+          }
+        >
+          <h1
+            style={
+              Object {
+                "fontSize": "35px",
+                "margin": 0,
+                "padding": 0,
+              }
+            }
+          >
+            ButtonEnhanced
+          </h1>
+          <h2
+            style={
+              Object {
+                "fontSize": "22px",
+                "fontWeight": 400,
+                "margin": "0 0 10px 0",
+                "padding": 0,
+              }
+            }
+          >
+            not loading
+          </h2>
+        </div>
+        
+        <div>
+          <h1
+            style={
+              Object {
+                "borderBottom": "1px solid #EEE",
+                "fontSize": "25px",
+                "margin": "20px 0 0 0",
+                "padding": "0 0 5px 0",
+              }
+            }
+          >
+            Story Source
+          </h1>
+          <pre
+            className="css-r8d96o eyvlbql0"
+          >
+            <div>
+              <div>
+                <div
+                  style={
+                    Object {
+                      "paddingLeft": 18,
+                      "paddingRight": 3,
+                    }
+                  }
+                >
+                  <span
+                    style={
+                      Object {
+                        "color": "#444",
+                      }
+                    }
+                  >
+                    &lt;
+                    ButtonEnhanced
+                  </span>
+                  <span>
+                    <span>
+                       
+                      <span
+                        style={Object {}}
+                      >
+                        onClick
+                      </span>
+                      <span>
+                        =
+                        <span
+                          style={Object {}}
+                        >
+                          {
+                          <span
+                            style={
+                              Object {
+                                "color": "#170",
+                              }
+                            }
+                          >
+                            click
+                          </span>
+                          }
+                        </span>
+                      </span>
+                      
+                    </span>
+                  </span>
+                  <span
+                    style={
+                      Object {
+                        "color": "#444",
+                      }
+                    }
+                  >
+                    &gt;
+                  </span>
+                </div>
+                <div
+                  style={
+                    Object {
+                      "paddingLeft": 33,
+                      "paddingRight": 3,
+                    }
+                  }
+                >
+                  <span
+                    style={
+                      Object {
+                        "color": "#444",
+                      }
+                    }
+                  >
+                    Test ButtonEnhanced
+                  </span>
+                </div>
+                <div
+                  style={
+                    Object {
+                      "paddingLeft": 18,
+                      "paddingRight": 3,
+                    }
+                  }
+                >
+                  <span
+                    style={
+                      Object {
+                        "color": "#444",
+                      }
+                    }
+                  >
+                    &lt;/
+                    ButtonEnhanced
+                    &gt;
+                  </span>
+                </div>
+              </div>
+            </div>
+            <button
+              className="css-1naocv3 eva467m0"
+              onClick={[Function]}
+            >
+              <div
+                className="css-lvl6aa eva467m1"
+              >
+                <div
+                  style={
+                    Object {
+                      "marginBottom": 6,
+                    }
+                  }
+                >
+                  Copied!
+                </div>
+                <div>
+                  Copy
+                </div>
+              </div>
+            </button>
+          </pre>
+        </div>
+        <div>
+          <h1
+            style={
+              Object {
+                "borderBottom": "1px solid #EEE",
+                "fontSize": "25px",
+                "margin": "20px 0 0 0",
+                "padding": "0 0 5px 0",
+              }
+            }
+          >
+            Prop Types
+          </h1>
+          <div>
+            <h2
+              style={
+                Object {
+                  "margin": "20px 0 0 0",
+                }
+              }
+            >
+              "
+              ButtonEnhanced
+              " Component
+            </h2>
+            <table
+              className="css-1uhv8nx e1vdo5380"
+            >
+              <thead>
+                <tr>
+                  <th
+                    className="css-11b5gui e6fp4ir1"
+                  >
+                    property
+                  </th>
+                  <th
+                    className="css-11b5gui e6fp4ir1"
+                  >
+                    propType
+                  </th>
+                  <th
+                    className="css-11b5gui e6fp4ir1"
+                  >
+                    required
+                  </th>
+                  <th
+                    className="css-11b5gui e6fp4ir1"
+                  >
+                    default
+                  </th>
+                  <th
+                    className="css-11b5gui e6fp4ir1"
+                  >
+                    description
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td
+                    className="css-1qcb1f7 e6fp4ir0"
+                  >
+                    loading
+                  </td>
+                  <td
+                    className="css-1qcb1f7 e6fp4ir0"
+                  >
+                    <span />
+                  </td>
+                  <td
+                    className="css-11b5gui e6fp4ir0"
+                  >
+                    -
+                  </td>
+                  <td
+                    className="css-11b5gui e6fp4ir0"
+                  >
+                    <span
+                      style={
+                        Object {
+                          "color": "#a11",
+                        }
+                      }
+                    >
+                      false
+                    </span>
+                  </td>
+                  <td
+                    className="css-11b5gui e6fp4ir0"
+                  />
+                </tr>
+                <tr>
+                  <td
+                    className="css-1qcb1f7 e6fp4ir0"
+                  >
+                    disabled
+                  </td>
+                  <td
+                    className="css-1qcb1f7 e6fp4ir0"
+                  >
+                    <span />
+                  </td>
+                  <td
+                    className="css-11b5gui e6fp4ir0"
+                  >
+                    -
+                  </td>
+                  <td
+                    className="css-11b5gui e6fp4ir0"
+                  >
+                    <span
+                      style={
+                        Object {
+                          "color": "#a11",
+                        }
+                      }
+                    >
+                      false
+                    </span>
+                  </td>
+                  <td
+                    className="css-11b5gui e6fp4ir0"
+                  />
+                </tr>
+                <tr>
+                  <td
+                    className="css-1qcb1f7 e6fp4ir0"
+                  >
+                    children
+                  </td>
+                  <td
+                    className="css-1qcb1f7 e6fp4ir0"
+                  >
+                    <span />
+                  </td>
+                  <td
+                    className="css-11b5gui e6fp4ir0"
+                  >
+                    yes
+                  </td>
+                  <td
+                    className="css-11b5gui e6fp4ir0"
+                  >
+                    -
+                  </td>
+                  <td
+                    className="css-11b5gui e6fp4ir0"
+                  />
+                </tr>
+                <tr>
+                  <td
+                    className="css-1qcb1f7 e6fp4ir0"
+                  >
+                    onClick
+                  </td>
+                  <td
+                    className="css-1qcb1f7 e6fp4ir0"
+                  >
+                    <span />
+                  </td>
+                  <td
+                    className="css-11b5gui e6fp4ir0"
+                  >
+                    yes
+                  </td>
+                  <td
+                    className="css-11b5gui e6fp4ir0"
+                  >
+                    -
+                  </td>
+                  <td
+                    className="css-11b5gui e6fp4ir0"
+                  />
+                </tr>
+                <tr>
+                  <td
+                    className="css-1qcb1f7 e6fp4ir0"
+                  >
+                    className
+                  </td>
+                  <td
+                    className="css-1qcb1f7 e6fp4ir0"
+                  >
+                    <span />
+                  </td>
+                  <td
+                    className="css-11b5gui e6fp4ir0"
+                  >
+                    -
+                  </td>
+                  <td
+                    className="css-11b5gui e6fp4ir0"
+                  >
+                    <span
+                      style={
+                        Object {
+                          "color": "#444",
+                        }
+                      }
+                    >
+                      null
+                    </span>
+                  </td>
+                  <td
+                    className="css-11b5gui e6fp4ir0"
+                  />
+                </tr>
+                <tr>
+                  <td
+                    className="css-1qcb1f7 e6fp4ir0"
+                  >
+                    kind
+                  </td>
+                  <td
+                    className="css-1qcb1f7 e6fp4ir0"
+                  >
+                    <span />
+                  </td>
+                  <td
+                    className="css-11b5gui e6fp4ir0"
+                  >
+                    -
+                  </td>
+                  <td
+                    className="css-11b5gui e6fp4ir0"
+                  >
+                    <span
+                      style={
+                        Object {
+                          "color": "#22a",
+                          "wordBreak": "break-word",
+                        }
+                      }
+                    >
+                      primary
+                    </span>
+                  </td>
+                  <td
+                    className="css-11b5gui e6fp4ir0"
+                  />
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
