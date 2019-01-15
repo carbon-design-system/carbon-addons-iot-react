@@ -3736,10 +3736,10 @@ capture-stack-trace@^1.0.0:
   resolved "https://registry.yarnpkg.com/capture-stack-trace/-/capture-stack-trace-1.0.1.tgz#a6c0bbe1f38f3aa0b92238ecb6ff42c344d4135d"
   integrity sha512-mYQLZnx5Qt1JgB1WEiMCf2647plpGeQ2NMR/5L0HNZzGQo4fuSPnK+wjfPnKZV0aiJDgzmWqqkV/g7JD+DW0qw==
 
-carbon-components-react@^6.x:
-  version "6.71.0"
-  resolved "https://registry.yarnpkg.com/carbon-components-react/-/carbon-components-react-6.71.0.tgz#b9e1d43c2ace2cb0ddc4604282bec04a703ddac2"
-  integrity sha512-GAzJIIsJPxklreEUSByCVVEabydeK7RNC//2nBaTtahHTmdyp2oC0ERKgVTo4+2GxVF9IBLz0ghhyGrh3VJQUQ==
+carbon-components-react@6.74.0:
+  version "6.74.0"
+  resolved "https://registry.yarnpkg.com/carbon-components-react/-/carbon-components-react-6.74.0.tgz#ab855baae2c47a80fda4519f5a130f2a0965dad9"
+  integrity sha512-hR7zTbDk4lq1HOcp/06sgOHx6YvIID8EXtHO68TW0+R6SDQM5XgQlkAL79SWV3h3eAqx7uRgMP2R1HdRHwRhag==
   dependencies:
     "@carbon/icons-react" "^0.0.1-alpha.26"
     classnames "2.2.6"
@@ -3752,17 +3752,17 @@ carbon-components-react@^6.x:
     warning "^3.0.0"
     window-or-global "^1.0.1"
 
-carbon-components@^9.x:
-  version "9.65.0"
-  resolved "https://registry.yarnpkg.com/carbon-components/-/carbon-components-9.65.0.tgz#9dd22bfb2b440902184b0bc9a9cdc8126ea6c7d9"
-  integrity sha512-vvv48VmBHuBkroiJ11tYuWtm9K/8vuC5CmNKUIxBiDMN20Ou/ygklBYHucOxH7C00o9TsxAC4uPuP6FzONq90w==
+carbon-components@^9.48.2:
+  version "9.66.3"
+  resolved "https://registry.yarnpkg.com/carbon-components/-/carbon-components-9.66.3.tgz#cb46c1aa5362db179221a1c72fc9bb4ce973d52e"
+  integrity sha512-z2nhG0vZIk73IsTpyKyT/fZcugvphGHBZBsNbnrD3ZafdCA27g4LeJ9BbAiY8lidK2/UZekh7d1fUDJz6iOilg==
   dependencies:
     carbon-icons "^7.0.7"
     flatpickr "4.5.2"
     lodash.debounce "^4.0.8"
     warning "^3.0.0"
 
-carbon-icons@^7.0.7, carbon-icons@^7.x:
+carbon-icons@^7.0.5, carbon-icons@^7.0.7:
   version "7.0.7"
   resolved "https://registry.yarnpkg.com/carbon-icons/-/carbon-icons-7.0.7.tgz#ebafe3e9fa25df973796a8eca06d8a7c501cc610"
   integrity sha512-3vgkdXJRgCViCrH3fLUdyAXo0I8wmohO6QETv7vWFx6yc7s+SirWFBSFL38zUx4MHtR8iTxIlLEzkeU6FlFtXg==
