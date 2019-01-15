@@ -6,11 +6,19 @@ import ButtonEnhanced from './ButtonEnhanced';
 
 const ButtonEnhancedProps = {
   onClick: action('click'),
-  loading: true,
 };
 
-storiesOf('ButtonEnhanced', module).add(
-  'loading',
-
-  () => <ButtonEnhanced {...ButtonEnhancedProps}>Test ButtonEnhanced</ButtonEnhanced>
-);
+storiesOf('ButtonEnhanced', module)
+  .add('loading', () => (
+    <ButtonEnhanced {...ButtonEnhancedProps} loading>
+      Test ButtonEnhanced
+    </ButtonEnhanced>
+  ))
+  .add('loading with secondary', () => (
+    <ButtonEnhanced {...ButtonEnhancedProps} kind="secondary" loading>
+      Test ButtonEnhanced
+    </ButtonEnhanced>
+  ))
+  .add('not loading', () => (
+    <ButtonEnhanced {...ButtonEnhancedProps}>Test ButtonEnhanced</ButtonEnhanced>
+  ));
