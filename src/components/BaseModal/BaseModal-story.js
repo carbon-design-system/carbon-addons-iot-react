@@ -13,7 +13,6 @@ storiesOf('BaseModal', module) // Ugh I shouldn't have to add these info here, b
     - adds isFetchingData props for loading state
     - adds error and dataError prop to display notification about error at bottom of dialog
     - if submitFailed prop, it will find and scroll the failing carbon element into view
-    - stops submission of the dialog if the invalid prop is true
     - shows spinner on primary dialog button if sendingData prop is true
         
 We also prevent the dialog from closing if you click outside it.
@@ -40,12 +39,11 @@ REDUXFORM or REDUXDIALOG`,
         title: 'Needs a lot of space to contain all the info',
       }}
       footer={{ onSubmit: action('submit') }}
-      onClose={action('close')}
-    />
+      onClose={action('close')}>
+      Lots of really wide content here...
+    </BaseModal>
   ))
-  .add('fetching data', () => (
-    <BaseModal isFetchingData onClose={action('close')} />
-  ))
+  .add('fetching data', () => <BaseModal isFetchingData onClose={action('close')} />)
   .add('error states', () => (
     <BaseModal
       dataError="Error sending data to server"
@@ -54,6 +52,38 @@ REDUXFORM or REDUXDIALOG`,
         title: 'Cannot communicate with server',
       }}
       footer={{ onSubmit: action('submit') }}
+      onClose={action('close')}
+    />
+  ))
+  .add('sending data', () => (
+    <BaseModal
+      sendingData
+      header={{
+        label: 'Sending data',
+        title: 'We are submitting data to the backend',
+      }}
+      footer={{ onSubmit: action('submit') }}
+      onClose={action('close')}
+    />
+  ))
+  .add('no footer', () => (
+    <BaseModal
+      sendingData
+      header={{
+        label: 'No footer',
+        title: 'Dialog without footer',
+      }}
+      onClose={action('close')}
+    />
+  ))
+  .add('custom footer', () => (
+    <BaseModal
+      sendingData
+      header={{
+        label: 'Custom footer',
+        title: 'Custom footer element',
+      }}
+      footer={<div>custom footer element</div>}
       onClose={action('close')}
     />
   ));

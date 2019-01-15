@@ -31,6 +31,7 @@ const StyledModal = styled(ComposedModal)`
       }
     }
 
+    /* support large modals for ll the sizes */
     &.big-modal {
       .bx--modal-header {
         margin-bottom: 0rem;
@@ -76,10 +77,19 @@ const StyledMessageBox = styled(MessageBox)`
 const StyledModalFooter = styled(ModalFooter)`
    {
     display: flex;
+    align-items: center;
     flex-flow: row nowrap;
-    &-buttons {
-      display: flex;
+    flex-grow: 0;
+    justify-content: flex-end;
+    .modal-greedy-spacer {
+      flex-grow: 2;
+      text-align: left; // needed to override the dialog style
     }
+  }
+`;
+const StyledButtons = styled.p`
+   {
+    display: flex;
   }
 `;
 
@@ -91,7 +101,6 @@ const StyledModalFooter = styled(ModalFooter)`
  *  adds isFetchingData props for loading state
  *  adds error and dataError prop to display notification about error at bottom of dialog
  *  if submitFailed prop, it will find and scroll the failing carbon element into view
- *  stops submission of the dialog if the invalid prop is true
  *  shows spinner on primary dialog button if sendingData prop is true
  *
  * We also prevent the dialog from closing if you click outside it.
@@ -186,7 +195,7 @@ class BaseModal extends React.Component {
     }
   };
 
-  /** This is needed to keep the ComposedModal from closing if you click outside it */
+  /** TODO: This is needed to keep the ComposedModal from closing if you click outside it this supports our dialogs on top of dialogs issue */
   doNotClose = () => false;
 
   render() {
@@ -218,11 +227,7 @@ class BaseModal extends React.Component {
           'error-modal': type === 'warn',
           'big-modal': isLarge,
         })}>
-        <ModalHeader
-          label={label}
-          title={title}
-          closeModal={onClose}
-          buttonOnClick={onClose}>
+        <ModalHeader label={label} title={title} closeModal={onClose} buttonOnClick={onClose}>
           <p className="bx--modal-content__text">{helpText}</p>
         </ModalHeader>
         {children ? <ModalBody>{children}</ModalBody> : null}
@@ -237,9 +242,9 @@ class BaseModal extends React.Component {
         {footer ? (
           <StyledModalFooter>
             {React.isValidElement(footer) ? (
-              <div className="base-modal-footer-buttons">{footer}</div>
+              <StyledButtons>{footer}</StyledButtons>
             ) : (
-              <div className="base-modal-footer-buttons">
+              <StyledButtons>
                 <ButtonEnhanced kind="secondary" onClick={onClose}>
                   {footer.secondaryButtonText || 'Cancel'}
                 </ButtonEnhanced>
@@ -252,7 +257,7 @@ class BaseModal extends React.Component {
                   onClick={footer.onSubmit}>
                   {footer.primaryButtonText || 'Save'}
                 </ButtonEnhanced>
-              </div>
+              </StyledButtons>
             )}
           </StyledModalFooter>
         ) : null}

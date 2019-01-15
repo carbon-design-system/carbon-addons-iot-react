@@ -13,19 +13,18 @@
     "url": "https://github.com/IBM/carbon-addons-iot-react/issues"
   },
   "scripts": {
-    "build": "babel -q -d lib src",
+    "build": "rollup -c",
     "build:storybook": "build-storybook",
-    "cosmos": "cosmos",
     "format": "prettier --write \"**/*.{scss,css,js,jsx,md,ts}\"",
     "format:diff": "prettier --list-different \"**/*.{scss,css,js,jsx,md,ts}\"",
-    "prepublish": "yarn build",
-    "semantic-release": "semantic-release",
+    "prepare": "yarn build",
     "storybook": "start-storybook -p 3000",
-    "test": "jest"
+    "test": "jest",
+    "test:watch": "jest --watchAll"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn format && yarn lint-staged && yarn test --runInBand",
+      "pre-commit": "yarn lint-staged && yarn test --runInBand",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
@@ -43,7 +42,6 @@
     "react": "^15.3.2 || ^16.1.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.0.0",
     "@babel/core": "^7.0.0",
     "@babel/plugin-proposal-class-properties": "^7.0.0",
     "@babel/plugin-proposal-decorators": "^7.0.0",
@@ -67,10 +65,15 @@
     "@babel/runtime": "^7.0.0",
     "@commitlint/cli": "^7.2.1",
     "@commitlint/config-conventional": "^7.1.2",
+    "@semantic-release/commit-analyzer": "^6.1.0",
+    "@semantic-release/git": "^7.0.7",
+    "@semantic-release/npm": "^5.1.3",
+    "@semantic-release/release-notes-generator": "^7.1.4",
     "@storybook/addon-a11y": "^4.1.4",
     "@storybook/addon-actions": "^4.1.4",
     "@storybook/addon-info": "^4.1.4",
     "@storybook/addon-links": "^4.1.4",
+    "@storybook/addon-storyshots": "^4.1.6",
     "@storybook/addons": "^4.1.4",
     "@storybook/react": "^4.1.4",
     "autoprefixer": "^9.4.4",
@@ -80,6 +83,7 @@
     "babel-loader": "^8.0.5",
     "babel-plugin-lodash": "^3.3.4",
     "babel-plugin-react-docgen": "^2.0.0",
+    "babel-plugin-require-context-hook": "^1.0.0",
     "babel-plugin-styled-components": "^1.10.0",
     "carbon-components": "^9.48.2",
     "carbon-components-react": "6.74.0",
@@ -100,6 +104,8 @@
     "eslint-plugin-react": "^7.12.2",
     "husky": "^1.3.1",
     "jest": "^23.6.0",
+    "jest-styled-components": "^6.3.1",
+    "jsdom": "^13.1.0",
     "lint-staged": "^8.1.0",
     "lorem-ipsum": "2.0.0-alpha.2",
     "node-sass": "^4.11.0",
@@ -107,12 +113,17 @@
     "postcss-loader": "^3.0.0",
     "prettier": "^1.15.3",
     "promise": "^8.0.2",
-    "react": "^16.7.0",
-    "react-cosmos": "^4.6.4",
-    "react-cosmos-fetch-proxy": "^4.6.1",
-    "react-cosmos-router-proxy": "^4.6.1",
-    "react-dom": "^16.7.0",
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0",
+    "react-test-renderer": "^16.4.0",
     "rimraf": "^2.6.3",
+    "rollup": "^1.1.0",
+    "rollup-plugin-babel": "^4.3.0",
+    "rollup-plugin-commonjs": "^9.2.0",
+    "rollup-plugin-filesize": "^6.0.0",
+    "rollup-plugin-node-resolve": "^4.0.0",
+    "rollup-plugin-replace": "^2.1.0",
+    "rollup-plugin-uglify": "^6.0.1",
     "sass-loader": "^7.1.0",
     "semantic-release": "^15.13.2",
     "style-loader": "^0.23.1",
@@ -124,27 +135,28 @@
     ]
   },
   "lint-staged": {
-    "*.{jsx,js}": [
-      "eslint --fix"
-    ],
-    "*.{scss,css,js,md}": [
-      "yarn format",
-      "git add"
-    ]
-  },
-  "prettier": {
-    "jsxBracketSameLine": true,
-    "printWidth": 80,
-    "singleQuote": true,
-    "trailingComma": "es5"
+    "linters": {
+      "*.{jsx,js}": [
+        "eslint --fix"
+      ],
+      "*.{scss,css,js,md,jsx,json}": [
+        "yarn format",
+        "git add"
+      ]
+    },
+    "concurrent": false
   },
   "jest": {
     "collectCoverage": true,
+    "verbose": true,
     "collectCoverageFrom": [
       "src/components/**/*.js?(x)",
-      "!**/node_modules/**",
-      "!**/lib/**",
-      "!**/coverage/**"
+      "!src/**/*-story.js"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/lib/",
+      "/coverage/"
     ],
     "coverageReporters": [
       "json",
@@ -153,7 +165,6 @@
       "text-summary"
     ],
     "setupFiles": [
-      "<rootDir>/config/polyfills.js",
       "<rootDir>/config/jest/setup.js"
     ],
     "testMatch": [
@@ -180,5 +191,6 @@
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
     ]
-  }
+  },
+  "version": "0.0.0-development"
 }
