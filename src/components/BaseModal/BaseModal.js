@@ -4,6 +4,7 @@ import {
   ModalFooter,
   ModalHeader,
   Loading,
+  InlineNotification,
 } from 'carbon-components-react';
 import PropTypes from 'prop-types';
 import React from 'react';
@@ -14,7 +15,6 @@ import { rem } from 'polished';
 import { scrollErrorIntoView } from '../../utils/componentUtilityFunctions';
 import ButtonEnhanced from '../ButtonEnhanced';
 import { COLORS } from '../../styles/styles';
-import MessageBox from '../MessageBox';
 
 const StyledModal = styled(ComposedModal)`
    {
@@ -68,7 +68,7 @@ const StyledModal = styled(ComposedModal)`
   }
 `;
 
-const StyledMessageBox = styled(MessageBox)`
+const StyledMessageBox = styled(InlineNotification)`
    {
     width: 100%;
   }
@@ -233,10 +233,10 @@ class BaseModal extends React.Component {
         {children ? <ModalBody>{children}</ModalBody> : null}
         {error || dataError ? (
           <StyledMessageBox
-            data={{
-              message: errorMessage,
-            }}
-            onCloseButtonClick={this.handleClearError}
+            title={errorMessage}
+            subtitle=""
+            kind="error"
+            onCloseButtonClick={onClose}
           />
         ) : null}
         {footer ? (
