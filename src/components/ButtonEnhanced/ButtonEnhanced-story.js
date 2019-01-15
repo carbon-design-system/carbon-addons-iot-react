@@ -20,7 +20,5 @@ storiesOf('ButtonEnhanced', module)
     </ButtonEnhanced>
   ))
   .add('not loading', () => (
-    <ButtonEnhanced {...ButtonEnhancedProps}>
-      Test ButtonEnhanced
-    </ButtonEnhanced>
+    <ButtonEnhanced {...ButtonEnhancedProps}>Test ButtonEnhanced</ButtonEnhanced>
   ));
