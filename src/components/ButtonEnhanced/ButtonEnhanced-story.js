@@ -12,9 +12,5 @@ const ButtonEnhancedProps = {
 storiesOf('ButtonEnhanced', module).add(
   'loading',
 
-  () => (
-    <ButtonEnhanced {...ButtonEnhancedProps}>
-      Test ButtonEnhanced
-    </ButtonEnhanced>
-  )
+  () => <ButtonEnhanced {...ButtonEnhancedProps}>Test ButtonEnhanced</ButtonEnhanced>
 );
