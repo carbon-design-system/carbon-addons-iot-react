@@ -5,9 +5,9 @@ import { checkA11y } from '@storybook/addon-a11y';
 
 import Container from './Container';
 
+addDecorator(withInfo);
 addDecorator(checkA11y);
 // addDecorator(story => <Container story={story} />);
-addDecorator(withInfo);
 
 function loadStories() {
   const req = require.context('../src/components', true, /\-story\.js$/);

@@ -1,0 +1,74 @@
+@import 'utils/utils';
+
+/*.big-modal {
+  .bx--modal-header {
+    margin-bottom: 0rem;
+  }
+  .bx--modal-container {
+    min-height: rem(600);
+    min-width: rem(800);
+    max-height: 80%;
+    @media (min-width: rem(600)) {
+      height: auto;
+    }
+    @media (min-width: rem(1024)) {
+      max-width: 80%;
+    }
+    @media (min-width: rem(1200)) {
+      max-width: 60%;
+    }
+  }
+}
+*/
+
+.bx--modal-footer {
+  display: flex;
+  align-items: center;
+  flex-grow: 0;
+  justify-content: flex-end;
+  .modal-greedy-spacer {
+    flex-grow: 2;
+  }
+  text-align: left; // needed to override the dialog style
+}
+
+.modal-row + .modal-row {
+  padding-top: 1rem;
+}
+
+.modal-row {
+  display: flex;
+  flex-flow: row nowrap;
+  > div + div {
+    padding-left: 2rem;
+  }
+  span + span,
+  span + div {
+    padding-left: 0.5rem;
+  }
+  justify-content: flex-start;
+
+  &-center {
+    align-items: center;
+  }
+  p {
+    margin-bottom: 0rem;
+  }
+  .bx--tooltip__trigger {
+    font-weight: normal;
+    font-size: inherit;
+  }
+  .bx--label {
+    margin-bottom: 0;
+  }
+}
+
+.modal-column {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  padding: 1rem;
+  p {
+    margin-bottom: 0rem;
+  }
+}
