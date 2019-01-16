@@ -87,7 +87,7 @@ const StyledModalFooter = styled(ModalFooter)`
     }
   }
 `;
-const StyledButtons = styled.p`
+const StyledButtons = styled.div`
    {
     display: flex;
   }

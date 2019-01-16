@@ -633,7 +633,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots BaseModal big mo
         <div
           className="bx--modal-footer c1"
         >
-          <p
+          <div
             className="c2"
           >
             <button
@@ -654,7 +654,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots BaseModal big mo
             >
               Save
             </button>
-          </p>
+          </div>
         </div>
       </div>
     </div>
@@ -2128,13 +2128,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots BaseModal custom
         <div
           className="bx--modal-footer c1"
         >
-          <p
+          <div
             className="c2"
           >
             <div>
               custom footer element
             </div>
-          </p>
+          </div>
         </div>
       </div>
     </div>
@@ -3638,7 +3638,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots BaseModal error 
         <div
           className="bx--modal-footer c2"
         >
-          <p
+          <div
             className="c3"
           >
             <button
@@ -3659,7 +3659,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots BaseModal error 
             >
               Save
             </button>
-          </p>
+          </div>
         </div>
       </div>
     </div>
@@ -7637,7 +7637,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots BaseModal sendin
         <div
           className="bx--modal-footer c1"
         >
-          <p
+          <div
             className="c2"
           >
             <button
@@ -7673,7 +7673,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots BaseModal sendin
               </div>
               Save
             </button>
-          </p>
+          </div>
         </div>
       </div>
     </div>
@@ -9119,7 +9119,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots BaseModal warnin
         <div
           className="bx--modal-footer c1"
         >
-          <p
+          <div
             className="c2"
           >
             <button
@@ -9140,7 +9140,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots BaseModal warnin
             >
               Save
             </button>
-          </p>
+          </div>
         </div>
       </div>
     </div>
