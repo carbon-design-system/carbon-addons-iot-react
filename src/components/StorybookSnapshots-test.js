@@ -1,5 +1,7 @@
-import initStoryshots from '@storybook/addon-storyshots';
+import initStoryshots, { snapshotWithOptions } from '@storybook/addon-storyshots';
 import ReactDOM from 'react-dom';
+// Needed to give more information about the styled component differences in the jest snapshots
+import 'jest-styled-components';
 
 const realFindDOMNode = ReactDOM.findDOMNode;
 const RealDate = Date;
@@ -29,7 +31,11 @@ describe(`Storybook Snapshot tests and console checks`, () => {
     jest.setTimeout(15000);
   });
   initStoryshots({
-    /* configuration options */
+    test: snapshotWithOptions({
+      createNodeMock: () =>
+        // fallback is to mock something, otherwise our refs are invalid
+        document.createElement('div'),
+    }),
   });
 
   afterAll(() => {

@@ -1,6 +1,6 @@
 # IoT Widget Library
 
-Non-confidential shared components between all IBM IoT products to unify our look and feel. This library will contain React components that often extend the carbon-component widgets, but may not. These components cover additional usecases specific to our IoT product line, much like this repository does for the IBM Cloud team: https://github.com/carbon-design-system/carbon-addons-cloud
+This library contains React components shared between all IBM IoT products to unify our look and feel. These widgets are usually based on the carbon-components-react widgets. These components cover additional usecases specific to our IoT product line, much like this repository does for the IBM Cloud team: <https://github.com/carbon-design-system/carbon-addons-cloud-react>
 
 ## Setting up the project
 
@@ -16,12 +16,16 @@ To explore our components and their documentation we use storybook. To start the
 
 ## Testing changes
 
-We have an automated unit test bucket that runs when you execute `yarn test:watch`.
-Before every push, we automatically run our test suite and take snapshots of all of our current component fixtures. If you have made visual changes to a component, our tests will
-fail because the snapshots will no longer match. You will be prevented from pushing to git until you fix this error.
+To run our test suite locally execute `yarn test:watch`.
+
+## Adding a dependency
+
+Please use `yarn add` to add dependencies to the project not `npm install`
 
 ## Updating snapshots
 
+We have an automated unit test bucket that runs automatically when you push to git. We automatically run our test suite and compare snapshots of all of our current storybook stories.
+If you have made visual changes to a component, our tests will fail because the snapshots will no longer match. _You will be prevented from pushing to git until you fix this error_.
 To update the snapshot, type `u` after the snapshot difference has been detected by our unit test engine.
 _Do not blindly update snapshots to pass the testcase._ Make sure the detected change is intentional and not unintentional before updating the snapshot.
 
@@ -44,7 +48,3 @@ Then Sync : Download Settings. It will ask you for a Public GIST URL, here it is
 
 Here's the Public GIST URL:
 <https://gist.github.com/scottdickerson/5e3fb697c29f2aaa058145a3349a8229>
-
-## Adding a dependency
-
-Please use `yarn add` to add dependencies to the project not `npm install`
