@@ -8,7 +8,20 @@ yarn install
 
 ## Exploring components
 
-To explore our components and their documentation we use storybook. To start the storybook server, run: `yarn storybook` then open a browser to http://localhost:3000.
+To explore our components and their documentation we use storybook. To start the storybook server, run: `yarn storybook` then open a browser to <http://localhost:3000>.
+
+## Adding a new component
+
+You're ready to add a new component to this library, THANK YOU! However, this is only a [PRESENTATIONAL](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0) component library. Please do not add components with any dependencies on internationalization libraries, redux, or react-router.
+Feel free to add any other types of lower-level dependencies you might need for your components (i.e. lodash, etc), but please use `yarn add` to add dependencies to the project not `npm install`.
+
+## Submitting PRs and Commits
+
+We require all commits to follow [conventional commit](https://www.conventionalcommits.org/en/v1.0.0-beta.2/) standards. You won't be able to create a commit unless you follow those rules.
+
+## Styling new components
+
+We've decided to use [styled-components](https://www.styled-components.com/) to apply css styles to our React components. Please don't add any new CSS-in-JS library as a dependency.
 
 ## Testing changes
 
@@ -28,6 +41,8 @@ To understand what lines of code are NOT covered by our current testcases, open 
 
 ## Setting up VSCode to share our Settings/Extensions
 
+We're using some pretty cool VSCode extensions to make our internal development easier. If you'd like to reuse the same ones follow these instructions!
+
 <http://shanalikhan.github.io/2015/12/15/Visual-Studio-Code-Sync-Settings.html>
 
 Here's our Gist ID to download/share settings from:
@@ -40,7 +55,3 @@ Then Sync : Download Settings. It will ask you for a Public GIST URL, here it is
 
 Here's the Public GIST URL:
 <https://gist.github.com/scottdickerson/5e3fb697c29f2aaa058145a3349a8229>
-
-## Adding a dependency
-
-Please use `yarn add` to add dependencies to the project not `npm install`
