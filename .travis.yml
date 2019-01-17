@@ -31,3 +31,4 @@ jobs:
         script:
           - npx semantic-release
           - yarn deploy:storybook --ci
+          - yarn run jest --coverage --coverageReporters=text-lcov | yarn run coveralls # report coveralls status

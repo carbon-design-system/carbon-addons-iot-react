@@ -90,6 +90,7 @@
     "carbon-components": "^9.48.2",
     "carbon-components-react": "6.74.0",
     "carbon-icons": "^7.0.5",
+    "coveralls": "^3.0.2",
     "css-loader": "^2.1.0",
     "enzyme": "^3.8.0",
     "enzyme-adapter-react-16": "^1.7.1",
@@ -148,52 +149,6 @@
       ]
     },
     "concurrent": false
-  },
-  "jest": {
-    "collectCoverage": true,
-    "verbose": true,
-    "collectCoverageFrom": [
-      "src/components/**/*.js?(x)",
-      "!src/**/*-story.js"
-    ],
-    "coveragePathIgnorePatterns": [
-      "/node_modules/",
-      "/lib/",
-      "/coverage/"
-    ],
-    "coverageReporters": [
-      "json",
-      "lcov",
-      "html",
-      "text-summary"
-    ],
-    "setupFiles": [
-      "<rootDir>/config/jest/setup.js"
-    ],
-    "testMatch": [
-      "<rootDir>/**/__tests__/**/*.js?(x)",
-      "<rootDir>/**/?(*-)(spec|test).js?(x)"
-    ],
-    "testURL": "http://localhost",
-    "transform": {
-      "^.+\\.jsx?$": "babel-jest",
-      "^.+\\.s?css$": "<rootDir>/config/jest/cssTransform.js",
-      "^(?!.*\\.(js|jsx|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
-    },
-    "testPathIgnorePatterns": [
-      "/config/",
-      "/lib/"
-    ],
-    "transformIgnorePatterns": [
-      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"
-    ],
-    "moduleFileExtensions": [
-      "js",
-      "json"
-    ],
-    "snapshotSerializers": [
-      "enzyme-to-json/serializer"
-    ]
   },
   "version": "0.0.0-development"
 }
