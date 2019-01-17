@@ -12620,7 +12620,26 @@ exports[`Storybook Snapshot tests and console checks Storyshots WizardModal basi
             basic wizard modal
           </h2>
         </div>
-        
+        <div
+          style={
+            Object {
+              "marginBottom": 0,
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "WebkitFontSmoothing": "antialiased",
+                "color": "#444",
+                "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                "fontSize": "15px",
+              }
+            }
+          >
+            Extends BaseModal to add Carbon’s ProgressIndicator and Wizard pages and local state.  Refer to the BaseModal component for additional props that can be passed
+          </div>
+        </div>
         <div>
           <h1
             style={
@@ -13339,7 +13358,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots WizardModal basi
                     <span>
                       <br />
                        
-                      *labels: Internationalized string labels for the buttons in the footer
+                      labels: Internationalized string labels for the buttons in the footer
                     </span>
                   </td>
                 </tr>
@@ -13479,17 +13498,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots WizardModal basi
                     <span>
                       <br />
                        
-                      label goes up in the progress bar,
+                       label: the label of each step up in the progress bar,
                     </span>
                     <span>
                       <br />
                        
-                      content goes beneath as you step through the steps
+                       content: the wizard page content for each step
                     </span>
                     <span>
                       <br />
                        
-                      onValidate is the callback called to validate that we can leave this step
+                       onValidate: is the callback called to validate that we can leave this step
                     </span>
                   </td>
                 </tr>
@@ -13905,7 +13924,26 @@ exports[`Storybook Snapshot tests and console checks Storyshots WizardModal cust
             custom footer
           </h2>
         </div>
-        
+        <div
+          style={
+            Object {
+              "marginBottom": 0,
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "WebkitFontSmoothing": "antialiased",
+                "color": "#444",
+                "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                "fontSize": "15px",
+              }
+            }
+          >
+            Extends BaseModal to add Carbon’s ProgressIndicator and Wizard pages and local state.  Refer to the BaseModal component for additional props that can be passed
+          </div>
+        </div>
         <div>
           <h1
             style={
@@ -14749,7 +14787,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots WizardModal cust
                     <span>
                       <br />
                        
-                      *labels: Internationalized string labels for the buttons in the footer
+                      labels: Internationalized string labels for the buttons in the footer
                     </span>
                   </td>
                 </tr>
@@ -14889,17 +14927,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots WizardModal cust
                     <span>
                       <br />
                        
-                      label goes up in the progress bar,
+                       label: the label of each step up in the progress bar,
                     </span>
                     <span>
                       <br />
                        
-                      content goes beneath as you step through the steps
+                       content: the wizard page content for each step
                     </span>
                     <span>
                       <br />
                        
-                      onValidate is the callback called to validate that we can leave this step
+                       onValidate: is the callback called to validate that we can leave this step
                     </span>
                   </td>
                 </tr>

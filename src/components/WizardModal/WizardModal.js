@@ -26,14 +26,16 @@ const StyledWizardContent = styled.div`
   }
 `;
 
-/** Extends BaseModal to add wizard, refer to that component for common props */
+/**
+ * Extends BaseModal to add wizard, refer to that component for common props
+ */
 class WizardModal extends Component {
   static propTypes = {
     /**
      * steps for the wizard to take you through
-     * label goes up in the progress bar,
-     * content goes beneath as you step through the steps
-     * onValidate is the callback called to validate that we can leave this step
+     *  label: the label of each step up in the progress bar,
+     *  content: the wizard page content for each step
+     *  onValidate: is the callback called to validate that we can leave this step
      */
     steps: PropTypes.arrayOf(
       PropTypes.shape({
@@ -45,7 +47,7 @@ class WizardModal extends Component {
 
     /**
      * leftContent: Anything that will placed to the left of the buttons inside the footer
-     * *labels: Internationalized string labels for the buttons in the footer
+     * labels: Internationalized string labels for the buttons in the footer
      */
     footer: PropTypes.shape({
       leftContent: PropTypes.node,
