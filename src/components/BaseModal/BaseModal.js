@@ -127,9 +127,8 @@ class BaseModal extends React.Component {
     footer: PropTypes.oneOfType([
       PropTypes.element.isRequired,
       PropTypes.shape({
-        primaryButtonText: PropTypes.string,
-        secondaryButtonText: PropTypes.string,
-        onSubmit: PropTypes.func.isRequired,
+        primaryButtonLabel: PropTypes.node,
+        secondaryButtonLabel: PropTypes.node,
       }),
     ]),
     /** NEW PROP: Type of dialog, affects colors, styles of dialog */
@@ -141,6 +140,7 @@ class BaseModal extends React.Component {
     open: PropTypes.bool, // eslint-disable-line react/boolean-prop-naming
     /**  REDUXDIALOG: Close the dialog */
     onClose: PropTypes.func.isRequired,
+
     /**  REDUXDIALOG: Clear the currently shown dataError, triggered if the user closes the ErrorNotification */
     onClearDialogErrors: PropTypes.func,
 
@@ -159,6 +159,8 @@ class BaseModal extends React.Component {
     invalid: PropTypes.bool, // eslint-disable-line react/boolean-prop-naming
     /**  REDUXFORM: Clear the currently shown error (from form), triggered if the user closes the ErrorNotification */
     clearSubmitErrors: PropTypes.func,
+    /** REDUXFORM: Callback to submit the dialog/form */
+    onSubmit: PropTypes.func,
   };
 
   static defaultProps = {
@@ -173,6 +175,7 @@ class BaseModal extends React.Component {
     footer: null,
     isLarge: false,
     submitFailed: false,
+    onSubmit: null,
     invalid: false,
     children: null,
     header: {},
@@ -212,6 +215,7 @@ class BaseModal extends React.Component {
       onClose,
       isFetchingData,
       isLarge,
+      onSubmit,
     } = this.props;
     const { label, title, helpText } = header;
     // First check for dataErrors as they are worse than form errors
@@ -239,14 +243,14 @@ class BaseModal extends React.Component {
             onCloseButtonClick={onClose}
           />
         ) : null}
-        {footer ? (
+        {footer || onSubmit ? (
           <StyledModalFooter>
             {React.isValidElement(footer) ? (
               <StyledButtons>{footer}</StyledButtons>
             ) : (
               <StyledButtons>
                 <ButtonEnhanced kind="secondary" onClick={onClose}>
-                  {footer.secondaryButtonText || 'Cancel'}
+                  {(footer && footer.secondaryButtonLabel) || 'Cancel'}
                 </ButtonEnhanced>
                 <ButtonEnhanced
                   kind={type === 'warn' ? 'danger' : 'primary'}
@@ -254,8 +258,8 @@ class BaseModal extends React.Component {
                     (typeof sendingData === 'boolean' && sendingData) ||
                     typeof sendingData === 'string'
                   }
-                  onClick={footer.onSubmit}>
-                  {footer.primaryButtonText || 'Save'}
+                  onClick={onSubmit}>
+                  {(footer && footer.primaryButtonLabel) || 'Save'}
                 </ButtonEnhanced>
               </StyledButtons>
             )}
