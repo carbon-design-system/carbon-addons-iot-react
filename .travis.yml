@@ -2,6 +2,11 @@ language: node_js
 node_js:
   - node
 
+stages:
+  - name: after_success
+    # require the branch name to be master (note for PRs this is the base branch name)
+    if: branch = master
+
 before_install:
   - node --version
   # Repo for Yarn
@@ -20,14 +25,12 @@ install:
 script:
   - yarn test
 
-jobs:
-  include:
-    # Define the release stage that runs semantic-release
-    - stage: release
-      node_js: lts/*
-      deploy:
-        provider: script
-        skip_cleanup: true
-        script:
-          - npx semantic-release
-          - yarn deploy:storybook --ci
+after_success:
+  - npx semantic-release
+  - yarn run jest --coverage --coverageReporters=text-lcov | yarn run coveralls # report coveralls status
+
+deploy:
+  provider: script
+  skip_cleanup: true
+  script:
+    - yarn deploy:storybook --ci

@@ -90,6 +90,7 @@
     "carbon-components": "^9.48.2",
     "carbon-components-react": "6.74.0",
     "carbon-icons": "^7.0.5",
+    "coveralls": "^3.0.2",
     "css-loader": "^2.1.0",
     "enzyme": "^3.8.0",
     "enzyme-adapter-react-16": "^1.7.1",

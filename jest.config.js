@@ -3,13 +3,13 @@ module.exports = {
   verbose: true,
   collectCoverageFrom: ['src/components/**/*.js?(x)', '!src/**/*-story.js'],
   coveragePathIgnorePatterns: ['/node_modules/', '/lib/', '/coverage/'],
-  coverageReporters: ['json', 'lcov', 'html', 'text-summary'],
+  coverageReporters: ['html', 'text-summary'],
   coverageThreshold: {
     global: {
-      statements: 90,
-      branches: 90,
-      functions: 90,
-      lines: 90,
+      statements: 80,
+      branches: 80,
+      functions: 80,
+      lines: 80,
     },
   },
   setupFiles: ['<rootDir>/config/jest/setup.js'],
