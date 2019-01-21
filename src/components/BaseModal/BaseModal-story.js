@@ -27,7 +27,7 @@ REDUXFORM or REDUXDIALOG`,
         title: 'Delete Stuff',
         helpText: 'Deleting stuff can be hazardous to your health..',
       }}
-      footer={{ onSubmit: action('submit') }}
+      onSubmit={action('submit')}
       onClose={action('close')}
     />
   ))
@@ -38,7 +38,7 @@ REDUXFORM or REDUXDIALOG`,
         label: 'Big Modal',
         title: 'Needs a lot of space to contain all the info',
       }}
-      footer={{ onSubmit: action('submit') }}
+      onSubmit={action('submit')}
       onClose={action('close')}>
       Lots of really wide content here...
     </BaseModal>
@@ -51,7 +51,7 @@ REDUXFORM or REDUXDIALOG`,
         label: 'DataError',
         title: 'Cannot communicate with server',
       }}
-      footer={{ onSubmit: action('submit') }}
+      onSubmit={action('submit')}
       onClose={action('close')}
     />
   ))
@@ -62,7 +62,7 @@ REDUXFORM or REDUXDIALOG`,
         label: 'Sending data',
         title: 'We are submitting data to the backend',
       }}
-      footer={{ onSubmit: action('submit') }}
+      onSubmit={action('submit')}
       onClose={action('close')}
     />
   ))

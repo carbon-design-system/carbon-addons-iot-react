@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.com/IBM/carbon-addons-iot-react.svg?branch=master)](https://travis-ci.com/IBM/carbon-addons-iot-react)
 [![Coverage Status](https://coveralls.io/repos/github/IBM/carbon-addons-iot-react/badge.svg?branch=master)](https://coveralls.io/github/IBM/carbon-addons-iot-react?branch=master)
+
 This library contains React components shared between all IBM IoT products to unify our look and feel. These widgets are usually based on the carbon-components-react widgets. These components cover additional usecases specific to our IoT product line, much like this repository does for the IBM Cloud team: <https://github.com/carbon-design-system/carbon-addons-cloud-react>
 
 ## Getting Started
