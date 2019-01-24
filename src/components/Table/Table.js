@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import isNil from 'lodash/isNil';
 
 import Pagination from './Pagination/Pagination';
 import Toolbar from './Toolbar/Toolbar';
+import FilterHeaderRow from './FilterHeaderRow/FilterHeaderRow';
 
 const propTypes = {
   /** Array with objects (id, name and size) */
@@ -11,6 +13,10 @@ const propTypes = {
       id: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
       size: PropTypes.number.isRequired,
+      filter: PropTypes.shape({
+        placeholderText: PropTypes.string,
+        options: PropTypes.arrayOf(PropTypes.string),
+      }),
     })
   ).isRequired,
   data: PropTypes.arrayOf(
@@ -22,6 +28,7 @@ const propTypes = {
   options: PropTypes.shape({
     hasPagination: PropTypes.bool,
     hasRowSelection: PropTypes.bool,
+    hasFilter: PropTypes.bool,
   }),
   view: PropTypes.shape({
     pagination: PropTypes.shape({
@@ -29,7 +36,10 @@ const propTypes = {
       totalItems: PropTypes.number.isRequired,
       page: PropTypes.number.isRequired,
     }),
-    toolbar: PropTypes.shape({}),
+    toolbar: PropTypes.shape({
+      // if not provided, no bar is visible
+      activeBar: PropTypes.oneOf(['filter'], ['column']),
+    }),
     table: PropTypes.shape({
       isSelectAllSelected: PropTypes.bool.isRequired,
       selectedIds: PropTypes.arrayOf(PropTypes.string).isRequired,
@@ -37,16 +47,17 @@ const propTypes = {
   }),
   actions: PropTypes.shape({
     pagination: PropTypes.shape({
-      onChangeItemsPerPage: PropTypes.func.isRequired,
-      onChangePage: PropTypes.func.isRequired,
+      onChangeItemsPerPage: PropTypes.func,
+      onChangePage: PropTypes.func,
     }),
     toolbar: PropTypes.shape({
-      onBatchCancel: PropTypes.func.isRequired,
-      onBatchDelete: PropTypes.func.isRequired,
+      onBatchCancel: PropTypes.func,
+      onBatchDelete: PropTypes.func,
+      onApplyFilter: PropTypes.func,
     }),
     table: PropTypes.shape({
-      onRowSelected: PropTypes.func.isRequired,
-      onSelectAll: PropTypes.func.isRequired,
+      onRowSelected: PropTypes.func,
+      onSelectAll: PropTypes.func,
     }).isRequired,
   }),
 };
@@ -92,30 +103,37 @@ class Table extends Component {
                   className="bx--checkbox"
                   type="checkbox"
                   checked={view.table.isSelectAllSelected}
-                  onClick={() =>
-                    actions.table.onSelectAll(!view.table.isSelectAllSelected)
-                  }
+                  onClick={() => actions.table.onSelectAll(!view.table.isSelectAllSelected)}
                 />
               </label>
             </th>
           ) : null}
-          {columns.map(i => (
-            <th>
-              <span className="bx--table-header-label">{i.text}</span>
+          {columns.map(column => (
+            <th key={column.id}>
+              <span className="bx--table-header-label">{column.name}</span>
             </th>
           ))}
         </tr>
+        {options.hasFilter && view.toolbar.activeBar === 'filter' && (
+          <FilterHeaderRow
+            columns={columns.map(column => ({
+              ...column.filter,
+              id: column.id,
+              isFilterable: !isNil(column.filter),
+            }))}
+            tableOptions={options}
+            onApplyFilter={actions.toolbar.onApplyFilter}
+          />
+        )}
       </thead>
     );
     const body = (
       <tbody>
         {visibleData.map(i => (
-          <tr>
+          <tr key={i.id}>
             {options.hasRowSelection ? (
               <td>
-                <label
-                  htmlFor={`${i.id}-checkbox`}
-                  className="bx--checkbox-label">
+                <label htmlFor={`${i.id}-checkbox`} className="bx--checkbox-label">
                   <input
                     data-event="select"
                     id={`${i.id}-checkbox`}
@@ -123,17 +141,14 @@ class Table extends Component {
                     type="checkbox"
                     checked={view.table.selectedIds.includes(i.id)}
                     onClick={() =>
-                      actions.table.onRowSelected(
-                        i.id,
-                        !view.table.selectedIds.includes(i.id)
-                      )
+                      actions.table.onRowSelected(i.id, !view.table.selectedIds.includes(i.id))
                     }
                   />
                 </label>
               </td>
             ) : null}
             {columns.map(col => (
-              <td>{i.values[col.id]}</td>
+              <td key={col.id}>{i.values[col.id]}</td>
             ))}
           </tr>
         ))}

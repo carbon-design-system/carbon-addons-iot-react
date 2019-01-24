@@ -2,19 +2,24 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Button } from 'carbon-components-react';
 
+import { defaultFunction } from '../../../utils/componentUtilityFunctions';
+
 const propTypes = {
   /** Array with objects (id, name and size) */
   selectedItemCount: PropTypes.number.isRequired,
-  onBatchCancel: PropTypes.function.isRequired,
-  onBatchDelete: PropTypes.function.isRequired,
+  onBatchCancel: PropTypes.func,
+  onBatchDelete: PropTypes.func,
+};
+
+const defaultProps = {
+  onBatchCancel: defaultFunction,
+  onBatchDelete: defaultFunction,
 };
 
 const Toolbar = ({ selectedItemCount, onBatchCancel, onBatchDelete }) => {
   const batch = (
     <div
-      className={`bx--batch-actions ${
-        selectedItemCount > 0 ? 'bx--batch-actions--active' : ''
-      }`}
+      className={`bx--batch-actions ${selectedItemCount > 0 ? 'bx--batch-actions--active' : ''}`}
       aria-label="Table Action Bar">
       <div className="bx--action-list">
         <Button onClick={() => onBatchDelete()}>Delete</Button>
@@ -25,10 +30,7 @@ const Toolbar = ({ selectedItemCount, onBatchCancel, onBatchDelete }) => {
           &nbsp;
           {`item${selectedItemCount === 1 ? '' : 's'} selected`}
         </p>
-        <button
-          type="button"
-          onClick={() => onBatchCancel()}
-          className="bx--batch-summary__cancel">
+        <button type="button" onClick={() => onBatchCancel()} className="bx--batch-summary__cancel">
           Cancel
         </button>
       </div>
@@ -37,24 +39,14 @@ const Toolbar = ({ selectedItemCount, onBatchCancel, onBatchDelete }) => {
   const tools = (
     <React.Fragment>
       <div className="bx--toolbar-search-container">
-        <div
-          data-search
-          className="bx--search bx--search--sm bx--search--light"
-          role="search">
-          <svg
-            className="bx--search-magnifier"
-            width="16"
-            height="16"
-            viewBox="0 0 16 16">
+        <div data-search className="bx--search bx--search--sm bx--search--light" role="search">
+          <svg className="bx--search-magnifier" width="16" height="16" viewBox="0 0 16 16">
             <path
               d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zm4.936-1.27l4.563 4.557-.707.708-4.563-4.558a6.5 6.5 0 1 1 .707-.707z"
               fillRule="nonzero"
             />
           </svg>
-          <label
-            id="search-input-label-1"
-            className="bx--label"
-            htmlFor="search__input-2">
+          <label id="search-input-label-1" className="bx--label" htmlFor="search__input-2">
             Search
             <input
               className="bx--search-input"
@@ -69,11 +61,7 @@ const Toolbar = ({ selectedItemCount, onBatchCancel, onBatchDelete }) => {
             className="bx--search-close bx--search-close--hidden"
             title="Clear search input"
             aria-label="Clear search input">
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 16 16"
-              xmlns="http://www.w3.org/2000/svg">
+            <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
               <path
                 d="M8 6.586L5.879 4.464 4.464 5.88 6.586 8l-2.122 2.121 1.415 1.415L8 9.414l2.121 2.122 1.415-1.415L9.414 8l2.122-2.121-1.415-1.415L8 6.586zM8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"
                 fillRule="evenodd"
@@ -127,5 +115,6 @@ const Toolbar = ({ selectedItemCount, onBatchCancel, onBatchDelete }) => {
 };
 
 Toolbar.propTypes = propTypes;
+Toolbar.defaultProps = defaultProps;
 
 export default Toolbar;

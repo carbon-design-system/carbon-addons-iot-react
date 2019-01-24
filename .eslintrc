@@ -43,7 +43,8 @@
           "location",
           "match",
           "history",
-          "input"
+          "input",
+          "className"
         ]
       }
     ],
@@ -75,14 +76,10 @@
       "files": [
         "**/*-fixture.{js,jsx}",
         "**/*-test.{js,jsx}",
-        "**/*-story.{js,jsx}",
-        "cosmos.proxies.js"
+        "**/*-story.{js,jsx}"
       ],
       "rules": {
-        "import/no-extraneous-dependencies": [
-          "error",
-          { "devDependencies": true }
-        ],
+        "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
         "no-underscore-dangle": 0,
         "no-shadow": 0,
         "no-console": 0,
