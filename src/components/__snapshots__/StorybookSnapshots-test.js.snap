@@ -12267,7 +12267,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
               className="bx--action-list"
             >
               <button
-                className="bx--btn bx--btn--primary"
+                className="bx--action-list__delete bx--btn bx--btn--primary"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
@@ -12421,6 +12421,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select-all"
                     id="select-all"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -12532,10 +12533,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     </label>
                     <select
                       className="bx--select-input"
-                      defaultValue="placeholder-item"
                       id="select"
                       onChange={[Function]}
-                      value=""
+                      value="placeholder-item"
                     >
                       <option
                         className="bx--select-option"
@@ -12631,6 +12631,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-1-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -12660,6 +12661,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-2-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -12689,6 +12691,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-3-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -12718,6 +12721,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-4-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -12747,6 +12751,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-5-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -12776,6 +12781,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-6-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -12805,6 +12811,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-7-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -12834,6 +12841,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-8-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -12863,6 +12871,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-9-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -12892,6 +12901,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-10-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -12921,6 +12931,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-11-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -12950,6 +12961,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-12-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -12979,6 +12991,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-13-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -13008,6 +13021,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-14-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -13037,6 +13051,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-15-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -13066,6 +13081,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-16-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -13095,6 +13111,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-17-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -13124,6 +13141,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-18-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -13153,6 +13171,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-19-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -13182,6 +13201,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-20-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -13211,6 +13231,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-21-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -13240,6 +13261,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-22-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -13269,6 +13291,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-23-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -13298,6 +13321,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-24-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -13327,6 +13351,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-25-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -13356,6 +13381,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-26-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -13385,6 +13411,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-27-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -13414,6 +13441,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-28-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -13443,6 +13471,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-29-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -13472,6 +13501,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-30-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -13501,6 +13531,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-31-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -13530,6 +13561,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-32-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -13559,6 +13591,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-33-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -13588,6 +13621,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-34-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -13617,6 +13651,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-35-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -13646,6 +13681,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-36-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -13675,6 +13711,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-37-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -13704,6 +13741,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-38-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -13733,6 +13771,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-39-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -13762,6 +13801,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-40-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -13791,6 +13831,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-41-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -13820,6 +13861,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-42-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -13849,6 +13891,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-43-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -13878,6 +13921,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-44-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -13907,6 +13951,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-45-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -13936,6 +13981,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-46-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -13965,6 +14011,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-47-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -13994,6 +14041,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-48-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -14023,6 +14071,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-49-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -14052,6 +14101,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-50-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -14081,6 +14131,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-51-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -14110,6 +14161,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-52-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -14139,6 +14191,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-53-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -14168,6 +14221,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-54-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -14197,6 +14251,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-55-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -14226,6 +14281,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-56-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -14255,6 +14311,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-57-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -14284,6 +14341,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-58-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -14313,6 +14371,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-59-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -14342,6 +14401,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-60-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -14371,6 +14431,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-61-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -14400,6 +14461,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-62-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -14429,6 +14491,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-63-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -14458,6 +14521,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-64-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -14487,6 +14551,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-65-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -14516,6 +14581,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-66-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -14545,6 +14611,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-67-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -14574,6 +14641,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-68-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -14603,6 +14671,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-69-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -14632,6 +14701,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-70-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -14661,6 +14731,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-71-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -14690,6 +14761,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-72-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -14719,6 +14791,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-73-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -14748,6 +14821,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-74-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -14777,6 +14851,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-75-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -14806,6 +14881,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-76-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -14835,6 +14911,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-77-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -14864,6 +14941,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-78-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -14893,6 +14971,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-79-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -14922,6 +15001,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-80-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -14951,6 +15031,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-81-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -14980,6 +15061,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-82-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -15009,6 +15091,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-83-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -15038,6 +15121,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-84-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -15067,6 +15151,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-85-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -15096,6 +15181,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-86-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -15125,6 +15211,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-87-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -15154,6 +15241,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-88-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -15183,6 +15271,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-89-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -15212,6 +15301,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-90-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -15241,6 +15331,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-91-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -15270,6 +15361,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-92-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -15299,6 +15391,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-93-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -15328,6 +15421,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-94-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -15357,6 +15451,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-95-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -15386,6 +15481,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-96-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -15415,6 +15511,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-97-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -15444,6 +15541,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-98-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -15473,6 +15571,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-99-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -15845,7 +15944,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table pagination
               className="bx--action-list"
             >
               <button
-                className="bx--btn bx--btn--primary"
+                className="bx--action-list__delete bx--btn bx--btn--primary"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
@@ -15999,6 +16098,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table pagination
                     className="bx--checkbox"
                     data-event="select-all"
                     id="select-all"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -16007,22 +16107,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table pagination
               <th>
                 <span
                   className="bx--table-header-label"
-                />
+                >
+                  String
+                </span>
               </th>
               <th>
                 <span
                   className="bx--table-header-label"
-                />
+                >
+                  Date
+                </span>
               </th>
               <th>
                 <span
                   className="bx--table-header-label"
-                />
+                >
+                  Select
+                </span>
               </th>
               <th>
                 <span
                   className="bx--table-header-label"
-                />
+                >
+                  number
+                </span>
               </th>
             </tr>
           </thead>
@@ -16038,6 +16146,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table pagination
                     className="bx--checkbox"
                     data-event="select"
                     id="row-1-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -16067,6 +16176,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table pagination
                     className="bx--checkbox"
                     data-event="select"
                     id="row-2-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -16096,6 +16206,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table pagination
                     className="bx--checkbox"
                     data-event="select"
                     id="row-3-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -16125,6 +16236,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table pagination
                     className="bx--checkbox"
                     data-event="select"
                     id="row-4-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -16154,6 +16266,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table pagination
                     className="bx--checkbox"
                     data-event="select"
                     id="row-5-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -16183,6 +16296,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table pagination
                     className="bx--checkbox"
                     data-event="select"
                     id="row-6-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -16212,6 +16326,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table pagination
                     className="bx--checkbox"
                     data-event="select"
                     id="row-7-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -16241,6 +16356,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table pagination
                     className="bx--checkbox"
                     data-event="select"
                     id="row-8-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -16270,6 +16386,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table pagination
                     className="bx--checkbox"
                     data-event="select"
                     id="row-9-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -16874,7 +16991,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
               className="bx--action-list"
             >
               <button
-                className="bx--btn bx--btn--primary"
+                className="bx--action-list__delete bx--btn bx--btn--primary"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
@@ -17028,6 +17145,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select-all"
                     id="select-all"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -17036,22 +17154,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
               <th>
                 <span
                   className="bx--table-header-label"
-                />
+                >
+                  String
+                </span>
               </th>
               <th>
                 <span
                   className="bx--table-header-label"
-                />
+                >
+                  Date
+                </span>
               </th>
               <th>
                 <span
                   className="bx--table-header-label"
-                />
+                >
+                  Select
+                </span>
               </th>
               <th>
                 <span
                   className="bx--table-header-label"
-                />
+                >
+                  number
+                </span>
               </th>
             </tr>
           </thead>
@@ -17067,6 +17193,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-1-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -17096,6 +17223,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-2-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -17125,6 +17253,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-3-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -17154,6 +17283,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-4-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -17183,6 +17313,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-5-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -17212,6 +17343,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-6-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -17241,6 +17373,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-7-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -17270,6 +17403,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-8-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -17299,6 +17433,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-9-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -17328,6 +17463,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-10-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -17357,6 +17493,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-11-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -17386,6 +17523,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-12-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -17415,6 +17553,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-13-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -17444,6 +17583,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-14-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -17473,6 +17613,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-15-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -17502,6 +17643,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-16-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -17531,6 +17673,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-17-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -17560,6 +17703,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-18-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -17589,6 +17733,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-19-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -17618,6 +17763,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-20-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -17647,6 +17793,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-21-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -17676,6 +17823,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-22-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -17705,6 +17853,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-23-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -17734,6 +17883,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-24-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -17763,6 +17913,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-25-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -17792,6 +17943,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-26-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -17821,6 +17973,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-27-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -17850,6 +18003,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-28-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -17879,6 +18033,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-29-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -17908,6 +18063,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-30-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -17937,6 +18093,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-31-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -17966,6 +18123,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-32-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -17995,6 +18153,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-33-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -18024,6 +18183,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-34-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -18053,6 +18213,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-35-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -18082,6 +18243,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-36-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -18111,6 +18273,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-37-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -18140,6 +18303,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-38-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -18169,6 +18333,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-39-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -18198,6 +18363,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-40-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -18227,6 +18393,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-41-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -18256,6 +18423,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-42-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -18285,6 +18453,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-43-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -18314,6 +18483,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-44-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -18343,6 +18513,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-45-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -18372,6 +18543,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-46-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -18401,6 +18573,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-47-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -18430,6 +18603,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-48-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -18459,6 +18633,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-49-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -18488,6 +18663,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-50-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -18517,6 +18693,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-51-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -18546,6 +18723,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-52-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -18575,6 +18753,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-53-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -18604,6 +18783,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-54-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -18633,6 +18813,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-55-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -18662,6 +18843,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-56-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -18691,6 +18873,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-57-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -18720,6 +18903,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-58-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -18749,6 +18933,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-59-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -18778,6 +18963,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-60-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -18807,6 +18993,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-61-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -18836,6 +19023,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-62-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -18865,6 +19053,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-63-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -18894,6 +19083,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-64-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -18923,6 +19113,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-65-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -18952,6 +19143,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-66-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -18981,6 +19173,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-67-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -19010,6 +19203,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-68-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -19039,6 +19233,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-69-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -19068,6 +19263,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-70-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -19097,6 +19293,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-71-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -19126,6 +19323,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-72-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -19155,6 +19353,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-73-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -19184,6 +19383,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-74-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -19213,6 +19413,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-75-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -19242,6 +19443,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-76-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -19271,6 +19473,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-77-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -19300,6 +19503,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-78-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -19329,6 +19533,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-79-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -19358,6 +19563,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-80-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -19387,6 +19593,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-81-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -19416,6 +19623,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-82-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -19445,6 +19653,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-83-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -19474,6 +19683,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-84-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -19503,6 +19713,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-85-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -19532,6 +19743,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-86-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -19561,6 +19773,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-87-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -19590,6 +19803,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-88-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -19619,6 +19833,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-89-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -19648,6 +19863,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-90-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -19677,6 +19893,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-91-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -19706,6 +19923,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-92-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -19735,6 +19953,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-93-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -19764,6 +19983,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-94-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -19793,6 +20013,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-95-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -19822,6 +20043,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-96-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -19851,6 +20073,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-97-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -19880,6 +20103,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-98-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />
@@ -19909,6 +20133,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                     className="bx--checkbox"
                     data-event="select"
                     id="row-99-checkbox"
+                    onChange={[Function]}
                     onClick={[Function]}
                     type="checkbox"
                   />

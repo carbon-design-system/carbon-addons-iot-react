@@ -22,7 +22,9 @@ const Toolbar = ({ selectedItemCount, onBatchCancel, onBatchDelete }) => {
       className={`bx--batch-actions ${selectedItemCount > 0 ? 'bx--batch-actions--active' : ''}`}
       aria-label="Table Action Bar">
       <div className="bx--action-list">
-        <Button onClick={() => onBatchDelete()}>Delete</Button>
+        <Button className="bx--action-list__delete" onClick={() => onBatchDelete()}>
+          Delete
+        </Button>
       </div>
       <div className="bx--batch-summary">
         <p className="bx--batch-summary__para">

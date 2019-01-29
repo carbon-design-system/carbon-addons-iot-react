@@ -103,6 +103,7 @@ class Table extends Component {
                   className="bx--checkbox"
                   type="checkbox"
                   checked={view.table.isSelectAllSelected}
+                  onChange={() => {}}
                   onClick={() => actions.table.onSelectAll(!view.table.isSelectAllSelected)}
                 />
               </label>
@@ -140,6 +141,7 @@ class Table extends Component {
                     className="bx--checkbox"
                     type="checkbox"
                     checked={view.table.selectedIds.includes(i.id)}
+                    onChange={() => {}}
                     onClick={() =>
                       actions.table.onRowSelected(i.id, !view.table.selectedIds.includes(i.id))
                     }

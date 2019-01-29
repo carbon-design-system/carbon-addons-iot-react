@@ -54,6 +54,7 @@ class FilterHeaderRow extends Component {
   static defaultProps = {
     tableOptions: { hasRowSelection: true },
     isVisible: true,
+    onApplyFilter: defaultFunction,
   };
 
   // eslint-disable-next-line
@@ -89,18 +90,22 @@ class FilterHeaderRow extends Component {
                 id={column.id}
                 labelText={column.id}
                 hideLabel
-                defaultValue="placeholder-item"
+                // defaultValue="placeholder-item"
                 onChange={event => {
-                  console.log(event);
+                  // Remove the synthetic event from the pool and allow
+                  // async references to the event properties.
+                  // https://reactjs.org/docs/events.html#event-pooling
+                  event.persist();
+
                   this.setState(
                     state => ({
                       ...state,
-                      [column.id]: event.value,
+                      [column.id]: event.target.value,
                     }),
                     this.handleApplyFilter
                   );
                 }}
-                value={this.state[column.id]} // eslint-disable-line react/destructuring-assignment
+                value={this.state[column.id] || 'placeholder-item'} // eslint-disable-line react/destructuring-assignment
               >
                 <SelectItem disabled hidden value="placeholder-item" text="Choose an option" />
                 {column.options.map(option => (
