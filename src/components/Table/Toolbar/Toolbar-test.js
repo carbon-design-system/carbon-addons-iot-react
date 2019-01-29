@@ -12,7 +12,6 @@ describe('Toolbar', () => {
 
   test('handles batch delete', () => {
     const wrapper = mount(<Toolbar {...commonProps} />);
-    console.log(wrapper.debug());
     wrapper.find('button.bx--action-list__delete').simulate('click');
     expect(commonProps.onBatchDelete).toHaveBeenCalled();
   });
