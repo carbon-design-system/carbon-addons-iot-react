@@ -4,7 +4,20 @@ import update from 'immutability-helper';
 
 import Table from './Table';
 
-const selectData = ['Option A is an option', 'Option B is an option', 'Option C is an option'];
+const selectData = [
+  {
+    id: 'option-A',
+    text: 'option-A',
+  },
+  {
+    id: 'option-B',
+    text: 'option-B',
+  },
+  {
+    id: 'option-C',
+    text: 'option-C',
+  },
+];
 const tableColumns = [
   {
     id: 'string',
@@ -26,7 +39,7 @@ const tableColumns = [
   },
   {
     id: 'number',
-    name: 'number',
+    name: 'Number',
     size: 1,
     filter: { placeholderText: 'pick a number' },
   },
@@ -53,8 +66,8 @@ const tableData = Array(100)
     id: `row-${idx}`,
     values: {
       string: getSentence(idx),
-      date: new Date(1000000 + idx * idx).toISOString(),
-      select: selectData[idx % 2],
+      date: new Date(100000000000 + 1000000000 * idx * idx).toISOString(),
+      select: selectData[idx % 3].id,
       number: idx * idx,
     },
   }));
@@ -267,6 +280,16 @@ class TableFilter extends Component {
         toolbar: {
           activeBar: 'filter',
         },
+        filters: [
+          {
+            columnId: 'string',
+            value: 'whiteboard',
+          },
+          {
+            columnId: 'select',
+            value: 'option-B',
+          },
+        ],
         table: {
           isSelectAllSelected: false,
           selectedIds: [],
@@ -277,9 +300,38 @@ class TableFilter extends Component {
 
   render = () => {
     const { columns, data, options, view } = this.state;
+    const filteredData = data.filter(({ values }) =>
+      // return false if a value doesn't match a valid filter
+      view.filters.reduce(
+        (acc, { columnId, value }) => acc && values[columnId].toString().includes(value),
+        true
+      )
+    );
+    console.log(filteredData);
     const actions = {
       toolbar: {
-        onApplyFilter: filter => console.log(JSON.stringify(filter, null, 4)),
+        onApplyFilter: filterValues => {
+          const newFilters = Object.entries(filterValues)
+            .map(([key, value]) =>
+              value !== ''
+                ? {
+                    columnId: key,
+                    value,
+                  }
+                : null
+            )
+            .filter(i => i);
+          console.log(newFilters);
+          this.setState(state =>
+            update(state, {
+              view: {
+                filters: {
+                  $set: newFilters,
+                },
+              },
+            })
+          );
+        },
         onBatchCancel: () => {
           this.setState(state =>
             update(state, {
@@ -348,7 +400,15 @@ class TableFilter extends Component {
         },
       },
     };
-    return <Table columns={columns} data={data} options={options} view={view} actions={actions} />;
+    return (
+      <Table
+        columns={columns}
+        data={filteredData}
+        options={options}
+        view={view}
+        actions={actions}
+      />
+    );
   };
 }
 

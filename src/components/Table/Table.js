@@ -15,7 +15,12 @@ const propTypes = {
       size: PropTypes.number.isRequired,
       filter: PropTypes.shape({
         placeholderText: PropTypes.string,
-        options: PropTypes.arrayOf(PropTypes.string),
+        options: PropTypes.arrayOf(
+          PropTypes.shape({
+            id: PropTypes.string.isRequired,
+            text: PropTypes.string.isRequired,
+          })
+        ),
       }),
     })
   ).isRequired,
@@ -36,6 +41,12 @@ const propTypes = {
       totalItems: PropTypes.number.isRequired,
       page: PropTypes.number.isRequired,
     }),
+    filters: PropTypes.arrayOf(
+      PropTypes.shape({
+        columnId: PropTypes.string.isRequired,
+        value: PropTypes.string.isRequired,
+      })
+    ),
     toolbar: PropTypes.shape({
       // if not provided, no bar is visible
       activeBar: PropTypes.oneOf(['filter'], ['column']),
@@ -86,16 +97,18 @@ class Table extends Component {
     const { columns, data, view, actions, options } = this.props;
     const minItemInView = view.pagination
       ? (view.pagination.page - 1) * view.pagination.itemsPerPage + 1
-      : 1;
+      : 0;
     const maxItemInView = view.pagination
       ? view.pagination.page * view.pagination.itemsPerPage
       : data.length;
     const visibleData = data.slice(minItemInView, maxItemInView);
+    const filterBarActive = options.hasFilter && view.toolbar.activeBar === 'filter';
+    const filterBarActiveStyle = { paddingTop: 16 };
     const header = (
       <thead>
         <tr>
           {options.hasRowSelection ? (
-            <th>
+            <th style={filterBarActive === true ? filterBarActiveStyle : {}}>
               <label htmlFor="select-all" className="bx--checkbox-label">
                 <input
                   data-event="select-all"
@@ -110,18 +123,19 @@ class Table extends Component {
             </th>
           ) : null}
           {columns.map(column => (
-            <th key={column.id}>
+            <th style={filterBarActive === true ? filterBarActiveStyle : {}}>
               <span className="bx--table-header-label">{column.name}</span>
             </th>
           ))}
         </tr>
-        {options.hasFilter && view.toolbar.activeBar === 'filter' && (
+        {filterBarActive && (
           <FilterHeaderRow
             columns={columns.map(column => ({
               ...column.filter,
               id: column.id,
               isFilterable: !isNil(column.filter),
             }))}
+            filters={view.filters}
             tableOptions={options}
             onApplyFilter={actions.toolbar.onApplyFilter}
           />

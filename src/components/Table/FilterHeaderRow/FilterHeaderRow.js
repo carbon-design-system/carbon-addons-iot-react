@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { DataTable, TextInput, Select, SelectItem } from 'carbon-components-react';
+import { ComboBox, DataTable, TextInput } from 'carbon-components-react';
 import styled from 'styled-components';
 
 import { defaultFunction, handleEnterKeyDown } from '../../../utils/componentUtilityFunctions';
@@ -15,6 +15,14 @@ const {
   // TableContainer,
 } = DataTable;
 
+const StyledTableRow = styled(TableRow)`
+  &&& {
+    th {
+      padding-top: 0.5rem;
+      padding-bottom: 1.5rem;
+    }
+  }
+`;
 const StyledTableHeader = styled(TableHeader)`
   &&& {
     border-top: none;
@@ -28,6 +36,11 @@ const StyledTableHeader = styled(TableHeader)`
     }
   }
 `;
+const StyledTextInput = styled(TextInput)`
+  &&& {
+    background-color: white;
+  }
+`;
 class FilterHeaderRow extends Component {
   static propTypes = {
     columns: PropTypes.arrayOf(
@@ -38,9 +51,21 @@ class FilterHeaderRow extends Component {
         /** i18N text for translation */
         placeholderText: PropTypes.string,
         /** if options is empty array, assume text input for filter */
-        options: PropTypes.arrayOf(PropTypes.string),
+        options: PropTypes.arrayOf(
+          PropTypes.shape({
+            id: PropTypes.string.isRequired,
+            text: PropTypes.string.isRequired,
+          })
+        ),
       })
     ).isRequired,
+    /** Callback when filter is applied sends object of keys and values with the filter values */
+    filters: PropTypes.arrayOf(
+      PropTypes.shape({
+        columnId: PropTypes.string.isRequired,
+        value: PropTypes.string.isRequired,
+      })
+    ),
     /** Callback when filter is applied sends object of keys and values with the filter values */
     onApplyFilter: PropTypes.func,
     /** properties global to the table */
@@ -53,18 +78,21 @@ class FilterHeaderRow extends Component {
 
   static defaultProps = {
     tableOptions: { hasRowSelection: true },
+    filters: [],
     isVisible: true,
     onApplyFilter: defaultFunction,
   };
 
-  // eslint-disable-next-line
-  state = this.props.columns.reduce(
-    (acc, curr) => ({
-      ...acc,
-      [curr.id]: '',
-    }),
-    {}
-  );
+  constructor(props) {
+    super(props);
+    this.state = props.columns.reduce(
+      (acc, curr) => ({
+        ...acc,
+        [curr.id]: (props.filters.find(i => i.columnId === curr.id) || { value: '' }).value,
+      }),
+      {}
+    );
+  }
 
   /**
    * take the state with the filter values and send to our listener
@@ -81,43 +109,33 @@ class FilterHeaderRow extends Component {
       isVisible,
     } = this.props;
     return isVisible ? (
-      <TableRow>
+      <StyledTableRow>
         {hasRowSelection ? <StyledTableHeader /> : null}
         {columns.map(column => (
           <StyledTableHeader key={`FilterHeader${column.id}`}>
             {column.options ? (
-              <Select
-                id={column.id}
-                labelText={column.id}
-                hideLabel
-                // defaultValue="placeholder-item"
-                onChange={event => {
-                  // Remove the synthetic event from the pool and allow
-                  // async references to the event properties.
-                  // https://reactjs.org/docs/events.html#event-pooling
-                  event.persist();
-
+              <ComboBox
+                items={column.options}
+                itemToString={item => (item ? item.text : '')}
+                initialSelectedItem={{
+                  id: this.state[column.id], // eslint-disable-line react/destructuring-assignment
+                  text: (column.options.find(i => i.id === this.state[column.id]) || { text: '' }) // eslint-disable-line react/destructuring-assignment
+                    .text,
+                }}
+                placeholder={column.placeholderText || 'Choose an option'}
+                onChange={evt => {
                   this.setState(
                     state => ({
                       ...state,
-                      [column.id]: event.target.value,
+                      [column.id]: evt.selectedItem === null ? '' : evt.selectedItem.id,
                     }),
                     this.handleApplyFilter
                   );
                 }}
-                value={this.state[column.id] || 'placeholder-item'} // eslint-disable-line react/destructuring-assignment
-              >
-                <SelectItem disabled hidden value="placeholder-item" text="Choose an option" />
-                {column.options.map(option => (
-                  <SelectItem
-                    key={`StyledHeaderSelectItem-${option}`}
-                    text={option}
-                    value={option}
-                  />
-                ))}
-              </Select>
+                light
+              />
             ) : (
-              <TextInput
+              <StyledTextInput
                 id={column.id}
                 labelText={column.id}
                 hideLabel
@@ -130,7 +148,7 @@ class FilterHeaderRow extends Component {
             )}
           </StyledTableHeader>
         ))}
-      </TableRow>
+      </StyledTableRow>
     ) : null;
   }
 }
