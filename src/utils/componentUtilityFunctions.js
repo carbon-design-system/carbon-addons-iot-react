@@ -20,6 +20,5 @@ export const handleEnterKeyDown = (evt, callback) => {
 };
 
 export const defaultFunction = name => {
-  console.log(this);
   console.error(`${name} not implemented`);
 };

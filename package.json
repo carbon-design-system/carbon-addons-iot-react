@@ -30,9 +30,6 @@
     }
   },
   "dependencies": {
-    "carbon-components": "9.66.3",
-    "carbon-components-react": "6.83.2",
-    "carbon-icons": "7.0.7",
     "classnames": "^2.2.5",
     "lodash": "^4.17.11",
     "polished": "^2.3.3",

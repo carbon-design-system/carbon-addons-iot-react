@@ -3786,10 +3786,10 @@ capture-stack-trace@^1.0.0:
   resolved "https://registry.yarnpkg.com/capture-stack-trace/-/capture-stack-trace-1.0.1.tgz#a6c0bbe1f38f3aa0b92238ecb6ff42c344d4135d"
   integrity sha512-mYQLZnx5Qt1JgB1WEiMCf2647plpGeQ2NMR/5L0HNZzGQo4fuSPnK+wjfPnKZV0aiJDgzmWqqkV/g7JD+DW0qw==
 
-carbon-components-react@6.74.1:
-  version "6.74.1"
-  resolved "https://registry.yarnpkg.com/carbon-components-react/-/carbon-components-react-6.74.1.tgz#74a141e847cc09b60a348891d9cde6b86b380af6"
-  integrity sha512-qM88G72gYaFCMNlRanvTHSqEX5rzv5M0ZIGE78aLnc5C/Yxb4KzGmx4QD4X1d5mxi3FMMqxwu56+WH24wiP8/Q==
+carbon-components-react@6.83.2:
+  version "6.83.2"
+  resolved "https://registry.yarnpkg.com/carbon-components-react/-/carbon-components-react-6.83.2.tgz#fe1e4b94c3c20f04309b73c2da183b8ad350c28c"
+  integrity sha512-CJgzPnOlWsF17CxNLYuOnBtUJE8AYfseWIlDkXpKUVg2sRePWSS1rIpT1yxCyFkeCWyOZW9np3uVL7l2R2Td2A==
   dependencies:
     "@carbon/icons-react" "^0.0.1-alpha.26"
     classnames "2.2.6"
