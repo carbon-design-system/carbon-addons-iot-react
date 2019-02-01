@@ -12227,16 +12227,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots ButtonEnhanced n
 `;
 
 exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`] = `
-.c0.c0.c0 {
+.c0.c0.c0 th {
+  padding-top: 0.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.c1.c1.c1 {
   border-top: none;
 }
 
-.c0.c0.c0 .bx--form-item {
+.c1.c1.c1 .bx--form-item {
   display: table-cell;
 }
 
-.c0.c0.c0 .bx--form-item input {
+.c1.c1.c1 .bx--form-item input {
   min-width: 12.75rem;
+}
+
+.c2.c2.c2 {
+  background-color: white;
 }
 
 <div>
@@ -12411,7 +12420,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
         >
           <thead>
             <tr>
-              <th>
+              <th
+                style={
+                  Object {
+                    "paddingTop": 16,
+                  }
+                }
+              >
                 <label
                   className="bx--checkbox-label"
                   htmlFor="select-all"
@@ -12427,42 +12442,68 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                   />
                 </label>
               </th>
-              <th>
+              <th
+                style={
+                  Object {
+                    "paddingTop": 16,
+                  }
+                }
+              >
                 <span
                   className="bx--table-header-label"
                 >
                   String
                 </span>
               </th>
-              <th>
+              <th
+                style={
+                  Object {
+                    "paddingTop": 16,
+                  }
+                }
+              >
                 <span
                   className="bx--table-header-label"
                 >
                   Date
                 </span>
               </th>
-              <th>
+              <th
+                style={
+                  Object {
+                    "paddingTop": 16,
+                  }
+                }
+              >
                 <span
                   className="bx--table-header-label"
                 >
                   Select
                 </span>
               </th>
-              <th>
+              <th
+                style={
+                  Object {
+                    "paddingTop": 16,
+                  }
+                }
+              >
                 <span
                   className="bx--table-header-label"
                 >
-                  number
+                  Number
                 </span>
               </th>
             </tr>
-            <tr>
+            <tr
+              className="c0"
+            >
               <th
-                className="c0"
+                className="c1"
                 scope="col"
               />
               <th
-                className="c0"
+                className="c1"
                 scope="col"
               >
                 <div
@@ -12475,7 +12516,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     string
                   </label>
                   <input
-                    className="bx--text-input bx--text__input"
+                    className="bx--text-input c2"
                     disabled={false}
                     id="string"
                     onBlur={[Function]}
@@ -12484,12 +12525,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     onKeyDown={[Function]}
                     placeholder="pick a string"
                     type="text"
-                    value=""
+                    value="whiteboard"
                   />
                 </div>
               </th>
               <th
-                className="c0"
+                className="c1"
                 scope="col"
               >
                 <div
@@ -12502,7 +12543,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     date
                   </label>
                   <input
-                    className="bx--text-input bx--text__input"
+                    className="bx--text-input c2"
                     disabled={false}
                     id="date"
                     onBlur={[Function]}
@@ -12516,82 +12557,98 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                 </div>
               </th>
               <th
-                className="c0"
+                className="c1"
                 scope="col"
               >
                 <div
-                  className="bx--form-item"
+                  aria-label="Choose an item"
+                  className="bx--combo-box bx--list-box bx--list-box--light"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="listbox"
+                  tabIndex="0"
                 >
                   <div
-                    className="bx--select"
+                    aria-expanded={false}
+                    aria-haspopup={true}
+                    aria-label="open menu"
+                    className="bx--list-box__field"
+                    data-toggle={true}
+                    disabled={false}
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onKeyDown={[Function]}
+                    role="button"
+                    tabIndex="0"
+                    type="button"
                   >
-                    <label
-                      className="bx--label bx--visually-hidden"
-                      htmlFor="select"
-                    >
-                      select
-                    </label>
-                    <select
-                      className="bx--select-input"
-                      id="select"
+                    <input
+                      aria-activedescendant={null}
+                      aria-autocomplete="list"
+                      aria-expanded={false}
+                      aria-label="ListBox input field"
+                      autoComplete="off"
+                      className="bx--text-input"
+                      disabled={false}
+                      id="downshift-0-input"
+                      onBlur={[Function]}
                       onChange={[Function]}
-                      value="placeholder-item"
+                      onKeyDown={[Function]}
+                      placeholder="pick an option"
+                      role="combobox"
+                      value="option-B"
+                    />
+                    <div
+                      className="bx--list-box__selection"
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      role="button"
+                      tabIndex="0"
+                      title="Clear selected item"
                     >
-                      <option
-                        className="bx--select-option"
-                        disabled={true}
-                        hidden={true}
-                        value="placeholder-item"
+                      <svg
+                        alt="Clear selected item"
+                        aria-label="Clear selected item"
+                        fillRule="evenodd"
+                        focusable="false"
+                        height="10"
+                        role="img"
+                        viewBox="0 0 10 10"
+                        width="10"
                       >
-                        Choose an option
-                      </option>
-                      <option
-                        className="bx--select-option"
-                        disabled={false}
-                        hidden={false}
-                        value="Option A is an option"
-                      >
-                        Option A is an option
-                      </option>
-                      <option
-                        className="bx--select-option"
-                        disabled={false}
-                        hidden={false}
-                        value="Option B is an option"
-                      >
-                        Option B is an option
-                      </option>
-                      <option
-                        className="bx--select-option"
-                        disabled={false}
-                        hidden={false}
-                        value="Option C is an option"
-                      >
-                        Option C is an option
-                      </option>
-                    </select>
-                    <svg
-                      alt="open list of options"
-                      aria-label="open list of options"
-                      className="bx--select__arrow"
-                      fillRule="evenodd"
-                      height="5"
-                      role="img"
-                      viewBox="0 0 10 5"
-                      width="10"
+                        <title>
+                          Clear selected item
+                        </title>
+                        <path
+                          d="M6.32 5L10 8.68 8.68 10 5 6.32 1.32 10 0 8.68 3.68 5 0 1.32 1.32 0 5 3.68 8.68 0 10 1.32 6.32 5z"
+                        />
+                      </svg>
+                    </div>
+                    <div
+                      className="bx--list-box__menu-icon"
                     >
-                      <title>
-                        open list of options
-                      </title>
-                      <path
-                        d="M0 0l5 4.998L10 0z"
-                      />
-                    </svg>
+                      <svg
+                        alt="Open menu"
+                        aria-label="Open menu"
+                        fillRule="evenodd"
+                        height="5"
+                        role="img"
+                        viewBox="0 0 10 5"
+                        width="10"
+                      >
+                        <title>
+                          Open menu
+                        </title>
+                        <path
+                          d="M0 0l5 4.998L10 0z"
+                        />
+                      </svg>
+                    </div>
                   </div>
                 </div>
               </th>
               <th
-                className="c0"
+                className="c1"
                 scope="col"
               >
                 <div
@@ -12604,7 +12661,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                     number
                   </label>
                   <input
-                    className="bx--text-input bx--text__input"
+                    className="bx--text-input c2"
                     disabled={false}
                     id="number"
                     onBlur={[Function]}
@@ -12641,73 +12698,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                 helping whiteboard as
               </td>
               <td>
-                1970-01-01T00:16:40.001Z
+                1973-03-14T23:33:20.000Z
               </td>
               <td>
-                Option B is an option
+                option-B
               </td>
               <td>
                 1
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label
-                  className="bx--checkbox-label"
-                  htmlFor="row-2-checkbox"
-                >
-                  <input
-                    checked={false}
-                    className="bx--checkbox"
-                    data-event="select"
-                    id="row-2-checkbox"
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    type="checkbox"
-                  />
-                </label>
-              </td>
-              <td>
-                whiteboard can eat
-              </td>
-              <td>
-                1970-01-01T00:16:40.004Z
-              </td>
-              <td>
-                Option A is an option
-              </td>
-              <td>
-                4
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label
-                  className="bx--checkbox-label"
-                  htmlFor="row-3-checkbox"
-                >
-                  <input
-                    checked={false}
-                    className="bx--checkbox"
-                    data-event="select"
-                    id="row-3-checkbox"
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    type="checkbox"
-                  />
-                </label>
-              </td>
-              <td>
-                as eat scott
-              </td>
-              <td>
-                1970-01-01T00:16:40.009Z
-              </td>
-              <td>
-                Option B is an option
-              </td>
-              <td>
-                9
               </td>
             </tr>
             <tr>
@@ -12731,343 +12728,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                 can pinocchio whiteboard
               </td>
               <td>
-                1970-01-01T00:16:40.016Z
+                1973-09-04T14:13:20.000Z
               </td>
               <td>
-                Option A is an option
+                option-B
               </td>
               <td>
                 16
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label
-                  className="bx--checkbox-label"
-                  htmlFor="row-5-checkbox"
-                >
-                  <input
-                    checked={false}
-                    className="bx--checkbox"
-                    data-event="select"
-                    id="row-5-checkbox"
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    type="checkbox"
-                  />
-                </label>
-              </td>
-              <td>
-                bottle toyota bottle
-              </td>
-              <td>
-                1970-01-01T00:16:40.025Z
-              </td>
-              <td>
-                Option B is an option
-              </td>
-              <td>
-                25
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label
-                  className="bx--checkbox-label"
-                  htmlFor="row-6-checkbox"
-                >
-                  <input
-                    checked={false}
-                    className="bx--checkbox"
-                    data-event="select"
-                    id="row-6-checkbox"
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    type="checkbox"
-                  />
-                </label>
-              </td>
-              <td>
-                eat whiteboard pinocchio
-              </td>
-              <td>
-                1970-01-01T00:16:40.036Z
-              </td>
-              <td>
-                Option A is an option
-              </td>
-              <td>
-                36
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label
-                  className="bx--checkbox-label"
-                  htmlFor="row-7-checkbox"
-                >
-                  <input
-                    checked={false}
-                    className="bx--checkbox"
-                    data-event="select"
-                    id="row-7-checkbox"
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    type="checkbox"
-                  />
-                </label>
-              </td>
-              <td>
-                chocolate can helping
-              </td>
-              <td>
-                1970-01-01T00:16:40.049Z
-              </td>
-              <td>
-                Option B is an option
-              </td>
-              <td>
-                49
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label
-                  className="bx--checkbox-label"
-                  htmlFor="row-8-checkbox"
-                >
-                  <input
-                    checked={false}
-                    className="bx--checkbox"
-                    data-event="select"
-                    id="row-8-checkbox"
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    type="checkbox"
-                  />
-                </label>
-              </td>
-              <td>
-                pinocchio eat can
-              </td>
-              <td>
-                1970-01-01T00:16:40.064Z
-              </td>
-              <td>
-                Option A is an option
-              </td>
-              <td>
-                64
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label
-                  className="bx--checkbox-label"
-                  htmlFor="row-9-checkbox"
-                >
-                  <input
-                    checked={false}
-                    className="bx--checkbox"
-                    data-event="select"
-                    id="row-9-checkbox"
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    type="checkbox"
-                  />
-                </label>
-              </td>
-              <td>
-                scott pinocchio chocolate
-              </td>
-              <td>
-                1970-01-01T00:16:40.081Z
-              </td>
-              <td>
-                Option B is an option
-              </td>
-              <td>
-                81
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label
-                  className="bx--checkbox-label"
-                  htmlFor="row-10-checkbox"
-                >
-                  <input
-                    checked={false}
-                    className="bx--checkbox"
-                    data-event="select"
-                    id="row-10-checkbox"
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    type="checkbox"
-                  />
-                </label>
-              </td>
-              <td>
-                toyota toyota toyota
-              </td>
-              <td>
-                1970-01-01T00:16:40.100Z
-              </td>
-              <td>
-                Option A is an option
-              </td>
-              <td>
-                100
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label
-                  className="bx--checkbox-label"
-                  htmlFor="row-11-checkbox"
-                >
-                  <input
-                    checked={false}
-                    className="bx--checkbox"
-                    data-event="select"
-                    id="row-11-checkbox"
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    type="checkbox"
-                  />
-                </label>
-              </td>
-              <td>
-                helping whiteboard as
-              </td>
-              <td>
-                1970-01-01T00:16:40.121Z
-              </td>
-              <td>
-                Option B is an option
-              </td>
-              <td>
-                121
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label
-                  className="bx--checkbox-label"
-                  htmlFor="row-12-checkbox"
-                >
-                  <input
-                    checked={false}
-                    className="bx--checkbox"
-                    data-event="select"
-                    id="row-12-checkbox"
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    type="checkbox"
-                  />
-                </label>
-              </td>
-              <td>
-                whiteboard can eat
-              </td>
-              <td>
-                1970-01-01T00:16:40.144Z
-              </td>
-              <td>
-                Option A is an option
-              </td>
-              <td>
-                144
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label
-                  className="bx--checkbox-label"
-                  htmlFor="row-13-checkbox"
-                >
-                  <input
-                    checked={false}
-                    className="bx--checkbox"
-                    data-event="select"
-                    id="row-13-checkbox"
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    type="checkbox"
-                  />
-                </label>
-              </td>
-              <td>
-                as eat scott
-              </td>
-              <td>
-                1970-01-01T00:16:40.169Z
-              </td>
-              <td>
-                Option B is an option
-              </td>
-              <td>
-                169
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label
-                  className="bx--checkbox-label"
-                  htmlFor="row-14-checkbox"
-                >
-                  <input
-                    checked={false}
-                    className="bx--checkbox"
-                    data-event="select"
-                    id="row-14-checkbox"
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    type="checkbox"
-                  />
-                </label>
-              </td>
-              <td>
-                can pinocchio whiteboard
-              </td>
-              <td>
-                1970-01-01T00:16:40.196Z
-              </td>
-              <td>
-                Option A is an option
-              </td>
-              <td>
-                196
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label
-                  className="bx--checkbox-label"
-                  htmlFor="row-15-checkbox"
-                >
-                  <input
-                    checked={false}
-                    className="bx--checkbox"
-                    data-event="select"
-                    id="row-15-checkbox"
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    type="checkbox"
-                  />
-                </label>
-              </td>
-              <td>
-                bottle toyota bottle
-              </td>
-              <td>
-                1970-01-01T00:16:40.225Z
-              </td>
-              <td>
-                Option B is an option
-              </td>
-              <td>
-                225
               </td>
             </tr>
             <tr>
@@ -13091,163 +12758,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                 eat whiteboard pinocchio
               </td>
               <td>
-                1970-01-01T00:16:40.256Z
+                1981-04-13T08:53:20.000Z
               </td>
               <td>
-                Option A is an option
+                option-B
               </td>
               <td>
                 256
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label
-                  className="bx--checkbox-label"
-                  htmlFor="row-17-checkbox"
-                >
-                  <input
-                    checked={false}
-                    className="bx--checkbox"
-                    data-event="select"
-                    id="row-17-checkbox"
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    type="checkbox"
-                  />
-                </label>
-              </td>
-              <td>
-                chocolate can helping
-              </td>
-              <td>
-                1970-01-01T00:16:40.289Z
-              </td>
-              <td>
-                Option B is an option
-              </td>
-              <td>
-                289
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label
-                  className="bx--checkbox-label"
-                  htmlFor="row-18-checkbox"
-                >
-                  <input
-                    checked={false}
-                    className="bx--checkbox"
-                    data-event="select"
-                    id="row-18-checkbox"
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    type="checkbox"
-                  />
-                </label>
-              </td>
-              <td>
-                pinocchio eat can
-              </td>
-              <td>
-                1970-01-01T00:16:40.324Z
-              </td>
-              <td>
-                Option A is an option
-              </td>
-              <td>
-                324
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label
-                  className="bx--checkbox-label"
-                  htmlFor="row-19-checkbox"
-                >
-                  <input
-                    checked={false}
-                    className="bx--checkbox"
-                    data-event="select"
-                    id="row-19-checkbox"
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    type="checkbox"
-                  />
-                </label>
-              </td>
-              <td>
-                scott pinocchio chocolate
-              </td>
-              <td>
-                1970-01-01T00:16:40.361Z
-              </td>
-              <td>
-                Option B is an option
-              </td>
-              <td>
-                361
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label
-                  className="bx--checkbox-label"
-                  htmlFor="row-20-checkbox"
-                >
-                  <input
-                    checked={false}
-                    className="bx--checkbox"
-                    data-event="select"
-                    id="row-20-checkbox"
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    type="checkbox"
-                  />
-                </label>
-              </td>
-              <td>
-                toyota toyota toyota
-              </td>
-              <td>
-                1970-01-01T00:16:40.400Z
-              </td>
-              <td>
-                Option A is an option
-              </td>
-              <td>
-                400
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label
-                  className="bx--checkbox-label"
-                  htmlFor="row-21-checkbox"
-                >
-                  <input
-                    checked={false}
-                    className="bx--checkbox"
-                    data-event="select"
-                    id="row-21-checkbox"
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    type="checkbox"
-                  />
-                </label>
-              </td>
-              <td>
-                helping whiteboard as
-              </td>
-              <td>
-                1970-01-01T00:16:40.441Z
-              </td>
-              <td>
-                Option B is an option
-              </td>
-              <td>
-                441
               </td>
             </tr>
             <tr>
@@ -13271,253 +12788,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                 whiteboard can eat
               </td>
               <td>
-                1970-01-01T00:16:40.484Z
+                1988-07-04T06:13:20.000Z
               </td>
               <td>
-                Option A is an option
+                option-B
               </td>
               <td>
                 484
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label
-                  className="bx--checkbox-label"
-                  htmlFor="row-23-checkbox"
-                >
-                  <input
-                    checked={false}
-                    className="bx--checkbox"
-                    data-event="select"
-                    id="row-23-checkbox"
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    type="checkbox"
-                  />
-                </label>
-              </td>
-              <td>
-                as eat scott
-              </td>
-              <td>
-                1970-01-01T00:16:40.529Z
-              </td>
-              <td>
-                Option B is an option
-              </td>
-              <td>
-                529
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label
-                  className="bx--checkbox-label"
-                  htmlFor="row-24-checkbox"
-                >
-                  <input
-                    checked={false}
-                    className="bx--checkbox"
-                    data-event="select"
-                    id="row-24-checkbox"
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    type="checkbox"
-                  />
-                </label>
-              </td>
-              <td>
-                can pinocchio whiteboard
-              </td>
-              <td>
-                1970-01-01T00:16:40.576Z
-              </td>
-              <td>
-                Option A is an option
-              </td>
-              <td>
-                576
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label
-                  className="bx--checkbox-label"
-                  htmlFor="row-25-checkbox"
-                >
-                  <input
-                    checked={false}
-                    className="bx--checkbox"
-                    data-event="select"
-                    id="row-25-checkbox"
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    type="checkbox"
-                  />
-                </label>
-              </td>
-              <td>
-                bottle toyota bottle
-              </td>
-              <td>
-                1970-01-01T00:16:40.625Z
-              </td>
-              <td>
-                Option B is an option
-              </td>
-              <td>
-                625
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label
-                  className="bx--checkbox-label"
-                  htmlFor="row-26-checkbox"
-                >
-                  <input
-                    checked={false}
-                    className="bx--checkbox"
-                    data-event="select"
-                    id="row-26-checkbox"
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    type="checkbox"
-                  />
-                </label>
-              </td>
-              <td>
-                eat whiteboard pinocchio
-              </td>
-              <td>
-                1970-01-01T00:16:40.676Z
-              </td>
-              <td>
-                Option A is an option
-              </td>
-              <td>
-                676
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label
-                  className="bx--checkbox-label"
-                  htmlFor="row-27-checkbox"
-                >
-                  <input
-                    checked={false}
-                    className="bx--checkbox"
-                    data-event="select"
-                    id="row-27-checkbox"
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    type="checkbox"
-                  />
-                </label>
-              </td>
-              <td>
-                chocolate can helping
-              </td>
-              <td>
-                1970-01-01T00:16:40.729Z
-              </td>
-              <td>
-                Option B is an option
-              </td>
-              <td>
-                729
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label
-                  className="bx--checkbox-label"
-                  htmlFor="row-28-checkbox"
-                >
-                  <input
-                    checked={false}
-                    className="bx--checkbox"
-                    data-event="select"
-                    id="row-28-checkbox"
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    type="checkbox"
-                  />
-                </label>
-              </td>
-              <td>
-                pinocchio eat can
-              </td>
-              <td>
-                1970-01-01T00:16:40.784Z
-              </td>
-              <td>
-                Option A is an option
-              </td>
-              <td>
-                784
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label
-                  className="bx--checkbox-label"
-                  htmlFor="row-29-checkbox"
-                >
-                  <input
-                    checked={false}
-                    className="bx--checkbox"
-                    data-event="select"
-                    id="row-29-checkbox"
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    type="checkbox"
-                  />
-                </label>
-              </td>
-              <td>
-                scott pinocchio chocolate
-              </td>
-              <td>
-                1970-01-01T00:16:40.841Z
-              </td>
-              <td>
-                Option B is an option
-              </td>
-              <td>
-                841
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label
-                  className="bx--checkbox-label"
-                  htmlFor="row-30-checkbox"
-                >
-                  <input
-                    checked={false}
-                    className="bx--checkbox"
-                    data-event="select"
-                    id="row-30-checkbox"
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    type="checkbox"
-                  />
-                </label>
-              </td>
-              <td>
-                toyota toyota toyota
-              </td>
-              <td>
-                1970-01-01T00:16:40.900Z
-              </td>
-              <td>
-                Option A is an option
-              </td>
-              <td>
-                900
               </td>
             </tr>
             <tr>
@@ -13541,73 +12818,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                 helping whiteboard as
               </td>
               <td>
-                1970-01-01T00:16:40.961Z
+                2003-08-16T02:13:20.000Z
               </td>
               <td>
-                Option B is an option
+                option-B
               </td>
               <td>
                 961
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label
-                  className="bx--checkbox-label"
-                  htmlFor="row-32-checkbox"
-                >
-                  <input
-                    checked={false}
-                    className="bx--checkbox"
-                    data-event="select"
-                    id="row-32-checkbox"
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    type="checkbox"
-                  />
-                </label>
-              </td>
-              <td>
-                whiteboard can eat
-              </td>
-              <td>
-                1970-01-01T00:16:41.024Z
-              </td>
-              <td>
-                Option A is an option
-              </td>
-              <td>
-                1024
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label
-                  className="bx--checkbox-label"
-                  htmlFor="row-33-checkbox"
-                >
-                  <input
-                    checked={false}
-                    className="bx--checkbox"
-                    data-event="select"
-                    id="row-33-checkbox"
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    type="checkbox"
-                  />
-                </label>
-              </td>
-              <td>
-                as eat scott
-              </td>
-              <td>
-                1970-01-01T00:16:41.089Z
-              </td>
-              <td>
-                Option B is an option
-              </td>
-              <td>
-                1089
               </td>
             </tr>
             <tr>
@@ -13631,343 +12848,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                 can pinocchio whiteboard
               </td>
               <td>
-                1970-01-01T00:16:41.156Z
+                2009-10-20T00:53:20.000Z
               </td>
               <td>
-                Option A is an option
+                option-B
               </td>
               <td>
                 1156
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label
-                  className="bx--checkbox-label"
-                  htmlFor="row-35-checkbox"
-                >
-                  <input
-                    checked={false}
-                    className="bx--checkbox"
-                    data-event="select"
-                    id="row-35-checkbox"
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    type="checkbox"
-                  />
-                </label>
-              </td>
-              <td>
-                bottle toyota bottle
-              </td>
-              <td>
-                1970-01-01T00:16:41.225Z
-              </td>
-              <td>
-                Option B is an option
-              </td>
-              <td>
-                1225
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label
-                  className="bx--checkbox-label"
-                  htmlFor="row-36-checkbox"
-                >
-                  <input
-                    checked={false}
-                    className="bx--checkbox"
-                    data-event="select"
-                    id="row-36-checkbox"
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    type="checkbox"
-                  />
-                </label>
-              </td>
-              <td>
-                eat whiteboard pinocchio
-              </td>
-              <td>
-                1970-01-01T00:16:41.296Z
-              </td>
-              <td>
-                Option A is an option
-              </td>
-              <td>
-                1296
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label
-                  className="bx--checkbox-label"
-                  htmlFor="row-37-checkbox"
-                >
-                  <input
-                    checked={false}
-                    className="bx--checkbox"
-                    data-event="select"
-                    id="row-37-checkbox"
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    type="checkbox"
-                  />
-                </label>
-              </td>
-              <td>
-                chocolate can helping
-              </td>
-              <td>
-                1970-01-01T00:16:41.369Z
-              </td>
-              <td>
-                Option B is an option
-              </td>
-              <td>
-                1369
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label
-                  className="bx--checkbox-label"
-                  htmlFor="row-38-checkbox"
-                >
-                  <input
-                    checked={false}
-                    className="bx--checkbox"
-                    data-event="select"
-                    id="row-38-checkbox"
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    type="checkbox"
-                  />
-                </label>
-              </td>
-              <td>
-                pinocchio eat can
-              </td>
-              <td>
-                1970-01-01T00:16:41.444Z
-              </td>
-              <td>
-                Option A is an option
-              </td>
-              <td>
-                1444
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label
-                  className="bx--checkbox-label"
-                  htmlFor="row-39-checkbox"
-                >
-                  <input
-                    checked={false}
-                    className="bx--checkbox"
-                    data-event="select"
-                    id="row-39-checkbox"
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    type="checkbox"
-                  />
-                </label>
-              </td>
-              <td>
-                scott pinocchio chocolate
-              </td>
-              <td>
-                1970-01-01T00:16:41.521Z
-              </td>
-              <td>
-                Option B is an option
-              </td>
-              <td>
-                1521
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label
-                  className="bx--checkbox-label"
-                  htmlFor="row-40-checkbox"
-                >
-                  <input
-                    checked={false}
-                    className="bx--checkbox"
-                    data-event="select"
-                    id="row-40-checkbox"
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    type="checkbox"
-                  />
-                </label>
-              </td>
-              <td>
-                toyota toyota toyota
-              </td>
-              <td>
-                1970-01-01T00:16:41.600Z
-              </td>
-              <td>
-                Option A is an option
-              </td>
-              <td>
-                1600
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label
-                  className="bx--checkbox-label"
-                  htmlFor="row-41-checkbox"
-                >
-                  <input
-                    checked={false}
-                    className="bx--checkbox"
-                    data-event="select"
-                    id="row-41-checkbox"
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    type="checkbox"
-                  />
-                </label>
-              </td>
-              <td>
-                helping whiteboard as
-              </td>
-              <td>
-                1970-01-01T00:16:41.681Z
-              </td>
-              <td>
-                Option B is an option
-              </td>
-              <td>
-                1681
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label
-                  className="bx--checkbox-label"
-                  htmlFor="row-42-checkbox"
-                >
-                  <input
-                    checked={false}
-                    className="bx--checkbox"
-                    data-event="select"
-                    id="row-42-checkbox"
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    type="checkbox"
-                  />
-                </label>
-              </td>
-              <td>
-                whiteboard can eat
-              </td>
-              <td>
-                1970-01-01T00:16:41.764Z
-              </td>
-              <td>
-                Option A is an option
-              </td>
-              <td>
-                1764
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label
-                  className="bx--checkbox-label"
-                  htmlFor="row-43-checkbox"
-                >
-                  <input
-                    checked={false}
-                    className="bx--checkbox"
-                    data-event="select"
-                    id="row-43-checkbox"
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    type="checkbox"
-                  />
-                </label>
-              </td>
-              <td>
-                as eat scott
-              </td>
-              <td>
-                1970-01-01T00:16:41.849Z
-              </td>
-              <td>
-                Option B is an option
-              </td>
-              <td>
-                1849
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label
-                  className="bx--checkbox-label"
-                  htmlFor="row-44-checkbox"
-                >
-                  <input
-                    checked={false}
-                    className="bx--checkbox"
-                    data-event="select"
-                    id="row-44-checkbox"
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    type="checkbox"
-                  />
-                </label>
-              </td>
-              <td>
-                can pinocchio whiteboard
-              </td>
-              <td>
-                1970-01-01T00:16:41.936Z
-              </td>
-              <td>
-                Option A is an option
-              </td>
-              <td>
-                1936
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label
-                  className="bx--checkbox-label"
-                  htmlFor="row-45-checkbox"
-                >
-                  <input
-                    checked={false}
-                    className="bx--checkbox"
-                    data-event="select"
-                    id="row-45-checkbox"
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    type="checkbox"
-                  />
-                </label>
-              </td>
-              <td>
-                bottle toyota bottle
-              </td>
-              <td>
-                1970-01-01T00:16:42.025Z
-              </td>
-              <td>
-                Option B is an option
-              </td>
-              <td>
-                2025
               </td>
             </tr>
             <tr>
@@ -13991,163 +12878,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                 eat whiteboard pinocchio
               </td>
               <td>
-                1970-01-01T00:16:42.116Z
+                2040-03-22T03:33:20.000Z
               </td>
               <td>
-                Option A is an option
+                option-B
               </td>
               <td>
                 2116
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label
-                  className="bx--checkbox-label"
-                  htmlFor="row-47-checkbox"
-                >
-                  <input
-                    checked={false}
-                    className="bx--checkbox"
-                    data-event="select"
-                    id="row-47-checkbox"
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    type="checkbox"
-                  />
-                </label>
-              </td>
-              <td>
-                chocolate can helping
-              </td>
-              <td>
-                1970-01-01T00:16:42.209Z
-              </td>
-              <td>
-                Option B is an option
-              </td>
-              <td>
-                2209
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label
-                  className="bx--checkbox-label"
-                  htmlFor="row-48-checkbox"
-                >
-                  <input
-                    checked={false}
-                    className="bx--checkbox"
-                    data-event="select"
-                    id="row-48-checkbox"
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    type="checkbox"
-                  />
-                </label>
-              </td>
-              <td>
-                pinocchio eat can
-              </td>
-              <td>
-                1970-01-01T00:16:42.304Z
-              </td>
-              <td>
-                Option A is an option
-              </td>
-              <td>
-                2304
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label
-                  className="bx--checkbox-label"
-                  htmlFor="row-49-checkbox"
-                >
-                  <input
-                    checked={false}
-                    className="bx--checkbox"
-                    data-event="select"
-                    id="row-49-checkbox"
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    type="checkbox"
-                  />
-                </label>
-              </td>
-              <td>
-                scott pinocchio chocolate
-              </td>
-              <td>
-                1970-01-01T00:16:42.401Z
-              </td>
-              <td>
-                Option B is an option
-              </td>
-              <td>
-                2401
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label
-                  className="bx--checkbox-label"
-                  htmlFor="row-50-checkbox"
-                >
-                  <input
-                    checked={false}
-                    className="bx--checkbox"
-                    data-event="select"
-                    id="row-50-checkbox"
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    type="checkbox"
-                  />
-                </label>
-              </td>
-              <td>
-                toyota toyota toyota
-              </td>
-              <td>
-                1970-01-01T00:16:42.500Z
-              </td>
-              <td>
-                Option A is an option
-              </td>
-              <td>
-                2500
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label
-                  className="bx--checkbox-label"
-                  htmlFor="row-51-checkbox"
-                >
-                  <input
-                    checked={false}
-                    className="bx--checkbox"
-                    data-event="select"
-                    id="row-51-checkbox"
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    type="checkbox"
-                  />
-                </label>
-              </td>
-              <td>
-                helping whiteboard as
-              </td>
-              <td>
-                1970-01-01T00:16:42.601Z
-              </td>
-              <td>
-                Option B is an option
-              </td>
-              <td>
-                2601
               </td>
             </tr>
             <tr>
@@ -14171,253 +12908,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                 whiteboard can eat
               </td>
               <td>
-                1970-01-01T00:16:42.704Z
+                2058-11-08T16:53:20.000Z
               </td>
               <td>
-                Option A is an option
+                option-B
               </td>
               <td>
                 2704
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label
-                  className="bx--checkbox-label"
-                  htmlFor="row-53-checkbox"
-                >
-                  <input
-                    checked={false}
-                    className="bx--checkbox"
-                    data-event="select"
-                    id="row-53-checkbox"
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    type="checkbox"
-                  />
-                </label>
-              </td>
-              <td>
-                as eat scott
-              </td>
-              <td>
-                1970-01-01T00:16:42.809Z
-              </td>
-              <td>
-                Option B is an option
-              </td>
-              <td>
-                2809
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label
-                  className="bx--checkbox-label"
-                  htmlFor="row-54-checkbox"
-                >
-                  <input
-                    checked={false}
-                    className="bx--checkbox"
-                    data-event="select"
-                    id="row-54-checkbox"
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    type="checkbox"
-                  />
-                </label>
-              </td>
-              <td>
-                can pinocchio whiteboard
-              </td>
-              <td>
-                1970-01-01T00:16:42.916Z
-              </td>
-              <td>
-                Option A is an option
-              </td>
-              <td>
-                2916
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label
-                  className="bx--checkbox-label"
-                  htmlFor="row-55-checkbox"
-                >
-                  <input
-                    checked={false}
-                    className="bx--checkbox"
-                    data-event="select"
-                    id="row-55-checkbox"
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    type="checkbox"
-                  />
-                </label>
-              </td>
-              <td>
-                bottle toyota bottle
-              </td>
-              <td>
-                1970-01-01T00:16:43.025Z
-              </td>
-              <td>
-                Option B is an option
-              </td>
-              <td>
-                3025
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label
-                  className="bx--checkbox-label"
-                  htmlFor="row-56-checkbox"
-                >
-                  <input
-                    checked={false}
-                    className="bx--checkbox"
-                    data-event="select"
-                    id="row-56-checkbox"
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    type="checkbox"
-                  />
-                </label>
-              </td>
-              <td>
-                eat whiteboard pinocchio
-              </td>
-              <td>
-                1970-01-01T00:16:43.136Z
-              </td>
-              <td>
-                Option A is an option
-              </td>
-              <td>
-                3136
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label
-                  className="bx--checkbox-label"
-                  htmlFor="row-57-checkbox"
-                >
-                  <input
-                    checked={false}
-                    className="bx--checkbox"
-                    data-event="select"
-                    id="row-57-checkbox"
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    type="checkbox"
-                  />
-                </label>
-              </td>
-              <td>
-                chocolate can helping
-              </td>
-              <td>
-                1970-01-01T00:16:43.249Z
-              </td>
-              <td>
-                Option B is an option
-              </td>
-              <td>
-                3249
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label
-                  className="bx--checkbox-label"
-                  htmlFor="row-58-checkbox"
-                >
-                  <input
-                    checked={false}
-                    className="bx--checkbox"
-                    data-event="select"
-                    id="row-58-checkbox"
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    type="checkbox"
-                  />
-                </label>
-              </td>
-              <td>
-                pinocchio eat can
-              </td>
-              <td>
-                1970-01-01T00:16:43.364Z
-              </td>
-              <td>
-                Option A is an option
-              </td>
-              <td>
-                3364
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label
-                  className="bx--checkbox-label"
-                  htmlFor="row-59-checkbox"
-                >
-                  <input
-                    checked={false}
-                    className="bx--checkbox"
-                    data-event="select"
-                    id="row-59-checkbox"
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    type="checkbox"
-                  />
-                </label>
-              </td>
-              <td>
-                scott pinocchio chocolate
-              </td>
-              <td>
-                1970-01-01T00:16:43.481Z
-              </td>
-              <td>
-                Option B is an option
-              </td>
-              <td>
-                3481
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label
-                  className="bx--checkbox-label"
-                  htmlFor="row-60-checkbox"
-                >
-                  <input
-                    checked={false}
-                    className="bx--checkbox"
-                    data-event="select"
-                    id="row-60-checkbox"
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    type="checkbox"
-                  />
-                </label>
-              </td>
-              <td>
-                toyota toyota toyota
-              </td>
-              <td>
-                1970-01-01T00:16:43.600Z
-              </td>
-              <td>
-                Option A is an option
-              </td>
-              <td>
-                3600
               </td>
             </tr>
             <tr>
@@ -14441,73 +12938,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                 helping whiteboard as
               </td>
               <td>
-                1970-01-01T00:16:43.721Z
+                2091-01-30T12:53:20.000Z
               </td>
               <td>
-                Option B is an option
+                option-B
               </td>
               <td>
                 3721
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label
-                  className="bx--checkbox-label"
-                  htmlFor="row-62-checkbox"
-                >
-                  <input
-                    checked={false}
-                    className="bx--checkbox"
-                    data-event="select"
-                    id="row-62-checkbox"
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    type="checkbox"
-                  />
-                </label>
-              </td>
-              <td>
-                whiteboard can eat
-              </td>
-              <td>
-                1970-01-01T00:16:43.844Z
-              </td>
-              <td>
-                Option A is an option
-              </td>
-              <td>
-                3844
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label
-                  className="bx--checkbox-label"
-                  htmlFor="row-63-checkbox"
-                >
-                  <input
-                    checked={false}
-                    className="bx--checkbox"
-                    data-event="select"
-                    id="row-63-checkbox"
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    type="checkbox"
-                  />
-                </label>
-              </td>
-              <td>
-                as eat scott
-              </td>
-              <td>
-                1970-01-01T00:16:43.969Z
-              </td>
-              <td>
-                Option B is an option
-              </td>
-              <td>
-                3969
               </td>
             </tr>
             <tr>
@@ -14531,343 +12968,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                 can pinocchio whiteboard
               </td>
               <td>
-                1970-01-01T00:16:44.096Z
+                2102-12-19T19:33:20.000Z
               </td>
               <td>
-                Option A is an option
+                option-B
               </td>
               <td>
                 4096
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label
-                  className="bx--checkbox-label"
-                  htmlFor="row-65-checkbox"
-                >
-                  <input
-                    checked={false}
-                    className="bx--checkbox"
-                    data-event="select"
-                    id="row-65-checkbox"
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    type="checkbox"
-                  />
-                </label>
-              </td>
-              <td>
-                bottle toyota bottle
-              </td>
-              <td>
-                1970-01-01T00:16:44.225Z
-              </td>
-              <td>
-                Option B is an option
-              </td>
-              <td>
-                4225
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label
-                  className="bx--checkbox-label"
-                  htmlFor="row-66-checkbox"
-                >
-                  <input
-                    checked={false}
-                    className="bx--checkbox"
-                    data-event="select"
-                    id="row-66-checkbox"
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    type="checkbox"
-                  />
-                </label>
-              </td>
-              <td>
-                eat whiteboard pinocchio
-              </td>
-              <td>
-                1970-01-01T00:16:44.356Z
-              </td>
-              <td>
-                Option A is an option
-              </td>
-              <td>
-                4356
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label
-                  className="bx--checkbox-label"
-                  htmlFor="row-67-checkbox"
-                >
-                  <input
-                    checked={false}
-                    className="bx--checkbox"
-                    data-event="select"
-                    id="row-67-checkbox"
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    type="checkbox"
-                  />
-                </label>
-              </td>
-              <td>
-                chocolate can helping
-              </td>
-              <td>
-                1970-01-01T00:16:44.489Z
-              </td>
-              <td>
-                Option B is an option
-              </td>
-              <td>
-                4489
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label
-                  className="bx--checkbox-label"
-                  htmlFor="row-68-checkbox"
-                >
-                  <input
-                    checked={false}
-                    className="bx--checkbox"
-                    data-event="select"
-                    id="row-68-checkbox"
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    type="checkbox"
-                  />
-                </label>
-              </td>
-              <td>
-                pinocchio eat can
-              </td>
-              <td>
-                1970-01-01T00:16:44.624Z
-              </td>
-              <td>
-                Option A is an option
-              </td>
-              <td>
-                4624
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label
-                  className="bx--checkbox-label"
-                  htmlFor="row-69-checkbox"
-                >
-                  <input
-                    checked={false}
-                    className="bx--checkbox"
-                    data-event="select"
-                    id="row-69-checkbox"
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    type="checkbox"
-                  />
-                </label>
-              </td>
-              <td>
-                scott pinocchio chocolate
-              </td>
-              <td>
-                1970-01-01T00:16:44.761Z
-              </td>
-              <td>
-                Option B is an option
-              </td>
-              <td>
-                4761
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label
-                  className="bx--checkbox-label"
-                  htmlFor="row-70-checkbox"
-                >
-                  <input
-                    checked={false}
-                    className="bx--checkbox"
-                    data-event="select"
-                    id="row-70-checkbox"
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    type="checkbox"
-                  />
-                </label>
-              </td>
-              <td>
-                toyota toyota toyota
-              </td>
-              <td>
-                1970-01-01T00:16:44.900Z
-              </td>
-              <td>
-                Option A is an option
-              </td>
-              <td>
-                4900
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label
-                  className="bx--checkbox-label"
-                  htmlFor="row-71-checkbox"
-                >
-                  <input
-                    checked={false}
-                    className="bx--checkbox"
-                    data-event="select"
-                    id="row-71-checkbox"
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    type="checkbox"
-                  />
-                </label>
-              </td>
-              <td>
-                helping whiteboard as
-              </td>
-              <td>
-                1970-01-01T00:16:45.041Z
-              </td>
-              <td>
-                Option B is an option
-              </td>
-              <td>
-                5041
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label
-                  className="bx--checkbox-label"
-                  htmlFor="row-72-checkbox"
-                >
-                  <input
-                    checked={false}
-                    className="bx--checkbox"
-                    data-event="select"
-                    id="row-72-checkbox"
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    type="checkbox"
-                  />
-                </label>
-              </td>
-              <td>
-                whiteboard can eat
-              </td>
-              <td>
-                1970-01-01T00:16:45.184Z
-              </td>
-              <td>
-                Option A is an option
-              </td>
-              <td>
-                5184
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label
-                  className="bx--checkbox-label"
-                  htmlFor="row-73-checkbox"
-                >
-                  <input
-                    checked={false}
-                    className="bx--checkbox"
-                    data-event="select"
-                    id="row-73-checkbox"
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    type="checkbox"
-                  />
-                </label>
-              </td>
-              <td>
-                as eat scott
-              </td>
-              <td>
-                1970-01-01T00:16:45.329Z
-              </td>
-              <td>
-                Option B is an option
-              </td>
-              <td>
-                5329
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label
-                  className="bx--checkbox-label"
-                  htmlFor="row-74-checkbox"
-                >
-                  <input
-                    checked={false}
-                    className="bx--checkbox"
-                    data-event="select"
-                    id="row-74-checkbox"
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    type="checkbox"
-                  />
-                </label>
-              </td>
-              <td>
-                can pinocchio whiteboard
-              </td>
-              <td>
-                1970-01-01T00:16:45.476Z
-              </td>
-              <td>
-                Option A is an option
-              </td>
-              <td>
-                5476
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label
-                  className="bx--checkbox-label"
-                  htmlFor="row-75-checkbox"
-                >
-                  <input
-                    checked={false}
-                    className="bx--checkbox"
-                    data-event="select"
-                    id="row-75-checkbox"
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    type="checkbox"
-                  />
-                </label>
-              </td>
-              <td>
-                bottle toyota bottle
-              </td>
-              <td>
-                1970-01-01T00:16:45.625Z
-              </td>
-              <td>
-                Option B is an option
-              </td>
-              <td>
-                5625
               </td>
             </tr>
             <tr>
@@ -14891,163 +12998,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                 eat whiteboard pinocchio
               </td>
               <td>
-                1970-01-01T00:16:45.776Z
+                2156-03-15T06:13:20.000Z
               </td>
               <td>
-                Option A is an option
+                option-B
               </td>
               <td>
                 5776
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label
-                  className="bx--checkbox-label"
-                  htmlFor="row-77-checkbox"
-                >
-                  <input
-                    checked={false}
-                    className="bx--checkbox"
-                    data-event="select"
-                    id="row-77-checkbox"
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    type="checkbox"
-                  />
-                </label>
-              </td>
-              <td>
-                chocolate can helping
-              </td>
-              <td>
-                1970-01-01T00:16:45.929Z
-              </td>
-              <td>
-                Option B is an option
-              </td>
-              <td>
-                5929
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label
-                  className="bx--checkbox-label"
-                  htmlFor="row-78-checkbox"
-                >
-                  <input
-                    checked={false}
-                    className="bx--checkbox"
-                    data-event="select"
-                    id="row-78-checkbox"
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    type="checkbox"
-                  />
-                </label>
-              </td>
-              <td>
-                pinocchio eat can
-              </td>
-              <td>
-                1970-01-01T00:16:46.084Z
-              </td>
-              <td>
-                Option A is an option
-              </td>
-              <td>
-                6084
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label
-                  className="bx--checkbox-label"
-                  htmlFor="row-79-checkbox"
-                >
-                  <input
-                    checked={false}
-                    className="bx--checkbox"
-                    data-event="select"
-                    id="row-79-checkbox"
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    type="checkbox"
-                  />
-                </label>
-              </td>
-              <td>
-                scott pinocchio chocolate
-              </td>
-              <td>
-                1970-01-01T00:16:46.241Z
-              </td>
-              <td>
-                Option B is an option
-              </td>
-              <td>
-                6241
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label
-                  className="bx--checkbox-label"
-                  htmlFor="row-80-checkbox"
-                >
-                  <input
-                    checked={false}
-                    className="bx--checkbox"
-                    data-event="select"
-                    id="row-80-checkbox"
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    type="checkbox"
-                  />
-                </label>
-              </td>
-              <td>
-                toyota toyota toyota
-              </td>
-              <td>
-                1970-01-01T00:16:46.400Z
-              </td>
-              <td>
-                Option A is an option
-              </td>
-              <td>
-                6400
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label
-                  className="bx--checkbox-label"
-                  htmlFor="row-81-checkbox"
-                >
-                  <input
-                    checked={false}
-                    className="bx--checkbox"
-                    data-event="select"
-                    id="row-81-checkbox"
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    type="checkbox"
-                  />
-                </label>
-              </td>
-              <td>
-                helping whiteboard as
-              </td>
-              <td>
-                1970-01-01T00:16:46.561Z
-              </td>
-              <td>
-                Option B is an option
-              </td>
-              <td>
-                6561
               </td>
             </tr>
             <tr>
@@ -15071,253 +13028,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                 whiteboard can eat
               </td>
               <td>
-                1970-01-01T00:16:46.724Z
+                2186-03-30T11:33:20.000Z
               </td>
               <td>
-                Option A is an option
+                option-B
               </td>
               <td>
                 6724
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label
-                  className="bx--checkbox-label"
-                  htmlFor="row-83-checkbox"
-                >
-                  <input
-                    checked={false}
-                    className="bx--checkbox"
-                    data-event="select"
-                    id="row-83-checkbox"
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    type="checkbox"
-                  />
-                </label>
-              </td>
-              <td>
-                as eat scott
-              </td>
-              <td>
-                1970-01-01T00:16:46.889Z
-              </td>
-              <td>
-                Option B is an option
-              </td>
-              <td>
-                6889
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label
-                  className="bx--checkbox-label"
-                  htmlFor="row-84-checkbox"
-                >
-                  <input
-                    checked={false}
-                    className="bx--checkbox"
-                    data-event="select"
-                    id="row-84-checkbox"
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    type="checkbox"
-                  />
-                </label>
-              </td>
-              <td>
-                can pinocchio whiteboard
-              </td>
-              <td>
-                1970-01-01T00:16:47.056Z
-              </td>
-              <td>
-                Option A is an option
-              </td>
-              <td>
-                7056
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label
-                  className="bx--checkbox-label"
-                  htmlFor="row-85-checkbox"
-                >
-                  <input
-                    checked={false}
-                    className="bx--checkbox"
-                    data-event="select"
-                    id="row-85-checkbox"
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    type="checkbox"
-                  />
-                </label>
-              </td>
-              <td>
-                bottle toyota bottle
-              </td>
-              <td>
-                1970-01-01T00:16:47.225Z
-              </td>
-              <td>
-                Option B is an option
-              </td>
-              <td>
-                7225
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label
-                  className="bx--checkbox-label"
-                  htmlFor="row-86-checkbox"
-                >
-                  <input
-                    checked={false}
-                    className="bx--checkbox"
-                    data-event="select"
-                    id="row-86-checkbox"
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    type="checkbox"
-                  />
-                </label>
-              </td>
-              <td>
-                eat whiteboard pinocchio
-              </td>
-              <td>
-                1970-01-01T00:16:47.396Z
-              </td>
-              <td>
-                Option A is an option
-              </td>
-              <td>
-                7396
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label
-                  className="bx--checkbox-label"
-                  htmlFor="row-87-checkbox"
-                >
-                  <input
-                    checked={false}
-                    className="bx--checkbox"
-                    data-event="select"
-                    id="row-87-checkbox"
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    type="checkbox"
-                  />
-                </label>
-              </td>
-              <td>
-                chocolate can helping
-              </td>
-              <td>
-                1970-01-01T00:16:47.569Z
-              </td>
-              <td>
-                Option B is an option
-              </td>
-              <td>
-                7569
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label
-                  className="bx--checkbox-label"
-                  htmlFor="row-88-checkbox"
-                >
-                  <input
-                    checked={false}
-                    className="bx--checkbox"
-                    data-event="select"
-                    id="row-88-checkbox"
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    type="checkbox"
-                  />
-                </label>
-              </td>
-              <td>
-                pinocchio eat can
-              </td>
-              <td>
-                1970-01-01T00:16:47.744Z
-              </td>
-              <td>
-                Option A is an option
-              </td>
-              <td>
-                7744
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label
-                  className="bx--checkbox-label"
-                  htmlFor="row-89-checkbox"
-                >
-                  <input
-                    checked={false}
-                    className="bx--checkbox"
-                    data-event="select"
-                    id="row-89-checkbox"
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    type="checkbox"
-                  />
-                </label>
-              </td>
-              <td>
-                scott pinocchio chocolate
-              </td>
-              <td>
-                1970-01-01T00:16:47.921Z
-              </td>
-              <td>
-                Option B is an option
-              </td>
-              <td>
-                7921
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label
-                  className="bx--checkbox-label"
-                  htmlFor="row-90-checkbox"
-                >
-                  <input
-                    checked={false}
-                    className="bx--checkbox"
-                    data-event="select"
-                    id="row-90-checkbox"
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    type="checkbox"
-                  />
-                </label>
-              </td>
-              <td>
-                toyota toyota toyota
-              </td>
-              <td>
-                1970-01-01T00:16:48.100Z
-              </td>
-              <td>
-                Option A is an option
-              </td>
-              <td>
-                8100
               </td>
             </tr>
             <tr>
@@ -15341,73 +13058,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                 helping whiteboard as
               </td>
               <td>
-                1970-01-01T00:16:48.281Z
+                2235-08-02T07:33:20.000Z
               </td>
               <td>
-                Option B is an option
+                option-B
               </td>
               <td>
                 8281
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label
-                  className="bx--checkbox-label"
-                  htmlFor="row-92-checkbox"
-                >
-                  <input
-                    checked={false}
-                    className="bx--checkbox"
-                    data-event="select"
-                    id="row-92-checkbox"
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    type="checkbox"
-                  />
-                </label>
-              </td>
-              <td>
-                whiteboard can eat
-              </td>
-              <td>
-                1970-01-01T00:16:48.464Z
-              </td>
-              <td>
-                Option A is an option
-              </td>
-              <td>
-                8464
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label
-                  className="bx--checkbox-label"
-                  htmlFor="row-93-checkbox"
-                >
-                  <input
-                    checked={false}
-                    className="bx--checkbox"
-                    data-event="select"
-                    id="row-93-checkbox"
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    type="checkbox"
-                  />
-                </label>
-              </td>
-              <td>
-                as eat scott
-              </td>
-              <td>
-                1970-01-01T00:16:48.649Z
-              </td>
-              <td>
-                Option B is an option
-              </td>
-              <td>
-                8649
               </td>
             </tr>
             <tr>
@@ -15431,163 +13088,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                 can pinocchio whiteboard
               </td>
               <td>
-                1970-01-01T00:16:48.836Z
+                2253-03-03T22:13:20.000Z
               </td>
               <td>
-                Option A is an option
+                option-B
               </td>
               <td>
                 8836
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label
-                  className="bx--checkbox-label"
-                  htmlFor="row-95-checkbox"
-                >
-                  <input
-                    checked={false}
-                    className="bx--checkbox"
-                    data-event="select"
-                    id="row-95-checkbox"
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    type="checkbox"
-                  />
-                </label>
-              </td>
-              <td>
-                bottle toyota bottle
-              </td>
-              <td>
-                1970-01-01T00:16:49.025Z
-              </td>
-              <td>
-                Option B is an option
-              </td>
-              <td>
-                9025
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label
-                  className="bx--checkbox-label"
-                  htmlFor="row-96-checkbox"
-                >
-                  <input
-                    checked={false}
-                    className="bx--checkbox"
-                    data-event="select"
-                    id="row-96-checkbox"
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    type="checkbox"
-                  />
-                </label>
-              </td>
-              <td>
-                eat whiteboard pinocchio
-              </td>
-              <td>
-                1970-01-01T00:16:49.216Z
-              </td>
-              <td>
-                Option A is an option
-              </td>
-              <td>
-                9216
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label
-                  className="bx--checkbox-label"
-                  htmlFor="row-97-checkbox"
-                >
-                  <input
-                    checked={false}
-                    className="bx--checkbox"
-                    data-event="select"
-                    id="row-97-checkbox"
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    type="checkbox"
-                  />
-                </label>
-              </td>
-              <td>
-                chocolate can helping
-              </td>
-              <td>
-                1970-01-01T00:16:49.409Z
-              </td>
-              <td>
-                Option B is an option
-              </td>
-              <td>
-                9409
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label
-                  className="bx--checkbox-label"
-                  htmlFor="row-98-checkbox"
-                >
-                  <input
-                    checked={false}
-                    className="bx--checkbox"
-                    data-event="select"
-                    id="row-98-checkbox"
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    type="checkbox"
-                  />
-                </label>
-              </td>
-              <td>
-                pinocchio eat can
-              </td>
-              <td>
-                1970-01-01T00:16:49.604Z
-              </td>
-              <td>
-                Option A is an option
-              </td>
-              <td>
-                9604
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label
-                  className="bx--checkbox-label"
-                  htmlFor="row-99-checkbox"
-                >
-                  <input
-                    checked={false}
-                    className="bx--checkbox"
-                    data-event="select"
-                    id="row-99-checkbox"
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    type="checkbox"
-                  />
-                </label>
-              </td>
-              <td>
-                scott pinocchio chocolate
-              </td>
-              <td>
-                1970-01-01T00:16:49.801Z
-              </td>
-              <td>
-                Option B is an option
-              </td>
-              <td>
-                9801
               </td>
             </tr>
           </tbody>
@@ -16088,7 +13595,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table pagination
         >
           <thead>
             <tr>
-              <th>
+              <th
+                style={Object {}}
+              >
                 <label
                   className="bx--checkbox-label"
                   htmlFor="select-all"
@@ -16104,32 +13613,40 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table pagination
                   />
                 </label>
               </th>
-              <th>
+              <th
+                style={Object {}}
+              >
                 <span
                   className="bx--table-header-label"
                 >
                   String
                 </span>
               </th>
-              <th>
+              <th
+                style={Object {}}
+              >
                 <span
                   className="bx--table-header-label"
                 >
                   Date
                 </span>
               </th>
-              <th>
+              <th
+                style={Object {}}
+              >
                 <span
                   className="bx--table-header-label"
                 >
                   Select
                 </span>
               </th>
-              <th>
+              <th
+                style={Object {}}
+              >
                 <span
                   className="bx--table-header-label"
                 >
-                  number
+                  Number
                 </span>
               </th>
             </tr>
@@ -16156,10 +13673,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table pagination
                 helping whiteboard as
               </td>
               <td>
-                1970-01-01T00:16:40.001Z
+                1973-03-14T23:33:20.000Z
               </td>
               <td>
-                Option B is an option
+                option-B
               </td>
               <td>
                 1
@@ -16186,10 +13703,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table pagination
                 whiteboard can eat
               </td>
               <td>
-                1970-01-01T00:16:40.004Z
+                1973-04-18T16:53:20.000Z
               </td>
               <td>
-                Option A is an option
+                option-C
               </td>
               <td>
                 4
@@ -16216,10 +13733,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table pagination
                 as eat scott
               </td>
               <td>
-                1970-01-01T00:16:40.009Z
+                1973-06-15T13:46:40.000Z
               </td>
               <td>
-                Option B is an option
+                option-A
               </td>
               <td>
                 9
@@ -16246,10 +13763,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table pagination
                 can pinocchio whiteboard
               </td>
               <td>
-                1970-01-01T00:16:40.016Z
+                1973-09-04T14:13:20.000Z
               </td>
               <td>
-                Option A is an option
+                option-B
               </td>
               <td>
                 16
@@ -16276,10 +13793,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table pagination
                 bottle toyota bottle
               </td>
               <td>
-                1970-01-01T00:16:40.025Z
+                1973-12-17T18:13:20.000Z
               </td>
               <td>
-                Option B is an option
+                option-C
               </td>
               <td>
                 25
@@ -16306,10 +13823,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table pagination
                 eat whiteboard pinocchio
               </td>
               <td>
-                1970-01-01T00:16:40.036Z
+                1974-04-24T01:46:40.000Z
               </td>
               <td>
-                Option A is an option
+                option-A
               </td>
               <td>
                 36
@@ -16336,10 +13853,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table pagination
                 chocolate can helping
               </td>
               <td>
-                1970-01-01T00:16:40.049Z
+                1974-09-21T12:53:20.000Z
               </td>
               <td>
-                Option B is an option
+                option-B
               </td>
               <td>
                 49
@@ -16366,10 +13883,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table pagination
                 pinocchio eat can
               </td>
               <td>
-                1970-01-01T00:16:40.064Z
+                1975-03-14T03:33:20.000Z
               </td>
               <td>
-                Option A is an option
+                option-C
               </td>
               <td>
                 64
@@ -16396,10 +13913,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table pagination
                 scott pinocchio chocolate
               </td>
               <td>
-                1970-01-01T00:16:40.081Z
+                1975-09-26T21:46:40.000Z
               </td>
               <td>
-                Option B is an option
+                option-A
               </td>
               <td>
                 81
@@ -16409,7 +13926,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table pagination
         </table>
         <div
           className="bx--pagination"
-          data-pagination={true}
+          disabled={false}
         >
           <div
             className="bx--pagination__left"
@@ -16420,79 +13937,72 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table pagination
               Items per page:
             </span>
             <div
-              className="bx--select bx--select--inline"
+              className="bx--form-item"
             >
-              <select
-                className="bx--select-input"
-                data-items-per-page={true}
-                onChange={[Function]}
+              <div
+                className="bx--select bx--select--inline"
               >
-                <option
-                  className="bx--select-option"
-                  selected={true}
+                <label
+                  className="bx--label bx--visually-hidden"
+                  htmlFor="bx-pagination-select-1"
+                >
+                  Items per page:
+                </label>
+                <select
+                  className="bx--select-input"
+                  id="bx-pagination-select-1"
+                  onChange={[Function]}
                   value={10}
                 >
-                  10
-                </option>
-                <option
-                  className="bx--select-option"
-                  selected={false}
-                  value={20}
-                >
-                  20
-                </option>
-                <option
-                  className="bx--select-option"
-                  selected={false}
-                  value={30}
-                >
-                  30
-                </option>
-                <option
-                  className="bx--select-option"
-                  selected={false}
-                  value={40}
-                >
-                  40
-                </option>
-                <option
-                  className="bx--select-option"
-                  selected={false}
-                  value={50}
-                >
-                  50
-                </option>
-              </select>
-              <svg
-                className="bx--select__arrow"
-                height="5"
-                viewBox="0 0 10 5"
-                width="10"
-              >
-                <path
-                  d="M0 0l5 4.998L10 0z"
+                  <option
+                    className="bx--select-option"
+                    disabled={false}
+                    hidden={false}
+                    value={10}
+                  >
+                    10
+                  </option>
+                  <option
+                    className="bx--select-option"
+                    disabled={false}
+                    hidden={false}
+                    value={20}
+                  >
+                    20
+                  </option>
+                  <option
+                    className="bx--select-option"
+                    disabled={false}
+                    hidden={false}
+                    value={30}
+                  >
+                    30
+                  </option>
+                </select>
+                <svg
+                  alt="open list of options"
+                  aria-label="open list of options"
+                  className="bx--select__arrow"
                   fillRule="evenodd"
-                />
-              </svg>
+                  height="5"
+                  role="img"
+                  viewBox="0 0 10 5"
+                  width="10"
+                >
+                  <title>
+                    open list of options
+                  </title>
+                  <path
+                    d="M0 0l5 4.998L10 0z"
+                  />
+                </svg>
+              </div>
             </div>
             <span
               className="bx--pagination__text"
             >
-              <span>
-                | 
-              </span>
-              <span
-                data-displayed-item-range={true}
-              >
-                1-10
-              </span>
-               of 
-              <span
-                data-total-items={true}
-              >
-                100
-              </span>
-               items
+               |  
+              1-10 of 100 items
             </span>
           </div>
           <div
@@ -16501,139 +14011,171 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table pagination
             <span
               className="bx--pagination__text"
             >
-              <span
-                data-displayed-page-number={true}
-              >
-                1
-              </span>
-               of 
-              <span
-                data-total-pages={true}
-              >
-                10
-              </span>
-               pages
+              1 of 10 pages
             </span>
             <button
-              aria-label="Backward button"
+              aria-label="Backward"
               className="bx--pagination__button bx--pagination__button--backward"
-              data-page-backward={true}
               disabled={true}
               onClick={[Function]}
-              type="button"
             >
               <svg
+                alt="Backward"
+                aria-label="Backward"
                 className="bx--pagination__button-icon"
+                fillRule="evenodd"
                 height="12"
+                role="img"
                 viewBox="0 0 7 12"
                 width="7"
               >
+                <title>
+                  Backward
+                </title>
                 <path
                   d="M1.45 6.002L7 11.27l-.685.726L0 6.003 6.315 0 7 .726z"
-                  fillRule="nonzero"
                 />
               </svg>
             </button>
             <div
-              className="bx--select bx--select--inline"
+              className="bx--form-item"
             >
-              <select
-                className="bx--select-input"
-                data-page-number-input={true}
+              <div
+                className="bx--select bx--select--inline"
               >
-                <option
-                  className="bx--select-option"
-                  selected={true}
+                <label
+                  className="bx--label bx--visually-hidden"
+                  htmlFor="bx-pagination-select-3"
+                >
+                  Items per page:
+                </label>
+                <select
+                  className="bx--select-input"
+                  id="bx-pagination-select-3"
+                  onChange={[Function]}
                   value={1}
                 >
-                  1
-                </option>
-                <option
-                  className="bx--select-option"
-                  selected={false}
-                  value={2}
-                >
-                  2
-                </option>
-                <option
-                  className="bx--select-option"
-                  selected={false}
-                  value={3}
-                >
-                  3
-                </option>
-                <option
-                  className="bx--select-option"
-                  selected={false}
-                  value={4}
-                >
-                  4
-                </option>
-                <option
-                  className="bx--select-option"
-                  selected={false}
-                  value={5}
-                >
-                  5
-                </option>
-                <option
-                  className="bx--select-option"
-                  selected={false}
-                  value={6}
-                >
-                  6
-                </option>
-                <option
-                  className="bx--select-option"
-                  selected={false}
-                  value={7}
-                >
-                  7
-                </option>
-                <option
-                  className="bx--select-option"
-                  selected={false}
-                  value={8}
-                >
-                  8
-                </option>
-                <option
-                  className="bx--select-option"
-                  selected={false}
-                  value={9}
-                >
-                  9
-                </option>
-              </select>
-              <svg
-                className="bx--select__arrow"
-                height="5"
-                viewBox="0 0 10 5"
-                width="10"
-              >
-                <path
-                  d="M0 0l5 4.998L10 0z"
+                  <option
+                    className="bx--select-option"
+                    disabled={false}
+                    hidden={false}
+                    value={1}
+                  >
+                    1
+                  </option>
+                  <option
+                    className="bx--select-option"
+                    disabled={false}
+                    hidden={false}
+                    value={2}
+                  >
+                    2
+                  </option>
+                  <option
+                    className="bx--select-option"
+                    disabled={false}
+                    hidden={false}
+                    value={3}
+                  >
+                    3
+                  </option>
+                  <option
+                    className="bx--select-option"
+                    disabled={false}
+                    hidden={false}
+                    value={4}
+                  >
+                    4
+                  </option>
+                  <option
+                    className="bx--select-option"
+                    disabled={false}
+                    hidden={false}
+                    value={5}
+                  >
+                    5
+                  </option>
+                  <option
+                    className="bx--select-option"
+                    disabled={false}
+                    hidden={false}
+                    value={6}
+                  >
+                    6
+                  </option>
+                  <option
+                    className="bx--select-option"
+                    disabled={false}
+                    hidden={false}
+                    value={7}
+                  >
+                    7
+                  </option>
+                  <option
+                    className="bx--select-option"
+                    disabled={false}
+                    hidden={false}
+                    value={8}
+                  >
+                    8
+                  </option>
+                  <option
+                    className="bx--select-option"
+                    disabled={false}
+                    hidden={false}
+                    value={9}
+                  >
+                    9
+                  </option>
+                  <option
+                    className="bx--select-option"
+                    disabled={false}
+                    hidden={false}
+                    value={10}
+                  >
+                    10
+                  </option>
+                </select>
+                <svg
+                  alt="open list of options"
+                  aria-label="open list of options"
+                  className="bx--select__arrow"
                   fillRule="evenodd"
-                />
-              </svg>
+                  height="5"
+                  role="img"
+                  viewBox="0 0 10 5"
+                  width="10"
+                >
+                  <title>
+                    open list of options
+                  </title>
+                  <path
+                    d="M0 0l5 4.998L10 0z"
+                  />
+                </svg>
+              </div>
             </div>
             <button
-              aria-label="Forward button"
+              aria-label="Forward"
               className="bx--pagination__button bx--pagination__button--forward"
-              data-page-forward={true}
               disabled={false}
               onClick={[Function]}
-              type="button"
             >
               <svg
+                alt="Forward"
+                aria-label="Forward"
                 className="bx--pagination__button-icon"
+                fillRule="evenodd"
                 height="12"
+                role="img"
                 viewBox="0 0 7 12"
                 width="7"
               >
+                <title>
+                  Forward
+                </title>
                 <path
                   d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
-                  fillRule="nonzero"
                 />
               </svg>
             </button>
@@ -17135,7 +14677,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
         >
           <thead>
             <tr>
-              <th>
+              <th
+                style={Object {}}
+              >
                 <label
                   className="bx--checkbox-label"
                   htmlFor="select-all"
@@ -17151,37 +14695,75 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                   />
                 </label>
               </th>
-              <th>
+              <th
+                style={Object {}}
+              >
                 <span
                   className="bx--table-header-label"
                 >
                   String
                 </span>
               </th>
-              <th>
+              <th
+                style={Object {}}
+              >
                 <span
                   className="bx--table-header-label"
                 >
                   Date
                 </span>
               </th>
-              <th>
+              <th
+                style={Object {}}
+              >
                 <span
                   className="bx--table-header-label"
                 >
                   Select
                 </span>
               </th>
-              <th>
+              <th
+                style={Object {}}
+              >
                 <span
                   className="bx--table-header-label"
                 >
-                  number
+                  Number
                 </span>
               </th>
             </tr>
           </thead>
           <tbody>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-0-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-0-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                toyota toyota toyota
+              </td>
+              <td>
+                1973-03-03T09:46:40.000Z
+              </td>
+              <td>
+                option-A
+              </td>
+              <td>
+                0
+              </td>
+            </tr>
             <tr>
               <td>
                 <label
@@ -17203,10 +14785,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 helping whiteboard as
               </td>
               <td>
-                1970-01-01T00:16:40.001Z
+                1973-03-14T23:33:20.000Z
               </td>
               <td>
-                Option B is an option
+                option-B
               </td>
               <td>
                 1
@@ -17233,10 +14815,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 whiteboard can eat
               </td>
               <td>
-                1970-01-01T00:16:40.004Z
+                1973-04-18T16:53:20.000Z
               </td>
               <td>
-                Option A is an option
+                option-C
               </td>
               <td>
                 4
@@ -17263,10 +14845,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 as eat scott
               </td>
               <td>
-                1970-01-01T00:16:40.009Z
+                1973-06-15T13:46:40.000Z
               </td>
               <td>
-                Option B is an option
+                option-A
               </td>
               <td>
                 9
@@ -17293,10 +14875,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 can pinocchio whiteboard
               </td>
               <td>
-                1970-01-01T00:16:40.016Z
+                1973-09-04T14:13:20.000Z
               </td>
               <td>
-                Option A is an option
+                option-B
               </td>
               <td>
                 16
@@ -17323,10 +14905,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 bottle toyota bottle
               </td>
               <td>
-                1970-01-01T00:16:40.025Z
+                1973-12-17T18:13:20.000Z
               </td>
               <td>
-                Option B is an option
+                option-C
               </td>
               <td>
                 25
@@ -17353,10 +14935,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 eat whiteboard pinocchio
               </td>
               <td>
-                1970-01-01T00:16:40.036Z
+                1974-04-24T01:46:40.000Z
               </td>
               <td>
-                Option A is an option
+                option-A
               </td>
               <td>
                 36
@@ -17383,10 +14965,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 chocolate can helping
               </td>
               <td>
-                1970-01-01T00:16:40.049Z
+                1974-09-21T12:53:20.000Z
               </td>
               <td>
-                Option B is an option
+                option-B
               </td>
               <td>
                 49
@@ -17413,10 +14995,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 pinocchio eat can
               </td>
               <td>
-                1970-01-01T00:16:40.064Z
+                1975-03-14T03:33:20.000Z
               </td>
               <td>
-                Option A is an option
+                option-C
               </td>
               <td>
                 64
@@ -17443,10 +15025,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 scott pinocchio chocolate
               </td>
               <td>
-                1970-01-01T00:16:40.081Z
+                1975-09-26T21:46:40.000Z
               </td>
               <td>
-                Option B is an option
+                option-A
               </td>
               <td>
                 81
@@ -17473,10 +15055,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 toyota toyota toyota
               </td>
               <td>
-                1970-01-01T00:16:40.100Z
+                1976-05-03T19:33:20.000Z
               </td>
               <td>
-                Option A is an option
+                option-B
               </td>
               <td>
                 100
@@ -17503,10 +15085,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 helping whiteboard as
               </td>
               <td>
-                1970-01-01T00:16:40.121Z
+                1977-01-01T20:53:20.000Z
               </td>
               <td>
-                Option B is an option
+                option-C
               </td>
               <td>
                 121
@@ -17533,10 +15115,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 whiteboard can eat
               </td>
               <td>
-                1970-01-01T00:16:40.144Z
+                1977-09-25T01:46:40.000Z
               </td>
               <td>
-                Option A is an option
+                option-A
               </td>
               <td>
                 144
@@ -17563,10 +15145,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 as eat scott
               </td>
               <td>
-                1970-01-01T00:16:40.169Z
+                1978-07-11T10:13:20.000Z
               </td>
               <td>
-                Option B is an option
+                option-B
               </td>
               <td>
                 169
@@ -17593,10 +15175,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 can pinocchio whiteboard
               </td>
               <td>
-                1970-01-01T00:16:40.196Z
+                1979-05-19T22:13:20.000Z
               </td>
               <td>
-                Option A is an option
+                option-C
               </td>
               <td>
                 196
@@ -17623,10 +15205,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 bottle toyota bottle
               </td>
               <td>
-                1970-01-01T00:16:40.225Z
+                1980-04-19T13:46:40.000Z
               </td>
               <td>
-                Option B is an option
+                option-A
               </td>
               <td>
                 225
@@ -17653,10 +15235,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 eat whiteboard pinocchio
               </td>
               <td>
-                1970-01-01T00:16:40.256Z
+                1981-04-13T08:53:20.000Z
               </td>
               <td>
-                Option A is an option
+                option-B
               </td>
               <td>
                 256
@@ -17683,10 +15265,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 chocolate can helping
               </td>
               <td>
-                1970-01-01T00:16:40.289Z
+                1982-04-30T07:33:20.000Z
               </td>
               <td>
-                Option B is an option
+                option-C
               </td>
               <td>
                 289
@@ -17713,10 +15295,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 pinocchio eat can
               </td>
               <td>
-                1970-01-01T00:16:40.324Z
+                1983-06-09T09:46:40.000Z
               </td>
               <td>
-                Option A is an option
+                option-A
               </td>
               <td>
                 324
@@ -17743,10 +15325,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 scott pinocchio chocolate
               </td>
               <td>
-                1970-01-01T00:16:40.361Z
+                1984-08-10T15:33:20.000Z
               </td>
               <td>
-                Option B is an option
+                option-B
               </td>
               <td>
                 361
@@ -17773,10 +15355,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 toyota toyota toyota
               </td>
               <td>
-                1970-01-01T00:16:40.400Z
+                1985-11-05T00:53:20.000Z
               </td>
               <td>
-                Option A is an option
+                option-C
               </td>
               <td>
                 400
@@ -17803,10 +15385,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 helping whiteboard as
               </td>
               <td>
-                1970-01-01T00:16:40.441Z
+                1987-02-22T13:46:40.000Z
               </td>
               <td>
-                Option B is an option
+                option-A
               </td>
               <td>
                 441
@@ -17833,10 +15415,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 whiteboard can eat
               </td>
               <td>
-                1970-01-01T00:16:40.484Z
+                1988-07-04T06:13:20.000Z
               </td>
               <td>
-                Option A is an option
+                option-B
               </td>
               <td>
                 484
@@ -17863,10 +15445,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 as eat scott
               </td>
               <td>
-                1970-01-01T00:16:40.529Z
+                1989-12-07T02:13:20.000Z
               </td>
               <td>
-                Option B is an option
+                option-C
               </td>
               <td>
                 529
@@ -17893,10 +15475,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 can pinocchio whiteboard
               </td>
               <td>
-                1970-01-01T00:16:40.576Z
+                1991-06-04T01:46:40.000Z
               </td>
               <td>
-                Option A is an option
+                option-A
               </td>
               <td>
                 576
@@ -17923,10 +15505,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 bottle toyota bottle
               </td>
               <td>
-                1970-01-01T00:16:40.625Z
+                1992-12-22T04:53:20.000Z
               </td>
               <td>
-                Option B is an option
+                option-B
               </td>
               <td>
                 625
@@ -17953,10 +15535,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 eat whiteboard pinocchio
               </td>
               <td>
-                1970-01-01T00:16:40.676Z
+                1994-08-04T11:33:20.000Z
               </td>
               <td>
-                Option A is an option
+                option-C
               </td>
               <td>
                 676
@@ -17983,10 +15565,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 chocolate can helping
               </td>
               <td>
-                1970-01-01T00:16:40.729Z
+                1996-04-08T21:46:40.000Z
               </td>
               <td>
-                Option B is an option
+                option-A
               </td>
               <td>
                 729
@@ -18013,10 +15595,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 pinocchio eat can
               </td>
               <td>
-                1970-01-01T00:16:40.784Z
+                1998-01-05T11:33:20.000Z
               </td>
               <td>
-                Option A is an option
+                option-B
               </td>
               <td>
                 784
@@ -18043,10 +15625,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 scott pinocchio chocolate
               </td>
               <td>
-                1970-01-01T00:16:40.841Z
+                1999-10-27T04:53:20.000Z
               </td>
               <td>
-                Option B is an option
+                option-C
               </td>
               <td>
                 841
@@ -18073,10 +15655,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 toyota toyota toyota
               </td>
               <td>
-                1970-01-01T00:16:40.900Z
+                2001-09-09T01:46:40.000Z
               </td>
               <td>
-                Option A is an option
+                option-A
               </td>
               <td>
                 900
@@ -18103,10 +15685,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 helping whiteboard as
               </td>
               <td>
-                1970-01-01T00:16:40.961Z
+                2003-08-16T02:13:20.000Z
               </td>
               <td>
-                Option B is an option
+                option-B
               </td>
               <td>
                 961
@@ -18133,10 +15715,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 whiteboard can eat
               </td>
               <td>
-                1970-01-01T00:16:41.024Z
+                2005-08-14T06:13:20.000Z
               </td>
               <td>
-                Option A is an option
+                option-C
               </td>
               <td>
                 1024
@@ -18163,10 +15745,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 as eat scott
               </td>
               <td>
-                1970-01-01T00:16:41.089Z
+                2007-09-05T13:46:40.000Z
               </td>
               <td>
-                Option B is an option
+                option-A
               </td>
               <td>
                 1089
@@ -18193,10 +15775,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 can pinocchio whiteboard
               </td>
               <td>
-                1970-01-01T00:16:41.156Z
+                2009-10-20T00:53:20.000Z
               </td>
               <td>
-                Option A is an option
+                option-B
               </td>
               <td>
                 1156
@@ -18223,10 +15805,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 bottle toyota bottle
               </td>
               <td>
-                1970-01-01T00:16:41.225Z
+                2011-12-27T15:33:20.000Z
               </td>
               <td>
-                Option B is an option
+                option-C
               </td>
               <td>
                 1225
@@ -18253,10 +15835,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 eat whiteboard pinocchio
               </td>
               <td>
-                1970-01-01T00:16:41.296Z
+                2014-03-28T09:46:40.000Z
               </td>
               <td>
-                Option A is an option
+                option-A
               </td>
               <td>
                 1296
@@ -18283,10 +15865,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 chocolate can helping
               </td>
               <td>
-                1970-01-01T00:16:41.369Z
+                2016-07-20T07:33:20.000Z
               </td>
               <td>
-                Option B is an option
+                option-B
               </td>
               <td>
                 1369
@@ -18313,10 +15895,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 pinocchio eat can
               </td>
               <td>
-                1970-01-01T00:16:41.444Z
+                2018-12-05T08:53:20.000Z
               </td>
               <td>
-                Option A is an option
+                option-C
               </td>
               <td>
                 1444
@@ -18343,10 +15925,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 scott pinocchio chocolate
               </td>
               <td>
-                1970-01-01T00:16:41.521Z
+                2021-05-14T13:46:40.000Z
               </td>
               <td>
-                Option B is an option
+                option-A
               </td>
               <td>
                 1521
@@ -18373,10 +15955,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 toyota toyota toyota
               </td>
               <td>
-                1970-01-01T00:16:41.600Z
+                2023-11-14T22:13:20.000Z
               </td>
               <td>
-                Option A is an option
+                option-B
               </td>
               <td>
                 1600
@@ -18403,10 +15985,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 helping whiteboard as
               </td>
               <td>
-                1970-01-01T00:16:41.681Z
+                2026-06-09T10:13:20.000Z
               </td>
               <td>
-                Option B is an option
+                option-C
               </td>
               <td>
                 1681
@@ -18433,10 +16015,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 whiteboard can eat
               </td>
               <td>
-                1970-01-01T00:16:41.764Z
+                2029-01-25T01:46:40.000Z
               </td>
               <td>
-                Option A is an option
+                option-A
               </td>
               <td>
                 1764
@@ -18463,10 +16045,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 as eat scott
               </td>
               <td>
-                1970-01-01T00:16:41.849Z
+                2031-10-05T20:53:20.000Z
               </td>
               <td>
-                Option B is an option
+                option-B
               </td>
               <td>
                 1849
@@ -18493,10 +16075,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 can pinocchio whiteboard
               </td>
               <td>
-                1970-01-01T00:16:41.936Z
+                2034-07-08T19:33:20.000Z
               </td>
               <td>
-                Option A is an option
+                option-C
               </td>
               <td>
                 1936
@@ -18523,10 +16105,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 bottle toyota bottle
               </td>
               <td>
-                1970-01-01T00:16:42.025Z
+                2037-05-03T21:46:40.000Z
               </td>
               <td>
-                Option B is an option
+                option-A
               </td>
               <td>
                 2025
@@ -18553,10 +16135,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 eat whiteboard pinocchio
               </td>
               <td>
-                1970-01-01T00:16:42.116Z
+                2040-03-22T03:33:20.000Z
               </td>
               <td>
-                Option A is an option
+                option-B
               </td>
               <td>
                 2116
@@ -18583,10 +16165,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 chocolate can helping
               </td>
               <td>
-                1970-01-01T00:16:42.209Z
+                2043-03-03T12:53:20.000Z
               </td>
               <td>
-                Option B is an option
+                option-C
               </td>
               <td>
                 2209
@@ -18613,10 +16195,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 pinocchio eat can
               </td>
               <td>
-                1970-01-01T00:16:42.304Z
+                2046-03-07T01:46:40.000Z
               </td>
               <td>
-                Option A is an option
+                option-A
               </td>
               <td>
                 2304
@@ -18643,10 +16225,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 scott pinocchio chocolate
               </td>
               <td>
-                1970-01-01T00:16:42.401Z
+                2049-04-02T18:13:20.000Z
               </td>
               <td>
-                Option B is an option
+                option-B
               </td>
               <td>
                 2401
@@ -18673,10 +16255,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 toyota toyota toyota
               </td>
               <td>
-                1970-01-01T00:16:42.500Z
+                2052-05-22T14:13:20.000Z
               </td>
               <td>
-                Option A is an option
+                option-C
               </td>
               <td>
                 2500
@@ -18703,10 +16285,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 helping whiteboard as
               </td>
               <td>
-                1970-01-01T00:16:42.601Z
+                2055-08-04T13:46:40.000Z
               </td>
               <td>
-                Option B is an option
+                option-A
               </td>
               <td>
                 2601
@@ -18733,10 +16315,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 whiteboard can eat
               </td>
               <td>
-                1970-01-01T00:16:42.704Z
+                2058-11-08T16:53:20.000Z
               </td>
               <td>
-                Option A is an option
+                option-B
               </td>
               <td>
                 2704
@@ -18763,10 +16345,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 as eat scott
               </td>
               <td>
-                1970-01-01T00:16:42.809Z
+                2062-03-07T23:33:20.000Z
               </td>
               <td>
-                Option B is an option
+                option-C
               </td>
               <td>
                 2809
@@ -18793,10 +16375,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 can pinocchio whiteboard
               </td>
               <td>
-                1970-01-01T00:16:42.916Z
+                2065-07-28T09:46:40.000Z
               </td>
               <td>
-                Option A is an option
+                option-A
               </td>
               <td>
                 2916
@@ -18823,10 +16405,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 bottle toyota bottle
               </td>
               <td>
-                1970-01-01T00:16:43.025Z
+                2069-01-09T23:33:20.000Z
               </td>
               <td>
-                Option B is an option
+                option-B
               </td>
               <td>
                 3025
@@ -18853,10 +16435,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 eat whiteboard pinocchio
               </td>
               <td>
-                1970-01-01T00:16:43.136Z
+                2072-07-17T16:53:20.000Z
               </td>
               <td>
-                Option A is an option
+                option-C
               </td>
               <td>
                 3136
@@ -18883,10 +16465,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 chocolate can helping
               </td>
               <td>
-                1970-01-01T00:16:43.249Z
+                2076-02-15T13:46:40.000Z
               </td>
               <td>
-                Option B is an option
+                option-A
               </td>
               <td>
                 3249
@@ -18913,10 +16495,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 pinocchio eat can
               </td>
               <td>
-                1970-01-01T00:16:43.364Z
+                2079-10-08T14:13:20.000Z
               </td>
               <td>
-                Option A is an option
+                option-B
               </td>
               <td>
                 3364
@@ -18943,10 +16525,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 scott pinocchio chocolate
               </td>
               <td>
-                1970-01-01T00:16:43.481Z
+                2083-06-23T18:13:20.000Z
               </td>
               <td>
-                Option B is an option
+                option-C
               </td>
               <td>
                 3481
@@ -18973,10 +16555,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 toyota toyota toyota
               </td>
               <td>
-                1970-01-01T00:16:43.600Z
+                2087-04-01T01:46:40.000Z
               </td>
               <td>
-                Option A is an option
+                option-A
               </td>
               <td>
                 3600
@@ -19003,10 +16585,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 helping whiteboard as
               </td>
               <td>
-                1970-01-01T00:16:43.721Z
+                2091-01-30T12:53:20.000Z
               </td>
               <td>
-                Option B is an option
+                option-B
               </td>
               <td>
                 3721
@@ -19033,10 +16615,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 whiteboard can eat
               </td>
               <td>
-                1970-01-01T00:16:43.844Z
+                2094-12-24T03:33:20.000Z
               </td>
               <td>
-                Option A is an option
+                option-C
               </td>
               <td>
                 3844
@@ -19063,10 +16645,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 as eat scott
               </td>
               <td>
-                1970-01-01T00:16:43.969Z
+                2098-12-09T21:46:40.000Z
               </td>
               <td>
-                Option B is an option
+                option-A
               </td>
               <td>
                 3969
@@ -19093,10 +16675,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 can pinocchio whiteboard
               </td>
               <td>
-                1970-01-01T00:16:44.096Z
+                2102-12-19T19:33:20.000Z
               </td>
               <td>
-                Option A is an option
+                option-B
               </td>
               <td>
                 4096
@@ -19123,10 +16705,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 bottle toyota bottle
               </td>
               <td>
-                1970-01-01T00:16:44.225Z
+                2107-01-20T20:53:20.000Z
               </td>
               <td>
-                Option B is an option
+                option-C
               </td>
               <td>
                 4225
@@ -19153,10 +16735,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 eat whiteboard pinocchio
               </td>
               <td>
-                1970-01-01T00:16:44.356Z
+                2111-03-17T01:46:40.000Z
               </td>
               <td>
-                Option A is an option
+                option-A
               </td>
               <td>
                 4356
@@ -19183,10 +16765,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 chocolate can helping
               </td>
               <td>
-                1970-01-01T00:16:44.489Z
+                2115-06-03T10:13:20.000Z
               </td>
               <td>
-                Option B is an option
+                option-B
               </td>
               <td>
                 4489
@@ -19213,10 +16795,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 pinocchio eat can
               </td>
               <td>
-                1970-01-01T00:16:44.624Z
+                2119-09-12T22:13:20.000Z
               </td>
               <td>
-                Option A is an option
+                option-C
               </td>
               <td>
                 4624
@@ -19243,10 +16825,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 scott pinocchio chocolate
               </td>
               <td>
-                1970-01-01T00:16:44.761Z
+                2124-01-15T13:46:40.000Z
               </td>
               <td>
-                Option B is an option
+                option-A
               </td>
               <td>
                 4761
@@ -19273,10 +16855,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 toyota toyota toyota
               </td>
               <td>
-                1970-01-01T00:16:44.900Z
+                2128-06-11T08:53:20.000Z
               </td>
               <td>
-                Option A is an option
+                option-B
               </td>
               <td>
                 4900
@@ -19303,10 +16885,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 helping whiteboard as
               </td>
               <td>
-                1970-01-01T00:16:45.041Z
+                2132-11-29T07:33:20.000Z
               </td>
               <td>
-                Option B is an option
+                option-C
               </td>
               <td>
                 5041
@@ -19333,10 +16915,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 whiteboard can eat
               </td>
               <td>
-                1970-01-01T00:16:45.184Z
+                2137-06-11T09:46:40.000Z
               </td>
               <td>
-                Option A is an option
+                option-A
               </td>
               <td>
                 5184
@@ -19363,10 +16945,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 as eat scott
               </td>
               <td>
-                1970-01-01T00:16:45.329Z
+                2142-01-14T15:33:20.000Z
               </td>
               <td>
-                Option B is an option
+                option-B
               </td>
               <td>
                 5329
@@ -19393,10 +16975,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 can pinocchio whiteboard
               </td>
               <td>
-                1970-01-01T00:16:45.476Z
+                2146-09-12T00:53:20.000Z
               </td>
               <td>
-                Option A is an option
+                option-C
               </td>
               <td>
                 5476
@@ -19423,10 +17005,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 bottle toyota bottle
               </td>
               <td>
-                1970-01-01T00:16:45.625Z
+                2151-06-02T13:46:40.000Z
               </td>
               <td>
-                Option B is an option
+                option-A
               </td>
               <td>
                 5625
@@ -19453,10 +17035,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 eat whiteboard pinocchio
               </td>
               <td>
-                1970-01-01T00:16:45.776Z
+                2156-03-15T06:13:20.000Z
               </td>
               <td>
-                Option A is an option
+                option-B
               </td>
               <td>
                 5776
@@ -19483,10 +17065,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 chocolate can helping
               </td>
               <td>
-                1970-01-01T00:16:45.929Z
+                2161-01-19T02:13:20.000Z
               </td>
               <td>
-                Option B is an option
+                option-C
               </td>
               <td>
                 5929
@@ -19513,10 +17095,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 pinocchio eat can
               </td>
               <td>
-                1970-01-01T00:16:46.084Z
+                2165-12-18T01:46:40.000Z
               </td>
               <td>
-                Option A is an option
+                option-A
               </td>
               <td>
                 6084
@@ -19543,10 +17125,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 scott pinocchio chocolate
               </td>
               <td>
-                1970-01-01T00:16:46.241Z
+                2170-12-09T04:53:20.000Z
               </td>
               <td>
-                Option B is an option
+                option-B
               </td>
               <td>
                 6241
@@ -19573,10 +17155,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 toyota toyota toyota
               </td>
               <td>
-                1970-01-01T00:16:46.400Z
+                2175-12-23T11:33:20.000Z
               </td>
               <td>
-                Option A is an option
+                option-C
               </td>
               <td>
                 6400
@@ -19603,10 +17185,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 helping whiteboard as
               </td>
               <td>
-                1970-01-01T00:16:46.561Z
+                2181-01-28T21:46:40.000Z
               </td>
               <td>
-                Option B is an option
+                option-A
               </td>
               <td>
                 6561
@@ -19633,10 +17215,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 whiteboard can eat
               </td>
               <td>
-                1970-01-01T00:16:46.724Z
+                2186-03-30T11:33:20.000Z
               </td>
               <td>
-                Option A is an option
+                option-B
               </td>
               <td>
                 6724
@@ -19663,10 +17245,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 as eat scott
               </td>
               <td>
-                1970-01-01T00:16:46.889Z
+                2191-06-22T04:53:20.000Z
               </td>
               <td>
-                Option B is an option
+                option-C
               </td>
               <td>
                 6889
@@ -19693,10 +17275,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 can pinocchio whiteboard
               </td>
               <td>
-                1970-01-01T00:16:47.056Z
+                2196-10-06T01:46:40.000Z
               </td>
               <td>
-                Option A is an option
+                option-A
               </td>
               <td>
                 7056
@@ -19723,10 +17305,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 bottle toyota bottle
               </td>
               <td>
-                1970-01-01T00:16:47.225Z
+                2202-02-14T02:13:20.000Z
               </td>
               <td>
-                Option B is an option
+                option-B
               </td>
               <td>
                 7225
@@ -19753,10 +17335,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 eat whiteboard pinocchio
               </td>
               <td>
-                1970-01-01T00:16:47.396Z
+                2207-07-17T06:13:20.000Z
               </td>
               <td>
-                Option A is an option
+                option-C
               </td>
               <td>
                 7396
@@ -19783,10 +17365,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 chocolate can helping
               </td>
               <td>
-                1970-01-01T00:16:47.569Z
+                2213-01-08T13:46:40.000Z
               </td>
               <td>
-                Option B is an option
+                option-A
               </td>
               <td>
                 7569
@@ -19813,10 +17395,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 pinocchio eat can
               </td>
               <td>
-                1970-01-01T00:16:47.744Z
+                2218-07-27T00:53:20.000Z
               </td>
               <td>
-                Option A is an option
+                option-B
               </td>
               <td>
                 7744
@@ -19843,10 +17425,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 scott pinocchio chocolate
               </td>
               <td>
-                1970-01-01T00:16:47.921Z
+                2224-03-05T15:33:20.000Z
               </td>
               <td>
-                Option B is an option
+                option-C
               </td>
               <td>
                 7921
@@ -19873,10 +17455,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 toyota toyota toyota
               </td>
               <td>
-                1970-01-01T00:16:48.100Z
+                2229-11-06T09:46:40.000Z
               </td>
               <td>
-                Option A is an option
+                option-A
               </td>
               <td>
                 8100
@@ -19903,10 +17485,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 helping whiteboard as
               </td>
               <td>
-                1970-01-01T00:16:48.281Z
+                2235-08-02T07:33:20.000Z
               </td>
               <td>
-                Option B is an option
+                option-B
               </td>
               <td>
                 8281
@@ -19933,10 +17515,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 whiteboard can eat
               </td>
               <td>
-                1970-01-01T00:16:48.464Z
+                2241-05-20T08:53:20.000Z
               </td>
               <td>
-                Option A is an option
+                option-C
               </td>
               <td>
                 8464
@@ -19963,10 +17545,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 as eat scott
               </td>
               <td>
-                1970-01-01T00:16:48.649Z
+                2247-03-31T13:46:40.000Z
               </td>
               <td>
-                Option B is an option
+                option-A
               </td>
               <td>
                 8649
@@ -19993,10 +17575,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 can pinocchio whiteboard
               </td>
               <td>
-                1970-01-01T00:16:48.836Z
+                2253-03-03T22:13:20.000Z
               </td>
               <td>
-                Option A is an option
+                option-B
               </td>
               <td>
                 8836
@@ -20023,10 +17605,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 bottle toyota bottle
               </td>
               <td>
-                1970-01-01T00:16:49.025Z
+                2259-02-28T10:13:20.000Z
               </td>
               <td>
-                Option B is an option
+                option-C
               </td>
               <td>
                 9025
@@ -20053,10 +17635,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 eat whiteboard pinocchio
               </td>
               <td>
-                1970-01-01T00:16:49.216Z
+                2265-03-19T01:46:40.000Z
               </td>
               <td>
-                Option A is an option
+                option-A
               </td>
               <td>
                 9216
@@ -20083,10 +17665,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 chocolate can helping
               </td>
               <td>
-                1970-01-01T00:16:49.409Z
+                2271-04-30T20:53:20.000Z
               </td>
               <td>
-                Option B is an option
+                option-B
               </td>
               <td>
                 9409
@@ -20113,10 +17695,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 pinocchio eat can
               </td>
               <td>
-                1970-01-01T00:16:49.604Z
+                2277-07-04T19:33:20.000Z
               </td>
               <td>
-                Option A is an option
+                option-C
               </td>
               <td>
                 9604
@@ -20143,10 +17725,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 scott pinocchio chocolate
               </td>
               <td>
-                1970-01-01T00:16:49.801Z
+                2283-10-01T21:46:40.000Z
               </td>
               <td>
-                Option B is an option
+                option-A
               </td>
               <td>
                 9801

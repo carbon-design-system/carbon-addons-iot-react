@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import isNil from 'lodash/isNil';
+import { PaginationV2 } from 'carbon-components-react';
 
-import Pagination from './Pagination/Pagination';
+import { defaultFunction } from '../../utils/componentUtilityFunctions';
+
 import Toolbar from './Toolbar/Toolbar';
 import FilterHeaderRow from './FilterHeaderRow/FilterHeaderRow';
 
@@ -37,7 +39,7 @@ const propTypes = {
   }),
   view: PropTypes.shape({
     pagination: PropTypes.shape({
-      itemsPerPage: PropTypes.number.isRequired,
+      pageSizes: PropTypes.arrayOf(PropTypes.number),
       totalItems: PropTypes.number.isRequired,
       page: PropTypes.number.isRequired,
     }),
@@ -58,8 +60,8 @@ const propTypes = {
   }),
   actions: PropTypes.shape({
     pagination: PropTypes.shape({
-      onChangeItemsPerPage: PropTypes.func,
-      onChangePage: PropTypes.func,
+      /** Is passed an object parameter containing the current page and the current items per page */
+      onChange: PropTypes.func,
     }),
     toolbar: PropTypes.shape({
       onBatchCancel: PropTypes.func,
@@ -76,12 +78,12 @@ const propTypes = {
 const defaultProps = {
   options: {},
   view: {
-    pagination: {},
+    pagination: { pageSizes: [10, 20, 30] },
     toolbar: {},
     table: {},
   },
   actions: {
-    pagination: {},
+    pagination: { onChange: defaultFunction },
     toolbar: {},
     table: {},
   },
@@ -96,10 +98,10 @@ class Table extends Component {
   render = () => {
     const { columns, data, view, actions, options } = this.props;
     const minItemInView = view.pagination
-      ? (view.pagination.page - 1) * view.pagination.itemsPerPage + 1
+      ? (view.pagination.page - 1) * view.pagination.pageSize + 1
       : 0;
     const maxItemInView = view.pagination
-      ? view.pagination.page * view.pagination.itemsPerPage
+      ? view.pagination.page * view.pagination.pageSize
       : data.length;
     const visibleData = data.slice(minItemInView, maxItemInView);
     const filterBarActive = options.hasFilter && view.toolbar.activeBar === 'filter';
@@ -123,7 +125,9 @@ class Table extends Component {
             </th>
           ) : null}
           {columns.map(column => (
-            <th style={filterBarActive === true ? filterBarActiveStyle : {}}>
+            <th
+              key={`column-${column.id}`}
+              style={filterBarActive === true ? filterBarActiveStyle : {}}>
               <span className="bx--table-header-label">{column.name}</span>
             </th>
           ))}
@@ -172,7 +176,7 @@ class Table extends Component {
     );
 
     const pagination = options.hasPagination ? (
-      <Pagination {...view.pagination} {...actions.pagination} />
+      <PaginationV2 {...view.pagination} {...actions.pagination} />
     ) : null;
 
     return (

@@ -165,10 +165,10 @@ class TablePagination extends Component {
       view: {
         pagination: {
           totalItems: tableData.length,
-          itemsPerPage: 10,
+          pageSize: 10,
+          pageSizes: [10, 20, 30],
           page: 1,
         },
-        toolbar: {},
         table: {
           isSelectAllSelected: false,
           selectedIds: [],
@@ -181,27 +181,12 @@ class TablePagination extends Component {
     const { columns, data, options, view } = this.state;
     const actions = {
       pagination: {
-        onChangeItemsPerPage: value => {
+        onChange: paginationValues => {
           this.setState(state =>
             update(state, {
               view: {
                 pagination: {
-                  itemsPerPage: {
-                    $set: value,
-                  },
-                },
-              },
-            })
-          );
-        },
-        onChangePage: value => {
-          this.setState(state =>
-            update(state, {
-              view: {
-                pagination: {
-                  page: {
-                    $set: value,
-                  },
+                  $merge: paginationValues,
                 },
               },
             })
@@ -307,7 +292,6 @@ class TableFilter extends Component {
         true
       )
     );
-    console.log(filteredData);
     const actions = {
       toolbar: {
         onApplyFilter: filterValues => {
@@ -321,7 +305,6 @@ class TableFilter extends Component {
                 : null
             )
             .filter(i => i);
-          console.log(newFilters);
           this.setState(state =>
             update(state, {
               view: {
@@ -349,7 +332,6 @@ class TableFilter extends Component {
           );
         },
         onBatchDelete: () => {
-          console.log('onBatchDelete');
           this.setState(state =>
             update(state, {
               view: {
