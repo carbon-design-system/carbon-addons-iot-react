@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button } from 'carbon-components-react';
+import { Button, Icon } from 'carbon-components-react';
+import { iconFilter } from 'carbon-icons';
 
 import { defaultFunction } from '../../../utils/componentUtilityFunctions';
 
@@ -9,14 +10,24 @@ const propTypes = {
   selectedItemCount: PropTypes.number.isRequired,
   onBatchCancel: PropTypes.func,
   onBatchDelete: PropTypes.func,
+  onToggleFilter: PropTypes.func,
+  hasFilters: PropTypes.bool,
 };
 
 const defaultProps = {
   onBatchCancel: defaultFunction,
   onBatchDelete: defaultFunction,
+  onToggleFilter: defaultFunction,
+  hasFilters: false,
 };
 
-const Toolbar = ({ selectedItemCount, onBatchCancel, onBatchDelete }) => {
+const Toolbar = ({
+  selectedItemCount,
+  onBatchCancel,
+  onBatchDelete,
+  hasFilters,
+  onToggleFilter,
+}) => {
   const batch = (
     <div
       className={`bx--batch-actions ${selectedItemCount > 0 ? 'bx--batch-actions--active' : ''}`}
@@ -73,21 +84,18 @@ const Toolbar = ({ selectedItemCount, onBatchCancel, onBatchDelete }) => {
         </div>
       </div>
       <div className="bx--toolbar-content">
-        <button type="button" className="bx--toolbar-action">
-          <svg
-            className="bx--toolbar-action__icon"
-            fillRule="evenodd"
-            height="16"
-            name="edit"
-            role="img"
-            viewBox="0 0 16 16"
-            width="16"
-            aria-label="Edit"
-            alt="Edit">
-            <title>Edit</title>
-            <path d="M7.926 3.38L1.002 9.72V12h2.304l6.926-6.316L7.926 3.38zm.738-.675l2.308 2.304 1.451-1.324-2.308-2.309-1.451 1.329zM.002 9.28L9.439.639a1 1 0 0 1 1.383.03l2.309 2.309a1 1 0 0 1-.034 1.446L3.694 13H.002V9.28zM0 16.013v-1h16v1z" />
-          </svg>
-        </button>
+        {hasFilters ? (
+          <button type="button" className="bx--toolbar-action" onClick={onToggleFilter}>
+            <Icon
+              icon={iconFilter}
+              height="16"
+              viewBox="0 0 16 16"
+              description="Filter icon enables filtering on columns"
+              className="bx--toolbar-action__icon"
+            />
+          </button>
+        ) : null}
+
         <button type="button" className="bx--toolbar-action">
           <svg
             className="bx--toolbar-action__icon"

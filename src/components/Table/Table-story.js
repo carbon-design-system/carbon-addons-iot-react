@@ -347,6 +347,20 @@ class TableFilter extends Component {
             })
           );
         },
+        onToggleFilter: () => {
+          this.setState(state => {
+            const filterToggled = state.view.toolbar.activeBar === 'filter' ? null : 'filter';
+            return update(state, {
+              view: {
+                toolbar: {
+                  activeBar: {
+                    $set: filterToggled,
+                  },
+                },
+              },
+            });
+          });
+        },
       },
       table: {
         onRowSelected: (id, val) => {

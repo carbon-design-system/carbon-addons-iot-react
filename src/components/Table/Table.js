@@ -50,7 +50,7 @@ const propTypes = {
       })
     ),
     toolbar: PropTypes.shape({
-      // if not provided, no bar is visible
+      /** Specify which header row to display, will display default header row if null */
       activeBar: PropTypes.oneOf(['filter'], ['column']),
     }),
     table: PropTypes.shape({
@@ -60,13 +60,14 @@ const propTypes = {
   }),
   actions: PropTypes.shape({
     pagination: PropTypes.shape({
-      /** Is passed an object parameter containing the current page and the current items per page */
+      /** Specify a callback for when the current page or page size is changed. This callback is passed an object parameter containing the current page and the current page size */
       onChange: PropTypes.func,
     }),
     toolbar: PropTypes.shape({
       onBatchCancel: PropTypes.func,
       onBatchDelete: PropTypes.func,
       onApplyFilter: PropTypes.func,
+      onToggleFilter: PropTypes.func,
     }),
     table: PropTypes.shape({
       onRowSelected: PropTypes.func,
@@ -185,6 +186,7 @@ class Table extends Component {
           {...view.toolbar}
           selectedItemCount={view.table.selectedIds.length}
           {...actions.toolbar}
+          hasFilters={view.filters && !!view.filters.length}
         />
         <table className="bx--data-table-v2">
           {header}
