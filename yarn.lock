@@ -3786,10 +3786,10 @@ capture-stack-trace@^1.0.0:
   resolved "https://registry.yarnpkg.com/capture-stack-trace/-/capture-stack-trace-1.0.1.tgz#a6c0bbe1f38f3aa0b92238ecb6ff42c344d4135d"
   integrity sha512-mYQLZnx5Qt1JgB1WEiMCf2647plpGeQ2NMR/5L0HNZzGQo4fuSPnK+wjfPnKZV0aiJDgzmWqqkV/g7JD+DW0qw==
 
-carbon-components-react@6.74.0:
-  version "6.74.0"
-  resolved "https://registry.yarnpkg.com/carbon-components-react/-/carbon-components-react-6.74.0.tgz#ab855baae2c47a80fda4519f5a130f2a0965dad9"
-  integrity sha512-hR7zTbDk4lq1HOcp/06sgOHx6YvIID8EXtHO68TW0+R6SDQM5XgQlkAL79SWV3h3eAqx7uRgMP2R1HdRHwRhag==
+carbon-components-react@6.83.2:
+  version "6.83.2"
+  resolved "https://registry.yarnpkg.com/carbon-components-react/-/carbon-components-react-6.83.2.tgz#fe1e4b94c3c20f04309b73c2da183b8ad350c28c"
+  integrity sha512-CJgzPnOlWsF17CxNLYuOnBtUJE8AYfseWIlDkXpKUVg2sRePWSS1rIpT1yxCyFkeCWyOZW9np3uVL7l2R2Td2A==
   dependencies:
     "@carbon/icons-react" "^0.0.1-alpha.26"
     classnames "2.2.6"
@@ -3802,7 +3802,7 @@ carbon-components-react@6.74.0:
     warning "^3.0.0"
     window-or-global "^1.0.1"
 
-carbon-components@^9.48.2:
+carbon-components@9.66.3:
   version "9.66.3"
   resolved "https://registry.yarnpkg.com/carbon-components/-/carbon-components-9.66.3.tgz#cb46c1aa5362db179221a1c72fc9bb4ce973d52e"
   integrity sha512-z2nhG0vZIk73IsTpyKyT/fZcugvphGHBZBsNbnrD3ZafdCA27g4LeJ9BbAiY8lidK2/UZekh7d1fUDJz6iOilg==
@@ -3812,7 +3812,7 @@ carbon-components@^9.48.2:
     lodash.debounce "^4.0.8"
     warning "^3.0.0"
 
-carbon-icons@^7.0.5, carbon-icons@^7.0.7:
+carbon-icons@7.0.7, carbon-icons@^7.0.7:
   version "7.0.7"
   resolved "https://registry.yarnpkg.com/carbon-icons/-/carbon-icons-7.0.7.tgz#ebafe3e9fa25df973796a8eca06d8a7c501cc610"
   integrity sha512-3vgkdXJRgCViCrH3fLUdyAXo0I8wmohO6QETv7vWFx6yc7s+SirWFBSFL38zUx4MHtR8iTxIlLEzkeU6FlFtXg==
@@ -7187,6 +7187,13 @@ immer@1.7.2:
   resolved "https://registry.yarnpkg.com/immer/-/immer-1.7.2.tgz#a51e9723c50b27e132f6566facbec1c85fc69547"
   integrity sha512-4Urocwu9+XLDJw4Tc6ZCg7APVjjLInCFvO4TwGsAYV5zT6YYSor14dsZR0+0tHlDIN92cFUOq+i7fC00G5vTxA==
 
+immutability-helper@^2.9.0:
+  version "2.9.0"
+  resolved "https://registry.yarnpkg.com/immutability-helper/-/immutability-helper-2.9.0.tgz#04a1c646300cd3a68aa5dc1daa7758da2ca75292"
+  integrity sha512-2LYtDuGugMLyoFV0qGvblnq39E2VVQ9m4dDktlRLVBBVV1LnUMK0rlqkbtlUjfT1UJO876OobtPlNZTEbOOYVQ==
+  dependencies:
+    invariant "^2.2.0"
+
 immutable@^3.8.1:
   version "3.8.2"
   resolved "https://registry.yarnpkg.com/immutable/-/immutable-3.8.2.tgz#c2439951455bb39913daf281376f1530e104adf3"
@@ -7355,7 +7362,7 @@ into-stream@^4.0.0:
     from2 "^2.1.1"
     p-is-promise "^2.0.0"
 
-invariant@^2.2.2, invariant@^2.2.3, invariant@^2.2.4:
+invariant@^2.2.0, invariant@^2.2.2, invariant@^2.2.3, invariant@^2.2.4:
   version "2.2.4"
   resolved "https://registry.yarnpkg.com/invariant/-/invariant-2.2.4.tgz#610f3c92c9359ce1db616e538008d23ff35158e6"
   integrity sha512-phJfQVBuaJM5raOpJjSfkiD6BpbCE4Ns//LaXl6wGYtUBY83nWS6Rf9tXm2e8VaK60JEjYldbPif/A2B1C2gNA==

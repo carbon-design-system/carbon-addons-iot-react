@@ -4973,7 +4973,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots BaseModal fetchi
           className="bx--loading__svg"
           viewBox="-75 -75 150 150"
         >
+          <title>
+            Loading
+          </title>
           <circle
+            className={null}
             cx="0"
             cy="0"
             r="37.5"
@@ -7690,7 +7694,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots BaseModal sendin
                   className="bx--loading__svg"
                   viewBox="-75 -75 150 150"
                 >
+                  <title>
+                    Loading
+                  </title>
                   <circle
+                    className={null}
                     cx="0"
                     cy="0"
                     r="37.5"
@@ -10507,7 +10515,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots ButtonEnhanced l
           className="bx--loading__svg"
           viewBox="-75 -75 150 150"
         >
+          <title>
+            Loading
+          </title>
           <circle
+            className={null}
             cx="0"
             cy="0"
             r="37.5"
@@ -11089,7 +11101,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots ButtonEnhanced l
           className="bx--loading__svg"
           viewBox="-75 -75 150 150"
         >
+          <title>
+            Loading
+          </title>
           <circle
+            className={null}
             cx="0"
             cy="0"
             r="37.5"
@@ -12218,6 +12234,5794 @@ exports[`Storybook Snapshot tests and console checks Storyshots ButtonEnhanced n
                 </tr>
               </tbody>
             </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`] = `
+.c0.c0.c0 th {
+  padding-top: 0.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.c1.c1.c1 {
+  border-top: none;
+}
+
+.c1.c1.c1 .bx--form-item {
+  display: table-cell;
+}
+
+.c1.c1.c1 .bx--form-item input {
+  min-width: 12.75rem;
+}
+
+.c2.c2.c2 {
+  background-color: white;
+}
+
+<div>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "padding": 40,
+        }
+      }
+    >
+      <div>
+        <section
+          className="bx--table-toolbar"
+        >
+          <div
+            aria-label="Table Action Bar"
+            className="bx--batch-actions "
+          >
+            <div
+              className="bx--action-list"
+            >
+              <button
+                className="bx--action-list__delete bx--btn bx--btn--primary"
+                disabled={false}
+                onClick={[Function]}
+                tabIndex={0}
+                type="button"
+              >
+                Delete
+              </button>
+            </div>
+            <div
+              className="bx--batch-summary"
+            >
+              <p
+                className="bx--batch-summary__para"
+              >
+                <span
+                  data-items-selected={true}
+                >
+                  0
+                </span>
+                 
+                items selected
+              </p>
+              <button
+                className="bx--batch-summary__cancel"
+                onClick={[Function]}
+                type="button"
+              >
+                Cancel
+              </button>
+            </div>
+          </div>
+          <div
+            className="bx--toolbar-search-container"
+          >
+            <div
+              className="bx--search bx--search--sm bx--search--light"
+              data-search={true}
+              role="search"
+            >
+              <svg
+                className="bx--search-magnifier"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+              >
+                <path
+                  d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zm4.936-1.27l4.563 4.557-.707.708-4.563-4.558a6.5 6.5 0 1 1 .707-.707z"
+                  fillRule="nonzero"
+                />
+              </svg>
+              <label
+                className="bx--label"
+                htmlFor="search__input-2"
+                id="search-input-label-1"
+              >
+                Search
+                <input
+                  aria-labelledby="search-input-label-1"
+                  className="bx--search-input"
+                  id="search__input-2"
+                  placeholder="Search"
+                  type="text"
+                />
+              </label>
+              <button
+                aria-label="Clear search input"
+                className="bx--search-close bx--search-close--hidden"
+                title="Clear search input"
+                type="button"
+              >
+                <svg
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8 6.586L5.879 4.464 4.464 5.88 6.586 8l-2.122 2.121 1.415 1.415L8 9.414l2.121 2.122 1.415-1.415L9.414 8l2.122-2.121-1.415-1.415L8 6.586zM8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"
+                    fillRule="evenodd"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div
+            className="bx--toolbar-content"
+          >
+            <button
+              className="bx--toolbar-action"
+              onClick={[Function]}
+              type="button"
+            >
+              <svg
+                alt="Filter icon enables filtering on columns"
+                aria-label="Filter icon enables filtering on columns"
+                className="bx--toolbar-action__icon"
+                fillRule="evenodd"
+                height="16"
+                role="img"
+                viewBox="0 0 16 16"
+                width="16"
+              >
+                <title>
+                  Filter icon enables filtering on columns
+                </title>
+                <path
+                  d="M8.05 2a2.5 2.5 0 0 1 4.9 0H16v1h-3.05a2.5 2.5 0 0 1-4.9 0H0V2h8.05zm2.45 2a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM3.05 9a2.5 2.5 0 0 1 4.9 0H16v1H7.95a2.5 2.5 0 0 1-4.9 0H0V9h3.05zm2.45 2a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"
+                />
+              </svg>
+            </button>
+            <button
+              className="bx--toolbar-action"
+              type="button"
+            >
+              <svg
+                alt="Settings"
+                aria-label="Settings"
+                className="bx--toolbar-action__icon"
+                fillRule="evenodd"
+                height="16"
+                name="settings"
+                role="img"
+                viewBox="0 0 15 16"
+                width="15"
+              >
+                <title>
+                  Settings
+                </title>
+                <path
+                  d="M7.53 10.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5zm0 1a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7z"
+                />
+                <path
+                  d="M6.268 2.636l-.313.093c-.662.198-1.28.52-1.822.946l-.255.2-1.427-.754-1.214 1.735 1.186 1.073-.104.31a5.493 5.493 0 0 0-.198 2.759l.05.274L1 10.33l1.214 1.734 1.06-.56.262.275a5.5 5.5 0 0 0 2.42 1.491l.312.093L6.472 15H8.59l.204-1.636.313-.093a5.494 5.494 0 0 0 2.21-1.28l.26-.248 1.09.576 1.214-1.734-1.08-.977.071-.29a5.514 5.514 0 0 0-.073-2.905l-.091-.302 1.15-1.041-1.214-1.734-1.3.687-.257-.22a5.487 5.487 0 0 0-1.98-1.074l-.313-.093L8.59 1H6.472l-.204 1.636zM5.48.876A1 1 0 0 1 6.472 0H8.59a1 1 0 0 1 .992.876l.124.997a6.486 6.486 0 0 1 1.761.954l.71-.375a1 1 0 0 1 1.286.31l1.215 1.734a1 1 0 0 1-.149 1.316l-.688.622a6.514 6.514 0 0 1 .067 2.828l.644.581a1 1 0 0 1 .148 1.316l-1.214 1.734a1 1 0 0 1-1.287.31l-.464-.245c-.6.508-1.286.905-2.029 1.169l-.124.997A1 1 0 0 1 8.59 16H6.472a1 1 0 0 1-.992-.876l-.125-.997a6.499 6.499 0 0 1-2.274-1.389l-.399.211a1 1 0 0 1-1.287-.31L.181 10.904A1 1 0 0 1 .329 9.59l.764-.69a6.553 6.553 0 0 1 .18-2.662l-.707-.64a1 1 0 0 1-.148-1.315l1.214-1.734a1 1 0 0 1 1.287-.31l.86.454a6.482 6.482 0 0 1 1.576-.819L5.48.876z"
+                />
+              </svg>
+            </button>
+          </div>
+        </section>
+        <table
+          className="bx--data-table-v2"
+        >
+          <thead>
+            <tr>
+              <th
+                style={
+                  Object {
+                    "paddingTop": 16,
+                  }
+                }
+              >
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="select-all"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select-all"
+                    id="select-all"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </th>
+              <th
+                style={
+                  Object {
+                    "paddingTop": 16,
+                  }
+                }
+              >
+                <span
+                  className="bx--table-header-label"
+                >
+                  String
+                </span>
+              </th>
+              <th
+                style={
+                  Object {
+                    "paddingTop": 16,
+                  }
+                }
+              >
+                <span
+                  className="bx--table-header-label"
+                >
+                  Date
+                </span>
+              </th>
+              <th
+                style={
+                  Object {
+                    "paddingTop": 16,
+                  }
+                }
+              >
+                <span
+                  className="bx--table-header-label"
+                >
+                  Select
+                </span>
+              </th>
+              <th
+                style={
+                  Object {
+                    "paddingTop": 16,
+                  }
+                }
+              >
+                <span
+                  className="bx--table-header-label"
+                >
+                  Number
+                </span>
+              </th>
+            </tr>
+            <tr
+              className="c0"
+            >
+              <th
+                className="c1"
+                scope="col"
+              />
+              <th
+                className="c1"
+                scope="col"
+              >
+                <div
+                  className="bx--form-item"
+                >
+                  <label
+                    className="bx--label bx--visually-hidden"
+                    htmlFor="string"
+                  >
+                    string
+                  </label>
+                  <input
+                    className="bx--text-input c2"
+                    disabled={false}
+                    id="string"
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    onKeyDown={[Function]}
+                    placeholder="pick a string"
+                    type="text"
+                    value="whiteboard"
+                  />
+                </div>
+              </th>
+              <th
+                className="c1"
+                scope="col"
+              >
+                <div
+                  className="bx--form-item"
+                >
+                  <label
+                    className="bx--label bx--visually-hidden"
+                    htmlFor="date"
+                  >
+                    date
+                  </label>
+                  <input
+                    className="bx--text-input c2"
+                    disabled={false}
+                    id="date"
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    onKeyDown={[Function]}
+                    placeholder="pick a date"
+                    type="text"
+                    value=""
+                  />
+                </div>
+              </th>
+              <th
+                className="c1"
+                scope="col"
+              >
+                <div
+                  aria-label="Choose an item"
+                  className="bx--form-item bx--combo-box bx--list-box bx--list-box--light"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="listbox"
+                  tabIndex="0"
+                >
+                  <div
+                    aria-expanded={false}
+                    aria-haspopup={true}
+                    aria-label="open menu"
+                    className="bx--list-box__field"
+                    data-toggle={true}
+                    disabled={false}
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onKeyDown={[Function]}
+                    role="button"
+                    tabIndex="0"
+                    type="button"
+                  >
+                    <input
+                      aria-activedescendant={null}
+                      aria-autocomplete="list"
+                      aria-expanded={false}
+                      aria-label="ListBox input field"
+                      autoComplete="off"
+                      className="bx--text-input"
+                      disabled={false}
+                      id="downshift-0-input"
+                      onBlur={[Function]}
+                      onChange={[Function]}
+                      onKeyDown={[Function]}
+                      placeholder="pick an option"
+                      role="combobox"
+                      value="option-B"
+                    />
+                    <div
+                      className="bx--list-box__selection"
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      role="button"
+                      tabIndex="0"
+                      title="Clear selected item"
+                    >
+                      <svg
+                        alt="Clear selected item"
+                        aria-label="Clear selected item"
+                        fillRule="evenodd"
+                        focusable="false"
+                        height="10"
+                        role="img"
+                        viewBox="0 0 10 10"
+                        width="10"
+                      >
+                        <title>
+                          Clear selected item
+                        </title>
+                        <path
+                          d="M6.32 5L10 8.68 8.68 10 5 6.32 1.32 10 0 8.68 3.68 5 0 1.32 1.32 0 5 3.68 8.68 0 10 1.32 6.32 5z"
+                        />
+                      </svg>
+                    </div>
+                    <div
+                      className="bx--list-box__menu-icon"
+                    >
+                      <svg
+                        alt="Open menu"
+                        aria-label="Open menu"
+                        fillRule="evenodd"
+                        focusable="false"
+                        height="5"
+                        role="img"
+                        viewBox="0 0 10 5"
+                        width="10"
+                      >
+                        <title>
+                          Open menu
+                        </title>
+                        <path
+                          d="M0 0l5 4.998L10 0z"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </th>
+              <th
+                className="c1"
+                scope="col"
+              >
+                <div
+                  className="bx--form-item"
+                >
+                  <label
+                    className="bx--label bx--visually-hidden"
+                    htmlFor="number"
+                  >
+                    number
+                  </label>
+                  <input
+                    className="bx--text-input c2"
+                    disabled={false}
+                    id="number"
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    onKeyDown={[Function]}
+                    placeholder="pick a number"
+                    type="text"
+                    value=""
+                  />
+                </div>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-1-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-1-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                helping whiteboard as
+              </td>
+              <td>
+                1973-03-14T23:33:20.000Z
+              </td>
+              <td>
+                option-B
+              </td>
+              <td>
+                1
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-4-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-4-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                can pinocchio whiteboard
+              </td>
+              <td>
+                1973-09-04T14:13:20.000Z
+              </td>
+              <td>
+                option-B
+              </td>
+              <td>
+                16
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-16-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-16-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                eat whiteboard pinocchio
+              </td>
+              <td>
+                1981-04-13T08:53:20.000Z
+              </td>
+              <td>
+                option-B
+              </td>
+              <td>
+                256
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-22-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-22-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                whiteboard can eat
+              </td>
+              <td>
+                1988-07-04T06:13:20.000Z
+              </td>
+              <td>
+                option-B
+              </td>
+              <td>
+                484
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-31-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-31-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                helping whiteboard as
+              </td>
+              <td>
+                2003-08-16T02:13:20.000Z
+              </td>
+              <td>
+                option-B
+              </td>
+              <td>
+                961
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-34-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-34-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                can pinocchio whiteboard
+              </td>
+              <td>
+                2009-10-20T00:53:20.000Z
+              </td>
+              <td>
+                option-B
+              </td>
+              <td>
+                1156
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-46-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-46-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                eat whiteboard pinocchio
+              </td>
+              <td>
+                2040-03-22T03:33:20.000Z
+              </td>
+              <td>
+                option-B
+              </td>
+              <td>
+                2116
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-52-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-52-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                whiteboard can eat
+              </td>
+              <td>
+                2058-11-08T16:53:20.000Z
+              </td>
+              <td>
+                option-B
+              </td>
+              <td>
+                2704
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-61-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-61-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                helping whiteboard as
+              </td>
+              <td>
+                2091-01-30T12:53:20.000Z
+              </td>
+              <td>
+                option-B
+              </td>
+              <td>
+                3721
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-64-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-64-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                can pinocchio whiteboard
+              </td>
+              <td>
+                2102-12-19T19:33:20.000Z
+              </td>
+              <td>
+                option-B
+              </td>
+              <td>
+                4096
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-76-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-76-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                eat whiteboard pinocchio
+              </td>
+              <td>
+                2156-03-15T06:13:20.000Z
+              </td>
+              <td>
+                option-B
+              </td>
+              <td>
+                5776
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-82-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-82-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                whiteboard can eat
+              </td>
+              <td>
+                2186-03-30T11:33:20.000Z
+              </td>
+              <td>
+                option-B
+              </td>
+              <td>
+                6724
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-91-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-91-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                helping whiteboard as
+              </td>
+              <td>
+                2235-08-02T07:33:20.000Z
+              </td>
+              <td>
+                option-B
+              </td>
+              <td>
+                8281
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-94-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-94-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                can pinocchio whiteboard
+              </td>
+              <td>
+                2253-03-03T22:13:20.000Z
+              </td>
+              <td>
+                option-B
+              </td>
+              <td>
+                8836
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <button
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#28c",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+  <div
+    style={
+      Object {
+        "background": "white",
+        "bottom": 0,
+        "display": "none",
+        "left": 0,
+        "overflow": "auto",
+        "padding": "0 40px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+        "zIndex": 99999,
+      }
+    }
+  >
+    <button
+      onClick={[Function]}
+      style={
+        Object {
+          "background": "#28c",
+          "border": "none",
+          "borderRadius": "0 0 0 5px",
+          "color": "#fff",
+          "cursor": "pointer",
+          "display": "block",
+          "fontFamily": "sans-serif",
+          "fontSize": "12px",
+          "padding": "5px 15px",
+          "position": "fixed",
+          "right": 0,
+          "top": 0,
+        }
+      }
+      type="button"
+    >
+      ×
+    </button>
+    <div>
+      <div
+        style={
+          Object {
+            "WebkitFontSmoothing": "antialiased",
+            "backgroundColor": "#fff",
+            "border": "1px solid #eee",
+            "borderRadius": "2px",
+            "color": "#444",
+            "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+            "fontSize": "15px",
+            "fontWeight": 300,
+            "lineHeight": 1.45,
+            "marginBottom": "20px",
+            "marginTop": "20px",
+            "padding": "20px 40px 40px",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "borderBottom": "1px solid #eee",
+              "marginBottom": 10,
+              "paddingTop": 10,
+            }
+          }
+        >
+          <h1
+            style={
+              Object {
+                "fontSize": "35px",
+                "margin": 0,
+                "padding": 0,
+              }
+            }
+          >
+            Table
+          </h1>
+          <h2
+            style={
+              Object {
+                "fontSize": "22px",
+                "fontWeight": 400,
+                "margin": "0 0 10px 0",
+                "padding": 0,
+              }
+            }
+          >
+            filter
+          </h2>
+        </div>
+        
+        <div>
+          <h1
+            style={
+              Object {
+                "borderBottom": "1px solid #EEE",
+                "fontSize": "25px",
+                "margin": "20px 0 0 0",
+                "padding": "0 0 5px 0",
+              }
+            }
+          >
+            Story Source
+          </h1>
+          <pre
+            className="css-r8d96o eyvlbql0"
+          >
+            <div>
+              <div>
+                <div
+                  style={
+                    Object {
+                      "paddingLeft": 18,
+                      "paddingRight": 3,
+                    }
+                  }
+                >
+                  <span
+                    style={
+                      Object {
+                        "color": "#444",
+                      }
+                    }
+                  >
+                    &lt;
+                    div
+                  </span>
+                  <span>
+                    <span>
+                       
+                      <span
+                        style={Object {}}
+                      >
+                        style
+                      </span>
+                      <span>
+                        =
+                        <span
+                          style={Object {}}
+                        >
+                          {
+                          <span
+                            style={
+                              Object {
+                                "color": "#666",
+                              }
+                            }
+                          >
+                            {
+                            <span>
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#666",
+                                  }
+                                }
+                              >
+                                padding
+                              </span>
+                            </span>
+                            : 
+                            <span
+                              style={
+                                Object {
+                                  "color": "#a11",
+                                }
+                              }
+                            >
+                              40
+                            </span>
+                            }
+                          </span>
+                          }
+                        </span>
+                      </span>
+                      
+                    </span>
+                  </span>
+                  <span
+                    style={
+                      Object {
+                        "color": "#444",
+                      }
+                    }
+                  >
+                    &gt;
+                  </span>
+                </div>
+                <div
+                  style={
+                    Object {
+                      "paddingLeft": 33,
+                      "paddingRight": 3,
+                    }
+                  }
+                >
+                  <span
+                    style={
+                      Object {
+                        "color": "#444",
+                      }
+                    }
+                  >
+                    &lt;
+                    TableFilter
+                  </span>
+                  <span />
+                  <span
+                    style={
+                      Object {
+                        "color": "#444",
+                      }
+                    }
+                  >
+                    /&gt;
+                  </span>
+                </div>
+                <div
+                  style={
+                    Object {
+                      "paddingLeft": 18,
+                      "paddingRight": 3,
+                    }
+                  }
+                >
+                  <span
+                    style={
+                      Object {
+                        "color": "#444",
+                      }
+                    }
+                  >
+                    &lt;/
+                    div
+                    &gt;
+                  </span>
+                </div>
+              </div>
+            </div>
+            <button
+              className="css-1naocv3 eva467m0"
+              onClick={[Function]}
+            >
+              <div
+                className="css-lvl6aa eva467m1"
+              >
+                <div
+                  style={
+                    Object {
+                      "marginBottom": 6,
+                    }
+                  }
+                >
+                  Copied!
+                </div>
+                <div>
+                  Copy
+                </div>
+              </div>
+            </button>
+          </pre>
+        </div>
+        <div>
+          <h1
+            style={
+              Object {
+                "borderBottom": "1px solid #EEE",
+                "fontSize": "25px",
+                "margin": "20px 0 0 0",
+                "padding": "0 0 5px 0",
+              }
+            }
+          >
+            Prop Types
+          </h1>
+          <div>
+            <h2
+              style={
+                Object {
+                  "margin": "20px 0 0 0",
+                }
+              }
+            >
+              "
+              TableFilter
+              " Component
+            </h2>
+            <small>
+              No propTypes defined!
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots Table pagination 1`] = `
+<div>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "padding": 40,
+        }
+      }
+    >
+      <div>
+        <section
+          className="bx--table-toolbar"
+        >
+          <div
+            aria-label="Table Action Bar"
+            className="bx--batch-actions "
+          >
+            <div
+              className="bx--action-list"
+            >
+              <button
+                className="bx--action-list__delete bx--btn bx--btn--primary"
+                disabled={false}
+                onClick={[Function]}
+                tabIndex={0}
+                type="button"
+              >
+                Delete
+              </button>
+            </div>
+            <div
+              className="bx--batch-summary"
+            >
+              <p
+                className="bx--batch-summary__para"
+              >
+                <span
+                  data-items-selected={true}
+                >
+                  0
+                </span>
+                 
+                items selected
+              </p>
+              <button
+                className="bx--batch-summary__cancel"
+                onClick={[Function]}
+                type="button"
+              >
+                Cancel
+              </button>
+            </div>
+          </div>
+          <div
+            className="bx--toolbar-search-container"
+          >
+            <div
+              className="bx--search bx--search--sm bx--search--light"
+              data-search={true}
+              role="search"
+            >
+              <svg
+                className="bx--search-magnifier"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+              >
+                <path
+                  d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zm4.936-1.27l4.563 4.557-.707.708-4.563-4.558a6.5 6.5 0 1 1 .707-.707z"
+                  fillRule="nonzero"
+                />
+              </svg>
+              <label
+                className="bx--label"
+                htmlFor="search__input-2"
+                id="search-input-label-1"
+              >
+                Search
+                <input
+                  aria-labelledby="search-input-label-1"
+                  className="bx--search-input"
+                  id="search__input-2"
+                  placeholder="Search"
+                  type="text"
+                />
+              </label>
+              <button
+                aria-label="Clear search input"
+                className="bx--search-close bx--search-close--hidden"
+                title="Clear search input"
+                type="button"
+              >
+                <svg
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8 6.586L5.879 4.464 4.464 5.88 6.586 8l-2.122 2.121 1.415 1.415L8 9.414l2.121 2.122 1.415-1.415L9.414 8l2.122-2.121-1.415-1.415L8 6.586zM8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"
+                    fillRule="evenodd"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div
+            className="bx--toolbar-content"
+          >
+            <button
+              className="bx--toolbar-action"
+              type="button"
+            >
+              <svg
+                alt="Settings"
+                aria-label="Settings"
+                className="bx--toolbar-action__icon"
+                fillRule="evenodd"
+                height="16"
+                name="settings"
+                role="img"
+                viewBox="0 0 15 16"
+                width="15"
+              >
+                <title>
+                  Settings
+                </title>
+                <path
+                  d="M7.53 10.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5zm0 1a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7z"
+                />
+                <path
+                  d="M6.268 2.636l-.313.093c-.662.198-1.28.52-1.822.946l-.255.2-1.427-.754-1.214 1.735 1.186 1.073-.104.31a5.493 5.493 0 0 0-.198 2.759l.05.274L1 10.33l1.214 1.734 1.06-.56.262.275a5.5 5.5 0 0 0 2.42 1.491l.312.093L6.472 15H8.59l.204-1.636.313-.093a5.494 5.494 0 0 0 2.21-1.28l.26-.248 1.09.576 1.214-1.734-1.08-.977.071-.29a5.514 5.514 0 0 0-.073-2.905l-.091-.302 1.15-1.041-1.214-1.734-1.3.687-.257-.22a5.487 5.487 0 0 0-1.98-1.074l-.313-.093L8.59 1H6.472l-.204 1.636zM5.48.876A1 1 0 0 1 6.472 0H8.59a1 1 0 0 1 .992.876l.124.997a6.486 6.486 0 0 1 1.761.954l.71-.375a1 1 0 0 1 1.286.31l1.215 1.734a1 1 0 0 1-.149 1.316l-.688.622a6.514 6.514 0 0 1 .067 2.828l.644.581a1 1 0 0 1 .148 1.316l-1.214 1.734a1 1 0 0 1-1.287.31l-.464-.245c-.6.508-1.286.905-2.029 1.169l-.124.997A1 1 0 0 1 8.59 16H6.472a1 1 0 0 1-.992-.876l-.125-.997a6.499 6.499 0 0 1-2.274-1.389l-.399.211a1 1 0 0 1-1.287-.31L.181 10.904A1 1 0 0 1 .329 9.59l.764-.69a6.553 6.553 0 0 1 .18-2.662l-.707-.64a1 1 0 0 1-.148-1.315l1.214-1.734a1 1 0 0 1 1.287-.31l.86.454a6.482 6.482 0 0 1 1.576-.819L5.48.876z"
+                />
+              </svg>
+            </button>
+          </div>
+        </section>
+        <table
+          className="bx--data-table-v2"
+        >
+          <thead>
+            <tr>
+              <th
+                style={Object {}}
+              >
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="select-all"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select-all"
+                    id="select-all"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </th>
+              <th
+                style={Object {}}
+              >
+                <span
+                  className="bx--table-header-label"
+                >
+                  String
+                </span>
+              </th>
+              <th
+                style={Object {}}
+              >
+                <span
+                  className="bx--table-header-label"
+                >
+                  Date
+                </span>
+              </th>
+              <th
+                style={Object {}}
+              >
+                <span
+                  className="bx--table-header-label"
+                >
+                  Select
+                </span>
+              </th>
+              <th
+                style={Object {}}
+              >
+                <span
+                  className="bx--table-header-label"
+                >
+                  Number
+                </span>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-1-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-1-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                helping whiteboard as
+              </td>
+              <td>
+                1973-03-14T23:33:20.000Z
+              </td>
+              <td>
+                option-B
+              </td>
+              <td>
+                1
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-2-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-2-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                whiteboard can eat
+              </td>
+              <td>
+                1973-04-18T16:53:20.000Z
+              </td>
+              <td>
+                option-C
+              </td>
+              <td>
+                4
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-3-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-3-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                as eat scott
+              </td>
+              <td>
+                1973-06-15T13:46:40.000Z
+              </td>
+              <td>
+                option-A
+              </td>
+              <td>
+                9
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-4-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-4-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                can pinocchio whiteboard
+              </td>
+              <td>
+                1973-09-04T14:13:20.000Z
+              </td>
+              <td>
+                option-B
+              </td>
+              <td>
+                16
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-5-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-5-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                bottle toyota bottle
+              </td>
+              <td>
+                1973-12-17T18:13:20.000Z
+              </td>
+              <td>
+                option-C
+              </td>
+              <td>
+                25
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-6-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-6-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                eat whiteboard pinocchio
+              </td>
+              <td>
+                1974-04-24T01:46:40.000Z
+              </td>
+              <td>
+                option-A
+              </td>
+              <td>
+                36
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-7-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-7-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                chocolate can helping
+              </td>
+              <td>
+                1974-09-21T12:53:20.000Z
+              </td>
+              <td>
+                option-B
+              </td>
+              <td>
+                49
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-8-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-8-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                pinocchio eat can
+              </td>
+              <td>
+                1975-03-14T03:33:20.000Z
+              </td>
+              <td>
+                option-C
+              </td>
+              <td>
+                64
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-9-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-9-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                scott pinocchio chocolate
+              </td>
+              <td>
+                1975-09-26T21:46:40.000Z
+              </td>
+              <td>
+                option-A
+              </td>
+              <td>
+                81
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div
+          className="bx--pagination"
+          disabled={false}
+        >
+          <div
+            className="bx--pagination__left"
+          >
+            <span
+              className="bx--pagination__text"
+            >
+              Items per page:
+            </span>
+            <div
+              className="bx--form-item"
+            >
+              <div
+                className="bx--select bx--select--inline"
+              >
+                <label
+                  className="bx--label bx--visually-hidden"
+                  htmlFor="bx-pagination-select-1"
+                >
+                  Items per page:
+                </label>
+                <select
+                  className="bx--select-input"
+                  id="bx-pagination-select-1"
+                  onChange={[Function]}
+                  value={10}
+                >
+                  <option
+                    className="bx--select-option"
+                    disabled={false}
+                    hidden={false}
+                    value={10}
+                  >
+                    10
+                  </option>
+                  <option
+                    className="bx--select-option"
+                    disabled={false}
+                    hidden={false}
+                    value={20}
+                  >
+                    20
+                  </option>
+                  <option
+                    className="bx--select-option"
+                    disabled={false}
+                    hidden={false}
+                    value={30}
+                  >
+                    30
+                  </option>
+                </select>
+                <svg
+                  alt="open list of options"
+                  aria-label="open list of options"
+                  className="bx--select__arrow"
+                  fillRule="evenodd"
+                  height="5"
+                  role="img"
+                  viewBox="0 0 10 5"
+                  width="10"
+                >
+                  <title>
+                    open list of options
+                  </title>
+                  <path
+                    d="M0 0l5 4.998L10 0z"
+                  />
+                </svg>
+              </div>
+            </div>
+            <span
+              className="bx--pagination__text"
+            >
+               |  
+              1-10 of 100 items
+            </span>
+          </div>
+          <div
+            className="bx--pagination__right bx--pagination--inline"
+          >
+            <span
+              className="bx--pagination__text"
+            >
+              1 of 10 pages
+            </span>
+            <button
+              aria-label="Backward"
+              className="bx--pagination__button bx--pagination__button--backward"
+              disabled={true}
+              onClick={[Function]}
+            >
+              <svg
+                alt="Backward"
+                aria-label="Backward"
+                className="bx--pagination__button-icon"
+                fillRule="evenodd"
+                height="12"
+                role="img"
+                viewBox="0 0 7 12"
+                width="7"
+              >
+                <title>
+                  Backward
+                </title>
+                <path
+                  d="M1.45 6.002L7 11.27l-.685.726L0 6.003 6.315 0 7 .726z"
+                />
+              </svg>
+            </button>
+            <div
+              className="bx--form-item"
+            >
+              <div
+                className="bx--select bx--select--inline"
+              >
+                <label
+                  className="bx--label bx--visually-hidden"
+                  htmlFor="bx-pagination-select-3"
+                >
+                  Items per page:
+                </label>
+                <select
+                  className="bx--select-input"
+                  id="bx-pagination-select-3"
+                  onChange={[Function]}
+                  value={1}
+                >
+                  <option
+                    className="bx--select-option"
+                    disabled={false}
+                    hidden={false}
+                    value={1}
+                  >
+                    1
+                  </option>
+                  <option
+                    className="bx--select-option"
+                    disabled={false}
+                    hidden={false}
+                    value={2}
+                  >
+                    2
+                  </option>
+                  <option
+                    className="bx--select-option"
+                    disabled={false}
+                    hidden={false}
+                    value={3}
+                  >
+                    3
+                  </option>
+                  <option
+                    className="bx--select-option"
+                    disabled={false}
+                    hidden={false}
+                    value={4}
+                  >
+                    4
+                  </option>
+                  <option
+                    className="bx--select-option"
+                    disabled={false}
+                    hidden={false}
+                    value={5}
+                  >
+                    5
+                  </option>
+                  <option
+                    className="bx--select-option"
+                    disabled={false}
+                    hidden={false}
+                    value={6}
+                  >
+                    6
+                  </option>
+                  <option
+                    className="bx--select-option"
+                    disabled={false}
+                    hidden={false}
+                    value={7}
+                  >
+                    7
+                  </option>
+                  <option
+                    className="bx--select-option"
+                    disabled={false}
+                    hidden={false}
+                    value={8}
+                  >
+                    8
+                  </option>
+                  <option
+                    className="bx--select-option"
+                    disabled={false}
+                    hidden={false}
+                    value={9}
+                  >
+                    9
+                  </option>
+                  <option
+                    className="bx--select-option"
+                    disabled={false}
+                    hidden={false}
+                    value={10}
+                  >
+                    10
+                  </option>
+                </select>
+                <svg
+                  alt="open list of options"
+                  aria-label="open list of options"
+                  className="bx--select__arrow"
+                  fillRule="evenodd"
+                  height="5"
+                  role="img"
+                  viewBox="0 0 10 5"
+                  width="10"
+                >
+                  <title>
+                    open list of options
+                  </title>
+                  <path
+                    d="M0 0l5 4.998L10 0z"
+                  />
+                </svg>
+              </div>
+            </div>
+            <button
+              aria-label="Forward"
+              className="bx--pagination__button bx--pagination__button--forward"
+              disabled={false}
+              onClick={[Function]}
+            >
+              <svg
+                alt="Forward"
+                aria-label="Forward"
+                className="bx--pagination__button-icon"
+                fillRule="evenodd"
+                height="12"
+                role="img"
+                viewBox="0 0 7 12"
+                width="7"
+              >
+                <title>
+                  Forward
+                </title>
+                <path
+                  d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#28c",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+  <div
+    style={
+      Object {
+        "background": "white",
+        "bottom": 0,
+        "display": "none",
+        "left": 0,
+        "overflow": "auto",
+        "padding": "0 40px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+        "zIndex": 99999,
+      }
+    }
+  >
+    <button
+      onClick={[Function]}
+      style={
+        Object {
+          "background": "#28c",
+          "border": "none",
+          "borderRadius": "0 0 0 5px",
+          "color": "#fff",
+          "cursor": "pointer",
+          "display": "block",
+          "fontFamily": "sans-serif",
+          "fontSize": "12px",
+          "padding": "5px 15px",
+          "position": "fixed",
+          "right": 0,
+          "top": 0,
+        }
+      }
+      type="button"
+    >
+      ×
+    </button>
+    <div>
+      <div
+        style={
+          Object {
+            "WebkitFontSmoothing": "antialiased",
+            "backgroundColor": "#fff",
+            "border": "1px solid #eee",
+            "borderRadius": "2px",
+            "color": "#444",
+            "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+            "fontSize": "15px",
+            "fontWeight": 300,
+            "lineHeight": 1.45,
+            "marginBottom": "20px",
+            "marginTop": "20px",
+            "padding": "20px 40px 40px",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "borderBottom": "1px solid #eee",
+              "marginBottom": 10,
+              "paddingTop": 10,
+            }
+          }
+        >
+          <h1
+            style={
+              Object {
+                "fontSize": "35px",
+                "margin": 0,
+                "padding": 0,
+              }
+            }
+          >
+            Table
+          </h1>
+          <h2
+            style={
+              Object {
+                "fontSize": "22px",
+                "fontWeight": 400,
+                "margin": "0 0 10px 0",
+                "padding": 0,
+              }
+            }
+          >
+            pagination
+          </h2>
+        </div>
+        
+        <div>
+          <h1
+            style={
+              Object {
+                "borderBottom": "1px solid #EEE",
+                "fontSize": "25px",
+                "margin": "20px 0 0 0",
+                "padding": "0 0 5px 0",
+              }
+            }
+          >
+            Story Source
+          </h1>
+          <pre
+            className="css-r8d96o eyvlbql0"
+          >
+            <div>
+              <div>
+                <div
+                  style={
+                    Object {
+                      "paddingLeft": 18,
+                      "paddingRight": 3,
+                    }
+                  }
+                >
+                  <span
+                    style={
+                      Object {
+                        "color": "#444",
+                      }
+                    }
+                  >
+                    &lt;
+                    div
+                  </span>
+                  <span>
+                    <span>
+                       
+                      <span
+                        style={Object {}}
+                      >
+                        style
+                      </span>
+                      <span>
+                        =
+                        <span
+                          style={Object {}}
+                        >
+                          {
+                          <span
+                            style={
+                              Object {
+                                "color": "#666",
+                              }
+                            }
+                          >
+                            {
+                            <span>
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#666",
+                                  }
+                                }
+                              >
+                                padding
+                              </span>
+                            </span>
+                            : 
+                            <span
+                              style={
+                                Object {
+                                  "color": "#a11",
+                                }
+                              }
+                            >
+                              40
+                            </span>
+                            }
+                          </span>
+                          }
+                        </span>
+                      </span>
+                      
+                    </span>
+                  </span>
+                  <span
+                    style={
+                      Object {
+                        "color": "#444",
+                      }
+                    }
+                  >
+                    &gt;
+                  </span>
+                </div>
+                <div
+                  style={
+                    Object {
+                      "paddingLeft": 33,
+                      "paddingRight": 3,
+                    }
+                  }
+                >
+                  <span
+                    style={
+                      Object {
+                        "color": "#444",
+                      }
+                    }
+                  >
+                    &lt;
+                    TablePagination
+                  </span>
+                  <span />
+                  <span
+                    style={
+                      Object {
+                        "color": "#444",
+                      }
+                    }
+                  >
+                    /&gt;
+                  </span>
+                </div>
+                <div
+                  style={
+                    Object {
+                      "paddingLeft": 18,
+                      "paddingRight": 3,
+                    }
+                  }
+                >
+                  <span
+                    style={
+                      Object {
+                        "color": "#444",
+                      }
+                    }
+                  >
+                    &lt;/
+                    div
+                    &gt;
+                  </span>
+                </div>
+              </div>
+            </div>
+            <button
+              className="css-1naocv3 eva467m0"
+              onClick={[Function]}
+            >
+              <div
+                className="css-lvl6aa eva467m1"
+              >
+                <div
+                  style={
+                    Object {
+                      "marginBottom": 6,
+                    }
+                  }
+                >
+                  Copied!
+                </div>
+                <div>
+                  Copy
+                </div>
+              </div>
+            </button>
+          </pre>
+        </div>
+        <div>
+          <h1
+            style={
+              Object {
+                "borderBottom": "1px solid #EEE",
+                "fontSize": "25px",
+                "margin": "20px 0 0 0",
+                "padding": "0 0 5px 0",
+              }
+            }
+          >
+            Prop Types
+          </h1>
+          <div>
+            <h2
+              style={
+                Object {
+                  "margin": "20px 0 0 0",
+                }
+              }
+            >
+              "
+              TablePagination
+              " Component
+            </h2>
+            <small>
+              No propTypes defined!
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`] = `
+<div>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "padding": 40,
+        }
+      }
+    >
+      <div>
+        <section
+          className="bx--table-toolbar"
+        >
+          <div
+            aria-label="Table Action Bar"
+            className="bx--batch-actions "
+          >
+            <div
+              className="bx--action-list"
+            >
+              <button
+                className="bx--action-list__delete bx--btn bx--btn--primary"
+                disabled={false}
+                onClick={[Function]}
+                tabIndex={0}
+                type="button"
+              >
+                Delete
+              </button>
+            </div>
+            <div
+              className="bx--batch-summary"
+            >
+              <p
+                className="bx--batch-summary__para"
+              >
+                <span
+                  data-items-selected={true}
+                >
+                  0
+                </span>
+                 
+                items selected
+              </p>
+              <button
+                className="bx--batch-summary__cancel"
+                onClick={[Function]}
+                type="button"
+              >
+                Cancel
+              </button>
+            </div>
+          </div>
+          <div
+            className="bx--toolbar-search-container"
+          >
+            <div
+              className="bx--search bx--search--sm bx--search--light"
+              data-search={true}
+              role="search"
+            >
+              <svg
+                className="bx--search-magnifier"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+              >
+                <path
+                  d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zm4.936-1.27l4.563 4.557-.707.708-4.563-4.558a6.5 6.5 0 1 1 .707-.707z"
+                  fillRule="nonzero"
+                />
+              </svg>
+              <label
+                className="bx--label"
+                htmlFor="search__input-2"
+                id="search-input-label-1"
+              >
+                Search
+                <input
+                  aria-labelledby="search-input-label-1"
+                  className="bx--search-input"
+                  id="search__input-2"
+                  placeholder="Search"
+                  type="text"
+                />
+              </label>
+              <button
+                aria-label="Clear search input"
+                className="bx--search-close bx--search-close--hidden"
+                title="Clear search input"
+                type="button"
+              >
+                <svg
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8 6.586L5.879 4.464 4.464 5.88 6.586 8l-2.122 2.121 1.415 1.415L8 9.414l2.121 2.122 1.415-1.415L9.414 8l2.122-2.121-1.415-1.415L8 6.586zM8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"
+                    fillRule="evenodd"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div
+            className="bx--toolbar-content"
+          >
+            <button
+              className="bx--toolbar-action"
+              type="button"
+            >
+              <svg
+                alt="Settings"
+                aria-label="Settings"
+                className="bx--toolbar-action__icon"
+                fillRule="evenodd"
+                height="16"
+                name="settings"
+                role="img"
+                viewBox="0 0 15 16"
+                width="15"
+              >
+                <title>
+                  Settings
+                </title>
+                <path
+                  d="M7.53 10.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5zm0 1a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7z"
+                />
+                <path
+                  d="M6.268 2.636l-.313.093c-.662.198-1.28.52-1.822.946l-.255.2-1.427-.754-1.214 1.735 1.186 1.073-.104.31a5.493 5.493 0 0 0-.198 2.759l.05.274L1 10.33l1.214 1.734 1.06-.56.262.275a5.5 5.5 0 0 0 2.42 1.491l.312.093L6.472 15H8.59l.204-1.636.313-.093a5.494 5.494 0 0 0 2.21-1.28l.26-.248 1.09.576 1.214-1.734-1.08-.977.071-.29a5.514 5.514 0 0 0-.073-2.905l-.091-.302 1.15-1.041-1.214-1.734-1.3.687-.257-.22a5.487 5.487 0 0 0-1.98-1.074l-.313-.093L8.59 1H6.472l-.204 1.636zM5.48.876A1 1 0 0 1 6.472 0H8.59a1 1 0 0 1 .992.876l.124.997a6.486 6.486 0 0 1 1.761.954l.71-.375a1 1 0 0 1 1.286.31l1.215 1.734a1 1 0 0 1-.149 1.316l-.688.622a6.514 6.514 0 0 1 .067 2.828l.644.581a1 1 0 0 1 .148 1.316l-1.214 1.734a1 1 0 0 1-1.287.31l-.464-.245c-.6.508-1.286.905-2.029 1.169l-.124.997A1 1 0 0 1 8.59 16H6.472a1 1 0 0 1-.992-.876l-.125-.997a6.499 6.499 0 0 1-2.274-1.389l-.399.211a1 1 0 0 1-1.287-.31L.181 10.904A1 1 0 0 1 .329 9.59l.764-.69a6.553 6.553 0 0 1 .18-2.662l-.707-.64a1 1 0 0 1-.148-1.315l1.214-1.734a1 1 0 0 1 1.287-.31l.86.454a6.482 6.482 0 0 1 1.576-.819L5.48.876z"
+                />
+              </svg>
+            </button>
+          </div>
+        </section>
+        <table
+          className="bx--data-table-v2"
+        >
+          <thead>
+            <tr>
+              <th
+                style={Object {}}
+              >
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="select-all"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select-all"
+                    id="select-all"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </th>
+              <th
+                style={Object {}}
+              >
+                <span
+                  className="bx--table-header-label"
+                >
+                  String
+                </span>
+              </th>
+              <th
+                style={Object {}}
+              >
+                <span
+                  className="bx--table-header-label"
+                >
+                  Date
+                </span>
+              </th>
+              <th
+                style={Object {}}
+              >
+                <span
+                  className="bx--table-header-label"
+                >
+                  Select
+                </span>
+              </th>
+              <th
+                style={Object {}}
+              >
+                <span
+                  className="bx--table-header-label"
+                >
+                  Number
+                </span>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-0-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-0-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                toyota toyota toyota
+              </td>
+              <td>
+                1973-03-03T09:46:40.000Z
+              </td>
+              <td>
+                option-A
+              </td>
+              <td>
+                0
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-1-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-1-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                helping whiteboard as
+              </td>
+              <td>
+                1973-03-14T23:33:20.000Z
+              </td>
+              <td>
+                option-B
+              </td>
+              <td>
+                1
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-2-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-2-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                whiteboard can eat
+              </td>
+              <td>
+                1973-04-18T16:53:20.000Z
+              </td>
+              <td>
+                option-C
+              </td>
+              <td>
+                4
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-3-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-3-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                as eat scott
+              </td>
+              <td>
+                1973-06-15T13:46:40.000Z
+              </td>
+              <td>
+                option-A
+              </td>
+              <td>
+                9
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-4-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-4-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                can pinocchio whiteboard
+              </td>
+              <td>
+                1973-09-04T14:13:20.000Z
+              </td>
+              <td>
+                option-B
+              </td>
+              <td>
+                16
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-5-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-5-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                bottle toyota bottle
+              </td>
+              <td>
+                1973-12-17T18:13:20.000Z
+              </td>
+              <td>
+                option-C
+              </td>
+              <td>
+                25
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-6-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-6-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                eat whiteboard pinocchio
+              </td>
+              <td>
+                1974-04-24T01:46:40.000Z
+              </td>
+              <td>
+                option-A
+              </td>
+              <td>
+                36
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-7-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-7-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                chocolate can helping
+              </td>
+              <td>
+                1974-09-21T12:53:20.000Z
+              </td>
+              <td>
+                option-B
+              </td>
+              <td>
+                49
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-8-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-8-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                pinocchio eat can
+              </td>
+              <td>
+                1975-03-14T03:33:20.000Z
+              </td>
+              <td>
+                option-C
+              </td>
+              <td>
+                64
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-9-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-9-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                scott pinocchio chocolate
+              </td>
+              <td>
+                1975-09-26T21:46:40.000Z
+              </td>
+              <td>
+                option-A
+              </td>
+              <td>
+                81
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-10-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-10-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                toyota toyota toyota
+              </td>
+              <td>
+                1976-05-03T19:33:20.000Z
+              </td>
+              <td>
+                option-B
+              </td>
+              <td>
+                100
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-11-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-11-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                helping whiteboard as
+              </td>
+              <td>
+                1977-01-01T20:53:20.000Z
+              </td>
+              <td>
+                option-C
+              </td>
+              <td>
+                121
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-12-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-12-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                whiteboard can eat
+              </td>
+              <td>
+                1977-09-25T01:46:40.000Z
+              </td>
+              <td>
+                option-A
+              </td>
+              <td>
+                144
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-13-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-13-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                as eat scott
+              </td>
+              <td>
+                1978-07-11T10:13:20.000Z
+              </td>
+              <td>
+                option-B
+              </td>
+              <td>
+                169
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-14-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-14-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                can pinocchio whiteboard
+              </td>
+              <td>
+                1979-05-19T22:13:20.000Z
+              </td>
+              <td>
+                option-C
+              </td>
+              <td>
+                196
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-15-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-15-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                bottle toyota bottle
+              </td>
+              <td>
+                1980-04-19T13:46:40.000Z
+              </td>
+              <td>
+                option-A
+              </td>
+              <td>
+                225
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-16-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-16-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                eat whiteboard pinocchio
+              </td>
+              <td>
+                1981-04-13T08:53:20.000Z
+              </td>
+              <td>
+                option-B
+              </td>
+              <td>
+                256
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-17-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-17-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                chocolate can helping
+              </td>
+              <td>
+                1982-04-30T07:33:20.000Z
+              </td>
+              <td>
+                option-C
+              </td>
+              <td>
+                289
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-18-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-18-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                pinocchio eat can
+              </td>
+              <td>
+                1983-06-09T09:46:40.000Z
+              </td>
+              <td>
+                option-A
+              </td>
+              <td>
+                324
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-19-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-19-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                scott pinocchio chocolate
+              </td>
+              <td>
+                1984-08-10T15:33:20.000Z
+              </td>
+              <td>
+                option-B
+              </td>
+              <td>
+                361
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-20-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-20-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                toyota toyota toyota
+              </td>
+              <td>
+                1985-11-05T00:53:20.000Z
+              </td>
+              <td>
+                option-C
+              </td>
+              <td>
+                400
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-21-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-21-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                helping whiteboard as
+              </td>
+              <td>
+                1987-02-22T13:46:40.000Z
+              </td>
+              <td>
+                option-A
+              </td>
+              <td>
+                441
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-22-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-22-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                whiteboard can eat
+              </td>
+              <td>
+                1988-07-04T06:13:20.000Z
+              </td>
+              <td>
+                option-B
+              </td>
+              <td>
+                484
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-23-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-23-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                as eat scott
+              </td>
+              <td>
+                1989-12-07T02:13:20.000Z
+              </td>
+              <td>
+                option-C
+              </td>
+              <td>
+                529
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-24-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-24-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                can pinocchio whiteboard
+              </td>
+              <td>
+                1991-06-04T01:46:40.000Z
+              </td>
+              <td>
+                option-A
+              </td>
+              <td>
+                576
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-25-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-25-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                bottle toyota bottle
+              </td>
+              <td>
+                1992-12-22T04:53:20.000Z
+              </td>
+              <td>
+                option-B
+              </td>
+              <td>
+                625
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-26-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-26-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                eat whiteboard pinocchio
+              </td>
+              <td>
+                1994-08-04T11:33:20.000Z
+              </td>
+              <td>
+                option-C
+              </td>
+              <td>
+                676
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-27-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-27-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                chocolate can helping
+              </td>
+              <td>
+                1996-04-08T21:46:40.000Z
+              </td>
+              <td>
+                option-A
+              </td>
+              <td>
+                729
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-28-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-28-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                pinocchio eat can
+              </td>
+              <td>
+                1998-01-05T11:33:20.000Z
+              </td>
+              <td>
+                option-B
+              </td>
+              <td>
+                784
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-29-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-29-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                scott pinocchio chocolate
+              </td>
+              <td>
+                1999-10-27T04:53:20.000Z
+              </td>
+              <td>
+                option-C
+              </td>
+              <td>
+                841
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-30-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-30-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                toyota toyota toyota
+              </td>
+              <td>
+                2001-09-09T01:46:40.000Z
+              </td>
+              <td>
+                option-A
+              </td>
+              <td>
+                900
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-31-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-31-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                helping whiteboard as
+              </td>
+              <td>
+                2003-08-16T02:13:20.000Z
+              </td>
+              <td>
+                option-B
+              </td>
+              <td>
+                961
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-32-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-32-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                whiteboard can eat
+              </td>
+              <td>
+                2005-08-14T06:13:20.000Z
+              </td>
+              <td>
+                option-C
+              </td>
+              <td>
+                1024
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-33-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-33-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                as eat scott
+              </td>
+              <td>
+                2007-09-05T13:46:40.000Z
+              </td>
+              <td>
+                option-A
+              </td>
+              <td>
+                1089
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-34-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-34-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                can pinocchio whiteboard
+              </td>
+              <td>
+                2009-10-20T00:53:20.000Z
+              </td>
+              <td>
+                option-B
+              </td>
+              <td>
+                1156
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-35-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-35-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                bottle toyota bottle
+              </td>
+              <td>
+                2011-12-27T15:33:20.000Z
+              </td>
+              <td>
+                option-C
+              </td>
+              <td>
+                1225
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-36-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-36-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                eat whiteboard pinocchio
+              </td>
+              <td>
+                2014-03-28T09:46:40.000Z
+              </td>
+              <td>
+                option-A
+              </td>
+              <td>
+                1296
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-37-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-37-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                chocolate can helping
+              </td>
+              <td>
+                2016-07-20T07:33:20.000Z
+              </td>
+              <td>
+                option-B
+              </td>
+              <td>
+                1369
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-38-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-38-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                pinocchio eat can
+              </td>
+              <td>
+                2018-12-05T08:53:20.000Z
+              </td>
+              <td>
+                option-C
+              </td>
+              <td>
+                1444
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-39-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-39-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                scott pinocchio chocolate
+              </td>
+              <td>
+                2021-05-14T13:46:40.000Z
+              </td>
+              <td>
+                option-A
+              </td>
+              <td>
+                1521
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-40-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-40-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                toyota toyota toyota
+              </td>
+              <td>
+                2023-11-14T22:13:20.000Z
+              </td>
+              <td>
+                option-B
+              </td>
+              <td>
+                1600
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-41-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-41-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                helping whiteboard as
+              </td>
+              <td>
+                2026-06-09T10:13:20.000Z
+              </td>
+              <td>
+                option-C
+              </td>
+              <td>
+                1681
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-42-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-42-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                whiteboard can eat
+              </td>
+              <td>
+                2029-01-25T01:46:40.000Z
+              </td>
+              <td>
+                option-A
+              </td>
+              <td>
+                1764
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-43-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-43-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                as eat scott
+              </td>
+              <td>
+                2031-10-05T20:53:20.000Z
+              </td>
+              <td>
+                option-B
+              </td>
+              <td>
+                1849
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-44-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-44-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                can pinocchio whiteboard
+              </td>
+              <td>
+                2034-07-08T19:33:20.000Z
+              </td>
+              <td>
+                option-C
+              </td>
+              <td>
+                1936
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-45-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-45-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                bottle toyota bottle
+              </td>
+              <td>
+                2037-05-03T21:46:40.000Z
+              </td>
+              <td>
+                option-A
+              </td>
+              <td>
+                2025
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-46-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-46-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                eat whiteboard pinocchio
+              </td>
+              <td>
+                2040-03-22T03:33:20.000Z
+              </td>
+              <td>
+                option-B
+              </td>
+              <td>
+                2116
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-47-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-47-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                chocolate can helping
+              </td>
+              <td>
+                2043-03-03T12:53:20.000Z
+              </td>
+              <td>
+                option-C
+              </td>
+              <td>
+                2209
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-48-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-48-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                pinocchio eat can
+              </td>
+              <td>
+                2046-03-07T01:46:40.000Z
+              </td>
+              <td>
+                option-A
+              </td>
+              <td>
+                2304
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-49-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-49-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                scott pinocchio chocolate
+              </td>
+              <td>
+                2049-04-02T18:13:20.000Z
+              </td>
+              <td>
+                option-B
+              </td>
+              <td>
+                2401
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-50-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-50-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                toyota toyota toyota
+              </td>
+              <td>
+                2052-05-22T14:13:20.000Z
+              </td>
+              <td>
+                option-C
+              </td>
+              <td>
+                2500
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-51-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-51-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                helping whiteboard as
+              </td>
+              <td>
+                2055-08-04T13:46:40.000Z
+              </td>
+              <td>
+                option-A
+              </td>
+              <td>
+                2601
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-52-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-52-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                whiteboard can eat
+              </td>
+              <td>
+                2058-11-08T16:53:20.000Z
+              </td>
+              <td>
+                option-B
+              </td>
+              <td>
+                2704
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-53-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-53-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                as eat scott
+              </td>
+              <td>
+                2062-03-07T23:33:20.000Z
+              </td>
+              <td>
+                option-C
+              </td>
+              <td>
+                2809
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-54-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-54-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                can pinocchio whiteboard
+              </td>
+              <td>
+                2065-07-28T09:46:40.000Z
+              </td>
+              <td>
+                option-A
+              </td>
+              <td>
+                2916
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-55-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-55-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                bottle toyota bottle
+              </td>
+              <td>
+                2069-01-09T23:33:20.000Z
+              </td>
+              <td>
+                option-B
+              </td>
+              <td>
+                3025
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-56-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-56-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                eat whiteboard pinocchio
+              </td>
+              <td>
+                2072-07-17T16:53:20.000Z
+              </td>
+              <td>
+                option-C
+              </td>
+              <td>
+                3136
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-57-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-57-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                chocolate can helping
+              </td>
+              <td>
+                2076-02-15T13:46:40.000Z
+              </td>
+              <td>
+                option-A
+              </td>
+              <td>
+                3249
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-58-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-58-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                pinocchio eat can
+              </td>
+              <td>
+                2079-10-08T14:13:20.000Z
+              </td>
+              <td>
+                option-B
+              </td>
+              <td>
+                3364
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-59-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-59-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                scott pinocchio chocolate
+              </td>
+              <td>
+                2083-06-23T18:13:20.000Z
+              </td>
+              <td>
+                option-C
+              </td>
+              <td>
+                3481
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-60-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-60-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                toyota toyota toyota
+              </td>
+              <td>
+                2087-04-01T01:46:40.000Z
+              </td>
+              <td>
+                option-A
+              </td>
+              <td>
+                3600
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-61-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-61-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                helping whiteboard as
+              </td>
+              <td>
+                2091-01-30T12:53:20.000Z
+              </td>
+              <td>
+                option-B
+              </td>
+              <td>
+                3721
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-62-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-62-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                whiteboard can eat
+              </td>
+              <td>
+                2094-12-24T03:33:20.000Z
+              </td>
+              <td>
+                option-C
+              </td>
+              <td>
+                3844
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-63-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-63-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                as eat scott
+              </td>
+              <td>
+                2098-12-09T21:46:40.000Z
+              </td>
+              <td>
+                option-A
+              </td>
+              <td>
+                3969
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-64-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-64-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                can pinocchio whiteboard
+              </td>
+              <td>
+                2102-12-19T19:33:20.000Z
+              </td>
+              <td>
+                option-B
+              </td>
+              <td>
+                4096
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-65-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-65-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                bottle toyota bottle
+              </td>
+              <td>
+                2107-01-20T20:53:20.000Z
+              </td>
+              <td>
+                option-C
+              </td>
+              <td>
+                4225
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-66-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-66-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                eat whiteboard pinocchio
+              </td>
+              <td>
+                2111-03-17T01:46:40.000Z
+              </td>
+              <td>
+                option-A
+              </td>
+              <td>
+                4356
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-67-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-67-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                chocolate can helping
+              </td>
+              <td>
+                2115-06-03T10:13:20.000Z
+              </td>
+              <td>
+                option-B
+              </td>
+              <td>
+                4489
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-68-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-68-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                pinocchio eat can
+              </td>
+              <td>
+                2119-09-12T22:13:20.000Z
+              </td>
+              <td>
+                option-C
+              </td>
+              <td>
+                4624
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-69-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-69-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                scott pinocchio chocolate
+              </td>
+              <td>
+                2124-01-15T13:46:40.000Z
+              </td>
+              <td>
+                option-A
+              </td>
+              <td>
+                4761
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-70-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-70-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                toyota toyota toyota
+              </td>
+              <td>
+                2128-06-11T08:53:20.000Z
+              </td>
+              <td>
+                option-B
+              </td>
+              <td>
+                4900
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-71-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-71-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                helping whiteboard as
+              </td>
+              <td>
+                2132-11-29T07:33:20.000Z
+              </td>
+              <td>
+                option-C
+              </td>
+              <td>
+                5041
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-72-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-72-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                whiteboard can eat
+              </td>
+              <td>
+                2137-06-11T09:46:40.000Z
+              </td>
+              <td>
+                option-A
+              </td>
+              <td>
+                5184
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-73-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-73-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                as eat scott
+              </td>
+              <td>
+                2142-01-14T15:33:20.000Z
+              </td>
+              <td>
+                option-B
+              </td>
+              <td>
+                5329
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-74-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-74-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                can pinocchio whiteboard
+              </td>
+              <td>
+                2146-09-12T00:53:20.000Z
+              </td>
+              <td>
+                option-C
+              </td>
+              <td>
+                5476
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-75-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-75-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                bottle toyota bottle
+              </td>
+              <td>
+                2151-06-02T13:46:40.000Z
+              </td>
+              <td>
+                option-A
+              </td>
+              <td>
+                5625
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-76-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-76-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                eat whiteboard pinocchio
+              </td>
+              <td>
+                2156-03-15T06:13:20.000Z
+              </td>
+              <td>
+                option-B
+              </td>
+              <td>
+                5776
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-77-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-77-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                chocolate can helping
+              </td>
+              <td>
+                2161-01-19T02:13:20.000Z
+              </td>
+              <td>
+                option-C
+              </td>
+              <td>
+                5929
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-78-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-78-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                pinocchio eat can
+              </td>
+              <td>
+                2165-12-18T01:46:40.000Z
+              </td>
+              <td>
+                option-A
+              </td>
+              <td>
+                6084
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-79-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-79-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                scott pinocchio chocolate
+              </td>
+              <td>
+                2170-12-09T04:53:20.000Z
+              </td>
+              <td>
+                option-B
+              </td>
+              <td>
+                6241
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-80-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-80-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                toyota toyota toyota
+              </td>
+              <td>
+                2175-12-23T11:33:20.000Z
+              </td>
+              <td>
+                option-C
+              </td>
+              <td>
+                6400
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-81-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-81-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                helping whiteboard as
+              </td>
+              <td>
+                2181-01-28T21:46:40.000Z
+              </td>
+              <td>
+                option-A
+              </td>
+              <td>
+                6561
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-82-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-82-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                whiteboard can eat
+              </td>
+              <td>
+                2186-03-30T11:33:20.000Z
+              </td>
+              <td>
+                option-B
+              </td>
+              <td>
+                6724
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-83-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-83-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                as eat scott
+              </td>
+              <td>
+                2191-06-22T04:53:20.000Z
+              </td>
+              <td>
+                option-C
+              </td>
+              <td>
+                6889
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-84-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-84-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                can pinocchio whiteboard
+              </td>
+              <td>
+                2196-10-06T01:46:40.000Z
+              </td>
+              <td>
+                option-A
+              </td>
+              <td>
+                7056
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-85-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-85-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                bottle toyota bottle
+              </td>
+              <td>
+                2202-02-14T02:13:20.000Z
+              </td>
+              <td>
+                option-B
+              </td>
+              <td>
+                7225
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-86-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-86-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                eat whiteboard pinocchio
+              </td>
+              <td>
+                2207-07-17T06:13:20.000Z
+              </td>
+              <td>
+                option-C
+              </td>
+              <td>
+                7396
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-87-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-87-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                chocolate can helping
+              </td>
+              <td>
+                2213-01-08T13:46:40.000Z
+              </td>
+              <td>
+                option-A
+              </td>
+              <td>
+                7569
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-88-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-88-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                pinocchio eat can
+              </td>
+              <td>
+                2218-07-27T00:53:20.000Z
+              </td>
+              <td>
+                option-B
+              </td>
+              <td>
+                7744
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-89-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-89-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                scott pinocchio chocolate
+              </td>
+              <td>
+                2224-03-05T15:33:20.000Z
+              </td>
+              <td>
+                option-C
+              </td>
+              <td>
+                7921
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-90-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-90-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                toyota toyota toyota
+              </td>
+              <td>
+                2229-11-06T09:46:40.000Z
+              </td>
+              <td>
+                option-A
+              </td>
+              <td>
+                8100
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-91-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-91-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                helping whiteboard as
+              </td>
+              <td>
+                2235-08-02T07:33:20.000Z
+              </td>
+              <td>
+                option-B
+              </td>
+              <td>
+                8281
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-92-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-92-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                whiteboard can eat
+              </td>
+              <td>
+                2241-05-20T08:53:20.000Z
+              </td>
+              <td>
+                option-C
+              </td>
+              <td>
+                8464
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-93-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-93-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                as eat scott
+              </td>
+              <td>
+                2247-03-31T13:46:40.000Z
+              </td>
+              <td>
+                option-A
+              </td>
+              <td>
+                8649
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-94-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-94-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                can pinocchio whiteboard
+              </td>
+              <td>
+                2253-03-03T22:13:20.000Z
+              </td>
+              <td>
+                option-B
+              </td>
+              <td>
+                8836
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-95-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-95-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                bottle toyota bottle
+              </td>
+              <td>
+                2259-02-28T10:13:20.000Z
+              </td>
+              <td>
+                option-C
+              </td>
+              <td>
+                9025
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-96-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-96-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                eat whiteboard pinocchio
+              </td>
+              <td>
+                2265-03-19T01:46:40.000Z
+              </td>
+              <td>
+                option-A
+              </td>
+              <td>
+                9216
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-97-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-97-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                chocolate can helping
+              </td>
+              <td>
+                2271-04-30T20:53:20.000Z
+              </td>
+              <td>
+                option-B
+              </td>
+              <td>
+                9409
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-98-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-98-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                pinocchio eat can
+              </td>
+              <td>
+                2277-07-04T19:33:20.000Z
+              </td>
+              <td>
+                option-C
+              </td>
+              <td>
+                9604
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="row-99-checkbox"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    data-event="select"
+                    id="row-99-checkbox"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="checkbox"
+                  />
+                </label>
+              </td>
+              <td>
+                scott pinocchio chocolate
+              </td>
+              <td>
+                2283-10-01T21:46:40.000Z
+              </td>
+              <td>
+                option-A
+              </td>
+              <td>
+                9801
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <button
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#28c",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+  <div
+    style={
+      Object {
+        "background": "white",
+        "bottom": 0,
+        "display": "none",
+        "left": 0,
+        "overflow": "auto",
+        "padding": "0 40px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+        "zIndex": 99999,
+      }
+    }
+  >
+    <button
+      onClick={[Function]}
+      style={
+        Object {
+          "background": "#28c",
+          "border": "none",
+          "borderRadius": "0 0 0 5px",
+          "color": "#fff",
+          "cursor": "pointer",
+          "display": "block",
+          "fontFamily": "sans-serif",
+          "fontSize": "12px",
+          "padding": "5px 15px",
+          "position": "fixed",
+          "right": 0,
+          "top": 0,
+        }
+      }
+      type="button"
+    >
+      ×
+    </button>
+    <div>
+      <div
+        style={
+          Object {
+            "WebkitFontSmoothing": "antialiased",
+            "backgroundColor": "#fff",
+            "border": "1px solid #eee",
+            "borderRadius": "2px",
+            "color": "#444",
+            "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+            "fontSize": "15px",
+            "fontWeight": 300,
+            "lineHeight": 1.45,
+            "marginBottom": "20px",
+            "marginTop": "20px",
+            "padding": "20px 40px 40px",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "borderBottom": "1px solid #eee",
+              "marginBottom": 10,
+              "paddingTop": 10,
+            }
+          }
+        >
+          <h1
+            style={
+              Object {
+                "fontSize": "35px",
+                "margin": 0,
+                "padding": 0,
+              }
+            }
+          >
+            Table
+          </h1>
+          <h2
+            style={
+              Object {
+                "fontSize": "22px",
+                "fontWeight": 400,
+                "margin": "0 0 10px 0",
+                "padding": 0,
+              }
+            }
+          >
+            simple
+          </h2>
+        </div>
+        
+        <div>
+          <h1
+            style={
+              Object {
+                "borderBottom": "1px solid #EEE",
+                "fontSize": "25px",
+                "margin": "20px 0 0 0",
+                "padding": "0 0 5px 0",
+              }
+            }
+          >
+            Story Source
+          </h1>
+          <pre
+            className="css-r8d96o eyvlbql0"
+          >
+            <div>
+              <div>
+                <div
+                  style={
+                    Object {
+                      "paddingLeft": 18,
+                      "paddingRight": 3,
+                    }
+                  }
+                >
+                  <span
+                    style={
+                      Object {
+                        "color": "#444",
+                      }
+                    }
+                  >
+                    &lt;
+                    div
+                  </span>
+                  <span>
+                    <span>
+                       
+                      <span
+                        style={Object {}}
+                      >
+                        style
+                      </span>
+                      <span>
+                        =
+                        <span
+                          style={Object {}}
+                        >
+                          {
+                          <span
+                            style={
+                              Object {
+                                "color": "#666",
+                              }
+                            }
+                          >
+                            {
+                            <span>
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#666",
+                                  }
+                                }
+                              >
+                                padding
+                              </span>
+                            </span>
+                            : 
+                            <span
+                              style={
+                                Object {
+                                  "color": "#a11",
+                                }
+                              }
+                            >
+                              40
+                            </span>
+                            }
+                          </span>
+                          }
+                        </span>
+                      </span>
+                      
+                    </span>
+                  </span>
+                  <span
+                    style={
+                      Object {
+                        "color": "#444",
+                      }
+                    }
+                  >
+                    &gt;
+                  </span>
+                </div>
+                <div
+                  style={
+                    Object {
+                      "paddingLeft": 33,
+                      "paddingRight": 3,
+                    }
+                  }
+                >
+                  <span
+                    style={
+                      Object {
+                        "color": "#444",
+                      }
+                    }
+                  >
+                    &lt;
+                    TableSimple
+                  </span>
+                  <span />
+                  <span
+                    style={
+                      Object {
+                        "color": "#444",
+                      }
+                    }
+                  >
+                    /&gt;
+                  </span>
+                </div>
+                <div
+                  style={
+                    Object {
+                      "paddingLeft": 18,
+                      "paddingRight": 3,
+                    }
+                  }
+                >
+                  <span
+                    style={
+                      Object {
+                        "color": "#444",
+                      }
+                    }
+                  >
+                    &lt;/
+                    div
+                    &gt;
+                  </span>
+                </div>
+              </div>
+            </div>
+            <button
+              className="css-1naocv3 eva467m0"
+              onClick={[Function]}
+            >
+              <div
+                className="css-lvl6aa eva467m1"
+              >
+                <div
+                  style={
+                    Object {
+                      "marginBottom": 6,
+                    }
+                  }
+                >
+                  Copied!
+                </div>
+                <div>
+                  Copy
+                </div>
+              </div>
+            </button>
+          </pre>
+        </div>
+        <div>
+          <h1
+            style={
+              Object {
+                "borderBottom": "1px solid #EEE",
+                "fontSize": "25px",
+                "margin": "20px 0 0 0",
+                "padding": "0 0 5px 0",
+              }
+            }
+          >
+            Prop Types
+          </h1>
+          <div>
+            <h2
+              style={
+                Object {
+                  "margin": "20px 0 0 0",
+                }
+              }
+            >
+              "
+              TableSimple
+              " Component
+            </h2>
+            <small>
+              No propTypes defined!
+            </small>
           </div>
         </div>
       </div>

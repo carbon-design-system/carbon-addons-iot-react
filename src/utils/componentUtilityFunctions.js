@@ -12,3 +12,13 @@ export function scrollErrorIntoView(focus = true) {
   }
   return false;
 }
+
+export const handleEnterKeyDown = (evt, callback) => {
+  if (evt.key === 'Enter') {
+    callback(evt);
+  }
+};
+
+export const defaultFunction = name => {
+  console.error(`${name} not implemented`);
+};
