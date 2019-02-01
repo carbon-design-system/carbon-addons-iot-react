@@ -4973,7 +4973,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots BaseModal fetchi
           className="bx--loading__svg"
           viewBox="-75 -75 150 150"
         >
+          <title>
+            Loading
+          </title>
           <circle
+            className={null}
             cx="0"
             cy="0"
             r="37.5"
@@ -7690,7 +7694,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots BaseModal sendin
                   className="bx--loading__svg"
                   viewBox="-75 -75 150 150"
                 >
+                  <title>
+                    Loading
+                  </title>
                   <circle
+                    className={null}
                     cx="0"
                     cy="0"
                     r="37.5"
@@ -10507,7 +10515,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots ButtonEnhanced l
           className="bx--loading__svg"
           viewBox="-75 -75 150 150"
         >
+          <title>
+            Loading
+          </title>
           <circle
+            className={null}
             cx="0"
             cy="0"
             r="37.5"
@@ -11089,7 +11101,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots ButtonEnhanced l
           className="bx--loading__svg"
           viewBox="-75 -75 150 150"
         >
+          <title>
+            Loading
+          </title>
           <circle
+            className={null}
             cx="0"
             cy="0"
             r="37.5"
@@ -12562,7 +12578,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
               >
                 <div
                   aria-label="Choose an item"
-                  className="bx--combo-box bx--list-box bx--list-box--light"
+                  className="bx--form-item bx--combo-box bx--list-box bx--list-box--light"
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   role="listbox"
@@ -12631,6 +12647,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                         alt="Open menu"
                         aria-label="Open menu"
                         fillRule="evenodd"
+                        focusable="false"
                         height="5"
                         role="img"
                         viewBox="0 0 10 5"
