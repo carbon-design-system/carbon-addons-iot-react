@@ -1,12 +1,25 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import isNil from 'lodash/isNil';
-import { PaginationV2 } from 'carbon-components-react';
+import { Button, PaginationV2, DataTable, Checkbox } from 'carbon-components-react';
+import { iconFilter } from 'carbon-icons';
 
 import { defaultFunction } from '../../utils/componentUtilityFunctions';
 
-import Toolbar from './Toolbar/Toolbar';
 import FilterHeaderRow from './FilterHeaderRow/FilterHeaderRow';
+
+const {
+  Table: CarbonTable,
+  TableBody,
+  TableHead,
+  TableHeader,
+  TableRow,
+  TableContainer,
+  TableToolbar,
+  TableToolbarContent,
+  TableToolbarAction,
+  TableCell,
+} = DataTable;
 
 const propTypes = {
   /** Array with objects (id, name and size) */
@@ -55,6 +68,7 @@ const propTypes = {
     }),
     table: PropTypes.shape({
       isSelectAllSelected: PropTypes.bool.isRequired,
+      isSelectIndeterminate: PropTypes.bool,
       selectedIds: PropTypes.arrayOf(PropTypes.string).isRequired,
     }),
   }),
@@ -108,31 +122,30 @@ class Table extends Component {
     const filterBarActive = options.hasFilter && view.toolbar.activeBar === 'filter';
     const filterBarActiveStyle = { paddingTop: 16 };
     const header = (
-      <thead>
-        <tr>
+      <TableHead>
+        <TableRow>
           {options.hasRowSelection ? (
-            <th style={filterBarActive === true ? filterBarActiveStyle : {}}>
-              <label htmlFor="select-all" className="bx--checkbox-label">
-                <input
-                  data-event="select-all"
-                  id="select-all"
-                  className="bx--checkbox"
-                  type="checkbox"
-                  checked={view.table.isSelectAllSelected}
-                  onChange={() => {}}
-                  onClick={() => actions.table.onSelectAll(!view.table.isSelectAllSelected)}
-                />
-              </label>
-            </th>
+            <TableHeader style={filterBarActive === true ? filterBarActiveStyle : {}}>
+              {/* TODO: Replace checkbox with TableSelectAll component when onChange bug is fixed
+              https://github.com/IBM/carbon-components-react/issues/1088 */}
+              <Checkbox
+                id="select-all"
+                labelText="Select All"
+                hideLabel
+                indeterminate={view.table.isSelectIndeterminate}
+                checked={view.table.isSelectAllSelected}
+                onChange={() => actions.table.onSelectAll(!view.table.isSelectAllSelected)}
+              />
+            </TableHeader>
           ) : null}
           {columns.map(column => (
-            <th
+            <TableHeader
               key={`column-${column.id}`}
               style={filterBarActive === true ? filterBarActiveStyle : {}}>
               <span className="bx--table-header-label">{column.name}</span>
-            </th>
+            </TableHeader>
           ))}
-        </tr>
+        </TableRow>
         {filterBarActive && (
           <FilterHeaderRow
             columns={columns.map(column => ({
@@ -145,54 +158,68 @@ class Table extends Component {
             onApplyFilter={actions.toolbar.onApplyFilter}
           />
         )}
-      </thead>
+      </TableHead>
     );
     const body = (
-      <tbody>
+      <TableBody>
         {visibleData.map(i => (
-          <tr key={i.id}>
+          <TableRow key={i.id}>
             {options.hasRowSelection ? (
-              <td>
-                <label htmlFor={`${i.id}-checkbox`} className="bx--checkbox-label">
-                  <input
-                    data-event="select"
-                    id={`${i.id}-checkbox`}
-                    className="bx--checkbox"
-                    type="checkbox"
-                    checked={view.table.selectedIds.includes(i.id)}
-                    onChange={() => {}}
-                    onClick={() =>
-                      actions.table.onRowSelected(i.id, !view.table.selectedIds.includes(i.id))
-                    }
-                  />
-                </label>
-              </td>
+              <TableCell>
+                {/* TODO: Replace checkbox with TableSelectRow component when onChange bug is fixed
+              https://github.com/IBM/carbon-components-react/issues/1088 */}
+                <Checkbox
+                  id={`select-row-${i.id}`}
+                  labelText="Select Row"
+                  hideLabel
+                  checked={view.table.selectedIds.includes(i.id)}
+                  onChange={() =>
+                    actions.table.onRowSelected(i.id, !view.table.selectedIds.includes(i.id))
+                  }
+                />
+              </TableCell>
             ) : null}
             {columns.map(col => (
-              <td key={col.id}>{i.values[col.id]}</td>
+              <TableCell key={col.id}>{i.values[col.id]}</TableCell>
             ))}
-          </tr>
+          </TableRow>
         ))}
-      </tbody>
+      </TableBody>
     );
-
-    const pagination = options.hasPagination ? (
-      <PaginationV2 {...view.pagination} {...actions.pagination} />
-    ) : null;
 
     return (
       <div>
-        <Toolbar
+        {/* <Toolbar
           {...view.toolbar}
           selectedItemCount={view.table.selectedIds.length}
           {...actions.toolbar}
           hasFilters={view.filters && !!view.filters.length}
-        />
-        <table className="bx--data-table-v2">
-          {header}
-          {body}
-        </table>
-        {pagination}
+        /> */}
+        <TableContainer title="DataTable with toolbar">
+          <TableToolbar>
+            <TableToolbarContent>
+              {view.filters && !!view.filters.length ? ( // TODO: translate button
+                <Button kind="secondary" onClick={() => defaultFunction} small>
+                  Clear All Filters
+                </Button>
+              ) : null}
+              <TableToolbarAction
+                icon={iconFilter}
+                iconDescription="Settings"
+                onClick={actions.toolbar.onToggleFilter}
+              />
+            </TableToolbarContent>
+          </TableToolbar>
+
+          <CarbonTable zebra={false}>
+            {header}
+            {body}
+          </CarbonTable>
+        </TableContainer>
+
+        {options.hasPagination ? (
+          <PaginationV2 {...view.pagination} {...actions.pagination} />
+        ) : null}
       </div>
     );
   };

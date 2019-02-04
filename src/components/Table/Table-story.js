@@ -364,8 +364,11 @@ class TableFilter extends Component {
       },
       table: {
         onRowSelected: (id, val) => {
-          this.setState(state =>
-            update(state, {
+          this.setState(state => {
+            const isClearing = !val && state.view.table.selectedIds.length === 1;
+            const isSelectingAll =
+              val && state.view.table.selectedIds.length + 1 === filteredData.length;
+            return update(state, {
               view: {
                 table: {
                   selectedIds: {
@@ -373,10 +376,16 @@ class TableFilter extends Component {
                       ? state.view.table.selectedIds.concat([id])
                       : state.view.table.selectedIds.filter(i => i !== id),
                   },
+                  isSelectIndeterminate: {
+                    $set: !(isClearing || isSelectingAll),
+                  },
+                  isSelectAllSelected: {
+                    $set: isSelectingAll,
+                  },
                 },
               },
-            })
-          );
+            });
+          });
         },
         onSelectAll: val => {
           this.setState(state =>
@@ -387,7 +396,10 @@ class TableFilter extends Component {
                     $set: val,
                   },
                   selectedIds: {
-                    $set: val ? state.data.map(i => i.id) : [],
+                    $set: val ? filteredData.map(i => i.id) : [],
+                  },
+                  isSelectIndeterminate: {
+                    $set: false,
                   },
                 },
               },
