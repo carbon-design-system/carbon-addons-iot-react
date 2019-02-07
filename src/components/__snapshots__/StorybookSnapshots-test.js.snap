@@ -598,9 +598,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots BaseModal big mo
           >
             Needs a lot of space to contain all the info
           </p>
-          <p
-            className="bx--modal-content__text"
-          />
           <button
             className="bx--modal-close"
             onClick={[Function]}
@@ -2090,9 +2087,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots BaseModal custom
           >
             Custom footer element
           </p>
-          <p
-            className="bx--modal-content__text"
-          />
           <button
             className="bx--modal-close"
             onClick={[Function]}
@@ -3550,9 +3544,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots BaseModal error 
           >
             Cannot communicate with server
           </p>
-          <p
-            className="bx--modal-content__text"
-          />
           <button
             className="bx--modal-close"
             onClick={[Function]}
@@ -6230,9 +6221,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots BaseModal no foo
           >
             Dialog without footer
           </p>
-          <p
-            className="bx--modal-content__text"
-          />
           <button
             className="bx--modal-close"
             onClick={[Function]}
@@ -7637,9 +7625,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots BaseModal sendin
           >
             We are submitting data to the backend
           </p>
-          <p
-            className="bx--modal-content__text"
-          />
           <button
             className="bx--modal-close"
             onClick={[Function]}
@@ -18915,9 +18900,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots WizardModal basi
           >
             Gimme 3 Steps
           </p>
-          <p
-            className="bx--modal-content__text"
-          />
           <button
             className="bx--modal-close"
             onClick={[Function]}
@@ -20211,9 +20193,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots WizardModal cust
           >
             Gimme 3 Steps
           </p>
-          <p
-            className="bx--modal-content__text"
-          />
           <button
             className="bx--modal-close"
             onClick={[Function]}
