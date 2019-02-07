@@ -12261,7 +12261,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
 }
 
 .c2.c2.c2 {
-  background-color: white;
+  position: relative;
+}
+
+.c2.c2.c2 input {
+  padding-right: 2.5rem;
+}
+
+.c2.c2.c2 .bx--list-box__selection {
+  right: 0;
 }
 
 <div>
@@ -12309,8 +12317,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                 onClick={[Function]}
               >
                 <svg
-                  alt="Settings"
-                  aria-label="Settings"
+                  alt="Filter"
+                  aria-label="Filter"
                   className="bx--toolbar-action__icon"
                   fillRule="evenodd"
                   height="12"
@@ -12319,7 +12327,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                   width="16"
                 >
                   <title>
-                    Settings
+                    Filter
                   </title>
                   <path
                     d="M8.05 2a2.5 2.5 0 0 1 4.9 0H16v1h-3.05a2.5 2.5 0 0 1-4.9 0H0V2h8.05zm2.45 2a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM3.05 9a2.5 2.5 0 0 1 4.9 0H16v1H7.95a2.5 2.5 0 0 1-4.9 0H0V9h3.05zm2.45 2a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"
@@ -12433,26 +12441,56 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                   scope="col"
                 >
                   <div
-                    className="bx--form-item"
+                    className="bx--form-item c2"
                   >
-                    <label
-                      className="bx--label bx--visually-hidden"
-                      htmlFor="string"
+                    <div
+                      className="bx--form-item"
                     >
-                      string
-                    </label>
-                    <input
-                      className="bx--text-input c2"
-                      disabled={false}
-                      id="string"
-                      onBlur={[Function]}
-                      onChange={[Function]}
+                      <label
+                        className="bx--label bx--visually-hidden"
+                        htmlFor="string"
+                      >
+                        string
+                      </label>
+                      <input
+                        className="bx--text-input bx--text__input bx--text-input--light"
+                        disabled={false}
+                        id="string"
+                        onBlur={[Function]}
+                        onChange={[Function]}
+                        onClick={[Function]}
+                        onKeyDown={[Function]}
+                        placeholder="pick a string"
+                        type="text"
+                        value="whiteboard"
+                      />
+                    </div>
+                    <div
+                      className="bx--list-box__selection"
                       onClick={[Function]}
                       onKeyDown={[Function]}
-                      placeholder="pick a string"
-                      type="text"
-                      value="whiteboard"
-                    />
+                      role="button"
+                      tabIndex="0"
+                      title="Clear Filter"
+                    >
+                      <svg
+                        alt="Clear Filter"
+                        aria-label="Clear Filter"
+                        fillRule="evenodd"
+                        focusable="false"
+                        height="10"
+                        role="img"
+                        viewBox="0 0 10 10"
+                        width="10"
+                      >
+                        <title>
+                          Clear Filter
+                        </title>
+                        <path
+                          d="M6.32 5L10 8.68 8.68 10 5 6.32 1.32 10 0 8.68 3.68 5 0 1.32 1.32 0 5 3.68 8.68 0 10 1.32 6.32 5z"
+                        />
+                      </svg>
+                    </div>
                   </div>
                 </th>
                 <th
@@ -12460,26 +12498,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                   scope="col"
                 >
                   <div
-                    className="bx--form-item"
+                    className="bx--form-item c2"
                   >
-                    <label
-                      className="bx--label bx--visually-hidden"
-                      htmlFor="date"
+                    <div
+                      className="bx--form-item"
                     >
-                      date
-                    </label>
-                    <input
-                      className="bx--text-input c2"
-                      disabled={false}
-                      id="date"
-                      onBlur={[Function]}
-                      onChange={[Function]}
-                      onClick={[Function]}
-                      onKeyDown={[Function]}
-                      placeholder="pick a date"
-                      type="text"
-                      value=""
-                    />
+                      <label
+                        className="bx--label bx--visually-hidden"
+                        htmlFor="date"
+                      >
+                        date
+                      </label>
+                      <input
+                        className="bx--text-input bx--text__input bx--text-input--light"
+                        disabled={false}
+                        id="date"
+                        onBlur={[Function]}
+                        onChange={[Function]}
+                        onClick={[Function]}
+                        onKeyDown={[Function]}
+                        placeholder="pick a date"
+                        type="text"
+                        value=""
+                      />
+                    </div>
                   </div>
                 </th>
                 <th
@@ -12579,26 +12621,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`]
                   scope="col"
                 >
                   <div
-                    className="bx--form-item"
+                    className="bx--form-item c2"
                   >
-                    <label
-                      className="bx--label bx--visually-hidden"
-                      htmlFor="number"
+                    <div
+                      className="bx--form-item"
                     >
-                      number
-                    </label>
-                    <input
-                      className="bx--text-input c2"
-                      disabled={false}
-                      id="number"
-                      onBlur={[Function]}
-                      onChange={[Function]}
-                      onClick={[Function]}
-                      onKeyDown={[Function]}
-                      placeholder="pick a number"
-                      type="text"
-                      value=""
-                    />
+                      <label
+                        className="bx--label bx--visually-hidden"
+                        htmlFor="number"
+                      >
+                        number
+                      </label>
+                      <input
+                        className="bx--text-input bx--text__input bx--text-input--light"
+                        disabled={false}
+                        id="number"
+                        onBlur={[Function]}
+                        onChange={[Function]}
+                        onClick={[Function]}
+                        onKeyDown={[Function]}
+                        placeholder="pick a number"
+                        type="text"
+                        value=""
+                      />
+                    </div>
                   </div>
                 </th>
               </tr>
@@ -13498,8 +13544,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table pagination
                 className="bx--toolbar-action"
               >
                 <svg
-                  alt="Settings"
-                  aria-label="Settings"
+                  alt="Filter"
+                  aria-label="Filter"
                   className="bx--toolbar-action__icon"
                   fillRule="evenodd"
                   height="12"
@@ -13508,7 +13554,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table pagination
                   width="16"
                 >
                   <title>
-                    Settings
+                    Filter
                   </title>
                   <path
                     d="M8.05 2a2.5 2.5 0 0 1 4.9 0H16v1h-3.05a2.5 2.5 0 0 1-4.9 0H0V2h8.05zm2.45 2a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM3.05 9a2.5 2.5 0 0 1 4.9 0H16v1H7.95a2.5 2.5 0 0 1-4.9 0H0V9h3.05zm2.45 2a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"
@@ -14553,8 +14599,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                 className="bx--toolbar-action"
               >
                 <svg
-                  alt="Settings"
-                  aria-label="Settings"
+                  alt="Filter"
+                  aria-label="Filter"
                   className="bx--toolbar-action__icon"
                   fillRule="evenodd"
                   height="12"
@@ -14563,7 +14609,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table simple 1`]
                   width="16"
                 >
                   <title>
-                    Settings
+                    Filter
                   </title>
                   <path
                     d="M8.05 2a2.5 2.5 0 0 1 4.9 0H16v1h-3.05a2.5 2.5 0 0 1-4.9 0H0V2h8.05zm2.45 2a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM3.05 9a2.5 2.5 0 0 1 4.9 0H16v1H7.95a2.5 2.5 0 0 1-4.9 0H0V9h3.05zm2.45 2a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"

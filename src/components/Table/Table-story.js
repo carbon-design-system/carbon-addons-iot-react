@@ -315,38 +315,6 @@ class TableFilter extends Component {
             })
           );
         },
-        onBatchCancel: () => {
-          this.setState(state =>
-            update(state, {
-              view: {
-                table: {
-                  isSelectAllSelected: {
-                    $set: false,
-                  },
-                  selectedIds: {
-                    $set: [],
-                  },
-                },
-              },
-            })
-          );
-        },
-        onBatchDelete: () => {
-          this.setState(state =>
-            update(state, {
-              view: {
-                table: {
-                  isSelectAllSelected: {
-                    $set: false,
-                  },
-                  selectedIds: {
-                    $set: [],
-                  },
-                },
-              },
-            })
-          );
-        },
         onToggleFilter: () => {
           this.setState(state => {
             const filterToggled = state.view.toolbar.activeBar === 'filter' ? null : 'filter';
@@ -360,6 +328,17 @@ class TableFilter extends Component {
               },
             });
           });
+        },
+        onClearAllFilters: () => {
+          this.setState(state =>
+            update(state, {
+              view: {
+                filters: {
+                  $set: [],
+                },
+              },
+            })
+          );
         },
       },
       table: {
