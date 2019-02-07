@@ -232,7 +232,7 @@ class BaseModal extends React.Component {
           'big-modal': isLarge,
         })}>
         <ModalHeader label={label} title={title} closeModal={onClose} buttonOnClick={onClose}>
-          <p className="bx--modal-content__text">{helpText}</p>
+          {helpText ? <p className="bx--modal-content__text">{helpText}</p> : null}
         </ModalHeader>
         {children ? <ModalBody>{children}</ModalBody> : null}
         {error || dataError ? (
