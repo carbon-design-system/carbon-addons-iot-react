@@ -400,18 +400,7 @@ class TableFilter extends Component {
 }
 
 storiesOf('Table', module)
-  .add('simple', () => (
-    <div style={{ padding: 40 }}>
-      <TableSimple />
-    </div>
-  ))
-  .add('pagination', () => (
-    <div style={{ padding: 40 }}>
-      <TablePagination />
-    </div>
-  ))
-  .add('filter', () => (
-    <div style={{ padding: 40 }}>
-      <TableFilter />
-    </div>
-  ));
+  .addDecorator(story => <div style={{ padding: 40 }}>{story()}</div>)
+  .add('simple', () => <TableSimple />)
+  .add('pagination', () => <TablePagination />)
+  .add('filter', () => <TableFilter />);
