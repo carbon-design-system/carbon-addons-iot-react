@@ -52,6 +52,7 @@ const propTypes = {
   }),
   view: PropTypes.shape({
     pagination: PropTypes.shape({
+      pageSize: PropTypes.number,
       pageSizes: PropTypes.arrayOf(PropTypes.number),
       page: PropTypes.number.isRequired,
     }),
@@ -109,7 +110,11 @@ const propTypes = {
 const defaultProps = {
   options: {},
   view: {
-    pagination: { pageSizes: [10, 20, 30] },
+    pagination: {
+      pageSize: 10,
+      pageSizes: [10, 20, 30],
+      page: 1,
+    },
     toolbar: {},
     table: {},
   },
@@ -221,7 +226,12 @@ const Table = ({ columns, data, view, actions, options }) => {
       </TableContainer>
 
       {options.hasPagination ? (
-        <PaginationV2 {...view.pagination} {...actions.pagination} totalItems={data.length} />
+        <PaginationV2
+          {...view.pagination}
+          {...actions.pagination}
+          totalItems={data.length}
+          pageSize={view.pagination.pageSize || view.pagination.pageSizes[0]}
+        />
       ) : null}
     </div>
   );

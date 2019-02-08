@@ -164,7 +164,6 @@ class TablePagination extends Component {
       },
       view: {
         pagination: {
-          totalItems: tableData.length,
           pageSize: 10,
           pageSizes: [10, 20, 30],
           page: 1,
