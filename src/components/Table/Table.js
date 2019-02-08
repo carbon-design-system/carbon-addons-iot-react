@@ -28,6 +28,7 @@ const propTypes = {
       id: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
       size: PropTypes.number.isRequired,
+      isSortable: PropTypes.bool,
       filter: PropTypes.shape({
         placeholderText: PropTypes.string,
         options: PropTypes.arrayOf(
@@ -70,6 +71,10 @@ const propTypes = {
       isSelectAllSelected: PropTypes.bool.isRequired,
       isSelectIndeterminate: PropTypes.bool,
       selectedIds: PropTypes.arrayOf(PropTypes.string).isRequired,
+      sort: PropTypes.shape({
+        columnId: PropTypes.string.isRequired,
+        direction: PropTypes.oneOf(['NONE', 'ASC', 'DESC']),
+      }),
     }),
   }),
   actions: PropTypes.shape({
@@ -86,6 +91,7 @@ const propTypes = {
     table: PropTypes.shape({
       onRowSelected: PropTypes.func,
       onSelectAll: PropTypes.func,
+      onSortChange: PropTypes.func,
     }).isRequired,
   }),
 };
@@ -95,12 +101,16 @@ const defaultProps = {
   view: {
     pagination: { pageSizes: [10, 20, 30] },
     toolbar: {},
-    table: {},
+    table: {
+      sort: {},
+    },
   },
   actions: {
     pagination: { onChange: defaultFunction },
     toolbar: {},
-    table: {},
+    table: {
+      onSortChange: defaultFunction,
+    },
   },
 }; // TBD
 
@@ -138,13 +148,24 @@ class Table extends Component {
               />
             </TableHeader>
           ) : null}
-          {columns.map(column => (
-            <TableHeader
-              key={`column-${column.id}`}
-              style={filterBarActive === true ? filterBarActiveStyle : {}}>
-              <span className="bx--table-header-label">{column.name}</span>
-            </TableHeader>
-          ))}
+          {columns.map(column => {
+            const hasSort = view.table && view.table.sort && view.table.sort.columnId === column.id;
+            return (
+              <TableHeader
+                key={`column-${column.id}`}
+                style={filterBarActive === true ? filterBarActiveStyle : {}}
+                isSortable={column.isSortable}
+                isSortHeader={hasSort}
+                onClick={() => {
+                  if (column.isSortable && actions.table.onChangeSort) {
+                    actions.table.onChangeSort(column.id);
+                  }
+                }}
+                sortDirection={hasSort ? view.table.sort.direction : 'NONE'}>
+                <span className="bx--table-header-label">{column.name}</span>
+              </TableHeader>
+            );
+          })}
         </TableRow>
         {filterBarActive && (
           <FilterHeaderRow
@@ -206,7 +227,7 @@ class Table extends Component {
               <TableToolbarAction
                 icon={iconFilter}
                 iconDescription="Settings"
-                onClick={actions.toolbar.onToggleFilter}
+                onClick={actions.toolbar && actions.toolbar.onToggleFilter}
               />
             </TableToolbarContent>
           </TableToolbar>
