@@ -1,19 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { ComboBox, DataTable, TextInput } from 'carbon-components-react';
+import { ComboBox, DataTable, FormItem, Icon, TextInput } from 'carbon-components-react';
+import { iconClose } from 'carbon-icons';
 import styled from 'styled-components';
 
 import { defaultFunction, handleEnterKeyDown } from '../../../utils/componentUtilityFunctions';
 
-const {
-  // TableBody,
-  // Table,
-  // TableHead,
-  TableHeader,
-  TableRow,
-  // TableExpandHeader,
-  // TableContainer,
-} = DataTable;
+const { TableHeader, TableRow } = DataTable;
 
 const StyledTableRow = styled(TableRow)`
   &&& {
@@ -36,9 +29,17 @@ const StyledTableHeader = styled(TableHeader)`
     }
   }
 `;
-const StyledTextInput = styled(TextInput)`
+const StyledFormItem = styled(FormItem)`
   &&& {
-    background-color: white;
+    position: relative;
+
+    input {
+      padding-right: 2.5rem;
+    }
+
+    .bx--list-box__selection {
+      right: 0;
+    }
   }
 `;
 class FilterHeaderRow extends Component {
@@ -59,7 +60,6 @@ class FilterHeaderRow extends Component {
         ),
       })
     ).isRequired,
-    /** Callback when filter is applied sends object of keys and values with the filter values */
     filters: PropTypes.arrayOf(
       PropTypes.shape({
         columnId: PropTypes.string.isRequired,
@@ -83,16 +83,13 @@ class FilterHeaderRow extends Component {
     onApplyFilter: defaultFunction,
   };
 
-  constructor(props) {
-    super(props);
-    this.state = props.columns.reduce(
-      (acc, curr) => ({
-        ...acc,
-        [curr.id]: (props.filters.find(i => i.columnId === curr.id) || { value: '' }).value,
-      }),
-      {}
-    );
-  }
+  state = this.props.columns.reduce(
+    (acc, curr) => ({
+      ...acc,
+      [curr.id]: (this.props.filters.find(i => i.columnId === curr.id) || { value: '' }).value,
+    }),
+    {}
+  );
 
   /**
    * take the state with the filter values and send to our listener
@@ -100,6 +97,19 @@ class FilterHeaderRow extends Component {
   handleApplyFilter = () => {
     const { onApplyFilter } = this.props;
     onApplyFilter(this.state);
+  };
+
+  handleClearFilter = (event, column) => {
+    // when a user clicks or hits ENTER, we'll clear the input
+    if (event.keyCode === 13 || !event.keyCode) {
+      this.setState(
+        state => ({
+          ...state,
+          [column.id]: '',
+        }),
+        this.handleApplyFilter
+      );
+    }
   };
 
   render() {
@@ -135,16 +145,34 @@ class FilterHeaderRow extends Component {
                 light
               />
             ) : (
-              <StyledTextInput
-                id={column.id}
-                labelText={column.id}
-                hideLabel
-                placeholder={column.placeholderText || 'Type and hit enter to apply'}
-                onKeyDown={event => handleEnterKeyDown(event, this.handleApplyFilter)}
-                onBlur={this.handleApplyFilter}
-                onChange={event => this.setState({ [column.id]: event.target.value })}
-                value={this.state[column.id]} // eslint-disable-line react/destructuring-assignment
-              />
+              <StyledFormItem>
+                <TextInput
+                  id={column.id}
+                  labelText={column.id}
+                  hideLabel
+                  light
+                  placeholder={column.placeholderText || 'Type and hit enter to apply'}
+                  onKeyDown={event => handleEnterKeyDown(event, this.handleApplyFilter)}
+                  onBlur={this.handleApplyFilter}
+                  onChange={event => this.setState({ [column.id]: event.target.value })}
+                  value={this.state[column.id]} // eslint-disable-line react/destructuring-assignment
+                />
+                {this.state[column.id] ? ( // eslint-disable-line react/destructuring-assignment
+                  <div
+                    role="button"
+                    className="bx--list-box__selection"
+                    tabIndex="0"
+                    onClick={event => {
+                      this.handleClearFilter(event, column);
+                    }}
+                    onKeyDown={event => {
+                      this.handleClearFilter(event, column);
+                    }}
+                    title="Clear Filter">
+                    <Icon icon={iconClose} description="Clear Filter" focusable="false" />
+                  </div>
+                ) : null}
+              </StyledFormItem>
             )}
           </StyledTableHeader>
         ))}

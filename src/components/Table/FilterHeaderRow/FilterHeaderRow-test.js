@@ -24,4 +24,11 @@ describe('FilterHeaderRow', () => {
 
     expect(commonFilterProps.onApplyFilter).toHaveBeenCalledWith(desiredState);
   });
+
+  test('text input clear button clears filter', () => {
+    const wrapper = mount(<FilterHeaderRow {...commonFilterProps} columns={[{ id: 'col1' }]} />);
+    wrapper.find('input').simulate('change', { target: { value: 'mytext' } });
+    wrapper.find('[title="Clear Filter"]').simulate('click');
+    expect(wrapper.state()).toEqual({ col1: '' });
+  });
 });
