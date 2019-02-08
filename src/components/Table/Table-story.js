@@ -315,38 +315,6 @@ class TableFilter extends Component {
             })
           );
         },
-        onBatchCancel: () => {
-          this.setState(state =>
-            update(state, {
-              view: {
-                table: {
-                  isSelectAllSelected: {
-                    $set: false,
-                  },
-                  selectedIds: {
-                    $set: [],
-                  },
-                },
-              },
-            })
-          );
-        },
-        onBatchDelete: () => {
-          this.setState(state =>
-            update(state, {
-              view: {
-                table: {
-                  isSelectAllSelected: {
-                    $set: false,
-                  },
-                  selectedIds: {
-                    $set: [],
-                  },
-                },
-              },
-            })
-          );
-        },
         onToggleFilter: () => {
           this.setState(state => {
             const filterToggled = state.view.toolbar.activeBar === 'filter' ? null : 'filter';
@@ -360,6 +328,17 @@ class TableFilter extends Component {
               },
             });
           });
+        },
+        onClearAllFilters: () => {
+          this.setState(state =>
+            update(state, {
+              view: {
+                filters: {
+                  $set: [],
+                },
+              },
+            })
+          );
         },
       },
       table: {
@@ -421,18 +400,7 @@ class TableFilter extends Component {
 }
 
 storiesOf('Table', module)
-  .add('simple', () => (
-    <div style={{ padding: 40 }}>
-      <TableSimple />
-    </div>
-  ))
-  .add('pagination', () => (
-    <div style={{ padding: 40 }}>
-      <TablePagination />
-    </div>
-  ))
-  .add('filter', () => (
-    <div style={{ padding: 40 }}>
-      <TableFilter />
-    </div>
-  ));
+  .addDecorator(story => <div style={{ padding: 40 }}>{story()}</div>)
+  .add('simple', () => <TableSimple />)
+  .add('pagination', () => <TablePagination />)
+  .add('filter', () => <TableFilter />);
