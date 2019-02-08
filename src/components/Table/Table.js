@@ -53,7 +53,6 @@ const propTypes = {
   view: PropTypes.shape({
     pagination: PropTypes.shape({
       pageSizes: PropTypes.arrayOf(PropTypes.number),
-      totalItems: PropTypes.number.isRequired,
       page: PropTypes.number.isRequired,
     }),
     filters: PropTypes.arrayOf(
@@ -221,7 +220,9 @@ const Table = ({ columns, data, view, actions, options }) => {
         </CarbonTable>
       </TableContainer>
 
-      {options.hasPagination ? <PaginationV2 {...view.pagination} {...actions.pagination} /> : null}
+      {options.hasPagination ? (
+        <PaginationV2 {...view.pagination} {...actions.pagination} totalItems={data.length} />
+      ) : null}
     </div>
   );
 };
