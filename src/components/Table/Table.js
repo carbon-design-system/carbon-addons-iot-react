@@ -157,11 +157,13 @@ const Table = ({ columns, data, view, actions, options }) => {
                 Clear All Filters
               </Button>
             ) : null}
-            <TableToolbarAction
-              icon={iconFilter}
-              iconDescription="Filter"
-              onClick={actions.toolbar.onToggleFilter}
-            />
+            {options.hasFilter ? (
+              <TableToolbarAction
+                icon={iconFilter}
+                iconDescription="Filter"
+                onClick={actions.toolbar.onToggleFilter}
+              />
+            ) : null}
           </TableToolbarContent>
         </TableToolbar>
 
