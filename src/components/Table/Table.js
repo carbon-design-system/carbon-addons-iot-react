@@ -197,8 +197,9 @@ const Table = ({ columns, data, view, actions, options }) => {
                         actions.table.onChangeSort(column.id);
                       }
                     }}
-                    sortDirection={hasSort ? view.table.sort.direction : 'NONE'}>
-                    <span className="bx--table-header-label">{column.name}</span>
+                    sortDirection={hasSort ? view.table.sort.direction : 'NONE'}
+                  >
+                    {column.name}
                   </TableHeader>
                 );
               })}
