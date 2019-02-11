@@ -22,7 +22,7 @@ const {
 } = DataTable;
 
 const propTypes = {
-  /** Array with objects (id, name and size) */
+  /** Specify the properties of each column in the table */
   columns: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,
@@ -39,17 +39,20 @@ const propTypes = {
       }),
     })
   ).isRequired,
+  /** Data for the body of the table */
   data: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,
       values: PropTypes.object,
     })
   ).isRequired,
+  /** Optional properties to customize how the table should be rendered */
   options: PropTypes.shape({
     hasPagination: PropTypes.bool,
     hasRowSelection: PropTypes.bool,
     hasFilter: PropTypes.bool,
   }),
+  /** Initial state of the table, should be updated via a local state wrapper component implementation or via a central store/redux */
   view: PropTypes.shape({
     pagination: PropTypes.shape({
       pageSize: PropTypes.number,
@@ -89,6 +92,7 @@ const propTypes = {
       selectedIds: PropTypes.arrayOf(PropTypes.string).isRequired,
     }),
   }),
+  /** Callbacks for actions of the table, can be used to update state in wrapper component to update `view` props */
   actions: PropTypes.shape({
     pagination: PropTypes.shape({
       /** Specify a callback for when the current page or page size is changed. This callback is passed an object parameter containing the current page and the current page size */
@@ -108,7 +112,7 @@ const propTypes = {
 };
 
 const defaultProps = {
-  options: {},
+  options: { hasPagination: true, hasRowSelection: true, hasFilter: true },
   view: {
     pagination: {
       pageSize: 10,
@@ -116,7 +120,10 @@ const defaultProps = {
       page: 1,
     },
     toolbar: {},
-    table: {},
+    table: {
+      isSelectAllSelected: false,
+      selectedIds: [],
+    },
   },
   actions: {
     pagination: { onChange: defaultFunction },
@@ -133,7 +140,7 @@ const Table = ({ columns, data, view, actions, options }) => {
     ? view.pagination.page * view.pagination.pageSize
     : data.length;
   const visibleData = data.slice(minItemInView, maxItemInView);
-  const filterBarActive = options.hasFilter && view.toolbar.activeBar === 'filter';
+  const filterBarActive = options.hasFilter && view.toolbar && view.toolbar.activeBar === 'filter';
   const filterBarActiveStyle = { paddingTop: 16 };
   return (
     <div>
@@ -143,7 +150,7 @@ const Table = ({ columns, data, view, actions, options }) => {
           {...actions.toolbar}
           hasFilters={view.filters && !!view.filters.length}
         /> */}
-      <TableContainer title="DataTable with toolbar">
+      <TableContainer>
         <TableToolbar>
           <TableToolbarContent>
             {view.filters && !!view.filters.length ? ( // TODO: translate button
@@ -230,7 +237,7 @@ const Table = ({ columns, data, view, actions, options }) => {
           {...view.pagination}
           {...actions.pagination}
           totalItems={data.length}
-          pageSize={view.pagination.pageSize || view.pagination.pageSizes[0]}
+          pageSize={view.pagination ? view.pagination.pageSize || view.pagination.pageSizes[0] : 10}
         />
       ) : null}
     </div>

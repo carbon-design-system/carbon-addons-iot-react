@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
 import update from 'immutability-helper';
 
 import Table from './Table';
@@ -72,198 +73,35 @@ const tableData = Array(100)
     },
   }));
 
-class TableSimple extends Component {
+const actions = {
+  pagination: {
+    /** Specify a callback for when the current page or page size is changed. This callback is passed an object parameter containing the current page and the current page size */
+    onChange: action('onChange'),
+  },
+  toolbar: {
+    onApplyFilter: action('onApplyFilter'),
+    onToggleFilter: action('onToggleFilter'),
+    /** Specify a callback for when the user clicks toolbar button to clear all filters. Recieves a parameter of the current filter values for each column */
+    onClearAllFilters: action('onClearAllFilters'),
+  },
+  table: {
+    onRowSelected: action('onRowSelected'),
+    onSelectAll: action('onSelectAll'),
+  },
+};
+
+class StatefulTableWrapper extends Component {
   constructor(props) {
     super(props);
     this.state = {
       columns: tableColumns,
       data: tableData,
       options: {
-        hasRowSelection: true,
-      },
-      view: {
-        table: {
-          isSelectAllSelected: false,
-          selectedIds: [],
-        },
-      },
-    };
-  }
-
-  render = () => {
-    const { columns, data, options, view } = this.state;
-    const actions = {
-      toolbar: {
-        onBatchCancel: () => {
-          this.setState(state =>
-            update(state, {
-              view: {
-                table: {
-                  isSelectAllSelected: {
-                    $set: false,
-                  },
-                  selectedIds: {
-                    $set: [],
-                  },
-                },
-              },
-            })
-          );
-        },
-        onApplyFilter: filter => console.log(JSON.stringify(filter, null, 4)),
-        onBatchDelete: () => console.log('onBatchDelete'),
-      },
-      table: {
-        onRowSelected: (id, val) => {
-          this.setState(state =>
-            update(state, {
-              view: {
-                table: {
-                  selectedIds: {
-                    $set: val
-                      ? state.view.table.selectedIds.concat([id])
-                      : state.view.table.selectedIds.filter(i => i !== id),
-                  },
-                },
-              },
-            })
-          );
-        },
-        onSelectAll: val => {
-          this.setState(state =>
-            update(state, {
-              view: {
-                table: {
-                  isSelectAllSelected: {
-                    $set: val,
-                  },
-                  selectedIds: {
-                    $set: val ? state.data.map(i => i.id) : [],
-                  },
-                },
-              },
-            })
-          );
-        },
-      },
-    };
-    return <Table columns={columns} data={data} options={options} view={view} actions={actions} />;
-  };
-}
-
-// eslint-disable-next-line react/no-multi-comp
-class TablePagination extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      columns: tableColumns,
-      data: tableData,
-      options: {
+        hasFilter: true,
         hasPagination: true,
         hasRowSelection: true,
       },
       view: {
-        pagination: {
-          pageSize: 10,
-          pageSizes: [10, 20, 30],
-          page: 1,
-        },
-        table: {
-          isSelectAllSelected: false,
-          selectedIds: [],
-        },
-      },
-    };
-  }
-
-  render = () => {
-    const { columns, data, options, view } = this.state;
-    const actions = {
-      pagination: {
-        onChange: paginationValues => {
-          this.setState(state =>
-            update(state, {
-              view: {
-                pagination: {
-                  $merge: paginationValues,
-                },
-              },
-            })
-          );
-        },
-      },
-      toolbar: {
-        onApplyFilter: filter => console.log(JSON.stringify(filter, null, 4)),
-        onBatchCancel: () => {
-          this.setState(state =>
-            update(state, {
-              view: {
-                table: {
-                  isSelectAllSelected: {
-                    $set: false,
-                  },
-                  selectedIds: {
-                    $set: [],
-                  },
-                },
-              },
-            })
-          );
-        },
-      },
-      table: {
-        onRowSelected: (id, val) => {
-          this.setState(state =>
-            update(state, {
-              view: {
-                table: {
-                  selectedIds: {
-                    $set: val
-                      ? state.view.table.selectedIds.concat([id])
-                      : state.view.table.selectedIds.filter(i => i !== id),
-                  },
-                },
-              },
-            })
-          );
-        },
-        onSelectAll: val => {
-          this.setState(state =>
-            update(state, {
-              view: {
-                table: {
-                  isSelectAllSelected: {
-                    $set: val,
-                  },
-                  selectedIds: {
-                    $set: val ? state.data.map(i => i.id) : [],
-                  },
-                },
-              },
-            })
-          );
-        },
-      },
-    };
-    return <Table columns={columns} data={data} options={options} view={view} actions={actions} />;
-  };
-}
-
-// eslint-disable-next-line react/no-multi-comp
-class TableFilter extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      columns: tableColumns,
-      data: tableData,
-      options: {
-        hasRowSelection: true,
-        hasFilter: true,
-      },
-      view: {
-        toolbar: {
-          activeBar: 'filter',
-        },
         filters: [
           {
             columnId: 'string',
@@ -274,9 +112,17 @@ class TableFilter extends Component {
             value: 'option-B',
           },
         ],
+        pagination: {
+          pageSize: 10,
+          pageSizes: [10, 20, 30],
+          page: 1,
+        },
         table: {
           isSelectAllSelected: false,
           selectedIds: [],
+        },
+        toolbar: {
+          activeBar: 'filter',
         },
       },
     };
@@ -292,6 +138,19 @@ class TableFilter extends Component {
       )
     );
     const actions = {
+      pagination: {
+        onChange: paginationValues => {
+          this.setState(state =>
+            update(state, {
+              view: {
+                pagination: {
+                  $merge: paginationValues,
+                },
+              },
+            })
+          );
+        },
+      },
       toolbar: {
         onApplyFilter: filterValues => {
           const newFilters = Object.entries(filterValues)
@@ -399,7 +258,96 @@ class TableFilter extends Component {
 }
 
 storiesOf('Table', module)
-  .addDecorator(story => <div style={{ padding: 40 }}>{story()}</div>)
-  .add('simple', () => <TableSimple />)
-  .add('pagination', () => <TablePagination />)
-  .add('filter', () => <TableFilter />);
+  .add('Stateful Example', () => <StatefulTableWrapper />, {
+    info: {
+      text:
+        'This is a working stateful example of the table to showcase it\'s various functions. This is produced by wrapping the <Table> in a container component and managing the state associated with features such the toolbar, filters, row select, etc. For more robust documentation on the prop model and source, see the other "with function" stories.',
+      propTables: [Table],
+      propTablesExclude: [StatefulTableWrapper],
+    },
+  })
+  .add('default', () => <Table columns={tableColumns} data={tableData} actions={actions} />)
+  .add('with selection and batch actions', () => (
+    // TODO - batch action bar
+    <Table
+      columns={tableColumns}
+      data={tableData}
+      actions={actions}
+      options={{
+        hasFilter: false,
+        hasPagination: true,
+        hasRowSelection: true,
+      }}
+      view={{
+        filters: [],
+        pagination: {
+          pageSize: 10,
+          pageSizes: [10, 20, 30],
+          page: 1,
+        },
+        table: {
+          isSelectAllSelected: false,
+          isSelectIndeterminate: true,
+          selectedIds: ['row-3', 'row-4', 'row-6', 'row-7'],
+        },
+      }}
+    />
+  ))
+  .add('with expansion', () => (
+    <p>TODO - expander toggles on rows AND one row open with open card view</p>
+  ))
+  .add('with filters', () => (
+    <Table
+      columns={tableColumns}
+      data={tableData.filter(({ values }) =>
+        // return false if a value doesn't match a valid filter
+        [
+          {
+            columnId: 'string',
+            value: 'whiteboard',
+          },
+          {
+            columnId: 'select',
+            value: 'option-B',
+          },
+        ].reduce(
+          (acc, { columnId, value }) => acc && values[columnId].toString().includes(value),
+          true
+        )
+      )}
+      actions={actions}
+      options={{
+        hasFilter: true,
+        hasPagination: true,
+        hasRowSelection: true,
+      }}
+      view={{
+        filters: [
+          {
+            columnId: 'string',
+            value: 'whiteboard',
+          },
+          {
+            columnId: 'select',
+            value: 'option-B',
+          },
+        ],
+        pagination: {
+          pageSize: 10,
+          pageSizes: [10, 20, 30],
+          page: 1,
+        },
+        table: {
+          isSelectAllSelected: false,
+          selectedIds: [],
+        },
+        toolbar: {
+          activeBar: 'filter',
+        },
+      }}
+    />
+  ))
+  .add('with customized columns', () => <p>TODO - a couple columns selected and reordered</p>)
+  .add('with no results', () => <p>TODO - empty state when filters applied and no results</p>)
+  .add('with no data', () => <p>TODO - empty state when no data provided</p>)
+  .add('is loading', () => <p>TODO - empty state when data is loading</p>);
