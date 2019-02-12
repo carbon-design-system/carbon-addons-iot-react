@@ -85,9 +85,9 @@ const propTypes = {
       ),
     }),
     table: PropTypes.shape({
-      isSelectAllSelected: PropTypes.bool.isRequired,
+      isSelectAllSelected: PropTypes.bool,
       isSelectIndeterminate: PropTypes.bool,
-      selectedIds: PropTypes.arrayOf(PropTypes.string).isRequired,
+      selectedIds: PropTypes.arrayOf(PropTypes.string),
       sort: PropTypes.shape({
         columnId: PropTypes.string.isRequired,
         direction: PropTypes.oneOf(['NONE', 'ASC', 'DESC']),
@@ -185,7 +185,8 @@ const Table = ({ columns, data, view, actions, options }) => {
                 </TableHeader>
               ) : null}
               {columns.map(column => {
-                const hasSort = view.table && view.table.sort && view.table.sort.columnId === column.id;
+                const hasSort =
+                  view.table && view.table.sort && view.table.sort.columnId === column.id;
                 return (
                   <TableHeader
                     key={`column-${column.id}`}
@@ -197,8 +198,7 @@ const Table = ({ columns, data, view, actions, options }) => {
                         actions.table.onChangeSort(column.id);
                       }
                     }}
-                    sortDirection={hasSort ? view.table.sort.direction : 'NONE'}
-                  >
+                    sortDirection={hasSort ? view.table.sort.direction : 'NONE'}>
                     {column.name}
                   </TableHeader>
                 );
