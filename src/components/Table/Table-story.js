@@ -399,8 +399,96 @@ class TableFilter extends Component {
   };
 }
 
+// eslint-disable-next-line react/no-multi-comp
+class TableSort extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      columns: tableColumns.map((i, idx) => ({
+        ...i,
+        isSortable: idx !== 1,
+      })),
+      data: tableData,
+      view: {
+        table: {
+          sort: undefined,
+        },
+      },
+    };
+  }
+
+  getSortedData = (inputData, columnId, direction) => {
+    const sortedData = inputData.map(i => i);
+    return sortedData.sort((a, b) => {
+      const val = direction === 'ASC' ? -1 : 1;
+      if (a.values[columnId] < b.values[columnId]) {
+        return val;
+      }
+      if (a.values[columnId] > b.values[columnId]) {
+        return -val;
+      }
+      return 0;
+    });
+  };
+
+  render = () => {
+    const {
+      columns,
+      data,
+      options,
+      view,
+      view: {
+        table: { sort },
+      },
+    } = this.state;
+    const actions = {
+      table: {
+        onChangeSort: columnId => {
+          this.setState(state => {
+            const sorts = ['NONE', 'ASC', 'DESC'];
+            const currentSort = state.view.table.sort;
+            const currentSortDir =
+              currentSort && currentSort.columnId === columnId
+                ? state.view.table.sort.direction
+                : 'NONE';
+            const nextSortDir =
+              sorts[(sorts.findIndex(i => i === currentSortDir) + 1) % sorts.length];
+            return update(state, {
+              view: {
+                table: {
+                  sort: {
+                    $set:
+                      nextSortDir === 'NONE'
+                        ? undefined
+                        : {
+                            columnId,
+                            direction: nextSortDir,
+                          },
+                  },
+                },
+              },
+            });
+          });
+        },
+      },
+    };
+    return (
+      <Table
+        columns={columns}
+        data={
+          sort && sort.columnId ? this.getSortedData(data, sort.columnId, sort.direction) : data
+        }
+        options={options}
+        view={view}
+        actions={actions}
+      />
+    );
+  };
+}
+
 storiesOf('Table', module)
   .addDecorator(story => <div style={{ padding: 40 }}>{story()}</div>)
   .add('simple', () => <TableSimple />)
   .add('pagination', () => <TablePagination />)
-  .add('filter', () => <TableFilter />);
+  .add('filter', () => <TableFilter />)
+  .add('sort', () => <TableSort />);
