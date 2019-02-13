@@ -63,6 +63,7 @@
     ],
     "react/jsx-filename-extension": 0, // allow js extensions
     "no-prototype-builtins": 0, // not needed as we never mess with prototype
+    "no-nested-ternary": 0,
     "react/jsx-one-expression-per-line": 0,
     "react/no-did-update-set-state": 0, //not needed after react 16: https://github.com/yannickcr/eslint-plugin-react/issues/1754
     "import/prefer-default-export": 0,

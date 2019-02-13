@@ -152,6 +152,68 @@ class TableSimple extends Component {
 }
 
 // eslint-disable-next-line react/no-multi-comp
+class TableExpansion extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      columns: tableColumns,
+      data: tableData,
+      options: {
+        hasRowExpansion: true,
+      },
+      view: {
+        table: {
+          expansion: {
+            rowId: undefined,
+            content: null,
+          },
+        },
+      },
+    };
+  }
+
+  getExpansionContent = rowId => (
+    <div style={{ padding: 20 }}>
+      <h3>{rowId}</h3>
+      <ul style={{ lineHeight: '22px' }}>
+        {Object.entries(tableData.find(i => i.id === rowId).values).map(([key, value]) => (
+          <li>
+            <b>{key}</b>: {value}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+
+  render = () => {
+    const { columns, data, options, view } = this.state;
+    const actions = {
+      table: {
+        onRowExpanded: (id, val) => {
+          this.setState(state =>
+            update(state, {
+              view: {
+                table: {
+                  expansion: {
+                    $set: val
+                      ? {
+                          rowId: id,
+                          content: this.getExpansionContent(id),
+                        }
+                      : undefined,
+                  },
+                },
+              },
+            })
+          );
+        },
+      },
+    };
+    return <Table columns={columns} data={data} options={options} view={view} actions={actions} />;
+  };
+}
+
+// eslint-disable-next-line react/no-multi-comp
 class TablePagination extends Component {
   constructor(props) {
     super(props);
@@ -489,6 +551,7 @@ class TableSort extends Component {
 storiesOf('Table', module)
   .addDecorator(story => <div style={{ padding: 40 }}>{story()}</div>)
   .add('simple', () => <TableSimple />)
+  .add('expansion', () => <TableExpansion />)
   .add('pagination', () => <TablePagination />)
   .add('filter', () => <TableFilter />)
   .add('sort', () => <TableSort />);
