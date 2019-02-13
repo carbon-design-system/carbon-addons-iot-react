@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import isNil from 'lodash/isNil';
+import merge from 'lodash/merge';
 import { Button, PaginationV2, DataTable, Checkbox } from 'carbon-components-react';
 import { iconFilter } from 'carbon-icons';
 
@@ -28,6 +29,7 @@ const propTypes = {
       id: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
       size: PropTypes.number.isRequired,
+      isSortable: PropTypes.bool,
       filter: PropTypes.shape({
         placeholderText: PropTypes.string,
         options: PropTypes.arrayOf(
@@ -57,7 +59,8 @@ const propTypes = {
     pagination: PropTypes.shape({
       pageSize: PropTypes.number,
       pageSizes: PropTypes.arrayOf(PropTypes.number),
-      page: PropTypes.number.isRequired,
+      page: PropTypes.number,
+      totalItems: PropTypes.number.isRequired,
     }),
     filters: PropTypes.arrayOf(
       PropTypes.shape({
@@ -87,9 +90,13 @@ const propTypes = {
       ),
     }),
     table: PropTypes.shape({
-      isSelectAllSelected: PropTypes.bool.isRequired,
+      isSelectAllSelected: PropTypes.bool,
       isSelectIndeterminate: PropTypes.bool,
-      selectedIds: PropTypes.arrayOf(PropTypes.string).isRequired,
+      selectedIds: PropTypes.arrayOf(PropTypes.string),
+      sort: PropTypes.shape({
+        columnId: PropTypes.string,
+        direction: PropTypes.oneOf(['NONE', 'ASC', 'DESC']),
+      }),
     }),
   }),
   /** Callbacks for actions of the table, can be used to update state in wrapper component to update `view` props */
@@ -107,6 +114,7 @@ const propTypes = {
     table: PropTypes.shape({
       onRowSelected: PropTypes.func,
       onSelectAll: PropTypes.func,
+      onSortChange: PropTypes.func,
     }).isRequired,
   }),
 };
@@ -123,16 +131,21 @@ const defaultProps = {
     table: {
       isSelectAllSelected: false,
       selectedIds: [],
+      sort: {},
     },
   },
   actions: {
     pagination: { onChange: defaultFunction },
     toolbar: {},
-    table: {},
+    table: {
+      onSortChange: defaultFunction,
+    },
   },
 };
 
-const Table = ({ columns, data, view, actions, options }) => {
+const Table = props => {
+  const { columns, data, view, actions, options } = merge(defaultProps, props);
+
   const minItemInView = view.pagination
     ? (view.pagination.page - 1) * view.pagination.pageSize + 1
     : 0;
@@ -158,11 +171,13 @@ const Table = ({ columns, data, view, actions, options }) => {
                 Clear All Filters
               </Button>
             ) : null}
-            <TableToolbarAction
-              icon={iconFilter}
-              iconDescription="Filter"
-              onClick={actions.toolbar.onToggleFilter}
-            />
+            {options.hasFilter ? (
+              <TableToolbarAction
+                icon={iconFilter}
+                iconDescription="Filter"
+                onClick={actions.toolbar.onToggleFilter}
+              />
+            ) : null}
           </TableToolbarContent>
         </TableToolbar>
 
@@ -183,13 +198,25 @@ const Table = ({ columns, data, view, actions, options }) => {
                   />
                 </TableHeader>
               ) : null}
-              {columns.map(column => (
-                <TableHeader
-                  key={`column-${column.id}`}
-                  style={filterBarActive === true ? filterBarActiveStyle : {}}>
-                  <span className="bx--table-header-label">{column.name}</span>
-                </TableHeader>
-              ))}
+              {columns.map(column => {
+                const hasSort =
+                  view.table && view.table.sort && view.table.sort.columnId === column.id;
+                return (
+                  <TableHeader
+                    key={`column-${column.id}`}
+                    style={filterBarActive === true ? filterBarActiveStyle : {}}
+                    isSortable={column.isSortable}
+                    isSortHeader={hasSort}
+                    onClick={() => {
+                      if (column.isSortable && actions.table.onChangeSort) {
+                        actions.table.onChangeSort(column.id);
+                      }
+                    }}
+                    sortDirection={hasSort ? view.table.sort.direction : 'NONE'}>
+                    {column.name}
+                  </TableHeader>
+                );
+              })}
             </TableRow>
             {filterBarActive && (
               <FilterHeaderRow
@@ -232,14 +259,7 @@ const Table = ({ columns, data, view, actions, options }) => {
         </CarbonTable>
       </TableContainer>
 
-      {options.hasPagination ? (
-        <PaginationV2
-          {...view.pagination}
-          {...actions.pagination}
-          totalItems={data.length}
-          pageSize={view.pagination ? view.pagination.pageSize || view.pagination.pageSizes[0] : 10}
-        />
-      ) : null}
+      {options.hasPagination ? <PaginationV2 {...view.pagination} {...actions.pagination} /> : null}
     </div>
   );
 };

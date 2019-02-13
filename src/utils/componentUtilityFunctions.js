@@ -22,3 +22,17 @@ export const handleEnterKeyDown = (evt, callback) => {
 export const defaultFunction = name => {
   console.error(`${name} not implemented`);
 };
+
+export const getSortedData = (inputData, columnId, direction) => {
+  const sortedData = inputData.map(i => i);
+  return sortedData.sort((a, b) => {
+    const val = direction === 'ASC' ? -1 : 1;
+    if (a.values[columnId] < b.values[columnId]) {
+      return val;
+    }
+    if (a.values[columnId] > b.values[columnId]) {
+      return -val;
+    }
+    return 0;
+  });
+};

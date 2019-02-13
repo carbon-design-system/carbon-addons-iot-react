@@ -3,6 +3,8 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import update from 'immutability-helper';
 
+import { getSortedData } from '../../utils/componentUtilityFunctions';
+
 import Table from './Table';
 
 const selectData = [
@@ -94,7 +96,10 @@ class StatefulTableWrapper extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      columns: tableColumns,
+      columns: tableColumns.map((i, idx) => ({
+        ...i,
+        isSortable: idx !== 1,
+      })),
       data: tableData,
       options: {
         hasFilter: true,
@@ -116,10 +121,12 @@ class StatefulTableWrapper extends Component {
           pageSize: 10,
           pageSizes: [10, 20, 30],
           page: 1,
+          totalItems: tableData.length,
         },
         table: {
           isSelectAllSelected: false,
           selectedIds: [],
+          sort: undefined,
         },
         toolbar: {
           activeBar: 'filter',
@@ -129,7 +136,15 @@ class StatefulTableWrapper extends Component {
   }
 
   render = () => {
-    const { columns, data, options, view } = this.state;
+    const {
+      columns,
+      data,
+      options,
+      view,
+      view: {
+        table: { sort },
+      },
+    } = this.state;
     const filteredData = data.filter(({ values }) =>
       // return false if a value doesn't match a valid filter
       view.filters.reduce(
@@ -137,6 +152,7 @@ class StatefulTableWrapper extends Component {
         true
       )
     );
+
     const actions = {
       pagination: {
         onChange: paginationValues => {
@@ -200,6 +216,33 @@ class StatefulTableWrapper extends Component {
         },
       },
       table: {
+        onChangeSort: columnId => {
+          this.setState(state => {
+            const sorts = ['NONE', 'ASC', 'DESC'];
+            const currentSort = state.view.table.sort;
+            const currentSortDir =
+              currentSort && currentSort.columnId === columnId
+                ? state.view.table.sort.direction
+                : 'NONE';
+            const nextSortDir =
+              sorts[(sorts.findIndex(i => i === currentSortDir) + 1) % sorts.length];
+            return update(state, {
+              view: {
+                table: {
+                  sort: {
+                    $set:
+                      nextSortDir === 'NONE'
+                        ? undefined
+                        : {
+                            columnId,
+                            direction: nextSortDir,
+                          },
+                  },
+                },
+              },
+            });
+          });
+        },
         onRowSelected: (id, val) => {
           this.setState(state => {
             const isClearing = !val && state.view.table.selectedIds.length === 1;
@@ -248,7 +291,11 @@ class StatefulTableWrapper extends Component {
     return (
       <Table
         columns={columns}
-        data={filteredData}
+        data={
+          sort && sort.columnId
+            ? getSortedData(filteredData, sort.columnId, sort.direction)
+            : filteredData
+        }
         options={options}
         view={view}
         actions={actions}
@@ -284,6 +331,7 @@ storiesOf('Table', module)
           pageSize: 10,
           pageSizes: [10, 20, 30],
           page: 1,
+          totalItems: tableData.length,
         },
         table: {
           isSelectAllSelected: false,
@@ -296,57 +344,91 @@ storiesOf('Table', module)
   .add('with expansion', () => (
     <p>TODO - expander toggles on rows AND one row open with open card view</p>
   ))
-  .add('with filters', () => (
+  .add('with sorting', () => (
     <Table
-      columns={tableColumns}
-      data={tableData.filter(({ values }) =>
-        // return false if a value doesn't match a valid filter
-        [
-          {
-            columnId: 'string',
-            value: 'whiteboard',
-          },
-          {
-            columnId: 'select',
-            value: 'option-B',
-          },
-        ].reduce(
-          (acc, { columnId, value }) => acc && values[columnId].toString().includes(value),
-          true
-        )
-      )}
+      columns={tableColumns.map((i, idx) => ({
+        ...i,
+        isSortable: idx !== 1,
+      }))}
+      data={getSortedData(tableData, 'string', 'ASC')}
       actions={actions}
       options={{
-        hasFilter: true,
+        hasFilter: false,
         hasPagination: true,
         hasRowSelection: true,
       }}
       view={{
-        filters: [
-          {
-            columnId: 'string',
-            value: 'whiteboard',
-          },
-          {
-            columnId: 'select',
-            value: 'option-B',
-          },
-        ],
+        filters: [],
         pagination: {
           pageSize: 10,
           pageSizes: [10, 20, 30],
           page: 1,
+          totalItems: tableData.length,
         },
         table: {
-          isSelectAllSelected: false,
-          selectedIds: [],
-        },
-        toolbar: {
-          activeBar: 'filter',
+          sort: {
+            columnId: 'string',
+            direction: 'ASC',
+          },
         },
       }}
     />
   ))
+  .add('with filters', () => {
+    const filteredData = tableData.filter(({ values }) =>
+      // return false if a value doesn't match a valid filter
+      [
+        {
+          columnId: 'string',
+          value: 'whiteboard',
+        },
+        {
+          columnId: 'select',
+          value: 'option-B',
+        },
+      ].reduce(
+        (acc, { columnId, value }) => acc && values[columnId].toString().includes(value),
+        true
+      )
+    );
+    return (
+      <Table
+        columns={tableColumns}
+        data={filteredData}
+        actions={actions}
+        options={{
+          hasFilter: true,
+          hasPagination: true,
+          hasRowSelection: true,
+        }}
+        view={{
+          filters: [
+            {
+              columnId: 'string',
+              value: 'whiteboard',
+            },
+            {
+              columnId: 'select',
+              value: 'option-B',
+            },
+          ],
+          pagination: {
+            pageSize: 10,
+            pageSizes: [10, 20, 30],
+            page: 1,
+            totalItems: filteredData.length,
+          },
+          table: {
+            isSelectAllSelected: false,
+            selectedIds: [],
+          },
+          toolbar: {
+            activeBar: 'filter',
+          },
+        }}
+      />
+    );
+  })
   .add('with customized columns', () => <p>TODO - a couple columns selected and reordered</p>)
   .add('with no results', () => <p>TODO - empty state when filters applied and no results</p>)
   .add('with no data', () => <p>TODO - empty state when no data provided</p>)
