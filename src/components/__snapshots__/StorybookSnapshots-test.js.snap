@@ -12227,6 +12227,4904 @@ exports[`Storybook Snapshot tests and console checks Storyshots ButtonEnhanced n
 </div>
 `;
 
+exports[`Storybook Snapshot tests and console checks Storyshots Table expansion 1`] = `
+.c0.c0.c0 {
+  cursor: pointer;
+}
+
+<div>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "padding": 40,
+        }
+      }
+    >
+      <div>
+        <div
+          className="bx--data-table-v2-container"
+        >
+          <h4
+            className="bx--data-table-v2-header"
+          >
+            DataTable with toolbar
+          </h4>
+          <section
+            className="bx--table-toolbar"
+          >
+            <div
+              className="bx--toolbar-content"
+            />
+          </section>
+          <table
+            className="bx--data-table-v2"
+          >
+            <thead>
+              <tr>
+                <th
+                  scope="col"
+                />
+                <th
+                  scope="col"
+                  style={Object {}}
+                >
+                  String
+                </th>
+                <th
+                  scope="col"
+                  style={Object {}}
+                >
+                  Date
+                </th>
+                <th
+                  scope="col"
+                  style={Object {}}
+                >
+                  Select
+                </th>
+                <th
+                  scope="col"
+                  style={Object {}}
+                >
+                  Number
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  toyota toyota toyota
+                </td>
+                <td>
+                  1973-03-03T09:46:40.000Z
+                </td>
+                <td>
+                  option-A
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  helping whiteboard as
+                </td>
+                <td>
+                  1973-03-14T23:33:20.000Z
+                </td>
+                <td>
+                  option-B
+                </td>
+                <td>
+                  1
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  whiteboard can eat
+                </td>
+                <td>
+                  1973-04-18T16:53:20.000Z
+                </td>
+                <td>
+                  option-C
+                </td>
+                <td>
+                  4
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  as eat scott
+                </td>
+                <td>
+                  1973-06-15T13:46:40.000Z
+                </td>
+                <td>
+                  option-A
+                </td>
+                <td>
+                  9
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  can pinocchio whiteboard
+                </td>
+                <td>
+                  1973-09-04T14:13:20.000Z
+                </td>
+                <td>
+                  option-B
+                </td>
+                <td>
+                  16
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  bottle toyota bottle
+                </td>
+                <td>
+                  1973-12-17T18:13:20.000Z
+                </td>
+                <td>
+                  option-C
+                </td>
+                <td>
+                  25
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  eat whiteboard pinocchio
+                </td>
+                <td>
+                  1974-04-24T01:46:40.000Z
+                </td>
+                <td>
+                  option-A
+                </td>
+                <td>
+                  36
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  chocolate can helping
+                </td>
+                <td>
+                  1974-09-21T12:53:20.000Z
+                </td>
+                <td>
+                  option-B
+                </td>
+                <td>
+                  49
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  pinocchio eat can
+                </td>
+                <td>
+                  1975-03-14T03:33:20.000Z
+                </td>
+                <td>
+                  option-C
+                </td>
+                <td>
+                  64
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  scott pinocchio chocolate
+                </td>
+                <td>
+                  1975-09-26T21:46:40.000Z
+                </td>
+                <td>
+                  option-A
+                </td>
+                <td>
+                  81
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  toyota toyota toyota
+                </td>
+                <td>
+                  1976-05-03T19:33:20.000Z
+                </td>
+                <td>
+                  option-B
+                </td>
+                <td>
+                  100
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  helping whiteboard as
+                </td>
+                <td>
+                  1977-01-01T20:53:20.000Z
+                </td>
+                <td>
+                  option-C
+                </td>
+                <td>
+                  121
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  whiteboard can eat
+                </td>
+                <td>
+                  1977-09-25T01:46:40.000Z
+                </td>
+                <td>
+                  option-A
+                </td>
+                <td>
+                  144
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  as eat scott
+                </td>
+                <td>
+                  1978-07-11T10:13:20.000Z
+                </td>
+                <td>
+                  option-B
+                </td>
+                <td>
+                  169
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  can pinocchio whiteboard
+                </td>
+                <td>
+                  1979-05-19T22:13:20.000Z
+                </td>
+                <td>
+                  option-C
+                </td>
+                <td>
+                  196
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  bottle toyota bottle
+                </td>
+                <td>
+                  1980-04-19T13:46:40.000Z
+                </td>
+                <td>
+                  option-A
+                </td>
+                <td>
+                  225
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  eat whiteboard pinocchio
+                </td>
+                <td>
+                  1981-04-13T08:53:20.000Z
+                </td>
+                <td>
+                  option-B
+                </td>
+                <td>
+                  256
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  chocolate can helping
+                </td>
+                <td>
+                  1982-04-30T07:33:20.000Z
+                </td>
+                <td>
+                  option-C
+                </td>
+                <td>
+                  289
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  pinocchio eat can
+                </td>
+                <td>
+                  1983-06-09T09:46:40.000Z
+                </td>
+                <td>
+                  option-A
+                </td>
+                <td>
+                  324
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  scott pinocchio chocolate
+                </td>
+                <td>
+                  1984-08-10T15:33:20.000Z
+                </td>
+                <td>
+                  option-B
+                </td>
+                <td>
+                  361
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  toyota toyota toyota
+                </td>
+                <td>
+                  1985-11-05T00:53:20.000Z
+                </td>
+                <td>
+                  option-C
+                </td>
+                <td>
+                  400
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  helping whiteboard as
+                </td>
+                <td>
+                  1987-02-22T13:46:40.000Z
+                </td>
+                <td>
+                  option-A
+                </td>
+                <td>
+                  441
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  whiteboard can eat
+                </td>
+                <td>
+                  1988-07-04T06:13:20.000Z
+                </td>
+                <td>
+                  option-B
+                </td>
+                <td>
+                  484
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  as eat scott
+                </td>
+                <td>
+                  1989-12-07T02:13:20.000Z
+                </td>
+                <td>
+                  option-C
+                </td>
+                <td>
+                  529
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  can pinocchio whiteboard
+                </td>
+                <td>
+                  1991-06-04T01:46:40.000Z
+                </td>
+                <td>
+                  option-A
+                </td>
+                <td>
+                  576
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  bottle toyota bottle
+                </td>
+                <td>
+                  1992-12-22T04:53:20.000Z
+                </td>
+                <td>
+                  option-B
+                </td>
+                <td>
+                  625
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  eat whiteboard pinocchio
+                </td>
+                <td>
+                  1994-08-04T11:33:20.000Z
+                </td>
+                <td>
+                  option-C
+                </td>
+                <td>
+                  676
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  chocolate can helping
+                </td>
+                <td>
+                  1996-04-08T21:46:40.000Z
+                </td>
+                <td>
+                  option-A
+                </td>
+                <td>
+                  729
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  pinocchio eat can
+                </td>
+                <td>
+                  1998-01-05T11:33:20.000Z
+                </td>
+                <td>
+                  option-B
+                </td>
+                <td>
+                  784
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  scott pinocchio chocolate
+                </td>
+                <td>
+                  1999-10-27T04:53:20.000Z
+                </td>
+                <td>
+                  option-C
+                </td>
+                <td>
+                  841
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  toyota toyota toyota
+                </td>
+                <td>
+                  2001-09-09T01:46:40.000Z
+                </td>
+                <td>
+                  option-A
+                </td>
+                <td>
+                  900
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  helping whiteboard as
+                </td>
+                <td>
+                  2003-08-16T02:13:20.000Z
+                </td>
+                <td>
+                  option-B
+                </td>
+                <td>
+                  961
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  whiteboard can eat
+                </td>
+                <td>
+                  2005-08-14T06:13:20.000Z
+                </td>
+                <td>
+                  option-C
+                </td>
+                <td>
+                  1024
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  as eat scott
+                </td>
+                <td>
+                  2007-09-05T13:46:40.000Z
+                </td>
+                <td>
+                  option-A
+                </td>
+                <td>
+                  1089
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  can pinocchio whiteboard
+                </td>
+                <td>
+                  2009-10-20T00:53:20.000Z
+                </td>
+                <td>
+                  option-B
+                </td>
+                <td>
+                  1156
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  bottle toyota bottle
+                </td>
+                <td>
+                  2011-12-27T15:33:20.000Z
+                </td>
+                <td>
+                  option-C
+                </td>
+                <td>
+                  1225
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  eat whiteboard pinocchio
+                </td>
+                <td>
+                  2014-03-28T09:46:40.000Z
+                </td>
+                <td>
+                  option-A
+                </td>
+                <td>
+                  1296
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  chocolate can helping
+                </td>
+                <td>
+                  2016-07-20T07:33:20.000Z
+                </td>
+                <td>
+                  option-B
+                </td>
+                <td>
+                  1369
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  pinocchio eat can
+                </td>
+                <td>
+                  2018-12-05T08:53:20.000Z
+                </td>
+                <td>
+                  option-C
+                </td>
+                <td>
+                  1444
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  scott pinocchio chocolate
+                </td>
+                <td>
+                  2021-05-14T13:46:40.000Z
+                </td>
+                <td>
+                  option-A
+                </td>
+                <td>
+                  1521
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  toyota toyota toyota
+                </td>
+                <td>
+                  2023-11-14T22:13:20.000Z
+                </td>
+                <td>
+                  option-B
+                </td>
+                <td>
+                  1600
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  helping whiteboard as
+                </td>
+                <td>
+                  2026-06-09T10:13:20.000Z
+                </td>
+                <td>
+                  option-C
+                </td>
+                <td>
+                  1681
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  whiteboard can eat
+                </td>
+                <td>
+                  2029-01-25T01:46:40.000Z
+                </td>
+                <td>
+                  option-A
+                </td>
+                <td>
+                  1764
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  as eat scott
+                </td>
+                <td>
+                  2031-10-05T20:53:20.000Z
+                </td>
+                <td>
+                  option-B
+                </td>
+                <td>
+                  1849
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  can pinocchio whiteboard
+                </td>
+                <td>
+                  2034-07-08T19:33:20.000Z
+                </td>
+                <td>
+                  option-C
+                </td>
+                <td>
+                  1936
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  bottle toyota bottle
+                </td>
+                <td>
+                  2037-05-03T21:46:40.000Z
+                </td>
+                <td>
+                  option-A
+                </td>
+                <td>
+                  2025
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  eat whiteboard pinocchio
+                </td>
+                <td>
+                  2040-03-22T03:33:20.000Z
+                </td>
+                <td>
+                  option-B
+                </td>
+                <td>
+                  2116
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  chocolate can helping
+                </td>
+                <td>
+                  2043-03-03T12:53:20.000Z
+                </td>
+                <td>
+                  option-C
+                </td>
+                <td>
+                  2209
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  pinocchio eat can
+                </td>
+                <td>
+                  2046-03-07T01:46:40.000Z
+                </td>
+                <td>
+                  option-A
+                </td>
+                <td>
+                  2304
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  scott pinocchio chocolate
+                </td>
+                <td>
+                  2049-04-02T18:13:20.000Z
+                </td>
+                <td>
+                  option-B
+                </td>
+                <td>
+                  2401
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  toyota toyota toyota
+                </td>
+                <td>
+                  2052-05-22T14:13:20.000Z
+                </td>
+                <td>
+                  option-C
+                </td>
+                <td>
+                  2500
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  helping whiteboard as
+                </td>
+                <td>
+                  2055-08-04T13:46:40.000Z
+                </td>
+                <td>
+                  option-A
+                </td>
+                <td>
+                  2601
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  whiteboard can eat
+                </td>
+                <td>
+                  2058-11-08T16:53:20.000Z
+                </td>
+                <td>
+                  option-B
+                </td>
+                <td>
+                  2704
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  as eat scott
+                </td>
+                <td>
+                  2062-03-07T23:33:20.000Z
+                </td>
+                <td>
+                  option-C
+                </td>
+                <td>
+                  2809
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  can pinocchio whiteboard
+                </td>
+                <td>
+                  2065-07-28T09:46:40.000Z
+                </td>
+                <td>
+                  option-A
+                </td>
+                <td>
+                  2916
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  bottle toyota bottle
+                </td>
+                <td>
+                  2069-01-09T23:33:20.000Z
+                </td>
+                <td>
+                  option-B
+                </td>
+                <td>
+                  3025
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  eat whiteboard pinocchio
+                </td>
+                <td>
+                  2072-07-17T16:53:20.000Z
+                </td>
+                <td>
+                  option-C
+                </td>
+                <td>
+                  3136
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  chocolate can helping
+                </td>
+                <td>
+                  2076-02-15T13:46:40.000Z
+                </td>
+                <td>
+                  option-A
+                </td>
+                <td>
+                  3249
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  pinocchio eat can
+                </td>
+                <td>
+                  2079-10-08T14:13:20.000Z
+                </td>
+                <td>
+                  option-B
+                </td>
+                <td>
+                  3364
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  scott pinocchio chocolate
+                </td>
+                <td>
+                  2083-06-23T18:13:20.000Z
+                </td>
+                <td>
+                  option-C
+                </td>
+                <td>
+                  3481
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  toyota toyota toyota
+                </td>
+                <td>
+                  2087-04-01T01:46:40.000Z
+                </td>
+                <td>
+                  option-A
+                </td>
+                <td>
+                  3600
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  helping whiteboard as
+                </td>
+                <td>
+                  2091-01-30T12:53:20.000Z
+                </td>
+                <td>
+                  option-B
+                </td>
+                <td>
+                  3721
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  whiteboard can eat
+                </td>
+                <td>
+                  2094-12-24T03:33:20.000Z
+                </td>
+                <td>
+                  option-C
+                </td>
+                <td>
+                  3844
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  as eat scott
+                </td>
+                <td>
+                  2098-12-09T21:46:40.000Z
+                </td>
+                <td>
+                  option-A
+                </td>
+                <td>
+                  3969
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  can pinocchio whiteboard
+                </td>
+                <td>
+                  2102-12-19T19:33:20.000Z
+                </td>
+                <td>
+                  option-B
+                </td>
+                <td>
+                  4096
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  bottle toyota bottle
+                </td>
+                <td>
+                  2107-01-20T20:53:20.000Z
+                </td>
+                <td>
+                  option-C
+                </td>
+                <td>
+                  4225
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  eat whiteboard pinocchio
+                </td>
+                <td>
+                  2111-03-17T01:46:40.000Z
+                </td>
+                <td>
+                  option-A
+                </td>
+                <td>
+                  4356
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  chocolate can helping
+                </td>
+                <td>
+                  2115-06-03T10:13:20.000Z
+                </td>
+                <td>
+                  option-B
+                </td>
+                <td>
+                  4489
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  pinocchio eat can
+                </td>
+                <td>
+                  2119-09-12T22:13:20.000Z
+                </td>
+                <td>
+                  option-C
+                </td>
+                <td>
+                  4624
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  scott pinocchio chocolate
+                </td>
+                <td>
+                  2124-01-15T13:46:40.000Z
+                </td>
+                <td>
+                  option-A
+                </td>
+                <td>
+                  4761
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  toyota toyota toyota
+                </td>
+                <td>
+                  2128-06-11T08:53:20.000Z
+                </td>
+                <td>
+                  option-B
+                </td>
+                <td>
+                  4900
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  helping whiteboard as
+                </td>
+                <td>
+                  2132-11-29T07:33:20.000Z
+                </td>
+                <td>
+                  option-C
+                </td>
+                <td>
+                  5041
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  whiteboard can eat
+                </td>
+                <td>
+                  2137-06-11T09:46:40.000Z
+                </td>
+                <td>
+                  option-A
+                </td>
+                <td>
+                  5184
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  as eat scott
+                </td>
+                <td>
+                  2142-01-14T15:33:20.000Z
+                </td>
+                <td>
+                  option-B
+                </td>
+                <td>
+                  5329
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  can pinocchio whiteboard
+                </td>
+                <td>
+                  2146-09-12T00:53:20.000Z
+                </td>
+                <td>
+                  option-C
+                </td>
+                <td>
+                  5476
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  bottle toyota bottle
+                </td>
+                <td>
+                  2151-06-02T13:46:40.000Z
+                </td>
+                <td>
+                  option-A
+                </td>
+                <td>
+                  5625
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  eat whiteboard pinocchio
+                </td>
+                <td>
+                  2156-03-15T06:13:20.000Z
+                </td>
+                <td>
+                  option-B
+                </td>
+                <td>
+                  5776
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  chocolate can helping
+                </td>
+                <td>
+                  2161-01-19T02:13:20.000Z
+                </td>
+                <td>
+                  option-C
+                </td>
+                <td>
+                  5929
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  pinocchio eat can
+                </td>
+                <td>
+                  2165-12-18T01:46:40.000Z
+                </td>
+                <td>
+                  option-A
+                </td>
+                <td>
+                  6084
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  scott pinocchio chocolate
+                </td>
+                <td>
+                  2170-12-09T04:53:20.000Z
+                </td>
+                <td>
+                  option-B
+                </td>
+                <td>
+                  6241
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  toyota toyota toyota
+                </td>
+                <td>
+                  2175-12-23T11:33:20.000Z
+                </td>
+                <td>
+                  option-C
+                </td>
+                <td>
+                  6400
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  helping whiteboard as
+                </td>
+                <td>
+                  2181-01-28T21:46:40.000Z
+                </td>
+                <td>
+                  option-A
+                </td>
+                <td>
+                  6561
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  whiteboard can eat
+                </td>
+                <td>
+                  2186-03-30T11:33:20.000Z
+                </td>
+                <td>
+                  option-B
+                </td>
+                <td>
+                  6724
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  as eat scott
+                </td>
+                <td>
+                  2191-06-22T04:53:20.000Z
+                </td>
+                <td>
+                  option-C
+                </td>
+                <td>
+                  6889
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  can pinocchio whiteboard
+                </td>
+                <td>
+                  2196-10-06T01:46:40.000Z
+                </td>
+                <td>
+                  option-A
+                </td>
+                <td>
+                  7056
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  bottle toyota bottle
+                </td>
+                <td>
+                  2202-02-14T02:13:20.000Z
+                </td>
+                <td>
+                  option-B
+                </td>
+                <td>
+                  7225
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  eat whiteboard pinocchio
+                </td>
+                <td>
+                  2207-07-17T06:13:20.000Z
+                </td>
+                <td>
+                  option-C
+                </td>
+                <td>
+                  7396
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  chocolate can helping
+                </td>
+                <td>
+                  2213-01-08T13:46:40.000Z
+                </td>
+                <td>
+                  option-A
+                </td>
+                <td>
+                  7569
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  pinocchio eat can
+                </td>
+                <td>
+                  2218-07-27T00:53:20.000Z
+                </td>
+                <td>
+                  option-B
+                </td>
+                <td>
+                  7744
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  scott pinocchio chocolate
+                </td>
+                <td>
+                  2224-03-05T15:33:20.000Z
+                </td>
+                <td>
+                  option-C
+                </td>
+                <td>
+                  7921
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  toyota toyota toyota
+                </td>
+                <td>
+                  2229-11-06T09:46:40.000Z
+                </td>
+                <td>
+                  option-A
+                </td>
+                <td>
+                  8100
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  helping whiteboard as
+                </td>
+                <td>
+                  2235-08-02T07:33:20.000Z
+                </td>
+                <td>
+                  option-B
+                </td>
+                <td>
+                  8281
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  whiteboard can eat
+                </td>
+                <td>
+                  2241-05-20T08:53:20.000Z
+                </td>
+                <td>
+                  option-C
+                </td>
+                <td>
+                  8464
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  as eat scott
+                </td>
+                <td>
+                  2247-03-31T13:46:40.000Z
+                </td>
+                <td>
+                  option-A
+                </td>
+                <td>
+                  8649
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  can pinocchio whiteboard
+                </td>
+                <td>
+                  2253-03-03T22:13:20.000Z
+                </td>
+                <td>
+                  option-B
+                </td>
+                <td>
+                  8836
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  bottle toyota bottle
+                </td>
+                <td>
+                  2259-02-28T10:13:20.000Z
+                </td>
+                <td>
+                  option-C
+                </td>
+                <td>
+                  9025
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  eat whiteboard pinocchio
+                </td>
+                <td>
+                  2265-03-19T01:46:40.000Z
+                </td>
+                <td>
+                  option-A
+                </td>
+                <td>
+                  9216
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  chocolate can helping
+                </td>
+                <td>
+                  2271-04-30T20:53:20.000Z
+                </td>
+                <td>
+                  option-B
+                </td>
+                <td>
+                  9409
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  pinocchio eat can
+                </td>
+                <td>
+                  2277-07-04T19:33:20.000Z
+                </td>
+                <td>
+                  option-C
+                </td>
+                <td>
+                  9604
+                </td>
+              </tr>
+              <tr
+                className="bx--parent-row-v2 c0"
+                data-parent-row={true}
+                onClick={[Function]}
+              >
+                <td
+                  className="bx--table-expand-v2"
+                >
+                  <button
+                    aria-label="Expand Row"
+                    className="bx--table-expand-v2__button"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      alt="Provide a description that will be used as the title"
+                      aria-label="Provide a description that will be used as the title"
+                      className="bx--table-expand-v2__svg"
+                      fillRule="evenodd"
+                      height="12"
+                      role="img"
+                      viewBox="0 0 7 12"
+                      width="7"
+                    >
+                      <title>
+                        Provide a description that will be used as the title
+                      </title>
+                      <path
+                        d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"
+                      />
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  scott pinocchio chocolate
+                </td>
+                <td>
+                  2283-10-01T21:46:40.000Z
+                </td>
+                <td>
+                  option-A
+                </td>
+                <td>
+                  9801
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#28c",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+  <div
+    style={
+      Object {
+        "background": "white",
+        "bottom": 0,
+        "display": "none",
+        "left": 0,
+        "overflow": "auto",
+        "padding": "0 40px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+        "zIndex": 99999,
+      }
+    }
+  >
+    <button
+      onClick={[Function]}
+      style={
+        Object {
+          "background": "#28c",
+          "border": "none",
+          "borderRadius": "0 0 0 5px",
+          "color": "#fff",
+          "cursor": "pointer",
+          "display": "block",
+          "fontFamily": "sans-serif",
+          "fontSize": "12px",
+          "padding": "5px 15px",
+          "position": "fixed",
+          "right": 0,
+          "top": 0,
+        }
+      }
+      type="button"
+    >
+      ×
+    </button>
+    <div>
+      <div
+        style={
+          Object {
+            "WebkitFontSmoothing": "antialiased",
+            "backgroundColor": "#fff",
+            "border": "1px solid #eee",
+            "borderRadius": "2px",
+            "color": "#444",
+            "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+            "fontSize": "15px",
+            "fontWeight": 300,
+            "lineHeight": 1.45,
+            "marginBottom": "20px",
+            "marginTop": "20px",
+            "padding": "20px 40px 40px",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "borderBottom": "1px solid #eee",
+              "marginBottom": 10,
+              "paddingTop": 10,
+            }
+          }
+        >
+          <h1
+            style={
+              Object {
+                "fontSize": "35px",
+                "margin": 0,
+                "padding": 0,
+              }
+            }
+          >
+            Table
+          </h1>
+          <h2
+            style={
+              Object {
+                "fontSize": "22px",
+                "fontWeight": 400,
+                "margin": "0 0 10px 0",
+                "padding": 0,
+              }
+            }
+          >
+            expansion
+          </h2>
+        </div>
+        
+        <div>
+          <h1
+            style={
+              Object {
+                "borderBottom": "1px solid #EEE",
+                "fontSize": "25px",
+                "margin": "20px 0 0 0",
+                "padding": "0 0 5px 0",
+              }
+            }
+          >
+            Story Source
+          </h1>
+          <pre
+            className="css-r8d96o eyvlbql0"
+          >
+            <div>
+              <div>
+                <div
+                  style={
+                    Object {
+                      "paddingLeft": 18,
+                      "paddingRight": 3,
+                    }
+                  }
+                >
+                  <span
+                    style={
+                      Object {
+                        "color": "#444",
+                      }
+                    }
+                  >
+                    &lt;
+                    div
+                  </span>
+                  <span>
+                    <span>
+                       
+                      <span
+                        style={Object {}}
+                      >
+                        style
+                      </span>
+                      <span>
+                        =
+                        <span
+                          style={Object {}}
+                        >
+                          {
+                          <span
+                            style={
+                              Object {
+                                "color": "#666",
+                              }
+                            }
+                          >
+                            {
+                            <span>
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#666",
+                                  }
+                                }
+                              >
+                                padding
+                              </span>
+                            </span>
+                            : 
+                            <span
+                              style={
+                                Object {
+                                  "color": "#a11",
+                                }
+                              }
+                            >
+                              40
+                            </span>
+                            }
+                          </span>
+                          }
+                        </span>
+                      </span>
+                      
+                    </span>
+                  </span>
+                  <span
+                    style={
+                      Object {
+                        "color": "#444",
+                      }
+                    }
+                  >
+                    &gt;
+                  </span>
+                </div>
+                <div
+                  style={
+                    Object {
+                      "paddingLeft": 33,
+                      "paddingRight": 3,
+                    }
+                  }
+                >
+                  <span
+                    style={
+                      Object {
+                        "color": "#444",
+                      }
+                    }
+                  >
+                    &lt;
+                    TableExpansion
+                  </span>
+                  <span />
+                  <span
+                    style={
+                      Object {
+                        "color": "#444",
+                      }
+                    }
+                  >
+                    /&gt;
+                  </span>
+                </div>
+                <div
+                  style={
+                    Object {
+                      "paddingLeft": 18,
+                      "paddingRight": 3,
+                    }
+                  }
+                >
+                  <span
+                    style={
+                      Object {
+                        "color": "#444",
+                      }
+                    }
+                  >
+                    &lt;/
+                    div
+                    &gt;
+                  </span>
+                </div>
+              </div>
+            </div>
+            <button
+              className="css-1naocv3 eva467m0"
+              onClick={[Function]}
+            >
+              <div
+                className="css-lvl6aa eva467m1"
+              >
+                <div
+                  style={
+                    Object {
+                      "marginBottom": 6,
+                    }
+                  }
+                >
+                  Copied!
+                </div>
+                <div>
+                  Copy
+                </div>
+              </div>
+            </button>
+          </pre>
+        </div>
+        <div>
+          <h1
+            style={
+              Object {
+                "borderBottom": "1px solid #EEE",
+                "fontSize": "25px",
+                "margin": "20px 0 0 0",
+                "padding": "0 0 5px 0",
+              }
+            }
+          >
+            Prop Types
+          </h1>
+          <div>
+            <h2
+              style={
+                Object {
+                  "margin": "20px 0 0 0",
+                }
+              }
+            >
+              "
+              TableExpansion
+              " Component
+            </h2>
+            <small>
+              No propTypes defined!
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storybook Snapshot tests and console checks Storyshots Table filter 1`] = `
 .c0.c0.c0 th {
   padding-top: 0.5rem;

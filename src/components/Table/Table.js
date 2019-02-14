@@ -304,7 +304,9 @@ const Table = ({ columns, data, view, actions, options }) => {
                   <React.Fragment>
                     <StyledTableExpandRowExpanded
                       key={i.id}
+                      ariaLabel="Expand Row"
                       isExpanded
+                      onExpand={() => actions.table.onRowExpanded(i.id, false)}
                       onClick={() => actions.table.onRowExpanded(i.id, false)}>
                       {rowSelectionCell}
                       {columns.map(col => (
@@ -320,6 +322,9 @@ const Table = ({ columns, data, view, actions, options }) => {
                 ) : (
                   <StyledTableExpandRow
                     key={i.id}
+                    ariaLabel="Expand Row"
+                    isExpanded={false}
+                    onExpand={() => actions.table.onRowExpanded(i.id, true)}
                     onClick={() => actions.table.onRowExpanded(i.id, true)}>
                     {rowSelectionCell}
                     {columns.map(col => (
