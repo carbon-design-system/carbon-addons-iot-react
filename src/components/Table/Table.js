@@ -146,9 +146,7 @@ const defaultProps = {
 const Table = props => {
   const { columns, data, view, actions, options } = merge(defaultProps, props);
 
-  const minItemInView = view.pagination
-    ? (view.pagination.page - 1) * view.pagination.pageSize + 1
-    : 0;
+  const minItemInView = view.pagination ? (view.pagination.page - 1) * view.pagination.pageSize : 0;
   const maxItemInView = view.pagination
     ? view.pagination.page * view.pagination.pageSize
     : data.length;

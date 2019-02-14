@@ -12839,6 +12839,44 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                     <input
                       checked={false}
                       className="bx--checkbox"
+                      id="select-row-row-1"
+                      onChange={[Function]}
+                      type="checkbox"
+                    />
+                    <label
+                      className="bx--checkbox-label"
+                      htmlFor="select-row-row-1"
+                      title={null}
+                    >
+                      <span
+                        className="bx--visually-hidden"
+                      >
+                        Select Row
+                      </span>
+                    </label>
+                  </div>
+                </td>
+                <td>
+                  helping whiteboard as
+                </td>
+                <td>
+                  1973-03-14T23:33:20.000Z
+                </td>
+                <td>
+                  option-B
+                </td>
+                <td>
+                  1
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div
+                    className="bx--form-item bx--checkbox-wrapper"
+                  >
+                    <input
+                      checked={false}
+                      className="bx--checkbox"
                       id="select-row-row-4"
                       onChange={[Function]}
                       type="checkbox"
@@ -15990,6 +16028,44 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
               </tr>
             </thead>
             <tbody>
+              <tr>
+                <td>
+                  <div
+                    className="bx--form-item bx--checkbox-wrapper"
+                  >
+                    <input
+                      checked={false}
+                      className="bx--checkbox"
+                      id="select-row-row-0"
+                      onChange={[Function]}
+                      type="checkbox"
+                    />
+                    <label
+                      className="bx--checkbox-label"
+                      htmlFor="select-row-row-0"
+                      title={null}
+                    >
+                      <span
+                        className="bx--visually-hidden"
+                      >
+                        Select Row
+                      </span>
+                    </label>
+                  </div>
+                </td>
+                <td>
+                  toyota toyota toyota
+                </td>
+                <td>
+                  1973-03-03T09:46:40.000Z
+                </td>
+                <td>
+                  option-A
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
               <tr>
                 <td>
                   <div
@@ -21021,6 +21097,44 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with filte
                     className="bx--form-item bx--checkbox-wrapper"
                   >
                     <input
+                      checked={false}
+                      className="bx--checkbox"
+                      id="select-row-row-1"
+                      onChange={[Function]}
+                      type="checkbox"
+                    />
+                    <label
+                      className="bx--checkbox-label"
+                      htmlFor="select-row-row-1"
+                      title={null}
+                    >
+                      <span
+                        className="bx--visually-hidden"
+                      >
+                        Select Row
+                      </span>
+                    </label>
+                  </div>
+                </td>
+                <td>
+                  helping whiteboard as
+                </td>
+                <td>
+                  1973-03-14T23:33:20.000Z
+                </td>
+                <td>
+                  option-B
+                </td>
+                <td>
+                  1
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div
+                    className="bx--form-item bx--checkbox-wrapper"
+                  >
+                    <input
                       checked={true}
                       className="bx--checkbox"
                       id="select-row-row-4"
@@ -25957,6 +26071,44 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with selec
                     <input
                       checked={false}
                       className="bx--checkbox"
+                      id="select-row-row-0"
+                      onChange={[Function]}
+                      type="checkbox"
+                    />
+                    <label
+                      className="bx--checkbox-label"
+                      htmlFor="select-row-row-0"
+                      title={null}
+                    >
+                      <span
+                        className="bx--visually-hidden"
+                      >
+                        Select Row
+                      </span>
+                    </label>
+                  </div>
+                </td>
+                <td>
+                  toyota toyota toyota
+                </td>
+                <td>
+                  1973-03-03T09:46:40.000Z
+                </td>
+                <td>
+                  option-A
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div
+                    className="bx--form-item bx--checkbox-wrapper"
+                  >
+                    <input
+                      checked={false}
+                      className="bx--checkbox"
                       id="select-row-row-1"
                       onChange={[Function]}
                       type="checkbox"
@@ -30382,6 +30534,44 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with sorti
               </tr>
             </thead>
             <tbody>
+              <tr>
+                <td>
+                  <div
+                    className="bx--form-item bx--checkbox-wrapper"
+                  >
+                    <input
+                      checked={false}
+                      className="bx--checkbox"
+                      id="select-row-row-93"
+                      onChange={[Function]}
+                      type="checkbox"
+                    />
+                    <label
+                      className="bx--checkbox-label"
+                      htmlFor="select-row-row-93"
+                      title={null}
+                    >
+                      <span
+                        className="bx--visually-hidden"
+                      >
+                        Select Row
+                      </span>
+                    </label>
+                  </div>
+                </td>
+                <td>
+                  as eat scott
+                </td>
+                <td>
+                  2247-03-31T13:46:40.000Z
+                </td>
+                <td>
+                  option-A
+                </td>
+                <td>
+                  8649
+                </td>
+              </tr>
               <tr>
                 <td>
                   <div
