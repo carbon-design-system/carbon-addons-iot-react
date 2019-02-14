@@ -163,10 +163,7 @@ class TableExpansion extends Component {
       },
       view: {
         table: {
-          expansion: {
-            rowId: undefined,
-            content: null,
-          },
+          expandedRows: [],
         },
       },
     };
@@ -190,22 +187,22 @@ class TableExpansion extends Component {
     const actions = {
       table: {
         onRowExpanded: (id, val) => {
-          this.setState(state =>
-            update(state, {
+          this.setState(state => {
+            const newExpandedRows = val
+              ? state.view.table.expandedRows.concat([
+                  { rowId: id, content: this.getExpansionContent(id) },
+                ])
+              : state.view.table.expandedRows.filter(i => i.rowId !== id);
+            return update(state, {
               view: {
                 table: {
-                  expansion: {
-                    $set: val
-                      ? {
-                          rowId: id,
-                          content: this.getExpansionContent(id),
-                        }
-                      : undefined,
+                  expandedRows: {
+                    $set: newExpandedRows,
                   },
                 },
               },
-            })
-          );
+            });
+          });
         },
       },
     };

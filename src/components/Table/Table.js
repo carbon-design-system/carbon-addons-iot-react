@@ -92,15 +92,17 @@ const propTypes = {
     table: PropTypes.shape({
       isSelectAllSelected: PropTypes.bool,
       isSelectIndeterminate: PropTypes.bool,
-      expansion: PropTypes.shape({
-        rowId: PropTypes.string,
-        content: PropTypes.element,
-      }),
       selectedIds: PropTypes.arrayOf(PropTypes.string),
       sort: PropTypes.shape({
         columnId: PropTypes.string.isRequired,
         direction: PropTypes.oneOf(['NONE', 'ASC', 'DESC']),
       }),
+      expandedRows: PropTypes.arrayOf(
+        PropTypes.shape({
+          rowId: PropTypes.string,
+          content: PropTypes.element,
+        })
+      ),
     }),
   }),
   actions: PropTypes.shape({
@@ -129,7 +131,7 @@ const defaultProps = {
     pagination: { pageSizes: [10, 20, 30] },
     toolbar: {},
     table: {
-      expansion: {},
+      expandedRows: [],
       sort: {},
     },
   },
@@ -280,7 +282,8 @@ const Table = ({ columns, data, view, actions, options }) => {
           </TableHead>
           <TableBody>
             {visibleData.map(i => {
-              const isRowExpanded = view.table.expansion && view.table.expansion.rowId === i.id;
+              const isRowExpanded =
+                view.table.expandedRows && view.table.expandedRows.find(j => j.rowId === i.id);
               const rowSelectionCell = options.hasRowSelection ? (
                 <TableCell>
                   {/* TODO: Replace checkbox with TableSelectRow component when onChange bug is fixed
@@ -308,9 +311,9 @@ const Table = ({ columns, data, view, actions, options }) => {
                         <TableCell key={col.id}>{i.values[col.id]}</TableCell>
                       ))}
                     </StyledTableExpandRowExpanded>
-                    <StyledExpansionTableRow key={i.id}>
+                    <StyledExpansionTableRow key={`${i.id}-expanded-row`}>
                       <TableCell colSpan={columns.length + 1}>
-                        {view.table.expansion.content}
+                        {view.table.expandedRows.find(j => j.rowId === i.id).content}
                       </TableCell>
                     </StyledExpansionTableRow>
                   </React.Fragment>
