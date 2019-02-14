@@ -61,7 +61,8 @@ const words = [
   'scott',
 ];
 const getWord = (index, step = 1) => words[(step * index) % words.length];
-const getSentence = index => `${getWord(index, 1)} ${getWord(index, 2)} ${getWord(index, 3)}`;
+const getSentence = index =>
+  `${getWord(index, 1)} ${getWord(index, 2)} ${getWord(index, 3)} ${index}`;
 
 const tableData = Array(100)
   .fill(0)
