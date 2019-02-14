@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import isNil from 'lodash/isNil';
+import merge from 'lodash/merge';
 import { Button, PaginationV2, DataTable, Checkbox } from 'carbon-components-react';
 import { iconFilter } from 'carbon-icons';
 
@@ -22,7 +23,7 @@ const {
 } = DataTable;
 
 const propTypes = {
-  /** Array with objects (id, name and size) */
+  /** Specify the properties of each column in the table */
   columns: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,
@@ -40,22 +41,26 @@ const propTypes = {
       }),
     })
   ).isRequired,
+  /** Data for the body of the table */
   data: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,
       values: PropTypes.object,
     })
   ).isRequired,
+  /** Optional properties to customize how the table should be rendered */
   options: PropTypes.shape({
     hasPagination: PropTypes.bool,
     hasRowSelection: PropTypes.bool,
     hasFilter: PropTypes.bool,
   }),
+  /** Initial state of the table, should be updated via a local state wrapper component implementation or via a central store/redux */
   view: PropTypes.shape({
     pagination: PropTypes.shape({
+      pageSize: PropTypes.number,
       pageSizes: PropTypes.arrayOf(PropTypes.number),
+      page: PropTypes.number,
       totalItems: PropTypes.number.isRequired,
-      page: PropTypes.number.isRequired,
     }),
     filters: PropTypes.arrayOf(
       PropTypes.shape({
@@ -89,11 +94,12 @@ const propTypes = {
       isSelectIndeterminate: PropTypes.bool,
       selectedIds: PropTypes.arrayOf(PropTypes.string),
       sort: PropTypes.shape({
-        columnId: PropTypes.string.isRequired,
+        columnId: PropTypes.string,
         direction: PropTypes.oneOf(['NONE', 'ASC', 'DESC']),
       }),
     }),
   }),
+  /** Callbacks for actions of the table, can be used to update state in wrapper component to update `view` props */
   actions: PropTypes.shape({
     pagination: PropTypes.shape({
       /** Specify a callback for when the current page or page size is changed. This callback is passed an object parameter containing the current page and the current page size */
@@ -114,11 +120,17 @@ const propTypes = {
 };
 
 const defaultProps = {
-  options: {},
+  options: { hasPagination: true, hasRowSelection: true, hasFilter: true },
   view: {
-    pagination: { pageSizes: [10, 20, 30] },
+    pagination: {
+      pageSize: 10,
+      pageSizes: [10, 20, 30],
+      page: 1,
+    },
     toolbar: {},
     table: {
+      isSelectAllSelected: false,
+      selectedIds: [],
       sort: {},
     },
   },
@@ -131,15 +143,15 @@ const defaultProps = {
   },
 };
 
-const Table = ({ columns, data, view, actions, options }) => {
-  const minItemInView = view.pagination
-    ? (view.pagination.page - 1) * view.pagination.pageSize + 1
-    : 0;
+const Table = props => {
+  const { columns, data, view, actions, options } = merge(defaultProps, props);
+
+  const minItemInView = view.pagination ? (view.pagination.page - 1) * view.pagination.pageSize : 0;
   const maxItemInView = view.pagination
     ? view.pagination.page * view.pagination.pageSize
     : data.length;
   const visibleData = data.slice(minItemInView, maxItemInView);
-  const filterBarActive = options.hasFilter && view.toolbar.activeBar === 'filter';
+  const filterBarActive = options.hasFilter && view.toolbar && view.toolbar.activeBar === 'filter';
   const filterBarActiveStyle = { paddingTop: 16 };
   return (
     <div>
@@ -149,7 +161,7 @@ const Table = ({ columns, data, view, actions, options }) => {
           {...actions.toolbar}
           hasFilters={view.filters && !!view.filters.length}
         /> */}
-      <TableContainer title="DataTable with toolbar">
+      <TableContainer>
         <TableToolbar>
           <TableToolbarContent>
             {view.filters && !!view.filters.length ? ( // TODO: translate button
