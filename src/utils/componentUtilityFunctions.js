@@ -20,5 +20,23 @@ export const handleEnterKeyDown = (evt, callback) => {
 };
 
 export const defaultFunction = name => {
-  console.error(`${name} not implemented`);
+  console.info(`${name} not implemented`); //eslint-disable-line
+};
+
+export const getSortedData = (inputData, columnId, direction) => {
+  const sortedData = inputData.map(i => i);
+  return sortedData.sort((a, b) => {
+    const val = direction === 'ASC' ? -1 : 1;
+    if (typeof a.values[columnId] === 'string') {
+      const compare = a.values[columnId].localeCompare(b.values[columnId]);
+      return direction === 'ASC' ? compare : -compare;
+    }
+    if (a.values[columnId] < b.values[columnId]) {
+      return val;
+    }
+    if (a.values[columnId] > b.values[columnId]) {
+      return -val;
+    }
+    return 0;
+  });
 };

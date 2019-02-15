@@ -115,12 +115,13 @@ class FilterHeaderRow extends Component {
   render() {
     const {
       columns,
-      tableOptions: { hasRowSelection },
+      tableOptions: { hasRowSelection, hasRowExpansion },
       isVisible,
     } = this.props;
     return isVisible ? (
       <StyledTableRow>
         {hasRowSelection ? <StyledTableHeader /> : null}
+        {hasRowExpansion ? <StyledTableHeader /> : null}
         {columns.map(column => (
           <StyledTableHeader key={`FilterHeader${column.id}`}>
             {column.options ? (

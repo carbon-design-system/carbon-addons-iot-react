@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import isNil from 'lodash/isNil';
 import styled from 'styled-components';
+import merge from 'lodash/merge';
 import { Button, PaginationV2, DataTable, Checkbox } from 'carbon-components-react';
 import { iconFilter } from 'carbon-icons';
 
@@ -26,7 +27,7 @@ const {
 } = DataTable;
 
 const propTypes = {
-  /** Array with objects (id, name and size) */
+  /** Specify the properties of each column in the table */
   columns: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,
@@ -44,23 +45,27 @@ const propTypes = {
       }),
     })
   ).isRequired,
+  /** Data for the body of the table */
   data: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,
       values: PropTypes.object,
     })
   ).isRequired,
+  /** Optional properties to customize how the table should be rendered */
   options: PropTypes.shape({
     hasPagination: PropTypes.bool,
     hasRowSelection: PropTypes.bool,
     hasRowExpansion: PropTypes.bool,
     hasFilter: PropTypes.bool,
   }),
+  /** Initial state of the table, should be updated via a local state wrapper component implementation or via a central store/redux */
   view: PropTypes.shape({
     pagination: PropTypes.shape({
+      pageSize: PropTypes.number,
       pageSizes: PropTypes.arrayOf(PropTypes.number),
-      totalItems: PropTypes.number.isRequired,
-      page: PropTypes.number.isRequired,
+      page: PropTypes.number,
+      totalItems: PropTypes.number,
     }),
     filters: PropTypes.arrayOf(
       PropTypes.shape({
@@ -94,7 +99,7 @@ const propTypes = {
       isSelectIndeterminate: PropTypes.bool,
       selectedIds: PropTypes.arrayOf(PropTypes.string),
       sort: PropTypes.shape({
-        columnId: PropTypes.string.isRequired,
+        columnId: PropTypes.string,
         direction: PropTypes.oneOf(['NONE', 'ASC', 'DESC']),
       }),
       expandedRows: PropTypes.arrayOf(
@@ -105,6 +110,7 @@ const propTypes = {
       ),
     }),
   }),
+  /** Callbacks for actions of the table, can be used to update state in wrapper component to update `view` props */
   actions: PropTypes.shape({
     pagination: PropTypes.shape({
       /** Specify a callback for when the current page or page size is changed. This callback is passed an object parameter containing the current page and the current page size */
@@ -126,20 +132,32 @@ const propTypes = {
 };
 
 const defaultProps = {
-  options: {},
+  options: {
+    hasPagination: false,
+    hasRowSelection: false,
+    hasRowExpansion: false,
+    hasFilter: false,
+  },
   view: {
-    pagination: { pageSizes: [10, 20, 30] },
+    pagination: {
+      pageSize: 10,
+      pageSizes: [10, 20, 30],
+      page: 1,
+    },
     toolbar: {},
     table: {
       expandedRows: [],
+      isSelectAllSelected: false,
+      selectedIds: [],
       sort: {},
     },
   },
   actions: {
-    pagination: { onChange: defaultFunction },
+    pagination: { onChange: () => defaultFunction('actions.pagination.onChange') },
     toolbar: {},
     table: {
-      onSortChange: defaultFunction,
+      onSortChange: () => defaultFunction('actions.table.onSortChange'),
+      onRowExpanded: () => defaultFunction('actions.table.onRowExpanded'),
     },
   },
 };
@@ -192,15 +210,19 @@ const StyledExpansionTableRow = styled(TableRow)`
   }
 `;
 
-const Table = ({ columns, data, view, actions, options }) => {
-  const minItemInView = view.pagination
-    ? (view.pagination.page - 1) * view.pagination.pageSize + 1
-    : 0;
-  const maxItemInView = view.pagination
-    ? view.pagination.page * view.pagination.pageSize
-    : data.length;
+const Table = props => {
+  const { columns, data, view, actions, options } = merge({}, defaultProps, props);
+
+  const minItemInView =
+    options.hasPagination && view.pagination
+      ? (view.pagination.page - 1) * view.pagination.pageSize
+      : 0;
+  const maxItemInView =
+    options.hasPagination && view.pagination
+      ? view.pagination.page * view.pagination.pageSize
+      : data.length;
   const visibleData = data.slice(minItemInView, maxItemInView);
-  const filterBarActive = options.hasFilter && view.toolbar.activeBar === 'filter';
+  const filterBarActive = options.hasFilter && view.toolbar && view.toolbar.activeBar === 'filter';
   const filterBarActiveStyle = { paddingTop: 16 };
   return (
     <div>
@@ -210,7 +232,7 @@ const Table = ({ columns, data, view, actions, options }) => {
           {...actions.toolbar}
           hasFilters={view.filters && !!view.filters.length}
         /> */}
-      <TableContainer title="DataTable with toolbar">
+      <TableContainer>
         <TableToolbar>
           <TableToolbarContent>
             {view.filters && !!view.filters.length ? ( // TODO: translate button
@@ -284,8 +306,11 @@ const Table = ({ columns, data, view, actions, options }) => {
             {visibleData.map(i => {
               const isRowExpanded =
                 view.table.expandedRows && view.table.expandedRows.find(j => j.rowId === i.id);
+              const rowExpansionContent = isRowExpanded
+                ? view.table.expandedRows.find(j => j.rowId === i.id).content
+                : null;
               const rowSelectionCell = options.hasRowSelection ? (
-                <TableCell>
+                <TableCell key={`${i.id}-row-selection-cell`}>
                   {/* TODO: Replace checkbox with TableSelectRow component when onChange bug is fixed
                     https://github.com/IBM/carbon-components-react/issues/1088 */}
                   <Checkbox
@@ -301,9 +326,8 @@ const Table = ({ columns, data, view, actions, options }) => {
               ) : null;
               return options.hasRowExpansion ? (
                 isRowExpanded ? (
-                  <React.Fragment>
+                  <React.Fragment key={i.id}>
                     <StyledTableExpandRowExpanded
-                      key={i.id}
                       ariaLabel="Expand Row"
                       isExpanded
                       onExpand={() => actions.table.onRowExpanded(i.id, false)}
@@ -313,9 +337,14 @@ const Table = ({ columns, data, view, actions, options }) => {
                         <TableCell key={col.id}>{i.values[col.id]}</TableCell>
                       ))}
                     </StyledTableExpandRowExpanded>
-                    <StyledExpansionTableRow key={`${i.id}-expanded-row`}>
-                      <TableCell colSpan={columns.length + 1}>
-                        {view.table.expandedRows.find(j => j.rowId === i.id).content}
+                    <StyledExpansionTableRow>
+                      <TableCell
+                        colSpan={
+                          columns.length +
+                          (options.hasRowExpansion ? 1 : 0) +
+                          (options.hasRowSelection ? 1 : 0)
+                        }>
+                        {rowExpansionContent}
                       </TableCell>
                     </StyledExpansionTableRow>
                   </React.Fragment>
