@@ -29,8 +29,14 @@ after_success:
   - npx semantic-release
   - yarn run jest --coverage --coverageReporters=text-lcov | yarn run coveralls # report coveralls status
 
+before_deploy:
+  - yarn build:storybook
+
 deploy:
-  provider: script
-  skip_cleanup: true
-  script:
-    - yarn deploy:storybook --ci
+  provider: pages
+  skip-cleanup: true
+  github-token: $GH_TOKEN
+  keep-history: true
+  local-dir: ./storybook-static
+  on:
+    branch: master
