@@ -76,6 +76,19 @@ const tableData = Array(100)
     },
   }));
 
+const RowExpansionContent = ({ rowId }) => (
+  <div key={`${rowId}-expansion`} style={{ padding: 20 }}>
+    <h3 key={`${rowId}-title`}>{rowId}</h3>
+    <ul style={{ lineHeight: '22px' }}>
+      {Object.entries(tableData.find(i => i.id === rowId).values).map(([key, value]) => (
+        <li key={`${rowId}-${key}`}>
+          <b>{key}</b>: {value}
+        </li>
+      ))}
+    </ul>
+  </div>
+);
+
 const actions = {
   pagination: {
     /** Specify a callback for when the current page or page size is changed. This callback is passed an object parameter containing the current page and the current page size */
@@ -106,6 +119,7 @@ class StatefulTableWrapper extends Component {
         hasFilter: true,
         hasPagination: true,
         hasRowSelection: true,
+        hasRowExpansion: true,
       },
       view: {
         filters: [
@@ -128,6 +142,7 @@ class StatefulTableWrapper extends Component {
           isSelectAllSelected: false,
           selectedIds: [],
           sort: undefined,
+          expandedRows: [],
         },
         toolbar: {
           activeBar: 'filter',
@@ -287,6 +302,24 @@ class StatefulTableWrapper extends Component {
             })
           );
         },
+        onRowExpanded: (id, val) => {
+          this.setState(state => {
+            const newExpandedRows = val
+              ? state.view.table.expandedRows.concat([
+                  { rowId: id, content: <RowExpansionContent rowId={id} /> },
+                ])
+              : state.view.table.expandedRows.filter(i => i.rowId !== id);
+            return update(state, {
+              view: {
+                table: {
+                  expandedRows: {
+                    $set: newExpandedRows,
+                  },
+                },
+              },
+            });
+          });
+        },
       },
     };
     return (
@@ -342,8 +375,33 @@ storiesOf('Table', module)
       }}
     />
   ))
-  .add('with expansion', () => (
-    <p>TODO - expander toggles on rows AND one row open with open card view</p>
+  .add('with row expansion', () => (
+    <Table
+      columns={tableColumns}
+      data={tableData}
+      actions={actions}
+      options={{
+        hasRowExpansion: true,
+      }}
+      view={{
+        filters: [],
+        pagination: {
+          totalItems: tableData.length,
+        },
+        table: {
+          expandedRows: [
+            {
+              rowId: 'row-2',
+              content: <RowExpansionContent rowId="row-2" />,
+            },
+            {
+              rowId: 'row-5',
+              content: <RowExpansionContent rowId="row-5" />,
+            },
+          ],
+        },
+      }}
+    />
   ))
   .add('with sorting', () => (
     <Table

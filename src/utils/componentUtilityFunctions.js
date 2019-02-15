@@ -20,7 +20,7 @@ export const handleEnterKeyDown = (evt, callback) => {
 };
 
 export const defaultFunction = name => {
-  console.error(`${name} not implemented`);
+  console.info(`${name} not implemented`); //eslint-disable-line
 };
 
 export const getSortedData = (inputData, columnId, direction) => {
