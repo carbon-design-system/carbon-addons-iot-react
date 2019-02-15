@@ -27,6 +27,8 @@ const {
 } = DataTable;
 
 const propTypes = {
+  /** DOM ID for component */
+  id: PropTypes.string,
   /** Specify the properties of each column in the table */
   columns: PropTypes.arrayOf(
     PropTypes.shape({
@@ -126,12 +128,13 @@ const propTypes = {
       onRowSelected: PropTypes.func,
       onRowExpanded: PropTypes.func,
       onSelectAll: PropTypes.func,
-      onSortChange: PropTypes.func,
+      onChangeSort: PropTypes.func,
     }).isRequired,
   }),
 };
 
 const defaultProps = {
+  id: 'Table',
   options: {
     hasPagination: false,
     hasRowSelection: false,
@@ -153,11 +156,11 @@ const defaultProps = {
     },
   },
   actions: {
-    pagination: { onChange: () => defaultFunction('actions.pagination.onChange') },
+    pagination: { onChange: defaultFunction('actions.pagination.onChange') },
     toolbar: {},
     table: {
-      onSortChange: () => defaultFunction('actions.table.onSortChange'),
-      onRowExpanded: () => defaultFunction('actions.table.onRowExpanded'),
+      onChangeSort: defaultFunction('actions.table.onChangeSort'),
+      onRowExpanded: defaultFunction('actions.table.onRowExpanded'),
     },
   },
 };
@@ -211,7 +214,7 @@ const StyledExpansionTableRow = styled(TableRow)`
 `;
 
 const Table = props => {
-  const { columns, data, view, actions, options } = merge({}, defaultProps, props);
+  const { id, columns, data, view, actions, options } = merge({}, defaultProps, props);
 
   const minItemInView =
     options.hasPagination && view.pagination
@@ -273,6 +276,7 @@ const Table = props => {
                   view.table && view.table.sort && view.table.sort.columnId === column.id;
                 return (
                   <TableHeader
+                    id={`${id}-Header-Column-${column.id}`}
                     key={`column-${column.id}`}
                     style={filterBarActive === true ? filterBarActiveStyle : {}}
                     isSortable={column.isSortable}
@@ -328,6 +332,7 @@ const Table = props => {
                 isRowExpanded ? (
                   <React.Fragment key={i.id}>
                     <StyledTableExpandRowExpanded
+                      id={`${id}-Row-${i.id}`}
                       ariaLabel="Expand Row"
                       isExpanded
                       onExpand={() => actions.table.onRowExpanded(i.id, false)}
@@ -350,6 +355,7 @@ const Table = props => {
                   </React.Fragment>
                 ) : (
                   <StyledTableExpandRow
+                    id={`${id}-Row-${i.id}`}
                     key={i.id}
                     ariaLabel="Expand Row"
                     isExpanded={false}
