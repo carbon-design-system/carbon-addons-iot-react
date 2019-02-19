@@ -146,6 +146,14 @@ class StatefulTableWrapper extends Component {
         },
         toolbar: {
           activeBar: 'filter',
+          batchActions: [
+            {
+              id: 'delete',
+              labelText: 'Delete',
+              icon: 'delete',
+              iconDescription: 'Delete',
+            },
+          ],
         },
       },
     };
@@ -201,6 +209,9 @@ class StatefulTableWrapper extends Component {
                 filters: {
                   $set: newFilters,
                 },
+                pagination: {
+                  page: { $set: 1 },
+                },
               },
             })
           );
@@ -226,9 +237,43 @@ class StatefulTableWrapper extends Component {
                 filters: {
                   $set: [],
                 },
+                pagination: {
+                  page: { $set: 1 },
+                },
               },
             })
           );
+        },
+        onCancelBatchAction: () => {
+          this.setState(state =>
+            update(state, {
+              view: {
+                table: {
+                  selectedIds: { $set: [] },
+                  isSelectAllSelected: { $set: false },
+                  isSelectAllIndeterminate: { $set: false },
+                },
+              },
+            })
+          );
+        },
+        onApplyBatchAction: id => {
+          if (id === 'delete') {
+            this.setState(state =>
+              update(state, {
+                data: {
+                  $set: state.data.filter(i => !state.view.table.selectedIds.includes(i.id)),
+                },
+                view: {
+                  table: {
+                    selectedIds: { $set: [] },
+                    isSelectAllSelected: { $set: false },
+                    isSelectAllIndeterminate: { $set: false },
+                  },
+                },
+              })
+            );
+          }
         },
       },
       table: {
@@ -331,7 +376,13 @@ class StatefulTableWrapper extends Component {
             : filteredData
         }
         options={options}
-        view={view}
+        view={{
+          ...view,
+          pagination: {
+            ...view.pagination,
+            totalItems: filteredData.length,
+          },
+        }}
         actions={actions}
       />
     );
@@ -355,7 +406,7 @@ storiesOf('Table', module)
       data={tableData}
       actions={actions}
       options={{
-        hasFilter: false,
+        hasFilter: true,
         hasPagination: true,
         hasRowSelection: true,
       }}
@@ -366,6 +417,16 @@ storiesOf('Table', module)
           pageSizes: [10, 20, 30],
           page: 1,
           totalItems: tableData.length,
+        },
+        toolbar: {
+          batchActions: [
+            {
+              id: 'delete',
+              labelText: 'Delete',
+              icon: 'delete',
+              iconDescription: 'Delete Item',
+            },
+          ],
         },
         table: {
           isSelectAllSelected: false,
