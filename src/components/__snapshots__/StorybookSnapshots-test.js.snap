@@ -12501,6 +12501,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                 >
                   <button
                     className="bx--table-sort-v2"
+                    id="Table-Header-Column-string"
                     onClick={[Function]}
                     style={
                       Object {
@@ -12533,6 +12534,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                   </button>
                 </th>
                 <th
+                  id="Table-Header-Column-date"
                   scope="col"
                   style={
                     Object {
@@ -12548,6 +12550,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                 >
                   <button
                     className="bx--table-sort-v2"
+                    id="Table-Header-Column-select"
                     onClick={[Function]}
                     style={
                       Object {
@@ -12585,6 +12588,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                 >
                   <button
                     className="bx--table-sort-v2"
+                    id="Table-Header-Column-number"
                     onClick={[Function]}
                     style={
                       Object {
@@ -12845,6 +12849,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
               <tr
                 className="bx--parent-row-v2 c3"
                 data-parent-row={true}
+                id="Table-Row-row-1"
                 onClick={[Function]}
               >
                 <td
@@ -12914,6 +12919,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
               <tr
                 className="bx--parent-row-v2 c3"
                 data-parent-row={true}
+                id="Table-Row-row-4"
                 onClick={[Function]}
               >
                 <td
@@ -12983,6 +12989,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
               <tr
                 className="bx--parent-row-v2 c3"
                 data-parent-row={true}
+                id="Table-Row-row-16"
                 onClick={[Function]}
               >
                 <td
@@ -13052,6 +13059,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
               <tr
                 className="bx--parent-row-v2 c3"
                 data-parent-row={true}
+                id="Table-Row-row-22"
                 onClick={[Function]}
               >
                 <td
@@ -13121,6 +13129,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
               <tr
                 className="bx--parent-row-v2 c3"
                 data-parent-row={true}
+                id="Table-Row-row-31"
                 onClick={[Function]}
               >
                 <td
@@ -13190,6 +13199,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
               <tr
                 className="bx--parent-row-v2 c3"
                 data-parent-row={true}
+                id="Table-Row-row-34"
                 onClick={[Function]}
               >
                 <td
@@ -13259,6 +13269,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
               <tr
                 className="bx--parent-row-v2 c3"
                 data-parent-row={true}
+                id="Table-Row-row-46"
                 onClick={[Function]}
               >
                 <td
@@ -13328,6 +13339,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
               <tr
                 className="bx--parent-row-v2 c3"
                 data-parent-row={true}
+                id="Table-Row-row-52"
                 onClick={[Function]}
               >
                 <td
@@ -13397,6 +13409,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
               <tr
                 className="bx--parent-row-v2 c3"
                 data-parent-row={true}
+                id="Table-Row-row-61"
                 onClick={[Function]}
               >
                 <td
@@ -13466,6 +13479,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
               <tr
                 className="bx--parent-row-v2 c3"
                 data-parent-row={true}
+                id="Table-Row-row-64"
                 onClick={[Function]}
               >
                 <td
@@ -14054,6 +14068,44 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                   </tr>
                 </thead>
                 <tbody>
+                  <tr>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      id
+                    </td>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      <span>
+                        string
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      -
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#22a",
+                            "wordBreak": "break-word",
+                          }
+                        }
+                      >
+                        'Table'
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      DOM ID for component
+                    </td>
+                  </tr>
                   <tr>
                     <td
                       className="css-1qcb1f7 e6fp4ir0"
@@ -15525,7 +15577,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                                   }
                                 }
                               >
-                                onSortChange
+                                onChangeSort
                                 ?
                                 :
                                  
@@ -15573,7 +15625,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                         }
                       >
                         {
-  pagination: { onChange: () =&gt; defaultFunction(…
+  pagination: { onChange: defaultFunction('actio…
                       </span>
                     </td>
                     <td
@@ -16067,24 +16119,28 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
             <thead>
               <tr>
                 <th
+                  id="Table-Header-Column-string"
                   scope="col"
                   style={Object {}}
                 >
                   String
                 </th>
                 <th
+                  id="Table-Header-Column-date"
                   scope="col"
                   style={Object {}}
                 >
                   Date
                 </th>
                 <th
+                  id="Table-Header-Column-select"
                   scope="col"
                   style={Object {}}
                 >
                   Select
                 </th>
                 <th
+                  id="Table-Header-Column-number"
                   scope="col"
                   style={Object {}}
                 >
@@ -18863,6 +18919,44 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                     <td
                       className="css-1qcb1f7 e6fp4ir0"
                     >
+                      id
+                    </td>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      <span>
+                        string
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      -
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#22a",
+                            "wordBreak": "break-word",
+                          }
+                        }
+                      >
+                        'Table'
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      DOM ID for component
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
                       options
                     </td>
                     <td
@@ -20330,7 +20424,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                                   }
                                 }
                               >
-                                onSortChange
+                                onChangeSort
                                 ?
                                 :
                                  
@@ -20378,7 +20472,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                         }
                       >
                         {
-  pagination: { onChange: () =&gt; defaultFunction(…
+  pagination: { onChange: defaultFunction('actio…
                       </span>
                     </td>
                     <td
@@ -21474,6 +21568,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with filte
                   </div>
                 </th>
                 <th
+                  id="Table-Header-Column-string"
                   scope="col"
                   style={
                     Object {
@@ -21484,6 +21579,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with filte
                   String
                 </th>
                 <th
+                  id="Table-Header-Column-date"
                   scope="col"
                   style={
                     Object {
@@ -21494,6 +21590,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with filte
                   Date
                 </th>
                 <th
+                  id="Table-Header-Column-select"
                   scope="col"
                   style={
                     Object {
@@ -21504,6 +21601,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with filte
                   Select
                 </th>
                 <th
+                  id="Table-Header-Column-number"
                   scope="col"
                   style={
                     Object {
@@ -24196,6 +24294,44 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with filte
                     <td
                       className="css-1qcb1f7 e6fp4ir0"
                     >
+                      id
+                    </td>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      <span>
+                        string
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      -
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#22a",
+                            "wordBreak": "break-word",
+                          }
+                        }
+                      >
+                        'Table'
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      DOM ID for component
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
                       options
                     </td>
                     <td
@@ -25663,7 +25799,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with filte
                                   }
                                 }
                               >
-                                onSortChange
+                                onChangeSort
                                 ?
                                 :
                                  
@@ -25711,7 +25847,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with filte
                         }
                       >
                         {
-  pagination: { onChange: () =&gt; defaultFunction(…
+  pagination: { onChange: defaultFunction('actio…
                       </span>
                     </td>
                     <td
@@ -26762,24 +26898,28 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   scope="col"
                 />
                 <th
+                  id="Table-Header-Column-string"
                   scope="col"
                   style={Object {}}
                 >
                   String
                 </th>
                 <th
+                  id="Table-Header-Column-date"
                   scope="col"
                   style={Object {}}
                 >
                   Date
                 </th>
                 <th
+                  id="Table-Header-Column-select"
                   scope="col"
                   style={Object {}}
                 >
                   Select
                 </th>
                 <th
+                  id="Table-Header-Column-number"
                   scope="col"
                   style={Object {}}
                 >
@@ -26791,6 +26931,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-0"
                 onClick={[Function]}
               >
                 <td
@@ -26836,6 +26977,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-1"
                 onClick={[Function]}
               >
                 <td
@@ -26881,6 +27023,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 bx--expandable-row-v2 c1"
                 data-parent-row={true}
+                id="Table-Row-row-2"
                 onClick={[Function]}
               >
                 <td
@@ -26982,6 +27125,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-3"
                 onClick={[Function]}
               >
                 <td
@@ -27027,6 +27171,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-4"
                 onClick={[Function]}
               >
                 <td
@@ -27072,6 +27217,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 bx--expandable-row-v2 c1"
                 data-parent-row={true}
+                id="Table-Row-row-5"
                 onClick={[Function]}
               >
                 <td
@@ -27173,6 +27319,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-6"
                 onClick={[Function]}
               >
                 <td
@@ -27218,6 +27365,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-7"
                 onClick={[Function]}
               >
                 <td
@@ -27263,6 +27411,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-8"
                 onClick={[Function]}
               >
                 <td
@@ -27308,6 +27457,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-9"
                 onClick={[Function]}
               >
                 <td
@@ -27353,6 +27503,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-10"
                 onClick={[Function]}
               >
                 <td
@@ -27398,6 +27549,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-11"
                 onClick={[Function]}
               >
                 <td
@@ -27443,6 +27595,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-12"
                 onClick={[Function]}
               >
                 <td
@@ -27488,6 +27641,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-13"
                 onClick={[Function]}
               >
                 <td
@@ -27533,6 +27687,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-14"
                 onClick={[Function]}
               >
                 <td
@@ -27578,6 +27733,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-15"
                 onClick={[Function]}
               >
                 <td
@@ -27623,6 +27779,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-16"
                 onClick={[Function]}
               >
                 <td
@@ -27668,6 +27825,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-17"
                 onClick={[Function]}
               >
                 <td
@@ -27713,6 +27871,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-18"
                 onClick={[Function]}
               >
                 <td
@@ -27758,6 +27917,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-19"
                 onClick={[Function]}
               >
                 <td
@@ -27803,6 +27963,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-20"
                 onClick={[Function]}
               >
                 <td
@@ -27848,6 +28009,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-21"
                 onClick={[Function]}
               >
                 <td
@@ -27893,6 +28055,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-22"
                 onClick={[Function]}
               >
                 <td
@@ -27938,6 +28101,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-23"
                 onClick={[Function]}
               >
                 <td
@@ -27983,6 +28147,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-24"
                 onClick={[Function]}
               >
                 <td
@@ -28028,6 +28193,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-25"
                 onClick={[Function]}
               >
                 <td
@@ -28073,6 +28239,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-26"
                 onClick={[Function]}
               >
                 <td
@@ -28118,6 +28285,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-27"
                 onClick={[Function]}
               >
                 <td
@@ -28163,6 +28331,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-28"
                 onClick={[Function]}
               >
                 <td
@@ -28208,6 +28377,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-29"
                 onClick={[Function]}
               >
                 <td
@@ -28253,6 +28423,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-30"
                 onClick={[Function]}
               >
                 <td
@@ -28298,6 +28469,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-31"
                 onClick={[Function]}
               >
                 <td
@@ -28343,6 +28515,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-32"
                 onClick={[Function]}
               >
                 <td
@@ -28388,6 +28561,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-33"
                 onClick={[Function]}
               >
                 <td
@@ -28433,6 +28607,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-34"
                 onClick={[Function]}
               >
                 <td
@@ -28478,6 +28653,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-35"
                 onClick={[Function]}
               >
                 <td
@@ -28523,6 +28699,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-36"
                 onClick={[Function]}
               >
                 <td
@@ -28568,6 +28745,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-37"
                 onClick={[Function]}
               >
                 <td
@@ -28613,6 +28791,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-38"
                 onClick={[Function]}
               >
                 <td
@@ -28658,6 +28837,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-39"
                 onClick={[Function]}
               >
                 <td
@@ -28703,6 +28883,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-40"
                 onClick={[Function]}
               >
                 <td
@@ -28748,6 +28929,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-41"
                 onClick={[Function]}
               >
                 <td
@@ -28793,6 +28975,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-42"
                 onClick={[Function]}
               >
                 <td
@@ -28838,6 +29021,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-43"
                 onClick={[Function]}
               >
                 <td
@@ -28883,6 +29067,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-44"
                 onClick={[Function]}
               >
                 <td
@@ -28928,6 +29113,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-45"
                 onClick={[Function]}
               >
                 <td
@@ -28973,6 +29159,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-46"
                 onClick={[Function]}
               >
                 <td
@@ -29018,6 +29205,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-47"
                 onClick={[Function]}
               >
                 <td
@@ -29063,6 +29251,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-48"
                 onClick={[Function]}
               >
                 <td
@@ -29108,6 +29297,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-49"
                 onClick={[Function]}
               >
                 <td
@@ -29153,6 +29343,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-50"
                 onClick={[Function]}
               >
                 <td
@@ -29198,6 +29389,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-51"
                 onClick={[Function]}
               >
                 <td
@@ -29243,6 +29435,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-52"
                 onClick={[Function]}
               >
                 <td
@@ -29288,6 +29481,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-53"
                 onClick={[Function]}
               >
                 <td
@@ -29333,6 +29527,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-54"
                 onClick={[Function]}
               >
                 <td
@@ -29378,6 +29573,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-55"
                 onClick={[Function]}
               >
                 <td
@@ -29423,6 +29619,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-56"
                 onClick={[Function]}
               >
                 <td
@@ -29468,6 +29665,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-57"
                 onClick={[Function]}
               >
                 <td
@@ -29513,6 +29711,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-58"
                 onClick={[Function]}
               >
                 <td
@@ -29558,6 +29757,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-59"
                 onClick={[Function]}
               >
                 <td
@@ -29603,6 +29803,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-60"
                 onClick={[Function]}
               >
                 <td
@@ -29648,6 +29849,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-61"
                 onClick={[Function]}
               >
                 <td
@@ -29693,6 +29895,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-62"
                 onClick={[Function]}
               >
                 <td
@@ -29738,6 +29941,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-63"
                 onClick={[Function]}
               >
                 <td
@@ -29783,6 +29987,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-64"
                 onClick={[Function]}
               >
                 <td
@@ -29828,6 +30033,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-65"
                 onClick={[Function]}
               >
                 <td
@@ -29873,6 +30079,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-66"
                 onClick={[Function]}
               >
                 <td
@@ -29918,6 +30125,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-67"
                 onClick={[Function]}
               >
                 <td
@@ -29963,6 +30171,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-68"
                 onClick={[Function]}
               >
                 <td
@@ -30008,6 +30217,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-69"
                 onClick={[Function]}
               >
                 <td
@@ -30053,6 +30263,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-70"
                 onClick={[Function]}
               >
                 <td
@@ -30098,6 +30309,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-71"
                 onClick={[Function]}
               >
                 <td
@@ -30143,6 +30355,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-72"
                 onClick={[Function]}
               >
                 <td
@@ -30188,6 +30401,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-73"
                 onClick={[Function]}
               >
                 <td
@@ -30233,6 +30447,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-74"
                 onClick={[Function]}
               >
                 <td
@@ -30278,6 +30493,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-75"
                 onClick={[Function]}
               >
                 <td
@@ -30323,6 +30539,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-76"
                 onClick={[Function]}
               >
                 <td
@@ -30368,6 +30585,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-77"
                 onClick={[Function]}
               >
                 <td
@@ -30413,6 +30631,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-78"
                 onClick={[Function]}
               >
                 <td
@@ -30458,6 +30677,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-79"
                 onClick={[Function]}
               >
                 <td
@@ -30503,6 +30723,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-80"
                 onClick={[Function]}
               >
                 <td
@@ -30548,6 +30769,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-81"
                 onClick={[Function]}
               >
                 <td
@@ -30593,6 +30815,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-82"
                 onClick={[Function]}
               >
                 <td
@@ -30638,6 +30861,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-83"
                 onClick={[Function]}
               >
                 <td
@@ -30683,6 +30907,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-84"
                 onClick={[Function]}
               >
                 <td
@@ -30728,6 +30953,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-85"
                 onClick={[Function]}
               >
                 <td
@@ -30773,6 +30999,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-86"
                 onClick={[Function]}
               >
                 <td
@@ -30818,6 +31045,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-87"
                 onClick={[Function]}
               >
                 <td
@@ -30863,6 +31091,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-88"
                 onClick={[Function]}
               >
                 <td
@@ -30908,6 +31137,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-89"
                 onClick={[Function]}
               >
                 <td
@@ -30953,6 +31183,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-90"
                 onClick={[Function]}
               >
                 <td
@@ -30998,6 +31229,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-91"
                 onClick={[Function]}
               >
                 <td
@@ -31043,6 +31275,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-92"
                 onClick={[Function]}
               >
                 <td
@@ -31088,6 +31321,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-93"
                 onClick={[Function]}
               >
                 <td
@@ -31133,6 +31367,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-94"
                 onClick={[Function]}
               >
                 <td
@@ -31178,6 +31413,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-95"
                 onClick={[Function]}
               >
                 <td
@@ -31223,6 +31459,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-96"
                 onClick={[Function]}
               >
                 <td
@@ -31268,6 +31505,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-97"
                 onClick={[Function]}
               >
                 <td
@@ -31313,6 +31551,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-98"
                 onClick={[Function]}
               >
                 <td
@@ -31358,6 +31597,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
               <tr
                 className="bx--parent-row-v2 c0"
                 data-parent-row={true}
+                id="Table-Row-row-99"
                 onClick={[Function]}
               >
                 <td
@@ -33084,6 +33324,44 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                     <td
                       className="css-1qcb1f7 e6fp4ir0"
                     >
+                      id
+                    </td>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      <span>
+                        string
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      -
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#22a",
+                            "wordBreak": "break-word",
+                          }
+                        }
+                      >
+                        'Table'
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      DOM ID for component
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
                       options
                     </td>
                     <td
@@ -34551,7 +34829,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                                   }
                                 }
                               >
-                                onSortChange
+                                onChangeSort
                                 ?
                                 :
                                  
@@ -34599,7 +34877,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                         }
                       >
                         {
-  pagination: { onChange: () =&gt; defaultFunction(…
+  pagination: { onChange: defaultFunction('actio…
                       </span>
                     </td>
                     <td
@@ -35120,24 +35398,28 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with selec
                   </div>
                 </th>
                 <th
+                  id="Table-Header-Column-string"
                   scope="col"
                   style={Object {}}
                 >
                   String
                 </th>
                 <th
+                  id="Table-Header-Column-date"
                   scope="col"
                   style={Object {}}
                 >
                   Date
                 </th>
                 <th
+                  id="Table-Header-Column-select"
                   scope="col"
                   style={Object {}}
                 >
                   Select
                 </th>
                 <th
+                  id="Table-Header-Column-number"
                   scope="col"
                   style={Object {}}
                 >
@@ -37616,6 +37898,44 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with selec
                     <td
                       className="css-1qcb1f7 e6fp4ir0"
                     >
+                      id
+                    </td>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      <span>
+                        string
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      -
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#22a",
+                            "wordBreak": "break-word",
+                          }
+                        }
+                      >
+                        'Table'
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      DOM ID for component
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
                       options
                     </td>
                     <td
@@ -39083,7 +39403,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with selec
                                   }
                                 }
                               >
-                                onSortChange
+                                onChangeSort
                                 ?
                                 :
                                  
@@ -39131,7 +39451,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with selec
                         }
                       >
                         {
-  pagination: { onChange: () =&gt; defaultFunction(…
+  pagination: { onChange: defaultFunction('actio…
                       </span>
                     </td>
                     <td
@@ -39657,6 +39977,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with sorti
                 >
                   <button
                     className="bx--table-sort-v2 bx--table-sort-v2--active"
+                    id="Table-Header-Column-string"
                     onClick={[Function]}
                     style={Object {}}
                   >
@@ -39685,6 +40006,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with sorti
                   </button>
                 </th>
                 <th
+                  id="Table-Header-Column-date"
                   scope="col"
                   style={Object {}}
                 >
@@ -39696,6 +40018,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with sorti
                 >
                   <button
                     className="bx--table-sort-v2"
+                    id="Table-Header-Column-select"
                     onClick={[Function]}
                     style={Object {}}
                   >
@@ -39729,6 +40052,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with sorti
                 >
                   <button
                     className="bx--table-sort-v2"
+                    id="Table-Header-Column-number"
                     onClick={[Function]}
                     style={Object {}}
                   >
@@ -42164,6 +42488,44 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with sorti
                     <td
                       className="css-1qcb1f7 e6fp4ir0"
                     >
+                      id
+                    </td>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      <span>
+                        string
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      -
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#22a",
+                            "wordBreak": "break-word",
+                          }
+                        }
+                      >
+                        'Table'
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      DOM ID for component
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
                       options
                     </td>
                     <td
@@ -43631,7 +43993,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with sorti
                                   }
                                 }
                               >
-                                onSortChange
+                                onChangeSort
                                 ?
                                 :
                                  
@@ -43679,7 +44041,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with sorti
                         }
                       >
                         {
-  pagination: { onChange: () =&gt; defaultFunction(…
+  pagination: { onChange: defaultFunction('actio…
                       </span>
                     </td>
                     <td
