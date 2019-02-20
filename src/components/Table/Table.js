@@ -51,7 +51,17 @@ const propTypes = {
   data: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,
-      values: PropTypes.object,
+      values: PropTypes.object.isRequired,
+      /** Optional list of actions visible on row hover or expansion */
+      rowActions: PropTypes.arrayOf(
+        PropTypes.shape({
+          id: PropTypes.string.isRequired,
+          icon: PropTypes.string.isRequired,
+          labelText: PropTypes.string,
+          /** Disabled state defaults to false */
+          disabled: PropTypes.bool,
+        })
+      ),
     })
   ).isRequired,
   /** Optional properties to customize how the table should be rendered */
@@ -59,6 +69,7 @@ const propTypes = {
     hasPagination: PropTypes.bool,
     hasRowSelection: PropTypes.bool,
     hasRowExpansion: PropTypes.bool,
+    hasRowActions: PropTypes.bool,
     hasFilter: PropTypes.bool,
   }),
   /** Initial state of the table, should be updated via a local state wrapper component implementation or via a central store/redux */
@@ -129,6 +140,7 @@ const propTypes = {
       onRowExpanded: PropTypes.func,
       onSelectAll: PropTypes.func,
       onChangeSort: PropTypes.func,
+      onApplyRowAction: PropTypes.func,
     }).isRequired,
   }),
 };
@@ -139,6 +151,7 @@ const defaultProps = {
     hasPagination: false,
     hasRowSelection: false,
     hasRowExpansion: false,
+    hasRowActions: false,
     hasFilter: false,
   },
   view: {
@@ -161,9 +174,26 @@ const defaultProps = {
     table: {
       onChangeSort: defaultFunction('actions.table.onChangeSort'),
       onRowExpanded: defaultFunction('actions.table.onRowExpanded'),
+      onApplyRowAction: defaultFunction('actions.table.onApplyRowAction'),
     },
   },
 };
+
+const RowActionButton = styled(Button)`
+  &&& {
+    color: ${props => (props.rowexpanded ? COLORS.white : COLORS.darkGray)};
+    svg {
+      fill: ${props => (props.rowexpanded ? COLORS.white : COLORS.darkGray)};
+      margin-left: ${props => (props.nolabel !== 'false' ? '0' : '')};
+    }
+    :hover {
+      color: ${props => (!props.rowexpanded ? COLORS.white : COLORS.darkGray)};
+      svg {
+        fill: ${props => (!props.rowexpanded ? COLORS.white : COLORS.darkGray)};
+      }
+    }
+  }
+`;
 
 const StyledTableExpandRow = styled(TableExpandRow)`
   &&& {
@@ -291,6 +321,7 @@ const Table = props => {
                   </TableHeader>
                 );
               })}
+              {options.hasRowActions ? <TableHeader>&nbsp;</TableHeader> : null}
             </TableRow>
             {filterBarActive && (
               <FilterHeaderRow
@@ -328,6 +359,39 @@ const Table = props => {
                   />
                 </TableCell>
               ) : null;
+              const rowActionsCell =
+                i.rowActions && i.rowActions.length > 0 ? (
+                  <TableCell key={`${i.id}-row-actions-cell`}>
+                    <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+                      {i.rowActions.map(a => (
+                        <RowActionButton
+                          key={`${i.id}-row-actions-button-${a.id}`}
+                          kind="ghost"
+                          icon={a.icon}
+                          disabled={a.disabled}
+                          onClick={e => {
+                            actions.table.onApplyRowAction(i.id, a.id);
+                            e.preventDefault();
+                            e.stopPropagation();
+                          }}
+                          small
+                          nolabel={`${!a.labelText}`}
+                          rowexpanded={isRowExpanded}>
+                          {a.labelText}
+                        </RowActionButton>
+                      ))}
+                    </div>
+                  </TableCell>
+                ) : null;
+              const tableCells = (
+                <React.Fragment>
+                  {rowSelectionCell}
+                  {columns.map(col => (
+                    <TableCell key={col.id}>{i.values[col.id]}</TableCell>
+                  ))}
+                  {rowActionsCell}
+                </React.Fragment>
+              );
               return options.hasRowExpansion ? (
                 isRowExpanded ? (
                   <React.Fragment key={i.id}>
@@ -337,17 +401,15 @@ const Table = props => {
                       isExpanded
                       onExpand={() => actions.table.onRowExpanded(i.id, false)}
                       onClick={() => actions.table.onRowExpanded(i.id, false)}>
-                      {rowSelectionCell}
-                      {columns.map(col => (
-                        <TableCell key={col.id}>{i.values[col.id]}</TableCell>
-                      ))}
+                      {tableCells}
                     </StyledTableExpandRowExpanded>
                     <StyledExpansionTableRow>
                       <TableCell
                         colSpan={
                           columns.length +
                           (options.hasRowExpansion ? 1 : 0) +
-                          (options.hasRowSelection ? 1 : 0)
+                          (options.hasRowSelection ? 1 : 0) +
+                          (options.hasRowActions ? 1 : 0)
                         }>
                         {rowExpansionContent}
                       </TableCell>
@@ -361,19 +423,11 @@ const Table = props => {
                     isExpanded={false}
                     onExpand={() => actions.table.onRowExpanded(i.id, true)}
                     onClick={() => actions.table.onRowExpanded(i.id, true)}>
-                    {rowSelectionCell}
-                    {columns.map(col => (
-                      <TableCell key={col.id}>{i.values[col.id]}</TableCell>
-                    ))}
+                    {tableCells}
                   </StyledTableExpandRow>
                 )
               ) : (
-                <TableRow key={i.id}>
-                  {rowSelectionCell}
-                  {columns.map(col => (
-                    <TableCell key={col.id}>{i.values[col.id]}</TableCell>
-                  ))}
-                </TableRow>
+                <TableRow key={i.id}>{tableCells}</TableRow>
               );
             })}
           </TableBody>

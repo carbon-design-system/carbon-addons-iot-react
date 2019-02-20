@@ -114,12 +114,29 @@ class StatefulTableWrapper extends Component {
         ...i,
         isSortable: idx !== 1,
       })),
-      data: tableData,
+      data: tableData.map((i, idx) => ({
+        ...i,
+        rowActions: [
+          idx % 4 !== 0
+            ? {
+                id: 'drilldown',
+                icon: 'arrow--right',
+                labelText: 'Drill in',
+              }
+            : null,
+          {
+            id: 'delete',
+            icon: 'delete',
+            disabled: idx % 11 === 0,
+          },
+        ].filter(i => i),
+      })),
       options: {
         hasFilter: true,
         hasPagination: true,
         hasRowSelection: true,
         hasRowExpansion: true,
+        hasRowActions: true,
       },
       view: {
         filters: [
@@ -320,6 +337,9 @@ class StatefulTableWrapper extends Component {
             });
           });
         },
+        onApplyRowAction: (rowId, actionId) => {
+          alert(`action "${actionId}" clicked for row "${rowId}"`); //eslint-disable-line
+        },
       },
     };
     return (
@@ -382,6 +402,51 @@ storiesOf('Table', module)
       actions={actions}
       options={{
         hasRowExpansion: true,
+      }}
+      view={{
+        filters: [],
+        pagination: {
+          totalItems: tableData.length,
+        },
+        table: {
+          expandedRows: [
+            {
+              rowId: 'row-2',
+              content: <RowExpansionContent rowId="row-2" />,
+            },
+            {
+              rowId: 'row-5',
+              content: <RowExpansionContent rowId="row-5" />,
+            },
+          ],
+        },
+      }}
+    />
+  ))
+  .add('with row expansion and actions', () => (
+    <Table
+      columns={tableColumns}
+      data={tableData.map((i, idx) => ({
+        ...i,
+        rowActions: [
+          idx % 4 === 0
+            ? {
+                id: 'drilldown',
+                icon: 'arrow--right',
+                labelText: 'See more',
+              }
+            : null,
+          {
+            id: 'delete',
+            icon: 'delete',
+            disabled: idx % 6 === 0,
+          },
+        ].filter(i => i),
+      }))}
+      actions={actions}
+      options={{
+        hasRowExpansion: true,
+        hasRowActions: true,
       }}
       view={{
         filters: [],
