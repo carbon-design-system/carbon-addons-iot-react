@@ -12485,7 +12485,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                 Clear All Filters
               </button>
               <button
-                className="bx--toolbar-action"
+                className="bx--btn--sm bx--toolbar-action"
                 onClick={[Function]}
               >
                 <svg
@@ -21706,7 +21706,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with filte
                 Clear All Filters
               </button>
               <button
-                className="bx--toolbar-action"
+                className="bx--btn--sm bx--toolbar-action"
                 onClick={[Function]}
               >
                 <svg
@@ -35804,7 +35804,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with selec
                 </div>
               </div>
               <button
-                className="bx--toolbar-action"
+                className="bx--btn--sm bx--toolbar-action"
                 onClick={[Function]}
               >
                 <svg

@@ -261,6 +261,7 @@ const Table = props => {
             ) : null}
             {options.hasFilter ? (
               <TableToolbarAction
+                className="bx--btn--sm"
                 icon={iconFilter}
                 iconDescription="Filter"
                 onClick={actions.toolbar.onToggleFilter}
