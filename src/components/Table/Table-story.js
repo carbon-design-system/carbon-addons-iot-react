@@ -99,6 +99,8 @@ const actions = {
     onToggleFilter: action('onToggleFilter'),
     /** Specify a callback for when the user clicks toolbar button to clear all filters. Recieves a parameter of the current filter values for each column */
     onClearAllFilters: action('onClearAllFilters'),
+    onCancelBatchAction: action('onCancelBatchAction'),
+    onApplyBatchAction: action('onApplyBatchAction'),
   },
   table: {
     onRowSelected: action('onRowSelected'),
