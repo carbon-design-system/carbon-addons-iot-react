@@ -6,6 +6,10 @@ $css--reset: true !default;
 $css--typography: true !default;
 $css--plex: true !default;
 
+$feature-flags: (
+  ui-shell: true,
+);
+
 @import '~carbon-components/scss/globals/scss/styles';
 
 .storybook-container > div {
