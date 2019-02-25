@@ -458,6 +458,1438 @@ exports[`Storybook Snapshot tests and console checks Storyshots AddCard handles 
 </div>
 `;
 
+exports[`Storybook Snapshot tests and console checks Storyshots BaseModal add description 1`] = `
+.c0.error-modal .bx--modal-container {
+  border-top: #e62325 0.25rem solid;
+}
+
+.c0.big-modal .bx--modal-header {
+  margin-bottom: 0rem;
+}
+
+.c0.big-modal .bx--modal-container {
+  min-height: 37.5rem;
+  min-width: 50rem;
+  max-height: 80%;
+}
+
+.c0 .bx--btn + .bx--btn {
+  margin-left: 1rem;
+}
+
+.c0 .bx--modal-header__heading {
+  margin-bottom: 0.75rem;
+}
+
+.c0 .bx--modal-content__text {
+  font-size: 1rem;
+}
+
+.c0 .bx--modal-content {
+  min-height: 12.5rem;
+}
+
+@media (min-height:32.1875rem) {
+  .c0 .bx--modal-container {
+    overflow-y: auto;
+  }
+}
+
+@media (min-width:37.5rem) {
+  .c0.big-modal .bx--modal-container {
+    height: auto;
+  }
+}
+
+@media (min-width:64rem) {
+  .c0.big-modal .bx--modal-container {
+    max-width: 80%;
+  }
+}
+
+@media (min-width:75rem) {
+  .c0.big-modal .bx--modal-container {
+    max-width: 60%;
+  }
+}
+
+<div
+  className="storybook-container"
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "flexDirection": "column",
+      "padding": "3em",
+    }
+  }
+>
+  <div>
+    <div
+      style={
+        Object {
+          "position": "relative",
+          "zIndex": 0,
+        }
+      }
+    >
+      <div
+        className="bx--modal is-visible c0"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onClose={[Function]}
+        onKeyDown={[Function]}
+        onTransitionEnd={[Function]}
+        open={true}
+        role="presentation"
+        tabIndex={-1}
+      >
+        <div
+          className="bx--modal-container"
+        >
+          <div
+            className="bx--modal-header"
+          >
+            <p
+              className="bx--modal-header__label bx--type-delta"
+            >
+              No footer
+            </p>
+            <p
+              className="bx--modal-header__heading bx--type-beta"
+            >
+              Dialog without footer
+            </p>
+            <button
+              className="bx--modal-close"
+              onClick={[Function]}
+              type="button"
+            >
+              <svg
+                alt="Translated string"
+                aria-label="Translated string"
+                className="bx--modal-close__icon"
+                fillRule="evenodd"
+                height="10"
+                role="img"
+                viewBox="0 0 10 10"
+                width="10"
+              >
+                <title>
+                  Translated string
+                </title>
+                <path
+                  d="M6.32 5L10 8.68 8.68 10 5 6.32 1.32 10 0 8.68 3.68 5 0 1.32 1.32 0 5 3.68 8.68 0 10 1.32 6.32 5z"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button
+      onClick={[Function]}
+      style={
+        Object {
+          "background": "#28c",
+          "border": "none",
+          "borderRadius": "0 0 0 5px",
+          "color": "#fff",
+          "cursor": "pointer",
+          "display": "block",
+          "fontFamily": "sans-serif",
+          "fontSize": "12px",
+          "padding": "5px 15px",
+          "position": "fixed",
+          "right": 0,
+          "top": 0,
+        }
+      }
+      type="button"
+    >
+      Show Info
+    </button>
+    <div
+      style={
+        Object {
+          "background": "white",
+          "bottom": 0,
+          "display": "none",
+          "left": 0,
+          "overflow": "auto",
+          "padding": "0 40px",
+          "position": "fixed",
+          "right": 0,
+          "top": 0,
+          "zIndex": 99999,
+        }
+      }
+    >
+      <button
+        onClick={[Function]}
+        style={
+          Object {
+            "background": "#28c",
+            "border": "none",
+            "borderRadius": "0 0 0 5px",
+            "color": "#fff",
+            "cursor": "pointer",
+            "display": "block",
+            "fontFamily": "sans-serif",
+            "fontSize": "12px",
+            "padding": "5px 15px",
+            "position": "fixed",
+            "right": 0,
+            "top": 0,
+          }
+        }
+        type="button"
+      >
+        ×
+      </button>
+      <div>
+        <div
+          style={
+            Object {
+              "WebkitFontSmoothing": "antialiased",
+              "backgroundColor": "#fff",
+              "border": "1px solid #eee",
+              "borderRadius": "2px",
+              "color": "#444",
+              "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+              "fontSize": "15px",
+              "fontWeight": 300,
+              "lineHeight": 1.45,
+              "marginBottom": "20px",
+              "marginTop": "20px",
+              "padding": "20px 40px 40px",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "borderBottom": "1px solid #eee",
+                "marginBottom": 10,
+                "paddingTop": 10,
+              }
+            }
+          >
+            <h1
+              style={
+                Object {
+                  "fontSize": "35px",
+                  "margin": 0,
+                  "padding": 0,
+                }
+              }
+            >
+              BaseModal
+            </h1>
+            <h2
+              style={
+                Object {
+                  "fontSize": "22px",
+                  "fontWeight": 400,
+                  "margin": "0 0 10px 0",
+                  "padding": 0,
+                }
+              }
+            >
+              add description
+            </h2>
+          </div>
+          <div
+            style={
+              Object {
+                "marginBottom": 0,
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "WebkitFontSmoothing": "antialiased",
+                  "color": "#444",
+                  "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                  "fontSize": "15px",
+                }
+              }
+            >
+              Renders a carbon modal dialog.  This dialog adds these additional features on top of the base carbon dialog:
+            </div>
+            <pre
+              className=""
+              style={
+                Object {
+                  "backgroundColor": "#fafafa",
+                  "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                  "lineHeight": 1.5,
+                  "overflowX": "scroll",
+                  "padding": ".5rem",
+                }
+              }
+            >
+              <code
+                className=""
+                style={
+                  Object {
+                    "backgroundColor": "#fafafa",
+                    "fontFamily": "Menlo, Monaco, \\"Courier New\\", monospace",
+                  }
+                }
+              >
+                - adds header.helpText prop to explain dialog
+- adds type prop for warning and error type dialogs
+- adds isLarge prop for large and small class styling dialogs
+- adds isFetchingData props for loading state
+- adds error and dataError prop to display notification about error at bottom of dialog
+- if submitFailed prop, it will find and scroll the failing carbon element into view
+- shows spinner on primary dialog button if sendingData prop is true
+              </code>
+            </pre>
+            <div
+              style={
+                Object {
+                  "WebkitFontSmoothing": "antialiased",
+                  "color": "#444",
+                  "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+                  "fontSize": "15px",
+                }
+              }
+            >
+              We also prevent the dialog from closing if you click outside it.
+This dialog can be decorated by reduxDialog HoC and/or reduxForm HoC to automatically populate the fields below marked as
+REDUXFORM or REDUXDIALOG
+            </div>
+          </div>
+          <div>
+            <h1
+              style={
+                Object {
+                  "borderBottom": "1px solid #EEE",
+                  "fontSize": "25px",
+                  "margin": "20px 0 0 0",
+                  "padding": "0 0 5px 0",
+                }
+              }
+            >
+              Story Source
+            </h1>
+            <pre
+              className="css-r8d96o eyvlbql0"
+            >
+              <div>
+                <div
+                  style={
+                    Object {
+                      "paddingLeft": 18,
+                      "paddingRight": 3,
+                    }
+                  }
+                >
+                  <span
+                    style={
+                      Object {
+                        "color": "#444",
+                      }
+                    }
+                  >
+                    &lt;
+                    BaseModal
+                  </span>
+                  <span>
+                    <span>
+                      <span>
+                        <br />
+                          
+                      </span>
+                      <span
+                        style={Object {}}
+                      >
+                        sendingData
+                      </span>
+                    </span>
+                    <span>
+                      <span>
+                        <br />
+                          
+                      </span>
+                      <span
+                        style={Object {}}
+                      >
+                        iconDescription
+                      </span>
+                      <span>
+                        =
+                        <span
+                          style={Object {}}
+                        >
+                          "
+                          <span
+                            style={
+                              Object {
+                                "color": "#22a",
+                                "wordBreak": "break-word",
+                              }
+                            }
+                          >
+                            Translated string
+                          </span>
+                          "
+                        </span>
+                      </span>
+                    </span>
+                    <span>
+                      <span>
+                        <br />
+                          
+                      </span>
+                      <span
+                        style={Object {}}
+                      >
+                        header
+                      </span>
+                      <span>
+                        =
+                        <span
+                          style={Object {}}
+                        >
+                          {
+                          <span
+                            style={
+                              Object {
+                                "color": "#666",
+                              }
+                            }
+                          >
+                            {
+                            <span>
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#666",
+                                  }
+                                }
+                              >
+                                label
+                              </span>
+                            </span>
+                            : 
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              'No footer'
+                            </span>
+                            ,
+                            <span>
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#666",
+                                  }
+                                }
+                              >
+                                title
+                              </span>
+                            </span>
+                            : 
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              'Dialog without footer'
+                            </span>
+                            }
+                          </span>
+                          }
+                        </span>
+                      </span>
+                    </span>
+                    <span>
+                      <span>
+                        <br />
+                          
+                      </span>
+                      <span
+                        style={Object {}}
+                      >
+                        onClose
+                      </span>
+                      <span>
+                        =
+                        <span
+                          style={Object {}}
+                        >
+                          {
+                          <span
+                            style={
+                              Object {
+                                "color": "#170",
+                              }
+                            }
+                          >
+                            close
+                          </span>
+                          }
+                        </span>
+                      </span>
+                      <br />
+                    </span>
+                  </span>
+                  <span
+                    style={
+                      Object {
+                        "color": "#444",
+                      }
+                    }
+                  >
+                    /&gt;
+                  </span>
+                </div>
+              </div>
+              <button
+                className="css-1naocv3 eva467m0"
+                onClick={[Function]}
+              >
+                <div
+                  className="css-lvl6aa eva467m1"
+                >
+                  <div
+                    style={
+                      Object {
+                        "marginBottom": 6,
+                      }
+                    }
+                  >
+                    Copied!
+                  </div>
+                  <div>
+                    Copy
+                  </div>
+                </div>
+              </button>
+            </pre>
+          </div>
+          <div>
+            <h1
+              style={
+                Object {
+                  "borderBottom": "1px solid #EEE",
+                  "fontSize": "25px",
+                  "margin": "20px 0 0 0",
+                  "padding": "0 0 5px 0",
+                }
+              }
+            >
+              Prop Types
+            </h1>
+            <div>
+              <h2
+                style={
+                  Object {
+                    "margin": "20px 0 0 0",
+                  }
+                }
+              >
+                "
+                BaseModal
+                " Component
+              </h2>
+              <table
+                className="css-1uhv8nx e1vdo5380"
+              >
+                <thead>
+                  <tr>
+                    <th
+                      className="css-11b5gui e6fp4ir1"
+                    >
+                      property
+                    </th>
+                    <th
+                      className="css-11b5gui e6fp4ir1"
+                    >
+                      propType
+                    </th>
+                    <th
+                      className="css-11b5gui e6fp4ir1"
+                    >
+                      required
+                    </th>
+                    <th
+                      className="css-11b5gui e6fp4ir1"
+                    >
+                      default
+                    </th>
+                    <th
+                      className="css-11b5gui e6fp4ir1"
+                    >
+                      description
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      open
+                    </td>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      <span>
+                        bool
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      -
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#22a",
+                            "wordBreak": "break-word",
+                          }
+                        }
+                      >
+                        true
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      REDUXDIALOG: Should the dialog be open or not
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      dataError
+                    </td>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      <span>
+                        string
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      -
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#22a",
+                            "wordBreak": "break-word",
+                          }
+                        }
+                      >
+                        null
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      REDUXDIALOG: Details about the current dataError
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      error
+                    </td>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      <span>
+                        string
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      -
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#22a",
+                            "wordBreak": "break-word",
+                          }
+                        }
+                      >
+                        null
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      REDUXFORM: Form Error Details
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      isFetchingData
+                    </td>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      <span>
+                        bool
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      -
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#22a",
+                            "wordBreak": "break-word",
+                          }
+                        }
+                      >
+                        false
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      REDUXDIALOG: Is my data actively loading?
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      sendingData
+                    </td>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      <span>
+                        <span>
+                          bool
+                        </span>
+                        <span>
+                           | 
+                        </span>
+                        <span>
+                          string
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      -
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#22a",
+                            "wordBreak": "break-word",
+                          }
+                        }
+                      >
+                        null
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      REDUXDIALOG: Is data currently being sent to the backend
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      clearSubmitErrors
+                    </td>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      <span>
+                        func
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      -
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#22a",
+                            "wordBreak": "break-word",
+                          }
+                        }
+                      >
+                        null
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      REDUXFORM: Clear the currently shown error (from form), triggered if the user closes the ErrorNotification
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      onClearDialogErrors
+                    </td>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      <span>
+                        func
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      -
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#22a",
+                            "wordBreak": "break-word",
+                          }
+                        }
+                      >
+                        null
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      REDUXDIALOG: Clear the currently shown dataError, triggered if the user closes the ErrorNotification
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      type
+                    </td>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      <span>
+                        oneOf 'warn' | 'normal'
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      -
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#22a",
+                            "wordBreak": "break-word",
+                          }
+                        }
+                      >
+                        null
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      NEW PROP: Type of dialog, affects colors, styles of dialog
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      footer
+                    </td>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      <span>
+                        <span>
+                          element
+                        </span>
+                        <span>
+                           | 
+                        </span>
+                        <span>
+                          <button
+                            className="css-1sgldz e1i4ski80"
+                            onClick={[Function]}
+                            onMouseEnter={[Function]}
+                            onMouseLeave={[Function]}
+                          >
+                            {
+                          </button>
+                          <button
+                            className="css-1sgldz e1i4ski80"
+                            onClick={[Function]}
+                          >
+                            ...
+                          </button>
+                          <div
+                            style={
+                              Object {
+                                "marginLeft": 15,
+                              }
+                            }
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "whiteSpace": "nowrap",
+                                }
+                              }
+                            >
+                              primaryButtonLabel
+                              ?
+                              :
+                               
+                            </span>
+                            <span>
+                              node
+                            </span>
+                            ,
+                          </div>
+                          <div
+                            style={
+                              Object {
+                                "marginLeft": 15,
+                              }
+                            }
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "whiteSpace": "nowrap",
+                                }
+                              }
+                            >
+                              secondaryButtonLabel
+                              ?
+                              :
+                               
+                            </span>
+                            <span>
+                              node
+                            </span>
+                            ,
+                          </div>
+                          <button
+                            className="css-1sgldz e1i4ski80"
+                            onClick={[Function]}
+                            onMouseEnter={[Function]}
+                            onMouseLeave={[Function]}
+                          >
+                            }
+                          </button>
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      -
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#22a",
+                            "wordBreak": "break-word",
+                          }
+                        }
+                      >
+                        null
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      <span>
+                         
+                        Footer Props
+                      </span>
+                      <span>
+                        <br />
+                         
+                        Either supply your own footer element or supply an object with button labels and submit handlers and we will make a footer with two buttons for you
+                      </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      isLarge
+                    </td>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      <span>
+                        bool
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      -
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#22a",
+                            "wordBreak": "break-word",
+                          }
+                        }
+                      >
+                        false
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      NEW PROP: Whether this particular dialog needs to be very large
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      submitFailed
+                    </td>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      <span>
+                        bool
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      -
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#22a",
+                            "wordBreak": "break-word",
+                          }
+                        }
+                      >
+                        false
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      REDUXFORM: Did the form submission fail
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      onSubmit
+                    </td>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      <span>
+                        func
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      -
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#22a",
+                            "wordBreak": "break-word",
+                          }
+                        }
+                      >
+                        null
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      REDUXFORM: Callback to submit the dialog/form
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      invalid
+                    </td>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      <span>
+                        bool
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      -
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#22a",
+                            "wordBreak": "break-word",
+                          }
+                        }
+                      >
+                        false
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      REDUXFORM: Is the form currently invalid
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      children
+                    </td>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      <span>
+                        node
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      -
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#22a",
+                            "wordBreak": "break-word",
+                          }
+                        }
+                      >
+                        null
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      Content to render inside Modal
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      header
+                    </td>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      <span>
+                        <button
+                          className="css-1sgldz e1i4ski80"
+                          onClick={[Function]}
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
+                        >
+                          {
+                        </button>
+                        <button
+                          className="css-1sgldz e1i4ski80"
+                          onClick={[Function]}
+                        >
+                          ...
+                        </button>
+                        <div
+                          style={
+                            Object {
+                              "marginLeft": 15,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "whiteSpace": "nowrap",
+                              }
+                            }
+                          >
+                            label
+                            ?
+                            :
+                             
+                          </span>
+                          <span>
+                            string
+                          </span>
+                          ,
+                        </div>
+                        <div
+                          style={
+                            Object {
+                              "marginLeft": 15,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "whiteSpace": "nowrap",
+                              }
+                            }
+                          >
+                            title
+                            ?
+                            :
+                             
+                          </span>
+                          <span>
+                            string
+                          </span>
+                          ,
+                        </div>
+                        <div
+                          style={
+                            Object {
+                              "marginLeft": 15,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "whiteSpace": "nowrap",
+                              }
+                            }
+                          >
+                            helpText
+                            ?
+                            :
+                             
+                          </span>
+                          <span>
+                            node
+                          </span>
+                          ,
+                        </div>
+                        <button
+                          className="css-1sgldz e1i4ski80"
+                          onClick={[Function]}
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
+                        >
+                          }
+                        </button>
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      -
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#22a",
+                            "wordBreak": "break-word",
+                          }
+                        }
+                      >
+                        {}
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      <span>
+                         
+                        Header Props
+                      </span>
+                      <span>
+                        <br />
+                         
+                        label: goes on top of the dialog
+                      </span>
+                      <span>
+                        <br />
+                         
+                        title: Heading of the dialog
+                      </span>
+                      <span>
+                        <br />
+                         
+                        helpText, additional information will stay at the top of the screen when scrolling dialog content
+                      </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      iconDescription
+                    </td>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      <span>
+                        string
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      -
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#22a",
+                            "wordBreak": "break-word",
+                          }
+                        }
+                      >
+                        'Close'
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      ability to add translation string to close icon
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      onClose
+                    </td>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      <span>
+                        func
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      yes
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      -
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      REDUXDIALOG: Close the dialog
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storybook Snapshot tests and console checks Storyshots BaseModal big modal 1`] = `
 .c3.c3.c3 {
   display: -webkit-inline-box;
@@ -627,8 +2059,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots BaseModal big mo
               type="button"
             >
               <svg
-                alt="Close the modal"
-                aria-label="Close the modal"
+                alt="Close"
+                aria-label="Close"
                 className="bx--modal-close__icon"
                 fillRule="evenodd"
                 height="10"
@@ -637,7 +2069,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots BaseModal big mo
                 width="10"
               >
                 <title>
-                  Close the modal
+                  Close
                 </title>
                 <path
                   d="M6.32 5L10 8.68 8.68 10 5 6.32 1.32 10 0 8.68 3.68 5 0 1.32 1.32 0 5 3.68 8.68 0 10 1.32 6.32 5z"
@@ -1947,6 +3379,44 @@ REDUXFORM or REDUXDIALOG
                     <td
                       className="css-1qcb1f7 e6fp4ir0"
                     >
+                      iconDescription
+                    </td>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      <span>
+                        string
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      -
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#22a",
+                            "wordBreak": "break-word",
+                          }
+                        }
+                      >
+                        'Close'
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      ability to add translation string to close icon
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
                       onClose
                     </td>
                     <td
@@ -2128,8 +3598,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots BaseModal custom
               type="button"
             >
               <svg
-                alt="Close the modal"
-                aria-label="Close the modal"
+                alt="Close"
+                aria-label="Close"
                 className="bx--modal-close__icon"
                 fillRule="evenodd"
                 height="10"
@@ -2138,7 +3608,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots BaseModal custom
                 width="10"
               >
                 <title>
-                  Close the modal
+                  Close
                 </title>
                 <path
                   d="M6.32 5L10 8.68 8.68 10 5 6.32 1.32 10 0 8.68 3.68 5 0 1.32 1.32 0 5 3.68 8.68 0 10 1.32 6.32 5z"
@@ -3388,6 +4858,44 @@ REDUXFORM or REDUXDIALOG
                     <td
                       className="css-1qcb1f7 e6fp4ir0"
                     >
+                      iconDescription
+                    </td>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      <span>
+                        string
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      -
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#22a",
+                            "wordBreak": "break-word",
+                          }
+                        }
+                      >
+                        'Close'
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      ability to add translation string to close icon
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
                       onClose
                     </td>
                     <td
@@ -3597,8 +5105,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots BaseModal error 
               type="button"
             >
               <svg
-                alt="Close the modal"
-                aria-label="Close the modal"
+                alt="Close"
+                aria-label="Close"
                 className="bx--modal-close__icon"
                 fillRule="evenodd"
                 height="10"
@@ -3607,7 +5115,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots BaseModal error 
                 width="10"
               >
                 <title>
-                  Close the modal
+                  Close
                 </title>
                 <path
                   d="M6.32 5L10 8.68 8.68 10 5 6.32 1.32 10 0 8.68 3.68 5 0 1.32 1.32 0 5 3.68 8.68 0 10 1.32 6.32 5z"
@@ -4955,6 +6463,44 @@ REDUXFORM or REDUXDIALOG
                     <td
                       className="css-1qcb1f7 e6fp4ir0"
                     >
+                      iconDescription
+                    </td>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      <span>
+                        string
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      -
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#22a",
+                            "wordBreak": "break-word",
+                          }
+                        }
+                      >
+                        'Close'
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      ability to add translation string to close icon
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
                       onClose
                     </td>
                     <td
@@ -6154,6 +7700,44 @@ REDUXFORM or REDUXDIALOG
                     <td
                       className="css-1qcb1f7 e6fp4ir0"
                     >
+                      iconDescription
+                    </td>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      <span>
+                        string
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      -
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#22a",
+                            "wordBreak": "break-word",
+                          }
+                        }
+                      >
+                        'Close'
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      ability to add translation string to close icon
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
                       onClose
                     </td>
                     <td
@@ -6285,12 +7869,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots BaseModal no foo
             <p
               className="bx--modal-header__label bx--type-delta"
             >
-              No footer
+              Add translation
             </p>
             <p
               className="bx--modal-header__heading bx--type-beta"
             >
-              Dialog without footer
+              Dialog with added translation string to close icon
             </p>
             <button
               className="bx--modal-close"
@@ -6298,8 +7882,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots BaseModal no foo
               type="button"
             >
               <svg
-                alt="Close the modal"
-                aria-label="Close the modal"
+                alt="Close"
+                aria-label="Close"
                 className="bx--modal-close__icon"
                 fillRule="evenodd"
                 height="10"
@@ -6308,7 +7892,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots BaseModal no foo
                 width="10"
               >
                 <title>
-                  Close the modal
+                  Close
                 </title>
                 <path
                   d="M6.32 5L10 8.68 8.68 10 5 6.32 1.32 10 0 8.68 3.68 5 0 1.32 1.32 0 5 3.68 8.68 0 10 1.32 6.32 5z"
@@ -6580,7 +8164,7 @@ REDUXFORM or REDUXDIALOG
                                 }
                               }
                             >
-                              'No footer'
+                              'Add translation'
                             </span>
                             ,
                             <span>
@@ -6603,7 +8187,7 @@ REDUXFORM or REDUXDIALOG
                                 }
                               }
                             >
-                              'Dialog without footer'
+                              'Dialog with added translation string to close icon'
                             </span>
                             }
                           </span>
@@ -7509,6 +9093,44 @@ REDUXFORM or REDUXDIALOG
                     <td
                       className="css-1qcb1f7 e6fp4ir0"
                     >
+                      iconDescription
+                    </td>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      <span>
+                        string
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      -
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#22a",
+                            "wordBreak": "break-word",
+                          }
+                        }
+                      >
+                        'Close'
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      ability to add translation string to close icon
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
                       onClose
                     </td>
                     <td
@@ -7714,8 +9336,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots BaseModal sendin
               type="button"
             >
               <svg
-                alt="Close the modal"
-                aria-label="Close the modal"
+                alt="Close"
+                aria-label="Close"
                 className="bx--modal-close__icon"
                 fillRule="evenodd"
                 height="10"
@@ -7724,7 +9346,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots BaseModal sendin
                 width="10"
               >
                 <title>
-                  Close the modal
+                  Close
                 </title>
                 <path
                   d="M6.32 5L10 8.68 8.68 10 5 6.32 1.32 10 0 8.68 3.68 5 0 1.32 1.32 0 5 3.68 8.68 0 10 1.32 6.32 5z"
@@ -9008,6 +10630,44 @@ REDUXFORM or REDUXDIALOG
                     <td
                       className="css-1qcb1f7 e6fp4ir0"
                     >
+                      iconDescription
+                    </td>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      <span>
+                        string
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      -
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#22a",
+                            "wordBreak": "break-word",
+                          }
+                        }
+                      >
+                        'Close'
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      ability to add translation string to close icon
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
                       onClose
                     </td>
                     <td
@@ -9204,8 +10864,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots BaseModal warnin
               type="button"
             >
               <svg
-                alt="Close the modal"
-                aria-label="Close the modal"
+                alt="Close"
+                aria-label="Close"
                 className="bx--modal-close__icon"
                 fillRule="evenodd"
                 height="10"
@@ -9214,7 +10874,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots BaseModal warnin
                 width="10"
               >
                 <title>
-                  Close the modal
+                  Close
                 </title>
                 <path
                   d="M6.32 5L10 8.68 8.68 10 5 6.32 1.32 10 0 8.68 3.68 5 0 1.32 1.32 0 5 3.68 8.68 0 10 1.32 6.32 5z"
@@ -10515,6 +12175,44 @@ REDUXFORM or REDUXDIALOG
                          
                         helpText, additional information will stay at the top of the screen when scrolling dialog content
                       </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      iconDescription
+                    </td>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      <span>
+                        string
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      -
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#22a",
+                            "wordBreak": "break-word",
+                          }
+                        }
+                      >
+                        'Close'
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      ability to add translation string to close icon
                     </td>
                   </tr>
                   <tr>
@@ -60606,8 +62304,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots WizardModal basi
               type="button"
             >
               <svg
-                alt="Close the modal"
-                aria-label="Close the modal"
+                alt="Close"
+                aria-label="Close"
                 className="bx--modal-close__icon"
                 fillRule="evenodd"
                 height="10"
@@ -60616,7 +62314,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots WizardModal basi
                 width="10"
               >
                 <title>
-                  Close the modal
+                  Close
                 </title>
                 <path
                   d="M6.32 5L10 8.68 8.68 10 5 6.32 1.32 10 0 8.68 3.68 5 0 1.32 1.32 0 5 3.68 8.68 0 10 1.32 6.32 5z"
@@ -61911,8 +63609,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots WizardModal cust
               type="button"
             >
               <svg
-                alt="Close the modal"
-                aria-label="Close the modal"
+                alt="Close"
+                aria-label="Close"
                 className="bx--modal-close__icon"
                 fillRule="evenodd"
                 height="10"
@@ -61921,7 +63619,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots WizardModal cust
                 width="10"
               >
                 <title>
-                  Close the modal
+                  Close
                 </title>
                 <path
                   d="M6.32 5L10 8.68 8.68 10 5 6.32 1.32 10 0 8.68 3.68 5 0 1.32 1.32 0 5 3.68 8.68 0 10 1.32 6.32 5z"
