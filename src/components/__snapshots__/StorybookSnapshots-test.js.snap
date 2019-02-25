@@ -18812,6 +18812,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                             >
                               {
                               <span>
+                                <span>
+                                  <br />
+                                      
+                                    
+                                </span>
                                 <span
                                   style={
                                     Object {
@@ -18834,6 +18839,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                               </span>
                               ,
                               <span>
+                                <span>
+                                  <br />
+                                      
+                                    
+                                </span>
                                 <span
                                   style={
                                     Object {
@@ -18856,6 +18866,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                               </span>
                               ,
                               <span>
+                                <span>
+                                  <br />
+                                      
+                                    
+                                </span>
                                 <span
                                   style={
                                     Object {
@@ -18875,6 +18890,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                                 }
                               >
                                 onClearAllFilters
+                              </span>
+                              ,
+                              <span>
+                                <span>
+                                  <br />
+                                      
+                                    
+                                </span>
+                                …
+                              </span>
+                              <span>
+                                <br />
+                                    
                               </span>
                               }
                             </span>
@@ -23818,6 +23846,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with filte
                             >
                               {
                               <span>
+                                <span>
+                                  <br />
+                                      
+                                    
+                                </span>
                                 <span
                                   style={
                                     Object {
@@ -23840,6 +23873,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with filte
                               </span>
                               ,
                               <span>
+                                <span>
+                                  <br />
+                                      
+                                    
+                                </span>
                                 <span
                                   style={
                                     Object {
@@ -23862,6 +23900,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with filte
                               </span>
                               ,
                               <span>
+                                <span>
+                                  <br />
+                                      
+                                    
+                                </span>
                                 <span
                                   style={
                                     Object {
@@ -23881,6 +23924,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with filte
                                 }
                               >
                                 onClearAllFilters
+                              </span>
+                              ,
+                              <span>
+                                <span>
+                                  <br />
+                                      
+                                    
+                                </span>
+                                …
+                              </span>
+                              <span>
+                                <br />
+                                    
                               </span>
                               }
                             </span>
@@ -33122,6 +33178,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                             >
                               {
                               <span>
+                                <span>
+                                  <br />
+                                      
+                                    
+                                </span>
                                 <span
                                   style={
                                     Object {
@@ -33144,6 +33205,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                               </span>
                               ,
                               <span>
+                                <span>
+                                  <br />
+                                      
+                                    
+                                </span>
                                 <span
                                   style={
                                     Object {
@@ -33166,6 +33232,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                               </span>
                               ,
                               <span>
+                                <span>
+                                  <br />
+                                      
+                                    
+                                </span>
                                 <span
                                   style={
                                     Object {
@@ -33185,6 +33256,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                                 }
                               >
                                 onClearAllFilters
+                              </span>
+                              ,
+                              <span>
+                                <span>
+                                  <br />
+                                      
+                                    
+                                </span>
+                                …
+                              </span>
+                              <span>
+                                <br />
+                                    
                               </span>
                               }
                             </span>
@@ -37744,6 +37828,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with selec
                             >
                               {
                               <span>
+                                <span>
+                                  <br />
+                                      
+                                    
+                                </span>
                                 <span
                                   style={
                                     Object {
@@ -37766,6 +37855,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with selec
                               </span>
                               ,
                               <span>
+                                <span>
+                                  <br />
+                                      
+                                    
+                                </span>
                                 <span
                                   style={
                                     Object {
@@ -37788,6 +37882,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with selec
                               </span>
                               ,
                               <span>
+                                <span>
+                                  <br />
+                                      
+                                    
+                                </span>
                                 <span
                                   style={
                                     Object {
@@ -37807,6 +37906,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with selec
                                 }
                               >
                                 onClearAllFilters
+                              </span>
+                              ,
+                              <span>
+                                <span>
+                                  <br />
+                                      
+                                    
+                                </span>
+                                …
+                              </span>
+                              <span>
+                                <br />
+                                    
                               </span>
                               }
                             </span>
@@ -42569,6 +42681,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with sorti
                             >
                               {
                               <span>
+                                <span>
+                                  <br />
+                                      
+                                    
+                                </span>
                                 <span
                                   style={
                                     Object {
@@ -42591,6 +42708,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with sorti
                               </span>
                               ,
                               <span>
+                                <span>
+                                  <br />
+                                      
+                                    
+                                </span>
                                 <span
                                   style={
                                     Object {
@@ -42613,6 +42735,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with sorti
                               </span>
                               ,
                               <span>
+                                <span>
+                                  <br />
+                                      
+                                    
+                                </span>
                                 <span
                                   style={
                                     Object {
@@ -42632,6 +42759,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with sorti
                                 }
                               >
                                 onClearAllFilters
+                              </span>
+                              ,
+                              <span>
+                                <span>
+                                  <br />
+                                      
+                                    
+                                </span>
+                                …
+                              </span>
+                              <span>
+                                <br />
+                                    
                               </span>
                               }
                             </span>
