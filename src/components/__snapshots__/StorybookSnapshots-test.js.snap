@@ -13132,6 +13132,58 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
             <div
               className="bx--toolbar-content"
             >
+              <div
+                className="bx--batch-actions"
+              >
+                <button
+                  className="bx--btn bx--btn--sm bx--btn--ghost"
+                  disabled={false}
+                  onClick={[Function]}
+                  tabIndex={0}
+                  type="button"
+                >
+                  Delete
+                  <svg
+                    alt="Add"
+                    aria-hidden="true"
+                    aria-label="Add"
+                    className="bx--btn__icon"
+                    fillRule="evenodd"
+                    height="16"
+                    name="delete"
+                    role="img"
+                    viewBox="0 0 12 16"
+                    width="12"
+                  >
+                    <title>
+                      Add
+                    </title>
+                    <path
+                      d="M11 4v11c0 .6-.4 1-1 1H2c-.6 0-1-.4-1-1V4H0V3h12v1h-1zM2 4v11h8V4H2z"
+                    />
+                    <path
+                      d="M4 6h1v7H4zm3 0h1v7H7zM3 1V0h6v1z"
+                    />
+                  </svg>
+                </button>
+                <div
+                  className="bx--batch-summary"
+                >
+                  <p
+                    className="bx--batch-summary__para"
+                  >
+                    <span>
+                      0 item selected
+                    </span>
+                  </p>
+                  <button
+                    className="bx--batch-summary__cancel"
+                    onClick={[Function]}
+                  >
+                    Cancel
+                  </button>
+                </div>
+              </div>
               <button
                 className="bx--btn bx--btn--sm bx--btn--secondary"
                 disabled={false}
@@ -13142,7 +13194,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                 Clear All Filters
               </button>
               <button
-                className="bx--toolbar-action"
+                className="bx--btn--sm bx--toolbar-action"
                 onClick={[Function]}
               >
                 <svg
@@ -13177,6 +13229,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                   scope="col"
                   style={
                     Object {
+                      "paddingBottom": "0.5rem",
                       "paddingTop": 16,
                     }
                   }
@@ -13593,7 +13646,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                     </svg>
                   </button>
                 </td>
-                <td>
+                <td
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "paddingBottom": "0.5rem",
+                    }
+                  }
+                >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
                   >
@@ -13734,7 +13794,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                     </svg>
                   </button>
                 </td>
-                <td>
+                <td
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "paddingBottom": "0.5rem",
+                    }
+                  }
+                >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
                   >
@@ -13846,7 +13913,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                     </svg>
                   </button>
                 </td>
-                <td>
+                <td
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "paddingBottom": "0.5rem",
+                    }
+                  }
+                >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
                   >
@@ -13958,7 +14032,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                     </svg>
                   </button>
                 </td>
-                <td>
+                <td
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "paddingBottom": "0.5rem",
+                    }
+                  }
+                >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
                   >
@@ -14099,7 +14180,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                     </svg>
                   </button>
                 </td>
-                <td>
+                <td
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "paddingBottom": "0.5rem",
+                    }
+                  }
+                >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
                   >
@@ -14240,7 +14328,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                     </svg>
                   </button>
                 </td>
-                <td>
+                <td
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "paddingBottom": "0.5rem",
+                    }
+                  }
+                >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
                   >
@@ -14381,7 +14476,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                     </svg>
                   </button>
                 </td>
-                <td>
+                <td
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "paddingBottom": "0.5rem",
+                    }
+                  }
+                >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
                   >
@@ -14522,7 +14624,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                     </svg>
                   </button>
                 </td>
-                <td>
+                <td
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "paddingBottom": "0.5rem",
+                    }
+                  }
+                >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
                   >
@@ -14634,7 +14743,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                     </svg>
                   </button>
                 </td>
-                <td>
+                <td
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "paddingBottom": "0.5rem",
+                    }
+                  }
+                >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
                   >
@@ -14775,7 +14891,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                     </svg>
                   </button>
                 </td>
-                <td>
+                <td
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "paddingBottom": "0.5rem",
+                    }
+                  }
+                >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
                   >
@@ -14935,7 +15058,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
               className="bx--pagination__text"
             >
                |  
-              1-10 of 100 items
+              1-10 of 14 items
             </span>
           </div>
           <div
@@ -14944,7 +15067,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
             <span
               className="bx--pagination__text"
             >
-              1 of 10 pages
+              1 of 2 pages
             </span>
             <button
               aria-label="Backward"
@@ -15003,70 +15126,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                     value={2}
                   >
                     2
-                  </option>
-                  <option
-                    className="bx--select-option"
-                    disabled={false}
-                    hidden={false}
-                    value={3}
-                  >
-                    3
-                  </option>
-                  <option
-                    className="bx--select-option"
-                    disabled={false}
-                    hidden={false}
-                    value={4}
-                  >
-                    4
-                  </option>
-                  <option
-                    className="bx--select-option"
-                    disabled={false}
-                    hidden={false}
-                    value={5}
-                  >
-                    5
-                  </option>
-                  <option
-                    className="bx--select-option"
-                    disabled={false}
-                    hidden={false}
-                    value={6}
-                  >
-                    6
-                  </option>
-                  <option
-                    className="bx--select-option"
-                    disabled={false}
-                    hidden={false}
-                    value={7}
-                  >
-                    7
-                  </option>
-                  <option
-                    className="bx--select-option"
-                    disabled={false}
-                    hidden={false}
-                    value={8}
-                  >
-                    8
-                  </option>
-                  <option
-                    className="bx--select-option"
-                    disabled={false}
-                    hidden={false}
-                    value={9}
-                  >
-                    9
-                  </option>
-                  <option
-                    className="bx--select-option"
-                    disabled={false}
-                    hidden={false}
-                    value={10}
-                  >
-                    10
                   </option>
                 </select>
                 <svg
@@ -15984,6 +16043,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                                           }
                                         }
                                       >
+                                        id
+                                        
+                                        :
+                                         
+                                      </span>
+                                      <span>
+                                        string
+                                      </span>
+                                      ,
+                                    </div>
+                                    <div
+                                      style={
+                                        Object {
+                                          "marginLeft": 15,
+                                        }
+                                      }
+                                    >
+                                      <span
+                                        style={
+                                          Object {
+                                            "whiteSpace": "nowrap",
+                                          }
+                                        }
+                                      >
                                         labelText
                                         
                                         :
@@ -16167,30 +16250,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                                       </span>
                                       ,
                                     </div>
-                                    <div
-                                      style={
-                                        Object {
-                                          "marginLeft": 15,
-                                        }
-                                      }
-                                    >
-                                      <span
-                                        style={
-                                          Object {
-                                            "whiteSpace": "nowrap",
-                                          }
-                                        }
-                                      >
-                                        onClick
-                                        ?
-                                        :
-                                         
-                                      </span>
-                                      <span>
-                                        func
-                                      </span>
-                                      ,
-                                    </div>
                                     <button
                                       className="css-1sgldz e1i4ski80"
                                       onClick={[Function]}
@@ -16290,7 +16349,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                                   }
                                 }
                               >
-                                isSelectIndeterminate
+                                isSelectAllIndeterminate
                                 ?
                                 :
                                  
@@ -16769,6 +16828,54 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                                 }
                               >
                                 onClearAllFilters
+                                ?
+                                :
+                                 
+                              </span>
+                              <span>
+                                func
+                              </span>
+                              ,
+                            </div>
+                            <div
+                              style={
+                                Object {
+                                  "marginLeft": 30,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                              >
+                                onCancelBatchAction
+                                ?
+                                :
+                                 
+                              </span>
+                              <span>
+                                func
+                              </span>
+                              ,
+                            </div>
+                            <div
+                              style={
+                                Object {
+                                  "marginLeft": 30,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                              >
+                                onApplyBatchAction
                                 ?
                                 :
                                  
@@ -17618,7 +17725,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
           >
             <div
               className="bx--toolbar-content"
-            />
+            >
+              <div
+                className="bx--batch-actions"
+              >
+                <div
+                  className="bx--batch-summary"
+                >
+                  <p
+                    className="bx--batch-summary__para"
+                  >
+                    <span>
+                      0 item selected
+                    </span>
+                  </p>
+                  <button
+                    className="bx--batch-summary__cancel"
+                    onClick={[Function]}
+                  >
+                    Cancel
+                  </button>
+                </div>
+              </div>
+            </div>
           </section>
           <table
             className="bx--data-table-v2"
@@ -20190,6 +20319,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                             >
                               {
                               <span>
+                                <span>
+                                  <br />
+                                      
+                                    
+                                </span>
                                 <span
                                   style={
                                     Object {
@@ -20212,6 +20346,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                               </span>
                               ,
                               <span>
+                                <span>
+                                  <br />
+                                      
+                                    
+                                </span>
                                 <span
                                   style={
                                     Object {
@@ -20234,6 +20373,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                               </span>
                               ,
                               <span>
+                                <span>
+                                  <br />
+                                      
+                                    
+                                </span>
                                 <span
                                   style={
                                     Object {
@@ -20253,6 +20397,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                                 }
                               >
                                 onClearAllFilters
+                              </span>
+                              ,
+                              <span>
+                                <span>
+                                  <br />
+                                      
+                                    
+                                </span>
+                                …
+                              </span>
+                              <span>
+                                <br />
+                                    
                               </span>
                               }
                             </span>
@@ -21030,6 +21187,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                                           }
                                         }
                                       >
+                                        id
+                                        
+                                        :
+                                         
+                                      </span>
+                                      <span>
+                                        string
+                                      </span>
+                                      ,
+                                    </div>
+                                    <div
+                                      style={
+                                        Object {
+                                          "marginLeft": 15,
+                                        }
+                                      }
+                                    >
+                                      <span
+                                        style={
+                                          Object {
+                                            "whiteSpace": "nowrap",
+                                          }
+                                        }
+                                      >
                                         labelText
                                         
                                         :
@@ -21213,30 +21394,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                                       </span>
                                       ,
                                     </div>
-                                    <div
-                                      style={
-                                        Object {
-                                          "marginLeft": 15,
-                                        }
-                                      }
-                                    >
-                                      <span
-                                        style={
-                                          Object {
-                                            "whiteSpace": "nowrap",
-                                          }
-                                        }
-                                      >
-                                        onClick
-                                        ?
-                                        :
-                                         
-                                      </span>
-                                      <span>
-                                        func
-                                      </span>
-                                      ,
-                                    </div>
                                     <button
                                       className="css-1sgldz e1i4ski80"
                                       onClick={[Function]}
@@ -21336,7 +21493,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                                   }
                                 }
                               >
-                                isSelectIndeterminate
+                                isSelectAllIndeterminate
                                 ?
                                 :
                                  
@@ -21815,6 +21972,54 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                                 }
                               >
                                 onClearAllFilters
+                                ?
+                                :
+                                 
+                              </span>
+                              <span>
+                                func
+                              </span>
+                              ,
+                            </div>
+                            <div
+                              style={
+                                Object {
+                                  "marginLeft": 30,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                              >
+                                onCancelBatchAction
+                                ?
+                                :
+                                 
+                              </span>
+                              <span>
+                                func
+                              </span>
+                              ,
+                            </div>
+                            <div
+                              style={
+                                Object {
+                                  "marginLeft": 30,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                              >
+                                onApplyBatchAction
                                 ?
                                 :
                                  
@@ -23204,6 +23409,27 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with filte
             <div
               className="bx--toolbar-content"
             >
+              <div
+                className="bx--batch-actions"
+              >
+                <div
+                  className="bx--batch-summary"
+                >
+                  <p
+                    className="bx--batch-summary__para"
+                  >
+                    <span>
+                      0 item selected
+                    </span>
+                  </p>
+                  <button
+                    className="bx--batch-summary__cancel"
+                    onClick={[Function]}
+                  >
+                    Cancel
+                  </button>
+                </div>
+              </div>
               <button
                 className="bx--btn bx--btn--sm bx--btn--secondary"
                 disabled={false}
@@ -23214,7 +23440,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with filte
                 Clear All Filters
               </button>
               <button
-                className="bx--toolbar-action"
+                className="bx--btn--sm bx--toolbar-action"
                 onClick={[Function]}
               >
                 <svg
@@ -23246,6 +23472,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with filte
                   scope="col"
                   style={
                     Object {
+                      "paddingBottom": "0.5rem",
                       "paddingTop": 16,
                     }
                   }
@@ -23540,7 +23767,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with filte
             </thead>
             <tbody>
               <tr>
-                <td>
+                <td
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "paddingBottom": "0.5rem",
+                    }
+                  }
+                >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
                   >
@@ -23578,7 +23812,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with filte
                 </td>
               </tr>
               <tr>
-                <td>
+                <td
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "paddingBottom": "0.5rem",
+                    }
+                  }
+                >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
                   >
@@ -23616,7 +23857,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with filte
                 </td>
               </tr>
               <tr>
-                <td>
+                <td
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "paddingBottom": "0.5rem",
+                    }
+                  }
+                >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
                   >
@@ -23654,7 +23902,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with filte
                 </td>
               </tr>
               <tr>
-                <td>
+                <td
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "paddingBottom": "0.5rem",
+                    }
+                  }
+                >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
                   >
@@ -23692,7 +23947,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with filte
                 </td>
               </tr>
               <tr>
-                <td>
+                <td
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "paddingBottom": "0.5rem",
+                    }
+                  }
+                >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
                   >
@@ -23730,7 +23992,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with filte
                 </td>
               </tr>
               <tr>
-                <td>
+                <td
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "paddingBottom": "0.5rem",
+                    }
+                  }
+                >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
                   >
@@ -23768,7 +24037,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with filte
                 </td>
               </tr>
               <tr>
-                <td>
+                <td
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "paddingBottom": "0.5rem",
+                    }
+                  }
+                >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
                   >
@@ -23806,7 +24082,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with filte
                 </td>
               </tr>
               <tr>
-                <td>
+                <td
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "paddingBottom": "0.5rem",
+                    }
+                  }
+                >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
                   >
@@ -23844,7 +24127,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with filte
                 </td>
               </tr>
               <tr>
-                <td>
+                <td
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "paddingBottom": "0.5rem",
+                    }
+                  }
+                >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
                   >
@@ -23882,7 +24172,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with filte
                 </td>
               </tr>
               <tr>
-                <td>
+                <td
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "paddingBottom": "0.5rem",
+                    }
+                  }
+                >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
                   >
@@ -25255,6 +25552,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with filte
                             >
                               {
                               <span>
+                                <span>
+                                  <br />
+                                      
+                                    
+                                </span>
                                 <span
                                   style={
                                     Object {
@@ -25277,6 +25579,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with filte
                               </span>
                               ,
                               <span>
+                                <span>
+                                  <br />
+                                      
+                                    
+                                </span>
                                 <span
                                   style={
                                     Object {
@@ -25299,6 +25606,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with filte
                               </span>
                               ,
                               <span>
+                                <span>
+                                  <br />
+                                      
+                                    
+                                </span>
                                 <span
                                   style={
                                     Object {
@@ -25318,6 +25630,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with filte
                                 }
                               >
                                 onClearAllFilters
+                              </span>
+                              ,
+                              <span>
+                                <span>
+                                  <br />
+                                      
+                                    
+                                </span>
+                                …
+                              </span>
+                              <span>
+                                <br />
+                                    
                               </span>
                               }
                             </span>
@@ -26604,6 +26929,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with filte
                                           }
                                         }
                                       >
+                                        id
+                                        
+                                        :
+                                         
+                                      </span>
+                                      <span>
+                                        string
+                                      </span>
+                                      ,
+                                    </div>
+                                    <div
+                                      style={
+                                        Object {
+                                          "marginLeft": 15,
+                                        }
+                                      }
+                                    >
+                                      <span
+                                        style={
+                                          Object {
+                                            "whiteSpace": "nowrap",
+                                          }
+                                        }
+                                      >
                                         labelText
                                         
                                         :
@@ -26787,30 +27136,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with filte
                                       </span>
                                       ,
                                     </div>
-                                    <div
-                                      style={
-                                        Object {
-                                          "marginLeft": 15,
-                                        }
-                                      }
-                                    >
-                                      <span
-                                        style={
-                                          Object {
-                                            "whiteSpace": "nowrap",
-                                          }
-                                        }
-                                      >
-                                        onClick
-                                        ?
-                                        :
-                                         
-                                      </span>
-                                      <span>
-                                        func
-                                      </span>
-                                      ,
-                                    </div>
                                     <button
                                       className="css-1sgldz e1i4ski80"
                                       onClick={[Function]}
@@ -26910,7 +27235,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with filte
                                   }
                                 }
                               >
-                                isSelectIndeterminate
+                                isSelectAllIndeterminate
                                 ?
                                 :
                                  
@@ -27389,6 +27714,54 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with filte
                                 }
                               >
                                 onClearAllFilters
+                                ?
+                                :
+                                 
+                              </span>
+                              <span>
+                                func
+                              </span>
+                              ,
+                            </div>
+                            <div
+                              style={
+                                Object {
+                                  "marginLeft": 30,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                              >
+                                onCancelBatchAction
+                                ?
+                                :
+                                 
+                              </span>
+                              <span>
+                                func
+                              </span>
+                              ,
+                            </div>
+                            <div
+                              style={
+                                Object {
+                                  "marginLeft": 30,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                              >
+                                onApplyBatchAction
                                 ?
                                 :
                                  
@@ -28792,7 +29165,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
           >
             <div
               className="bx--toolbar-content"
-            />
+            >
+              <div
+                className="bx--batch-actions"
+              >
+                <div
+                  className="bx--batch-summary"
+                >
+                  <p
+                    className="bx--batch-summary__para"
+                  >
+                    <span>
+                      0 item selected
+                    </span>
+                  </p>
+                  <button
+                    className="bx--batch-summary__cancel"
+                    onClick={[Function]}
+                  >
+                    Cancel
+                  </button>
+                </div>
+              </div>
+            </div>
           </section>
           <table
             className="bx--data-table-v2"
@@ -34688,6 +35083,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                             >
                               {
                               <span>
+                                <span>
+                                  <br />
+                                      
+                                    
+                                </span>
                                 <span
                                   style={
                                     Object {
@@ -34710,6 +35110,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                               </span>
                               ,
                               <span>
+                                <span>
+                                  <br />
+                                      
+                                    
+                                </span>
                                 <span
                                   style={
                                     Object {
@@ -34732,6 +35137,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                               </span>
                               ,
                               <span>
+                                <span>
+                                  <br />
+                                      
+                                    
+                                </span>
                                 <span
                                   style={
                                     Object {
@@ -34751,6 +35161,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                                 }
                               >
                                 onClearAllFilters
+                              </span>
+                              ,
+                              <span>
+                                <span>
+                                  <br />
+                                      
+                                    
+                                </span>
+                                …
+                              </span>
+                              <span>
+                                <br />
+                                    
                               </span>
                               }
                             </span>
@@ -35833,6 +36256,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                                           }
                                         }
                                       >
+                                        id
+                                        
+                                        :
+                                         
+                                      </span>
+                                      <span>
+                                        string
+                                      </span>
+                                      ,
+                                    </div>
+                                    <div
+                                      style={
+                                        Object {
+                                          "marginLeft": 15,
+                                        }
+                                      }
+                                    >
+                                      <span
+                                        style={
+                                          Object {
+                                            "whiteSpace": "nowrap",
+                                          }
+                                        }
+                                      >
                                         labelText
                                         
                                         :
@@ -36016,30 +36463,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                                       </span>
                                       ,
                                     </div>
-                                    <div
-                                      style={
-                                        Object {
-                                          "marginLeft": 15,
-                                        }
-                                      }
-                                    >
-                                      <span
-                                        style={
-                                          Object {
-                                            "whiteSpace": "nowrap",
-                                          }
-                                        }
-                                      >
-                                        onClick
-                                        ?
-                                        :
-                                         
-                                      </span>
-                                      <span>
-                                        func
-                                      </span>
-                                      ,
-                                    </div>
                                     <button
                                       className="css-1sgldz e1i4ski80"
                                       onClick={[Function]}
@@ -36139,7 +36562,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                                   }
                                 }
                               >
-                                isSelectIndeterminate
+                                isSelectAllIndeterminate
                                 ?
                                 :
                                  
@@ -36618,6 +37041,54 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                                 }
                               >
                                 onClearAllFilters
+                                ?
+                                :
+                                 
+                              </span>
+                              <span>
+                                func
+                              </span>
+                              ,
+                            </div>
+                            <div
+                              style={
+                                Object {
+                                  "marginLeft": 30,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                              >
+                                onCancelBatchAction
+                                ?
+                                :
+                                 
+                              </span>
+                              <span>
+                                func
+                              </span>
+                              ,
+                            </div>
+                            <div
+                              style={
+                                Object {
+                                  "marginLeft": 30,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                              >
+                                onApplyBatchAction
                                 ?
                                 :
                                  
@@ -37561,7 +38032,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
           >
             <div
               className="bx--toolbar-content"
-            />
+            >
+              <div
+                className="bx--batch-actions"
+              >
+                <div
+                  className="bx--batch-summary"
+                >
+                  <p
+                    className="bx--batch-summary__para"
+                  >
+                    <span>
+                      0 item selected
+                    </span>
+                  </p>
+                  <button
+                    className="bx--batch-summary__cancel"
+                    onClick={[Function]}
+                  >
+                    Cancel
+                  </button>
+                </div>
+              </div>
+            </div>
           </section>
           <table
             className="bx--data-table-v2"
@@ -48790,6 +49283,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                             >
                               {
                               <span>
+                                <span>
+                                  <br />
+                                      
+                                    
+                                </span>
                                 <span
                                   style={
                                     Object {
@@ -48812,6 +49310,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                               </span>
                               ,
                               <span>
+                                <span>
+                                  <br />
+                                      
+                                    
+                                </span>
                                 <span
                                   style={
                                     Object {
@@ -48834,6 +49337,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                               </span>
                               ,
                               <span>
+                                <span>
+                                  <br />
+                                      
+                                    
+                                </span>
                                 <span
                                   style={
                                     Object {
@@ -48853,6 +49361,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                                 }
                               >
                                 onClearAllFilters
+                              </span>
+                              ,
+                              <span>
+                                <span>
+                                  <br />
+                                      
+                                    
+                                </span>
+                                …
+                              </span>
+                              <span>
+                                <br />
+                                    
                               </span>
                               }
                             </span>
@@ -49957,6 +50478,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                                           }
                                         }
                                       >
+                                        id
+                                        
+                                        :
+                                         
+                                      </span>
+                                      <span>
+                                        string
+                                      </span>
+                                      ,
+                                    </div>
+                                    <div
+                                      style={
+                                        Object {
+                                          "marginLeft": 15,
+                                        }
+                                      }
+                                    >
+                                      <span
+                                        style={
+                                          Object {
+                                            "whiteSpace": "nowrap",
+                                          }
+                                        }
+                                      >
                                         labelText
                                         
                                         :
@@ -50140,30 +50685,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                                       </span>
                                       ,
                                     </div>
-                                    <div
-                                      style={
-                                        Object {
-                                          "marginLeft": 15,
-                                        }
-                                      }
-                                    >
-                                      <span
-                                        style={
-                                          Object {
-                                            "whiteSpace": "nowrap",
-                                          }
-                                        }
-                                      >
-                                        onClick
-                                        ?
-                                        :
-                                         
-                                      </span>
-                                      <span>
-                                        func
-                                      </span>
-                                      ,
-                                    </div>
                                     <button
                                       className="css-1sgldz e1i4ski80"
                                       onClick={[Function]}
@@ -50263,7 +50784,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                                   }
                                 }
                               >
-                                isSelectIndeterminate
+                                isSelectAllIndeterminate
                                 ?
                                 :
                                  
@@ -50742,6 +51263,54 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                                 }
                               >
                                 onClearAllFilters
+                                ?
+                                :
+                                 
+                              </span>
+                              <span>
+                                func
+                              </span>
+                              ,
+                            </div>
+                            <div
+                              style={
+                                Object {
+                                  "marginLeft": 30,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                              >
+                                onCancelBatchAction
+                                ?
+                                :
+                                 
+                              </span>
+                              <span>
+                                func
+                              </span>
+                              ,
+                            </div>
+                            <div
+                              style={
+                                Object {
+                                  "marginLeft": 30,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                              >
+                                onApplyBatchAction
                                 ?
                                 :
                                  
@@ -51591,7 +52160,82 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with selec
           >
             <div
               className="bx--toolbar-content"
-            />
+            >
+              <div
+                className="bx--batch-actions bx--batch-actions--active"
+              >
+                <button
+                  className="bx--btn bx--btn--sm bx--btn--ghost"
+                  disabled={false}
+                  onClick={[Function]}
+                  tabIndex={0}
+                  type="button"
+                >
+                  Delete
+                  <svg
+                    alt="Add"
+                    aria-hidden="true"
+                    aria-label="Add"
+                    className="bx--btn__icon"
+                    fillRule="evenodd"
+                    height="16"
+                    name="delete"
+                    role="img"
+                    viewBox="0 0 12 16"
+                    width="12"
+                  >
+                    <title>
+                      Add
+                    </title>
+                    <path
+                      d="M11 4v11c0 .6-.4 1-1 1H2c-.6 0-1-.4-1-1V4H0V3h12v1h-1zM2 4v11h8V4H2z"
+                    />
+                    <path
+                      d="M4 6h1v7H4zm3 0h1v7H7zM3 1V0h6v1z"
+                    />
+                  </svg>
+                </button>
+                <div
+                  className="bx--batch-summary"
+                >
+                  <p
+                    className="bx--batch-summary__para"
+                  >
+                    <span>
+                      4 items selected
+                    </span>
+                  </p>
+                  <button
+                    className="bx--batch-summary__cancel"
+                    onClick={[Function]}
+                  >
+                    Cancel
+                  </button>
+                </div>
+              </div>
+              <button
+                className="bx--btn--sm bx--toolbar-action"
+                onClick={[Function]}
+              >
+                <svg
+                  alt="Filter"
+                  aria-label="Filter"
+                  className="bx--toolbar-action__icon"
+                  fillRule="evenodd"
+                  height="12"
+                  role="img"
+                  viewBox="0 0 16 12"
+                  width="16"
+                >
+                  <title>
+                    Filter
+                  </title>
+                  <path
+                    d="M8.05 2a2.5 2.5 0 0 1 4.9 0H16v1h-3.05a2.5 2.5 0 0 1-4.9 0H0V2h8.05zm2.45 2a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM3.05 9a2.5 2.5 0 0 1 4.9 0H16v1H7.95a2.5 2.5 0 0 1-4.9 0H0V9h3.05zm2.45 2a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"
+                  />
+                </svg>
+              </button>
+            </div>
           </section>
           <table
             className="bx--data-table-v2"
@@ -51600,7 +52244,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with selec
               <tr>
                 <th
                   scope="col"
-                  style={Object {}}
+                  style={
+                    Object {
+                      "paddingBottom": "0.5rem",
+                    }
+                  }
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
@@ -51657,7 +52305,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with selec
             </thead>
             <tbody>
               <tr>
-                <td>
+                <td
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "paddingBottom": "0.5rem",
+                    }
+                  }
+                >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
                   >
@@ -51695,7 +52350,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with selec
                 </td>
               </tr>
               <tr>
-                <td>
+                <td
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "paddingBottom": "0.5rem",
+                    }
+                  }
+                >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
                   >
@@ -51733,7 +52395,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with selec
                 </td>
               </tr>
               <tr>
-                <td>
+                <td
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "paddingBottom": "0.5rem",
+                    }
+                  }
+                >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
                   >
@@ -51771,7 +52440,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with selec
                 </td>
               </tr>
               <tr>
-                <td>
+                <td
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "paddingBottom": "0.5rem",
+                    }
+                  }
+                >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
                   >
@@ -51809,7 +52485,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with selec
                 </td>
               </tr>
               <tr>
-                <td>
+                <td
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "paddingBottom": "0.5rem",
+                    }
+                  }
+                >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
                   >
@@ -51847,7 +52530,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with selec
                 </td>
               </tr>
               <tr>
-                <td>
+                <td
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "paddingBottom": "0.5rem",
+                    }
+                  }
+                >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
                   >
@@ -51885,7 +52575,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with selec
                 </td>
               </tr>
               <tr>
-                <td>
+                <td
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "paddingBottom": "0.5rem",
+                    }
+                  }
+                >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
                   >
@@ -51923,7 +52620,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with selec
                 </td>
               </tr>
               <tr>
-                <td>
+                <td
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "paddingBottom": "0.5rem",
+                    }
+                  }
+                >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
                   >
@@ -51961,7 +52665,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with selec
                 </td>
               </tr>
               <tr>
-                <td>
+                <td
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "paddingBottom": "0.5rem",
+                    }
+                  }
+                >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
                   >
@@ -51999,7 +52710,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with selec
                 </td>
               </tr>
               <tr>
-                <td>
+                <td
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "paddingBottom": "0.5rem",
+                    }
+                  }
+                >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
                   >
@@ -53436,6 +54154,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with selec
                             >
                               {
                               <span>
+                                <span>
+                                  <br />
+                                      
+                                    
+                                </span>
                                 <span
                                   style={
                                     Object {
@@ -53458,6 +54181,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with selec
                               </span>
                               ,
                               <span>
+                                <span>
+                                  <br />
+                                      
+                                    
+                                </span>
                                 <span
                                   style={
                                     Object {
@@ -53480,6 +54208,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with selec
                               </span>
                               ,
                               <span>
+                                <span>
+                                  <br />
+                                      
+                                    
+                                </span>
                                 <span
                                   style={
                                     Object {
@@ -53499,6 +54232,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with selec
                                 }
                               >
                                 onClearAllFilters
+                              </span>
+                              ,
+                              <span>
+                                <span>
+                                  <br />
+                                      
+                                    
+                                </span>
+                                …
+                              </span>
+                              <span>
+                                <br />
+                                    
                               </span>
                               }
                             </span>
@@ -53617,7 +54363,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with selec
                                 }
                               }
                             >
-                              false
+                              true
                             </span>
                             ,
                             <span>
@@ -53694,6 +54440,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with selec
                           >
                             {
                             <span>
+                              <span>
+                                <br />
+                                  
+                                  
+                              </span>
                               <span
                                 style={
                                   Object {
@@ -53717,6 +54468,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with selec
                             </span>
                             ,
                             <span>
+                              <span>
+                                <br />
+                                  
+                                  
+                              </span>
                               <span
                                 style={
                                   Object {
@@ -53869,6 +54625,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with selec
                             </span>
                             ,
                             <span>
+                              <span>
+                                <br />
+                                  
+                                  
+                              </span>
                               <span
                                 style={
                                   Object {
@@ -53876,7 +54637,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with selec
                                   }
                                 }
                               >
-                                table
+                                toolbar
                               </span>
                             </span>
                             : 
@@ -53896,51 +54657,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with selec
                                     }
                                   }
                                 >
-                                  isSelectAllSelected
-                                </span>
-                              </span>
-                              : 
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#a11",
-                                  }
-                                }
-                              >
-                                false
-                              </span>
-                              ,
-                              <span>
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#666",
-                                    }
-                                  }
-                                >
-                                  isSelectIndeterminate
-                                </span>
-                              </span>
-                              : 
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#a11",
-                                  }
-                                }
-                              >
-                                true
-                              </span>
-                              ,
-                              <span>
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#666",
-                                    }
-                                  }
-                                >
-                                  selectedIds
+                                  batchActions
                                 </span>
                               </span>
                               : 
@@ -53953,74 +54670,129 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with selec
                               >
                                 [
                                 <span>
-                                  <span>
-                                    <br />
-                                          
-                                      
-                                  </span>
                                   <span
                                     style={
                                       Object {
-                                        "color": "#22a",
-                                        "wordBreak": "break-word",
+                                        "color": "#666",
                                       }
                                     }
                                   >
-                                    'row-3'
-                                  </span>
-                                </span>
-                                ,
-                                <span>
-                                  <span>
-                                    <br />
+                                    {
+                                    <span>
+                                      <span>
+                                        <br />
+                                                
                                           
-                                      
-                                  </span>
-                                  <span
-                                    style={
-                                      Object {
-                                        "color": "#22a",
-                                        "wordBreak": "break-word",
+                                      </span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
+                                        }
+                                      >
+                                        id
+                                      </span>
+                                    </span>
+                                    : 
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#22a",
+                                          "wordBreak": "break-word",
+                                        }
                                       }
-                                    }
-                                  >
-                                    'row-4'
-                                  </span>
-                                </span>
-                                ,
-                                <span>
-                                  <span>
-                                    <br />
+                                    >
+                                      'delete'
+                                    </span>
+                                    ,
+                                    <span>
+                                      <span>
+                                        <br />
+                                                
                                           
-                                      
-                                  </span>
-                                  <span
-                                    style={
-                                      Object {
-                                        "color": "#22a",
-                                        "wordBreak": "break-word",
+                                      </span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
+                                        }
+                                      >
+                                        labelText
+                                      </span>
+                                    </span>
+                                    : 
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#22a",
+                                          "wordBreak": "break-word",
+                                        }
                                       }
-                                    }
-                                  >
-                                    'row-6'
-                                  </span>
-                                </span>
-                                ,
-                                <span>
-                                  <span>
-                                    <br />
+                                    >
+                                      'Delete'
+                                    </span>
+                                    ,
+                                    <span>
+                                      <span>
+                                        <br />
+                                                
                                           
-                                      
+                                      </span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
+                                        }
+                                      >
+                                        icon
+                                      </span>
+                                    </span>
+                                    : 
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#22a",
+                                          "wordBreak": "break-word",
+                                        }
+                                      }
+                                    >
+                                      'delete'
+                                    </span>
+                                    ,
+                                    <span>
+                                      <span>
+                                        <br />
+                                                
+                                          
+                                      </span>
+                                      …
+                                    </span>
+                                    <span>
+                                      <br />
+                                              
+                                    </span>
+                                    }
                                   </span>
-                                  …
-                                </span>
-                                <span>
-                                  <br />
-                                        
                                 </span>
                                 ]
                               </span>
                               }
+                            </span>
+                            ,
+                            <span>
+                              <span>
+                                <br />
+                                  
+                                  
+                              </span>
+                              …
+                            </span>
+                            <span>
+                              <br />
+                                
                             </span>
                             }
                           </span>
@@ -54730,6 +55502,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with selec
                                           }
                                         }
                                       >
+                                        id
+                                        
+                                        :
+                                         
+                                      </span>
+                                      <span>
+                                        string
+                                      </span>
+                                      ,
+                                    </div>
+                                    <div
+                                      style={
+                                        Object {
+                                          "marginLeft": 15,
+                                        }
+                                      }
+                                    >
+                                      <span
+                                        style={
+                                          Object {
+                                            "whiteSpace": "nowrap",
+                                          }
+                                        }
+                                      >
                                         labelText
                                         
                                         :
@@ -54913,30 +55709,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with selec
                                       </span>
                                       ,
                                     </div>
-                                    <div
-                                      style={
-                                        Object {
-                                          "marginLeft": 15,
-                                        }
-                                      }
-                                    >
-                                      <span
-                                        style={
-                                          Object {
-                                            "whiteSpace": "nowrap",
-                                          }
-                                        }
-                                      >
-                                        onClick
-                                        ?
-                                        :
-                                         
-                                      </span>
-                                      <span>
-                                        func
-                                      </span>
-                                      ,
-                                    </div>
                                     <button
                                       className="css-1sgldz e1i4ski80"
                                       onClick={[Function]}
@@ -55036,7 +55808,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with selec
                                   }
                                 }
                               >
-                                isSelectIndeterminate
+                                isSelectAllIndeterminate
                                 ?
                                 :
                                  
@@ -55515,6 +56287,54 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with selec
                                 }
                               >
                                 onClearAllFilters
+                                ?
+                                :
+                                 
+                              </span>
+                              <span>
+                                func
+                              </span>
+                              ,
+                            </div>
+                            <div
+                              style={
+                                Object {
+                                  "marginLeft": 30,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                              >
+                                onCancelBatchAction
+                                ?
+                                :
+                                 
+                              </span>
+                              <span>
+                                func
+                              </span>
+                              ,
+                            </div>
+                            <div
+                              style={
+                                Object {
+                                  "marginLeft": 30,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                              >
+                                onApplyBatchAction
                                 ?
                                 :
                                  
@@ -56364,7 +57184,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with sorti
           >
             <div
               className="bx--toolbar-content"
-            />
+            >
+              <div
+                className="bx--batch-actions"
+              >
+                <div
+                  className="bx--batch-summary"
+                >
+                  <p
+                    className="bx--batch-summary__para"
+                  >
+                    <span>
+                      0 item selected
+                    </span>
+                  </p>
+                  <button
+                    className="bx--batch-summary__cancel"
+                    onClick={[Function]}
+                  >
+                    Cancel
+                  </button>
+                </div>
+              </div>
+            </div>
           </section>
           <table
             className="bx--data-table-v2"
@@ -56373,7 +57215,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with sorti
               <tr>
                 <th
                   scope="col"
-                  style={Object {}}
+                  style={
+                    Object {
+                      "paddingBottom": "0.5rem",
+                    }
+                  }
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
@@ -56511,7 +57357,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with sorti
             </thead>
             <tbody>
               <tr>
-                <td>
+                <td
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "paddingBottom": "0.5rem",
+                    }
+                  }
+                >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
                   >
@@ -56549,7 +57402,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with sorti
                 </td>
               </tr>
               <tr>
-                <td>
+                <td
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "paddingBottom": "0.5rem",
+                    }
+                  }
+                >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
                   >
@@ -56587,7 +57447,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with sorti
                 </td>
               </tr>
               <tr>
-                <td>
+                <td
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "paddingBottom": "0.5rem",
+                    }
+                  }
+                >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
                   >
@@ -56625,7 +57492,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with sorti
                 </td>
               </tr>
               <tr>
-                <td>
+                <td
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "paddingBottom": "0.5rem",
+                    }
+                  }
+                >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
                   >
@@ -56663,7 +57537,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with sorti
                 </td>
               </tr>
               <tr>
-                <td>
+                <td
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "paddingBottom": "0.5rem",
+                    }
+                  }
+                >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
                   >
@@ -56701,7 +57582,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with sorti
                 </td>
               </tr>
               <tr>
-                <td>
+                <td
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "paddingBottom": "0.5rem",
+                    }
+                  }
+                >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
                   >
@@ -56739,7 +57627,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with sorti
                 </td>
               </tr>
               <tr>
-                <td>
+                <td
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "paddingBottom": "0.5rem",
+                    }
+                  }
+                >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
                   >
@@ -56777,7 +57672,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with sorti
                 </td>
               </tr>
               <tr>
-                <td>
+                <td
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "paddingBottom": "0.5rem",
+                    }
+                  }
+                >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
                   >
@@ -56815,7 +57717,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with sorti
                 </td>
               </tr>
               <tr>
-                <td>
+                <td
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "paddingBottom": "0.5rem",
+                    }
+                  }
+                >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
                   >
@@ -56853,7 +57762,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with sorti
                 </td>
               </tr>
               <tr>
-                <td>
+                <td
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "paddingBottom": "0.5rem",
+                    }
+                  }
+                >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
                   >
@@ -58290,6 +59206,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with sorti
                             >
                               {
                               <span>
+                                <span>
+                                  <br />
+                                      
+                                    
+                                </span>
                                 <span
                                   style={
                                     Object {
@@ -58312,6 +59233,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with sorti
                               </span>
                               ,
                               <span>
+                                <span>
+                                  <br />
+                                      
+                                    
+                                </span>
                                 <span
                                   style={
                                     Object {
@@ -58334,6 +59260,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with sorti
                               </span>
                               ,
                               <span>
+                                <span>
+                                  <br />
+                                      
+                                    
+                                </span>
                                 <span
                                   style={
                                     Object {
@@ -58353,6 +59284,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with sorti
                                 }
                               >
                                 onClearAllFilters
+                              </span>
+                              ,
+                              <span>
+                                <span>
+                                  <br />
+                                      
+                                    
+                                </span>
+                                …
+                              </span>
+                              <span>
+                                <br />
+                                    
                               </span>
                               }
                             </span>
@@ -59519,6 +60463,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with sorti
                                           }
                                         }
                                       >
+                                        id
+                                        
+                                        :
+                                         
+                                      </span>
+                                      <span>
+                                        string
+                                      </span>
+                                      ,
+                                    </div>
+                                    <div
+                                      style={
+                                        Object {
+                                          "marginLeft": 15,
+                                        }
+                                      }
+                                    >
+                                      <span
+                                        style={
+                                          Object {
+                                            "whiteSpace": "nowrap",
+                                          }
+                                        }
+                                      >
                                         labelText
                                         
                                         :
@@ -59702,30 +60670,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with sorti
                                       </span>
                                       ,
                                     </div>
-                                    <div
-                                      style={
-                                        Object {
-                                          "marginLeft": 15,
-                                        }
-                                      }
-                                    >
-                                      <span
-                                        style={
-                                          Object {
-                                            "whiteSpace": "nowrap",
-                                          }
-                                        }
-                                      >
-                                        onClick
-                                        ?
-                                        :
-                                         
-                                      </span>
-                                      <span>
-                                        func
-                                      </span>
-                                      ,
-                                    </div>
                                     <button
                                       className="css-1sgldz e1i4ski80"
                                       onClick={[Function]}
@@ -59825,7 +60769,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with sorti
                                   }
                                 }
                               >
-                                isSelectIndeterminate
+                                isSelectAllIndeterminate
                                 ?
                                 :
                                  
@@ -60304,6 +61248,54 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with sorti
                                 }
                               >
                                 onClearAllFilters
+                                ?
+                                :
+                                 
+                              </span>
+                              <span>
+                                func
+                              </span>
+                              ,
+                            </div>
+                            <div
+                              style={
+                                Object {
+                                  "marginLeft": 30,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                              >
+                                onCancelBatchAction
+                                ?
+                                :
+                                 
+                              </span>
+                              <span>
+                                func
+                              </span>
+                              ,
+                            </div>
+                            <div
+                              style={
+                                Object {
+                                  "marginLeft": 30,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                              >
+                                onApplyBatchAction
                                 ?
                                 :
                                  

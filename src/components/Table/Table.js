@@ -23,6 +23,8 @@ const {
   TableToolbar,
   TableToolbarContent,
   TableToolbarAction,
+  TableBatchActions,
+  TableBatchAction,
   TableCell,
 } = DataTable;
 
@@ -92,6 +94,7 @@ const propTypes = {
       /** Specify which batch actions to render in the batch action bar. If empty, no batch action toolbar will display */
       batchActions: PropTypes.arrayOf(
         PropTypes.shape({
+          id: PropTypes.string.isRequired,
           labelText: PropTypes.string.isRequired,
           icon: PropTypes.oneOfType([
             PropTypes.shape({
@@ -103,13 +106,12 @@ const propTypes = {
             PropTypes.string,
           ]),
           iconDescription: PropTypes.string,
-          onClick: PropTypes.func,
         })
       ),
     }),
     table: PropTypes.shape({
       isSelectAllSelected: PropTypes.bool,
-      isSelectIndeterminate: PropTypes.bool,
+      isSelectAllIndeterminate: PropTypes.bool,
       selectedIds: PropTypes.arrayOf(PropTypes.string),
       sort: PropTypes.shape({
         columnId: PropTypes.string,
@@ -134,6 +136,8 @@ const propTypes = {
       onToggleFilter: PropTypes.func,
       /** Specify a callback for when the user clicks toolbar button to clear all filters. Recieves a parameter of the current filter values for each column */
       onClearAllFilters: PropTypes.func,
+      onCancelBatchAction: PropTypes.func,
+      onApplyBatchAction: PropTypes.func,
     }),
     table: PropTypes.shape({
       onRowSelected: PropTypes.func,
@@ -160,7 +164,9 @@ const defaultProps = {
       pageSizes: [10, 20, 30],
       page: 1,
     },
-    toolbar: {},
+    toolbar: {
+      batchActions: [],
+    },
     table: {
       expandedRows: [],
       isSelectAllSelected: false,
@@ -170,7 +176,10 @@ const defaultProps = {
   },
   actions: {
     pagination: { onChange: defaultFunction('actions.pagination.onChange') },
-    toolbar: {},
+    toolbar: {
+      onApplyBatchAction: defaultFunction('actions.toolbar.onApplyBatchAction'),
+      onCancelBatchAction: defaultFunction('actions.toolbar.onCancelBatchAction'),
+    },
     table: {
       onChangeSort: defaultFunction('actions.table.onChangeSort'),
       onRowExpanded: defaultFunction('actions.table.onRowExpanded'),
@@ -259,15 +268,22 @@ const Table = props => {
   const filterBarActiveStyle = { paddingTop: 16 };
   return (
     <div>
-      {/* <Toolbar
-          {...view.toolbar}
-          selectedItemCount={view.table.selectedIds.length}
-          {...actions.toolbar}
-          hasFilters={view.filters && !!view.filters.length}
-        /> */}
       <TableContainer>
         <TableToolbar>
           <TableToolbarContent>
+            <TableBatchActions
+              onCancel={actions.toolbar.onCancelBatchAction}
+              shouldShowBatchActions={view.table.selectedIds.length > 0}
+              totalSelected={view.table.selectedIds.length}>
+              {view.toolbar.batchActions.map(i => (
+                <TableBatchAction
+                  key={i.id}
+                  onClick={() => actions.toolbar.onApplyBatchAction(i.id)}
+                  icon={i.icon}>
+                  {i.labelText}
+                </TableBatchAction>
+              ))}
+            </TableBatchActions>
             {view.filters && !!view.filters.length ? ( // TODO: translate button
               <Button kind="secondary" onClick={actions.toolbar.onClearAllFilters} small>
                 Clear All Filters
@@ -275,6 +291,7 @@ const Table = props => {
             ) : null}
             {options.hasFilter ? (
               <TableToolbarAction
+                className="bx--btn--sm"
                 icon={iconFilter}
                 iconDescription="Filter"
                 onClick={actions.toolbar.onToggleFilter}
@@ -288,14 +305,18 @@ const Table = props => {
             <TableRow>
               {options.hasRowExpansion ? <TableExpandHeader /> : null}
               {options.hasRowSelection ? (
-                <TableHeader style={filterBarActive === true ? filterBarActiveStyle : {}}>
+                <TableHeader
+                  style={Object.assign(
+                    { paddingBottom: '0.5rem' },
+                    filterBarActive === true ? filterBarActiveStyle : {}
+                  )}>
                   {/* TODO: Replace checkbox with TableSelectAll component when onChange bug is fixed
                     https://github.com/IBM/carbon-components-react/issues/1088 */}
                   <Checkbox
                     id="select-all"
                     labelText="Select All"
                     hideLabel
-                    indeterminate={view.table.isSelectIndeterminate}
+                    indeterminate={view.table.isSelectAllIndeterminate}
                     checked={view.table.isSelectAllSelected}
                     onChange={() => actions.table.onSelectAll(!view.table.isSelectAllSelected)}
                   />
@@ -345,17 +366,23 @@ const Table = props => {
                 ? view.table.expandedRows.find(j => j.rowId === i.id).content
                 : null;
               const rowSelectionCell = options.hasRowSelection ? (
-                <TableCell key={`${i.id}-row-selection-cell`}>
+                <TableCell
+                  key={`${i.id}-row-selection-cell`}
+                  style={{ paddingBottom: '0.5rem' }}
+                  onClick={e => {
+                    actions.table.onRowSelected(i.id, !view.table.selectedIds.includes(i.id));
+                    e.preventDefault();
+                    e.stopPropagation();
+                  }}>
                   {/* TODO: Replace checkbox with TableSelectRow component when onChange bug is fixed
-                    https://github.com/IBM/carbon-components-react/issues/1088 */}
+                    https://github.com/IBM/carbon-components-react/issues/1088
+                    Also move onClick logic above into TableSelectRow
+                    */}
                   <Checkbox
                     id={`select-row-${i.id}`}
                     labelText="Select Row"
                     hideLabel
                     checked={view.table.selectedIds.includes(i.id)}
-                    onChange={() =>
-                      actions.table.onRowSelected(i.id, !view.table.selectedIds.includes(i.id))
-                    }
                   />
                 </TableCell>
               ) : null;
