@@ -14087,20 +14087,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
   right: 0;
 }
 
-.c4.c4.c4 {
-  color: #152935;
-}
-
-.c4.c4.c4 svg {
-  fill: #152935;
-}
-
-.c4.c4.c4:hover {
-  color: #fff;
-}
-
-.c4.c4.c4:hover svg {
-  fill: #fff;
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  opacity: 0;
 }
 
 .c5.c5.c5 {
@@ -14109,7 +14105,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
 
 .c5.c5.c5 svg {
   fill: #152935;
-  margin-left: 0;
 }
 
 .c5.c5.c5:hover {
@@ -14120,8 +14115,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
   fill: #fff;
 }
 
+.c6.c6.c6 {
+  color: #152935;
+}
+
+.c6.c6.c6 svg {
+  fill: #152935;
+  margin-left: 0;
+}
+
+.c6.c6.c6:hover {
+  color: #fff;
+}
+
+.c6.c6.c6:hover svg {
+  fill: #fff;
+}
+
 .c3.c3.c3 {
   cursor: pointer;
+}
+
+.c3.c3.c3:hover td div {
+  opacity: 1;
 }
 
 <div
@@ -14713,15 +14729,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c4"
                   >
                     <button
-                      className="c4 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c5 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="false"
                       onClick={[Function]}
@@ -14750,7 +14761,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                       </svg>
                     </button>
                     <button
-                      className="c5 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c6 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -14861,15 +14872,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c4"
                   >
                     <button
-                      className="c5 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c6 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -14980,15 +14986,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c4"
                   >
                     <button
-                      className="c5 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c6 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -15099,15 +15100,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c4"
                   >
                     <button
-                      className="c4 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c5 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="false"
                       onClick={[Function]}
@@ -15136,7 +15132,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                       </svg>
                     </button>
                     <button
-                      className="c5 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c6 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={true}
                       nolabel="true"
                       onClick={[Function]}
@@ -15247,15 +15243,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c4"
                   >
                     <button
-                      className="c4 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c5 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="false"
                       onClick={[Function]}
@@ -15284,7 +15275,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                       </svg>
                     </button>
                     <button
-                      className="c5 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c6 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -15395,15 +15386,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c4"
                   >
                     <button
-                      className="c4 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c5 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="false"
                       onClick={[Function]}
@@ -15432,7 +15418,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                       </svg>
                     </button>
                     <button
-                      className="c5 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c6 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -15543,15 +15529,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c4"
                   >
                     <button
-                      className="c4 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c5 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="false"
                       onClick={[Function]}
@@ -15580,7 +15561,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                       </svg>
                     </button>
                     <button
-                      className="c5 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c6 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -15691,15 +15672,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c4"
                   >
                     <button
-                      className="c5 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c6 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -15810,15 +15786,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c4"
                   >
                     <button
-                      className="c4 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c5 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="false"
                       onClick={[Function]}
@@ -15847,7 +15818,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                       </svg>
                     </button>
                     <button
-                      className="c5 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c6 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -15958,15 +15929,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c4"
                   >
                     <button
-                      className="c5 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c6 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -30118,6 +30084,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
   cursor: pointer;
 }
 
+.c0.c0.c0:hover td div {
+  opacity: 1;
+}
+
 .c1.c1.c1 {
   cursor: pointer;
 }
@@ -38931,20 +38901,28 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
 `;
 
 exports[`Storybook Snapshot tests and console checks Storyshots Table with row expansion and actions 1`] = `
-.c1.c1.c1 {
-  color: #152935;
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  opacity: 0;
 }
 
-.c1.c1.c1 svg {
-  fill: #152935;
-}
-
-.c1.c1.c1:hover {
-  color: #fff;
-}
-
-.c1.c1.c1:hover svg {
-  fill: #fff;
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  opacity: 1;
 }
 
 .c2.c2.c2 {
@@ -38953,7 +38931,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
 
 .c2.c2.c2 svg {
   fill: #152935;
-  margin-left: 0;
 }
 
 .c2.c2.c2:hover {
@@ -38964,20 +38941,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
   fill: #fff;
 }
 
-.c4.c4.c4 {
+.c3.c3.c3 {
+  color: #152935;
+}
+
+.c3.c3.c3 svg {
+  fill: #152935;
+  margin-left: 0;
+}
+
+.c3.c3.c3:hover {
   color: #fff;
 }
 
-.c4.c4.c4 svg {
+.c3.c3.c3:hover svg {
+  fill: #fff;
+}
+
+.c6.c6.c6 {
+  color: #fff;
+}
+
+.c6.c6.c6 svg {
   fill: #fff;
   margin-left: 0;
 }
 
-.c4.c4.c4:hover {
+.c6.c6.c6:hover {
   color: #152935;
 }
 
-.c4.c4.c4:hover svg {
+.c6.c6.c6:hover svg {
   fill: #152935;
 }
 
@@ -38985,41 +38979,45 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
   cursor: pointer;
 }
 
-.c3.c3.c3 {
+.c0.c0.c0:hover td div {
+  opacity: 1;
+}
+
+.c4.c4.c4 {
   cursor: pointer;
 }
 
-.c3.c3.c3 td {
+.c4.c4.c4 td {
   background-color: #3d70b2;
   border-color: #3d70b2;
   color: white;
   border-top: 1px solid #3d70b2;
 }
 
-.c3.c3.c3 td button svg {
+.c4.c4.c4 td button svg {
   fill: white;
 }
 
-.c3.c3.c3 td:first-of-type {
+.c4.c4.c4 td:first-of-type {
   border-left: 1px solid #3d70b2;
 }
 
-.c3.c3.c3 td:last-of-type {
+.c4.c4.c4 td:last-of-type {
   border-right: 1px solid #3d70b2;
 }
 
-.c5.c5.c5 td {
+.c7.c7.c7 td {
   background-color: inherit;
   border-left: 4px solid #3d70b2;
   border-width: 0 0 0 4px;
 }
 
-.c5.c5.c5:hover {
+.c7.c7.c7:hover {
   border: inherit;
   background-color: inherit;
 }
 
-.c5.c5.c5:hover td {
+.c7.c7.c7:hover td {
   background-color: inherit;
   border-left: solid #3d70b2;
   border-width: 0 0 0 4px;
@@ -39169,15 +39167,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c1 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="false"
                       onClick={[Function]}
@@ -39206,7 +39199,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                       </svg>
                     </button>
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={true}
                       nolabel="true"
                       onClick={[Function]}
@@ -39286,15 +39279,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -39328,7 +39316,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 bx--expandable-row-v2 c3"
+                className="bx--parent-row-v2 bx--expandable-row-v2 c4"
                 data-parent-row={true}
                 id="Table-Row-row-2"
                 onClick={[Function]}
@@ -39375,15 +39363,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c5"
                   >
                     <button
-                      className="c4 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c6 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -39425,7 +39408,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="c5"
+                className="c7"
               >
                 <td
                   colSpan={6}
@@ -39526,15 +39509,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -39614,15 +39592,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c1 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="false"
                       onClick={[Function]}
@@ -39651,7 +39624,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                       </svg>
                     </button>
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -39685,7 +39658,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 bx--expandable-row-v2 c3"
+                className="bx--parent-row-v2 bx--expandable-row-v2 c4"
                 data-parent-row={true}
                 id="Table-Row-row-5"
                 onClick={[Function]}
@@ -39732,15 +39705,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c5"
                   >
                     <button
-                      className="c4 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c6 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -39782,7 +39750,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="c5"
+                className="c7"
               >
                 <td
                   colSpan={6}
@@ -39883,15 +39851,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={true}
                       nolabel="true"
                       onClick={[Function]}
@@ -39971,15 +39934,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -40059,15 +40017,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c1 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="false"
                       onClick={[Function]}
@@ -40096,7 +40049,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                       </svg>
                     </button>
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -40176,15 +40129,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -40264,15 +40212,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -40352,15 +40295,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -40440,15 +40378,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c1 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="false"
                       onClick={[Function]}
@@ -40477,7 +40410,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                       </svg>
                     </button>
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={true}
                       nolabel="true"
                       onClick={[Function]}
@@ -40557,15 +40490,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -40645,15 +40573,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -40733,15 +40656,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -40821,15 +40739,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c1 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="false"
                       onClick={[Function]}
@@ -40858,7 +40771,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                       </svg>
                     </button>
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -40938,15 +40851,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -41026,15 +40934,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={true}
                       nolabel="true"
                       onClick={[Function]}
@@ -41114,15 +41017,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -41202,15 +41100,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c1 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="false"
                       onClick={[Function]}
@@ -41239,7 +41132,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                       </svg>
                     </button>
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -41319,15 +41212,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -41407,15 +41295,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -41495,15 +41378,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -41583,15 +41461,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c1 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="false"
                       onClick={[Function]}
@@ -41620,7 +41493,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                       </svg>
                     </button>
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={true}
                       nolabel="true"
                       onClick={[Function]}
@@ -41700,15 +41573,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -41788,15 +41656,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -41876,15 +41739,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -41964,15 +41822,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c1 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="false"
                       onClick={[Function]}
@@ -42001,7 +41854,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                       </svg>
                     </button>
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -42081,15 +41934,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -42169,15 +42017,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={true}
                       nolabel="true"
                       onClick={[Function]}
@@ -42257,15 +42100,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -42345,15 +42183,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c1 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="false"
                       onClick={[Function]}
@@ -42382,7 +42215,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                       </svg>
                     </button>
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -42462,15 +42295,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -42550,15 +42378,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -42638,15 +42461,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -42726,15 +42544,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c1 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="false"
                       onClick={[Function]}
@@ -42763,7 +42576,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                       </svg>
                     </button>
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={true}
                       nolabel="true"
                       onClick={[Function]}
@@ -42843,15 +42656,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -42931,15 +42739,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -43019,15 +42822,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -43107,15 +42905,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c1 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="false"
                       onClick={[Function]}
@@ -43144,7 +42937,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                       </svg>
                     </button>
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -43224,15 +43017,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -43312,15 +43100,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={true}
                       nolabel="true"
                       onClick={[Function]}
@@ -43400,15 +43183,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -43488,15 +43266,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c1 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="false"
                       onClick={[Function]}
@@ -43525,7 +43298,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                       </svg>
                     </button>
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -43605,15 +43378,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -43693,15 +43461,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -43781,15 +43544,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -43869,15 +43627,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c1 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="false"
                       onClick={[Function]}
@@ -43906,7 +43659,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                       </svg>
                     </button>
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={true}
                       nolabel="true"
                       onClick={[Function]}
@@ -43986,15 +43739,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -44074,15 +43822,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -44162,15 +43905,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -44250,15 +43988,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c1 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="false"
                       onClick={[Function]}
@@ -44287,7 +44020,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                       </svg>
                     </button>
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -44367,15 +44100,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -44455,15 +44183,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={true}
                       nolabel="true"
                       onClick={[Function]}
@@ -44543,15 +44266,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -44631,15 +44349,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c1 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="false"
                       onClick={[Function]}
@@ -44668,7 +44381,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                       </svg>
                     </button>
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -44748,15 +44461,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -44836,15 +44544,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -44924,15 +44627,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -45012,15 +44710,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c1 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="false"
                       onClick={[Function]}
@@ -45049,7 +44742,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                       </svg>
                     </button>
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={true}
                       nolabel="true"
                       onClick={[Function]}
@@ -45129,15 +44822,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -45217,15 +44905,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -45305,15 +44988,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -45393,15 +45071,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c1 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="false"
                       onClick={[Function]}
@@ -45430,7 +45103,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                       </svg>
                     </button>
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -45510,15 +45183,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -45598,15 +45266,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={true}
                       nolabel="true"
                       onClick={[Function]}
@@ -45686,15 +45349,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -45774,15 +45432,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c1 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="false"
                       onClick={[Function]}
@@ -45811,7 +45464,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                       </svg>
                     </button>
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -45891,15 +45544,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -45979,15 +45627,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -46067,15 +45710,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -46155,15 +45793,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c1 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="false"
                       onClick={[Function]}
@@ -46192,7 +45825,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                       </svg>
                     </button>
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={true}
                       nolabel="true"
                       onClick={[Function]}
@@ -46272,15 +45905,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -46360,15 +45988,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -46448,15 +46071,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -46536,15 +46154,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c1 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="false"
                       onClick={[Function]}
@@ -46573,7 +46186,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                       </svg>
                     </button>
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -46653,15 +46266,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -46741,15 +46349,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={true}
                       nolabel="true"
                       onClick={[Function]}
@@ -46829,15 +46432,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -46917,15 +46515,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c1 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="false"
                       onClick={[Function]}
@@ -46954,7 +46547,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                       </svg>
                     </button>
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -47034,15 +46627,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -47122,15 +46710,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -47210,15 +46793,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -47298,15 +46876,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c1 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="false"
                       onClick={[Function]}
@@ -47335,7 +46908,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                       </svg>
                     </button>
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={true}
                       nolabel="true"
                       onClick={[Function]}
@@ -47415,15 +46988,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -47503,15 +47071,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -47591,15 +47154,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -47679,15 +47237,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c1 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="false"
                       onClick={[Function]}
@@ -47716,7 +47269,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                       </svg>
                     </button>
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -47796,15 +47349,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -47884,15 +47432,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={true}
                       nolabel="true"
                       onClick={[Function]}
@@ -47972,15 +47515,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -48060,15 +47598,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c1 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="false"
                       onClick={[Function]}
@@ -48097,7 +47630,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                       </svg>
                     </button>
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -48177,15 +47710,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -48265,15 +47793,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -48353,15 +47876,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -48441,15 +47959,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c1 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="false"
                       onClick={[Function]}
@@ -48478,7 +47991,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                       </svg>
                     </button>
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={true}
                       nolabel="true"
                       onClick={[Function]}
@@ -48558,15 +48071,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -48646,15 +48154,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
@@ -48734,15 +48237,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    style={
-                      Object {
-                        "display": "flex",
-                        "justifyContent": "flex-end",
-                      }
-                    }
+                    className="c1"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       nolabel="true"
                       onClick={[Function]}
