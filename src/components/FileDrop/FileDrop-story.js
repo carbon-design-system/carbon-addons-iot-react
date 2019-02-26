@@ -1,34 +1,21 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
 
 import FileDrop from './FileDrop';
 
 const FileDropProps = {
-  onClick: action('click'),
-  title:"Account Photo",
-  acceptFiles:[".json"],
-  description:"only .json 500kb max file size.",
+  title: 'Upload Files',
+  description: 'Any file can be uploaded.  Feel free to upload more than one!',
+  buttonLabel: "Try it out!",
+  kind: 'browse',
+  onData: data => console.log('FileDrop.onData', data),
+  onError: err => console.log('FileDrop.onError', err),
 };
 
-
-
 storiesOf('FileDrop', module)
-  .add('Non drag drop', () => (
-    <FileDrop {...FileDropProps}/>
+  .add('Browse', () => (
+    <FileDrop {...FileDropProps} />
   ))
-  .add('Drag Drop', () => (
-    <FileDrop {...FileDropProps} dragDrop/>
-  ))
-  .add('Drag Drop data', () => (
-    <FileDrop
-      {...FileDropProps}
-      dragDrop
-      // onSubmit={action('submit')}
-      onData={(data) => {
-        window.alert('Data loaded, see console')
-        console.log(data)
-      }}
-
-    />
+  .add('Drag and drop', () => (
+    <FileDrop {...FileDropProps} kind="drag-and-drop" />
   ));

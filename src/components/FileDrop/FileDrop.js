@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { FileUploader as CarbonFileUploader } from 'carbon-components-react';
+import { Filename, FileUploaderButton } from 'carbon-components-react';
 import Dropzone from 'react-dropzone';
 import styled from 'styled-components';
 
+/*
 const StyledFileUploader = styled(CarbonFileUploader)`
 {
   &.bx--form-item{
@@ -16,33 +17,47 @@ const StyledFileUploader = styled(CarbonFileUploader)`
   }
 }
 `;
+*/
 
 
 const propTypes = {
+  /** DOM ID */
+  id: PropTypes.string,
   /** Title text  */
   title: PropTypes.string.isRequired,
   /** Description text of file uploader */
   description: PropTypes.string.isRequired,
   /** Button label  */
   buttonLabel: PropTypes.string,
-  /** Files that are accept */
-  acceptFiles: PropTypes.arrayOf(PropTypes.string).isRequired,
+  /** File types that are accepted */
+  accept: PropTypes.arrayOf(PropTypes.string),
   /** Componet is drag/drop */
-  dragDrop: PropTypes.bool,
-  /** Callback to return the files data */
+  kind: PropTypes.oneOf(['browse', 'drag-and-drop']),
+  /** Callback to return the loaded file(s) data */
   onData: PropTypes.func,
+  /** Callback for file load errors */
+  onError: PropTypes.func,
 };
 
 const defaultProps = {
+  id: 'FileUploader',
   buttonLabel: 'Add files',
-  dragDrop: false,
-  onData: () => {}
+  kind: 'browse',
+  accept: [],
+  onData: () => {},
+  onError: () => {},
 };
 
 /**
- * Carbon File Uploader with added ability to have drag drop
+ * Carbon File Uploader with added ability to have drag and drop
  */
 class FileDrop extends React.Component {
+
+  dropzone = null;
+
+  nodes = [];
+
+  readers = {};
 
   constructor(props) {
     super(props);
@@ -51,136 +66,183 @@ class FileDrop extends React.Component {
     }
   }
 
-  readFileContent = (acceptedFiles) => {
-    const { onData } = this.props;
-
-    const uploadedContent = [];
-
-    Array.from(acceptedFiles).forEach((file, index) => {
-      const reader = new FileReader();
-      reader.onload = () => {
-        uploadedContent.push({ content: reader.result, name:file.name})
-        if(acceptedFiles.length-1 === index) {
-          onData(uploadedContent)
-        }
+  readFileContent = (files) => {
+    Array.prototype.forEach.call(files, (file) => {
+      this.readers[file.name] = new FileReader();
+      this.readers[file.name].onload = () => {
+        this.setState((state) => {
+          const newState = {
+            files: state.files.map(i => i.name === file.name ? ({
+              name: i.name,
+              uploadState: 'edit',
+              contents: i.name === file.name ? this.readers[file.name].result : i.contents,
+            }) : i),
+          };
+          if (newState.files.filter(i => i.contents === null).length === 0) {
+            // all data is loaded, trigger callback
+            this.props.onData(newState.files.map(i => ({
+              name: i.name,
+              contents: i.contents,
+            })));
+          }
+          return newState;
+        });
+        delete this.readers[file.name];
       };
-      reader.onabort = () => console.log('file reading was aborted');
-      reader.onerror = () => console.log('file reading has failed');
+      this.readers[file.name].onerror = (evt) => {
+        delete this.readers[file.name];
+        return this.props.onError(evt);
+      };
+      this.readers[file.name].readAsBinaryString(file);
+    });
+  }
 
-      reader.readAsBinaryString(file);
+  addNewFiles = files => {
+    const filenames = Array.prototype.map.call(files, f => f.name);
+    this.setState(state => ({
+      files: state.files.concat(filenames.map(name => ({
+        name,
+        uploadState: 'uploading',
+        contents: null,
+      }))),
+    }))
+    this.readFileContent(files);
+  };
+
+  clearFile = filename =>
+    this.setState((state) => {
+      const newState = {
+        files: state.files.filter(({ name }) => name !== filename),
+      };
+      this.props.onData(newState.files.map(i => ({
+        name: i.name,
+        contents: i.contents,
+      })));
+      return newState;
     });
 
-    if(acceptedFiles.length === 0){
-      onData(uploadedContent)
-    }
-  }
+  handleChange = evt => {
+    evt.stopPropagation();
+    this.addNewFiles(evt.target.files);
+  };
 
+  handleClick = (evt, index) => {
+    const filename = this.nodes[index].innerText.trim();
+    this.clearFile(filename);
+  };
 
-  onChangeFile = (evt) => {
-    console.log('On Change file function of FileUploader!!!')
-    const inputFiles = evt.target.files
-    this.readFileContent(inputFiles)
-  }
+  render = () => {
+    const { id, title, description, buttonLabel, accept, kind } = this.props;
 
-  onClickFile = (evt) => {
-    console.log('On Click file function of FileUploader!!!')
-    console.log(document.querySelector("input[type='file']").files)
-    // console.log(evt.target)
-    // this.readFileContent(inputFiles)
+    /*
+    const linkElement = (
+      <div>
+        <div>
+          Drag and drop you file here or
+          <a style={{ cursor: 'pointer' }} onClick={() => { this.dropzone.open() }} > upload </a>
+        </div>
+        <div>
+          {description}
+        </div>
+      </div>
+    )
+    */
 
-  }
-
-  onDrop = (acceptedFiles, rejectedFiles) => {
-    this.addFiles(acceptedFiles)
-    this.readFileContent(acceptedFiles)
-   }
-
-   removeFile = (index) => {
-     const { files } = this.state
-     files.splice(index, 1)
-     this.readFileContent(files)
-     this.setState({ files })
-   }
-
-   addFiles = (aceptedFiles) => {
-     this.setState({ files: aceptedFiles })
-   }
-
-
-   render = () => {
-     const { title, description, buttonLabel, acceptFiles, dragDrop } = this.props;
-
-     const linkElement = (
-       <div>
-         <div>
-           Drag and drop you file here or
-           <a style={{ cursor: 'pointer' }} onClick={() => { this.dropzone.open() }} > upload </a>
-         </div>
-         <div>
-           {description}
-         </div>
-       </div>
-     )
-
-     return dragDrop ? (
-       <div style={{backgroundColor: "#ffffff", marginLeft: "10px",padding: "15px 0px 15px 15px"}}>
-         <strong className="bx--label">{title}</strong>
-         <Dropzone
-           accept={acceptFiles}
-           onClick={evt => evt.preventDefault()}
-           onDrop={this.onDrop}
-           ref={(dropzone) => { this.dropzone = dropzone }}
-         >
-           {
-             ({ getRootProps, getInputProps, isDragActive }) => {
-               return (
-                 <div
-                   {...getRootProps()}
-                   style={isDragActive ?
-                     { padding: "15px", border: "1px solid #3D70B2" } :
-                     { padding: "15px", border: "1px dashed #8C8C8C" }}
-                 >
-                   <input {...getInputProps()} />
-                   { linkElement }
-                 </div>
-               )
-           }}
-         </Dropzone>
-         <div data-file-container className="bx--file-container">
-           {
-             this.state.files.map((file, index) => {
-               return (
-                   <span id={`${index}-file-list`} class="bx--file__selected-file" style={{ backgroundColor: "rgba(85, 150, 230, .1)"}}>
-                     <p class="bx--file-filename">{file.name}</p>
-                     <span class="bx--file__state-container">
-                       <svg id={index} class="bx--file-close" onClick={() => this.removeFile(index)} tabindex="0" viewBox="0 0 16 16" fill-rule="evenodd" width="16" height="16">
-                         <path d="M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm3.5 10.1l-1.4 1.4L8
-                           9.4l-2.1 2.1-1.4-1.4L6.6 8 4.5 5.9l1.4-1.4L8 6.6l2.1-2.1 1.4 1.4L9.4 8l2.1 2.1z"></path>
-                       </svg>
-                     </span>
-                   </span>
-               );
-             })
-           }
-         </div>
-       </div>
-     ) :
-     (
-       <div>
-         <StyledFileUploader
-           id="file-uploader"
-           labelTitle={title}
-           labelDescription={description}
-           buttonLabel={buttonLabel}
-           filenameStatus="edit"
-           accept={acceptFiles}
-           name=""
-           onChange={(evt) => this.onChangeFile(evt)}
-           onClick={(evt) => this.onClickFile(evt)}
-           multiple
-         />
-       </div>
-     );
+    return kind === 'drag-and-drop' ? 
+    (
+      <div>TODO</div>
+    )
+    /*
+    (
+      <div style={{backgroundColor: "#ffffff", marginLeft: "10px",padding: "15px 0px 15px 15px"}}>
+        <strong className="bx--label">{title}</strong>
+        <Dropzone
+          accept={accept}
+          onClick={evt => evt.preventDefault()}
+          onDrop={this.onDrop}
+          ref={(dropzone) => { this.dropzone = dropzone }}
+        >
+          {
+            ({ getRootProps, getInputProps, isDragActive }) => {
+              return (
+                <div
+                  {...getRootProps()}
+                  style={isDragActive ?
+                    { padding: "15px", border: "1px solid #3D70B2" } :
+                    { padding: "15px", border: "1px dashed #8C8C8C" }}
+                >
+                  <input {...getInputProps()} />
+                  { linkElement }
+                </div>
+              )
+          }}
+        </Dropzone>
+        <div data-file-container className="bx--file-container">
+          {
+            this.state.files.map((file, index) => {
+              return (
+                  <span id={`${index}-file-list`} class="bx--file__selected-file" style={{ backgroundColor: "rgba(85, 150, 230, .1)"}}>
+                    <p class="bx--file-filename">{file.name}</p>
+                    <span class="bx--file__state-container">
+                      <svg id={index} class="bx--file-close" onClick={() => this.removeFile(index)} tabindex="0" viewBox="0 0 16 16" fill-rule="evenodd" width="16" height="16">
+                        <path d="M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm3.5 10.1l-1.4 1.4L8
+                          9.4l-2.1 2.1-1.4-1.4L6.6 8 4.5 5.9l1.4-1.4L8 6.6l2.1-2.1 1.4 1.4L9.4 8l2.1 2.1z"></path>
+                      </svg>
+                    </span>
+                  </span>
+              );
+            })
+          }
+        </div>
+      </div>
+    )
+    */
+    : (
+      <div id={id} className="bx--form-item">
+        <strong className="bx--label">{title}</strong>
+        <p className="bx--label-description">{description}</p>
+        <FileUploaderButton
+          labelText={buttonLabel}
+          multiple
+          buttonKind="primary"
+          onChange={this.handleChange}
+          disableLabelChanges
+          accept={accept}
+        />
+        <div className="bx--file-container">
+          {
+            this.state.files.length === 0
+              ? null
+              : this.state.files.map(({ name, uploadState }, index) => (
+                <span
+                  key={`${name}-${index}`}
+                  className="bx--file__selected-file"
+                  ref={node => (this.nodes[index] = node)} // eslint-disable-line
+                >
+                  <p className="bx--file-filename">{name}</p>
+                  <span className="bx--file__state-container">
+                    { console.log(uploadState) }
+                    <Filename
+                      status={uploadState}
+                      onKeyDown={evt => {
+                        if (evt.which === 13 || evt.which === 32) {
+                          this.handleClick(evt, index);
+                        }
+                      }}
+                      onClick={evt => {
+                        if (uploadState === 'edit') {
+                          this.handleClick(evt, index);
+                        }
+                      }}
+                    />
+                  </span>
+                </span>
+              )
+            )
+          }
+        </div>
+      </div>
+    );
    }
 };
 
