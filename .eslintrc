@@ -66,6 +66,7 @@
     "no-nested-ternary": 0,
     "react/jsx-one-expression-per-line": 0,
     "react/no-did-update-set-state": 0, //not needed after react 16: https://github.com/yannickcr/eslint-plugin-react/issues/1754
+    "react/no-array-index-key": 0,
     "import/prefer-default-export": 0,
     // https://nolanlawson.com/2018/03/20/smaller-lodash-bundles-with-webpack-and-babel/
     "lodash/chaining": [2, "never"],

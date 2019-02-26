@@ -221,7 +221,6 @@ class FileDrop extends React.Component {
                 >
                   <p className="bx--file-filename">{name}</p>
                   <span className="bx--file__state-container">
-                    { console.log(uploadState) }
                     <Filename
                       status={uploadState}
                       onKeyDown={evt => {
