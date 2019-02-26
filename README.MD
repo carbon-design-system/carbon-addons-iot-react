@@ -29,6 +29,6 @@ import { BaseModal } from 'carbon-addons-iot-react';
 
 You can find more information about how to use each component by checking out our [Storybook](https://IBM.github.io/carbon-addons-iot-react/).
 
-## Contributing
+## 🤲 Contributing
 
 Please check out our [Contribution Guidelines](./.github/CONTRIBUTING.md) for more info on how you can help out!
