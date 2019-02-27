@@ -64,17 +64,19 @@ const getWord = (index, step = 1) => words[(step * index) % words.length];
 const getSentence = index =>
   `${getWord(index, 1)} ${getWord(index, 2)} ${getWord(index, 3)} ${index}`;
 
+const getNewRow = idx => ({
+  id: `row-${idx}`,
+  values: {
+    string: getSentence(idx),
+    date: new Date(100000000000 + 1000000000 * idx * idx).toISOString(),
+    select: selectData[idx % 3].id,
+    number: idx * idx,
+  },
+});
+
 const tableData = Array(100)
   .fill(0)
-  .map((i, idx) => ({
-    id: `row-${idx}`,
-    values: {
-      string: getSentence(idx),
-      date: new Date(100000000000 + 1000000000 * idx * idx).toISOString(),
-      select: selectData[idx % 3].id,
-      number: idx * idx,
-    },
-  }));
+  .map((i, idx) => getNewRow(idx));
 
 const RowExpansionContent = ({ rowId }) => (
   <div key={`${rowId}-expansion`} style={{ padding: 20 }}>
@@ -105,7 +107,7 @@ const actions = {
   table: {
     onRowSelected: action('onRowSelected'),
     onSelectAll: action('onSelectAll'),
-    onDefaultEmptyCallToAction: action('onDefaultEmptyCallToAction'),
+    onEmptyStateAction: action('onEmptyStateAction'),
   },
 };
 
@@ -388,8 +390,43 @@ class StatefulTableWrapper extends Component {
         onApplyRowAction: (rowId, actionId) => {
           alert(`action "${actionId}" clicked for row "${rowId}"`); //eslint-disable-line
         },
-        onDefaultEmptyCallToAction: () => {
-          alert(`action onDefaultEmptyCallToAction clicked`); //eslint-disable-line
+        onEmptyStateAction: () => {
+          this.setState(state =>
+            state.view.filters.length > 0
+              ? update(state, {
+                  view: {
+                    filters: {
+                      $set: [],
+                    },
+                    toolbar: {
+                      activeBar: {
+                        $set: null,
+                      },
+                    },
+                    pagination: {
+                      page: { $set: 1 },
+                    },
+                  },
+                })
+              : update(state, {
+                  data: {
+                    $set: [getNewRow(Math.floor(Math.random() * 100))].map(i => ({
+                      ...i,
+                      rowActions: [
+                        {
+                          id: 'drilldown',
+                          icon: 'arrow--right',
+                          labelText: 'Drill in',
+                        },
+                        {
+                          id: 'delete',
+                          icon: 'delete',
+                        },
+                      ],
+                    })),
+                  },
+                })
+          );
         },
       },
     };
@@ -621,13 +658,44 @@ storiesOf('Table', module)
     );
   })
   .add('with customized columns', () => <p>TODO - a couple columns selected and reordered</p>)
-  .add('with no results', () => <p>TODO - empty state when filters applied and no results</p>)
-  .add('with no data', () => (
+  .add('with no results', () => (
     <Table
       columns={tableColumns}
       data={[]}
       actions={actions}
-      options={{ emptyMessage: 'There is no data here' }}
+      view={{
+        filters: [
+          {
+            columnId: 'string',
+            value: 'something not matching',
+          },
+        ],
+        toolbar: {
+          activeBar: 'filter',
+        },
+      }}
+      options={{ hasFilter: true, hasPagination: true }}
+    />
+  ))
+  .add('with no data', () => (
+    <Table columns={tableColumns} data={[]} actions={actions} options={{ hasPagination: true }} />
+  ))
+  .add('with no data and custom empty state', () => (
+    <Table
+      columns={tableColumns}
+      data={[]}
+      actions={actions}
+      view={{
+        table: {
+          emptyState: (
+            <div>
+              <h1>Custom empty state</h1>
+              <p>Hey, no data!</p>
+            </div>
+          ),
+        },
+      }}
+      options={{ hasPagination: true }}
     />
   ))
   .add('is loading', () => <p>TODO - empty state when data is loading</p>);

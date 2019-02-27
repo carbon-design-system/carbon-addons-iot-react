@@ -74,7 +74,6 @@ const propTypes = {
     hasRowExpansion: PropTypes.bool,
     hasRowActions: PropTypes.bool,
     hasFilter: PropTypes.bool,
-    emptyTableContent: PropTypes.node,
   }),
   /** Initial state of the table, should be updated via a local state wrapper component implementation or via a central store/redux */
   view: PropTypes.shape({
@@ -125,6 +124,19 @@ const propTypes = {
           content: PropTypes.element,
         })
       ),
+      emptyState: PropTypes.oneOfType([
+        PropTypes.shape({
+          message: PropTypes.string.isRequired,
+          /* Show a different message if no content is in the table matching the filters */
+          messageWithFilters: PropTypes.string,
+          /* If a label is not provided, no action button will be rendered */
+          buttonLabel: PropTypes.string,
+          /* Show a different utton label if no content is in the table matching the filters */
+          buttonLabelWithFilters: PropTypes.string,
+        }),
+        /* If a React element is provided, it will be rendered in place of the default */
+        PropTypes.element,
+      ]),
     }),
   }),
   /** Callbacks for actions of the table, can be used to update state in wrapper component to update `view` props */
@@ -147,7 +159,7 @@ const propTypes = {
       onSelectAll: PropTypes.func,
       onChangeSort: PropTypes.func,
       onApplyRowAction: PropTypes.func,
-      onDefaultEmptyCallToAction: PropTypes.func,
+      onEmptyStateAction: PropTypes.func,
     }).isRequired,
   }),
 };
@@ -166,7 +178,9 @@ const defaultProps = {
       pageSize: 10,
       pageSizes: [10, 20, 30],
       page: 1,
+      totalItems: 0,
     },
+    filters: [],
     toolbar: {
       batchActions: [],
     },
@@ -175,6 +189,12 @@ const defaultProps = {
       isSelectAllSelected: false,
       selectedIds: [],
       sort: {},
+      emptyState: {
+        message: 'There is no data',
+        messageWithFilters: 'No results match the current filters',
+        buttonLabel: 'Create some data',
+        buttonLabelWithFilters: 'Clear all filters',
+      },
     },
   },
   actions: {
@@ -187,7 +207,7 @@ const defaultProps = {
       onChangeSort: defaultFunction('actions.table.onChangeSort'),
       onRowExpanded: defaultFunction('actions.table.onRowExpanded'),
       onApplyRowAction: defaultFunction('actions.table.onApplyRowAction'),
-      onDefaultEmptyCallToAction: defaultFunction('actions.table.onDefaultEmptyCallToAction'),
+      onEmptyStateAction: defaultFunction('actions.table.onEmptyStateAction'),
     },
   },
 };
@@ -497,15 +517,23 @@ const Table = props => {
             <TableBody>
               <StyledEmptyTableRow>
                 <TableCell colSpan={totalColumns}>
-                  {options.emptyTableContent ? (
-                    options.emptyTableContent
+                  {view.table.emptyState.props ? (
+                    view.table.emptyState
                   ) : (
                     <div className="empty-table-cell--default">
                       <Bee32 />
-                      <p>There&apos;s no data here</p>
-                      <Button onClick={() => actions.table.onDefaultEmptyCallToAction()}>
-                        Create some data
-                      </Button>
+                      <p>
+                        {view.filters.length > 0 && view.table.emptyState.messageWithFilters
+                          ? view.table.emptyState.messageWithFilters
+                          : view.table.emptyState.message}
+                      </p>
+                      {view.table.emptyState.buttonLabel && (
+                        <Button onClick={() => actions.table.onEmptyStateAction()}>
+                          {view.filters.length > 0 && view.table.emptyState.buttonLabelWithFilters
+                            ? view.table.emptyState.buttonLabelWithFilters
+                            : view.table.emptyState.buttonLabel}
+                        </Button>
+                      )}
                     </div>
                   )}
                 </TableCell>
