@@ -688,9 +688,9 @@ storiesOf('Table', module)
       view={{
         table: {
           emptyState: (
-            <div>
-              <h1>Custom empty state</h1>
-              <p>Hey, no data!</p>
+            <div key="empty-state">
+              <h1 key="empty-state-heading">Custom empty state</h1>
+              <p key="empty-state-message">Hey, no data!</p>
             </div>
           ),
         },
