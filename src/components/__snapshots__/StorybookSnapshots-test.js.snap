@@ -12359,6 +12359,439 @@ exports[`Storybook Snapshot tests and console checks Storyshots ButtonEnhanced n
 </div>
 `;
 
+exports[`Storybook Snapshot tests and console checks Storyshots ProgressIndicator ProgressIndicator 1`] = `
+.c0.c0.c0 {
+  min-width: 136px;
+  width: 200;
+}
+
+.c0.c0.c0 .bx--progress-label {
+  cursor: pointer;
+}
+
+.c0.c0.c0 .bx--progress-step svg {
+  z-index: auto;
+  cursor: pointer;
+}
+
+.c0.c0.c0 button {
+  background: none;
+  margin: 0;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  text-align: left;
+  color: #3d70b2;
+}
+
+.c1.c1.c1 {
+  min-width: 136px;
+  width: 200;
+}
+
+.c1.c1.c1 .bx--progress-label {
+  cursor: pointer;
+}
+
+.c1.c1.c1 .bx--progress-step svg {
+  z-index: auto;
+  cursor: pointer;
+}
+
+.c1.c1.c1 button {
+  background: none;
+  margin: 0;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  text-align: left;
+  color: #5a6872;
+}
+
+<div
+  className="storybook-container"
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "flexDirection": "column",
+      "padding": "3em",
+    }
+  }
+>
+  <div>
+    <div
+      style={
+        Object {
+          "position": "relative",
+          "zIndex": 0,
+        }
+      }
+    >
+      <ul>
+        <li
+          className="bx--progress-step bx--progress-step--complete c0"
+        >
+          <svg>
+            <circle
+              cx="12"
+              cy="12"
+              r="12"
+            />
+            <circle
+              cx="12"
+              cy="12"
+              r="6"
+            />
+          </svg>
+          <p
+            className="bx--progress-label"
+          >
+            First step
+          </p>
+          <span
+            className="bx--progress-line"
+          />
+        </li>
+        <li
+          className="bx--progress-step bx--progress-step--complete c1"
+        >
+          <svg
+            onClick={[Function]}
+          >
+            <circle
+              cx="12"
+              cy="12"
+              r="12"
+            />
+          </svg>
+          <button
+            className="bx--progress-label"
+            onClick={[Function]}
+            type="button"
+          >
+            Second Step
+          </button>
+          <span
+            className="bx--progress-line"
+          />
+        </li>
+        <li
+          className="bx--progress-step bx--progress-step--complete c1"
+        >
+          <svg
+            onClick={[Function]}
+          >
+            <circle
+              cx="12"
+              cy="12"
+              r="12"
+            />
+          </svg>
+          <button
+            className="bx--progress-label"
+            onClick={[Function]}
+            type="button"
+          >
+            Third Step
+          </button>
+          <span
+            className="bx--progress-line"
+          />
+        </li>
+        <li
+          className="bx--progress-step bx--progress-step--complete c1"
+        >
+          <svg
+            onClick={[Function]}
+          >
+            <circle
+              cx="12"
+              cy="12"
+              r="12"
+            />
+          </svg>
+          <button
+            className="bx--progress-label"
+            onClick={[Function]}
+            type="button"
+          >
+            Fourth Step
+          </button>
+          <span
+            className="bx--progress-line"
+          />
+        </li>
+        <li
+          className="bx--progress-step bx--progress-step--complete c1"
+        >
+          <svg
+            onClick={[Function]}
+          >
+            <circle
+              cx="12"
+              cy="12"
+              r="12"
+            />
+          </svg>
+          <button
+            className="bx--progress-label"
+            onClick={[Function]}
+            type="button"
+          >
+            Fifth Step
+          </button>
+          <span
+            className="bx--progress-line"
+          />
+        </li>
+        <li
+          className="bx--progress-step bx--progress-step--complete c1"
+        >
+          <svg
+            onClick={[Function]}
+          >
+            <circle
+              cx="12"
+              cy="12"
+              r="12"
+            />
+          </svg>
+          <button
+            className="bx--progress-label"
+            onClick={[Function]}
+            type="button"
+          >
+            Sixth Step
+          </button>
+          <span
+            className="bx--progress-line"
+          />
+        </li>
+      </ul>
+    </div>
+    <button
+      onClick={[Function]}
+      style={
+        Object {
+          "background": "#28c",
+          "border": "none",
+          "borderRadius": "0 0 0 5px",
+          "color": "#fff",
+          "cursor": "pointer",
+          "display": "block",
+          "fontFamily": "sans-serif",
+          "fontSize": "12px",
+          "padding": "5px 15px",
+          "position": "fixed",
+          "right": 0,
+          "top": 0,
+        }
+      }
+      type="button"
+    >
+      Show Info
+    </button>
+    <div
+      style={
+        Object {
+          "background": "white",
+          "bottom": 0,
+          "display": "none",
+          "left": 0,
+          "overflow": "auto",
+          "padding": "0 40px",
+          "position": "fixed",
+          "right": 0,
+          "top": 0,
+          "zIndex": 99999,
+        }
+      }
+    >
+      <button
+        onClick={[Function]}
+        style={
+          Object {
+            "background": "#28c",
+            "border": "none",
+            "borderRadius": "0 0 0 5px",
+            "color": "#fff",
+            "cursor": "pointer",
+            "display": "block",
+            "fontFamily": "sans-serif",
+            "fontSize": "12px",
+            "padding": "5px 15px",
+            "position": "fixed",
+            "right": 0,
+            "top": 0,
+          }
+        }
+        type="button"
+      >
+        ×
+      </button>
+      <div>
+        <div
+          style={
+            Object {
+              "WebkitFontSmoothing": "antialiased",
+              "backgroundColor": "#fff",
+              "border": "1px solid #eee",
+              "borderRadius": "2px",
+              "color": "#444",
+              "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+              "fontSize": "15px",
+              "fontWeight": 300,
+              "lineHeight": 1.45,
+              "marginBottom": "20px",
+              "marginTop": "20px",
+              "padding": "20px 40px 40px",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "borderBottom": "1px solid #eee",
+                "marginBottom": 10,
+                "paddingTop": 10,
+              }
+            }
+          >
+            <h1
+              style={
+                Object {
+                  "fontSize": "35px",
+                  "margin": 0,
+                  "padding": 0,
+                }
+              }
+            >
+              ProgressIndicator
+            </h1>
+            <h2
+              style={
+                Object {
+                  "fontSize": "22px",
+                  "fontWeight": 400,
+                  "margin": "0 0 10px 0",
+                  "padding": 0,
+                }
+              }
+            >
+              ProgressIndicator
+            </h2>
+          </div>
+          
+          <div>
+            <h1
+              style={
+                Object {
+                  "borderBottom": "1px solid #EEE",
+                  "fontSize": "25px",
+                  "margin": "20px 0 0 0",
+                  "padding": "0 0 5px 0",
+                }
+              }
+            >
+              Story Source
+            </h1>
+            <pre
+              className="css-r8d96o eyvlbql0"
+            >
+              <div>
+                <div
+                  style={
+                    Object {
+                      "paddingLeft": 18,
+                      "paddingRight": 3,
+                    }
+                  }
+                >
+                  <span
+                    style={
+                      Object {
+                        "color": "#444",
+                      }
+                    }
+                  >
+                    &lt;
+                    ProgressIndicatorExample
+                  </span>
+                  <span />
+                  <span
+                    style={
+                      Object {
+                        "color": "#444",
+                      }
+                    }
+                  >
+                    /&gt;
+                  </span>
+                </div>
+              </div>
+              <button
+                className="css-1naocv3 eva467m0"
+                onClick={[Function]}
+              >
+                <div
+                  className="css-lvl6aa eva467m1"
+                >
+                  <div
+                    style={
+                      Object {
+                        "marginBottom": 6,
+                      }
+                    }
+                  >
+                    Copied!
+                  </div>
+                  <div>
+                    Copy
+                  </div>
+                </div>
+              </button>
+            </pre>
+          </div>
+          <div>
+            <h1
+              style={
+                Object {
+                  "borderBottom": "1px solid #EEE",
+                  "fontSize": "25px",
+                  "margin": "20px 0 0 0",
+                  "padding": "0 0 5px 0",
+                }
+              }
+            >
+              Prop Types
+            </h1>
+            <div>
+              <h2
+                style={
+                  Object {
+                    "margin": "20px 0 0 0",
+                  }
+                }
+              >
+                "
+                ProgressIndicatorExample
+                " Component
+              </h2>
+              <small>
+                No propTypes defined!
+              </small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful Example 1`] = `
 .c0.c0.c0 th {
   padding-top: 0.5rem;
