@@ -212,6 +212,14 @@ const defaultProps = {
   },
 };
 
+const RowActionsContainer = styled.div`
+  & {
+    display: flex;
+    justify-content: flex-end;
+    opacity: ${props => (props.visible ? 1 : 0)};
+  }
+`;
+
 const RowActionButton = styled(Button)`
   &&& {
     color: ${props => (props.rowexpanded ? COLORS.white : COLORS.darkGray)};
@@ -231,6 +239,13 @@ const RowActionButton = styled(Button)`
 const StyledTableExpandRow = styled(TableExpandRow)`
   &&& {
     cursor: pointer;
+    :hover {
+      td {
+        div {
+          opacity: 1;
+        }
+      }
+    }
   }
 `;
 
@@ -441,10 +456,10 @@ const Table = props => {
                     />
                   </TableCell>
                 ) : null;
-                const rowActionsCell =
+                const rowActionsCell = expanded =>
                   i.rowActions && i.rowActions.length > 0 ? (
                     <TableCell key={`${i.id}-row-actions-cell`}>
-                      <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+                      <RowActionsContainer visible={expanded}>
                         {i.rowActions.map(a => (
                           <RowActionButton
                             key={`${i.id}-row-actions-button-${a.id}`}
@@ -462,7 +477,7 @@ const Table = props => {
                             {a.labelText}
                           </RowActionButton>
                         ))}
-                      </div>
+                      </RowActionsContainer>
                     </TableCell>
                   ) : null;
                 const tableCells = (
@@ -471,7 +486,7 @@ const Table = props => {
                     {columns.map(col => (
                       <TableCell key={col.id}>{i.values[col.id]}</TableCell>
                     ))}
-                    {rowActionsCell}
+                    {rowActionsCell(isRowExpanded)}
                   </React.Fragment>
                 );
                 return options.hasRowExpansion ? (

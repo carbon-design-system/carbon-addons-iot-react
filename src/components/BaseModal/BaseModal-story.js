@@ -14,7 +14,7 @@ storiesOf('BaseModal', module) // Ugh I shouldn't have to add these info here, b
     - adds error and dataError prop to display notification about error at bottom of dialog
     - if submitFailed prop, it will find and scroll the failing carbon element into view
     - shows spinner on primary dialog button if sendingData prop is true
-        
+
 We also prevent the dialog from closing if you click outside it.
 This dialog can be decorated by reduxDialog HoC and/or reduxForm HoC to automatically populate the fields below marked as
 REDUXFORM or REDUXDIALOG`,
@@ -69,6 +69,17 @@ REDUXFORM or REDUXDIALOG`,
   .add('no footer', () => (
     <BaseModal
       sendingData
+      header={{
+        label: 'Add translation',
+        title: 'Dialog with added translation string to close icon',
+      }}
+      onClose={action('close')}
+    />
+  ))
+  .add('add description', () => (
+    <BaseModal
+      sendingData
+      iconDescription="Translated string"
       header={{
         label: 'No footer',
         title: 'Dialog without footer',
