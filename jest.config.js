@@ -22,6 +22,6 @@ module.exports = {
   },
   testPathIgnorePatterns: ['/config/', '/lib/'],
   transformIgnorePatterns: ['[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$'],
-  moduleFileExtensions: ['js', 'json'],
+  moduleFileExtensions: ['js', 'json', 'jsx'],
   snapshotSerializers: ['enzyme-to-json/serializer'],
 };
