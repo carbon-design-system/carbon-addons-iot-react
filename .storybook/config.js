@@ -2,13 +2,13 @@ import React from 'react';
 import { configure, addDecorator } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 import { checkA11y } from '@storybook/addon-a11y';
-// import { withKnobs } from '@storybook/addon-knobs';
+import { withKnobs } from '@storybook/addon-knobs';
 
 import Container from './Container';
 
-// addDecorator(withKnobs);
 addDecorator(withInfo);
 addDecorator(checkA11y);
+addDecorator(withKnobs);
 addDecorator(story => <Container story={story} />);
 
 function loadStories() {
