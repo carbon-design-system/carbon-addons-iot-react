@@ -1,7 +1,7 @@
 module.exports = {
   collectCoverage: true,
   verbose: true,
-  collectCoverageFrom: ['src/components/**/*.js?(x)', '!src/**/*-story.js'],
+  collectCoverageFrom: ['src/components/**/*.js?(x)', '!src/**/*.story.js?(x)'],
   coveragePathIgnorePatterns: ['/node_modules/', '/lib/', '/coverage/'],
   coverageReporters: ['html', 'text-summary'],
   coverageThreshold: {
@@ -13,7 +13,7 @@ module.exports = {
     },
   },
   setupFiles: ['<rootDir>/config/jest/setup.js'],
-  testMatch: ['<rootDir>/**/__tests__/**/*.js?(x)', '<rootDir>/**/?(*-)(spec|test).js?(x)'],
+  testMatch: ['<rootDir>/**/__tests__/**/*.js?(x)', '<rootDir>/**/?(*.)(spec|test).js?(x)'],
   testURL: 'http://localhost',
   transform: {
     '^.+\\.jsx?$': 'babel-jest',
