@@ -14941,6 +14941,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                           </span>
                           ,
                         </div>
+                        <div
+                          style={
+                            Object {
+                              "marginLeft": 15,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "whiteSpace": "nowrap",
+                              }
+                            }
+                          >
+                            emptyTableContent
+                            ?
+                            :
+                             
+                          </span>
+                          <span>
+                            node
+                          </span>
+                          ,
+                        </div>
                         <button
                           className="css-1sgldz e1i4ski80"
                           onClick={[Function]}
@@ -16365,6 +16389,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                                 }
                               >
                                 onApplyRowAction
+                                ?
+                                :
+                                 
+                              </span>
+                              <span>
+                                func
+                              </span>
+                              ,
+                            </div>
+                            <div
+                              style={
+                                Object {
+                                  "marginLeft": 30,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                              >
+                                onDefaultEmptyCallToAction
                                 ?
                                 :
                                  
@@ -19801,6 +19849,28 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                               >
                                 onSelectAll
                               </span>
+                              ,
+                              <span>
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  onDefaultEmptyCallToAction
+                                </span>
+                              </span>
+                              : 
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#170",
+                                  }
+                                }
+                              >
+                                onDefaultEmptyCallToAction
+                              </span>
                               }
                             </span>
                             }
@@ -20082,6 +20152,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                           </span>
                           <span>
                             bool
+                          </span>
+                          ,
+                        </div>
+                        <div
+                          style={
+                            Object {
+                              "marginLeft": 15,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "whiteSpace": "nowrap",
+                              }
+                            }
+                          >
+                            emptyTableContent
+                            ?
+                            :
+                             
+                          </span>
+                          <span>
+                            node
                           </span>
                           ,
                         </div>
@@ -21509,6 +21603,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                                 }
                               >
                                 onApplyRowAction
+                                ?
+                                :
+                                 
+                              </span>
+                              <span>
+                                func
+                              </span>
+                              ,
+                            </div>
+                            <div
+                              style={
+                                Object {
+                                  "marginLeft": 30,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                              >
+                                onDefaultEmptyCallToAction
                                 ?
                                 :
                                  
@@ -25034,6 +25152,28 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with filte
                               >
                                 onSelectAll
                               </span>
+                              ,
+                              <span>
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  onDefaultEmptyCallToAction
+                                </span>
+                              </span>
+                              : 
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#170",
+                                  }
+                                }
+                              >
+                                onDefaultEmptyCallToAction
+                              </span>
                               }
                             </span>
                             }
@@ -25824,6 +25964,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with filte
                           </span>
                           <span>
                             bool
+                          </span>
+                          ,
+                        </div>
+                        <div
+                          style={
+                            Object {
+                              "marginLeft": 15,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "whiteSpace": "nowrap",
+                              }
+                            }
+                          >
+                            emptyTableContent
+                            ?
+                            :
+                             
+                          </span>
+                          <span>
+                            node
                           </span>
                           ,
                         </div>
@@ -27260,6 +27424,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with filte
                               </span>
                               ,
                             </div>
+                            <div
+                              style={
+                                Object {
+                                  "marginLeft": 30,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                              >
+                                onDefaultEmptyCallToAction
+                                ?
+                                :
+                                 
+                              </span>
+                              <span>
+                                func
+                              </span>
+                              ,
+                            </div>
                             <button
                               className="css-1sgldz e1i4ski80"
                               onClick={[Function]}
@@ -27906,6 +28094,38 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with filte
 `;
 
 exports[`Storybook Snapshot tests and console checks Storyshots Table with no data 1`] = `
+.c0.c0.c0:hover td {
+  border: 1px solid #dfe3e6;
+  background: inherit;
+}
+
+.c0.c0.c0 .empty-table-cell--default {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: middle;
+  -webkit-justify-content: middle;
+  -ms-flex-pack: middle;
+  justify-content: middle;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 3rem;
+}
+
+.c0.c0.c0 .empty-table-cell--default svg {
+  margin: 1rem;
+}
+
+.c0.c0.c0 .empty-table-cell--default > * {
+  margin: 0.5rem;
+}
+
 <div
   className="storybook-container"
   style={
@@ -27926,9 +28146,116 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with no da
         }
       }
     >
-      <p>
-        TODO - empty state when no data provided
-      </p>
+      <div>
+        <div
+          className="bx--data-table-v2-container"
+        >
+          <section
+            className="bx--table-toolbar"
+          >
+            <div
+              className="bx--toolbar-content"
+            >
+              <div
+                className="bx--batch-actions"
+              >
+                <div
+                  className="bx--batch-summary"
+                >
+                  <p
+                    className="bx--batch-summary__para"
+                  >
+                    <span>
+                      0 item selected
+                    </span>
+                  </p>
+                  <button
+                    className="bx--batch-summary__cancel"
+                    onClick={[Function]}
+                  >
+                    Cancel
+                  </button>
+                </div>
+              </div>
+            </div>
+          </section>
+          <table
+            className="bx--data-table-v2"
+          >
+            <thead>
+              <tr>
+                <th
+                  id="Table-Header-Column-string"
+                  scope="col"
+                  style={Object {}}
+                >
+                  String
+                </th>
+                <th
+                  id="Table-Header-Column-date"
+                  scope="col"
+                  style={Object {}}
+                >
+                  Date
+                </th>
+                <th
+                  id="Table-Header-Column-select"
+                  scope="col"
+                  style={Object {}}
+                >
+                  Select
+                </th>
+                <th
+                  id="Table-Header-Column-number"
+                  scope="col"
+                  style={Object {}}
+                >
+                  Number
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr
+                className="c0"
+              >
+                <td
+                  colSpan={4}
+                >
+                  <div
+                    className="empty-table-cell--default"
+                  >
+                    <svg
+                      aria-hidden={true}
+                      focusable={false}
+                      height={32}
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 32 32"
+                      width={32}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M16 10a6 6 0 0 0-6 6v8a6 6 0 0 0 12 0v-8a6 6 0 0 0-6-6zm-4.25 7.87h8.5v4.25h-8.5zM16 28.25A4.27 4.27 0 0 1 11.75 24v-.13h8.5V24A4.27 4.27 0 0 1 16 28.25zm4.25-12.13h-8.5V16a4.25 4.25 0 0 1 8.5 0zm10.41 3.09L24 13v9.1a4 4 0 0 0 8 0 3.83 3.83 0 0 0-1.34-2.89zM28 24.35a2.25 2.25 0 0 1-2.25-2.25V17l3.72 3.47A2.05 2.05 0 0 1 30.2 22a2.25 2.25 0 0 1-2.2 2.35zM0 22.1a4 4 0 0 0 8 0V13l-6.66 6.21A3.88 3.88 0 0 0 0 22.1zm2.48-1.56L6.25 17v5.1a2.25 2.25 0 0 1-4.5 0 2.05 2.05 0 0 1 .73-1.56zM15 5.5A3.5 3.5 0 1 0 11.5 9 3.5 3.5 0 0 0 15 5.5zm-5.25 0a1.75 1.75 0 1 1 1.75 1.75A1.77 1.77 0 0 1 9.75 5.5zM20.5 2A3.5 3.5 0 1 0 24 5.5 3.5 3.5 0 0 0 20.5 2zm0 5.25a1.75 1.75 0 1 1 1.75-1.75 1.77 1.77 0 0 1-1.75 1.75z"
+                      />
+                    </svg>
+                    <p>
+                      There's no data here
+                    </p>
+                    <button
+                      className="bx--btn bx--btn--primary"
+                      disabled={false}
+                      onClick={[Function]}
+                      tabIndex={0}
+                      type="button"
+                    >
+                      Create some data
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
     <button
       onClick={[Function]}
@@ -28060,74 +28387,776 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with no da
               className="css-r8d96o eyvlbql0"
             >
               <div>
-                <div>
-                  <div
+                <div
+                  style={
+                    Object {
+                      "paddingLeft": 18,
+                      "paddingRight": 3,
+                    }
+                  }
+                >
+                  <span
                     style={
                       Object {
-                        "paddingLeft": 18,
-                        "paddingRight": 3,
+                        "color": "#444",
                       }
                     }
                   >
-                    <span
-                      style={
-                        Object {
-                          "color": "#444",
-                        }
-                      }
-                    >
-                      &lt;
-                      p
+                    &lt;
+                    Table
+                  </span>
+                  <span>
+                    <span>
+                      <span>
+                        <br />
+                          
+                      </span>
+                      <span
+                        style={Object {}}
+                      >
+                        columns
+                      </span>
+                      <span>
+                        =
+                        <span
+                          style={Object {}}
+                        >
+                          {
+                          <span
+                            style={
+                              Object {
+                                "color": "#666",
+                              }
+                            }
+                          >
+                            [
+                            <span>
+                              <span>
+                                <br />
+                                  
+                                  
+                              </span>
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#666",
+                                  }
+                                }
+                              >
+                                {
+                                <span>
+                                  <span>
+                                    <br />
+                                        
+                                      
+                                  </span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    id
+                                  </span>
+                                </span>
+                                : 
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  'string'
+                                </span>
+                                ,
+                                <span>
+                                  <span>
+                                    <br />
+                                        
+                                      
+                                  </span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    name
+                                  </span>
+                                </span>
+                                : 
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  'String'
+                                </span>
+                                ,
+                                <span>
+                                  <span>
+                                    <br />
+                                        
+                                      
+                                  </span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    size
+                                  </span>
+                                </span>
+                                : 
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#a11",
+                                    }
+                                  }
+                                >
+                                  1
+                                </span>
+                                ,
+                                <span>
+                                  <span>
+                                    <br />
+                                        
+                                      
+                                  </span>
+                                  …
+                                </span>
+                                <span>
+                                  <br />
+                                      
+                                </span>
+                                }
+                              </span>
+                            </span>
+                            ,
+                            <span>
+                              <span>
+                                <br />
+                                  
+                                  
+                              </span>
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#666",
+                                  }
+                                }
+                              >
+                                {
+                                <span>
+                                  <span>
+                                    <br />
+                                        
+                                      
+                                  </span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    id
+                                  </span>
+                                </span>
+                                : 
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  'date'
+                                </span>
+                                ,
+                                <span>
+                                  <span>
+                                    <br />
+                                        
+                                      
+                                  </span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    name
+                                  </span>
+                                </span>
+                                : 
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  'Date'
+                                </span>
+                                ,
+                                <span>
+                                  <span>
+                                    <br />
+                                        
+                                      
+                                  </span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    size
+                                  </span>
+                                </span>
+                                : 
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#a11",
+                                    }
+                                  }
+                                >
+                                  1
+                                </span>
+                                ,
+                                <span>
+                                  <span>
+                                    <br />
+                                        
+                                      
+                                  </span>
+                                  …
+                                </span>
+                                <span>
+                                  <br />
+                                      
+                                </span>
+                                }
+                              </span>
+                            </span>
+                            ,
+                            <span>
+                              <span>
+                                <br />
+                                  
+                                  
+                              </span>
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#666",
+                                  }
+                                }
+                              >
+                                {
+                                <span>
+                                  <span>
+                                    <br />
+                                        
+                                      
+                                  </span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    id
+                                  </span>
+                                </span>
+                                : 
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  'select'
+                                </span>
+                                ,
+                                <span>
+                                  <span>
+                                    <br />
+                                        
+                                      
+                                  </span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    name
+                                  </span>
+                                </span>
+                                : 
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  'Select'
+                                </span>
+                                ,
+                                <span>
+                                  <span>
+                                    <br />
+                                        
+                                      
+                                  </span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    size
+                                  </span>
+                                </span>
+                                : 
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#a11",
+                                    }
+                                  }
+                                >
+                                  1
+                                </span>
+                                ,
+                                <span>
+                                  <span>
+                                    <br />
+                                        
+                                      
+                                  </span>
+                                  …
+                                </span>
+                                <span>
+                                  <br />
+                                      
+                                </span>
+                                }
+                              </span>
+                            </span>
+                            ,
+                            <span>
+                              <span>
+                                <br />
+                                  
+                                  
+                              </span>
+                              …
+                            </span>
+                            <span>
+                              <br />
+                                
+                            </span>
+                            ]
+                          </span>
+                          }
+                        </span>
+                      </span>
                     </span>
-                    <span />
-                    <span
-                      style={
-                        Object {
-                          "color": "#444",
-                        }
-                      }
-                    >
-                      &gt;
+                    <span>
+                      <span>
+                        <br />
+                          
+                      </span>
+                      <span
+                        style={Object {}}
+                      >
+                        data
+                      </span>
+                      <span>
+                        =
+                        <span
+                          style={Object {}}
+                        >
+                          {
+                          <span
+                            style={
+                              Object {
+                                "color": "#666",
+                              }
+                            }
+                          >
+                            [
+                            ]
+                          </span>
+                          }
+                        </span>
+                      </span>
                     </span>
-                  </div>
-                  <div
+                    <span>
+                      <span>
+                        <br />
+                          
+                      </span>
+                      <span
+                        style={Object {}}
+                      >
+                        actions
+                      </span>
+                      <span>
+                        =
+                        <span
+                          style={Object {}}
+                        >
+                          {
+                          <span
+                            style={
+                              Object {
+                                "color": "#666",
+                              }
+                            }
+                          >
+                            {
+                            <span>
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#666",
+                                  }
+                                }
+                              >
+                                pagination
+                              </span>
+                            </span>
+                            : 
+                            <span
+                              style={
+                                Object {
+                                  "color": "#666",
+                                }
+                              }
+                            >
+                              {
+                              <span>
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  onChange
+                                </span>
+                              </span>
+                              : 
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#170",
+                                  }
+                                }
+                              >
+                                onChange
+                              </span>
+                              }
+                            </span>
+                            ,
+                            <span>
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#666",
+                                  }
+                                }
+                              >
+                                toolbar
+                              </span>
+                            </span>
+                            : 
+                            <span
+                              style={
+                                Object {
+                                  "color": "#666",
+                                }
+                              }
+                            >
+                              {
+                              <span>
+                                <span>
+                                  <br />
+                                      
+                                    
+                                </span>
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  onApplyFilter
+                                </span>
+                              </span>
+                              : 
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#170",
+                                  }
+                                }
+                              >
+                                onApplyFilter
+                              </span>
+                              ,
+                              <span>
+                                <span>
+                                  <br />
+                                      
+                                    
+                                </span>
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  onToggleFilter
+                                </span>
+                              </span>
+                              : 
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#170",
+                                  }
+                                }
+                              >
+                                onToggleFilter
+                              </span>
+                              ,
+                              <span>
+                                <span>
+                                  <br />
+                                      
+                                    
+                                </span>
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  onClearAllFilters
+                                </span>
+                              </span>
+                              : 
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#170",
+                                  }
+                                }
+                              >
+                                onClearAllFilters
+                              </span>
+                              ,
+                              <span>
+                                <span>
+                                  <br />
+                                      
+                                    
+                                </span>
+                                …
+                              </span>
+                              <span>
+                                <br />
+                                    
+                              </span>
+                              }
+                            </span>
+                            ,
+                            <span>
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#666",
+                                  }
+                                }
+                              >
+                                table
+                              </span>
+                            </span>
+                            : 
+                            <span
+                              style={
+                                Object {
+                                  "color": "#666",
+                                }
+                              }
+                            >
+                              {
+                              <span>
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  onRowSelected
+                                </span>
+                              </span>
+                              : 
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#170",
+                                  }
+                                }
+                              >
+                                onRowSelected
+                              </span>
+                              ,
+                              <span>
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  onSelectAll
+                                </span>
+                              </span>
+                              : 
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#170",
+                                  }
+                                }
+                              >
+                                onSelectAll
+                              </span>
+                              ,
+                              <span>
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  onDefaultEmptyCallToAction
+                                </span>
+                              </span>
+                              : 
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#170",
+                                  }
+                                }
+                              >
+                                onDefaultEmptyCallToAction
+                              </span>
+                              }
+                            </span>
+                            }
+                          </span>
+                          }
+                        </span>
+                      </span>
+                    </span>
+                    <span>
+                      <span>
+                        <br />
+                          
+                      </span>
+                      <span
+                        style={Object {}}
+                      >
+                        options
+                      </span>
+                      <span>
+                        =
+                        <span
+                          style={Object {}}
+                        >
+                          {
+                          <span
+                            style={
+                              Object {
+                                "color": "#666",
+                              }
+                            }
+                          >
+                            {
+                            <span>
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#666",
+                                  }
+                                }
+                              >
+                                emptyMessage
+                              </span>
+                            </span>
+                            : 
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              'There is no data here'
+                            </span>
+                            }
+                          </span>
+                          }
+                        </span>
+                      </span>
+                      <br />
+                    </span>
+                  </span>
+                  <span
                     style={
                       Object {
-                        "paddingLeft": 33,
-                        "paddingRight": 3,
+                        "color": "#444",
                       }
                     }
                   >
-                    <span
-                      style={
-                        Object {
-                          "color": "#444",
-                        }
-                      }
-                    >
-                      TODO - empty state when no data provided
-                    </span>
-                  </div>
-                  <div
-                    style={
-                      Object {
-                        "paddingLeft": 18,
-                        "paddingRight": 3,
-                      }
-                    }
-                  >
-                    <span
-                      style={
-                        Object {
-                          "color": "#444",
-                        }
-                      }
-                    >
-                      &lt;/
-                      p
-                      &gt;
-                    </span>
-                  </div>
+                    /&gt;
+                  </span>
                 </div>
               </div>
               <button
@@ -28152,6 +29181,2365 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with no da
                 </div>
               </button>
             </pre>
+          </div>
+          <div>
+            <h1
+              style={
+                Object {
+                  "borderBottom": "1px solid #EEE",
+                  "fontSize": "25px",
+                  "margin": "20px 0 0 0",
+                  "padding": "0 0 5px 0",
+                }
+              }
+            >
+              Prop Types
+            </h1>
+            <div>
+              <h2
+                style={
+                  Object {
+                    "margin": "20px 0 0 0",
+                  }
+                }
+              >
+                "
+                Table
+                " Component
+              </h2>
+              <table
+                className="css-1uhv8nx e1vdo5380"
+              >
+                <thead>
+                  <tr>
+                    <th
+                      className="css-11b5gui e6fp4ir1"
+                    >
+                      property
+                    </th>
+                    <th
+                      className="css-11b5gui e6fp4ir1"
+                    >
+                      propType
+                    </th>
+                    <th
+                      className="css-11b5gui e6fp4ir1"
+                    >
+                      required
+                    </th>
+                    <th
+                      className="css-11b5gui e6fp4ir1"
+                    >
+                      default
+                    </th>
+                    <th
+                      className="css-11b5gui e6fp4ir1"
+                    >
+                      description
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      id
+                    </td>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      <span>
+                        string
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      -
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#22a",
+                            "wordBreak": "break-word",
+                          }
+                        }
+                      >
+                        'Table'
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      DOM ID for component
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      options
+                    </td>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      <span>
+                        <button
+                          className="css-1sgldz e1i4ski80"
+                          onClick={[Function]}
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
+                        >
+                          {
+                        </button>
+                        <button
+                          className="css-1sgldz e1i4ski80"
+                          onClick={[Function]}
+                        >
+                          ...
+                        </button>
+                        <div
+                          style={
+                            Object {
+                              "marginLeft": 15,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "whiteSpace": "nowrap",
+                              }
+                            }
+                          >
+                            hasPagination
+                            ?
+                            :
+                             
+                          </span>
+                          <span>
+                            bool
+                          </span>
+                          ,
+                        </div>
+                        <div
+                          style={
+                            Object {
+                              "marginLeft": 15,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "whiteSpace": "nowrap",
+                              }
+                            }
+                          >
+                            hasRowSelection
+                            ?
+                            :
+                             
+                          </span>
+                          <span>
+                            bool
+                          </span>
+                          ,
+                        </div>
+                        <div
+                          style={
+                            Object {
+                              "marginLeft": 15,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "whiteSpace": "nowrap",
+                              }
+                            }
+                          >
+                            hasRowExpansion
+                            ?
+                            :
+                             
+                          </span>
+                          <span>
+                            bool
+                          </span>
+                          ,
+                        </div>
+                        <div
+                          style={
+                            Object {
+                              "marginLeft": 15,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "whiteSpace": "nowrap",
+                              }
+                            }
+                          >
+                            hasRowActions
+                            ?
+                            :
+                             
+                          </span>
+                          <span>
+                            bool
+                          </span>
+                          ,
+                        </div>
+                        <div
+                          style={
+                            Object {
+                              "marginLeft": 15,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "whiteSpace": "nowrap",
+                              }
+                            }
+                          >
+                            hasFilter
+                            ?
+                            :
+                             
+                          </span>
+                          <span>
+                            bool
+                          </span>
+                          ,
+                        </div>
+                        <div
+                          style={
+                            Object {
+                              "marginLeft": 15,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "whiteSpace": "nowrap",
+                              }
+                            }
+                          >
+                            emptyTableContent
+                            ?
+                            :
+                             
+                          </span>
+                          <span>
+                            node
+                          </span>
+                          ,
+                        </div>
+                        <button
+                          className="css-1sgldz e1i4ski80"
+                          onClick={[Function]}
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
+                        >
+                          }
+                        </button>
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      -
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#22a",
+                            "wordBreak": "break-word",
+                          }
+                        }
+                      >
+                        {
+  hasPagination: false,
+  hasRowSelection: false…
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      Optional properties to customize how the table should be rendered
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      view
+                    </td>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      <span>
+                        <button
+                          className="css-1sgldz e1i4ski80"
+                          onClick={[Function]}
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
+                        >
+                          {
+                        </button>
+                        <button
+                          className="css-1sgldz e1i4ski80"
+                          onClick={[Function]}
+                        >
+                          ...
+                        </button>
+                        <div
+                          style={
+                            Object {
+                              "marginLeft": 15,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "whiteSpace": "nowrap",
+                              }
+                            }
+                          >
+                            pagination
+                            ?
+                            :
+                             
+                          </span>
+                          <span>
+                            <button
+                              className="css-1sgldz e1i4ski80"
+                              onClick={[Function]}
+                              onMouseEnter={[Function]}
+                              onMouseLeave={[Function]}
+                            >
+                              {
+                            </button>
+                            <button
+                              className="css-1sgldz e1i4ski80"
+                              onClick={[Function]}
+                            >
+                              ...
+                            </button>
+                            <div
+                              style={
+                                Object {
+                                  "marginLeft": 30,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                              >
+                                pageSize
+                                ?
+                                :
+                                 
+                              </span>
+                              <span>
+                                number
+                              </span>
+                              ,
+                            </div>
+                            <div
+                              style={
+                                Object {
+                                  "marginLeft": 30,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                              >
+                                pageSizes
+                                ?
+                                :
+                                 
+                              </span>
+                              <span>
+                                <span>
+                                  [
+                                </span>
+                                <span>
+                                  <span>
+                                    number
+                                  </span>
+                                </span>
+                                <span>
+                                  ]
+                                </span>
+                              </span>
+                              ,
+                            </div>
+                            <div
+                              style={
+                                Object {
+                                  "marginLeft": 30,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                              >
+                                page
+                                ?
+                                :
+                                 
+                              </span>
+                              <span>
+                                number
+                              </span>
+                              ,
+                            </div>
+                            <div
+                              style={
+                                Object {
+                                  "marginLeft": 30,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                              >
+                                totalItems
+                                ?
+                                :
+                                 
+                              </span>
+                              <span>
+                                number
+                              </span>
+                              ,
+                            </div>
+                            <button
+                              className="css-1sgldz e1i4ski80"
+                              onClick={[Function]}
+                              onMouseEnter={[Function]}
+                              onMouseLeave={[Function]}
+                            >
+                              }
+                            </button>
+                          </span>
+                          ,
+                        </div>
+                        <div
+                          style={
+                            Object {
+                              "marginLeft": 15,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "whiteSpace": "nowrap",
+                              }
+                            }
+                          >
+                            filters
+                            ?
+                            :
+                             
+                          </span>
+                          <span>
+                            <span>
+                              [
+                            </span>
+                            <span>
+                              <span>
+                                <button
+                                  className="css-1sgldz e1i4ski80"
+                                  onClick={[Function]}
+                                  onMouseEnter={[Function]}
+                                  onMouseLeave={[Function]}
+                                >
+                                  {
+                                </button>
+                                <button
+                                  className="css-1sgldz e1i4ski80"
+                                  onClick={[Function]}
+                                >
+                                  ...
+                                </button>
+                                <div
+                                  style={
+                                    Object {
+                                      "marginLeft": 15,
+                                    }
+                                  }
+                                >
+                                  <span
+                                    style={
+                                      Object {
+                                        "whiteSpace": "nowrap",
+                                      }
+                                    }
+                                  >
+                                    columnId
+                                    
+                                    :
+                                     
+                                  </span>
+                                  <span>
+                                    string
+                                  </span>
+                                  ,
+                                </div>
+                                <div
+                                  style={
+                                    Object {
+                                      "marginLeft": 15,
+                                    }
+                                  }
+                                >
+                                  <span
+                                    style={
+                                      Object {
+                                        "whiteSpace": "nowrap",
+                                      }
+                                    }
+                                  >
+                                    value
+                                    
+                                    :
+                                     
+                                  </span>
+                                  <span>
+                                    string
+                                  </span>
+                                  ,
+                                </div>
+                                <button
+                                  className="css-1sgldz e1i4ski80"
+                                  onClick={[Function]}
+                                  onMouseEnter={[Function]}
+                                  onMouseLeave={[Function]}
+                                >
+                                  }
+                                </button>
+                              </span>
+                            </span>
+                            <span>
+                              ]
+                            </span>
+                          </span>
+                          ,
+                        </div>
+                        <div
+                          style={
+                            Object {
+                              "marginLeft": 15,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "whiteSpace": "nowrap",
+                              }
+                            }
+                          >
+                            toolbar
+                            ?
+                            :
+                             
+                          </span>
+                          <span>
+                            <button
+                              className="css-1sgldz e1i4ski80"
+                              onClick={[Function]}
+                              onMouseEnter={[Function]}
+                              onMouseLeave={[Function]}
+                            >
+                              {
+                            </button>
+                            <button
+                              className="css-1sgldz e1i4ski80"
+                              onClick={[Function]}
+                            >
+                              ...
+                            </button>
+                            <div
+                              style={
+                                Object {
+                                  "marginLeft": 30,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                              >
+                                activeBar
+                                ?
+                                :
+                                 
+                              </span>
+                              <span>
+                                oneOf 'filter'
+                              </span>
+                              ,
+                            </div>
+                            <div
+                              style={
+                                Object {
+                                  "marginLeft": 30,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                              >
+                                batchActions
+                                ?
+                                :
+                                 
+                              </span>
+                              <span>
+                                <span>
+                                  [
+                                </span>
+                                <span>
+                                  <span>
+                                    <button
+                                      className="css-1sgldz e1i4ski80"
+                                      onClick={[Function]}
+                                      onMouseEnter={[Function]}
+                                      onMouseLeave={[Function]}
+                                    >
+                                      {
+                                    </button>
+                                    <button
+                                      className="css-1sgldz e1i4ski80"
+                                      onClick={[Function]}
+                                    >
+                                      ...
+                                    </button>
+                                    <div
+                                      style={
+                                        Object {
+                                          "marginLeft": 15,
+                                        }
+                                      }
+                                    >
+                                      <span
+                                        style={
+                                          Object {
+                                            "whiteSpace": "nowrap",
+                                          }
+                                        }
+                                      >
+                                        id
+                                        
+                                        :
+                                         
+                                      </span>
+                                      <span>
+                                        string
+                                      </span>
+                                      ,
+                                    </div>
+                                    <div
+                                      style={
+                                        Object {
+                                          "marginLeft": 15,
+                                        }
+                                      }
+                                    >
+                                      <span
+                                        style={
+                                          Object {
+                                            "whiteSpace": "nowrap",
+                                          }
+                                        }
+                                      >
+                                        labelText
+                                        
+                                        :
+                                         
+                                      </span>
+                                      <span>
+                                        string
+                                      </span>
+                                      ,
+                                    </div>
+                                    <div
+                                      style={
+                                        Object {
+                                          "marginLeft": 15,
+                                        }
+                                      }
+                                    >
+                                      <span
+                                        style={
+                                          Object {
+                                            "whiteSpace": "nowrap",
+                                          }
+                                        }
+                                      >
+                                        icon
+                                        ?
+                                        :
+                                         
+                                      </span>
+                                      <span>
+                                        <span>
+                                          <button
+                                            className="css-1sgldz e1i4ski80"
+                                            onClick={[Function]}
+                                            onMouseEnter={[Function]}
+                                            onMouseLeave={[Function]}
+                                          >
+                                            {
+                                          </button>
+                                          <button
+                                            className="css-1sgldz e1i4ski80"
+                                            onClick={[Function]}
+                                          >
+                                            ...
+                                          </button>
+                                          <div
+                                            style={
+                                              Object {
+                                                "marginLeft": 15,
+                                              }
+                                            }
+                                          >
+                                            <span
+                                              style={
+                                                Object {
+                                                  "whiteSpace": "nowrap",
+                                                }
+                                              }
+                                            >
+                                              width
+                                              ?
+                                              :
+                                               
+                                            </span>
+                                            <span>
+                                              string
+                                            </span>
+                                            ,
+                                          </div>
+                                          <div
+                                            style={
+                                              Object {
+                                                "marginLeft": 15,
+                                              }
+                                            }
+                                          >
+                                            <span
+                                              style={
+                                                Object {
+                                                  "whiteSpace": "nowrap",
+                                                }
+                                              }
+                                            >
+                                              height
+                                              ?
+                                              :
+                                               
+                                            </span>
+                                            <span>
+                                              string
+                                            </span>
+                                            ,
+                                          </div>
+                                          <div
+                                            style={
+                                              Object {
+                                                "marginLeft": 15,
+                                              }
+                                            }
+                                          >
+                                            <span
+                                              style={
+                                                Object {
+                                                  "whiteSpace": "nowrap",
+                                                }
+                                              }
+                                            >
+                                              viewBox
+                                              
+                                              :
+                                               
+                                            </span>
+                                            <span>
+                                              string
+                                            </span>
+                                            ,
+                                          </div>
+                                          <div
+                                            style={
+                                              Object {
+                                                "marginLeft": 15,
+                                              }
+                                            }
+                                          >
+                                            <span
+                                              style={
+                                                Object {
+                                                  "whiteSpace": "nowrap",
+                                                }
+                                              }
+                                            >
+                                              svgData
+                                              
+                                              :
+                                               
+                                            </span>
+                                            <span>
+                                              object
+                                            </span>
+                                            ,
+                                          </div>
+                                          <button
+                                            className="css-1sgldz e1i4ski80"
+                                            onClick={[Function]}
+                                            onMouseEnter={[Function]}
+                                            onMouseLeave={[Function]}
+                                          >
+                                            }
+                                          </button>
+                                        </span>
+                                        <span>
+                                           | 
+                                        </span>
+                                        <span>
+                                          string
+                                        </span>
+                                      </span>
+                                      ,
+                                    </div>
+                                    <div
+                                      style={
+                                        Object {
+                                          "marginLeft": 15,
+                                        }
+                                      }
+                                    >
+                                      <span
+                                        style={
+                                          Object {
+                                            "whiteSpace": "nowrap",
+                                          }
+                                        }
+                                      >
+                                        iconDescription
+                                        ?
+                                        :
+                                         
+                                      </span>
+                                      <span>
+                                        string
+                                      </span>
+                                      ,
+                                    </div>
+                                    <button
+                                      className="css-1sgldz e1i4ski80"
+                                      onClick={[Function]}
+                                      onMouseEnter={[Function]}
+                                      onMouseLeave={[Function]}
+                                    >
+                                      }
+                                    </button>
+                                  </span>
+                                </span>
+                                <span>
+                                  ]
+                                </span>
+                              </span>
+                              ,
+                            </div>
+                            <button
+                              className="css-1sgldz e1i4ski80"
+                              onClick={[Function]}
+                              onMouseEnter={[Function]}
+                              onMouseLeave={[Function]}
+                            >
+                              }
+                            </button>
+                          </span>
+                          ,
+                        </div>
+                        <div
+                          style={
+                            Object {
+                              "marginLeft": 15,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "whiteSpace": "nowrap",
+                              }
+                            }
+                          >
+                            table
+                            ?
+                            :
+                             
+                          </span>
+                          <span>
+                            <button
+                              className="css-1sgldz e1i4ski80"
+                              onClick={[Function]}
+                              onMouseEnter={[Function]}
+                              onMouseLeave={[Function]}
+                            >
+                              {
+                            </button>
+                            <button
+                              className="css-1sgldz e1i4ski80"
+                              onClick={[Function]}
+                            >
+                              ...
+                            </button>
+                            <div
+                              style={
+                                Object {
+                                  "marginLeft": 30,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                              >
+                                isSelectAllSelected
+                                ?
+                                :
+                                 
+                              </span>
+                              <span>
+                                bool
+                              </span>
+                              ,
+                            </div>
+                            <div
+                              style={
+                                Object {
+                                  "marginLeft": 30,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                              >
+                                isSelectAllIndeterminate
+                                ?
+                                :
+                                 
+                              </span>
+                              <span>
+                                bool
+                              </span>
+                              ,
+                            </div>
+                            <div
+                              style={
+                                Object {
+                                  "marginLeft": 30,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                              >
+                                selectedIds
+                                ?
+                                :
+                                 
+                              </span>
+                              <span>
+                                <span>
+                                  [
+                                </span>
+                                <span>
+                                  <span>
+                                    string
+                                  </span>
+                                </span>
+                                <span>
+                                  ]
+                                </span>
+                              </span>
+                              ,
+                            </div>
+                            <div
+                              style={
+                                Object {
+                                  "marginLeft": 30,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                              >
+                                sort
+                                ?
+                                :
+                                 
+                              </span>
+                              <span>
+                                <button
+                                  className="css-1sgldz e1i4ski80"
+                                  onClick={[Function]}
+                                  onMouseEnter={[Function]}
+                                  onMouseLeave={[Function]}
+                                >
+                                  {
+                                </button>
+                                <button
+                                  className="css-1sgldz e1i4ski80"
+                                  onClick={[Function]}
+                                >
+                                  ...
+                                </button>
+                                <div
+                                  style={
+                                    Object {
+                                      "marginLeft": 45,
+                                    }
+                                  }
+                                >
+                                  <span
+                                    style={
+                                      Object {
+                                        "whiteSpace": "nowrap",
+                                      }
+                                    }
+                                  >
+                                    columnId
+                                    ?
+                                    :
+                                     
+                                  </span>
+                                  <span>
+                                    string
+                                  </span>
+                                  ,
+                                </div>
+                                <div
+                                  style={
+                                    Object {
+                                      "marginLeft": 45,
+                                    }
+                                  }
+                                >
+                                  <span
+                                    style={
+                                      Object {
+                                        "whiteSpace": "nowrap",
+                                      }
+                                    }
+                                  >
+                                    direction
+                                    ?
+                                    :
+                                     
+                                  </span>
+                                  <span>
+                                    oneOf 'NONE' | 'ASC' | 'DESC'
+                                  </span>
+                                  ,
+                                </div>
+                                <button
+                                  className="css-1sgldz e1i4ski80"
+                                  onClick={[Function]}
+                                  onMouseEnter={[Function]}
+                                  onMouseLeave={[Function]}
+                                >
+                                  }
+                                </button>
+                              </span>
+                              ,
+                            </div>
+                            <div
+                              style={
+                                Object {
+                                  "marginLeft": 30,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                              >
+                                expandedRows
+                                ?
+                                :
+                                 
+                              </span>
+                              <span>
+                                <span>
+                                  [
+                                </span>
+                                <span>
+                                  <span>
+                                    <button
+                                      className="css-1sgldz e1i4ski80"
+                                      onClick={[Function]}
+                                      onMouseEnter={[Function]}
+                                      onMouseLeave={[Function]}
+                                    >
+                                      {
+                                    </button>
+                                    <button
+                                      className="css-1sgldz e1i4ski80"
+                                      onClick={[Function]}
+                                    >
+                                      ...
+                                    </button>
+                                    <div
+                                      style={
+                                        Object {
+                                          "marginLeft": 15,
+                                        }
+                                      }
+                                    >
+                                      <span
+                                        style={
+                                          Object {
+                                            "whiteSpace": "nowrap",
+                                          }
+                                        }
+                                      >
+                                        rowId
+                                        ?
+                                        :
+                                         
+                                      </span>
+                                      <span>
+                                        string
+                                      </span>
+                                      ,
+                                    </div>
+                                    <div
+                                      style={
+                                        Object {
+                                          "marginLeft": 15,
+                                        }
+                                      }
+                                    >
+                                      <span
+                                        style={
+                                          Object {
+                                            "whiteSpace": "nowrap",
+                                          }
+                                        }
+                                      >
+                                        content
+                                        ?
+                                        :
+                                         
+                                      </span>
+                                      <span>
+                                        element
+                                      </span>
+                                      ,
+                                    </div>
+                                    <button
+                                      className="css-1sgldz e1i4ski80"
+                                      onClick={[Function]}
+                                      onMouseEnter={[Function]}
+                                      onMouseLeave={[Function]}
+                                    >
+                                      }
+                                    </button>
+                                  </span>
+                                </span>
+                                <span>
+                                  ]
+                                </span>
+                              </span>
+                              ,
+                            </div>
+                            <button
+                              className="css-1sgldz e1i4ski80"
+                              onClick={[Function]}
+                              onMouseEnter={[Function]}
+                              onMouseLeave={[Function]}
+                            >
+                              }
+                            </button>
+                          </span>
+                          ,
+                        </div>
+                        <button
+                          className="css-1sgldz e1i4ski80"
+                          onClick={[Function]}
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
+                        >
+                          }
+                        </button>
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      -
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#22a",
+                            "wordBreak": "break-word",
+                          }
+                        }
+                      >
+                        {
+  pagination: {
+    pageSize: 10,
+    pageSizes:…
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      Initial state of the table, should be updated via a local state wrapper component implementation or via a central store/redux
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      actions
+                    </td>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      <span>
+                        <button
+                          className="css-1sgldz e1i4ski80"
+                          onClick={[Function]}
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
+                        >
+                          {
+                        </button>
+                        <button
+                          className="css-1sgldz e1i4ski80"
+                          onClick={[Function]}
+                        >
+                          ...
+                        </button>
+                        <div
+                          style={
+                            Object {
+                              "marginLeft": 15,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "whiteSpace": "nowrap",
+                              }
+                            }
+                          >
+                            pagination
+                            ?
+                            :
+                             
+                          </span>
+                          <span>
+                            <button
+                              className="css-1sgldz e1i4ski80"
+                              onClick={[Function]}
+                              onMouseEnter={[Function]}
+                              onMouseLeave={[Function]}
+                            >
+                              {
+                            </button>
+                            <button
+                              className="css-1sgldz e1i4ski80"
+                              onClick={[Function]}
+                            >
+                              ...
+                            </button>
+                            <div
+                              style={
+                                Object {
+                                  "marginLeft": 30,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                              >
+                                onChange
+                                ?
+                                :
+                                 
+                              </span>
+                              <span>
+                                func
+                              </span>
+                              ,
+                            </div>
+                            <button
+                              className="css-1sgldz e1i4ski80"
+                              onClick={[Function]}
+                              onMouseEnter={[Function]}
+                              onMouseLeave={[Function]}
+                            >
+                              }
+                            </button>
+                          </span>
+                          ,
+                        </div>
+                        <div
+                          style={
+                            Object {
+                              "marginLeft": 15,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "whiteSpace": "nowrap",
+                              }
+                            }
+                          >
+                            toolbar
+                            ?
+                            :
+                             
+                          </span>
+                          <span>
+                            <button
+                              className="css-1sgldz e1i4ski80"
+                              onClick={[Function]}
+                              onMouseEnter={[Function]}
+                              onMouseLeave={[Function]}
+                            >
+                              {
+                            </button>
+                            <button
+                              className="css-1sgldz e1i4ski80"
+                              onClick={[Function]}
+                            >
+                              ...
+                            </button>
+                            <div
+                              style={
+                                Object {
+                                  "marginLeft": 30,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                              >
+                                onApplyFilter
+                                ?
+                                :
+                                 
+                              </span>
+                              <span>
+                                func
+                              </span>
+                              ,
+                            </div>
+                            <div
+                              style={
+                                Object {
+                                  "marginLeft": 30,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                              >
+                                onToggleFilter
+                                ?
+                                :
+                                 
+                              </span>
+                              <span>
+                                func
+                              </span>
+                              ,
+                            </div>
+                            <div
+                              style={
+                                Object {
+                                  "marginLeft": 30,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                              >
+                                onClearAllFilters
+                                ?
+                                :
+                                 
+                              </span>
+                              <span>
+                                func
+                              </span>
+                              ,
+                            </div>
+                            <div
+                              style={
+                                Object {
+                                  "marginLeft": 30,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                              >
+                                onCancelBatchAction
+                                ?
+                                :
+                                 
+                              </span>
+                              <span>
+                                func
+                              </span>
+                              ,
+                            </div>
+                            <div
+                              style={
+                                Object {
+                                  "marginLeft": 30,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                              >
+                                onApplyBatchAction
+                                ?
+                                :
+                                 
+                              </span>
+                              <span>
+                                func
+                              </span>
+                              ,
+                            </div>
+                            <button
+                              className="css-1sgldz e1i4ski80"
+                              onClick={[Function]}
+                              onMouseEnter={[Function]}
+                              onMouseLeave={[Function]}
+                            >
+                              }
+                            </button>
+                          </span>
+                          ,
+                        </div>
+                        <div
+                          style={
+                            Object {
+                              "marginLeft": 15,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "whiteSpace": "nowrap",
+                              }
+                            }
+                          >
+                            table
+                            
+                            :
+                             
+                          </span>
+                          <span>
+                            <button
+                              className="css-1sgldz e1i4ski80"
+                              onClick={[Function]}
+                              onMouseEnter={[Function]}
+                              onMouseLeave={[Function]}
+                            >
+                              {
+                            </button>
+                            <button
+                              className="css-1sgldz e1i4ski80"
+                              onClick={[Function]}
+                            >
+                              ...
+                            </button>
+                            <div
+                              style={
+                                Object {
+                                  "marginLeft": 30,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                              >
+                                onRowSelected
+                                ?
+                                :
+                                 
+                              </span>
+                              <span>
+                                func
+                              </span>
+                              ,
+                            </div>
+                            <div
+                              style={
+                                Object {
+                                  "marginLeft": 30,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                              >
+                                onRowExpanded
+                                ?
+                                :
+                                 
+                              </span>
+                              <span>
+                                func
+                              </span>
+                              ,
+                            </div>
+                            <div
+                              style={
+                                Object {
+                                  "marginLeft": 30,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                              >
+                                onSelectAll
+                                ?
+                                :
+                                 
+                              </span>
+                              <span>
+                                func
+                              </span>
+                              ,
+                            </div>
+                            <div
+                              style={
+                                Object {
+                                  "marginLeft": 30,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                              >
+                                onChangeSort
+                                ?
+                                :
+                                 
+                              </span>
+                              <span>
+                                func
+                              </span>
+                              ,
+                            </div>
+                            <div
+                              style={
+                                Object {
+                                  "marginLeft": 30,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                              >
+                                onApplyRowAction
+                                ?
+                                :
+                                 
+                              </span>
+                              <span>
+                                func
+                              </span>
+                              ,
+                            </div>
+                            <div
+                              style={
+                                Object {
+                                  "marginLeft": 30,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                              >
+                                onDefaultEmptyCallToAction
+                                ?
+                                :
+                                 
+                              </span>
+                              <span>
+                                func
+                              </span>
+                              ,
+                            </div>
+                            <button
+                              className="css-1sgldz e1i4ski80"
+                              onClick={[Function]}
+                              onMouseEnter={[Function]}
+                              onMouseLeave={[Function]}
+                            >
+                              }
+                            </button>
+                          </span>
+                          ,
+                        </div>
+                        <button
+                          className="css-1sgldz e1i4ski80"
+                          onClick={[Function]}
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
+                        >
+                          }
+                        </button>
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      -
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#22a",
+                            "wordBreak": "break-word",
+                          }
+                        }
+                      >
+                        {
+  pagination: { onChange: defaultFunction('actio…
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      Callbacks for actions of the table, can be used to update state in wrapper component to update \`view\` props
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      columns
+                    </td>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      <span>
+                        <span>
+                          [
+                        </span>
+                        <span>
+                          <span>
+                            <button
+                              className="css-1sgldz e1i4ski80"
+                              onClick={[Function]}
+                              onMouseEnter={[Function]}
+                              onMouseLeave={[Function]}
+                            >
+                              {
+                            </button>
+                            <button
+                              className="css-1sgldz e1i4ski80"
+                              onClick={[Function]}
+                            >
+                              ...
+                            </button>
+                            <div
+                              style={
+                                Object {
+                                  "marginLeft": 15,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                              >
+                                id
+                                
+                                :
+                                 
+                              </span>
+                              <span>
+                                string
+                              </span>
+                              ,
+                            </div>
+                            <div
+                              style={
+                                Object {
+                                  "marginLeft": 15,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                              >
+                                name
+                                
+                                :
+                                 
+                              </span>
+                              <span>
+                                string
+                              </span>
+                              ,
+                            </div>
+                            <div
+                              style={
+                                Object {
+                                  "marginLeft": 15,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                              >
+                                size
+                                
+                                :
+                                 
+                              </span>
+                              <span>
+                                number
+                              </span>
+                              ,
+                            </div>
+                            <div
+                              style={
+                                Object {
+                                  "marginLeft": 15,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                              >
+                                isSortable
+                                ?
+                                :
+                                 
+                              </span>
+                              <span>
+                                bool
+                              </span>
+                              ,
+                            </div>
+                            <div
+                              style={
+                                Object {
+                                  "marginLeft": 15,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                              >
+                                filter
+                                ?
+                                :
+                                 
+                              </span>
+                              <span>
+                                <button
+                                  className="css-1sgldz e1i4ski80"
+                                  onClick={[Function]}
+                                  onMouseEnter={[Function]}
+                                  onMouseLeave={[Function]}
+                                >
+                                  {
+                                </button>
+                                <button
+                                  className="css-1sgldz e1i4ski80"
+                                  onClick={[Function]}
+                                >
+                                  ...
+                                </button>
+                                <div
+                                  style={
+                                    Object {
+                                      "marginLeft": 30,
+                                    }
+                                  }
+                                >
+                                  <span
+                                    style={
+                                      Object {
+                                        "whiteSpace": "nowrap",
+                                      }
+                                    }
+                                  >
+                                    placeholderText
+                                    ?
+                                    :
+                                     
+                                  </span>
+                                  <span>
+                                    string
+                                  </span>
+                                  ,
+                                </div>
+                                <div
+                                  style={
+                                    Object {
+                                      "marginLeft": 30,
+                                    }
+                                  }
+                                >
+                                  <span
+                                    style={
+                                      Object {
+                                        "whiteSpace": "nowrap",
+                                      }
+                                    }
+                                  >
+                                    options
+                                    ?
+                                    :
+                                     
+                                  </span>
+                                  <span>
+                                    <span>
+                                      [
+                                    </span>
+                                    <span>
+                                      <span>
+                                        <button
+                                          className="css-1sgldz e1i4ski80"
+                                          onClick={[Function]}
+                                          onMouseEnter={[Function]}
+                                          onMouseLeave={[Function]}
+                                        >
+                                          {
+                                        </button>
+                                        <button
+                                          className="css-1sgldz e1i4ski80"
+                                          onClick={[Function]}
+                                        >
+                                          ...
+                                        </button>
+                                        <div
+                                          style={
+                                            Object {
+                                              "marginLeft": 15,
+                                            }
+                                          }
+                                        >
+                                          <span
+                                            style={
+                                              Object {
+                                                "whiteSpace": "nowrap",
+                                              }
+                                            }
+                                          >
+                                            id
+                                            
+                                            :
+                                             
+                                          </span>
+                                          <span>
+                                            string
+                                          </span>
+                                          ,
+                                        </div>
+                                        <div
+                                          style={
+                                            Object {
+                                              "marginLeft": 15,
+                                            }
+                                          }
+                                        >
+                                          <span
+                                            style={
+                                              Object {
+                                                "whiteSpace": "nowrap",
+                                              }
+                                            }
+                                          >
+                                            text
+                                            
+                                            :
+                                             
+                                          </span>
+                                          <span>
+                                            string
+                                          </span>
+                                          ,
+                                        </div>
+                                        <button
+                                          className="css-1sgldz e1i4ski80"
+                                          onClick={[Function]}
+                                          onMouseEnter={[Function]}
+                                          onMouseLeave={[Function]}
+                                        >
+                                          }
+                                        </button>
+                                      </span>
+                                    </span>
+                                    <span>
+                                      ]
+                                    </span>
+                                  </span>
+                                  ,
+                                </div>
+                                <button
+                                  className="css-1sgldz e1i4ski80"
+                                  onClick={[Function]}
+                                  onMouseEnter={[Function]}
+                                  onMouseLeave={[Function]}
+                                >
+                                  }
+                                </button>
+                              </span>
+                              ,
+                            </div>
+                            <button
+                              className="css-1sgldz e1i4ski80"
+                              onClick={[Function]}
+                              onMouseEnter={[Function]}
+                              onMouseLeave={[Function]}
+                            >
+                              }
+                            </button>
+                          </span>
+                        </span>
+                        <span>
+                          ]
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      yes
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      -
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      Specify the properties of each column in the table
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      data
+                    </td>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      <span>
+                        <span>
+                          [
+                        </span>
+                        <span>
+                          <span>
+                            <button
+                              className="css-1sgldz e1i4ski80"
+                              onClick={[Function]}
+                              onMouseEnter={[Function]}
+                              onMouseLeave={[Function]}
+                            >
+                              {
+                            </button>
+                            <button
+                              className="css-1sgldz e1i4ski80"
+                              onClick={[Function]}
+                            >
+                              ...
+                            </button>
+                            <div
+                              style={
+                                Object {
+                                  "marginLeft": 15,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                              >
+                                id
+                                
+                                :
+                                 
+                              </span>
+                              <span>
+                                string
+                              </span>
+                              ,
+                            </div>
+                            <div
+                              style={
+                                Object {
+                                  "marginLeft": 15,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                              >
+                                values
+                                
+                                :
+                                 
+                              </span>
+                              <span>
+                                object
+                              </span>
+                              ,
+                            </div>
+                            <div
+                              style={
+                                Object {
+                                  "marginLeft": 15,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                              >
+                                rowActions
+                                ?
+                                :
+                                 
+                              </span>
+                              <span>
+                                <span>
+                                  [
+                                </span>
+                                <span>
+                                  <span>
+                                    <button
+                                      className="css-1sgldz e1i4ski80"
+                                      onClick={[Function]}
+                                      onMouseEnter={[Function]}
+                                      onMouseLeave={[Function]}
+                                    >
+                                      {
+                                    </button>
+                                    <button
+                                      className="css-1sgldz e1i4ski80"
+                                      onClick={[Function]}
+                                    >
+                                      ...
+                                    </button>
+                                    <div
+                                      style={
+                                        Object {
+                                          "marginLeft": 15,
+                                        }
+                                      }
+                                    >
+                                      <span
+                                        style={
+                                          Object {
+                                            "whiteSpace": "nowrap",
+                                          }
+                                        }
+                                      >
+                                        id
+                                        
+                                        :
+                                         
+                                      </span>
+                                      <span>
+                                        string
+                                      </span>
+                                      ,
+                                    </div>
+                                    <div
+                                      style={
+                                        Object {
+                                          "marginLeft": 15,
+                                        }
+                                      }
+                                    >
+                                      <span
+                                        style={
+                                          Object {
+                                            "whiteSpace": "nowrap",
+                                          }
+                                        }
+                                      >
+                                        icon
+                                        
+                                        :
+                                         
+                                      </span>
+                                      <span>
+                                        string
+                                      </span>
+                                      ,
+                                    </div>
+                                    <div
+                                      style={
+                                        Object {
+                                          "marginLeft": 15,
+                                        }
+                                      }
+                                    >
+                                      <span
+                                        style={
+                                          Object {
+                                            "whiteSpace": "nowrap",
+                                          }
+                                        }
+                                      >
+                                        labelText
+                                        ?
+                                        :
+                                         
+                                      </span>
+                                      <span>
+                                        string
+                                      </span>
+                                      ,
+                                    </div>
+                                    <div
+                                      style={
+                                        Object {
+                                          "marginLeft": 15,
+                                        }
+                                      }
+                                    >
+                                      <span
+                                        style={
+                                          Object {
+                                            "whiteSpace": "nowrap",
+                                          }
+                                        }
+                                      >
+                                        disabled
+                                        ?
+                                        :
+                                         
+                                      </span>
+                                      <span>
+                                        bool
+                                      </span>
+                                      ,
+                                    </div>
+                                    <button
+                                      className="css-1sgldz e1i4ski80"
+                                      onClick={[Function]}
+                                      onMouseEnter={[Function]}
+                                      onMouseLeave={[Function]}
+                                    >
+                                      }
+                                    </button>
+                                  </span>
+                                </span>
+                                <span>
+                                  ]
+                                </span>
+                              </span>
+                              ,
+                            </div>
+                            <button
+                              className="css-1sgldz e1i4ski80"
+                              onClick={[Function]}
+                              onMouseEnter={[Function]}
+                              onMouseLeave={[Function]}
+                            >
+                              }
+                            </button>
+                          </span>
+                        </span>
+                        <span>
+                          ]
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      yes
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      -
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      Data for the body of the table
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>
@@ -34565,6 +37953,28 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                               >
                                 onSelectAll
                               </span>
+                              ,
+                              <span>
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  onDefaultEmptyCallToAction
+                                </span>
+                              </span>
+                              : 
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#170",
+                                  }
+                                }
+                              >
+                                onDefaultEmptyCallToAction
+                              </span>
                               }
                             </span>
                             }
@@ -35151,6 +38561,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                           </span>
                           <span>
                             bool
+                          </span>
+                          ,
+                        </div>
+                        <div
+                          style={
+                            Object {
+                              "marginLeft": 15,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "whiteSpace": "nowrap",
+                              }
+                            }
+                          >
+                            emptyTableContent
+                            ?
+                            :
+                             
+                          </span>
+                          <span>
+                            node
                           </span>
                           ,
                         </div>
@@ -36578,6 +40012,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                                 }
                               >
                                 onApplyRowAction
+                                ?
+                                :
+                                 
+                              </span>
+                              <span>
+                                func
+                              </span>
+                              ,
+                            </div>
+                            <div
+                              style={
+                                Object {
+                                  "marginLeft": 30,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                              >
+                                onDefaultEmptyCallToAction
                                 ?
                                 :
                                  
@@ -48765,6 +52223,28 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                               >
                                 onSelectAll
                               </span>
+                              ,
+                              <span>
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  onDefaultEmptyCallToAction
+                                </span>
+                              </span>
+                              : 
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#170",
+                                  }
+                                }
+                              >
+                                onDefaultEmptyCallToAction
+                              </span>
                               }
                             </span>
                             }
@@ -49373,6 +52853,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                           </span>
                           <span>
                             bool
+                          </span>
+                          ,
+                        </div>
+                        <div
+                          style={
+                            Object {
+                              "marginLeft": 15,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "whiteSpace": "nowrap",
+                              }
+                            }
+                          >
+                            emptyTableContent
+                            ?
+                            :
+                             
+                          </span>
+                          <span>
+                            node
                           </span>
                           ,
                         </div>
@@ -50800,6 +54304,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                                 }
                               >
                                 onApplyRowAction
+                                ?
+                                :
+                                 
+                              </span>
+                              <span>
+                                func
+                              </span>
+                              ,
+                            </div>
+                            <div
+                              style={
+                                Object {
+                                  "marginLeft": 30,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                              >
+                                onDefaultEmptyCallToAction
                                 ?
                                 :
                                  
@@ -53636,6 +57164,28 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with selec
                               >
                                 onSelectAll
                               </span>
+                              ,
+                              <span>
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  onDefaultEmptyCallToAction
+                                </span>
+                              </span>
+                              : 
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#170",
+                                  }
+                                }
+                              >
+                                onDefaultEmptyCallToAction
+                              </span>
                               }
                             </span>
                             }
@@ -54397,6 +57947,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with selec
                           </span>
                           <span>
                             bool
+                          </span>
+                          ,
+                        </div>
+                        <div
+                          style={
+                            Object {
+                              "marginLeft": 15,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "whiteSpace": "nowrap",
+                              }
+                            }
+                          >
+                            emptyTableContent
+                            ?
+                            :
+                             
+                          </span>
+                          <span>
+                            node
                           </span>
                           ,
                         </div>
@@ -55824,6 +59398,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with selec
                                 }
                               >
                                 onApplyRowAction
+                                ?
+                                :
+                                 
+                              </span>
+                              <span>
+                                func
+                              </span>
+                              ,
+                            </div>
+                            <div
+                              style={
+                                Object {
+                                  "marginLeft": 30,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                              >
+                                onDefaultEmptyCallToAction
                                 ?
                                 :
                                  
@@ -58688,6 +62286,28 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with sorti
                               >
                                 onSelectAll
                               </span>
+                              ,
+                              <span>
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  onDefaultEmptyCallToAction
+                                </span>
+                              </span>
+                              : 
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#170",
+                                  }
+                                }
+                              >
+                                onDefaultEmptyCallToAction
+                              </span>
                               }
                             </span>
                             }
@@ -59358,6 +62978,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with sorti
                           </span>
                           <span>
                             bool
+                          </span>
+                          ,
+                        </div>
+                        <div
+                          style={
+                            Object {
+                              "marginLeft": 15,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "whiteSpace": "nowrap",
+                              }
+                            }
+                          >
+                            emptyTableContent
+                            ?
+                            :
+                             
+                          </span>
+                          <span>
+                            node
                           </span>
                           ,
                         </div>
@@ -60785,6 +64429,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with sorti
                                 }
                               >
                                 onApplyRowAction
+                                ?
+                                :
+                                 
+                              </span>
+                              <span>
+                                func
+                              </span>
+                              ,
+                            </div>
+                            <div
+                              style={
+                                Object {
+                                  "marginLeft": 30,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                              >
+                                onDefaultEmptyCallToAction
                                 ?
                                 :
                                  

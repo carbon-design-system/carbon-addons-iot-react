@@ -105,6 +105,7 @@ const actions = {
   table: {
     onRowSelected: action('onRowSelected'),
     onSelectAll: action('onSelectAll'),
+    onDefaultEmptyCallToAction: action('onDefaultEmptyCallToAction'),
   },
 };
 
@@ -387,6 +388,9 @@ class StatefulTableWrapper extends Component {
         onApplyRowAction: (rowId, actionId) => {
           alert(`action "${actionId}" clicked for row "${rowId}"`); //eslint-disable-line
         },
+        onDefaultEmptyCallToAction: () => {
+          alert(`action onDefaultEmptyCallToAction clicked`); //eslint-disable-line
+        },
       },
     };
     return (
@@ -618,5 +622,12 @@ storiesOf('Table', module)
   })
   .add('with customized columns', () => <p>TODO - a couple columns selected and reordered</p>)
   .add('with no results', () => <p>TODO - empty state when filters applied and no results</p>)
-  .add('with no data', () => <p>TODO - empty state when no data provided</p>)
+  .add('with no data', () => (
+    <Table
+      columns={tableColumns}
+      data={[]}
+      actions={actions}
+      options={{ emptyMessage: 'There is no data here' }}
+    />
+  ))
   .add('is loading', () => <p>TODO - empty state when data is loading</p>);
