@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import merge from 'lodash/merge';
 import { Button, PaginationV2, DataTable, Checkbox } from 'carbon-components-react';
 import { iconFilter } from 'carbon-icons';
+import { Bee32 } from '@carbon/icons-react';
 
 import { COLORS } from '../../styles/styles';
 import { defaultFunction } from '../../utils/componentUtilityFunctions';
@@ -123,6 +124,19 @@ const propTypes = {
           content: PropTypes.element,
         })
       ),
+      emptyState: PropTypes.oneOfType([
+        PropTypes.shape({
+          message: PropTypes.string.isRequired,
+          /* Show a different message if no content is in the table matching the filters */
+          messageWithFilters: PropTypes.string,
+          /* If a label is not provided, no action button will be rendered */
+          buttonLabel: PropTypes.string,
+          /* Show a different utton label if no content is in the table matching the filters */
+          buttonLabelWithFilters: PropTypes.string,
+        }),
+        /* If a React element is provided, it will be rendered in place of the default */
+        PropTypes.element,
+      ]),
     }),
   }),
   /** Callbacks for actions of the table, can be used to update state in wrapper component to update `view` props */
@@ -145,6 +159,7 @@ const propTypes = {
       onSelectAll: PropTypes.func,
       onChangeSort: PropTypes.func,
       onApplyRowAction: PropTypes.func,
+      onEmptyStateAction: PropTypes.func,
     }).isRequired,
   }),
 };
@@ -163,7 +178,9 @@ const defaultProps = {
       pageSize: 10,
       pageSizes: [10, 20, 30],
       page: 1,
+      totalItems: 0,
     },
+    filters: [],
     toolbar: {
       batchActions: [],
     },
@@ -172,6 +189,12 @@ const defaultProps = {
       isSelectAllSelected: false,
       selectedIds: [],
       sort: {},
+      emptyState: {
+        message: 'There is no data',
+        messageWithFilters: 'No results match the current filters',
+        buttonLabel: 'Create some data',
+        buttonLabelWithFilters: 'Clear all filters',
+      },
     },
   },
   actions: {
@@ -184,6 +207,7 @@ const defaultProps = {
       onChangeSort: defaultFunction('actions.table.onChangeSort'),
       onRowExpanded: defaultFunction('actions.table.onRowExpanded'),
       onApplyRowAction: defaultFunction('actions.table.onApplyRowAction'),
+      onEmptyStateAction: defaultFunction('actions.table.onEmptyStateAction'),
     },
   },
 };
@@ -267,6 +291,30 @@ const StyledExpansionTableRow = styled(TableRow)`
   }
 `;
 
+const StyledEmptyTableRow = styled(TableRow)`
+  &&& {
+    &:hover td {
+      border: 1px solid ${COLORS.lightGrey};
+      background: inherit;
+    }
+    .empty-table-cell--default {
+      display: flex;
+      align-items: center;
+      justify-content: middle;
+      flex-direction: column;
+      padding: 3rem;
+
+      svg {
+        margin: 1rem;
+      }
+
+      & > * {
+        margin: 0.5rem;
+      }
+    }
+  }
+`;
+
 const Table = props => {
   const { id, columns, data, view, actions, options } = merge({}, defaultProps, props);
 
@@ -281,6 +329,11 @@ const Table = props => {
   const visibleData = data.slice(minItemInView, maxItemInView);
   const filterBarActive = options.hasFilter && view.toolbar && view.toolbar.activeBar === 'filter';
   const filterBarActiveStyle = { paddingTop: 16 };
+  const totalColumns =
+    columns.length +
+    (options.hasRowSelection ? 1 : 0) +
+    (options.hasRowExpansion ? 1 : 0) +
+    (options.hasRowActions ? 1 : 0);
   return (
     <div>
       <TableContainer>
@@ -373,106 +426,135 @@ const Table = props => {
               />
             )}
           </TableHead>
-          <TableBody>
-            {visibleData.map(i => {
-              const isRowExpanded =
-                view.table.expandedRows && view.table.expandedRows.find(j => j.rowId === i.id);
-              const rowExpansionContent = isRowExpanded
-                ? view.table.expandedRows.find(j => j.rowId === i.id).content
-                : null;
-              const rowSelectionCell = options.hasRowSelection ? (
-                <TableCell
-                  key={`${i.id}-row-selection-cell`}
-                  style={{ paddingBottom: '0.5rem' }}
-                  onClick={e => {
-                    actions.table.onRowSelected(i.id, !view.table.selectedIds.includes(i.id));
-                    e.preventDefault();
-                    e.stopPropagation();
-                  }}>
-                  {/* TODO: Replace checkbox with TableSelectRow component when onChange bug is fixed
+
+          {visibleData && visibleData.length ? (
+            <TableBody>
+              {visibleData.map(i => {
+                const isRowExpanded =
+                  view.table.expandedRows && view.table.expandedRows.find(j => j.rowId === i.id);
+                const rowExpansionContent = isRowExpanded
+                  ? view.table.expandedRows.find(j => j.rowId === i.id).content
+                  : null;
+                const rowSelectionCell = options.hasRowSelection ? (
+                  <TableCell
+                    key={`${i.id}-row-selection-cell`}
+                    style={{ paddingBottom: '0.5rem' }}
+                    onClick={e => {
+                      actions.table.onRowSelected(i.id, !view.table.selectedIds.includes(i.id));
+                      e.preventDefault();
+                      e.stopPropagation();
+                    }}>
+                    {/* TODO: Replace checkbox with TableSelectRow component when onChange bug is fixed
                     https://github.com/IBM/carbon-components-react/issues/1088
                     Also move onClick logic above into TableSelectRow
                     */}
-                  <Checkbox
-                    id={`select-row-${i.id}`}
-                    labelText="Select Row"
-                    hideLabel
-                    checked={view.table.selectedIds.includes(i.id)}
-                  />
-                </TableCell>
-              ) : null;
-              const rowActionsCell = expanded =>
-                i.rowActions && i.rowActions.length > 0 ? (
-                  <TableCell key={`${i.id}-row-actions-cell`}>
-                    <RowActionsContainer visible={expanded}>
-                      {i.rowActions.map(a => (
-                        <RowActionButton
-                          key={`${i.id}-row-actions-button-${a.id}`}
-                          kind="ghost"
-                          icon={a.icon}
-                          disabled={a.disabled}
-                          onClick={e => {
-                            actions.table.onApplyRowAction(i.id, a.id);
-                            e.preventDefault();
-                            e.stopPropagation();
-                          }}
-                          small
-                          nolabel={`${!a.labelText}`}
-                          rowexpanded={isRowExpanded}>
-                          {a.labelText}
-                        </RowActionButton>
-                      ))}
-                    </RowActionsContainer>
+                    <Checkbox
+                      id={`select-row-${i.id}`}
+                      labelText="Select Row"
+                      hideLabel
+                      checked={view.table.selectedIds.includes(i.id)}
+                    />
                   </TableCell>
                 ) : null;
-              const tableCells = (
-                <React.Fragment>
-                  {rowSelectionCell}
-                  {columns.map(col => (
-                    <TableCell key={col.id}>{i.values[col.id]}</TableCell>
-                  ))}
-                  {rowActionsCell(isRowExpanded)}
-                </React.Fragment>
-              );
-              return options.hasRowExpansion ? (
-                isRowExpanded ? (
-                  <React.Fragment key={i.id}>
-                    <StyledTableExpandRowExpanded
-                      id={`${id}-Row-${i.id}`}
-                      ariaLabel="Expand Row"
-                      isExpanded
-                      onExpand={() => actions.table.onRowExpanded(i.id, false)}
-                      onClick={() => actions.table.onRowExpanded(i.id, false)}>
-                      {tableCells}
-                    </StyledTableExpandRowExpanded>
-                    <StyledExpansionTableRow>
-                      <TableCell
-                        colSpan={
-                          columns.length +
-                          (options.hasRowExpansion ? 1 : 0) +
-                          (options.hasRowSelection ? 1 : 0) +
-                          (options.hasRowActions ? 1 : 0)
-                        }>
-                        {rowExpansionContent}
-                      </TableCell>
-                    </StyledExpansionTableRow>
+                const rowActionsCell = expanded =>
+                  i.rowActions && i.rowActions.length > 0 ? (
+                    <TableCell key={`${i.id}-row-actions-cell`}>
+                      <RowActionsContainer visible={expanded}>
+                        {i.rowActions.map(a => (
+                          <RowActionButton
+                            key={`${i.id}-row-actions-button-${a.id}`}
+                            kind="ghost"
+                            icon={a.icon}
+                            disabled={a.disabled}
+                            onClick={e => {
+                              actions.table.onApplyRowAction(i.id, a.id);
+                              e.preventDefault();
+                              e.stopPropagation();
+                            }}
+                            small
+                            nolabel={`${!a.labelText}`}
+                            rowexpanded={isRowExpanded}>
+                            {a.labelText}
+                          </RowActionButton>
+                        ))}
+                      </RowActionsContainer>
+                    </TableCell>
+                  ) : null;
+                const tableCells = (
+                  <React.Fragment>
+                    {rowSelectionCell}
+                    {columns.map(col => (
+                      <TableCell key={col.id}>{i.values[col.id]}</TableCell>
+                    ))}
+                    {rowActionsCell(isRowExpanded)}
                   </React.Fragment>
+                );
+                return options.hasRowExpansion ? (
+                  isRowExpanded ? (
+                    <React.Fragment key={i.id}>
+                      <StyledTableExpandRowExpanded
+                        id={`${id}-Row-${i.id}`}
+                        ariaLabel="Expand Row"
+                        isExpanded
+                        onExpand={() => actions.table.onRowExpanded(i.id, false)}
+                        onClick={() => actions.table.onRowExpanded(i.id, false)}>
+                        {tableCells}
+                      </StyledTableExpandRowExpanded>
+                      <StyledExpansionTableRow>
+                        <TableCell
+                          colSpan={
+                            columns.length +
+                            (options.hasRowExpansion ? 1 : 0) +
+                            (options.hasRowSelection ? 1 : 0) +
+                            (options.hasRowActions ? 1 : 0)
+                          }>
+                          {rowExpansionContent}
+                        </TableCell>
+                      </StyledExpansionTableRow>
+                    </React.Fragment>
+                  ) : (
+                    <StyledTableExpandRow
+                      id={`${id}-Row-${i.id}`}
+                      key={i.id}
+                      ariaLabel="Expand Row"
+                      isExpanded={false}
+                      onExpand={() => actions.table.onRowExpanded(i.id, true)}
+                      onClick={() => actions.table.onRowExpanded(i.id, true)}>
+                      {tableCells}
+                    </StyledTableExpandRow>
+                  )
                 ) : (
-                  <StyledTableExpandRow
-                    id={`${id}-Row-${i.id}`}
-                    key={i.id}
-                    ariaLabel="Expand Row"
-                    isExpanded={false}
-                    onExpand={() => actions.table.onRowExpanded(i.id, true)}
-                    onClick={() => actions.table.onRowExpanded(i.id, true)}>
-                    {tableCells}
-                  </StyledTableExpandRow>
-                )
-              ) : (
-                <TableRow key={i.id}>{tableCells}</TableRow>
-              );
-            })}
-          </TableBody>
+                  <TableRow key={i.id}>{tableCells}</TableRow>
+                );
+              })}
+            </TableBody>
+          ) : (
+            <TableBody>
+              <StyledEmptyTableRow>
+                <TableCell colSpan={totalColumns}>
+                  {view.table.emptyState.props ? (
+                    view.table.emptyState
+                  ) : (
+                    <div className="empty-table-cell--default">
+                      <Bee32 />
+                      <p>
+                        {view.filters.length > 0 && view.table.emptyState.messageWithFilters
+                          ? view.table.emptyState.messageWithFilters
+                          : view.table.emptyState.message}
+                      </p>
+                      {view.table.emptyState.buttonLabel && (
+                        <Button onClick={() => actions.table.onEmptyStateAction()}>
+                          {view.filters.length > 0 && view.table.emptyState.buttonLabelWithFilters
+                            ? view.table.emptyState.buttonLabelWithFilters
+                            : view.table.emptyState.buttonLabel}
+                        </Button>
+                      )}
+                    </div>
+                  )}
+                </TableCell>
+              </StyledEmptyTableRow>
+            </TableBody>
+          )}
         </CarbonTable>
       </TableContainer>
 
