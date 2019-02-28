@@ -4,13 +4,14 @@ import isNil from 'lodash/isNil';
 import styled from 'styled-components';
 import merge from 'lodash/merge';
 import { Button, PaginationV2, DataTable, Checkbox } from 'carbon-components-react';
-import { iconFilter } from 'carbon-icons';
+import { iconGrid, iconFilter } from 'carbon-icons';
 import { Bee32 } from '@carbon/icons-react';
 
 import { COLORS } from '../../styles/styles';
 import { defaultFunction } from '../../utils/componentUtilityFunctions';
 
 import FilterHeaderRow from './FilterHeaderRow/FilterHeaderRow';
+import ColumnHeaderRow from './ColumnHeaderRow/ColumnHeaderRow';
 
 const {
   Table: CarbonTable,
@@ -74,6 +75,7 @@ const propTypes = {
     hasRowExpansion: PropTypes.bool,
     hasRowActions: PropTypes.bool,
     hasFilter: PropTypes.bool,
+    hasColumnSelection: PropTypes.bool,
   }),
   /** Initial state of the table, should be updated via a local state wrapper component implementation or via a central store/redux */
   view: PropTypes.shape({
@@ -91,7 +93,7 @@ const propTypes = {
     ),
     toolbar: PropTypes.shape({
       /** Specify which header row to display, will display default header row if null */
-      activeBar: PropTypes.oneOf(['filter'], ['column']),
+      activeBar: PropTypes.oneOf(['filter', 'column']),
       /** Specify which batch actions to render in the batch action bar. If empty, no batch action toolbar will display */
       batchActions: PropTypes.arrayOf(
         PropTypes.shape({
@@ -118,6 +120,14 @@ const propTypes = {
         columnId: PropTypes.string,
         direction: PropTypes.oneOf(['NONE', 'ASC', 'DESC']),
       }),
+      /* Specify column ordering and visibility */
+      ordering: PropTypes.arrayOf(
+        PropTypes.shape({
+          columnId: PropTypes.string.isRequired,
+          /* Visibility of column in table, defaults to false */
+          isHidden: PropTypes.bool,
+        })
+      ),
       expandedRows: PropTypes.arrayOf(
         PropTypes.shape({
           rowId: PropTypes.string,
@@ -148,6 +158,7 @@ const propTypes = {
     toolbar: PropTypes.shape({
       onApplyFilter: PropTypes.func,
       onToggleFilter: PropTypes.func,
+      onToggleColumnSelection: PropTypes.func,
       /** Specify a callback for when the user clicks toolbar button to clear all filters. Recieves a parameter of the current filter values for each column */
       onClearAllFilters: PropTypes.func,
       onCancelBatchAction: PropTypes.func,
@@ -160,11 +171,12 @@ const propTypes = {
       onChangeSort: PropTypes.func,
       onApplyRowAction: PropTypes.func,
       onEmptyStateAction: PropTypes.func,
+      onChangeOrdering: PropTypes.func,
     }).isRequired,
   }),
 };
 
-const defaultProps = {
+const defaultProps = baseProps => ({
   id: 'Table',
   options: {
     hasPagination: false,
@@ -172,13 +184,14 @@ const defaultProps = {
     hasRowExpansion: false,
     hasRowActions: false,
     hasFilter: false,
+    hasColumnSelection: false,
   },
   view: {
     pagination: {
       pageSize: 10,
       pageSizes: [10, 20, 30],
       page: 1,
-      totalItems: 0,
+      totalItems: baseProps.data && baseProps.data.length,
     },
     filters: [],
     toolbar: {
@@ -189,6 +202,7 @@ const defaultProps = {
       isSelectAllSelected: false,
       selectedIds: [],
       sort: {},
+      ordering: baseProps.columns && baseProps.columns.map(i => ({ columnId: i.id })),
       emptyState: {
         message: 'There is no data',
         messageWithFilters: 'No results match the current filters',
@@ -200,6 +214,8 @@ const defaultProps = {
   actions: {
     pagination: { onChange: defaultFunction('actions.pagination.onChange') },
     toolbar: {
+      onToggleFilter: defaultFunction('actions.toolbar.onToggleFilter'),
+      onToggleColumnSelection: defaultFunction('actions.toolbar.onToggleColumnSelection'),
       onApplyBatchAction: defaultFunction('actions.toolbar.onApplyBatchAction'),
       onCancelBatchAction: defaultFunction('actions.toolbar.onCancelBatchAction'),
     },
@@ -208,9 +224,10 @@ const defaultProps = {
       onRowExpanded: defaultFunction('actions.table.onRowExpanded'),
       onApplyRowAction: defaultFunction('actions.table.onApplyRowAction'),
       onEmptyStateAction: defaultFunction('actions.table.onEmptyStateAction'),
+      onChangeOrdering: defaultFunction('actions.table.onChangeOrdering'),
     },
   },
-};
+});
 
 const RowActionsContainer = styled.div`
   & {
@@ -316,7 +333,7 @@ const StyledEmptyTableRow = styled(TableRow)`
 `;
 
 const Table = props => {
-  const { id, columns, data, view, actions, options } = merge({}, defaultProps, props);
+  const { id, columns, data, view, actions, options } = merge({}, defaultProps(props), props);
 
   const minItemInView =
     options.hasPagination && view.pagination
@@ -327,10 +344,15 @@ const Table = props => {
       ? view.pagination.page * view.pagination.pageSize
       : data.length;
   const visibleData = data.slice(minItemInView, maxItemInView);
+  const columnBarActive =
+    options.hasColumnSelection && view.toolbar && view.toolbar.activeBar === 'column';
   const filterBarActive = options.hasFilter && view.toolbar && view.toolbar.activeBar === 'filter';
   const filterBarActiveStyle = { paddingTop: 16 };
+  const visibleColumns = columns.filter(
+    c => !(view.table.ordering.find(o => o.columnId === c.id) || { isHidden: false }).isHidden
+  );
   const totalColumns =
-    columns.length +
+    visibleColumns.length +
     (options.hasRowSelection ? 1 : 0) +
     (options.hasRowExpansion ? 1 : 0) +
     (options.hasRowActions ? 1 : 0);
@@ -356,6 +378,14 @@ const Table = props => {
               <Button kind="secondary" onClick={actions.toolbar.onClearAllFilters} small>
                 Clear All Filters
               </Button>
+            ) : null}
+            {options.hasColumnSelection ? (
+              <TableToolbarAction
+                className="bx--btn--sm"
+                icon={iconGrid}
+                iconDescription="Column Selection"
+                onClick={actions.toolbar.onToggleColumnSelection}
+              />
             ) : null}
             {options.hasFilter ? (
               <TableToolbarAction
@@ -390,7 +420,7 @@ const Table = props => {
                   />
                 </TableHeader>
               ) : null}
-              {columns.map(column => {
+              {visibleColumns.map(column => {
                 const hasSort =
                   view.table && view.table.sort && view.table.sort.columnId === column.id;
                 return (
@@ -414,7 +444,7 @@ const Table = props => {
             </TableRow>
             {filterBarActive && (
               <FilterHeaderRow
-                columns={columns.map(column => ({
+                columns={visibleColumns.map(column => ({
                   ...column.filter,
                   id: column.id,
                   isFilterable: !isNil(column.filter),
@@ -423,6 +453,17 @@ const Table = props => {
                 filters={view.filters}
                 tableOptions={options}
                 onApplyFilter={actions.toolbar.onApplyFilter}
+              />
+            )}
+            {columnBarActive && (
+              <ColumnHeaderRow
+                columns={columns.map(column => ({
+                  id: column.id,
+                  name: column.name,
+                }))}
+                ordering={view.table.ordering}
+                tableOptions={options}
+                onChangeOrdering={actions.table.onChangeOrdering}
               />
             )}
           </TableHead>
@@ -483,7 +524,7 @@ const Table = props => {
                 const tableCells = (
                   <React.Fragment>
                     {rowSelectionCell}
-                    {columns.map(col => (
+                    {visibleColumns.map(col => (
                       <TableCell key={col.id}>{i.values[col.id]}</TableCell>
                     ))}
                     {rowActionsCell(isRowExpanded)}
@@ -501,15 +542,7 @@ const Table = props => {
                         {tableCells}
                       </StyledTableExpandRowExpanded>
                       <StyledExpansionTableRow>
-                        <TableCell
-                          colSpan={
-                            columns.length +
-                            (options.hasRowExpansion ? 1 : 0) +
-                            (options.hasRowSelection ? 1 : 0) +
-                            (options.hasRowActions ? 1 : 0)
-                          }>
-                          {rowExpansionContent}
-                        </TableCell>
+                        <TableCell colSpan={totalColumns}>{rowExpansionContent}</TableCell>
                       </StyledExpansionTableRow>
                     </React.Fragment>
                   ) : (
@@ -564,6 +597,6 @@ const Table = props => {
 };
 
 Table.propTypes = propTypes;
-Table.defaultProps = defaultProps;
+Table.defaultProps = defaultProps({});
 
 export default Table;

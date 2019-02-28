@@ -41,6 +41,11 @@ const tableColumns = [
     filter: { placeholderText: 'pick an option', options: selectData },
   },
   {
+    id: 'secretField',
+    name: 'Secret Information',
+    size: 1,
+  },
+  {
     id: 'number',
     name: 'Number',
     size: 1,
@@ -60,9 +65,16 @@ const words = [
   'pinocchio',
   'scott',
 ];
+const getLetter = index =>
+  'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'.charAt(index % 62);
 const getWord = (index, step = 1) => words[(step * index) % words.length];
 const getSentence = index =>
   `${getWord(index, 1)} ${getWord(index, 2)} ${getWord(index, 3)} ${index}`;
+const getString = (index, length) =>
+  Array(length)
+    .fill(0)
+    .map((i, idx) => getLetter(index * (idx + 14) * (idx + 1)))
+    .join('');
 
 const getNewRow = idx => ({
   id: `row-${idx}`,
@@ -70,6 +82,7 @@ const getNewRow = idx => ({
     string: getSentence(idx),
     date: new Date(100000000000 + 1000000000 * idx * idx).toISOString(),
     select: selectData[idx % 3].id,
+    secretField: getString(idx, 10),
     number: idx * idx,
   },
 });
@@ -99,6 +112,7 @@ const actions = {
   toolbar: {
     onApplyFilter: action('onApplyFilter'),
     onToggleFilter: action('onToggleFilter'),
+    onToggleColumnSelection: action('onToggleColumnSelection'),
     /** Specify a callback for when the user clicks toolbar button to clear all filters. Recieves a parameter of the current filter values for each column */
     onClearAllFilters: action('onClearAllFilters'),
     onCancelBatchAction: action('onCancelBatchAction'),
@@ -108,6 +122,7 @@ const actions = {
     onRowSelected: action('onRowSelected'),
     onSelectAll: action('onSelectAll'),
     onEmptyStateAction: action('onEmptyStateAction'),
+    onChangeOrdering: action('onChangeOrdering'),
   },
 };
 
@@ -142,6 +157,7 @@ class StatefulTableWrapper extends Component {
         hasRowSelection: true,
         hasRowExpansion: true,
         hasRowActions: true,
+        hasColumnSelection: true,
       },
       view: {
         filters: [
@@ -164,6 +180,10 @@ class StatefulTableWrapper extends Component {
           isSelectAllSelected: false,
           selectedIds: [],
           sort: undefined,
+          ordering: tableColumns.map(({ id }) => ({
+            columnId: id,
+            isHidden: id === 'secretField',
+          })),
           expandedRows: [],
         },
         toolbar: {
@@ -246,6 +266,21 @@ class StatefulTableWrapper extends Component {
                 toolbar: {
                   activeBar: {
                     $set: filterToggled,
+                  },
+                },
+              },
+            });
+          });
+        },
+        onToggleColumnSelection: () => {
+          this.setState(state => {
+            const columnSelectionToggled =
+              state.view.toolbar.activeBar === 'column' ? null : 'column';
+            return update(state, {
+              view: {
+                toolbar: {
+                  activeBar: {
+                    $set: columnSelectionToggled,
                   },
                 },
               },
@@ -428,6 +463,17 @@ class StatefulTableWrapper extends Component {
                 })
           );
         },
+        onChangeOrdering: ordering => {
+          this.setState(state =>
+            update(state, {
+              view: {
+                table: {
+                  ordering: { $set: ordering },
+                },
+              },
+            })
+          );
+        },
       },
     };
     return (
@@ -475,12 +521,6 @@ storiesOf('Table', module)
       }}
       view={{
         filters: [],
-        pagination: {
-          pageSize: 10,
-          pageSizes: [10, 20, 30],
-          page: 1,
-          totalItems: tableData.length,
-        },
         toolbar: {
           batchActions: [
             {
@@ -509,9 +549,6 @@ storiesOf('Table', module)
       }}
       view={{
         filters: [],
-        pagination: {
-          totalItems: tableData.length,
-        },
         table: {
           expandedRows: [
             {
@@ -554,9 +591,6 @@ storiesOf('Table', module)
       }}
       view={{
         filters: [],
-        pagination: {
-          totalItems: tableData.length,
-        },
         table: {
           expandedRows: [
             {
@@ -587,12 +621,6 @@ storiesOf('Table', module)
       }}
       view={{
         filters: [],
-        pagination: {
-          pageSize: 10,
-          pageSizes: [10, 20, 30],
-          page: 1,
-          totalItems: tableData.length,
-        },
         table: {
           sort: {
             columnId: 'string',
@@ -641,14 +669,7 @@ storiesOf('Table', module)
             },
           ],
           pagination: {
-            pageSize: 10,
-            pageSizes: [10, 20, 30],
-            page: 1,
             totalItems: filteredData.length,
-          },
-          table: {
-            isSelectAllSelected: false,
-            selectedIds: [],
           },
           toolbar: {
             activeBar: 'filter',
@@ -657,7 +678,29 @@ storiesOf('Table', module)
       />
     );
   })
-  .add('with customized columns', () => <p>TODO - a couple columns selected and reordered</p>)
+  .add('with customized columns', () => (
+    <Table
+      columns={tableColumns}
+      data={tableData}
+      actions={actions}
+      options={{
+        hasPagination: true,
+        hasRowSelection: true,
+        hasColumnSelection: true,
+      }}
+      view={{
+        table: {
+          ordering: tableColumns.map(c => ({
+            columnId: c.id,
+            isHidden: c.id === 'secretField' || c.id === 'date',
+          })),
+        },
+        toolbar: {
+          activeBar: 'column',
+        },
+      }}
+    />
+  ))
   .add('with no results', () => (
     <Table
       columns={tableColumns}
