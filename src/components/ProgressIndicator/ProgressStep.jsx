@@ -3,10 +3,25 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import classnames from 'classnames';
 
-const ProgressStep = ({ label, status, showLabel, onClick, className }) => {
+/**
+ * This is a temporary override of carbon to support clicking on the progress step
+ * It also adds the ability to hide labels and provide a custom stepWidth.  Put in a PR on the Carbon team
+ * so that most of this capability can be removed/refactored when we update to the latest Carbon.
+ * https://github.com/IBM/carbon-components-react/pull/1945
+ */
+const ProgressStep = ({
+  key,
+  label,
+  description,
+  current,
+  complete,
+  showLabel,
+  onClick,
+  className,
+}) => {
   const classNames = classnames('bx--progress-step', 'bx--progress-step--complete', className);
   const stepComplete = (
-    <li className={classNames}>
+    <li key={key} className={classNames}>
       <svg
         focusable="false"
         preserveAspectRatio="xMidYMid meet"
@@ -18,6 +33,7 @@ const ProgressStep = ({ label, status, showLabel, onClick, className }) => {
         onClick={onClick}>
         <path d="M8 1C4.1 1 1 4.1 1 8s3.1 7 7 7 7-3.1 7-7-3.1-7-7-7zm0 13c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6z" />
         <path d="M7 10.8L4.5 8.3l.8-.8L7 9.2l3.7-3.7.8.8z" />
+        <title>{description}</title>
       </svg>
       <button type="button" onClick={onClick} className="bx--progress-label">
         {showLabel ? label : null}
@@ -27,10 +43,11 @@ const ProgressStep = ({ label, status, showLabel, onClick, className }) => {
   );
 
   const stepCurrent = (
-    <li className={classNames}>
+    <li key={key} className={classNames}>
       <svg>
         <circle cx="12" cy="12" r="12" />
         <circle cx="12" cy="12" r="6" />
+        <title>{description}</title>
       </svg>
       <p className="bx--progress-label">{label}</p>
       <span className="bx--progress-line" />
@@ -38,9 +55,10 @@ const ProgressStep = ({ label, status, showLabel, onClick, className }) => {
   );
 
   const stepIncomplete = (
-    <li className={classNames}>
+    <li key={key} className={classNames}>
       <svg onClick={onClick}>
         <circle cx="12" cy="12" r="12" />
+        <title>{description}</title>
       </svg>
       <button type="button" onClick={onClick} className="bx--progress-label">
         {showLabel ? label : null}
@@ -49,20 +67,27 @@ const ProgressStep = ({ label, status, showLabel, onClick, className }) => {
     </li>
   );
 
-  if (status === 'complete') {
+  if (complete) {
     return stepComplete;
   }
-  if (status === 'current') {
+  if (current) {
     return stepCurrent;
   }
   return stepIncomplete;
 };
 
 ProgressStep.propTypes = {
-  id: PropTypes.string,
-  label: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
-  status: PropTypes.string,
+  key: PropTypes.string,
+  label: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
+  current: PropTypes.bool,
+  complete: PropTypes.bool,
+  description: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
+  /** NEW PROPS! optionally hide Labels */
   showLabel: PropTypes.bool,
+  /** attach the click handler here */
+  onClick: PropTypes.func,
+  /** Support dynamically passing a pixel width */
+  stepWidth: PropTypes.number,
 };
 
 /* Display name */

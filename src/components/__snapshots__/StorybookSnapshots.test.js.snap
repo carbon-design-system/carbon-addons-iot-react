@@ -14083,31 +14083,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots ProgressIndicato
   color: #3d70b2;
 }
 
-.c1.c1.c1 {
-  min-width: 136px;
-  width: 200;
-}
-
-.c1.c1.c1 .bx--progress-label {
-  cursor: pointer;
-}
-
-.c1.c1.c1 .bx--progress-step svg {
-  z-index: auto;
-  cursor: pointer;
-}
-
-.c1.c1.c1 button {
-  background: none;
-  margin: 0;
-  padding: 0;
-  border: none;
-  cursor: pointer;
-  font-size: 1rem;
-  text-align: left;
-  color: #5a6872;
-}
-
 <div
   className="storybook-container"
   style={
@@ -14128,7 +14103,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots ProgressIndicato
         }
       }
     >
-      <ul>
+      <ul
+        className="bx--progress"
+      >
         <li
           className="bx--progress-step bx--progress-step--complete c0"
         >
@@ -14143,6 +14120,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots ProgressIndicato
               cy="12"
               r="6"
             />
+            <title>
+              First step
+            </title>
           </svg>
           <p
             className="bx--progress-label"
@@ -14154,7 +14134,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots ProgressIndicato
           />
         </li>
         <li
-          className="bx--progress-step bx--progress-step--complete c1"
+          className="bx--progress-step bx--progress-step--complete c0"
         >
           <svg
             onClick={[Function]}
@@ -14164,6 +14144,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots ProgressIndicato
               cy="12"
               r="12"
             />
+            <title>
+              Second Step
+            </title>
           </svg>
           <button
             className="bx--progress-label"
@@ -14177,7 +14160,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots ProgressIndicato
           />
         </li>
         <li
-          className="bx--progress-step bx--progress-step--complete c1"
+          className="bx--progress-step bx--progress-step--complete c0"
         >
           <svg
             onClick={[Function]}
@@ -14187,6 +14170,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots ProgressIndicato
               cy="12"
               r="12"
             />
+            <title>
+              Third Step
+            </title>
           </svg>
           <button
             className="bx--progress-label"
@@ -14200,7 +14186,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots ProgressIndicato
           />
         </li>
         <li
-          className="bx--progress-step bx--progress-step--complete c1"
+          className="bx--progress-step bx--progress-step--complete c0"
         >
           <svg
             onClick={[Function]}
@@ -14210,6 +14196,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots ProgressIndicato
               cy="12"
               r="12"
             />
+            <title>
+              Fourth Step
+            </title>
           </svg>
           <button
             className="bx--progress-label"
@@ -14223,7 +14212,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots ProgressIndicato
           />
         </li>
         <li
-          className="bx--progress-step bx--progress-step--complete c1"
+          className="bx--progress-step bx--progress-step--complete c0"
         >
           <svg
             onClick={[Function]}
@@ -14233,6 +14222,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots ProgressIndicato
               cy="12"
               r="12"
             />
+            <title>
+              Fifth Step
+            </title>
           </svg>
           <button
             className="bx--progress-label"
@@ -14246,7 +14238,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots ProgressIndicato
           />
         </li>
         <li
-          className="bx--progress-step bx--progress-step--complete c1"
+          className="bx--progress-step bx--progress-step--complete c0"
         >
           <svg
             onClick={[Function]}
@@ -14256,6 +14248,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots ProgressIndicato
               cy="12"
               r="12"
             />
+            <title>
+              Sixth Step
+            </title>
           </svg>
           <button
             className="bx--progress-label"
@@ -75728,7 +75723,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots WizardModal basi
   min-height: 12.5rem;
 }
 
-.c3 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -75750,7 +75745,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots WizardModal basi
   justify-content: flex-end;
 }
 
-.c3 .modal-greedy-spacer {
+.c4 .modal-greedy-spacer {
   -webkit-box-flex: 2;
   -webkit-flex-grow: 2;
   -ms-flex-positive: 2;
@@ -75758,11 +75753,36 @@ exports[`Storybook Snapshot tests and console checks Storyshots WizardModal basi
   text-align: left;
 }
 
-.c4 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+}
+
+.c2.c2.c2 {
+  min-width: 136px;
+  width: 102;
+}
+
+.c2.c2.c2 .bx--progress-label {
+  cursor: pointer;
+}
+
+.c2.c2.c2 .bx--progress-step svg {
+  z-index: auto;
+  cursor: pointer;
+}
+
+.c2.c2.c2 button {
+  background: none;
+  margin: 0;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  text-align: left;
+  color: #3d70b2;
 }
 
 .c0 .bx--progress-step {
@@ -75773,7 +75793,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots WizardModal basi
   padding-top: 1rem;
 }
 
-.c2 {
+.c3 {
   padding-top: 1rem;
   padding-left: 1rem;
   padding-bottom: 7rem;
@@ -75881,7 +75901,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots WizardModal basi
               className="bx--progress"
             >
               <li
-                className="bx--progress-step bx--progress-step--current"
+                className="bx--progress-step bx--progress-step--complete c2"
               >
                 <svg>
                   <circle
@@ -75908,61 +75928,69 @@ exports[`Storybook Snapshot tests and console checks Storyshots WizardModal basi
                 />
               </li>
               <li
-                className="bx--progress-step bx--progress-step--incomplete"
+                className="bx--progress-step bx--progress-step--complete c2"
               >
-                <svg>
-                  <title>
-                    step2
-                  </title>
+                <svg
+                  onClick={[Function]}
+                >
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
                   />
+                  <title>
+                    step2
+                  </title>
                 </svg>
-                <p
+                <button
                   className="bx--progress-label"
+                  onClick={[Function]}
+                  type="button"
                 >
                   step2
-                </p>
+                </button>
                 <span
                   className="bx--progress-line"
                 />
               </li>
               <li
-                className="bx--progress-step bx--progress-step--incomplete"
+                className="bx--progress-step bx--progress-step--complete c2"
               >
-                <svg>
-                  <title>
-                    step3
-                  </title>
+                <svg
+                  onClick={[Function]}
+                >
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
                   />
+                  <title>
+                    step3
+                  </title>
                 </svg>
-                <p
+                <button
                   className="bx--progress-label"
+                  onClick={[Function]}
+                  type="button"
                 >
                   step3
-                </p>
+                </button>
                 <span
                   className="bx--progress-line"
                 />
               </li>
             </ul>
             <div
-              className="c2"
+              className="c3"
             >
               page 1
             </div>
           </div>
           <div
-            className="bx--modal-footer c3"
+            className="bx--modal-footer c4"
           >
             <div
-              className="c4"
+              className="c5"
             >
               <button
                 className="bx--btn bx--btn--secondary"
@@ -77033,7 +77061,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots WizardModal cust
   min-height: 12.5rem;
 }
 
-.c3 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -77055,7 +77083,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots WizardModal cust
   justify-content: flex-end;
 }
 
-.c3 .modal-greedy-spacer {
+.c4 .modal-greedy-spacer {
   -webkit-box-flex: 2;
   -webkit-flex-grow: 2;
   -ms-flex-positive: 2;
@@ -77063,11 +77091,36 @@ exports[`Storybook Snapshot tests and console checks Storyshots WizardModal cust
   text-align: left;
 }
 
-.c4 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+}
+
+.c2.c2.c2 {
+  min-width: 136px;
+  width: 102;
+}
+
+.c2.c2.c2 .bx--progress-label {
+  cursor: pointer;
+}
+
+.c2.c2.c2 .bx--progress-step svg {
+  z-index: auto;
+  cursor: pointer;
+}
+
+.c2.c2.c2 button {
+  background: none;
+  margin: 0;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  text-align: left;
+  color: #3d70b2;
 }
 
 .c0 .bx--progress-step {
@@ -77078,7 +77131,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots WizardModal cust
   padding-top: 1rem;
 }
 
-.c2 {
+.c3 {
   padding-top: 1rem;
   padding-left: 1rem;
   padding-bottom: 7rem;
@@ -77186,7 +77239,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots WizardModal cust
               className="bx--progress"
             >
               <li
-                className="bx--progress-step bx--progress-step--current"
+                className="bx--progress-step bx--progress-step--complete c2"
               >
                 <svg>
                   <circle
@@ -77213,61 +77266,69 @@ exports[`Storybook Snapshot tests and console checks Storyshots WizardModal cust
                 />
               </li>
               <li
-                className="bx--progress-step bx--progress-step--incomplete"
+                className="bx--progress-step bx--progress-step--complete c2"
               >
-                <svg>
-                  <title>
-                    step2
-                  </title>
+                <svg
+                  onClick={[Function]}
+                >
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
                   />
+                  <title>
+                    step2
+                  </title>
                 </svg>
-                <p
+                <button
                   className="bx--progress-label"
+                  onClick={[Function]}
+                  type="button"
                 >
                   step2
-                </p>
+                </button>
                 <span
                   className="bx--progress-line"
                 />
               </li>
               <li
-                className="bx--progress-step bx--progress-step--incomplete"
+                className="bx--progress-step bx--progress-step--complete c2"
               >
-                <svg>
-                  <title>
-                    step3
-                  </title>
+                <svg
+                  onClick={[Function]}
+                >
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
                   />
+                  <title>
+                    step3
+                  </title>
                 </svg>
-                <p
+                <button
                   className="bx--progress-label"
+                  onClick={[Function]}
+                  type="button"
                 >
                   step3
-                </p>
+                </button>
                 <span
                   className="bx--progress-line"
                 />
               </li>
             </ul>
             <div
-              className="c2"
+              className="c3"
             >
               page 1
             </div>
           </div>
           <div
-            className="bx--modal-footer c3"
+            className="bx--modal-footer c4"
           >
             <div
-              className="c4"
+              className="c5"
             >
               <button
                 className="bx--btn bx--btn--primary"
