@@ -339,7 +339,7 @@ class StatefulTableWrapper extends Component {
                       ? state.view.table.selectedIds.concat([id])
                       : state.view.table.selectedIds.filter(i => i !== id),
                   },
-                  isSelectIndeterminate: {
+                  isSelectAllIndeterminate: {
                     $set: !(isClearing || isSelectingAll),
                   },
                   isSelectAllSelected: {
@@ -361,7 +361,7 @@ class StatefulTableWrapper extends Component {
                   selectedIds: {
                     $set: val ? filteredData.map(i => i.id) : [],
                   },
-                  isSelectIndeterminate: {
+                  isSelectAllIndeterminate: {
                     $set: false,
                   },
                 },
@@ -493,7 +493,7 @@ storiesOf('Table', module)
         },
         table: {
           isSelectAllSelected: false,
-          isSelectIndeterminate: true,
+          isSelectAllIndeterminate: true,
           selectedIds: ['row-3', 'row-4', 'row-6', 'row-7'],
         },
       }}
