@@ -115,7 +115,7 @@ class FilterHeaderRow extends Component {
   render() {
     const {
       columns,
-      tableOptions: { hasRowSelection, hasRowExpansion },
+      tableOptions: { hasRowSelection, hasRowExpansion, hasRowActions },
       isVisible,
     } = this.props;
     return isVisible ? (
@@ -177,6 +177,7 @@ class FilterHeaderRow extends Component {
             )}
           </StyledTableHeader>
         ))}
+        {hasRowActions ? <StyledTableHeader /> : null}
       </StyledTableRow>
     ) : null;
   }
