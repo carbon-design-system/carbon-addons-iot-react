@@ -1,8 +1,17 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { ProgressIndicator as CarbonProgressIndicator } from 'carbon-components-react';
+import styled from 'styled-components';
 
 import ProgressStep from './ProgressStep';
 
+const StyledProgressIndicator = styled(CarbonProgressIndicator)`
+  &&& {
+    display: inline-flex;
+  }
+`;
+
+const IDPropTypes = PropTypes.oneOfType([PropTypes.string, PropTypes.number]);
 class ProgressIndicator extends Component {
   /* Display name */
   static displayName = 'ProgressIndicator';
@@ -10,10 +19,10 @@ class ProgressIndicator extends Component {
   static propTypes = {
     /** array of item objects with id and labels */
     items: PropTypes.arrayOf(
-      PropTypes.shape({ id: PropTypes.string.isRequired, label: PropTypes.string.isRequired })
+      PropTypes.shape({ id: IDPropTypes, label: PropTypes.string.isRequired })
     ).isRequired,
     /** id of current step */
-    currentItemId: PropTypes.string.isRequired,
+    currentItemId: IDPropTypes,
     /** function on click, usually to set the currentItemId */
     onClickItem: PropTypes.func,
     /** false to hide labels on non-current steps */
@@ -26,6 +35,7 @@ class ProgressIndicator extends Component {
     onClickItem: null,
     showLabels: true,
     stepWidth: 102,
+    currentItemId: null,
   };
 
   constructor(props) {
@@ -39,46 +49,18 @@ class ProgressIndicator extends Component {
     const currentStep = items.findIndex(item => item.id === currentItemId);
 
     return (
-      <ul>
-        {items.map(({ id, label }, index) => {
-          if (index === currentStep) {
-            return (
-              <ProgressStep
-                status="current"
-                key={id}
-                label={label}
-                showLabel={showLabels}
-                stepWidth={stepWidth}
-              />
-            );
-          }
-          if (index < currentStep) {
-            return (
-              <ProgressStep
-                status="complete"
-                key={id}
-                label={label}
-                showLabel={showLabels}
-                onClick={() => onClickItem(id)}
-                stepWidth={stepWidth}
-              />
-            );
-          }
-          if (index > currentStep) {
-            return (
-              <ProgressStep
-                status="incomplete"
-                key={id}
-                label={label}
-                showLabel={showLabels}
-                onClick={() => onClickItem(id)}
-                stepWidth={stepWidth}
-              />
-            );
-          }
-          return null;
-        })}
-      </ul>
+      <StyledProgressIndicator currentIndex={currentStep}>
+        {items.map(({ id, label }) => (
+          <ProgressStep
+            key={id}
+            label={label}
+            description={label}
+            showLabel={showLabels}
+            onClick={() => onClickItem(id)}
+            stepWidth={stepWidth}
+          />
+        ))}
+      </StyledProgressIndicator>
     );
   };
 }
