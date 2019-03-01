@@ -1,24 +1,33 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Filename, FileUploaderButton } from 'carbon-components-react';
-import Dropzone from 'react-dropzone';
 import styled from 'styled-components';
 
-/*
-const StyledFileUploader = styled(CarbonFileUploader)`
-{
-  &.bx--form-item{
-    background-color: #ffffff;
-    margin-left: 10px;
-    padding: 15px 0px 15px 15px;
-  }
-  .bx--file__selected-file {
-    background-color: rgba(85, 150, 230, .1)
-  }
-}
-`;
-*/
+import { COLORS } from '../../styles/styles';
 
+
+const Span = styled.span`
+  {
+      background-color: rgba(85, 150, 230, .1)
+  }
+`;
+
+
+const Link = styled.a`
+   {
+    color: ${COLORS.blue};
+    cursor: pointer;
+  }
+`;
+
+const Text = styled.div`
+  {
+    padding: 15px;
+    line-height:30px;
+    color: gray;
+
+  }
+`;
 
 const propTypes = {
   /** DOM ID */
@@ -55,15 +64,55 @@ class FileDrop extends React.Component {
 
   dropzone = null;
 
+  fileInput = null;
+
   nodes = [];
 
   readers = {};
 
+
   constructor(props) {
     super(props);
     this.state = {
-      files: []
+      files: [],
+      hover: false,
     }
+  }
+
+  componentDidMount = () => {
+    // Add the listeners for the file drop
+    const dropArea = this.dropzone;
+    if(dropArea){
+      dropArea.addEventListener('dragover', this.fileDragHover, false);
+      dropArea.addEventListener('dragleave', this.fileDragHover, false);
+      dropArea.addEventListener('drop', this.fileDrop, false);
+    }
+  }
+
+  /* Drag hover event */
+  fileDragHover = evt => {
+    evt.preventDefault();
+
+    const rect = evt.currentTarget.getBoundingClientRect();
+    const x = evt.pageX - window.pageXOffset;
+    const y = evt.pageY - window.pageYOffset;
+
+    const inArea = (!(x < rect.left || x > rect.right
+      || y < rect.top || y > rect.bottom));
+
+    this.setState({
+      hover: inArea && evt.type !== 'drop',
+    });
+  }
+
+  /* Drop event */
+  fileDrop = evt => {
+    evt.stopPropagation();
+
+    this.fileDragHover(evt);
+    const files = evt.target.files || evt.dataTransfer.files
+    this.addNewFiles(files);
+
   }
 
   readFileContent = (files) => {
@@ -132,71 +181,83 @@ class FileDrop extends React.Component {
   };
 
   render = () => {
-    const { id, title, description, buttonLabel, accept, kind } = this.props;
+    const { id, title, description, buttonLabel, accept, kind  } = this.props;
+    const { hover } = this.state;
 
-    /*
+    const dradAndDropText = 'Drag and drop you file here or '
+
+
     const linkElement = (
       <div>
-        <div>
-          Drag and drop you file here or
-          <a style={{ cursor: 'pointer' }} onClick={() => { this.dropzone.open() }} > upload </a>
-        </div>
+        {dradAndDropText}
+        <span
+          onClick={() => { this.fileInput.click() }}
+          role="presentation"
+        >
+          <Link href="javascript:void(0)">upload</Link>
+        </span>
         <div>
           {description}
         </div>
       </div>
     )
-    */
 
-    return kind === 'drag-and-drop' ? 
-    (
-      <div>TODO</div>
-    )
-    /*
-    (
-      <div style={{backgroundColor: "#ffffff", marginLeft: "10px",padding: "15px 0px 15px 15px"}}>
-        <strong className="bx--label">{title}</strong>
-        <Dropzone
-          accept={accept}
-          onClick={evt => evt.preventDefault()}
-          onDrop={this.onDrop}
-          ref={(dropzone) => { this.dropzone = dropzone }}
-        >
-          {
-            ({ getRootProps, getInputProps, isDragActive }) => {
-              return (
-                <div
-                  {...getRootProps()}
-                  style={isDragActive ?
-                    { padding: "15px", border: "1px solid #3D70B2" } :
-                    { padding: "15px", border: "1px dashed #8C8C8C" }}
-                >
-                  <input {...getInputProps()} />
-                  { linkElement }
-                </div>
-              )
-          }}
-        </Dropzone>
-        <div data-file-container className="bx--file-container">
-          {
-            this.state.files.map((file, index) => {
-              return (
-                  <span id={`${index}-file-list`} class="bx--file__selected-file" style={{ backgroundColor: "rgba(85, 150, 230, .1)"}}>
-                    <p class="bx--file-filename">{file.name}</p>
-                    <span class="bx--file__state-container">
-                      <svg id={index} class="bx--file-close" onClick={() => this.removeFile(index)} tabindex="0" viewBox="0 0 16 16" fill-rule="evenodd" width="16" height="16">
-                        <path d="M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm3.5 10.1l-1.4 1.4L8
-                          9.4l-2.1 2.1-1.4-1.4L6.6 8 4.5 5.9l1.4-1.4L8 6.6l2.1-2.1 1.4 1.4L9.4 8l2.1 2.1z"></path>
-                      </svg>
-                    </span>
-                  </span>
-              );
-            })
-          }
-        </div>
+
+    const fileNameElements = (
+      <div className="bx--file-container">
+        {
+          this.state.files.length === 0
+            ? null
+            : this.state.files.map(({ name, uploadState }, index) => (
+              <Span
+                key={`${name}-${index}`}
+                className="bx--file__selected-file"
+                ref={node => (this.nodes[index] = node)} // eslint-disable-line
+              >
+                <p className="bx--file-filename">{name}</p>
+                <span className="bx--file__state-container">
+                  <Filename
+                    status={uploadState}
+                    onKeyDown={evt => {
+                      if (evt.which === 13 || evt.which === 32) {
+                        this.handleClick(evt, index);
+                      }
+                    }}
+                    onClick={evt => {
+                      if (uploadState === 'edit') {
+                        this.handleClick(evt, index);
+                      }
+                    }}
+                  />
+                </span>
+              </Span>
+            )
+          )
+        }
       </div>
     )
-    */
+
+    return kind === 'drag-and-drop' ?
+    (
+      <div>
+        <strong className="bx--label">{title}</strong>
+        <input
+          style={{ visibility: 'hidden' }}
+          type="file"
+          ref={(ref) => this.fileInput = ref} // eslint-disable-line
+          accept={accept}
+          multiple
+          onChange={this.handleChange}
+        />
+        <Text
+          ref={(ref) => this.dropzone = ref} // eslint-disable-line
+          style={hover ? { border: "1px solid #3D70B2" } : {  border: "1px dashed #8C8C8C"  }}
+        >
+          { linkElement }
+        </Text>
+        { fileNameElements }
+      </div>
+    )
     : (
       <div id={id} className="bx--form-item">
         <strong className="bx--label">{title}</strong>
@@ -209,37 +270,7 @@ class FileDrop extends React.Component {
           disableLabelChanges
           accept={accept}
         />
-        <div className="bx--file-container">
-          {
-            this.state.files.length === 0
-              ? null
-              : this.state.files.map(({ name, uploadState }, index) => (
-                <span
-                  key={`${name}-${index}`}
-                  className="bx--file__selected-file"
-                  ref={node => (this.nodes[index] = node)} // eslint-disable-line
-                >
-                  <p className="bx--file-filename">{name}</p>
-                  <span className="bx--file__state-container">
-                    <Filename
-                      status={uploadState}
-                      onKeyDown={evt => {
-                        if (evt.which === 13 || evt.which === 32) {
-                          this.handleClick(evt, index);
-                        }
-                      }}
-                      onClick={evt => {
-                        if (uploadState === 'edit') {
-                          this.handleClick(evt, index);
-                        }
-                      }}
-                    />
-                  </span>
-                </span>
-              )
-            )
-          }
-        </div>
+        { fileNameElements }
       </div>
     );
    }
