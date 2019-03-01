@@ -1,18 +1,21 @@
-import { Icon } from 'carbon-components-react';
 import {
   Header as CarbonHeader,
   HeaderName,
   HeaderGlobalBar,
   HeaderGlobalAction,
-  // HeaderMenuItem,
-  // HeaderNavigation,
-  // HeaderMenuButton,
+  SkipToContent,
+  HeaderMenuItem,
+  // HeaderMenu,
+  HeaderNavigation,
+  HeaderMenuButton,
 } from 'carbon-components-react//lib/components/UIShell';
 import { rem } from 'polished';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import React from 'react';
 
+import HeaderDropDown from '../HeaderDropDown';
+import HeaderMenu from '../HeaderMenu';
 import { COLORS } from '../../styles/styles';
 
 const StyledHeader = styled(CarbonHeader)`
@@ -28,68 +31,81 @@ const StyledGlobalAction = styled(HeaderGlobalAction)`
     justify-content: center;
     min-width: 3rem;
     padding: 0 ${rem(15)};
+    position: relative;
     width: auto;
     :hover {
       background-color: ${COLORS.darkGrayHover};
     }
-    :last-child svg {
-      margin-left: ${rem(20)};
-    }
     span {
-      display: block;
+      display: flex;
     }
-  }
-`;
-const User = styled.p`
-   {
-    color: white;
-    font-size: 0.75rem;
-    text-align: left;
-  }
-`;
-const StyledIcon = styled(Icon)`
-   {
-    width: 25px;
-    height: 25px;
   }
 `;
 
 const propTypes = {
-  onClick: PropTypes.func.isRequired,
-  /** Shows current user */
-  user: PropTypes.string.isRequired,
-  /** Shows tenant or Org ID */
-  tenant: PropTypes.string.isRequired,
   /** Name ot follow the IBM prefix up top, left */
   appName: PropTypes.string.isRequired,
+  /** Object of action items */
+  actionItems: PropTypes.arrayOf(
+    PropTypes.shape({
+      label: PropTypes.string.isRequired,
+      onClick: PropTypes.func,
+      btnContent: PropTypes.any.isRequired,
+      childContent: PropTypes.arrayOf(
+        PropTypes.shape({
+          onClick: PropTypes.func,
+          content: PropTypes.any.isRequired,
+        })
+      ),
+    })
+  ),
 };
 
 /**
  * Clickable card that shows "Add" button
  */
-const Header = ({ appName, className, user, tenant, onClick }) => (
-  <StyledHeader className={className} aria-label="main header" onClick={onClick}>
-    {/* <HeaderMenuButton aria-label="Open menu" onClick={() => true} /> */}
-    <HeaderName href="#" prefix="IBM">
-      {appName}
-    </HeaderName>
-    {/* <HeaderNavigation aria-label="IBM [Platform]">
-      <HeaderMenuItem element={linkElement}>Catalog</HeaderMenuItem>
-    </HeaderNavigation> */}
-    <HeaderGlobalBar>
-      <StyledGlobalAction aria-label="Profile" onClick={() => true}>
-        <StyledIcon name="header--help" fill="white" description="Icon" />
+const Header = ({ appName, className, actionItems }) => {
+  const actionBtnContent = actionItems.map((item, i) => {
+    if (item.hasOwnProperty('childContent')) {
+      const children = item.childContent.map(childItem => (
+        <HeaderMenuItem
+          key={`menu-item-${item.label + item.childContent.indexOf(childItem)}-child`}
+          href="#"
+          onClick={() => childItem.onClick}>
+          {childItem.content}
+        </HeaderMenuItem>
+      ));
+      return (
+        <HeaderNavigation aria-label="dropdown" key={`menu-item-${item.label}-dropdown`}>
+          <HeaderMenu
+            key={`menu-item-${item.label}`}
+            aria-label={item.label}
+            content={item.btnContent}>
+            {children}
+          </HeaderMenu>
+        </HeaderNavigation>
+      );
+    }
+    return (
+      <StyledGlobalAction
+        key={`menu-item-${item.label}-global`}
+        aria-label={item.label}
+        onClick={item.onClick}>
+        {item.btnContent}
       </StyledGlobalAction>
-      <StyledGlobalAction aria-label="Profile" onClick={() => true}>
-        <User>
-          <span>{user}</span>
-          {tenant}
-        </User>
-        <StyledIcon name="header--avatar" fill="white" description="Icon" />
-      </StyledGlobalAction>
-    </HeaderGlobalBar>
-  </StyledHeader>
-);
+    );
+  });
+
+  return (
+    <StyledHeader className={className} aria-label="main header">
+      <SkipToContent />
+      <HeaderName href="#" prefix="IBM">
+        {appName}
+      </HeaderName>
+      <HeaderGlobalBar>{actionBtnContent}</HeaderGlobalBar>
+    </StyledHeader>
+  );
+};
 
 Header.propTypes = propTypes;
 
