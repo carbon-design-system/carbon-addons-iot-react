@@ -96,7 +96,7 @@ ProgressStep.displayName = 'ProgressStep';
 const StyledProgressStep = styled(ProgressStep)`
   &&& {
     min-width: 136px;
-    width: ${props => props.stepWidth};
+    width: ${props => props.stepWidth}px;
     .bx--progress-label {
       cursor: pointer;
     }

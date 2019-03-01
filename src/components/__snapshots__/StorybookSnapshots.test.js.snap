@@ -14057,22 +14057,22 @@ exports[`Storybook Snapshot tests and console checks Storyshots ButtonEnhanced n
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots ProgressIndicator ProgressIndicator 1`] = `
-.c0.c0.c0 {
+exports[`Storybook Snapshot tests and console checks Storyshots ProgressIndicator Stateful 1`] = `
+.c1.c1.c1 {
   min-width: 136px;
-  width: 200;
+  width: 136px;
 }
 
-.c0.c0.c0 .bx--progress-label {
+.c1.c1.c1 .bx--progress-label {
   cursor: pointer;
 }
 
-.c0.c0.c0 .bx--progress-step svg {
+.c1.c1.c1 .bx--progress-step svg {
   z-index: auto;
   cursor: pointer;
 }
 
-.c0.c0.c0 button {
+.c1.c1.c1 button {
   background: none;
   margin: 0;
   padding: 0;
@@ -14081,6 +14081,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots ProgressIndicato
   font-size: 1rem;
   text-align: left;
   color: #3d70b2;
+}
+
+.c0.c0.c0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
 }
 
 <div
@@ -14104,10 +14111,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots ProgressIndicato
       }
     >
       <ul
-        className="bx--progress"
+        className="bx--progress c0"
       >
         <li
-          className="bx--progress-step bx--progress-step--complete c0"
+          className="bx--progress-step bx--progress-step--complete c1"
         >
           <svg>
             <circle
@@ -14134,7 +14141,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots ProgressIndicato
           />
         </li>
         <li
-          className="bx--progress-step bx--progress-step--complete c0"
+          className="bx--progress-step bx--progress-step--complete c1"
         >
           <svg
             onClick={[Function]}
@@ -14160,7 +14167,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots ProgressIndicato
           />
         </li>
         <li
-          className="bx--progress-step bx--progress-step--complete c0"
+          className="bx--progress-step bx--progress-step--complete c1"
         >
           <svg
             onClick={[Function]}
@@ -14186,7 +14193,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots ProgressIndicato
           />
         </li>
         <li
-          className="bx--progress-step bx--progress-step--complete c0"
+          className="bx--progress-step bx--progress-step--complete c1"
         >
           <svg
             onClick={[Function]}
@@ -14212,7 +14219,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots ProgressIndicato
           />
         </li>
         <li
-          className="bx--progress-step bx--progress-step--complete c0"
+          className="bx--progress-step bx--progress-step--complete c1"
         >
           <svg
             onClick={[Function]}
@@ -14238,7 +14245,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots ProgressIndicato
           />
         </li>
         <li
-          className="bx--progress-step bx--progress-step--complete c0"
+          className="bx--progress-step bx--progress-step--complete c1"
         >
           <svg
             onClick={[Function]}
@@ -14374,7 +14381,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots ProgressIndicato
                 }
               }
             >
-              ProgressIndicator
+              Stateful
             </h2>
           </div>
           
@@ -14476,6 +14483,1054 @@ exports[`Storybook Snapshot tests and console checks Storyshots ProgressIndicato
               <small>
                 No propTypes defined!
               </small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots ProgressIndicator presentation 1`] = `
+.c1.c1.c1 {
+  min-width: 136px;
+  width: 136px;
+}
+
+.c1.c1.c1 .bx--progress-label {
+  cursor: pointer;
+}
+
+.c1.c1.c1 .bx--progress-step svg {
+  z-index: auto;
+  cursor: pointer;
+}
+
+.c1.c1.c1 button {
+  background: none;
+  margin: 0;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  text-align: left;
+  color: #3d70b2;
+}
+
+.c0.c0.c0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+<div
+  className="storybook-container"
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "flexDirection": "column",
+      "padding": "3em",
+    }
+  }
+>
+  <div>
+    <div
+      style={
+        Object {
+          "position": "relative",
+          "zIndex": 0,
+        }
+      }
+    >
+      <ul
+        className="bx--progress c0"
+      >
+        <li
+          className="bx--progress-step bx--progress-step--complete c1"
+        >
+          <svg>
+            <circle
+              cx="12"
+              cy="12"
+              r="12"
+            />
+            <circle
+              cx="12"
+              cy="12"
+              r="6"
+            />
+            <title>
+              First step
+            </title>
+          </svg>
+          <p
+            className="bx--progress-label"
+          >
+            First step
+          </p>
+          <span
+            className="bx--progress-line"
+          />
+        </li>
+        <li
+          className="bx--progress-step bx--progress-step--complete c1"
+        >
+          <svg
+            onClick={[Function]}
+          >
+            <circle
+              cx="12"
+              cy="12"
+              r="12"
+            />
+            <title>
+              Second Step
+            </title>
+          </svg>
+          <button
+            className="bx--progress-label"
+            onClick={[Function]}
+            type="button"
+          >
+            Second Step
+          </button>
+          <span
+            className="bx--progress-line"
+          />
+        </li>
+        <li
+          className="bx--progress-step bx--progress-step--complete c1"
+        >
+          <svg
+            onClick={[Function]}
+          >
+            <circle
+              cx="12"
+              cy="12"
+              r="12"
+            />
+            <title>
+              Third Step
+            </title>
+          </svg>
+          <button
+            className="bx--progress-label"
+            onClick={[Function]}
+            type="button"
+          >
+            Third Step
+          </button>
+          <span
+            className="bx--progress-line"
+          />
+        </li>
+        <li
+          className="bx--progress-step bx--progress-step--complete c1"
+        >
+          <svg
+            onClick={[Function]}
+          >
+            <circle
+              cx="12"
+              cy="12"
+              r="12"
+            />
+            <title>
+              Fourth Step
+            </title>
+          </svg>
+          <button
+            className="bx--progress-label"
+            onClick={[Function]}
+            type="button"
+          >
+            Fourth Step
+          </button>
+          <span
+            className="bx--progress-line"
+          />
+        </li>
+        <li
+          className="bx--progress-step bx--progress-step--complete c1"
+        >
+          <svg
+            onClick={[Function]}
+          >
+            <circle
+              cx="12"
+              cy="12"
+              r="12"
+            />
+            <title>
+              Fifth Step
+            </title>
+          </svg>
+          <button
+            className="bx--progress-label"
+            onClick={[Function]}
+            type="button"
+          >
+            Fifth Step
+          </button>
+          <span
+            className="bx--progress-line"
+          />
+        </li>
+        <li
+          className="bx--progress-step bx--progress-step--complete c1"
+        >
+          <svg
+            onClick={[Function]}
+          >
+            <circle
+              cx="12"
+              cy="12"
+              r="12"
+            />
+            <title>
+              Sixth Step
+            </title>
+          </svg>
+          <button
+            className="bx--progress-label"
+            onClick={[Function]}
+            type="button"
+          >
+            Sixth Step
+          </button>
+          <span
+            className="bx--progress-line"
+          />
+        </li>
+      </ul>
+    </div>
+    <button
+      onClick={[Function]}
+      style={
+        Object {
+          "background": "#28c",
+          "border": "none",
+          "borderRadius": "0 0 0 5px",
+          "color": "#fff",
+          "cursor": "pointer",
+          "display": "block",
+          "fontFamily": "sans-serif",
+          "fontSize": "12px",
+          "padding": "5px 15px",
+          "position": "fixed",
+          "right": 0,
+          "top": 0,
+        }
+      }
+      type="button"
+    >
+      Show Info
+    </button>
+    <div
+      style={
+        Object {
+          "background": "white",
+          "bottom": 0,
+          "display": "none",
+          "left": 0,
+          "overflow": "auto",
+          "padding": "0 40px",
+          "position": "fixed",
+          "right": 0,
+          "top": 0,
+          "zIndex": 99999,
+        }
+      }
+    >
+      <button
+        onClick={[Function]}
+        style={
+          Object {
+            "background": "#28c",
+            "border": "none",
+            "borderRadius": "0 0 0 5px",
+            "color": "#fff",
+            "cursor": "pointer",
+            "display": "block",
+            "fontFamily": "sans-serif",
+            "fontSize": "12px",
+            "padding": "5px 15px",
+            "position": "fixed",
+            "right": 0,
+            "top": 0,
+          }
+        }
+        type="button"
+      >
+        ×
+      </button>
+      <div>
+        <div
+          style={
+            Object {
+              "WebkitFontSmoothing": "antialiased",
+              "backgroundColor": "#fff",
+              "border": "1px solid #eee",
+              "borderRadius": "2px",
+              "color": "#444",
+              "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+              "fontSize": "15px",
+              "fontWeight": 300,
+              "lineHeight": 1.45,
+              "marginBottom": "20px",
+              "marginTop": "20px",
+              "padding": "20px 40px 40px",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "borderBottom": "1px solid #eee",
+                "marginBottom": 10,
+                "paddingTop": 10,
+              }
+            }
+          >
+            <h1
+              style={
+                Object {
+                  "fontSize": "35px",
+                  "margin": 0,
+                  "padding": 0,
+                }
+              }
+            >
+              ProgressIndicator
+            </h1>
+            <h2
+              style={
+                Object {
+                  "fontSize": "22px",
+                  "fontWeight": 400,
+                  "margin": "0 0 10px 0",
+                  "padding": 0,
+                }
+              }
+            >
+              presentation
+            </h2>
+          </div>
+          
+          <div>
+            <h1
+              style={
+                Object {
+                  "borderBottom": "1px solid #EEE",
+                  "fontSize": "25px",
+                  "margin": "20px 0 0 0",
+                  "padding": "0 0 5px 0",
+                }
+              }
+            >
+              Story Source
+            </h1>
+            <pre
+              className="css-r8d96o eyvlbql0"
+            >
+              <div>
+                <div
+                  style={
+                    Object {
+                      "paddingLeft": 18,
+                      "paddingRight": 3,
+                    }
+                  }
+                >
+                  <span
+                    style={
+                      Object {
+                        "color": "#444",
+                      }
+                    }
+                  >
+                    &lt;
+                    ProgressIndicator
+                  </span>
+                  <span>
+                    <span>
+                      <span>
+                        <br />
+                          
+                      </span>
+                      <span
+                        style={Object {}}
+                      >
+                        items
+                      </span>
+                      <span>
+                        =
+                        <span
+                          style={Object {}}
+                        >
+                          {
+                          <span
+                            style={
+                              Object {
+                                "color": "#666",
+                              }
+                            }
+                          >
+                            [
+                            <span>
+                              <span>
+                                <br />
+                                  
+                                  
+                              </span>
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#666",
+                                  }
+                                }
+                              >
+                                {
+                                <span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    id
+                                  </span>
+                                </span>
+                                : 
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  'step1'
+                                </span>
+                                ,
+                                <span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    label
+                                  </span>
+                                </span>
+                                : 
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  'First step'
+                                </span>
+                                }
+                              </span>
+                            </span>
+                            ,
+                            <span>
+                              <span>
+                                <br />
+                                  
+                                  
+                              </span>
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#666",
+                                  }
+                                }
+                              >
+                                {
+                                <span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    id
+                                  </span>
+                                </span>
+                                : 
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  'step2'
+                                </span>
+                                ,
+                                <span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    label
+                                  </span>
+                                </span>
+                                : 
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  'Second Step'
+                                </span>
+                                }
+                              </span>
+                            </span>
+                            ,
+                            <span>
+                              <span>
+                                <br />
+                                  
+                                  
+                              </span>
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#666",
+                                  }
+                                }
+                              >
+                                {
+                                <span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    id
+                                  </span>
+                                </span>
+                                : 
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  'step3'
+                                </span>
+                                ,
+                                <span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    label
+                                  </span>
+                                </span>
+                                : 
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  'Third Step'
+                                </span>
+                                }
+                              </span>
+                            </span>
+                            ,
+                            <span>
+                              <span>
+                                <br />
+                                  
+                                  
+                              </span>
+                              …
+                            </span>
+                            <span>
+                              <br />
+                                
+                            </span>
+                            ]
+                          </span>
+                          }
+                        </span>
+                      </span>
+                    </span>
+                    <span>
+                      <span>
+                        <br />
+                          
+                      </span>
+                      <span
+                        style={Object {}}
+                      >
+                        currentItemId
+                      </span>
+                      <span>
+                        =
+                        <span
+                          style={Object {}}
+                        >
+                          "
+                          <span
+                            style={
+                              Object {
+                                "color": "#22a",
+                                "wordBreak": "break-word",
+                              }
+                            }
+                          >
+                            step1
+                          </span>
+                          "
+                        </span>
+                      </span>
+                    </span>
+                    <span>
+                      <span>
+                        <br />
+                          
+                      </span>
+                      <span
+                        style={Object {}}
+                      >
+                        onClickItem
+                      </span>
+                      <span>
+                        =
+                        <span
+                          style={Object {}}
+                        >
+                          {
+                          <span
+                            style={
+                              Object {
+                                "color": "#170",
+                              }
+                            }
+                          >
+                            onClickItem
+                          </span>
+                          }
+                        </span>
+                      </span>
+                    </span>
+                    <span>
+                      <span>
+                        <br />
+                          
+                      </span>
+                      <span
+                        style={Object {}}
+                      >
+                        stepWidth
+                      </span>
+                      <span>
+                        =
+                        <span
+                          style={Object {}}
+                        >
+                          {
+                          <span
+                            style={
+                              Object {
+                                "color": "#a11",
+                              }
+                            }
+                          >
+                            136
+                          </span>
+                          }
+                        </span>
+                      </span>
+                      <br />
+                    </span>
+                  </span>
+                  <span
+                    style={
+                      Object {
+                        "color": "#444",
+                      }
+                    }
+                  >
+                    /&gt;
+                  </span>
+                </div>
+              </div>
+              <button
+                className="css-1naocv3 eva467m0"
+                onClick={[Function]}
+              >
+                <div
+                  className="css-lvl6aa eva467m1"
+                >
+                  <div
+                    style={
+                      Object {
+                        "marginBottom": 6,
+                      }
+                    }
+                  >
+                    Copied!
+                  </div>
+                  <div>
+                    Copy
+                  </div>
+                </div>
+              </button>
+            </pre>
+          </div>
+          <div>
+            <h1
+              style={
+                Object {
+                  "borderBottom": "1px solid #EEE",
+                  "fontSize": "25px",
+                  "margin": "20px 0 0 0",
+                  "padding": "0 0 5px 0",
+                }
+              }
+            >
+              Prop Types
+            </h1>
+            <div>
+              <h2
+                style={
+                  Object {
+                    "margin": "20px 0 0 0",
+                  }
+                }
+              >
+                "
+                ProgressIndicator
+                " Component
+              </h2>
+              <table
+                className="css-1uhv8nx e1vdo5380"
+              >
+                <thead>
+                  <tr>
+                    <th
+                      className="css-11b5gui e6fp4ir1"
+                    >
+                      property
+                    </th>
+                    <th
+                      className="css-11b5gui e6fp4ir1"
+                    >
+                      propType
+                    </th>
+                    <th
+                      className="css-11b5gui e6fp4ir1"
+                    >
+                      required
+                    </th>
+                    <th
+                      className="css-11b5gui e6fp4ir1"
+                    >
+                      default
+                    </th>
+                    <th
+                      className="css-11b5gui e6fp4ir1"
+                    >
+                      description
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      onClickItem
+                    </td>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      <span>
+                        func
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      -
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#22a",
+                            "wordBreak": "break-word",
+                          }
+                        }
+                      >
+                        null
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      function on click, usually to set the currentItemId
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      showLabels
+                    </td>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      <span>
+                        bool
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      -
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#22a",
+                            "wordBreak": "break-word",
+                          }
+                        }
+                      >
+                        true
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      false to hide labels on non-current steps
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      stepWidth
+                    </td>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      <span>
+                        number
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      -
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#22a",
+                            "wordBreak": "break-word",
+                          }
+                        }
+                      >
+                        102
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      width of step in px
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      currentItemId
+                    </td>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      <span>
+                        custom
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      -
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#22a",
+                            "wordBreak": "break-word",
+                          }
+                        }
+                      >
+                        null
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      id of current step
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      items
+                    </td>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      <span>
+                        <span>
+                          [
+                        </span>
+                        <span>
+                          <span>
+                            <button
+                              className="css-1sgldz e1i4ski80"
+                              onClick={[Function]}
+                              onMouseEnter={[Function]}
+                              onMouseLeave={[Function]}
+                            >
+                              {
+                            </button>
+                            <button
+                              className="css-1sgldz e1i4ski80"
+                              onClick={[Function]}
+                            >
+                              ...
+                            </button>
+                            <div
+                              style={
+                                Object {
+                                  "marginLeft": 15,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                              >
+                                id
+                                ?
+                                :
+                                 
+                              </span>
+                              <span>
+                                custom
+                              </span>
+                              ,
+                            </div>
+                            <div
+                              style={
+                                Object {
+                                  "marginLeft": 15,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                              >
+                                label
+                                
+                                :
+                                 
+                              </span>
+                              <span>
+                                string
+                              </span>
+                              ,
+                            </div>
+                            <button
+                              className="css-1sgldz e1i4ski80"
+                              onClick={[Function]}
+                              onMouseEnter={[Function]}
+                              onMouseLeave={[Function]}
+                            >
+                              }
+                            </button>
+                          </span>
+                        </span>
+                        <span>
+                          ]
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      yes
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      -
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      array of item objects with id and labels
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
@@ -75723,7 +76778,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots WizardModal basi
   min-height: 12.5rem;
 }
 
-.c4 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -75745,7 +76800,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots WizardModal basi
   justify-content: flex-end;
 }
 
-.c4 .modal-greedy-spacer {
+.c5 .modal-greedy-spacer {
   -webkit-box-flex: 2;
   -webkit-flex-grow: 2;
   -ms-flex-positive: 2;
@@ -75753,28 +76808,28 @@ exports[`Storybook Snapshot tests and console checks Storyshots WizardModal basi
   text-align: left;
 }
 
-.c5 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
-.c2.c2.c2 {
+.c3.c3.c3 {
   min-width: 136px;
-  width: 102;
+  width: 102px;
 }
 
-.c2.c2.c2 .bx--progress-label {
+.c3.c3.c3 .bx--progress-label {
   cursor: pointer;
 }
 
-.c2.c2.c2 .bx--progress-step svg {
+.c3.c3.c3 .bx--progress-step svg {
   z-index: auto;
   cursor: pointer;
 }
 
-.c2.c2.c2 button {
+.c3.c3.c3 button {
   background: none;
   margin: 0;
   padding: 0;
@@ -75785,6 +76840,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots WizardModal basi
   color: #3d70b2;
 }
 
+.c2.c2.c2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
 .c0 .bx--progress-step {
   max-width: 150px;
 }
@@ -75793,7 +76855,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots WizardModal basi
   padding-top: 1rem;
 }
 
-.c3 {
+.c4 {
   padding-top: 1rem;
   padding-left: 1rem;
   padding-bottom: 7rem;
@@ -75898,10 +76960,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots WizardModal basi
             className="bx--modal-content"
           >
             <ul
-              className="bx--progress"
+              className="bx--progress c2"
             >
               <li
-                className="bx--progress-step bx--progress-step--complete c2"
+                className="bx--progress-step bx--progress-step--complete c3"
               >
                 <svg>
                   <circle
@@ -75928,7 +76990,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots WizardModal basi
                 />
               </li>
               <li
-                className="bx--progress-step bx--progress-step--complete c2"
+                className="bx--progress-step bx--progress-step--complete c3"
               >
                 <svg
                   onClick={[Function]}
@@ -75954,7 +77016,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots WizardModal basi
                 />
               </li>
               <li
-                className="bx--progress-step bx--progress-step--complete c2"
+                className="bx--progress-step bx--progress-step--complete c3"
               >
                 <svg
                   onClick={[Function]}
@@ -75981,16 +77043,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots WizardModal basi
               </li>
             </ul>
             <div
-              className="c3"
+              className="c4"
             >
               page 1
             </div>
           </div>
           <div
-            className="bx--modal-footer c4"
+            className="bx--modal-footer c5"
           >
             <div
-              className="c5"
+              className="c6"
             >
               <button
                 className="bx--btn bx--btn--secondary"
@@ -77061,7 +78123,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots WizardModal cust
   min-height: 12.5rem;
 }
 
-.c4 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -77083,7 +78145,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots WizardModal cust
   justify-content: flex-end;
 }
 
-.c4 .modal-greedy-spacer {
+.c5 .modal-greedy-spacer {
   -webkit-box-flex: 2;
   -webkit-flex-grow: 2;
   -ms-flex-positive: 2;
@@ -77091,28 +78153,28 @@ exports[`Storybook Snapshot tests and console checks Storyshots WizardModal cust
   text-align: left;
 }
 
-.c5 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
-.c2.c2.c2 {
+.c3.c3.c3 {
   min-width: 136px;
-  width: 102;
+  width: 102px;
 }
 
-.c2.c2.c2 .bx--progress-label {
+.c3.c3.c3 .bx--progress-label {
   cursor: pointer;
 }
 
-.c2.c2.c2 .bx--progress-step svg {
+.c3.c3.c3 .bx--progress-step svg {
   z-index: auto;
   cursor: pointer;
 }
 
-.c2.c2.c2 button {
+.c3.c3.c3 button {
   background: none;
   margin: 0;
   padding: 0;
@@ -77123,6 +78185,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots WizardModal cust
   color: #3d70b2;
 }
 
+.c2.c2.c2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
 .c0 .bx--progress-step {
   max-width: 150px;
 }
@@ -77131,7 +78200,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots WizardModal cust
   padding-top: 1rem;
 }
 
-.c3 {
+.c4 {
   padding-top: 1rem;
   padding-left: 1rem;
   padding-bottom: 7rem;
@@ -77236,10 +78305,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots WizardModal cust
             className="bx--modal-content"
           >
             <ul
-              className="bx--progress"
+              className="bx--progress c2"
             >
               <li
-                className="bx--progress-step bx--progress-step--complete c2"
+                className="bx--progress-step bx--progress-step--complete c3"
               >
                 <svg>
                   <circle
@@ -77266,7 +78335,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots WizardModal cust
                 />
               </li>
               <li
-                className="bx--progress-step bx--progress-step--complete c2"
+                className="bx--progress-step bx--progress-step--complete c3"
               >
                 <svg
                   onClick={[Function]}
@@ -77292,7 +78361,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots WizardModal cust
                 />
               </li>
               <li
-                className="bx--progress-step bx--progress-step--complete c2"
+                className="bx--progress-step bx--progress-step--complete c3"
               >
                 <svg
                   onClick={[Function]}
@@ -77319,16 +78388,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots WizardModal cust
               </li>
             </ul>
             <div
-              className="c3"
+              className="c4"
             >
               page 1
             </div>
           </div>
           <div
-            className="bx--modal-footer c4"
+            className="bx--modal-footer c5"
           >
             <div
-              className="c5"
+              className="c6"
             >
               <button
                 className="bx--btn bx--btn--primary"

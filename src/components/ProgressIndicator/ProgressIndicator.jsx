@@ -1,8 +1,15 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { ProgressIndicator as CarbonProgressIndicator } from 'carbon-components-react';
+import styled from 'styled-components';
 
 import ProgressStep from './ProgressStep';
+
+const StyledProgressIndicator = styled(CarbonProgressIndicator)`
+  &&& {
+    display: inline-flex;
+  }
+`;
 
 const IDPropTypes = PropTypes.oneOfType([PropTypes.string, PropTypes.number]);
 class ProgressIndicator extends Component {
@@ -42,7 +49,7 @@ class ProgressIndicator extends Component {
     const currentStep = items.findIndex(item => item.id === currentItemId);
 
     return (
-      <CarbonProgressIndicator currentIndex={currentStep}>
+      <StyledProgressIndicator currentIndex={currentStep}>
         {items.map(({ id, label }) => (
           <ProgressStep
             key={id}
@@ -53,7 +60,7 @@ class ProgressIndicator extends Component {
             stepWidth={stepWidth}
           />
         ))}
-      </CarbonProgressIndicator>
+      </StyledProgressIndicator>
     );
   };
 }
