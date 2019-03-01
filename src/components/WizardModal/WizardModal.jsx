@@ -2,10 +2,11 @@ import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import isNil from 'lodash/isNil';
-import { ProgressIndicator, ProgressStep, Button } from 'carbon-components-react';
+import { Button } from 'carbon-components-react';
 
 import BaseModal from '../BaseModal/BaseModal';
 import ButtonEnhanced from '../ButtonEnhanced/ButtonEnhanced';
+import ProgressIndicator from '../ProgressIndicator/ProgressIndicator';
 
 const StyledModal = styled(BaseModal)`
    {
@@ -80,6 +81,10 @@ class WizardModal extends Component {
     this.setState(state => ({ step: state.step - 1 }));
   };
 
+  handleClick = key => {
+    this.setState({ step: key });
+  };
+
   validateCurrentStep = () => {
     const { steps } = this.props;
     const { step } = this.state;
@@ -149,19 +154,17 @@ class WizardModal extends Component {
 
   render() {
     const { steps, className, ...other } = this.props;
-    const { step } = this.state;
+    // Transform object to be what Progress Indicator expects
+    const items = steps.map((step, index) => ({ id: index, label: step.label }));
+    const { step: stepIndex } = this.state;
     return (
       <StyledModal {...other} className={className} footer={this.renderFooter()}>
-        <ProgressIndicator currentIndex={step}>
-          {steps.map(eachStep => (
-            <ProgressStep
-              key={eachStep.label}
-              label={eachStep.label}
-              description={eachStep.label}
-            />
-          ))}
-        </ProgressIndicator>
-        <StyledWizardContent>{steps[step].content}</StyledWizardContent>
+        <ProgressIndicator
+          items={items}
+          currentItemId={!isNil(stepIndex) ? items[stepIndex] && items[stepIndex].id : undefined}
+          onClickItem={this.handleClick}
+        />
+        <StyledWizardContent>{steps[stepIndex].content}</StyledWizardContent>
       </StyledModal>
     );
   }

@@ -70,8 +70,14 @@ describe('WizardModal', () => {
     // Advance to last panel should have a submit button
     wrapper.setState({ step: 2 });
 
-    // Close, Previous/Cancel and Submit buttons
-    expect(wrapper.find('button')).toHaveLength(4);
+    // Close
+    expect(wrapper.find('.bx--modal-close')).toHaveLength(1);
+
+    // Previous/Cancel
+    expect(wrapper.find('.bx--btn--secondary')).toHaveLength(2);
+
+    // Submit button
+    expect(wrapper.find('.bx--btn--primary')).toHaveLength(1);
 
     // Submit button should validate the last page
     wrapper.instance().handleSubmit();
@@ -89,13 +95,34 @@ describe('WizardModal', () => {
         footer={{ leftContent: 'Hi there' }}
       />
     );
-    // Close Next and Cancel
-    expect(wrapper.find('button')).toHaveLength(3);
+    // Close
+    expect(wrapper.find('.bx--modal-close')).toHaveLength(1);
+
+    // Cancel
+    expect(wrapper.find('.bx--btn--secondary')).toHaveLength(1);
+
+    // Submit button
+    expect(wrapper.find('.bx--btn--primary')).toHaveLength(1);
+
     // Close Next Previous and Cancel
     wrapper.setState({ step: 1 });
-    expect(wrapper.find('button')).toHaveLength(4);
+    // Close
+    expect(wrapper.find('.bx--modal-close')).toHaveLength(1);
+
+    // Previous/Cancel
+    expect(wrapper.find('.bx--btn--secondary')).toHaveLength(2);
+
+    // Submit button
+    expect(wrapper.find('.bx--btn--primary')).toHaveLength(1);
     // Close Previous Submit and Cancel
-    expect(wrapper.find('button')).toHaveLength(4);
+    // Close
+    expect(wrapper.find('.bx--modal-close')).toHaveLength(1);
+
+    // Previous/Cancel
+    expect(wrapper.find('.bx--btn--secondary')).toHaveLength(2);
+
+    // Submit button
+    expect(wrapper.find('.bx--btn--primary')).toHaveLength(1);
     wrapper.setState({ step: 2 });
   });
   test('sendingData', () => {
