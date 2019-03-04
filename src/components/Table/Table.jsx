@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import isNil from 'lodash/isNil';
 import styled from 'styled-components';
 import merge from 'lodash/merge';
-import { Button, PaginationV2, DataTable, Checkbox } from 'carbon-components-react';
+import { Button, PaginationV2, DataTable, Checkbox, SkeletonText } from 'carbon-components-react';
 import { iconGrid, iconFilter } from 'carbon-icons';
 import { Bee32 } from '@carbon/icons-react';
 
@@ -147,6 +147,10 @@ const propTypes = {
         /* If a React element is provided, it will be rendered in place of the default */
         PropTypes.element,
       ]),
+      loadingState: PropTypes.shape({
+        isLoading: PropTypes.bool,
+        rowCount: PropTypes.number,
+      }),
     }),
   }),
   /** Callbacks for actions of the table, can be used to update state in wrapper component to update `view` props */
@@ -208,6 +212,9 @@ const defaultProps = baseProps => ({
         messageWithFilters: 'No results match the current filters',
         buttonLabel: 'Create some data',
         buttonLabelWithFilters: 'Clear all filters',
+      },
+      loadingState: {
+        rowCount: 5,
       },
     },
   },
@@ -328,6 +335,17 @@ const StyledEmptyTableRow = styled(TableRow)`
       & > * {
         margin: 0.5rem;
       }
+    }
+  }
+`;
+
+const StyledLoadingTableRow = styled(TableRow)`
+  &&& {
+    pointer-events: none;
+
+    &:hover td {
+      border: 1px solid ${COLORS.lightGrey};
+      background: inherit;
     }
   }
 `;
@@ -467,8 +485,30 @@ const Table = props => {
               />
             )}
           </TableHead>
-
-          {visibleData && visibleData.length ? (
+          {view.table.loadingState.isLoading ? (
+            <TableBody>
+              <StyledLoadingTableRow>
+                {options.hasRowSelection ? <TableCell /> : null}
+                {options.hasRowExpansion ? <TableCell /> : null}
+                {visibleColumns.map(column => (
+                  <TableCell key={`skeletonCol-${column.id}`}>
+                    <SkeletonText />
+                  </TableCell>
+                ))}
+                {options.hasRowActions ? <TableCell /> : null}
+              </StyledLoadingTableRow>
+              {['...Array(view.table.loadingState.rowCount)'].map((row, index) => (
+                <StyledLoadingTableRow key={`skeletonRow-${index}` /*eslint-disable-line*/}>
+                  {options.hasRowSelection ? <TableCell /> : null}
+                  {options.hasRowExpansion ? <TableCell /> : null}
+                  {visibleColumns.map(column => (
+                    <TableCell key={`emptycell-${column.id}`} />
+                  ))}
+                  {options.hasRowActions ? <TableCell /> : null}
+                </StyledLoadingTableRow>
+              ))}
+            </TableBody>
+          ) : visibleData && visibleData.length ? (
             <TableBody>
               {visibleData.map(i => {
                 const isRowExpanded =
