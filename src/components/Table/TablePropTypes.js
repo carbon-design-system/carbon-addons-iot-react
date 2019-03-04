@@ -23,3 +23,37 @@ export const EmptyStatePropTypes = PropTypes.oneOfType([
   /* If a React element is provided, it will be rendered in place of the default */
   PropTypes.element,
 ]);
+
+export const ExpandedRowsPropTypes = PropTypes.arrayOf(
+  PropTypes.shape({
+    rowId: PropTypes.string,
+    content: PropTypes.element,
+  })
+);
+
+export const TableDataPropTypes = PropTypes.arrayOf(
+  PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    values: PropTypes.object.isRequired,
+    /** Optional list of actions visible on row hover or expansion */
+    rowActions: RowActionPropTypes,
+  })
+);
+
+export const TableColumnsPropTypes = PropTypes.arrayOf(
+  PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    size: PropTypes.number.isRequired,
+    isSortable: PropTypes.bool,
+    filter: PropTypes.shape({
+      placeholderText: PropTypes.string,
+      options: PropTypes.arrayOf(
+        PropTypes.shape({
+          id: PropTypes.string.isRequired,
+          text: PropTypes.string.isRequired,
+        })
+      ),
+    }),
+  })
+);

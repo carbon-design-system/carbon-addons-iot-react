@@ -1,60 +1,32 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
 import merge from 'lodash/merge';
 import pick from 'lodash/pick';
-import isNil from 'lodash/isNil';
-import { PaginationV2, DataTable, Checkbox } from 'carbon-components-react';
+import { PaginationV2, DataTable } from 'carbon-components-react';
 
-import { COLORS } from '../../styles/styles';
 import { defaultFunction } from '../../utils/componentUtilityFunctions';
 
-import { RowActionPropTypes, EmptyStatePropTypes } from './TablePropTypes';
+import {
+  TableDataPropTypes,
+  TableColumnsPropTypes,
+  EmptyStatePropTypes,
+  ExpandedRowsPropTypes,
+} from './TablePropTypes';
 import TableHead from './TableHead/TableHead';
 import TableToolbar from './TableToolbar/TableToolbar';
-import RowActionsCell from './RowActionsCell/RowActionsCell';
 import EmptyTable from './EmptyTable/EmptyTable';
 import TableSkeletonWithHeaders from './TableSkeletonWithHeaders/TableSkeletonWithHeaders';
+import TableBody from './TableBody/TableBody';
 
-const {
-  Table: CarbonTable,
-  TableBody,
-  TableRow,
-  TableExpandRow,
-  TableContainer,
-  TableCell,
-} = DataTable;
+const { Table: CarbonTable, TableContainer } = DataTable;
 
 const propTypes = {
   /** DOM ID for component */
   id: PropTypes.string,
   /** Specify the properties of each column in the table */
-  columns: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired,
-      size: PropTypes.number.isRequired,
-      isSortable: PropTypes.bool,
-      filter: PropTypes.shape({
-        placeholderText: PropTypes.string,
-        options: PropTypes.arrayOf(
-          PropTypes.shape({
-            id: PropTypes.string.isRequired,
-            text: PropTypes.string.isRequired,
-          })
-        ),
-      }),
-    })
-  ).isRequired,
+  columns: TableColumnsPropTypes.isRequired,
   /** Data for the body of the table */
-  data: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      values: PropTypes.object.isRequired,
-      /** Optional list of actions visible on row hover or expansion */
-      rowActions: RowActionPropTypes,
-    })
-  ).isRequired,
+  data: TableDataPropTypes.isRequired,
   /** Optional properties to customize how the table should be rendered */
   options: PropTypes.shape({
     hasPagination: PropTypes.bool,
@@ -115,12 +87,7 @@ const propTypes = {
           isHidden: PropTypes.bool,
         })
       ),
-      expandedRows: PropTypes.arrayOf(
-        PropTypes.shape({
-          rowId: PropTypes.string,
-          content: PropTypes.element,
-        })
-      ),
+      expandedRows: ExpandedRowsPropTypes,
       emptyState: EmptyStatePropTypes,
       loadingState: PropTypes.shape({
         isLoading: PropTypes.bool,
@@ -211,61 +178,6 @@ const defaultProps = baseProps => ({
   },
 });
 
-const StyledTableExpandRow = styled(TableExpandRow)`
-  &&& {
-    cursor: pointer;
-    :hover {
-      td {
-        div {
-          opacity: 1;
-        }
-      }
-    }
-  }
-`;
-
-const StyledTableExpandRowExpanded = styled(TableExpandRow)`
-  &&& {
-    cursor: pointer;
-    td {
-      background-color: ${COLORS.blue};
-      border-color: ${COLORS.blue};
-      color: white;
-      button {
-        svg {
-          fill: white;
-        }
-      }
-      border-top: 1px solid ${COLORS.blue};
-      :first-of-type {
-        border-left: 1px solid ${COLORS.blue};
-      }
-      :last-of-type {
-        border-right: 1px solid ${COLORS.blue};
-      }
-    }
-  }
-`;
-
-const StyledExpansionTableRow = styled(TableRow)`
-  &&& {
-    td {
-      background-color: inherit;
-      border-left: 4px solid ${COLORS.blue};
-      border-width: 0 0 0 4px;
-    }
-    :hover {
-      border: inherit;
-      background-color: inherit;
-      td {
-        background-color: inherit;
-        border-left: solid ${COLORS.blue};
-        border-width: 0 0 0 4px;
-      }
-    }
-  }
-`;
-
 const Table = props => {
   const { id, columns, data, view, actions, options, className } = merge(
     {},
@@ -336,80 +248,16 @@ const Table = props => {
               rowCount={view.table.loadingState.rowCount}
             />
           ) : visibleData && visibleData.length ? (
-            <TableBody>
-              {visibleData.map(i => {
-                const isRowExpanded =
-                  view.table.expandedRows && view.table.expandedRows.find(j => j.rowId === i.id);
-                const rowExpansionContent = isRowExpanded
-                  ? view.table.expandedRows.find(j => j.rowId === i.id).content
-                  : null;
-                const rowSelectionCell = options.hasRowSelection ? (
-                  <TableCell
-                    key={`${i.id}-row-selection-cell`}
-                    style={{ paddingBottom: '0.5rem' }}
-                    onClick={e => {
-                      actions.table.onRowSelected(i.id, !view.table.selectedIds.includes(i.id));
-                      e.preventDefault();
-                      e.stopPropagation();
-                    }}>
-                    {/* TODO: Replace checkbox with TableSelectRow component when onChange bug is fixed
-                    https://github.com/IBM/carbon-components-react/issues/1088
-                    Also move onClick logic above into TableSelectRow
-                    */}
-                    <Checkbox
-                      id={`select-row-${i.id}`}
-                      labelText="Select Row"
-                      hideLabel
-                      checked={view.table.selectedIds.includes(i.id)}
-                    />
-                  </TableCell>
-                ) : null;
-
-                const tableCells = (
-                  <React.Fragment>
-                    {rowSelectionCell}
-                    {visibleColumns.map(col => (
-                      <TableCell key={col.id}>{i.values[col.id]}</TableCell>
-                    ))}
-                    <RowActionsCell
-                      id={i.id}
-                      isRowExpanded={!isNil(isRowExpanded)}
-                      onApplyRowAction={actions.table.onApplyRowAction}>
-                      {i.rowActions}
-                    </RowActionsCell>
-                  </React.Fragment>
-                );
-                return options.hasRowExpansion ? (
-                  isRowExpanded ? (
-                    <React.Fragment key={i.id}>
-                      <StyledTableExpandRowExpanded
-                        id={`${id}-Row-${i.id}`}
-                        ariaLabel="Expand Row"
-                        isExpanded
-                        onExpand={() => actions.table.onRowExpanded(i.id, false)}
-                        onClick={() => actions.table.onRowExpanded(i.id, false)}>
-                        {tableCells}
-                      </StyledTableExpandRowExpanded>
-                      <StyledExpansionTableRow>
-                        <TableCell colSpan={totalColumns}>{rowExpansionContent}</TableCell>
-                      </StyledExpansionTableRow>
-                    </React.Fragment>
-                  ) : (
-                    <StyledTableExpandRow
-                      id={`${id}-Row-${i.id}`}
-                      key={i.id}
-                      ariaLabel="Expand Row"
-                      isExpanded={false}
-                      onExpand={() => actions.table.onRowExpanded(i.id, true)}
-                      onClick={() => actions.table.onRowExpanded(i.id, true)}>
-                      {tableCells}
-                    </StyledTableExpandRow>
-                  )
-                ) : (
-                  <TableRow key={i.id}>{tableCells}</TableRow>
-                );
-              })}
-            </TableBody>
+            <TableBody
+              id={id}
+              rows={visibleData}
+              columns={visibleColumns}
+              expandedRows={view.table.expandedRows}
+              selectedIds={view.table.selectedIds}
+              totalColumns={totalColumns}
+              {...pick(options, 'hasRowSelection', 'hasRowExpansion')}
+              actions={pick(actions.table, 'onRowSelected', 'onApplyRowAction', 'onRowExpanded')}
+            />
           ) : (
             <EmptyTable
               totalColumns={totalColumns}
