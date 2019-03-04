@@ -329,7 +329,11 @@ const StyledEmptyTableRow = styled(TableRow)`
 `;
 
 const Table = props => {
-  const { id, columns, data, view, actions, options } = merge({}, defaultProps(props), props);
+  const { id, columns, data, view, actions, options, className } = merge(
+    {},
+    defaultProps(props),
+    props
+  );
 
   const minItemInView =
     options.hasPagination && view.pagination
@@ -350,7 +354,7 @@ const Table = props => {
     (options.hasRowExpansion ? 1 : 0) +
     (options.hasRowActions ? 1 : 0);
   return (
-    <div id={id}>
+    <div id={id} className={className}>
       <TableContainer>
         <TableToolbar>
           <TableToolbarContent>
