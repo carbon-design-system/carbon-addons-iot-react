@@ -3,14 +3,17 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import merge from 'lodash/merge';
 import pick from 'lodash/pick';
+import isNil from 'lodash/isNil';
 import { Button, PaginationV2, DataTable, Checkbox } from 'carbon-components-react';
 import { Bee32 } from '@carbon/icons-react';
 
 import { COLORS } from '../../styles/styles';
 import { defaultFunction } from '../../utils/componentUtilityFunctions';
 
+import { RowActionPropTypes } from './TablePropTypes';
 import TableHead from './TableHead/TableHead';
 import TableToolbar from './TableToolbar/TableToolbar';
+import RowActionsCell from './RowActionsCell/RowActionsCell';
 
 const {
   Table: CarbonTable,
@@ -48,15 +51,7 @@ const propTypes = {
       id: PropTypes.string.isRequired,
       values: PropTypes.object.isRequired,
       /** Optional list of actions visible on row hover or expansion */
-      rowActions: PropTypes.arrayOf(
-        PropTypes.shape({
-          id: PropTypes.string.isRequired,
-          icon: PropTypes.string.isRequired,
-          labelText: PropTypes.string,
-          /** Disabled state defaults to false */
-          disabled: PropTypes.bool,
-        })
-      ),
+      rowActions: RowActionPropTypes,
     })
   ).isRequired,
   /** Optional properties to customize how the table should be rendered */
@@ -219,30 +214,6 @@ const defaultProps = baseProps => ({
     },
   },
 });
-
-const RowActionsContainer = styled.div`
-  & {
-    display: flex;
-    justify-content: flex-end;
-    opacity: ${props => (props.visible ? 1 : 0)};
-  }
-`;
-
-const RowActionButton = styled(Button)`
-  &&& {
-    color: ${props => (props.rowexpanded ? COLORS.white : COLORS.darkGray)};
-    svg {
-      fill: ${props => (props.rowexpanded ? COLORS.white : COLORS.darkGray)};
-      margin-left: ${props => (props.nolabel !== 'false' ? '0' : '')};
-    }
-    :hover {
-      color: ${props => (!props.rowexpanded ? COLORS.white : COLORS.darkGray)};
-      svg {
-        fill: ${props => (!props.rowexpanded ? COLORS.white : COLORS.darkGray)};
-      }
-    }
-  }
-`;
 
 const StyledTableExpandRow = styled(TableExpandRow)`
   &&& {
@@ -415,37 +386,19 @@ const Table = props => {
                     />
                   </TableCell>
                 ) : null;
-                const rowActionsCell = expanded =>
-                  i.rowActions && i.rowActions.length > 0 ? (
-                    <TableCell key={`${i.id}-row-actions-cell`}>
-                      <RowActionsContainer visible={expanded}>
-                        {i.rowActions.map(a => (
-                          <RowActionButton
-                            key={`${i.id}-row-actions-button-${a.id}`}
-                            kind="ghost"
-                            icon={a.icon}
-                            disabled={a.disabled}
-                            onClick={e => {
-                              actions.table.onApplyRowAction(i.id, a.id);
-                              e.preventDefault();
-                              e.stopPropagation();
-                            }}
-                            small
-                            nolabel={`${!a.labelText}`}
-                            rowexpanded={isRowExpanded}>
-                            {a.labelText}
-                          </RowActionButton>
-                        ))}
-                      </RowActionsContainer>
-                    </TableCell>
-                  ) : null;
+
                 const tableCells = (
                   <React.Fragment>
                     {rowSelectionCell}
                     {visibleColumns.map(col => (
                       <TableCell key={col.id}>{i.values[col.id]}</TableCell>
                     ))}
-                    {rowActionsCell(isRowExpanded)}
+                    <RowActionsCell
+                      id={i.id}
+                      isRowExpanded={!isNil(isRowExpanded)}
+                      onApplyRowAction={actions.table.onApplyRowAction}>
+                      {i.rowActions}
+                    </RowActionsCell>
                   </React.Fragment>
                 );
                 return options.hasRowExpansion ? (
