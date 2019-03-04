@@ -10,7 +10,11 @@ const { TableHead: CarbonTableHead, TableRow, TableExpandHeader, TableHeader } =
 
 const propTypes = {
   /** Important table options that the head needs to know about */
-  options: PropTypes.shape({ hasRowExpansion: PropTypes.bool, hasRowSelection: PropTypes.bool }),
+  options: PropTypes.shape({
+    hasRowExpansion: PropTypes.bool,
+    hasRowSelection: PropTypes.bool,
+    hasRowActions: PropTypes.bool,
+  }),
   /** List of columns */
   columns: PropTypes.arrayOf(
     PropTypes.shape({
@@ -31,7 +35,7 @@ const propTypes = {
   ).isRequired,
 
   /** Current state of the table */
-  state: PropTypes.shape({
+  tableState: PropTypes.shape({
     /** Which toolbar is currently active */
     activeBar: PropTypes.oneOf(['column', 'filter']),
     /** What's currently selected in the table? */
@@ -61,6 +65,7 @@ const propTypes = {
     onSelectAll: PropTypes.func,
     onChangeSort: PropTypes.func,
     onChangeOrdering: PropTypes.func,
+    onApplyFilter: PropTypes.func,
   }).isRequired,
 };
 
@@ -72,7 +77,7 @@ const TableHead = ({
   options,
   options: { hasRowExpansion, hasRowSelection },
   columns,
-  state: {
+  tableState: {
     selection: { isSelectAllIndeterminate, isSelectAllSelected },
     sort,
     activeBar,

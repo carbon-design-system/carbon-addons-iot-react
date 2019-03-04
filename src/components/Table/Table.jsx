@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import merge from 'lodash/merge';
+import pick from 'lodash/pick';
 import { Button, PaginationV2, DataTable, Checkbox } from 'carbon-components-react';
 import { iconGrid, iconFilter } from 'carbon-icons';
 import { Bee32 } from '@carbon/icons-react';
@@ -392,11 +393,14 @@ const Table = props => {
 
         <CarbonTable zebra={false}>
           <TableHead
-            options={options}
+            options={pick(options, 'hasRowSelection', 'hasRowExpansion', 'hasRowActions')}
             columns={columns}
             filters={view.filters}
-            actions={{ ...actions.toolbar, ...actions.table }}
-            state={{
+            actions={{
+              ...pick(actions.toolbar, 'onApplyFilter'),
+              ...pick(actions.table, 'onSelectAll', 'onChangeSort', 'onChangeOrdering'),
+            }}
+            tableState={{
               activeBar: view.toolbar.activeBar,
               filters: view.filters,
               ...view.table,
