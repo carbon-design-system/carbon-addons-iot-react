@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import merge from 'lodash/merge';
 import pick from 'lodash/pick';
 import isNil from 'lodash/isNil';
-import { PaginationV2, DataTable, Checkbox, SkeletonText } from 'carbon-components-react';
+import { PaginationV2, DataTable, Checkbox } from 'carbon-components-react';
 
 import { COLORS } from '../../styles/styles';
 import { defaultFunction } from '../../utils/componentUtilityFunctions';
@@ -14,6 +14,7 @@ import TableHead from './TableHead/TableHead';
 import TableToolbar from './TableToolbar/TableToolbar';
 import RowActionsCell from './RowActionsCell/RowActionsCell';
 import EmptyTable from './EmptyTable/EmptyTable';
+import TableSkeletonWithHeaders from './TableSkeletonWithHeaders/TableSkeletonWithHeaders';
 
 const {
   Table: CarbonTable,
@@ -265,17 +266,6 @@ const StyledExpansionTableRow = styled(TableRow)`
   }
 `;
 
-const StyledLoadingTableRow = styled(TableRow)`
-  &&& {
-    pointer-events: none;
-
-    &:hover td {
-      border: 1px solid ${COLORS.lightGrey};
-      background: inherit;
-    }
-  }
-`;
-
 const Table = props => {
   const { id, columns, data, view, actions, options, className } = merge(
     {},
@@ -340,28 +330,11 @@ const Table = props => {
             }}
           />
           {view.table.loadingState.isLoading ? (
-            <TableBody>
-              <StyledLoadingTableRow>
-                {options.hasRowSelection ? <TableCell /> : null}
-                {options.hasRowExpansion ? <TableCell /> : null}
-                {visibleColumns.map(column => (
-                  <TableCell key={`skeletonCol-${column.id}`}>
-                    <SkeletonText />
-                  </TableCell>
-                ))}
-                {options.hasRowActions ? <TableCell /> : null}
-              </StyledLoadingTableRow>
-              {['...Array(view.table.loadingState.rowCount)'].map((row, index) => (
-                <StyledLoadingTableRow key={`skeletonRow-${index}` /*eslint-disable-line*/}>
-                  {options.hasRowSelection ? <TableCell /> : null}
-                  {options.hasRowExpansion ? <TableCell /> : null}
-                  {visibleColumns.map(column => (
-                    <TableCell key={`emptycell-${column.id}`} />
-                  ))}
-                  {options.hasRowActions ? <TableCell /> : null}
-                </StyledLoadingTableRow>
-              ))}
-            </TableBody>
+            <TableSkeletonWithHeaders
+              columns={visibleColumns}
+              {...pick(options, 'hasRowSelection', 'hasRowExpansion', 'hasRowActions')}
+              rowCount={view.table.loadingState.rowCount}
+            />
           ) : visibleData && visibleData.length ? (
             <TableBody>
               {visibleData.map(i => {
@@ -448,7 +421,9 @@ const Table = props => {
         </CarbonTable>
       </TableContainer>
 
-      {options.hasPagination ? <PaginationV2 {...view.pagination} {...actions.pagination} /> : null}
+      {options.hasPagination && !view.table.loadingState.isLoading ? ( // don't show pagination row while loading
+        <PaginationV2 {...view.pagination} {...actions.pagination} />
+      ) : null}
     </div>
   );
 };
