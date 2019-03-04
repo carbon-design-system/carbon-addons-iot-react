@@ -61,7 +61,6 @@
         "newlines-between": "always"
       }
     ],
-    "react/jsx-filename-extension": 0, // allow js extensions
     "no-prototype-builtins": 0, // not needed as we never mess with prototype
     "no-nested-ternary": 0,
     "react/jsx-one-expression-per-line": 0,
@@ -76,7 +75,7 @@
   // Testcases have less eslint rules applied to them
   "overrides": [
     {
-      "files": ["**/*-fixture.{js,jsx}", "**/*-test.{js,jsx}", "**/*-story.{js,jsx}"],
+      "files": ["**/*-fixture.{js,jsx}", "**/*.test.{js,jsx}", "**/*.story.{js,jsx}"],
       "rules": {
         "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
         "no-underscore-dangle": 0,

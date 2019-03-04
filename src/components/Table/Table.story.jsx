@@ -41,6 +41,11 @@ const tableColumns = [
     filter: { placeholderText: 'pick an option', options: selectData },
   },
   {
+    id: 'secretField',
+    name: 'Secret Information',
+    size: 1,
+  },
+  {
     id: 'number',
     name: 'Number',
     size: 1,
@@ -60,21 +65,31 @@ const words = [
   'pinocchio',
   'scott',
 ];
+const getLetter = index =>
+  'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'.charAt(index % 62);
 const getWord = (index, step = 1) => words[(step * index) % words.length];
 const getSentence = index =>
   `${getWord(index, 1)} ${getWord(index, 2)} ${getWord(index, 3)} ${index}`;
+const getString = (index, length) =>
+  Array(length)
+    .fill(0)
+    .map((i, idx) => getLetter(index * (idx + 14) * (idx + 1)))
+    .join('');
+
+const getNewRow = idx => ({
+  id: `row-${idx}`,
+  values: {
+    string: getSentence(idx),
+    date: new Date(100000000000 + 1000000000 * idx * idx).toISOString(),
+    select: selectData[idx % 3].id,
+    secretField: getString(idx, 10),
+    number: idx * idx,
+  },
+});
 
 const tableData = Array(100)
   .fill(0)
-  .map((i, idx) => ({
-    id: `row-${idx}`,
-    values: {
-      string: getSentence(idx),
-      date: new Date(100000000000 + 1000000000 * idx * idx).toISOString(),
-      select: selectData[idx % 3].id,
-      number: idx * idx,
-    },
-  }));
+  .map((i, idx) => getNewRow(idx));
 
 const RowExpansionContent = ({ rowId }) => (
   <div key={`${rowId}-expansion`} style={{ padding: 20 }}>
@@ -97,12 +112,17 @@ const actions = {
   toolbar: {
     onApplyFilter: action('onApplyFilter'),
     onToggleFilter: action('onToggleFilter'),
+    onToggleColumnSelection: action('onToggleColumnSelection'),
     /** Specify a callback for when the user clicks toolbar button to clear all filters. Recieves a parameter of the current filter values for each column */
     onClearAllFilters: action('onClearAllFilters'),
+    onCancelBatchAction: action('onCancelBatchAction'),
+    onApplyBatchAction: action('onApplyBatchAction'),
   },
   table: {
     onRowSelected: action('onRowSelected'),
     onSelectAll: action('onSelectAll'),
+    onEmptyStateAction: action('onEmptyStateAction'),
+    onChangeOrdering: action('onChangeOrdering'),
   },
 };
 
@@ -137,6 +157,7 @@ class StatefulTableWrapper extends Component {
         hasRowSelection: true,
         hasRowExpansion: true,
         hasRowActions: true,
+        hasColumnSelection: true,
       },
       view: {
         filters: [
@@ -159,10 +180,22 @@ class StatefulTableWrapper extends Component {
           isSelectAllSelected: false,
           selectedIds: [],
           sort: undefined,
+          ordering: tableColumns.map(({ id }) => ({
+            columnId: id,
+            isHidden: id === 'secretField',
+          })),
           expandedRows: [],
         },
         toolbar: {
           activeBar: 'filter',
+          batchActions: [
+            {
+              id: 'delete',
+              labelText: 'Delete',
+              icon: 'delete',
+              iconDescription: 'Delete',
+            },
+          ],
         },
       },
     };
@@ -218,6 +251,9 @@ class StatefulTableWrapper extends Component {
                 filters: {
                   $set: newFilters,
                 },
+                pagination: {
+                  page: { $set: 1 },
+                },
               },
             })
           );
@@ -236,6 +272,21 @@ class StatefulTableWrapper extends Component {
             });
           });
         },
+        onToggleColumnSelection: () => {
+          this.setState(state => {
+            const columnSelectionToggled =
+              state.view.toolbar.activeBar === 'column' ? null : 'column';
+            return update(state, {
+              view: {
+                toolbar: {
+                  activeBar: {
+                    $set: columnSelectionToggled,
+                  },
+                },
+              },
+            });
+          });
+        },
         onClearAllFilters: () => {
           this.setState(state =>
             update(state, {
@@ -243,9 +294,43 @@ class StatefulTableWrapper extends Component {
                 filters: {
                   $set: [],
                 },
+                pagination: {
+                  page: { $set: 1 },
+                },
               },
             })
           );
+        },
+        onCancelBatchAction: () => {
+          this.setState(state =>
+            update(state, {
+              view: {
+                table: {
+                  selectedIds: { $set: [] },
+                  isSelectAllSelected: { $set: false },
+                  isSelectAllIndeterminate: { $set: false },
+                },
+              },
+            })
+          );
+        },
+        onApplyBatchAction: id => {
+          if (id === 'delete') {
+            this.setState(state =>
+              update(state, {
+                data: {
+                  $set: state.data.filter(i => !state.view.table.selectedIds.includes(i.id)),
+                },
+                view: {
+                  table: {
+                    selectedIds: { $set: [] },
+                    isSelectAllSelected: { $set: false },
+                    isSelectAllIndeterminate: { $set: false },
+                  },
+                },
+              })
+            );
+          }
         },
       },
       table: {
@@ -289,7 +374,7 @@ class StatefulTableWrapper extends Component {
                       ? state.view.table.selectedIds.concat([id])
                       : state.view.table.selectedIds.filter(i => i !== id),
                   },
-                  isSelectIndeterminate: {
+                  isSelectAllIndeterminate: {
                     $set: !(isClearing || isSelectingAll),
                   },
                   isSelectAllSelected: {
@@ -311,7 +396,7 @@ class StatefulTableWrapper extends Component {
                   selectedIds: {
                     $set: val ? filteredData.map(i => i.id) : [],
                   },
-                  isSelectIndeterminate: {
+                  isSelectAllIndeterminate: {
                     $set: false,
                   },
                 },
@@ -340,6 +425,55 @@ class StatefulTableWrapper extends Component {
         onApplyRowAction: (rowId, actionId) => {
           alert(`action "${actionId}" clicked for row "${rowId}"`); //eslint-disable-line
         },
+        onEmptyStateAction: () => {
+          this.setState(state =>
+            state.view.filters.length > 0
+              ? update(state, {
+                  view: {
+                    filters: {
+                      $set: [],
+                    },
+                    toolbar: {
+                      activeBar: {
+                        $set: null,
+                      },
+                    },
+                    pagination: {
+                      page: { $set: 1 },
+                    },
+                  },
+                })
+              : update(state, {
+                  data: {
+                    $set: [getNewRow(Math.floor(Math.random() * 100))].map(i => ({
+                      ...i,
+                      rowActions: [
+                        {
+                          id: 'drilldown',
+                          icon: 'arrow--right',
+                          labelText: 'Drill in',
+                        },
+                        {
+                          id: 'delete',
+                          icon: 'delete',
+                        },
+                      ],
+                    })),
+                  },
+                })
+          );
+        },
+        onChangeOrdering: ordering => {
+          this.setState(state =>
+            update(state, {
+              view: {
+                table: {
+                  ordering: { $set: ordering },
+                },
+              },
+            })
+          );
+        },
       },
     };
     return (
@@ -351,7 +485,13 @@ class StatefulTableWrapper extends Component {
             : filteredData
         }
         options={options}
-        view={view}
+        view={{
+          ...view,
+          pagination: {
+            ...view.pagination,
+            totalItems: filteredData.length,
+          },
+        }}
         actions={actions}
       />
     );
@@ -375,21 +515,25 @@ storiesOf('Table', module)
       data={tableData}
       actions={actions}
       options={{
-        hasFilter: false,
+        hasFilter: true,
         hasPagination: true,
         hasRowSelection: true,
       }}
       view={{
         filters: [],
-        pagination: {
-          pageSize: 10,
-          pageSizes: [10, 20, 30],
-          page: 1,
-          totalItems: tableData.length,
+        toolbar: {
+          batchActions: [
+            {
+              id: 'delete',
+              labelText: 'Delete',
+              icon: 'delete',
+              iconDescription: 'Delete Item',
+            },
+          ],
         },
         table: {
           isSelectAllSelected: false,
-          isSelectIndeterminate: true,
+          isSelectAllIndeterminate: true,
           selectedIds: ['row-3', 'row-4', 'row-6', 'row-7'],
         },
       }}
@@ -405,9 +549,6 @@ storiesOf('Table', module)
       }}
       view={{
         filters: [],
-        pagination: {
-          totalItems: tableData.length,
-        },
         table: {
           expandedRows: [
             {
@@ -450,9 +591,6 @@ storiesOf('Table', module)
       }}
       view={{
         filters: [],
-        pagination: {
-          totalItems: tableData.length,
-        },
         table: {
           expandedRows: [
             {
@@ -483,12 +621,6 @@ storiesOf('Table', module)
       }}
       view={{
         filters: [],
-        pagination: {
-          pageSize: 10,
-          pageSizes: [10, 20, 30],
-          page: 1,
-          totalItems: tableData.length,
-        },
         table: {
           sort: {
             columnId: 'string',
@@ -537,14 +669,7 @@ storiesOf('Table', module)
             },
           ],
           pagination: {
-            pageSize: 10,
-            pageSizes: [10, 20, 30],
-            page: 1,
             totalItems: filteredData.length,
-          },
-          table: {
-            isSelectAllSelected: false,
-            selectedIds: [],
           },
           toolbar: {
             activeBar: 'filter',
@@ -553,7 +678,67 @@ storiesOf('Table', module)
       />
     );
   })
-  .add('with customized columns', () => <p>TODO - a couple columns selected and reordered</p>)
-  .add('with no results', () => <p>TODO - empty state when filters applied and no results</p>)
-  .add('with no data', () => <p>TODO - empty state when no data provided</p>)
+  .add('with customized columns', () => (
+    <Table
+      columns={tableColumns}
+      data={tableData}
+      actions={actions}
+      options={{
+        hasPagination: true,
+        hasRowSelection: true,
+        hasColumnSelection: true,
+      }}
+      view={{
+        table: {
+          ordering: tableColumns.map(c => ({
+            columnId: c.id,
+            isHidden: c.id === 'secretField' || c.id === 'date',
+          })),
+        },
+        toolbar: {
+          activeBar: 'column',
+        },
+      }}
+    />
+  ))
+  .add('with no results', () => (
+    <Table
+      columns={tableColumns}
+      data={[]}
+      actions={actions}
+      view={{
+        filters: [
+          {
+            columnId: 'string',
+            value: 'something not matching',
+          },
+        ],
+        toolbar: {
+          activeBar: 'filter',
+        },
+      }}
+      options={{ hasFilter: true, hasPagination: true }}
+    />
+  ))
+  .add('with no data', () => (
+    <Table columns={tableColumns} data={[]} actions={actions} options={{ hasPagination: true }} />
+  ))
+  .add('with no data and custom empty state', () => (
+    <Table
+      columns={tableColumns}
+      data={[]}
+      actions={actions}
+      view={{
+        table: {
+          emptyState: (
+            <div key="empty-state">
+              <h1 key="empty-state-heading">Custom empty state</h1>
+              <p key="empty-state-message">Hey, no data!</p>
+            </div>
+          ),
+        },
+      }}
+      options={{ hasPagination: true }}
+    />
+  ))
   .add('is loading', () => <p>TODO - empty state when data is loading</p>);

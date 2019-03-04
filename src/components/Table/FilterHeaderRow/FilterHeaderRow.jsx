@@ -71,6 +71,8 @@ class FilterHeaderRow extends Component {
     /** properties global to the table */
     tableOptions: PropTypes.shape({
       hasRowSelection: PropTypes.bool,
+      hasRowExpansion: PropTypes.bool,
+      hasRowActions: PropTypes.bool,
     }),
     /** filter can be hidden by the user but filters will still apply to the table */
     isVisible: PropTypes.bool,
@@ -115,7 +117,7 @@ class FilterHeaderRow extends Component {
   render() {
     const {
       columns,
-      tableOptions: { hasRowSelection, hasRowExpansion },
+      tableOptions: { hasRowSelection, hasRowExpansion, hasRowActions },
       isVisible,
     } = this.props;
     return isVisible ? (
@@ -177,6 +179,7 @@ class FilterHeaderRow extends Component {
             )}
           </StyledTableHeader>
         ))}
+        {hasRowActions ? <StyledTableHeader /> : null}
       </StyledTableRow>
     ) : null;
   }
