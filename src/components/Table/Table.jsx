@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import isNil from 'lodash/isNil';
 import styled from 'styled-components';
 import merge from 'lodash/merge';
+import pick from 'lodash/pick';
 import { Button, PaginationV2, DataTable, Checkbox, SkeletonText } from 'carbon-components-react';
 import { iconGrid, iconFilter } from 'carbon-icons';
 import { Bee32 } from '@carbon/icons-react';
@@ -10,15 +10,11 @@ import { Bee32 } from '@carbon/icons-react';
 import { COLORS } from '../../styles/styles';
 import { defaultFunction } from '../../utils/componentUtilityFunctions';
 
-import FilterHeaderRow from './FilterHeaderRow/FilterHeaderRow';
-import ColumnHeaderRow from './ColumnHeaderRow/ColumnHeaderRow';
+import TableHead from './TableHead/TableHead';
 
 const {
   Table: CarbonTable,
   TableBody,
-  TableHead,
-  TableHeader,
-  TableExpandHeader,
   TableRow,
   TableExpandRow,
   TableContainer,
@@ -351,7 +347,11 @@ const StyledLoadingTableRow = styled(TableRow)`
 `;
 
 const Table = props => {
-  const { id, columns, data, view, actions, options } = merge({}, defaultProps(props), props);
+  const { id, columns, data, view, actions, options, className } = merge(
+    {},
+    defaultProps(props),
+    props
+  );
 
   const minItemInView =
     options.hasPagination && view.pagination
@@ -362,10 +362,7 @@ const Table = props => {
       ? view.pagination.page * view.pagination.pageSize
       : data.length;
   const visibleData = data.slice(minItemInView, maxItemInView);
-  const columnBarActive =
-    options.hasColumnSelection && view.toolbar && view.toolbar.activeBar === 'column';
-  const filterBarActive = options.hasFilter && view.toolbar && view.toolbar.activeBar === 'filter';
-  const filterBarActiveStyle = { paddingTop: 16 };
+
   const visibleColumns = columns.filter(
     c => !(view.table.ordering.find(o => o.columnId === c.id) || { isHidden: false }).isHidden
   );
@@ -375,7 +372,7 @@ const Table = props => {
     (options.hasRowExpansion ? 1 : 0) +
     (options.hasRowActions ? 1 : 0);
   return (
-    <div>
+    <div id={id} className={className}>
       <TableContainer>
         <TableToolbar>
           <TableToolbarContent>
@@ -417,74 +414,24 @@ const Table = props => {
         </TableToolbar>
 
         <CarbonTable zebra={false}>
-          <TableHead>
-            <TableRow>
-              {options.hasRowExpansion ? <TableExpandHeader /> : null}
-              {options.hasRowSelection ? (
-                <TableHeader
-                  style={Object.assign(
-                    { paddingBottom: '0.5rem' },
-                    filterBarActive === true ? filterBarActiveStyle : {}
-                  )}>
-                  {/* TODO: Replace checkbox with TableSelectAll component when onChange bug is fixed
-                    https://github.com/IBM/carbon-components-react/issues/1088 */}
-                  <Checkbox
-                    id="select-all"
-                    labelText="Select All"
-                    hideLabel
-                    indeterminate={view.table.isSelectAllIndeterminate}
-                    checked={view.table.isSelectAllSelected}
-                    onChange={() => actions.table.onSelectAll(!view.table.isSelectAllSelected)}
-                  />
-                </TableHeader>
-              ) : null}
-              {visibleColumns.map(column => {
-                const hasSort =
-                  view.table && view.table.sort && view.table.sort.columnId === column.id;
-                return (
-                  <TableHeader
-                    id={`${id}-Header-Column-${column.id}`}
-                    key={`column-${column.id}`}
-                    style={filterBarActive === true ? filterBarActiveStyle : {}}
-                    isSortable={column.isSortable}
-                    isSortHeader={hasSort}
-                    onClick={() => {
-                      if (column.isSortable && actions.table.onChangeSort) {
-                        actions.table.onChangeSort(column.id);
-                      }
-                    }}
-                    sortDirection={hasSort ? view.table.sort.direction : 'NONE'}>
-                    {column.name}
-                  </TableHeader>
-                );
-              })}
-              {options.hasRowActions ? <TableHeader>&nbsp;</TableHeader> : null}
-            </TableRow>
-            {filterBarActive && (
-              <FilterHeaderRow
-                columns={visibleColumns.map(column => ({
-                  ...column.filter,
-                  id: column.id,
-                  isFilterable: !isNil(column.filter),
-                }))}
-                key={JSON.stringify(view.filters)}
-                filters={view.filters}
-                tableOptions={options}
-                onApplyFilter={actions.toolbar.onApplyFilter}
-              />
-            )}
-            {columnBarActive && (
-              <ColumnHeaderRow
-                columns={columns.map(column => ({
-                  id: column.id,
-                  name: column.name,
-                }))}
-                ordering={view.table.ordering}
-                tableOptions={options}
-                onChangeOrdering={actions.table.onChangeOrdering}
-              />
-            )}
-          </TableHead>
+          <TableHead
+            options={pick(options, 'hasRowSelection', 'hasRowExpansion', 'hasRowActions')}
+            columns={columns}
+            filters={view.filters}
+            actions={{
+              ...pick(actions.toolbar, 'onApplyFilter'),
+              ...pick(actions.table, 'onSelectAll', 'onChangeSort', 'onChangeOrdering'),
+            }}
+            tableState={{
+              activeBar: view.toolbar.activeBar,
+              filters: view.filters,
+              ...view.table,
+              selection: {
+                isSelectAllSelected: view.table.isSelectAllSelected,
+                isSelectAllIndeterminate: view.table.isSelectAllIndeterminate,
+              },
+            }}
+          />
           {view.table.loadingState.isLoading ? (
             <TableBody>
               <StyledLoadingTableRow>

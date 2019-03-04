@@ -15643,7 +15643,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
         }
       }
     >
-      <div>
+      <div
+        id="Table"
+      >
         <div
           className="bx--data-table-v2-container"
         >
@@ -15806,7 +15808,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                 >
                   <button
                     className="bx--table-sort-v2"
-                    id="Table-Header-Column-string"
+                    id="column-string"
                     onClick={[Function]}
                     style={
                       Object {
@@ -15839,7 +15841,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                   </button>
                 </th>
                 <th
-                  id="Table-Header-Column-date"
+                  id="column-date"
                   scope="col"
                   style={
                     Object {
@@ -15855,7 +15857,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                 >
                   <button
                     className="bx--table-sort-v2"
-                    id="Table-Header-Column-select"
+                    id="column-select"
                     onClick={[Function]}
                     style={
                       Object {
@@ -15893,7 +15895,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                 >
                   <button
                     className="bx--table-sort-v2"
-                    id="Table-Header-Column-number"
+                    id="column-number"
                     onClick={[Function]}
                     style={
                       Object {
@@ -16119,6 +16121,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                           />
                         </svg>
                       </div>
+                    </div>
+                  </div>
+                </th>
+                <th
+                  className="c1"
+                  scope="col"
+                >
+                  <div
+                    className="bx--form-item c2"
+                  >
+                    <div
+                      className="bx--form-item"
+                    >
+                      <label
+                        className="bx--label bx--visually-hidden"
+                        htmlFor="secretField"
+                      >
+                        secretField
+                      </label>
+                      <input
+                        className="bx--text-input bx--text__input bx--text-input--light"
+                        disabled={false}
+                        id="secretField"
+                        onBlur={[Function]}
+                        onChange={[Function]}
+                        onClick={[Function]}
+                        onKeyDown={[Function]}
+                        placeholder="Type and hit enter to apply"
+                        type="text"
+                        value=""
+                      />
                     </div>
                   </div>
                 </th>
@@ -20612,7 +20645,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
         }
       }
     >
-      <div>
+      <div
+        id="Table"
+      >
         <div
           className="bx--data-table-v2-container"
         >
@@ -20651,35 +20686,35 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
             <thead>
               <tr>
                 <th
-                  id="Table-Header-Column-string"
+                  id="column-string"
                   scope="col"
                   style={Object {}}
                 >
                   String
                 </th>
                 <th
-                  id="Table-Header-Column-date"
+                  id="column-date"
                   scope="col"
                   style={Object {}}
                 >
                   Date
                 </th>
                 <th
-                  id="Table-Header-Column-select"
+                  id="column-select"
                   scope="col"
                   style={Object {}}
                 >
                   Select
                 </th>
                 <th
-                  id="Table-Header-Column-secretField"
+                  id="column-secretField"
                   scope="col"
                   style={Object {}}
                 >
                   Secret Information
                 </th>
                 <th
-                  id="Table-Header-Column-number"
+                  id="column-number"
                   scope="col"
                   style={Object {}}
                 >
@@ -30926,7 +30961,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with custo
         }
       }
     >
-      <div>
+      <div
+        id="Table"
+      >
         <div
           className="bx--data-table-v2-container"
         >
@@ -31018,21 +31055,21 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with custo
                   </div>
                 </th>
                 <th
-                  id="Table-Header-Column-string"
+                  id="column-string"
                   scope="col"
                   style={Object {}}
                 >
                   String
                 </th>
                 <th
-                  id="Table-Header-Column-select"
+                  id="column-select"
                   scope="col"
                   style={Object {}}
                 >
                   Select
                 </th>
                 <th
-                  id="Table-Header-Column-number"
+                  id="column-number"
                   scope="col"
                   style={Object {}}
                 >
@@ -36351,7 +36388,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with filte
         }
       }
     >
-      <div>
+      <div
+        id="Table"
+      >
         <div
           className="bx--data-table-v2-container"
         >
@@ -36453,7 +36492,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with filte
                   </div>
                 </th>
                 <th
-                  id="Table-Header-Column-string"
+                  id="column-string"
                   scope="col"
                   style={
                     Object {
@@ -36464,7 +36503,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with filte
                   String
                 </th>
                 <th
-                  id="Table-Header-Column-date"
+                  id="column-date"
                   scope="col"
                   style={
                     Object {
@@ -36475,7 +36514,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with filte
                   Date
                 </th>
                 <th
-                  id="Table-Header-Column-select"
+                  id="column-select"
                   scope="col"
                   style={
                     Object {
@@ -36486,7 +36525,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with filte
                   Select
                 </th>
                 <th
-                  id="Table-Header-Column-secretField"
+                  id="column-secretField"
                   scope="col"
                   style={
                     Object {
@@ -36497,7 +36536,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with filte
                   Secret Information
                 </th>
                 <th
-                  id="Table-Header-Column-number"
+                  id="column-number"
                   scope="col"
                   style={
                     Object {
@@ -41949,7 +41988,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with no da
         }
       }
     >
-      <div>
+      <div
+        id="Table"
+      >
         <div
           className="bx--data-table-v2-container"
         >
@@ -41988,35 +42029,35 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with no da
             <thead>
               <tr>
                 <th
-                  id="Table-Header-Column-string"
+                  id="column-string"
                   scope="col"
                   style={Object {}}
                 >
                   String
                 </th>
                 <th
-                  id="Table-Header-Column-date"
+                  id="column-date"
                   scope="col"
                   style={Object {}}
                 >
                   Date
                 </th>
                 <th
-                  id="Table-Header-Column-select"
+                  id="column-select"
                   scope="col"
                   style={Object {}}
                 >
                   Select
                 </th>
                 <th
-                  id="Table-Header-Column-secretField"
+                  id="column-secretField"
                   scope="col"
                   style={Object {}}
                 >
                   Secret Information
                 </th>
                 <th
-                  id="Table-Header-Column-number"
+                  id="column-number"
                   scope="col"
                   style={Object {}}
                 >
@@ -45979,7 +46020,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with no da
         }
       }
     >
-      <div>
+      <div
+        id="Table"
+      >
         <div
           className="bx--data-table-v2-container"
         >
@@ -46018,35 +46061,35 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with no da
             <thead>
               <tr>
                 <th
-                  id="Table-Header-Column-string"
+                  id="column-string"
                   scope="col"
                   style={Object {}}
                 >
                   String
                 </th>
                 <th
-                  id="Table-Header-Column-date"
+                  id="column-date"
                   scope="col"
                   style={Object {}}
                 >
                   Date
                 </th>
                 <th
-                  id="Table-Header-Column-select"
+                  id="column-select"
                   scope="col"
                   style={Object {}}
                 >
                   Select
                 </th>
                 <th
-                  id="Table-Header-Column-secretField"
+                  id="column-secretField"
                   scope="col"
                   style={Object {}}
                 >
                   Secret Information
                 </th>
                 <th
-                  id="Table-Header-Column-number"
+                  id="column-number"
                   scope="col"
                   style={Object {}}
                 >
@@ -50085,7 +50128,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with no re
         }
       }
     >
-      <div>
+      <div
+        id="Table"
+      >
         <div
           className="bx--data-table-v2-container"
         >
@@ -50155,7 +50200,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with no re
             <thead>
               <tr>
                 <th
-                  id="Table-Header-Column-string"
+                  id="column-string"
                   scope="col"
                   style={
                     Object {
@@ -50166,7 +50211,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with no re
                   String
                 </th>
                 <th
-                  id="Table-Header-Column-date"
+                  id="column-date"
                   scope="col"
                   style={
                     Object {
@@ -50177,7 +50222,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with no re
                   Date
                 </th>
                 <th
-                  id="Table-Header-Column-select"
+                  id="column-select"
                   scope="col"
                   style={
                     Object {
@@ -50188,7 +50233,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with no re
                   Select
                 </th>
                 <th
-                  id="Table-Header-Column-secretField"
+                  id="column-secretField"
                   scope="col"
                   style={
                     Object {
@@ -50199,7 +50244,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with no re
                   Secret Information
                 </th>
                 <th
-                  id="Table-Header-Column-number"
+                  id="column-number"
                   scope="col"
                   style={
                     Object {
@@ -54579,7 +54624,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
         }
       }
     >
-      <div>
+      <div
+        id="Table"
+      >
         <div
           className="bx--data-table-v2-container"
         >
@@ -54621,35 +54668,35 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   scope="col"
                 />
                 <th
-                  id="Table-Header-Column-string"
+                  id="column-string"
                   scope="col"
                   style={Object {}}
                 >
                   String
                 </th>
                 <th
-                  id="Table-Header-Column-date"
+                  id="column-date"
                   scope="col"
                   style={Object {}}
                 >
                   Date
                 </th>
                 <th
-                  id="Table-Header-Column-select"
+                  id="column-select"
                   scope="col"
                   style={Object {}}
                 >
                   Select
                 </th>
                 <th
-                  id="Table-Header-Column-secretField"
+                  id="column-secretField"
                   scope="col"
                   style={Object {}}
                 >
                   Secret Information
                 </th>
                 <th
-                  id="Table-Header-Column-number"
+                  id="column-number"
                   scope="col"
                   style={Object {}}
                 >
@@ -64200,7 +64247,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
         }
       }
     >
-      <div>
+      <div
+        id="Table"
+      >
         <div
           className="bx--data-table-v2-container"
         >
@@ -64242,35 +64291,35 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   scope="col"
                 />
                 <th
-                  id="Table-Header-Column-string"
+                  id="column-string"
                   scope="col"
                   style={Object {}}
                 >
                   String
                 </th>
                 <th
-                  id="Table-Header-Column-date"
+                  id="column-date"
                   scope="col"
                   style={Object {}}
                 >
                   Date
                 </th>
                 <th
-                  id="Table-Header-Column-select"
+                  id="column-select"
                   scope="col"
                   style={Object {}}
                 >
                   Select
                 </th>
                 <th
-                  id="Table-Header-Column-secretField"
+                  id="column-secretField"
                   scope="col"
                   style={Object {}}
                 >
                   Secret Information
                 </th>
                 <th
-                  id="Table-Header-Column-number"
+                  id="column-number"
                   scope="col"
                   style={Object {}}
                 >
@@ -78554,7 +78603,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with selec
         }
       }
     >
-      <div>
+      <div
+        id="Table"
+      >
         <div
           className="bx--data-table-v2-container"
         >
@@ -78677,35 +78728,35 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with selec
                   </div>
                 </th>
                 <th
-                  id="Table-Header-Column-string"
+                  id="column-string"
                   scope="col"
                   style={Object {}}
                 >
                   String
                 </th>
                 <th
-                  id="Table-Header-Column-date"
+                  id="column-date"
                   scope="col"
                   style={Object {}}
                 >
                   Date
                 </th>
                 <th
-                  id="Table-Header-Column-select"
+                  id="column-select"
                   scope="col"
                   style={Object {}}
                 >
                   Select
                 </th>
                 <th
-                  id="Table-Header-Column-secretField"
+                  id="column-secretField"
                   scope="col"
                   style={Object {}}
                 >
                   Secret Information
                 </th>
                 <th
-                  id="Table-Header-Column-number"
+                  id="column-number"
                   scope="col"
                   style={Object {}}
                 >
@@ -84039,7 +84090,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with sorti
         }
       }
     >
-      <div>
+      <div
+        id="Table"
+      >
         <div
           className="bx--data-table-v2-container"
         >
@@ -84114,7 +84167,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with sorti
                 >
                   <button
                     className="bx--table-sort-v2 bx--table-sort-v2--active"
-                    id="Table-Header-Column-string"
+                    id="column-string"
                     onClick={[Function]}
                     style={Object {}}
                   >
@@ -84143,7 +84196,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with sorti
                   </button>
                 </th>
                 <th
-                  id="Table-Header-Column-date"
+                  id="column-date"
                   scope="col"
                   style={Object {}}
                 >
@@ -84155,7 +84208,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with sorti
                 >
                   <button
                     className="bx--table-sort-v2"
-                    id="Table-Header-Column-select"
+                    id="column-select"
                     onClick={[Function]}
                     style={Object {}}
                   >
@@ -84189,7 +84242,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with sorti
                 >
                   <button
                     className="bx--table-sort-v2"
-                    id="Table-Header-Column-secretField"
+                    id="column-secretField"
                     onClick={[Function]}
                     style={Object {}}
                   >
@@ -84223,7 +84276,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with sorti
                 >
                   <button
                     className="bx--table-sort-v2"
-                    id="Table-Header-Column-number"
+                    id="column-number"
                     onClick={[Function]}
                     style={Object {}}
                   >
