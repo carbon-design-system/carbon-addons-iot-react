@@ -26556,7 +26556,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table is loading
         }
       }
     >
-      <div>
+      <div
+        id="Table"
+      >
         <div
           className="bx--data-table-v2-container"
         >
@@ -26595,35 +26597,35 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table is loading
             <thead>
               <tr>
                 <th
-                  id="Table-Header-Column-string"
+                  id="column-string"
                   scope="col"
                   style={Object {}}
                 >
                   String
                 </th>
                 <th
-                  id="Table-Header-Column-date"
+                  id="column-date"
                   scope="col"
                   style={Object {}}
                 >
                   Date
                 </th>
                 <th
-                  id="Table-Header-Column-select"
+                  id="column-select"
                   scope="col"
                   style={Object {}}
                 >
                   Select
                 </th>
                 <th
-                  id="Table-Header-Column-secretField"
+                  id="column-secretField"
                   scope="col"
                   style={Object {}}
                 >
                   Secret Information
                 </th>
                 <th
-                  id="Table-Header-Column-number"
+                  id="column-number"
                   scope="col"
                   style={Object {}}
                 >
