@@ -350,7 +350,7 @@ const Table = props => {
     (options.hasRowExpansion ? 1 : 0) +
     (options.hasRowActions ? 1 : 0);
   return (
-    <div>
+    <div id={id}>
       <TableContainer>
         <TableToolbar>
           <TableToolbarContent>

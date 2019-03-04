@@ -15643,7 +15643,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
         }
       }
     >
-      <div>
+      <div
+        id="Table"
+      >
         <div
           className="bx--data-table-v2-container"
         >
@@ -20550,7 +20552,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
         }
       }
     >
-      <div>
+      <div
+        id="Table"
+      >
         <div
           className="bx--data-table-v2-container"
         >
@@ -26650,7 +26654,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with custo
         }
       }
     >
-      <div>
+      <div
+        id="Table"
+      >
         <div
           className="bx--data-table-v2-container"
         >
@@ -31982,7 +31988,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with filte
         }
       }
     >
-      <div>
+      <div
+        id="Table"
+      >
         <div
           className="bx--data-table-v2-container"
         >
@@ -37487,7 +37495,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with no da
         }
       }
     >
-      <div>
+      <div
+        id="Table"
+      >
         <div
           className="bx--data-table-v2-container"
         >
@@ -41424,7 +41434,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with no da
         }
       }
     >
-      <div>
+      <div
+        id="Table"
+      >
         <div
           className="bx--data-table-v2-container"
         >
@@ -45437,7 +45449,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with no re
         }
       }
     >
-      <div>
+      <div
+        id="Table"
+      >
         <div
           className="bx--data-table-v2-container"
         >
@@ -49838,7 +49852,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
         }
       }
     >
-      <div>
+      <div
+        id="Table"
+      >
         <div
           className="bx--data-table-v2-container"
         >
@@ -59366,7 +59382,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
         }
       }
     >
-      <div>
+      <div
+        id="Table"
+      >
         <div
           className="bx--data-table-v2-container"
         >
@@ -73627,7 +73645,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with selec
         }
       }
     >
-      <div>
+      <div
+        id="Table"
+      >
         <div
           className="bx--data-table-v2-container"
         >
@@ -79019,7 +79039,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with sorti
         }
       }
     >
-      <div>
+      <div
+        id="Table"
+      >
         <div
           className="bx--data-table-v2-container"
         >
