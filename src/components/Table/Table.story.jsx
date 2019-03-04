@@ -741,4 +741,11 @@ storiesOf('Table', module)
       options={{ hasPagination: true }}
     />
   ))
-  .add('is loading', () => <p>TODO - empty state when data is loading</p>);
+  .add('is loading', () => (
+    <Table
+      columns={tableColumns}
+      data={tableData}
+      actions={actions}
+      view={{ table: { loadingState: { isLoading: true } } }}
+    />
+  ));
