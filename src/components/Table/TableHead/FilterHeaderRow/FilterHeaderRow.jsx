@@ -4,7 +4,7 @@ import { ComboBox, DataTable, FormItem, Icon, TextInput } from 'carbon-component
 import { iconClose } from 'carbon-icons';
 import styled from 'styled-components';
 
-import { defaultFunction, handleEnterKeyDown } from '../../../utils/componentUtilityFunctions';
+import { defaultFunction, handleEnterKeyDown } from '../../../../utils/componentUtilityFunctions';
 
 const { TableHeader, TableRow } = DataTable;
 

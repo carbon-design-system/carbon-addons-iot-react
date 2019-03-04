@@ -9,7 +9,8 @@ import {
   TableDataPropTypes,
   TableColumnsPropTypes,
 } from '../TablePropTypes';
-import TableBodyRow from '../TableBodyRow/TableBodyRow';
+
+import TableBodyRow from './TableBodyRow/TableBodyRow';
 
 const { TableBody: CarbonTableBody } = DataTable;
 

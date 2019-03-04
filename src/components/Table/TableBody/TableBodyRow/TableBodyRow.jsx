@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import { DataTable, Checkbox } from 'carbon-components-react';
 import styled from 'styled-components';
 
-import { COLORS } from '../../../styles/styles';
+import { COLORS } from '../../../../styles/styles';
 import RowActionsCell from '../RowActionsCell/RowActionsCell';
-import { RowActionPropTypes } from '../TablePropTypes';
+import { RowActionPropTypes } from '../../TablePropTypes';
 
 const { TableRow, TableExpandRow, TableCell } = DataTable;
 
@@ -139,9 +139,12 @@ const TableBodyRow = ({
       {columns.map(col => (
         <TableCell key={col.id}>{children[col.id]}</TableCell>
       ))}
-      <RowActionsCell id={id} isRowExpanded={isExpanded} onApplyRowAction={onApplyRowAction}>
-        {rowActions}
-      </RowActionsCell>
+      <RowActionsCell
+        id={id}
+        actions={rowActions}
+        isRowExpanded={isExpanded}
+        onApplyRowAction={onApplyRowAction}
+      />
     </React.Fragment>
   );
   return hasRowExpansion ? (

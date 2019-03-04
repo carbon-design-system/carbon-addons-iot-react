@@ -145,9 +145,10 @@ class StatefulTableWrapper extends Component {
               }
             : null,
           {
-            id: 'delete',
-            icon: 'delete',
-            disabled: idx % 11 === 0,
+            id: 'Add',
+            icon: 'icon--add',
+            labelText: 'Add',
+            isOverflow: true,
           },
         ].filter(i => i),
       })),
@@ -581,6 +582,12 @@ storiesOf('Table', module)
             id: 'delete',
             icon: 'delete',
             disabled: idx % 6 === 0,
+          },
+          {
+            id: 'Add',
+            icon: 'icon--add',
+            labelText: 'Add',
+            isOverflow: true,
           },
         ].filter(i => i),
       }))}
