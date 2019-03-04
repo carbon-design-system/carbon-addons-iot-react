@@ -24,8 +24,7 @@ const Text = styled.div`
   {
     padding: 15px;
     line-height:30px;
-    color: gray;
-
+    color: #556873;
   }
 `;
 
@@ -186,7 +185,6 @@ class FileDrop extends React.Component {
 
     const dradAndDropText = 'Drag and drop you file here or '
 
-
     const linkElement = (
       <div>
         {dradAndDropText}
@@ -265,7 +263,7 @@ class FileDrop extends React.Component {
         <FileUploaderButton
           labelText={buttonLabel}
           multiple
-          buttonKind="primary"
+          buttonKind="secondary"
           onChange={this.handleChange}
           disableLabelChanges
           accept={accept}
