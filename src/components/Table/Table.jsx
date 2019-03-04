@@ -4,13 +4,13 @@ import styled from 'styled-components';
 import merge from 'lodash/merge';
 import pick from 'lodash/pick';
 import { Button, PaginationV2, DataTable, Checkbox } from 'carbon-components-react';
-import { iconGrid, iconFilter } from 'carbon-icons';
 import { Bee32 } from '@carbon/icons-react';
 
 import { COLORS } from '../../styles/styles';
 import { defaultFunction } from '../../utils/componentUtilityFunctions';
 
 import TableHead from './TableHead/TableHead';
+import TableToolbar from './TableToolbar/TableToolbar';
 
 const {
   Table: CarbonTable,
@@ -18,11 +18,6 @@ const {
   TableRow,
   TableExpandRow,
   TableContainer,
-  TableToolbar,
-  TableToolbarContent,
-  TableToolbarAction,
-  TableBatchActions,
-  TableBatchAction,
   TableCell,
 } = DataTable;
 
@@ -356,45 +351,22 @@ const Table = props => {
   return (
     <div id={id} className={className}>
       <TableContainer>
-        <TableToolbar>
-          <TableToolbarContent>
-            <TableBatchActions
-              onCancel={actions.toolbar.onCancelBatchAction}
-              shouldShowBatchActions={view.table.selectedIds.length > 0}
-              totalSelected={view.table.selectedIds.length}>
-              {view.toolbar.batchActions.map(i => (
-                <TableBatchAction
-                  key={i.id}
-                  onClick={() => actions.toolbar.onApplyBatchAction(i.id)}
-                  icon={i.icon}>
-                  {i.labelText}
-                </TableBatchAction>
-              ))}
-            </TableBatchActions>
-            {view.filters && !!view.filters.length ? ( // TODO: translate button
-              <Button kind="secondary" onClick={actions.toolbar.onClearAllFilters} small>
-                Clear All Filters
-              </Button>
-            ) : null}
-            {options.hasColumnSelection ? (
-              <TableToolbarAction
-                className="bx--btn--sm"
-                icon={iconGrid}
-                iconDescription="Column Selection"
-                onClick={actions.toolbar.onToggleColumnSelection}
-              />
-            ) : null}
-            {options.hasFilter ? (
-              <TableToolbarAction
-                className="bx--btn--sm"
-                icon={iconFilter}
-                iconDescription="Filter"
-                onClick={actions.toolbar.onToggleFilter}
-              />
-            ) : null}
-          </TableToolbarContent>
-        </TableToolbar>
-
+        <TableToolbar
+          actions={pick(
+            actions.toolbar,
+            'onCancelBatchAction',
+            'onApplyBatchAction',
+            'onClearAllFilters',
+            'onToggleColumnSelection',
+            'onToggleFilter'
+          )}
+          options={pick(options, 'hasColumnSelection', 'hasFilter')}
+          tableState={{
+            totalSelected: view.table.selectedIds.length,
+            totalFilters: view.filters ? view.filters.length : 0,
+            batchActions: view.toolbar.batchActions,
+          }}
+        />
         <CarbonTable zebra={false}>
           <TableHead
             options={pick(options, 'hasRowSelection', 'hasRowExpansion', 'hasRowActions')}
