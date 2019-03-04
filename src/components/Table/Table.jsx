@@ -4,16 +4,16 @@ import styled from 'styled-components';
 import merge from 'lodash/merge';
 import pick from 'lodash/pick';
 import isNil from 'lodash/isNil';
-import { Button, PaginationV2, DataTable, Checkbox, SkeletonText } from 'carbon-components-react';
-import { Bee32 } from '@carbon/icons-react';
+import { PaginationV2, DataTable, Checkbox, SkeletonText } from 'carbon-components-react';
 
 import { COLORS } from '../../styles/styles';
 import { defaultFunction } from '../../utils/componentUtilityFunctions';
 
-import { RowActionPropTypes } from './TablePropTypes';
+import { RowActionPropTypes, EmptyStatePropTypes } from './TablePropTypes';
 import TableHead from './TableHead/TableHead';
 import TableToolbar from './TableToolbar/TableToolbar';
 import RowActionsCell from './RowActionsCell/RowActionsCell';
+import EmptyTable from './EmptyTable/EmptyTable';
 
 const {
   Table: CarbonTable,
@@ -120,19 +120,7 @@ const propTypes = {
           content: PropTypes.element,
         })
       ),
-      emptyState: PropTypes.oneOfType([
-        PropTypes.shape({
-          message: PropTypes.string.isRequired,
-          /* Show a different message if no content is in the table matching the filters */
-          messageWithFilters: PropTypes.string,
-          /* If a label is not provided, no action button will be rendered */
-          buttonLabel: PropTypes.string,
-          /* Show a different utton label if no content is in the table matching the filters */
-          buttonLabelWithFilters: PropTypes.string,
-        }),
-        /* If a React element is provided, it will be rendered in place of the default */
-        PropTypes.element,
-      ]),
+      emptyState: EmptyStatePropTypes,
       loadingState: PropTypes.shape({
         isLoading: PropTypes.bool,
         rowCount: PropTypes.number,
@@ -272,30 +260,6 @@ const StyledExpansionTableRow = styled(TableRow)`
         background-color: inherit;
         border-left: solid ${COLORS.blue};
         border-width: 0 0 0 4px;
-      }
-    }
-  }
-`;
-
-const StyledEmptyTableRow = styled(TableRow)`
-  &&& {
-    &:hover td {
-      border: 1px solid ${COLORS.lightGrey};
-      background: inherit;
-    }
-    .empty-table-cell--default {
-      display: flex;
-      align-items: center;
-      justify-content: middle;
-      flex-direction: column;
-      padding: 3rem;
-
-      svg {
-        margin: 1rem;
-      }
-
-      & > * {
-        margin: 0.5rem;
       }
     }
   }
@@ -474,31 +438,12 @@ const Table = props => {
               })}
             </TableBody>
           ) : (
-            <TableBody>
-              <StyledEmptyTableRow>
-                <TableCell colSpan={totalColumns}>
-                  {view.table.emptyState.props ? (
-                    view.table.emptyState
-                  ) : (
-                    <div className="empty-table-cell--default">
-                      <Bee32 />
-                      <p>
-                        {view.filters.length > 0 && view.table.emptyState.messageWithFilters
-                          ? view.table.emptyState.messageWithFilters
-                          : view.table.emptyState.message}
-                      </p>
-                      {view.table.emptyState.buttonLabel && (
-                        <Button onClick={() => actions.table.onEmptyStateAction()}>
-                          {view.filters.length > 0 && view.table.emptyState.buttonLabelWithFilters
-                            ? view.table.emptyState.buttonLabelWithFilters
-                            : view.table.emptyState.buttonLabel}
-                        </Button>
-                      )}
-                    </div>
-                  )}
-                </TableCell>
-              </StyledEmptyTableRow>
-            </TableBody>
+            <EmptyTable
+              totalColumns={totalColumns}
+              isFiltered={view.filters.length > 0}
+              emptyState={view.table.emptyState}
+              onEmptyStateAction={actions.table.onEmptyStateAction}
+            />
           )}
         </CarbonTable>
       </TableContainer>

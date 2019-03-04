@@ -5,3 +5,4 @@ export BaseModal from './components/BaseModal';
 export WizardModal from './components/WizardModal';
 export TableHead from './components/Table/TableHead/TableHead';
 export TableToolbar from './components/Table/TableToolbar/TableToolbar';
+export EmptyTable from './components/Table/EmptyTable/EmptyTable';
