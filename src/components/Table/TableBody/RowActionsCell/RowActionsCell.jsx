@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { Button, DataTable, OverflowMenu, OverflowMenuItem, Icon } from 'carbon-components-react';
 import styled from 'styled-components';
@@ -19,9 +19,17 @@ const RowActionsContainer = styled.div`
   }
 `;
 
+const OverflowMenuContent = styled.div`
+  & {
+    display: flex;
+    align-items: center;
+  }
+`;
+
 const StyledIcon = styled(Icon)`
   & {
     margin-right: 0.5rem;
+    width: 1rem;
   }
 `;
 
@@ -125,6 +133,7 @@ class RowActionsCell extends React.Component {
           {hasOverflow ? (
             <StyledOverflowMenu
               floatingMenu
+              flipped
               ariaLabel={moreActionsLabel}
               onClick={event => event.stopPropagation()}
               isRowExpanded={isRowExpanded}
@@ -141,10 +150,10 @@ class RowActionsCell extends React.Component {
                     requireTitle
                     itemText={
                       action.icon ? (
-                        <Fragment>
+                        <OverflowMenuContent>
                           <StyledIcon name={action.icon} iconTitle={action.labelText} />
                           {action.labelText}
-                        </Fragment>
+                        </OverflowMenuContent>
                       ) : (
                         action.labelText
                       )

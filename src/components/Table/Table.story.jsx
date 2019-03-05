@@ -145,9 +145,15 @@ class StatefulTableWrapper extends Component {
               }
             : null,
           {
-            id: 'Add',
+            id: 'add',
             icon: 'icon--add',
             labelText: 'Add',
+            isOverflow: true,
+          },
+          {
+            id: 'delete',
+            icon: 'icon--delete',
+            labelText: 'Delete',
             isOverflow: true,
           },
         ].filter(i => i),
@@ -455,8 +461,16 @@ class StatefulTableWrapper extends Component {
                           labelText: 'Drill in',
                         },
                         {
+                          id: 'add',
+                          icon: 'icon--add',
+                          labelText: 'Add',
+                          isOverflow: true,
+                        },
+                        {
                           id: 'delete',
-                          icon: 'delete',
+                          icon: 'icon--delete',
+                          labelText: 'Delete',
+                          isOverflow: true,
                         },
                       ],
                     })),
@@ -579,14 +593,15 @@ storiesOf('Table', module)
               }
             : null,
           {
-            id: 'delete',
-            icon: 'delete',
-            disabled: idx % 6 === 0,
-          },
-          {
-            id: 'Add',
+            id: 'add',
             icon: 'icon--add',
             labelText: 'Add',
+            isOverflow: true,
+          },
+          {
+            id: 'delete',
+            icon: 'icon--delete',
+            labelText: 'Delete',
             isOverflow: true,
           },
         ].filter(i => i),
