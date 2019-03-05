@@ -15583,12 +15583,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+}
+
+.c4 > * {
   opacity: 0;
 }
 
 .c6.c6.c6 {
   margin-left: 0.5rem;
   color: #152935;
+  opacity: 0;
 }
 
 .c6.c6.c6 svg {
@@ -15616,7 +15620,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
   cursor: pointer;
 }
 
-.c3.c3.c3:hover td div {
+.c3.c3.c3:hover td div > * {
   opacity: 1;
 }
 
@@ -48736,7 +48740,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
   cursor: pointer;
 }
 
-.c0.c0.c0:hover td div {
+.c0.c0.c0:hover td div > * {
   opacity: 1;
 }
 
@@ -57561,6 +57565,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+}
+
+.c1 > * {
   opacity: 0;
 }
 
@@ -57577,12 +57584,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+}
+
+.c6 > * {
   opacity: 1;
 }
 
 .c4.c4.c4 {
   margin-left: 0.5rem;
   color: #152935;
+  opacity: 0;
 }
 
 .c4.c4.c4 svg {
@@ -57593,6 +57604,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
 .c8.c8.c8 {
   margin-left: 0.5rem;
   color: #fff;
+  opacity: 1;
 }
 
 .c8.c8.c8 svg {
@@ -57654,7 +57666,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
   cursor: pointer;
 }
 
-.c0.c0.c0:hover td div {
+.c0.c0.c0:hover td div > * {
   opacity: 1;
 }
 

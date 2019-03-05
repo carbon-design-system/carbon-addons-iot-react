@@ -13,7 +13,9 @@ const RowActionsContainer = styled.div`
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    opacity: ${props => (props.visible ? 1 : 0)};
+    > * {
+      opacity: ${props => (props.visible ? 1 : 0)};
+    }
   }
 `;
 
@@ -23,7 +25,9 @@ const StyledIcon = styled(Icon)`
   }
 `;
 
-const StyledOverflowMenu = styled(({ isRowExpanded, ...other }) => <OverflowMenu {...other} />)`
+const StyledOverflowMenu = styled(({ isRowExpanded, isOpen, ...other }) => (
+  <OverflowMenu {...other} />
+))`
   &&& {
     margin-left: 0.5rem;
     color: ${props => (props.isRowExpanded ? COLORS.white : COLORS.darkGray)};
@@ -31,6 +35,7 @@ const StyledOverflowMenu = styled(({ isRowExpanded, ...other }) => <OverflowMenu
       fill: ${props => (props.isRowExpanded ? COLORS.white : COLORS.darkGray)};
       margin-left: ${props => (props.hideLabel !== 'false' ? '0' : '')};
     }
+    opacity: ${props => (props.isOpen || props.isRowExpanded ? 1 : 0)};
   }
 `;
 
@@ -76,59 +81,85 @@ const onClick = (e, id, action, onApplyRowAction) => {
   e.stopPropagation();
 };
 
-const RowActionsCell = ({ isRowExpanded, id, actions, onApplyRowAction, moreActionsLabel }) => {
-  const hasOverflow = actions && actions.filter(action => action.isOverflow).length > 0;
-  return actions && actions.length > 0 ? (
-    <TableCell key={`${id}-row-actions-cell`}>
-      <RowActionsContainer visible={isRowExpanded}>
-        {actions
-          .filter(action => !action.isOverflow)
-          .map(action => (
-            <RowActionButton
-              key={`${id}-row-actions-button-${action.id}`}
-              kind="ghost"
-              icon={action.icon}
-              disabled={action.disabled}
-              onClick={e => onClick(e, id, action.id, onApplyRowAction)}
-              small
-              hideLabel={`${!action.labelText}`}
-              isRowExpanded={isRowExpanded}>
-              {action.labelText}
-            </RowActionButton>
-          ))}
-        {hasOverflow ? (
-          <StyledOverflowMenu
-            floatingMenu
-            ariaLabel={moreActionsLabel}
-            onClick={event => event.stopPropagation()}
-            isRowExpanded={isRowExpanded}
-            iconDescription={moreActionsLabel}>
-            {actions
-              .filter(action => action.isOverflow)
-              .map(action => (
-                <OverflowMenuItem
-                  key={`${id}-row-actions-button-${action.id}`}
-                  onClick={e => onClick(e, id, action.id, onApplyRowAction)}
-                  requireTitle
-                  itemText={
-                    action.icon ? (
-                      <Fragment>
-                        <StyledIcon name={action.icon} iconTitle={action.labelText} />
-                        {action.labelText}
-                      </Fragment>
-                    ) : (
-                      action.labelText
-                    )
-                  }
-                  floatingMenu
-                />
-              ))}
-          </StyledOverflowMenu>
-        ) : null}
-      </RowActionsContainer>
-    </TableCell>
-  ) : null;
-};
+class RowActionsCell extends React.Component {
+  state = {
+    isOpen: false,
+  };
+
+  handleOpen = () => {
+    const { isOpen } = this.state;
+    if (!isOpen) {
+      this.setState({ isOpen: true });
+    }
+  };
+
+  handleClose = () => {
+    const { isOpen } = this.state;
+    if (isOpen) {
+      this.setState({ isOpen: false });
+    }
+  };
+
+  render() {
+    const { isRowExpanded, id, actions, onApplyRowAction, moreActionsLabel } = this.props;
+    const { isOpen } = this.state;
+    const hasOverflow = actions && actions.filter(action => action.isOverflow).length > 0;
+    return actions && actions.length > 0 ? (
+      <TableCell key={`${id}-row-actions-cell`}>
+        <RowActionsContainer visible={isRowExpanded}>
+          {actions
+            .filter(action => !action.isOverflow)
+            .map(action => (
+              <RowActionButton
+                key={`${id}-row-actions-button-${action.id}`}
+                kind="ghost"
+                icon={action.icon}
+                disabled={action.disabled}
+                onClick={e => onClick(e, id, action.id, onApplyRowAction)}
+                small
+                hideLabel={`${!action.labelText}`}
+                isRowExpanded={isRowExpanded}>
+                {action.labelText}
+              </RowActionButton>
+            ))}
+          {hasOverflow ? (
+            <StyledOverflowMenu
+              floatingMenu
+              ariaLabel={moreActionsLabel}
+              onClick={event => event.stopPropagation()}
+              isRowExpanded={isRowExpanded}
+              iconDescription={moreActionsLabel}
+              isOpen={isOpen}
+              onOpen={this.handleOpen}
+              onClose={this.handleClose}>
+              {actions
+                .filter(action => action.isOverflow)
+                .map(action => (
+                  <OverflowMenuItem
+                    key={`${id}-row-actions-button-${action.id}`}
+                    onClick={e => onClick(e, id, action.id, onApplyRowAction)}
+                    requireTitle
+                    itemText={
+                      action.icon ? (
+                        <Fragment>
+                          <StyledIcon name={action.icon} iconTitle={action.labelText} />
+                          {action.labelText}
+                        </Fragment>
+                      ) : (
+                        action.labelText
+                      )
+                    }
+                    floatingMenu
+                  />
+                ))}
+            </StyledOverflowMenu>
+          ) : null}
+        </RowActionsContainer>
+      </TableCell>
+    ) : null;
+  }
+}
+
 RowActionsCell.propTypes = propTypes;
 RowActionsCell.defaultProps = defaultProps;
 

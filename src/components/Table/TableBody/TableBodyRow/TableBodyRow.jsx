@@ -14,7 +14,7 @@ const StyledTableExpandRow = styled(TableExpandRow)`
     cursor: pointer;
     :hover {
       td {
-        div {
+        div > * {
           opacity: 1;
         }
       }
