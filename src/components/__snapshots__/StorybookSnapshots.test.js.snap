@@ -16137,37 +16137,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                     >
                       <label
                         className="bx--label bx--visually-hidden"
-                        htmlFor="secretField"
-                      >
-                        secretField
-                      </label>
-                      <input
-                        className="bx--text-input bx--text__input bx--text-input--light"
-                        disabled={false}
-                        id="secretField"
-                        onBlur={[Function]}
-                        onChange={[Function]}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
-                        placeholder="Type and hit enter to apply"
-                        type="text"
-                        value=""
-                      />
-                    </div>
-                  </div>
-                </th>
-                <th
-                  className="c1"
-                  scope="col"
-                >
-                  <div
-                    className="bx--form-item c2"
-                  >
-                    <div
-                      className="bx--form-item"
-                    >
-                      <label
-                        className="bx--label bx--visually-hidden"
                         htmlFor="number"
                       >
                         number
@@ -25167,13 +25136,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table is loading
                   Select
                 </th>
                 <th
-                  id="column-secretField"
-                  scope="col"
-                  style={Object {}}
-                >
-                  Secret Information
-                </th>
-                <th
                   id="column-number"
                   scope="col"
                   style={Object {}}
@@ -25226,21 +25188,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table is loading
                     }
                   />
                 </td>
-                <td>
-                  <p
-                    className="bx--skeleton__text"
-                    style={
-                      Object {
-                        "width": "100%",
-                      }
-                    }
-                  />
-                </td>
               </tr>
               <tr
                 className="c0"
               >
-                <td />
                 <td />
                 <td />
                 <td />
@@ -25253,7 +25204,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table is loading
                 <td />
                 <td />
                 <td />
-                <td />
               </tr>
               <tr
                 className="c0"
@@ -25262,12 +25212,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table is loading
                 <td />
                 <td />
                 <td />
-                <td />
               </tr>
               <tr
                 className="c0"
               >
-                <td />
                 <td />
                 <td />
                 <td />
@@ -26676,6 +26624,227 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table is loading
                               }
                             >
                               {
+                              <span>
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  ordering
+                                </span>
+                              </span>
+                              : 
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#666",
+                                  }
+                                }
+                              >
+                                [
+                                <span>
+                                  <span>
+                                    <br />
+                                          
+                                      
+                                  </span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    {
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
+                                        }
+                                      >
+                                        columnId
+                                      </span>
+                                    </span>
+                                    : 
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#22a",
+                                          "wordBreak": "break-word",
+                                        }
+                                      }
+                                    >
+                                      'string'
+                                    </span>
+                                    ,
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
+                                        }
+                                      >
+                                        isHidden
+                                      </span>
+                                    </span>
+                                    : 
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#a11",
+                                        }
+                                      }
+                                    >
+                                      false
+                                    </span>
+                                    }
+                                  </span>
+                                </span>
+                                ,
+                                <span>
+                                  <span>
+                                    <br />
+                                          
+                                      
+                                  </span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    {
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
+                                        }
+                                      >
+                                        columnId
+                                      </span>
+                                    </span>
+                                    : 
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#22a",
+                                          "wordBreak": "break-word",
+                                        }
+                                      }
+                                    >
+                                      'date'
+                                    </span>
+                                    ,
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
+                                        }
+                                      >
+                                        isHidden
+                                      </span>
+                                    </span>
+                                    : 
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#a11",
+                                        }
+                                      }
+                                    >
+                                      false
+                                    </span>
+                                    }
+                                  </span>
+                                </span>
+                                ,
+                                <span>
+                                  <span>
+                                    <br />
+                                          
+                                      
+                                  </span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    {
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
+                                        }
+                                      >
+                                        columnId
+                                      </span>
+                                    </span>
+                                    : 
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#22a",
+                                          "wordBreak": "break-word",
+                                        }
+                                      }
+                                    >
+                                      'select'
+                                    </span>
+                                    ,
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
+                                        }
+                                      >
+                                        isHidden
+                                      </span>
+                                    </span>
+                                    : 
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#a11",
+                                        }
+                                      }
+                                    >
+                                      false
+                                    </span>
+                                    }
+                                  </span>
+                                </span>
+                                ,
+                                <span>
+                                  <span>
+                                    <br />
+                                          
+                                      
+                                  </span>
+                                  …
+                                </span>
+                                <span>
+                                  <br />
+                                        
+                                </span>
+                                ]
+                              </span>
+                              ,
                               <span>
                                 <span
                                   style={
@@ -28907,6 +29076,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with custo
                   String
                 </th>
                 <th
+                  id="column-date"
+                  scope="col"
+                  style={Object {}}
+                >
+                  Date
+                </th>
+                <th
                   id="column-select"
                   scope="col"
                   style={Object {}}
@@ -28930,7 +29106,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with custo
                 />
                 <th
                   className="c1"
-                  colSpan={3}
+                  colSpan={4}
                   scope="col"
                 >
                   <button
@@ -28943,7 +29119,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with custo
                     String
                   </button>
                   <button
-                    className="c2 bx--btn bx--btn--tertiary"
+                    className="c2 bx--btn bx--btn--primary"
                     disabled={false}
                     onClick={[Function]}
                     tabIndex={0}
@@ -29018,6 +29194,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with custo
                   toyota toyota toyota 0
                 </td>
                 <td>
+                  1973-03-03T09:46:40.000Z
+                </td>
+                <td>
                   option-A
                 </td>
                 <td>
@@ -29058,6 +29237,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with custo
                 </td>
                 <td>
                   helping whiteboard as 1
+                </td>
+                <td>
+                  1973-03-14T23:33:20.000Z
                 </td>
                 <td>
                   option-B
@@ -29102,6 +29284,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with custo
                   whiteboard can eat 2
                 </td>
                 <td>
+                  1973-04-18T16:53:20.000Z
+                </td>
+                <td>
                   option-C
                 </td>
                 <td>
@@ -29142,6 +29327,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with custo
                 </td>
                 <td>
                   as eat scott 3
+                </td>
+                <td>
+                  1973-06-15T13:46:40.000Z
                 </td>
                 <td>
                   option-A
@@ -29186,6 +29374,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with custo
                   can pinocchio whiteboard 4
                 </td>
                 <td>
+                  1973-09-04T14:13:20.000Z
+                </td>
+                <td>
                   option-B
                 </td>
                 <td>
@@ -29226,6 +29417,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with custo
                 </td>
                 <td>
                   bottle toyota bottle 5
+                </td>
+                <td>
+                  1973-12-17T18:13:20.000Z
                 </td>
                 <td>
                   option-C
@@ -29270,6 +29464,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with custo
                   eat whiteboard pinocchio 6
                 </td>
                 <td>
+                  1974-04-24T01:46:40.000Z
+                </td>
+                <td>
                   option-A
                 </td>
                 <td>
@@ -29310,6 +29507,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with custo
                 </td>
                 <td>
                   chocolate can helping 7
+                </td>
+                <td>
+                  1974-09-21T12:53:20.000Z
                 </td>
                 <td>
                   option-B
@@ -29354,6 +29554,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with custo
                   pinocchio eat can 8
                 </td>
                 <td>
+                  1975-03-14T03:33:20.000Z
+                </td>
+                <td>
                   option-C
                 </td>
                 <td>
@@ -29394,6 +29597,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with custo
                 </td>
                 <td>
                   scott pinocchio chocolate 9
+                </td>
+                <td>
+                  1975-09-26T21:46:40.000Z
                 </td>
                 <td>
                   option-A
@@ -31145,6 +31351,51 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with custo
                                   }
                                 }
                               >
+                                toolbar
+                              </span>
+                            </span>
+                            : 
+                            <span
+                              style={
+                                Object {
+                                  "color": "#666",
+                                }
+                              }
+                            >
+                              {
+                              <span>
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  activeBar
+                                </span>
+                              </span>
+                              : 
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                'column'
+                              </span>
+                              }
+                            </span>
+                            ,
+                            <span>
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#666",
+                                  }
+                                }
+                              >
                                 table
                               </span>
                             </span>
@@ -31295,7 +31546,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with custo
                                         }
                                       }
                                     >
-                                      true
+                                      false
                                     </span>
                                     }
                                   </span>
@@ -31376,51 +31627,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with custo
                                         
                                 </span>
                                 ]
-                              </span>
-                              }
-                            </span>
-                            ,
-                            <span>
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#666",
-                                  }
-                                }
-                              >
-                                toolbar
-                              </span>
-                            </span>
-                            : 
-                            <span
-                              style={
-                                Object {
-                                  "color": "#666",
-                                }
-                              }
-                            >
-                              {
-                              <span>
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#666",
-                                    }
-                                  }
-                                >
-                                  activeBar
-                                </span>
-                              </span>
-                              : 
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#22a",
-                                    "wordBreak": "break-word",
-                                  }
-                                }
-                              >
-                                'column'
                               </span>
                               }
                             </span>
@@ -33637,17 +33843,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with filte
                   Select
                 </th>
                 <th
-                  id="column-secretField"
-                  scope="col"
-                  style={
-                    Object {
-                      "paddingTop": 16,
-                    }
-                  }
-                >
-                  Secret Information
-                </th>
-                <th
                   id="column-number"
                   scope="col"
                   style={
@@ -33858,37 +34053,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with filte
                     >
                       <label
                         className="bx--label bx--visually-hidden"
-                        htmlFor="secretField"
-                      >
-                        secretField
-                      </label>
-                      <input
-                        className="bx--text-input bx--text__input bx--text-input--light"
-                        disabled={false}
-                        id="secretField"
-                        onBlur={[Function]}
-                        onChange={[Function]}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
-                        placeholder="Type and hit enter to apply"
-                        type="text"
-                        value=""
-                      />
-                    </div>
-                  </div>
-                </th>
-                <th
-                  className="c1"
-                  scope="col"
-                >
-                  <div
-                    className="bx--form-item c2"
-                  >
-                    <div
-                      className="bx--form-item"
-                    >
-                      <label
-                        className="bx--label bx--visually-hidden"
                         htmlFor="number"
                       >
                         number
@@ -33953,9 +34117,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with filte
                   option-B
                 </td>
                 <td>
-                  OewGc0QsMs
-                </td>
-                <td>
                   1
                 </td>
               </tr>
@@ -33999,9 +34160,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with filte
                 </td>
                 <td>
                   option-B
-                </td>
-                <td>
-                  46GYyWC0w0
                 </td>
                 <td>
                   16
@@ -34049,9 +34207,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with filte
                   option-B
                 </td>
                 <td>
-                  muYiOaIWGW
-                </td>
-                <td>
                   256
                 </td>
               </tr>
@@ -34095,9 +34250,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with filte
                 </td>
                 <td>
                   option-B
-                </td>
-                <td>
-                  8oCI6cqmQm
                 </td>
                 <td>
                   484
@@ -34145,9 +34297,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with filte
                   option-B
                 </td>
                 <td>
-                  AAAAAAAAAA
-                </td>
-                <td>
                   961
                 </td>
               </tr>
@@ -34191,9 +34340,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with filte
                 </td>
                 <td>
                   option-B
-                </td>
-                <td>
-                  qcUSWgwIkI
                 </td>
                 <td>
                   1156
@@ -34241,9 +34387,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with filte
                   option-B
                 </td>
                 <td>
-                  YQmcwk2o4o
-                </td>
-                <td>
                   2116
                 </td>
               </tr>
@@ -34287,9 +34430,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with filte
                 </td>
                 <td>
                   option-B
-                </td>
-                <td>
-                  uKQCema4E4
                 </td>
                 <td>
                   2704
@@ -34337,9 +34477,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with filte
                   option-B
                 </td>
                 <td>
-                  wgO4iKuSyS
-                </td>
-                <td>
                   3721
                 </td>
               </tr>
@@ -34383,9 +34520,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with filte
                 </td>
                 <td>
                   option-B
-                </td>
-                <td>
-                  c8iM4qgaYa
                 </td>
                 <td>
                   4096
@@ -36063,6 +36197,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with filte
                           >
                             {
                             <span>
+                              <span>
+                                <br />
+                                  
+                                  
+                              </span>
                               <span
                                 style={
                                   Object {
@@ -36201,6 +36340,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with filte
                             </span>
                             ,
                             <span>
+                              <span>
+                                <br />
+                                  
+                                  
+                              </span>
                               <span
                                 style={
                                   Object {
@@ -36245,6 +36389,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with filte
                             </span>
                             ,
                             <span>
+                              <span>
+                                <br />
+                                  
+                                  
+                              </span>
                               <span
                                 style={
                                   Object {
@@ -36287,6 +36436,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with filte
                                 'filter'
                               </span>
                               }
+                            </span>
+                            ,
+                            <span>
+                              <span>
+                                <br />
+                                  
+                                  
+                              </span>
+                              …
+                            </span>
+                            <span>
+                              <br />
+                                
                             </span>
                             }
                           </span>
@@ -38429,13 +38591,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with no da
                   Select
                 </th>
                 <th
-                  id="column-secretField"
-                  scope="col"
-                  style={Object {}}
-                >
-                  Secret Information
-                </th>
-                <th
                   id="column-number"
                   scope="col"
                   style={Object {}}
@@ -38449,7 +38604,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with no da
                 className="c0"
               >
                 <td
-                  colSpan={5}
+                  colSpan={4}
                 >
                   <div
                     className="empty-table-cell--default"
@@ -39533,6 +39688,278 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with no da
                               <span>
                                 <br />
                                     
+                              </span>
+                              }
+                            </span>
+                            }
+                          </span>
+                          }
+                        </span>
+                      </span>
+                    </span>
+                    <span>
+                      <span>
+                        <br />
+                          
+                      </span>
+                      <span
+                        style={Object {}}
+                      >
+                        view
+                      </span>
+                      <span>
+                        =
+                        <span
+                          style={Object {}}
+                        >
+                          {
+                          <span
+                            style={
+                              Object {
+                                "color": "#666",
+                              }
+                            }
+                          >
+                            {
+                            <span>
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#666",
+                                  }
+                                }
+                              >
+                                table
+                              </span>
+                            </span>
+                            : 
+                            <span
+                              style={
+                                Object {
+                                  "color": "#666",
+                                }
+                              }
+                            >
+                              {
+                              <span>
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  ordering
+                                </span>
+                              </span>
+                              : 
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#666",
+                                  }
+                                }
+                              >
+                                [
+                                <span>
+                                  <span>
+                                    <br />
+                                          
+                                      
+                                  </span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    {
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
+                                        }
+                                      >
+                                        columnId
+                                      </span>
+                                    </span>
+                                    : 
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#22a",
+                                          "wordBreak": "break-word",
+                                        }
+                                      }
+                                    >
+                                      'string'
+                                    </span>
+                                    ,
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
+                                        }
+                                      >
+                                        isHidden
+                                      </span>
+                                    </span>
+                                    : 
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#a11",
+                                        }
+                                      }
+                                    >
+                                      false
+                                    </span>
+                                    }
+                                  </span>
+                                </span>
+                                ,
+                                <span>
+                                  <span>
+                                    <br />
+                                          
+                                      
+                                  </span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    {
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
+                                        }
+                                      >
+                                        columnId
+                                      </span>
+                                    </span>
+                                    : 
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#22a",
+                                          "wordBreak": "break-word",
+                                        }
+                                      }
+                                    >
+                                      'date'
+                                    </span>
+                                    ,
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
+                                        }
+                                      >
+                                        isHidden
+                                      </span>
+                                    </span>
+                                    : 
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#a11",
+                                        }
+                                      }
+                                    >
+                                      false
+                                    </span>
+                                    }
+                                  </span>
+                                </span>
+                                ,
+                                <span>
+                                  <span>
+                                    <br />
+                                          
+                                      
+                                  </span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    {
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
+                                        }
+                                      >
+                                        columnId
+                                      </span>
+                                    </span>
+                                    : 
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#22a",
+                                          "wordBreak": "break-word",
+                                        }
+                                      }
+                                    >
+                                      'select'
+                                    </span>
+                                    ,
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
+                                        }
+                                      >
+                                        isHidden
+                                      </span>
+                                    </span>
+                                    : 
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#a11",
+                                        }
+                                      }
+                                    >
+                                      false
+                                    </span>
+                                    }
+                                  </span>
+                                </span>
+                                ,
+                                <span>
+                                  <span>
+                                    <br />
+                                          
+                                      
+                                  </span>
+                                  …
+                                </span>
+                                <span>
+                                  <br />
+                                        
+                                </span>
+                                ]
                               </span>
                               }
                             </span>
@@ -41728,13 +42155,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with no da
                   Select
                 </th>
                 <th
-                  id="column-secretField"
-                  scope="col"
-                  style={Object {}}
-                >
-                  Secret Information
-                </th>
-                <th
                   id="column-number"
                   scope="col"
                   style={Object {}}
@@ -41748,7 +42168,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with no da
                 className="c0"
               >
                 <td
-                  colSpan={5}
+                  colSpan={4}
                 >
                   <div>
                     <h1>
@@ -42859,6 +43279,227 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with no da
                               }
                             >
                               {
+                              <span>
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  ordering
+                                </span>
+                              </span>
+                              : 
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#666",
+                                  }
+                                }
+                              >
+                                [
+                                <span>
+                                  <span>
+                                    <br />
+                                          
+                                      
+                                  </span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    {
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
+                                        }
+                                      >
+                                        columnId
+                                      </span>
+                                    </span>
+                                    : 
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#22a",
+                                          "wordBreak": "break-word",
+                                        }
+                                      }
+                                    >
+                                      'string'
+                                    </span>
+                                    ,
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
+                                        }
+                                      >
+                                        isHidden
+                                      </span>
+                                    </span>
+                                    : 
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#a11",
+                                        }
+                                      }
+                                    >
+                                      false
+                                    </span>
+                                    }
+                                  </span>
+                                </span>
+                                ,
+                                <span>
+                                  <span>
+                                    <br />
+                                          
+                                      
+                                  </span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    {
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
+                                        }
+                                      >
+                                        columnId
+                                      </span>
+                                    </span>
+                                    : 
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#22a",
+                                          "wordBreak": "break-word",
+                                        }
+                                      }
+                                    >
+                                      'date'
+                                    </span>
+                                    ,
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
+                                        }
+                                      >
+                                        isHidden
+                                      </span>
+                                    </span>
+                                    : 
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#a11",
+                                        }
+                                      }
+                                    >
+                                      false
+                                    </span>
+                                    }
+                                  </span>
+                                </span>
+                                ,
+                                <span>
+                                  <span>
+                                    <br />
+                                          
+                                      
+                                  </span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    {
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
+                                        }
+                                      >
+                                        columnId
+                                      </span>
+                                    </span>
+                                    : 
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#22a",
+                                          "wordBreak": "break-word",
+                                        }
+                                      }
+                                    >
+                                      'select'
+                                    </span>
+                                    ,
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
+                                        }
+                                      >
+                                        isHidden
+                                      </span>
+                                    </span>
+                                    : 
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#a11",
+                                        }
+                                      }
+                                    >
+                                      false
+                                    </span>
+                                    }
+                                  </span>
+                                </span>
+                                ,
+                                <span>
+                                  <span>
+                                    <br />
+                                          
+                                      
+                                  </span>
+                                  …
+                                </span>
+                                <span>
+                                  <br />
+                                        
+                                </span>
+                                ]
+                              </span>
+                              ,
                               <span>
                                 <span
                                   style={
@@ -45146,17 +45787,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with no re
                   Select
                 </th>
                 <th
-                  id="column-secretField"
-                  scope="col"
-                  style={
-                    Object {
-                      "paddingTop": 16,
-                    }
-                  }
-                >
-                  Secret Information
-                </th>
-                <th
                   id="column-number"
                   scope="col"
                   style={
@@ -45338,37 +45968,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with no re
                     >
                       <label
                         className="bx--label bx--visually-hidden"
-                        htmlFor="secretField"
-                      >
-                        secretField
-                      </label>
-                      <input
-                        className="bx--text-input bx--text__input bx--text-input--light"
-                        disabled={false}
-                        id="secretField"
-                        onBlur={[Function]}
-                        onChange={[Function]}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
-                        placeholder="Type and hit enter to apply"
-                        type="text"
-                        value=""
-                      />
-                    </div>
-                  </div>
-                </th>
-                <th
-                  className="c1"
-                  scope="col"
-                >
-                  <div
-                    className="bx--form-item c2"
-                  >
-                    <div
-                      className="bx--form-item"
-                    >
-                      <label
-                        className="bx--label bx--visually-hidden"
                         htmlFor="number"
                       >
                         number
@@ -45395,7 +45994,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with no re
                 className="c3"
               >
                 <td
-                  colSpan={5}
+                  colSpan={4}
                 >
                   <div
                     className="empty-table-cell--default"
@@ -46633,6 +47232,249 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with no re
                                 }
                               >
                                 'filter'
+                              </span>
+                              }
+                            </span>
+                            ,
+                            <span>
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#666",
+                                  }
+                                }
+                              >
+                                table
+                              </span>
+                            </span>
+                            : 
+                            <span
+                              style={
+                                Object {
+                                  "color": "#666",
+                                }
+                              }
+                            >
+                              {
+                              <span>
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  ordering
+                                </span>
+                              </span>
+                              : 
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#666",
+                                  }
+                                }
+                              >
+                                [
+                                <span>
+                                  <span>
+                                    <br />
+                                          
+                                      
+                                  </span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    {
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
+                                        }
+                                      >
+                                        columnId
+                                      </span>
+                                    </span>
+                                    : 
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#22a",
+                                          "wordBreak": "break-word",
+                                        }
+                                      }
+                                    >
+                                      'string'
+                                    </span>
+                                    ,
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
+                                        }
+                                      >
+                                        isHidden
+                                      </span>
+                                    </span>
+                                    : 
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#a11",
+                                        }
+                                      }
+                                    >
+                                      false
+                                    </span>
+                                    }
+                                  </span>
+                                </span>
+                                ,
+                                <span>
+                                  <span>
+                                    <br />
+                                          
+                                      
+                                  </span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    {
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
+                                        }
+                                      >
+                                        columnId
+                                      </span>
+                                    </span>
+                                    : 
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#22a",
+                                          "wordBreak": "break-word",
+                                        }
+                                      }
+                                    >
+                                      'date'
+                                    </span>
+                                    ,
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
+                                        }
+                                      >
+                                        isHidden
+                                      </span>
+                                    </span>
+                                    : 
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#a11",
+                                        }
+                                      }
+                                    >
+                                      false
+                                    </span>
+                                    }
+                                  </span>
+                                </span>
+                                ,
+                                <span>
+                                  <span>
+                                    <br />
+                                          
+                                      
+                                  </span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    {
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
+                                        }
+                                      >
+                                        columnId
+                                      </span>
+                                    </span>
+                                    : 
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#22a",
+                                          "wordBreak": "break-word",
+                                        }
+                                      }
+                                    >
+                                      'select'
+                                    </span>
+                                    ,
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
+                                        }
+                                      >
+                                        isHidden
+                                      </span>
+                                    </span>
+                                    : 
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#a11",
+                                        }
+                                      }
+                                    >
+                                      false
+                                    </span>
+                                    }
+                                  </span>
+                                </span>
+                                ,
+                                <span>
+                                  <span>
+                                    <br />
+                                          
+                                      
+                                  </span>
+                                  …
+                                </span>
+                                <span>
+                                  <br />
+                                        
+                                </span>
+                                ]
                               </span>
                               }
                             </span>
@@ -48869,13 +49711,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   Select
                 </th>
                 <th
-                  id="column-secretField"
-                  scope="col"
-                  style={Object {}}
-                >
-                  Secret Information
-                </th>
-                <th
                   id="column-number"
                   scope="col"
                   style={Object {}}
@@ -48928,9 +49763,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-A
                 </td>
                 <td>
-                  AAAAAAAAAA
-                </td>
-                <td>
                   0
                 </td>
               </tr>
@@ -48975,9 +49807,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-B
-                </td>
-                <td>
-                  OewGc0QsMs
                 </td>
                 <td>
                   1
@@ -49027,9 +49856,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-C
                 </td>
                 <td>
-                  c8iM4qgaYa
-                </td>
-                <td>
                   4
                 </td>
               </tr>
@@ -49037,7 +49863,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 className="c2"
               >
                 <td
-                  colSpan={6}
+                  colSpan={5}
                 >
                   <div
                     style={
@@ -49138,9 +49964,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-A
                 </td>
                 <td>
-                  qcUSWgwIkI
-                </td>
-                <td>
                   9
                 </td>
               </tr>
@@ -49185,9 +50008,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-B
-                </td>
-                <td>
-                  46GYyWC0w0
                 </td>
                 <td>
                   16
@@ -49237,9 +50057,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-C
                 </td>
                 <td>
-                  Ia2eQMSi8i
-                </td>
-                <td>
                   25
                 </td>
               </tr>
@@ -49247,7 +50064,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 className="c2"
               >
                 <td
-                  colSpan={6}
+                  colSpan={5}
                 >
                   <div
                     style={
@@ -49348,9 +50165,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-A
                 </td>
                 <td>
-                  W4oksCiQKQ
-                </td>
-                <td>
                   36
                 </td>
               </tr>
@@ -49395,9 +50209,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-B
-                </td>
-                <td>
-                  kYaqK2y8W8
                 </td>
                 <td>
                   49
@@ -49446,9 +50257,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-C
                 </td>
                 <td>
-                  y2MwmsEqiq
-                </td>
-                <td>
                   64
                 </td>
               </tr>
@@ -49493,9 +50301,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-A
-                </td>
-                <td>
-                  CW82EiUYuY
                 </td>
                 <td>
                   81
@@ -49544,9 +50349,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-B
                 </td>
                 <td>
-                  Q0u8gYkG6G
-                </td>
-                <td>
                   100
                 </td>
               </tr>
@@ -49591,9 +50393,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-C
-                </td>
-                <td>
-                  eUgE8O0yIy
                 </td>
                 <td>
                   121
@@ -49642,9 +50441,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-A
                 </td>
                 <td>
-                  sySKaEGgUg
-                </td>
-                <td>
                   144
                 </td>
               </tr>
@@ -49689,9 +50485,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-B
-                </td>
-                <td>
-                  6SEQ24WOgO
                 </td>
                 <td>
                   169
@@ -49740,9 +50533,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-C
                 </td>
                 <td>
-                  Kw0WUum6s6
-                </td>
-                <td>
                   196
                 </td>
               </tr>
@@ -49787,9 +50577,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-A
-                </td>
-                <td>
-                  YQmcwk2o4o
                 </td>
                 <td>
                   225
@@ -49838,9 +50625,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-B
                 </td>
                 <td>
-                  muYiOaIWGW
-                </td>
-                <td>
                   256
                 </td>
               </tr>
@@ -49885,9 +50669,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-C
-                </td>
-                <td>
-                  0OKoqQYESE
                 </td>
                 <td>
                   289
@@ -49936,9 +50717,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-A
                 </td>
                 <td>
-                  Es6uIGowew
-                </td>
-                <td>
                   324
                 </td>
               </tr>
@@ -49983,9 +50761,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-B
-                </td>
-                <td>
-                  SMs0k64eqe
                 </td>
                 <td>
                   361
@@ -50034,9 +50809,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-C
                 </td>
                 <td>
-                  gqe6CwKM2M
-                </td>
-                <td>
                   400
                 </td>
               </tr>
@@ -50081,9 +50853,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-A
-                </td>
-                <td>
-                  uKQCema4E4
                 </td>
                 <td>
                   441
@@ -50132,9 +50901,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-B
                 </td>
                 <td>
-                  8oCI6cqmQm
-                </td>
-                <td>
                   484
                 </td>
               </tr>
@@ -50179,9 +50945,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-C
-                </td>
-                <td>
-                  MIyOYS6UcU
                 </td>
                 <td>
                   529
@@ -50230,9 +50993,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-A
                 </td>
                 <td>
-                  amkU0IMCoC
-                </td>
-                <td>
                   576
                 </td>
               </tr>
@@ -50277,9 +51037,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-B
-                </td>
-                <td>
-                  oGWaS8cu0u
                 </td>
                 <td>
                   625
@@ -50328,9 +51085,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-C
                 </td>
                 <td>
-                  2kIguyscCc
-                </td>
-                <td>
                   676
                 </td>
               </tr>
@@ -50375,9 +51129,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-A
-                </td>
-                <td>
-                  GE4mMo8KOK
                 </td>
                 <td>
                   729
@@ -50426,9 +51177,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-B
                 </td>
                 <td>
-                  UiqsoeO2a2
-                </td>
-                <td>
                   784
                 </td>
               </tr>
@@ -50473,9 +51221,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-C
-                </td>
-                <td>
-                  iCcyGUekmk
                 </td>
                 <td>
                   841
@@ -50524,9 +51269,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-A
                 </td>
                 <td>
-                  wgO4iKuSyS
-                </td>
-                <td>
                   900
                 </td>
               </tr>
@@ -50571,9 +51313,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-B
-                </td>
-                <td>
-                  AAAAAAAAAA
                 </td>
                 <td>
                   961
@@ -50622,9 +51361,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-C
                 </td>
                 <td>
-                  OewGc0QsMs
-                </td>
-                <td>
                   1024
                 </td>
               </tr>
@@ -50669,9 +51405,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-A
-                </td>
-                <td>
-                  c8iM4qgaYa
                 </td>
                 <td>
                   1089
@@ -50720,9 +51453,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-B
                 </td>
                 <td>
-                  qcUSWgwIkI
-                </td>
-                <td>
                   1156
                 </td>
               </tr>
@@ -50767,9 +51497,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-C
-                </td>
-                <td>
-                  46GYyWC0w0
                 </td>
                 <td>
                   1225
@@ -50818,9 +51545,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-A
                 </td>
                 <td>
-                  Ia2eQMSi8i
-                </td>
-                <td>
                   1296
                 </td>
               </tr>
@@ -50865,9 +51589,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-B
-                </td>
-                <td>
-                  W4oksCiQKQ
                 </td>
                 <td>
                   1369
@@ -50916,9 +51637,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-C
                 </td>
                 <td>
-                  kYaqK2y8W8
-                </td>
-                <td>
                   1444
                 </td>
               </tr>
@@ -50963,9 +51681,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-A
-                </td>
-                <td>
-                  y2MwmsEqiq
                 </td>
                 <td>
                   1521
@@ -51014,9 +51729,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-B
                 </td>
                 <td>
-                  CW82EiUYuY
-                </td>
-                <td>
                   1600
                 </td>
               </tr>
@@ -51061,9 +51773,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-C
-                </td>
-                <td>
-                  Q0u8gYkG6G
                 </td>
                 <td>
                   1681
@@ -51112,9 +51821,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-A
                 </td>
                 <td>
-                  eUgE8O0yIy
-                </td>
-                <td>
                   1764
                 </td>
               </tr>
@@ -51159,9 +51865,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-B
-                </td>
-                <td>
-                  sySKaEGgUg
                 </td>
                 <td>
                   1849
@@ -51210,9 +51913,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-C
                 </td>
                 <td>
-                  6SEQ24WOgO
-                </td>
-                <td>
                   1936
                 </td>
               </tr>
@@ -51257,9 +51957,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-A
-                </td>
-                <td>
-                  Kw0WUum6s6
                 </td>
                 <td>
                   2025
@@ -51308,9 +52005,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-B
                 </td>
                 <td>
-                  YQmcwk2o4o
-                </td>
-                <td>
                   2116
                 </td>
               </tr>
@@ -51355,9 +52049,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-C
-                </td>
-                <td>
-                  muYiOaIWGW
                 </td>
                 <td>
                   2209
@@ -51406,9 +52097,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-A
                 </td>
                 <td>
-                  0OKoqQYESE
-                </td>
-                <td>
                   2304
                 </td>
               </tr>
@@ -51453,9 +52141,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-B
-                </td>
-                <td>
-                  Es6uIGowew
                 </td>
                 <td>
                   2401
@@ -51504,9 +52189,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-C
                 </td>
                 <td>
-                  SMs0k64eqe
-                </td>
-                <td>
                   2500
                 </td>
               </tr>
@@ -51551,9 +52233,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-A
-                </td>
-                <td>
-                  gqe6CwKM2M
                 </td>
                 <td>
                   2601
@@ -51602,9 +52281,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-B
                 </td>
                 <td>
-                  uKQCema4E4
-                </td>
-                <td>
                   2704
                 </td>
               </tr>
@@ -51649,9 +52325,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-C
-                </td>
-                <td>
-                  8oCI6cqmQm
                 </td>
                 <td>
                   2809
@@ -51700,9 +52373,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-A
                 </td>
                 <td>
-                  MIyOYS6UcU
-                </td>
-                <td>
                   2916
                 </td>
               </tr>
@@ -51747,9 +52417,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-B
-                </td>
-                <td>
-                  amkU0IMCoC
                 </td>
                 <td>
                   3025
@@ -51798,9 +52465,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-C
                 </td>
                 <td>
-                  oGWaS8cu0u
-                </td>
-                <td>
                   3136
                 </td>
               </tr>
@@ -51845,9 +52509,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-A
-                </td>
-                <td>
-                  2kIguyscCc
                 </td>
                 <td>
                   3249
@@ -51896,9 +52557,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-B
                 </td>
                 <td>
-                  GE4mMo8KOK
-                </td>
-                <td>
                   3364
                 </td>
               </tr>
@@ -51943,9 +52601,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-C
-                </td>
-                <td>
-                  UiqsoeO2a2
                 </td>
                 <td>
                   3481
@@ -51994,9 +52649,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-A
                 </td>
                 <td>
-                  iCcyGUekmk
-                </td>
-                <td>
                   3600
                 </td>
               </tr>
@@ -52041,9 +52693,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-B
-                </td>
-                <td>
-                  wgO4iKuSyS
                 </td>
                 <td>
                   3721
@@ -52092,9 +52741,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-C
                 </td>
                 <td>
-                  AAAAAAAAAA
-                </td>
-                <td>
                   3844
                 </td>
               </tr>
@@ -52139,9 +52785,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-A
-                </td>
-                <td>
-                  OewGc0QsMs
                 </td>
                 <td>
                   3969
@@ -52190,9 +52833,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-B
                 </td>
                 <td>
-                  c8iM4qgaYa
-                </td>
-                <td>
                   4096
                 </td>
               </tr>
@@ -52237,9 +52877,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-C
-                </td>
-                <td>
-                  qcUSWgwIkI
                 </td>
                 <td>
                   4225
@@ -52288,9 +52925,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-A
                 </td>
                 <td>
-                  46GYyWC0w0
-                </td>
-                <td>
                   4356
                 </td>
               </tr>
@@ -52335,9 +52969,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-B
-                </td>
-                <td>
-                  Ia2eQMSi8i
                 </td>
                 <td>
                   4489
@@ -52386,9 +53017,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-C
                 </td>
                 <td>
-                  W4oksCiQKQ
-                </td>
-                <td>
                   4624
                 </td>
               </tr>
@@ -52433,9 +53061,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-A
-                </td>
-                <td>
-                  kYaqK2y8W8
                 </td>
                 <td>
                   4761
@@ -52484,9 +53109,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-B
                 </td>
                 <td>
-                  y2MwmsEqiq
-                </td>
-                <td>
                   4900
                 </td>
               </tr>
@@ -52531,9 +53153,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-C
-                </td>
-                <td>
-                  CW82EiUYuY
                 </td>
                 <td>
                   5041
@@ -52582,9 +53201,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-A
                 </td>
                 <td>
-                  Q0u8gYkG6G
-                </td>
-                <td>
                   5184
                 </td>
               </tr>
@@ -52629,9 +53245,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-B
-                </td>
-                <td>
-                  eUgE8O0yIy
                 </td>
                 <td>
                   5329
@@ -52680,9 +53293,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-C
                 </td>
                 <td>
-                  sySKaEGgUg
-                </td>
-                <td>
                   5476
                 </td>
               </tr>
@@ -52727,9 +53337,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-A
-                </td>
-                <td>
-                  6SEQ24WOgO
                 </td>
                 <td>
                   5625
@@ -52778,9 +53385,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-B
                 </td>
                 <td>
-                  Kw0WUum6s6
-                </td>
-                <td>
                   5776
                 </td>
               </tr>
@@ -52825,9 +53429,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-C
-                </td>
-                <td>
-                  YQmcwk2o4o
                 </td>
                 <td>
                   5929
@@ -52876,9 +53477,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-A
                 </td>
                 <td>
-                  muYiOaIWGW
-                </td>
-                <td>
                   6084
                 </td>
               </tr>
@@ -52923,9 +53521,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-B
-                </td>
-                <td>
-                  0OKoqQYESE
                 </td>
                 <td>
                   6241
@@ -52974,9 +53569,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-C
                 </td>
                 <td>
-                  Es6uIGowew
-                </td>
-                <td>
                   6400
                 </td>
               </tr>
@@ -53021,9 +53613,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-A
-                </td>
-                <td>
-                  SMs0k64eqe
                 </td>
                 <td>
                   6561
@@ -53072,9 +53661,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-B
                 </td>
                 <td>
-                  gqe6CwKM2M
-                </td>
-                <td>
                   6724
                 </td>
               </tr>
@@ -53119,9 +53705,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-C
-                </td>
-                <td>
-                  uKQCema4E4
                 </td>
                 <td>
                   6889
@@ -53170,9 +53753,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-A
                 </td>
                 <td>
-                  8oCI6cqmQm
-                </td>
-                <td>
                   7056
                 </td>
               </tr>
@@ -53217,9 +53797,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-B
-                </td>
-                <td>
-                  MIyOYS6UcU
                 </td>
                 <td>
                   7225
@@ -53268,9 +53845,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-C
                 </td>
                 <td>
-                  amkU0IMCoC
-                </td>
-                <td>
                   7396
                 </td>
               </tr>
@@ -53315,9 +53889,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-A
-                </td>
-                <td>
-                  oGWaS8cu0u
                 </td>
                 <td>
                   7569
@@ -53366,9 +53937,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-B
                 </td>
                 <td>
-                  2kIguyscCc
-                </td>
-                <td>
                   7744
                 </td>
               </tr>
@@ -53413,9 +53981,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-C
-                </td>
-                <td>
-                  GE4mMo8KOK
                 </td>
                 <td>
                   7921
@@ -53464,9 +54029,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-A
                 </td>
                 <td>
-                  UiqsoeO2a2
-                </td>
-                <td>
                   8100
                 </td>
               </tr>
@@ -53511,9 +54073,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-B
-                </td>
-                <td>
-                  iCcyGUekmk
                 </td>
                 <td>
                   8281
@@ -53562,9 +54121,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-C
                 </td>
                 <td>
-                  wgO4iKuSyS
-                </td>
-                <td>
                   8464
                 </td>
               </tr>
@@ -53609,9 +54165,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-A
-                </td>
-                <td>
-                  AAAAAAAAAA
                 </td>
                 <td>
                   8649
@@ -53660,9 +54213,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-B
                 </td>
                 <td>
-                  OewGc0QsMs
-                </td>
-                <td>
                   8836
                 </td>
               </tr>
@@ -53707,9 +54257,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-C
-                </td>
-                <td>
-                  c8iM4qgaYa
                 </td>
                 <td>
                   9025
@@ -53758,9 +54305,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-A
                 </td>
                 <td>
-                  qcUSWgwIkI
-                </td>
-                <td>
                   9216
                 </td>
               </tr>
@@ -53805,9 +54349,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-B
-                </td>
-                <td>
-                  46GYyWC0w0
                 </td>
                 <td>
                   9409
@@ -53856,9 +54397,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-C
                 </td>
                 <td>
-                  Ia2eQMSi8i
-                </td>
-                <td>
                   9604
                 </td>
               </tr>
@@ -53903,9 +54441,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-A
-                </td>
-                <td>
-                  W4oksCiQKQ
                 </td>
                 <td>
                   9801
@@ -55388,6 +55923,227 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                               }
                             >
                               {
+                              <span>
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  ordering
+                                </span>
+                              </span>
+                              : 
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#666",
+                                  }
+                                }
+                              >
+                                [
+                                <span>
+                                  <span>
+                                    <br />
+                                          
+                                      
+                                  </span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    {
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
+                                        }
+                                      >
+                                        columnId
+                                      </span>
+                                    </span>
+                                    : 
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#22a",
+                                          "wordBreak": "break-word",
+                                        }
+                                      }
+                                    >
+                                      'string'
+                                    </span>
+                                    ,
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
+                                        }
+                                      >
+                                        isHidden
+                                      </span>
+                                    </span>
+                                    : 
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#a11",
+                                        }
+                                      }
+                                    >
+                                      false
+                                    </span>
+                                    }
+                                  </span>
+                                </span>
+                                ,
+                                <span>
+                                  <span>
+                                    <br />
+                                          
+                                      
+                                  </span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    {
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
+                                        }
+                                      >
+                                        columnId
+                                      </span>
+                                    </span>
+                                    : 
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#22a",
+                                          "wordBreak": "break-word",
+                                        }
+                                      }
+                                    >
+                                      'date'
+                                    </span>
+                                    ,
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
+                                        }
+                                      >
+                                        isHidden
+                                      </span>
+                                    </span>
+                                    : 
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#a11",
+                                        }
+                                      }
+                                    >
+                                      false
+                                    </span>
+                                    }
+                                  </span>
+                                </span>
+                                ,
+                                <span>
+                                  <span>
+                                    <br />
+                                          
+                                      
+                                  </span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    {
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
+                                        }
+                                      >
+                                        columnId
+                                      </span>
+                                    </span>
+                                    : 
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#22a",
+                                          "wordBreak": "break-word",
+                                        }
+                                      }
+                                    >
+                                      'select'
+                                    </span>
+                                    ,
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
+                                        }
+                                      >
+                                        isHidden
+                                      </span>
+                                    </span>
+                                    : 
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#a11",
+                                        }
+                                      }
+                                    >
+                                      false
+                                    </span>
+                                    }
+                                  </span>
+                                </span>
+                                ,
+                                <span>
+                                  <span>
+                                    <br />
+                                          
+                                      
+                                  </span>
+                                  …
+                                </span>
+                                <span>
+                                  <br />
+                                        
+                                </span>
+                                ]
+                              </span>
+                              ,
                               <span>
                                 <span
                                   style={
@@ -57761,13 +58517,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   Select
                 </th>
                 <th
-                  id="column-secretField"
-                  scope="col"
-                  style={Object {}}
-                >
-                  Secret Information
-                </th>
-                <th
                   id="column-number"
                   scope="col"
                   style={Object {}}
@@ -57823,9 +58572,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-A
-                </td>
-                <td>
-                  AAAAAAAAAA
                 </td>
                 <td>
                   0
@@ -57941,9 +58687,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-B
                 </td>
                 <td>
-                  OewGc0QsMs
-                </td>
-                <td>
                   1
                 </td>
                 <td>
@@ -58030,9 +58773,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-C
                 </td>
                 <td>
-                  c8iM4qgaYa
-                </td>
-                <td>
                   4
                 </td>
                 <td>
@@ -58079,7 +58819,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 className="c7"
               >
                 <td
-                  colSpan={7}
+                  colSpan={6}
                 >
                   <div
                     style={
@@ -58180,9 +58920,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-A
                 </td>
                 <td>
-                  qcUSWgwIkI
-                </td>
-                <td>
                   9
                 </td>
                 <td>
@@ -58266,9 +59003,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-B
-                </td>
-                <td>
-                  46GYyWC0w0
                 </td>
                 <td>
                   16
@@ -58385,9 +59119,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-C
                 </td>
                 <td>
-                  Ia2eQMSi8i
-                </td>
-                <td>
                   25
                 </td>
                 <td>
@@ -58434,7 +59165,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 className="c7"
               >
                 <td
-                  colSpan={7}
+                  colSpan={6}
                 >
                   <div
                     style={
@@ -58535,9 +59266,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-A
                 </td>
                 <td>
-                  W4oksCiQKQ
-                </td>
-                <td>
                   36
                 </td>
                 <td>
@@ -58623,9 +59351,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-B
                 </td>
                 <td>
-                  kYaqK2y8W8
-                </td>
-                <td>
                   49
                 </td>
                 <td>
@@ -58709,9 +59434,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-C
-                </td>
-                <td>
-                  y2MwmsEqiq
                 </td>
                 <td>
                   64
@@ -58827,9 +59549,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-A
                 </td>
                 <td>
-                  CW82EiUYuY
-                </td>
-                <td>
                   81
                 </td>
                 <td>
@@ -58913,9 +59632,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-B
-                </td>
-                <td>
-                  Q0u8gYkG6G
                 </td>
                 <td>
                   100
@@ -59003,9 +59719,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-C
                 </td>
                 <td>
-                  eUgE8O0yIy
-                </td>
-                <td>
                   121
                 </td>
                 <td>
@@ -59089,9 +59802,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-A
-                </td>
-                <td>
-                  sySKaEGgUg
                 </td>
                 <td>
                   144
@@ -59207,9 +59917,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-B
                 </td>
                 <td>
-                  6SEQ24WOgO
-                </td>
-                <td>
                   169
                 </td>
                 <td>
@@ -59293,9 +60000,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-C
-                </td>
-                <td>
-                  Kw0WUum6s6
                 </td>
                 <td>
                   196
@@ -59383,9 +60087,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-A
                 </td>
                 <td>
-                  YQmcwk2o4o
-                </td>
-                <td>
                   225
                 </td>
                 <td>
@@ -59469,9 +60170,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-B
-                </td>
-                <td>
-                  muYiOaIWGW
                 </td>
                 <td>
                   256
@@ -59587,9 +60285,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-C
                 </td>
                 <td>
-                  0OKoqQYESE
-                </td>
-                <td>
                   289
                 </td>
                 <td>
@@ -59673,9 +60368,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-A
-                </td>
-                <td>
-                  Es6uIGowew
                 </td>
                 <td>
                   324
@@ -59763,9 +60455,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-B
                 </td>
                 <td>
-                  SMs0k64eqe
-                </td>
-                <td>
                   361
                 </td>
                 <td>
@@ -59849,9 +60538,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-C
-                </td>
-                <td>
-                  gqe6CwKM2M
                 </td>
                 <td>
                   400
@@ -59967,9 +60653,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-A
                 </td>
                 <td>
-                  uKQCema4E4
-                </td>
-                <td>
                   441
                 </td>
                 <td>
@@ -60053,9 +60736,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-B
-                </td>
-                <td>
-                  8oCI6cqmQm
                 </td>
                 <td>
                   484
@@ -60143,9 +60823,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-C
                 </td>
                 <td>
-                  MIyOYS6UcU
-                </td>
-                <td>
                   529
                 </td>
                 <td>
@@ -60229,9 +60906,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-A
-                </td>
-                <td>
-                  amkU0IMCoC
                 </td>
                 <td>
                   576
@@ -60347,9 +61021,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-B
                 </td>
                 <td>
-                  oGWaS8cu0u
-                </td>
-                <td>
                   625
                 </td>
                 <td>
@@ -60433,9 +61104,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-C
-                </td>
-                <td>
-                  2kIguyscCc
                 </td>
                 <td>
                   676
@@ -60523,9 +61191,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-A
                 </td>
                 <td>
-                  GE4mMo8KOK
-                </td>
-                <td>
                   729
                 </td>
                 <td>
@@ -60609,9 +61274,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-B
-                </td>
-                <td>
-                  UiqsoeO2a2
                 </td>
                 <td>
                   784
@@ -60727,9 +61389,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-C
                 </td>
                 <td>
-                  iCcyGUekmk
-                </td>
-                <td>
                   841
                 </td>
                 <td>
@@ -60813,9 +61472,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-A
-                </td>
-                <td>
-                  wgO4iKuSyS
                 </td>
                 <td>
                   900
@@ -60903,9 +61559,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-B
                 </td>
                 <td>
-                  AAAAAAAAAA
-                </td>
-                <td>
                   961
                 </td>
                 <td>
@@ -60989,9 +61642,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-C
-                </td>
-                <td>
-                  OewGc0QsMs
                 </td>
                 <td>
                   1024
@@ -61107,9 +61757,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-A
                 </td>
                 <td>
-                  c8iM4qgaYa
-                </td>
-                <td>
                   1089
                 </td>
                 <td>
@@ -61193,9 +61840,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-B
-                </td>
-                <td>
-                  qcUSWgwIkI
                 </td>
                 <td>
                   1156
@@ -61283,9 +61927,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-C
                 </td>
                 <td>
-                  46GYyWC0w0
-                </td>
-                <td>
                   1225
                 </td>
                 <td>
@@ -61369,9 +62010,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-A
-                </td>
-                <td>
-                  Ia2eQMSi8i
                 </td>
                 <td>
                   1296
@@ -61487,9 +62125,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-B
                 </td>
                 <td>
-                  W4oksCiQKQ
-                </td>
-                <td>
                   1369
                 </td>
                 <td>
@@ -61573,9 +62208,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-C
-                </td>
-                <td>
-                  kYaqK2y8W8
                 </td>
                 <td>
                   1444
@@ -61663,9 +62295,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-A
                 </td>
                 <td>
-                  y2MwmsEqiq
-                </td>
-                <td>
                   1521
                 </td>
                 <td>
@@ -61749,9 +62378,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-B
-                </td>
-                <td>
-                  CW82EiUYuY
                 </td>
                 <td>
                   1600
@@ -61867,9 +62493,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-C
                 </td>
                 <td>
-                  Q0u8gYkG6G
-                </td>
-                <td>
                   1681
                 </td>
                 <td>
@@ -61953,9 +62576,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-A
-                </td>
-                <td>
-                  eUgE8O0yIy
                 </td>
                 <td>
                   1764
@@ -62043,9 +62663,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-B
                 </td>
                 <td>
-                  sySKaEGgUg
-                </td>
-                <td>
                   1849
                 </td>
                 <td>
@@ -62129,9 +62746,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-C
-                </td>
-                <td>
-                  6SEQ24WOgO
                 </td>
                 <td>
                   1936
@@ -62247,9 +62861,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-A
                 </td>
                 <td>
-                  Kw0WUum6s6
-                </td>
-                <td>
                   2025
                 </td>
                 <td>
@@ -62333,9 +62944,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-B
-                </td>
-                <td>
-                  YQmcwk2o4o
                 </td>
                 <td>
                   2116
@@ -62423,9 +63031,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-C
                 </td>
                 <td>
-                  muYiOaIWGW
-                </td>
-                <td>
                   2209
                 </td>
                 <td>
@@ -62509,9 +63114,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-A
-                </td>
-                <td>
-                  0OKoqQYESE
                 </td>
                 <td>
                   2304
@@ -62627,9 +63229,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-B
                 </td>
                 <td>
-                  Es6uIGowew
-                </td>
-                <td>
                   2401
                 </td>
                 <td>
@@ -62713,9 +63312,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-C
-                </td>
-                <td>
-                  SMs0k64eqe
                 </td>
                 <td>
                   2500
@@ -62803,9 +63399,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-A
                 </td>
                 <td>
-                  gqe6CwKM2M
-                </td>
-                <td>
                   2601
                 </td>
                 <td>
@@ -62889,9 +63482,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-B
-                </td>
-                <td>
-                  uKQCema4E4
                 </td>
                 <td>
                   2704
@@ -63007,9 +63597,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-C
                 </td>
                 <td>
-                  8oCI6cqmQm
-                </td>
-                <td>
                   2809
                 </td>
                 <td>
@@ -63093,9 +63680,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-A
-                </td>
-                <td>
-                  MIyOYS6UcU
                 </td>
                 <td>
                   2916
@@ -63183,9 +63767,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-B
                 </td>
                 <td>
-                  amkU0IMCoC
-                </td>
-                <td>
                   3025
                 </td>
                 <td>
@@ -63269,9 +63850,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-C
-                </td>
-                <td>
-                  oGWaS8cu0u
                 </td>
                 <td>
                   3136
@@ -63387,9 +63965,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-A
                 </td>
                 <td>
-                  2kIguyscCc
-                </td>
-                <td>
                   3249
                 </td>
                 <td>
@@ -63473,9 +64048,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-B
-                </td>
-                <td>
-                  GE4mMo8KOK
                 </td>
                 <td>
                   3364
@@ -63563,9 +64135,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-C
                 </td>
                 <td>
-                  UiqsoeO2a2
-                </td>
-                <td>
                   3481
                 </td>
                 <td>
@@ -63649,9 +64218,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-A
-                </td>
-                <td>
-                  iCcyGUekmk
                 </td>
                 <td>
                   3600
@@ -63767,9 +64333,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-B
                 </td>
                 <td>
-                  wgO4iKuSyS
-                </td>
-                <td>
                   3721
                 </td>
                 <td>
@@ -63853,9 +64416,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-C
-                </td>
-                <td>
-                  AAAAAAAAAA
                 </td>
                 <td>
                   3844
@@ -63943,9 +64503,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-A
                 </td>
                 <td>
-                  OewGc0QsMs
-                </td>
-                <td>
                   3969
                 </td>
                 <td>
@@ -64029,9 +64586,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-B
-                </td>
-                <td>
-                  c8iM4qgaYa
                 </td>
                 <td>
                   4096
@@ -64147,9 +64701,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-C
                 </td>
                 <td>
-                  qcUSWgwIkI
-                </td>
-                <td>
                   4225
                 </td>
                 <td>
@@ -64233,9 +64784,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-A
-                </td>
-                <td>
-                  46GYyWC0w0
                 </td>
                 <td>
                   4356
@@ -64323,9 +64871,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-B
                 </td>
                 <td>
-                  Ia2eQMSi8i
-                </td>
-                <td>
                   4489
                 </td>
                 <td>
@@ -64409,9 +64954,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-C
-                </td>
-                <td>
-                  W4oksCiQKQ
                 </td>
                 <td>
                   4624
@@ -64527,9 +65069,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-A
                 </td>
                 <td>
-                  kYaqK2y8W8
-                </td>
-                <td>
                   4761
                 </td>
                 <td>
@@ -64613,9 +65152,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-B
-                </td>
-                <td>
-                  y2MwmsEqiq
                 </td>
                 <td>
                   4900
@@ -64703,9 +65239,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-C
                 </td>
                 <td>
-                  CW82EiUYuY
-                </td>
-                <td>
                   5041
                 </td>
                 <td>
@@ -64789,9 +65322,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-A
-                </td>
-                <td>
-                  Q0u8gYkG6G
                 </td>
                 <td>
                   5184
@@ -64907,9 +65437,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-B
                 </td>
                 <td>
-                  eUgE8O0yIy
-                </td>
-                <td>
                   5329
                 </td>
                 <td>
@@ -64993,9 +65520,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-C
-                </td>
-                <td>
-                  sySKaEGgUg
                 </td>
                 <td>
                   5476
@@ -65083,9 +65607,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-A
                 </td>
                 <td>
-                  6SEQ24WOgO
-                </td>
-                <td>
                   5625
                 </td>
                 <td>
@@ -65169,9 +65690,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-B
-                </td>
-                <td>
-                  Kw0WUum6s6
                 </td>
                 <td>
                   5776
@@ -65287,9 +65805,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-C
                 </td>
                 <td>
-                  YQmcwk2o4o
-                </td>
-                <td>
                   5929
                 </td>
                 <td>
@@ -65373,9 +65888,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-A
-                </td>
-                <td>
-                  muYiOaIWGW
                 </td>
                 <td>
                   6084
@@ -65463,9 +65975,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-B
                 </td>
                 <td>
-                  0OKoqQYESE
-                </td>
-                <td>
                   6241
                 </td>
                 <td>
@@ -65549,9 +66058,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-C
-                </td>
-                <td>
-                  Es6uIGowew
                 </td>
                 <td>
                   6400
@@ -65667,9 +66173,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-A
                 </td>
                 <td>
-                  SMs0k64eqe
-                </td>
-                <td>
                   6561
                 </td>
                 <td>
@@ -65753,9 +66256,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-B
-                </td>
-                <td>
-                  gqe6CwKM2M
                 </td>
                 <td>
                   6724
@@ -65843,9 +66343,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-C
                 </td>
                 <td>
-                  uKQCema4E4
-                </td>
-                <td>
                   6889
                 </td>
                 <td>
@@ -65929,9 +66426,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-A
-                </td>
-                <td>
-                  8oCI6cqmQm
                 </td>
                 <td>
                   7056
@@ -66047,9 +66541,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-B
                 </td>
                 <td>
-                  MIyOYS6UcU
-                </td>
-                <td>
                   7225
                 </td>
                 <td>
@@ -66133,9 +66624,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-C
-                </td>
-                <td>
-                  amkU0IMCoC
                 </td>
                 <td>
                   7396
@@ -66223,9 +66711,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-A
                 </td>
                 <td>
-                  oGWaS8cu0u
-                </td>
-                <td>
                   7569
                 </td>
                 <td>
@@ -66309,9 +66794,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-B
-                </td>
-                <td>
-                  2kIguyscCc
                 </td>
                 <td>
                   7744
@@ -66427,9 +66909,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-C
                 </td>
                 <td>
-                  GE4mMo8KOK
-                </td>
-                <td>
                   7921
                 </td>
                 <td>
@@ -66513,9 +66992,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-A
-                </td>
-                <td>
-                  UiqsoeO2a2
                 </td>
                 <td>
                   8100
@@ -66603,9 +67079,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-B
                 </td>
                 <td>
-                  iCcyGUekmk
-                </td>
-                <td>
                   8281
                 </td>
                 <td>
@@ -66689,9 +67162,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-C
-                </td>
-                <td>
-                  wgO4iKuSyS
                 </td>
                 <td>
                   8464
@@ -66807,9 +67277,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-A
                 </td>
                 <td>
-                  AAAAAAAAAA
-                </td>
-                <td>
                   8649
                 </td>
                 <td>
@@ -66893,9 +67360,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-B
-                </td>
-                <td>
-                  OewGc0QsMs
                 </td>
                 <td>
                   8836
@@ -66983,9 +67447,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-C
                 </td>
                 <td>
-                  c8iM4qgaYa
-                </td>
-                <td>
                   9025
                 </td>
                 <td>
@@ -67069,9 +67530,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-A
-                </td>
-                <td>
-                  qcUSWgwIkI
                 </td>
                 <td>
                   9216
@@ -67187,9 +67645,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-B
                 </td>
                 <td>
-                  46GYyWC0w0
-                </td>
-                <td>
                   9409
                 </td>
                 <td>
@@ -67275,9 +67730,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                   option-C
                 </td>
                 <td>
-                  Ia2eQMSi8i
-                </td>
-                <td>
                   9604
                 </td>
                 <td>
@@ -67361,9 +67813,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   option-A
-                </td>
-                <td>
-                  W4oksCiQKQ
                 </td>
                 <td>
                   9801
@@ -69716,6 +70165,227 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                                     }
                                   }
                                 >
+                                  ordering
+                                </span>
+                              </span>
+                              : 
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#666",
+                                  }
+                                }
+                              >
+                                [
+                                <span>
+                                  <span>
+                                    <br />
+                                          
+                                      
+                                  </span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    {
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
+                                        }
+                                      >
+                                        columnId
+                                      </span>
+                                    </span>
+                                    : 
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#22a",
+                                          "wordBreak": "break-word",
+                                        }
+                                      }
+                                    >
+                                      'string'
+                                    </span>
+                                    ,
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
+                                        }
+                                      >
+                                        isHidden
+                                      </span>
+                                    </span>
+                                    : 
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#a11",
+                                        }
+                                      }
+                                    >
+                                      false
+                                    </span>
+                                    }
+                                  </span>
+                                </span>
+                                ,
+                                <span>
+                                  <span>
+                                    <br />
+                                          
+                                      
+                                  </span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    {
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
+                                        }
+                                      >
+                                        columnId
+                                      </span>
+                                    </span>
+                                    : 
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#22a",
+                                          "wordBreak": "break-word",
+                                        }
+                                      }
+                                    >
+                                      'date'
+                                    </span>
+                                    ,
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
+                                        }
+                                      >
+                                        isHidden
+                                      </span>
+                                    </span>
+                                    : 
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#a11",
+                                        }
+                                      }
+                                    >
+                                      false
+                                    </span>
+                                    }
+                                  </span>
+                                </span>
+                                ,
+                                <span>
+                                  <span>
+                                    <br />
+                                          
+                                      
+                                  </span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    {
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
+                                        }
+                                      >
+                                        columnId
+                                      </span>
+                                    </span>
+                                    : 
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#22a",
+                                          "wordBreak": "break-word",
+                                        }
+                                      }
+                                    >
+                                      'select'
+                                    </span>
+                                    ,
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
+                                        }
+                                      >
+                                        isHidden
+                                      </span>
+                                    </span>
+                                    : 
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#a11",
+                                        }
+                                      }
+                                    >
+                                      false
+                                    </span>
+                                    }
+                                  </span>
+                                </span>
+                                ,
+                                <span>
+                                  <span>
+                                    <br />
+                                          
+                                      
+                                  </span>
+                                  …
+                                </span>
+                                <span>
+                                  <br />
+                                        
+                                </span>
+                                ]
+                              </span>
+                              ,
+                              <span>
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
                                   expandedRows
                                 </span>
                               </span>
@@ -72038,13 +72708,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with selec
                   Select
                 </th>
                 <th
-                  id="column-secretField"
-                  scope="col"
-                  style={Object {}}
-                >
-                  Secret Information
-                </th>
-                <th
                   id="column-number"
                   scope="col"
                   style={Object {}}
@@ -72096,9 +72759,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with selec
                   option-A
                 </td>
                 <td>
-                  AAAAAAAAAA
-                </td>
-                <td>
                   0
                 </td>
               </tr>
@@ -72142,9 +72802,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with selec
                 </td>
                 <td>
                   option-B
-                </td>
-                <td>
-                  OewGc0QsMs
                 </td>
                 <td>
                   1
@@ -72192,9 +72849,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with selec
                   option-C
                 </td>
                 <td>
-                  c8iM4qgaYa
-                </td>
-                <td>
                   4
                 </td>
               </tr>
@@ -72238,9 +72892,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with selec
                 </td>
                 <td>
                   option-A
-                </td>
-                <td>
-                  qcUSWgwIkI
                 </td>
                 <td>
                   9
@@ -72288,9 +72939,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with selec
                   option-B
                 </td>
                 <td>
-                  46GYyWC0w0
-                </td>
-                <td>
                   16
                 </td>
               </tr>
@@ -72334,9 +72982,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with selec
                 </td>
                 <td>
                   option-C
-                </td>
-                <td>
-                  Ia2eQMSi8i
                 </td>
                 <td>
                   25
@@ -72384,9 +73029,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with selec
                   option-A
                 </td>
                 <td>
-                  W4oksCiQKQ
-                </td>
-                <td>
                   36
                 </td>
               </tr>
@@ -72430,9 +73072,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with selec
                 </td>
                 <td>
                   option-B
-                </td>
-                <td>
-                  kYaqK2y8W8
                 </td>
                 <td>
                   49
@@ -72480,9 +73119,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with selec
                   option-C
                 </td>
                 <td>
-                  y2MwmsEqiq
-                </td>
-                <td>
                   64
                 </td>
               </tr>
@@ -72526,9 +73162,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with selec
                 </td>
                 <td>
                   option-A
-                </td>
-                <td>
-                  CW82EiUYuY
                 </td>
                 <td>
                   81
@@ -74466,6 +75099,237 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with selec
                             >
                               {
                               <span>
+                                <span>
+                                  <br />
+                                      
+                                    
+                                </span>
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  ordering
+                                </span>
+                              </span>
+                              : 
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#666",
+                                  }
+                                }
+                              >
+                                [
+                                <span>
+                                  <span>
+                                    <br />
+                                          
+                                      
+                                  </span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    {
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
+                                        }
+                                      >
+                                        columnId
+                                      </span>
+                                    </span>
+                                    : 
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#22a",
+                                          "wordBreak": "break-word",
+                                        }
+                                      }
+                                    >
+                                      'string'
+                                    </span>
+                                    ,
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
+                                        }
+                                      >
+                                        isHidden
+                                      </span>
+                                    </span>
+                                    : 
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#a11",
+                                        }
+                                      }
+                                    >
+                                      false
+                                    </span>
+                                    }
+                                  </span>
+                                </span>
+                                ,
+                                <span>
+                                  <span>
+                                    <br />
+                                          
+                                      
+                                  </span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    {
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
+                                        }
+                                      >
+                                        columnId
+                                      </span>
+                                    </span>
+                                    : 
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#22a",
+                                          "wordBreak": "break-word",
+                                        }
+                                      }
+                                    >
+                                      'date'
+                                    </span>
+                                    ,
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
+                                        }
+                                      >
+                                        isHidden
+                                      </span>
+                                    </span>
+                                    : 
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#a11",
+                                        }
+                                      }
+                                    >
+                                      false
+                                    </span>
+                                    }
+                                  </span>
+                                </span>
+                                ,
+                                <span>
+                                  <span>
+                                    <br />
+                                          
+                                      
+                                  </span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    {
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
+                                        }
+                                      >
+                                        columnId
+                                      </span>
+                                    </span>
+                                    : 
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#22a",
+                                          "wordBreak": "break-word",
+                                        }
+                                      }
+                                    >
+                                      'select'
+                                    </span>
+                                    ,
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
+                                        }
+                                      >
+                                        isHidden
+                                      </span>
+                                    </span>
+                                    : 
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#a11",
+                                        }
+                                      }
+                                    >
+                                      false
+                                    </span>
+                                    }
+                                  </span>
+                                </span>
+                                ,
+                                <span>
+                                  <span>
+                                    <br />
+                                          
+                                      
+                                  </span>
+                                  …
+                                </span>
+                                <span>
+                                  <br />
+                                        
+                                </span>
+                                ]
+                              </span>
+                              ,
+                              <span>
+                                <span>
+                                  <br />
+                                      
+                                    
+                                </span>
                                 <span
                                   style={
                                     Object {
@@ -74488,6 +75352,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with selec
                               </span>
                               ,
                               <span>
+                                <span>
+                                  <br />
+                                      
+                                    
+                                </span>
                                 <span
                                   style={
                                     Object {
@@ -74510,92 +75379,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with selec
                               </span>
                               ,
                               <span>
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#666",
-                                    }
-                                  }
-                                >
-                                  selectedIds
-                                </span>
-                              </span>
-                              : 
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#666",
-                                  }
-                                }
-                              >
-                                [
-                                <span>
-                                  <span>
-                                    <br />
-                                          
-                                      
-                                  </span>
-                                  <span
-                                    style={
-                                      Object {
-                                        "color": "#22a",
-                                        "wordBreak": "break-word",
-                                      }
-                                    }
-                                  >
-                                    'row-3'
-                                  </span>
-                                </span>
-                                ,
-                                <span>
-                                  <span>
-                                    <br />
-                                          
-                                      
-                                  </span>
-                                  <span
-                                    style={
-                                      Object {
-                                        "color": "#22a",
-                                        "wordBreak": "break-word",
-                                      }
-                                    }
-                                  >
-                                    'row-4'
-                                  </span>
-                                </span>
-                                ,
-                                <span>
-                                  <span>
-                                    <br />
-                                          
-                                      
-                                  </span>
-                                  <span
-                                    style={
-                                      Object {
-                                        "color": "#22a",
-                                        "wordBreak": "break-word",
-                                      }
-                                    }
-                                  >
-                                    'row-6'
-                                  </span>
-                                </span>
-                                ,
-                                <span>
-                                  <span>
-                                    <br />
-                                          
-                                      
-                                  </span>
-                                  …
-                                </span>
                                 <span>
                                   <br />
-                                        
+                                      
+                                    
                                 </span>
-                                ]
+                                …
+                              </span>
+                              <span>
+                                <br />
+                                    
                               </span>
                               }
                             </span>
@@ -76798,40 +77591,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with sorti
                 >
                   <button
                     className="bx--table-sort-v2"
-                    id="column-secretField"
-                    onClick={[Function]}
-                    style={Object {}}
-                  >
-                    <span
-                      className="bx--table-header-label"
-                    >
-                      Secret Information
-                    </span>
-                    <svg
-                      alt="Sort rows by this header in ascending order"
-                      aria-label="Sort rows by this header in ascending order"
-                      className="bx--table-sort-v2__icon"
-                      fillRule="evenodd"
-                      height="5"
-                      role="img"
-                      viewBox="0 0 10 5"
-                      width="10"
-                    >
-                      <title>
-                        Sort rows by this header in ascending order
-                      </title>
-                      <path
-                        d="M0 5L5 .002 10 5z"
-                      />
-                    </svg>
-                  </button>
-                </th>
-                <th
-                  aria-sort="none"
-                  scope="col"
-                >
-                  <button
-                    className="bx--table-sort-v2"
                     id="column-number"
                     onClick={[Function]}
                     style={Object {}}
@@ -76905,9 +77664,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with sorti
                   option-B
                 </td>
                 <td>
-                  6SEQ24WOgO
-                </td>
-                <td>
                   169
                 </td>
               </tr>
@@ -76951,9 +77707,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with sorti
                 </td>
                 <td>
                   option-C
-                </td>
-                <td>
-                  MIyOYS6UcU
                 </td>
                 <td>
                   529
@@ -77001,9 +77754,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with sorti
                   option-A
                 </td>
                 <td>
-                  qcUSWgwIkI
-                </td>
-                <td>
                   9
                 </td>
               </tr>
@@ -77047,9 +77797,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with sorti
                 </td>
                 <td>
                   option-A
-                </td>
-                <td>
-                  c8iM4qgaYa
                 </td>
                 <td>
                   1089
@@ -77097,9 +77844,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with sorti
                   option-B
                 </td>
                 <td>
-                  sySKaEGgUg
-                </td>
-                <td>
                   1849
                 </td>
               </tr>
@@ -77143,9 +77887,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with sorti
                 </td>
                 <td>
                   option-C
-                </td>
-                <td>
-                  8oCI6cqmQm
                 </td>
                 <td>
                   2809
@@ -77193,9 +77934,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with sorti
                   option-A
                 </td>
                 <td>
-                  OewGc0QsMs
-                </td>
-                <td>
                   3969
                 </td>
               </tr>
@@ -77239,9 +77977,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with sorti
                 </td>
                 <td>
                   option-B
-                </td>
-                <td>
-                  eUgE8O0yIy
                 </td>
                 <td>
                   5329
@@ -77289,9 +78024,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with sorti
                   option-C
                 </td>
                 <td>
-                  uKQCema4E4
-                </td>
-                <td>
                   6889
                 </td>
               </tr>
@@ -77335,9 +78067,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with sorti
                 </td>
                 <td>
                   option-A
-                </td>
-                <td>
-                  AAAAAAAAAA
                 </td>
                 <td>
                   8649
@@ -79121,6 +79850,227 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with sorti
                               }
                             >
                               {
+                              <span>
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  ordering
+                                </span>
+                              </span>
+                              : 
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#666",
+                                  }
+                                }
+                              >
+                                [
+                                <span>
+                                  <span>
+                                    <br />
+                                          
+                                      
+                                  </span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    {
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
+                                        }
+                                      >
+                                        columnId
+                                      </span>
+                                    </span>
+                                    : 
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#22a",
+                                          "wordBreak": "break-word",
+                                        }
+                                      }
+                                    >
+                                      'string'
+                                    </span>
+                                    ,
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
+                                        }
+                                      >
+                                        isHidden
+                                      </span>
+                                    </span>
+                                    : 
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#a11",
+                                        }
+                                      }
+                                    >
+                                      false
+                                    </span>
+                                    }
+                                  </span>
+                                </span>
+                                ,
+                                <span>
+                                  <span>
+                                    <br />
+                                          
+                                      
+                                  </span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    {
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
+                                        }
+                                      >
+                                        columnId
+                                      </span>
+                                    </span>
+                                    : 
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#22a",
+                                          "wordBreak": "break-word",
+                                        }
+                                      }
+                                    >
+                                      'date'
+                                    </span>
+                                    ,
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
+                                        }
+                                      >
+                                        isHidden
+                                      </span>
+                                    </span>
+                                    : 
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#a11",
+                                        }
+                                      }
+                                    >
+                                      false
+                                    </span>
+                                    }
+                                  </span>
+                                </span>
+                                ,
+                                <span>
+                                  <span>
+                                    <br />
+                                          
+                                      
+                                  </span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    {
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
+                                        }
+                                      >
+                                        columnId
+                                      </span>
+                                    </span>
+                                    : 
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#22a",
+                                          "wordBreak": "break-word",
+                                        }
+                                      }
+                                    >
+                                      'select'
+                                    </span>
+                                    ,
+                                    <span>
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#666",
+                                          }
+                                        }
+                                      >
+                                        isHidden
+                                      </span>
+                                    </span>
+                                    : 
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#a11",
+                                        }
+                                      }
+                                    >
+                                      false
+                                    </span>
+                                    }
+                                  </span>
+                                </span>
+                                ,
+                                <span>
+                                  <span>
+                                    <br />
+                                          
+                                      
+                                  </span>
+                                  …
+                                </span>
+                                <span>
+                                  <br />
+                                        
+                                </span>
+                                ]
+                              </span>
+                              ,
                               <span>
                                 <span
                                   style={

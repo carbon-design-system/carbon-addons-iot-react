@@ -52,6 +52,10 @@ const tableColumns = [
     filter: { placeholderText: 'pick a number' },
   },
 ];
+const defaultOrdering = tableColumns.map(c => ({
+  columnId: c.id,
+  isHidden: c.id === 'secretField',
+}));
 
 const words = [
   'toyota',
@@ -187,10 +191,7 @@ class StatefulTableWrapper extends Component {
           isSelectAllSelected: false,
           selectedIds: [],
           sort: undefined,
-          ordering: tableColumns.map(({ id }) => ({
-            columnId: id,
-            isHidden: id === 'secretField',
-          })),
+          ordering: defaultOrdering,
           expandedRows: [],
         },
         toolbar: {
@@ -547,6 +548,7 @@ storiesOf('Table', module)
           ],
         },
         table: {
+          ordering: defaultOrdering,
           isSelectAllSelected: false,
           isSelectAllIndeterminate: true,
           selectedIds: ['row-3', 'row-4', 'row-6', 'row-7'],
@@ -565,6 +567,7 @@ storiesOf('Table', module)
       view={{
         filters: [],
         table: {
+          ordering: defaultOrdering,
           expandedRows: [
             {
               rowId: 'row-2',
@@ -614,6 +617,7 @@ storiesOf('Table', module)
       view={{
         filters: [],
         table: {
+          ordering: defaultOrdering,
           expandedRows: [
             {
               rowId: 'row-2',
@@ -644,6 +648,7 @@ storiesOf('Table', module)
       view={{
         filters: [],
         table: {
+          ordering: defaultOrdering,
           sort: {
             columnId: 'string',
             direction: 'ASC',
@@ -696,6 +701,9 @@ storiesOf('Table', module)
           toolbar: {
             activeBar: 'filter',
           },
+          table: {
+            ordering: defaultOrdering,
+          },
         }}
       />
     );
@@ -711,14 +719,11 @@ storiesOf('Table', module)
         hasColumnSelection: true,
       }}
       view={{
-        table: {
-          ordering: tableColumns.map(c => ({
-            columnId: c.id,
-            isHidden: c.id === 'secretField' || c.id === 'date',
-          })),
-        },
         toolbar: {
           activeBar: 'column',
+        },
+        table: {
+          ordering: defaultOrdering,
         },
       }}
     />
@@ -738,12 +743,25 @@ storiesOf('Table', module)
         toolbar: {
           activeBar: 'filter',
         },
+        table: {
+          ordering: defaultOrdering,
+        },
       }}
       options={{ hasFilter: true, hasPagination: true }}
     />
   ))
   .add('with no data', () => (
-    <Table columns={tableColumns} data={[]} actions={actions} options={{ hasPagination: true }} />
+    <Table
+      columns={tableColumns}
+      data={[]}
+      actions={actions}
+      view={{
+        table: {
+          ordering: defaultOrdering,
+        },
+      }}
+      options={{ hasPagination: true }}
+    />
   ))
   .add('with no data and custom empty state', () => (
     <Table
@@ -752,6 +770,7 @@ storiesOf('Table', module)
       actions={actions}
       view={{
         table: {
+          ordering: defaultOrdering,
           emptyState: (
             <div key="empty-state">
               <h1 key="empty-state-heading">Custom empty state</h1>
@@ -768,6 +787,13 @@ storiesOf('Table', module)
       columns={tableColumns}
       data={tableData}
       actions={actions}
-      view={{ table: { loadingState: { isLoading: true } } }}
+      view={{
+        table: {
+          ordering: defaultOrdering,
+          loadingState: {
+            isLoading: true,
+          },
+        },
+      }}
     />
   ));
