@@ -2,10 +2,12 @@ import PropTypes from 'prop-types';
 
 export const RowActionPropTypes = PropTypes.arrayOf(
   PropTypes.shape({
-    id: PropTypes.string,
+    /** Unique id of the action */
+    id: PropTypes.string.isRequired,
     icon: PropTypes.string,
     disabled: PropTypes.bool,
     labelText: PropTypes.string,
+    /** Action should go into the overflow menu, not be rendered inline in the row */
     isOverflow: PropTypes.bool,
   })
 );
