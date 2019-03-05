@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import { DataTable, Checkbox } from 'carbon-components-react';
 import isNil from 'lodash/isNil';
 
-import ColumnHeaderRow from '../ColumnHeaderRow/ColumnHeaderRow';
-import FilterHeaderRow from '../FilterHeaderRow/FilterHeaderRow';
+import ColumnHeaderRow from './ColumnHeaderRow/ColumnHeaderRow';
+import FilterHeaderRow from './FilterHeaderRow/FilterHeaderRow';
 
 const { TableHead: CarbonTableHead, TableRow, TableExpandHeader, TableHeader } = DataTable;
 
@@ -142,6 +142,7 @@ const TableHead = ({
             id: column.id,
             isFilterable: !isNil(column.filter),
           }))}
+          ordering={ordering}
           key={JSON.stringify(filters)}
           filters={filters}
           tableOptions={options}
