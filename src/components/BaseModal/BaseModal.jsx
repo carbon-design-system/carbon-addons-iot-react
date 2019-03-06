@@ -161,6 +161,8 @@ class BaseModal extends React.Component {
     clearSubmitErrors: PropTypes.func,
     /** REDUXFORM: Callback to submit the dialog/form */
     onSubmit: PropTypes.func,
+    /** ability to add translation string to close icon */
+    iconDescription: PropTypes.string,
   };
 
   static defaultProps = {
@@ -179,6 +181,7 @@ class BaseModal extends React.Component {
     invalid: false,
     children: null,
     header: {},
+    iconDescription: 'Close',
   };
 
   componentDidUpdate(prevProps) {
@@ -216,6 +219,7 @@ class BaseModal extends React.Component {
       isFetchingData,
       isLarge,
       onSubmit,
+      iconDescription,
     } = this.props;
     const { label, title, helpText } = header;
     // First check for dataErrors as they are worse than form errors
@@ -231,7 +235,12 @@ class BaseModal extends React.Component {
           'error-modal': type === 'warn',
           'big-modal': isLarge,
         })}>
-        <ModalHeader label={label} title={title} closeModal={onClose} buttonOnClick={onClose}>
+        <ModalHeader
+          label={label}
+          title={title}
+          closeModal={onClose}
+          buttonOnClick={onClose}
+          iconDescription={iconDescription}>
           {helpText ? <p className="bx--modal-content__text">{helpText}</p> : null}
         </ModalHeader>
         {children ? <ModalBody>{children}</ModalBody> : null}
