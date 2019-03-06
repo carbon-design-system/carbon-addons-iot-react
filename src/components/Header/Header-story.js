@@ -18,6 +18,12 @@ const User = styled.p`
   }
 `;
 
+const DropItem = styled.span`
+   {
+    display: flex;
+  }
+`;
+
 const StyledIcon = styled(Icon)`
    {
     width: 25px;
@@ -55,7 +61,14 @@ const HeaderProps = {
         },
         {
           onCLick: action('go to source'),
-          content: <p>This is a link</p>,
+          content: (
+            <React.Fragment>
+              <DropItem>
+                JohnDoe@ibm.com
+                <StyledIcon name="header--avatar" fill="white" description="Icon" />
+              </DropItem>
+            </React.Fragment>
+          ),
         },
       ],
     },
@@ -74,4 +87,6 @@ const HeaderProps = {
   ],
 };
 
-storiesOf('Header', module).add('handles click', () => <Header {...HeaderProps} />);
+storiesOf('Header', module).add('Header action buttons with dropdowns', () => (
+  <Header {...HeaderProps} />
+));

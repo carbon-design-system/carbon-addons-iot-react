@@ -12359,7 +12359,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots ButtonEnhanced n
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Header handles click 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Header Header action buttons with dropdowns 1`] = `
 .c0 {
   background-color: #152935;
   margin-top: 2rem;
@@ -12380,6 +12380,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Header handles c
   justify-content: center;
   min-width: 3rem;
   padding: 0 0.9375rem;
+  position: relative;
   width: auto;
 }
 
@@ -12387,18 +12388,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots Header handles c
   background-color: #2d3f48;
 }
 
-.c1:last-child svg {
-  margin-left: 1.25rem;
-}
-
 .c1 span {
-  display: block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
-.c3 {
+.c4 {
   color: white;
   font-size: 0.75rem;
   text-align: left;
+  margin-right: 1.25rem;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .c2 {
@@ -12429,9 +12437,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Header handles c
       <header
         aria-label="main header"
         className="bx--header custom-class-name c0"
-        onClick={[Function]}
         role="banner"
       >
+        <a
+          className="bx--skip-to-content"
+          href="#main-content"
+          tabIndex="0"
+        >
+          Skip to main content
+        </a>
         <a
           className="bx--header__name"
           href="#"
@@ -12448,7 +12462,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Header handles c
           className="bx--header__global"
         >
           <button
-            aria-label="Profile"
+            aria-label="alerts"
             className="c1 bx--header__action"
             onClick={[Function]}
             type="button"
@@ -12459,36 +12473,149 @@ exports[`Storybook Snapshot tests and console checks Storyshots Header handles c
               className="c2"
               fill="white"
               fillRule="evenodd"
-              height="20"
-              name="header--help"
+              height="16"
+              name="notification-on"
               role="img"
-              viewBox="0 0 20 20"
-              width="20"
+              viewBox="0 0 14 16"
+              width="14"
             >
               <title>
                 Icon
               </title>
               <path
-                d="M10 17a7 7 0 1 0 0-14 7 7 0 0 0 0 14zm0 1a8 8 0 1 1 0-16 8 8 0 0 1 0 16z"
-              />
-              <path
-                d="M10.5 10.5V12h-1V9.5h1a1.5 1.5 0 0 0 0-3h-1A1.5 1.5 0 0 0 8 8H7a2.5 2.5 0 0 1 2.5-2.5h1a2.5 2.5 0 1 1 0 5zM9 14a1 1 0 1 1 2 0 1 1 0 1 1-2 0"
+                d="M11.199 9.9a.5.5 0 0 1-.2-.4V6.23a4 4 0 0 0-3.99-4A3.989 3.989 0 0 0 3.01 6.206L3 9.52a.5.5 0 0 1-.202.4L1 11.252V13h12v-1.75L11.199 9.9zM4.55 14H.5a.5.5 0 0 1-.5-.5V11a.5.5 0 0 1 .202-.402l1.799-1.333.01-3.062A4.99 4.99 0 0 1 6.5 1.254V0h1v1.254a5 5 0 0 1 4.498 4.975v3.02L13.8 10.6a.5.5 0 0 1 .2.4v2.5a.5.5 0 0 1-.5.5H9.45a2.5 2.5 0 0 1-4.9 0zm1.035 0a1.5 1.5 0 0 0 2.83 0h-2.83z"
               />
             </svg>
           </button>
+          <nav
+            aria-label="dropdown"
+            className="bx--header__nav"
+          >
+            <ul
+              aria-label="dropdown"
+              className="bx--header__menu-bar"
+              onKeyDown={[Function]}
+              role="menubar"
+            >
+              <li
+                className="bx--header__submenu"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onKeyDown={[Function]}
+              >
+                <a
+                  aria-expanded={false}
+                  aria-haspopup="menu"
+                  className="bx--header__menu-item bx--header__menu-title"
+                  onKeyDown={[Function]}
+                  role="menuitem"
+                  tabIndex={0}
+                >
+                  <svg
+                    alt="Icon"
+                    aria-label="Icon"
+                    className="bx--header__menu-item bx--header__menu-title c2"
+                    fill="white"
+                    fillRule="evenodd"
+                    height="20"
+                    name="header--help"
+                    role="img"
+                    viewBox="0 0 20 20"
+                    width="20"
+                  >
+                    <title>
+                      Icon
+                    </title>
+                    <path
+                      d="M10 17a7 7 0 1 0 0-14 7 7 0 0 0 0 14zm0 1a8 8 0 1 1 0-16 8 8 0 0 1 0 16z"
+                    />
+                    <path
+                      d="M10.5 10.5V12h-1V9.5h1a1.5 1.5 0 0 0 0-3h-1A1.5 1.5 0 0 0 8 8H7a2.5 2.5 0 0 1 2.5-2.5h1a2.5 2.5 0 1 1 0 5zM9 14a1 1 0 1 1 2 0 1 1 0 1 1-2 0"
+                    />
+                  </svg>
+                </a>
+                <ul
+                  aria-label="help"
+                  className="bx--header__menu"
+                  role="menu"
+                >
+                  <li
+                    role="none"
+                  >
+                    <a
+                      className="bx--header__menu-item"
+                      href="javascript:void(0)"
+                      onClick={[Function]}
+                      role="menuitem"
+                    >
+                      <span
+                        className="bx--text-truncate--end"
+                      >
+                        <p>
+                          This is a link
+                        </p>
+                      </span>
+                    </a>
+                  </li>
+                  <li
+                    role="none"
+                  >
+                    <a
+                      className="bx--header__menu-item"
+                      href="javascript:void(0)"
+                      onClick={[Function]}
+                      role="menuitem"
+                    >
+                      <span
+                        className="bx--text-truncate--end"
+                      >
+                        <span
+                          className="c3"
+                        >
+                          JohnDoe@ibm.com
+                          <svg
+                            alt="Icon"
+                            aria-label="Icon"
+                            className="c2"
+                            fill="white"
+                            fillRule="evenodd"
+                            height="20"
+                            name="header--avatar"
+                            role="img"
+                            viewBox="0 0 20 20"
+                            width="20"
+                          >
+                            <title>
+                              Icon
+                            </title>
+                            <path
+                              d="M6 15.745A6.968 6.968 0 0 0 10 17a6.968 6.968 0 0 0 4-1.255V15.5a2.5 2.5 0 0 0-2.5-2.5h-3A2.5 2.5 0 0 0 6 15.5v.245zm-.956-.802A3.5 3.5 0 0 1 8.5 12h3a3.5 3.5 0 0 1 3.456 2.943 7 7 0 1 0-9.912 0zM10 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16z"
+                            />
+                            <path
+                              d="M10 10a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0 1a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"
+                            />
+                          </svg>
+                        </span>
+                      </span>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
           <button
-            aria-label="Profile"
+            aria-label="user"
             className="c1 bx--header__action"
             onClick={[Function]}
             type="button"
           >
             <p
-              className="c3"
+              className="c4"
             >
+              JohnDoe@ibm.com
               <span>
-                JohnDoe@ibm.com
+                TenantId: Acme
               </span>
-              TenantId: Acme
             </p>
             <svg
               alt="Icon"
@@ -12625,7 +12752,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Header handles c
                 }
               }
             >
-              handles click
+              Header action buttons with dropdowns
             </h2>
           </div>
           
@@ -12665,35 +12792,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Header handles c
                     Header
                   </span>
                   <span>
-                    <span>
-                      <span>
-                        <br />
-                          
-                      </span>
-                      <span
-                        style={Object {}}
-                      >
-                        onClick
-                      </span>
-                      <span>
-                        =
-                        <span
-                          style={Object {}}
-                        >
-                          {
-                          <span
-                            style={
-                              Object {
-                                "color": "#170",
-                              }
-                            }
-                          >
-                            click
-                          </span>
-                          }
-                        </span>
-                      </span>
-                    </span>
                     <span>
                       <span>
                         <br />
@@ -12813,6 +12911,303 @@ exports[`Storybook Snapshot tests and console checks Storyshots Header handles c
                           "
                         </span>
                       </span>
+                    </span>
+                    <span>
+                      <span>
+                        <br />
+                          
+                      </span>
+                      <span
+                        style={Object {}}
+                      >
+                        actionItems
+                      </span>
+                      <span>
+                        =
+                        <span
+                          style={Object {}}
+                        >
+                          {
+                          <span
+                            style={
+                              Object {
+                                "color": "#666",
+                              }
+                            }
+                          >
+                            [
+                            <span>
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#666",
+                                  }
+                                }
+                              >
+                                {
+                                <span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    label
+                                  </span>
+                                </span>
+                                : 
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  'alerts'
+                                </span>
+                                ,
+                                <span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    onClick
+                                  </span>
+                                </span>
+                                : 
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#170",
+                                    }
+                                  }
+                                >
+                                  pop alert modal
+                                </span>
+                                ,
+                                <span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    btnContent
+                                  </span>
+                                </span>
+                                : 
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  &lt;Header-story__StyledIcon /&gt;
+                                </span>
+                                }
+                              </span>
+                            </span>
+                            ,
+                            <span>
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#666",
+                                  }
+                                }
+                              >
+                                {
+                                <span>
+                                  <span>
+                                    <br />
+                                        
+                                      
+                                  </span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    label
+                                  </span>
+                                </span>
+                                : 
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  'help'
+                                </span>
+                                ,
+                                <span>
+                                  <span>
+                                    <br />
+                                        
+                                      
+                                  </span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    onClick
+                                  </span>
+                                </span>
+                                : 
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#170",
+                                    }
+                                  }
+                                >
+                                  help drop open
+                                </span>
+                                ,
+                                <span>
+                                  <span>
+                                    <br />
+                                        
+                                      
+                                  </span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    btnContent
+                                  </span>
+                                </span>
+                                : 
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  &lt;Header-story__StyledIcon /&gt;
+                                </span>
+                                ,
+                                <span>
+                                  <span>
+                                    <br />
+                                        
+                                      
+                                  </span>
+                                  …
+                                </span>
+                                <span>
+                                  <br />
+                                      
+                                </span>
+                                }
+                              </span>
+                            </span>
+                            ,
+                            <span>
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#666",
+                                  }
+                                }
+                              >
+                                {
+                                <span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    label
+                                  </span>
+                                </span>
+                                : 
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  'user'
+                                </span>
+                                ,
+                                <span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    onClick
+                                  </span>
+                                </span>
+                                : 
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#170",
+                                    }
+                                  }
+                                >
+                                  click
+                                </span>
+                                ,
+                                <span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    btnContent
+                                  </span>
+                                </span>
+                                : 
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  &lt;function (_ref) {
+  var children = _ref.children;
+  return children;
+} /&gt;
+                                </span>
+                                }
+                              </span>
+                            </span>
+                            ]
+                          </span>
+                          }
+                        </span>
+                      </span>
                       <br />
                     </span>
                   </span>
@@ -12912,93 +13307,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Header handles c
                     <td
                       className="css-1qcb1f7 e6fp4ir0"
                     >
-                      onClick
-                    </td>
-                    <td
-                      className="css-1qcb1f7 e6fp4ir0"
-                    >
-                      <span>
-                        func
-                      </span>
-                    </td>
-                    <td
-                      className="css-11b5gui e6fp4ir0"
-                    >
-                      yes
-                    </td>
-                    <td
-                      className="css-11b5gui e6fp4ir0"
-                    >
-                      -
-                    </td>
-                    <td
-                      className="css-11b5gui e6fp4ir0"
-                    >
-                      
-                    </td>
-                  </tr>
-                  <tr>
-                    <td
-                      className="css-1qcb1f7 e6fp4ir0"
-                    >
-                      user
-                    </td>
-                    <td
-                      className="css-1qcb1f7 e6fp4ir0"
-                    >
-                      <span>
-                        string
-                      </span>
-                    </td>
-                    <td
-                      className="css-11b5gui e6fp4ir0"
-                    >
-                      yes
-                    </td>
-                    <td
-                      className="css-11b5gui e6fp4ir0"
-                    >
-                      -
-                    </td>
-                    <td
-                      className="css-11b5gui e6fp4ir0"
-                    >
-                      Shows current user
-                    </td>
-                  </tr>
-                  <tr>
-                    <td
-                      className="css-1qcb1f7 e6fp4ir0"
-                    >
-                      tenant
-                    </td>
-                    <td
-                      className="css-1qcb1f7 e6fp4ir0"
-                    >
-                      <span>
-                        string
-                      </span>
-                    </td>
-                    <td
-                      className="css-11b5gui e6fp4ir0"
-                    >
-                      yes
-                    </td>
-                    <td
-                      className="css-11b5gui e6fp4ir0"
-                    >
-                      -
-                    </td>
-                    <td
-                      className="css-11b5gui e6fp4ir0"
-                    >
-                      Shows tenant or Org ID
-                    </td>
-                  </tr>
-                  <tr>
-                    <td
-                      className="css-1qcb1f7 e6fp4ir0"
-                    >
                       appName
                     </td>
                     <td
@@ -13022,6 +13330,241 @@ exports[`Storybook Snapshot tests and console checks Storyshots Header handles c
                       className="css-11b5gui e6fp4ir0"
                     >
                       Name ot follow the IBM prefix up top, left
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      actionItems
+                    </td>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      <span>
+                        <span>
+                          [
+                        </span>
+                        <span>
+                          <span>
+                            <button
+                              className="css-1sgldz e1i4ski80"
+                              onClick={[Function]}
+                              onMouseEnter={[Function]}
+                              onMouseLeave={[Function]}
+                            >
+                              {
+                            </button>
+                            <button
+                              className="css-1sgldz e1i4ski80"
+                              onClick={[Function]}
+                            >
+                              ...
+                            </button>
+                            <div
+                              style={
+                                Object {
+                                  "marginLeft": 15,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                              >
+                                label
+                                
+                                :
+                                 
+                              </span>
+                              <span>
+                                string
+                              </span>
+                              ,
+                            </div>
+                            <div
+                              style={
+                                Object {
+                                  "marginLeft": 15,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                              >
+                                onClick
+                                ?
+                                :
+                                 
+                              </span>
+                              <span>
+                                func
+                              </span>
+                              ,
+                            </div>
+                            <div
+                              style={
+                                Object {
+                                  "marginLeft": 15,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                              >
+                                btnContent
+                                
+                                :
+                                 
+                              </span>
+                              <span>
+                                any
+                              </span>
+                              ,
+                            </div>
+                            <div
+                              style={
+                                Object {
+                                  "marginLeft": 15,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                              >
+                                childContent
+                                ?
+                                :
+                                 
+                              </span>
+                              <span>
+                                <span>
+                                  [
+                                </span>
+                                <span>
+                                  <span>
+                                    <button
+                                      className="css-1sgldz e1i4ski80"
+                                      onClick={[Function]}
+                                      onMouseEnter={[Function]}
+                                      onMouseLeave={[Function]}
+                                    >
+                                      {
+                                    </button>
+                                    <button
+                                      className="css-1sgldz e1i4ski80"
+                                      onClick={[Function]}
+                                    >
+                                      ...
+                                    </button>
+                                    <div
+                                      style={
+                                        Object {
+                                          "marginLeft": 15,
+                                        }
+                                      }
+                                    >
+                                      <span
+                                        style={
+                                          Object {
+                                            "whiteSpace": "nowrap",
+                                          }
+                                        }
+                                      >
+                                        onClick
+                                        ?
+                                        :
+                                         
+                                      </span>
+                                      <span>
+                                        func
+                                      </span>
+                                      ,
+                                    </div>
+                                    <div
+                                      style={
+                                        Object {
+                                          "marginLeft": 15,
+                                        }
+                                      }
+                                    >
+                                      <span
+                                        style={
+                                          Object {
+                                            "whiteSpace": "nowrap",
+                                          }
+                                        }
+                                      >
+                                        content
+                                        
+                                        :
+                                         
+                                      </span>
+                                      <span>
+                                        any
+                                      </span>
+                                      ,
+                                    </div>
+                                    <button
+                                      className="css-1sgldz e1i4ski80"
+                                      onClick={[Function]}
+                                      onMouseEnter={[Function]}
+                                      onMouseLeave={[Function]}
+                                    >
+                                      }
+                                    </button>
+                                  </span>
+                                </span>
+                                <span>
+                                  ]
+                                </span>
+                              </span>
+                              ,
+                            </div>
+                            <button
+                              className="css-1sgldz e1i4ski80"
+                              onClick={[Function]}
+                              onMouseEnter={[Function]}
+                              onMouseLeave={[Function]}
+                            >
+                              }
+                            </button>
+                          </span>
+                        </span>
+                        <span>
+                          ]
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      yes
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      -
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      Object of action items
                     </td>
                   </tr>
                 </tbody>

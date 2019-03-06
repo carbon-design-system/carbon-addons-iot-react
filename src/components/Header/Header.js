@@ -5,16 +5,13 @@ import {
   HeaderGlobalAction,
   SkipToContent,
   HeaderMenuItem,
-  // HeaderMenu,
   HeaderNavigation,
-  HeaderMenuButton,
 } from 'carbon-components-react//lib/components/UIShell';
 import { rem } from 'polished';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import HeaderDropDown from '../HeaderDropDown';
 import HeaderMenu from '../HeaderMenu';
 import { COLORS } from '../../styles/styles';
 
@@ -58,19 +55,21 @@ const propTypes = {
         })
       ),
     })
-  ),
+  ).isRequired,
 };
 
 /**
  * Clickable card that shows "Add" button
  */
 const Header = ({ appName, className, actionItems }) => {
-  const actionBtnContent = actionItems.map((item, i) => {
+  const actionBtnContent = actionItems.map(item => {
     if (item.hasOwnProperty('childContent')) {
       const children = item.childContent.map(childItem => (
         <HeaderMenuItem
           key={`menu-item-${item.label + item.childContent.indexOf(childItem)}-child`}
-          href="#"
+          /* eslint-disable */
+          href="javascript:void(0)"
+          /* eslint-enable */
           onClick={() => childItem.onClick}>
           {childItem.content}
         </HeaderMenuItem>
