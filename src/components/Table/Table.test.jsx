@@ -86,27 +86,33 @@ const RowExpansionContent = ({ rowId }) => (
   </div>
 );
 
+export const mockActions = {
+  pagination: {
+    onChangePage: jest.fn(),
+  },
+  toolbar: {
+    onApplyFilter: jest.fn(),
+    onToggleFilter: jest.fn(),
+    onToggleColumnSelection: jest.fn(),
+    onClearAllFilters: jest.fn(),
+    onCancelBatchAction: jest.fn(),
+    onApplyBatchAction: jest.fn(),
+  },
+  table: {
+    onRowSelected: jest.fn(),
+    onRowExpanded: jest.fn(),
+    onSelectAll: jest.fn(),
+    onChangeSort: jest.fn(),
+    onApplyRowAction: jest.fn(),
+    onEmptyStateAction: jest.fn(),
+    onChangeOrdering: jest.fn(),
+  },
+};
+
 describe('Table', () => {
   beforeEach(() => {
     console.error = jest.fn();
   });
-
-  const actions = {
-    pagination: {
-      onChange: jest.fn(),
-    },
-    toolbar: {
-      onApplyFilter: jest.fn(),
-      onToggleFilter: jest.fn(),
-      onClearAllFilters: jest.fn(),
-    },
-    table: {
-      onRowSelected: jest.fn(),
-      onRowExpanded: jest.fn(),
-      onSelectAll: jest.fn(),
-      onChangeSort: jest.fn(),
-    },
-  };
 
   const options = {
     hasRowExpansion: true,
@@ -118,27 +124,30 @@ describe('Table', () => {
       totalItems: tableData.length,
     },
     table: {
-      expandedRows: [
-        {
-          rowId: 'row-1',
-          content: <RowExpansionContent rowId="row-1" />,
-        },
-      ],
+      expandedIds: ['row-1'],
     },
   };
+
+  const expandedData = [
+    {
+      rowId: 'row-1',
+      content: <RowExpansionContent rowId="row-1" />,
+    },
+  ];
 
   test('handles row collapse', () => {
     const wrapper = mount(
       <Table
         columns={tableColumns}
         data={tableData}
-        actions={actions}
+        expandedData={expandedData}
+        actions={mockActions}
         options={options}
         view={view}
       />
     );
     wrapper.find('tr#Table-Row-row-1 .bx--table-expand-v2__button').simulate('click');
-    expect(actions.table.onRowExpanded).toHaveBeenCalled();
+    expect(mockActions.table.onRowExpanded).toHaveBeenCalled();
   });
 
   test('handles row expansion', () => {
@@ -146,13 +155,13 @@ describe('Table', () => {
       <Table
         columns={tableColumns}
         data={tableData}
-        actions={actions}
+        actions={mockActions}
         options={options}
         view={view}
       />
     );
     wrapper.find('tr#Table-Row-row-2 .bx--table-expand-v2__button').simulate('click');
-    expect(actions.table.onRowExpanded).toHaveBeenCalled();
+    expect(mockActions.table.onRowExpanded).toHaveBeenCalled();
   });
 
   test('handles column sort', () => {
@@ -160,12 +169,12 @@ describe('Table', () => {
       <Table
         columns={tableColumns}
         data={tableData}
-        actions={actions}
+        actions={mockActions}
         options={options}
         view={view}
       />
     );
     wrapper.find('button#column-string').simulate('click');
-    expect(actions.table.onChangeSort).toHaveBeenCalled();
+    expect(mockActions.table.onChangeSort).toHaveBeenCalled();
   });
 });

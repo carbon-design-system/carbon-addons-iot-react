@@ -8,3 +8,5 @@ export TableBody from './components/Table/TableBody/TableBody';
 export TableToolbar from './components/Table/TableToolbar/TableToolbar';
 export EmptyTable from './components/Table/EmptyTable/EmptyTable';
 export TableSkeletonWithHeaders from './components/Table/TableSkeletonWithHeaders/TableSkeletonWithHeaders';
+export { tableReducer } from './components/Table/tableReducer';
+export * as tableActions from './components/Table/tableActionCreators';

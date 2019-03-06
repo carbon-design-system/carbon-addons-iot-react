@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { DataTable } from 'carbon-components-react';
-import isNil from 'lodash/isNil';
 import pick from 'lodash/pick';
 
 import {
@@ -18,8 +17,9 @@ const propTypes = {
   /** id of the table */
   id: PropTypes.string.isRequired,
   rows: TableDataPropTypes,
-  columns: TableColumnsPropTypes,
   expandedRows: ExpandedRowsPropTypes,
+  columns: TableColumnsPropTypes,
+  expandedIds: PropTypes.arrayOf(PropTypes.string),
   selectedIds: PropTypes.arrayOf(PropTypes.string),
   /** since some columns might not be currently visible */
   totalColumns: PropTypes.number,
@@ -33,9 +33,10 @@ const propTypes = {
 };
 
 const defaultProps = {
-  expandedRows: null,
+  expandedIds: [],
   selectedIds: [],
   rows: [],
+  expandedRows: [],
   columns: [],
   totalColumns: 0,
   hasRowSelection: false,
@@ -46,6 +47,7 @@ const TableBody = ({
   id,
   rows,
   columns,
+  expandedIds,
   expandedRows,
   selectedIds,
   totalColumns,
@@ -55,15 +57,17 @@ const TableBody = ({
 }) => (
   <CarbonTableBody>
     {rows.map(row => {
-      const isRowExpanded = !isNil(
-        expandedRows && expandedRows.find(expandedRow => expandedRow.rowId === row.id)
-      );
+      const isRowExpanded = expandedIds.includes(row.id);
       return (
         <TableBodyRow
           key={row.id}
           isExpanded={isRowExpanded}
           isSelected={selectedIds.includes(row.id)}
-          rowDetails={isRowExpanded ? expandedRows.find(j => j.rowId === row.id).content : null}
+          rowDetails={
+            isRowExpanded && expandedRows.find(j => j.rowId === row.id)
+              ? expandedRows.find(j => j.rowId === row.id).content
+              : null
+          }
           columns={columns}
           id={row.id}
           options={{
