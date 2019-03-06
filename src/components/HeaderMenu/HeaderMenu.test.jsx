@@ -43,7 +43,48 @@ describe('HeaderMenu testcases', () => {
     expect(headerMenu).toMatchSnapshot();
   });
 
-  test('item onClick', () => {
+  it('should render aria-label', () => {
+    const wrapper = mount(
+      <HeaderMenu {...mockProps}>
+        <HeaderMenuItem href="/a">A</HeaderMenuItem>
+        <HeaderMenuItem href="/b">B</HeaderMenuItem>
+        <HeaderMenuItem href="/c">C</HeaderMenuItem>
+      </HeaderMenu>,
+      {
+        attachTo: mountNode,
+      }
+    );
+
+    const headerMenu = wrapper.childAt(0);
+    const headerMenuText = headerMenu.find('.bx--header__menu-title').text();
+
+    expect(headerMenuText).toMatch('Accessibility label');
+  });
+
+  it('should render content prop', () => {
+    const wrapper = mount(
+      <HeaderMenu content={<p>Some other text</p>} {...mockProps}>
+        <HeaderMenuItem href="/a">A</HeaderMenuItem>
+        <HeaderMenuItem href="/b">B</HeaderMenuItem>
+        <HeaderMenuItem href="/c">C</HeaderMenuItem>
+      </HeaderMenu>,
+      {
+        attachTo: mountNode,
+      }
+    );
+
+    const headerMenu = wrapper.childAt(0);
+    const headerMenuAnchorChildText = headerMenu
+      .find('.bx--header__menu-title')
+      .childAt(0)
+      .text();
+    const headerMenuText = headerMenu.find('.bx--header__menu-title').text();
+
+    expect(headerMenuText).not.toMatch('Accessibility label');
+    expect(headerMenuAnchorChildText).toMatch('Some other text');
+  });
+
+  test('item click and keyboard interactions', () => {
     const wrapper = mount(
       <HeaderMenu {...mockProps}>
         <HeaderMenuItem href="/a">A</HeaderMenuItem>
@@ -55,8 +96,10 @@ describe('HeaderMenu testcases', () => {
       }
     );
     const headerMenu = wrapper.childAt(0);
-    // console.log(`hey I'm the header menu: ${headerMenu.debug()}`);
+
     const headerInstance = headerMenu.instance();
+
+    // console.log(`hey I'm the menu link: ${headerMenu.find('.bx--header__menu-title').text()}`);
 
     // Should start closed
     expect(headerInstance.state.expanded).toEqual(false);
@@ -71,7 +114,7 @@ describe('HeaderMenu testcases', () => {
 
     // Get first link in the menu
     const menuLink = headerMenu.find('a').first();
-    console.log(`hey I'm the menu link: ${menuLink.debug()}`);
+    // console.log(`hey I'm the menu link: ${menuLink.debug()}`);
 
     // After enter should open
     menuLink.simulate('keydown', { key: 'Enter', keyCode: 13, which: 13 });
