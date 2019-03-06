@@ -41,12 +41,21 @@ const tableColumns = [
     filter: { placeholderText: 'pick an option', options: selectData },
   },
   {
+    id: 'secretField',
+    name: 'Secret Information',
+    size: 1,
+  },
+  {
     id: 'number',
     name: 'Number',
     size: 1,
     filter: { placeholderText: 'pick a number' },
   },
 ];
+const defaultOrdering = tableColumns.map(c => ({
+  columnId: c.id,
+  isHidden: c.id === 'secretField',
+}));
 
 const words = [
   'toyota',
@@ -60,21 +69,31 @@ const words = [
   'pinocchio',
   'scott',
 ];
+const getLetter = index =>
+  'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'.charAt(index % 62);
 const getWord = (index, step = 1) => words[(step * index) % words.length];
 const getSentence = index =>
   `${getWord(index, 1)} ${getWord(index, 2)} ${getWord(index, 3)} ${index}`;
+const getString = (index, length) =>
+  Array(length)
+    .fill(0)
+    .map((i, idx) => getLetter(index * (idx + 14) * (idx + 1)))
+    .join('');
+
+const getNewRow = idx => ({
+  id: `row-${idx}`,
+  values: {
+    string: getSentence(idx),
+    date: new Date(100000000000 + 1000000000 * idx * idx).toISOString(),
+    select: selectData[idx % 3].id,
+    secretField: getString(idx, 10),
+    number: idx * idx,
+  },
+});
 
 const tableData = Array(100)
   .fill(0)
-  .map((i, idx) => ({
-    id: `row-${idx}`,
-    values: {
-      string: getSentence(idx),
-      date: new Date(100000000000 + 1000000000 * idx * idx).toISOString(),
-      select: selectData[idx % 3].id,
-      number: idx * idx,
-    },
-  }));
+  .map((i, idx) => getNewRow(idx));
 
 const RowExpansionContent = ({ rowId }) => (
   <div key={`${rowId}-expansion`} style={{ padding: 20 }}>
@@ -97,6 +116,7 @@ const actions = {
   toolbar: {
     onApplyFilter: action('onApplyFilter'),
     onToggleFilter: action('onToggleFilter'),
+    onToggleColumnSelection: action('onToggleColumnSelection'),
     /** Specify a callback for when the user clicks toolbar button to clear all filters. Recieves a parameter of the current filter values for each column */
     onClearAllFilters: action('onClearAllFilters'),
     onCancelBatchAction: action('onCancelBatchAction'),
@@ -105,6 +125,8 @@ const actions = {
   table: {
     onRowSelected: action('onRowSelected'),
     onSelectAll: action('onSelectAll'),
+    onEmptyStateAction: action('onEmptyStateAction'),
+    onChangeOrdering: action('onChangeOrdering'),
   },
 };
 
@@ -127,9 +149,16 @@ class StatefulTableWrapper extends Component {
               }
             : null,
           {
+            id: 'add',
+            icon: 'icon--add',
+            labelText: 'Add',
+            isOverflow: true,
+          },
+          {
             id: 'delete',
-            icon: 'delete',
-            disabled: idx % 11 === 0,
+            icon: 'icon--delete',
+            labelText: 'Delete',
+            isOverflow: true,
           },
         ].filter(i => i),
       })),
@@ -139,6 +168,7 @@ class StatefulTableWrapper extends Component {
         hasRowSelection: true,
         hasRowExpansion: true,
         hasRowActions: true,
+        hasColumnSelection: true,
       },
       view: {
         filters: [
@@ -161,6 +191,7 @@ class StatefulTableWrapper extends Component {
           isSelectAllSelected: false,
           selectedIds: [],
           sort: undefined,
+          ordering: defaultOrdering,
           expandedRows: [],
         },
         toolbar: {
@@ -243,6 +274,21 @@ class StatefulTableWrapper extends Component {
                 toolbar: {
                   activeBar: {
                     $set: filterToggled,
+                  },
+                },
+              },
+            });
+          });
+        },
+        onToggleColumnSelection: () => {
+          this.setState(state => {
+            const columnSelectionToggled =
+              state.view.toolbar.activeBar === 'column' ? null : 'column';
+            return update(state, {
+              view: {
+                toolbar: {
+                  activeBar: {
+                    $set: columnSelectionToggled,
                   },
                 },
               },
@@ -336,7 +382,7 @@ class StatefulTableWrapper extends Component {
                       ? state.view.table.selectedIds.concat([id])
                       : state.view.table.selectedIds.filter(i => i !== id),
                   },
-                  isSelectIndeterminate: {
+                  isSelectAllIndeterminate: {
                     $set: !(isClearing || isSelectingAll),
                   },
                   isSelectAllSelected: {
@@ -358,7 +404,7 @@ class StatefulTableWrapper extends Component {
                   selectedIds: {
                     $set: val ? filteredData.map(i => i.id) : [],
                   },
-                  isSelectIndeterminate: {
+                  isSelectAllIndeterminate: {
                     $set: false,
                   },
                 },
@@ -386,6 +432,63 @@ class StatefulTableWrapper extends Component {
         },
         onApplyRowAction: (rowId, actionId) => {
           alert(`action "${actionId}" clicked for row "${rowId}"`); //eslint-disable-line
+        },
+        onEmptyStateAction: () => {
+          this.setState(state =>
+            state.view.filters.length > 0
+              ? update(state, {
+                  view: {
+                    filters: {
+                      $set: [],
+                    },
+                    toolbar: {
+                      activeBar: {
+                        $set: null,
+                      },
+                    },
+                    pagination: {
+                      page: { $set: 1 },
+                    },
+                  },
+                })
+              : update(state, {
+                  data: {
+                    $set: [getNewRow(Math.floor(Math.random() * 100))].map(i => ({
+                      ...i,
+                      rowActions: [
+                        {
+                          id: 'drilldown',
+                          icon: 'arrow--right',
+                          labelText: 'Drill in',
+                        },
+                        {
+                          id: 'add',
+                          icon: 'icon--add',
+                          labelText: 'Add',
+                          isOverflow: true,
+                        },
+                        {
+                          id: 'delete',
+                          icon: 'icon--delete',
+                          labelText: 'Delete',
+                          isOverflow: true,
+                        },
+                      ],
+                    })),
+                  },
+                })
+          );
+        },
+        onChangeOrdering: ordering => {
+          this.setState(state =>
+            update(state, {
+              view: {
+                table: {
+                  ordering: { $set: ordering },
+                },
+              },
+            })
+          );
         },
       },
     };
@@ -434,12 +537,6 @@ storiesOf('Table', module)
       }}
       view={{
         filters: [],
-        pagination: {
-          pageSize: 10,
-          pageSizes: [10, 20, 30],
-          page: 1,
-          totalItems: tableData.length,
-        },
         toolbar: {
           batchActions: [
             {
@@ -451,8 +548,9 @@ storiesOf('Table', module)
           ],
         },
         table: {
+          ordering: defaultOrdering,
           isSelectAllSelected: false,
-          isSelectIndeterminate: true,
+          isSelectAllIndeterminate: true,
           selectedIds: ['row-3', 'row-4', 'row-6', 'row-7'],
         },
       }}
@@ -468,10 +566,8 @@ storiesOf('Table', module)
       }}
       view={{
         filters: [],
-        pagination: {
-          totalItems: tableData.length,
-        },
         table: {
+          ordering: defaultOrdering,
           expandedRows: [
             {
               rowId: 'row-2',
@@ -500,9 +596,16 @@ storiesOf('Table', module)
               }
             : null,
           {
+            id: 'add',
+            icon: 'icon--add',
+            labelText: 'Add',
+            isOverflow: true,
+          },
+          {
             id: 'delete',
-            icon: 'delete',
-            disabled: idx % 6 === 0,
+            icon: 'icon--delete',
+            labelText: 'Delete',
+            isOverflow: true,
           },
         ].filter(i => i),
       }))}
@@ -513,10 +616,8 @@ storiesOf('Table', module)
       }}
       view={{
         filters: [],
-        pagination: {
-          totalItems: tableData.length,
-        },
         table: {
+          ordering: defaultOrdering,
           expandedRows: [
             {
               rowId: 'row-2',
@@ -546,13 +647,8 @@ storiesOf('Table', module)
       }}
       view={{
         filters: [],
-        pagination: {
-          pageSize: 10,
-          pageSizes: [10, 20, 30],
-          page: 1,
-          totalItems: tableData.length,
-        },
         table: {
+          ordering: defaultOrdering,
           sort: {
             columnId: 'string',
             direction: 'ASC',
@@ -600,23 +696,104 @@ storiesOf('Table', module)
             },
           ],
           pagination: {
-            pageSize: 10,
-            pageSizes: [10, 20, 30],
-            page: 1,
             totalItems: filteredData.length,
-          },
-          table: {
-            isSelectAllSelected: false,
-            selectedIds: [],
           },
           toolbar: {
             activeBar: 'filter',
+          },
+          table: {
+            ordering: defaultOrdering,
           },
         }}
       />
     );
   })
-  .add('with customized columns', () => <p>TODO - a couple columns selected and reordered</p>)
-  .add('with no results', () => <p>TODO - empty state when filters applied and no results</p>)
-  .add('with no data', () => <p>TODO - empty state when no data provided</p>)
-  .add('is loading', () => <p>TODO - empty state when data is loading</p>);
+  .add('with customized columns', () => (
+    <Table
+      columns={tableColumns}
+      data={tableData}
+      actions={actions}
+      options={{
+        hasPagination: true,
+        hasRowSelection: true,
+        hasColumnSelection: true,
+      }}
+      view={{
+        toolbar: {
+          activeBar: 'column',
+        },
+        table: {
+          ordering: defaultOrdering,
+        },
+      }}
+    />
+  ))
+  .add('with no results', () => (
+    <Table
+      columns={tableColumns}
+      data={[]}
+      actions={actions}
+      view={{
+        filters: [
+          {
+            columnId: 'string',
+            value: 'something not matching',
+          },
+        ],
+        toolbar: {
+          activeBar: 'filter',
+        },
+        table: {
+          ordering: defaultOrdering,
+        },
+      }}
+      options={{ hasFilter: true, hasPagination: true }}
+    />
+  ))
+  .add('with no data', () => (
+    <Table
+      columns={tableColumns}
+      data={[]}
+      actions={actions}
+      view={{
+        table: {
+          ordering: defaultOrdering,
+        },
+      }}
+      options={{ hasPagination: true }}
+    />
+  ))
+  .add('with no data and custom empty state', () => (
+    <Table
+      columns={tableColumns}
+      data={[]}
+      actions={actions}
+      view={{
+        table: {
+          ordering: defaultOrdering,
+          emptyState: (
+            <div key="empty-state">
+              <h1 key="empty-state-heading">Custom empty state</h1>
+              <p key="empty-state-message">Hey, no data!</p>
+            </div>
+          ),
+        },
+      }}
+      options={{ hasPagination: true }}
+    />
+  ))
+  .add('is loading', () => (
+    <Table
+      columns={tableColumns}
+      data={tableData}
+      actions={actions}
+      view={{
+        table: {
+          ordering: defaultOrdering,
+          loadingState: {
+            isLoading: true,
+          },
+        },
+      }}
+    />
+  ));

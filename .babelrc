@@ -1,6 +1,6 @@
 {
   "presets": ["@babel/preset-env", "@babel/preset-react", "@babel/preset-flow"],
-  "ignore": ["__mocks__", "**/*-fixture.js", "**/*-story.js", "**/*-test.js"],
+  "ignore": ["__mocks__"],
   "plugins": [
     "babel-plugin-lodash",
     "babel-plugin-styled-components",

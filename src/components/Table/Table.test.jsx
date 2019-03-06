@@ -165,7 +165,7 @@ describe('Table', () => {
         view={view}
       />
     );
-    wrapper.find('button#Table-Header-Column-string').simulate('click');
+    wrapper.find('button#column-string').simulate('click');
     expect(actions.table.onChangeSort).toHaveBeenCalled();
   });
 });
