@@ -29,7 +29,6 @@
     }
   },
   "dependencies": {
-    "@carbon/icons-react": "^0.0.1-alpha.12",
     "classnames": "^2.2.5",
     "lodash": "^4.17.11",
     "polished": "^2.3.3",

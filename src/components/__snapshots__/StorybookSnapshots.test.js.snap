@@ -39830,9 +39830,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with no da
                   >
                     <svg
                       aria-hidden={true}
-                      focusable={false}
+                      focusable="false"
                       height={32}
                       preserveAspectRatio="xMidYMid meet"
+                      style={
+                        Object {
+                          "willChange": "transform",
+                        }
+                      }
                       viewBox="0 0 32 32"
                       width={32}
                       xmlns="http://www.w3.org/2000/svg"
@@ -47215,9 +47220,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with no re
                   >
                     <svg
                       aria-hidden={true}
-                      focusable={false}
+                      focusable="false"
                       height={32}
                       preserveAspectRatio="xMidYMid meet"
+                      style={
+                        Object {
+                          "willChange": "transform",
+                        }
+                      }
                       viewBox="0 0 32 32"
                       width={32}
                       xmlns="http://www.w3.org/2000/svg"
