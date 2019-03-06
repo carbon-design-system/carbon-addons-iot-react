@@ -80,5 +80,10 @@ describe('HeaderMenu testcases', () => {
     // After space should close
     menuLink.simulate('keydown', { key: 'Space', keyCode: 32, which: 32 });
     expect(headerInstance.state.expanded).toEqual(false);
+
+    // After esc should close
+    headerMenu.simulate('click');
+    menuLink.simulate('keydown', { key: 'Escape', keyCode: 27, which: 27 });
+    expect(headerInstance.state.expanded).toEqual(false);
   });
 });
