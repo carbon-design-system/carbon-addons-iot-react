@@ -3,18 +3,22 @@ import PropTypes from 'prop-types';
 import { iconGrid, iconFilter } from 'carbon-icons';
 import { DataTable, Button } from 'carbon-components-react';
 
+import { TableSearchPropTypes } from '../TablePropTypes';
+
 const {
   TableToolbar: CarbonTableToolbar,
   TableToolbarContent,
   TableToolbarAction,
   TableBatchActions,
   TableBatchAction,
+  TableToolbarSearch,
 } = DataTable;
 
 const propTypes = {
   /** global table options */
   options: PropTypes.shape({
     hasFilter: PropTypes.bool,
+    hasSearch: PropTypes.bool,
     hasColumnSelection: PropTypes.bool,
   }).isRequired,
   /**
@@ -50,21 +54,30 @@ const propTypes = {
         iconDescription: PropTypes.string,
       })
     ),
+    search: TableSearchPropTypes,
   }).isRequired,
 };
 
 const TableToolbar = ({
-  options: { hasColumnSelection, hasFilter },
+  options: { hasColumnSelection, hasFilter, hasSearch },
   actions: {
     onCancelBatchAction,
     onApplyBatchAction,
     onClearAllFilters,
     onToggleColumnSelection,
     onToggleFilter,
+    onApplySearch,
   },
-  tableState: { totalSelected, totalFilters, batchActions },
+  tableState: { totalSelected, totalFilters, batchActions, search },
 }) => (
   <CarbonTableToolbar>
+    {hasSearch ? (
+      <TableToolbarSearch
+        onChange={event => onApplySearch(event.currentTarget ? event.currentTarget.value : '')}
+        {...search}
+      />
+    ) : null}
+    <TableToolbarContent />
     <TableToolbarContent>
       <TableBatchActions
         onCancel={onCancelBatchAction}

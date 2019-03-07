@@ -16,6 +16,7 @@ import {
   TABLE_ROW_EXPAND,
   TABLE_COLUMN_ORDER,
   TABLE_REGISTER,
+  TABLE_SEARCH_APPLY,
 } from './tableActionCreators';
 
 // Little utility to filter data
@@ -84,6 +85,26 @@ export const tableReducer = (state = {}, action) => {
         view: {
           filters: {
             $set: [],
+          },
+          pagination: {
+            page: { $set: 1 },
+          },
+          table: {
+            filteredData: {
+              $set: state.data,
+            },
+          },
+        },
+      });
+    case TABLE_SEARCH_APPLY:
+      return update(state, {
+        view: {
+          toolbar: {
+            search: {
+              value: {
+                $set: action.payload,
+              },
+            },
           },
           pagination: {
             page: { $set: 1 },

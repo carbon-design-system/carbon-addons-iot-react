@@ -11,6 +11,7 @@ import {
   TableDataPropTypes,
   ExpandedRowsPropTypes,
   EmptyStatePropTypes,
+  TableSearchPropTypes,
 } from './TablePropTypes';
 import TableHead from './TableHead/TableHead';
 import TableToolbar from './TableToolbar/TableToolbar';
@@ -36,6 +37,8 @@ const propTypes = {
     hasRowExpansion: PropTypes.bool,
     hasRowActions: PropTypes.bool,
     hasFilter: PropTypes.bool,
+    /** has simple search capability */
+    hasSearch: PropTypes.bool,
     hasColumnSelection: PropTypes.bool,
   }),
   /** Initial state of the table, should be updated via a local state wrapper component implementation or via a central store/redux see StatefulTable component for an example */
@@ -72,6 +75,8 @@ const propTypes = {
           iconDescription: PropTypes.string,
         })
       ),
+      /** Simple search state */
+      search: TableSearchPropTypes,
     }),
     table: PropTypes.shape({
       isSelectAllSelected: PropTypes.bool,
@@ -111,6 +116,8 @@ const propTypes = {
       onClearAllFilters: PropTypes.func,
       onCancelBatchAction: PropTypes.func,
       onApplyBatchAction: PropTypes.func,
+      /** Apply a search criteria to the table */
+      onApplySearch: PropTypes.func,
     }),
     table: PropTypes.shape({
       onRowSelected: PropTypes.func,
@@ -131,6 +138,7 @@ const defaultProps = baseProps => ({
     hasRowExpansion: false,
     hasRowActions: false,
     hasFilter: false,
+    hasSearch: false,
     hasColumnSelection: false,
   },
   view: {
@@ -214,13 +222,15 @@ const Table = props => {
             'onApplyBatchAction',
             'onClearAllFilters',
             'onToggleColumnSelection',
-            'onToggleFilter'
+            'onToggleFilter',
+            'onApplySearch'
           )}
-          options={pick(options, 'hasColumnSelection', 'hasFilter')}
+          options={pick(options, 'hasColumnSelection', 'hasFilter', 'hasSearch')}
           tableState={{
             totalSelected: view.table.selectedIds.length,
             totalFilters: view.filters ? view.filters.length : 0,
             batchActions: view.toolbar.batchActions,
+            search: view.toolbar.search,
           }}
         />
         <CarbonTable zebra={false}>

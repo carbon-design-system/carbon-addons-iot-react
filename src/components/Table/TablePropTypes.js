@@ -59,3 +59,8 @@ export const TableColumnsPropTypes = PropTypes.arrayOf(
     }),
   })
 );
+
+export const TableSearchPropTypes = PropTypes.shape({
+  placeHolderText: PropTypes.string,
+  value: PropTypes.string,
+});
