@@ -10,13 +10,25 @@ describe('FilterHeaderRow', () => {
   });
 
   test('text input change updates state', () => {
-    const wrapper = mount(<FilterHeaderRow {...commonFilterProps} columns={[{ id: 'col1' }]} />);
+    const wrapper = mount(
+      <FilterHeaderRow
+        {...commonFilterProps}
+        ordering={[{ columnId: 'col1' }]}
+        columns={[{ id: 'col1' }]}
+      />
+    );
     wrapper.find('input').simulate('change', { target: { value: 'mytext' } });
     expect(wrapper.state()).toEqual({ col1: 'mytext' });
   });
 
   test('input blur fires apply filter callback', () => {
-    const wrapper = mount(<FilterHeaderRow {...commonFilterProps} columns={[{ id: 'col1' }]} />);
+    const wrapper = mount(
+      <FilterHeaderRow
+        {...commonFilterProps}
+        ordering={[{ columnId: 'col1' }]}
+        columns={[{ id: 'col1' }]}
+      />
+    );
     const desiredState = { col1: 'option1' };
 
     wrapper.setState(desiredState);
@@ -26,7 +38,13 @@ describe('FilterHeaderRow', () => {
   });
 
   test('text input clear button clears filter', () => {
-    const wrapper = mount(<FilterHeaderRow {...commonFilterProps} columns={[{ id: 'col1' }]} />);
+    const wrapper = mount(
+      <FilterHeaderRow
+        {...commonFilterProps}
+        ordering={[{ columnId: 'col1' }]}
+        columns={[{ id: 'col1' }]}
+      />
+    );
     wrapper.find('input').simulate('change', { target: { value: 'mytext' } });
     wrapper.find('[title="Clear Filter"]').simulate('click');
     expect(wrapper.state()).toEqual({ col1: '' });

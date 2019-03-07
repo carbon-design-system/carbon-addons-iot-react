@@ -142,6 +142,7 @@ const TableHead = ({
             id: column.id,
             isFilterable: !isNil(column.filter),
           }))}
+          ordering={ordering}
           key={JSON.stringify(filters)}
           filters={filters}
           tableOptions={options}

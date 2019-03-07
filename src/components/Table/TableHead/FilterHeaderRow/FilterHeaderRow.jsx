@@ -60,6 +60,13 @@ class FilterHeaderRow extends Component {
         ),
       })
     ).isRequired,
+    ordering: PropTypes.arrayOf(
+      PropTypes.shape({
+        columnId: PropTypes.string.isRequired,
+        /* Visibility of column in table, defaults to false */
+        isHidden: PropTypes.bool,
+      })
+    ).isRequired,
     filters: PropTypes.arrayOf(
       PropTypes.shape({
         columnId: PropTypes.string.isRequired,
@@ -117,6 +124,7 @@ class FilterHeaderRow extends Component {
   render() {
     const {
       columns,
+      ordering,
       tableOptions: { hasRowSelection, hasRowExpansion, hasRowActions },
       isVisible,
     } = this.props;
@@ -124,63 +132,67 @@ class FilterHeaderRow extends Component {
       <StyledTableRow>
         {hasRowSelection ? <StyledTableHeader /> : null}
         {hasRowExpansion ? <StyledTableHeader /> : null}
-        {columns
-          .filter(column => column.isFilterable !== false)
-          .map(column => (
-            <StyledTableHeader key={`FilterHeader${column.id}`}>
-              {column.options ? (
-                <ComboBox
-                  items={column.options}
-                  itemToString={item => (item ? item.text : '')}
-                  initialSelectedItem={{
-                    id: this.state[column.id], // eslint-disable-line react/destructuring-assignment
-                    text: (column.options.find(i => i.id === this.state[column.id]) || { text: '' }) // eslint-disable-line react/destructuring-assignment
-                      .text,
-                  }}
-                  placeholder={column.placeholderText || 'Choose an option'}
-                  onChange={evt => {
-                    this.setState(
-                      state => ({
-                        ...state,
-                        [column.id]: evt.selectedItem === null ? '' : evt.selectedItem.id,
-                      }),
-                      this.handleApplyFilter
-                    );
-                  }}
-                  light
-                />
-              ) : (
-                <StyledFormItem>
-                  <TextInput
-                    id={column.id}
-                    labelText={column.id}
-                    hideLabel
+        {ordering
+          .filter(c => !c.isHidden)
+          .map(c => {
+            const column = columns.find(i => c.columnId === i.id);
+            const columnStateValue = this.state[column.id]; // eslint-disable-line
+            return (
+              <StyledTableHeader key={`FilterHeader${column.id}`}>
+                {column.options ? (
+                  <ComboBox
+                    items={column.options}
+                    itemToString={item => (item ? item.text : '')}
+                    initialSelectedItem={{
+                      id: columnStateValue,
+                      text: (column.options.find(i => i.id === columnStateValue) || { text: '' })
+                        .text, // eslint-disable-line react/destructuring-assignment
+                    }}
+                    placeholder={column.placeholderText || 'Choose an option'}
+                    onChange={evt => {
+                      this.setState(
+                        state => ({
+                          ...state,
+                          [column.id]: evt.selectedItem === null ? '' : evt.selectedItem.id,
+                        }),
+                        this.handleApplyFilter
+                      );
+                    }}
                     light
-                    placeholder={column.placeholderText || 'Type and hit enter to apply'}
-                    onKeyDown={event => handleEnterKeyDown(event, this.handleApplyFilter)}
-                    onBlur={this.handleApplyFilter}
-                    onChange={event => this.setState({ [column.id]: event.target.value })}
-                    value={this.state[column.id]} // eslint-disable-line react/destructuring-assignment
                   />
-                  {this.state[column.id] ? ( // eslint-disable-line react/destructuring-assignment
-                    <div
-                      role="button"
-                      className="bx--list-box__selection"
-                      tabIndex="0"
-                      onClick={event => {
-                        this.handleClearFilter(event, column);
-                      }}
-                      onKeyDown={event => {
-                        this.handleClearFilter(event, column);
-                      }}
-                      title="Clear Filter">
-                      <Icon icon={iconClose} description="Clear Filter" focusable="false" />
-                    </div>
-                  ) : null}
-                </StyledFormItem>
-              )}
-            </StyledTableHeader>
-          ))}
+                ) : (
+                  <StyledFormItem>
+                    <TextInput
+                      id={column.id}
+                      labelText={column.id}
+                      hideLabel
+                      light
+                      placeholder={column.placeholderText || 'Type and hit enter to apply'}
+                      onKeyDown={event => handleEnterKeyDown(event, this.handleApplyFilter)}
+                      onBlur={this.handleApplyFilter}
+                      onChange={event => this.setState({ [column.id]: event.target.value })}
+                      value={this.state[column.id]} // eslint-disable-line react/destructuring-assignment
+                    />
+                    {this.state[column.id] ? ( // eslint-disable-line react/destructuring-assignment
+                      <div
+                        role="button"
+                        className="bx--list-box__selection"
+                        tabIndex="0"
+                        onClick={event => {
+                          this.handleClearFilter(event, column);
+                        }}
+                        onKeyDown={event => {
+                          this.handleClearFilter(event, column);
+                        }}
+                        title="Clear Filter">
+                        <Icon icon={iconClose} description="Clear Filter" focusable="false" />
+                      </div>
+                    ) : null}
+                  </StyledFormItem>
+                )}
+              </StyledTableHeader>
+            );
+          })}
         {hasRowActions ? <StyledTableHeader /> : null}
       </StyledTableRow>
     ) : null;
