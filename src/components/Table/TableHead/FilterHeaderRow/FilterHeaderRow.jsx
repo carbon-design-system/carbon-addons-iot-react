@@ -124,61 +124,63 @@ class FilterHeaderRow extends Component {
       <StyledTableRow>
         {hasRowSelection ? <StyledTableHeader /> : null}
         {hasRowExpansion ? <StyledTableHeader /> : null}
-        {columns.map(column => (
-          <StyledTableHeader key={`FilterHeader${column.id}`}>
-            {column.options ? (
-              <ComboBox
-                items={column.options}
-                itemToString={item => (item ? item.text : '')}
-                initialSelectedItem={{
-                  id: this.state[column.id], // eslint-disable-line react/destructuring-assignment
-                  text: (column.options.find(i => i.id === this.state[column.id]) || { text: '' }) // eslint-disable-line react/destructuring-assignment
-                    .text,
-                }}
-                placeholder={column.placeholderText || 'Choose an option'}
-                onChange={evt => {
-                  this.setState(
-                    state => ({
-                      ...state,
-                      [column.id]: evt.selectedItem === null ? '' : evt.selectedItem.id,
-                    }),
-                    this.handleApplyFilter
-                  );
-                }}
-                light
-              />
-            ) : (
-              <StyledFormItem>
-                <TextInput
-                  id={column.id}
-                  labelText={column.id}
-                  hideLabel
+        {columns
+          .filter(column => column.isFilterable !== false)
+          .map(column => (
+            <StyledTableHeader key={`FilterHeader${column.id}`}>
+              {column.options ? (
+                <ComboBox
+                  items={column.options}
+                  itemToString={item => (item ? item.text : '')}
+                  initialSelectedItem={{
+                    id: this.state[column.id], // eslint-disable-line react/destructuring-assignment
+                    text: (column.options.find(i => i.id === this.state[column.id]) || { text: '' }) // eslint-disable-line react/destructuring-assignment
+                      .text,
+                  }}
+                  placeholder={column.placeholderText || 'Choose an option'}
+                  onChange={evt => {
+                    this.setState(
+                      state => ({
+                        ...state,
+                        [column.id]: evt.selectedItem === null ? '' : evt.selectedItem.id,
+                      }),
+                      this.handleApplyFilter
+                    );
+                  }}
                   light
-                  placeholder={column.placeholderText || 'Type and hit enter to apply'}
-                  onKeyDown={event => handleEnterKeyDown(event, this.handleApplyFilter)}
-                  onBlur={this.handleApplyFilter}
-                  onChange={event => this.setState({ [column.id]: event.target.value })}
-                  value={this.state[column.id]} // eslint-disable-line react/destructuring-assignment
                 />
-                {this.state[column.id] ? ( // eslint-disable-line react/destructuring-assignment
-                  <div
-                    role="button"
-                    className="bx--list-box__selection"
-                    tabIndex="0"
-                    onClick={event => {
-                      this.handleClearFilter(event, column);
-                    }}
-                    onKeyDown={event => {
-                      this.handleClearFilter(event, column);
-                    }}
-                    title="Clear Filter">
-                    <Icon icon={iconClose} description="Clear Filter" focusable="false" />
-                  </div>
-                ) : null}
-              </StyledFormItem>
-            )}
-          </StyledTableHeader>
-        ))}
+              ) : (
+                <StyledFormItem>
+                  <TextInput
+                    id={column.id}
+                    labelText={column.id}
+                    hideLabel
+                    light
+                    placeholder={column.placeholderText || 'Type and hit enter to apply'}
+                    onKeyDown={event => handleEnterKeyDown(event, this.handleApplyFilter)}
+                    onBlur={this.handleApplyFilter}
+                    onChange={event => this.setState({ [column.id]: event.target.value })}
+                    value={this.state[column.id]} // eslint-disable-line react/destructuring-assignment
+                  />
+                  {this.state[column.id] ? ( // eslint-disable-line react/destructuring-assignment
+                    <div
+                      role="button"
+                      className="bx--list-box__selection"
+                      tabIndex="0"
+                      onClick={event => {
+                        this.handleClearFilter(event, column);
+                      }}
+                      onKeyDown={event => {
+                        this.handleClearFilter(event, column);
+                      }}
+                      title="Clear Filter">
+                      <Icon icon={iconClose} description="Clear Filter" focusable="false" />
+                    </div>
+                  ) : null}
+                </StyledFormItem>
+              )}
+            </StyledTableHeader>
+          ))}
         {hasRowActions ? <StyledTableHeader /> : null}
       </StyledTableRow>
     ) : null;

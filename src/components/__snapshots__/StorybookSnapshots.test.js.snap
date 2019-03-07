@@ -16137,37 +16137,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                     >
                       <label
                         className="bx--label bx--visually-hidden"
-                        htmlFor="secretField"
-                      >
-                        secretField
-                      </label>
-                      <input
-                        className="bx--text-input bx--text__input bx--text-input--light"
-                        disabled={false}
-                        id="secretField"
-                        onBlur={[Function]}
-                        onChange={[Function]}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
-                        placeholder="Type and hit enter to apply"
-                        type="text"
-                        value=""
-                      />
-                    </div>
-                  </div>
-                </th>
-                <th
-                  className="c1"
-                  scope="col"
-                >
-                  <div
-                    className="bx--form-item c2"
-                  >
-                    <div
-                      className="bx--form-item"
-                    >
-                      <label
-                        className="bx--label bx--visually-hidden"
                         htmlFor="number"
                       >
                         number
@@ -36591,37 +36560,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with filte
                     >
                       <label
                         className="bx--label bx--visually-hidden"
-                        htmlFor="secretField"
-                      >
-                        secretField
-                      </label>
-                      <input
-                        className="bx--text-input bx--text__input bx--text-input--light"
-                        disabled={false}
-                        id="secretField"
-                        onBlur={[Function]}
-                        onChange={[Function]}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
-                        placeholder="Type and hit enter to apply"
-                        type="text"
-                        value=""
-                      />
-                    </div>
-                  </div>
-                </th>
-                <th
-                  className="c1"
-                  scope="col"
-                >
-                  <div
-                    className="bx--form-item c2"
-                  >
-                    <div
-                      className="bx--form-item"
-                    >
-                      <label
-                        className="bx--label bx--visually-hidden"
                         htmlFor="number"
                       >
                         number
@@ -48168,37 +48106,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with no re
                           />
                         </svg>
                       </div>
-                    </div>
-                  </div>
-                </th>
-                <th
-                  className="c1"
-                  scope="col"
-                >
-                  <div
-                    className="bx--form-item c2"
-                  >
-                    <div
-                      className="bx--form-item"
-                    >
-                      <label
-                        className="bx--label bx--visually-hidden"
-                        htmlFor="secretField"
-                      >
-                        secretField
-                      </label>
-                      <input
-                        className="bx--text-input bx--text__input bx--text-input--light"
-                        disabled={false}
-                        id="secretField"
-                        onBlur={[Function]}
-                        onChange={[Function]}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
-                        placeholder="Type and hit enter to apply"
-                        type="text"
-                        value=""
-                      />
                     </div>
                   </div>
                 </th>
