@@ -15,6 +15,7 @@ import {
   tableRowSelect,
   tableRowSelectAll,
   tableRowExpand,
+  tableSearchApply,
 } from './tableActionCreators';
 import { initialState, tableColumns } from './Table.story';
 
@@ -63,6 +64,13 @@ describe('table reducer testcases', () => {
     test('TABLE_TOOLBAR_TOGGLE ', () => {
       const updatedState = tableReducer(initialState, tableToolbarToggle('column'));
       expect(updatedState.view.toolbar.activeBar).toEqual('column');
+    });
+    test('TABLE_SEARCH_APPLY filter should search data', () => {
+      const searchString = 'searchString';
+      const updatedState = tableReducer(initialState, tableSearchApply(searchString));
+      // Apply the search
+      expect(updatedState.view.toolbar.search.value).toEqual(searchString);
+      expect(updatedState.view.pagination.page).toEqual(1);
     });
   });
   describe('table actions', () => {

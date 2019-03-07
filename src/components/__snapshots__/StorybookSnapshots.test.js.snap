@@ -15691,10 +15691,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                   onChange={[Function]}
                   placeholder="My Search"
                   type="text"
-                  value="Starting Search"
                 />
                 <button
-                  className="bx--search-close"
+                  className="bx--search-close bx--search-close--hidden"
                   onClick={[Function]}
                   type="button"
                 >

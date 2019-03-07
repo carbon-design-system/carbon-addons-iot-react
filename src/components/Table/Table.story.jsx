@@ -211,7 +211,6 @@ export const initialState = {
       ],
       search: {
         placeHolderText: 'My Search',
-        value: 'Starting Search',
       },
     },
   },
