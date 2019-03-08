@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header testcases should render 1`] = `
+<Header__StyledHeader
+  aria-label="main header"
+>
+  <SkipToContent
+    href="#main-content"
+    tabIndex="0"
+  >
+    Skip to main content
+  </SkipToContent>
+  <HeaderName
+    href="#"
+    prefix="IBM"
+  >
+    platform
+  </HeaderName>
+  <HeaderGlobalBar>
+    <Header__StyledGlobalAction
+      aria-label="alerts"
+      key="menu-item-alerts-global"
+      onClick={[MockFunction]}
+    >
+      <Icon
+        description="Icon"
+        fill="white"
+        fillRule="evenodd"
+        name="notification-on"
+        role="img"
+      />
+    </Header__StyledGlobalAction>
+    <HeaderNavigation
+      aria-label="dropdown"
+      key="menu-item-help-dropdown"
+    >
+      <ForwardRef
+        aria-label="help"
+        content={
+          <Icon
+            className="bx--header__menu-item bx--header__menu-title"
+            description="Icon"
+            fill="white"
+            fillRule="evenodd"
+            name="header--help"
+            role="img"
+          />
+        }
+        key="menu-item-help"
+      >
+        <ForwardRef
+          href="javascript:void(0)"
+          key="menu-item-help0-child"
+          onClick={[Function]}
+        >
+          <p>
+            This is a link
+          </p>
+        </ForwardRef>
+        <ForwardRef
+          href="javascript:void(0)"
+          key="menu-item-help1-child"
+          onClick={[Function]}
+        >
+          <Component>
+            <span>
+              JohnDoe@ibm.com
+              <Icon
+                description="Icon"
+                fill="white"
+                fillRule="evenodd"
+                name="header--avatar"
+                role="img"
+              />
+            </span>
+          </Component>
+        </ForwardRef>
+      </ForwardRef>
+    </HeaderNavigation>
+  </HeaderGlobalBar>
+</Header__StyledHeader>
+`;
