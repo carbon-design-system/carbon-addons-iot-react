@@ -38,3 +38,8 @@ export const getSortedData = (inputData, columnId, direction) => {
     return 0;
   });
 };
+
+export const stopPropagationAndCallback = (evt, callback, ...args) => {
+  evt.stopPropagation();
+  callback(...args);
+};

@@ -121,6 +121,7 @@ const propTypes = {
     }),
     table: PropTypes.shape({
       onRowSelected: PropTypes.func,
+      onRowClicked: PropTypes.func,
       onRowExpanded: PropTypes.func,
       onSelectAll: PropTypes.func,
       onChangeSort: PropTypes.func,
@@ -180,6 +181,7 @@ const defaultProps = baseProps => ({
     table: {
       onChangeSort: defaultFunction('actions.table.onChangeSort'),
       onRowExpanded: defaultFunction('actions.table.onRowExpanded'),
+      onRowClicked: defaultFunction('actions.table.onRowClicked'),
       onApplyRowAction: defaultFunction('actions.table.onApplyRowAction'),
       onEmptyStateAction: defaultFunction('actions.table.onEmptyStateAction'),
       onChangeOrdering: defaultFunction('actions.table.onChangeOrdering'),
@@ -267,8 +269,14 @@ const Table = props => {
               expandedIds={view.table.expandedIds}
               selectedIds={view.table.selectedIds}
               totalColumns={totalColumns}
-              {...pick(options, 'hasRowSelection', 'hasRowExpansion')}
-              actions={pick(actions.table, 'onRowSelected', 'onApplyRowAction', 'onRowExpanded')}
+              {...pick(options, 'hasRowSelection', 'hasRowExpansion', 'shouldExpandOnRowClick')}
+              actions={pick(
+                actions.table,
+                'onRowSelected',
+                'onApplyRowAction',
+                'onRowExpanded',
+                'onRowClicked'
+              )}
             />
           ) : (
             <EmptyTable
