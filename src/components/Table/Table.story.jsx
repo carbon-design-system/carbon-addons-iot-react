@@ -125,6 +125,7 @@ const actions = {
     onApplySearch: action('onApplySearch'),
   },
   table: {
+    onRowClicked: action('onRowClicked'),
     onRowSelected: action('onRowSelected'),
     onSelectAll: action('onSelectAll'),
     onEmptyStateAction: action('onEmptyStateAction'),

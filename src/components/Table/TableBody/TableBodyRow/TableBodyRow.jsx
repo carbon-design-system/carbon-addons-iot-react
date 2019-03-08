@@ -90,6 +90,7 @@ const propTypes = {
   /** tableActions */
   tableActions: PropTypes.shape({
     onRowSelected: PropTypes.func,
+    onRowClicked: PropTypes.func,
     onApplyRowAction: PropTypes.func,
     onRowExpanded: PropTypes.func,
   }).isRequired,
@@ -109,7 +110,7 @@ const TableBodyRow = ({
   id,
   columns,
   options: { hasRowSelection, hasRowExpansion, totalColumns, id: tableId },
-  tableActions: { onRowSelected, onRowExpanded, onApplyRowAction },
+  tableActions: { onRowSelected, onRowExpanded, onRowClicked, onApplyRowAction },
   isExpanded,
   isSelected,
   children,
@@ -155,7 +156,7 @@ const TableBodyRow = ({
           ariaLabel="Expand Row"
           isExpanded
           onExpand={() => onRowExpanded(id, false)}
-          onClick={() => onRowExpanded(id, false)}>
+          onClick={() => onRowClicked(id)}>
           {tableCells}
         </StyledTableExpandRowExpanded>
         <StyledExpansionTableRow>
@@ -169,12 +170,14 @@ const TableBodyRow = ({
         ariaLabel="Expand Row"
         isExpanded={false}
         onExpand={() => onRowExpanded(id, true)}
-        onClick={() => onRowExpanded(id, true)}>
+        onClick={() => onRowClicked(id)}>
         {tableCells}
       </StyledTableExpandRow>
     )
   ) : (
-    <TableRow key={id}>{tableCells}</TableRow>
+    <TableRow key={id} onClick={() => onRowClicked(id)}>
+      {tableCells}
+    </TableRow>
   );
 };
 

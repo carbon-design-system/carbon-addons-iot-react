@@ -21629,6 +21629,33 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                                     }
                                   }
                                 >
+                                  onRowClicked
+                                </span>
+                              </span>
+                              : 
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#170",
+                                  }
+                                }
+                              >
+                                onRowClicked
+                              </span>
+                              ,
+                              <span>
+                                <span>
+                                  <br />
+                                      
+                                    
+                                </span>
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
                                   onRowSelected
                                 </span>
                               </span>
@@ -21668,33 +21695,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                                 }
                               >
                                 onSelectAll
-                              </span>
-                              ,
-                              <span>
-                                <span>
-                                  <br />
-                                      
-                                    
-                                </span>
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#666",
-                                    }
-                                  }
-                                >
-                                  onEmptyStateAction
-                                </span>
-                              </span>
-                              : 
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#170",
-                                  }
-                                }
-                              >
-                                onEmptyStateAction
                               </span>
                               ,
                               <span>
@@ -23670,6 +23670,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                                   }
                                 }
                               >
+                                onRowClicked
+                                ?
+                                :
+                                 
+                              </span>
+                              <span>
+                                func
+                              </span>
+                              ,
+                            </div>
+                            <div
+                              style={
+                                Object {
+                                  "marginLeft": 30,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                              >
                                 onRowExpanded
                                 ?
                                 :
@@ -23950,7 +23974,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
               </tr>
             </thead>
             <tbody>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   toyota toyota toyota 0
                 </td>
@@ -23967,7 +23993,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   0
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   helping whiteboard as 1
                 </td>
@@ -23984,7 +24012,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   1
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   whiteboard can eat 2
                 </td>
@@ -24001,7 +24031,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   4
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   as eat scott 3
                 </td>
@@ -24018,7 +24050,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   9
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   can pinocchio whiteboard 4
                 </td>
@@ -24035,7 +24069,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   16
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   bottle toyota bottle 5
                 </td>
@@ -24052,7 +24088,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   25
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   eat whiteboard pinocchio 6
                 </td>
@@ -24069,7 +24107,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   36
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   chocolate can helping 7
                 </td>
@@ -24086,7 +24126,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   49
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   pinocchio eat can 8
                 </td>
@@ -24103,7 +24145,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   64
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   scott pinocchio chocolate 9
                 </td>
@@ -24120,7 +24164,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   81
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   toyota toyota toyota 10
                 </td>
@@ -24137,7 +24183,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   100
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   helping whiteboard as 11
                 </td>
@@ -24154,7 +24202,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   121
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   whiteboard can eat 12
                 </td>
@@ -24171,7 +24221,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   144
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   as eat scott 13
                 </td>
@@ -24188,7 +24240,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   169
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   can pinocchio whiteboard 14
                 </td>
@@ -24205,7 +24259,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   196
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   bottle toyota bottle 15
                 </td>
@@ -24222,7 +24278,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   225
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   eat whiteboard pinocchio 16
                 </td>
@@ -24239,7 +24297,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   256
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   chocolate can helping 17
                 </td>
@@ -24256,7 +24316,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   289
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   pinocchio eat can 18
                 </td>
@@ -24273,7 +24335,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   324
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   scott pinocchio chocolate 19
                 </td>
@@ -24290,7 +24354,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   361
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   toyota toyota toyota 20
                 </td>
@@ -24307,7 +24373,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   400
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   helping whiteboard as 21
                 </td>
@@ -24324,7 +24392,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   441
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   whiteboard can eat 22
                 </td>
@@ -24341,7 +24411,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   484
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   as eat scott 23
                 </td>
@@ -24358,7 +24430,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   529
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   can pinocchio whiteboard 24
                 </td>
@@ -24375,7 +24449,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   576
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   bottle toyota bottle 25
                 </td>
@@ -24392,7 +24468,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   625
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   eat whiteboard pinocchio 26
                 </td>
@@ -24409,7 +24487,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   676
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   chocolate can helping 27
                 </td>
@@ -24426,7 +24506,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   729
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   pinocchio eat can 28
                 </td>
@@ -24443,7 +24525,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   784
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   scott pinocchio chocolate 29
                 </td>
@@ -24460,7 +24544,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   841
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   toyota toyota toyota 30
                 </td>
@@ -24477,7 +24563,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   900
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   helping whiteboard as 31
                 </td>
@@ -24494,7 +24582,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   961
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   whiteboard can eat 32
                 </td>
@@ -24511,7 +24601,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   1024
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   as eat scott 33
                 </td>
@@ -24528,7 +24620,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   1089
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   can pinocchio whiteboard 34
                 </td>
@@ -24545,7 +24639,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   1156
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   bottle toyota bottle 35
                 </td>
@@ -24562,7 +24658,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   1225
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   eat whiteboard pinocchio 36
                 </td>
@@ -24579,7 +24677,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   1296
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   chocolate can helping 37
                 </td>
@@ -24596,7 +24696,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   1369
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   pinocchio eat can 38
                 </td>
@@ -24613,7 +24715,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   1444
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   scott pinocchio chocolate 39
                 </td>
@@ -24630,7 +24734,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   1521
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   toyota toyota toyota 40
                 </td>
@@ -24647,7 +24753,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   1600
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   helping whiteboard as 41
                 </td>
@@ -24664,7 +24772,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   1681
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   whiteboard can eat 42
                 </td>
@@ -24681,7 +24791,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   1764
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   as eat scott 43
                 </td>
@@ -24698,7 +24810,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   1849
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   can pinocchio whiteboard 44
                 </td>
@@ -24715,7 +24829,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   1936
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   bottle toyota bottle 45
                 </td>
@@ -24732,7 +24848,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   2025
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   eat whiteboard pinocchio 46
                 </td>
@@ -24749,7 +24867,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   2116
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   chocolate can helping 47
                 </td>
@@ -24766,7 +24886,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   2209
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   pinocchio eat can 48
                 </td>
@@ -24783,7 +24905,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   2304
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   scott pinocchio chocolate 49
                 </td>
@@ -24800,7 +24924,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   2401
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   toyota toyota toyota 50
                 </td>
@@ -24817,7 +24943,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   2500
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   helping whiteboard as 51
                 </td>
@@ -24834,7 +24962,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   2601
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   whiteboard can eat 52
                 </td>
@@ -24851,7 +24981,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   2704
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   as eat scott 53
                 </td>
@@ -24868,7 +25000,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   2809
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   can pinocchio whiteboard 54
                 </td>
@@ -24885,7 +25019,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   2916
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   bottle toyota bottle 55
                 </td>
@@ -24902,7 +25038,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   3025
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   eat whiteboard pinocchio 56
                 </td>
@@ -24919,7 +25057,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   3136
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   chocolate can helping 57
                 </td>
@@ -24936,7 +25076,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   3249
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   pinocchio eat can 58
                 </td>
@@ -24953,7 +25095,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   3364
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   scott pinocchio chocolate 59
                 </td>
@@ -24970,7 +25114,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   3481
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   toyota toyota toyota 60
                 </td>
@@ -24987,7 +25133,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   3600
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   helping whiteboard as 61
                 </td>
@@ -25004,7 +25152,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   3721
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   whiteboard can eat 62
                 </td>
@@ -25021,7 +25171,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   3844
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   as eat scott 63
                 </td>
@@ -25038,7 +25190,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   3969
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   can pinocchio whiteboard 64
                 </td>
@@ -25055,7 +25209,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   4096
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   bottle toyota bottle 65
                 </td>
@@ -25072,7 +25228,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   4225
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   eat whiteboard pinocchio 66
                 </td>
@@ -25089,7 +25247,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   4356
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   chocolate can helping 67
                 </td>
@@ -25106,7 +25266,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   4489
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   pinocchio eat can 68
                 </td>
@@ -25123,7 +25285,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   4624
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   scott pinocchio chocolate 69
                 </td>
@@ -25140,7 +25304,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   4761
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   toyota toyota toyota 70
                 </td>
@@ -25157,7 +25323,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   4900
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   helping whiteboard as 71
                 </td>
@@ -25174,7 +25342,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   5041
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   whiteboard can eat 72
                 </td>
@@ -25191,7 +25361,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   5184
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   as eat scott 73
                 </td>
@@ -25208,7 +25380,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   5329
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   can pinocchio whiteboard 74
                 </td>
@@ -25225,7 +25399,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   5476
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   bottle toyota bottle 75
                 </td>
@@ -25242,7 +25418,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   5625
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   eat whiteboard pinocchio 76
                 </td>
@@ -25259,7 +25437,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   5776
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   chocolate can helping 77
                 </td>
@@ -25276,7 +25456,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   5929
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   pinocchio eat can 78
                 </td>
@@ -25293,7 +25475,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   6084
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   scott pinocchio chocolate 79
                 </td>
@@ -25310,7 +25494,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   6241
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   toyota toyota toyota 80
                 </td>
@@ -25327,7 +25513,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   6400
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   helping whiteboard as 81
                 </td>
@@ -25344,7 +25532,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   6561
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   whiteboard can eat 82
                 </td>
@@ -25361,7 +25551,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   6724
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   as eat scott 83
                 </td>
@@ -25378,7 +25570,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   6889
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   can pinocchio whiteboard 84
                 </td>
@@ -25395,7 +25589,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   7056
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   bottle toyota bottle 85
                 </td>
@@ -25412,7 +25608,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   7225
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   eat whiteboard pinocchio 86
                 </td>
@@ -25429,7 +25627,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   7396
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   chocolate can helping 87
                 </td>
@@ -25446,7 +25646,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   7569
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   pinocchio eat can 88
                 </td>
@@ -25463,7 +25665,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   7744
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   scott pinocchio chocolate 89
                 </td>
@@ -25480,7 +25684,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   7921
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   toyota toyota toyota 90
                 </td>
@@ -25497,7 +25703,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   8100
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   helping whiteboard as 91
                 </td>
@@ -25514,7 +25722,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   8281
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   whiteboard can eat 92
                 </td>
@@ -25531,7 +25741,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   8464
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   as eat scott 93
                 </td>
@@ -25548,7 +25760,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   8649
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   can pinocchio whiteboard 94
                 </td>
@@ -25565,7 +25779,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   8836
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   bottle toyota bottle 95
                 </td>
@@ -25582,7 +25798,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   9025
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   eat whiteboard pinocchio 96
                 </td>
@@ -25599,7 +25817,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   9216
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   chocolate can helping 97
                 </td>
@@ -25616,7 +25836,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   9409
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   pinocchio eat can 98
                 </td>
@@ -25633,7 +25855,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                   9604
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   scott pinocchio chocolate 99
                 </td>
@@ -26912,6 +27136,33 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                                     }
                                   }
                                 >
+                                  onRowClicked
+                                </span>
+                              </span>
+                              : 
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#170",
+                                  }
+                                }
+                              >
+                                onRowClicked
+                              </span>
+                              ,
+                              <span>
+                                <span>
+                                  <br />
+                                      
+                                    
+                                </span>
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
                                   onRowSelected
                                 </span>
                               </span>
@@ -26951,33 +27202,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                                 }
                               >
                                 onSelectAll
-                              </span>
-                              ,
-                              <span>
-                                <span>
-                                  <br />
-                                      
-                                    
-                                </span>
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#666",
-                                    }
-                                  }
-                                >
-                                  onEmptyStateAction
-                                </span>
-                              </span>
-                              : 
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#170",
-                                  }
-                                }
-                              >
-                                onEmptyStateAction
                               </span>
                               ,
                               <span>
@@ -28953,6 +29177,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                                   }
                                 }
                               >
+                                onRowClicked
+                                ?
+                                :
+                                 
+                              </span>
+                              <span>
+                                func
+                              </span>
+                              ,
+                            </div>
+                            <div
+                              style={
+                                Object {
+                                  "marginLeft": 30,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                              >
                                 onRowExpanded
                                 ?
                                 :
@@ -30582,6 +30830,33 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table is loading
                                     }
                                   }
                                 >
+                                  onRowClicked
+                                </span>
+                              </span>
+                              : 
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#170",
+                                  }
+                                }
+                              >
+                                onRowClicked
+                              </span>
+                              ,
+                              <span>
+                                <span>
+                                  <br />
+                                      
+                                    
+                                </span>
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
                                   onRowSelected
                                 </span>
                               </span>
@@ -30621,33 +30896,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table is loading
                                 }
                               >
                                 onSelectAll
-                              </span>
-                              ,
-                              <span>
-                                <span>
-                                  <br />
-                                      
-                                    
-                                </span>
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#666",
-                                    }
-                                  }
-                                >
-                                  onEmptyStateAction
-                                </span>
-                              </span>
-                              : 
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#170",
-                                  }
-                                }
-                              >
-                                onEmptyStateAction
                               </span>
                               ,
                               <span>
@@ -32939,6 +33187,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table is loading
                                   }
                                 }
                               >
+                                onRowClicked
+                                ?
+                                :
+                                 
+                              </span>
+                              <span>
+                                func
+                              </span>
+                              ,
+                            </div>
+                            <div
+                              style={
+                                Object {
+                                  "marginLeft": 30,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                              >
                                 onRowExpanded
                                 ?
                                 :
@@ -33362,7 +33634,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with custo
               </tr>
             </thead>
             <tbody>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td
                   onClick={[Function]}
                   style={
@@ -33407,7 +33681,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with custo
                   0
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td
                   onClick={[Function]}
                   style={
@@ -33452,7 +33728,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with custo
                   1
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td
                   onClick={[Function]}
                   style={
@@ -33497,7 +33775,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with custo
                   4
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td
                   onClick={[Function]}
                   style={
@@ -33542,7 +33822,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with custo
                   9
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td
                   onClick={[Function]}
                   style={
@@ -33587,7 +33869,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with custo
                   16
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td
                   onClick={[Function]}
                   style={
@@ -33632,7 +33916,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with custo
                   25
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td
                   onClick={[Function]}
                   style={
@@ -33677,7 +33963,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with custo
                   36
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td
                   onClick={[Function]}
                   style={
@@ -33722,7 +34010,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with custo
                   49
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td
                   onClick={[Function]}
                   style={
@@ -33767,7 +34057,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with custo
                   64
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td
                   onClick={[Function]}
                   style={
@@ -35340,6 +35632,33 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with custo
                                     }
                                   }
                                 >
+                                  onRowClicked
+                                </span>
+                              </span>
+                              : 
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#170",
+                                  }
+                                }
+                              >
+                                onRowClicked
+                              </span>
+                              ,
+                              <span>
+                                <span>
+                                  <br />
+                                      
+                                    
+                                </span>
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
                                   onRowSelected
                                 </span>
                               </span>
@@ -35379,33 +35698,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with custo
                                 }
                               >
                                 onSelectAll
-                              </span>
-                              ,
-                              <span>
-                                <span>
-                                  <br />
-                                      
-                                    
-                                </span>
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#666",
-                                    }
-                                  }
-                                >
-                                  onEmptyStateAction
-                                </span>
-                              </span>
-                              : 
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#170",
-                                  }
-                                }
-                              >
-                                onEmptyStateAction
                               </span>
                               ,
                               <span>
@@ -37793,6 +38085,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with custo
                                   }
                                 }
                               >
+                                onRowClicked
+                                ?
+                                :
+                                 
+                              </span>
+                              <span>
+                                func
+                              </span>
+                              ,
+                            </div>
+                            <div
+                              style={
+                                Object {
+                                  "marginLeft": 30,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                              >
                                 onRowExpanded
                                 ?
                                 :
@@ -38393,7 +38709,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with filte
               </tr>
             </thead>
             <tbody>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td
                   onClick={[Function]}
                   style={
@@ -38438,7 +38756,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with filte
                   1
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td
                   onClick={[Function]}
                   style={
@@ -38483,7 +38803,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with filte
                   16
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td
                   onClick={[Function]}
                   style={
@@ -38528,7 +38850,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with filte
                   256
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td
                   onClick={[Function]}
                   style={
@@ -38573,7 +38897,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with filte
                   484
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td
                   onClick={[Function]}
                   style={
@@ -38618,7 +38944,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with filte
                   961
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td
                   onClick={[Function]}
                   style={
@@ -38663,7 +38991,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with filte
                   1156
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td
                   onClick={[Function]}
                   style={
@@ -38708,7 +39038,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with filte
                   2116
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td
                   onClick={[Function]}
                   style={
@@ -38753,7 +39085,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with filte
                   2704
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td
                   onClick={[Function]}
                   style={
@@ -38798,7 +39132,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with filte
                   3721
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td
                   onClick={[Function]}
                   style={
@@ -40307,6 +40643,33 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with filte
                                     }
                                   }
                                 >
+                                  onRowClicked
+                                </span>
+                              </span>
+                              : 
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#170",
+                                  }
+                                }
+                              >
+                                onRowClicked
+                              </span>
+                              ,
+                              <span>
+                                <span>
+                                  <br />
+                                      
+                                    
+                                </span>
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
                                   onRowSelected
                                 </span>
                               </span>
@@ -40346,33 +40709,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with filte
                                 }
                               >
                                 onSelectAll
-                              </span>
-                              ,
-                              <span>
-                                <span>
-                                  <br />
-                                      
-                                    
-                                </span>
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#666",
-                                    }
-                                  }
-                                >
-                                  onEmptyStateAction
-                                </span>
-                              </span>
-                              : 
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#170",
-                                  }
-                                }
-                              >
-                                onEmptyStateAction
                               </span>
                               ,
                               <span>
@@ -42727,6 +43063,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with filte
                                   }
                                 }
                               >
+                                onRowClicked
+                                ?
+                                :
+                                 
+                              </span>
+                              <span>
+                                func
+                              </span>
+                              ,
+                            </div>
+                            <div
+                              style={
+                                Object {
+                                  "marginLeft": 30,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                              >
                                 onRowExpanded
                                 ?
                                 :
@@ -44036,6 +44396,33 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with no da
                                     }
                                   }
                                 >
+                                  onRowClicked
+                                </span>
+                              </span>
+                              : 
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#170",
+                                  }
+                                }
+                              >
+                                onRowClicked
+                              </span>
+                              ,
+                              <span>
+                                <span>
+                                  <br />
+                                      
+                                    
+                                </span>
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
                                   onRowSelected
                                 </span>
                               </span>
@@ -44075,33 +44462,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with no da
                                 }
                               >
                                 onSelectAll
-                              </span>
-                              ,
-                              <span>
-                                <span>
-                                  <br />
-                                      
-                                    
-                                </span>
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#666",
-                                    }
-                                  }
-                                >
-                                  onEmptyStateAction
-                                </span>
-                              </span>
-                              : 
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#170",
-                                  }
-                                }
-                              >
-                                onEmptyStateAction
                               </span>
                               ,
                               <span>
@@ -46400,6 +46760,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with no da
                                   }
                                 }
                               >
+                                onRowClicked
+                                ?
+                                :
+                                 
+                              </span>
+                              <span>
+                                func
+                              </span>
+                              ,
+                            </div>
+                            <div
+                              style={
+                                Object {
+                                  "marginLeft": 30,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                              >
                                 onRowExpanded
                                 ?
                                 :
@@ -47688,6 +48072,33 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with no da
                                     }
                                   }
                                 >
+                                  onRowClicked
+                                </span>
+                              </span>
+                              : 
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#170",
+                                  }
+                                }
+                              >
+                                onRowClicked
+                              </span>
+                              ,
+                              <span>
+                                <span>
+                                  <br />
+                                      
+                                    
+                                </span>
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
                                   onRowSelected
                                 </span>
                               </span>
@@ -47727,33 +48138,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with no da
                                 }
                               >
                                 onSelectAll
-                              </span>
-                              ,
-                              <span>
-                                <span>
-                                  <br />
-                                      
-                                    
-                                </span>
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#666",
-                                    }
-                                  }
-                                >
-                                  onEmptyStateAction
-                                </span>
-                              </span>
-                              : 
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#170",
-                                  }
-                                }
-                              >
-                                onEmptyStateAction
                               </span>
                               ,
                               <span>
@@ -50074,6 +50458,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with no da
                                   }
                                 }
                               >
+                                onRowClicked
+                                ?
+                                :
+                                 
+                              </span>
+                              <span>
+                                func
+                              </span>
+                              ,
+                            </div>
+                            <div
+                              style={
+                                Object {
+                                  "marginLeft": 30,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                              >
                                 onRowExpanded
                                 ?
                                 :
@@ -51649,6 +52057,33 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with no re
                                     }
                                   }
                                 >
+                                  onRowClicked
+                                </span>
+                              </span>
+                              : 
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#170",
+                                  }
+                                }
+                              >
+                                onRowClicked
+                              </span>
+                              ,
+                              <span>
+                                <span>
+                                  <br />
+                                      
+                                    
+                                </span>
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
                                   onRowSelected
                                 </span>
                               </span>
@@ -51688,33 +52123,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with no re
                                 }
                               >
                                 onSelectAll
-                              </span>
-                              ,
-                              <span>
-                                <span>
-                                  <br />
-                                      
-                                    
-                                </span>
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#666",
-                                    }
-                                  }
-                                >
-                                  onEmptyStateAction
-                                </span>
-                              </span>
-                              : 
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#170",
-                                  }
-                                }
-                              >
-                                onEmptyStateAction
                               </span>
                               ,
                               <span>
@@ -54137,6 +54545,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with no re
                                 }
                               >
                                 onRowSelected
+                                ?
+                                :
+                                 
+                              </span>
+                              <span>
+                                func
+                              </span>
+                              ,
+                            </div>
+                            <div
+                              style={
+                                Object {
+                                  "marginLeft": 30,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                              >
+                                onRowClicked
                                 ?
                                 :
                                  
@@ -60315,6 +60747,33 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                                     }
                                   }
                                 >
+                                  onRowClicked
+                                </span>
+                              </span>
+                              : 
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#170",
+                                  }
+                                }
+                              >
+                                onRowClicked
+                              </span>
+                              ,
+                              <span>
+                                <span>
+                                  <br />
+                                      
+                                    
+                                </span>
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
                                   onRowSelected
                                 </span>
                               </span>
@@ -60354,33 +60813,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                                 }
                               >
                                 onSelectAll
-                              </span>
-                              ,
-                              <span>
-                                <span>
-                                  <br />
-                                      
-                                    
-                                </span>
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#666",
-                                    }
-                                  }
-                                >
-                                  onEmptyStateAction
-                                </span>
-                              </span>
-                              : 
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#170",
-                                  }
-                                }
-                              >
-                                onEmptyStateAction
                               </span>
                               ,
                               <span>
@@ -62815,6 +63247,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                                 }
                               >
                                 onRowSelected
+                                ?
+                                :
+                                 
+                              </span>
+                              <span>
+                                func
+                              </span>
+                              ,
+                            </div>
+                            <div
+                              style={
+                                Object {
+                                  "marginLeft": 30,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                              >
+                                onRowClicked
                                 ?
                                 :
                                  
@@ -74445,6 +74901,33 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                                     }
                                   }
                                 >
+                                  onRowClicked
+                                </span>
+                              </span>
+                              : 
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#170",
+                                  }
+                                }
+                              >
+                                onRowClicked
+                              </span>
+                              ,
+                              <span>
+                                <span>
+                                  <br />
+                                      
+                                    
+                                </span>
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
                                   onRowSelected
                                 </span>
                               </span>
@@ -74484,33 +74967,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                                 }
                               >
                                 onSelectAll
-                              </span>
-                              ,
-                              <span>
-                                <span>
-                                  <br />
-                                      
-                                    
-                                </span>
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#666",
-                                    }
-                                  }
-                                >
-                                  onEmptyStateAction
-                                </span>
-                              </span>
-                              : 
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#170",
-                                  }
-                                }
-                              >
-                                onEmptyStateAction
                               </span>
                               ,
                               <span>
@@ -76990,6 +77446,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                                   }
                                 }
                               >
+                                onRowClicked
+                                ?
+                                :
+                                 
+                              </span>
+                              <span>
+                                func
+                              </span>
+                              ,
+                            </div>
+                            <div
+                              style={
+                                Object {
+                                  "marginLeft": 30,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                              >
                                 onRowExpanded
                                 ?
                                 :
@@ -77347,7 +77827,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with selec
               </tr>
             </thead>
             <tbody>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td
                   onClick={[Function]}
                   style={
@@ -77392,7 +77874,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with selec
                   0
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td
                   onClick={[Function]}
                   style={
@@ -77437,7 +77921,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with selec
                   1
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td
                   onClick={[Function]}
                   style={
@@ -77482,7 +77968,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with selec
                   4
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td
                   onClick={[Function]}
                   style={
@@ -77527,7 +78015,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with selec
                   9
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td
                   onClick={[Function]}
                   style={
@@ -77572,7 +78062,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with selec
                   16
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td
                   onClick={[Function]}
                   style={
@@ -77617,7 +78109,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with selec
                   25
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td
                   onClick={[Function]}
                   style={
@@ -77662,7 +78156,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with selec
                   36
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td
                   onClick={[Function]}
                   style={
@@ -77707,7 +78203,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with selec
                   49
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td
                   onClick={[Function]}
                   style={
@@ -77752,7 +78250,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with selec
                   64
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td
                   onClick={[Function]}
                   style={
@@ -79325,6 +79825,33 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with selec
                                     }
                                   }
                                 >
+                                  onRowClicked
+                                </span>
+                              </span>
+                              : 
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#170",
+                                  }
+                                }
+                              >
+                                onRowClicked
+                              </span>
+                              ,
+                              <span>
+                                <span>
+                                  <br />
+                                      
+                                    
+                                </span>
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
                                   onRowSelected
                                 </span>
                               </span>
@@ -79364,33 +79891,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with selec
                                 }
                               >
                                 onSelectAll
-                              </span>
-                              ,
-                              <span>
-                                <span>
-                                  <br />
-                                      
-                                    
-                                </span>
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#666",
-                                    }
-                                  }
-                                >
-                                  onEmptyStateAction
-                                </span>
-                              </span>
-                              : 
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#170",
-                                  }
-                                }
-                              >
-                                onEmptyStateAction
                               </span>
                               ,
                               <span>
@@ -81981,6 +82481,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with selec
                                   }
                                 }
                               >
+                                onRowClicked
+                                ?
+                                :
+                                 
+                              </span>
+                              <span>
+                                func
+                              </span>
+                              ,
+                            </div>
+                            <div
+                              style={
+                                Object {
+                                  "marginLeft": 30,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                              >
                                 onRowExpanded
                                 ?
                                 :
@@ -82324,7 +82848,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
               </tr>
             </thead>
             <tbody>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   toyota toyota toyota 0
                 </td>
@@ -82341,7 +82867,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   0
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   helping whiteboard as 1
                 </td>
@@ -82358,7 +82886,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   1
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   whiteboard can eat 2
                 </td>
@@ -82375,7 +82905,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   4
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   as eat scott 3
                 </td>
@@ -82392,7 +82924,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   9
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   can pinocchio whiteboard 4
                 </td>
@@ -82409,7 +82943,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   16
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   bottle toyota bottle 5
                 </td>
@@ -82426,7 +82962,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   25
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   eat whiteboard pinocchio 6
                 </td>
@@ -82443,7 +82981,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   36
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   chocolate can helping 7
                 </td>
@@ -82460,7 +83000,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   49
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   pinocchio eat can 8
                 </td>
@@ -82477,7 +83019,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   64
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   scott pinocchio chocolate 9
                 </td>
@@ -82494,7 +83038,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   81
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   toyota toyota toyota 10
                 </td>
@@ -82511,7 +83057,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   100
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   helping whiteboard as 11
                 </td>
@@ -82528,7 +83076,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   121
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   whiteboard can eat 12
                 </td>
@@ -82545,7 +83095,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   144
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   as eat scott 13
                 </td>
@@ -82562,7 +83114,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   169
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   can pinocchio whiteboard 14
                 </td>
@@ -82579,7 +83133,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   196
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   bottle toyota bottle 15
                 </td>
@@ -82596,7 +83152,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   225
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   eat whiteboard pinocchio 16
                 </td>
@@ -82613,7 +83171,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   256
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   chocolate can helping 17
                 </td>
@@ -82630,7 +83190,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   289
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   pinocchio eat can 18
                 </td>
@@ -82647,7 +83209,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   324
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   scott pinocchio chocolate 19
                 </td>
@@ -82664,7 +83228,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   361
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   toyota toyota toyota 20
                 </td>
@@ -82681,7 +83247,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   400
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   helping whiteboard as 21
                 </td>
@@ -82698,7 +83266,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   441
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   whiteboard can eat 22
                 </td>
@@ -82715,7 +83285,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   484
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   as eat scott 23
                 </td>
@@ -82732,7 +83304,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   529
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   can pinocchio whiteboard 24
                 </td>
@@ -82749,7 +83323,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   576
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   bottle toyota bottle 25
                 </td>
@@ -82766,7 +83342,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   625
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   eat whiteboard pinocchio 26
                 </td>
@@ -82783,7 +83361,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   676
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   chocolate can helping 27
                 </td>
@@ -82800,7 +83380,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   729
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   pinocchio eat can 28
                 </td>
@@ -82817,7 +83399,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   784
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   scott pinocchio chocolate 29
                 </td>
@@ -82834,7 +83418,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   841
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   toyota toyota toyota 30
                 </td>
@@ -82851,7 +83437,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   900
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   helping whiteboard as 31
                 </td>
@@ -82868,7 +83456,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   961
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   whiteboard can eat 32
                 </td>
@@ -82885,7 +83475,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   1024
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   as eat scott 33
                 </td>
@@ -82902,7 +83494,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   1089
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   can pinocchio whiteboard 34
                 </td>
@@ -82919,7 +83513,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   1156
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   bottle toyota bottle 35
                 </td>
@@ -82936,7 +83532,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   1225
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   eat whiteboard pinocchio 36
                 </td>
@@ -82953,7 +83551,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   1296
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   chocolate can helping 37
                 </td>
@@ -82970,7 +83570,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   1369
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   pinocchio eat can 38
                 </td>
@@ -82987,7 +83589,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   1444
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   scott pinocchio chocolate 39
                 </td>
@@ -83004,7 +83608,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   1521
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   toyota toyota toyota 40
                 </td>
@@ -83021,7 +83627,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   1600
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   helping whiteboard as 41
                 </td>
@@ -83038,7 +83646,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   1681
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   whiteboard can eat 42
                 </td>
@@ -83055,7 +83665,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   1764
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   as eat scott 43
                 </td>
@@ -83072,7 +83684,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   1849
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   can pinocchio whiteboard 44
                 </td>
@@ -83089,7 +83703,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   1936
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   bottle toyota bottle 45
                 </td>
@@ -83106,7 +83722,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   2025
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   eat whiteboard pinocchio 46
                 </td>
@@ -83123,7 +83741,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   2116
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   chocolate can helping 47
                 </td>
@@ -83140,7 +83760,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   2209
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   pinocchio eat can 48
                 </td>
@@ -83157,7 +83779,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   2304
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   scott pinocchio chocolate 49
                 </td>
@@ -83174,7 +83798,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   2401
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   toyota toyota toyota 50
                 </td>
@@ -83191,7 +83817,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   2500
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   helping whiteboard as 51
                 </td>
@@ -83208,7 +83836,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   2601
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   whiteboard can eat 52
                 </td>
@@ -83225,7 +83855,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   2704
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   as eat scott 53
                 </td>
@@ -83242,7 +83874,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   2809
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   can pinocchio whiteboard 54
                 </td>
@@ -83259,7 +83893,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   2916
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   bottle toyota bottle 55
                 </td>
@@ -83276,7 +83912,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   3025
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   eat whiteboard pinocchio 56
                 </td>
@@ -83293,7 +83931,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   3136
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   chocolate can helping 57
                 </td>
@@ -83310,7 +83950,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   3249
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   pinocchio eat can 58
                 </td>
@@ -83327,7 +83969,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   3364
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   scott pinocchio chocolate 59
                 </td>
@@ -83344,7 +83988,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   3481
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   toyota toyota toyota 60
                 </td>
@@ -83361,7 +84007,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   3600
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   helping whiteboard as 61
                 </td>
@@ -83378,7 +84026,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   3721
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   whiteboard can eat 62
                 </td>
@@ -83395,7 +84045,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   3844
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   as eat scott 63
                 </td>
@@ -83412,7 +84064,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   3969
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   can pinocchio whiteboard 64
                 </td>
@@ -83429,7 +84083,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   4096
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   bottle toyota bottle 65
                 </td>
@@ -83446,7 +84102,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   4225
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   eat whiteboard pinocchio 66
                 </td>
@@ -83463,7 +84121,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   4356
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   chocolate can helping 67
                 </td>
@@ -83480,7 +84140,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   4489
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   pinocchio eat can 68
                 </td>
@@ -83497,7 +84159,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   4624
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   scott pinocchio chocolate 69
                 </td>
@@ -83514,7 +84178,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   4761
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   toyota toyota toyota 70
                 </td>
@@ -83531,7 +84197,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   4900
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   helping whiteboard as 71
                 </td>
@@ -83548,7 +84216,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   5041
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   whiteboard can eat 72
                 </td>
@@ -83565,7 +84235,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   5184
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   as eat scott 73
                 </td>
@@ -83582,7 +84254,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   5329
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   can pinocchio whiteboard 74
                 </td>
@@ -83599,7 +84273,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   5476
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   bottle toyota bottle 75
                 </td>
@@ -83616,7 +84292,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   5625
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   eat whiteboard pinocchio 76
                 </td>
@@ -83633,7 +84311,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   5776
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   chocolate can helping 77
                 </td>
@@ -83650,7 +84330,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   5929
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   pinocchio eat can 78
                 </td>
@@ -83667,7 +84349,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   6084
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   scott pinocchio chocolate 79
                 </td>
@@ -83684,7 +84368,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   6241
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   toyota toyota toyota 80
                 </td>
@@ -83701,7 +84387,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   6400
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   helping whiteboard as 81
                 </td>
@@ -83718,7 +84406,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   6561
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   whiteboard can eat 82
                 </td>
@@ -83735,7 +84425,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   6724
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   as eat scott 83
                 </td>
@@ -83752,7 +84444,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   6889
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   can pinocchio whiteboard 84
                 </td>
@@ -83769,7 +84463,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   7056
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   bottle toyota bottle 85
                 </td>
@@ -83786,7 +84482,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   7225
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   eat whiteboard pinocchio 86
                 </td>
@@ -83803,7 +84501,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   7396
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   chocolate can helping 87
                 </td>
@@ -83820,7 +84520,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   7569
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   pinocchio eat can 88
                 </td>
@@ -83837,7 +84539,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   7744
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   scott pinocchio chocolate 89
                 </td>
@@ -83854,7 +84558,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   7921
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   toyota toyota toyota 90
                 </td>
@@ -83871,7 +84577,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   8100
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   helping whiteboard as 91
                 </td>
@@ -83888,7 +84596,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   8281
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   whiteboard can eat 92
                 </td>
@@ -83905,7 +84615,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   8464
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   as eat scott 93
                 </td>
@@ -83922,7 +84634,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   8649
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   can pinocchio whiteboard 94
                 </td>
@@ -83939,7 +84653,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   8836
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   bottle toyota bottle 95
                 </td>
@@ -83956,7 +84672,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   9025
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   eat whiteboard pinocchio 96
                 </td>
@@ -83973,7 +84691,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   9216
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   chocolate can helping 97
                 </td>
@@ -83990,7 +84710,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   9409
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   pinocchio eat can 98
                 </td>
@@ -84007,7 +84729,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                   9604
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td>
                   scott pinocchio chocolate 99
                 </td>
@@ -85295,6 +86019,33 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                                     }
                                   }
                                 >
+                                  onRowClicked
+                                </span>
+                              </span>
+                              : 
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#170",
+                                  }
+                                }
+                              >
+                                onRowClicked
+                              </span>
+                              ,
+                              <span>
+                                <span>
+                                  <br />
+                                      
+                                    
+                                </span>
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
                                   onRowSelected
                                 </span>
                               </span>
@@ -85334,33 +86085,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                                 }
                               >
                                 onSelectAll
-                              </span>
-                              ,
-                              <span>
-                                <span>
-                                  <br />
-                                      
-                                    
-                                </span>
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#666",
-                                    }
-                                  }
-                                >
-                                  onEmptyStateAction
-                                </span>
-                              </span>
-                              : 
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#170",
-                                  }
-                                }
-                              >
-                                onEmptyStateAction
                               </span>
                               ,
                               <span>
@@ -87387,6 +88111,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
                                   }
                                 }
                               >
+                                onRowClicked
+                                ?
+                                :
+                                 
+                              </span>
+                              <span>
+                                func
+                              </span>
+                              ,
+                            </div>
+                            <div
+                              style={
+                                Object {
+                                  "marginLeft": 30,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                              >
                                 onRowExpanded
                                 ?
                                 :
@@ -87772,7 +88520,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with sorti
               </tr>
             </thead>
             <tbody>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td
                   onClick={[Function]}
                   style={
@@ -87817,7 +88567,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with sorti
                   169
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td
                   onClick={[Function]}
                   style={
@@ -87862,7 +88614,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with sorti
                   529
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td
                   onClick={[Function]}
                   style={
@@ -87907,7 +88661,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with sorti
                   9
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td
                   onClick={[Function]}
                   style={
@@ -87952,7 +88708,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with sorti
                   1089
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td
                   onClick={[Function]}
                   style={
@@ -87997,7 +88755,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with sorti
                   1849
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td
                   onClick={[Function]}
                   style={
@@ -88042,7 +88802,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with sorti
                   2809
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td
                   onClick={[Function]}
                   style={
@@ -88087,7 +88849,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with sorti
                   3969
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td
                   onClick={[Function]}
                   style={
@@ -88132,7 +88896,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with sorti
                   5329
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td
                   onClick={[Function]}
                   style={
@@ -88177,7 +88943,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with sorti
                   6889
                 </td>
               </tr>
-              <tr>
+              <tr
+                onClick={[Function]}
+              >
                 <td
                   onClick={[Function]}
                   style={
@@ -89750,6 +90518,33 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with sorti
                                     }
                                   }
                                 >
+                                  onRowClicked
+                                </span>
+                              </span>
+                              : 
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#170",
+                                  }
+                                }
+                              >
+                                onRowClicked
+                              </span>
+                              ,
+                              <span>
+                                <span>
+                                  <br />
+                                      
+                                    
+                                </span>
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
                                   onRowSelected
                                 </span>
                               </span>
@@ -89789,33 +90584,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with sorti
                                 }
                               >
                                 onSelectAll
-                              </span>
-                              ,
-                              <span>
-                                <span>
-                                  <br />
-                                      
-                                    
-                                </span>
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#666",
-                                    }
-                                  }
-                                >
-                                  onEmptyStateAction
-                                </span>
-                              </span>
-                              : 
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#170",
-                                  }
-                                }
-                              >
-                                onEmptyStateAction
                               </span>
                               ,
                               <span>
@@ -92226,6 +92994,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with sorti
                                 }
                               >
                                 onRowSelected
+                                ?
+                                :
+                                 
+                              </span>
+                              <span>
+                                func
+                              </span>
+                              ,
+                            </div>
+                            <div
+                              style={
+                                Object {
+                                  "marginLeft": 30,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                              >
+                                onRowClicked
                                 ?
                                 :
                                  

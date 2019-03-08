@@ -27,6 +27,7 @@ const propTypes = {
   hasRowExpansion: PropTypes.bool,
   actions: PropTypes.shape({
     onRowSelected: PropTypes.func,
+    onRowClicked: PropTypes.func,
     onApplyRowActions: PropTypes.func,
     onRowExpanded: PropTypes.func,
   }).isRequired,
@@ -76,7 +77,13 @@ const TableBody = ({
             totalColumns,
             id,
           }}
-          tableActions={pick(actions, 'onRowSelected', 'onApplyRowAction', 'onRowExpanded')}
+          tableActions={pick(
+            actions,
+            'onRowSelected',
+            'onApplyRowAction',
+            'onRowExpanded',
+            'onRowClicked'
+          )}
           rowActions={row.rowActions}>
           {row.values}
         </TableBodyRow>
