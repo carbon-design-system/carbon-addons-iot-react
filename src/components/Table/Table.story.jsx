@@ -1,6 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
+import styled from 'styled-components';
 
 import { getSortedData } from '../../utils/componentUtilityFunctions';
 
@@ -108,6 +110,14 @@ const RowExpansionContent = ({ rowId }) => (
     </ul>
   </div>
 );
+
+const StyledTableCustomRowHeight = styled(Table)`
+  &&& {
+    tr {
+      height: 5rem;
+    }
+  }
+`;
 
 const actions = {
   pagination: {
@@ -535,4 +545,72 @@ storiesOf('Table', module)
         },
       }}
     />
-  ));
+  ))
+  .add('zebra', () => <Table zebra columns={tableColumns} data={tableData} actions={actions} />)
+  .add(
+    'max column width',
+    () => {
+      const StyledTableColumn = styled(Table)`
+        &&& {
+          [data-column='string'] {
+            max-width: 20px;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow-x: hidden;
+          }
+        }
+      `;
+
+      // workaround for dumb prop types storybook issue
+      const TableColumnWidth = ({ children, ...props }) => (
+        <StyledTableColumn {...props}>{children}</StyledTableColumn>
+      );
+
+      TableColumnWidth.displayName = 'Table';
+      TableColumnWidth.propTypes = {
+        className: PropTypes.string,
+      };
+      TableColumnWidth.defaultProps = {
+        className: null,
+      };
+      return (
+        // You don't need to use styled components, just pass a className to the Table component and use selectors to find the correct column
+        <TableColumnWidth columns={tableColumns} data={tableData} actions={actions} />
+      );
+    },
+    {
+      info: {
+        source: false,
+        text: `This is an example of the <Table> component that has a max column width. Pass a custom className prop to the Table component and use a css selector to identify the correct column. In the example below, the column id we're setting max-width for is called 'string'.
+          
+        <Table className="my-custom-classname"/>
+          
+        .my-custom-classname [data-column='string'] { 
+          max-width: 20px; 
+          white-space: nowrap;
+          text-overflow: ellipsis; 
+          overflow-x: hidden; 
+        }`,
+        propTables: false,
+      },
+    }
+  )
+  .add(
+    'custom row height',
+    () => (
+      // You don't need to use styled components, just pass a className to the Table component and use selectors to find the correct column
+      <StyledTableCustomRowHeight columns={tableColumns} data={tableData} actions={actions} />
+    ),
+    {
+      info: {
+        source: false,
+        text: `This is an example of the <Table> component that has a custom row height. Pass a custom className prop to the Table component and use a css selector to change the height of all the rows.
+          
+        <Table className="my-custom-classname"/>
+          
+        .my-custom-classname tr { 
+          height: 5rem;
+        }`,
+      },
+    }
+  );

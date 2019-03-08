@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { DataTable, Checkbox } from 'carbon-components-react';
 import isNil from 'lodash/isNil';
 
+import TableCellRenderer from '../TableCellRenderer/TableCellRenderer';
+
 import ColumnHeaderRow from './ColumnHeaderRow/ColumnHeaderRow';
 import FilterHeaderRow from './FilterHeaderRow/FilterHeaderRow';
 
@@ -120,6 +122,7 @@ const TableHead = ({
               <TableHeader
                 id={`column-${column.id}`}
                 key={`column-${column.id}`}
+                data-column={column.id}
                 style={filterBarActive === true ? filterBarActiveStyle : {}}
                 isSortable={column.isSortable}
                 isSortHeader={hasSort}
@@ -129,7 +132,7 @@ const TableHead = ({
                   }
                 }}
                 sortDirection={hasSort ? sort.direction : 'NONE'}>
-                {column.name}
+                <TableCellRenderer>{column.name}</TableCellRenderer>
               </TableHeader>
             );
           })}
