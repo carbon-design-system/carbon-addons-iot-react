@@ -40,7 +40,7 @@ const StatefulTable = ({
   const {
     view,
     view: {
-      table: { filteredData },
+      table: { filteredData, selectedIds },
     },
   } = state;
 
@@ -96,7 +96,7 @@ const StatefulTable = ({
       },
       onApplyBatchAction: id => {
         dispatch(tableActionApply(id));
-        callbackParent(onApplyBatchAction, id);
+        callbackParent(onApplyBatchAction, id, selectedIds);
       },
       onApplySearch: string => {
         callbackParent(onApplySearch, string);
