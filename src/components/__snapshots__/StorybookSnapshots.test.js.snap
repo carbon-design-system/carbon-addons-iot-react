@@ -18335,36 +18335,56 @@ exports[`Storybook Snapshot tests and console checks Storyshots ProgressIndicato
 `;
 
 exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful Example 1`] = `
-.c0.c0.c0 th {
+.c3.c3.c3 th {
   padding-top: 0.5rem;
   padding-bottom: 1.5rem;
 }
 
-.c1.c1.c1 {
+.c4.c4.c4 {
   border-top: none;
 }
 
-.c1.c1.c1 .bx--form-item {
+.c4.c4.c4 .bx--form-item {
   display: table-cell;
 }
 
-.c1.c1.c1 .bx--form-item input {
+.c4.c4.c4 .bx--form-item input {
   min-width: 12.75rem;
 }
 
-.c2.c2.c2 {
+.c5.c5.c5 {
   position: relative;
 }
 
-.c2.c2.c2 input {
+.c5.c5.c5 input {
   padding-right: 2.5rem;
 }
 
-.c2.c2.c2 .bx--list-box__selection {
+.c5.c5.c5 .bx--list-box__selection {
   right: 0;
 }
 
-.c4 {
+.c1.c1.c1:last-of-type {
+  padding-right: 0.75rem;
+}
+
+.c1.c1.c1:not(:focus) > svg {
+  fill: #5a6872;
+}
+
+.c2.c2.c2:last-of-type {
+  padding-right: 0.75rem;
+}
+
+.c2.c2.c2:not(:focus) > svg {
+  fill: #3d70b2;
+}
+
+.c0.c0.c0 {
+  padding-right: 1px;
+}
+
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -18379,42 +18399,42 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
   align-items: center;
 }
 
-.c4 > * {
+.c7 > * {
   opacity: 0;
 }
 
-.c6.c6.c6 {
+.c9.c9.c9 {
   margin-left: 0.5rem;
   color: #152935;
   opacity: 0;
 }
 
-.c6.c6.c6 svg {
+.c9.c9.c9 svg {
   fill: #152935;
   margin-left: 0;
 }
 
-.c5.c5.c5 {
+.c8.c8.c8 {
   color: #152935;
 }
 
-.c5.c5.c5 svg {
+.c8.c8.c8 svg {
   fill: #152935;
 }
 
-.c5.c5.c5:hover {
+.c8.c8.c8:hover {
   color: #fff;
 }
 
-.c5.c5.c5:hover svg {
+.c8.c8.c8:hover svg {
   fill: #fff;
 }
 
-.c3.c3.c3 {
+.c6.c6.c6 {
   cursor: pointer;
 }
 
-.c3.c3.c3:hover td div > * {
+.c6.c6.c6:hover td div > * {
   opacity: 1;
 }
 
@@ -18511,10 +18531,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
               </div>
             </div>
             <div
-              className="bx--toolbar-content"
-            />
-            <div
-              className="bx--toolbar-content"
+              className="bx--toolbar-content c0"
             >
               <div
                 className="bx--batch-actions"
@@ -18578,7 +18595,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                 Clear All Filters
               </button>
               <button
-                className="bx--btn--sm bx--toolbar-action"
+                className="bx--btn--sm c1 bx--toolbar-action"
                 onClick={[Function]}
               >
                 <svg
@@ -18600,7 +18617,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                 </svg>
               </button>
               <button
-                className="bx--btn--sm bx--toolbar-action"
+                className="bx--btn--sm c2 bx--toolbar-action"
                 onClick={[Function]}
               >
                 <svg
@@ -18795,22 +18812,22 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                 </th>
               </tr>
               <tr
-                className="c0"
+                className="c3"
               >
                 <th
-                  className="c1"
+                  className="c4"
                   scope="col"
                 />
                 <th
-                  className="c1"
+                  className="c4"
                   scope="col"
                 />
                 <th
-                  className="c1"
+                  className="c4"
                   scope="col"
                 >
                   <div
-                    className="bx--form-item c2"
+                    className="bx--form-item c5"
                   >
                     <div
                       className="bx--form-item"
@@ -18863,11 +18880,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                   </div>
                 </th>
                 <th
-                  className="c1"
+                  className="c4"
                   scope="col"
                 >
                   <div
-                    className="bx--form-item c2"
+                    className="bx--form-item c5"
                   >
                     <div
                       className="bx--form-item"
@@ -18894,7 +18911,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                   </div>
                 </th>
                 <th
-                  className="c1"
+                  className="c4"
                   scope="col"
                 >
                   <div
@@ -18986,11 +19003,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                   </div>
                 </th>
                 <th
-                  className="c1"
+                  className="c4"
                   scope="col"
                 >
                   <div
-                    className="bx--form-item c2"
+                    className="bx--form-item c5"
                   >
                     <div
                       className="bx--form-item"
@@ -19017,14 +19034,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                   </div>
                 </th>
                 <th
-                  className="c1"
+                  className="c4"
                   scope="col"
                 />
               </tr>
             </thead>
             <tbody>
               <tr
-                className="bx--parent-row-v2 c3"
+                className="bx--parent-row-v2 c6"
                 data-parent-row={true}
                 id="Table-Row-row-1"
                 onClick={[Function]}
@@ -19101,10 +19118,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                 </td>
                 <td>
                   <div
-                    className="c4"
+                    className="c7"
                   >
                     <button
-                      className="c5 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c8 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       onClick={[Function]}
                       tabIndex={0}
@@ -19135,7 +19152,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c6 bx--overflow-menu"
+                      className="c9 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -19168,7 +19185,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c3"
+                className="bx--parent-row-v2 c6"
                 data-parent-row={true}
                 id="Table-Row-row-4"
                 onClick={[Function]}
@@ -19245,13 +19262,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                 </td>
                 <td>
                   <div
-                    className="c4"
+                    className="c7"
                   >
                     <div
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c6 bx--overflow-menu"
+                      className="c9 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -19284,7 +19301,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c3"
+                className="bx--parent-row-v2 c6"
                 data-parent-row={true}
                 id="Table-Row-row-16"
                 onClick={[Function]}
@@ -19361,13 +19378,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                 </td>
                 <td>
                   <div
-                    className="c4"
+                    className="c7"
                   >
                     <div
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c6 bx--overflow-menu"
+                      className="c9 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -19400,7 +19417,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c3"
+                className="bx--parent-row-v2 c6"
                 data-parent-row={true}
                 id="Table-Row-row-22"
                 onClick={[Function]}
@@ -19477,10 +19494,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                 </td>
                 <td>
                   <div
-                    className="c4"
+                    className="c7"
                   >
                     <button
-                      className="c5 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c8 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       onClick={[Function]}
                       tabIndex={0}
@@ -19511,7 +19528,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c6 bx--overflow-menu"
+                      className="c9 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -19544,7 +19561,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c3"
+                className="bx--parent-row-v2 c6"
                 data-parent-row={true}
                 id="Table-Row-row-31"
                 onClick={[Function]}
@@ -19621,10 +19638,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                 </td>
                 <td>
                   <div
-                    className="c4"
+                    className="c7"
                   >
                     <button
-                      className="c5 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c8 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       onClick={[Function]}
                       tabIndex={0}
@@ -19655,7 +19672,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c6 bx--overflow-menu"
+                      className="c9 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -19688,7 +19705,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c3"
+                className="bx--parent-row-v2 c6"
                 data-parent-row={true}
                 id="Table-Row-row-34"
                 onClick={[Function]}
@@ -19765,10 +19782,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                 </td>
                 <td>
                   <div
-                    className="c4"
+                    className="c7"
                   >
                     <button
-                      className="c5 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c8 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       onClick={[Function]}
                       tabIndex={0}
@@ -19799,7 +19816,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c6 bx--overflow-menu"
+                      className="c9 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -19832,7 +19849,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c3"
+                className="bx--parent-row-v2 c6"
                 data-parent-row={true}
                 id="Table-Row-row-46"
                 onClick={[Function]}
@@ -19909,10 +19926,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                 </td>
                 <td>
                   <div
-                    className="c4"
+                    className="c7"
                   >
                     <button
-                      className="c5 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c8 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       onClick={[Function]}
                       tabIndex={0}
@@ -19943,7 +19960,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c6 bx--overflow-menu"
+                      className="c9 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -19976,7 +19993,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c3"
+                className="bx--parent-row-v2 c6"
                 data-parent-row={true}
                 id="Table-Row-row-52"
                 onClick={[Function]}
@@ -20053,13 +20070,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                 </td>
                 <td>
                   <div
-                    className="c4"
+                    className="c7"
                   >
                     <div
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c6 bx--overflow-menu"
+                      className="c9 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -20092,7 +20109,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c3"
+                className="bx--parent-row-v2 c6"
                 data-parent-row={true}
                 id="Table-Row-row-61"
                 onClick={[Function]}
@@ -20169,10 +20186,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                 </td>
                 <td>
                   <div
-                    className="c4"
+                    className="c7"
                   >
                     <button
-                      className="c5 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c8 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       onClick={[Function]}
                       tabIndex={0}
@@ -20203,7 +20220,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c6 bx--overflow-menu"
+                      className="c9 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -20236,7 +20253,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c3"
+                className="bx--parent-row-v2 c6"
                 data-parent-row={true}
                 id="Table-Row-row-64"
                 onClick={[Function]}
@@ -20313,13 +20330,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                 </td>
                 <td>
                   <div
-                    className="c4"
+                    className="c7"
                   >
                     <div
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c6 bx--overflow-menu"
+                      className="c9 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -25424,6 +25441,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
 `;
 
 exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`] = `
+.c0.c0.c0 {
+  padding-right: 1px;
+}
+
 <div
   className="storybook-container"
   style={
@@ -25454,10 +25475,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
             className="bx--table-toolbar"
           >
             <div
-              className="bx--toolbar-content"
-            />
-            <div
-              className="bx--toolbar-content"
+              className="bx--toolbar-content c0"
             >
               <div
                 className="bx--batch-actions"
@@ -30708,10 +30726,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
 
 exports[`Storybook Snapshot tests and console checks Storyshots Table is loading 1`] = `
 .c0.c0.c0 {
+  padding-right: 1px;
+}
+
+.c1.c1.c1 {
   pointer-events: none;
 }
 
-.c0.c0.c0:hover td {
+.c1.c1.c1:hover td {
   border: 1px solid #dfe3e6;
   background: inherit;
 }
@@ -30746,10 +30768,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table is loading
             className="bx--table-toolbar"
           >
             <div
-              className="bx--toolbar-content"
-            />
-            <div
-              className="bx--toolbar-content"
+              className="bx--toolbar-content c0"
             >
               <div
                 className="bx--batch-actions"
@@ -30811,7 +30830,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table is loading
             </thead>
             <tbody>
               <tr
-                className="c0"
+                className="c1"
               >
                 <td>
                   <p
@@ -30855,7 +30874,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table is loading
                 </td>
               </tr>
               <tr
-                className="c0"
+                className="c1"
               >
                 <td />
                 <td />
@@ -30863,7 +30882,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table is loading
                 <td />
               </tr>
               <tr
-                className="c0"
+                className="c1"
               >
                 <td />
                 <td />
@@ -30871,7 +30890,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table is loading
                 <td />
               </tr>
               <tr
-                className="c0"
+                className="c1"
               >
                 <td />
                 <td />
@@ -30879,7 +30898,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table is loading
                 <td />
               </tr>
               <tr
-                className="c0"
+                className="c1"
               >
                 <td />
                 <td />
@@ -34693,42 +34712,54 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table is loading
 `;
 
 exports[`Storybook Snapshot tests and console checks Storyshots Table with customized columns 1`] = `
-.c2.c2.c2 {
+.c4.c4.c4 {
   margin-left: 1rem;
 }
 
-.c1.c1.c1 {
+.c3.c3.c3 {
   border-top: none;
 }
 
-.c1.c1.c1 .bx--form-item {
+.c3.c3.c3 .bx--form-item {
   display: table-cell;
 }
 
-.c1.c1.c1 .bx--form-item input {
+.c3.c3.c3 .bx--form-item input {
   min-width: 12.75rem;
 }
 
-.c0.c0.c0 th {
+.c2.c2.c2 th {
   padding-top: 0.5rem;
   padding-bottom: 1.5rem;
 }
 
-.c0.c0.c0 td {
+.c2.c2.c2 td {
   background-color: inherit;
   border-left: none;
   border-width: 0 0 0 4px;
 }
 
-.c0.c0.c0:hover {
+.c2.c2.c2:hover {
   border: inherit;
   background-color: inherit;
 }
 
-.c0.c0.c0:hover td {
+.c2.c2.c2:hover td {
   background-color: inherit;
   border-left: none;
   border-width: 0 0 0 4px;
+}
+
+.c1.c1.c1:last-of-type {
+  padding-right: 0.75rem;
+}
+
+.c1.c1.c1:not(:focus) > svg {
+  fill: #3d70b2;
+}
+
+.c0.c0.c0 {
+  padding-right: 1px;
 }
 
 <div
@@ -34761,10 +34792,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with custo
             className="bx--table-toolbar"
           >
             <div
-              className="bx--toolbar-content"
-            />
-            <div
-              className="bx--toolbar-content"
+              className="bx--toolbar-content c0"
             >
               <div
                 className="bx--batch-actions"
@@ -34788,7 +34816,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with custo
                 </div>
               </div>
               <button
-                className="bx--btn--sm bx--toolbar-action"
+                className="bx--btn--sm c1 bx--toolbar-action"
                 onClick={[Function]}
               >
                 <svg
@@ -34877,19 +34905,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with custo
                 </th>
               </tr>
               <tr
-                className="c0"
+                className="c2"
               >
                 <th
-                  className="c1"
+                  className="c3"
                   scope="col"
                 />
                 <th
-                  className="c1"
+                  className="c3"
                   colSpan={4}
                   scope="col"
                 >
                   <button
-                    className="c2 bx--btn bx--btn--primary"
+                    className="c4 bx--btn bx--btn--primary"
                     disabled={false}
                     onClick={[Function]}
                     tabIndex={0}
@@ -34898,7 +34926,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with custo
                     String
                   </button>
                   <button
-                    className="c2 bx--btn bx--btn--primary"
+                    className="c4 bx--btn bx--btn--primary"
                     disabled={false}
                     onClick={[Function]}
                     tabIndex={0}
@@ -34907,7 +34935,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with custo
                     Date
                   </button>
                   <button
-                    className="c2 bx--btn bx--btn--primary"
+                    className="c4 bx--btn bx--btn--primary"
                     disabled={false}
                     onClick={[Function]}
                     tabIndex={0}
@@ -34916,7 +34944,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with custo
                     Select
                   </button>
                   <button
-                    className="c2 bx--btn bx--btn--tertiary"
+                    className="c4 bx--btn bx--btn--tertiary"
                     disabled={false}
                     onClick={[Function]}
                     tabIndex={0}
@@ -34925,7 +34953,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with custo
                     Secret Information
                   </button>
                   <button
-                    className="c2 bx--btn bx--btn--primary"
+                    className="c4 bx--btn bx--btn--primary"
                     disabled={false}
                     onClick={[Function]}
                     tabIndex={0}
@@ -39547,33 +39575,45 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with custo
 `;
 
 exports[`Storybook Snapshot tests and console checks Storyshots Table with filters 1`] = `
-.c0.c0.c0 th {
+.c2.c2.c2 th {
   padding-top: 0.5rem;
   padding-bottom: 1.5rem;
 }
 
-.c1.c1.c1 {
+.c3.c3.c3 {
   border-top: none;
 }
 
-.c1.c1.c1 .bx--form-item {
+.c3.c3.c3 .bx--form-item {
   display: table-cell;
 }
 
-.c1.c1.c1 .bx--form-item input {
+.c3.c3.c3 .bx--form-item input {
   min-width: 12.75rem;
 }
 
-.c2.c2.c2 {
+.c4.c4.c4 {
   position: relative;
 }
 
-.c2.c2.c2 input {
+.c4.c4.c4 input {
   padding-right: 2.5rem;
 }
 
-.c2.c2.c2 .bx--list-box__selection {
+.c4.c4.c4 .bx--list-box__selection {
   right: 0;
+}
+
+.c1.c1.c1:last-of-type {
+  padding-right: 0.75rem;
+}
+
+.c1.c1.c1:not(:focus) > svg {
+  fill: #3d70b2;
+}
+
+.c0.c0.c0 {
+  padding-right: 1px;
 }
 
 <div
@@ -39606,10 +39646,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with filte
             className="bx--table-toolbar"
           >
             <div
-              className="bx--toolbar-content"
-            />
-            <div
-              className="bx--toolbar-content"
+              className="bx--toolbar-content c0"
             >
               <div
                 className="bx--batch-actions"
@@ -39642,7 +39679,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with filte
                 Clear All Filters
               </button>
               <button
-                className="bx--btn--sm bx--toolbar-action"
+                className="bx--btn--sm c1 bx--toolbar-action"
                 onClick={[Function]}
               >
                 <svg
@@ -39748,18 +39785,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with filte
                 </th>
               </tr>
               <tr
-                className="c0"
+                className="c2"
               >
                 <th
-                  className="c1"
+                  className="c3"
                   scope="col"
                 />
                 <th
-                  className="c1"
+                  className="c3"
                   scope="col"
                 >
                   <div
-                    className="bx--form-item c2"
+                    className="bx--form-item c4"
                   >
                     <div
                       className="bx--form-item"
@@ -39812,11 +39849,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with filte
                   </div>
                 </th>
                 <th
-                  className="c1"
+                  className="c3"
                   scope="col"
                 >
                   <div
-                    className="bx--form-item c2"
+                    className="bx--form-item c4"
                   >
                     <div
                       className="bx--form-item"
@@ -39843,7 +39880,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with filte
                   </div>
                 </th>
                 <th
-                  className="c1"
+                  className="c3"
                   scope="col"
                 >
                   <div
@@ -39935,11 +39972,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with filte
                   </div>
                 </th>
                 <th
-                  className="c1"
+                  className="c3"
                   scope="col"
                 >
                   <div
-                    className="bx--form-item c2"
+                    className="bx--form-item c4"
                   >
                     <div
                       className="bx--form-item"
@@ -44481,12 +44518,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with filte
 `;
 
 exports[`Storybook Snapshot tests and console checks Storyshots Table with no data 1`] = `
-.c0.c0.c0:hover td {
+.c0.c0.c0 {
+  padding-right: 1px;
+}
+
+.c1.c1.c1:hover td {
   border: 1px solid #dfe3e6;
   background: inherit;
 }
 
-.c0.c0.c0 .empty-table-cell--default {
+.c1.c1.c1 .empty-table-cell--default {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -44505,11 +44546,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with no da
   padding: 3rem;
 }
 
-.c0.c0.c0 .empty-table-cell--default svg {
+.c1.c1.c1 .empty-table-cell--default svg {
   margin: 1rem;
 }
 
-.c0.c0.c0 .empty-table-cell--default > * {
+.c1.c1.c1 .empty-table-cell--default > * {
   margin: 0.5rem;
 }
 
@@ -44543,10 +44584,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with no da
             className="bx--table-toolbar"
           >
             <div
-              className="bx--toolbar-content"
-            />
-            <div
-              className="bx--toolbar-content"
+              className="bx--toolbar-content c0"
             >
               <div
                 className="bx--batch-actions"
@@ -44608,7 +44646,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with no da
             </thead>
             <tbody>
               <tr
-                className="c0"
+                className="c1"
               >
                 <td
                   colSpan={4}
@@ -48154,12 +48192,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with no da
 `;
 
 exports[`Storybook Snapshot tests and console checks Storyshots Table with no data and custom empty state 1`] = `
-.c0.c0.c0:hover td {
+.c0.c0.c0 {
+  padding-right: 1px;
+}
+
+.c1.c1.c1:hover td {
   border: 1px solid #dfe3e6;
   background: inherit;
 }
 
-.c0.c0.c0 .empty-table-cell--default {
+.c1.c1.c1 .empty-table-cell--default {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -48178,11 +48220,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with no da
   padding: 3rem;
 }
 
-.c0.c0.c0 .empty-table-cell--default svg {
+.c1.c1.c1 .empty-table-cell--default svg {
   margin: 1rem;
 }
 
-.c0.c0.c0 .empty-table-cell--default > * {
+.c1.c1.c1 .empty-table-cell--default > * {
   margin: 0.5rem;
 }
 
@@ -48216,10 +48258,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with no da
             className="bx--table-toolbar"
           >
             <div
-              className="bx--toolbar-content"
-            />
-            <div
-              className="bx--toolbar-content"
+              className="bx--toolbar-content c0"
             >
               <div
                 className="bx--batch-actions"
@@ -48281,7 +48320,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with no da
             </thead>
             <tbody>
               <tr
-                className="c0"
+                className="c1"
               >
                 <td
                   colSpan={4}
@@ -51828,41 +51867,53 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with no da
 `;
 
 exports[`Storybook Snapshot tests and console checks Storyshots Table with no results 1`] = `
-.c0.c0.c0 th {
+.c2.c2.c2 th {
   padding-top: 0.5rem;
   padding-bottom: 1.5rem;
 }
 
-.c1.c1.c1 {
+.c3.c3.c3 {
   border-top: none;
 }
 
-.c1.c1.c1 .bx--form-item {
+.c3.c3.c3 .bx--form-item {
   display: table-cell;
 }
 
-.c1.c1.c1 .bx--form-item input {
+.c3.c3.c3 .bx--form-item input {
   min-width: 12.75rem;
 }
 
-.c2.c2.c2 {
+.c4.c4.c4 {
   position: relative;
 }
 
-.c2.c2.c2 input {
+.c4.c4.c4 input {
   padding-right: 2.5rem;
 }
 
-.c2.c2.c2 .bx--list-box__selection {
+.c4.c4.c4 .bx--list-box__selection {
   right: 0;
 }
 
-.c3.c3.c3:hover td {
+.c1.c1.c1:last-of-type {
+  padding-right: 0.75rem;
+}
+
+.c1.c1.c1:not(:focus) > svg {
+  fill: #3d70b2;
+}
+
+.c0.c0.c0 {
+  padding-right: 1px;
+}
+
+.c5.c5.c5:hover td {
   border: 1px solid #dfe3e6;
   background: inherit;
 }
 
-.c3.c3.c3 .empty-table-cell--default {
+.c5.c5.c5 .empty-table-cell--default {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -51881,11 +51932,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with no re
   padding: 3rem;
 }
 
-.c3.c3.c3 .empty-table-cell--default svg {
+.c5.c5.c5 .empty-table-cell--default svg {
   margin: 1rem;
 }
 
-.c3.c3.c3 .empty-table-cell--default > * {
+.c5.c5.c5 .empty-table-cell--default > * {
   margin: 0.5rem;
 }
 
@@ -51919,10 +51970,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with no re
             className="bx--table-toolbar"
           >
             <div
-              className="bx--toolbar-content"
-            />
-            <div
-              className="bx--toolbar-content"
+              className="bx--toolbar-content c0"
             >
               <div
                 className="bx--batch-actions"
@@ -51955,7 +52003,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with no re
                 Clear All Filters
               </button>
               <button
-                className="bx--btn--sm bx--toolbar-action"
+                className="bx--btn--sm c1 bx--toolbar-action"
                 onClick={[Function]}
               >
                 <svg
@@ -52029,14 +52077,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with no re
                 </th>
               </tr>
               <tr
-                className="c0"
+                className="c2"
               >
                 <th
-                  className="c1"
+                  className="c3"
                   scope="col"
                 >
                   <div
-                    className="bx--form-item c2"
+                    className="bx--form-item c4"
                   >
                     <div
                       className="bx--form-item"
@@ -52089,11 +52137,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with no re
                   </div>
                 </th>
                 <th
-                  className="c1"
+                  className="c3"
                   scope="col"
                 >
                   <div
-                    className="bx--form-item c2"
+                    className="bx--form-item c4"
                   >
                     <div
                       className="bx--form-item"
@@ -52120,7 +52168,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with no re
                   </div>
                 </th>
                 <th
-                  className="c1"
+                  className="c3"
                   scope="col"
                 >
                   <div
@@ -52187,11 +52235,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with no re
                   </div>
                 </th>
                 <th
-                  className="c1"
+                  className="c3"
                   scope="col"
                 >
                   <div
-                    className="bx--form-item c2"
+                    className="bx--form-item c4"
                   >
                     <div
                       className="bx--form-item"
@@ -52221,7 +52269,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with no re
             </thead>
             <tbody>
               <tr
-                className="c3"
+                className="c5"
               >
                 <td
                   colSpan={4}
@@ -55915,10 +55963,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with no re
 
 exports[`Storybook Snapshot tests and console checks Storyshots Table with row expansion 1`] = `
 .c0.c0.c0 {
+  padding-right: 1px;
+}
+
+.c1.c1.c1 {
   cursor: pointer;
 }
 
-.c0.c0.c0:hover td div > * {
+.c1.c1.c1:hover td div > * {
   opacity: 1;
 }
 
@@ -55952,10 +56004,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
             className="bx--table-toolbar"
           >
             <div
-              className="bx--toolbar-content"
-            />
-            <div
-              className="bx--toolbar-content"
+              className="bx--toolbar-content c0"
             >
               <div
                 className="bx--batch-actions"
@@ -56020,7 +56069,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
             </thead>
             <tbody>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-0"
                 onClick={[Function]}
@@ -56066,7 +56115,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-1"
                 onClick={[Function]}
@@ -56112,7 +56161,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-2"
                 onClick={[Function]}
@@ -56158,7 +56207,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-3"
                 onClick={[Function]}
@@ -56204,7 +56253,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-4"
                 onClick={[Function]}
@@ -56250,7 +56299,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-5"
                 onClick={[Function]}
@@ -56296,7 +56345,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-6"
                 onClick={[Function]}
@@ -56342,7 +56391,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-7"
                 onClick={[Function]}
@@ -56388,7 +56437,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-8"
                 onClick={[Function]}
@@ -56434,7 +56483,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-9"
                 onClick={[Function]}
@@ -56480,7 +56529,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-10"
                 onClick={[Function]}
@@ -56526,7 +56575,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-11"
                 onClick={[Function]}
@@ -56572,7 +56621,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-12"
                 onClick={[Function]}
@@ -56618,7 +56667,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-13"
                 onClick={[Function]}
@@ -56664,7 +56713,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-14"
                 onClick={[Function]}
@@ -56710,7 +56759,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-15"
                 onClick={[Function]}
@@ -56756,7 +56805,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-16"
                 onClick={[Function]}
@@ -56802,7 +56851,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-17"
                 onClick={[Function]}
@@ -56848,7 +56897,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-18"
                 onClick={[Function]}
@@ -56894,7 +56943,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-19"
                 onClick={[Function]}
@@ -56940,7 +56989,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-20"
                 onClick={[Function]}
@@ -56986,7 +57035,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-21"
                 onClick={[Function]}
@@ -57032,7 +57081,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-22"
                 onClick={[Function]}
@@ -57078,7 +57127,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-23"
                 onClick={[Function]}
@@ -57124,7 +57173,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-24"
                 onClick={[Function]}
@@ -57170,7 +57219,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-25"
                 onClick={[Function]}
@@ -57216,7 +57265,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-26"
                 onClick={[Function]}
@@ -57262,7 +57311,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-27"
                 onClick={[Function]}
@@ -57308,7 +57357,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-28"
                 onClick={[Function]}
@@ -57354,7 +57403,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-29"
                 onClick={[Function]}
@@ -57400,7 +57449,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-30"
                 onClick={[Function]}
@@ -57446,7 +57495,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-31"
                 onClick={[Function]}
@@ -57492,7 +57541,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-32"
                 onClick={[Function]}
@@ -57538,7 +57587,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-33"
                 onClick={[Function]}
@@ -57584,7 +57633,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-34"
                 onClick={[Function]}
@@ -57630,7 +57679,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-35"
                 onClick={[Function]}
@@ -57676,7 +57725,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-36"
                 onClick={[Function]}
@@ -57722,7 +57771,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-37"
                 onClick={[Function]}
@@ -57768,7 +57817,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-38"
                 onClick={[Function]}
@@ -57814,7 +57863,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-39"
                 onClick={[Function]}
@@ -57860,7 +57909,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-40"
                 onClick={[Function]}
@@ -57906,7 +57955,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-41"
                 onClick={[Function]}
@@ -57952,7 +58001,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-42"
                 onClick={[Function]}
@@ -57998,7 +58047,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-43"
                 onClick={[Function]}
@@ -58044,7 +58093,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-44"
                 onClick={[Function]}
@@ -58090,7 +58139,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-45"
                 onClick={[Function]}
@@ -58136,7 +58185,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-46"
                 onClick={[Function]}
@@ -58182,7 +58231,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-47"
                 onClick={[Function]}
@@ -58228,7 +58277,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-48"
                 onClick={[Function]}
@@ -58274,7 +58323,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-49"
                 onClick={[Function]}
@@ -58320,7 +58369,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-50"
                 onClick={[Function]}
@@ -58366,7 +58415,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-51"
                 onClick={[Function]}
@@ -58412,7 +58461,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-52"
                 onClick={[Function]}
@@ -58458,7 +58507,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-53"
                 onClick={[Function]}
@@ -58504,7 +58553,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-54"
                 onClick={[Function]}
@@ -58550,7 +58599,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-55"
                 onClick={[Function]}
@@ -58596,7 +58645,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-56"
                 onClick={[Function]}
@@ -58642,7 +58691,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-57"
                 onClick={[Function]}
@@ -58688,7 +58737,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-58"
                 onClick={[Function]}
@@ -58734,7 +58783,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-59"
                 onClick={[Function]}
@@ -58780,7 +58829,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-60"
                 onClick={[Function]}
@@ -58826,7 +58875,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-61"
                 onClick={[Function]}
@@ -58872,7 +58921,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-62"
                 onClick={[Function]}
@@ -58918,7 +58967,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-63"
                 onClick={[Function]}
@@ -58964,7 +59013,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-64"
                 onClick={[Function]}
@@ -59010,7 +59059,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-65"
                 onClick={[Function]}
@@ -59056,7 +59105,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-66"
                 onClick={[Function]}
@@ -59102,7 +59151,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-67"
                 onClick={[Function]}
@@ -59148,7 +59197,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-68"
                 onClick={[Function]}
@@ -59194,7 +59243,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-69"
                 onClick={[Function]}
@@ -59240,7 +59289,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-70"
                 onClick={[Function]}
@@ -59286,7 +59335,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-71"
                 onClick={[Function]}
@@ -59332,7 +59381,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-72"
                 onClick={[Function]}
@@ -59378,7 +59427,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-73"
                 onClick={[Function]}
@@ -59424,7 +59473,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-74"
                 onClick={[Function]}
@@ -59470,7 +59519,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-75"
                 onClick={[Function]}
@@ -59516,7 +59565,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-76"
                 onClick={[Function]}
@@ -59562,7 +59611,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-77"
                 onClick={[Function]}
@@ -59608,7 +59657,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-78"
                 onClick={[Function]}
@@ -59654,7 +59703,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-79"
                 onClick={[Function]}
@@ -59700,7 +59749,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-80"
                 onClick={[Function]}
@@ -59746,7 +59795,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-81"
                 onClick={[Function]}
@@ -59792,7 +59841,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-82"
                 onClick={[Function]}
@@ -59838,7 +59887,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-83"
                 onClick={[Function]}
@@ -59884,7 +59933,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-84"
                 onClick={[Function]}
@@ -59930,7 +59979,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-85"
                 onClick={[Function]}
@@ -59976,7 +60025,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-86"
                 onClick={[Function]}
@@ -60022,7 +60071,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-87"
                 onClick={[Function]}
@@ -60068,7 +60117,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-88"
                 onClick={[Function]}
@@ -60114,7 +60163,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-89"
                 onClick={[Function]}
@@ -60160,7 +60209,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-90"
                 onClick={[Function]}
@@ -60206,7 +60255,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-91"
                 onClick={[Function]}
@@ -60252,7 +60301,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-92"
                 onClick={[Function]}
@@ -60298,7 +60347,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-93"
                 onClick={[Function]}
@@ -60344,7 +60393,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-94"
                 onClick={[Function]}
@@ -60390,7 +60439,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-95"
                 onClick={[Function]}
@@ -60436,7 +60485,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-96"
                 onClick={[Function]}
@@ -60482,7 +60531,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-97"
                 onClick={[Function]}
@@ -60528,7 +60577,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-98"
                 onClick={[Function]}
@@ -60574,7 +60623,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-99"
                 onClick={[Function]}
@@ -64592,7 +64641,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
 `;
 
 exports[`Storybook Snapshot tests and console checks Storyshots Table with row expansion and actions 1`] = `
-.c1 {
+.c0.c0.c0 {
+  padding-right: 1px;
+}
+
+.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -64607,42 +64660,42 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
   align-items: center;
 }
 
-.c1 > * {
+.c2 > * {
   opacity: 0;
 }
 
-.c3.c3.c3 {
+.c4.c4.c4 {
   margin-left: 0.5rem;
   color: #152935;
   opacity: 0;
 }
 
-.c3.c3.c3 svg {
+.c4.c4.c4 svg {
   fill: #152935;
   margin-left: 0;
 }
 
-.c2.c2.c2 {
+.c3.c3.c3 {
   color: #152935;
 }
 
-.c2.c2.c2 svg {
+.c3.c3.c3 svg {
   fill: #152935;
 }
 
-.c2.c2.c2:hover {
+.c3.c3.c3:hover {
   color: #fff;
 }
 
-.c2.c2.c2:hover svg {
+.c3.c3.c3:hover svg {
   fill: #fff;
 }
 
-.c0.c0.c0 {
+.c1.c1.c1 {
   cursor: pointer;
 }
 
-.c0.c0.c0:hover td div > * {
+.c1.c1.c1:hover td div > * {
   opacity: 1;
 }
 
@@ -64676,10 +64729,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
             className="bx--table-toolbar"
           >
             <div
-              className="bx--toolbar-content"
-            />
-            <div
-              className="bx--toolbar-content"
+              className="bx--toolbar-content c0"
             >
               <div
                 className="bx--batch-actions"
@@ -64749,7 +64799,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
             </thead>
             <tbody>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-0"
                 onClick={[Function]}
@@ -64795,10 +64845,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       onClick={[Function]}
                       tabIndex={0}
@@ -64829,7 +64879,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -64862,7 +64912,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-1"
                 onClick={[Function]}
@@ -64908,13 +64958,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <div
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -64947,7 +64997,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-2"
                 onClick={[Function]}
@@ -64993,13 +65043,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <div
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -65032,7 +65082,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-3"
                 onClick={[Function]}
@@ -65078,13 +65128,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <div
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -65117,7 +65167,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-4"
                 onClick={[Function]}
@@ -65163,10 +65213,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       onClick={[Function]}
                       tabIndex={0}
@@ -65197,7 +65247,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -65230,7 +65280,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-5"
                 onClick={[Function]}
@@ -65276,13 +65326,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <div
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -65315,7 +65365,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-6"
                 onClick={[Function]}
@@ -65361,13 +65411,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <div
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -65400,7 +65450,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-7"
                 onClick={[Function]}
@@ -65446,13 +65496,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <div
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -65485,7 +65535,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-8"
                 onClick={[Function]}
@@ -65531,10 +65581,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       onClick={[Function]}
                       tabIndex={0}
@@ -65565,7 +65615,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -65598,7 +65648,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-9"
                 onClick={[Function]}
@@ -65644,13 +65694,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <div
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -65683,7 +65733,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-10"
                 onClick={[Function]}
@@ -65729,13 +65779,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <div
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -65768,7 +65818,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-11"
                 onClick={[Function]}
@@ -65814,13 +65864,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <div
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -65853,7 +65903,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-12"
                 onClick={[Function]}
@@ -65899,10 +65949,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       onClick={[Function]}
                       tabIndex={0}
@@ -65933,7 +65983,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -65966,7 +66016,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-13"
                 onClick={[Function]}
@@ -66012,13 +66062,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <div
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -66051,7 +66101,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-14"
                 onClick={[Function]}
@@ -66097,13 +66147,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <div
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -66136,7 +66186,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-15"
                 onClick={[Function]}
@@ -66182,13 +66232,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <div
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -66221,7 +66271,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-16"
                 onClick={[Function]}
@@ -66267,10 +66317,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       onClick={[Function]}
                       tabIndex={0}
@@ -66301,7 +66351,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -66334,7 +66384,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-17"
                 onClick={[Function]}
@@ -66380,13 +66430,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <div
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -66419,7 +66469,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-18"
                 onClick={[Function]}
@@ -66465,13 +66515,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <div
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -66504,7 +66554,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-19"
                 onClick={[Function]}
@@ -66550,13 +66600,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <div
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -66589,7 +66639,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-20"
                 onClick={[Function]}
@@ -66635,10 +66685,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       onClick={[Function]}
                       tabIndex={0}
@@ -66669,7 +66719,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -66702,7 +66752,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-21"
                 onClick={[Function]}
@@ -66748,13 +66798,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <div
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -66787,7 +66837,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-22"
                 onClick={[Function]}
@@ -66833,13 +66883,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <div
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -66872,7 +66922,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-23"
                 onClick={[Function]}
@@ -66918,13 +66968,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <div
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -66957,7 +67007,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-24"
                 onClick={[Function]}
@@ -67003,10 +67053,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       onClick={[Function]}
                       tabIndex={0}
@@ -67037,7 +67087,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -67070,7 +67120,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-25"
                 onClick={[Function]}
@@ -67116,13 +67166,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <div
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -67155,7 +67205,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-26"
                 onClick={[Function]}
@@ -67201,13 +67251,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <div
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -67240,7 +67290,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-27"
                 onClick={[Function]}
@@ -67286,13 +67336,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <div
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -67325,7 +67375,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-28"
                 onClick={[Function]}
@@ -67371,10 +67421,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       onClick={[Function]}
                       tabIndex={0}
@@ -67405,7 +67455,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -67438,7 +67488,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-29"
                 onClick={[Function]}
@@ -67484,13 +67534,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <div
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -67523,7 +67573,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-30"
                 onClick={[Function]}
@@ -67569,13 +67619,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <div
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -67608,7 +67658,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-31"
                 onClick={[Function]}
@@ -67654,13 +67704,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <div
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -67693,7 +67743,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-32"
                 onClick={[Function]}
@@ -67739,10 +67789,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       onClick={[Function]}
                       tabIndex={0}
@@ -67773,7 +67823,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -67806,7 +67856,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-33"
                 onClick={[Function]}
@@ -67852,13 +67902,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <div
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -67891,7 +67941,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-34"
                 onClick={[Function]}
@@ -67937,13 +67987,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <div
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -67976,7 +68026,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-35"
                 onClick={[Function]}
@@ -68022,13 +68072,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <div
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -68061,7 +68111,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-36"
                 onClick={[Function]}
@@ -68107,10 +68157,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       onClick={[Function]}
                       tabIndex={0}
@@ -68141,7 +68191,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -68174,7 +68224,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-37"
                 onClick={[Function]}
@@ -68220,13 +68270,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <div
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -68259,7 +68309,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-38"
                 onClick={[Function]}
@@ -68305,13 +68355,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <div
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -68344,7 +68394,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-39"
                 onClick={[Function]}
@@ -68390,13 +68440,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <div
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -68429,7 +68479,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-40"
                 onClick={[Function]}
@@ -68475,10 +68525,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       onClick={[Function]}
                       tabIndex={0}
@@ -68509,7 +68559,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -68542,7 +68592,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-41"
                 onClick={[Function]}
@@ -68588,13 +68638,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <div
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -68627,7 +68677,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-42"
                 onClick={[Function]}
@@ -68673,13 +68723,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <div
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -68712,7 +68762,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-43"
                 onClick={[Function]}
@@ -68758,13 +68808,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <div
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -68797,7 +68847,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-44"
                 onClick={[Function]}
@@ -68843,10 +68893,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       onClick={[Function]}
                       tabIndex={0}
@@ -68877,7 +68927,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -68910,7 +68960,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-45"
                 onClick={[Function]}
@@ -68956,13 +69006,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <div
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -68995,7 +69045,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-46"
                 onClick={[Function]}
@@ -69041,13 +69091,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <div
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -69080,7 +69130,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-47"
                 onClick={[Function]}
@@ -69126,13 +69176,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <div
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -69165,7 +69215,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-48"
                 onClick={[Function]}
@@ -69211,10 +69261,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       onClick={[Function]}
                       tabIndex={0}
@@ -69245,7 +69295,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -69278,7 +69328,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-49"
                 onClick={[Function]}
@@ -69324,13 +69374,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <div
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -69363,7 +69413,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-50"
                 onClick={[Function]}
@@ -69409,13 +69459,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <div
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -69448,7 +69498,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-51"
                 onClick={[Function]}
@@ -69494,13 +69544,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <div
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -69533,7 +69583,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-52"
                 onClick={[Function]}
@@ -69579,10 +69629,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       onClick={[Function]}
                       tabIndex={0}
@@ -69613,7 +69663,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -69646,7 +69696,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-53"
                 onClick={[Function]}
@@ -69692,13 +69742,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <div
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -69731,7 +69781,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-54"
                 onClick={[Function]}
@@ -69777,13 +69827,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <div
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -69816,7 +69866,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-55"
                 onClick={[Function]}
@@ -69862,13 +69912,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <div
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -69901,7 +69951,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-56"
                 onClick={[Function]}
@@ -69947,10 +69997,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       onClick={[Function]}
                       tabIndex={0}
@@ -69981,7 +70031,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -70014,7 +70064,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-57"
                 onClick={[Function]}
@@ -70060,13 +70110,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <div
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -70099,7 +70149,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-58"
                 onClick={[Function]}
@@ -70145,13 +70195,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <div
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -70184,7 +70234,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-59"
                 onClick={[Function]}
@@ -70230,13 +70280,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <div
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -70269,7 +70319,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-60"
                 onClick={[Function]}
@@ -70315,10 +70365,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       onClick={[Function]}
                       tabIndex={0}
@@ -70349,7 +70399,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -70382,7 +70432,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-61"
                 onClick={[Function]}
@@ -70428,13 +70478,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <div
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -70467,7 +70517,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-62"
                 onClick={[Function]}
@@ -70513,13 +70563,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <div
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -70552,7 +70602,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-63"
                 onClick={[Function]}
@@ -70598,13 +70648,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <div
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -70637,7 +70687,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-64"
                 onClick={[Function]}
@@ -70683,10 +70733,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       onClick={[Function]}
                       tabIndex={0}
@@ -70717,7 +70767,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -70750,7 +70800,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-65"
                 onClick={[Function]}
@@ -70796,13 +70846,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <div
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -70835,7 +70885,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-66"
                 onClick={[Function]}
@@ -70881,13 +70931,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <div
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -70920,7 +70970,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-67"
                 onClick={[Function]}
@@ -70966,13 +71016,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <div
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -71005,7 +71055,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-68"
                 onClick={[Function]}
@@ -71051,10 +71101,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       onClick={[Function]}
                       tabIndex={0}
@@ -71085,7 +71135,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -71118,7 +71168,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-69"
                 onClick={[Function]}
@@ -71164,13 +71214,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <div
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -71203,7 +71253,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-70"
                 onClick={[Function]}
@@ -71249,13 +71299,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <div
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -71288,7 +71338,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-71"
                 onClick={[Function]}
@@ -71334,13 +71384,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <div
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -71373,7 +71423,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-72"
                 onClick={[Function]}
@@ -71419,10 +71469,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       onClick={[Function]}
                       tabIndex={0}
@@ -71453,7 +71503,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -71486,7 +71536,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-73"
                 onClick={[Function]}
@@ -71532,13 +71582,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <div
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -71571,7 +71621,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-74"
                 onClick={[Function]}
@@ -71617,13 +71667,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <div
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -71656,7 +71706,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-75"
                 onClick={[Function]}
@@ -71702,13 +71752,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <div
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -71741,7 +71791,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-76"
                 onClick={[Function]}
@@ -71787,10 +71837,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       onClick={[Function]}
                       tabIndex={0}
@@ -71821,7 +71871,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -71854,7 +71904,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-77"
                 onClick={[Function]}
@@ -71900,13 +71950,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <div
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -71939,7 +71989,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-78"
                 onClick={[Function]}
@@ -71985,13 +72035,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <div
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -72024,7 +72074,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-79"
                 onClick={[Function]}
@@ -72070,13 +72120,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <div
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -72109,7 +72159,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-80"
                 onClick={[Function]}
@@ -72155,10 +72205,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       onClick={[Function]}
                       tabIndex={0}
@@ -72189,7 +72239,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -72222,7 +72272,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-81"
                 onClick={[Function]}
@@ -72268,13 +72318,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <div
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -72307,7 +72357,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-82"
                 onClick={[Function]}
@@ -72353,13 +72403,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <div
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -72392,7 +72442,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-83"
                 onClick={[Function]}
@@ -72438,13 +72488,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <div
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -72477,7 +72527,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-84"
                 onClick={[Function]}
@@ -72523,10 +72573,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       onClick={[Function]}
                       tabIndex={0}
@@ -72557,7 +72607,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -72590,7 +72640,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-85"
                 onClick={[Function]}
@@ -72636,13 +72686,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <div
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -72675,7 +72725,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-86"
                 onClick={[Function]}
@@ -72721,13 +72771,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <div
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -72760,7 +72810,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-87"
                 onClick={[Function]}
@@ -72806,13 +72856,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <div
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -72845,7 +72895,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-88"
                 onClick={[Function]}
@@ -72891,10 +72941,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       onClick={[Function]}
                       tabIndex={0}
@@ -72925,7 +72975,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -72958,7 +73008,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-89"
                 onClick={[Function]}
@@ -73004,13 +73054,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <div
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -73043,7 +73093,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-90"
                 onClick={[Function]}
@@ -73089,13 +73139,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <div
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -73128,7 +73178,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-91"
                 onClick={[Function]}
@@ -73174,13 +73224,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <div
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -73213,7 +73263,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-92"
                 onClick={[Function]}
@@ -73259,10 +73309,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       onClick={[Function]}
                       tabIndex={0}
@@ -73293,7 +73343,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -73326,7 +73376,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-93"
                 onClick={[Function]}
@@ -73372,13 +73422,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <div
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -73411,7 +73461,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-94"
                 onClick={[Function]}
@@ -73457,13 +73507,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <div
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -73496,7 +73546,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-95"
                 onClick={[Function]}
@@ -73542,13 +73592,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <div
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -73581,7 +73631,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-96"
                 onClick={[Function]}
@@ -73627,10 +73677,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <button
-                      className="c2 bx--btn bx--btn--sm bx--btn--ghost"
+                      className="c3 bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       onClick={[Function]}
                       tabIndex={0}
@@ -73661,7 +73711,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -73694,7 +73744,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-97"
                 onClick={[Function]}
@@ -73740,13 +73790,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <div
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -73779,7 +73829,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-98"
                 onClick={[Function]}
@@ -73825,13 +73875,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <div
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -73864,7 +73914,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 c0"
+                className="bx--parent-row-v2 c1"
                 data-parent-row={true}
                 id="Table-Row-row-99"
                 onClick={[Function]}
@@ -73910,13 +73960,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c1"
+                    className="c2"
                   >
                     <div
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c3 bx--overflow-menu"
+                      className="c4 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -78744,6 +78794,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
 `;
 
 exports[`Storybook Snapshot tests and console checks Storyshots Table with selection and batch actions 1`] = `
+.c1.c1.c1:last-of-type {
+  padding-right: 0.75rem;
+}
+
+.c1.c1.c1:not(:focus) > svg {
+  fill: #5a6872;
+}
+
+.c0.c0.c0 {
+  padding-right: 1px;
+}
+
 <div
   className="storybook-container"
   style={
@@ -78774,10 +78836,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with selec
             className="bx--table-toolbar"
           >
             <div
-              className="bx--toolbar-content"
-            />
-            <div
-              className="bx--toolbar-content"
+              className="bx--toolbar-content c0"
             >
               <div
                 className="bx--batch-actions bx--batch-actions--active"
@@ -78832,7 +78891,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with selec
                 </div>
               </div>
               <button
-                className="bx--btn--sm bx--toolbar-action"
+                className="bx--btn--sm c1 bx--toolbar-action"
                 onClick={[Function]}
               >
                 <svg
@@ -83735,6 +83794,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with selec
 `;
 
 exports[`Storybook Snapshot tests and console checks Storyshots Table with simple search 1`] = `
+.c0.c0.c0 {
+  padding-right: 1px;
+}
+
 <div
   className="storybook-container"
   style={
@@ -83828,10 +83891,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
               </div>
             </div>
             <div
-              className="bx--toolbar-content"
-            />
-            <div
-              className="bx--toolbar-content"
+              className="bx--toolbar-content c0"
             >
               <div
                 className="bx--batch-actions"
@@ -89141,6 +89201,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with simpl
 `;
 
 exports[`Storybook Snapshot tests and console checks Storyshots Table with sorting 1`] = `
+.c0.c0.c0 {
+  padding-right: 1px;
+}
+
 <div
   className="storybook-container"
   style={
@@ -89171,10 +89235,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with sorti
             className="bx--table-toolbar"
           >
             <div
-              className="bx--toolbar-content"
-            />
-            <div
-              className="bx--toolbar-content"
+              className="bx--toolbar-content c0"
             >
               <div
                 className="bx--batch-actions"

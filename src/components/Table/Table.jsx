@@ -229,8 +229,7 @@ const Table = props => {
           tableState={{
             totalSelected: view.table.selectedIds.length,
             totalFilters: view.filters ? view.filters.length : 0,
-            batchActions: view.toolbar.batchActions,
-            search: view.toolbar.search,
+            ...pick(view.toolbar, 'batchActions', 'search', 'activeBar'),
           }}
         />
         <CarbonTable zebra={false}>
