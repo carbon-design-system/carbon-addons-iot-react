@@ -269,7 +269,7 @@ const Table = props => {
               expandedIds={view.table.expandedIds}
               selectedIds={view.table.selectedIds}
               totalColumns={totalColumns}
-              {...pick(options, 'hasRowSelection', 'hasRowExpansion')}
+              {...pick(options, 'hasRowSelection', 'hasRowExpansion', 'shouldExpandOnRowClick')}
               actions={pick(
                 actions.table,
                 'onRowSelected',
