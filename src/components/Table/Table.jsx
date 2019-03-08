@@ -7,10 +7,10 @@ import { PaginationV2, DataTable } from 'carbon-components-react';
 import { defaultFunction } from '../../utils/componentUtilityFunctions';
 
 import {
-  TableDataPropTypes,
   TableColumnsPropTypes,
-  EmptyStatePropTypes,
+  TableDataPropTypes,
   ExpandedRowsPropTypes,
+  EmptyStatePropTypes,
 } from './TablePropTypes';
 import TableHead from './TableHead/TableHead';
 import TableToolbar from './TableToolbar/TableToolbar';
@@ -27,6 +27,8 @@ const propTypes = {
   columns: TableColumnsPropTypes.isRequired,
   /** Data for the body of the table */
   data: TableDataPropTypes.isRequired,
+  /** Expanded data for the table details */
+  expandedData: ExpandedRowsPropTypes,
   /** Optional properties to customize how the table should be rendered */
   options: PropTypes.shape({
     hasPagination: PropTypes.bool,
@@ -36,7 +38,7 @@ const propTypes = {
     hasFilter: PropTypes.bool,
     hasColumnSelection: PropTypes.bool,
   }),
-  /** Initial state of the table, should be updated via a local state wrapper component implementation or via a central store/redux */
+  /** Initial state of the table, should be updated via a local state wrapper component implementation or via a central store/redux see StatefulTable component for an example */
   view: PropTypes.shape({
     pagination: PropTypes.shape({
       pageSize: PropTypes.number,
@@ -87,7 +89,7 @@ const propTypes = {
           isHidden: PropTypes.bool,
         })
       ),
-      expandedRows: ExpandedRowsPropTypes,
+      expandedIds: PropTypes.arrayOf(PropTypes.string),
       emptyState: EmptyStatePropTypes,
       loadingState: PropTypes.shape({
         isLoading: PropTypes.bool,
@@ -99,7 +101,7 @@ const propTypes = {
   actions: PropTypes.shape({
     pagination: PropTypes.shape({
       /** Specify a callback for when the current page or page size is changed. This callback is passed an object parameter containing the current page and the current page size */
-      onChange: PropTypes.func,
+      onChangePage: PropTypes.func,
     }),
     toolbar: PropTypes.shape({
       onApplyFilter: PropTypes.func,
@@ -121,7 +123,6 @@ const propTypes = {
     }).isRequired,
   }),
 };
-
 const defaultProps = baseProps => ({
   id: 'Table',
   options: {
@@ -161,7 +162,7 @@ const defaultProps = baseProps => ({
     },
   },
   actions: {
-    pagination: { onChange: defaultFunction('actions.pagination.onChange') },
+    pagination: { onChangePage: defaultFunction('actions.pagination.onChangePage') },
     toolbar: {
       onToggleFilter: defaultFunction('actions.toolbar.onToggleFilter'),
       onToggleColumnSelection: defaultFunction('actions.toolbar.onToggleColumnSelection'),
@@ -179,7 +180,7 @@ const defaultProps = baseProps => ({
 });
 
 const Table = props => {
-  const { id, columns, data, view, actions, options, className } = merge(
+  const { id, columns, data, expandedData, view, actions, options, className } = merge(
     {},
     defaultProps(props),
     props
@@ -251,8 +252,9 @@ const Table = props => {
             <TableBody
               id={id}
               rows={visibleData}
+              expandedRows={expandedData}
               columns={visibleColumns}
-              expandedRows={view.table.expandedRows}
+              expandedIds={view.table.expandedIds}
               selectedIds={view.table.selectedIds}
               totalColumns={totalColumns}
               {...pick(options, 'hasRowSelection', 'hasRowExpansion')}
@@ -270,7 +272,7 @@ const Table = props => {
       </TableContainer>
 
       {options.hasPagination && !view.table.loadingState.isLoading ? ( // don't show pagination row while loading
-        <PaginationV2 {...view.pagination} {...actions.pagination} />
+        <PaginationV2 {...view.pagination} onChange={actions.pagination.onChangePage} />
       ) : null}
     </div>
   );

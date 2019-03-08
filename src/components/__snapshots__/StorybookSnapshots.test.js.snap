@@ -19037,7 +19037,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                 }
               }
             >
-              This is a working stateful example of the table to showcase it’s various functions. This is produced by wrapping the &lt;Table&gt; in a container component and managing the state associated with features such the toolbar, filters, row select, etc. For more robust documentation on the prop model and source, see the other “with function” stories.
+              This is an example of the &lt;StatefulTable&gt; component that uses local state to handle all the table actions. This is produced by wrapping the &lt;Table&gt; in a container component and managing the state associated with features such the toolbar, filters, row select, etc. For more robust documentation on the prop model and source, see the other “with function” stories.
             </div>
           </div>
           <div>
@@ -19073,9 +19073,2586 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                     }
                   >
                     &lt;
-                    StatefulTableWrapper
+                    StatefulTable
                   </span>
-                  <span />
+                  <span>
+                    <span>
+                      <span>
+                        <br />
+                          
+                      </span>
+                      <span
+                        style={Object {}}
+                      >
+                        columns
+                      </span>
+                      <span>
+                        =
+                        <span
+                          style={Object {}}
+                        >
+                          {
+                          <span
+                            style={
+                              Object {
+                                "color": "#666",
+                              }
+                            }
+                          >
+                            [
+                            <span>
+                              <span>
+                                <br />
+                                  
+                                  
+                              </span>
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#666",
+                                  }
+                                }
+                              >
+                                {
+                                <span>
+                                  <span>
+                                    <br />
+                                        
+                                      
+                                  </span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    id
+                                  </span>
+                                </span>
+                                : 
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  'string'
+                                </span>
+                                ,
+                                <span>
+                                  <span>
+                                    <br />
+                                        
+                                      
+                                  </span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    name
+                                  </span>
+                                </span>
+                                : 
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  'String'
+                                </span>
+                                ,
+                                <span>
+                                  <span>
+                                    <br />
+                                        
+                                      
+                                  </span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    size
+                                  </span>
+                                </span>
+                                : 
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#a11",
+                                    }
+                                  }
+                                >
+                                  1
+                                </span>
+                                ,
+                                <span>
+                                  <span>
+                                    <br />
+                                        
+                                      
+                                  </span>
+                                  …
+                                </span>
+                                <span>
+                                  <br />
+                                      
+                                </span>
+                                }
+                              </span>
+                            </span>
+                            ,
+                            <span>
+                              <span>
+                                <br />
+                                  
+                                  
+                              </span>
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#666",
+                                  }
+                                }
+                              >
+                                {
+                                <span>
+                                  <span>
+                                    <br />
+                                        
+                                      
+                                  </span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    id
+                                  </span>
+                                </span>
+                                : 
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  'date'
+                                </span>
+                                ,
+                                <span>
+                                  <span>
+                                    <br />
+                                        
+                                      
+                                  </span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    name
+                                  </span>
+                                </span>
+                                : 
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  'Date'
+                                </span>
+                                ,
+                                <span>
+                                  <span>
+                                    <br />
+                                        
+                                      
+                                  </span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    size
+                                  </span>
+                                </span>
+                                : 
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#a11",
+                                    }
+                                  }
+                                >
+                                  1
+                                </span>
+                                ,
+                                <span>
+                                  <span>
+                                    <br />
+                                        
+                                      
+                                  </span>
+                                  …
+                                </span>
+                                <span>
+                                  <br />
+                                      
+                                </span>
+                                }
+                              </span>
+                            </span>
+                            ,
+                            <span>
+                              <span>
+                                <br />
+                                  
+                                  
+                              </span>
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#666",
+                                  }
+                                }
+                              >
+                                {
+                                <span>
+                                  <span>
+                                    <br />
+                                        
+                                      
+                                  </span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    id
+                                  </span>
+                                </span>
+                                : 
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  'select'
+                                </span>
+                                ,
+                                <span>
+                                  <span>
+                                    <br />
+                                        
+                                      
+                                  </span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    name
+                                  </span>
+                                </span>
+                                : 
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  'Select'
+                                </span>
+                                ,
+                                <span>
+                                  <span>
+                                    <br />
+                                        
+                                      
+                                  </span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    size
+                                  </span>
+                                </span>
+                                : 
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#a11",
+                                    }
+                                  }
+                                >
+                                  1
+                                </span>
+                                ,
+                                <span>
+                                  <span>
+                                    <br />
+                                        
+                                      
+                                  </span>
+                                  …
+                                </span>
+                                <span>
+                                  <br />
+                                      
+                                </span>
+                                }
+                              </span>
+                            </span>
+                            ,
+                            <span>
+                              <span>
+                                <br />
+                                  
+                                  
+                              </span>
+                              …
+                            </span>
+                            <span>
+                              <br />
+                                
+                            </span>
+                            ]
+                          </span>
+                          }
+                        </span>
+                      </span>
+                    </span>
+                    <span>
+                      <span>
+                        <br />
+                          
+                      </span>
+                      <span
+                        style={Object {}}
+                      >
+                        data
+                      </span>
+                      <span>
+                        =
+                        <span
+                          style={Object {}}
+                        >
+                          {
+                          <span
+                            style={
+                              Object {
+                                "color": "#666",
+                              }
+                            }
+                          >
+                            [
+                            <span>
+                              <span>
+                                <br />
+                                  
+                                  
+                              </span>
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#666",
+                                  }
+                                }
+                              >
+                                {
+                                <span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    id
+                                  </span>
+                                </span>
+                                : 
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  'row-0'
+                                </span>
+                                ,
+                                <span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    values
+                                  </span>
+                                </span>
+                                : 
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  {
+                                  <span>
+                                    <span>
+                                      <br />
+                                            
+                                        
+                                    </span>
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#666",
+                                        }
+                                      }
+                                    >
+                                      string
+                                    </span>
+                                  </span>
+                                  : 
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#22a",
+                                        "wordBreak": "break-word",
+                                      }
+                                    }
+                                  >
+                                    'toyota toyota toyota 0'
+                                  </span>
+                                  ,
+                                  <span>
+                                    <span>
+                                      <br />
+                                            
+                                        
+                                    </span>
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#666",
+                                        }
+                                      }
+                                    >
+                                      date
+                                    </span>
+                                  </span>
+                                  : 
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#22a",
+                                        "wordBreak": "break-word",
+                                      }
+                                    }
+                                  >
+                                    '1973-03-03T09:46:40.000Z'
+                                  </span>
+                                  ,
+                                  <span>
+                                    <span>
+                                      <br />
+                                            
+                                        
+                                    </span>
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#666",
+                                        }
+                                      }
+                                    >
+                                      select
+                                    </span>
+                                  </span>
+                                  : 
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#22a",
+                                        "wordBreak": "break-word",
+                                      }
+                                    }
+                                  >
+                                    'option-A'
+                                  </span>
+                                  ,
+                                  <span>
+                                    <span>
+                                      <br />
+                                            
+                                        
+                                    </span>
+                                    …
+                                  </span>
+                                  <span>
+                                    <br />
+                                          
+                                  </span>
+                                  }
+                                </span>
+                                ,
+                                <span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    rowActions
+                                  </span>
+                                </span>
+                                : 
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  [
+                                  <span>
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#666",
+                                        }
+                                      }
+                                    >
+                                      {
+                                      <span>
+                                        <span>
+                                          <br />
+                                                  
+                                            
+                                        </span>
+                                        <span
+                                          style={
+                                            Object {
+                                              "color": "#666",
+                                            }
+                                          }
+                                        >
+                                          id
+                                        </span>
+                                      </span>
+                                      : 
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#22a",
+                                            "wordBreak": "break-word",
+                                          }
+                                        }
+                                      >
+                                        'Add'
+                                      </span>
+                                      ,
+                                      <span>
+                                        <span>
+                                          <br />
+                                                  
+                                            
+                                        </span>
+                                        <span
+                                          style={
+                                            Object {
+                                              "color": "#666",
+                                            }
+                                          }
+                                        >
+                                          icon
+                                        </span>
+                                      </span>
+                                      : 
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#22a",
+                                            "wordBreak": "break-word",
+                                          }
+                                        }
+                                      >
+                                        'icon--add'
+                                      </span>
+                                      ,
+                                      <span>
+                                        <span>
+                                          <br />
+                                                  
+                                            
+                                        </span>
+                                        <span
+                                          style={
+                                            Object {
+                                              "color": "#666",
+                                            }
+                                          }
+                                        >
+                                          labelText
+                                        </span>
+                                      </span>
+                                      : 
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#22a",
+                                            "wordBreak": "break-word",
+                                          }
+                                        }
+                                      >
+                                        'Add'
+                                      </span>
+                                      ,
+                                      <span>
+                                        <span>
+                                          <br />
+                                                  
+                                            
+                                        </span>
+                                        …
+                                      </span>
+                                      <span>
+                                        <br />
+                                                
+                                      </span>
+                                      }
+                                    </span>
+                                  </span>
+                                  ]
+                                </span>
+                                }
+                              </span>
+                            </span>
+                            ,
+                            <span>
+                              <span>
+                                <br />
+                                  
+                                  
+                              </span>
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#666",
+                                  }
+                                }
+                              >
+                                {
+                                <span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    id
+                                  </span>
+                                </span>
+                                : 
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  'row-1'
+                                </span>
+                                ,
+                                <span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    values
+                                  </span>
+                                </span>
+                                : 
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  {
+                                  <span>
+                                    <span>
+                                      <br />
+                                            
+                                        
+                                    </span>
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#666",
+                                        }
+                                      }
+                                    >
+                                      string
+                                    </span>
+                                  </span>
+                                  : 
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#22a",
+                                        "wordBreak": "break-word",
+                                      }
+                                    }
+                                  >
+                                    'helping whiteboard as 1'
+                                  </span>
+                                  ,
+                                  <span>
+                                    <span>
+                                      <br />
+                                            
+                                        
+                                    </span>
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#666",
+                                        }
+                                      }
+                                    >
+                                      date
+                                    </span>
+                                  </span>
+                                  : 
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#22a",
+                                        "wordBreak": "break-word",
+                                      }
+                                    }
+                                  >
+                                    '1973-03-14T23:33:20.000Z'
+                                  </span>
+                                  ,
+                                  <span>
+                                    <span>
+                                      <br />
+                                            
+                                        
+                                    </span>
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#666",
+                                        }
+                                      }
+                                    >
+                                      select
+                                    </span>
+                                  </span>
+                                  : 
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#22a",
+                                        "wordBreak": "break-word",
+                                      }
+                                    }
+                                  >
+                                    'option-B'
+                                  </span>
+                                  ,
+                                  <span>
+                                    <span>
+                                      <br />
+                                            
+                                        
+                                    </span>
+                                    …
+                                  </span>
+                                  <span>
+                                    <br />
+                                          
+                                  </span>
+                                  }
+                                </span>
+                                ,
+                                <span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    rowActions
+                                  </span>
+                                </span>
+                                : 
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  [
+                                  <span>
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#666",
+                                        }
+                                      }
+                                    >
+                                      {
+                                      <span>
+                                        <span
+                                          style={
+                                            Object {
+                                              "color": "#666",
+                                            }
+                                          }
+                                        >
+                                          id
+                                        </span>
+                                      </span>
+                                      : 
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#22a",
+                                            "wordBreak": "break-word",
+                                          }
+                                        }
+                                      >
+                                        'drilldown'
+                                      </span>
+                                      ,
+                                      <span>
+                                        <span
+                                          style={
+                                            Object {
+                                              "color": "#666",
+                                            }
+                                          }
+                                        >
+                                          icon
+                                        </span>
+                                      </span>
+                                      : 
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#22a",
+                                            "wordBreak": "break-word",
+                                          }
+                                        }
+                                      >
+                                        'arrow--right'
+                                      </span>
+                                      ,
+                                      <span>
+                                        <span
+                                          style={
+                                            Object {
+                                              "color": "#666",
+                                            }
+                                          }
+                                        >
+                                          labelText
+                                        </span>
+                                      </span>
+                                      : 
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#22a",
+                                            "wordBreak": "break-word",
+                                          }
+                                        }
+                                      >
+                                        'Drill in'
+                                      </span>
+                                      }
+                                    </span>
+                                  </span>
+                                  ,
+                                  <span>
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#666",
+                                        }
+                                      }
+                                    >
+                                      {
+                                      <span>
+                                        <span>
+                                          <br />
+                                                  
+                                            
+                                        </span>
+                                        <span
+                                          style={
+                                            Object {
+                                              "color": "#666",
+                                            }
+                                          }
+                                        >
+                                          id
+                                        </span>
+                                      </span>
+                                      : 
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#22a",
+                                            "wordBreak": "break-word",
+                                          }
+                                        }
+                                      >
+                                        'Add'
+                                      </span>
+                                      ,
+                                      <span>
+                                        <span>
+                                          <br />
+                                                  
+                                            
+                                        </span>
+                                        <span
+                                          style={
+                                            Object {
+                                              "color": "#666",
+                                            }
+                                          }
+                                        >
+                                          icon
+                                        </span>
+                                      </span>
+                                      : 
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#22a",
+                                            "wordBreak": "break-word",
+                                          }
+                                        }
+                                      >
+                                        'icon--add'
+                                      </span>
+                                      ,
+                                      <span>
+                                        <span>
+                                          <br />
+                                                  
+                                            
+                                        </span>
+                                        <span
+                                          style={
+                                            Object {
+                                              "color": "#666",
+                                            }
+                                          }
+                                        >
+                                          labelText
+                                        </span>
+                                      </span>
+                                      : 
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#22a",
+                                            "wordBreak": "break-word",
+                                          }
+                                        }
+                                      >
+                                        'Add'
+                                      </span>
+                                      ,
+                                      <span>
+                                        <span>
+                                          <br />
+                                                  
+                                            
+                                        </span>
+                                        …
+                                      </span>
+                                      <span>
+                                        <br />
+                                                
+                                      </span>
+                                      }
+                                    </span>
+                                  </span>
+                                  ]
+                                </span>
+                                }
+                              </span>
+                            </span>
+                            ,
+                            <span>
+                              <span>
+                                <br />
+                                  
+                                  
+                              </span>
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#666",
+                                  }
+                                }
+                              >
+                                {
+                                <span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    id
+                                  </span>
+                                </span>
+                                : 
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  'row-2'
+                                </span>
+                                ,
+                                <span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    values
+                                  </span>
+                                </span>
+                                : 
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  {
+                                  <span>
+                                    <span>
+                                      <br />
+                                            
+                                        
+                                    </span>
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#666",
+                                        }
+                                      }
+                                    >
+                                      string
+                                    </span>
+                                  </span>
+                                  : 
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#22a",
+                                        "wordBreak": "break-word",
+                                      }
+                                    }
+                                  >
+                                    'whiteboard can eat 2'
+                                  </span>
+                                  ,
+                                  <span>
+                                    <span>
+                                      <br />
+                                            
+                                        
+                                    </span>
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#666",
+                                        }
+                                      }
+                                    >
+                                      date
+                                    </span>
+                                  </span>
+                                  : 
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#22a",
+                                        "wordBreak": "break-word",
+                                      }
+                                    }
+                                  >
+                                    '1973-04-18T16:53:20.000Z'
+                                  </span>
+                                  ,
+                                  <span>
+                                    <span>
+                                      <br />
+                                            
+                                        
+                                    </span>
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#666",
+                                        }
+                                      }
+                                    >
+                                      select
+                                    </span>
+                                  </span>
+                                  : 
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#22a",
+                                        "wordBreak": "break-word",
+                                      }
+                                    }
+                                  >
+                                    'option-C'
+                                  </span>
+                                  ,
+                                  <span>
+                                    <span>
+                                      <br />
+                                            
+                                        
+                                    </span>
+                                    …
+                                  </span>
+                                  <span>
+                                    <br />
+                                          
+                                  </span>
+                                  }
+                                </span>
+                                ,
+                                <span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    rowActions
+                                  </span>
+                                </span>
+                                : 
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  [
+                                  <span>
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#666",
+                                        }
+                                      }
+                                    >
+                                      {
+                                      <span>
+                                        <span
+                                          style={
+                                            Object {
+                                              "color": "#666",
+                                            }
+                                          }
+                                        >
+                                          id
+                                        </span>
+                                      </span>
+                                      : 
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#22a",
+                                            "wordBreak": "break-word",
+                                          }
+                                        }
+                                      >
+                                        'drilldown'
+                                      </span>
+                                      ,
+                                      <span>
+                                        <span
+                                          style={
+                                            Object {
+                                              "color": "#666",
+                                            }
+                                          }
+                                        >
+                                          icon
+                                        </span>
+                                      </span>
+                                      : 
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#22a",
+                                            "wordBreak": "break-word",
+                                          }
+                                        }
+                                      >
+                                        'arrow--right'
+                                      </span>
+                                      ,
+                                      <span>
+                                        <span
+                                          style={
+                                            Object {
+                                              "color": "#666",
+                                            }
+                                          }
+                                        >
+                                          labelText
+                                        </span>
+                                      </span>
+                                      : 
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#22a",
+                                            "wordBreak": "break-word",
+                                          }
+                                        }
+                                      >
+                                        'Drill in'
+                                      </span>
+                                      }
+                                    </span>
+                                  </span>
+                                  ,
+                                  <span>
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#666",
+                                        }
+                                      }
+                                    >
+                                      {
+                                      <span>
+                                        <span>
+                                          <br />
+                                                  
+                                            
+                                        </span>
+                                        <span
+                                          style={
+                                            Object {
+                                              "color": "#666",
+                                            }
+                                          }
+                                        >
+                                          id
+                                        </span>
+                                      </span>
+                                      : 
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#22a",
+                                            "wordBreak": "break-word",
+                                          }
+                                        }
+                                      >
+                                        'Add'
+                                      </span>
+                                      ,
+                                      <span>
+                                        <span>
+                                          <br />
+                                                  
+                                            
+                                        </span>
+                                        <span
+                                          style={
+                                            Object {
+                                              "color": "#666",
+                                            }
+                                          }
+                                        >
+                                          icon
+                                        </span>
+                                      </span>
+                                      : 
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#22a",
+                                            "wordBreak": "break-word",
+                                          }
+                                        }
+                                      >
+                                        'icon--add'
+                                      </span>
+                                      ,
+                                      <span>
+                                        <span>
+                                          <br />
+                                                  
+                                            
+                                        </span>
+                                        <span
+                                          style={
+                                            Object {
+                                              "color": "#666",
+                                            }
+                                          }
+                                        >
+                                          labelText
+                                        </span>
+                                      </span>
+                                      : 
+                                      <span
+                                        style={
+                                          Object {
+                                            "color": "#22a",
+                                            "wordBreak": "break-word",
+                                          }
+                                        }
+                                      >
+                                        'Add'
+                                      </span>
+                                      ,
+                                      <span>
+                                        <span>
+                                          <br />
+                                                  
+                                            
+                                        </span>
+                                        …
+                                      </span>
+                                      <span>
+                                        <br />
+                                                
+                                      </span>
+                                      }
+                                    </span>
+                                  </span>
+                                  ]
+                                </span>
+                                }
+                              </span>
+                            </span>
+                            ,
+                            <span>
+                              <span>
+                                <br />
+                                  
+                                  
+                              </span>
+                              …
+                            </span>
+                            <span>
+                              <br />
+                                
+                            </span>
+                            ]
+                          </span>
+                          }
+                        </span>
+                      </span>
+                    </span>
+                    <span>
+                      <span>
+                        <br />
+                          
+                      </span>
+                      <span
+                        style={Object {}}
+                      >
+                        expandedData
+                      </span>
+                      <span>
+                        =
+                        <span
+                          style={Object {}}
+                        >
+                          {
+                          <span
+                            style={
+                              Object {
+                                "color": "#666",
+                              }
+                            }
+                          >
+                            [
+                            <span>
+                              <span>
+                                <br />
+                                  
+                                  
+                              </span>
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#666",
+                                  }
+                                }
+                              >
+                                {
+                                <span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    rowId
+                                  </span>
+                                </span>
+                                : 
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  'row-0'
+                                </span>
+                                ,
+                                <span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    content
+                                  </span>
+                                </span>
+                                : 
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  &lt;RowExpansionContent /&gt;
+                                </span>
+                                }
+                              </span>
+                            </span>
+                            ,
+                            <span>
+                              <span>
+                                <br />
+                                  
+                                  
+                              </span>
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#666",
+                                  }
+                                }
+                              >
+                                {
+                                <span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    rowId
+                                  </span>
+                                </span>
+                                : 
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  'row-1'
+                                </span>
+                                ,
+                                <span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    content
+                                  </span>
+                                </span>
+                                : 
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  &lt;RowExpansionContent /&gt;
+                                </span>
+                                }
+                              </span>
+                            </span>
+                            ,
+                            <span>
+                              <span>
+                                <br />
+                                  
+                                  
+                              </span>
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#666",
+                                  }
+                                }
+                              >
+                                {
+                                <span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    rowId
+                                  </span>
+                                </span>
+                                : 
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  'row-2'
+                                </span>
+                                ,
+                                <span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    content
+                                  </span>
+                                </span>
+                                : 
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  &lt;RowExpansionContent /&gt;
+                                </span>
+                                }
+                              </span>
+                            </span>
+                            ,
+                            <span>
+                              <span>
+                                <br />
+                                  
+                                  
+                              </span>
+                              …
+                            </span>
+                            <span>
+                              <br />
+                                
+                            </span>
+                            ]
+                          </span>
+                          }
+                        </span>
+                      </span>
+                    </span>
+                    <span>
+                      <span>
+                        <br />
+                          
+                      </span>
+                      <span
+                        style={Object {}}
+                      >
+                        options
+                      </span>
+                      <span>
+                        =
+                        <span
+                          style={Object {}}
+                        >
+                          {
+                          <span
+                            style={
+                              Object {
+                                "color": "#666",
+                              }
+                            }
+                          >
+                            {
+                            <span>
+                              <span>
+                                <br />
+                                  
+                                  
+                              </span>
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#666",
+                                  }
+                                }
+                              >
+                                hasFilter
+                              </span>
+                            </span>
+                            : 
+                            <span
+                              style={
+                                Object {
+                                  "color": "#a11",
+                                }
+                              }
+                            >
+                              true
+                            </span>
+                            ,
+                            <span>
+                              <span>
+                                <br />
+                                  
+                                  
+                              </span>
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#666",
+                                  }
+                                }
+                              >
+                                hasPagination
+                              </span>
+                            </span>
+                            : 
+                            <span
+                              style={
+                                Object {
+                                  "color": "#a11",
+                                }
+                              }
+                            >
+                              true
+                            </span>
+                            ,
+                            <span>
+                              <span>
+                                <br />
+                                  
+                                  
+                              </span>
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#666",
+                                  }
+                                }
+                              >
+                                hasRowSelection
+                              </span>
+                            </span>
+                            : 
+                            <span
+                              style={
+                                Object {
+                                  "color": "#a11",
+                                }
+                              }
+                            >
+                              true
+                            </span>
+                            ,
+                            <span>
+                              <span>
+                                <br />
+                                  
+                                  
+                              </span>
+                              …
+                            </span>
+                            <span>
+                              <br />
+                                
+                            </span>
+                            }
+                          </span>
+                          }
+                        </span>
+                      </span>
+                    </span>
+                    <span>
+                      <span>
+                        <br />
+                          
+                      </span>
+                      <span
+                        style={Object {}}
+                      >
+                        view
+                      </span>
+                      <span>
+                        =
+                        <span
+                          style={Object {}}
+                        >
+                          {
+                          <span
+                            style={
+                              Object {
+                                "color": "#666",
+                              }
+                            }
+                          >
+                            {
+                            <span>
+                              <span>
+                                <br />
+                                  
+                                  
+                              </span>
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#666",
+                                  }
+                                }
+                              >
+                                filters
+                              </span>
+                            </span>
+                            : 
+                            <span
+                              style={
+                                Object {
+                                  "color": "#666",
+                                }
+                              }
+                            >
+                              [
+                              <span>
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  {
+                                  <span>
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#666",
+                                        }
+                                      }
+                                    >
+                                      columnId
+                                    </span>
+                                  </span>
+                                  : 
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#22a",
+                                        "wordBreak": "break-word",
+                                      }
+                                    }
+                                  >
+                                    'string'
+                                  </span>
+                                  ,
+                                  <span>
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#666",
+                                        }
+                                      }
+                                    >
+                                      value
+                                    </span>
+                                  </span>
+                                  : 
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#22a",
+                                        "wordBreak": "break-word",
+                                      }
+                                    }
+                                  >
+                                    'whiteboard'
+                                  </span>
+                                  }
+                                </span>
+                              </span>
+                              ,
+                              <span>
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  {
+                                  <span>
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#666",
+                                        }
+                                      }
+                                    >
+                                      columnId
+                                    </span>
+                                  </span>
+                                  : 
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#22a",
+                                        "wordBreak": "break-word",
+                                      }
+                                    }
+                                  >
+                                    'select'
+                                  </span>
+                                  ,
+                                  <span>
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#666",
+                                        }
+                                      }
+                                    >
+                                      value
+                                    </span>
+                                  </span>
+                                  : 
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#22a",
+                                        "wordBreak": "break-word",
+                                      }
+                                    }
+                                  >
+                                    'option-B'
+                                  </span>
+                                  }
+                                </span>
+                              </span>
+                              ]
+                            </span>
+                            ,
+                            <span>
+                              <span>
+                                <br />
+                                  
+                                  
+                              </span>
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#666",
+                                  }
+                                }
+                              >
+                                pagination
+                              </span>
+                            </span>
+                            : 
+                            <span
+                              style={
+                                Object {
+                                  "color": "#666",
+                                }
+                              }
+                            >
+                              {
+                              <span>
+                                <span>
+                                  <br />
+                                      
+                                    
+                                </span>
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  pageSize
+                                </span>
+                              </span>
+                              : 
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#a11",
+                                  }
+                                }
+                              >
+                                10
+                              </span>
+                              ,
+                              <span>
+                                <span>
+                                  <br />
+                                      
+                                    
+                                </span>
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  pageSizes
+                                </span>
+                              </span>
+                              : 
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#666",
+                                  }
+                                }
+                              >
+                                [
+                                <span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#a11",
+                                      }
+                                    }
+                                  >
+                                    10
+                                  </span>
+                                </span>
+                                ,
+                                <span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#a11",
+                                      }
+                                    }
+                                  >
+                                    20
+                                  </span>
+                                </span>
+                                ,
+                                <span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#a11",
+                                      }
+                                    }
+                                  >
+                                    30
+                                  </span>
+                                </span>
+                                ]
+                              </span>
+                              ,
+                              <span>
+                                <span>
+                                  <br />
+                                      
+                                    
+                                </span>
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  page
+                                </span>
+                              </span>
+                              : 
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#a11",
+                                  }
+                                }
+                              >
+                                1
+                              </span>
+                              ,
+                              <span>
+                                <span>
+                                  <br />
+                                      
+                                    
+                                </span>
+                                …
+                              </span>
+                              <span>
+                                <br />
+                                    
+                              </span>
+                              }
+                            </span>
+                            ,
+                            <span>
+                              <span>
+                                <br />
+                                  
+                                  
+                              </span>
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#666",
+                                  }
+                                }
+                              >
+                                table
+                              </span>
+                            </span>
+                            : 
+                            <span
+                              style={
+                                Object {
+                                  "color": "#666",
+                                }
+                              }
+                            >
+                              {
+                              <span>
+                                <span>
+                                  <br />
+                                      
+                                    
+                                </span>
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  isSelectAllSelected
+                                </span>
+                              </span>
+                              : 
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#a11",
+                                  }
+                                }
+                              >
+                                false
+                              </span>
+                              ,
+                              <span>
+                                <span>
+                                  <br />
+                                      
+                                    
+                                </span>
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  selectedIds
+                                </span>
+                              </span>
+                              : 
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#666",
+                                  }
+                                }
+                              >
+                                [
+                                ]
+                              </span>
+                              ,
+                              <span>
+                                <span>
+                                  <br />
+                                      
+                                    
+                                </span>
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  sort
+                                </span>
+                              </span>
+                              : 
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#444",
+                                  }
+                                }
+                              >
+                                null
+                              </span>
+                              ,
+                              <span>
+                                <span>
+                                  <br />
+                                      
+                                    
+                                </span>
+                                …
+                              </span>
+                              <span>
+                                <br />
+                                    
+                              </span>
+                              }
+                            </span>
+                            ,
+                            <span>
+                              <span>
+                                <br />
+                                  
+                                  
+                              </span>
+                              …
+                            </span>
+                            <span>
+                              <br />
+                                
+                            </span>
+                            }
+                          </span>
+                          }
+                        </span>
+                      </span>
+                    </span>
+                    <span>
+                      <span>
+                        <br />
+                          
+                      </span>
+                      <span
+                        style={Object {}}
+                      >
+                        actions
+                      </span>
+                      <span>
+                        =
+                        <span
+                          style={Object {}}
+                        >
+                          {
+                          <span
+                            style={
+                              Object {
+                                "color": "#666",
+                              }
+                            }
+                          >
+                            {
+                            <span>
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#666",
+                                  }
+                                }
+                              >
+                                pagination
+                              </span>
+                            </span>
+                            : 
+                            <span
+                              style={
+                                Object {
+                                  "color": "#666",
+                                }
+                              }
+                            >
+                              {
+                              <span>
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  onChangePage
+                                </span>
+                              </span>
+                              : 
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#170",
+                                  }
+                                }
+                              >
+                                onChangePage
+                              </span>
+                              }
+                            </span>
+                            ,
+                            <span>
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#666",
+                                  }
+                                }
+                              >
+                                toolbar
+                              </span>
+                            </span>
+                            : 
+                            <span
+                              style={
+                                Object {
+                                  "color": "#666",
+                                }
+                              }
+                            >
+                              {
+                              <span>
+                                <span>
+                                  <br />
+                                      
+                                    
+                                </span>
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  onApplyFilter
+                                </span>
+                              </span>
+                              : 
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#170",
+                                  }
+                                }
+                              >
+                                onApplyFilter
+                              </span>
+                              ,
+                              <span>
+                                <span>
+                                  <br />
+                                      
+                                    
+                                </span>
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  onToggleFilter
+                                </span>
+                              </span>
+                              : 
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#170",
+                                  }
+                                }
+                              >
+                                onToggleFilter
+                              </span>
+                              ,
+                              <span>
+                                <span>
+                                  <br />
+                                      
+                                    
+                                </span>
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  onToggleColumnSelection
+                                </span>
+                              </span>
+                              : 
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#170",
+                                  }
+                                }
+                              >
+                                onToggleColumnSelection
+                              </span>
+                              ,
+                              <span>
+                                <span>
+                                  <br />
+                                      
+                                    
+                                </span>
+                                …
+                              </span>
+                              <span>
+                                <br />
+                                    
+                              </span>
+                              }
+                            </span>
+                            ,
+                            <span>
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#666",
+                                  }
+                                }
+                              >
+                                table
+                              </span>
+                            </span>
+                            : 
+                            <span
+                              style={
+                                Object {
+                                  "color": "#666",
+                                }
+                              }
+                            >
+                              {
+                              <span>
+                                <span>
+                                  <br />
+                                      
+                                    
+                                </span>
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  onRowSelected
+                                </span>
+                              </span>
+                              : 
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#170",
+                                  }
+                                }
+                              >
+                                onRowSelected
+                              </span>
+                              ,
+                              <span>
+                                <span>
+                                  <br />
+                                      
+                                    
+                                </span>
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  onSelectAll
+                                </span>
+                              </span>
+                              : 
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#170",
+                                  }
+                                }
+                              >
+                                onSelectAll
+                              </span>
+                              ,
+                              <span>
+                                <span>
+                                  <br />
+                                      
+                                    
+                                </span>
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  onEmptyStateAction
+                                </span>
+                              </span>
+                              : 
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#170",
+                                  }
+                                }
+                              >
+                                onEmptyStateAction
+                              </span>
+                              ,
+                              <span>
+                                <span>
+                                  <br />
+                                      
+                                    
+                                </span>
+                                …
+                              </span>
+                              <span>
+                                <br />
+                                    
+                              </span>
+                              }
+                            </span>
+                            }
+                          </span>
+                          }
+                        </span>
+                      </span>
+                      <br />
+                    </span>
+                  </span>
                   <span
                     style={
                       Object {
@@ -19253,6 +21830,35 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                       className="css-11b5gui e6fp4ir0"
                     >
                       Data for the body of the table
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      expandedData
+                    </td>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      <span>
+                        custom
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      -
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      -
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      Expanded data for the table details
                     </td>
                   </tr>
                   <tr>
@@ -20398,13 +23004,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                                   }
                                 }
                               >
-                                expandedRows
+                                expandedIds
                                 ?
                                 :
                                  
                               </span>
                               <span>
-                                custom
+                                <span>
+                                  [
+                                </span>
+                                <span>
+                                  <span>
+                                    string
+                                  </span>
+                                </span>
+                                <span>
+                                  ]
+                                </span>
                               </span>
                               ,
                             </div>
@@ -20559,7 +23175,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                     <td
                       className="css-11b5gui e6fp4ir0"
                     >
-                      Initial state of the table, should be updated via a local state wrapper component implementation or via a central store/redux
+                      Initial state of the table, should be updated via a local state wrapper component implementation or via a central store/redux see StatefulTable component for an example
                     </td>
                   </tr>
                   <tr>
@@ -20634,7 +23250,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table Stateful E
                                   }
                                 }
                               >
-                                onChange
+                                onChangePage
                                 ?
                                 :
                                  
@@ -23990,7 +26606,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                                     }
                                   }
                                 >
-                                  onChange
+                                  onChangePage
                                 </span>
                               </span>
                               : 
@@ -24001,7 +26617,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                                   }
                                 }
                               >
-                                onChange
+                                onChangePage
                               </span>
                               }
                             </span>
@@ -24422,6 +27038,35 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                       className="css-11b5gui e6fp4ir0"
                     >
                       Data for the body of the table
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      expandedData
+                    </td>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      <span>
+                        custom
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      -
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      -
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      Expanded data for the table details
                     </td>
                   </tr>
                   <tr>
@@ -25567,13 +28212,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                                   }
                                 }
                               >
-                                expandedRows
+                                expandedIds
                                 ?
                                 :
                                  
                               </span>
                               <span>
-                                custom
+                                <span>
+                                  [
+                                </span>
+                                <span>
+                                  <span>
+                                    string
+                                  </span>
+                                </span>
+                                <span>
+                                  ]
+                                </span>
                               </span>
                               ,
                             </div>
@@ -25728,7 +28383,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                     <td
                       className="css-11b5gui e6fp4ir0"
                     >
-                      Initial state of the table, should be updated via a local state wrapper component implementation or via a central store/redux
+                      Initial state of the table, should be updated via a local state wrapper component implementation or via a central store/redux see StatefulTable component for an example
                     </td>
                   </tr>
                   <tr>
@@ -25803,7 +28458,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table default 1`
                                   }
                                 }
                               >
-                                onChange
+                                onChangePage
                                 ?
                                 :
                                  
@@ -27546,7 +30201,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table is loading
                                     }
                                   }
                                 >
-                                  onChange
+                                  onChangePage
                                 </span>
                               </span>
                               : 
@@ -27557,7 +30212,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table is loading
                                   }
                                 }
                               >
-                                onChange
+                                onChangePage
                               </span>
                               }
                             </span>
@@ -28294,6 +30949,35 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table is loading
                       className="css-11b5gui e6fp4ir0"
                     >
                       Data for the body of the table
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      expandedData
+                    </td>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      <span>
+                        custom
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      -
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      -
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      Expanded data for the table details
                     </td>
                   </tr>
                   <tr>
@@ -29439,13 +32123,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table is loading
                                   }
                                 }
                               >
-                                expandedRows
+                                expandedIds
                                 ?
                                 :
                                  
                               </span>
                               <span>
-                                custom
+                                <span>
+                                  [
+                                </span>
+                                <span>
+                                  <span>
+                                    string
+                                  </span>
+                                </span>
+                                <span>
+                                  ]
+                                </span>
                               </span>
                               ,
                             </div>
@@ -29600,7 +32294,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table is loading
                     <td
                       className="css-11b5gui e6fp4ir0"
                     >
-                      Initial state of the table, should be updated via a local state wrapper component implementation or via a central store/redux
+                      Initial state of the table, should be updated via a local state wrapper component implementation or via a central store/redux see StatefulTable component for an example
                     </td>
                   </tr>
                   <tr>
@@ -29675,7 +32369,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table is loading
                                   }
                                 }
                               >
-                                onChange
+                                onChangePage
                                 ?
                                 :
                                  
@@ -32190,7 +34884,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with custo
                                     }
                                   }
                                 >
-                                  onChange
+                                  onChangePage
                                 </span>
                               </span>
                               : 
@@ -32201,7 +34895,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with custo
                                   }
                                 }
                               >
-                                onChange
+                                onChangePage
                               </span>
                               }
                             </span>
@@ -33034,6 +35728,35 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with custo
                       className="css-11b5gui e6fp4ir0"
                     >
                       Data for the body of the table
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      expandedData
+                    </td>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      <span>
+                        custom
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      -
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      -
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      Expanded data for the table details
                     </td>
                   </tr>
                   <tr>
@@ -34179,13 +36902,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with custo
                                   }
                                 }
                               >
-                                expandedRows
+                                expandedIds
                                 ?
                                 :
                                  
                               </span>
                               <span>
-                                custom
+                                <span>
+                                  [
+                                </span>
+                                <span>
+                                  <span>
+                                    string
+                                  </span>
+                                </span>
+                                <span>
+                                  ]
+                                </span>
                               </span>
                               ,
                             </div>
@@ -34340,7 +37073,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with custo
                     <td
                       className="css-11b5gui e6fp4ir0"
                     >
-                      Initial state of the table, should be updated via a local state wrapper component implementation or via a central store/redux
+                      Initial state of the table, should be updated via a local state wrapper component implementation or via a central store/redux see StatefulTable component for an example
                     </td>
                   </tr>
                   <tr>
@@ -34415,7 +37148,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with custo
                                   }
                                 }
                               >
-                                onChange
+                                onChangePage
                                 ?
                                 :
                                  
@@ -37043,7 +39776,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with filte
                                     }
                                   }
                                 >
-                                  onChange
+                                  onChangePage
                                 </span>
                               </span>
                               : 
@@ -37054,7 +39787,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with filte
                                   }
                                 }
                               >
-                                onChange
+                                onChangePage
                               </span>
                               }
                             </span>
@@ -37854,6 +40587,35 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with filte
                       className="css-11b5gui e6fp4ir0"
                     >
                       Data for the body of the table
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      expandedData
+                    </td>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      <span>
+                        custom
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      -
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      -
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      Expanded data for the table details
                     </td>
                   </tr>
                   <tr>
@@ -38999,13 +41761,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with filte
                                   }
                                 }
                               >
-                                expandedRows
+                                expandedIds
                                 ?
                                 :
                                  
                               </span>
                               <span>
-                                custom
+                                <span>
+                                  [
+                                </span>
+                                <span>
+                                  <span>
+                                    string
+                                  </span>
+                                </span>
+                                <span>
+                                  ]
+                                </span>
                               </span>
                               ,
                             </div>
@@ -39160,7 +41932,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with filte
                     <td
                       className="css-11b5gui e6fp4ir0"
                     >
-                      Initial state of the table, should be updated via a local state wrapper component implementation or via a central store/redux
+                      Initial state of the table, should be updated via a local state wrapper component implementation or via a central store/redux see StatefulTable component for an example
                     </td>
                   </tr>
                   <tr>
@@ -39235,7 +42007,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with filte
                                   }
                                 }
                               >
-                                onChange
+                                onChangePage
                                 ?
                                 :
                                  
@@ -39830,14 +42602,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with no da
                   >
                     <svg
                       aria-hidden={true}
-                      focusable="false"
+                      focusable={false}
                       height={32}
                       preserveAspectRatio="xMidYMid meet"
-                      style={
-                        Object {
-                          "willChange": "transform",
-                        }
-                      }
                       viewBox="0 0 32 32"
                       width={32}
                       xmlns="http://www.w3.org/2000/svg"
@@ -40663,7 +43430,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with no da
                                     }
                                   }
                                 >
-                                  onChange
+                                  onChangePage
                                 </span>
                               </span>
                               : 
@@ -40674,7 +43441,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with no da
                                   }
                                 }
                               >
-                                onChange
+                                onChangePage
                               </span>
                               }
                             </span>
@@ -41418,6 +44185,35 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with no da
                       className="css-11b5gui e6fp4ir0"
                     >
                       Data for the body of the table
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      expandedData
+                    </td>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      <span>
+                        custom
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      -
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      -
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      Expanded data for the table details
                     </td>
                   </tr>
                   <tr>
@@ -42563,13 +45359,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with no da
                                   }
                                 }
                               >
-                                expandedRows
+                                expandedIds
                                 ?
                                 :
                                  
                               </span>
                               <span>
-                                custom
+                                <span>
+                                  [
+                                </span>
+                                <span>
+                                  <span>
+                                    string
+                                  </span>
+                                </span>
+                                <span>
+                                  ]
+                                </span>
                               </span>
                               ,
                             </div>
@@ -42724,7 +45530,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with no da
                     <td
                       className="css-11b5gui e6fp4ir0"
                     >
-                      Initial state of the table, should be updated via a local state wrapper component implementation or via a central store/redux
+                      Initial state of the table, should be updated via a local state wrapper component implementation or via a central store/redux see StatefulTable component for an example
                     </td>
                   </tr>
                   <tr>
@@ -42799,7 +45605,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with no da
                                   }
                                 }
                               >
-                                onChange
+                                onChangePage
                                 ?
                                 :
                                  
@@ -44201,7 +47007,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with no da
                                     }
                                   }
                                 >
-                                  onChange
+                                  onChangePage
                                 </span>
                               </span>
                               : 
@@ -44212,7 +47018,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with no da
                                   }
                                 }
                               >
-                                onChange
+                                onChangePage
                               </span>
                               }
                             </span>
@@ -44978,6 +47784,35 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with no da
                       className="css-11b5gui e6fp4ir0"
                     >
                       Data for the body of the table
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      expandedData
+                    </td>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      <span>
+                        custom
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      -
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      -
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      Expanded data for the table details
                     </td>
                   </tr>
                   <tr>
@@ -46123,13 +48958,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with no da
                                   }
                                 }
                               >
-                                expandedRows
+                                expandedIds
                                 ?
                                 :
                                  
                               </span>
                               <span>
-                                custom
+                                <span>
+                                  [
+                                </span>
+                                <span>
+                                  <span>
+                                    string
+                                  </span>
+                                </span>
+                                <span>
+                                  ]
+                                </span>
                               </span>
                               ,
                             </div>
@@ -46284,7 +49129,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with no da
                     <td
                       className="css-11b5gui e6fp4ir0"
                     >
-                      Initial state of the table, should be updated via a local state wrapper component implementation or via a central store/redux
+                      Initial state of the table, should be updated via a local state wrapper component implementation or via a central store/redux see StatefulTable component for an example
                     </td>
                   </tr>
                   <tr>
@@ -46359,7 +49204,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with no da
                                   }
                                 }
                               >
-                                onChange
+                                onChangePage
                                 ?
                                 :
                                  
@@ -47220,14 +50065,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with no re
                   >
                     <svg
                       aria-hidden={true}
-                      focusable="false"
+                      focusable={false}
                       height={32}
                       preserveAspectRatio="xMidYMid meet"
-                      style={
-                        Object {
-                          "willChange": "transform",
-                        }
-                      }
                       viewBox="0 0 32 32"
                       width={32}
                       xmlns="http://www.w3.org/2000/svg"
@@ -48053,7 +50893,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with no re
                                     }
                                   }
                                 >
-                                  onChange
+                                  onChangePage
                                 </span>
                               </span>
                               : 
@@ -48064,7 +50904,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with no re
                                   }
                                 }
                               >
-                                onChange
+                                onChangePage
                               </span>
                               }
                             </span>
@@ -48961,6 +51801,35 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with no re
                     <td
                       className="css-1qcb1f7 e6fp4ir0"
                     >
+                      expandedData
+                    </td>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      <span>
+                        custom
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      -
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      -
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      Expanded data for the table details
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
                       options
                     </td>
                     <td
@@ -50100,13 +52969,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with no re
                                   }
                                 }
                               >
-                                expandedRows
+                                expandedIds
                                 ?
                                 :
                                  
                               </span>
                               <span>
-                                custom
+                                <span>
+                                  [
+                                </span>
+                                <span>
+                                  <span>
+                                    string
+                                  </span>
+                                </span>
+                                <span>
+                                  ]
+                                </span>
                               </span>
                               ,
                             </div>
@@ -50261,7 +53140,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with no re
                     <td
                       className="css-11b5gui e6fp4ir0"
                     >
-                      Initial state of the table, should be updated via a local state wrapper component implementation or via a central store/redux
+                      Initial state of the table, should be updated via a local state wrapper component implementation or via a central store/redux see StatefulTable component for an example
                     </td>
                   </tr>
                   <tr>
@@ -50336,7 +53215,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with no re
                                   }
                                 }
                               >
-                                onChange
+                                onChangePage
                                 ?
                                 :
                                  
@@ -50805,46 +53684,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
   opacity: 1;
 }
 
-.c1.c1.c1 {
-  cursor: pointer;
-}
-
-.c1.c1.c1 td {
-  background-color: #3d70b2;
-  border-color: #3d70b2;
-  color: white;
-  border-top: 1px solid #3d70b2;
-}
-
-.c1.c1.c1 td button svg {
-  fill: white;
-}
-
-.c1.c1.c1 td:first-of-type {
-  border-left: 1px solid #3d70b2;
-}
-
-.c1.c1.c1 td:last-of-type {
-  border-right: 1px solid #3d70b2;
-}
-
-.c2.c2.c2 td {
-  background-color: inherit;
-  border-left: 4px solid #3d70b2;
-  border-width: 0 0 0 4px;
-}
-
-.c2.c2.c2:hover {
-  border: inherit;
-  background-color: inherit;
-}
-
-.c2.c2.c2:hover td {
-  background-color: inherit;
-  border-left: solid #3d70b2;
-  border-width: 0 0 0 4px;
-}
-
 <div
   className="storybook-container"
   style={
@@ -51032,14 +53871,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 bx--expandable-row-v2 c1"
+                className="bx--parent-row-v2 c0"
                 data-parent-row={true}
                 id="Table-Row-row-2"
                 onClick={[Function]}
               >
                 <td
                   className="bx--table-expand-v2"
-                  data-previous-value="collapsed"
                 >
                   <button
                     aria-label="Expand Row"
@@ -51076,68 +53914,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   4
-                </td>
-              </tr>
-              <tr
-                className="c2"
-              >
-                <td
-                  colSpan={5}
-                >
-                  <div
-                    style={
-                      Object {
-                        "padding": 20,
-                      }
-                    }
-                  >
-                    <h3>
-                      row-2
-                    </h3>
-                    <ul
-                      style={
-                        Object {
-                          "lineHeight": "22px",
-                        }
-                      }
-                    >
-                      <li>
-                        <b>
-                          string
-                        </b>
-                        : 
-                        whiteboard can eat 2
-                      </li>
-                      <li>
-                        <b>
-                          date
-                        </b>
-                        : 
-                        1973-04-18T16:53:20.000Z
-                      </li>
-                      <li>
-                        <b>
-                          select
-                        </b>
-                        : 
-                        option-C
-                      </li>
-                      <li>
-                        <b>
-                          secretField
-                        </b>
-                        : 
-                        c8iM4qgaYa
-                      </li>
-                      <li>
-                        <b>
-                          number
-                        </b>
-                        : 
-                        4
-                      </li>
-                    </ul>
-                  </div>
                 </td>
               </tr>
               <tr
@@ -51233,14 +54009,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 bx--expandable-row-v2 c1"
+                className="bx--parent-row-v2 c0"
                 data-parent-row={true}
                 id="Table-Row-row-5"
                 onClick={[Function]}
               >
                 <td
                   className="bx--table-expand-v2"
-                  data-previous-value="collapsed"
                 >
                   <button
                     aria-label="Expand Row"
@@ -51277,68 +54052,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   25
-                </td>
-              </tr>
-              <tr
-                className="c2"
-              >
-                <td
-                  colSpan={5}
-                >
-                  <div
-                    style={
-                      Object {
-                        "padding": 20,
-                      }
-                    }
-                  >
-                    <h3>
-                      row-5
-                    </h3>
-                    <ul
-                      style={
-                        Object {
-                          "lineHeight": "22px",
-                        }
-                      }
-                    >
-                      <li>
-                        <b>
-                          string
-                        </b>
-                        : 
-                        bottle toyota bottle 5
-                      </li>
-                      <li>
-                        <b>
-                          date
-                        </b>
-                        : 
-                        1973-12-17T18:13:20.000Z
-                      </li>
-                      <li>
-                        <b>
-                          select
-                        </b>
-                        : 
-                        option-C
-                      </li>
-                      <li>
-                        <b>
-                          secretField
-                        </b>
-                        : 
-                        Ia2eQMSi8i
-                      </li>
-                      <li>
-                        <b>
-                          number
-                        </b>
-                        : 
-                        25
-                      </li>
-                    </ul>
-                  </div>
                 </td>
               </tr>
               <tr
@@ -56771,7 +59484,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                                     }
                                   }
                                 >
-                                  onChange
+                                  onChangePage
                                 </span>
                               </span>
                               : 
@@ -56782,7 +59495,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                                   }
                                 }
                               >
-                                onChange
+                                onChangePage
                               </span>
                               }
                             </span>
@@ -57685,6 +60398,35 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                       className="css-11b5gui e6fp4ir0"
                     >
                       Data for the body of the table
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      expandedData
+                    </td>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      <span>
+                        custom
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      -
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      -
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      Expanded data for the table details
                     </td>
                   </tr>
                   <tr>
@@ -58830,13 +61572,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                                   }
                                 }
                               >
-                                expandedRows
+                                expandedIds
                                 ?
                                 :
                                  
                               </span>
                               <span>
-                                custom
+                                <span>
+                                  [
+                                </span>
+                                <span>
+                                  <span>
+                                    string
+                                  </span>
+                                </span>
+                                <span>
+                                  ]
+                                </span>
                               </span>
                               ,
                             </div>
@@ -58991,7 +61743,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                     <td
                       className="css-11b5gui e6fp4ir0"
                     >
-                      Initial state of the table, should be updated via a local state wrapper component implementation or via a central store/redux
+                      Initial state of the table, should be updated via a local state wrapper component implementation or via a central store/redux see StatefulTable component for an example
                     </td>
                   </tr>
                   <tr>
@@ -59066,7 +61818,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                                   }
                                 }
                               >
-                                onChange
+                                onChangePage
                                 ?
                                 :
                                  
@@ -59546,25 +62298,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
   opacity: 0;
 }
 
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-  -webkit-justify-content: flex-end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c5 > * {
-  opacity: 1;
-}
-
 .c3.c3.c3 {
   margin-left: 0.5rem;
   color: #152935;
@@ -59573,17 +62306,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
 
 .c3.c3.c3 svg {
   fill: #152935;
-  margin-left: 0;
-}
-
-.c6.c6.c6 {
-  margin-left: 0.5rem;
-  color: #fff;
-  opacity: 1;
-}
-
-.c6.c6.c6 svg {
-  fill: #fff;
   margin-left: 0;
 }
 
@@ -59609,46 +62331,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
 
 .c0.c0.c0:hover td div > * {
   opacity: 1;
-}
-
-.c4.c4.c4 {
-  cursor: pointer;
-}
-
-.c4.c4.c4 td {
-  background-color: #3d70b2;
-  border-color: #3d70b2;
-  color: white;
-  border-top: 1px solid #3d70b2;
-}
-
-.c4.c4.c4 td button svg {
-  fill: white;
-}
-
-.c4.c4.c4 td:first-of-type {
-  border-left: 1px solid #3d70b2;
-}
-
-.c4.c4.c4 td:last-of-type {
-  border-right: 1px solid #3d70b2;
-}
-
-.c7.c7.c7 td {
-  background-color: inherit;
-  border-left: 4px solid #3d70b2;
-  border-width: 0 0 0 4px;
-}
-
-.c7.c7.c7:hover {
-  border: inherit;
-  background-color: inherit;
-}
-
-.c7.c7.c7:hover td {
-  background-color: inherit;
-  border-left: solid #3d70b2;
-  border-width: 0 0 0 4px;
 }
 
 <div
@@ -59949,14 +62631,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 bx--expandable-row-v2 c4"
+                className="bx--parent-row-v2 c0"
                 data-parent-row={true}
                 id="Table-Row-row-2"
                 onClick={[Function]}
               >
                 <td
                   className="bx--table-expand-v2"
-                  data-previous-value="collapsed"
                 >
                   <button
                     aria-label="Expand Row"
@@ -59996,13 +62677,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c5"
+                    className="c1"
                   >
                     <div
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c6 bx--overflow-menu"
+                      className="c3 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -60031,68 +62712,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                         />
                       </svg>
                     </div>
-                  </div>
-                </td>
-              </tr>
-              <tr
-                className="c7"
-              >
-                <td
-                  colSpan={6}
-                >
-                  <div
-                    style={
-                      Object {
-                        "padding": 20,
-                      }
-                    }
-                  >
-                    <h3>
-                      row-2
-                    </h3>
-                    <ul
-                      style={
-                        Object {
-                          "lineHeight": "22px",
-                        }
-                      }
-                    >
-                      <li>
-                        <b>
-                          string
-                        </b>
-                        : 
-                        whiteboard can eat 2
-                      </li>
-                      <li>
-                        <b>
-                          date
-                        </b>
-                        : 
-                        1973-04-18T16:53:20.000Z
-                      </li>
-                      <li>
-                        <b>
-                          select
-                        </b>
-                        : 
-                        option-C
-                      </li>
-                      <li>
-                        <b>
-                          secretField
-                        </b>
-                        : 
-                        c8iM4qgaYa
-                      </li>
-                      <li>
-                        <b>
-                          number
-                        </b>
-                        : 
-                        4
-                      </li>
-                    </ul>
                   </div>
                 </td>
               </tr>
@@ -60295,14 +62914,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
               </tr>
               <tr
-                className="bx--parent-row-v2 bx--expandable-row-v2 c4"
+                className="bx--parent-row-v2 c0"
                 data-parent-row={true}
                 id="Table-Row-row-5"
                 onClick={[Function]}
               >
                 <td
                   className="bx--table-expand-v2"
-                  data-previous-value="collapsed"
                 >
                   <button
                     aria-label="Expand Row"
@@ -60342,13 +62960,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                 </td>
                 <td>
                   <div
-                    className="c5"
+                    className="c1"
                   >
                     <div
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
-                      className="c6 bx--overflow-menu"
+                      className="c3 bx--overflow-menu"
                       onClick={[Function]}
                       onClose={[Function]}
                       onKeyDown={[Function]}
@@ -60377,68 +62995,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                         />
                       </svg>
                     </div>
-                  </div>
-                </td>
-              </tr>
-              <tr
-                className="c7"
-              >
-                <td
-                  colSpan={6}
-                >
-                  <div
-                    style={
-                      Object {
-                        "padding": 20,
-                      }
-                    }
-                  >
-                    <h3>
-                      row-5
-                    </h3>
-                    <ul
-                      style={
-                        Object {
-                          "lineHeight": "22px",
-                        }
-                      }
-                    >
-                      <li>
-                        <b>
-                          string
-                        </b>
-                        : 
-                        bottle toyota bottle 5
-                      </li>
-                      <li>
-                        <b>
-                          date
-                        </b>
-                        : 
-                        1973-12-17T18:13:20.000Z
-                      </li>
-                      <li>
-                        <b>
-                          select
-                        </b>
-                        : 
-                        option-C
-                      </li>
-                      <li>
-                        <b>
-                          secretField
-                        </b>
-                        : 
-                        Ia2eQMSi8i
-                      </li>
-                      <li>
-                        <b>
-                          number
-                        </b>
-                        : 
-                        25
-                      </li>
-                    </ul>
                   </div>
                 </td>
               </tr>
@@ -70983,7 +73539,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                                     }
                                   }
                                 >
-                                  onChange
+                                  onChangePage
                                 </span>
                               </span>
                               : 
@@ -70994,7 +73550,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                                   }
                                 }
                               >
-                                onChange
+                                onChangePage
                               </span>
                               }
                             </span>
@@ -71919,6 +74475,35 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                       className="css-11b5gui e6fp4ir0"
                     >
                       Data for the body of the table
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      expandedData
+                    </td>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      <span>
+                        custom
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      -
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      -
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      Expanded data for the table details
                     </td>
                   </tr>
                   <tr>
@@ -73064,13 +75649,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                                   }
                                 }
                               >
-                                expandedRows
+                                expandedIds
                                 ?
                                 :
                                  
                               </span>
                               <span>
-                                custom
+                                <span>
+                                  [
+                                </span>
+                                <span>
+                                  <span>
+                                    string
+                                  </span>
+                                </span>
+                                <span>
+                                  ]
+                                </span>
                               </span>
                               ,
                             </div>
@@ -73225,7 +75820,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                     <td
                       className="css-11b5gui e6fp4ir0"
                     >
-                      Initial state of the table, should be updated via a local state wrapper component implementation or via a central store/redux
+                      Initial state of the table, should be updated via a local state wrapper component implementation or via a central store/redux see StatefulTable component for an example
                     </td>
                   </tr>
                   <tr>
@@ -73300,7 +75895,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with row e
                                   }
                                 }
                               >
-                                onChange
+                                onChangePage
                                 ?
                                 :
                                  
@@ -75749,7 +78344,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with selec
                                     }
                                   }
                                 >
-                                  onChange
+                                  onChangePage
                                 </span>
                               </span>
                               : 
@@ -75760,7 +78355,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with selec
                                   }
                                 }
                               >
-                                onChange
+                                onChangePage
                               </span>
                               }
                             </span>
@@ -76796,6 +79391,35 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with selec
                       className="css-11b5gui e6fp4ir0"
                     >
                       Data for the body of the table
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      expandedData
+                    </td>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      <span>
+                        custom
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      -
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      -
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      Expanded data for the table details
                     </td>
                   </tr>
                   <tr>
@@ -77941,13 +80565,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with selec
                                   }
                                 }
                               >
-                                expandedRows
+                                expandedIds
                                 ?
                                 :
                                  
                               </span>
                               <span>
-                                custom
+                                <span>
+                                  [
+                                </span>
+                                <span>
+                                  <span>
+                                    string
+                                  </span>
+                                </span>
+                                <span>
+                                  ]
+                                </span>
                               </span>
                               ,
                             </div>
@@ -78102,7 +80736,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with selec
                     <td
                       className="css-11b5gui e6fp4ir0"
                     >
-                      Initial state of the table, should be updated via a local state wrapper component implementation or via a central store/redux
+                      Initial state of the table, should be updated via a local state wrapper component implementation or via a central store/redux see StatefulTable component for an example
                     </td>
                   </tr>
                   <tr>
@@ -78177,7 +80811,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with selec
                                   }
                                 }
                               >
-                                onChange
+                                onChangePage
                                 ?
                                 :
                                  
@@ -80654,7 +83288,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with sorti
                                     }
                                   }
                                 >
-                                  onChange
+                                  onChangePage
                                 </span>
                               </span>
                               : 
@@ -80665,7 +83299,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with sorti
                                   }
                                 }
                               >
-                                onChange
+                                onChangePage
                               </span>
                               }
                             </span>
@@ -81544,6 +84178,35 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with sorti
                       className="css-11b5gui e6fp4ir0"
                     >
                       Data for the body of the table
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      expandedData
+                    </td>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      <span>
+                        custom
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      -
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      -
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      Expanded data for the table details
                     </td>
                   </tr>
                   <tr>
@@ -82689,13 +85352,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with sorti
                                   }
                                 }
                               >
-                                expandedRows
+                                expandedIds
                                 ?
                                 :
                                  
                               </span>
                               <span>
-                                custom
+                                <span>
+                                  [
+                                </span>
+                                <span>
+                                  <span>
+                                    string
+                                  </span>
+                                </span>
+                                <span>
+                                  ]
+                                </span>
                               </span>
                               ,
                             </div>
@@ -82850,7 +85523,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with sorti
                     <td
                       className="css-11b5gui e6fp4ir0"
                     >
-                      Initial state of the table, should be updated via a local state wrapper component implementation or via a central store/redux
+                      Initial state of the table, should be updated via a local state wrapper component implementation or via a central store/redux see StatefulTable component for an example
                     </td>
                   </tr>
                   <tr>
@@ -82925,7 +85598,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Table with sorti
                                   }
                                 }
                               >
-                                onChange
+                                onChangePage
                                 ?
                                 :
                                  
