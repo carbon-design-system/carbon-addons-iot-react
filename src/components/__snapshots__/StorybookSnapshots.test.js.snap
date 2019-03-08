@@ -14057,6 +14057,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots ButtonEnhanced n
 </div>
 `;
 
+<<<<<<< HEAD
 exports[`Storybook Snapshot tests and console checks Storyshots FileDrop Browse 1`] = `
 <div
   className="storybook-container"
@@ -14832,6 +14833,61 @@ exports[`Storybook Snapshot tests and console checks Storyshots FileDrop Drag an
   padding: 15px;
   line-height: 30px;
   color: #556873;
+=======
+exports[`Storybook Snapshot tests and console checks Storyshots Header Header action buttons with dropdowns 1`] = `
+.c0 {
+  background-color: #152935;
+  margin-top: 2rem;
+}
+
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  min-width: 3rem;
+  padding: 0 0.9375rem;
+  position: relative;
+  width: auto;
+}
+
+.c1:hover {
+  background-color: #2d3f48;
+}
+
+.c1 span {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c4 {
+  color: white;
+  font-size: 0.75rem;
+  text-align: left;
+  margin-right: 1.25rem;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c2 {
+  width: 25px;
+  height: 25px;
+>>>>>>> da7090e2366d4fec9f013225869d1b5b96fc9050
 }
 
 <div
@@ -14854,6 +14910,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots FileDrop Drag an
         }
       }
     >
+<<<<<<< HEAD
       <div>
         <strong
           className="bx--label"
@@ -14903,6 +14960,216 @@ exports[`Storybook Snapshot tests and console checks Storyshots FileDrop Drag an
           className="bx--file-container"
         />
       </div>
+=======
+      <header
+        aria-label="main header"
+        className="bx--header custom-class-name c0"
+        role="banner"
+      >
+        <a
+          className="bx--skip-to-content"
+          href="#main-content"
+          tabIndex="0"
+        >
+          Skip to main content
+        </a>
+        <a
+          className="bx--header__name"
+          href="#"
+        >
+          <span
+            className="bx--header__name--prefix"
+          >
+            IBM
+          </span>
+           
+          Watson IoT Platform 
+        </a>
+        <div
+          className="bx--header__global"
+        >
+          <button
+            aria-label="alerts"
+            className="c1 bx--header__action"
+            onClick={[Function]}
+            type="button"
+          >
+            <svg
+              alt="Icon"
+              aria-label="Icon"
+              className="c2"
+              fill="white"
+              fillRule="evenodd"
+              height="16"
+              name="notification-on"
+              role="img"
+              viewBox="0 0 14 16"
+              width="14"
+            >
+              <title>
+                Icon
+              </title>
+              <path
+                d="M11.199 9.9a.5.5 0 0 1-.2-.4V6.23a4 4 0 0 0-3.99-4A3.989 3.989 0 0 0 3.01 6.206L3 9.52a.5.5 0 0 1-.202.4L1 11.252V13h12v-1.75L11.199 9.9zM4.55 14H.5a.5.5 0 0 1-.5-.5V11a.5.5 0 0 1 .202-.402l1.799-1.333.01-3.062A4.99 4.99 0 0 1 6.5 1.254V0h1v1.254a5 5 0 0 1 4.498 4.975v3.02L13.8 10.6a.5.5 0 0 1 .2.4v2.5a.5.5 0 0 1-.5.5H9.45a2.5 2.5 0 0 1-4.9 0zm1.035 0a1.5 1.5 0 0 0 2.83 0h-2.83z"
+              />
+            </svg>
+          </button>
+          <nav
+            aria-label="dropdown"
+            className="bx--header__nav"
+          >
+            <ul
+              aria-label="dropdown"
+              className="bx--header__menu-bar"
+              onKeyDown={[Function]}
+              role="menubar"
+            >
+              <li
+                className="bx--header__submenu"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onKeyDown={[Function]}
+              >
+                <a
+                  aria-expanded={false}
+                  aria-haspopup="menu"
+                  className="bx--header__menu-item bx--header__menu-title"
+                  onKeyDown={[Function]}
+                  role="menuitem"
+                  tabIndex={0}
+                >
+                  <svg
+                    alt="Icon"
+                    aria-label="Icon"
+                    className="bx--header__menu-item bx--header__menu-title c2"
+                    fill="white"
+                    fillRule="evenodd"
+                    height="20"
+                    name="header--help"
+                    role="img"
+                    viewBox="0 0 20 20"
+                    width="20"
+                  >
+                    <title>
+                      Icon
+                    </title>
+                    <path
+                      d="M10 17a7 7 0 1 0 0-14 7 7 0 0 0 0 14zm0 1a8 8 0 1 1 0-16 8 8 0 0 1 0 16z"
+                    />
+                    <path
+                      d="M10.5 10.5V12h-1V9.5h1a1.5 1.5 0 0 0 0-3h-1A1.5 1.5 0 0 0 8 8H7a2.5 2.5 0 0 1 2.5-2.5h1a2.5 2.5 0 1 1 0 5zM9 14a1 1 0 1 1 2 0 1 1 0 1 1-2 0"
+                    />
+                  </svg>
+                </a>
+                <ul
+                  aria-label="help"
+                  className="bx--header__menu"
+                  role="menu"
+                >
+                  <li
+                    role="none"
+                  >
+                    <a
+                      className="bx--header__menu-item"
+                      href="javascript:void(0)"
+                      onClick={[Function]}
+                      role="menuitem"
+                    >
+                      <span
+                        className="bx--text-truncate--end"
+                      >
+                        <p>
+                          This is a link
+                        </p>
+                      </span>
+                    </a>
+                  </li>
+                  <li
+                    role="none"
+                  >
+                    <a
+                      className="bx--header__menu-item"
+                      href="javascript:void(0)"
+                      onClick={[Function]}
+                      role="menuitem"
+                    >
+                      <span
+                        className="bx--text-truncate--end"
+                      >
+                        <span
+                          className="c3"
+                        >
+                          JohnDoe@ibm.com
+                          <svg
+                            alt="Icon"
+                            aria-label="Icon"
+                            className="c2"
+                            fill="white"
+                            fillRule="evenodd"
+                            height="20"
+                            name="header--avatar"
+                            role="img"
+                            viewBox="0 0 20 20"
+                            width="20"
+                          >
+                            <title>
+                              Icon
+                            </title>
+                            <path
+                              d="M6 15.745A6.968 6.968 0 0 0 10 17a6.968 6.968 0 0 0 4-1.255V15.5a2.5 2.5 0 0 0-2.5-2.5h-3A2.5 2.5 0 0 0 6 15.5v.245zm-.956-.802A3.5 3.5 0 0 1 8.5 12h3a3.5 3.5 0 0 1 3.456 2.943 7 7 0 1 0-9.912 0zM10 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16z"
+                            />
+                            <path
+                              d="M10 10a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0 1a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"
+                            />
+                          </svg>
+                        </span>
+                      </span>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+          <button
+            aria-label="user"
+            className="c1 bx--header__action"
+            onClick={[Function]}
+            type="button"
+          >
+            <p
+              className="c4"
+            >
+              JohnDoe@ibm.com
+              <span>
+                TenantId: Acme
+              </span>
+            </p>
+            <svg
+              alt="Icon"
+              aria-label="Icon"
+              className="c2"
+              fill="white"
+              fillRule="evenodd"
+              height="20"
+              name="header--avatar"
+              role="img"
+              viewBox="0 0 20 20"
+              width="20"
+            >
+              <title>
+                Icon
+              </title>
+              <path
+                d="M6 15.745A6.968 6.968 0 0 0 10 17a6.968 6.968 0 0 0 4-1.255V15.5a2.5 2.5 0 0 0-2.5-2.5h-3A2.5 2.5 0 0 0 6 15.5v.245zm-.956-.802A3.5 3.5 0 0 1 8.5 12h3a3.5 3.5 0 0 1 3.456 2.943 7 7 0 1 0-9.912 0zM10 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16z"
+              />
+              <path
+                d="M10 10a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0 1a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"
+              />
+            </svg>
+          </button>
+        </div>
+      </header>
+>>>>>>> da7090e2366d4fec9f013225869d1b5b96fc9050
     </div>
     <button
       onClick={[Function]}
@@ -15001,7 +15268,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots FileDrop Drag an
                 }
               }
             >
+<<<<<<< HEAD
               FileDrop
+=======
+              Header
+>>>>>>> da7090e2366d4fec9f013225869d1b5b96fc9050
             </h1>
             <h2
               style={
@@ -15013,7 +15284,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots FileDrop Drag an
                 }
               }
             >
+<<<<<<< HEAD
               Drag and drop
+=======
+              Header action buttons with dropdowns
+>>>>>>> da7090e2366d4fec9f013225869d1b5b96fc9050
             </h2>
           </div>
           
@@ -15050,7 +15325,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots FileDrop Drag an
                     }
                   >
                     &lt;
+<<<<<<< HEAD
                     FileDrop
+=======
+                    Header
+>>>>>>> da7090e2366d4fec9f013225869d1b5b96fc9050
                   </span>
                   <span>
                     <span>
@@ -15061,7 +15340,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots FileDrop Drag an
                       <span
                         style={Object {}}
                       >
+<<<<<<< HEAD
                         title
+=======
+                        user
+>>>>>>> da7090e2366d4fec9f013225869d1b5b96fc9050
                       </span>
                       <span>
                         =
@@ -15077,7 +15360,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots FileDrop Drag an
                               }
                             }
                           >
+<<<<<<< HEAD
                             Upload Files
+=======
+                            JohnDoe@ibm.com
+>>>>>>> da7090e2366d4fec9f013225869d1b5b96fc9050
                           </span>
                           "
                         </span>
@@ -15091,7 +15378,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots FileDrop Drag an
                       <span
                         style={Object {}}
                       >
+<<<<<<< HEAD
                         description
+=======
+                        tenant
+>>>>>>> da7090e2366d4fec9f013225869d1b5b96fc9050
                       </span>
                       <span>
                         =
@@ -15107,7 +15398,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots FileDrop Drag an
                               }
                             }
                           >
+<<<<<<< HEAD
                             Any file can be uploaded.  Feel free to upload mor…
+=======
+                            TenantId: Acme
+>>>>>>> da7090e2366d4fec9f013225869d1b5b96fc9050
                           </span>
                           "
                         </span>
@@ -15121,7 +15416,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots FileDrop Drag an
                       <span
                         style={Object {}}
                       >
+<<<<<<< HEAD
                         buttonLabel
+=======
+                        className
+>>>>>>> da7090e2366d4fec9f013225869d1b5b96fc9050
                       </span>
                       <span>
                         =
@@ -15137,7 +15436,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots FileDrop Drag an
                               }
                             }
                           >
+<<<<<<< HEAD
                             Try it out!
+=======
+                            custom-class-name
+>>>>>>> da7090e2366d4fec9f013225869d1b5b96fc9050
                           </span>
                           "
                         </span>
@@ -15151,7 +15454,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots FileDrop Drag an
                       <span
                         style={Object {}}
                       >
+<<<<<<< HEAD
                         kind
+=======
+                        appName
+>>>>>>> da7090e2366d4fec9f013225869d1b5b96fc9050
                       </span>
                       <span>
                         =
@@ -15167,7 +15474,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots FileDrop Drag an
                               }
                             }
                           >
+<<<<<<< HEAD
                             drag-and-drop
+=======
+                            Watson IoT Platform 
+>>>>>>> da7090e2366d4fec9f013225869d1b5b96fc9050
                           </span>
                           "
                         </span>
@@ -15181,6 +15492,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots FileDrop Drag an
                       <span
                         style={Object {}}
                       >
+<<<<<<< HEAD
                         onData
                       </span>
                       <span>
@@ -15211,6 +15523,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots FileDrop Drag an
                         style={Object {}}
                       >
                         onError
+=======
+                        actionItems
+>>>>>>> da7090e2366d4fec9f013225869d1b5b96fc9050
                       </span>
                       <span>
                         =
@@ -15221,11 +15536,287 @@ exports[`Storybook Snapshot tests and console checks Storyshots FileDrop Drag an
                           <span
                             style={
                               Object {
+<<<<<<< HEAD
                                 "color": "#170",
                               }
                             }
                           >
                             onError
+=======
+                                "color": "#666",
+                              }
+                            }
+                          >
+                            [
+                            <span>
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#666",
+                                  }
+                                }
+                              >
+                                {
+                                <span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    label
+                                  </span>
+                                </span>
+                                : 
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  'alerts'
+                                </span>
+                                ,
+                                <span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    onClick
+                                  </span>
+                                </span>
+                                : 
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#170",
+                                    }
+                                  }
+                                >
+                                  pop alert modal
+                                </span>
+                                ,
+                                <span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    btnContent
+                                  </span>
+                                </span>
+                                : 
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  &lt;Headerstory__StyledIcon /&gt;
+                                </span>
+                                }
+                              </span>
+                            </span>
+                            ,
+                            <span>
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#666",
+                                  }
+                                }
+                              >
+                                {
+                                <span>
+                                  <span>
+                                    <br />
+                                        
+                                      
+                                  </span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    label
+                                  </span>
+                                </span>
+                                : 
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  'help'
+                                </span>
+                                ,
+                                <span>
+                                  <span>
+                                    <br />
+                                        
+                                      
+                                  </span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    onClick
+                                  </span>
+                                </span>
+                                : 
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#170",
+                                    }
+                                  }
+                                >
+                                  help drop open
+                                </span>
+                                ,
+                                <span>
+                                  <span>
+                                    <br />
+                                        
+                                      
+                                  </span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    btnContent
+                                  </span>
+                                </span>
+                                : 
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  &lt;Headerstory__StyledIcon /&gt;
+                                </span>
+                                ,
+                                <span>
+                                  <span>
+                                    <br />
+                                        
+                                      
+                                  </span>
+                                  …
+                                </span>
+                                <span>
+                                  <br />
+                                      
+                                </span>
+                                }
+                              </span>
+                            </span>
+                            ,
+                            <span>
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#666",
+                                  }
+                                }
+                              >
+                                {
+                                <span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    label
+                                  </span>
+                                </span>
+                                : 
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  'user'
+                                </span>
+                                ,
+                                <span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    onClick
+                                  </span>
+                                </span>
+                                : 
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#170",
+                                    }
+                                  }
+                                >
+                                  click
+                                </span>
+                                ,
+                                <span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    btnContent
+                                  </span>
+                                </span>
+                                : 
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  &lt;function (_ref) {
+  var children = _ref.children;
+  return children;
+} /&gt;
+                                </span>
+                                }
+                              </span>
+                            </span>
+                            ]
+>>>>>>> da7090e2366d4fec9f013225869d1b5b96fc9050
                           </span>
                           }
                         </span>
@@ -15289,7 +15880,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots FileDrop Drag an
                 }
               >
                 "
+<<<<<<< HEAD
                 FileDrop
+=======
+                Header
+>>>>>>> da7090e2366d4fec9f013225869d1b5b96fc9050
                 " Component
               </h2>
               <table
@@ -15329,6 +15924,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots FileDrop Drag an
                     <td
                       className="css-1qcb1f7 e6fp4ir0"
                     >
+<<<<<<< HEAD
                       id
                     </td>
                     <td
@@ -15368,6 +15964,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots FileDrop Drag an
                       className="css-1qcb1f7 e6fp4ir0"
                     >
                       buttonLabel
+=======
+                      appName
+>>>>>>> da7090e2366d4fec9f013225869d1b5b96fc9050
                     </td>
                     <td
                       className="css-1qcb1f7 e6fp4ir0"
@@ -15379,6 +15978,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots FileDrop Drag an
                     <td
                       className="css-11b5gui e6fp4ir0"
                     >
+<<<<<<< HEAD
                       -
                     </td>
                     <td
@@ -15413,6 +16013,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots FileDrop Drag an
                       <span>
                         oneOf 'browse' | 'drag-and-drop'
                       </span>
+=======
+                      yes
+>>>>>>> da7090e2366d4fec9f013225869d1b5b96fc9050
                     </td>
                     <td
                       className="css-11b5gui e6fp4ir0"
@@ -15422,6 +16025,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots FileDrop Drag an
                     <td
                       className="css-11b5gui e6fp4ir0"
                     >
+<<<<<<< HEAD
                       <span
                         style={
                           Object {
@@ -15437,13 +16041,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots FileDrop Drag an
                       className="css-11b5gui e6fp4ir0"
                     >
                       Componet is drag/drop
+=======
+                      Name ot follow the IBM prefix up top, left
+>>>>>>> da7090e2366d4fec9f013225869d1b5b96fc9050
                     </td>
                   </tr>
                   <tr>
                     <td
                       className="css-1qcb1f7 e6fp4ir0"
                     >
+<<<<<<< HEAD
                       accept
+=======
+                      actionItems
+>>>>>>> da7090e2366d4fec9f013225869d1b5b96fc9050
                     </td>
                     <td
                       className="css-1qcb1f7 e6fp4ir0"
@@ -15454,7 +16065,207 @@ exports[`Storybook Snapshot tests and console checks Storyshots FileDrop Drag an
                         </span>
                         <span>
                           <span>
+<<<<<<< HEAD
                             string
+=======
+                            <button
+                              className="css-1sgldz e1i4ski80"
+                              onClick={[Function]}
+                              onMouseEnter={[Function]}
+                              onMouseLeave={[Function]}
+                            >
+                              {
+                            </button>
+                            <button
+                              className="css-1sgldz e1i4ski80"
+                              onClick={[Function]}
+                            >
+                              ...
+                            </button>
+                            <div
+                              style={
+                                Object {
+                                  "marginLeft": 15,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                              >
+                                label
+                                
+                                :
+                                 
+                              </span>
+                              <span>
+                                string
+                              </span>
+                              ,
+                            </div>
+                            <div
+                              style={
+                                Object {
+                                  "marginLeft": 15,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                              >
+                                onClick
+                                ?
+                                :
+                                 
+                              </span>
+                              <span>
+                                func
+                              </span>
+                              ,
+                            </div>
+                            <div
+                              style={
+                                Object {
+                                  "marginLeft": 15,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                              >
+                                btnContent
+                                
+                                :
+                                 
+                              </span>
+                              <span>
+                                any
+                              </span>
+                              ,
+                            </div>
+                            <div
+                              style={
+                                Object {
+                                  "marginLeft": 15,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                              >
+                                childContent
+                                ?
+                                :
+                                 
+                              </span>
+                              <span>
+                                <span>
+                                  [
+                                </span>
+                                <span>
+                                  <span>
+                                    <button
+                                      className="css-1sgldz e1i4ski80"
+                                      onClick={[Function]}
+                                      onMouseEnter={[Function]}
+                                      onMouseLeave={[Function]}
+                                    >
+                                      {
+                                    </button>
+                                    <button
+                                      className="css-1sgldz e1i4ski80"
+                                      onClick={[Function]}
+                                    >
+                                      ...
+                                    </button>
+                                    <div
+                                      style={
+                                        Object {
+                                          "marginLeft": 15,
+                                        }
+                                      }
+                                    >
+                                      <span
+                                        style={
+                                          Object {
+                                            "whiteSpace": "nowrap",
+                                          }
+                                        }
+                                      >
+                                        onClick
+                                        ?
+                                        :
+                                         
+                                      </span>
+                                      <span>
+                                        func
+                                      </span>
+                                      ,
+                                    </div>
+                                    <div
+                                      style={
+                                        Object {
+                                          "marginLeft": 15,
+                                        }
+                                      }
+                                    >
+                                      <span
+                                        style={
+                                          Object {
+                                            "whiteSpace": "nowrap",
+                                          }
+                                        }
+                                      >
+                                        content
+                                        
+                                        :
+                                         
+                                      </span>
+                                      <span>
+                                        any
+                                      </span>
+                                      ,
+                                    </div>
+                                    <button
+                                      className="css-1sgldz e1i4ski80"
+                                      onClick={[Function]}
+                                      onMouseEnter={[Function]}
+                                      onMouseLeave={[Function]}
+                                    >
+                                      }
+                                    </button>
+                                  </span>
+                                </span>
+                                <span>
+                                  ]
+                                </span>
+                              </span>
+                              ,
+                            </div>
+                            <button
+                              className="css-1sgldz e1i4ski80"
+                              onClick={[Function]}
+                              onMouseEnter={[Function]}
+                              onMouseLeave={[Function]}
+                            >
+                              }
+                            </button>
+>>>>>>> da7090e2366d4fec9f013225869d1b5b96fc9050
                           </span>
                         </span>
                         <span>
@@ -15465,6 +16276,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots FileDrop Drag an
                     <td
                       className="css-11b5gui e6fp4ir0"
                     >
+<<<<<<< HEAD
                       -
                     </td>
                     <td
@@ -15608,6 +16420,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots FileDrop Drag an
                     <td
                       className="css-11b5gui e6fp4ir0"
                     >
+=======
+>>>>>>> da7090e2366d4fec9f013225869d1b5b96fc9050
                       yes
                     </td>
                     <td
@@ -15618,7 +16432,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots FileDrop Drag an
                     <td
                       className="css-11b5gui e6fp4ir0"
                     >
+<<<<<<< HEAD
                       Description text of file uploader
+=======
+                      Object of action items
+>>>>>>> da7090e2366d4fec9f013225869d1b5b96fc9050
                     </td>
                   </tr>
                 </tbody>
