@@ -14057,7 +14057,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots ButtonEnhanced n
 </div>
 `;
 
-<<<<<<< HEAD
 exports[`Storybook Snapshot tests and console checks Storyshots FileDrop Browse 1`] = `
 <div
   className="storybook-container"
@@ -14833,7 +14832,806 @@ exports[`Storybook Snapshot tests and console checks Storyshots FileDrop Drag an
   padding: 15px;
   line-height: 30px;
   color: #556873;
-=======
+}
+
+<div
+  className="storybook-container"
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "flexDirection": "column",
+      "padding": "3em",
+    }
+  }
+>
+  <div>
+    <div
+      style={
+        Object {
+          "position": "relative",
+          "zIndex": 0,
+        }
+      }
+    >
+      <div>
+        <strong
+          className="bx--label"
+        >
+          Upload Files
+        </strong>
+        <input
+          accept={Array []}
+          multiple={true}
+          onChange={[Function]}
+          style={
+            Object {
+              "visibility": "hidden",
+            }
+          }
+          type="file"
+        />
+        <div
+          className="c0"
+          onDragLeave={[Function]}
+          onDragOver={[Function]}
+          onDrop={[Function]}
+          style={
+            Object {
+              "border": "1px dashed #8C8C8C",
+            }
+          }
+        >
+          <div>
+            Drag and drop you file here or 
+            <span
+              onClick={[Function]}
+              role="presentation"
+            >
+              <button
+                className="c1"
+              >
+                 upload 
+              </button>
+            </span>
+            <div>
+              Any file can be uploaded.  Feel free to upload more than one!
+            </div>
+          </div>
+        </div>
+        <div
+          className="bx--file-container"
+        />
+      </div>
+    </div>
+    <button
+      onClick={[Function]}
+      style={
+        Object {
+          "background": "#28c",
+          "border": "none",
+          "borderRadius": "0 0 0 5px",
+          "color": "#fff",
+          "cursor": "pointer",
+          "display": "block",
+          "fontFamily": "sans-serif",
+          "fontSize": "12px",
+          "padding": "5px 15px",
+          "position": "fixed",
+          "right": 0,
+          "top": 0,
+        }
+      }
+      type="button"
+    >
+      Show Info
+    </button>
+    <div
+      style={
+        Object {
+          "background": "white",
+          "bottom": 0,
+          "display": "none",
+          "left": 0,
+          "overflow": "auto",
+          "padding": "0 40px",
+          "position": "fixed",
+          "right": 0,
+          "top": 0,
+          "zIndex": 99999,
+        }
+      }
+    >
+      <button
+        onClick={[Function]}
+        style={
+          Object {
+            "background": "#28c",
+            "border": "none",
+            "borderRadius": "0 0 0 5px",
+            "color": "#fff",
+            "cursor": "pointer",
+            "display": "block",
+            "fontFamily": "sans-serif",
+            "fontSize": "12px",
+            "padding": "5px 15px",
+            "position": "fixed",
+            "right": 0,
+            "top": 0,
+          }
+        }
+        type="button"
+      >
+        ×
+      </button>
+      <div>
+        <div
+          style={
+            Object {
+              "WebkitFontSmoothing": "antialiased",
+              "backgroundColor": "#fff",
+              "border": "1px solid #eee",
+              "borderRadius": "2px",
+              "color": "#444",
+              "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+              "fontSize": "15px",
+              "fontWeight": 300,
+              "lineHeight": 1.45,
+              "marginBottom": "20px",
+              "marginTop": "20px",
+              "padding": "20px 40px 40px",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "borderBottom": "1px solid #eee",
+                "marginBottom": 10,
+                "paddingTop": 10,
+              }
+            }
+          >
+            <h1
+              style={
+                Object {
+                  "fontSize": "35px",
+                  "margin": 0,
+                  "padding": 0,
+                }
+              }
+            >
+              FileDrop
+            </h1>
+            <h2
+              style={
+                Object {
+                  "fontSize": "22px",
+                  "fontWeight": 400,
+                  "margin": "0 0 10px 0",
+                  "padding": 0,
+                }
+              }
+            >
+              Drag and drop
+            </h2>
+          </div>
+          
+          <div>
+            <h1
+              style={
+                Object {
+                  "borderBottom": "1px solid #EEE",
+                  "fontSize": "25px",
+                  "margin": "20px 0 0 0",
+                  "padding": "0 0 5px 0",
+                }
+              }
+            >
+              Story Source
+            </h1>
+            <pre
+              className="css-r8d96o eyvlbql0"
+            >
+              <div>
+                <div
+                  style={
+                    Object {
+                      "paddingLeft": 18,
+                      "paddingRight": 3,
+                    }
+                  }
+                >
+                  <span
+                    style={
+                      Object {
+                        "color": "#444",
+                      }
+                    }
+                  >
+                    &lt;
+                    FileDrop
+                  </span>
+                  <span>
+                    <span>
+                      <span>
+                        <br />
+                          
+                      </span>
+                      <span
+                        style={Object {}}
+                      >
+                        title
+                      </span>
+                      <span>
+                        =
+                        <span
+                          style={Object {}}
+                        >
+                          "
+                          <span
+                            style={
+                              Object {
+                                "color": "#22a",
+                                "wordBreak": "break-word",
+                              }
+                            }
+                          >
+                            Upload Files
+                          </span>
+                          "
+                        </span>
+                      </span>
+                    </span>
+                    <span>
+                      <span>
+                        <br />
+                          
+                      </span>
+                      <span
+                        style={Object {}}
+                      >
+                        description
+                      </span>
+                      <span>
+                        =
+                        <span
+                          style={Object {}}
+                        >
+                          "
+                          <span
+                            style={
+                              Object {
+                                "color": "#22a",
+                                "wordBreak": "break-word",
+                              }
+                            }
+                          >
+                            Any file can be uploaded.  Feel free to upload mor…
+                          </span>
+                          "
+                        </span>
+                      </span>
+                    </span>
+                    <span>
+                      <span>
+                        <br />
+                          
+                      </span>
+                      <span
+                        style={Object {}}
+                      >
+                        buttonLabel
+                      </span>
+                      <span>
+                        =
+                        <span
+                          style={Object {}}
+                        >
+                          "
+                          <span
+                            style={
+                              Object {
+                                "color": "#22a",
+                                "wordBreak": "break-word",
+                              }
+                            }
+                          >
+                            Try it out!
+                          </span>
+                          "
+                        </span>
+                      </span>
+                    </span>
+                    <span>
+                      <span>
+                        <br />
+                          
+                      </span>
+                      <span
+                        style={Object {}}
+                      >
+                        kind
+                      </span>
+                      <span>
+                        =
+                        <span
+                          style={Object {}}
+                        >
+                          "
+                          <span
+                            style={
+                              Object {
+                                "color": "#22a",
+                                "wordBreak": "break-word",
+                              }
+                            }
+                          >
+                            drag-and-drop
+                          </span>
+                          "
+                        </span>
+                      </span>
+                    </span>
+                    <span>
+                      <span>
+                        <br />
+                          
+                      </span>
+                      <span
+                        style={Object {}}
+                      >
+                        onData
+                      </span>
+                      <span>
+                        =
+                        <span
+                          style={Object {}}
+                        >
+                          {
+                          <span
+                            style={
+                              Object {
+                                "color": "#170",
+                              }
+                            }
+                          >
+                            onData
+                          </span>
+                          }
+                        </span>
+                      </span>
+                    </span>
+                    <span>
+                      <span>
+                        <br />
+                          
+                      </span>
+                      <span
+                        style={Object {}}
+                      >
+                        onError
+                      </span>
+                      <span>
+                        =
+                        <span
+                          style={Object {}}
+                        >
+                          {
+                          <span
+                            style={
+                              Object {
+                                "color": "#170",
+                              }
+                            }
+                          >
+                            onError
+                          </span>
+                          }
+                        </span>
+                      </span>
+                      <br />
+                    </span>
+                  </span>
+                  <span
+                    style={
+                      Object {
+                        "color": "#444",
+                      }
+                    }
+                  >
+                    /&gt;
+                  </span>
+                </div>
+              </div>
+              <button
+                className="css-1naocv3 eva467m0"
+                onClick={[Function]}
+              >
+                <div
+                  className="css-lvl6aa eva467m1"
+                >
+                  <div
+                    style={
+                      Object {
+                        "marginBottom": 6,
+                      }
+                    }
+                  >
+                    Copied!
+                  </div>
+                  <div>
+                    Copy
+                  </div>
+                </div>
+              </button>
+            </pre>
+          </div>
+          <div>
+            <h1
+              style={
+                Object {
+                  "borderBottom": "1px solid #EEE",
+                  "fontSize": "25px",
+                  "margin": "20px 0 0 0",
+                  "padding": "0 0 5px 0",
+                }
+              }
+            >
+              Prop Types
+            </h1>
+            <div>
+              <h2
+                style={
+                  Object {
+                    "margin": "20px 0 0 0",
+                  }
+                }
+              >
+                "
+                FileDrop
+                " Component
+              </h2>
+              <table
+                className="css-1uhv8nx e1vdo5380"
+              >
+                <thead>
+                  <tr>
+                    <th
+                      className="css-11b5gui e6fp4ir1"
+                    >
+                      property
+                    </th>
+                    <th
+                      className="css-11b5gui e6fp4ir1"
+                    >
+                      propType
+                    </th>
+                    <th
+                      className="css-11b5gui e6fp4ir1"
+                    >
+                      required
+                    </th>
+                    <th
+                      className="css-11b5gui e6fp4ir1"
+                    >
+                      default
+                    </th>
+                    <th
+                      className="css-11b5gui e6fp4ir1"
+                    >
+                      description
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      id
+                    </td>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      <span>
+                        string
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      -
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#22a",
+                            "wordBreak": "break-word",
+                          }
+                        }
+                      >
+                        'FileUploader'
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      DOM ID
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      buttonLabel
+                    </td>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      <span>
+                        string
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      -
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#22a",
+                            "wordBreak": "break-word",
+                          }
+                        }
+                      >
+                        'Add files'
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      Button label
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      kind
+                    </td>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      <span>
+                        oneOf 'browse' | 'drag-and-drop'
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      -
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#22a",
+                            "wordBreak": "break-word",
+                          }
+                        }
+                      >
+                        'browse'
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      Componet is drag/drop
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      accept
+                    </td>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      <span>
+                        <span>
+                          [
+                        </span>
+                        <span>
+                          <span>
+                            string
+                          </span>
+                        </span>
+                        <span>
+                          ]
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      -
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#22a",
+                            "wordBreak": "break-word",
+                          }
+                        }
+                      >
+                        []
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      File types that are accepted
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      onData
+                    </td>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      <span>
+                        func
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      -
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#22a",
+                            "wordBreak": "break-word",
+                          }
+                        }
+                      >
+                        () =&gt; {}
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      Callback to return the loaded file(s) data
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      onError
+                    </td>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      <span>
+                        func
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      -
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#22a",
+                            "wordBreak": "break-word",
+                          }
+                        }
+                      >
+                        () =&gt; {}
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      Callback for file load errors
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      title
+                    </td>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      <span>
+                        string
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      yes
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      -
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      Title text
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      description
+                    </td>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      <span>
+                        string
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      yes
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      -
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      Description text of file uploader
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storybook Snapshot tests and console checks Storyshots Header Header action buttons with dropdowns 1`] = `
 .c0 {
   background-color: #152935;
@@ -14887,7 +15685,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Header Header ac
 .c2 {
   width: 25px;
   height: 25px;
->>>>>>> da7090e2366d4fec9f013225869d1b5b96fc9050
 }
 
 <div
@@ -14910,57 +15707,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Header Header ac
         }
       }
     >
-<<<<<<< HEAD
-      <div>
-        <strong
-          className="bx--label"
-        >
-          Upload Files
-        </strong>
-        <input
-          accept={Array []}
-          multiple={true}
-          onChange={[Function]}
-          style={
-            Object {
-              "visibility": "hidden",
-            }
-          }
-          type="file"
-        />
-        <div
-          className="c0"
-          onDragLeave={[Function]}
-          onDragOver={[Function]}
-          onDrop={[Function]}
-          style={
-            Object {
-              "border": "1px dashed #8C8C8C",
-            }
-          }
-        >
-          <div>
-            Drag and drop you file here or 
-            <span
-              onClick={[Function]}
-              role="presentation"
-            >
-              <button
-                className="c1"
-              >
-                 upload 
-              </button>
-            </span>
-            <div>
-              Any file can be uploaded.  Feel free to upload more than one!
-            </div>
-          </div>
-        </div>
-        <div
-          className="bx--file-container"
-        />
-      </div>
-=======
       <header
         aria-label="main header"
         className="bx--header custom-class-name c0"
@@ -15169,7 +15915,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Header Header ac
           </button>
         </div>
       </header>
->>>>>>> da7090e2366d4fec9f013225869d1b5b96fc9050
     </div>
     <button
       onClick={[Function]}
@@ -15268,11 +16013,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Header Header ac
                 }
               }
             >
-<<<<<<< HEAD
-              FileDrop
-=======
               Header
->>>>>>> da7090e2366d4fec9f013225869d1b5b96fc9050
             </h1>
             <h2
               style={
@@ -15284,11 +16025,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Header Header ac
                 }
               }
             >
-<<<<<<< HEAD
-              Drag and drop
-=======
               Header action buttons with dropdowns
->>>>>>> da7090e2366d4fec9f013225869d1b5b96fc9050
             </h2>
           </div>
           
@@ -15325,11 +16062,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Header Header ac
                     }
                   >
                     &lt;
-<<<<<<< HEAD
-                    FileDrop
-=======
                     Header
->>>>>>> da7090e2366d4fec9f013225869d1b5b96fc9050
                   </span>
                   <span>
                     <span>
@@ -15340,11 +16073,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Header Header ac
                       <span
                         style={Object {}}
                       >
-<<<<<<< HEAD
-                        title
-=======
                         user
->>>>>>> da7090e2366d4fec9f013225869d1b5b96fc9050
                       </span>
                       <span>
                         =
@@ -15360,11 +16089,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Header Header ac
                               }
                             }
                           >
-<<<<<<< HEAD
-                            Upload Files
-=======
                             JohnDoe@ibm.com
->>>>>>> da7090e2366d4fec9f013225869d1b5b96fc9050
                           </span>
                           "
                         </span>
@@ -15378,11 +16103,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Header Header ac
                       <span
                         style={Object {}}
                       >
-<<<<<<< HEAD
-                        description
-=======
                         tenant
->>>>>>> da7090e2366d4fec9f013225869d1b5b96fc9050
                       </span>
                       <span>
                         =
@@ -15398,11 +16119,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Header Header ac
                               }
                             }
                           >
-<<<<<<< HEAD
-                            Any file can be uploaded.  Feel free to upload mor…
-=======
                             TenantId: Acme
->>>>>>> da7090e2366d4fec9f013225869d1b5b96fc9050
                           </span>
                           "
                         </span>
@@ -15416,11 +16133,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Header Header ac
                       <span
                         style={Object {}}
                       >
-<<<<<<< HEAD
-                        buttonLabel
-=======
                         className
->>>>>>> da7090e2366d4fec9f013225869d1b5b96fc9050
                       </span>
                       <span>
                         =
@@ -15436,11 +16149,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Header Header ac
                               }
                             }
                           >
-<<<<<<< HEAD
-                            Try it out!
-=======
                             custom-class-name
->>>>>>> da7090e2366d4fec9f013225869d1b5b96fc9050
                           </span>
                           "
                         </span>
@@ -15454,11 +16163,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Header Header ac
                       <span
                         style={Object {}}
                       >
-<<<<<<< HEAD
-                        kind
-=======
                         appName
->>>>>>> da7090e2366d4fec9f013225869d1b5b96fc9050
                       </span>
                       <span>
                         =
@@ -15474,11 +16179,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Header Header ac
                               }
                             }
                           >
-<<<<<<< HEAD
-                            drag-and-drop
-=======
                             Watson IoT Platform 
->>>>>>> da7090e2366d4fec9f013225869d1b5b96fc9050
                           </span>
                           "
                         </span>
@@ -15492,40 +16193,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Header Header ac
                       <span
                         style={Object {}}
                       >
-<<<<<<< HEAD
-                        onData
-                      </span>
-                      <span>
-                        =
-                        <span
-                          style={Object {}}
-                        >
-                          {
-                          <span
-                            style={
-                              Object {
-                                "color": "#170",
-                              }
-                            }
-                          >
-                            onData
-                          </span>
-                          }
-                        </span>
-                      </span>
-                    </span>
-                    <span>
-                      <span>
-                        <br />
-                          
-                      </span>
-                      <span
-                        style={Object {}}
-                      >
-                        onError
-=======
                         actionItems
->>>>>>> da7090e2366d4fec9f013225869d1b5b96fc9050
                       </span>
                       <span>
                         =
@@ -15536,13 +16204,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Header Header ac
                           <span
                             style={
                               Object {
-<<<<<<< HEAD
-                                "color": "#170",
-                              }
-                            }
-                          >
-                            onError
-=======
                                 "color": "#666",
                               }
                             }
@@ -15816,7 +16477,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Header Header ac
                               </span>
                             </span>
                             ]
->>>>>>> da7090e2366d4fec9f013225869d1b5b96fc9050
                           </span>
                           }
                         </span>
@@ -15880,11 +16540,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Header Header ac
                 }
               >
                 "
-<<<<<<< HEAD
-                FileDrop
-=======
                 Header
->>>>>>> da7090e2366d4fec9f013225869d1b5b96fc9050
                 " Component
               </h2>
               <table
@@ -15924,49 +16580,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Header Header ac
                     <td
                       className="css-1qcb1f7 e6fp4ir0"
                     >
-<<<<<<< HEAD
-                      id
-                    </td>
-                    <td
-                      className="css-1qcb1f7 e6fp4ir0"
-                    >
-                      <span>
-                        string
-                      </span>
-                    </td>
-                    <td
-                      className="css-11b5gui e6fp4ir0"
-                    >
-                      -
-                    </td>
-                    <td
-                      className="css-11b5gui e6fp4ir0"
-                    >
-                      <span
-                        style={
-                          Object {
-                            "color": "#22a",
-                            "wordBreak": "break-word",
-                          }
-                        }
-                      >
-                        'FileUploader'
-                      </span>
-                    </td>
-                    <td
-                      className="css-11b5gui e6fp4ir0"
-                    >
-                      DOM ID
-                    </td>
-                  </tr>
-                  <tr>
-                    <td
-                      className="css-1qcb1f7 e6fp4ir0"
-                    >
-                      buttonLabel
-=======
                       appName
->>>>>>> da7090e2366d4fec9f013225869d1b5b96fc9050
                     </td>
                     <td
                       className="css-1qcb1f7 e6fp4ir0"
@@ -15978,44 +16592,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Header Header ac
                     <td
                       className="css-11b5gui e6fp4ir0"
                     >
-<<<<<<< HEAD
-                      -
-                    </td>
-                    <td
-                      className="css-11b5gui e6fp4ir0"
-                    >
-                      <span
-                        style={
-                          Object {
-                            "color": "#22a",
-                            "wordBreak": "break-word",
-                          }
-                        }
-                      >
-                        'Add files'
-                      </span>
-                    </td>
-                    <td
-                      className="css-11b5gui e6fp4ir0"
-                    >
-                      Button label
-                    </td>
-                  </tr>
-                  <tr>
-                    <td
-                      className="css-1qcb1f7 e6fp4ir0"
-                    >
-                      kind
-                    </td>
-                    <td
-                      className="css-1qcb1f7 e6fp4ir0"
-                    >
-                      <span>
-                        oneOf 'browse' | 'drag-and-drop'
-                      </span>
-=======
                       yes
->>>>>>> da7090e2366d4fec9f013225869d1b5b96fc9050
                     </td>
                     <td
                       className="css-11b5gui e6fp4ir0"
@@ -16025,36 +16602,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Header Header ac
                     <td
                       className="css-11b5gui e6fp4ir0"
                     >
-<<<<<<< HEAD
-                      <span
-                        style={
-                          Object {
-                            "color": "#22a",
-                            "wordBreak": "break-word",
-                          }
-                        }
-                      >
-                        'browse'
-                      </span>
-                    </td>
-                    <td
-                      className="css-11b5gui e6fp4ir0"
-                    >
-                      Componet is drag/drop
-=======
                       Name ot follow the IBM prefix up top, left
->>>>>>> da7090e2366d4fec9f013225869d1b5b96fc9050
                     </td>
                   </tr>
                   <tr>
                     <td
                       className="css-1qcb1f7 e6fp4ir0"
                     >
-<<<<<<< HEAD
-                      accept
-=======
                       actionItems
->>>>>>> da7090e2366d4fec9f013225869d1b5b96fc9050
                     </td>
                     <td
                       className="css-1qcb1f7 e6fp4ir0"
@@ -16065,9 +16620,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Header Header ac
                         </span>
                         <span>
                           <span>
-<<<<<<< HEAD
-                            string
-=======
                             <button
                               className="css-1sgldz e1i4ski80"
                               onClick={[Function]}
@@ -16265,7 +16817,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Header Header ac
                             >
                               }
                             </button>
->>>>>>> da7090e2366d4fec9f013225869d1b5b96fc9050
                           </span>
                         </span>
                         <span>
@@ -16276,121 +16827,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Header Header ac
                     <td
                       className="css-11b5gui e6fp4ir0"
                     >
-<<<<<<< HEAD
-                      -
-                    </td>
-                    <td
-                      className="css-11b5gui e6fp4ir0"
-                    >
-                      <span
-                        style={
-                          Object {
-                            "color": "#22a",
-                            "wordBreak": "break-word",
-                          }
-                        }
-                      >
-                        []
-                      </span>
-                    </td>
-                    <td
-                      className="css-11b5gui e6fp4ir0"
-                    >
-                      File types that are accepted
-                    </td>
-                  </tr>
-                  <tr>
-                    <td
-                      className="css-1qcb1f7 e6fp4ir0"
-                    >
-                      onData
-                    </td>
-                    <td
-                      className="css-1qcb1f7 e6fp4ir0"
-                    >
-                      <span>
-                        func
-                      </span>
-                    </td>
-                    <td
-                      className="css-11b5gui e6fp4ir0"
-                    >
-                      -
-                    </td>
-                    <td
-                      className="css-11b5gui e6fp4ir0"
-                    >
-                      <span
-                        style={
-                          Object {
-                            "color": "#22a",
-                            "wordBreak": "break-word",
-                          }
-                        }
-                      >
-                        () =&gt; {}
-                      </span>
-                    </td>
-                    <td
-                      className="css-11b5gui e6fp4ir0"
-                    >
-                      Callback to return the loaded file(s) data
-                    </td>
-                  </tr>
-                  <tr>
-                    <td
-                      className="css-1qcb1f7 e6fp4ir0"
-                    >
-                      onError
-                    </td>
-                    <td
-                      className="css-1qcb1f7 e6fp4ir0"
-                    >
-                      <span>
-                        func
-                      </span>
-                    </td>
-                    <td
-                      className="css-11b5gui e6fp4ir0"
-                    >
-                      -
-                    </td>
-                    <td
-                      className="css-11b5gui e6fp4ir0"
-                    >
-                      <span
-                        style={
-                          Object {
-                            "color": "#22a",
-                            "wordBreak": "break-word",
-                          }
-                        }
-                      >
-                        () =&gt; {}
-                      </span>
-                    </td>
-                    <td
-                      className="css-11b5gui e6fp4ir0"
-                    >
-                      Callback for file load errors
-                    </td>
-                  </tr>
-                  <tr>
-                    <td
-                      className="css-1qcb1f7 e6fp4ir0"
-                    >
-                      title
-                    </td>
-                    <td
-                      className="css-1qcb1f7 e6fp4ir0"
-                    >
-                      <span>
-                        string
-                      </span>
-                    </td>
-                    <td
-                      className="css-11b5gui e6fp4ir0"
-                    >
                       yes
                     </td>
                     <td
@@ -16401,42 +16837,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Header Header ac
                     <td
                       className="css-11b5gui e6fp4ir0"
                     >
-                      Title text
-                    </td>
-                  </tr>
-                  <tr>
-                    <td
-                      className="css-1qcb1f7 e6fp4ir0"
-                    >
-                      description
-                    </td>
-                    <td
-                      className="css-1qcb1f7 e6fp4ir0"
-                    >
-                      <span>
-                        string
-                      </span>
-                    </td>
-                    <td
-                      className="css-11b5gui e6fp4ir0"
-                    >
-=======
->>>>>>> da7090e2366d4fec9f013225869d1b5b96fc9050
-                      yes
-                    </td>
-                    <td
-                      className="css-11b5gui e6fp4ir0"
-                    >
-                      -
-                    </td>
-                    <td
-                      className="css-11b5gui e6fp4ir0"
-                    >
-<<<<<<< HEAD
-                      Description text of file uploader
-=======
                       Object of action items
->>>>>>> da7090e2366d4fec9f013225869d1b5b96fc9050
                     </td>
                   </tr>
                 </tbody>
