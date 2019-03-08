@@ -5,25 +5,29 @@ import styled from 'styled-components';
 
 import { COLORS } from '../../styles/styles';
 
-
 const Span = styled.span`
-  {
-      background-color: rgba(85, 150, 230, .1)
+   {
+    background-color: rgba(85, 150, 230, 0.1);
   }
 `;
 
-
-const Link = styled.a`
+const LinkButton = styled.button`
    {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    outline: none;
     color: ${COLORS.blue};
     cursor: pointer;
   }
 `;
 
 const Text = styled.div`
-  {
+   {
     padding: 15px;
-    line-height:30px;
+    line-height: 30px;
     color: #556873;
   }
 `;
@@ -60,33 +64,16 @@ const defaultProps = {
  * Carbon File Uploader with added ability to have drag and drop
  */
 class FileDrop extends React.Component {
-
-  dropzone = null;
-
   fileInput = null;
 
   nodes = [];
 
   readers = {};
 
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      files: [],
-      hover: false,
-    }
-  }
-
-  componentDidMount = () => {
-    // Add the listeners for the file drop
-    const dropArea = this.dropzone;
-    if(dropArea){
-      dropArea.addEventListener('dragover', this.fileDragHover, false);
-      dropArea.addEventListener('dragleave', this.fileDragHover, false);
-      dropArea.addEventListener('drop', this.fileDrop, false);
-    }
-  }
+  state = {
+    files: [],
+    hover: false,
+  };
 
   /* Drag hover event */
   fileDragHover = evt => {
@@ -96,117 +83,149 @@ class FileDrop extends React.Component {
     const x = evt.pageX - window.pageXOffset;
     const y = evt.pageY - window.pageYOffset;
 
-    const inArea = (!(x < rect.left || x > rect.right
-      || y < rect.top || y > rect.bottom));
+    const inArea = !(x < rect.left || x > rect.right || y < rect.top || y > rect.bottom);
 
     this.setState({
       hover: inArea && evt.type !== 'drop',
     });
-  }
+  };
 
   /* Drop event */
   fileDrop = evt => {
     evt.stopPropagation();
 
     this.fileDragHover(evt);
-    const files = evt.target.files || evt.dataTransfer.files
+    const files = evt.target.files || evt.dataTransfer.files;
     this.addNewFiles(files);
+  };
 
-  }
-
-  readFileContent = (files) => {
-    Array.prototype.forEach.call(files, (file) => {
+  /**
+   * takes a array of File javascript objects https://developer.mozilla.org/en-US/docs/Web/API/File
+   * and creates a FileReader for each one, setting up the appropriate onload, onerror handlers, and then
+   * actually calls the readAsBinaryString method to trigger the loading of the file.
+   */
+  readFileContent = files => {
+    Array.prototype.forEach.call(files, file => {
       this.readers[file.name] = new FileReader();
-      this.readers[file.name].onload = () => {
-        this.setState((state) => {
-          const newState = {
-            files: state.files.map(i => i.name === file.name ? ({
-              name: i.name,
-              uploadState: 'edit',
-              contents: i.name === file.name ? this.readers[file.name].result : i.contents,
-            }) : i),
-          };
-          if (newState.files.filter(i => i.contents === null).length === 0) {
-            // all data is loaded, trigger callback
-            this.props.onData(newState.files.map(i => ({
-              name: i.name,
-              contents: i.contents,
-            })));
-          }
-          return newState;
-        });
-        delete this.readers[file.name];
-      };
-      this.readers[file.name].onerror = (evt) => {
-        delete this.readers[file.name];
-        return this.props.onError(evt);
-      };
+      this.readers[file.name].onload = () => this.handleFileLoad(file);
+      this.readers[file.name].onerror = evt => this.handleFileError(evt, file);
       this.readers[file.name].readAsBinaryString(file);
     });
-  }
+  };
+
+  /**
+   * In the error handler if calls the onError once for any file where content load fails and clears the reader
+   */
+  handleFileError = (evt, file) => {
+    delete this.readers[file.name];
+    return this.props.onError(evt);
+  };
+
+  /**
+   * After the file is read in the success handler, it updates the state with the file contents.
+   * After the last one is read it calls the onData callback to update the parent.
+   *
+   * Finally it clears the reader
+   */
+  handleFileLoad = file => {
+    this.setState(state => {
+      const newState = {
+        files: state.files.map(i =>
+          i.name === file.name
+            ? {
+                name: i.name,
+                uploadState: 'edit', // only change the new reader result, preserve the rest
+                contents: i.name === file.name ? this.readers[file.name].result : i.contents,
+              }
+            : i
+        ),
+      };
+
+      if (newState.files.filter(i => i.contents === null).length === 0) {
+        // all data is loaded, trigger callback
+        this.props.onData(
+          newState.files.map(i => ({
+            name: i.name,
+            contents: i.contents,
+          }))
+        );
+      }
+      return newState;
+    });
+    delete this.readers[file.name];
+  };
 
   addNewFiles = files => {
     const filenames = Array.prototype.map.call(files, f => f.name);
     this.setState(state => ({
-      files: state.files.concat(filenames.map(name => ({
-        name,
-        uploadState: 'uploading',
-        contents: null,
-      }))),
-    }))
+      files: state.files
+        .concat(
+          filenames.map(name => ({
+            name,
+            uploadState: 'uploading',
+            contents: null,
+          }))
+        )
+        .filter(
+          (elem, index, arr) => index === arr.findIndex(indexFound => indexFound.name === elem.name)
+        ),
+    }));
     this.readFileContent(files);
   };
 
   clearFile = filename =>
-    this.setState((state) => {
+    this.setState(state => {
       const newState = {
         files: state.files.filter(({ name }) => name !== filename),
       };
-      this.props.onData(newState.files.map(i => ({
-        name: i.name,
-        contents: i.contents,
-      })));
+      this.props.onData(
+        newState.files.map(i => ({
+          name: i.name,
+          contents: i.contents,
+        }))
+      );
       return newState;
     });
 
+  /** This job is to add new files based on a fileDrop event */
   handleChange = evt => {
     evt.stopPropagation();
     this.addNewFiles(evt.target.files);
   };
 
+  /** This handlers job is to request a file deletion based on the clicked index */
   handleClick = (evt, index) => {
     const filename = this.nodes[index].innerText.trim();
     this.clearFile(filename);
   };
 
   render = () => {
-    const { id, title, description, buttonLabel, accept, kind  } = this.props;
+    const { id, title, description, buttonLabel, accept, kind } = this.props;
     const { hover } = this.state;
 
-    const dradAndDropText = 'Drag and drop you file here or '
+    const dradAndDropText = 'Drag and drop you file here or ';
 
     const linkElement = (
       <div>
         {dradAndDropText}
         <span
-          onClick={() => { this.fileInput.click() }}
-          role="presentation"
-        >
-          <Link href="javascript:void(0)">upload</Link>
+          onClick={() => {
+            if (this.fileInput) {
+              this.fileInput.click();
+            }
+          }}
+          role="presentation">
+          <LinkButton> upload </LinkButton>
         </span>
-        <div>
-          {description}
-        </div>
+        <div>{description}</div>
       </div>
-    )
-
+    );
 
     const fileNameElements = (
       <div className="bx--file-container">
-        {
-          this.state.files.length === 0
-            ? null
-            : this.state.files.map(({ name, uploadState }, index) => (
+        {this.state.files.length === 0
+          ? null
+          : this.state.files.map(({ name, uploadState }, index) => (
               <Span
                 key={`${name}-${index}`}
                 className="bx--file__selected-file"
@@ -229,34 +248,31 @@ class FileDrop extends React.Component {
                   />
                 </span>
               </Span>
-            )
-          )
-        }
+            ))}
       </div>
-    )
+    );
 
-    return kind === 'drag-and-drop' ?
-    (
+    return kind === 'drag-and-drop' ? (
       <div>
         <strong className="bx--label">{title}</strong>
         <input
           style={{ visibility: 'hidden' }}
           type="file"
-          ref={(ref) => this.fileInput = ref} // eslint-disable-line
+          ref={ref => (this.fileInput = ref)} // eslint-disable-line
           accept={accept}
           multiple
           onChange={this.handleChange}
         />
         <Text
-          ref={(ref) => this.dropzone = ref} // eslint-disable-line
-          style={hover ? { border: "1px solid #3D70B2" } : {  border: "1px dashed #8C8C8C"  }}
-        >
-          { linkElement }
+          style={hover ? { border: '1px solid #3D70B2' } : { border: '1px dashed #8C8C8C' }}
+          onDragOver={this.fileDragHover}
+          onDragLeave={this.fileDragHover}
+          onDrop={this.fileDrop}>
+          {linkElement}
         </Text>
-        { fileNameElements }
+        {fileNameElements}
       </div>
-    )
-    : (
+    ) : (
       <div id={id} className="bx--form-item">
         <strong className="bx--label">{title}</strong>
         <p className="bx--label-description">{description}</p>
@@ -268,11 +284,11 @@ class FileDrop extends React.Component {
           disableLabelChanges
           accept={accept}
         />
-        { fileNameElements }
+        {fileNameElements}
       </div>
     );
-   }
-};
+  };
+}
 
 FileDrop.propTypes = propTypes;
 FileDrop.defaultProps = defaultProps;
