@@ -100,6 +100,7 @@ export const mockActions = {
   },
   table: {
     onRowSelected: jest.fn(),
+    onRowClicked: jest.fn(),
     onRowExpanded: jest.fn(),
     onSelectAll: jest.fn(),
     onChangeSort: jest.fn(),

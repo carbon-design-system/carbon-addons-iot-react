@@ -25,8 +25,10 @@ const propTypes = {
   totalColumns: PropTypes.number,
   hasRowSelection: PropTypes.bool,
   hasRowExpansion: PropTypes.bool,
+  shouldExpandOnRowClick: PropTypes.bool,
   actions: PropTypes.shape({
     onRowSelected: PropTypes.func,
+    onRowClicked: PropTypes.func,
     onApplyRowActions: PropTypes.func,
     onRowExpanded: PropTypes.func,
   }).isRequired,
@@ -41,6 +43,7 @@ const defaultProps = {
   totalColumns: 0,
   hasRowSelection: false,
   hasRowExpansion: false,
+  shouldExpandOnRowClick: false,
 };
 
 const TableBody = ({
@@ -54,6 +57,7 @@ const TableBody = ({
   actions,
   hasRowSelection,
   hasRowExpansion,
+  shouldExpandOnRowClick,
 }) => (
   <CarbonTableBody>
     {rows.map(row => {
@@ -70,13 +74,20 @@ const TableBody = ({
           }
           columns={columns}
           id={row.id}
+          totalColumns={totalColumns}
+          tableId={id}
           options={{
             hasRowSelection,
             hasRowExpansion,
-            totalColumns,
-            id,
+            shouldExpandOnRowClick,
           }}
-          tableActions={pick(actions, 'onRowSelected', 'onApplyRowAction', 'onRowExpanded')}
+          tableActions={pick(
+            actions,
+            'onRowSelected',
+            'onApplyRowAction',
+            'onRowExpanded',
+            'onRowClicked'
+          )}
           rowActions={row.rowActions}>
           {row.values}
         </TableBodyRow>

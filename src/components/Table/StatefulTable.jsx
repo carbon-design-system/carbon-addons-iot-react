@@ -58,6 +58,7 @@ const StatefulTable = ({
     table: {
       onChangeSort,
       onRowSelected,
+      onRowClicked,
       onSelectAll,
       onRowExpanded,
       onApplyRowAction,
@@ -111,6 +112,10 @@ const StatefulTable = ({
       onRowSelected: (rowId, isSelected) => {
         dispatch(tableRowSelect(rowId, isSelected));
         callbackParent(onRowSelected, rowId, isSelected);
+      },
+      onRowClicked: rowId => {
+        // This action doesn't update our table state, it's up to the user
+        callbackParent(onRowClicked, rowId);
       },
       onSelectAll: isSelected => {
         dispatch(tableRowSelectAll(isSelected));

@@ -125,6 +125,7 @@ const actions = {
     onApplySearch: action('onApplySearch'),
   },
   table: {
+    onRowClicked: action('onRowClicked'),
     onRowSelected: action('onRowSelected'),
     onSelectAll: action('onSelectAll'),
     onEmptyStateAction: action('onEmptyStateAction'),
@@ -171,6 +172,7 @@ export const initialState = {
     hasRowExpansion: true,
     hasRowActions: true,
     hasColumnSelection: true,
+    shouldExpandOnRowClick: false,
   },
   view: {
     filters: [
@@ -273,6 +275,33 @@ storiesOf('Table', module)
       actions={actions}
       options={{
         hasRowExpansion: true,
+      }}
+      view={{
+        filters: [],
+        table: {
+          ordering: defaultOrdering,
+          expandedRows: [
+            {
+              rowId: 'row-2',
+              content: <RowExpansionContent rowId="row-2" />,
+            },
+            {
+              rowId: 'row-5',
+              content: <RowExpansionContent rowId="row-5" />,
+            },
+          ],
+        },
+      }}
+    />
+  ))
+  .add('with row expansion and on row click expands', () => (
+    <Table
+      columns={tableColumns}
+      data={tableData}
+      actions={actions}
+      options={{
+        hasRowExpansion: true,
+        shouldExpandOnRowClick: true,
       }}
       view={{
         filters: [],
