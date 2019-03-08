@@ -611,6 +611,7 @@ storiesOf('Table', module)
         .my-custom-classname tr { 
           height: 5rem;
         }`,
+        propTables: false,
       },
     }
   );
