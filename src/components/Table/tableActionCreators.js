@@ -10,6 +10,7 @@ export const TABLE_COLUMN_ORDER = 'TABLE_COLUMN_ORDER';
 export const TABLE_ROW_SELECT = 'TABLE_ROW_SELECT';
 export const TABLE_ROW_SELECT_ALL = 'TABLE_ROW_SELECT_ALL';
 export const TABLE_ROW_EXPAND = 'TABLE_ROW_EXPAND';
+export const TABLE_SEARCH_APPLY = 'TABLE_SEARCH_APPLY';
 
 export const tableRegister = () => ({ type: TABLE_REGISTER });
 export const tablePageChange = page => ({ type: TABLE_PAGE_CHANGE, payload: page });
@@ -17,6 +18,8 @@ export const tableToolbarToggle = toolbar => ({ type: TABLE_TOOLBAR_TOGGLE, payl
 /** Apply filters */
 export const tableFilterApply = filter => ({ type: TABLE_FILTER_APPLY, payload: filter });
 export const tableFilterClear = () => ({ type: TABLE_FILTER_CLEAR });
+
+export const tableSearchApply = search => ({ type: TABLE_SEARCH_APPLY, payload: search });
 /** Table Batch Actions */
 export const tableActionCancel = () => ({ type: TABLE_ACTION_CANCEL });
 export const tableActionApply = id => ({ type: TABLE_ACTION_APPLY, payload: id });

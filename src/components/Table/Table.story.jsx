@@ -122,6 +122,7 @@ const actions = {
     onClearAllFilters: action('onClearAllFilters'),
     onCancelBatchAction: action('onCancelBatchAction'),
     onApplyBatchAction: action('onApplyBatchAction'),
+    onApplySearch: action('onApplySearch'),
   },
   table: {
     onRowSelected: action('onRowSelected'),
@@ -164,6 +165,7 @@ export const initialState = {
   })),
   options: {
     hasFilter: true,
+    hasSearch: true,
     hasPagination: true,
     hasRowSelection: true,
     hasRowExpansion: true,
@@ -207,6 +209,9 @@ export const initialState = {
           iconDescription: 'Delete',
         },
       ],
+      search: {
+        placeHolderText: 'My Search',
+      },
     },
   },
 };
@@ -221,6 +226,14 @@ storiesOf('Table', module)
     },
   })
   .add('default', () => <Table columns={tableColumns} data={tableData} actions={actions} />)
+  .add('with simple search', () => (
+    <Table
+      columns={tableColumns}
+      data={tableData}
+      actions={actions}
+      options={{ hasSearch: true }}
+    />
+  ))
   .add('with selection and batch actions', () => (
     // TODO - batch action bar
     <Table

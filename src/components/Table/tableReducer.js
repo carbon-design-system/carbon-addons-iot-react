@@ -1,5 +1,6 @@
 import update from 'immutability-helper';
 import isNil from 'lodash/isNil';
+import isEmpty from 'lodash/isEmpty';
 
 import { getSortedData } from '../../utils/componentUtilityFunctions';
 
@@ -16,23 +17,43 @@ import {
   TABLE_ROW_EXPAND,
   TABLE_COLUMN_ORDER,
   TABLE_REGISTER,
+  TABLE_SEARCH_APPLY,
 } from './tableActionCreators';
 
 // Little utility to filter data
 const filterData = (data, filters) =>
-  data.filter(({ values }) =>
-    // return false if a value doesn't match a valid filter
-    // TODO Currently assumes every value has a toString method, need to support filtering on custom cell contents
-    filters.reduce(
-      (acc, { columnId, value }) =>
-        acc &&
-        ((values[columnId] &&
-          values[columnId].toString &&
-          values[columnId].toString().includes(value)) ||
-          isNil(values[columnId])), // If passed an invalid column keep going)
-      true
-    )
+  filters.length === 0
+    ? data
+    : data.filter(({ values }) =>
+        // return false if a value doesn't match a valid filter
+        // TODO Currently assumes every value has a toString method, need to support filtering on custom cell contents
+        filters.reduce(
+          (acc, { columnId, value }) =>
+            acc &&
+            ((values[columnId] &&
+              values[columnId].toString &&
+              values[columnId].toString().includes(value)) ||
+              isNil(values[columnId])), // If passed an invalid column keep going)
+          true
+        )
+      );
+// Little utility to search
+const searchData = (data, searchString) =>
+  data.filter((
+    { values } // globally check row values for a match
+  ) =>
+    Object.values(values).find(value => value.toString && value.toString().includes(searchString))
   );
+
+// little utility to both sort and filter
+const filterSearchAndSort = (data, sort = {}, search = {}, filters) => {
+  const { columnId, direction } = sort;
+  const { value: searchValue } = search;
+  const filteredData = filterData(data, filters);
+  const searchedData =
+    searchValue && searchValue !== '' ? searchData(filteredData, searchValue) : filteredData;
+  return !isEmpty(sort) ? getSortedData(searchedData, columnId, direction) : searchedData;
+};
 
 export const tableReducer = (state = {}, action) => {
   switch (action.type) {
@@ -73,7 +94,12 @@ export const tableReducer = (state = {}, action) => {
           },
           table: {
             filteredData: {
-              $set: filterData(state.data, newFilters),
+              $set: filterSearchAndSort(
+                state.data,
+                state.view.table.sort,
+                state.view.toolbar.search,
+                newFilters
+              ),
             },
           },
         },
@@ -90,11 +116,44 @@ export const tableReducer = (state = {}, action) => {
           },
           table: {
             filteredData: {
-              $set: state.data,
+              $set: filterSearchAndSort(
+                state.data,
+                state.view.table.sort,
+                state.view.toolbar.search,
+                []
+              ),
             },
           },
         },
       });
+    case TABLE_SEARCH_APPLY: {
+      // Quick search should search within the filtered and sorted data
+      const data = filterSearchAndSort(
+        state.data,
+        state.view.table.sort,
+        { value: action.payload },
+        state.view.filters
+      );
+      return update(state, {
+        view: {
+          toolbar: {
+            search: {
+              value: {
+                $set: action.payload,
+              },
+            },
+          },
+          pagination: {
+            page: { $set: 1 },
+          },
+          table: {
+            filteredData: {
+              $set: data,
+            },
+          },
+        },
+      });
+    }
     // Toolbar Actions
     case TABLE_TOOLBAR_TOGGLE: {
       const filterToggled = state.view.toolbar.activeBar === action.payload ? null : action.payload;
@@ -253,13 +312,16 @@ export const tableReducer = (state = {}, action) => {
     }
     // By default we need to setup our sorted and filteredData
     case TABLE_REGISTER: {
-      const { columnId, direction } = state.view.table.sort || {};
-      const filteredData = filterData(state.data, state.view.filters);
       return update(state, {
         view: {
           table: {
             filteredData: {
-              $set: columnId ? getSortedData(filteredData, columnId, direction) : filteredData,
+              $set: filterSearchAndSort(
+                state.data,
+                state.view.table.sort,
+                state.view.toolbar.search,
+                state.view.filters
+              ),
             },
           },
         },

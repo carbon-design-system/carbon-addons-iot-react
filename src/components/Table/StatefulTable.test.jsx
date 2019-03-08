@@ -9,7 +9,7 @@ import { initialState } from './Table.story';
 // Need to mock the useReducer hook so the real reducer doesn't run
 jest.mock('react', () => ({
   ...jest.requireActual('react'),
-  useReducer: () => [{ view: { table: { filteredData: [] } } }, jest.fn().mockReturnValue(true)],
+  useReducer: () => [{ view: { table: { filteredData: [] } } }, jest.fn()],
 }));
 describe('StatefulTable tests', () => {
   afterAll(() => {
