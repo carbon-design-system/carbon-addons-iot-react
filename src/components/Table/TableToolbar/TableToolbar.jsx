@@ -2,8 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { iconGrid, iconFilter } from 'carbon-icons';
 import { DataTable, Button } from 'carbon-components-react';
+import styled from 'styled-components';
 
 import { TableSearchPropTypes } from '../TablePropTypes';
+import { COLORS } from '../../../styles/styles';
 
 const {
   TableToolbar: CarbonTableToolbar,
@@ -13,6 +15,27 @@ const {
   TableBatchAction,
   TableToolbarSearch,
 } = DataTable;
+
+const StyledTableToolbarAction = styled(({ isActive, ...other }) => (
+  <TableToolbarAction {...other} />
+))`
+  &&& {
+    :last-of-type {
+      padding-right: 0.75rem;
+    }
+
+    :not(:focus) > svg {
+      fill: ${props => (props.isActive ? COLORS.blue : COLORS.gray)};
+    }
+  }
+`;
+
+// Need to save one px on the right for the focus
+const StyledTableToolbarContent = styled(TableToolbarContent)`
+  &&& {
+    padding-right: 1px;
+  }
+`;
 
 const propTypes = {
   /** global table options */
@@ -35,6 +58,8 @@ const propTypes = {
    * Inbound tableState
    */
   tableState: PropTypes.shape({
+    /** Which toolbar is currently active */
+    activeBar: PropTypes.oneOf(['column', 'filter']),
     /** total number of selected rows */
     totalSelected: PropTypes.number,
     /** available batch actions */
@@ -59,6 +84,7 @@ const propTypes = {
 };
 
 const TableToolbar = ({
+  className,
   options: { hasColumnSelection, hasFilter, hasSearch },
   actions: {
     onCancelBatchAction,
@@ -68,17 +94,16 @@ const TableToolbar = ({
     onToggleFilter,
     onApplySearch,
   },
-  tableState: { totalSelected, totalFilters, batchActions, search },
+  tableState: { totalSelected, totalFilters, batchActions, search, activeBar },
 }) => (
-  <CarbonTableToolbar>
+  <CarbonTableToolbar className={className}>
     {hasSearch ? (
       <TableToolbarSearch
         onChange={event => onApplySearch(event.currentTarget ? event.currentTarget.value : '')}
         {...search}
       />
     ) : null}
-    <TableToolbarContent />
-    <TableToolbarContent>
+    <StyledTableToolbarContent>
       <TableBatchActions
         onCancel={onCancelBatchAction}
         shouldShowBatchActions={totalSelected > 0}
@@ -95,22 +120,24 @@ const TableToolbar = ({
         </Button>
       ) : null}
       {hasColumnSelection ? (
-        <TableToolbarAction
+        <StyledTableToolbarAction
           className="bx--btn--sm"
           icon={iconGrid}
           iconDescription="Column Selection"
+          isActive={activeBar === 'column'}
           onClick={onToggleColumnSelection}
         />
       ) : null}
       {hasFilter ? (
-        <TableToolbarAction
+        <StyledTableToolbarAction
           className="bx--btn--sm"
           icon={iconFilter}
           iconDescription="Filter"
+          isActive={activeBar === 'filter'}
           onClick={onToggleFilter}
         />
       ) : null}
-    </TableToolbarContent>
+    </StyledTableToolbarContent>
   </CarbonTableToolbar>
 );
 
