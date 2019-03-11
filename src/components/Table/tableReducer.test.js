@@ -52,11 +52,11 @@ describe('table reducer testcases', () => {
   });
   describe('pagination tests', () => {
     test('TABLE_PAGE_CHANGE ', () => {
-      const updatedState = tableReducer(initialState, tablePageChange({ page: 3 }));
+      const updatedState = tableReducer(initialState, tablePageChange({ page: 3, pageSize: 10 }));
       expect(updatedState.view.pagination.page).toEqual(3);
     });
     test('TABLE_PAGE_CHANGE with invalid page', () => {
-      const updatedState = tableReducer(initialState, tablePageChange({ page: 65 }));
+      const updatedState = tableReducer(initialState, tablePageChange({ page: 65, pageSize: 10 }));
       expect(updatedState.view.pagination.page).toEqual(1);
     });
   });
