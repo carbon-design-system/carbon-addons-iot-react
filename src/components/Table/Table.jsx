@@ -154,7 +154,7 @@ const defaultProps = baseProps => ({
       batchActions: [],
     },
     table: {
-      expandedRows: [],
+      expandedIds: [],
       isSelectAllSelected: false,
       selectedIds: [],
       sort: {},
