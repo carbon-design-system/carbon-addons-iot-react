@@ -1,5 +1,6 @@
 import React from 'react';
 import { select } from '@storybook/addon-knobs';
+import { action } from '@storybook/addon-actions';
 import { storiesOf } from '@storybook/react';
 
 import StructuredList from './StructuredList';
@@ -47,19 +48,19 @@ const data = [
 ];
 
 storiesOf('StructuredList', module)
-  .add('Simple ', () => (
+  .add('default ', () => (
     <StructuredList
       design={select('Row design', ['normal', 'mini'], 'mini')}
       data={data}
       columns={columns}
-      onRowClick={() => window.alert('row clicked')}
+      onRowClick={action('onRowClick')}
     />
   ))
-  .add('Empty', () => (
+  .add('with empty state', () => (
     <StructuredList
       columns={columns}
       data={[]}
-      loadingDataLabel="Waiting for data to be loaded"
-      onRowClick={() => window.alert('row clicked')}
+      loadingDataLabel="No data is available yet."
+      onRowClick={action('onRowClick')}
     />
   ));

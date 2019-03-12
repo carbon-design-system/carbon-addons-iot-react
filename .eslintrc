@@ -48,7 +48,7 @@
         ]
       }
     ],
-    "react/jsx-closing-bracket-location": 0,
+    "react/jsx-closing-bracket-location": 2,
     "import/first": [
       2,
       {
