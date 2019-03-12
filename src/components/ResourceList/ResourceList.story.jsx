@@ -25,6 +25,7 @@ const resourceData = [
   },
 ];
 
+/* Resource List simple */
 class ResourceListSimple extends Component {
   constructor(props) {
     super(props);
@@ -48,7 +49,7 @@ class ResourceListSimple extends Component {
   };
 }
 
-/* Resource List simple */
+/* Resource List with custom actions */
 const ResourceListCustomActions = () => (
   <ResourceList
     design={select('Resource list design', ['normal', 'inline'], 'normal')}
