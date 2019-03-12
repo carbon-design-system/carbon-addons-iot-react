@@ -18334,20 +18334,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots ProgressIndicato
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Resource List Action 1`] = `
-.c0 .bx--structured-list-th {
-  padding-left: 16px;
-}
-
-.c0 .bx--structured-list-td {
-  padding-left: 16px;
-}
-
-.c1 {
-  color: #3e70b2;
-  fill: #3e70b2;
-}
-
+exports[`Storybook Snapshot tests and console checks Storyshots ResourceList default 1`] = `
 <div
   className="storybook-container"
   style={
@@ -18369,96 +18356,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots Resource List Ac
       }
     >
       <section
-        className="bx--structured-list bx--structured-list--border bx--structured-list--selection c0"
-        data-structured-list={true}
+        className="bx--structured-list bx--structured-list--border bx--structured-list--selection "
       >
         <div
           className="bx--structured-list-tbody"
         >
           <label
             aria-label="Item A"
-            className="bx--structured-list-row--selected bx--structured-list-row"
-            onClick={[Function]}
-            tabIndex="0"
-          >
-            <div
-              className="bx--structured-list-td bx--structured-list-content--nowrap"
-              style={
-                Object {
-                  "fontWeight": "600",
-                }
-              }
-            >
-              Item A
-            </div>
-            <div
-              className="bx--structured-list-td"
-            >
-              Lorem ipsun dolor sit amet, consectetur adipiscing elit. Nunc dui magna, finibus id tortor sed.
-            </div>
-            <input
-              checked={true}
-              className="bx--structured-list-input"
-              name="services"
-              readOnly={true}
-              tabIndex="-1"
-              title="Item A"
-              type="radio"
-              value="Item A"
-            />
-            <div
-              className="bx--structured-list-td bx--structured-list-content--nowrap c1"
-              onClick={[Function]}
-              role="presentation"
-              style={
-                Object {
-                  "verticalAlign": "middle",
-                }
-              }
-            >
-              <span
-                style={
-                  Object {
-                    "marginRight": "20px",
-                  }
-                }
-              >
-                Configure 
-              </span>
-              <svg
-                alt="Provide a description that will be used as the title"
-                aria-label="Provide a description that will be used as the title"
-                fillRule="evenodd"
-                height="16"
-                name="edit"
-                role="img"
-                viewBox="0 0 16 16"
-                width="16"
-              >
-                <title>
-                  Provide a description that will be used as the title
-                </title>
-                <path
-                  d="M7.926 3.38L1.002 9.72V12h2.304l6.926-6.316L7.926 3.38zm.738-.675l2.308 2.304 1.451-1.324-2.308-2.309-1.451 1.329zM.002 9.28L9.439.639a1 1 0 0 1 1.383.03l2.309 2.309a1 1 0 0 1-.034 1.446L3.694 13H.002V9.28zM0 16.013v-1h16v1z"
-                />
-              </svg>
-            </div>
-          </label>
-          <label
-            aria-label="Item B"
             className=" bx--structured-list-row"
             onClick={[Function]}
-            tabIndex="0"
+            tabIndex={0}
           >
             <div
               className="bx--structured-list-td bx--structured-list-content--nowrap"
-              style={
-                Object {
-                  "fontWeight": "600",
-                }
-              }
             >
-              Item B
+              <strong>
+                Item A
+              </strong>
             </div>
             <div
               className="bx--structured-list-td"
@@ -18468,47 +18382,77 @@ exports[`Storybook Snapshot tests and console checks Storyshots Resource List Ac
             <input
               checked={false}
               className="bx--structured-list-input"
-              name="services"
               readOnly={true}
-              tabIndex="-1"
-              title="Item B"
+              tabIndex={-1}
+              title="Item A"
               type="radio"
-              value="Item B"
+              value="Item A"
             />
             <div
-              className="bx--structured-list-td bx--structured-list-content--nowrap c1"
-              onClick={[Function]}
-              role="presentation"
+              className="bx--structured-list-td"
               style={
                 Object {
                   "verticalAlign": "middle",
                 }
               }
             >
-              <span
-                style={
-                  Object {
-                    "marginRight": "20px",
-                  }
-                }
-              >
-                Configure 
-              </span>
               <svg
-                alt="Provide a description that will be used as the title"
-                aria-label="Provide a description that will be used as the title"
-                fillRule="evenodd"
+                className="bx--structured-list-svg"
                 height="16"
-                name="edit"
-                role="img"
                 viewBox="0 0 16 16"
                 width="16"
               >
-                <title>
-                  Provide a description that will be used as the title
-                </title>
                 <path
-                  d="M7.926 3.38L1.002 9.72V12h2.304l6.926-6.316L7.926 3.38zm.738-.675l2.308 2.304 1.451-1.324-2.308-2.309-1.451 1.329zM.002 9.28L9.439.639a1 1 0 0 1 1.383.03l2.309 2.309a1 1 0 0 1-.034 1.446L3.694 13H.002V9.28zM0 16.013v-1h16v1z"
+                  d="M8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16zm3.646-10.854L6.75 10.043 4.354 7.646l-.708.708 3.104 3.103 5.604-5.603-.708-.708z"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </div>
+          </label>
+          <label
+            aria-label="Item B"
+            className=" bx--structured-list-row"
+            onClick={[Function]}
+            tabIndex={1}
+          >
+            <div
+              className="bx--structured-list-td bx--structured-list-content--nowrap"
+            >
+              <strong>
+                Item B
+              </strong>
+            </div>
+            <div
+              className="bx--structured-list-td"
+            >
+              Lorem ipsun dolor sit amet, consectetur adipiscing elit. Nunc dui magna, finibus id tortor sed.
+            </div>
+            <input
+              checked={false}
+              className="bx--structured-list-input"
+              readOnly={true}
+              tabIndex={-1}
+              title="Item B"
+              type="radio"
+              value="Item B"
+            />
+            <div
+              className="bx--structured-list-td"
+              style={
+                Object {
+                  "verticalAlign": "middle",
+                }
+              }
+            >
+              <svg
+                className="bx--structured-list-svg"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+              >
+                <path
+                  d="M8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16zm3.646-10.854L6.75 10.043 4.354 7.646l-.708.708 3.104 3.103 5.604-5.603-.708-.708z"
+                  fillRule="evenodd"
                 />
               </svg>
             </div>
@@ -18517,17 +18461,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Resource List Ac
             aria-label="Item C"
             className=" bx--structured-list-row"
             onClick={[Function]}
-            tabIndex="0"
+            tabIndex={2}
           >
             <div
               className="bx--structured-list-td bx--structured-list-content--nowrap"
-              style={
-                Object {
-                  "fontWeight": "600",
-                }
-              }
             >
-              Item C
+              <strong>
+                Item C
+              </strong>
             </div>
             <div
               className="bx--structured-list-td"
@@ -18537,47 +18478,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots Resource List Ac
             <input
               checked={false}
               className="bx--structured-list-input"
-              name="services"
               readOnly={true}
-              tabIndex="-1"
+              tabIndex={-1}
               title="Item C"
               type="radio"
               value="Item C"
             />
             <div
-              className="bx--structured-list-td bx--structured-list-content--nowrap c1"
-              onClick={[Function]}
-              role="presentation"
+              className="bx--structured-list-td"
               style={
                 Object {
                   "verticalAlign": "middle",
                 }
               }
             >
-              <span
-                style={
-                  Object {
-                    "marginRight": "20px",
-                  }
-                }
-              >
-                Configure 
-              </span>
               <svg
-                alt="Provide a description that will be used as the title"
-                aria-label="Provide a description that will be used as the title"
-                fillRule="evenodd"
+                className="bx--structured-list-svg"
                 height="16"
-                name="edit"
-                role="img"
                 viewBox="0 0 16 16"
                 width="16"
               >
-                <title>
-                  Provide a description that will be used as the title
-                </title>
                 <path
-                  d="M7.926 3.38L1.002 9.72V12h2.304l6.926-6.316L7.926 3.38zm.738-.675l2.308 2.304 1.451-1.324-2.308-2.309-1.451 1.329zM.002 9.28L9.439.639a1 1 0 0 1 1.383.03l2.309 2.309a1 1 0 0 1-.034 1.446L3.694 13H.002V9.28zM0 16.013v-1h16v1z"
+                  d="M8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16zm3.646-10.854L6.75 10.043 4.354 7.646l-.708.708 3.104 3.103 5.604-5.603-.708-.708z"
+                  fillRule="evenodd"
                 />
               </svg>
             </div>
@@ -18682,7 +18605,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Resource List Ac
                 }
               }
             >
-              Resource List
+              ResourceList
             </h1>
             <h2
               style={
@@ -18694,7 +18617,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Resource List Ac
                 }
               }
             >
-              Action
+              default
             </h2>
           </div>
           
@@ -18731,7 +18654,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Resource List Ac
                     }
                   >
                     &lt;
-                    ResourceListCustomActions
+                    ResourceListSimple
                   </span>
                   <span />
                   <span
@@ -18790,7 +18713,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Resource List Ac
                 }
               >
                 "
-                ResourceListCustomActions
+                ResourceListSimple
                 " Component
               </h2>
               <small>
@@ -18805,13 +18728,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Resource List Ac
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Resource List Extra content 1`] = `
-.c0 .bx--structured-list-th {
-  padding-left: 16px;
-}
-
-.c0 .bx--structured-list-td {
-  padding-left: 16px;
+exports[`Storybook Snapshot tests and console checks Storyshots ResourceList with action 1`] = `
+.c0 {
+  vertical-align: middle;
+  color: #3e70b2;
+  fill: #3e70b2;
 }
 
 <div
@@ -18835,8 +18756,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Resource List Ex
       }
     >
       <section
-        className="bx--structured-list bx--structured-list--border bx--structured-list--selection c0"
-        data-structured-list={true}
+        className="bx--structured-list bx--structured-list--border bx--structured-list--selection "
       >
         <div
           className="bx--structured-list-tbody"
@@ -18845,24 +18765,1240 @@ exports[`Storybook Snapshot tests and console checks Storyshots Resource List Ex
             aria-label="Item A"
             className=" bx--structured-list-row"
             onClick={[Function]}
-            tabIndex="0"
+            tabIndex={-1}
+          >
+            <div
+              className="bx--structured-list-td bx--structured-list-content--nowrap"
+            >
+              <strong>
+                Item A
+              </strong>
+            </div>
+            <div
+              className="bx--structured-list-td"
+            >
+              Lorem ipsun dolor sit amet, consectetur adipiscing elit. Nunc dui magna, finibus id tortor sed.
+            </div>
+            <div
+              className="bx--structured-list-td bx--structured-list-content--nowrap c0"
+              role="presentation"
+            >
+              <button
+                className="bx--btn bx--btn--sm bx--btn--ghost"
+                disabled={false}
+                onClick={[Function]}
+                tabIndex={0}
+                type="button"
+              >
+                Configure
+                <svg
+                  alt="Provide icon description if icon is used"
+                  aria-hidden="true"
+                  aria-label="Provide icon description if icon is used"
+                  className="bx--btn__icon"
+                  fillRule="evenodd"
+                  height="16"
+                  name="edit"
+                  role="img"
+                  viewBox="0 0 16 16"
+                  width="16"
+                >
+                  <title>
+                    Provide icon description if icon is used
+                  </title>
+                  <path
+                    d="M7.926 3.38L1.002 9.72V12h2.304l6.926-6.316L7.926 3.38zm.738-.675l2.308 2.304 1.451-1.324-2.308-2.309-1.451 1.329zM.002 9.28L9.439.639a1 1 0 0 1 1.383.03l2.309 2.309a1 1 0 0 1-.034 1.446L3.694 13H.002V9.28zM0 16.013v-1h16v1z"
+                  />
+                </svg>
+              </button>
+            </div>
+          </label>
+          <label
+            aria-label="Item B"
+            className=" bx--structured-list-row"
+            onClick={[Function]}
+            tabIndex={-1}
+          >
+            <div
+              className="bx--structured-list-td bx--structured-list-content--nowrap"
+            >
+              <strong>
+                Item B
+              </strong>
+            </div>
+            <div
+              className="bx--structured-list-td"
+            >
+              Lorem ipsun dolor sit amet, consectetur adipiscing elit. Nunc dui magna, finibus id tortor sed.
+            </div>
+            <div
+              className="bx--structured-list-td bx--structured-list-content--nowrap c0"
+              role="presentation"
+            >
+              <button
+                className="bx--btn bx--btn--sm bx--btn--ghost"
+                disabled={false}
+                onClick={[Function]}
+                tabIndex={0}
+                type="button"
+              >
+                Configure
+                <svg
+                  alt="Provide icon description if icon is used"
+                  aria-hidden="true"
+                  aria-label="Provide icon description if icon is used"
+                  className="bx--btn__icon"
+                  fillRule="evenodd"
+                  height="16"
+                  name="edit"
+                  role="img"
+                  viewBox="0 0 16 16"
+                  width="16"
+                >
+                  <title>
+                    Provide icon description if icon is used
+                  </title>
+                  <path
+                    d="M7.926 3.38L1.002 9.72V12h2.304l6.926-6.316L7.926 3.38zm.738-.675l2.308 2.304 1.451-1.324-2.308-2.309-1.451 1.329zM.002 9.28L9.439.639a1 1 0 0 1 1.383.03l2.309 2.309a1 1 0 0 1-.034 1.446L3.694 13H.002V9.28zM0 16.013v-1h16v1z"
+                  />
+                </svg>
+              </button>
+            </div>
+          </label>
+          <label
+            aria-label="Item C"
+            className=" bx--structured-list-row"
+            onClick={[Function]}
+            tabIndex={-1}
+          >
+            <div
+              className="bx--structured-list-td bx--structured-list-content--nowrap"
+            >
+              <strong>
+                Item C
+              </strong>
+            </div>
+            <div
+              className="bx--structured-list-td"
+            >
+              Lorem ipsun dolor sit amet, consectetur adipiscing elit. Nunc dui magna, finibus id tortor sed. Lorem ipsun dolor sit amet, consectetur adipiscing elit. Nunc dui magna, finibus id tortor sed.Lorem ipsun dolor sit amet, consectetur adipiscing elit. Nunc dui magna, finibus id tortor sed.Lorem ipsun dolor sit amet, consectetur adipiscing elit. Nunc dui magna, finibus id tortor sed.Lorem ipsun dolor sit amet, consectetur adipiscing elit. Nunc dui magna, finibus id tortor sed.Lorem ipsun dolor sit amet, consectetur adipiscing elit. Nunc dui magna, finibus id tortor sed.Lorem ipsun dolor sit amet, consectetur adipiscing elit. Nunc dui magna, finibus id tortor sed.
+            </div>
+            <div
+              className="bx--structured-list-td bx--structured-list-content--nowrap c0"
+              role="presentation"
+            >
+              <button
+                className="bx--btn bx--btn--sm bx--btn--ghost"
+                disabled={false}
+                onClick={[Function]}
+                tabIndex={0}
+                type="button"
+              >
+                Configure
+                <svg
+                  alt="Provide icon description if icon is used"
+                  aria-hidden="true"
+                  aria-label="Provide icon description if icon is used"
+                  className="bx--btn__icon"
+                  fillRule="evenodd"
+                  height="16"
+                  name="edit"
+                  role="img"
+                  viewBox="0 0 16 16"
+                  width="16"
+                >
+                  <title>
+                    Provide icon description if icon is used
+                  </title>
+                  <path
+                    d="M7.926 3.38L1.002 9.72V12h2.304l6.926-6.316L7.926 3.38zm.738-.675l2.308 2.304 1.451-1.324-2.308-2.309-1.451 1.329zM.002 9.28L9.439.639a1 1 0 0 1 1.383.03l2.309 2.309a1 1 0 0 1-.034 1.446L3.694 13H.002V9.28zM0 16.013v-1h16v1z"
+                  />
+                </svg>
+              </button>
+            </div>
+          </label>
+        </div>
+      </section>
+    </div>
+    <button
+      onClick={[Function]}
+      style={
+        Object {
+          "background": "#28c",
+          "border": "none",
+          "borderRadius": "0 0 0 5px",
+          "color": "#fff",
+          "cursor": "pointer",
+          "display": "block",
+          "fontFamily": "sans-serif",
+          "fontSize": "12px",
+          "padding": "5px 15px",
+          "position": "fixed",
+          "right": 0,
+          "top": 0,
+        }
+      }
+      type="button"
+    >
+      Show Info
+    </button>
+    <div
+      style={
+        Object {
+          "background": "white",
+          "bottom": 0,
+          "display": "none",
+          "left": 0,
+          "overflow": "auto",
+          "padding": "0 40px",
+          "position": "fixed",
+          "right": 0,
+          "top": 0,
+          "zIndex": 99999,
+        }
+      }
+    >
+      <button
+        onClick={[Function]}
+        style={
+          Object {
+            "background": "#28c",
+            "border": "none",
+            "borderRadius": "0 0 0 5px",
+            "color": "#fff",
+            "cursor": "pointer",
+            "display": "block",
+            "fontFamily": "sans-serif",
+            "fontSize": "12px",
+            "padding": "5px 15px",
+            "position": "fixed",
+            "right": 0,
+            "top": 0,
+          }
+        }
+        type="button"
+      >
+        ×
+      </button>
+      <div>
+        <div
+          style={
+            Object {
+              "WebkitFontSmoothing": "antialiased",
+              "backgroundColor": "#fff",
+              "border": "1px solid #eee",
+              "borderRadius": "2px",
+              "color": "#444",
+              "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
+              "fontSize": "15px",
+              "fontWeight": 300,
+              "lineHeight": 1.45,
+              "marginBottom": "20px",
+              "marginTop": "20px",
+              "padding": "20px 40px 40px",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "borderBottom": "1px solid #eee",
+                "marginBottom": 10,
+                "paddingTop": 10,
+              }
+            }
+          >
+            <h1
+              style={
+                Object {
+                  "fontSize": "35px",
+                  "margin": 0,
+                  "padding": 0,
+                }
+              }
+            >
+              ResourceList
+            </h1>
+            <h2
+              style={
+                Object {
+                  "fontSize": "22px",
+                  "fontWeight": 400,
+                  "margin": "0 0 10px 0",
+                  "padding": 0,
+                }
+              }
+            >
+              with action
+            </h2>
+          </div>
+          
+          <div>
+            <h1
+              style={
+                Object {
+                  "borderBottom": "1px solid #EEE",
+                  "fontSize": "25px",
+                  "margin": "20px 0 0 0",
+                  "padding": "0 0 5px 0",
+                }
+              }
+            >
+              Story Source
+            </h1>
+            <pre
+              className="css-r8d96o eyvlbql0"
+            >
+              <div>
+                <div
+                  style={
+                    Object {
+                      "paddingLeft": 18,
+                      "paddingRight": 3,
+                    }
+                  }
+                >
+                  <span
+                    style={
+                      Object {
+                        "color": "#444",
+                      }
+                    }
+                  >
+                    &lt;
+                    ResourceList
+                  </span>
+                  <span>
+                    <span>
+                       
+                      <span
+                        style={Object {}}
+                      >
+                        data
+                      </span>
+                      <span>
+                        =
+                        <span
+                          style={Object {}}
+                        >
+                          {
+                          <span
+                            style={
+                              Object {
+                                "color": "#666",
+                              }
+                            }
+                          >
+                            [
+                            <span>
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#666",
+                                  }
+                                }
+                              >
+                                {
+                                <span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    id
+                                  </span>
+                                </span>
+                                : 
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  'row-0'
+                                </span>
+                                ,
+                                <span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    title
+                                  </span>
+                                </span>
+                                : 
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  'Item A'
+                                </span>
+                                ,
+                                <span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    description
+                                  </span>
+                                </span>
+                                : 
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  'Lorem ipsun dolor sit amet, consectetur adipiscing…'
+                                </span>
+                                }
+                              </span>
+                            </span>
+                            ,
+                            <span>
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#666",
+                                  }
+                                }
+                              >
+                                {
+                                <span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    id
+                                  </span>
+                                </span>
+                                : 
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  'row-1'
+                                </span>
+                                ,
+                                <span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    title
+                                  </span>
+                                </span>
+                                : 
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  'Item B'
+                                </span>
+                                ,
+                                <span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    description
+                                  </span>
+                                </span>
+                                : 
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  'Lorem ipsun dolor sit amet, consectetur adipiscing…'
+                                </span>
+                                }
+                              </span>
+                            </span>
+                            ,
+                            <span>
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#666",
+                                  }
+                                }
+                              >
+                                {
+                                <span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    id
+                                  </span>
+                                </span>
+                                : 
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  'row-2'
+                                </span>
+                                ,
+                                <span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    title
+                                  </span>
+                                </span>
+                                : 
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  'Item C'
+                                </span>
+                                ,
+                                <span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    description
+                                  </span>
+                                </span>
+                                : 
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  'Lorem ipsun dolor sit amet, consectetur adipiscing…'
+                                </span>
+                                }
+                              </span>
+                            </span>
+                            ]
+                          </span>
+                          }
+                        </span>
+                      </span>
+                    </span>
+                    <span>
+                       
+                      <span
+                        style={Object {}}
+                      >
+                        customAction
+                      </span>
+                      <span>
+                        =
+                        <span
+                          style={Object {}}
+                        >
+                          {
+                          <span
+                            style={
+                              Object {
+                                "color": "#666",
+                              }
+                            }
+                          >
+                            {
+                            <span>
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#666",
+                                  }
+                                }
+                              >
+                                onClick
+                              </span>
+                            </span>
+                            : 
+                            <span
+                              style={
+                                Object {
+                                  "color": "#170",
+                                }
+                              }
+                            >
+                              customAction.onClick
+                            </span>
+                            ,
+                            <span>
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#666",
+                                  }
+                                }
+                              >
+                                label
+                              </span>
+                            </span>
+                            : 
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              'Configure'
+                            </span>
+                            ,
+                            <span>
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#666",
+                                  }
+                                }
+                              >
+                                icon
+                              </span>
+                            </span>
+                            : 
+                            <span
+                              style={
+                                Object {
+                                  "color": "#22a",
+                                  "wordBreak": "break-word",
+                                }
+                              }
+                            >
+                              'edit'
+                            </span>
+                            }
+                          </span>
+                          }
+                        </span>
+                      </span>
+                       
+                    </span>
+                  </span>
+                  <span
+                    style={
+                      Object {
+                        "color": "#444",
+                      }
+                    }
+                  >
+                    /&gt;
+                  </span>
+                </div>
+              </div>
+              <button
+                className="css-1naocv3 eva467m0"
+                onClick={[Function]}
+              >
+                <div
+                  className="css-lvl6aa eva467m1"
+                >
+                  <div
+                    style={
+                      Object {
+                        "marginBottom": 6,
+                      }
+                    }
+                  >
+                    Copied!
+                  </div>
+                  <div>
+                    Copy
+                  </div>
+                </div>
+              </button>
+            </pre>
+          </div>
+          <div>
+            <h1
+              style={
+                Object {
+                  "borderBottom": "1px solid #EEE",
+                  "fontSize": "25px",
+                  "margin": "20px 0 0 0",
+                  "padding": "0 0 5px 0",
+                }
+              }
+            >
+              Prop Types
+            </h1>
+            <div>
+              <h2
+                style={
+                  Object {
+                    "margin": "20px 0 0 0",
+                  }
+                }
+              >
+                "
+                ResourceList
+                " Component
+              </h2>
+              <table
+                className="css-1uhv8nx e1vdo5380"
+              >
+                <thead>
+                  <tr>
+                    <th
+                      className="css-11b5gui e6fp4ir1"
+                    >
+                      property
+                    </th>
+                    <th
+                      className="css-11b5gui e6fp4ir1"
+                    >
+                      propType
+                    </th>
+                    <th
+                      className="css-11b5gui e6fp4ir1"
+                    >
+                      required
+                    </th>
+                    <th
+                      className="css-11b5gui e6fp4ir1"
+                    >
+                      default
+                    </th>
+                    <th
+                      className="css-11b5gui e6fp4ir1"
+                    >
+                      description
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      design
+                    </td>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      <span>
+                        oneOf 'normal' | 'inline'
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      -
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#22a",
+                            "wordBreak": "break-word",
+                          }
+                        }
+                      >
+                        'normal'
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      Component row design
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      onRowClick
+                    </td>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      <span>
+                        func
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      -
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#22a",
+                            "wordBreak": "break-word",
+                          }
+                        }
+                      >
+                        () =&gt; {}
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      Callback for when row is clicked
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      currentItemId
+                    </td>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      <span>
+                        string
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      -
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#22a",
+                            "wordBreak": "break-word",
+                          }
+                        }
+                      >
+                        null
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      Current item selected id
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      extraContent
+                    </td>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      <span>
+                        <span>
+                          [
+                        </span>
+                        <span>
+                          <span>
+                            node
+                          </span>
+                        </span>
+                        <span>
+                          ]
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      -
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#22a",
+                            "wordBreak": "break-word",
+                          }
+                        }
+                      >
+                        null
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      Extra content element
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      customAction
+                    </td>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      <span>
+                        <button
+                          className="css-1sgldz e1i4ski80"
+                          onClick={[Function]}
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
+                        >
+                          {
+                        </button>
+                        <button
+                          className="css-1sgldz e1i4ski80"
+                          onClick={[Function]}
+                        >
+                          ...
+                        </button>
+                        <div
+                          style={
+                            Object {
+                              "marginLeft": 15,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "whiteSpace": "nowrap",
+                              }
+                            }
+                          >
+                            onClick
+                            
+                            :
+                             
+                          </span>
+                          <span>
+                            func
+                          </span>
+                          ,
+                        </div>
+                        <div
+                          style={
+                            Object {
+                              "marginLeft": 15,
+                            }
+                          }
+                        >
+                          <span
+                            style={
+                              Object {
+                                "whiteSpace": "nowrap",
+                              }
+                            }
+                          >
+                            label
+                            
+                            :
+                             
+                          </span>
+                          <span>
+                            string
+                          </span>
+                          ,
+                        </div>
+                        <button
+                          className="css-1sgldz e1i4ski80"
+                          onClick={[Function]}
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
+                        >
+                          }
+                        </button>
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      -
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      <span
+                        style={
+                          Object {
+                            "color": "#22a",
+                            "wordBreak": "break-word",
+                          }
+                        }
+                      >
+                        null
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      Object for custom action column
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      data
+                    </td>
+                    <td
+                      className="css-1qcb1f7 e6fp4ir0"
+                    >
+                      <span>
+                        <span>
+                          [
+                        </span>
+                        <span>
+                          <span>
+                            <button
+                              className="css-1sgldz e1i4ski80"
+                              onClick={[Function]}
+                              onMouseEnter={[Function]}
+                              onMouseLeave={[Function]}
+                            >
+                              {
+                            </button>
+                            <button
+                              className="css-1sgldz e1i4ski80"
+                              onClick={[Function]}
+                            >
+                              ...
+                            </button>
+                            <div
+                              style={
+                                Object {
+                                  "marginLeft": 15,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                              >
+                                id
+                                
+                                :
+                                 
+                              </span>
+                              <span>
+                                string
+                              </span>
+                              ,
+                            </div>
+                            <div
+                              style={
+                                Object {
+                                  "marginLeft": 15,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                              >
+                                title
+                                
+                                :
+                                 
+                              </span>
+                              <span>
+                                string
+                              </span>
+                              ,
+                            </div>
+                            <div
+                              style={
+                                Object {
+                                  "marginLeft": 15,
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                              >
+                                description
+                                
+                                :
+                                 
+                              </span>
+                              <span>
+                                string
+                              </span>
+                              ,
+                            </div>
+                            <button
+                              className="css-1sgldz e1i4ski80"
+                              onClick={[Function]}
+                              onMouseEnter={[Function]}
+                              onMouseLeave={[Function]}
+                            >
+                              }
+                            </button>
+                          </span>
+                        </span>
+                        <span>
+                          ]
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      yes
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      -
+                    </td>
+                    <td
+                      className="css-11b5gui e6fp4ir0"
+                    >
+                      Array of data - table content
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots ResourceList with extra content 1`] = `
+<div
+  className="storybook-container"
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "flexDirection": "column",
+      "padding": "3em",
+    }
+  }
+>
+  <div>
+    <div
+      style={
+        Object {
+          "position": "relative",
+          "zIndex": 0,
+        }
+      }
+    >
+      <section
+        className="bx--structured-list bx--structured-list--border bx--structured-list--selection "
+      >
+        <div
+          className="bx--structured-list-tbody"
+        >
+          <label
+            aria-label="Item A"
+            className=" bx--structured-list-row"
+            onClick={[Function]}
+            tabIndex={0}
           >
             <div
               className="bx--structured-list-td"
             >
               <div>
-                 test content
+                <h5>
+                  row-0
+                </h5>
+                <svg
+                  aria-hidden={true}
+                  focusable={false}
+                  height={32}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 32 32"
+                  width={32}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M16 10a6 6 0 0 0-6 6v8a6 6 0 0 0 12 0v-8a6 6 0 0 0-6-6zm-4.25 7.87h8.5v4.25h-8.5zM16 28.25A4.27 4.27 0 0 1 11.75 24v-.13h8.5V24A4.27 4.27 0 0 1 16 28.25zm4.25-12.13h-8.5V16a4.25 4.25 0 0 1 8.5 0zm10.41 3.09L24 13v9.1a4 4 0 0 0 8 0 3.83 3.83 0 0 0-1.34-2.89zM28 24.35a2.25 2.25 0 0 1-2.25-2.25V17l3.72 3.47A2.05 2.05 0 0 1 30.2 22a2.25 2.25 0 0 1-2.2 2.35zM0 22.1a4 4 0 0 0 8 0V13l-6.66 6.21A3.88 3.88 0 0 0 0 22.1zm2.48-1.56L6.25 17v5.1a2.25 2.25 0 0 1-4.5 0 2.05 2.05 0 0 1 .73-1.56zM15 5.5A3.5 3.5 0 1 0 11.5 9 3.5 3.5 0 0 0 15 5.5zm-5.25 0a1.75 1.75 0 1 1 1.75 1.75A1.77 1.77 0 0 1 9.75 5.5zM20.5 2A3.5 3.5 0 1 0 24 5.5 3.5 3.5 0 0 0 20.5 2zm0 5.25a1.75 1.75 0 1 1 1.75-1.75 1.77 1.77 0 0 1-1.75 1.75z"
+                  />
+                </svg>
               </div>
             </div>
             <div
               className="bx--structured-list-td bx--structured-list-content--nowrap"
-              style={
-                Object {
-                  "fontWeight": "600",
-                }
-              }
             >
-              Item A
+              <strong>
+                Item A
+              </strong>
             </div>
             <div
               className="bx--structured-list-td"
@@ -18872,9 +20008,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Resource List Ex
             <input
               checked={false}
               className="bx--structured-list-input"
-              name="services"
               readOnly={true}
-              tabIndex="-1"
+              tabIndex={-1}
               title="Item A"
               type="radio"
               value="Item A"
@@ -18904,24 +20039,36 @@ exports[`Storybook Snapshot tests and console checks Storyshots Resource List Ex
             aria-label="Item B"
             className=" bx--structured-list-row"
             onClick={[Function]}
-            tabIndex="0"
+            tabIndex={1}
           >
             <div
               className="bx--structured-list-td"
             >
               <div>
-                 test content
+                <h5>
+                  row-1
+                </h5>
+                <svg
+                  aria-hidden={true}
+                  focusable={false}
+                  height={32}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 32 32"
+                  width={32}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M16 10a6 6 0 0 0-6 6v8a6 6 0 0 0 12 0v-8a6 6 0 0 0-6-6zm-4.25 7.87h8.5v4.25h-8.5zM16 28.25A4.27 4.27 0 0 1 11.75 24v-.13h8.5V24A4.27 4.27 0 0 1 16 28.25zm4.25-12.13h-8.5V16a4.25 4.25 0 0 1 8.5 0zm10.41 3.09L24 13v9.1a4 4 0 0 0 8 0 3.83 3.83 0 0 0-1.34-2.89zM28 24.35a2.25 2.25 0 0 1-2.25-2.25V17l3.72 3.47A2.05 2.05 0 0 1 30.2 22a2.25 2.25 0 0 1-2.2 2.35zM0 22.1a4 4 0 0 0 8 0V13l-6.66 6.21A3.88 3.88 0 0 0 0 22.1zm2.48-1.56L6.25 17v5.1a2.25 2.25 0 0 1-4.5 0 2.05 2.05 0 0 1 .73-1.56zM15 5.5A3.5 3.5 0 1 0 11.5 9 3.5 3.5 0 0 0 15 5.5zm-5.25 0a1.75 1.75 0 1 1 1.75 1.75A1.77 1.77 0 0 1 9.75 5.5zM20.5 2A3.5 3.5 0 1 0 24 5.5 3.5 3.5 0 0 0 20.5 2zm0 5.25a1.75 1.75 0 1 1 1.75-1.75 1.77 1.77 0 0 1-1.75 1.75z"
+                  />
+                </svg>
               </div>
             </div>
             <div
               className="bx--structured-list-td bx--structured-list-content--nowrap"
-              style={
-                Object {
-                  "fontWeight": "600",
-                }
-              }
             >
-              Item B
+              <strong>
+                Item B
+              </strong>
             </div>
             <div
               className="bx--structured-list-td"
@@ -18931,9 +20078,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Resource List Ex
             <input
               checked={false}
               className="bx--structured-list-input"
-              name="services"
               readOnly={true}
-              tabIndex="-1"
+              tabIndex={-1}
               title="Item B"
               type="radio"
               value="Item B"
@@ -18963,24 +20109,36 @@ exports[`Storybook Snapshot tests and console checks Storyshots Resource List Ex
             aria-label="Item C"
             className=" bx--structured-list-row"
             onClick={[Function]}
-            tabIndex="0"
+            tabIndex={2}
           >
             <div
               className="bx--structured-list-td"
             >
               <div>
-                 test content
+                <h5>
+                  row-2
+                </h5>
+                <svg
+                  aria-hidden={true}
+                  focusable={false}
+                  height={32}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 32 32"
+                  width={32}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M16 10a6 6 0 0 0-6 6v8a6 6 0 0 0 12 0v-8a6 6 0 0 0-6-6zm-4.25 7.87h8.5v4.25h-8.5zM16 28.25A4.27 4.27 0 0 1 11.75 24v-.13h8.5V24A4.27 4.27 0 0 1 16 28.25zm4.25-12.13h-8.5V16a4.25 4.25 0 0 1 8.5 0zm10.41 3.09L24 13v9.1a4 4 0 0 0 8 0 3.83 3.83 0 0 0-1.34-2.89zM28 24.35a2.25 2.25 0 0 1-2.25-2.25V17l3.72 3.47A2.05 2.05 0 0 1 30.2 22a2.25 2.25 0 0 1-2.2 2.35zM0 22.1a4 4 0 0 0 8 0V13l-6.66 6.21A3.88 3.88 0 0 0 0 22.1zm2.48-1.56L6.25 17v5.1a2.25 2.25 0 0 1-4.5 0 2.05 2.05 0 0 1 .73-1.56zM15 5.5A3.5 3.5 0 1 0 11.5 9 3.5 3.5 0 0 0 15 5.5zm-5.25 0a1.75 1.75 0 1 1 1.75 1.75A1.77 1.77 0 0 1 9.75 5.5zM20.5 2A3.5 3.5 0 1 0 24 5.5 3.5 3.5 0 0 0 20.5 2zm0 5.25a1.75 1.75 0 1 1 1.75-1.75 1.77 1.77 0 0 1-1.75 1.75z"
+                  />
+                </svg>
               </div>
             </div>
             <div
               className="bx--structured-list-td bx--structured-list-content--nowrap"
-              style={
-                Object {
-                  "fontWeight": "600",
-                }
-              }
             >
-              Item C
+              <strong>
+                Item C
+              </strong>
             </div>
             <div
               className="bx--structured-list-td"
@@ -18990,9 +20148,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Resource List Ex
             <input
               checked={false}
               className="bx--structured-list-input"
-              name="services"
               readOnly={true}
-              tabIndex="-1"
+              tabIndex={-1}
               title="Item C"
               type="radio"
               value="Item C"
@@ -19118,7 +20275,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Resource List Ex
                 }
               }
             >
-              Resource List
+              ResourceList
             </h1>
             <h2
               style={
@@ -19130,7 +20287,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Resource List Ex
                 }
               }
             >
-              Extra content
+              with extra content
             </h2>
           </div>
           
@@ -19190,7 +20347,43 @@ exports[`Storybook Snapshot tests and console checks Storyshots Resource List Ex
                               }
                             }
                           >
-                            &lt;div /&gt;
+                            [
+                            <span>
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#666",
+                                  }
+                                }
+                              >
+                                &lt;div /&gt;
+                              </span>
+                            </span>
+                            ,
+                            <span>
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#666",
+                                  }
+                                }
+                              >
+                                &lt;div /&gt;
+                              </span>
+                            </span>
+                            ,
+                            <span>
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#666",
+                                  }
+                                }
+                              >
+                                &lt;div /&gt;
+                              </span>
+                            </span>
+                            ]
                           </span>
                           }
                         </span>
@@ -19269,422 +20462,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Resource List Ex
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Resource List Simple 1`] = `
-.c0 .bx--structured-list-th {
-  padding-left: 16px;
-}
-
-.c0 .bx--structured-list-td {
-  padding-left: 16px;
-}
-
-<div
-  className="storybook-container"
-  style={
-    Object {
-      "alignItems": "center",
-      "display": "flex",
-      "flexDirection": "column",
-      "padding": "3em",
-    }
-  }
->
-  <div>
-    <div
-      style={
-        Object {
-          "position": "relative",
-          "zIndex": 0,
-        }
-      }
-    >
-      <section
-        className="bx--structured-list bx--structured-list--border bx--structured-list--selection c0"
-        data-structured-list={true}
-      >
-        <div
-          className="bx--structured-list-tbody"
-        >
-          <label
-            aria-label="Item A"
-            className=" bx--structured-list-row"
-            onClick={[Function]}
-            tabIndex="0"
-          >
-            <div
-              className="bx--structured-list-td bx--structured-list-content--nowrap"
-              style={
-                Object {
-                  "fontWeight": "600",
-                }
-              }
-            >
-              Item A
-            </div>
-            <div
-              className="bx--structured-list-td"
-            >
-              Lorem ipsun dolor sit amet, consectetur adipiscing elit. Nunc dui magna, finibus id tortor sed.
-            </div>
-            <input
-              checked={false}
-              className="bx--structured-list-input"
-              name="services"
-              readOnly={true}
-              tabIndex="-1"
-              title="Item A"
-              type="radio"
-              value="Item A"
-            />
-            <div
-              className="bx--structured-list-td"
-              style={
-                Object {
-                  "verticalAlign": "middle",
-                }
-              }
-            >
-              <svg
-                className="bx--structured-list-svg"
-                height="16"
-                viewBox="0 0 16 16"
-                width="16"
-              >
-                <path
-                  d="M8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16zm3.646-10.854L6.75 10.043 4.354 7.646l-.708.708 3.104 3.103 5.604-5.603-.708-.708z"
-                  fillRule="evenodd"
-                />
-              </svg>
-            </div>
-          </label>
-          <label
-            aria-label="Item B"
-            className=" bx--structured-list-row"
-            onClick={[Function]}
-            tabIndex="0"
-          >
-            <div
-              className="bx--structured-list-td bx--structured-list-content--nowrap"
-              style={
-                Object {
-                  "fontWeight": "600",
-                }
-              }
-            >
-              Item B
-            </div>
-            <div
-              className="bx--structured-list-td"
-            >
-              Lorem ipsun dolor sit amet, consectetur adipiscing elit. Nunc dui magna, finibus id tortor sed.
-            </div>
-            <input
-              checked={false}
-              className="bx--structured-list-input"
-              name="services"
-              readOnly={true}
-              tabIndex="-1"
-              title="Item B"
-              type="radio"
-              value="Item B"
-            />
-            <div
-              className="bx--structured-list-td"
-              style={
-                Object {
-                  "verticalAlign": "middle",
-                }
-              }
-            >
-              <svg
-                className="bx--structured-list-svg"
-                height="16"
-                viewBox="0 0 16 16"
-                width="16"
-              >
-                <path
-                  d="M8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16zm3.646-10.854L6.75 10.043 4.354 7.646l-.708.708 3.104 3.103 5.604-5.603-.708-.708z"
-                  fillRule="evenodd"
-                />
-              </svg>
-            </div>
-          </label>
-          <label
-            aria-label="Item C"
-            className=" bx--structured-list-row"
-            onClick={[Function]}
-            tabIndex="0"
-          >
-            <div
-              className="bx--structured-list-td bx--structured-list-content--nowrap"
-              style={
-                Object {
-                  "fontWeight": "600",
-                }
-              }
-            >
-              Item C
-            </div>
-            <div
-              className="bx--structured-list-td"
-            >
-              Lorem ipsun dolor sit amet, consectetur adipiscing elit. Nunc dui magna, finibus id tortor sed. Lorem ipsun dolor sit amet, consectetur adipiscing elit. Nunc dui magna, finibus id tortor sed.Lorem ipsun dolor sit amet, consectetur adipiscing elit. Nunc dui magna, finibus id tortor sed.Lorem ipsun dolor sit amet, consectetur adipiscing elit. Nunc dui magna, finibus id tortor sed.Lorem ipsun dolor sit amet, consectetur adipiscing elit. Nunc dui magna, finibus id tortor sed.Lorem ipsun dolor sit amet, consectetur adipiscing elit. Nunc dui magna, finibus id tortor sed.Lorem ipsun dolor sit amet, consectetur adipiscing elit. Nunc dui magna, finibus id tortor sed.
-            </div>
-            <input
-              checked={false}
-              className="bx--structured-list-input"
-              name="services"
-              readOnly={true}
-              tabIndex="-1"
-              title="Item C"
-              type="radio"
-              value="Item C"
-            />
-            <div
-              className="bx--structured-list-td"
-              style={
-                Object {
-                  "verticalAlign": "middle",
-                }
-              }
-            >
-              <svg
-                className="bx--structured-list-svg"
-                height="16"
-                viewBox="0 0 16 16"
-                width="16"
-              >
-                <path
-                  d="M8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16zm3.646-10.854L6.75 10.043 4.354 7.646l-.708.708 3.104 3.103 5.604-5.603-.708-.708z"
-                  fillRule="evenodd"
-                />
-              </svg>
-            </div>
-          </label>
-        </div>
-      </section>
-    </div>
-    <button
-      onClick={[Function]}
-      style={
-        Object {
-          "background": "#28c",
-          "border": "none",
-          "borderRadius": "0 0 0 5px",
-          "color": "#fff",
-          "cursor": "pointer",
-          "display": "block",
-          "fontFamily": "sans-serif",
-          "fontSize": "12px",
-          "padding": "5px 15px",
-          "position": "fixed",
-          "right": 0,
-          "top": 0,
-        }
-      }
-      type="button"
-    >
-      Show Info
-    </button>
-    <div
-      style={
-        Object {
-          "background": "white",
-          "bottom": 0,
-          "display": "none",
-          "left": 0,
-          "overflow": "auto",
-          "padding": "0 40px",
-          "position": "fixed",
-          "right": 0,
-          "top": 0,
-          "zIndex": 99999,
-        }
-      }
-    >
-      <button
-        onClick={[Function]}
-        style={
-          Object {
-            "background": "#28c",
-            "border": "none",
-            "borderRadius": "0 0 0 5px",
-            "color": "#fff",
-            "cursor": "pointer",
-            "display": "block",
-            "fontFamily": "sans-serif",
-            "fontSize": "12px",
-            "padding": "5px 15px",
-            "position": "fixed",
-            "right": 0,
-            "top": 0,
-          }
-        }
-        type="button"
-      >
-        ×
-      </button>
-      <div>
-        <div
-          style={
-            Object {
-              "WebkitFontSmoothing": "antialiased",
-              "backgroundColor": "#fff",
-              "border": "1px solid #eee",
-              "borderRadius": "2px",
-              "color": "#444",
-              "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
-              "fontSize": "15px",
-              "fontWeight": 300,
-              "lineHeight": 1.45,
-              "marginBottom": "20px",
-              "marginTop": "20px",
-              "padding": "20px 40px 40px",
-            }
-          }
-        >
-          <div
-            style={
-              Object {
-                "borderBottom": "1px solid #eee",
-                "marginBottom": 10,
-                "paddingTop": 10,
-              }
-            }
-          >
-            <h1
-              style={
-                Object {
-                  "fontSize": "35px",
-                  "margin": 0,
-                  "padding": 0,
-                }
-              }
-            >
-              Resource List
-            </h1>
-            <h2
-              style={
-                Object {
-                  "fontSize": "22px",
-                  "fontWeight": 400,
-                  "margin": "0 0 10px 0",
-                  "padding": 0,
-                }
-              }
-            >
-              Simple
-            </h2>
-          </div>
-          
-          <div>
-            <h1
-              style={
-                Object {
-                  "borderBottom": "1px solid #EEE",
-                  "fontSize": "25px",
-                  "margin": "20px 0 0 0",
-                  "padding": "0 0 5px 0",
-                }
-              }
-            >
-              Story Source
-            </h1>
-            <pre
-              className="css-r8d96o eyvlbql0"
-            >
-              <div>
-                <div
-                  style={
-                    Object {
-                      "paddingLeft": 18,
-                      "paddingRight": 3,
-                    }
-                  }
-                >
-                  <span
-                    style={
-                      Object {
-                        "color": "#444",
-                      }
-                    }
-                  >
-                    &lt;
-                    ResourceListSimple
-                  </span>
-                  <span />
-                  <span
-                    style={
-                      Object {
-                        "color": "#444",
-                      }
-                    }
-                  >
-                    /&gt;
-                  </span>
-                </div>
-              </div>
-              <button
-                className="css-1naocv3 eva467m0"
-                onClick={[Function]}
-              >
-                <div
-                  className="css-lvl6aa eva467m1"
-                >
-                  <div
-                    style={
-                      Object {
-                        "marginBottom": 6,
-                      }
-                    }
-                  >
-                    Copied!
-                  </div>
-                  <div>
-                    Copy
-                  </div>
-                </div>
-              </button>
-            </pre>
-          </div>
-          <div>
-            <h1
-              style={
-                Object {
-                  "borderBottom": "1px solid #EEE",
-                  "fontSize": "25px",
-                  "margin": "20px 0 0 0",
-                  "padding": "0 0 5px 0",
-                }
-              }
-            >
-              Prop Types
-            </h1>
-            <div>
-              <h2
-                style={
-                  Object {
-                    "margin": "20px 0 0 0",
-                  }
-                }
-              >
-                "
-                ResourceListSimple
-                " Component
-              </h2>
-              <small>
-                No propTypes defined!
-              </small>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storybook Snapshot tests and console checks Storyshots StructuredList Empty 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots StructuredList default  1`] = `
 .c0 {
   background-color: #ffffff;
   margin-bottom: 0;
@@ -19697,27 +20475,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots StructuredList E
 .c0 .bx--structured-list-td {
   padding-left: 16px;
   line-height: 8px;
-}
-
-.c1 {
-  background-color: #ffffff;
-  text-align: center;
-  color: #5a6872;
-  font-size: 14px;
-  padding-top: 90px;
-  padding-bottom: 115px;
-  font-weight: regular;
-}
-
-.c3 {
-  padding-top: 16px;
-}
-
-.c2 {
-  fill: #5a6872;
-  width: 100px;
-  height: 100px;
-  display: inline-block;
 }
 
 <div
@@ -19768,29 +20525,81 @@ exports[`Storybook Snapshot tests and console checks Storyshots StructuredList E
         </div>
         <div
           className="bx--structured-list-tbody"
-        />
-      </section>
-      <div
-        className="c1"
-      >
-        <div
-          className="c2"
         >
-          <svg
-            viewBox="0 0 32 32"
-            xmlns="http://www.w3.org/2000/svg"
+          <div
+            className="bx--structured-list-row"
+            onClick={[Function]}
+            role="presentation"
           >
-            <path
-              d="M16 10a6 6 0 0 0-6 6v8a6 6 0 0 0 12 0v-8a6 6 0 0 0-6-6zm-4.25 7.87h8.5v4.25h-8.5zM16 28.25A4.27 4.27 0 0 1 11.75 24v-.13h8.5V24A4.27 4.27 0 0 1 16 28.25zm4.25-12.13h-8.5V16a4.25 4.25 0 0 1 8.5 0zm10.41 3.09L24 13v9.1a4 4 0 0 0 8 0 3.83 3.83 0 0 0-1.34-2.89zM28 24.35a2.25 2.25 0 0 1-2.25-2.25V17l3.72 3.47A2.05 2.05 0 0 1 30.2 22a2.25 2.25 0 0 1-2.2 2.35zM0 22.1a4 4 0 0 0 8 0V13l-6.66 6.21A3.88 3.88 0 0 0 0 22.1zm2.48-1.56L6.25 17v5.1a2.25 2.25 0 0 1-4.5 0 2.05 2.05 0 0 1 .73-1.56zM15 5.5A3.5 3.5 0 1 0 11.5 9 3.5 3.5 0 0 0 15 5.5zm-5.25 0a1.75 1.75 0 1 1 1.75 1.75A1.77 1.77 0 0 1 9.75 5.5zM20.5 2A3.5 3.5 0 1 0 24 5.5 3.5 3.5 0 0 0 20.5 2zm0 5.25a1.75 1.75 0 1 1 1.75-1.75 1.77 1.77 0 0 1-1.75 1.75z"
-            />
-          </svg>
+            <div
+              className="bx--structured-list-td bx--structured-list-content--nowrap"
+              style={Object {}}
+            >
+              hey A
+            </div>
+            <div
+              className="bx--structured-list-td bx--structured-list-content--nowrap"
+              style={Object {}}
+            >
+              hey B
+            </div>
+            <div
+              className="bx--structured-list-td bx--structured-list-content--nowrap"
+              style={Object {}}
+            >
+              hey C
+            </div>
+          </div>
+          <div
+            className="bx--structured-list-row"
+            onClick={[Function]}
+            role="presentation"
+          >
+            <div
+              className="bx--structured-list-td bx--structured-list-content--nowrap"
+              style={Object {}}
+            >
+              hey A again
+            </div>
+            <div
+              className="bx--structured-list-td bx--structured-list-content--nowrap"
+              style={Object {}}
+            >
+              hey B again
+            </div>
+            <div
+              className="bx--structured-list-td bx--structured-list-content--nowrap"
+              style={Object {}}
+            >
+              hey C again
+            </div>
+          </div>
+          <div
+            className="bx--structured-list-row"
+            onClick={[Function]}
+            role="presentation"
+          >
+            <div
+              className="bx--structured-list-td bx--structured-list-content--nowrap"
+              style={Object {}}
+            >
+              hey hey A
+            </div>
+            <div
+              className="bx--structured-list-td bx--structured-list-content--nowrap"
+              style={Object {}}
+            >
+              hey hey B
+            </div>
+            <div
+              className="bx--structured-list-td bx--structured-list-content--nowrap"
+              style={Object {}}
+            >
+              hey hey C
+            </div>
+          </div>
         </div>
-        <div
-          className="c3"
-        >
-          Waiting for data to be loaded
-        </div>
-      </div>
+      </section>
     </div>
     <button
       onClick={[Function]}
@@ -19901,7 +20710,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots StructuredList E
                 }
               }
             >
-              Empty
+              default 
             </h2>
           </div>
           
@@ -19942,10 +20751,411 @@ exports[`Storybook Snapshot tests and console checks Storyshots StructuredList E
                   </span>
                   <span>
                     <span>
-                      <span>
-                        <br />
-                          
+                       
+                      <span
+                        style={Object {}}
+                      >
+                        data
                       </span>
+                      <span>
+                        =
+                        <span
+                          style={Object {}}
+                        >
+                          {
+                          <span
+                            style={
+                              Object {
+                                "color": "#666",
+                              }
+                            }
+                          >
+                            [
+                            <span>
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#666",
+                                  }
+                                }
+                              >
+                                {
+                                <span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    id
+                                  </span>
+                                </span>
+                                : 
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  'row-0'
+                                </span>
+                                ,
+                                <span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    values
+                                  </span>
+                                </span>
+                                : 
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  {
+                                  <span>
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#666",
+                                        }
+                                      }
+                                    >
+                                      columnA
+                                    </span>
+                                  </span>
+                                  : 
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#22a",
+                                        "wordBreak": "break-word",
+                                      }
+                                    }
+                                  >
+                                    'hey A'
+                                  </span>
+                                  ,
+                                  <span>
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#666",
+                                        }
+                                      }
+                                    >
+                                      columnB
+                                    </span>
+                                  </span>
+                                  : 
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#22a",
+                                        "wordBreak": "break-word",
+                                      }
+                                    }
+                                  >
+                                    'hey B'
+                                  </span>
+                                  ,
+                                  <span>
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#666",
+                                        }
+                                      }
+                                    >
+                                      columnC
+                                    </span>
+                                  </span>
+                                  : 
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#22a",
+                                        "wordBreak": "break-word",
+                                      }
+                                    }
+                                  >
+                                    'hey C'
+                                  </span>
+                                  }
+                                </span>
+                                }
+                              </span>
+                            </span>
+                            ,
+                            <span>
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#666",
+                                  }
+                                }
+                              >
+                                {
+                                <span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    id
+                                  </span>
+                                </span>
+                                : 
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  'row-1'
+                                </span>
+                                ,
+                                <span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    values
+                                  </span>
+                                </span>
+                                : 
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  {
+                                  <span>
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#666",
+                                        }
+                                      }
+                                    >
+                                      columnA
+                                    </span>
+                                  </span>
+                                  : 
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#22a",
+                                        "wordBreak": "break-word",
+                                      }
+                                    }
+                                  >
+                                    'hey A again'
+                                  </span>
+                                  ,
+                                  <span>
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#666",
+                                        }
+                                      }
+                                    >
+                                      columnB
+                                    </span>
+                                  </span>
+                                  : 
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#22a",
+                                        "wordBreak": "break-word",
+                                      }
+                                    }
+                                  >
+                                    'hey B again'
+                                  </span>
+                                  ,
+                                  <span>
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#666",
+                                        }
+                                      }
+                                    >
+                                      columnC
+                                    </span>
+                                  </span>
+                                  : 
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#22a",
+                                        "wordBreak": "break-word",
+                                      }
+                                    }
+                                  >
+                                    'hey C again'
+                                  </span>
+                                  }
+                                </span>
+                                }
+                              </span>
+                            </span>
+                            ,
+                            <span>
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#666",
+                                  }
+                                }
+                              >
+                                {
+                                <span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    id
+                                  </span>
+                                </span>
+                                : 
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#22a",
+                                      "wordBreak": "break-word",
+                                    }
+                                  }
+                                >
+                                  'row-2'
+                                </span>
+                                ,
+                                <span>
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#666",
+                                      }
+                                    }
+                                  >
+                                    values
+                                  </span>
+                                </span>
+                                : 
+                                <span
+                                  style={
+                                    Object {
+                                      "color": "#666",
+                                    }
+                                  }
+                                >
+                                  {
+                                  <span>
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#666",
+                                        }
+                                      }
+                                    >
+                                      columnA
+                                    </span>
+                                  </span>
+                                  : 
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#22a",
+                                        "wordBreak": "break-word",
+                                      }
+                                    }
+                                  >
+                                    'hey hey A'
+                                  </span>
+                                  ,
+                                  <span>
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#666",
+                                        }
+                                      }
+                                    >
+                                      columnB
+                                    </span>
+                                  </span>
+                                  : 
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#22a",
+                                        "wordBreak": "break-word",
+                                      }
+                                    }
+                                  >
+                                    'hey hey B'
+                                  </span>
+                                  ,
+                                  <span>
+                                    <span
+                                      style={
+                                        Object {
+                                          "color": "#666",
+                                        }
+                                      }
+                                    >
+                                      columnC
+                                    </span>
+                                  </span>
+                                  : 
+                                  <span
+                                    style={
+                                      Object {
+                                        "color": "#22a",
+                                        "wordBreak": "break-word",
+                                      }
+                                    }
+                                  >
+                                    'hey hey C'
+                                  </span>
+                                  }
+                                </span>
+                                }
+                              </span>
+                            </span>
+                            ]
+                          </span>
+                          }
+                        </span>
+                      </span>
+                    </span>
+                    <span>
+                       
                       <span
                         style={Object {}}
                       >
@@ -20145,70 +21355,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots StructuredList E
                       </span>
                     </span>
                     <span>
-                      <span>
-                        <br />
-                          
-                      </span>
-                      <span
-                        style={Object {}}
-                      >
-                        data
-                      </span>
-                      <span>
-                        =
-                        <span
-                          style={Object {}}
-                        >
-                          {
-                          <span
-                            style={
-                              Object {
-                                "color": "#666",
-                              }
-                            }
-                          >
-                            [
-                            ]
-                          </span>
-                          }
-                        </span>
-                      </span>
-                    </span>
-                    <span>
-                      <span>
-                        <br />
-                          
-                      </span>
-                      <span
-                        style={Object {}}
-                      >
-                        loadingDataLabel
-                      </span>
-                      <span>
-                        =
-                        <span
-                          style={Object {}}
-                        >
-                          "
-                          <span
-                            style={
-                              Object {
-                                "color": "#22a",
-                                "wordBreak": "break-word",
-                              }
-                            }
-                          >
-                            Waiting for data to be loaded
-                          </span>
-                          "
-                        </span>
-                      </span>
-                    </span>
-                    <span>
-                      <span>
-                        <br />
-                          
-                      </span>
+                       
                       <span
                         style={Object {}}
                       >
@@ -20232,7 +21379,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots StructuredList E
                           }
                         </span>
                       </span>
-                      <br />
+                       
                     </span>
                   </span>
                   <span
@@ -21274,7 +22421,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots StructuredList E
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots StructuredList Simple  1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots StructuredList with empty state 1`] = `
 .c0 {
   background-color: #ffffff;
   margin-bottom: 0;
@@ -21287,6 +22434,27 @@ exports[`Storybook Snapshot tests and console checks Storyshots StructuredList S
 .c0 .bx--structured-list-td {
   padding-left: 16px;
   line-height: 8px;
+}
+
+.c1 {
+  background-color: #ffffff;
+  text-align: center;
+  color: #5a6872;
+  font-size: 14px;
+  padding-top: 90px;
+  padding-bottom: 115px;
+  font-weight: regular;
+}
+
+.c3 {
+  padding-top: 16px;
+}
+
+.c2 {
+  fill: #5a6872;
+  width: 100px;
+  height: 100px;
+  display: inline-block;
 }
 
 <div
@@ -21337,81 +22505,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots StructuredList S
         </div>
         <div
           className="bx--structured-list-tbody"
-        >
-          <div
-            className="bx--structured-list-row"
-            onClick={[Function]}
-            role="presentation"
-          >
-            <div
-              className="bx--structured-list-td bx--structured-list-content--nowrap"
-              style={Object {}}
-            >
-              hey A
-            </div>
-            <div
-              className="bx--structured-list-td bx--structured-list-content--nowrap"
-              style={Object {}}
-            >
-              hey B
-            </div>
-            <div
-              className="bx--structured-list-td bx--structured-list-content--nowrap"
-              style={Object {}}
-            >
-              hey C
-            </div>
-          </div>
-          <div
-            className="bx--structured-list-row"
-            onClick={[Function]}
-            role="presentation"
-          >
-            <div
-              className="bx--structured-list-td bx--structured-list-content--nowrap"
-              style={Object {}}
-            >
-              hey A again
-            </div>
-            <div
-              className="bx--structured-list-td bx--structured-list-content--nowrap"
-              style={Object {}}
-            >
-              hey B again
-            </div>
-            <div
-              className="bx--structured-list-td bx--structured-list-content--nowrap"
-              style={Object {}}
-            >
-              hey C again
-            </div>
-          </div>
-          <div
-            className="bx--structured-list-row"
-            onClick={[Function]}
-            role="presentation"
-          >
-            <div
-              className="bx--structured-list-td bx--structured-list-content--nowrap"
-              style={Object {}}
-            >
-              hey hey A
-            </div>
-            <div
-              className="bx--structured-list-td bx--structured-list-content--nowrap"
-              style={Object {}}
-            >
-              hey hey B
-            </div>
-            <div
-              className="bx--structured-list-td bx--structured-list-content--nowrap"
-              style={Object {}}
-            >
-              hey hey C
-            </div>
-          </div>
-        </div>
+        />
       </section>
+      <div
+        className="c1"
+      >
+        <div
+          className="c2"
+        >
+          <svg
+            viewBox="0 0 32 32"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M16 10a6 6 0 0 0-6 6v8a6 6 0 0 0 12 0v-8a6 6 0 0 0-6-6zm-4.25 7.87h8.5v4.25h-8.5zM16 28.25A4.27 4.27 0 0 1 11.75 24v-.13h8.5V24A4.27 4.27 0 0 1 16 28.25zm4.25-12.13h-8.5V16a4.25 4.25 0 0 1 8.5 0zm10.41 3.09L24 13v9.1a4 4 0 0 0 8 0 3.83 3.83 0 0 0-1.34-2.89zM28 24.35a2.25 2.25 0 0 1-2.25-2.25V17l3.72 3.47A2.05 2.05 0 0 1 30.2 22a2.25 2.25 0 0 1-2.2 2.35zM0 22.1a4 4 0 0 0 8 0V13l-6.66 6.21A3.88 3.88 0 0 0 0 22.1zm2.48-1.56L6.25 17v5.1a2.25 2.25 0 0 1-4.5 0 2.05 2.05 0 0 1 .73-1.56zM15 5.5A3.5 3.5 0 1 0 11.5 9 3.5 3.5 0 0 0 15 5.5zm-5.25 0a1.75 1.75 0 1 1 1.75 1.75A1.77 1.77 0 0 1 9.75 5.5zM20.5 2A3.5 3.5 0 1 0 24 5.5 3.5 3.5 0 0 0 20.5 2zm0 5.25a1.75 1.75 0 1 1 1.75-1.75 1.77 1.77 0 0 1-1.75 1.75z"
+            />
+          </svg>
+        </div>
+        <div
+          className="c3"
+        >
+          No data is available yet.
+        </div>
+      </div>
     </div>
     <button
       onClick={[Function]}
@@ -21522,7 +22638,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots StructuredList S
                 }
               }
             >
-              Simple 
+              with empty state
             </h2>
           </div>
           
@@ -21563,411 +22679,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots StructuredList S
                   </span>
                   <span>
                     <span>
-                       
-                      <span
-                        style={Object {}}
-                      >
-                        data
-                      </span>
                       <span>
-                        =
-                        <span
-                          style={Object {}}
-                        >
-                          {
-                          <span
-                            style={
-                              Object {
-                                "color": "#666",
-                              }
-                            }
-                          >
-                            [
-                            <span>
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#666",
-                                  }
-                                }
-                              >
-                                {
-                                <span>
-                                  <span
-                                    style={
-                                      Object {
-                                        "color": "#666",
-                                      }
-                                    }
-                                  >
-                                    id
-                                  </span>
-                                </span>
-                                : 
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#22a",
-                                      "wordBreak": "break-word",
-                                    }
-                                  }
-                                >
-                                  'row-0'
-                                </span>
-                                ,
-                                <span>
-                                  <span
-                                    style={
-                                      Object {
-                                        "color": "#666",
-                                      }
-                                    }
-                                  >
-                                    values
-                                  </span>
-                                </span>
-                                : 
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#666",
-                                    }
-                                  }
-                                >
-                                  {
-                                  <span>
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#666",
-                                        }
-                                      }
-                                    >
-                                      columnA
-                                    </span>
-                                  </span>
-                                  : 
-                                  <span
-                                    style={
-                                      Object {
-                                        "color": "#22a",
-                                        "wordBreak": "break-word",
-                                      }
-                                    }
-                                  >
-                                    'hey A'
-                                  </span>
-                                  ,
-                                  <span>
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#666",
-                                        }
-                                      }
-                                    >
-                                      columnB
-                                    </span>
-                                  </span>
-                                  : 
-                                  <span
-                                    style={
-                                      Object {
-                                        "color": "#22a",
-                                        "wordBreak": "break-word",
-                                      }
-                                    }
-                                  >
-                                    'hey B'
-                                  </span>
-                                  ,
-                                  <span>
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#666",
-                                        }
-                                      }
-                                    >
-                                      columnC
-                                    </span>
-                                  </span>
-                                  : 
-                                  <span
-                                    style={
-                                      Object {
-                                        "color": "#22a",
-                                        "wordBreak": "break-word",
-                                      }
-                                    }
-                                  >
-                                    'hey C'
-                                  </span>
-                                  }
-                                </span>
-                                }
-                              </span>
-                            </span>
-                            ,
-                            <span>
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#666",
-                                  }
-                                }
-                              >
-                                {
-                                <span>
-                                  <span
-                                    style={
-                                      Object {
-                                        "color": "#666",
-                                      }
-                                    }
-                                  >
-                                    id
-                                  </span>
-                                </span>
-                                : 
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#22a",
-                                      "wordBreak": "break-word",
-                                    }
-                                  }
-                                >
-                                  'row-1'
-                                </span>
-                                ,
-                                <span>
-                                  <span
-                                    style={
-                                      Object {
-                                        "color": "#666",
-                                      }
-                                    }
-                                  >
-                                    values
-                                  </span>
-                                </span>
-                                : 
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#666",
-                                    }
-                                  }
-                                >
-                                  {
-                                  <span>
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#666",
-                                        }
-                                      }
-                                    >
-                                      columnA
-                                    </span>
-                                  </span>
-                                  : 
-                                  <span
-                                    style={
-                                      Object {
-                                        "color": "#22a",
-                                        "wordBreak": "break-word",
-                                      }
-                                    }
-                                  >
-                                    'hey A again'
-                                  </span>
-                                  ,
-                                  <span>
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#666",
-                                        }
-                                      }
-                                    >
-                                      columnB
-                                    </span>
-                                  </span>
-                                  : 
-                                  <span
-                                    style={
-                                      Object {
-                                        "color": "#22a",
-                                        "wordBreak": "break-word",
-                                      }
-                                    }
-                                  >
-                                    'hey B again'
-                                  </span>
-                                  ,
-                                  <span>
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#666",
-                                        }
-                                      }
-                                    >
-                                      columnC
-                                    </span>
-                                  </span>
-                                  : 
-                                  <span
-                                    style={
-                                      Object {
-                                        "color": "#22a",
-                                        "wordBreak": "break-word",
-                                      }
-                                    }
-                                  >
-                                    'hey C again'
-                                  </span>
-                                  }
-                                </span>
-                                }
-                              </span>
-                            </span>
-                            ,
-                            <span>
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#666",
-                                  }
-                                }
-                              >
-                                {
-                                <span>
-                                  <span
-                                    style={
-                                      Object {
-                                        "color": "#666",
-                                      }
-                                    }
-                                  >
-                                    id
-                                  </span>
-                                </span>
-                                : 
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#22a",
-                                      "wordBreak": "break-word",
-                                    }
-                                  }
-                                >
-                                  'row-2'
-                                </span>
-                                ,
-                                <span>
-                                  <span
-                                    style={
-                                      Object {
-                                        "color": "#666",
-                                      }
-                                    }
-                                  >
-                                    values
-                                  </span>
-                                </span>
-                                : 
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#666",
-                                    }
-                                  }
-                                >
-                                  {
-                                  <span>
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#666",
-                                        }
-                                      }
-                                    >
-                                      columnA
-                                    </span>
-                                  </span>
-                                  : 
-                                  <span
-                                    style={
-                                      Object {
-                                        "color": "#22a",
-                                        "wordBreak": "break-word",
-                                      }
-                                    }
-                                  >
-                                    'hey hey A'
-                                  </span>
-                                  ,
-                                  <span>
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#666",
-                                        }
-                                      }
-                                    >
-                                      columnB
-                                    </span>
-                                  </span>
-                                  : 
-                                  <span
-                                    style={
-                                      Object {
-                                        "color": "#22a",
-                                        "wordBreak": "break-word",
-                                      }
-                                    }
-                                  >
-                                    'hey hey B'
-                                  </span>
-                                  ,
-                                  <span>
-                                    <span
-                                      style={
-                                        Object {
-                                          "color": "#666",
-                                        }
-                                      }
-                                    >
-                                      columnC
-                                    </span>
-                                  </span>
-                                  : 
-                                  <span
-                                    style={
-                                      Object {
-                                        "color": "#22a",
-                                        "wordBreak": "break-word",
-                                      }
-                                    }
-                                  >
-                                    'hey hey C'
-                                  </span>
-                                  }
-                                </span>
-                                }
-                              </span>
-                            </span>
-                            ]
-                          </span>
-                          }
-                        </span>
+                        <br />
+                          
                       </span>
-                    </span>
-                    <span>
-                       
                       <span
                         style={Object {}}
                       >
@@ -22167,7 +22882,70 @@ exports[`Storybook Snapshot tests and console checks Storyshots StructuredList S
                       </span>
                     </span>
                     <span>
-                       
+                      <span>
+                        <br />
+                          
+                      </span>
+                      <span
+                        style={Object {}}
+                      >
+                        data
+                      </span>
+                      <span>
+                        =
+                        <span
+                          style={Object {}}
+                        >
+                          {
+                          <span
+                            style={
+                              Object {
+                                "color": "#666",
+                              }
+                            }
+                          >
+                            [
+                            ]
+                          </span>
+                          }
+                        </span>
+                      </span>
+                    </span>
+                    <span>
+                      <span>
+                        <br />
+                          
+                      </span>
+                      <span
+                        style={Object {}}
+                      >
+                        loadingDataLabel
+                      </span>
+                      <span>
+                        =
+                        <span
+                          style={Object {}}
+                        >
+                          "
+                          <span
+                            style={
+                              Object {
+                                "color": "#22a",
+                                "wordBreak": "break-word",
+                              }
+                            }
+                          >
+                            No data is available yet.
+                          </span>
+                          "
+                        </span>
+                      </span>
+                    </span>
+                    <span>
+                      <span>
+                        <br />
+                          
+                      </span>
                       <span
                         style={Object {}}
                       >
@@ -22191,7 +22969,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots StructuredList S
                           }
                         </span>
                       </span>
-                       
+                      <br />
                     </span>
                   </span>
                   <span

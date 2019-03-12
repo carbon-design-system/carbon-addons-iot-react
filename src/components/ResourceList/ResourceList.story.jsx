@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { select } from '@storybook/addon-knobs';
+import { action } from '@storybook/addon-actions';
 import { storiesOf } from '@storybook/react';
+import Bee32 from '@carbon/icons-react/lib/bee/32';
 
 import ResourceList from './ResourceList';
 
@@ -49,20 +51,26 @@ class ResourceListSimple extends Component {
   };
 }
 
-/* Resource List with custom actions */
-const ResourceListCustomActions = () => (
-  <ResourceList
-    design={select('Resource list design', ['normal', 'inline'], 'normal')}
-    data={resourceData}
-    customAction={{
-      action: () => window.alert('we will performn an action'),
-      actionLabel: 'Configure ',
-    }}
-    currentItemId="row-0"
-  />
-);
-
-storiesOf('Resource List', module)
-  .add('Simple', () => <ResourceListSimple />)
-  .add('Extra content', () => <ResourceListSimple extraContent={<div> test content</div>} />)
-  .add('Action', () => <ResourceListCustomActions />);
+storiesOf('ResourceList', module)
+  .add('default', () => <ResourceListSimple />)
+  .add('with extra content', () => (
+    <ResourceListSimple
+      extraContent={resourceData.map(i => (
+        <div>
+          <h5>{i.id}</h5>
+          <Bee32 />
+        </div>
+      ))}
+    />
+  ))
+  .add('with action', () => (
+    <ResourceList
+      design={select('Resource list design', ['normal', 'inline'], 'normal')}
+      data={resourceData}
+      customAction={{
+        onClick: action('customAction.onClick'),
+        label: 'Configure',
+        icon: 'edit',
+      }}
+    />
+  ));
