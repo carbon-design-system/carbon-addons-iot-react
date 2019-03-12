@@ -52,6 +52,7 @@ const StyledExpansionTableRow = styled(TableRow)`
       background-color: inherit;
       border-left: 4px solid ${COLORS.blue};
       border-width: 0 0 0 4px;
+      padding: 0;
     }
     :hover {
       border: inherit;
