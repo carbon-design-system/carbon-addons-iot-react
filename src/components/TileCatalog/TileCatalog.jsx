@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { RadioTile, Search } from 'carbon-components-react';
+import { RadioTile, Tile, Search } from 'carbon-components-react';
 
 import SimplePagination from '../SimplePagination/SimplePagination';
 
@@ -44,7 +44,11 @@ const propTypes = {
     prevPageText: PropTypes.string,
   }),
   /** We will callback with the search value, but it's up to the parent to actually filter the tiles */
-  search: PropTypes.shape({ placeHolderText: PropTypes.string, onSearch: PropTypes.func }),
+  search: PropTypes.shape({
+    placeHolderText: PropTypes.string,
+    noMatchesFoundText: PropTypes.string,
+    onSearch: PropTypes.func,
+  }),
 
   /** form id */
   id: PropTypes.string.isRequired,
@@ -116,18 +120,22 @@ const TileCatalog = ({ id, className, title, search, pagination, tiles, onChange
         ) : null}
       </StyledCatalogHeader>
       <StyledTiles>
-        {tiles.slice(startingIndex, endingIndex).map(tile => (
-          <RadioTile
-            className={tile.className}
-            key={tile.id}
-            id={tile.id}
-            value={tile.id}
-            name={id}
-            checked={selectedTile === tile.id}
-            onChange={handleChange}>
-            {tile.content}
-          </RadioTile>
-        ))}
+        {tiles.length > 0 ? (
+          tiles.slice(startingIndex, endingIndex).map(tile => (
+            <RadioTile
+              className={tile.className}
+              key={tile.id}
+              id={tile.id}
+              value={tile.id}
+              name={id}
+              checked={selectedTile === tile.id}
+              onChange={handleChange}>
+              {tile.content}
+            </RadioTile>
+          ))
+        ) : (
+          <Tile>{(search && search.noMatchesFoundText) || 'No matches found'}</Tile>
+        )}
       </StyledTiles>
       {pagination ? (
         <SimplePagination
