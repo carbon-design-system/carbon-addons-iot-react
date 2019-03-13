@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
@@ -19,14 +19,42 @@ const commonTileCatalogProps = {
   onChange: action('onChange'),
 };
 
-storiesOf('TileCatalog', module)
-  .add('default', () => <TileCatalog {...commonTileCatalogProps} />)
-  .add('with search', () => (
+const SearchableTileCatalog = () => {
+  const [search, setSearch] = useState();
+  const filteredTiles = search
+    ? commonTileCatalogProps.tiles.filter(tile => tile.content.includes(search))
+    : commonTileCatalogProps.tiles;
+
+  return (
     <TileCatalog
       {...commonTileCatalogProps}
-      search={{ placeHolderText: 'Search catalog', onSearch: action('onSearch') }}
+      tiles={filteredTiles}
+      search={{
+        placeHolderText: 'Search catalog',
+        onSearch: searchText => {
+          setSearch(searchText);
+          action('onSearch')(searchText);
+        },
+      }}
     />
-  ))
+  );
+};
+storiesOf('TileCatalog', module)
+  .add('default', () => <TileCatalog {...commonTileCatalogProps} />)
+  .add(
+    'with search',
+    () => (
+      // Example stateful catalog component that can search
+      <SearchableTileCatalog />
+    ),
+    {
+      info: {
+        propTables: [TileCatalog],
+        propTablesExclude: [SearchableTileCatalog],
+        source: false,
+      },
+    }
+  )
   .add('with pages', () => (
     <TileCatalog
       {...commonTileCatalogProps}
