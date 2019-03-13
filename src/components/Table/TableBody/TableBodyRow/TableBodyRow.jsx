@@ -5,7 +5,9 @@ import styled from 'styled-components';
 
 import { COLORS } from '../../../../styles/styles';
 import RowActionsCell from '../RowActionsCell/RowActionsCell';
+import TableCellRenderer from '../../TableCellRenderer/TableCellRenderer';
 import { RowActionPropTypes } from '../../TablePropTypes';
+import { stopPropagationAndCallback } from '../../../../utils/componentUtilityFunctions';
 
 const { TableRow, TableExpandRow, TableCell } = DataTable;
 
@@ -51,6 +53,7 @@ const StyledExpansionTableRow = styled(TableRow)`
       background-color: inherit;
       border-left: 4px solid ${COLORS.blue};
       border-width: 0 0 0 4px;
+      padding: 0;
     }
     :hover {
       border: inherit;
@@ -71,12 +74,15 @@ const propTypes = {
   options: PropTypes.shape({
     hasRowSelection: PropTypes.bool,
     hasRowExpansion: PropTypes.bool,
-    totalColumns: PropTypes.number,
-    id: PropTypes.string.isRequired,
+    shouldExpandOnRowClick: PropTypes.bool,
   }),
 
   /** The unique row id */
   id: PropTypes.string.isRequired,
+  /** some columns might be hidden, so total columns has the overall total */
+  totalColumns: PropTypes.number.isRequired,
+  /** table Id */
+  tableId: PropTypes.string.isRequired,
   /** contents of the row each object value is a renderable node keyed by column id */
   children: PropTypes.objectOf(PropTypes.node).isRequired,
 
@@ -90,6 +96,7 @@ const propTypes = {
   /** tableActions */
   tableActions: PropTypes.shape({
     onRowSelected: PropTypes.func,
+    onRowClicked: PropTypes.func,
     onApplyRowAction: PropTypes.func,
     onRowExpanded: PropTypes.func,
   }).isRequired,
@@ -107,9 +114,11 @@ const defaultProps = {
 
 const TableBodyRow = ({
   id,
+  tableId,
+  totalColumns,
   columns,
-  options: { hasRowSelection, hasRowExpansion, totalColumns, id: tableId },
-  tableActions: { onRowSelected, onRowExpanded, onApplyRowAction },
+  options: { hasRowSelection, hasRowExpansion, shouldExpandOnRowClick },
+  tableActions: { onRowSelected, onRowExpanded, onRowClicked, onApplyRowAction },
   isExpanded,
   isSelected,
   children,
@@ -137,7 +146,9 @@ const TableBodyRow = ({
     <React.Fragment>
       {rowSelectionCell}
       {columns.map(col => (
-        <TableCell key={col.id}>{children[col.id]}</TableCell>
+        <TableCell key={col.id} data-column={col.id}>
+          <TableCellRenderer>{children[col.id]}</TableCellRenderer>
+        </TableCell>
       ))}
       <RowActionsCell
         id={id}
@@ -154,8 +165,13 @@ const TableBodyRow = ({
           id={`${tableId}-Row-${id}`}
           ariaLabel="Expand Row"
           isExpanded
-          onExpand={() => onRowExpanded(id, false)}
-          onClick={() => onRowExpanded(id, false)}>
+          onExpand={evt => stopPropagationAndCallback(evt, onRowExpanded, id, false)}
+          onClick={() => {
+            if (shouldExpandOnRowClick) {
+              onRowExpanded(id, false);
+            }
+            onRowClicked(id);
+          }}>
           {tableCells}
         </StyledTableExpandRowExpanded>
         <StyledExpansionTableRow>
@@ -168,13 +184,20 @@ const TableBodyRow = ({
         key={id}
         ariaLabel="Expand Row"
         isExpanded={false}
-        onExpand={() => onRowExpanded(id, true)}
-        onClick={() => onRowExpanded(id, true)}>
+        onExpand={evt => stopPropagationAndCallback(evt, onRowExpanded, id, true)}
+        onClick={() => {
+          if (shouldExpandOnRowClick) {
+            onRowExpanded(id, true);
+          }
+          onRowClicked(id);
+        }}>
         {tableCells}
       </StyledTableExpandRow>
     )
   ) : (
-    <TableRow key={id}>{tableCells}</TableRow>
+    <TableRow key={id} onClick={() => onRowClicked(id)}>
+      {tableCells}
+    </TableRow>
   );
 };
 

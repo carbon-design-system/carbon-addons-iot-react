@@ -1,11 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import update from 'immutability-helper';
+import { select } from '@storybook/addon-knobs';
+import styled from 'styled-components';
 
 import { getSortedData } from '../../utils/componentUtilityFunctions';
 
 import Table from './Table';
+import StatefulTable from './StatefulTable';
 
 const selectData = [
   {
@@ -21,34 +24,29 @@ const selectData = [
     text: 'option-C',
   },
 ];
-const tableColumns = [
+export const tableColumns = [
   {
     id: 'string',
     name: 'String',
-    size: 1,
     filter: { placeholderText: 'pick a string' },
   },
   {
     id: 'date',
     name: 'Date',
-    size: 1,
     filter: { placeholderText: 'pick a date' },
   },
   {
     id: 'select',
     name: 'Select',
-    size: 1,
     filter: { placeholderText: 'pick an option', options: selectData },
   },
   {
     id: 'secretField',
     name: 'Secret Information',
-    size: 1,
   },
   {
     id: 'number',
     name: 'Number',
-    size: 1,
     filter: { placeholderText: 'pick a number' },
   },
 ];
@@ -95,6 +93,7 @@ const tableData = Array(100)
   .fill(0)
   .map((i, idx) => getNewRow(idx));
 
+/** Sample expanded row component */
 const RowExpansionContent = ({ rowId }) => (
   <div key={`${rowId}-expansion`} style={{ padding: 20 }}>
     <h3 key={`${rowId}-title`}>{rowId}</h3>
@@ -108,10 +107,18 @@ const RowExpansionContent = ({ rowId }) => (
   </div>
 );
 
+const StyledTableCustomRowHeight = styled(Table)`
+  &&& {
+    tr {
+      height: 5rem;
+    }
+  }
+`;
+
 const actions = {
   pagination: {
     /** Specify a callback for when the current page or page size is changed. This callback is passed an object parameter containing the current page and the current page size */
-    onChange: action('onChange'),
+    onChangePage: action('onChangePage'),
   },
   toolbar: {
     onApplyFilter: action('onApplyFilter'),
@@ -121,409 +128,120 @@ const actions = {
     onClearAllFilters: action('onClearAllFilters'),
     onCancelBatchAction: action('onCancelBatchAction'),
     onApplyBatchAction: action('onApplyBatchAction'),
+    onApplySearch: action('onApplySearch'),
   },
   table: {
+    onRowClicked: action('onRowClicked'),
     onRowSelected: action('onRowSelected'),
     onSelectAll: action('onSelectAll'),
     onEmptyStateAction: action('onEmptyStateAction'),
+    onApplyRowAction: action('onApplyRowAction'),
+    onRowExpanded: action('onRowExpanded'),
     onChangeOrdering: action('onChangeOrdering'),
+    onChangeSort: action('onChangeSort'),
   },
 };
 
-class StatefulTableWrapper extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      columns: tableColumns.map((i, idx) => ({
-        ...i,
-        isSortable: idx !== 1,
-      })),
-      data: tableData.map((i, idx) => ({
-        ...i,
-        rowActions: [
-          idx % 4 !== 0
-            ? {
-                id: 'drilldown',
-                icon: 'arrow--right',
-                labelText: 'Drill in',
-              }
-            : null,
-          {
-            id: 'add',
-            icon: 'icon--add',
-            labelText: 'Add',
-            isOverflow: true,
-          },
-          {
-            id: 'delete',
-            icon: 'icon--delete',
-            labelText: 'Delete',
-            isOverflow: true,
-          },
-        ].filter(i => i),
-      })),
-      options: {
-        hasFilter: true,
-        hasPagination: true,
-        hasRowSelection: true,
-        hasRowExpansion: true,
-        hasRowActions: true,
-        hasColumnSelection: true,
-      },
-      view: {
-        filters: [
-          {
-            columnId: 'string',
-            value: 'whiteboard',
-          },
-          {
-            columnId: 'select',
-            value: 'option-B',
-          },
-        ],
-        pagination: {
-          pageSize: 10,
-          pageSizes: [10, 20, 30],
-          page: 1,
-          totalItems: tableData.length,
-        },
-        table: {
-          isSelectAllSelected: false,
-          selectedIds: [],
-          sort: undefined,
-          ordering: defaultOrdering,
-          expandedRows: [],
-        },
-        toolbar: {
-          activeBar: 'filter',
-          batchActions: [
-            {
-              id: 'delete',
-              labelText: 'Delete',
-              icon: 'delete',
-              iconDescription: 'Delete',
-            },
-          ],
-        },
-      },
-    };
-  }
-
-  render = () => {
-    const {
-      columns,
-      data,
-      options,
-      view,
-      view: {
-        table: { sort },
-      },
-    } = this.state;
-    const filteredData = data.filter(({ values }) =>
-      // return false if a value doesn't match a valid filter
-      view.filters.reduce(
-        (acc, { columnId, value }) => acc && values[columnId].toString().includes(value),
-        true
-      )
-    );
-
-    const actions = {
-      pagination: {
-        onChange: paginationValues => {
-          this.setState(state =>
-            update(state, {
-              view: {
-                pagination: {
-                  $merge: paginationValues,
-                },
-              },
-            })
-          );
-        },
-      },
-      toolbar: {
-        onApplyFilter: filterValues => {
-          const newFilters = Object.entries(filterValues)
-            .map(([key, value]) =>
-              value !== ''
-                ? {
-                    columnId: key,
-                    value,
-                  }
-                : null
-            )
-            .filter(i => i);
-          this.setState(state =>
-            update(state, {
-              view: {
-                filters: {
-                  $set: newFilters,
-                },
-                pagination: {
-                  page: { $set: 1 },
-                },
-              },
-            })
-          );
-        },
-        onToggleFilter: () => {
-          this.setState(state => {
-            const filterToggled = state.view.toolbar.activeBar === 'filter' ? null : 'filter';
-            return update(state, {
-              view: {
-                toolbar: {
-                  activeBar: {
-                    $set: filterToggled,
-                  },
-                },
-              },
-            });
-          });
-        },
-        onToggleColumnSelection: () => {
-          this.setState(state => {
-            const columnSelectionToggled =
-              state.view.toolbar.activeBar === 'column' ? null : 'column';
-            return update(state, {
-              view: {
-                toolbar: {
-                  activeBar: {
-                    $set: columnSelectionToggled,
-                  },
-                },
-              },
-            });
-          });
-        },
-        onClearAllFilters: () => {
-          this.setState(state =>
-            update(state, {
-              view: {
-                filters: {
-                  $set: [],
-                },
-                pagination: {
-                  page: { $set: 1 },
-                },
-              },
-            })
-          );
-        },
-        onCancelBatchAction: () => {
-          this.setState(state =>
-            update(state, {
-              view: {
-                table: {
-                  selectedIds: { $set: [] },
-                  isSelectAllSelected: { $set: false },
-                  isSelectAllIndeterminate: { $set: false },
-                },
-              },
-            })
-          );
-        },
-        onApplyBatchAction: id => {
-          if (id === 'delete') {
-            this.setState(state =>
-              update(state, {
-                data: {
-                  $set: state.data.filter(i => !state.view.table.selectedIds.includes(i.id)),
-                },
-                view: {
-                  table: {
-                    selectedIds: { $set: [] },
-                    isSelectAllSelected: { $set: false },
-                    isSelectAllIndeterminate: { $set: false },
-                  },
-                },
-              })
-            );
+/** This would be loaded from your fetch */
+export const initialState = {
+  columns: tableColumns.map((i, idx) => ({
+    ...i,
+    isSortable: idx !== 1,
+  })),
+  data: tableData.map((i, idx) => ({
+    ...i,
+    rowActions: [
+      idx % 4 !== 0
+        ? {
+            id: 'drilldown',
+            icon: 'arrow--right',
+            labelText: 'Drill in',
           }
-        },
+        : null,
+      {
+        id: 'Add',
+        icon: 'icon--add',
+        labelText: 'Add',
+        isOverflow: true,
       },
-      table: {
-        onChangeSort: columnId => {
-          this.setState(state => {
-            const sorts = ['NONE', 'ASC', 'DESC'];
-            const currentSort = state.view.table.sort;
-            const currentSortDir =
-              currentSort && currentSort.columnId === columnId
-                ? state.view.table.sort.direction
-                : 'NONE';
-            const nextSortDir =
-              sorts[(sorts.findIndex(i => i === currentSortDir) + 1) % sorts.length];
-            return update(state, {
-              view: {
-                table: {
-                  sort: {
-                    $set:
-                      nextSortDir === 'NONE'
-                        ? undefined
-                        : {
-                            columnId,
-                            direction: nextSortDir,
-                          },
-                  },
-                },
-              },
-            });
-          });
-        },
-        onRowSelected: (id, val) => {
-          this.setState(state => {
-            const isClearing = !val && state.view.table.selectedIds.length === 1;
-            const isSelectingAll =
-              val && state.view.table.selectedIds.length + 1 === filteredData.length;
-            return update(state, {
-              view: {
-                table: {
-                  selectedIds: {
-                    $set: val
-                      ? state.view.table.selectedIds.concat([id])
-                      : state.view.table.selectedIds.filter(i => i !== id),
-                  },
-                  isSelectAllIndeterminate: {
-                    $set: !(isClearing || isSelectingAll),
-                  },
-                  isSelectAllSelected: {
-                    $set: isSelectingAll,
-                  },
-                },
-              },
-            });
-          });
-        },
-        onSelectAll: val => {
-          this.setState(state =>
-            update(state, {
-              view: {
-                table: {
-                  isSelectAllSelected: {
-                    $set: val,
-                  },
-                  selectedIds: {
-                    $set: val ? filteredData.map(i => i.id) : [],
-                  },
-                  isSelectAllIndeterminate: {
-                    $set: false,
-                  },
-                },
-              },
-            })
-          );
-        },
-        onRowExpanded: (id, val) => {
-          this.setState(state => {
-            const newExpandedRows = val
-              ? state.view.table.expandedRows.concat([
-                  { rowId: id, content: <RowExpansionContent rowId={id} /> },
-                ])
-              : state.view.table.expandedRows.filter(i => i.rowId !== id);
-            return update(state, {
-              view: {
-                table: {
-                  expandedRows: {
-                    $set: newExpandedRows,
-                  },
-                },
-              },
-            });
-          });
-        },
-        onApplyRowAction: (rowId, actionId) => {
-          alert(`action "${actionId}" clicked for row "${rowId}"`); //eslint-disable-line
-        },
-        onEmptyStateAction: () => {
-          this.setState(state =>
-            state.view.filters.length > 0
-              ? update(state, {
-                  view: {
-                    filters: {
-                      $set: [],
-                    },
-                    toolbar: {
-                      activeBar: {
-                        $set: null,
-                      },
-                    },
-                    pagination: {
-                      page: { $set: 1 },
-                    },
-                  },
-                })
-              : update(state, {
-                  data: {
-                    $set: [getNewRow(Math.floor(Math.random() * 100))].map(i => ({
-                      ...i,
-                      rowActions: [
-                        {
-                          id: 'drilldown',
-                          icon: 'arrow--right',
-                          labelText: 'Drill in',
-                        },
-                        {
-                          id: 'add',
-                          icon: 'icon--add',
-                          labelText: 'Add',
-                          isOverflow: true,
-                        },
-                        {
-                          id: 'delete',
-                          icon: 'icon--delete',
-                          labelText: 'Delete',
-                          isOverflow: true,
-                        },
-                      ],
-                    })),
-                  },
-                })
-          );
-        },
-        onChangeOrdering: ordering => {
-          this.setState(state =>
-            update(state, {
-              view: {
-                table: {
-                  ordering: { $set: ordering },
-                },
-              },
-            })
-          );
-        },
+    ].filter(i => i),
+  })),
+  expandedData: tableData.map(data => ({
+    rowId: data.id,
+    content: <RowExpansionContent rowId={data.id} />,
+  })),
+  options: {
+    hasFilter: true,
+    hasSearch: true,
+    hasPagination: true,
+    hasRowSelection: true,
+    hasRowExpansion: true,
+    hasRowActions: true,
+    hasColumnSelection: true,
+    shouldExpandOnRowClick: false,
+  },
+  view: {
+    filters: [
+      {
+        columnId: 'string',
+        value: 'whiteboard',
       },
-    };
-    return (
-      <Table
-        columns={columns}
-        data={
-          sort && sort.columnId
-            ? getSortedData(filteredData, sort.columnId, sort.direction)
-            : filteredData
-        }
-        options={options}
-        view={{
-          ...view,
-          pagination: {
-            ...view.pagination,
-            totalItems: filteredData.length,
-          },
-        }}
-        actions={actions}
-      />
-    );
-  };
-}
+      {
+        columnId: 'select',
+        value: 'option-B',
+      },
+    ],
+    pagination: {
+      pageSize: 10,
+      pageSizes: [10, 20, 30],
+      page: 1,
+      totalItems: tableData.length,
+    },
+    table: {
+      isSelectAllSelected: false,
+      selectedIds: [],
+      sort: undefined,
+      ordering: tableColumns.map(({ id }) => ({
+        columnId: id,
+        isHidden: id === 'secretField',
+      })),
+      expandedIds: [],
+    },
+    toolbar: {
+      activeBar: 'filter',
+      batchActions: [
+        {
+          id: 'delete',
+          labelText: 'Delete',
+          icon: 'delete',
+          iconDescription: 'Delete',
+        },
+      ],
+      search: {
+        placeHolderText: 'My Search',
+      },
+    },
+  },
+};
 
 storiesOf('Table', module)
-  .add('Stateful Example', () => <StatefulTableWrapper />, {
+  .add('Stateful Example', () => <StatefulTable {...initialState} actions={actions} />, {
     info: {
       text:
-        'This is a working stateful example of the table to showcase it\'s various functions. This is produced by wrapping the <Table> in a container component and managing the state associated with features such the toolbar, filters, row select, etc. For more robust documentation on the prop model and source, see the other "with function" stories.',
+        'This is an example of the <StatefulTable> component that uses local state to handle all the table actions. This is produced by wrapping the <Table> in a container component and managing the state associated with features such the toolbar, filters, row select, etc. For more robust documentation on the prop model and source, see the other "with function" stories.',
       propTables: [Table],
-      propTablesExclude: [StatefulTableWrapper],
+      propTablesExclude: [StatefulTable],
     },
   })
   .add('default', () => <Table columns={tableColumns} data={tableData} actions={actions} />)
+  .add('with simple search', () => (
+    <Table
+      columns={tableColumns}
+      data={tableData}
+      actions={actions}
+      options={{ hasSearch: true }}
+    />
+  ))
   .add('with selection and batch actions', () => (
     // TODO - batch action bar
     <Table
@@ -563,6 +281,33 @@ storiesOf('Table', module)
       actions={actions}
       options={{
         hasRowExpansion: true,
+      }}
+      view={{
+        filters: [],
+        table: {
+          ordering: defaultOrdering,
+          expandedRows: [
+            {
+              rowId: 'row-2',
+              content: <RowExpansionContent rowId="row-2" />,
+            },
+            {
+              rowId: 'row-5',
+              content: <RowExpansionContent rowId="row-5" />,
+            },
+          ],
+        },
+      }}
+    />
+  ))
+  .add('with row expansion and on row click expands', () => (
+    <Table
+      columns={tableColumns}
+      data={tableData}
+      actions={actions}
+      options={{
+        hasRowExpansion: true,
+        shouldExpandOnRowClick: true,
       }}
       view={{
         filters: [],
@@ -796,4 +541,102 @@ storiesOf('Table', module)
         },
       }}
     />
-  ));
+  ))
+  .add('zebra', () => <Table zebra columns={tableColumns} data={tableData} actions={actions} />)
+  .add(
+    'max column width',
+    () => {
+      const StyledTableColumn = styled(Table)`
+        &&& {
+          [data-column='string'] {
+            width: 100px;
+            max-width: 100px;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow-x: hidden;
+          }
+          [data-column='date'] {
+            max-width: 100px;
+            width: 100px;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow-x: hidden;
+          }
+        }
+      `;
+
+      // workaround for dumb prop types storybook issue
+      const TableColumnWidth = ({ children, ...props }) => (
+        <StyledTableColumn {...props}>{children}</StyledTableColumn>
+      );
+
+      TableColumnWidth.displayName = 'Table';
+      TableColumnWidth.propTypes = {
+        className: PropTypes.string,
+      };
+      TableColumnWidth.defaultProps = {
+        className: null,
+      };
+      return (
+        // You don't need to use styled components, just pass a className to the Table component and use selectors to find the correct column
+        <TableColumnWidth
+          columns={tableColumns}
+          options={{ hasFilter: true }}
+          data={tableData}
+          actions={actions}
+          view={{
+            filters: [
+              {
+                columnId: 'string',
+                value: 'whiteboard',
+              },
+              {
+                columnId: 'select',
+                value: 'option-B',
+              },
+            ],
+            toolbar: {
+              activeBar: select('activeBar', ['filter', 'column'], 'filter'),
+            },
+          }}
+        />
+      );
+    },
+    {
+      info: {
+        source: false,
+        text: `This is an example of the <Table> component that has a max column width. Pass a custom className prop to the Table component and use a css selector to identify the correct column. In the example below, the column id we're setting max-width for is called 'string'.
+          
+        <Table className="my-custom-classname"/>
+          
+        .my-custom-classname [data-column='string'] { 
+          width: 100px; 
+          max-width: 100px;
+          white-space: nowrap;
+          text-overflow: ellipsis; 
+          overflow-x: hidden; 
+        }`,
+        propTables: false,
+      },
+    }
+  )
+  .add(
+    'custom row height',
+    () => (
+      // You don't need to use styled components, just pass a className to the Table component and use selectors to find the correct column
+      <StyledTableCustomRowHeight columns={tableColumns} data={tableData} actions={actions} />
+    ),
+    {
+      info: {
+        source: false,
+        text: `This is an example of the <Table> component that has a custom row height. Pass a custom className prop to the Table component and use a css selector to change the height of all the rows.
+          
+        <Table className="my-custom-classname"/>
+          
+        .my-custom-classname tr { 
+          height: 5rem;
+        }`,
+        propTables: false,
+      },
+    }
+  );
