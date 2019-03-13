@@ -30,6 +30,6 @@ storiesOf('TileCatalog', module)
   .add('with pages', () => (
     <TileCatalog
       {...commonTileCatalogProps}
-      pagination={{ pageSize: 10, onPage: action('onPage') }}
+      pagination={{ pageSize: 6, onPage: action('onPage') }}
     />
   ));

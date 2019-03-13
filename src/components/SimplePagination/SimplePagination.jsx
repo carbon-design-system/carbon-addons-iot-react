@@ -32,6 +32,7 @@ const StyledButton = styled.div`
   justify-content: center;
   align-items: center;
   border: 1px solid ${COLORS.lightGrey};
+  outline-offset: -3px;
 
   ${props =>
     props.onClick
