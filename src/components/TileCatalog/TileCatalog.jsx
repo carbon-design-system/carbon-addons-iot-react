@@ -18,6 +18,7 @@ const StyledCatalogHeader = styled.div`
     flex-flow: row nowrap;
     justify-content: space-between;
     height: 40px;
+    margin-bottom: 0.5rem;
     align-items: center;
     .bx--search {
       max-width: 250px;
@@ -34,6 +35,10 @@ const StyledTiles = styled.div`
       min-width: 250px;
     }
   }
+`;
+
+const StyledTitle = styled.span`
+  font-weight: bold;
 `;
 
 const propTypes = {
@@ -108,7 +113,7 @@ const TileCatalog = ({ id, className, title, search, pagination, tiles, onChange
   return (
     <StyledContainerDiv className={className}>
       <StyledCatalogHeader>
-        {title}
+        <StyledTitle>{title}</StyledTitle>
         {search ? (
           <Search
             value={searchState || ''}

@@ -55,13 +55,28 @@ describe('TileCatalog', () => {
   test('tiles prop change resets page', () => {
     const wrapper = mount(<TileCatalog {...commonTileProps} pagination={{ pageSize: 5 }} />);
     // On page 1
-    expect(wrapper.find('span').text()).toEqual('Page 1');
+    expect(
+      wrapper
+        .find('span')
+        .at(1)
+        .text()
+    ).toEqual('Page 1');
     const nextButton = wrapper.find('div[tabIndex=0]');
     nextButton.simulate('click');
     // on Page 2
-    expect(wrapper.find('span').text()).toEqual('Page 2');
+    expect(
+      wrapper
+        .find('span')
+        .at(1)
+        .text()
+    ).toEqual('Page 2');
     // Back to Page 1
     wrapper.setProps({ tiles: [] });
-    expect(wrapper.find('span').text()).toEqual('Page 1');
+    expect(
+      wrapper
+        .find('span')
+        .at(1)
+        .text()
+    ).toEqual('Page 1');
   });
 });
