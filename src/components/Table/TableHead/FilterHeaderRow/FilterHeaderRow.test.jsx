@@ -21,6 +21,18 @@ describe('FilterHeaderRow', () => {
     expect(wrapper.state()).toEqual({ col1: 'mytext' });
   });
 
+  test('each column is marked with data-column', () => {
+    const wrapper = mount(
+      <FilterHeaderRow
+        {...commonFilterProps}
+        ordering={[{ columnId: 'col1' }]}
+        columns={[{ id: 'col1' }]}
+      />
+    );
+    const columns = wrapper.find("th[data-column='col1']");
+    expect(columns).toHaveLength(1);
+  });
+
   test('input blur fires apply filter callback', () => {
     const wrapper = mount(
       <FilterHeaderRow

@@ -22,7 +22,6 @@ const propTypes = {
     PropTypes.shape({
       id: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
-      size: PropTypes.number.isRequired,
       isSortable: PropTypes.bool,
       filter: PropTypes.shape({
         placeholderText: PropTypes.string,
@@ -44,9 +43,9 @@ const propTypes = {
     selection: PropTypes.shape({
       isSelectAllIndeterminate: PropTypes.bool,
       isSelectAllSelected: PropTypes.bool,
-    }),
+    }).isRequired,
     /** What sorting is currently applied */
-    sort: PropTypes.shape({ direction: PropTypes.string, column: PropTypes.string }),
+    sort: PropTypes.shape({ direction: PropTypes.string, column: PropTypes.string }).isRequired,
     /** What column ordering is currently applied to the table */
     ordering: PropTypes.arrayOf(
       PropTypes.shape({
@@ -54,7 +53,7 @@ const propTypes = {
         /* Visibility of column in table, defaults to false */
         isHidden: PropTypes.bool,
       })
-    ),
+    ).isRequired,
     /** Optional list of applied column filters */
     filters: PropTypes.arrayOf(
       PropTypes.shape({
@@ -113,9 +112,12 @@ const TableHead = ({
           </TableHeader>
         ) : null}
         {columns
-          .filter(
-            column => !ordering.find(columnOrder => columnOrder.columnId === column.id).isHidden
-          ) // only render visible columns
+          .filter(column => {
+            const matchingColumnMeta = ordering.find(
+              columnOrder => columnOrder.columnId === column.id
+            ); // If we can't find the column in our meta, don't hide it
+            return matchingColumnMeta ? !matchingColumnMeta.isHidden : true;
+          }) // only render visible columns
           .map(column => {
             const hasSort = sort && sort.columnId === column.id;
             return (

@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
+import { select } from '@storybook/addon-knobs';
 import styled from 'styled-components';
 
 import { getSortedData } from '../../utils/componentUtilityFunctions';
@@ -27,30 +28,25 @@ export const tableColumns = [
   {
     id: 'string',
     name: 'String',
-    size: 1,
     filter: { placeholderText: 'pick a string' },
   },
   {
     id: 'date',
     name: 'Date',
-    size: 1,
     filter: { placeholderText: 'pick a date' },
   },
   {
     id: 'select',
     name: 'Select',
-    size: 1,
     filter: { placeholderText: 'pick an option', options: selectData },
   },
   {
     id: 'secretField',
     name: 'Secret Information',
-    size: 1,
   },
   {
     id: 'number',
     name: 'Number',
-    size: 1,
     filter: { placeholderText: 'pick a number' },
   },
 ];
@@ -553,7 +549,15 @@ storiesOf('Table', module)
       const StyledTableColumn = styled(Table)`
         &&& {
           [data-column='string'] {
-            max-width: 20px;
+            width: 100px;
+            max-width: 100px;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow-x: hidden;
+          }
+          [data-column='date'] {
+            max-width: 100px;
+            width: 100px;
             white-space: nowrap;
             text-overflow: ellipsis;
             overflow-x: hidden;
@@ -575,7 +579,27 @@ storiesOf('Table', module)
       };
       return (
         // You don't need to use styled components, just pass a className to the Table component and use selectors to find the correct column
-        <TableColumnWidth columns={tableColumns} data={tableData} actions={actions} />
+        <TableColumnWidth
+          columns={tableColumns}
+          options={{ hasFilter: true }}
+          data={tableData}
+          actions={actions}
+          view={{
+            filters: [
+              {
+                columnId: 'string',
+                value: 'whiteboard',
+              },
+              {
+                columnId: 'select',
+                value: 'option-B',
+              },
+            ],
+            toolbar: {
+              activeBar: select('activeBar', ['filter', 'column'], 'filter'),
+            },
+          }}
+        />
       );
     },
     {
@@ -586,7 +610,8 @@ storiesOf('Table', module)
         <Table className="my-custom-classname"/>
           
         .my-custom-classname [data-column='string'] { 
-          max-width: 20px; 
+          width: 100px; 
+          max-width: 100px;
           white-space: nowrap;
           text-overflow: ellipsis; 
           overflow-x: hidden; 

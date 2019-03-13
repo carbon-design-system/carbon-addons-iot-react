@@ -46,7 +46,6 @@ export const TableColumnsPropTypes = PropTypes.arrayOf(
   PropTypes.shape({
     id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
-    size: PropTypes.number.isRequired,
     isSortable: PropTypes.bool,
     filter: PropTypes.shape({
       placeholderText: PropTypes.string,
