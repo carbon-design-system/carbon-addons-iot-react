@@ -138,7 +138,7 @@ class FilterHeaderRow extends Component {
             const column = columns.find(i => c.columnId === i.id);
             const columnStateValue = this.state[column.id]; // eslint-disable-line
             return (
-              <StyledTableHeader key={`FilterHeader${column.id}`}>
+              <StyledTableHeader data-column={column.id} key={`FilterHeader${column.id}`}>
                 {column.options ? (
                   <ComboBox
                     items={column.options}

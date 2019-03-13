@@ -5,6 +5,7 @@ import styled from 'styled-components';
 
 import { COLORS } from '../../../../styles/styles';
 import RowActionsCell from '../RowActionsCell/RowActionsCell';
+import TableCellRenderer from '../../TableCellRenderer/TableCellRenderer';
 import { RowActionPropTypes } from '../../TablePropTypes';
 import { stopPropagationAndCallback } from '../../../../utils/componentUtilityFunctions';
 
@@ -145,7 +146,9 @@ const TableBodyRow = ({
     <React.Fragment>
       {rowSelectionCell}
       {columns.map(col => (
-        <TableCell key={col.id}>{children[col.id]}</TableCell>
+        <TableCell key={col.id} data-column={col.id}>
+          <TableCellRenderer>{children[col.id]}</TableCellRenderer>
+        </TableCell>
       ))}
       <RowActionsCell
         id={id}

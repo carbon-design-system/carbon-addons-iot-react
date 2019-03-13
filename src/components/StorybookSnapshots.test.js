@@ -20,7 +20,13 @@ describe(`Storybook Snapshot tests and console checks`, () => {
     ReactDOM.findDOMNode = jest.fn(); // needed for this issue: https://github.com/facebook/react/issues/7371
     // TODO: remove once carbon PR is merged
     spy.console = jest.spyOn(console, 'error').mockImplementation(e => {
-      if (!e.includes('Warning: Function components cannot be given refs.')) {
+      if (
+        !e.includes('Warning: Function components cannot be given refs.') &&
+        !e.includes(
+          // workaround storybook console error with styled components
+          'Warning: Failed prop type: Invalid prop `type` of type `object` supplied to `PropTable`, expected `function'
+        )
+      ) {
         done.fail(e);
       }
     });
