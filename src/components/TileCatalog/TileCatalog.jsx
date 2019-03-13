@@ -2,37 +2,44 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { RadioTile, Tile, Search } from 'carbon-components-react';
+import { Bee32 } from '@carbon/icons-react';
 
 import SimplePagination from '../SimplePagination/SimplePagination';
 
 const StyledContainerDiv = styled.div`
-  &&& {
-    display: flex;
-    flex-flow: column nowrap;
-  }
+  display: flex;
+  flex-flow: column nowrap;
 `;
 
 const StyledCatalogHeader = styled.div`
-  &&& {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    height: 40px;
-    margin-bottom: 0.5rem;
-    align-items: center;
-    .bx--search {
-      max-width: 250px;
-    }
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  height: 40px;
+  margin-bottom: 0.5rem;
+  align-items: center;
+  .bx--search {
+    max-width: 250px;
   }
 `;
 
 const StyledTiles = styled.div`
+  display: flex;
+  flex-flow: row wrap;
+  > * {
+    flex: 1 1 30%;
+    min-width: 250px;
+  }
+`;
+
+const StyledEmptyTile = styled(Tile)`
   &&& {
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
     > * {
-      flex: 1 1 30%;
-      min-width: 250px;
+      padding-bottom: 0.5rem;
     }
   }
 `;
@@ -139,7 +146,10 @@ const TileCatalog = ({ id, className, title, search, pagination, tiles, onChange
             </RadioTile>
           ))
         ) : (
-          <Tile>{(search && search.noMatchesFoundText) || 'No matches found'}</Tile>
+          <StyledEmptyTile>
+            <Bee32 />
+            <p>{(search && search.noMatchesFoundText) || 'No matches found'}</p>
+          </StyledEmptyTile>
         )}
       </StyledTiles>
       {pagination ? (
