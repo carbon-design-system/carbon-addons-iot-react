@@ -21,26 +21,22 @@ const tableColumns = [
   {
     id: 'string',
     name: 'String',
-    size: 1,
     filter: { placeholderText: 'pick a string' },
     isSortable: true,
   },
   {
     id: 'date',
     name: 'Date',
-    size: 1,
     filter: { placeholderText: 'pick a date' },
   },
   {
     id: 'select',
     name: 'Select',
-    size: 1,
     filter: { placeholderText: 'pick an option', options: selectData },
   },
   {
     id: 'number',
     name: 'Number',
-    size: 1,
     filter: { placeholderText: 'pick a number' },
   },
 ];

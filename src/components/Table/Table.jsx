@@ -24,6 +24,8 @@ const { Table: CarbonTable, TableContainer } = DataTable;
 const propTypes = {
   /** DOM ID for component */
   id: PropTypes.string,
+  /** render zebra stripes or not */
+  zebra: PropTypes.bool,
   /** Specify the properties of each column in the table */
   columns: TableColumnsPropTypes.isRequired,
   /** Data for the body of the table */
@@ -133,6 +135,7 @@ const propTypes = {
 };
 const defaultProps = baseProps => ({
   id: 'Table',
+  zebra: false,
   options: {
     hasPagination: false,
     hasRowSelection: false,
@@ -154,7 +157,7 @@ const defaultProps = baseProps => ({
       batchActions: [],
     },
     table: {
-      expandedRows: [],
+      expandedIds: [],
       isSelectAllSelected: false,
       selectedIds: [],
       sort: {},
@@ -190,7 +193,7 @@ const defaultProps = baseProps => ({
 });
 
 const Table = props => {
-  const { id, columns, data, expandedData, view, actions, options, className } = merge(
+  const { id, columns, data, expandedData, view, actions, options, ...others } = merge(
     {},
     defaultProps(props),
     props
@@ -215,7 +218,7 @@ const Table = props => {
     (options.hasRowExpansion ? 1 : 0) +
     (options.hasRowActions ? 1 : 0);
   return (
-    <div id={id} className={className}>
+    <div id={id}>
       <TableContainer>
         <TableToolbar
           actions={pick(
@@ -234,7 +237,7 @@ const Table = props => {
             ...pick(view.toolbar, 'batchActions', 'search', 'activeBar'),
           }}
         />
-        <CarbonTable zebra={false}>
+        <CarbonTable {...others}>
           <TableHead
             options={pick(options, 'hasRowSelection', 'hasRowExpansion', 'hasRowActions')}
             columns={columns}
