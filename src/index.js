@@ -11,3 +11,4 @@ export TableSkeletonWithHeaders from './components/Table/TableSkeletonWithHeader
 export { baseTableReducer } from './components/Table/baseTableReducer';
 export { tableReducer } from './components/Table/tableReducer';
 export * as tableActions from './components/Table/tableActionCreators';
+export StatefulTable from './components/Table/StatefulTable';
