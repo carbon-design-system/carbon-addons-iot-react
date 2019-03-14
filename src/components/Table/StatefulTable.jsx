@@ -66,8 +66,6 @@ const StatefulTable = ({
     onChangeOrdering,
   } = table || {};
 
-  // same thing for table and pagination
-
   // In addition to updating the store, I always callback to the parent in case they want to do something
   const actions = {
     pagination: {
