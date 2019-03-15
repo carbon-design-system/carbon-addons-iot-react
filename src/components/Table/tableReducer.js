@@ -1,6 +1,7 @@
 import update from 'immutability-helper';
 import isNil from 'lodash/isNil';
 import isEmpty from 'lodash/isEmpty';
+import get from 'lodash/get';
 
 import { getSortedData } from '../../utils/componentUtilityFunctions';
 
@@ -81,10 +82,8 @@ export const tableReducer = (state = {}, action) => {
               filteredData: {
                 $set: filterSearchAndSort(
                   state.data,
-                  state.view.table && state.view.table.sort ? state.view.table.sort : undefined,
-                  state.view.toolbar && state.view.toolbar.search
-                    ? state.view.toolbar.search
-                    : null,
+                  get(state, 'view.table.sort'),
+                  get(state, 'view.toolbar.search'),
                   newFilters
                 ),
               },
@@ -102,10 +101,8 @@ export const tableReducer = (state = {}, action) => {
               filteredData: {
                 $set: filterSearchAndSort(
                   state.data,
-                  state.view.table && state.view.table.sort ? state.view.table.sort : undefined,
-                  state.view.toolbar && state.view.toolbar.search
-                    ? state.view.toolbar.search
-                    : null,
+                  get(state, 'view.table.sort'),
+                  get(state, 'view.toolbar.search'),
                   []
                 ),
               },
@@ -118,7 +115,7 @@ export const tableReducer = (state = {}, action) => {
       // Quick search should search within the filtered and sorted data
       const data = filterSearchAndSort(
         state.data,
-        state.view.table && state.view.table.sort ? state.view.table.sort : undefined,
+        get(state, 'view.table.sort'),
         { value: action.payload },
         state.view.filters
       );
@@ -214,8 +211,8 @@ export const tableReducer = (state = {}, action) => {
             filteredData: {
               $set: filterSearchAndSort(
                 state.data,
-                state.view.table && state.view.table.sort ? state.view.table.sort : undefined,
-                state.view.toolbar && state.view.toolbar.search ? state.view.toolbar.search : null,
+                get(state, 'view.table.sort'),
+                get(state, 'view.toolbar.search'),
                 state.view.filters
               ),
             },
