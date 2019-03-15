@@ -117,7 +117,7 @@ export const tableReducer = (state = {}, action) => {
         state.data,
         get(state, 'view.table.sort'),
         { value: action.payload },
-        state.view.filters
+        get(state, 'view.filters')
       );
       return baseTableReducer(
         update(state, {
@@ -168,7 +168,7 @@ export const tableReducer = (state = {}, action) => {
       const sorts = ['NONE', 'ASC', 'DESC'];
       const currentSort = get(state, 'view.table.sort');
       const currentSortDir =
-        currentSort && currentSort.columnId === columnId ? state.view.table.sort.direction : 'NONE';
+        currentSort && currentSort.columnId === columnId ? currentSort.direction : 'NONE';
       const nextSortDir = sorts[(sorts.findIndex(i => i === currentSortDir) + 1) % sorts.length];
       return baseTableReducer(
         update(state, {
@@ -212,7 +212,7 @@ export const tableReducer = (state = {}, action) => {
                 state.data,
                 get(state, 'view.table.sort'),
                 get(state, 'view.toolbar.search'),
-                state.view.filters
+                get(state, 'view.filters')
               ),
             },
           },
