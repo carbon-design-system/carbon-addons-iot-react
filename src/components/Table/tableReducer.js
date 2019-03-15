@@ -23,7 +23,7 @@ import { baseTableReducer } from './baseTableReducer';
 
 // Little utility to filter data
 const filterData = (data, filters) =>
-  filters.length === 0
+  !filters || filters.length === 0
     ? data
     : data.filter(({ values }) =>
         // return false if a value doesn't match a valid filter
@@ -81,8 +81,10 @@ export const tableReducer = (state = {}, action) => {
               filteredData: {
                 $set: filterSearchAndSort(
                   state.data,
-                  state.view.table.sort,
-                  state.view.toolbar.search,
+                  state.view.table && state.view.table.sort ? state.view.table.sort : undefined,
+                  state.view.toolbar && state.view.toolbar.search
+                    ? state.view.toolbar.search
+                    : null,
                   newFilters
                 ),
               },
@@ -100,8 +102,10 @@ export const tableReducer = (state = {}, action) => {
               filteredData: {
                 $set: filterSearchAndSort(
                   state.data,
-                  state.view.table.sort,
-                  state.view.toolbar.search,
+                  state.view.table && state.view.table.sort ? state.view.table.sort : undefined,
+                  state.view.toolbar && state.view.toolbar.search
+                    ? state.view.toolbar.search
+                    : null,
                   []
                 ),
               },
@@ -114,7 +118,7 @@ export const tableReducer = (state = {}, action) => {
       // Quick search should search within the filtered and sorted data
       const data = filterSearchAndSort(
         state.data,
-        state.view.table.sort,
+        state.view.table && state.view.table.sort ? state.view.table.sort : undefined,
         { value: action.payload },
         state.view.filters
       );
@@ -165,7 +169,8 @@ export const tableReducer = (state = {}, action) => {
       // TODO should check that columnId actually is valid
       const columnId = action.payload;
       const sorts = ['NONE', 'ASC', 'DESC'];
-      const currentSort = state.view.table.sort;
+      const currentSort =
+        state.view.table && state.view.table.sort ? state.view.table.sort : undefined;
       const currentSortDir =
         currentSort && currentSort.columnId === columnId ? state.view.table.sort.direction : 'NONE';
       const nextSortDir = sorts[(sorts.findIndex(i => i === currentSortDir) + 1) % sorts.length];
@@ -209,8 +214,8 @@ export const tableReducer = (state = {}, action) => {
             filteredData: {
               $set: filterSearchAndSort(
                 state.data,
-                state.view.table.sort,
-                state.view.toolbar.search,
+                state.view.table && state.view.table.sort ? state.view.table.sort : undefined,
+                state.view.toolbar && state.view.toolbar.search ? state.view.toolbar.search : null,
                 state.view.filters
               ),
             },
