@@ -31,7 +31,6 @@ const StyledActions = styled.div`
 
 const propTypes = {
   /** Array of props to pass through to the tabs */
-
   tabs: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,
@@ -48,18 +47,28 @@ const propTypes = {
       onClick: PropTypes.func,
     })
   ),
-  /** TEMP: component to render Hero within Nav Bar across all tab content */
+  /** If a tab isn't selected, should that tabs contents be removed from the DOM? */
+  hidden: PropTypes.bool,
+  /** listen to tab change if you want to trigger something on change, not fired on the initial render.  Sends the selected tab id */
+  onSelectionChange: PropTypes.func,
+  /** TEMP: component to render Hero within Nav Bar across all tab content, we think the tabs will move down over the table and different content will show for each */
   hero: PropTypes.node.isRequired,
 };
 
 const defaultProps = {
   actions: [],
+  /** by default I think we should hide any TabContent that's not selected */
+  hidden: true,
+  onSelectionChange: null,
 };
 
-const NavigationBar = ({ tabs, hero, actions }) => (
+/**
+ * This component is just wrapping up the Carbon Tabs, adding some optional action buttons at the right side.  And for now automatically rendering a page hero component across all tabs
+ */
+const NavigationBar = ({ tabs, hero, actions, onSelectionChange, ...others }) => (
   <StyledNavigationContainer>
     <StyledTabToContent>
-      <Tabs>
+      <Tabs {...others} onSelectionChange={index => onSelectionChange(tabs[index].id)}>
         {tabs.map(({ children, id, ...other }) => (
           <Tab key={id} {...other}>
             <StyledTabContent>

@@ -21,6 +21,7 @@ const navBarProps = {
     { id: 'tab2', label: 'Tab 2', children: 'my content2' },
   ],
   hero: <PageHero {...commonPageHeroProps} />,
+  onSelectionChange: action('onSelectionChange'),
 };
 
 storiesOf('NavigationBar', module)
