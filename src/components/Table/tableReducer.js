@@ -166,8 +166,7 @@ export const tableReducer = (state = {}, action) => {
       // TODO should check that columnId actually is valid
       const columnId = action.payload;
       const sorts = ['NONE', 'ASC', 'DESC'];
-      const currentSort =
-        state.view.table && state.view.table.sort ? state.view.table.sort : undefined;
+      const currentSort = get(state, 'view.table.sort');
       const currentSortDir =
         currentSort && currentSort.columnId === columnId ? state.view.table.sort.direction : 'NONE';
       const nextSortDir = sorts[(sorts.findIndex(i => i === currentSortDir) + 1) % sorts.length];
