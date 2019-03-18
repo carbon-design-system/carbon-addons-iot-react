@@ -12,3 +12,6 @@ export { baseTableReducer } from './components/Table/baseTableReducer';
 export { tableReducer } from './components/Table/tableReducer';
 export * as tableActions from './components/Table/tableActionCreators';
 export StatefulTable from './components/Table/StatefulTable';
+export TileCatalog from './components/TileCatalog/TileCatalog';
+export SimplePagination from './components/SimplePagination/SimplePagination';
+export CatalogContent from './components/TileCatalog/CatalogContent';

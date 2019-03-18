@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { RadioTile, Tile, Search } from 'carbon-components-react';
@@ -28,8 +28,9 @@ const StyledTiles = styled.div`
   flex-flow: row wrap;
   > * {
     flex: 1 1 30%;
-    min-width: 250px;
+    min-width: 300px;
   }
+  overflow-y: hidden;
 `;
 
 const StyledEmptyTile = styled(Tile)`
@@ -40,6 +41,20 @@ const StyledEmptyTile = styled(Tile)`
     justify-content: center;
     > * {
       padding-bottom: 0.5rem;
+    }
+  }
+`;
+
+const StyledGreedyTile = styled(Tile)`
+   {
+    flex: 1 1 30%;
+    display: none;
+    @media screen and (min-width: 700px) {
+      display: flex;
+    }
+    @media screen and (min-width: 1000px) {
+      flex: 1 1 63.5%;
+      display: flex;
     }
   }
 `;
@@ -134,18 +149,21 @@ const TileCatalog = ({ id, className, title, search, pagination, tiles, onChange
       </StyledCatalogHeader>
       <StyledTiles>
         {tiles.length > 0 ? (
-          tiles.slice(startingIndex, endingIndex).map(tile => (
-            <RadioTile
-              className={tile.className}
-              key={tile.id}
-              id={tile.id}
-              value={tile.id}
-              name={id}
-              checked={selectedTile === tile.id}
-              onChange={handleChange}>
-              {tile.content}
-            </RadioTile>
-          ))
+          <Fragment>
+            {tiles.slice(startingIndex, endingIndex).map(tile => (
+              <RadioTile
+                className={tile.className}
+                key={tile.id}
+                id={tile.id}
+                value={tile.id}
+                name={id}
+                checked={selectedTile === tile.id}
+                onChange={handleChange}>
+                {tile.content}
+              </RadioTile>
+            ))}
+            {endingIndex >= tiles.length ? <StyledGreedyTile /> : null}
+          </Fragment>
         ) : (
           <StyledEmptyTile>
             <Bee32 />

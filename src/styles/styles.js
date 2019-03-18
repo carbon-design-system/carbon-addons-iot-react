@@ -8,3 +8,7 @@ export const COLORS = {
   errorRed: '#e62325',
   white: '#fff',
 };
+
+export const TYPOGRAPHY = {
+  details: '0.875rem',
+};
