@@ -12,7 +12,7 @@
       "jsx": true
     }
   },
-  "plugins": ["babel", "react", "jsx-a11y", "import", "jest", "lodash"],
+  "plugins": ["babel", "react", "jsx-a11y", "import", "jest", "lodash", "react-hooks"],
   "settings": {
     "react": {
       "version": "16.4" // React version, default to the latest React stable release
@@ -48,7 +48,9 @@
         ]
       }
     ],
-    "react/jsx-closing-bracket-location": 2,
+    "react/jsx-closing-bracket-location": 0,
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
     "import/first": [
       2,
       {
