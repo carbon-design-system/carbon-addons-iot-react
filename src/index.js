@@ -12,3 +12,5 @@ export { baseTableReducer } from './components/Table/baseTableReducer';
 export { tableReducer } from './components/Table/tableReducer';
 export * as tableActions from './components/Table/tableActionCreators';
 export StatefulTable from './components/Table/StatefulTable';
+export PageHero from './components/Page/PageHero';
+export NavigationBar from './components/NavigationBar/NavigationBar';
