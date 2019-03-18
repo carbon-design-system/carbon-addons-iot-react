@@ -75,11 +75,13 @@ exports[`HeaderMenu testcases should render 1`] = `
                 element="a"
                 href="/a"
                 role="menuitem"
+                tabIndex={0}
               >
                 <a
                   className="bx--header__menu-item"
                   href="/a"
                   role="menuitem"
+                  tabIndex={0}
                 >
                   <span
                     className="bx--text-truncate--end"
@@ -109,11 +111,13 @@ exports[`HeaderMenu testcases should render 1`] = `
                 element="a"
                 href="/b"
                 role="menuitem"
+                tabIndex={0}
               >
                 <a
                   className="bx--header__menu-item"
                   href="/b"
                   role="menuitem"
+                  tabIndex={0}
                 >
                   <span
                     className="bx--text-truncate--end"
@@ -143,11 +147,13 @@ exports[`HeaderMenu testcases should render 1`] = `
                 element="a"
                 href="/c"
                 role="menuitem"
+                tabIndex={0}
               >
                 <a
                   className="bx--header__menu-item"
                   href="/c"
                   role="menuitem"
+                  tabIndex={0}
                 >
                   <span
                     className="bx--text-truncate--end"

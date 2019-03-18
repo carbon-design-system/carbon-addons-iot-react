@@ -33,9 +33,12 @@ const StatefulTable = ({
 }) => {
   const [state, dispatch] = useReducer(tableReducer, { data: initialData, view: initialState });
   // Need to initially sort and filter the tables data
-  useEffect(() => {
-    dispatch(tableRegister());
-  }, initialData);
+  useEffect(
+    () => {
+      dispatch(tableRegister());
+    },
+    [initialData]
+  );
 
   const {
     view,
