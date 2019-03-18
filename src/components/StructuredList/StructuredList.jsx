@@ -1,8 +1,15 @@
 import React, { Fragment } from 'react';
+import {
+  StructuredListWrapper,
+  StructuredListHead,
+  StructuredListBody,
+  StructuredListRow,
+  StructuredListCell,
+} from 'carbon-components-react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-const Section = styled.section`
+const StructuredListWrapperStyled = styled(StructuredListWrapper)`
    {
     background-color: #ffffff;
     margin-bottom: 0;
@@ -45,37 +52,36 @@ const IconDiv = styled.div`
   }
 `;
 
+/**
+ * Carbon Structured List simple with custom design and onClick
+ */
 const StructuredList = ({ columns, data, design, onRowClick, loadingDataLabel }) => (
   <Fragment>
-    <Section className="bx--structured-list bx--structured-list--selection">
-      <div className="bx--structured-list-thead">
-        <div className="bx--structured-list-row bx--structured-list-row--header-row">
+    <StructuredListWrapperStyled selection>
+      <StructuredListHead>
+        <StructuredListRow head>
           {columns.map(({ id, title }) => (
-            <div key={`${id}-column`} className="bx--structured-list-th">
+            <StructuredListCell key={`${id}-column`} head>
               {title}
-            </div>
+            </StructuredListCell>
           ))}
-        </div>
-      </div>
-      <div className="bx--structured-list-tbody">
+        </StructuredListRow>
+      </StructuredListHead>
+      <StructuredListBody>
         {data.map(item => (
-          <div
-            key={`${item.id}-row`}
-            className="bx--structured-list-row"
-            onClick={() => onRowClick(item.id)}
-            role="presentation">
+          <StructuredListRow key={`${item.id}-row`} onClick={() => onRowClick(item.id)}>
             {columns.map(col => (
-              <div
+              <StructuredListCell
                 key={`${col.id}-item`}
-                className="bx--structured-list-td bx--structured-list-content--nowrap"
+                noWrap
                 style={design === 'normal' ? { lineHeight: '16px' } : {}}>
                 {item.values[col.id]}
-              </div>
+              </StructuredListCell>
             ))}
-          </div>
+          </StructuredListRow>
         ))}
-      </div>
-    </Section>
+      </StructuredListBody>
+    </StructuredListWrapperStyled>
     {!data.length ? (
       <EmptyDiv>
         <IconDiv>
