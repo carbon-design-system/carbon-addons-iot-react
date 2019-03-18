@@ -1,17 +1,10 @@
 import React, { Fragment, Component } from 'react';
 import PropTypes from 'prop-types';
-import { Icon } from 'carbon-components-react';
+import { Button } from 'carbon-components-react';
 import styled from 'styled-components';
 
 const ResourceListSection = styled.section`
    {
-    .bx--structured-list-th {
-      padding-left: 16px;
-    }
-
-    .bx--structured-list-td {
-      padding-left: 16px;
-    }
   }
 `;
 
@@ -25,6 +18,7 @@ const InlineDiv = styled.div`
 
 const CustomActionDiv = styled.div`
    {
+    vertical-align: middle;
     color: #3e70b2;
     fill: #3e70b2;
   }
@@ -46,18 +40,19 @@ class ResourceList extends Component {
     onRowClick: PropTypes.func,
     /** Object for custom action column */
     customAction: PropTypes.shape({
-      action: PropTypes.func.isRequired,
-      actionLabel: PropTypes.string.isRequired,
+      onClick: PropTypes.func.isRequired,
+      label: PropTypes.string.isRequired,
     }),
     /** Current item selected id */
-    currentItemId: PropTypes.string.isRequired,
+    currentItemId: PropTypes.string,
     /** Extra content element */
-    extraContent: PropTypes.element,
+    extraContent: PropTypes.arrayOf(PropTypes.node),
   };
 
   static defaultProps = {
     design: 'normal',
     onRowClick: () => {},
+    currentItemId: null,
     extraContent: null,
     customAction: null,
   };
@@ -70,16 +65,7 @@ class ResourceList extends Component {
   render = () => {
     const { design, data, customAction, currentItemId, onRowClick, extraContent } = this.props;
 
-    const customActionContent = customAction ? (
-      <CustomActionDiv
-        className="bx--structured-list-td bx--structured-list-content--nowrap"
-        style={{ verticalAlign: 'middle' }}
-        onClick={() => customAction.action()}
-        role="presentation">
-        <span style={{ marginRight: '20px' }}>{customAction.actionLabel}</span>
-        <Icon name="edit" width="16" height="16" />
-      </CustomActionDiv>
-    ) : (
+    const checkboxCell = (
       <div className="bx--structured-list-td" style={{ verticalAlign: 'middle' }}>
         <svg className="bx--structured-list-svg" width="16" height="16" viewBox="0 0 16 16">
           <path
@@ -89,8 +75,21 @@ class ResourceList extends Component {
         </svg>
       </div>
     );
+    const customActionContent = rowId => (
+      <CustomActionDiv
+        className="bx--structured-list-td bx--structured-list-content--nowrap"
+        role="presentation">
+        <Button
+          kind="ghost"
+          icon={customAction.icon}
+          onClick={() => customAction.onClick(rowId)}
+          small>
+          {customAction.label}
+        </Button>
+      </CustomActionDiv>
+    );
 
-    const listContent = data.map(({ id, title, description }) => {
+    const listContent = data.map(({ id, title, description }, idx) => {
       const activeItem = id === currentItemId;
       return (
         <label // eslint-disable-line
@@ -99,46 +98,55 @@ class ResourceList extends Component {
           className={`${
             activeItem ? 'bx--structured-list-row--selected' : ''
           } bx--structured-list-row`}
-          tabIndex="0"
-          onClick={() => onRowClick(id)}>
-          {extraContent ? <div className="bx--structured-list-td">{extraContent}</div> : undefined}
+          tabIndex={customAction ? -1 : idx}
+          onClick={onRowClick ? () => onRowClick(id) : null}>
+          {extraContent ? (
+            <div className="bx--structured-list-td">{extraContent[idx]}</div>
+          ) : (
+            undefined
+          )}
           {design === 'inline' ? (
             <Fragment>
-              <div className="bx--structured-list-td" style={{ fontWeight: '600' }}>
-                {title}
+              <div className="bx--structured-list-td">
+                <strong>{title}</strong>
                 <InlineDiv className="bx--structured-list-td">{description}</InlineDiv>
               </div>
             </Fragment>
           ) : (
             <Fragment>
-              <div
-                className="bx--structured-list-td bx--structured-list-content--nowrap"
-                style={{ fontWeight: '600' }}>
-                {title}
+              <div className="bx--structured-list-td bx--structured-list-content--nowrap">
+                <strong>{title}</strong>
               </div>
               <div className="bx--structured-list-td">{description}</div>
             </Fragment>
           )}
-
-          <input
-            tabIndex="-1"
-            className="bx--structured-list-input"
-            value={title}
-            type="radio"
-            name="services"
-            title={title}
-            checked={activeItem}
-            readOnly
-          />
-          {customActionContent}
+          {customAction ? (
+            customActionContent(id)
+          ) : (
+            <Fragment>
+              <input
+                tabIndex={-1}
+                className="bx--structured-list-input"
+                value={title}
+                type="radio"
+                title={title}
+                checked={activeItem}
+                readOnly
+              />
+              {checkboxCell}
+            </Fragment>
+          )}
         </label>
       );
     });
 
     return (
       <ResourceListSection
-        className="bx--structured-list bx--structured-list--border bx--structured-list--selection"
-        data-structured-list>
+        className={[
+          'bx--structured-list',
+          'bx--structured-list--border',
+          'bx--structured-list--selection',
+        ].join(' ')}>
         <div className="bx--structured-list-tbody">{listContent}</div>
       </ResourceListSection>
     );

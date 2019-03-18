@@ -49,15 +49,15 @@ describe('Resource List', () => {
       <ResourceList
         design="normal"
         data={resourceData}
-        currentItemId="row-2"
         customAction={{
-          action: actionClick,
-          actionLabel: 'Configure',
+          onClick: actionClick,
+          label: 'Configure',
+          icon: 'edit',
         }}
       />
     );
     wrapper
-      .find('div[onClick]')
+      .find('button[onClick]')
       .first()
       .simulate('click');
     expect(actionClick.mock.calls).toHaveLength(1);
@@ -68,14 +68,14 @@ describe('Resource List', () => {
         design="normal"
         data={resourceData}
         currentItemId="row-2"
-        extraContent={<div> test content</div>}
+        extraContent={resourceData.map(i => i.id)}
       />
     );
     expect(
       wrapper
         .find('div.bx--structured-list-td')
         .first()
-        .contains(<div> test content</div>)
+        .contains(resourceData[0].id)
     ).toEqual(true);
   });
 });
