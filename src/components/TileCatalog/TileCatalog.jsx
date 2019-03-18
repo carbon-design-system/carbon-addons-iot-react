@@ -86,9 +86,10 @@ const defaultProps = {
 
 /**
  * Renders a searchable and pageable catalog of RadioTiles from carbon. Couldn't reuse the TileGroup component from Carbon due to this limitation.
+ * https://github.com/IBM/carbon-components-react/issues/1999
+ *
  * Paging happens on local state within the component, but we expect search to be done outside the component on callback
  * and for the parent to update the inbound tiles prop with only the matching results.
- * https://github.com/IBM/carbon-components-react/issues/1999
  */
 const TileCatalog = ({ id, className, title, search, pagination, tiles, onChange }) => {
   const [selectedTile, setSelectedTile] = useState(tiles && tiles.length ? tiles[0].id : null);

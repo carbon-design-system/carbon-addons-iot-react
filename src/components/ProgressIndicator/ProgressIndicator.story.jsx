@@ -23,6 +23,7 @@ class ProgressIndicatorExample extends Component {
   };
 
   setItem = id => {
+    action('onClickItem')(id);
     this.setState({ currentItemId: id });
   };
 
