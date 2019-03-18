@@ -33,9 +33,12 @@ const StatefulTable = ({
 }) => {
   const [state, dispatch] = useReducer(tableReducer, { data: initialData, view: initialState });
   // Need to initially sort and filter the tables data
-  useEffect(() => {
-    dispatch(tableRegister());
-  }, initialData);
+  useEffect(
+    () => {
+      dispatch(tableRegister());
+    },
+    [initialData]
+  );
 
   const {
     view,
@@ -44,28 +47,28 @@ const StatefulTable = ({
     },
   } = state;
 
+  const { pagination, toolbar, table } = callbackActions;
+  const { onChangePage } = pagination || {};
   const {
-    pagination: { onChangePage },
-    toolbar: {
-      onApplyFilter,
-      onToggleFilter,
-      onToggleColumnSelection,
-      onClearAllFilters,
-      onCancelBatchAction,
-      onApplyBatchAction,
-      onApplySearch,
-    },
-    table: {
-      onChangeSort,
-      onRowSelected,
-      onRowClicked,
-      onSelectAll,
-      onRowExpanded,
-      onApplyRowAction,
-      onEmptyStateAction,
-      onChangeOrdering,
-    },
-  } = callbackActions;
+    onApplyFilter,
+    onToggleFilter,
+    onToggleColumnSelection,
+    onClearAllFilters,
+    onCancelBatchAction,
+    onApplyBatchAction,
+    onApplySearch,
+  } = toolbar || {};
+  const {
+    onChangeSort,
+    onRowSelected,
+    onRowClicked,
+    onSelectAll,
+    onRowExpanded,
+    onApplyRowAction,
+    onEmptyStateAction,
+    onChangeOrdering,
+  } = table || {};
+
   // In addition to updating the store, I always callback to the parent in case they want to do something
   const actions = {
     pagination: {
