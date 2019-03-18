@@ -11,4 +11,9 @@ export const COLORS = {
 
 export const PADDING = {
   verticalSpace: '1rem 0',
+  pageWrapPadding: '0 2rem',
+};
+
+export const SIZES = {
+  navigationBarHeight: '3.5rem',
 };

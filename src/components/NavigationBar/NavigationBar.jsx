@@ -3,14 +3,29 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Tabs, Tab, Button } from 'carbon-components-react';
 
+import { COLORS, PADDING, SIZES } from '../../styles/styles';
+
 const StyledNavigationContainer = styled.div`
   position: relative;
+  background-color: ${COLORS.white};
+  ul {
+    padding: ${PADDING.pageWrapPadding};
+    border-bottom: 1px solid ${COLORS.lightGrey};
+    align-items: center;
+    @media screen and (min-width: 768px) {
+      height: ${SIZES.navigationBarHeight};
+    }
+    margin-left: 0rem;
+  }
 `;
 
 const StyledTabToContent = styled.div`
   display: flex;
   flex-flow: column nowrap;
   width: 100%;
+  .bx--tabs-trigger {
+    background-color: ${COLORS.white};
+  }
 `;
 
 const StyledTabContent = styled.div`
@@ -18,10 +33,26 @@ const StyledTabContent = styled.div`
   flex-flow: column nowrap;
 `;
 
+const StyledTabHero = styled.div`
+  padding: ${PADDING.pageWrapPadding};
+`;
+
+const StyledTabChildren = styled.div`
+  background: ${COLORS.lightGrey};
+  padding: ${PADDING.pageWrapPadding};
+`;
+
 const StyledActions = styled.div`
   display: flex;
   flex-flow: row nowrap;
+  display: none;
+  @media screen and (min-width: 768px) {
+    display: flex;
+  }
+  align-items: center;
   position: absolute;
+  padding: ${PADDING.pageWrapPadding};
+  height: ${SIZES.navigationBarHeight};
   top: 0px;
   right: 0px;
   button + button {
@@ -72,8 +103,8 @@ const NavigationBar = ({ tabs, hero, actions, onSelectionChange, ...others }) =>
         {tabs.map(({ children, id, ...other }) => (
           <Tab key={id} {...other}>
             <StyledTabContent>
-              <div>{hero}</div>
-              <div>{children}</div>
+              <StyledTabHero>{hero}</StyledTabHero>
+              <StyledTabChildren>{children}</StyledTabChildren>
             </StyledTabContent>
           </Tab>
         ))}
