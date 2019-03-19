@@ -1,9 +1,11 @@
 /* Used dependencies */
-import React, { Component } from 'react';
+import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { boolean, number, text } from '@storybook/addon-knobs';
+import { action } from '@storybook/addon-actions';
 
 import WizardInline from './WizardInline';
+import StatefulWizardInline from './StatefulWizardInline';
 
 const items = [
   {
@@ -134,112 +136,40 @@ const itemComponents = [
   </div>,
 ];
 
+export const itemsAndComponents = items.map((item, i) => ({
+  ...item,
+  component: itemComponents[i],
+}));
+
 const sidebarComponent = <div>sidebar</div>;
 const footerComponent = <div>this is footer content</div>;
 
-class WizardInteractive extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      items: items.map((item, i) => ({ ...item, component: itemComponents[i] })),
-      currentItemId: 'step1',
-    };
-  }
-
-  setItem = id => {
-    this.setState({ currentItemId: id });
-  };
-
-  onNext = id => {
-    let nextId = '';
-    switch (id) {
-      case 'step1':
-        nextId = 'step2';
-        break;
-      case 'step2':
-        nextId = 'step3';
-        break;
-      case 'step3':
-        nextId = 'step4';
-        break;
-      default:
-        nextId = 'done';
-    }
-    if (nextId !== 'done') {
-      this.setState({ currentItemId: nextId });
-    } else {
-      window.alert('Done');
-    }
-  };
-
-  onBack = id => {
-    let prevId = '';
-    switch (id) {
-      case 'step2':
-        prevId = 'step1';
-        break;
-      case 'step3':
-        prevId = 'step2';
-        break;
-      case 'step4':
-        prevId = 'step3';
-        break;
-      default:
-        prevId = 'none';
-    }
-    if (prevId !== 'none') {
-      this.setState({ currentItemId: prevId });
-    } else {
-      window.alert('Cancelled');
-    }
-  };
-
-  render = () => {
-    const { items: itemsObj, currentItemId } = this.state;
-
-    return (
-      <WizardInline
-        // disabled={boolean('disabled', false)}
-        // isLoading={boolean('isLoading', false)}
-        items={itemsObj}
-        onBack={() => this.onBack(currentItemId)}
-        onClose={() => window.alert('Closed')}
-        onNext={() => this.onNext(currentItemId)}
-        title={text('title', 'I am a title')}
-        currentItemId={currentItemId}
-        sidebar={sidebarComponent}
-        footerLeftContent={footerComponent}
-        setItem={this.setItem}
-        showLabels={boolean('showLabels', true)}
-        stepWidth={number('stepWidth', 136)}
-      />
-    );
-  };
-}
 // Simple Static Wizard Stories
 
 const WizardStatic = () => (
   <WizardInline
-    items={items.map((item, i) => ({ ...item, component: itemComponents[i] }))}
-    onBack={() => window.alert('back')}
-    onClose={() => window.alert('Closed')}
-    onNext={() => window.alert('next')}
+    items={itemsAndComponents}
+    onBack={action('back')}
+    onClose={action('Closed')}
+    onNext={action('next')}
+    onSubmit={action('submit')}
     title={text('title', 'Static Wizard')}
     currentItemId="step2"
-    setItem={() => window.alert('step clicked')}
+    setItem={action('step clicked')}
     showLabels={boolean('showLabels', true)}
   />
 );
 
 const WizardStaticSidebar = () => (
   <WizardInline
-    items={items.map((item, i) => ({ ...item, component: itemComponents[i] }))}
-    onBack={() => window.alert('back')}
-    onClose={() => window.alert('Closed')}
-    onNext={() => window.alert('next')}
+    items={itemsAndComponents}
+    onBack={action('back')}
+    onClose={action('Closed')}
+    onNext={action('next')}
+    onSubmit={action('submit')}
     title={text('title', 'Static Wizard')}
     currentItemId="step1"
-    setItem={() => window.alert('step clicked')}
+    setItem={action('step clicked')}
     showLabels={boolean('showLabels', true)}
     sidebar={sidebarComponent}
   />
@@ -247,20 +177,36 @@ const WizardStaticSidebar = () => (
 
 const WizardStaticFooter = () => (
   <WizardInline
-    items={items.map((item, i) => ({ ...item, component: itemComponents[i] }))}
-    onBack={() => window.alert('back')}
-    onClose={() => window.alert('Closed')}
-    onNext={() => window.alert('next')}
+    items={itemsAndComponents}
+    onBack={action('back')}
+    onClose={action('Closed')}
+    onSubmit={action('submit')}
+    onNext={action('next')}
     title={text('title', 'Static Wizard')}
     currentItemId="step4"
-    setItem={() => window.alert('step clicked')}
+    setItem={action('step clicked')}
     showLabels={boolean('showLabels', true)}
     footerLeftContent={footerComponent}
   />
 );
 
 storiesOf('WizardInline', module)
-  .add('Stateful example', () => <WizardInteractive />)
+  .add('Stateful example', () => (
+    <StatefulWizardInline
+      currentItemId="step1"
+      items={itemsAndComponents}
+      title={text('title', 'I am a title')}
+      showLabels={boolean('showLabels', true)}
+      stepWidth={number('stepWidth', 136)}
+      sidebar={sidebarComponent}
+      footerLeftContent={footerComponent}
+      onClose={action('closed')}
+      onSubmit={action('submit')}
+      onNext={action('next')}
+      onBack={action('back')}
+      setItem={action('step clicked')}
+    />
+  ))
   .add('Static', () => <WizardStatic />)
   .add('Static with Sidebar', () => <WizardStaticSidebar />)
   .add('Static with Footer', () => <WizardStaticFooter />);

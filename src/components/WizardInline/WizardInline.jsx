@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
@@ -26,106 +26,107 @@ const StyledWizardContainer = styled.div`
   display: flex;
 `;
 
-class WizardInline extends Component {
-  static propTypes = {
-    /** Title in the header */
-    title: PropTypes.string.isRequired,
-    /** Id of current step */
-    currentItemId: PropTypes.string.isRequired,
-    /** Array of items representing pages of wizard. Must contain id, name, component. Optional: backLabel, nextLabel, nextDisabled */
-    items: PropTypes.arrayOf(
-      PropTypes.shape({
-        id: PropTypes.string.isRequired,
-        name: PropTypes.string.isRequired,
-        backLabel: PropTypes.string,
-        nextLabel: PropTypes.string,
-        component: PropTypes.element.isRequired,
-      })
-    ).isRequired,
-    /** action when click next button */
-    onNext: PropTypes.func.isRequired,
-    /** action when click back button */
-    onBack: PropTypes.func.isRequired,
-    /** component to show in sidebar */
-    sidebar: PropTypes.element,
-    /** component to show in footer. Passed to Sidebar */
-    footerLeftContent: PropTypes.element,
-    /** function to go to item when click ProgressIndicator items. Passed to Footer */
-    setItem: PropTypes.func.isRequired,
-    /** show labels in Progress Indicator. Passed to Header */
-    showLabels: PropTypes.bool,
-    /** action when click X in top right. Passed to Header */
-    onClose: PropTypes.func.isRequired,
-    /** next button disabled */
-    nextDisabled: PropTypes.bool,
-    /** width of each step in px.  Circle is 24px. Passed to Header */
-    stepWidth: PropTypes.number,
-  };
+export const propTypes = {
+  /** Title in the header */
+  title: PropTypes.string.isRequired,
+  /** Id of current step */
+  currentItemId: PropTypes.string.isRequired,
+  /** Array of items representing pages of wizard. Must contain id, name, component. Optional: backLabel, nextLabel, nextDisabled */
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      backLabel: PropTypes.string,
+      nextLabel: PropTypes.string,
+      component: PropTypes.element.isRequired,
+    })
+  ).isRequired,
+  /** action when click next button called with no param */
+  onNext: PropTypes.func,
+  /** action when click back button called with no param */
+  onBack: PropTypes.func,
+  /** component to show in sidebar */
+  sidebar: PropTypes.element,
+  /** component to show in footer. Passed to Sidebar */
+  footerLeftContent: PropTypes.element,
+  /** function to go to item when click ProgressIndicator items. Passed to Footer */
+  setItem: PropTypes.func,
+  /** show labels in Progress Indicator */
+  showLabels: PropTypes.bool,
+  /** action if the inline wizard is closed or canceled */
+  onClose: PropTypes.func,
+  /** action triggered if the inline wizard has submitted final step */
+  onSubmit: PropTypes.func,
+  /** next button disabled */
+  nextDisabled: PropTypes.bool,
+  /** width of each step in px.  Circle is 24px. Passed to Header */
+  stepWidth: PropTypes.number,
+};
 
-  static defaultProps = {
-    sidebar: null,
-    footerLeftContent: null,
-    showLabels: true,
-    nextDisabled: false,
-    stepWidth: 136,
-  };
+export const defaultProps = {
+  sidebar: null,
+  footerLeftContent: null,
+  showLabels: true,
+  nextDisabled: false,
+  stepWidth: 136,
+  onNext: null,
+  onBack: null,
+  setItem: null,
+  onClose: null,
+  onSubmit: null,
+};
 
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
+const WizardInline = ({
+  title,
+  currentItemId,
+  items,
+  onNext,
+  onBack,
+  sidebar,
+  footerLeftContent,
+  setItem,
+  showLabels,
+  onSubmit,
+  onClose,
+  nextDisabled,
+  stepWidth,
+  className,
+}) => {
+  const currentItemObj = items.find(({ id }) => currentItemId === id);
+  const currentItemIndex = items.findIndex(({ id }) => currentItemId === id);
 
-  render = () => {
-    const {
-      title,
-      currentItemId,
-      items,
-      onNext,
-      onBack,
-      sidebar,
-      footerLeftContent,
-      setItem,
-      showLabels,
-      onClose,
-      nextDisabled,
-      stepWidth,
-      className,
-    } = this.props;
+  return (
+    <StyledWizardWrapper className={className}>
+      <div className="bx--modal-container">
+        <WizardHeader
+          title={title}
+          currentItemId={currentItemId}
+          setItem={setItem}
+          items={items}
+          showLabels={showLabels}
+          onClose={onClose}
+          stepWidth={stepWidth}
+        />
 
-    const currentItemObj = items.find(({ id }) => currentItemId === id);
+        <StyledWizardContainer>
+          <WizardSidebar sidebar={sidebar} />
+          <div className="bx--modal-content">
+            <WizardContent component={currentItemObj.component} />
+          </div>
+        </StyledWizardContainer>
+        <WizardFooter
+          backLabel={currentItemObj.backLabel}
+          nextLabel={currentItemObj.nextLabel}
+          onNext={currentItemIndex !== items.length - 1 ? onNext : onSubmit}
+          onBack={currentItemIndex !== 0 ? onBack : onClose}
+          footerLeftContent={footerLeftContent}
+          nextDisabled={nextDisabled || false}
+        />
+      </div>
+    </StyledWizardWrapper>
+  );
+};
 
-    return (
-      <StyledWizardWrapper className={className}>
-        <div className="bx--modal-container">
-          <WizardHeader
-            title={title}
-            currentItemId={currentItemId}
-            setItem={setItem}
-            items={items}
-            showLabels={showLabels}
-            onClose={onClose}
-            stepWidth={stepWidth}
-          />
-
-          <StyledWizardContainer>
-            <WizardSidebar sidebar={sidebar} />
-
-            <div className="bx--modal-content">
-              <WizardContent component={currentItemObj.component} />
-            </div>
-          </StyledWizardContainer>
-          <WizardFooter
-            backLabel={currentItemObj.backLabel}
-            nextLabel={currentItemObj.nextLabel}
-            onNext={onNext}
-            onBack={onBack}
-            footerLeftContent={footerLeftContent}
-            nextDisabled={nextDisabled || false}
-          />
-        </div>
-      </StyledWizardWrapper>
-    );
-  };
-}
-
+WizardInline.propTypes = propTypes;
+WizardInline.defaultProps = defaultProps;
 export default WizardInline;
