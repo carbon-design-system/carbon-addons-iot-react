@@ -10,6 +10,10 @@ import ProgressIndicator from '../ProgressIndicator/ProgressIndicator';
 
 const StyledModal = styled(BaseModal)`
    {
+    .bx--progress {
+      /* need to pad some space for the focus outlines*/
+      padding: 3px;
+    }
     .bx--progress-step {
       max-width: 150px;
     }
