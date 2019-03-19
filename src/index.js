@@ -16,3 +16,5 @@ export TileCatalog from './components/TileCatalog/TileCatalog';
 export SimplePagination from './components/SimplePagination/SimplePagination';
 export CatalogContent from './components/TileCatalog/CatalogContent';
 export ProgressIndicator from './components/ProgressIndicator/ProgressIndicator';
+export PageHero from './components/Page/PageHero';
+export NavigationBar from './components/NavigationBar/NavigationBar';

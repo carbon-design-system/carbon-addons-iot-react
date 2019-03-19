@@ -62,90 +62,108 @@ exports[`HeaderMenu testcases should render 1`] = `
           key=".0"
           role="none"
         >
-          <li
+          <HeaderMenuItem
+            href="/a"
+            innerRef={[Function]}
             role="none"
           >
-            <Link
-              className="bx--header__menu-item"
-              element="a"
-              href="/a"
-              role="menuitem"
-              tabIndex={0}
+            <li
+              role="none"
             >
-              <a
+              <Link
                 className="bx--header__menu-item"
+                element="a"
                 href="/a"
                 role="menuitem"
                 tabIndex={0}
               >
-                <span
-                  className="bx--text-truncate--end"
+                <a
+                  className="bx--header__menu-item"
+                  href="/a"
+                  role="menuitem"
+                  tabIndex={0}
                 >
-                  A
-                </span>
-              </a>
-            </Link>
-          </li>
+                  <span
+                    className="bx--text-truncate--end"
+                  >
+                    A
+                  </span>
+                </a>
+              </Link>
+            </li>
+          </HeaderMenuItem>
         </ForwardRef>
         <ForwardRef
           href="/b"
           key=".1"
           role="none"
         >
-          <li
+          <HeaderMenuItem
+            href="/b"
+            innerRef={[Function]}
             role="none"
           >
-            <Link
-              className="bx--header__menu-item"
-              element="a"
-              href="/b"
-              role="menuitem"
-              tabIndex={0}
+            <li
+              role="none"
             >
-              <a
+              <Link
                 className="bx--header__menu-item"
+                element="a"
                 href="/b"
                 role="menuitem"
                 tabIndex={0}
               >
-                <span
-                  className="bx--text-truncate--end"
+                <a
+                  className="bx--header__menu-item"
+                  href="/b"
+                  role="menuitem"
+                  tabIndex={0}
                 >
-                  B
-                </span>
-              </a>
-            </Link>
-          </li>
+                  <span
+                    className="bx--text-truncate--end"
+                  >
+                    B
+                  </span>
+                </a>
+              </Link>
+            </li>
+          </HeaderMenuItem>
         </ForwardRef>
         <ForwardRef
           href="/c"
           key=".2"
           role="none"
         >
-          <li
+          <HeaderMenuItem
+            href="/c"
+            innerRef={[Function]}
             role="none"
           >
-            <Link
-              className="bx--header__menu-item"
-              element="a"
-              href="/c"
-              role="menuitem"
-              tabIndex={0}
+            <li
+              role="none"
             >
-              <a
+              <Link
                 className="bx--header__menu-item"
+                element="a"
                 href="/c"
                 role="menuitem"
                 tabIndex={0}
               >
-                <span
-                  className="bx--text-truncate--end"
+                <a
+                  className="bx--header__menu-item"
+                  href="/c"
+                  role="menuitem"
+                  tabIndex={0}
                 >
-                  C
-                </span>
-              </a>
-            </Link>
-          </li>
+                  <span
+                    className="bx--text-truncate--end"
+                  >
+                    C
+                  </span>
+                </a>
+              </Link>
+            </li>
+          </HeaderMenuItem>
         </ForwardRef>
       </ul>
     </li>
