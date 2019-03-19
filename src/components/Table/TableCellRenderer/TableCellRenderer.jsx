@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
 };
 
-const TableCellRenderer = ({ children }) =>
+const TableCellRenderer = ({ children = null }) =>
   typeof children === 'string' || typeof children === 'number' ? (
     <span title={children}>{children}</span>
   ) : (
