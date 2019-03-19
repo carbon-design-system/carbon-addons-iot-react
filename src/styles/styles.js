@@ -21,3 +21,8 @@ export const PADDING = {
 export const SIZES = {
   navigationBarHeight: '3.5rem',
 };
+
+export const MEDIA_QUERIES = {
+  twoPane: '700px',
+  threePane: '1000px',
+};

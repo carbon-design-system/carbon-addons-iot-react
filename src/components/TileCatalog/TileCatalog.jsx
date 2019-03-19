@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { RadioTile, Tile, Search } from 'carbon-components-react';
 import { Bee32 } from '@carbon/icons-react';
 
+import { MEDIA_QUERIES } from '../../styles/styles';
 import SimplePagination from '../SimplePagination/SimplePagination';
 
 const StyledContainerDiv = styled.div`
@@ -49,10 +50,10 @@ const StyledGreedyTile = styled(Tile)`
    {
     flex: 1 1 30%;
     display: none;
-    @media screen and (min-width: 700px) {
+    @media screen and (min-width: ${MEDIA_QUERIES.twoPane}) {
       display: flex;
     }
-    @media screen and (min-width: 1000px) {
+    @media screen and (min-width: ${MEDIA_QUERIES.threePane}) {
       flex: 1 1 63.5%;
       display: flex;
     }
