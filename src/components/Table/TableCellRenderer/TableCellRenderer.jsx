@@ -5,7 +5,11 @@ const propTypes = {
   children: PropTypes.node,
 };
 
-const TableCellRenderer = ({ children = null }) =>
+const defaultProps = {
+  children: null,
+};
+
+const TableCellRenderer = ({ children }) =>
   typeof children === 'string' || typeof children === 'number' ? (
     <span title={children}>{children}</span>
   ) : (
@@ -13,5 +17,6 @@ const TableCellRenderer = ({ children = null }) =>
   );
 
 TableCellRenderer.propTypes = propTypes;
+TableCellRenderer.defaultProps = defaultProps;
 
 export default TableCellRenderer;
