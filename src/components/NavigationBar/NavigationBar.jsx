@@ -84,6 +84,8 @@ const propTypes = {
   onSelectionChange: PropTypes.func,
   /** TEMP: component to render Hero within Nav Bar across all tab content, we think the tabs will move down over the table and different content will show for each */
   hero: PropTypes.node.isRequired,
+  /** workarea renders directly above tabs if passed */
+  workArea: PropTypes.node,
 };
 
 const defaultProps = {
@@ -91,13 +93,15 @@ const defaultProps = {
   /** by default I think we should hide any TabContent that's not selected */
   hidden: true,
   onSelectionChange: null,
+  workArea: null,
 };
 
 /**
  * This component is just wrapping up the Carbon Tabs, adding some optional action buttons at the right side.  And for now automatically rendering a page hero component across all tabs
  */
-const NavigationBar = ({ tabs, hero, actions, onSelectionChange, ...others }) => (
+const NavigationBar = ({ tabs, hero, actions, onSelectionChange, workArea, ...others }) => (
   <StyledNavigationContainer>
+    {workArea || null}
     <StyledTabToContent>
       <Tabs {...others} onSelectionChange={index => onSelectionChange(tabs[index].id)}>
         {tabs.map(({ children, id, ...other }) => (

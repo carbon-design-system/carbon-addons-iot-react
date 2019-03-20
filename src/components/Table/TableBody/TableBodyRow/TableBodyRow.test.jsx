@@ -62,6 +62,6 @@ describe('TableBodyRow', () => {
         {...tableRowPropsWithUndefined}
       />
     );
-    console.log(wrapper.debug());
+    expect(wrapper).toBeDefined();
   });
 });
