@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 const StyledDiv = styled.div`
   width: 100%;
+  padding: 2rem 1rem;
 `;
 
 const propTypes = {

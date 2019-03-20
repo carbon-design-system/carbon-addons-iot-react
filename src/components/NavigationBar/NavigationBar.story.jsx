@@ -3,6 +3,9 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
 import PageHero from '../Page/PageHero';
+import PageWorkArea from '../Page/PageWorkArea';
+import WizardInline from '../WizardInline/StatefulWizardInline';
+import { itemsAndComponents } from '../WizardInline/WizardInline.story';
 
 import NavigationBar from './NavigationBar';
 
@@ -26,13 +29,24 @@ const navBarProps = {
 
 const StatefulNavigationBar = () => {
   const [workAreaOpen, setWorkAreaOpen] = useState(false);
-  const handleNew = () => {
+  const handleNew = event => {
     setWorkAreaOpen(!workAreaOpen);
-    action('button1');
+    action('button1')(event);
   };
   return (
     <NavigationBar
       {...navBarProps}
+      workArea={
+        workAreaOpen ? (
+          <PageWorkArea isOpen={workAreaOpen}>
+            <WizardInline
+              title="Sample Wizard"
+              items={itemsAndComponents}
+              onClose={() => setWorkAreaOpen(false)}
+            />
+          </PageWorkArea>
+        ) : null
+      }
       actions={[{ id: 'button1', children: 'New Entity Type', onClick: handleNew }]}
     />
   );
