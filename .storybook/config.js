@@ -6,7 +6,11 @@ import { withKnobs } from '@storybook/addon-knobs';
 
 import Container from './Container';
 
-addDecorator(withInfo);
+addDecorator(
+  withInfo({
+    inline: false, // Global configuration for the info addon across all of your stories.
+  })
+);
 addDecorator(checkA11y);
 addDecorator(withKnobs);
 addDecorator(story => <Container story={story} />);

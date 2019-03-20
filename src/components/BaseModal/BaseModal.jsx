@@ -56,6 +56,11 @@ const StyledModal = styled(ComposedModal)`
     .bx--btn + .bx--btn {
       margin-left: 1rem;
     }
+    .bx--modal-footer {
+      * + * {
+        margin-left: 1rem;
+      }
+    }
     .bx--modal-header__heading {
       margin-bottom: 0.75rem;
     }

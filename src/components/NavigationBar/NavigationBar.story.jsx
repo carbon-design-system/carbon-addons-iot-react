@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
@@ -24,6 +24,20 @@ const navBarProps = {
   onSelectionChange: action('onSelectionChange'),
 };
 
+const StatefulNavigationBar = () => {
+  const [workAreaOpen, setWorkAreaOpen] = useState(false);
+  const handleNew = () => {
+    setWorkAreaOpen(!workAreaOpen);
+    action('button1');
+  };
+  return (
+    <NavigationBar
+      {...navBarProps}
+      actions={[{ id: 'button1', children: 'New Entity Type', onClick: handleNew }]}
+    />
+  );
+};
+
 storiesOf('NavigationBar', module)
   .add('normal', () => <NavigationBar {...navBarProps} />)
   .add('with actions', () => (
@@ -34,4 +48,5 @@ storiesOf('NavigationBar', module)
         { id: 'button2', children: 'Button 2', kind: 'secondary', onClick: action('button2') },
       ]}
     />
-  ));
+  ))
+  .add('example with workArea', () => <StatefulNavigationBar />);

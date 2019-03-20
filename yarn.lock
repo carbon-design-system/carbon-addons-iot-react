@@ -1152,9 +1152,10 @@
   version "0.0.1-alpha.12"
   resolved "https://registry.yarnpkg.com/@carbon/icon-helpers/-/icon-helpers-0.0.1-alpha.12.tgz#27f1449ff8e503e42e478ca567dfa6a6b453debe"
 
-"@carbon/icon-helpers@0.0.1-beta.0":
-  version "0.0.1-beta.0"
-  resolved "https://registry.yarnpkg.com/@carbon/icon-helpers/-/icon-helpers-0.0.1-beta.0.tgz#58a71fbe64128ac606dad2fadcab53aa701cbcd8"
+"@carbon/icon-helpers@0.0.1-beta.2":
+  version "0.0.1-beta.2"
+  resolved "https://registry.yarnpkg.com/@carbon/icon-helpers/-/icon-helpers-0.0.1-beta.2.tgz#8dbe56b72d60e7ca7175eefec8b97481d749b9cb"
+  integrity sha512-bwjRXHH2Ts4grvldW3P8jd2F1VTJezDyeKvGG6WdKovfWWJMD8mi3d7hBlOPW0tRHzTOxkam7OK9Jk/kEoLTkA==
 
 "@carbon/icons-react@^0.0.1-alpha.12":
   version "0.0.1-alpha.12"
@@ -1163,11 +1164,12 @@
     "@carbon/icon-helpers" "0.0.1-alpha.12"
     prop-types "^15.6.2"
 
-"@carbon/icons-react@^0.0.1-alpha.32":
-  version "0.0.1-beta.0"
-  resolved "https://registry.yarnpkg.com/@carbon/icons-react/-/icons-react-0.0.1-beta.0.tgz#0dd2a3723e6ef14c075bd39eab702153b485384b"
+"@carbon/icons-react@^0.0.1-beta.2":
+  version "0.0.1-beta.2"
+  resolved "https://registry.yarnpkg.com/@carbon/icons-react/-/icons-react-0.0.1-beta.2.tgz#8e4087bf26a71bbb6e57de976ab762d47d2c482c"
+  integrity sha512-rq6O4w/EY4XxuS8076mxbXkMuov0iwoNuQRcs5cJMPvK+VTjOZyHAlPUVl00aWbWwNoAEuQ6LWe01n/f8KovJg==
   dependencies:
-    "@carbon/icon-helpers" "0.0.1-beta.0"
+    "@carbon/icon-helpers" "0.0.1-beta.2"
     prop-types "^15.6.2"
 
 "@commitlint/cli@^7.2.1":
@@ -3655,11 +3657,12 @@ capture-stack-trace@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/capture-stack-trace/-/capture-stack-trace-1.0.1.tgz#a6c0bbe1f38f3aa0b92238ecb6ff42c344d4135d"
 
-carbon-components-react@^6.106.0:
-  version "6.106.0"
-  resolved "https://registry.yarnpkg.com/carbon-components-react/-/carbon-components-react-6.106.0.tgz#8cec27efb21adc38be78bdd2c399eed695a1a3a9"
+carbon-components-react@^6.108.0:
+  version "6.111.0"
+  resolved "https://registry.yarnpkg.com/carbon-components-react/-/carbon-components-react-6.111.0.tgz#2a48352c1fd8044ca2fbbebcc8372a1ed598a40e"
+  integrity sha512-Mnr13yDuLlZh/XOnG+8IDclbtUJ3KqZHfajXKfjZHcEKeZ72/Ga6fiYzZzzJ8uRaOMXKLXVFSLbYHrzrGWtk+w==
   dependencies:
-    "@carbon/icons-react" "^0.0.1-alpha.32"
+    "@carbon/icons-react" "^0.0.1-beta.2"
     classnames "2.2.6"
     downshift "^1.31.14"
     flatpickr "4.5.5"
@@ -3671,9 +3674,10 @@ carbon-components-react@^6.106.0:
     warning "^3.0.0"
     window-or-global "^1.0.1"
 
-carbon-components@^9.83.22:
-  version "9.83.22"
-  resolved "https://registry.yarnpkg.com/carbon-components/-/carbon-components-9.83.22.tgz#e3dff420f2df0b98bd866fa9257d3548b948e051"
+carbon-components@^9.84.14:
+  version "9.85.6"
+  resolved "https://registry.yarnpkg.com/carbon-components/-/carbon-components-9.85.6.tgz#f3c16252b804c18db66dc9fcf0a9a41c4c901623"
+  integrity sha512-r7EwqFlbhhq91QVdFgnXO7erEB3fNfdqysZ6+8OPZxxmNyPrIHTzFdSUu3/KBNz1AFGiUHpiK0VrYijAWCasGw==
   dependencies:
     carbon-icons "^7.0.7"
     flatpickr "4.5.7"
@@ -8165,16 +8169,10 @@ loose-envify@^1.3.1, loose-envify@^1.4.0:
   dependencies:
     js-tokens "^3.0.0 || ^4.0.0"
 
-<<<<<<< HEAD
-lorem-ipsum@2.0.0-alpha.2:
-  version "2.0.0-alpha.2"
-  resolved "https://registry.yarnpkg.com/lorem-ipsum/-/lorem-ipsum-2.0.0-alpha.2.tgz#8b3a810aff452a58d4762ba253f557d6aec219a8"
-=======
 lorem-ipsum@^1.0.3:
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/lorem-ipsum/-/lorem-ipsum-1.0.6.tgz#69e9ab02bbb0991915d71b5559fe016d526f013f"
   integrity sha512-Rx4XH8X4KSDCKAVvWGYlhAfNqdUP5ZdT4rRyf0jjrvWgtViZimDIlopWNfn/y3lGM5K4uuiAoY28TaD+7YKFrQ==
->>>>>>> 368285cea1e30a836b43d58d24c1e6d7425768d3
   dependencies:
     minimist "~1.2.0"
 
@@ -10213,15 +10211,6 @@ randexp@0.4.6:
     discontinuous-range "1.0.0"
     ret "~0.1.10"
 
-<<<<<<< HEAD
-random-seed@^0.3.0:
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/random-seed/-/random-seed-0.3.0.tgz#d945f2e1f38f49e8d58913431b8bf6bb937556cd"
-  dependencies:
-    json-stringify-safe "^5.0.1"
-
-=======
->>>>>>> 368285cea1e30a836b43d58d24c1e6d7425768d3
 randomatic@^3.0.0:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/randomatic/-/randomatic-3.1.1.tgz#b776efc59375984e36c537b2f51a1f0aff0da1ed"
