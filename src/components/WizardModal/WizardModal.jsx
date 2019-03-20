@@ -1,12 +1,11 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import isNil from 'lodash/isNil';
-import { Button } from 'carbon-components-react';
 
 import BaseModal from '../BaseModal/BaseModal';
-import ButtonEnhanced from '../ButtonEnhanced/ButtonEnhanced';
 import ProgressIndicator from '../ProgressIndicator/ProgressIndicator';
+import WizardFooter from '../WizardInline/WizardFooter/WizardFooter';
 
 const StyledModal = styled(BaseModal)`
    {
@@ -50,6 +49,9 @@ class WizardModal extends Component {
       })
     ).isRequired,
 
+    /** optionally pass in the current Step */
+    currentStepIndex: PropTypes.number,
+
     /**
      * leftContent: Anything that will placed to the left of the buttons inside the footer
      * labels: Internationalized string labels for the buttons in the footer
@@ -64,6 +66,7 @@ class WizardModal extends Component {
   };
 
   static defaultProps = {
+    currentStepIndex: 0,
     footer: {
       leftContent: null,
       nextButtonLabel: 'Next',
@@ -73,7 +76,7 @@ class WizardModal extends Component {
     },
   };
 
-  state = { step: 0 };
+  state = { step: this.props.currentStepIndex }; // eslint-disable-line
 
   handleNext = () => {
     if (this.validateCurrentStep()) {
@@ -125,34 +128,26 @@ class WizardModal extends Component {
       defaultProps: { footer: defaultFooterProps },
     } = WizardModal;
 
-    const finalStep = step === steps.length - 1;
+    const hasNext = step !== steps.length - 1;
+    const hasPrev = step !== 0;
 
     return (
-      <Fragment>
-        {leftContent}
-        <Button kind="secondary" onClick={onClose}>
-          {cancelButtonLabel || defaultFooterProps.cancelButtonLabel}
-        </Button>
-        {step !== 0 ? (
-          <Button kind="secondary" onClick={this.handlePrevious}>
-            {previousButtonLabel || defaultFooterProps.previousButtonLabel}
-          </Button>
-        ) : null}
-        {!finalStep ? (
-          <Button kind="primary" onClick={this.handleNext}>
-            {nextButtonLabel || defaultFooterProps.nextButtonLabel}
-          </Button>
-        ) : (
-          <ButtonEnhanced
-            kind="primary"
-            onClick={this.handleSubmit}
-            loading={
-              (typeof sendingData === 'boolean' && sendingData) || typeof sendingData === 'string'
-            }>
-            {submitButtonLabel || defaultFooterProps.submitButtonLabel}
-          </ButtonEnhanced>
-        )}
-      </Fragment>
+      <WizardFooter
+        hasPrev={hasPrev}
+        hasNext={hasNext}
+        onCancel={onClose}
+        onBack={this.handlePrevious}
+        onNext={this.handleNext}
+        onSubmit={this.handleSubmit}
+        footerLeftContent={leftContent}
+        cancelLabel={cancelButtonLabel || defaultFooterProps.cancelButtonLabel}
+        nextLabel={nextButtonLabel || defaultFooterProps.nextButtonLabel}
+        backLabel={previousButtonLabel || defaultFooterProps.previousButtonLabel}
+        submitLabel={submitButtonLabel || defaultFooterProps.submitButtonLabel}
+        sendingData={
+          (typeof sendingData === 'boolean' && sendingData) || typeof sendingData === 'string'
+        }
+      />
     );
   };
 
