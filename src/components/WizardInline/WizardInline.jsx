@@ -36,15 +36,25 @@ export const propTypes = {
     PropTypes.shape({
       id: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
-      backLabel: PropTypes.string,
-      nextLabel: PropTypes.string,
-      component: PropTypes.element.isRequired,
+      component: PropTypes.node.isRequired,
     })
   ).isRequired,
   /** action when click next button called with no param */
   onNext: PropTypes.func,
   /** action when click back button called with no param */
   onBack: PropTypes.func,
+  /** action if the inline wizard is closed or canceled */
+  onClose: PropTypes.func,
+  /** action triggered if the inline wizard has submitted final step */
+  onSubmit: PropTypes.func,
+  /** label to show on the cancel button */
+  cancelLabel: PropTypes.node,
+  /** label to show on the back button */
+  backLabel: PropTypes.node,
+  /** label to show on the next button */
+  nextLabel: PropTypes.node,
+  /** label to show on the submit button */
+  submitLabel: PropTypes.node,
   /** component to show in sidebar */
   sidebar: PropTypes.element,
   /** component to show in footer. Passed to Sidebar */
@@ -53,10 +63,6 @@ export const propTypes = {
   setItem: PropTypes.func,
   /** show labels in Progress Indicator */
   showLabels: PropTypes.bool,
-  /** action if the inline wizard is closed or canceled */
-  onClose: PropTypes.func,
-  /** action triggered if the inline wizard has submitted final step */
-  onSubmit: PropTypes.func,
   /** next button disabled */
   nextDisabled: PropTypes.bool,
   /** width of each step in px.  Circle is 24px. Passed to Header */
@@ -74,6 +80,10 @@ export const defaultProps = {
   setItem: null,
   onClose: null,
   onSubmit: null,
+  backLabel: 'Back',
+  nextLabel: 'Next',
+  cancelLabel: 'Cancel',
+  submitLabel: 'Add',
 };
 
 const WizardInline = ({
@@ -86,6 +96,10 @@ const WizardInline = ({
   footerLeftContent,
   setItem,
   showLabels,
+  backLabel,
+  nextLabel,
+  cancelLabel,
+  submitLabel,
   onSubmit,
   onClose,
   nextDisabled,
@@ -94,6 +108,8 @@ const WizardInline = ({
 }) => {
   const currentItemObj = items.find(({ id }) => currentItemId === id);
   const currentItemIndex = items.findIndex(({ id }) => currentItemId === id);
+  const hasNext = currentItemIndex !== items.length - 1;
+  const hasPrev = currentItemIndex !== 0;
 
   return (
     <StyledWizardWrapper className={className}>
@@ -115,10 +131,16 @@ const WizardInline = ({
           </div>
         </StyledWizardContainer>
         <WizardFooter
-          backLabel={currentItemObj.backLabel}
-          nextLabel={currentItemObj.nextLabel}
-          onNext={currentItemIndex !== items.length - 1 ? onNext : onSubmit}
-          onBack={currentItemIndex !== 0 ? onBack : onClose}
+          backLabel={backLabel}
+          nextLabel={nextLabel}
+          hasNext={hasNext}
+          hasPrev={hasPrev}
+          cancelLabel={cancelLabel}
+          submitLabel={submitLabel}
+          onNext={onNext}
+          onBack={onBack}
+          onSubmit={onSubmit}
+          onCancel={onClose}
           footerLeftContent={footerLeftContent}
           nextDisabled={nextDisabled || false}
         />

@@ -11,7 +11,6 @@ const items = [
   {
     id: 'step1',
     name: 'First step',
-    backLabel: 'Cancel',
   },
   {
     id: 'step2',
@@ -20,12 +19,10 @@ const items = [
   {
     id: 'step3',
     name: 'Long step',
-    nextLabel: 'Next',
   },
   {
     id: 'step4',
     name: 'Final step',
-    nextLabel: 'Add',
   },
 ];
 
@@ -146,50 +143,6 @@ const footerComponent = <div>this is footer content</div>;
 
 // Simple Static Wizard Stories
 
-const WizardStatic = () => (
-  <WizardInline
-    items={itemsAndComponents}
-    onBack={action('back')}
-    onClose={action('Closed')}
-    onNext={action('next')}
-    onSubmit={action('submit')}
-    title={text('title', 'Static Wizard')}
-    currentItemId="step2"
-    setItem={action('step clicked')}
-    showLabels={boolean('showLabels', true)}
-  />
-);
-
-const WizardStaticSidebar = () => (
-  <WizardInline
-    items={itemsAndComponents}
-    onBack={action('back')}
-    onClose={action('Closed')}
-    onNext={action('next')}
-    onSubmit={action('submit')}
-    title={text('title', 'Static Wizard')}
-    currentItemId="step1"
-    setItem={action('step clicked')}
-    showLabels={boolean('showLabels', true)}
-    sidebar={sidebarComponent}
-  />
-);
-
-const WizardStaticFooter = () => (
-  <WizardInline
-    items={itemsAndComponents}
-    onBack={action('back')}
-    onClose={action('Closed')}
-    onSubmit={action('submit')}
-    onNext={action('next')}
-    title={text('title', 'Static Wizard')}
-    currentItemId="step4"
-    setItem={action('step clicked')}
-    showLabels={boolean('showLabels', true)}
-    footerLeftContent={footerComponent}
-  />
-);
-
 storiesOf('WizardInline', module)
   .add('Stateful example', () => (
     <StatefulWizardInline
@@ -207,6 +160,44 @@ storiesOf('WizardInline', module)
       setItem={action('step clicked')}
     />
   ))
-  .add('Static', () => <WizardStatic />)
-  .add('Static with Sidebar', () => <WizardStaticSidebar />)
-  .add('Static with Footer', () => <WizardStaticFooter />);
+  .add('Static', () => (
+    <WizardInline
+      items={itemsAndComponents}
+      onBack={action('back')}
+      onClose={action('Closed')}
+      onNext={action('next')}
+      onSubmit={action('submit')}
+      title={text('title', 'Static Wizard')}
+      currentItemId="step2"
+      setItem={action('step clicked')}
+      showLabels={boolean('showLabels', true)}
+    />
+  ))
+  .add('Static with Sidebar', () => (
+    <WizardInline
+      items={itemsAndComponents}
+      onBack={action('back')}
+      onClose={action('Closed')}
+      onNext={action('next')}
+      onSubmit={action('submit')}
+      title={text('title', 'Static Wizard')}
+      currentItemId="step1"
+      setItem={action('step clicked')}
+      showLabels={boolean('showLabels', true)}
+      sidebar={sidebarComponent}
+    />
+  ))
+  .add('Static with Footer', () => (
+    <WizardInline
+      items={itemsAndComponents}
+      onBack={action('back')}
+      onClose={action('Closed')}
+      onSubmit={action('submit')}
+      onNext={action('next')}
+      title={text('title', 'Static Wizard')}
+      currentItemId="step4"
+      setItem={action('step clicked')}
+      showLabels={boolean('showLabels', true)}
+      footerLeftContent={footerComponent}
+    />
+  ));
