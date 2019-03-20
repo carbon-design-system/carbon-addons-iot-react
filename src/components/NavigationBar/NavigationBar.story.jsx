@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { Fragment, useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
@@ -34,21 +34,28 @@ const StatefulNavigationBar = () => {
     action('button1')(event);
   };
   return (
-    <NavigationBar
-      {...navBarProps}
-      workArea={
-        workAreaOpen ? (
-          <PageWorkArea isOpen={workAreaOpen}>
-            <WizardInline
-              title="Sample Wizard"
-              items={itemsAndComponents}
-              onClose={() => setWorkAreaOpen(false)}
-            />
-          </PageWorkArea>
-        ) : null
-      }
-      actions={[{ id: 'button1', children: 'New Entity Type', onClick: handleNew }]}
-    />
+    <Fragment>
+      <span>
+        To interact with the workarea, click the New Entity Type button. To close the workarea,
+        click the Cancel button or finish the flow.
+      </span>
+      <NavigationBar
+        {...navBarProps}
+        workArea={
+          workAreaOpen ? (
+            <PageWorkArea isOpen={workAreaOpen}>
+              <WizardInline
+                title="Sample Wizard"
+                items={itemsAndComponents}
+                onClose={() => setWorkAreaOpen(false)}
+                onSubmit={() => setWorkAreaOpen(false)}
+              />
+            </PageWorkArea>
+          ) : null
+        }
+        actions={[{ id: 'button1', children: 'New Entity Type', onClick: handleNew }]}
+      />
+    </Fragment>
   );
 };
 
