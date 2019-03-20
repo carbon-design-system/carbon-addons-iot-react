@@ -15,6 +15,7 @@ const tableRowProps = {
   totalColumns: 1,
   id: 'tableRow',
   columns: [{ id: 'col1' }],
+  ordering: [{ columnId: 'col1', isHidden: false }],
   children: { col1: 'value1' },
 };
 
@@ -51,6 +52,7 @@ describe('TableBodyRow', () => {
       totalColumns: 1,
       id: 'tableRow',
       columns: [{ id: 'col1' }, { id: 'col2' }],
+      ordering: [{ columnId: 'col1' }, { columnId: 'col2' }],
       children: { col1: 'value1', col2: undefined },
     };
     const wrapper = mount(

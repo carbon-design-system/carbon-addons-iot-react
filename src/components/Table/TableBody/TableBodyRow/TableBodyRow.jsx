@@ -68,8 +68,14 @@ const StyledExpansionTableRow = styled(TableRow)`
 `;
 
 const propTypes = {
-  /** table columns */
-  columns: PropTypes.arrayOf(PropTypes.shape({ id: PropTypes.string })).isRequired,
+  /** What column ordering is currently applied to the table */
+  ordering: PropTypes.arrayOf(
+    PropTypes.shape({
+      columnId: PropTypes.string.isRequired,
+      /* Visibility of column in table, defaults to false */
+      isHidden: PropTypes.bool,
+    })
+  ).isRequired,
   /** table wide options */
   options: PropTypes.shape({
     hasRowSelection: PropTypes.bool,
@@ -116,7 +122,7 @@ const TableBodyRow = ({
   id,
   tableId,
   totalColumns,
-  columns,
+  ordering,
   options: { hasRowSelection, hasRowExpansion, shouldExpandOnRowClick },
   tableActions: { onRowSelected, onRowExpanded, onRowClicked, onApplyRowAction },
   isExpanded,
@@ -145,11 +151,13 @@ const TableBodyRow = ({
   const tableCells = (
     <React.Fragment>
       {rowSelectionCell}
-      {columns.map(col => (
-        <TableCell key={col.id} data-column={col.id}>
-          <TableCellRenderer>{children[col.id]}</TableCellRenderer>
-        </TableCell>
-      ))}
+      {ordering.map(col =>
+        !col.isHidden ? (
+          <TableCell key={col.columnId} data-column={col.columnId}>
+            <TableCellRenderer>{children[col.columnId]}</TableCellRenderer>
+          </TableCell>
+        ) : null
+      )}
       <RowActionsCell
         id={id}
         actions={rowActions}
