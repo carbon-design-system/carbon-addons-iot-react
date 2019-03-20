@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { RadioTile, Tile, Search } from 'carbon-components-react';
 import { Bee32 } from '@carbon/icons-react';
 
+import { MEDIA_QUERIES } from '../../styles/styles';
 import SimplePagination from '../SimplePagination/SimplePagination';
 
 const StyledContainerDiv = styled.div`
@@ -28,8 +29,9 @@ const StyledTiles = styled.div`
   flex-flow: row wrap;
   > * {
     flex: 1 1 30%;
-    min-width: 250px;
+    min-width: 300px;
   }
+  overflow-y: hidden;
 `;
 
 const StyledEmptyTile = styled(Tile)`
@@ -40,6 +42,20 @@ const StyledEmptyTile = styled(Tile)`
     justify-content: center;
     > * {
       padding-bottom: 0.5rem;
+    }
+  }
+`;
+
+const StyledGreedyTile = styled(Tile)`
+   {
+    flex: 1 1 30%;
+    display: none;
+    @media screen and (min-width: ${MEDIA_QUERIES.twoPane}) {
+      display: flex;
+    }
+    @media screen and (min-width: ${MEDIA_QUERIES.threePane}) {
+      flex: 1 1 63.5%;
+      display: flex;
     }
   }
 `;
@@ -86,9 +102,10 @@ const defaultProps = {
 
 /**
  * Renders a searchable and pageable catalog of RadioTiles from carbon. Couldn't reuse the TileGroup component from Carbon due to this limitation.
+ * https://github.com/IBM/carbon-components-react/issues/1999
+ *
  * Paging happens on local state within the component, but we expect search to be done outside the component on callback
  * and for the parent to update the inbound tiles prop with only the matching results.
- * https://github.com/IBM/carbon-components-react/issues/1999
  */
 const TileCatalog = ({ id, className, title, search, pagination, tiles, onChange }) => {
   const [selectedTile, setSelectedTile] = useState(tiles && tiles.length ? tiles[0].id : null);
@@ -133,18 +150,21 @@ const TileCatalog = ({ id, className, title, search, pagination, tiles, onChange
       </StyledCatalogHeader>
       <StyledTiles>
         {tiles.length > 0 ? (
-          tiles.slice(startingIndex, endingIndex).map(tile => (
-            <RadioTile
-              className={tile.className}
-              key={tile.id}
-              id={tile.id}
-              value={tile.id}
-              name={id}
-              checked={selectedTile === tile.id}
-              onChange={handleChange}>
-              {tile.content}
-            </RadioTile>
-          ))
+          <Fragment>
+            {tiles.slice(startingIndex, endingIndex).map(tile => (
+              <RadioTile
+                className={tile.className}
+                key={tile.id}
+                id={tile.id}
+                value={tile.id}
+                name={id}
+                checked={selectedTile === tile.id}
+                onChange={handleChange}>
+                {tile.content}
+              </RadioTile>
+            ))}
+            {endingIndex >= tiles.length ? <StyledGreedyTile /> : null}
+          </Fragment>
         ) : (
           <StyledEmptyTile>
             <Bee32 />

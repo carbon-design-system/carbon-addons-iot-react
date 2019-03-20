@@ -2,7 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
+};
+
+const defaultProps = {
+  children: null,
 };
 
 const TableCellRenderer = ({ children }) =>
@@ -13,5 +17,6 @@ const TableCellRenderer = ({ children }) =>
   );
 
 TableCellRenderer.propTypes = propTypes;
+TableCellRenderer.defaultProps = defaultProps;
 
 export default TableCellRenderer;
