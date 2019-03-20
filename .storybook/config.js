@@ -8,7 +8,7 @@ import Container from './Container';
 
 addDecorator(
   withInfo({
-    inline: true, // Global configuration for the info addon across all of your stories.
+    inline: false, // Global configuration for the info addon across all of your stories.
   })
 );
 addDecorator(checkA11y);

@@ -30,6 +30,11 @@ describe('WizardFooter', () => {
     const cancelBackAndAddButtons = mount(<WizardFooter {...commonFooterProps} hasNext={false} />);
     // should have Cancel Back and Add button
     expect(cancelBackAndAddButtons.find('.bx--btn')).toHaveLength(3);
-    expect(cancelBackAndAddButtons.text()).toContain('Add');
+    expect(
+      cancelBackAndAddButtons
+        .find('.bx--btn')
+        .at(2)
+        .text()
+    ).toContain('Add');
   });
 });

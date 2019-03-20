@@ -1,27 +1,13 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { Button } from 'carbon-components-react';
 import styled from 'styled-components';
 
-const StyledFooter = styled.div`
-  display: flex;
-  position: absolute;
-  bottom: 0px;
-  width: 100%;
-  align-items: center;
-  line-height: 40px;
-
-  .bx--modal-footer {
-    justify-content: space-between;
-    padding: 1rem 3rem 1rem 40px;
-    max-height: 72px;
-    width: 100%;
-  }
-`;
+import ButtonEnhanced from '../../ButtonEnhanced/ButtonEnhanced';
 
 const StyledFooterButtons = styled.div`
   display: flex;
-  .bx--btn + .bx--btn {
+  * + * {
     margin-left: 1rem;
   }
 `;
@@ -39,6 +25,7 @@ const propTypes = {
   hasNext: PropTypes.bool,
   footerLeftContent: PropTypes.node,
   nextDisabled: PropTypes.bool,
+  sendingData: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -46,6 +33,7 @@ const defaultProps = {
   nextDisabled: false,
   hasPrev: true,
   hasNext: true,
+  sendingData: false,
 };
 
 const WizardFooter = ({
@@ -61,32 +49,30 @@ const WizardFooter = ({
   hasNext,
   footerLeftContent,
   nextDisabled,
-  className,
+  sendingData,
 }) => (
-  <StyledFooter className={className}>
-    <div className="bx--modal-footer">
-      <div>{footerLeftContent}</div>
-      <StyledFooterButtons>
-        <Button onClick={onCancel} kind="secondary">
-          {cancelLabel}
+  <Fragment>
+    <div>{footerLeftContent}</div>
+    <StyledFooterButtons>
+      <Button onClick={onCancel} kind="secondary">
+        {cancelLabel}
+      </Button>
+      {hasPrev ? (
+        <Button onClick={onBack} kind="secondary">
+          {backLabel}
         </Button>
-        {hasPrev ? (
-          <Button onClick={onBack} kind="secondary">
-            {backLabel}
-          </Button>
-        ) : null}
-        {hasNext ? (
-          <Button onClick={onNext} disabled={nextDisabled}>
-            {nextLabel}
-          </Button>
-        ) : (
-          <Button onClick={onSubmit} disabled={nextDisabled}>
-            {submitLabel}
-          </Button>
-        )}
-      </StyledFooterButtons>
-    </div>
-  </StyledFooter>
+      ) : null}
+      {hasNext ? (
+        <Button onClick={onNext} disabled={nextDisabled}>
+          {nextLabel}
+        </Button>
+      ) : (
+        <ButtonEnhanced onClick={onSubmit} disabled={nextDisabled} loading={sendingData}>
+          {submitLabel}
+        </ButtonEnhanced>
+      )}
+    </StyledFooterButtons>
+  </Fragment>
 );
 
 WizardFooter.propTypes = propTypes;

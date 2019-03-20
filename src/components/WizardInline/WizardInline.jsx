@@ -26,6 +26,22 @@ const StyledWizardContainer = styled.div`
   display: flex;
 `;
 
+const StyledFooter = styled.div`
+  display: flex;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  align-items: center;
+  line-height: 40px;
+
+  .bx--modal-footer {
+    justify-content: space-between;
+    padding: 1rem 3rem 1rem 40px;
+    max-height: 72px;
+    width: 100%;
+  }
+`;
+
 export const propTypes = {
   /** Title in the header */
   title: PropTypes.string.isRequired,
@@ -67,6 +83,8 @@ export const propTypes = {
   nextDisabled: PropTypes.bool,
   /** width of each step in px.  Circle is 24px. Passed to Header */
   stepWidth: PropTypes.number,
+  /** is the wizard actively sending data should disable the button */
+  sendingData: PropTypes.bool,
 };
 
 export const defaultProps = {
@@ -84,6 +102,7 @@ export const defaultProps = {
   nextLabel: 'Next',
   cancelLabel: 'Cancel',
   submitLabel: 'Add',
+  sendingData: false,
 };
 
 const WizardInline = ({
@@ -103,6 +122,7 @@ const WizardInline = ({
   onSubmit,
   onClose,
   nextDisabled,
+  sendingData,
   stepWidth,
   className,
 }) => {
@@ -130,20 +150,25 @@ const WizardInline = ({
             <WizardContent component={currentItemObj.component} />
           </div>
         </StyledWizardContainer>
-        <WizardFooter
-          backLabel={backLabel}
-          nextLabel={nextLabel}
-          hasNext={hasNext}
-          hasPrev={hasPrev}
-          cancelLabel={cancelLabel}
-          submitLabel={submitLabel}
-          onNext={onNext}
-          onBack={onBack}
-          onSubmit={onSubmit}
-          onCancel={onClose}
-          footerLeftContent={footerLeftContent}
-          nextDisabled={nextDisabled || false}
-        />
+        <StyledFooter className={className}>
+          <div className="bx--modal-footer">
+            <WizardFooter
+              backLabel={backLabel}
+              nextLabel={nextLabel}
+              hasNext={hasNext}
+              hasPrev={hasPrev}
+              cancelLabel={cancelLabel}
+              submitLabel={submitLabel}
+              onNext={onNext}
+              onBack={onBack}
+              onSubmit={onSubmit}
+              onCancel={onClose}
+              footerLeftContent={footerLeftContent}
+              nextDisabled={nextDisabled || false}
+              sendingData={sendingData}
+            />
+          </div>
+        </StyledFooter>
       </div>
     </StyledWizardWrapper>
   );
