@@ -88,17 +88,12 @@ const TableHead = ({
   actions: { onSelectAll, onChangeSort, onApplyFilter, onChangeOrdering },
 }) => {
   const filterBarActive = activeBar === 'filter';
-  const filterBarActiveStyle = { paddingTop: 16 };
   return (
     <CarbonTableHead>
       <TableRow>
         {hasRowExpansion ? <TableExpandHeader /> : null}
         {hasRowSelection ? (
-          <TableHeader
-            style={Object.assign(
-              { paddingBottom: '0.5rem' },
-              filterBarActive ? filterBarActiveStyle : {}
-            )}>
+          <TableHeader style={{ paddingBottom: '0.5rem' }}>
             {/* TODO: Replace checkbox with TableSelectAll component when onChange bug is fixed
                     https://github.com/IBM/carbon-components-react/issues/1088 */}
             <Checkbox
@@ -120,7 +115,6 @@ const TableHead = ({
               id={`column-${matchingColumnMeta.id}`}
               key={`column-${matchingColumnMeta.id}`}
               data-column={matchingColumnMeta.id}
-              style={filterBarActive === true ? filterBarActiveStyle : {}}
               isSortable={matchingColumnMeta.isSortable}
               isSortHeader={hasSort}
               onClick={() => {

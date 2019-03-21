@@ -7,21 +7,19 @@ import { iconDraggable } from 'carbon-icons';
 
 const IconStyled = styled(Icon)`
    {
-    margin-right: 12px;
+    margin: 0 0.25rem 0 0.75rem;
     vertical-align: middle;
-    margin-left: 18px;
   }
 `;
 
-const StyledColumnSelectContainer = styled.span`
+const StyledColumnSelectContainer = styled.div`
   & {
     background: #fff;
-    margin: 16px;
-    padding: 10px 0px 12px 10px;
+    margin: 0 1rem 1rem 0;
+    padding: 0.5rem;
     border: solid 2px #3d70b2;
-    borderradius: 2px;
-    fontsize: 14px;
-    cursor: move;
+    border-radius: 2px;
+    cursor: pointer;
     color: #3d70b2;
     opacity: ${props => (props.isHidden ? 0.5 : 1)};
   }
@@ -45,7 +43,12 @@ const ColumnHeaderSelect = ({
       connectDropTarget(instance);
     }}>
     {children}
-    <IconStyled icon={iconDraggable} description="Dragable column" focusable="false" />
+    <IconStyled
+      style={{ cursor: 'move' }}
+      icon={iconDraggable}
+      description="Dragable column"
+      focusable="false"
+    />
   </StyledColumnSelectContainer>
 );
 
