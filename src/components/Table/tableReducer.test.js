@@ -131,7 +131,8 @@ describe('table reducer testcases', () => {
       );
 
       const tableSortedNone = tableReducer(tableSortedDesc, sortColumnAction);
-      const filteredTable = tableReducer(initialState, tableRegister());
+      const filteredTable = tableReducer(initialState, tableRegister(initialState.data));
+
       expect(tableSortedNone.view.table.sort).toBeUndefined();
       // Data should no longer be sorted but should be filtered
       expect(filteredTable.view.table.filteredData).toEqual(
@@ -198,7 +199,8 @@ describe('table reducer testcases', () => {
     test('REGISTER_TABLE', () => {
       // Data should be filtered once table registers
       expect(initialState.view.table.filteredData).toBeUndefined();
-      const tableWithFilteredData = tableReducer(initialState, tableRegister());
+      const tableWithFilteredData = tableReducer(initialState, tableRegister(initialState.data));
+      expect(tableWithFilteredData.data).toEqual(initialState.data);
       expect(tableWithFilteredData.view.table.filteredData.length).toBeGreaterThan(0);
       expect(tableWithFilteredData.view.table.filteredData.length).not.toEqual(
         initialState.data.length
@@ -208,13 +210,23 @@ describe('table reducer testcases', () => {
       const initialStateWithSortAndNoFilters = merge({}, omit(initialState, 'view.filters'), {
         view: { table: { sort: { columnId: 'string', direction: 'ASC' } }, filters: [] },
       });
-      const tableWithSortedData = tableReducer(initialStateWithSortAndNoFilters, tableRegister());
+      const tableWithSortedData = tableReducer(
+        initialStateWithSortAndNoFilters,
+        tableRegister(initialState.data)
+      );
+      expect(tableWithSortedData.data).toEqual(initialState.data);
       expect(tableWithSortedData.view.table.filteredData.length).toEqual(
         initialStateWithSortAndNoFilters.data.length
       );
       // But they shouldn't be equal because the order changed
       expect(tableWithSortedData.view.table.filteredData).not.toEqual(
         initialStateWithSortAndNoFilters.data
+      );
+
+      // is Loading should be set false and rowCount should be correct
+      expect(tableWithSortedData.view.table.loadingState.isLoading).toEqual(false);
+      expect(tableWithSortedData.view.table.loadingState.rowCount).toEqual(
+        initialState.data.length
       );
     });
   });

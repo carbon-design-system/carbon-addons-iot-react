@@ -15,7 +15,7 @@ export const TABLE_ROW_ACTION_APPLY = 'TABLE_ROW_ACTION_APPLY';
 export const TABLE_SEARCH_APPLY = 'TABLE_SEARCH_APPLY';
 export const TABLE_EMPTY_STATE_ACTION = 'TABLE_EMPTY_STATE_ACTION';
 
-export const tableRegister = () => ({ type: TABLE_REGISTER });
+export const tableRegister = data => ({ type: TABLE_REGISTER, payload: data });
 export const tablePageChange = page => ({ type: TABLE_PAGE_CHANGE, payload: page });
 export const tableToolbarToggle = toolbar => ({ type: TABLE_TOOLBAR_TOGGLE, payload: toolbar });
 /** Apply filters */

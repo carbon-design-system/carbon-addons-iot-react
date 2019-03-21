@@ -98,6 +98,63 @@ const StyledButtons = styled.div`
   }
 `;
 
+export const BaseModalPropTypes = {
+  /** Header Props
+   * label: goes on top of the dialog
+   * title: Heading of the dialog
+   * helpText, additional information will stay at the top of the screen when scrolling dialog content
+   */
+  header: PropTypes.shape({
+    label: PropTypes.string,
+    title: PropTypes.string,
+    helpText: PropTypes.node,
+  }),
+  /** Content to render inside Modal */
+  children: PropTypes.node,
+  /** Footer Props
+   * Either supply your own footer element or supply an object with button labels and submit handlers and we will make a footer with two buttons for you
+   */
+  footer: PropTypes.oneOfType([
+    PropTypes.element.isRequired,
+    PropTypes.shape({
+      primaryButtonLabel: PropTypes.node,
+      secondaryButtonLabel: PropTypes.node,
+    }),
+  ]),
+  /** NEW PROP: Type of dialog, affects colors, styles of dialog */
+  type: PropTypes.oneOf(['warn', 'normal']),
+  /** NEW PROP: Whether this particular dialog needs to be very large */
+  isLarge: PropTypes.bool,
+
+  /** REDUXDIALOG: Should the dialog be open or not */
+  open: PropTypes.bool, // eslint-disable-line react/boolean-prop-naming
+  /**  REDUXDIALOG: Close the dialog */
+  onClose: PropTypes.func.isRequired,
+
+  /**  REDUXDIALOG: Clear the currently shown dataError, triggered if the user closes the ErrorNotification */
+  onClearDialogErrors: PropTypes.func,
+
+  /** REDUXDIALOG: Is data currently being sent to the backend */
+  sendingData: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
+  /** REDUXDIALOG: Is my data actively loading? */
+  isFetchingData: PropTypes.bool,
+  /** REDUXDIALOG: Details about the current dataError */
+  dataError: PropTypes.string,
+
+  /** REDUXFORM: Form Error Details */
+  error: PropTypes.string,
+  /** REDUXFORM: Did the form submission fail */
+  submitFailed: PropTypes.bool, // eslint-disable-line react/boolean-prop-naming
+  /** REDUXFORM: Is the form currently invalid */
+  invalid: PropTypes.bool, // eslint-disable-line react/boolean-prop-naming
+  /**  REDUXFORM: Clear the currently shown error (from form), triggered if the user closes the ErrorNotification */
+  clearSubmitErrors: PropTypes.func,
+  /** REDUXFORM: Callback to submit the dialog/form */
+  onSubmit: PropTypes.func,
+  /** ability to add translation string to close icon */
+  iconDescription: PropTypes.string,
+};
+
 /**
  * Renders a carbon modal dialog.  This dialog adds these additional features on top of the base carbon dialog:
  *  adds header.helpText prop to explain dialog
@@ -113,62 +170,7 @@ const StyledButtons = styled.div`
  * REDUXFORM or REDUXDIALOG
  */
 class BaseModal extends React.Component {
-  static propTypes = {
-    /** Header Props
-     * label: goes on top of the dialog
-     * title: Heading of the dialog
-     * helpText, additional information will stay at the top of the screen when scrolling dialog content
-     */
-    header: PropTypes.shape({
-      label: PropTypes.string,
-      title: PropTypes.string,
-      helpText: PropTypes.node,
-    }),
-    /** Content to render inside Modal */
-    children: PropTypes.node,
-    /** Footer Props
-     * Either supply your own footer element or supply an object with button labels and submit handlers and we will make a footer with two buttons for you
-     */
-    footer: PropTypes.oneOfType([
-      PropTypes.element.isRequired,
-      PropTypes.shape({
-        primaryButtonLabel: PropTypes.node,
-        secondaryButtonLabel: PropTypes.node,
-      }),
-    ]),
-    /** NEW PROP: Type of dialog, affects colors, styles of dialog */
-    type: PropTypes.oneOf(['warn', 'normal']),
-    /** NEW PROP: Whether this particular dialog needs to be very large */
-    isLarge: PropTypes.bool,
-
-    /** REDUXDIALOG: Should the dialog be open or not */
-    open: PropTypes.bool, // eslint-disable-line react/boolean-prop-naming
-    /**  REDUXDIALOG: Close the dialog */
-    onClose: PropTypes.func.isRequired,
-
-    /**  REDUXDIALOG: Clear the currently shown dataError, triggered if the user closes the ErrorNotification */
-    onClearDialogErrors: PropTypes.func,
-
-    /** REDUXDIALOG: Is data currently being sent to the backend */
-    sendingData: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
-    /** REDUXDIALOG: Is my data actively loading? */
-    isFetchingData: PropTypes.bool,
-    /** REDUXDIALOG: Details about the current dataError */
-    dataError: PropTypes.string,
-
-    /** REDUXFORM: Form Error Details */
-    error: PropTypes.string,
-    /** REDUXFORM: Did the form submission fail */
-    submitFailed: PropTypes.bool, // eslint-disable-line react/boolean-prop-naming
-    /** REDUXFORM: Is the form currently invalid */
-    invalid: PropTypes.bool, // eslint-disable-line react/boolean-prop-naming
-    /**  REDUXFORM: Clear the currently shown error (from form), triggered if the user closes the ErrorNotification */
-    clearSubmitErrors: PropTypes.func,
-    /** REDUXFORM: Callback to submit the dialog/form */
-    onSubmit: PropTypes.func,
-    /** ability to add translation string to close icon */
-    iconDescription: PropTypes.string,
-  };
+  static propTypes = BaseModalPropTypes;
 
   static defaultProps = {
     open: true,
