@@ -4,7 +4,17 @@ export const RowActionPropTypes = PropTypes.arrayOf(
   PropTypes.shape({
     /** Unique id of the action */
     id: PropTypes.string.isRequired,
-    icon: PropTypes.string,
+    /* icon ultimately gets passed through all the way to <Button>, which has this same copied proptype definition for icon */
+    icon: PropTypes.oneOfType([
+      PropTypes.shape({
+        width: PropTypes.string,
+        height: PropTypes.string,
+        viewBox: PropTypes.string.isRequired,
+        svgData: PropTypes.object.isRequired,
+      }),
+      PropTypes.string,
+      PropTypes.node,
+    ]),
     disabled: PropTypes.bool,
     labelText: PropTypes.string,
     /** Action should go into the overflow menu, not be rendered inline in the row */
