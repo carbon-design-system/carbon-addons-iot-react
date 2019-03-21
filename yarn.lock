@@ -3658,9 +3658,9 @@ capture-stack-trace@^1.0.0:
   resolved "https://registry.yarnpkg.com/capture-stack-trace/-/capture-stack-trace-1.0.1.tgz#a6c0bbe1f38f3aa0b92238ecb6ff42c344d4135d"
 
 carbon-components-react@^6.108.0:
-  version "6.110.0"
-  resolved "https://registry.yarnpkg.com/carbon-components-react/-/carbon-components-react-6.110.0.tgz#d1e47e696cfe304d0cd1741f062a7db8e70a9dc6"
-  integrity sha512-DAONztP83I1UKfVV1BhQLBO9FXbQEuWyM9zc9PM6Nnw4BLRkqrB+Vq5qjezR3h6YlNlRQlSERwyctA1yieHOWQ==
+  version "6.111.0"
+  resolved "https://registry.yarnpkg.com/carbon-components-react/-/carbon-components-react-6.111.0.tgz#2a48352c1fd8044ca2fbbebcc8372a1ed598a40e"
+  integrity sha512-Mnr13yDuLlZh/XOnG+8IDclbtUJ3KqZHfajXKfjZHcEKeZ72/Ga6fiYzZzzJ8uRaOMXKLXVFSLbYHrzrGWtk+w==
   dependencies:
     "@carbon/icons-react" "^0.0.1-beta.2"
     classnames "2.2.6"
@@ -3675,9 +3675,9 @@ carbon-components-react@^6.108.0:
     window-or-global "^1.0.1"
 
 carbon-components@^9.84.14:
-  version "9.85.5"
-  resolved "https://registry.yarnpkg.com/carbon-components/-/carbon-components-9.85.5.tgz#259b5d709e79dca6df6c3fab948d8a15214d8caa"
-  integrity sha512-BI03haBuuS5Tgch9H+2GfB68TuGT9IpbJ/kjFPD9BDUiI7lzTGEdkzXnEb7vGbdQ9fYW7BUh6YMdHS74+kCIrQ==
+  version "9.85.6"
+  resolved "https://registry.yarnpkg.com/carbon-components/-/carbon-components-9.85.6.tgz#f3c16252b804c18db66dc9fcf0a9a41c4c901623"
+  integrity sha512-r7EwqFlbhhq91QVdFgnXO7erEB3fNfdqysZ6+8OPZxxmNyPrIHTzFdSUu3/KBNz1AFGiUHpiK0VrYijAWCasGw==
   dependencies:
     carbon-icons "^7.0.7"
     flatpickr "4.5.7"

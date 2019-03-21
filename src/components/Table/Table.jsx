@@ -272,6 +272,7 @@ const Table = props => {
               selectedIds={view.table.selectedIds}
               totalColumns={totalColumns}
               {...pick(options, 'hasRowSelection', 'hasRowExpansion', 'shouldExpandOnRowClick')}
+              ordering={view.table.ordering}
               actions={pick(
                 actions.table,
                 'onRowSelected',
