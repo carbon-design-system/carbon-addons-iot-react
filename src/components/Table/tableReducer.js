@@ -202,18 +202,28 @@ export const tableReducer = (state = {}, action) => {
     }
     case TABLE_ROW_EXPAND:
       return baseTableReducer(state, action);
-    // By default we need to setup our sorted and filteredData
+    // By default we need to setup our sorted and filteredData and turn off the loading state
     case TABLE_REGISTER: {
+      const updatedData = action.payload || state.data;
       return update(state, {
         view: {
+          data: {
+            $set: updatedData,
+          },
           table: {
             filteredData: {
               $set: filterSearchAndSort(
-                state.data,
+                updatedData,
                 get(state, 'view.table.sort'),
                 get(state, 'view.toolbar.search'),
                 get(state, 'view.filters')
               ),
+            },
+            loadingState: {
+              $set: {
+                isLoading: false,
+                rowCount: updatedData ? updatedData.length : 0,
+              },
             },
           },
         },

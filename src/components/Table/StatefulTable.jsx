@@ -35,7 +35,7 @@ const StatefulTable = ({
   // Need to initially sort and filter the tables data
   useEffect(
     () => {
-      dispatch(tableRegister());
+      dispatch(tableRegister(initialData));
     },
     [initialData]
   );
