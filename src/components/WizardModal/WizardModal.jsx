@@ -36,6 +36,14 @@ const StyledWizardContent = styled.div`
 class WizardModal extends Component {
   static propTypes = {
     /**
+     * Header to pass through to Modal
+     */
+    header: PropTypes.shape({
+      label: PropTypes.string,
+      title: PropTypes.string.isRequired,
+      helpText: PropTypes.string,
+    }).isRequired,
+    /**
      * steps for the wizard to take you through
      *  label: the label of each step up in the progress bar,
      *  content: the wizard page content for each step
@@ -51,6 +59,9 @@ class WizardModal extends Component {
 
     /** optionally pass in the current Step */
     currentStepIndex: PropTypes.number,
+
+    /** callback when dialog is submitted */
+    onSubmit: PropTypes.func.isRequired,
 
     /**
      * leftContent: Anything that will placed to the left of the buttons inside the footer
@@ -89,7 +100,11 @@ class WizardModal extends Component {
   };
 
   handleClick = key => {
-    this.setState({ step: key });
+    const { step } = this.state;
+    // If you're trying to go higher then validate
+    if (key < step || this.validateCurrentStep()) {
+      this.setState({ step: key });
+    }
   };
 
   validateCurrentStep = () => {
