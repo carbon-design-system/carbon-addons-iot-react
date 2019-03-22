@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Tabs, Tab, Button } from 'carbon-components-react';
@@ -17,6 +17,17 @@ const StyledNavigationContainer = styled.div`
     }
     margin-left: 0rem;
   }
+`;
+
+const StyledOverlay = styled.div`
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background-color: white;
+  opacity: 0.5;
+  z-index: 1000;
 `;
 
 const StyledTabToContent = styled.div`
@@ -100,26 +111,29 @@ const defaultProps = {
  * This component is just wrapping up the Carbon Tabs, adding some optional action buttons at the right side.  And for now automatically rendering a page hero component across all tabs
  */
 const NavigationBar = ({ tabs, hero, actions, onSelectionChange, workArea, ...others }) => (
-  <StyledNavigationContainer>
+  <Fragment>
     {workArea || null}
-    <StyledTabToContent>
-      <Tabs {...others} onSelectionChange={index => onSelectionChange(tabs[index].id)}>
-        {tabs.map(({ children, id, ...other }) => (
-          <Tab key={id} {...other}>
-            <StyledTabContent>
-              <StyledTabHero>{hero}</StyledTabHero>
-              <StyledTabChildren>{children}</StyledTabChildren>
-            </StyledTabContent>
-          </Tab>
+    <StyledNavigationContainer>
+      {workArea ? <StyledOverlay /> : null}
+      <StyledTabToContent>
+        <Tabs {...others} onSelectionChange={index => onSelectionChange(tabs[index].id)}>
+          {tabs.map(({ children, id, ...other }) => (
+            <Tab key={id} {...other}>
+              <StyledTabContent>
+                <StyledTabHero>{hero}</StyledTabHero>
+                <StyledTabChildren>{children}</StyledTabChildren>
+              </StyledTabContent>
+            </Tab>
+          ))}
+        </Tabs>
+      </StyledTabToContent>
+      <StyledActions>
+        {actions.map(({ id, ...other }) => (
+          <Button key={id} {...other} />
         ))}
-      </Tabs>
-    </StyledTabToContent>
-    <StyledActions>
-      {actions.map(({ id, ...other }) => (
-        <Button key={id} {...other} />
-      ))}
-    </StyledActions>
-  </StyledNavigationContainer>
+      </StyledActions>
+    </StyledNavigationContainer>
+  </Fragment>
 );
 
 NavigationBar.propTypes = propTypes;
