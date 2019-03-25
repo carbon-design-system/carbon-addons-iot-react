@@ -22,7 +22,7 @@ const ColumnHeaderSelect = ({
   onClick,
 }) => {
   const item = (
-    <span
+    <div
       style={{
         background: '#ffffff',
         margin: '16px',
@@ -32,6 +32,8 @@ const ColumnHeaderSelect = ({
         fontSize: '14px',
         cursor: 'move',
         color: '#3D70B2',
+        display: 'inline-block',
+
         opacity: isHidden ? '.5' : '1',
       }}
       key={columnId}
@@ -39,7 +41,7 @@ const ColumnHeaderSelect = ({
       role="presentation">
       {children}
       <IconStyled icon={iconDraggable} description="Dragable column" focusable="false" />
-    </span>
+    </div>
   );
   return connectDragSource(connectDropTarget(item));
 };

@@ -1155,7 +1155,6 @@
 "@carbon/icon-helpers@0.0.1-beta.2":
   version "0.0.1-beta.2"
   resolved "https://registry.yarnpkg.com/@carbon/icon-helpers/-/icon-helpers-0.0.1-beta.2.tgz#8dbe56b72d60e7ca7175eefec8b97481d749b9cb"
-  integrity sha512-bwjRXHH2Ts4grvldW3P8jd2F1VTJezDyeKvGG6WdKovfWWJMD8mi3d7hBlOPW0tRHzTOxkam7OK9Jk/kEoLTkA==
 
 "@carbon/icons-react@^0.0.1-alpha.12":
   version "0.0.1-alpha.12"
@@ -1167,7 +1166,6 @@
 "@carbon/icons-react@^0.0.1-beta.2":
   version "0.0.1-beta.2"
   resolved "https://registry.yarnpkg.com/@carbon/icons-react/-/icons-react-0.0.1-beta.2.tgz#8e4087bf26a71bbb6e57de976ab762d47d2c482c"
-  integrity sha512-rq6O4w/EY4XxuS8076mxbXkMuov0iwoNuQRcs5cJMPvK+VTjOZyHAlPUVl00aWbWwNoAEuQ6LWe01n/f8KovJg==
   dependencies:
     "@carbon/icon-helpers" "0.0.1-beta.2"
     prop-types "^15.6.2"
@@ -3660,7 +3658,6 @@ capture-stack-trace@^1.0.0:
 carbon-components-react@^6.108.0:
   version "6.111.0"
   resolved "https://registry.yarnpkg.com/carbon-components-react/-/carbon-components-react-6.111.0.tgz#2a48352c1fd8044ca2fbbebcc8372a1ed598a40e"
-  integrity sha512-Mnr13yDuLlZh/XOnG+8IDclbtUJ3KqZHfajXKfjZHcEKeZ72/Ga6fiYzZzzJ8uRaOMXKLXVFSLbYHrzrGWtk+w==
   dependencies:
     "@carbon/icons-react" "^0.0.1-beta.2"
     classnames "2.2.6"
@@ -3677,7 +3674,6 @@ carbon-components-react@^6.108.0:
 carbon-components@^9.84.14:
   version "9.85.6"
   resolved "https://registry.yarnpkg.com/carbon-components/-/carbon-components-9.85.6.tgz#f3c16252b804c18db66dc9fcf0a9a41c4c901623"
-  integrity sha512-r7EwqFlbhhq91QVdFgnXO7erEB3fNfdqysZ6+8OPZxxmNyPrIHTzFdSUu3/KBNz1AFGiUHpiK0VrYijAWCasGw==
   dependencies:
     carbon-icons "^7.0.7"
     flatpickr "4.5.7"
@@ -4736,7 +4732,7 @@ discontinuous-range@1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/discontinuous-range/-/discontinuous-range-1.0.0.tgz#e38331f0844bba49b9a9cb71c771585aab1bc65a"
 
-dnd-core@^7.0.2:
+dnd-core@^7.0.2, dnd-core@^7.2.0:
   version "7.2.0"
   resolved "https://registry.yarnpkg.com/dnd-core/-/dnd-core-7.2.0.tgz#70d4ab6c0c6f90423c27b1711624b5d834025bf3"
   dependencies:
@@ -8172,7 +8168,6 @@ loose-envify@^1.3.1, loose-envify@^1.4.0:
 lorem-ipsum@^1.0.3:
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/lorem-ipsum/-/lorem-ipsum-1.0.6.tgz#69e9ab02bbb0991915d71b5559fe016d526f013f"
-  integrity sha512-Rx4XH8X4KSDCKAVvWGYlhAfNqdUP5ZdT4rRyf0jjrvWgtViZimDIlopWNfn/y3lGM5K4uuiAoY28TaD+7YKFrQ==
   dependencies:
     minimist "~1.2.0"
 
@@ -10312,6 +10307,13 @@ react-dnd-html5-backend@2.5.1:
   dependencies:
     lodash "^4.2.0"
 
+react-dnd-test-backend@^7.2.0:
+  version "7.2.0"
+  resolved "https://registry.yarnpkg.com/react-dnd-test-backend/-/react-dnd-test-backend-7.2.0.tgz#720a46c1fb2041269dddc15a474e7f807f883a53"
+  dependencies:
+    dnd-core "^7.2.0"
+    lodash "^4.17.11"
+
 react-dnd@7.0.2:
   version "7.0.2"
   resolved "https://registry.yarnpkg.com/react-dnd/-/react-dnd-7.0.2.tgz#8f5611a6e877592932c082d6280c64d1c817f420"
@@ -10397,7 +10399,6 @@ react-lifecycles-compat@^3.0.0, react-lifecycles-compat@^3.0.2, react-lifecycles
 react-lorem-component@^0.13.0:
   version "0.13.0"
   resolved "https://registry.yarnpkg.com/react-lorem-component/-/react-lorem-component-0.13.0.tgz#c0ddf3ae75ea6e01f7fd03d7586a24a621202039"
-  integrity sha512-4mWjxmcG/DJJwdxdKwXWyP2N9zohbJg/yYaC+7JffQNrKj3LYDpA/A4u/Dju1v1ZF6Jew2gbFKGb5Z6CL+UNTw==
   dependencies:
     create-react-class "^15.5.3"
     lorem-ipsum "^1.0.3"
@@ -11256,7 +11257,6 @@ scss-tokenizer@^0.2.3:
 seedable-random@0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/seedable-random/-/seedable-random-0.0.1.tgz#0b30cea79e4399688c5a067503a066b7c41e8316"
-  integrity sha1-CzDOp55DmWiMWgZ1A6Bmt8QegxY=
 
 semantic-release@^15.13.2:
   version "15.13.2"
