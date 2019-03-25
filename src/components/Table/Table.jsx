@@ -133,7 +133,7 @@ const propTypes = {
     }).isRequired,
   }),
 };
-const defaultProps = baseProps => ({
+export const defaultProps = baseProps => ({
   id: 'Table',
   zebra: false,
   options: {
