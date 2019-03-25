@@ -131,7 +131,7 @@ describe('table reducer testcases', () => {
       );
 
       const tableSortedNone = tableReducer(tableSortedDesc, sortColumnAction);
-      const filteredTable = tableReducer(initialState, tableRegister(initialState.data));
+      const filteredTable = tableReducer(initialState, tableRegister({ data: initialState.data }));
 
       expect(tableSortedNone.view.table.sort).toBeUndefined();
       // Data should no longer be sorted but should be filtered
@@ -199,12 +199,16 @@ describe('table reducer testcases', () => {
     test('REGISTER_TABLE', () => {
       // Data should be filtered once table registers
       expect(initialState.view.table.filteredData).toBeUndefined();
-      const tableWithFilteredData = tableReducer(initialState, tableRegister(initialState.data));
+      const tableWithFilteredData = tableReducer(
+        initialState,
+        tableRegister({ data: initialState.data, isLoading: false })
+      );
       expect(tableWithFilteredData.data).toEqual(initialState.data);
       expect(tableWithFilteredData.view.table.filteredData.length).toBeGreaterThan(0);
       expect(tableWithFilteredData.view.table.filteredData.length).not.toEqual(
         initialState.data.length
       );
+      expect(tableWithFilteredData.view.table.loadingState.isLoading).toEqual(false);
 
       // Initial state with sort specified but no filters
       const initialStateWithSortAndNoFilters = merge({}, omit(initialState, 'view.filters'), {
@@ -212,9 +216,10 @@ describe('table reducer testcases', () => {
       });
       const tableWithSortedData = tableReducer(
         initialStateWithSortAndNoFilters,
-        tableRegister(initialState.data)
+        tableRegister({ data: initialState.data, isLoading: false })
       );
       expect(tableWithSortedData.data).toEqual(initialState.data);
+      expect(tableWithSortedData.view.table.loadingState.isLoading).toEqual(false);
       expect(tableWithSortedData.view.table.filteredData.length).toEqual(
         initialStateWithSortAndNoFilters.data.length
       );

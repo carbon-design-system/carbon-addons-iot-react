@@ -117,17 +117,16 @@ class RowActionsCell extends React.Component {
         <RowActionsContainer visible={isRowExpanded}>
           {actions
             .filter(action => !action.isOverflow)
-            .map(action => (
+            .map(({ id: actionId, labelText, ...others }) => (
               <RowActionButton
-                key={`${id}-row-actions-button-${action.id}`}
+                {...others}
+                key={`${id}-row-actions-button-${actionId}`}
                 kind="ghost"
-                icon={action.icon}
-                disabled={action.disabled}
-                onClick={e => onClick(e, id, action.id, onApplyRowAction)}
+                onClick={e => onClick(e, id, actionId, onApplyRowAction)}
                 small
-                hideLabel={`${!action.labelText}`}
+                hideLabel={`${!labelText}`}
                 isRowExpanded={isRowExpanded}>
-                {action.labelText}
+                {labelText}
               </RowActionButton>
             ))}
           {hasOverflow ? (
