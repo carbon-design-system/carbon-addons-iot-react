@@ -204,7 +204,7 @@ export const tableReducer = (state = {}, action) => {
       return baseTableReducer(state, action);
     // By default we need to setup our sorted and filteredData and turn off the loading state
     case TABLE_REGISTER: {
-      const updatedData = action.payload || state.data;
+      const updatedData = action.payload.data || state.data;
       return update(state, {
         view: {
           data: {
@@ -221,7 +221,7 @@ export const tableReducer = (state = {}, action) => {
             },
             loadingState: {
               $set: {
-                isLoading: false,
+                isLoading: action.payload.isLoading,
                 rowCount: updatedData ? updatedData.length : 0,
               },
             },

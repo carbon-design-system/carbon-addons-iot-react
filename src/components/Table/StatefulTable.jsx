@@ -1,5 +1,6 @@
 import React, { useReducer, useEffect } from 'react';
 import merge from 'lodash/merge';
+import get from 'lodash/get';
 
 import { tableReducer } from './tableReducer';
 import {
@@ -30,12 +31,13 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
     other
   );
   const [state, dispatch] = useReducer(tableReducer, { data: initialData, view: initialState });
+  const isLoading = get(initialState, 'table.loadingState.isLoading');
   // Need to initially sort and filter the tables data
   useEffect(
     () => {
-      dispatch(tableRegister(initialData));
+      dispatch(tableRegister({ data: initialData, isLoading }));
     },
-    [initialData]
+    [initialData, isLoading]
   );
 
   const {
