@@ -22,12 +22,18 @@ const StyledTableHeader = styled(TableHeader)`
   }
 `;
 
+const StyledColumnSelectWrapper = styled.div`
+   {
+    display: flex;
+    flex-wrap: wrap;
+  }
+`;
+
 const StyledColumnSelectTableRow = styled(TableRow)`
   &&& {
-    background: #fff;
     th {
       padding-top: 1.5rem;
-      padding-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
     }
     td {
       background-color: inherit;
@@ -101,17 +107,19 @@ class ColumnHeaderRow extends Component {
         {hasRowSelection ? <StyledTableHeader /> : null}
         {hasRowExpansion ? <StyledTableHeader /> : null}
         <StyledTableHeader colSpan={visibleColumns.length + (hasRowActions ? 1 : 0)}>
-          {ordering.map((c, idx) => (
-            <ColumnHeaderSelect
-              key={`${idx}-item`}
-              index={idx}
-              columnId={c.columnId}
-              isHidden={c.isHidden}
-              moveItem={(srcIndex, destIndex) => this.reorderColumn(srcIndex, destIndex)}
-              onClick={() => this.toggleColumn(c.columnId)}>
-              {columns.find(i => c.columnId === i.id).name}
-            </ColumnHeaderSelect>
-          ))}
+          <StyledColumnSelectWrapper>
+            {ordering.map((c, idx) => (
+              <ColumnHeaderSelect
+                key={`${idx}-item`}
+                index={idx}
+                columnId={c.columnId}
+                isHidden={c.isHidden}
+                moveItem={(srcIndex, destIndex) => this.reorderColumn(srcIndex, destIndex)}
+                onClick={() => this.toggleColumn(c.columnId)}>
+                {columns.find(i => c.columnId === i.id).name}
+              </ColumnHeaderSelect>
+            ))}
+          </StyledColumnSelectWrapper>
         </StyledTableHeader>
       </StyledColumnSelectTableRow>
     );

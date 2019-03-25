@@ -118,6 +118,14 @@ const defaultProps = {
   options: {},
 };
 
+const StyledCheckboxTableCell = styled(TableCell)`
+  && {
+    padding-left: 1rem;
+    padding-bottom: 0.5rem;
+    width: 2.5rem;
+  }
+`;
+
 const TableBodyRow = ({
   id,
   tableId,
@@ -132,9 +140,8 @@ const TableBodyRow = ({
   rowDetails,
 }) => {
   const rowSelectionCell = hasRowSelection ? (
-    <TableCell
+    <StyledCheckboxTableCell
       key={`${id}-row-selection-cell`}
-      style={{ paddingBottom: '0.5rem' }}
       onClick={e => {
         onRowSelected(id, !isSelected);
         e.preventDefault();
@@ -145,7 +152,7 @@ const TableBodyRow = ({
       Also move onClick logic above into TableSelectRow
       */}
       <Checkbox id={`select-row-${id}`} labelText="Select Row" hideLabel checked={isSelected} />
-    </TableCell>
+    </StyledCheckboxTableCell>
   ) : null;
 
   const tableCells = (

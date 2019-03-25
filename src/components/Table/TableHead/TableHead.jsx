@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { DataTable, Checkbox } from 'carbon-components-react';
 import isNil from 'lodash/isNil';
+import styled from 'styled-components';
 
 import TableCellRenderer from '../TableCellRenderer/TableCellRenderer';
 
@@ -74,6 +75,14 @@ const defaultProps = {
   options: {},
 };
 
+const StyledCheckboxTableHeader = styled(TableHeader)`
+  && {
+    padding-left: 1rem;
+    padding-bottom: 0.5rem;
+    width: 2.5rem;
+  }
+`;
+
 const TableHead = ({
   options,
   options: { hasRowExpansion, hasRowSelection },
@@ -88,17 +97,12 @@ const TableHead = ({
   actions: { onSelectAll, onChangeSort, onApplyFilter, onChangeOrdering },
 }) => {
   const filterBarActive = activeBar === 'filter';
-  const filterBarActiveStyle = { paddingTop: 16 };
   return (
     <CarbonTableHead>
       <TableRow>
         {hasRowExpansion ? <TableExpandHeader /> : null}
         {hasRowSelection ? (
-          <TableHeader
-            style={Object.assign(
-              { paddingBottom: '0.5rem' },
-              filterBarActive ? filterBarActiveStyle : {}
-            )}>
+          <StyledCheckboxTableHeader>
             {/* TODO: Replace checkbox with TableSelectAll component when onChange bug is fixed
                     https://github.com/IBM/carbon-components-react/issues/1088 */}
             <Checkbox
@@ -109,7 +113,7 @@ const TableHead = ({
               checked={isSelectAllSelected}
               onChange={() => onSelectAll(!isSelectAllSelected)}
             />
-          </TableHeader>
+          </StyledCheckboxTableHeader>
         ) : null}
         {ordering.map(item => {
           const matchingColumnMeta = columns.find(column => column.id === item.columnId);
@@ -120,7 +124,6 @@ const TableHead = ({
               id={`column-${matchingColumnMeta.id}`}
               key={`column-${matchingColumnMeta.id}`}
               data-column={matchingColumnMeta.id}
-              style={filterBarActive === true ? filterBarActiveStyle : {}}
               isSortable={matchingColumnMeta.isSortable}
               isSortHeader={hasSort}
               onClick={() => {

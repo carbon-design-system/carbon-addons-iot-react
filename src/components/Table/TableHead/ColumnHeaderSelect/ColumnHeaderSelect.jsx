@@ -7,9 +7,21 @@ import { iconDraggable } from 'carbon-icons';
 
 const IconStyled = styled(Icon)`
    {
-    margin-right: 12px;
+    margin: 0 0.25rem 0 0.75rem;
     vertical-align: middle;
-    margin-left: 18px;
+  }
+`;
+
+const StyledColumnSelectContainer = styled.div`
+  & {
+    background: #fff;
+    margin: 0 1rem 1rem 0;
+    padding: 0.5rem;
+    border: solid 2px #3d70b2;
+    border-radius: 2px;
+    cursor: pointer;
+    color: #3d70b2;
+    opacity: ${props => (props.isHidden ? 0.5 : 1)};
   }
 `;
 
@@ -20,43 +32,42 @@ const ColumnHeaderSelect = ({
   isHidden,
   children,
   onClick,
-}) => {
-  const item = (
-    <div
-      style={{
-        background: '#ffffff',
-        margin: '16px',
-        padding: '10px 0px 12px 10px',
-        border: 'solid 2px #3D70B2',
-        borderRadius: '2px',
-        fontSize: '14px',
-        cursor: 'move',
-        color: '#3D70B2',
-        display: 'inline-block',
-
-        opacity: isHidden ? '.5' : '1',
-      }}
-      key={columnId}
-      onClick={() => onClick()}
-      role="presentation">
-      {children}
-      <IconStyled icon={iconDraggable} description="Dragable column" focusable="false" />
-    </div>
-  );
-  return connectDragSource(connectDropTarget(item));
-};
+}) => (
+  <StyledColumnSelectContainer
+    key={columnId}
+    onClick={() => onClick()}
+    role="presentation"
+    isHidden={isHidden}
+    ref={instance => {
+      connectDragSource(instance);
+      connectDropTarget(instance);
+    }}>
+    {children}
+    <IconStyled
+      style={{ cursor: 'move' }}
+      icon={iconDraggable}
+      description="Dragable column"
+      focusable="false"
+    />
+  </StyledColumnSelectContainer>
+);
 
 ColumnHeaderSelect.propTypes = {
   columnId: PropTypes.string.isRequired,
-  index: PropTypes.number.isRequired,
+  isHidden: PropTypes.bool,
+  children: PropTypes.oneOfType([PropTypes.array, PropTypes.node]),
+  onClick: PropTypes.func.isRequired,
   connectDragSource: PropTypes.func.isRequired,
   connectDropTarget: PropTypes.func.isRequired,
-  isOver: PropTypes.bool.isRequired,
-  moveItem: PropTypes.func.isRequired,
+  /* these props come from react-dnd */
+  index: PropTypes.number.isRequired, // eslint-disable-line
+  isOver: PropTypes.bool.isRequired, // eslint-disable-line
+  moveItem: PropTypes.func.isRequired, // eslint-disable-line
 };
 
 ColumnHeaderSelect.defaultProps = {
   isHidden: false,
+  children: [],
 };
 
 const cardSource = {
