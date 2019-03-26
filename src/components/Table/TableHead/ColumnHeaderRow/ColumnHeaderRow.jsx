@@ -1,16 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { DataTable, Button } from 'carbon-components-react';
+import { DragDropContext } from 'react-dnd';
+import HTML5Backend from 'react-dnd-html5-backend';
+import { DataTable } from 'carbon-components-react';
 import styled from 'styled-components';
 
+import ColumnHeaderSelect from '../ColumnHeaderSelect/ColumnHeaderSelect';
+
 const { TableHeader, TableRow } = DataTable;
-
-const ToggleButton = styled(Button)`
-  &&& {
-    margin-left: 1rem;
-  }
-`;
-
 const StyledTableHeader = styled(TableHeader)`
   &&& {
     border-top: none;
@@ -25,11 +22,18 @@ const StyledTableHeader = styled(TableHeader)`
   }
 `;
 
+const StyledColumnSelectWrapper = styled.div`
+   {
+    display: flex;
+    flex-wrap: wrap;
+  }
+`;
+
 const StyledColumnSelectTableRow = styled(TableRow)`
   &&& {
     th {
-      padding-top: 0.5rem;
-      padding-bottom: 1.5rem;
+      padding-top: 1.5rem;
+      padding-bottom: 0.5rem;
     }
     td {
       background-color: inherit;
@@ -70,16 +74,13 @@ class ColumnHeaderRow extends Component {
     onChangeOrdering: PropTypes.func.isRequired,
   };
 
-  /*
-  reorderColumn = id => {
-    // TODO: implement
+  reorderColumn = (srcIndex, destIndex) => {
     const { ordering, onChangeOrdering } = this.props;
-    onChangeOrdering(ordering.map(i => ({
-      columnId: i.columnId,
-      isHidden: !i.isHidden,
-    })))
-  }
-  */
+
+    ordering.splice(destIndex, 0, ordering.splice(srcIndex, 1)[0]);
+
+    onChangeOrdering(ordering);
+  };
 
   toggleColumn = id => {
     const { ordering, onChangeOrdering } = this.props;
@@ -97,6 +98,7 @@ class ColumnHeaderRow extends Component {
       ordering,
       tableOptions: { hasRowSelection, hasRowExpansion, hasRowActions },
     } = this.props;
+
     const visibleColumns = columns.filter(
       c => !(ordering.find(o => o.columnId === c.id) || { isHidden: false }).isHidden
     );
@@ -105,17 +107,24 @@ class ColumnHeaderRow extends Component {
         {hasRowSelection ? <StyledTableHeader /> : null}
         {hasRowExpansion ? <StyledTableHeader /> : null}
         <StyledTableHeader colSpan={visibleColumns.length + (hasRowActions ? 1 : 0)}>
-          {ordering.map(c => (
-            <ToggleButton
-              key={c.columnId}
-              kind={c.isHidden ? 'tertiary' : 'primary'}
-              onClick={() => this.toggleColumn(c.columnId)}>
-              {columns.find(i => c.columnId === i.id).name}
-            </ToggleButton>
-          ))}
+          <StyledColumnSelectWrapper>
+            {ordering.map((c, idx) => (
+              <ColumnHeaderSelect
+                key={`${idx}-item`}
+                index={idx}
+                columnId={c.columnId}
+                isHidden={c.isHidden}
+                moveItem={(srcIndex, destIndex) => this.reorderColumn(srcIndex, destIndex)}
+                onClick={() => this.toggleColumn(c.columnId)}>
+                {columns.find(i => c.columnId === i.id).name}
+              </ColumnHeaderSelect>
+            ))}
+          </StyledColumnSelectWrapper>
         </StyledTableHeader>
       </StyledColumnSelectTableRow>
     );
   }
 }
-export default ColumnHeaderRow;
+
+export { ColumnHeaderRow as UnconnectedColumnHeaderRow };
+export default DragDropContext(HTML5Backend)(ColumnHeaderRow);

@@ -32,6 +32,14 @@ const propTypes = {
     onApplyRowActions: PropTypes.func,
     onRowExpanded: PropTypes.func,
   }).isRequired,
+  /** What column ordering is currently applied to the table */
+  ordering: PropTypes.arrayOf(
+    PropTypes.shape({
+      columnId: PropTypes.string.isRequired,
+      /* Visibility of column in table, defaults to false */
+      isHidden: PropTypes.bool,
+    })
+  ).isRequired,
 };
 
 const defaultProps = {
@@ -58,6 +66,7 @@ const TableBody = ({
   hasRowSelection,
   hasRowExpansion,
   shouldExpandOnRowClick,
+  ordering,
 }) => (
   <CarbonTableBody>
     {rows.map(row => {
@@ -73,6 +82,7 @@ const TableBody = ({
               : null
           }
           columns={columns}
+          ordering={ordering}
           id={row.id}
           totalColumns={totalColumns}
           tableId={id}
