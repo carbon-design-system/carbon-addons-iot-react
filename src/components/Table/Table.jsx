@@ -196,7 +196,7 @@ export const defaultProps = baseProps => ({
 });
 
 const Table = props => {
-  const { id, columns, data, expandedData, view, actions, options, ...others } = merge(
+  const { id, columns, data, expandedData, view, actions, options, lightweight, ...others } = merge(
     {},
     defaultProps(props),
     props
@@ -243,6 +243,7 @@ const Table = props => {
         <CarbonTable {...others}>
           <TableHead
             {...others}
+            lightweight={lightweight}
             options={pick(options, 'hasRowSelection', 'hasRowExpansion', 'hasRowActions')}
             columns={columns}
             filters={view.filters}

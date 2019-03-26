@@ -69,6 +69,7 @@ const propTypes = {
     onChangeOrdering: PropTypes.func,
     onApplyFilter: PropTypes.func,
   }).isRequired,
+  /** lightweight  */
   lightweight: PropTypes.bool,
 };
 
@@ -80,7 +81,7 @@ const defaultProps = {
 const StyledCarbonTableHead = styled(CarbonTableHead)`
   &&& {
     ${props =>
-      props.lightweight && {
+      props.lightweight === 'true' && {
         backgroundColor: '#fff',
         borderBottom: '2px solid #305ba3',
       }}
@@ -104,7 +105,7 @@ const TableHead = ({
   const filterBarActive = activeBar === 'filter';
   const filterBarActiveStyle = { paddingTop: 16 };
   return (
-    <StyledCarbonTableHead lightweight={lightweight}>
+    <StyledCarbonTableHead lightweight={`${lightweight}`}>
       <TableRow>
         {hasRowExpansion ? <TableExpandHeader /> : null}
         {hasRowSelection ? (

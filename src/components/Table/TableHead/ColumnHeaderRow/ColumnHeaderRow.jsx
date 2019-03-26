@@ -9,7 +9,7 @@ const ToggleButton = styled(Button)`
   &&& {
     margin-left: 1rem;
     ${props =>
-      props.isHidden && {
+      props.ishidden === 'true' && {
         opacity: 0.5,
       }}
   }
@@ -113,7 +113,7 @@ class ColumnHeaderRow extends Component {
             <ToggleButton
               key={c.columnId}
               kind="secondary"
-              isHidden={c.isHidden}
+              ishidden={`${c.isHidden}`}
               onClick={() => this.toggleColumn(c.columnId)}>
               {columns.find(i => c.columnId === i.id).name}
             </ToggleButton>
