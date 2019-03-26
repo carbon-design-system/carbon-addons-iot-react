@@ -25,11 +25,14 @@ const callbackParent = (callback, ...args) => callback && callback(...args);
 /** This component shares the exact same prop types as the Table component */
 /* eslint-disable react/prop-types */
 const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
-  const { id: tableId, columns, options, view: initialState, actions: callbackActions } = merge(
-    {},
-    defaultProps(other),
-    other
-  );
+  const {
+    id: tableId,
+    columns,
+    options,
+    view: initialState,
+    actions: callbackActions,
+    lightweight,
+  } = merge({}, defaultProps(other), other);
   const [state, dispatch] = useReducer(tableReducer, { data: initialData, view: initialState });
   const isLoading = get(initialState, 'table.loadingState.isLoading');
   // Need to initially sort and filter the tables data
@@ -155,6 +158,7 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
         },
       }}
       actions={actions}
+      lightweight={lightweight}
     />
   ) : null;
 };

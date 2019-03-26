@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { DataTable, Checkbox } from 'carbon-components-react';
 import isNil from 'lodash/isNil';
+import styled from 'styled-components';
 
 import TableCellRenderer from '../TableCellRenderer/TableCellRenderer';
 
@@ -68,11 +69,23 @@ const propTypes = {
     onChangeOrdering: PropTypes.func,
     onApplyFilter: PropTypes.func,
   }).isRequired,
+  lightweight: PropTypes.bool,
 };
 
 const defaultProps = {
   options: {},
+  lightweight: false,
 };
+
+const StyledCarbonTableHead = styled(CarbonTableHead)`
+  &&& {
+    ${props =>
+      props.lightweight && {
+        backgroundColor: '#fff',
+        borderBottom: '2px solid #305ba3',
+      }}
+  }
+`;
 
 const TableHead = ({
   options,
@@ -86,11 +99,12 @@ const TableHead = ({
     filters,
   },
   actions: { onSelectAll, onChangeSort, onApplyFilter, onChangeOrdering },
+  lightweight,
 }) => {
   const filterBarActive = activeBar === 'filter';
   const filterBarActiveStyle = { paddingTop: 16 };
   return (
-    <CarbonTableHead>
+    <StyledCarbonTableHead lightweight={lightweight}>
       <TableRow>
         {hasRowExpansion ? <TableExpandHeader /> : null}
         {hasRowSelection ? (
@@ -152,6 +166,7 @@ const TableHead = ({
           filters={filters}
           tableOptions={options}
           onApplyFilter={onApplyFilter}
+          lightweight={lightweight}
         />
       )}
       {activeBar === 'column' && (
@@ -163,9 +178,10 @@ const TableHead = ({
           ordering={ordering}
           tableOptions={options}
           onChangeOrdering={onChangeOrdering}
+          lightweight={lightweight}
         />
       )}
-    </CarbonTableHead>
+    </StyledCarbonTableHead>
   );
 };
 

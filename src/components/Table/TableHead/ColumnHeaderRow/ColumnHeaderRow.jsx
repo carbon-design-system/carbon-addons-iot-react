@@ -8,6 +8,10 @@ const { TableHeader, TableRow } = DataTable;
 const ToggleButton = styled(Button)`
   &&& {
     margin-left: 1rem;
+    ${props =>
+      props.isHidden && {
+        opacity: 0.5,
+      }}
   }
 `;
 
@@ -108,7 +112,8 @@ class ColumnHeaderRow extends Component {
           {ordering.map(c => (
             <ToggleButton
               key={c.columnId}
-              kind={c.isHidden ? 'tertiary' : 'primary'}
+              kind="secondary"
+              isHidden={c.isHidden}
               onClick={() => this.toggleColumn(c.columnId)}>
               {columns.find(i => c.columnId === i.id).name}
             </ToggleButton>

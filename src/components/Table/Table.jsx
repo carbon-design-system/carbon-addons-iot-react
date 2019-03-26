@@ -26,6 +26,8 @@ const propTypes = {
   id: PropTypes.string,
   /** render zebra stripes or not */
   zebra: PropTypes.bool,
+  /**  lighter styling where regular table too visually heavy */
+  lightweight: PropTypes.bool,
   /** Specify the properties of each column in the table */
   columns: TableColumnsPropTypes.isRequired,
   /** Data for the body of the table */
@@ -136,6 +138,7 @@ const propTypes = {
 export const defaultProps = baseProps => ({
   id: 'Table',
   zebra: false,
+  lightweight: false,
   options: {
     hasPagination: false,
     hasRowSelection: false,
@@ -239,6 +242,7 @@ const Table = props => {
         />
         <CarbonTable {...others}>
           <TableHead
+            {...others}
             options={pick(options, 'hasRowSelection', 'hasRowExpansion', 'hasRowActions')}
             columns={columns}
             filters={view.filters}

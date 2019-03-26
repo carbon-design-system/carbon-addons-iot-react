@@ -83,6 +83,7 @@ class FilterHeaderRow extends Component {
     }),
     /** filter can be hidden by the user but filters will still apply to the table */
     isVisible: PropTypes.bool,
+    lightweight: PropTypes.bool,
   };
 
   static defaultProps = {
@@ -90,6 +91,7 @@ class FilterHeaderRow extends Component {
     filters: [],
     isVisible: true,
     onApplyFilter: defaultFunction,
+    lightweight: false,
   };
 
   state = this.props.columns.reduce(
@@ -127,6 +129,7 @@ class FilterHeaderRow extends Component {
       ordering,
       tableOptions: { hasRowSelection, hasRowExpansion, hasRowActions },
       isVisible,
+      lightweight,
     } = this.props;
     return isVisible ? (
       <StyledTableRow>
@@ -158,7 +161,7 @@ class FilterHeaderRow extends Component {
                         this.handleApplyFilter
                       );
                     }}
-                    light
+                    light={!lightweight}
                   />
                 ) : (
                   <StyledFormItem>
@@ -166,7 +169,7 @@ class FilterHeaderRow extends Component {
                       id={column.id}
                       labelText={column.id}
                       hideLabel
-                      light
+                      light={!lightweight}
                       placeholder={column.placeholderText || 'Type and hit enter to apply'}
                       onKeyDown={event => handleEnterKeyDown(event, this.handleApplyFilter)}
                       onBlur={this.handleApplyFilter}
