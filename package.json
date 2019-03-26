@@ -23,7 +23,7 @@
     "storybook": "start-storybook -p 3000",
     "test": "jest",
     "test:watch": "jest --watchAll",
-    "updateSnapshots": "jest -u"
+    "test:update": "jest -u"
   },
   "husky": {
     "hooks": {
