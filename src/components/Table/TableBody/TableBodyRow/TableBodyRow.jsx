@@ -124,6 +124,7 @@ const TableBodyRow = ({
   children,
   rowActions,
   rowDetails,
+  maxWidth,
 }) => {
   const rowSelectionCell = hasRowSelection ? (
     <TableCell

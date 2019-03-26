@@ -27,7 +27,7 @@ const selectData = [
 export const tableColumns = [
   {
     id: 'string',
-    name: 'String',
+    name: 'String this is a max width name',
     filter: { placeholderText: 'pick a string' },
   },
   {
@@ -579,11 +579,12 @@ storiesOf('Table', module)
       };
       return (
         // You don't need to use styled components, just pass a className to the Table component and use selectors to find the correct column
-        <TableColumnWidth
+        <Table
           columns={tableColumns}
           options={{ hasFilter: true }}
           data={tableData}
           actions={actions}
+          maxWidth
           view={{
             filters: [
               {

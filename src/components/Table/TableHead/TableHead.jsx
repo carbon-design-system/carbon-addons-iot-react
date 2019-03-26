@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { DataTable, Checkbox } from 'carbon-components-react';
 import isNil from 'lodash/isNil';
+import styled from 'styled-components';
 
 import TableCellRenderer from '../TableCellRenderer/TableCellRenderer';
 
@@ -9,6 +10,19 @@ import ColumnHeaderRow from './ColumnHeaderRow/ColumnHeaderRow';
 import FilterHeaderRow from './FilterHeaderRow/FilterHeaderRow';
 
 const { TableHead: CarbonTableHead, TableRow, TableExpandHeader, TableHeader } = DataTable;
+
+const StyledHead = styled(TableHeader)`
+  &&& {
+    cursor: pointer;
+    :hover {
+      td {
+        div > * {
+          opacity: 1;
+        }
+      }
+    }
+  }
+`;
 
 const propTypes = {
   /** Important table options that the head needs to know about */
@@ -68,10 +82,12 @@ const propTypes = {
     onChangeOrdering: PropTypes.func,
     onApplyFilter: PropTypes.func,
   }).isRequired,
+  maxWidth: PropTypes.bool,
 };
 
 const defaultProps = {
   options: {},
+  maxWidth: false,
 };
 
 const TableHead = ({
@@ -86,9 +102,18 @@ const TableHead = ({
     filters,
   },
   actions: { onSelectAll, onChangeSort, onApplyFilter, onChangeOrdering },
+  maxWidth,
 }) => {
   const filterBarActive = activeBar === 'filter';
   const filterBarActiveStyle = { paddingTop: 16 };
+  const maxWidthStyle = {
+    maxWidth: 100,
+    width: 100,
+    whiteSpace: 'nowrap',
+    textOverflow: 'ellipsis',
+    overflowX: 'hidden',
+  };
+  console.log('It has maxtwidht on the table: ', maxWidth);
   return (
     <CarbonTableHead>
       <TableRow>
@@ -97,7 +122,8 @@ const TableHead = ({
           <TableHeader
             style={Object.assign(
               { paddingBottom: '0.5rem' },
-              filterBarActive ? filterBarActiveStyle : {}
+              filterBarActive ? filterBarActiveStyle : {},
+              maxWidth ? maxWidthStyle : {}
             )}>
             {/* TODO: Replace checkbox with TableSelectAll component when onChange bug is fixed
                     https://github.com/IBM/carbon-components-react/issues/1088 */}
@@ -125,7 +151,8 @@ const TableHead = ({
                 id={`column-${column.id}`}
                 key={`column-${column.id}`}
                 data-column={column.id}
-                style={filterBarActive === true ? filterBarActiveStyle : {}}
+                // style={filterBarActive === true ? filterBarActiveStyle : {}}
+                style={maxWidth === true ? maxWidthStyle : {}}
                 isSortable={column.isSortable}
                 isSortHeader={hasSort}
                 onClick={() => {

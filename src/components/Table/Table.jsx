@@ -132,6 +132,7 @@ const propTypes = {
       onChangeOrdering: PropTypes.func,
     }).isRequired,
   }),
+  maxWidth: PropTypes.bool,
 };
 export const defaultProps = baseProps => ({
   id: 'Table',
@@ -193,7 +194,7 @@ export const defaultProps = baseProps => ({
 });
 
 const Table = props => {
-  const { id, columns, data, expandedData, view, actions, options, ...others } = merge(
+  const { id, columns, data, expandedData, view, actions, options, maxWidth, ...others } = merge(
     {},
     defaultProps(props),
     props
@@ -255,6 +256,7 @@ const Table = props => {
                 isSelectAllIndeterminate: view.table.isSelectAllIndeterminate,
               },
             }}
+            maxWidth={maxWidth}
           />
           {view.table.loadingState.isLoading ? (
             <TableSkeletonWithHeaders
