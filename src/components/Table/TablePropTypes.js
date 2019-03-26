@@ -36,17 +36,23 @@ export const EmptyStatePropTypes = PropTypes.oneOfType([
   PropTypes.element,
 ]);
 
+/** Construct ahead of time with correct content */
 export const ExpandedRowsPropTypes = PropTypes.arrayOf(
   PropTypes.shape({
     rowId: PropTypes.string,
-    content: PropTypes.element,
+    content: PropTypes.node,
   })
 );
 
-export const TableDataPropTypes = PropTypes.arrayOf(
+export const TableRowPropTypes = PropTypes.arrayOf(
   PropTypes.shape({
+    /** id is sent back on each event callback as users interact with the row */
     id: PropTypes.string.isRequired,
-    values: PropTypes.object.isRequired,
+    /** {key: value} object where each key is a column identifier so that it can be dynamically ordered and value is the underlying data value of the each field.
+     * We don't support custom nodes here, only simple primitives so we can sort and search on them */
+    values: PropTypes.objectOf(
+      PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.bool])
+    ).isRequired,
     /** Optional list of actions visible on row hover or expansion */
     rowActions: RowActionPropTypes,
   })
@@ -57,6 +63,14 @@ export const TableColumnsPropTypes = PropTypes.arrayOf(
     id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     isSortable: PropTypes.bool,
+    /** for each column you can register a render callback function that is called with this object payload
+     * {
+     *    value: PropTypes.any (current cell value),
+     *    columnId: PropTypes.string,
+     *    rowId: PropTypes.string,
+     *    row: PropTypes.object like this {col: value, col2: value}
+     * }, you should return the node that should render within that cell */
+    renderDataFunction: PropTypes.func,
     filter: PropTypes.shape({
       placeholderText: PropTypes.string,
       options: PropTypes.arrayOf(

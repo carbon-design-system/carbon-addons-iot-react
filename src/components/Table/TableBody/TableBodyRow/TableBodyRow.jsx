@@ -69,7 +69,19 @@ const StyledExpansionTableRow = styled(TableRow)`
 
 const propTypes = {
   /** table columns */
-  columns: PropTypes.arrayOf(PropTypes.shape({ id: PropTypes.string })).isRequired,
+  columns: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      /** for each column you can register a render callback function that is called with this object payload
+       * {
+       *    value: PropTypes.any (current cell value),
+       *    columnId: PropTypes.string,
+       *    rowId: PropTypes.string,
+       *    row: PropTypes.object like this {col: value, col2: value}
+       * }, you should return the node that should render within that cell */
+      renderDataFunction: PropTypes.func,
+    })
+  ).isRequired,
   /** table wide options */
   options: PropTypes.shape({
     hasRowSelection: PropTypes.bool,
@@ -147,7 +159,16 @@ const TableBodyRow = ({
       {rowSelectionCell}
       {columns.map(col => (
         <TableCell key={col.id} data-column={col.id}>
-          <TableCellRenderer>{children[col.id]}</TableCellRenderer>
+          {col.renderDataFunction ? ( // Call the column renderer if it's provided
+            col.renderDataFunction({
+              value: children[col.id],
+              columnId: col.id,
+              rowId: id,
+              row: children,
+            })
+          ) : (
+            <TableCellRenderer>{children[col.id]}</TableCellRenderer>
+          )}
         </TableCell>
       ))}
       <RowActionsCell

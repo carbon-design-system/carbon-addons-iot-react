@@ -3,11 +3,7 @@ import PropTypes from 'prop-types';
 import { DataTable } from 'carbon-components-react';
 import pick from 'lodash/pick';
 
-import {
-  ExpandedRowsPropTypes,
-  TableDataPropTypes,
-  TableColumnsPropTypes,
-} from '../TablePropTypes';
+import { ExpandedRowsPropTypes, TableRowPropTypes, TableColumnsPropTypes } from '../TablePropTypes';
 
 import TableBodyRow from './TableBodyRow/TableBodyRow';
 
@@ -16,7 +12,7 @@ const { TableBody: CarbonTableBody } = DataTable;
 const propTypes = {
   /** id of the table */
   id: PropTypes.string.isRequired,
-  rows: TableDataPropTypes,
+  rows: TableRowPropTypes,
   expandedRows: ExpandedRowsPropTypes,
   columns: TableColumnsPropTypes,
   expandedIds: PropTypes.arrayOf(PropTypes.string),
@@ -26,6 +22,7 @@ const propTypes = {
   hasRowSelection: PropTypes.bool,
   hasRowExpansion: PropTypes.bool,
   shouldExpandOnRowClick: PropTypes.bool,
+
   actions: PropTypes.shape({
     onRowSelected: PropTypes.func,
     onRowClicked: PropTypes.func,
