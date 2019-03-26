@@ -20,8 +20,13 @@ const StyledTableToolbarAction = styled(({ isActive, ...other }) => (
   <TableToolbarAction {...other} />
 ))`
   &&& {
-    :last-of-type {
-      padding-right: 0.75rem;
+    padding: 0.75rem;
+    display: flex;
+    height: 2.5rem;
+
+    :focus {
+      height: calc(2.5rem - 2px);
+      padding-top: calc(0.75rem - 1px);
     }
 
     :not(:focus) > svg {
@@ -34,6 +39,14 @@ const StyledTableToolbarAction = styled(({ isActive, ...other }) => (
 const StyledTableToolbarContent = styled(TableToolbarContent)`
   &&& {
     padding-right: 1px;
+    align-items: center;
+  }
+`;
+
+// Need to save one px on the right for the focus
+const StyledClearFiltersButton = styled(Button)`
+  &&& {
+    margin-right: 0.5rem;
   }
 `;
 
@@ -115,9 +128,9 @@ const TableToolbar = ({
         ))}
       </TableBatchActions>
       {totalFilters > 0 ? ( // TODO: translate button
-        <Button kind="secondary" onClick={onClearAllFilters} small>
+        <StyledClearFiltersButton kind="secondary" onClick={onClearAllFilters} small>
           Clear All Filters
-        </Button>
+        </StyledClearFiltersButton>
       ) : null}
       {hasColumnSelection ? (
         <StyledTableToolbarAction
