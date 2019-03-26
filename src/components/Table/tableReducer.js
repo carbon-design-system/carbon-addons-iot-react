@@ -1,6 +1,7 @@
 import update from 'immutability-helper';
 import isNil from 'lodash/isNil';
 import isEmpty from 'lodash/isEmpty';
+import get from 'lodash/get';
 
 import { getSortedData } from '../../utils/componentUtilityFunctions';
 
@@ -23,7 +24,7 @@ import { baseTableReducer } from './baseTableReducer';
 
 // Little utility to filter data
 const filterData = (data, filters) =>
-  filters.length === 0
+  !filters || filters.length === 0
     ? data
     : data.filter(({ values }) =>
         // return false if a value doesn't match a valid filter
@@ -81,8 +82,8 @@ export const tableReducer = (state = {}, action) => {
               filteredData: {
                 $set: filterSearchAndSort(
                   state.data,
-                  state.view.table.sort,
-                  state.view.toolbar.search,
+                  get(state, 'view.table.sort'),
+                  get(state, 'view.toolbar.search'),
                   newFilters
                 ),
               },
@@ -100,8 +101,8 @@ export const tableReducer = (state = {}, action) => {
               filteredData: {
                 $set: filterSearchAndSort(
                   state.data,
-                  state.view.table.sort,
-                  state.view.toolbar.search,
+                  get(state, 'view.table.sort'),
+                  get(state, 'view.toolbar.search'),
                   []
                 ),
               },
@@ -114,9 +115,9 @@ export const tableReducer = (state = {}, action) => {
       // Quick search should search within the filtered and sorted data
       const data = filterSearchAndSort(
         state.data,
-        state.view.table.sort,
+        get(state, 'view.table.sort'),
         { value: action.payload },
-        state.view.filters
+        get(state, 'view.filters')
       );
       return baseTableReducer(
         update(state, {
@@ -165,9 +166,9 @@ export const tableReducer = (state = {}, action) => {
       // TODO should check that columnId actually is valid
       const columnId = action.payload;
       const sorts = ['NONE', 'ASC', 'DESC'];
-      const currentSort = state.view.table.sort;
+      const currentSort = get(state, 'view.table.sort');
       const currentSortDir =
-        currentSort && currentSort.columnId === columnId ? state.view.table.sort.direction : 'NONE';
+        currentSort && currentSort.columnId === columnId ? currentSort.direction : 'NONE';
       const nextSortDir = sorts[(sorts.findIndex(i => i === currentSortDir) + 1) % sorts.length];
       return baseTableReducer(
         update(state, {
@@ -201,18 +202,28 @@ export const tableReducer = (state = {}, action) => {
     }
     case TABLE_ROW_EXPAND:
       return baseTableReducer(state, action);
-    // By default we need to setup our sorted and filteredData
+    // By default we need to setup our sorted and filteredData and turn off the loading state
     case TABLE_REGISTER: {
+      const updatedData = action.payload.data || state.data;
       return update(state, {
         view: {
+          data: {
+            $set: updatedData,
+          },
           table: {
             filteredData: {
               $set: filterSearchAndSort(
-                state.data,
-                state.view.table.sort,
-                state.view.toolbar.search,
-                state.view.filters
+                updatedData,
+                get(state, 'view.table.sort'),
+                get(state, 'view.toolbar.search'),
+                get(state, 'view.filters')
               ),
+            },
+            loadingState: {
+              $set: {
+                isLoading: action.payload.isLoading,
+                rowCount: updatedData ? updatedData.length : 0,
+              },
             },
           },
         },

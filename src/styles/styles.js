@@ -8,3 +8,21 @@ export const COLORS = {
   errorRed: '#e62325',
   white: '#fff',
 };
+
+export const TYPOGRAPHY = {
+  details: '0.875rem',
+};
+
+export const PADDING = {
+  verticalSpace: '1rem 0',
+  pageWrapPadding: '0 2rem',
+};
+
+export const SIZES = {
+  navigationBarHeight: '3.5rem',
+};
+
+export const MEDIA_QUERIES = {
+  twoPane: '700px',
+  threePane: '1000px',
+};

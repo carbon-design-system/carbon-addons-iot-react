@@ -1292,10 +1292,10 @@
   resolved "https://registry.yarnpkg.com/@carbon/icon-helpers/-/icon-helpers-0.0.1-alpha.12.tgz#27f1449ff8e503e42e478ca567dfa6a6b453debe"
   integrity sha512-aWY4qjWLMPT01jP6owstwYoNn1QQhWdc4lNYNV7sMU0eRoRGV2IbpC4fsF4zHtvlpG3rH7glaTPXmSoTboVBSg==
 
-"@carbon/icon-helpers@0.0.1-alpha.28":
-  version "0.0.1-alpha.28"
-  resolved "https://registry.yarnpkg.com/@carbon/icon-helpers/-/icon-helpers-0.0.1-alpha.28.tgz#06b0e42c44e2fac0c3bb1be26e1c739974929121"
-  integrity sha512-J5PEu/Y/Jm/CvDeTVOjf1+xkuRbHwn7CnYnhR+Fh/oNXLP6+DeXigeES+Gei72rUckGJTVLce7NOg8/VPtDVpg==
+"@carbon/icon-helpers@0.0.1-beta.0":
+  version "0.0.1-beta.0"
+  resolved "https://registry.yarnpkg.com/@carbon/icon-helpers/-/icon-helpers-0.0.1-beta.0.tgz#58a71fbe64128ac606dad2fadcab53aa701cbcd8"
+  integrity sha512-O7wZ8drife1mYjxWQRzRhllePPLQWhLcXAxSAPSKRBTZZy5kaQCPOFYiNOsZ86fh+B6ycqEO/8suIeWoZsoWxA==
 
 "@carbon/icons-react@^0.0.1-alpha.12":
   version "0.0.1-alpha.12"
@@ -1305,12 +1305,12 @@
     "@carbon/icon-helpers" "0.0.1-alpha.12"
     prop-types "^15.6.2"
 
-"@carbon/icons-react@^0.0.1-alpha.26":
-  version "0.0.1-alpha.28"
-  resolved "https://registry.yarnpkg.com/@carbon/icons-react/-/icons-react-0.0.1-alpha.28.tgz#2ac2d927dfe1f7032bf060b6686f9c0379884ff5"
-  integrity sha512-UOn8YC7bfmClKl9G2sJ0l+83DIli8cDUGVp1HAuc2LOPGWHU14d7aRcEl1UCtaEoD6hTNGSn0ySA3ui0ZsJiMQ==
+"@carbon/icons-react@^0.0.1-alpha.32":
+  version "0.0.1-beta.0"
+  resolved "https://registry.yarnpkg.com/@carbon/icons-react/-/icons-react-0.0.1-beta.0.tgz#0dd2a3723e6ef14c075bd39eab702153b485384b"
+  integrity sha512-SBpDmHB8b2zQ56aTfJF9hAc/H/rmULVSu237jgCnFC5m5IJybc19hSNb9En9i49QxgAT/KRTWOBcqTMiXFX9BQ==
   dependencies:
-    "@carbon/icon-helpers" "0.0.1-alpha.28"
+    "@carbon/icon-helpers" "0.0.1-beta.0"
     prop-types "^15.6.2"
 
 "@commitlint/cli@^7.2.1":
@@ -4156,29 +4156,30 @@ capture-stack-trace@^1.0.0:
   resolved "https://registry.yarnpkg.com/capture-stack-trace/-/capture-stack-trace-1.0.1.tgz#a6c0bbe1f38f3aa0b92238ecb6ff42c344d4135d"
   integrity sha512-mYQLZnx5Qt1JgB1WEiMCf2647plpGeQ2NMR/5L0HNZzGQo4fuSPnK+wjfPnKZV0aiJDgzmWqqkV/g7JD+DW0qw==
 
-carbon-components-react@6.83.2:
-  version "6.83.2"
-  resolved "https://registry.yarnpkg.com/carbon-components-react/-/carbon-components-react-6.83.2.tgz#fe1e4b94c3c20f04309b73c2da183b8ad350c28c"
-  integrity sha512-CJgzPnOlWsF17CxNLYuOnBtUJE8AYfseWIlDkXpKUVg2sRePWSS1rIpT1yxCyFkeCWyOZW9np3uVL7l2R2Td2A==
+carbon-components-react@^6.108.0:
+  version "6.108.0"
+  resolved "https://registry.yarnpkg.com/carbon-components-react/-/carbon-components-react-6.108.0.tgz#99e4ebb2d21b1d21c183ec573f2a91afb6689ac0"
+  integrity sha512-kRwHZBGnC1+b+Os0Gp8FgL6amLNm2p2qLfRUt74kE1XHsuCJFoDI1egHA7ZJ7v/n8gSIB/O1sihCK0ZrzJKk4Q==
   dependencies:
-    "@carbon/icons-react" "^0.0.1-alpha.26"
+    "@carbon/icons-react" "^0.0.1-alpha.32"
     classnames "2.2.6"
     downshift "^1.31.14"
-    flatpickr "4.5.2"
+    flatpickr "4.5.5"
     invariant "^2.2.3"
     lodash.debounce "^4.0.8"
     lodash.isequal "^4.5.0"
     lodash.omit "^4.5.0"
+    react-is "^16.8.2"
     warning "^3.0.0"
     window-or-global "^1.0.1"
 
-carbon-components@9.66.3:
-  version "9.66.3"
-  resolved "https://registry.yarnpkg.com/carbon-components/-/carbon-components-9.66.3.tgz#cb46c1aa5362db179221a1c72fc9bb4ce973d52e"
-  integrity sha512-z2nhG0vZIk73IsTpyKyT/fZcugvphGHBZBsNbnrD3ZafdCA27g4LeJ9BbAiY8lidK2/UZekh7d1fUDJz6iOilg==
+carbon-components@^9.84.14:
+  version "9.84.14"
+  resolved "https://registry.yarnpkg.com/carbon-components/-/carbon-components-9.84.14.tgz#109d0e01e840e5c887a7ea21782c93781d5d4f66"
+  integrity sha512-GTwsJyN7gSs2eFqAFFIslqn3pPTsgPn5kX9eTzCU/vBe6+g3sc5M1IsWf55QDlVo5oZiVrg/Ny9uLhC73Maq4g==
   dependencies:
     carbon-icons "^7.0.7"
-    flatpickr "4.5.2"
+    flatpickr "4.5.7"
     lodash.debounce "^4.0.8"
     warning "^3.0.0"
 
@@ -4573,7 +4574,7 @@ commander@^2.11.0, commander@^2.14.1, commander@^2.9.0:
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.15.1.tgz#df46e867d0fc2aec66a34662b406a9ccafff5b0f"
   integrity sha512-VlfT9F3V0v+jr4yxPc5gg9s62/fIVWsd2Bk2iD435um1NlGMYdVCq+MjcXnhYq2icNOizHr1kK+5TI6H0Hy0ag==
 
-commander@^2.17.1, commander@^2.19.0:
+commander@^2.19.0:
   version "2.19.0"
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.19.0.tgz#f6198aa84e5b83c46054b94ddedbfed5ee9ff12a"
   integrity sha512-6tvAOO+D6OENvRAh524Dh9jcfKTYDQAqvqezbCW82xj5X0pSrcpxtvRKHLG0yBY6SD7PSDrJaj+0AiOcKVd1Xg==
@@ -4883,7 +4884,7 @@ create-hmac@^1.1.0, create-hmac@^1.1.2, create-hmac@^1.1.4:
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
 
-create-react-class@^15.6.2:
+create-react-class@^15.5.3, create-react-class@^15.6.2:
   version "15.6.3"
   resolved "https://registry.yarnpkg.com/create-react-class/-/create-react-class-15.6.3.tgz#2d73237fb3f970ae6ebe011a9e66f46dbca80036"
   integrity sha512-M+/3Q6E6DLO6Yx3OwrWjwHBnvfXXYA7W+dFjt/ZDBemHO1DDZhsalX/NUtnTYclN6GfnBDRh4qRHjcDHmlJBJg==
@@ -5854,10 +5855,10 @@ eslint-config-airbnb@^17.1.0:
     object.assign "^4.1.0"
     object.entries "^1.0.4"
 
-eslint-config-prettier@^3.3.0:
-  version "3.3.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-3.3.0.tgz#41afc8d3b852e757f06274ed6c44ca16f939a57d"
-  integrity sha512-Bc3bh5bAcKNvs3HOpSi6EfGA2IIp7EzWcg2tS4vP7stnXu/J1opihHDM7jI9JCIckyIDTgZLSWn7J3HY0j2JfA==
+eslint-config-prettier@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-4.1.0.tgz#181364895899fff9fd3605fecb5c4f20e7d5f395"
+  integrity sha512-zILwX9/Ocz4SV2vX7ox85AsrAgXV3f2o2gpIicdMIOra48WYqgUnWNH/cR/iHtmD2Vb3dLSC3LiEJnS05Gkw7w==
   dependencies:
     get-stdin "^6.0.0"
 
@@ -5932,6 +5933,11 @@ eslint-plugin-prettier@^3.0.1:
   integrity sha512-/PMttrarPAY78PLvV3xfWibMOdMDl57hmlQ2XqFeA37wd+CJ7WSxV7txqjVPHi/AAFKd2lX0ZqfsOc/i5yFCSQ==
   dependencies:
     prettier-linter-helpers "^1.0.0"
+
+eslint-plugin-react-hooks@^1.5.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-react-hooks/-/eslint-plugin-react-hooks-1.5.0.tgz#cdd958cfff55bd5fa4f84db90d1490fb5ca4ae2b"
+  integrity sha512-iwDuWR2ReRgvJsNm8fXPtTKdg78IVQF8I4+am3ntztPf/+nPnWZfArFu6aXpaC75/iCYRrkqI8nPCYkxJstmpA==
 
 eslint-plugin-react@^7.12.2:
   version "7.12.2"
@@ -6548,10 +6554,15 @@ flat-cache@^1.2.1:
     rimraf "~2.6.2"
     write "^0.2.1"
 
-flatpickr@4.5.2:
-  version "4.5.2"
-  resolved "https://registry.yarnpkg.com/flatpickr/-/flatpickr-4.5.2.tgz#47c8ad472a096e5fb7e74b809b0703535383f20d"
-  integrity sha512-jDy4QYGpmiy7+Qk8QvKJ4spjDdxcx9cxMydmq1x427HkKWBw0qizLYeYM2F6tMcvvqGjU5VpJS55j4LnsaBblA==
+flatpickr@4.5.5:
+  version "4.5.5"
+  resolved "https://registry.yarnpkg.com/flatpickr/-/flatpickr-4.5.5.tgz#b138050654932f4cf667897d00b51bb930bf392e"
+  integrity sha512-KgAJxBN1BWiOAkwvFSM/nS9YFESOh1yI7uQEd/HQqcTGev84ADO2Mx8C3bUKgIULscb+LireiSDe5D9fh3PFtQ==
+
+flatpickr@4.5.7:
+  version "4.5.7"
+  resolved "https://registry.yarnpkg.com/flatpickr/-/flatpickr-4.5.7.tgz#6efc0d93c65547aa77294205c67830ebabe3565c"
+  integrity sha512-JqPfihUc9A/j9QAsh6otoARmMyUauPE17vRBEG+ThJwbl8zAq4ssGpxlPK3wWM/i8EFxkHg9UuVo0ds7XluKxw==
 
 flush-write-stream@^1.0.0:
   version "1.0.3"
@@ -9325,13 +9336,12 @@ loose-envify@^1.3.1, loose-envify@^1.4.0:
   dependencies:
     js-tokens "^3.0.0 || ^4.0.0"
 
-lorem-ipsum@2.0.0-alpha.2:
-  version "2.0.0-alpha.2"
-  resolved "https://registry.yarnpkg.com/lorem-ipsum/-/lorem-ipsum-2.0.0-alpha.2.tgz#8b3a810aff452a58d4762ba253f557d6aec219a8"
-  integrity sha512-xymfMphwel/lE3KMFWsM/xfbOoGffz6IG2qDS8PgR5mQ3OUq6N+44/cEWVWr4RQ3l/qC5lP6F9bWt2NOcktIVA==
+lorem-ipsum@^1.0.3:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/lorem-ipsum/-/lorem-ipsum-1.0.6.tgz#69e9ab02bbb0991915d71b5559fe016d526f013f"
+  integrity sha512-Rx4XH8X4KSDCKAVvWGYlhAfNqdUP5ZdT4rRyf0jjrvWgtViZimDIlopWNfn/y3lGM5K4uuiAoY28TaD+7YKFrQ==
   dependencies:
-    commander "^2.17.1"
-    random-seed "^0.3.0"
+    minimist "~1.2.0"
 
 loud-rejection@^1.0.0:
   version "1.6.0"
@@ -9795,7 +9805,7 @@ minimist@0.0.8:
   resolved "https://registry.yarnpkg.com/minimist/-/minimist-0.0.8.tgz#857fcabfc3397d2625b8228262e86aa7a011b05d"
   integrity sha1-hX/Kv8M5fSYluCKCYuhqp6ARsF0=
 
-minimist@^1.1.1, minimist@^1.1.3, minimist@^1.2.0:
+minimist@^1.1.1, minimist@^1.1.3, minimist@^1.2.0, minimist@~1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.0.tgz#a35008b20f41383eec1fb914f4cd5df79a264284"
   integrity sha1-o1AIsg9BOD7sH7kU9M1d95omQoQ=
@@ -11672,13 +11682,6 @@ randexp@0.4.6:
     discontinuous-range "1.0.0"
     ret "~0.1.10"
 
-random-seed@^0.3.0:
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/random-seed/-/random-seed-0.3.0.tgz#d945f2e1f38f49e8d58913431b8bf6bb937556cd"
-  integrity sha1-2UXy4fOPSejViRNDG4v2u5N1Vs0=
-  dependencies:
-    json-stringify-safe "^5.0.1"
-
 randomatic@^3.0.0:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/randomatic/-/randomatic-3.1.1.tgz#b776efc59375984e36c537b2f51a1f0aff0da1ed"
@@ -11851,7 +11854,7 @@ react-is@^16.6.0, react-is@^16.6.1:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.7.0.tgz#c1bd21c64f1f1364c6f70695ec02d69392f41bfa"
   integrity sha512-Z0VRQdF4NPDoI0tsXVMLkJLiwEBa+RP66g0xDHxgxysxSoCUccSten4RTF/UFvZF1dZvZ9Zu1sx+MDXwcOR34g==
 
-react-is@^16.8.1:
+react-is@^16.8.1, react-is@^16.8.2:
   version "16.8.4"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.8.4.tgz#90f336a68c3a29a096a3d648ab80e87ec61482a2"
   integrity sha512-PVadd+WaUDOAciICm/J1waJaSvgq+4rHE/K70j0PFqKhkTBsPv/82UGQJNXAngz1fOQLLxI6z1sEDmJDQhCTAA==
@@ -11865,6 +11868,16 @@ react-lifecycles-compat@^3.0.0, react-lifecycles-compat@^3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
   integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
+
+react-lorem-component@^0.13.0:
+  version "0.13.0"
+  resolved "https://registry.yarnpkg.com/react-lorem-component/-/react-lorem-component-0.13.0.tgz#c0ddf3ae75ea6e01f7fd03d7586a24a621202039"
+  integrity sha512-4mWjxmcG/DJJwdxdKwXWyP2N9zohbJg/yYaC+7JffQNrKj3LYDpA/A4u/Dju1v1ZF6Jew2gbFKGb5Z6CL+UNTw==
+  dependencies:
+    create-react-class "^15.5.3"
+    lorem-ipsum "^1.0.3"
+    object-assign "^4.1.0"
+    seedable-random "0.0.1"
 
 react-modal@^3.6.1:
   version "3.8.1"
@@ -12826,6 +12839,11 @@ scss-tokenizer@^0.2.3:
   dependencies:
     js-base64 "^2.1.8"
     source-map "^0.4.2"
+
+seedable-random@0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/seedable-random/-/seedable-random-0.0.1.tgz#0b30cea79e4399688c5a067503a066b7c41e8316"
+  integrity sha1-CzDOp55DmWiMWgZ1A6Bmt8QegxY=
 
 semantic-release@^15.13.2:
   version "15.13.2"

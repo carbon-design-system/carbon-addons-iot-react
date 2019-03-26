@@ -45,4 +45,21 @@ describe('TableBodyRow', () => {
     expect(mockActions.onRowClicked).toHaveBeenCalled();
     expect(mockActions.onRowExpanded).not.toHaveBeenCalled();
   });
+  test('verify rendering with undefined column', () => {
+    const tableRowPropsWithUndefined = {
+      tableId: 'tableId',
+      totalColumns: 1,
+      id: 'tableRow',
+      columns: [{ id: 'col1' }, { id: 'col2' }],
+      children: { col1: 'value1', col2: undefined },
+    };
+    const wrapper = mount(
+      <TableBodyRow
+        options={{ hasRowExpansion: true }}
+        tableActions={mockActions}
+        {...tableRowPropsWithUndefined}
+      />
+    );
+    expect(wrapper).toBeDefined();
+  });
 });

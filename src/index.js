@@ -11,3 +11,10 @@ export TableSkeletonWithHeaders from './components/Table/TableSkeletonWithHeader
 export { baseTableReducer } from './components/Table/baseTableReducer';
 export { tableReducer } from './components/Table/tableReducer';
 export * as tableActions from './components/Table/tableActionCreators';
+export StatefulTable from './components/Table/StatefulTable';
+export TileCatalog from './components/TileCatalog/TileCatalog';
+export SimplePagination from './components/SimplePagination/SimplePagination';
+export CatalogContent from './components/TileCatalog/CatalogContent';
+export ProgressIndicator from './components/ProgressIndicator/ProgressIndicator';
+export PageHero from './components/Page/PageHero';
+export NavigationBar from './components/NavigationBar/NavigationBar';
