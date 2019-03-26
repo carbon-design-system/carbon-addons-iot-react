@@ -19,9 +19,11 @@
     "format:diff": "prettier --list-different \"**/*.{scss,css,js,jsx,md,ts}\"",
     "lint": "yarn eslint .",
     "prepare": "yarn build",
+    "start": "yarn storybook",
     "storybook": "start-storybook -p 3000",
     "test": "jest",
-    "test:watch": "jest --watchAll"
+    "test:watch": "jest --watchAll",
+    "updateSnapshots": "jest -u"
   },
   "husky": {
     "hooks": {
