@@ -126,5 +126,5 @@ class ColumnHeaderRow extends Component {
   }
 }
 
-export { ColumnHeaderRow as UnconnectedColumnHeaderRow }
+export { ColumnHeaderRow as UnconnectedColumnHeaderRow };
 export default DragDropContext(HTML5Backend)(ColumnHeaderRow);
