@@ -14,7 +14,7 @@ const tableRowProps = {
   tableId: 'tableId',
   totalColumns: 1,
   id: 'tableRow',
-  columns: [{ id: 'col1' }],
+  ordering: [{ columnId: 'col1', isHidden: false }],
   children: { col1: 'value1' },
 };
 
@@ -51,6 +51,7 @@ describe('TableBodyRow', () => {
       totalColumns: 1,
       id: 'tableRow',
       columns: [{ id: 'col1' }, { id: 'col2' }],
+      ordering: [{ columnId: 'col1' }, { columnId: 'col2' }],
       children: { col1: 'value1', col2: undefined },
     };
     const wrapper = mount(
@@ -68,7 +69,10 @@ describe('TableBodyRow', () => {
       tableId: 'tableId',
       totalColumns: 1,
       id: 'tableRow',
-      columns: [{ id: 'col1', renderDataFunction: customRenderDataFunction }, { id: 'col2' }],
+      ordering: [
+        { columnId: 'col1', renderDataFunction: customRenderDataFunction },
+        { columnId: 'col2' },
+      ],
       children: { col1: 'value1', col2: 'value2' },
     };
     const wrapper = mount(
