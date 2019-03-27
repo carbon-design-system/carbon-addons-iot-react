@@ -49,6 +49,46 @@ export const tableColumns = [
     name: 'Number',
     filter: { placeholderText: 'pick a number' },
   },
+  {
+    id: 'test',
+    name: 'Test field',
+  },
+  {
+    id: 'test1',
+    name: 'test1',
+  },
+  {
+    id: 'test2',
+    name: 'test2',
+  },
+  {
+    id: 'test3',
+    name: 'test3',
+  },
+  {
+    id: 'test4',
+    name: 'test4',
+  },
+  // {
+  //   id: 'test5',
+  //   name: 'test5',
+  // },
+  // {
+  //   id: 'test6',
+  //   name: 'test6',
+  // },
+  // {
+  //   id: 'test7',
+  //   name: 'test7',
+  // },
+  // {
+  //   id: 'test8',
+  //   name: 'test8',
+  // },
+  // {
+  //   id: 'test9',
+  //   name: 'test9',
+  // },
 ];
 const defaultOrdering = tableColumns.map(c => ({
   columnId: c.id,

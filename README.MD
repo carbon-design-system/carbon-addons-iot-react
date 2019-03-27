@@ -31,4 +31,4 @@ You can find more information about how to use each component by checking out ou
 
 ## 🤲 Contributing
 
-Please check out our [Contribution Guidelines](./.github/CONTRIBUTING.md) for more info on how you can help out!
+Please check out our [Contribution Guidelines](./.github/CONTRIBUTING.MD) for more info on how you can help out!
