@@ -565,8 +565,7 @@ storiesOf('Table', module)
   .add('zebra', () => <Table zebra columns={tableColumns} data={tableData} actions={actions} />)
   .add(
     'max column width',
-    () => {
-      return (
+    () => (
         // You don't need to use styled components, just pass a className to the Table component and use selectors to find the correct column
         <Table
           columns={tableColumns.map((i, idx) => ({
@@ -592,8 +591,7 @@ storiesOf('Table', module)
             },
           }}
         />
-      );
-    },
+      ),
     {
       info: {
         source: false,
