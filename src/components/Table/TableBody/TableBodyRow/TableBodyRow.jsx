@@ -18,6 +18,14 @@ const propTypes = {
       columnId: PropTypes.string.isRequired,
       /* Visibility of column in table, defaults to false */
       isHidden: PropTypes.bool,
+      /** for each column you can register a render callback function that is called with this object payload
+       * {
+       *    value: PropTypes.any (current cell value),
+       *    columnId: PropTypes.string,
+       *    rowId: PropTypes.string,
+       *    row: PropTypes.object like this {col: value, col2: value}
+       * }, you should return the node that should render within that cell */
+      renderDataFunction: PropTypes.func,
     })
   ).isRequired,
   /** List of columns */
@@ -69,6 +77,18 @@ const StyledCheckboxTableCell = styled(TableCell)`
     padding-left: 1rem;
     padding-bottom: 0.5rem;
     width: 2.5rem;
+  }
+`;
+
+const StyledTableRow = styled(TableRow)`
+  &&& {
+    :hover {
+      td {
+        div > * {
+          opacity: 1;
+        }
+      }
+    }
   }
 `;
 
@@ -180,14 +200,23 @@ const TableBodyRow = ({
     <React.Fragment>
       {rowSelectionCell}
       {ordering.map(col => {
-        const matchingColumnMeta = columns.find(column => column.id === col.columnId);
-
+        const matchingColumnMeta = columns && columns.find(column => column.id === col.columnId);
         return !col.isHidden ? (
           <StyledTableCellRow
             key={col.columnId}
             data-column={col.columnId}
-            width={matchingColumnMeta.width}>
-            <TableCellRenderer>{children[col.columnId]}</TableCellRenderer>
+            width={matchingColumnMeta && matchingColumnMeta.width}>
+            {col.renderDataFunction ? (
+              col.renderDataFunction({
+                // Call the column renderer if it's provided
+                value: children[col.columnId],
+                columnId: col.columnId,
+                rowId: id,
+                row: children,
+              })
+            ) : (
+              <TableCellRenderer>{children[col.columnId]}</TableCellRenderer>
+            )}
           </StyledTableCellRow>
         ) : null;
       })}
@@ -236,9 +265,9 @@ const TableBodyRow = ({
       </StyledTableExpandRow>
     )
   ) : (
-    <TableRow key={id} onClick={() => onRowClicked(id)}>
+    <StyledTableRow key={id} onClick={() => onRowClicked(id)}>
       {tableCells}
-    </TableRow>
+    </StyledTableRow>
   );
 };
 

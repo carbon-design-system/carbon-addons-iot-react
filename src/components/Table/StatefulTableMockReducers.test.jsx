@@ -22,6 +22,12 @@ describe('StatefulTable tests with Mock reducer', () => {
     const statefulTable = mount(<StatefulTable {...initialState} actions={mockActions} />);
     expect(statefulTable.find(Table)).toHaveLength(1);
   });
+  test('check renders nested table passthrough props', () => {
+    const statefulTable = mount(
+      <StatefulTable {...initialState} actions={mockActions} className="custom-class" />
+    );
+    expect(statefulTable.find(Table).prop('className')).toEqual('custom-class');
+  });
   test('async data load', () => {
     // Need the real reducer to fire
     const statefulTable = mount(

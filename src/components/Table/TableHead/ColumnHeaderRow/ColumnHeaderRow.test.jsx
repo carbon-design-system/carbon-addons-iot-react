@@ -5,8 +5,6 @@ import { DragDropContext } from 'react-dnd';
 
 import { UnconnectedColumnHeaderRow } from './ColumnHeaderRow';
 
-// import ColumnHeaderSelect from '../ColumnHeaderSelect';
-
 const commonTableHeadProps = {
   /** List of columns */
   columns: [
@@ -22,9 +20,8 @@ const commonTableHeadProps = {
   onChangeOrdering: jest.fn(),
 };
 
-const wrapInTestContext = DecoratedComponent => {
-  return DragDropContext(TestBackend)(() => <DecoratedComponent {...commonTableHeadProps} />);
-};
+const wrapInTestContext = DecoratedComponent =>
+  DragDropContext(TestBackend)(() => <DecoratedComponent {...commonTableHeadProps} />);
 
 let wrapper;
 let backend;

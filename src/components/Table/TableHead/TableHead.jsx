@@ -55,10 +55,13 @@ const propTypes = {
     onChangeOrdering: PropTypes.func,
     onApplyFilter: PropTypes.func,
   }).isRequired,
+  /** lightweight  */
+  lightweight: PropTypes.bool,
 };
 
 const defaultProps = {
   options: {},
+  lightweight: false,
 };
 
 const StyledCheckboxTableHeader = styled(TableHeader)`
@@ -66,6 +69,18 @@ const StyledCheckboxTableHeader = styled(TableHeader)`
     padding-left: 1rem;
     padding-bottom: 0.5rem;
     width: 2.5rem;
+  }
+`;
+
+const StyledCarbonTableHead = styled(({ lightweight, ...others }) => (
+  <CarbonTableHead {...others} />
+))`
+  &&& {
+    ${props =>
+      props.lightweight === 'true' && {
+        backgroundColor: '#fff',
+        borderBottom: '2px solid #305ba3',
+      }}
   }
 `;
 
@@ -98,11 +113,12 @@ const TableHead = ({
     filters,
   },
   actions: { onSelectAll, onChangeSort, onApplyFilter, onChangeOrdering },
+  lightweight,
 }) => {
   const filterBarActive = activeBar === 'filter';
 
   return (
-    <CarbonTableHead>
+    <StyledCarbonTableHead lightweight={`${lightweight}`}>
       <TableRow>
         {hasRowExpansion ? <TableExpandHeader /> : null}
         {hasRowSelection ? (
@@ -157,6 +173,7 @@ const TableHead = ({
           filters={filters}
           tableOptions={options}
           onApplyFilter={onApplyFilter}
+          lightweight={lightweight}
         />
       )}
       {activeBar === 'column' && (
@@ -168,9 +185,10 @@ const TableHead = ({
           ordering={ordering}
           tableOptions={options}
           onChangeOrdering={onChangeOrdering}
+          lightweight={lightweight}
         />
       )}
-    </CarbonTableHead>
+    </StyledCarbonTableHead>
   );
 };
 

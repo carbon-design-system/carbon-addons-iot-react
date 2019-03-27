@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { select, boolean } from '@storybook/addon-knobs';
@@ -24,6 +24,36 @@ const selectData = [
     text: 'option-C',
   },
 ];
+
+const STATUS = {
+  RUNNING: 'RUNNING',
+  NOT_RUNNING: 'NOT_RUNNING',
+  BROKEN: 'BROKEN',
+};
+
+const renderStatusIcon = ({ value: status }) => {
+  switch (status) {
+    case STATUS.RUNNING:
+    default:
+      return (
+        <svg height="10" width="10">
+          <circle cx="5" cy="5" r="3" stroke="none" strokeWidth="1" fill="green" />
+        </svg>
+      );
+    case STATUS.NOT_RUNNING:
+      return (
+        <svg height="10" width="10">
+          <circle cx="5" cy="5" r="3" stroke="none" strokeWidth="1" fill="gray" />
+        </svg>
+      );
+    case STATUS.BROKEN:
+      return (
+        <svg height="10" width="10">
+          <circle cx="5" cy="5" r="3" stroke="none" strokeWidth="1" fill="red" />
+        </svg>
+      );
+  }
+};
 export const tableColumns = [
   {
     id: 'string',
@@ -43,6 +73,11 @@ export const tableColumns = [
   {
     id: 'secretField',
     name: 'Secret Information',
+  },
+  {
+    id: 'status',
+    name: 'Status',
+    renderDataFunction: renderStatusIcon,
   },
   {
     id: 'number',
@@ -70,6 +105,7 @@ export const tableColumns = [
     name: 'test4',
   },
 ];
+
 const defaultOrdering = tableColumns.map(c => ({
   columnId: c.id,
   isHidden: c.id === 'secretField',
@@ -98,6 +134,19 @@ const getString = (index, length) =>
     .map((i, idx) => getLetter(index * (idx + 14) * (idx + 1)))
     .join('');
 
+const getStatus = idx => {
+  const modStatus = idx % 3;
+  switch (modStatus) {
+    case 0:
+    default:
+      return STATUS.RUNNING;
+    case 1:
+      return STATUS.NOT_RUNNING;
+    case 2:
+      return STATUS.BROKEN;
+  }
+};
+
 const getNewRow = idx => ({
   id: `row-${idx}`,
   values: {
@@ -106,6 +155,7 @@ const getNewRow = idx => ({
     select: selectData[idx % 3].id,
     secretField: getString(idx, 10),
     number: idx * idx,
+    status: getStatus(idx),
   },
 });
 
@@ -432,6 +482,50 @@ storiesOf('Table', module)
       }}
     />
   ))
+  .add(
+    'with custom cell renderer',
+    () => {
+      const renderDataFunction = ({ value }) => <div style={{ color: 'red' }}>{value}</div>;
+      return (
+        <Table
+          columns={tableColumns.map(i => ({
+            ...i,
+            renderDataFunction,
+          }))}
+          data={tableData}
+          actions={actions}
+          options={{
+            hasFilter: true,
+            hasPagination: true,
+            hasRowSelection: true,
+          }}
+          view={{
+            filters: [],
+            table: {
+              ordering: defaultOrdering,
+              sort: {
+                columnId: 'string',
+                direction: 'ASC',
+              },
+            },
+          }}
+        />
+      );
+    },
+    {
+      info: {
+        text: `To render a custom widget in a table cell, pass a renderDataFunction prop along with your column metadata.
+            The renderDataFunction is called with this payload 
+           { 
+              value: PropTypes.any (current cell value),
+              columnId: PropTypes.string,
+              rowId: PropTypes.string,
+              row: the full data for this rowPropTypes.object like this {col: value, col2: value}
+           }
+          `,
+      },
+    }
+  )
   .add('with filters', () => {
     const filteredData = tableData.filter(({ values }) =>
       // return false if a value doesn't match a valid filter
