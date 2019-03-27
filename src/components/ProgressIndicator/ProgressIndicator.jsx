@@ -9,6 +9,12 @@ import styled from 'styled-components';
 const StyledProgressIndicator = styled(CarbonProgressIndicator)`
   &&& {
     display: inline-flex;
+    .bx--progress-step--complete {
+      cursor: pointer;
+    }
+    .bx--progress-step--incomplete {
+      cursor: pointer;
+    }
   }
 `;
 
@@ -48,7 +54,14 @@ const defaultProps = {
 };
 
 /** This component extends the default Carbon ProgressIndicator.  It adds the ability to hideLabels on non-current steps and set a maximum stepWidth in pixels */
-const ProgressIndicator = ({ items, showLabels, currentItemId, onClickItem, stepWidth }) => {
+const ProgressIndicator = ({
+  items,
+  showLabels,
+  currentItemId,
+  onClickItem,
+  stepWidth,
+  className,
+}) => {
   const handleChange = index => {
     if (onClickItem) {
       // Parent components are expecting the id not the index
@@ -62,7 +75,10 @@ const ProgressIndicator = ({ items, showLabels, currentItemId, onClickItem, step
   ]);
 
   return (
-    <StyledProgressIndicator onChange={handleChange} currentIndex={currentStep}>
+    <StyledProgressIndicator
+      className={className}
+      onChange={handleChange}
+      currentIndex={currentStep}>
       {items.map(({ id, label }) => (
         <StyledProgressStep
           key={id}

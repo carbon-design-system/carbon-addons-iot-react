@@ -8,9 +8,12 @@ import PageTitle from './PageTitle';
 
 const StyledPageHero = styled.div`
   background: ${COLORS.white};
-  border-bottom: rem(1) solid ${COLORS.lightGrey};
+  border-bottom: 1px solid ${COLORS.lightGrey};
   display: flex;
-  padding: ${PADDING.verticalSpace};
+  padding-top: ${PADDING.verticalPadding};
+  padding-left: ${PADDING.horizontalWrapPadding};
+  padding-right: ${PADDING.horizontalWrapPadding};
+  padding-bottom: ${PADDING.verticalPadding};
   min-height: ${props => (props.big ? '193px' : 'unset')};
 `;
 

@@ -24,6 +24,18 @@ const StyledTableExpandRow = styled(TableExpandRow)`
   }
 `;
 
+const StyledTableRow = styled(TableRow)`
+  &&& {
+    :hover {
+      td {
+        div > * {
+          opacity: 1;
+        }
+      }
+    }
+  }
+`;
+
 const StyledTableExpandRowExpanded = styled(TableExpandRow)`
   &&& {
     cursor: pointer;
@@ -68,8 +80,22 @@ const StyledExpansionTableRow = styled(TableRow)`
 `;
 
 const propTypes = {
-  /** table columns */
-  columns: PropTypes.arrayOf(PropTypes.shape({ id: PropTypes.string })).isRequired,
+  /** What column ordering is currently applied to the table */
+  ordering: PropTypes.arrayOf(
+    PropTypes.shape({
+      columnId: PropTypes.string.isRequired,
+      /* Visibility of column in table, defaults to false */
+      isHidden: PropTypes.bool,
+      /** for each column you can register a render callback function that is called with this object payload
+       * {
+       *    value: PropTypes.any (current cell value),
+       *    columnId: PropTypes.string,
+       *    rowId: PropTypes.string,
+       *    row: PropTypes.object like this {col: value, col2: value}
+       * }, you should return the node that should render within that cell */
+      renderDataFunction: PropTypes.func,
+    })
+  ).isRequired,
   /** table wide options */
   options: PropTypes.shape({
     hasRowSelection: PropTypes.bool,
@@ -112,11 +138,19 @@ const defaultProps = {
   options: {},
 };
 
+const StyledCheckboxTableCell = styled(TableCell)`
+  && {
+    padding-left: 1rem;
+    padding-bottom: 0.5rem;
+    width: 2.5rem;
+  }
+`;
+
 const TableBodyRow = ({
   id,
   tableId,
   totalColumns,
-  columns,
+  ordering,
   options: { hasRowSelection, hasRowExpansion, shouldExpandOnRowClick },
   tableActions: { onRowSelected, onRowExpanded, onRowClicked, onApplyRowAction },
   isExpanded,
@@ -126,9 +160,8 @@ const TableBodyRow = ({
   rowDetails,
 }) => {
   const rowSelectionCell = hasRowSelection ? (
-    <TableCell
+    <StyledCheckboxTableCell
       key={`${id}-row-selection-cell`}
-      style={{ paddingBottom: '0.5rem' }}
       onClick={e => {
         onRowSelected(id, !isSelected);
         e.preventDefault();
@@ -139,17 +172,29 @@ const TableBodyRow = ({
       Also move onClick logic above into TableSelectRow
       */}
       <Checkbox id={`select-row-${id}`} labelText="Select Row" hideLabel checked={isSelected} />
-    </TableCell>
+    </StyledCheckboxTableCell>
   ) : null;
 
   const tableCells = (
     <React.Fragment>
       {rowSelectionCell}
-      {columns.map(col => (
-        <TableCell key={col.id} data-column={col.id}>
-          <TableCellRenderer>{children[col.id]}</TableCellRenderer>
-        </TableCell>
-      ))}
+
+      {ordering.map(col =>
+        !col.isHidden ? (
+          <TableCell key={col.columnId} data-column={col.columnId}>
+            {col.renderDataFunction ? ( // Call the column renderer if it's provided
+              col.renderDataFunction({
+                value: children[col.columnId],
+                columnId: col.columnId,
+                rowId: id,
+                row: children,
+              })
+            ) : (
+              <TableCellRenderer>{children[col.columnId]}</TableCellRenderer>
+            )}
+          </TableCell>
+        ) : null
+      )}
       <RowActionsCell
         id={id}
         actions={rowActions}
@@ -195,9 +240,9 @@ const TableBodyRow = ({
       </StyledTableExpandRow>
     )
   ) : (
-    <TableRow key={id} onClick={() => onRowClicked(id)}>
+    <StyledTableRow key={id} onClick={() => onRowClicked(id)}>
       {tableCells}
-    </TableRow>
+    </StyledTableRow>
   );
 };
 

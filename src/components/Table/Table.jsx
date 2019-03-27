@@ -8,7 +8,7 @@ import { defaultFunction } from '../../utils/componentUtilityFunctions';
 
 import {
   TableColumnsPropTypes,
-  TableDataPropTypes,
+  TableRowPropTypes,
   ExpandedRowsPropTypes,
   EmptyStatePropTypes,
   TableSearchPropTypes,
@@ -26,10 +26,12 @@ const propTypes = {
   id: PropTypes.string,
   /** render zebra stripes or not */
   zebra: PropTypes.bool,
+  /**  lighter styling where regular table too visually heavy */
+  lightweight: PropTypes.bool,
   /** Specify the properties of each column in the table */
   columns: TableColumnsPropTypes.isRequired,
-  /** Data for the body of the table */
-  data: TableDataPropTypes.isRequired,
+  /** Row value data for the body of the table */
+  data: TableRowPropTypes.isRequired,
   /** Expanded data for the table details */
   expandedData: ExpandedRowsPropTypes,
   /** Optional properties to customize how the table should be rendered */
@@ -136,6 +138,7 @@ const propTypes = {
 export const defaultProps = baseProps => ({
   id: 'Table',
   zebra: false,
+  lightweight: false,
   options: {
     hasPagination: false,
     hasRowSelection: false,
@@ -193,7 +196,7 @@ export const defaultProps = baseProps => ({
 });
 
 const Table = props => {
-  const { id, columns, data, expandedData, view, actions, options, ...others } = merge(
+  const { id, columns, data, expandedData, view, actions, options, lightweight, ...others } = merge(
     {},
     defaultProps(props),
     props
@@ -239,6 +242,8 @@ const Table = props => {
         />
         <CarbonTable {...others}>
           <TableHead
+            {...others}
+            lightweight={lightweight}
             options={pick(options, 'hasRowSelection', 'hasRowExpansion', 'hasRowActions')}
             columns={columns}
             filters={view.filters}
@@ -272,6 +277,7 @@ const Table = props => {
               selectedIds={view.table.selectedIds}
               totalColumns={totalColumns}
               {...pick(options, 'hasRowSelection', 'hasRowExpansion', 'shouldExpandOnRowClick')}
+              ordering={view.table.ordering}
               actions={pick(
                 actions.table,
                 'onRowSelected',

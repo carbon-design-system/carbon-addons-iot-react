@@ -54,6 +54,16 @@ describe('WizardModal', () => {
     wrapper.instance().handleNext();
     // step should NOT advance if validation returns false
     expect(wrapper.state('step')).toEqual(1);
+
+    // trigger next by clicking
+    wrapper.instance().handleClick(2);
+    // step should NOT advance if validation returns false
+    expect(wrapper.state('step')).toEqual(1);
+
+    // trigger next by clicking
+    wrapper.instance().handleClick(0);
+    // step be allowed to go backwards
+    expect(wrapper.state('step')).toEqual(0);
   });
   test('submit', () => {
     const mockValidateStepFunction = jest.fn();
