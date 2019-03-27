@@ -69,26 +69,6 @@ export const tableColumns = [
     id: 'test4',
     name: 'test4',
   },
-  // {
-  //   id: 'test5',
-  //   name: 'test5',
-  // },
-  // {
-  //   id: 'test6',
-  //   name: 'test6',
-  // },
-  // {
-  //   id: 'test7',
-  //   name: 'test7',
-  // },
-  // {
-  //   id: 'test8',
-  //   name: 'test8',
-  // },
-  // {
-  //   id: 'test9',
-  //   name: 'test9',
-  // },
 ];
 const defaultOrdering = tableColumns.map(c => ({
   columnId: c.id,
@@ -586,50 +566,31 @@ storiesOf('Table', module)
   .add(
     'max column width',
     () => {
-      const StyledTableColumn = styled(Table)`
-        &&& {
-          [data-column='string'] {
-            width: 100px;
-            max-width: 100px;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-            overflow-x: hidden;
-          }
-          [data-column='date'] {
-            max-width: 100px;
-            width: 100px;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-            overflow-x: hidden;
-          }
-        }
-      `;
-
       return (
         // You don't need to use styled components, just pass a className to the Table component and use selectors to find the correct column
         <Table
           columns={tableColumns.map((i, idx) => ({
             ...i,
-            width: idx % 2 === 0 ? '250px' : '10rem',
+            width: idx % 2 === 0 ? '250px' : '5rem',
           }))}
           options={{ hasFilter: true }}
           data={tableData}
           actions={actions}
-          // view={{
-          //   filters: [
-          //     {
-          //       columnId: 'string',
-          //       value: 'whiteboard',
-          //     },
-          //     {
-          //       columnId: 'select',
-          //       value: 'option-B',
-          //     },
-          //   ],
-          //   toolbar: {
-          //     activeBar: select('activeBar', ['filter', 'column'], 'filter'),
-          //   },
-          // }}
+          view={{
+            filters: [
+              {
+                columnId: 'string',
+                value: 'whiteboard',
+              },
+              {
+                columnId: 'select',
+                value: 'option-B',
+              },
+            ],
+            toolbar: {
+              activeBar: select('activeBar', ['filter', 'column'], 'filter'),
+            },
+          }}
         />
       );
     },

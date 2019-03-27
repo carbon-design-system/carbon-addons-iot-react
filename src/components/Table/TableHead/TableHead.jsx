@@ -71,16 +71,17 @@ const StyledCheckboxTableHeader = styled(TableHeader)`
 
 const StyledCustomTableHeader = styled(TableHeader)`
   &&& {
-    background: purple;
-    ${(props) => {
+    ${props => {
       const { width } = props;
-      return width !== undefined ? `
+      return width !== undefined
+        ? `
         min-width: ${width};
         max-width: ${width};
         white-space: nowrap;
         overflow-x: hidden;
         text-overflow: ellipsis;
-      ` : '';
+      `
+        : '';
     }}
   }
 `;

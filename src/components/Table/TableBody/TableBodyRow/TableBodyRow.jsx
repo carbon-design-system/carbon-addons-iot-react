@@ -6,11 +6,89 @@ import styled from 'styled-components';
 import { COLORS } from '../../../../styles/styles';
 import RowActionsCell from '../RowActionsCell/RowActionsCell';
 import TableCellRenderer from '../../TableCellRenderer/TableCellRenderer';
-import { RowActionPropTypes } from '../../TablePropTypes';
+import { RowActionPropTypes, TableColumnsPropTypes } from '../../TablePropTypes';
 import { stopPropagationAndCallback } from '../../../../utils/componentUtilityFunctions';
 
 const { TableRow, TableExpandRow, TableCell } = DataTable;
 
+const propTypes = {
+  /** What column ordering is currently applied to the table */
+  ordering: PropTypes.arrayOf(
+    PropTypes.shape({
+      columnId: PropTypes.string.isRequired,
+      /* Visibility of column in table, defaults to false */
+      isHidden: PropTypes.bool,
+    })
+  ).isRequired,
+  /** List of columns */
+  columns: TableColumnsPropTypes.isRequired,
+
+  /** table wide options */
+  options: PropTypes.shape({
+    hasRowSelection: PropTypes.bool,
+    hasRowExpansion: PropTypes.bool,
+    shouldExpandOnRowClick: PropTypes.bool,
+  }),
+
+  /** The unique row id */
+  id: PropTypes.string.isRequired,
+  /** some columns might be hidden, so total columns has the overall total */
+  totalColumns: PropTypes.number.isRequired,
+  /** table Id */
+  tableId: PropTypes.string.isRequired,
+  /** contents of the row each object value is a renderable node keyed by column id */
+  children: PropTypes.objectOf(PropTypes.node).isRequired,
+
+  /** is the row currently selected */
+  isSelected: PropTypes.bool,
+  /** is the row currently expanded */
+  isExpanded: PropTypes.bool,
+  /** optional row details */
+  rowDetails: PropTypes.node,
+
+  /** tableActions */
+  tableActions: PropTypes.shape({
+    onRowSelected: PropTypes.func,
+    onRowClicked: PropTypes.func,
+    onApplyRowAction: PropTypes.func,
+    onRowExpanded: PropTypes.func,
+  }).isRequired,
+  /** optional per-row actions */
+  rowActions: RowActionPropTypes,
+};
+
+const defaultProps = {
+  isSelected: false,
+  isExpanded: false,
+  rowActions: null,
+  rowDetails: null,
+  options: {},
+};
+
+const StyledCheckboxTableCell = styled(TableCell)`
+  && {
+    padding-left: 1rem;
+    padding-bottom: 0.5rem;
+    width: 2.5rem;
+  }
+`;
+
+const StyledTableCell = styled(TableCell)`
+  &&& {
+    ${props => {
+      const { width } = props;
+      return width !== undefined
+        ? `
+        min-width: ${width};
+        max-width: ${width};
+        white-space: nowrap;
+        overflow-x: hidden;
+        text-overflow: ellipsis;
+      `
+        : '';
+    }}
+  }
+`;
 const StyledTableExpandRow = styled(TableExpandRow)`
   &&& {
     cursor: pointer;
@@ -68,70 +146,12 @@ const StyledExpansionTableRow = styled(TableRow)`
   }
 `;
 
-const propTypes = {
-  /** What column ordering is currently applied to the table */
-  ordering: PropTypes.arrayOf(
-    PropTypes.shape({
-      columnId: PropTypes.string.isRequired,
-      /* Visibility of column in table, defaults to false */
-      isHidden: PropTypes.bool,
-    })
-  ).isRequired,
-  /** table wide options */
-  options: PropTypes.shape({
-    hasRowSelection: PropTypes.bool,
-    hasRowExpansion: PropTypes.bool,
-    shouldExpandOnRowClick: PropTypes.bool,
-  }),
-
-  /** The unique row id */
-  id: PropTypes.string.isRequired,
-  /** some columns might be hidden, so total columns has the overall total */
-  totalColumns: PropTypes.number.isRequired,
-  /** table Id */
-  tableId: PropTypes.string.isRequired,
-  /** contents of the row each object value is a renderable node keyed by column id */
-  children: PropTypes.objectOf(PropTypes.node).isRequired,
-
-  /** is the row currently selected */
-  isSelected: PropTypes.bool,
-  /** is the row currently expanded */
-  isExpanded: PropTypes.bool,
-  /** optional row details */
-  rowDetails: PropTypes.node,
-
-  /** tableActions */
-  tableActions: PropTypes.shape({
-    onRowSelected: PropTypes.func,
-    onRowClicked: PropTypes.func,
-    onApplyRowAction: PropTypes.func,
-    onRowExpanded: PropTypes.func,
-  }).isRequired,
-  /** optional per-row actions */
-  rowActions: RowActionPropTypes,
-};
-
-const defaultProps = {
-  isSelected: false,
-  isExpanded: false,
-  rowActions: null,
-  rowDetails: null,
-  options: {},
-};
-
-const StyledCheckboxTableCell = styled(TableCell)`
-  && {
-    padding-left: 1rem;
-    padding-bottom: 0.5rem;
-    width: 2.5rem;
-  }
-`;
-
 const TableBodyRow = ({
   id,
   tableId,
   totalColumns,
   ordering,
+  columns,
   options: { hasRowSelection, hasRowExpansion, shouldExpandOnRowClick },
   tableActions: { onRowSelected, onRowExpanded, onRowClicked, onApplyRowAction },
   isExpanded,
@@ -139,7 +159,6 @@ const TableBodyRow = ({
   children,
   rowActions,
   rowDetails,
-  maxWidth,
 }) => {
   const rowSelectionCell = hasRowSelection ? (
     <StyledCheckboxTableCell
@@ -160,13 +179,18 @@ const TableBodyRow = ({
   const tableCells = (
     <React.Fragment>
       {rowSelectionCell}
-      {ordering.map(col =>
-        !col.isHidden ? (
-          <TableCell key={col.columnId} data-column={col.columnId}>
+      {ordering.map(col => {
+        const matchingColumnMeta = columns.find(column => column.id === col.columnId);
+
+        return !col.isHidden ? (
+          <StyledTableCell
+            key={col.columnId}
+            data-column={col.columnId}
+            width={matchingColumnMeta.width}>
             <TableCellRenderer>{children[col.columnId]}</TableCellRenderer>
-          </TableCell>
-        ) : null
-      )}
+          </StyledTableCell>
+        ) : null;
+      })}
       <RowActionsCell
         id={id}
         actions={rowActions}

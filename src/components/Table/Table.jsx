@@ -132,7 +132,6 @@ const propTypes = {
       onChangeOrdering: PropTypes.func,
     }).isRequired,
   }),
-  maxWidth: PropTypes.number,
 };
 export const defaultProps = baseProps => ({
   id: 'Table',
@@ -194,12 +193,11 @@ export const defaultProps = baseProps => ({
 });
 
 const Table = props => {
-  const { id, columns, data, expandedData, view, actions, options, maxWidth, ...others } = merge(
+  const { id, columns, data, expandedData, view, actions, options, ...others } = merge(
     {},
     defaultProps(props),
     props
   );
-  console.log('on the table value, ', maxWidth);
 
   const minItemInView =
     options.hasPagination && view.pagination
@@ -257,7 +255,6 @@ const Table = props => {
                 isSelectAllIndeterminate: view.table.isSelectAllIndeterminate,
               },
             }}
-            maxWidth={maxWidth}
           />
           {view.table.loadingState.isLoading ? (
             <TableSkeletonWithHeaders
@@ -283,7 +280,6 @@ const Table = props => {
                 'onRowExpanded',
                 'onRowClicked'
               )}
-              maxWidth={maxWidth}
             />
           ) : (
             <EmptyTable
