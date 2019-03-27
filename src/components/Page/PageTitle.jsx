@@ -21,6 +21,7 @@ const StyledPageTitleH2 = styled.h2`
 `;
 const StyledPageBlurb = styled.p`
   margin-bottom: 1rem;
+  color: ${COLORS.gray};
 `;
 
 const propTypes = {

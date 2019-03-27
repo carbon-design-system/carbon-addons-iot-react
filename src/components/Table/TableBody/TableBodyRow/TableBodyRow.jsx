@@ -24,6 +24,18 @@ const StyledTableExpandRow = styled(TableExpandRow)`
   }
 `;
 
+const StyledTableRow = styled(TableRow)`
+  &&& {
+    :hover {
+      td {
+        div > * {
+          opacity: 1;
+        }
+      }
+    }
+  }
+`;
+
 const StyledTableExpandRowExpanded = styled(TableExpandRow)`
   &&& {
     cursor: pointer;
@@ -228,9 +240,9 @@ const TableBodyRow = ({
       </StyledTableExpandRow>
     )
   ) : (
-    <TableRow key={id} onClick={() => onRowClicked(id)}>
+    <StyledTableRow key={id} onClick={() => onRowClicked(id)}>
       {tableCells}
-    </TableRow>
+    </StyledTableRow>
   );
 };
 
