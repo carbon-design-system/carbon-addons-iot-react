@@ -18,7 +18,6 @@ import { COLORS } from '../../styles/styles';
 const StyledHeader = styled(CarbonHeader)`
    {
     background-color: ${COLORS.darkGray};
-    margin-top: 2rem;
   }
 `;
 const StyledGlobalAction = styled(HeaderGlobalAction)`
