@@ -48,7 +48,9 @@ const StyledOverflowMenu = styled(({ isRowExpanded, isOpen, ...other }) => (
 `;
 
 // Don't pass through the isRowExpanded or hideLabel prop to the button
-const RowActionButton = styled(({ isRowExpanded, hideLabel, ...other }) => <Button {...other} />)`
+const RowActionButton = styled(({ isRowExpanded, hideLabel, isOverflow, ...other }) => (
+  <Button {...other} />
+))`
   &&& {
     color: ${props => (props.isRowExpanded ? COLORS.white : COLORS.darkGray)};
     svg {
