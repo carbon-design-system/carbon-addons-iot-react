@@ -132,7 +132,7 @@ const propTypes = {
       onChangeOrdering: PropTypes.func,
     }).isRequired,
   }),
-  maxWidth: PropTypes.bool,
+  maxWidth: PropTypes.number,
 };
 export const defaultProps = baseProps => ({
   id: 'Table',
@@ -199,6 +199,7 @@ const Table = props => {
     defaultProps(props),
     props
   );
+  console.log('on the table value, ', maxWidth);
 
   const minItemInView =
     options.hasPagination && view.pagination
@@ -274,6 +275,7 @@ const Table = props => {
               selectedIds={view.table.selectedIds}
               totalColumns={totalColumns}
               {...pick(options, 'hasRowSelection', 'hasRowExpansion', 'shouldExpandOnRowClick')}
+              ordering={view.table.ordering}
               actions={pick(
                 actions.table,
                 'onRowSelected',
@@ -281,6 +283,7 @@ const Table = props => {
                 'onRowExpanded',
                 'onRowClicked'
               )}
+              maxWidth={maxWidth}
             />
           ) : (
             <EmptyTable

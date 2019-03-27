@@ -27,7 +27,7 @@ const selectData = [
 export const tableColumns = [
   {
     id: 'string',
-    name: 'String this is a max width name',
+    name: 'String this is a max width name okokokokokok',
     filter: { placeholderText: 'pick a string' },
   },
   {
@@ -49,6 +49,46 @@ export const tableColumns = [
     name: 'Number',
     filter: { placeholderText: 'pick a number' },
   },
+  {
+    id: 'test',
+    name: 'Test field',
+  },
+  {
+    id: 'test1',
+    name: 'test1',
+  },
+  {
+    id: 'test2',
+    name: 'test2',
+  },
+  {
+    id: 'test3',
+    name: 'test3',
+  },
+  {
+    id: 'test4',
+    name: 'test4',
+  },
+  // {
+  //   id: 'test5',
+  //   name: 'test5',
+  // },
+  // {
+  //   id: 'test6',
+  //   name: 'test6',
+  // },
+  // {
+  //   id: 'test7',
+  //   name: 'test7',
+  // },
+  // {
+  //   id: 'test8',
+  //   name: 'test8',
+  // },
+  // {
+  //   id: 'test9',
+  //   name: 'test9',
+  // },
 ];
 const defaultOrdering = tableColumns.map(c => ({
   columnId: c.id,
@@ -565,18 +605,6 @@ storiesOf('Table', module)
         }
       `;
 
-      // workaround for dumb prop types storybook issue
-      const TableColumnWidth = ({ children, ...props }) => (
-        <StyledTableColumn {...props}>{children}</StyledTableColumn>
-      );
-
-      TableColumnWidth.displayName = 'Table';
-      TableColumnWidth.propTypes = {
-        className: PropTypes.string,
-      };
-      TableColumnWidth.defaultProps = {
-        className: null,
-      };
       return (
         // You don't need to use styled components, just pass a className to the Table component and use selectors to find the correct column
         <Table
@@ -584,22 +612,22 @@ storiesOf('Table', module)
           options={{ hasFilter: true }}
           data={tableData}
           actions={actions}
-          maxWidth
-          view={{
-            filters: [
-              {
-                columnId: 'string',
-                value: 'whiteboard',
-              },
-              {
-                columnId: 'select',
-                value: 'option-B',
-              },
-            ],
-            toolbar: {
-              activeBar: select('activeBar', ['filter', 'column'], 'filter'),
-            },
-          }}
+          maxWidth={100}
+          // view={{
+          //   filters: [
+          //     {
+          //       columnId: 'string',
+          //       value: 'whiteboard',
+          //     },
+          //     {
+          //       columnId: 'select',
+          //       value: 'option-B',
+          //     },
+          //   ],
+          //   toolbar: {
+          //     activeBar: select('activeBar', ['filter', 'column'], 'filter'),
+          //   },
+          // }}
         />
       );
     },

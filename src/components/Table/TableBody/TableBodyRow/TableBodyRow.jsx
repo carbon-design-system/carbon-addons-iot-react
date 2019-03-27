@@ -55,6 +55,7 @@ const StyledExpansionTableRow = styled(TableRow)`
       border-width: 0 0 0 4px;
       padding: 0;
     }
+
     :hover {
       border: inherit;
       background-color: inherit;
@@ -68,8 +69,14 @@ const StyledExpansionTableRow = styled(TableRow)`
 `;
 
 const propTypes = {
-  /** table columns */
-  columns: PropTypes.arrayOf(PropTypes.shape({ id: PropTypes.string })).isRequired,
+  /** What column ordering is currently applied to the table */
+  ordering: PropTypes.arrayOf(
+    PropTypes.shape({
+      columnId: PropTypes.string.isRequired,
+      /* Visibility of column in table, defaults to false */
+      isHidden: PropTypes.bool,
+    })
+  ).isRequired,
   /** table wide options */
   options: PropTypes.shape({
     hasRowSelection: PropTypes.bool,
@@ -112,11 +119,19 @@ const defaultProps = {
   options: {},
 };
 
+const StyledCheckboxTableCell = styled(TableCell)`
+  && {
+    padding-left: 1rem;
+    padding-bottom: 0.5rem;
+    width: 2.5rem;
+  }
+`;
+
 const TableBodyRow = ({
   id,
   tableId,
   totalColumns,
-  columns,
+  ordering,
   options: { hasRowSelection, hasRowExpansion, shouldExpandOnRowClick },
   tableActions: { onRowSelected, onRowExpanded, onRowClicked, onApplyRowAction },
   isExpanded,
@@ -127,9 +142,8 @@ const TableBodyRow = ({
   maxWidth,
 }) => {
   const rowSelectionCell = hasRowSelection ? (
-    <TableCell
+    <StyledCheckboxTableCell
       key={`${id}-row-selection-cell`}
-      style={{ paddingBottom: '0.5rem' }}
       onClick={e => {
         onRowSelected(id, !isSelected);
         e.preventDefault();
@@ -140,17 +154,19 @@ const TableBodyRow = ({
       Also move onClick logic above into TableSelectRow
       */}
       <Checkbox id={`select-row-${id}`} labelText="Select Row" hideLabel checked={isSelected} />
-    </TableCell>
+    </StyledCheckboxTableCell>
   ) : null;
 
   const tableCells = (
     <React.Fragment>
       {rowSelectionCell}
-      {columns.map(col => (
-        <TableCell key={col.id} data-column={col.id}>
-          <TableCellRenderer>{children[col.id]}</TableCellRenderer>
-        </TableCell>
-      ))}
+      {ordering.map(col =>
+        !col.isHidden ? (
+          <TableCell key={col.columnId} data-column={col.columnId}>
+            <TableCellRenderer>{children[col.columnId]}</TableCellRenderer>
+          </TableCell>
+        ) : null
+      )}
       <RowActionsCell
         id={id}
         actions={rowActions}

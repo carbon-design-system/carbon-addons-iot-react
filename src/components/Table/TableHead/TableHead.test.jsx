@@ -9,7 +9,7 @@ const { TableHeader } = DataTable;
 const commonTableHeadProps = {
   /** List of columns */
   columns: [{ id: 'col1', name: 'Column 1', isSortable: false }],
-  tableState: { selection: {}, sort: {}, ordering: [] },
+  tableState: { selection: {}, sort: {}, ordering: [{ columnId: 'col1', isHidden: false }] },
   actions: {},
 };
 

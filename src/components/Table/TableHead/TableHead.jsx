@@ -11,19 +11,6 @@ import FilterHeaderRow from './FilterHeaderRow/FilterHeaderRow';
 
 const { TableHead: CarbonTableHead, TableRow, TableExpandHeader, TableHeader } = DataTable;
 
-const StyledHead = styled(TableHeader)`
-  &&& {
-    cursor: pointer;
-    :hover {
-      td {
-        div > * {
-          opacity: 1;
-        }
-      }
-    }
-  }
-`;
-
 const propTypes = {
   /** Important table options that the head needs to know about */
   options: PropTypes.shape({
@@ -82,13 +69,37 @@ const propTypes = {
     onChangeOrdering: PropTypes.func,
     onApplyFilter: PropTypes.func,
   }).isRequired,
-  maxWidth: PropTypes.bool,
+  maxWidth: PropTypes.number,
 };
 
 const defaultProps = {
   options: {},
-  maxWidth: false,
+  maxWidth: undefined,
 };
+
+const StyledCheckboxTableHeader = styled(TableHeader)`
+  &&& {
+    padding-left: 1rem;
+    padding-bottom: 0.5rem;
+    width: 2.5rem;
+  }
+`;
+
+const StyledCustomTableHeader = styled(TableHeader)`
+  &&& {
+    background: purple;
+    width: ${props => props.maxWidth};
+  }
+`;
+
+// ${ props => (props.maxWidth ? `width: 100px;` : '') }
+// ${ props => (props.maxWidth ? `max-width: 100px;` : '') }
+// ${ props => (props.maxWidth ? `white-space: nowrap;` : '') }
+// ${ props => (props.maxWidth ? `overflow-x: hidden;` : '') }
+// ${ props => (props.maxWidth ? `text-overflow: ellipsis;` : '') }
+
+//props.maxWidth ? 'white-space: nowrap;  text-overflow: ellipsis; overflow-x : hidden;  width: ${props => props.maxWidth};
+//max - width: ${ props => props.maxWidth }; ' : ''};
 
 const TableHead = ({
   options,
@@ -105,26 +116,15 @@ const TableHead = ({
   maxWidth,
 }) => {
   const filterBarActive = activeBar === 'filter';
-  const filterBarActiveStyle = { paddingTop: 16 };
-  const maxWidthStyle = {
-    maxWidth: 100,
-    width: 100,
-    whiteSpace: 'nowrap',
-    textOverflow: 'ellipsis',
-    overflowX: 'hidden',
-  };
-  console.log('It has maxtwidht on the table: ', maxWidth);
+
+  console.log('maxWidth ln head, ', maxWidth);
+
   return (
     <CarbonTableHead>
       <TableRow>
         {hasRowExpansion ? <TableExpandHeader /> : null}
         {hasRowSelection ? (
-          <TableHeader
-            style={Object.assign(
-              { paddingBottom: '0.5rem' },
-              filterBarActive ? filterBarActiveStyle : {},
-              maxWidth ? maxWidthStyle : {}
-            )}>
+          <StyledCheckboxTableHeader>
             {/* TODO: Replace checkbox with TableSelectAll component when onChange bug is fixed
                     https://github.com/IBM/carbon-components-react/issues/1088 */}
             <Checkbox
@@ -135,36 +135,30 @@ const TableHead = ({
               checked={isSelectAllSelected}
               onChange={() => onSelectAll(!isSelectAllSelected)}
             />
-          </TableHeader>
+          </StyledCheckboxTableHeader>
         ) : null}
-        {columns
-          .filter(column => {
-            const matchingColumnMeta = ordering.find(
-              columnOrder => columnOrder.columnId === column.id
-            ); // If we can't find the column in our meta, don't hide it
-            return matchingColumnMeta ? !matchingColumnMeta.isHidden : true;
-          }) // only render visible columns
-          .map(column => {
-            const hasSort = sort && sort.columnId === column.id;
-            return (
-              <TableHeader
-                id={`column-${column.id}`}
-                key={`column-${column.id}`}
-                data-column={column.id}
-                // style={filterBarActive === true ? filterBarActiveStyle : {}}
-                style={maxWidth === true ? maxWidthStyle : {}}
-                isSortable={column.isSortable}
-                isSortHeader={hasSort}
-                onClick={() => {
-                  if (column.isSortable && onChangeSort) {
-                    onChangeSort(column.id);
-                  }
-                }}
-                sortDirection={hasSort ? sort.direction : 'NONE'}>
-                <TableCellRenderer>{column.name}</TableCellRenderer>
-              </TableHeader>
-            );
-          })}
+
+        {ordering.map(item => {
+          const matchingColumnMeta = columns.find(column => column.id === item.columnId);
+          const hasSort = sort && sort.columnId === matchingColumnMeta.id;
+
+          return !item.isHidden ? (
+            <StyledCustomTableHeader
+              id={`column-${matchingColumnMeta.id}`}
+              key={`column-${matchingColumnMeta.id}`}
+              data-column={matchingColumnMeta.id}
+              isSortable={matchingColumnMeta.isSortable}
+              isSortHeader={hasSort}
+              onClick={() => {
+                if (matchingColumnMeta.isSortable && onChangeSort) {
+                  onChangeSort(matchingColumnMeta.id);
+                }
+              }}
+              sortDirection={hasSort ? sort.direction : 'NONE'}>
+              <TableCellRenderer>{matchingColumnMeta.name}</TableCellRenderer>
+            </StyledCustomTableHeader>
+          ) : null;
+        })}
         {options.hasRowActions ? <TableHeader>&nbsp;</TableHeader> : null}
       </TableRow>
       {filterBarActive && (
