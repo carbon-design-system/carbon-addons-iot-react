@@ -1,13 +1,9 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { DataTable } from 'carbon-components-react';
 import pick from 'lodash/pick';
 
-import {
-  ExpandedRowsPropTypes,
-  TableDataPropTypes,
-  TableColumnsPropTypes,
-} from '../TablePropTypes';
+import { ExpandedRowsPropTypes, TableRowPropTypes, TableColumnsPropTypes } from '../TablePropTypes';
 
 import TableBodyRow from './TableBodyRow/TableBodyRow';
 
@@ -16,7 +12,7 @@ const { TableBody: CarbonTableBody } = DataTable;
 const propTypes = {
   /** id of the table */
   id: PropTypes.string.isRequired,
-  rows: TableDataPropTypes,
+  rows: TableRowPropTypes,
   expandedRows: ExpandedRowsPropTypes,
   columns: TableColumnsPropTypes,
   expandedIds: PropTypes.arrayOf(PropTypes.string),
@@ -26,6 +22,7 @@ const propTypes = {
   hasRowSelection: PropTypes.bool,
   hasRowExpansion: PropTypes.bool,
   shouldExpandOnRowClick: PropTypes.bool,
+
   actions: PropTypes.shape({
     onRowSelected: PropTypes.func,
     onRowClicked: PropTypes.func,
@@ -67,44 +64,55 @@ const TableBody = ({
   hasRowExpansion,
   shouldExpandOnRowClick,
   ordering,
-}) => (
-  <CarbonTableBody>
-    {rows.map(row => {
-      const isRowExpanded = expandedIds.includes(row.id);
-      return (
-        <TableBodyRow
-          key={row.id}
-          isExpanded={isRowExpanded}
-          isSelected={selectedIds.includes(row.id)}
-          rowDetails={
-            isRowExpanded && expandedRows.find(j => j.rowId === row.id)
-              ? expandedRows.find(j => j.rowId === row.id).content
-              : null
-          }
-          columns={columns}
-          ordering={ordering}
-          id={row.id}
-          totalColumns={totalColumns}
-          tableId={id}
-          options={{
-            hasRowSelection,
-            hasRowExpansion,
-            shouldExpandOnRowClick,
-          }}
-          tableActions={pick(
-            actions,
-            'onRowSelected',
-            'onApplyRowAction',
-            'onRowExpanded',
-            'onRowClicked'
-          )}
-          rowActions={row.rowActions}>
-          {row.values}
-        </TableBodyRow>
-      );
-    })}
-  </CarbonTableBody>
-);
+}) => {
+  // Need to merge the ordering and the columns since the columns have the renderer function
+  const orderingMap = useMemo(
+    () =>
+      ordering.map(col => ({
+        ...col,
+        ...columns.find(column => column.id === col.columnId),
+      })),
+    [columns, ordering]
+  );
+
+  return (
+    <CarbonTableBody>
+      {rows.map(row => {
+        const isRowExpanded = expandedIds.includes(row.id);
+        return (
+          <TableBodyRow
+            key={row.id}
+            isExpanded={isRowExpanded}
+            isSelected={selectedIds.includes(row.id)}
+            rowDetails={
+              isRowExpanded && expandedRows.find(j => j.rowId === row.id)
+                ? expandedRows.find(j => j.rowId === row.id).content
+                : null
+            }
+            ordering={orderingMap}
+            id={row.id}
+            totalColumns={totalColumns}
+            tableId={id}
+            options={{
+              hasRowSelection,
+              hasRowExpansion,
+              shouldExpandOnRowClick,
+            }}
+            tableActions={pick(
+              actions,
+              'onRowSelected',
+              'onApplyRowAction',
+              'onRowExpanded',
+              'onRowClicked'
+            )}
+            rowActions={row.rowActions}>
+            {row.values}
+          </TableBodyRow>
+        );
+      })}
+    </CarbonTableBody>
+  );
+};
 
 TableBody.propTypes = propTypes;
 TableBody.defaultProps = defaultProps;

@@ -5,8 +5,6 @@ import { DragDropContext } from 'react-dnd';
 
 import { UnconnectedColumnHeaderRow } from './ColumnHeaderRow';
 
-// import ColumnHeaderSelect from '../ColumnHeaderSelect';
-
 const commonTableHeadProps = {
   /** List of columns */
   columns: [

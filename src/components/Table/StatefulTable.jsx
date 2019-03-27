@@ -145,6 +145,7 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
   };
   return filteredData ? (
     <Table
+      {...other} // need to passthrough all other props
       id={tableId}
       columns={columns}
       data={filteredData}

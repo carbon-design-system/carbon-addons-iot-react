@@ -8,7 +8,7 @@ import { defaultFunction } from '../../utils/componentUtilityFunctions';
 
 import {
   TableColumnsPropTypes,
-  TableDataPropTypes,
+  TableRowPropTypes,
   ExpandedRowsPropTypes,
   EmptyStatePropTypes,
   TableSearchPropTypes,
@@ -30,8 +30,8 @@ const propTypes = {
   lightweight: PropTypes.bool,
   /** Specify the properties of each column in the table */
   columns: TableColumnsPropTypes.isRequired,
-  /** Data for the body of the table */
-  data: TableDataPropTypes.isRequired,
+  /** Row value data for the body of the table */
+  data: TableRowPropTypes.isRequired,
   /** Expanded data for the table details */
   expandedData: ExpandedRowsPropTypes,
   /** Optional properties to customize how the table should be rendered */

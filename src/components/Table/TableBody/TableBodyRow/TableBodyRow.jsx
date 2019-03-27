@@ -24,6 +24,18 @@ const StyledTableExpandRow = styled(TableExpandRow)`
   }
 `;
 
+const StyledTableRow = styled(TableRow)`
+  &&& {
+    :hover {
+      td {
+        div > * {
+          opacity: 1;
+        }
+      }
+    }
+  }
+`;
+
 const StyledTableExpandRowExpanded = styled(TableExpandRow)`
   &&& {
     cursor: pointer;
@@ -74,6 +86,14 @@ const propTypes = {
       columnId: PropTypes.string.isRequired,
       /* Visibility of column in table, defaults to false */
       isHidden: PropTypes.bool,
+      /** for each column you can register a render callback function that is called with this object payload
+       * {
+       *    value: PropTypes.any (current cell value),
+       *    columnId: PropTypes.string,
+       *    rowId: PropTypes.string,
+       *    row: PropTypes.object like this {col: value, col2: value}
+       * }, you should return the node that should render within that cell */
+      renderDataFunction: PropTypes.func,
     })
   ).isRequired,
   /** table wide options */
@@ -158,10 +178,20 @@ const TableBodyRow = ({
   const tableCells = (
     <React.Fragment>
       {rowSelectionCell}
+
       {ordering.map(col =>
         !col.isHidden ? (
           <TableCell key={col.columnId} data-column={col.columnId}>
-            <TableCellRenderer>{children[col.columnId]}</TableCellRenderer>
+            {col.renderDataFunction ? ( // Call the column renderer if it's provided
+              col.renderDataFunction({
+                value: children[col.columnId],
+                columnId: col.columnId,
+                rowId: id,
+                row: children,
+              })
+            ) : (
+              <TableCellRenderer>{children[col.columnId]}</TableCellRenderer>
+            )}
           </TableCell>
         ) : null
       )}
@@ -210,9 +240,9 @@ const TableBodyRow = ({
       </StyledTableExpandRow>
     )
   ) : (
-    <TableRow key={id} onClick={() => onRowClicked(id)}>
+    <StyledTableRow key={id} onClick={() => onRowClicked(id)}>
       {tableCells}
-    </TableRow>
+    </StyledTableRow>
   );
 };
 
