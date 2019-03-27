@@ -8,6 +8,7 @@ import styled from 'styled-components';
 import ColumnHeaderSelect from '../ColumnHeaderSelect/ColumnHeaderSelect';
 
 const { TableHeader, TableRow } = DataTable;
+
 const StyledTableHeader = styled(TableHeader)`
   &&& {
     border-top: none;
@@ -126,5 +127,5 @@ class ColumnHeaderRow extends Component {
   }
 }
 
-export { ColumnHeaderRow as UnconnectedColumnHeaderRow }
+export { ColumnHeaderRow as UnconnectedColumnHeaderRow };
 export default DragDropContext(HTML5Backend)(ColumnHeaderRow);

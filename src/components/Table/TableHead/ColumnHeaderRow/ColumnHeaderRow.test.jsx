@@ -1,11 +1,9 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { DataTable } from 'carbon-components-react';
 import TestBackend from 'react-dnd-test-backend';
 import { DragDropContext } from 'react-dnd';
 
 import { UnconnectedColumnHeaderRow } from './ColumnHeaderRow';
-import ColumnHeaderSelect from '../ColumnHeaderSelect/ColumnHeaderSelect';
 
 // import ColumnHeaderSelect from '../ColumnHeaderSelect';
 
@@ -16,10 +14,7 @@ const commonTableHeadProps = {
     { id: 'col2', name: 'Column 2', isSortable: false },
   ],
   /** Ordering list */
-  ordering: [
-    { columnId: 'col1', isHidden: false },
-    { columnId: 'col2', isHidden: false },
-  ],
+  ordering: [{ columnId: 'col1', isHidden: false }, { columnId: 'col2', isHidden: false }],
   tableOptions: {
     hasRowSelection: false,
     hasRowExpansion: false,
@@ -31,7 +26,8 @@ const wrapInTestContext = DecoratedComponent => {
   return DragDropContext(TestBackend)(() => <DecoratedComponent {...commonTableHeadProps} />);
 };
 
-let wrapper, backend;
+let wrapper;
+let backend;
 
 describe('TableHead', () => {
   beforeEach(() => {
@@ -44,7 +40,9 @@ describe('TableHead', () => {
       .getBackend();
   });
   it('can reorder columns', () => {
-    const dragSource = wrapper.find("DragSource(DropTarget(ColumnHeaderSelect))[columnId='col1']").instance();
+    const dragSource = wrapper
+      .find("DragSource(DropTarget(ColumnHeaderSelect))[columnId='col1']")
+      .instance();
     const dropTarget = wrapper.find("DropTarget(ColumnHeaderSelect)[columnId='col2']").instance();
     backend.simulateBeginDrag([dragSource.getHandlerId()]);
     backend.simulateHover([dropTarget.getHandlerId()]);
