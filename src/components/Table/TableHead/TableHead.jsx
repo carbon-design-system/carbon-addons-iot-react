@@ -4,6 +4,7 @@ import { DataTable, Checkbox } from 'carbon-components-react';
 import isNil from 'lodash/isNil';
 import styled from 'styled-components';
 
+import { TableColumnsPropTypes } from '../TablePropTypes';
 import TableCellRenderer from '../TableCellRenderer/TableCellRenderer';
 
 import ColumnHeaderRow from './ColumnHeaderRow/ColumnHeaderRow';
@@ -19,22 +20,7 @@ const propTypes = {
     hasRowActions: PropTypes.bool,
   }),
   /** List of columns */
-  columns: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired,
-      isSortable: PropTypes.bool,
-      filter: PropTypes.shape({
-        placeholderText: PropTypes.string,
-        options: PropTypes.arrayOf(
-          PropTypes.shape({
-            id: PropTypes.string.isRequired,
-            text: PropTypes.string.isRequired,
-          })
-        ),
-      }),
-    })
-  ).isRequired,
+  columns: TableColumnsPropTypes.isRequired,
 
   /** Current state of the table */
   tableState: PropTypes.shape({
@@ -69,12 +55,10 @@ const propTypes = {
     onChangeOrdering: PropTypes.func,
     onApplyFilter: PropTypes.func,
   }).isRequired,
-  maxWidth: PropTypes.number,
 };
 
 const defaultProps = {
   options: {},
-  maxWidth: undefined,
 };
 
 const StyledCheckboxTableHeader = styled(TableHeader)`
@@ -88,18 +72,18 @@ const StyledCheckboxTableHeader = styled(TableHeader)`
 const StyledCustomTableHeader = styled(TableHeader)`
   &&& {
     background: purple;
-    width: ${props => props.maxWidth};
+    ${(props) => {
+      const { width } = props;
+      return width !== undefined ? `
+        min-width: ${width};
+        max-width: ${width};
+        white-space: nowrap;
+        overflow-x: hidden;
+        text-overflow: ellipsis;
+      ` : '';
+    }}
   }
 `;
-
-// ${ props => (props.maxWidth ? `width: 100px;` : '') }
-// ${ props => (props.maxWidth ? `max-width: 100px;` : '') }
-// ${ props => (props.maxWidth ? `white-space: nowrap;` : '') }
-// ${ props => (props.maxWidth ? `overflow-x: hidden;` : '') }
-// ${ props => (props.maxWidth ? `text-overflow: ellipsis;` : '') }
-
-//props.maxWidth ? 'white-space: nowrap;  text-overflow: ellipsis; overflow-x : hidden;  width: ${props => props.maxWidth};
-//max - width: ${ props => props.maxWidth }; ' : ''};
 
 const TableHead = ({
   options,
@@ -113,11 +97,8 @@ const TableHead = ({
     filters,
   },
   actions: { onSelectAll, onChangeSort, onApplyFilter, onChangeOrdering },
-  maxWidth,
 }) => {
   const filterBarActive = activeBar === 'filter';
-
-  console.log('maxWidth ln head, ', maxWidth);
 
   return (
     <CarbonTableHead>
@@ -149,6 +130,7 @@ const TableHead = ({
               data-column={matchingColumnMeta.id}
               isSortable={matchingColumnMeta.isSortable}
               isSortHeader={hasSort}
+              width={matchingColumnMeta.width}
               onClick={() => {
                 if (matchingColumnMeta.isSortable && onChangeSort) {
                   onChangeSort(matchingColumnMeta.id);

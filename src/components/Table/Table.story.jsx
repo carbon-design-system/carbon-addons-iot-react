@@ -608,11 +608,13 @@ storiesOf('Table', module)
       return (
         // You don't need to use styled components, just pass a className to the Table component and use selectors to find the correct column
         <Table
-          columns={tableColumns}
+          columns={tableColumns.map((i, idx) => ({
+            ...i,
+            width: idx % 2 === 0 ? '250px' : '10rem',
+          }))}
           options={{ hasFilter: true }}
           data={tableData}
           actions={actions}
-          maxWidth={100}
           // view={{
           //   filters: [
           //     {
