@@ -8,6 +8,7 @@ import styled from 'styled-components';
 import ColumnHeaderSelect from '../ColumnHeaderSelect/ColumnHeaderSelect';
 
 const { TableHeader, TableRow } = DataTable;
+
 const StyledTableHeader = styled(TableHeader)`
   &&& {
     border-top: none;

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { select } from '@storybook/addon-knobs';
+import { select, boolean } from '@storybook/addon-knobs';
 import styled from 'styled-components';
 
 import { getSortedData } from '../../utils/componentUtilityFunctions';
@@ -314,14 +314,24 @@ export const initialState = {
 };
 
 storiesOf('Table', module)
-  .add('Stateful Example', () => <StatefulTable {...initialState} actions={actions} />, {
-    info: {
-      text:
-        'This is an example of the <StatefulTable> component that uses local state to handle all the table actions. This is produced by wrapping the <Table> in a container component and managing the state associated with features such the toolbar, filters, row select, etc. For more robust documentation on the prop model and source, see the other "with function" stories.',
-      propTables: [Table],
-      propTablesExclude: [StatefulTable],
-    },
-  })
+  .add(
+    'Stateful Example',
+    () => (
+      <StatefulTable
+        {...initialState}
+        actions={actions}
+        lightweight={boolean('lightweight', false)}
+      />
+    ),
+    {
+      info: {
+        text:
+          'This is an example of the <StatefulTable> component that uses local state to handle all the table actions. This is produced by wrapping the <Table> in a container component and managing the state associated with features such the toolbar, filters, row select, etc. For more robust documentation on the prop model and source, see the other "with function" stories.',
+        propTables: [Table],
+        propTablesExclude: [StatefulTable],
+      },
+    }
+  )
   .add('default', () => <Table columns={tableColumns} data={tableData} actions={actions} />)
   .add('with simple search', () => (
     <Table
@@ -772,4 +782,12 @@ storiesOf('Table', module)
         propTables: false,
       },
     }
-  );
+  )
+  .add('Lightweight Table', () => (
+    <Table
+      columns={tableColumns}
+      data={tableData}
+      actions={actions}
+      lightweight={boolean('lightweight', true)}
+    />
+  ));
