@@ -78,7 +78,9 @@ const defaultProps = {
   lightweight: false,
 };
 
-const StyledCarbonTableHead = styled(CarbonTableHead)`
+const StyledCarbonTableHead = styled(({ lightweight, ...others }) => (
+  <CarbonTableHead {...others} />
+))`
   &&& {
     ${props =>
       props.lightweight === 'true' && {
