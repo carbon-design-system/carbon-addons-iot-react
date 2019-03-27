@@ -576,32 +576,32 @@ storiesOf('Table', module)
   .add(
     'max column width',
     () => (
-        // You don't need to use styled components, just pass a className to the Table component and use selectors to find the correct column
-        <Table
-          columns={tableColumns.map((i, idx) => ({
-            ...i,
-            width: idx % 2 === 0 ? '250px' : '5rem',
-          }))}
-          options={{ hasFilter: true }}
-          data={tableData}
-          actions={actions}
-          view={{
-            filters: [
-              {
-                columnId: 'string',
-                value: 'whiteboard',
-              },
-              {
-                columnId: 'select',
-                value: 'option-B',
-              },
-            ],
-            toolbar: {
-              activeBar: select('activeBar', ['filter', 'column'], 'filter'),
+      // You don't need to use styled components, just pass a className to the Table component and use selectors to find the correct column
+      <Table
+        columns={tableColumns.map((i, idx) => ({
+          ...i,
+          width: idx % 2 === 0 ? '100px' : '5rem',
+        }))}
+        options={{ hasFilter: true }}
+        data={tableData}
+        actions={actions}
+        view={{
+          filters: [
+            {
+              columnId: 'string',
+              value: 'whiteboard',
             },
-          }}
-        />
-      ),
+            {
+              columnId: 'select',
+              value: 'option-B',
+            },
+          ],
+          toolbar: {
+            activeBar: select('activeBar', ['filter', 'column'], 'filter'),
+          },
+        }}
+      />
+    ),
     {
       info: {
         source: false,

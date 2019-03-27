@@ -27,6 +27,18 @@ const StyledTableHeader = styled(TableHeader)`
         min-width: 12.75rem;
       }
     }
+    ${props => {
+      const { width } = props;
+      return width !== undefined
+        ? `
+        min-width: ${width};
+        max-width: ${width};
+        white-space: nowrap;
+        overflow-x: hidden;
+        text-overflow: ellipsis;
+      `
+        : '';
+    }};
   }
 `;
 const StyledFormItem = styled(FormItem)`
@@ -42,6 +54,7 @@ const StyledFormItem = styled(FormItem)`
     }
   }
 `;
+
 class FilterHeaderRow extends Component {
   static propTypes = {
     columns: PropTypes.arrayOf(
@@ -141,7 +154,10 @@ class FilterHeaderRow extends Component {
             const column = columns.find(i => c.columnId === i.id);
             const columnStateValue = this.state[column.id]; // eslint-disable-line
             return (
-              <StyledTableHeader data-column={column.id} key={`FilterHeader${column.id}`}>
+              <StyledTableHeader
+                data-column={column.id}
+                key={`FilterHeader${column.id}`}
+                width={column.width}>
                 {column.options ? (
                   <ComboBox
                     items={column.options}

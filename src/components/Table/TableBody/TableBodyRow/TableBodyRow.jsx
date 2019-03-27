@@ -22,7 +22,6 @@ const propTypes = {
   ).isRequired,
   /** List of columns */
   columns: TableColumnsPropTypes.isRequired,
-
   /** table wide options */
   options: PropTypes.shape({
     hasRowSelection: PropTypes.bool,
@@ -73,22 +72,6 @@ const StyledCheckboxTableCell = styled(TableCell)`
   }
 `;
 
-const StyledTableCell = styled(TableCell)`
-  &&& {
-    ${props => {
-      const { width } = props;
-      return width !== undefined
-        ? `
-        min-width: ${width};
-        max-width: ${width};
-        white-space: nowrap;
-        overflow-x: hidden;
-        text-overflow: ellipsis;
-      `
-        : '';
-    }}
-  }
-`;
 const StyledTableExpandRow = styled(TableExpandRow)`
   &&& {
     cursor: pointer;
@@ -146,6 +129,23 @@ const StyledExpansionTableRow = styled(TableRow)`
   }
 `;
 
+const StyledTableCellRow = styled(TableCell)`
+  &&& {
+    ${props => {
+      const { width } = props;
+      return width !== undefined
+        ? `
+        min-width: ${width};
+        max-width: ${width};
+        white-space: nowrap;
+        overflow-x: hidden;
+        text-overflow: ellipsis;
+      `
+        : '';
+    }};
+  }
+`;
+
 const TableBodyRow = ({
   id,
   tableId,
@@ -183,12 +183,12 @@ const TableBodyRow = ({
         const matchingColumnMeta = columns.find(column => column.id === col.columnId);
 
         return !col.isHidden ? (
-          <StyledTableCell
+          <StyledTableCellRow
             key={col.columnId}
             data-column={col.columnId}
             width={matchingColumnMeta.width}>
             <TableCellRenderer>{children[col.columnId]}</TableCellRenderer>
-          </StyledTableCell>
+          </StyledTableCellRow>
         ) : null;
       })}
       <RowActionsCell
