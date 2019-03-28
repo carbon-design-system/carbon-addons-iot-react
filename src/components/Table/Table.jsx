@@ -54,6 +54,18 @@ const propTypes = {
       pageSizes: PropTypes.arrayOf(PropTypes.number),
       page: PropTypes.number,
       totalItems: PropTypes.number,
+      backwardText: PropTypes.string,
+      forwardText: PropTypes.string,
+      /** (min, max, total) => `${min}-${max} of ${total} items` */
+      itemRangeText: PropTypes.func,
+      itemsPerPageText: PropTypes.string,
+      pageNumberText: PropTypes.string,
+      /** (current, total) => componentsX ? `of ${total} pages` : `${current} of ${total} pages` */
+      pageRangeText: PropTypes.func,
+      /** (min, max) => `${min}-${max} items` */
+      itemText: PropTypes.func,
+      /** page => `page ${page}` */
+      pageText: PropTypes.func,
     }),
     filters: PropTypes.arrayOf(
       PropTypes.shape({
@@ -63,21 +75,26 @@ const propTypes = {
     ),
     /** selection labels for translation */
     selection: PropTypes.shape({
-      selectAllLabel: PropTypes.string,
-      selectRowLabel: PropTypes.string,
+      selectAllText: PropTypes.string,
+      selectRowText: PropTypes.string,
     }),
     /** expansion labels for translation */
     expansion: PropTypes.shape({
-      clickToExpandLabel: PropTypes.string,
-      clickToCollapseLabel: PropTypes.string,
+      clickToExpandText: PropTypes.string,
+      clickToCollapseText: PropTypes.string,
     }),
     /** labels for row actions */
     rowActions: PropTypes.shape({
-      overflowMenuLabel: PropTypes.string,
+      overflowMenuText: PropTypes.string,
     }),
     toolbar: PropTypes.shape({
       /** Specify which header row to display, will display default header row if null */
       activeBar: PropTypes.oneOf(['filter', 'column']),
+      /** Internationalized labels */
+      clearAllFiltersText: PropTypes.string,
+      columnSelectionText: PropTypes.string,
+      filterText: PropTypes.string,
+      clearFilterText: PropTypes.string,
       /** Specify which batch actions to render in the batch action bar. If empty, no batch action toolbar will display */
       batchActions: PropTypes.arrayOf(
         PropTypes.shape({
@@ -240,6 +257,9 @@ const Table = props => {
     <div id={id}>
       <TableContainer>
         <TableToolbar
+          clearAllFiltersText={get(view, 'toolbar.clearAllFiltersText')}
+          columnSelectionText={get(view, 'toolbar.columnSelectionText')}
+          filterText={get(view, 'toolbar.filterText')}
           actions={pick(
             actions.toolbar,
             'onCancelBatchAction',
@@ -267,7 +287,12 @@ const Table = props => {
               ...pick(actions.toolbar, 'onApplyFilter'),
               ...pick(actions.table, 'onSelectAll', 'onChangeSort', 'onChangeOrdering'),
             }}
-            selectAllLabel={get(view, 'selection.selectAllLabel')}
+            selectAllText={get(view, 'selection.selectAllText')}
+            clearFilterText={get(view, 'toolbar.clearFilterText')}
+            filterText={get(view, 'toolbar.filterText')}
+            clearSelectionText={get(view, 'toolbar.clearSelectionText')}
+            openMenuText={get(view, 'toolbar.openMenuText')}
+            closeMenuText={get(view, 'toolbar.closeMenuText')}
             tableState={{
               activeBar: view.toolbar.activeBar,
               filters: view.filters,
@@ -292,10 +317,10 @@ const Table = props => {
               columns={visibleColumns}
               expandedIds={view.table.expandedIds}
               selectedIds={view.table.selectedIds}
-              selectRowLabel={get(view, 'selection.selectRowLabel')}
-              overflowMenuLabel={get(view, 'rowActions.overflowMenuLabel')}
-              clickToExpandLabel={get(view, 'expansion.clickToExpand')}
-              clickToCollapseLabel={get(view, 'expansion.clickToCollapse')}
+              selectRowText={get(view, 'selection.selectRowText')}
+              overflowMenuText={get(view, 'rowActions.overflowMenuText')}
+              clickToExpandText={get(view, 'expansion.clickToExpandText')}
+              clickToCollapseText={get(view, 'expansion.clickToCollapseText')}
               totalColumns={totalColumns}
               {...pick(options, 'hasRowSelection', 'hasRowExpansion', 'shouldExpandOnRowClick')}
               ordering={view.table.ordering}

@@ -18,13 +18,13 @@ const propTypes = {
   expandedIds: PropTypes.arrayOf(PropTypes.string),
   selectedIds: PropTypes.arrayOf(PropTypes.string),
   /** internationalized label */
-  selectRowLabel: PropTypes.string,
+  selectRowText: PropTypes.string,
   /** internationalized label */
-  overflowMenuLabel: PropTypes.string,
+  overflowMenuText: PropTypes.string,
   /** internationalized label */
-  clickToExpandLabel: PropTypes.string,
+  clickToExpandText: PropTypes.string,
   /** internationalized label */
-  clickToCollapseLabel: PropTypes.string,
+  clickToCollapseText: PropTypes.string,
   /** since some columns might not be currently visible */
   totalColumns: PropTypes.number,
   hasRowSelection: PropTypes.bool,
@@ -50,10 +50,10 @@ const propTypes = {
 const defaultProps = {
   expandedIds: [],
   selectedIds: [],
-  selectRowLabel: 'Select row',
-  overflowMenuLabel: 'More actions',
-  clickToExpandLabel: 'Click to expand.',
-  clickToCollapseLabel: 'Click to collapse.',
+  selectRowText: 'Select row',
+  overflowMenuText: 'More actions',
+  clickToExpandText: 'Click to expand.',
+  clickToCollapseText: 'Click to collapse.',
   rows: [],
   expandedRows: [],
   columns: [],
@@ -70,10 +70,10 @@ const TableBody = ({
   expandedIds,
   expandedRows,
   selectedIds,
-  selectRowLabel,
-  overflowMenuLabel,
-  clickToExpandLabel,
-  clickToCollapseLabel,
+  selectRowText,
+  overflowMenuText,
+  clickToExpandText,
+  clickToCollapseText,
   totalColumns,
   actions,
   hasRowSelection,
@@ -106,10 +106,10 @@ const TableBody = ({
                 : null
             }
             ordering={orderingMap}
-            selectRowLabel={selectRowLabel}
-            overflowMenuLabel={overflowMenuLabel}
-            clickToCollapseLabel={clickToCollapseLabel}
-            clickToExpandLabel={clickToExpandLabel}
+            selectRowText={selectRowText}
+            overflowMenuText={overflowMenuText}
+            clickToCollapseText={clickToCollapseText}
+            clickToExpandText={clickToExpandText}
             columns={columns}
             id={row.id}
             totalColumns={totalColumns}

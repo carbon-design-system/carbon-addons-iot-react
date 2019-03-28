@@ -22,8 +22,13 @@ const propTypes = {
   /** List of columns */
   columns: TableColumnsPropTypes.isRequired,
 
-  /** internationalized label for Select all checkbox */
-  selectAllLabel: PropTypes.string,
+  /** internationalized labels */
+  selectAllText: PropTypes.string,
+  clearFilterText: PropTypes.string,
+  filterText: PropTypes.string,
+  clearSelectionText: PropTypes.string,
+  openMenuText: PropTypes.string,
+  closeMenuText: PropTypes.string,
 
   /** Current state of the table */
   tableState: PropTypes.shape({
@@ -65,7 +70,12 @@ const propTypes = {
 const defaultProps = {
   options: {},
   lightweight: false,
-  selectAllLabel: 'Select all',
+  selectAllText: 'Select all',
+  clearFilterText: 'Clear filter',
+  filterText: 'Filter',
+  clearSelectionText: 'Clear selection',
+  openMenuText: 'Open menu',
+  closeMenuText: 'Close menu',
 };
 
 const StyledCheckboxTableHeader = styled(TableHeader)`
@@ -117,7 +127,12 @@ const TableHead = ({
     filters,
   },
   actions: { onSelectAll, onChangeSort, onApplyFilter, onChangeOrdering },
-  selectAllLabel,
+  selectAllText,
+  clearFilterText,
+  filterText,
+  clearSelectionText,
+  openMenuText,
+  closeMenuText,
   lightweight,
 }) => {
   const filterBarActive = activeBar === 'filter';
@@ -132,7 +147,7 @@ const TableHead = ({
                     https://github.com/IBM/carbon-components-react/issues/1088 */}
             <Checkbox
               id="select-all"
-              labelText={selectAllLabel}
+              labelText={selectAllText}
               hideLabel
               indeterminate={isSelectAllIndeterminate}
               checked={isSelectAllSelected}
@@ -173,6 +188,11 @@ const TableHead = ({
             isFilterable: !isNil(column.filter),
             width: column.width,
           }))}
+          clearFilterText={clearFilterText}
+          filterText={filterText}
+          clearSelectionText={clearSelectionText}
+          openMenuText={openMenuText}
+          closeMenuText={closeMenuText}
           ordering={ordering}
           key={JSON.stringify(filters)}
           filters={filters}

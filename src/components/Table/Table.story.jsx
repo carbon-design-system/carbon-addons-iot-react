@@ -2,8 +2,9 @@ import React from 'react';
 // import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { select, boolean } from '@storybook/addon-knobs';
+import { select, boolean, text } from '@storybook/addon-knobs';
 import styled from 'styled-components';
+import merge from 'lodash/merge';
 
 import { getSortedData } from '../../utils/componentUtilityFunctions';
 
@@ -57,7 +58,7 @@ const renderStatusIcon = ({ value: status }) => {
 export const tableColumns = [
   {
     id: 'string',
-    name: 'String this is a max width name okokokokokok',
+    name: 'String',
     filter: { placeholderText: 'pick a string' },
   },
   {
@@ -83,26 +84,6 @@ export const tableColumns = [
     id: 'number',
     name: 'Number',
     filter: { placeholderText: 'pick a number' },
-  },
-  {
-    id: 'test',
-    name: 'Test field',
-  },
-  {
-    id: 'test1',
-    name: 'test1',
-  },
-  {
-    id: 'test2',
-    name: 'test2',
-  },
-  {
-    id: 'test3',
-    name: 'test3',
-  },
-  {
-    id: 'test4',
-    name: 'test4',
   },
 ];
 
@@ -302,6 +283,66 @@ storiesOf('Table', module)
         {...initialState}
         actions={actions}
         lightweight={boolean('lightweight', false)}
+      />
+    ),
+    {
+      info: {
+        text:
+          'This is an example of the <StatefulTable> component that uses local state to handle all the table actions. This is produced by wrapping the <Table> in a container component and managing the state associated with features such the toolbar, filters, row select, etc. For more robust documentation on the prop model and source, see the other "with function" stories.',
+        propTables: [Table],
+        propTablesExclude: [StatefulTable],
+      },
+    }
+  )
+  .add(
+    'Stateful Example with I18N strings',
+    () => (
+      <StatefulTable
+        {...merge({}, initialState, {
+          view: {
+            selection: {
+              selectAllText: text('view.selection.selectAllText', 'My Select All'),
+              selectRowText: text('view.selection.selectRowText', 'My Select Row'),
+            },
+            expansion: {
+              clickToExpandText: text('view.expansion.clickToExpandText', 'My Click To Expand'),
+              clickToCollapseText: text(
+                'view.expansion.clickToCollapseText',
+                'My Click To Collapse'
+              ),
+            },
+            rowActions: {
+              overflowMenuText: text('view.rowActions.overflowMenuText', 'My More Actions'),
+            },
+            pagination: {
+              backwardText: text('view.pagination.backwardText', 'My previous page'),
+              forwardText: text('view.pagination.forwardText', 'My next page'),
+              /** (min, max, total) => `${min}-${max} of ${total} items` */
+              itemRangeText: (min, max, total) => `My ${min}-${max} of ${total}`,
+              itemsPerPageText: text('view.pagination.itemsPerPageText', 'My items per page'),
+              pageNumberText: text('view.pagination.pageNumberText', 'My page number'),
+              /** (current, total) => componentsX ? `of ${total} pages` : `${current} of ${total} pages` */
+              pageRangeText: (current, total) => `My ${current} of ${total} pages`,
+              /** (min, max) => `${min}-${max} items` */
+              itemText: (min, max) => `My ${min}-${max} items`,
+              /** page => `page ${page}` */
+              pageText: page => `My page ${page}`,
+            },
+            toolbar: {
+              clearAllFiltersText: text('view.toolbar.clearAllFiltersText', 'My Clear filters'),
+              columnSelectionText: text('view.toolbar.columnSelectionText', 'My column selection'),
+              filterText: text('view.toolbar.filterText', 'My filter'),
+              openMenuText: text('view.toolbar.openMenuText', 'My open menu'),
+              closeMenuText: text('view.toolbar.closeMenuText', 'My close menu'),
+              clearSelectionText: text('view.toolbar.clearSelectionText', 'My clear selection'),
+              clearFilterText: text('view.toolbar.clearFilterText', 'My Clear filter'),
+              search: {
+                placeHolderText: text('view.toolbar.search.placeHolderText', 'My Search2'),
+              },
+            },
+          },
+        })}
+        actions={actions}
       />
     ),
     {

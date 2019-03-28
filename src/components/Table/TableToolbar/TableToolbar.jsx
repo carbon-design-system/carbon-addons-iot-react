@@ -57,6 +57,10 @@ const propTypes = {
     hasSearch: PropTypes.bool,
     hasColumnSelection: PropTypes.bool,
   }).isRequired,
+  /** internationalized labels */
+  clearAllFiltersText: PropTypes.string,
+  columnSelectionText: PropTypes.string,
+  filterText: PropTypes.string,
   /**
    * Action callbacks to update tableState
    */
@@ -96,8 +100,17 @@ const propTypes = {
   }).isRequired,
 };
 
+const defaultProps = {
+  clearAllFiltersText: 'Clear all filters',
+  columnSelectionText: 'Column selection',
+  filterText: 'Filter',
+};
+
 const TableToolbar = ({
   className,
+  clearAllFiltersText,
+  columnSelectionText,
+  filterText,
   options: { hasColumnSelection, hasFilter, hasSearch },
   actions: {
     onCancelBatchAction,
@@ -127,16 +140,16 @@ const TableToolbar = ({
           </TableBatchAction>
         ))}
       </TableBatchActions>
-      {totalFilters > 0 ? ( // TODO: translate button
+      {totalFilters > 0 ? (
         <StyledClearFiltersButton kind="secondary" onClick={onClearAllFilters} small>
-          Clear All Filters
+          {clearAllFiltersText}
         </StyledClearFiltersButton>
       ) : null}
       {hasColumnSelection ? (
         <StyledTableToolbarAction
           className="bx--btn--sm"
           icon={iconGrid}
-          iconDescription="Column Selection"
+          iconDescription={columnSelectionText}
           isActive={activeBar === 'column'}
           onClick={onToggleColumnSelection}
         />
@@ -145,7 +158,7 @@ const TableToolbar = ({
         <StyledTableToolbarAction
           className="bx--btn--sm"
           icon={iconFilter}
-          iconDescription="Filter"
+          iconDescription={filterText}
           isActive={activeBar === 'filter'}
           onClick={onToggleFilter}
         />
@@ -155,5 +168,6 @@ const TableToolbar = ({
 );
 
 TableToolbar.propTypes = propTypes;
+TableToolbar.defaultProps = defaultProps;
 
 export default TableToolbar;

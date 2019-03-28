@@ -29,13 +29,13 @@ const propTypes = {
     })
   ).isRequired,
   /** internationalized label */
-  selectRowLabel: PropTypes.string,
+  selectRowText: PropTypes.string,
   /** internationalized label  */
-  overflowMenuLabel: PropTypes.string,
+  overflowMenuText: PropTypes.string,
   /** internationalized label */
-  clickToExpandLabel: PropTypes.string,
+  clickToExpandText: PropTypes.string,
   /** internationalized label  */
-  clickToCollapseLabel: PropTypes.string,
+  clickToCollapseText: PropTypes.string,
   /** List of columns */
   columns: TableColumnsPropTypes.isRequired,
   /** table wide options */
@@ -75,10 +75,10 @@ const propTypes = {
 const defaultProps = {
   isSelected: false,
   isExpanded: false,
-  selectRowLabel: 'Select row',
-  overflowMenuLabel: 'More actions',
-  clickToExpandLabel: 'Click to expand.',
-  clickToCollapseLabel: 'Click to collapse.',
+  selectRowText: 'Select row',
+  overflowMenuText: 'More actions',
+  clickToExpandText: 'Click to expand.',
+  clickToCollapseText: 'Click to collapse.',
   rowActions: null,
   rowDetails: null,
   options: {},
@@ -188,10 +188,10 @@ const TableBodyRow = ({
   tableActions: { onRowSelected, onRowExpanded, onRowClicked, onApplyRowAction },
   isExpanded,
   isSelected,
-  selectRowLabel,
-  overflowMenuLabel,
-  clickToExpandLabel,
-  clickToCollapseLabel,
+  selectRowText,
+  overflowMenuText,
+  clickToExpandText,
+  clickToCollapseText,
   children,
   rowActions,
   rowDetails,
@@ -208,7 +208,7 @@ const TableBodyRow = ({
       https://github.com/IBM/carbon-components-react/issues/1247
       Also move onClick logic above into TableSelectRow
       */}
-      <Checkbox id={`select-row-${id}`} labelText={selectRowLabel} hideLabel checked={isSelected} />
+      <Checkbox id={`select-row-${id}`} labelText={selectRowText} hideLabel checked={isSelected} />
     </StyledCheckboxTableCell>
   ) : null;
 
@@ -240,7 +240,7 @@ const TableBodyRow = ({
         id={id}
         actions={rowActions}
         isRowExpanded={isExpanded}
-        overflowMenuLabel={overflowMenuLabel}
+        overflowMenuText={overflowMenuText}
         onApplyRowAction={onApplyRowAction}
       />
     </React.Fragment>
@@ -250,8 +250,8 @@ const TableBodyRow = ({
       <React.Fragment key={id}>
         <StyledTableExpandRowExpanded
           id={`${tableId}-Row-${id}`}
-          ariaLabel={clickToCollapseLabel}
-          expandIconDescription={clickToCollapseLabel}
+          ariaLabel={clickToCollapseText}
+          expandIconDescription={clickToCollapseText}
           isExpanded
           onExpand={evt => stopPropagationAndCallback(evt, onRowExpanded, id, false)}
           onClick={() => {
@@ -270,8 +270,8 @@ const TableBodyRow = ({
       <StyledTableExpandRow
         id={`${tableId}-Row-${id}`}
         key={id}
-        ariaLabel={clickToExpandLabel}
-        expandIconDescription={clickToExpandLabel}
+        ariaLabel={clickToExpandText}
+        expandIconDescription={clickToExpandText}
         isExpanded={false}
         onExpand={evt => stopPropagationAndCallback(evt, onRowExpanded, id, true)}
         onClick={() => {
