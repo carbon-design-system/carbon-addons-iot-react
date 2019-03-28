@@ -4,6 +4,7 @@ import { DataTable, Checkbox } from 'carbon-components-react';
 import isNil from 'lodash/isNil';
 import styled from 'styled-components';
 
+import { TableColumnsPropTypes } from '../TablePropTypes';
 import TableCellRenderer from '../TableCellRenderer/TableCellRenderer';
 
 import ColumnHeaderRow from './ColumnHeaderRow/ColumnHeaderRow';
@@ -19,22 +20,7 @@ const propTypes = {
     hasRowActions: PropTypes.bool,
   }),
   /** List of columns */
-  columns: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired,
-      isSortable: PropTypes.bool,
-      filter: PropTypes.shape({
-        placeholderText: PropTypes.string,
-        options: PropTypes.arrayOf(
-          PropTypes.shape({
-            id: PropTypes.string.isRequired,
-            text: PropTypes.string.isRequired,
-          })
-        ),
-      }),
-    })
-  ).isRequired,
+  columns: TableColumnsPropTypes.isRequired,
 
   /** Current state of the table */
   tableState: PropTypes.shape({
@@ -78,6 +64,14 @@ const defaultProps = {
   lightweight: false,
 };
 
+const StyledCheckboxTableHeader = styled(TableHeader)`
+  &&& {
+    padding-left: 1rem;
+    padding-bottom: 0.5rem;
+    width: 2.5rem;
+  }
+`;
+
 const StyledCarbonTableHead = styled(({ lightweight, ...others }) => (
   <CarbonTableHead {...others} />
 ))`
@@ -89,11 +83,21 @@ const StyledCarbonTableHead = styled(({ lightweight, ...others }) => (
       }}
   }
 `;
-const StyledCheckboxTableHeader = styled(TableHeader)`
-  && {
-    padding-left: 1rem;
-    padding-bottom: 0.5rem;
-    width: 2.5rem;
+
+const StyledCustomTableHeader = styled(TableHeader)`
+  &&& {
+    ${props => {
+      const { width } = props;
+      return width !== undefined
+        ? `
+        min-width: ${width};
+        max-width: ${width};
+        white-space: nowrap;
+        overflow-x: hidden;
+        text-overflow: ellipsis;
+      `
+        : '';
+    }}
   }
 `;
 
@@ -112,6 +116,7 @@ const TableHead = ({
   lightweight,
 }) => {
   const filterBarActive = activeBar === 'filter';
+
   return (
     <StyledCarbonTableHead lightweight={`${lightweight}`}>
       <TableRow>
@@ -130,17 +135,19 @@ const TableHead = ({
             />
           </StyledCheckboxTableHeader>
         ) : null}
+
         {ordering.map(item => {
           const matchingColumnMeta = columns.find(column => column.id === item.columnId);
           const hasSort = sort && sort.columnId === matchingColumnMeta.id;
 
           return !item.isHidden ? (
-            <TableHeader
+            <StyledCustomTableHeader
               id={`column-${matchingColumnMeta.id}`}
               key={`column-${matchingColumnMeta.id}`}
               data-column={matchingColumnMeta.id}
               isSortable={matchingColumnMeta.isSortable}
               isSortHeader={hasSort}
+              width={matchingColumnMeta.width}
               onClick={() => {
                 if (matchingColumnMeta.isSortable && onChangeSort) {
                   onChangeSort(matchingColumnMeta.id);
@@ -148,7 +155,7 @@ const TableHead = ({
               }}
               sortDirection={hasSort ? sort.direction : 'NONE'}>
               <TableCellRenderer>{matchingColumnMeta.name}</TableCellRenderer>
-            </TableHeader>
+            </StyledCustomTableHeader>
           ) : null;
         })}
         {options.hasRowActions ? <TableHeader>&nbsp;</TableHeader> : null}
@@ -159,6 +166,7 @@ const TableHead = ({
             ...column.filter,
             id: column.id,
             isFilterable: !isNil(column.filter),
+            width: column.width,
           }))}
           ordering={ordering}
           key={JSON.stringify(filters)}

@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { select, boolean } from '@storybook/addon-knobs';
@@ -57,7 +57,7 @@ const renderStatusIcon = ({ value: status }) => {
 export const tableColumns = [
   {
     id: 'string',
-    name: 'String',
+    name: 'String this is a max width name okokokokokok',
     filter: { placeholderText: 'pick a string' },
   },
   {
@@ -83,6 +83,26 @@ export const tableColumns = [
     id: 'number',
     name: 'Number',
     filter: { placeholderText: 'pick a number' },
+  },
+  {
+    id: 'test',
+    name: 'Test field',
+  },
+  {
+    id: 'test1',
+    name: 'test1',
+  },
+  {
+    id: 'test2',
+    name: 'test2',
+  },
+  {
+    id: 'test3',
+    name: 'test3',
+  },
+  {
+    id: 'test4',
+    name: 'test4',
   },
 ];
 
@@ -649,63 +669,33 @@ storiesOf('Table', module)
   .add('zebra', () => <Table zebra columns={tableColumns} data={tableData} actions={actions} />)
   .add(
     'max column width',
-    () => {
-      const StyledTableColumn = styled(Table)`
-        &&& {
-          [data-column='string'] {
-            width: 100px;
-            max-width: 100px;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-            overflow-x: hidden;
-          }
-          [data-column='date'] {
-            max-width: 100px;
-            width: 100px;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-            overflow-x: hidden;
-          }
-        }
-      `;
-
-      // workaround for dumb prop types storybook issue
-      const TableColumnWidth = ({ children, ...props }) => (
-        <StyledTableColumn {...props}>{children}</StyledTableColumn>
-      );
-
-      TableColumnWidth.displayName = 'Table';
-      TableColumnWidth.propTypes = {
-        className: PropTypes.string,
-      };
-      TableColumnWidth.defaultProps = {
-        className: null,
-      };
-      return (
-        // You don't need to use styled components, just pass a className to the Table component and use selectors to find the correct column
-        <TableColumnWidth
-          columns={tableColumns}
-          options={{ hasFilter: true }}
-          data={tableData}
-          actions={actions}
-          view={{
-            filters: [
-              {
-                columnId: 'string',
-                value: 'whiteboard',
-              },
-              {
-                columnId: 'select',
-                value: 'option-B',
-              },
-            ],
-            toolbar: {
-              activeBar: select('activeBar', ['filter', 'column'], 'filter'),
+    () => (
+      // You don't need to use styled components, just pass a className to the Table component and use selectors to find the correct column
+      <Table
+        columns={tableColumns.map((i, idx) => ({
+          ...i,
+          width: idx % 2 === 0 ? '100px' : '5rem',
+        }))}
+        options={{ hasFilter: true }}
+        data={tableData}
+        actions={actions}
+        view={{
+          filters: [
+            {
+              columnId: 'string',
+              value: 'whiteboard',
             },
-          }}
-        />
-      );
-    },
+            {
+              columnId: 'select',
+              value: 'option-B',
+            },
+          ],
+          toolbar: {
+            activeBar: select('activeBar', ['filter', 'column'], 'filter'),
+          },
+        }}
+      />
+    ),
     {
       info: {
         source: false,

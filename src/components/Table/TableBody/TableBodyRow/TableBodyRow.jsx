@@ -6,78 +6,10 @@ import styled from 'styled-components';
 import { COLORS } from '../../../../styles/styles';
 import RowActionsCell from '../RowActionsCell/RowActionsCell';
 import TableCellRenderer from '../../TableCellRenderer/TableCellRenderer';
-import { RowActionPropTypes } from '../../TablePropTypes';
+import { RowActionPropTypes, TableColumnsPropTypes } from '../../TablePropTypes';
 import { stopPropagationAndCallback } from '../../../../utils/componentUtilityFunctions';
 
 const { TableRow, TableExpandRow, TableCell } = DataTable;
-
-const StyledTableExpandRow = styled(TableExpandRow)`
-  &&& {
-    cursor: pointer;
-    :hover {
-      td {
-        div > * {
-          opacity: 1;
-        }
-      }
-    }
-  }
-`;
-
-const StyledTableRow = styled(TableRow)`
-  &&& {
-    :hover {
-      td {
-        div > * {
-          opacity: 1;
-        }
-      }
-    }
-  }
-`;
-
-const StyledTableExpandRowExpanded = styled(TableExpandRow)`
-  &&& {
-    cursor: pointer;
-    td {
-      background-color: ${COLORS.blue};
-      border-color: ${COLORS.blue};
-      color: white;
-      button {
-        svg {
-          fill: white;
-        }
-      }
-      border-top: 1px solid ${COLORS.blue};
-      :first-of-type {
-        border-left: 1px solid ${COLORS.blue};
-      }
-      :last-of-type {
-        border-right: 1px solid ${COLORS.blue};
-      }
-    }
-  }
-`;
-
-const StyledExpansionTableRow = styled(TableRow)`
-  &&& {
-    td {
-      background-color: inherit;
-      border-left: 4px solid ${COLORS.blue};
-      border-width: 0 0 0 4px;
-      padding: 0;
-    }
-    :hover {
-      border: inherit;
-      background-color: inherit;
-      td {
-        background-color: inherit;
-        border-left: solid ${COLORS.blue};
-        border-width: 0 0 0 4px;
-      }
-    }
-  }
-`;
 
 const propTypes = {
   /** What column ordering is currently applied to the table */
@@ -96,6 +28,8 @@ const propTypes = {
       renderDataFunction: PropTypes.func,
     })
   ).isRequired,
+  /** List of columns */
+  columns: TableColumnsPropTypes.isRequired,
   /** table wide options */
   options: PropTypes.shape({
     hasRowSelection: PropTypes.bool,
@@ -146,11 +80,98 @@ const StyledCheckboxTableCell = styled(TableCell)`
   }
 `;
 
+const StyledTableRow = styled(TableRow)`
+  &&& {
+    :hover {
+      td {
+        div > * {
+          opacity: 1;
+        }
+      }
+    }
+  }
+`;
+
+const StyledTableExpandRow = styled(TableExpandRow)`
+  &&& {
+    cursor: pointer;
+    :hover {
+      td {
+        div > * {
+          opacity: 1;
+        }
+      }
+    }
+  }
+`;
+
+const StyledTableExpandRowExpanded = styled(TableExpandRow)`
+  &&& {
+    cursor: pointer;
+    td {
+      background-color: ${COLORS.blue};
+      border-color: ${COLORS.blue};
+      color: white;
+      button {
+        svg {
+          fill: white;
+        }
+      }
+      border-top: 1px solid ${COLORS.blue};
+      :first-of-type {
+        border-left: 1px solid ${COLORS.blue};
+      }
+      :last-of-type {
+        border-right: 1px solid ${COLORS.blue};
+      }
+    }
+  }
+`;
+
+const StyledExpansionTableRow = styled(TableRow)`
+  &&& {
+    td {
+      background-color: inherit;
+      border-left: 4px solid ${COLORS.blue};
+      border-width: 0 0 0 4px;
+      padding: 0;
+    }
+
+    :hover {
+      border: inherit;
+      background-color: inherit;
+      td {
+        background-color: inherit;
+        border-left: solid ${COLORS.blue};
+        border-width: 0 0 0 4px;
+      }
+    }
+  }
+`;
+
+const StyledTableCellRow = styled(TableCell)`
+  &&& {
+    ${props => {
+      const { width } = props;
+      return width !== undefined
+        ? `
+        min-width: ${width};
+        max-width: ${width};
+        white-space: nowrap;
+        overflow-x: hidden;
+        text-overflow: ellipsis;
+      `
+        : '';
+    }};
+  }
+`;
+
 const TableBodyRow = ({
   id,
   tableId,
   totalColumns,
   ordering,
+  columns,
   options: { hasRowSelection, hasRowExpansion, shouldExpandOnRowClick },
   tableActions: { onRowSelected, onRowExpanded, onRowClicked, onApplyRowAction },
   isExpanded,
@@ -178,12 +199,16 @@ const TableBodyRow = ({
   const tableCells = (
     <React.Fragment>
       {rowSelectionCell}
-
-      {ordering.map(col =>
-        !col.isHidden ? (
-          <TableCell key={col.columnId} data-column={col.columnId}>
-            {col.renderDataFunction ? ( // Call the column renderer if it's provided
+      {ordering.map(col => {
+        const matchingColumnMeta = columns && columns.find(column => column.id === col.columnId);
+        return !col.isHidden ? (
+          <StyledTableCellRow
+            key={col.columnId}
+            data-column={col.columnId}
+            width={matchingColumnMeta && matchingColumnMeta.width}>
+            {col.renderDataFunction ? (
               col.renderDataFunction({
+                // Call the column renderer if it's provided
                 value: children[col.columnId],
                 columnId: col.columnId,
                 rowId: id,
@@ -192,9 +217,9 @@ const TableBodyRow = ({
             ) : (
               <TableCellRenderer>{children[col.columnId]}</TableCellRenderer>
             )}
-          </TableCell>
-        ) : null
-      )}
+          </StyledTableCellRow>
+        ) : null;
+      })}
       <RowActionsCell
         id={id}
         actions={rowActions}

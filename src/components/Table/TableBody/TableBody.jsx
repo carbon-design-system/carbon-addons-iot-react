@@ -90,14 +90,11 @@ const TableBody = ({
                 : null
             }
             ordering={orderingMap}
+            columns={columns}
             id={row.id}
             totalColumns={totalColumns}
             tableId={id}
-            options={{
-              hasRowSelection,
-              hasRowExpansion,
-              shouldExpandOnRowClick,
-            }}
+            options={{ hasRowSelection, hasRowExpansion, shouldExpandOnRowClick }}
             tableActions={pick(
               actions,
               'onRowSelected',
