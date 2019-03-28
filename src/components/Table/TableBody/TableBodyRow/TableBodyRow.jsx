@@ -28,6 +28,14 @@ const propTypes = {
       renderDataFunction: PropTypes.func,
     })
   ).isRequired,
+  /** internationalized label */
+  selectRowLabel: PropTypes.string,
+  /** internationalized label  */
+  overflowMenuLabel: PropTypes.string,
+  /** internationalized label */
+  clickToExpandLabel: PropTypes.string,
+  /** internationalized label  */
+  clickToCollapseLabel: PropTypes.string,
   /** List of columns */
   columns: TableColumnsPropTypes.isRequired,
   /** table wide options */
@@ -67,6 +75,10 @@ const propTypes = {
 const defaultProps = {
   isSelected: false,
   isExpanded: false,
+  selectRowLabel: 'Select row',
+  overflowMenuLabel: 'More actions',
+  clickToExpandLabel: 'Click to expand.',
+  clickToCollapseLabel: 'Click to collapse.',
   rowActions: null,
   rowDetails: null,
   options: {},
@@ -176,6 +188,10 @@ const TableBodyRow = ({
   tableActions: { onRowSelected, onRowExpanded, onRowClicked, onApplyRowAction },
   isExpanded,
   isSelected,
+  selectRowLabel,
+  overflowMenuLabel,
+  clickToExpandLabel,
+  clickToCollapseLabel,
   children,
   rowActions,
   rowDetails,
@@ -192,7 +208,7 @@ const TableBodyRow = ({
       https://github.com/IBM/carbon-components-react/issues/1247
       Also move onClick logic above into TableSelectRow
       */}
-      <Checkbox id={`select-row-${id}`} labelText="Select Row" hideLabel checked={isSelected} />
+      <Checkbox id={`select-row-${id}`} labelText={selectRowLabel} hideLabel checked={isSelected} />
     </StyledCheckboxTableCell>
   ) : null;
 
@@ -224,6 +240,7 @@ const TableBodyRow = ({
         id={id}
         actions={rowActions}
         isRowExpanded={isExpanded}
+        overflowMenuLabel={overflowMenuLabel}
         onApplyRowAction={onApplyRowAction}
       />
     </React.Fragment>
@@ -233,7 +250,8 @@ const TableBodyRow = ({
       <React.Fragment key={id}>
         <StyledTableExpandRowExpanded
           id={`${tableId}-Row-${id}`}
-          ariaLabel="Expand Row"
+          ariaLabel={clickToCollapseLabel}
+          expandIconDescription={clickToCollapseLabel}
           isExpanded
           onExpand={evt => stopPropagationAndCallback(evt, onRowExpanded, id, false)}
           onClick={() => {
@@ -252,7 +270,8 @@ const TableBodyRow = ({
       <StyledTableExpandRow
         id={`${tableId}-Row-${id}`}
         key={id}
-        ariaLabel="Expand Row"
+        ariaLabel={clickToExpandLabel}
+        expandIconDescription={clickToExpandLabel}
         isExpanded={false}
         onExpand={evt => stopPropagationAndCallback(evt, onRowExpanded, id, true)}
         onClick={() => {

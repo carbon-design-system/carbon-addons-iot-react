@@ -73,6 +73,7 @@ export const TableColumnsPropTypes = PropTypes.arrayOf(
      * }, you should return the node that should render within that cell */
     renderDataFunction: PropTypes.func,
     filter: PropTypes.shape({
+      /** I18N text for the filter */
       placeholderText: PropTypes.string,
       options: PropTypes.arrayOf(
         PropTypes.shape({

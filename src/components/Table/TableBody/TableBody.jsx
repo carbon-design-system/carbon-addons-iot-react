@@ -17,6 +17,14 @@ const propTypes = {
   columns: TableColumnsPropTypes,
   expandedIds: PropTypes.arrayOf(PropTypes.string),
   selectedIds: PropTypes.arrayOf(PropTypes.string),
+  /** internationalized label */
+  selectRowLabel: PropTypes.string,
+  /** internationalized label */
+  overflowMenuLabel: PropTypes.string,
+  /** internationalized label */
+  clickToExpandLabel: PropTypes.string,
+  /** internationalized label */
+  clickToCollapseLabel: PropTypes.string,
   /** since some columns might not be currently visible */
   totalColumns: PropTypes.number,
   hasRowSelection: PropTypes.bool,
@@ -42,6 +50,10 @@ const propTypes = {
 const defaultProps = {
   expandedIds: [],
   selectedIds: [],
+  selectRowLabel: 'Select row',
+  overflowMenuLabel: 'More actions',
+  clickToExpandLabel: 'Click to expand.',
+  clickToCollapseLabel: 'Click to collapse.',
   rows: [],
   expandedRows: [],
   columns: [],
@@ -58,6 +70,10 @@ const TableBody = ({
   expandedIds,
   expandedRows,
   selectedIds,
+  selectRowLabel,
+  overflowMenuLabel,
+  clickToExpandLabel,
+  clickToCollapseLabel,
   totalColumns,
   actions,
   hasRowSelection,
@@ -90,6 +106,10 @@ const TableBody = ({
                 : null
             }
             ordering={orderingMap}
+            selectRowLabel={selectRowLabel}
+            overflowMenuLabel={overflowMenuLabel}
+            clickToCollapseLabel={clickToCollapseLabel}
+            clickToExpandLabel={clickToExpandLabel}
             columns={columns}
             id={row.id}
             totalColumns={totalColumns}

@@ -22,6 +22,9 @@ const propTypes = {
   /** List of columns */
   columns: TableColumnsPropTypes.isRequired,
 
+  /** internationalized label for Select all checkbox */
+  selectAllLabel: PropTypes.string,
+
   /** Current state of the table */
   tableState: PropTypes.shape({
     /** Which toolbar is currently active */
@@ -62,6 +65,7 @@ const propTypes = {
 const defaultProps = {
   options: {},
   lightweight: false,
+  selectAllLabel: 'Select all',
 };
 
 const StyledCheckboxTableHeader = styled(TableHeader)`
@@ -113,6 +117,7 @@ const TableHead = ({
     filters,
   },
   actions: { onSelectAll, onChangeSort, onApplyFilter, onChangeOrdering },
+  selectAllLabel,
   lightweight,
 }) => {
   const filterBarActive = activeBar === 'filter';
@@ -127,7 +132,7 @@ const TableHead = ({
                     https://github.com/IBM/carbon-components-react/issues/1088 */}
             <Checkbox
               id="select-all"
-              labelText="Select All"
+              labelText={selectAllLabel}
               hideLabel
               indeterminate={isSelectAllIndeterminate}
               checked={isSelectAllSelected}

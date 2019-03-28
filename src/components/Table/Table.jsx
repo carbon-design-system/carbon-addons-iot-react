@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import merge from 'lodash/merge';
 import pick from 'lodash/pick';
 import { PaginationV2, DataTable } from 'carbon-components-react';
+import get from 'lodash/get';
 
 import { defaultFunction } from '../../utils/componentUtilityFunctions';
 
@@ -45,6 +46,7 @@ const propTypes = {
     hasSearch: PropTypes.bool,
     hasColumnSelection: PropTypes.bool,
   }),
+
   /** Initial state of the table, should be updated via a local state wrapper component implementation or via a central store/redux see StatefulTable component for an example */
   view: PropTypes.shape({
     pagination: PropTypes.shape({
@@ -59,6 +61,20 @@ const propTypes = {
         value: PropTypes.string.isRequired,
       })
     ),
+    /** selection labels for translation */
+    selection: PropTypes.shape({
+      selectAllLabel: PropTypes.string,
+      selectRowLabel: PropTypes.string,
+    }),
+    /** expansion labels for translation */
+    expansion: PropTypes.shape({
+      clickToExpandLabel: PropTypes.string,
+      clickToCollapseLabel: PropTypes.string,
+    }),
+    /** labels for row actions */
+    rowActions: PropTypes.shape({
+      overflowMenuLabel: PropTypes.string,
+    }),
     toolbar: PropTypes.shape({
       /** Specify which header row to display, will display default header row if null */
       activeBar: PropTypes.oneOf(['filter', 'column']),
@@ -251,6 +267,7 @@ const Table = props => {
               ...pick(actions.toolbar, 'onApplyFilter'),
               ...pick(actions.table, 'onSelectAll', 'onChangeSort', 'onChangeOrdering'),
             }}
+            selectAllLabel={get(view, 'selection.selectAllLabel')}
             tableState={{
               activeBar: view.toolbar.activeBar,
               filters: view.filters,
@@ -275,6 +292,10 @@ const Table = props => {
               columns={visibleColumns}
               expandedIds={view.table.expandedIds}
               selectedIds={view.table.selectedIds}
+              selectRowLabel={get(view, 'selection.selectRowLabel')}
+              overflowMenuLabel={get(view, 'rowActions.overflowMenuLabel')}
+              clickToExpandLabel={get(view, 'expansion.clickToExpand')}
+              clickToCollapseLabel={get(view, 'expansion.clickToCollapse')}
               totalColumns={totalColumns}
               {...pick(options, 'hasRowSelection', 'hasRowExpansion', 'shouldExpandOnRowClick')}
               ordering={view.table.ordering}
