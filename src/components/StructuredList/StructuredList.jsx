@@ -81,12 +81,13 @@ const StructuredList = ({ columns, data, design, isFixedWidth, onRowClick, loadi
         {data.map(item => (
           <StructuredListRow key={`${item.id}-row`} onClick={() => onRowClick(item.id)}>
             {columns.map(col => (
-              <StructuredListCell
+              <StyledStructuredListCell
                 key={`${col.id}-item`}
                 noWrap
+                width={col.width}
                 style={design === 'normal' ? { lineHeight: '16px' } : {}}>
                 {item.values[col.id]}
-              </StructuredListCell>
+              </StyledStructuredListCell>
             ))}
           </StructuredListRow>
         ))}
