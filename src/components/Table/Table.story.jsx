@@ -57,7 +57,7 @@ const renderStatusIcon = ({ value: status }) => {
 export const tableColumns = [
   {
     id: 'string',
-    name: 'String this is a max width name okokokokokok',
+    name: 'String this is a max width name',
     filter: { placeholderText: 'pick a string' },
   },
   {
@@ -83,26 +83,6 @@ export const tableColumns = [
     id: 'number',
     name: 'Number',
     filter: { placeholderText: 'pick a number' },
-  },
-  {
-    id: 'test',
-    name: 'Test field',
-  },
-  {
-    id: 'test1',
-    name: 'test1',
-  },
-  {
-    id: 'test2',
-    name: 'test2',
-  },
-  {
-    id: 'test3',
-    name: 'test3',
-  },
-  {
-    id: 'test4',
-    name: 'test4',
   },
 ];
 
@@ -674,7 +654,7 @@ storiesOf('Table', module)
       <Table
         columns={tableColumns.map((i, idx) => ({
           ...i,
-          width: idx % 2 === 0 ? '100px' : '5rem',
+          width: idx % 2 === 0 ? '80px' : '5rem',
         }))}
         options={{ hasFilter: true }}
         data={tableData}
