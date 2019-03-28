@@ -222,24 +222,24 @@ const Table = props => {
     (options.hasRowActions ? 1 : 0);
   return (
     <div id={id}>
+      <TableToolbar
+        actions={pick(
+          actions.toolbar,
+          'onCancelBatchAction',
+          'onApplyBatchAction',
+          'onClearAllFilters',
+          'onToggleColumnSelection',
+          'onToggleFilter',
+          'onApplySearch'
+        )}
+        options={pick(options, 'hasColumnSelection', 'hasFilter', 'hasSearch')}
+        tableState={{
+          totalSelected: view.table.selectedIds.length,
+          totalFilters: view.filters ? view.filters.length : 0,
+          ...pick(view.toolbar, 'batchActions', 'search', 'activeBar'),
+        }}
+      />
       <TableContainer>
-        <TableToolbar
-          actions={pick(
-            actions.toolbar,
-            'onCancelBatchAction',
-            'onApplyBatchAction',
-            'onClearAllFilters',
-            'onToggleColumnSelection',
-            'onToggleFilter',
-            'onApplySearch'
-          )}
-          options={pick(options, 'hasColumnSelection', 'hasFilter', 'hasSearch')}
-          tableState={{
-            totalSelected: view.table.selectedIds.length,
-            totalFilters: view.filters ? view.filters.length : 0,
-            ...pick(view.toolbar, 'batchActions', 'search', 'activeBar'),
-          }}
-        />
         <CarbonTable {...others}>
           <TableHead
             {...others}

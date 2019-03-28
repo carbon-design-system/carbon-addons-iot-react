@@ -721,4 +721,58 @@ storiesOf('Table', module)
       actions={actions}
       lightweight={boolean('lightweight', true)}
     />
-  ));
+  ))
+  .add('horizontal scroll - custom width', () => {
+    const tableColumnsConcat = [
+      { id: 'test2', name: 'Test 2' },
+      { id: 'test3', name: 'Test 3' },
+      {
+        id: 'test4',
+        name: 'Test 4',
+      },
+    ];
+    // You don't n,eed to use styled components, just pass a className to the Table component and use selectors to find the correct column
+    return (
+      <div style={{ width: '800px' }}>
+        <Table
+          columns={tableColumns.concat(tableColumnsConcat)}
+          options={{ hasFilter: true }}
+          data={tableData}
+          actions={actions}
+          view={{
+            filters: [
+              { columnId: 'string', value: 'whiteboard' },
+              { columnId: 'select', value: 'option-B' },
+            ],
+            toolbar: { activeBar: select('activeBar', ['filter', 'column'], 'filter') },
+          }}
+        />
+      </div>
+    );
+  })
+  .add('horizontal scroll - full width', () => {
+    const tableColumnsConcat = [
+      { id: 'test2', name: 'Test 2' },
+      { id: 'test3', name: 'Test 3' },
+      {
+        id: 'test4',
+        name: 'Test 4',
+      },
+    ];
+    // You don't n,eed to use styled components, just pass a className to the Table component and use selectors to find the correct column
+    return (
+      <Table
+        columns={tableColumns.concat(tableColumnsConcat)}
+        options={{ hasFilter: true }}
+        data={tableData}
+        actions={actions}
+        view={{
+          filters: [
+            { columnId: 'string', value: 'whiteboard' },
+            { columnId: 'select', value: 'option-B' },
+          ],
+          toolbar: { activeBar: select('activeBar', ['filter', 'column'], 'filter') },
+        }}
+      />
+    );
+  });
