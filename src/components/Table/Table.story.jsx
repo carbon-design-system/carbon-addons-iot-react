@@ -2,7 +2,7 @@ import React from 'react';
 // import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { select, boolean, text } from '@storybook/addon-knobs';
+import { boolean, text } from '@storybook/addon-knobs';
 import styled from 'styled-components';
 import merge from 'lodash/merge';
 
@@ -692,7 +692,7 @@ storiesOf('Table', module)
       options={{ hasPagination: true }}
     />
   ))
-  .add('is loading', () => (
+  .add('with loading state', () => (
     <Table
       columns={tableColumns}
       data={tableData}
@@ -702,61 +702,37 @@ storiesOf('Table', module)
           ordering: defaultOrdering,
           loadingState: {
             isLoading: true,
+            rowCount: 7,
           },
         },
       }}
     />
   ))
-  .add('zebra', () => <Table zebra columns={tableColumns} data={tableData} actions={actions} />)
+  .add('with zebra striping', () => (
+    <Table zebra columns={tableColumns} data={tableData} actions={actions} />
+  ))
   .add(
-    'max column width',
+    'with fixed column width',
     () => (
       // You don't need to use styled components, just pass a className to the Table component and use selectors to find the correct column
       <Table
         columns={tableColumns.map((i, idx) => ({
+          width: idx % 2 === 0 ? '20rem' : '10rem',
           ...i,
-          width: idx % 2 === 0 ? '100px' : '5rem',
         }))}
-        options={{ hasFilter: true }}
         data={tableData}
         actions={actions}
-        view={{
-          filters: [
-            {
-              columnId: 'string',
-              value: 'whiteboard',
-            },
-            {
-              columnId: 'select',
-              value: 'option-B',
-            },
-          ],
-          toolbar: {
-            activeBar: select('activeBar', ['filter', 'column'], 'filter'),
-          },
-        }}
       />
     ),
     {
       info: {
-        source: false,
-        text: `This is an example of the <Table> component that has a max column width. Pass a custom className prop to the Table component and use a css selector to identify the correct column. In the example below, the column id we're setting max-width for is called 'string'.
-          
-        <Table className="my-custom-classname"/>
-          
-        .my-custom-classname [data-column='string'] { 
-          width: 100px; 
-          max-width: 100px;
-          white-space: nowrap;
-          text-overflow: ellipsis; 
-          overflow-x: hidden; 
-        }`,
+        source: true,
         propTables: false,
       },
     }
   )
   .add(
-    'custom row height',
+    'with custom row height',
     () => (
       // You don't need to use styled components, just pass a className to the Table component and use selectors to find the correct column
       <StyledTableCustomRowHeight columns={tableColumns} data={tableData} actions={actions} />
@@ -775,10 +751,11 @@ storiesOf('Table', module)
       },
     }
   )
-  .add('Lightweight Table', () => (
+  .add('with lightweight design', () => (
     <Table
       columns={tableColumns}
       data={tableData}
+      options={{ hasPagination: true }}
       actions={actions}
       lightweight={boolean('lightweight', true)}
     />
