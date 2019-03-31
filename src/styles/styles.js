@@ -1,5 +1,5 @@
 export const COLORS = {
-  superLightGray: '#f9fafb;',
+  superLightGray: '#f9fafb',
   darkGray: '#152935',
   darkGrayHover: '#2d3f48',
   gray: '#5a6872',

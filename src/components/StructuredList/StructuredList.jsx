@@ -14,6 +14,7 @@ const StructuredListWrapperStyled = styled(StructuredListWrapper)`
    {
     background-color: #ffffff;
     margin-bottom: 0;
+    ${props => (props.isFixedWidth ? 'width: inherit;' : '')}
 
     .bx--structured-list-th {
       padding-left: 16px;
@@ -44,18 +45,35 @@ const LoadingDiv = styled.div`
   }
 `;
 
+const StyledStructuredListCell = styled(StructuredListCell)`
+  &&& {
+    ${props => {
+      const { width } = props;
+      return width !== undefined
+        ? `
+        min-width: ${width};
+        max-width: ${width};
+        white-space: nowrap;
+        overflow-x: hidden;
+        text-overflow: ellipsis;
+      `
+        : '';
+    }}
+  }
+`;
+
 /**
  * Carbon Structured List simple with custom design and onClick
  */
-const StructuredList = ({ columns, data, design, onRowClick, loadingDataLabel }) => (
+const StructuredList = ({ columns, data, design, isFixedWidth, onRowClick, loadingDataLabel }) => (
   <Fragment>
-    <StructuredListWrapperStyled selection>
+    <StructuredListWrapperStyled selection isFixedWidth={isFixedWidth}>
       <StructuredListHead>
         <StructuredListRow head>
-          {columns.map(({ id, title }) => (
-            <StructuredListCell key={`${id}-column`} head>
+          {columns.map(({ id, title, width = undefined }) => (
+            <StyledStructuredListCell key={`${id}-column`} width={width} head>
               {title}
-            </StructuredListCell>
+            </StyledStructuredListCell>
           ))}
         </StructuredListRow>
       </StructuredListHead>
@@ -63,12 +81,13 @@ const StructuredList = ({ columns, data, design, onRowClick, loadingDataLabel })
         {data.map(item => (
           <StructuredListRow key={`${item.id}-row`} onClick={() => onRowClick(item.id)}>
             {columns.map(col => (
-              <StructuredListCell
+              <StyledStructuredListCell
                 key={`${col.id}-item`}
                 noWrap
+                width={col.width}
                 style={design === 'normal' ? { lineHeight: '16px' } : {}}>
                 {item.values[col.id]}
-              </StructuredListCell>
+              </StyledStructuredListCell>
             ))}
           </StructuredListRow>
         ))}
@@ -93,6 +112,7 @@ StructuredList.propTypes = {
     PropTypes.shape({
       id: PropTypes.string.isRequired,
       title: PropTypes.string.isRequired,
+      width: PropTypes.string,
     })
   ).isRequired,
   /** Array of data - table content */
@@ -102,6 +122,8 @@ StructuredList.propTypes = {
       values: PropTypes.shape(PropTypes.string.isRequired).isRequired,
     })
   ).isRequired,
+  /** If true, list will not take 100% of width */
+  isFixedWidth: PropTypes.bool,
   /** Callback for when row is clicked */
   onRowClick: PropTypes.func.isRequired,
   /** Text label for loading data */
@@ -110,6 +132,7 @@ StructuredList.propTypes = {
 
 StructuredList.defaultProps = {
   design: 'mini',
+  isFixedWidth: false,
   loadingDataLabel: '',
 };
 
