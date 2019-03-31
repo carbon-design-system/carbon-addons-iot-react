@@ -14,14 +14,18 @@ const StyledPageSection = styled.span`
   padding-right: 0.5rem;
 `;
 
-const StyledPageTitleH2 = styled.h2`
+const StyledPageTitleH2 = styled.h1`
   align-items: center;
   display: flex;
-  margin-bottom: 0.9em;
+  margin-bottom: 2em;
+  font-weight: 400;
+  line-height: 1.25rem;
 `;
 const StyledPageBlurb = styled.p`
   margin-bottom: 1rem;
   color: ${COLORS.gray};
+  font-size: 0.875rem;
+  line-height: 1.5rem;
 `;
 
 const propTypes = {
