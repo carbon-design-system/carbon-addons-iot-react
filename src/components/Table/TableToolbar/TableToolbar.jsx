@@ -126,7 +126,6 @@ const TableToolbar = ({
     {hasSearch ? (
       <TableToolbarSearch
         onChange={event => onApplySearch(event.currentTarget ? event.currentTarget.value : '')}
-        placeHolderText={search && search.placeholderText}
         {...search}
       />
     ) : null}

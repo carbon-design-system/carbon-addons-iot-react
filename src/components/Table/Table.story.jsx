@@ -305,7 +305,7 @@ storiesOf('Table', module)
             },
             toolbar: {
               search: {
-                placeholderText: text('view.toolbar.search.placeholderText', '__Search__'),
+                placeHolderText: text('view.toolbar.search.placeHolderText', '__Search__'),
               },
             },
           },
