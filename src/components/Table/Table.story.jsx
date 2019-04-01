@@ -4,7 +4,6 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { boolean, text } from '@storybook/addon-knobs';
 import styled from 'styled-components';
-import merge from 'lodash/merge';
 
 import { getSortedData } from '../../utils/componentUtilityFunctions';
 
@@ -268,9 +267,6 @@ export const initialState = {
           iconDescription: 'Delete',
         },
       ],
-      search: {
-        placeholderText: 'Search table',
-      },
     },
   },
 };
@@ -298,18 +294,7 @@ storiesOf('Table', module)
     'Stateful Example with I18N strings',
     () => (
       <StatefulTable
-        {...merge({}, initialState, {
-          view: {
-            rowActions: {
-              overflowMenuText: text('view.rowActions.overflowMenuText', '__More Actions__'),
-            },
-            toolbar: {
-              search: {
-                placeHolderText: text('view.toolbar.search.placeHolderText', '__Search__'),
-              },
-            },
-          },
-        })}
+        {...initialState}
         actions={actions}
         i18n={{
           /** pagination */
@@ -329,6 +314,7 @@ storiesOf('Table', module)
           selectRowAria: text('i18n.selectRowAria', '__Select row__'),
           /** toolbar */
           clearAllFilters: text('i18n.clearAllFilters', '__Clear all filters__'),
+          searchPlaceholder: text('i18n.searchPlaceholder', '__Search__'),
           columnSelectionButtonAria: text('i18n.columnSelectionButtonAria', '__Column Selection__'),
           filterButtonAria: text('i18n.filterButtonAria', '__Filters__'),
           clearFilterAria: text('i18n.clearFilterAria', '__Clear filter__'),

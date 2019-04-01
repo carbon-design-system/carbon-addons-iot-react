@@ -68,6 +68,7 @@ const propTypes = {
     hasColumnSelection: PropTypes.bool,
   }).isRequired,
   /** internationalized labels */
+  searchPlaceHolderText: PropTypes.string,
   clearAllFiltersText: PropTypes.string,
   columnSelectionText: PropTypes.string,
   filterText: PropTypes.string,
@@ -112,6 +113,7 @@ const propTypes = {
 
 const defaultProps = {
   clearAllFiltersText: 'Clear all filters',
+  searchPlaceHolderText: 'Search',
   columnSelectionText: 'Column selection',
   filterText: 'Filter',
 };
@@ -119,6 +121,7 @@ const defaultProps = {
 const TableToolbar = ({
   className,
   clearAllFiltersText,
+  searchPlaceHolderText,
   columnSelectionText,
   filterText,
   options: { hasColumnSelection, hasFilter, hasSearch },
@@ -135,8 +138,9 @@ const TableToolbar = ({
   <StyledCarbonTableToolbar className={className}>
     {hasSearch ? (
       <TableToolbarSearch
-        onChange={event => onApplySearch(event.currentTarget ? event.currentTarget.value : '')}
         {...search}
+        onChange={event => onApplySearch(event.currentTarget ? event.currentTarget.value : '')}
+        placeHolderText={searchPlaceHolderText}
       />
     ) : null}
     <StyledTableToolbarContent>

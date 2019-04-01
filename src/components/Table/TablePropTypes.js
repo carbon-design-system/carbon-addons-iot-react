@@ -106,6 +106,7 @@ export const I18NPropTypes = PropTypes.shape({
   selectAllAria: PropTypes.string,
   selectRowAria: PropTypes.string,
   /** toolbar */
+  searchPlaceholder: PropTypes.string,
   clearAllFilters: PropTypes.string,
   columnSelectionButtonAria: PropTypes.string,
   filterButtonAria: PropTypes.string,
@@ -117,6 +118,5 @@ export const I18NPropTypes = PropTypes.shape({
 });
 
 export const TableSearchPropTypes = PropTypes.shape({
-  placeHolderText: PropTypes.string,
   value: PropTypes.string,
 });
