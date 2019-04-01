@@ -211,9 +211,9 @@ export const defaultProps = baseProps => ({
     selectRowAria: 'Select row',
     /** toolbar */
     clearAllFilters: 'Clear all filters',
-    searchPlaceholder: 'Search',
     columnSelectionButtonAria: 'Column Selection',
     filterButtonAria: 'Filters',
+    searchPlaceholder: 'Search',
     clearFilterAria: 'Clear filter',
     filterAria: 'Filter',
     openMenuAria: 'Open menu',
@@ -265,7 +265,7 @@ const Table = props => {
         clearAllFiltersText={i18n.clearAllFilters}
         columnSelectionText={i18n.columnSelectionButtonAria}
         filterText={i18n.filterButtonAria}
-        searchPlaceHolderText={i18n.searchPlaceholder}
+        searchPlaceholderText={i18n.searchPlaceholder}
         actions={pick(
           actions.toolbar,
           'onCancelBatchAction',

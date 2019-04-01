@@ -68,7 +68,7 @@ const propTypes = {
     hasColumnSelection: PropTypes.bool,
   }).isRequired,
   /** internationalized labels */
-  searchPlaceHolderText: PropTypes.string,
+  searchPlaceholderText: PropTypes.string,
   clearAllFiltersText: PropTypes.string,
   columnSelectionText: PropTypes.string,
   filterText: PropTypes.string,
@@ -113,7 +113,7 @@ const propTypes = {
 
 const defaultProps = {
   clearAllFiltersText: 'Clear all filters',
-  searchPlaceHolderText: 'Search',
+  searchPlaceholderText: 'Search',
   columnSelectionText: 'Column selection',
   filterText: 'Filter',
 };
@@ -121,7 +121,7 @@ const defaultProps = {
 const TableToolbar = ({
   className,
   clearAllFiltersText,
-  searchPlaceHolderText,
+  searchPlaceholderText,
   columnSelectionText,
   filterText,
   options: { hasColumnSelection, hasFilter, hasSearch },
@@ -140,7 +140,7 @@ const TableToolbar = ({
       <TableToolbarSearch
         {...search}
         onChange={event => onApplySearch(event.currentTarget ? event.currentTarget.value : '')}
-        placeHolderText={searchPlaceHolderText}
+        placeHolderText={searchPlaceholderText}
       />
     ) : null}
     <StyledTableToolbarContent>
