@@ -171,12 +171,6 @@ export const defaultProps = baseProps => ({
       selectedIds: [],
       sort: {},
       ordering: baseProps.columns && baseProps.columns.map(i => ({ columnId: i.id })),
-      emptyState: {
-        message: 'There is no data',
-        messageWithFilters: 'No results match the current filters',
-        buttonLabel: 'Create some data',
-        buttonLabelWithFilters: 'Clear all filters',
-      },
       loadingState: {
         rowCount: 5,
       },
@@ -225,6 +219,11 @@ export const defaultProps = baseProps => ({
     openMenuAria: 'Open menu',
     closeMenuAria: 'Close menu',
     clearSelectionAria: 'Clear selection',
+    /** empty state */
+    emptyMessage: 'There is no data',
+    emptyMessageWithFilters: 'No results match the current filters',
+    emptyButtonLabel: 'Create some data',
+    emptyButtonLabelWithFilters: 'Clear all filters',
   },
 });
 
@@ -344,7 +343,15 @@ const Table = props => {
             <EmptyTable
               totalColumns={totalColumns}
               isFiltered={view.filters.length > 0}
-              emptyState={view.table.emptyState}
+              emptyState={
+                // Either use the custom element or the default labels
+                view.table.emptyState || {
+                  message: i18n.emptyMessage,
+                  messageWithFilters: i18n.emptyMessageWithFilters,
+                  buttonLabel: i18n.emptyButtonLabel,
+                  buttonLabelWithFilters: i18n.emptyButtonLabelWithFilters,
+                }
+              }
               onEmptyStateAction={actions.table.onEmptyStateAction}
             />
           )}

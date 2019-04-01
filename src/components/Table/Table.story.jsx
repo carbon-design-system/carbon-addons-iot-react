@@ -322,6 +322,14 @@ storiesOf('Table', module)
           openMenuAria: text('i18n.openMenuAria', '__Open menu__'),
           closeMenuAria: text('i18n.closeMenuAria', '__Close menu__'),
           clearSelectionAria: text('i18n.clearSelectionAria', '__Clear selection__'),
+          /** empty state */
+          emptyMessage: text('i18n.emptyMessage', '__There is no data__'),
+          emptyMessageWithFilters: text(
+            'i18n.emptyMessageWithFilters',
+            '__No results match the current filters__'
+          ),
+          emptyButtonLabel: text('i18n.emptyButtonLabel', '__Create some data__'),
+          emptyButtonLabelWithFilters: text('i18n.emptyButtonLabel', '__Clear all filters__'),
         }}
       />
     ),
