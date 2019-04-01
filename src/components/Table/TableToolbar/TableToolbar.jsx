@@ -35,6 +35,16 @@ const StyledTableToolbarAction = styled(({ isActive, ...other }) => (
   }
 `;
 
+const StyledCarbonTableToolbar = styled(CarbonTableToolbar)`
+   {
+    &&& {
+      width: 100%;
+      min-width: 31.25rem;
+      padding-top: 0.125rem;
+    }
+  }
+`;
+
 // Need to save one px on the right for the focus
 const StyledTableToolbarContent = styled(TableToolbarContent)`
   &&& {
@@ -109,7 +119,7 @@ const TableToolbar = ({
   },
   tableState: { totalSelected, totalFilters, batchActions, search, activeBar },
 }) => (
-  <CarbonTableToolbar className={className}>
+  <StyledCarbonTableToolbar className={className}>
     {hasSearch ? (
       <TableToolbarSearch
         onChange={event => onApplySearch(event.currentTarget ? event.currentTarget.value : '')}
@@ -151,7 +161,7 @@ const TableToolbar = ({
         />
       ) : null}
     </StyledTableToolbarContent>
-  </CarbonTableToolbar>
+  </StyledCarbonTableToolbar>
 );
 
 TableToolbar.propTypes = propTypes;
