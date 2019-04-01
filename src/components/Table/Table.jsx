@@ -261,27 +261,27 @@ const Table = props => {
     (options.hasRowActions ? 1 : 0);
   return (
     <div id={id}>
+      <TableToolbar
+        clearAllFiltersText={i18n.clearAllFilters}
+        columnSelectionText={i18n.columnSelectionButtonAria}
+        filterText={i18n.filterButtonAria}
+        actions={pick(
+          actions.toolbar,
+          'onCancelBatchAction',
+          'onApplyBatchAction',
+          'onClearAllFilters',
+          'onToggleColumnSelection',
+          'onToggleFilter',
+          'onApplySearch'
+        )}
+        options={pick(options, 'hasColumnSelection', 'hasFilter', 'hasSearch')}
+        tableState={{
+          totalSelected: view.table.selectedIds.length,
+          totalFilters: view.filters ? view.filters.length : 0,
+          ...pick(view.toolbar, 'batchActions', 'search', 'activeBar'),
+        }}
+      />
       <TableContainer>
-        <TableToolbar
-          clearAllFiltersText={i18n.clearAllFilters}
-          columnSelectionText={i18n.columnSelectionButtonAria}
-          filterText={i18n.filterButtonAria}
-          actions={pick(
-            actions.toolbar,
-            'onCancelBatchAction',
-            'onApplyBatchAction',
-            'onClearAllFilters',
-            'onToggleColumnSelection',
-            'onToggleFilter',
-            'onApplySearch'
-          )}
-          options={pick(options, 'hasColumnSelection', 'hasFilter', 'hasSearch')}
-          tableState={{
-            totalSelected: view.table.selectedIds.length,
-            totalFilters: view.filters ? view.filters.length : 0,
-            ...pick(view.toolbar, 'batchActions', 'search', 'activeBar'),
-          }}
-        />
         <CarbonTable {...others}>
           <TableHead
             {...others}
