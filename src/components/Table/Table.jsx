@@ -213,6 +213,7 @@ export const defaultProps = baseProps => ({
     clearAllFilters: 'Clear all filters',
     columnSelectionButtonAria: 'Column Selection',
     filterButtonAria: 'Filters',
+    searchPlaceHolder: 'Search',
     clearFilterAria: 'Clear filter',
     filterAria: 'Filter',
     openMenuAria: 'Open menu',
