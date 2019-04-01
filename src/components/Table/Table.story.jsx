@@ -314,7 +314,7 @@ storiesOf('Table', module)
           selectRowAria: text('i18n.selectRowAria', '__Select row__'),
           /** toolbar */
           clearAllFilters: text('i18n.clearAllFilters', '__Clear all filters__'),
-          searchPlaceHolder: text('i18n.searchPlaceHolder', '__Search__'),
+          searchPlaceholder: text('i18n.searchPlaceholder', '__Search__'),
           columnSelectionButtonAria: text('i18n.columnSelectionButtonAria', '__Column Selection__'),
           filterButtonAria: text('i18n.filterButtonAria', '__Filters__'),
           clearFilterAria: text('i18n.clearFilterAria', '__Clear filter__'),
