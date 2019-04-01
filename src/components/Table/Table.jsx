@@ -265,6 +265,7 @@ const Table = props => {
         clearAllFiltersText={i18n.clearAllFilters}
         columnSelectionText={i18n.columnSelectionButtonAria}
         filterText={i18n.filterButtonAria}
+        searchPlaceHolderText={i18n.searchPlaceHolder}
         actions={pick(
           actions.toolbar,
           'onCancelBatchAction',

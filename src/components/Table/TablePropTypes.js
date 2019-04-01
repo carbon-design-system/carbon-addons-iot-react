@@ -117,6 +117,5 @@ export const I18NPropTypes = PropTypes.shape({
 });
 
 export const TableSearchPropTypes = PropTypes.shape({
-  placeHolderText: PropTypes.string,
   value: PropTypes.string,
 });
