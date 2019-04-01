@@ -269,7 +269,7 @@ export const initialState = {
         },
       ],
       search: {
-        placeHolderText: 'My Search',
+        placeholderText: 'Search table',
       },
     },
   },
@@ -300,49 +300,43 @@ storiesOf('Table', module)
       <StatefulTable
         {...merge({}, initialState, {
           view: {
-            selection: {
-              selectAllText: text('view.selection.selectAllText', 'My Select All'),
-              selectRowText: text('view.selection.selectRowText', 'My Select Row'),
-            },
-            expansion: {
-              clickToExpandText: text('view.expansion.clickToExpandText', 'My Click To Expand'),
-              clickToCollapseText: text(
-                'view.expansion.clickToCollapseText',
-                'My Click To Collapse'
-              ),
-            },
             rowActions: {
-              overflowMenuText: text('view.rowActions.overflowMenuText', 'My More Actions'),
-            },
-            pagination: {
-              backwardText: text('view.pagination.backwardText', 'My previous page'),
-              forwardText: text('view.pagination.forwardText', 'My next page'),
-              /** (min, max, total) => `${min}-${max} of ${total} items` */
-              itemRangeText: (min, max, total) => `My ${min}-${max} of ${total}`,
-              itemsPerPageText: text('view.pagination.itemsPerPageText', 'My items per page'),
-              pageNumberText: text('view.pagination.pageNumberText', 'My page number'),
-              /** (current, total) => componentsX ? `of ${total} pages` : `${current} of ${total} pages` */
-              pageRangeText: (current, total) => `My ${current} of ${total} pages`,
-              /** (min, max) => `${min}-${max} items` */
-              itemText: (min, max) => `My ${min}-${max} items`,
-              /** page => `page ${page}` */
-              pageText: page => `My page ${page}`,
+              overflowMenuText: text('view.rowActions.overflowMenuText', '__More Actions__'),
             },
             toolbar: {
-              clearAllFiltersText: text('view.toolbar.clearAllFiltersText', 'My Clear filters'),
-              columnSelectionText: text('view.toolbar.columnSelectionText', 'My column selection'),
-              filterText: text('view.toolbar.filterText', 'My filter'),
-              openMenuText: text('view.toolbar.openMenuText', 'My open menu'),
-              closeMenuText: text('view.toolbar.closeMenuText', 'My close menu'),
-              clearSelectionText: text('view.toolbar.clearSelectionText', 'My clear selection'),
-              clearFilterText: text('view.toolbar.clearFilterText', 'My Clear filter'),
               search: {
-                placeHolderText: text('view.toolbar.search.placeHolderText', 'My Search2'),
+                placeholderText: text('view.toolbar.search.placeholderText', '__Search__'),
               },
             },
           },
         })}
         actions={actions}
+        i18n={{
+          /** pagination */
+          pageBackwardAria: text('i18n.pageBackwardAria', '__Previous page__'),
+          pageForwardAria: text('i18n.pageForwardAria', '__Next page__'),
+          pageNumberAria: text('i18n.pageNumberAria', '__Page Number__'),
+          itemsPerPage: text('i18n.itemsPerPage', '__Items per page:__'),
+          itemsRange: (min, max) => `__${min}–${max} items__`,
+          currentPage: page => `__page ${page}__`,
+          itemsRangeWithTotal: (min, max, total) => `__${min}–${max} of ${total} items__`,
+          pageRange: (current, total) => `__${current} of ${total} pages__`,
+          /** table body */
+          overflowMenuAria: text('i18n.overflowMenuAria', '__More actions__'),
+          clickToExpandAria: text('i18n.clickToExpandAria', '__Click to expand content__'),
+          clickToCollapseAria: text('i18n.clickToCollapseAria', '__Click to collapse content__'),
+          selectAllAria: text('i18n.selectAllAria', '__Select all items__'),
+          selectRowAria: text('i18n.selectRowAria', '__Select row__'),
+          /** toolbar */
+          clearAllFilters: text('i18n.clearAllFilters', '__Clear all filters__'),
+          columnSelectionButtonAria: text('i18n.columnSelectionButtonAria', '__Column Selection__'),
+          filterButtonAria: text('i18n.filterButtonAria', '__Filters__'),
+          clearFilterAria: text('i18n.clearFilterAria', '__Clear filter__'),
+          filterAria: text('i18n.filterAria', '__Filter__'),
+          openMenuAria: text('i18n.openMenuAria', '__Open menu__'),
+          closeMenuAria: text('i18n.closeMenuAria', '__Close menu__'),
+          clearSelectionAria: text('i18n.clearSelectionAria', '__Clear selection__'),
+        }}
       />
     ),
     {

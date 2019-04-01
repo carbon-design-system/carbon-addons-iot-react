@@ -13,6 +13,7 @@ import {
   ExpandedRowsPropTypes,
   EmptyStatePropTypes,
   TableSearchPropTypes,
+  I18NPropTypes,
 } from './TablePropTypes';
 import TableHead from './TableHead/TableHead';
 import TableToolbar from './TableToolbar/TableToolbar';
@@ -54,18 +55,6 @@ const propTypes = {
       pageSizes: PropTypes.arrayOf(PropTypes.number),
       page: PropTypes.number,
       totalItems: PropTypes.number,
-      backwardText: PropTypes.string,
-      forwardText: PropTypes.string,
-      /** (min, max, total) => `${min}-${max} of ${total} items` */
-      itemRangeText: PropTypes.func,
-      itemsPerPageText: PropTypes.string,
-      pageNumberText: PropTypes.string,
-      /** (current, total) => componentsX ? `of ${total} pages` : `${current} of ${total} pages` */
-      pageRangeText: PropTypes.func,
-      /** (min, max) => `${min}-${max} items` */
-      itemText: PropTypes.func,
-      /** page => `page ${page}` */
-      pageText: PropTypes.func,
     }),
     filters: PropTypes.arrayOf(
       PropTypes.shape({
@@ -73,28 +62,9 @@ const propTypes = {
         value: PropTypes.string.isRequired,
       })
     ),
-    /** selection labels for translation */
-    selection: PropTypes.shape({
-      selectAllText: PropTypes.string,
-      selectRowText: PropTypes.string,
-    }),
-    /** expansion labels for translation */
-    expansion: PropTypes.shape({
-      clickToExpandText: PropTypes.string,
-      clickToCollapseText: PropTypes.string,
-    }),
-    /** labels for row actions */
-    rowActions: PropTypes.shape({
-      overflowMenuText: PropTypes.string,
-    }),
     toolbar: PropTypes.shape({
       /** Specify which header row to display, will display default header row if null */
       activeBar: PropTypes.oneOf(['filter', 'column']),
-      /** Internationalized labels */
-      clearAllFiltersText: PropTypes.string,
-      columnSelectionText: PropTypes.string,
-      filterText: PropTypes.string,
-      clearFilterText: PropTypes.string,
       /** Specify which batch actions to render in the batch action bar. If empty, no batch action toolbar will display */
       batchActions: PropTypes.arrayOf(
         PropTypes.shape({
@@ -167,7 +137,9 @@ const propTypes = {
       onChangeOrdering: PropTypes.func,
     }).isRequired,
   }),
+  i18n: I18NPropTypes,
 };
+
 export const defaultProps = baseProps => ({
   id: 'Table',
   zebra: false,
@@ -191,6 +163,7 @@ export const defaultProps = baseProps => ({
     filters: [],
     toolbar: {
       batchActions: [],
+      search: {},
     },
     table: {
       expandedIds: [],
@@ -226,14 +199,47 @@ export const defaultProps = baseProps => ({
       onChangeOrdering: defaultFunction('actions.table.onChangeOrdering'),
     },
   },
+  i18n: {
+    /** pagination */
+    pageBackwardAria: 'Previous page',
+    pageForwardAria: 'Next page',
+    pageNumberAria: 'Page Number',
+    itemsPerPage: 'Items per page:',
+    itemsRange: (min, max) => `${min}–${max} items`,
+    currentPage: page => `page ${page}`,
+    itemsRangeWithTotal: (min, max, total) => `${min}–${max} of ${total} items`,
+    pageRange: (current, total) => `${current} of ${total} pages`,
+    /** table body */
+    overflowMenuAria: 'More actions',
+    clickToExpandAria: 'Click to expand content',
+    clickToCollapseAria: 'Click to collapse content',
+    selectAllAria: 'Select all items',
+    selectRowAria: 'Select row',
+    /** toolbar */
+    clearAllFilters: 'Clear all filters',
+    columnSelectionButtonAria: 'Column Selection',
+    filterButtonAria: 'Filters',
+    clearFilterAria: 'Clear filter',
+    filterAria: 'Filter',
+    openMenuAria: 'Open menu',
+    closeMenuAria: 'Close menu',
+    clearSelectionAria: 'Clear selection',
+  },
 });
 
 const Table = props => {
-  const { id, columns, data, expandedData, view, actions, options, lightweight, ...others } = merge(
-    {},
-    defaultProps(props),
-    props
-  );
+  const {
+    id,
+    columns,
+    data,
+    expandedData,
+    view,
+    actions,
+    options,
+    lightweight,
+    i18n,
+    ...others
+  } = merge({}, defaultProps(props), props);
 
   const minItemInView =
     options.hasPagination && view.pagination
@@ -257,9 +263,9 @@ const Table = props => {
     <div id={id}>
       <TableContainer>
         <TableToolbar
-          clearAllFiltersText={get(view, 'toolbar.clearAllFiltersText')}
-          columnSelectionText={get(view, 'toolbar.columnSelectionText')}
-          filterText={get(view, 'toolbar.filterText')}
+          clearAllFiltersText={i18n.clearAllFilters}
+          columnSelectionText={i18n.columnSelectionButtonAria}
+          filterText={i18n.filterButtonAria}
           actions={pick(
             actions.toolbar,
             'onCancelBatchAction',
@@ -287,12 +293,12 @@ const Table = props => {
               ...pick(actions.toolbar, 'onApplyFilter'),
               ...pick(actions.table, 'onSelectAll', 'onChangeSort', 'onChangeOrdering'),
             }}
-            selectAllText={get(view, 'selection.selectAllText')}
-            clearFilterText={get(view, 'toolbar.clearFilterText')}
-            filterText={get(view, 'toolbar.filterText')}
-            clearSelectionText={get(view, 'toolbar.clearSelectionText')}
-            openMenuText={get(view, 'toolbar.openMenuText')}
-            closeMenuText={get(view, 'toolbar.closeMenuText')}
+            selectAllText={i18n.selectAllAria}
+            clearFilterText={i18n.clearFilterAria}
+            filterText={i18n.filterAria}
+            clearSelectionText={i18n.clearSelectionAria}
+            openMenuText={i18n.openMenuAria}
+            closeMenuText={i18n.closeMenuAria}
             tableState={{
               activeBar: view.toolbar.activeBar,
               filters: view.filters,
@@ -318,9 +324,9 @@ const Table = props => {
               expandedIds={view.table.expandedIds}
               selectedIds={view.table.selectedIds}
               selectRowText={get(view, 'selection.selectRowText')}
-              overflowMenuText={get(view, 'rowActions.overflowMenuText')}
-              clickToExpandText={get(view, 'expansion.clickToExpandText')}
-              clickToCollapseText={get(view, 'expansion.clickToCollapseText')}
+              overflowMenuText={i18n.overflowMenuAria}
+              clickToExpandText={i18n.clickToExpandAria}
+              clickToCollapseText={i18n.clickToCollapseAria}
               totalColumns={totalColumns}
               {...pick(options, 'hasRowSelection', 'hasRowExpansion', 'shouldExpandOnRowClick')}
               ordering={view.table.ordering}
@@ -344,7 +350,18 @@ const Table = props => {
       </TableContainer>
 
       {options.hasPagination && !view.table.loadingState.isLoading ? ( // don't show pagination row while loading
-        <PaginationV2 {...view.pagination} onChange={actions.pagination.onChangePage} />
+        <PaginationV2
+          {...view.pagination}
+          onChange={actions.pagination.onChangePage}
+          backwardText={i18n.pageBackwardAria}
+          forwardText={i18n.pageForwardAria}
+          pageNumberText={i18n.pageNumberAria}
+          itemsPerPageText={i18n.itemsPerPage}
+          itemText={i18n.itemsRange}
+          itemRangeText={i18n.itemsRangeWithTotal}
+          pageText={i18n.currentPage}
+          pageRangeText={i18n.pageRange}
+        />
       ) : null}
     </div>
   );

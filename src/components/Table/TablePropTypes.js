@@ -85,7 +85,38 @@ export const TableColumnsPropTypes = PropTypes.arrayOf(
   })
 );
 
+export const I18NPropTypes = PropTypes.shape({
+  /** pagination */
+  pageBackwardAria: PropTypes.string,
+  pageForwardAria: PropTypes.string,
+  pageNumberAria: PropTypes.string,
+  itemsPerPage: PropTypes.string,
+  /** (min, max) => `${min}-${max} items` */
+  itemsRange: PropTypes.func,
+  /** page => `page ${page}` */
+  currentPage: PropTypes.func,
+  /** (min, max, total) => `${min}-${max} of ${total} items` */
+  itemsRangeWithTotal: PropTypes.func,
+  /** (current, total) => `${current} of ${total} pages` */
+  /** table body */
+  pageRange: PropTypes.func,
+  overflowMenuAria: PropTypes.string,
+  clickToExpandAria: PropTypes.string,
+  clickToCollapseAria: PropTypes.string,
+  selectAllAria: PropTypes.string,
+  selectRowAria: PropTypes.string,
+  /** toolbar */
+  clearAllFilters: PropTypes.string,
+  columnSelectionButtonAria: PropTypes.string,
+  filterButtonAria: PropTypes.string,
+  clearFilterAria: PropTypes.string,
+  filterAria: PropTypes.string,
+  openMenuAria: PropTypes.string,
+  closeMenuAria: PropTypes.string,
+  clearSelectionAria: PropTypes.string,
+});
+
 export const TableSearchPropTypes = PropTypes.shape({
-  placeHolderText: PropTypes.string,
+  placeholderText: PropTypes.string,
   value: PropTypes.string,
 });
