@@ -29,7 +29,7 @@ export const EmptyStatePropTypes = PropTypes.oneOfType([
     messageWithFilters: PropTypes.string,
     /* If a label is not provided, no action button will be rendered */
     buttonLabel: PropTypes.string,
-    /* Show a different utton label if no content is in the table matching the filters */
+    /* Show a different button label if no content is in the table matching the filters */
     buttonLabelWithFilters: PropTypes.string,
   }),
   /* If a React element is provided, it will be rendered in place of the default */
