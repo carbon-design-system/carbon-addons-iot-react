@@ -20,9 +20,8 @@ const commonTableHeadProps = {
   onChangeOrdering: jest.fn(),
 };
 
-const wrapInTestContext = DecoratedComponent => {
-  return DragDropContext(TestBackend)(() => <DecoratedComponent {...commonTableHeadProps} />);
-};
+const wrapInTestContext = DecoratedComponent =>
+  DragDropContext(TestBackend)(() => <DecoratedComponent {...commonTableHeadProps} />);
 
 let wrapper;
 let backend;

@@ -58,7 +58,7 @@ describe('FilterHeaderRow', () => {
       />
     );
     wrapper.find('input').simulate('change', { target: { value: 'mytext' } });
-    wrapper.find('[title="Clear Filter"]').simulate('click');
+    wrapper.find('[title="Clear filter"]').simulate('click');
     expect(wrapper.state()).toEqual({ col1: '' });
   });
 });

@@ -17,6 +17,14 @@ const propTypes = {
   columns: TableColumnsPropTypes,
   expandedIds: PropTypes.arrayOf(PropTypes.string),
   selectedIds: PropTypes.arrayOf(PropTypes.string),
+  /** internationalized label */
+  selectRowText: PropTypes.string,
+  /** internationalized label */
+  overflowMenuText: PropTypes.string,
+  /** internationalized label */
+  clickToExpandText: PropTypes.string,
+  /** internationalized label */
+  clickToCollapseText: PropTypes.string,
   /** since some columns might not be currently visible */
   totalColumns: PropTypes.number,
   hasRowSelection: PropTypes.bool,
@@ -42,6 +50,10 @@ const propTypes = {
 const defaultProps = {
   expandedIds: [],
   selectedIds: [],
+  selectRowText: 'Select row',
+  overflowMenuText: 'More actions',
+  clickToExpandText: 'Click to expand.',
+  clickToCollapseText: 'Click to collapse.',
   rows: [],
   expandedRows: [],
   columns: [],
@@ -58,6 +70,10 @@ const TableBody = ({
   expandedIds,
   expandedRows,
   selectedIds,
+  selectRowText,
+  overflowMenuText,
+  clickToExpandText,
+  clickToCollapseText,
   totalColumns,
   actions,
   hasRowSelection,
@@ -90,14 +106,15 @@ const TableBody = ({
                 : null
             }
             ordering={orderingMap}
+            selectRowText={selectRowText}
+            overflowMenuText={overflowMenuText}
+            clickToCollapseText={clickToCollapseText}
+            clickToExpandText={clickToExpandText}
+            columns={columns}
             id={row.id}
             totalColumns={totalColumns}
             tableId={id}
-            options={{
-              hasRowSelection,
-              hasRowExpansion,
-              shouldExpandOnRowClick,
-            }}
+            options={{ hasRowSelection, hasRowExpansion, shouldExpandOnRowClick }}
             tableActions={pick(
               actions,
               'onRowSelected',

@@ -29,7 +29,7 @@ export const EmptyStatePropTypes = PropTypes.oneOfType([
     messageWithFilters: PropTypes.string,
     /* If a label is not provided, no action button will be rendered */
     buttonLabel: PropTypes.string,
-    /* Show a different utton label if no content is in the table matching the filters */
+    /* Show a different button label if no content is in the table matching the filters */
     buttonLabelWithFilters: PropTypes.string,
   }),
   /* If a React element is provided, it will be rendered in place of the default */
@@ -63,6 +63,7 @@ export const TableColumnsPropTypes = PropTypes.arrayOf(
     id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     isSortable: PropTypes.bool,
+    width: PropTypes.string, // ex: 150px, or 2rem
     /** for each column you can register a render callback function that is called with this object payload
      * {
      *    value: PropTypes.any (current cell value),
@@ -72,6 +73,7 @@ export const TableColumnsPropTypes = PropTypes.arrayOf(
      * }, you should return the node that should render within that cell */
     renderDataFunction: PropTypes.func,
     filter: PropTypes.shape({
+      /** I18N text for the filter */
       placeholderText: PropTypes.string,
       options: PropTypes.arrayOf(
         PropTypes.shape({
@@ -83,7 +85,38 @@ export const TableColumnsPropTypes = PropTypes.arrayOf(
   })
 );
 
+export const I18NPropTypes = PropTypes.shape({
+  /** pagination */
+  pageBackwardAria: PropTypes.string,
+  pageForwardAria: PropTypes.string,
+  pageNumberAria: PropTypes.string,
+  itemsPerPage: PropTypes.string,
+  /** (min, max) => `${min}-${max} items` */
+  itemsRange: PropTypes.func,
+  /** page => `page ${page}` */
+  currentPage: PropTypes.func,
+  /** (min, max, total) => `${min}-${max} of ${total} items` */
+  itemsRangeWithTotal: PropTypes.func,
+  /** (current, total) => `${current} of ${total} pages` */
+  /** table body */
+  pageRange: PropTypes.func,
+  overflowMenuAria: PropTypes.string,
+  clickToExpandAria: PropTypes.string,
+  clickToCollapseAria: PropTypes.string,
+  selectAllAria: PropTypes.string,
+  selectRowAria: PropTypes.string,
+  /** toolbar */
+  searchPlaceholder: PropTypes.string,
+  clearAllFilters: PropTypes.string,
+  columnSelectionButtonAria: PropTypes.string,
+  filterButtonAria: PropTypes.string,
+  clearFilterAria: PropTypes.string,
+  filterAria: PropTypes.string,
+  openMenuAria: PropTypes.string,
+  closeMenuAria: PropTypes.string,
+  clearSelectionAria: PropTypes.string,
+});
+
 export const TableSearchPropTypes = PropTypes.shape({
-  placeHolderText: PropTypes.string,
   value: PropTypes.string,
 });
