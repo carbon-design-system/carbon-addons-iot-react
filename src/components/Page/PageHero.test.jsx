@@ -11,10 +11,9 @@ const commonPageHeroProps = {
   rightContent: <div>Right Content</div>,
 };
 
-describe('Structured List', () => {
+describe('Page Hero', () => {
   // handle click function test
-  test('onRowClick', () => {
-    const onClick = jest.fn();
+  test('onClick switcher', () => {
     const commonSwitchProps = {
       onChange: jest.fn(),
       switcher: [
@@ -24,26 +23,21 @@ describe('Structured List', () => {
           onClick: jest.fn(),
           disabled: null,
         },
-
-        {
-          switcherId: 'diagnose',
-          switcherText: 'Diagnose',
-          onClick,
-          disabled: null,
-        },
+        { switcherId: 'diagnose', switcherText: 'Diagnose', onClick: jest.fn(), disabled: null },
       ],
     };
     const wrapper = mount(<PageHero {...commonPageHeroProps} switchers={commonSwitchProps} />);
-    console.log(
-      wrapper
-        .find('Switch[onClick]')
-        .last()
-        .debug()
-    );
+
     wrapper
       .find('Switch[onClick]')
       .last()
       .simulate('click');
-    expect(onClick.mock.calls).toHaveLength(1);
+
+    expect(
+      wrapper
+        .find('Switch[onClick]')
+        .last()
+        .props().selected
+    ).toEqual(true);
   });
 });
