@@ -4,6 +4,7 @@ import {
   HeaderGlobalBar,
   HeaderGlobalAction,
   SkipToContent,
+  HeaderMenu,
   HeaderMenuItem,
   HeaderNavigation,
 } from 'carbon-components-react//lib/components/UIShell';
@@ -12,13 +13,12 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import HeaderMenu from '../HeaderMenu';
+// import HeaderMenu from '../HeaderMenu';
 import { COLORS } from '../../styles/styles';
 
 const StyledHeader = styled(CarbonHeader)`
    {
     background-color: ${COLORS.darkGray};
-    margin-top: 2rem;
   }
 `;
 const StyledGlobalAction = styled(HeaderGlobalAction)`
@@ -79,7 +79,7 @@ const Header = ({ appName, className, actionItems }) => {
           <HeaderMenu
             key={`menu-item-${item.label}`}
             aria-label={item.label}
-            content={item.btnContent}>
+            renderMenuContent={() => item.btnContent}>
             {children}
           </HeaderMenu>
         </HeaderNavigation>
