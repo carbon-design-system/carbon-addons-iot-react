@@ -73,6 +73,12 @@ class FilterHeaderRow extends Component {
         ),
       })
     ).isRequired,
+    /** internationalized string */
+    filterText: PropTypes.string,
+    clearFilterText: PropTypes.string,
+    clearSelectionText: PropTypes.string,
+    openMenuText: PropTypes.string,
+    closeMenuText: PropTypes.string,
     ordering: PropTypes.arrayOf(
       PropTypes.shape({
         columnId: PropTypes.string.isRequired,
@@ -104,6 +110,11 @@ class FilterHeaderRow extends Component {
     filters: [],
     isVisible: true,
     onApplyFilter: defaultFunction,
+    filterText: 'Filter',
+    clearFilterText: 'Clear filter',
+    clearSelectionText: 'Clear selection',
+    openMenuText: 'Open menu',
+    closeMenuText: 'Close menu',
     lightweight: false,
   };
 
@@ -136,10 +147,26 @@ class FilterHeaderRow extends Component {
     }
   };
 
+  handleTranslation = id => {
+    const { clearSelectionText, openMenuText, closeMenuText } = this.props;
+    switch (id) {
+      default:
+        return '';
+      case 'clear.selection':
+        return clearSelectionText;
+      case 'open.menu':
+        return openMenuText;
+      case 'close.menu':
+        return closeMenuText;
+    }
+  };
+
   render() {
     const {
       columns,
       ordering,
+      clearFilterText,
+      filterText,
       tableOptions: { hasRowSelection, hasRowExpansion, hasRowActions },
       isVisible,
       lightweight,
@@ -160,6 +187,8 @@ class FilterHeaderRow extends Component {
                 width={column.width}>
                 {column.options ? (
                   <ComboBox
+                    aria-label={filterText}
+                    translateWithId={this.handleTranslation}
                     items={column.options}
                     itemToString={item => (item ? item.text : '')}
                     initialSelectedItem={{
@@ -203,8 +232,8 @@ class FilterHeaderRow extends Component {
                         onKeyDown={event => {
                           this.handleClearFilter(event, column);
                         }}
-                        title="Clear Filter">
-                        <Icon icon={iconClose} description="Clear Filter" focusable="false" />
+                        title={clearFilterText}>
+                        <Icon icon={iconClose} description={clearFilterText} focusable="false" />
                       </div>
                     ) : null}
                   </StyledFormItem>

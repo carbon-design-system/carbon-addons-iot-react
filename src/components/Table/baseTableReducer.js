@@ -84,8 +84,8 @@ export const baseTableReducer = (state = {}, action) => {
         view: {
           toolbar: {
             search: {
-              value: {
-                $set: action.payload,
+              $set: {
+                value: action.payload,
               },
             },
           },

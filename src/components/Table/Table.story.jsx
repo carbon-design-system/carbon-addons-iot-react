@@ -2,7 +2,7 @@ import React from 'react';
 // import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { boolean } from '@storybook/addon-knobs';
+import { boolean, text } from '@storybook/addon-knobs';
 import styled from 'styled-components';
 
 import { getSortedData } from '../../utils/componentUtilityFunctions';
@@ -267,9 +267,6 @@ export const initialState = {
           iconDescription: 'Delete',
         },
       ],
-      search: {
-        placeHolderText: 'My Search',
-      },
     },
   },
 };
@@ -282,6 +279,58 @@ storiesOf('Table', module)
         {...initialState}
         actions={actions}
         lightweight={boolean('lightweight', false)}
+      />
+    ),
+    {
+      info: {
+        text:
+          'This is an example of the <StatefulTable> component that uses local state to handle all the table actions. This is produced by wrapping the <Table> in a container component and managing the state associated with features such the toolbar, filters, row select, etc. For more robust documentation on the prop model and source, see the other "with function" stories.',
+        propTables: [Table],
+        propTablesExclude: [StatefulTable],
+      },
+    }
+  )
+  .add(
+    'Stateful Example with I18N strings',
+    () => (
+      <StatefulTable
+        {...initialState}
+        actions={actions}
+        i18n={{
+          /** pagination */
+          pageBackwardAria: text('i18n.pageBackwardAria', '__Previous page__'),
+          pageForwardAria: text('i18n.pageForwardAria', '__Next page__'),
+          pageNumberAria: text('i18n.pageNumberAria', '__Page Number__'),
+          itemsPerPage: text('i18n.itemsPerPage', '__Items per page:__'),
+          itemsRange: (min, max) => `__${min}–${max} items__`,
+          currentPage: page => `__page ${page}__`,
+          itemsRangeWithTotal: (min, max, total) => `__${min}–${max} of ${total} items__`,
+          pageRange: (current, total) => `__${current} of ${total} pages__`,
+          /** table body */
+          overflowMenuAria: text('i18n.overflowMenuAria', '__More actions__'),
+          clickToExpandAria: text('i18n.clickToExpandAria', '__Click to expand content__'),
+          clickToCollapseAria: text('i18n.clickToCollapseAria', '__Click to collapse content__'),
+          selectAllAria: text('i18n.selectAllAria', '__Select all items__'),
+          selectRowAria: text('i18n.selectRowAria', '__Select row__'),
+          /** toolbar */
+          clearAllFilters: text('i18n.clearAllFilters', '__Clear all filters__'),
+          searchPlaceholder: text('i18n.searchPlaceholder', '__Search__'),
+          columnSelectionButtonAria: text('i18n.columnSelectionButtonAria', '__Column Selection__'),
+          filterButtonAria: text('i18n.filterButtonAria', '__Filters__'),
+          clearFilterAria: text('i18n.clearFilterAria', '__Clear filter__'),
+          filterAria: text('i18n.filterAria', '__Filter__'),
+          openMenuAria: text('i18n.openMenuAria', '__Open menu__'),
+          closeMenuAria: text('i18n.closeMenuAria', '__Close menu__'),
+          clearSelectionAria: text('i18n.clearSelectionAria', '__Clear selection__'),
+          /** empty state */
+          emptyMessage: text('i18n.emptyMessage', '__There is no data__'),
+          emptyMessageWithFilters: text(
+            'i18n.emptyMessageWithFilters',
+            '__No results match the current filters__'
+          ),
+          emptyButtonLabel: text('i18n.emptyButtonLabel', '__Create some data__'),
+          emptyButtonLabelWithFilters: text('i18n.emptyButtonLabel', '__Clear all filters__'),
+        }}
       />
     ),
     {
@@ -698,4 +747,58 @@ storiesOf('Table', module)
       actions={actions}
       lightweight={boolean('lightweight', true)}
     />
-  ));
+  ))
+  .add('horizontal scroll - custom width', () => {
+    const tableColumnsConcat = [
+      { id: 'test2', name: 'Test 2' },
+      { id: 'test3', name: 'Test 3' },
+      {
+        id: 'test4',
+        name: 'Test 4',
+      },
+    ];
+    // You don't n,eed to use styled components, just pass a className to the Table component and use selectors to find the correct column
+    return (
+      <div style={{ width: '800px' }}>
+        <Table
+          columns={tableColumns.concat(tableColumnsConcat)}
+          options={{ hasFilter: true }}
+          data={tableData}
+          actions={actions}
+          view={{
+            filters: [
+              { columnId: 'string', value: 'whiteboard' },
+              { columnId: 'select', value: 'option-B' },
+            ],
+            toolbar: { activeBar: 'filter' },
+          }}
+        />
+      </div>
+    );
+  })
+  .add('horizontal scroll - full width', () => {
+    const tableColumnsConcat = [
+      { id: 'test2', name: 'Test 2' },
+      { id: 'test3', name: 'Test 3' },
+      {
+        id: 'test4',
+        name: 'Test 4',
+      },
+    ];
+    // You don't n,eed to use styled components, just pass a className to the Table component and use selectors to find the correct column
+    return (
+      <Table
+        columns={tableColumns.concat(tableColumnsConcat)}
+        options={{ hasFilter: true }}
+        data={tableData}
+        actions={actions}
+        view={{
+          filters: [
+            { columnId: 'string', value: 'whiteboard' },
+            { columnId: 'select', value: 'option-B' },
+          ],
+          toolbar: { activeBar: 'filter' },
+        }}
+      />
+    );
+  });
