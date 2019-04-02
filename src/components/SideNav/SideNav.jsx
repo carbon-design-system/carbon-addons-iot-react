@@ -12,7 +12,7 @@ import {
 import { Icon } from 'carbon-components-react';
 // import { rem } from 'polished';
 import styled from 'styled-components';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import React from 'react';
 
 // import HeaderMenu from '../HeaderMenu';
@@ -62,60 +62,59 @@ const StyledIcon = styled(Icon)`
 `;
 
 const propTypes = {
-  /** Name ot follow the IBM prefix up top, left */
-  // appName: PropTypes.string.isRequired,
-  /** Object of action items */
-  // actionItems: PropTypes.arrayOf(
-  //   PropTypes.shape({
-  //     label: PropTypes.string.isRequired,
-  //     onClick: PropTypes.func,
-  //     btnContent: PropTypes.any.isRequired,
-  //     childContent: PropTypes.arrayOf(
-  //       PropTypes.shape({
-  //         onClick: PropTypes.func,
-  //         content: PropTypes.any.isRequired,
-  //       })
-  //     ),
-  //   })
-  // ).isRequired,
+  /** array of link item objectss */
+  links: PropTypes.arrayOf(
+    PropTypes.shape({
+      icon: PropTypes.string.isRequired,
+      onClick: PropTypes.func,
+      linkContent: PropTypes.any.isRequired,
+      childContent: PropTypes.arrayOf(
+        PropTypes.shape({
+          onClick: PropTypes.func,
+          content: PropTypes.any.isRequired,
+        })
+      ),
+    })
+  ).isRequired,
 };
 
+const links = [{}];
 /**
  * Clickable card that shows "Add" button
  */
-const SideNav = () => {
-  // const actionBtnContent = actionItems.map(item => {
-  //   if (item.hasOwnProperty('childContent')) {
-  //     const children = item.childContent.map(childItem => (
-  //       <HeaderMenuItem
-  //         key={`menu-item-${item.label + item.childContent.indexOf(childItem)}-child`}
-  //         /* eslint-disable */
-  //         href="javascript:void(0)"
-  //         /* eslint-enable */
-  //         onClick={() => childItem.onClick}>
-  //         {childItem.content}
-  //       </HeaderMenuItem>
-  //     ));
-  //     return (
-  //       <HeaderNavigation aria-label="dropdown" key={`menu-item-${item.label}-dropdown`}>
-  //         <HeaderMenu
-  //           key={`menu-item-${item.label}`}
-  //           aria-label={item.label}
-  //           content={item.btnContent}>
-  //           {children}
-  //         </HeaderMenu>
-  //       </HeaderNavigation>
-  //     );
-  //   }
-  //   return (
-  //     <StyledGlobalAction
-  //       key={`menu-item-${item.label}-global`}
-  //       aria-label={item.label}
-  //       onClick={item.onClick}>
-  //       {item.btnContent}
-  //     </StyledGlobalAction>
-  //   );
-  // });
+const SideNav = ({ links }) => {
+  const nav = links.map(link => {
+    if (link.hasOwnProperty('childContent')) {
+      const children = link.childContent.map(childlink => (
+        <SideNavMenuItem
+          key={`menu-link-${link.label + link.childContent.indexOf(childlink)}-child`}
+          onClick={childlink.onClick}>
+          {childlink.content}
+        </SideNavMenuItem>
+      ));
+      return (
+        <StyledSideNavMenu aria-label="dropdown" key={`menu-link-${link.label}-dropdown`}>
+          {children}
+        </StyledSideNavMenu>
+      );
+    }
+    return (
+      <StyledSideNavLink
+        key={`menu-link-${link.label}-global`}
+        aria-label={link.label}
+        onClick={link.onClick}
+        icon={
+          <StyledIcon
+            name="header--help"
+            fill="white"
+            description="Icon"
+            className="bx--header__menu-item bx--header__menu-title"
+          />
+        }>
+        {link.btnContent}
+      </StyledSideNavLink>
+    );
+  });
 
   return (
     <StyledSideNav aria-label="Side navigation" isExpanded={false}>
