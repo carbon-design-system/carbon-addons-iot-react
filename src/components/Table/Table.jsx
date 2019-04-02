@@ -4,6 +4,7 @@ import merge from 'lodash/merge';
 import pick from 'lodash/pick';
 import { PaginationV2, DataTable } from 'carbon-components-react';
 import get from 'lodash/get';
+import styled from 'styled-components';
 
 import { defaultFunction } from '../../utils/componentUtilityFunctions';
 
@@ -22,6 +23,12 @@ import TableSkeletonWithHeaders from './TableSkeletonWithHeaders/TableSkeletonWi
 import TableBody from './TableBody/TableBody';
 
 const { Table: CarbonTable, TableContainer } = DataTable;
+
+const StyledTableContainer = styled(TableContainer)`
+  &&& {
+    width: calc(100% + 1.5rem); /* save enough space for full tablesize*/
+  }
+`;
 
 const propTypes = {
   /** DOM ID for component */
@@ -282,7 +289,7 @@ const Table = props => {
           ...pick(view.toolbar, 'batchActions', 'search', 'activeBar'),
         }}
       />
-      <TableContainer>
+      <StyledTableContainer>
         <CarbonTable {...others}>
           <TableHead
             {...others}
@@ -356,7 +363,7 @@ const Table = props => {
             />
           )}
         </CarbonTable>
-      </TableContainer>
+      </StyledTableContainer>
 
       {options.hasPagination && !view.table.loadingState.isLoading ? ( // don't show pagination row while loading
         <PaginationV2
