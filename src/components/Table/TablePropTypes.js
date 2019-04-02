@@ -53,6 +53,10 @@ export const TableRowPropTypes = PropTypes.arrayOf(
     values: PropTypes.objectOf(
       PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.bool])
     ).isRequired,
+    /** Optional array of rows (TableDataPropTypes) nested beneath this one */
+    children: PropTypes.oneOfType([
+      PropTypes.array, // an array of TableRowPropTypes or elements
+    ]),
     /** Optional list of actions visible on row hover or expansion */
     rowActions: RowActionPropTypes,
   })

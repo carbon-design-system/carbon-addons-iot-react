@@ -42,6 +42,7 @@ const propTypes = {
   options: PropTypes.shape({
     hasRowSelection: PropTypes.bool,
     hasRowExpansion: PropTypes.bool,
+    hasRowNesting: PropTypes.bool,
     shouldExpandOnRowClick: PropTypes.bool,
   }),
 
@@ -60,6 +61,8 @@ const propTypes = {
   isExpanded: PropTypes.bool,
   /** optional row details */
   rowDetails: PropTypes.node,
+  /** offset level if row is nested */
+  nestingLevel: PropTypes.number,
 
   /** tableActions */
   tableActions: PropTypes.shape({
@@ -81,6 +84,7 @@ const defaultProps = {
   clickToCollapseText: 'Click to collapse.',
   rowActions: null,
   rowDetails: null,
+  nestingLevel: 0,
   options: {},
 };
 
@@ -120,23 +124,27 @@ const StyledTableExpandRow = styled(TableExpandRow)`
 const StyledTableExpandRowExpanded = styled(TableExpandRow)`
   &&& {
     cursor: pointer;
-    td {
-      background-color: ${COLORS.blue};
-      border-color: ${COLORS.blue};
-      color: white;
-      button {
-        svg {
-          fill: white;
+    ${props =>
+      !props.hasRowNesting &&
+      `
+      td {
+        background-color: ${COLORS.blue};
+        border-color: ${COLORS.blue};
+        color: white;
+        button {
+          svg {
+            fill: white;
+          }
+        }
+        border-top: 1px solid ${COLORS.blue};
+        :first-of-type {
+          border-left: 1px solid ${COLORS.blue};
+        }
+        :last-of-type {
+          border-right: 1px solid ${COLORS.blue};
         }
       }
-      border-top: 1px solid ${COLORS.blue};
-      :first-of-type {
-        border-left: 1px solid ${COLORS.blue};
-      }
-      :last-of-type {
-        border-right: 1px solid ${COLORS.blue};
-      }
-    }
+    `}
   }
 `;
 
@@ -184,7 +192,7 @@ const TableBodyRow = ({
   totalColumns,
   ordering,
   columns,
-  options: { hasRowSelection, hasRowExpansion, shouldExpandOnRowClick },
+  options: { hasRowSelection, hasRowExpansion, hasRowNesting, shouldExpandOnRowClick },
   tableActions: { onRowSelected, onRowExpanded, onRowClicked, onApplyRowAction },
   isExpanded,
   isSelected,
@@ -193,9 +201,11 @@ const TableBodyRow = ({
   clickToExpandText,
   clickToCollapseText,
   children,
+  nestingLevel,
   rowActions,
   rowDetails,
 }) => {
+  const nestingOffset = nestingLevel * 16;
   const rowSelectionCell = hasRowSelection ? (
     <StyledCheckboxTableCell
       key={`${id}-row-selection-cell`}
@@ -208,31 +218,44 @@ const TableBodyRow = ({
       https://github.com/IBM/carbon-components-react/issues/1247
       Also move onClick logic above into TableSelectRow
       */}
-      <Checkbox id={`select-row-${id}`} labelText={selectRowText} hideLabel checked={isSelected} />
+      <span style={{ position: 'relative', left: nestingOffset }}>
+        <Checkbox
+          id={`select-row-${id}`}
+          labelText={selectRowText}
+          hideLabel
+          checked={isSelected}
+        />
+      </span>
     </StyledCheckboxTableCell>
   ) : null;
 
+  const firstVisibleColIndex = ordering.findIndex(col => !col.isHidden);
   const tableCells = (
     <React.Fragment>
       {rowSelectionCell}
-      {ordering.map(col => {
+      {ordering.map((col, idx) => {
         const matchingColumnMeta = columns && columns.find(column => column.id === col.columnId);
+        const offset = firstVisibleColIndex === idx ? nestingOffset : 0;
         return !col.isHidden ? (
           <StyledTableCellRow
             key={col.columnId}
             data-column={col.columnId}
+            data-offset={offset}
+            style={{ paddingRight: offset }}
             width={matchingColumnMeta && matchingColumnMeta.width}>
-            {col.renderDataFunction ? (
-              col.renderDataFunction({
-                // Call the column renderer if it's provided
-                value: children[col.columnId],
-                columnId: col.columnId,
-                rowId: id,
-                row: children,
-              })
-            ) : (
-              <TableCellRenderer>{children[col.columnId]}</TableCellRenderer>
-            )}
+            <span style={{ position: 'relative', left: offset }}>
+              {col.renderDataFunction ? (
+                col.renderDataFunction({
+                  // Call the column renderer if it's provided
+                  value: children[col.columnId],
+                  columnId: col.columnId,
+                  rowId: id,
+                  row: children,
+                })
+              ) : (
+                <TableCellRenderer>{children[col.columnId]}</TableCellRenderer>
+              )}
+            </span>
           </StyledTableCellRow>
         ) : null;
       })}
@@ -245,7 +268,7 @@ const TableBodyRow = ({
       />
     </React.Fragment>
   );
-  return hasRowExpansion ? (
+  return hasRowExpansion || hasRowNesting ? (
     isExpanded ? (
       <React.Fragment key={id}>
         <StyledTableExpandRowExpanded
@@ -253,6 +276,7 @@ const TableBodyRow = ({
           ariaLabel={clickToCollapseText}
           expandIconDescription={clickToCollapseText}
           isExpanded
+          hasRowNesting
           onExpand={evt => stopPropagationAndCallback(evt, onRowExpanded, id, false)}
           onClick={() => {
             if (shouldExpandOnRowClick) {
@@ -262,9 +286,11 @@ const TableBodyRow = ({
           }}>
           {tableCells}
         </StyledTableExpandRowExpanded>
-        <StyledExpansionTableRow>
-          <TableCell colSpan={totalColumns}>{rowDetails}</TableCell>
-        </StyledExpansionTableRow>
+        {!hasRowNesting && (
+          <StyledExpansionTableRow>
+            <TableCell colSpan={totalColumns}>{rowDetails}</TableCell>
+          </StyledExpansionTableRow>
+        )}
       </React.Fragment>
     ) : (
       <StyledTableExpandRow

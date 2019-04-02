@@ -29,6 +29,7 @@ const propTypes = {
   totalColumns: PropTypes.number,
   hasRowSelection: PropTypes.bool,
   hasRowExpansion: PropTypes.bool,
+  hasRowNesting: PropTypes.bool,
   shouldExpandOnRowClick: PropTypes.bool,
 
   actions: PropTypes.shape({
@@ -60,6 +61,7 @@ const defaultProps = {
   totalColumns: 0,
   hasRowSelection: false,
   hasRowExpansion: false,
+  hasRowNesting: false,
   shouldExpandOnRowClick: false,
 };
 
@@ -78,6 +80,7 @@ const TableBody = ({
   actions,
   hasRowSelection,
   hasRowExpansion,
+  hasRowNesting,
   shouldExpandOnRowClick,
   ordering,
 }) => {
@@ -91,44 +94,48 @@ const TableBody = ({
     [columns, ordering]
   );
 
-  return (
-    <CarbonTableBody>
-      {rows.map(row => {
-        const isRowExpanded = expandedIds.includes(row.id);
-        return (
-          <TableBodyRow
-            key={row.id}
-            isExpanded={isRowExpanded}
-            isSelected={selectedIds.includes(row.id)}
-            rowDetails={
-              isRowExpanded && expandedRows.find(j => j.rowId === row.id)
-                ? expandedRows.find(j => j.rowId === row.id).content
-                : null
-            }
-            ordering={orderingMap}
-            selectRowText={selectRowText}
-            overflowMenuText={overflowMenuText}
-            clickToCollapseText={clickToCollapseText}
-            clickToExpandText={clickToExpandText}
-            columns={columns}
-            id={row.id}
-            totalColumns={totalColumns}
-            tableId={id}
-            options={{ hasRowSelection, hasRowExpansion, shouldExpandOnRowClick }}
-            tableActions={pick(
-              actions,
-              'onRowSelected',
-              'onApplyRowAction',
-              'onRowExpanded',
-              'onRowClicked'
-            )}
-            rowActions={row.rowActions}>
-            {row.values}
-          </TableBodyRow>
-        );
-      })}
-    </CarbonTableBody>
-  );
+  const renderRow = (row, nestingLevel = 0) => {
+    const isRowExpanded = expandedIds.includes(row.id);
+    const shouldShowChildren =
+      hasRowNesting && isRowExpanded && row.children && row.children.length > 0;
+    const rowElement = (
+      <TableBodyRow
+        key={row.id}
+        isExpanded={isRowExpanded}
+        isSelected={selectedIds.includes(row.id)}
+        rowDetails={
+          isRowExpanded && expandedRows.find(j => j.rowId === row.id)
+            ? expandedRows.find(j => j.rowId === row.id).content
+            : null
+        }
+        ordering={orderingMap}
+        selectRowText={selectRowText}
+        overflowMenuText={overflowMenuText}
+        clickToCollapseText={clickToCollapseText}
+        clickToExpandText={clickToExpandText}
+        columns={columns}
+        id={row.id}
+        totalColumns={totalColumns}
+        tableId={id}
+        options={{ hasRowSelection, hasRowExpansion, hasRowNesting, shouldExpandOnRowClick }}
+        nestingLevel={nestingLevel}
+        tableActions={pick(
+          actions,
+          'onRowSelected',
+          'onApplyRowAction',
+          'onRowExpanded',
+          'onRowClicked'
+        )}
+        rowActions={row.rowActions}>
+        {row.values}
+      </TableBodyRow>
+    );
+    return shouldShowChildren
+      ? [rowElement].concat(row.children.map(childRow => renderRow(childRow, nestingLevel + 1)))
+      : rowElement;
+  };
+
+  return <CarbonTableBody>{rows.map(row => renderRow(row))}</CarbonTableBody>;
 };
 
 TableBody.propTypes = propTypes;
