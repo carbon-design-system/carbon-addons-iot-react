@@ -42,7 +42,6 @@ export const filterData = (data, filters) =>
 // Little utility to search
 
 export const searchData = (data, searchString) =>
-  data.length > 0 &&
   data.filter((
     { values } // globally check row values for a match
   ) =>
@@ -210,10 +209,10 @@ export const tableReducer = (state = {}, action) => {
     case TABLE_REGISTER: {
       const updatedData = action.payload.data || state.data;
       return update(state, {
+        data: {
+          $set: updatedData,
+        },
         view: {
-          data: {
-            $set: updatedData,
-          },
           table: {
             filteredData: {
               $set: filterSearchAndSort(
