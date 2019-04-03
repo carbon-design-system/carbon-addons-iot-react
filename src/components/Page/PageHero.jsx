@@ -5,26 +5,7 @@ import styled from 'styled-components';
 import { COLORS, PADDING } from '../../styles/styles';
 
 import PageTitle from './PageTitle';
-
-const StyledPageHero = styled.div`
-  background: ${COLORS.white};
-  border-bottom: 1px solid ${COLORS.lightGrey};
-  display: flex;
-  padding-top: ${PADDING.verticalPadding};
-  padding-left: ${PADDING.horizontalWrapPadding};
-  padding-right: ${PADDING.horizontalWrapPadding};
-  padding-bottom: ${PADDING.verticalPadding};
-  min-height: ${props => (props.big ? '193px' : 'unset')};
-`;
-
-const StyledPageHeroWrap = styled.div`
-  align-items: center;
-  display: flex;
-  margin: 0 auto;
-  width: 100%;
-  justify-content: space-between;
-  transition: padding 0.2s;
-`;
+import PageSwitcher from './PageSwitcher';
 
 const propTypes = {
   /** Section is an element that describes the category of this page */
@@ -53,6 +34,18 @@ const propTypes = {
     }
     return null;
   },
+  /** The switcher actions */
+  switchers: PropTypes.shape({
+    onChange: PropTypes.func,
+    switcher: PropTypes.arrayOf(
+      PropTypes.shape({
+        switcherId: PropTypes.string,
+        switcherText: PropTypes.string,
+        onClick: PropTypes.func,
+        disabled: PropTypes.bool,
+      }).isRequired
+    ),
+  }),
   /** Optional What to render in the right side of the hero */
   rightContent: PropTypes.node,
   className: PropTypes.string,
@@ -66,17 +59,56 @@ const defaultProps = {
   big: false,
   crumb: null,
   rightContent: null,
+  switchers: {
+    onChange: null,
+    switcher: [],
+  },
 };
+
+const StyledPageHero = styled.div`
+  background: ${COLORS.white};
+  border-bottom: 1px solid ${COLORS.lightGrey};
+  ${'' /* display: flex; */}
+  padding-top: ${PADDING.verticalPadding};
+  padding-left: ${PADDING.horizontalWrapPadding};
+  padding-right: ${PADDING.horizontalWrapPadding};
+  padding-bottom: ${PADDING.verticalPadding};
+  min-height: ${props => (props.big ? '193px' : 'unset')};
+`;
+
+const StyledPageHeroWrap = styled.div`
+  align-items: center;
+  display: flex;
+  margin: 0 auto;
+  width: 100%;
+  justify-content: space-between;
+  transition: padding 0.2s;
+`;
+
+const StyledPageBlurb = styled.p`
+  margin-bottom: 1rem;
+  color: ${COLORS.gray};
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  max-width: 50rem;
+  flex: 1 1 20%;
+`;
 
 /**
  * Renders the hero text and styles for the page.  Can either render Section and Title with blurb or support a narrow one with breadcrumbs.
  */
-const Page = ({ section, title, blurb, className, crumb, rightContent }) => (
+const Page = ({ section, title, blurb, className, crumb, rightContent, switchers }) => (
   <StyledPageHero className={className}>
-    <StyledPageHeroWrap>
-      {crumb || <PageTitle section={section} title={title} blurb={blurb} />}
-      {rightContent}
-    </StyledPageHeroWrap>
+    {crumb || (
+      <div>
+        <PageTitle section={section} title={title} />
+        {switchers && switchers.switcher.length ? <PageSwitcher switchers={switchers} /> : null}
+        <StyledPageHeroWrap>
+          {blurb ? <StyledPageBlurb>{blurb}</StyledPageBlurb> : null}
+          {rightContent}
+        </StyledPageHeroWrap>
+      </div>
+    )}
   </StyledPageHero>
 );
 
