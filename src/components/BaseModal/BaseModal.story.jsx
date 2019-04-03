@@ -53,6 +53,7 @@ REDUXFORM or REDUXDIALOG`,
       }}
       onSubmit={action('submit')}
       onClose={action('close')}
+      onClearError={action('onClearError')}
     />
   ))
   .add('sending data', () => (

@@ -142,7 +142,7 @@ export const BaseModalPropTypes = {
   /** Form Error Details */
   error: PropTypes.string,
   /**  Clear the currently shown error, triggered if the user closes the ErrorNotification */
-  onClearErrors: PropTypes.func,
+  onClearError: PropTypes.func,
 
   /** Did the form submission fail */
   submitFailed: PropTypes.bool, // eslint-disable-line react/boolean-prop-naming
@@ -173,7 +173,7 @@ class BaseModal extends React.Component {
     error: null,
     isFetchingData: false,
     sendingData: null,
-    onClearErrors: null,
+    onClearError: null,
     type: null,
     footer: null,
     isLarge: false,
@@ -193,9 +193,9 @@ class BaseModal extends React.Component {
   }
 
   handleClearError = () => {
-    const { onClearErrors } = this.props;
-    if (onClearErrors) {
-      onClearErrors();
+    const { onClearError } = this.props;
+    if (onClearError) {
+      onClearError();
     }
   };
 
@@ -241,7 +241,12 @@ class BaseModal extends React.Component {
         </ModalHeader>
         {children ? <ModalBody>{children}</ModalBody> : null}
         {error ? (
-          <StyledMessageBox title={error} subtitle="" kind="error" onCloseButtonClick={onClose} />
+          <StyledMessageBox
+            title={error}
+            subtitle=""
+            kind="error"
+            onCloseButtonClick={this.handleClearError}
+          />
         ) : null}
         {footer || onSubmit ? (
           <StyledModalFooter>
