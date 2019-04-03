@@ -4,7 +4,7 @@ import { ContentSwitcher, Switch } from 'carbon-components-react';
 import styled from 'styled-components';
 
 const StyledContentSwitcher = styled(ContentSwitcher)`
-  margin-bottom: 1.875rem;
+  margin-bottom: 24px;
 `;
 
 const propTypes = {
