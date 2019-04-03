@@ -41,10 +41,13 @@ const filterData = (data, filters) =>
       );
 // Little utility to search
 const searchData = (data, searchString) =>
+  data.length > 0 &&
   data.filter((
     { values } // globally check row values for a match
   ) =>
-    Object.values(values).find(value => value.toString && value.toString().includes(searchString))
+    Object.values(values).find(
+      value => !isNil(value) && value.toString && value.toString().includes(searchString)
+    )
   );
 
 // little utility to both sort and filter

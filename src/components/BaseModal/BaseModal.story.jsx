@@ -46,7 +46,7 @@ REDUXFORM or REDUXDIALOG`,
   .add('fetching data', () => <BaseModal isFetchingData onClose={action('close')} />)
   .add('error states', () => (
     <BaseModal
-      dataError="Error sending data to server"
+      error="Error sending data to server"
       header={{
         label: 'DataError',
         title: 'Cannot communicate with server',
