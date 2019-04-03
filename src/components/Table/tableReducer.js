@@ -40,7 +40,9 @@ export const filterData = (data, filters) =>
         )
       );
 // Little utility to search
+
 export const searchData = (data, searchString) =>
+  data.length > 0 &&
   data.filter((
     { values } // globally check row values for a match
   ) =>
