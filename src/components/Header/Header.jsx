@@ -6,7 +6,7 @@ import {
   SkipToContent,
   HeaderMenuItem,
   HeaderNavigation,
-} from 'carbon-components-react//lib/components/UIShell';
+} from 'carbon-components-react/lib/components/UIShell';
 import { rem } from 'polished';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
