@@ -1,11 +1,12 @@
-import React, { Fragment, useState, useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { RadioTile, Tile, Search } from 'carbon-components-react';
+import { RadioTile, Tile, Search, SkeletonText } from 'carbon-components-react';
 import { Bee32 } from '@carbon/icons-react';
 
-import { MEDIA_QUERIES } from '../../styles/styles';
 import SimplePagination from '../SimplePagination/SimplePagination';
+
+import TileGroup from './TileGroup';
 
 const StyledContainerDiv = styled.div`
   display: flex;
@@ -24,16 +25,6 @@ const StyledCatalogHeader = styled.div`
   }
 `;
 
-const StyledTiles = styled.div`
-  display: flex;
-  flex-flow: row wrap;
-  > * {
-    flex: 1 1 30%;
-    min-width: 300px;
-  }
-  overflow-y: hidden;
-`;
-
 const StyledEmptyTile = styled(Tile)`
   &&& {
     display: flex;
@@ -46,35 +37,30 @@ const StyledEmptyTile = styled(Tile)`
   }
 `;
 
-const StyledGreedyTile = styled(Tile)`
-   {
-    flex: 1 1 30%;
-    display: none;
-    @media screen and (min-width: ${MEDIA_QUERIES.twoPane}) {
-      display: flex;
-    }
-    @media screen and (min-width: ${MEDIA_QUERIES.threePane}) {
-      flex: 1 1 63.5%;
-      display: flex;
-    }
-  }
-`;
-
 const StyledTitle = styled.span`
   font-weight: bold;
 `;
 
-const propTypes = {
+export const propTypes = {
+  /** Is the data actively loading? */
+
+  isLoading: PropTypes.bool,
   pagination: PropTypes.shape({
     pageSize: PropTypes.number,
     pageText: PropTypes.string,
     nextPageText: PropTypes.string,
     prevPageText: PropTypes.string,
+    onPage: PropTypes.func,
+    /** current page number */
+    page: PropTypes.number,
   }),
-  /** We will callback with the search value, but it's up to the parent to actually filter the tiles */
+
+  /** We will callback with the search value */
   search: PropTypes.shape({
     placeHolderText: PropTypes.string,
     noMatchesFoundText: PropTypes.string,
+    /** current search value */
+    value: PropTypes.string,
     onSearch: PropTypes.func,
   }),
 
@@ -86,51 +72,47 @@ const propTypes = {
   tiles: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,
-      content: PropTypes.node,
+      /**  the values field is searched by the search widget */
+      values: PropTypes.oneOfType([PropTypes.object, PropTypes.string]).isRequired,
+      /** renderContent is called back with the full value object and id to render */
+      renderContent: PropTypes.func,
       className: PropTypes.string,
     })
   ).isRequired,
   /** Callbacks */
-  onChange: PropTypes.func.isRequired,
+  onSelection: PropTypes.func.isRequired,
+  /** currently selected tile id */
+  selectedTileId: PropTypes.string,
 };
 
 const defaultProps = {
+  isLoading: false,
   title: null,
   pagination: null,
   search: null,
+  selectedTileId: null,
 };
 
 /**
  * Renders a searchable and pageable catalog of RadioTiles from carbon. Couldn't reuse the TileGroup component from Carbon due to this limitation.
  * https://github.com/IBM/carbon-components-react/issues/1999
  *
- * Paging happens on local state within the component, but we expect search to be done outside the component on callback
- * and for the parent to update the inbound tiles prop with only the matching results.
  */
-const TileCatalog = ({ id, className, title, search, pagination, tiles, onChange }) => {
-  const [selectedTile, setSelectedTile] = useState(tiles && tiles.length ? tiles[0].id : null);
-  const [searchState, setSearch] = useState();
-  const [page, setPage] = useState(1);
-  // If the tiles change (due to a search), I need to reset the page
-  useEffect(
-    () => {
-      setPage(1);
-    },
-    [tiles]
-  );
-  const pageSize = pagination ? pagination.pageSize : 10;
-
-  const handleChange = (newSelectedTile, ...args) => {
-    setSelectedTile(newSelectedTile);
-    onChange(newSelectedTile, ...args);
-  };
-
-  const handleSearch = (event, ...args) => {
-    const { onSearch } = search;
-    const newSearch = event.target.value || '';
-    setSearch(newSearch);
-    onSearch(newSearch, ...args);
-  };
+const TileCatalog = ({
+  id,
+  className,
+  title,
+  isLoading,
+  search,
+  pagination,
+  tiles,
+  onSelection,
+  selectedTileId,
+}) => {
+  const page = pagination && pagination.page ? pagination.page : 1;
+  const pageSize = pagination && pagination.pageSize ? pagination.pageSize : 10;
+  const searchState = search ? search.value : '';
+  const handleSearch = search && search.onSearch;
 
   const startingIndex = pagination ? (page - 1) * pageSize : 0;
   const endingIndex = pagination ? (page - 1) * pageSize + pageSize : tiles.length;
@@ -138,9 +120,9 @@ const TileCatalog = ({ id, className, title, search, pagination, tiles, onChange
     <StyledContainerDiv className={className}>
       <StyledCatalogHeader>
         <StyledTitle>{title}</StyledTitle>
-        {search ? (
+        {search && search.placeHolderText ? (
           <Search
-            value={searchState || ''}
+            value={searchState}
             labelText={search.placeHolderText}
             placeHolderText={search.placeHolderText}
             onChange={handleSearch}
@@ -148,37 +130,41 @@ const TileCatalog = ({ id, className, title, search, pagination, tiles, onChange
           />
         ) : null}
       </StyledCatalogHeader>
-      <StyledTiles>
-        {tiles.length > 0 ? (
-          <Fragment>
-            {tiles.slice(startingIndex, endingIndex).map(tile => (
-              <RadioTile
-                className={tile.className}
-                key={tile.id}
-                id={tile.id}
-                value={tile.id}
-                name={id}
-                checked={selectedTile === tile.id}
-                onChange={handleChange}>
-                {tile.content}
-              </RadioTile>
-            ))}
-            {endingIndex >= tiles.length ? <StyledGreedyTile /> : null}
-          </Fragment>
-        ) : (
-          <StyledEmptyTile>
-            <Bee32 />
-            <p>{(search && search.noMatchesFoundText) || 'No matches found'}</p>
-          </StyledEmptyTile>
-        )}
-      </StyledTiles>
-      {pagination ? (
-        <SimplePagination
-          {...pagination}
-          page={page}
-          maxPage={Math.ceil(tiles.length / pageSize)}
-          onPage={setPage}
+      {isLoading ? ( // generate empty tiles for first page
+        <TileGroup
+          tiles={[...Array(pageSize)].map((val, index) => (
+            <StyledEmptyTile key={`emptytile-${index}`}>
+              <SkeletonText />
+            </StyledEmptyTile>
+          ))}
+          totalTiles={pageSize}
         />
+      ) : tiles.length > 0 ? (
+        <TileGroup
+          tiles={tiles.slice(startingIndex, endingIndex).map(tile => (
+            <RadioTile
+              className={tile.className}
+              key={tile.id}
+              id={tile.id}
+              value={tile.id}
+              name={id}
+              checked={selectedTileId === tile.id}
+              onChange={onSelection}>
+              {tile.renderContent
+                ? tile.renderContent({ values: tile.values, id: tile.id })
+                : tile.value}
+            </RadioTile>
+          ))}
+          totalTiles={pageSize}
+        />
+      ) : (
+        <StyledEmptyTile>
+          <Bee32 />
+          <p>{(search && search.noMatchesFoundText) || 'No matches found'}</p>
+        </StyledEmptyTile>
+      )}
+      {pagination ? (
+        <SimplePagination {...pagination} maxPage={Math.ceil(tiles.length / pageSize)} />
       ) : null}
     </StyledContainerDiv>
   );
