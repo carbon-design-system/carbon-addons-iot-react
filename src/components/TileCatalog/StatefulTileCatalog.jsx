@@ -25,16 +25,28 @@ const StatefulTileCatalog = ({ tiles, onSelection, search, pagination, ...props 
     filteredTiles && filteredTiles.length ? filteredTiles[0].id : null
   );
 
+  const handlePage = (...args) => {
+    const { onPage } = pagination;
+    setPage(...args);
+    if (onPage) {
+      onPage(...args);
+    }
+  };
+
   const handleSelection = (newSelectedTile, ...args) => {
     setSelectedTile(newSelectedTile);
-    onSelection(newSelectedTile, ...args);
+    if (onSelection) {
+      onSelection(newSelectedTile, ...args);
+    }
   };
 
   const handleSearch = (event, ...args) => {
     const { onSearch } = search;
     const newSearch = event.target.value || '';
     setSearch(newSearch);
-    onSearch(newSearch, ...args);
+    if (onSearch) {
+      onSearch(newSearch, ...args);
+    }
   };
 
   return (
@@ -43,7 +55,7 @@ const StatefulTileCatalog = ({ tiles, onSelection, search, pagination, ...props 
       selectedTileId={selectedTile}
       tiles={filteredTiles}
       search={{ ...search, onSearch: handleSearch, value: searchState }}
-      pagination={{ ...pagination, page, onPage: setPage }}
+      pagination={{ ...pagination, page, onPage: handlePage }}
       onSelection={handleSelection}
     />
   );
