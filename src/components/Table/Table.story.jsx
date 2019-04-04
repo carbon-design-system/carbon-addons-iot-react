@@ -9,6 +9,7 @@ import { getSortedData } from '../../utils/componentUtilityFunctions';
 
 import Table from './Table';
 import StatefulTable from './StatefulTable';
+import AsyncTable from './AsyncTable';
 
 const selectData = [
   {
@@ -342,6 +343,7 @@ storiesOf('Table', module)
       },
     }
   )
+  .add('Filtered/Sorted/Paginated table with asynchronous data source', () => <AsyncTable />, {})
   .add('default', () => <Table columns={tableColumns} data={tableData} actions={actions} />)
   .add('with simple search', () => (
     <Table
