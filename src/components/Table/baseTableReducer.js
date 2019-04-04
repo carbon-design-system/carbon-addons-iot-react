@@ -13,6 +13,7 @@ import {
   TABLE_ROW_EXPAND,
   TABLE_COLUMN_ORDER,
   TABLE_SEARCH_APPLY,
+  TABLE_LOADING_SET,
 } from './tableActionCreators';
 
 export const baseTableReducer = (state = {}, action) => {
@@ -22,7 +23,7 @@ export const baseTableReducer = (state = {}, action) => {
       const { pageSize: currentPageSize, totalItems, page: currentPage } = state.view.pagination;
       const { page, pageSize } = action.payload;
       const isPageSizeChange = pageSize && currentPageSize !== pageSize;
-      const maxPage = Math.ceil(totalItems / pageSize);
+      const maxPage = Math.ceil(totalItems / pageSize)
       const isPageChange = page !== currentPage && page <= maxPage;
       const newPagination = isPageSizeChange
         ? {
@@ -220,6 +221,19 @@ export const baseTableReducer = (state = {}, action) => {
           },
         },
       });
+    }
+    case TABLE_LOADING_SET: {
+      const { isLoading, rowCount } = action.payload;
+      return update(state, {
+        view: {
+          table: {
+            loadingState: {
+              isLoading: { $set: isLoading },
+              rowCount: { $set: rowCount },
+            },
+          },
+        },
+      })
     }
     default:
       return state;
