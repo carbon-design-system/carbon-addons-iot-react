@@ -1,3 +1,5 @@
+import './Header.scss'
+
 import {
   Header as CarbonHeader,
   HeaderName,

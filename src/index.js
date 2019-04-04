@@ -1,5 +1,3 @@
-import './index.scss'
-
 export ButtonEnhanced from './components/ButtonEnhanced';
 export Table from './components/Table';
 export AddCard from './components/AddCard';
