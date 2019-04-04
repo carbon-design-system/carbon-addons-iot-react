@@ -20,3 +20,4 @@ export PageHero from './components/Page/PageHero';
 export NavigationBar from './components/NavigationBar/NavigationBar';
 export StructuredList from './components/StructuredList/StructuredList';
 export ResourceList from './components/ResourceList/ResourceList';
+export Header from './components/Header';
