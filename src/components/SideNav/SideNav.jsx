@@ -1,22 +1,16 @@
 import {
-  SideNav as CarbonSideNav,
-  // SideNavHeader,
-  // SideNavDetails,
-  // SideNavSwitcher,
   SideNavItems,
   SideNavLink,
   SideNavMenu,
   SideNavMenuItem,
-  // SideNavFooter,
 } from 'carbon-components-react//lib/components/UIShell';
-import { Icon } from 'carbon-components-react';
-// import { rem } from 'polished';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-// import HeaderMenu from '../HeaderMenu';
 import { COLORS } from '../../styles/styles';
+
+import CarbonSideNav from './CarbonSideNav';
 
 const StyledSideNav = styled(CarbonSideNav)`
    {
@@ -54,23 +48,32 @@ const StyledSideNavMenu = styled(SideNavMenu)`
   }
 `;
 
-const StyledIcon = styled(Icon)`
-   {
-    width: 25px;
-    height: 25px;
-  }
-`;
-
 const propTypes = {
-  /** array of link item objectss */
+  /** Specify whether the side navigation is expanded or collapsed */
+  defaultExpanded: PropTypes.bool,
+  /** array of link item objects */
   links: PropTypes.arrayOf(
     PropTypes.shape({
-      icon: PropTypes.string.isRequired,
+      /** is current link active */
+      current: PropTypes.bool,
+      /** aria-label */
+      label: PropTypes.string,
+      /** the icon component to render */
+      icon: PropTypes.any.isRequired,
+      /** itrigger something instead of follow link */
       onClick: PropTypes.func,
-      linkContent: PropTypes.any.isRequired,
+      /** url to link to */
+      href: PropTypes.string,
+      /** string for the title of overall submenu */
+      linkContent: PropTypes.string,
+      /** array of child links to render in a subnav */
       childContent: PropTypes.arrayOf(
         PropTypes.shape({
+          /** trigger something instead of follow link */
           onClick: PropTypes.func,
+          /** url to link to */
+          href: PropTypes.string,
+          /** content to render inside sub menu link */
           content: PropTypes.any.isRequired,
         })
       ),
@@ -78,79 +81,55 @@ const propTypes = {
   ).isRequired,
 };
 
-const links = [{}];
+const defaultProps = {
+  defaultExpanded: false,
+};
+
 /**
- * Clickable card that shows "Add" button
+ * Side Navigation. part of UI shell
  */
-const SideNav = ({ links }) => {
+const SideNav = ({ links, defaultExpanded }) => {
   const nav = links.map(link => {
     if (link.hasOwnProperty('childContent')) {
       const children = link.childContent.map(childlink => (
         <SideNavMenuItem
-          key={`menu-link-${link.label + link.childContent.indexOf(childlink)}-child`}
-          onClick={childlink.onClick}>
+          key={`menu-link-${link.childContent.indexOf(childlink)}-child`}
+          onClick={childlink.onClick}
+          href={link.href}>
           {childlink.content}
         </SideNavMenuItem>
       ));
       return (
-        <StyledSideNavMenu aria-label="dropdown" key={`menu-link-${link.label}-dropdown`}>
+        <StyledSideNavMenu
+          icon={link.icon}
+          aria-label="dropdown"
+          key={`menu-link-${links.indexOf(link)}-dropdown`}
+          title={link.linkContent}>
           {children}
         </StyledSideNavMenu>
       );
     }
     return (
       <StyledSideNavLink
-        key={`menu-link-${link.label}-global`}
+        key={`menu-link-${link.label.replace(/\s/g, '')}-global`}
         aria-label={link.label}
         onClick={link.onClick}
-        icon={
-          <StyledIcon
-            name="header--help"
-            fill="white"
-            description="Icon"
-            className="bx--header__menu-item bx--header__menu-title"
-          />
-        }>
-        {link.btnContent}
+        href={link.href}
+        icon={link.icon}
+        isActive={link.current}>
+        {link.linkContent}
       </StyledSideNavLink>
     );
   });
 
   return (
-    <StyledSideNav aria-label="Side navigation" isExpanded={false}>
-      <SideNavItems>
-        <StyledSideNavLink
-          icon={
-            <StyledIcon
-              name="header--help"
-              fill="white"
-              description="Icon"
-              className="bx--header__menu-item bx--header__menu-title"
-            />
-          }
-          href="javascript:void(0)">
-          Link
-        </StyledSideNavLink>
-        <StyledSideNavMenu
-          defaultExpanded
-          icon={
-            <StyledIcon
-              name="header--help"
-              fill="white"
-              description="Icon"
-              className="bx--header__menu-item bx--header__menu-title"
-            />
-          }
-          title="Category title">
-          <SideNavMenuItem href="javascript:void(0)">Link</SideNavMenuItem>
-          <SideNavMenuItem href="javascript:void(0)">Link</SideNavMenuItem>
-          <SideNavMenuItem href="javascript:void(0)">Link</SideNavMenuItem>
-        </StyledSideNavMenu>
-      </SideNavItems>
+    <StyledSideNav aria-label="Side navigation" defaultExpanded={defaultExpanded}>
+      <SideNavItems>{nav}</SideNavItems>
     </StyledSideNav>
   );
 };
 
 SideNav.propTypes = propTypes;
+SideNav.defaultProps = defaultProps;
 
 export default SideNav;
