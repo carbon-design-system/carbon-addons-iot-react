@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { HeaderMenuItem } from 'carbon-components-react//lib/components/UIShell';
+import { HeaderMenuItem } from 'carbon-components-react/lib/components/UIShell';
 
 import HeaderMenu from './HeaderMenu';
 
