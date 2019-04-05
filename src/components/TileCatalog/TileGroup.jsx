@@ -9,7 +9,7 @@ const StyledTiles = styled.div`
   display: flex;
   flex-flow: row wrap;
   > * {
-    flex: 1 1 30%;
+    flex: 1 1 33.33%;
     min-width: 300px;
   }
   overflow-y: hidden;
@@ -17,7 +17,7 @@ const StyledTiles = styled.div`
 
 const StyledGreedyTile = styled(Tile)`
    {
-    flex: 1 1 30%;
+    flex: 1 1 33.33%;
     display: none;
     min-height: 0px;
     padding: 0px;
@@ -27,7 +27,7 @@ const StyledGreedyTile = styled(Tile)`
       display: flex;
     }
     @media screen and (min-width: ${MEDIA_QUERIES.threePane}) {
-      flex: 1 1 63.25%;
+      flex: 1 1 66.66%;
       display: flex;
     }
   }
