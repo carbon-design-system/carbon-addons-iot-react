@@ -6,10 +6,103 @@ import styled from 'styled-components';
 import { COLORS } from '../../../../styles/styles';
 import RowActionsCell from '../RowActionsCell/RowActionsCell';
 import TableCellRenderer from '../../TableCellRenderer/TableCellRenderer';
-import { RowActionPropTypes } from '../../TablePropTypes';
+import { RowActionPropTypes, TableColumnsPropTypes } from '../../TablePropTypes';
 import { stopPropagationAndCallback } from '../../../../utils/componentUtilityFunctions';
 
 const { TableRow, TableExpandRow, TableCell } = DataTable;
+
+const propTypes = {
+  /** What column ordering is currently applied to the table */
+  ordering: PropTypes.arrayOf(
+    PropTypes.shape({
+      columnId: PropTypes.string.isRequired,
+      /* Visibility of column in table, defaults to false */
+      isHidden: PropTypes.bool,
+      /** for each column you can register a render callback function that is called with this object payload
+       * {
+       *    value: PropTypes.any (current cell value),
+       *    columnId: PropTypes.string,
+       *    rowId: PropTypes.string,
+       *    row: PropTypes.object like this {col: value, col2: value}
+       * }, you should return the node that should render within that cell */
+      renderDataFunction: PropTypes.func,
+    })
+  ).isRequired,
+  /** internationalized label */
+  selectRowText: PropTypes.string,
+  /** internationalized label  */
+  overflowMenuText: PropTypes.string,
+  /** internationalized label */
+  clickToExpandText: PropTypes.string,
+  /** internationalized label  */
+  clickToCollapseText: PropTypes.string,
+  /** List of columns */
+  columns: TableColumnsPropTypes.isRequired,
+  /** table wide options */
+  options: PropTypes.shape({
+    hasRowSelection: PropTypes.bool,
+    hasRowExpansion: PropTypes.bool,
+    shouldExpandOnRowClick: PropTypes.bool,
+  }),
+
+  /** The unique row id */
+  id: PropTypes.string.isRequired,
+  /** some columns might be hidden, so total columns has the overall total */
+  totalColumns: PropTypes.number.isRequired,
+  /** table Id */
+  tableId: PropTypes.string.isRequired,
+  /** contents of the row each object value is a renderable node keyed by column id */
+  children: PropTypes.objectOf(PropTypes.node).isRequired,
+
+  /** is the row currently selected */
+  isSelected: PropTypes.bool,
+  /** is the row currently expanded */
+  isExpanded: PropTypes.bool,
+  /** optional row details */
+  rowDetails: PropTypes.node,
+
+  /** tableActions */
+  tableActions: PropTypes.shape({
+    onRowSelected: PropTypes.func,
+    onRowClicked: PropTypes.func,
+    onApplyRowAction: PropTypes.func,
+    onRowExpanded: PropTypes.func,
+  }).isRequired,
+  /** optional per-row actions */
+  rowActions: RowActionPropTypes,
+};
+
+const defaultProps = {
+  isSelected: false,
+  isExpanded: false,
+  selectRowText: 'Select row',
+  overflowMenuText: 'More actions',
+  clickToExpandText: 'Click to expand.',
+  clickToCollapseText: 'Click to collapse.',
+  rowActions: null,
+  rowDetails: null,
+  options: {},
+};
+
+const StyledCheckboxTableCell = styled(TableCell)`
+  && {
+    padding-left: 1rem;
+    padding-bottom: 0.5rem;
+    width: 2.5rem;
+  }
+`;
+
+const StyledTableRow = styled(TableRow)`
+  &&& {
+    :hover {
+      td {
+        div > * {
+          opacity: 1;
+        }
+      }
+    }
+  }
+`;
 
 const StyledTableExpandRow = styled(TableExpandRow)`
   &&& {
@@ -55,6 +148,7 @@ const StyledExpansionTableRow = styled(TableRow)`
       border-width: 0 0 0 4px;
       padding: 0;
     }
+
     :hover {
       border: inherit;
       background-color: inherit;
@@ -67,68 +161,44 @@ const StyledExpansionTableRow = styled(TableRow)`
   }
 `;
 
-const propTypes = {
-  /** table columns */
-  columns: PropTypes.arrayOf(PropTypes.shape({ id: PropTypes.string })).isRequired,
-  /** table wide options */
-  options: PropTypes.shape({
-    hasRowSelection: PropTypes.bool,
-    hasRowExpansion: PropTypes.bool,
-    shouldExpandOnRowClick: PropTypes.bool,
-  }),
-
-  /** The unique row id */
-  id: PropTypes.string.isRequired,
-  /** some columns might be hidden, so total columns has the overall total */
-  totalColumns: PropTypes.number.isRequired,
-  /** table Id */
-  tableId: PropTypes.string.isRequired,
-  /** contents of the row each object value is a renderable node keyed by column id */
-  children: PropTypes.objectOf(PropTypes.node).isRequired,
-
-  /** is the row currently selected */
-  isSelected: PropTypes.bool,
-  /** is the row currently expanded */
-  isExpanded: PropTypes.bool,
-  /** optional row details */
-  rowDetails: PropTypes.node,
-
-  /** tableActions */
-  tableActions: PropTypes.shape({
-    onRowSelected: PropTypes.func,
-    onRowClicked: PropTypes.func,
-    onApplyRowAction: PropTypes.func,
-    onRowExpanded: PropTypes.func,
-  }).isRequired,
-  /** optional per-row actions */
-  rowActions: RowActionPropTypes,
-};
-
-const defaultProps = {
-  isSelected: false,
-  isExpanded: false,
-  rowActions: null,
-  rowDetails: null,
-  options: {},
-};
+const StyledTableCellRow = styled(TableCell)`
+  &&& {
+    ${props => {
+      const { width } = props;
+      return width !== undefined
+        ? `
+        min-width: ${width};
+        max-width: ${width};
+        white-space: nowrap;
+        overflow-x: hidden;
+        text-overflow: ellipsis;
+      `
+        : '';
+    }};
+  }
+`;
 
 const TableBodyRow = ({
   id,
   tableId,
   totalColumns,
+  ordering,
   columns,
   options: { hasRowSelection, hasRowExpansion, shouldExpandOnRowClick },
   tableActions: { onRowSelected, onRowExpanded, onRowClicked, onApplyRowAction },
   isExpanded,
   isSelected,
+  selectRowText,
+  overflowMenuText,
+  clickToExpandText,
+  clickToCollapseText,
   children,
   rowActions,
   rowDetails,
 }) => {
   const rowSelectionCell = hasRowSelection ? (
-    <TableCell
+    <StyledCheckboxTableCell
       key={`${id}-row-selection-cell`}
-      style={{ paddingBottom: '0.5rem' }}
       onClick={e => {
         onRowSelected(id, !isSelected);
         e.preventDefault();
@@ -138,22 +208,39 @@ const TableBodyRow = ({
       https://github.com/IBM/carbon-components-react/issues/1247
       Also move onClick logic above into TableSelectRow
       */}
-      <Checkbox id={`select-row-${id}`} labelText="Select Row" hideLabel checked={isSelected} />
-    </TableCell>
+      <Checkbox id={`select-row-${id}`} labelText={selectRowText} hideLabel checked={isSelected} />
+    </StyledCheckboxTableCell>
   ) : null;
 
   const tableCells = (
     <React.Fragment>
       {rowSelectionCell}
-      {columns.map(col => (
-        <TableCell key={col.id} data-column={col.id}>
-          <TableCellRenderer>{children[col.id]}</TableCellRenderer>
-        </TableCell>
-      ))}
+      {ordering.map(col => {
+        const matchingColumnMeta = columns && columns.find(column => column.id === col.columnId);
+        return !col.isHidden ? (
+          <StyledTableCellRow
+            key={col.columnId}
+            data-column={col.columnId}
+            width={matchingColumnMeta && matchingColumnMeta.width}>
+            {col.renderDataFunction ? (
+              col.renderDataFunction({
+                // Call the column renderer if it's provided
+                value: children[col.columnId],
+                columnId: col.columnId,
+                rowId: id,
+                row: children,
+              })
+            ) : (
+              <TableCellRenderer>{children[col.columnId]}</TableCellRenderer>
+            )}
+          </StyledTableCellRow>
+        ) : null;
+      })}
       <RowActionsCell
         id={id}
         actions={rowActions}
         isRowExpanded={isExpanded}
+        overflowMenuText={overflowMenuText}
         onApplyRowAction={onApplyRowAction}
       />
     </React.Fragment>
@@ -163,7 +250,8 @@ const TableBodyRow = ({
       <React.Fragment key={id}>
         <StyledTableExpandRowExpanded
           id={`${tableId}-Row-${id}`}
-          ariaLabel="Expand Row"
+          ariaLabel={clickToCollapseText}
+          expandIconDescription={clickToCollapseText}
           isExpanded
           onExpand={evt => stopPropagationAndCallback(evt, onRowExpanded, id, false)}
           onClick={() => {
@@ -182,7 +270,8 @@ const TableBodyRow = ({
       <StyledTableExpandRow
         id={`${tableId}-Row-${id}`}
         key={id}
-        ariaLabel="Expand Row"
+        ariaLabel={clickToExpandText}
+        expandIconDescription={clickToExpandText}
         isExpanded={false}
         onExpand={evt => stopPropagationAndCallback(evt, onRowExpanded, id, true)}
         onClick={() => {
@@ -195,9 +284,9 @@ const TableBodyRow = ({
       </StyledTableExpandRow>
     )
   ) : (
-    <TableRow key={id} onClick={() => onRowClicked(id)}>
+    <StyledTableRow key={id} onClick={() => onRowClicked(id)}>
       {tableCells}
-    </TableRow>
+    </StyledTableRow>
   );
 };
 

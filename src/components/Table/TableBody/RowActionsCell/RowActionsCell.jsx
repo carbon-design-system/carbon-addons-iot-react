@@ -48,7 +48,9 @@ const StyledOverflowMenu = styled(({ isRowExpanded, isOpen, ...other }) => (
 `;
 
 // Don't pass through the isRowExpanded or hideLabel prop to the button
-const RowActionButton = styled(({ isRowExpanded, hideLabel, ...other }) => <Button {...other} />)`
+const RowActionButton = styled(({ isRowExpanded, hideLabel, isOverflow, ...other }) => (
+  <Button {...other} />
+))`
   &&& {
     color: ${props => (props.isRowExpanded ? COLORS.white : COLORS.darkGray)};
     svg {
@@ -74,13 +76,13 @@ const propTypes = {
   /** Callback called if a row action is clicked */
   onApplyRowAction: PropTypes.func.isRequired,
   /** translated text for more actions */
-  moreActionsLabel: PropTypes.string,
+  overflowMenuText: PropTypes.string,
 };
 
 const defaultProps = {
   isRowExpanded: false,
   actions: null,
-  moreActionsLabel: 'More actions',
+  overflowMenuText: 'More actions',
 };
 
 const onClick = (e, id, action, onApplyRowAction) => {
@@ -109,7 +111,7 @@ class RowActionsCell extends React.Component {
   };
 
   render() {
-    const { isRowExpanded, id, actions, onApplyRowAction, moreActionsLabel } = this.props;
+    const { isRowExpanded, id, actions, onApplyRowAction, overflowMenuText } = this.props;
     const { isOpen } = this.state;
     const hasOverflow = actions && actions.filter(action => action.isOverflow).length > 0;
     return actions && actions.length > 0 ? (
@@ -133,10 +135,10 @@ class RowActionsCell extends React.Component {
             <StyledOverflowMenu
               floatingMenu
               flipped
-              ariaLabel={moreActionsLabel}
+              ariaLabel={overflowMenuText}
               onClick={event => event.stopPropagation()}
               isRowExpanded={isRowExpanded}
-              iconDescription={moreActionsLabel}
+              iconDescription={overflowMenuText}
               isOpen={isOpen}
               onOpen={this.handleOpen}
               onClose={this.handleClose}>

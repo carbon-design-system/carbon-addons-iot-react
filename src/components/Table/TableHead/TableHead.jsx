@@ -2,7 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { DataTable, Checkbox } from 'carbon-components-react';
 import isNil from 'lodash/isNil';
+import styled from 'styled-components';
 
+import { TableColumnsPropTypes } from '../TablePropTypes';
 import TableCellRenderer from '../TableCellRenderer/TableCellRenderer';
 
 import ColumnHeaderRow from './ColumnHeaderRow/ColumnHeaderRow';
@@ -18,22 +20,15 @@ const propTypes = {
     hasRowActions: PropTypes.bool,
   }),
   /** List of columns */
-  columns: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired,
-      isSortable: PropTypes.bool,
-      filter: PropTypes.shape({
-        placeholderText: PropTypes.string,
-        options: PropTypes.arrayOf(
-          PropTypes.shape({
-            id: PropTypes.string.isRequired,
-            text: PropTypes.string.isRequired,
-          })
-        ),
-      }),
-    })
-  ).isRequired,
+  columns: TableColumnsPropTypes.isRequired,
+
+  /** internationalized labels */
+  selectAllText: PropTypes.string,
+  clearFilterText: PropTypes.string,
+  filterText: PropTypes.string,
+  clearSelectionText: PropTypes.string,
+  openMenuText: PropTypes.string,
+  closeMenuText: PropTypes.string,
 
   /** Current state of the table */
   tableState: PropTypes.shape({
@@ -68,11 +63,57 @@ const propTypes = {
     onChangeOrdering: PropTypes.func,
     onApplyFilter: PropTypes.func,
   }).isRequired,
+  /** lightweight  */
+  lightweight: PropTypes.bool,
 };
 
 const defaultProps = {
   options: {},
+  lightweight: false,
+  selectAllText: 'Select all',
+  clearFilterText: 'Clear filter',
+  filterText: 'Filter',
+  clearSelectionText: 'Clear selection',
+  openMenuText: 'Open menu',
+  closeMenuText: 'Close menu',
 };
+
+const StyledCheckboxTableHeader = styled(TableHeader)`
+  &&& {
+    padding-left: 1rem;
+    padding-bottom: 0.5rem;
+    width: 2.5rem;
+  }
+`;
+
+const StyledCarbonTableHead = styled(({ lightweight, ...others }) => (
+  <CarbonTableHead {...others} />
+))`
+  &&& {
+    ${props =>
+      props.lightweight === 'true' && {
+        backgroundColor: '#fff',
+        borderBottom: '2px solid #305ba3',
+      }}
+  }
+`;
+
+const StyledCustomTableHeader = styled(TableHeader)`
+  &&& {
+    ${props => {
+      const { width } = props;
+      return width !== undefined
+        ? `
+        min-width: ${width};
+        max-width: ${width};
+        white-space: nowrap;
+        overflow-x: hidden;
+        text-overflow: ellipsis;
+      `
+        : '';
+    }}
+  }
+`;
 
 const TableHead = ({
   options,
@@ -86,58 +127,57 @@ const TableHead = ({
     filters,
   },
   actions: { onSelectAll, onChangeSort, onApplyFilter, onChangeOrdering },
+  selectAllText,
+  clearFilterText,
+  filterText,
+  clearSelectionText,
+  openMenuText,
+  closeMenuText,
+  lightweight,
 }) => {
   const filterBarActive = activeBar === 'filter';
-  const filterBarActiveStyle = { paddingTop: 16 };
+
   return (
-    <CarbonTableHead>
+    <StyledCarbonTableHead lightweight={`${lightweight}`}>
       <TableRow>
         {hasRowExpansion ? <TableExpandHeader /> : null}
         {hasRowSelection ? (
-          <TableHeader
-            style={Object.assign(
-              { paddingBottom: '0.5rem' },
-              filterBarActive ? filterBarActiveStyle : {}
-            )}>
+          <StyledCheckboxTableHeader>
             {/* TODO: Replace checkbox with TableSelectAll component when onChange bug is fixed
                     https://github.com/IBM/carbon-components-react/issues/1088 */}
             <Checkbox
               id="select-all"
-              labelText="Select All"
+              labelText={selectAllText}
               hideLabel
               indeterminate={isSelectAllIndeterminate}
               checked={isSelectAllSelected}
               onChange={() => onSelectAll(!isSelectAllSelected)}
             />
-          </TableHeader>
+          </StyledCheckboxTableHeader>
         ) : null}
-        {columns
-          .filter(column => {
-            const matchingColumnMeta = ordering.find(
-              columnOrder => columnOrder.columnId === column.id
-            ); // If we can't find the column in our meta, don't hide it
-            return matchingColumnMeta ? !matchingColumnMeta.isHidden : true;
-          }) // only render visible columns
-          .map(column => {
-            const hasSort = sort && sort.columnId === column.id;
-            return (
-              <TableHeader
-                id={`column-${column.id}`}
-                key={`column-${column.id}`}
-                data-column={column.id}
-                style={filterBarActive === true ? filterBarActiveStyle : {}}
-                isSortable={column.isSortable}
-                isSortHeader={hasSort}
-                onClick={() => {
-                  if (column.isSortable && onChangeSort) {
-                    onChangeSort(column.id);
-                  }
-                }}
-                sortDirection={hasSort ? sort.direction : 'NONE'}>
-                <TableCellRenderer>{column.name}</TableCellRenderer>
-              </TableHeader>
-            );
-          })}
+
+        {ordering.map(item => {
+          const matchingColumnMeta = columns.find(column => column.id === item.columnId);
+          const hasSort = sort && sort.columnId === matchingColumnMeta.id;
+
+          return !item.isHidden ? (
+            <StyledCustomTableHeader
+              id={`column-${matchingColumnMeta.id}`}
+              key={`column-${matchingColumnMeta.id}`}
+              data-column={matchingColumnMeta.id}
+              isSortable={matchingColumnMeta.isSortable}
+              isSortHeader={hasSort}
+              width={matchingColumnMeta.width}
+              onClick={() => {
+                if (matchingColumnMeta.isSortable && onChangeSort) {
+                  onChangeSort(matchingColumnMeta.id);
+                }
+              }}
+              sortDirection={hasSort ? sort.direction : 'NONE'}>
+              <TableCellRenderer>{matchingColumnMeta.name}</TableCellRenderer>
+            </StyledCustomTableHeader>
+          ) : null;
+        })}
         {options.hasRowActions ? <TableHeader>&nbsp;</TableHeader> : null}
       </TableRow>
       {filterBarActive && (
@@ -146,12 +186,19 @@ const TableHead = ({
             ...column.filter,
             id: column.id,
             isFilterable: !isNil(column.filter),
+            width: column.width,
           }))}
+          clearFilterText={clearFilterText}
+          filterText={filterText}
+          clearSelectionText={clearSelectionText}
+          openMenuText={openMenuText}
+          closeMenuText={closeMenuText}
           ordering={ordering}
           key={JSON.stringify(filters)}
           filters={filters}
           tableOptions={options}
           onApplyFilter={onApplyFilter}
+          lightweight={lightweight}
         />
       )}
       {activeBar === 'column' && (
@@ -163,9 +210,10 @@ const TableHead = ({
           ordering={ordering}
           tableOptions={options}
           onChangeOrdering={onChangeOrdering}
+          lightweight={lightweight}
         />
       )}
-    </CarbonTableHead>
+    </StyledCarbonTableHead>
   );
 };
 

@@ -14,13 +14,12 @@ const StyledPageSection = styled.span`
   padding-right: 0.5rem;
 `;
 
-const StyledPageTitleH2 = styled.h2`
+const StyledPageTitleH1 = styled.h1`
   align-items: center;
   display: flex;
-  margin-bottom: 0.9em;
-`;
-const StyledPageBlurb = styled.p`
-  margin-bottom: 1rem;
+  margin-bottom: 24px;
+  font-weight: 400;
+  line-height: 1.25rem;
 `;
 
 const propTypes = {
@@ -28,25 +27,21 @@ const propTypes = {
   section: PropTypes.node,
   /** Title of the page  */
   title: PropTypes.node,
-  /** Details about what the page shows */
-  blurb: PropTypes.node,
 };
 
 const defaultProps = {
   section: null,
   title: null,
-  blurb: null,
 };
 
-const PageTitle = ({ title, section, blurb }) => (
+const PageTitle = ({ title, section }) => (
   <StyledPageTitle>
     {title ? (
-      <StyledPageTitleH2>
+      <StyledPageTitleH1>
         {section ? <StyledPageSection>{`${section} /`}</StyledPageSection> : null}
         {title}
-      </StyledPageTitleH2>
+      </StyledPageTitleH1>
     ) : null}
-    {blurb ? <StyledPageBlurb>{blurb}</StyledPageBlurb> : null}
   </StyledPageTitle>
 );
 

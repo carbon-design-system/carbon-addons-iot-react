@@ -27,6 +27,18 @@ const StyledTableHeader = styled(TableHeader)`
         min-width: 12.75rem;
       }
     }
+    ${props => {
+      const { width } = props;
+      return width !== undefined
+        ? `
+        min-width: ${width};
+        max-width: ${width};
+        white-space: nowrap;
+        overflow-x: hidden;
+        text-overflow: ellipsis;
+      `
+        : '';
+    }};
   }
 `;
 const StyledFormItem = styled(FormItem)`
@@ -42,6 +54,7 @@ const StyledFormItem = styled(FormItem)`
     }
   }
 `;
+
 class FilterHeaderRow extends Component {
   static propTypes = {
     columns: PropTypes.arrayOf(
@@ -60,6 +73,12 @@ class FilterHeaderRow extends Component {
         ),
       })
     ).isRequired,
+    /** internationalized string */
+    filterText: PropTypes.string,
+    clearFilterText: PropTypes.string,
+    clearSelectionText: PropTypes.string,
+    openMenuText: PropTypes.string,
+    closeMenuText: PropTypes.string,
     ordering: PropTypes.arrayOf(
       PropTypes.shape({
         columnId: PropTypes.string.isRequired,
@@ -83,6 +102,7 @@ class FilterHeaderRow extends Component {
     }),
     /** filter can be hidden by the user but filters will still apply to the table */
     isVisible: PropTypes.bool,
+    lightweight: PropTypes.bool,
   };
 
   static defaultProps = {
@@ -90,6 +110,12 @@ class FilterHeaderRow extends Component {
     filters: [],
     isVisible: true,
     onApplyFilter: defaultFunction,
+    filterText: 'Filter',
+    clearFilterText: 'Clear filter',
+    clearSelectionText: 'Clear selection',
+    openMenuText: 'Open menu',
+    closeMenuText: 'Close menu',
+    lightweight: false,
   };
 
   state = this.props.columns.reduce(
@@ -121,12 +147,29 @@ class FilterHeaderRow extends Component {
     }
   };
 
+  handleTranslation = id => {
+    const { clearSelectionText, openMenuText, closeMenuText } = this.props;
+    switch (id) {
+      default:
+        return '';
+      case 'clear.selection':
+        return clearSelectionText;
+      case 'open.menu':
+        return openMenuText;
+      case 'close.menu':
+        return closeMenuText;
+    }
+  };
+
   render() {
     const {
       columns,
       ordering,
+      clearFilterText,
+      filterText,
       tableOptions: { hasRowSelection, hasRowExpansion, hasRowActions },
       isVisible,
+      lightweight,
     } = this.props;
     return isVisible ? (
       <StyledTableRow>
@@ -138,9 +181,14 @@ class FilterHeaderRow extends Component {
             const column = columns.find(i => c.columnId === i.id);
             const columnStateValue = this.state[column.id]; // eslint-disable-line
             return (
-              <StyledTableHeader data-column={column.id} key={`FilterHeader${column.id}`}>
+              <StyledTableHeader
+                data-column={column.id}
+                key={`FilterHeader${column.id}`}
+                width={column.width}>
                 {column.options ? (
                   <ComboBox
+                    aria-label={filterText}
+                    translateWithId={this.handleTranslation}
                     items={column.options}
                     itemToString={item => (item ? item.text : '')}
                     initialSelectedItem={{
@@ -158,7 +206,7 @@ class FilterHeaderRow extends Component {
                         this.handleApplyFilter
                       );
                     }}
-                    light
+                    light={!lightweight}
                   />
                 ) : (
                   <StyledFormItem>
@@ -166,7 +214,7 @@ class FilterHeaderRow extends Component {
                       id={column.id}
                       labelText={column.id}
                       hideLabel
-                      light
+                      light={!lightweight}
                       placeholder={column.placeholderText || 'Type and hit enter to apply'}
                       onKeyDown={event => handleEnterKeyDown(event, this.handleApplyFilter)}
                       onBlur={this.handleApplyFilter}
@@ -184,8 +232,8 @@ class FilterHeaderRow extends Component {
                         onKeyDown={event => {
                           this.handleClearFilter(event, column);
                         }}
-                        title="Clear Filter">
-                        <Icon icon={iconClose} description="Clear Filter" focusable="false" />
+                        title={clearFilterText}>
+                        <Icon icon={iconClose} description={clearFilterText} focusable="false" />
                       </div>
                     ) : null}
                   </StyledFormItem>

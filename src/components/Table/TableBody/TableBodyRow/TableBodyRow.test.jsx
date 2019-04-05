@@ -14,7 +14,7 @@ const tableRowProps = {
   tableId: 'tableId',
   totalColumns: 1,
   id: 'tableRow',
-  columns: [{ id: 'col1' }],
+  ordering: [{ columnId: 'col1', isHidden: false }],
   children: { col1: 'value1' },
 };
 
@@ -51,15 +51,42 @@ describe('TableBodyRow', () => {
       totalColumns: 1,
       id: 'tableRow',
       columns: [{ id: 'col1' }, { id: 'col2' }],
+      ordering: [{ columnId: 'col1' }, { columnId: 'col2' }],
       children: { col1: 'value1', col2: undefined },
+    };
+    const wrapper = mount(
+      <TableBodyRow tableActions={mockActions} {...tableRowPropsWithUndefined} />
+    );
+    expect(wrapper).toBeDefined();
+  });
+  test('verify custom cell renderer', () => {
+    const customRenderDataFunction = ({ value, columnId, rowId, row }) => (
+      <div id={value}>
+        {value} {columnId} {rowId} {JSON.stringify(row)}
+      </div>
+    );
+    const tableRowPropsWithCustomRenderer = {
+      tableId: 'tableId',
+      totalColumns: 1,
+      id: 'tableRow',
+      ordering: [
+        { columnId: 'col1', renderDataFunction: customRenderDataFunction },
+        { columnId: 'col2' },
+      ],
+      children: { col1: 'value1', col2: 'value2' },
     };
     const wrapper = mount(
       <TableBodyRow
         options={{ hasRowExpansion: true }}
         tableActions={mockActions}
-        {...tableRowPropsWithUndefined}
+        {...tableRowPropsWithCustomRenderer}
       />
     );
-    expect(wrapper).toBeDefined();
+    const customCell = wrapper.find('#value1').at(0);
+    expect(customCell).toBeDefined();
+    expect(customCell.text()).toContain('value1');
+    expect(customCell.text()).toContain('col1');
+    expect(customCell.text()).toContain('col2');
+    expect(customCell.text()).toContain('value2');
   });
 });

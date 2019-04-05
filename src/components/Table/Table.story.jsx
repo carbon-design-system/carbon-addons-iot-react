@@ -1,8 +1,8 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { select } from '@storybook/addon-knobs';
+import { boolean, text } from '@storybook/addon-knobs';
 import styled from 'styled-components';
 
 import { getSortedData } from '../../utils/componentUtilityFunctions';
@@ -24,6 +24,36 @@ const selectData = [
     text: 'option-C',
   },
 ];
+
+const STATUS = {
+  RUNNING: 'RUNNING',
+  NOT_RUNNING: 'NOT_RUNNING',
+  BROKEN: 'BROKEN',
+};
+
+const renderStatusIcon = ({ value: status }) => {
+  switch (status) {
+    case STATUS.RUNNING:
+    default:
+      return (
+        <svg height="10" width="10">
+          <circle cx="5" cy="5" r="3" stroke="none" strokeWidth="1" fill="green" />
+        </svg>
+      );
+    case STATUS.NOT_RUNNING:
+      return (
+        <svg height="10" width="10">
+          <circle cx="5" cy="5" r="3" stroke="none" strokeWidth="1" fill="gray" />
+        </svg>
+      );
+    case STATUS.BROKEN:
+      return (
+        <svg height="10" width="10">
+          <circle cx="5" cy="5" r="3" stroke="none" strokeWidth="1" fill="red" />
+        </svg>
+      );
+  }
+};
 export const tableColumns = [
   {
     id: 'string',
@@ -45,11 +75,17 @@ export const tableColumns = [
     name: 'Secret Information',
   },
   {
+    id: 'status',
+    name: 'Status',
+    renderDataFunction: renderStatusIcon,
+  },
+  {
     id: 'number',
     name: 'Number',
     filter: { placeholderText: 'pick a number' },
   },
 ];
+
 const defaultOrdering = tableColumns.map(c => ({
   columnId: c.id,
   isHidden: c.id === 'secretField',
@@ -78,6 +114,19 @@ const getString = (index, length) =>
     .map((i, idx) => getLetter(index * (idx + 14) * (idx + 1)))
     .join('');
 
+const getStatus = idx => {
+  const modStatus = idx % 3;
+  switch (modStatus) {
+    case 0:
+    default:
+      return STATUS.RUNNING;
+    case 1:
+      return STATUS.NOT_RUNNING;
+    case 2:
+      return STATUS.BROKEN;
+  }
+};
+
 const getNewRow = idx => ({
   id: `row-${idx}`,
   values: {
@@ -86,6 +135,7 @@ const getNewRow = idx => ({
     select: selectData[idx % 3].id,
     secretField: getString(idx, 10),
     number: idx * idx,
+    status: getStatus(idx),
   },
 });
 
@@ -217,22 +267,81 @@ export const initialState = {
           iconDescription: 'Delete',
         },
       ],
-      search: {
-        placeHolderText: 'My Search',
-      },
     },
   },
 };
 
 storiesOf('Table', module)
-  .add('Stateful Example', () => <StatefulTable {...initialState} actions={actions} />, {
-    info: {
-      text:
-        'This is an example of the <StatefulTable> component that uses local state to handle all the table actions. This is produced by wrapping the <Table> in a container component and managing the state associated with features such the toolbar, filters, row select, etc. For more robust documentation on the prop model and source, see the other "with function" stories.',
-      propTables: [Table],
-      propTablesExclude: [StatefulTable],
-    },
-  })
+  .add(
+    'Stateful Example',
+    () => (
+      <StatefulTable
+        {...initialState}
+        actions={actions}
+        lightweight={boolean('lightweight', false)}
+      />
+    ),
+    {
+      info: {
+        text:
+          'This is an example of the <StatefulTable> component that uses local state to handle all the table actions. This is produced by wrapping the <Table> in a container component and managing the state associated with features such the toolbar, filters, row select, etc. For more robust documentation on the prop model and source, see the other "with function" stories.',
+        propTables: [Table],
+        propTablesExclude: [StatefulTable],
+      },
+    }
+  )
+  .add(
+    'Stateful Example with I18N strings',
+    () => (
+      <StatefulTable
+        {...initialState}
+        actions={actions}
+        i18n={{
+          /** pagination */
+          pageBackwardAria: text('i18n.pageBackwardAria', '__Previous page__'),
+          pageForwardAria: text('i18n.pageForwardAria', '__Next page__'),
+          pageNumberAria: text('i18n.pageNumberAria', '__Page Number__'),
+          itemsPerPage: text('i18n.itemsPerPage', '__Items per page:__'),
+          itemsRange: (min, max) => `__${min}–${max} items__`,
+          currentPage: page => `__page ${page}__`,
+          itemsRangeWithTotal: (min, max, total) => `__${min}–${max} of ${total} items__`,
+          pageRange: (current, total) => `__${current} of ${total} pages__`,
+          /** table body */
+          overflowMenuAria: text('i18n.overflowMenuAria', '__More actions__'),
+          clickToExpandAria: text('i18n.clickToExpandAria', '__Click to expand content__'),
+          clickToCollapseAria: text('i18n.clickToCollapseAria', '__Click to collapse content__'),
+          selectAllAria: text('i18n.selectAllAria', '__Select all items__'),
+          selectRowAria: text('i18n.selectRowAria', '__Select row__'),
+          /** toolbar */
+          clearAllFilters: text('i18n.clearAllFilters', '__Clear all filters__'),
+          searchPlaceholder: text('i18n.searchPlaceholder', '__Search__'),
+          columnSelectionButtonAria: text('i18n.columnSelectionButtonAria', '__Column Selection__'),
+          filterButtonAria: text('i18n.filterButtonAria', '__Filters__'),
+          clearFilterAria: text('i18n.clearFilterAria', '__Clear filter__'),
+          filterAria: text('i18n.filterAria', '__Filter__'),
+          openMenuAria: text('i18n.openMenuAria', '__Open menu__'),
+          closeMenuAria: text('i18n.closeMenuAria', '__Close menu__'),
+          clearSelectionAria: text('i18n.clearSelectionAria', '__Clear selection__'),
+          /** empty state */
+          emptyMessage: text('i18n.emptyMessage', '__There is no data__'),
+          emptyMessageWithFilters: text(
+            'i18n.emptyMessageWithFilters',
+            '__No results match the current filters__'
+          ),
+          emptyButtonLabel: text('i18n.emptyButtonLabel', '__Create some data__'),
+          emptyButtonLabelWithFilters: text('i18n.emptyButtonLabel', '__Clear all filters__'),
+        }}
+      />
+    ),
+    {
+      info: {
+        text:
+          'This is an example of the <StatefulTable> component that uses local state to handle all the table actions. This is produced by wrapping the <Table> in a container component and managing the state associated with features such the toolbar, filters, row select, etc. For more robust documentation on the prop model and source, see the other "with function" stories.',
+        propTables: [Table],
+        propTablesExclude: [StatefulTable],
+      },
+    }
+  )
   .add('default', () => <Table columns={tableColumns} data={tableData} actions={actions} />)
   .add('with simple search', () => (
     <Table
@@ -402,6 +511,50 @@ storiesOf('Table', module)
       }}
     />
   ))
+  .add(
+    'with custom cell renderer',
+    () => {
+      const renderDataFunction = ({ value }) => <div style={{ color: 'red' }}>{value}</div>;
+      return (
+        <Table
+          columns={tableColumns.map(i => ({
+            ...i,
+            renderDataFunction,
+          }))}
+          data={tableData}
+          actions={actions}
+          options={{
+            hasFilter: true,
+            hasPagination: true,
+            hasRowSelection: true,
+          }}
+          view={{
+            filters: [],
+            table: {
+              ordering: defaultOrdering,
+              sort: {
+                columnId: 'string',
+                direction: 'ASC',
+              },
+            },
+          }}
+        />
+      );
+    },
+    {
+      info: {
+        text: `To render a custom widget in a table cell, pass a renderDataFunction prop along with your column metadata.
+            The renderDataFunction is called with this payload 
+           { 
+              value: PropTypes.any (current cell value),
+              columnId: PropTypes.string,
+              rowId: PropTypes.string,
+              row: the full data for this rowPropTypes.object like this {col: value, col2: value}
+           }
+          `,
+      },
+    }
+  )
   .add('with filters', () => {
     const filteredData = tableData.filter(({ values }) =>
       // return false if a value doesn't match a valid filter
@@ -527,7 +680,7 @@ storiesOf('Table', module)
       options={{ hasPagination: true }}
     />
   ))
-  .add('is loading', () => (
+  .add('with loading state', () => (
     <Table
       columns={tableColumns}
       data={tableData}
@@ -537,91 +690,37 @@ storiesOf('Table', module)
           ordering: defaultOrdering,
           loadingState: {
             isLoading: true,
+            rowCount: 7,
           },
         },
       }}
     />
   ))
-  .add('zebra', () => <Table zebra columns={tableColumns} data={tableData} actions={actions} />)
+  .add('with zebra striping', () => (
+    <Table zebra columns={tableColumns} data={tableData} actions={actions} />
+  ))
   .add(
-    'max column width',
-    () => {
-      const StyledTableColumn = styled(Table)`
-        &&& {
-          [data-column='string'] {
-            width: 100px;
-            max-width: 100px;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-            overflow-x: hidden;
-          }
-          [data-column='date'] {
-            max-width: 100px;
-            width: 100px;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-            overflow-x: hidden;
-          }
-        }
-      `;
-
-      // workaround for dumb prop types storybook issue
-      const TableColumnWidth = ({ children, ...props }) => (
-        <StyledTableColumn {...props}>{children}</StyledTableColumn>
-      );
-
-      TableColumnWidth.displayName = 'Table';
-      TableColumnWidth.propTypes = {
-        className: PropTypes.string,
-      };
-      TableColumnWidth.defaultProps = {
-        className: null,
-      };
-      return (
-        // You don't need to use styled components, just pass a className to the Table component and use selectors to find the correct column
-        <TableColumnWidth
-          columns={tableColumns}
-          options={{ hasFilter: true }}
-          data={tableData}
-          actions={actions}
-          view={{
-            filters: [
-              {
-                columnId: 'string',
-                value: 'whiteboard',
-              },
-              {
-                columnId: 'select',
-                value: 'option-B',
-              },
-            ],
-            toolbar: {
-              activeBar: select('activeBar', ['filter', 'column'], 'filter'),
-            },
-          }}
-        />
-      );
-    },
+    'with fixed column width',
+    () => (
+      // You don't need to use styled components, just pass a className to the Table component and use selectors to find the correct column
+      <Table
+        columns={tableColumns.map((i, idx) => ({
+          width: idx % 2 === 0 ? '20rem' : '10rem',
+          ...i,
+        }))}
+        data={tableData}
+        actions={actions}
+      />
+    ),
     {
       info: {
-        source: false,
-        text: `This is an example of the <Table> component that has a max column width. Pass a custom className prop to the Table component and use a css selector to identify the correct column. In the example below, the column id we're setting max-width for is called 'string'.
-          
-        <Table className="my-custom-classname"/>
-          
-        .my-custom-classname [data-column='string'] { 
-          width: 100px; 
-          max-width: 100px;
-          white-space: nowrap;
-          text-overflow: ellipsis; 
-          overflow-x: hidden; 
-        }`,
+        source: true,
         propTables: false,
       },
     }
   )
   .add(
-    'custom row height',
+    'with custom row height',
     () => (
       // You don't need to use styled components, just pass a className to the Table component and use selectors to find the correct column
       <StyledTableCustomRowHeight columns={tableColumns} data={tableData} actions={actions} />
@@ -639,4 +738,67 @@ storiesOf('Table', module)
         propTables: false,
       },
     }
-  );
+  )
+  .add('with lightweight design', () => (
+    <Table
+      columns={tableColumns}
+      data={tableData}
+      options={{ hasPagination: true }}
+      actions={actions}
+      lightweight={boolean('lightweight', true)}
+    />
+  ))
+  .add('horizontal scroll - custom width', () => {
+    const tableColumnsConcat = [
+      { id: 'test2', name: 'Test 2' },
+      { id: 'test3', name: 'Test 3' },
+      {
+        id: 'test4',
+        name: 'Test 4',
+      },
+    ];
+    // You don't n,eed to use styled components, just pass a className to the Table component and use selectors to find the correct column
+    return (
+      <div style={{ width: '800px' }}>
+        <Table
+          columns={tableColumns.concat(tableColumnsConcat)}
+          options={{ hasFilter: true, hasPagination: true }}
+          data={tableData}
+          actions={actions}
+          view={{
+            filters: [
+              { columnId: 'string', value: 'whiteboard' },
+              { columnId: 'select', value: 'option-B' },
+            ],
+            toolbar: { activeBar: 'filter' },
+          }}
+        />
+      </div>
+    );
+  })
+  .add('horizontal scroll - full width', () => {
+    const tableColumnsConcat = [
+      { id: 'test2', name: 'Test 2' },
+      { id: 'test3', name: 'Test 3' },
+      {
+        id: 'test4',
+        name: 'Test 4',
+      },
+    ];
+    // You don't n,eed to use styled components, just pass a className to the Table component and use selectors to find the correct column
+    return (
+      <Table
+        columns={tableColumns.concat(tableColumnsConcat)}
+        options={{ hasFilter: true, hasPagination: true }}
+        data={tableData}
+        actions={actions}
+        view={{
+          filters: [
+            { columnId: 'string', value: 'whiteboard' },
+            { columnId: 'select', value: 'option-B' },
+          ],
+          toolbar: { activeBar: 'filter' },
+        }}
+      />
+    );
+  });

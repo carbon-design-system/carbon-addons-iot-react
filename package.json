@@ -19,9 +19,11 @@
     "format:diff": "prettier --list-different \"**/*.{scss,css,js,jsx,md,ts}\"",
     "lint": "yarn eslint .",
     "prepare": "yarn build",
+    "start": "yarn storybook",
     "storybook": "start-storybook -p 3000",
     "test": "jest",
-    "test:watch": "jest --watchAll"
+    "test:watch": "jest --watchAll",
+    "test:update": "jest -u"
   },
   "husky": {
     "hooks": {
@@ -35,6 +37,9 @@
     "lodash": "^4.17.11",
     "polished": "^2.3.3",
     "prop-types": "^15.6.2",
+    "react-dnd": "7.0.2",
+    "react-dnd-html5-backend": "2.5.1",
+    "react-dnd-test-backend": "^7.2.0",
     "react-transition-group": "^2.6.0",
     "styled-components": "^4.1.3"
   },

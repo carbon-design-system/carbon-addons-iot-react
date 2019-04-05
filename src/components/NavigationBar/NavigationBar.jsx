@@ -8,13 +8,20 @@ import { COLORS, PADDING, SIZES } from '../../styles/styles';
 const StyledNavigationContainer = styled.div`
   position: relative;
   background-color: ${COLORS.white};
-  ul {
-    padding: ${PADDING.pageWrapPadding};
+  ul[role='tablist'] {
+    padding-left: ${PADDING.horizontalWrapPadding};
+    padding-right: ${PADDING.horizontalWrapPadding};
     border-bottom: 1px solid ${COLORS.lightGrey};
     align-items: center;
-    @media screen and (min-width: 768px) {
-      height: ${SIZES.navigationBarHeight};
-    }
+    ${props =>
+      props.hasActions
+        ? `@media screen and (min-width: 768px) {
+          li {
+            height: ${SIZES.navigationBarHeight};
+            line-height: calc(${SIZES.navigationBarHeight} - 1.5rem);
+      }
+    }`
+        : undefined}
     margin-left: 0rem;
   }
 `;
@@ -44,13 +51,11 @@ const StyledTabContent = styled.div`
   flex-flow: column nowrap;
 `;
 
-const StyledTabHero = styled.div`
-  padding: ${PADDING.pageWrapPadding};
-`;
-
 const StyledTabChildren = styled.div`
-  background: ${COLORS.lightGrey};
-  padding: ${PADDING.pageWrapPadding};
+  background: ${COLORS.superLightGray};
+  padding-left: ${PADDING.horizontalWrapPadding};
+  padding-right: ${PADDING.horizontalWrapPadding};
+  min-height: 100vh;
 `;
 
 const StyledActions = styled.div`
@@ -62,7 +67,8 @@ const StyledActions = styled.div`
   }
   align-items: center;
   position: absolute;
-  padding: ${PADDING.pageWrapPadding};
+  padding-left: ${PADDING.horizontalWrapPadding};
+  padding-right: ${PADDING.horizontalWrapPadding};
   height: ${SIZES.navigationBarHeight};
   top: 0px;
   right: 0px;
@@ -113,14 +119,16 @@ const defaultProps = {
 const NavigationBar = ({ tabs, hero, actions, onSelectionChange, workArea, ...others }) => (
   <Fragment>
     {workArea || null}
-    <StyledNavigationContainer>
+    <StyledNavigationContainer hasActions={actions.length > 0}>
       {workArea ? <StyledOverlay /> : null}
       <StyledTabToContent>
-        <Tabs {...others} onSelectionChange={index => onSelectionChange(tabs[index].id)}>
+        <Tabs
+          {...others}
+          onSelectionChange={index => onSelectionChange && onSelectionChange(tabs[index].id)}>
           {tabs.map(({ children, id, ...other }) => (
             <Tab key={id} {...other}>
               <StyledTabContent>
-                <StyledTabHero>{hero}</StyledTabHero>
+                {hero}
                 <StyledTabChildren>{children}</StyledTabChildren>
               </StyledTabContent>
             </Tab>

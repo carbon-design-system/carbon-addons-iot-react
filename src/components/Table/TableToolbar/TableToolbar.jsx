@@ -20,8 +20,13 @@ const StyledTableToolbarAction = styled(({ isActive, ...other }) => (
   <TableToolbarAction {...other} />
 ))`
   &&& {
-    :last-of-type {
-      padding-right: 0.75rem;
+    padding: 0.75rem;
+    display: flex;
+    height: 2.5rem;
+
+    :focus {
+      height: calc(2.5rem - 2px);
+      padding-top: calc(0.75rem - 1px);
     }
 
     :not(:focus) > svg {
@@ -30,10 +35,28 @@ const StyledTableToolbarAction = styled(({ isActive, ...other }) => (
   }
 `;
 
+const StyledCarbonTableToolbar = styled(CarbonTableToolbar)`
+   {
+    &&& {
+      width: 100%;
+      min-width: 31.25rem;
+      padding-top: 0.125rem;
+    }
+  }
+`;
+
 // Need to save one px on the right for the focus
 const StyledTableToolbarContent = styled(TableToolbarContent)`
   &&& {
     padding-right: 1px;
+    align-items: center;
+  }
+`;
+
+// Need to save one px on the right for the focus
+const StyledClearFiltersButton = styled(Button)`
+  &&& {
+    margin-right: 0.5rem;
   }
 `;
 
@@ -44,6 +67,11 @@ const propTypes = {
     hasSearch: PropTypes.bool,
     hasColumnSelection: PropTypes.bool,
   }).isRequired,
+  /** internationalized labels */
+  searchPlaceholderText: PropTypes.string,
+  clearAllFiltersText: PropTypes.string,
+  columnSelectionText: PropTypes.string,
+  filterText: PropTypes.string,
   /**
    * Action callbacks to update tableState
    */
@@ -83,8 +111,19 @@ const propTypes = {
   }).isRequired,
 };
 
+const defaultProps = {
+  clearAllFiltersText: 'Clear all filters',
+  searchPlaceholderText: 'Search',
+  columnSelectionText: 'Column selection',
+  filterText: 'Filter',
+};
+
 const TableToolbar = ({
   className,
+  clearAllFiltersText,
+  searchPlaceholderText,
+  columnSelectionText,
+  filterText,
   options: { hasColumnSelection, hasFilter, hasSearch },
   actions: {
     onCancelBatchAction,
@@ -96,11 +135,12 @@ const TableToolbar = ({
   },
   tableState: { totalSelected, totalFilters, batchActions, search, activeBar },
 }) => (
-  <CarbonTableToolbar className={className}>
+  <StyledCarbonTableToolbar className={className}>
     {hasSearch ? (
       <TableToolbarSearch
-        onChange={event => onApplySearch(event.currentTarget ? event.currentTarget.value : '')}
         {...search}
+        onChange={event => onApplySearch(event.currentTarget ? event.currentTarget.value : '')}
+        placeHolderText={searchPlaceholderText}
       />
     ) : null}
     <StyledTableToolbarContent>
@@ -114,16 +154,16 @@ const TableToolbar = ({
           </TableBatchAction>
         ))}
       </TableBatchActions>
-      {totalFilters > 0 ? ( // TODO: translate button
-        <Button kind="secondary" onClick={onClearAllFilters} small>
-          Clear All Filters
-        </Button>
+      {totalFilters > 0 ? (
+        <StyledClearFiltersButton kind="secondary" onClick={onClearAllFilters} small>
+          {clearAllFiltersText}
+        </StyledClearFiltersButton>
       ) : null}
       {hasColumnSelection ? (
         <StyledTableToolbarAction
           className="bx--btn--sm"
           icon={iconGrid}
-          iconDescription="Column Selection"
+          iconDescription={columnSelectionText}
           isActive={activeBar === 'column'}
           onClick={onToggleColumnSelection}
         />
@@ -132,15 +172,16 @@ const TableToolbar = ({
         <StyledTableToolbarAction
           className="bx--btn--sm"
           icon={iconFilter}
-          iconDescription="Filter"
+          iconDescription={filterText}
           isActive={activeBar === 'filter'}
           onClick={onToggleFilter}
         />
       ) : null}
     </StyledTableToolbarContent>
-  </CarbonTableToolbar>
+  </StyledCarbonTableToolbar>
 );
 
 TableToolbar.propTypes = propTypes;
+TableToolbar.defaultProps = defaultProps;
 
 export default TableToolbar;
