@@ -16,12 +16,12 @@ import HeaderMenu from '../HeaderMenu';
 import { COLORS } from '../../styles/styles';
 
 const StyledHeader = styled(CarbonHeader)`
-   {
+  &&& {
     background-color: ${COLORS.darkGray};
   }
 `;
 const StyledGlobalAction = styled(HeaderGlobalAction)`
-   {
+  &&& {
     align-items: center;
     display: flex;
     justify-content: center;

@@ -13,14 +13,14 @@ import { COLORS } from '../../styles/styles';
 import CarbonSideNav from './CarbonSideNav';
 
 const StyledSideNav = styled(CarbonSideNav)`
-   {
+  &&& {
     background-color: ${COLORS.darkGray};
     border-top: 1px solid #3c4646;
     height: calc(100% - 3rem);
   }
 `;
 const StyledSideNavLink = styled(SideNavLink)`
-   {
+  &&& {
     :hover {
       background-color: ${COLORS.darkGrayHover};
     }
@@ -28,7 +28,7 @@ const StyledSideNavLink = styled(SideNavLink)`
 `;
 
 const StyledSideNavMenu = styled(SideNavMenu)`
-   {
+  &&& {
     background-color: ${COLORS.darkGray};
 
     :not(.bx--side-nav__item--active):hover {
