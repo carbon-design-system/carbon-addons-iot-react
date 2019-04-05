@@ -22,6 +22,7 @@ export const handleEnterKeyDown = (evt, callback) => {
 export const defaultFunction = name => () => console.info(`${name} not implemented`); //eslint-disable-line
 
 export const getSortedData = (inputData, columnId, direction) => {
+  // clone inputData because sort mutates the array
   const sortedData = inputData.map(i => i);
   return sortedData.sort((a, b) => {
     const val = direction === 'ASC' ? -1 : 1;
