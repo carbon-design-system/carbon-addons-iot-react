@@ -1164,7 +1164,7 @@
     "@carbon/icon-helpers" "0.0.1-alpha.12"
     prop-types "^15.6.2"
 
-"@carbon/icons-react@^0.0.1-beta.4":
+"@carbon/icons-react@^0.0.1-beta.2":
   version "0.0.1-beta.5"
   resolved "https://registry.yarnpkg.com/@carbon/icons-react/-/icons-react-0.0.1-beta.5.tgz#77f7ffb4f3a1376cc990db72f524e7ecf3291b33"
   integrity sha512-Cigh18dQHgS5pnqfLpp/wjrUBRRd05KC9A3Iloa3WWMlRCy6/Mgoe6Zg0teMOEIYrfoGFx29bgWeeyvzrufLLw==
@@ -3657,12 +3657,12 @@ capture-stack-trace@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/capture-stack-trace/-/capture-stack-trace-1.0.1.tgz#a6c0bbe1f38f3aa0b92238ecb6ff42c344d4135d"
 
-carbon-components-react@^7.0.0:
-  version "7.0.0"
-  resolved "https://registry.yarnpkg.com/carbon-components-react/-/carbon-components-react-7.0.0.tgz#a4936eb52bd97f1758ec74de56c814ffc8ea8353"
-  integrity sha512-05Q5iRbKRod2tDVpMO/JKqkqtZsZj0taIFSIljmjyDwVFnRnMqFSgH3EppFFL+dlhTiXU9oTHGCLRrHAJwRKCg==
+carbon-components-react@^6.108.0:
+  version "6.114.0"
+  resolved "https://registry.yarnpkg.com/carbon-components-react/-/carbon-components-react-6.114.0.tgz#6b1d9aa532b2af9e6a763c342d3bbb0cd92835e5"
+  integrity sha512-JHiM6l5FmmPiidyaDasHWT5WgjDQmD53CqWC30QguxVjObrZPRR7r/L7sOBtiZ7sRo/0qQ+FAZidCUCn/SlFNg==
   dependencies:
-    "@carbon/icons-react" "^0.0.1-beta.4"
+    "@carbon/icons-react" "^0.0.1-beta.2"
     classnames "2.2.6"
     downshift "^1.31.14"
     flatpickr "4.5.5"
@@ -3671,7 +3671,7 @@ carbon-components-react@^7.0.0:
     lodash.debounce "^4.0.8"
     lodash.isequal "^4.5.0"
     lodash.omit "^4.5.0"
-    react-is "^16.8.5"
+    react-is "^16.8.2"
     warning "^3.0.0"
     window-or-global "^1.0.1"
 
@@ -10408,14 +10408,14 @@ react-is@^16.7.0, react-is@^16.8.1:
   version "16.8.4"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.8.4.tgz#90f336a68c3a29a096a3d648ab80e87ec61482a2"
 
-react-is@^16.8.3:
-  version "16.8.3"
-  resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.8.3.tgz#4ad8b029c2a718fc0cfc746c8d4e1b7221e5387d"
-
-react-is@^16.8.5:
+react-is@^16.8.2:
   version "16.8.6"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.8.6.tgz#5bbc1e2d29141c9fbdfed456343fe2bc430a6a16"
   integrity sha512-aUk3bHfZ2bRSVFFbbeVS4i+lNPZr3/WM5jT2J5omUVV1zzcs1nAaf3l51ctA5FFvCRbhrH0bdAsRRQddFJZPtA==
+
+react-is@^16.8.3:
+  version "16.8.3"
+  resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.8.3.tgz#4ad8b029c2a718fc0cfc746c8d4e1b7221e5387d"
 
 react-lifecycles-compat@^3.0.0, react-lifecycles-compat@^3.0.2, react-lifecycles-compat@^3.0.4:
   version "3.0.4"
