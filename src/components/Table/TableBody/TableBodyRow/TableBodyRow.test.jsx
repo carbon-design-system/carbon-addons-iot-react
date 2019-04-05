@@ -20,6 +20,7 @@ const tableRowProps = {
 
 describe('TableBodyRow', () => {
   test('shouldExpandOnRowClick', () => {
+    // Should expand
     const tableRowExpandByDefault = mount(
       <TableBodyRow
         options={{ hasRowExpansion: true, shouldExpandOnRowClick: true }}
@@ -29,7 +30,20 @@ describe('TableBodyRow', () => {
     );
     tableRowExpandByDefault.simulate('click');
     expect(mockActions.onRowClicked).toHaveBeenCalled();
-    expect(mockActions.onRowExpanded).toHaveBeenCalled();
+    expect(mockActions.onRowExpanded).toHaveBeenCalledWith('tableRow', true);
+
+    // Should collapse
+    const tableRowCollapseByDefault = mount(
+      <TableBodyRow
+        isExpanded
+        options={{ hasRowExpansion: true, shouldExpandOnRowClick: true }}
+        tableActions={mockActions}
+        {...tableRowProps}
+      />
+    );
+    tableRowCollapseByDefault.childAt(0).simulate('click');
+    expect(mockActions.onRowClicked).toHaveBeenCalled();
+    expect(mockActions.onRowExpanded).toHaveBeenCalledWith('tableRow', false);
 
     mockActions.onRowClicked.mockClear();
     mockActions.onRowExpanded.mockClear();
@@ -88,5 +102,27 @@ describe('TableBodyRow', () => {
     expect(customCell.text()).toContain('col1');
     expect(customCell.text()).toContain('col2');
     expect(customCell.text()).toContain('value2');
+  });
+
+  test('hasRowSelection', () => {
+    const mockRowSelection = jest.fn();
+    const mockRowClicked = jest.fn();
+    const tableRowPropsWithSelection = {
+      tableId: 'tableId',
+      totalColumns: 2,
+      id: 'tableRow',
+      options: { hasRowSelection: true },
+      tableActions: { onRowSelected: mockRowSelection, onRowClicked: mockRowClicked },
+      columns: [{ id: 'col1' }, { id: 'col2' }],
+      ordering: [{ columnId: 'col1' }, { columnId: 'col2' }],
+      children: { col1: 'value1', col2: undefined },
+    };
+    const wrapper = mount(
+      <TableBodyRow tableActions={mockActions} {...tableRowPropsWithSelection} />
+    );
+    wrapper
+      .find('input')
+      .simulate('click', { preventDefault: () => true, stopPropagation: () => true });
+    expect(mockRowSelection).toHaveBeenCalled();
   });
 });
