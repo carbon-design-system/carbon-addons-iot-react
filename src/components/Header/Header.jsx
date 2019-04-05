@@ -13,7 +13,6 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-// import HeaderMenu from '../HeaderMenu';
 import { COLORS } from '../../styles/styles';
 
 const StyledHeader = styled(CarbonHeader)`
