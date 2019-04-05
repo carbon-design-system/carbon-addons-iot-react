@@ -5134,7 +5134,6 @@ eslint-config-airbnb@^17.1.0:
     object.assign "^4.1.0"
     object.entries "^1.0.4"
 
-
 eslint-config-prettier@^4.1.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-4.1.0.tgz#181364895899fff9fd3605fecb5c4f20e7d5f395"
@@ -10035,7 +10034,7 @@ prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.8, prop-types@^15.6.0,
     loose-envify "^1.3.1"
     object-assign "^4.1.1"
 
-prop-types@^15.5.9:
+prop-types@^15.5.9, prop-types@^15.7.2:
   version "15.7.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
   dependencies:
@@ -11787,6 +11786,14 @@ stdout-stream@^1.4.0:
 stealthy-require@^1.1.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/stealthy-require/-/stealthy-require-1.1.1.tgz#35b09875b4ff49f26a777e509b3090a3226bf24b"
+
+storybook-addon-rtl@^0.2.2:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/storybook-addon-rtl/-/storybook-addon-rtl-0.2.2.tgz#5e5dabeb35f021b540b6d9cb03cfc4b34732f23d"
+  integrity sha512-vTXX2qKyIzH6amknJHPQFQf6LDPUEu8UwYqQVU0JlYrfjgrsMb/KKhk47iTjrR6eHCtDBOmJJt9lPWr1uTqmuA==
+  dependencies:
+    prop-types "^15.7.2"
+    styled-components "^4.1.3"
 
 stream-browserify@^2.0.1:
   version "2.0.1"
