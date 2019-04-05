@@ -68,11 +68,13 @@ const ProgressIndicator = ({
       onClickItem(items[index].id);
     }
   };
-  // Only recalculate current step if inputs change
-  const currentStep = useMemo(() => items.findIndex(item => item.id === currentItemId), [
+
+  const matchingIndex = useMemo(() => items.findIndex(item => item.id === currentItemId), [
     items,
     currentItemId,
   ]);
+  // Only recalculate current step if inputs change
+  const currentStep = matchingIndex > -1 ? matchingIndex : 0;
 
   return (
     <StyledProgressIndicator

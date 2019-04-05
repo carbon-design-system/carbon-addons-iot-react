@@ -42,13 +42,15 @@ export const filterData = (data, filters) =>
 // Little utility to search
 
 export const searchData = (data, searchString) =>
-  data.filter((
-    { values } // globally check row values for a match
-  ) =>
-    Object.values(values).find(
-      value => !isNil(value) && value.toString && value.toString().includes(searchString)
-    )
-  );
+  searchString && searchString !== ''
+    ? data.filter((
+        { values } // globally check row values for a match
+      ) =>
+        Object.values(values).find(
+          value => !isNil(value) && value.toString && value.toString().includes(searchString)
+        )
+      )
+    : data;
 
 // little utility to both sort and filter
 export const filterSearchAndSort = (data, sort = {}, search = {}, filters = []) => {
