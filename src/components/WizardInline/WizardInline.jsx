@@ -73,9 +73,9 @@ export const propTypes = {
   submitLabel: PropTypes.node,
   /** component to show in sidebar */
   sidebar: PropTypes.element,
-  /** component to show in footer. Passed to Sidebar */
+  /** component to show in footer on the left of the buttons */
   footerLeftContent: PropTypes.element,
-  /** function to go to item when click ProgressIndicator items. Passed to Footer */
+  /** function to go to item when click ProgressIndicator items. */
   setItem: PropTypes.func,
   /** show labels in Progress Indicator */
   showLabels: PropTypes.bool,
