@@ -762,7 +762,7 @@ storiesOf('Table', module)
       <div style={{ width: '800px' }}>
         <Table
           columns={tableColumns.concat(tableColumnsConcat)}
-          options={{ hasFilter: true }}
+          options={{ hasFilter: true, hasPagination: true }}
           data={tableData}
           actions={actions}
           view={{
@@ -789,7 +789,7 @@ storiesOf('Table', module)
     return (
       <Table
         columns={tableColumns.concat(tableColumnsConcat)}
-        options={{ hasFilter: true }}
+        options={{ hasFilter: true, hasPagination: true }}
         data={tableData}
         actions={actions}
         view={{

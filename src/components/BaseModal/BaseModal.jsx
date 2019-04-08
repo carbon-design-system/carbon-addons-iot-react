@@ -109,6 +109,9 @@ export const BaseModalPropTypes = {
     title: PropTypes.string,
     helpText: PropTypes.node,
   }),
+  /** ability to add translation string to close icon */
+  iconDescription: PropTypes.string,
+
   /** Content to render inside Modal */
   children: PropTypes.node,
   /** Footer Props
@@ -126,33 +129,27 @@ export const BaseModalPropTypes = {
   /** NEW PROP: Whether this particular dialog needs to be very large */
   isLarge: PropTypes.bool,
 
-  /** REDUXDIALOG: Should the dialog be open or not */
+  /** Should the dialog be open or not */
   open: PropTypes.bool, // eslint-disable-line react/boolean-prop-naming
-  /**  REDUXDIALOG: Close the dialog */
+  /**   Close the dialog */
   onClose: PropTypes.func.isRequired,
 
-  /**  REDUXDIALOG: Clear the currently shown dataError, triggered if the user closes the ErrorNotification */
-  onClearDialogErrors: PropTypes.func,
-
-  /** REDUXDIALOG: Is data currently being sent to the backend */
+  /**  Is data currently being sent to the backend */
   sendingData: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
-  /** REDUXDIALOG: Is my data actively loading? */
+  /**  Is my data actively loading? */
   isFetchingData: PropTypes.bool,
-  /** REDUXDIALOG: Details about the current dataError */
-  dataError: PropTypes.string,
 
-  /** REDUXFORM: Form Error Details */
+  /** Form Error Details */
   error: PropTypes.string,
-  /** REDUXFORM: Did the form submission fail */
+  /**  Clear the currently shown error, triggered if the user closes the ErrorNotification */
+  onClearError: PropTypes.func,
+
+  /** Did the form submission fail */
   submitFailed: PropTypes.bool, // eslint-disable-line react/boolean-prop-naming
-  /** REDUXFORM: Is the form currently invalid */
+  /** Is the form currently invalid */
   invalid: PropTypes.bool, // eslint-disable-line react/boolean-prop-naming
-  /**  REDUXFORM: Clear the currently shown error (from form), triggered if the user closes the ErrorNotification */
-  clearSubmitErrors: PropTypes.func,
-  /** REDUXFORM: Callback to submit the dialog/form */
+  /** Callback to submit the dialog/form */
   onSubmit: PropTypes.func,
-  /** ability to add translation string to close icon */
-  iconDescription: PropTypes.string,
 };
 
 /**
@@ -166,20 +163,17 @@ export const BaseModalPropTypes = {
  *  shows spinner on primary dialog button if sendingData prop is true
  *
  * We also prevent the dialog from closing if you click outside it.
- * This dialog can be decorated by reduxDialog HoC and/or reduxForm HoC to automatically populate the fields below marked as
- * REDUXFORM or REDUXDIALOG
+ *
  */
 class BaseModal extends React.Component {
   static propTypes = BaseModalPropTypes;
 
   static defaultProps = {
     open: true,
-    dataError: null,
     error: null,
     isFetchingData: false,
     sendingData: null,
-    clearSubmitErrors: null,
-    onClearDialogErrors: null,
+    onClearError: null,
     type: null,
     footer: null,
     isLarge: false,
@@ -199,12 +193,9 @@ class BaseModal extends React.Component {
   }
 
   handleClearError = () => {
-    const { clearSubmitErrors, onClearDialogErrors } = this.props;
-    if (clearSubmitErrors) {
-      clearSubmitErrors();
-    } // Clear the form errors
-    if (onClearDialogErrors) {
-      onClearDialogErrors();
+    const { onClearError } = this.props;
+    if (onClearError) {
+      onClearError();
     }
   };
 
@@ -215,7 +206,6 @@ class BaseModal extends React.Component {
     const {
       header,
       error,
-      dataError,
       sendingData,
       children,
       footer,
@@ -230,7 +220,6 @@ class BaseModal extends React.Component {
     } = this.props;
     const { label, title, helpText } = header;
     // First check for dataErrors as they are worse than form errors
-    const errorMessage = dataError || error;
 
     return isFetchingData ? (
       <Loading />
@@ -251,12 +240,12 @@ class BaseModal extends React.Component {
           {helpText ? <p className="bx--modal-content__text">{helpText}</p> : null}
         </ModalHeader>
         {children ? <ModalBody>{children}</ModalBody> : null}
-        {error || dataError ? (
+        {error ? (
           <StyledMessageBox
-            title={errorMessage}
+            title={error}
             subtitle=""
             kind="error"
-            onCloseButtonClick={onClose}
+            onCloseButtonClick={this.handleClearError}
           />
         ) : null}
         {footer || onSubmit ? (
