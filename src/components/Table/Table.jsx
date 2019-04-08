@@ -4,6 +4,7 @@ import merge from 'lodash/merge';
 import pick from 'lodash/pick';
 import { PaginationV2, DataTable } from 'carbon-components-react';
 import get from 'lodash/get';
+import isNil from 'lodash/isNil';
 
 import { defaultFunction } from '../../utils/componentUtilityFunctions';
 
@@ -241,6 +242,15 @@ const Table = props => {
     ...others
   } = merge({}, defaultProps(props), props);
 
+  const handleClearFilters = () => {
+    if (actions.toolbar && actions.toolbar.onClearAllFilters) {
+      actions.toolbar.onClearAllFilters();
+    }
+    if (actions.toolbar && actions.toolbar.onApplySearch) {
+      actions.toolbar.onApplySearch('');
+    }
+  };
+
   const minItemInView =
     options.hasPagination && view.pagination
       ? (view.pagination.page - 1) * view.pagination.pageSize
@@ -259,6 +269,14 @@ const Table = props => {
     (options.hasRowSelection ? 1 : 0) +
     (options.hasRowExpansion ? 1 : 0) +
     (options.hasRowActions ? 1 : 0);
+
+  const isFiltered =
+    view.filters.length > 0 ||
+    (!isNil(view.toolbar) &&
+      !isNil(view.toolbar.search) &&
+      !isNil(view.toolbar.search.value) &&
+      view.toolbar.search.value !== '');
+
   return (
     <div id={id}>
       <TableToolbar
@@ -342,17 +360,21 @@ const Table = props => {
           ) : (
             <EmptyTable
               totalColumns={totalColumns}
-              isFiltered={view.filters.length > 0}
+              isFiltered={isFiltered}
               emptyState={
-                // Either use the custom element or the default labels
-                view.table.emptyState || {
-                  message: i18n.emptyMessage,
-                  messageWithFilters: i18n.emptyMessageWithFilters,
-                  buttonLabel: i18n.emptyButtonLabel,
-                  buttonLabelWithFilters: i18n.emptyButtonLabelWithFilters,
-                }
+                // only show emptyState if no filters or search is applied
+                view.table.emptyState && !isFiltered
+                  ? view.table.emptyState
+                  : {
+                      message: i18n.emptyMessage,
+                      messageWithFilters: i18n.emptyMessageWithFilters,
+                      buttonLabel: i18n.emptyButtonLabel,
+                      buttonLabelWithFilters: i18n.emptyButtonLabelWithFilters,
+                    }
               }
-              onEmptyStateAction={actions.table.onEmptyStateAction}
+              onEmptyStateAction={
+                isFiltered ? handleClearFilters : actions.table.onEmptyStateAction
+              }
             />
           )}
         </CarbonTable>

@@ -1,7 +1,7 @@
 import merge from 'lodash/merge';
 import omit from 'lodash/omit';
 
-import { tableReducer } from './tableReducer';
+import { tableReducer, filterData, searchData, filterSearchAndSort } from './tableReducer';
 import {
   tableRegister,
   tablePageChange,
@@ -234,5 +234,34 @@ describe('table reducer testcases', () => {
         initialState.data.length
       );
     });
+  });
+});
+
+describe('filter, search and sort', () => {
+  test('filterData', () => {
+    const mockData = [{ values: { number: 10, string: 'string', null: null } }];
+    const stringFilter = { columnId: 'string', value: 'string' };
+    const numberFilter = { columnId: 'number', value: 10 };
+    expect(filterData(mockData, [stringFilter])).toHaveLength(1);
+    expect(filterData(mockData, [numberFilter])).toHaveLength(1);
+  });
+
+  test('searchData', () => {
+    const mockData = [{ values: { number: 10, string: 'string', null: null } }];
+    expect(searchData(mockData, 10)).toHaveLength(1);
+    expect(searchData(mockData, 'string')).toHaveLength(1);
+  });
+
+  test('filterSearchAndSort', () => {
+    const mockData = [{ values: { number: 10, string: 'string', null: null } }];
+    expect(filterSearchAndSort(mockData)).toHaveLength(1);
+    expect(filterSearchAndSort(mockData, {}, { value: 10 })).toHaveLength(1);
+    expect(filterSearchAndSort(mockData, {}, { value: 20 })).toHaveLength(0);
+    expect(
+      filterSearchAndSort(mockData, {}, {}, [{ columnId: 'string', value: 'string' }])
+    ).toHaveLength(1);
+    expect(
+      filterSearchAndSort(mockData, {}, {}, [{ columnId: 'string', value: 'none' }])
+    ).toHaveLength(0);
   });
 });

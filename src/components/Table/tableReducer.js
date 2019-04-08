@@ -23,7 +23,7 @@ import {
 import { baseTableReducer } from './baseTableReducer';
 
 // Little utility to filter data
-const filterData = (data, filters) =>
+export const filterData = (data, filters) =>
   !filters || filters.length === 0
     ? data
     : data.filter(({ values }) =>
@@ -40,15 +40,20 @@ const filterData = (data, filters) =>
         )
       );
 // Little utility to search
-const searchData = (data, searchString) =>
-  data.filter((
-    { values } // globally check row values for a match
-  ) =>
-    Object.values(values).find(value => value.toString && value.toString().includes(searchString))
-  );
+
+export const searchData = (data, searchString) =>
+  searchString && searchString !== ''
+    ? data.filter((
+        { values } // globally check row values for a match
+      ) =>
+        Object.values(values).find(
+          value => !isNil(value) && value.toString && value.toString().includes(searchString)
+        )
+      )
+    : data;
 
 // little utility to both sort and filter
-const filterSearchAndSort = (data, sort = {}, search = {}, filters) => {
+export const filterSearchAndSort = (data, sort = {}, search = {}, filters = []) => {
   const { columnId, direction } = sort;
   const { value: searchValue } = search;
   const filteredData = filterData(data, filters);
@@ -206,10 +211,10 @@ export const tableReducer = (state = {}, action) => {
     case TABLE_REGISTER: {
       const updatedData = action.payload.data || state.data;
       return update(state, {
+        data: {
+          $set: updatedData,
+        },
         view: {
-          data: {
-            $set: updatedData,
-          },
           table: {
             filteredData: {
               $set: filterSearchAndSort(

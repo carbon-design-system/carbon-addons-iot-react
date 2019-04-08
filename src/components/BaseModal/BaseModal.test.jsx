@@ -18,17 +18,9 @@ describe('BaseModal', () => {
     expect(utilityFunctions.scrollErrorIntoView).toHaveBeenCalledTimes(1);
   });
   test('errors should be cleared', () => {
-    const mockClearSubmitErrors = jest.fn();
-    const mockOnClearDialogErrors = jest.fn();
-    const wrapper = mount(
-      <BaseModal
-        {...modalProps}
-        clearSubmitErrors={mockClearSubmitErrors}
-        onClearDialogErrors={mockOnClearDialogErrors}
-      />
-    );
+    const onClearError = jest.fn();
+    const wrapper = mount(<BaseModal {...modalProps} onClearError={onClearError} />);
     wrapper.instance().handleClearError();
-    expect(mockClearSubmitErrors).toHaveBeenCalledTimes(1);
-    expect(mockOnClearDialogErrors).toHaveBeenCalledTimes(1);
+    expect(onClearError).toHaveBeenCalledTimes(1);
   });
 });
