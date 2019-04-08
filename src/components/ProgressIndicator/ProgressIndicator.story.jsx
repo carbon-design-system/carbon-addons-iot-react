@@ -53,4 +53,13 @@ storiesOf('ProgressIndicator', module)
       showLabels={boolean('showlabels', true)}
       stepWidth={number('stepWidth', 136)}
     />
+  ))
+  .add('hideLabels and default stepWidth', () => (
+    <ProgressIndicator
+      items={items}
+      currentItemId={select('id', items.map(item => item.id), items[0].id)}
+      onClickItem={action('onClickItem')}
+      showLabels={boolean('showlabels', false)}
+      stepWidth={number('stepWidth', 0)}
+    />
   ));
