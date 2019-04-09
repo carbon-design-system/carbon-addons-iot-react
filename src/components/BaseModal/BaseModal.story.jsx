@@ -98,4 +98,11 @@ REDUXFORM or REDUXDIALOG`,
       footer={<div>custom footer element</div>}
       onClose={action('close')}
     />
+  ))
+  .add('i18n', () => (
+    <BaseModal
+      footer={{ primaryButtonLabel: 'My Submit', secondaryButtonLabel: 'My Cancel' }}
+      onClose={action('close')}
+      onSubmit={action('submit')}
+    />
   ));

@@ -13,4 +13,10 @@ describe('ProgressIndicator', () => {
     wrapper.find('[tabIndex=0]').simulate('click');
     expect(mockOnClickItem).toHaveBeenCalledWith('myid2');
   });
+  test('if click item is not set it still works', () => {
+    const wrapper = mount(<ProgressIndicator items={mockItems} />);
+    // click the next step
+    wrapper.find('[tabIndex=0]').simulate('click');
+    expect(wrapper).toBeDefined();
+  });
 });
