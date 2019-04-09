@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { RadioTile, Tile, Search, SkeletonText } from 'carbon-components-react';
-import { Bee32 } from '@carbon/icons-react';
+import Bee from '@carbon/icons-react/lib/bee/32';
 
 import SimplePagination from '../SimplePagination/SimplePagination';
 
@@ -159,7 +159,7 @@ const TileCatalog = ({
         />
       ) : (
         <StyledEmptyTile>
-          <Bee32 />
+          <Bee />
           <p>{(search && search.noMatchesFoundText) || 'No matches found'}</p>
         </StyledEmptyTile>
       )}

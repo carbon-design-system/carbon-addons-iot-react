@@ -1,12 +1,12 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { Icon } from 'carbon-components-react';
 import { rem } from 'polished';
 import styled from 'styled-components';
 import AppSwitcher from '@carbon/icons-react/lib/app-switcher/24';
 import Chip from '@carbon/icons-react/lib/chip/24';
 import Group from '@carbon/icons-react/lib/group/24';
+import UserAvatar from '@carbon/icons-react/lib/user--avatar/24';
 
 import Header from '../Header';
 
@@ -20,13 +20,6 @@ const User = styled.p`
     font-size: 0.75rem;
     text-align: left;
     margin-right: ${rem(20)};
-  }
-`;
-
-const StyledIcon = styled(Icon)`
-   {
-    width: 25px;
-    height: 25px;
   }
 `;
 
@@ -96,7 +89,7 @@ const HeaderProps = {
           <User>
             JohnDoe@ibm.com<span>TenantId: Acme</span>
           </User>
-          <StyledIcon name="header--avatar" fill="white" description="Icon" />
+          <UserAvatar fill="white" description="Icon" />
         </React.Fragment>
       ),
     },

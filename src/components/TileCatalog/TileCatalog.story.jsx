@@ -1,7 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { Icon } from 'carbon-components-react';
+import Add from '@carbon/icons-react/lib/add/32';
+// import { Icon } from 'carbon-components-react';
 
 import StatefulTileCatalog from './StatefulTileCatalog';
 import TileCatalog from './TileCatalog';
@@ -11,7 +12,18 @@ const longDescription =
   'Really long string with lots of lots of text too much to show on one line and when it wraps it might cause some interesting issues especially if it starts vertically wrapping outside of tile bounds at the bottom of the tile';
 
 const tileRenderFunction = ({ values }) => (
-  <CatalogContent {...values} icon={<Icon width="50" height="50" name="icon--add" />} />
+  <CatalogContent
+    {...values}
+    icon={
+      <Add
+        fill="black"
+        width={90}
+        height={90}
+        description="This is a description of the icon and what it does in context"
+        className="extra-class"
+      />
+    }
+  />
 );
 
 const commonTileCatalogProps = {

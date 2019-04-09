@@ -1,8 +1,9 @@
-import { ClickableTile, Icon } from 'carbon-components-react';
+import { ClickableTile } from 'carbon-components-react';
 import { rem } from 'polished';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import React from 'react';
+import AddOutline from '@carbon/icons-react/lib/add--alt/24';
 
 import { COLORS } from '../../styles/styles';
 
@@ -23,7 +24,7 @@ const StyledTile = styled(ClickableTile)`
     }
   }
 `;
-const StyledIcon = styled(Icon)`
+const StyledIcon = styled(AddOutline)`
    {
     width: ${rem(56)};
     height: ${rem(56)};
@@ -48,7 +49,7 @@ const propTypes = {
  */
 const AddCard = ({ onClick, title, className }) => (
   <StyledTile className={className} handleClick={onClick}>
-    <StyledIcon name="add--outline" fill="grey" description={title} />
+    <StyledIcon fill="grey" description={title} />
     <Title className="title">{title}</Title>
   </StyledTile>
 );

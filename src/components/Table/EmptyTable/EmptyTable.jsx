@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { DataTable, Button } from 'carbon-components-react';
 import styled from 'styled-components';
-import { Bee32 } from '@carbon/icons-react';
+import Bee from '@carbon/icons-react/lib/bee/32';
 
 import { COLORS } from '../../../styles/styles';
 import { EmptyStatePropTypes } from '../TablePropTypes';
@@ -59,7 +59,7 @@ const EmptyTable = ({
           emptyState
         ) : (
           <div className="empty-table-cell--default">
-            <Bee32 />
+            <Bee />
             <p>{isFiltered && messageWithFilters ? messageWithFilters : message}</p>
             {buttonLabel && onEmptyStateAction ? (
               <Button onClick={onEmptyStateAction}>
