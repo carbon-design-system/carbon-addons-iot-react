@@ -41,6 +41,7 @@ export default {
         'node_modules/carbon-components-react/lib/components/UIShell/index.js': [
           'Header',
           'HeaderName',
+          'HeaderMenu',
           'HeaderGlobalBar',
           'HeaderGlobalAction',
           'SkipToContent',

@@ -36,17 +36,8 @@ exports[`Header testcases should render 1`] = `
     >
       <ForwardRef
         aria-label="help"
-        content={
-          <Icon
-            className="bx--header__menu-item bx--header__menu-title"
-            description="Icon"
-            fill="white"
-            fillRule="evenodd"
-            name="header--help"
-            role="img"
-          />
-        }
         key="menu-item-help"
+        renderMenuContent={[Function]}
       >
         <ForwardRef
           href="javascript:void(0)"

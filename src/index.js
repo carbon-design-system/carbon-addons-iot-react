@@ -13,6 +13,7 @@ export EmptyTable from './components/Table/EmptyTable/EmptyTable';
 export TableSkeletonWithHeaders from './components/Table/TableSkeletonWithHeaders/TableSkeletonWithHeaders';
 export StatefulTable from './components/Table/StatefulTable';
 export TileCatalog from './components/TileCatalog/TileCatalog';
+export StatefulTileCatalog from './components/TileCatalog/StatefulTileCatalog';
 export SimplePagination from './components/SimplePagination/SimplePagination';
 export CatalogContent from './components/TileCatalog/CatalogContent';
 export ProgressIndicator from './components/ProgressIndicator/ProgressIndicator';
