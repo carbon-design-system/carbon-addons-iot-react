@@ -12,6 +12,7 @@ const StyledDivWizardHeader = styled.div`
 
 const StyledDivHeading = styled.div`
   min-width: 200px;
+  padding-right: 3rem;
 `;
 
 class WizardHeader extends Component {
@@ -24,8 +25,6 @@ class WizardHeader extends Component {
       PropTypes.shape({
         id: PropTypes.string.isRequired,
         name: PropTypes.string.isRequired,
-        backLabel: PropTypes.string,
-        nextLabel: PropTypes.string,
         component: PropTypes.element.isRequired,
       })
     ).isRequired,
@@ -39,10 +38,7 @@ class WizardHeader extends Component {
     stepWidth: 136,
   };
 
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
+  state = {};
 
   render = () => {
     const {
