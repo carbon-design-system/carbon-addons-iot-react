@@ -22,7 +22,7 @@ const StyledProgressStep = styled(({ showLabel, stepWidth, ...others }) => (
   <ProgressStep {...others} />
 ))`
   &&& {
-    width: ${props => `${props.stepWidth}px` || 'inherit'};
+    width: ${props => (props.stepWidth ? `${props.stepWidth}px` : 'inherit')};
     min-width: 136px;
     p {
       display: ${props => (!props.showLabel ? 'none' : 'inherit')};
