@@ -149,6 +149,7 @@ storiesOf('WizardInline', module)
       currentItemId="step1"
       items={itemsAndComponents}
       title={text('title', 'I am a title')}
+      blurb={text('blurb', 'My long blurb to explain what is going on')}
       showLabels={boolean('showLabels', true)}
       stepWidth={number('stepWidth', 136)}
       sidebar={sidebarComponent}

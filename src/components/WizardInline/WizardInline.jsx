@@ -8,9 +8,15 @@ import WizardSidebar from './WizardLeftSidebar/WizardSidebar';
 import WizardContent from './WizardContent/WizardContent';
 
 const StyledWizardWrapper = styled.div`
+  .bx--modal-header {
+    margin-bottom: 0.5rem;
+  }
+
   .bx--modal-content {
+    padding: 0rem 1rem;
     margin-bottom: 48px;
     max-height: 80vh;
+    min-width: 50rem;
     overflow: auto;
   }
   .bx--modal-container {
@@ -45,8 +51,9 @@ const StyledFooter = styled.div`
 export const propTypes = {
   /** Title in the header */
   title: PropTypes.string.isRequired,
+  blurb: PropTypes.string,
   /** Id of current step */
-  currentItemId: PropTypes.string.isRequired,
+  currentItemId: PropTypes.string,
   /** Array of items representing pages of wizard. Must contain id, name, component. Optional: backLabel, nextLabel, nextDisabled */
   items: PropTypes.arrayOf(
     PropTypes.shape({
@@ -92,6 +99,8 @@ export const defaultProps = {
   footerLeftContent: null,
   showLabels: true,
   nextDisabled: false,
+  currentItemId: null,
+  blurb: null,
   stepWidth: 136,
   onNext: null,
   onBack: null,
@@ -107,6 +116,7 @@ export const defaultProps = {
 
 const WizardInline = ({
   title,
+  blurb,
   currentItemId,
   items,
   onNext,
@@ -126,7 +136,7 @@ const WizardInline = ({
   stepWidth,
   className,
 }) => {
-  const currentItemObj = items.find(({ id }) => currentItemId === id);
+  const currentItemObj = items.find(({ id }) => currentItemId === id) || items[0];
   const currentItemIndex = items.findIndex(({ id }) => currentItemId === id);
   const hasNext = currentItemIndex !== items.length - 1;
   const hasPrev = currentItemIndex !== 0;
@@ -136,6 +146,7 @@ const WizardInline = ({
       <div className="bx--modal-container">
         <WizardHeader
           title={title}
+          blurb={blurb}
           currentItemId={currentItemId}
           setItem={setItem}
           items={items}

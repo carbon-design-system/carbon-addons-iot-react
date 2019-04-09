@@ -97,4 +97,7 @@ storiesOf('TileCatalog', module)
       },
     }
   )
-  .add('loading', () => <TileCatalog {...commonTileCatalogProps} isLoading />);
+  .add('loading', () => <TileCatalog {...commonTileCatalogProps} isLoading />)
+  .add('error', () => (
+    <TileCatalog {...commonTileCatalogProps} tiles={[]} error="In error state" />
+  ));
