@@ -1,35 +1,31 @@
-import Table from './Table';
-
 import React, { useReducer, useEffect } from 'react';
-
 import update from 'immutability-helper';
 
+import Table from './Table';
 import { baseTableReducer } from './baseTableReducer';
-/*
-import {
-  tableRegister,
-  tablePageChange,
-  tableFilterApply,
-  tableFilterClear,
-  tableSearchApply,
-  tableToolbarToggle,
-  tableActionCancel,
-  tableActionApply,
-  tableColumnSort,
-  tableRowSelect,
-  tableRowSelectAll,
-  tableRowExpand,
-  tableColumnOrder,
-  tableDataUpdate,
-} from './tableActionCreators';
-*/
-
 import * as baseTableActions from './tableActionCreators';
 
+/**
+ * Simulates a client capable of asynchronously fetching
+ * paginated, filtered and sorted data from some resource (e.g. an HTTP API)
+ */
 class MockApiClient {
   static totalRows = 100;
-  static firstNames = ['Tom', 'Amy', 'Bryan', 'Cynthia', 'Claudia', 'Denny', 'Mats', 'Luaithrenn', 'Scott', 'Taylor']
-  static lastNames  = ['Smith', 'Brown', 'Johnson', 'Williams', 'Miller', 'Davis', 'Wilson', ]
+
+  static firstNames = [
+    'Tom',
+    'Amy',
+    'Bryan',
+    'Cynthia',
+    'Claudia',
+    'Denny',
+    'Mats',
+    'Luaithrenn',
+    'Scott',
+    'Taylor',
+  ];
+
+  static lastNames = ['Smith', 'Brown', 'Johnson', 'Williams', 'Miller', 'Davis', 'Wilson'];
 
   constructor() {
     this.data = [];
@@ -38,39 +34,64 @@ class MockApiClient {
       this.data = [
         ...this.data,
         {
-          firstName: `${MockApiClient.firstNames[Math.floor(Math.random()*MockApiClient.firstNames.length)]} (${i + 1})`,
-          lastName:  `${MockApiClient.lastNames [Math.floor(Math.random()*MockApiClient.lastNames.length )]} (${i + 1})`,
+          firstName: `${
+            MockApiClient.firstNames[Math.floor(Math.random() * MockApiClient.firstNames.length)]
+          } (${i + 1})`,
+          lastName: `${
+            MockApiClient.lastNames[Math.floor(Math.random() * MockApiClient.lastNames.length)]
+          } (${i + 1})`,
         },
-      ]
+      ];
     }
   }
 
-  getData = (offset, limit, firstName = undefined, lastName = undefined) => {
-    console.log('Fetching ', offset, limit, firstName, lastName);
+  /**
+   * Return a promise that resolves (after a delay) to a page of data, optionally filtered and sorted.
+   *
+   * offset: the index of the first result in the returned page
+   * limit: the (maximum) number of results to include in the returned page
+   * firstName: (optional) filter results to include only those with a firstName that include this as a substring
+   * lastName: (optional) filter results to include only those with a lastName that include this as a substring
+   * sort: (optional) An object with fields {"fieldName":<string>, "descending":<boolean>} denoting a
+   *                  a field (one of "firstName" or "lastName" on which to sort results, and the direction
+   *                  of the sort.
+   *
+   */
+  getData = (offset, limit, firstName = undefined, lastName = undefined, sortSpec = undefined) => {
+    // console.log('Fetching ', offset, limit, firstName, lastName, sortSpec);
 
-    return new Promise((resolve, reject) => {
-
+    return new Promise(resolve => {
       // filter results
-      const filteredData = this.data
+      const maybeFiltered = this.data
         .filter(
-          d => firstName === undefined || `${d.firstName.toLowerCase()}`.includes(firstName.toLowerCase())
+          d =>
+            firstName === undefined ||
+            `${d.firstName.toLowerCase()}`.includes(firstName.toLowerCase())
         )
         .filter(
-          d => lastName === undefined || `${d.lastName.toLowerCase()}`.includes(lastName.toLowerCase())
-        )
+          d =>
+            lastName === undefined || `${d.lastName.toLowerCase()}`.includes(lastName.toLowerCase())
+        );
+
+      const maybeSorted = sortSpec
+        ? maybeFiltered.sort((da, db) => {
+            const a = da[sortSpec.fieldName];
+            const b = db[sortSpec.fieldName];
+            return a === b ? 0 : (a < b ? -1 : 1) * (sortSpec.descending ? -1 : 1);
+          })
+        : maybeFiltered;
 
       // cap results to total (matching) rows even if more are requested
-      const maxRow = Math.min(filteredData.length, offset + limit);
-
-      const results = filteredData.slice(offset, maxRow);
+      const maxRow = Math.min(maybeSorted.length, offset + limit);
+      const page = maybeSorted.slice(offset, maxRow);
 
       setTimeout(
         () =>
           resolve({
             meta: {
-              totalRows: filteredData.length,
+              totalRows: maybeSorted.length,
             },
-            results: results,
+            results: page,
           }),
         1000
       );
@@ -81,37 +102,35 @@ class MockApiClient {
 const reducer = (state, action) => {
   switch (action.type) {
     case baseTableActions.TABLE_REGISTER:
-      return update(
-        baseTableReducer(state, action),
-        {
-          data: {
-            $set: action.payload,
+      return update(baseTableReducer(state, action), {
+        data: {
+          $set: action.payload,
+        },
+        view: {
+          pagination: {
+            totalItems: { $set: action.totalItems },
           },
-          view: {
-            pagination: {
-              totalItems: { $set: action.totalItems },
-            },
-          },
-        }
-      );
+        },
+      });
 
-    // clear all loaded data (and reset totalItems) if filter values change
+    // clear all loaded data (and reset totalItems) if filter or sort values change
+    case baseTableActions.TABLE_COLUMN_SORT:
     case baseTableActions.TABLE_FILTER_CLEAR:
     case baseTableActions.TABLE_FILTER_APPLY:
-      return update(
-        baseTableReducer(state, action),
-        {
-          data: {
-            $set: []
+      // baseTable reducer takes care of resetting the page back to 0 when filters change
+      // NOTE: this is NOT the case when sorting changes (the page can stay as it was before
+      // since sorting does not change the number of results, only their order).
+      return update(baseTableReducer(state, action), {
+        data: {
+          $set: [],
+        },
+        view: {
+          pagination: {
+            totalItems: { $set: undefined },
           },
-          view: {
-            pagination: {
-              totalItems: { $set: undefined },
-            },
-          },
-        }
-      );
-    
+        },
+      });
+
     default:
       return baseTableReducer(state, action);
   }
@@ -119,19 +138,16 @@ const reducer = (state, action) => {
 
 const apiClient = new MockApiClient();
 
-const AsyncTable = ({}) => {
-  
-
+const AsyncTable = () => {
   const columns = [
-    { id: 'firstName', name: 'First Name' },
-    { id: 'lastName', name: 'Last Name' }
+    { id: 'firstName', name: 'First Name', isSortable: true },
+    { id: 'lastName', name: 'Last Name', isSortable: true },
   ];
 
   const [state, dispatch] = useReducer(reducer, {
     data: [],
     view: {
-      filters: [
-      ],
+      filters: [],
       pagination: {
         pageSize: 10,
         pageSizes: [10, 20, 30],
@@ -142,7 +158,10 @@ const AsyncTable = ({}) => {
         isSelectAllSelected: false,
         selectedIds: [],
         sort: undefined,
-        ordering: [],
+        ordering: columns.map(({ id }) => ({
+          columnId: id,
+          isHidden: false,
+        })),
         expandedIds: [],
         loadingState: {
           isLoading: false,
@@ -164,61 +183,86 @@ const AsyncTable = ({}) => {
     },
   });
 
+  // console.log(state);
 
   // This hook is responsible for refetching more data asynchronously
-  // as necessary when the page is changed
-  useEffect(
-    () => {
-      // console.log('pagination', state.view.pagination);
-      // console.log('filters', state.view.filters);
+  // as necessary when the page, filters or sort properties are changed
+  useEffect(() => {
+    // console.log('pagination', state.view.pagination);
+    // console.log('filters', state.view.filters);
+    // console.log('sort', state.view.table.sort);
 
-      let firstNameFilterValue, lastNameFilterValue;
-      if (state.view.filters) {
-        const firstNameFilter = state.view.filters.find(f => f.columnId === 'firstName');
-        firstNameFilterValue = firstNameFilter ? firstNameFilter.value : undefined;
+    // Determine what our filters should be
+    let firstNameFilterValue;
+    let lastNameFilterValue;
+    if (state.view.filters) {
+      const firstNameFilter = state.view.filters.find(f => f.columnId === 'firstName');
+      firstNameFilterValue = firstNameFilter ? firstNameFilter.value : undefined;
 
-        const lastNameFilter = state.view.filters.find(f => f.columnId === 'lastName');
-        lastNameFilterValue = lastNameFilter ? lastNameFilter.value : undefined;    
-      }
+      const lastNameFilter = state.view.filters.find(f => f.columnId === 'lastName');
+      lastNameFilterValue = lastNameFilter ? lastNameFilter.value : undefined;
+    }
 
+    // Determine what our sortSpec should be
+    let sortSpec;
+    if (state.view.table.sort) {
+      sortSpec = {
+        fieldName: state.view.table.sort.columnId,
+        descending: state.view.table.sort.direction === 'DESC',
+      };
+    }
 
-      const page = state.view.pagination.page;
-      const pageSize = state.view.pagination.pageSize;
+    const { page } = state.view.pagination;
+    const { pageSize } = state.view.pagination;
+    const { totalItems } = state.view.pagination;
 
-      const requestedFrom = (page - 1) * pageSize;
+    // The index of the first result that should appear in the table
+    // based on the pagination properties set by the user
+    // NOTE: (page - 1) because pages start from 1, but our results are zero-indexed
+    const requestedFrom = (page - 1) * pageSize;
 
-      // cap by totalItems to avoid unnecessarily reloading the final page in cases where totalItems % pageSize > 0
-      // (unless this is the first fetch - in which case totalItems will be undefined)
-      const requestedUpTo =
-        state.view.pagination.totalItems === undefined
-          ? requestedFrom + pageSize
-          : Math.min(requestedFrom + pageSize, state.view.pagination.totalItems);
+    // The index of the last result that should appear in the table
+    // based on the pagination properties set by the user
+    const requestedUpTo = requestedFrom + pageSize;
 
-      // do we need to load more data?
-      const loadedUpTo = state.data.length;
+    // Cap by totalItems to avoid unnecessarily reloading the final page
+    // in cases where totalItems % pageSize > 0
+    // NOTE: (unless this is the first fetch, in which case we don't have totalItems
+    // and definitely need to load some results)
+    const requestedUpToCapped =
+      totalItems === undefined ? requestedUpTo : Math.min(requestedUpTo, totalItems);
 
-      const remainingToFetch = requestedUpTo - loadedUpTo;
+    // We have already loaded results in to memory up to this index
+    const loadedUpTo = state.data.length;
 
-      if (remainingToFetch > 0) {
-        dispatch(baseTableActions.tableLoadingSet(true, remainingToFetch));
+    // The remaining number of results we need to fetch
+    // NOTE: (maybe <=0, in which case no fetch will be performed)
+    const remainingToFetch = requestedUpToCapped - loadedUpTo;
 
-        apiClient.getData(
-          loadedUpTo,
-          remainingToFetch, 
-          firstNameFilterValue,
-          lastNameFilterValue,
-        ).then(data => {
-          const tableData = data.results.map((r, idx) => ({ id: `${loadedUpTo + idx}`, values: r }));
+    if (remainingToFetch > 0) {
+      dispatch(baseTableActions.tableLoadingSet(true, remainingToFetch));
+      apiClient
+        .getData(loadedUpTo, remainingToFetch, firstNameFilterValue, lastNameFilterValue, sortSpec)
+        .then(data => {
+          const tableData = data.results.map((r, idx) => ({
+            id: `${loadedUpTo + idx}`,
+            values: r,
+          }));
           dispatch(
             baseTableActions.tableRegister([...state.data, ...tableData], data.meta.totalRows)
           );
           dispatch(baseTableActions.tableLoadingSet(false));
         });
-      } else {
-      }
-    },
-    [state.view.pagination.page, state.view.pagination.pageSize, state.view.filters]
-  );
+    }
+  }, [
+    state.view.pagination.page,
+    state.view.pagination.pageSize,
+    state.view.filters,
+    state.view.table.sort,
+    state.view.pagination.totalItems,
+    state.data,
+    state.view.pagination,
+  ]);
 
   // console.log(state);
 
@@ -258,7 +302,7 @@ const AsyncTable = ({}) => {
       onRowSelected: (rowId, isSelected) => {
         dispatch(baseTableActions.tableRowSelect(rowId, isSelected));
       },
-      onRowClicked: rowId => {
+      onRowClicked: (/* rowId */) => {
         // This action doesn't update our table state, it's up to the user
       },
       onSelectAll: isSelected => {
@@ -267,7 +311,7 @@ const AsyncTable = ({}) => {
       onRowExpanded: (rowId, isExpanded) => {
         dispatch(baseTableActions.tableRowExpand(rowId, isExpanded));
       },
-      onApplyRowAction: (rowId, actionId) => {},
+      onApplyRowAction: (/* rowId, actionId */) => {},
       // This action doesn't update our table state, it's up to the user
       onEmptyStateAction: () => {},
       // This action doesn't update our table state, it's up to the user
@@ -285,9 +329,9 @@ const AsyncTable = ({}) => {
       actions={actions}
       options={{
         hasFilter: true,
-        hasSearch: false,
+        hasSearch: true,
         hasPagination: true,
-        hasRowSelection: true,
+        hasRowSelection: false,
         hasRowExpansion: false,
         hasRowActions: false,
         hasColumnSelection: true,

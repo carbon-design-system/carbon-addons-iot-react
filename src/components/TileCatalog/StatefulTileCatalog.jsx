@@ -14,12 +14,9 @@ const StatefulTileCatalog = ({ tiles, onSelection, search, pagination, ...props 
   const filteredTiles = search ? searchData(tiles, searchState) : tiles;
 
   // If the tiles change (due to a search), I need to reset the page
-  useEffect(
-    () => {
-      setPage(1);
-    },
-    [filteredTiles]
-  );
+  useEffect(() => {
+    setPage(1);
+  }, [filteredTiles]);
 
   const [selectedTile, setSelectedTile] = useState(
     filteredTiles && filteredTiles.length ? filteredTiles[0].id : null
