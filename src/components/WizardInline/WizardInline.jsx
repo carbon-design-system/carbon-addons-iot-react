@@ -13,10 +13,6 @@ const StyledWizardWrapper = styled.div`
   flex-flow: column;
   align-items: center;
 
-  .bx--modal-header {
-    margin-bottom: 0.5rem;
-  }
-
   .bx--modal-content {
     padding: 0rem 1rem;
     margin-bottom: 48px;
