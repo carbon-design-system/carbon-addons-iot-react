@@ -20,6 +20,7 @@ export default {
       react: 'React',
       'react-dom': 'ReactDOM',
       'carbon-icons': 'CarbonIcons',
+      'carbon-components': 'CarbonComponents',
       'carbon-components-react': 'CarbonComponentsReact',
       'styled-components': 'styled',
     },
@@ -37,8 +38,23 @@ export default {
     commonjs({
       namedExports: {
         'react-js': ['isValidElementType'],
+        'node_modules/carbon-components-react/lib/components/UIShell/index.js': [
+          'Header',
+          'HeaderName',
+          'HeaderMenu',
+          'HeaderGlobalBar',
+          'HeaderGlobalAction',
+          'SkipToContent',
+          'HeaderMenuItem',
+          'HeaderNavigation',
+          'SideNav',
+          'SideNavItems',
+          'SideNavLink',
+          'SideNavMenu',
+          'SideNavMenuItem',
+        ],
       },
-      include: [/node_modules/],
+      include: 'node_modules/**',
     }),
 
     babel({

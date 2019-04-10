@@ -22,7 +22,7 @@ const StyledProgressStep = styled(({ showLabel, stepWidth, ...others }) => (
   <ProgressStep {...others} />
 ))`
   &&& {
-    width: ${props => `${props.stepWidth}px` || 'inherit'};
+    width: ${props => (props.stepWidth ? `${props.stepWidth}px` : 'inherit')};
     min-width: 136px;
     p {
       display: ${props => (!props.showLabel ? 'none' : 'inherit')};
@@ -68,11 +68,13 @@ const ProgressIndicator = ({
       onClickItem(items[index].id);
     }
   };
-  // Only recalculate current step if inputs change
-  const currentStep = useMemo(() => items.findIndex(item => item.id === currentItemId), [
+
+  const matchingIndex = useMemo(() => items.findIndex(item => item.id === currentItemId), [
     items,
     currentItemId,
   ]);
+  // Only recalculate current step if inputs change
+  const currentStep = matchingIndex > -1 ? matchingIndex : 0;
 
   return (
     <StyledProgressIndicator
