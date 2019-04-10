@@ -8,6 +8,10 @@ import WizardSidebar from './WizardLeftSidebar/WizardSidebar';
 import WizardContent from './WizardContent/WizardContent';
 
 const StyledWizardWrapper = styled.div`
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+
   .bx--modal-header {
     margin-bottom: 0.5rem;
   }
@@ -16,12 +20,12 @@ const StyledWizardWrapper = styled.div`
     padding: 0rem 1rem;
     margin-bottom: 48px;
     max-height: 80vh;
-    min-width: 50rem;
     overflow: auto;
   }
+
   .bx--modal-container {
     min-width: 630px;
-    max-width: 100%;
+    max-width: 75%;
     margin-top: 24px;
     padding-top: 32px;
     padding-bottom: 72px;
@@ -78,7 +82,7 @@ export const propTypes = {
   nextLabel: PropTypes.node,
   /** label to show on the submit button */
   submitLabel: PropTypes.node,
-  /** component to show in sidebar */
+  /** optional component to show in sidebar */
   sidebar: PropTypes.element,
   /** component to show in footer. Passed to Sidebar */
   footerLeftContent: PropTypes.element,
@@ -156,7 +160,7 @@ const WizardInline = ({
         />
 
         <StyledWizardContainer>
-          <WizardSidebar sidebar={sidebar} />
+          {sidebar ? <WizardSidebar sidebar={sidebar} /> : null}
           <div className="bx--modal-content">
             <WizardContent component={currentItemObj.component} />
           </div>

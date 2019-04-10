@@ -8,6 +8,9 @@ const StyledDivWizardHeader = styled.div`
   display: flex;
   flex-flow: column nowrap;
   margin-bottom: 1.5rem;
+  .bx--progress {
+    padding: 0 1rem;
+  }
   .bx--modal-header {
     display: flex;
   }
