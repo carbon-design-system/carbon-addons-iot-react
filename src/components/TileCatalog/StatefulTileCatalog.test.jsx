@@ -74,13 +74,24 @@ describe('StatefulTileCatalog', () => {
         .at(1)
         .text()
     ).toEqual('Page 2');
+
+    const newTiles = commonTileProps.tiles.slice(1, 5);
     // Back to Page 1
-    wrapper.setProps({ tiles: [] });
+    wrapper.setProps({ tiles: newTiles });
+    wrapper.update();
     expect(
       wrapper
         .find('span')
         .at(1)
         .text()
     ).toEqual('Page 1');
+
+    // The new first tile should be selected
+    expect(
+      wrapper
+        .find('RadioTile')
+        .at(0)
+        .prop('checked')
+    ).toEqual(true);
   });
 });
