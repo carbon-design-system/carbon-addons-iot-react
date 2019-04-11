@@ -99,8 +99,15 @@ class MockApiClient {
   };
 }
 
+/**
+ * Extends the baseTableReducer to perform some additional state management
+ * 
+ */
 const reducer = (state, action) => {
   switch (action.type) {
+
+    // Used to set the table's data (and totalItems)
+    // once a data fetch completes
     case baseTableActions.TABLE_REGISTER:
       return update(baseTableReducer(state, action), {
         data: {
@@ -131,6 +138,7 @@ const reducer = (state, action) => {
         },
       });
 
+    // for all other actions, just defer immediately to baseTableReducer
     default:
       return baseTableReducer(state, action);
   }
@@ -198,7 +206,6 @@ const AsyncTable = () => {
     if (state.view.filters) {
       const firstNameFilter = state.view.filters.find(f => f.columnId === 'firstName');
       firstNameFilterValue = firstNameFilter ? firstNameFilter.value : undefined;
-
       const lastNameFilter = state.view.filters.find(f => f.columnId === 'lastName');
       lastNameFilterValue = lastNameFilter ? lastNameFilter.value : undefined;
     }
@@ -240,32 +247,45 @@ const AsyncTable = () => {
     const remainingToFetch = requestedUpToCapped - loadedUpTo;
 
     if (remainingToFetch > 0) {
+      // put the table in loading state while the data is fetched
       dispatch(baseTableActions.tableLoadingSet(true, remainingToFetch));
+
+      // fetch the data
       apiClient
         .getData(loadedUpTo, remainingToFetch, firstNameFilterValue, lastNameFilterValue, sortSpec)
         .then(data => {
+          // map the results into a form suitable for the table data field
           const tableData = data.results.map((r, idx) => ({
             id: `${loadedUpTo + idx}`,
             values: r,
           }));
+
+          // update the table data
           dispatch(
             baseTableActions.tableRegister([...state.data, ...tableData], data.meta.totalRows)
           );
+
+          // and reset the table's loading state
           dispatch(baseTableActions.tableLoadingSet(false));
         });
-    }
-  }, [
-    state.view.pagination.page,
-    state.view.pagination.pageSize,
-    state.view.filters,
-    state.view.table.sort,
-    state.view.pagination.totalItems,
-    state.data,
-    state.view.pagination,
-  ]);
+      }
+    }, 
+    
+    // The effect above will fire whenever any of these
+    // state variables change
+    [
+      state.view.pagination.page,
+      state.view.pagination.pageSize,
+      state.view.filters,
+      state.view.table.sort,
+      state.view.pagination.totalItems,
+      state.data,
+      state.view.pagination,
+    ]
+  );
 
-  // console.log(state);
-
+  // This hooks up our table to our reducer, ensuring that the appropriate
+  // action is dispatched as the user interacts with the table's components
   const actions = {
     pagination: {
       onChangePage: paginationValues => {
@@ -302,22 +322,23 @@ const AsyncTable = () => {
       onRowSelected: (rowId, isSelected) => {
         dispatch(baseTableActions.tableRowSelect(rowId, isSelected));
       },
-      onRowClicked: (/* rowId */) => {
-        // This action doesn't update our table state, it's up to the user
-      },
+
       onSelectAll: isSelected => {
         dispatch(baseTableActions.tableRowSelectAll(isSelected));
       },
       onRowExpanded: (rowId, isExpanded) => {
         dispatch(baseTableActions.tableRowExpand(rowId, isExpanded));
       },
-      onApplyRowAction: (/* rowId, actionId */) => {},
-      // This action doesn't update our table state, it's up to the user
-      onEmptyStateAction: () => {},
-      // This action doesn't update our table state, it's up to the user
       onChangeOrdering: ordering => {
         dispatch(baseTableActions.tableColumnOrder(ordering));
       },
+
+      // These actions don't have any impact on table state
+      // (and we don't need to make use of them in this example)
+      // Blank implementations are provided to suppress console warnings
+      onEmptyStateAction: () => {},
+      onApplyRowAction: (/* rowId, actionId */) => {},
+      onRowClicked: (/* rowId */) => {},
     },
   };
 
