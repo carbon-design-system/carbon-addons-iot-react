@@ -32,7 +32,7 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
     view: initialState,
     actions: callbackActions,
     lightweight,
-  } = merge({}, defaultProps(other), other);
+  } = merge({}, defaultProps({ data: initialData, ...other }), other);
   const [state, dispatch] = useReducer(tableReducer, { data: initialData, view: initialState });
   const isLoading = get(initialState, 'table.loadingState.isLoading');
   // Need to initially sort and filter the tables data
