@@ -46,40 +46,44 @@ class MockApiClient {
   }
 
   /**
+   * Returns true iff ${fieldName} of ${record} contains the substring ${fieldValue} (case-insensitive)
+   */
+  static doesRecordMatch = (record, fieldName, fieldValue) => `${record[fieldName].toLowerCase()}`.includes(fieldValue.toLowerCase())
+
+  /**
    * Return a promise that resolves (after a delay) to a page of data, optionally filtered and sorted.
    *
    * offset: the index of the first result in the returned page
    * limit: the (maximum) number of results to include in the returned page
-   * firstName: (optional) filter results to include only those with a firstName that include this as a substring
-   * lastName: (optional) filter results to include only those with a lastName that include this as a substring
+   * firstNameFilter: (optional) filter results to include only those with a firstName that contains this value as a substring (case-insensitive)
+   * lastNameFilter: (optional) filter results to include only those with a lastName that contains this value as a substring (case-insensitive)
    * sort: (optional) An object with fields {"fieldName":<string>, "descending":<boolean>} denoting a
    *                  a field (one of "firstName" or "lastName" on which to sort results, and the direction
    *                  of the sort.
    *
    */
-  getData = (offset, limit, firstName = undefined, lastName = undefined, sortSpec = undefined) => {
+  getData = (offset, limit, firstNameFilter = undefined, lastNameFilter = undefined, sortSpec = undefined) => {
     // console.log('Fetching ', offset, limit, firstName, lastName, sortSpec);
 
     return new Promise(resolve => {
-      // filter results
-      const maybeFiltered = this.data
-        .filter(
-          d =>
-            firstName === undefined ||
-            `${d.firstName.toLowerCase()}`.includes(firstName.toLowerCase())
-        )
-        .filter(
-          d =>
-            lastName === undefined || `${d.lastName.toLowerCase()}`.includes(lastName.toLowerCase())
-        );
 
+
+      // filter results
+      const maybeFilteredByFirstName = firstNameFilter
+        ? this.data.filter(r => MockApiClient.doesRecordMatch(r, 'firstName', firstNameFilter))
+        : this.data;
+
+      const maybeFilteredByLastName = lastNameFilter
+        ? maybeFilteredByFirstName.filter(r => MockApiClient.doesRecordMatch(r, 'lastName', lastNameFilter))
+        : maybeFilteredByFirstName;
+      
       const maybeSorted = sortSpec
-        ? maybeFiltered.sort((da, db) => {
+        ? maybeFilteredByLastName.sort((da, db) => {
             const a = da[sortSpec.fieldName];
             const b = db[sortSpec.fieldName];
             return a === b ? 0 : (a < b ? -1 : 1) * (sortSpec.descending ? -1 : 1);
           })
-        : maybeFiltered;
+        : maybeFilteredByLastName;
 
       // cap results to total (matching) rows even if more are requested
       const maxRow = Math.min(maybeSorted.length, offset + limit);
@@ -176,17 +180,8 @@ const AsyncTable = () => {
         },
       },
       toolbar: {
-        batchActions: [
-          {
-            id: 'delete',
-            labelText: 'Delete',
-            icon: 'delete',
-            iconDescription: 'Delete',
-          },
-        ],
-        search: {
-          placeHolderText: 'My Search',
-        },
+        batchActions: [],
+        search: {},
       },
     },
   });
@@ -199,6 +194,7 @@ const AsyncTable = () => {
     // console.log('pagination', state.view.pagination);
     // console.log('filters', state.view.filters);
     // console.log('sort', state.view.table.sort);
+
 
     // Determine what our filters should be
     let firstNameFilterValue;
@@ -350,7 +346,7 @@ const AsyncTable = () => {
       actions={actions}
       options={{
         hasFilter: true,
-        hasSearch: true,
+        hasSearch: false,
         hasPagination: true,
         hasRowSelection: false,
         hasRowExpansion: false,
