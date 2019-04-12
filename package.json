@@ -19,7 +19,7 @@
     "format:diff": "prettier --list-different \"**/*.{scss,css,js,jsx,md,ts}\"",
     "lint": "yarn eslint .",
     "prepare": "yarn build",
-    "start": "yarn storybook",
+    "start": "CARBON_USE_EXPERIMENTAL_FEATURES='false' yarn storybook",
     "storybook": "start-storybook -p 3000",
     "test": "jest",
     "test:watch": "jest --watchAll",
@@ -45,7 +45,7 @@
   },
   "peerDependencies": {
     "@carbon/icons-react": "^10.0.0",
-    "carbon-components": "^9.84.14",
+    "carbon-components": "^10.0.0",
     "carbon-components-react": "^7.0.0",
     "carbon-icons": "^7.x",
     "react": "^16.8.3"
@@ -96,7 +96,7 @@
     "babel-plugin-react-docgen": "^2.0.0",
     "babel-plugin-require-context-hook": "^1.0.0",
     "babel-plugin-styled-components": "^1.10.0",
-    "carbon-components": "^9.84.14",
+    "carbon-components": "^10.0.0",
     "carbon-components-react": "^7.0.0",
     "carbon-icons": "7.0.7",
     "coveralls": "^3.0.2",

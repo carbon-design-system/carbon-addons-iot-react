@@ -8,14 +8,13 @@ exports[`SideNav testcases should render one level of navigation links 1`] = `
     Array [
       Object {
         "href": "javascript:void(0)",
-        "icon": <AppSwitcher24
+        "icon": <ForwardRef
           className="bx--header__menu-item bx--header__menu-title"
           description="Icon"
           fill="white"
-          focusable={false}
           height={24}
           preserveAspectRatio="xMidYMid meet"
-          viewBox="0 0 32 32"
+          viewBox="0 0 24 24"
           width={24}
           xmlns="http://www.w3.org/2000/svg"
         />,
@@ -150,14 +149,13 @@ the label you want displayed or read by screen readers.",
                 aria-label="Boards"
                 href="javascript:void(0)"
                 icon={
-                  <AppSwitcher24
+                  <ForwardRef
                     className="bx--header__menu-item bx--header__menu-title"
                     description="Icon"
                     fill="white"
-                    focusable={false}
                     height={24}
                     preserveAspectRatio="xMidYMid meet"
-                    viewBox="0 0 32 32"
+                    viewBox="0 0 24 24"
                     width={24}
                     xmlns="http://www.w3.org/2000/svg"
                   />
@@ -195,14 +193,13 @@ the label you want displayed or read by screen readers.",
                   forwardedRef={null}
                   href="javascript:void(0)"
                   icon={
-                    <AppSwitcher24
+                    <ForwardRef
                       className="bx--header__menu-item bx--header__menu-title"
                       description="Icon"
                       fill="white"
-                      focusable={false}
                       height={24}
                       preserveAspectRatio="xMidYMid meet"
-                      viewBox="0 0 32 32"
+                      viewBox="0 0 24 24"
                       width={24}
                       xmlns="http://www.w3.org/2000/svg"
                     />
@@ -215,14 +212,13 @@ the label you want displayed or read by screen readers.",
                     element="a"
                     href="javascript:void(0)"
                     icon={
-                      <AppSwitcher24
+                      <ForwardRef
                         className="bx--header__menu-item bx--header__menu-title"
                         description="Icon"
                         fill="white"
-                        focusable={false}
                         height={24}
                         preserveAspectRatio="xMidYMid meet"
-                        viewBox="0 0 32 32"
+                        viewBox="0 0 24 24"
                         width={24}
                         xmlns="http://www.w3.org/2000/svg"
                       />
@@ -256,10 +252,9 @@ the label you want displayed or read by screen readers.",
                                   className="bx--header__menu-item bx--header__menu-title"
                                   description="Icon"
                                   fill="white"
-                                  focusable={false}
                                   height={24}
                                   preserveAspectRatio="xMidYMid meet"
-                                  viewBox="0 0 32 32"
+                                  viewBox="0 0 24 24"
                                   width={24}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
@@ -268,15 +263,20 @@ the label you want displayed or read by screen readers.",
                                     className="bx--header__menu-item bx--header__menu-title"
                                     description="Icon"
                                     fill="white"
-                                    focusable={false}
+                                    focusable="false"
                                     height={24}
                                     preserveAspectRatio="xMidYMid meet"
-                                    viewBox="0 0 32 32"
+                                    style={
+                                      Object {
+                                        "willChange": "transform",
+                                      }
+                                    }
+                                    viewBox="0 0 24 24"
                                     width={24}
                                     xmlns="http://www.w3.org/2000/svg"
                                   >
                                     <path
-                                      d="M14 5h4v4h-4zM5 5h4v4H5zm18 0h4v4h-4zm-9 9h4v4h-4zm-9 0h4v4H5zm18 0h4v4h-4zm-9 9h4v4h-4zm-9 0h4v4H5zm18 0h4v4h-4z"
+                                      d="M18 18h3v3h-3zm-7.5 0h3v3h-3zM3 18h3v3H3zm15-7.5h3v3h-3zm-7.5 0h3v3h-3zm-7.5 0h3v3H3zM18 3h3v3h-3zm-7.5 0h3v3h-3zM3 3h3v3H3z"
                                     />
                                   </svg>
                                 </AppSwitcher24>
@@ -365,14 +365,13 @@ exports[`SideNav testcases should render two levels of navigation links 1`] = `
     Array [
       Object {
         "href": "javascript:void(0)",
-        "icon": <AppSwitcher24
+        "icon": <ForwardRef
           className="bx--header__menu-item bx--header__menu-title"
           description="Icon"
           fill="white"
-          focusable={false}
           height={24}
           preserveAspectRatio="xMidYMid meet"
-          viewBox="0 0 32 32"
+          viewBox="0 0 24 24"
           width={24}
           xmlns="http://www.w3.org/2000/svg"
         />,
@@ -383,11 +382,10 @@ exports[`SideNav testcases should render two levels of navigation links 1`] = `
       Object {
         "current": true,
         "href": "javascript:void(0)",
-        "icon": <Chip24
+        "icon": <ForwardRef
           className="bx--header__menu-item bx--header__menu-title"
           description="Icon"
           fill="white"
-          focusable={false}
           height={24}
           preserveAspectRatio="xMidYMid meet"
           viewBox="0 0 32 32"
@@ -407,11 +405,10 @@ exports[`SideNav testcases should render two levels of navigation links 1`] = `
           },
         ],
         "href": "javascript:void(0)",
-        "icon": <Group24
+        "icon": <ForwardRef
           className="bx--header__menu-item bx--header__menu-title"
           description="Icon"
           fill="white"
-          focusable={false}
           height={24}
           preserveAspectRatio="xMidYMid meet"
           viewBox="0 0 32 32"
@@ -549,14 +546,13 @@ the label you want displayed or read by screen readers.",
                 aria-label="Boards"
                 href="javascript:void(0)"
                 icon={
-                  <AppSwitcher24
+                  <ForwardRef
                     className="bx--header__menu-item bx--header__menu-title"
                     description="Icon"
                     fill="white"
-                    focusable={false}
                     height={24}
                     preserveAspectRatio="xMidYMid meet"
-                    viewBox="0 0 32 32"
+                    viewBox="0 0 24 24"
                     width={24}
                     xmlns="http://www.w3.org/2000/svg"
                   />
@@ -594,14 +590,13 @@ the label you want displayed or read by screen readers.",
                   forwardedRef={null}
                   href="javascript:void(0)"
                   icon={
-                    <AppSwitcher24
+                    <ForwardRef
                       className="bx--header__menu-item bx--header__menu-title"
                       description="Icon"
                       fill="white"
-                      focusable={false}
                       height={24}
                       preserveAspectRatio="xMidYMid meet"
-                      viewBox="0 0 32 32"
+                      viewBox="0 0 24 24"
                       width={24}
                       xmlns="http://www.w3.org/2000/svg"
                     />
@@ -614,14 +609,13 @@ the label you want displayed or read by screen readers.",
                     element="a"
                     href="javascript:void(0)"
                     icon={
-                      <AppSwitcher24
+                      <ForwardRef
                         className="bx--header__menu-item bx--header__menu-title"
                         description="Icon"
                         fill="white"
-                        focusable={false}
                         height={24}
                         preserveAspectRatio="xMidYMid meet"
-                        viewBox="0 0 32 32"
+                        viewBox="0 0 24 24"
                         width={24}
                         xmlns="http://www.w3.org/2000/svg"
                       />
@@ -655,10 +649,9 @@ the label you want displayed or read by screen readers.",
                                   className="bx--header__menu-item bx--header__menu-title"
                                   description="Icon"
                                   fill="white"
-                                  focusable={false}
                                   height={24}
                                   preserveAspectRatio="xMidYMid meet"
-                                  viewBox="0 0 32 32"
+                                  viewBox="0 0 24 24"
                                   width={24}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
@@ -667,15 +660,20 @@ the label you want displayed or read by screen readers.",
                                     className="bx--header__menu-item bx--header__menu-title"
                                     description="Icon"
                                     fill="white"
-                                    focusable={false}
+                                    focusable="false"
                                     height={24}
                                     preserveAspectRatio="xMidYMid meet"
-                                    viewBox="0 0 32 32"
+                                    style={
+                                      Object {
+                                        "willChange": "transform",
+                                      }
+                                    }
+                                    viewBox="0 0 24 24"
                                     width={24}
                                     xmlns="http://www.w3.org/2000/svg"
                                   >
                                     <path
-                                      d="M14 5h4v4h-4zM5 5h4v4H5zm18 0h4v4h-4zm-9 9h4v4h-4zm-9 0h4v4H5zm18 0h4v4h-4zm-9 9h4v4h-4zm-9 0h4v4H5zm18 0h4v4h-4z"
+                                      d="M18 18h3v3h-3zm-7.5 0h3v3h-3zM3 18h3v3H3zm15-7.5h3v3h-3zm-7.5 0h3v3h-3zm-7.5 0h3v3H3zM18 3h3v3h-3zm-7.5 0h3v3h-3zM3 3h3v3H3z"
                                     />
                                   </svg>
                                 </AppSwitcher24>
@@ -699,11 +697,10 @@ the label you want displayed or read by screen readers.",
                 aria-label="Devices"
                 href="javascript:void(0)"
                 icon={
-                  <Chip24
+                  <ForwardRef
                     className="bx--header__menu-item bx--header__menu-title"
                     description="Icon"
                     fill="white"
-                    focusable={false}
                     height={24}
                     preserveAspectRatio="xMidYMid meet"
                     viewBox="0 0 32 32"
@@ -745,11 +742,10 @@ the label you want displayed or read by screen readers.",
                   forwardedRef={null}
                   href="javascript:void(0)"
                   icon={
-                    <Chip24
+                    <ForwardRef
                       className="bx--header__menu-item bx--header__menu-title"
                       description="Icon"
                       fill="white"
-                      focusable={false}
                       height={24}
                       preserveAspectRatio="xMidYMid meet"
                       viewBox="0 0 32 32"
@@ -766,11 +762,10 @@ the label you want displayed or read by screen readers.",
                     element="a"
                     href="javascript:void(0)"
                     icon={
-                      <Chip24
+                      <ForwardRef
                         className="bx--header__menu-item bx--header__menu-title"
                         description="Icon"
                         fill="white"
-                        focusable={false}
                         height={24}
                         preserveAspectRatio="xMidYMid meet"
                         viewBox="0 0 32 32"
@@ -808,7 +803,6 @@ the label you want displayed or read by screen readers.",
                                   className="bx--header__menu-item bx--header__menu-title"
                                   description="Icon"
                                   fill="white"
-                                  focusable={false}
                                   height={24}
                                   preserveAspectRatio="xMidYMid meet"
                                   viewBox="0 0 32 32"
@@ -820,9 +814,14 @@ the label you want displayed or read by screen readers.",
                                     className="bx--header__menu-item bx--header__menu-title"
                                     description="Icon"
                                     fill="white"
-                                    focusable={false}
+                                    focusable="false"
                                     height={24}
                                     preserveAspectRatio="xMidYMid meet"
+                                    style={
+                                      Object {
+                                        "willChange": "transform",
+                                      }
+                                    }
                                     viewBox="0 0 32 32"
                                     width={24}
                                     xmlns="http://www.w3.org/2000/svg"
@@ -854,11 +853,10 @@ the label you want displayed or read by screen readers.",
               <SideNav__StyledSideNavMenu
                 aria-label="dropdown"
                 icon={
-                  <Group24
+                  <ForwardRef
                     className="bx--header__menu-item bx--header__menu-title"
                     description="Icon"
                     fill="white"
-                    focusable={false}
                     height={24}
                     preserveAspectRatio="xMidYMid meet"
                     viewBox="0 0 32 32"
@@ -908,11 +906,10 @@ the label you want displayed or read by screen readers.",
                   }
                   forwardedRef={null}
                   icon={
-                    <Group24
+                    <ForwardRef
                       className="bx--header__menu-item bx--header__menu-title"
                       description="Icon"
                       fill="white"
-                      focusable={false}
                       height={24}
                       preserveAspectRatio="xMidYMid meet"
                       viewBox="0 0 32 32"
@@ -926,11 +923,10 @@ the label you want displayed or read by screen readers.",
                     aria-label="dropdown"
                     className="SideNav__StyledSideNavMenu-yn3bk8-2 ZcABH"
                     icon={
-                      <Group24
+                      <ForwardRef
                         className="bx--header__menu-item bx--header__menu-title"
                         description="Icon"
                         fill="white"
-                        focusable={false}
                         height={24}
                         preserveAspectRatio="xMidYMid meet"
                         viewBox="0 0 32 32"
@@ -946,11 +942,10 @@ the label you want displayed or read by screen readers.",
                       className="SideNav__StyledSideNavMenu-yn3bk8-2 ZcABH"
                       defaultExpanded={false}
                       icon={
-                        <Group24
+                        <ForwardRef
                           className="bx--header__menu-item bx--header__menu-title"
                           description="Icon"
                           fill="white"
-                          focusable={false}
                           height={24}
                           preserveAspectRatio="xMidYMid meet"
                           viewBox="0 0 32 32"
@@ -981,7 +976,6 @@ the label you want displayed or read by screen readers.",
                                 className="bx--header__menu-item bx--header__menu-title"
                                 description="Icon"
                                 fill="white"
-                                focusable={false}
                                 height={24}
                                 preserveAspectRatio="xMidYMid meet"
                                 viewBox="0 0 32 32"
@@ -993,9 +987,14 @@ the label you want displayed or read by screen readers.",
                                   className="bx--header__menu-item bx--header__menu-title"
                                   description="Icon"
                                   fill="white"
-                                  focusable={false}
+                                  focusable="false"
                                   height={24}
                                   preserveAspectRatio="xMidYMid meet"
+                                  style={
+                                    Object {
+                                      "willChange": "transform",
+                                    }
+                                  }
                                   viewBox="0 0 32 32"
                                   width={24}
                                   xmlns="http://www.w3.org/2000/svg"

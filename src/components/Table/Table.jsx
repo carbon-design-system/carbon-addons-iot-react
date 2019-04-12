@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import merge from 'lodash/merge';
 import pick from 'lodash/pick';
-import { PaginationV2, DataTable } from 'carbon-components-react';
+import { Pagination, DataTable } from 'carbon-components-react';
 import get from 'lodash/get';
 import isNil from 'lodash/isNil';
 
@@ -381,7 +381,7 @@ const Table = props => {
       </TableContainer>
 
       {options.hasPagination && !view.table.loadingState.isLoading ? ( // don't show pagination row while loading
-        <PaginationV2
+        <Pagination
           {...view.pagination}
           onChange={actions.pagination.onChangePage}
           backwardText={i18n.pageBackwardAria}
