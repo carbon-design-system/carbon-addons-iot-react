@@ -7,7 +7,15 @@ import TileCatalog, { propTypes } from './TileCatalog';
 /**
  * Paging and searching happens on local state within the component
  */
-const StatefulTileCatalog = ({ tiles, onSelection, search, pagination, ...props }) => {
+
+const StatefulTileCatalog = ({
+  tiles,
+  onSelection,
+  selectedTileId,
+  search,
+  pagination,
+  ...props
+}) => {
   const pageProp = pagination && pagination.page ? pagination.page : 1;
   const [page, setPage] = useState(pageProp);
   const pageSize = pagination && pagination.pageSize ? pagination.pageSize : 10;
@@ -19,7 +27,8 @@ const StatefulTileCatalog = ({ tiles, onSelection, search, pagination, ...props 
   const filteredTiles = search ? searchData(tiles, searchState) : tiles;
 
   const [selectedTile, setSelectedTile] = useState(
-    filteredTiles && filteredTiles.length ? filteredTiles[0].id : null
+    // Default to the passed id
+    selectedTileId || (filteredTiles && filteredTiles.length) ? filteredTiles[0].id : null
   );
 
   // If the filter tiles change (due to a search), I need to reset the page
