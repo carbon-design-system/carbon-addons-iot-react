@@ -1,6 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
+import { select } from '@storybook/addon-knobs';
 import { Icon } from 'carbon-components-react';
 
 import StatefulTileCatalog from './StatefulTileCatalog';
@@ -60,7 +61,16 @@ const commonTileCatalogProps = {
 };
 
 storiesOf('TileCatalog', module)
-  .add('default', () => <StatefulTileCatalog {...commonTileCatalogProps} />)
+  .add('default', () => (
+    <StatefulTileCatalog
+      {...commonTileCatalogProps}
+      selectedTileId={select(
+        'id',
+        commonTileCatalogProps.tiles.map(tile => tile.id),
+        commonTileCatalogProps.tiles[0].id
+      )}
+    />
+  ))
   .add('with search', () => (
     // Example stateful catalog component that can search
     <StatefulTileCatalog

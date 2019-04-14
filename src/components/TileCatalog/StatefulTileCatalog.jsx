@@ -28,7 +28,7 @@ const StatefulTileCatalog = ({
 
   const [selectedTile, setSelectedTile] = useState(
     // Default to the passed id
-    selectedTileId || (filteredTiles && filteredTiles.length)
+    selectedTileId || (filteredTiles && filteredTiles[startingIndex])
       ? filteredTiles[startingIndex].id
       : null
   );
@@ -48,6 +48,17 @@ const StatefulTileCatalog = ({
       setSelectedTile(filteredTiles[startingIndex] ? filteredTiles[startingIndex].id : null);
     },
     [page, filteredTiles, pageSize, startingIndex]
+  );
+
+  // TODO: should really refactor this as a reducer but for now
+  useEffect(
+    () => {
+      // if we're passed a selectedTileId use it!
+      if (selectedTileId) {
+        setSelectedTile(selectedTileId);
+      }
+    },
+    [selectedTileId]
   );
 
   const handlePage = (...args) => {
