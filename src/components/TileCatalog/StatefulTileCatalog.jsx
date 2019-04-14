@@ -28,7 +28,9 @@ const StatefulTileCatalog = ({
 
   const [selectedTile, setSelectedTile] = useState(
     // Default to the passed id
-    selectedTileId || (filteredTiles && filteredTiles.length) ? filteredTiles[0].id : null
+    selectedTileId || (filteredTiles && filteredTiles.length)
+      ? filteredTiles[startingIndex].id
+      : null
   );
 
   // If the filter tiles change (due to a search), I need to reset the page
