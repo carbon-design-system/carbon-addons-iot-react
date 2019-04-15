@@ -188,6 +188,21 @@ storiesOf('WizardInline', module)
       sidebar={sidebarComponent}
     />
   ))
+  .add('with error', () => (
+    <WizardInline
+      items={itemsAndComponents}
+      onBack={action('back')}
+      onClose={action('Closed')}
+      onNext={action('next')}
+      onSubmit={action('submit')}
+      title={text('title', 'Static Wizard')}
+      currentItemId="step1"
+      setItem={action('step clicked')}
+      showLabels={boolean('showLabels', true)}
+      error="Error on the form"
+      onClearError={action('clear error')}
+    />
+  ))
   .add('Static with Footer', () => (
     <WizardInline
       items={itemsAndComponents}

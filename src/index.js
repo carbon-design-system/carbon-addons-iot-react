@@ -5,6 +5,7 @@ export AddCard from './components/AddCard';
 export BaseModal from './components/BaseModal';
 export WizardModal from './components/WizardModal';
 export WizardInline from './components/WizardInline/WizardInline';
+export StatefulWizardInline from './components/WizardInline/StatefulWizardInline';
 export TableHead from './components/Table/TableHead/TableHead';
 export TableBody from './components/Table/TableBody/TableBody';
 export TableToolbar from './components/Table/TableToolbar/TableToolbar';

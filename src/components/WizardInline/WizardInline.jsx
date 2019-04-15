@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { InlineNotification } from 'carbon-components-react';
 
 import WizardHeader from './WizardHeader/WizardHeader';
 import WizardFooter from './WizardFooter/WizardFooter';
@@ -32,6 +33,12 @@ const StyledWizardContainer = styled.div`
   display: flex;
 `;
 
+const StyledMessageBox = styled(InlineNotification)`
+   {
+    width: 100%;
+  }
+`;
+
 const StyledFooter = styled.div`
   display: flex;
   position: absolute;
@@ -60,6 +67,8 @@ export const propTypes = {
       id: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
       component: PropTypes.node.isRequired,
+      /** if you return false the onNext or setItem functions will not be called to change the current step */
+      onValidate: PropTypes.func,
     })
   ).isRequired,
   /** action when click next button called with no param */
@@ -80,9 +89,9 @@ export const propTypes = {
   submitLabel: PropTypes.node,
   /** component to show in sidebar */
   sidebar: PropTypes.element,
-  /** component to show in footer. Passed to Sidebar */
+  /** component to show in footer on the left of the buttons */
   footerLeftContent: PropTypes.element,
-  /** function to go to item when click ProgressIndicator items. Passed to Footer */
+  /** function to go to item when click ProgressIndicator items. */
   setItem: PropTypes.func,
   /** show labels in Progress Indicator */
   showLabels: PropTypes.bool,
@@ -92,6 +101,11 @@ export const propTypes = {
   stepWidth: PropTypes.number,
   /** is the wizard actively sending data should disable the button */
   sendingData: PropTypes.bool,
+
+  /** Form Error Details */
+  error: PropTypes.string,
+  /**  Clear the currently shown error, triggered if the user closes the ErrorNotification */
+  onClearError: PropTypes.func,
 };
 
 export const defaultProps = {
@@ -112,6 +126,8 @@ export const defaultProps = {
   cancelLabel: 'Cancel',
   submitLabel: 'Add',
   sendingData: false,
+  error: null,
+  onClearError: null,
 };
 
 const WizardInline = ({
@@ -135,11 +151,28 @@ const WizardInline = ({
   sendingData,
   stepWidth,
   className,
+  error,
+  onClearError,
 }) => {
   const currentItemObj = items.find(({ id }) => currentItemId === id) || items[0];
   const currentItemIndex = items.findIndex(({ id }) => currentItemId === id);
   const hasNext = currentItemIndex !== items.length - 1;
   const hasPrev = currentItemIndex !== 0;
+
+  const handleClearError = () => {
+    if (onClearError) {
+      onClearError();
+    }
+  };
+
+  const isValid = callback => {
+    if (currentItemObj && currentItemObj.onValidate) {
+      if (currentItemObj.onValidate(currentItemId)) {
+        callback();
+      } else return;
+    }
+    callback();
+  };
 
   return (
     <StyledWizardWrapper className={className}>
@@ -148,7 +181,8 @@ const WizardInline = ({
           title={title}
           blurb={blurb}
           currentItemId={currentItemId}
-          setItem={setItem}
+          // only go if current step passes validation
+          setItem={id => isValid(() => setItem(id))}
           items={items}
           showLabels={showLabels}
           onClose={onClose}
@@ -161,6 +195,14 @@ const WizardInline = ({
             <WizardContent component={currentItemObj.component} />
           </div>
         </StyledWizardContainer>
+        {error ? (
+          <StyledMessageBox
+            title={error}
+            subtitle=""
+            kind="error"
+            onCloseButtonClick={handleClearError}
+          />
+        ) : null}
         <StyledFooter className={className}>
           <div className="bx--modal-footer">
             <WizardFooter
@@ -170,7 +212,8 @@ const WizardInline = ({
               hasPrev={hasPrev}
               cancelLabel={cancelLabel}
               submitLabel={submitLabel}
-              onNext={onNext}
+              // Validate before next
+              onNext={event => isValid(() => onNext(event))}
               onBack={onBack}
               onSubmit={onSubmit}
               onCancel={onClose}
