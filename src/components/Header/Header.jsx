@@ -4,9 +4,7 @@ import {
   HeaderGlobalBar,
   HeaderGlobalAction,
   SkipToContent,
-  HeaderMenu,
   HeaderMenuItem,
-  HeaderNavigation,
 } from 'carbon-components-react/lib/components/UIShell';
 import { rem } from 'polished';
 import styled from 'styled-components';
@@ -15,9 +13,20 @@ import React from 'react';
 
 import { COLORS } from '../../styles/styles';
 
+import HeaderMenu from './HeaderMenu';
+
 const StyledHeader = styled(CarbonHeader)`
   &&& {
     background-color: ${COLORS.darkGray};
+
+    .bx--header__menu .bx--header__menu-item[role= 'menuitem' ]: hover {
+      background: ${COLORS.darkGrayHover};
+    }
+
+    .bx--header__menu-item[role='menuitem']:focus {
+      border-color: #0062ff;
+      outline: none;
+    }
   }
 `;
 const StyledGlobalAction = styled(HeaderGlobalAction)`
@@ -41,6 +50,10 @@ const StyledGlobalAction = styled(HeaderGlobalAction)`
 const propTypes = {
   /** Name ot follow the IBM prefix up top, left */
   appName: PropTypes.string.isRequired,
+  /** Add a class name to Header */
+  className: PropTypes.string,
+  /** Add a prefix other than IBM */
+  prefix: PropTypes.string,
   /** Object of action items */
   actionItems: PropTypes.arrayOf(
     PropTypes.shape({
@@ -57,31 +70,34 @@ const propTypes = {
   ).isRequired,
 };
 
+const defaultProps = {
+  prefix: 'IBM',
+  className: 'main-header',
+};
+
 /**
  * Clickable card that shows "Add" button
  */
-const Header = ({ appName, className, actionItems }) => {
+const Header = ({ appName, className, actionItems, prefix }) => {
   const actionBtnContent = actionItems.map(item => {
     if (item.hasOwnProperty('childContent')) {
       const children = item.childContent.map(childItem => (
         <HeaderMenuItem
           key={`menu-item-${item.label + item.childContent.indexOf(childItem)}-child`}
-          /* eslint-disable */
-          href="javascript:void(0)"
-          /* eslint-enable */
-          onClick={() => childItem.onClick}>
+          {...childItem.metaData}>
           {childItem.content}
         </HeaderMenuItem>
       ));
       return (
-        <HeaderNavigation aria-label="dropdown" key={`menu-item-${item.label}-dropdown`}>
-          <HeaderMenu
-            key={`menu-item-${item.label}`}
-            aria-label={item.label}
-            renderMenuContent={() => item.btnContent}>
-            {children}
-          </HeaderMenu>
-        </HeaderNavigation>
+        // <HeaderNavigation aria-label="dropdown" key={`menu-item-${item.label}-dropdown`}>
+        <HeaderMenu
+          key={`menu-item-${item.label}`}
+          aria-label={item.label}
+          isMenu={false}
+          renderMenuContent={() => item.btnContent}>
+          {children}
+        </HeaderMenu>
+        // </HeaderNavigation>
       );
     }
     return (
@@ -97,7 +113,7 @@ const Header = ({ appName, className, actionItems }) => {
   return (
     <StyledHeader className={className} aria-label="main header">
       <SkipToContent />
-      <HeaderName href="#" prefix="IBM">
+      <HeaderName href="#" prefix={prefix}>
         {appName}
       </HeaderName>
       <HeaderGlobalBar>{actionBtnContent}</HeaderGlobalBar>
@@ -106,5 +122,6 @@ const Header = ({ appName, className, actionItems }) => {
 };
 
 Header.propTypes = propTypes;
+Header.defaultProps = defaultProps;
 
 export default Header;

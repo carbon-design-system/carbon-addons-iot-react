@@ -9,18 +9,44 @@ import Header from './Header';
 
 React.Fragment = ({ children }) => children;
 
+const StyledHeader = styled(Header)`
+   {
+    .bx--header__menu-item[role='menuitem'] {
+      align-items: center;
+      color: #f3f3f3;
+      display: flex;
+      padding: 0 1rem;
+      height: 100%;
+      font-size: 0.875rem;
+      font-weight: 400;
+      letter-spacing: 0;
+      line-height: 1.125rem;
+      text-decoration: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      border: 4px solid transparent;
+    }
+
+    button.bx--header__menu-item {
+      background: none;
+      width: 100%;
+    }
+
+    .bx--text-truncate--end * {
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+`;
+
 const User = styled.p`
    {
     color: white;
     font-size: 0.75rem;
     text-align: left;
     margin-right: ${rem(20)};
-  }
-`;
-
-const DropItem = styled.span`
-   {
-    display: flex;
   }
 `;
 
@@ -56,17 +82,25 @@ const HeaderProps = {
       ),
       childContent: [
         {
-          onCLick: action('go to source'),
-          content: <p>This is a link</p>,
+          metaData: {
+            href: 'http://google.com',
+            title: 'this is a title',
+            target: '_blank',
+            rel: 'noopener noreferrer',
+            element: 'a',
+          },
+          content: 'this is my message to you',
         },
         {
-          onCLick: action('go to source'),
+          metaData: {
+            onClick: action('do another action'),
+            className: 'this',
+            element: 'button',
+          },
           content: (
             <React.Fragment>
-              <DropItem>
-                JohnDoe@ibm.com
-                <StyledIcon name="header--avatar" fill="white" description="Icon" />
-              </DropItem>
+              JohnDoe@ibm.com
+              <StyledIcon name="header--avatar" fill="white" description="Icon" />
             </React.Fragment>
           ),
         },
@@ -83,10 +117,35 @@ const HeaderProps = {
           <StyledIcon name="header--avatar" fill="white" description="Icon" />
         </React.Fragment>
       ),
+      childContent: [
+        {
+          metaData: {
+            href: 'http://google.com',
+            title: 'this is a title',
+            target: '_blank',
+            rel: 'noopener noreferrer',
+            element: 'a',
+          },
+          content: 'this is my message to you',
+        },
+        {
+          metaData: {
+            onClick: action('do another action'),
+            className: 'this',
+            element: 'button',
+          },
+          content: (
+            <React.Fragment>
+              JohnDoe@ibm.com
+              <StyledIcon name="header--avatar" fill="white" description="Icon" />
+            </React.Fragment>
+          ),
+        },
+      ],
     },
   ],
 };
 
 storiesOf('Header', module).add('Header action buttons with dropdowns', () => (
-  <Header {...HeaderProps} />
+  <StyledHeader {...HeaderProps} />
 ));
