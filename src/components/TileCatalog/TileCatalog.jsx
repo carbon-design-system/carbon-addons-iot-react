@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { RadioTile, Tile, Search, SkeletonText } from 'carbon-components-react';
@@ -43,8 +43,9 @@ const StyledTitle = styled.span`
 
 export const propTypes = {
   /** Is the data actively loading? */
-
   isLoading: PropTypes.bool,
+  /** error loading the tile catalog */
+  error: PropTypes.string,
   pagination: PropTypes.shape({
     pageSize: PropTypes.number,
     pageText: PropTypes.string,
@@ -88,6 +89,7 @@ export const propTypes = {
 const defaultProps = {
   isLoading: false,
   title: null,
+  error: null,
   pagination: null,
   search: null,
   selectedTileId: null,
@@ -103,6 +105,7 @@ const TileCatalog = ({
   className,
   title,
   isLoading,
+  error,
   search,
   pagination,
   tiles,
@@ -159,8 +162,12 @@ const TileCatalog = ({
         />
       ) : (
         <StyledEmptyTile>
-          <Bee32 />
-          <p>{(search && search.noMatchesFoundText) || 'No matches found'}</p>
+          {error || (
+            <Fragment>
+              <Bee32 />
+              <p>{(search && search.noMatchesFoundText) || 'No matches found'}</p>
+            </Fragment>
+          )}
         </StyledEmptyTile>
       )}
       {pagination ? (

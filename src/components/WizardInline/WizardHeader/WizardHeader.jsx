@@ -5,6 +5,9 @@ import styled from 'styled-components';
 import ProgressIndicator from '../../ProgressIndicator/ProgressIndicator';
 
 const StyledDivWizardHeader = styled.div`
+  display: flex;
+  flex-flow: column nowrap;
+  margin-bottom: 1.5rem;
   .bx--modal-header {
     display: flex;
   }
@@ -19,6 +22,7 @@ class WizardHeader extends Component {
   static propTypes = {
     /** Title in the header  */
     title: PropTypes.string.isRequired,
+    blurb: PropTypes.string,
     currentItemId: PropTypes.string.isRequired,
     setItem: PropTypes.func.isRequired,
     items: PropTypes.arrayOf(
@@ -34,6 +38,7 @@ class WizardHeader extends Component {
   };
 
   static defaultProps = {
+    blurb: null,
     showLabels: true,
     stepWidth: 136,
   };
@@ -43,6 +48,7 @@ class WizardHeader extends Component {
   render = () => {
     const {
       title,
+      blurb,
       currentItemId,
       setItem,
       items,
@@ -86,6 +92,7 @@ class WizardHeader extends Component {
             </svg>
           </button>
         </div>
+        {blurb ? <div>{blurb}</div> : null}
       </StyledDivWizardHeader>
     );
   };

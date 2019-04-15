@@ -14,7 +14,7 @@ const tileRenderFunction = ({ values }) => (
   <CatalogContent {...values} icon={<Icon width="50" height="50" name="icon--add" />} />
 );
 
-const commonTileCatalogProps = {
+export const commonTileCatalogProps = {
   title: 'My Tile Catalog',
   id: 'entityType',
   tiles: [
@@ -97,4 +97,7 @@ storiesOf('TileCatalog', module)
       },
     }
   )
-  .add('loading', () => <TileCatalog {...commonTileCatalogProps} isLoading />);
+  .add('loading', () => <TileCatalog {...commonTileCatalogProps} isLoading />)
+  .add('error', () => (
+    <TileCatalog {...commonTileCatalogProps} tiles={[]} error="In error state" />
+  ));
