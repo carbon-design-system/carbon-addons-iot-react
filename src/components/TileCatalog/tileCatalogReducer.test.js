@@ -1,4 +1,4 @@
-import { tileCatalogReducer, TILE_ACTIONS } from './tileCatalogReducer';
+import { tileCatalogReducer, TILE_ACTIONS, determineInitialState } from './tileCatalogReducer';
 
 const longDescription = 'testDescription';
 const tileRenderFunction = jest.fn();
@@ -106,5 +106,29 @@ describe('tileCatalogReducer', () => {
 
     const newState = tileCatalogReducer(existingState, selectAction);
     expect(newState.selectedTileId).toEqual('tile2');
+  });
+});
+describe('determineInitialState', () => {
+  test('defaults', () => {
+    const initialState = determineInitialState({ tiles });
+    expect(initialState.pageSize).toEqual(10);
+    expect(initialState.page).toEqual(1);
+    expect(initialState.startingIndex).toEqual(0);
+    expect(initialState.endingIndex).toEqual(tiles.length - 1);
+    expect(initialState.selectedTileId).toEqual(tiles[0].id);
+  });
+  test('setting from pagination', () => {
+    const initialState = determineInitialState({ tiles, pagination: { pageSize: 5, page: 2 } });
+    expect(initialState.pageSize).toEqual(5);
+    expect(initialState.page).toEqual(2);
+    expect(initialState.startingIndex).toEqual(5);
+    expect(initialState.endingIndex).toEqual(tiles.length - 1);
+    expect(initialState.selectedTileId).toEqual(tiles[5].id);
+  });
+  test('setting search', () => {
+    const initialState = determineInitialState({ tiles, search: { value: 'Tile6' } });
+    expect(initialState.filteredTiles).toHaveLength(1);
+    expect(initialState.endingIndex).toEqual(0);
+    expect(initialState.selectedTileId).toEqual(tiles[5].id);
   });
 });
