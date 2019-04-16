@@ -84,7 +84,6 @@ describe('StatefulTileCatalog', () => {
     const newTiles = commonTileProps.tiles.slice(1, 5);
     // Back to Page 1
     wrapper.setProps({ tiles: newTiles });
-    wrapper.update();
     expect(
       wrapper
         .find('span')
