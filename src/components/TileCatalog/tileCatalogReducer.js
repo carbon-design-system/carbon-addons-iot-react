@@ -69,7 +69,7 @@ export const tileCatalogReducer = (state = {}, action) => {
         startingIndex,
         endingIndex,
         // set the selected tile id if the page changes
-        selectedTileId: filteredTiles[startingIndex] ? filteredTiles[startingIndex].id : null,
+        // selectedTileId: null,
         page,
       };
     }
@@ -86,7 +86,7 @@ export const tileCatalogReducer = (state = {}, action) => {
         startingIndex: 0,
         endingIndex: (pageSize || filteredTiles.length) - 1,
         // Set the selected tile id if the search changes the data
-        selectedTileId: filteredTiles && filteredTiles[0] ? filteredTiles[0].id : null,
+        // selectedTileId: null,
       };
     }
     case TILE_ACTIONS.SELECT:

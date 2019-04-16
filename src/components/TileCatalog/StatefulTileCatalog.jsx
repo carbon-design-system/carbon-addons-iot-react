@@ -44,12 +44,33 @@ const StatefulTileCatalog = ({ onSelection, pagination, search, tiles: tilesProp
     }
   };
 
-  const handleSelection = (newSelectedTile, ...args) => {
+  const handleSelection = newSelectedTile => {
     dispatch({ type: TILE_ACTIONS.SELECT, payload: newSelectedTile });
     if (onSelection) {
-      onSelection(newSelectedTile, ...args);
+      onSelection(newSelectedTile);
     }
   };
+
+  /* I couldn't really get the reselect logic to work correctly
+  useDeepCompareEffect(
+    () => {
+      dispatch({
+        type: TILE_ACTIONS.SELECT,
+        payload:
+          selectedTileId ||
+          (filteredTiles && filteredTiles[startingIndex] ? filteredTiles[startingIndex].id : null),
+      });
+    },
+    [filteredTiles.map(tile => omit(tile, 'renderContent')), searchState, startingIndex, page]
+  );
+
+  useEffect(
+    () => {
+      onSelection(selectedTileId);
+    },
+    [selectedTileId] // eslint-disable-line
+  );
+  */
 
   const handleSearch = (event, ...args) => {
     const newSearch = event.target.value || '';
