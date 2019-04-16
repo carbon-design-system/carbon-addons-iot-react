@@ -52,6 +52,7 @@ export default {
           'SideNavLink',
           'SideNavMenu',
           'SideNavMenuItem',
+          'SideNavFooter',
         ],
       },
       include: 'node_modules/**',
