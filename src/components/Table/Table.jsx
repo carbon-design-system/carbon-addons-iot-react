@@ -238,6 +238,7 @@ const Table = props => {
     actions,
     options,
     lightweight,
+    className,
     i18n,
     ...others
   } = merge({}, defaultProps(props), props);
@@ -278,7 +279,7 @@ const Table = props => {
       view.toolbar.search.value !== '');
 
   return (
-    <div id={id}>
+    <div id={id} className={className}>
       <TableToolbar
         clearAllFiltersText={i18n.clearAllFilters}
         columnSelectionText={i18n.columnSelectionButtonAria}
@@ -380,7 +381,10 @@ const Table = props => {
         </CarbonTable>
       </TableContainer>
 
-      {options.hasPagination && !view.table.loadingState.isLoading ? ( // don't show pagination row while loading
+      {options.hasPagination &&
+      !view.table.loadingState.isLoading &&
+      visibleData &&
+      visibleData.length ? ( // don't show pagination row while loading
         <PaginationV2
           {...view.pagination}
           onChange={actions.pagination.onChangePage}

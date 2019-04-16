@@ -22,7 +22,7 @@ export const baseTableReducer = (state = {}, action) => {
       const { pageSize: currentPageSize, totalItems, page: currentPage } = state.view.pagination;
       const { page, pageSize } = action.payload;
       const isPageSizeChange = pageSize && currentPageSize !== pageSize;
-      const isPageChange = page !== currentPage && page <= totalItems / pageSize;
+      const isPageChange = page !== currentPage && page <= Math.ceil(totalItems / pageSize);
       const newPagination = isPageSizeChange
         ? {
             ...state.view.pagination,
