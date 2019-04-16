@@ -100,7 +100,6 @@ const Header = ({ appName, className, actionItems, prefix }) => {
         </HeaderMenuItem>
       ));
       return (
-        // <HeaderNavigation aria-label="dropdown" key={`menu-item-${item.label}-dropdown`}>
         <HeaderMenu
           key={`menu-item-${item.label}`}
           aria-label={item.label}
@@ -108,7 +107,6 @@ const Header = ({ appName, className, actionItems, prefix }) => {
           renderMenuContent={() => item.btnContent}>
           {children}
         </HeaderMenu>
-        // </HeaderNavigation>
       );
     }
     return (
