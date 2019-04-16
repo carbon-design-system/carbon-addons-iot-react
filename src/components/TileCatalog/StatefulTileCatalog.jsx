@@ -1,85 +1,58 @@
-import React, { useState, useEffect } from 'react';
+import React, { useReducer } from 'react';
+import useDeepCompareEffect from 'use-deep-compare-effect';
 
-import { searchData } from '../Table/tableReducer';
-
+import { tileCatalogReducer, determineInitialState, TILE_ACTIONS } from './tileCatalogReducer';
 import TileCatalog, { propTypes } from './TileCatalog';
 
 /**
  * Paging and searching happens on local state within the component
  */
 
-const StatefulTileCatalog = ({
-  tiles,
-  onSelection,
-  selectedTileId,
-  search,
-  pagination,
-  ...props
-}) => {
-  const pageProp = pagination && pagination.page ? pagination.page : 1;
-  const [page, setPage] = useState(pageProp);
-  const pageSize = pagination && pagination.pageSize ? pagination.pageSize : 10;
-  const [searchState, setSearch] = useState('');
+const StatefulTileCatalog = ({ onSelection, pagination, search, tiles: tilesProp, ...props }) => {
+  const initialState = determineInitialState({ ...props, tiles: tilesProp, search, pagination });
+  const onPage = pagination && pagination.onPage;
+  const onSearch = search && search.onSearch;
 
-  const startingIndex = pagination ? (page - 1) * pageSize : 0;
-  const endingIndex = pagination ? (page - 1) * pageSize + pageSize : pageSize;
+  const [state, dispatch] = useReducer(tileCatalogReducer, initialState);
 
-  const filteredTiles = search ? searchData(tiles, searchState) : tiles;
-
-  const [selectedTile, setSelectedTile] = useState(
-    // Default to the passed id
-    selectedTileId || (filteredTiles && filteredTiles[startingIndex])
-      ? filteredTiles[startingIndex].id
-      : null
-  );
-
-  // If the filter tiles change (due to a search), I need to reset the page
-  useEffect(
+  useDeepCompareEffect(
     () => {
-      setPage(1);
+      // If we get passed a new set of tiles reset!
+      dispatch({
+        type: TILE_ACTIONS.RESET,
+        payload: { ...props, tiles: tilesProp, search, pagination },
+      });
     },
-    [filteredTiles]
+    [tilesProp]
   );
 
-  // If the tiles page changes, reset to the first
-  useEffect(
-    () => {
-      // new first tile on the page
-      setSelectedTile(filteredTiles[startingIndex] ? filteredTiles[startingIndex].id : null);
-    },
-    [page, filteredTiles, pageSize, startingIndex]
-  );
-
-  // TODO: should really refactor this as a reducer but for now
-  useEffect(
-    () => {
-      // if we're passed a selectedTileId use it!
-      if (selectedTileId) {
-        setSelectedTile(selectedTileId);
-      }
-    },
-    [selectedTileId]
-  );
+  const {
+    page,
+    startingIndex,
+    endingIndex,
+    searchState,
+    tiles,
+    filteredTiles,
+    selectedTileId,
+  } = state;
 
   const handlePage = (...args) => {
-    const { onPage } = pagination;
-    setPage(...args);
+    dispatch({ type: TILE_ACTIONS.PAGE_CHANGE, payload: args });
     if (onPage) {
       onPage(...args);
     }
   };
 
   const handleSelection = (newSelectedTile, ...args) => {
-    setSelectedTile(newSelectedTile);
+    dispatch({ type: TILE_ACTIONS.SELECT, payload: newSelectedTile });
     if (onSelection) {
       onSelection(newSelectedTile, ...args);
     }
   };
 
   const handleSearch = (event, ...args) => {
-    const { onSearch } = search;
     const newSearch = event.target.value || '';
-    setSearch(newSearch);
+    dispatch({ type: TILE_ACTIONS.SEARCH, payload: newSearch });
     if (onSearch) {
       onSearch(newSearch, ...args);
     }
@@ -88,8 +61,9 @@ const StatefulTileCatalog = ({
   return (
     <TileCatalog
       {...props}
-      selectedTileId={selectedTile}
-      tiles={filteredTiles.slice(startingIndex, endingIndex)}
+      selectedTileId={selectedTileId}
+      // slice doesn't include the last index!
+      tiles={filteredTiles.slice(startingIndex, endingIndex + 1)}
       search={{ ...search, onSearch: handleSearch, value: searchState }}
       pagination={{ ...pagination, page, onPage: handlePage, totalItems: tiles ? tiles.length : 0 }}
       onSelection={handleSelection}
