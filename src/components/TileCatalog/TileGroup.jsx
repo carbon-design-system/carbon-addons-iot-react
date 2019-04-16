@@ -16,7 +16,7 @@ const StyledTiles = styled.div`
 `;
 
 const StyledGreedyTile = styled(Tile)`
-   {
+  &&& {
     flex: 1 1 33.33%;
     display: none;
     min-height: 0px;
@@ -35,17 +35,15 @@ const StyledGreedyTile = styled(Tile)`
 
 const propTypes = {
   tiles: PropTypes.arrayOf(PropTypes.node),
-  // totalTiles: PropTypes.number,
 };
 
 const defaultProps = {
   tiles: null,
-  // totalTiles: 0,
 };
 
 /** this component just exists to make the last tile look good in a responsive flex container */
-const TileGroup = ({ tiles }) => (
-  <StyledTiles>
+const TileGroup = ({ tiles, className }) => (
+  <StyledTiles className={className}>
     {tiles}
     <StyledGreedyTile />
   </StyledTiles>

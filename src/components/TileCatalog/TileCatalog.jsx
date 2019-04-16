@@ -54,6 +54,7 @@ export const propTypes = {
     onPage: PropTypes.func,
     /** current page number */
     page: PropTypes.number,
+    totalItems: PropTypes.number,
   }),
 
   /** We will callback with the search value */
@@ -112,13 +113,11 @@ const TileCatalog = ({
   onSelection,
   selectedTileId,
 }) => {
-  const page = pagination && pagination.page ? pagination.page : 1;
-  const pageSize = pagination && pagination.pageSize ? pagination.pageSize : 10;
   const searchState = search ? search.value : '';
   const handleSearch = search && search.onSearch;
+  const pageSize = pagination && pagination.pageSize ? pagination.pageSize : 10;
+  const totalTiles = pagination && pagination.totalItems ? pagination.totalItems : 10;
 
-  const startingIndex = pagination ? (page - 1) * pageSize : 0;
-  const endingIndex = pagination ? (page - 1) * pageSize + pageSize : tiles.length;
   return (
     <StyledContainerDiv className={className}>
       <StyledCatalogHeader>
@@ -140,11 +139,11 @@ const TileCatalog = ({
               <SkeletonText />
             </StyledEmptyTile>
           ))}
-          totalTiles={pageSize}
+          totalTiles={totalTiles}
         />
       ) : tiles.length > 0 ? (
         <TileGroup
-          tiles={tiles.slice(startingIndex, endingIndex).map(tile => (
+          tiles={tiles.map(tile => (
             <RadioTile
               className={tile.className}
               key={tile.id}
@@ -158,7 +157,6 @@ const TileCatalog = ({
                 : tile.value}
             </RadioTile>
           ))}
-          totalTiles={pageSize}
         />
       ) : (
         <StyledEmptyTile>
@@ -171,7 +169,7 @@ const TileCatalog = ({
         </StyledEmptyTile>
       )}
       {pagination ? (
-        <SimplePagination {...pagination} maxPage={Math.ceil(tiles.length / pageSize)} />
+        <SimplePagination {...pagination} maxPage={Math.ceil(totalTiles / pageSize)} />
       ) : null}
     </StyledContainerDiv>
   );

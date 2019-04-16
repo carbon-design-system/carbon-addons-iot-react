@@ -7,13 +7,33 @@ import TileCatalog, { propTypes } from './TileCatalog';
 /**
  * Paging and searching happens on local state within the component
  */
-const StatefulTileCatalog = ({ tiles, onSelection, search, pagination, ...props }) => {
-  const [page, setPage] = useState(1);
+
+const StatefulTileCatalog = ({
+  tiles,
+  onSelection,
+  selectedTileId,
+  search,
+  pagination,
+  ...props
+}) => {
+  const pageProp = pagination && pagination.page ? pagination.page : 1;
+  const [page, setPage] = useState(pageProp);
+  const pageSize = pagination && pagination.pageSize ? pagination.pageSize : 10;
   const [searchState, setSearch] = useState('');
+
+  const startingIndex = pagination ? (page - 1) * pageSize : 0;
+  const endingIndex = pagination ? (page - 1) * pageSize + pageSize : pageSize;
 
   const filteredTiles = search ? searchData(tiles, searchState) : tiles;
 
-  // If the tiles change (due to a search), I need to reset the page
+  const [selectedTile, setSelectedTile] = useState(
+    // Default to the passed id
+    selectedTileId || (filteredTiles && filteredTiles[startingIndex])
+      ? filteredTiles[startingIndex].id
+      : null
+  );
+
+  // If the filter tiles change (due to a search), I need to reset the page
   useEffect(
     () => {
       setPage(1);
@@ -21,8 +41,24 @@ const StatefulTileCatalog = ({ tiles, onSelection, search, pagination, ...props 
     [filteredTiles]
   );
 
-  const [selectedTile, setSelectedTile] = useState(
-    filteredTiles && filteredTiles.length ? filteredTiles[0].id : null
+  // If the tiles page changes, reset to the first
+  useEffect(
+    () => {
+      // new first tile on the page
+      setSelectedTile(filteredTiles[startingIndex] ? filteredTiles[startingIndex].id : null);
+    },
+    [page, filteredTiles, pageSize, startingIndex]
+  );
+
+  // TODO: should really refactor this as a reducer but for now
+  useEffect(
+    () => {
+      // if we're passed a selectedTileId use it!
+      if (selectedTileId) {
+        setSelectedTile(selectedTileId);
+      }
+    },
+    [selectedTileId]
   );
 
   const handlePage = (...args) => {
@@ -53,9 +89,9 @@ const StatefulTileCatalog = ({ tiles, onSelection, search, pagination, ...props 
     <TileCatalog
       {...props}
       selectedTileId={selectedTile}
-      tiles={filteredTiles}
+      tiles={filteredTiles.slice(startingIndex, endingIndex)}
       search={{ ...search, onSearch: handleSearch, value: searchState }}
-      pagination={{ ...pagination, page, onPage: handlePage }}
+      pagination={{ ...pagination, page, onPage: handlePage, totalItems: tiles ? tiles.length : 0 }}
       onSelection={handleSelection}
     />
   );
