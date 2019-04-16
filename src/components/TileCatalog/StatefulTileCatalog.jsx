@@ -1,5 +1,6 @@
 import React, { useReducer } from 'react';
 import useDeepCompareEffect from 'use-deep-compare-effect';
+import omit from 'lodash/omit';
 
 import { tileCatalogReducer, determineInitialState, TILE_ACTIONS } from './tileCatalogReducer';
 import TileCatalog, { propTypes } from './TileCatalog';
@@ -23,7 +24,7 @@ const StatefulTileCatalog = ({ onSelection, pagination, search, tiles: tilesProp
         payload: { ...props, tiles: tilesProp, search, pagination },
       });
     },
-    [tilesProp]
+    [tilesProp.map(tile => omit(tile, 'renderContent'))]
   );
 
   const {
@@ -37,7 +38,7 @@ const StatefulTileCatalog = ({ onSelection, pagination, search, tiles: tilesProp
   } = state;
 
   const handlePage = (...args) => {
-    dispatch({ type: TILE_ACTIONS.PAGE_CHANGE, payload: args });
+    dispatch({ type: TILE_ACTIONS.PAGE_CHANGE, payload: args && args[0] });
     if (onPage) {
       onPage(...args);
     }
