@@ -14,8 +14,13 @@ export const TABLE_ROW_EXPAND = 'TABLE_ROW_EXPAND';
 export const TABLE_ROW_ACTION_APPLY = 'TABLE_ROW_ACTION_APPLY';
 export const TABLE_SEARCH_APPLY = 'TABLE_SEARCH_APPLY';
 export const TABLE_EMPTY_STATE_ACTION = 'TABLE_EMPTY_STATE_ACTION';
+export const TABLE_LOADING_SET = 'TABLE_LOADING_SET';
 
-export const tableRegister = data => ({ type: TABLE_REGISTER, payload: data });
+export const tableRegister = (data, totalItems) => ({
+  type: TABLE_REGISTER,
+  payload: data,
+  totalItems,
+});
 export const tablePageChange = page => ({ type: TABLE_PAGE_CHANGE, payload: page });
 export const tableToolbarToggle = toolbar => ({ type: TABLE_TOOLBAR_TOGGLE, payload: toolbar });
 /** Apply filters */
@@ -53,4 +58,12 @@ export const tableRowExpand = (rowId, isExpanded) => ({
 export const tableRowActionApply = (rowId, actionId) => ({
   type: TABLE_ROW_ACTION_APPLY,
   payload: { rowId, actionId },
+});
+
+/**
+ * rowCount: The number of rows currently being loaded
+ */
+export const tableLoadingSet = (isLoading, rowCount) => ({
+  type: TABLE_LOADING_SET,
+  payload: { isLoading, rowCount },
 });
