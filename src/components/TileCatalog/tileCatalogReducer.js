@@ -1,3 +1,5 @@
+import isNil from 'lodash/isNil';
+
 import { searchData } from '../Table/tableReducer';
 
 export const TILE_ACTIONS = {
@@ -7,19 +9,34 @@ export const TILE_ACTIONS = {
   RESET: 'RESET',
 };
 
+/** figures out the ending index of the array */
+const determineEndingIndex = (page, pageSize, tiles) => {
+  return (
+    Math.min(
+      (page - 1) * pageSize + pageSize,
+      tiles && !isNil(tiles.length) ? tiles.length : Infinity // I'd like to pass undefined here, but Math.min isn't smart enough so I have to use Infinity
+    ) - 1
+  );
+};
+
+/** This figures out the initial state of the reducer from the props */
 export const determineInitialState = ({ pagination, search, selectedTileId, tiles }) => {
   const page = pagination && pagination.page ? pagination.page : 1;
   const pageSize = pagination && pagination.pageSize ? pagination.pageSize : 10;
+  const filteredTiles = search ? searchData(tiles, search.value) : tiles;
+  const startingIndex = pagination ? (page - 1) * pageSize : 0;
   return {
     page,
     pageSize,
     searchState: search && search.value ? search.value : '',
-    selectedTileId: selectedTileId || (tiles && tiles[0] ? tiles[0].id : null),
+    selectedTileId:
+      selectedTileId ||
+      (filteredTiles && filteredTiles[startingIndex] ? filteredTiles[startingIndex].id : null),
     tiles,
     // filtered tiles have any search applied
-    filteredTiles: search ? searchData(tiles, search.value) : tiles,
-    startingIndex: pagination ? (page - 1) * pageSize : 0,
-    endingIndex: (pagination ? (page - 1) * pageSize + pageSize : pageSize) - 1,
+    filteredTiles,
+    startingIndex,
+    endingIndex: determineEndingIndex(page, pageSize, filteredTiles),
   };
 };
 
@@ -45,11 +62,7 @@ export const tileCatalogReducer = (state = {}, action) => {
       const { pageSize, filteredTiles } = state;
       const page = action.payload;
       const startingIndex = (page - 1) * pageSize;
-      const endingIndex =
-        Math.min(
-          (page - 1) * pageSize + pageSize,
-          filteredTiles && filteredTiles.length ? filteredTiles.length : Infinity
-        ) - 1;
+      const endingIndex = determineEndingIndex(page, pageSize, filteredTiles);
 
       return {
         ...state,
