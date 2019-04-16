@@ -4,17 +4,23 @@
  * This source code is licensed under the Apache-2.0 license found in the
  * LICENSE file in the root directory of this source tree.
  */
-/* eslint-disable */
+
 import ChevronDownGlyph from '@carbon/icons-react/lib/chevron--down';
 import { settings } from 'carbon-components';
 import cx from 'classnames';
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 
-// import { keys, matches } from '../../tools/key';
-// import { AriaLabelPropType } from '../../prop-types/AriaPropTypes';
-
 const { prefix } = settings;
+
+/* eslint-disable */
+
+const defaultRenderMenuContent = ({ ariaLabel }) => (
+  <>
+    {ariaLabel}
+    <ChevronDownGlyph className={`${prefix}--header__menu-arrow`} />
+  </>
+);
 
 export const keys = {
   TAB: 9,
@@ -49,9 +55,9 @@ export function matches(event, keysToMatch) {
 class HeaderMenu extends React.Component {
   static propTypes = {
     /**
-     * Required props for the accessibility label of the menu
+     * Bit to switch if you want HeaderMenu to render inside nav or in action bar
      */
-
+    isMenu: PropTypes.bool,
     /**
      * Provide a custom ref handler for the menu button
      */
@@ -61,6 +67,16 @@ class HeaderMenu extends React.Component {
      * Optionally provide a tabIndex for the underlying menu button
      */
     tabIndex: PropTypes.number,
+
+    /**
+     * Optional component to render instead of string
+     */
+    renderMenuContent: PropTypes.func,
+  };
+
+  static defaultProps = {
+    renderMenuContent: defaultRenderMenuContent,
+    isMenu: true,
   };
 
   constructor(props) {
@@ -107,7 +123,13 @@ class HeaderMenu extends React.Component {
   handleOnBlur = event => {
     // Rough guess for a blur event that is triggered outside of our menu or
     // menubar context
-    if (!event.relatedTarget) {
+    console.log(
+      'target: ',
+      event.target,
+      event.currentTarget,
+      event.currentTarget.contains(event.target)
+    );
+    if (!event.currentTarget.contains(event.relatedTarget)) {
       this.setState({ expanded: false, selectedIndex: null });
     }
   };
@@ -157,14 +179,21 @@ class HeaderMenu extends React.Component {
       'aria-label': ariaLabel,
       'aria-labelledby': ariaLabelledBy,
       className: customClassName,
+      isMenu,
       children,
-      content,
+      renderMenuContent: MenuContent,
     } = this.props;
     const accessibilityLabel = {
       'aria-label': ariaLabel,
       'aria-labelledby': ariaLabelledBy,
     };
     const className = cx(`${prefix}--header__submenu`, customClassName);
+    const parentProps = {
+      className: className,
+      onKeyDown: this.handleMenuClose,
+      onClick: this.handleOnClick,
+      onBlur: this.handleOnBlur,
+    };
     // Notes on eslint comments and based on the examples in:
     // https://www.w3.org/TR/wai-aria-practices/examples/menubar/menubar-1/menubar-1.html#
     // - The focus is handled by the <a> menuitem, onMouseOver is for mouse
@@ -172,29 +201,27 @@ class HeaderMenu extends React.Component {
     // - aria-haspopup can definitely have the value "menu"
     // - aria-expanded is on their example node with role="menuitem"
     // - href can be set to javascript:void(0), ideally this will be a button
-    return (
-      <li // eslint-disable-line jsx-a11y/mouse-events-have-key-events,jsx-a11y/no-noninteractive-element-interactions
-        className={className}
-        onKeyDown={this.handleMenuClose}
-        onClick={this.handleOnClick}
-        onBlur={this.handleOnBlur}>
+
+    const content = (
+      <Fragment>
         <a // eslint-disable-line jsx-a11y/role-supports-aria-props,jsx-a11y/anchor-is-valid
           aria-haspopup="menu" // eslint-disable-line jsx-a11y/aria-proptypes
           aria-expanded={this.state.expanded}
           className={cx(`${prefix}--header__menu-item`, `${prefix}--header__menu-title`)}
-          // href="javascript:void(0)"
+          href="javascript:void(0)"
           onKeyDown={this.handleOnKeyDown}
           ref={this.handleMenuButtonRef}
           role="menuitem"
-          tabIndex={0}>
-          {content || ariaLabel}
-          {content ? null : <ChevronDownGlyph className={`${prefix}--header__menu-arrow`} />}
+          tabIndex={0}
+          aria-label={ariaLabel}>
+          <MenuContent ariaLabel={ariaLabel} />
         </a>
         <ul {...accessibilityLabel} className={`${prefix}--header__menu`} role="menu">
           {React.Children.map(children, this._renderMenuItem)}
         </ul>
-      </li>
+      </Fragment>
     );
+    return isMenu ? <li {...parentProps}> {content} </li> : <div {...parentProps}> {content} </div>;
   }
 
   /**
@@ -207,11 +234,14 @@ class HeaderMenu extends React.Component {
    * `tabIndex: -1` so the user won't hit a large number of items in their tab
    * sequence when they might not want to go through all the items.
    */
-  _renderMenuItem = (item, index) =>
-    React.cloneElement(item, {
+  _renderMenuItem = (item, index) => {
+    return React.cloneElement(item, {
       ref: this.handleItemRef(index),
       role: 'none',
     });
+  };
 }
 
-export default React.forwardRef((props, ref) => <HeaderMenu {...props} focusRef={ref} />);
+export default React.forwardRef((props, ref) => {
+  return <HeaderMenu {...props} focusRef={ref} />;
+});

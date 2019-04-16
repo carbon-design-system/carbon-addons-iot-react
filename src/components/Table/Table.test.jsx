@@ -1,7 +1,9 @@
 import { mount } from 'enzyme';
 import React from 'react';
+import merge from 'lodash/merge';
 
 import Table from './Table';
+import EmptyTable from './EmptyTable/EmptyTable';
 
 const selectData = [
   {
@@ -93,6 +95,7 @@ export const mockActions = {
     onClearAllFilters: jest.fn(),
     onCancelBatchAction: jest.fn(),
     onApplyBatchAction: jest.fn(),
+    onApplySearch: jest.fn(),
   },
   table: {
     onRowSelected: jest.fn(),
@@ -173,5 +176,42 @@ describe('Table', () => {
     );
     wrapper.find('button#column-string').simulate('click');
     expect(mockActions.table.onChangeSort).toHaveBeenCalled();
+  });
+
+  test('custom emptystate only renders with no filters', () => {
+    const wrapper = mount(
+      <Table
+        columns={tableColumns}
+        data={[]}
+        actions={mockActions}
+        options={options}
+        view={merge({}, view, {
+          table: { emptyState: <div id="customEmptyState">emptyState</div> },
+        })}
+      />
+    );
+    // Should render the custom empty state
+    expect(wrapper.find('#customEmptyState')).toHaveLength(1);
+
+    const wrapper2 = mount(
+      <Table
+        columns={tableColumns}
+        data={[]}
+        actions={mockActions}
+        options={options}
+        view={merge({}, view, {
+          filters: [{ columnId: 'col', value: 'value' }],
+          table: { emptyState: <div id="customEmptyState">emptyState</div> },
+        })}
+      />
+    );
+    // Should not render the empty state
+    expect(wrapper2.find('#customEmptyState')).toHaveLength(0);
+
+    // Click the button and make sure the right action fires
+    const emptyTable = wrapper2.find(EmptyTable);
+    emptyTable.find('button').simulate('click');
+    expect(mockActions.toolbar.onApplySearch).toHaveBeenCalled();
+    expect(mockActions.toolbar.onClearAllFilters).toHaveBeenCalled();
   });
 });

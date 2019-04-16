@@ -4,6 +4,7 @@ import merge from 'lodash/merge';
 import pick from 'lodash/pick';
 import { PaginationV2, DataTable } from 'carbon-components-react';
 import get from 'lodash/get';
+import isNil from 'lodash/isNil';
 
 import { defaultFunction } from '../../utils/componentUtilityFunctions';
 
@@ -213,9 +214,9 @@ export const defaultProps = baseProps => ({
     selectRowAria: 'Select row',
     /** toolbar */
     clearAllFilters: 'Clear all filters',
-    searchPlaceholder: 'Search',
     columnSelectionButtonAria: 'Column Selection',
     filterButtonAria: 'Filters',
+    searchPlaceholder: 'Search',
     clearFilterAria: 'Clear filter',
     filterAria: 'Filter',
     openMenuAria: 'Open menu',
@@ -239,11 +240,19 @@ const Table = props => {
     actions,
     options,
     lightweight,
+    className,
     i18n,
     ...others
   } = merge({}, defaultProps(props), props);
 
-  console.log(data);
+  const handleClearFilters = () => {
+    if (actions.toolbar && actions.toolbar.onClearAllFilters) {
+      actions.toolbar.onClearAllFilters();
+    }
+    if (actions.toolbar && actions.toolbar.onApplySearch) {
+      actions.toolbar.onApplySearch('');
+    }
+  };
 
   const minItemInView =
     options.hasPagination && view.pagination
@@ -263,13 +272,21 @@ const Table = props => {
     (options.hasRowSelection ? 1 : 0) +
     (options.hasRowExpansion ? 1 : 0) +
     (options.hasRowActions ? 1 : 0);
+
+  const isFiltered =
+    view.filters.length > 0 ||
+    (!isNil(view.toolbar) &&
+      !isNil(view.toolbar.search) &&
+      !isNil(view.toolbar.search.value) &&
+      view.toolbar.search.value !== '');
+
   return (
-    <div id={id}>
+    <div id={id} className={className}>
       <TableToolbar
         clearAllFiltersText={i18n.clearAllFilters}
         columnSelectionText={i18n.columnSelectionButtonAria}
         filterText={i18n.filterButtonAria}
-        searchPlaceHolderText={i18n.searchPlaceholder}
+        searchPlaceholderText={i18n.searchPlaceholder}
         actions={pick(
           actions.toolbar,
           'onCancelBatchAction',
@@ -353,23 +370,30 @@ const Table = props => {
           ) : (
             <EmptyTable
               totalColumns={totalColumns}
-              isFiltered={view.filters.length > 0}
+              isFiltered={isFiltered}
               emptyState={
-                // Either use the custom element or the default labels
-                view.table.emptyState || {
-                  message: i18n.emptyMessage,
-                  messageWithFilters: i18n.emptyMessageWithFilters,
-                  buttonLabel: i18n.emptyButtonLabel,
-                  buttonLabelWithFilters: i18n.emptyButtonLabelWithFilters,
-                }
+                // only show emptyState if no filters or search is applied
+                view.table.emptyState && !isFiltered
+                  ? view.table.emptyState
+                  : {
+                      message: i18n.emptyMessage,
+                      messageWithFilters: i18n.emptyMessageWithFilters,
+                      buttonLabel: i18n.emptyButtonLabel,
+                      buttonLabelWithFilters: i18n.emptyButtonLabelWithFilters,
+                    }
               }
-              onEmptyStateAction={actions.table.onEmptyStateAction}
+              onEmptyStateAction={
+                isFiltered ? handleClearFilters : actions.table.onEmptyStateAction
+              }
             />
           )}
         </CarbonTable>
       </TableContainer>
 
-      {options.hasPagination && !view.table.loadingState.isLoading ? ( // don't show pagination row while loading
+      {options.hasPagination &&
+      !view.table.loadingState.isLoading &&
+      visibleData &&
+      visibleData.length ? ( // don't show pagination row while loading
         <PaginationV2
           {...view.pagination}
           onChange={actions.pagination.onChangePage}

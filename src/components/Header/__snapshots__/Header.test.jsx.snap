@@ -3,6 +3,7 @@
 exports[`Header testcases should render 1`] = `
 <Header__StyledHeader
   aria-label="main header"
+  className="main-header"
 >
   <SkipToContent
     href="#main-content"
@@ -30,53 +31,36 @@ exports[`Header testcases should render 1`] = `
         role="img"
       />
     </Header__StyledGlobalAction>
-    <HeaderNavigation
-      aria-label="dropdown"
-      key="menu-item-help-dropdown"
+    <ForwardRef
+      aria-label="help"
+      isMenu={false}
+      key="menu-item-help"
+      renderMenuContent={[Function]}
     >
       <ForwardRef
-        aria-label="help"
-        content={
-          <Icon
-            className="bx--header__menu-item bx--header__menu-title"
-            description="Icon"
-            fill="white"
-            fillRule="evenodd"
-            name="header--help"
-            role="img"
-          />
-        }
-        key="menu-item-help"
+        key="menu-item-help0-child"
       >
-        <ForwardRef
-          href="javascript:void(0)"
-          key="menu-item-help0-child"
-          onClick={[Function]}
-        >
-          <p>
-            This is a link
-          </p>
-        </ForwardRef>
-        <ForwardRef
-          href="javascript:void(0)"
-          key="menu-item-help1-child"
-          onClick={[Function]}
-        >
-          <Component>
-            <span>
-              JohnDoe@ibm.com
-              <Icon
-                description="Icon"
-                fill="white"
-                fillRule="evenodd"
-                name="header--avatar"
-                role="img"
-              />
-            </span>
-          </Component>
-        </ForwardRef>
+        <p>
+          This is a link
+        </p>
       </ForwardRef>
-    </HeaderNavigation>
+      <ForwardRef
+        key="menu-item-help1-child"
+      >
+        <Component>
+          <span>
+            JohnDoe@ibm.com
+            <Icon
+              description="Icon"
+              fill="white"
+              fillRule="evenodd"
+              name="header--avatar"
+              role="img"
+            />
+          </span>
+        </Component>
+      </ForwardRef>
+    </ForwardRef>
   </HeaderGlobalBar>
 </Header__StyledHeader>
 `;

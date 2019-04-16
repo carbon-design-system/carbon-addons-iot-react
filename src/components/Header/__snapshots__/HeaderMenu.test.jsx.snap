@@ -1,43 +1,30 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`HeaderMenu testcases should render 1`] = `
-<ForwardRef
-  aria-label="Accessibility label"
-  className="custom-class"
-  tabIndex={-1}
->
+exports[`HeaderMenu should render 1`] = `
+<ForwardRef>
   <HeaderMenu
-    aria-label="Accessibility label"
-    className="custom-class"
     focusRef={null}
-    tabIndex={-1}
+    isMenu={true}
+    renderMenuContent={[Function]}
   >
     <li
-      className="bx--header__submenu custom-class"
+      className="bx--header__submenu"
       onBlur={[Function]}
       onClick={[Function]}
       onKeyDown={[Function]}
     >
+       
       <a
         aria-expanded={false}
         aria-haspopup="menu"
         className="bx--header__menu-item bx--header__menu-title"
+        href="javascript:void(0)"
         onKeyDown={[Function]}
         role="menuitem"
         tabIndex={0}
       >
-        Accessibility label
-        <ChevronDownGlyph
-          className="bx--header__menu-arrow"
-          focusable={false}
-          height={7}
-          preserveAspectRatio="xMidYMid meet"
-          viewBox="0 0 12 7"
-          width={12}
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <svg
-            aria-hidden={true}
+        <defaultRenderMenuContent>
+          <ChevronDownGlyph
             className="bx--header__menu-arrow"
             focusable={false}
             height={7}
@@ -46,14 +33,24 @@ exports[`HeaderMenu testcases should render 1`] = `
             width={12}
             xmlns="http://www.w3.org/2000/svg"
           >
-            <path
-              d="M6.002 5.55L11.27 0l.726.685L6.002 7 0 .685.726 0z"
-            />
-          </svg>
-        </ChevronDownGlyph>
+            <svg
+              aria-hidden={true}
+              className="bx--header__menu-arrow"
+              focusable={false}
+              height={7}
+              preserveAspectRatio="xMidYMid meet"
+              viewBox="0 0 12 7"
+              width={12}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M6.002 5.55L11.27 0l.726.685L6.002 7 0 .685.726 0z"
+              />
+            </svg>
+          </ChevronDownGlyph>
+        </defaultRenderMenuContent>
       </a>
       <ul
-        aria-label="Accessibility label"
         className="bx--header__menu"
         role="menu"
       >
@@ -148,6 +145,7 @@ exports[`HeaderMenu testcases should render 1`] = `
           </li>
         </ForwardRef>
       </ul>
+       
     </li>
   </HeaderMenu>
 </ForwardRef>

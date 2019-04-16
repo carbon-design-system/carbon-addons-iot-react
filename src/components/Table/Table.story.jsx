@@ -2,13 +2,15 @@ import React from 'react';
 // import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { boolean, text } from '@storybook/addon-knobs';
+import { boolean, text, number } from '@storybook/addon-knobs';
 import styled from 'styled-components';
 
 import { getSortedData } from '../../utils/componentUtilityFunctions';
 
 import Table from './Table';
 import StatefulTable from './StatefulTable';
+import AsyncTable from './AsyncTable/AsyncTable';
+import MockApiClient from './AsyncTable/MockApiClient';
 
 const selectData = [
   {
@@ -442,6 +444,7 @@ storiesOf('Table', module)
       },
     }
   )
+
   .add('default', () => <Table columns={tableColumns} data={tableData} actions={actions} />)
   .add('with simple search', () => (
     <Table
@@ -899,7 +902,7 @@ storiesOf('Table', module)
       <div style={{ width: '800px' }}>
         <Table
           columns={tableColumns.concat(tableColumnsConcat)}
-          options={{ hasFilter: true }}
+          options={{ hasFilter: true, hasPagination: true }}
           data={tableData}
           actions={actions}
           view={{
@@ -926,7 +929,7 @@ storiesOf('Table', module)
     return (
       <Table
         columns={tableColumns.concat(tableColumnsConcat)}
-        options={{ hasFilter: true }}
+        options={{ hasFilter: true, hasPagination: true }}
         data={tableData}
         actions={actions}
         view={{
@@ -938,4 +941,18 @@ storiesOf('Table', module)
         }}
       />
     );
-  });
+  })
+  .add(
+    'Filtered/Sorted/Paginated table with asynchronous data source',
+    () => {
+      const apiClient = new MockApiClient(100, number('Fetch Duration (ms)', 500));
+      return <AsyncTable fetchData={apiClient.getData} />;
+    },
+    {
+      info: {
+        text:
+          'This is an example of how to use the <Table> component to present data fetched asynchronously from an HTTP API supporting pagination, filtering and sorting. Refer to the source files under /src/components/Table/AsyncTable for details. ',
+        source: false,
+      },
+    }
+  );
