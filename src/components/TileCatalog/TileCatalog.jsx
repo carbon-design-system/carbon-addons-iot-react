@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { RadioTile, Tile, Search, SkeletonText } from 'carbon-components-react';
@@ -43,8 +43,9 @@ const StyledTitle = styled.span`
 
 export const propTypes = {
   /** Is the data actively loading? */
-
   isLoading: PropTypes.bool,
+  /** error loading the tile catalog */
+  error: PropTypes.string,
   pagination: PropTypes.shape({
     pageSize: PropTypes.number,
     pageText: PropTypes.string,
@@ -53,6 +54,7 @@ export const propTypes = {
     onPage: PropTypes.func,
     /** current page number */
     page: PropTypes.number,
+    totalItems: PropTypes.number,
   }),
 
   /** We will callback with the search value */
@@ -88,6 +90,7 @@ export const propTypes = {
 const defaultProps = {
   isLoading: false,
   title: null,
+  error: null,
   pagination: null,
   search: null,
   selectedTileId: null,
@@ -103,19 +106,18 @@ const TileCatalog = ({
   className,
   title,
   isLoading,
+  error,
   search,
   pagination,
   tiles,
   onSelection,
   selectedTileId,
 }) => {
-  const page = pagination && pagination.page ? pagination.page : 1;
-  const pageSize = pagination && pagination.pageSize ? pagination.pageSize : 10;
   const searchState = search ? search.value : '';
   const handleSearch = search && search.onSearch;
+  const pageSize = pagination && pagination.pageSize ? pagination.pageSize : 10;
+  const totalTiles = pagination && pagination.totalItems ? pagination.totalItems : 10;
 
-  const startingIndex = pagination ? (page - 1) * pageSize : 0;
-  const endingIndex = pagination ? (page - 1) * pageSize + pageSize : tiles.length;
   return (
     <StyledContainerDiv className={className}>
       <StyledCatalogHeader>
@@ -137,11 +139,11 @@ const TileCatalog = ({
               <SkeletonText />
             </StyledEmptyTile>
           ))}
-          totalTiles={pageSize}
+          totalTiles={totalTiles}
         />
       ) : tiles.length > 0 ? (
         <TileGroup
-          tiles={tiles.slice(startingIndex, endingIndex).map(tile => (
+          tiles={tiles.map(tile => (
             <RadioTile
               className={tile.className}
               key={tile.id}
@@ -155,16 +157,19 @@ const TileCatalog = ({
                 : tile.value}
             </RadioTile>
           ))}
-          totalTiles={pageSize}
         />
       ) : (
         <StyledEmptyTile>
-          <Bee32 />
-          <p>{(search && search.noMatchesFoundText) || 'No matches found'}</p>
+          {error || (
+            <Fragment>
+              <Bee32 />
+              <p>{(search && search.noMatchesFoundText) || 'No matches found'}</p>
+            </Fragment>
+          )}
         </StyledEmptyTile>
       )}
       {pagination ? (
-        <SimplePagination {...pagination} maxPage={Math.ceil(tiles.length / pageSize)} />
+        <SimplePagination {...pagination} maxPage={Math.ceil(totalTiles / pageSize)} />
       ) : null}
     </StyledContainerDiv>
   );

@@ -54,6 +54,12 @@ describe('StatefulTileCatalog', () => {
     // Should be 2 tile choices on the last page
     expect(wrapper.find('input[type="radio"]')).toHaveLength(2);
   });
+  test('selectedTileId', () => {
+    const wrapper = mount(<StatefulTileCatalog {...commonTileProps} selectedTileId="test2" />);
+    const selectedTile = wrapper.find('input[checked=true]');
+    expect(selectedTile).toHaveLength(1);
+    expect(selectedTile.prop('id')).toEqual('test2');
+  });
   test('tiles prop change resets page', () => {
     const wrapper = mount(
       <StatefulTileCatalog {...commonTileProps} pagination={{ pageSize: 5 }} />
@@ -74,13 +80,23 @@ describe('StatefulTileCatalog', () => {
         .at(1)
         .text()
     ).toEqual('Page 2');
+
+    const newTiles = commonTileProps.tiles.slice(1, 5);
     // Back to Page 1
-    wrapper.setProps({ tiles: [] });
+    wrapper.setProps({ tiles: newTiles });
     expect(
       wrapper
         .find('span')
         .at(1)
         .text()
     ).toEqual('Page 1');
+
+    // The new first tile should be selected
+    expect(
+      wrapper
+        .find('RadioTile')
+        .at(0)
+        .prop('checked')
+    ).toEqual(true);
   });
 });

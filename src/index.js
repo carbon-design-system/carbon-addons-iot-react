@@ -22,9 +22,11 @@ export ResourceList from './components/ResourceList/ResourceList';
 // reusable reducers
 export { baseTableReducer } from './components/Table/baseTableReducer';
 export { tableReducer } from './components/Table/tableReducer';
+export { tileCatalogReducer } from './components/TileCatalog/tileCatalogReducer';
 export * as tableActions from './components/Table/tableActionCreators';
 // Page related helpers
 export PageHero from './components/Page/PageHero';
 export PageWorkArea from './components/Page/PageWorkArea';
 export NavigationBar from './components/NavigationBar/NavigationBar';
 export Header from './components/Header';
+export SideNav from './components/SideNav';

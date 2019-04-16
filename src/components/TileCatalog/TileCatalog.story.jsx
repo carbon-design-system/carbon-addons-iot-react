@@ -1,10 +1,10 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
+import { select } from '@storybook/addon-knobs';
 import { Icon } from 'carbon-components-react';
 
 import StatefulTileCatalog from './StatefulTileCatalog';
-import TileCatalog from './TileCatalog';
 import CatalogContent from './CatalogContent';
 
 const longDescription =
@@ -14,7 +14,7 @@ const tileRenderFunction = ({ values }) => (
   <CatalogContent {...values} icon={<Icon width="50" height="50" name="icon--add" />} />
 );
 
-const commonTileCatalogProps = {
+export const commonTileCatalogProps = {
   title: 'My Tile Catalog',
   id: 'entityType',
   tiles: [
@@ -61,40 +61,34 @@ const commonTileCatalogProps = {
 };
 
 storiesOf('TileCatalog', module)
-  .add('default', () => <TileCatalog {...commonTileCatalogProps} />)
-  .add(
-    'with search',
-    () => (
-      // Example stateful catalog component that can search
-      <StatefulTileCatalog
-        {...commonTileCatalogProps}
-        search={{
-          placeHolderText: 'Search catalog',
-          onSearch: action('onSearch'),
-        }}
-        pagination={{ pageSize: 6, onPage: action('onPage') }}
-      />
-    ),
-    {
-      info: {
-        propTables: [TileCatalog],
-        propTablesExclude: [StatefulTileCatalog],
-      },
-    }
-  )
-  .add(
-    'with pages',
-    () => (
-      <StatefulTileCatalog
-        {...commonTileCatalogProps}
-        pagination={{ pageSize: 6, onPage: action('onPage') }}
-      />
-    ),
-    {
-      info: {
-        propTables: [TileCatalog],
-        propTablesExclude: [StatefulTileCatalog],
-      },
-    }
-  )
-  .add('loading', () => <TileCatalog {...commonTileCatalogProps} isLoading />);
+  .add('default', () => (
+    <StatefulTileCatalog
+      {...commonTileCatalogProps}
+      selectedTileId={select(
+        'id',
+        commonTileCatalogProps.tiles.map(tile => tile.id),
+        commonTileCatalogProps.tiles[0].id
+      )}
+    />
+  ))
+  .add('with search', () => (
+    // Example stateful catalog component that can search
+    <StatefulTileCatalog
+      {...commonTileCatalogProps}
+      search={{
+        placeHolderText: 'Search catalog',
+        onSearch: action('onSearch'),
+      }}
+      pagination={{ pageSize: 6, onPage: action('onPage') }}
+    />
+  ))
+  .add('with pages', () => (
+    <StatefulTileCatalog
+      {...commonTileCatalogProps}
+      pagination={{ pageSize: 6, onPage: action('onPage') }}
+    />
+  ))
+  .add('loading', () => <StatefulTileCatalog {...commonTileCatalogProps} isLoading />)
+  .add('error', () => (
+    <StatefulTileCatalog {...commonTileCatalogProps} tiles={[]} error="In error state" />
+  ));

@@ -9,14 +9,20 @@ import WizardSidebar from './WizardLeftSidebar/WizardSidebar';
 import WizardContent from './WizardContent/WizardContent';
 
 const StyledWizardWrapper = styled.div`
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+
   .bx--modal-content {
+    padding: 0rem 1rem;
     margin-bottom: 48px;
     max-height: 80vh;
     overflow: auto;
   }
+
   .bx--modal-container {
     min-width: 630px;
-    max-width: 100%;
+    max-width: 90%;
     margin-top: 24px;
     padding-top: 32px;
     padding-bottom: 72px;
@@ -52,8 +58,9 @@ const StyledFooter = styled.div`
 export const propTypes = {
   /** Title in the header */
   title: PropTypes.string.isRequired,
+  blurb: PropTypes.string,
   /** Id of current step */
-  currentItemId: PropTypes.string.isRequired,
+  currentItemId: PropTypes.string,
   /** Array of items representing pages of wizard. Must contain id, name, component. Optional: backLabel, nextLabel, nextDisabled */
   items: PropTypes.arrayOf(
     PropTypes.shape({
@@ -80,7 +87,7 @@ export const propTypes = {
   nextLabel: PropTypes.node,
   /** label to show on the submit button */
   submitLabel: PropTypes.node,
-  /** component to show in sidebar */
+  /** optional component to show in sidebar */
   sidebar: PropTypes.element,
   /** component to show in footer on the left of the buttons */
   footerLeftContent: PropTypes.element,
@@ -106,6 +113,8 @@ export const defaultProps = {
   footerLeftContent: null,
   showLabels: true,
   nextDisabled: false,
+  currentItemId: null,
+  blurb: null,
   stepWidth: 136,
   onNext: null,
   onBack: null,
@@ -123,6 +132,7 @@ export const defaultProps = {
 
 const WizardInline = ({
   title,
+  blurb,
   currentItemId,
   items,
   onNext,
@@ -169,6 +179,7 @@ const WizardInline = ({
       <div className="bx--modal-container">
         <WizardHeader
           title={title}
+          blurb={blurb}
           currentItemId={currentItemId}
           // only go if current step passes validation
           setItem={id => isValid(() => setItem(id))}
@@ -179,7 +190,7 @@ const WizardInline = ({
         />
 
         <StyledWizardContainer>
-          <WizardSidebar sidebar={sidebar} />
+          {sidebar ? <WizardSidebar sidebar={sidebar} /> : null}
           <div className="bx--modal-content">
             <WizardContent component={currentItemObj.component} />
           </div>
