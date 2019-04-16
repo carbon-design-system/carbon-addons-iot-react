@@ -59,12 +59,12 @@ const StyledGlobalAction = styled(HeaderGlobalAction)`
 `;
 
 const propTypes = {
-  /** Name ot follow the IBM prefix up top, left */
+  /** Add a prefix other than IBM */
+  prefix: PropTypes.string,
+  /** Name to follow the IBM prefix up top, left */
   appName: PropTypes.string.isRequired,
   /** Add a class name to Header */
   className: PropTypes.string,
-  /** Add a prefix other than IBM */
-  prefix: PropTypes.string,
   /** Object of action items */
   actionItems: PropTypes.arrayOf(
     PropTypes.shape({
@@ -73,6 +73,9 @@ const propTypes = {
       btnContent: PropTypes.any.isRequired,
       childContent: PropTypes.arrayOf(
         PropTypes.shape({
+          /** extra data to pass to HeaderMenuLink (aria-*, href, target, etc.) */
+          metaData: PropTypes.object,
+          /** Optionally pass in an onClick handler to trigger action  */
           onClick: PropTypes.func,
           content: PropTypes.any.isRequired,
         })
