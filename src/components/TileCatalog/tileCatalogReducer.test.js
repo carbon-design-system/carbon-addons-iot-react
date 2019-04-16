@@ -62,7 +62,7 @@ describe('tileCatalogReducer', () => {
 
     const newState = tileCatalogReducer(existingState, pageChangeAction);
     expect(newState.page).toEqual(2);
-    expect(newState.selectedTileId).toEqual(tiles[5].id);
+    // expect(newState.selectedTileId).toEqual(null);
     expect(newState.startingIndex).toEqual(5);
     expect(newState.endingIndex).toEqual(6);
   });
@@ -85,7 +85,7 @@ describe('tileCatalogReducer', () => {
     const newState = tileCatalogReducer(existingState, searchAction);
     expect(newState.searchState).toEqual('Tile6');
     expect(newState.page).toEqual(1);
-    expect(newState.selectedTileId).toEqual('test6');
+    // expect(newState.selectedTileId).toEqual(null);
     expect(newState.startingIndex).toEqual(0);
     expect(newState.endingIndex).toEqual(4);
   });

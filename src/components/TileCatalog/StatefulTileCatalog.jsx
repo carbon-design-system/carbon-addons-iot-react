@@ -1,5 +1,6 @@
 import React, { useReducer } from 'react';
 import useDeepCompareEffect from 'use-deep-compare-effect';
+import omit from 'lodash/omit';
 
 import { tileCatalogReducer, determineInitialState, TILE_ACTIONS } from './tileCatalogReducer';
 import TileCatalog, { propTypes } from './TileCatalog';
@@ -23,7 +24,7 @@ const StatefulTileCatalog = ({ onSelection, pagination, search, tiles: tilesProp
         payload: { ...props, tiles: tilesProp, search, pagination },
       });
     },
-    [tilesProp]
+    [tilesProp.map(tile => omit(tile, 'renderContent'))]
   );
 
   const {
@@ -37,18 +38,39 @@ const StatefulTileCatalog = ({ onSelection, pagination, search, tiles: tilesProp
   } = state;
 
   const handlePage = (...args) => {
-    dispatch({ type: TILE_ACTIONS.PAGE_CHANGE, payload: args });
+    dispatch({ type: TILE_ACTIONS.PAGE_CHANGE, payload: args && args[0] });
     if (onPage) {
       onPage(...args);
     }
   };
 
-  const handleSelection = (newSelectedTile, ...args) => {
+  const handleSelection = newSelectedTile => {
     dispatch({ type: TILE_ACTIONS.SELECT, payload: newSelectedTile });
     if (onSelection) {
-      onSelection(newSelectedTile, ...args);
+      onSelection(newSelectedTile);
     }
   };
+
+  /* I couldn't really get the reselect logic to work correctly
+  useDeepCompareEffect(
+    () => {
+      dispatch({
+        type: TILE_ACTIONS.SELECT,
+        payload:
+          selectedTileId ||
+          (filteredTiles && filteredTiles[startingIndex] ? filteredTiles[startingIndex].id : null),
+      });
+    },
+    [filteredTiles.map(tile => omit(tile, 'renderContent')), searchState, startingIndex, page]
+  );
+
+  useEffect(
+    () => {
+      onSelection(selectedTileId);
+    },
+    [selectedTileId] // eslint-disable-line
+  );
+  */
 
   const handleSearch = (event, ...args) => {
     const newSearch = event.target.value || '';

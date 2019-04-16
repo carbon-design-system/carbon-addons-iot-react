@@ -41,7 +41,7 @@ describe('StatefulTileCatalog', () => {
     const tileInput = wrapper.find('input[type="radio"]').at(0);
     tileInput.simulate('change');
     expect(mockOnSelection).toHaveBeenCalledTimes(1);
-    expect(mockOnSelection).toHaveBeenCalledWith('test1', id, expect.any(Object));
+    expect(mockOnSelection).toHaveBeenCalledWith('test1');
   });
   test('handles onPage', () => {
     const wrapper = mount(
@@ -56,6 +56,7 @@ describe('StatefulTileCatalog', () => {
   });
   test('selectedTileId', () => {
     const wrapper = mount(<StatefulTileCatalog {...commonTileProps} selectedTileId="test2" />);
+    wrapper.update();
     const selectedTile = wrapper.find('input[checked=true]');
     expect(selectedTile).toHaveLength(1);
     expect(selectedTile.prop('id')).toEqual('test2');
@@ -84,6 +85,7 @@ describe('StatefulTileCatalog', () => {
     const newTiles = commonTileProps.tiles.slice(1, 5);
     // Back to Page 1
     wrapper.setProps({ tiles: newTiles });
+    wrapper.update();
     expect(
       wrapper
         .find('span')
