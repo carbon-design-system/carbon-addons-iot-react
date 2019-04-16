@@ -2,7 +2,6 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { Icon } from 'carbon-components-react';
-import { rem } from 'polished';
 import styled from 'styled-components';
 
 import Header from './Header';
@@ -11,6 +10,8 @@ React.Fragment = ({ children }) => children;
 
 const StyledHeader = styled(Header)`
    {
+    margin-top: 3rem;
+
     .bx--header__menu-item[role='menuitem'] {
       align-items: center;
       color: #f3f3f3;
@@ -46,7 +47,9 @@ const User = styled.p`
     color: white;
     font-size: 0.75rem;
     text-align: left;
-    margin-right: ${rem(20)};
+    margin-right: 0.5rem;
+    display: flex;
+    flex-direction: column;
   }
 `;
 

@@ -123,8 +123,13 @@ class HeaderMenu extends React.Component {
   handleOnBlur = event => {
     // Rough guess for a blur event that is triggered outside of our menu or
     // menubar context
-    console.log('target: ', event.relatedTarget, event.currentTarget);
-    if (event.currentTarget.contains(event.target)) {
+    console.log(
+      'target: ',
+      event.target,
+      event.currentTarget,
+      event.currentTarget.contains(event.target)
+    );
+    if (!event.currentTarget.contains(event.relatedTarget)) {
       this.setState({ expanded: false, selectedIndex: null });
     }
   };

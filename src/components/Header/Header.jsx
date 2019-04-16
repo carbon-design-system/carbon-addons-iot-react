@@ -17,9 +17,20 @@ import HeaderMenu from './HeaderMenu';
 
 const StyledHeader = styled(CarbonHeader)`
   &&& {
-    background-color: ${COLORS.darkGray};
+    background: ${COLORS.darkGray};
 
-    .bx--header__menu .bx--header__menu-item[role= 'menuitem' ]: hover {
+    .bx--header__menu {
+      min-width: 12.5rem;
+      width: auto;
+    }
+
+    .bx--header__menu .bx--header__menu-item[role='menuitem']:hover,
+    .bx--header__menu .bx--header__menu-item[role='menuitem']:focus {
+      background: ${COLORS.darkGray};
+    }
+
+    .bx--header__menu.bx--header__menu-item[role='menuitem']:hover,
+    a.bx--header__menu-item[role='menuitem']:active {
       background: ${COLORS.darkGrayHover};
     }
 
