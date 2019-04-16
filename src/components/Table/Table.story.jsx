@@ -86,6 +86,24 @@ export const tableColumns = [
   },
 ];
 
+export const tableColumnsFixedWidth = tableColumns.map(i => ({
+  ...i,
+  width:
+    i.id === 'string'
+      ? '300px'
+      : i.id === 'date'
+      ? '180px'
+      : i.id === 'select'
+      ? '120px'
+      : i.id === 'secretField'
+      ? '300px'
+      : i.id === 'status'
+      ? '100px'
+      : i.id === 'number'
+      ? '80px'
+      : undefined,
+}));
+
 const defaultOrdering = tableColumns.map(c => ({
   columnId: c.id,
   isHidden: c.id === 'secretField',
@@ -127,7 +145,7 @@ const getStatus = idx => {
   }
 };
 
-const getNewRow = (idx, suffix = '') => ({
+const getNewRow = (idx, suffix = '', withActions = false) => ({
   id: `row-${idx}${suffix ? `_${suffix}` : ''}`,
   values: {
     string: getSentence(idx) + suffix,
@@ -137,6 +155,21 @@ const getNewRow = (idx, suffix = '') => ({
     number: idx * idx,
     status: getStatus(idx),
   },
+  rowActions: withActions
+    ? [
+        {
+          id: 'drilldown',
+          icon: 'arrow--right',
+          labelText: 'Drill in',
+        },
+        {
+          id: 'Add',
+          icon: 'icon--add',
+          labelText: 'Add',
+          isOverflow: true,
+        },
+      ]
+    : undefined,
 });
 
 const tableData = Array(100)
@@ -281,6 +314,73 @@ storiesOf('Table', module)
         lightweight={boolean('lightweight', false)}
       />
     ),
+    {
+      info: {
+        text:
+          'This is an example of the <StatefulTable> component that uses local state to handle all the table actions. This is produced by wrapping the <Table> in a container component and managing the state associated with features such the toolbar, filters, row select, etc. For more robust documentation on the prop model and source, see the other "with function" stories.',
+        propTables: [Table],
+        propTablesExclude: [StatefulTable],
+      },
+    }
+  )
+  .add(
+    'Stateful Example with row nesting',
+    () => {
+      const tableData = initialState.data.map((i, idx) => ({
+        ...i,
+        children:
+          idx % 4 !== 0
+            ? [getNewRow(idx, 'A', true), getNewRow(idx, 'B', true)]
+            : idx === 4
+            ? [
+                getNewRow(idx, 'A', true),
+                {
+                  ...getNewRow(idx, 'B'),
+                  children: [
+                    getNewRow(idx, 'B-1', true),
+                    {
+                      ...getNewRow(idx, 'B-2'),
+                      children: [getNewRow(idx, 'B-2-A', true), getNewRow(idx, 'B-2-B', true)],
+                    },
+                    getNewRow(idx, 'B-3', true),
+                  ],
+                },
+                getNewRow(idx, 'C', true),
+                {
+                  ...getNewRow(idx, 'D', true),
+                  children: [
+                    getNewRow(idx, 'D-1', true),
+                    getNewRow(idx, 'D-2', true),
+                    getNewRow(idx, 'D-3', true),
+                  ],
+                },
+              ]
+            : undefined,
+      }));
+      return (
+        <div>
+          <StatefulTable
+            {...initialState}
+            columns={tableColumnsFixedWidth}
+            data={tableData}
+            options={{
+              ...initialState.options,
+              hasRowNesting: true,
+              hasFilter: true,
+            }}
+            view={{
+              ...initialState.view,
+              filters: [],
+              toolbar: {
+                activeBar: null,
+              },
+            }}
+            actions={actions}
+            lightweight={boolean('lightweight', false)}
+          />
+        </div>
+      );
+    },
     {
       info: {
         text:
@@ -696,27 +796,6 @@ storiesOf('Table', module)
           expandedIds: ['row-3', 'row-7', 'row-7_B'],
         },
       }}
-    />
-  ))
-  .add('with nested table row actions', () => (
-    <Table
-      columns={tableColumns}
-      data={tableData.map((i, idx) => ({
-        ...i,
-        children:
-          idx === 3
-            ? [getNewRow(idx, 'A'), getNewRow(idx, 'B')]
-            : idx === 7
-            ? [getNewRow(idx, 'A'), getNewRow(idx, 'B'), getNewRow(idx, 'C'), getNewRow(idx, 'D')]
-            : undefined,
-      }))}
-      options={{
-        hasPagination: true,
-        hasRowSelection: true,
-        hasRowExpansion: true,
-        hasRowNesting: true,
-      }}
-      actions={actions}
     />
   ))
   .add('with no data and custom empty state', () => (

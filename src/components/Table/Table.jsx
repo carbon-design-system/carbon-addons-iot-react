@@ -337,6 +337,7 @@ const Table = props => {
                 options,
                 'hasRowSelection',
                 'hasRowExpansion',
+                'hasRowActions',
                 'hasRowNesting',
                 'shouldExpandOnRowClick'
               )}

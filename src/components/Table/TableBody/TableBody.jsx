@@ -30,6 +30,7 @@ const propTypes = {
   hasRowSelection: PropTypes.bool,
   hasRowExpansion: PropTypes.bool,
   hasRowNesting: PropTypes.bool,
+  hasRowActions: PropTypes.bool,
   shouldExpandOnRowClick: PropTypes.bool,
 
   actions: PropTypes.shape({
@@ -62,6 +63,7 @@ const defaultProps = {
   hasRowSelection: false,
   hasRowExpansion: false,
   hasRowNesting: false,
+  hasRowActions: false,
   shouldExpandOnRowClick: false,
 };
 
@@ -78,6 +80,7 @@ const TableBody = ({
   clickToCollapseText,
   totalColumns,
   actions,
+  hasRowActions,
   hasRowSelection,
   hasRowExpansion,
   hasRowNesting,
@@ -117,8 +120,15 @@ const TableBody = ({
         id={row.id}
         totalColumns={totalColumns}
         tableId={id}
-        options={{ hasRowSelection, hasRowExpansion, hasRowNesting, shouldExpandOnRowClick }}
+        options={{
+          hasRowSelection,
+          hasRowExpansion,
+          hasRowNesting,
+          hasRowActions,
+          shouldExpandOnRowClick,
+        }}
         nestingLevel={nestingLevel}
+        nestingChildCount={row.children ? row.children.length : 0}
         tableActions={pick(
           actions,
           'onRowSelected',

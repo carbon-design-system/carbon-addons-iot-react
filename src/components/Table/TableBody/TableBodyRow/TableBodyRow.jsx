@@ -63,6 +63,8 @@ const propTypes = {
   rowDetails: PropTypes.node,
   /** offset level if row is nested */
   nestingLevel: PropTypes.number,
+  /** number of child rows underneath this row */
+  nestingChildCount: PropTypes.number,
 
   /** tableActions */
   tableActions: PropTypes.shape({
@@ -85,6 +87,7 @@ const defaultProps = {
   rowActions: null,
   rowDetails: null,
   nestingLevel: 0,
+  nestingChildCount: 0,
   options: {},
 };
 
@@ -110,6 +113,38 @@ const StyledTableRow = styled(TableRow)`
 
 const StyledTableExpandRow = styled(TableExpandRow)`
   &&& {
+    ${props =>
+      props['data-child-count'] === 0 && props['data-row-nesting']
+        ? `
+    td > button.bx--table-expand-v2__button {
+      display: none;
+    }
+    `
+        : `
+    td > button.bx--table-expand-v2__button {
+      position: relative;
+      left: ${props['data-nesting-offset']}px;
+    }
+    `}
+    ${props =>
+      props['data-nesting-offset'] > 0
+        ? `
+      td.bx--table-expand-v2 {
+        position: relative;
+      }
+      td:first-of-type:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: ${props['data-nesting-offset']}px;
+        background-color: rgb(229,237,237);
+        border-right: solid 1px rgb(223,227,230);
+      }
+    `
+        : `
+    `}
     cursor: pointer;
     :hover {
       td {
@@ -125,26 +160,50 @@ const StyledTableExpandRowExpanded = styled(TableExpandRow)`
   &&& {
     cursor: pointer;
     ${props =>
-      !props.hasRowNesting &&
-      `
-      td {
-        background-color: ${COLORS.blue};
-        border-color: ${COLORS.blue};
-        color: white;
-        button {
-          svg {
-            fill: white;
-          }
-        }
-        border-top: 1px solid ${COLORS.blue};
-        :first-of-type {
-          border-left: 1px solid ${COLORS.blue};
-        }
-        :last-of-type {
-          border-right: 1px solid ${COLORS.blue};
+      props['data-child-count'] === 0 && props['data-row-nesting']
+        ? `
+    td {
+      background-color: ${COLORS.blue};
+      border-color: ${COLORS.blue};
+      color: white;
+      button {
+        svg {
+          fill: white;
         }
       }
-    `}
+      border-top: 1px solid ${COLORS.blue};
+      :first-of-type {
+        border-left: 1px solid ${COLORS.blue};
+      }
+      :last-of-type {
+        border-right: 1px solid ${COLORS.blue};
+      }
+    }
+    `
+        : props['data-row-nesting']
+        ? `
+    :hover {
+      td {
+        border-bottom: 1px solid ${COLORS.blue};
+      }
+      td:first-of-type {
+        border-left: 1px solid ${COLORS.blue};
+      }
+    }
+    td.bx--table-expand-v2 {
+      position: relative;
+    }
+    td > button.bx--table-expand-v2__button {
+      position: relative;
+      left: ${props['data-nesting-offset']}px;
+    }
+    td:first-of-type:before {
+      width: ${props['data-nesting-offset']}px;
+      background-color: rgb(229,237,237);
+      border-right: solid 1px rgb(223,227,230);
+    }
+    `
+        : ``}
   }
 `;
 
@@ -192,7 +251,13 @@ const TableBodyRow = ({
   totalColumns,
   ordering,
   columns,
-  options: { hasRowSelection, hasRowExpansion, hasRowNesting, shouldExpandOnRowClick },
+  options: {
+    hasRowSelection,
+    hasRowExpansion,
+    hasRowActions,
+    hasRowNesting,
+    shouldExpandOnRowClick,
+  },
   tableActions: { onRowSelected, onRowExpanded, onRowClicked, onApplyRowAction },
   isExpanded,
   isSelected,
@@ -202,6 +267,7 @@ const TableBodyRow = ({
   clickToCollapseText,
   children,
   nestingLevel,
+  nestingChildCount,
   rowActions,
   rowDetails,
 }) => {
@@ -259,13 +325,17 @@ const TableBodyRow = ({
           </StyledTableCellRow>
         ) : null;
       })}
-      <RowActionsCell
-        id={id}
-        actions={rowActions}
-        isRowExpanded={isExpanded}
-        overflowMenuText={overflowMenuText}
-        onApplyRowAction={onApplyRowAction}
-      />
+      {hasRowActions && rowActions && rowActions.length > 0 ? (
+        <RowActionsCell
+          id={id}
+          actions={rowActions}
+          isRowExpanded={isExpanded && !hasRowNesting}
+          overflowMenuText={overflowMenuText}
+          onApplyRowAction={onApplyRowAction}
+        />
+      ) : (
+        <TableCell key={`${id}-row-actions-cell`} />
+      )}
     </React.Fragment>
   );
   return hasRowExpansion || hasRowNesting ? (
@@ -276,7 +346,8 @@ const TableBodyRow = ({
           ariaLabel={clickToCollapseText}
           expandIconDescription={clickToCollapseText}
           isExpanded
-          hasRowNesting
+          data-row-nesting={hasRowNesting}
+          data-nesting-offset={nestingOffset}
           onExpand={evt => stopPropagationAndCallback(evt, onRowExpanded, id, false)}
           onClick={() => {
             if (shouldExpandOnRowClick) {
@@ -296,6 +367,9 @@ const TableBodyRow = ({
       <StyledTableExpandRow
         id={`${tableId}-Row-${id}`}
         key={id}
+        data-row-nesting={hasRowNesting}
+        data-child-count={nestingChildCount}
+        data-nesting-offset={nestingOffset}
         ariaLabel={clickToExpandText}
         expandIconDescription={clickToExpandText}
         isExpanded={false}
