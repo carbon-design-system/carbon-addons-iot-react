@@ -6,13 +6,15 @@ import styled from 'styled-components';
 import { MEDIA_QUERIES } from '../../styles/styles';
 
 const StyledTiles = styled.div`
-  display: flex;
-  flex-flow: row wrap;
-  > * {
-    flex: 1 1 33.33%;
-    min-width: 300px;
+  &&& {
+    display: flex;
+    flex-flow: row wrap;
+    > * {
+      flex: 1 1 33.33%;
+      min-width: 300px;
+    }
+    overflow-y: hidden;
   }
-  overflow-y: hidden;
 `;
 
 const StyledGreedyTile = styled(Tile)`
