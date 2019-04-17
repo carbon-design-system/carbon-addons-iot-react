@@ -30,11 +30,7 @@ const StyledIcon = styled(Icon)`
   }
 `;
 
-// const RouterComponent = ({ children, ...rest }) => (
-//   <div className="specialLink" {...rest}>
-//     {children}
-//   </div>
-// );
+const RouterComponent = ({ children, ...rest }) => <div {...rest}>{children}</div>;
 
 /* eslint-disable*/
 const links = [
@@ -51,7 +47,7 @@ const links = [
       onClick: action('menu click'),
       tabIndex: 0,
       label: 'Boards',
-      element: 'div',
+      element: RouterComponent,
     },
     linkContent: 'Boards',
   },
