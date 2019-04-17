@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react';
+import React, { useReducer, useEffect } from 'react';
 import useDeepCompareEffect from 'use-deep-compare-effect';
 import omit from 'lodash/omit';
 
@@ -46,9 +46,6 @@ const StatefulTileCatalog = ({ onSelection, pagination, search, tiles: tilesProp
 
   const handleSelection = newSelectedTile => {
     dispatch({ type: TILE_ACTIONS.SELECT, payload: newSelectedTile });
-    if (onSelection) {
-      onSelection(newSelectedTile);
-    }
   };
 
   /* I couldn't really get the reselect logic to work correctly
@@ -63,14 +60,15 @@ const StatefulTileCatalog = ({ onSelection, pagination, search, tiles: tilesProp
     },
     [filteredTiles.map(tile => omit(tile, 'renderContent')), searchState, startingIndex, page]
   );
-
+*/
   useEffect(
     () => {
-      onSelection(selectedTileId);
+      if (onSelection) {
+        onSelection(selectedTileId);
+      }
     },
     [selectedTileId] // eslint-disable-line
   );
-  */
 
   const handleSearch = (event, ...args) => {
     const newSearch = event.target.value || '';
