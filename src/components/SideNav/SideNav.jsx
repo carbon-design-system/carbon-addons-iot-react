@@ -138,15 +138,15 @@ const propTypes = {
       /** bot show/hide link */
       isEnabled: PropTypes.bool,
       /** extra props to pass to link component */
-      metaData: {
-        /** What to render for link */
-        element: PropTypes.any,
-        label: PropTypes.string,
-        /** trigger something instead of follow link */
-        onClick: PropTypes.func,
-        /** url to link to */
-        href: PropTypes.string,
-      },
+      /** Example:
+          // What to render for link
+          element: PropTypes.any,
+          // trigger something instead of follow link
+          onClick: PropTypes.func,
+          // url to link to
+          href: PropTypes.string,
+      */
+      metaData: PropTypes.object,
       /** the icon component to render */
       icon: PropTypes.any.isRequired,
       /** string for the title of overall submenu */
@@ -155,15 +155,15 @@ const propTypes = {
       childContent: PropTypes.arrayOf(
         PropTypes.shape({
           /** props to pass to link component */
+          /** Example:
+            // What to render for link
+            element: PropTypes.any,
+            // trigger something instead of follow link
+            onClick: PropTypes.func,
+            // url to link to
+            href: PropTypes.string,
+          */
           metaData: PropTypes.object,
-          /**
-                // What to render for link
-                element: PropTypes.any,
-                // trigger something instead of follow link
-                onClick: PropTypes.func,
-                // url to link to
-                href: PropTypes.string,
-            */
           /** content to render inside sub menu link */
           content: PropTypes.any.isRequired,
         })
@@ -183,7 +183,7 @@ const SideNav = ({ links, defaultExpanded }) => {
   const nav = links.map(link => {
     const enabled = link.isEnabled ? link.isEnabled : false;
     if (!enabled) {
-      return;
+      return null;
     }
     if (link.hasOwnProperty('childContent')) {
       const children = link.childContent.map(childlink => (
