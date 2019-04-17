@@ -30,10 +30,15 @@ const StyledIcon = styled(Icon)`
   }
 `;
 
+// const RouterComponent = ({ children, ...rest }) => (
+//   <div className="specialLink" {...rest}>
+//     {children}
+//   </div>
+// );
+
 /* eslint-disable*/
 const links = [
   {
-    label: 'Boards',
     icon: (
       <AppSwitcher
         fill="white"
@@ -41,13 +46,18 @@ const links = [
         className="bx--header__menu-item bx--header__menu-title"
       />
     ),
-    onClick: action('menu click'),
-    href: 'javascript:void(0)',
+    isEnabled: true,
+    metaData: {
+      onClick: action('menu click'),
+      tabIndex: 0,
+      label: 'Boards',
+      element: 'div',
+    },
     linkContent: 'Boards',
   },
   {
     current: true,
-    label: 'Devices',
+    isEnabled: true,
     icon: (
       <Chip
         fill="white"
@@ -55,12 +65,16 @@ const links = [
         className="bx--header__menu-item bx--header__menu-title"
       />
     ),
-    onClick: null,
-    href: 'javascript:void(0)',
+    metaData: {
+      label: 'Devices',
+      href: 'https://google.com',
+      element: 'a',
+      target: '_blank',
+    },
     linkContent: 'Devices',
   },
   {
-    label: 'Members',
+    isEnabled: true,
     icon: (
       <Group
         fill="white"
@@ -68,13 +82,18 @@ const links = [
         className="bx--header__menu-item bx--header__menu-title"
       />
     ),
-    onClick: null,
-    href: 'javascript:void(0)',
+    metaData: {
+      label: 'Members',
+      element: 'button',
+    },
     linkContent: 'Members',
     childContent: [
       {
-        onClick: action('inner menu click'),
-        href: 'javascript:void(0)',
+        metaData: {
+          label: 'Devices',
+          onClick: action('inner menu click'),
+          element: 'button',
+        },
         content: 'Yet another link',
       },
     ],
