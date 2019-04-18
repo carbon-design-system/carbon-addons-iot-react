@@ -7,7 +7,6 @@ exports[`SideNav testcases should render one level of navigation links 1`] = `
   links={
     Array [
       Object {
-        "href": "javascript:void(0)",
         "icon": <AppSwitcher24
           className="bx--header__menu-item bx--header__menu-title"
           description="Icon"
@@ -19,9 +18,14 @@ exports[`SideNav testcases should render one level of navigation links 1`] = `
           width={24}
           xmlns="http://www.w3.org/2000/svg"
         />,
-        "label": "Boards",
+        "isEnabled": true,
         "linkContent": "Boards",
-        "onClick": [MockFunction],
+        "metaData": Object {
+          "element": "a",
+          "label": "Boards",
+          "onClick": [MockFunction],
+          "tabIndex": 0,
+        },
       },
     ]
   }
@@ -37,9 +41,6 @@ exports[`SideNav testcases should render one level of navigation links 1`] = `
         Object {
           "$$typeof": Symbol(react.forward_ref),
           "__docgenInfo": Object {
-            "composes": Array [
-              "./AriaPropTypes",
-            ],
             "description": "",
             "displayName": "SideNav",
             "methods": Array [
@@ -66,6 +67,20 @@ exports[`SideNav testcases should render one level of navigation links 1`] = `
               },
             ],
             "props": Object {
+              "aria-label": Object {
+                "description": "Required props for accessibility label on the underlying menu",
+                "required": false,
+                "type": Object {
+                  "name": "string",
+                },
+              },
+              "aria-labelledby": Object {
+                "description": "",
+                "required": false,
+                "type": Object {
+                  "name": "string",
+                },
+              },
               "className": Object {
                 "defaultValue": Object {
                   "computed": false,
@@ -110,11 +125,13 @@ the label you want displayed or read by screen readers.",
           "componentStyle": ComponentStyle {
             "componentId": "SideNav__StyledSideNav-yn3bk8-0",
             "isStatic": true,
-            "lastClassName": "emgnzn",
+            "lastClassName": "jQkcEV",
             "rules": Array [
               "&&&{background-color:",
               "#152935",
-              ";border-top:1px solid #3c4646;height:calc(100% - 3rem);}",
+              ";border-top:1px solid #3c4646;height:calc(100% - 3rem);.bx--side-nav__menu[role='menu'] .bx--side-nav__link[role='menuitem']{height:2rem;min-height:2rem;padding-left:3.5rem;}.bx--side-nav__link{position:relative;display:flex;align-items:center;text-decoration:none;min-height:3rem;padding-right:1rem;font-weight:400;}button{appearance:none;width:100%;background:",
+              "#152935",
+              ";}button.bx--side-nav__link{border:none;}.bx--side-nav__link > .bx--side-nav__link-text{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#f3f3f3;font-size:0.875rem;letter-spacing:0.1px;line-height:1.25rem;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}.bx--side-nav__link:focus{outline:4px solid #0062ff;outline-offset:-4px;}}",
             ],
           },
           "displayName": "SideNav__StyledSideNav",
@@ -132,13 +149,13 @@ the label you want displayed or read by screen readers.",
     >
       <SideNav
         aria-label="Side navigation"
-        className="SideNav__StyledSideNav-yn3bk8-0 emgnzn"
+        className="SideNav__StyledSideNav-yn3bk8-0 jQkcEV"
         defaultExpanded={false}
         translateById={[Function]}
       >
         <nav
           aria-label="Side navigation"
-          className="bx--side-nav__navigation bx--side-nav SideNav__StyledSideNav-yn3bk8-0 emgnzn"
+          className="bx--side-nav__navigation bx--side-nav SideNav__StyledSideNav-yn3bk8-0 jQkcEV"
           onBlur={[Function]}
           onFocus={[Function]}
         >
@@ -148,7 +165,8 @@ the label you want displayed or read by screen readers.",
             >
               <SideNav__StyledSideNavLink
                 aria-label="Boards"
-                href="javascript:void(0)"
+                className="disabled"
+                element="a"
                 icon={
                   <AppSwitcher24
                     className="bx--header__menu-item bx--header__menu-title"
@@ -163,10 +181,14 @@ the label you want displayed or read by screen readers.",
                   />
                 }
                 key="menu-link-Boards-global"
+                label="Boards"
                 onClick={[MockFunction]}
+                tabIndex={0}
               >
                 <StyledComponent
                   aria-label="Boards"
+                  className="disabled"
+                  element="a"
                   forwardedComponent={
                     Object {
                       "$$typeof": Symbol(react.forward_ref),
@@ -174,11 +196,11 @@ the label you want displayed or read by screen readers.",
                       "componentStyle": ComponentStyle {
                         "componentId": "SideNav__StyledSideNavLink-yn3bk8-1",
                         "isStatic": true,
-                        "lastClassName": "knorNS",
+                        "lastClassName": "hllekx",
                         "rules": Array [
-                          "&&&{:hover{background-color:",
+                          "&&&{position:relative;display:flex;align-items:center;text-decoration:none;min-height:3rem;padding-right:1rem;font-weight:400;:focus{outline:4px solid #0062ff;outline-offset:-4px;}:hover{background-color:",
                           "#2d3f48",
-                          ";}}",
+                          ";}> .bx--side-nav__link-text{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#f3f3f3;font-size:0.875rem;letter-spacing:0.1px;line-height:1.25rem;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}> .bx--side-nav__icon{margin-right:0.5rem;}}",
                         ],
                       },
                       "displayName": "SideNav__StyledSideNavLink",
@@ -193,7 +215,6 @@ the label you want displayed or read by screen readers.",
                     }
                   }
                   forwardedRef={null}
-                  href="javascript:void(0)"
                   icon={
                     <AppSwitcher24
                       className="bx--header__menu-item bx--header__menu-title"
@@ -207,13 +228,14 @@ the label you want displayed or read by screen readers.",
                       xmlns="http://www.w3.org/2000/svg"
                     />
                   }
+                  label="Boards"
                   onClick={[MockFunction]}
+                  tabIndex={0}
                 >
                   <SideNavLink
                     aria-label="Boards"
-                    className="SideNav__StyledSideNavLink-yn3bk8-1 knorNS"
+                    className="disabled SideNav__StyledSideNavLink-yn3bk8-1 hllekx"
                     element="a"
-                    href="javascript:void(0)"
                     icon={
                       <AppSwitcher24
                         className="bx--header__menu-item bx--header__menu-title"
@@ -227,7 +249,9 @@ the label you want displayed or read by screen readers.",
                         xmlns="http://www.w3.org/2000/svg"
                       />
                     }
+                    label="Boards"
                     onClick={[MockFunction]}
+                    tabIndex={0}
                   >
                     <SideNavItem>
                       <li
@@ -235,16 +259,18 @@ the label you want displayed or read by screen readers.",
                       >
                         <Link
                           aria-label="Boards"
-                          className="bx--side-nav__link SideNav__StyledSideNavLink-yn3bk8-1 knorNS"
+                          className="bx--side-nav__link disabled SideNav__StyledSideNavLink-yn3bk8-1 hllekx"
                           element="a"
-                          href="javascript:void(0)"
+                          label="Boards"
                           onClick={[MockFunction]}
+                          tabIndex={0}
                         >
                           <a
                             aria-label="Boards"
-                            className="bx--side-nav__link SideNav__StyledSideNavLink-yn3bk8-1 knorNS"
-                            href="javascript:void(0)"
+                            className="bx--side-nav__link disabled SideNav__StyledSideNavLink-yn3bk8-1 hllekx"
+                            label="Boards"
                             onClick={[MockFunction]}
+                            tabIndex={0}
                           >
                             <SideNavIcon
                               small={true}
@@ -364,7 +390,6 @@ exports[`SideNav testcases should render two levels of navigation links 1`] = `
   links={
     Array [
       Object {
-        "href": "javascript:void(0)",
         "icon": <AppSwitcher24
           className="bx--header__menu-item bx--header__menu-title"
           description="Icon"
@@ -376,13 +401,17 @@ exports[`SideNav testcases should render two levels of navigation links 1`] = `
           width={24}
           xmlns="http://www.w3.org/2000/svg"
         />,
-        "label": "Boards",
+        "isEnabled": true,
         "linkContent": "Boards",
-        "onClick": [MockFunction],
+        "metaData": Object {
+          "element": "a",
+          "label": "Boards",
+          "onClick": [MockFunction],
+          "tabIndex": 0,
+        },
       },
       Object {
         "current": true,
-        "href": "javascript:void(0)",
         "icon": <Chip24
           className="bx--header__menu-item bx--header__menu-title"
           description="Icon"
@@ -394,19 +423,26 @@ exports[`SideNav testcases should render two levels of navigation links 1`] = `
           width={24}
           xmlns="http://www.w3.org/2000/svg"
         />,
-        "label": "Devices",
+        "isEnabled": true,
         "linkContent": "Devices",
-        "onClick": null,
+        "metaData": Object {
+          "element": "a",
+          "href": "https://google.com",
+          "label": "Devices",
+          "target": "_blank",
+        },
       },
       Object {
         "childContent": Array [
           Object {
             "content": "Yet another link",
-            "href": "javascript:void(0)",
-            "onClick": [MockFunction],
+            "metaData": Object {
+              "element": "button",
+              "label": "Devices",
+              "onClick": [MockFunction],
+            },
           },
         ],
-        "href": "javascript:void(0)",
         "icon": <Group24
           className="bx--header__menu-item bx--header__menu-title"
           description="Icon"
@@ -418,9 +454,12 @@ exports[`SideNav testcases should render two levels of navigation links 1`] = `
           width={24}
           xmlns="http://www.w3.org/2000/svg"
         />,
-        "label": "Members",
+        "isEnabled": true,
         "linkContent": "Members",
-        "onClick": null,
+        "metaData": Object {
+          "element": "button",
+          "label": "Members",
+        },
       },
     ]
   }
@@ -436,9 +475,6 @@ exports[`SideNav testcases should render two levels of navigation links 1`] = `
         Object {
           "$$typeof": Symbol(react.forward_ref),
           "__docgenInfo": Object {
-            "composes": Array [
-              "./AriaPropTypes",
-            ],
             "description": "",
             "displayName": "SideNav",
             "methods": Array [
@@ -465,6 +501,20 @@ exports[`SideNav testcases should render two levels of navigation links 1`] = `
               },
             ],
             "props": Object {
+              "aria-label": Object {
+                "description": "Required props for accessibility label on the underlying menu",
+                "required": false,
+                "type": Object {
+                  "name": "string",
+                },
+              },
+              "aria-labelledby": Object {
+                "description": "",
+                "required": false,
+                "type": Object {
+                  "name": "string",
+                },
+              },
               "className": Object {
                 "defaultValue": Object {
                   "computed": false,
@@ -509,11 +559,13 @@ the label you want displayed or read by screen readers.",
           "componentStyle": ComponentStyle {
             "componentId": "SideNav__StyledSideNav-yn3bk8-0",
             "isStatic": true,
-            "lastClassName": "emgnzn",
+            "lastClassName": "jQkcEV",
             "rules": Array [
               "&&&{background-color:",
               "#152935",
-              ";border-top:1px solid #3c4646;height:calc(100% - 3rem);}",
+              ";border-top:1px solid #3c4646;height:calc(100% - 3rem);.bx--side-nav__menu[role='menu'] .bx--side-nav__link[role='menuitem']{height:2rem;min-height:2rem;padding-left:3.5rem;}.bx--side-nav__link{position:relative;display:flex;align-items:center;text-decoration:none;min-height:3rem;padding-right:1rem;font-weight:400;}button{appearance:none;width:100%;background:",
+              "#152935",
+              ";}button.bx--side-nav__link{border:none;}.bx--side-nav__link > .bx--side-nav__link-text{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#f3f3f3;font-size:0.875rem;letter-spacing:0.1px;line-height:1.25rem;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}.bx--side-nav__link:focus{outline:4px solid #0062ff;outline-offset:-4px;}}",
             ],
           },
           "displayName": "SideNav__StyledSideNav",
@@ -531,13 +583,13 @@ the label you want displayed or read by screen readers.",
     >
       <SideNav
         aria-label="Side navigation"
-        className="SideNav__StyledSideNav-yn3bk8-0 emgnzn"
+        className="SideNav__StyledSideNav-yn3bk8-0 jQkcEV"
         defaultExpanded={false}
         translateById={[Function]}
       >
         <nav
           aria-label="Side navigation"
-          className="bx--side-nav__navigation bx--side-nav SideNav__StyledSideNav-yn3bk8-0 emgnzn"
+          className="bx--side-nav__navigation bx--side-nav SideNav__StyledSideNav-yn3bk8-0 jQkcEV"
           onBlur={[Function]}
           onFocus={[Function]}
         >
@@ -547,7 +599,8 @@ the label you want displayed or read by screen readers.",
             >
               <SideNav__StyledSideNavLink
                 aria-label="Boards"
-                href="javascript:void(0)"
+                className="disabled"
+                element="a"
                 icon={
                   <AppSwitcher24
                     className="bx--header__menu-item bx--header__menu-title"
@@ -562,10 +615,14 @@ the label you want displayed or read by screen readers.",
                   />
                 }
                 key="menu-link-Boards-global"
+                label="Boards"
                 onClick={[MockFunction]}
+                tabIndex={0}
               >
                 <StyledComponent
                   aria-label="Boards"
+                  className="disabled"
+                  element="a"
                   forwardedComponent={
                     Object {
                       "$$typeof": Symbol(react.forward_ref),
@@ -573,11 +630,11 @@ the label you want displayed or read by screen readers.",
                       "componentStyle": ComponentStyle {
                         "componentId": "SideNav__StyledSideNavLink-yn3bk8-1",
                         "isStatic": true,
-                        "lastClassName": "knorNS",
+                        "lastClassName": "hllekx",
                         "rules": Array [
-                          "&&&{:hover{background-color:",
+                          "&&&{position:relative;display:flex;align-items:center;text-decoration:none;min-height:3rem;padding-right:1rem;font-weight:400;:focus{outline:4px solid #0062ff;outline-offset:-4px;}:hover{background-color:",
                           "#2d3f48",
-                          ";}}",
+                          ";}> .bx--side-nav__link-text{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#f3f3f3;font-size:0.875rem;letter-spacing:0.1px;line-height:1.25rem;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}> .bx--side-nav__icon{margin-right:0.5rem;}}",
                         ],
                       },
                       "displayName": "SideNav__StyledSideNavLink",
@@ -592,7 +649,6 @@ the label you want displayed or read by screen readers.",
                     }
                   }
                   forwardedRef={null}
-                  href="javascript:void(0)"
                   icon={
                     <AppSwitcher24
                       className="bx--header__menu-item bx--header__menu-title"
@@ -606,13 +662,14 @@ the label you want displayed or read by screen readers.",
                       xmlns="http://www.w3.org/2000/svg"
                     />
                   }
+                  label="Boards"
                   onClick={[MockFunction]}
+                  tabIndex={0}
                 >
                   <SideNavLink
                     aria-label="Boards"
-                    className="SideNav__StyledSideNavLink-yn3bk8-1 knorNS"
+                    className="disabled SideNav__StyledSideNavLink-yn3bk8-1 hllekx"
                     element="a"
-                    href="javascript:void(0)"
                     icon={
                       <AppSwitcher24
                         className="bx--header__menu-item bx--header__menu-title"
@@ -626,7 +683,9 @@ the label you want displayed or read by screen readers.",
                         xmlns="http://www.w3.org/2000/svg"
                       />
                     }
+                    label="Boards"
                     onClick={[MockFunction]}
+                    tabIndex={0}
                   >
                     <SideNavItem>
                       <li
@@ -634,16 +693,18 @@ the label you want displayed or read by screen readers.",
                       >
                         <Link
                           aria-label="Boards"
-                          className="bx--side-nav__link SideNav__StyledSideNavLink-yn3bk8-1 knorNS"
+                          className="bx--side-nav__link disabled SideNav__StyledSideNavLink-yn3bk8-1 hllekx"
                           element="a"
-                          href="javascript:void(0)"
+                          label="Boards"
                           onClick={[MockFunction]}
+                          tabIndex={0}
                         >
                           <a
                             aria-label="Boards"
-                            className="bx--side-nav__link SideNav__StyledSideNavLink-yn3bk8-1 knorNS"
-                            href="javascript:void(0)"
+                            className="bx--side-nav__link disabled SideNav__StyledSideNavLink-yn3bk8-1 hllekx"
+                            label="Boards"
                             onClick={[MockFunction]}
+                            tabIndex={0}
                           >
                             <SideNavIcon
                               small={true}
@@ -697,7 +758,9 @@ the label you want displayed or read by screen readers.",
               </SideNav__StyledSideNavLink>
               <SideNav__StyledSideNavLink
                 aria-label="Devices"
-                href="javascript:void(0)"
+                className="disabled"
+                element="a"
+                href="https://google.com"
                 icon={
                   <Chip24
                     className="bx--header__menu-item bx--header__menu-title"
@@ -713,10 +776,13 @@ the label you want displayed or read by screen readers.",
                 }
                 isActive={true}
                 key="menu-link-Devices-global"
-                onClick={null}
+                label="Devices"
+                target="_blank"
               >
                 <StyledComponent
                   aria-label="Devices"
+                  className="disabled"
+                  element="a"
                   forwardedComponent={
                     Object {
                       "$$typeof": Symbol(react.forward_ref),
@@ -724,11 +790,11 @@ the label you want displayed or read by screen readers.",
                       "componentStyle": ComponentStyle {
                         "componentId": "SideNav__StyledSideNavLink-yn3bk8-1",
                         "isStatic": true,
-                        "lastClassName": "knorNS",
+                        "lastClassName": "hllekx",
                         "rules": Array [
-                          "&&&{:hover{background-color:",
+                          "&&&{position:relative;display:flex;align-items:center;text-decoration:none;min-height:3rem;padding-right:1rem;font-weight:400;:focus{outline:4px solid #0062ff;outline-offset:-4px;}:hover{background-color:",
                           "#2d3f48",
-                          ";}}",
+                          ";}> .bx--side-nav__link-text{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#f3f3f3;font-size:0.875rem;letter-spacing:0.1px;line-height:1.25rem;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}> .bx--side-nav__icon{margin-right:0.5rem;}}",
                         ],
                       },
                       "displayName": "SideNav__StyledSideNavLink",
@@ -743,7 +809,7 @@ the label you want displayed or read by screen readers.",
                     }
                   }
                   forwardedRef={null}
-                  href="javascript:void(0)"
+                  href="https://google.com"
                   icon={
                     <Chip24
                       className="bx--header__menu-item bx--header__menu-title"
@@ -758,13 +824,14 @@ the label you want displayed or read by screen readers.",
                     />
                   }
                   isActive={true}
-                  onClick={null}
+                  label="Devices"
+                  target="_blank"
                 >
                   <SideNavLink
                     aria-label="Devices"
-                    className="SideNav__StyledSideNavLink-yn3bk8-1 knorNS"
+                    className="disabled SideNav__StyledSideNavLink-yn3bk8-1 hllekx"
                     element="a"
-                    href="javascript:void(0)"
+                    href="https://google.com"
                     icon={
                       <Chip24
                         className="bx--header__menu-item bx--header__menu-title"
@@ -779,7 +846,8 @@ the label you want displayed or read by screen readers.",
                       />
                     }
                     isActive={true}
-                    onClick={null}
+                    label="Devices"
+                    target="_blank"
                   >
                     <SideNavItem>
                       <li
@@ -787,16 +855,18 @@ the label you want displayed or read by screen readers.",
                       >
                         <Link
                           aria-label="Devices"
-                          className="bx--side-nav__link bx--side-nav__link--current SideNav__StyledSideNavLink-yn3bk8-1 knorNS"
+                          className="bx--side-nav__link bx--side-nav__link--current disabled SideNav__StyledSideNavLink-yn3bk8-1 hllekx"
                           element="a"
-                          href="javascript:void(0)"
-                          onClick={null}
+                          href="https://google.com"
+                          label="Devices"
+                          target="_blank"
                         >
                           <a
                             aria-label="Devices"
-                            className="bx--side-nav__link bx--side-nav__link--current SideNav__StyledSideNavLink-yn3bk8-1 knorNS"
-                            href="javascript:void(0)"
-                            onClick={null}
+                            className="bx--side-nav__link bx--side-nav__link--current disabled SideNav__StyledSideNavLink-yn3bk8-1 hllekx"
+                            href="https://google.com"
+                            label="Devices"
+                            target="_blank"
                           >
                             <SideNavIcon
                               small={true}
@@ -853,6 +923,7 @@ the label you want displayed or read by screen readers.",
               </SideNav__StyledSideNavLink>
               <SideNav__StyledSideNavMenu
                 aria-label="dropdown"
+                className="disabled"
                 icon={
                   <Group24
                     className="bx--header__menu-item bx--header__menu-title"
@@ -871,6 +942,7 @@ the label you want displayed or read by screen readers.",
               >
                 <StyledComponent
                   aria-label="dropdown"
+                  className="disabled"
                   forwardedComponent={
                     Object {
                       "$$typeof": Symbol(react.forward_ref),
@@ -878,15 +950,15 @@ the label you want displayed or read by screen readers.",
                       "componentStyle": ComponentStyle {
                         "componentId": "SideNav__StyledSideNavMenu-yn3bk8-2",
                         "isStatic": true,
-                        "lastClassName": "ZcABH",
+                        "lastClassName": "cVDWRM",
                         "rules": Array [
                           "&&&{background-color:",
                           "#152935",
                           ";:not(.bx--side-nav__item--active):hover{background-color:",
                           "#152935",
-                          ";}:not(.bx--side-nav__item--active):hover button{background-color:",
+                          ";}> button:hover{background-color:",
                           "#2d3f48",
-                          ";}.bx--side-nav__menu[role='menu'] a.bx--side-nav__link[role='menuitem']:not(.bx--side-nav__link--current):not([aria-current='page']):hover{background-color:",
+                          ";}.bx--side-nav__menu[role='menu'] .bx--side-nav__link[role='menuitem']:not(.bx--side-nav__link--current):not([aria-current='page']):hover{background-color:",
                           "#2d3f48",
                           ";}:hover{background-color:",
                           "#2d3f48",
@@ -924,7 +996,7 @@ the label you want displayed or read by screen readers.",
                 >
                   <ForwardRef
                     aria-label="dropdown"
-                    className="SideNav__StyledSideNavMenu-yn3bk8-2 ZcABH"
+                    className="disabled SideNav__StyledSideNavMenu-yn3bk8-2 cVDWRM"
                     icon={
                       <Group24
                         className="bx--header__menu-item bx--header__menu-title"
@@ -943,7 +1015,7 @@ the label you want displayed or read by screen readers.",
                     <SideNavMenu
                       aria-label="dropdown"
                       buttonRef={null}
-                      className="SideNav__StyledSideNavMenu-yn3bk8-2 ZcABH"
+                      className="disabled SideNav__StyledSideNavMenu-yn3bk8-2 cVDWRM"
                       defaultExpanded={false}
                       icon={
                         <Group24
@@ -962,7 +1034,7 @@ the label you want displayed or read by screen readers.",
                       title="Members"
                     >
                       <li
-                        className="bx--side-nav__item SideNav__StyledSideNavMenu-yn3bk8-2 ZcABH"
+                        className="bx--side-nav__item disabled SideNav__StyledSideNavMenu-yn3bk8-2 cVDWRM"
                       >
                         <button
                           aria-expanded={false}
@@ -1053,8 +1125,9 @@ the label you want displayed or read by screen readers.",
                           role="menu"
                         >
                           <ForwardRef
-                            href="javascript:void(0)"
+                            element="button"
                             key="menu-link-0-child"
+                            label="Devices"
                             onClick={[MockFunction]}
                           >
                             <li
@@ -1063,14 +1136,14 @@ the label you want displayed or read by screen readers.",
                             >
                               <Link
                                 className="bx--side-nav__link"
-                                element="a"
-                                href="javascript:void(0)"
+                                element="button"
+                                label="Devices"
                                 onClick={[MockFunction]}
                                 role="menuitem"
                               >
-                                <a
+                                <button
                                   className="bx--side-nav__link"
-                                  href="javascript:void(0)"
+                                  label="Devices"
                                   onClick={[MockFunction]}
                                   role="menuitem"
                                 >
@@ -1081,7 +1154,7 @@ the label you want displayed or read by screen readers.",
                                       Yet another link
                                     </span>
                                   </SideNavLinkText>
-                                </a>
+                                </button>
                               </Link>
                             </li>
                           </ForwardRef>
