@@ -31,9 +31,9 @@ export default class SideNav extends React.Component {
     /**
      * Required props for accessibility label on the underlying menu
      */
-    /* eslint-disable */
-    'aria-label': PropTypes.string,
-    'aria-labelledby': PropTypes.string,
+
+    'aria-label': PropTypes.string, // eslint-disable-line
+    'aria-labelledby': PropTypes.string, // eslint-disable-line
 
     /**
      * Optionally provide a custom class to apply to the underlying <li> node
@@ -80,7 +80,7 @@ export default class SideNav extends React.Component {
     const {
       'aria-label': ariaLabel,
       'aria-labelledby': ariaLabelledBy,
-      children,
+      children, // eslint-disable-line
       className: customClassName,
       translateById: t,
     } = this.props;
