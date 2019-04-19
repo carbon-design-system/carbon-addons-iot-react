@@ -24,6 +24,7 @@ const StyledWizardWrapper = styled.div`
   .bx--modal-container {
     min-width: 630px;
     max-width: 90%;
+    width: 90%;
     margin-top: 24px;
     padding-top: 32px;
     padding-bottom: 72px;
