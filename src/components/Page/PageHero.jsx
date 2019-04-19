@@ -77,7 +77,7 @@ const StyledPageHero = styled.div`
 `;
 
 const StyledPageHeroWrap = styled.div`
-  align-items: center;
+  align-items: flex-start;
   display: flex;
   margin: 0 auto;
   width: 100%;
