@@ -71,7 +71,7 @@ describe('StatefulTileCatalog', () => {
         .find('span')
         .at(1)
         .text()
-    ).toEqual('Page 1');
+    ).toContain('Page 1');
     const nextButton = wrapper.find('div[tabIndex=0]');
     nextButton.simulate('click');
     // on Page 2
@@ -80,7 +80,7 @@ describe('StatefulTileCatalog', () => {
         .find('span')
         .at(1)
         .text()
-    ).toEqual('Page 2');
+    ).toContain('Page 2');
 
     const newTiles = commonTileProps.tiles.slice(1, 5);
     // Back to Page 1
@@ -91,7 +91,7 @@ describe('StatefulTileCatalog', () => {
         .find('span')
         .at(1)
         .text()
-    ).toEqual('Page 1');
+    ).toContain('Page 1');
 
     // The new first tile should be selected
     expect(
