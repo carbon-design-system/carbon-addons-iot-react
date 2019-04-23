@@ -66,6 +66,8 @@ const propTypes = {
     toolbar: PropTypes.shape({
       /** Specify which header row to display, will display default header row if null */
       activeBar: PropTypes.oneOf(['filter', 'column']),
+      /** optional content to render inside the toolbar  */
+      customToolbarContent: PropTypes.node,
       /** Specify which batch actions to render in the batch action bar. If empty, no batch action toolbar will display */
       batchActions: PropTypes.arrayOf(
         PropTypes.shape({
@@ -298,7 +300,7 @@ const Table = props => {
         tableState={{
           totalSelected: view.table.selectedIds.length,
           totalFilters: view.filters ? view.filters.length : 0,
-          ...pick(view.toolbar, 'batchActions', 'search', 'activeBar'),
+          ...pick(view.toolbar, 'batchActions', 'search', 'activeBar', 'customToolbarContent'),
         }}
       />
       <TableContainer>

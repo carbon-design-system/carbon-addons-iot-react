@@ -818,4 +818,19 @@ storiesOf('Table', module)
         source: false,
       },
     }
-  );
+  )
+  .add('Custom toolbar content', () => (
+    <Table
+      columns={tableColumns}
+      options={{ hasFilter: true, hasPagination: true }}
+      data={tableData}
+      actions={actions}
+      view={{
+        filters: [
+          { columnId: 'string', value: 'whiteboard' },
+          { columnId: 'select', value: 'option-B' },
+        ],
+        toolbar: { activeBar: 'filter', customToolbarContent: <div>my custom</div> },
+      }}
+    />
+  ));
