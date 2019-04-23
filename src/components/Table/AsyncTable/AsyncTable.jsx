@@ -194,7 +194,7 @@ const AsyncTable = ({ fetchData }) => {
       // (and we don't need to make use of them in this example)
       // Blank implementations are provided to suppress console warnings
       onEmptyStateAction: () => {},
-      onApplyRowAction: (/* rowId, actionId */) => {},
+      onApplyRowAction: (/* actionId, rowId */) => {},
       onRowClicked: (/* rowId */) => {},
     },
   };
