@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { Fragment } from 'react';
 import styled from 'styled-components';
 
 import { COLORS, PADDING } from '../../styles/styles';
@@ -46,6 +46,8 @@ const propTypes = {
       }).isRequired
     ),
   }),
+  /** Optional what to render in the left side of the hero */
+  leftContent: PropTypes.node,
   /** Optional What to render in the right side of the hero */
   rightContent: PropTypes.node,
   className: PropTypes.string,
@@ -58,6 +60,7 @@ const defaultProps = {
   className: null,
   big: false,
   crumb: null,
+  leftContent: null,
   rightContent: null,
   switchers: {
     onChange: null,
@@ -73,6 +76,9 @@ const StyledPageHero = styled.div`
   padding-left: ${PADDING.horizontalWrapPadding};
   padding-right: ${PADDING.horizontalWrapPadding};
   padding-bottom: ${PADDING.verticalPadding};
+  display: flex;
+  flex: 1 1;
+  flex-flow: row nowrap;
   min-height: ${props => (props.big ? '193px' : 'unset')};
 `;
 
@@ -94,20 +100,45 @@ const StyledPageBlurb = styled.p`
   flex: 1 1 20%;
 `;
 
+const StyledTitle = styled.div`
+  flex-basis: 75%;
+`;
+
+const StyledRightContent = styled.div`
+  padding-top: ${PADDING.verticalPadding};
+  flex-basis: 25%;
+`;
+
+const StyledLeftContent = styled.div`
+  padding-top: ${PADDING.verticalPadding};
+`;
+
 /**
  * Renders the hero text and styles for the page.  Can either render Section and Title with blurb or support a narrow one with breadcrumbs.
  */
-const PageHero = ({ section, title, blurb, className, crumb, rightContent, switchers }) => (
+const PageHero = ({
+  section,
+  title,
+  blurb,
+  className,
+  crumb,
+  leftContent,
+  rightContent,
+  switchers,
+}) => (
   <StyledPageHero className={className}>
     {crumb || (
-      <div>
-        <PageTitle section={section} title={title} />
-        {switchers && switchers.switcher.length ? <PageSwitcher switchers={switchers} /> : null}
-        <StyledPageHeroWrap>
-          {blurb ? <StyledPageBlurb>{blurb}</StyledPageBlurb> : null}
-          {rightContent}
-        </StyledPageHeroWrap>
-      </div>
+      <Fragment>
+        {leftContent ? <StyledLeftContent>{leftContent}</StyledLeftContent> : null}
+        <StyledTitle>
+          <PageTitle section={section} title={title} />
+          {switchers && switchers.switcher.length ? <PageSwitcher switchers={switchers} /> : null}
+          <StyledPageHeroWrap>
+            {blurb ? <StyledPageBlurb>{blurb}</StyledPageBlurb> : null}
+          </StyledPageHeroWrap>
+        </StyledTitle>
+        {rightContent ? <StyledRightContent>{rightContent}</StyledRightContent> : null}
+      </Fragment>
     )}
   </StyledPageHero>
 );
