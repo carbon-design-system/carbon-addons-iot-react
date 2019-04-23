@@ -149,6 +149,24 @@ const HeaderProps = {
   ],
 };
 
-storiesOf('Header', module).add('Header action buttons with dropdowns', () => (
-  <StyledHeader {...HeaderProps} />
-));
+storiesOf('Header', module)
+  .add('Header action buttons with dropdowns', () => <StyledHeader {...HeaderProps} />)
+  .add('Header no submenu', () => (
+    <StyledHeader
+      {...HeaderProps}
+      actionItems={[
+        {
+          label: 'user',
+          onClick: action('click'),
+          btnContent: (
+            <React.Fragment>
+              <User>
+                JohnDoe@ibm.com<span>TenantId: Acme</span>
+              </User>
+              <StyledIcon name="header--avatar" fill="white" description="Icon" />
+            </React.Fragment>
+          ),
+        },
+      ]}
+    />
+  ));
