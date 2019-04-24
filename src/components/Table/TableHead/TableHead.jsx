@@ -80,7 +80,6 @@ const defaultProps = {
 
 const StyledCheckboxTableHeader = styled(TableHeader)`
   &&& {
-    padding-left: 1rem;
     padding-bottom: 0.5rem;
     width: 2.5rem;
   }
