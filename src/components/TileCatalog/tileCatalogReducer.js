@@ -1,5 +1,3 @@
-import isNil from 'lodash/isNil';
-
 import { searchData } from '../Table/tableReducer';
 
 export const TILE_ACTIONS = {
@@ -10,13 +8,8 @@ export const TILE_ACTIONS = {
 };
 
 /** figures out the ending index of the array */
-const determineEndingIndex = (page, pageSize, tiles) => {
-  return (
-    Math.min(
-      (page - 1) * pageSize + pageSize,
-      tiles && !isNil(tiles.length) ? tiles.length : Infinity // I'd like to pass undefined here, but Math.min isn't smart enough so I have to use Infinity
-    ) - 1
-  );
+const determineEndingIndex = (page, pageSize) => {
+  return (page - 1) * pageSize + pageSize - 1;
 };
 
 /** This figures out the initial state of the reducer from the props */
@@ -36,7 +29,7 @@ export const determineInitialState = ({ pagination, search, selectedTileId, tile
     // filtered tiles have any search applied
     filteredTiles,
     startingIndex,
-    endingIndex: determineEndingIndex(page, pageSize, filteredTiles),
+    endingIndex: determineEndingIndex(page, pageSize),
   };
 };
 
@@ -59,10 +52,10 @@ export const determineInitialState = ({ pagination, search, selectedTileId, tile
 export const tileCatalogReducer = (state = {}, action) => {
   switch (action.type) {
     case TILE_ACTIONS.PAGE_CHANGE: {
-      const { pageSize, filteredTiles } = state;
+      const { pageSize } = state;
       const page = action.payload;
       const startingIndex = (page - 1) * pageSize;
-      const endingIndex = determineEndingIndex(page, pageSize, filteredTiles);
+      const endingIndex = determineEndingIndex(page, pageSize);
 
       return {
         ...state,
