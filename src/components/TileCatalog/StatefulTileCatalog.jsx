@@ -97,7 +97,7 @@ const StatefulTileCatalog = ({
     }
   };
 
-  const isFiltered = searchState !== '' || startingIndex !== endingIndex + 1;
+  const isFiltered = searchState !== '';
 
   return (
     <TileCatalog
