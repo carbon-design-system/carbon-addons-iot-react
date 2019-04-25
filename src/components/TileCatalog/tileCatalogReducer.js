@@ -18,18 +18,28 @@ export const determineInitialState = ({ pagination, search, selectedTileId, tile
   const pageSize = pagination && pagination.pageSize ? pagination.pageSize : 10;
   const filteredTiles = search ? searchData(tiles, search.value) : tiles;
   const startingIndex = pagination ? (page - 1) * pageSize : 0;
+  const selectedTileIdState =
+    selectedTileId ||
+    (filteredTiles && filteredTiles[startingIndex] ? filteredTiles[startingIndex].id : null);
+  let selectedPage;
+  let selectedStartingIndex;
+  // If a selected tile id is passed, we should page to it
+  if (selectedTileId) {
+    const selectedTileIndex = filteredTiles.findIndex(tile => tile.id === selectedTileId);
+    selectedPage = Math.floor(selectedTileIndex / pageSize) + 1;
+    selectedStartingIndex = pagination ? (selectedPage - 1) * pageSize : 0;
+  }
+
   return {
-    page,
+    page: selectedPage || page,
     pageSize,
     searchState: search && search.value ? search.value : '',
-    selectedTileId:
-      selectedTileId ||
-      (filteredTiles && filteredTiles[startingIndex] ? filteredTiles[startingIndex].id : null),
+    selectedTileId: selectedTileIdState,
     tiles,
     // filtered tiles have any search applied
     filteredTiles,
-    startingIndex,
-    endingIndex: determineEndingIndex(page, pageSize),
+    startingIndex: selectedStartingIndex || startingIndex,
+    endingIndex: determineEndingIndex(selectedPage || page, pageSize),
   };
 };
 

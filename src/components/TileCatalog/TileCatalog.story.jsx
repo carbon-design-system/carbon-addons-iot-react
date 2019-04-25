@@ -86,6 +86,11 @@ storiesOf('TileCatalog', module)
     <StatefulTileCatalog
       {...commonTileCatalogProps}
       pagination={{ pageSize: 6, onPage: action('onPage') }}
+      selectedTileId={select(
+        'id',
+        commonTileCatalogProps.tiles.map(tile => tile.id),
+        commonTileCatalogProps.tiles[0].id
+      )}
     />
   ))
   .add('loading', () => <StatefulTileCatalog {...commonTileCatalogProps} isLoading />)

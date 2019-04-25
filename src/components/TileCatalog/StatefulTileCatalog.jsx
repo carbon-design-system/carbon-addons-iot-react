@@ -9,8 +9,21 @@ import TileCatalog, { propTypes } from './TileCatalog';
  * Paging and searching happens on local state within the component
  */
 
-const StatefulTileCatalog = ({ onSelection, pagination, search, tiles: tilesProp, ...props }) => {
-  const initialState = determineInitialState({ ...props, tiles: tilesProp, search, pagination });
+const StatefulTileCatalog = ({
+  onSelection,
+  pagination,
+  search,
+  selectedTileId: selectedTileIdProp,
+  tiles: tilesProp,
+  ...props
+}) => {
+  const initialState = determineInitialState({
+    ...props,
+    selectedTileId: selectedTileIdProp,
+    tiles: tilesProp,
+    search,
+    pagination,
+  });
   const onPage = pagination && pagination.onPage;
   const onSearch = search && search.onSearch;
 
@@ -21,10 +34,16 @@ const StatefulTileCatalog = ({ onSelection, pagination, search, tiles: tilesProp
       // If we get passed a new set of tiles reset!
       dispatch({
         type: TILE_ACTIONS.RESET,
-        payload: { ...props, tiles: tilesProp, search, pagination },
+        payload: {
+          ...props,
+          selectedTileId: selectedTileIdProp,
+          tiles: tilesProp,
+          search,
+          pagination,
+        },
       });
     },
-    [tilesProp.map(tile => omit(tile, 'renderContent'))]
+    [tilesProp.map(tile => omit(tile, 'renderContent')), selectedTileIdProp]
   );
 
   const {
