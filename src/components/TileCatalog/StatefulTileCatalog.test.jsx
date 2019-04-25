@@ -61,6 +61,24 @@ describe('StatefulTileCatalog', () => {
     expect(selectedTile).toHaveLength(1);
     expect(selectedTile.prop('id')).toEqual('test2');
   });
+  test('selectedTileId should change page', () => {
+    const wrapper = mount(
+      <StatefulTileCatalog
+        {...commonTileProps}
+        pagination={{ pageSize: 6, page: 1 }}
+        selectedTileId="test7"
+      />
+    );
+
+    // On page 2 because of the selectedTileId
+    expect(
+      wrapper
+        .find('span')
+        .at(1)
+        .text()
+    ).toContain('Page 2');
+  });
+
   test('tiles prop change resets page', () => {
     const wrapper = mount(
       <StatefulTileCatalog {...commonTileProps} pagination={{ pageSize: 5 }} />
