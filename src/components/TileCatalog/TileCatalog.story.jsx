@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { select } from '@storybook/addon-knobs';
@@ -86,9 +86,30 @@ storiesOf('TileCatalog', module)
     <StatefulTileCatalog
       {...commonTileCatalogProps}
       pagination={{ pageSize: 6, onPage: action('onPage') }}
+      selectedTileId={select(
+        'id',
+        commonTileCatalogProps.tiles.map(tile => tile.id),
+        commonTileCatalogProps.tiles[0].id
+      )}
     />
   ))
   .add('loading', () => <StatefulTileCatalog {...commonTileCatalogProps} isLoading />)
   .add('error', () => (
     <StatefulTileCatalog {...commonTileCatalogProps} tiles={[]} error="In error state" />
-  ));
+  ))
+  .add('async loaded wait one second', () => {
+    const Container = () => {
+      const [tilesProp, setTiles] = useState([]);
+      const [isLoading, setIsLoading] = useState(true);
+      useEffect(() => {
+        setTimeout(() => {
+          setTiles(commonTileCatalogProps.tiles); // eslint-disable-line
+          setIsLoading(false);
+        }, 1000);
+      }, []);
+      return (
+        <StatefulTileCatalog {...commonTileCatalogProps} isLoading={isLoading} tiles={tilesProp} />
+      );
+    };
+    return <Container />;
+  });

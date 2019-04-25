@@ -248,8 +248,10 @@ describe('table reducer testcases', () => {
 describe('filter, search and sort', () => {
   test('filterData', () => {
     const mockData = [{ values: { number: 10, string: 'string', null: null } }];
-    const stringFilter = { columnId: 'string', value: 'string' };
+    const stringFilter = { columnId: 'string', value: 'String' };
     const numberFilter = { columnId: 'number', value: 10 };
+    expect(filterData(mockData, [stringFilter])).toHaveLength(1);
+    // case insensitive
     expect(filterData(mockData, [stringFilter])).toHaveLength(1);
     expect(filterData(mockData, [numberFilter])).toHaveLength(1);
   });
@@ -258,6 +260,8 @@ describe('filter, search and sort', () => {
     const mockData = [{ values: { number: 10, string: 'string', null: null } }];
     expect(searchData(mockData, 10)).toHaveLength(1);
     expect(searchData(mockData, 'string')).toHaveLength(1);
+    // case insensitive
+    expect(searchData(mockData, 'STRING')).toHaveLength(1);
   });
 
   test('filterSearchAndSort', () => {
