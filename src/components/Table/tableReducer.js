@@ -34,7 +34,10 @@ export const filterData = (data, filters) =>
             acc &&
             ((values[columnId] &&
               values[columnId].toString &&
-              values[columnId].toString().includes(value)) ||
+              values[columnId]
+                .toString()
+                .toLowerCase()
+                .includes(value.toString().toLowerCase())) ||
               isNil(values[columnId])), // If passed an invalid column keep going)
           true
         )
@@ -47,7 +50,13 @@ export const searchData = (data, searchString) =>
         { values } // globally check row values for a match
       ) =>
         Object.values(values).find(
-          value => !isNil(value) && value.toString && value.toString().includes(searchString)
+          value =>
+            !isNil(value) &&
+            value.toString &&
+            value
+              .toString() // case insensitive search
+              .toLowerCase()
+              .includes(searchString.toString().toLowerCase())
         )
       )
     : data;
