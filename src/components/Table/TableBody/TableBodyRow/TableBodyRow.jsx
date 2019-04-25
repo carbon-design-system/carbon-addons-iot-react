@@ -41,6 +41,7 @@ const propTypes = {
   /** table wide options */
   options: PropTypes.shape({
     hasRowSelection: PropTypes.bool,
+    hasRowStickySelection: PropTypes.bool,
     hasRowExpansion: PropTypes.bool,
     shouldExpandOnRowClick: PropTypes.bool,
   }),
@@ -56,6 +57,8 @@ const propTypes = {
 
   /** is the row currently selected */
   isSelected: PropTypes.bool,
+  /** is the row currently sticky selected */
+  isStickySelected: PropTypes.bool,
   /** is the row currently expanded */
   isExpanded: PropTypes.bool,
   /** optional row details */
@@ -64,6 +67,7 @@ const propTypes = {
   /** tableActions */
   tableActions: PropTypes.shape({
     onRowSelected: PropTypes.func,
+    onRowStickySelected: PropTypes.func,
     onRowClicked: PropTypes.func,
     onApplyRowAction: PropTypes.func,
     onRowExpanded: PropTypes.func,
@@ -100,6 +104,17 @@ const StyledTableRow = styled(TableRow)`
           opacity: 1;
         }
       }
+    }
+  }
+`;
+
+const StyledStickySelectedTableRow = styled(TableRow)`
+  &&& {
+    background: ${COLORS.superLightGray};
+    border-left: 5px solid ${COLORS.blue};
+
+    td {
+      margin-left: -5px;
     }
   }
 `;
@@ -184,10 +199,17 @@ const TableBodyRow = ({
   totalColumns,
   ordering,
   columns,
-  options: { hasRowSelection, hasRowExpansion, shouldExpandOnRowClick },
-  tableActions: { onRowSelected, onRowExpanded, onRowClicked, onApplyRowAction },
+  options: { hasRowSelection, hasRowStickySelection, hasRowExpansion, shouldExpandOnRowClick },
+  tableActions: {
+    onRowSelected,
+    onRowExpanded,
+    onRowClicked,
+    onApplyRowAction,
+    onRowStickySelected,
+  },
   isExpanded,
   isSelected,
+  isStickySelected,
   selectRowText,
   overflowMenuText,
   clickToExpandText,
@@ -283,8 +305,19 @@ const TableBodyRow = ({
         {tableCells}
       </StyledTableExpandRow>
     )
+  ) : hasRowStickySelection && isStickySelected ? (
+    <StyledStickySelectedTableRow key={id} onClick={() => onRowClicked(id)}>
+      {tableCells}
+    </StyledStickySelectedTableRow>
   ) : (
-    <StyledTableRow key={id} onClick={() => onRowClicked(id)}>
+    <StyledTableRow
+      key={id}
+      onClick={() => {
+        if (hasRowStickySelection) {
+          onRowStickySelected(id);
+        }
+        onRowClicked(id);
+      }}>
       {tableCells}
     </StyledTableRow>
   );

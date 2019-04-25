@@ -41,6 +41,7 @@ const propTypes = {
   options: PropTypes.shape({
     hasPagination: PropTypes.bool,
     hasRowSelection: PropTypes.bool,
+    hasRowStickySelection: PropTypes.bool,
     hasRowExpansion: PropTypes.bool,
     hasRowActions: PropTypes.bool,
     hasFilter: PropTypes.bool,
@@ -90,6 +91,7 @@ const propTypes = {
       isSelectAllSelected: PropTypes.bool,
       isSelectAllIndeterminate: PropTypes.bool,
       selectedIds: PropTypes.arrayOf(PropTypes.string),
+      stickySelectedRowId: PropTypes.string,
       sort: PropTypes.shape({
         columnId: PropTypes.string,
         direction: PropTypes.oneOf(['NONE', 'ASC', 'DESC']),
@@ -129,6 +131,7 @@ const propTypes = {
     }),
     table: PropTypes.shape({
       onRowSelected: PropTypes.func,
+      onRowStickySelected: PropTypes.func,
       onRowClicked: PropTypes.func,
       onRowExpanded: PropTypes.func,
       onSelectAll: PropTypes.func,
@@ -148,6 +151,7 @@ export const defaultProps = baseProps => ({
   options: {
     hasPagination: false,
     hasRowSelection: false,
+    hasRowStickySelection: false,
     hasRowExpansion: false,
     hasRowActions: false,
     hasFilter: false,
@@ -170,6 +174,7 @@ export const defaultProps = baseProps => ({
       expandedIds: [],
       isSelectAllSelected: false,
       selectedIds: [],
+      stickySelectedRowId: '',
       sort: {},
       ordering: baseProps.columns && baseProps.columns.map(i => ({ columnId: i.id })),
       loadingState: {
@@ -343,19 +348,27 @@ const Table = props => {
               columns={visibleColumns}
               expandedIds={view.table.expandedIds}
               selectedIds={view.table.selectedIds}
+              stickySelectedRowId={view.table.stickySelectedRowId}
               selectRowText={get(view, 'selection.selectRowText')}
               overflowMenuText={i18n.overflowMenuAria}
               clickToExpandText={i18n.clickToExpandAria}
               clickToCollapseText={i18n.clickToCollapseAria}
               totalColumns={totalColumns}
-              {...pick(options, 'hasRowSelection', 'hasRowExpansion', 'shouldExpandOnRowClick')}
+              {...pick(
+                options,
+                'hasRowSelection',
+                'hasRowStickySelection',
+                'hasRowExpansion',
+                'shouldExpandOnRowClick'
+              )}
               ordering={view.table.ordering}
               actions={pick(
                 actions.table,
                 'onRowSelected',
                 'onApplyRowAction',
                 'onRowExpanded',
-                'onRowClicked'
+                'onRowClicked',
+                'onRowStickySelected'
               )}
             />
           ) : (

@@ -15,6 +15,7 @@ import {
   tableColumnSort,
   tableRowSelect,
   tableRowSelectAll,
+  tableRowStickySelect,
   tableRowExpand,
   tableColumnOrder,
 } from './tableActionCreators';
@@ -64,6 +65,7 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
   const {
     onChangeSort,
     onRowSelected,
+    onStickyRowSelected,
     onRowClicked,
     onSelectAll,
     onRowExpanded,
@@ -126,6 +128,10 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
       onSelectAll: isSelected => {
         dispatch(tableRowSelectAll(isSelected));
         callbackParent(onSelectAll, isSelected);
+      },
+      onRowStickySelected: rowId => {
+        dispatch(tableRowStickySelect(rowId));
+        callbackParent(onStickyRowSelected, rowId);
       },
       onRowExpanded: (rowId, isExpanded) => {
         dispatch(tableRowExpand(rowId, isExpanded));

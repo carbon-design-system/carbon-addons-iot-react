@@ -5,6 +5,7 @@ import TableBodyRow from './TableBodyRow';
 
 const mockActions = {
   onRowSelected: jest.fn(),
+  onRowStickySelected: jest.fn(),
   onRowClicked: jest.fn(),
   onRowExpanded: jest.fn(),
   onApplyRowAction: jest.fn(),
@@ -124,5 +125,18 @@ describe('TableBodyRow', () => {
       .find('input')
       .simulate('click', { preventDefault: () => true, stopPropagation: () => true });
     expect(mockRowSelection).toHaveBeenCalled();
+  });
+
+  test('hasRowStickySelection', () => {
+    const tableBodyRow = mount(
+      <TableBodyRow
+        options={{ hasRowStickySelection: true }}
+        tableActions={mockActions}
+        {...tableRowProps}
+      />
+    );
+    tableBodyRow.simulate('click');
+    expect(mockActions.onRowStickySelected).toHaveBeenCalled();
+    expect(mockActions.onRowClicked).toHaveBeenCalled();
   });
 });

@@ -185,6 +185,7 @@ const actions = {
   table: {
     onRowClicked: action('onRowClicked'),
     onRowSelected: action('onRowSelected'),
+    onRowStickySelected: action('onRowStickySelected'),
     onSelectAll: action('onSelectAll'),
     onEmptyStateAction: action('onEmptyStateAction'),
     onApplyRowAction: action('onApplyRowAction'),
@@ -252,6 +253,7 @@ export const initialState = {
     table: {
       isSelectAllSelected: false,
       selectedIds: [],
+      stickySelectedRowId: '',
       sort: undefined,
       ordering: tableColumns.map(({ id }) => ({
         columnId: id,
@@ -384,6 +386,15 @@ storiesOf('Table', module)
           selectedIds: ['row-3', 'row-4', 'row-6', 'row-7'],
         },
       }}
+    />
+  ))
+  .add('with sticky selection', () => (
+    <Table
+      columns={tableColumns}
+      data={tableData}
+      actions={actions}
+      options={{ hasRowStickySelection: true }}
+      view={{ table: { stickySelectedRowId: 'row-3' } }}
     />
   ))
   .add('with row expansion', () => (

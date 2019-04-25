@@ -14,6 +14,7 @@ import {
   tableColumnOrder,
   tableRowSelect,
   tableRowSelectAll,
+  tableRowStickySelect,
   tableRowExpand,
   tableSearchApply,
 } from './tableActionCreators';
@@ -186,6 +187,13 @@ describe('table reducer testcases', () => {
       expect(tableWithUnSelectedAll.view.table.selectedIds.length).toEqual(0);
       expect(tableWithUnSelectedAll.view.table.isSelectAllIndeterminate).toEqual(false);
       expect(tableWithUnSelectedAll.view.table.isSelectAllSelected).toEqual(false);
+    });
+    test('TABLE_ROW_STICKY_SELECT', () => {
+      expect(initialState.view.table.stickySelectedRowId).toEqual('');
+
+      // Select one row
+      const tableWithStickySelected = tableReducer(initialState, tableRowStickySelect('row-1'));
+      expect(tableWithStickySelected.view.table.stickySelectedRowId).toEqual('row-1');
     });
     test('TABLE_ROW_EXPAND', () => {
       expect(initialState.view.table.expandedIds).toEqual([]);

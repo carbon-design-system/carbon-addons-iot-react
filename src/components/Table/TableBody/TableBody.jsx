@@ -17,6 +17,7 @@ const propTypes = {
   columns: TableColumnsPropTypes,
   expandedIds: PropTypes.arrayOf(PropTypes.string),
   selectedIds: PropTypes.arrayOf(PropTypes.string),
+  stickySelectedRowId: PropTypes.string,
   /** internationalized label */
   selectRowText: PropTypes.string,
   /** internationalized label */
@@ -28,6 +29,7 @@ const propTypes = {
   /** since some columns might not be currently visible */
   totalColumns: PropTypes.number,
   hasRowSelection: PropTypes.bool,
+  hasRowStickySelection: PropTypes.bool,
   hasRowExpansion: PropTypes.bool,
   shouldExpandOnRowClick: PropTypes.bool,
 
@@ -50,6 +52,7 @@ const propTypes = {
 const defaultProps = {
   expandedIds: [],
   selectedIds: [],
+  stickySelectedRowId: '',
   selectRowText: 'Select row',
   overflowMenuText: 'More actions',
   clickToExpandText: 'Click to expand.',
@@ -59,6 +62,7 @@ const defaultProps = {
   columns: [],
   totalColumns: 0,
   hasRowSelection: false,
+  hasRowStickySelection: false,
   hasRowExpansion: false,
   shouldExpandOnRowClick: false,
 };
@@ -70,6 +74,7 @@ const TableBody = ({
   expandedIds,
   expandedRows,
   selectedIds,
+  stickySelectedRowId,
   selectRowText,
   overflowMenuText,
   clickToExpandText,
@@ -77,6 +82,7 @@ const TableBody = ({
   totalColumns,
   actions,
   hasRowSelection,
+  hasRowStickySelection,
   hasRowExpansion,
   shouldExpandOnRowClick,
   ordering,
@@ -100,6 +106,7 @@ const TableBody = ({
             key={row.id}
             isExpanded={isRowExpanded}
             isSelected={selectedIds.includes(row.id)}
+            isStickySelected={stickySelectedRowId === row.id}
             rowDetails={
               isRowExpanded && expandedRows.find(j => j.rowId === row.id)
                 ? expandedRows.find(j => j.rowId === row.id).content
@@ -114,13 +121,19 @@ const TableBody = ({
             id={row.id}
             totalColumns={totalColumns}
             tableId={id}
-            options={{ hasRowSelection, hasRowExpansion, shouldExpandOnRowClick }}
+            options={{
+              hasRowSelection,
+              hasRowStickySelection,
+              hasRowExpansion,
+              shouldExpandOnRowClick,
+            }}
             tableActions={pick(
               actions,
               'onRowSelected',
               'onApplyRowAction',
               'onRowExpanded',
-              'onRowClicked'
+              'onRowClicked',
+              'onRowStickySelected'
             )}
             rowActions={row.rowActions}>
             {row.values}
