@@ -64,7 +64,7 @@ describe('tileCatalogReducer', () => {
     expect(newState.page).toEqual(2);
     // expect(newState.selectedTileId).toEqual(null);
     expect(newState.startingIndex).toEqual(5);
-    expect(newState.endingIndex).toEqual(6);
+    expect(newState.endingIndex).toEqual(9);
   });
   test('search', () => {
     const searchAction = { type: TILE_ACTIONS.SEARCH, payload: 'Tile6' };
@@ -114,7 +114,7 @@ describe('determineInitialState', () => {
     expect(initialState.pageSize).toEqual(10);
     expect(initialState.page).toEqual(1);
     expect(initialState.startingIndex).toEqual(0);
-    expect(initialState.endingIndex).toEqual(tiles.length - 1);
+    expect(initialState.endingIndex).toEqual(9);
     expect(initialState.selectedTileId).toEqual(tiles[0].id);
   });
   test('setting from pagination', () => {
@@ -122,13 +122,13 @@ describe('determineInitialState', () => {
     expect(initialState.pageSize).toEqual(5);
     expect(initialState.page).toEqual(2);
     expect(initialState.startingIndex).toEqual(5);
-    expect(initialState.endingIndex).toEqual(tiles.length - 1);
+    expect(initialState.endingIndex).toEqual(9);
     expect(initialState.selectedTileId).toEqual(tiles[5].id);
   });
   test('setting search', () => {
     const initialState = determineInitialState({ tiles, search: { value: 'Tile6' } });
     expect(initialState.filteredTiles).toHaveLength(1);
-    expect(initialState.endingIndex).toEqual(0);
+    expect(initialState.endingIndex).toEqual(9);
     expect(initialState.selectedTileId).toEqual(tiles[5].id);
   });
 });

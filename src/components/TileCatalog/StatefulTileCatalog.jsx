@@ -97,12 +97,18 @@ const StatefulTileCatalog = ({
     }
   };
 
+  const isFiltered = searchState !== '' || startingIndex !== endingIndex + 1;
+
   return (
     <TileCatalog
       {...props}
       selectedTileId={selectedTileId}
       // slice doesn't include the last index!
-      tiles={filteredTiles.slice(startingIndex, endingIndex + 1)}
+      tiles={
+        isFiltered // if the tiles aren't filtered just show the raw prop so that there's no repaint
+          ? filteredTiles.slice(startingIndex, endingIndex + 1)
+          : tilesProp.slice(startingIndex, endingIndex + 1)
+      }
       search={{ ...search, onSearch: handleSearch, value: searchState }}
       pagination={{ ...pagination, page, onPage: handlePage, totalItems: tiles ? tiles.length : 0 }}
       onSelection={handleSelection}
