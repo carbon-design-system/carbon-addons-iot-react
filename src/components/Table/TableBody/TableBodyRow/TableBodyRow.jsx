@@ -179,7 +179,7 @@ const StyledTableExpandRowExpanded = styled(TableExpandRow)`
       }
     }
     `
-        : !props['data-row-nesting']
+        : props['data-row-nesting']
         ? `
     :hover {
       td {
