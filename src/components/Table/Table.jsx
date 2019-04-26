@@ -43,6 +43,7 @@ const propTypes = {
     hasRowSelection: PropTypes.bool,
     hasRowStickySelection: PropTypes.bool,
     hasRowExpansion: PropTypes.bool,
+    hasRowNesting: PropTypes.bool,
     hasRowActions: PropTypes.bool,
     hasFilter: PropTypes.bool,
     /** has simple search capability */
@@ -156,6 +157,7 @@ export const defaultProps = baseProps => ({
     hasRowStickySelection: false,
     hasRowExpansion: false,
     hasRowActions: false,
+    hasRowNesting: false,
     hasFilter: false,
     hasSearch: false,
     hasColumnSelection: false,
@@ -361,6 +363,8 @@ const Table = props => {
                 'hasRowSelection',
                 'hasRowStickySelection',
                 'hasRowExpansion',
+                'hasRowActions',
+                'hasRowNesting',
                 'shouldExpandOnRowClick'
               )}
               ordering={view.table.ordering}

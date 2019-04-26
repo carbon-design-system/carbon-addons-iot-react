@@ -31,6 +31,8 @@ const propTypes = {
   hasRowSelection: PropTypes.bool,
   hasRowStickySelection: PropTypes.bool,
   hasRowExpansion: PropTypes.bool,
+  hasRowNesting: PropTypes.bool,
+  hasRowActions: PropTypes.bool,
   shouldExpandOnRowClick: PropTypes.bool,
 
   actions: PropTypes.shape({
@@ -64,6 +66,8 @@ const defaultProps = {
   hasRowSelection: false,
   hasRowStickySelection: false,
   hasRowExpansion: false,
+  hasRowNesting: false,
+  hasRowActions: false,
   shouldExpandOnRowClick: false,
 };
 
@@ -81,9 +85,11 @@ const TableBody = ({
   clickToCollapseText,
   totalColumns,
   actions,
+  hasRowActions,
   hasRowSelection,
   hasRowStickySelection,
   hasRowExpansion,
+  hasRowNesting,
   shouldExpandOnRowClick,
   ordering,
 }) => {
@@ -97,51 +103,58 @@ const TableBody = ({
     [columns, ordering]
   );
 
-  return (
-    <CarbonTableBody>
-      {rows.map(row => {
-        const isRowExpanded = expandedIds.includes(row.id);
-        return (
-          <TableBodyRow
-            key={row.id}
-            isExpanded={isRowExpanded}
-            isSelected={selectedIds.includes(row.id)}
-            isStickySelected={stickySelectedRowId === row.id}
-            rowDetails={
-              isRowExpanded && expandedRows.find(j => j.rowId === row.id)
-                ? expandedRows.find(j => j.rowId === row.id).content
-                : null
-            }
-            ordering={orderingMap}
-            selectRowText={selectRowText}
-            overflowMenuText={overflowMenuText}
-            clickToCollapseText={clickToCollapseText}
-            clickToExpandText={clickToExpandText}
-            columns={columns}
-            id={row.id}
-            totalColumns={totalColumns}
-            tableId={id}
-            options={{
-              hasRowSelection,
-              hasRowStickySelection,
-              hasRowExpansion,
-              shouldExpandOnRowClick,
-            }}
-            tableActions={pick(
-              actions,
-              'onRowSelected',
-              'onApplyRowAction',
-              'onRowExpanded',
-              'onRowClicked',
-              'onRowStickySelected'
-            )}
-            rowActions={row.rowActions}>
-            {row.values}
-          </TableBodyRow>
-        );
-      })}
-    </CarbonTableBody>
-  );
+  const renderRow = (row, nestingLevel = 0) => {
+    const isRowExpanded = expandedIds.includes(row.id);
+    const shouldShowChildren =
+      hasRowNesting && isRowExpanded && row.children && row.children.length > 0;
+    const rowElement = (
+      <TableBodyRow
+        key={row.id}
+        isExpanded={isRowExpanded}
+        isSelected={selectedIds.includes(row.id)}
+        isStickySelected={stickySelectedRowId === row.id}
+        rowDetails={
+          isRowExpanded && expandedRows.find(j => j.rowId === row.id)
+            ? expandedRows.find(j => j.rowId === row.id).content
+            : null
+        }
+        ordering={orderingMap}
+        selectRowText={selectRowText}
+        overflowMenuText={overflowMenuText}
+        clickToCollapseText={clickToCollapseText}
+        clickToExpandText={clickToExpandText}
+        columns={columns}
+        id={row.id}
+        totalColumns={totalColumns}
+        tableId={id}
+        options={{
+          hasRowSelection,
+          hasRowStickySelection,
+          hasRowExpansion,
+          hasRowNesting,
+          hasRowActions,
+          shouldExpandOnRowClick,
+        }}
+        nestingLevel={nestingLevel}
+        nestingChildCount={row.children ? row.children.length : 0}
+        tableActions={pick(
+          actions,
+          'onRowSelected',
+          'onApplyRowAction',
+          'onRowExpanded',
+          'onRowClicked',
+          'onRowStickySelected'
+        )}
+        rowActions={row.rowActions}>
+        {row.values}
+      </TableBodyRow>
+    );
+    return shouldShowChildren
+      ? [rowElement].concat(row.children.map(childRow => renderRow(childRow, nestingLevel + 1)))
+      : rowElement;
+  };
+
+  return <CarbonTableBody>{rows.map(row => renderRow(row))}</CarbonTableBody>;
 };
 
 TableBody.propTypes = propTypes;

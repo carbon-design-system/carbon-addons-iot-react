@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { iconFilter, iconGrid } from 'carbon-icons';
+import { iconFilter } from 'carbon-icons';
+import IconColumnSelector from '@carbon/icons-react/lib/column/20';
 import { DataTable, Button } from 'carbon-components-react';
 import styled from 'styled-components';
 
@@ -20,14 +21,17 @@ const StyledTableToolbarAction = styled(({ isActive, ...other }) => (
   <TableToolbarAction {...other} />
 ))`
   &&& {
-    padding: 0.75rem;
+    padding-right: 0.75rem;
     display: flex;
     height: 2.5rem;
     width: unset;
 
     :focus {
       height: calc(2.5rem - 2px);
-      padding-top: calc(0.75rem - 1px);
+
+      > svg {
+        fill: ${COLORS.blue};
+      }
     }
 
     :not(:focus) > svg {
@@ -164,9 +168,9 @@ const TableToolbar = ({
         onCancel={onCancelBatchAction}
         shouldShowBatchActions={totalSelected > 0}
         totalSelected={totalSelected}>
-        {batchActions.map(i => (
-          <TableBatchAction key={i.id} onClick={() => onApplyBatchAction(i.id)} {...i}>
-            {i.labelText}
+        {batchActions.map(({ id, labelText, ...others }) => (
+          <TableBatchAction key={id} onClick={() => onApplyBatchAction(id)} {...others}>
+            {labelText}
           </TableBatchAction>
         ))}
       </TableBatchActions>
@@ -179,7 +183,7 @@ const TableToolbar = ({
       {hasColumnSelection ? (
         <StyledTableToolbarAction
           className="bx--btn--sm"
-          icon={iconGrid}
+          renderIcon={() => <IconColumnSelector />}
           iconDescription={columnSelectionText}
           isActive={activeBar === 'column'}
           onClick={onToggleColumnSelection}

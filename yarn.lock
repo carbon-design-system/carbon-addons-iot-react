@@ -1172,6 +1172,11 @@
     "@carbon/icon-helpers" "0.0.1-beta.5"
     prop-types "^15.6.2"
 
+"@carbon/icons@^10.1.0":
+  version "10.1.0"
+  resolved "https://registry.yarnpkg.com/@carbon/icons/-/icons-10.1.0.tgz#12daa64ef63c47128c2b2cc570456df5fdc34f1d"
+  integrity sha512-LEgjcD2W87t6vmmv9cfEMIji92gAgadMMOmb6LqXFepPn3dQechHmejS4td8K2thOf4hIuqcOQUlJSHJwCFMuA==
+
 "@commitlint/cli@^7.2.1":
   version "7.2.1"
   resolved "https://registry.yarnpkg.com/@commitlint/cli/-/cli-7.2.1.tgz#dbb9eeb1f5015a129bb0801fbc1115eb1dcd513b"
