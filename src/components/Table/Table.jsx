@@ -42,6 +42,7 @@ const propTypes = {
     hasPagination: PropTypes.bool,
     hasRowSelection: PropTypes.bool,
     hasRowExpansion: PropTypes.bool,
+    hasRowNesting: PropTypes.bool,
     hasRowActions: PropTypes.bool,
     hasFilter: PropTypes.bool,
     /** has simple search capability */
@@ -152,6 +153,7 @@ export const defaultProps = baseProps => ({
     hasRowSelection: false,
     hasRowExpansion: false,
     hasRowActions: false,
+    hasRowNesting: false,
     hasFilter: false,
     hasSearch: false,
     hasColumnSelection: false,
@@ -350,7 +352,14 @@ const Table = props => {
               clickToExpandText={i18n.clickToExpandAria}
               clickToCollapseText={i18n.clickToCollapseAria}
               totalColumns={totalColumns}
-              {...pick(options, 'hasRowSelection', 'hasRowExpansion', 'shouldExpandOnRowClick')}
+              {...pick(
+                options,
+                'hasRowSelection',
+                'hasRowExpansion',
+                'hasRowActions',
+                'hasRowNesting',
+                'shouldExpandOnRowClick'
+              )}
               ordering={view.table.ordering}
               actions={pick(
                 actions.table,
