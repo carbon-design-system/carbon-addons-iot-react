@@ -231,7 +231,7 @@ const StyledExpansionTableRow = styled(TableRow)`
 const StyledTableCellRow = styled(TableCell)`
   &&& {
     ${props => {
-      const { width } = props;
+      const { width, offset } = props;
       return width !== undefined
         ? `
         min-width: ${width};
@@ -239,10 +239,16 @@ const StyledTableCellRow = styled(TableCell)`
         white-space: nowrap;
         overflow-x: hidden;
         text-overflow: ellipsis;
+        padding-right: ${offset}px;
       `
-        : '';
+        : `padding-right: ${props.offset}px`;
     }};
   }
+`;
+
+const StyledNestedSpan = styled.span`
+  position: relative;
+  left: ${props => props.nestingOffset}px;
 `;
 
 const TableBodyRow = ({
@@ -284,14 +290,14 @@ const TableBodyRow = ({
       https://github.com/IBM/carbon-components-react/issues/1247
       Also move onClick logic above into TableSelectRow
       */}
-      <span style={{ position: 'relative', left: nestingOffset }}>
+      <StyledNestedSpan nestingOffset={nestingOffset}>
         <Checkbox
           id={`select-row-${id}`}
           labelText={selectRowText}
           hideLabel
           checked={isSelected}
         />
-      </span>
+      </StyledNestedSpan>
     </StyledCheckboxTableCell>
   ) : null;
 
@@ -307,9 +313,9 @@ const TableBodyRow = ({
             key={col.columnId}
             data-column={col.columnId}
             data-offset={offset}
-            style={{ paddingRight: offset }}
+            offset={offset}
             width={matchingColumnMeta && matchingColumnMeta.width}>
-            <span style={{ position: 'relative', left: offset }}>
+            <StyledNestedSpan nestingOffset={offset}>
               {col.renderDataFunction ? (
                 col.renderDataFunction({
                   // Call the column renderer if it's provided
@@ -321,7 +327,7 @@ const TableBodyRow = ({
               ) : (
                 <TableCellRenderer>{children[col.columnId]}</TableCellRenderer>
               )}
-            </span>
+            </StyledNestedSpan>
           </StyledTableCellRow>
         ) : null;
       })}
@@ -333,8 +339,10 @@ const TableBodyRow = ({
           overflowMenuText={overflowMenuText}
           onApplyRowAction={onApplyRowAction}
         />
-      ) : (
+      ) : nestingLevel > 0 && hasRowActions ? (
         <TableCell key={`${id}-row-actions-cell`} />
+      ) : (
+        undefined
       )}
     </React.Fragment>
   );
