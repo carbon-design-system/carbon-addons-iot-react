@@ -8,7 +8,7 @@ import styled from 'styled-components';
 
 const StyledProgressIndicator = styled(CarbonProgressIndicator)`
   &&& {
-    display: inline-flex;
+    display: ${props => (props.isverticalmode === 'false' ? 'inline-flex' : '')};
     .bx--progress-step--complete {
       cursor: pointer;
     }
@@ -27,6 +27,16 @@ const StyledProgressStep = styled(({ showLabel, stepWidth, ...others }) => (
     p {
       display: ${props => (!props.showLabel ? 'none' : 'inherit')};
     }
+    ${props => {
+      const { isverticalmode } = props;
+      return isverticalmode === 'true'
+        ? `
+        .bx--progress-step-button {
+        flex-flow: initial;
+      }
+      `
+        : '';
+    }}
   }
 `;
 
@@ -44,6 +54,8 @@ const propTypes = {
   showLabels: PropTypes.bool,
   /** width of step in px */
   stepWidth: PropTypes.number,
+  /** progress indicator is vertical */
+  isVerticalMode: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -51,6 +63,7 @@ const defaultProps = {
   showLabels: true,
   stepWidth: 102,
   currentItemId: null,
+  isVerticalMode: false,
 };
 
 /** This component extends the default Carbon ProgressIndicator.  It adds the ability to hideLabels on non-current steps and set a maximum stepWidth in pixels */
@@ -61,6 +74,7 @@ const ProgressIndicator = ({
   onClickItem,
   stepWidth,
   className,
+  isVerticalMode,
 }) => {
   const handleChange = index => {
     if (onClickItem) {
@@ -78,9 +92,10 @@ const ProgressIndicator = ({
 
   return (
     <StyledProgressIndicator
-      className={className}
+      className={[className, isVerticalMode ? 'bx--progress--vertical' : ''].join(' ')}
       onChange={handleChange}
-      currentIndex={currentStep}>
+      currentIndex={currentStep}
+      isverticalmode={isVerticalMode.toString()}>
       {items.map(({ id, label }) => (
         <StyledProgressStep
           key={id}
@@ -88,6 +103,7 @@ const ProgressIndicator = ({
           description={label}
           showLabel={showLabels || currentItemId === id}
           stepWidth={stepWidth}
+          isverticalmode={isVerticalMode.toString()}
         />
       ))}
     </StyledProgressIndicator>

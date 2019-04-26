@@ -37,6 +37,7 @@ class ProgressIndicatorExample extends Component {
         currentItemId={currentItemId}
         showLabels={boolean('showlabels', true)}
         stepWidth={number('stepWidth', 136)}
+        isVerticalMode={boolean('isVericalMode', false)}
       />
     );
   }
@@ -52,6 +53,16 @@ storiesOf('ProgressIndicator', module)
       onClickItem={action('onClickItem')}
       showLabels={boolean('showlabels', true)}
       stepWidth={number('stepWidth', 136)}
+    />
+  ))
+  .add('presentation vertical', () => (
+    <ProgressIndicator
+      items={items}
+      currentItemId={select('id', items.map(item => item.id), items[0].id)}
+      onClickItem={action('onClickItem')}
+      showLabels={boolean('showlabels', true)}
+      stepWidth={number('stepWidth', 136)}
+      isVerticalMode
     />
   ))
   .add('hideLabels and default stepWidth', () => (
