@@ -218,7 +218,6 @@ const actions = {
   table: {
     onRowClicked: action('onRowClicked'),
     onRowSelected: action('onRowSelected'),
-    onRowStickySelected: action('onRowStickySelected'),
     onSelectAll: action('onSelectAll'),
     onEmptyStateAction: action('onEmptyStateAction'),
     onApplyRowAction: action('onApplyRowAction'),
@@ -260,7 +259,7 @@ export const initialState = {
     hasFilter: true,
     hasSearch: true,
     hasPagination: true,
-    hasRowSelection: true,
+    hasRowSelection: 'multi',
     hasRowExpansion: true,
     hasRowActions: true,
     hasColumnSelection: true,
@@ -286,7 +285,6 @@ export const initialState = {
     table: {
       isSelectAllSelected: false,
       selectedIds: [],
-      stickySelectedRowId: '',
       sort: undefined,
       ordering: tableColumns.map(({ id }) => ({
         columnId: id,
@@ -456,7 +454,7 @@ storiesOf('Table', module)
       options={{ hasSearch: true }}
     />
   ))
-  .add('with selection and batch actions', () => (
+  .add('with multi select and batch actions', () => (
     // TODO - batch action bar
     <Table
       columns={tableColumns}
@@ -465,7 +463,7 @@ storiesOf('Table', module)
       options={{
         hasFilter: true,
         hasPagination: true,
-        hasRowSelection: true,
+        hasRowSelection: 'multi',
       }}
       view={{
         filters: [],
@@ -488,13 +486,13 @@ storiesOf('Table', module)
       }}
     />
   ))
-  .add('with sticky selection', () => (
+  .add('with single select', () => (
     <Table
       columns={tableColumns}
       data={tableData}
       actions={actions}
-      options={{ hasRowStickySelection: true }}
-      view={{ table: { stickySelectedRowId: 'row-3' } }}
+      options={{ hasRowSelection: 'single' }}
+      view={{ table: { selectedIds: ['row-3'] } }}
     />
   ))
   .add('with row expansion', () => (
@@ -611,7 +609,7 @@ storiesOf('Table', module)
       options={{
         hasFilter: false,
         hasPagination: true,
-        hasRowSelection: true,
+        hasRowSelection: 'multi',
       }}
       view={{
         filters: [],
@@ -640,7 +638,7 @@ storiesOf('Table', module)
           options={{
             hasFilter: true,
             hasPagination: true,
-            hasRowSelection: true,
+            hasRowSelection: 'multi',
           }}
           view={{
             filters: [],
@@ -694,7 +692,7 @@ storiesOf('Table', module)
         options={{
           hasFilter: true,
           hasPagination: true,
-          hasRowSelection: true,
+          hasRowSelection: 'multi',
         }}
         view={{
           filters: [
@@ -727,7 +725,7 @@ storiesOf('Table', module)
       actions={actions}
       options={{
         hasPagination: true,
-        hasRowSelection: true,
+        hasRowSelection: 'multi',
         hasColumnSelection: true,
       }}
       view={{
@@ -800,7 +798,7 @@ storiesOf('Table', module)
       }))}
       options={{
         hasPagination: true,
-        hasRowSelection: true,
+        hasRowSelection: 'multi',
         hasRowExpansion: true,
         hasRowNesting: true,
       }}

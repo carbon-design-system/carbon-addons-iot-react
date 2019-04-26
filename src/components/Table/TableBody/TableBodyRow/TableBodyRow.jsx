@@ -40,8 +40,7 @@ const propTypes = {
   columns: TableColumnsPropTypes.isRequired,
   /** table wide options */
   options: PropTypes.shape({
-    hasRowSelection: PropTypes.bool,
-    hasRowStickySelection: PropTypes.bool,
+    hasRowSelection: PropTypes.oneOf(['multi', 'single', '']),
     hasRowExpansion: PropTypes.bool,
     hasRowNesting: PropTypes.bool,
     shouldExpandOnRowClick: PropTypes.bool,
@@ -58,8 +57,6 @@ const propTypes = {
 
   /** is the row currently selected */
   isSelected: PropTypes.bool,
-  /** is the row currently sticky selected */
-  isStickySelected: PropTypes.bool,
   /** is the row currently expanded */
   isExpanded: PropTypes.bool,
   /** optional row details */
@@ -72,7 +69,6 @@ const propTypes = {
   /** tableActions */
   tableActions: PropTypes.shape({
     onRowSelected: PropTypes.func,
-    onRowStickySelected: PropTypes.func,
     onRowClicked: PropTypes.func,
     onApplyRowAction: PropTypes.func,
     onRowExpanded: PropTypes.func,
@@ -114,9 +110,9 @@ const StyledTableRow = styled(TableRow)`
   }
 `;
 
-const StyledStickySelectedTableRow = styled(TableRow)`
+const StyledSingleSelectedTableRow = styled(TableRow)`
   &&& {
-    background: ${COLORS.superLightGray};
+    background: ${COLORS.lightBlue};
     border-left: 5px solid ${COLORS.blue};
 
     td {
@@ -273,22 +269,14 @@ const TableBodyRow = ({
   columns,
   options: {
     hasRowSelection,
-    hasRowStickySelection,
     hasRowExpansion,
     hasRowActions,
     hasRowNesting,
     shouldExpandOnRowClick,
   },
-  tableActions: {
-    onRowSelected,
-    onRowExpanded,
-    onRowClicked,
-    onApplyRowAction,
-    onRowStickySelected,
-  },
+  tableActions: { onRowSelected, onRowExpanded, onRowClicked, onApplyRowAction },
   isExpanded,
   isSelected,
-  isStickySelected,
   selectRowText,
   overflowMenuText,
   clickToExpandText,
@@ -300,28 +288,29 @@ const TableBodyRow = ({
   rowDetails,
 }) => {
   const nestingOffset = nestingLevel * 16;
-  const rowSelectionCell = hasRowSelection ? (
-    <StyledCheckboxTableCell
-      key={`${id}-row-selection-cell`}
-      onClick={e => {
-        onRowSelected(id, !isSelected);
-        e.preventDefault();
-        e.stopPropagation();
-      }}>
-      {/* TODO: Replace checkbox with TableSelectRow component when onChange bug is fixed
+  const rowSelectionCell =
+    hasRowSelection === 'multi' ? (
+      <StyledCheckboxTableCell
+        key={`${id}-row-selection-cell`}
+        onClick={e => {
+          onRowSelected(id, !isSelected);
+          e.preventDefault();
+          e.stopPropagation();
+        }}>
+        {/* TODO: Replace checkbox with TableSelectRow component when onChange bug is fixed
       https://github.com/IBM/carbon-components-react/issues/1247
       Also move onClick logic above into TableSelectRow
       */}
-      <StyledNestedSpan nestingOffset={nestingOffset}>
-        <Checkbox
-          id={`select-row-${id}`}
-          labelText={selectRowText}
-          hideLabel
-          checked={isSelected}
-        />
-      </StyledNestedSpan>
-    </StyledCheckboxTableCell>
-  ) : null;
+        <StyledNestedSpan nestingOffset={nestingOffset}>
+          <Checkbox
+            id={`select-row-${id}`}
+            labelText={selectRowText}
+            hideLabel
+            checked={isSelected}
+          />
+        </StyledNestedSpan>
+      </StyledCheckboxTableCell>
+    ) : null;
 
   const firstVisibleColIndex = ordering.findIndex(col => !col.isHidden);
   const tableCells = (
@@ -383,6 +372,9 @@ const TableBodyRow = ({
             if (shouldExpandOnRowClick) {
               onRowExpanded(id, false);
             }
+            if (hasRowSelection === 'single') {
+              onRowSelected(id, true);
+            }
             onRowClicked(id);
           }}>
           {tableCells}
@@ -408,21 +400,29 @@ const TableBodyRow = ({
           if (shouldExpandOnRowClick) {
             onRowExpanded(id, true);
           }
+          if (hasRowSelection === 'single') {
+            onRowSelected(id, true);
+          }
           onRowClicked(id);
         }}>
         {tableCells}
       </StyledTableExpandRow>
     )
-  ) : hasRowStickySelection && isStickySelected ? (
-    <StyledStickySelectedTableRow key={id} onClick={() => onRowClicked(id)}>
+  ) : hasRowSelection === 'single' && isSelected ? (
+    <StyledSingleSelectedTableRow
+      key={id}
+      onClick={() => {
+        onRowClicked(id);
+        onRowSelected(id, true);
+      }}>
       {tableCells}
-    </StyledStickySelectedTableRow>
+    </StyledSingleSelectedTableRow>
   ) : (
     <StyledTableRow
       key={id}
       onClick={() => {
-        if (hasRowStickySelection) {
-          onRowStickySelected(id);
+        if (hasRowSelection === 'single') {
+          onRowSelected(id, true);
         }
         onRowClicked(id);
       }}>

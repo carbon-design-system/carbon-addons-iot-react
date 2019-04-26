@@ -8,7 +8,6 @@ export const TABLE_ACTION_APPLY = 'TABLE_ACTION_APPLY';
 export const TABLE_COLUMN_SORT = 'TABLE_COLUMN_SORT';
 export const TABLE_COLUMN_ORDER = 'TABLE_COLUMN_ORDER';
 export const TABLE_ROW_SELECT = 'TABLE_ROW_SELECT';
-export const TABLE_ROW_STICKY_SELECT = 'TABLE_ROW_STICKY_SELECT';
 export const TABLE_ROW_SELECT_ALL = 'TABLE_ROW_SELECT_ALL';
 export const TABLE_ROW_CLICK = 'TABLE_ROW_CLICK';
 export const TABLE_ROW_EXPAND = 'TABLE_ROW_EXPAND';
@@ -39,14 +38,9 @@ export const tableColumnOrder = ordering => ({ type: TABLE_COLUMN_ORDER, payload
 export const tableEmptyStateAction = () => ({ type: TABLE_EMPTY_STATE_ACTION });
 
 /** Select a row of the table */
-export const tableRowSelect = (rowId, isSelected) => ({
+export const tableRowSelect = (rowId, isSelected, hasRowSelection) => ({
   type: TABLE_ROW_SELECT,
-  payload: { rowId, isSelected },
-});
-/** Sticky select a row of the table */
-export const tableRowStickySelect = rowId => ({
-  type: TABLE_ROW_STICKY_SELECT,
-  payload: { rowId },
+  payload: { rowId, isSelected, hasRowSelection },
 });
 /** Select all the currently filtered rows of the table */
 export const tableRowSelectAll = isSelected => ({

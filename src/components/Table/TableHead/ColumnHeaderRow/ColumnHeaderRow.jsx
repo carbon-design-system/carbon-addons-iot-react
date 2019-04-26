@@ -69,7 +69,7 @@ class ColumnHeaderRow extends Component {
       })
     ).isRequired,
     tableOptions: PropTypes.shape({
-      hasRowSelection: PropTypes.bool,
+      hasRowSelection: PropTypes.oneOf(['multi', 'single', '']),
       hasRowExpansion: PropTypes.bool,
     }).isRequired,
     onChangeOrdering: PropTypes.func.isRequired,
@@ -105,7 +105,7 @@ class ColumnHeaderRow extends Component {
     );
     return (
       <StyledColumnSelectTableRow>
-        {hasRowSelection ? <StyledTableHeader /> : null}
+        {hasRowSelection === 'multi' ? <StyledTableHeader /> : null}
         {hasRowExpansion ? <StyledTableHeader /> : null}
         <StyledTableHeader colSpan={visibleColumns.length + (hasRowActions ? 1 : 0)}>
           <StyledColumnSelectWrapper>

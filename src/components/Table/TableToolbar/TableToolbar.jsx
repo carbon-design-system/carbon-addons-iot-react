@@ -100,6 +100,8 @@ const propTypes = {
     activeBar: PropTypes.oneOf(['column', 'filter']),
     /** total number of selected rows */
     totalSelected: PropTypes.number,
+    /** row selection option */
+    hasRowSelection: PropTypes.oneOf(['multi', 'single', '']),
     /** optional content to render inside the toolbar  */
     customToolbarContent: PropTypes.node,
     /** available batch actions */
@@ -148,6 +150,7 @@ const TableToolbar = ({
   },
   tableState: {
     totalSelected,
+    hasRowSelection,
     totalFilters,
     batchActions,
     search,
@@ -166,7 +169,7 @@ const TableToolbar = ({
     <StyledTableToolbarContent>
       <TableBatchActions
         onCancel={onCancelBatchAction}
-        shouldShowBatchActions={totalSelected > 0}
+        shouldShowBatchActions={hasRowSelection === 'multi' && totalSelected > 0}
         totalSelected={totalSelected}>
         {batchActions.map(({ id, labelText, ...others }) => (
           <TableBatchAction key={id} onClick={() => onApplyBatchAction(id)} {...others}>

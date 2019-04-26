@@ -17,7 +17,6 @@ const propTypes = {
   columns: TableColumnsPropTypes,
   expandedIds: PropTypes.arrayOf(PropTypes.string),
   selectedIds: PropTypes.arrayOf(PropTypes.string),
-  stickySelectedRowId: PropTypes.string,
   /** internationalized label */
   selectRowText: PropTypes.string,
   /** internationalized label */
@@ -28,8 +27,7 @@ const propTypes = {
   clickToCollapseText: PropTypes.string,
   /** since some columns might not be currently visible */
   totalColumns: PropTypes.number,
-  hasRowSelection: PropTypes.bool,
-  hasRowStickySelection: PropTypes.bool,
+  hasRowSelection: PropTypes.oneOf(['multi', 'single', '']),
   hasRowExpansion: PropTypes.bool,
   hasRowNesting: PropTypes.bool,
   hasRowActions: PropTypes.bool,
@@ -54,7 +52,6 @@ const propTypes = {
 const defaultProps = {
   expandedIds: [],
   selectedIds: [],
-  stickySelectedRowId: '',
   selectRowText: 'Select row',
   overflowMenuText: 'More actions',
   clickToExpandText: 'Click to expand.',
@@ -63,8 +60,7 @@ const defaultProps = {
   expandedRows: [],
   columns: [],
   totalColumns: 0,
-  hasRowSelection: false,
-  hasRowStickySelection: false,
+  hasRowSelection: '',
   hasRowExpansion: false,
   hasRowNesting: false,
   hasRowActions: false,
@@ -78,7 +74,6 @@ const TableBody = ({
   expandedIds,
   expandedRows,
   selectedIds,
-  stickySelectedRowId,
   selectRowText,
   overflowMenuText,
   clickToExpandText,
@@ -87,7 +82,6 @@ const TableBody = ({
   actions,
   hasRowActions,
   hasRowSelection,
-  hasRowStickySelection,
   hasRowExpansion,
   hasRowNesting,
   shouldExpandOnRowClick,
@@ -112,7 +106,6 @@ const TableBody = ({
         key={row.id}
         isExpanded={isRowExpanded}
         isSelected={selectedIds.includes(row.id)}
-        isStickySelected={stickySelectedRowId === row.id}
         rowDetails={
           isRowExpanded && expandedRows.find(j => j.rowId === row.id)
             ? expandedRows.find(j => j.rowId === row.id).content
@@ -129,7 +122,6 @@ const TableBody = ({
         tableId={id}
         options={{
           hasRowSelection,
-          hasRowStickySelection,
           hasRowExpansion,
           hasRowNesting,
           hasRowActions,
@@ -142,8 +134,7 @@ const TableBody = ({
           'onRowSelected',
           'onApplyRowAction',
           'onRowExpanded',
-          'onRowClicked',
-          'onRowStickySelected'
+          'onRowClicked'
         )}
         rowActions={row.rowActions}>
         {row.values}

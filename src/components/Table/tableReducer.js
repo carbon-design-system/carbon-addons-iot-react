@@ -15,7 +15,6 @@ import {
   TABLE_COLUMN_SORT,
   TABLE_ROW_SELECT,
   TABLE_ROW_SELECT_ALL,
-  TABLE_ROW_STICKY_SELECT,
   TABLE_ROW_EXPAND,
   TABLE_COLUMN_ORDER,
   TABLE_REGISTER,
@@ -212,10 +211,6 @@ export const tableReducer = (state = {}, action) => {
       return baseTableReducer({ ...state, data }, action);
     }
     case TABLE_ROW_SELECT_ALL: {
-      const data = state.view.table.filteredData || state.data;
-      return baseTableReducer({ ...state, data }, action);
-    }
-    case TABLE_ROW_STICKY_SELECT: {
       const data = state.view.table.filteredData || state.data;
       return baseTableReducer({ ...state, data }, action);
     }
