@@ -12,9 +12,11 @@ import Bee32 from '@carbon/icons-react/lib/bee/32';
 
 const StructuredListWrapperStyled = styled(StructuredListWrapper)`
    {
+    && {
+      width: ${props => (props.isfixedwidth === 'true' ? 'inherit;' : '')};
+    }
     background-color: #ffffff;
     margin-bottom: 0;
-    ${props => (props.isFixedWidth ? 'width: inherit;' : '')}
 
     .bx--structured-list-th {
       padding-left: 16px;
@@ -27,7 +29,7 @@ const StructuredListWrapperStyled = styled(StructuredListWrapper)`
   }
 `;
 
-const EmptyDiv = styled.div`
+const EmptyContent = styled.div`
    {
     background-color: #ffffff;
     text-align: center;
@@ -36,6 +38,8 @@ const EmptyDiv = styled.div`
     padding-top: 90px;
     padding-bottom: 115px;
     font-weight: regular;
+    caption-side: bottom;
+    display: table-caption;
   }
 `;
 
@@ -67,7 +71,7 @@ const StyledStructuredListCell = styled(StructuredListCell)`
  */
 const StructuredList = ({ columns, data, design, isFixedWidth, onRowClick, loadingDataLabel }) => (
   <Fragment>
-    <StructuredListWrapperStyled selection isFixedWidth={isFixedWidth}>
+    <StructuredListWrapperStyled selection isfixedwidth={isFixedWidth.toString()}>
       <StructuredListHead>
         <StructuredListRow head>
           {columns.map(({ id, title, width = undefined }) => (
@@ -92,15 +96,15 @@ const StructuredList = ({ columns, data, design, isFixedWidth, onRowClick, loadi
           </StructuredListRow>
         ))}
       </StructuredListBody>
+      {!data.length ? (
+        <EmptyContent>
+          <Bee32 width={100} height={100} fill="#5a6872" />
+          <LoadingDiv>{loadingDataLabel}</LoadingDiv>
+        </EmptyContent>
+      ) : (
+        undefined
+      )}
     </StructuredListWrapperStyled>
-    {!data.length ? (
-      <EmptyDiv>
-        <Bee32 width={100} height={100} fill="#5a6872" />
-        <LoadingDiv>{loadingDataLabel}</LoadingDiv>
-      </EmptyDiv>
-    ) : (
-      undefined
-    )}
   </Fragment>
 );
 

@@ -72,4 +72,13 @@ storiesOf('StructuredList', module)
       loadingDataLabel="No data is available yet."
       onRowClick={action('onRowClick')}
     />
+  ))
+  .add('with empty state with fixed column width', () => (
+    <StructuredList
+      columns={columns.map((i, idx) => ({ ...i, width: `${10 + idx * 2}rem` }))}
+      data={[]}
+      isFixedWidth
+      loadingDataLabel="No data is available yet."
+      onRowClick={action('onRowClick')}
+    />
   ));
