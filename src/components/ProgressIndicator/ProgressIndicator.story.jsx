@@ -37,7 +37,7 @@ class ProgressIndicatorExample extends Component {
         currentItemId={currentItemId}
         showLabels={boolean('showlabels', true)}
         stepWidth={number('stepWidth', 136)}
-        isVerticalMode={boolean('isVericalMode', false)}
+        isVerticalMode={boolean('isVerticalMode', false)}
       />
     );
   }
