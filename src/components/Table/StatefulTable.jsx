@@ -131,9 +131,9 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
         dispatch(tableRowExpand(rowId, isExpanded));
         callbackParent(onRowExpanded, rowId, isExpanded);
       },
-      onApplyRowAction: (rowId, actionId) =>
+      onApplyRowAction: (actionId, rowId) =>
         // This action doesn't update our table state, it's up to the user
-        callbackParent(onApplyRowAction, rowId, actionId),
+        callbackParent(onApplyRowAction, actionId, rowId),
       onEmptyStateAction: () =>
         // This action doesn't update our table state, it's up to the user
         callbackParent(onEmptyStateAction),

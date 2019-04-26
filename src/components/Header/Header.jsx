@@ -18,6 +18,9 @@ import HeaderMenu from './HeaderMenu';
 const StyledHeader = styled(CarbonHeader)`
   &&& {
     background: ${COLORS.darkGray};
+    position: fixed;
+    top: 0;
+    left: 0;
 
     .bx--header__menu {
       min-width: 12.5rem;

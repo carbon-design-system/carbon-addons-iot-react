@@ -11,8 +11,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { SideNavFooter } from 'carbon-components-react//lib/components/UIShell';
 
-import { AriaLabelPropType } from './AriaPropTypes';
-
 const { prefix } = settings;
 
 const translations = {
@@ -33,7 +31,9 @@ export default class SideNav extends React.Component {
     /**
      * Required props for accessibility label on the underlying menu
      */
-    ...AriaLabelPropType,
+
+    'aria-label': PropTypes.string, // eslint-disable-line
+    'aria-labelledby': PropTypes.string, // eslint-disable-line
 
     /**
      * Optionally provide a custom class to apply to the underlying <li> node
@@ -80,7 +80,7 @@ export default class SideNav extends React.Component {
     const {
       'aria-label': ariaLabel,
       'aria-labelledby': ariaLabelledBy,
-      children,
+      children, // eslint-disable-line
       className: customClassName,
       translateById: t,
     } = this.props;

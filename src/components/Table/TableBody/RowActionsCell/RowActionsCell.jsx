@@ -86,7 +86,7 @@ const defaultProps = {
 };
 
 const onClick = (e, id, action, onApplyRowAction) => {
-  onApplyRowAction(id, action);
+  onApplyRowAction(action, id);
   e.preventDefault();
   e.stopPropagation();
 };

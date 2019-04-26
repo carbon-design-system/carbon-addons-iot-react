@@ -55,6 +55,8 @@ const propTypes = {
   page: PropTypes.number.isRequired,
   /** The maximum page number that can be navigated to */
   maxPage: PropTypes.number.isRequired,
+  /** Gets called back with arguments (page, maxPage) */
+  pageOfPagesText: PropTypes.func,
   /** Internationalized label for the word 'Page' */
   pageText: PropTypes.string,
   /** Internationalized label for the word 'Next page' */
@@ -66,13 +68,22 @@ const propTypes = {
 };
 
 const defaultProps = {
-  pageText: 'Page',
+  pageOfPagesText: (page, maxPage) => `Page ${page} of ${maxPage}`,
+  pageText: null,
   nextPageText: 'Next page',
   prevPageText: 'Prev page',
 };
 
 /** This is a lighter weight pagination component than the default Carbon one */
-const SimplePagination = ({ pageText, prevPageText, nextPageText, page, maxPage, onPage }) => {
+const SimplePagination = ({
+  pageText,
+  prevPageText,
+  nextPageText,
+  pageOfPagesText,
+  page,
+  maxPage,
+  onPage,
+}) => {
   const hasPrev = page > 1;
   const hasNext = page <= maxPage - 1;
 
@@ -82,7 +93,7 @@ const SimplePagination = ({ pageText, prevPageText, nextPageText, page, maxPage,
   return (
     <StyledContainer>
       <StyledPageLabel>
-        {pageText} {page}
+        {pageText ? `${pageText} ${page}` : pageOfPagesText(page, maxPage)}
       </StyledPageLabel>
       <StyledButton
         role="button"

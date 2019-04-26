@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { iconGrid, iconFilter } from 'carbon-icons';
+import { iconFilter, iconGrid } from 'carbon-icons';
 import { DataTable, Button } from 'carbon-components-react';
 import styled from 'styled-components';
 
@@ -23,6 +23,7 @@ const StyledTableToolbarAction = styled(({ isActive, ...other }) => (
     padding: 0.75rem;
     display: flex;
     height: 2.5rem;
+    width: unset;
 
     :focus {
       height: calc(2.5rem - 2px);
@@ -50,10 +51,14 @@ const StyledTableToolbarContent = styled(TableToolbarContent)`
   &&& {
     padding-right: 1px;
     align-items: center;
+    font-size: 0.875rem;
+    > div + * {
+      margin-left: 0.75rem;
+    }
   }
 `;
 
-// Need to save one px on the right for the focus
+// add margin to the right of the Clear filters button
 const StyledClearFiltersButton = styled(Button)`
   &&& {
     margin-right: 0.5rem;
@@ -67,6 +72,7 @@ const propTypes = {
     hasSearch: PropTypes.bool,
     hasColumnSelection: PropTypes.bool,
   }).isRequired,
+
   /** internationalized labels */
   searchPlaceholderText: PropTypes.string,
   clearAllFiltersText: PropTypes.string,
@@ -90,6 +96,8 @@ const propTypes = {
     activeBar: PropTypes.oneOf(['column', 'filter']),
     /** total number of selected rows */
     totalSelected: PropTypes.number,
+    /** optional content to render inside the toolbar  */
+    customToolbarContent: PropTypes.node,
     /** available batch actions */
     batchActions: PropTypes.arrayOf(
       PropTypes.shape({
@@ -120,6 +128,7 @@ const defaultProps = {
 
 const TableToolbar = ({
   className,
+
   clearAllFiltersText,
   searchPlaceholderText,
   columnSelectionText,
@@ -133,7 +142,14 @@ const TableToolbar = ({
     onToggleFilter,
     onApplySearch,
   },
-  tableState: { totalSelected, totalFilters, batchActions, search, activeBar },
+  tableState: {
+    totalSelected,
+    totalFilters,
+    batchActions,
+    search,
+    activeBar,
+    customToolbarContent,
+  },
 }) => (
   <StyledCarbonTableToolbar className={className}>
     {hasSearch ? (
@@ -148,12 +164,13 @@ const TableToolbar = ({
         onCancel={onCancelBatchAction}
         shouldShowBatchActions={totalSelected > 0}
         totalSelected={totalSelected}>
-        {batchActions.map(i => (
-          <TableBatchAction key={i.id} onClick={() => onApplyBatchAction(i.id)} icon={i.icon}>
-            {i.labelText}
+        {batchActions.map(({ id, labelText, ...others }) => (
+          <TableBatchAction key={id} onClick={() => onApplyBatchAction(id)} {...others}>
+            {labelText}
           </TableBatchAction>
         ))}
       </TableBatchActions>
+      {customToolbarContent || null}
       {totalFilters > 0 ? (
         <StyledClearFiltersButton kind="secondary" onClick={onClearAllFilters} small>
           {clearAllFiltersText}

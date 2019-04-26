@@ -49,6 +49,8 @@ export const propTypes = {
   pagination: PropTypes.shape({
     pageSize: PropTypes.number,
     pageText: PropTypes.string,
+    /** Gets called back with arguments (page, maxPage) */
+    pageOfPagesText: PropTypes.func,
     nextPageText: PropTypes.string,
     prevPageText: PropTypes.string,
     onPage: PropTypes.func,
@@ -168,7 +170,7 @@ const TileCatalog = ({
           )}
         </StyledEmptyTile>
       )}
-      {pagination ? (
+      {!isLoading && tiles.length > 0 && !error && pagination ? (
         <SimplePagination {...pagination} maxPage={Math.ceil(totalTiles / pageSize)} />
       ) : null}
     </StyledContainerDiv>

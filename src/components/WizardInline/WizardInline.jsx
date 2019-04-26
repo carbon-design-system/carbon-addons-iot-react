@@ -18,11 +18,13 @@ const StyledWizardWrapper = styled.div`
     margin-bottom: 48px;
     max-height: 80vh;
     overflow: auto;
+    width: 100%;
   }
 
   .bx--modal-container {
     min-width: 630px;
     max-width: 90%;
+    width: 90%;
     margin-top: 24px;
     padding-top: 32px;
     padding-bottom: 72px;

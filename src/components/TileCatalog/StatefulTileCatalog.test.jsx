@@ -61,6 +61,24 @@ describe('StatefulTileCatalog', () => {
     expect(selectedTile).toHaveLength(1);
     expect(selectedTile.prop('id')).toEqual('test2');
   });
+  test('selectedTileId should change page', () => {
+    const wrapper = mount(
+      <StatefulTileCatalog
+        {...commonTileProps}
+        pagination={{ pageSize: 6, page: 1 }}
+        selectedTileId="test7"
+      />
+    );
+
+    // On page 2 because of the selectedTileId
+    expect(
+      wrapper
+        .find('span')
+        .at(1)
+        .text()
+    ).toContain('Page 2');
+  });
+
   test('tiles prop change resets page', () => {
     const wrapper = mount(
       <StatefulTileCatalog {...commonTileProps} pagination={{ pageSize: 5 }} />
@@ -71,7 +89,7 @@ describe('StatefulTileCatalog', () => {
         .find('span')
         .at(1)
         .text()
-    ).toEqual('Page 1');
+    ).toContain('Page 1');
     const nextButton = wrapper.find('div[tabIndex=0]');
     nextButton.simulate('click');
     // on Page 2
@@ -80,7 +98,7 @@ describe('StatefulTileCatalog', () => {
         .find('span')
         .at(1)
         .text()
-    ).toEqual('Page 2');
+    ).toContain('Page 2');
 
     const newTiles = commonTileProps.tiles.slice(1, 5);
     // Back to Page 1
@@ -91,7 +109,7 @@ describe('StatefulTileCatalog', () => {
         .find('span')
         .at(1)
         .text()
-    ).toEqual('Page 1');
+    ).toContain('Page 1');
 
     // The new first tile should be selected
     expect(

@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react';
+import React, { useReducer, useEffect } from 'react';
 import useDeepCompareEffect from 'use-deep-compare-effect';
 import omit from 'lodash/omit';
 
@@ -9,8 +9,21 @@ import TileCatalog, { propTypes } from './TileCatalog';
  * Paging and searching happens on local state within the component
  */
 
-const StatefulTileCatalog = ({ onSelection, pagination, search, tiles: tilesProp, ...props }) => {
-  const initialState = determineInitialState({ ...props, tiles: tilesProp, search, pagination });
+const StatefulTileCatalog = ({
+  onSelection,
+  pagination,
+  search,
+  selectedTileId: selectedTileIdProp,
+  tiles: tilesProp,
+  ...props
+}) => {
+  const initialState = determineInitialState({
+    ...props,
+    selectedTileId: selectedTileIdProp,
+    tiles: tilesProp,
+    search,
+    pagination,
+  });
   const onPage = pagination && pagination.onPage;
   const onSearch = search && search.onSearch;
 
@@ -21,10 +34,16 @@ const StatefulTileCatalog = ({ onSelection, pagination, search, tiles: tilesProp
       // If we get passed a new set of tiles reset!
       dispatch({
         type: TILE_ACTIONS.RESET,
-        payload: { ...props, tiles: tilesProp, search, pagination },
+        payload: {
+          ...props,
+          selectedTileId: selectedTileIdProp,
+          tiles: tilesProp,
+          search,
+          pagination,
+        },
       });
     },
-    [tilesProp.map(tile => omit(tile, 'renderContent'))]
+    [tilesProp.map(tile => omit(tile, 'renderContent')), selectedTileIdProp]
   );
 
   const {
@@ -46,9 +65,6 @@ const StatefulTileCatalog = ({ onSelection, pagination, search, tiles: tilesProp
 
   const handleSelection = newSelectedTile => {
     dispatch({ type: TILE_ACTIONS.SELECT, payload: newSelectedTile });
-    if (onSelection) {
-      onSelection(newSelectedTile);
-    }
   };
 
   /* I couldn't really get the reselect logic to work correctly
@@ -63,14 +79,15 @@ const StatefulTileCatalog = ({ onSelection, pagination, search, tiles: tilesProp
     },
     [filteredTiles.map(tile => omit(tile, 'renderContent')), searchState, startingIndex, page]
   );
-
+*/
   useEffect(
     () => {
-      onSelection(selectedTileId);
+      if (onSelection) {
+        onSelection(selectedTileId);
+      }
     },
     [selectedTileId] // eslint-disable-line
   );
-  */
 
   const handleSearch = (event, ...args) => {
     const newSearch = event.target.value || '';
@@ -80,12 +97,18 @@ const StatefulTileCatalog = ({ onSelection, pagination, search, tiles: tilesProp
     }
   };
 
+  const isFiltered = searchState !== '';
+
   return (
     <TileCatalog
       {...props}
       selectedTileId={selectedTileId}
       // slice doesn't include the last index!
-      tiles={filteredTiles.slice(startingIndex, endingIndex + 1)}
+      tiles={
+        isFiltered // if the tiles aren't filtered just show the raw prop so that there's no repaint
+          ? filteredTiles.slice(startingIndex, endingIndex + 1)
+          : tilesProp.slice(startingIndex, endingIndex + 1)
+      }
       search={{ ...search, onSearch: handleSearch, value: searchState }}
       pagination={{ ...pagination, page, onPage: handlePage, totalItems: tiles ? tiles.length : 0 }}
       onSelection={handleSelection}
