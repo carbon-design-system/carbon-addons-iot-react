@@ -159,7 +159,7 @@ const StyledTableExpandRowExpanded = styled(TableExpandRow)`
   &&& {
     cursor: pointer;
     ${props =>
-      props['data-child-count'] === 0 && props['data-row-nesting']
+      (props['data-child-count'] === 0 && props['data-row-nesting']) || !props['data-row-nesting']
         ? `
     td {
       background-color: ${COLORS.blue};
@@ -179,7 +179,7 @@ const StyledTableExpandRowExpanded = styled(TableExpandRow)`
       }
     }
     `
-        : props['data-row-nesting']
+        : !props['data-row-nesting']
         ? `
     :hover {
       td {
