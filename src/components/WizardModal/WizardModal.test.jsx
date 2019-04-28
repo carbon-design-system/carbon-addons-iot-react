@@ -83,8 +83,8 @@ describe('WizardModal', () => {
     // Close
     expect(wrapper.find('.bx--modal-close')).toHaveLength(1);
 
-    // Previous/Cancel
-    expect(wrapper.find('.bx--btn--secondary')).toHaveLength(2);
+    // Previous
+    expect(wrapper.find('.bx--btn--secondary')).toHaveLength(1);
 
     // Submit button
     expect(wrapper.find('.bx--btn--primary')).toHaveLength(1);
@@ -119,8 +119,8 @@ describe('WizardModal', () => {
     // Close
     expect(wrapper.find('.bx--modal-close')).toHaveLength(1);
 
-    // Previous/Cancel
-    expect(wrapper.find('.bx--btn--secondary')).toHaveLength(2);
+    // Previous
+    expect(wrapper.find('.bx--btn--secondary')).toHaveLength(1);
 
     // Submit button
     expect(wrapper.find('.bx--btn--primary')).toHaveLength(1);
@@ -128,8 +128,8 @@ describe('WizardModal', () => {
     // Close
     expect(wrapper.find('.bx--modal-close')).toHaveLength(1);
 
-    // Previous/Cancel
-    expect(wrapper.find('.bx--btn--secondary')).toHaveLength(2);
+    // Previous
+    expect(wrapper.find('.bx--btn--secondary')).toHaveLength(1);
 
     // Submit button
     expect(wrapper.find('.bx--btn--primary')).toHaveLength(1);
