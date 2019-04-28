@@ -52,6 +52,9 @@ const StyledFormItem = styled(FormItem)`
     .bx--list-box__selection {
       right: 0;
     }
+    .bx--list-box input[role='combobox'] {
+      padding-right: 3.5rem;
+    }
   }
 `;
 
