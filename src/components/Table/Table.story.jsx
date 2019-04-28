@@ -259,7 +259,7 @@ export const initialState = {
     hasFilter: true,
     hasSearch: true,
     hasPagination: true,
-    hasRowSelection: true,
+    hasRowSelection: 'multi',
     hasRowExpansion: true,
     hasRowActions: true,
     hasColumnSelection: true,
@@ -454,7 +454,7 @@ storiesOf('Table', module)
       options={{ hasSearch: true }}
     />
   ))
-  .add('with selection and batch actions', () => (
+  .add('with multi select and batch actions', () => (
     // TODO - batch action bar
     <Table
       columns={tableColumns}
@@ -463,7 +463,7 @@ storiesOf('Table', module)
       options={{
         hasFilter: true,
         hasPagination: true,
-        hasRowSelection: true,
+        hasRowSelection: 'multi',
       }}
       view={{
         filters: [],
@@ -484,6 +484,15 @@ storiesOf('Table', module)
           selectedIds: ['row-3', 'row-4', 'row-6', 'row-7'],
         },
       }}
+    />
+  ))
+  .add('with single select', () => (
+    <Table
+      columns={tableColumns}
+      data={tableData}
+      actions={actions}
+      options={{ hasRowSelection: 'single' }}
+      view={{ table: { selectedIds: ['row-3'] } }}
     />
   ))
   .add('with row expansion', () => (
@@ -600,7 +609,7 @@ storiesOf('Table', module)
       options={{
         hasFilter: false,
         hasPagination: true,
-        hasRowSelection: true,
+        hasRowSelection: 'multi',
       }}
       view={{
         filters: [],
@@ -629,7 +638,7 @@ storiesOf('Table', module)
           options={{
             hasFilter: true,
             hasPagination: true,
-            hasRowSelection: true,
+            hasRowSelection: 'multi',
           }}
           view={{
             filters: [],
@@ -683,7 +692,7 @@ storiesOf('Table', module)
         options={{
           hasFilter: true,
           hasPagination: true,
-          hasRowSelection: true,
+          hasRowSelection: 'multi',
         }}
         view={{
           filters: [
@@ -716,7 +725,7 @@ storiesOf('Table', module)
       actions={actions}
       options={{
         hasPagination: true,
-        hasRowSelection: true,
+        hasRowSelection: 'multi',
         hasColumnSelection: true,
       }}
       view={{
@@ -789,7 +798,7 @@ storiesOf('Table', module)
       }))}
       options={{
         hasPagination: true,
-        hasRowSelection: true,
+        hasRowSelection: 'multi',
         hasRowExpansion: true,
         hasRowNesting: true,
       }}

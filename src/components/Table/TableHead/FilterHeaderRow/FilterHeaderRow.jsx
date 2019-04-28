@@ -96,7 +96,7 @@ class FilterHeaderRow extends Component {
     onApplyFilter: PropTypes.func,
     /** properties global to the table */
     tableOptions: PropTypes.shape({
-      hasRowSelection: PropTypes.bool,
+      hasRowSelection: PropTypes.oneOf(['multi', 'single', '']),
       hasRowExpansion: PropTypes.bool,
       hasRowActions: PropTypes.bool,
     }),
@@ -106,7 +106,7 @@ class FilterHeaderRow extends Component {
   };
 
   static defaultProps = {
-    tableOptions: { hasRowSelection: true },
+    tableOptions: { hasRowSelection: 'multi' },
     filters: [],
     isVisible: true,
     onApplyFilter: defaultFunction,
@@ -173,7 +173,7 @@ class FilterHeaderRow extends Component {
     } = this.props;
     return isVisible ? (
       <StyledTableRow>
-        {hasRowSelection ? <StyledTableHeader /> : null}
+        {hasRowSelection === 'multi' ? <StyledTableHeader /> : null}
         {hasRowExpansion ? <StyledTableHeader /> : null}
         {ordering
           .filter(c => !c.isHidden)

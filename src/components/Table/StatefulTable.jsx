@@ -116,7 +116,7 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
         callbackParent(onChangeSort, column);
       },
       onRowSelected: (rowId, isSelected) => {
-        dispatch(tableRowSelect(rowId, isSelected));
+        dispatch(tableRowSelect(rowId, isSelected, options.hasRowSelection));
         callbackParent(onRowSelected, rowId, isSelected);
       },
       onRowClicked: rowId => {

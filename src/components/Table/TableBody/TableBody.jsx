@@ -27,7 +27,7 @@ const propTypes = {
   clickToCollapseText: PropTypes.string,
   /** since some columns might not be currently visible */
   totalColumns: PropTypes.number,
-  hasRowSelection: PropTypes.bool,
+  hasRowSelection: PropTypes.oneOf(['multi', 'single', '']),
   hasRowExpansion: PropTypes.bool,
   hasRowNesting: PropTypes.bool,
   hasRowActions: PropTypes.bool,
@@ -60,7 +60,7 @@ const defaultProps = {
   expandedRows: [],
   columns: [],
   totalColumns: 0,
-  hasRowSelection: false,
+  hasRowSelection: '',
   hasRowExpansion: false,
   hasRowNesting: false,
   hasRowActions: false,

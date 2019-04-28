@@ -38,9 +38,9 @@ export const tableColumnOrder = ordering => ({ type: TABLE_COLUMN_ORDER, payload
 export const tableEmptyStateAction = () => ({ type: TABLE_EMPTY_STATE_ACTION });
 
 /** Select a row of the table */
-export const tableRowSelect = (rowId, isSelected) => ({
+export const tableRowSelect = (rowId, isSelected, hasRowSelection) => ({
   type: TABLE_ROW_SELECT,
-  payload: { rowId, isSelected },
+  payload: { rowId, isSelected, hasRowSelection },
 });
 /** Select all the currently filtered rows of the table */
 export const tableRowSelectAll = isSelected => ({

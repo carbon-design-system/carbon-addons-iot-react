@@ -14,7 +14,7 @@ const commonTableHeadProps = {
   /** Ordering list */
   ordering: [{ columnId: 'col1', isHidden: false }, { columnId: 'col2', isHidden: false }],
   tableOptions: {
-    hasRowSelection: false,
+    hasRowSelection: '',
     hasRowExpansion: false,
   },
   onChangeOrdering: jest.fn(),

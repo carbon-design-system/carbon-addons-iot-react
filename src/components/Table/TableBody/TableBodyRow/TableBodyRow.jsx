@@ -40,7 +40,7 @@ const propTypes = {
   columns: TableColumnsPropTypes.isRequired,
   /** table wide options */
   options: PropTypes.shape({
-    hasRowSelection: PropTypes.bool,
+    hasRowSelection: PropTypes.oneOf(['multi', 'single', '']),
     hasRowExpansion: PropTypes.bool,
     hasRowNesting: PropTypes.bool,
     shouldExpandOnRowClick: PropTypes.bool,
@@ -106,6 +106,17 @@ const StyledTableRow = styled(TableRow)`
           opacity: 1;
         }
       }
+    }
+  }
+`;
+
+const StyledSingleSelectedTableRow = styled(TableRow)`
+  &&& {
+    background: ${COLORS.lightBlue};
+    border-left: 5px solid ${COLORS.blue};
+
+    td {
+      margin-left: -5px;
     }
   }
 `;
@@ -277,28 +288,29 @@ const TableBodyRow = ({
   rowDetails,
 }) => {
   const nestingOffset = nestingLevel * 16;
-  const rowSelectionCell = hasRowSelection ? (
-    <StyledCheckboxTableCell
-      key={`${id}-row-selection-cell`}
-      onClick={e => {
-        onRowSelected(id, !isSelected);
-        e.preventDefault();
-        e.stopPropagation();
-      }}>
-      {/* TODO: Replace checkbox with TableSelectRow component when onChange bug is fixed
+  const rowSelectionCell =
+    hasRowSelection === 'multi' ? (
+      <StyledCheckboxTableCell
+        key={`${id}-row-selection-cell`}
+        onClick={e => {
+          onRowSelected(id, !isSelected);
+          e.preventDefault();
+          e.stopPropagation();
+        }}>
+        {/* TODO: Replace checkbox with TableSelectRow component when onChange bug is fixed
       https://github.com/IBM/carbon-components-react/issues/1247
       Also move onClick logic above into TableSelectRow
       */}
-      <StyledNestedSpan nestingOffset={nestingOffset}>
-        <Checkbox
-          id={`select-row-${id}`}
-          labelText={selectRowText}
-          hideLabel
-          checked={isSelected}
-        />
-      </StyledNestedSpan>
-    </StyledCheckboxTableCell>
-  ) : null;
+        <StyledNestedSpan nestingOffset={nestingOffset}>
+          <Checkbox
+            id={`select-row-${id}`}
+            labelText={selectRowText}
+            hideLabel
+            checked={isSelected}
+          />
+        </StyledNestedSpan>
+      </StyledCheckboxTableCell>
+    ) : null;
 
   const firstVisibleColIndex = ordering.findIndex(col => !col.isHidden);
   const tableCells = (
@@ -360,6 +372,9 @@ const TableBodyRow = ({
             if (shouldExpandOnRowClick) {
               onRowExpanded(id, false);
             }
+            if (hasRowSelection === 'single') {
+              onRowSelected(id, true);
+            }
             onRowClicked(id);
           }}>
           {tableCells}
@@ -385,13 +400,32 @@ const TableBodyRow = ({
           if (shouldExpandOnRowClick) {
             onRowExpanded(id, true);
           }
+          if (hasRowSelection === 'single') {
+            onRowSelected(id, true);
+          }
           onRowClicked(id);
         }}>
         {tableCells}
       </StyledTableExpandRow>
     )
+  ) : hasRowSelection === 'single' && isSelected ? (
+    <StyledSingleSelectedTableRow
+      key={id}
+      onClick={() => {
+        onRowClicked(id);
+        onRowSelected(id, true);
+      }}>
+      {tableCells}
+    </StyledSingleSelectedTableRow>
   ) : (
-    <StyledTableRow key={id} onClick={() => onRowClicked(id)}>
+    <StyledTableRow
+      key={id}
+      onClick={() => {
+        if (hasRowSelection === 'single') {
+          onRowSelected(id, true);
+        }
+        onRowClicked(id);
+      }}>
       {tableCells}
     </StyledTableRow>
   );

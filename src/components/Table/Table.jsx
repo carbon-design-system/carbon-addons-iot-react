@@ -40,7 +40,7 @@ const propTypes = {
   /** Optional properties to customize how the table should be rendered */
   options: PropTypes.shape({
     hasPagination: PropTypes.bool,
-    hasRowSelection: PropTypes.bool,
+    hasRowSelection: PropTypes.oneOf(['multi', 'single', '']),
     hasRowExpansion: PropTypes.bool,
     hasRowNesting: PropTypes.bool,
     hasRowActions: PropTypes.bool,
@@ -150,7 +150,7 @@ export const defaultProps = baseProps => ({
   lightweight: false,
   options: {
     hasPagination: false,
-    hasRowSelection: false,
+    hasRowSelection: '',
     hasRowExpansion: false,
     hasRowActions: false,
     hasRowNesting: false,
@@ -271,7 +271,7 @@ const Table = props => {
   );
   const totalColumns =
     visibleColumns.length +
-    (options.hasRowSelection ? 1 : 0) +
+    (options.hasRowSelection === 'multi' ? 1 : 0) +
     (options.hasRowExpansion ? 1 : 0) +
     (options.hasRowActions ? 1 : 0);
 
@@ -301,6 +301,7 @@ const Table = props => {
         options={pick(options, 'hasColumnSelection', 'hasFilter', 'hasSearch')}
         tableState={{
           totalSelected: view.table.selectedIds.length,
+          hasRowSelection: view.table.hasRowSelection,
           totalFilters: view.filters ? view.filters.length : 0,
           ...pick(view.toolbar, 'batchActions', 'search', 'activeBar', 'customToolbarContent'),
         }}
