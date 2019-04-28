@@ -13,8 +13,15 @@ const RowActionsContainer = styled.div`
     display: flex;
     justify-content: flex-end;
     align-items: center;
+
+    /* Need space between the buttons */
     > * {
       opacity: ${props => (props.visible ? 1 : 0)};
+      margin-left: 0.75rem;
+    }
+    /* If the actions are focused on, they should show up */
+    > *:focus {
+      opacity: 1;
     }
   }
 `;
@@ -37,13 +44,15 @@ const StyledOverflowMenu = styled(({ isRowExpanded, isOpen, ...other }) => (
   <OverflowMenu {...other} />
 ))`
   &&& {
-    margin-left: 0.5rem;
     color: ${props => (props.isRowExpanded ? COLORS.white : COLORS.darkGray)};
     svg {
       fill: ${props => (props.isRowExpanded ? COLORS.white : COLORS.darkGray)};
       margin-left: ${props => (props.hideLabel !== 'false' ? '0' : '')};
     }
     opacity: ${props => (props.isOpen || props.isRowExpanded ? 1 : 0)};
+  }
+  &&&:hover > svg {
+    fill: ${COLORS.blue};
   }
 `;
 
@@ -57,7 +66,8 @@ const RowActionButton = styled(({ isRowExpanded, hideLabel, isOverflow, ...other
       fill: ${props => (props.isRowExpanded ? COLORS.white : COLORS.darkGray)};
       margin-left: ${props => (props.hideLabel !== 'false' ? '0' : '')};
     }
-    :hover {
+    :hover,
+    :focus {
       color: ${props => (!props.isRowExpanded ? COLORS.white : COLORS.darkGray)};
       svg {
         fill: ${props => (!props.isRowExpanded ? COLORS.white : COLORS.darkGray)};
@@ -134,7 +144,6 @@ class RowActionsCell extends React.Component {
           {hasOverflow ? (
             <StyledOverflowMenu
               floatingMenu
-              flipped
               ariaLabel={overflowMenuText}
               onClick={event => event.stopPropagation()}
               isRowExpanded={isRowExpanded}
