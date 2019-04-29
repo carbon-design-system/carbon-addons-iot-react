@@ -71,8 +71,6 @@ export const tileCatalogReducer = (state = {}, action) => {
         ...state,
         startingIndex,
         endingIndex,
-        // set the selected tile id if the page changes
-        selectedTileId: null,
         page,
       };
     }
@@ -88,15 +86,20 @@ export const tileCatalogReducer = (state = {}, action) => {
         page: 1,
         startingIndex: 0,
         endingIndex: (pageSize || filteredTiles.length) - 1,
-        // Set the selected tile id if the search changes the data
-        selectedTileId: null,
       };
     }
-    case TILE_ACTIONS.SELECT:
+    case TILE_ACTIONS.SELECT: {
+      const { filteredTiles, pageSize } = state;
+      const tileIndex = filteredTiles.findIndex(tile => tile.id === action.payload);
+      const page = Math.floor(tileIndex / pageSize) + 1;
       return {
         ...state,
+        page,
+        startingIndex: (page - 1) * pageSize,
+        endingIndex: determineEndingIndex(page, pageSize),
         selectedTileId: action.payload,
       };
+    }
     case TILE_ACTIONS.RESET:
       return determineInitialState(action.payload);
     default:
