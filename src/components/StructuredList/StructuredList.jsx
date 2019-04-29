@@ -10,6 +10,8 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Bee32 from '@carbon/icons-react/lib/bee/32';
 
+import { COLORS } from '../../styles/styles';
+
 const StructuredListWrapperStyled = styled(StructuredListWrapper)`
    {
     && {
@@ -98,7 +100,7 @@ const StructuredList = ({ columns, data, design, isFixedWidth, onRowClick, loadi
       </StructuredListBody>
       {!data.length ? (
         <EmptyContent>
-          <Bee32 width={100} height={100} fill="#5a6872" />
+          <Bee32 width={100} height={100} fill={COLORS.gray} />
           <LoadingDiv>{loadingDataLabel}</LoadingDiv>
         </EmptyContent>
       ) : (
