@@ -40,7 +40,7 @@ const propTypes = {
   /** Optional properties to customize how the table should be rendered */
   options: PropTypes.shape({
     hasPagination: PropTypes.bool,
-    hasRowSelection: PropTypes.oneOf(['multi', 'single', '']),
+    hasRowSelection: PropTypes.oneOf(['multi', 'single', false]),
     hasRowExpansion: PropTypes.bool,
     hasRowNesting: PropTypes.bool,
     hasRowActions: PropTypes.bool,
@@ -150,7 +150,7 @@ export const defaultProps = baseProps => ({
   lightweight: false,
   options: {
     hasPagination: false,
-    hasRowSelection: '',
+    hasRowSelection: false,
     hasRowExpansion: false,
     hasRowActions: false,
     hasRowNesting: false,
