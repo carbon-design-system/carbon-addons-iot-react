@@ -104,14 +104,14 @@ describe('TableBodyRow', () => {
     expect(customCell.text()).toContain('value2');
   });
 
-  test('hasRowSelection', () => {
+  test('hasRowMultiSelect', () => {
     const mockRowSelection = jest.fn();
     const mockRowClicked = jest.fn();
     const tableRowPropsWithSelection = {
       tableId: 'tableId',
       totalColumns: 2,
       id: 'tableRow',
-      options: { hasRowSelection: true },
+      options: { hasRowSelection: 'multi' },
       tableActions: { onRowSelected: mockRowSelection, onRowClicked: mockRowClicked },
       columns: [{ id: 'col1' }, { id: 'col2' }],
       ordering: [{ columnId: 'col1' }, { columnId: 'col2' }],
@@ -124,5 +124,18 @@ describe('TableBodyRow', () => {
       .find('input')
       .simulate('click', { preventDefault: () => true, stopPropagation: () => true });
     expect(mockRowSelection).toHaveBeenCalled();
+  });
+
+  test('hasRowSingleSelection', () => {
+    const tableBodyRow = mount(
+      <TableBodyRow
+        options={{ hasRowSelection: 'single' }}
+        tableActions={mockActions}
+        {...tableRowProps}
+      />
+    );
+    tableBodyRow.simulate('click');
+    expect(mockActions.onRowSelected).toHaveBeenCalled();
+    expect(mockActions.onRowClicked).toHaveBeenCalled();
   });
 });

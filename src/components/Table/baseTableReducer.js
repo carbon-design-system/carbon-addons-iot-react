@@ -167,20 +167,27 @@ export const baseTableReducer = (state = {}, action) => {
       });
     // Row operations
     case TABLE_ROW_SELECT: {
-      const { rowId, isSelected } = action.payload;
-      const isClearing = !isSelected && state.view.table.selectedIds.length <= 1;
+      const { rowId, isSelected, hasRowSelection } = action.payload;
+      const isClearing =
+        hasRowSelection === 'multi' && !isSelected && state.view.table.selectedIds.length <= 1;
       const isSelectingAll =
-        isSelected && state.view.table.selectedIds.length + 1 === state.data.length;
+        hasRowSelection === 'multi' &&
+        isSelected &&
+        state.view.table.selectedIds.length + 1 === state.data.length;
+
+      // multi-select should add to the array. single-select should only allow one at a time, so replace the array
+      const addOrReplace =
+        hasRowSelection === 'multi' ? state.view.table.selectedIds.concat([rowId]) : [rowId];
       return update(state, {
         view: {
           table: {
             selectedIds: {
               $set: isSelected
-                ? state.view.table.selectedIds.concat([rowId])
+                ? addOrReplace
                 : state.view.table.selectedIds.filter(i => i !== rowId),
             },
             isSelectAllIndeterminate: {
-              $set: !(isClearing || isSelectingAll),
+              $set: !(hasRowSelection === 'multi' && (isClearing || isSelectingAll)),
             },
             isSelectAllSelected: {
               $set: isSelectingAll,

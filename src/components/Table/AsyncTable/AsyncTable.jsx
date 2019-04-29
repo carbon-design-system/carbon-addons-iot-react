@@ -209,7 +209,7 @@ const AsyncTable = ({ fetchData }) => {
         hasFilter: true,
         hasSearch: false,
         hasPagination: true,
-        hasRowSelection: false,
+        hasRowSelection: '',
         hasRowExpansion: false,
         hasRowActions: false,
         hasColumnSelection: true,

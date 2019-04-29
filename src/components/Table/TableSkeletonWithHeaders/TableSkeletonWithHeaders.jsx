@@ -8,7 +8,7 @@ import { COLORS } from '../../../styles/styles';
 const { TableBody, TableCell, TableRow } = DataTable;
 
 const propTypes = {
-  hasRowSelection: PropTypes.bool,
+  hasRowSelection: PropTypes.oneOf(['multi', 'single', '']),
   hasRowExpansion: PropTypes.bool,
   hasRowActions: PropTypes.bool,
   rowCount: PropTypes.number,
@@ -16,7 +16,7 @@ const propTypes = {
 };
 
 const defaultProps = {
-  hasRowSelection: false,
+  hasRowSelection: '',
   hasRowExpansion: false,
   hasRowActions: false,
   rowCount: 0,
@@ -44,7 +44,7 @@ const TableSkeletonWithHeaders = ({
 }) => (
   <TableBody>
     <StyledLoadingTableRow>
-      {hasRowSelection ? <TableCell /> : null}
+      {hasRowSelection === 'multi' ? <TableCell /> : null}
       {hasRowExpansion ? <TableCell /> : null}
       {columns.map(column => (
         <TableCell key={`skeletonCol-${column.id}`}>
@@ -55,7 +55,7 @@ const TableSkeletonWithHeaders = ({
     </StyledLoadingTableRow>
     {[...Array(rowCount > 0 ? rowCount - 1 : 0)].map((row, index) => (
       <StyledLoadingTableRow key={`skeletonRow-${index}` /*eslint-disable-line*/}>
-        {hasRowSelection ? <TableCell /> : null}
+        {hasRowSelection === 'multi' ? <TableCell /> : null}
         {hasRowExpansion ? <TableCell /> : null}
         {columns.map(column => (
           <TableCell key={`emptycell-${column.id}`} />

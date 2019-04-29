@@ -101,9 +101,9 @@ describe('StatefulWizardInline', () => {
         onBack={mockBack}
       />
     );
-    const cancelBackAndNextButtons = wrapper.find('.bx--btn');
-    expect(cancelBackAndNextButtons).toHaveLength(3);
-    cancelBackAndNextButtons.at(1).simulate('click');
+    const backAndNextButtons = wrapper.find('.bx--btn');
+    expect(backAndNextButtons).toHaveLength(2);
+    backAndNextButtons.at(0).simulate('click');
     expect(mockBack).toHaveBeenCalled();
   });
 });
