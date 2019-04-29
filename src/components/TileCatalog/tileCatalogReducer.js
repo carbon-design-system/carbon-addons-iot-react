@@ -88,11 +88,18 @@ export const tileCatalogReducer = (state = {}, action) => {
         endingIndex: (pageSize || filteredTiles.length) - 1,
       };
     }
-    case TILE_ACTIONS.SELECT:
+    case TILE_ACTIONS.SELECT: {
+      const { filteredTiles, pageSize } = state;
+      const tileIndex = filteredTiles.findIndex(tile => tile.id === action.payload);
+      const page = Math.floor(tileIndex / pageSize) + 1;
       return {
         ...state,
+        page,
+        startingIndex: (page - 1) * pageSize,
+        endingIndex: determineEndingIndex(page, pageSize),
         selectedTileId: action.payload,
       };
+    }
     case TILE_ACTIONS.RESET:
       return determineInitialState(action.payload);
     default:
