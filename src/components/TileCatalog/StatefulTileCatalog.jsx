@@ -110,7 +110,12 @@ const StatefulTileCatalog = ({
           : tilesProp.slice(startingIndex, endingIndex + 1)
       }
       search={{ ...search, onSearch: handleSearch, value: searchState }}
-      pagination={{ ...pagination, page, onPage: handlePage, totalItems: tiles ? tiles.length : 0 }}
+      pagination={{
+        ...pagination,
+        page,
+        onPage: handlePage,
+        totalItems: isFiltered ? filteredTiles.length : tiles ? tiles.length : 0,
+      }}
       onSelection={handleSelection}
     />
   );
