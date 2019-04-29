@@ -54,9 +54,11 @@ const WizardFooter = ({
   <Fragment>
     <div>{footerLeftContent}</div>
     <StyledFooterButtons>
-      <Button onClick={onCancel} kind="secondary">
-        {cancelLabel}
-      </Button>
+      {!hasPrev ? (
+        <Button onClick={onCancel} kind="secondary">
+          {cancelLabel}
+        </Button>
+      ) : null}
       {hasPrev ? (
         <Button onClick={onBack} kind="secondary">
           {backLabel}
