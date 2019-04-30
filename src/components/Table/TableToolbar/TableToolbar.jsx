@@ -138,7 +138,7 @@ const TableToolbar = ({
   searchPlaceholderText,
   columnSelectionText,
   filterText,
-  options: { hasColumnSelection, hasFilter, hasSearch },
+  options: { hasColumnSelection, hasFilter, hasSearch, hasRowSelection },
   actions: {
     onCancelBatchAction,
     onApplyBatchAction,
@@ -149,7 +149,6 @@ const TableToolbar = ({
   },
   tableState: {
     totalSelected,
-    hasRowSelection,
     totalFilters,
     batchActions,
     search,
