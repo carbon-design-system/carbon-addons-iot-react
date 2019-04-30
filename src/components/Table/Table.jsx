@@ -290,7 +290,7 @@ const Table = props => {
   );
   const totalColumns =
     visibleColumns.length +
-    (options.hasRowSelection === 'multi' ? 1 : 0) +
+    (options.hasRowSelection === 'multi' || options.hasRowSelection === true ? 1 : 0) +
     (options.hasRowExpansion ? 1 : 0) +
     (options.hasRowActions ? 1 : 0);
 
@@ -317,10 +317,9 @@ const Table = props => {
           'onToggleFilter',
           'onApplySearch'
         )}
-        options={pick(options, 'hasColumnSelection', 'hasFilter', 'hasSearch')}
+        options={pick(options, 'hasColumnSelection', 'hasFilter', 'hasSearch', 'hasRowSelection')}
         tableState={{
           totalSelected: view.table.selectedIds.length,
-          hasRowSelection: view.table.hasRowSelection,
           totalFilters: view.filters ? view.filters.length : 0,
           ...pick(view.toolbar, 'batchActions', 'search', 'activeBar', 'customToolbarContent'),
         }}

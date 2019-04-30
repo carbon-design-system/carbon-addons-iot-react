@@ -138,7 +138,7 @@ const TableToolbar = ({
   searchPlaceholderText,
   columnSelectionText,
   filterText,
-  options: { hasColumnSelection, hasFilter, hasSearch },
+  options: { hasColumnSelection, hasFilter, hasSearch, hasRowSelection },
   actions: {
     onCancelBatchAction,
     onApplyBatchAction,
@@ -149,7 +149,6 @@ const TableToolbar = ({
   },
   tableState: {
     totalSelected,
-    hasRowSelection,
     totalFilters,
     batchActions,
     search,
@@ -168,7 +167,9 @@ const TableToolbar = ({
     <StyledTableToolbarContent>
       <TableBatchActions
         onCancel={onCancelBatchAction}
-        shouldShowBatchActions={hasRowSelection === 'multi' && totalSelected > 0}
+        shouldShowBatchActions={
+          (hasRowSelection === 'multi' || hasRowSelection === true) && totalSelected > 0
+        }
         totalSelected={totalSelected}>
         {batchActions.map(({ id, labelText, ...others }) => (
           <TableBatchAction key={id} onClick={() => onApplyBatchAction(id)} {...others}>

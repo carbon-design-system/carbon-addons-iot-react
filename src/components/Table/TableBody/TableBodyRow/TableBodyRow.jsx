@@ -289,7 +289,7 @@ const TableBodyRow = ({
 }) => {
   const nestingOffset = nestingLevel * 16;
   const rowSelectionCell =
-    hasRowSelection === 'multi' ? (
+    hasRowSelection === 'multi' || hasRowSelection === true ? (
       <StyledCheckboxTableCell
         key={`${id}-row-selection-cell`}
         onClick={e => {

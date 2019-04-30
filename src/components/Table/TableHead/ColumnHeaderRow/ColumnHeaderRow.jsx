@@ -105,7 +105,7 @@ class ColumnHeaderRow extends Component {
     );
     return (
       <StyledColumnSelectTableRow>
-        {hasRowSelection === 'multi' ? <StyledTableHeader /> : null}
+        {hasRowSelection === 'multi' || hasRowSelection === true ? <StyledTableHeader /> : null}
         {hasRowExpansion ? <StyledTableHeader /> : null}
         <StyledTableHeader colSpan={visibleColumns.length + (hasRowActions ? 1 : 0)}>
           <StyledColumnSelectWrapper>

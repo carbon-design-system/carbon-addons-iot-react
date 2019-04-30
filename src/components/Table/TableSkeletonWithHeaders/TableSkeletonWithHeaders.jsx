@@ -44,7 +44,7 @@ const TableSkeletonWithHeaders = ({
 }) => (
   <TableBody>
     <StyledLoadingTableRow>
-      {hasRowSelection === 'multi' ? <TableCell /> : null}
+      {hasRowSelection === 'multi' || hasRowSelection === true ? <TableCell /> : null}
       {hasRowExpansion ? <TableCell /> : null}
       {columns.map(column => (
         <TableCell key={`skeletonCol-${column.id}`}>
@@ -55,7 +55,7 @@ const TableSkeletonWithHeaders = ({
     </StyledLoadingTableRow>
     {[...Array(rowCount > 0 ? rowCount - 1 : 0)].map((row, index) => (
       <StyledLoadingTableRow key={`skeletonRow-${index}` /*eslint-disable-line*/}>
-        {hasRowSelection === 'multi' ? <TableCell /> : null}
+        {hasRowSelection === 'multi' || hasRowSelection === true ? <TableCell /> : null}
         {hasRowExpansion ? <TableCell /> : null}
         {columns.map(column => (
           <TableCell key={`emptycell-${column.id}`} />
