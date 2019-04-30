@@ -16,7 +16,7 @@ const propTypes = {
   /** Important table options that the head needs to know about */
   options: PropTypes.shape({
     hasRowExpansion: PropTypes.bool,
-    hasRowSelection: PropTypes.oneOf(['multi', 'single', '']),
+    hasRowSelection: PropTypes.oneOf(['multi', 'single', false]),
     hasRowActions: PropTypes.bool,
   }),
   /** List of columns */

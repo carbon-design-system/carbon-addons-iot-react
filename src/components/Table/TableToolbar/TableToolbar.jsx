@@ -101,7 +101,7 @@ const propTypes = {
     /** total number of selected rows */
     totalSelected: PropTypes.number,
     /** row selection option */
-    hasRowSelection: PropTypes.oneOf(['multi', 'single', '']),
+    hasRowSelection: PropTypes.oneOf(['multi', 'single', false]),
     /** optional content to render inside the toolbar  */
     customToolbarContent: PropTypes.node,
     /** available batch actions */
