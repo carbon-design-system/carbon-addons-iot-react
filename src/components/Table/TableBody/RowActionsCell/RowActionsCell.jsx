@@ -143,6 +143,7 @@ class RowActionsCell extends React.Component {
             ))}
           {hasOverflow ? (
             <StyledOverflowMenu
+              flipped
               floatingMenu
               ariaLabel={overflowMenuText}
               onClick={event => event.stopPropagation()}
