@@ -1148,21 +1148,15 @@
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
 
-"@carbon/icon-helpers@0.0.1-alpha.12":
-  version "0.0.1-alpha.12"
-  resolved "https://registry.yarnpkg.com/@carbon/icon-helpers/-/icon-helpers-0.0.1-alpha.12.tgz#27f1449ff8e503e42e478ca567dfa6a6b453debe"
-
 "@carbon/icon-helpers@0.0.1-beta.5":
   version "0.0.1-beta.5"
   resolved "https://registry.yarnpkg.com/@carbon/icon-helpers/-/icon-helpers-0.0.1-beta.5.tgz#829e8593dbcee76e5d6300839d2b5d734f90c98d"
   integrity sha512-3gFkiIWRlfPrDsYSfgKyveS4kkp0+HIg2fUP4jm5G9JgzOfE+Ebw4f0ASg02z4YMywrs2sw60hbdrFi1GGihGQ==
 
-"@carbon/icons-react@^0.0.1-alpha.12":
-  version "0.0.1-alpha.12"
-  resolved "https://registry.yarnpkg.com/@carbon/icons-react/-/icons-react-0.0.1-alpha.12.tgz#9cdc7846d0862838770c966a7f130953a89887a5"
-  dependencies:
-    "@carbon/icon-helpers" "0.0.1-alpha.12"
-    prop-types "^15.6.2"
+"@carbon/icon-helpers@10.1.1":
+  version "10.1.1"
+  resolved "https://registry.yarnpkg.com/@carbon/icon-helpers/-/icon-helpers-10.1.1.tgz#08affd6f68936ba48beca7a732b0e70bd5ab8ca0"
+  integrity sha512-FwuAuALKOY2XqPoW5aiIsCYLqzERNeFhuSILMlTtlZptHdZnZC/HdUWiNS7jZIvQO+jC1FVUc/UX9FK8Nh36ow==
 
 "@carbon/icons-react@^0.0.1-beta.2":
   version "0.0.1-beta.5"
@@ -1170,6 +1164,14 @@
   integrity sha512-Cigh18dQHgS5pnqfLpp/wjrUBRRd05KC9A3Iloa3WWMlRCy6/Mgoe6Zg0teMOEIYrfoGFx29bgWeeyvzrufLLw==
   dependencies:
     "@carbon/icon-helpers" "0.0.1-beta.5"
+    prop-types "^15.6.2"
+
+"@carbon/icons-react@^10.1.1":
+  version "10.1.1"
+  resolved "https://registry.yarnpkg.com/@carbon/icons-react/-/icons-react-10.1.1.tgz#42586dad97256ce5f25699fe9f142f735976026b"
+  integrity sha512-gkh7E8LLoS5SMn6mDbhuEW3XjB7VKmOv1pE43Bt5QJCoG/mMyJGziec1gcsPcTz8XXBIDBm2w7EJYzcrmZixFA==
+  dependencies:
+    "@carbon/icon-helpers" "10.1.1"
     prop-types "^15.6.2"
 
 "@carbon/icons@^10.1.0":
@@ -3217,6 +3219,11 @@ base@^0.11.1:
     mixin-deep "^1.2.0"
     pascalcase "^0.1.1"
 
+batch-processor@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/batch-processor/-/batch-processor-1.0.0.tgz#75c95c32b748e0850d10c2b168f6bdbe9891ace8"
+  integrity sha1-dclcMrdI4IUNEMKxaPa9vpiRrOg=
+
 bcrypt-pbkdf@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/bcrypt-pbkdf/-/bcrypt-pbkdf-1.0.1.tgz#63bc5dcb61331b92bc05fd528953c33462a06f8d"
@@ -4931,6 +4938,13 @@ electron-to-chromium@^1.3.96:
 elegant-spinner@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/elegant-spinner/-/elegant-spinner-1.0.1.tgz#db043521c95d7e303fd8f345bedc3349cfb0729e"
+
+element-resize-detector@^1.1.15:
+  version "1.1.15"
+  resolved "https://registry.yarnpkg.com/element-resize-detector/-/element-resize-detector-1.1.15.tgz#48eba1a2eaa26969a4c998d972171128c971d8d2"
+  integrity sha512-16/5avDegXlUxytGgaumhjyQoM6hpp5j3+L79sYq5hlXfTNRy5WMMuTVWkZU3egp/CokCmTmvf18P3KeB57Iog==
+  dependencies:
+    batch-processor "^1.0.0"
 
 elliptic@^6.0.0:
   version "6.4.0"
@@ -8124,6 +8138,11 @@ lodash.templatesettings@^4.0.0:
   dependencies:
     lodash._reinterpolate "~3.0.0"
 
+lodash.throttle@^4.1.1:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/lodash.throttle/-/lodash.throttle-4.1.1.tgz#c23e91b710242ac70c37f1e1cda9274cc39bf2f4"
+  integrity sha1-wj6RtxAkKscMN/HhzaknTMOb8vQ=
+
 lodash.toarray@^4.4.0:
   version "4.4.0"
   resolved "https://registry.yarnpkg.com/lodash.toarray/-/lodash.toarray-4.4.0.tgz#24c4bfcd6b2fba38bfd0594db1179d8e9b656561"
@@ -10453,6 +10472,17 @@ react-modal@^3.6.1:
     prop-types "^15.5.10"
     react-lifecycles-compat "^3.0.0"
     warning "^3.0.0"
+
+react-sizeme@^2.6.3:
+  version "2.6.3"
+  resolved "https://registry.yarnpkg.com/react-sizeme/-/react-sizeme-2.6.3.tgz#82659d64249c0bf8fc1ddc60b4965d3fb58a5680"
+  integrity sha512-39ImpABbJ98pcEa+hjveIT3CIjFgY7UmYDSi76C7PHMXt/MCo2IISPC0U8lDILjYr8/5TCY0p3yqxWm5f9zPmQ==
+  dependencies:
+    element-resize-detector "^1.1.15"
+    invariant "^2.2.4"
+    lodash.debounce "^4.0.8"
+    lodash.throttle "^4.1.1"
+    shallowequal "^1.1.0"
 
 react-split-pane@^0.1.84:
   version "0.1.85"
