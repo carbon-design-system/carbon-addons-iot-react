@@ -249,6 +249,12 @@ export const initialState = {
         labelText: 'Add',
         isOverflow: true,
       },
+      {
+        id: 'Delete',
+        icon: 'icon--delete',
+        labelText: 'Delete',
+        isOverflow: true,
+      },
     ].filter(i => i),
   })),
   expandedData: tableData.map(data => ({
