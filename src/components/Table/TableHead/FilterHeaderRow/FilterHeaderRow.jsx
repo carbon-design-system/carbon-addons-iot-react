@@ -178,7 +178,7 @@ class FilterHeaderRow extends Component {
     } = this.props;
     return isVisible ? (
       <StyledTableRow>
-        {hasRowSelection === 'multi' || hasRowSelection === true ? <StyledTableHeader /> : null}
+        {hasRowSelection === 'multi' ? <StyledTableHeader /> : null}
         {hasRowExpansion ? <StyledTableHeader /> : null}
         {ordering
           .filter(c => !c.isHidden)

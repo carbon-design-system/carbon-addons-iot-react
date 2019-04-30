@@ -290,7 +290,7 @@ const Table = props => {
   );
   const totalColumns =
     visibleColumns.length +
-    (options.hasRowSelection === 'multi' || options.hasRowSelection === true ? 1 : 0) +
+    (options.hasRowSelection === 'multi' ? 1 : 0) +
     (options.hasRowExpansion ? 1 : 0) +
     (options.hasRowActions ? 1 : 0);
 
