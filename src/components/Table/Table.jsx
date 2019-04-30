@@ -27,10 +27,8 @@ import TableBody from './TableBody/TableBody';
 const { Table: CarbonTable, TableContainer } = DataTable;
 
 const StyledTableDiv = styled.div`
-  &&& {
-    .bx--data-table-v2-container {
-      min-width: unset;
-    }
+  .bx--data-table-v2-container {
+    min-width: unset;
   }
 `;
 
