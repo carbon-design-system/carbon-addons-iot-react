@@ -4,7 +4,7 @@ export const RowActionPropTypes = PropTypes.arrayOf(
   PropTypes.shape({
     /** Unique id of the action */
     id: PropTypes.string.isRequired,
-    /* icon ultimately gets passed through all the way to <Button>, which has this same copied proptype definition for icon */
+    /** icon ultimately gets passed through all the way to <Button>, which has this same copied proptype definition for icon */
     icon: PropTypes.oneOfType([
       PropTypes.shape({
         width: PropTypes.string,

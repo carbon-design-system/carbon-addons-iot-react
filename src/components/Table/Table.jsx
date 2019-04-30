@@ -5,6 +5,8 @@ import pick from 'lodash/pick';
 import { PaginationV2, DataTable } from 'carbon-components-react';
 import get from 'lodash/get';
 import isNil from 'lodash/isNil';
+import styled from 'styled-components';
+import sizeMe from 'react-sizeme';
 
 import { defaultFunction } from '../../utils/componentUtilityFunctions';
 
@@ -24,6 +26,22 @@ import TableBody from './TableBody/TableBody';
 
 const { Table: CarbonTable, TableContainer } = DataTable;
 
+const StyledTableDiv = styled.div`
+  .bx--data-table-v2-container {
+    min-width: unset;
+  }
+`;
+
+const StyledPagination = sizeMe({ noPlaceholder: true })(styled(PaginationV2)`
+  &&& {
+    .bx--pagination__left,
+    .bx--pagination__text {
+      display: ${props =>
+        props.size && props.size.width && props.size.width < 600 ? 'none' : 'flex'};
+    }
+  }
+`);
+
 const propTypes = {
   /** DOM ID for component */
   id: PropTypes.string,
@@ -40,7 +58,7 @@ const propTypes = {
   /** Optional properties to customize how the table should be rendered */
   options: PropTypes.shape({
     hasPagination: PropTypes.bool,
-    hasRowSelection: PropTypes.oneOf(['multi', 'single', '']),
+    hasRowSelection: PropTypes.oneOf(['multi', 'single', false]),
     hasRowExpansion: PropTypes.bool,
     hasRowNesting: PropTypes.bool,
     hasRowActions: PropTypes.bool,
@@ -150,7 +168,7 @@ export const defaultProps = baseProps => ({
   lightweight: false,
   options: {
     hasPagination: false,
-    hasRowSelection: '',
+    hasRowSelection: false,
     hasRowExpansion: false,
     hasRowActions: false,
     hasRowNesting: false,
@@ -243,6 +261,7 @@ const Table = props => {
     options,
     lightweight,
     className,
+    style,
     i18n,
     ...others
   } = merge({}, defaultProps(props), props);
@@ -283,7 +302,7 @@ const Table = props => {
       view.toolbar.search.value !== '');
 
   return (
-    <div id={id} className={className}>
+    <StyledTableDiv id={id} className={className} style={style}>
       <TableToolbar
         clearAllFiltersText={i18n.clearAllFilters}
         columnSelectionText={i18n.columnSelectionButtonAria}
@@ -397,7 +416,7 @@ const Table = props => {
       !view.table.loadingState.isLoading &&
       visibleData &&
       visibleData.length ? ( // don't show pagination row while loading
-        <PaginationV2
+        <StyledPagination
           {...view.pagination}
           onChange={actions.pagination.onChangePage}
           backwardText={i18n.pageBackwardAria}
@@ -410,7 +429,7 @@ const Table = props => {
           pageRangeText={i18n.pageRange}
         />
       ) : null}
-    </div>
+    </StyledTableDiv>
   );
 };
 

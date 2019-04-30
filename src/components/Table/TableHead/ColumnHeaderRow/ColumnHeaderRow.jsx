@@ -69,7 +69,7 @@ class ColumnHeaderRow extends Component {
       })
     ).isRequired,
     tableOptions: PropTypes.shape({
-      hasRowSelection: PropTypes.oneOf(['multi', 'single', '']),
+      hasRowSelection: PropTypes.oneOf(['multi', 'single', false]),
       hasRowExpansion: PropTypes.bool,
     }).isRequired,
     onChangeOrdering: PropTypes.func.isRequired,

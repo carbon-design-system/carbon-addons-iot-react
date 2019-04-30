@@ -24,16 +24,16 @@ describe('WizardFooter', () => {
     const cancelAndNextButtons = mount(<WizardFooter {...commonFooterProps} hasPrev={false} />);
     // should only have Cancel and Next button
     expect(cancelAndNextButtons.find('.bx--btn')).toHaveLength(2);
-    const cancelBackAndNextButtons = mount(<WizardFooter {...commonFooterProps} />);
-    // should have Cancel Back and Next button
-    expect(cancelBackAndNextButtons.find('.bx--btn')).toHaveLength(3);
-    const cancelBackAndAddButtons = mount(<WizardFooter {...commonFooterProps} hasNext={false} />);
-    // should have Cancel Back and Add button
-    expect(cancelBackAndAddButtons.find('.bx--btn')).toHaveLength(3);
+    const backAndNextButtons = mount(<WizardFooter {...commonFooterProps} />);
+    // should have Back and Next button
+    expect(backAndNextButtons.find('.bx--btn')).toHaveLength(2);
+    const backAndAddButtons = mount(<WizardFooter {...commonFooterProps} hasNext={false} />);
+    // should have Back and Add button
+    expect(backAndAddButtons.find('.bx--btn')).toHaveLength(2);
     expect(
-      cancelBackAndAddButtons
+      backAndAddButtons
         .find('.bx--btn')
-        .at(2)
+        .at(1)
         .text()
     ).toContain('Add');
   });
