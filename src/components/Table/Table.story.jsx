@@ -454,6 +454,15 @@ storiesOf('Table', module)
       options={{ hasSearch: true }}
     />
   ))
+  .add('minitable', () => (
+    <StatefulTable
+      style={{ maxWidth: '300px' }}
+      columns={tableColumns.slice(0, 2)}
+      data={tableData}
+      actions={actions}
+      options={{ hasSearch: true, hasPagination: true, hasRowSelection: 'single' }}
+    />
+  ))
   .add('with multi select and batch actions', () => (
     // TODO - batch action bar
     <Table
