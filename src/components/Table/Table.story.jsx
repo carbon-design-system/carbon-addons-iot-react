@@ -4,6 +4,7 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { boolean, text, number } from '@storybook/addon-knobs';
 import styled from 'styled-components';
+import merge from 'lodash/merge';
 
 import { getSortedData } from '../../utils/componentUtilityFunctions';
 
@@ -291,6 +292,7 @@ export const initialState = {
         isHidden: id === 'secretField',
       })),
       expandedIds: [],
+      rowActions: [],
     },
     toolbar: {
       activeBar: 'filter',
@@ -313,6 +315,26 @@ storiesOf('Table', module)
       <StatefulTable
         {...initialState}
         actions={actions}
+        lightweight={boolean('lightweight', false)}
+      />
+    ),
+    {
+      info: {
+        text:
+          'This is an example of the <StatefulTable> component that uses local state to handle all the table actions. This is produced by wrapping the <Table> in a container component and managing the state associated with features such the toolbar, filters, row select, etc. For more robust documentation on the prop model and source, see the other "with function" stories.',
+        propTables: [Table],
+        propTablesExclude: [StatefulTable],
+      },
+    }
+  )
+  .add(
+    'Stateful with async row actions',
+    () => (
+      <StatefulTable
+        {...initialState}
+        actions={merge({}, actions, {
+          table: { onApplyRowAction: () => new Promise(resolve => setTimeout(resolve, 3000)) },
+        })}
         lightweight={boolean('lightweight', false)}
       />
     ),

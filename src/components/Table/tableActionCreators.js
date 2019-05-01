@@ -7,13 +7,13 @@ export const TABLE_ACTION_CANCEL = 'TABLE_ACTION_CANCEL';
 export const TABLE_ACTION_APPLY = 'TABLE_ACTION_APPLY';
 export const TABLE_ROW_ACTION_START = 'TABLE_ROW_ACTION_START';
 export const TABLE_ROW_ACTION_COMPLETE = 'TABLE_ROW_ACTION_COMPLETE';
+export const TABLE_ROW_ACTION_ERROR = 'TABLE_ROW_ACTION_ERROR';
 export const TABLE_COLUMN_SORT = 'TABLE_COLUMN_SORT';
 export const TABLE_COLUMN_ORDER = 'TABLE_COLUMN_ORDER';
 export const TABLE_ROW_SELECT = 'TABLE_ROW_SELECT';
 export const TABLE_ROW_SELECT_ALL = 'TABLE_ROW_SELECT_ALL';
 export const TABLE_ROW_CLICK = 'TABLE_ROW_CLICK';
 export const TABLE_ROW_EXPAND = 'TABLE_ROW_EXPAND';
-export const TABLE_ROW_ACTION_APPLY = 'TABLE_ROW_ACTION_APPLY';
 export const TABLE_SEARCH_APPLY = 'TABLE_SEARCH_APPLY';
 export const TABLE_EMPTY_STATE_ACTION = 'TABLE_EMPTY_STATE_ACTION';
 export const TABLE_LOADING_SET = 'TABLE_LOADING_SET';
@@ -40,7 +40,15 @@ export const tableColumnOrder = ordering => ({ type: TABLE_COLUMN_ORDER, payload
 export const tableEmptyStateAction = () => ({ type: TABLE_EMPTY_STATE_ACTION });
 /** Table row actions */
 export const tableRowActionStart = rowId => ({ type: TABLE_ROW_ACTION_START, payload: rowId });
-export const tableRowActionComplete = rowId => ({ type: TABLE_ACTION_APPLY, payload: rowId });
+export const tableRowActionComplete = rowId => ({
+  type: TABLE_ROW_ACTION_COMPLETE,
+  payload: rowId,
+});
+export const tableRowActionError = (rowId, error) => ({
+  type: TABLE_ROW_ACTION_ERROR,
+  payload: rowId,
+  error,
+});
 
 /** Select a row of the table */
 export const tableRowSelect = (rowId, isSelected, hasRowSelection) => ({
@@ -59,10 +67,6 @@ export const tableRowClick = rowId => ({
 export const tableRowExpand = (rowId, isExpanded) => ({
   type: TABLE_ROW_EXPAND,
   payload: { rowId, isExpanded },
-});
-export const tableRowActionApply = (rowId, actionId) => ({
-  type: TABLE_ROW_ACTION_APPLY,
-  payload: { rowId, actionId },
 });
 
 /**

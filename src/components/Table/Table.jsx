@@ -151,12 +151,14 @@ const propTypes = {
       /** Apply a search criteria to the table */
       onApplySearch: PropTypes.func,
     }),
+    /** table wide actions */
     table: PropTypes.shape({
       onRowSelected: PropTypes.func,
       onRowClicked: PropTypes.func,
       onRowExpanded: PropTypes.func,
       onSelectAll: PropTypes.func,
       onChangeSort: PropTypes.func,
+      /** if you return a promise from apply row action the stateful table will assume you're asynchronous and give a spinner */
       onApplyRowAction: PropTypes.func,
       onEmptyStateAction: PropTypes.func,
       onChangeOrdering: PropTypes.func,
