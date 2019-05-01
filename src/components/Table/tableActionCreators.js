@@ -5,6 +5,8 @@ export const TABLE_FILTER_CLEAR = 'TABLE_FILTER_CLEAR';
 export const TABLE_TOOLBAR_TOGGLE = 'TABLE_TOOLBAR_TOGGLE';
 export const TABLE_ACTION_CANCEL = 'TABLE_ACTION_CANCEL';
 export const TABLE_ACTION_APPLY = 'TABLE_ACTION_APPLY';
+export const TABLE_ROW_ACTION_START = 'TABLE_ROW_ACTION_START';
+export const TABLE_ROW_ACTION_COMPLETE = 'TABLE_ROW_ACTION_COMPLETE';
 export const TABLE_COLUMN_SORT = 'TABLE_COLUMN_SORT';
 export const TABLE_COLUMN_ORDER = 'TABLE_COLUMN_ORDER';
 export const TABLE_ROW_SELECT = 'TABLE_ROW_SELECT';
@@ -36,6 +38,9 @@ export const tableColumnSort = column => ({ type: TABLE_COLUMN_SORT, payload: co
 export const tableColumnOrder = ordering => ({ type: TABLE_COLUMN_ORDER, payload: ordering });
 /** Table empty state action */
 export const tableEmptyStateAction = () => ({ type: TABLE_EMPTY_STATE_ACTION });
+/** Table row actions */
+export const tableRowActionStart = rowId => ({ type: TABLE_ROW_ACTION_START, payload: rowId });
+export const tableRowActionComplete = rowId => ({ type: TABLE_ACTION_APPLY, payload: rowId });
 
 /** Select a row of the table */
 export const tableRowSelect = (rowId, isSelected, hasRowSelection) => ({

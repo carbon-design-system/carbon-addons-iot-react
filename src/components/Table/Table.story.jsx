@@ -603,6 +603,16 @@ storiesOf('Table', module)
               content: <RowExpansionContent rowId="row-5" />,
             },
           ],
+          rowActions: [
+            {
+              rowId: 'row-1',
+              isRunning: true,
+            },
+            {
+              rowId: 'row-3',
+              error: { title: 'Import failed', message: 'Contact your administrator' },
+            },
+          ],
         },
       }}
     />

@@ -28,7 +28,6 @@ const RowActionsContainer = styled.div`
     color: ${props => (props.isRowExpanded ? COLORS.white : '')};
     svg {
       stroke: ${props => (props.isRowExpanded ? COLORS.white : '')};
-      margin-left: ${props => (props.hideLabel !== 'false' ? '0' : '')};
     }
     /* the spinner was a little too big and causing the row to scroll so need to scale down a bit */
     .bx--loading--small {
@@ -170,54 +169,56 @@ class RowActionsCell extends React.Component {
               {inProgressText}
             </Fragment>
           ) : (
-            actions
-              .filter(action => !action.isOverflow)
-              .map(({ id: actionId, labelText, ...others }) => (
-                <RowActionButton
-                  {...others}
-                  key={`${id}-row-actions-button-${actionId}`}
-                  kind="ghost"
-                  onClick={e => onClick(e, id, actionId, onApplyRowAction)}
-                  small
-                  hideLabel={`${!labelText}`}
-                  isRowExpanded={isRowExpanded}>
-                  {labelText}
-                </RowActionButton>
-              ))
-          )}
-          {hasOverflow ? (
-            <StyledOverflowMenu
-              floatingMenu
-              flipped
-              ariaLabel={overflowMenuText}
-              onClick={event => event.stopPropagation()}
-              isRowExpanded={isRowExpanded}
-              iconDescription={overflowMenuText}
-              isOpen={isOpen}
-              onOpen={this.handleOpen}
-              onClose={this.handleClose}>
+            <Fragment>
               {actions
-                .filter(action => action.isOverflow)
-                .map(action => (
-                  <OverflowMenuItem
-                    key={`${id}-row-actions-button-${action.id}`}
-                    onClick={e => onClick(e, id, action.id, onApplyRowAction)}
-                    requireTitle
-                    itemText={
-                      action.icon ? (
-                        <OverflowMenuContent>
-                          <StyledIcon name={action.icon} iconTitle={action.labelText} />
-                          {action.labelText}
-                        </OverflowMenuContent>
-                      ) : (
-                        action.labelText
-                      )
-                    }
-                    floatingMenu
-                  />
+                .filter(action => !action.isOverflow)
+                .map(({ id: actionId, labelText, ...others }) => (
+                  <RowActionButton
+                    {...others}
+                    key={`${id}-row-actions-button-${actionId}`}
+                    kind="ghost"
+                    onClick={e => onClick(e, id, actionId, onApplyRowAction)}
+                    small
+                    hideLabel={`${!labelText}`}
+                    isRowExpanded={isRowExpanded}>
+                    {labelText}
+                  </RowActionButton>
                 ))}
-            </StyledOverflowMenu>
-          ) : null}
+              {hasOverflow ? (
+                <StyledOverflowMenu
+                  floatingMenu
+                  flipped
+                  ariaLabel={overflowMenuText}
+                  onClick={event => event.stopPropagation()}
+                  isRowExpanded={isRowExpanded}
+                  iconDescription={overflowMenuText}
+                  isOpen={isOpen}
+                  onOpen={this.handleOpen}
+                  onClose={this.handleClose}>
+                  {actions
+                    .filter(action => action.isOverflow)
+                    .map(action => (
+                      <OverflowMenuItem
+                        key={`${id}-row-actions-button-${action.id}`}
+                        onClick={e => onClick(e, id, action.id, onApplyRowAction)}
+                        requireTitle
+                        itemText={
+                          action.icon ? (
+                            <OverflowMenuContent>
+                              <StyledIcon name={action.icon} iconTitle={action.labelText} />
+                              {action.labelText}
+                            </OverflowMenuContent>
+                          ) : (
+                            action.labelText
+                          )
+                        }
+                        floatingMenu
+                      />
+                    ))}
+                </StyledOverflowMenu>
+              ) : null}
+            </Fragment>
+          )}
         </RowActionsContainer>
       </TableCell>
     ) : null;

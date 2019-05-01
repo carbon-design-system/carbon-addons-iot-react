@@ -16,6 +16,8 @@ import {
   TABLE_ROW_SELECT,
   TABLE_ROW_SELECT_ALL,
   TABLE_ROW_EXPAND,
+  TABLE_ROW_ACTION_START,
+  TABLE_ROW_ACTION_COMPLETE,
   TABLE_COLUMN_ORDER,
   TABLE_REGISTER,
   TABLE_SEARCH_APPLY,
@@ -146,6 +148,10 @@ export const tableReducer = (state = {}, action) => {
         action
       );
     }
+    // Row actions
+    case TABLE_ROW_ACTION_START:
+    case TABLE_ROW_ACTION_COMPLETE:
+      return state;
     // Toolbar Actions
     case TABLE_TOOLBAR_TOGGLE:
       return baseTableReducer(state, action);

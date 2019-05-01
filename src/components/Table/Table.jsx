@@ -17,6 +17,7 @@ import {
   EmptyStatePropTypes,
   TableSearchPropTypes,
   I18NPropTypes,
+  RowActionsStatePropTypes,
 } from './TablePropTypes';
 import TableHead from './TableHead/TableHead';
 import TableToolbar from './TableToolbar/TableToolbar';
@@ -115,7 +116,7 @@ const propTypes = {
         columnId: PropTypes.string,
         direction: PropTypes.oneOf(['NONE', 'ASC', 'DESC']),
       }),
-      /* Specify column ordering and visibility */
+      /** Specify column ordering and visibility */
       ordering: PropTypes.arrayOf(
         PropTypes.shape({
           columnId: PropTypes.string.isRequired,
@@ -123,6 +124,8 @@ const propTypes = {
           isHidden: PropTypes.bool,
         })
       ),
+      /** what is the current state of the row actions */
+      rowActions: RowActionsStatePropTypes,
       expandedIds: PropTypes.arrayOf(PropTypes.string),
       emptyState: EmptyStatePropTypes,
       loadingState: PropTypes.shape({
@@ -192,6 +195,7 @@ export const defaultProps = baseProps => ({
       expandedIds: [],
       isSelectAllSelected: false,
       selectedIds: [],
+      rowActions: [],
       sort: {},
       ordering: baseProps.columns && baseProps.columns.map(i => ({ columnId: i.id })),
       loadingState: {
@@ -363,6 +367,7 @@ const Table = props => {
             <TableBody
               id={id}
               rows={visibleData}
+              rowActionsState={view.table.rowActions}
               expandedRows={expandedData}
               columns={visibleColumns}
               expandedIds={view.table.expandedIds}
