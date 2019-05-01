@@ -8,7 +8,7 @@ import { COLORS } from '../../../styles/styles';
 const { TableBody, TableCell, TableRow } = DataTable;
 
 const propTypes = {
-  hasRowSelection: PropTypes.oneOf(['multi', 'single', '']),
+  hasRowSelection: PropTypes.oneOf(['multi', 'single', false]),
   hasRowExpansion: PropTypes.bool,
   hasRowActions: PropTypes.bool,
   rowCount: PropTypes.number,
@@ -16,7 +16,7 @@ const propTypes = {
 };
 
 const defaultProps = {
-  hasRowSelection: '',
+  hasRowSelection: false,
   hasRowExpansion: false,
   hasRowActions: false,
   rowCount: 0,

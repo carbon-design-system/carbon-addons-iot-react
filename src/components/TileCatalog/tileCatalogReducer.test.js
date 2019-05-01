@@ -62,7 +62,6 @@ describe('tileCatalogReducer', () => {
 
     const newState = tileCatalogReducer(existingState, pageChangeAction);
     expect(newState.page).toEqual(2);
-    // expect(newState.selectedTileId).toEqual(null);
     expect(newState.startingIndex).toEqual(5);
     expect(newState.endingIndex).toEqual(9);
   });
@@ -85,12 +84,11 @@ describe('tileCatalogReducer', () => {
     const newState = tileCatalogReducer(existingState, searchAction);
     expect(newState.searchState).toEqual('Tile6');
     expect(newState.page).toEqual(1);
-    // expect(newState.selectedTileId).toEqual(null);
     expect(newState.startingIndex).toEqual(0);
     expect(newState.endingIndex).toEqual(4);
   });
   test('select', () => {
-    const selectAction = { type: TILE_ACTIONS.SELECT, payload: 'tile2' };
+    const selectAction = { type: TILE_ACTIONS.SELECT, payload: 'test2' };
     const existingState = {
       page: 1,
       pageSize: 5,
@@ -105,7 +103,13 @@ describe('tileCatalogReducer', () => {
     };
 
     const newState = tileCatalogReducer(existingState, selectAction);
-    expect(newState.selectedTileId).toEqual('tile2');
+    expect(newState.selectedTileId).toEqual('test2');
+    const selectAction2 = { type: TILE_ACTIONS.SELECT, payload: 'test6' };
+    const newState2 = tileCatalogReducer(existingState, selectAction2);
+    expect(newState2.selectedTileId).toEqual('test6');
+    expect(newState2.page).toEqual(2);
+    expect(newState2.startingIndex).toEqual(5);
+    expect(newState2.endingIndex).toEqual(9);
   });
 });
 describe('determineInitialState', () => {

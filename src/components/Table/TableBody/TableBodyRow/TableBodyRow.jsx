@@ -44,7 +44,7 @@ const propTypes = {
   columns: TableColumnsPropTypes.isRequired,
   /** table wide options */
   options: PropTypes.shape({
-    hasRowSelection: PropTypes.oneOf(['multi', 'single', '']),
+    hasRowSelection: PropTypes.oneOf(['multi', 'single', false]),
     hasRowExpansion: PropTypes.bool,
     hasRowNesting: PropTypes.bool,
     shouldExpandOnRowClick: PropTypes.bool,

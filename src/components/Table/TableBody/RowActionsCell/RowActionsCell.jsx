@@ -22,8 +22,15 @@ const RowActionsContainer = styled.div`
     display: flex;
     justify-content: flex-end;
     align-items: center;
+
+    /* Need space between the buttons */
     > * {
       opacity: ${props => (props.visible ? 1 : 0)};
+      margin-left: 0.75rem;
+    }
+    /* If the actions are focused on, they should show up */
+    > *:focus {
+      opacity: 1;
     }
     color: ${props => (props.isRowExpanded ? COLORS.white : '')};
     svg {
@@ -63,6 +70,9 @@ const StyledOverflowMenu = styled(({ isRowExpanded, isOpen, ...other }) => (
     }
     opacity: ${props => (props.isOpen || props.isRowExpanded ? 1 : 0)};
   }
+  &&&:hover > svg {
+    fill: ${COLORS.blue};
+  }
 `;
 
 // Don't pass through the isRowExpanded or hideLabel prop to the button
@@ -75,7 +85,8 @@ const RowActionButton = styled(({ isRowExpanded, hideLabel, isOverflow, ...other
       fill: ${props => (props.isRowExpanded ? COLORS.white : '')};
       margin-left: ${props => (props.hideLabel !== 'false' ? '0' : '')};
     }
-    :hover {
+    :hover,
+    :focus {
       color: ${props => (!props.isRowExpanded ? COLORS.white : '')};
       svg {
         fill: ${props => (!props.isRowExpanded ? COLORS.white : '')};
