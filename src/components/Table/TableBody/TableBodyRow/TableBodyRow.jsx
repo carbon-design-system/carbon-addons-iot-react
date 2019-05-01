@@ -6,7 +6,11 @@ import styled from 'styled-components';
 import { COLORS } from '../../../../styles/styles';
 import RowActionsCell from '../RowActionsCell/RowActionsCell';
 import TableCellRenderer from '../../TableCellRenderer/TableCellRenderer';
-import { RowActionPropTypes, TableColumnsPropTypes } from '../../TablePropTypes';
+import {
+  RowActionPropTypes,
+  RowActionErrorPropTypes,
+  TableColumnsPropTypes,
+} from '../../TablePropTypes';
 import { stopPropagationAndCallback } from '../../../../utils/componentUtilityFunctions';
 
 const { TableRow, TableExpandRow, TableCell } = DataTable;
@@ -53,7 +57,7 @@ const propTypes = {
   /** table Id */
   tableId: PropTypes.string.isRequired,
   /** contents of the row each object value is a renderable node keyed by column id */
-  children: PropTypes.objectOf(PropTypes.node).isRequired,
+  values: PropTypes.objectOf(PropTypes.node).isRequired,
 
   /** is the row currently selected */
   isSelected: PropTypes.bool,
@@ -75,6 +79,18 @@ const propTypes = {
   }).isRequired,
   /** optional per-row actions */
   rowActions: RowActionPropTypes,
+  /** Is a row action actively running */
+  isRowActionRunning: PropTypes.bool,
+  /** has a row action errored out */
+  rowActionsError: RowActionErrorPropTypes,
+  /** I18N label for in progress */
+  inProgressText: PropTypes.string,
+  /** I18N label for action failed */
+  actionFailedText: PropTypes.string,
+  /** I18N label for learn more */
+  learnMoreText: PropTypes.string,
+  /** I18N label for dismiss */
+  dismissText: PropTypes.string,
 };
 
 const defaultProps = {
@@ -102,6 +118,7 @@ const StyledTableRow = styled(TableRow)`
   &&& {
     :hover {
       td {
+        /* show the row actions if the table row is hovered over */
         div > * {
           opacity: 1;
         }
@@ -281,10 +298,12 @@ const TableBodyRow = ({
   overflowMenuText,
   clickToExpandText,
   clickToCollapseText,
-  children,
+  values,
   nestingLevel,
   nestingChildCount,
   rowActions,
+  isRowActionRunning,
+  rowActionsError,
   rowDetails,
 }) => {
   const nestingOffset = nestingLevel * 16;
@@ -330,13 +349,13 @@ const TableBodyRow = ({
               {col.renderDataFunction ? (
                 col.renderDataFunction({
                   // Call the column renderer if it's provided
-                  value: children[col.columnId],
+                  value: values[col.columnId],
                   columnId: col.columnId,
                   rowId: id,
-                  row: children,
+                  row: values,
                 })
               ) : (
-                <TableCellRenderer>{children[col.columnId]}</TableCellRenderer>
+                <TableCellRenderer>{values[col.columnId]}</TableCellRenderer>
               )}
             </StyledNestedSpan>
           </StyledTableCellRow>
@@ -346,9 +365,11 @@ const TableBodyRow = ({
         <RowActionsCell
           id={id}
           actions={rowActions}
+          isRowActionRunning={isRowActionRunning}
           isRowExpanded={isExpanded && !hasRowNesting}
           overflowMenuText={overflowMenuText}
           onApplyRowAction={onApplyRowAction}
+          rowActionsError={rowActionsError}
         />
       ) : nestingLevel > 0 && hasRowActions ? (
         <TableCell key={`${id}-row-actions-cell`} />

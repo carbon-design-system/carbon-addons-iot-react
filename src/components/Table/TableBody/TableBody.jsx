@@ -136,9 +136,9 @@ const TableBody = ({
           'onRowExpanded',
           'onRowClicked'
         )}
-        rowActions={row.rowActions}>
-        {row.values}
-      </TableBodyRow>
+        rowActions={row.rowActions}
+        values={row.values}
+      />
     );
     return shouldShowChildren
       ? [rowElement].concat(row.children.map(childRow => renderRow(childRow, nestingLevel + 1)))
