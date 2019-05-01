@@ -146,7 +146,8 @@ const TableBody = ({
           'onRowSelected',
           'onApplyRowAction',
           'onRowExpanded',
-          'onRowClicked'
+          'onRowClicked',
+          'onClearRowError'
         )}
         rowActions={row.rowActions}
         values={row.values}

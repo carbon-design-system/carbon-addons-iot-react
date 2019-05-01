@@ -110,6 +110,7 @@ const propTypes = {
   isRowActionRunning: PropTypes.bool,
   /** row action error out */
   rowActionsError: RowActionErrorPropTypes,
+  onClearError: PropTypes.func,
   /** I18N label for in progress */
   inProgressText: PropTypes.string,
   /** I18N label for action failed */
@@ -127,6 +128,7 @@ const defaultProps = {
   rowActionsError: null,
   overflowMenuText: 'More actions',
   inProgressText: 'In progress',
+  onClearError: null,
 };
 
 const onClick = (e, id, action, onApplyRowAction) => {
@@ -163,6 +165,7 @@ class RowActionsCell extends React.Component {
       overflowMenuText,
       isRowActionRunning,
       rowActionsError,
+      onClearError,
       inProgressText,
     } = this.props;
     const { isOpen } = this.state;
@@ -173,7 +176,7 @@ class RowActionsCell extends React.Component {
           visible={isRowExpanded || isRowActionRunning || rowActionsError}
           isRowExpanded={isRowExpanded}>
           {rowActionsError ? (
-            <RowActionsError rowActionsError={rowActionsError} />
+            <RowActionsError rowActionsError={rowActionsError} onClearError={onClearError} />
           ) : isRowActionRunning ? (
             <Fragment>
               <Loading small withOverlay={false} />

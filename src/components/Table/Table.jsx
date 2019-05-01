@@ -160,6 +160,7 @@ const propTypes = {
       onChangeSort: PropTypes.func,
       /** if you return a promise from apply row action the stateful table will assume you're asynchronous and give a spinner */
       onApplyRowAction: PropTypes.func,
+      onClearRowError: PropTypes.func,
       onEmptyStateAction: PropTypes.func,
       onChangeOrdering: PropTypes.func,
     }).isRequired,

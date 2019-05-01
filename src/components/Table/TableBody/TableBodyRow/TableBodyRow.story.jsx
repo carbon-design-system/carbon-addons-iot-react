@@ -15,7 +15,13 @@ const tableBodyRowProps = {
   totalColumns: 1,
   tableId: 'tableId',
   values: { string: 'My String' },
-  tableActions: actions('onRowSelected', 'onRowClicked', 'onApplyRowAction', 'onRowExpanded'),
+  tableActions: actions(
+    'onRowSelected',
+    'onRowClicked',
+    'onApplyRowAction',
+    'onRowExpanded',
+    'onClearRowError'
+  ),
 };
 
 const TableDecorator = storyFn => (
@@ -51,7 +57,11 @@ storiesOf('TableBodyRow', module)
       {...tableBodyRowProps}
       rowActions={[{ id: 'add', icon: 'icon--add' }]}
       options={{ hasRowActions: true, hasRowExpansion: true }}
-      rowActionsError={{ title: 'Import failed:', message: 'Model type not currently supported.' }}
+      rowActionsError={{
+        title: 'Import failed:',
+        message: 'Model type not currently supported.',
+        learnMoreURL: 'http://www.cnn.com',
+      }}
       isExpanded={boolean('isExpanded', false)}
     />
   ));

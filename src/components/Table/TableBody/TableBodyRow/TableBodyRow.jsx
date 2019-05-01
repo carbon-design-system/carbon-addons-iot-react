@@ -291,7 +291,7 @@ const TableBodyRow = ({
     hasRowNesting,
     shouldExpandOnRowClick,
   },
-  tableActions: { onRowSelected, onRowExpanded, onRowClicked, onApplyRowAction },
+  tableActions: { onRowSelected, onRowExpanded, onRowClicked, onApplyRowAction, onClearRowError },
   isExpanded,
   isSelected,
   selectRowText,
@@ -370,6 +370,7 @@ const TableBodyRow = ({
           overflowMenuText={overflowMenuText}
           onApplyRowAction={onApplyRowAction}
           rowActionsError={rowActionsError}
+          onClearError={onClearRowError ? () => onClearRowError(id) : null}
         />
       ) : nestingLevel > 0 && hasRowActions ? (
         <TableCell key={`${id}-row-actions-cell`} />

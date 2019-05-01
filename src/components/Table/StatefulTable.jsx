@@ -71,6 +71,7 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
     onSelectAll,
     onRowExpanded,
     onApplyRowAction,
+    onClearRowError,
     onEmptyStateAction,
     onChangeOrdering,
   } = table || {};
@@ -142,6 +143,10 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
         } catch (error) {
           dispatch(tableRowActionError(rowId, error));
         }
+      },
+      onClearRowError: rowId => {
+        dispatch(tableRowActionComplete(rowId));
+        callbackParent(onClearRowError, rowId);
       },
       onEmptyStateAction: () =>
         // This action doesn't update our table state, it's up to the user
