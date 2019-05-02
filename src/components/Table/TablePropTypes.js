@@ -22,6 +22,20 @@ export const RowActionPropTypes = PropTypes.arrayOf(
   })
 );
 
+export const RowActionErrorPropTypes = PropTypes.shape({
+  title: PropTypes.node,
+  message: PropTypes.node,
+  learnMoreURL: PropTypes.string,
+});
+
+export const RowActionsStatePropTypes = PropTypes.arrayOf(
+  PropTypes.shape({
+    rowId: PropTypes.string,
+    isRunning: PropTypes.bool,
+    error: RowActionErrorPropTypes,
+  })
+);
+
 export const EmptyStatePropTypes = PropTypes.oneOfType([
   PropTypes.shape({
     message: PropTypes.string.isRequired,

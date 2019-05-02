@@ -16,12 +16,37 @@ import {
   tableRowSelectAll,
   tableRowExpand,
   tableSearchApply,
+  tableRowActionStart,
+  tableRowActionComplete,
+  tableRowActionError,
 } from './tableActionCreators';
 import { initialState, tableColumns } from './Table.story';
 
 describe('table reducer testcases', () => {
   test('nothing', () => {
     expect(tableReducer(undefined, { type: 'BOGUS' })).toEqual({});
+  });
+  describe('row action tests', () => {
+    const updatedRowActionState = tableReducer(initialState, tableRowActionStart('row-1'));
+    const newRowActions = updatedRowActionState.view.table.rowActions;
+    expect(newRowActions).toHaveLength(1);
+    expect(newRowActions[0].rowId).toEqual('row-1');
+    expect(newRowActions[0].isRunning).toEqual(true);
+
+    // Set the error for the running one
+    const updatedRowActionState2 = tableReducer(
+      updatedRowActionState,
+      tableRowActionError('row-1', 'error')
+    );
+    const newRowActions2 = updatedRowActionState2.view.table.rowActions;
+    expect(newRowActions2).toHaveLength(1);
+    expect(newRowActions2[0].rowId).toEqual('row-1');
+    expect(newRowActions2[0].error).toEqual('error');
+
+    // Clear the action
+    const updatedRowActionState3 = tableReducer(initialState, tableRowActionComplete('row-1'));
+    const newRowActions3 = updatedRowActionState3.view.table.rowActions;
+    expect(newRowActions3).toHaveLength(0);
   });
   describe('filter tests', () => {
     test('TABLE_FILTER_CLEAR', () => {

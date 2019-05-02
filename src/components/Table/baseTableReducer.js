@@ -10,6 +10,9 @@ import {
   TABLE_COLUMN_SORT,
   TABLE_ROW_SELECT,
   TABLE_ROW_SELECT_ALL,
+  TABLE_ROW_ACTION_START,
+  TABLE_ROW_ACTION_COMPLETE,
+  TABLE_ROW_ACTION_ERROR,
   TABLE_ROW_EXPAND,
   TABLE_COLUMN_ORDER,
   TABLE_SEARCH_APPLY,
@@ -132,6 +135,43 @@ export const baseTableReducer = (state = {}, action) => {
         },
       });
     }
+    // Row Actions
+    case TABLE_ROW_ACTION_START:
+      return update(state, {
+        view: {
+          table: {
+            // add the in progress row
+            rowActions: { $push: [{ rowId: action.payload, isRunning: true }] },
+          },
+        },
+      });
+    case TABLE_ROW_ACTION_COMPLETE: {
+      const index = state.view.table.rowActions.findIndex(
+        rowAction => rowAction.rowId === action.payload
+      );
+      return update(state, {
+        view: {
+          table: {
+            // remove the finished row
+            rowActions: { $splice: [[index, 1]] },
+          },
+        },
+      });
+    }
+    case TABLE_ROW_ACTION_ERROR: {
+      const index = state.view.table.rowActions.findIndex(
+        rowAction => rowAction.rowId === action.payload
+      );
+      return update(state, {
+        view: {
+          table: {
+            // replace the row with the error
+            rowActions: { $splice: [[index, 1, { rowId: action.payload, error: action.error }]] },
+          },
+        },
+      });
+    }
+
     // Column operations
     case TABLE_COLUMN_SORT: {
       // TODO should check that columnId actually is valid

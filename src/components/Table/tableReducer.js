@@ -16,6 +16,9 @@ import {
   TABLE_ROW_SELECT,
   TABLE_ROW_SELECT_ALL,
   TABLE_ROW_EXPAND,
+  TABLE_ROW_ACTION_START,
+  TABLE_ROW_ACTION_COMPLETE,
+  TABLE_ROW_ACTION_ERROR,
   TABLE_COLUMN_ORDER,
   TABLE_REGISTER,
   TABLE_SEARCH_APPLY,
@@ -71,11 +74,9 @@ export const filterSearchAndSort = (data, sort = {}, search = {}, filters = []) 
   return !isEmpty(sort) ? getSortedData(searchedData, columnId, direction) : searchedData;
 };
 
+/** This reducer handles sort, filter and search that needs data otherwise it proxies for the baseTableReducer */
 export const tableReducer = (state = {}, action) => {
   switch (action.type) {
-    // Page Actions
-    case TABLE_PAGE_CHANGE:
-      return baseTableReducer(state, action);
     // Filter Actions
     case TABLE_FILTER_APPLY: {
       const newFilters = Object.entries(action.payload)
@@ -146,9 +147,7 @@ export const tableReducer = (state = {}, action) => {
         action
       );
     }
-    // Toolbar Actions
-    case TABLE_TOOLBAR_TOGGLE:
-      return baseTableReducer(state, action);
+
     // Batch Actions
     case TABLE_ACTION_CANCEL:
       return baseTableReducer(state, action);
@@ -204,8 +203,7 @@ export const tableReducer = (state = {}, action) => {
         action
       );
     }
-    case TABLE_COLUMN_ORDER:
-      return baseTableReducer(state, action);
+
     case TABLE_ROW_SELECT: {
       const data = state.view.table.filteredData || state.data;
       return baseTableReducer({ ...state, data }, action);
@@ -214,8 +212,6 @@ export const tableReducer = (state = {}, action) => {
       const data = state.view.table.filteredData || state.data;
       return baseTableReducer({ ...state, data }, action);
     }
-    case TABLE_ROW_EXPAND:
-      return baseTableReducer(state, action);
     // By default we need to setup our sorted and filteredData and turn off the loading state
     case TABLE_REGISTER: {
       const updatedData = action.payload.data || state.data;
@@ -243,6 +239,15 @@ export const tableReducer = (state = {}, action) => {
         },
       });
     }
+    // Actions that are handled by the base reducer
+    case TABLE_PAGE_CHANGE:
+    case TABLE_ROW_ACTION_START:
+    case TABLE_ROW_ACTION_COMPLETE:
+    case TABLE_ROW_ACTION_ERROR:
+    case TABLE_TOOLBAR_TOGGLE:
+    case TABLE_COLUMN_ORDER:
+    case TABLE_ROW_EXPAND:
+      return baseTableReducer(state, action);
     default:
       return state;
   }

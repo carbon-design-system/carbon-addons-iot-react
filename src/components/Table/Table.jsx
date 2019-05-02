@@ -17,6 +17,7 @@ import {
   EmptyStatePropTypes,
   TableSearchPropTypes,
   I18NPropTypes,
+  RowActionsStatePropTypes,
 } from './TablePropTypes';
 import TableHead from './TableHead/TableHead';
 import TableToolbar from './TableToolbar/TableToolbar';
@@ -115,7 +116,7 @@ const propTypes = {
         columnId: PropTypes.string,
         direction: PropTypes.oneOf(['NONE', 'ASC', 'DESC']),
       }),
-      /* Specify column ordering and visibility */
+      /** Specify column ordering and visibility */
       ordering: PropTypes.arrayOf(
         PropTypes.shape({
           columnId: PropTypes.string.isRequired,
@@ -123,6 +124,8 @@ const propTypes = {
           isHidden: PropTypes.bool,
         })
       ),
+      /** what is the current state of the row actions */
+      rowActions: RowActionsStatePropTypes,
       expandedIds: PropTypes.arrayOf(PropTypes.string),
       emptyState: EmptyStatePropTypes,
       loadingState: PropTypes.shape({
@@ -148,13 +151,16 @@ const propTypes = {
       /** Apply a search criteria to the table */
       onApplySearch: PropTypes.func,
     }),
+    /** table wide actions */
     table: PropTypes.shape({
       onRowSelected: PropTypes.func,
       onRowClicked: PropTypes.func,
       onRowExpanded: PropTypes.func,
       onSelectAll: PropTypes.func,
       onChangeSort: PropTypes.func,
+      /** if you return a promise from apply row action the stateful table will assume you're asynchronous and give a spinner */
       onApplyRowAction: PropTypes.func,
+      onClearRowError: PropTypes.func,
       onEmptyStateAction: PropTypes.func,
       onChangeOrdering: PropTypes.func,
     }).isRequired,
@@ -192,6 +198,7 @@ export const defaultProps = baseProps => ({
       expandedIds: [],
       isSelectAllSelected: false,
       selectedIds: [],
+      rowActions: [],
       sort: {},
       ordering: baseProps.columns && baseProps.columns.map(i => ({ columnId: i.id })),
       loadingState: {
@@ -362,6 +369,7 @@ const Table = props => {
             <TableBody
               id={id}
               rows={visibleData}
+              rowActionsState={view.table.rowActions}
               expandedRows={expandedData}
               columns={visibleColumns}
               expandedIds={view.table.expandedIds}
@@ -384,6 +392,7 @@ const Table = props => {
                 actions.table,
                 'onRowSelected',
                 'onApplyRowAction',
+                'onClearRowError',
                 'onRowExpanded',
                 'onRowClicked'
               )}

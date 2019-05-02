@@ -298,6 +298,7 @@ export const initialState = {
         isHidden: id === 'secretField',
       })),
       expandedIds: [],
+      rowActions: [],
     },
     toolbar: {
       activeBar: 'filter',
@@ -343,6 +344,43 @@ storiesOf('Table', module)
         {...initialState}
         actions={actions}
         lightweight={boolean('lightweight', false)}
+      />
+    ),
+    {
+      info: {
+        text:
+          'This is an example of the <StatefulTable> component that uses local state to handle all the table actions. This is produced by wrapping the <Table> in a container component and managing the state associated with features such the toolbar, filters, row select, etc. For more robust documentation on the prop model and source, see the other "with function" stories.',
+        propTables: [Table],
+        propTablesExclude: [StatefulTable],
+      },
+    }
+  )
+  .add(
+    'Stateful with async row actions',
+    () => (
+      <StatefulTable
+        {...initialState}
+        actions={merge({}, actions, {
+          table: {
+            onApplyRowAction: () => new Promise(resolve => setTimeout(resolve, 3000)),
+            onClearRowError: () => true,
+          },
+        })}
+        lightweight={boolean('lightweight', false)}
+        view={{
+          table: {
+            rowActions: [
+              {
+                rowId: 'row-1',
+                isRunning: true,
+              },
+              {
+                rowId: 'row-3',
+                error: { title: 'Import failed', message: 'Contact your administrator' },
+              },
+            ],
+          },
+        }}
       />
     ),
     {
@@ -630,6 +668,16 @@ storiesOf('Table', module)
             {
               rowId: 'row-5',
               content: <RowExpansionContent rowId="row-5" />,
+            },
+          ],
+          rowActions: [
+            {
+              rowId: 'row-1',
+              isRunning: true,
+            },
+            {
+              rowId: 'row-3',
+              error: { title: 'Import failed', message: 'Contact your administrator' },
             },
           ],
         },
