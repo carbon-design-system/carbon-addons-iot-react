@@ -392,6 +392,7 @@ const Table = props => {
                 actions.table,
                 'onRowSelected',
                 'onApplyRowAction',
+                'onClearRowError',
                 'onRowExpanded',
                 'onRowClicked'
               )}

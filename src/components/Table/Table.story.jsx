@@ -361,9 +361,26 @@ storiesOf('Table', module)
       <StatefulTable
         {...initialState}
         actions={merge({}, actions, {
-          table: { onApplyRowAction: () => new Promise(resolve => setTimeout(resolve, 3000)) },
+          table: {
+            onApplyRowAction: () => new Promise(resolve => setTimeout(resolve, 3000)),
+            onClearRowError: () => true,
+          },
         })}
         lightweight={boolean('lightweight', false)}
+        view={{
+          table: {
+            rowActions: [
+              {
+                rowId: 'row-1',
+                isRunning: true,
+              },
+              {
+                rowId: 'row-3',
+                error: { title: 'Import failed', message: 'Contact your administrator' },
+              },
+            ],
+          },
+        }}
       />
     ),
     {

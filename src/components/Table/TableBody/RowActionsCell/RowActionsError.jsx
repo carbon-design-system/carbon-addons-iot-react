@@ -75,7 +75,9 @@ const RowActionsError = ({
               <a href={learnMoreURL} target="_blank" rel="noopener noreferrer">
                 {learnMoreText}
               </a>
-            ) : null}
+            ) : (
+              <div />
+            )}
             {onClearError ? (
               <Button
                 onClick={evt => {
