@@ -138,10 +138,7 @@ export const itemsAndComponents = items.map((item, i) => ({
   component: itemComponents[i],
 }));
 
-const sidebarComponent = <div>sidebar</div>;
-// Simple Static Wizard Stories
-
-storiesOf('DetailWizard', module)
+storiesOf('TableDetailWizard', module)
   .add('Stateful example', () => (
     <StatefulTableDetailWizard
       currentItemId="step1"
@@ -149,7 +146,6 @@ storiesOf('DetailWizard', module)
       title={text('title', 'Create Physical Interface')}
       showLabels={boolean('showLabels', true)}
       stepWidth={number('stepWidth', 136)}
-      sidebar={sidebarComponent}
       onClose={action('closed')}
       onSubmit={action('submit')}
       onNext={action('next')}
@@ -181,7 +177,6 @@ storiesOf('DetailWizard', module)
       currentItemId="step1"
       setItem={action('step clicked')}
       showLabels={boolean('showLabels', true)}
-      sidebar={sidebarComponent}
     />
   ))
   .add('with error', () => (

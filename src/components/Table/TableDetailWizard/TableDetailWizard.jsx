@@ -6,7 +6,7 @@ import { InlineNotification } from 'carbon-components-react';
 import WizardFooter from '../../WizardInline/WizardFooter/WizardFooter';
 import WizardContent from '../../WizardInline/WizardContent/WizardContent';
 
-import WizardHeader from './TableDetailWizardHeader/TableDetailWizardHeader';
+import TableDetailWizardHeader from './TableDetailWizardHeader/TableDetailWizardHeader';
 import DetailWizardSidebar from './TableDetailWizardSidebar/TableDetailWizardSidebar';
 
 const StyledWizardWrapper = styled.div`
@@ -55,7 +55,6 @@ const StyledContentContainer = styled.div`
 export const propTypes = {
   /** Title in the header */
   title: PropTypes.string.isRequired,
-  blurb: PropTypes.string,
   /** Id of current step */
   currentItemId: PropTypes.string,
   /** Array of items representing pages of wizard. Must contain id, name, component. Optional: backLabel, nextLabel, nextDisabled */
@@ -84,10 +83,6 @@ export const propTypes = {
   nextLabel: PropTypes.node,
   /** label to show on the submit button */
   submitLabel: PropTypes.node,
-  /** optional component to show in sidebar */
-  sidebar: PropTypes.element,
-  /** component to show in footer on the left of the buttons */
-  footerLeftContent: PropTypes.element,
   /** function to go to item when click ProgressIndicator items. */
   setItem: PropTypes.func,
   /** show labels in Progress Indicator */
@@ -98,7 +93,6 @@ export const propTypes = {
   stepWidth: PropTypes.number,
   /** is the wizard actively sending data should disable the button */
   sendingData: PropTypes.bool,
-
   /** Form Error Details */
   error: PropTypes.string,
   /**  Clear the currently shown error, triggered if the user closes the ErrorNotification */
@@ -106,12 +100,9 @@ export const propTypes = {
 };
 
 export const defaultProps = {
-  sidebar: null,
-  footerLeftContent: null,
   showLabels: true,
   nextDisabled: false,
   currentItemId: null,
-  blurb: null,
   stepWidth: 136,
   onNext: null,
   onBack: null,
@@ -170,7 +161,7 @@ const TableDetailWizard = ({
 
   return (
     <StyledWizardWrapper className={className}>
-      <WizardHeader title={title} />
+      <TableDetailWizardHeader title={title} onClose={onClose} />
       <StyledWizardContainer>
         <DetailWizardSidebar
           currentItemId={currentItemId}

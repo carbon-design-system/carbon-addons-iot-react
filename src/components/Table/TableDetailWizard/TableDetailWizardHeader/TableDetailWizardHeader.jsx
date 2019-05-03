@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Button } from 'carbon-components-react';
@@ -26,31 +26,20 @@ const StyledButton = styled.div`
   }
 `;
 
-class WizardHeader extends Component {
-  static propTypes = {
-    /** Title in the header  */
-    title: PropTypes.string.isRequired,
-    onClose: PropTypes.func.isRequired,
-  };
+const TableDetailWizardHeader = ({ title, onClose, className }) => (
+  <StyledDivWizardHeader className={className}>
+    <StyledDivHeading>{title}</StyledDivHeading>
+    <StyledButton>
+      <Button kind="ghost" icon="close" small onClick={() => onClose()} />
+    </StyledButton>
+  </StyledDivWizardHeader>
+);
 
-  static defaultProps = {
-    blurb: null,
-  };
+TableDetailWizardHeader.propTypes = {
+  /** Title in the header  */
+  title: PropTypes.string.isRequired,
+  /** Close button callback  */
+  onClose: PropTypes.func.isRequired,
+};
 
-  state = {};
-
-  render = () => {
-    const { title, onClose, className } = this.props;
-
-    return (
-      <StyledDivWizardHeader className={className}>
-        <StyledDivHeading>{title}</StyledDivHeading>
-        <StyledButton>
-          <Button kind="ghost" icon="close" small onClick={() => onClose()} />
-        </StyledButton>
-      </StyledDivWizardHeader>
-    );
-  };
-}
-
-export default WizardHeader;
+export default TableDetailWizardHeader;
