@@ -133,6 +133,15 @@ export const I18NPropTypes = PropTypes.shape({
   openMenuAria: PropTypes.string,
   closeMenuAria: PropTypes.string,
   clearSelectionAria: PropTypes.string,
+  /** Row actions in table body */
+  /** I18N label for in progress */
+  inProgressText: PropTypes.string, // eslint-disable-line
+  /** I18N label for action failed */
+  actionFailedText: PropTypes.string, // eslint-disable-line
+  /** I18N label for learn more */
+  learnMoreText: PropTypes.string, // eslint-disable-line
+  /** I18N label for dismiss */
+  dismissText: PropTypes.string, // eslint-disable-line
 });
 
 export const TableSearchPropTypes = PropTypes.shape({

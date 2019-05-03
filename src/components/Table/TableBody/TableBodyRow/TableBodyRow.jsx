@@ -33,13 +33,13 @@ const propTypes = {
     })
   ).isRequired,
   /** internationalized label */
-  selectRowText: PropTypes.string,
+  selectRowAria: PropTypes.string,
   /** internationalized label  */
-  overflowMenuText: PropTypes.string,
+  overflowMenuAria: PropTypes.string,
   /** internationalized label */
-  clickToExpandText: PropTypes.string,
+  clickToExpandAria: PropTypes.string,
   /** internationalized label  */
-  clickToCollapseText: PropTypes.string,
+  clickToCollapseAria: PropTypes.string,
   /** List of columns */
   columns: TableColumnsPropTypes.isRequired,
   /** table wide options */
@@ -96,10 +96,10 @@ const propTypes = {
 const defaultProps = {
   isSelected: false,
   isExpanded: false,
-  selectRowText: 'Select row',
-  overflowMenuText: 'More actions',
-  clickToExpandText: 'Click to expand.',
-  clickToCollapseText: 'Click to collapse.',
+  selectRowAria: 'Select row',
+  overflowMenuAria: 'More actions',
+  clickToExpandAria: 'Click to expand.',
+  clickToCollapseAria: 'Click to collapse.',
   rowActions: null,
   rowDetails: null,
   nestingLevel: 0,
@@ -294,10 +294,14 @@ const TableBodyRow = ({
   tableActions: { onRowSelected, onRowExpanded, onRowClicked, onApplyRowAction, onClearRowError },
   isExpanded,
   isSelected,
-  selectRowText,
-  overflowMenuText,
-  clickToExpandText,
-  clickToCollapseText,
+  selectRowAria,
+  overflowMenuAria,
+  clickToExpandAria,
+  clickToCollapseAria,
+  inProgressText,
+  actionFailedText,
+  learnMoreText,
+  dismissText,
   values,
   nestingLevel,
   nestingChildCount,
@@ -323,7 +327,7 @@ const TableBodyRow = ({
         <StyledNestedSpan nestingOffset={nestingOffset}>
           <Checkbox
             id={`select-row-${id}`}
-            labelText={selectRowText}
+            labelText={selectRowAria}
             hideLabel
             checked={isSelected}
           />
@@ -367,8 +371,12 @@ const TableBodyRow = ({
           actions={rowActions}
           isRowActionRunning={isRowActionRunning}
           isRowExpanded={isExpanded && !hasRowNesting}
-          overflowMenuText={overflowMenuText}
+          overflowMenuAria={overflowMenuAria}
+          inProgressText={inProgressText}
+          actionFailedText={actionFailedText}
           onApplyRowAction={onApplyRowAction}
+          learnMoreText={learnMoreText}
+          dismissText={dismissText}
           rowActionsError={rowActionsError}
           onClearError={onClearRowError ? () => onClearRowError(id) : null}
         />
@@ -384,8 +392,8 @@ const TableBodyRow = ({
       <React.Fragment key={id}>
         <StyledTableExpandRowExpanded
           id={`${tableId}-Row-${id}`}
-          ariaLabel={clickToCollapseText}
-          expandIconDescription={clickToCollapseText}
+          ariaLabel={clickToCollapseAria}
+          expandIconDescription={clickToCollapseAria}
           isExpanded
           data-row-nesting={hasRowNesting}
           data-nesting-offset={nestingOffset}
@@ -414,8 +422,8 @@ const TableBodyRow = ({
         data-row-nesting={hasRowNesting}
         data-child-count={nestingChildCount}
         data-nesting-offset={nestingOffset}
-        ariaLabel={clickToExpandText}
-        expandIconDescription={clickToExpandText}
+        ariaLabel={clickToExpandAria}
+        expandIconDescription={clickToExpandAria}
         isExpanded={false}
         onExpand={evt => stopPropagationAndCallback(evt, onRowExpanded, id, true)}
         onClick={() => {

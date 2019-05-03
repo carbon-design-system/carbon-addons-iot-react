@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import merge from 'lodash/merge';
 import pick from 'lodash/pick';
 import { PaginationV2, DataTable } from 'carbon-components-react';
-import get from 'lodash/get';
 import isNil from 'lodash/isNil';
 import styled from 'styled-components';
 import sizeMe from 'react-sizeme';
@@ -374,10 +373,17 @@ const Table = props => {
               columns={visibleColumns}
               expandedIds={view.table.expandedIds}
               selectedIds={view.table.selectedIds}
-              selectRowText={get(view, 'selection.selectRowText')}
-              overflowMenuText={i18n.overflowMenuAria}
-              clickToExpandText={i18n.clickToExpandAria}
-              clickToCollapseText={i18n.clickToCollapseAria}
+              {...pick(
+                i18n,
+                'overflowMenuAria',
+                'clickToExpandAria',
+                'clickToCollapseAria',
+                'inProgressText',
+                'actionFailedText',
+                'learnMoreText',
+                'dismissText',
+                'selectRowAria'
+              )}
               totalColumns={totalColumns}
               {...pick(
                 options,

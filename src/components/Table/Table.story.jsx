@@ -465,6 +465,24 @@ storiesOf('Table', module)
       <StatefulTable
         {...initialState}
         actions={actions}
+        options={{
+          hasRowActions: true,
+        }}
+        view={{
+          filters: [],
+          table: {
+            rowActions: [
+              {
+                rowId: 'row-1',
+                isRunning: true,
+              },
+              {
+                rowId: 'row-3',
+                error: { title: 'Import failed', message: 'Contact your administrator' },
+              },
+            ],
+          },
+        }}
         i18n={{
           /** pagination */
           pageBackwardAria: text('i18n.pageBackwardAria', '__Previous page__'),
@@ -499,6 +517,10 @@ storiesOf('Table', module)
           ),
           emptyButtonLabel: text('i18n.emptyButtonLabel', '__Create some data__'),
           emptyButtonLabelWithFilters: text('i18n.emptyButtonLabel', '__Clear all filters__'),
+          inProgressText: text('i18n.inProgressText', '__In Progress__'),
+          actionFailedText: text('i18n.actionFailedText', '__Action Failed__'),
+          learnMoreText: text('i18n.learnMoreText', '__Learn More__'),
+          dismissText: text('i18n.dismissText', '__Dismiss__'),
         }}
       />
     ),
