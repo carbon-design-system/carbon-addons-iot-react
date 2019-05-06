@@ -43,7 +43,6 @@ describe('TableDetailWizard tests', () => {
     expect(onClearError.mock.calls).toHaveLength(1);
   });
   test('Handle current item empty', () => {
-
     const wrapper = mount(
       <TableDetailWizard
         currentItemId=""

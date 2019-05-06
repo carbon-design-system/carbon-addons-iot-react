@@ -119,21 +119,16 @@ describe('StatefulWizardInline', () => {
     expect(mockBack).toHaveBeenCalled();
   });
   test('Handle currentItemId empty', () => {
-    const wrapper = mount(
-      <StatefulTableDetailWizard
-        {...commonWizardProps}
-        currentItemId=""
-      />
-    );
+    const wrapper = mount(<StatefulTableDetailWizard {...commonWizardProps} currentItemId="" />);
     const element = wrapper.find('ProgressIndicator__StyledProgressIndicator');
     expect(element.prop('currentIndex')).toEqual(0);
   });
   test('Handle nextItem undefined', () => {
-    const mockNext = jest.fn()
-    const wrapper = mount(
+    const mockNext = jest.fn();
+    mount(
       <StatefulTableDetailWizard
         {...commonWizardProps}
-        currentItemId={itemsAndComponents[itemsAndComponents.length-1].id}
+        currentItemId={itemsAndComponents[itemsAndComponents.length - 1].id}
         onNext={mockNext}
       />
     );
