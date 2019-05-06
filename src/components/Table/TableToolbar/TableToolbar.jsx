@@ -44,7 +44,6 @@ const StyledCarbonTableToolbar = styled(CarbonTableToolbar)`
    {
     &&& {
       width: 100%;
-      min-width: 31.25rem;
       padding-top: 0.125rem;
     }
   }
@@ -101,7 +100,7 @@ const propTypes = {
     /** total number of selected rows */
     totalSelected: PropTypes.number,
     /** row selection option */
-    hasRowSelection: PropTypes.oneOf(['multi', 'single', '']),
+    hasRowSelection: PropTypes.oneOf(['multi', 'single', false]),
     /** optional content to render inside the toolbar  */
     customToolbarContent: PropTypes.node,
     /** available batch actions */
@@ -139,7 +138,7 @@ const TableToolbar = ({
   searchPlaceholderText,
   columnSelectionText,
   filterText,
-  options: { hasColumnSelection, hasFilter, hasSearch },
+  options: { hasColumnSelection, hasFilter, hasSearch, hasRowSelection },
   actions: {
     onCancelBatchAction,
     onApplyBatchAction,
@@ -150,7 +149,6 @@ const TableToolbar = ({
   },
   tableState: {
     totalSelected,
-    hasRowSelection,
     totalFilters,
     batchActions,
     search,

@@ -15,7 +15,7 @@ const tableRowProps = {
   totalColumns: 1,
   id: 'tableRow',
   ordering: [{ columnId: 'col1', isHidden: false }],
-  children: { col1: 'value1' },
+  values: { col1: 'value1' },
 };
 
 describe('TableBodyRow', () => {
@@ -66,7 +66,7 @@ describe('TableBodyRow', () => {
       id: 'tableRow',
       columns: [{ id: 'col1' }, { id: 'col2' }],
       ordering: [{ columnId: 'col1' }, { columnId: 'col2' }],
-      children: { col1: 'value1', col2: undefined },
+      values: { col1: 'value1', col2: undefined },
     };
     const wrapper = mount(
       <TableBodyRow tableActions={mockActions} {...tableRowPropsWithUndefined} />
@@ -87,7 +87,7 @@ describe('TableBodyRow', () => {
         { columnId: 'col1', renderDataFunction: customRenderDataFunction },
         { columnId: 'col2' },
       ],
-      children: { col1: 'value1', col2: 'value2' },
+      values: { col1: 'value1', col2: 'value2' },
     };
     const wrapper = mount(
       <TableBodyRow
@@ -115,7 +115,7 @@ describe('TableBodyRow', () => {
       tableActions: { onRowSelected: mockRowSelection, onRowClicked: mockRowClicked },
       columns: [{ id: 'col1' }, { id: 'col2' }],
       ordering: [{ columnId: 'col1' }, { columnId: 'col2' }],
-      children: { col1: 'value1', col2: undefined },
+      values: { col1: 'value1', col2: undefined },
     };
     const wrapper = mount(
       <TableBodyRow tableActions={mockActions} {...tableRowPropsWithSelection} />

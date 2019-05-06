@@ -27,6 +27,11 @@ const StyledTableHeader = styled(TableHeader)`
         min-width: 12.75rem;
       }
     }
+
+    .bx--list-box input[role='combobox'] {
+      /* need to save enough room for clear and dropdown button */
+      padding-right: 4rem;
+    }
     ${props => {
       const { width } = props;
       return width !== undefined
@@ -96,7 +101,7 @@ class FilterHeaderRow extends Component {
     onApplyFilter: PropTypes.func,
     /** properties global to the table */
     tableOptions: PropTypes.shape({
-      hasRowSelection: PropTypes.oneOf(['multi', 'single', '']),
+      hasRowSelection: PropTypes.oneOf(['multi', 'single', false]),
       hasRowExpansion: PropTypes.bool,
       hasRowActions: PropTypes.bool,
     }),
