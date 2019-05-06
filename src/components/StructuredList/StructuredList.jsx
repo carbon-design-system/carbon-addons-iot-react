@@ -12,10 +12,12 @@ import Bee32 from '@carbon/icons-react/lib/bee/32';
 
 import { COLORS } from '../../styles/styles';
 
-const StructuredListWrapperStyled = styled(StructuredListWrapper)`
-   {
+
+const StructuredListWrapperStyled = styled(({isFixedWidth, ...others}) => (
+  <StructuredListWrapper {...others} />
+))`
     && {
-      width: ${props => (props.isfixedwidth === 'true' ? 'inherit;' : '')};
+      width: ${props => (props.isFixedWidth ? 'inherit;' : '')};
     }
     background-color: #ffffff;
     margin-bottom: 0;
@@ -28,7 +30,6 @@ const StructuredListWrapperStyled = styled(StructuredListWrapper)`
       padding-left: 16px;
       line-height: 8px;
     }
-  }
 `;
 
 const EmptyContent = styled.div`
@@ -73,7 +74,7 @@ const StyledStructuredListCell = styled(StructuredListCell)`
  */
 const StructuredList = ({ columns, data, design, isFixedWidth, onRowClick, loadingDataLabel }) => (
   <Fragment>
-    <StructuredListWrapperStyled selection isfixedwidth={isFixedWidth.toString()}>
+    <StructuredListWrapperStyled selection isFixedWidth={isFixedWidth}>
       <StructuredListHead>
         <StructuredListRow head>
           {columns.map(({ id, title, width = undefined }) => (
