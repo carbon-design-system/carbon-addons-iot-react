@@ -1,20 +1,45 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { Button, DataTable, OverflowMenu, OverflowMenuItem, Icon } from 'carbon-components-react';
+import {
+  Button,
+  DataTable,
+  OverflowMenu,
+  OverflowMenuItem,
+  Icon,
+  Loading,
+} from 'carbon-components-react';
 import styled from 'styled-components';
 
-import { RowActionPropTypes } from '../../TablePropTypes';
+import { RowActionPropTypes, RowActionErrorPropTypes } from '../../TablePropTypes';
 import { COLORS } from '../../../../styles/styles';
+
+import RowActionsError from './RowActionsError';
 
 const { TableCell } = DataTable;
 
 const RowActionsContainer = styled.div`
-  & {
+  &&& {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+
+    /* Need space between the buttons */
     > * {
       opacity: ${props => (props.visible ? 1 : 0)};
+      margin-left: 0.75rem;
+    }
+    /* If the actions are focused on, they should show up */
+    > *:focus {
+      opacity: 1;
+    }
+    color: ${props => (props.isRowExpanded ? COLORS.white : '')};
+    svg {
+      stroke: ${props => (props.isRowExpanded ? COLORS.white : '')};
+    }
+    /* the spinner was a little too big and causing the row to scroll so need to scale down a bit */
+    .bx--loading--small {
+      width: 1.875rem;
+      height: 1.875rem;
     }
   }
 `;
@@ -38,12 +63,15 @@ const StyledOverflowMenu = styled(({ isRowExpanded, isOpen, ...other }) => (
 ))`
   &&& {
     margin-left: 0.5rem;
-    color: ${props => (props.isRowExpanded ? COLORS.white : COLORS.darkGray)};
+    color: ${props => (props.isRowExpanded ? COLORS.white : '')};
     svg {
-      fill: ${props => (props.isRowExpanded ? COLORS.white : COLORS.darkGray)};
+      fill: ${props => (props.isRowExpanded ? COLORS.white : '')};
       margin-left: ${props => (props.hideLabel !== 'false' ? '0' : '')};
     }
     opacity: ${props => (props.isOpen || props.isRowExpanded ? 1 : 0)};
+  }
+  &&&:hover > svg {
+    fill: ${COLORS.blue};
   }
 `;
 
@@ -52,15 +80,16 @@ const RowActionButton = styled(({ isRowExpanded, hideLabel, isOverflow, ...other
   <Button {...other} />
 ))`
   &&& {
-    color: ${props => (props.isRowExpanded ? COLORS.white : COLORS.darkGray)};
+    color: ${props => (props.isRowExpanded ? COLORS.white : '')};
     svg {
-      fill: ${props => (props.isRowExpanded ? COLORS.white : COLORS.darkGray)};
+      fill: ${props => (props.isRowExpanded ? COLORS.white : '')};
       margin-left: ${props => (props.hideLabel !== 'false' ? '0' : '')};
     }
-    :hover {
-      color: ${props => (!props.isRowExpanded ? COLORS.white : COLORS.darkGray)};
+    :hover,
+    :focus {
+      color: ${props => (!props.isRowExpanded ? COLORS.white : '')};
       svg {
-        fill: ${props => (!props.isRowExpanded ? COLORS.white : COLORS.darkGray)};
+        fill: ${props => (!props.isRowExpanded ? COLORS.white : '')};
       }
     }
   }
@@ -77,12 +106,29 @@ const propTypes = {
   onApplyRowAction: PropTypes.func.isRequired,
   /** translated text for more actions */
   overflowMenuText: PropTypes.string,
+  /** Is a row action actively running */
+  isRowActionRunning: PropTypes.bool,
+  /** row action error out */
+  rowActionsError: RowActionErrorPropTypes,
+  onClearError: PropTypes.func,
+  /** I18N label for in progress */
+  inProgressText: PropTypes.string,
+  /** I18N label for action failed */
+  actionFailedText: PropTypes.string, // eslint-disable-line
+  /** I18N label for learn more */
+  learnMoreText: PropTypes.string, // eslint-disable-line
+  /** I18N label for dismiss */
+  dismissText: PropTypes.string, // eslint-disable-line
 };
 
 const defaultProps = {
   isRowExpanded: false,
   actions: null,
+  isRowActionRunning: false,
+  rowActionsError: null,
   overflowMenuText: 'More actions',
+  inProgressText: 'In progress',
+  onClearError: null,
 };
 
 const onClick = (e, id, action, onApplyRowAction) => {
@@ -111,59 +157,82 @@ class RowActionsCell extends React.Component {
   };
 
   render() {
-    const { isRowExpanded, id, actions, onApplyRowAction, overflowMenuText } = this.props;
+    const {
+      isRowExpanded,
+      id,
+      actions,
+      onApplyRowAction,
+      overflowMenuText,
+      isRowActionRunning,
+      rowActionsError,
+      onClearError,
+      inProgressText,
+    } = this.props;
     const { isOpen } = this.state;
     const hasOverflow = actions && actions.filter(action => action.isOverflow).length > 0;
     return actions && actions.length > 0 ? (
       <TableCell key={`${id}-row-actions-cell`}>
-        <RowActionsContainer visible={isRowExpanded}>
-          {actions
-            .filter(action => !action.isOverflow)
-            .map(({ id: actionId, labelText, ...others }) => (
-              <RowActionButton
-                {...others}
-                key={`${id}-row-actions-button-${actionId}`}
-                kind="ghost"
-                onClick={e => onClick(e, id, actionId, onApplyRowAction)}
-                small
-                hideLabel={`${!labelText}`}
-                isRowExpanded={isRowExpanded}>
-                {labelText}
-              </RowActionButton>
-            ))}
-          {hasOverflow ? (
-            <StyledOverflowMenu
-              floatingMenu
-              flipped
-              ariaLabel={overflowMenuText}
-              onClick={event => event.stopPropagation()}
-              isRowExpanded={isRowExpanded}
-              iconDescription={overflowMenuText}
-              isOpen={isOpen}
-              onOpen={this.handleOpen}
-              onClose={this.handleClose}>
+        <RowActionsContainer
+          visible={isRowExpanded || isRowActionRunning || rowActionsError}
+          isRowExpanded={isRowExpanded}>
+          {rowActionsError ? (
+            <RowActionsError rowActionsError={rowActionsError} onClearError={onClearError} />
+          ) : isRowActionRunning ? (
+            <Fragment>
+              <Loading small withOverlay={false} />
+              {inProgressText}
+            </Fragment>
+          ) : (
+            <Fragment>
               {actions
-                .filter(action => action.isOverflow)
-                .map(action => (
-                  <OverflowMenuItem
-                    key={`${id}-row-actions-button-${action.id}`}
-                    onClick={e => onClick(e, id, action.id, onApplyRowAction)}
-                    requireTitle
-                    itemText={
-                      action.icon ? (
-                        <OverflowMenuContent>
-                          <StyledIcon name={action.icon} iconTitle={action.labelText} />
-                          {action.labelText}
-                        </OverflowMenuContent>
-                      ) : (
-                        action.labelText
-                      )
-                    }
-                    floatingMenu
-                  />
+                .filter(action => !action.isOverflow)
+                .map(({ id: actionId, labelText, ...others }) => (
+                  <RowActionButton
+                    {...others}
+                    key={`${id}-row-actions-button-${actionId}`}
+                    kind="ghost"
+                    onClick={e => onClick(e, id, actionId, onApplyRowAction)}
+                    small
+                    hideLabel={`${!labelText}`}
+                    isRowExpanded={isRowExpanded}>
+                    {labelText}
+                  </RowActionButton>
                 ))}
-            </StyledOverflowMenu>
-          ) : null}
+              {hasOverflow ? (
+                <StyledOverflowMenu
+                  floatingMenu
+                  flipped
+                  ariaLabel={overflowMenuText}
+                  onClick={event => event.stopPropagation()}
+                  isRowExpanded={isRowExpanded}
+                  iconDescription={overflowMenuText}
+                  isOpen={isOpen}
+                  onOpen={this.handleOpen}
+                  onClose={this.handleClose}>
+                  {actions
+                    .filter(action => action.isOverflow)
+                    .map(action => (
+                      <OverflowMenuItem
+                        key={`${id}-row-actions-button-${action.id}`}
+                        onClick={e => onClick(e, id, action.id, onApplyRowAction)}
+                        requireTitle
+                        itemText={
+                          action.icon ? (
+                            <OverflowMenuContent>
+                              <StyledIcon name={action.icon} iconTitle={action.labelText} />
+                              {action.labelText}
+                            </OverflowMenuContent>
+                          ) : (
+                            action.labelText
+                          )
+                        }
+                        floatingMenu
+                      />
+                    ))}
+                </StyledOverflowMenu>
+              ) : null}
+            </Fragment>
+          )}
         </RowActionsContainer>
       </TableCell>
     ) : null;

@@ -16,12 +16,37 @@ import {
   tableRowSelectAll,
   tableRowExpand,
   tableSearchApply,
+  tableRowActionStart,
+  tableRowActionComplete,
+  tableRowActionError,
 } from './tableActionCreators';
 import { initialState, tableColumns } from './Table.story';
 
 describe('table reducer testcases', () => {
   test('nothing', () => {
     expect(tableReducer(undefined, { type: 'BOGUS' })).toEqual({});
+  });
+  describe('row action tests', () => {
+    const updatedRowActionState = tableReducer(initialState, tableRowActionStart('row-1'));
+    const newRowActions = updatedRowActionState.view.table.rowActions;
+    expect(newRowActions).toHaveLength(1);
+    expect(newRowActions[0].rowId).toEqual('row-1');
+    expect(newRowActions[0].isRunning).toEqual(true);
+
+    // Set the error for the running one
+    const updatedRowActionState2 = tableReducer(
+      updatedRowActionState,
+      tableRowActionError('row-1', 'error')
+    );
+    const newRowActions2 = updatedRowActionState2.view.table.rowActions;
+    expect(newRowActions2).toHaveLength(1);
+    expect(newRowActions2[0].rowId).toEqual('row-1');
+    expect(newRowActions2[0].error).toEqual('error');
+
+    // Clear the action
+    const updatedRowActionState3 = tableReducer(initialState, tableRowActionComplete('row-1'));
+    const newRowActions3 = updatedRowActionState3.view.table.rowActions;
+    expect(newRowActions3).toHaveLength(0);
   });
   describe('filter tests', () => {
     test('TABLE_FILTER_CLEAR', () => {
@@ -152,13 +177,19 @@ describe('table reducer testcases', () => {
       expect(initialState.view.table.selectedIds).toEqual([]);
 
       // Negative case where I unselect a row
-      const tableWithNoRowsSelected = tableReducer(initialState, tableRowSelect('row-1', false));
+      const tableWithNoRowsSelected = tableReducer(
+        initialState,
+        tableRowSelect('row-1', false, 'multi')
+      );
       expect(tableWithNoRowsSelected.view.table.selectedIds).toEqual([]);
       expect(tableWithNoRowsSelected.view.table.isSelectAllSelected).toEqual(false);
       expect(tableWithNoRowsSelected.view.table.isSelectAllIndeterminate).toEqual(false);
 
       // Select a row
-      const tableWithSelectedRow = tableReducer(initialState, tableRowSelect('row-1', true));
+      const tableWithSelectedRow = tableReducer(
+        initialState,
+        tableRowSelect('row-1', true, 'multi')
+      );
       expect(tableWithSelectedRow.view.table.selectedIds).toEqual(['row-1']);
       expect(tableWithSelectedRow.view.table.isSelectAllSelected).toEqual(false);
       expect(tableWithSelectedRow.view.table.isSelectAllIndeterminate).toEqual(true);
@@ -166,11 +197,52 @@ describe('table reducer testcases', () => {
       // Unselect the row
       const tableWithUnSelectedRow = tableReducer(
         tableWithSelectedRow,
-        tableRowSelect('row-1', false)
+        tableRowSelect('row-1', false, 'multi')
       );
       expect(tableWithUnSelectedRow.view.table.selectedIds).toEqual([]);
       expect(tableWithUnSelectedRow.view.table.isSelectAllSelected).toEqual(false);
       expect(tableWithUnSelectedRow.view.table.isSelectAllIndeterminate).toEqual(false);
+    });
+    test('TABLE_ROW_SELECT--SINGLE', () => {
+      // set the table to single select
+      const updatedInitialState = {
+        ...initialState,
+        view: {
+          ...initialState.view,
+          table: {
+            ...initialState.view.table,
+            hasRowSelection: 'single',
+          },
+        },
+      };
+      expect(initialState.view.table.selectedIds).toEqual([]);
+
+      // Select a row
+      const tableWithSelectedRow = tableReducer(
+        updatedInitialState,
+        tableRowSelect('row-1', true, 'single')
+      );
+      expect(tableWithSelectedRow.view.table.selectedIds).toEqual(['row-1']);
+      expect(tableWithSelectedRow.view.table.isSelectAllSelected).toEqual(false);
+      expect(tableWithSelectedRow.view.table.isSelectAllIndeterminate).toEqual(true);
+
+      // Select a second row, should deselect a previously selected row
+      const tableWithPreviouslySelectedRow = tableReducer(
+        {
+          ...updatedInitialState,
+          view: {
+            ...updatedInitialState.view,
+            table: {
+              ...updatedInitialState.view.table,
+              selectedIds: ['row-1'],
+            },
+          },
+        },
+        tableRowSelect('row-2', true, 'single')
+      );
+      expect(tableWithPreviouslySelectedRow.view.table.selectedIds).toEqual(['row-2']);
+      expect(tableWithPreviouslySelectedRow.view.table.isSelectAllSelected).toEqual(false);
+      expect(tableWithPreviouslySelectedRow.view.table.isSelectAllIndeterminate).toEqual(true);
     });
     test('TABLE_ROW_SELECT_ALL', () => {
       expect(initialState.view.table.selectedIds).toEqual([]);

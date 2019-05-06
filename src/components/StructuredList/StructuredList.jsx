@@ -78,7 +78,7 @@ const StructuredList = ({ columns, data, design, isFixedWidth, onRowClick, loadi
       <StructuredListHead>
         <StructuredListRow head>
           {columns.map(({ id, title, width = undefined }) => (
-            <StyledStructuredListCell key={`${id}-column`} width={width} head>
+            <StyledStructuredListCell key={`${id}-column`} title={title} width={width} head>
               {title}
             </StyledStructuredListCell>
           ))}
@@ -91,6 +91,7 @@ const StructuredList = ({ columns, data, design, isFixedWidth, onRowClick, loadi
               <StyledStructuredListCell
                 key={`${col.id}-item`}
                 noWrap
+                title={item.values[col.id]}
                 width={col.width}
                 style={design === 'normal' ? { lineHeight: '16px' } : {}}>
                 {item.values[col.id]}

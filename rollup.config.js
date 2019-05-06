@@ -20,6 +20,7 @@ export default {
       react: 'React',
       'react-dom': 'ReactDOM',
       'carbon-icons': 'CarbonIcons',
+      '@carbon/icons-react': 'CarbonIconsReact',
       'carbon-components': 'CarbonComponents',
       'carbon-components-react': 'CarbonComponentsReact',
       'styled-components': 'styled',
@@ -31,6 +32,8 @@ export default {
     'prop-types',
     'carbon-components-react',
     'carbon-icons',
+    '@carbon/icons',
+    '@carbon/icons-react',
     'carbon-components',
   ],
   plugins: [

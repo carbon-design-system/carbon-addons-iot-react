@@ -5,6 +5,8 @@ import pick from 'lodash/pick';
 import { PaginationV2, DataTable } from 'carbon-components-react';
 import get from 'lodash/get';
 import isNil from 'lodash/isNil';
+import styled from 'styled-components';
+import sizeMe from 'react-sizeme';
 
 import { defaultFunction } from '../../utils/componentUtilityFunctions';
 
@@ -15,6 +17,7 @@ import {
   EmptyStatePropTypes,
   TableSearchPropTypes,
   I18NPropTypes,
+  RowActionsStatePropTypes,
 } from './TablePropTypes';
 import TableHead from './TableHead/TableHead';
 import TableToolbar from './TableToolbar/TableToolbar';
@@ -23,6 +26,22 @@ import TableSkeletonWithHeaders from './TableSkeletonWithHeaders/TableSkeletonWi
 import TableBody from './TableBody/TableBody';
 
 const { Table: CarbonTable, TableContainer } = DataTable;
+
+const StyledTableDiv = styled.div`
+  .bx--data-table-v2-container {
+    min-width: unset;
+  }
+`;
+
+const StyledPagination = sizeMe({ noPlaceholder: true })(styled(PaginationV2)`
+  &&& {
+    .bx--pagination__left,
+    .bx--pagination__text {
+      display: ${props =>
+        props.size && props.size.width && props.size.width < 600 ? 'none' : 'flex'};
+    }
+  }
+`);
 
 const propTypes = {
   /** DOM ID for component */
@@ -40,8 +59,9 @@ const propTypes = {
   /** Optional properties to customize how the table should be rendered */
   options: PropTypes.shape({
     hasPagination: PropTypes.bool,
-    hasRowSelection: PropTypes.bool,
+    hasRowSelection: PropTypes.oneOf(['multi', 'single', false]),
     hasRowExpansion: PropTypes.bool,
+    hasRowNesting: PropTypes.bool,
     hasRowActions: PropTypes.bool,
     hasFilter: PropTypes.bool,
     /** has simple search capability */
@@ -96,7 +116,7 @@ const propTypes = {
         columnId: PropTypes.string,
         direction: PropTypes.oneOf(['NONE', 'ASC', 'DESC']),
       }),
-      /* Specify column ordering and visibility */
+      /** Specify column ordering and visibility */
       ordering: PropTypes.arrayOf(
         PropTypes.shape({
           columnId: PropTypes.string.isRequired,
@@ -104,6 +124,8 @@ const propTypes = {
           isHidden: PropTypes.bool,
         })
       ),
+      /** what is the current state of the row actions */
+      rowActions: RowActionsStatePropTypes,
       expandedIds: PropTypes.arrayOf(PropTypes.string),
       emptyState: EmptyStatePropTypes,
       loadingState: PropTypes.shape({
@@ -129,13 +151,16 @@ const propTypes = {
       /** Apply a search criteria to the table */
       onApplySearch: PropTypes.func,
     }),
+    /** table wide actions */
     table: PropTypes.shape({
       onRowSelected: PropTypes.func,
       onRowClicked: PropTypes.func,
       onRowExpanded: PropTypes.func,
       onSelectAll: PropTypes.func,
       onChangeSort: PropTypes.func,
+      /** if you return a promise from apply row action the stateful table will assume you're asynchronous and give a spinner */
       onApplyRowAction: PropTypes.func,
+      onClearRowError: PropTypes.func,
       onEmptyStateAction: PropTypes.func,
       onChangeOrdering: PropTypes.func,
     }).isRequired,
@@ -152,6 +177,7 @@ export const defaultProps = baseProps => ({
     hasRowSelection: false,
     hasRowExpansion: false,
     hasRowActions: false,
+    hasRowNesting: false,
     hasFilter: false,
     hasSearch: false,
     hasColumnSelection: false,
@@ -172,6 +198,7 @@ export const defaultProps = baseProps => ({
       expandedIds: [],
       isSelectAllSelected: false,
       selectedIds: [],
+      rowActions: [],
       sort: {},
       ordering: baseProps.columns && baseProps.columns.map(i => ({ columnId: i.id })),
       loadingState: {
@@ -241,6 +268,7 @@ const Table = props => {
     options,
     lightweight,
     className,
+    style,
     i18n,
     ...others
   } = merge({}, defaultProps(props), props);
@@ -269,7 +297,7 @@ const Table = props => {
   );
   const totalColumns =
     visibleColumns.length +
-    (options.hasRowSelection ? 1 : 0) +
+    (options.hasRowSelection === 'multi' ? 1 : 0) +
     (options.hasRowExpansion ? 1 : 0) +
     (options.hasRowActions ? 1 : 0);
 
@@ -281,7 +309,7 @@ const Table = props => {
       view.toolbar.search.value !== '');
 
   return (
-    <div id={id} className={className}>
+    <StyledTableDiv id={id} className={className} style={style}>
       <TableToolbar
         clearAllFiltersText={i18n.clearAllFilters}
         columnSelectionText={i18n.columnSelectionButtonAria}
@@ -296,7 +324,7 @@ const Table = props => {
           'onToggleFilter',
           'onApplySearch'
         )}
-        options={pick(options, 'hasColumnSelection', 'hasFilter', 'hasSearch')}
+        options={pick(options, 'hasColumnSelection', 'hasFilter', 'hasSearch', 'hasRowSelection')}
         tableState={{
           totalSelected: view.table.selectedIds.length,
           totalFilters: view.filters ? view.filters.length : 0,
@@ -341,6 +369,7 @@ const Table = props => {
             <TableBody
               id={id}
               rows={visibleData}
+              rowActionsState={view.table.rowActions}
               expandedRows={expandedData}
               columns={visibleColumns}
               expandedIds={view.table.expandedIds}
@@ -350,12 +379,20 @@ const Table = props => {
               clickToExpandText={i18n.clickToExpandAria}
               clickToCollapseText={i18n.clickToCollapseAria}
               totalColumns={totalColumns}
-              {...pick(options, 'hasRowSelection', 'hasRowExpansion', 'shouldExpandOnRowClick')}
+              {...pick(
+                options,
+                'hasRowSelection',
+                'hasRowExpansion',
+                'hasRowActions',
+                'hasRowNesting',
+                'shouldExpandOnRowClick'
+              )}
               ordering={view.table.ordering}
               actions={pick(
                 actions.table,
                 'onRowSelected',
                 'onApplyRowAction',
+                'onClearRowError',
                 'onRowExpanded',
                 'onRowClicked'
               )}
@@ -387,7 +424,7 @@ const Table = props => {
       !view.table.loadingState.isLoading &&
       visibleData &&
       visibleData.length ? ( // don't show pagination row while loading
-        <PaginationV2
+        <StyledPagination
           {...view.pagination}
           onChange={actions.pagination.onChangePage}
           backwardText={i18n.pageBackwardAria}
@@ -400,7 +437,7 @@ const Table = props => {
           pageRangeText={i18n.pageRange}
         />
       ) : null}
-    </div>
+    </StyledTableDiv>
   );
 };
 

@@ -17,6 +17,9 @@ import {
   tableRowSelectAll,
   tableRowExpand,
   tableColumnOrder,
+  tableRowActionStart,
+  tableRowActionComplete,
+  tableRowActionError,
 } from './tableActionCreators';
 import Table, { defaultProps } from './Table';
 
@@ -68,6 +71,7 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
     onSelectAll,
     onRowExpanded,
     onApplyRowAction,
+    onClearRowError,
     onEmptyStateAction,
     onChangeOrdering,
   } = table || {};
@@ -116,7 +120,7 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
         callbackParent(onChangeSort, column);
       },
       onRowSelected: (rowId, isSelected) => {
-        dispatch(tableRowSelect(rowId, isSelected));
+        dispatch(tableRowSelect(rowId, isSelected, options.hasRowSelection));
         callbackParent(onRowSelected, rowId, isSelected);
       },
       onRowClicked: rowId => {
@@ -131,9 +135,19 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
         dispatch(tableRowExpand(rowId, isExpanded));
         callbackParent(onRowExpanded, rowId, isExpanded);
       },
-      onApplyRowAction: (actionId, rowId) =>
-        // This action doesn't update our table state, it's up to the user
-        callbackParent(onApplyRowAction, actionId, rowId),
+      onApplyRowAction: async (actionId, rowId) => {
+        dispatch(tableRowActionStart(rowId));
+        try {
+          await callbackParent(onApplyRowAction, actionId, rowId);
+          dispatch(tableRowActionComplete(rowId));
+        } catch (error) {
+          dispatch(tableRowActionError(rowId, error));
+        }
+      },
+      onClearRowError: rowId => {
+        dispatch(tableRowActionComplete(rowId));
+        callbackParent(onClearRowError, rowId);
+      },
       onEmptyStateAction: () =>
         // This action doesn't update our table state, it's up to the user
         callbackParent(onEmptyStateAction),

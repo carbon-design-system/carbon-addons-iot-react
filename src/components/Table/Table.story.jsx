@@ -2,8 +2,9 @@ import React from 'react';
 // import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { boolean, text, number } from '@storybook/addon-knobs';
+import { boolean, text, number, select } from '@storybook/addon-knobs';
 import styled from 'styled-components';
+import merge from 'lodash/merge';
 
 import { getSortedData } from '../../utils/componentUtilityFunctions';
 
@@ -88,6 +89,24 @@ export const tableColumns = [
   },
 ];
 
+export const tableColumnsFixedWidth = tableColumns.map(i => ({
+  ...i,
+  width:
+    i.id === 'string'
+      ? '300px'
+      : i.id === 'date'
+      ? '180px'
+      : i.id === 'select'
+      ? '120px'
+      : i.id === 'secretField'
+      ? '300px'
+      : i.id === 'status'
+      ? '100px'
+      : i.id === 'number'
+      ? '80px'
+      : undefined,
+}));
+
 const defaultOrdering = tableColumns.map(c => ({
   columnId: c.id,
   isHidden: c.id === 'secretField',
@@ -129,16 +148,31 @@ const getStatus = idx => {
   }
 };
 
-const getNewRow = idx => ({
-  id: `row-${idx}`,
+const getNewRow = (idx, suffix = '', withActions = false) => ({
+  id: `row-${idx}${suffix ? `_${suffix}` : ''}`,
   values: {
-    string: getSentence(idx),
+    string: getSentence(idx) + suffix,
     date: new Date(100000000000 + 1000000000 * idx * idx).toISOString(),
     select: selectData[idx % 3].id,
-    secretField: getString(idx, 10),
+    secretField: getString(idx, 10) + suffix,
     number: idx * idx,
     status: getStatus(idx),
   },
+  rowActions: withActions
+    ? [
+        {
+          id: 'drilldown',
+          icon: 'arrow--right',
+          labelText: 'Drill in',
+        },
+        {
+          id: 'Add',
+          icon: 'icon--add',
+          labelText: 'Add',
+          isOverflow: true,
+        },
+      ]
+    : undefined,
 });
 
 const tableData = Array(100)
@@ -216,6 +250,12 @@ export const initialState = {
         labelText: 'Add',
         isOverflow: true,
       },
+      {
+        id: 'Delete',
+        icon: 'icon--delete',
+        labelText: 'Delete',
+        isOverflow: true,
+      },
     ].filter(i => i),
   })),
   expandedData: tableData.map(data => ({
@@ -226,7 +266,7 @@ export const initialState = {
     hasFilter: true,
     hasSearch: true,
     hasPagination: true,
-    hasRowSelection: true,
+    hasRowSelection: 'multi',
     hasRowExpansion: true,
     hasRowActions: true,
     hasColumnSelection: true,
@@ -258,6 +298,7 @@ export const initialState = {
         isHidden: id === 'secretField',
       })),
       expandedIds: [],
+      rowActions: [],
     },
     toolbar: {
       activeBar: 'filter',
@@ -275,6 +316,28 @@ export const initialState = {
 
 storiesOf('Table', module)
   .add(
+    'Simple Stateful Example',
+    () => (
+      <StatefulTable
+        {...initialState}
+        actions={actions}
+        lightweight={boolean('lightweight', false)}
+        options={merge({}, initialState.options, {
+          hasRowSelection: select('hasRowSelection', ['multi', 'single'], 'multi'),
+          hasRowExpansion: false,
+        })}
+      />
+    ),
+    {
+      info: {
+        text:
+          'This is an example of the <StatefulTable> component that uses local state to handle all the table actions. This is produced by wrapping the <Table> in a container component and managing the state associated with features such the toolbar, filters, row select, etc. For more robust documentation on the prop model and source, see the other "with function" stories.',
+        propTables: [Table],
+        propTablesExclude: [StatefulTable],
+      },
+    }
+  )
+  .add(
     'Stateful Example',
     () => (
       <StatefulTable
@@ -283,6 +346,110 @@ storiesOf('Table', module)
         lightweight={boolean('lightweight', false)}
       />
     ),
+    {
+      info: {
+        text:
+          'This is an example of the <StatefulTable> component that uses local state to handle all the table actions. This is produced by wrapping the <Table> in a container component and managing the state associated with features such the toolbar, filters, row select, etc. For more robust documentation on the prop model and source, see the other "with function" stories.',
+        propTables: [Table],
+        propTablesExclude: [StatefulTable],
+      },
+    }
+  )
+  .add(
+    'Stateful with async row actions',
+    () => (
+      <StatefulTable
+        {...initialState}
+        actions={merge({}, actions, {
+          table: {
+            onApplyRowAction: () => new Promise(resolve => setTimeout(resolve, 3000)),
+            onClearRowError: () => true,
+          },
+        })}
+        lightweight={boolean('lightweight', false)}
+        view={{
+          table: {
+            rowActions: [
+              {
+                rowId: 'row-1',
+                isRunning: true,
+              },
+              {
+                rowId: 'row-3',
+                error: { title: 'Import failed', message: 'Contact your administrator' },
+              },
+            ],
+          },
+        }}
+      />
+    ),
+    {
+      info: {
+        text:
+          'This is an example of the <StatefulTable> component that uses local state to handle all the table actions. This is produced by wrapping the <Table> in a container component and managing the state associated with features such the toolbar, filters, row select, etc. For more robust documentation on the prop model and source, see the other "with function" stories.',
+        propTables: [Table],
+        propTablesExclude: [StatefulTable],
+      },
+    }
+  )
+  .add(
+    'Stateful Example with row nesting',
+    () => {
+      const tableData = initialState.data.map((i, idx) => ({
+        ...i,
+        children:
+          idx % 4 !== 0
+            ? [getNewRow(idx, 'A', true), getNewRow(idx, 'B', true)]
+            : idx === 4
+            ? [
+                getNewRow(idx, 'A', true),
+                {
+                  ...getNewRow(idx, 'B'),
+                  children: [
+                    getNewRow(idx, 'B-1', true),
+                    {
+                      ...getNewRow(idx, 'B-2'),
+                      children: [getNewRow(idx, 'B-2-A', true), getNewRow(idx, 'B-2-B', true)],
+                    },
+                    getNewRow(idx, 'B-3', true),
+                  ],
+                },
+                getNewRow(idx, 'C', true),
+                {
+                  ...getNewRow(idx, 'D', true),
+                  children: [
+                    getNewRow(idx, 'D-1', true),
+                    getNewRow(idx, 'D-2', true),
+                    getNewRow(idx, 'D-3', true),
+                  ],
+                },
+              ]
+            : undefined,
+      }));
+      return (
+        <div>
+          <StatefulTable
+            {...initialState}
+            columns={tableColumnsFixedWidth}
+            data={tableData}
+            options={{
+              ...initialState.options,
+              hasRowNesting: true,
+              hasFilter: true,
+            }}
+            view={{
+              ...initialState.view,
+              filters: [],
+              toolbar: {
+                activeBar: null,
+              },
+            }}
+            actions={actions}
+            lightweight={boolean('lightweight', false)}
+          />
+        </div>
+      );
+    },
     {
       info: {
         text:
@@ -354,7 +521,16 @@ storiesOf('Table', module)
       options={{ hasSearch: true }}
     />
   ))
-  .add('with selection and batch actions', () => (
+  .add('minitable', () => (
+    <StatefulTable
+      style={{ maxWidth: '300px' }}
+      columns={tableColumns.slice(0, 2)}
+      data={tableData}
+      actions={actions}
+      options={{ hasSearch: true, hasPagination: true, hasRowSelection: 'single' }}
+    />
+  ))
+  .add('with multi select and batch actions', () => (
     // TODO - batch action bar
     <Table
       columns={tableColumns}
@@ -363,7 +539,7 @@ storiesOf('Table', module)
       options={{
         hasFilter: true,
         hasPagination: true,
-        hasRowSelection: true,
+        hasRowSelection: 'multi',
       }}
       view={{
         filters: [],
@@ -384,6 +560,15 @@ storiesOf('Table', module)
           selectedIds: ['row-3', 'row-4', 'row-6', 'row-7'],
         },
       }}
+    />
+  ))
+  .add('with single select', () => (
+    <Table
+      columns={tableColumns}
+      data={tableData}
+      actions={actions}
+      options={{ hasRowSelection: 'single' }}
+      view={{ table: { selectedIds: ['row-3'] } }}
     />
   ))
   .add('with row expansion', () => (
@@ -485,6 +670,16 @@ storiesOf('Table', module)
               content: <RowExpansionContent rowId="row-5" />,
             },
           ],
+          rowActions: [
+            {
+              rowId: 'row-1',
+              isRunning: true,
+            },
+            {
+              rowId: 'row-3',
+              error: { title: 'Import failed', message: 'Contact your administrator' },
+            },
+          ],
         },
       }}
     />
@@ -500,7 +695,7 @@ storiesOf('Table', module)
       options={{
         hasFilter: false,
         hasPagination: true,
-        hasRowSelection: true,
+        hasRowSelection: 'multi',
       }}
       view={{
         filters: [],
@@ -529,7 +724,7 @@ storiesOf('Table', module)
           options={{
             hasFilter: true,
             hasPagination: true,
-            hasRowSelection: true,
+            hasRowSelection: 'multi',
           }}
           view={{
             filters: [],
@@ -583,7 +778,7 @@ storiesOf('Table', module)
         options={{
           hasFilter: true,
           hasPagination: true,
-          hasRowSelection: true,
+          hasRowSelection: 'multi',
         }}
         view={{
           filters: [
@@ -616,7 +811,7 @@ storiesOf('Table', module)
       actions={actions}
       options={{
         hasPagination: true,
-        hasRowSelection: true,
+        hasRowSelection: 'multi',
         hasColumnSelection: true,
       }}
       view={{
@@ -662,6 +857,43 @@ storiesOf('Table', module)
         },
       }}
       options={{ hasPagination: true }}
+    />
+  ))
+  .add('with nested table rows', () => (
+    <Table
+      columns={tableColumns}
+      data={tableData.map((i, idx) => ({
+        ...i,
+        children:
+          idx === 3
+            ? [getNewRow(idx, 'A'), getNewRow(idx, 'B')]
+            : idx === 7
+            ? [
+                getNewRow(idx, 'A'),
+                {
+                  ...getNewRow(idx, 'B'),
+                  children: [getNewRow(idx, 'B-1'), getNewRow(idx, 'B-2')],
+                },
+                getNewRow(idx, 'C'),
+                {
+                  ...getNewRow(idx, 'D'),
+                  children: [getNewRow(idx, 'D-1'), getNewRow(idx, 'D-2'), getNewRow(idx, 'D-3')],
+                },
+              ]
+            : undefined,
+      }))}
+      options={{
+        hasPagination: true,
+        hasRowSelection: 'multi',
+        hasRowExpansion: true,
+        hasRowNesting: true,
+      }}
+      actions={actions}
+      view={{
+        table: {
+          expandedIds: ['row-3', 'row-7', 'row-7_B'],
+        },
+      }}
     />
   ))
   .add('with no data and custom empty state', () => (

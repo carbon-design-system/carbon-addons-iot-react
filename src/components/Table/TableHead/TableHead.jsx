@@ -16,7 +16,7 @@ const propTypes = {
   /** Important table options that the head needs to know about */
   options: PropTypes.shape({
     hasRowExpansion: PropTypes.bool,
-    hasRowSelection: PropTypes.bool,
+    hasRowSelection: PropTypes.oneOf(['multi', 'single', false]),
     hasRowActions: PropTypes.bool,
   }),
   /** List of columns */
@@ -140,7 +140,7 @@ const TableHead = ({
     <StyledCarbonTableHead lightweight={`${lightweight}`}>
       <TableRow>
         {hasRowExpansion ? <TableExpandHeader /> : null}
-        {hasRowSelection ? (
+        {hasRowSelection === 'multi' ? (
           <StyledCheckboxTableHeader>
             {/* TODO: Replace checkbox with TableSelectAll component when onChange bug is fixed
                     https://github.com/IBM/carbon-components-react/issues/1088 */}

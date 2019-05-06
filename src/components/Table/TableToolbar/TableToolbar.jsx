@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { iconFilter, iconGrid } from 'carbon-icons';
+import { iconFilter } from 'carbon-icons';
+import IconColumnSelector from '@carbon/icons-react/lib/column/20';
 import { DataTable, Button } from 'carbon-components-react';
 import styled from 'styled-components';
 
@@ -20,14 +21,17 @@ const StyledTableToolbarAction = styled(({ isActive, ...other }) => (
   <TableToolbarAction {...other} />
 ))`
   &&& {
-    padding: 0.75rem;
+    padding-right: 0.75rem;
     display: flex;
     height: 2.5rem;
     width: unset;
 
     :focus {
       height: calc(2.5rem - 2px);
-      padding-top: calc(0.75rem - 1px);
+
+      > svg {
+        fill: ${COLORS.blue};
+      }
     }
 
     :not(:focus) > svg {
@@ -40,7 +44,6 @@ const StyledCarbonTableToolbar = styled(CarbonTableToolbar)`
    {
     &&& {
       width: 100%;
-      min-width: 31.25rem;
       padding-top: 0.125rem;
     }
   }
@@ -96,6 +99,8 @@ const propTypes = {
     activeBar: PropTypes.oneOf(['column', 'filter']),
     /** total number of selected rows */
     totalSelected: PropTypes.number,
+    /** row selection option */
+    hasRowSelection: PropTypes.oneOf(['multi', 'single', false]),
     /** optional content to render inside the toolbar  */
     customToolbarContent: PropTypes.node,
     /** available batch actions */
@@ -133,7 +138,7 @@ const TableToolbar = ({
   searchPlaceholderText,
   columnSelectionText,
   filterText,
-  options: { hasColumnSelection, hasFilter, hasSearch },
+  options: { hasColumnSelection, hasFilter, hasSearch, hasRowSelection },
   actions: {
     onCancelBatchAction,
     onApplyBatchAction,
@@ -162,7 +167,7 @@ const TableToolbar = ({
     <StyledTableToolbarContent>
       <TableBatchActions
         onCancel={onCancelBatchAction}
-        shouldShowBatchActions={totalSelected > 0}
+        shouldShowBatchActions={hasRowSelection === 'multi' && totalSelected > 0}
         totalSelected={totalSelected}>
         {batchActions.map(({ id, labelText, ...others }) => (
           <TableBatchAction key={id} onClick={() => onApplyBatchAction(id)} {...others}>
@@ -179,7 +184,7 @@ const TableToolbar = ({
       {hasColumnSelection ? (
         <StyledTableToolbarAction
           className="bx--btn--sm"
-          icon={iconGrid}
+          renderIcon={() => <IconColumnSelector />}
           iconDescription={columnSelectionText}
           isActive={activeBar === 'column'}
           onClick={onToggleColumnSelection}

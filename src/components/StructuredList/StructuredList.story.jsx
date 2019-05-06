@@ -32,7 +32,7 @@ const data = [
   {
     id: 'row-1',
     values: {
-      columnA: 'hey A again',
+      columnA: 'hey A again fixed column width',
       columnB: 'hey B again',
       columnC: 'hey C again',
     },
