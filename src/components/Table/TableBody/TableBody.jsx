@@ -3,7 +3,12 @@ import PropTypes from 'prop-types';
 import { DataTable } from 'carbon-components-react';
 import pick from 'lodash/pick';
 
-import { ExpandedRowsPropTypes, TableRowPropTypes, TableColumnsPropTypes } from '../TablePropTypes';
+import {
+  ExpandedRowsPropTypes,
+  TableRowPropTypes,
+  TableColumnsPropTypes,
+  RowActionsStatePropTypes,
+} from '../TablePropTypes';
 
 import TableBodyRow from './TableBodyRow/TableBodyRow';
 
@@ -27,10 +32,12 @@ const propTypes = {
   clickToCollapseText: PropTypes.string,
   /** since some columns might not be currently visible */
   totalColumns: PropTypes.number,
-  hasRowSelection: PropTypes.bool,
+  hasRowSelection: PropTypes.oneOf(['multi', 'single', false]),
   hasRowExpansion: PropTypes.bool,
   hasRowNesting: PropTypes.bool,
   hasRowActions: PropTypes.bool,
+  /** the current state of the row actions */
+  rowActionsState: RowActionsStatePropTypes,
   shouldExpandOnRowClick: PropTypes.bool,
 
   actions: PropTypes.shape({
@@ -58,6 +65,7 @@ const defaultProps = {
   clickToCollapseText: 'Click to collapse.',
   rows: [],
   expandedRows: [],
+  rowActionsState: [],
   columns: [],
   totalColumns: 0,
   hasRowSelection: false,
@@ -80,6 +88,7 @@ const TableBody = ({
   clickToCollapseText,
   totalColumns,
   actions,
+  rowActionsState,
   hasRowActions,
   hasRowSelection,
   hasRowExpansion,
@@ -101,6 +110,7 @@ const TableBody = ({
     const isRowExpanded = expandedIds.includes(row.id);
     const shouldShowChildren =
       hasRowNesting && isRowExpanded && row.children && row.children.length > 0;
+    const myRowActionState = rowActionsState.find(rowAction => rowAction.rowId === row.id);
     const rowElement = (
       <TableBodyRow
         key={row.id}
@@ -111,6 +121,8 @@ const TableBody = ({
             ? expandedRows.find(j => j.rowId === row.id).content
             : null
         }
+        rowActionsError={myRowActionState ? myRowActionState.error : null}
+        isRowActionRunning={myRowActionState ? myRowActionState.isRunning : null}
         ordering={orderingMap}
         selectRowText={selectRowText}
         overflowMenuText={overflowMenuText}
@@ -134,11 +146,12 @@ const TableBody = ({
           'onRowSelected',
           'onApplyRowAction',
           'onRowExpanded',
-          'onRowClicked'
+          'onRowClicked',
+          'onClearRowError'
         )}
-        rowActions={row.rowActions}>
-        {row.values}
-      </TableBodyRow>
+        rowActions={row.rowActions}
+        values={row.values}
+      />
     );
     return shouldShowChildren
       ? [rowElement].concat(row.children.map(childRow => renderRow(childRow, nestingLevel + 1)))

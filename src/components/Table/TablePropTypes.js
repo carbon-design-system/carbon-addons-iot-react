@@ -4,7 +4,7 @@ export const RowActionPropTypes = PropTypes.arrayOf(
   PropTypes.shape({
     /** Unique id of the action */
     id: PropTypes.string.isRequired,
-    /* icon ultimately gets passed through all the way to <Button>, which has this same copied proptype definition for icon */
+    /** icon ultimately gets passed through all the way to <Button>, which has this same copied proptype definition for icon */
     icon: PropTypes.oneOfType([
       PropTypes.shape({
         width: PropTypes.string,
@@ -19,6 +19,20 @@ export const RowActionPropTypes = PropTypes.arrayOf(
     labelText: PropTypes.string,
     /** Action should go into the overflow menu, not be rendered inline in the row */
     isOverflow: PropTypes.bool,
+  })
+);
+
+export const RowActionErrorPropTypes = PropTypes.shape({
+  title: PropTypes.node,
+  message: PropTypes.node,
+  learnMoreURL: PropTypes.string,
+});
+
+export const RowActionsStatePropTypes = PropTypes.arrayOf(
+  PropTypes.shape({
+    rowId: PropTypes.string,
+    isRunning: PropTypes.bool,
+    error: RowActionErrorPropTypes,
   })
 );
 

@@ -2,8 +2,9 @@ import React from 'react';
 // import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { boolean, text, number } from '@storybook/addon-knobs';
+import { boolean, text, number, select } from '@storybook/addon-knobs';
 import styled from 'styled-components';
+import merge from 'lodash/merge';
 
 import { getSortedData } from '../../utils/componentUtilityFunctions';
 
@@ -249,6 +250,12 @@ export const initialState = {
         labelText: 'Add',
         isOverflow: true,
       },
+      {
+        id: 'Delete',
+        icon: 'icon--delete',
+        labelText: 'Delete',
+        isOverflow: true,
+      },
     ].filter(i => i),
   })),
   expandedData: tableData.map(data => ({
@@ -259,7 +266,7 @@ export const initialState = {
     hasFilter: true,
     hasSearch: true,
     hasPagination: true,
-    hasRowSelection: true,
+    hasRowSelection: 'multi',
     hasRowExpansion: true,
     hasRowActions: true,
     hasColumnSelection: true,
@@ -291,6 +298,7 @@ export const initialState = {
         isHidden: id === 'secretField',
       })),
       expandedIds: [],
+      rowActions: [],
     },
     toolbar: {
       activeBar: 'filter',
@@ -308,12 +316,71 @@ export const initialState = {
 
 storiesOf('Table', module)
   .add(
+    'Simple Stateful Example',
+    () => (
+      <StatefulTable
+        {...initialState}
+        actions={actions}
+        lightweight={boolean('lightweight', false)}
+        options={merge({}, initialState.options, {
+          hasRowSelection: select('hasRowSelection', ['multi', 'single'], 'multi'),
+          hasRowExpansion: false,
+        })}
+      />
+    ),
+    {
+      info: {
+        text:
+          'This is an example of the <StatefulTable> component that uses local state to handle all the table actions. This is produced by wrapping the <Table> in a container component and managing the state associated with features such the toolbar, filters, row select, etc. For more robust documentation on the prop model and source, see the other "with function" stories.',
+        propTables: [Table],
+        propTablesExclude: [StatefulTable],
+      },
+    }
+  )
+  .add(
     'Stateful Example',
     () => (
       <StatefulTable
         {...initialState}
         actions={actions}
         lightweight={boolean('lightweight', false)}
+      />
+    ),
+    {
+      info: {
+        text:
+          'This is an example of the <StatefulTable> component that uses local state to handle all the table actions. This is produced by wrapping the <Table> in a container component and managing the state associated with features such the toolbar, filters, row select, etc. For more robust documentation on the prop model and source, see the other "with function" stories.',
+        propTables: [Table],
+        propTablesExclude: [StatefulTable],
+      },
+    }
+  )
+  .add(
+    'Stateful with async row actions',
+    () => (
+      <StatefulTable
+        {...initialState}
+        actions={merge({}, actions, {
+          table: {
+            onApplyRowAction: () => new Promise(resolve => setTimeout(resolve, 3000)),
+            onClearRowError: () => true,
+          },
+        })}
+        lightweight={boolean('lightweight', false)}
+        view={{
+          table: {
+            rowActions: [
+              {
+                rowId: 'row-1',
+                isRunning: true,
+              },
+              {
+                rowId: 'row-3',
+                error: { title: 'Import failed', message: 'Contact your administrator' },
+              },
+            ],
+          },
+        }}
       />
     ),
     {
@@ -454,7 +521,16 @@ storiesOf('Table', module)
       options={{ hasSearch: true }}
     />
   ))
-  .add('with selection and batch actions', () => (
+  .add('minitable', () => (
+    <StatefulTable
+      style={{ maxWidth: '300px' }}
+      columns={tableColumns.slice(0, 2)}
+      data={tableData}
+      actions={actions}
+      options={{ hasSearch: true, hasPagination: true, hasRowSelection: 'single' }}
+    />
+  ))
+  .add('with multi select and batch actions', () => (
     // TODO - batch action bar
     <Table
       columns={tableColumns}
@@ -463,7 +539,7 @@ storiesOf('Table', module)
       options={{
         hasFilter: true,
         hasPagination: true,
-        hasRowSelection: true,
+        hasRowSelection: 'multi',
       }}
       view={{
         filters: [],
@@ -484,6 +560,15 @@ storiesOf('Table', module)
           selectedIds: ['row-3', 'row-4', 'row-6', 'row-7'],
         },
       }}
+    />
+  ))
+  .add('with single select', () => (
+    <Table
+      columns={tableColumns}
+      data={tableData}
+      actions={actions}
+      options={{ hasRowSelection: 'single' }}
+      view={{ table: { selectedIds: ['row-3'] } }}
     />
   ))
   .add('with row expansion', () => (
@@ -585,6 +670,16 @@ storiesOf('Table', module)
               content: <RowExpansionContent rowId="row-5" />,
             },
           ],
+          rowActions: [
+            {
+              rowId: 'row-1',
+              isRunning: true,
+            },
+            {
+              rowId: 'row-3',
+              error: { title: 'Import failed', message: 'Contact your administrator' },
+            },
+          ],
         },
       }}
     />
@@ -600,7 +695,7 @@ storiesOf('Table', module)
       options={{
         hasFilter: false,
         hasPagination: true,
-        hasRowSelection: true,
+        hasRowSelection: 'multi',
       }}
       view={{
         filters: [],
@@ -629,7 +724,7 @@ storiesOf('Table', module)
           options={{
             hasFilter: true,
             hasPagination: true,
-            hasRowSelection: true,
+            hasRowSelection: 'multi',
           }}
           view={{
             filters: [],
@@ -683,7 +778,7 @@ storiesOf('Table', module)
         options={{
           hasFilter: true,
           hasPagination: true,
-          hasRowSelection: true,
+          hasRowSelection: 'multi',
         }}
         view={{
           filters: [
@@ -716,7 +811,7 @@ storiesOf('Table', module)
       actions={actions}
       options={{
         hasPagination: true,
-        hasRowSelection: true,
+        hasRowSelection: 'multi',
         hasColumnSelection: true,
       }}
       view={{
@@ -789,7 +884,7 @@ storiesOf('Table', module)
       }))}
       options={{
         hasPagination: true,
-        hasRowSelection: true,
+        hasRowSelection: 'multi',
         hasRowExpansion: true,
         hasRowNesting: true,
       }}

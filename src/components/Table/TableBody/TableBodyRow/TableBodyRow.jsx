@@ -6,7 +6,11 @@ import styled from 'styled-components';
 import { COLORS } from '../../../../styles/styles';
 import RowActionsCell from '../RowActionsCell/RowActionsCell';
 import TableCellRenderer from '../../TableCellRenderer/TableCellRenderer';
-import { RowActionPropTypes, TableColumnsPropTypes } from '../../TablePropTypes';
+import {
+  RowActionPropTypes,
+  RowActionErrorPropTypes,
+  TableColumnsPropTypes,
+} from '../../TablePropTypes';
 import { stopPropagationAndCallback } from '../../../../utils/componentUtilityFunctions';
 
 const { TableRow, TableExpandRow, TableCell } = DataTable;
@@ -40,7 +44,7 @@ const propTypes = {
   columns: TableColumnsPropTypes.isRequired,
   /** table wide options */
   options: PropTypes.shape({
-    hasRowSelection: PropTypes.bool,
+    hasRowSelection: PropTypes.oneOf(['multi', 'single', false]),
     hasRowExpansion: PropTypes.bool,
     hasRowNesting: PropTypes.bool,
     shouldExpandOnRowClick: PropTypes.bool,
@@ -53,7 +57,7 @@ const propTypes = {
   /** table Id */
   tableId: PropTypes.string.isRequired,
   /** contents of the row each object value is a renderable node keyed by column id */
-  children: PropTypes.objectOf(PropTypes.node).isRequired,
+  values: PropTypes.objectOf(PropTypes.node).isRequired,
 
   /** is the row currently selected */
   isSelected: PropTypes.bool,
@@ -75,6 +79,18 @@ const propTypes = {
   }).isRequired,
   /** optional per-row actions */
   rowActions: RowActionPropTypes,
+  /** Is a row action actively running */
+  isRowActionRunning: PropTypes.bool,
+  /** has a row action errored out */
+  rowActionsError: RowActionErrorPropTypes,
+  /** I18N label for in progress */
+  inProgressText: PropTypes.string,
+  /** I18N label for action failed */
+  actionFailedText: PropTypes.string,
+  /** I18N label for learn more */
+  learnMoreText: PropTypes.string,
+  /** I18N label for dismiss */
+  dismissText: PropTypes.string,
 };
 
 const defaultProps = {
@@ -102,10 +118,22 @@ const StyledTableRow = styled(TableRow)`
   &&& {
     :hover {
       td {
+        /* show the row actions if the table row is hovered over */
         div > * {
           opacity: 1;
         }
       }
+    }
+  }
+`;
+
+const StyledSingleSelectedTableRow = styled(TableRow)`
+  &&& {
+    background: ${COLORS.lightBlue};
+    border-left: 5px solid ${COLORS.blue};
+
+    td {
+      margin-left: -5px;
     }
   }
 `;
@@ -263,42 +291,45 @@ const TableBodyRow = ({
     hasRowNesting,
     shouldExpandOnRowClick,
   },
-  tableActions: { onRowSelected, onRowExpanded, onRowClicked, onApplyRowAction },
+  tableActions: { onRowSelected, onRowExpanded, onRowClicked, onApplyRowAction, onClearRowError },
   isExpanded,
   isSelected,
   selectRowText,
   overflowMenuText,
   clickToExpandText,
   clickToCollapseText,
-  children,
+  values,
   nestingLevel,
   nestingChildCount,
   rowActions,
+  isRowActionRunning,
+  rowActionsError,
   rowDetails,
 }) => {
   const nestingOffset = nestingLevel * 16;
-  const rowSelectionCell = hasRowSelection ? (
-    <StyledCheckboxTableCell
-      key={`${id}-row-selection-cell`}
-      onClick={e => {
-        onRowSelected(id, !isSelected);
-        e.preventDefault();
-        e.stopPropagation();
-      }}>
-      {/* TODO: Replace checkbox with TableSelectRow component when onChange bug is fixed
+  const rowSelectionCell =
+    hasRowSelection === 'multi' ? (
+      <StyledCheckboxTableCell
+        key={`${id}-row-selection-cell`}
+        onClick={e => {
+          onRowSelected(id, !isSelected);
+          e.preventDefault();
+          e.stopPropagation();
+        }}>
+        {/* TODO: Replace checkbox with TableSelectRow component when onChange bug is fixed
       https://github.com/IBM/carbon-components-react/issues/1247
       Also move onClick logic above into TableSelectRow
       */}
-      <StyledNestedSpan nestingOffset={nestingOffset}>
-        <Checkbox
-          id={`select-row-${id}`}
-          labelText={selectRowText}
-          hideLabel
-          checked={isSelected}
-        />
-      </StyledNestedSpan>
-    </StyledCheckboxTableCell>
-  ) : null;
+        <StyledNestedSpan nestingOffset={nestingOffset}>
+          <Checkbox
+            id={`select-row-${id}`}
+            labelText={selectRowText}
+            hideLabel
+            checked={isSelected}
+          />
+        </StyledNestedSpan>
+      </StyledCheckboxTableCell>
+    ) : null;
 
   const firstVisibleColIndex = ordering.findIndex(col => !col.isHidden);
   const tableCells = (
@@ -318,13 +349,13 @@ const TableBodyRow = ({
               {col.renderDataFunction ? (
                 col.renderDataFunction({
                   // Call the column renderer if it's provided
-                  value: children[col.columnId],
+                  value: values[col.columnId],
                   columnId: col.columnId,
                   rowId: id,
-                  row: children,
+                  row: values,
                 })
               ) : (
-                <TableCellRenderer>{children[col.columnId]}</TableCellRenderer>
+                <TableCellRenderer>{values[col.columnId]}</TableCellRenderer>
               )}
             </StyledNestedSpan>
           </StyledTableCellRow>
@@ -334,9 +365,12 @@ const TableBodyRow = ({
         <RowActionsCell
           id={id}
           actions={rowActions}
+          isRowActionRunning={isRowActionRunning}
           isRowExpanded={isExpanded && !hasRowNesting}
           overflowMenuText={overflowMenuText}
           onApplyRowAction={onApplyRowAction}
+          rowActionsError={rowActionsError}
+          onClearError={onClearRowError ? () => onClearRowError(id) : null}
         />
       ) : nestingLevel > 0 && hasRowActions ? (
         <TableCell key={`${id}-row-actions-cell`} />
@@ -359,6 +393,9 @@ const TableBodyRow = ({
           onClick={() => {
             if (shouldExpandOnRowClick) {
               onRowExpanded(id, false);
+            }
+            if (hasRowSelection === 'single') {
+              onRowSelected(id, true);
             }
             onRowClicked(id);
           }}>
@@ -385,13 +422,32 @@ const TableBodyRow = ({
           if (shouldExpandOnRowClick) {
             onRowExpanded(id, true);
           }
+          if (hasRowSelection === 'single') {
+            onRowSelected(id, true);
+          }
           onRowClicked(id);
         }}>
         {tableCells}
       </StyledTableExpandRow>
     )
+  ) : hasRowSelection === 'single' && isSelected ? (
+    <StyledSingleSelectedTableRow
+      key={id}
+      onClick={() => {
+        onRowClicked(id);
+        onRowSelected(id, true);
+      }}>
+      {tableCells}
+    </StyledSingleSelectedTableRow>
   ) : (
-    <StyledTableRow key={id} onClick={() => onRowClicked(id)}>
+    <StyledTableRow
+      key={id}
+      onClick={() => {
+        if (hasRowSelection === 'single') {
+          onRowSelected(id, true);
+        }
+        onRowClicked(id);
+      }}>
       {tableCells}
     </StyledTableRow>
   );

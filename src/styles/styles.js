@@ -5,6 +5,7 @@ export const COLORS = {
   gray: '#5a6872',
   lightGrey: '#dfe3e6',
   blue: '#3d70b2',
+  lightBlue: 'rgba(85, 150, 230, 0.1)',
   errorRed: '#e62325',
   white: '#fff',
 };
