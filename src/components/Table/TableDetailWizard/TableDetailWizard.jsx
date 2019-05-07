@@ -97,7 +97,7 @@ export const defaultProps = {
   showLabels: true,
   nextDisabled: false,
   currentItemId: null,
-  stepWidth: 136,
+  stepWidth: 80,
   onNext: null,
   onBack: null,
   setItem: null,

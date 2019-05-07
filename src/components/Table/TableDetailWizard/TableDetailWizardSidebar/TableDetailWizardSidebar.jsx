@@ -32,7 +32,7 @@ class DetailWizardSidebar extends Component {
 
   static defaultProps = {
     showLabels: true,
-    stepWidth: 136,
+    stepWidth: 80,
   };
 
   state = {};
