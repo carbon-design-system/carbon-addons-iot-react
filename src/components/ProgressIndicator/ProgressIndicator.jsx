@@ -37,7 +37,7 @@ const StyledProgressStep = styled(({ showLabel, stepWidth, isVerticalMode, ...ot
         flex-flow: initial;
       }
       height: ${stepWidth ? `${stepWidth}px` : 'inherit'};
-      min-height: ${stepWidth ? `${stepWidth}px` : '136px'};
+      min-height: ${stepWidth ? `${stepWidth}px` : '80px'};
       `
         : '';
     }}

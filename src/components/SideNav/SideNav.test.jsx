@@ -95,7 +95,7 @@ describe('SideNav testcases', () => {
     },
   ];
 
-    const linksDisabled = [
+  const linksDisabled = [
     {
       icon: (
         <AppSwitcher
@@ -257,7 +257,7 @@ describe('SideNav testcases', () => {
     wrapper.find('footer button').simulate('click');
     expect(wrapper.state('isExpanded')).toBe(false);
   });
-  
+
   it('disabled item', () => {
     mockProps = {
       links: linksDisabled,
