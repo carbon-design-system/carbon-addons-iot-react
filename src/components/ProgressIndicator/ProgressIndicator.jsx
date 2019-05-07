@@ -6,9 +6,11 @@ import {
 } from 'carbon-components-react';
 import styled from 'styled-components';
 
-const StyledProgressIndicator = styled(CarbonProgressIndicator)`
+const StyledProgressIndicator = styled(({ isVerticalMode, ...others }) => (
+  <CarbonProgressIndicator {...others} />
+))`
   &&& {
-    display: ${props => (props.isverticalmode === 'false' ? 'inline-flex' : '')};
+    display: ${props => (!props.isVerticalMode  ? 'inline-flex' : '')};
     .bx--progress-step--complete {
       cursor: pointer;
     }
@@ -18,22 +20,24 @@ const StyledProgressIndicator = styled(CarbonProgressIndicator)`
   }
 `;
 
-const StyledProgressStep = styled(({ showLabel, stepWidth, ...others }) => (
+const StyledProgressStep = styled(({ showLabel, stepWidth, isVerticalMode, ...others }) => (
   <ProgressStep {...others} />
 ))`
   &&& {
-    width: ${props => (props.stepWidth ? `${props.stepWidth}px` : 'inherit')};
-    min-width: 136px;
+    width: ${props => (!props.isVerticalMode && props.stepWidth ? `${props.stepWidth}px` : '')};
+    min-width: ${props => (!props.isVerticalMode && props.stepWidth ? `${props.stepWidth}px` : '136px')};
     p {
       display: ${props => (!props.showLabel ? 'none' : 'inherit')};
     }
     ${props => {
-      const { isverticalmode } = props;
-      return isverticalmode === 'true'
+      const { isVerticalMode, stepWidth } = props;
+      return isVerticalMode
         ? `
         .bx--progress-step-button {
         flex-flow: initial;
       }
+      height: ${stepWidth ? `${stepWidth}px` : 'inherit'};
+      min-height: ${stepWidth ? `${stepWidth}px` : '136px'};
       `
         : '';
     }}
@@ -95,7 +99,7 @@ const ProgressIndicator = ({
       className={[className, isVerticalMode ? 'bx--progress--vertical' : ''].join(' ')}
       onChange={handleChange}
       currentIndex={currentStep}
-      isverticalmode={isVerticalMode.toString()}>
+      isVerticalMode={isVerticalMode}>
       {items.map(({ id, label }) => (
         <StyledProgressStep
           key={id}
@@ -103,7 +107,7 @@ const ProgressIndicator = ({
           description={label}
           showLabel={showLabels || currentItemId === id}
           stepWidth={stepWidth}
-          isverticalmode={isVerticalMode.toString()}
+          isVerticalMode={isVerticalMode}
         />
       ))}
     </StyledProgressIndicator>
