@@ -95,11 +95,7 @@ describe('SideNav testcases', () => {
     },
   ];
 
-<<<<<<< HEAD
   const linksDisabled = [
-=======
-    const linksDisabled = [
->>>>>>> 19f97f8734c5abe24f58c385e67d9cab9b4b6cd8
     {
       icon: (
         <AppSwitcher
