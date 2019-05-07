@@ -94,6 +94,60 @@ describe('SideNav testcases', () => {
       linkContent: 'Boards',
     },
   ];
+
+    const linksDisabled = [
+    {
+      icon: (
+        <AppSwitcher
+          fill="white"
+          description="Icon"
+          className="bx--header__menu-item bx--header__menu-title"
+        />
+      ),
+      isEnabled: false,
+      metaData: {
+        onClick: jest.fn(),
+        tabIndex: 0,
+        label: 'Boards',
+        element: 'a',
+      },
+      linkContent: 'Boards',
+    },
+    {
+      current: true,
+      isEnabled: true,
+      icon: (
+        <Chip
+          fill="white"
+          description="Icon"
+          className="bx--header__menu-item bx--header__menu-title"
+        />
+      ),
+      metaData: {
+        label: 'Devices',
+        href: 'https://google.com',
+        element: 'a',
+        target: '_blank',
+      },
+      linkContent: 'Devices',
+    },
+    {
+      isEnabled: true,
+      icon: (
+        <Group
+          fill="white"
+          description="Icon"
+          className="bx--header__menu-item bx--header__menu-title"
+        />
+      ),
+      metaData: {
+        label: 'Members',
+        element: 'button',
+      },
+      linkContent: 'Members',
+    },
+  ];
+
   /* eslint-enable */
   let mockProps;
 
@@ -202,5 +256,13 @@ describe('SideNav testcases', () => {
     const wrapper = mount(<CarbonSideNav {...mockProps} defaultExpanded />);
     wrapper.find('footer button').simulate('click');
     expect(wrapper.state('isExpanded')).toBe(false);
+  });
+  
+  it('disabled item', () => {
+    mockProps = {
+      links: linksDisabled,
+    };
+    const wrapper = mount(<SideNav {...mockProps} />);
+    expect(wrapper.find('SideNav__StyledSideNavLink')).toHaveLength(2);
   });
 });
