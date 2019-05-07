@@ -29,12 +29,6 @@ const StyledMessageBox = styled(InlineNotification)`
 `;
 
 const StyledFooter = styled.div`
-  ${'' /* display: flex;
-  position: absolute;
-  bottom: 0px;
-  width: 100%;
-  align-items: center;
-  line-height: 40px; */}
 
   .bx--modal-footer {
     justify-content: space-between;

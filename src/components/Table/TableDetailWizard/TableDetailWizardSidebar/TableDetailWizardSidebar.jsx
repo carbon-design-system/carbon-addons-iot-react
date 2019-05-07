@@ -17,7 +17,6 @@ const StyledDivWizardHeader = styled.div`
 
 class DetailWizardSidebar extends Component {
   static propTypes = {
-    /** Title in the header  */
     currentItemId: PropTypes.string.isRequired,
     setItem: PropTypes.func.isRequired,
     items: PropTypes.arrayOf(
