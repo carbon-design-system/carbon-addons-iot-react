@@ -105,7 +105,7 @@ const propTypes = {
   /** Callback called if a row action is clicked */
   onApplyRowAction: PropTypes.func.isRequired,
   /** translated text for more actions */
-  overflowMenuText: PropTypes.string,
+  overflowMenuAria: PropTypes.string,
   /** Is a row action actively running */
   isRowActionRunning: PropTypes.bool,
   /** row action error out */
@@ -126,7 +126,7 @@ const defaultProps = {
   actions: null,
   isRowActionRunning: false,
   rowActionsError: null,
-  overflowMenuText: 'More actions',
+  overflowMenuAria: 'More actions',
   inProgressText: 'In progress',
   onClearError: null,
 };
@@ -162,7 +162,10 @@ class RowActionsCell extends React.Component {
       id,
       actions,
       onApplyRowAction,
-      overflowMenuText,
+      overflowMenuAria,
+      actionFailedText,
+      learnMoreText,
+      dismissText,
       isRowActionRunning,
       rowActionsError,
       onClearError,
@@ -176,7 +179,13 @@ class RowActionsCell extends React.Component {
           visible={isRowExpanded || isRowActionRunning || rowActionsError}
           isRowExpanded={isRowExpanded}>
           {rowActionsError ? (
-            <RowActionsError rowActionsError={rowActionsError} onClearError={onClearError} />
+            <RowActionsError
+              actionFailedText={actionFailedText}
+              learnMoreText={learnMoreText}
+              dismissText={dismissText}
+              rowActionsError={rowActionsError}
+              onClearError={onClearError}
+            />
           ) : isRowActionRunning ? (
             <Fragment>
               <Loading small withOverlay={false} />
@@ -202,10 +211,10 @@ class RowActionsCell extends React.Component {
                 <StyledOverflowMenu
                   floatingMenu
                   flipped
-                  ariaLabel={overflowMenuText}
+                  ariaLabel={overflowMenuAria}
                   onClick={event => event.stopPropagation()}
                   isRowExpanded={isRowExpanded}
-                  iconDescription={overflowMenuText}
+                  iconDescription={overflowMenuAria}
                   isOpen={isOpen}
                   onOpen={this.handleOpen}
                   onClose={this.handleClose}>

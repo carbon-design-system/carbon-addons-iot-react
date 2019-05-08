@@ -465,6 +465,24 @@ storiesOf('Table', module)
       <StatefulTable
         {...initialState}
         actions={actions}
+        options={{
+          hasRowActions: true,
+        }}
+        view={{
+          filters: [],
+          table: {
+            rowActions: [
+              {
+                rowId: 'row-1',
+                isRunning: true,
+              },
+              {
+                rowId: 'row-3',
+                error: { title: 'Import failed', message: 'Contact your administrator' },
+              },
+            ],
+          },
+        }}
         i18n={{
           /** pagination */
           pageBackwardAria: text('i18n.pageBackwardAria', '__Previous page__'),
@@ -499,6 +517,10 @@ storiesOf('Table', module)
           ),
           emptyButtonLabel: text('i18n.emptyButtonLabel', '__Create some data__'),
           emptyButtonLabelWithFilters: text('i18n.emptyButtonLabel', '__Clear all filters__'),
+          inProgressText: text('i18n.inProgressText', '__In Progress__'),
+          actionFailedText: text('i18n.actionFailedText', '__Action Failed__'),
+          learnMoreText: text('i18n.learnMoreText', '__Learn More__'),
+          dismissText: text('i18n.dismissText', '__Dismiss__'),
         }}
       />
     ),
@@ -624,66 +646,128 @@ storiesOf('Table', module)
       }}
     />
   ))
-  .add('with row expansion and actions', () => (
-    <Table
-      columns={tableColumns}
-      data={tableData.map((i, idx) => ({
-        ...i,
-        rowActions: [
-          idx % 4 === 0
-            ? {
-                id: 'drilldown',
-                icon: 'arrow--right',
-                labelText: 'See more',
-              }
-            : null,
-          {
-            id: 'add',
-            icon: 'icon--add',
-            labelText: 'Add',
-            isOverflow: true,
-          },
-          {
-            id: 'delete',
-            icon: 'icon--delete',
-            labelText: 'Delete',
-            isOverflow: true,
-          },
-        ].filter(i => i),
-      }))}
-      actions={actions}
-      options={{
-        hasRowExpansion: true,
-        hasRowActions: true,
-      }}
-      view={{
-        filters: [],
-        table: {
-          ordering: defaultOrdering,
-          expandedRows: [
-            {
-              rowId: 'row-2',
-              content: <RowExpansionContent rowId="row-2" />,
-            },
-            {
-              rowId: 'row-5',
-              content: <RowExpansionContent rowId="row-5" />,
-            },
-          ],
+  .add(
+    'with row expansion and actions',
+    () => (
+      <Table
+        columns={tableColumns}
+        data={tableData.map((i, idx) => ({
+          ...i,
           rowActions: [
+            idx % 4 === 0
+              ? {
+                  id: 'drilldown',
+                  icon: 'arrow--right',
+                  labelText: 'See more',
+                }
+              : null,
             {
-              rowId: 'row-1',
-              isRunning: true,
+              id: 'add',
+              icon: 'icon--add',
+              labelText: 'Add',
+              isOverflow: true,
             },
             {
-              rowId: 'row-3',
-              error: { title: 'Import failed', message: 'Contact your administrator' },
+              id: 'delete',
+              icon: 'icon--delete',
+              labelText: 'Delete',
+              isOverflow: true,
             },
-          ],
-        },
-      }}
-    />
-  ))
+          ].filter(i => i),
+        }))}
+        actions={actions}
+        options={{
+          hasRowExpansion: true,
+          hasRowActions: true,
+        }}
+        view={{
+          filters: [],
+          table: {
+            ordering: defaultOrdering,
+            expandedRows: [
+              {
+                rowId: 'row-2',
+                content: <RowExpansionContent rowId="row-2" />,
+              },
+              {
+                rowId: 'row-5',
+                content: <RowExpansionContent rowId="row-5" />,
+              },
+            ],
+            rowActions: [
+              {
+                rowId: 'row-1',
+                isRunning: true,
+              },
+              {
+                rowId: 'row-3',
+                error: { title: 'Import failed', message: 'Contact your administrator' },
+              },
+            ],
+          },
+        }}
+      />
+    ),
+    {
+      info: {
+        text: `
+        
+        
+        To add custom row actions to each row you need to pass a rowActions array along with every row of your data.  The RowActionsPropTypes is defined as:
+        ~~~js
+        RowActionPropTypes = PropTypes.arrayOf(
+          PropTypes.shape({
+            /** Unique id of the action */
+            id: PropTypes.string.isRequired,
+            /** icon ultimately gets passed through all the way to <Button>, which has this same copied proptype definition for icon */
+            icon: PropTypes.oneOfType([
+              PropTypes.shape({
+                width: PropTypes.string,
+                height: PropTypes.string,
+                viewBox: PropTypes.string.isRequired,
+                svgData: PropTypes.object.isRequired,
+              }),
+              PropTypes.string,
+              PropTypes.node,
+            ]),
+            disabled: PropTypes.bool,
+            labelText: PropTypes.string,
+            /** Action should go into the overflow menu, not be rendered inline in the row */
+            isOverflow: PropTypes.bool,
+          })
+        );
+
+        data.map(row=>{id: row.id, values: {id: row.id}, rowActions=[{id: delete, icon: 'icon--delete', labelText: 'Delete'}]})
+        ~~~
+        
+        You also need to set the options prop on the table to get the rowActions to render. 
+        ~~~js
+        options = {
+          hasRowActions: true
+        } 
+        ~~~
+
+        To listen to the row actions and trigger an event you should pass a function to the actions prop: 
+        ~~~js
+        actions={ 
+          table: {
+            onApplyRowAction: myCustomListener 
+          }
+        }
+        ~~~
+
+        The onApplyRowAction is called with the actionid, and then the rowid that was clicked.  If you return a promise, the table will assume this is an asynchronous action and will show an In Progress indicator until you resolve or reject the promise.
+        ~~~js
+          const myCustomListener = (actionid, rowid)=> {
+            if (actionid === 'myexpectedaction') {
+              console.log(\`perform action on row: \${rowid}\`)
+            }
+          }
+        ~~~
+        `,
+      },
+    }
+  )
   .add('with sorting', () => (
     <Table
       columns={tableColumns.map((i, idx) => ({

@@ -23,13 +23,21 @@ const propTypes = {
   expandedIds: PropTypes.arrayOf(PropTypes.string),
   selectedIds: PropTypes.arrayOf(PropTypes.string),
   /** internationalized label */
-  selectRowText: PropTypes.string,
+  selectRowAria: PropTypes.string,
   /** internationalized label */
-  overflowMenuText: PropTypes.string,
+  overflowMenuAria: PropTypes.string,
   /** internationalized label */
-  clickToExpandText: PropTypes.string,
+  clickToExpandAria: PropTypes.string,
   /** internationalized label */
-  clickToCollapseText: PropTypes.string,
+  clickToCollapseAria: PropTypes.string,
+  /** I18N label for in progress */
+  inProgressText: PropTypes.string, // eslint-disable-line
+  /** I18N label for action failed */
+  actionFailedText: PropTypes.string, // eslint-disable-line
+  /** I18N label for learn more */
+  learnMoreText: PropTypes.string, // eslint-disable-line
+  /** I18N label for dismiss */
+  dismissText: PropTypes.string, // eslint-disable-line
   /** since some columns might not be currently visible */
   totalColumns: PropTypes.number,
   hasRowSelection: PropTypes.oneOf(['multi', 'single', false]),
@@ -59,10 +67,10 @@ const propTypes = {
 const defaultProps = {
   expandedIds: [],
   selectedIds: [],
-  selectRowText: 'Select row',
-  overflowMenuText: 'More actions',
-  clickToExpandText: 'Click to expand.',
-  clickToCollapseText: 'Click to collapse.',
+  selectRowAria: 'Select row',
+  overflowMenuAria: 'More actions',
+  clickToExpandAria: 'Click to expand.',
+  clickToCollapseAria: 'Click to collapse.',
   rows: [],
   expandedRows: [],
   rowActionsState: [],
@@ -82,10 +90,14 @@ const TableBody = ({
   expandedIds,
   expandedRows,
   selectedIds,
-  selectRowText,
-  overflowMenuText,
-  clickToExpandText,
-  clickToCollapseText,
+  selectRowAria,
+  overflowMenuAria,
+  clickToExpandAria,
+  clickToCollapseAria,
+  inProgressText,
+  learnMoreText,
+  dismissText,
+  actionFailedText,
   totalColumns,
   actions,
   rowActionsState,
@@ -124,10 +136,14 @@ const TableBody = ({
         rowActionsError={myRowActionState ? myRowActionState.error : null}
         isRowActionRunning={myRowActionState ? myRowActionState.isRunning : null}
         ordering={orderingMap}
-        selectRowText={selectRowText}
-        overflowMenuText={overflowMenuText}
-        clickToCollapseText={clickToCollapseText}
-        clickToExpandText={clickToExpandText}
+        selectRowAria={selectRowAria}
+        overflowMenuAria={overflowMenuAria}
+        clickToCollapseAria={clickToCollapseAria}
+        clickToExpandAria={clickToExpandAria}
+        inProgressText={inProgressText}
+        actionFailedText={actionFailedText}
+        learnMoreText={learnMoreText}
+        dismissText={dismissText}
         columns={columns}
         id={row.id}
         totalColumns={totalColumns}
