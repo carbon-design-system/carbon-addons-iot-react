@@ -4,17 +4,21 @@ import styled from 'styled-components';
 
 const propTypes = {
   sidebar: PropTypes.element,
+  width: PropTypes.number,
 };
 
 const defaultProps = {
   sidebar: null,
+  width: 200,
 };
 
 const StyledSidebar = styled.div`
-  min-width: 200px;
+  min-width: ${props => `${props.width}px`};
 `;
 
-const WizardSidebar = ({ sidebar }) => <StyledSidebar>{sidebar}</StyledSidebar>;
+const WizardSidebar = ({ sidebar, width }) => (
+  <StyledSidebar width={width}>{sidebar}</StyledSidebar>
+);
 
 WizardSidebar.propTypes = propTypes;
 WizardSidebar.defaultProps = defaultProps;
