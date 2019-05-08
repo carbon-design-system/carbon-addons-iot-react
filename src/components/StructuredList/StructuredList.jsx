@@ -12,24 +12,23 @@ import Bee32 from '@carbon/icons-react/lib/bee/32';
 
 import { COLORS } from '../../styles/styles';
 
-
-const StructuredListWrapperStyled = styled(({isFixedWidth, ...others}) => (
+const StructuredListWrapperStyled = styled(({ isFixedWidth, ...others }) => (
   <StructuredListWrapper {...others} />
 ))`
-    && {
-      width: ${props => (props.isFixedWidth ? 'inherit;' : '')};
-    }
-    background-color: #ffffff;
-    margin-bottom: 0;
+  && {
+    width: ${props => (props.isFixedWidth ? 'inherit;' : '')};
+  }
+  background-color: #ffffff;
+  margin-bottom: 0;
 
-    .bx--structured-list-th {
-      padding-left: 16px;
-    }
+  .bx--structured-list-th {
+    padding-left: 16px;
+  }
 
-    .bx--structured-list-td {
-      padding-left: 16px;
-      line-height: 8px;
-    }
+  .bx--structured-list-td {
+    padding-left: 16px;
+    line-height: 8px;
+  }
 `;
 
 const EmptyContent = styled.div`
