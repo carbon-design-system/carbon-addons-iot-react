@@ -29,7 +29,6 @@ const StyledMessageBox = styled(InlineNotification)`
 `;
 
 const StyledFooter = styled.div`
-
   .bx--modal-footer {
     justify-content: space-between;
     padding: 1rem 3rem 1rem 40px;

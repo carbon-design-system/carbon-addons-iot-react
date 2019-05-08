@@ -10,7 +10,7 @@ const StyledProgressIndicator = styled(({ isVerticalMode, ...others }) => (
   <CarbonProgressIndicator {...others} />
 ))`
   &&& {
-    display: ${props => (!props.isVerticalMode  ? 'inline-flex' : '')};
+    display: ${props => (!props.isVerticalMode ? 'inline-flex' : '')};
     .bx--progress-step--complete {
       cursor: pointer;
     }
@@ -25,7 +25,8 @@ const StyledProgressStep = styled(({ showLabel, stepWidth, isVerticalMode, ...ot
 ))`
   &&& {
     width: ${props => (!props.isVerticalMode && props.stepWidth ? `${props.stepWidth}px` : '')};
-    min-width: ${props => (!props.isVerticalMode && props.stepWidth ? `${props.stepWidth}px` : '136px')};
+    min-width: ${props =>
+      !props.isVerticalMode && props.stepWidth ? `${props.stepWidth}px` : '136px'};
     p {
       display: ${props => (!props.showLabel ? 'none' : 'inherit')};
     }
