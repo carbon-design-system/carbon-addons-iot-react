@@ -93,7 +93,15 @@ const StructuredList = ({ columns, data, design, isFixedWidth, onRowClick, loadi
                 title={item.values[col.id]}
                 width={col.width}
                 style={design === 'normal' ? { lineHeight: '16px' } : {}}>
-                {item.values[col.id]}
+                {col.renderDataFunction
+                  ? col.renderDataFunction({
+                      // Call the column renderer if it's provided
+                      value: item.values[col.id],
+                      columnId: col.id,
+                      rowId: item.id,
+                      row: item.values,
+                    })
+                  : item.values[col.id]}
               </StyledStructuredListCell>
             ))}
           </StructuredListRow>
@@ -120,6 +128,14 @@ StructuredList.propTypes = {
       id: PropTypes.string.isRequired,
       title: PropTypes.string.isRequired,
       width: PropTypes.string,
+      /** for each column you can register a render callback function that is called with this object payload
+       * {
+       *    value: PropTypes.any (current cell value),
+       *    columnId: PropTypes.string,
+       *    rowId: PropTypes.string,
+       *    row: PropTypes.object like this {col: value, col2: value}
+       * }, you should return the node that should render within that cell */
+      renderDataFunction: PropTypes.func,
     })
   ).isRequired,
   /** Array of data - table content */
