@@ -10,24 +10,28 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Bee32 from '@carbon/icons-react/lib/bee/32';
 
-const StructuredListWrapperStyled = styled(StructuredListWrapper)`
-   {
-    background-color: #ffffff;
-    margin-bottom: 0;
-    ${props => (props.isFixedWidth ? 'width: inherit;' : '')}
+import { COLORS } from '../../styles/styles';
 
-    .bx--structured-list-th {
-      padding-left: 16px;
-    }
+const StructuredListWrapperStyled = styled(({ isFixedWidth, ...others }) => (
+  <StructuredListWrapper {...others} />
+))`
+  && {
+    width: ${props => (props.isFixedWidth ? 'inherit;' : '')};
+  }
+  background-color: #ffffff;
+  margin-bottom: 0;
 
-    .bx--structured-list-td {
-      padding-left: 16px;
-      line-height: 8px;
-    }
+  .bx--structured-list-th {
+    padding-left: 16px;
+  }
+
+  .bx--structured-list-td {
+    padding-left: 16px;
+    line-height: 8px;
   }
 `;
 
-const EmptyDiv = styled.div`
+const EmptyContent = styled.div`
    {
     background-color: #ffffff;
     text-align: center;
@@ -36,6 +40,8 @@ const EmptyDiv = styled.div`
     padding-top: 90px;
     padding-bottom: 115px;
     font-weight: regular;
+    caption-side: bottom;
+    display: table-caption;
   }
 `;
 
@@ -87,21 +93,29 @@ const StructuredList = ({ columns, data, design, isFixedWidth, onRowClick, loadi
                 title={item.values[col.id]}
                 width={col.width}
                 style={design === 'normal' ? { lineHeight: '16px' } : {}}>
-                {item.values[col.id]}
+                {col.renderDataFunction
+                  ? col.renderDataFunction({
+                      // Call the column renderer if it's provided
+                      value: item.values[col.id],
+                      columnId: col.id,
+                      rowId: item.id,
+                      row: item.values,
+                    })
+                  : item.values[col.id]}
               </StyledStructuredListCell>
             ))}
           </StructuredListRow>
         ))}
       </StructuredListBody>
+      {!data.length ? (
+        <EmptyContent>
+          <Bee32 width={100} height={100} fill={COLORS.gray} />
+          <LoadingDiv>{loadingDataLabel}</LoadingDiv>
+        </EmptyContent>
+      ) : (
+        undefined
+      )}
     </StructuredListWrapperStyled>
-    {!data.length ? (
-      <EmptyDiv>
-        <Bee32 width={100} height={100} fill="#5a6872" />
-        <LoadingDiv>{loadingDataLabel}</LoadingDiv>
-      </EmptyDiv>
-    ) : (
-      undefined
-    )}
   </Fragment>
 );
 
@@ -114,6 +128,14 @@ StructuredList.propTypes = {
       id: PropTypes.string.isRequired,
       title: PropTypes.string.isRequired,
       width: PropTypes.string,
+      /** for each column you can register a render callback function that is called with this object payload
+       * {
+       *    value: PropTypes.any (current cell value),
+       *    columnId: PropTypes.string,
+       *    rowId: PropTypes.string,
+       *    row: PropTypes.object like this {col: value, col2: value}
+       * }, you should return the node that should render within that cell */
+      renderDataFunction: PropTypes.func,
     })
   ).isRequired,
   /** Array of data - table content */
