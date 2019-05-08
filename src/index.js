@@ -19,6 +19,8 @@ export CatalogContent from './components/TileCatalog/CatalogContent';
 export ProgressIndicator from './components/ProgressIndicator/ProgressIndicator';
 export StructuredList from './components/StructuredList/StructuredList';
 export ResourceList from './components/ResourceList/ResourceList';
+export FileDrop from './components/FileDrop/FileDrop';
+
 // reusable reducers
 export { baseTableReducer } from './components/Table/baseTableReducer';
 export { tableReducer } from './components/Table/tableReducer';
