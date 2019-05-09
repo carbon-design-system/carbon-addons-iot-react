@@ -4,7 +4,6 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { boolean, text, number, select } from '@storybook/addon-knobs';
 import styled from 'styled-components';
-import merge from 'lodash/merge';
 
 import { getSortedData } from '../../utils/componentUtilityFunctions';
 
@@ -322,10 +321,11 @@ storiesOf('Table', module)
         {...initialState}
         actions={actions}
         lightweight={boolean('lightweight', false)}
-        options={merge({}, initialState.options, {
+        options={{
           hasRowSelection: select('hasRowSelection', ['multi', 'single'], 'multi'),
           hasRowExpansion: false,
-        })}
+        }}
+        view={{}}
       />
     ),
     {
@@ -338,7 +338,7 @@ storiesOf('Table', module)
     }
   )
   .add(
-    'Stateful Example',
+    'Stateful Example with expansion',
     () => (
       <StatefulTable
         {...initialState}
@@ -348,45 +348,22 @@ storiesOf('Table', module)
     ),
     {
       info: {
-        text:
-          'This is an example of the <StatefulTable> component that uses local state to handle all the table actions. This is produced by wrapping the <Table> in a container component and managing the state associated with features such the toolbar, filters, row select, etc. For more robust documentation on the prop model and source, see the other "with function" stories.',
-        propTables: [Table],
-        propTablesExclude: [StatefulTable],
-      },
-    }
-  )
-  .add(
-    'Stateful with async row actions',
-    () => (
-      <StatefulTable
-        {...initialState}
-        actions={merge({}, actions, {
-          table: {
-            onApplyRowAction: () => new Promise(resolve => setTimeout(resolve, 3000)),
-            onClearRowError: () => true,
-          },
-        })}
-        lightweight={boolean('lightweight', false)}
-        view={{
-          table: {
-            rowActions: [
-              {
-                rowId: 'row-1',
-                isRunning: true,
-              },
-              {
-                rowId: 'row-3',
-                error: { title: 'Import failed', message: 'Contact your administrator' },
-              },
-            ],
-          },
-        }}
-      />
-    ),
-    {
-      info: {
-        text:
-          'This is an example of the <StatefulTable> component that uses local state to handle all the table actions. This is produced by wrapping the <Table> in a container component and managing the state associated with features such the toolbar, filters, row select, etc. For more robust documentation on the prop model and source, see the other "with function" stories.',
+        text: `
+          
+          This table has expanded rows.  To support expanded rows, make sure to pass the expandedData prop to the table and set options.hasRowExpansion=true.
+          ~~~js
+          expandedData={[
+            {rowId: 'row-0',content: <RowExpansionContent />},
+            {rowId: 'row-1',content: <RowExpansionContent />},
+            {rowId: 'row-2',content: <RowExpansionContent />},
+            …
+          ]}
+
+          options = { 
+            hasRowExpansion:true 
+          }
+          ~~~
+          `,
         propTables: [Table],
         propTablesExclude: [StatefulTable],
       },
@@ -452,108 +429,106 @@ storiesOf('Table', module)
     },
     {
       info: {
-        text:
-          'This is an example of the <StatefulTable> component that uses local state to handle all the table actions. This is produced by wrapping the <Table> in a container component and managing the state associated with features such the toolbar, filters, row select, etc. For more robust documentation on the prop model and source, see the other "with function" stories.',
+        text: `
+          
+          This stateful table has nested rows.  To setup your table this way you must pass a children prop along with each of your data rows.
+
+          ~~~js
+          data=[
+            {
+              id: 'rowid', 
+              values: {
+                col1: 'value1
+              }, 
+              children: [
+                {
+                  id: 'child-rowid, 
+                  values: {
+                    col1: 'nested-value1'
+                  }
+                }
+              ]
+            }
+          ]
+          ~~~
+
+          You must also set hasRowExpansion to true in your table options
+          ~~~js
+            options={
+              hasRowExpansion: true
+            }
+          ~~~
+          
+          `,
         propTables: [Table],
         propTablesExclude: [StatefulTable],
       },
     }
   )
   .add(
-    'Stateful Example with I18N strings',
-    () => (
-      <StatefulTable
-        {...initialState}
-        actions={actions}
-        options={{
-          hasRowActions: true,
-        }}
-        view={{
-          filters: [],
-          table: {
-            rowActions: [
-              {
-                rowId: 'row-1',
-                isRunning: true,
-              },
-              {
-                rowId: 'row-3',
-                error: { title: 'Import failed', message: 'Contact your administrator' },
-              },
-            ],
+    'basic `dumb` table',
+    () => <Table columns={tableColumns} data={tableData} actions={actions} />,
+    {
+      info: {
+        text: `
+      
+      For basic table support, you can render the functional <Table/> component with only the columns and data props.  This table does not have any state management built in.  If you want that, use the <StatefulTable/> component or you will need to implement your own listeners and state management.  You can reuse our tableReducer and tableActions with the useReducer hook to update state.
+      
+      ~~~js
+      import { tableReducer, tableActions } from 'carbon-addons-iot-react';
+
+      const [state, dispatch] = useReducer(tableReducer, { data: initialData, view: initialState });
+      
+      const actions = {
+        table: {
+          onChangeSort: column => {
+            dispatch(tableActions.tableColumnSort(column));
           },
-        }}
-        i18n={{
-          /** pagination */
-          pageBackwardAria: text('i18n.pageBackwardAria', '__Previous page__'),
-          pageForwardAria: text('i18n.pageForwardAria', '__Next page__'),
-          pageNumberAria: text('i18n.pageNumberAria', '__Page Number__'),
-          itemsPerPage: text('i18n.itemsPerPage', '__Items per page:__'),
-          itemsRange: (min, max) => `__${min}–${max} items__`,
-          currentPage: page => `__page ${page}__`,
-          itemsRangeWithTotal: (min, max, total) => `__${min}–${max} of ${total} items__`,
-          pageRange: (current, total) => `__${current} of ${total} pages__`,
-          /** table body */
-          overflowMenuAria: text('i18n.overflowMenuAria', '__More actions__'),
-          clickToExpandAria: text('i18n.clickToExpandAria', '__Click to expand content__'),
-          clickToCollapseAria: text('i18n.clickToCollapseAria', '__Click to collapse content__'),
-          selectAllAria: text('i18n.selectAllAria', '__Select all items__'),
-          selectRowAria: text('i18n.selectRowAria', '__Select row__'),
-          /** toolbar */
-          clearAllFilters: text('i18n.clearAllFilters', '__Clear all filters__'),
-          searchPlaceholder: text('i18n.searchPlaceholder', '__Search__'),
-          columnSelectionButtonAria: text('i18n.columnSelectionButtonAria', '__Column Selection__'),
-          filterButtonAria: text('i18n.filterButtonAria', '__Filters__'),
-          clearFilterAria: text('i18n.clearFilterAria', '__Clear filter__'),
-          filterAria: text('i18n.filterAria', '__Filter__'),
-          openMenuAria: text('i18n.openMenuAria', '__Open menu__'),
-          closeMenuAria: text('i18n.closeMenuAria', '__Close menu__'),
-          clearSelectionAria: text('i18n.clearSelectionAria', '__Clear selection__'),
-          /** empty state */
-          emptyMessage: text('i18n.emptyMessage', '__There is no data__'),
-          emptyMessageWithFilters: text(
-            'i18n.emptyMessageWithFilters',
-            '__No results match the current filters__'
-          ),
-          emptyButtonLabel: text('i18n.emptyButtonLabel', '__Create some data__'),
-          emptyButtonLabelWithFilters: text('i18n.emptyButtonLabel', '__Clear all filters__'),
-          inProgressText: text('i18n.inProgressText', '__In Progress__'),
-          actionFailedText: text('i18n.actionFailedText', '__Action Failed__'),
-          learnMoreText: text('i18n.learnMoreText', '__Learn More__'),
-          dismissText: text('i18n.dismissText', '__Dismiss__'),
-        }}
+        }
+      }
+
+      <Table
+        {...state}
+        ...
+      ~~~
+      `,
+      },
+    }
+  )
+  .add(
+    'with simple search',
+    () => (
+      <Table
+        columns={tableColumns}
+        data={tableData}
+        actions={actions}
+        options={{ hasSearch: true }}
       />
     ),
     {
       info: {
-        text:
-          'This is an example of the <StatefulTable> component that uses local state to handle all the table actions. This is produced by wrapping the <Table> in a container component and managing the state associated with features such the toolbar, filters, row select, etc. For more robust documentation on the prop model and source, see the other "with function" stories.',
-        propTables: [Table],
-        propTablesExclude: [StatefulTable],
+        text: `To enable simple search on a table, simply set the prop options.hasSearch=true.  We wouldn't recommend enabling column filters on a table and simple search for UX reasons, but it is supported.`,
       },
     }
   )
-
-  .add('default', () => <Table columns={tableColumns} data={tableData} actions={actions} />)
-  .add('with simple search', () => (
-    <Table
-      columns={tableColumns}
-      data={tableData}
-      actions={actions}
-      options={{ hasSearch: true }}
-    />
-  ))
-  .add('minitable', () => (
-    <StatefulTable
-      style={{ maxWidth: '300px' }}
-      columns={tableColumns.slice(0, 2)}
-      data={tableData}
-      actions={actions}
-      options={{ hasSearch: true, hasPagination: true, hasRowSelection: 'single' }}
-    />
-  ))
+  .add(
+    'minitable',
+    () => (
+      <StatefulTable
+        style={{ maxWidth: '300px' }}
+        columns={tableColumns.slice(0, 2)}
+        data={tableData}
+        actions={actions}
+        options={{ hasSearch: true, hasPagination: true, hasRowSelection: 'single' }}
+      />
+    ),
+    {
+      info: {
+        text: `The table will automatically adjust to narrow mode if you set a style or class that makes max-width smaller than 600 pixels (which is the width needed to render the full pagination controls) `,
+      },
+    }
+  )
   .add('with multi select and batch actions', () => (
-    // TODO - batch action bar
     <Table
       columns={tableColumns}
       data={tableData}
@@ -1149,4 +1124,123 @@ storiesOf('Table', module)
         toolbar: { activeBar: 'filter', customToolbarContent: <div>my custom</div> },
       }}
     />
-  ));
+  ))
+  .add(
+    'Stateful Example with I18N strings',
+    () => (
+      <StatefulTable
+        {...initialState}
+        actions={actions}
+        options={{
+          hasRowActions: true,
+        }}
+        view={{
+          filters: [],
+          table: {
+            rowActions: [
+              {
+                rowId: 'row-1',
+                isRunning: true,
+              },
+              {
+                rowId: 'row-3',
+                error: { title: 'Import failed', message: 'Contact your administrator' },
+              },
+            ],
+          },
+        }}
+        i18n={{
+          /** pagination */
+          pageBackwardAria: text('i18n.pageBackwardAria', '__Previous page__'),
+          pageForwardAria: text('i18n.pageForwardAria', '__Next page__'),
+          pageNumberAria: text('i18n.pageNumberAria', '__Page Number__'),
+          itemsPerPage: text('i18n.itemsPerPage', '__Items per page:__'),
+          itemsRange: (min, max) => `__${min}–${max} items__`,
+          currentPage: page => `__page ${page}__`,
+          itemsRangeWithTotal: (min, max, total) => `__${min}–${max} of ${total} items__`,
+          pageRange: (current, total) => `__${current} of ${total} pages__`,
+          /** table body */
+          overflowMenuAria: text('i18n.overflowMenuAria', '__More actions__'),
+          clickToExpandAria: text('i18n.clickToExpandAria', '__Click to expand content__'),
+          clickToCollapseAria: text('i18n.clickToCollapseAria', '__Click to collapse content__'),
+          selectAllAria: text('i18n.selectAllAria', '__Select all items__'),
+          selectRowAria: text('i18n.selectRowAria', '__Select row__'),
+          /** toolbar */
+          clearAllFilters: text('i18n.clearAllFilters', '__Clear all filters__'),
+          searchPlaceholder: text('i18n.searchPlaceholder', '__Search__'),
+          columnSelectionButtonAria: text('i18n.columnSelectionButtonAria', '__Column Selection__'),
+          filterButtonAria: text('i18n.filterButtonAria', '__Filters__'),
+          clearFilterAria: text('i18n.clearFilterAria', '__Clear filter__'),
+          filterAria: text('i18n.filterAria', '__Filter__'),
+          openMenuAria: text('i18n.openMenuAria', '__Open menu__'),
+          closeMenuAria: text('i18n.closeMenuAria', '__Close menu__'),
+          clearSelectionAria: text('i18n.clearSelectionAria', '__Clear selection__'),
+          /** empty state */
+          emptyMessage: text('i18n.emptyMessage', '__There is no data__'),
+          emptyMessageWithFilters: text(
+            'i18n.emptyMessageWithFilters',
+            '__No results match the current filters__'
+          ),
+          emptyButtonLabel: text('i18n.emptyButtonLabel', '__Create some data__'),
+          emptyButtonLabelWithFilters: text('i18n.emptyButtonLabel', '__Clear all filters__'),
+          inProgressText: text('i18n.inProgressText', '__In Progress__'),
+          actionFailedText: text('i18n.actionFailedText', '__Action Failed__'),
+          learnMoreText: text('i18n.learnMoreText', '__Learn More__'),
+          dismissText: text('i18n.dismissText', '__Dismiss__'),
+        }}
+      />
+    ),
+    {
+      info: {
+        text: `
+          
+          By default the table shows all of its internal strings in English.  If you want to support multiple languages, you must populate these i18n keys with the appropriate label for the selected UI language.
+          ~~~js
+            i18n={
+              
+              /** pagination */
+              pageBackwardAria,
+              pageForwardAria,
+              pageNumberAria,
+              itemsPerPage,
+              itemsRange,
+              currentPage,
+              itemsRangeWithTotal,
+              pageRange,
+              
+              /** table body */
+              overflowMenuAria,
+              clickToExpandAria,
+              clickToCollapseAria,
+              selectAllAria,
+              selectRowAria,
+              
+              /** toolbar */
+              clearAllFilters,
+              searchPlaceholder,
+              columnSelectionButtonAria,
+              filterButtonAria,
+              clearFilterAria,
+              filterAria,
+              openMenuAria,
+              closeMenuAria,
+              clearSelectionAria,
+             
+              /** empty state */
+              emptyMessage,
+              emptyMessageWithFilters,
+              emptyButtonLabel,
+              emptyButtonLabelWithFilters,
+              inProgressText,
+              actionFailedText,
+              learnMoreText,
+              dismissText,
+            }
+          ~~~
+          
+          `,
+        propTables: [Table],
+        propTablesExclude: [StatefulTable],
+      },
+    }
+  );
