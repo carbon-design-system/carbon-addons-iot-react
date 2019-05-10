@@ -235,6 +235,16 @@ export const tableReducer = (state = {}, action) => {
                 rowCount: updatedData ? updatedData.length : 0,
               },
             },
+            // Clear selection if the data changes
+            selectedIds: {
+              $set: [],
+            },
+            isSelectAllIndeterminate: {
+              $set: false,
+            },
+            isSelectAllSelected: {
+              $set: false,
+            },
           },
         },
       });
