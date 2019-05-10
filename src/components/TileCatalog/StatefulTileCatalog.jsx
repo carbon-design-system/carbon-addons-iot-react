@@ -42,6 +42,10 @@ const StatefulTileCatalog = ({
           pagination,
         },
       });
+      // If we totally change the tiles data, we should generate a selection event for the initial default selection
+      if (onSelection && tilesProp.length > 0 && !selectedTileIdProp) {
+        onSelection(tilesProp[0].id);
+      }
     },
     [tilesProp.map(tile => omit(tile, 'renderContent'))]
   );
