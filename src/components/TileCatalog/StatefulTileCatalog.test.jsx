@@ -35,10 +35,10 @@ describe('StatefulTileCatalog', () => {
     expect(mockSearch).toHaveBeenCalledWith(value);
   });
   test('handles Clicking on option', () => {
-    mockOnSelection.mockClear();
     const wrapper = mount(<StatefulTileCatalog {...commonTileProps} />);
     // Need to use at to get a new ReactWrapper
     const tileInput = wrapper.find('input[type="radio"]').at(0);
+    mockOnSelection.mockClear();
     tileInput.simulate('change');
     expect(mockOnSelection).toHaveBeenCalledTimes(1);
     expect(mockOnSelection).toHaveBeenCalledWith('test1');
@@ -102,6 +102,7 @@ describe('StatefulTileCatalog', () => {
 
     const newTiles = commonTileProps.tiles.slice(1, 5);
     // Back to Page 1
+    mockOnSelection.mockClear();
     wrapper.setProps({ tiles: newTiles });
     wrapper.update();
     expect(
@@ -110,6 +111,9 @@ describe('StatefulTileCatalog', () => {
         .at(1)
         .text()
     ).toContain('Page 1');
+
+    // Needs to have called the selection callback for the newly default selected row
+    expect(mockOnSelection).toHaveBeenCalledTimes(1);
 
     // The new first tile should be selected
     expect(
