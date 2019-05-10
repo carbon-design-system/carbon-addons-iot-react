@@ -272,11 +272,15 @@ describe('table reducer testcases', () => {
       // Data should be filtered once table registers
       expect(initialState.view.table.filteredData).toBeUndefined();
       const tableWithFilteredData = tableReducer(
-        initialState,
+        merge({}, initialState, {
+          view: { table: { isSelectAllSelected: true, isSelectAllIndeterminate: true } },
+        }),
         tableRegister({ data: initialState.data, isLoading: false })
       );
       expect(tableWithFilteredData.data).toEqual(initialState.data);
       expect(tableWithFilteredData.view.table.filteredData.length).toBeGreaterThan(0);
+      expect(tableWithFilteredData.view.table.isSelectAllSelected).toEqual(false);
+      expect(tableWithFilteredData.view.table.isSelectAllIndeterminate).toEqual(false);
       expect(tableWithFilteredData.view.table.filteredData.length).not.toEqual(
         initialState.data.length
       );
