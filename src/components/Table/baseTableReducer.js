@@ -20,6 +20,13 @@ import {
 } from './tableActionCreators';
 
 export const baseTableReducer = (state = {}, action) => {
+  // To support instance matching (i.e. multiple table states in one store), just ensure
+  // that a instanceId is provided on state passed to baseTableReducer.  If no instanceId
+  // is provided, all matching actions will be processed by this table reducer.
+  if (typeof action.instanceId === 'string' && action.instanceId !== state.instanceId) {
+    return state;
+  }
+
   switch (action.type) {
     // Page Actions
     case TABLE_PAGE_CHANGE: {
