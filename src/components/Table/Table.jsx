@@ -63,6 +63,8 @@ const propTypes = {
     hasRowNesting: PropTypes.bool,
     hasRowActions: PropTypes.bool,
     hasFilter: PropTypes.bool,
+    /** if true, the data prop will be assumed to only represent the currently visible page */
+    hasOnlyPageData: PropTypes.bool,
     /** has simple search capability */
     hasSearch: PropTypes.bool,
     hasColumnSelection: PropTypes.bool,
@@ -178,6 +180,7 @@ export const defaultProps = baseProps => ({
     hasRowActions: false,
     hasRowNesting: false,
     hasFilter: false,
+    hasOnlyPageData: false,
     hasSearch: false,
     hasColumnSelection: false,
   },
@@ -282,11 +285,11 @@ const Table = props => {
   };
 
   const minItemInView =
-    options.hasPagination && view.pagination
+    options.hasPagination && !options.hasOnlyPageData && view.pagination
       ? (view.pagination.page - 1) * view.pagination.pageSize
       : 0;
   const maxItemInView =
-    options.hasPagination && view.pagination
+    options.hasPagination && !options.hasOnlyPageData && view.pagination
       ? view.pagination.page * view.pagination.pageSize
       : data.length;
   const visibleData = data.slice(minItemInView, maxItemInView);

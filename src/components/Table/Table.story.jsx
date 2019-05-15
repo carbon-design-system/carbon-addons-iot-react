@@ -1042,6 +1042,34 @@ storiesOf('Table', module)
       lightweight={boolean('lightweight', true)}
     />
   ))
+  .add(
+    'with hasOnlyPageData',
+    () => {
+      return (
+        <Table
+          columns={tableColumns}
+          options={{ hasOnlyPageData: true, hasPagination: true }}
+          data={tableData.slice(25, 35)} // this isn't the "8267th page", but we just want to indicate that it is not the first page of data
+          actions={actions}
+          view={{
+            pagination: {
+              pageSize: 10,
+              pageSizes: [10, 20, 30],
+              page: 8267,
+              totalItems: 97532,
+            },
+          }}
+        />
+      );
+    },
+    {
+      info: {
+        text:
+          'By default, tables with pagination will expect the entire table data to be passed in on the `data` prop; the visible data for a page is calculated dynamically by the table based on the page size and page number.  In the case where the table is rendering a large data set, the `options.hasOnlyPageData` prop can be used change this behavior.  With `options.hasOnlyPageData = true`, the `data` prop will be expected to contain only the rows for the visible page.',
+        source: true,
+      },
+    }
+  )
   .add('horizontal scroll - custom width', () => {
     const tableColumnsConcat = [
       { id: 'test2', name: 'Test 2' },
