@@ -18,7 +18,6 @@ export const TABLE_SEARCH_APPLY = 'TABLE_SEARCH_APPLY';
 export const TABLE_EMPTY_STATE_ACTION = 'TABLE_EMPTY_STATE_ACTION';
 export const TABLE_LOADING_SET = 'TABLE_LOADING_SET';
 
-/** Set initial data and provide instanceId if supporting multiple tables */
 export const tableRegister = (data, totalItems, instanceId = null) => ({
   type: TABLE_REGISTER,
   payload: data,
