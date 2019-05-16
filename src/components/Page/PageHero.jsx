@@ -35,16 +35,17 @@ const propTypes = {
     return null;
   },
   /** The switcher actions */
-  switchers: PropTypes.shape({
+  switcher: PropTypes.shape({
     onChange: PropTypes.func,
-    switcher: PropTypes.arrayOf(
+    selectedIndex: PropTypes.number,
+    options: PropTypes.arrayOf(
       PropTypes.shape({
-        switcherId: PropTypes.string,
-        switcherText: PropTypes.string,
+        id: PropTypes.string,
+        text: PropTypes.string,
         onClick: PropTypes.func,
         disabled: PropTypes.bool,
-      }).isRequired
-    ),
+      })
+    ).isRequired,
   }),
   /** Optional what to render in the left side of the hero */
   leftContent: PropTypes.node,
@@ -62,10 +63,7 @@ const defaultProps = {
   crumb: null,
   leftContent: null,
   rightContent: null,
-  switchers: {
-    onChange: null,
-    switcher: [],
-  },
+  switcher: null,
 };
 
 const StyledPageHero = styled.div`
@@ -124,7 +122,7 @@ const PageHero = ({
   crumb,
   leftContent,
   rightContent,
-  switchers,
+  switcher,
 }) => (
   <StyledPageHero className={className}>
     {crumb || (
@@ -132,7 +130,7 @@ const PageHero = ({
         {leftContent ? <StyledLeftContent>{leftContent}</StyledLeftContent> : null}
         <StyledTitle>
           <PageTitle section={section} title={title} />
-          {switchers && switchers.switcher.length ? <PageSwitcher switchers={switchers} /> : null}
+          {switcher && switcher.options.length ? <PageSwitcher switcher={switcher} /> : null}
           <StyledPageHeroWrap>
             {blurb ? <StyledPageBlurb>{blurb}</StyledPageBlurb> : null}
           </StyledPageHeroWrap>

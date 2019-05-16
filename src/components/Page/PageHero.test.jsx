@@ -16,17 +16,18 @@ describe('Page Hero', () => {
   test('onClick switcher', () => {
     const commonSwitchProps = {
       onChange: jest.fn(),
-      switcher: [
+      options: [
         {
-          switcherId: 'allDevices',
-          switcherText: 'All Devices',
-          onClick: jest.fn(),
-          disabled: null,
+          id: 'allDevices',
+          text: 'All Devices',
         },
-        { switcherId: 'diagnose', switcherText: 'Diagnose', onClick: jest.fn(), disabled: null },
+        {
+          id: 'diagnose',
+          text: 'Diagnose',
+        },
       ],
     };
-    const wrapper = mount(<PageHero {...commonPageHeroProps} switchers={commonSwitchProps} />);
+    const wrapper = mount(<PageHero {...commonPageHeroProps} switcher={commonSwitchProps} />);
 
     wrapper
       .find('Switch[onClick]')

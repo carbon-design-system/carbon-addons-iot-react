@@ -9,40 +9,34 @@ const StyledContentSwitcher = styled(ContentSwitcher)`
 
 const propTypes = {
   /** The switcher actions */
-  switchers: PropTypes.shape({
+  switcher: PropTypes.shape({
     onChange: PropTypes.func,
-    switcher: PropTypes.arrayOf(
+    selectedIndex: PropTypes.number,
+    options: PropTypes.arrayOf(
       PropTypes.shape({
-        switcherId: PropTypes.string,
-        switcherText: PropTypes.string,
-        onClick: PropTypes.func,
-        disabled: PropTypes.bool,
+        id: PropTypes.string,
+        text: PropTypes.string,
       })
     ).isRequired,
   }),
 };
 
 const defaultProps = {
-  switchers: {
+  switcher: {
     onChange: null,
-    switcher: [],
+    selectedIndex: null,
   },
 };
 
-const PageSwitcher = ({ switchers }) => (
-  <StyledContentSwitcher onChange={id => switchers.onChange(id)}>
-    {switchers.switcher.map(item => (
-      <Switch
-        key={item.switcherId}
-        name={item.switcherId}
-        text={item.switcherText}
-        onClick={() => item.onClick}
-        disabled={item.disabled}
-      />
+const PageSwitcher = ({ switcher: { onChange, selectedIndex, options } }) => (
+  <StyledContentSwitcher onChange={id => onChange(id)} selectedIndex={selectedIndex}>
+    {options.map(item => (
+      <Switch key={item.id} name={item.id} text={item.text} />
     ))}
   </StyledContentSwitcher>
 );
 
 PageSwitcher.propTypes = propTypes;
 PageSwitcher.defaultProps = defaultProps;
+
 export default PageSwitcher;
