@@ -38,12 +38,14 @@ describe('StatefulTable tests with Mock reducer', () => {
     // First we're called by empty array
     expect(mockDispatch).toHaveBeenCalledWith({
       payload: { data: [], isLoading: undefined },
+      instanceId: null,
       type: 'TABLE_REGISTER',
     });
     statefulTable.setProps({ data: initialState.data });
     // Then table dispatches another item with the real data
     expect(mockDispatch).toHaveBeenCalledWith({
       payload: { data: initialState.data, isLoading: undefined },
+      instanceId: null,
       type: 'TABLE_REGISTER',
     });
   });
