@@ -17,21 +17,17 @@ storiesOf('PageHero', module)
   .add('normal with action', () => (
     <PageHero
       {...commonPageHeroProps}
-      switchers={{
+      switcher={{
         onChange: action('onChange'),
-        switcher: [
+        selectedIndex: 1,
+        options: [
           {
-            switcherId: 'allDevices',
-            switcherText: 'All Devices',
-            onClick: action('onClick'),
-            disabled: null,
+            id: 'allDevices',
+            text: 'All Devices',
           },
-
           {
-            switcherId: 'diagnose',
-            switcherText: 'Diagnose',
-            onClick: action('onClick'),
-            disabled: null,
+            id: 'diagnose',
+            text: 'Diagnose',
           },
         ],
       }}
