@@ -1,3 +1,14 @@
+---
+name: Issue template
+about: Use this template when requesting a feature, reporting bug, or other
+title: [component name]: [Issue title]
+labels: ":sos:  help wanted, :recycle:  - Component Request"
+assignees: ''
+
+---
+
+<!-- IF THIS IS A COMPONENT REQUEST please use the component request template.-->
+
 <!-- Feel free to remove sections that aren't relevant.-->
 
 # Issue Details
@@ -6,7 +17,7 @@
 
 Describe in detail the issue you're having.
 
-Is this a feature request (new component, new icon), a bug, or a general issue?
+Is this a feature request (functionality, new icon), a bug, or a general issue?
 
 Is this issue related to a specific component?
 
