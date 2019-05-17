@@ -2,7 +2,7 @@
 name: Issue template
 about: Use this template when requesting a feature, reporting bug, or other
 title: [component name]: [Issue title]
-labels: ":sos:  help wanted, :recycle:  - Component Request"
+labels: ''
 assignees: ''
 
 ---
