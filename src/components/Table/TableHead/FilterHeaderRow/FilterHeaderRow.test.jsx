@@ -14,7 +14,7 @@ describe('FilterHeaderRow', () => {
       <FilterHeaderRow
         {...commonFilterProps}
         ordering={[{ columnId: 'col1' }]}
-        columns={[{ id: 'col1' }]}
+        columns={[{ id: 'col1', isFilterable: true }]}
       />
     );
     wrapper.find('input').simulate('change', { target: { value: 'mytext' } });
@@ -60,5 +60,16 @@ describe('FilterHeaderRow', () => {
     wrapper.find('input').simulate('change', { target: { value: 'mytext' } });
     wrapper.find('[title="Clear filter"]').simulate('click');
     expect(wrapper.state()).toEqual({ col1: '' });
+  });
+
+  test('filter input is hidden when isFilterable is false', () => {
+    const wrapper = mount(
+      <FilterHeaderRow
+        {...commonFilterProps}
+        ordering={[{ columnId: 'col1' }]}
+        columns={[{ id: 'col1', isFilterable: false }]}
+      />
+    );
+    expect(wrapper.find('input').exists()).toEqual(false);
   });
 });
