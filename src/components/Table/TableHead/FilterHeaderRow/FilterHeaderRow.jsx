@@ -186,13 +186,12 @@ class FilterHeaderRow extends Component {
             const column = columns.find(i => c.columnId === i.id);
             const columnStateValue = this.state[column.id]; // eslint-disable-line
 
-            let child;
             // undefined check has the effect of making isFilterable default to true
             // if unspecified
-            if (column.isFilterable !== undefined && !column.isFilterable) {
-              child = <div />;
-            } else if (column.options) {
-              child = (
+            const headerContent =
+              column.isFilterable !== undefined && !column.isFilterable ? (
+                <div />
+              ) : column.options ? (
                 <ComboBox
                   aria-label={filterText}
                   translateWithId={this.handleTranslation}
@@ -215,9 +214,7 @@ class FilterHeaderRow extends Component {
                   }}
                   light={!lightweight}
                 />
-              );
-            } else {
-              child = (
+              ) : (
                 <StyledFormItem>
                   <TextInput
                     id={column.id}
@@ -247,14 +244,13 @@ class FilterHeaderRow extends Component {
                   ) : null}
                 </StyledFormItem>
               );
-            }
 
             return (
               <StyledTableHeader
                 data-column={column.id}
                 key={`FilterHeader${column.id}`}
                 width={column.width}>
-                {child}
+                {headerContent}
               </StyledTableHeader>
             );
           })}
