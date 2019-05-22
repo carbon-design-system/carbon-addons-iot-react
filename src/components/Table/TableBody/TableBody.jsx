@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
-import { DataTable } from 'carbon-components-react';
+import { DataTable, SkeletonText } from 'carbon-components-react';
+import VisibilitySensor from 'react-visibility-sensor';
 import pick from 'lodash/pick';
 
 import {
@@ -47,6 +48,7 @@ const propTypes = {
   /** the current state of the row actions */
   rowActionsState: RowActionsStatePropTypes,
   shouldExpandOnRowClick: PropTypes.bool,
+  shouldLazyRender: PropTypes.bool,
 
   actions: PropTypes.shape({
     onRowSelected: PropTypes.func,
@@ -81,6 +83,7 @@ const defaultProps = {
   hasRowNesting: false,
   hasRowActions: false,
   shouldExpandOnRowClick: false,
+  shouldLazyRender: false,
 };
 
 const TableBody = ({
@@ -106,6 +109,7 @@ const TableBody = ({
   hasRowExpansion,
   hasRowNesting,
   shouldExpandOnRowClick,
+  shouldLazyRender,
   ordering,
 }) => {
   // Need to merge the ordering and the columns since the columns have the renderer function
@@ -174,7 +178,33 @@ const TableBody = ({
       : rowElement;
   };
 
-  return <CarbonTableBody>{rows.map(row => renderRow(row))}</CarbonTableBody>;
+  return (
+    <CarbonTableBody>
+      {rows.map(row => {
+        return shouldLazyRender ? (
+          <VisibilitySensor
+            key={`visibilitysensor-${row.id}`}
+            scrollCheck
+            partialVisibility
+            resizeCheck>
+            {({ isVisible }) =>
+              isVisible ? (
+                renderRow(row)
+              ) : (
+                <tr>
+                  <td colSpan="100%">
+                    <SkeletonText />
+                  </td>
+                </tr>
+              )
+            }
+          </VisibilitySensor>
+        ) : (
+          renderRow(row)
+        );
+      })}
+    </CarbonTableBody>
+  );
 };
 
 TableBody.propTypes = propTypes;
