@@ -13,7 +13,7 @@ const StyledWizardWrapper = styled.div`
   flex-flow: column;
   align-items: center;
 
-  .bx--modal-content {
+  .bx--modal-content[data-id='WizardInlineContent'] {
     padding: 0rem 1rem;
     margin-bottom: 48px;
     max-height: 80vh;
@@ -21,7 +21,7 @@ const StyledWizardWrapper = styled.div`
     width: 100%;
   }
 
-  .bx--modal-container {
+  .bx--modal-container[data-id='WizardInlineContainer'] {
     min-width: 630px;
     max-width: 90%;
     width: 90%;
@@ -49,7 +49,7 @@ const StyledFooter = styled.div`
   align-items: center;
   line-height: 40px;
 
-  .bx--modal-footer {
+  .bx--modal-footer[data-id='WizardInlineFooter'] {
     justify-content: space-between;
     padding: 1rem 3rem 1rem 40px;
     max-height: 72px;
@@ -178,7 +178,7 @@ const WizardInline = ({
 
   return (
     <StyledWizardWrapper className={className}>
-      <div className="bx--modal-container">
+      <div data-id="WizardInlineContainer" className="bx--modal-container">
         <WizardHeader
           title={title}
           blurb={blurb}
@@ -193,7 +193,7 @@ const WizardInline = ({
 
         <StyledWizardContainer>
           {sidebar ? <WizardSidebar sidebar={sidebar} /> : null}
-          <div className="bx--modal-content">
+          <div data-id="WizardInlineContent" className="bx--modal-content">
             <WizardContent component={currentItemObj.component} />
           </div>
         </StyledWizardContainer>
@@ -206,7 +206,7 @@ const WizardInline = ({
           />
         ) : null}
         <StyledFooter className={className}>
-          <div className="bx--modal-footer">
+          <div data-id="WizardInlineFooter" className="bx--modal-footer">
             <WizardFooter
               backLabel={backLabel}
               nextLabel={nextLabel}
