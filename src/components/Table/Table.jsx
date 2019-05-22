@@ -68,6 +68,7 @@ const propTypes = {
     /** has simple search capability */
     hasSearch: PropTypes.bool,
     hasColumnSelection: PropTypes.bool,
+    shouldLazyRender: PropTypes.bool,
   }),
 
   /** Initial state of the table, should be updated via a local state wrapper component implementation or via a central store/redux see StatefulTable component for an example */
@@ -183,6 +184,7 @@ export const defaultProps = baseProps => ({
     hasOnlyPageData: false,
     hasSearch: false,
     hasColumnSelection: false,
+    shouldLazyRender: false,
   },
   view: {
     pagination: {
@@ -394,7 +396,8 @@ const Table = props => {
                 'hasRowExpansion',
                 'hasRowActions',
                 'hasRowNesting',
-                'shouldExpandOnRowClick'
+                'shouldExpandOnRowClick',
+                'shouldLazyRender'
               )}
               ordering={view.table.ordering}
               actions={pick(
