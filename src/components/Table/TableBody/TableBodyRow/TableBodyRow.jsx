@@ -135,6 +135,8 @@ const StyledSingleSelectedTableRow = styled(TableRow)`
     td {
       margin-left: -5px;
     }
+
+    cursor: pointer;
   }
 `;
 
