@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
-import { DataTable, SkeletonText } from 'carbon-components-react';
+import { DataTable } from 'carbon-components-react';
 import VisibilitySensor from 'react-visibility-sensor';
 import pick from 'lodash/pick';
 
@@ -187,17 +187,7 @@ const TableBody = ({
             scrollCheck
             partialVisibility
             resizeCheck>
-            {({ isVisible }) =>
-              isVisible ? (
-                renderRow(row)
-              ) : (
-                <tr>
-                  <td colSpan="100%">
-                    <SkeletonText />
-                  </td>
-                </tr>
-              )
-            }
+            {({ isVisible }) => (isVisible ? renderRow(row) : <tr />)}
           </VisibilitySensor>
         ) : (
           renderRow(row)
