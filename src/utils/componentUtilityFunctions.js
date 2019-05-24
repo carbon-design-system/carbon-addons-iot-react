@@ -44,3 +44,80 @@ export const stopPropagationAndCallback = (evt, callback, ...args) => {
   evt.stopPropagation();
   callback(...args);
 };
+
+// Dashboard layout
+const gridHeight = 50;
+
+export const printGrid = grid => {
+  // console.log(`printGrid: ${grid}`);
+  let result = '';
+  for (let j = 0; j < gridHeight; j += 1) {
+    for (let i = 0; i < grid.length; i += 1) {
+      result += `${grid[i][j]} `;
+    }
+    result += '\n';
+  }
+  console.log(result); // eslint-disable-line
+};
+
+export const canFit = (x, y, w, h, grid) => {
+  // console.log(`canFit? x=${x}, y=${y}, w=${w}, h=${h}`);
+  for (let i = x; i < x + w; i += 1) {
+    for (let j = y; j < y + h; j += 1) {
+      if (grid.length === i) return false;
+      if (grid[i].length === j) return false;
+      if (grid[i][j] !== 0) return false;
+    }
+  }
+  return true;
+};
+
+export const getLayout = (layoutName, cards, dashboardColumns, cardDimensions) => {
+  let currX = 0;
+  let currY = 0;
+  const grid = Array(dashboardColumns[layoutName])
+    .fill(0)
+    .map(() => Array(gridHeight).fill(0));
+
+  const placeCard = (x, y, w, h, num) => {
+    // console.log(`placeCard: x=${x}, y=${y}, w=${w}, h=${h}, cardNum=${num}`);
+    for (let i = x; i < x + w; i += 1) {
+      for (let j = y; j < y + h; j += 1) {
+        grid[i][j] = num;
+      }
+    }
+  };
+
+  const layout = cards
+    .map((card, index) => {
+      const { w, h } = cardDimensions[card.size][layoutName];
+      // console.log(`trying ${card.id} (w = ${w}, h = ${h}) at ${currX},${currY}`);
+      while (!canFit(currX, currY, w, h, grid)) {
+        // console.log('didnt fit...');
+        currX += 1;
+        if (currX > dashboardColumns[layoutName]) {
+          currX = 0;
+          currY += 1;
+          if (currY > gridHeight) {
+            return null;
+          }
+        }
+      }
+      // console.log('it fits!');
+      placeCard(currX, currY, w, h, index + 1);
+      // printGrid(grid);
+      const cardLayout = {
+        i: card.id,
+        x: currX,
+        y: currY,
+        w,
+        h,
+      };
+      currX += w;
+      // console.log(`adding ${card.id} (w = ${w}, h = ${h}) at ${cardLayout.x},${cardLayout.y}`);
+      return cardLayout;
+    })
+    .filter(i => i !== null);
+  // printGrid(grid);
+  return layout;
+};

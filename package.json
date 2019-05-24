@@ -40,6 +40,8 @@
     "react-dnd": "7.0.2",
     "react-dnd-html5-backend": "2.5.1",
     "react-dnd-test-backend": "^7.2.0",
+    "react-grid-layout": "^0.16.6",
+    "react-resizable": "^1.8.0",
     "react-sizeme": "^2.6.3",
     "react-transition-group": "^2.6.0",
     "react-visibility-sensor": "^5.0.2",
@@ -147,6 +149,7 @@
     "semantic-release": "^15.13.2",
     "storybook-addon-rtl": "^0.2.2",
     "style-loader": "^0.23.1",
+    "uuid": "^3.3.2",
     "webpack": "^4.28.4",
     "whatwg-fetch": "^3.0.0"
   },
