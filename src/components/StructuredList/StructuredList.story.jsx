@@ -88,11 +88,7 @@ storiesOf('StructuredList', module)
       <StructuredList
         columns={columns.map(column => ({
           ...column,
-          renderDataFunction: ({ value }) => (
-            <span style={{ color: 'blue' }}>
-              {React.isValidElement(value) ? React.cloneElement(value) : value}
-            </span>
-          ),
+          renderDataFunction: ({ value }) => <span style={{ color: 'blue' }}>{value}</span>,
         }))}
         data={data}
         onRowClick={action('onRowClick')}
