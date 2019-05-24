@@ -15,20 +15,23 @@ export const CARD_TYPES = {
 };
 
 export const DASHBOARD_COLUMNS = {
-  lg: 16,
-  md: 16,
-  sm: 8,
+  xl: 12,
+  lg: 12,
+  md: 12,
+  sm: 6,
   xs: 4,
 };
 
 export const DASHBOARD_BREAKPOINTS = {
-  lg: 1584,
-  md: 1056,
-  sm: 672,
-  xs: 0,
+  xl: 1800,
+  lg: 1056,
+  md: 800,
+  sm: 480,
+  xs: 320,
 };
 
 export const ROW_HEIGHT = {
+  xl: 128,
   lg: 128,
   md: 128,
   sm: 128,
@@ -44,45 +47,52 @@ export const GUTTER = 16;
 
 export const CARD_DIMENSIONS = {
   XSMALL: {
-    lg: { w: 1, h: 1 },
+    xl: { w: 1, h: 1 },
+    lg: { w: 2, h: 1 },
     md: { w: 3, h: 1 },
     sm: { w: 2, h: 1 },
     xs: { w: 2, h: 1 },
   },
   SMALL: {
+    xl: { w: 2, h: 2 },
     lg: { w: 3, h: 2 },
     md: { w: 4, h: 2 },
-    sm: { w: 4, h: 2 },
+    sm: { w: 3, h: 2 },
     xs: { w: 4, h: 2 },
   },
   TALL: {
+    xl: { w: 2, h: 4 },
     lg: { w: 3, h: 4 },
     md: { w: 4, h: 4 },
-    sm: { w: 4, h: 4 },
+    sm: { w: 3, h: 4 },
     xs: { w: 4, h: 4 },
   },
   MEDIUM: {
-    lg: { w: 5, h: 2 },
+    xl: { w: 4, h: 2 },
+    lg: { w: 6, h: 2 },
     md: { w: 8, h: 2 },
-    sm: { w: 8, h: 2 },
+    sm: { w: 6, h: 2 },
     xs: { w: 4, h: 2 },
   },
   WIDE: {
-    lg: { w: 6, h: 2 },
+    xl: { w: 6, h: 2 },
+    lg: { w: 9, h: 2 },
     md: { w: 12, h: 2 },
-    sm: { w: 8, h: 2 },
+    sm: { w: 6, h: 2 },
     xs: { w: 4, h: 2 },
   },
   LARGE: {
-    lg: { w: 8, h: 4 },
-    md: { w: 8, h: 4 },
-    sm: { w: 8, h: 4 },
+    xl: { w: 4, h: 4 },
+    lg: { w: 6, h: 4 },
+    md: { w: 6, h: 4 },
+    sm: { w: 6, h: 4 },
     xs: { w: 4, h: 4 },
   },
   XLARGE: {
+    xl: { w: 6, h: 4 },
     lg: { w: 12, h: 4 },
-    md: { w: 16, h: 4 },
-    sm: { w: 8, h: 4 },
+    md: { w: 12, h: 4 },
+    sm: { w: 6, h: 4 },
     xs: { w: 4, h: 4 },
   },
 };

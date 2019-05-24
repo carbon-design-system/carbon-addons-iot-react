@@ -81,7 +81,7 @@ const Dashboard = ({
   // console.log(breakpoint);
   // console.log(dashboardBreakpoints, cardDimensions, rowHeight);
 
-  const generatedLayouts = ['lg', 'md', 'sm', 'xs'].reduce((acc, layoutName) => {
+  const generatedLayouts = Object.keys(DASHBOARD_BREAKPOINTS).reduce((acc, layoutName) => {
     return {
       ...acc, // only generate the layout if we're not passed from the parent
       [layoutName]:
