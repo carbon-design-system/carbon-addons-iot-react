@@ -24,7 +24,7 @@ const data = [
   {
     id: 'row-0',
     values: {
-      columnA: 'hey A',
+      columnA: <div />,
       columnB: 'hey B',
       columnC: 'hey C',
     },
@@ -88,7 +88,11 @@ storiesOf('StructuredList', module)
       <StructuredList
         columns={columns.map(column => ({
           ...column,
-          renderDataFunction: ({ value }) => <span style={{ color: 'blue' }}>{value}</span>,
+          renderDataFunction: ({ value }) => (
+            <span style={{ color: 'blue' }}>
+              {React.isValidElement(value) ? React.cloneElement(value) : value}
+            </span>
+          ),
         }))}
         data={data}
         onRowClick={action('onRowClick')}
@@ -97,14 +101,14 @@ storiesOf('StructuredList', module)
     {
       info: {
         text: `
-        
+
         To render a your own widget in a list cell, pass a renderDataFunction prop along with your column metadata.
         ~~~js
         columns=[ { id: 'columnA', title: 'A', renderDataFunction: myCustomRenderer }, ...]
         ~~~
         The renderDataFunction is called with this payload
-        ~~~js    
-           { 
+        ~~~js
+           {
               value: PropTypes.any (current cell value),
               columnId: PropTypes.string,
               rowId: PropTypes.string,
