@@ -44,7 +44,7 @@ const StyledCarbonTableToolbar = styled(CarbonTableToolbar)`
    {
     &&& {
       width: 100%;
-      padding-top: 0.125rem;
+      padding-top: 1.125rem;
     }
   }
 `;
