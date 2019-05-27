@@ -2,7 +2,6 @@ import React from 'react';
 import {
   Toolbar,
   ToolbarItem,
-  ToolbarTitle,
   ToolbarOption,
   OverflowMenu,
   RadioButton,
@@ -14,9 +13,14 @@ import {
   CARD_TITLE_HEIGHT,
   CARD_CONTENT_PADDING,
   CARD_SIZES,
-  getCardMinSize,
+  ROW_HEIGHT,
+  CARD_DIMENSIONS,
+  DASHBOARD_BREAKPOINTS,
+  DASHBOARD_COLUMNS,
+  DASHBOARD_SIZES,
 } from '../../constants/LayoutConstants';
 import { CardPropTypes } from '../../constants/PropTypes';
+import { getCardMinSize } from '../../utils/componentUtilityFunctions';
 
 /** Full card */
 const CardWrapper = styled.div`
@@ -29,7 +33,7 @@ const CardWrapper = styled.div`
 `;
 
 /** Header */
-const CardHeader = styled.div`
+export const CardHeader = styled.div`
   padding: 0 ${CARD_CONTENT_PADDING}px;
   flex: 0 1 ${CARD_TITLE_HEIGHT}px;
   display: flex;
@@ -38,7 +42,7 @@ const CardHeader = styled.div`
   font-weight: bold;
 `;
 
-const CardContent = styled.div`
+export const CardContent = styled.div`
   flex: 1;
   display: flex;
   ${props =>
@@ -80,14 +84,14 @@ const Card = ({ size, children, title, layout, id, onCardAction, breakpoint, ...
     size,
     others.dashboardBreakpoints,
     others.cardDimensions,
-    others.rowHeight
+    others.rowHeight,
+    others.dashboardColumns
   );
 
   const toolbar = (
     <StyledToolbar>
       <ToolbarItem>
         <StyledOverflowMenu floatingMenu>
-          <ToolbarTitle title="CARD SIZE" />
           {Object.values(CARD_SIZES).map(i => (
             <ToolbarOption key={i}>
               <RadioButton
@@ -126,6 +130,11 @@ Card.defaultProps = {
   size: CARD_SIZES.SMALL,
   layout: CARD_SIZES.HORIZONTAL,
   toolbar: undefined,
+  rowHeight: ROW_HEIGHT,
+  breakpoint: DASHBOARD_SIZES.LARGE,
+  cardDimensions: CARD_DIMENSIONS,
+  dashboardBreakpoints: DASHBOARD_BREAKPOINTS,
+  dashboardColumns: DASHBOARD_COLUMNS,
 };
 
 export default Card;

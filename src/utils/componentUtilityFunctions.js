@@ -1,5 +1,13 @@
 import delay from 'lodash/delay';
 
+import {
+  GUTTER,
+  DASHBOARD_BREAKPOINTS,
+  CARD_DIMENSIONS,
+  ROW_HEIGHT,
+  DASHBOARD_COLUMNS,
+} from '../constants/LayoutConstants';
+
 /** This function assumes you're using carbon widgets */
 export function scrollErrorIntoView(focus = true) {
   const invalidField = document.querySelector('[data-invalid="true"]');
@@ -72,6 +80,7 @@ export const canFit = (x, y, w, h, grid) => {
   return true;
 };
 
+/** Generates a non overlapping layout given the cards and column/dimension configuration for a given layout */
 export const getLayout = (layoutName, cards, dashboardColumns, cardDimensions) => {
   let currX = 0;
   let currY = 0;
@@ -120,4 +129,29 @@ export const getLayout = (layoutName, cards, dashboardColumns, cardDimensions) =
     .filter(i => i !== null);
   // printGrid(grid);
   return layout;
+};
+
+/**
+ * Returns { x: width in pixels, y: height in pixels }
+ * This is used to set min-width and min-height of the card based on the current breakpoint
+ */
+export const getCardMinSize = (
+  breakpoint,
+  size,
+  dashboardBreakpoints = DASHBOARD_BREAKPOINTS,
+  cardDimensions = CARD_DIMENSIONS,
+  rowHeight = ROW_HEIGHT,
+  dashboardColumns = DASHBOARD_COLUMNS
+) => {
+  const totalCol = dashboardColumns[breakpoint];
+  const columnWidth = (dashboardBreakpoints[breakpoint] - (totalCol - 1) * GUTTER) / totalCol;
+  const cardColumns = cardDimensions[size][breakpoint].w;
+  const cardRows = cardDimensions[size][breakpoint].h;
+
+  const cardSize = {
+    x: cardColumns * columnWidth + (cardColumns - 1) * GUTTER,
+    y: cardRows * rowHeight[breakpoint] + (cardRows - 1) * GUTTER,
+  };
+  // console.log('getCardMinSize', breakpoint, size, rowHeight, ` = ${JSON.stringify(cardSize)}`);
+  return cardSize;
 };

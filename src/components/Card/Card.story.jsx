@@ -2,7 +2,8 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { text, select } from '@storybook/addon-knobs';
 
-import { CARD_SIZES, getCardMinSize } from '../../constants/LayoutConstants';
+import { CARD_SIZES } from '../../constants/LayoutConstants';
+import { getCardMinSize } from '../../utils/componentUtilityFunctions';
 
 import Card from './Card';
 
@@ -13,7 +14,7 @@ storiesOf('Card (Experimental)', module).add('card props', () => {
       <Card
         title={text('title', 'Card Title')}
         id="facilitycard"
-        size={select('size', Object.values(CARD_SIZES), CARD_SIZES.MEDIUM)}
+        size={size}
         breakpoint="lg"
         onCardAction={(id, type, payload) => console.log('onCardAction', id, type, payload)}
       />

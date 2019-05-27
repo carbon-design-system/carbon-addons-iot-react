@@ -6,7 +6,13 @@ import 'react-resizable/css/styles.css';
 import find from 'lodash/find';
 
 import { getLayout } from '../../utils/componentUtilityFunctions';
-import { ValueCardPropTypes, CardSizesToDimensionsPropTypes } from '../../constants/PropTypes';
+import {
+  ValueCardPropTypes,
+  CardSizesToDimensionsPropTypes,
+  RowHeightPropTypes,
+  DashboardBreakpointsPropTypes,
+  DashboardColumnsPropTypes,
+} from '../../constants/PropTypes';
 import ValueCard from '../ValueCard/ValueCard';
 import {
   DASHBOARD_COLUMNS,
@@ -26,26 +32,12 @@ const propTypes = {
     sm: PropTypes.array,
     xs: PropTypes.array,
   }),
-  rowHeight: PropTypes.shape({
-    lg: PropTypes.number,
-    md: PropTypes.number,
-    sm: PropTypes.number,
-    xs: PropTypes.number,
-  }),
-  /** pixel measurement that determines a particular dashboard size */
-  dashboardBreakpoints: PropTypes.shape({
-    lg: PropTypes.number,
-    md: PropTypes.number,
-    sm: PropTypes.number,
-    xs: PropTypes.number,
-  }),
-  /** pixel measurement that determines a particular dashboard size */
-  dashboardColumns: PropTypes.shape({
-    lg: PropTypes.number,
-    md: PropTypes.number,
-    sm: PropTypes.number,
-    xs: PropTypes.number,
-  }),
+  /** Row height in pixels for each layout */
+  rowHeight: RowHeightPropTypes,
+  /** media query pixel measurement that determines which particular dashboard layout should be used */
+  dashboardBreakpoints: DashboardBreakpointsPropTypes,
+  /** map of number of columns to a given dashboard layout */
+  dashboardColumns: DashboardColumnsPropTypes,
   onCardAction: PropTypes.func,
   /** Is the dashboard in edit mode? */
   isEditable: PropTypes.bool,

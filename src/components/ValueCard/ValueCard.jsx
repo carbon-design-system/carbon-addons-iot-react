@@ -40,6 +40,7 @@ const AttributeUnit = styled.span`
 const ValueCard = ({ title, content, size, ...others }) => {
   let layout = CARD_LAYOUTS.HORIZONTAL;
   switch (size) {
+    case CARD_SIZES.XSMALL:
     case CARD_SIZES.SMALL:
     case CARD_SIZES.TALL:
       if (content.length > 2) {

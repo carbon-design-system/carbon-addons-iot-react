@@ -2,7 +2,8 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { text, select, object } from '@storybook/addon-knobs';
 
-import { CARD_SIZES, getCardMinSize } from '../../constants/LayoutConstants';
+import { CARD_SIZES } from '../../constants/LayoutConstants';
+import { getCardMinSize } from '../../utils/componentUtilityFunctions';
 
 import ValueCard from './ValueCard';
 
@@ -53,7 +54,7 @@ storiesOf('ValueCard (Experimental)', module)
             { title: 'Number of Alerts', value: 17 },
           ])}
           breakpoint="lg"
-          size={select('size', [CARD_SIZES.SMALL, CARD_SIZES.MEDIUM], CARD_SIZES.MEDIUM)}
+          size={size}
         />
       </div>
     );
