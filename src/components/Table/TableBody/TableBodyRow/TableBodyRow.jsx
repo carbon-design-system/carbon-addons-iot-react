@@ -124,6 +124,10 @@ const StyledTableRow = styled(TableRow)`
         }
       }
     }
+    ${props => (props['data-single-select'] === 'single' ? `cursor:pointer` : null)}
+    
+    }
+
   }
 `;
 
@@ -135,6 +139,8 @@ const StyledSingleSelectedTableRow = styled(TableRow)`
     td {
       margin-left: -5px;
     }
+
+    cursor: pointer;
   }
 `;
 
@@ -450,6 +456,7 @@ const TableBodyRow = ({
   ) : (
     <StyledTableRow
       key={id}
+      data-single-select={hasRowSelection}
       onClick={() => {
         if (hasRowSelection === 'single') {
           onRowSelected(id, true);
