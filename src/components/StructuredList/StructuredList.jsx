@@ -90,7 +90,11 @@ const StructuredList = ({ columns, data, design, isFixedWidth, onRowClick, loadi
               <StyledStructuredListCell
                 key={`${col.id}-item`}
                 noWrap
-                title={item.values[col.id]}
+                title={
+                  typeof item.values[col.id] === 'string' || typeof item.values[col.id] === 'number'
+                    ? item.values[col.id]
+                    : null
+                }
                 width={col.width}
                 style={design === 'normal' ? { lineHeight: '16px' } : {}}>
                 {col.renderDataFunction
