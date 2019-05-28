@@ -4,6 +4,7 @@ import commonjs from 'rollup-plugin-commonjs';
 import replace from 'rollup-plugin-replace';
 import { uglify } from 'rollup-plugin-uglify';
 import filesize from 'rollup-plugin-filesize';
+import postcss from 'rollup-plugin-postcss';
 
 const env = process.env.NODE_ENV || 'development';
 const prodSettings = env === 'development' ? [] : [uglify(), filesize()];
@@ -38,6 +39,9 @@ export default {
   ],
   plugins: [
     resolve({ browser: true, extensions: ['.mjs', '.js', '.jsx', '.json'] }),
+    postcss({
+      plugins: [],
+    }),
     commonjs({
       namedExports: {
         'react-js': ['isValidElementType'],
@@ -58,6 +62,7 @@ export default {
           'SideNavFooter',
         ],
       },
+
       include: 'node_modules/**',
     }),
 
