@@ -39,6 +39,7 @@ export const DASHBOARD_BREAKPOINTS = {
 };
 
 export const ROW_HEIGHT = {
+  max: 128,
   xl: 128,
   lg: 128,
   md: 128,
