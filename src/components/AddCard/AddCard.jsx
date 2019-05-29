@@ -1,13 +1,15 @@
-import { ClickableTile, Icon } from 'carbon-components-react';
+import { ClickableTile } from 'carbon-components-react';
 import { rem } from 'polished';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import React from 'react';
+import Add from '@carbon/icons-react/lib/add--alt/32';
 
 import { COLORS } from '../../styles/styles';
 
 const StyledTile = styled(ClickableTile)`
    {
+    border: 1px solid transparent;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -23,7 +25,7 @@ const StyledTile = styled(ClickableTile)`
     }
   }
 `;
-const StyledIcon = styled(Icon)`
+const StyledIcon = styled(Add)`
    {
     width: ${rem(56)};
     height: ${rem(56)};
