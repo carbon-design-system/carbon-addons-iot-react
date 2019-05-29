@@ -33,6 +33,27 @@ export const ValueCardPropTypes = {
   content: PropTypes.arrayOf(AttributePropTypes).isRequired,
 };
 
+export const TimeSeriesCardPropTypes = {
+  content: PropTypes.shape({
+    range: PropTypes.oneOfType([
+      PropTypes.oneOf(['day', 'week', 'month']),
+      PropTypes.shape({
+        start: PropTypes.instanceOf(Date),
+        end: PropTypes.instanceOf(Date),
+      }),
+    ]),
+    data: PropTypes.shape({
+      label: PropTypes.string.isRequired,
+      values: PropTypes.arrayOf(
+        PropTypes.shape({
+          t: PropTypes.number.isRequired,
+          v: PropTypes.number.isRequired,
+        })
+      ),
+    }),
+  }),
+};
+
 export const CardDimensionPropTypes = PropTypes.shape({
   w: PropTypes.number,
   h: PropTypes.number,

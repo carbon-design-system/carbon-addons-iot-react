@@ -9,7 +9,7 @@ export const CARD_SIZES = {
 };
 
 export const CARD_TYPES = {
-  LINE: 'LINE',
+  TIMESERIES: 'TIMESERIES',
   VALUE: 'VALUE',
   TABLE: 'TABLE',
 };

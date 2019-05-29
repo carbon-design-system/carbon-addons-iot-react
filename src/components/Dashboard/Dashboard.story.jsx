@@ -3,6 +3,7 @@ import uuidv1 from 'uuid/v1';
 import { text, boolean, object } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import { Button } from 'carbon-components-react';
+import moment from 'moment';
 
 import {
   DASHBOARD_BREAKPOINTS,
@@ -63,12 +64,39 @@ const originalCards = [
     title: 'MEDIUM',
     id: 'facilitycard3',
     size: CARD_SIZES.MEDIUM,
-    type: CARD_TYPES.VALUE,
-    content: [
-      { title: 'Comfort Level', value: 89, unit: '%' },
-      { title: 'Utilization', value: 76, unit: '%' },
-      { title: 'Number of Alerts', value: 17 },
-    ],
+    type: CARD_TYPES.TIMESERIES,
+    content: {
+      data: {
+        label: 'Recent Temperature',
+        values: [
+          {
+            t: moment()
+              .subtract(5, 'hour')
+              .toISOString(),
+            v: 73.4,
+          },
+          {
+            t: moment()
+              .subtract(4, 'hour')
+              .toISOString(),
+            v: 78.3,
+          },
+          {
+            t: moment()
+              .subtract(3, 'hour')
+              .toISOString(),
+            v: 71.2,
+          },
+          {
+            t: moment()
+              .subtract(1, 'hour')
+              .toISOString(),
+            v: 70.9,
+          },
+          { t: moment().toISOString(), v: 72.4 },
+        ],
+      },
+    },
   },
   {
     title: 'MEDIUM',
@@ -92,6 +120,68 @@ const originalCards = [
       { title: 'Heat', value: 1976, unit: 'K' },
       { title: 'Number of Alerts', value: 17 },
     ],
+  },
+  {
+    title: 'XLARGE',
+    id: 'xlarge-timeseries-pressure',
+    size: CARD_SIZES.XLARGE,
+    type: CARD_TYPES.TIMESERIES,
+    content: {
+      data: {
+        label: 'Recent Pressure',
+        values: [
+          {
+            t: moment()
+              .subtract(8, 'hour')
+              .toISOString(),
+            v: 53.4,
+          },
+          {
+            t: moment()
+              .subtract(7, 'hour')
+              .toISOString(),
+            v: 57.3,
+          },
+          {
+            t: moment()
+              .subtract(6, 'hour')
+              .toISOString(),
+            v: 49.2,
+          },
+          {
+            t: moment()
+              .subtract(5, 'hour')
+              .toISOString(),
+            v: 49.3,
+          },
+          {
+            t: moment()
+              .subtract(4, 'hour')
+              .toISOString(),
+            v: 48.3,
+          },
+          {
+            t: moment()
+              .subtract(3, 'hour')
+              .toISOString(),
+            v: 48.4,
+          },
+          {
+            t: moment()
+              .subtract(2, 'hour')
+              .toISOString(),
+            v: 62.3,
+          },
+          {
+            t: moment()
+              .subtract(1, 'hour')
+              .toISOString(),
+            v: 62.5,
+          },
+          { t: moment().toISOString(), v: 63.1 },
+        ],
+      },
+    },
   },
   {
     title: 'LARGE',
@@ -154,7 +244,7 @@ const CARD_DIMENSIONS_16_COL = {
     max: { w: 2, h: 4 },
     xl: { w: 4, h: 4 },
     lg: { w: 4, h: 4 },
-    md: { w: 4, h: 2 },
+    md: { w: 4, h: 4 },
     sm: { w: 2, h: 4 },
     xs: { w: 4, h: 4 },
   },
