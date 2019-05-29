@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import merge from 'lodash/merge';
 import pick from 'lodash/pick';
-import { PaginationV2, DataTable } from 'carbon-components-react';
+import { Pagination, Table as CarbonTable, TableContainer } from 'carbon-components-react';
 import isNil from 'lodash/isNil';
 import styled from 'styled-components';
 import sizeMe from 'react-sizeme';
@@ -24,15 +24,13 @@ import EmptyTable from './EmptyTable/EmptyTable';
 import TableSkeletonWithHeaders from './TableSkeletonWithHeaders/TableSkeletonWithHeaders';
 import TableBody from './TableBody/TableBody';
 
-const { Table: CarbonTable, TableContainer } = DataTable;
-
 const StyledTableDiv = styled.div`
   .bx--data-table-v2-container {
     min-width: unset;
   }
 `;
 
-const StyledPagination = sizeMe({ noPlaceholder: true })(styled(PaginationV2)`
+const StyledPagination = sizeMe({ noPlaceholder: true })(styled(Pagination)`
   &&& {
     .bx--pagination__left,
     .bx--pagination__text {

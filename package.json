@@ -50,10 +50,10 @@
   },
   "peerDependencies": {
     "@carbon/icons": "^10.1.0",
-    "@carbon/icons-react": "^0.0.1-alpha.12",
-    "carbon-components": "^9.84.14",
-    "carbon-components-react": "^6.108.0",
-    "carbon-icons": "^7.x",
+    "@carbon/icons-react": "^10.1.1",
+    "carbon-components": "^10.2.0",
+    "carbon-components-react": "^7.2.0",
+    "carbon-icons": "^7.0.7",
     "react": "^16.8.3"
   },
   "devDependencies": {
@@ -103,9 +103,9 @@
     "babel-plugin-react-docgen": "^2.0.0",
     "babel-plugin-require-context-hook": "^1.0.0",
     "babel-plugin-styled-components": "^1.10.0",
-    "carbon-components": "^9.84.14",
-    "carbon-components-react": "^6.108.0",
-    "carbon-icons": "7.0.7",
+    "carbon-components": "^10.2.0",
+    "carbon-components-react": "^7.2.0",
+    "carbon-icons": "^7.0.7",
     "coveralls": "^3.0.2",
     "css-loader": "^2.1.0",
     "enzyme": "^3.8.0",
