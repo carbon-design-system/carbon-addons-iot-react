@@ -27,6 +27,8 @@ const propTypes = {
   title: PropTypes.string.isRequired,
   cards: PropTypes.arrayOf(PropTypes.shape(ValueCardPropTypes)).isRequired,
   layouts: PropTypes.shape({
+    max: PropTypes.array,
+    xl: PropTypes.array,
     lg: PropTypes.array,
     md: PropTypes.array,
     sm: PropTypes.array,
@@ -73,7 +75,7 @@ const Dashboard = ({
   // console.log(breakpoint);
   // console.log(dashboardBreakpoints, cardDimensions, rowHeight);
 
-  const generatedLayouts = Object.keys(DASHBOARD_BREAKPOINTS).reduce((acc, layoutName) => {
+  const generatedLayouts = Object.keys(dashboardBreakpoints).reduce((acc, layoutName) => {
     return {
       ...acc, // only generate the layout if we're not passed from the parent
       [layoutName]:
@@ -101,7 +103,7 @@ const Dashboard = ({
       <GridLayout
         layouts={generatedLayouts}
         compactType="vertical"
-        cols={DASHBOARD_COLUMNS}
+        cols={dashboardColumns}
         breakpoints={dashboardBreakpoints}
         margin={[GUTTER, GUTTER]}
         rowHeight={rowHeight[breakpoint]}
@@ -125,6 +127,7 @@ const Dashboard = ({
                 key={card.id}
                 breakpoint={breakpoint}
                 dashboardBreakpoints={dashboardBreakpoints}
+                dashboardColumns={dashboardColumns}
                 cardDimensions={cardDimensions}
                 rowHeight={rowHeight}
               />
