@@ -10,6 +10,7 @@ import Card from '../Card/Card';
 
 const ContentWrapper = styled.div`
   margin: 0 16px 16px 16px;
+  padding-bottom: 8px;
   width: 100%;
   background-color: rgb(243, 243, 243);
 `;
@@ -40,16 +41,30 @@ const TimeSeriesCard = ({ title, content: { range, data }, size, ...others }) =>
           .toISOString()
       : range.min;
   const max = range === undefined ? undefined : range.max ? range.max : moment().toISOString();
-  const chart = {
-    data: {
-      x: 'timestamps',
-      xFormat: '%Y-%m-%dT%H:%M:%S.%LZ',
-      json: {
-        [data.label]: data.values.map(i => i.v),
-        timestamps: data.values.map(i => i.t),
-      },
-      type: 'line',
+  const chartData = data.label === undefined ? {
+    // an array of datasets with multiple x axes
+    xs: data.map(i => i.label).reduce((acc, curr, idx) => ({ ...acc, [curr]: `t${idx+1}` }), {}),
+    xFormat: '%Y-%m-%dT%H:%M:%S.%LZ',
+    colors: data.reduce((acc, curr) => Object.assign({}, acc, curr.color ? { [curr.label]: curr.color } : {}), {}),
+    json: data.reduce((acc, curr, idx) => ({
+      ...acc,
+      [curr.label]: curr.values.map(i => i.v),
+      [`t${idx+1}`]: curr.values.map(i => i.t),
+    }), {}),
+    type: 'line',
+  } : {
+    // a single dataset
+    x: 't',
+    xFormat: '%Y-%m-%dT%H:%M:%S.%LZ',
+    colors: data.reduce((acc, curr) => Object.assign({}, acc, curr.color ? { [curr.label]: curr.color } : {}), {}),
+    json: {
+      [data.label]: data.values.map(i => i.v),
+      t: data.values.map(i => i.t),
     },
+    type: 'line',
+  };
+  const chart = {
+    data: chartData,
     axis: {
       x: {
         min,
@@ -58,6 +73,7 @@ const TimeSeriesCard = ({ title, content: { range, data }, size, ...others }) =>
         tick: {
           fit: false,
           format,
+          rotate: 30,
         },
       },
     },

@@ -1,3 +1,9 @@
+export const COLORS = {
+  RED: 'rgb(25,98,253)',
+  YELLOW: 'rgb(254,213,34)',
+  BLUE: 'rgb(217,3,103)',
+};
+
 export const CARD_SIZES = {
   XSMALL: 'XSMALL',
   SMALL: 'SMALL',

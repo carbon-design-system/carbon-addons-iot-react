@@ -1,4 +1,4 @@
-export const timeSeriesSample = {
+export const chartData = {
   events: [
     {
       ENTITY_ID: 'Sensor2-1',

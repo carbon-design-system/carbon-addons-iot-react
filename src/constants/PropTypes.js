@@ -33,6 +33,17 @@ export const ValueCardPropTypes = {
   content: PropTypes.arrayOf(AttributePropTypes).isRequired,
 };
 
+export const TimeSeriesDatasetPropTypes = PropTypes.shape({
+  label: PropTypes.string.isRequired,
+  values: PropTypes.arrayOf(
+    PropTypes.shape({
+      t: PropTypes.number.isRequired,
+      v: PropTypes.number.isRequired,
+    })
+  ),
+  color: PropTypes.string,
+})
+
 export const TimeSeriesCardPropTypes = {
   content: PropTypes.shape({
     range: PropTypes.oneOfType([
@@ -42,16 +53,22 @@ export const TimeSeriesCardPropTypes = {
         end: PropTypes.instanceOf(Date),
       }),
     ]),
-    data: PropTypes.shape({
+    data: PropTypes.oneOfType([
+      TimeSeriesDatasetPropTypes,
+      PropTypes.arrayOf(TimeSeriesDatasetPropTypes),
+    ]).isRequired,
+  }).isRequired,
+};
+
+export const DonutCardPropTypes = {
+  content: PropTypes.shape({
+    title: PropTypes.string,
+    data: PropTypes.arrayOf(PropTypes.shape({
       label: PropTypes.string.isRequired,
-      values: PropTypes.arrayOf(
-        PropTypes.shape({
-          t: PropTypes.number.isRequired,
-          v: PropTypes.number.isRequired,
-        })
-      ),
-    }),
-  }),
+      value: PropTypes.number.isRequired,
+      color: PropTypes.string,
+    })),
+  }).isRequired,
 };
 
 export const CardDimensionPropTypes = PropTypes.shape({

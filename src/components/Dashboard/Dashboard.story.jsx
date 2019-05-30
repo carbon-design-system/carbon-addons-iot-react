@@ -5,7 +5,10 @@ import { storiesOf } from '@storybook/react';
 import { Button } from 'carbon-components-react';
 import moment from 'moment';
 
+import { chartData } from '../../utils/sample';
+
 import {
+  COLORS,
   DASHBOARD_BREAKPOINTS,
   DASHBOARD_COLUMNS,
   CARD_DIMENSIONS,
@@ -15,6 +18,8 @@ import {
 } from '../../constants/LayoutConstants';
 
 import Dashboard from './Dashboard';
+
+const timeOffset = new Date().getTime() - chartData.dataItemToMostRecentTimestamp.temperature;
 
 const originalCards = [
   {
@@ -66,48 +71,36 @@ const originalCards = [
     size: CARD_SIZES.MEDIUM,
     type: CARD_TYPES.TIMESERIES,
     content: {
-      data: {
-        label: 'Recent Temperature',
-        values: [
-          {
-            t: moment()
-              .subtract(5, 'hour')
-              .toISOString(),
-            v: 73.4,
-          },
-          {
-            t: moment()
-              .subtract(4, 'hour')
-              .toISOString(),
-            v: 78.3,
-          },
-          {
-            t: moment()
-              .subtract(3, 'hour')
-              .toISOString(),
-            v: 71.2,
-          },
-          {
-            t: moment()
-              .subtract(1, 'hour')
-              .toISOString(),
-            v: 70.9,
-          },
-          { t: moment().toISOString(), v: 72.4 },
-        ],
-      },
+      data: [{
+        label: 'Temperature',
+        values: chartData.events.filter((i, idx) => idx < 15).map(i => ({
+          t: new Date(i.timestamp + timeOffset).toISOString(),
+          v: i.temperature,
+        })),
+        color: COLORS.RED,
+      },{
+        label: 'Pressure',
+        values: chartData.events.filter((i, idx) => idx < 10).map(i => ({
+          t: new Date(i.timestamp + timeOffset).toISOString(),
+          v: i.pressure,
+        })),
+        color: COLORS.BLUE,
+      }],
     },
   },
   {
-    title: 'MEDIUM',
-    id: 'facilitycard4',
-    size: CARD_SIZES.MEDIUM,
-    type: CARD_TYPES.VALUE,
-    content: [
-      { title: 'Comfort Level', value: 89, unit: '%' },
-      { title: 'Utilization', value: 76, unit: '%' },
-      { title: 'Number of Alerts', value: 17 },
-    ],
+    title: 'SMALL',
+    id: 'facilitycard-donut',
+    size: CARD_SIZES.SMALL,
+    type: CARD_TYPES.DONUT,
+    content: {
+      title: 'Alerts',
+      data: [
+        { label: 'Sev 3', value: 6, color: COLORS.RED },
+        { label: 'Sev 2', value: 9, color: COLORS.YELLOW },
+        { label: 'Sev 1', value: 18, color: COLORS.BLUE },
+      ],
+    },
   },
   {
     title: 'WIDE',
@@ -127,60 +120,28 @@ const originalCards = [
     size: CARD_SIZES.XLARGE,
     type: CARD_TYPES.TIMESERIES,
     content: {
-      data: {
-        label: 'Recent Pressure',
-        values: [
-          {
-            t: moment()
-              .subtract(8, 'hour')
-              .toISOString(),
-            v: 53.4,
-          },
-          {
-            t: moment()
-              .subtract(7, 'hour')
-              .toISOString(),
-            v: 57.3,
-          },
-          {
-            t: moment()
-              .subtract(6, 'hour')
-              .toISOString(),
-            v: 49.2,
-          },
-          {
-            t: moment()
-              .subtract(5, 'hour')
-              .toISOString(),
-            v: 49.3,
-          },
-          {
-            t: moment()
-              .subtract(4, 'hour')
-              .toISOString(),
-            v: 48.3,
-          },
-          {
-            t: moment()
-              .subtract(3, 'hour')
-              .toISOString(),
-            v: 48.4,
-          },
-          {
-            t: moment()
-              .subtract(2, 'hour')
-              .toISOString(),
-            v: 62.3,
-          },
-          {
-            t: moment()
-              .subtract(1, 'hour')
-              .toISOString(),
-            v: 62.5,
-          },
-          { t: moment().toISOString(), v: 63.1 },
-        ],
-      },
+      data: [{
+        label: 'Temperature',
+        values: chartData.events.filter((i, idx) => idx < 15).map(i => ({
+          t: new Date(i.timestamp + timeOffset).toISOString(),
+          v: i.temperature,
+        })),
+        color: COLORS.RED,
+      },{
+        label: 'Pressure',
+        values: chartData.events.filter((i, idx) => idx < 10).map(i => ({
+          t: new Date(i.timestamp + timeOffset).toISOString(),
+          v: i.pressure,
+        })),
+        color: COLORS.BLUE,
+      },{
+        label: 'Humidity',
+        values: chartData.events.filter((i, idx) => idx < 13).map(i => ({
+          t: new Date(i.timestamp + timeOffset).toISOString(),
+          v: i.humidity,
+        })),
+        color: COLORS.YELLOW,
+      }],
     },
   },
   {
