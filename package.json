@@ -57,7 +57,8 @@
     "carbon-components": "^9.84.14",
     "carbon-components-react": "^6.108.0",
     "carbon-icons": "^7.x",
-    "react": "^16.8.3"
+    "react": "^16.8.3",
+    "d3": "^3.5.17"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
