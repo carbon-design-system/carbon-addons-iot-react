@@ -45,14 +45,28 @@ const originalCards = [
     id: 'facilitycard-xs2',
     size: CARD_SIZES.XSMALL,
     type: CARD_TYPES.VALUE,
-    content: [{ title: 'Comfort Level', value: 89, unit: '%' }],
+    content: [{ title: 'Utilization', value: 76, unit: '%' }],
   },
   {
     title: 'XSMALL',
     id: 'facilitycard-xs3',
     size: CARD_SIZES.XSMALL,
     type: CARD_TYPES.VALUE,
-    content: [{ title: 'Comfort Level', value: 89, unit: '%' }],
+    content: [{ title: 'Alert Count', value: 17 }],
+  },
+  {
+    title: 'Alerts (Section 2)',
+    id: 'facilitycard-pie',
+    size: CARD_SIZES.SMALL,
+    type: CARD_TYPES.PIE,
+    content: {
+      title: 'Alerts',
+      data: [
+        { label: 'Sev 3', value: 2, color: COLORS.RED },
+        { label: 'Sev 2', value: 7, color: COLORS.YELLOW },
+        { label: 'Sev 1', value: 32, color: COLORS.BLUE },
+      ],
+    },
   },
   {
     title: 'TALL',
@@ -62,11 +76,13 @@ const originalCards = [
     content: [
       { title: 'Comfort Level', value: 89, unit: '%' },
       { title: 'Utilization', value: 76, unit: '%' },
+      { title: 'Humidity', value: 46, unit: '%' },
+      { title: 'Pressure', value: 21.4, unit: 'mb' },
       { title: 'Number of Alerts', value: 17 },
     ],
   },
   {
-    title: 'MEDIUM',
+    title: 'Atmospheric Conditions (Section 2)',
     id: 'facilitycard3',
     size: CARD_SIZES.MEDIUM,
     type: CARD_TYPES.TIMESERIES,
@@ -89,7 +105,37 @@ const originalCards = [
     },
   },
   {
-    title: 'SMALL',
+    title: 'Alerts (Weekly)',
+    id: 'xlarge-bar-alerts',
+    size: CARD_SIZES.WIDE,
+    type: CARD_TYPES.BAR,
+    content: {
+      data: [{
+        label: 'Sev 1',
+        values: chartData.events.filter((i, idx) => idx < 7).map(i => ({
+          x: new Date(i.timestamp + timeOffset).toISOString(),
+          y: Math.ceil(i.pressure / 10),
+        })),
+        color: COLORS.BLUE,
+      },{
+        label: 'Sev 2',
+        values: chartData.events.filter((i, idx) => idx < 7).map(i => ({
+          x: new Date(i.timestamp + timeOffset).toISOString(),
+          y: Math.ceil(i.humidity / 10),
+        })),
+        color: COLORS.YELLOW,
+      },{
+        label: 'Sev 3',
+        values: chartData.events.filter((i, idx) => idx < 7).map(i => ({
+          x: new Date(i.timestamp + timeOffset).toISOString(),
+          y: Math.ceil(i.temperature / 10),
+        })),
+        color: COLORS.RED,
+      }],
+    },
+  },
+  {
+    title: 'Alerts (Section 1)',
     id: 'facilitycard-donut',
     size: CARD_SIZES.SMALL,
     type: CARD_TYPES.DONUT,
@@ -115,7 +161,7 @@ const originalCards = [
     ],
   },
   {
-    title: 'XLARGE',
+    title: 'Atmospheric Conditions (Section 1)',
     id: 'xlarge-timeseries-pressure',
     size: CARD_SIZES.XLARGE,
     type: CARD_TYPES.TIMESERIES,
@@ -276,6 +322,7 @@ const StatefulDashboard = ({ ...props }) => {
     }
   };
 
+  /*
   return (
     <div>
       <Button style={{ margin: '20px 0 0 20px' }} onClick={handleAdd}>
@@ -284,6 +331,8 @@ const StatefulDashboard = ({ ...props }) => {
       <Dashboard cards={cards} onCardAction={handleCardAction} {...props} />
     </div>
   );
+  */
+  return <Dashboard cards={cards} onCardAction={handleCardAction} {...props} />;
 };
 
 storiesOf('Dashboard (Experimental)', module)

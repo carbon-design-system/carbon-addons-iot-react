@@ -60,6 +60,23 @@ export const TimeSeriesCardPropTypes = {
   }).isRequired,
 };
 
+export const BarChartDatasetPropTypes = PropTypes.shape({
+  label: PropTypes.string.isRequired,
+  values: PropTypes.arrayOf(
+    PropTypes.shape({
+      x: PropTypes.number.isRequired,
+      y: PropTypes.number.isRequired,
+    })
+  ),
+  color: PropTypes.string,
+})
+
+export const BarChartCardPropTypes = {
+  content: PropTypes.shape({
+    data: PropTypes.arrayOf(BarChartDatasetPropTypes),
+  }).isRequired,
+};
+
 export const DonutCardPropTypes = {
   content: PropTypes.shape({
     title: PropTypes.string,
@@ -70,6 +87,8 @@ export const DonutCardPropTypes = {
     })),
   }).isRequired,
 };
+
+export const PieCardPropTypes = DonutCardPropTypes;
 
 export const CardDimensionPropTypes = PropTypes.shape({
   w: PropTypes.number,

@@ -15,6 +15,8 @@ import {
 } from '../../constants/PropTypes';
 import ValueCard from '../ValueCard/ValueCard';
 import DonutCard from '../DonutCard/DonutCard';
+import BarChartCard from '../BarChartCard/BarChartCard';
+import PieCard from '../PieCard/PieCard';
 import TimeSeriesCard from '../TimeSeriesCard/TimeSeriesCard';
 import {
   DASHBOARD_COLUMNS,
@@ -99,9 +101,9 @@ const Dashboard = ({
     />
     */
   // console.log(generatedLayouts);
+      /*<h2 style={{ margin: 20 }}>{`${title} Current Dimension: ${breakpoint}`}</h2>*/
   return (
     <div>
-      <h2 style={{ margin: 20 }}>{`${title} Current Dimension: ${breakpoint}`}</h2>
       <GridLayout
         layouts={generatedLayouts}
         compactType="vertical"
@@ -148,6 +150,30 @@ const Dashboard = ({
             ) : null}
             {card.type === CARD_TYPES.DONUT ? (
               <DonutCard
+                {...card}
+                onCardAction={onCardAction}
+                key={card.id}
+                breakpoint={breakpoint}
+                dashboardBreakpoints={dashboardBreakpoints}
+                dashboardColumns={dashboardColumns}
+                cardDimensions={cardDimensions}
+                rowHeight={rowHeight}
+              />
+            ) : null}
+            {card.type === CARD_TYPES.PIE ? (
+              <PieCard
+                {...card}
+                onCardAction={onCardAction}
+                key={card.id}
+                breakpoint={breakpoint}
+                dashboardBreakpoints={dashboardBreakpoints}
+                dashboardColumns={dashboardColumns}
+                cardDimensions={cardDimensions}
+                rowHeight={rowHeight}
+              />
+            ) : null}
+            {card.type === CARD_TYPES.BAR ? (
+              <BarChartCard
                 {...card}
                 onCardAction={onCardAction}
                 key={card.id}
