@@ -23,8 +23,13 @@ import {
   CARD_TYPES,
 } from '../../constants/LayoutConstants';
 
+import DashboardHeader from './DashboardHeader';
+
 const propTypes = {
   title: PropTypes.string.isRequired,
+  description: PropTypes.string,
+  lastUpdated: PropTypes.string,
+  lastUpdatedLabel: PropTypes.string,
   cards: PropTypes.arrayOf(PropTypes.shape(ValueCardPropTypes)).isRequired,
   layouts: PropTypes.shape({
     lg: PropTypes.array,
@@ -47,6 +52,9 @@ const propTypes = {
 
 const defaultProps = {
   isEditable: false,
+  description: null,
+  lastUpdated: null,
+  lastUpdatedLabel: 'Last updated: ',
   layouts: {},
   rowHeight: ROW_HEIGHT,
   onCardAction: null,
@@ -62,6 +70,9 @@ const Dashboard = ({
   cards,
   onCardAction,
   title,
+  description,
+  lastUpdated,
+  lastUpdatedLabel,
   dashboardBreakpoints,
   cardDimensions,
   dashboardColumns,
@@ -87,17 +98,15 @@ const Dashboard = ({
   }, {});
 
   // TODO: Can we pickup the GUTTER size and PADDING from the carbon grid styles? or css variables?
-  /*
-    <DashboardHeader
-      title="IoT Facility"
-      description="This dashboard shows live data from the IoT Facility in Austin, TX"
-      lastUpdated={new Date().toLocaleString()}
-    />
-    */
   // console.log(generatedLayouts);
   return (
     <div>
-      <h2 style={{ margin: 20 }}>{`${title} Current Dimension: ${breakpoint}`}</h2>
+      <DashboardHeader
+        title={title}
+        description={description}
+        lastUpdated={lastUpdated}
+        lastUpdatedLabel={lastUpdatedLabel}
+      />
       <GridLayout
         layouts={generatedLayouts}
         compactType="vertical"
