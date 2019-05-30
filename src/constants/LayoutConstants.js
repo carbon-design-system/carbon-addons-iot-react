@@ -1,3 +1,9 @@
+export const COLORS = {
+  RED: 'rgb(217,3,103)',
+  BLUE: 'rgb(25,98,253)',
+  YELLOW: 'rgb(254,213,34)',
+};
+
 export const CARD_SIZES = {
   XSMALL: 'XSMALL',
   SMALL: 'SMALL',
@@ -9,9 +15,12 @@ export const CARD_SIZES = {
 };
 
 export const CARD_TYPES = {
-  LINE: 'LINE',
+  TIMESERIES: 'TIMESERIES',
   VALUE: 'VALUE',
   TABLE: 'TABLE',
+  DONUT: 'DONUT',
+  PIE: 'PIE',
+  BAR: 'BAR',
 };
 
 export const DASHBOARD_SIZES = {

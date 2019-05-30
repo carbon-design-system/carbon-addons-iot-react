@@ -39,6 +39,7 @@ describe(`Storybook Snapshot tests and console checks`, () => {
     jest.setTimeout(15000);
   });
   initStoryshots({
+    storyKindRegex: /^((?!.*?Experimental).)*$/,
     test: snapshotWithOptions({
       createNodeMock: () =>
         // fallback is to mock something, otherwise our refs are invalid
