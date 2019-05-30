@@ -19,14 +19,18 @@ storiesOf('TimeSeriesCard (Experimental)', module)
           title={text('title', 'Temperature')}
           id="facility-temperature"
           content={object('content', {
-            data: [{
-              label: 'Temperature',
-              values: chartData.events.filter((i, idx) => idx < 20).map(i => ({
-                t: new Date(i.timestamp + timeOffset).toISOString(),
-                v: i[field],
-              })),
-              color: COLORS.RED,
-            }],
+            data: [
+              {
+                label: 'Temperature',
+                values: chartData.events
+                  .filter((i, idx) => idx < 20)
+                  .map(i => ({
+                    t: new Date(i.timestamp + timeOffset).toISOString(),
+                    v: i[field],
+                  })),
+                color: COLORS.RED,
+              },
+            ],
           })}
           breakpoint="lg"
           size={size}
@@ -43,21 +47,28 @@ storiesOf('TimeSeriesCard (Experimental)', module)
           title={text('title', 'Facility Metrics')}
           id="facility-multi"
           content={object('content', {
-            data: [{
-              label: 'Temperature',
-              values: chartData.events.filter((i, idx) => idx < 20).map(i => ({
-                t: new Date(i.timestamp + timeOffset).toISOString(),
-                v: i.temperature,
-              })),
-              color: COLORS.RED,
-            },{
-              label: 'Pressure',
-              values: chartData.events.filter((i, idx) => idx < 20).map(i => ({
-                t: new Date(i.timestamp + timeOffset).toISOString(),
-                v: i.pressure,
-              })),
-              color: COLORS.BLUE,
-            }],
+            data: [
+              {
+                label: 'Temperature',
+                values: chartData.events
+                  .filter((i, idx) => idx < 20)
+                  .map(i => ({
+                    t: new Date(i.timestamp + timeOffset).toISOString(),
+                    v: i.temperature,
+                  })),
+                color: COLORS.RED,
+              },
+              {
+                label: 'Pressure',
+                values: chartData.events
+                  .filter((i, idx) => idx < 20)
+                  .map(i => ({
+                    t: new Date(i.timestamp + timeOffset).toISOString(),
+                    v: i.pressure,
+                  })),
+                color: COLORS.BLUE,
+              },
+            ],
           })}
           breakpoint="lg"
           size={size}

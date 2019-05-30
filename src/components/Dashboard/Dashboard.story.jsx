@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
+/*
 import uuidv1 from 'uuid/v1';
+*/
 import { text, boolean, object } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
+/*
 import { Button } from 'carbon-components-react';
 import moment from 'moment';
+*/
 
 import { chartData } from '../../utils/sample';
-
 import {
   COLORS,
   DASHBOARD_BREAKPOINTS,
@@ -87,51 +90,68 @@ const originalCards = [
     size: CARD_SIZES.MEDIUM,
     type: CARD_TYPES.TIMESERIES,
     content: {
-      data: [{
-        label: 'Temperature',
-        values: chartData.events.filter((i, idx) => idx < 15).map(i => ({
-          t: new Date(i.timestamp + timeOffset).toISOString(),
-          v: i.temperature,
-        })),
-        color: COLORS.RED,
-      },{
-        label: 'Pressure',
-        values: chartData.events.filter((i, idx) => idx < 10).map(i => ({
-          t: new Date(i.timestamp + timeOffset).toISOString(),
-          v: i.pressure,
-        })),
-        color: COLORS.BLUE,
-      }],
+      data: [
+        {
+          label: 'Temperature',
+          values: chartData.events
+            .filter((i, idx) => idx < 15)
+            .map(i => ({
+              t: new Date(i.timestamp + timeOffset).toISOString(),
+              v: i.temperature,
+            })),
+          color: COLORS.RED,
+        },
+        {
+          label: 'Pressure',
+          values: chartData.events
+            .filter((i, idx) => idx < 10)
+            .map(i => ({
+              t: new Date(i.timestamp + timeOffset).toISOString(),
+              v: i.pressure,
+            })),
+          color: COLORS.BLUE,
+        },
+      ],
     },
   },
   {
     title: 'Alerts (Weekly)',
     id: 'xlarge-bar-alerts',
-    size: CARD_SIZES.WIDE,
+    size: CARD_SIZES.LARGE,
     type: CARD_TYPES.BAR,
     content: {
-      data: [{
-        label: 'Sev 1',
-        values: chartData.events.filter((i, idx) => idx < 7).map(i => ({
-          x: new Date(i.timestamp + timeOffset).toISOString(),
-          y: Math.ceil(i.pressure / 10),
-        })),
-        color: COLORS.BLUE,
-      },{
-        label: 'Sev 2',
-        values: chartData.events.filter((i, idx) => idx < 7).map(i => ({
-          x: new Date(i.timestamp + timeOffset).toISOString(),
-          y: Math.ceil(i.humidity / 10),
-        })),
-        color: COLORS.YELLOW,
-      },{
-        label: 'Sev 3',
-        values: chartData.events.filter((i, idx) => idx < 7).map(i => ({
-          x: new Date(i.timestamp + timeOffset).toISOString(),
-          y: Math.ceil(i.temperature / 10),
-        })),
-        color: COLORS.RED,
-      }],
+      data: [
+        {
+          label: 'Sev 1',
+          values: chartData.events
+            .filter((i, idx) => idx < 7)
+            .map(i => ({
+              x: new Date(i.timestamp + timeOffset).toISOString(),
+              y: Math.ceil(i.pressure / 10),
+            })),
+          color: COLORS.BLUE,
+        },
+        {
+          label: 'Sev 2',
+          values: chartData.events
+            .filter((i, idx) => idx < 7)
+            .map(i => ({
+              x: new Date(i.timestamp + timeOffset).toISOString(),
+              y: Math.ceil(i.humidity / 10),
+            })),
+          color: COLORS.YELLOW,
+        },
+        {
+          label: 'Sev 3',
+          values: chartData.events
+            .filter((i, idx) => idx < 7)
+            .map(i => ({
+              x: new Date(i.timestamp + timeOffset).toISOString(),
+              y: Math.ceil(i.temperature / 10),
+            })),
+          color: COLORS.RED,
+        },
+      ],
     },
   },
   {
@@ -166,28 +186,38 @@ const originalCards = [
     size: CARD_SIZES.XLARGE,
     type: CARD_TYPES.TIMESERIES,
     content: {
-      data: [{
-        label: 'Temperature',
-        values: chartData.events.filter((i, idx) => idx < 15).map(i => ({
-          t: new Date(i.timestamp + timeOffset).toISOString(),
-          v: i.temperature,
-        })),
-        color: COLORS.RED,
-      },{
-        label: 'Pressure',
-        values: chartData.events.filter((i, idx) => idx < 10).map(i => ({
-          t: new Date(i.timestamp + timeOffset).toISOString(),
-          v: i.pressure,
-        })),
-        color: COLORS.BLUE,
-      },{
-        label: 'Humidity',
-        values: chartData.events.filter((i, idx) => idx < 13).map(i => ({
-          t: new Date(i.timestamp + timeOffset).toISOString(),
-          v: i.humidity,
-        })),
-        color: COLORS.YELLOW,
-      }],
+      data: [
+        {
+          label: 'Temperature',
+          values: chartData.events
+            .filter((i, idx) => idx < 15)
+            .map(i => ({
+              t: new Date(i.timestamp + timeOffset).toISOString(),
+              v: i.temperature,
+            })),
+          color: COLORS.RED,
+        },
+        {
+          label: 'Pressure',
+          values: chartData.events
+            .filter((i, idx) => idx < 10)
+            .map(i => ({
+              t: new Date(i.timestamp + timeOffset).toISOString(),
+              v: i.pressure,
+            })),
+          color: COLORS.BLUE,
+        },
+        {
+          label: 'Humidity',
+          values: chartData.events
+            .filter((i, idx) => idx < 13)
+            .map(i => ({
+              t: new Date(i.timestamp + timeOffset).toISOString(),
+              v: i.humidity,
+            })),
+          color: COLORS.YELLOW,
+        },
+      ],
     },
   },
   {
@@ -292,6 +322,7 @@ const CARD_DIMENSIONS_16_COL = {
 const StatefulDashboard = ({ ...props }) => {
   const [cards, setCards] = useState(originalCards);
 
+  /*
   const handleAdd = () => {
     setCards([
       ...cards,
@@ -308,6 +339,7 @@ const StatefulDashboard = ({ ...props }) => {
       },
     ]);
   };
+  */
 
   const handleCardAction = (id, type, payload) => {
     if (type === 'CARD_SIZE_CHANGED') {

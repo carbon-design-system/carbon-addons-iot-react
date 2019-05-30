@@ -42,7 +42,7 @@ export const TimeSeriesDatasetPropTypes = PropTypes.shape({
     })
   ),
   color: PropTypes.string,
-})
+});
 
 export const TimeSeriesCardPropTypes = {
   content: PropTypes.shape({
@@ -69,7 +69,7 @@ export const BarChartDatasetPropTypes = PropTypes.shape({
     })
   ),
   color: PropTypes.string,
-})
+});
 
 export const BarChartCardPropTypes = {
   content: PropTypes.shape({
@@ -80,11 +80,13 @@ export const BarChartCardPropTypes = {
 export const DonutCardPropTypes = {
   content: PropTypes.shape({
     title: PropTypes.string,
-    data: PropTypes.arrayOf(PropTypes.shape({
-      label: PropTypes.string.isRequired,
-      value: PropTypes.number.isRequired,
-      color: PropTypes.string,
-    })),
+    data: PropTypes.arrayOf(
+      PropTypes.shape({
+        label: PropTypes.string.isRequired,
+        value: PropTypes.number.isRequired,
+        color: PropTypes.string,
+      })
+    ),
   }).isRequired,
 };
 

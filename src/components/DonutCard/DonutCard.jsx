@@ -17,8 +17,11 @@ const ContentWrapper = styled.div`
 const DonutCard = ({ title, content, content: { data }, size, ...others }) => {
   const chart = {
     data: {
-      columns: data.map(i => ([i.label, i.value])),
-      colors: data.reduce((acc, curr) => Object.assign({}, acc, curr.color ? { [curr.label]: curr.color } : {}), {}),
+      columns: data.map(i => [i.label, i.value]),
+      colors: data.reduce(
+        (acc, curr) => Object.assign({}, acc, curr.color ? { [curr.label]: curr.color } : {}),
+        {}
+      ),
       type: 'donut',
     },
     donut: {
@@ -41,7 +44,6 @@ const DonutCard = ({ title, content, content: { data }, size, ...others }) => {
       left: 20,
     },
   };
-  console.log(chart);
   return (
     <Card title={title} size={size} {...others}>
       <ContentWrapper>

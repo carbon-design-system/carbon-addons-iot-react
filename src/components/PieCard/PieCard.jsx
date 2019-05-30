@@ -17,8 +17,11 @@ const ContentWrapper = styled.div`
 const PieCard = ({ title, content, content: { data }, size, ...others }) => {
   const chart = {
     data: {
-      columns: data.map(i => ([i.label, i.value])),
-      colors: data.reduce((acc, curr) => Object.assign({}, acc, curr.color ? { [curr.label]: curr.color } : {}), {}),
+      columns: data.map(i => [i.label, i.value]),
+      colors: data.reduce(
+        (acc, curr) => Object.assign({}, acc, curr.color ? { [curr.label]: curr.color } : {}),
+        {}
+      ),
       type: 'pie',
     },
     pie: {

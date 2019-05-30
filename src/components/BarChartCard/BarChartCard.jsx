@@ -1,5 +1,4 @@
 import React from 'react';
-import moment from 'moment';
 import styled from 'styled-components';
 import C3Chart from 'react-c3js';
 import 'c3/c3.css';
@@ -17,8 +16,11 @@ const ContentWrapper = styled.div`
 
 const BarChartCard = ({ title, content: { data }, size, ...others }) => {
   const chartData = {
-    columns: data.map(i => ([i.label].concat(i.values.map(j => j.y)))),
-    colors: data.reduce((acc, curr) => Object.assign({}, acc, curr.color ? { [curr.label]: curr.color } : {}), {}),
+    columns: data.map(i => [i.label].concat(i.values.map(j => j.y))),
+    colors: data.reduce(
+      (acc, curr) => Object.assign({}, acc, curr.color ? { [curr.label]: curr.color } : {}),
+      {}
+    ),
     type: 'bar',
     axis: {
       x: {
@@ -28,7 +30,6 @@ const BarChartCard = ({ title, content: { data }, size, ...others }) => {
     },
     groups: [data.map(i => i.label)],
   };
-  console.log(chartData);
   const chart = {
     data: chartData,
     padding: {

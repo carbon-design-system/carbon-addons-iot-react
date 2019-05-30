@@ -101,9 +101,9 @@ const Dashboard = ({
     />
     */
   // console.log(generatedLayouts);
-      /*<h2 style={{ margin: 20 }}>{`${title} Current Dimension: ${breakpoint}`}</h2>*/
   return (
     <div>
+      <h2 style={{ margin: 20 }}>{`${title} Current Dimension: ${breakpoint}`}</h2>
       <GridLayout
         layouts={generatedLayouts}
         compactType="vertical"
