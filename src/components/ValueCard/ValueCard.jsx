@@ -22,8 +22,9 @@ const AttributeWrapper = styled.div`
 `;
 
 const AttributeLabel = styled.div`
-  ${props => props.layout === CARD_LAYOUTS.HORIZONTAL && `padding-bottom: 0.25rem;`};
-  ${props => props.layout === CARD_LAYOUTS.VERTICAL && `text-align: left;`};
+  ${props =>
+    props.layout === CARD_LAYOUTS.HORIZONTAL && `padding-bottom: 0.25rem; font-size: 1.5rem;`};
+  ${props => props.layout === CARD_LAYOUTS.VERTICAL && `text-align: left; font-size: 1.25rem;`};
 `;
 
 const AttributeValue = styled.span`
