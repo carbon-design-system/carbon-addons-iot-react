@@ -7,6 +7,10 @@ import styled from 'styled-components';
 const StyledButton = styled(CarbonButton)`
   &&& {
     justify-content: flex-start;
+
+    .bx--loading__stroke {
+      stroke: #8c8c8c;
+    }
   }
 `;
 
