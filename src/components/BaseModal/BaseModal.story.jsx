@@ -1,8 +1,15 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
+import styled from 'styled-components';
 
 import BaseModal from './BaseModal';
+
+const CustomFooter = styled.div`
+   {
+    padding: 1rem;
+  }
+`;
 
 storiesOf('BaseModal', module) // Ugh I shouldn't have to add these info here, but it's not being picked up by react-docgen!
   .addParameters({
@@ -95,7 +102,7 @@ REDUXFORM or REDUXDIALOG`,
         label: 'Custom footer',
         title: 'Custom footer element',
       }}
-      footer={<div>custom footer element</div>}
+      footer={<CustomFooter>custom footer element</CustomFooter>}
       onClose={action('close')}
     />
   ))

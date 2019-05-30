@@ -6,11 +6,7 @@ import styled from 'styled-components';
 
 const StyledButton = styled(CarbonButton)`
   &&& {
-    display: inline-flex;
-    flex-flow: row nowrap;
-    svg {
-      stroke: ${props => (props.kind === 'primary' ? 'white' : null)};
-    }
+    justify-content: flex-start;
   }
 `;
 

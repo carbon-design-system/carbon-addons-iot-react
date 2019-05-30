@@ -7,7 +7,7 @@ import {
   InlineNotification,
 } from 'carbon-components-react';
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { Fragment } from 'react';
 import classNames from 'classnames';
 import styled from 'styled-components';
 import { rem } from 'polished';
@@ -53,14 +53,7 @@ const StyledModal = styled(ComposedModal)`
     }
 
     /* Needed for buttons when they're next to each other */
-    .bx--btn + .bx--btn {
-      margin-left: 1rem;
-    }
-    .bx--modal-footer {
-      * + * {
-        margin-left: 1rem;
-      }
-    }
+
     .bx--modal-header__heading {
       margin-bottom: 0.75rem;
     }
@@ -90,11 +83,6 @@ const StyledModalFooter = styled(ModalFooter)`
       flex-grow: 2;
       text-align: left; // needed to override the dialog style
     }
-  }
-`;
-const StyledButtons = styled.div`
-   {
-    display: flex;
   }
 `;
 
@@ -251,9 +239,9 @@ class BaseModal extends React.Component {
         {footer || onSubmit ? (
           <StyledModalFooter>
             {React.isValidElement(footer) ? (
-              <StyledButtons>{footer}</StyledButtons>
+              footer
             ) : (
-              <StyledButtons>
+              <Fragment>
                 <ButtonEnhanced kind="secondary" onClick={onClose}>
                   {(footer && footer.secondaryButtonLabel) || 'Cancel'}
                 </ButtonEnhanced>
@@ -266,7 +254,7 @@ class BaseModal extends React.Component {
                   onClick={onSubmit}>
                   {(footer && footer.primaryButtonLabel) || 'Save'}
                 </ButtonEnhanced>
-              </StyledButtons>
+              </Fragment>
             )}
           </StyledModalFooter>
         ) : null}
