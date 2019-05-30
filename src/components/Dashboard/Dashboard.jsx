@@ -14,6 +14,10 @@ import {
   DashboardColumnsPropTypes,
 } from '../../constants/PropTypes';
 import ValueCard from '../ValueCard/ValueCard';
+import DonutCard from '../DonutCard/DonutCard';
+import BarChartCard from '../BarChartCard/BarChartCard';
+import PieCard from '../PieCard/PieCard';
+import TimeSeriesCard from '../TimeSeriesCard/TimeSeriesCard';
 import {
   DASHBOARD_COLUMNS,
   DASHBOARD_BREAKPOINTS,
@@ -23,10 +27,17 @@ import {
   CARD_TYPES,
 } from '../../constants/LayoutConstants';
 
+import DashboardHeader from './DashboardHeader';
+
 const propTypes = {
   title: PropTypes.string.isRequired,
+  description: PropTypes.string,
+  lastUpdated: PropTypes.string,
+  lastUpdatedLabel: PropTypes.string,
   cards: PropTypes.arrayOf(PropTypes.shape(ValueCardPropTypes)).isRequired,
   layouts: PropTypes.shape({
+    max: PropTypes.array,
+    xl: PropTypes.array,
     lg: PropTypes.array,
     md: PropTypes.array,
     sm: PropTypes.array,
@@ -47,6 +58,9 @@ const propTypes = {
 
 const defaultProps = {
   isEditable: false,
+  description: null,
+  lastUpdated: null,
+  lastUpdatedLabel: 'Last updated: ',
   layouts: {},
   rowHeight: ROW_HEIGHT,
   onCardAction: null,
@@ -62,6 +76,9 @@ const Dashboard = ({
   cards,
   onCardAction,
   title,
+  description,
+  lastUpdated,
+  lastUpdatedLabel,
   dashboardBreakpoints,
   cardDimensions,
   dashboardColumns,
@@ -73,7 +90,7 @@ const Dashboard = ({
   // console.log(breakpoint);
   // console.log(dashboardBreakpoints, cardDimensions, rowHeight);
 
-  const generatedLayouts = Object.keys(DASHBOARD_BREAKPOINTS).reduce((acc, layoutName) => {
+  const generatedLayouts = Object.keys(dashboardBreakpoints).reduce((acc, layoutName) => {
     return {
       ...acc, // only generate the layout if we're not passed from the parent
       [layoutName]:
@@ -87,21 +104,19 @@ const Dashboard = ({
   }, {});
 
   // TODO: Can we pickup the GUTTER size and PADDING from the carbon grid styles? or css variables?
-  /*
-    <DashboardHeader
-      title="IoT Facility"
-      description="This dashboard shows live data from the IoT Facility in Austin, TX"
-      lastUpdated={new Date().toLocaleString()}
-    />
-    */
   // console.log(generatedLayouts);
   return (
     <div>
-      <h2 style={{ margin: 20 }}>{`${title} Current Dimension: ${breakpoint}`}</h2>
+      <DashboardHeader
+        title={title}
+        description={description}
+        lastUpdated={lastUpdated}
+        lastUpdatedLabel={lastUpdatedLabel}
+      />
       <GridLayout
         layouts={generatedLayouts}
         compactType="vertical"
-        cols={DASHBOARD_COLUMNS}
+        cols={dashboardColumns}
         breakpoints={dashboardBreakpoints}
         margin={[GUTTER, GUTTER]}
         rowHeight={rowHeight[breakpoint]}
@@ -125,6 +140,55 @@ const Dashboard = ({
                 key={card.id}
                 breakpoint={breakpoint}
                 dashboardBreakpoints={dashboardBreakpoints}
+                dashboardColumns={dashboardColumns}
+                cardDimensions={cardDimensions}
+                rowHeight={rowHeight}
+              />
+            ) : null}
+            {card.type === CARD_TYPES.TIMESERIES ? (
+              <TimeSeriesCard
+                {...card}
+                onCardAction={onCardAction}
+                key={card.id}
+                breakpoint={breakpoint}
+                dashboardBreakpoints={dashboardBreakpoints}
+                dashboardColumns={dashboardColumns}
+                cardDimensions={cardDimensions}
+                rowHeight={rowHeight}
+              />
+            ) : null}
+            {card.type === CARD_TYPES.DONUT ? (
+              <DonutCard
+                {...card}
+                onCardAction={onCardAction}
+                key={card.id}
+                breakpoint={breakpoint}
+                dashboardBreakpoints={dashboardBreakpoints}
+                dashboardColumns={dashboardColumns}
+                cardDimensions={cardDimensions}
+                rowHeight={rowHeight}
+              />
+            ) : null}
+            {card.type === CARD_TYPES.PIE ? (
+              <PieCard
+                {...card}
+                onCardAction={onCardAction}
+                key={card.id}
+                breakpoint={breakpoint}
+                dashboardBreakpoints={dashboardBreakpoints}
+                dashboardColumns={dashboardColumns}
+                cardDimensions={cardDimensions}
+                rowHeight={rowHeight}
+              />
+            ) : null}
+            {card.type === CARD_TYPES.BAR ? (
+              <BarChartCard
+                {...card}
+                onCardAction={onCardAction}
+                key={card.id}
+                breakpoint={breakpoint}
+                dashboardBreakpoints={dashboardBreakpoints}
+                dashboardColumns={dashboardColumns}
                 cardDimensions={cardDimensions}
                 rowHeight={rowHeight}
               />

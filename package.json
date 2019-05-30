@@ -32,11 +32,14 @@
     }
   },
   "dependencies": {
+    "c3": "^0.7.1",
     "classnames": "^2.2.5",
     "immutability-helper": "^2.9.0",
     "lodash": "^4.17.11",
+    "moment": "^2.24.0",
     "polished": "^2.3.3",
     "prop-types": "^15.6.2",
+    "react-c3js": "^0.1.20",
     "react-dnd": "7.0.2",
     "react-dnd-html5-backend": "2.5.1",
     "react-dnd-test-backend": "^7.2.0",
@@ -54,7 +57,8 @@
     "carbon-components": "^9.84.14",
     "carbon-components-react": "^6.108.0",
     "carbon-icons": "^7.x",
-    "react": "^16.8.3"
+    "react": "^16.8.3",
+    "d3": "^3.5.17"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
@@ -143,6 +147,7 @@
     "rollup-plugin-commonjs": "^9.2.0",
     "rollup-plugin-filesize": "^6.0.0",
     "rollup-plugin-node-resolve": "^4.0.0",
+    "rollup-plugin-postcss": "^2.0.3",
     "rollup-plugin-replace": "^2.1.0",
     "rollup-plugin-uglify": "^6.0.1",
     "sass-loader": "^7.1.0",
