@@ -1,10 +1,17 @@
 import React, { useState } from 'react';
+/*
 import uuidv1 from 'uuid/v1';
+*/
 import { text, boolean, object } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
+/*
 import { Button } from 'carbon-components-react';
+import moment from 'moment';
+*/
 
+import { chartData } from '../../utils/sample';
 import {
+  COLORS,
   DASHBOARD_BREAKPOINTS,
   DASHBOARD_COLUMNS,
   CARD_DIMENSIONS,
@@ -14,6 +21,8 @@ import {
 } from '../../constants/LayoutConstants';
 
 import Dashboard from './Dashboard';
+
+const timeOffset = new Date().getTime() - chartData.dataItemToMostRecentTimestamp.temperature;
 
 const originalCards = [
   {
@@ -39,14 +48,28 @@ const originalCards = [
     id: 'facilitycard-xs2',
     size: CARD_SIZES.XSMALL,
     type: CARD_TYPES.VALUE,
-    content: [{ title: 'Comfort Level', value: 89, unit: '%' }],
+    content: [{ title: 'Utilization', value: 76, unit: '%' }],
   },
   {
     title: 'XSMALL',
     id: 'facilitycard-xs3',
     size: CARD_SIZES.XSMALL,
     type: CARD_TYPES.VALUE,
-    content: [{ title: 'Comfort Level', value: 89, unit: '%' }],
+    content: [{ title: 'Alert Count', value: 17 }],
+  },
+  {
+    title: 'Alerts (Section 2)',
+    id: 'facilitycard-pie',
+    size: CARD_SIZES.SMALL,
+    type: CARD_TYPES.PIE,
+    content: {
+      title: 'Alerts',
+      data: [
+        { label: 'Sev 3', value: 2, color: COLORS.RED },
+        { label: 'Sev 2', value: 7, color: COLORS.YELLOW },
+        { label: 'Sev 1', value: 32, color: COLORS.BLUE },
+      ],
+    },
   },
   {
     title: 'TALL',
@@ -56,30 +79,94 @@ const originalCards = [
     content: [
       { title: 'Comfort Level', value: 89, unit: '%' },
       { title: 'Utilization', value: 76, unit: '%' },
+      { title: 'Humidity', value: 46, unit: '%' },
+      { title: 'Pressure', value: 21.4, unit: 'mb' },
       { title: 'Number of Alerts', value: 17 },
     ],
   },
   {
-    title: 'MEDIUM',
+    title: 'Atmospheric Conditions (Section 2)',
     id: 'facilitycard3',
     size: CARD_SIZES.MEDIUM,
-    type: CARD_TYPES.VALUE,
-    content: [
-      { title: 'Comfort Level', value: 89, unit: '%' },
-      { title: 'Utilization', value: 76, unit: '%' },
-      { title: 'Number of Alerts', value: 17 },
-    ],
+    type: CARD_TYPES.TIMESERIES,
+    content: {
+      data: [
+        {
+          label: 'Temperature',
+          values: chartData.events
+            .filter((i, idx) => idx < 15)
+            .map(i => ({
+              t: new Date(i.timestamp + timeOffset).toISOString(),
+              v: i.temperature,
+            })),
+          color: COLORS.RED,
+        },
+        {
+          label: 'Pressure',
+          values: chartData.events
+            .filter((i, idx) => idx < 10)
+            .map(i => ({
+              t: new Date(i.timestamp + timeOffset).toISOString(),
+              v: i.pressure,
+            })),
+          color: COLORS.BLUE,
+        },
+      ],
+    },
   },
   {
-    title: 'MEDIUM',
-    id: 'facilitycard4',
-    size: CARD_SIZES.MEDIUM,
-    type: CARD_TYPES.VALUE,
-    content: [
-      { title: 'Comfort Level', value: 89, unit: '%' },
-      { title: 'Utilization', value: 76, unit: '%' },
-      { title: 'Number of Alerts', value: 17 },
-    ],
+    title: 'Alerts (Weekly)',
+    id: 'xlarge-bar-alerts',
+    size: CARD_SIZES.LARGE,
+    type: CARD_TYPES.BAR,
+    content: {
+      data: [
+        {
+          label: 'Sev 1',
+          values: chartData.events
+            .filter((i, idx) => idx < 7)
+            .map(i => ({
+              x: new Date(i.timestamp + timeOffset).toISOString(),
+              y: Math.ceil(i.pressure / 10),
+            })),
+          color: COLORS.BLUE,
+        },
+        {
+          label: 'Sev 2',
+          values: chartData.events
+            .filter((i, idx) => idx < 7)
+            .map(i => ({
+              x: new Date(i.timestamp + timeOffset).toISOString(),
+              y: Math.ceil(i.humidity / 10),
+            })),
+          color: COLORS.YELLOW,
+        },
+        {
+          label: 'Sev 3',
+          values: chartData.events
+            .filter((i, idx) => idx < 7)
+            .map(i => ({
+              x: new Date(i.timestamp + timeOffset).toISOString(),
+              y: Math.ceil(i.temperature / 10),
+            })),
+          color: COLORS.RED,
+        },
+      ],
+    },
+  },
+  {
+    title: 'Alerts (Section 1)',
+    id: 'facilitycard-donut',
+    size: CARD_SIZES.SMALL,
+    type: CARD_TYPES.DONUT,
+    content: {
+      title: 'Alerts',
+      data: [
+        { label: 'Sev 3', value: 6, color: COLORS.RED },
+        { label: 'Sev 2', value: 9, color: COLORS.YELLOW },
+        { label: 'Sev 1', value: 18, color: COLORS.BLUE },
+      ],
+    },
   },
   {
     title: 'WIDE',
@@ -92,6 +179,46 @@ const originalCards = [
       { title: 'Heat', value: 1976, unit: 'K' },
       { title: 'Number of Alerts', value: 17 },
     ],
+  },
+  {
+    title: 'Atmospheric Conditions (Section 1)',
+    id: 'xlarge-timeseries-pressure',
+    size: CARD_SIZES.XLARGE,
+    type: CARD_TYPES.TIMESERIES,
+    content: {
+      data: [
+        {
+          label: 'Temperature',
+          values: chartData.events
+            .filter((i, idx) => idx < 15)
+            .map(i => ({
+              t: new Date(i.timestamp + timeOffset).toISOString(),
+              v: i.temperature,
+            })),
+          color: COLORS.RED,
+        },
+        {
+          label: 'Pressure',
+          values: chartData.events
+            .filter((i, idx) => idx < 10)
+            .map(i => ({
+              t: new Date(i.timestamp + timeOffset).toISOString(),
+              v: i.pressure,
+            })),
+          color: COLORS.BLUE,
+        },
+        {
+          label: 'Humidity',
+          values: chartData.events
+            .filter((i, idx) => idx < 13)
+            .map(i => ({
+              t: new Date(i.timestamp + timeOffset).toISOString(),
+              v: i.humidity,
+            })),
+          color: COLORS.YELLOW,
+        },
+      ],
+    },
   },
   {
     title: 'LARGE',
@@ -154,7 +281,7 @@ const CARD_DIMENSIONS_16_COL = {
     max: { w: 2, h: 4 },
     xl: { w: 4, h: 4 },
     lg: { w: 4, h: 4 },
-    md: { w: 4, h: 2 },
+    md: { w: 4, h: 4 },
     sm: { w: 2, h: 4 },
     xs: { w: 4, h: 4 },
   },
@@ -195,6 +322,7 @@ const CARD_DIMENSIONS_16_COL = {
 const StatefulDashboard = ({ ...props }) => {
   const [cards, setCards] = useState(originalCards);
 
+  /*
   const handleAdd = () => {
     setCards([
       ...cards,
@@ -211,6 +339,7 @@ const StatefulDashboard = ({ ...props }) => {
       },
     ]);
   };
+  */
 
   const handleCardAction = (id, type, payload) => {
     if (type === 'CARD_SIZE_CHANGED') {
@@ -225,6 +354,7 @@ const StatefulDashboard = ({ ...props }) => {
     }
   };
 
+  /*
   return (
     <div>
       <Button style={{ margin: '20px 0 0 20px' }} onClick={handleAdd}>
@@ -233,6 +363,8 @@ const StatefulDashboard = ({ ...props }) => {
       <Dashboard cards={cards} onCardAction={handleCardAction} {...props} />
     </div>
   );
+  */
+  return <Dashboard cards={cards} onCardAction={handleCardAction} {...props} />;
 };
 
 storiesOf('Dashboard (Experimental)', module)
