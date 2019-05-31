@@ -55,6 +55,8 @@ const propTypes = {
   isEditable: PropTypes.bool,
   /** array of configurable sizes to dimensions */
   cardDimensions: CardSizesToDimensionsPropTypes,
+  /** Optional filter that should be rendered top right */
+  filter: PropTypes.node,
 };
 
 const defaultProps = {
@@ -68,6 +70,7 @@ const defaultProps = {
   cardDimensions: CARD_DIMENSIONS,
   dashboardBreakpoints: DASHBOARD_BREAKPOINTS,
   dashboardColumns: DASHBOARD_COLUMNS,
+  filter: null,
 };
 
 const GridLayout = WidthProvider(Responsive);
@@ -91,6 +94,7 @@ const Dashboard = ({
   dashboardBreakpoints,
   cardDimensions,
   dashboardColumns,
+  filter,
   rowHeight,
   layouts,
   isEditable,
@@ -124,6 +128,7 @@ const Dashboard = ({
         description={description}
         lastUpdated={lastUpdated}
         lastUpdatedLabel={lastUpdatedLabel}
+        filter={filter}
       />
       <StyledGridLayout
         layouts={generatedLayouts}
