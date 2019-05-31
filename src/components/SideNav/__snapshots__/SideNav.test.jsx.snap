@@ -1123,7 +1123,7 @@ the label you want displayed or read by screen readers.",
                           className="bx--side-nav__menu"
                           role="menu"
                         >
-                          <ForwardRef
+                          <ForwardRef(SideNavMenuItem)
                             element="button"
                             key="menu-link-0-child"
                             label="Devices"
@@ -1156,7 +1156,7 @@ the label you want displayed or read by screen readers.",
                                 </button>
                               </Link>
                             </li>
-                          </ForwardRef>
+                          </ForwardRef(SideNavMenuItem)>
                         </ul>
                       </li>
                     </SideNavMenu>

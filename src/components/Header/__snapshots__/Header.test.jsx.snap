@@ -37,14 +37,14 @@ exports[`Header testcases should render 1`] = `
       key="menu-item-help"
       renderMenuContent={[Function]}
     >
-      <ForwardRef
+      <ForwardRef(HeaderMenuItem)
         key="menu-item-help0-child"
       >
         <p>
           This is a link
         </p>
-      </ForwardRef>
-      <ForwardRef
+      </ForwardRef(HeaderMenuItem)>
+      <ForwardRef(HeaderMenuItem)
         key="menu-item-help1-child"
       >
         <Component>
@@ -59,7 +59,7 @@ exports[`Header testcases should render 1`] = `
             />
           </span>
         </Component>
-      </ForwardRef>
+      </ForwardRef(HeaderMenuItem)>
     </ForwardRef>
   </HeaderGlobalBar>
 </Header__StyledHeader>
