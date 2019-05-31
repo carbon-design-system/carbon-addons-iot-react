@@ -25,6 +25,22 @@ You can then import any component that you need by doing the following in your p
 import { BaseModal } from 'carbon-addons-iot-react';
 ```
 
+## Running Tests
+
+If you are using our project with Jest tests, due to it's dependency on d3, you may have to add some mock to your
+Jest setup script. See this issue for more details: https://github.com/facebook/jest/issues/5379
+
+Here's an example setup script, update your jest config to point to a setup script:
+setupFiles: ['setupJest.js'],
+
+```js
+setupJest.js contents:
+
+class SVGPathElement extends HTMLElement {}
+
+window.SVGPathElement = SVGPathElement;
+```
+
 ## 📚 Docs
 
 You can find more information about how to use each component by checking out our [Storybook](https://IBM.github.io/carbon-addons-iot-react/).
