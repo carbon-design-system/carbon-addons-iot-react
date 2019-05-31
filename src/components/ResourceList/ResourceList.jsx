@@ -5,6 +5,20 @@ import styled from 'styled-components';
 
 const ResourceListSection = styled.section`
    {
+    &.bx--structured-list--selection
+      .bx--structured-list-row:hover:not(.bx--structured-list-row--header-row)
+      > .bx--structured-list-td {
+      border: none;
+    }
+
+    .bx--btn {
+      display: flex;
+      align-items: flex-end;
+
+      svg {
+        margin-left: 0.25rem;
+      }
+    }
   }
 `;
 
@@ -81,7 +95,7 @@ class ResourceList extends Component {
         role="presentation">
         <Button
           kind="ghost"
-          icon={customAction.icon}
+          renderIcon={customAction.icon}
           onClick={() => customAction.onClick(rowId)}
           small>
           {customAction.label}
