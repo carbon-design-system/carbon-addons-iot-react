@@ -17,28 +17,22 @@ import HeaderMenu from './HeaderMenu';
 
 const StyledHeader = styled(CarbonHeader)`
   &&& {
-    background: ${COLORS.darkGray};
+    background: ${COLORS.gray100};
     position: fixed;
     top: 0;
     left: 0;
+
+    .bx--header__menu-title[role='menuitem'][aria-expanded='true'] + .bx--header__menu {
+      left: auto;
+      right: 0;
+    }
 
     .bx--header__menu {
       min-width: 12.5rem;
       width: auto;
     }
 
-    .bx--header__menu .bx--header__menu-item[role='menuitem']:hover,
-    .bx--header__menu .bx--header__menu-item[role='menuitem']:focus {
-      background: ${COLORS.darkGray};
-    }
-
-    .bx--header__menu.bx--header__menu-item[role='menuitem']:hover,
-    a.bx--header__menu-item[role='menuitem']:active {
-      background: ${COLORS.darkGrayHover};
-    }
-
     .bx--header__menu-item[role='menuitem']:focus {
-      border-color: #0062ff;
       outline: none;
     }
   }
@@ -52,9 +46,7 @@ const StyledGlobalAction = styled(HeaderGlobalAction)`
     padding: 0 ${rem(15)};
     position: relative;
     width: auto;
-    :hover {
-      background-color: ${COLORS.darkGrayHover};
-    }
+
     span {
       display: flex;
     }

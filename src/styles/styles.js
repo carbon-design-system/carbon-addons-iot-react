@@ -8,6 +8,8 @@ export const COLORS = {
   lightBlue: 'rgba(85, 150, 230, 0.1)',
   errorRed: '#e62325',
   white: '#fff',
+  gray100: '#171717',
+  blue60: '#0062ff',
 };
 
 export const TYPOGRAPHY = {
