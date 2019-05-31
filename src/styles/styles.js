@@ -18,7 +18,7 @@ export const TYPOGRAPHY = {
 
 export const PADDING = {
   verticalPadding: '1rem',
-  horizontalWrapPadding: '2rem',
+  horizontalWrapPadding: '1rem',
 };
 
 export const SIZES = {

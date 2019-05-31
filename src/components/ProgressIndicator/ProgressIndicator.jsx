@@ -11,6 +11,8 @@ const StyledProgressIndicator = styled(({ isVerticalMode, ...others }) => (
 ))`
   &&& {
     display: ${props => (!props.isVerticalMode ? 'inline-flex' : '')};
+    width: 100%;
+
     .bx--progress-step--complete {
       cursor: pointer;
     }

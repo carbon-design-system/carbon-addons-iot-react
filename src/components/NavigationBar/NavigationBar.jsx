@@ -9,20 +9,34 @@ const StyledNavigationContainer = styled.div`
   position: relative;
   background-color: ${COLORS.white};
   ul[role='tablist'] {
-    padding-left: ${PADDING.horizontalWrapPadding};
+    padding-left: 0;
     padding-right: ${PADDING.horizontalWrapPadding};
-    border-bottom: 1px solid ${COLORS.lightGrey};
     align-items: center;
-    ${props =>
-      props.hasActions
-        ? `@media screen and (min-width: 768px) {
-          li {
-            height: ${SIZES.navigationBarHeight};
-            line-height: calc(${SIZES.navigationBarHeight} - 1.5rem);
+    height: 100%;
+    li {
+      height: 100%;
+      align-items: flex-end;
+
+      @media (min-width: 42em) {
+        a {
+          height: 100%;
+          line-height: calc(3rem - 1.125rem);
+        }
       }
-    }`
-        : undefined}
+    }
+
     margin-left: 0rem;
+  }
+  @media (min-width: 42em) {
+    nav::after {
+      background: ${COLORS.lightGrey};
+      content: '';
+      height: 1px;
+      left: 0;
+      position: absolute;
+      bottom: -1px;
+      width: 100%;
+    }
   }
 `;
 
@@ -68,13 +82,10 @@ const StyledActions = styled.div`
   align-items: center;
   position: absolute;
   padding-left: ${PADDING.horizontalWrapPadding};
-  padding-right: ${PADDING.horizontalWrapPadding};
+  padding-right: 0;
   height: ${SIZES.navigationBarHeight};
   top: 0px;
   right: 0px;
-  button + button {
-    margin-left: 1rem;
-  }
 `;
 
 const propTypes = {

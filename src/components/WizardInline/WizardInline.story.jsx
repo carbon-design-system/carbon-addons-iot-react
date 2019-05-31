@@ -3,9 +3,16 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { boolean, number, text } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
+import styled from 'styled-components';
 
 import WizardInline from './WizardInline';
 import StatefulWizardInline from './StatefulWizardInline';
+
+const StyledFooterContent = styled.div`
+  height: 100%;
+  line-height: 100%;
+  padding-top: 1rem;
+`;
 
 const items = [
   {
@@ -139,7 +146,7 @@ export const itemsAndComponents = items.map((item, i) => ({
 }));
 
 const sidebarComponent = <div>sidebar</div>;
-const footerComponent = <div>this is footer content</div>;
+const footerComponent = <StyledFooterContent>this is footer content</StyledFooterContent>;
 
 // Simple Static Wizard Stories
 

@@ -14,7 +14,6 @@ const StyledWizardWrapper = styled.div`
   align-items: center;
 
   .bx--modal-content[data-id='WizardInlineContent'] {
-    padding: 0rem 1rem;
     margin-bottom: 48px;
     max-height: 80vh;
     overflow: auto;
@@ -33,11 +32,13 @@ const StyledWizardWrapper = styled.div`
 
 const StyledWizardContainer = styled.div`
   display: flex;
+  padding: 0 1rem;
 `;
 
 const StyledMessageBox = styled(InlineNotification)`
    {
     width: 100%;
+    max-width: unset;
   }
 `;
 
@@ -51,7 +52,7 @@ const StyledFooter = styled.div`
 
   .bx--modal-footer[data-id='WizardInlineFooter'] {
     justify-content: space-between;
-    padding: 1rem 3rem 1rem 40px;
+    padding: 0 0 0 1rem;
     max-height: 72px;
     width: 100%;
   }

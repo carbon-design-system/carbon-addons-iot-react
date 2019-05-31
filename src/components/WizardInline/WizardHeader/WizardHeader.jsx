@@ -8,6 +8,7 @@ const StyledDivWizardHeader = styled.div`
   display: flex;
   flex-flow: column nowrap;
   margin-bottom: 1.5rem;
+  padding: 1rem;
 
   .bx--progress {
     padding: 1rem 1rem;
@@ -18,6 +19,8 @@ const StyledDivWizardHeader = styled.div`
     margin-bottom: 0.5rem;
     overflow-x: auto;
     overflow-y: hidden;
+    padding-left: 0;
+    width: 100%;
   }
 `;
 
