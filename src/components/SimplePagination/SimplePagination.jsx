@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { Icon } from 'carbon-components-react';
+import ChevronLeft from '@carbon/icons-react/lib/chevron--left/16';
+import ChevronRight from '@carbon/icons-react/lib/chevron--right/16';
 
 import { handleEnterKeyDown } from '../../utils/componentUtilityFunctions';
 import { COLORS } from '../../styles/styles';
@@ -42,7 +43,7 @@ const StyledButton = styled.div`
       fill: ${COLORS.blue};
     }
   }` // If the item isn't clickable remove the focus outline
-      : `&:focus { 
+      : `&:focus {
         outline: none;
         } cursor: default;`}
   svg path {
@@ -100,14 +101,14 @@ const SimplePagination = ({
         tabIndex={hasPrev ? 0 : -1}
         onClick={hasPrev ? handlePrev : undefined}
         onKeyDown={hasPrev ? evt => handleEnterKeyDown(evt, handlePrev) : undefined}>
-        <Icon name="icon--chevron--left" description={prevPageText} />
+        <ChevronLeft description={prevPageText} />
       </StyledButton>
       <StyledButton
         role="button"
         tabIndex={hasNext ? 0 : -1}
         onClick={hasNext ? handleNext : undefined}
         onKeyDown={hasNext ? evt => handleEnterKeyDown(evt, handleNext) : undefined}>
-        <Icon name="icon--chevron--right" description={nextPageText} />
+        <ChevronRight description={nextPageText} />
       </StyledButton>
     </StyledContainer>
   );
