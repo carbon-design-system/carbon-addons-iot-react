@@ -3,6 +3,7 @@ import { Responsive, WidthProvider } from 'react-grid-layout';
 import PropTypes from 'prop-types';
 import 'react-grid-layout/css/styles.css';
 import 'react-resizable/css/styles.css';
+import styled from 'styled-components';
 import find from 'lodash/find';
 
 import { getLayout } from '../../utils/componentUtilityFunctions';
@@ -71,6 +72,14 @@ const defaultProps = {
 
 const GridLayout = WidthProvider(Responsive);
 
+const StyledGridLayout = styled(GridLayout)`
+  &&& {
+    .react-grid-item.cssTransforms {
+      transition-property: ${props => (props.shouldAnimate ? 'transform' : 'none')};
+    }
+  }
+`;
+
 /** This component is a dumb component and only knows how to render itself */
 const Dashboard = ({
   cards,
@@ -85,8 +94,11 @@ const Dashboard = ({
   rowHeight,
   layouts,
   isEditable,
+  className,
 }) => {
   const [breakpoint, setBreakpoint] = useState('lg');
+  // Keep track of whether it's mounted to turn back on the animations
+
   // console.log(breakpoint);
   // console.log(dashboardBreakpoints, cardDimensions, rowHeight);
 
@@ -106,14 +118,14 @@ const Dashboard = ({
   // TODO: Can we pickup the GUTTER size and PADDING from the carbon grid styles? or css variables?
   // console.log(generatedLayouts);
   return (
-    <div>
+    <div className={className}>
       <DashboardHeader
         title={title}
         description={description}
         lastUpdated={lastUpdated}
         lastUpdatedLabel={lastUpdatedLabel}
       />
-      <GridLayout
+      <StyledGridLayout
         layouts={generatedLayouts}
         compactType="vertical"
         cols={dashboardColumns}
@@ -121,6 +133,8 @@ const Dashboard = ({
         margin={[GUTTER, GUTTER]}
         rowHeight={rowHeight[breakpoint]}
         preventCollision={false}
+        // Stop the initial animation
+        shouldAnimate={isEditable}
         // TODO: need to consider preserving their loose packing decisions on layout change
         // TODO: also, should we reorder our cards based on the layout change, and regenerate all
         //       other layouts?  for example, moving card 5 to before card 2 in lg should mean
@@ -195,7 +209,7 @@ const Dashboard = ({
             ) : null}
           </div>
         ))}
-      </GridLayout>
+      </StyledGridLayout>
     </div>
   );
 };
