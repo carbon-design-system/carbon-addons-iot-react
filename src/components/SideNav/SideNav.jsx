@@ -15,7 +15,7 @@ import CarbonSideNav from './CarbonSideNav';
 
 const StyledSideNav = styled(CarbonSideNav)`
   &&& {
-    background-color: ${COLORS.darkGray};
+    background-color: ${COLORS.gray100};
     border-top: 1px solid #3c4646;
     height: calc(100% - 3rem);
 
@@ -38,7 +38,15 @@ const StyledSideNav = styled(CarbonSideNav)`
     button {
       appearance: none;
       width: 100%;
-      background: ${COLORS.darkGray};
+      background: transparent;
+
+      &.bx--side-nav__toggle {
+        background: ${COLORS.navToggle};
+
+        :hover {
+          background: ${COLORS.gray80};
+        }
+      }
     }
 
     button.bx--side-nav__link {
@@ -49,7 +57,7 @@ const StyledSideNav = styled(CarbonSideNav)`
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-      color: #f3f3f3;
+      color: ${COLORS.gray10};
       font-size: 0.875rem;
       letter-spacing: 0.1px;
       line-height: 1.25rem;
@@ -60,7 +68,7 @@ const StyledSideNav = styled(CarbonSideNav)`
     }
 
     .bx--side-nav__link:focus {
-      outline: 4px solid #0062ff;
+      outline: 4px solid ${COLORS.blue60};
       outline-offset: -4px;
     }
   }
@@ -75,20 +83,24 @@ const StyledSideNavLink = styled(SideNavLink)`
     padding-right: 1rem;
     font-weight: 400;
 
+    &.bx--side-nav__link--current {
+      background-color: ${COLORS.gray70};
+    }
+
     :focus {
-      outline: 4px solid #0062ff;
+      outline: 4px solid ${COLORS.blue60};
       outline-offset: -4px;
     }
 
     :hover {
-      background-color: ${COLORS.darkGrayHover};
+      background-color: ${COLORS.gray80};
     }
 
     > .bx--side-nav__link-text {
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-      color: #f3f3f3;
+      color: ${COLORS.gray10};
       font-size: 0.875rem;
       letter-spacing: 0.1px;
       line-height: 1.25rem;
@@ -106,23 +118,44 @@ const StyledSideNavLink = styled(SideNavLink)`
 
 const StyledSideNavMenu = styled(SideNavMenu)`
   &&& {
-    background-color: ${COLORS.darkGray};
+    background-color: ${COLORS.gray100};
 
     :not(.bx--side-nav__item--active):hover {
-      background-color: ${COLORS.darkGray};
+      background-color: ${COLORS.gray100};
     }
 
     > button:hover {
-      background-color: ${COLORS.darkGrayHover};
-    }
-
-    .bx--side-nav__menu[role='menu']
-      .bx--side-nav__link[role='menuitem']:not(.bx--side-nav__link--current):not([aria-current='page']):hover {
-      background-color: ${COLORS.darkGrayHover};
+      background-color: ${COLORS.gray80};
     }
 
     :hover {
-      background-color: ${COLORS.darkGrayHover};
+      background-color: ${COLORS.gray80};
+    }
+
+    [aria-expanded='true'] {
+      background-color: ${COLORS.gray80};
+
+      :hover {
+        background-color: ${COLORS.gray80hover};
+      }
+
+      + ul {
+        background-color: ${COLORS.gray80};
+      }
+
+      + ul .bx--side-nav__link:hover {
+        background-color: ${COLORS.gray80hover};
+      }
+    }
+    /* We have to apply these styles when we switch out a tag for something else */
+    .bx--side-nav__link--current::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 4px;
+      background-color: ${COLORS.blue60};
     }
   }
 `;
@@ -189,6 +222,7 @@ const SideNav = ({ links, defaultExpanded }) => {
       const children = link.childContent.map(childlink => (
         <SideNavMenuItem
           key={`menu-link-${link.childContent.indexOf(childlink)}-child`}
+          isActive={childlink.current}
           {...childlink.metaData}>
           {childlink.content}
         </SideNavMenuItem>

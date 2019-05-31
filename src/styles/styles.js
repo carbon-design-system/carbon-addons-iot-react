@@ -9,7 +9,12 @@ export const COLORS = {
   errorRed: '#e62325',
   white: '#fff',
   gray100: '#171717',
+  gray80: '#3d3d3d',
+  gray80hover: '#4c4c4c',
+  gray70: '#565656',
+  gray10: '#f3f3f3',
   blue60: '#0062ff',
+  navToggle: '#282828',
 };
 
 export const TYPOGRAPHY = {

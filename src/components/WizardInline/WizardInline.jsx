@@ -36,7 +36,7 @@ const StyledWizardContainer = styled.div`
 `;
 
 const StyledMessageBox = styled(InlineNotification)`
-   {
+  &&& {
     width: 100%;
     max-width: unset;
   }
