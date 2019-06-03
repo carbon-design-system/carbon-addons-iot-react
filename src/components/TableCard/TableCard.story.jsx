@@ -237,7 +237,7 @@ const actions = {
   },
 };
 
-storiesOf('Table Card (Experimental)', module).add('medium', () => {
+storiesOf('Table Card (Experimental)', module).add('basic', () => {
   const size = select(
     'size',
     [CARD_SIZES.TALL, CARD_SIZES.LARGE, CARD_SIZES.XLARGE],
