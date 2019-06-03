@@ -59,6 +59,7 @@ const originalCards = [
   },
   {
     title: 'Alerts (Section 2)',
+    tooltip: 'This view showcases the variety of alert severities present in your context.',
     id: 'facilitycard-pie',
     size: CARD_SIZES.SMALL,
     type: CARD_TYPES.PIE,

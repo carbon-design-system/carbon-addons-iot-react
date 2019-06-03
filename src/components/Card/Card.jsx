@@ -2,6 +2,7 @@ import React from 'react';
 import {
   Toolbar,
   ToolbarItem,
+  Tooltip,
   OverflowMenu,
   OverflowMenuItem,
   Button,
@@ -110,6 +111,7 @@ const Card = ({
   isEditable,
   isExpanded,
   id,
+  tooltip,
   onCardAction,
   availableActions,
   breakpoint,
@@ -204,7 +206,10 @@ const Card = ({
     <CardWrapper id={id} dimensions={dimensions} {...others}>
       {size !== CARD_SIZES.XSMALL ? (
         <CardHeader>
-          <div>{title}</div>
+          <div>
+            {title}&nbsp;
+            {tooltip && <Tooltip triggerText="">{tooltip}</Tooltip>}
+          </div>
           {toolbar}
         </CardHeader>
       ) : (

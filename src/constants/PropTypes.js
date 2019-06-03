@@ -128,6 +128,7 @@ export const CardPropTypes = {
     delete: PropTypes.bool,
     expand: PropTypes.bool,
   }),
+  tooltip: PropTypes.element,
   toolbar: PropTypes.element,
   /** Row height in pixels for each layout */
   rowHeight: RowHeightPropTypes,
