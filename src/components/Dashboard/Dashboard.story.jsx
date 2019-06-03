@@ -30,6 +30,9 @@ const originalCards = [
     id: 'facilitycard',
     size: CARD_SIZES.SMALL,
     type: CARD_TYPES.VALUE,
+    availableActions: {
+      delete: true,
+    },
     content: [
       { title: 'Comfort Level', value: 89, unit: '%' },
       { title: 'Utilization', value: 76, unit: '%' },
@@ -41,6 +44,9 @@ const originalCards = [
     id: 'facilitycard-xs',
     size: CARD_SIZES.XSMALL,
     type: CARD_TYPES.VALUE,
+    availableActions: {
+      delete: true,
+    },
     content: [{ title: 'Comfort Level', value: 89, unit: '%' }],
   },
   {
@@ -48,6 +54,9 @@ const originalCards = [
     id: 'facilitycard-xs2',
     size: CARD_SIZES.XSMALL,
     type: CARD_TYPES.VALUE,
+    availableActions: {
+      delete: true,
+    },
     content: [{ title: 'Utilization', value: 76, unit: '%' }],
   },
   {
@@ -55,6 +64,9 @@ const originalCards = [
     id: 'facilitycard-xs3',
     size: CARD_SIZES.XSMALL,
     type: CARD_TYPES.VALUE,
+    availableActions: {
+      delete: true,
+    },
     content: [{ title: 'Alert Count', value: 17 }],
   },
   {
@@ -63,6 +75,9 @@ const originalCards = [
     id: 'facilitycard-pie',
     size: CARD_SIZES.SMALL,
     type: CARD_TYPES.PIE,
+    availableActions: {
+      delete: true,
+    },
     content: {
       title: 'Alerts',
       data: [
@@ -77,6 +92,9 @@ const originalCards = [
     id: 'facilitycard2',
     size: CARD_SIZES.TALL,
     type: CARD_TYPES.VALUE,
+    availableActions: {
+      delete: true,
+    },
     content: [
       { title: 'Comfort Level', value: 89, unit: '%' },
       { title: 'Utilization', value: 76, unit: '%' },
@@ -90,6 +108,10 @@ const originalCards = [
     id: 'facilitycard3',
     size: CARD_SIZES.MEDIUM,
     type: CARD_TYPES.TIMESERIES,
+    availableActions: {
+      delete: true,
+      expand: true,
+    },
     content: {
       data: [
         {
@@ -120,6 +142,10 @@ const originalCards = [
     id: 'xlarge-bar-alerts',
     size: CARD_SIZES.LARGE,
     type: CARD_TYPES.BAR,
+    availableActions: {
+      delete: true,
+      expand: true,
+    },
     content: {
       data: [
         {
@@ -160,6 +186,9 @@ const originalCards = [
     id: 'facilitycard-donut',
     size: CARD_SIZES.SMALL,
     type: CARD_TYPES.DONUT,
+    availableActions: {
+      delete: true,
+    },
     content: {
       title: 'Alerts',
       data: [
@@ -174,6 +203,9 @@ const originalCards = [
     id: 'facilitycard5',
     size: CARD_SIZES.WIDE,
     type: CARD_TYPES.VALUE,
+    availableActions: {
+      delete: true,
+    },
     content: [
       { title: 'Comfort Level', value: 89, unit: '%' },
       { title: 'Utilization', value: 76, unit: '%' },
@@ -186,6 +218,10 @@ const originalCards = [
     id: 'xlarge-timeseries-pressure',
     size: CARD_SIZES.XLARGE,
     type: CARD_TYPES.TIMESERIES,
+    availableActions: {
+      delete: true,
+      expand: true,
+    },
     content: {
       data: [
         {
@@ -226,6 +262,9 @@ const originalCards = [
     id: 'facilitycard6',
     size: CARD_SIZES.LARGE,
     type: CARD_TYPES.VALUE,
+    availableActions: {
+      delete: true,
+    },
     content: [
       { title: 'Comfort Level', value: 89, unit: '%' },
       { title: 'Utilization', value: 76, unit: '%' },
