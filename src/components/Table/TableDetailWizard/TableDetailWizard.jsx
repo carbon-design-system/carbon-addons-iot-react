@@ -15,6 +15,10 @@ const StyledWizardWrapper = styled.div`
   align-items: left;
   border: 1px solid #a2a2a28c;
   border-top: none;
+
+  .bx--inline-notification {
+    max-width: none;
+  }
 `;
 
 const StyledWizardContainer = styled.div`
@@ -30,12 +34,7 @@ const StyledMessageBox = styled(InlineNotification)`
 
 const StyledFooter = styled.div`
   .bx--modal-footer {
-    justify-content: space-between;
-    padding: 1rem 3rem 1rem 40px;
-    max-height: 72px;
-    width: 100%;
-    margin-left: 0;
-    margin-right: 0;
+    justify-content: flex-end;
   }
 `;
 

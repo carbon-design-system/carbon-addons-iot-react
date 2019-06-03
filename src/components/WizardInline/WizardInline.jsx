@@ -51,10 +51,11 @@ const StyledFooter = styled.div`
   line-height: 40px;
 
   .bx--modal-footer[data-id='WizardInlineFooter'] {
-    justify-content: space-between;
-    padding: 0 0 0 1rem;
-    max-height: 72px;
     width: 100%;
+
+    & > * {
+      width: 100%;
+    }
   }
 `;
 

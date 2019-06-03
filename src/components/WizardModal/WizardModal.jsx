@@ -9,6 +9,10 @@ import WizardFooter from '../WizardInline/WizardFooter/WizardFooter';
 
 const StyledModal = styled(BaseModal)`
    {
+    .bx--modal-container {
+      min-width: 410px;
+    }
+
     .bx--progress {
       /* need to pad some space for the focus outlines*/
       padding: 3px;
@@ -18,6 +22,11 @@ const StyledModal = styled(BaseModal)`
     }
     > div + div {
       padding-top: 1rem;
+    }
+
+    .bx--modal-content {
+      width: 100%;
+      padding: 0 1rem;
     }
   }
 `;

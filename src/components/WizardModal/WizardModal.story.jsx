@@ -2,8 +2,23 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { Button } from 'carbon-components-react';
+import styled from 'styled-components';
 
 import WizardModal from './WizardModal';
+
+const StyledWizard = styled(WizardModal)`
+  .WizardInline-custom-footer-content {
+    width: 33.33%;
+
+    button.bx--btn {
+      width: 100%;
+    }
+
+    & + div {
+      width: 66.66%;
+    }
+  }
+`;
 
 const commonWizardProps = {
   onSubmit: action('submit'),
@@ -31,7 +46,7 @@ storiesOf('WizardModal', module)
     />
   ))
   .add('custom footer', () => (
-    <WizardModal
+    <StyledWizard
       header={{
         label: 'Wizard With Custom Footer ',
         title: 'Gimme 3 Steps',

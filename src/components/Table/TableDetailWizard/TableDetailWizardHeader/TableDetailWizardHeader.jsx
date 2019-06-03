@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Button } from 'carbon-components-react';
+import Close from '@carbon/icons-react/lib/close/24';
 
 const StyledDivWizardHeader = styled.div`
   display: flex;
@@ -30,7 +31,7 @@ const TableDetailWizardHeader = ({ title, onClose, className }) => (
   <StyledDivWizardHeader className={className}>
     <StyledDivHeading>{title}</StyledDivHeading>
     <StyledButton>
-      <Button kind="ghost" icon="close" small onClick={() => onClose()} />
+      <Button kind="ghost" renderIcon={() => <Close />} small onClick={() => onClose()} />
     </StyledButton>
   </StyledDivWizardHeader>
 );

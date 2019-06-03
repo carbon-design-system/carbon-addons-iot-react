@@ -1,9 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
+import isNil from 'lodash/isNil';
 
 import { ValueCardPropTypes, CardPropTypes } from '../../constants/PropTypes';
 import { CARD_LAYOUTS, CARD_SIZES, CARD_CONTENT_PADDING } from '../../constants/LayoutConstants';
 import Card from '../Card/Card';
+
+import ValueRenderer from './ValueRenderer';
 
 const AttributeWrapper = styled.div`
   ${props =>
@@ -19,8 +22,9 @@ const AttributeWrapper = styled.div`
 `;
 
 const AttributeLabel = styled.div`
-  ${props => props.layout === CARD_LAYOUTS.HORIZONTAL && `padding-bottom: 0.25rem;`};
-  ${props => props.layout === CARD_LAYOUTS.VERTICAL && `text-align: left;`};
+  ${props =>
+    props.layout === CARD_LAYOUTS.HORIZONTAL && `padding-bottom: 0.25rem; font-size: 1.5rem;`};
+  ${props => props.layout === CARD_LAYOUTS.VERTICAL && `text-align: left; font-size: 1.25rem;`};
 `;
 
 const AttributeValue = styled.span`
@@ -72,7 +76,9 @@ const ValueCard = ({ title, content, size, ...others }) => {
         <AttributeWrapper layout={layout} key={i.title}>
           <AttributeLabel layout={layout}>{i.title}</AttributeLabel>
           <div>
-            <AttributeValue layout={layout}>{i.value || ' '}</AttributeValue>
+            <AttributeValue layout={layout}>
+              {!isNil(i.value) ? <ValueRenderer value={i.value} /> : ' '}
+            </AttributeValue>
             {i.unit && <AttributeUnit layout={layout}>{i.unit}</AttributeUnit>}
           </div>
         </AttributeWrapper>

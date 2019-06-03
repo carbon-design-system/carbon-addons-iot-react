@@ -7,9 +7,7 @@ import ButtonEnhanced from '../../ButtonEnhanced/ButtonEnhanced';
 
 const StyledFooterButtons = styled.div`
   display: flex;
-  * + * {
-    margin-left: 1rem;
-  }
+  margin: auto 0 auto auto;
 `;
 
 const propTypes = {
@@ -52,7 +50,9 @@ const WizardFooter = ({
   sendingData,
 }) => (
   <Fragment>
-    <div>{footerLeftContent}</div>
+    {footerLeftContent && (
+      <div className="WizardInline-custom-footer-content">{footerLeftContent}</div>
+    )}
     <StyledFooterButtons>
       {!hasPrev ? (
         <Button onClick={onCancel} kind="secondary">

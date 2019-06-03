@@ -8,10 +8,10 @@ import styled from 'styled-components';
 import WizardInline from './WizardInline';
 import StatefulWizardInline from './StatefulWizardInline';
 
-const StyledFooterContent = styled.div`
+const StyledFooterContent = styled.p`
   height: 100%;
   line-height: 100%;
-  padding-top: 1rem;
+  padding: 1rem;
 `;
 
 const items = [

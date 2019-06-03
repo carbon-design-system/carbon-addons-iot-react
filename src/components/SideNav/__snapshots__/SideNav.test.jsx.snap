@@ -124,13 +124,19 @@ the label you want displayed or read by screen readers.",
           "componentStyle": ComponentStyle {
             "componentId": "SideNav__StyledSideNav-yn3bk8-0",
             "isStatic": true,
-            "lastClassName": "jQkcEV",
+            "lastClassName": "ditYVb",
             "rules": Array [
               "&&&{background-color:",
-              "#152935",
-              ";border-top:1px solid #3c4646;height:calc(100% - 3rem);.bx--side-nav__menu[role='menu'] .bx--side-nav__link[role='menuitem']{height:2rem;min-height:2rem;padding-left:3.5rem;}.bx--side-nav__link{position:relative;display:flex;align-items:center;text-decoration:none;min-height:3rem;padding-right:1rem;font-weight:400;}button{appearance:none;width:100%;background:",
-              "#152935",
-              ";}button.bx--side-nav__link{border:none;}.bx--side-nav__link > .bx--side-nav__link-text{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#f3f3f3;font-size:0.875rem;letter-spacing:0.1px;line-height:1.25rem;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}.bx--side-nav__link:focus{outline:4px solid #0062ff;outline-offset:-4px;}}",
+              "#171717",
+              ";border-top:1px solid #3c4646;height:calc(100% - 3rem);.bx--side-nav__menu[role='menu'] .bx--side-nav__link[role='menuitem']{height:2rem;min-height:2rem;padding-left:3.5rem;}.bx--side-nav__link{position:relative;display:flex;align-items:center;text-decoration:none;min-height:3rem;padding-right:1rem;font-weight:400;}button{appearance:none;width:100%;background:transparent;&.bx--side-nav__toggle{background:",
+              "#282828",
+              ";:hover{background:",
+              "#3d3d3d",
+              ";}}}button.bx--side-nav__link{border:none;}.bx--side-nav__link > .bx--side-nav__link-text{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:",
+              "#f3f3f3",
+              ";font-size:0.875rem;letter-spacing:0.1px;line-height:1.25rem;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}.bx--side-nav__link:focus{outline:4px solid ",
+              "#0062ff",
+              ";outline-offset:-4px;}}",
             ],
           },
           "displayName": "SideNav__StyledSideNav",
@@ -148,13 +154,13 @@ the label you want displayed or read by screen readers.",
     >
       <SideNav
         aria-label="Side navigation"
-        className="SideNav__StyledSideNav-yn3bk8-0 jQkcEV"
+        className="SideNav__StyledSideNav-yn3bk8-0 ditYVb"
         defaultExpanded={false}
         translateById={[Function]}
       >
         <nav
           aria-label="Side navigation"
-          className="bx--side-nav__navigation bx--side-nav SideNav__StyledSideNav-yn3bk8-0 jQkcEV"
+          className="bx--side-nav__navigation bx--side-nav SideNav__StyledSideNav-yn3bk8-0 ditYVb"
           onBlur={[Function]}
           onFocus={[Function]}
         >
@@ -194,11 +200,17 @@ the label you want displayed or read by screen readers.",
                       "componentStyle": ComponentStyle {
                         "componentId": "SideNav__StyledSideNavLink-yn3bk8-1",
                         "isStatic": true,
-                        "lastClassName": "hllekx",
+                        "lastClassName": "jvmqQK",
                         "rules": Array [
-                          "&&&{position:relative;display:flex;align-items:center;text-decoration:none;min-height:3rem;padding-right:1rem;font-weight:400;:focus{outline:4px solid #0062ff;outline-offset:-4px;}:hover{background-color:",
-                          "#2d3f48",
-                          ";}> .bx--side-nav__link-text{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#f3f3f3;font-size:0.875rem;letter-spacing:0.1px;line-height:1.25rem;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}> .bx--side-nav__icon{margin-right:0.5rem;}}",
+                          "&&&{position:relative;display:flex;align-items:center;text-decoration:none;min-height:3rem;padding-right:1rem;font-weight:400;&.bx--side-nav__link--current{background-color:",
+                          "#565656",
+                          ";}:focus{outline:4px solid ",
+                          "#0062ff",
+                          ";outline-offset:-4px;}:hover{background-color:",
+                          "#3d3d3d",
+                          ";}> .bx--side-nav__link-text{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:",
+                          "#f3f3f3",
+                          ";font-size:0.875rem;letter-spacing:0.1px;line-height:1.25rem;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}> .bx--side-nav__icon{margin-right:0.5rem;}}",
                         ],
                       },
                       "displayName": "SideNav__StyledSideNavLink",
@@ -231,7 +243,7 @@ the label you want displayed or read by screen readers.",
                 >
                   <SideNavLink
                     aria-label="Boards"
-                    className="disabled SideNav__StyledSideNavLink-yn3bk8-1 hllekx"
+                    className="disabled SideNav__StyledSideNavLink-yn3bk8-1 jvmqQK"
                     element="a"
                     icon={
                       <ForwardRef
@@ -255,7 +267,7 @@ the label you want displayed or read by screen readers.",
                       >
                         <Link
                           aria-label="Boards"
-                          className="bx--side-nav__link disabled SideNav__StyledSideNavLink-yn3bk8-1 hllekx"
+                          className="bx--side-nav__link disabled SideNav__StyledSideNavLink-yn3bk8-1 jvmqQK"
                           element="a"
                           label="Boards"
                           onClick={[MockFunction]}
@@ -263,7 +275,7 @@ the label you want displayed or read by screen readers.",
                         >
                           <a
                             aria-label="Boards"
-                            className="bx--side-nav__link disabled SideNav__StyledSideNavLink-yn3bk8-1 hllekx"
+                            className="bx--side-nav__link disabled SideNav__StyledSideNavLink-yn3bk8-1 jvmqQK"
                             label="Boards"
                             onClick={[MockFunction]}
                             tabIndex={0}
@@ -556,13 +568,19 @@ the label you want displayed or read by screen readers.",
           "componentStyle": ComponentStyle {
             "componentId": "SideNav__StyledSideNav-yn3bk8-0",
             "isStatic": true,
-            "lastClassName": "jQkcEV",
+            "lastClassName": "ditYVb",
             "rules": Array [
               "&&&{background-color:",
-              "#152935",
-              ";border-top:1px solid #3c4646;height:calc(100% - 3rem);.bx--side-nav__menu[role='menu'] .bx--side-nav__link[role='menuitem']{height:2rem;min-height:2rem;padding-left:3.5rem;}.bx--side-nav__link{position:relative;display:flex;align-items:center;text-decoration:none;min-height:3rem;padding-right:1rem;font-weight:400;}button{appearance:none;width:100%;background:",
-              "#152935",
-              ";}button.bx--side-nav__link{border:none;}.bx--side-nav__link > .bx--side-nav__link-text{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#f3f3f3;font-size:0.875rem;letter-spacing:0.1px;line-height:1.25rem;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}.bx--side-nav__link:focus{outline:4px solid #0062ff;outline-offset:-4px;}}",
+              "#171717",
+              ";border-top:1px solid #3c4646;height:calc(100% - 3rem);.bx--side-nav__menu[role='menu'] .bx--side-nav__link[role='menuitem']{height:2rem;min-height:2rem;padding-left:3.5rem;}.bx--side-nav__link{position:relative;display:flex;align-items:center;text-decoration:none;min-height:3rem;padding-right:1rem;font-weight:400;}button{appearance:none;width:100%;background:transparent;&.bx--side-nav__toggle{background:",
+              "#282828",
+              ";:hover{background:",
+              "#3d3d3d",
+              ";}}}button.bx--side-nav__link{border:none;}.bx--side-nav__link > .bx--side-nav__link-text{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:",
+              "#f3f3f3",
+              ";font-size:0.875rem;letter-spacing:0.1px;line-height:1.25rem;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}.bx--side-nav__link:focus{outline:4px solid ",
+              "#0062ff",
+              ";outline-offset:-4px;}}",
             ],
           },
           "displayName": "SideNav__StyledSideNav",
@@ -580,13 +598,13 @@ the label you want displayed or read by screen readers.",
     >
       <SideNav
         aria-label="Side navigation"
-        className="SideNav__StyledSideNav-yn3bk8-0 jQkcEV"
+        className="SideNav__StyledSideNav-yn3bk8-0 ditYVb"
         defaultExpanded={false}
         translateById={[Function]}
       >
         <nav
           aria-label="Side navigation"
-          className="bx--side-nav__navigation bx--side-nav SideNav__StyledSideNav-yn3bk8-0 jQkcEV"
+          className="bx--side-nav__navigation bx--side-nav SideNav__StyledSideNav-yn3bk8-0 ditYVb"
           onBlur={[Function]}
           onFocus={[Function]}
         >
@@ -626,11 +644,17 @@ the label you want displayed or read by screen readers.",
                       "componentStyle": ComponentStyle {
                         "componentId": "SideNav__StyledSideNavLink-yn3bk8-1",
                         "isStatic": true,
-                        "lastClassName": "hllekx",
+                        "lastClassName": "jvmqQK",
                         "rules": Array [
-                          "&&&{position:relative;display:flex;align-items:center;text-decoration:none;min-height:3rem;padding-right:1rem;font-weight:400;:focus{outline:4px solid #0062ff;outline-offset:-4px;}:hover{background-color:",
-                          "#2d3f48",
-                          ";}> .bx--side-nav__link-text{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#f3f3f3;font-size:0.875rem;letter-spacing:0.1px;line-height:1.25rem;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}> .bx--side-nav__icon{margin-right:0.5rem;}}",
+                          "&&&{position:relative;display:flex;align-items:center;text-decoration:none;min-height:3rem;padding-right:1rem;font-weight:400;&.bx--side-nav__link--current{background-color:",
+                          "#565656",
+                          ";}:focus{outline:4px solid ",
+                          "#0062ff",
+                          ";outline-offset:-4px;}:hover{background-color:",
+                          "#3d3d3d",
+                          ";}> .bx--side-nav__link-text{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:",
+                          "#f3f3f3",
+                          ";font-size:0.875rem;letter-spacing:0.1px;line-height:1.25rem;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}> .bx--side-nav__icon{margin-right:0.5rem;}}",
                         ],
                       },
                       "displayName": "SideNav__StyledSideNavLink",
@@ -663,7 +687,7 @@ the label you want displayed or read by screen readers.",
                 >
                   <SideNavLink
                     aria-label="Boards"
-                    className="disabled SideNav__StyledSideNavLink-yn3bk8-1 hllekx"
+                    className="disabled SideNav__StyledSideNavLink-yn3bk8-1 jvmqQK"
                     element="a"
                     icon={
                       <ForwardRef
@@ -687,7 +711,7 @@ the label you want displayed or read by screen readers.",
                       >
                         <Link
                           aria-label="Boards"
-                          className="bx--side-nav__link disabled SideNav__StyledSideNavLink-yn3bk8-1 hllekx"
+                          className="bx--side-nav__link disabled SideNav__StyledSideNavLink-yn3bk8-1 jvmqQK"
                           element="a"
                           label="Boards"
                           onClick={[MockFunction]}
@@ -695,7 +719,7 @@ the label you want displayed or read by screen readers.",
                         >
                           <a
                             aria-label="Boards"
-                            className="bx--side-nav__link disabled SideNav__StyledSideNavLink-yn3bk8-1 hllekx"
+                            className="bx--side-nav__link disabled SideNav__StyledSideNavLink-yn3bk8-1 jvmqQK"
                             label="Boards"
                             onClick={[MockFunction]}
                             tabIndex={0}
@@ -787,11 +811,17 @@ the label you want displayed or read by screen readers.",
                       "componentStyle": ComponentStyle {
                         "componentId": "SideNav__StyledSideNavLink-yn3bk8-1",
                         "isStatic": true,
-                        "lastClassName": "hllekx",
+                        "lastClassName": "jvmqQK",
                         "rules": Array [
-                          "&&&{position:relative;display:flex;align-items:center;text-decoration:none;min-height:3rem;padding-right:1rem;font-weight:400;:focus{outline:4px solid #0062ff;outline-offset:-4px;}:hover{background-color:",
-                          "#2d3f48",
-                          ";}> .bx--side-nav__link-text{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#f3f3f3;font-size:0.875rem;letter-spacing:0.1px;line-height:1.25rem;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}> .bx--side-nav__icon{margin-right:0.5rem;}}",
+                          "&&&{position:relative;display:flex;align-items:center;text-decoration:none;min-height:3rem;padding-right:1rem;font-weight:400;&.bx--side-nav__link--current{background-color:",
+                          "#565656",
+                          ";}:focus{outline:4px solid ",
+                          "#0062ff",
+                          ";outline-offset:-4px;}:hover{background-color:",
+                          "#3d3d3d",
+                          ";}> .bx--side-nav__link-text{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:",
+                          "#f3f3f3",
+                          ";font-size:0.875rem;letter-spacing:0.1px;line-height:1.25rem;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}> .bx--side-nav__icon{margin-right:0.5rem;}}",
                         ],
                       },
                       "displayName": "SideNav__StyledSideNavLink",
@@ -825,7 +855,7 @@ the label you want displayed or read by screen readers.",
                 >
                   <SideNavLink
                     aria-label="Devices"
-                    className="disabled SideNav__StyledSideNavLink-yn3bk8-1 hllekx"
+                    className="disabled SideNav__StyledSideNavLink-yn3bk8-1 jvmqQK"
                     element="a"
                     href="https://google.com"
                     icon={
@@ -850,7 +880,7 @@ the label you want displayed or read by screen readers.",
                       >
                         <Link
                           aria-label="Devices"
-                          className="bx--side-nav__link bx--side-nav__link--current disabled SideNav__StyledSideNavLink-yn3bk8-1 hllekx"
+                          className="bx--side-nav__link bx--side-nav__link--current disabled SideNav__StyledSideNavLink-yn3bk8-1 jvmqQK"
                           element="a"
                           href="https://google.com"
                           label="Devices"
@@ -858,7 +888,7 @@ the label you want displayed or read by screen readers.",
                         >
                           <a
                             aria-label="Devices"
-                            className="bx--side-nav__link bx--side-nav__link--current disabled SideNav__StyledSideNavLink-yn3bk8-1 hllekx"
+                            className="bx--side-nav__link bx--side-nav__link--current disabled SideNav__StyledSideNavLink-yn3bk8-1 jvmqQK"
                             href="https://google.com"
                             label="Devices"
                             target="_blank"
@@ -948,18 +978,26 @@ the label you want displayed or read by screen readers.",
                       "componentStyle": ComponentStyle {
                         "componentId": "SideNav__StyledSideNavMenu-yn3bk8-2",
                         "isStatic": true,
-                        "lastClassName": "cVDWRM",
+                        "lastClassName": "gzdPQe",
                         "rules": Array [
                           "&&&{background-color:",
-                          "#152935",
+                          "#171717",
                           ";:not(.bx--side-nav__item--active):hover{background-color:",
-                          "#152935",
+                          "#171717",
                           ";}> button:hover{background-color:",
-                          "#2d3f48",
-                          ";}.bx--side-nav__menu[role='menu'] .bx--side-nav__link[role='menuitem']:not(.bx--side-nav__link--current):not([aria-current='page']):hover{background-color:",
-                          "#2d3f48",
+                          "#3d3d3d",
                           ";}:hover{background-color:",
-                          "#2d3f48",
+                          "#3d3d3d",
+                          ";}[aria-expanded='true']{background-color:",
+                          "#3d3d3d",
+                          ";:hover{background-color:",
+                          "#4c4c4c",
+                          ";}+ ul{background-color:",
+                          "#3d3d3d",
+                          ";}+ ul .bx--side-nav__link:hover{background-color:",
+                          "#4c4c4c",
+                          ";}}.bx--side-nav__link--current::before{content:'';position:absolute;top:0;bottom:0;left:0;width:4px;background-color:",
+                          "#0062ff",
                           ";}}",
                         ],
                       },
@@ -993,7 +1031,7 @@ the label you want displayed or read by screen readers.",
                 >
                   <ForwardRef
                     aria-label="dropdown"
-                    className="disabled SideNav__StyledSideNavMenu-yn3bk8-2 cVDWRM"
+                    className="disabled SideNav__StyledSideNavMenu-yn3bk8-2 gzdPQe"
                     icon={
                       <ForwardRef
                         className="bx--header__menu-item bx--header__menu-title"
@@ -1011,7 +1049,7 @@ the label you want displayed or read by screen readers.",
                     <SideNavMenu
                       aria-label="dropdown"
                       buttonRef={null}
-                      className="disabled SideNav__StyledSideNavMenu-yn3bk8-2 cVDWRM"
+                      className="disabled SideNav__StyledSideNavMenu-yn3bk8-2 gzdPQe"
                       defaultExpanded={false}
                       icon={
                         <ForwardRef
@@ -1029,7 +1067,7 @@ the label you want displayed or read by screen readers.",
                       title="Members"
                     >
                       <li
-                        className="bx--side-nav__item disabled SideNav__StyledSideNavMenu-yn3bk8-2 cVDWRM"
+                        className="bx--side-nav__item disabled SideNav__StyledSideNavMenu-yn3bk8-2 gzdPQe"
                       >
                         <button
                           aria-expanded={false}

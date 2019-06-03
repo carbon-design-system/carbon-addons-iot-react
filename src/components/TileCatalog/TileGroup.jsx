@@ -10,8 +10,14 @@ const StyledTiles = styled.div`
     display: flex;
     flex-flow: row wrap;
     > * {
+      border: 1px solid #dfe3e6;
       flex: 1 1 33.33%;
       min-width: 300px;
+    }
+
+    > label {
+      border: 1px solid #dfe3e6;
+      outline-offset: -1px;
     }
     overflow-y: hidden;
   }

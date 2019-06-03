@@ -74,11 +74,12 @@ const StyledMessageBox = styled(InlineNotification)`
 
 const StyledModalFooter = styled(ModalFooter)`
    {
-    display: flex;
-    align-items: center;
-    flex-flow: row nowrap;
-    flex-grow: 0;
     justify-content: flex-end;
+
+    & > * {
+      width: 100%;
+    }
+
     .modal-greedy-spacer {
       flex-grow: 2;
       text-align: left; // needed to override the dialog style

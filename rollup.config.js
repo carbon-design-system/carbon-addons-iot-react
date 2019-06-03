@@ -25,6 +25,7 @@ export default {
       'carbon-components': 'CarbonComponents',
       'carbon-components-react': 'CarbonComponentsReact',
       'styled-components': 'styled',
+      d3: 'd3',
     },
   },
   external: [
@@ -36,6 +37,7 @@ export default {
     '@carbon/icons',
     '@carbon/icons-react',
     'carbon-components',
+    'd3',
   ],
   plugins: [
     resolve({ browser: true, extensions: ['.mjs', '.js', '.jsx', '.json'] }),
