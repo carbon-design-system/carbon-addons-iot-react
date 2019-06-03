@@ -325,7 +325,8 @@ const TableBodyRow = ({
           onRowSelected(id, !isSelected);
           e.preventDefault();
           e.stopPropagation();
-        }}>
+        }}
+      >
         {/* TODO: Replace checkbox with TableSelectRow component when onChange bug is fixed
       https://github.com/IBM/carbon-components-react/issues/1247
       Also move onClick logic above into TableSelectRow
@@ -354,7 +355,8 @@ const TableBodyRow = ({
             data-column={col.columnId}
             data-offset={offset}
             offset={offset}
-            width={matchingColumnMeta && matchingColumnMeta.width}>
+            width={matchingColumnMeta && matchingColumnMeta.width}
+          >
             <StyledNestedSpan nestingOffset={offset}>
               {col.renderDataFunction ? (
                 col.renderDataFunction({
@@ -412,7 +414,8 @@ const TableBodyRow = ({
               onRowSelected(id, true);
             }
             onRowClicked(id);
-          }}>
+          }}
+        >
           {tableCells}
         </StyledTableExpandRowExpanded>
         {!hasRowNesting && (
@@ -440,7 +443,8 @@ const TableBodyRow = ({
             onRowSelected(id, true);
           }
           onRowClicked(id);
-        }}>
+        }}
+      >
         {tableCells}
       </StyledTableExpandRow>
     )
@@ -450,7 +454,8 @@ const TableBodyRow = ({
       onClick={() => {
         onRowClicked(id);
         onRowSelected(id, true);
-      }}>
+      }}
+    >
       {tableCells}
     </StyledSingleSelectedTableRow>
   ) : (
@@ -462,7 +467,8 @@ const TableBodyRow = ({
           onRowSelected(id, true);
         }
         onRowClicked(id);
-      }}>
+      }}
+    >
       {tableCells}
     </StyledTableRow>
   );

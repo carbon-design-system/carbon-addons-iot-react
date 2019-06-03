@@ -341,14 +341,25 @@ const StatefulDashboard = ({ ...props }) => {
   };
   */
 
-  const handleCardAction = (id, type, payload) => {
-    if (type === 'CARD_SIZE_CHANGED') {
+  const handleCardAction = (id, type /* payload */) => {
+    if (type === 'DELETE_CARD') {
+      setCards(cards.filter(i => i.id !== id));
+    }
+    if (type === 'OPEN_EXPANDED_CARD') {
       const cardIndex = cards.findIndex(card => card.id === id);
       const updatedCards = [...cards];
       updatedCards.splice(cardIndex, 1, {
         ...updatedCards[cardIndex],
-        title: payload.size,
-        size: payload.size,
+        isExpanded: true,
+      });
+      setCards(updatedCards);
+    }
+    if (type === 'CLOSE_EXPANDED_CARD') {
+      const cardIndex = cards.findIndex(card => card.id === id);
+      const updatedCards = [...cards];
+      updatedCards.splice(cardIndex, 1, {
+        ...updatedCards[cardIndex],
+        isExpanded: false,
       });
       setCards(updatedCards);
     }

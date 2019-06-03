@@ -99,14 +99,16 @@ const SimplePagination = ({
         role="button"
         tabIndex={hasPrev ? 0 : -1}
         onClick={hasPrev ? handlePrev : undefined}
-        onKeyDown={hasPrev ? evt => handleEnterKeyDown(evt, handlePrev) : undefined}>
+        onKeyDown={hasPrev ? evt => handleEnterKeyDown(evt, handlePrev) : undefined}
+      >
         <Icon name="icon--chevron--left" description={prevPageText} />
       </StyledButton>
       <StyledButton
         role="button"
         tabIndex={hasNext ? 0 : -1}
         onClick={hasNext ? handleNext : undefined}
-        onKeyDown={hasNext ? evt => handleEnterKeyDown(evt, handleNext) : undefined}>
+        onKeyDown={hasNext ? evt => handleEnterKeyDown(evt, handleNext) : undefined}
+      >
         <Icon name="icon--chevron--right" description={nextPageText} />
       </StyledButton>
     </StyledContainer>

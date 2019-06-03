@@ -44,7 +44,8 @@ const ButtonEnhanced = props => {
     <StyledButton
       {...other}
       className={className}
-      disabled={disabled || (loading !== undefined && loading !== false)}>
+      disabled={disabled || (loading !== undefined && loading !== false)}
+    >
       {loading ? <Loading small withOverlay={false} /> : null}
       {children}
     </StyledButton>

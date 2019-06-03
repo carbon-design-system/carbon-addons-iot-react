@@ -238,7 +238,8 @@ class FilterHeaderRow extends Component {
                       onKeyDown={event => {
                         this.handleClearFilter(event, column);
                       }}
-                      title={clearFilterText}>
+                      title={clearFilterText}
+                    >
                       <Icon icon={iconClose} description={clearFilterText} focusable="false" />
                     </div>
                   ) : null}
@@ -249,7 +250,8 @@ class FilterHeaderRow extends Component {
               <StyledTableHeader
                 data-column={column.id}
                 key={`FilterHeader${column.id}`}
-                width={column.width}>
+                width={column.width}
+              >
                 {headerContent}
               </StyledTableHeader>
             );

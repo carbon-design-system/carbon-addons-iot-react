@@ -124,7 +124,8 @@ const NavigationBar = ({ tabs, hero, actions, onSelectionChange, workArea, ...ot
       <StyledTabToContent>
         <Tabs
           {...others}
-          onSelectionChange={index => onSelectionChange && onSelectionChange(tabs[index].id)}>
+          onSelectionChange={index => onSelectionChange && onSelectionChange(tabs[index].id)}
+        >
           {tabs.map(({ children, id, ...other }) => (
             <Tab key={id} {...other}>
               <StyledTabContent>
