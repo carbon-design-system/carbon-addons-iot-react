@@ -96,7 +96,8 @@ const StructuredList = ({ columns, data, design, isFixedWidth, onRowClick, loadi
                     : null
                 }
                 width={col.width}
-                style={design === 'normal' ? { lineHeight: '16px' } : {}}>
+                style={design === 'normal' ? { lineHeight: '16px' } : {}}
+              >
                 {col.renderDataFunction
                   ? col.renderDataFunction({
                       // Call the column renderer if it's provided

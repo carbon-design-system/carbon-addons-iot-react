@@ -59,6 +59,7 @@ const originalCards = [
   },
   {
     title: 'Alerts (Section 2)',
+    tooltip: 'This view showcases the variety of alert severities present in your context.',
     id: 'facilitycard-pie',
     size: CARD_SIZES.SMALL,
     type: CARD_TYPES.PIE,
@@ -341,14 +342,25 @@ const StatefulDashboard = ({ ...props }) => {
   };
   */
 
-  const handleCardAction = (id, type, payload) => {
-    if (type === 'CARD_SIZE_CHANGED') {
+  const handleCardAction = (id, type /* payload */) => {
+    if (type === 'DELETE_CARD') {
+      setCards(cards.filter(i => i.id !== id));
+    }
+    if (type === 'OPEN_EXPANDED_CARD') {
       const cardIndex = cards.findIndex(card => card.id === id);
       const updatedCards = [...cards];
       updatedCards.splice(cardIndex, 1, {
         ...updatedCards[cardIndex],
-        title: payload.size,
-        size: payload.size,
+        isExpanded: true,
+      });
+      setCards(updatedCards);
+    }
+    if (type === 'CLOSE_EXPANDED_CARD') {
+      const cardIndex = cards.findIndex(card => card.id === id);
+      const updatedCards = [...cards];
+      updatedCards.splice(cardIndex, 1, {
+        ...updatedCards[cardIndex],
+        isExpanded: false,
       });
       setCards(updatedCards);
     }
@@ -372,7 +384,7 @@ storiesOf('Dashboard (Experimental)', module)
     return (
       <StatefulDashboard
         title={text('title', 'Munich Building')}
-        isEditable={boolean('isEditable', true)}
+        isEditable={boolean('isEditable', false)}
         dashboardBreakpoints={object('breakpoints', DASHBOARD_BREAKPOINTS)}
         dashboardColumns={object('columns', DASHBOARD_COLUMNS)}
         cardDimensions={object('card dimensions', CARD_DIMENSIONS)}
@@ -384,7 +396,7 @@ storiesOf('Dashboard (Experimental)', module)
     return (
       <StatefulDashboard
         title={text('title', 'Munich Building')}
-        isEditable={boolean('isEditable', true)}
+        isEditable={boolean('isEditable', false)}
         dashboardBreakpoints={object('breakpoints', DASHBOARD_BREAKPOINTS_16_COL)}
         dashboardColumns={object('columns', DASHBOARD_COLUMNS_16_COL)}
         cardDimensions={object('card dimensions', CARD_DIMENSIONS_16_COL)}

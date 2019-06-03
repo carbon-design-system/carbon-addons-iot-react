@@ -117,9 +117,18 @@ export const CardSizesToDimensionsPropTypes = PropTypes.shape({
 export const CardPropTypes = {
   title: PropTypes.string.isRequired,
   id: PropTypes.string,
+  isEditable: PropTypes.bool,
+  isExpanded: PropTypes.bool,
   size: PropTypes.oneOf(Object.values(CARD_SIZES)),
   layout: PropTypes.oneOf(Object.values(CARD_LAYOUTS)),
   breakpoint: PropTypes.oneOf(Object.values(DASHBOARD_SIZES)),
+  availableActions: PropTypes.shape({
+    edit: PropTypes.bool,
+    clone: PropTypes.bool,
+    delete: PropTypes.bool,
+    expand: PropTypes.bool,
+  }),
+  tooltip: PropTypes.element,
   toolbar: PropTypes.element,
   /** Row height in pixels for each layout */
   rowHeight: RowHeightPropTypes,

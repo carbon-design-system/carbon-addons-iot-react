@@ -41,7 +41,8 @@ const ColumnHeaderSelect = ({
     ref={instance => {
       connectDragSource(instance);
       connectDropTarget(instance);
-    }}>
+    }}
+  >
     {children}
     <IconStyled
       style={{ cursor: 'move' }}

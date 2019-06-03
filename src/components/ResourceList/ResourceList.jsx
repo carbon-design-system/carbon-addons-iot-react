@@ -78,12 +78,14 @@ class ResourceList extends Component {
     const customActionContent = rowId => (
       <CustomActionDiv
         className="bx--structured-list-td bx--structured-list-content--nowrap"
-        role="presentation">
+        role="presentation"
+      >
         <Button
           kind="ghost"
           icon={customAction.icon}
           onClick={() => customAction.onClick(rowId)}
-          small>
+          small
+        >
           {customAction.label}
         </Button>
       </CustomActionDiv>
@@ -99,7 +101,8 @@ class ResourceList extends Component {
             activeItem ? 'bx--structured-list-row--selected' : ''
           } bx--structured-list-row`}
           tabIndex={customAction ? -1 : idx}
-          onClick={onRowClick ? () => onRowClick(id) : null}>
+          onClick={onRowClick ? () => onRowClick(id) : null}
+        >
           {extraContent ? (
             <div className="bx--structured-list-td">{extraContent[idx]}</div>
           ) : (
@@ -146,7 +149,8 @@ class ResourceList extends Component {
           'bx--structured-list',
           'bx--structured-list--border',
           'bx--structured-list--selection',
-        ].join(' ')}>
+        ].join(' ')}
+      >
         <div className="bx--structured-list-tbody">{listContent}</div>
       </ResourceListSection>
     );

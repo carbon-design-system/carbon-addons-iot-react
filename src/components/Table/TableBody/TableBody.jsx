@@ -186,7 +186,8 @@ const TableBody = ({
             key={`visibilitysensor-${row.id}`}
             scrollCheck
             partialVisibility
-            resizeCheck>
+            resizeCheck
+          >
             {({ isVisible }) => (isVisible ? renderRow(row) : <tr />)}
           </VisibilitySensor>
         ) : (

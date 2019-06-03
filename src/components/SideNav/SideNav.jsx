@@ -189,7 +189,8 @@ const SideNav = ({ links, defaultExpanded }) => {
       const children = link.childContent.map(childlink => (
         <SideNavMenuItem
           key={`menu-link-${link.childContent.indexOf(childlink)}-child`}
-          {...childlink.metaData}>
+          {...childlink.metaData}
+        >
           {childlink.content}
         </SideNavMenuItem>
       ));
@@ -199,7 +200,8 @@ const SideNav = ({ links, defaultExpanded }) => {
           icon={link.icon}
           aria-label="dropdown"
           key={`menu-link-${links.indexOf(link)}-dropdown`}
-          title={link.linkContent}>
+          title={link.linkContent}
+        >
           {children}
         </StyledSideNavMenu>
       );
@@ -213,7 +215,8 @@ const SideNav = ({ links, defaultExpanded }) => {
         href={link.metaData.href}
         icon={link.icon}
         isActive={link.current}
-        {...link.metaData}>
+        {...link.metaData}
+      >
         {link.linkContent}
       </StyledSideNavLink>
     );

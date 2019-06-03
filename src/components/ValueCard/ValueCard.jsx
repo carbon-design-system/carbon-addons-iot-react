@@ -70,8 +70,13 @@ const ValueCard = ({ title, content, size, ...others }) => {
       break;
   }
 
+  const availableActions = {
+    expand: false,
+    ...others.availableActions,
+  };
+
   return (
-    <Card title={title} size={size} layout={layout} {...others}>
+    <Card title={title} size={size} layout={layout} availableActions={availableActions} {...others}>
       {content.map(i => (
         <AttributeWrapper layout={layout} key={i.title}>
           <AttributeLabel layout={layout}>{i.title}</AttributeLabel>
