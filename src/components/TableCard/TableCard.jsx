@@ -17,34 +17,42 @@ const StyledOverflowMenu = styled(OverflowMenu)`
   }
 `;
 
-const onClick = (e, id, action, onApplyRowAction) => {
-  onApplyRowAction(action, id);
+const onClick = (e, id, action, onRowActionClick) => {
+  onRowActionClick(action, id);
   e.preventDefault();
   e.stopPropagation();
 };
 
-const TableCard = ({ title, data, columns, actions, options, size, view, ...others }) => {
+const TableCard = ({
+  title,
+  data,
+  columns,
+  actions,
+  options,
+  size,
+  view,
+  onRowActionClick,
+  ...others
+}) => {
   const layout = CARD_LAYOUTS.HORIZONTAL;
 
-  const renderActionCell = ({ value: action }) => {
-    if (action.length === 1) {
+  const renderActionCell = cellItem => {
+    if (cellItem.value.length === 1) {
       return (
         <Icon
-          onClick={() => {
-            console.log('link clicked');
-          }}
-          name={action[0].icon}
+          onClick={e => onClick(e, cellItem.rowId, cellItem.value[0].id, onRowActionClick)}
+          name={cellItem.value[0].icon}
         />
       );
     }
     return (
       <StyledOverflowMenu floatingMenu>
-        {action.map(item => {
+        {cellItem.value.map(item => {
           return (
             <OverflowMenuItem
               key={item.id}
               itemText={item.labelText}
-              onClick={e => onClick(e, action.id, actions.table.onApplyRowAction)}
+              onClick={e => onClick(e, cellItem.rowId, item.id, onRowActionClick)}
             />
           );
         })}
@@ -148,16 +156,7 @@ TableCard.propTypes = {
     }),
     /** table wide actions */
     table: PropTypes.shape({
-      onRowSelected: PropTypes.func,
-      onRowClicked: PropTypes.func,
-      onRowExpanded: PropTypes.func,
-      onSelectAll: PropTypes.func,
       onChangeSort: PropTypes.func,
-      /** if you return a promise from apply row action the stateful table will assume you're asynchronous and give a spinner */
-      onApplyRowAction: PropTypes.func,
-      onClearRowError: PropTypes.func,
-      onEmptyStateAction: PropTypes.func,
-      onChangeOrdering: PropTypes.func,
     }).isRequired,
   }),
   options: PropTypes.shape({

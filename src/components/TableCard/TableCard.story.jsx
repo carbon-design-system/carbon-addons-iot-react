@@ -50,15 +50,15 @@ const data = [
       actionColumn: [
         {
           id: 'open',
-          labelText: 'Openn',
+          labelText: 'Open',
         },
         {
           id: 'view',
-          labelText: 'Vieww',
+          labelText: 'View',
         },
         {
-          id: 'open',
-          labelText: 'Open Tickygyget',
+          id: 'openTicket',
+          labelText: 'Open Ticket',
         },
       ],
     },
@@ -94,7 +94,7 @@ const data = [
           labelText: 'View',
         },
         {
-          id: 'open',
+          id: 'openTicket',
           labelText: 'Open Ticket',
         },
       ],
@@ -116,7 +116,7 @@ const data = [
           labelText: 'View',
         },
         {
-          id: 'open',
+          id: 'openTicket',
           labelText: 'Open Ticket',
         },
       ],
@@ -138,7 +138,7 @@ const data = [
           labelText: 'View',
         },
         {
-          id: 'open',
+          id: 'openTicket',
           labelText: 'Open Ticket',
         },
       ],
@@ -160,7 +160,7 @@ const data = [
           labelText: 'View',
         },
         {
-          id: 'open',
+          id: 'openTicket',
           labelText: 'Open Ticket',
         },
       ],
@@ -197,7 +197,7 @@ const data = [
           labelText: 'View',
         },
         {
-          id: 'open',
+          id: 'openTicket',
           labelText: 'Open Ticket',
         },
       ],
@@ -219,7 +219,7 @@ const data = [
           labelText: 'View',
         },
         {
-          id: 'open',
+          id: 'openTicket',
           labelText: 'Open Ticket',
         },
       ],
@@ -234,7 +234,6 @@ const actions = {
   },
   table: {
     onChangeSort: action('onChangeSort'),
-    onRowClicked: action('onRowClicked'),
   },
 };
 
@@ -260,6 +259,7 @@ storiesOf('Table Card (Experimental)', module).add('medium', () => {
             pageSizes: [8],
             page: 1,
             totalItems: data.length,
+            isItemPerPageHidden: true,
           },
           table: {
             ordering: null,
@@ -269,6 +269,7 @@ storiesOf('Table Card (Experimental)', module).add('medium', () => {
             },
           },
         }}
+        onRowActionClick={action('onRowActionClick')}
       />
     </div>
   );
