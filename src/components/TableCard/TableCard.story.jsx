@@ -8,20 +8,35 @@ import { getCardMinSize } from '../../utils/componentUtilityFunctions';
 
 import TableCard from './TableCard';
 
+const renderCustomCell = ({ value: alert }) => {
+  return (
+    <div>
+      <svg height="10" width="10">
+        <circle cx="5" cy="5" r="3" stroke="none" strokeWidth="1" fill="red" />
+      </svg>
+      <span style={{ marginLeft: '10px' }}>{alert}</span>
+    </div>
+  );
+};
+
 const tableColumns = [
   {
     id: 'alert',
     name: 'Alert',
+    renderDataFunction: renderCustomCell,
+    priority: 1,
   },
   {
     id: 'creator',
     name: 'Creator',
     isSortable: true,
+    priority: 3,
   },
   {
     id: 'hour',
     name: 'Hour',
     isSortable: true,
+    priority: 2,
   },
 ];
 
@@ -32,24 +47,21 @@ const data = [
       alert: 'AHI005 Asset failure',
       creator: 'ME',
       hour: '16:20h',
+      actionColumn: [
+        {
+          id: 'open',
+          labelText: 'Openn',
+        },
+        {
+          id: 'view',
+          labelText: 'Vieww',
+        },
+        {
+          id: 'open',
+          labelText: 'Open Tickygyget',
+        },
+      ],
     },
-    rowActions: [
-      {
-        id: 'open',
-        labelText: 'Open',
-        isOverflow: true,
-      },
-      {
-        id: 'view',
-        labelText: 'View',
-        isOverflow: true,
-      },
-      {
-        id: 'openTicket',
-        labelText: 'Open ticket',
-        isOverflow: true,
-      },
-    ],
   },
   {
     id: `row-2`,
@@ -57,24 +69,14 @@ const data = [
       alert: 'AHI003 process need to optimize, afjust X variables',
       creator: 'ME',
       hour: '09:40h',
+      actionColumn: [
+        {
+          id: 'open',
+          labelText: 'Open',
+          icon: 'icon--edit',
+        },
+      ],
     },
-    rowActions: [
-      {
-        id: 'open',
-        labelText: 'Open',
-        isOverflow: true,
-      },
-      {
-        id: 'view',
-        labelText: 'View',
-        isOverflow: true,
-      },
-      {
-        id: 'openTicket',
-        labelText: 'Open ticket',
-        isOverflow: true,
-      },
-    ],
   },
   {
     id: `row-3`,
@@ -82,24 +84,21 @@ const data = [
       alert: 'AHI001 proccess need to optimize, adjust Y variables',
       creator: 'Line Supervisor',
       hour: '16:20h',
+      actionColumn: [
+        {
+          id: 'open',
+          labelText: 'Open',
+        },
+        {
+          id: 'view',
+          labelText: 'View',
+        },
+        {
+          id: 'open',
+          labelText: 'Open Ticket',
+        },
+      ],
     },
-    rowActions: [
-      {
-        id: 'open',
-        labelText: 'Open',
-        isOverflow: true,
-      },
-      {
-        id: 'view',
-        labelText: 'View',
-        isOverflow: true,
-      },
-      {
-        id: 'openTicket',
-        labelText: 'Open ticket',
-        isOverflow: true,
-      },
-    ],
   },
   {
     id: `row-4`,
@@ -107,99 +106,80 @@ const data = [
       alert: 'AHI001 proccess need to optimize, adjust Y variables',
       creator: 'Line Supervisor',
       hour: '16:20h',
+      actionColumn: [
+        {
+          id: 'open',
+          labelText: 'Open',
+        },
+        {
+          id: 'view',
+          labelText: 'View',
+        },
+        {
+          id: 'open',
+          labelText: 'Open Ticket',
+        },
+      ],
     },
-    rowActions: [
-      {
-        id: 'open',
-        labelText: 'Open',
-        isOverflow: true,
-      },
-      {
-        id: 'view',
-        labelText: 'View',
-        isOverflow: true,
-      },
-      {
-        id: 'openTicket',
-        labelText: 'Open ticket',
-        isOverflow: true,
-      },
-    ],
   },
   {
     id: `row-5`,
     values: {
-      alert: 'AHI001 proccess need to optimize, adjust Y variables',
+      alert: 'AHI001 proccess need to optimize',
       creator: 'Line Supervisor',
       hour: '16:20h',
+      actionColumn: [
+        {
+          id: 'open',
+          labelText: 'Open',
+        },
+        {
+          id: 'view',
+          labelText: 'View',
+        },
+        {
+          id: 'open',
+          labelText: 'Open Ticket',
+        },
+      ],
     },
-    rowActions: [
-      {
-        id: 'open',
-        labelText: 'Open',
-        isOverflow: true,
-      },
-      {
-        id: 'view',
-        labelText: 'View',
-        isOverflow: true,
-      },
-      {
-        id: 'openTicket',
-        labelText: 'Open ticket',
-        isOverflow: true,
-      },
-    ],
   },
   {
     id: `row-6`,
     values: {
-      alert: 'AHI001 proccess need to optimize, adjust Y variables',
+      alert: 'AHI001 proccess need to optimize.',
       creator: 'Line Supervisor',
       hour: '16:20h',
+      actionColumn: [
+        {
+          id: 'open',
+          labelText: 'Open',
+        },
+        {
+          id: 'view',
+          labelText: 'View',
+        },
+        {
+          id: 'open',
+          labelText: 'Open Ticket',
+        },
+      ],
     },
-    rowActions: [
-      {
-        id: 'open',
-        labelText: 'Open',
-        isOverflow: true,
-      },
-      {
-        id: 'view',
-        labelText: 'View',
-        isOverflow: true,
-      },
-      {
-        id: 'openTicket',
-        labelText: 'Open ticket',
-        isOverflow: true,
-      },
-    ],
   },
   {
     id: `row-7`,
     values: {
-      alert: 'AHI001 proccess need to optimize, adjust Y variables',
+      alert: 'AHI001 proccess need to optimize',
       creator: 'Line Supervisor',
       hour: '16:20h',
+      actionColumn: [
+        {
+          id: 'open',
+          labelText: 'Open',
+          icon: 'icon--edit',
+        },
+      ],
     },
-    rowActions: [
-      {
-        id: 'open',
-        labelText: 'Open',
-        isOverflow: true,
-      },
-      {
-        id: 'view',
-        labelText: 'View',
-        isOverflow: true,
-      },
-      {
-        id: 'openTicket',
-        labelText: 'Open ticket',
-        isOverflow: true,
-      },
-    ],
   },
   {
     id: `row-8`,
@@ -207,24 +187,21 @@ const data = [
       alert: 'AHI001 proccess need to optimize, adjust Y variables',
       creator: 'Line Supervisor',
       hour: '16:20h',
+      actionColumn: [
+        {
+          id: 'open',
+          labelText: 'Open',
+        },
+        {
+          id: 'view',
+          labelText: 'View',
+        },
+        {
+          id: 'open',
+          labelText: 'Open Ticket',
+        },
+      ],
     },
-    rowActions: [
-      {
-        id: 'open',
-        labelText: 'Open',
-        isOverflow: true,
-      },
-      {
-        id: 'view',
-        labelText: 'View',
-        isOverflow: true,
-      },
-      {
-        id: 'openTicket',
-        labelText: 'Open ticket',
-        isOverflow: true,
-      },
-    ],
   },
   {
     id: `row-9`,
@@ -232,74 +209,21 @@ const data = [
       alert: 'AHI001 proccess need to optimize, adjust Y variables',
       creator: 'Line Supervisor',
       hour: '16:20h',
+      actionColumn: [
+        {
+          id: 'open',
+          labelText: 'Open',
+        },
+        {
+          id: 'view',
+          labelText: 'View',
+        },
+        {
+          id: 'open',
+          labelText: 'Open Ticket',
+        },
+      ],
     },
-    rowActions: [
-      {
-        id: 'open',
-        labelText: 'Open',
-        isOverflow: true,
-      },
-      {
-        id: 'view',
-        labelText: 'View',
-        isOverflow: true,
-      },
-      {
-        id: 'openTicket',
-        labelText: 'Open ticket',
-        isOverflow: true,
-      },
-    ],
-  },
-  {
-    id: `row-10`,
-    values: {
-      alert: 'AHI001 proccess need to optimize, adjust Y variables',
-      creator: 'Line Supervisor',
-      hour: '16:20h',
-    },
-    rowActions: [
-      {
-        id: 'open',
-        labelText: 'Open',
-        isOverflow: true,
-      },
-      {
-        id: 'view',
-        labelText: 'View',
-        isOverflow: true,
-      },
-      {
-        id: 'openTicket',
-        labelText: 'Open ticket',
-        isOverflow: true,
-      },
-    ],
-  },
-  {
-    id: `row-11`,
-    values: {
-      alert: 'AHI001 proccess need to optimize, adjust Y variables',
-      creator: 'Line Supervisor',
-      hour: '16:20h',
-    },
-    rowActions: [
-      {
-        id: 'open',
-        labelText: 'Open',
-        isOverflow: true,
-      },
-      {
-        id: 'view',
-        labelText: 'View',
-        isOverflow: true,
-      },
-      {
-        id: 'openTicket',
-        labelText: 'Open ticket',
-        isOverflow: true,
-      },
-    ],
   },
 ];
 
@@ -309,20 +233,18 @@ const actions = {
     onChangePage: action('onChangePage'),
   },
   table: {
+    onChangeSort: action('onChangeSort'),
     onRowClicked: action('onRowClicked'),
-    onApplyRowAction: action('onApplyRowAction'),
   },
 };
 
-const defaultOrdering = tableColumns.map(c => ({
-  columnId: c.id,
-}));
+storiesOf('Table Card (Experimental)', module).add('medium', () => {
+  const size = select(
+    'size',
+    [CARD_SIZES.TALL, CARD_SIZES.LARGE, CARD_SIZES.XLARGE],
+    CARD_SIZES.LARGE
+  );
 
-storiesOf('List Card (Experimental)', module).add('medium', () => {
-  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.WIDE);
-  console.log('Size', size);
-  console.log('Min size for card? ', getCardMinSize('lg', size));
-  console.log(tableColumns);
   return (
     <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
       <TableCard
@@ -332,25 +254,19 @@ storiesOf('List Card (Experimental)', module).add('medium', () => {
         columns={tableColumns}
         size={size}
         actions={actions}
-        options={{
-          hasRowActions: true,
-          hasPagination: true,
-        }}
-        onRowClick={action('row clicked')}
         view={{
-          filters: [],
-          table: {
-            ordering: defaultOrdering,
-            sort: {
-              columnId: 'view',
-              direction: 'ASC',
-            },
-          },
           pagination: {
-            pageSize: 10,
-            pageSizes: [10, 20, 30],
+            pageSize: 8,
+            pageSizes: [8],
             page: 1,
             totalItems: data.length,
+          },
+          table: {
+            ordering: null,
+            sort: {
+              columnId: 'alert',
+              direction: 'ASC',
+            },
           },
         }}
       />
