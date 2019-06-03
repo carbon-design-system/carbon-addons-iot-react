@@ -135,7 +135,8 @@ const Card = ({
         inline
         hideLabel
         onChange={evt => console.log('new view: ', evt)} // eslint-disable-line
-        defaultValue="weekly">
+        defaultValue="weekly"
+      >
         <SelectItem value="hourly" text="Hourly" />
         <SelectItem value="weekly" text="Weekly" />
         <SelectItem value="monthly" text="Monthly" />

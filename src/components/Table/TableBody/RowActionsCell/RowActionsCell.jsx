@@ -177,7 +177,8 @@ class RowActionsCell extends React.Component {
       <TableCell key={`${id}-row-actions-cell`}>
         <RowActionsContainer
           visible={isRowExpanded || isRowActionRunning || rowActionsError}
-          isRowExpanded={isRowExpanded}>
+          isRowExpanded={isRowExpanded}
+        >
           {rowActionsError ? (
             <RowActionsError
               actionFailedText={actionFailedText}
@@ -203,7 +204,8 @@ class RowActionsCell extends React.Component {
                     onClick={e => onClick(e, id, actionId, onApplyRowAction)}
                     small
                     hideLabel={`${!labelText}`}
-                    isRowExpanded={isRowExpanded}>
+                    isRowExpanded={isRowExpanded}
+                  >
                     {labelText}
                   </RowActionButton>
                 ))}
@@ -217,7 +219,8 @@ class RowActionsCell extends React.Component {
                   iconDescription={overflowMenuAria}
                   isOpen={isOpen}
                   onOpen={this.handleOpen}
-                  onClose={this.handleClose}>
+                  onClose={this.handleClose}
+                >
                   {actions
                     .filter(action => action.isOverflow)
                     .map(action => (

@@ -13,7 +13,8 @@ export default class Container extends Component {
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
-        }}>
+        }}
+      >
         {story()}
       </div>
     );

@@ -104,7 +104,8 @@ const Header = ({ appName, className, actionItems, prefix, skipto }) => {
       const children = item.childContent.map(childItem => (
         <HeaderMenuItem
           key={`menu-item-${item.label + item.childContent.indexOf(childItem)}-child`}
-          {...childItem.metaData}>
+          {...childItem.metaData}
+        >
           {childItem.content}
         </HeaderMenuItem>
       ));
@@ -113,7 +114,8 @@ const Header = ({ appName, className, actionItems, prefix, skipto }) => {
           key={`menu-item-${item.label}`}
           aria-label={item.label}
           isMenu={false}
-          renderMenuContent={() => item.btnContent}>
+          renderMenuContent={() => item.btnContent}
+        >
           {children}
         </HeaderMenu>
       );
@@ -122,7 +124,8 @@ const Header = ({ appName, className, actionItems, prefix, skipto }) => {
       <StyledGlobalAction
         key={`menu-item-${item.label}-global`}
         aria-label={item.label}
-        onClick={item.onClick}>
+        onClick={item.onClick}
+      >
         {item.btnContent}
       </StyledGlobalAction>
     );
