@@ -2,10 +2,14 @@ import React from 'react';
 import {
   Toolbar,
   ToolbarItem,
-  ToolbarOption,
   OverflowMenu,
-  RadioButton,
+  OverflowMenuItem,
+  Button,
+  Select,
+  SelectItem,
 } from 'carbon-components-react';
+import Close16 from '@carbon/icons-react/lib/close/16';
+import Popup20 from '@carbon/icons-react/lib/popup/20';
 import styled from 'styled-components';
 
 import {
@@ -34,7 +38,7 @@ const CardWrapper = styled.div`
 
 /** Header */
 export const CardHeader = styled.div`
-  padding: 0 ${CARD_CONTENT_PADDING}px;
+  padding: 0 ${CARD_CONTENT_PADDING / 2}px 0 ${CARD_CONTENT_PADDING}px;
   flex: 0 1 ${CARD_TITLE_HEIGHT}px;
   display: flex;
   align-items: center;
@@ -68,17 +72,49 @@ const StyledToolbar = styled(Toolbar)`
     margin-top: 0;
     margin-bottom: 0;
   }
-`;
-
-// TODO: i can't figure out why the overflow menu renders behind
-//       other cards, regardless of what z-index i set
-const StyledOverflowMenu = styled(OverflowMenu)`
-  ul.bx--overflow-menu-options--open {
-    z-index: 100000;
+  div.bx--overflow-menu {
+    height: 30px;
   }
 `;
 
-const Card = ({ size, children, title, layout, id, onCardAction, breakpoint, ...others }) => {
+const TinyButton = styled(Button)`
+  &.bx--btn > svg {
+    margin: 0;
+  }
+`;
+
+const defaultProps = {
+  size: CARD_SIZES.SMALL,
+  layout: CARD_SIZES.HORIZONTAL,
+  toolbar: undefined,
+  isEditable: false,
+  isExpanded: false,
+  availableActions: {
+    edit: false,
+    clone: false,
+    delete: true,
+    expand: true,
+  },
+  rowHeight: ROW_HEIGHT,
+  breakpoint: DASHBOARD_SIZES.LARGE,
+  cardDimensions: CARD_DIMENSIONS,
+  dashboardBreakpoints: DASHBOARD_BREAKPOINTS,
+  dashboardColumns: DASHBOARD_COLUMNS,
+};
+
+const Card = ({
+  size,
+  children,
+  title,
+  layout,
+  isEditable,
+  isExpanded,
+  id,
+  onCardAction,
+  availableActions,
+  breakpoint,
+  ...others
+}) => {
   const dimensions = getCardMinSize(
     breakpoint,
     size,
@@ -88,23 +124,78 @@ const Card = ({ size, children, title, layout, id, onCardAction, breakpoint, ...
     others.dashboardColumns
   );
 
-  const toolbar = (
+  const mergedAvailableActions = {
+    ...defaultProps.availableActions,
+    ...availableActions,
+  };
+
+  const timeBoxSelection = (
+    <ToolbarItem>
+      <Select
+        inline
+        hideLabel
+        onChange={evt => console.log('new view: ', evt)} // eslint-disable-line
+        defaultValue="weekly">
+        <SelectItem value="hourly" text="Hourly" />
+        <SelectItem value="weekly" text="Weekly" />
+        <SelectItem value="monthly" text="Monthly" />
+      </Select>
+    </ToolbarItem>
+  );
+
+  const toolbar = isEditable ? (
     <StyledToolbar>
-      <ToolbarItem>
-        <StyledOverflowMenu floatingMenu>
-          {Object.values(CARD_SIZES).map(i => (
-            <ToolbarOption key={i}>
-              <RadioButton
-                value={i}
-                id={i}
-                name="card-size"
-                labelText={i}
-                onChange={val => onCardAction(id, 'CARD_SIZE_CHANGED', { size: val })}
+      {(mergedAvailableActions.edit ||
+        mergedAvailableActions.clone ||
+        mergedAvailableActions.delete) && (
+        <ToolbarItem>
+          <OverflowMenu floatingMenu>
+            {mergedAvailableActions.edit && (
+              <OverflowMenuItem
+                onClick={() => onCardAction(id, 'EDIT_CARD')}
+                itemText="Edit card"
               />
-            </ToolbarOption>
-          ))}
-        </StyledOverflowMenu>
-      </ToolbarItem>
+            )}
+            {mergedAvailableActions.clone && (
+              <OverflowMenuItem
+                onClick={() => onCardAction(id, 'CLONE_CARD')}
+                itemText="Clone card"
+              />
+            )}
+            {mergedAvailableActions.delete && (
+              <OverflowMenuItem
+                isDelete
+                onClick={() => onCardAction(id, 'DELETE_CARD')}
+                itemText="Delete card"
+              />
+            )}
+          </OverflowMenu>
+        </ToolbarItem>
+      )}
+    </StyledToolbar>
+  ) : (
+    <StyledToolbar>
+      {// TODO: if we keep this, expose capability under prop
+      false && timeBoxSelection}
+      {mergedAvailableActions.expand && (
+        <ToolbarItem>
+          {isExpanded ? (
+            <TinyButton
+              kind="ghost"
+              small
+              renderIcon={Close16}
+              onClick={() => onCardAction(id, 'CLOSE_EXPANDED_CARD')}
+            />
+          ) : (
+            <TinyButton
+              kind="ghost"
+              small
+              renderIcon={Popup20}
+              onClick={() => onCardAction(id, 'OPEN_EXPANDED_CARD')}
+            />
+          )}
+        </ToolbarItem>
+      )}
     </StyledToolbar>
   );
 
@@ -126,15 +217,6 @@ const Card = ({ size, children, title, layout, id, onCardAction, breakpoint, ...
 };
 
 Card.propTypes = CardPropTypes;
-Card.defaultProps = {
-  size: CARD_SIZES.SMALL,
-  layout: CARD_SIZES.HORIZONTAL,
-  toolbar: undefined,
-  rowHeight: ROW_HEIGHT,
-  breakpoint: DASHBOARD_SIZES.LARGE,
-  cardDimensions: CARD_DIMENSIONS,
-  dashboardBreakpoints: DASHBOARD_BREAKPOINTS,
-  dashboardColumns: DASHBOARD_COLUMNS,
-};
+Card.defaultProps = defaultProps;
 
 export default Card;

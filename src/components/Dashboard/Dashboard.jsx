@@ -22,6 +22,7 @@ import {
   DASHBOARD_COLUMNS,
   DASHBOARD_BREAKPOINTS,
   CARD_DIMENSIONS,
+  CARD_SIZES,
   ROW_HEIGHT,
   GUTTER,
   CARD_TYPES,
@@ -90,6 +91,76 @@ const Dashboard = ({
   // console.log(breakpoint);
   // console.log(dashboardBreakpoints, cardDimensions, rowHeight);
 
+  const renderCard = card => (
+    <div key={card.id}>
+      {card.type === CARD_TYPES.VALUE ? (
+        <ValueCard
+          {...card}
+          isEditable={isEditable}
+          onCardAction={onCardAction}
+          key={card.id}
+          breakpoint={breakpoint}
+          dashboardBreakpoints={dashboardBreakpoints}
+          dashboardColumns={dashboardColumns}
+          cardDimensions={cardDimensions}
+          rowHeight={rowHeight}
+        />
+      ) : null}
+      {card.type === CARD_TYPES.TIMESERIES ? (
+        <TimeSeriesCard
+          {...card}
+          isEditable={isEditable}
+          onCardAction={onCardAction}
+          key={card.id}
+          breakpoint={breakpoint}
+          dashboardBreakpoints={dashboardBreakpoints}
+          dashboardColumns={dashboardColumns}
+          cardDimensions={cardDimensions}
+          rowHeight={rowHeight}
+        />
+      ) : null}
+      {card.type === CARD_TYPES.DONUT ? (
+        <DonutCard
+          {...card}
+          isEditable={isEditable}
+          onCardAction={onCardAction}
+          key={card.id}
+          breakpoint={breakpoint}
+          dashboardBreakpoints={dashboardBreakpoints}
+          dashboardColumns={dashboardColumns}
+          cardDimensions={cardDimensions}
+          rowHeight={rowHeight}
+        />
+      ) : null}
+      {card.type === CARD_TYPES.PIE ? (
+        <PieCard
+          {...card}
+          isEditable={isEditable}
+          onCardAction={onCardAction}
+          key={card.id}
+          breakpoint={breakpoint}
+          dashboardBreakpoints={dashboardBreakpoints}
+          dashboardColumns={dashboardColumns}
+          cardDimensions={cardDimensions}
+          rowHeight={rowHeight}
+        />
+      ) : null}
+      {card.type === CARD_TYPES.BAR ? (
+        <BarChartCard
+          {...card}
+          isEditable={isEditable}
+          onCardAction={onCardAction}
+          key={card.id}
+          breakpoint={breakpoint}
+          dashboardBreakpoints={dashboardBreakpoints}
+          dashboardColumns={dashboardColumns}
+          cardDimensions={cardDimensions}
+          rowHeight={rowHeight}
+        />
+      ) : null}
+    </div>
+  );
+
   const generatedLayouts = Object.keys(dashboardBreakpoints).reduce((acc, layoutName) => {
     return {
       ...acc, // only generate the layout if we're not passed from the parent
@@ -105,8 +176,17 @@ const Dashboard = ({
 
   // TODO: Can we pickup the GUTTER size and PADDING from the carbon grid styles? or css variables?
   // console.log(generatedLayouts);
+
+  const gridContents = cards.map(card => renderCard(card));
+  const expandedCard = cards.find(i => i.isExpanded) || null;
+
   return (
     <div>
+      {expandedCard && (
+        <div className="bx--modal is-visible">
+          {renderCard({ ...expandedCard, size: CARD_SIZES.XLARGE })}
+        </div>
+      )}
       <DashboardHeader
         title={title}
         description={description}
@@ -131,70 +211,7 @@ const Dashboard = ({
         onBreakpointChange={newBreakpoint => setBreakpoint(newBreakpoint)}
         isResizable={false}
         isDraggable={isEditable}>
-        {cards.map(card => (
-          <div key={card.id}>
-            {card.type === CARD_TYPES.VALUE ? (
-              <ValueCard
-                {...card}
-                onCardAction={onCardAction}
-                key={card.id}
-                breakpoint={breakpoint}
-                dashboardBreakpoints={dashboardBreakpoints}
-                dashboardColumns={dashboardColumns}
-                cardDimensions={cardDimensions}
-                rowHeight={rowHeight}
-              />
-            ) : null}
-            {card.type === CARD_TYPES.TIMESERIES ? (
-              <TimeSeriesCard
-                {...card}
-                onCardAction={onCardAction}
-                key={card.id}
-                breakpoint={breakpoint}
-                dashboardBreakpoints={dashboardBreakpoints}
-                dashboardColumns={dashboardColumns}
-                cardDimensions={cardDimensions}
-                rowHeight={rowHeight}
-              />
-            ) : null}
-            {card.type === CARD_TYPES.DONUT ? (
-              <DonutCard
-                {...card}
-                onCardAction={onCardAction}
-                key={card.id}
-                breakpoint={breakpoint}
-                dashboardBreakpoints={dashboardBreakpoints}
-                dashboardColumns={dashboardColumns}
-                cardDimensions={cardDimensions}
-                rowHeight={rowHeight}
-              />
-            ) : null}
-            {card.type === CARD_TYPES.PIE ? (
-              <PieCard
-                {...card}
-                onCardAction={onCardAction}
-                key={card.id}
-                breakpoint={breakpoint}
-                dashboardBreakpoints={dashboardBreakpoints}
-                dashboardColumns={dashboardColumns}
-                cardDimensions={cardDimensions}
-                rowHeight={rowHeight}
-              />
-            ) : null}
-            {card.type === CARD_TYPES.BAR ? (
-              <BarChartCard
-                {...card}
-                onCardAction={onCardAction}
-                key={card.id}
-                breakpoint={breakpoint}
-                dashboardBreakpoints={dashboardBreakpoints}
-                dashboardColumns={dashboardColumns}
-                cardDimensions={cardDimensions}
-                rowHeight={rowHeight}
-              />
-            ) : null}
-          </div>
-        ))}
+        {gridContents}
       </GridLayout>
     </div>
   );

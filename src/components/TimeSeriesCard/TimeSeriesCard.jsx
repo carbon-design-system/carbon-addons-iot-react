@@ -12,7 +12,6 @@ const ContentWrapper = styled.div`
   margin: 0 16px 16px 16px;
   padding-bottom: 8px;
   width: 100%;
-  background-color: rgb(243, 243, 243);
 `;
 
 const TimeSeriesCard = ({ title, content: { range, data }, size, ...others }) => {
