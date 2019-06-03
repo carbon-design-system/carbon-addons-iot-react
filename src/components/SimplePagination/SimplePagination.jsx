@@ -22,7 +22,6 @@ const StyledContainer = styled.div`
 const StyledPageLabel = styled.span`
   padding-right: 1rem;
   font-size: 0.875rem;
-  ${props => (props.maxPage > 1 ? ` ` : `margin-right:6rem`)};
 `;
 
 const StyledButton = styled.div`
