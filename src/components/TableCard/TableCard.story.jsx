@@ -40,7 +40,7 @@ const tableColumns = [
   },
 ];
 
-const data = [
+export const data = [
   {
     id: `row-1`,
     values: {
@@ -262,7 +262,6 @@ storiesOf('Table Card (Experimental)', module).add('medium', () => {
             isItemPerPageHidden: true,
           },
           table: {
-            ordering: null,
             sort: {
               columnId: 'alert',
               direction: 'ASC',
