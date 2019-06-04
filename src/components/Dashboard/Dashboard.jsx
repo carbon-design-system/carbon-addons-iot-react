@@ -13,6 +13,7 @@ import {
   RowHeightPropTypes,
   DashboardBreakpointsPropTypes,
   DashboardColumnsPropTypes,
+  DashboardLayoutPropTypes,
 } from '../../constants/PropTypes';
 import ValueCard from '../ValueCard/ValueCard';
 import DonutCard from '../DonutCard/DonutCard';
@@ -38,12 +39,12 @@ const propTypes = {
   lastUpdatedLabel: PropTypes.string,
   cards: PropTypes.arrayOf(PropTypes.shape(ValueCardPropTypes)).isRequired,
   layouts: PropTypes.shape({
-    max: PropTypes.array,
-    xl: PropTypes.array,
-    lg: PropTypes.array,
-    md: PropTypes.array,
-    sm: PropTypes.array,
-    xs: PropTypes.array,
+    max: PropTypes.arrayOf(DashboardLayoutPropTypes),
+    xl: PropTypes.arrayOf(DashboardLayoutPropTypes),
+    lg: PropTypes.arrayOf(DashboardLayoutPropTypes),
+    md: PropTypes.arrayOf(DashboardLayoutPropTypes),
+    sm: PropTypes.arrayOf(DashboardLayoutPropTypes),
+    xs: PropTypes.arrayOf(DashboardLayoutPropTypes),
   }),
   /** Row height in pixels for each layout */
   rowHeight: RowHeightPropTypes,
@@ -183,7 +184,12 @@ const Dashboard = ({
       [layoutName]:
         layouts && layouts[layoutName]
           ? layouts[layoutName].map(layout => {
-              const matchingCard = find(cards, { id: layout.i });
+              // if we can't find the card from the layout, assume small
+              let matchingCard = find(cards, { id: layout.i });
+              if (!matchingCard) {
+                console.error(`Error with your layout. Card with id: ${layout.i} not found`); //eslint-disable-line
+                matchingCard = { size: CARD_SIZES.SMALL };
+              }
               return { ...layout, ...cardDimensions[matchingCard.size][layoutName] };
             })
           : getLayout(layoutName, cards, dashboardColumns, cardDimensions),

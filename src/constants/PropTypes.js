@@ -92,6 +92,14 @@ export const DonutCardPropTypes = {
 
 export const PieCardPropTypes = DonutCardPropTypes;
 
+export const DashboardLayoutPropTypes = PropTypes.shape({
+  i: PropTypes.any,
+  x: PropTypes.number,
+  y: PropTypes.number,
+  w: PropTypes.number,
+  h: PropTypes.number,
+});
+
 export const CardDimensionPropTypes = PropTypes.shape({
   w: PropTypes.number,
   h: PropTypes.number,
