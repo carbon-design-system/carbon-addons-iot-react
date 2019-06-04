@@ -22,6 +22,11 @@ const StyledHeader = styled(CarbonHeader)`
     top: 0;
     left: 0;
 
+    .bx--skip-to-content:focus {
+      min-width: 200px;
+      justify-content: center;
+    }
+
     .bx--header__menu-title[role='menuitem'][aria-expanded='true'] + .bx--header__menu {
       left: auto;
       right: 0;
@@ -33,6 +38,7 @@ const StyledHeader = styled(CarbonHeader)`
     }
 
     .bx--header__menu-item[role='menuitem']:focus {
+      border-color: #0062ff;
       outline: none;
     }
   }
