@@ -393,6 +393,7 @@ storiesOf('Dashboard (Experimental)', module)
       <StatefulDashboard
         title={text('title', 'Munich Building')}
         isEditable={boolean('isEditable', false)}
+        isLoading={boolean('isLoading', false)}
         dashboardBreakpoints={object('breakpoints', DASHBOARD_BREAKPOINTS)}
         dashboardColumns={object('columns', DASHBOARD_COLUMNS)}
         cardDimensions={object('card dimensions', CARD_DIMENSIONS)}
@@ -405,6 +406,7 @@ storiesOf('Dashboard (Experimental)', module)
       <StatefulDashboard
         title={text('title', 'Munich Building')}
         isEditable={boolean('isEditable', false)}
+        isLoading={boolean('isLoading', false)}
         dashboardBreakpoints={object('breakpoints', DASHBOARD_BREAKPOINTS_16_COL)}
         dashboardColumns={object('columns', DASHBOARD_COLUMNS_16_COL)}
         cardDimensions={object('card dimensions', CARD_DIMENSIONS_16_COL)}

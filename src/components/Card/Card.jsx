@@ -234,7 +234,7 @@ const Card = ({
       <CardContent layout={layout} height={dimensions.y}>
         {isLoading ? (
           <SkeletonWrapper>
-            <SkeletonText paragraph lineCount={3} width="100%" />
+            <SkeletonText paragraph lineCount={size === CARD_SIZES.XSMALL ? 2 : 3} width="100%" />
           </SkeletonWrapper>
         ) : isEmpty ? (
           <EmptyMessageWrapper>No data is available for this time range.</EmptyMessageWrapper>
