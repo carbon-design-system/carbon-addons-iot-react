@@ -152,4 +152,18 @@ storiesOf('ValueCard (Experimental)', module)
         />
       </div>
     );
+  })
+  .add('empty state', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
+    return (
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+        <ValueCard
+          title={text('title', 'Facility Conditions')}
+          id="facilitycard"
+          content={[]}
+          breakpoint="lg"
+          size={size}
+        />
+      </div>
+    );
   });
