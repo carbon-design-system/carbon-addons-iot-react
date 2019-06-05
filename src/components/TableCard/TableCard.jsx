@@ -138,7 +138,7 @@ const TableCard = ({
   }));
 
   return (
-    <Card title={title} size={size} layout={layout} {...others}>
+    <Card id={id} title={title} size={size} layout={layout} onCardAction={onCardAction} {...others}>
       <StyledStatefulTable
         columns={columnsToRender}
         data={tableData}

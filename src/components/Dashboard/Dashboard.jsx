@@ -114,9 +114,6 @@ const Dashboard = ({
     console.log('dashboard is remounting'); // eslint-disable-line
   }, []);
 
-  // console.log(breakpoint);
-  // console.log(dashboardBreakpoints, cardDimensions, rowHeight);
-
   const renderCard = card => (
     <div key={card.id}>
       {card.type === CARD_TYPES.VALUE ? (
