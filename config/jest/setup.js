@@ -16,3 +16,8 @@ require('./setupJSDom');
 // https://github.com/facebook/react/issues/14050
 // Needed to support useEffect in jest tests
 React.useEffect = React.useLayoutEffect;
+
+// Needed to use d3 in tests
+class SVGPathElement extends HTMLElement {}
+
+window.SVGPathElement = SVGPathElement;

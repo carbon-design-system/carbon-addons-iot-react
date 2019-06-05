@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Responsive, WidthProvider } from 'react-grid-layout';
 import PropTypes from 'prop-types';
 import 'react-grid-layout/css/styles.css';
 import 'react-resizable/css/styles.css';
 import styled from 'styled-components';
 import find from 'lodash/find';
+import { Loading } from 'carbon-components-react';
 
 import { getLayout } from '../../utils/componentUtilityFunctions';
 import {
@@ -13,6 +14,7 @@ import {
   RowHeightPropTypes,
   DashboardBreakpointsPropTypes,
   DashboardColumnsPropTypes,
+  DashboardLayoutPropTypes,
 } from '../../constants/PropTypes';
 import ValueCard from '../ValueCard/ValueCard';
 import DonutCard from '../DonutCard/DonutCard';
@@ -39,12 +41,12 @@ const propTypes = {
   lastUpdatedLabel: PropTypes.string,
   cards: PropTypes.arrayOf(PropTypes.shape(ValueCardPropTypes)).isRequired,
   layouts: PropTypes.shape({
-    max: PropTypes.array,
-    xl: PropTypes.array,
-    lg: PropTypes.array,
-    md: PropTypes.array,
-    sm: PropTypes.array,
-    xs: PropTypes.array,
+    max: PropTypes.arrayOf(DashboardLayoutPropTypes),
+    xl: PropTypes.arrayOf(DashboardLayoutPropTypes),
+    lg: PropTypes.arrayOf(DashboardLayoutPropTypes),
+    md: PropTypes.arrayOf(DashboardLayoutPropTypes),
+    sm: PropTypes.arrayOf(DashboardLayoutPropTypes),
+    xs: PropTypes.arrayOf(DashboardLayoutPropTypes),
   }),
   /** Row height in pixels for each layout */
   rowHeight: RowHeightPropTypes,
@@ -55,6 +57,8 @@ const propTypes = {
   onCardAction: PropTypes.func,
   /** Is the dashboard in edit mode? */
   isEditable: PropTypes.bool,
+  /** Is the dashboard loading data */
+  isLoading: PropTypes.bool,
   /** array of configurable sizes to dimensions */
   cardDimensions: CardSizesToDimensionsPropTypes,
   /** Optional filter that should be rendered top right */
@@ -63,6 +67,7 @@ const propTypes = {
 
 const defaultProps = {
   isEditable: false,
+  isLoading: false,
   description: null,
   lastUpdated: null,
   lastUpdatedLabel: 'Last updated: ',
@@ -100,10 +105,14 @@ const Dashboard = ({
   rowHeight,
   layouts,
   isEditable,
+  isLoading,
   className,
 }) => {
   const [breakpoint, setBreakpoint] = useState('lg');
   // Keep track of whether it's mounted to turn back on the animations
+  useEffect(() => {
+    console.log('dashboard is remounting'); // eslint-disable-line
+  }, []);
 
   // console.log(breakpoint);
   // console.log(dashboardBreakpoints, cardDimensions, rowHeight);
@@ -197,7 +206,12 @@ const Dashboard = ({
       [layoutName]:
         layouts && layouts[layoutName]
           ? layouts[layoutName].map(layout => {
-              const matchingCard = find(cards, { id: layout.i });
+              // if we can't find the card from the layout, assume small
+              let matchingCard = find(cards, { id: layout.i });
+              if (!matchingCard) {
+                console.error(`Error with your layout. Card with id: ${layout.i} not found`); //eslint-disable-line
+                matchingCard = { size: CARD_SIZES.SMALL };
+              }
               return { ...layout, ...cardDimensions[matchingCard.size][layoutName] };
             })
           : getLayout(layoutName, cards, dashboardColumns, cardDimensions),
@@ -224,29 +238,33 @@ const Dashboard = ({
         lastUpdatedLabel={lastUpdatedLabel}
         filter={filter}
       />
-      <StyledGridLayout
-        layouts={generatedLayouts}
-        compactType="vertical"
-        cols={dashboardColumns}
-        breakpoints={dashboardBreakpoints}
-        margin={[GUTTER, GUTTER]}
-        rowHeight={rowHeight[breakpoint]}
-        preventCollision={false}
-        // Stop the initial animation
-        shouldAnimate={isEditable}
-        // TODO: need to consider preserving their loose packing decisions on layout change
-        // TODO: also, should we reorder our cards based on the layout change, and regenerate all
-        //       other layouts?  for example, moving card 5 to before card 2 in lg should mean
-        //       that the order changes for xl, md, sm, xs, etc. layouts
-        /* onLayoutChange={
+      {isLoading ? (
+        <Loading withOverlay={false} />
+      ) : (
+        <StyledGridLayout
+          layouts={generatedLayouts}
+          compactType="vertical"
+          cols={dashboardColumns}
+          breakpoints={dashboardBreakpoints}
+          margin={[GUTTER, GUTTER]}
+          rowHeight={rowHeight[breakpoint]}
+          preventCollision={false}
+          // Stop the initial animation
+          shouldAnimate={isEditable}
+          // TODO: need to consider preserving their loose packing decisions on layout change
+          // TODO: also, should we reorder our cards based on the layout change, and regenerate all
+          //       other layouts?  for example, moving card 5 to before card 2 in lg should mean
+          //       that the order changes for xl, md, sm, xs, etc. layouts
+          /* onLayoutChange={
          layout =>  console.log('new layout, time to regenerate', JSON.stringify(layout)
         } */
-        onBreakpointChange={newBreakpoint => setBreakpoint(newBreakpoint)}
-        isResizable={false}
-        isDraggable={isEditable}
-      >
-        {gridContents}
-      </StyledGridLayout>
+          onBreakpointChange={newBreakpoint => setBreakpoint(newBreakpoint)}
+          isResizable={false}
+          isDraggable={isEditable}
+        >
+          {gridContents}
+        </StyledGridLayout>
+      )}
     </div>
   );
 };
