@@ -200,7 +200,8 @@ class HeaderMenu extends React.Component {
           ref={this.handleMenuButtonRef}
           role="menuitem"
           tabIndex={0}
-          aria-label={ariaLabel}>
+          aria-label={ariaLabel}
+        >
           <MenuContent ariaLabel={ariaLabel} />
         </a>
         <ul {...accessibilityLabel} className={`${prefix}--header__menu`} role="menu">

@@ -2,16 +2,16 @@ import {
   SideNavItems,
   SideNavLink,
   SideNavMenu,
-  SideNavMenuItem,
-} from 'carbon-components-react//lib/components/UIShell';
-import styled from 'styled-components';
-import PropTypes from 'prop-types';
-import React from 'react';
-import classnames from 'classnames';
+  SideNavMenuItem
+} from "carbon-components-react//lib/components/UIShell";
+import styled from "styled-components";
+import PropTypes from "prop-types";
+import React from "react";
+import classnames from "classnames";
 
-import { COLORS } from '../../styles/styles';
+import { COLORS } from "../../styles/styles";
 
-import CarbonSideNav from './CarbonSideNav';
+import CarbonSideNav from "./CarbonSideNav";
 
 const StyledSideNav = styled(CarbonSideNav)`
   &&& {
@@ -19,7 +19,7 @@ const StyledSideNav = styled(CarbonSideNav)`
     border-top: 1px solid #3c4646;
     height: calc(100% - 3rem);
 
-    .bx--side-nav__menu[role='menu'] .bx--side-nav__link[role='menuitem'] {
+    .bx--side-nav__menu[role="menu"] .bx--side-nav__link[role="menuitem"] {
       height: 2rem;
       min-height: 2rem;
       padding-left: 3.5rem;
@@ -132,7 +132,7 @@ const StyledSideNavMenu = styled(SideNavMenu)`
       background-color: ${COLORS.gray80};
     }
 
-    [aria-expanded='true'] {
+    [aria-expanded="true"] {
       background-color: ${COLORS.gray80};
 
       :hover {
@@ -149,7 +149,7 @@ const StyledSideNavMenu = styled(SideNavMenu)`
     }
     /* We have to apply these styles when we switch out a tag for something else */
     .bx--side-nav__link--current::before {
-      content: '';
+      content: "";
       position: absolute;
       top: 0;
       bottom: 0;
@@ -198,15 +198,15 @@ const propTypes = {
           */
           metaData: PropTypes.object,
           /** content to render inside sub menu link */
-          content: PropTypes.any.isRequired,
+          content: PropTypes.any.isRequired
         })
-      ),
+      )
     })
-  ).isRequired,
+  ).isRequired
 };
 
 const defaultProps = {
-  defaultExpanded: false,
+  defaultExpanded: false
 };
 
 /**
@@ -218,12 +218,13 @@ const SideNav = ({ links, defaultExpanded }) => {
     if (!enabled) {
       return null;
     }
-    if (link.hasOwnProperty('childContent')) {
+    if (link.hasOwnProperty("childContent")) {
       const children = link.childContent.map(childlink => (
         <SideNavMenuItem
           key={`menu-link-${link.childContent.indexOf(childlink)}-child`}
           isActive={childlink.current}
-          {...childlink.metaData}>
+          {...childlink.metaData}
+        >
           {childlink.content}
         </SideNavMenuItem>
       ));
@@ -233,7 +234,8 @@ const SideNav = ({ links, defaultExpanded }) => {
           icon={link.icon}
           aria-label="dropdown"
           key={`menu-link-${links.indexOf(link)}-dropdown`}
-          title={link.linkContent}>
+          title={link.linkContent}
+        >
           {children}
         </StyledSideNavMenu>
       );
@@ -241,20 +243,24 @@ const SideNav = ({ links, defaultExpanded }) => {
     return (
       <StyledSideNavLink
         className={classnames({ disabled: link.isEnabled })}
-        key={`menu-link-${link.metaData.label.replace(/\s/g, '')}-global`}
+        key={`menu-link-${link.metaData.label.replace(/\s/g, "")}-global`}
         aria-label={link.metaData.label}
         onClick={link.metaData.onClick}
         href={link.metaData.href}
         icon={link.icon}
         isActive={link.current}
-        {...link.metaData}>
+        {...link.metaData}
+      >
         {link.linkContent}
       </StyledSideNavLink>
     );
   });
 
   return (
-    <StyledSideNav aria-label="Side navigation" defaultExpanded={defaultExpanded}>
+    <StyledSideNav
+      aria-label="Side navigation"
+      defaultExpanded={defaultExpanded}
+    >
       <SideNavItems>{nav}</SideNavItems>
     </StyledSideNav>
   );

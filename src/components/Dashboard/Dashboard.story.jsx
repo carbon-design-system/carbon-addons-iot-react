@@ -9,7 +9,7 @@ import { Button } from 'carbon-components-react';
 import moment from 'moment';
 */
 
-import { chartData } from '../../utils/sample';
+import { chartData, tableColumns, tableData } from '../../utils/sample';
 import {
   COLORS,
   DASHBOARD_BREAKPOINTS,
@@ -30,9 +30,14 @@ const originalCards = [
     id: 'facilitycard',
     size: CARD_SIZES.SMALL,
     type: CARD_TYPES.VALUE,
+    availableActions: {
+      delete: true,
+    },
     content: [
       { title: 'Comfort Level', value: 89, unit: '%' },
       { title: 'Utilization', value: 76, unit: '%' },
+      { title: 'Humidity', value: 46, unit: '%' },
+      { title: 'Pressure', value: 21.4, unit: 'mb' },
       { title: 'Number of Alerts', value: 17 },
     ],
   },
@@ -41,6 +46,9 @@ const originalCards = [
     id: 'facilitycard-xs',
     size: CARD_SIZES.XSMALL,
     type: CARD_TYPES.VALUE,
+    availableActions: {
+      delete: true,
+    },
     content: [{ title: 'Comfort Level', value: 89, unit: '%' }],
   },
   {
@@ -48,20 +56,36 @@ const originalCards = [
     id: 'facilitycard-xs2',
     size: CARD_SIZES.XSMALL,
     type: CARD_TYPES.VALUE,
-    content: [{ title: 'Utilization', value: 76, unit: '%' }],
+    availableActions: {
+      delete: true,
+    },
+    content: [{ title: 'Utilization', value: 76, secondaryValue: 'Average', unit: '%' }],
   },
   {
     title: 'XSMALL',
     id: 'facilitycard-xs3',
     size: CARD_SIZES.XSMALL,
     type: CARD_TYPES.VALUE,
-    content: [{ title: 'Alert Count', value: 17 }],
+    availableActions: {
+      delete: true,
+    },
+    content: [
+      {
+        title: 'Alert Count',
+        value: 35,
+        secondaryValue: { value: 13, trend: 'up', color: 'green' },
+      },
+    ],
   },
   {
     title: 'Alerts (Section 2)',
+    tooltip: 'This view showcases the variety of alert severities present in your context.',
     id: 'facilitycard-pie',
     size: CARD_SIZES.SMALL,
     type: CARD_TYPES.PIE,
+    availableActions: {
+      delete: true,
+    },
     content: {
       title: 'Alerts',
       data: [
@@ -72,23 +96,43 @@ const originalCards = [
     },
   },
   {
-    title: 'TALL',
-    id: 'facilitycard2',
-    size: CARD_SIZES.TALL,
+    title: 'XSMALL',
+    id: 'facilitycard-xs4',
+    size: CARD_SIZES.XSMALL,
     type: CARD_TYPES.VALUE,
+    availableActions: {
+      delete: true,
+    },
     content: [
-      { title: 'Comfort Level', value: 89, unit: '%' },
-      { title: 'Utilization', value: 76, unit: '%' },
-      { title: 'Humidity', value: 46, unit: '%' },
-      { title: 'Pressure', value: 21.4, unit: 'mb' },
-      { title: 'Number of Alerts', value: 17 },
+      {
+        title: 'Foot Traffic',
+        value: 13572,
+        secondaryValue: { value: '22%', trend: 'down', color: 'red' },
+      },
     ],
+  },
+  {
+    title: 'Alerts',
+    id: 'alert-table1',
+    size: CARD_SIZES.LARGE,
+    type: CARD_TYPES.TABLE,
+    availableActions: {
+      expand: true,
+    },
+    content: {
+      data: tableData,
+      columns: tableColumns,
+    },
   },
   {
     title: 'Atmospheric Conditions (Section 2)',
     id: 'facilitycard3',
     size: CARD_SIZES.MEDIUM,
     type: CARD_TYPES.TIMESERIES,
+    availableActions: {
+      delete: true,
+      expand: true,
+    },
     content: {
       data: [
         {
@@ -119,6 +163,10 @@ const originalCards = [
     id: 'xlarge-bar-alerts',
     size: CARD_SIZES.LARGE,
     type: CARD_TYPES.BAR,
+    availableActions: {
+      delete: true,
+      expand: true,
+    },
     content: {
       data: [
         {
@@ -159,6 +207,9 @@ const originalCards = [
     id: 'facilitycard-donut',
     size: CARD_SIZES.SMALL,
     type: CARD_TYPES.DONUT,
+    availableActions: {
+      delete: true,
+    },
     content: {
       title: 'Alerts',
       data: [
@@ -169,22 +220,14 @@ const originalCards = [
     },
   },
   {
-    title: 'WIDE',
-    id: 'facilitycard5',
-    size: CARD_SIZES.WIDE,
-    type: CARD_TYPES.VALUE,
-    content: [
-      { title: 'Comfort Level', value: 89, unit: '%' },
-      { title: 'Utilization', value: 76, unit: '%' },
-      { title: 'Heat', value: 1976, unit: 'K' },
-      { title: 'Number of Alerts', value: 17 },
-    ],
-  },
-  {
     title: 'Atmospheric Conditions (Section 1)',
     id: 'xlarge-timeseries-pressure',
     size: CARD_SIZES.XLARGE,
     type: CARD_TYPES.TIMESERIES,
+    availableActions: {
+      delete: true,
+      expand: true,
+    },
     content: {
       data: [
         {
@@ -219,17 +262,6 @@ const originalCards = [
         },
       ],
     },
-  },
-  {
-    title: 'LARGE',
-    id: 'facilitycard6',
-    size: CARD_SIZES.LARGE,
-    type: CARD_TYPES.VALUE,
-    content: [
-      { title: 'Comfort Level', value: 89, unit: '%' },
-      { title: 'Utilization', value: 76, unit: '%' },
-      { title: 'Number of Alerts', value: 17 },
-    ],
   },
 ];
 
@@ -342,15 +374,18 @@ const StatefulDashboard = ({ ...props }) => {
   */
 
   const handleCardAction = (id, type, payload) => {
-    if (type === 'CARD_SIZE_CHANGED') {
-      const cardIndex = cards.findIndex(card => card.id === id);
-      const updatedCards = [...cards];
-      updatedCards.splice(cardIndex, 1, {
-        ...updatedCards[cardIndex],
-        title: payload.size,
-        size: payload.size,
-      });
-      setCards(updatedCards);
+    console.log(id, type, payload);
+    if (type === 'DELETE_CARD') {
+      setCards(cards.filter(i => i.id !== id));
+    }
+    if (type === 'OPEN_EXPANDED_CARD') {
+      setCards(cards.map(i => (i.id === id ? { ...i, isExpanded: true } : i)));
+    }
+    if (type === 'CLOSE_EXPANDED_CARD') {
+      setCards(cards.map(i => (i.id === id ? { ...i, isExpanded: false } : i)));
+    }
+    if (type === 'TABLE_CARD_ROW_ACTION') {
+      console.log(id, type, payload);
     }
   };
 
@@ -373,6 +408,7 @@ storiesOf('Dashboard (Experimental)', module)
       <StatefulDashboard
         title={text('title', 'Munich Building')}
         isEditable={boolean('isEditable', false)}
+        isLoading={boolean('isLoading', false)}
         dashboardBreakpoints={object('breakpoints', DASHBOARD_BREAKPOINTS)}
         dashboardColumns={object('columns', DASHBOARD_COLUMNS)}
         cardDimensions={object('card dimensions', CARD_DIMENSIONS)}
@@ -385,9 +421,23 @@ storiesOf('Dashboard (Experimental)', module)
       <StatefulDashboard
         title={text('title', 'Munich Building')}
         isEditable={boolean('isEditable', false)}
+        isLoading={boolean('isLoading', false)}
         dashboardBreakpoints={object('breakpoints', DASHBOARD_BREAKPOINTS_16_COL)}
         dashboardColumns={object('columns', DASHBOARD_COLUMNS_16_COL)}
         cardDimensions={object('card dimensions', CARD_DIMENSIONS_16_COL)}
+        rowHeight={object('row height', ROW_HEIGHT)}
+      />
+    );
+  })
+  .add('loading', () => {
+    return (
+      <StatefulDashboard
+        title={text('title', 'Munich Building')}
+        isEditable={boolean('isEditable', false)}
+        isLoading={boolean('isLoading', true)}
+        dashboardBreakpoints={object('breakpoints', DASHBOARD_BREAKPOINTS)}
+        dashboardColumns={object('columns', DASHBOARD_COLUMNS)}
+        cardDimensions={object('card dimensions', CARD_DIMENSIONS)}
         rowHeight={object('row height', ROW_HEIGHT)}
       />
     );

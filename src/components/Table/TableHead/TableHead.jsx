@@ -159,7 +159,8 @@ const TableHead = ({
                   onChangeSort(matchingColumnMeta.id);
                 }
               }}
-              sortDirection={hasSort ? sort.direction : 'NONE'}>
+              sortDirection={hasSort ? sort.direction : 'NONE'}
+            >
               <TableCellRenderer>{matchingColumnMeta.name}</TableCellRenderer>
             </StyledCustomTableHeader>
           ) : null;

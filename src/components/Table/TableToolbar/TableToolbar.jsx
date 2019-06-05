@@ -168,7 +168,8 @@ const TableToolbar = ({
       <TableBatchActions
         onCancel={onCancelBatchAction}
         shouldShowBatchActions={hasRowSelection === 'multi' && totalSelected > 0}
-        totalSelected={totalSelected}>
+        totalSelected={totalSelected}
+      >
         {batchActions.map(({ id, labelText, ...others }) => (
           <TableBatchAction key={id} onClick={() => onApplyBatchAction(id)} {...others}>
             {labelText}

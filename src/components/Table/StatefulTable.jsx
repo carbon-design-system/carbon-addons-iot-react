@@ -1,8 +1,9 @@
-import React, { useReducer, useEffect } from 'react';
-import merge from 'lodash/merge';
-import get from 'lodash/get';
+import React, { useReducer } from "react";
+import useDeepCompareEffect from "use-deep-compare-effect";
+import merge from "lodash/merge";
+import get from "lodash/get";
 
-import { tableReducer } from './tableReducer';
+import { tableReducer } from "./tableReducer";
 import {
   tableRegister,
   tablePageChange,
@@ -19,9 +20,9 @@ import {
   tableColumnOrder,
   tableRowActionStart,
   tableRowActionComplete,
-  tableRowActionError,
-} from './tableActionCreators';
-import Table, { defaultProps } from './Table';
+  tableRowActionError
+} from "./tableActionCreators";
+import Table, { defaultProps } from "./Table";
 
 const callbackParent = (callback, ...args) => callback && callback(...args);
 
@@ -34,20 +35,23 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
     options,
     view: initialState,
     actions: callbackActions,
-    lightweight,
+    lightweight
   } = merge({}, defaultProps({ data: initialData, ...other }), other);
-  const [state, dispatch] = useReducer(tableReducer, { data: initialData, view: initialState });
-  const isLoading = get(initialState, 'table.loadingState.isLoading');
+  const [state, dispatch] = useReducer(tableReducer, {
+    data: initialData,
+    view: initialState
+  });
+  const isLoading = get(initialState, "table.loadingState.isLoading");
   // Need to initially sort and filter the tables data
-  useEffect(() => {
+  useDeepCompareEffect(() => {
     dispatch(tableRegister({ data: initialData, isLoading }));
   }, [initialData, isLoading]);
 
   const {
     view,
     view: {
-      table: { filteredData, selectedIds },
-    },
+      table: { filteredData, selectedIds }
+    }
   } = state;
 
   const { pagination, toolbar, table } = callbackActions;
@@ -59,7 +63,7 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
     onClearAllFilters,
     onCancelBatchAction,
     onApplyBatchAction,
-    onApplySearch,
+    onApplySearch
   } = toolbar || {};
   const {
     onChangeSort,
@@ -70,7 +74,7 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
     onApplyRowAction,
     onClearRowError,
     onEmptyStateAction,
-    onChangeOrdering,
+    onChangeOrdering
   } = table || {};
 
   // In addition to updating the store, I always callback to the parent in case they want to do something
@@ -79,7 +83,7 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
       onChangePage: paginationValues => {
         dispatch(tablePageChange(paginationValues));
         callbackParent(onChangePage, paginationValues);
-      },
+      }
     },
     toolbar: {
       onApplyFilter: filterValues => {
@@ -87,12 +91,12 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
         callbackParent(onApplyFilter, filterValues);
       },
       onToggleFilter: () => {
-        dispatch(tableToolbarToggle('filter'));
-        callbackParent(onToggleFilter, 'filter');
+        dispatch(tableToolbarToggle("filter"));
+        callbackParent(onToggleFilter, "filter");
       },
       onToggleColumnSelection: () => {
-        dispatch(tableToolbarToggle('column'));
-        callbackParent(onToggleColumnSelection, 'column');
+        dispatch(tableToolbarToggle("column"));
+        callbackParent(onToggleColumnSelection, "column");
       },
       onClearAllFilters: () => {
         dispatch(tableFilterClear());
@@ -109,7 +113,7 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
       onApplySearch: string => {
         callbackParent(onApplySearch, string);
         dispatch(tableSearchApply(string));
-      },
+      }
     },
     table: {
       onChangeSort: column => {
@@ -151,8 +155,8 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
       onChangeOrdering: ordering => {
         dispatch(tableColumnOrder(ordering));
         callbackParent(onChangeOrdering, ordering);
-      },
-    },
+      }
+    }
   };
   return filteredData ? (
     <Table
@@ -166,8 +170,8 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
         ...view,
         pagination: {
           ...view.pagination,
-          totalItems: filteredData.length,
-        },
+          totalItems: filteredData.length
+        }
       }}
       actions={actions}
       lightweight={lightweight}

@@ -5,6 +5,14 @@ import { CARD_SIZES, CARD_LAYOUTS, DASHBOARD_SIZES } from './LayoutConstants';
 export const AttributePropTypes = PropTypes.shape({
   title: PropTypes.string.isRequired,
   value: PropTypes.any,
+  secondaryValue: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.shape({
+      value: PropTypes.string,
+      color: PropTypes.string,
+      trend: PropTypes.oneOf(['up', 'down']),
+    }),
+  ]),
   unit: PropTypes.string,
 });
 
@@ -60,6 +68,32 @@ export const TimeSeriesCardPropTypes = {
   }).isRequired,
 };
 
+export const TableCardPropTypes = {
+  content: PropTypes.shape({
+    columns: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.string.isRequired,
+        name: PropTypes.string.isRequired,
+        priority: PropTypes.number,
+        renderer: PropTypes.func,
+      })
+    ).isRequired,
+    data: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.string.isRequired,
+        values: PropTypes.object.isRequired,
+        actions: PropTypes.arrayOf(
+          PropTypes.shape({
+            id: PropTypes.string.isRequired,
+            label: PropTypes.string,
+            icon: PropTypes.string,
+          })
+        ),
+      })
+    ).isRequired,
+  }).isRequired,
+};
+
 export const BarChartDatasetPropTypes = PropTypes.shape({
   label: PropTypes.string.isRequired,
   values: PropTypes.arrayOf(
@@ -92,6 +126,14 @@ export const DonutCardPropTypes = {
 
 export const PieCardPropTypes = DonutCardPropTypes;
 
+export const DashboardLayoutPropTypes = PropTypes.shape({
+  i: PropTypes.any,
+  x: PropTypes.number,
+  y: PropTypes.number,
+  w: PropTypes.number,
+  h: PropTypes.number,
+});
+
 export const CardDimensionPropTypes = PropTypes.shape({
   w: PropTypes.number,
   h: PropTypes.number,
@@ -117,9 +159,20 @@ export const CardSizesToDimensionsPropTypes = PropTypes.shape({
 export const CardPropTypes = {
   title: PropTypes.string.isRequired,
   id: PropTypes.string,
+  isLoading: PropTypes.bool,
+  isEmpty: PropTypes.bool,
+  isEditable: PropTypes.bool,
+  isExpanded: PropTypes.bool,
   size: PropTypes.oneOf(Object.values(CARD_SIZES)),
   layout: PropTypes.oneOf(Object.values(CARD_LAYOUTS)),
   breakpoint: PropTypes.oneOf(Object.values(DASHBOARD_SIZES)),
+  availableActions: PropTypes.shape({
+    edit: PropTypes.bool,
+    clone: PropTypes.bool,
+    delete: PropTypes.bool,
+    expand: PropTypes.bool,
+  }),
+  tooltip: PropTypes.element,
   toolbar: PropTypes.element,
   /** Row height in pixels for each layout */
   rowHeight: RowHeightPropTypes,

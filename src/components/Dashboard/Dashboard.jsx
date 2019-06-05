@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Responsive, WidthProvider } from 'react-grid-layout';
 import PropTypes from 'prop-types';
 import 'react-grid-layout/css/styles.css';
@@ -13,9 +13,11 @@ import {
   RowHeightPropTypes,
   DashboardBreakpointsPropTypes,
   DashboardColumnsPropTypes,
+  DashboardLayoutPropTypes,
 } from '../../constants/PropTypes';
 import ValueCard from '../ValueCard/ValueCard';
 import DonutCard from '../DonutCard/DonutCard';
+import TableCard from '../TableCard/TableCard';
 import BarChartCard from '../BarChartCard/BarChartCard';
 import PieCard from '../PieCard/PieCard';
 import TimeSeriesCard from '../TimeSeriesCard/TimeSeriesCard';
@@ -23,6 +25,7 @@ import {
   DASHBOARD_COLUMNS,
   DASHBOARD_BREAKPOINTS,
   CARD_DIMENSIONS,
+  CARD_SIZES,
   ROW_HEIGHT,
   GUTTER,
   CARD_TYPES,
@@ -37,12 +40,12 @@ const propTypes = {
   lastUpdatedLabel: PropTypes.string,
   cards: PropTypes.arrayOf(PropTypes.shape(ValueCardPropTypes)).isRequired,
   layouts: PropTypes.shape({
-    max: PropTypes.array,
-    xl: PropTypes.array,
-    lg: PropTypes.array,
-    md: PropTypes.array,
-    sm: PropTypes.array,
-    xs: PropTypes.array,
+    max: PropTypes.arrayOf(DashboardLayoutPropTypes),
+    xl: PropTypes.arrayOf(DashboardLayoutPropTypes),
+    lg: PropTypes.arrayOf(DashboardLayoutPropTypes),
+    md: PropTypes.arrayOf(DashboardLayoutPropTypes),
+    sm: PropTypes.arrayOf(DashboardLayoutPropTypes),
+    xs: PropTypes.arrayOf(DashboardLayoutPropTypes),
   }),
   /** Row height in pixels for each layout */
   rowHeight: RowHeightPropTypes,
@@ -53,12 +56,17 @@ const propTypes = {
   onCardAction: PropTypes.func,
   /** Is the dashboard in edit mode? */
   isEditable: PropTypes.bool,
+  /** Is the dashboard loading data */
+  isLoading: PropTypes.bool,
   /** array of configurable sizes to dimensions */
   cardDimensions: CardSizesToDimensionsPropTypes,
+  /** Optional filter that should be rendered top right */
+  filter: PropTypes.node,
 };
 
 const defaultProps = {
   isEditable: false,
+  isLoading: false,
   description: null,
   lastUpdated: null,
   lastUpdatedLabel: 'Last updated: ',
@@ -68,6 +76,7 @@ const defaultProps = {
   cardDimensions: CARD_DIMENSIONS,
   dashboardBreakpoints: DASHBOARD_BREAKPOINTS,
   dashboardColumns: DASHBOARD_COLUMNS,
+  filter: null,
 };
 
 const GridLayout = WidthProvider(Responsive);
@@ -91,16 +100,106 @@ const Dashboard = ({
   dashboardBreakpoints,
   cardDimensions,
   dashboardColumns,
+  filter,
   rowHeight,
   layouts,
   isEditable,
+  isLoading,
   className,
 }) => {
   const [breakpoint, setBreakpoint] = useState('lg');
   // Keep track of whether it's mounted to turn back on the animations
+  useEffect(() => {
+    console.log('dashboard is remounting'); // eslint-disable-line
+  }, []);
 
-  // console.log(breakpoint);
-  // console.log(dashboardBreakpoints, cardDimensions, rowHeight);
+  const renderCard = card => (
+    <div key={card.id}>
+      {card.type === CARD_TYPES.VALUE ? (
+        <ValueCard
+          {...card}
+          isLoading={isLoading}
+          isEditable={isEditable}
+          onCardAction={onCardAction}
+          key={card.id}
+          breakpoint={breakpoint}
+          dashboardBreakpoints={dashboardBreakpoints}
+          dashboardColumns={dashboardColumns}
+          cardDimensions={cardDimensions}
+          rowHeight={rowHeight}
+        />
+      ) : null}
+      {card.type === CARD_TYPES.TIMESERIES ? (
+        <TimeSeriesCard
+          {...card}
+          isLoading={isLoading}
+          isEditable={isEditable}
+          onCardAction={onCardAction}
+          key={card.id}
+          breakpoint={breakpoint}
+          dashboardBreakpoints={dashboardBreakpoints}
+          dashboardColumns={dashboardColumns}
+          cardDimensions={cardDimensions}
+          rowHeight={rowHeight}
+        />
+      ) : null}
+      {card.type === CARD_TYPES.TABLE ? (
+        <TableCard
+          {...card}
+          isEditable={isEditable}
+          onCardAction={onCardAction}
+          key={card.id}
+          breakpoint={breakpoint}
+          dashboardBreakpoints={dashboardBreakpoints}
+          dashboardColumns={dashboardColumns}
+          cardDimensions={cardDimensions}
+          rowHeight={rowHeight}
+        />
+      ) : null}
+      {card.type === CARD_TYPES.DONUT ? (
+        <DonutCard
+          {...card}
+          isLoading={isLoading}
+          isEditable={isEditable}
+          onCardAction={onCardAction}
+          key={card.id}
+          breakpoint={breakpoint}
+          dashboardBreakpoints={dashboardBreakpoints}
+          dashboardColumns={dashboardColumns}
+          cardDimensions={cardDimensions}
+          rowHeight={rowHeight}
+        />
+      ) : null}
+      {card.type === CARD_TYPES.PIE ? (
+        <PieCard
+          {...card}
+          isLoading={isLoading}
+          isEditable={isEditable}
+          onCardAction={onCardAction}
+          key={card.id}
+          breakpoint={breakpoint}
+          dashboardBreakpoints={dashboardBreakpoints}
+          dashboardColumns={dashboardColumns}
+          cardDimensions={cardDimensions}
+          rowHeight={rowHeight}
+        />
+      ) : null}
+      {card.type === CARD_TYPES.BAR ? (
+        <BarChartCard
+          {...card}
+          isLoading={isLoading}
+          isEditable={isEditable}
+          onCardAction={onCardAction}
+          key={card.id}
+          breakpoint={breakpoint}
+          dashboardBreakpoints={dashboardBreakpoints}
+          dashboardColumns={dashboardColumns}
+          cardDimensions={cardDimensions}
+          rowHeight={rowHeight}
+        />
+      ) : null}
+    </div>
+  );
 
   const generatedLayouts = Object.keys(dashboardBreakpoints).reduce((acc, layoutName) => {
     return {
@@ -108,7 +207,12 @@ const Dashboard = ({
       [layoutName]:
         layouts && layouts[layoutName]
           ? layouts[layoutName].map(layout => {
-              const matchingCard = find(cards, { id: layout.i });
+              // if we can't find the card from the layout, assume small
+              let matchingCard = find(cards, { id: layout.i });
+              if (!matchingCard) {
+                console.error(`Error with your layout. Card with id: ${layout.i} not found`); //eslint-disable-line
+                matchingCard = { size: CARD_SIZES.SMALL };
+              }
               return { ...layout, ...cardDimensions[matchingCard.size][layoutName] };
             })
           : getLayout(layoutName, cards, dashboardColumns, cardDimensions),
@@ -117,13 +221,23 @@ const Dashboard = ({
 
   // TODO: Can we pickup the GUTTER size and PADDING from the carbon grid styles? or css variables?
   // console.log(generatedLayouts);
+
+  const gridContents = cards.map(card => renderCard(card));
+  const expandedCard = cards.find(i => i.isExpanded) || null;
+
   return (
     <div className={className}>
+      {expandedCard && (
+        <div className="bx--modal is-visible">
+          {renderCard({ ...expandedCard, size: CARD_SIZES.XLARGE })}
+        </div>
+      )}
       <DashboardHeader
         title={title}
         description={description}
         lastUpdated={lastUpdated}
         lastUpdatedLabel={lastUpdatedLabel}
+        filter={filter}
       />
       <StyledGridLayout
         layouts={generatedLayouts}
@@ -140,75 +254,13 @@ const Dashboard = ({
         //       other layouts?  for example, moving card 5 to before card 2 in lg should mean
         //       that the order changes for xl, md, sm, xs, etc. layouts
         /* onLayoutChange={
-         layout =>  console.log('new layout, time to regenerate', JSON.stringify(layout)
-        } */
+        layout =>  console.log('new layout, time to regenerate', JSON.stringify(layout)
+      } */
         onBreakpointChange={newBreakpoint => setBreakpoint(newBreakpoint)}
         isResizable={false}
-        isDraggable={isEditable}>
-        {cards.map(card => (
-          <div key={card.id}>
-            {card.type === CARD_TYPES.VALUE ? (
-              <ValueCard
-                {...card}
-                onCardAction={onCardAction}
-                key={card.id}
-                breakpoint={breakpoint}
-                dashboardBreakpoints={dashboardBreakpoints}
-                dashboardColumns={dashboardColumns}
-                cardDimensions={cardDimensions}
-                rowHeight={rowHeight}
-              />
-            ) : null}
-            {card.type === CARD_TYPES.TIMESERIES ? (
-              <TimeSeriesCard
-                {...card}
-                onCardAction={onCardAction}
-                key={card.id}
-                breakpoint={breakpoint}
-                dashboardBreakpoints={dashboardBreakpoints}
-                dashboardColumns={dashboardColumns}
-                cardDimensions={cardDimensions}
-                rowHeight={rowHeight}
-              />
-            ) : null}
-            {card.type === CARD_TYPES.DONUT ? (
-              <DonutCard
-                {...card}
-                onCardAction={onCardAction}
-                key={card.id}
-                breakpoint={breakpoint}
-                dashboardBreakpoints={dashboardBreakpoints}
-                dashboardColumns={dashboardColumns}
-                cardDimensions={cardDimensions}
-                rowHeight={rowHeight}
-              />
-            ) : null}
-            {card.type === CARD_TYPES.PIE ? (
-              <PieCard
-                {...card}
-                onCardAction={onCardAction}
-                key={card.id}
-                breakpoint={breakpoint}
-                dashboardBreakpoints={dashboardBreakpoints}
-                dashboardColumns={dashboardColumns}
-                cardDimensions={cardDimensions}
-                rowHeight={rowHeight}
-              />
-            ) : null}
-            {card.type === CARD_TYPES.BAR ? (
-              <BarChartCard
-                {...card}
-                onCardAction={onCardAction}
-                key={card.id}
-                breakpoint={breakpoint}
-                dashboardBreakpoints={dashboardBreakpoints}
-                dashboardColumns={dashboardColumns}
-                cardDimensions={cardDimensions}
-                rowHeight={rowHeight}
-              />
-            ) : null}
-          </div>
-        ))}
+        isDraggable={isEditable}
+      >
+        {gridContents}
       </StyledGridLayout>
     </div>
   );

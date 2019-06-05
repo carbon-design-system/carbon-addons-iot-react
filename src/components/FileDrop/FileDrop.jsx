@@ -214,7 +214,8 @@ class FileDrop extends React.Component {
               this.fileInput.click();
             }
           }}
-          role="presentation">
+          role="presentation"
+        >
           <LinkButton> upload </LinkButton>
         </span>
         <div>{description}</div>
@@ -267,7 +268,8 @@ class FileDrop extends React.Component {
           style={hover ? { border: '1px solid #3D70B2' } : { border: '1px dashed #8C8C8C' }}
           onDragOver={this.fileDragHover}
           onDragLeave={this.fileDragHover}
-          onDrop={this.fileDrop}>
+          onDrop={this.fileDrop}
+        >
           {linkElement}
         </Text>
         {fileNameElements}

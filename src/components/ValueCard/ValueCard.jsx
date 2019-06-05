@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import isNil from 'lodash/isNil';
+import { Icon } from 'carbon-components-react';
+import { iconCaretUp, iconCaretDown } from 'carbon-icons';
 
 import { ValueCardPropTypes, CardPropTypes } from '../../constants/PropTypes';
 import { CARD_LAYOUTS, CARD_SIZES, CARD_CONTENT_PADDING } from '../../constants/LayoutConstants';
@@ -19,25 +21,50 @@ const AttributeWrapper = styled.div`
     align-items: center;
     justify-content: space-between;
   `}
+  ${props =>
+    props.layout === CARD_LAYOUTS.HORIZONTAL &&
+    `
+    width: 100%;
+  `}
+  padding: 0 ${CARD_CONTENT_PADDING}px 8px ${CARD_CONTENT_PADDING}px;
+`;
+
+const AttributeValueWrapper = styled.div`
+  padding-bottom: 4px;
 `;
 
 const AttributeLabel = styled.div`
   ${props =>
-    props.layout === CARD_LAYOUTS.HORIZONTAL && `padding-bottom: 0.25rem; font-size: 1.5rem;`};
-  ${props => props.layout === CARD_LAYOUTS.VERTICAL && `text-align: left; font-size: 1.25rem;`};
+    props.layout === CARD_LAYOUTS.HORIZONTAL && `padding-bottom: 0.25rem; font-size: 1.25rem;`};
+  ${props => props.layout === CARD_LAYOUTS.VERTICAL && `font-size: 1.0rem;`};
+  text-align: left;
 `;
 
 const AttributeValue = styled.span`
-  ${props => props.layout === CARD_LAYOUTS.HORIZONTAL && 'font-size: 300%;'}
+  ${props =>
+    props.layout === CARD_LAYOUTS.HORIZONTAL &&
+    `font-size: ${props.hasSecondary ? '2.5rem' : '3.0rem'}; font-weight: lighter;`}
   ${props => props.layout === CARD_LAYOUTS.VERTICAL && `text-align: right;`};
+`;
+
+const AttributeSecondaryValue = styled.div`
+  height: 24px;
+  display: flex;
+  align-items: center;
+  color: ${props => props.color || '#777'};
+  fill: ${props => props.color || '#777'};
+  font-size: 0.875rem;
+`;
+
+const TrendIcon = styled(Icon)`
+  margin-right: 0.25rem;
 `;
 
 const AttributeUnit = styled.span`
   ${props =>
     props.layout === CARD_LAYOUTS.HORIZONTAL &&
     `
-    font-size: 200%;  
-    color: #aaa;
+    font-size: 1.25rem;  
   `};
 `;
 
@@ -70,19 +97,65 @@ const ValueCard = ({ title, content, size, ...others }) => {
       break;
   }
 
+  const availableActions = {
+    expand: false,
+    ...others.availableActions,
+  };
+
+  const isXS = size === CARD_SIZES.XSMALL;
+  const cardTitle = isXS ? content[0].title : title;
+
   return (
-    <Card title={title} size={size} layout={layout} {...others}>
-      {content.map(i => (
-        <AttributeWrapper layout={layout} key={i.title}>
-          <AttributeLabel layout={layout}>{i.title}</AttributeLabel>
-          <div>
-            <AttributeValue layout={layout}>
-              {!isNil(i.value) ? <ValueRenderer value={i.value} /> : ' '}
-            </AttributeValue>
-            {i.unit && <AttributeUnit layout={layout}>{i.unit}</AttributeUnit>}
-          </div>
-        </AttributeWrapper>
-      ))}
+    <Card
+      title={cardTitle}
+      size={size}
+      layout={layout}
+      availableActions={availableActions}
+      {...others}
+    >
+      {content.map(i =>
+        isXS ? (
+          <AttributeWrapper
+            layout={layout}
+            hasSecondary={i.secondaryValue !== undefined}
+            key={i.title}
+          >
+            <AttributeValueWrapper>
+              <AttributeValue layout={layout} hasSecondary={i.secondaryValue !== undefined}>
+                {!isNil(i.value) ? <ValueRenderer value={i.value} /> : ' '}
+              </AttributeValue>
+              {i.unit && <AttributeUnit layout={layout}>{i.unit}</AttributeUnit>}
+            </AttributeValueWrapper>
+            {i.secondaryValue !== undefined ? (
+              typeof i.secondaryValue === 'object' ? (
+                <AttributeSecondaryValue
+                  color={i.secondaryValue.color}
+                  trend={i.secondaryValue.trend}
+                >
+                  {i.secondaryValue.trend && i.secondaryValue.trend === 'up' ? (
+                    <TrendIcon icon={iconCaretUp} />
+                  ) : i.secondaryValue.trend === 'down' ? (
+                    <TrendIcon icon={iconCaretDown} />
+                  ) : null}
+                  {i.secondaryValue.value}
+                </AttributeSecondaryValue>
+              ) : (
+                <AttributeSecondaryValue>{i.secondaryValue}</AttributeSecondaryValue>
+              )
+            ) : null}
+          </AttributeWrapper>
+        ) : (
+          <AttributeWrapper layout={layout} key={i.title}>
+            <AttributeLabel layout={layout}>{i.title}</AttributeLabel>
+            <div>
+              <AttributeValue layout={layout}>
+                {!isNil(i.value) ? <ValueRenderer value={i.value} /> : ' '}
+              </AttributeValue>
+              {i.unit && <AttributeUnit layout={layout}>{i.unit}</AttributeUnit>}
+            </div>
+          </AttributeWrapper>
+        )
+      )}
     </Card>
   );
 };

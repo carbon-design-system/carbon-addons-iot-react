@@ -13,6 +13,7 @@ describe('ValueCard', () => {
 
     const wrapper2 = mount(
       <ValueCard
+        title="Something"
         content={[
           { title: 'title', value: 'value' },
           { title: 'title2', value: 'value2' },

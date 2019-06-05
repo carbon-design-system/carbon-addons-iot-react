@@ -27,7 +27,7 @@ script:
   - yarn test
 
 after_success:
-  - npx semantic-release
+  - npx semantic-release@beta
   - yarn run jest --coverage --coverageReporters=text-lcov | yarn run coveralls # report coveralls status
 
 before_deploy:

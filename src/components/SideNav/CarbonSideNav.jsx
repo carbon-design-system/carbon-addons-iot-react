@@ -95,7 +95,8 @@ export default class SideNav extends React.Component {
         className={`${prefix}--side-nav__navigation ${className}`}
         {...accessibilityLabel}
         onFocus={this.handleFocus}
-        onBlur={this.handleBlur}>
+        onBlur={this.handleBlur}
+      >
         {children}
         <SideNavFooter
           assistiveText={assistiveText}

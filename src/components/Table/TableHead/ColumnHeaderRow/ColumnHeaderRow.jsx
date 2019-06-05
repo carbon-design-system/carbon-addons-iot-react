@@ -116,7 +116,8 @@ class ColumnHeaderRow extends Component {
                 columnId={c.columnId}
                 isHidden={c.isHidden}
                 moveItem={(srcIndex, destIndex) => this.reorderColumn(srcIndex, destIndex)}
-                onClick={() => this.toggleColumn(c.columnId)}>
+                onClick={() => this.toggleColumn(c.columnId)}
+              >
                 {columns.find(i => c.columnId === i.id).name}
               </ColumnHeaderSelect>
             ))}

@@ -88,13 +88,15 @@ class WizardHeader extends Component {
             type="button"
             data-modal-close
             aria-label="close modal"
-            onClick={onClose}>
+            onClick={onClose}
+          >
             <svg
               className="bx--modal-close__icon"
               width="10"
               height="10"
               viewBox="0 0 10 10"
-              xmlns="http://www.w3.org/2000/svg">
+              xmlns="http://www.w3.org/2000/svg"
+            >
               <title>Close</title>
               <path
                 d="M6.32 5L10 8.68 8.68 10 5 6.32 1.32 10 0 8.68 3.68 5 0 1.32 1.32 0 5 3.68 8.68 0 10 1.32 6.32 5z"

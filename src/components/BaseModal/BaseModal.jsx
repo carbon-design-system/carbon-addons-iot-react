@@ -219,13 +219,15 @@ class BaseModal extends React.Component {
         className={classNames(className, {
           'error-modal': type === 'warn',
           'big-modal': isLarge,
-        })}>
+        })}
+      >
         <ModalHeader
           label={label}
           title={title}
           closeModal={onClose}
           buttonOnClick={onClose}
-          iconDescription={iconDescription}>
+          iconDescription={iconDescription}
+        >
           {helpText ? <p className="bx--modal-content__text">{helpText}</p> : null}
         </ModalHeader>
         {children ? <ModalBody>{children}</ModalBody> : null}
@@ -252,7 +254,8 @@ class BaseModal extends React.Component {
                     (typeof sendingData === 'boolean' && sendingData) ||
                     typeof sendingData === 'string'
                   }
-                  onClick={onSubmit}>
+                  onClick={onSubmit}
+                >
                   {(footer && footer.primaryButtonLabel) || 'Save'}
                 </ButtonEnhanced>
               </Fragment>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { text, select, object } from '@storybook/addon-knobs';
+import { text, select, object, boolean } from '@storybook/addon-knobs';
 
 import { COLORS, CARD_SIZES } from '../../constants/LayoutConstants';
 import { getCardMinSize } from '../../utils/componentUtilityFunctions';
@@ -17,6 +17,7 @@ storiesOf('BarChartCard (Experimental)', module).add('basic', () => {
       <BarChartCard
         title={text('title', 'Temperature')}
         id="facility-temperature"
+        isLoading={boolean('isLoading', false)}
         content={object('content', {
           data: [
             {

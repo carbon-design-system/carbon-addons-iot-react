@@ -27,6 +27,13 @@ const ValueRenderer = ({ value }) => {
   if (typeof value === 'boolean') {
     return value ? <StyledWarningAlt /> : <StyledCheckmarkOutline />;
   }
+  if (typeof value === 'number') {
+    return value > 1000000
+      ? `${(value / 1000000).toFixed(1)}m`
+      : value > 1000
+      ? `${(value / 1000).toFixed(1)}k`
+      : value;
+  }
   return value;
 };
 

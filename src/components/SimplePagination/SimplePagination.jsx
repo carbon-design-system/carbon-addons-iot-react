@@ -1,11 +1,11 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import styled from 'styled-components';
-import ChevronLeft from '@carbon/icons-react/lib/chevron--left/16';
-import ChevronRight from '@carbon/icons-react/lib/chevron--right/16';
+import React from "react";
+import PropTypes from "prop-types";
+import styled from "styled-components";
+import ChevronLeft from "@carbon/icons-react/lib/chevron--left/16";
+import ChevronRight from "@carbon/icons-react/lib/chevron--right/16";
 
-import { handleEnterKeyDown } from '../../utils/componentUtilityFunctions';
-import { COLORS } from '../../styles/styles';
+import { handleEnterKeyDown } from "../../utils/componentUtilityFunctions";
+import { COLORS } from "../../styles/styles";
 
 const StyledContainer = styled.div`
   &&& {
@@ -65,14 +65,14 @@ const propTypes = {
   /** Internationalized label for the word 'Previous page' */
   prevPageText: PropTypes.string,
   /** Callback when the page is changed */
-  onPage: PropTypes.func.isRequired,
+  onPage: PropTypes.func.isRequired
 };
 
 const defaultProps = {
   pageOfPagesText: (page, maxPage) => `Page ${page} of ${maxPage}`,
   pageText: null,
-  nextPageText: 'Next page',
-  prevPageText: 'Prev page',
+  nextPageText: "Next page",
+  prevPageText: "Prev page"
 };
 
 /** This is a lighter weight pagination component than the default Carbon one */
@@ -83,7 +83,7 @@ const SimplePagination = ({
   pageOfPagesText,
   page,
   maxPage,
-  onPage,
+  onPage
 }) => {
   const hasPrev = page > 1;
   const hasNext = page <= maxPage - 1;
@@ -100,14 +100,20 @@ const SimplePagination = ({
         role="button"
         tabIndex={hasPrev ? 0 : -1}
         onClick={hasPrev ? handlePrev : undefined}
-        onKeyDown={hasPrev ? evt => handleEnterKeyDown(evt, handlePrev) : undefined}>
+        onKeyDown={
+          hasPrev ? evt => handleEnterKeyDown(evt, handlePrev) : undefined
+        }
+      >
         <ChevronLeft description={prevPageText} />
       </StyledButton>
       <StyledButton
         role="button"
         tabIndex={hasNext ? 0 : -1}
         onClick={hasNext ? handleNext : undefined}
-        onKeyDown={hasNext ? evt => handleEnterKeyDown(evt, handleNext) : undefined}>
+        onKeyDown={
+          hasNext ? evt => handleEnterKeyDown(evt, handleNext) : undefined
+        }
+      >
         <ChevronRight description={nextPageText} />
       </StyledButton>
     </StyledContainer>

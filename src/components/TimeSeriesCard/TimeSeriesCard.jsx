@@ -12,7 +12,6 @@ const ContentWrapper = styled.div`
   margin: 0 16px 16px 16px;
   padding-bottom: 8px;
   width: 100%;
-  background-color: rgb(243, 243, 243);
 `;
 
 const TimeSeriesCard = ({ title, content: { range, data }, size, ...others }) => {
@@ -98,15 +97,17 @@ const TimeSeriesCard = ({ title, content: { range, data }, size, ...others }) =>
   };
   return (
     <Card title={title} size={size} {...others}>
-      <ContentWrapper>
-        <C3Chart
-          {...chart}
-          style={{
-            height: '100%',
-            width: '100%',
-          }}
-        />
-      </ContentWrapper>
+      {others.isLoading ? (
+        <ContentWrapper>
+          <C3Chart
+            {...chart}
+            style={{
+              height: '100%',
+              width: '100%',
+            }}
+          />
+        </ContentWrapper>
+      ) : null}
     </Card>
   );
 };

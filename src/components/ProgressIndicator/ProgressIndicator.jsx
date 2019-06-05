@@ -102,7 +102,8 @@ const ProgressIndicator = ({
       className={[className, isVerticalMode ? 'bx--progress--vertical' : ''].join(' ')}
       onChange={handleChange}
       currentIndex={currentStep}
-      isVerticalMode={isVerticalMode}>
+      isVerticalMode={isVerticalMode}
+    >
       {items.map(({ id, label }) => (
         <StyledProgressStep
           key={id}
