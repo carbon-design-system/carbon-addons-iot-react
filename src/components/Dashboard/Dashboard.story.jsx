@@ -403,4 +403,17 @@ storiesOf('Dashboard (Experimental)', module)
         rowHeight={object('row height', ROW_HEIGHT)}
       />
     );
+  })
+  .add('loading', () => {
+    return (
+      <StatefulDashboard
+        title={text('title', 'Munich Building')}
+        isEditable={boolean('isEditable', false)}
+        isLoading={boolean('isLoading', true)}
+        dashboardBreakpoints={object('breakpoints', DASHBOARD_BREAKPOINTS)}
+        dashboardColumns={object('columns', DASHBOARD_COLUMNS)}
+        cardDimensions={object('card dimensions', CARD_DIMENSIONS)}
+        rowHeight={object('row height', ROW_HEIGHT)}
+      />
+    );
   });
