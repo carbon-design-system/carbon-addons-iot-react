@@ -9,7 +9,7 @@ import { Button } from 'carbon-components-react';
 import moment from 'moment';
 */
 
-import { chartData } from '../../utils/sample';
+import { chartData, tableColumns, tableData } from '../../utils/sample';
 import {
   COLORS,
   DASHBOARD_BREAKPOINTS,
@@ -102,6 +102,16 @@ const originalCards = [
       { title: 'Pressure', value: 21.4, unit: 'mb' },
       { title: 'Number of Alerts', value: 17 },
     ],
+  },
+  {
+    title: 'Alerts',
+    id: 'alert-table1',
+    size: CARD_SIZES.LARGE,
+    type: CARD_TYPES.TABLE,
+    content: {
+      data: tableData,
+      columns: tableColumns,
+    },
   },
   {
     title: 'Atmospheric Conditions (Section 2)',
@@ -381,7 +391,7 @@ const StatefulDashboard = ({ ...props }) => {
   };
   */
 
-  const handleCardAction = (id, type /* payload */) => {
+  const handleCardAction = (id, type, payload) => {
     if (type === 'DELETE_CARD') {
       setCards(cards.filter(i => i.id !== id));
     }
@@ -402,6 +412,9 @@ const StatefulDashboard = ({ ...props }) => {
         isExpanded: false,
       });
       setCards(updatedCards);
+    }
+    if (type === 'TABLE_CARD_ROW_ACTION') {
+      console.log(id, type, payload);
     }
   };
 

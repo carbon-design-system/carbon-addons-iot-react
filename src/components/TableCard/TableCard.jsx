@@ -1,15 +1,15 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { OverflowMenu, OverflowMenuItem, Icon } from 'carbon-components-react';
 import styled from 'styled-components';
 
-import { CardPropTypes } from '../../constants/PropTypes';
+import { CardPropTypes, TableCardPropTypes } from '../../constants/PropTypes';
 import Card from '../Card/Card';
 import { CARD_LAYOUTS, CARD_SIZES } from '../../constants/LayoutConstants';
-import Table from '../Table/Table';
+import StatefulTable from '../Table/StatefulTable';
 
 const StyledOverflowMenu = styled(OverflowMenu)`
   &&& {
+    margin-left: 10px;
     opacity: 1;
     .bx--overflow-menu__icon {
       transform: none;
@@ -17,42 +17,76 @@ const StyledOverflowMenu = styled(OverflowMenu)`
   }
 `;
 
-const onClick = (e, id, action, onRowActionClick) => {
-  onRowActionClick(action, id);
-  e.preventDefault();
-  e.stopPropagation();
-};
+const StyledActionIcon = styled(Icon)`
+  cursor: pointer;
+  margin-left: 11px;
+  &:hover {
+    fill: rgb(61, 112, 178);
+  }
+`;
+
+const StyledStatefulTable = styled(StatefulTable)`
+  flex: inherit;
+  height: 100%;
+  margin: 0 -1px;
+  position: relative;
+  .bx--table-toolbar {
+    display: none;
+  }
+  .bx--data-table-v2 tr {
+    height: 2.95rem;
+  }
+  .bx--data-table-v2 tr {
+    height: 2.95rem;
+  }
+  .bx--data-table-v2-container + .bx--pagination {
+    border: 1px solid #dfe3e6;
+  }
+  .bx--pagination {
+    position: absolute;
+    bottom: 0;
+  }
+`;
 
 const TableCard = ({
+  id,
   title,
-  data,
-  columns,
-  actions,
-  options,
+  content: { columns, data },
   size,
   view,
-  onRowActionClick,
+  onCardAction,
   ...others
 }) => {
   const layout = CARD_LAYOUTS.HORIZONTAL;
 
   const renderActionCell = cellItem => {
-    if (cellItem.value.length === 1) {
-      return (
-        <Icon
-          onClick={e => onClick(e, cellItem.rowId, cellItem.value[0].id, onRowActionClick)}
-          name={cellItem.value[0].icon}
-        />
-      );
-    }
-    return (
+    return cellItem.value && cellItem.value.length === 1 ? (
+      <StyledActionIcon
+        onClick={evt => {
+          evt.preventDefault();
+          evt.stopPropagation();
+          onCardAction(id, 'TABLE_CARD_ROW_ACTION', {
+            rowId: cellItem.rowId,
+            actionId: cellItem.value[0].id,
+          });
+        }}
+        name={cellItem.value[0].icon}
+      />
+    ) : (
       <StyledOverflowMenu floatingMenu>
         {cellItem.value.map(item => {
           return (
             <OverflowMenuItem
               key={item.id}
               itemText={item.labelText}
-              onClick={e => onClick(e, cellItem.rowId, item.id, onRowActionClick)}
+              onClick={evt => {
+                evt.preventDefault();
+                evt.stopPropagation();
+                onCardAction(id, 'TABLE_CARD_ROW_ACTION', {
+                  rowId: cellItem.rowId,
+                  actionId: item.id,
+                });
+              }}
             />
           );
         })}
@@ -65,7 +99,7 @@ const TableCard = ({
     {
       id: 'actionColumn',
       name: '',
-      width: '50px',
+      width: '60px',
       isSortable: false,
       renderDataFunction: renderActionCell,
       priority: 1,
@@ -73,6 +107,10 @@ const TableCard = ({
   ];
 
   const columnsToRender = columns
+    .map(i => ({
+      ...i,
+      isSortable: true,
+    }))
     .concat(actionColumn)
     .map(column => {
       switch (size) {
@@ -91,83 +129,39 @@ const TableCard = ({
     })
     .filter(i => i);
 
-  const defaultOrdering = columnsToRender.map(c => ({
-    columnId: c.id,
-  }));
-
-  const viewUpdate = {
-    ...view,
-    table: {
-      ...view.table,
-      ordering: defaultOrdering,
+  const tableData = data.map(i => ({
+    id: i.id,
+    values: {
+      ...i.values,
+      actionColumn: i.actions || [],
     },
-  };
+  }));
 
   return (
     <Card title={title} size={size} layout={layout} {...others}>
-      <Table
-        style={{
-          flex: 'inherit',
-          alignSelf: 'flex-end',
-        }}
+      <StyledStatefulTable
         columns={columnsToRender}
-        data={data}
-        actions={actions}
-        options={options}
-        view={viewUpdate}
+        data={tableData}
+        options={{
+          hasPagination: true,
+        }}
+        view={{
+          pagination: {
+            pageSize: 9,
+            pageSizes: [9],
+            page: 1,
+            totalItems: data.length,
+            isItemPerPageHidden: true,
+          },
+        }}
       />
     </Card>
   );
 };
 
-TableCard.propTypes = {
-  ...CardPropTypes,
-  size: PropTypes.oneOf([CARD_SIZES.TALL, CARD_SIZES.LARGE, CARD_SIZES.XLARGE]),
-  /** Array of data - table content */
-  data: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      values: PropTypes.shape([PropTypes.string, PropTypes.number, PropTypes.bool, PropTypes.array])
-        .isRequired,
-    })
-  ).isRequired,
-  /** Array of columns - header */
-  columns: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired,
-      width: PropTypes.string,
-      priority: PropTypes.number,
-      /** for each column you can register a render callback function that is called with this object payload
-       * {
-       *    value: PropTypes.any (current cell value),
-       *    columnId: PropTypes.string,
-       *    rowId: PropTypes.string,
-       *    row: PropTypes.object like this {col: value, col2: value}
-       * }, you should return the node that should render within that cell */
-      renderDataFunction: PropTypes.func,
-    })
-  ).isRequired,
-  /** Callbacks for actions of the table, can be used to update state in wrapper component to update `view` props */
-  actions: PropTypes.shape({
-    pagination: PropTypes.shape({
-      /** Specify a callback for when the current page or page size is changed. This callback is passed an object parameter containing the current page and the current page size */
-      onChangePage: PropTypes.func,
-    }),
-    /** table wide actions */
-    table: PropTypes.shape({
-      onChangeSort: PropTypes.func,
-    }).isRequired,
-  }),
-  options: PropTypes.shape({
-    hasPagination: PropTypes.bool,
-  }),
-};
-
+TableCard.propTypes = { ...CardPropTypes, ...TableCardPropTypes };
 TableCard.displayName = 'TableCard';
 TableCard.defaultProps = {
   size: CARD_SIZES.LARGE,
-  actions: {},
-  options: { hasPagination: true },
 };
 export default TableCard;

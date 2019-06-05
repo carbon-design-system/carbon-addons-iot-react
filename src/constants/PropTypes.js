@@ -60,6 +60,32 @@ export const TimeSeriesCardPropTypes = {
   }).isRequired,
 };
 
+export const TableCardPropTypes = {
+  content: PropTypes.shape({
+    columns: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.string.isRequired,
+        name: PropTypes.string.isRequired,
+        priority: PropTypes.number,
+        renderer: PropTypes.func,
+      })
+    ).isRequired,
+    data: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.string.isRequired,
+        values: PropTypes.object.isRequired,
+        actions: PropTypes.arrayOf(
+          PropTypes.shape({
+            id: PropTypes.string.isRequired,
+            label: PropTypes.string,
+            icon: PropTypes.string,
+          })
+        ),
+      })
+    ).isRequired,
+  }).isRequired,
+};
+
 export const BarChartDatasetPropTypes = PropTypes.shape({
   label: PropTypes.string.isRequired,
   values: PropTypes.arrayOf(
