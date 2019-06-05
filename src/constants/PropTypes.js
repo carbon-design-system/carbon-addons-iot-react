@@ -133,6 +133,8 @@ export const CardSizesToDimensionsPropTypes = PropTypes.shape({
 export const CardPropTypes = {
   title: PropTypes.string.isRequired,
   id: PropTypes.string,
+  isLoading: PropTypes.bool,
+  isEmpty: PropTypes.bool,
   isEditable: PropTypes.bool,
   isExpanded: PropTypes.bool,
   size: PropTypes.oneOf(Object.values(CARD_SIZES)),
