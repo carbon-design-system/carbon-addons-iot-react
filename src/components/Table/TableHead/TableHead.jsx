@@ -78,24 +78,11 @@ const defaultProps = {
   closeMenuText: 'Close menu',
 };
 
-const StyledCheckboxTableHeader = styled(TableHeader)`
-  &&& {
-    padding-bottom: 0.5rem;
-    width: 2.5rem;
-  }
-`;
+const StyledCheckboxTableHeader = styled(TableHeader)``;
 
 const StyledCarbonTableHead = styled(({ lightweight, ...others }) => (
   <CarbonTableHead {...others} />
-))`
-  &&& {
-    ${props =>
-      props.lightweight === 'true' && {
-        backgroundColor: '#fff',
-        borderBottom: '2px solid #305ba3',
-      }}
-  }
-`;
+))``;
 
 const StyledCustomTableHeader = styled(TableHeader)`
   &&& {

@@ -85,13 +85,6 @@ const RowActionButton = styled(({ isRowExpanded, hideLabel, isOverflow, ...other
       fill: ${props => (props.isRowExpanded ? COLORS.white : '')};
       margin-left: ${props => (props.hideLabel !== 'false' ? '0' : '')};
     }
-    :hover,
-    :focus {
-      color: ${props => (!props.isRowExpanded ? COLORS.white : '')};
-      svg {
-        fill: ${props => (!props.isRowExpanded ? COLORS.white : '')};
-      }
-    }
   }
 `;
 
