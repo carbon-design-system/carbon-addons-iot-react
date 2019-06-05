@@ -11,10 +11,6 @@ const cardProps = {
 
 describe('Card testcases', () => {
   test('xsmall', () => {
-    const wrapper = mount(<Card {...cardProps} size={CARD_SIZES.XSMALL} />);
-    // x-small shouldn't have full header
-    expect(wrapper.find(CardHeader)).toHaveLength(0);
-
     const wrapper2 = mount(<Card {...cardProps} size={CARD_SIZES.SMALL} />);
 
     // small should have full header
