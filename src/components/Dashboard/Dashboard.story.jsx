@@ -9,7 +9,7 @@ import { Button } from 'carbon-components-react';
 import moment from 'moment';
 */
 
-import { chartData } from '../../utils/sample';
+import { chartData, tableColumns, tableData } from '../../utils/sample';
 import {
   COLORS,
   DASHBOARD_BREAKPOINTS,
@@ -30,6 +30,9 @@ const originalCards = [
     id: 'facilitycard',
     size: CARD_SIZES.SMALL,
     type: CARD_TYPES.VALUE,
+    availableActions: {
+      delete: true,
+    },
     content: [
       { title: 'Comfort Level', value: 89, unit: '%' },
       { title: 'Utilization', value: 76, unit: '%' },
@@ -43,6 +46,9 @@ const originalCards = [
     id: 'facilitycard-xs',
     size: CARD_SIZES.XSMALL,
     type: CARD_TYPES.VALUE,
+    availableActions: {
+      delete: true,
+    },
     content: [{ title: 'Comfort Level', value: 89, unit: '%' }],
   },
   {
@@ -50,6 +56,9 @@ const originalCards = [
     id: 'facilitycard-xs2',
     size: CARD_SIZES.XSMALL,
     type: CARD_TYPES.VALUE,
+    availableActions: {
+      delete: true,
+    },
     content: [{ title: 'Utilization', value: 76, secondaryValue: 'Average', unit: '%' }],
   },
   {
@@ -57,6 +66,9 @@ const originalCards = [
     id: 'facilitycard-xs3',
     size: CARD_SIZES.XSMALL,
     type: CARD_TYPES.VALUE,
+    availableActions: {
+      delete: true,
+    },
     content: [
       {
         title: 'Alert Count',
@@ -71,6 +83,9 @@ const originalCards = [
     id: 'facilitycard-pie',
     size: CARD_SIZES.SMALL,
     type: CARD_TYPES.PIE,
+    availableActions: {
+      delete: true,
+    },
     content: {
       title: 'Alerts',
       data: [
@@ -85,6 +100,9 @@ const originalCards = [
     id: 'facilitycard-xs4',
     size: CARD_SIZES.XSMALL,
     type: CARD_TYPES.VALUE,
+    availableActions: {
+      delete: true,
+    },
     content: [
       {
         title: 'Foot Traffic',
@@ -94,10 +112,27 @@ const originalCards = [
     ],
   },
   {
+    title: 'Alerts',
+    id: 'alert-table1',
+    size: CARD_SIZES.LARGE,
+    type: CARD_TYPES.TABLE,
+    availableActions: {
+      expand: true,
+    },
+    content: {
+      data: tableData,
+      columns: tableColumns,
+    },
+  },
+  {
     title: 'Atmospheric Conditions (Section 2)',
     id: 'facilitycard3',
     size: CARD_SIZES.MEDIUM,
     type: CARD_TYPES.TIMESERIES,
+    availableActions: {
+      delete: true,
+      expand: true,
+    },
     content: {
       data: [
         {
@@ -128,6 +163,10 @@ const originalCards = [
     id: 'xlarge-bar-alerts',
     size: CARD_SIZES.LARGE,
     type: CARD_TYPES.BAR,
+    availableActions: {
+      delete: true,
+      expand: true,
+    },
     content: {
       data: [
         {
@@ -168,6 +207,9 @@ const originalCards = [
     id: 'facilitycard-donut',
     size: CARD_SIZES.SMALL,
     type: CARD_TYPES.DONUT,
+    availableActions: {
+      delete: true,
+    },
     content: {
       title: 'Alerts',
       data: [
@@ -178,22 +220,14 @@ const originalCards = [
     },
   },
   {
-    title: 'WIDE',
-    id: 'facilitycard5',
-    size: CARD_SIZES.WIDE,
-    type: CARD_TYPES.VALUE,
-    content: [
-      { title: 'Comfort Level', value: 89, unit: '%' },
-      { title: 'Utilization', value: 76, unit: '%' },
-      { title: 'Heat', value: 1976, unit: 'K' },
-      { title: 'Number of Alerts', value: 17 },
-    ],
-  },
-  {
     title: 'Atmospheric Conditions (Section 1)',
     id: 'xlarge-timeseries-pressure',
     size: CARD_SIZES.XLARGE,
     type: CARD_TYPES.TIMESERIES,
+    availableActions: {
+      delete: true,
+      expand: true,
+    },
     content: {
       data: [
         {
@@ -228,17 +262,6 @@ const originalCards = [
         },
       ],
     },
-  },
-  {
-    title: 'LARGE',
-    id: 'facilitycard6',
-    size: CARD_SIZES.LARGE,
-    type: CARD_TYPES.VALUE,
-    content: [
-      { title: 'Comfort Level', value: 89, unit: '%' },
-      { title: 'Utilization', value: 76, unit: '%' },
-      { title: 'Number of Alerts', value: 17 },
-    ],
   },
 ];
 
@@ -350,27 +373,19 @@ const StatefulDashboard = ({ ...props }) => {
   };
   */
 
-  const handleCardAction = (id, type /* payload */) => {
+  const handleCardAction = (id, type, payload) => {
+    console.log(id, type, payload);
     if (type === 'DELETE_CARD') {
       setCards(cards.filter(i => i.id !== id));
     }
     if (type === 'OPEN_EXPANDED_CARD') {
-      const cardIndex = cards.findIndex(card => card.id === id);
-      const updatedCards = [...cards];
-      updatedCards.splice(cardIndex, 1, {
-        ...updatedCards[cardIndex],
-        isExpanded: true,
-      });
-      setCards(updatedCards);
+      setCards(cards.map(i => (i.id === id ? { ...i, isExpanded: true } : i)));
     }
     if (type === 'CLOSE_EXPANDED_CARD') {
-      const cardIndex = cards.findIndex(card => card.id === id);
-      const updatedCards = [...cards];
-      updatedCards.splice(cardIndex, 1, {
-        ...updatedCards[cardIndex],
-        isExpanded: false,
-      });
-      setCards(updatedCards);
+      setCards(cards.map(i => (i.id === id ? { ...i, isExpanded: false } : i)));
+    }
+    if (type === 'TABLE_CARD_ROW_ACTION') {
+      console.log(id, type, payload);
     }
   };
 

@@ -18,6 +18,7 @@ import {
 } from '../../constants/PropTypes';
 import ValueCard from '../ValueCard/ValueCard';
 import DonutCard from '../DonutCard/DonutCard';
+import TableCard from '../TableCard/TableCard';
 import BarChartCard from '../BarChartCard/BarChartCard';
 import PieCard from '../PieCard/PieCard';
 import TimeSeriesCard from '../TimeSeriesCard/TimeSeriesCard';
@@ -113,9 +114,6 @@ const Dashboard = ({
     console.log('dashboard is remounting'); // eslint-disable-line
   }, []);
 
-  // console.log(breakpoint);
-  // console.log(dashboardBreakpoints, cardDimensions, rowHeight);
-
   const renderCard = card => (
     <div key={card.id}>
       {card.type === CARD_TYPES.VALUE ? (
@@ -133,6 +131,19 @@ const Dashboard = ({
       ) : null}
       {card.type === CARD_TYPES.TIMESERIES ? (
         <TimeSeriesCard
+          {...card}
+          isEditable={isEditable}
+          onCardAction={onCardAction}
+          key={card.id}
+          breakpoint={breakpoint}
+          dashboardBreakpoints={dashboardBreakpoints}
+          dashboardColumns={dashboardColumns}
+          cardDimensions={cardDimensions}
+          rowHeight={rowHeight}
+        />
+      ) : null}
+      {card.type === CARD_TYPES.TABLE ? (
+        <TableCard
           {...card}
           isEditable={isEditable}
           onCardAction={onCardAction}

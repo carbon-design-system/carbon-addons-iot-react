@@ -93,8 +93,8 @@ const defaultProps = {
   availableActions: {
     edit: false,
     clone: false,
-    delete: true,
-    expand: true,
+    delete: false,
+    expand: false,
   },
   rowHeight: ROW_HEIGHT,
   breakpoint: DASHBOARD_SIZES.LARGE,
