@@ -204,17 +204,13 @@ const Card = ({
 
   return (
     <CardWrapper id={id} dimensions={dimensions} {...others}>
-      {size !== CARD_SIZES.XSMALL ? (
-        <CardHeader>
-          <div>
-            {title}&nbsp;
-            {tooltip && <Tooltip triggerText="">{tooltip}</Tooltip>}
-          </div>
-          {toolbar}
-        </CardHeader>
-      ) : (
-        <div style={{ position: 'absolute', top: 5, right: 10 }}>{toolbar}</div>
-      )}
+      <CardHeader>
+        <div>
+          {title}&nbsp;
+          {tooltip && <Tooltip triggerText="">{tooltip}</Tooltip>}
+        </div>
+        {toolbar}
+      </CardHeader>
       <CardContent layout={layout} height={dimensions.y}>
         {children}
       </CardContent>

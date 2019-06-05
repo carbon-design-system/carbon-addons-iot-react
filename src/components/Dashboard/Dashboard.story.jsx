@@ -33,6 +33,8 @@ const originalCards = [
     content: [
       { title: 'Comfort Level', value: 89, unit: '%' },
       { title: 'Utilization', value: 76, unit: '%' },
+      { title: 'Humidity', value: 46, unit: '%' },
+      { title: 'Pressure', value: 21.4, unit: 'mb' },
       { title: 'Number of Alerts', value: 17 },
     ],
   },
@@ -48,14 +50,20 @@ const originalCards = [
     id: 'facilitycard-xs2',
     size: CARD_SIZES.XSMALL,
     type: CARD_TYPES.VALUE,
-    content: [{ title: 'Utilization', value: 76, unit: '%' }],
+    content: [{ title: 'Utilization', value: 76, secondaryValue: 'Average', unit: '%' }],
   },
   {
     title: 'XSMALL',
     id: 'facilitycard-xs3',
     size: CARD_SIZES.XSMALL,
     type: CARD_TYPES.VALUE,
-    content: [{ title: 'Alert Count', value: 17 }],
+    content: [
+      {
+        title: 'Alert Count',
+        value: 35,
+        secondaryValue: { value: 13, trend: 'up', color: 'green' },
+      },
+    ],
   },
   {
     title: 'Alerts (Section 2)',
@@ -73,16 +81,16 @@ const originalCards = [
     },
   },
   {
-    title: 'TALL',
-    id: 'facilitycard2',
-    size: CARD_SIZES.TALL,
+    title: 'XSMALL',
+    id: 'facilitycard-xs4',
+    size: CARD_SIZES.XSMALL,
     type: CARD_TYPES.VALUE,
     content: [
-      { title: 'Comfort Level', value: 89, unit: '%' },
-      { title: 'Utilization', value: 76, unit: '%' },
-      { title: 'Humidity', value: 46, unit: '%' },
-      { title: 'Pressure', value: 21.4, unit: 'mb' },
-      { title: 'Number of Alerts', value: 17 },
+      {
+        title: 'Foot Traffic',
+        value: 13572,
+        secondaryValue: { value: '22%', trend: 'down', color: 'red' },
+      },
     ],
   },
   {

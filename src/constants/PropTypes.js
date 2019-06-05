@@ -5,6 +5,14 @@ import { CARD_SIZES, CARD_LAYOUTS, DASHBOARD_SIZES } from './LayoutConstants';
 export const AttributePropTypes = PropTypes.shape({
   title: PropTypes.string.isRequired,
   value: PropTypes.any,
+  secondaryValue: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.shape({
+      value: PropTypes.string,
+      color: PropTypes.string,
+      trend: PropTypes.oneOf(['up', 'down']),
+    }),
+  ]),
   unit: PropTypes.string,
 });
 
