@@ -39,15 +39,17 @@ const BarChartCard = ({ title, content: { data }, size, ...others }) => {
   };
   return (
     <Card title={title} size={size} {...others}>
-      <ContentWrapper>
-        <C3Chart
-          {...chart}
-          style={{
-            height: '100%',
-            width: '100%',
-          }}
-        />
-      </ContentWrapper>
+      {!others.isLoading ? (
+        <ContentWrapper>
+          <C3Chart
+            {...chart}
+            style={{
+              height: '100%',
+              width: '100%',
+            }}
+          />
+        </ContentWrapper>
+      ) : null}
     </Card>
   );
 };

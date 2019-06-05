@@ -8,6 +8,7 @@ import {
   Button,
   Select,
   SelectItem,
+  SkeletonText,
 } from 'carbon-components-react';
 import Close16 from '@carbon/icons-react/lib/close/16';
 import Popup20 from '@carbon/icons-react/lib/popup/20';
@@ -78,6 +79,21 @@ const StyledToolbar = styled(Toolbar)`
   }
 `;
 
+const SkeletonWrapper = styled.div`
+  padding: ${CARD_CONTENT_PADDING}px;
+  width: 80%;
+`;
+
+const EmptyMessageWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 ${CARD_CONTENT_PADDING}px ${CARD_CONTENT_PADDING}px;
+  text-align: center;
+  line-height: 1.3;
+`;
+
 const TinyButton = styled(Button)`
   &.bx--btn > svg {
     margin: 0;
@@ -88,6 +104,8 @@ const defaultProps = {
   size: CARD_SIZES.SMALL,
   layout: CARD_SIZES.HORIZONTAL,
   toolbar: undefined,
+  isLoading: false,
+  isEmpty: false,
   isEditable: false,
   isExpanded: false,
   availableActions: {
@@ -108,6 +126,8 @@ const Card = ({
   children,
   title,
   layout,
+  isLoading,
+  isEmpty,
   isEditable,
   isExpanded,
   id,
@@ -212,7 +232,15 @@ const Card = ({
         {toolbar}
       </CardHeader>
       <CardContent layout={layout} height={dimensions.y}>
-        {children}
+        {isLoading ? (
+          <SkeletonWrapper>
+            <SkeletonText paragraph lineCount={size === CARD_SIZES.XSMALL ? 2 : 3} width="100%" />
+          </SkeletonWrapper>
+        ) : isEmpty ? (
+          <EmptyMessageWrapper>No data is available for this time range.</EmptyMessageWrapper>
+        ) : (
+          children
+        )}
       </CardContent>
     </CardWrapper>
   );
