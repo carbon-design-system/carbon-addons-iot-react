@@ -39,7 +39,8 @@ REDUXFORM or REDUXDIALOG`,
         title: 'Needs a lot of space to contain all the info',
       }}
       onSubmit={action('submit')}
-      onClose={action('close')}>
+      onClose={action('close')}
+    >
       Lots of really wide content here...
     </BaseModal>
   ))

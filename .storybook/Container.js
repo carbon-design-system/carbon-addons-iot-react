@@ -9,11 +9,12 @@ export default class Container extends Component {
       <div
         className="storybook-container"
         style={{
-          padding: '3em',
+          padding: '1em',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
-        }}>
+        }}
+      >
         {story()}
       </div>
     );

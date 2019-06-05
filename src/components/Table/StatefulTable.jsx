@@ -1,4 +1,5 @@
-import React, { useReducer, useEffect } from 'react';
+import React, { useReducer } from 'react';
+import useDeepCompareEffect from 'use-deep-compare-effect';
 import merge from 'lodash/merge';
 import get from 'lodash/get';
 
@@ -39,7 +40,7 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
   const [state, dispatch] = useReducer(tableReducer, { data: initialData, view: initialState });
   const isLoading = get(initialState, 'table.loadingState.isLoading');
   // Need to initially sort and filter the tables data
-  useEffect(
+  useDeepCompareEffect(
     () => {
       dispatch(tableRegister({ data: initialData, isLoading }));
     },

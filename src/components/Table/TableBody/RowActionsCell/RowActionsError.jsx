@@ -66,7 +66,8 @@ const RowActionsError = ({
         triggerId="tooltip-error"
         renderIcon={React.forwardRef((props, ref) => (
           <Warn ref={ref} />
-        ))}>
+        ))}
+      >
         <StyledTooltipContents>
           <StyledTitle>{title}</StyledTitle>
           {message}
@@ -83,7 +84,8 @@ const RowActionsError = ({
                 onClick={evt => {
                   onClearError(evt);
                   evt.stopPropagation();
-                }}>
+                }}
+              >
                 {dismissText}
               </Button>
             ) : null}

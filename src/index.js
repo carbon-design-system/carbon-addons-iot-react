@@ -32,3 +32,9 @@ export PageWorkArea from './components/Page/PageWorkArea';
 export NavigationBar from './components/NavigationBar/NavigationBar';
 export Header from './components/Header';
 export SideNav from './components/SideNav';
+
+// Dashboard
+export Dashboard from './components/Dashboard/Dashboard';
+export Card from './components/Card/Card';
+export ValueCard from './components/ValueCard/ValueCard';
+export { CARD_TYPES, CARD_SIZES } from './constants/LayoutConstants';

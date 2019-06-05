@@ -124,6 +124,10 @@ const StyledTableRow = styled(TableRow)`
         }
       }
     }
+    ${props => (props['data-single-select'] === 'single' ? `cursor:pointer` : null)}
+    
+    }
+
   }
 `;
 
@@ -135,6 +139,8 @@ const StyledSingleSelectedTableRow = styled(TableRow)`
     td {
       margin-left: -5px;
     }
+
+    cursor: pointer;
   }
 `;
 
@@ -319,7 +325,8 @@ const TableBodyRow = ({
           onRowSelected(id, !isSelected);
           e.preventDefault();
           e.stopPropagation();
-        }}>
+        }}
+      >
         {/* TODO: Replace checkbox with TableSelectRow component when onChange bug is fixed
       https://github.com/IBM/carbon-components-react/issues/1247
       Also move onClick logic above into TableSelectRow
@@ -348,7 +355,8 @@ const TableBodyRow = ({
             data-column={col.columnId}
             data-offset={offset}
             offset={offset}
-            width={matchingColumnMeta && matchingColumnMeta.width}>
+            width={matchingColumnMeta && matchingColumnMeta.width}
+          >
             <StyledNestedSpan nestingOffset={offset}>
               {col.renderDataFunction ? (
                 col.renderDataFunction({
@@ -406,7 +414,8 @@ const TableBodyRow = ({
               onRowSelected(id, true);
             }
             onRowClicked(id);
-          }}>
+          }}
+        >
           {tableCells}
         </StyledTableExpandRowExpanded>
         {!hasRowNesting && (
@@ -434,7 +443,8 @@ const TableBodyRow = ({
             onRowSelected(id, true);
           }
           onRowClicked(id);
-        }}>
+        }}
+      >
         {tableCells}
       </StyledTableExpandRow>
     )
@@ -444,18 +454,21 @@ const TableBodyRow = ({
       onClick={() => {
         onRowClicked(id);
         onRowSelected(id, true);
-      }}>
+      }}
+    >
       {tableCells}
     </StyledSingleSelectedTableRow>
   ) : (
     <StyledTableRow
       key={id}
+      data-single-select={hasRowSelection}
       onClick={() => {
         if (hasRowSelection === 'single') {
           onRowSelected(id, true);
         }
         onRowClicked(id);
-      }}>
+      }}
+    >
       {tableCells}
     </StyledTableRow>
   );

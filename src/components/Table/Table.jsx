@@ -37,7 +37,9 @@ const StyledPagination = sizeMe({ noPlaceholder: true })(styled(PaginationV2)`
     .bx--pagination__left,
     .bx--pagination__text {
       display: ${props =>
-        props.size && props.size.width && props.size.width < 600 ? 'none' : 'flex'};
+        (props.size && props.size.width && props.size.width < 600) || props.isItemPerPageHidden
+          ? 'none'
+          : 'flex'};
     }
   }
 `);
@@ -78,6 +80,7 @@ const propTypes = {
       pageSizes: PropTypes.arrayOf(PropTypes.number),
       page: PropTypes.number,
       totalItems: PropTypes.number,
+      isItemPerPageHidden: PropTypes.bool,
     }),
     filters: PropTypes.arrayOf(
       PropTypes.shape({
@@ -192,6 +195,7 @@ export const defaultProps = baseProps => ({
       pageSizes: [10, 20, 30],
       page: 1,
       totalItems: baseProps.data && baseProps.data.length,
+      isItemPerPageHidden: false,
     },
     filters: [],
     toolbar: {

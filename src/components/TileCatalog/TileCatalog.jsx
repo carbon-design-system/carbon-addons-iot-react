@@ -153,7 +153,8 @@ const TileCatalog = ({
               value={tile.id}
               name={id}
               checked={selectedTileId === tile.id}
-              onChange={onSelection}>
+              onChange={onSelection}
+            >
               {tile.renderContent
                 ? tile.renderContent({ values: tile.values, id: tile.id })
                 : tile.value}
