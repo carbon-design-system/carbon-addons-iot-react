@@ -143,8 +143,6 @@ const TableCard = ({
       }))
     : data;
 
-  console.log(data, tableData);
-
   return (
     <Card id={id} title={title} size={size} layout={layout} onCardAction={onCardAction} {...others}>
       <StyledStatefulTable
@@ -153,12 +151,14 @@ const TableCard = ({
         options={{
           hasPagination: true,
         }}
+        actions={{
+          table: { onRowClicked: () => {} },
+          pagination: { onChangePage: () => {} },
+        }}
         view={{
           pagination: {
             pageSize: 9,
             pageSizes: [9],
-            page: 1,
-            totalItems: data.length,
             isItemPerPageHidden: true,
           },
         }}

@@ -146,6 +146,7 @@ const Dashboard = ({
       {card.type === CARD_TYPES.TABLE ? (
         <TableCard
           {...card}
+          isLoading={isLoading}
           isEditable={isEditable}
           onCardAction={onCardAction}
           key={card.id}
