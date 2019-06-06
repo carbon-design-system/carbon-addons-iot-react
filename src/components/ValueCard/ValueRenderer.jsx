@@ -1,15 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import WarningAlt from '@carbon/icons-react/lib/warning--alt/32';
-import CheckmarkOutline from '@carbon/icons-react/lib/checkmark--outline/32';
+// import WarningAlt from '@carbon/icons-react/lib/warning--alt/32';
+// import CheckmarkOutline from '@carbon/icons-react/lib/checkmark--outline/32';
 import styled from 'styled-components';
-
-import { COLORS } from '../../styles/styles';
 
 const propTypes = {
   value: PropTypes.any, // eslint-disable-line
 };
 
+/*
 const StyledWarningAlt = styled(WarningAlt)`
   > path {
     fill: ${COLORS.errorRed};
@@ -21,11 +20,16 @@ const StyledCheckmarkOutline = styled(CheckmarkOutline)`
     fill: ${COLORS.okayGreen};
   }
 `;
+*/
+
+const StyledBoolean = styled.span`
+  text-transform: capitalize;
+`;
 
 /** This components job is determining how to render different kinds of card values */
 const ValueRenderer = ({ value }) => {
   if (typeof value === 'boolean') {
-    return value ? <StyledWarningAlt /> : <StyledCheckmarkOutline />;
+    return <StyledBoolean>{value.toString()}</StyledBoolean>;
   }
   if (typeof value === 'number') {
     return value > 1000000

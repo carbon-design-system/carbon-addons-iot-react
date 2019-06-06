@@ -60,4 +60,21 @@ storiesOf('Table Card (Experimental)', module)
         />
       </div>
     );
+  })
+  .add('no row actions', () => {
+    const size = CARD_SIZES.LARGE;
+    return (
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+        <TableCard
+          title={text('title', 'Open Alerts')}
+          id="table-list"
+          content={{
+            data: tableData.map(i => ({ id: i.id, values: i.values })),
+            columns: tableColumns,
+          }}
+          onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
+          size={size}
+        />
+      </div>
+    );
   });
