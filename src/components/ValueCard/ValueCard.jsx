@@ -111,6 +111,7 @@ const ValueCard = ({ title, content, size, ...others }) => {
       size={size}
       layout={layout}
       availableActions={availableActions}
+      isEmpty={content.length === 0}
       {...others}
     >
       {content.map(i =>

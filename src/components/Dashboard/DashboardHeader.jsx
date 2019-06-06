@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import { SkeletonText } from 'carbon-components-react';
 
 import { COLORS } from '../../styles/styles';
 
@@ -36,9 +37,20 @@ const StyledLeft = styled.div`
   > h2,
   > p {
     padding-bottom: 1rem;
+    margin-bottom: 0rem;
   }
-  > p {
+  > p,
+  div {
     color: ${COLORS.gray};
+  }
+`;
+const LastUpdated = styled.div`
+  display: flex;
+  white-space: nowrap;
+  align-items: center;
+  > p {
+    margin-left: 1rem;
+    margin-bottom: 0rem;
   }
 `;
 
@@ -49,11 +61,9 @@ const DashboardHeader = ({ title, description, lastUpdated, lastUpdatedLabel, fi
       <StyledLeft>
         <h2>{title}</h2>
         {description ? <p>{description}</p> : null}
-        {lastUpdated ? (
-          <p>
-            {lastUpdatedLabel} {lastUpdated}
-          </p>
-        ) : null}
+        <LastUpdated>
+          {lastUpdatedLabel} {lastUpdated || <SkeletonText />}
+        </LastUpdated>
       </StyledLeft>
       <div>{filter}</div>
     </StyledDashboardHeader>

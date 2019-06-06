@@ -1,3 +1,5 @@
+import React from 'react';
+
 export const chartData = {
   events: [
     {
@@ -2413,3 +2415,119 @@ export const chartData = {
     status: 1559071814227,
   },
 };
+
+const renderCustomCell = (
+  { value } // eslint-disable-line
+) => (
+  <div>
+    <svg height="10" width="10">
+      <circle cx="5" cy="5" r="3" stroke="none" strokeWidth="1" fill="red" />
+    </svg>
+    <span style={{ marginLeft: '10px' }}>{value}</span>
+  </div>
+);
+
+const actions1 = [
+  { id: 'open', label: 'Open' },
+  { id: 'view', labelText: 'View' },
+  { id: 'openTicket', labelText: 'Open Ticket' },
+];
+
+const actions2 = [{ id: 'open', icon: 'icon--edit' }];
+
+export const tableColumns = [
+  { id: 'alert', name: 'Alert', renderDataFunction: renderCustomCell, priority: 1 },
+  { id: 'creator', name: 'Creator', priority: 3 },
+  { id: 'hour', name: 'Hour', priority: 2 },
+];
+
+export const tableData = [
+  {
+    id: `row-1`,
+    values: {
+      alert: 'AHI005 Asset failure',
+      creator: 'ME',
+      hour: '16:20h',
+    },
+    actions: actions1,
+  },
+  {
+    id: `row-2`,
+    values: {
+      alert: 'AHI003 process need to optimize, adjust X variables',
+      creator: 'ME',
+      hour: '09:40h',
+    },
+    actions: actions2,
+  },
+  {
+    id: `row-3`,
+    values: {
+      alert: 'AHI001 proccess need to optimize, adjust Y variables',
+      creator: 'Line Supervisor',
+      hour: '16:20h',
+    },
+    actions: actions1,
+  },
+  {
+    id: `row-4`,
+    values: {
+      alert: 'AHI001 proccess need to optimize, adjust Y variables',
+      creator: 'Line Supervisor',
+      hour: '16:20h',
+    },
+  },
+  {
+    id: `row-5`,
+    values: {
+      alert: 'AHI001 proccess need to optimize',
+      creator: 'Line Supervisor',
+      hour: '16:20h',
+    },
+  },
+  {
+    id: `row-6`,
+    values: {
+      alert: 'AHI001 proccess need to optimize.',
+      creator: 'Line Supervisor',
+      hour: '16:20h',
+    },
+    actions: actions2,
+  },
+  {
+    id: `row-7`,
+    values: {
+      alert: 'AHI001 proccess need to optimize',
+      creator: 'Line Supervisor',
+      hour: '16:20h',
+    },
+    actions: actions2,
+  },
+  {
+    id: `row-8`,
+    values: {
+      alert: 'AHI001 proccess need to optimize, adjust Y variables',
+      creator: 'Line Supervisor',
+      hour: '16:20h',
+    },
+    actions: actions1,
+  },
+  {
+    id: `row-9`,
+    values: {
+      alert: 'AHI001 proccess need to optimize, adjust Y variables',
+      creator: 'Line Supervisor',
+      hour: '16:20h',
+    },
+    actions: actions1,
+  },
+  {
+    id: `row-10`,
+    values: {
+      alert: 'AHI010 proccess need to optimize, adjust Y variables',
+      creator: 'Admin',
+      hour: '16:20h',
+    },
+    actions: actions2,
+  },
+];

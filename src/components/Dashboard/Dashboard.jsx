@@ -5,7 +5,6 @@ import 'react-grid-layout/css/styles.css';
 import 'react-resizable/css/styles.css';
 import styled from 'styled-components';
 import find from 'lodash/find';
-import { Loading } from 'carbon-components-react';
 
 import { getLayout } from '../../utils/componentUtilityFunctions';
 import {
@@ -18,6 +17,7 @@ import {
 } from '../../constants/PropTypes';
 import ValueCard from '../ValueCard/ValueCard';
 import DonutCard from '../DonutCard/DonutCard';
+import TableCard from '../TableCard/TableCard';
 import BarChartCard from '../BarChartCard/BarChartCard';
 import PieCard from '../PieCard/PieCard';
 import TimeSeriesCard from '../TimeSeriesCard/TimeSeriesCard';
@@ -113,14 +113,12 @@ const Dashboard = ({
     console.log('dashboard is remounting'); // eslint-disable-line
   }, []);
 
-  // console.log(breakpoint);
-  // console.log(dashboardBreakpoints, cardDimensions, rowHeight);
-
   const renderCard = card => (
     <div key={card.id}>
       {card.type === CARD_TYPES.VALUE ? (
         <ValueCard
           {...card}
+          isLoading={isLoading}
           isEditable={isEditable}
           onCardAction={onCardAction}
           key={card.id}
@@ -133,6 +131,20 @@ const Dashboard = ({
       ) : null}
       {card.type === CARD_TYPES.TIMESERIES ? (
         <TimeSeriesCard
+          {...card}
+          isLoading={isLoading}
+          isEditable={isEditable}
+          onCardAction={onCardAction}
+          key={card.id}
+          breakpoint={breakpoint}
+          dashboardBreakpoints={dashboardBreakpoints}
+          dashboardColumns={dashboardColumns}
+          cardDimensions={cardDimensions}
+          rowHeight={rowHeight}
+        />
+      ) : null}
+      {card.type === CARD_TYPES.TABLE ? (
+        <TableCard
           {...card}
           isEditable={isEditable}
           onCardAction={onCardAction}
@@ -147,6 +159,7 @@ const Dashboard = ({
       {card.type === CARD_TYPES.DONUT ? (
         <DonutCard
           {...card}
+          isLoading={isLoading}
           isEditable={isEditable}
           onCardAction={onCardAction}
           key={card.id}
@@ -160,6 +173,7 @@ const Dashboard = ({
       {card.type === CARD_TYPES.PIE ? (
         <PieCard
           {...card}
+          isLoading={isLoading}
           isEditable={isEditable}
           onCardAction={onCardAction}
           key={card.id}
@@ -173,6 +187,7 @@ const Dashboard = ({
       {card.type === CARD_TYPES.BAR ? (
         <BarChartCard
           {...card}
+          isLoading={isLoading}
           isEditable={isEditable}
           onCardAction={onCardAction}
           key={card.id}
@@ -224,33 +239,29 @@ const Dashboard = ({
         lastUpdatedLabel={lastUpdatedLabel}
         filter={filter}
       />
-      {isLoading ? (
-        <Loading withOverlay={false} />
-      ) : (
-        <StyledGridLayout
-          layouts={generatedLayouts}
-          compactType="vertical"
-          cols={dashboardColumns}
-          breakpoints={dashboardBreakpoints}
-          margin={[GUTTER, GUTTER]}
-          rowHeight={rowHeight[breakpoint]}
-          preventCollision={false}
-          // Stop the initial animation
-          shouldAnimate={isEditable}
-          // TODO: need to consider preserving their loose packing decisions on layout change
-          // TODO: also, should we reorder our cards based on the layout change, and regenerate all
-          //       other layouts?  for example, moving card 5 to before card 2 in lg should mean
-          //       that the order changes for xl, md, sm, xs, etc. layouts
-          /* onLayoutChange={
-         layout =>  console.log('new layout, time to regenerate', JSON.stringify(layout)
-        } */
-          onBreakpointChange={newBreakpoint => setBreakpoint(newBreakpoint)}
-          isResizable={false}
-          isDraggable={isEditable}
-        >
-          {gridContents}
-        </StyledGridLayout>
-      )}
+      <StyledGridLayout
+        layouts={generatedLayouts}
+        compactType="vertical"
+        cols={dashboardColumns}
+        breakpoints={dashboardBreakpoints}
+        margin={[GUTTER, GUTTER]}
+        rowHeight={rowHeight[breakpoint]}
+        preventCollision={false}
+        // Stop the initial animation
+        shouldAnimate={isEditable}
+        // TODO: need to consider preserving their loose packing decisions on layout change
+        // TODO: also, should we reorder our cards based on the layout change, and regenerate all
+        //       other layouts?  for example, moving card 5 to before card 2 in lg should mean
+        //       that the order changes for xl, md, sm, xs, etc. layouts
+        /* onLayoutChange={
+        layout =>  console.log('new layout, time to regenerate', JSON.stringify(layout)
+      } */
+        onBreakpointChange={newBreakpoint => setBreakpoint(newBreakpoint)}
+        isResizable={false}
+        isDraggable={isEditable}
+      >
+        {gridContents}
+      </StyledGridLayout>
     </div>
   );
 };

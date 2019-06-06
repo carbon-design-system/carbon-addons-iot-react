@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { text, select, object } from '@storybook/addon-knobs';
+import { text, select, object, boolean } from '@storybook/addon-knobs';
 
 import { COLORS, CARD_SIZES } from '../../constants/LayoutConstants';
 import { getCardMinSize } from '../../utils/componentUtilityFunctions';
@@ -18,6 +18,7 @@ storiesOf('TimeSeriesCard (Experimental)', module)
         <TimeSeriesCard
           title={text('title', 'Temperature')}
           id="facility-temperature"
+          isLoading={boolean('isLoading', false)}
           content={object('content', {
             data: [
               {
@@ -46,6 +47,7 @@ storiesOf('TimeSeriesCard (Experimental)', module)
         <TimeSeriesCard
           title={text('title', 'Facility Metrics')}
           id="facility-multi"
+          isLoading={boolean('isLoading', false)}
           content={object('content', {
             data: [
               {
@@ -85,6 +87,7 @@ storiesOf('TimeSeriesCard (Experimental)', module)
         <TimeSeriesCard
           title={text('title', 'Temperature')}
           id="facility-temperature"
+          isLoading={boolean('isLoading', false)}
           content={object('content', {
             range: 'day',
             data: {
@@ -111,6 +114,7 @@ storiesOf('TimeSeriesCard (Experimental)', module)
         <TimeSeriesCard
           title={text('title', 'Pressure')}
           id="facility-temperature"
+          isLoading={boolean('isLoading', false)}
           content={object('content', {
             range: 'week',
             data: {
