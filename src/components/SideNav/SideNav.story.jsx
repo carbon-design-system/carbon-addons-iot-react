@@ -23,13 +23,6 @@ const User = styled.p`
   }
 `;
 
-const StyledIcon = styled(Icon)`
-   {
-    width: 25px;
-    height: 25px;
-  }
-`;
-
 const RouterComponent = ({ children, ...rest }) => <div {...rest}>{children}</div>;
 
 /* eslint-disable*/
@@ -111,7 +104,11 @@ const HeaderProps = {
           <User>
             JohnDoe@ibm.com<span>TenantId: Acme</span>
           </User>
-          <StyledIcon name="header--avatar" fill="white" description="Icon" />
+          <Group
+            fill="white"
+            description="Icon"
+            className="bx--header__menu-item bx--header__menu-title"
+          />
         </React.Fragment>
       ),
     },

@@ -14,9 +14,9 @@ addDecorator(
     inline: false, // Global configuration for the info addon across all of your stories.
   })
 );
+addDecorator(story => <Container story={story} />);
 addDecorator(checkA11y);
 addDecorator(withKnobs);
-addDecorator(story => <Container story={story} />);
 
 function loadStories() {
   const req = require.context('../src/components', true, /\.story\.jsx$/);
