@@ -32,10 +32,14 @@ const ValueRenderer = ({ value }) => {
     return <StyledBoolean>{value.toString()}</StyledBoolean>;
   }
   if (typeof value === 'number') {
-    return value > 1000000
-      ? `${(value / 1000000).toFixed(1)}m`
+    return value > 1000000000000
+      ? `${(value / 1000000000000).toFixed(0)} T`
+      : value > 1000000000
+      ? `${(value / 1000000000).toFixed(0)} B`
+      : value > 1000000
+      ? `${(value / 1000000).toFixed(0)} M`
       : value > 1000
-      ? `${(value / 1000).toFixed(1)}k`
+      ? `${(value / 1000).toFixed(0)} K`
       : value;
   }
   return value;

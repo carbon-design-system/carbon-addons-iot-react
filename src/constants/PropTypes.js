@@ -45,7 +45,9 @@ export const TimeSeriesDatasetPropTypes = PropTypes.shape({
   label: PropTypes.string.isRequired,
   values: PropTypes.arrayOf(
     PropTypes.shape({
+      /** time attribute */
       t: PropTypes.number.isRequired,
+      /** value attribute */
       v: PropTypes.number.isRequired,
     })
   ),
@@ -171,6 +173,10 @@ export const CardPropTypes = {
     clone: PropTypes.bool,
     delete: PropTypes.bool,
     expand: PropTypes.bool,
+  }),
+  i18n: PropTypes.shape({
+    noDataLabel: PropTypes.node,
+    noDataShortLabel: PropTypes.node,
   }),
   tooltip: PropTypes.element,
   toolbar: PropTypes.element,

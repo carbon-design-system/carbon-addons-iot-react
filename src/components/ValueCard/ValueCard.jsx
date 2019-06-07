@@ -31,20 +31,29 @@ const AttributeWrapper = styled.div`
 
 const AttributeValueWrapper = styled.div`
   padding-bottom: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+`;
+
+const Attribute = styled.div`
+  max-width: 75%;
+  overflow: hidden;
+  text-overflow: ellipsis;
 `;
 
 const AttributeLabel = styled.div`
   ${props =>
     props.layout === CARD_LAYOUTS.HORIZONTAL && `padding-bottom: 0.25rem; font-size: 1.25rem;`};
   ${props => props.layout === CARD_LAYOUTS.VERTICAL && `font-size: 1.0rem;`};
-  text-align: left;
+  text-align: right;
 `;
 
 const AttributeValue = styled.span`
-  ${props =>
-    props.layout === CARD_LAYOUTS.HORIZONTAL &&
-    `font-size: ${props.hasSecondary ? '2.5rem' : '3.0rem'}; font-weight: lighter;`}
-  ${props => props.layout === CARD_LAYOUTS.VERTICAL && `text-align: right;`};
+  font-size: ${props => (props.hasSecondary ? '2.5rem' : '3.0rem')};
+  font-weight: lighter;
+  ${props => props.layout === CARD_LAYOUTS.VERTICAL && `text-align: left;`};
+  white-space: nowrap;
 `;
 
 const AttributeSecondaryValue = styled.div`
@@ -61,6 +70,7 @@ const TrendIcon = styled(Icon)`
 `;
 
 const AttributeUnit = styled.span`
+  padding-left: 0.5rem;
   ${props =>
     props.layout === CARD_LAYOUTS.HORIZONTAL &&
     `
@@ -73,6 +83,8 @@ const ValueCard = ({ title, content, size, ...others }) => {
   switch (size) {
     case CARD_SIZES.XSMALL:
     case CARD_SIZES.SMALL:
+      layout = CARD_LAYOUTS.VERTICAL;
+      break;
     case CARD_SIZES.TALL:
       if (content.length > 2) {
         layout = CARD_LAYOUTS.VERTICAL;
@@ -103,11 +115,10 @@ const ValueCard = ({ title, content, size, ...others }) => {
   };
 
   const isXS = size === CARD_SIZES.XSMALL;
-  const cardTitle = isXS ? content[0].title : title;
 
   return (
     <Card
-      title={cardTitle}
+      title={title}
       size={size}
       layout={layout}
       availableActions={availableActions}
@@ -122,7 +133,11 @@ const ValueCard = ({ title, content, size, ...others }) => {
             key={i.title}
           >
             <AttributeValueWrapper>
-              <AttributeValue layout={layout} hasSecondary={i.secondaryValue !== undefined}>
+              <AttributeValue
+                title={`${i.value} ${i.unit}`}
+                layout={layout}
+                hasSecondary={i.secondaryValue !== undefined}
+              >
                 {!isNil(i.value) ? <ValueRenderer value={i.value} /> : ' '}
               </AttributeValue>
               {i.unit && <AttributeUnit layout={layout}>{i.unit}</AttributeUnit>}
@@ -147,13 +162,13 @@ const ValueCard = ({ title, content, size, ...others }) => {
           </AttributeWrapper>
         ) : (
           <AttributeWrapper layout={layout} key={i.title}>
-            <AttributeLabel layout={layout}>{i.title}</AttributeLabel>
-            <div>
-              <AttributeValue layout={layout}>
+            <Attribute>
+              <AttributeValue title={`${i.value} ${i.unit}`} layout={layout}>
                 {!isNil(i.value) ? <ValueRenderer value={i.value} /> : ' '}
               </AttributeValue>
               {i.unit && <AttributeUnit layout={layout}>{i.unit}</AttributeUnit>}
-            </div>
+            </Attribute>
+            <AttributeLabel layout={layout}>{i.title}</AttributeLabel>
           </AttributeWrapper>
         )
       )}

@@ -69,6 +69,13 @@ export const CardContent = styled.div`
   `}
 `;
 
+const CardTitle = styled.span`
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 20px;
+`;
+
 const StyledToolbar = styled(Toolbar)`
   &.bx--toolbar {
     margin-top: 0;
@@ -119,6 +126,10 @@ const defaultProps = {
   cardDimensions: CARD_DIMENSIONS,
   dashboardBreakpoints: DASHBOARD_BREAKPOINTS,
   dashboardColumns: DASHBOARD_COLUMNS,
+  i18n: {
+    noDataLabel: 'No data is available for this time range.',
+    noDataShortLabel: 'No data',
+  },
 };
 
 const Card = ({
@@ -135,8 +146,10 @@ const Card = ({
   onCardAction,
   availableActions,
   breakpoint,
+  i18n: { noDataLabel, noDataShortLabel },
   ...others
 }) => {
+  const isXS = size === CARD_SIZES.XSMALL;
   const dimensions = getCardMinSize(
     breakpoint,
     size,
@@ -225,10 +238,10 @@ const Card = ({
   return (
     <CardWrapper id={id} dimensions={dimensions} {...others}>
       <CardHeader>
-        <div>
+        <CardTitle title={title}>
           {title}&nbsp;
           {tooltip && <Tooltip triggerText="">{tooltip}</Tooltip>}
-        </div>
+        </CardTitle>
         {toolbar}
       </CardHeader>
       <CardContent layout={layout} height={dimensions.y}>
@@ -237,7 +250,7 @@ const Card = ({
             <SkeletonText paragraph lineCount={size === CARD_SIZES.XSMALL ? 2 : 3} width="100%" />
           </SkeletonWrapper>
         ) : isEmpty ? (
-          <EmptyMessageWrapper>No data is available for this time range.</EmptyMessageWrapper>
+          <EmptyMessageWrapper>{isXS ? noDataShortLabel : noDataLabel}</EmptyMessageWrapper>
         ) : (
           children
         )}
