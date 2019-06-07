@@ -113,7 +113,6 @@ storiesOf('ValueCard (Experimental)', module)
             { title: 'Comfort Level', value: 89, unit: '%' },
             { title: 'Average Temperature', value: 76.7, unit: '˚F' },
             { title: 'Utilization', value: 76, unit: '%' },
-            { title: 'Number of Alerts', value: 17 },
           ])}
           breakpoint="lg"
           size={size}
@@ -160,7 +159,7 @@ storiesOf('ValueCard (Experimental)', module)
             {
               title: 'Monthly summary',
               value: number('value', 20000000000000000),
-              unit: text('unit', 'visits'),
+              unit: text('unit', ''),
             },
           ]}
           breakpoint="lg"
@@ -180,12 +179,12 @@ storiesOf('ValueCard (Experimental)', module)
             {
               title: 'Monthly summary',
               value: number('value', 100000000),
-              unit: text('unit', 'visits'),
+              unit: text('unit', 'Wh'),
             },
             {
               title: 'Yearly summary',
-              value: number('value', 40000000000000000),
-              unit: text('unit', 'visits'),
+              value: number('value', 40000000000000),
+              unit: text('unit', 'Wh'),
             },
           ]}
           breakpoint="lg"
