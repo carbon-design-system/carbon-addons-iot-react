@@ -13,7 +13,7 @@ const defaultProps = {
 };
 
 const AttributeUnit = styled.span`
-  padding-left: 0.5rem;
+  padding-left: 0.25rem;
   padding-bottom: 0.25rem;
   ${props =>
     props.layout === CARD_LAYOUTS.HORIZONTAL

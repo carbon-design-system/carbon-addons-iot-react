@@ -34,13 +34,15 @@ const propTypes = {
   unit: PropTypes.any, // eslint-disable-line
   layout: PropTypes.oneOf(Object.values(CARD_LAYOUTS)),
   secondaryValue: PropTypes.any, // eslint-disable-line
+  precision: PropTypes.number,
 };
 
 const defaultProps = {
   layout: null,
+  precision: 0,
 };
 
-const Attribute = ({ value, unit, layout, secondaryValue }) => {
+const Attribute = ({ value, unit, layout, secondaryValue, precision }) => {
   return (
     <StyledAttribute>
       {!isNil(value) ? (
@@ -49,6 +51,7 @@ const Attribute = ({ value, unit, layout, secondaryValue }) => {
           unit={unit}
           layout={layout}
           hasSecondary={secondaryValue !== undefined}
+          precision={precision}
         />
       ) : (
         ' '

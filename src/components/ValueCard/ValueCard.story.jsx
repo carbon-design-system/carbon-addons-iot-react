@@ -111,7 +111,7 @@ storiesOf('ValueCard (Experimental)', module)
           id="facilitycard"
           content={object('content', [
             { title: 'Comfort Level', value: 89, unit: '%' },
-            { title: 'Average Temperature', value: 76.7, unit: '˚F' },
+            { title: 'Average Temperature', value: 76.7, unit: '˚F', precision: 1 },
             { title: 'Utilization', value: 76, unit: '%' },
           ])}
           breakpoint="lg"

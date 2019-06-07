@@ -36,9 +36,7 @@ const originalCards = [
     content: [
       { title: 'Comfort Level', value: 89, unit: '%' },
       { title: 'Utilization', value: 76, unit: '%' },
-      { title: 'Humidity', value: 46, unit: '%' },
       { title: 'Pressure', value: 21.4, unit: 'mb' },
-      { title: 'Number of Alerts', value: 17 },
     ],
   },
   {

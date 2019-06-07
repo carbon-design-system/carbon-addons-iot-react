@@ -11,11 +11,13 @@ const propTypes = {
   unit: PropTypes.any, // eslint-disable-line
   layout: PropTypes.oneOf(Object.values(CARD_LAYOUTS)),
   hasSecondary: PropTypes.bool,
+  precision: PropTypes.number,
 };
 
 const defaultProps = {
   layout: CARD_LAYOUTS.HORIZONTAL,
   hasSecondary: false,
+  precision: 0,
 };
 
 /*
@@ -48,7 +50,7 @@ const StyledBoolean = styled.span`
 `;
 
 /** This components job is determining how to render different kinds of card values */
-const ValueRenderer = ({ value, unit, layout, hasSecondary }) => {
+const ValueRenderer = ({ value, unit, layout, precision, hasSecondary }) => {
   let renderValue = value;
   if (typeof value === 'boolean') {
     renderValue = <StyledBoolean>{value.toString()}</StyledBoolean>;
@@ -56,14 +58,14 @@ const ValueRenderer = ({ value, unit, layout, hasSecondary }) => {
   if (typeof value === 'number') {
     renderValue =
       value > 1000000000000
-        ? (value / 1000000000000).toFixed(0)
+        ? (value / 1000000000000).toFixed(precision)
         : value > 1000000000
-        ? (value / 1000000000).toFixed(0)
+        ? (value / 1000000000).toFixed(precision)
         : value > 1000000
-        ? (value / 1000000).toFixed(0)
+        ? (value / 1000000).toFixed(precision)
         : value > 1000
-        ? (value / 1000).toFixed(0)
-        : value.toFixed(0);
+        ? (value / 1000).toFixed(precision)
+        : value.toFixed(precision);
   }
   return (
     <Attribute unit={unit} hasSecondary={hasSecondary}>

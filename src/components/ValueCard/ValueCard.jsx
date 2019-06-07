@@ -99,12 +99,7 @@ const ValueCard = ({ title, content, size, ...others }) => {
             key={i.title}
           >
             <AttributeValueWrapper>
-              <Attribute
-                value={i.value}
-                unit={i.unit}
-                layout={layout}
-                secondaryValue={i.secondaryValue}
-              />
+              <Attribute layout={layout} {...i} />
             </AttributeValueWrapper>
           </AttributeWrapper>
         ) : (
@@ -113,12 +108,7 @@ const ValueCard = ({ title, content, size, ...others }) => {
             key={i.title}
             hasSecondary={i.secondaryValue !== undefined}
           >
-            <Attribute
-              value={i.value}
-              unit={i.unit}
-              layout={layout}
-              secondaryValue={i.secondaryValue}
-            />
+            <Attribute layout={layout} {...i} />
             <AttributeLabel layout={layout}>{i.title}</AttributeLabel>
           </AttributeWrapper>
         )
