@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { text, select, object, boolean } from '@storybook/addon-knobs';
+import { text, select, object, boolean, number } from '@storybook/addon-knobs';
 
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 import { getCardMinSize } from '../../utils/componentUtilityFunctions';
@@ -111,27 +111,8 @@ storiesOf('ValueCard (Experimental)', module)
           id="facilitycard"
           content={object('content', [
             { title: 'Comfort Level', value: 89, unit: '%' },
-            { title: 'Average Temperature', value: 76.7, unit: '˚F' },
+            { title: 'Average Temperature', value: 76.7, unit: '˚F', precision: 1 },
             { title: 'Utilization', value: 76, unit: '%' },
-            { title: 'Number of Alerts', value: 17 },
-          ])}
-          breakpoint="lg"
-          size={size}
-        />
-      </div>
-    );
-  })
-  .add('medium / multiple', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
-    return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
-        <ValueCard
-          title={text('title', 'Facility Conditions')}
-          id="facilitycard"
-          content={object('content', [
-            { title: 'Comfort Level', value: 89, unit: '%' },
-            { title: 'Utilization', value: 76, unit: '%' },
-            { title: 'Number of Alerts', value: 17 },
           ])}
           breakpoint="lg"
           size={size}
@@ -140,13 +121,13 @@ storiesOf('ValueCard (Experimental)', module)
     );
   })
   .add('with boolean', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.XSMALL);
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <ValueCard
-          title={text('title', 'Facility Conditions')}
+          title={text('title', 'Uncomfortable?')}
           id="facilitycard"
-          content={[{ title: 'Uncomfortable?', value: boolean('value', false) }]}
+          content={[{ title: 'Monthly summary', value: boolean('value', false) }]}
           breakpoint="lg"
           size={size}
         />
@@ -161,6 +142,51 @@ storiesOf('ValueCard (Experimental)', module)
           title={text('title', 'Facility Conditions')}
           id="facilitycard"
           content={[]}
+          breakpoint="lg"
+          size={size}
+        />
+      </div>
+    );
+  })
+  .add('long titles and values', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.XSMALL);
+    return (
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+        <ValueCard
+          title={text('title', 'Really long card title?')}
+          id="facilitycard"
+          content={[
+            {
+              title: 'Monthly summary',
+              value: number('value', 20000000000000000),
+              unit: text('unit', ''),
+            },
+          ]}
+          breakpoint="lg"
+          size={size}
+        />
+      </div>
+    );
+  })
+  .add('long titles and values/multiple', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
+    return (
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+        <ValueCard
+          title={text('title', 'Really really really long card title?')}
+          id="facilitycard"
+          content={[
+            {
+              title: 'Monthly summary',
+              value: number('value', 100000000),
+              unit: text('unit', 'Wh'),
+            },
+            {
+              title: 'Yearly summary',
+              value: number('value', 40000000000000),
+              unit: text('unit', 'Wh'),
+            },
+          ]}
           breakpoint="lg"
           size={size}
         />
