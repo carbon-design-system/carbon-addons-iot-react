@@ -13,6 +13,7 @@ import UnitRenderer from './UnitRenderer';
 const StyledAttribute = styled.div`
   display: flex;
   align-items: flex-end;
+  order: 1;
 `;
 
 const TrendIcon = styled(Icon)`

@@ -61,7 +61,7 @@ export const CardContent = styled.div`
   ${props =>
     props.layout === CARD_LAYOUTS.VERTICAL &&
     `
-    padding: 1.5rem 0;
+    padding: 0.5rem 0 1.5rem;
     display: flex;
     flex-direction: column;
     align-items: center;

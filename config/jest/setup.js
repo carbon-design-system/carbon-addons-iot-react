@@ -21,3 +21,8 @@ React.useEffect = React.useLayoutEffect;
 class SVGPathElement extends HTMLElement {}
 
 window.SVGPathElement = SVGPathElement;
+
+// Needed so that any component that uses sizeme can be jest tested
+import sizeMe from 'react-sizeme';
+
+sizeMe.noPlaceholders = true;

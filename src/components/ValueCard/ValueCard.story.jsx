@@ -11,13 +11,13 @@ storiesOf('ValueCard (Experimental)', module)
   .add('xsmall / basic', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.XSMALL);
     return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+      <div style={{ width: text('cardWidth', `${getCardMinSize('lg', size).x}px`), margin: 20 }}>
         <ValueCard
-          title={text('title', 'Facility Conditions')}
+          title={text('title', 'Occupancy')}
           id="facilitycard"
           content={object('content', [
             {
-              title: 'Occupancy',
+              title: 'Attribute title is ignored for xsmall card sizes',
               value: 88,
               unit: '%',
             },
@@ -31,13 +31,13 @@ storiesOf('ValueCard (Experimental)', module)
   .add('xsmall / secondary value', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.XSMALL);
     return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+      <div style={{ width: text('cardWidth', `${getCardMinSize('lg', size).x}px`), margin: 20 }}>
         <ValueCard
-          title={text('title', 'Facility Conditions')}
+          title={text('title', 'Foot Traffic')}
           id="facilitycard"
           content={object('content', [
             {
-              title: 'Foot Traffic',
+              title: 'Attribute title is ignored for xsmall card sizes',
               value: 13572,
               secondaryValue: 'Average',
             },
@@ -51,13 +51,13 @@ storiesOf('ValueCard (Experimental)', module)
   .add('xsmall / trend down', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.XSMALL);
     return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+      <div style={{ width: text('cardWidth', `${getCardMinSize('lg', size).x}px`), margin: 20 }}>
         <ValueCard
-          title={text('title', 'Facility Conditions')}
+          title={text('title', 'Foot Traffic')}
           id="facilitycard"
           content={object('content', [
             {
-              title: 'Foot Traffic',
+              title: 'Attribute title is ignored for xsmall card sizes',
               value: 13572,
               secondaryValue: { value: '22%', trend: 'down', color: 'red' },
             },
@@ -71,13 +71,13 @@ storiesOf('ValueCard (Experimental)', module)
   .add('xsmall / trend up', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.XSMALL);
     return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+      <div style={{ width: text('cardWidth', `${getCardMinSize('lg', size).x}px`), margin: 20 }}>
         <ValueCard
-          title={text('title', 'Facility Conditions')}
+          title={text('title', 'Alert Count')}
           id="facilitycard"
           content={object('content', [
             {
-              title: 'Alert Count',
+              title: 'Attribute title is ignored for xsmall card sizes',
               value: 35,
               secondaryValue: { value: '12', trend: 'up', color: 'green' },
             },
@@ -91,7 +91,7 @@ storiesOf('ValueCard (Experimental)', module)
   .add('small / single', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
     return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+      <div style={{ width: text('cardWidth', `${getCardMinSize('lg', size).x}px`), margin: 20 }}>
         <ValueCard
           title={text('title', 'Facility Conditions')}
           id="facilitycard"
@@ -105,7 +105,7 @@ storiesOf('ValueCard (Experimental)', module)
   .add('small / multiple', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
     return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+      <div style={{ width: text('cardWidth', `${getCardMinSize('lg', size).x}px`), margin: 20 }}>
         <ValueCard
           title={text('title', 'Facility Conditions')}
           id="facilitycard"
@@ -123,7 +123,7 @@ storiesOf('ValueCard (Experimental)', module)
   .add('with boolean', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.XSMALL);
     return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+      <div style={{ width: text('cardWidth', `${getCardMinSize('lg', size).x}px`), margin: 20 }}>
         <ValueCard
           title={text('title', 'Uncomfortable?')}
           id="facilitycard"
@@ -137,7 +137,7 @@ storiesOf('ValueCard (Experimental)', module)
   .add('empty state', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
     return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+      <div style={{ width: text('cardWidth', `${getCardMinSize('lg', size).x}px`), margin: 20 }}>
         <ValueCard
           title={text('title', 'Facility Conditions')}
           id="facilitycard"
@@ -151,7 +151,7 @@ storiesOf('ValueCard (Experimental)', module)
   .add('long titles and values', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.XSMALL);
     return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+      <div style={{ width: text('cardWidth', `${getCardMinSize('lg', size).x}px`), margin: 20 }}>
         <ValueCard
           title={text('title', 'Really long card title?')}
           id="facilitycard"
@@ -171,7 +171,7 @@ storiesOf('ValueCard (Experimental)', module)
   .add('long titles and values/multiple', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
     return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+      <div style={{ width: text('cardWidth', `${getCardMinSize('lg', size).x}px`), margin: 20 }}>
         <ValueCard
           title={text('title', 'Really really really long card title?')}
           id="facilitycard"

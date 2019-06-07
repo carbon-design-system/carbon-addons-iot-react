@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { SizeMe } from 'react-sizeme';
 
 import { ValueCardPropTypes, CardPropTypes } from '../../constants/PropTypes';
 import { CARD_LAYOUTS, CARD_SIZES, CARD_CONTENT_PADDING } from '../../constants/LayoutConstants';
@@ -11,20 +12,26 @@ import Attribute from './Attribute';
 const AttributeWrapper = styled.div`
   ${props =>
     props.layout === CARD_LAYOUTS.VERTICAL &&
-    `
-    display: flex;
+    ` 
     padding: 0 ${CARD_CONTENT_PADDING}px;
     width: 100%;
-    flex-direction: row;
-    align-items: flex-end;
-    justify-content: space-between;
+    
   `}
   ${props =>
     props.layout === CARD_LAYOUTS.HORIZONTAL &&
     `
     width: 100%;
   `}
-  padding: 0 ${CARD_CONTENT_PADDING}px ${CARD_CONTENT_PADDING}px ${CARD_CONTENT_PADDING}px;
+  padding: 0px ${CARD_CONTENT_PADDING}px  ;
+`;
+
+const AttributeBorder = styled.div`
+  display: flex;
+  flex-direction: ${props => (props.isVertical ? 'column' : 'row')};
+  align-items: ${props => (props.isVertical ? 'flex-start' : 'flex-end')};
+  justify-content: space-between;
+  ${props => props.hasBorder && `border-top: 1px solid ${COLORS.lightGrey}`};
+  ${props => (!props.isVertical ? `padding: ${(CARD_CONTENT_PADDING * 2) / 3}px 0px` : '')};
 `;
 
 const AttributeValueWrapper = styled.div`
@@ -38,8 +45,9 @@ const AttributeLabel = styled.div`
     props.layout === CARD_LAYOUTS.HORIZONTAL && `padding-bottom: 0.25rem; font-size: 1.25rem;`};
   ${props => props.layout === CARD_LAYOUTS.VERTICAL && `font-size: 1.0rem;`};
   text-align: right;
-  padding-bottom: 0.5rem;
-  padding-left: 0.5rem;
+  ${props => props.isVertical && `padding-bottom: 0.25rem; padding-top: 0.25rem;`};
+  ${props => !props.isVertical && `padding-left: 0.5rem`};
+  order: ${props => (props.isVertical ? 0 : 2)};
   color: ${COLORS.gray};
   font-weight: lighter;
 `;
@@ -83,37 +91,50 @@ const ValueCard = ({ title, content, size, ...others }) => {
   const isXS = size === CARD_SIZES.XSMALL;
 
   return (
-    <Card
-      title={title}
-      size={size}
-      layout={layout}
-      availableActions={availableActions}
-      isEmpty={content.length === 0}
-      {...others}
-    >
-      {content.map(i =>
-        isXS ? (
-          <AttributeWrapper
+    <SizeMe>
+      {({ size: measuredSize }) => {
+        const isVertical = measuredSize && measuredSize.width < 300;
+        return (
+          <Card
+            title={title}
+            size={size}
             layout={layout}
-            hasSecondary={i.secondaryValue !== undefined}
-            key={i.title}
+            availableActions={availableActions}
+            isEmpty={content.length === 0}
+            {...others}
           >
-            <AttributeValueWrapper>
-              <Attribute layout={layout} {...i} />
-            </AttributeValueWrapper>
-          </AttributeWrapper>
-        ) : (
-          <AttributeWrapper
-            layout={layout}
-            key={i.title}
-            hasSecondary={i.secondaryValue !== undefined}
-          >
-            <Attribute layout={layout} {...i} />
-            <AttributeLabel layout={layout}>{i.title}</AttributeLabel>
-          </AttributeWrapper>
-        )
-      )}
-    </Card>
+            {content.map((attribute, i) =>
+              isXS ? (
+                // Small card
+                <AttributeWrapper
+                  layout={layout}
+                  hasSecondary={attribute.secondaryValue !== undefined}
+                  key={attribute.title}
+                >
+                  <AttributeValueWrapper>
+                    <Attribute layout={layout} {...attribute} />
+                  </AttributeValueWrapper>
+                </AttributeWrapper>
+              ) : (
+                // Larger card
+                <AttributeWrapper
+                  layout={layout}
+                  key={attribute.title}
+                  hasSecondary={attribute.secondaryValue !== undefined}
+                >
+                  <AttributeBorder isVertical={isVertical} hasBorder={!isVertical && i > 0}>
+                    <Attribute layout={layout} {...attribute} />
+                    <AttributeLabel isVertical={isVertical} layout={layout}>
+                      {attribute.title}
+                    </AttributeLabel>
+                  </AttributeBorder>
+                </AttributeWrapper>
+              )
+            )}
+          </Card>
+        );
+      }}
+    </SizeMe>
   );
 };
 
