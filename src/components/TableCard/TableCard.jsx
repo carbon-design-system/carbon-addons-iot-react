@@ -30,6 +30,11 @@ const StyledStatefulTable = styled(StatefulTable)`
   height: 100%;
   margin: 0 -1px;
   position: relative;
+
+  .bx--table-toolbar {
+    overflow: hidden;
+  }
+
   .bx--table-toolbar {
     display: none;
   }
@@ -73,7 +78,7 @@ const TableCard = ({
         name={cellItem.value[0].icon}
       />
     ) : (
-      <StyledOverflowMenu floatingMenu>
+      <StyledOverflowMenu>
         {cellItem.value.map(item => {
           return (
             <OverflowMenuItem

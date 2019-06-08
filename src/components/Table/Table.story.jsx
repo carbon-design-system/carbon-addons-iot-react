@@ -4,6 +4,10 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { boolean, text, number, select } from '@storybook/addon-knobs';
 import styled from 'styled-components';
+import Arrow from '@carbon/icons-react/lib/arrow--right/20';
+import Add from '@carbon/icons-react/lib/add/20';
+import Delete from '@carbon/icons-react/lib/delete/16';
+import { iconArrowRight, iconCaretDown } from 'carbon-icons';
 
 import { getSortedData } from '../../utils/componentUtilityFunctions';
 
@@ -161,12 +165,12 @@ const getNewRow = (idx, suffix = '', withActions = false) => ({
     ? [
         {
           id: 'drilldown',
-          icon: 'arrow--right',
+          icon: iconArrowRight,
           labelText: 'Drill in',
         },
         {
           id: 'Add',
-          icon: 'icon--add',
+          icon: iconCaretDown,
           labelText: 'Add',
           isOverflow: true,
         },
@@ -239,19 +243,37 @@ export const initialState = {
       idx % 4 !== 0
         ? {
             id: 'drilldown',
-            icon: 'arrow--right',
+            icon: () => (
+              <Arrow
+                fill="white"
+                description="Icon"
+                className="bx--header__menu-item bx--header__menu-title"
+              />
+            ),
             labelText: 'Drill in',
           }
         : null,
       {
         id: 'Add',
-        icon: 'icon--add',
+        icon: () => (
+          <Add
+            fill="white"
+            description="Icon"
+            className="bx--header__menu-item bx--header__menu-title"
+          />
+        ),
         labelText: 'Add',
         isOverflow: true,
       },
       {
         id: 'Delete',
-        icon: 'icon--delete',
+        icon: () => (
+          <Delete
+            fill="white"
+            description="Icon"
+            className="bx--header__menu-item bx--header__menu-title"
+          />
+        ),
         labelText: 'Delete',
         isOverflow: true,
       },
@@ -305,7 +327,7 @@ export const initialState = {
         {
           id: 'delete',
           labelText: 'Delete',
-          icon: 'delete',
+          renderIcon: Delete,
           iconDescription: 'Delete',
         },
       ],
@@ -348,22 +370,21 @@ storiesOf('Table', module)
     ),
     {
       info: {
-        text: `
-          
-          This table has expanded rows.  To support expanded rows, make sure to pass the expandedData prop to the table and set options.hasRowExpansion=true.
-          ~~~js
-          expandedData={[
-            {rowId: 'row-0',content: <RowExpansionContent />},
-            {rowId: 'row-1',content: <RowExpansionContent />},
-            {rowId: 'row-2',content: <RowExpansionContent />},
-            …
-          ]}
+        text:
+          'This table has expanded rows.  To support expanded rows, make sure to pass the expandedData prop to the table and set options.hasRowExpansion=true.',
+        // Syntax highlighting blowing up since storybook packge upgrades.
+        // ~~~js
+        // expandedData={[
+        //   {rowId: 'row-0',content: <RowExpansionContent />},
+        //   {rowId: 'row-1',content: <RowExpansionContent />},
+        //   {rowId: 'row-2',content: <RowExpansionContent />},
+        //   …
+        // ]}
 
-          options = { 
-            hasRowExpansion:true 
-          }
-          ~~~
-          `,
+        // options = {
+        //   hasRowExpansion:true
+        // }
+        // ~~~,
         propTables: [Table],
         propTablesExclude: [StatefulTable],
       },
@@ -430,19 +451,19 @@ storiesOf('Table', module)
     {
       info: {
         text: `
-          
+
           This stateful table has nested rows.  To setup your table this way you must pass a children prop along with each of your data rows.
 
           ~~~js
           data=[
             {
-              id: 'rowid', 
+              id: 'rowid',
               values: {
                 col1: 'value1
-              }, 
+              },
               children: [
                 {
-                  id: 'child-rowid, 
+                  id: 'child-rowid,
                   values: {
                     col1: 'nested-value1'
                   }
@@ -458,7 +479,7 @@ storiesOf('Table', module)
               hasRowExpansion: true
             }
           ~~~
-          
+
           `,
         propTables: [Table],
         propTablesExclude: [StatefulTable],
@@ -471,27 +492,34 @@ storiesOf('Table', module)
     {
       info: {
         text: `
-      
+
       For basic table support, you can render the functional <Table/> component with only the columns and data props.  This table does not have any state management built in.  If you want that, use the <StatefulTable/> component or you will need to implement your own listeners and state management.  You can reuse our tableReducer and tableActions with the useReducer hook to update state.
-      
-      ~~~js
-      import { tableReducer, tableActions } from 'carbon-addons-iot-react';
 
-      const [state, dispatch] = useReducer(tableReducer, { data: initialData, view: initialState });
-      
-      const actions = {
-        table: {
-          onChangeSort: column => {
-            dispatch(tableActions.tableColumnSort(column));
-          },
-        }
-      }
 
-      <Table
-        {...state}
-        ...
-      ~~~
       `,
+        // Need fix for syntaxhighlighter issue with addons info package
+        // text: `
+
+        // For basic table support, you can render the functional <Table/> component with only the columns and data props.  This table does not have any state management built in.  If you want that, use the <StatefulTable/> component or you will need to implement your own listeners and state management.  You can reuse our tableReducer and tableActions with the useReducer hook to update state.
+
+        // ~~~js
+        // import { tableReducer, tableActions } from 'carbon-addons-iot-react';
+
+        // const [state, dispatch] = useReducer(tableReducer, { data: initialData, view: initialState });
+
+        // const actions = {
+        //   table: {
+        //     onChangeSort: column => {
+        //       dispatch(tableActions.tableColumnSort(column));
+        //     },
+        //   }
+        // }
+
+        // <Table
+        //   {...state}
+        //   ...
+        // ~~~
+        // `,
       },
     }
   )
@@ -545,7 +573,7 @@ storiesOf('Table', module)
             {
               id: 'delete',
               labelText: 'Delete',
-              icon: 'delete',
+              renderIcon: Delete,
               iconDescription: 'Delete Item',
             },
           ],
@@ -632,19 +660,19 @@ storiesOf('Table', module)
             idx % 4 === 0
               ? {
                   id: 'drilldown',
-                  icon: 'arrow--right',
+                  renderIcon: Arrow,
                   labelText: 'See more',
                 }
               : null,
             {
               id: 'add',
-              icon: 'icon--add',
+              renderIcon: Add,
               labelText: 'Add',
               isOverflow: true,
             },
             {
               id: 'delete',
-              icon: 'icon--delete',
+              renderIcon: Delete,
               labelText: 'Delete',
               isOverflow: true,
             },
@@ -686,60 +714,74 @@ storiesOf('Table', module)
     {
       info: {
         text: `
-        
-        
-        To add custom row actions to each row you need to pass a rowActions array along with every row of your data.  The RowActionsPropTypes is defined as:
-        ~~~js
-        RowActionPropTypes = PropTypes.arrayOf(
-          PropTypes.shape({
-            /** Unique id of the action */
-            id: PropTypes.string.isRequired,
-            /** icon ultimately gets passed through all the way to <Button>, which has this same copied proptype definition for icon */
-            icon: PropTypes.oneOfType([
-              PropTypes.shape({
-                width: PropTypes.string,
-                height: PropTypes.string,
-                viewBox: PropTypes.string.isRequired,
-                svgData: PropTypes.object.isRequired,
-              }),
-              PropTypes.string,
-              PropTypes.node,
-            ]),
-            disabled: PropTypes.bool,
-            labelText: PropTypes.string,
-            /** Action should go into the overflow menu, not be rendered inline in the row */
-            isOverflow: PropTypes.bool,
-          })
-        );
 
-        data.map(row=>{id: row.id, values: {id: row.id}, rowActions=[{id: delete, icon: 'icon--delete', labelText: 'Delete'}]})
-        ~~~
-        
-        You also need to set the options prop on the table to get the rowActions to render. 
-        ~~~js
-        options = {
-          hasRowActions: true
-        } 
-        ~~~
 
-        To listen to the row actions and trigger an event you should pass a function to the actions prop: 
-        ~~~js
-        actions={ 
-          table: {
-            onApplyRowAction: myCustomListener 
-          }
-        }
-        ~~~
+        To add custom row actions to each row you need to pass a rowActions array along with every row of your data.
+
+
+        You also need to set the options prop on the table to get the rowActions to render.
+
+
+        To listen to the row actions and trigger an event you should pass a function to the actions prop.
+
 
         The onApplyRowAction is called with the actionid, and then the rowid that was clicked.  If you return a promise, the table will assume this is an asynchronous action and will show an In Progress indicator until you resolve or reject the promise.
-        ~~~js
-          const myCustomListener = (actionid, rowid)=> {
-            if (actionid === 'myexpectedaction') {
-              console.log(\`perform action on row: \${rowid}\`)
-            }
-          }
-        ~~~
+
         `,
+        // text: `
+
+        // To add custom row actions to each row you need to pass a rowActions array along with every row of your data.  The RowActionsPropTypes is defined as:
+        // ~~~js
+        // RowActionPropTypes = PropTypes.arrayOf(
+        //   PropTypes.shape({
+        //     /** Unique id of the action */
+        //     id: PropTypes.string.isRequired,
+        //     /** icon ultimately gets passed through all the way to <Button>, which has this same copied proptype definition for icon */
+        //     icon: PropTypes.oneOfType([
+        //       PropTypes.shape({
+        //         width: PropTypes.string,
+        //         height: PropTypes.string,
+        //         viewBox: PropTypes.string.isRequired,
+        //         svgData: PropTypes.object.isRequired,
+        //       }),
+        //       PropTypes.string,
+        //       PropTypes.node,
+        //     ]),
+        //     disabled: PropTypes.bool,
+        //     labelText: PropTypes.string,
+        //     /** Action should go into the overflow menu, not be rendered inline in the row */
+        //     isOverflow: PropTypes.bool,
+        //   })
+        // );
+
+        // data.map(row=>{id: row.id, values: {id: row.id}, rowActions=[{id: delete, icon: 'icon--delete', labelText: 'Delete'}]})
+        // ~~~
+
+        // You also need to set the options prop on the table to get the rowActions to render.
+        // ~~~js
+        // options = {
+        //   hasRowActions: true
+        // }
+        // ~~~
+
+        // To listen to the row actions and trigger an event you should pass a function to the actions prop:
+        // ~~~js
+        // actions={
+        //   table: {
+        //     onApplyRowAction: myCustomListener
+        //   }
+        // }
+        // ~~~
+
+        // The onApplyRowAction is called with the actionid, and then the rowid that was clicked.  If you return a promise, the table will assume this is an asynchronous action and will show an In Progress indicator until you resolve or reject the promise.
+        // ~~~js
+        //   const myCustomListener = (actionid, rowid)=> {
+        //     if (actionid === 'myexpectedaction') {
+        //       console.log(\`perform action on row: \${rowid}\`)
+        //     }
+        //   }
+        // ~~~
+        // `,
       },
     }
   )
@@ -801,8 +843,8 @@ storiesOf('Table', module)
     {
       info: {
         text: `To render a custom widget in a table cell, pass a renderDataFunction prop along with your column metadata.
-            The renderDataFunction is called with this payload 
-           { 
+            The renderDataFunction is called with this payload
+           {
               value: PropTypes.any (current cell value),
               columnId: PropTypes.string,
               rowId: PropTypes.string,
@@ -991,7 +1033,7 @@ storiesOf('Table', module)
     />
   ))
   .add('with zebra striping', () => (
-    <Table zebra columns={tableColumns} data={tableData} actions={actions} />
+    <Table useZebraStyles columns={tableColumns} data={tableData} actions={actions} />
   ))
   .add(
     'with fixed column width',
@@ -1023,10 +1065,10 @@ storiesOf('Table', module)
       info: {
         source: false,
         text: `This is an example of the <Table> component that has a custom row height. Pass a custom className prop to the Table component and use a css selector to change the height of all the rows.
-          
+
         <Table className="my-custom-classname"/>
-          
-        .my-custom-classname tr { 
+
+        .my-custom-classname tr {
           height: 5rem;
         }`,
         propTables: false,
@@ -1221,11 +1263,11 @@ storiesOf('Table', module)
     {
       info: {
         text: `
-          
+
           By default the table shows all of its internal strings in English.  If you want to support multiple languages, you must populate these i18n keys with the appropriate label for the selected UI language.
           ~~~js
             i18n={
-              
+
               /** pagination */
               pageBackwardAria,
               pageForwardAria,
@@ -1235,14 +1277,14 @@ storiesOf('Table', module)
               currentPage,
               itemsRangeWithTotal,
               pageRange,
-              
+
               /** table body */
               overflowMenuAria,
               clickToExpandAria,
               clickToCollapseAria,
               selectAllAria,
               selectRowAria,
-              
+
               /** toolbar */
               clearAllFilters,
               searchPlaceholder,
@@ -1253,7 +1295,7 @@ storiesOf('Table', module)
               openMenuAria,
               closeMenuAria,
               clearSelectionAria,
-             
+
               /** empty state */
               emptyMessage,
               emptyMessageWithFilters,
@@ -1265,7 +1307,7 @@ storiesOf('Table', module)
               dismissText,
             }
           ~~~
-          
+
           `,
         propTables: [Table],
         propTablesExclude: [StatefulTable],

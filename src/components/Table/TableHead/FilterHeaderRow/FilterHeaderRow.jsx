@@ -8,24 +8,18 @@ import { defaultFunction, handleEnterKeyDown } from '../../../../utils/component
 
 const { TableHeader, TableRow } = DataTable;
 
-const StyledTableRow = styled(TableRow)`
-  &&& {
-    th {
-      padding-top: 0.5rem;
-      padding-bottom: 1.5rem;
-    }
-  }
-`;
+// const TableRow = styled(TableRow)`
+//   &&& {
+//     th {
+//       padding-top: 0.5rem;
+//       padding-bottom: 1.5rem;
+//     }
+//   }
+// `;
 const StyledTableHeader = styled(TableHeader)`
   &&& {
-    border-top: none;
-
-    .bx--form-item {
-      display: table-cell;
-
-      input {
-        min-width: 12.75rem;
-      }
+    .bx--form-item input {
+      min-width: 12.75rem;
     }
 
     .bx--list-box input[role='combobox'] {
@@ -48,7 +42,9 @@ const StyledTableHeader = styled(TableHeader)`
 `;
 const StyledFormItem = styled(FormItem)`
   &&& {
+    display: flex;
     position: relative;
+    justify-content: center;
 
     input {
       padding-right: 2.5rem;
@@ -177,12 +173,12 @@ class FilterHeaderRow extends Component {
       lightweight,
     } = this.props;
     return isVisible ? (
-      <StyledTableRow>
+      <TableRow>
         {hasRowSelection === 'multi' ? <StyledTableHeader /> : null}
         {hasRowExpansion ? <StyledTableHeader /> : null}
         {ordering
           .filter(c => !c.isHidden)
-          .map(c => {
+          .map((c, i) => {
             const column = columns.find(i => c.columnId === i.id);
             const columnStateValue = this.state[column.id]; // eslint-disable-line
 
@@ -193,6 +189,7 @@ class FilterHeaderRow extends Component {
                 <div />
               ) : column.options ? (
                 <ComboBox
+                  id={`column-${i}`}
                   aria-label={filterText}
                   translateWithId={this.handleTranslation}
                   items={column.options}
@@ -240,7 +237,12 @@ class FilterHeaderRow extends Component {
                       }}
                       title={clearFilterText}
                     >
-                      <Icon icon={iconClose} description={clearFilterText} focusable="false" />
+                      <Icon
+                        name="close"
+                        renderIcon={iconClose}
+                        description={clearFilterText}
+                        focusable="false"
+                      />
                     </div>
                   ) : null}
                 </StyledFormItem>
@@ -257,7 +259,7 @@ class FilterHeaderRow extends Component {
             );
           })}
         {hasRowActions ? <StyledTableHeader /> : null}
-      </StyledTableRow>
+      </TableRow>
     ) : null;
   }
 }

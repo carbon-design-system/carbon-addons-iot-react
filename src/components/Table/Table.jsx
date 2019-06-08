@@ -25,6 +25,9 @@ import TableSkeletonWithHeaders from './TableSkeletonWithHeaders/TableSkeletonWi
 import TableBody from './TableBody/TableBody';
 
 const StyledTableDiv = styled.div`
+  .bx--table-toolbar {
+    overflow: hidden;
+  }
   .bx--data-table-v2-container {
     min-width: unset;
   }
@@ -46,7 +49,7 @@ const propTypes = {
   /** DOM ID for component */
   id: PropTypes.string,
   /** render zebra stripes or not */
-  zebra: PropTypes.bool,
+  useZebraStyles: PropTypes.bool,
   /**  lighter styling where regular table too visually heavy */
   lightweight: PropTypes.bool,
   /** Specify the properties of each column in the table */
@@ -96,15 +99,7 @@ const propTypes = {
         PropTypes.shape({
           id: PropTypes.string.isRequired,
           labelText: PropTypes.string.isRequired,
-          icon: PropTypes.oneOfType([
-            PropTypes.shape({
-              width: PropTypes.string,
-              height: PropTypes.string,
-              viewBox: PropTypes.string.isRequired,
-              svgData: PropTypes.object.isRequired,
-            }),
-            PropTypes.string,
-          ]),
+          icon: PropTypes.element,
           iconDescription: PropTypes.string,
         })
       ),
@@ -173,7 +168,7 @@ const propTypes = {
 
 export const defaultProps = baseProps => ({
   id: 'Table',
-  zebra: false,
+  useZebraStyles: false,
   lightweight: false,
   options: {
     hasPagination: false,

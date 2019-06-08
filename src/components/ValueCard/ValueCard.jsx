@@ -64,7 +64,7 @@ const AttributeUnit = styled.span`
   ${props =>
     props.layout === CARD_LAYOUTS.HORIZONTAL &&
     `
-    font-size: 1.25rem;  
+    font-size: 1.25rem;
   `};
 `;
 
@@ -133,9 +133,9 @@ const ValueCard = ({ title, content, size, ...others }) => {
                   trend={i.secondaryValue.trend}
                 >
                   {i.secondaryValue.trend && i.secondaryValue.trend === 'up' ? (
-                    <TrendIcon icon={iconCaretUp} />
+                    <TrendIcon renderIcon={iconCaretUp} />
                   ) : i.secondaryValue.trend === 'down' ? (
-                    <TrendIcon icon={iconCaretDown} />
+                    <TrendIcon renderIcon={iconCaretDown} />
                   ) : null}
                   {i.secondaryValue.value}
                 </AttributeSecondaryValue>
