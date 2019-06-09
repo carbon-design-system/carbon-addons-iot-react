@@ -69,7 +69,7 @@ const ValueRenderer = ({ value, unit, layout, precision, hasSecondary }) => {
   }
   return (
     <Attribute unit={unit} hasSecondary={hasSecondary}>
-      <AttributeValue title={`${value} ${unit}`} layout={layout} hasSecondary={hasSecondary}>
+      <AttributeValue title={`${value} ${unit || ''}`} layout={layout} hasSecondary={hasSecondary}>
         {renderValue}
       </AttributeValue>
     </Attribute>

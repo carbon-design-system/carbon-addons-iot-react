@@ -93,7 +93,7 @@ const ValueCard = ({ title, content, size, ...others }) => {
   return (
     <SizeMe>
       {({ size: measuredSize }) => {
-        const isVertical = measuredSize && measuredSize.width < 300;
+        const isVertical = !measuredSize || measuredSize.width < 300;
         return (
           <Card
             title={title}
