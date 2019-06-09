@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { SizeMe } from 'react-sizeme';
+import withSize from 'react-sizeme';
 
 import { ValueCardPropTypes, CardPropTypes } from '../../constants/PropTypes';
 import { CARD_LAYOUTS, CARD_SIZES, CARD_CONTENT_PADDING } from '../../constants/LayoutConstants';
@@ -91,9 +91,9 @@ const ValueCard = ({ title, content, size, ...others }) => {
   const isXS = size === CARD_SIZES.XSMALL;
 
   return (
-    <SizeMe>
+    <withSize.SizeMe>
       {({ size: measuredSize }) => {
-        const isVertical = measuredSize && measuredSize.width < 300;
+        const isVertical = !measuredSize || measuredSize.width < 300;
         return (
           <Card
             title={title}
@@ -134,7 +134,7 @@ const ValueCard = ({ title, content, size, ...others }) => {
           </Card>
         );
       }}
-    </SizeMe>
+    </withSize.SizeMe>
   );
 };
 
