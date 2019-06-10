@@ -2,14 +2,14 @@ import React from 'react';
 import { mount } from 'enzyme';
 
 import { CARD_LAYOUTS } from '../../constants/LayoutConstants';
+import Card from '../Card/Card';
 
-import Attribute from './Attribute';
 import ValueCard from './ValueCard';
 
 describe('ValueCard', () => {
   test('fail over to vertical layouts when not enough space', () => {
     const wrapper = mount(<ValueCard content={[{ title: 'title', value: 'value' }]} />);
-    expect(wrapper.find(Attribute).prop('layout')).toEqual(CARD_LAYOUTS.HORIZONTAL);
+    expect(wrapper.find(Card).prop('layout')).toEqual(CARD_LAYOUTS.HORIZONTAL);
 
     const wrapper2 = mount(
       <ValueCard
@@ -22,11 +22,6 @@ describe('ValueCard', () => {
         ]}
       />
     );
-    expect(
-      wrapper2
-        .find(Attribute)
-        .first()
-        .prop('layout')
-    ).toEqual(CARD_LAYOUTS.VERTICAL);
+    expect(wrapper2.find(Card).prop('layout')).toEqual(CARD_LAYOUTS.VERTICAL);
   });
 });

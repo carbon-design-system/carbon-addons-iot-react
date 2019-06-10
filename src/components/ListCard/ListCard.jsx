@@ -12,6 +12,7 @@ import styled from 'styled-components';
 
 import { CardPropTypes } from '../../constants/PropTypes';
 import Card from '../Card/Card';
+import { CARD_LAYOUTS } from '../../constants/LayoutConstants';
 
 const StyledSpan = styled.div`
   &&& {
@@ -55,7 +56,13 @@ const ListCard = ({ id, title, size, data, isLoading, loadData, hasMoreData }) =
   };
 
   return (
-    <Card id={id} title={title} size={size} onScroll={handleScroll}>
+    <Card
+      id={id}
+      title={title}
+      size={size}
+      layout={CARD_LAYOUTS.HORIZONTAL}
+      onScroll={handleScroll}
+    >
       <StyledContentWrapper>
         <StructuredListWrapper>
           <StructuredListBody>
