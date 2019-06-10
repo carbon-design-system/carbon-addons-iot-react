@@ -95,7 +95,11 @@ const Attribute = ({ value, unit, layout, secondaryValue, thresholds, precision,
   const thresholdIcon =
     matchingThreshold && matchingThreshold.icon ? (
       <ThresholdIconWrapper>
-        <ThresholdIcon name={matchingThreshold.icon} color={matchingThreshold.color} />
+        <ThresholdIcon
+          iconTitle={`${matchingThreshold.comparison} ${matchingThreshold.value}`}
+          name={matchingThreshold.icon}
+          color={matchingThreshold.color}
+        />
       </ThresholdIconWrapper>
     ) : null;
 
