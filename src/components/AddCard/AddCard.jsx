@@ -50,7 +50,7 @@ const propTypes = {
  */
 const AddCard = ({ onClick, title, className }) => (
   <StyledTile className={className} handleClick={onClick}>
-    <StyledIcon name="add--outline" fill="grey" description={title} />
+    <StyledIcon fill="grey" description={title} />
     <Title className="title">{title}</Title>
   </StyledTile>
 );

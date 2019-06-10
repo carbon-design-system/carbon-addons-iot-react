@@ -6,12 +6,12 @@ export const RowActionPropTypes = PropTypes.arrayOf(
     id: PropTypes.string.isRequired,
     /** icon ultimately gets passed through all the way to <Button>, which has this same copied proptype definition for icon */
     icon: PropTypes.oneOfType([
-      // PropTypes.shape({
-      //   width: PropTypes.string,
-      //   height: PropTypes.string,
-      //   viewBox: PropTypes.string.isRequired,
-      //   svgData: PropTypes.object.isRequired,
-      // }),
+      PropTypes.shape({
+        width: PropTypes.string,
+        height: PropTypes.string,
+        viewBox: PropTypes.string.isRequired,
+        svgData: PropTypes.object.isRequired,
+      }),
       PropTypes.string,
       PropTypes.node,
     ]),

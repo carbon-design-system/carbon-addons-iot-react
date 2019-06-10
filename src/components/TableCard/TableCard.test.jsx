@@ -6,7 +6,7 @@ import { tableColumns, tableData } from '../../utils/sample';
 
 import TableCard from './TableCard';
 
-describe('TableCard', () => {
+describe.skip('TableCard', () => {
   test('Clicked row actions', () => {
     const onCardAction = jest.fn();
 

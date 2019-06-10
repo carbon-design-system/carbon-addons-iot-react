@@ -75,19 +75,6 @@ const StyledOverflowMenu = styled(({ isRowExpanded, isOpen, ...other }) => (
   }
 `;
 
-// Don't pass through the isRowExpanded or hideLabel prop to the button
-const RowActionButton = styled(({ isRowExpanded, hideLabel, isOverflow, ...other }) => (
-  <Button {...other} />
-))`
-  &&& {
-    color: ${props => (props.isRowExpanded ? COLORS.white : '')};
-    svg {
-      fill: ${props => (props.isRowExpanded ? COLORS.white : '')};
-      margin-left: ${props => (props.hideLabel !== 'false' ? '0' : '')};
-    }
-  }
-`;
-
 const propTypes = {
   /** Need to render different styles if expanded */
   isRowExpanded: PropTypes.bool,
@@ -190,21 +177,18 @@ class RowActionsCell extends React.Component {
               {actions
                 .filter(action => !action.isOverflow)
                 .map(({ id: actionId, labelText, ...others }) => (
-                  <RowActionButton
+                  <Button
                     {...others}
                     key={`${id}-row-actions-button-${actionId}`}
                     kind="ghost"
                     onClick={e => onClick(e, id, actionId, onApplyRowAction)}
                     small
-                    hideLabel={`${!labelText}`}
-                    isRowExpanded={isRowExpanded}
                   >
                     {labelText}
-                  </RowActionButton>
+                  </Button>
                 ))}
               {hasOverflow ? (
                 <StyledOverflowMenu
-                  floatingMenu
                   flipped
                   ariaLabel={overflowMenuAria}
                   onClick={event => event.stopPropagation()}
@@ -222,16 +206,19 @@ class RowActionsCell extends React.Component {
                         onClick={e => onClick(e, id, action.id, onApplyRowAction)}
                         requireTitle
                         itemText={
-                          action.icon ? (
+                          action.renderIcon ? (
                             <OverflowMenuContent>
-                              <StyledIcon name={action.icon} iconTitle={action.labelText} />
+                              <StyledIcon
+                                icon={action.renderIcon}
+                                description={action.labelText}
+                                iconTitle={action.labelText}
+                              />
                               {action.labelText}
                             </OverflowMenuContent>
                           ) : (
                             action.labelText
                           )
                         }
-                        floatingMenu
                       />
                     ))}
                 </StyledOverflowMenu>

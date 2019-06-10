@@ -124,11 +124,11 @@ the label you want displayed or read by screen readers.",
           "componentStyle": ComponentStyle {
             "componentId": "SideNav__StyledSideNav-yn3bk8-0",
             "isStatic": true,
-            "lastClassName": "ditYVb",
+            "lastClassName": "gArXB",
             "rules": Array [
               "&&&{background-color:",
               "#171717",
-              ";border-top:1px solid #3c4646;height:calc(100% - 3rem);.bx--side-nav__menu[role='menu'] .bx--side-nav__link[role='menuitem']{height:2rem;min-height:2rem;padding-left:3.5rem;}.bx--side-nav__link{position:relative;display:flex;align-items:center;text-decoration:none;min-height:3rem;padding-right:1rem;font-weight:400;}button{appearance:none;width:100%;background:transparent;&.bx--side-nav__toggle{background:",
+              ";border-top:1px solid #3c4646;height:calc(100% - 3rem);.bx--side-nav__menu[role=\\"menu\\"] .bx--side-nav__link[role=\\"menuitem\\"]{height:2rem;min-height:2rem;padding-left:3.5rem;}.bx--side-nav__link{position:relative;display:flex;align-items:center;text-decoration:none;min-height:3rem;padding-right:1rem;font-weight:400;}button{appearance:none;width:100%;background:transparent;&.bx--side-nav__toggle{background:",
               "#282828",
               ";:hover{background:",
               "#3d3d3d",
@@ -154,13 +154,13 @@ the label you want displayed or read by screen readers.",
     >
       <SideNav
         aria-label="Side navigation"
-        className="SideNav__StyledSideNav-yn3bk8-0 ditYVb"
+        className="SideNav__StyledSideNav-yn3bk8-0 gArXB"
         defaultExpanded={false}
         translateById={[Function]}
       >
         <nav
           aria-label="Side navigation"
-          className="bx--side-nav__navigation bx--side-nav SideNav__StyledSideNav-yn3bk8-0 ditYVb"
+          className="bx--side-nav__navigation bx--side-nav SideNav__StyledSideNav-yn3bk8-0 gArXB"
           onBlur={[Function]}
           onFocus={[Function]}
         >
@@ -338,7 +338,7 @@ the label you want displayed or read by screen readers.",
           </SideNavItems>
           <SideNavFooter
             assistiveText="Open"
-            isExpanded={false}
+            expanded={false}
             onToggle={[Function]}
           >
             <footer
@@ -568,11 +568,11 @@ the label you want displayed or read by screen readers.",
           "componentStyle": ComponentStyle {
             "componentId": "SideNav__StyledSideNav-yn3bk8-0",
             "isStatic": true,
-            "lastClassName": "ditYVb",
+            "lastClassName": "gArXB",
             "rules": Array [
               "&&&{background-color:",
               "#171717",
-              ";border-top:1px solid #3c4646;height:calc(100% - 3rem);.bx--side-nav__menu[role='menu'] .bx--side-nav__link[role='menuitem']{height:2rem;min-height:2rem;padding-left:3.5rem;}.bx--side-nav__link{position:relative;display:flex;align-items:center;text-decoration:none;min-height:3rem;padding-right:1rem;font-weight:400;}button{appearance:none;width:100%;background:transparent;&.bx--side-nav__toggle{background:",
+              ";border-top:1px solid #3c4646;height:calc(100% - 3rem);.bx--side-nav__menu[role=\\"menu\\"] .bx--side-nav__link[role=\\"menuitem\\"]{height:2rem;min-height:2rem;padding-left:3.5rem;}.bx--side-nav__link{position:relative;display:flex;align-items:center;text-decoration:none;min-height:3rem;padding-right:1rem;font-weight:400;}button{appearance:none;width:100%;background:transparent;&.bx--side-nav__toggle{background:",
               "#282828",
               ";:hover{background:",
               "#3d3d3d",
@@ -598,13 +598,13 @@ the label you want displayed or read by screen readers.",
     >
       <SideNav
         aria-label="Side navigation"
-        className="SideNav__StyledSideNav-yn3bk8-0 ditYVb"
+        className="SideNav__StyledSideNav-yn3bk8-0 gArXB"
         defaultExpanded={false}
         translateById={[Function]}
       >
         <nav
           aria-label="Side navigation"
-          className="bx--side-nav__navigation bx--side-nav SideNav__StyledSideNav-yn3bk8-0 ditYVb"
+          className="bx--side-nav__navigation bx--side-nav SideNav__StyledSideNav-yn3bk8-0 gArXB"
           onBlur={[Function]}
           onFocus={[Function]}
         >
@@ -978,7 +978,7 @@ the label you want displayed or read by screen readers.",
                       "componentStyle": ComponentStyle {
                         "componentId": "SideNav__StyledSideNavMenu-yn3bk8-2",
                         "isStatic": true,
-                        "lastClassName": "gzdPQe",
+                        "lastClassName": "kbPKaO",
                         "rules": Array [
                           "&&&{background-color:",
                           "#171717",
@@ -988,7 +988,7 @@ the label you want displayed or read by screen readers.",
                           "#3d3d3d",
                           ";}:hover{background-color:",
                           "#3d3d3d",
-                          ";}[aria-expanded='true']{background-color:",
+                          ";}[aria-expanded=\\"true\\"]{background-color:",
                           "#3d3d3d",
                           ";:hover{background-color:",
                           "#4c4c4c",
@@ -996,7 +996,7 @@ the label you want displayed or read by screen readers.",
                           "#3d3d3d",
                           ";}+ ul .bx--side-nav__link:hover{background-color:",
                           "#4c4c4c",
-                          ";}}.bx--side-nav__link--current::before{content:'';position:absolute;top:0;bottom:0;left:0;width:4px;background-color:",
+                          ";}}.bx--side-nav__link--current::before{content:\\"\\";position:absolute;top:0;bottom:0;left:0;width:4px;background-color:",
                           "#0062ff",
                           ";}}",
                         ],
@@ -1031,7 +1031,7 @@ the label you want displayed or read by screen readers.",
                 >
                   <ForwardRef
                     aria-label="dropdown"
-                    className="disabled SideNav__StyledSideNavMenu-yn3bk8-2 gzdPQe"
+                    className="disabled SideNav__StyledSideNavMenu-yn3bk8-2 kbPKaO"
                     icon={
                       <ForwardRef
                         className="bx--header__menu-item bx--header__menu-title"
@@ -1049,7 +1049,7 @@ the label you want displayed or read by screen readers.",
                     <SideNavMenu
                       aria-label="dropdown"
                       buttonRef={null}
-                      className="disabled SideNav__StyledSideNavMenu-yn3bk8-2 gzdPQe"
+                      className="disabled SideNav__StyledSideNavMenu-yn3bk8-2 kbPKaO"
                       defaultExpanded={false}
                       icon={
                         <ForwardRef
@@ -1067,7 +1067,7 @@ the label you want displayed or read by screen readers.",
                       title="Members"
                     >
                       <li
-                        className="bx--side-nav__item disabled SideNav__StyledSideNavMenu-yn3bk8-2 gzdPQe"
+                        className="bx--side-nav__item disabled SideNav__StyledSideNavMenu-yn3bk8-2 kbPKaO"
                       >
                         <button
                           aria-expanded={false}
@@ -1205,7 +1205,7 @@ the label you want displayed or read by screen readers.",
           </SideNavItems>
           <SideNavFooter
             assistiveText="Open"
-            isExpanded={false}
+            expanded={false}
             onToggle={[Function]}
           >
             <footer

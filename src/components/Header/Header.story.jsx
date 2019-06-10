@@ -55,7 +55,6 @@ const User = styled.p`
   }
 `;
 
-// const link = <Icon name="header--help" fill="white" description="Icon" />;
 const HeaderProps = {
   user: 'JohnDoe@ibm.com',
   tenant: 'TenantId: Acme',

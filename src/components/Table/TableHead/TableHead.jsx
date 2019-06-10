@@ -98,6 +98,8 @@ const StyledCustomTableHeader = styled(TableHeader)`
       `
         : '';
     }}
+
+    vertical-align: middle;
   }
 `;
 

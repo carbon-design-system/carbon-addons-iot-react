@@ -146,7 +146,7 @@ describe('Table', () => {
         view={view}
       />
     );
-    wrapper.find('tr#Table-Row-row-1 .bx--table-expand-v2__button').simulate('click');
+    wrapper.find('tr#Table-Row-row-1 .bx--table-expand__button').simulate('click');
     expect(mockActions.table.onRowExpanded).toHaveBeenCalled();
   });
 
@@ -160,7 +160,7 @@ describe('Table', () => {
         view={view}
       />
     );
-    wrapper.find('tr#Table-Row-row-2 .bx--table-expand-v2__button').simulate('click');
+    wrapper.find('tr#Table-Row-row-2 .bx--table-expand__button').simulate('click');
     expect(mockActions.table.onRowExpanded).toHaveBeenCalled();
   });
 

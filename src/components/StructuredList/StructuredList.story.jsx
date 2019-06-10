@@ -99,21 +99,26 @@ storiesOf('StructuredList', module)
         text: `
 
         To render a your own widget in a list cell, pass a renderDataFunction prop along with your column metadata.
-        ~~~js
-        columns=[ { id: 'columnA', title: 'A', renderDataFunction: myCustomRenderer }, ...]
-        ~~~
-        The renderDataFunction is called with this payload
-        ~~~js
-           {
-              value: PropTypes.any (current cell value),
-              columnId: PropTypes.string,
-              rowId: PropTypes.string,
-              row: the full data for this rowPropTypes.object like this {col: value, col2: value}
-           }
 
-           const myCustomRenderer = ({ value }) => <span style={{ color: 'blue' }}>{value}</span>
-        ~~~
           `,
+        //   text: `
+
+        // To render a your own widget in a list cell, pass a renderDataFunction prop along with your column metadata.
+        // ~~~js
+        // columns=[ { id: 'columnA', title: 'A', renderDataFunction: myCustomRenderer }, ...]
+        // ~~~
+        // The renderDataFunction is called with this payload
+        // ~~~js
+        //    {
+        //       value: PropTypes.any (current cell value),
+        //       columnId: PropTypes.string,
+        //       rowId: PropTypes.string,
+        //       row: the full data for this rowPropTypes.object like this {col: value, col2: value}
+        //    }
+
+        //    const myCustomRenderer = ({ value }) => <span style={{ color: 'blue' }}>{value}</span>
+        // ~~~
+        //   `,
       },
     }
   );

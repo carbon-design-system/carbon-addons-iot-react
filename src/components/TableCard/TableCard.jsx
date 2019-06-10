@@ -38,13 +38,13 @@ const StyledStatefulTable = styled(StatefulTable)`
   .bx--table-toolbar {
     display: none;
   }
-  .bx--data-table-v2 tr {
+  .bx--data-table tr {
     height: 2.95rem;
   }
-  .bx--data-table-v2 tr {
+  .bx--data-table tr {
     height: 2.95rem;
   }
-  .bx--data-table-v2-container + .bx--pagination {
+  .bx--data-table-container + .bx--pagination {
     border: 1px solid #dfe3e6;
   }
   .bx--pagination {
@@ -75,7 +75,7 @@ const TableCard = ({
             actionId: cellItem.value[0].id,
           });
         }}
-        name={cellItem.value[0].icon}
+        renderIcon={cellItem.value[0].icon}
       />
     ) : (
       <StyledOverflowMenu>

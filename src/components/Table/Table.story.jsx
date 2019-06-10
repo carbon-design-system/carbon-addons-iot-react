@@ -7,7 +7,7 @@ import styled from 'styled-components';
 import Arrow from '@carbon/icons-react/lib/arrow--right/20';
 import Add from '@carbon/icons-react/lib/add/20';
 import Delete from '@carbon/icons-react/lib/delete/16';
-import { iconArrowRight, iconCaretDown } from 'carbon-icons';
+import { iconArrowRight, iconCaretDown, iconAddSolid, iconDelete } from 'carbon-icons';
 
 import { getSortedData } from '../../utils/componentUtilityFunctions';
 
@@ -165,12 +165,12 @@ const getNewRow = (idx, suffix = '', withActions = false) => ({
     ? [
         {
           id: 'drilldown',
-          icon: iconArrowRight,
+          renderIcon: Arrow,
           labelText: 'Drill in',
         },
         {
           id: 'Add',
-          icon: iconCaretDown,
+          renderIcon: Add,
           labelText: 'Add',
           isOverflow: true,
         },
@@ -204,6 +204,14 @@ const StyledTableCustomRowHeight = styled(Table)`
   }
 `;
 
+const StyledCustomToolbarContent = styled.div`
+  &&& {
+    align-items: center;
+    display: flex;
+    padding: 0 1rem;
+  }
+`;
+
 const actions = {
   pagination: {
     /** Specify a callback for when the current page or page size is changed. This callback is passed an object parameter containing the current page and the current page size */
@@ -230,7 +238,12 @@ const actions = {
     onChangeSort: action('onChangeSort'),
   },
 };
-
+// const exampletext = (
+//   <div>
+//     <p>This is text</p>
+//     <Add />
+//   </div>
+// );
 /** This would be loaded from your fetch */
 export const initialState = {
   columns: tableColumns.map((i, idx) => ({
@@ -243,37 +256,19 @@ export const initialState = {
       idx % 4 !== 0
         ? {
             id: 'drilldown',
-            icon: () => (
-              <Arrow
-                fill="white"
-                description="Icon"
-                className="bx--header__menu-item bx--header__menu-title"
-              />
-            ),
+            renderIcon: Arrow,
             labelText: 'Drill in',
           }
         : null,
       {
         id: 'Add',
-        icon: () => (
-          <Add
-            fill="white"
-            description="Icon"
-            className="bx--header__menu-item bx--header__menu-title"
-          />
-        ),
+        renderIcon: iconAddSolid,
         labelText: 'Add',
         isOverflow: true,
       },
       {
-        id: 'Delete',
-        icon: () => (
-          <Delete
-            fill="white"
-            description="Icon"
-            className="bx--header__menu-item bx--header__menu-title"
-          />
-        ),
+        id: 'delete',
+        renderIcon: iconDelete,
         labelText: 'Delete',
         isOverflow: true,
       },
@@ -454,33 +449,42 @@ storiesOf('Table', module)
 
           This stateful table has nested rows.  To setup your table this way you must pass a children prop along with each of your data rows.
 
-          ~~~js
-          data=[
-            {
-              id: 'rowid',
-              values: {
-                col1: 'value1
-              },
-              children: [
-                {
-                  id: 'child-rowid,
-                  values: {
-                    col1: 'nested-value1'
-                  }
-                }
-              ]
-            }
-          ]
-          ~~~
 
           You must also set hasRowExpansion to true in your table options
-          ~~~js
-            options={
-              hasRowExpansion: true
-            }
-          ~~~
+
 
           `,
+        // text: `
+
+        // This stateful table has nested rows.  To setup your table this way you must pass a children prop along with each of your data rows.
+
+        // ~~~js
+        // data=[
+        //   {
+        //     id: 'rowid',
+        //     values: {
+        //       col1: 'value1
+        //     },
+        //     children: [
+        //       {
+        //         id: 'child-rowid,
+        //         values: {
+        //           col1: 'nested-value1'
+        //         }
+        //       }
+        //     ]
+        //   }
+        // ]
+        // ~~~
+
+        // You must also set hasRowExpansion to true in your table options
+        // ~~~js
+        //   options={
+        //     hasRowExpansion: true
+        //   }
+        // ~~~
+
+        // `,
         propTables: [Table],
         propTablesExclude: [StatefulTable],
       },
@@ -666,13 +670,13 @@ storiesOf('Table', module)
               : null,
             {
               id: 'add',
-              renderIcon: Add,
+              renderIcon: iconAddSolid,
               labelText: 'Add',
               isOverflow: true,
             },
             {
               id: 'delete',
-              renderIcon: Delete,
+              renderIcon: iconDelete,
               labelText: 'Delete',
               isOverflow: true,
             },
@@ -1065,12 +1069,7 @@ storiesOf('Table', module)
       info: {
         source: false,
         text: `This is an example of the <Table> component that has a custom row height. Pass a custom className prop to the Table component and use a css selector to change the height of all the rows.
-
-        <Table className="my-custom-classname"/>
-
-        .my-custom-classname tr {
-          height: 5rem;
-        }`,
+        `,
         propTables: false,
       },
     }
@@ -1191,7 +1190,10 @@ storiesOf('Table', module)
           { columnId: 'string', value: 'whiteboard' },
           { columnId: 'select', value: 'option-B' },
         ],
-        toolbar: { activeBar: 'filter', customToolbarContent: <div>my custom</div> },
+        toolbar: {
+          activeBar: 'filter',
+          customToolbarContent: <StyledCustomToolbarContent>my custom</StyledCustomToolbarContent>,
+        },
       }}
     />
   ))
@@ -1265,50 +1267,55 @@ storiesOf('Table', module)
         text: `
 
           By default the table shows all of its internal strings in English.  If you want to support multiple languages, you must populate these i18n keys with the appropriate label for the selected UI language.
-          ~~~js
-            i18n={
-
-              /** pagination */
-              pageBackwardAria,
-              pageForwardAria,
-              pageNumberAria,
-              itemsPerPage,
-              itemsRange,
-              currentPage,
-              itemsRangeWithTotal,
-              pageRange,
-
-              /** table body */
-              overflowMenuAria,
-              clickToExpandAria,
-              clickToCollapseAria,
-              selectAllAria,
-              selectRowAria,
-
-              /** toolbar */
-              clearAllFilters,
-              searchPlaceholder,
-              columnSelectionButtonAria,
-              filterButtonAria,
-              clearFilterAria,
-              filterAria,
-              openMenuAria,
-              closeMenuAria,
-              clearSelectionAria,
-
-              /** empty state */
-              emptyMessage,
-              emptyMessageWithFilters,
-              emptyButtonLabel,
-              emptyButtonLabelWithFilters,
-              inProgressText,
-              actionFailedText,
-              learnMoreText,
-              dismissText,
-            }
-          ~~~
 
           `,
+        // text: `
+
+        // By default the table shows all of its internal strings in English.  If you want to support multiple languages, you must populate these i18n keys with the appropriate label for the selected UI language.
+        // ~~~js
+        //   i18n={
+
+        //     /** pagination */
+        //     pageBackwardAria,
+        //     pageForwardAria,
+        //     pageNumberAria,
+        //     itemsPerPage,
+        //     itemsRange,
+        //     currentPage,
+        //     itemsRangeWithTotal,
+        //     pageRange,
+
+        //     /** table body */
+        //     overflowMenuAria,
+        //     clickToExpandAria,
+        //     clickToCollapseAria,
+        //     selectAllAria,
+        //     selectRowAria,
+
+        //     /** toolbar */
+        //     clearAllFilters,
+        //     searchPlaceholder,
+        //     columnSelectionButtonAria,
+        //     filterButtonAria,
+        //     clearFilterAria,
+        //     filterAria,
+        //     openMenuAria,
+        //     closeMenuAria,
+        //     clearSelectionAria,
+
+        //     /** empty state */
+        //     emptyMessage,
+        //     emptyMessageWithFilters,
+        //     emptyButtonLabel,
+        //     emptyButtonLabelWithFilters,
+        //     inProgressText,
+        //     actionFailedText,
+        //     learnMoreText,
+        //     dismissText,
+        //   }
+        // ~~~
+
+        // `,
         propTables: [Table],
         propTablesExclude: [StatefulTable],
       },

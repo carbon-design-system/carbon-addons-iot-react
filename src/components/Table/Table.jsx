@@ -28,13 +28,17 @@ const StyledTableDiv = styled.div`
   .bx--table-toolbar {
     overflow: hidden;
   }
-  .bx--data-table-v2-container {
+  .bx--data-table-container {
     min-width: unset;
   }
 `;
 
 const StyledPagination = sizeMe({ noPlaceholder: true })(styled(Pagination)`
   &&& {
+    .bx--pagination__left {
+      margin: auto auto auto 0;
+    }
+
     .bx--pagination__left,
     .bx--pagination__text {
       display: ${props =>

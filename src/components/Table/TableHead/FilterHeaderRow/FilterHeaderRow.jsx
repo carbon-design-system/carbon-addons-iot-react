@@ -42,9 +42,8 @@ const StyledTableHeader = styled(TableHeader)`
 `;
 const StyledFormItem = styled(FormItem)`
   &&& {
-    display: flex;
+    display: inline-block;
     position: relative;
-    justify-content: center;
 
     input {
       padding-right: 2.5rem;
@@ -52,6 +51,8 @@ const StyledFormItem = styled(FormItem)`
 
     .bx--list-box__selection {
       right: 0;
+      top: 50%;
+      transform: translateY(-50%);
     }
   }
 `;
@@ -237,12 +238,7 @@ class FilterHeaderRow extends Component {
                       }}
                       title={clearFilterText}
                     >
-                      <Icon
-                        name="close"
-                        renderIcon={iconClose}
-                        description={clearFilterText}
-                        focusable="false"
-                      />
+                      <Icon icon={iconClose} description={clearFilterText} focusable="false" />
                     </div>
                   ) : null}
                 </StyledFormItem>

@@ -125,7 +125,7 @@ const StyledTableRow = styled(TableRow)`
       }
     }
     ${props => (props['data-single-select'] === 'single' ? `cursor:pointer` : null)}
-    
+
     }
 
   }
@@ -149,12 +149,12 @@ const StyledTableExpandRow = styled(TableExpandRow)`
     ${props =>
       props['data-child-count'] === 0 && props['data-row-nesting']
         ? `
-    td > button.bx--table-expand-v2__button {
+    td > button.bx--table-expand__button {
       display: none;
     }
     `
         : `
-    td > button.bx--table-expand-v2__button {
+    td > button.bx--table-expand__button {
       position: relative;
       left: ${props['data-nesting-offset']}px;
     }
@@ -162,7 +162,7 @@ const StyledTableExpandRow = styled(TableExpandRow)`
     ${props =>
       props['data-nesting-offset'] > 0
         ? `
-      td.bx--table-expand-v2 {
+      td.bx--table-expand {
         position: relative;
       }
       td:first-of-type:before {
@@ -193,49 +193,22 @@ const StyledTableExpandRowExpanded = styled(TableExpandRow)`
   &&& {
     cursor: pointer;
     ${props =>
-      (props['data-child-count'] === 0 && props['data-row-nesting']) || !props['data-row-nesting']
+      props['data-row-nesting']
         ? `
-    td {
-      background-color: ${COLORS.blue};
-      border-color: ${COLORS.blue};
-      color: white;
-      button {
-        svg {
-          fill: white;
+
+        td.bx--table-expand {
+          position: relative;
         }
-      }
-      border-top: 1px solid ${COLORS.blue};
-      :first-of-type {
-        border-left: 1px solid ${COLORS.blue};
-      }
-      :last-of-type {
-        border-right: 1px solid ${COLORS.blue};
-      }
-    }
-    `
-        : props['data-row-nesting']
-        ? `
-    :hover {
-      td {
-        border-bottom: 1px solid ${COLORS.blue};
-      }
-      td:first-of-type {
-        border-left: 1px solid ${COLORS.blue};
-      }
-    }
-    td.bx--table-expand-v2 {
-      position: relative;
-    }
-    td > button.bx--table-expand-v2__button {
-      position: relative;
-      left: ${props['data-nesting-offset']}px;
-    }
-    td:first-of-type:before {
-      width: ${props['data-nesting-offset']}px;
-      background-color: rgb(229,237,237);
-      border-right: solid 1px rgb(223,227,230);
-    }
-    `
+        td > button.bx--table-expand__button {
+          position: relative;
+          left: ${props['data-nesting-offset']}px;
+        }
+        td:first-of-type:before {
+          width: ${props['data-nesting-offset']}px;
+          background-color: rgb(229,237,237);
+          border-right: solid 1px rgb(223,227,230);
+        }
+        `
         : ``}
   }
 `;
