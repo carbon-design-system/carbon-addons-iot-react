@@ -85,7 +85,7 @@ const defaultProps = {
     noDataLabel: 'No data is available for this time range.',
     noDataShortLabel: 'No data',
     hourlyLabel: 'Hourly',
-    weeklyabel: 'Weekly',
+    weeklyLabel: 'Weekly',
     monthlyLabel: 'Monthly',
     editCardLabel: 'Edit card',
     cloneCardLabel: 'Clone card',
