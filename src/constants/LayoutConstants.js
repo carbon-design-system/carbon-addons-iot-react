@@ -61,8 +61,7 @@ export const ROW_HEIGHT = {
 export const GUTTER = 16;
 
 /*
- *
- *
+ * How many rows and columns should each card cross at each layout size
  */
 
 export const CARD_DIMENSIONS = {
@@ -72,6 +71,13 @@ export const CARD_DIMENSIONS = {
     md: { w: 3, h: 1 },
     sm: { w: 2, h: 1 },
     xs: { w: 2, h: 1 },
+  },
+  XSMALL_WIDE: {
+    xl: { w: 3, h: 1 },
+    lg: { w: 4, h: 1 },
+    md: { w: 4, h: 1 },
+    sm: { w: 6, h: 1 },
+    xs: { w: 4, h: 1 },
   },
   SMALL: {
     xl: { w: 2, h: 2 },

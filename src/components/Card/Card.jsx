@@ -40,7 +40,7 @@ const CardWrapper = styled.div`
 
 /** Header */
 export const CardHeader = styled.div`
-  padding: 16px ${CARD_CONTENT_PADDING / 2}px 0 ${CARD_CONTENT_PADDING}px;
+  padding: 12px ${CARD_CONTENT_PADDING / 2}px 0 ${CARD_CONTENT_PADDING}px;
   flex: 0 1 ${CARD_TITLE_HEIGHT}px;
   display: flex;
   align-items: center;
@@ -55,8 +55,9 @@ export const CardContent = styled.div`
     props.layout === CARD_LAYOUTS.HORIZONTAL &&
     `
     flex-direction: row;
-    align-items: center;
+    align-items: flex-end;
     justify-content: space-around;
+    padding: 0 0 1rem;
   `}
   ${props =>
     props.layout === CARD_LAYOUTS.VERTICAL &&
