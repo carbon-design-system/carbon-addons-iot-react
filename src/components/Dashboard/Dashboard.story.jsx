@@ -40,27 +40,37 @@ const originalCards = [
     ],
   },
   {
-    title: 'XSMALL',
+    title: 'Humidity',
     id: 'facilitycard-xs',
     size: CARD_SIZES.XSMALL,
     type: CARD_TYPES.VALUE,
     availableActions: {
       delete: true,
     },
-    content: [{ title: 'Comfort Level', value: 89, unit: '%' }],
+    content: [
+      {
+        value: 62.1,
+        unit: '%',
+        thresholds: [
+          { comparison: '<', value: '40', color: 'red' },
+          { comparison: '<', value: '70', color: 'green' },
+          { comparison: '>=', value: '70', color: 'red' },
+        ],
+      },
+    ],
   },
   {
-    title: 'XSMALL',
+    title: 'Utilization',
     id: 'facilitycard-xs2',
     size: CARD_SIZES.XSMALL,
     type: CARD_TYPES.VALUE,
     availableActions: {
       delete: true,
     },
-    content: [{ title: 'Utilization', value: 76, secondaryValue: 'Average', unit: '%' }],
+    content: [{ value: 76, title: 'Average', unit: '%' }],
   },
   {
-    title: 'XSMALL',
+    title: 'Alert Count',
     id: 'facilitycard-xs3',
     size: CARD_SIZES.XSMALL,
     type: CARD_TYPES.VALUE,
@@ -69,9 +79,27 @@ const originalCards = [
     },
     content: [
       {
-        title: 'Alert Count',
+        title: 'weekly',
         value: 35,
         secondaryValue: { value: 13, trend: 'up', color: 'green' },
+      },
+    ],
+  },
+  {
+    title: 'Comfort Level',
+    id: 'facilitycard-comfort-level',
+    size: CARD_SIZES.XSMALL,
+    type: CARD_TYPES.VALUE,
+    availableActions: {
+      delete: true,
+    },
+    content: [
+      {
+        value: 'Bad',
+        thresholds: [
+          { comparison: '=', value: 'Good', icon: 'icon--checkmark--solid', color: 'green' },
+          { comparison: '=', value: 'Bad', icon: 'icon--close--solid', color: 'red' },
+        ],
       },
     ],
   },
@@ -94,7 +122,7 @@ const originalCards = [
     },
   },
   {
-    title: 'XSMALL',
+    title: 'Foot Traffic',
     id: 'facilitycard-xs4',
     size: CARD_SIZES.XSMALL,
     type: CARD_TYPES.VALUE,
@@ -103,7 +131,7 @@ const originalCards = [
     },
     content: [
       {
-        title: 'Foot Traffic',
+        title: 'weekly',
         value: 13572,
         secondaryValue: { value: '22%', trend: 'down', color: 'red' },
       },
