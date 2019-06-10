@@ -14,6 +14,7 @@ const StyledAttribute = styled.div`
   display: flex;
   align-items: flex-end;
   order: 1;
+  width: 100%;
 `;
 
 const TrendIcon = styled(Icon)`
@@ -49,7 +50,11 @@ const propTypes = {
   value: PropTypes.any, // eslint-disable-line
   unit: PropTypes.any, // eslint-disable-line
   layout: PropTypes.oneOf(Object.values(CARD_LAYOUTS)),
+  /** Additional information about the Attribute, like it's range or aggregator */
   secondaryValue: PropTypes.any, // eslint-disable-line
+  /** need to render smaller attribute */
+  isSmall: PropTypes.bool,
+  isVertical: PropTypes.bool, // are the attributes and labels in a column?
   thresholds: PropTypes.arrayOf(
     PropTypes.shape({
       comparison: PropTypes.oneOf(['<', '>', '=', '<=', '>=']).isRequired,
@@ -65,9 +70,20 @@ const defaultProps = {
   layout: null,
   precision: 0,
   thresholds: [],
+  isVertical: false,
+  isSmall: false,
 };
 
-const Attribute = ({ value, unit, layout, secondaryValue, thresholds, precision }) => {
+const Attribute = ({
+  value,
+  unit,
+  layout,
+  secondaryValue,
+  thresholds,
+  precision,
+  isVertical,
+  isSmall,
+}) => {
   // matching threshold will be the first match in the list, or a value of null
   const matchingThreshold = thresholds
     .filter(t => {
@@ -92,7 +108,11 @@ const Attribute = ({ value, unit, layout, secondaryValue, thresholds, precision 
   const thresholdIcon =
     matchingThreshold && matchingThreshold.icon ? (
       <ThresholdIconWrapper>
-        <ThresholdIcon name={matchingThreshold.icon} color={matchingThreshold.color} />
+        <ThresholdIcon
+          iconTitle={`${matchingThreshold.comparison} ${matchingThreshold.value}`}
+          name={matchingThreshold.icon}
+          color={matchingThreshold.color}
+        />
       </ThresholdIconWrapper>
     ) : null;
 
@@ -103,9 +123,10 @@ const Attribute = ({ value, unit, layout, secondaryValue, thresholds, precision 
           value={value}
           unit={unit}
           layout={layout}
-          hasSecondary={secondaryValue !== undefined}
+          isSmall={isSmall}
           thresholds={thresholds}
           precision={precision}
+          isVertical={isVertical}
           color={valueColor}
         />
       ) : (
@@ -114,18 +135,14 @@ const Attribute = ({ value, unit, layout, secondaryValue, thresholds, precision 
       <UnitRenderer value={value} unit={unit} layout={layout} />
       {thresholdIcon}
       {secondaryValue !== undefined ? (
-        typeof secondaryValue === 'object' ? (
-          <AttributeSecondaryValue color={secondaryValue.color} trend={secondaryValue.trend}>
-            {secondaryValue.trend && secondaryValue.trend === 'up' ? (
-              <TrendIcon icon={iconCaretUp} />
-            ) : secondaryValue.trend === 'down' ? (
-              <TrendIcon icon={iconCaretDown} />
-            ) : null}
-            {secondaryValue.value}
-          </AttributeSecondaryValue>
-        ) : (
-          <AttributeSecondaryValue>{secondaryValue}</AttributeSecondaryValue>
-        )
+        <AttributeSecondaryValue color={secondaryValue.color} trend={secondaryValue.trend}>
+          {secondaryValue.trend && secondaryValue.trend === 'up' ? (
+            <TrendIcon icon={iconCaretUp} />
+          ) : secondaryValue.trend === 'down' ? (
+            <TrendIcon icon={iconCaretDown} />
+          ) : null}
+          {secondaryValue.value}
+        </AttributeSecondaryValue>
       ) : null}
     </StyledAttribute>
   );

@@ -3,16 +3,13 @@ import PropTypes from 'prop-types';
 import { CARD_SIZES, CARD_LAYOUTS, DASHBOARD_SIZES } from './LayoutConstants';
 
 export const AttributePropTypes = PropTypes.shape({
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string, // optional for little cards
   value: PropTypes.any,
-  secondaryValue: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.shape({
-      value: PropTypes.string,
-      color: PropTypes.string,
-      trend: PropTypes.oneOf(['up', 'down']),
-    }),
-  ]),
+  secondaryValue: PropTypes.shape({
+    value: PropTypes.string,
+    color: PropTypes.string,
+    trend: PropTypes.oneOf(['up', 'down']),
+  }),
   thresholds: PropTypes.arrayOf(
     PropTypes.shape({
       comparison: PropTypes.oneOf(['<', '>', '=', '<=', '>=']).isRequired,

@@ -17,7 +17,6 @@ storiesOf('ValueCard (Experimental)', module)
           id="facilitycard"
           content={object('content', [
             {
-              title: 'Attribute title is ignored for xsmall card sizes',
               value: 88,
               unit: '%',
             },
@@ -28,7 +27,7 @@ storiesOf('ValueCard (Experimental)', module)
       </div>
     );
   })
-  .add('xsmall / secondary value', () => {
+  .add('xsmall / with title', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.XSMALL);
     return (
       <div style={{ width: text('cardWidth', `${getCardMinSize('lg', size).x}px`), margin: 20 }}>
@@ -37,9 +36,8 @@ storiesOf('ValueCard (Experimental)', module)
           id="facilitycard"
           content={object('content', [
             {
-              title: 'Attribute title is ignored for xsmall card sizes',
+              title: 'Average',
               value: 13572,
-              secondaryValue: 'Average',
             },
           ])}
           breakpoint="lg"
@@ -57,7 +55,6 @@ storiesOf('ValueCard (Experimental)', module)
           id="facilitycard"
           content={object('content', [
             {
-              title: 'Attribute title is ignored for xsmall card sizes',
               value: 13572,
               secondaryValue: { value: '22%', trend: 'down', color: 'red' },
             },
@@ -77,7 +74,6 @@ storiesOf('ValueCard (Experimental)', module)
           id="facilitycard"
           content={object('content', [
             {
-              title: 'Attribute title is ignored for xsmall card sizes',
               value: 35,
               secondaryValue: { value: '12', trend: 'up', color: 'green' },
             },
@@ -97,7 +93,6 @@ storiesOf('ValueCard (Experimental)', module)
           id="facilitycard"
           content={[
             {
-              title: 'Attribute title is ignored for xsmall card sizes',
               value: number('value', 35),
               thresholds: [
                 {
@@ -133,7 +128,6 @@ storiesOf('ValueCard (Experimental)', module)
           id="facilitycard"
           content={[
             {
-              title: 'Attribute title is ignored for xsmall card sizes',
               value: number('value', 4),
               thresholds: [
                 {
@@ -160,7 +154,6 @@ storiesOf('ValueCard (Experimental)', module)
           id="facilitycard"
           content={object('content', [
             {
-              title: 'Attribute title is ignored for xsmall card sizes',
               value: text('value', 'Bad'),
               thresholds: [
                 {

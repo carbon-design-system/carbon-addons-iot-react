@@ -6,6 +6,7 @@ export const COLORS = {
 
 export const CARD_SIZES = {
   XSMALL: 'XSMALL',
+  XSMALL_WIDE: 'XSMALL_WIDE',
   SMALL: 'SMALL',
   TALL: 'TALL',
   MEDIUM: 'MEDIUM',
@@ -56,11 +57,11 @@ export const ROW_HEIGHT = {
   xs: 128,
 };
 
+/** The amount of space to preserve between cards */
 export const GUTTER = 16;
 
 /*
- *
- *
+ * How many rows and columns should each card cross at each layout size
  */
 
 export const CARD_DIMENSIONS = {
@@ -70,6 +71,13 @@ export const CARD_DIMENSIONS = {
     md: { w: 3, h: 1 },
     sm: { w: 2, h: 1 },
     xs: { w: 2, h: 1 },
+  },
+  XSMALL_WIDE: {
+    xl: { w: 3, h: 1 },
+    lg: { w: 4, h: 1 },
+    md: { w: 4, h: 1 },
+    sm: { w: 6, h: 1 },
+    xs: { w: 4, h: 1 },
   },
   SMALL: {
     xl: { w: 2, h: 2 },
