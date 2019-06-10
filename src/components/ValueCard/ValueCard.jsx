@@ -64,6 +64,8 @@ const AttributeLabel = styled.div`
   order: ${props => (props.isVertical ? 0 : 2)};
   color: ${COLORS.gray};
   font-weight: lighter;
+  ${props => props.isVertical && `text-overflow: ellipsis`};
+  ${props => props.isVertical && `overflow: hidden`};
 `;
 
 const ValueCard = ({ title, content, size, ...others }) => {
@@ -125,7 +127,12 @@ const ValueCard = ({ title, content, size, ...others }) => {
               <AttributeWrapper layout={layout} isSmall={content[0].secondaryValue !== undefined}>
                 <AttributeValueWrapper>
                   {content[0].title ? ( // Optional title attribute
-                    <AttributeLabel isVertical={isVertical} layout={layout} size={size}>
+                    <AttributeLabel
+                      title={content[0].title}
+                      isVertical={isVertical}
+                      layout={layout}
+                      size={size}
+                    >
                       {content[0].title}
                     </AttributeLabel>
                   ) : null}
@@ -147,7 +154,7 @@ const ValueCard = ({ title, content, size, ...others }) => {
                 >
                   <AttributeBorder isVertical={isVertical} hasBorder={!isVertical && i > 0}>
                     <Attribute isVertical={isVertical} layout={layout} {...attribute} />
-                    <AttributeLabel isVertical={isVertical} layout={layout}>
+                    <AttributeLabel title={attribute.title} isVertical={isVertical} layout={layout}>
                       {attribute.title}
                     </AttributeLabel>
                   </AttributeBorder>
