@@ -138,6 +138,24 @@ const originalCards = [
     ],
   },
   {
+    title: 'Health',
+    id: 'facilitycard-health',
+    size: CARD_SIZES.XSMALL_WIDE,
+    type: CARD_TYPES.VALUE,
+    availableActions: {
+      delete: true,
+    },
+    content: [
+      {
+        value: 'Healthy',
+        thresholds: [
+          { comparison: '=', value: 'Healthy', icon: 'icon--checkmark--solid', color: 'green' },
+          { comparison: '=', value: 'Unhealthy', icon: 'icon--close--solid', color: 'red' },
+        ],
+      },
+    ],
+  },
+  {
     title: 'Alerts',
     id: 'alert-table1',
     size: CARD_SIZES.LARGE,
@@ -322,8 +340,16 @@ const CARD_DIMENSIONS_16_COL = {
   XSMALL: {
     max: { w: 2, h: 1 },
     xl: { w: 2, h: 1 },
-    lg: { w: 4, h: 1 },
+    lg: { w: 2, h: 1 },
     md: { w: 2, h: 1 },
+    sm: { w: 2, h: 1 },
+    xs: { w: 2, h: 1 },
+  },
+  XSMALL_WIDE: {
+    max: { w: 3, h: 1 },
+    xl: { w: 4, h: 1 },
+    lg: { w: 4, h: 1 },
+    md: { w: 4, h: 1 },
     sm: { w: 2, h: 1 },
     xs: { w: 4, h: 1 },
   },
