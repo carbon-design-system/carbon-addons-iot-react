@@ -15,7 +15,6 @@ import Popup20 from '@carbon/icons-react/lib/popup/20';
 import styled from 'styled-components';
 
 import {
-  CARD_LAYOUTS,
   CARD_TITLE_HEIGHT,
   CARD_CONTENT_PADDING,
   CARD_SIZES,
@@ -40,8 +39,8 @@ const CardWrapper = styled.div`
 
 /** Header */
 export const CardHeader = styled.div`
-  padding: 12px ${CARD_CONTENT_PADDING / 2}px 0 ${CARD_CONTENT_PADDING}px;
-  flex: 0 1 ${CARD_TITLE_HEIGHT}px;
+  padding: 0 ${CARD_CONTENT_PADDING / 2}px 0 ${CARD_CONTENT_PADDING}px;
+  flex: 0 0 ${CARD_TITLE_HEIGHT}px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -50,24 +49,6 @@ export const CardHeader = styled.div`
 
 export const CardContent = styled.div`
   flex: 1;
-  display: flex;
-  ${props =>
-    props.layout === CARD_LAYOUTS.HORIZONTAL &&
-    `
-    flex-direction: row;
-    align-items: flex-end;
-    justify-content: space-around;
-    padding: 0 0 1rem;
-  `}
-  ${props =>
-    props.layout === CARD_LAYOUTS.VERTICAL &&
-    `
-    padding: 0.5rem 0 1.5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-  `}
 `;
 
 const CardTitle = styled.span`
@@ -93,6 +74,7 @@ const SkeletonWrapper = styled.div`
 `;
 
 const EmptyMessageWrapper = styled.div`
+  height: 100%;
   width: 100%;
   display: flex;
   align-items: center;
@@ -245,7 +227,7 @@ const Card = ({
         </CardTitle>
         {toolbar}
       </CardHeader>
-      <CardContent layout={layout} height={dimensions.y}>
+      <CardContent height={dimensions.y}>
         {isLoading ? (
           <SkeletonWrapper>
             <SkeletonText paragraph lineCount={size === CARD_SIZES.XSMALL ? 2 : 3} width="100%" />

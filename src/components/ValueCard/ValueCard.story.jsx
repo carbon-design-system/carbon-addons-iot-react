@@ -119,8 +119,8 @@ storiesOf('ValueCard (Experimental)', module)
       </div>
     );
   })
-  .add('xsmall / thresholds (number, icon)', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.XSMALL);
+  .add('xsmallwide / thresholds (number, icon)', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.XSMALL_WIDE);
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <ValueCard
@@ -145,8 +145,8 @@ storiesOf('ValueCard (Experimental)', module)
       </div>
     );
   })
-  .add('xsmall / thresholds (string)', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.XSMALL);
+  .add('xsmallwide / thresholds (string)', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.XSMALL_WIDE);
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <ValueCard
@@ -154,17 +154,17 @@ storiesOf('ValueCard (Experimental)', module)
           id="facilitycard"
           content={object('content', [
             {
-              value: text('value', 'Bad'),
+              value: text('value', 'Unhealthy'),
               thresholds: [
                 {
                   comparison: '=',
-                  value: 'Good',
+                  value: 'Healthy',
                   icon: 'icon--checkmark--solid',
                   color: 'green',
                 },
                 {
                   comparison: '=',
-                  value: 'Bad',
+                  value: 'Unhealthy',
                   icon: 'icon--close--solid',
                   color: 'red',
                 },

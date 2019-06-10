@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 import { CardPropTypes, TableCardPropTypes } from '../../constants/PropTypes';
 import Card from '../Card/Card';
-import { CARD_LAYOUTS, CARD_SIZES } from '../../constants/LayoutConstants';
+import { CARD_SIZES } from '../../constants/LayoutConstants';
 import StatefulTable from '../Table/StatefulTable';
 
 const StyledOverflowMenu = styled(OverflowMenu)`
@@ -57,8 +57,6 @@ const TableCard = ({
   onCardAction,
   ...others
 }) => {
-  const layout = CARD_LAYOUTS.HORIZONTAL;
-
   const renderActionCell = cellItem => {
     const actionList = JSON.parse(cellItem.value);
     return actionList && actionList.length === 1 ? (
@@ -144,7 +142,7 @@ const TableCard = ({
     : data;
 
   return (
-    <Card id={id} title={title} size={size} layout={layout} onCardAction={onCardAction} {...others}>
+    <Card id={id} title={title} size={size} onCardAction={onCardAction} {...others}>
       <StyledStatefulTable
         columns={columnsToRender}
         data={tableData}
