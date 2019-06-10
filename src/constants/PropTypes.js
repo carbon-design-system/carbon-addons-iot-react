@@ -179,9 +179,16 @@ export const CardPropTypes = {
     delete: PropTypes.bool,
     expand: PropTypes.bool,
   }),
+  /** All the labels that need translation */
   i18n: PropTypes.shape({
-    noDataLabel: PropTypes.node,
-    noDataShortLabel: PropTypes.node,
+    noDataLabel: PropTypes.string,
+    noDataShortLabel: PropTypes.string,
+    hourlyLabel: PropTypes.string,
+    weeklyLabel: PropTypes.string,
+    monthlyLabel: PropTypes.string,
+    editCardLabel: PropTypes.string,
+    cloneCardLabel: PropTypes.string,
+    deleteCardLabel: PropTypes.string,
   }),
   tooltip: PropTypes.element,
   toolbar: PropTypes.element,
