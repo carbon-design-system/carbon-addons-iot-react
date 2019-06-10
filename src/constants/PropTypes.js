@@ -13,6 +13,14 @@ export const AttributePropTypes = PropTypes.shape({
       trend: PropTypes.oneOf(['up', 'down']),
     }),
   ]),
+  thresholds: PropTypes.arrayOf(
+    PropTypes.shape({
+      comparison: PropTypes.oneOf(['<', '>', '=', '<=', '>=']).isRequired,
+      value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+      color: PropTypes.string,
+      icon: PropTypes.string,
+    })
+  ),
   unit: PropTypes.string,
 });
 
