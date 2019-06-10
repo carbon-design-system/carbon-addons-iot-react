@@ -65,21 +65,22 @@ const TableCard = ({
   const layout = CARD_LAYOUTS.HORIZONTAL;
 
   const renderActionCell = cellItem => {
-    return cellItem.value && cellItem.value.length === 1 ? (
+    const actionList = JSON.parse(cellItem.value);
+    return actionList && actionList.length === 1 ? (
       <StyledActionIcon
         onClick={evt => {
           evt.preventDefault();
           evt.stopPropagation();
           onCardAction(id, 'TABLE_CARD_ROW_ACTION', {
             rowId: cellItem.rowId,
-            actionId: cellItem.value[0].id,
+            actionId: actionList[0].id,
           });
         }}
-        renderIcon={cellItem.value[0].icon}
+        name={actionList[0].icon}
       />
-    ) : (
-      <StyledOverflowMenu>
-        {cellItem.value.map(item => {
+    ) : actionList && actionList.length > 1 ? (
+      <StyledOverflowMenu floatingMenu>
+        {actionList.map(item => {
           return (
             <OverflowMenuItem
               key={item.id}
@@ -96,7 +97,7 @@ const TableCard = ({
           );
         })}
       </StyledOverflowMenu>
-    );
+    ) : null;
   };
 
   // always add the last action column has default
@@ -111,19 +112,22 @@ const TableCard = ({
     },
   ];
 
+  const hasActionColumn = data.filter(i => i.actions).length > 0;
+
   const columnsToRender = columns
     .map(i => ({
       ...i,
       isSortable: true,
     }))
-    .concat(actionColumn)
+    .concat(hasActionColumn ? actionColumn : [])
     .map(column => {
+      const columnPriority = column.priority || 1; // default to 1 if not provided
       switch (size) {
         case CARD_SIZES.TALL:
-          return column.priority === 1 ? column : null;
+          return columnPriority === 1 ? column : null;
 
         case CARD_SIZES.LARGE:
-          return column.priority === 1 || column.priority === 2 ? column : null;
+          return columnPriority === 1 || columnPriority === 2 ? column : null;
 
         case CARD_SIZES.XLARGE:
           return column;
@@ -134,13 +138,15 @@ const TableCard = ({
     })
     .filter(i => i);
 
-  const tableData = data.map(i => ({
-    id: i.id,
-    values: {
-      ...i.values,
-      actionColumn: i.actions || [],
-    },
-  }));
+  const tableData = hasActionColumn
+    ? data.map(i => ({
+        id: i.id,
+        values: {
+          ...i.values,
+          actionColumn: JSON.stringify(i.actions || []),
+        },
+      }))
+    : data;
 
   return (
     <Card id={id} title={title} size={size} layout={layout} onCardAction={onCardAction} {...others}>
@@ -150,12 +156,14 @@ const TableCard = ({
         options={{
           hasPagination: true,
         }}
+        actions={{
+          table: { onRowClicked: () => {} },
+          pagination: { onChangePage: () => {} },
+        }}
         view={{
           pagination: {
             pageSize: 9,
             pageSizes: [9],
-            page: 1,
-            totalItems: data.length,
             isItemPerPageHidden: true,
           },
         }}

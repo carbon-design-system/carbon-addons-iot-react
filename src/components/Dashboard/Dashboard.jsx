@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Responsive, WidthProvider } from 'react-grid-layout';
 import PropTypes from 'prop-types';
 import 'react-grid-layout/css/styles.css';
@@ -37,7 +37,6 @@ const propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string,
   lastUpdated: PropTypes.string,
-  lastUpdatedLabel: PropTypes.string,
   cards: PropTypes.arrayOf(PropTypes.shape(ValueCardPropTypes)).isRequired,
   layouts: PropTypes.shape({
     max: PropTypes.arrayOf(DashboardLayoutPropTypes),
@@ -62,6 +61,18 @@ const propTypes = {
   cardDimensions: CardSizesToDimensionsPropTypes,
   /** Optional filter that should be rendered top right */
   filter: PropTypes.node,
+  /** All the labels that need translation */
+  i18n: PropTypes.shape({
+    lastUpdatedLabel: PropTypes.string,
+    noDataLabel: PropTypes.string,
+    noDataShortLabel: PropTypes.string,
+    hourlyLabel: PropTypes.string,
+    weeklyLabel: PropTypes.string,
+    monthlyLabel: PropTypes.string,
+    editCardLabel: PropTypes.string,
+    cloneCardLabel: PropTypes.string,
+    deleteCardLabel: PropTypes.string,
+  }),
 };
 
 const defaultProps = {
@@ -69,7 +80,17 @@ const defaultProps = {
   isLoading: false,
   description: null,
   lastUpdated: null,
-  lastUpdatedLabel: 'Last updated: ',
+  i18n: {
+    lastUpdatedLabel: 'Last updated: ',
+    noDataLabel: 'No data is available for this time range.',
+    noDataShortLabel: 'No data',
+    hourlyLabel: 'Hourly',
+    weeklyLabel: 'Weekly',
+    monthlyLabel: 'Monthly',
+    editCardLabel: 'Edit card',
+    cloneCardLabel: 'Clone card',
+    deleteCardLabel: 'Delete card',
+  },
   layouts: {},
   rowHeight: ROW_HEIGHT,
   onCardAction: null,
@@ -96,7 +117,8 @@ const Dashboard = ({
   title,
   description,
   lastUpdated,
-  lastUpdatedLabel,
+  i18n: { lastUpdatedLabel },
+  i18n,
   dashboardBreakpoints,
   cardDimensions,
   dashboardColumns,
@@ -108,16 +130,13 @@ const Dashboard = ({
   className,
 }) => {
   const [breakpoint, setBreakpoint] = useState('lg');
-  // Keep track of whether it's mounted to turn back on the animations
-  useEffect(() => {
-    console.log('dashboard is remounting'); // eslint-disable-line
-  }, []);
 
   const renderCard = card => (
     <div key={card.id}>
       {card.type === CARD_TYPES.VALUE ? (
         <ValueCard
           {...card}
+          i18n={i18n}
           isLoading={isLoading}
           isEditable={isEditable}
           onCardAction={onCardAction}
@@ -132,6 +151,7 @@ const Dashboard = ({
       {card.type === CARD_TYPES.TIMESERIES ? (
         <TimeSeriesCard
           {...card}
+          i18n={i18n}
           isLoading={isLoading}
           isEditable={isEditable}
           onCardAction={onCardAction}
@@ -146,6 +166,8 @@ const Dashboard = ({
       {card.type === CARD_TYPES.TABLE ? (
         <TableCard
           {...card}
+          i18n={i18n}
+          isLoading={isLoading}
           isEditable={isEditable}
           onCardAction={onCardAction}
           key={card.id}
@@ -159,6 +181,7 @@ const Dashboard = ({
       {card.type === CARD_TYPES.DONUT ? (
         <DonutCard
           {...card}
+          i18n={i18n}
           isLoading={isLoading}
           isEditable={isEditable}
           onCardAction={onCardAction}
@@ -173,6 +196,7 @@ const Dashboard = ({
       {card.type === CARD_TYPES.PIE ? (
         <PieCard
           {...card}
+          i18n={i18n}
           isLoading={isLoading}
           isEditable={isEditable}
           onCardAction={onCardAction}
@@ -187,6 +211,7 @@ const Dashboard = ({
       {card.type === CARD_TYPES.BAR ? (
         <BarChartCard
           {...card}
+          i18n={i18n}
           isLoading={isLoading}
           isEditable={isEditable}
           onCardAction={onCardAction}

@@ -3,16 +3,21 @@ import PropTypes from 'prop-types';
 import { CARD_SIZES, CARD_LAYOUTS, DASHBOARD_SIZES } from './LayoutConstants';
 
 export const AttributePropTypes = PropTypes.shape({
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string, // optional for little cards
   value: PropTypes.any,
-  secondaryValue: PropTypes.oneOfType([
-    PropTypes.string,
+  secondaryValue: PropTypes.shape({
+    value: PropTypes.string,
+    color: PropTypes.string,
+    trend: PropTypes.oneOf(['up', 'down']),
+  }),
+  thresholds: PropTypes.arrayOf(
     PropTypes.shape({
-      value: PropTypes.string,
+      comparison: PropTypes.oneOf(['<', '>', '=', '<=', '>=']).isRequired,
+      value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
       color: PropTypes.string,
-      trend: PropTypes.oneOf(['up', 'down']),
-    }),
-  ]),
+      icon: PropTypes.string,
+    })
+  ),
   unit: PropTypes.string,
 });
 
@@ -45,7 +50,9 @@ export const TimeSeriesDatasetPropTypes = PropTypes.shape({
   label: PropTypes.string.isRequired,
   values: PropTypes.arrayOf(
     PropTypes.shape({
+      /** time attribute */
       t: PropTypes.number.isRequired,
+      /** value attribute */
       v: PropTypes.number.isRequired,
     })
   ),
@@ -172,6 +179,17 @@ export const CardPropTypes = {
     delete: PropTypes.bool,
     expand: PropTypes.bool,
   }),
+  /** All the labels that need translation */
+  i18n: PropTypes.shape({
+    noDataLabel: PropTypes.string,
+    noDataShortLabel: PropTypes.string,
+    hourlyLabel: PropTypes.string,
+    weeklyLabel: PropTypes.string,
+    monthlyLabel: PropTypes.string,
+    editCardLabel: PropTypes.string,
+    cloneCardLabel: PropTypes.string,
+    deleteCardLabel: PropTypes.string,
+  }),
   tooltip: PropTypes.element,
   toolbar: PropTypes.element,
   /** Row height in pixels for each layout */
@@ -182,4 +200,6 @@ export const CardPropTypes = {
   dashboardColumns: DashboardColumnsPropTypes,
   /** array of configurable sizes to dimensions */
   cardDimensions: CardSizesToDimensionsPropTypes,
+  /** the content to show in the card */
+  children: PropTypes.node,
 };

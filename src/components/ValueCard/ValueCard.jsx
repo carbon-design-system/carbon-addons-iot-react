@@ -1,78 +1,83 @@
 import React from 'react';
 import styled from 'styled-components';
-import isNil from 'lodash/isNil';
-import { Icon } from 'carbon-components-react';
-import { iconCaretUp, iconCaretDown } from 'carbon-icons';
+import withSize from 'react-sizeme';
 
 import { ValueCardPropTypes, CardPropTypes } from '../../constants/PropTypes';
 import { CARD_LAYOUTS, CARD_SIZES, CARD_CONTENT_PADDING } from '../../constants/LayoutConstants';
+import { COLORS } from '../../styles/styles';
 import Card from '../Card/Card';
 
-import ValueRenderer from './ValueRenderer';
+import Attribute from './Attribute';
 
 const AttributeWrapper = styled.div`
   ${props =>
     props.layout === CARD_LAYOUTS.VERTICAL &&
     `
-    display: flex;
     padding: 0 ${CARD_CONTENT_PADDING}px;
     width: 100%;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+
   `}
   ${props =>
     props.layout === CARD_LAYOUTS.HORIZONTAL &&
     `
     width: 100%;
   `}
-  padding: 0 ${CARD_CONTENT_PADDING}px 8px ${CARD_CONTENT_PADDING}px;
+  padding: 0px ${CARD_CONTENT_PADDING}px  ;
+`;
+
+const AttributeBorder = styled.div`
+  display: flex;
+  flex-direction: ${props => (props.isVertical ? 'column' : 'row')};
+  align-items: ${props => (props.isVertical ? 'flex-start' : 'flex-end')};
+  justify-content: space-between;
+  ${props => props.hasBorder && `border-top: 1px solid ${COLORS.lightGrey}`};
+  ${props => (!props.isVertical ? `padding: ${(CARD_CONTENT_PADDING * 2) / 3}px 0px` : '')};
 `;
 
 const AttributeValueWrapper = styled.div`
-  padding-bottom: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 `;
 
 const AttributeLabel = styled.div`
   ${props =>
     props.layout === CARD_LAYOUTS.HORIZONTAL && `padding-bottom: 0.25rem; font-size: 1.25rem;`};
-  ${props => props.layout === CARD_LAYOUTS.VERTICAL && `font-size: 1.0rem;`};
-  text-align: left;
-`;
-
-const AttributeValue = styled.span`
   ${props =>
-    props.layout === CARD_LAYOUTS.HORIZONTAL &&
-    `font-size: ${props.hasSecondary ? '2.5rem' : '3.0rem'}; font-weight: lighter;`}
-  ${props => props.layout === CARD_LAYOUTS.VERTICAL && `text-align: right;`};
-`;
-
-const AttributeSecondaryValue = styled.div`
-  height: 24px;
-  display: flex;
-  align-items: center;
-  color: ${props => props.color || '#777'};
-  fill: ${props => props.color || '#777'};
-  font-size: 0.875rem;
-`;
-
-const TrendIcon = styled(Icon)`
-  margin-right: 0.25rem;
-`;
-
-const AttributeUnit = styled.span`
+    props.layout === CARD_LAYOUTS.VERTICAL ||
+    props.size === CARD_SIZES.XSMALL ||
+    props.size === CARD_SIZES.XSMALL_WIDE
+      ? props.size === CARD_SIZES.XSMALL || props.size === CARD_SIZES.XSMALL_WIDE
+        ? `font-size: .875rem` // for small card sizes, small font
+        : `font-size: 1.0rem;` // otherwi
+      : null};
+  text-align: ${props =>
+    props.layout === CARD_LAYOUTS.VERTICAL ||
+    props.size === CARD_SIZES.XSMALL ||
+    props.size === CARD_SIZES.XSMALL_WIDE
+      ? 'left'
+      : 'right'};
   ${props =>
-    props.layout === CARD_LAYOUTS.HORIZONTAL &&
-    `
-    font-size: 1.25rem;
-  `};
+    (props.isVertical || props.size === CARD_SIZES.XSMALL) &&
+    `padding-bottom: 0.25rem; padding-top: 0.25rem;`};
+  ${props => !(props.isVertical || props.size === CARD_SIZES.XSMALL) && `padding-left: 0.5rem`};
+  order: ${props => (props.isVertical ? 0 : 2)};
+  color: ${COLORS.gray};
+  font-weight: lighter;
+  ${props => props.isVertical && `text-overflow: ellipsis`};
+  ${props => props.isVertical && `overflow: hidden`};
 `;
 
 const ValueCard = ({ title, content, size, ...others }) => {
   let layout = CARD_LAYOUTS.HORIZONTAL;
   switch (size) {
     case CARD_SIZES.XSMALL:
+    case CARD_SIZES.XSMALL_WIDE:
+      layout = CARD_LAYOUTS.HORIZONTAL;
+      break;
     case CARD_SIZES.SMALL:
+      layout = CARD_LAYOUTS.VERTICAL;
+      break;
     case CARD_SIZES.TALL:
       if (content.length > 2) {
         layout = CARD_LAYOUTS.VERTICAL;
@@ -103,60 +108,63 @@ const ValueCard = ({ title, content, size, ...others }) => {
   };
 
   const isXS = size === CARD_SIZES.XSMALL;
-  const cardTitle = isXS ? content[0].title : title;
 
   return (
-    <Card
-      title={cardTitle}
-      size={size}
-      layout={layout}
-      availableActions={availableActions}
-      {...others}
-    >
-      {content.map(i =>
-        isXS ? (
-          <AttributeWrapper
+    <withSize.SizeMe>
+      {({ size: measuredSize }) => {
+        // Measure the size to determine whether to render in vertical or horizontal
+        const isVertical = !measuredSize || measuredSize.width < 300;
+        return (
+          <Card
+            title={title}
+            size={size}
             layout={layout}
-            hasSecondary={i.secondaryValue !== undefined}
-            key={i.title}
+            availableActions={availableActions}
+            isEmpty={content.length === 0}
+            {...others}
           >
-            <AttributeValueWrapper>
-              <AttributeValue layout={layout} hasSecondary={i.secondaryValue !== undefined}>
-                {!isNil(i.value) ? <ValueRenderer value={i.value} /> : ' '}
-              </AttributeValue>
-              {i.unit && <AttributeUnit layout={layout}>{i.unit}</AttributeUnit>}
-            </AttributeValueWrapper>
-            {i.secondaryValue !== undefined ? (
-              typeof i.secondaryValue === 'object' ? (
-                <AttributeSecondaryValue
-                  color={i.secondaryValue.color}
-                  trend={i.secondaryValue.trend}
-                >
-                  {i.secondaryValue.trend && i.secondaryValue.trend === 'up' ? (
-                    <TrendIcon renderIcon={iconCaretUp} />
-                  ) : i.secondaryValue.trend === 'down' ? (
-                    <TrendIcon renderIcon={iconCaretDown} />
+            {isXS && content.length > 0 ? ( // Small card only gets one
+              <AttributeWrapper layout={layout} isSmall={content[0].secondaryValue !== undefined}>
+                <AttributeValueWrapper>
+                  {content[0].title ? ( // Optional title attribute
+                    <AttributeLabel
+                      title={content[0].title}
+                      isVertical={isVertical}
+                      layout={layout}
+                      size={size}
+                    >
+                      {content[0].title}
+                    </AttributeLabel>
                   ) : null}
-                  {i.secondaryValue.value}
-                </AttributeSecondaryValue>
-              ) : (
-                <AttributeSecondaryValue>{i.secondaryValue}</AttributeSecondaryValue>
-              )
-            ) : null}
-          </AttributeWrapper>
-        ) : (
-          <AttributeWrapper layout={layout} key={i.title}>
-            <AttributeLabel layout={layout}>{i.title}</AttributeLabel>
-            <div>
-              <AttributeValue layout={layout}>
-                {!isNil(i.value) ? <ValueRenderer value={i.value} /> : ' '}
-              </AttributeValue>
-              {i.unit && <AttributeUnit layout={layout}>{i.unit}</AttributeUnit>}
-            </div>
-          </AttributeWrapper>
-        )
-      )}
-    </Card>
+                  <Attribute
+                    isVertical={isVertical}
+                    isSmall={content[0].secondaryValue || content[0].title}
+                    layout={layout}
+                    {...content[0]}
+                  />
+                </AttributeValueWrapper>
+              </AttributeWrapper>
+            ) : (
+              content.map((attribute, i) => (
+                // Larger card
+                <AttributeWrapper
+                  layout={layout}
+                  key={`${attribute.title}-${i}`}
+                  isSmall={attribute.secondaryValue !== undefined}
+                >
+                  <AttributeBorder isVertical={isVertical} hasBorder={!isVertical && i > 0}>
+                    <Attribute isVertical={isVertical} layout={layout} {...attribute} />
+                    <AttributeLabel title={attribute.title} isVertical={isVertical} layout={layout}>
+                      {attribute.title}
+                    </AttributeLabel>
+                  </AttributeBorder>
+                </AttributeWrapper>
+              ))
+            )}
+          </Card>
+        );
+      }}
+    </withSize.SizeMe>
   );
 };
 

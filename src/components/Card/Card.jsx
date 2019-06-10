@@ -40,7 +40,7 @@ const CardWrapper = styled.div`
 
 /** Header */
 export const CardHeader = styled.div`
-  padding: 0 ${CARD_CONTENT_PADDING / 2}px 0 ${CARD_CONTENT_PADDING}px;
+  padding: 12px ${CARD_CONTENT_PADDING / 2}px 0 ${CARD_CONTENT_PADDING}px;
   flex: 0 1 ${CARD_TITLE_HEIGHT}px;
   display: flex;
   align-items: center;
@@ -55,18 +55,26 @@ export const CardContent = styled.div`
     props.layout === CARD_LAYOUTS.HORIZONTAL &&
     `
     flex-direction: row;
-    align-items: center;
+    align-items: flex-end;
     justify-content: space-around;
+    padding: 0 0 1rem;
   `}
   ${props =>
     props.layout === CARD_LAYOUTS.VERTICAL &&
     `
-    padding: 1.5rem 0;
+    padding: 0.5rem 0 1.5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
   `}
+`;
+
+const CardTitle = styled.span`
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 20px;
 `;
 
 const StyledToolbar = styled(Toolbar)`
@@ -119,6 +127,16 @@ const defaultProps = {
   cardDimensions: CARD_DIMENSIONS,
   dashboardBreakpoints: DASHBOARD_BREAKPOINTS,
   dashboardColumns: DASHBOARD_COLUMNS,
+  i18n: {
+    noDataLabel: 'No data is available for this time range.',
+    noDataShortLabel: 'No data',
+    hourlyLabel: 'Hourly',
+    weeklyLabel: 'Weekly',
+    monthlyLabel: 'Monthly',
+    editCardLabel: 'Edit card',
+    cloneCardLabel: 'Clone card',
+    deleteCardLabel: 'Delete card',
+  },
 };
 
 const Card = ({
@@ -135,8 +153,19 @@ const Card = ({
   onCardAction,
   availableActions,
   breakpoint,
+  i18n: {
+    noDataLabel,
+    noDataShortLabel,
+    hourlyLabel,
+    weeklyLabel,
+    monthlyLabel,
+    editCardLabel,
+    cloneCardLabel,
+    deleteCardLabel,
+  },
   ...others
 }) => {
+  const isXS = size === CARD_SIZES.XSMALL;
   const dimensions = getCardMinSize(
     breakpoint,
     size,
@@ -159,9 +188,9 @@ const Card = ({
         onChange={evt => console.log('new view: ', evt)} // eslint-disable-line
         defaultValue="weekly"
       >
-        <SelectItem value="hourly" text="Hourly" />
-        <SelectItem value="weekly" text="Weekly" />
-        <SelectItem value="monthly" text="Monthly" />
+        <SelectItem value="hourly" text={hourlyLabel} />
+        <SelectItem value="weekly" text={weeklyLabel} />
+        <SelectItem value="monthly" text={monthlyLabel} />
       </Select>
     </ToolbarItem>
   );
@@ -176,20 +205,20 @@ const Card = ({
             {mergedAvailableActions.edit && (
               <OverflowMenuItem
                 onClick={() => onCardAction(id, 'EDIT_CARD')}
-                itemText="Edit card"
+                itemText={editCardLabel}
               />
             )}
             {mergedAvailableActions.clone && (
               <OverflowMenuItem
                 onClick={() => onCardAction(id, 'CLONE_CARD')}
-                itemText="Clone card"
+                itemText={cloneCardLabel}
               />
             )}
             {mergedAvailableActions.delete && (
               <OverflowMenuItem
                 isDelete
                 onClick={() => onCardAction(id, 'DELETE_CARD')}
-                itemText="Delete card"
+                itemText={deleteCardLabel}
               />
             )}
           </OverflowMenu>
@@ -225,10 +254,10 @@ const Card = ({
   return (
     <CardWrapper id={id} dimensions={dimensions} {...others}>
       <CardHeader>
-        <div>
+        <CardTitle title={title}>
           {title}&nbsp;
           {tooltip && <Tooltip triggerText="">{tooltip}</Tooltip>}
-        </div>
+        </CardTitle>
         {toolbar}
       </CardHeader>
       <CardContent layout={layout} height={dimensions.y}>
@@ -237,7 +266,7 @@ const Card = ({
             <SkeletonText paragraph lineCount={size === CARD_SIZES.XSMALL ? 2 : 3} width="100%" />
           </SkeletonWrapper>
         ) : isEmpty ? (
-          <EmptyMessageWrapper>No data is available for this time range.</EmptyMessageWrapper>
+          <EmptyMessageWrapper>{isXS ? noDataShortLabel : noDataLabel}</EmptyMessageWrapper>
         ) : (
           children
         )}

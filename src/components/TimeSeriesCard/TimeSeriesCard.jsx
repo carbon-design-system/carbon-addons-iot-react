@@ -95,9 +95,10 @@ const TimeSeriesCard = ({ title, content: { range, data }, size, ...others }) =>
       left: 50,
     },
   };
+
   return (
     <Card title={title} size={size} {...others}>
-      {others.isLoading ? (
+      {!others.isLoading ? (
         <ContentWrapper>
           <C3Chart
             {...chart}
