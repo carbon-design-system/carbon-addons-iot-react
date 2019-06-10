@@ -14,6 +14,7 @@ const StyledAttribute = styled.div`
   display: flex;
   align-items: flex-end;
   order: 1;
+  width: 100%;
 `;
 
 const TrendIcon = styled(Icon)`
@@ -50,6 +51,7 @@ const propTypes = {
   unit: PropTypes.any, // eslint-disable-line
   layout: PropTypes.oneOf(Object.values(CARD_LAYOUTS)),
   secondaryValue: PropTypes.any, // eslint-disable-line
+  isVertical: PropTypes.bool, // are the attributes and labels in a column?
   thresholds: PropTypes.arrayOf(
     PropTypes.shape({
       comparison: PropTypes.oneOf(['<', '>', '=', '<=', '>=']).isRequired,
@@ -65,9 +67,10 @@ const defaultProps = {
   layout: null,
   precision: 0,
   thresholds: [],
+  isVertical: false,
 };
 
-const Attribute = ({ value, unit, layout, secondaryValue, thresholds, precision }) => {
+const Attribute = ({ value, unit, layout, secondaryValue, thresholds, precision, isVertical }) => {
   // matching threshold will be the first match in the list, or a value of null
   const matchingThreshold = thresholds
     .filter(t => {
@@ -106,6 +109,7 @@ const Attribute = ({ value, unit, layout, secondaryValue, thresholds, precision 
           hasSecondary={secondaryValue !== undefined}
           thresholds={thresholds}
           precision={precision}
+          isVertical={isVertical}
           color={valueColor}
         />
       ) : (

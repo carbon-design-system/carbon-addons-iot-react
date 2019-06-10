@@ -6,6 +6,7 @@ export const COLORS = {
 
 export const CARD_SIZES = {
   XSMALL: 'XSMALL',
+  XSMALL_WIDE: 'XSMALL_WIDE',
   SMALL: 'SMALL',
   TALL: 'TALL',
   MEDIUM: 'MEDIUM',
@@ -56,6 +57,7 @@ export const ROW_HEIGHT = {
   xs: 128,
 };
 
+/** The amount of space to preserve between cards */
 export const GUTTER = 16;
 
 /*

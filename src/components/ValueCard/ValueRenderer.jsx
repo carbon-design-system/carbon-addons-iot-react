@@ -1,7 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import WarningAlt from '@carbon/icons-react/lib/warning--alt/32';
-// import CheckmarkOutline from '@carbon/icons-react/lib/checkmark--outline/32';
 import styled from 'styled-components';
 
 import { CARD_LAYOUTS } from '../../constants/LayoutConstants';
@@ -13,6 +11,7 @@ const propTypes = {
   hasSecondary: PropTypes.bool,
   precision: PropTypes.number,
   color: PropTypes.string,
+  isVertical: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -20,25 +19,13 @@ const defaultProps = {
   hasSecondary: false,
   precision: 0,
   color: null,
+  isVertical: false,
 };
 
-/*
-const StyledWarningAlt = styled(WarningAlt)`
-  > path {
-    fill: ${COLORS.errorRed};
-  }
-`;
-
-const StyledCheckmarkOutline = styled(CheckmarkOutline)`
-  > path {
-    fill: ${COLORS.okayGreen};
-  }
-`;
-*/
 const Attribute = styled.div`
   overflow: hidden;
   text-overflow: ellipsis;
-  ${props => props.unit || (props.hasSecondary && `max-width: 66%`)};
+  ${props => (props.unit || props.hasSecondary) && !props.isVertical && `max-width: 66%`};
   ${props => props.color && `color: ${props.color}`}
 `;
 const AttributeValue = styled.span`
@@ -53,7 +40,7 @@ const StyledBoolean = styled.span`
 `;
 
 /** This components job is determining how to render different kinds of card values */
-const ValueRenderer = ({ value, unit, layout, precision, hasSecondary, color }) => {
+const ValueRenderer = ({ value, unit, layout, precision, hasSecondary, color, isVertical }) => {
   let renderValue = value;
   if (typeof value === 'boolean') {
     renderValue = <StyledBoolean>{value.toString()}</StyledBoolean>;
@@ -71,7 +58,7 @@ const ValueRenderer = ({ value, unit, layout, precision, hasSecondary, color }) 
         : value.toFixed(precision);
   }
   return (
-    <Attribute unit={unit} hasSecondary={hasSecondary} color={color}>
+    <Attribute unit={unit} hasSecondary={hasSecondary} color={color} isVertical={isVertical}>
       <AttributeValue title={`${value} ${unit || ''}`} layout={layout} hasSecondary={hasSecondary}>
         {renderValue}
       </AttributeValue>

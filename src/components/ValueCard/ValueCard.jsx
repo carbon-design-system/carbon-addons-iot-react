@@ -56,6 +56,9 @@ const ValueCard = ({ title, content, size, ...others }) => {
   let layout = CARD_LAYOUTS.HORIZONTAL;
   switch (size) {
     case CARD_SIZES.XSMALL:
+    case CARD_SIZES.XSMALL_WIDE:
+      layout = CARD_LAYOUTS.HORIZONTAL;
+      break;
     case CARD_SIZES.SMALL:
       layout = CARD_LAYOUTS.VERTICAL;
       break;
@@ -103,19 +106,18 @@ const ValueCard = ({ title, content, size, ...others }) => {
             isEmpty={content.length === 0}
             {...others}
           >
-            {content.map((attribute, i) =>
-              isXS ? (
-                // Small card
-                <AttributeWrapper
-                  layout={layout}
-                  hasSecondary={attribute.secondaryValue !== undefined}
-                  key={attribute.title}
-                >
-                  <AttributeValueWrapper>
-                    <Attribute layout={layout} {...attribute} />
-                  </AttributeValueWrapper>
-                </AttributeWrapper>
-              ) : (
+            {isXS && content.length > 0 ? ( // Small card only gets one
+              <AttributeWrapper
+                layout={layout}
+                hasSecondary={content[0].secondaryValue !== undefined}
+                key={content[0].title}
+              >
+                <AttributeValueWrapper>
+                  <Attribute layout={layout} {...content[0]} />
+                </AttributeValueWrapper>
+              </AttributeWrapper>
+            ) : (
+              content.map((attribute, i) => (
                 // Larger card
                 <AttributeWrapper
                   layout={layout}
@@ -123,13 +125,13 @@ const ValueCard = ({ title, content, size, ...others }) => {
                   hasSecondary={attribute.secondaryValue !== undefined}
                 >
                   <AttributeBorder isVertical={isVertical} hasBorder={!isVertical && i > 0}>
-                    <Attribute layout={layout} {...attribute} />
+                    <Attribute isVertical={isVertical} layout={layout} {...attribute} />
                     <AttributeLabel isVertical={isVertical} layout={layout}>
                       {attribute.title}
                     </AttributeLabel>
                   </AttributeBorder>
                 </AttributeWrapper>
-              )
+              ))
             )}
           </Card>
         );
