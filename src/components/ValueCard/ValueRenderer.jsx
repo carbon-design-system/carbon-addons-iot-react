@@ -12,12 +12,14 @@ const propTypes = {
   layout: PropTypes.oneOf(Object.values(CARD_LAYOUTS)),
   hasSecondary: PropTypes.bool,
   precision: PropTypes.number,
+  color: PropTypes.string,
 };
 
 const defaultProps = {
   layout: CARD_LAYOUTS.HORIZONTAL,
   hasSecondary: false,
   precision: 0,
+  color: null,
 };
 
 /*
@@ -37,6 +39,7 @@ const Attribute = styled.div`
   overflow: hidden;
   text-overflow: ellipsis;
   ${props => props.unit || (props.hasSecondary && `max-width: 66%`)};
+  ${props => props.color && `color: ${props.color}`}
 `;
 const AttributeValue = styled.span`
   font-size: ${props => (props.hasSecondary ? '2.5rem' : '3.0rem')};
@@ -50,7 +53,7 @@ const StyledBoolean = styled.span`
 `;
 
 /** This components job is determining how to render different kinds of card values */
-const ValueRenderer = ({ value, unit, layout, precision, hasSecondary }) => {
+const ValueRenderer = ({ value, unit, layout, precision, hasSecondary, color }) => {
   let renderValue = value;
   if (typeof value === 'boolean') {
     renderValue = <StyledBoolean>{value.toString()}</StyledBoolean>;
@@ -68,7 +71,7 @@ const ValueRenderer = ({ value, unit, layout, precision, hasSecondary }) => {
         : value.toFixed(precision);
   }
   return (
-    <Attribute unit={unit} hasSecondary={hasSecondary}>
+    <Attribute unit={unit} hasSecondary={hasSecondary} color={color}>
       <AttributeValue title={`${value} ${unit || ''}`} layout={layout} hasSecondary={hasSecondary}>
         {renderValue}
       </AttributeValue>

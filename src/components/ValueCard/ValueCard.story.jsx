@@ -88,6 +88,102 @@ storiesOf('ValueCard (Experimental)', module)
       </div>
     );
   })
+  .add('xsmall / thresholds (number, no icon)', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.XSMALL);
+    return (
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+        <ValueCard
+          title={text('title', 'Alert Count')}
+          id="facilitycard"
+          content={[
+            {
+              title: 'Attribute title is ignored for xsmall card sizes',
+              value: number('value', 35),
+              thresholds: [
+                {
+                  comparison: '>=',
+                  value: 30,
+                  color: 'red',
+                },
+                {
+                  comparison: '<=',
+                  value: 5,
+                  color: 'green',
+                },
+                {
+                  comparison: '<',
+                  value: 30,
+                  color: 'orange',
+                },
+              ],
+            },
+          ]}
+          breakpoint="lg"
+          size={size}
+        />
+      </div>
+    );
+  })
+  .add('xsmall / thresholds (number, icon)', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.XSMALL);
+    return (
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+        <ValueCard
+          title={text('title', 'Alert Count')}
+          id="facilitycard"
+          content={[
+            {
+              title: 'Attribute title is ignored for xsmall card sizes',
+              value: number('value', 4),
+              thresholds: [
+                {
+                  comparison: '<',
+                  value: 5,
+                  icon: 'icon--checkmark--solid',
+                  color: 'green',
+                },
+              ],
+            },
+          ]}
+          breakpoint="lg"
+          size={size}
+        />
+      </div>
+    );
+  })
+  .add('xsmall / thresholds (string)', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.XSMALL);
+    return (
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+        <ValueCard
+          title={text('title', 'Status')}
+          id="facilitycard"
+          content={object('content', [
+            {
+              title: 'Attribute title is ignored for xsmall card sizes',
+              value: text('value', 'Bad'),
+              thresholds: [
+                {
+                  comparison: '=',
+                  value: 'Good',
+                  icon: 'icon--checkmark--solid',
+                  color: 'green',
+                },
+                {
+                  comparison: '=',
+                  value: 'Bad',
+                  icon: 'icon--close--solid',
+                  color: 'red',
+                },
+              ],
+            },
+          ])}
+          breakpoint="lg"
+          size={size}
+        />
+      </div>
+    );
+  })
   .add('small / single', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
     return (

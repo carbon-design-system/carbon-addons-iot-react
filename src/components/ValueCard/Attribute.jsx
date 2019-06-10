@@ -20,6 +20,21 @@ const TrendIcon = styled(Icon)`
   margin-right: 0.25rem;
 `;
 
+const ThresholdIconWrapper = styled.div`
+  width: 1rem;
+  height: 1rem;
+  margin: 0 0 0.5rem 0.5rem;
+`;
+
+const ThresholdIcon = styled(Icon)`
+  ${props =>
+    props.color &&
+    `
+    color: ${props.color};
+    fill: ${props.color};
+  `}
+`;
+
 const AttributeSecondaryValue = styled.div`
   height: 24px;
   display: flex;
@@ -35,15 +50,52 @@ const propTypes = {
   unit: PropTypes.any, // eslint-disable-line
   layout: PropTypes.oneOf(Object.values(CARD_LAYOUTS)),
   secondaryValue: PropTypes.any, // eslint-disable-line
+  thresholds: PropTypes.arrayOf(
+    PropTypes.shape({
+      comparison: PropTypes.oneOf(['<', '>', '=', '<=', '>=']).isRequired,
+      value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+      color: PropTypes.string,
+      icon: PropTypes.string,
+    })
+  ),
   precision: PropTypes.number,
 };
 
 const defaultProps = {
   layout: null,
   precision: 0,
+  thresholds: [],
 };
 
-const Attribute = ({ value, unit, layout, secondaryValue, precision }) => {
+const Attribute = ({ value, unit, layout, secondaryValue, thresholds, precision }) => {
+  // matching threshold will be the first match in the list, or a value of null
+  const matchingThreshold = thresholds
+    .filter(t => {
+      switch (t.comparison) {
+        case '<':
+          return value < t.value;
+        case '>':
+          return value > t.value;
+        case '=':
+          return value === t.value;
+        case '<=':
+          return value <= t.value;
+        case '>=':
+          return value >= t.value;
+        default:
+          return false;
+      }
+    })
+    .concat([null])[0];
+  const valueColor =
+    matchingThreshold && matchingThreshold.icon === undefined ? matchingThreshold.color : null;
+  const thresholdIcon =
+    matchingThreshold && matchingThreshold.icon ? (
+      <ThresholdIconWrapper>
+        <ThresholdIcon name={matchingThreshold.icon} color={matchingThreshold.color} />
+      </ThresholdIconWrapper>
+    ) : null;
+
   return (
     <StyledAttribute>
       {!isNil(value) ? (
@@ -52,12 +104,15 @@ const Attribute = ({ value, unit, layout, secondaryValue, precision }) => {
           unit={unit}
           layout={layout}
           hasSecondary={secondaryValue !== undefined}
+          thresholds={thresholds}
           precision={precision}
+          color={valueColor}
         />
       ) : (
         ' '
       )}
       <UnitRenderer value={value} unit={unit} layout={layout} />
+      {thresholdIcon}
       {secondaryValue !== undefined ? (
         typeof secondaryValue === 'object' ? (
           <AttributeSecondaryValue color={secondaryValue.color} trend={secondaryValue.trend}>
