@@ -439,4 +439,27 @@ storiesOf('Dashboard (Experimental)', module)
         rowHeight={object('row height', ROW_HEIGHT)}
       />
     );
+  })
+  .add('i18n labels', () => {
+    return (
+      <StatefulDashboard
+        title={text('title', 'Munich Building')}
+        isEditable={boolean('isEditable', true)}
+        i18n={{
+          lastUpdatedLabel: text('lastUpdatedLabel', 'Last updated: '),
+          noDataLabel: text('noDataLabel', 'No data is available for this time range.'),
+          noDataShortLabel: text('noDataShortLabel', 'No data'),
+          hourlyLabel: text('hourlyLabel', 'Hourly'),
+          weeklyabel: text('weeklyLabel', 'Weekly'),
+          monthlyLabel: text('monthlyLabel', 'Monthly'),
+          editCardLabel: text('editCardLabel', 'Edit card'),
+          cloneCardLabel: text('cloneCardLabel', 'Clone card'),
+          deleteCardLabel: text('deleteCardLabel', 'Delete card'),
+        }}
+        dashboardBreakpoints={object('breakpoints', DASHBOARD_BREAKPOINTS)}
+        dashboardColumns={object('columns', DASHBOARD_COLUMNS)}
+        cardDimensions={object('card dimensions', CARD_DIMENSIONS)}
+        rowHeight={object('row height', ROW_HEIGHT)}
+      />
+    );
   });
