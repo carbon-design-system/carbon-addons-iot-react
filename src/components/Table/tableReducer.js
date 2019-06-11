@@ -215,6 +215,7 @@ export const tableReducer = (state = {}, action) => {
     // By default we need to setup our sorted and filteredData and turn off the loading state
     case TABLE_REGISTER: {
       const updatedData = action.payload.data || state.data;
+      const { view } = action.payload;
       return update(state, {
         data: {
           $set: updatedData,
@@ -235,15 +236,15 @@ export const tableReducer = (state = {}, action) => {
                 rowCount: updatedData ? updatedData.length : 0,
               },
             },
-            // Clear selection if the data changes
+            // Reset the selection to the previous values
             selectedIds: {
-              $set: [],
+              $set: view ? view.table.selectedIds : [],
             },
             isSelectAllIndeterminate: {
-              $set: false,
+              $set: view ? view.table.isSelectAllIndeterminate : false,
             },
             isSelectAllSelected: {
-              $set: false,
+              $set: view ? view.table.isSelectAllSelected : false,
             },
           },
         },
