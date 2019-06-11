@@ -2,8 +2,9 @@ import React from 'react';
 import moment from 'moment';
 import styled from 'styled-components';
 import C3Chart from 'react-c3js';
-import 'c3/c3.css';
+import isEmpty from 'lodash/isEmpty';
 
+import 'c3/c3.css';
 import { TimeSeriesCardPropTypes, CardPropTypes } from '../../constants/PropTypes';
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 import Card from '../Card/Card';
@@ -14,7 +15,15 @@ const ContentWrapper = styled.div`
   width: 100%;
 `;
 
-const TimeSeriesCard = ({ title, content: { range, data }, size, ...others }) => {
+const TimeSeriesCard = ({
+  title,
+  content: { series, timeDataSourceId },
+  size,
+  range,
+  values,
+  ...others
+}) => {
+  // TODO: need to i18n the format of the x-axis and y-axis labels
   const format =
     range === 'month'
       ? '%m/%d'
@@ -40,41 +49,39 @@ const TimeSeriesCard = ({ title, content: { range, data }, size, ...others }) =>
           .toISOString()
       : range.min;
   const max = range === undefined ? undefined : range.max ? range.max : moment().toISOString();
-  const chartData =
-    data.label === undefined
+  const chartData = !isEmpty(values)
+    ? series.label === undefined
       ? {
-          // an array of datasets with multiple x axes
-          xs: data
-            .map(i => i.label)
-            .reduce((acc, curr, idx) => ({ ...acc, [curr]: `t${idx + 1}` }), {}),
           xFormat: '%Y-%m-%dT%H:%M:%S.%LZ',
-          colors: data.reduce(
-            (acc, curr) => Object.assign({}, acc, curr.color ? { [curr.label]: curr.color } : {}),
+          colors: series.reduce(
+            (acc, curr) =>
+              Object.assign({}, acc, curr.color ? { [curr.dataSourceId]: curr.color } : {}),
             {}
           ),
-          json: data.reduce(
-            (acc, curr, idx) => ({
-              ...acc,
-              [curr.label]: curr.values.map(i => i.v),
-              [`t${idx + 1}`]: curr.values.map(i => i.t),
-            }),
+          names: series.reduce(
+            (acc, curr) =>
+              Object.assign({}, acc, curr.label ? { [curr.dataSourceId]: curr.label } : {}),
             {}
           ),
+          json: values,
+          keys: { value: series.map(line => line.dataSourceId), x: timeDataSourceId },
           type: 'line',
         }
       : {
           // a single dataset
-          x: 't',
+          x: timeDataSourceId,
           xFormat: '%Y-%m-%dT%H:%M:%S.%LZ',
           colors: {
-            [data.label]: data.color,
+            [series.dataSourceId]: series.color,
           },
-          json: {
-            [data.label]: data.values.map(i => i.v),
-            t: data.values.map(i => i.t),
+          names: {
+            [series.dataSourceId]: series.label,
           },
+          keys: { value: [series.dataSourceId], x: timeDataSourceId },
+          json: values,
           type: 'line',
-        };
+        }
+    : {};
   const chart = {
     data: chartData,
     axis: {
@@ -95,9 +102,10 @@ const TimeSeriesCard = ({ title, content: { range, data }, size, ...others }) =>
       left: 50,
     },
   };
+
   return (
-    <Card title={title} size={size} {...others}>
-      {others.isLoading ? (
+    <Card title={title} size={size} {...others} isEmpty={isEmpty(values)}>
+      {!others.isLoading && !isEmpty(values) ? (
         <ContentWrapper>
           <C3Chart
             {...chart}

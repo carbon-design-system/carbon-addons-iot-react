@@ -17,16 +17,14 @@ describe('Dashboard testcases', () => {
             id: 'facilitycard-donut',
             size: CARD_SIZES.SMALL,
             type: CARD_TYPES.VALUE,
-            content: [
-              {
-                title: 'Alerts',
-                data: [
-                  { label: 'Sev 3', value: 6, color: COLORS.RED },
-                  { label: 'Sev 2', value: 9, color: COLORS.YELLOW },
-                  { label: 'Sev 1', value: 18, color: COLORS.BLUE },
-                ],
-              },
-            ],
+            content: {
+              title: 'Alerts',
+              attributes: [
+                { label: 'Sev 3', dataSourceId: 'data', color: COLORS.RED },
+                { label: 'Sev 2', dataSourceId: 'data2', color: COLORS.YELLOW },
+                { label: 'Sev 1', dataSourceId: 'data3', color: COLORS.BLUE },
+              ],
+            },
           },
         ]}
       />

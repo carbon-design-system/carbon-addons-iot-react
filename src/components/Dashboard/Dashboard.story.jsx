@@ -36,9 +36,7 @@ const originalCards = [
     content: [
       { title: 'Comfort Level', value: 89, unit: '%' },
       { title: 'Utilization', value: 76, unit: '%' },
-      { title: 'Humidity', value: 46, unit: '%' },
       { title: 'Pressure', value: 21.4, unit: 'mb' },
-      { title: 'Number of Alerts', value: 17 },
     ],
   },
   {
@@ -435,6 +433,29 @@ storiesOf('Dashboard (Experimental)', module)
         title={text('title', 'Munich Building')}
         isEditable={boolean('isEditable', false)}
         isLoading={boolean('isLoading', true)}
+        dashboardBreakpoints={object('breakpoints', DASHBOARD_BREAKPOINTS)}
+        dashboardColumns={object('columns', DASHBOARD_COLUMNS)}
+        cardDimensions={object('card dimensions', CARD_DIMENSIONS)}
+        rowHeight={object('row height', ROW_HEIGHT)}
+      />
+    );
+  })
+  .add('i18n labels', () => {
+    return (
+      <StatefulDashboard
+        title={text('title', 'Munich Building')}
+        isEditable={boolean('isEditable', true)}
+        i18n={{
+          lastUpdatedLabel: text('lastUpdatedLabel', 'Last updated: '),
+          noDataLabel: text('noDataLabel', 'No data is available for this time range.'),
+          noDataShortLabel: text('noDataShortLabel', 'No data'),
+          hourlyLabel: text('hourlyLabel', 'Hourly'),
+          weeklyLabel: text('weeklyLabel', 'Weekly'),
+          monthlyLabel: text('monthlyLabel', 'Monthly'),
+          editCardLabel: text('editCardLabel', 'Edit card'),
+          cloneCardLabel: text('cloneCardLabel', 'Clone card'),
+          deleteCardLabel: text('deleteCardLabel', 'Delete card'),
+        }}
         dashboardBreakpoints={object('breakpoints', DASHBOARD_BREAKPOINTS)}
         dashboardColumns={object('columns', DASHBOARD_COLUMNS)}
         cardDimensions={object('card dimensions', CARD_DIMENSIONS)}

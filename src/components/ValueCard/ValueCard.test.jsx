@@ -8,18 +8,22 @@ import ValueCard from './ValueCard';
 
 describe('ValueCard', () => {
   test('fail over to vertical layouts when not enough space', () => {
-    const wrapper = mount(<ValueCard content={[{ title: 'title', value: 'value' }]} />);
+    const wrapper = mount(
+      <ValueCard content={{ attributes: [{ title: 'title', value: 'value' }] }} />
+    );
     expect(wrapper.find(Card).prop('layout')).toEqual(CARD_LAYOUTS.HORIZONTAL);
 
     const wrapper2 = mount(
       <ValueCard
         title="Something"
-        content={[
-          { title: 'title', value: 'value' },
-          { title: 'title2', value: 'value2' },
-          { title: 'title3', value: 'value3' },
-          { title: 'title4', value: 'value4' },
-        ]}
+        content={{
+          attributes: [
+            { title: 'title', value: 'value' },
+            { title: 'title2', value: 'value2' },
+            { title: 'title3', value: 'value3' },
+            { title: 'title4', value: 'value4' },
+          ],
+        }}
       />
     );
     expect(wrapper2.find(Card).prop('layout')).toEqual(CARD_LAYOUTS.VERTICAL);

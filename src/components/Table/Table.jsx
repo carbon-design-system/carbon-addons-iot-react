@@ -32,7 +32,9 @@ const StyledTableDiv = styled.div`
   }
 `;
 
-const StyledPagination = sizeMe({ noPlaceholder: true })(styled(PaginationV2)`
+const StyledPagination = sizeMe({ noPlaceholder: true })(styled(
+  ({ isItemPerPageHidden, ...rest }) => <PaginationV2 {...rest} />
+)`
   &&& {
     .bx--pagination__left,
     .bx--pagination__text {
