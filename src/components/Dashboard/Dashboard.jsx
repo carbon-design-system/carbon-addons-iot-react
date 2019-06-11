@@ -8,7 +8,6 @@ import find from 'lodash/find';
 
 import { getLayout } from '../../utils/componentUtilityFunctions';
 import {
-  ValueCardPropTypes,
   CardSizesToDimensionsPropTypes,
   RowHeightPropTypes,
   DashboardBreakpointsPropTypes,
@@ -37,7 +36,8 @@ const propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string,
   lastUpdated: PropTypes.string,
-  cards: PropTypes.arrayOf(PropTypes.shape(ValueCardPropTypes)).isRequired,
+  cards: PropTypes.arrayOf(PropTypes.shape({ content: PropTypes.object, values: PropTypes.object }))
+    .isRequired,
   layouts: PropTypes.shape({
     max: PropTypes.arrayOf(DashboardLayoutPropTypes),
     xl: PropTypes.arrayOf(DashboardLayoutPropTypes),

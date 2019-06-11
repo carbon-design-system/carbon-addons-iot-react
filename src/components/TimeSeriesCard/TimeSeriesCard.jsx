@@ -81,7 +81,7 @@ const TimeSeriesCard = ({
           json: values,
           type: 'line',
         }
-    : [];
+    : {};
   const chart = {
     data: chartData,
     axis: {
@@ -105,7 +105,7 @@ const TimeSeriesCard = ({
 
   return (
     <Card title={title} size={size} {...others} isEmpty={isEmpty(values)}>
-      {!others.isLoading ? (
+      {!others.isLoading && !isEmpty(values) ? (
         <ContentWrapper>
           <C3Chart
             {...chart}

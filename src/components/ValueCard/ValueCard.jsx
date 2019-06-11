@@ -70,7 +70,7 @@ const AttributeLabel = styled.div`
   ${props => props.isVertical && `overflow: hidden`};
 `;
 
-const determineLayout = (size, content) => {
+const determineLayout = (size, attributes) => {
   let layout = CARD_LAYOUTS.HORIZONTAL;
   switch (size) {
     case CARD_SIZES.XSMALL:
@@ -81,21 +81,21 @@ const determineLayout = (size, content) => {
       layout = CARD_LAYOUTS.VERTICAL;
       break;
     case CARD_SIZES.TALL:
-      if (content.length > 2) {
+      if (attributes.length > 2) {
         layout = CARD_LAYOUTS.VERTICAL;
       }
       break;
 
     case CARD_SIZES.MEDIUM:
     case CARD_SIZES.LARGE:
-      if (content.length > 3) {
+      if (attributes.length > 3) {
         layout = CARD_LAYOUTS.VERTICAL;
       }
       break;
 
     case CARD_SIZES.WIDE:
     case CARD_SIZES.XLARGE:
-      if (content.length > 5) {
+      if (attributes.length > 5) {
         layout = CARD_LAYOUTS.VERTICAL;
       }
       break;
@@ -109,7 +109,7 @@ const determineLayout = (size, content) => {
 const determineValue = (dataSourceId, values) => values && values[dataSourceId];
 
 const ValueCard = ({ title, content, size, values, ...others }) => {
-  const layout = determineLayout(size, content);
+  const layout = determineLayout(size, content && content.attributes);
 
   const availableActions = {
     expand: false,
@@ -132,36 +132,45 @@ const ValueCard = ({ title, content, size, values, ...others }) => {
             isEmpty={isEmpty(values)}
             {...others}
           >
-            {isXS && content.length > 0 ? ( // Small card only gets one
-              <AttributeWrapper layout={layout} isSmall={!isNil(content[0].secondaryValue)}>
+            {isXS && content.attributes.length > 0 ? ( // Small card only gets one
+              <AttributeWrapper
+                layout={layout}
+                isSmall={!isNil(content.attributes[0].secondaryValue)}
+              >
                 <AttributeValueWrapper>
-                  {content[0].label ? ( // Optional title attribute
+                  {content.attributes[0].label ? ( // Optional title attribute
                     <AttributeLabel
-                      title={content[0].label}
+                      title={content.attributes[0].label}
                       isVertical={isVertical}
                       layout={layout}
                       size={size}
                     >
-                      {content[0].label}
+                      {content.attributes[0].label}
                     </AttributeLabel>
                   ) : null}
                   <Attribute
                     isVertical={isVertical}
-                    isSmall={!isNil(content[0].secondaryValue) || content[0].label}
+                    isSmall={
+                      !isNil(content.attributes[0].secondaryValue) ||
+                      !isNil(content.attributes[0].label)
+                    }
                     layout={layout}
-                    {...content[0]}
-                    value={determineValue(content[0].dataSourceId, values)}
+                    {...content.attributes[0]}
+                    value={determineValue(content.attributes[0].dataSourceId, values)}
                     secondaryValue={
-                      !isNil(content[0].secondaryValue) && {
-                        ...content[0].secondaryValue,
-                        value: determineValue(content[0].secondaryValue.dataSourceId, values),
+                      content.attributes[0].secondaryValue && {
+                        ...content.attributes[0].secondaryValue,
+                        value: determineValue(
+                          content.attributes[0].secondaryValue.dataSourceId,
+                          values
+                        ),
                       }
                     }
                   />
                 </AttributeValueWrapper>
               </AttributeWrapper>
             ) : (
-              content.map((attribute, i) => (
+              content.attributes.map((attribute, i) => (
                 // Larger card
                 <AttributeWrapper
                   layout={layout}
@@ -175,7 +184,7 @@ const ValueCard = ({ title, content, size, values, ...others }) => {
                       {...attribute}
                       value={determineValue(attribute.dataSourceId, values)}
                       secondaryValue={
-                        !isNil(attribute.secondaryValue) && {
+                        attribute.secondaryValue && {
                           ...attribute.secondaryValue,
                           value: determineValue(attribute.secondaryValue.dataSourceId, values),
                         }
