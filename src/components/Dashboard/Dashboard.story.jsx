@@ -140,7 +140,7 @@ const originalCards = [
   {
     title: 'Health',
     id: 'facilitycard-health',
-    size: CARD_SIZES.XSMALL_WIDE,
+    size: CARD_SIZES.XSMALLWIDE,
     type: CARD_TYPES.VALUE,
     availableActions: {
       delete: true,
@@ -345,7 +345,7 @@ const CARD_DIMENSIONS_16_COL = {
     sm: { w: 2, h: 1 },
     xs: { w: 2, h: 1 },
   },
-  XSMALL_WIDE: {
+  XSMALLWIDE: {
     max: { w: 3, h: 1 },
     xl: { w: 4, h: 1 },
     lg: { w: 4, h: 1 },
@@ -508,17 +508,26 @@ storiesOf('Dashboard (Experimental)', module)
       { comparison: '=', value: 'High', color: 'orange' },
       { comparison: '=', value: 'Severe', color: 'red' },
     ];
+    const extraProps = {
+      lastUpdated: 'Now',
+      dashboardBreakpoints: DASHBOARD_BREAKPOINTS_16_COL,
+      dashboardColumns: DASHBOARD_COLUMNS_16_COL,
+      cardDimensions: CARD_DIMENSIONS_16_COL,
+      rowHeight: ROW_HEIGHT,
+    };
     return (
       <div>
         <Dashboard
           title="Single value / xsmall / units and precision"
-          lastUpdated="Now"
+          {...extraProps}
           cards={[
-            ['13', 13, null],
-            ['1352', 1352, 'steps'],
-            ['103.2', 103.2, '˚F'],
-            ['107324.3', 107324.3, 'kJ'],
-            ['1709384.1', 1709384.1, 'people'],
+            ['value: 13', 13, null],
+            ['value: 1352', 1352, 'steps'],
+            ['value: 103.2', 103.2, '˚F'],
+            ['value: 107324.3', 107324.3, 'kJ'],
+            ['value: 1709384.1', 1709384.1, 'people'],
+            ['value: false', false, null],
+            ['value: true', true, null],
           ].map((v, idx) => ({
             title: `${v[0]} ${v[2] || ''}`,
             id: `xsmall-number-${idx}`,
@@ -529,7 +538,7 @@ storiesOf('Dashboard (Experimental)', module)
         />
         <Dashboard
           title="Single value / xsmall / trend and label"
-          lastUpdated="Now"
+          {...extraProps}
           cards={[65.3, 48.7, 88.1, 103.2].map((v, idx) => ({
             title: 'Temperature',
             id: `xsmall-number-${idx}`,
@@ -557,7 +566,7 @@ storiesOf('Dashboard (Experimental)', module)
         />
         <Dashboard
           title="Single value / xsmall / numerical thresholds w/ icons"
-          lastUpdated="Now"
+          {...extraProps}
           cards={[38.2, 65.3, 77.7, 91].map((v, idx) => ({
             title: 'Humidity',
             id: `xsmall-number-threshold-${idx}`,
@@ -568,7 +577,7 @@ storiesOf('Dashboard (Experimental)', module)
         />
         <Dashboard
           title="Single value / xsmall / string thresholds without icons"
-          lastUpdated="Now"
+          {...extraProps}
           cards={stringThresholds
             .map(i => i.value)
             .map((v, idx) => ({
@@ -578,6 +587,72 @@ storiesOf('Dashboard (Experimental)', module)
               type: CARD_TYPES.VALUE,
               content: [{ value: v, thresholds: stringThresholds }],
             }))}
+        />
+        <Dashboard
+          title="Single value / xsmallwide / varied"
+          {...extraProps}
+          cards={[
+            ['value: 13', 13, null],
+            ['value: 1352', 1352, 'steps'],
+            ['value: 103.2', 103.2, '˚F'],
+            ['value: 107324.3', 107324.3, 'kJ'],
+            ['value: 1709384.1', 1709384.1, 'people'],
+            ['value: false', false, null],
+            ['value: true', true, null],
+          ]
+            .map((v, idx) => ({
+              title: `${v[0]} ${v[2] || ''}`,
+              id: `xsmallwide-number-${idx}`,
+              size: CARD_SIZES.XSMALLWIDE,
+              type: CARD_TYPES.VALUE,
+              content: [{ value: v[1], unit: v[2] }],
+            }))
+            .concat(
+              [65.3, 48.7, 88.1, 103.2].map((v, idx) => ({
+                title: 'Temperature',
+                id: `xsmall-number-${idx}`,
+                size: CARD_SIZES.XSMALLWIDE,
+                type: CARD_TYPES.VALUE,
+                content: [
+                  {
+                    value: v,
+                    secondaryValue:
+                      idx === 2
+                        ? { value: 3.2, trend: 'up', color: 'green' }
+                        : idx === 3
+                        ? { trend: 'down', color: 'red' }
+                        : undefined,
+                    title:
+                      idx === 1
+                        ? 'Weekly Avg'
+                        : idx === 3
+                        ? 'Long label that might not fit'
+                        : undefined,
+                    unit: '˚F',
+                  },
+                ],
+              }))
+            )
+            .concat(
+              [38.2, 65.3, 77.7, 91].map((v, idx) => ({
+                title: 'Humidity',
+                id: `xsmall-number-threshold-${idx}`,
+                size: CARD_SIZES.XSMALLWIDE,
+                type: CARD_TYPES.VALUE,
+                content: [{ value: v, unit: '%', thresholds: numberThresholds }],
+              }))
+            )
+            .concat(
+              stringThresholds
+                .map(i => i.value)
+                .map((v, idx) => ({
+                  title: 'Danger Level',
+                  id: `xsmall-string-threshold-${idx}`,
+                  size: CARD_SIZES.XSMALLWIDE,
+                  type: CARD_TYPES.VALUE,
+                  content: [{ value: v, thresholds: stringThresholds }],
+                }))
+            )}
         />
       </div>
     );

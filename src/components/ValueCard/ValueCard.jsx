@@ -69,15 +69,15 @@ const AttributeLabel = styled.div`
   ${props =>
     props.layout === CARD_LAYOUTS.VERTICAL ||
     props.size === CARD_SIZES.XSMALL ||
-    props.size === CARD_SIZES.XSMALL_WIDE
-      ? props.size === CARD_SIZES.XSMALL || props.size === CARD_SIZES.XSMALL_WIDE
+    props.size === CARD_SIZES.XSMALLWIDE
+      ? props.size === CARD_SIZES.XSMALL || props.size === CARD_SIZES.XSMALLWIDE
         ? `font-size: .875rem` // for small card sizes, small font
         : `font-size: 1.0rem;` // otherwi
       : null};
   text-align: ${props =>
     props.layout === CARD_LAYOUTS.VERTICAL ||
     props.size === CARD_SIZES.XSMALL ||
-    props.size === CARD_SIZES.XSMALL_WIDE
+    props.size === CARD_SIZES.XSMALLWIDE
       ? 'left'
       : 'right'};
   ${props =>
@@ -95,7 +95,7 @@ const ValueCard = ({ title, content, size, ...others }) => {
   let layout = CARD_LAYOUTS.HORIZONTAL;
   switch (size) {
     case CARD_SIZES.XSMALL:
-    case CARD_SIZES.XSMALL_WIDE:
+    case CARD_SIZES.XSMALLWIDE:
       layout = CARD_LAYOUTS.HORIZONTAL;
       break;
     case CARD_SIZES.SMALL:

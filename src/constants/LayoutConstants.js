@@ -6,7 +6,7 @@ export const COLORS = {
 
 export const CARD_SIZES = {
   XSMALL: 'XSMALL',
-  XSMALL_WIDE: 'XSMALL_WIDE',
+  XSMALLWIDE: 'XSMALLWIDE',
   SMALL: 'SMALL',
   TALL: 'TALL',
   MEDIUM: 'MEDIUM',
@@ -72,7 +72,7 @@ export const CARD_DIMENSIONS = {
     sm: { w: 2, h: 1 },
     xs: { w: 2, h: 1 },
   },
-  XSMALL_WIDE: {
+  XSMALLWIDE: {
     xl: { w: 3, h: 1 },
     lg: { w: 4, h: 1 },
     md: { w: 4, h: 1 },

@@ -120,7 +120,7 @@ storiesOf('ValueCard (Experimental)', module)
     );
   })
   .add('xsmallwide / thresholds (number, icon)', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.XSMALL_WIDE);
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.XSMALLWIDE);
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <ValueCard
@@ -146,7 +146,7 @@ storiesOf('ValueCard (Experimental)', module)
     );
   })
   .add('xsmallwide / thresholds (string)', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.XSMALL_WIDE);
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.XSMALLWIDE);
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <ValueCard
