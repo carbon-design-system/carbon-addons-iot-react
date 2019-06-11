@@ -119,7 +119,7 @@ const propTypes = {
 const defaultProps = {
   actions: [],
   /** by default I think we should hide any TabContent that's not selected */
-  hidden: true,
+  hidden: false,
   onSelectionChange: null,
   workArea: null,
 };
@@ -132,7 +132,12 @@ const NavigationBar = ({ tabs, hero, actions, onSelectionChange, workArea, ...ot
     {workArea || null}
     <StyledNavigationContainer hasActions={actions.length > 0}>
       {workArea ? <StyledOverlay /> : null}
-      <StyledTabToContent>
+      <StyledActions>
+        {actions.map(({ id, ...other }) => (
+          <Button key={id} {...other} />
+        ))}
+      </StyledActions>
+      <StyledTabToContent className="tab-content">
         <Tabs
           {...others}
           onSelectionChange={index => onSelectionChange && onSelectionChange(tabs[index].id)}
@@ -147,11 +152,6 @@ const NavigationBar = ({ tabs, hero, actions, onSelectionChange, workArea, ...ot
           ))}
         </Tabs>
       </StyledTabToContent>
-      <StyledActions>
-        {actions.map(({ id, ...other }) => (
-          <Button key={id} {...other} />
-        ))}
-      </StyledActions>
     </StyledNavigationContainer>
   </Fragment>
 );
