@@ -493,4 +493,92 @@ storiesOf('Dashboard (Experimental)', module)
         rowHeight={object('row height', ROW_HEIGHT)}
       />
     );
+  })
+  .add('only value cards', () => {
+    const numberThresholds = [
+      { comparison: '<', value: '40', color: 'red', icon: 'icon--close--solid' },
+      { comparison: '<', value: '70', color: 'green', icon: 'icon--check--solid' },
+      { comparison: '<', value: '80', color: 'orange', icon: 'icon--warning--solid' },
+      { comparison: '>=', value: '90', color: 'red', icon: 'icon--close--solid' },
+    ];
+    const stringThresholds = [
+      { comparison: '=', value: 'Low', color: 'green' },
+      { comparison: '=', value: 'Guarded', color: 'blue' },
+      { comparison: '=', value: 'Elevated', color: 'gold' },
+      { comparison: '=', value: 'High', color: 'orange' },
+      { comparison: '=', value: 'Severe', color: 'red' },
+    ];
+    return (
+      <div>
+        <Dashboard
+          title="Single value / xsmall / units and precision"
+          lastUpdated="Now"
+          cards={[
+            ['13', 13, null],
+            ['1352', 1352, 'steps'],
+            ['103.2', 103.2, '˚F'],
+            ['107324.3', 107324.3, 'kJ'],
+            ['1709384.1', 1709384.1, 'people'],
+          ].map((v, idx) => ({
+            title: `${v[0]} ${v[2] || ''}`,
+            id: `xsmall-number-${idx}`,
+            size: CARD_SIZES.XSMALL,
+            type: CARD_TYPES.VALUE,
+            content: [{ value: v[1], unit: v[2] }],
+          }))}
+        />
+        <Dashboard
+          title="Single value / xsmall / trend and label"
+          lastUpdated="Now"
+          cards={[65.3, 48.7, 88.1, 103.2].map((v, idx) => ({
+            title: 'Temperature',
+            id: `xsmall-number-${idx}`,
+            size: CARD_SIZES.XSMALL,
+            type: CARD_TYPES.VALUE,
+            content: [
+              {
+                value: v,
+                secondaryValue:
+                  idx === 2
+                    ? { value: 3.2, trend: 'up', color: 'green' }
+                    : idx === 3
+                    ? { trend: 'down', color: 'red' }
+                    : undefined,
+                title:
+                  idx === 1
+                    ? 'Weekly Avg'
+                    : idx === 3
+                    ? 'Long label that might not fit'
+                    : undefined,
+                unit: '˚F',
+              },
+            ],
+          }))}
+        />
+        <Dashboard
+          title="Single value / xsmall / numerical thresholds w/ icons"
+          lastUpdated="Now"
+          cards={[38.2, 65.3, 77.7, 91].map((v, idx) => ({
+            title: 'Humidity',
+            id: `xsmall-number-threshold-${idx}`,
+            size: CARD_SIZES.XSMALL,
+            type: CARD_TYPES.VALUE,
+            content: [{ value: v, unit: '%', thresholds: numberThresholds }],
+          }))}
+        />
+        <Dashboard
+          title="Single value / xsmall / string thresholds without icons"
+          lastUpdated="Now"
+          cards={stringThresholds
+            .map(i => i.value)
+            .map((v, idx) => ({
+              title: 'Danger Level',
+              id: `xsmall-string-threshold-${idx}`,
+              size: CARD_SIZES.XSMALL,
+              type: CARD_TYPES.VALUE,
+              content: [{ value: v, thresholds: stringThresholds }],
+            }))}
+        />
+      </div>
+    );
   });
