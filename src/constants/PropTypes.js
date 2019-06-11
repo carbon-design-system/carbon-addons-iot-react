@@ -3,10 +3,12 @@ import PropTypes from 'prop-types';
 import { CARD_SIZES, CARD_LAYOUTS, DASHBOARD_SIZES } from './LayoutConstants';
 
 export const AttributePropTypes = PropTypes.shape({
-  title: PropTypes.string, // optional for little cards
-  value: PropTypes.any,
+  label: PropTypes.string, // optional for little cards
+  /** the key to load the value from the values object */
+  dataSourceId: PropTypes.string.isRequired,
   secondaryValue: PropTypes.shape({
-    value: PropTypes.string,
+    /** the key to load the value from the values object */
+    dataSourceId: PropTypes.string.isRequired,
     color: PropTypes.string,
     trend: PropTypes.oneOf(['up', 'down']),
   }),
@@ -44,6 +46,8 @@ export const DashboardColumnsPropTypes = PropTypes.shape({
 
 export const ValueCardPropTypes = {
   content: PropTypes.arrayOf(AttributePropTypes).isRequired,
+  /** Value card expects its values passed as an object with key value pairs */
+  values: PropTypes.object,
 };
 
 export const TimeSeriesDatasetPropTypes = PropTypes.shape({
