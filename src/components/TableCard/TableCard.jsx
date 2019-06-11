@@ -76,7 +76,7 @@ const TableCard = ({
             actionId: actionList[0].id,
           });
         }}
-        name={actionList[0].icon}
+        renderIcon={actionList[0].icon}
       />
     ) : actionList && actionList.length > 1 ? (
       <StyledOverflowMenu floatingMenu>

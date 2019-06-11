@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import merge from 'lodash/merge';
 import pick from 'lodash/pick';
-import { PaginationV2, Table as CarbonTable, TableContainer } from 'carbon-components-react';
+import { Pagination, Table as CarbonTable, TableContainer } from 'carbon-components-react';
 import isNil from 'lodash/isNil';
 import styled from 'styled-components';
 import sizeMe from 'react-sizeme';
@@ -34,7 +34,7 @@ const StyledTableDiv = styled.div`
 `;
 
 const StyledPagination = sizeMe({ noPlaceholder: true })(styled(
-  ({ isItemPerPageHidden, ...rest }) => <PaginationV2 {...rest} />
+  ({ isItemPerPageHidden, ...rest }) => <Pagination {...rest} />
 )`
   &&& {
     .bx--pagination__left {

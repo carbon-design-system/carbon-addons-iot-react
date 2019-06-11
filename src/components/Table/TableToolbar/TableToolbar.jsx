@@ -169,7 +169,7 @@ const TableToolbar = ({
     <StyledTableToolbarContent>
       {customToolbarContent || null}
       {totalFilters > 0 ? (
-        <Button kind="secondary" onClick={onClearAllFilters} small>
+        <Button kind="secondary" onClick={onClearAllFilters}>
           {clearAllFiltersText}
         </Button>
       ) : null}
