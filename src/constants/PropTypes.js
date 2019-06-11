@@ -3,10 +3,12 @@ import PropTypes from 'prop-types';
 import { CARD_SIZES, CARD_LAYOUTS, DASHBOARD_SIZES } from './LayoutConstants';
 
 export const AttributePropTypes = PropTypes.shape({
-  title: PropTypes.string, // optional for little cards
-  value: PropTypes.any,
+  label: PropTypes.string, // optional for little cards
+  /** the key to load the value from the values object */
+  dataSourceId: PropTypes.string.isRequired,
   secondaryValue: PropTypes.shape({
-    value: PropTypes.string,
+    /** the key to load the value from the values object */
+    dataSourceId: PropTypes.string.isRequired,
     color: PropTypes.string,
     trend: PropTypes.oneOf(['up', 'down']),
   }),
@@ -44,35 +46,33 @@ export const DashboardColumnsPropTypes = PropTypes.shape({
 
 export const ValueCardPropTypes = {
   content: PropTypes.arrayOf(AttributePropTypes).isRequired,
+  /** Value card expects its values passed as an object with key value pairs */
+  values: PropTypes.object,
 };
 
 export const TimeSeriesDatasetPropTypes = PropTypes.shape({
   label: PropTypes.string.isRequired,
-  values: PropTypes.arrayOf(
-    PropTypes.shape({
-      /** time attribute */
-      t: PropTypes.number.isRequired,
-      /** value attribute */
-      v: PropTypes.number.isRequired,
-    })
-  ),
+  /** the attribute in values to map to */
+  dataSourceId: PropTypes.string.isRequired,
+  /** optional units to put in the legend */
+  unit: PropTypes.string,
+  /** optional param to set the colors */
   color: PropTypes.string,
 });
 
 export const TimeSeriesCardPropTypes = {
   content: PropTypes.shape({
-    range: PropTypes.oneOfType([
-      PropTypes.oneOf(['day', 'week', 'month']),
-      PropTypes.shape({
-        start: PropTypes.instanceOf(Date),
-        end: PropTypes.instanceOf(Date),
-      }),
-    ]),
-    data: PropTypes.oneOfType([
+    series: PropTypes.oneOfType([
       TimeSeriesDatasetPropTypes,
       PropTypes.arrayOf(TimeSeriesDatasetPropTypes),
     ]).isRequired,
+    xLabel: PropTypes.string,
+    yLabel: PropTypes.string,
+    /** Which attribute is the time attribute */
+    timeDataSourceId: PropTypes.string.isRequired,
   }).isRequired,
+  /** array of data from the backend for instance [{timestamp: 134234234234, temperature: 35, humidity: 10}, ...] */
+  values: PropTypes.arrayOf(PropTypes.object),
 };
 
 export const TableCardPropTypes = {
@@ -173,6 +173,14 @@ export const CardPropTypes = {
   size: PropTypes.oneOf(Object.values(CARD_SIZES)),
   layout: PropTypes.oneOf(Object.values(CARD_LAYOUTS)),
   breakpoint: PropTypes.oneOf(Object.values(DASHBOARD_SIZES)),
+  /** Optional range to pass at the card level */
+  range: PropTypes.oneOfType([
+    PropTypes.oneOf(['day', 'week', 'month']),
+    PropTypes.shape({
+      start: PropTypes.instanceOf(Date),
+      end: PropTypes.instanceOf(Date),
+    }),
+  ]),
   availableActions: PropTypes.shape({
     edit: PropTypes.bool,
     clone: PropTypes.bool,

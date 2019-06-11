@@ -17,12 +17,13 @@ storiesOf('ValueCard (Experimental)', module)
           id="facilitycard"
           content={object('content', [
             {
-              value: 88,
+              dataSourceId: 'occupancy',
               unit: '%',
             },
           ])}
           breakpoint="lg"
           size={size}
+          values={{ occupancy: number('occupancy', 88) }}
         />
       </div>
     );
@@ -36,12 +37,13 @@ storiesOf('ValueCard (Experimental)', module)
           id="facilitycard"
           content={object('content', [
             {
-              title: 'Average',
-              value: 13572,
+              label: 'Average',
+              dataSourceId: 'footTraffic',
             },
           ])}
           breakpoint="lg"
           size={size}
+          values={{ footTraffic: number('footTraffic', 13572) }}
         />
       </div>
     );
@@ -55,12 +57,13 @@ storiesOf('ValueCard (Experimental)', module)
           id="facilitycard"
           content={object('content', [
             {
-              value: 13572,
-              secondaryValue: { value: '22%', trend: 'down', color: 'red' },
+              dataSourceId: 'footTraffic',
+              secondaryValue: { dataSourceId: 'trend', trend: 'down', color: 'red' },
             },
           ])}
           breakpoint="lg"
           size={size}
+          values={{ footTraffic: number('footTraffic', 13572), trend: text('trend', '22%') }}
         />
       </div>
     );
@@ -74,12 +77,13 @@ storiesOf('ValueCard (Experimental)', module)
           id="facilitycard"
           content={object('content', [
             {
-              value: 35,
-              secondaryValue: { value: '12', trend: 'up', color: 'green' },
+              dataSourceId: 'alerts',
+              secondaryValue: { dataSourceId: 'trend', trend: 'up', color: 'green' },
             },
           ])}
           breakpoint="lg"
           size={size}
+          values={{ alerts: number('alerts', 35), trend: number('trend', 12) }}
         />
       </div>
     );
@@ -93,7 +97,7 @@ storiesOf('ValueCard (Experimental)', module)
           id="facilitycard"
           content={[
             {
-              value: number('value', 35),
+              dataSourceId: 'alertCount',
               thresholds: [
                 {
                   comparison: '>=',
@@ -115,6 +119,7 @@ storiesOf('ValueCard (Experimental)', module)
           ]}
           breakpoint="lg"
           size={size}
+          values={{ alertCount: number('alertCount', 35) }}
         />
       </div>
     );
@@ -128,7 +133,7 @@ storiesOf('ValueCard (Experimental)', module)
           id="facilitycard"
           content={[
             {
-              value: number('value', 4),
+              dataSourceId: 'alertCount',
               thresholds: [
                 {
                   comparison: '<',
@@ -141,6 +146,7 @@ storiesOf('ValueCard (Experimental)', module)
           ]}
           breakpoint="lg"
           size={size}
+          values={{ alertCount: number('alertCount', 4) }}
         />
       </div>
     );
@@ -154,7 +160,7 @@ storiesOf('ValueCard (Experimental)', module)
           id="facilitycard"
           content={object('content', [
             {
-              value: text('value', 'Bad'),
+              dataSourceId: 'status',
               thresholds: [
                 {
                   comparison: '=',
@@ -173,6 +179,7 @@ storiesOf('ValueCard (Experimental)', module)
           ])}
           breakpoint="lg"
           size={size}
+          values={{ status: text('status', 'Bad') }}
         />
       </div>
     );
@@ -184,9 +191,12 @@ storiesOf('ValueCard (Experimental)', module)
         <ValueCard
           title={text('title', 'Facility Conditions')}
           id="facilitycard"
-          content={object('content', [{ title: 'Comfort Level', value: 89, unit: '%' }])}
+          content={object('content', [
+            { label: 'Comfort Level', dataSourceId: 'comfortLevel', unit: '%' },
+          ])}
           breakpoint="lg"
           size={size}
+          values={{ comfortLevel: number('comfortLevel', 89) }}
         />
       </div>
     );
@@ -199,12 +209,17 @@ storiesOf('ValueCard (Experimental)', module)
           title={text('title', 'Facility Conditions')}
           id="facilitycard"
           content={object('content', [
-            { title: 'Comfort Level', value: 89, unit: '%' },
-            { title: 'Average Temperature', value: 76.7, unit: '˚F', precision: 1 },
-            { title: 'Utilization', value: 76, unit: '%' },
+            { label: 'Comfort Level', dataSourceId: 'comfortLevel', unit: '%' },
+            { label: 'Average Temperature', dataSourceId: 'averageTemp', unit: '˚F', precision: 1 },
+            { label: 'Utilization', dataSourceId: 'utilization', unit: '%' },
           ])}
           breakpoint="lg"
           size={size}
+          values={{
+            comfortLevel: number('comfortLevel', 89),
+            averageTemp: number('averageTemp', 76.7),
+            utilization: number('utilization', 76),
+          }}
         />
       </div>
     );
@@ -216,9 +231,10 @@ storiesOf('ValueCard (Experimental)', module)
         <ValueCard
           title={text('title', 'Uncomfortable?')}
           id="facilitycard"
-          content={[{ title: 'Monthly summary', value: boolean('value', false) }]}
+          content={[{ label: 'Monthly summary', dataSourceId: 'monthlySummary' }]}
           breakpoint="lg"
           size={size}
+          values={{ monthlySummary: boolean('monthlySummary', false) }}
         />
       </div>
     );
@@ -246,13 +262,14 @@ storiesOf('ValueCard (Experimental)', module)
           id="facilitycard"
           content={[
             {
-              title: 'Monthly summary',
-              value: number('value', 20000000000000000),
+              label: 'Monthly summary',
+              dataSourceId: 'monthlySummary',
               unit: text('unit', ''),
             },
           ]}
           breakpoint="lg"
           size={size}
+          values={{ monthlySummary: number('monthlySummary', 20000000000000000) }}
         />
       </div>
     );
@@ -266,18 +283,22 @@ storiesOf('ValueCard (Experimental)', module)
           id="facilitycard"
           content={[
             {
-              title: 'Monthly summary',
-              value: number('value', 100000000),
+              label: 'Monthly summary',
+              dataSourceId: 'monthlySummary',
               unit: text('unit', 'Wh'),
             },
             {
-              title: 'Yearly summary',
-              value: number('value', 40000000000000),
+              label: 'Yearly summary',
+              dataSourceId: 'yearlySummary',
               unit: text('unit', 'Wh'),
             },
           ]}
           breakpoint="lg"
           size={size}
+          values={{
+            monthlySummary: number('monthlySummary', 100000000),
+            yearlySummary: number('yearlySummary', 40000000000000),
+          }}
         />
       </div>
     );
