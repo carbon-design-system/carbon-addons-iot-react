@@ -8,11 +8,11 @@ import { chartData } from '../../utils/sample';
 
 import TimeSeriesCard from './TimeSeriesCard';
 
+// need a timeOffset to make the data always show up
+const timeOffset = new Date().getTime() - Object.values(chartData.dataItemToMostRecentTimestamp)[0];
 storiesOf('TimeSeriesCard (Experimental)', module)
   .add('single line - no range', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
-    const field = 'temperature';
-    const timeOffset = new Date().getTime() - chartData.dataItemToMostRecentTimestamp[field];
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <TimeSeriesCard
@@ -20,19 +20,16 @@ storiesOf('TimeSeriesCard (Experimental)', module)
           id="facility-temperature"
           isLoading={boolean('isLoading', false)}
           content={object('content', {
-            data: [
-              {
-                label: 'Temperature',
-                values: chartData.events
-                  .filter((i, idx) => idx < 20)
-                  .map(i => ({
-                    t: new Date(i.timestamp + timeOffset).toISOString(),
-                    v: i[field],
-                  })),
-                color: COLORS.RED,
-              },
-            ],
+            series: {
+              label: 'Temperature',
+              dataSourceId: 'temperature',
+              color: text('color', COLORS.RED),
+            },
+            xLabel: text('xLabel', 'X Axis'),
+            yLabel: text('yLabel', 'Y Axis'),
+            timeDataSourceId: 'timestamp',
           })}
+          values={chartData.events}
           breakpoint="lg"
           size={size}
         />
@@ -41,7 +38,6 @@ storiesOf('TimeSeriesCard (Experimental)', module)
   })
   .add('multi line - no range', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
-    const timeOffset = new Date().getTime() - chartData.dataItemToMostRecentTimestamp.temperature;
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <TimeSeriesCard
@@ -49,30 +45,22 @@ storiesOf('TimeSeriesCard (Experimental)', module)
           id="facility-multi"
           isLoading={boolean('isLoading', false)}
           content={object('content', {
-            data: [
+            series: [
               {
                 label: 'Temperature',
-                values: chartData.events
-                  .filter((i, idx) => idx < 20)
-                  .map(i => ({
-                    t: new Date(i.timestamp + timeOffset).toISOString(),
-                    v: i.temperature,
-                  })),
+                dataSourceId: 'temperature',
                 color: COLORS.RED,
               },
               {
                 label: 'Pressure',
-                values: chartData.events
-                  .filter((i, idx) => idx < 20)
-                  .map(i => ({
-                    t: new Date(i.timestamp + timeOffset).toISOString(),
-                    v: i.pressure,
-                  })),
+                dataSourceId: 'pressure',
                 color: COLORS.BLUE,
               },
             ],
+            timeDataSourceId: 'timestamp',
           })}
           breakpoint="lg"
+          values={chartData.events}
           size={size}
         />
       </div>
@@ -80,8 +68,6 @@ storiesOf('TimeSeriesCard (Experimental)', module)
   })
   .add('single line - day', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
-    const field = 'temperature';
-    const timeOffset = new Date().getTime() - chartData.dataItemToMostRecentTimestamp[field];
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <TimeSeriesCard
@@ -89,17 +75,20 @@ storiesOf('TimeSeriesCard (Experimental)', module)
           id="facility-temperature"
           isLoading={boolean('isLoading', false)}
           content={object('content', {
-            range: 'day',
-            data: {
+            series: {
               label: 'Temperature',
-              values: chartData.events.map(i => ({
-                t: new Date(i.timestamp + timeOffset).toISOString(),
-                v: i[field],
-              })),
+              dataSourceId: 'temperature',
               color: COLORS.RED,
             },
+            timeDataSourceId: 'timestamp',
           })}
+          range="day"
           breakpoint="lg"
+          // Need to update the values to have recent dates
+          values={chartData.events.map(data => ({
+            ...data,
+            timestamp: data.timestamp + timeOffset,
+          }))}
           size={size}
         />
       </div>
@@ -107,26 +96,75 @@ storiesOf('TimeSeriesCard (Experimental)', module)
   })
   .add('single line - week', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
-    const field = 'pressure';
-    const timeOffset = new Date().getTime() - chartData.dataItemToMostRecentTimestamp[field];
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <TimeSeriesCard
           title={text('title', 'Pressure')}
           id="facility-temperature"
           isLoading={boolean('isLoading', false)}
+          range="week"
           content={object('content', {
-            range: 'week',
-            data: {
+            series: {
               label: 'Pressure',
-              values: chartData.events.map(i => ({
-                t: new Date(i.timestamp + timeOffset).toISOString(),
-                v: i[field],
-              })),
+              dataSourceId: 'pressure',
               color: COLORS.BLUE,
             },
+            timeDataSourceId: 'timestamp',
           })}
           breakpoint="lg"
+          // Need to update the values to have recent dates
+          values={chartData.events.map(data => ({
+            ...data,
+            timestamp: data.timestamp + timeOffset,
+          }))}
+          size={size}
+        />
+      </div>
+    );
+  })
+  .add('empty', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
+    return (
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+        <TimeSeriesCard
+          title={text('title', 'Temperature')}
+          id="facility-temperature"
+          isLoading={boolean('isLoading', false)}
+          content={object('content', {
+            series: {
+              label: 'Temperature',
+              dataSourceId: 'temperature',
+              color: COLORS.RED,
+            },
+            timeDataSourceId: 'timestamp',
+          })}
+          range="day"
+          breakpoint="lg"
+          values={[]}
+          size={size}
+        />
+      </div>
+    );
+  })
+  .add('empty for a range', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
+    return (
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+        <TimeSeriesCard
+          title={text('title', 'Temperature')}
+          id="facility-temperature"
+          isLoading={boolean('isLoading', false)}
+          content={object('content', {
+            series: {
+              label: 'Temperature',
+              dataSourceId: 'temperature',
+              color: COLORS.RED,
+            },
+            timeDataSourceId: 'timestamp',
+          })}
+          range="day"
+          breakpoint="lg"
+          values={chartData.events}
           size={size}
         />
       </div>

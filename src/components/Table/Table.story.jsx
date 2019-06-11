@@ -2,7 +2,7 @@ import React from 'react';
 // import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { boolean, text, number, select } from '@storybook/addon-knobs';
+import { boolean, text, number, select, array } from '@storybook/addon-knobs';
 import styled from 'styled-components';
 import Arrow from '@carbon/icons-react/lib/arrow--right/20';
 import Add from '@carbon/icons-react/lib/add/20';
@@ -342,7 +342,7 @@ storiesOf('Table', module)
           hasRowSelection: select('hasRowSelection', ['multi', 'single'], 'multi'),
           hasRowExpansion: false,
         }}
-        view={{}}
+        view={{ table: { selectedIds: array('selectedIds', []) } }}
       />
     ),
     {

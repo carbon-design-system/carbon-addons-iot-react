@@ -8,6 +8,8 @@ import { COLORS, PADDING, SIZES } from '../../styles/styles';
 const StyledNavigationContainer = styled.div`
   position: relative;
   background-color: ${COLORS.white};
+  padding-top: 3rem;
+
   ul[role='tablist'] {
     padding-left: 0;
     padding-right: ${PADDING.horizontalWrapPadding};
@@ -28,6 +30,8 @@ const StyledNavigationContainer = styled.div`
     margin-left: 0rem;
   }
   @media (min-width: 42em) {
+    padding-top: 0;
+
     nav::after {
       background: ${COLORS.lightGrey};
       content: '';
@@ -75,10 +79,7 @@ const StyledTabChildren = styled.div`
 const StyledActions = styled.div`
   display: flex;
   flex-flow: row nowrap;
-  display: none;
-  @media screen and (min-width: 768px) {
-    display: flex;
-  }
+  display: flex;
   align-items: center;
   position: absolute;
   padding-left: ${PADDING.horizontalWrapPadding};
@@ -86,6 +87,7 @@ const StyledActions = styled.div`
   height: ${SIZES.navigationBarHeight};
   top: 0px;
   right: 0px;
+  z-index: 2;
 `;
 
 const propTypes = {
