@@ -2,6 +2,10 @@ export const COLORS = {
   RED: 'rgb(217,3,103)',
   BLUE: 'rgb(25,98,253)',
   YELLOW: 'rgb(254,213,34)',
+  PURPLE: '#8A3FFC',
+  TEAL: '#009C98',
+  MAGENTA: '#EE538B',
+  CYAN: '#0072C3',
 };
 
 export const CARD_SIZES = {

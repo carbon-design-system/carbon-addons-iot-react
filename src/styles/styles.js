@@ -9,6 +9,10 @@ export const COLORS = {
   errorRed: '#e62325',
   okayGreen: '#5aa700',
   white: '#fff',
+  purple: '#8A3FFC',
+  teal: '#009C98',
+  magenta: '#EE538B',
+  cyan: '#0072C3',
 };
 
 export const TYPOGRAPHY = {
