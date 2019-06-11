@@ -185,6 +185,7 @@ const Card = ({
       <Select
         inline
         hideLabel
+        id={`timeselect-${id}`}
         onChange={evt => console.log('new view: ', evt)} // eslint-disable-line
         defaultValue="weekly"
       >

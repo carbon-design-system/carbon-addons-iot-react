@@ -36,8 +36,12 @@ const propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string,
   lastUpdated: PropTypes.string,
-  cards: PropTypes.arrayOf(PropTypes.shape({ content: PropTypes.object, values: PropTypes.object }))
-    .isRequired,
+  cards: PropTypes.arrayOf(
+    PropTypes.shape({
+      content: PropTypes.object,
+      values: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+    })
+  ).isRequired,
   layouts: PropTypes.shape({
     max: PropTypes.arrayOf(DashboardLayoutPropTypes),
     xl: PropTypes.arrayOf(DashboardLayoutPropTypes),
