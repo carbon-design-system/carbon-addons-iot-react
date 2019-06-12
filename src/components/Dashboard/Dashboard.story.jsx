@@ -26,54 +26,105 @@ const timeOffset = new Date().getTime() - chartData.dataItemToMostRecentTimestam
 
 const originalCards = [
   {
-    title: 'SMALL',
+    title: 'Facility Metrics',
     id: 'facilitycard',
     size: CARD_SIZES.SMALL,
     type: CARD_TYPES.VALUE,
     availableActions: {
       delete: true,
     },
-    content: [
-      { title: 'Comfort Level', value: 89, unit: '%' },
-      { title: 'Utilization', value: 76, unit: '%' },
-      { title: 'Pressure', value: 21.4, unit: 'mb' },
-    ],
+    content: {
+      attributes: [
+        { label: 'Comfort Level', dataSourceId: 'comfortLevel', unit: '%' },
+        { label: 'Utilization', dataSourceId: 'utilization', unit: '%' },
+        { label: 'Pressure', dataSourceId: 'pressure', unit: 'mb' },
+      ],
+    },
+    values: {
+      comfortLevel: 89,
+      utilization: 76,
+      pressure: 21.4,
+    },
   },
   {
-    title: 'XSMALL',
+    title: 'Humidity',
     id: 'facilitycard-xs',
     size: CARD_SIZES.XSMALL,
     type: CARD_TYPES.VALUE,
     availableActions: {
       delete: true,
     },
-    content: [{ title: 'Comfort Level', value: 89, unit: '%' }],
+    content: {
+      attributes: [
+        {
+          dataSourceId: 'humidity',
+          unit: '%',
+          thresholds: [
+            { comparison: '<', value: '40', color: 'red' },
+            { comparison: '<', value: '70', color: 'green' },
+            { comparison: '>=', value: '70', color: 'red' },
+          ],
+        },
+      ],
+    },
+    values: {
+      humidity: 62.1,
+    },
   },
   {
-    title: 'XSMALL',
+    title: 'Utilization',
     id: 'facilitycard-xs2',
     size: CARD_SIZES.XSMALL,
     type: CARD_TYPES.VALUE,
     availableActions: {
       delete: true,
     },
-    content: [{ title: 'Utilization', value: 76, secondaryValue: 'Average', unit: '%' }],
+    content: {
+      attributes: [{ dataSourceId: 'utilization', label: 'Average', unit: '%' }],
+    },
+    values: {
+      utilization: 76,
+    },
   },
   {
-    title: 'XSMALL',
+    title: 'Alert Count',
     id: 'facilitycard-xs3',
     size: CARD_SIZES.XSMALL,
     type: CARD_TYPES.VALUE,
     availableActions: {
       delete: true,
     },
-    content: [
-      {
-        title: 'Alert Count',
-        value: 35,
-        secondaryValue: { value: 13, trend: 'up', color: 'green' },
-      },
-    ],
+    content: {
+      attributes: [
+        {
+          label: 'weekly',
+          dataSourceId: 'alertCount',
+          secondaryValue: { dataSourceId: 'alertCountTrend', trend: 'up', color: 'green' },
+        },
+      ],
+    },
+    values: { alertCount: 35, alertCountTrend: 13 },
+  },
+  {
+    title: 'Comfort Level',
+    id: 'facilitycard-comfort-level',
+    size: CARD_SIZES.XSMALL,
+    type: CARD_TYPES.VALUE,
+    availableActions: {
+      delete: true,
+    },
+    content: {
+      attributes: [
+        {
+          dataSourceId: 'comfortLevel',
+          thresholds: [
+            { comparison: '=', value: 'Good', icon: 'icon--checkmark--solid', color: 'green' },
+            { comparison: '=', value: 'Bad', icon: 'icon--close--solid', color: 'red' },
+          ],
+        },
+      ],
+    },
+    values: { comfortLevel: 'Bad' },
   },
   {
     title: 'Alerts (Section 2)',
@@ -94,20 +145,44 @@ const originalCards = [
     },
   },
   {
-    title: 'XSMALL',
+    title: 'Foot Traffic',
     id: 'facilitycard-xs4',
     size: CARD_SIZES.XSMALL,
     type: CARD_TYPES.VALUE,
     availableActions: {
       delete: true,
     },
-    content: [
-      {
-        title: 'Foot Traffic',
-        value: 13572,
-        secondaryValue: { value: '22%', trend: 'down', color: 'red' },
-      },
-    ],
+    content: {
+      attributes: [
+        {
+          title: 'weekly',
+          dataSourceId: 'footTraffic',
+          secondaryValue: { dataSourceId: 'footTrafficTrend', trend: 'down', color: 'red' },
+        },
+      ],
+    },
+    values: { footTraffic: 13572, footTrafficTrend: '22%' },
+  },
+  {
+    title: 'Health',
+    id: 'facilitycard-health',
+    size: CARD_SIZES.XSMALLWIDE,
+    type: CARD_TYPES.VALUE,
+    availableActions: {
+      delete: true,
+    },
+    content: {
+      attributes: [
+        {
+          dataSourceId: 'health',
+          thresholds: [
+            { comparison: '=', value: 'Healthy', icon: 'icon--checkmark--solid', color: 'green' },
+            { comparison: '=', value: 'Unhealthy', icon: 'icon--close--solid', color: 'red' },
+          ],
+        },
+      ],
+    },
+    values: { health: 'Healthy' },
   },
   {
     title: 'Alerts',
@@ -120,40 +195,6 @@ const originalCards = [
     content: {
       data: tableData,
       columns: tableColumns,
-    },
-  },
-  {
-    title: 'Atmospheric Conditions (Section 2)',
-    id: 'facilitycard3',
-    size: CARD_SIZES.MEDIUM,
-    type: CARD_TYPES.TIMESERIES,
-    availableActions: {
-      delete: true,
-      expand: true,
-    },
-    content: {
-      data: [
-        {
-          label: 'Temperature',
-          values: chartData.events
-            .filter((i, idx) => idx < 15)
-            .map(i => ({
-              t: new Date(i.timestamp + timeOffset).toISOString(),
-              v: i.temperature,
-            })),
-          color: COLORS.RED,
-        },
-        {
-          label: 'Pressure',
-          values: chartData.events
-            .filter((i, idx) => idx < 10)
-            .map(i => ({
-              t: new Date(i.timestamp + timeOffset).toISOString(),
-              v: i.pressure,
-            })),
-          color: COLORS.BLUE,
-        },
-      ],
     },
   },
   {
@@ -217,50 +258,6 @@ const originalCards = [
       ],
     },
   },
-  {
-    title: 'Atmospheric Conditions (Section 1)',
-    id: 'xlarge-timeseries-pressure',
-    size: CARD_SIZES.XLARGE,
-    type: CARD_TYPES.TIMESERIES,
-    availableActions: {
-      delete: true,
-      expand: true,
-    },
-    content: {
-      data: [
-        {
-          label: 'Temperature',
-          values: chartData.events
-            .filter((i, idx) => idx < 15)
-            .map(i => ({
-              t: new Date(i.timestamp + timeOffset).toISOString(),
-              v: i.temperature,
-            })),
-          color: COLORS.RED,
-        },
-        {
-          label: 'Pressure',
-          values: chartData.events
-            .filter((i, idx) => idx < 10)
-            .map(i => ({
-              t: new Date(i.timestamp + timeOffset).toISOString(),
-              v: i.pressure,
-            })),
-          color: COLORS.BLUE,
-        },
-        {
-          label: 'Humidity',
-          values: chartData.events
-            .filter((i, idx) => idx < 13)
-            .map(i => ({
-              t: new Date(i.timestamp + timeOffset).toISOString(),
-              v: i.humidity,
-            })),
-          color: COLORS.YELLOW,
-        },
-      ],
-    },
-  },
 ];
 
 export const DASHBOARD_SIZES_16_COL = {
@@ -294,8 +291,16 @@ const CARD_DIMENSIONS_16_COL = {
   XSMALL: {
     max: { w: 2, h: 1 },
     xl: { w: 2, h: 1 },
-    lg: { w: 4, h: 1 },
+    lg: { w: 2, h: 1 },
     md: { w: 2, h: 1 },
+    sm: { w: 2, h: 1 },
+    xs: { w: 2, h: 1 },
+  },
+  XSMALLWIDE: {
+    max: { w: 3, h: 1 },
+    xl: { w: 4, h: 1 },
+    lg: { w: 4, h: 1 },
+    md: { w: 4, h: 1 },
     sm: { w: 2, h: 1 },
     xs: { w: 4, h: 1 },
   },
@@ -461,5 +466,466 @@ storiesOf('Dashboard (Experimental)', module)
         cardDimensions={object('card dimensions', CARD_DIMENSIONS)}
         rowHeight={object('row height', ROW_HEIGHT)}
       />
+    );
+  })
+  .add('only value cards', () => {
+    const numberThresholds = [
+      { comparison: '<', value: '40', color: 'red', icon: 'icon--close--solid' },
+      { comparison: '<', value: '70', color: 'green', icon: 'icon--checkmark--solid' },
+      { comparison: '<', value: '80', color: 'orange', icon: 'icon--warning--solid' },
+      { comparison: '>=', value: '90', color: 'red', icon: 'icon--close--solid' },
+    ];
+    const stringThresholds = [
+      { comparison: '=', value: 'Low', color: 'green' },
+      { comparison: '=', value: 'Guarded', color: 'blue' },
+      { comparison: '=', value: 'Elevated', color: 'gold' },
+      { comparison: '=', value: 'High', color: 'orange' },
+      { comparison: '=', value: 'Severe', color: 'red' },
+    ];
+    const stringThresholdsWithIcons = [
+      { comparison: '=', value: 'Low', color: 'green', icon: 'icon--checkmark--solid' },
+      { comparison: '=', value: 'Guarded', color: 'blue', icon: 'icon--checkmark--solid' },
+      { comparison: '=', value: 'Elevated', color: 'gold', icon: 'icon--warning--solid' },
+      { comparison: '=', value: 'High', color: 'orange', icon: 'icon--warning--solid' },
+      { comparison: '=', value: 'Severe', color: 'red', icon: 'icon--close--solid' },
+    ];
+    const extraProps = {
+      lastUpdated: 'Now',
+      dashboardBreakpoints: DASHBOARD_BREAKPOINTS_16_COL,
+      dashboardColumns: DASHBOARD_COLUMNS_16_COL,
+      cardDimensions: CARD_DIMENSIONS_16_COL,
+      rowHeight: ROW_HEIGHT,
+    };
+    const dashboards = [
+      <Dashboard
+        title="Single value / xsmall / units and precision"
+        {...extraProps}
+        cards={[
+          ['value: 13', 13, null],
+          ['value: 1352', 1352, 'steps'],
+          ['value: 103.2', 103.2, '˚F'],
+          ['value: 107324.3', 107324.3, 'kJ'],
+          ['value: 1709384.1', 1709384.1, 'people'],
+          ['value: false', false, null],
+          ['value: true', true, null],
+        ].map((v, idx) => ({
+          title: `${v[0]} ${v[2] || ''}`,
+          id: `xsmall-number-${idx}`,
+          size: CARD_SIZES.XSMALL,
+          type: CARD_TYPES.VALUE,
+          content: {
+            attributes: [{ dataSourceId: 'v', unit: v[2] }],
+          },
+          values: { v: v[1] },
+        }))}
+      />,
+      <Dashboard
+        title="Single value / xsmall / trend and label"
+        {...extraProps}
+        cards={[65.3, 48.7, 88.1, 103.2].map((v, idx) => ({
+          title: 'Temperature',
+          id: `xsmall-number-${idx}`,
+          size: CARD_SIZES.XSMALL,
+          type: CARD_TYPES.VALUE,
+          content: {
+            attributes: [
+              {
+                dataSourceId: 'v',
+                secondaryValue:
+                  idx === 2
+                    ? { dataSourceId: 'v2', trend: 'up', color: 'green' }
+                    : idx === 3
+                    ? { trend: 'down', color: 'red' }
+                    : undefined,
+                label:
+                  idx === 1
+                    ? 'Weekly Avg'
+                    : idx === 3
+                    ? 'Long label that might not fit'
+                    : undefined,
+                unit: '˚F',
+              },
+            ],
+          },
+          values: { v, v2: '3.2' },
+        }))}
+      />,
+      <Dashboard
+        title="Single value / xsmall / numerical thresholds w/ icons"
+        {...extraProps}
+        cards={[38.2, 65.3, 77.7, 91].map((v, idx) => ({
+          title: 'Humidity',
+          id: `xsmall-number-threshold-${idx}`,
+          size: CARD_SIZES.XSMALL,
+          type: CARD_TYPES.VALUE,
+          content: {
+            attributes: [{ dataSourceId: 'v', unit: '%', thresholds: numberThresholds }],
+          },
+          values: { v },
+        }))}
+      />,
+      <Dashboard
+        title="Single value / xsmall / string thresholds without icons"
+        {...extraProps}
+        cards={stringThresholds
+          .map(i => i.value)
+          .map((v, idx) => ({
+            title: 'Danger Level',
+            id: `xsmall-string-threshold-${idx}`,
+            size: CARD_SIZES.XSMALL,
+            type: CARD_TYPES.VALUE,
+            content: {
+              attributes: [{ dataSourceId: 'v', thresholds: stringThresholds }],
+            },
+            values: { v },
+          }))}
+      />,
+      <Dashboard
+        title="Single value / xsmallwide / varied"
+        {...extraProps}
+        cards={[
+          ['value: 13', 13, null],
+          ['value: 1352', 1352, 'steps'],
+          ['value: 103.2', 103.2, '˚F'],
+          ['value: 107324.3', 107324.3, 'kJ'],
+          ['value: 1709384.1', 1709384.1, 'people'],
+          ['value: false', false, null],
+          ['value: true', true, null],
+        ]
+          .map((v, idx) => ({
+            title: `${v[0]} ${v[2] || ''}`,
+            id: `xsmallwide-number-${idx}`,
+            size: CARD_SIZES.XSMALLWIDE,
+            type: CARD_TYPES.VALUE,
+            content: {
+              attributes: [{ dataSourceId: 'v', unit: v[2] }],
+            },
+            values: { v: v[1] },
+          }))
+          .concat(
+            [65.3, 48.7, 88.1, 103.2].map((v, idx) => ({
+              title: 'Temperature',
+              id: `xsmallwide-number-trend-${idx}`,
+              size: CARD_SIZES.XSMALLWIDE,
+              type: CARD_TYPES.VALUE,
+              content: {
+                attributes: [
+                  {
+                    dataSourceId: 'v',
+                    secondaryValue:
+                      idx === 2
+                        ? { dataSourceId: 'v2', trend: 'up', color: 'green' }
+                        : idx === 3
+                        ? { trend: 'down', color: 'red' }
+                        : undefined,
+                    label:
+                      idx === 1
+                        ? 'Weekly Avg'
+                        : idx === 3
+                        ? 'Long label that might not fit'
+                        : undefined,
+                    unit: '˚F',
+                  },
+                ],
+              },
+              values: { v, v2: 3.2 },
+            }))
+          )
+          .concat(
+            [38.2, 65.3, 77.7, 91].map((v, idx) => ({
+              title: 'Humidity',
+              id: `xsmallwide-number-threshold-${idx}`,
+              size: CARD_SIZES.XSMALLWIDE,
+              type: CARD_TYPES.VALUE,
+              content: {
+                attributes: [{ dataSourceId: 'v', unit: '%', thresholds: numberThresholds }],
+              },
+              values: { v },
+            }))
+          )
+          .concat(
+            stringThresholds
+              .map(i => i.value)
+              .map((v, idx) => ({
+                title: 'Danger Level',
+                id: `xsmallwide-string-threshold-${idx}`,
+                size: CARD_SIZES.XSMALLWIDE,
+                type: CARD_TYPES.VALUE,
+                content: {
+                  attributes: [{ dataSourceId: 'v', thresholds: stringThresholds }],
+                },
+                values: { v },
+              }))
+          )}
+      />,
+      <Dashboard
+        title="Multi-value / xsmallwide / units and precision"
+        {...extraProps}
+        cards={[
+          ['values: 89.2%, 76 mb', 89.2, '%', 'Comfort Level', 21.3, 'mb', 'Pressure'],
+          ['values: 88.3˚F, Elevated', 88.3, '˚F', 'Temperature', 'Elevated', null, 'Danger Level'],
+          [
+            'values: 88.3˚F, Elevated',
+            103.7,
+            '˚F',
+            'Temperature',
+            '1709384.1',
+            'people',
+            'Foot Traffic',
+          ],
+        ].map((v, idx) => ({
+          title: v[0],
+          id: `xsmallwide-multi-${idx}`,
+          size: CARD_SIZES.XSMALLWIDE,
+          type: CARD_TYPES.VALUE,
+          content: {
+            attributes: [
+              {
+                dataSourceId: 'v1',
+                unit: v[2],
+                label: v[3],
+              },
+              {
+                dataSourceId: 'v2',
+                unit: v[5],
+                label: v[6],
+              },
+            ],
+          },
+          values: { v1: v[1], v2: v[4] },
+        }))}
+      />,
+      <Dashboard
+        title="Multi-value / xsmallwide / trend"
+        {...extraProps}
+        cards={[
+          [
+            'values: 89.2%, 76 mb',
+            89.2,
+            '%',
+            'Comfort Level',
+            2,
+            'down',
+            'red',
+            21.3,
+            'mb',
+            'Pressure',
+            215.2,
+            'down',
+            'red',
+          ],
+          [
+            'values: 88.3˚F, Elevated',
+            88.3,
+            '˚F',
+            'Temperature',
+            4.1,
+            'up',
+            'green',
+            'Elevated',
+            null,
+            'Danger Level',
+            null,
+            null,
+            null,
+          ],
+          [
+            'values: 88.3˚F, Elevated',
+            103.7,
+            '˚F',
+            'Temperature',
+            null,
+            'up',
+            'green',
+            '1709384.1',
+            'people',
+            'Foot Traffic',
+            137982.2,
+            'down',
+            'red',
+          ],
+        ].map((v, idx) => ({
+          title: v[0],
+          id: `xsmallwide-multi-${idx}`,
+          size: CARD_SIZES.XSMALLWIDE,
+          type: CARD_TYPES.VALUE,
+          content: {
+            attributes: [
+              {
+                dataSourceId: 'v1',
+                unit: v[2],
+                label: v[3],
+                secondaryValue:
+                  v[5] !== null
+                    ? {
+                        dataSourceId: 'v1trend',
+                        trend: v[5],
+                        color: v[6],
+                      }
+                    : undefined,
+              },
+              {
+                dataSourceId: 'v2',
+                unit: v[8],
+                label: v[9],
+                secondaryValue:
+                  v[11] !== null
+                    ? {
+                        dataSourceId: 'v2trend',
+                        trend: v[11],
+                        color: v[12],
+                      }
+                    : undefined,
+              },
+            ],
+          },
+          values: { v1: v[1], v1trend: v[4], v2: v[7], v2trend: v[10] },
+        }))}
+      />,
+      <Dashboard
+        title="Multi-value / xsmallwide / threshold"
+        {...extraProps}
+        cards={[
+          [38.2, '%', 'Average', 65.3, '%', 'Max'],
+          [77.2, '˚F', 'Average', 91.3, '˚F', 'Max'],
+        ].map((v, idx) => ({
+          title: 'Humidity',
+          id: `xsmallwide-multi-number-threshold-${idx}`,
+          size: CARD_SIZES.XSMALLWIDE,
+          type: CARD_TYPES.VALUE,
+          content: {
+            attributes: [
+              { dataSourceId: 'v1', unit: v[1], label: v[2], thresholds: numberThresholds },
+              { dataSourceId: 'v2', unit: v[4], label: v[5], thresholds: numberThresholds },
+            ],
+          },
+          values: { v1: v[0], v2: v[3] },
+        }))}
+      />,
+      <Dashboard
+        title="Multi-value / small"
+        {...extraProps}
+        cards={[
+          [
+            'Humidity',
+            13634.56,
+            'MWh',
+            'YTD',
+            null,
+            1047.2,
+            'MWh',
+            'MTD',
+            'up',
+            314.5,
+            'MWh',
+            'Last Week',
+            'down',
+          ],
+          [
+            'Danger Level',
+            'Severe',
+            null,
+            'Current',
+            null,
+            'Low',
+            null,
+            'Last Week',
+            null,
+            'High',
+            null,
+            'Last Month',
+            null,
+          ],
+          [
+            'Danger Level',
+            'Low',
+            null,
+            'Current',
+            null,
+            'Severe',
+            null,
+            'Last Week',
+            null,
+            'Elevated',
+            null,
+            'Last Month',
+            null,
+          ],
+        ].map((v, idx) => ({
+          title: v[0],
+          id: `xsmallwide-multi-number-threshold-${idx}`,
+          size: CARD_SIZES.SMALL,
+          type: CARD_TYPES.VALUE,
+          content: {
+            attributes: [
+              {
+                dataSourceId: 'v1',
+                unit: v[2],
+                label: v[3],
+                thresholds:
+                  idx === 1 ? stringThresholds : idx === 2 ? stringThresholdsWithIcons : undefined,
+                secondaryValue:
+                  v[4] !== null
+                    ? {
+                        dataSourceId: 'v1trend',
+                        trend: v[4],
+                        color: v[4] === 'down' ? 'red' : 'green',
+                      }
+                    : undefined,
+              },
+              {
+                dataSourceId: 'v2',
+                unit: v[6],
+                label: v[7],
+                thresholds:
+                  idx === 1 ? stringThresholds : idx === 2 ? stringThresholdsWithIcons : undefined,
+                secondaryValue:
+                  v[8] !== null
+                    ? {
+                        dataSourceId: 'v2trend',
+                        trend: v[8],
+                        color: v[8] === 'down' ? 'red' : 'green',
+                      }
+                    : undefined,
+              },
+              {
+                dataSourceId: 'v3',
+                unit: v[10],
+                label: v[11],
+                thresholds:
+                  idx === 1 ? stringThresholds : idx === 2 ? stringThresholdsWithIcons : undefined,
+                secondaryValue:
+                  v[12] !== null
+                    ? { trend: v[12], color: v[12] === 'down' ? 'red' : 'green' }
+                    : undefined,
+              },
+            ],
+          },
+          values: {
+            v1: v[1],
+            v1trend: v[1] / 5,
+            v2: v[5],
+            v2trend: v[5] / 5,
+            v3: v[9],
+          },
+        }))}
+      />,
+    ];
+
+    return (
+      <div>
+        {dashboards.map(i => [
+          <div style={{ width: 1056, paddingBottom: 50 }}>
+            <h1>&quot;Largest&quot; Rendering (1056px width)</h1>
+            <hr />
+            {i}
+          </div>,
+          <div style={{ width: 1057, paddingBottom: 50 }}>
+            <h1>&quot;Tightest&quot; Rendering (1057px width)</h1>
+            <hr />
+            {i}
+          </div>,
+        ])}
+      </div>
     );
   });
