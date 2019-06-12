@@ -81,4 +81,19 @@ storiesOf('Card (Experimental)', module)
         </div>
       </React.Fragment>
     ));
+  })
+  .add('error', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
+    return (
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+        <Card
+          title={text('title', 'Card Title')}
+          id="facilitycard"
+          size={size}
+          error={text('error', 'Error loading card')}
+          breakpoint="lg"
+          onCardAction={(id, type, payload) => console.log('onCardAction', id, type, payload)}
+        />
+      </div>
+    );
   });
