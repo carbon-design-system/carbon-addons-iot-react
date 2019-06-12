@@ -22,7 +22,6 @@ storiesOf('LineChartCard (Experimental)', module)
           content={object('content', {
             series: {
               label: 'Temperature',
-              descriptionLabel: 'Actual Temperature',
               dataSourceId: 'temperature',
               color: text('color', COLORS.PURPLE),
             },

@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
+import { renderToString } from 'react-dom/server';
 import moment from 'moment';
 import styled from 'styled-components';
 import C3Chart from 'react-c3js';
@@ -25,6 +26,27 @@ const ContentWrapper = styled.div`
     .c3-axis-y path,
     .c3-axis-y line {
       stroke: #565656;
+    }
+    .c3-axis .tick line {
+      display: none;
+    }
+    .c3-tooltip-container {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+      position: absolute;
+      /* display: none; */
+      ${'' /* min-width: 13rem; */}
+      max-width: 18rem;
+      background: #3d3d3d;
+      margin-top: 0.25rem;
+      padding: 1rem;
+      border-radius: 0.125rem;
+      z-index: 10000;
+      word-wrap: break-word;
+      color: #fff;
+    }
+
+    .c3-grid line {
+      stroke: #3d3d3d;
     }
   }
 `;
@@ -65,11 +87,77 @@ const StyledXDiv = styled.div`
 const StyledYDiv = styled.div`
   position: absolute;
   top: 50%;
-  left: 2%;
+  left: 1%;
   transform: translateX(-50%) translateY(-50%) rotate(-90deg);
   color: #565656;
   font-size: 12px;
   font-family: IBM Plex Sans Condensed;
+`;
+
+const StyledTooltipCaret = styled.span`
+  left: -0.25rem;
+  top: 50%;
+  right: auto;
+  transform: rotate(135deg) translate(-50%, 50%);
+  position: absolute;
+  background: #3d3d3d;
+  width: 0.6rem;
+  height: 0.6rem;
+  margin: 0 auto;
+  content: '';
+`;
+
+const StyledTooltipText = styled.p`
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.125rem;
+  letter-spacing: 0.16px;
+  margin-top: 5px;
+  color: #f3f3f3;
+  font-size: 12px;
+  font-family: IBM Plex Sans;
+  font-weight: ${props => (props.color ? 'bold' : 'normal')};
+
+  ::before {
+    ${props => {
+      const { color } = props;
+      if (color) {
+        return `
+        border-color: ${color};
+        margin-right: 5px;
+        width: 5px;
+        content: '';
+        border-style: solid;
+        display: inline-block;
+        vertical-align: middle;
+        height: 5px;
+        background: ${color};`;
+      }
+      return null;
+    }}
+  }
+`;
+
+const StyledTooltipTitle = styled.p`
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.125rem;
+  letter-spacing: 0.16px;
+  margin-left: 16px;
+  color: #f3f3f3;
+  font-size: 12px;
+  font-family: IBM Plex Sans;
+`;
+
+const StyledTooltipValue = styled.span`
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.125rem;
+  letter-spacing: 0.16px;
+  margin-top: 5px;
+  color: #f3f3f3;
+  font-size: 12px;
+  font-family: IBM Plex Sans;
 `;
 
 class TimeSeriesCard extends Component {
@@ -79,14 +167,58 @@ class TimeSeriesCard extends Component {
     this.c3ChartComponent = React.createRef();
   }
 
-  componentDidMount() {
-    console.log('Chart:::', this.c3ChartComponent);
-  }
+  // componentDidUpdate(prevProps) {
+  //   // Typical usage (don't forget to compare props):
+  //   console.log('size', this.props.size);
+  //   if (this.props.size !== prevProps.size) {
+  //     console.log('force resize?');
+  //     this.c3ChartComponent.chart.flush();
+  //   }
+  // }
+
+  customTooltip = (d, defaultTitleFormat, defaultValueFormat, color) => {
+    const content = (
+      <Fragment>
+        <StyledTooltipCaret />
+        {d.map((item, index) => {
+          const dateFormat = new Date(item.x);
+          const titleX = dateFormat.toLocaleDateString('default', {
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric',
+            hour: 'numeric',
+            minute: 'numeric',
+            second: 'numeric',
+          });
+          const valueformat = defaultValueFormat(item.value, item.id, item.index);
+          return (
+            <Fragment>
+              {d.length > 1 ? (
+                <Fragment>
+                  {index === 0 ? <StyledTooltipTitle>{titleX}</StyledTooltipTitle> : null}
+                  <StyledTooltipText color={color(item.id)}>
+                    {item.name}: <StyledTooltipValue>{valueformat}</StyledTooltipValue>
+                  </StyledTooltipText>
+                </Fragment>
+              ) : (
+                <Fragment>
+                  <StyledTooltipText>{titleX}</StyledTooltipText>
+                  <StyledTooltipValue>Value: {valueformat}</StyledTooltipValue>
+                </Fragment>
+              )}
+            </Fragment>
+          );
+        })}
+      </Fragment>
+    );
+
+    return renderToString(content);
+  };
 
   render() {
     const {
       title,
-      content: { series, timeDataSourceId, labelsDescription, xLabel, yLabel },
+      content: { series, timeDataSourceId, xLabel, yLabel },
       size,
       range,
       values,
@@ -119,23 +251,29 @@ class TimeSeriesCard extends Component {
         : range.min;
     const max = range === undefined ? undefined : range.max ? range.max : moment().toISOString();
 
-    const maxY = series
-      .map(item =>
-        values
-          .map(i => i[item.dataSourceId])
+    const maxY = Array.isArray(series)
+      ? series
+          .map(item =>
+            values
+              .map(i => i[item.dataSourceId])
+              .reduce((maxValue, current) => (current > maxValue ? current : maxValue))
+          )
           .reduce((maxValue, current) => (current > maxValue ? current : maxValue))
-      )
-      .reduce((maxValue, current) => (current > maxValue ? current : maxValue));
+      : values
+          .map(i => i[series.dataSourceId])
+          .reduce((maxValue, current) => (current > maxValue ? current : maxValue));
 
-    const minY = series
-      .map(item =>
-        values
-          .map(i => i[item.dataSourceId])
-          .reduce((minValue, current) => (current < minValue ? current : minValue), maxY)
-      )
-      .reduce((maxValue, current) => (current < maxValue ? current : maxValue));
-    console.log('Max Y value:::', maxY);
-    console.log('Min Y value:::', minY);
+    const minY = Array.isArray(series)
+      ? series
+          .map(item =>
+            values
+              .map(i => i[item.dataSourceId])
+              .reduce((minValue, current) => (current < minValue ? current : minValue), maxY)
+          )
+          .reduce((minValue, current) => (current < minValue ? current : minValue))
+      : values
+          .map(i => i[series.dataSourceId])
+          .reduce((minValue, current) => (current < minValue ? current : minValue), maxY);
 
     const chartData = !isEmpty(values)
       ? series.label === undefined
@@ -173,8 +311,6 @@ class TimeSeriesCard extends Component {
           }
       : [];
 
-    console.log('Data::', chartData);
-
     const chart = {
       data: chartData,
       axis: {
@@ -185,10 +321,11 @@ class TimeSeriesCard extends Component {
           tick: {
             fit: false,
             format,
-            rotate: 30,
-            count: 10,
+            // rotate: 30,
+            count: 8,
+            outer: false,
             // culling: {
-            //   max: 4, // the number of tick texts will be adjusted to less than this value
+            //   max: 100, // the number of tick texts will be adjusted to less than this value
             // },
           },
           // padding: { top: 100, bottom: 100 },
@@ -196,6 +333,9 @@ class TimeSeriesCard extends Component {
         y: {
           max: maxY,
           min: minY,
+          tick: {
+            outer: false,
+          },
           // Range includes padding, set 0 if no padding needed
           // padding: { top: 100, bottom: 100 },
         },
@@ -209,6 +349,10 @@ class TimeSeriesCard extends Component {
       color: {
         pattern: [COLORS.PURPLE, COLORS.TEAL, COLORS.MAGENTA, COLORS.CYAN],
       },
+      // point: {
+      //   // show: false,
+      //   r: 1,
+      // },
       // grid: {
       //   x: {
       //     show: true,
@@ -222,6 +366,9 @@ class TimeSeriesCard extends Component {
       // },
       legend: {
         show: false,
+      },
+      tooltip: {
+        contents: this.customTooltip,
       },
     };
 
@@ -252,7 +399,7 @@ class TimeSeriesCard extends Component {
           <C3Chart
             {...chart}
             style={{
-              height: '93%',
+              height: '95%',
               width: '100%',
             }}
             ref={chartRef => {
