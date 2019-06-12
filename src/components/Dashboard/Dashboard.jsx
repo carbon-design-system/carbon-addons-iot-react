@@ -40,6 +40,10 @@ const propTypes = {
     PropTypes.shape({
       content: PropTypes.object,
       values: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+      /** is the card actively loading, it will override the dashboard loading state if true */
+      isLoading: PropTypes.bool,
+      /** was there an error loading */
+      error: PropTypes.node,
     })
   ).isRequired,
   layouts: PropTypes.shape({
@@ -141,7 +145,7 @@ const Dashboard = ({
         <ValueCard
           {...card}
           i18n={i18n}
-          isLoading={isLoading}
+          isLoading={card.isLoading || isLoading}
           isEditable={isEditable}
           onCardAction={onCardAction}
           key={card.id}
@@ -156,7 +160,7 @@ const Dashboard = ({
         <TimeSeriesCard
           {...card}
           i18n={i18n}
-          isLoading={isLoading}
+          isLoading={card.isLoading || isLoading}
           isEditable={isEditable}
           onCardAction={onCardAction}
           key={card.id}
@@ -171,7 +175,7 @@ const Dashboard = ({
         <TableCard
           {...card}
           i18n={i18n}
-          isLoading={isLoading}
+          isLoading={card.isLoading || isLoading}
           isEditable={isEditable}
           onCardAction={onCardAction}
           key={card.id}
@@ -186,7 +190,7 @@ const Dashboard = ({
         <DonutCard
           {...card}
           i18n={i18n}
-          isLoading={isLoading}
+          isLoading={card.isLoading || isLoading}
           isEditable={isEditable}
           onCardAction={onCardAction}
           key={card.id}
@@ -201,7 +205,7 @@ const Dashboard = ({
         <PieCard
           {...card}
           i18n={i18n}
-          isLoading={isLoading}
+          isLoading={card.isLoading || isLoading}
           isEditable={isEditable}
           onCardAction={onCardAction}
           key={card.id}
@@ -216,7 +220,7 @@ const Dashboard = ({
         <BarChartCard
           {...card}
           i18n={i18n}
-          isLoading={isLoading}
+          isLoading={card.isLoading || isLoading}
           isEditable={isEditable}
           onCardAction={onCardAction}
           key={card.id}

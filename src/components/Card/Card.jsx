@@ -148,6 +148,7 @@ const Card = ({
   isEmpty,
   isEditable,
   isExpanded,
+  error,
   id,
   tooltip,
   onCardAction,
@@ -262,7 +263,9 @@ const Card = ({
         {toolbar}
       </CardHeader>
       <CardContent layout={layout} height={dimensions.y}>
-        {isLoading ? (
+        {error ? (
+          <EmptyMessageWrapper>{error}</EmptyMessageWrapper>
+        ) : isLoading ? (
           <SkeletonWrapper>
             <SkeletonText paragraph lineCount={size === CARD_SIZES.XSMALL ? 2 : 3} width="100%" />
           </SkeletonWrapper>
