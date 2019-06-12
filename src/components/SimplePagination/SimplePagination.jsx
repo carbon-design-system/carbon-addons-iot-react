@@ -95,6 +95,7 @@ const SimplePagination = ({
       <StyledPageLabel maxPage={maxPage}>
         {pageText ? `${pageText} ${page}` : pageOfPagesText(page, maxPage)}
       </StyledPageLabel>
+      {/* Updates only for netlify buil */}
       {maxPage > 1 ? (
         <>
           <StyledButton
