@@ -41,7 +41,7 @@ const StyledContentWrapper = styled.div`
   }
 `;
 
-const ListCard = ({ id, title, size, data, isLoading, loadData, hasMoreData }) => {
+const ListCard = ({ id, title, size, data, isLoading, loadData, hasMoreData, ...others }) => {
   const handleScroll = e => {
     const element = e.target;
     //  height of the elements content - height element’s content is scrolled vertically === height of the scrollable part of the element
@@ -55,7 +55,7 @@ const ListCard = ({ id, title, size, data, isLoading, loadData, hasMoreData }) =
   };
 
   return (
-    <Card id={id} title={title} size={size} onScroll={handleScroll}>
+    <Card id={id} title={title} size={size} onScroll={handleScroll} {...others}>
       <StyledContentWrapper>
         <StructuredListWrapper>
           <StructuredListBody>

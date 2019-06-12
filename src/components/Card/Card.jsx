@@ -112,6 +112,12 @@ const defaultProps = {
   i18n: {
     noDataLabel: 'No data is available for this time range.',
     noDataShortLabel: 'No data',
+    hourlyLabel: 'Hourly',
+    weeklyLabel: 'Weekly',
+    monthlyLabel: 'Monthly',
+    editCardLabel: 'Edit card',
+    cloneCardLabel: 'Clone card',
+    deleteCardLabel: 'Delete card',
   },
 };
 
@@ -129,7 +135,16 @@ const Card = ({
   onCardAction,
   availableActions,
   breakpoint,
-  i18n: { noDataLabel, noDataShortLabel },
+  i18n: {
+    noDataLabel,
+    noDataShortLabel,
+    hourlyLabel,
+    weeklyLabel,
+    monthlyLabel,
+    editCardLabel,
+    cloneCardLabel,
+    deleteCardLabel,
+  },
   ...others
 }) => {
   const isXS = size === CARD_SIZES.XSMALL;
@@ -152,12 +167,13 @@ const Card = ({
       <Select
         inline
         hideLabel
+        id={`timeselect-${id}`}
         onChange={evt => console.log('new view: ', evt)} // eslint-disable-line
         defaultValue="weekly"
       >
-        <SelectItem value="hourly" text="Hourly" />
-        <SelectItem value="weekly" text="Weekly" />
-        <SelectItem value="monthly" text="Monthly" />
+        <SelectItem value="hourly" text={hourlyLabel} />
+        <SelectItem value="weekly" text={weeklyLabel} />
+        <SelectItem value="monthly" text={monthlyLabel} />
       </Select>
     </ToolbarItem>
   );
@@ -172,20 +188,20 @@ const Card = ({
             {mergedAvailableActions.edit && (
               <OverflowMenuItem
                 onClick={() => onCardAction(id, 'EDIT_CARD')}
-                itemText="Edit card"
+                itemText={editCardLabel}
               />
             )}
             {mergedAvailableActions.clone && (
               <OverflowMenuItem
                 onClick={() => onCardAction(id, 'CLONE_CARD')}
-                itemText="Clone card"
+                itemText={cloneCardLabel}
               />
             )}
             {mergedAvailableActions.delete && (
               <OverflowMenuItem
                 isDelete
                 onClick={() => onCardAction(id, 'DELETE_CARD')}
-                itemText="Delete card"
+                itemText={deleteCardLabel}
               />
             )}
           </OverflowMenu>

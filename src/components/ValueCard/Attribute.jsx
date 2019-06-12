@@ -50,8 +50,12 @@ const propTypes = {
   value: PropTypes.any, // eslint-disable-line
   unit: PropTypes.any, // eslint-disable-line
   layout: PropTypes.oneOf(Object.values(CARD_LAYOUTS)),
-  /** Additional information about the Attribute, like it's range or aggregator */
-  secondaryValue: PropTypes.any, // eslint-disable-line
+  /** Optional trend information */
+  secondaryValue: PropTypes.shape({
+    color: PropTypes.string,
+    trend: PropTypes.oneOf(['up', 'down']),
+    value: PropTypes.any,
+  }),
   /** need to render smaller attribute */
   isSmall: PropTypes.bool,
   isVertical: PropTypes.bool, // are the attributes and labels in a column?
@@ -72,6 +76,7 @@ const defaultProps = {
   thresholds: [],
   isVertical: false,
   isSmall: false,
+  secondaryValue: null,
 };
 
 const Attribute = ({
@@ -134,7 +139,7 @@ const Attribute = ({
       )}
       <UnitRenderer value={value} unit={unit} layout={layout} />
       {thresholdIcon}
-      {secondaryValue !== undefined ? (
+      {!isNil(secondaryValue) ? (
         <AttributeSecondaryValue color={secondaryValue.color} trend={secondaryValue.trend}>
           {secondaryValue.trend && secondaryValue.trend === 'up' ? (
             <TrendIcon icon={iconCaretUp} />

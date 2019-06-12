@@ -26,18 +26,25 @@ const timeOffset = new Date().getTime() - chartData.dataItemToMostRecentTimestam
 
 const originalCards = [
   {
-    title: 'SMALL',
+    title: 'Facility Metrics',
     id: 'facilitycard',
     size: CARD_SIZES.SMALL,
     type: CARD_TYPES.VALUE,
     availableActions: {
       delete: true,
     },
-    content: [
-      { title: 'Comfort Level', value: 89, unit: '%' },
-      { title: 'Utilization', value: 76, unit: '%' },
-      { title: 'Pressure', value: 21.4, unit: 'mb' },
-    ],
+    content: {
+      attributes: [
+        { label: 'Comfort Level', dataSourceId: 'comfortLevel', unit: '%' },
+        { label: 'Utilization', dataSourceId: 'utilization', unit: '%' },
+        { label: 'Pressure', dataSourceId: 'pressure', unit: 'mb' },
+      ],
+    },
+    values: {
+      comfortLevel: 89,
+      utilization: 76,
+      pressure: 21.4,
+    },
   },
   {
     title: 'Humidity',
@@ -47,17 +54,22 @@ const originalCards = [
     availableActions: {
       delete: true,
     },
-    content: [
-      {
-        value: 62.1,
-        unit: '%',
-        thresholds: [
-          { comparison: '<', value: '40', color: 'red' },
-          { comparison: '<', value: '70', color: 'green' },
-          { comparison: '>=', value: '70', color: 'red' },
-        ],
-      },
-    ],
+    content: {
+      attributes: [
+        {
+          dataSourceId: 'humidity',
+          unit: '%',
+          thresholds: [
+            { comparison: '<', value: '40', color: 'red' },
+            { comparison: '<', value: '70', color: 'green' },
+            { comparison: '>=', value: '70', color: 'red' },
+          ],
+        },
+      ],
+    },
+    values: {
+      humidity: 62.1,
+    },
   },
   {
     title: 'Utilization',
@@ -67,7 +79,12 @@ const originalCards = [
     availableActions: {
       delete: true,
     },
-    content: [{ value: 76, title: 'Average', unit: '%' }],
+    content: {
+      attributes: [{ dataSourceId: 'utilization', label: 'Average', unit: '%' }],
+    },
+    values: {
+      utilization: 76,
+    },
   },
   {
     title: 'Alert Count',
@@ -77,13 +94,16 @@ const originalCards = [
     availableActions: {
       delete: true,
     },
-    content: [
-      {
-        title: 'weekly',
-        value: 35,
-        secondaryValue: { value: 13, trend: 'up', color: 'green' },
-      },
-    ],
+    content: {
+      attributes: [
+        {
+          label: 'weekly',
+          dataSourceId: 'alertCount',
+          secondaryValue: { dataSourceId: 'alertCountTrend', trend: 'up', color: 'green' },
+        },
+      ],
+    },
+    values: { alertCount: 35, alertCountTrend: 13 },
   },
   {
     title: 'Comfort Level',
@@ -93,15 +113,18 @@ const originalCards = [
     availableActions: {
       delete: true,
     },
-    content: [
-      {
-        value: 'Bad',
-        thresholds: [
-          { comparison: '=', value: 'Good', icon: 'icon--checkmark--solid', color: 'green' },
-          { comparison: '=', value: 'Bad', icon: 'icon--close--solid', color: 'red' },
-        ],
-      },
-    ],
+    content: {
+      attributes: [
+        {
+          dataSourceId: 'comfortLevel',
+          thresholds: [
+            { comparison: '=', value: 'Good', icon: 'icon--checkmark--solid', color: 'green' },
+            { comparison: '=', value: 'Bad', icon: 'icon--close--solid', color: 'red' },
+          ],
+        },
+      ],
+    },
+    values: { comfortLevel: 'Bad' },
   },
   {
     title: 'Alerts (Section 2)',
@@ -129,13 +152,16 @@ const originalCards = [
     availableActions: {
       delete: true,
     },
-    content: [
-      {
-        title: 'weekly',
-        value: 13572,
-        secondaryValue: { value: '22%', trend: 'down', color: 'red' },
-      },
-    ],
+    content: {
+      attributes: [
+        {
+          title: 'weekly',
+          dataSourceId: 'footTraffic',
+          secondaryValue: { dataSourceId: 'footTrafficTrend', trend: 'down', color: 'red' },
+        },
+      ],
+    },
+    values: { footTraffic: 13572, footTrafficTrend: '22%' },
   },
   {
     title: 'Health',
@@ -145,15 +171,18 @@ const originalCards = [
     availableActions: {
       delete: true,
     },
-    content: [
-      {
-        value: 'Healthy',
-        thresholds: [
-          { comparison: '=', value: 'Healthy', icon: 'icon--checkmark--solid', color: 'green' },
-          { comparison: '=', value: 'Unhealthy', icon: 'icon--close--solid', color: 'red' },
-        ],
-      },
-    ],
+    content: {
+      attributes: [
+        {
+          dataSourceId: 'health',
+          thresholds: [
+            { comparison: '=', value: 'Healthy', icon: 'icon--checkmark--solid', color: 'green' },
+            { comparison: '=', value: 'Unhealthy', icon: 'icon--close--solid', color: 'red' },
+          ],
+        },
+      ],
+    },
+    values: { health: 'Healthy' },
   },
   {
     title: 'Alerts',
@@ -166,40 +195,6 @@ const originalCards = [
     content: {
       data: tableData,
       columns: tableColumns,
-    },
-  },
-  {
-    title: 'Atmospheric Conditions (Section 2)',
-    id: 'facilitycard3',
-    size: CARD_SIZES.MEDIUM,
-    type: CARD_TYPES.TIMESERIES,
-    availableActions: {
-      delete: true,
-      expand: true,
-    },
-    content: {
-      data: [
-        {
-          label: 'Temperature',
-          values: chartData.events
-            .filter((i, idx) => idx < 15)
-            .map(i => ({
-              t: new Date(i.timestamp + timeOffset).toISOString(),
-              v: i.temperature,
-            })),
-          color: COLORS.RED,
-        },
-        {
-          label: 'Pressure',
-          values: chartData.events
-            .filter((i, idx) => idx < 10)
-            .map(i => ({
-              t: new Date(i.timestamp + timeOffset).toISOString(),
-              v: i.pressure,
-            })),
-          color: COLORS.BLUE,
-        },
-      ],
     },
   },
   {
@@ -260,50 +255,6 @@ const originalCards = [
         { label: 'Sev 3', value: 6, color: COLORS.RED },
         { label: 'Sev 2', value: 9, color: COLORS.YELLOW },
         { label: 'Sev 1', value: 18, color: COLORS.BLUE },
-      ],
-    },
-  },
-  {
-    title: 'Atmospheric Conditions (Section 1)',
-    id: 'xlarge-timeseries-pressure',
-    size: CARD_SIZES.XLARGE,
-    type: CARD_TYPES.TIMESERIES,
-    availableActions: {
-      delete: true,
-      expand: true,
-    },
-    content: {
-      data: [
-        {
-          label: 'Temperature',
-          values: chartData.events
-            .filter((i, idx) => idx < 15)
-            .map(i => ({
-              t: new Date(i.timestamp + timeOffset).toISOString(),
-              v: i.temperature,
-            })),
-          color: COLORS.RED,
-        },
-        {
-          label: 'Pressure',
-          values: chartData.events
-            .filter((i, idx) => idx < 10)
-            .map(i => ({
-              t: new Date(i.timestamp + timeOffset).toISOString(),
-              v: i.pressure,
-            })),
-          color: COLORS.BLUE,
-        },
-        {
-          label: 'Humidity',
-          values: chartData.events
-            .filter((i, idx) => idx < 13)
-            .map(i => ({
-              t: new Date(i.timestamp + timeOffset).toISOString(),
-              v: i.humidity,
-            })),
-          color: COLORS.YELLOW,
-        },
       ],
     },
   },
@@ -494,6 +445,29 @@ storiesOf('Dashboard (Experimental)', module)
       />
     );
   })
+  .add('i18n labels', () => {
+    return (
+      <StatefulDashboard
+        title={text('title', 'Munich Building')}
+        isEditable={boolean('isEditable', true)}
+        i18n={{
+          lastUpdatedLabel: text('lastUpdatedLabel', 'Last updated: '),
+          noDataLabel: text('noDataLabel', 'No data is available for this time range.'),
+          noDataShortLabel: text('noDataShortLabel', 'No data'),
+          hourlyLabel: text('hourlyLabel', 'Hourly'),
+          weeklyLabel: text('weeklyLabel', 'Weekly'),
+          monthlyLabel: text('monthlyLabel', 'Monthly'),
+          editCardLabel: text('editCardLabel', 'Edit card'),
+          cloneCardLabel: text('cloneCardLabel', 'Clone card'),
+          deleteCardLabel: text('deleteCardLabel', 'Delete card'),
+        }}
+        dashboardBreakpoints={object('breakpoints', DASHBOARD_BREAKPOINTS)}
+        dashboardColumns={object('columns', DASHBOARD_COLUMNS)}
+        cardDimensions={object('card dimensions', CARD_DIMENSIONS)}
+        rowHeight={object('row height', ROW_HEIGHT)}
+      />
+    );
+  })
   .add('only value cards', () => {
     const numberThresholds = [
       { comparison: '<', value: '40', color: 'red', icon: 'icon--close--solid' },
@@ -539,7 +513,10 @@ storiesOf('Dashboard (Experimental)', module)
           id: `xsmall-number-${idx}`,
           size: CARD_SIZES.XSMALL,
           type: CARD_TYPES.VALUE,
-          content: [{ value: v[1], unit: v[2] }],
+          content: {
+            attributes: [{ dataSourceId: 'v', unit: v[2] }],
+          },
+          values: { v: v[1] },
         }))}
       />,
       <Dashboard
@@ -550,20 +527,27 @@ storiesOf('Dashboard (Experimental)', module)
           id: `xsmall-number-${idx}`,
           size: CARD_SIZES.XSMALL,
           type: CARD_TYPES.VALUE,
-          content: [
-            {
-              value: v,
-              secondaryValue:
-                idx === 2
-                  ? { value: 3.2, trend: 'up', color: 'green' }
-                  : idx === 3
-                  ? { trend: 'down', color: 'red' }
-                  : undefined,
-              title:
-                idx === 1 ? 'Weekly Avg' : idx === 3 ? 'Long label that might not fit' : undefined,
-              unit: '˚F',
-            },
-          ],
+          content: {
+            attributes: [
+              {
+                dataSourceId: 'v',
+                secondaryValue:
+                  idx === 2
+                    ? { dataSourceId: 'v2', trend: 'up', color: 'green' }
+                    : idx === 3
+                    ? { trend: 'down', color: 'red' }
+                    : undefined,
+                label:
+                  idx === 1
+                    ? 'Weekly Avg'
+                    : idx === 3
+                    ? 'Long label that might not fit'
+                    : undefined,
+                unit: '˚F',
+              },
+            ],
+          },
+          values: { v, v2: '3.2' },
         }))}
       />,
       <Dashboard
@@ -574,7 +558,10 @@ storiesOf('Dashboard (Experimental)', module)
           id: `xsmall-number-threshold-${idx}`,
           size: CARD_SIZES.XSMALL,
           type: CARD_TYPES.VALUE,
-          content: [{ value: v, unit: '%', thresholds: numberThresholds }],
+          content: {
+            attributes: [{ dataSourceId: 'v', unit: '%', thresholds: numberThresholds }],
+          },
+          values: { v },
         }))}
       />,
       <Dashboard
@@ -587,7 +574,10 @@ storiesOf('Dashboard (Experimental)', module)
             id: `xsmall-string-threshold-${idx}`,
             size: CARD_SIZES.XSMALL,
             type: CARD_TYPES.VALUE,
-            content: [{ value: v, thresholds: stringThresholds }],
+            content: {
+              attributes: [{ dataSourceId: 'v', thresholds: stringThresholds }],
+            },
+            values: { v },
           }))}
       />,
       <Dashboard
@@ -607,7 +597,10 @@ storiesOf('Dashboard (Experimental)', module)
             id: `xsmallwide-number-${idx}`,
             size: CARD_SIZES.XSMALLWIDE,
             type: CARD_TYPES.VALUE,
-            content: [{ value: v[1], unit: v[2] }],
+            content: {
+              attributes: [{ dataSourceId: 'v', unit: v[2] }],
+            },
+            values: { v: v[1] },
           }))
           .concat(
             [65.3, 48.7, 88.1, 103.2].map((v, idx) => ({
@@ -615,24 +608,27 @@ storiesOf('Dashboard (Experimental)', module)
               id: `xsmallwide-number-trend-${idx}`,
               size: CARD_SIZES.XSMALLWIDE,
               type: CARD_TYPES.VALUE,
-              content: [
-                {
-                  value: v,
-                  secondaryValue:
-                    idx === 2
-                      ? { value: 3.2, trend: 'up', color: 'green' }
-                      : idx === 3
-                      ? { trend: 'down', color: 'red' }
-                      : undefined,
-                  title:
-                    idx === 1
-                      ? 'Weekly Avg'
-                      : idx === 3
-                      ? 'Long label that might not fit'
-                      : undefined,
-                  unit: '˚F',
-                },
-              ],
+              content: {
+                attributes: [
+                  {
+                    dataSourceId: 'v',
+                    secondaryValue:
+                      idx === 2
+                        ? { dataSourceId: 'v2', trend: 'up', color: 'green' }
+                        : idx === 3
+                        ? { trend: 'down', color: 'red' }
+                        : undefined,
+                    label:
+                      idx === 1
+                        ? 'Weekly Avg'
+                        : idx === 3
+                        ? 'Long label that might not fit'
+                        : undefined,
+                    unit: '˚F',
+                  },
+                ],
+              },
+              values: { v, v2: 3.2 },
             }))
           )
           .concat(
@@ -641,7 +637,10 @@ storiesOf('Dashboard (Experimental)', module)
               id: `xsmallwide-number-threshold-${idx}`,
               size: CARD_SIZES.XSMALLWIDE,
               type: CARD_TYPES.VALUE,
-              content: [{ value: v, unit: '%', thresholds: numberThresholds }],
+              content: {
+                attributes: [{ dataSourceId: 'v', unit: '%', thresholds: numberThresholds }],
+              },
+              values: { v },
             }))
           )
           .concat(
@@ -652,7 +651,10 @@ storiesOf('Dashboard (Experimental)', module)
                 id: `xsmallwide-string-threshold-${idx}`,
                 size: CARD_SIZES.XSMALLWIDE,
                 type: CARD_TYPES.VALUE,
-                content: [{ value: v, thresholds: stringThresholds }],
+                content: {
+                  attributes: [{ dataSourceId: 'v', thresholds: stringThresholds }],
+                },
+                values: { v },
               }))
           )}
       />,
@@ -676,18 +678,21 @@ storiesOf('Dashboard (Experimental)', module)
           id: `xsmallwide-multi-${idx}`,
           size: CARD_SIZES.XSMALLWIDE,
           type: CARD_TYPES.VALUE,
-          content: [
-            {
-              value: v[1],
-              unit: v[2],
-              title: v[3],
-            },
-            {
-              value: v[4],
-              unit: v[5],
-              title: v[6],
-            },
-          ],
+          content: {
+            attributes: [
+              {
+                dataSourceId: 'v1',
+                unit: v[2],
+                label: v[3],
+              },
+              {
+                dataSourceId: 'v2',
+                unit: v[5],
+                label: v[6],
+              },
+            ],
+          },
+          values: { v1: v[1], v2: v[4] },
         }))}
       />,
       <Dashboard
@@ -744,34 +749,37 @@ storiesOf('Dashboard (Experimental)', module)
           id: `xsmallwide-multi-${idx}`,
           size: CARD_SIZES.XSMALLWIDE,
           type: CARD_TYPES.VALUE,
-          content: [
-            {
-              value: v[1],
-              unit: v[2],
-              title: v[3],
-              secondaryValue:
-                v[5] !== null
-                  ? {
-                      value: v[4],
-                      trend: v[5],
-                      color: v[6],
-                    }
-                  : undefined,
-            },
-            {
-              value: v[7],
-              unit: v[8],
-              title: v[9],
-              secondaryValue:
-                v[11] !== null
-                  ? {
-                      value: v[10],
-                      trend: v[11],
-                      color: v[12],
-                    }
-                  : undefined,
-            },
-          ],
+          content: {
+            attributes: [
+              {
+                dataSourceId: 'v1',
+                unit: v[2],
+                label: v[3],
+                secondaryValue:
+                  v[5] !== null
+                    ? {
+                        dataSourceId: 'v1trend',
+                        trend: v[5],
+                        color: v[6],
+                      }
+                    : undefined,
+              },
+              {
+                dataSourceId: 'v2',
+                unit: v[8],
+                label: v[9],
+                secondaryValue:
+                  v[11] !== null
+                    ? {
+                        dataSourceId: 'v2trend',
+                        trend: v[11],
+                        color: v[12],
+                      }
+                    : undefined,
+              },
+            ],
+          },
+          values: { v1: v[1], v1trend: v[4], v2: v[7], v2trend: v[10] },
         }))}
       />,
       <Dashboard
@@ -785,10 +793,13 @@ storiesOf('Dashboard (Experimental)', module)
           id: `xsmallwide-multi-number-threshold-${idx}`,
           size: CARD_SIZES.XSMALLWIDE,
           type: CARD_TYPES.VALUE,
-          content: [
-            { value: v[0], unit: v[1], title: v[2], thresholds: numberThresholds },
-            { value: v[3], unit: v[4], title: v[5], thresholds: numberThresholds },
-          ],
+          content: {
+            attributes: [
+              { dataSourceId: 'v1', unit: v[1], label: v[2], thresholds: numberThresholds },
+              { dataSourceId: 'v2', unit: v[4], label: v[5], thresholds: numberThresholds },
+            ],
+          },
+          values: { v1: v[0], v2: v[3] },
         }))}
       />,
       <Dashboard
@@ -845,41 +856,58 @@ storiesOf('Dashboard (Experimental)', module)
           id: `xsmallwide-multi-number-threshold-${idx}`,
           size: CARD_SIZES.SMALL,
           type: CARD_TYPES.VALUE,
-          content: [
-            {
-              value: v[1],
-              unit: v[2],
-              title: v[3],
-              thresholds:
-                idx === 1 ? stringThresholds : idx === 2 ? stringThresholdsWithIcons : undefined,
-              secondaryValue:
-                v[4] !== null
-                  ? { value: v[1] / 5, trend: v[4], color: v[4] === 'down' ? 'red' : 'green' }
-                  : undefined,
-            },
-            {
-              value: v[5],
-              unit: v[6],
-              title: v[7],
-              thresholds:
-                idx === 1 ? stringThresholds : idx === 2 ? stringThresholdsWithIcons : undefined,
-              secondaryValue:
-                v[8] !== null
-                  ? { value: v[5] / 5, trend: v[8], color: v[8] === 'down' ? 'red' : 'green' }
-                  : undefined,
-            },
-            {
-              value: v[9],
-              unit: v[10],
-              title: v[11],
-              thresholds:
-                idx === 1 ? stringThresholds : idx === 2 ? stringThresholdsWithIcons : undefined,
-              secondaryValue:
-                v[12] !== null
-                  ? { trend: v[12], color: v[12] === 'down' ? 'red' : 'green' }
-                  : undefined,
-            },
-          ],
+          content: {
+            attributes: [
+              {
+                dataSourceId: 'v1',
+                unit: v[2],
+                label: v[3],
+                thresholds:
+                  idx === 1 ? stringThresholds : idx === 2 ? stringThresholdsWithIcons : undefined,
+                secondaryValue:
+                  v[4] !== null
+                    ? {
+                        dataSourceId: 'v1trend',
+                        trend: v[4],
+                        color: v[4] === 'down' ? 'red' : 'green',
+                      }
+                    : undefined,
+              },
+              {
+                dataSourceId: 'v2',
+                unit: v[6],
+                label: v[7],
+                thresholds:
+                  idx === 1 ? stringThresholds : idx === 2 ? stringThresholdsWithIcons : undefined,
+                secondaryValue:
+                  v[8] !== null
+                    ? {
+                        dataSourceId: 'v2trend',
+                        trend: v[8],
+                        color: v[8] === 'down' ? 'red' : 'green',
+                      }
+                    : undefined,
+              },
+              {
+                dataSourceId: 'v3',
+                unit: v[10],
+                label: v[11],
+                thresholds:
+                  idx === 1 ? stringThresholds : idx === 2 ? stringThresholdsWithIcons : undefined,
+                secondaryValue:
+                  v[12] !== null
+                    ? { trend: v[12], color: v[12] === 'down' ? 'red' : 'green' }
+                    : undefined,
+              },
+            ],
+          },
+          values: {
+            v1: v[1],
+            v1trend: v[1] / 5,
+            v2: v[5],
+            v2trend: v[5] / 5,
+            v3: v[9],
+          },
         }))}
       />,
     ];
