@@ -23,7 +23,7 @@ storiesOf('TimeSeriesCard (Experimental)', module)
             series: {
               label: 'Temperature',
               dataSourceId: 'temperature',
-              color: text('color', COLORS.RED),
+              // color: text('color', COLORS.PURPLE),
             },
             xLabel: text('xLabel', 'X Axis'),
             yLabel: text('yLabel', 'Y Axis'),
@@ -49,12 +49,12 @@ storiesOf('TimeSeriesCard (Experimental)', module)
               {
                 label: 'Temperature',
                 dataSourceId: 'temperature',
-                color: COLORS.RED,
+                color: text('color', COLORS.PURPLE),
               },
               {
                 label: 'Pressure',
                 dataSourceId: 'pressure',
-                color: COLORS.BLUE,
+                color: COLORS.TEAL,
               },
             ],
             timeDataSourceId: 'timestamp',
@@ -78,7 +78,7 @@ storiesOf('TimeSeriesCard (Experimental)', module)
             series: {
               label: 'Temperature',
               dataSourceId: 'temperature',
-              color: COLORS.RED,
+              color: COLORS.PURPLE,
             },
             timeDataSourceId: 'timestamp',
           })}
@@ -107,7 +107,7 @@ storiesOf('TimeSeriesCard (Experimental)', module)
             series: {
               label: 'Pressure',
               dataSourceId: 'pressure',
-              color: COLORS.BLUE,
+              color: COLORS.MAGENTA,
             },
             timeDataSourceId: 'timestamp',
           })}
@@ -134,7 +134,7 @@ storiesOf('TimeSeriesCard (Experimental)', module)
             series: {
               label: 'Temperature',
               dataSourceId: 'temperature',
-              color: COLORS.RED,
+              color: COLORS.PURPLE,
             },
             timeDataSourceId: 'timestamp',
           })}
@@ -158,7 +158,7 @@ storiesOf('TimeSeriesCard (Experimental)', module)
             series: {
               label: 'Temperature',
               dataSourceId: 'temperature',
-              color: COLORS.RED,
+              color: COLORS.PURPLE,
             },
             timeDataSourceId: 'timestamp',
           })}
