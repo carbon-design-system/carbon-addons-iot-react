@@ -10,6 +10,7 @@ import {
   SelectItem,
   SkeletonText,
 } from 'carbon-components-react';
+import { pure } from 'recompose';
 import Close16 from '@carbon/icons-react/lib/close/16';
 import Popup20 from '@carbon/icons-react/lib/popup/20';
 import styled from 'styled-components';
@@ -26,6 +27,8 @@ import {
 } from '../../constants/LayoutConstants';
 import { CardPropTypes } from '../../constants/PropTypes';
 import { getCardMinSize } from '../../utils/componentUtilityFunctions';
+
+const OptimizedSkeletonText = pure(SkeletonText);
 
 /** Full card */
 const CardWrapper = styled.div`
@@ -249,7 +252,11 @@ const Card = ({
           <EmptyMessageWrapper>{error}</EmptyMessageWrapper>
         ) : isLoading ? (
           <SkeletonWrapper>
-            <SkeletonText paragraph lineCount={size === CARD_SIZES.XSMALL ? 2 : 3} width="100%" />
+            <OptimizedSkeletonText
+              paragraph
+              lineCount={size === CARD_SIZES.XSMALL ? 2 : 3}
+              width="100%"
+            />
           </SkeletonWrapper>
         ) : isEmpty ? (
           <EmptyMessageWrapper>{isXS ? noDataShortLabel : noDataLabel}</EmptyMessageWrapper>
