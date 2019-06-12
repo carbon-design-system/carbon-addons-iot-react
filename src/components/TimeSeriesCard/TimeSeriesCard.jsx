@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { renderToString } from 'react-dom/server';
+import ReactDOMServer from 'react-dom/server';
 import moment from 'moment';
 import styled from 'styled-components';
 import C3Chart from 'react-c3js';
@@ -221,7 +221,7 @@ class TimeSeriesCard extends Component {
       </Fragment>
     );
 
-    return renderToString(content);
+    return ReactDOMServer.renderToString(content);
   };
 
   render() {
