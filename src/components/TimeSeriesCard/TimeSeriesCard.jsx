@@ -262,8 +262,8 @@ class TimeSeriesCard extends Component {
         : range.min;
     const max = range === undefined ? undefined : range.max ? range.max : moment().toISOString();
 
-    const maxY =
-      Array.isArray(series) && series.length
+    const maxY = values
+      ? Array.isArray(series) && series.length
         ? series
             .map(item =>
               values
@@ -274,10 +274,11 @@ class TimeSeriesCard extends Component {
         : values.length &&
           values
             .map(i => i[series.dataSourceId])
-            .reduce((maxValue, current) => (current > maxValue ? current : maxValue));
+            .reduce((maxValue, current) => (current > maxValue ? current : maxValue))
+      : undefined;
 
-    const minY =
-      Array.isArray(series) && series.length
+    const minY = values
+      ? Array.isArray(series) && series.length
         ? series
             .map(item =>
               values
@@ -288,7 +289,8 @@ class TimeSeriesCard extends Component {
         : values.length &&
           values
             .map(i => i[series.dataSourceId])
-            .reduce((minValue, current) => (current < minValue ? current : minValue), maxY);
+            .reduce((minValue, current) => (current < minValue ? current : minValue), maxY)
+      : undefined;
 
     const chartData = !isEmpty(values)
       ? series.label === undefined
