@@ -95,7 +95,7 @@ const SimplePagination = ({
       <StyledPageLabel maxPage={maxPage}>
         {pageText ? `${pageText} ${page}` : pageOfPagesText(page, maxPage)}
       </StyledPageLabel>
-      {maxPage >= 1 ? (
+      {maxPage > 1 ? (
         <>
           <StyledButton
             role="button"
