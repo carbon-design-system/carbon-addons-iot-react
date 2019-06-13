@@ -169,12 +169,12 @@ const determineAttributes = (size, attributes) => {
     case CARD_SIZES.WIDE:
       attributeCount = 3;
       break;
-    case CARD_SIZES.TALL:
     case CARD_SIZES.LARGE:
       attributeCount = 5;
       break;
+    case CARD_SIZES.TALL:
     case CARD_SIZES.XLARGE:
-      attributeCount = 6;
+      attributeCount = 7;
       break;
     default:
   }

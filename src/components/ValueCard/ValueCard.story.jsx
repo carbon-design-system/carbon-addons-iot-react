@@ -319,6 +319,41 @@ storiesOf('ValueCard', module)
       </div>
     );
   })
+  .add('small / vertical /  3', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
+    return (
+      <div style={{ width: text('cardWidth', `${getCardMinSize('lg', size).x}px`), margin: 20 }}>
+        <ValueCard
+          title={text('title', 'Facility Conditions')}
+          id="facilitycard"
+          content={{
+            attributes: object('attributes', [
+              { label: 'Comfort Level', dataSourceId: 'comfortLevel', unit: '%' },
+              {
+                label: 'Average Temperature',
+                dataSourceId: 'averageTemp',
+                unit: '˚F',
+                precision: 1,
+              },
+              {
+                label: 'Humidity',
+                dataSourceId: 'humidity',
+                unit: '˚F',
+                precision: 1,
+              },
+            ]),
+          }}
+          breakpoint="lg"
+          size={size}
+          values={{
+            comfortLevel: number('comfortLevel', 89),
+            averageTemp: number('averageTemp', 76.7),
+            humidity: number('humidity', 76.7),
+          }}
+        />
+      </div>
+    );
+  })
   .add('small / horizontal /  2', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
     return (
@@ -394,8 +429,8 @@ storiesOf('ValueCard', module)
                 precision: 1,
               },
               { label: 'Utilization', dataSourceId: 'utilization', unit: '%' },
-              { label: 'Utilization', dataSourceId: 'next', unit: '%' },
-              { label: 'Utilization', dataSourceId: 'next2', unit: '%' },
+              { label: 'Humidity', dataSourceId: 'humidity', unit: '%' },
+              { label: 'Air Flow', dataSourceId: 'air_flow' },
             ]),
           }}
           breakpoint="lg"
@@ -404,12 +439,14 @@ storiesOf('ValueCard', module)
             comfortLevel: number('comfortLevel', 89),
             averageTemp: number('averageTemp', 76.7),
             utilization: number('utilization', 76),
+            humidity: number('humidity', 50),
+            air_flow: number('air_flow', 0.567),
           }}
         />
       </div>
     );
   })
-  .add('tall / vertical /  5', () => {
+  .add('tall / vertical /  6', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.TALL);
     return (
       <div style={{ width: text('cardWidth', `300px`), margin: 20 }}>
@@ -427,7 +464,9 @@ storiesOf('ValueCard', module)
               },
               { label: 'Utilization', dataSourceId: 'utilization', unit: '%' },
               { label: 'Utilization', dataSourceId: 'next', unit: '%' },
-              { label: 'Utilization', dataSourceId: 'next2', unit: '%' },
+              { label: 'Humidity', dataSourceId: 'humidity', unit: '%' },
+              { label: 'Utilization', dataSourceId: 'next3', unit: '%' },
+              { label: 'Utilization', dataSourceId: 'next4', unit: '%' },
             ]),
           }}
           breakpoint="lg"
@@ -436,6 +475,7 @@ storiesOf('ValueCard', module)
             comfortLevel: number('comfortLevel', 89),
             averageTemp: number('averageTemp', 76.7),
             utilization: number('utilization', 76),
+            humidity: number('humidity', 76),
           }}
         />
       </div>
