@@ -130,12 +130,21 @@ const StyledTableRow = styled(TableRow)`
 const StyledSingleSelectedTableRow = styled(TableRow)`
   &&& {
     background: ${COLORS.lightBlue};
-    border-left: 5px solid ${COLORS.blue};
 
-    td {
-      margin-left: -5px;
+    td:first-of-type {
+      position: relative;
     }
-  }
+
+    td:first-of-type:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 3px;
+      background-color: ${COLORS.blue};
+      border-right: solid 1px rgb(223,227,230);
+    }
 `;
 
 const StyledTableExpandRow = styled(TableExpandRow)`
@@ -180,6 +189,28 @@ const StyledTableExpandRow = styled(TableExpandRow)`
         }
       }
     }
+
+    ${props =>
+      props.hasRowSelection === 'single' && props.isSelected
+        ? `
+        background: ${COLORS.lightBlue};
+
+        td:first-of-type {
+          position: relative;
+        }
+    
+        td:first-of-type:after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 3px;
+          background-color: ${COLORS.blue};
+          border-right: solid 1px rgb(223,227,230);
+        }
+        `
+        : ``}
   }
 `;
 
@@ -231,6 +262,28 @@ const StyledTableExpandRowExpanded = styled(TableExpandRow)`
     }
     `
         : ``}
+
+    ${props =>
+      props.hasRowSelection === 'single' && props.isSelected
+        ? `
+        background: ${COLORS.lightBlue};
+
+        td:first-of-type {
+          position: relative;
+        }
+    
+        td:first-of-type:after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 3px;
+          background-color: ${COLORS.blue};
+          border-right: solid 1px rgb(223,227,230);
+        }
+        `
+        : ``}
   }
 `;
 
@@ -252,6 +305,28 @@ const StyledExpansionTableRow = styled(TableRow)`
         border-width: 0 0 0 4px;
       }
     }
+
+    ${props =>
+      props.hasRowSelection === 'single' && props.isSelected
+        ? `
+        background: ${COLORS.lightBlue};
+
+        td:first-of-type {
+          position: relative;
+        }
+    
+        td:first-of-type:after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 3px;
+          background-color: ${COLORS.blue};
+          border-right: solid 1px rgb(223,227,230);
+        }
+        `
+        : ``}
   }
 `;
 
@@ -310,7 +385,11 @@ const TableBodyRow = ({
   rowActionsError,
   rowDetails,
 }) => {
-  const nestingOffset = nestingLevel * 16;
+  const singleSelectionIndicatorWidth = hasRowSelection === 'single' ? 0 : 5;
+  const nestingOffset =
+    hasRowSelection === 'single'
+      ? nestingLevel * 16 - singleSelectionIndicatorWidth
+      : nestingLevel * 16;
   const rowSelectionCell =
     hasRowSelection === 'multi' ? (
       <StyledCheckboxTableCell
@@ -397,6 +476,8 @@ const TableBodyRow = ({
           ariaLabel={clickToCollapseAria}
           expandIconDescription={clickToCollapseAria}
           isExpanded
+          isSelected={isSelected}
+          hasRowSelection={hasRowSelection}
           data-row-nesting={hasRowNesting}
           data-nesting-offset={nestingOffset}
           onExpand={evt => stopPropagationAndCallback(evt, onRowExpanded, id, false)}
@@ -428,6 +509,8 @@ const TableBodyRow = ({
         ariaLabel={clickToExpandAria}
         expandIconDescription={clickToExpandAria}
         isExpanded={false}
+        isSelected={isSelected}
+        hasRowSelection={hasRowSelection}
         onExpand={evt => stopPropagationAndCallback(evt, onRowExpanded, id, true)}
         onClick={() => {
           if (shouldExpandOnRowClick) {
@@ -455,6 +538,8 @@ const TableBodyRow = ({
   ) : (
     <StyledTableRow
       key={id}
+      isSelected={isSelected}
+      hasRowSelection={hasRowSelection}
       onClick={() => {
         if (hasRowSelection === 'single') {
           onRowSelected(id, true);
