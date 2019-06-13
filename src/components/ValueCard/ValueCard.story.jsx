@@ -327,21 +327,67 @@ storiesOf('ValueCard', module)
           title={text('title', 'Facility Conditions')}
           id="facilitycard"
           content={{
-            attributes: object('attributes', [
-              { label: 'Comfort Level', dataSourceId: 'comfortLevel', unit: '%' },
+            attributes: [
+              {
+                label: 'Comfort Level',
+                dataSourceId: 'comfortLevel',
+                unit: '%',
+                thresholds: [
+                  {
+                    comparison: '>',
+                    value: 80,
+                    color: '#F00',
+                    icon: 'icon--warning',
+                  },
+                  {
+                    comparison: '<',
+                    value: 80,
+                    color: '#5aa700',
+                    icon: 'icon--checkmark--outline',
+                  },
+                ],
+              },
               {
                 label: 'Average Temperature',
                 dataSourceId: 'averageTemp',
                 unit: '˚F',
                 precision: 1,
+                thresholds: [
+                  {
+                    comparison: '>',
+                    value: 80,
+                    color: '#F00',
+                    icon: 'icon--warning',
+                  },
+                  {
+                    comparison: '<',
+                    value: 80,
+                    color: '#5aa700',
+                    icon: 'icon--checkmark--outline',
+                  },
+                ],
               },
               {
                 label: 'Humidity',
                 dataSourceId: 'humidity',
                 unit: '˚F',
                 precision: 1,
+                thresholds: [
+                  {
+                    comparison: '>',
+                    value: 80,
+                    color: '#F00',
+                    icon: 'icon--warning',
+                  },
+                  {
+                    comparison: '<',
+                    value: 80,
+                    color: '#5aa700',
+                    icon: 'icon--checkmark--outline',
+                  },
+                ],
               },
-            ]),
+            ],
           }}
           breakpoint="lg"
           size={size}

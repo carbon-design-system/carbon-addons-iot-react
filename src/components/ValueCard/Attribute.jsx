@@ -51,6 +51,10 @@ const AttributeSecondaryValue = styled.div`
   margin-bottom: 0.25rem;
 `;
 
+const StyledIcon = styled.div`
+  margin-left: auto;
+`;
+
 const propTypes = {
   value: PropTypes.any, // eslint-disable-line
   unit: PropTypes.any, // eslint-disable-line
@@ -156,7 +160,6 @@ const Attribute = ({
             {!measuredSize || measuredSize.width > 100 ? (
               <UnitRenderer value={value} unit={unit} layout={layout} />
             ) : null}
-            {thresholdIcon}
             {!isNil(secondaryValue) && (!measuredSize || measuredSize.width > 100) ? (
               <AttributeSecondaryValue color={secondaryValue.color} trend={secondaryValue.trend}>
                 {secondaryValue.trend && secondaryValue.trend === 'up' ? (
@@ -167,6 +170,7 @@ const Attribute = ({
                 {secondaryValue.value}
               </AttributeSecondaryValue>
             ) : null}
+            {thresholdIcon ? <StyledIcon>{thresholdIcon}</StyledIcon> : null}
           </StyledAttribute>
         );
       }}
