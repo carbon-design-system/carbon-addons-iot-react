@@ -64,11 +64,11 @@ const AttributeSeparator = styled.hr`
  * Returns the font size in rems for a label
  * @param {*} param0
  */
-const determineLabelFontSize = ({ size, layout, isVertical }) => {
+const determineLabelFontSize = ({ size, layout, attributeCount, isVertical }) => {
   if (layout === CARD_LAYOUTS.HORIZONTAL && !CARD_SIZES.WIDE) {
     return 1.25;
   }
-  if (isVertical) {
+  if (isVertical && attributeCount > 1) {
     return 0.875;
   }
   let fontSize = 1.25;
@@ -79,12 +79,32 @@ const determineLabelFontSize = ({ size, layout, isVertical }) => {
       break;
     case CARD_SIZES.SMALL:
     case CARD_SIZES.TALL:
-    case CARD_SIZES.WIDE:
-      fontSize = 1;
+      fontSize = !isVertical ? 1 : 1.25;
       break;
+
+    case CARD_SIZES.WIDE:
     default:
   }
   return fontSize;
+};
+
+/** * Determines the label alignment */
+const getLabelAlignment = ({ size, isVertical, attributeCount }) => {
+  if (attributeCount === 1 && size === CARD_SIZES.SMALL && isVertical) {
+    return 'center';
+  }
+  return isVertical ? 'left' : 'right';
+};
+
+const shouldLabelWrap = ({ title, isVertical }) => {
+  if (!title || isVertical) {
+    return false;
+  }
+  const words = title.split(' ');
+  if (words.length > 1 && words.length < 3) {
+    return true;
+  }
+  return false;
 };
 
 /**
@@ -92,7 +112,7 @@ const determineLabelFontSize = ({ size, layout, isVertical }) => {
  */
 const AttributeLabel = styled.div`
   ${props => `font-size: ${determineLabelFontSize(props)}rem;`};
-  text-align: ${props => (props.isVertical ? 'left' : 'right')};
+  text-align: ${props => getLabelAlignment(props)};
   ${props =>
     (props.isVertical || props.size === CARD_SIZES.XSMALL || props.size === CARD_SIZES.SMALL) &&
     `padding-top: 0.25rem;`};
@@ -100,7 +120,7 @@ const AttributeLabel = styled.div`
   order: ${props => (props.isVertical && props.size !== CARD_SIZES.XSMALLWIDE ? 0 : 2)};
   color: ${COLORS.gray};
   font-weight: lighter;
-  white-space: nowrap;
+  ${props => (shouldLabelWrap(props) ? `` : `white-space: nowrap;`)}
   text-overflow: ellipsis;
   overflow: hidden;
   padding-bottom: 0.25rem;
@@ -207,6 +227,13 @@ const ValueCard = ({ title, content, size, values, ...others }) => {
                     <Attribute
                       isVertical={isVertical}
                       layout={layout}
+                      isSmall={
+                        size === CARD_SIZES.XSMALL &&
+                        (attribute.secondaryValue !== undefined || attribute.label !== undefined)
+                      }
+                      alignValue={
+                        size === CARD_SIZES.SMALL && attributes.length === 1 ? 'center' : undefined
+                      }
                       {...attribute}
                       size={size}
                       value={determineValue(attribute.dataSourceId, values)}
@@ -221,6 +248,7 @@ const ValueCard = ({ title, content, size, values, ...others }) => {
                       title={attribute.label}
                       isVertical={isVertical}
                       layout={layout}
+                      attributeCount={attributes.length}
                       size={size}
                     >
                       {attribute.label}

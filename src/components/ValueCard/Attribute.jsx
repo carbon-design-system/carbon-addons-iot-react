@@ -14,6 +14,7 @@ import UnitRenderer from './UnitRenderer';
 const StyledAttribute = styled.div`
   display: flex;
   align-items: flex-end;
+  ${props => (props.isVertical && props.alignValue ? `justify-content: ${props.alignValue};` : '')};
   order: 1;
   ${props =>
     !props.label || props.isVertical || props.size === CARD_SIZES.XSMALL
@@ -58,6 +59,8 @@ const StyledIcon = styled.div`
 const propTypes = {
   value: PropTypes.any, // eslint-disable-line
   unit: PropTypes.any, // eslint-disable-line
+  /** css rule */
+  alignValue: PropTypes.oneOf(['flex-end', 'center']),
   layout: PropTypes.oneOf(Object.values(CARD_LAYOUTS)),
   /** Optional trend information */
   secondaryValue: PropTypes.shape({
@@ -85,6 +88,7 @@ const defaultProps = {
   precision: 0,
   thresholds: [],
   isVertical: false,
+  alignValue: null,
   isSmall: false,
   label: null,
   secondaryValue: null,
@@ -101,6 +105,7 @@ const Attribute = ({
   thresholds,
   precision,
   isVertical,
+  alignValue,
   isSmall,
   label,
   size, // eslint-disable-line
@@ -141,7 +146,12 @@ const Attribute = ({
     <withSize.SizeMe>
       {({ size: measuredSize }) => {
         return (
-          <StyledAttribute size={size} isVertical={isVertical} label={label}>
+          <StyledAttribute
+            size={size}
+            alignValue={alignValue}
+            isVertical={isVertical}
+            label={label}
+          >
             {!isNil(value) ? (
               <ValueRenderer
                 value={value}
