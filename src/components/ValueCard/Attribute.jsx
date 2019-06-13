@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import isNil from 'lodash/isNil';
 import { Icon } from 'carbon-components-react';
 import { iconCaretUp, iconCaretDown } from 'carbon-icons';
+import withSize from 'react-sizeme';
 
 import { CARD_LAYOUTS } from '../../constants/LayoutConstants';
 
@@ -44,6 +45,7 @@ const AttributeSecondaryValue = styled.div`
   fill: ${props => props.color || '#777'};
   font-size: 0.875rem;
   padding-left: 0.25rem;
+  margin-bottom: 0.25rem;
 `;
 
 const propTypes = {
@@ -122,34 +124,42 @@ const Attribute = ({
     ) : null;
 
   return (
-    <StyledAttribute>
-      {!isNil(value) ? (
-        <ValueRenderer
-          value={value}
-          unit={unit}
-          layout={layout}
-          isSmall={isSmall}
-          thresholds={thresholds}
-          precision={precision}
-          isVertical={isVertical}
-          color={valueColor}
-        />
-      ) : (
-        ' '
-      )}
-      <UnitRenderer value={value} unit={unit} layout={layout} />
-      {thresholdIcon}
-      {!isNil(secondaryValue) ? (
-        <AttributeSecondaryValue color={secondaryValue.color} trend={secondaryValue.trend}>
-          {secondaryValue.trend && secondaryValue.trend === 'up' ? (
-            <TrendIcon icon={iconCaretUp} />
-          ) : secondaryValue.trend === 'down' ? (
-            <TrendIcon icon={iconCaretDown} />
-          ) : null}
-          {secondaryValue.value}
-        </AttributeSecondaryValue>
-      ) : null}
-    </StyledAttribute>
+    <withSize.SizeMe>
+      {({ size: measuredSize }) => {
+        return (
+          <StyledAttribute>
+            {!isNil(value) ? (
+              <ValueRenderer
+                value={value}
+                unit={unit}
+                layout={layout}
+                isSmall={isSmall}
+                thresholds={thresholds}
+                precision={precision}
+                isVertical={isVertical}
+                color={valueColor}
+              />
+            ) : (
+              ' '
+            )}
+            {!measuredSize || measuredSize.width > 100 ? (
+              <UnitRenderer value={value} unit={unit} layout={layout} />
+            ) : null}
+            {thresholdIcon}
+            {!isNil(secondaryValue) && (!measuredSize || measuredSize.width > 100) ? (
+              <AttributeSecondaryValue color={secondaryValue.color} trend={secondaryValue.trend}>
+                {secondaryValue.trend && secondaryValue.trend === 'up' ? (
+                  <TrendIcon icon={iconCaretUp} />
+                ) : secondaryValue.trend === 'down' ? (
+                  <TrendIcon icon={iconCaretDown} />
+                ) : null}
+                {secondaryValue.value}
+              </AttributeSecondaryValue>
+            ) : null}
+          </StyledAttribute>
+        );
+      }}
+    </withSize.SizeMe>
   );
 };
 

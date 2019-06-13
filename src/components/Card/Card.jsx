@@ -254,7 +254,7 @@ const Card = ({
           <SkeletonWrapper>
             <OptimizedSkeletonText
               paragraph
-              lineCount={size === CARD_SIZES.XSMALL ? 2 : 3}
+              lineCount={size === CARD_SIZES.XSMALL || size === CARD_SIZES.XSMALLWIDE ? 2 : 3}
               width="100%"
             />
           </SkeletonWrapper>

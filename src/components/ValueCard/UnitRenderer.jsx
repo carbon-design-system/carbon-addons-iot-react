@@ -23,6 +23,7 @@ const AttributeUnit = styled.span`
       : `font-size: 1.5rem`};
   font-weight: lighter;
   white-space: nowrap;
+  margin-bottom: 0.25rem;
 `;
 
 /** This components job is determining how to render different kinds units */

@@ -7,7 +7,7 @@ import { getCardMinSize } from '../../utils/componentUtilityFunctions';
 
 import ValueCard from './ValueCard';
 
-storiesOf('ValueCard (Experimental)', module)
+storiesOf('ValueCard', module)
   .add('xsmall / basic', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.XSMALL);
     return (
@@ -30,7 +30,29 @@ storiesOf('ValueCard (Experimental)', module)
       </div>
     );
   })
-  .add('xsmall / with title', () => {
+  .add('xsmall / units', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.XSMALL);
+    return (
+      <div style={{ width: text('cardWidth', `150px`), margin: 20 }}>
+        <ValueCard
+          title={text('title', 'Occupancy')}
+          id="facilitycard"
+          content={{
+            attributes: object('attributes', [
+              {
+                dataSourceId: 'occupancy',
+                unit: '%',
+              },
+            ]),
+          }}
+          breakpoint="lg"
+          size={size}
+          values={{ occupancy: number('occupancy', 88) }}
+        />
+      </div>
+    );
+  })
+  .add('xsmall / title', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.XSMALL);
     return (
       <div style={{ width: text('cardWidth', `${getCardMinSize('lg', size).x}px`), margin: 20 }}>
@@ -55,7 +77,7 @@ storiesOf('ValueCard (Experimental)', module)
   .add('xsmall / trend down', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.XSMALL);
     return (
-      <div style={{ width: text('cardWidth', `${getCardMinSize('lg', size).x}px`), margin: 20 }}>
+      <div style={{ width: text('cardWidth', `150px`), margin: 20 }}>
         <ValueCard
           title={text('title', 'Foot Traffic')}
           id="facilitycard"
@@ -77,7 +99,7 @@ storiesOf('ValueCard (Experimental)', module)
   .add('xsmall / trend up', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.XSMALL);
     return (
-      <div style={{ width: text('cardWidth', `${getCardMinSize('lg', size).x}px`), margin: 20 }}>
+      <div style={{ width: text('cardWidth', `150px`), margin: 20 }}>
         <ValueCard
           title={text('title', 'Alert Count')}
           id="facilitycard"
@@ -134,8 +156,8 @@ storiesOf('ValueCard (Experimental)', module)
       </div>
     );
   })
-  .add('xsmallwide / thresholds (number, icon)', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.XSMALLWIDE);
+  .add('xsmall / thresholds (number, icon)', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.XSMALL);
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <ValueCard
@@ -193,12 +215,12 @@ storiesOf('ValueCard (Experimental)', module)
           }}
           breakpoint="lg"
           size={size}
-          values={{ status: text('status', 'Bad') }}
+          values={{ status: text('status', 'Unhealthy') }}
         />
       </div>
     );
   })
-  .add('small / single', () => {
+  .add('small / vertical / single', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
     return (
       <div style={{ width: text('cardWidth', `${getCardMinSize('lg', size).x}px`), margin: 20 }}>
@@ -217,10 +239,190 @@ storiesOf('ValueCard (Experimental)', module)
       </div>
     );
   })
-  .add('small / multiple', () => {
+  .add('small / vertical / multiple', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
     return (
       <div style={{ width: text('cardWidth', `${getCardMinSize('lg', size).x}px`), margin: 20 }}>
+        <ValueCard
+          title={text('title', 'Facility Conditions')}
+          id="facilitycard"
+          content={{
+            attributes: object('attributes', [
+              { label: 'Comfort Level', dataSourceId: 'comfortLevel', unit: '%' },
+              {
+                label: 'Average Temperature',
+                dataSourceId: 'averageTemp',
+                unit: '˚F',
+                precision: 1,
+              },
+              { label: 'Utilization', dataSourceId: 'utilization', unit: '%' },
+            ]),
+          }}
+          breakpoint="lg"
+          size={size}
+          values={{
+            comfortLevel: number('comfortLevel', 89),
+            averageTemp: number('averageTemp', 76.7),
+            utilization: number('utilization', 76),
+          }}
+        />
+      </div>
+    );
+  })
+  .add('small / vertical /  2', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
+    return (
+      <div style={{ width: text('cardWidth', `${getCardMinSize('lg', size).x}px`), margin: 20 }}>
+        <ValueCard
+          title={text('title', 'Facility Conditions')}
+          id="facilitycard"
+          content={{
+            attributes: object('attributes', [
+              { label: 'Comfort Level', dataSourceId: 'comfortLevel', unit: '%' },
+              {
+                label: 'Average Temperature',
+                dataSourceId: 'averageTemp',
+                unit: '˚F',
+                precision: 1,
+              },
+            ]),
+          }}
+          breakpoint="lg"
+          size={size}
+          values={{
+            comfortLevel: number('comfortLevel', 89),
+            averageTemp: number('averageTemp', 76.7),
+          }}
+        />
+      </div>
+    );
+  })
+  .add('small / horizontal /  2', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
+    return (
+      <div style={{ width: text('cardWidth', `300px`), margin: 20 }}>
+        <ValueCard
+          title={text('title', 'Facility Conditions')}
+          id="facilitycard"
+          content={{
+            attributes: object('attributes', [
+              { label: 'Comfort Level', dataSourceId: 'comfortLevel', unit: '%' },
+              {
+                label: 'Average Temperature',
+                dataSourceId: 'averageTemp',
+                unit: '˚F',
+                precision: 1,
+              },
+            ]),
+          }}
+          breakpoint="lg"
+          size={size}
+          values={{
+            comfortLevel: number('comfortLevel', 89),
+            averageTemp: number('averageTemp', 76.7),
+          }}
+        />
+      </div>
+    );
+  })
+  .add('medium / horizontal /  3', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
+    return (
+      <div style={{ width: text('cardWidth', `300px`), margin: 20 }}>
+        <ValueCard
+          title={text('title', 'Facility Conditions')}
+          id="facilitycard"
+          content={{
+            attributes: object('attributes', [
+              { label: 'Comfort Level', dataSourceId: 'comfortLevel', unit: '%' },
+              {
+                label: 'Average Temperature',
+                dataSourceId: 'averageTemp',
+                unit: '˚F',
+                precision: 1,
+              },
+              { label: 'Utilization', dataSourceId: 'utilization', unit: '%' },
+            ]),
+          }}
+          breakpoint="lg"
+          size={size}
+          values={{
+            comfortLevel: number('comfortLevel', 89),
+            averageTemp: number('averageTemp', 76.7),
+            utilization: number('utilization', 76),
+          }}
+        />
+      </div>
+    );
+  })
+  .add('large / vertical /  5', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
+    return (
+      <div style={{ width: text('cardWidth', `300px`), margin: 20 }}>
+        <ValueCard
+          title={text('title', 'Facility Conditions')}
+          id="facilitycard"
+          content={{
+            attributes: object('attributes', [
+              { label: 'Comfort Level', dataSourceId: 'comfortLevel', unit: '%' },
+              {
+                label: 'Average Temperature',
+                dataSourceId: 'averageTemp',
+                unit: '˚F',
+                precision: 1,
+              },
+              { label: 'Utilization', dataSourceId: 'utilization', unit: '%' },
+              { label: 'Utilization', dataSourceId: 'next', unit: '%' },
+              { label: 'Utilization', dataSourceId: 'next2', unit: '%' },
+            ]),
+          }}
+          breakpoint="lg"
+          size={size}
+          values={{
+            comfortLevel: number('comfortLevel', 89),
+            averageTemp: number('averageTemp', 76.7),
+            utilization: number('utilization', 76),
+          }}
+        />
+      </div>
+    );
+  })
+  .add('tall / vertical /  5', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.TALL);
+    return (
+      <div style={{ width: text('cardWidth', `300px`), margin: 20 }}>
+        <ValueCard
+          title={text('title', 'Facility Conditions')}
+          id="facilitycard"
+          content={{
+            attributes: object('attributes', [
+              { label: 'Comfort Level', dataSourceId: 'comfortLevel', unit: '%' },
+              {
+                label: 'Average Temperature',
+                dataSourceId: 'averageTemp',
+                unit: '˚F',
+                precision: 1,
+              },
+              { label: 'Utilization', dataSourceId: 'utilization', unit: '%' },
+              { label: 'Utilization', dataSourceId: 'next', unit: '%' },
+              { label: 'Utilization', dataSourceId: 'next2', unit: '%' },
+            ]),
+          }}
+          breakpoint="lg"
+          size={size}
+          values={{
+            comfortLevel: number('comfortLevel', 89),
+            averageTemp: number('averageTemp', 76.7),
+            utilization: number('utilization', 76),
+          }}
+        />
+      </div>
+    );
+  })
+  .add('wide / horizontal /  3', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.WIDE);
+    return (
+      <div style={{ width: text('cardWidth', `300px`), margin: 20 }}>
         <ValueCard
           title={text('title', 'Facility Conditions')}
           id="facilitycard"

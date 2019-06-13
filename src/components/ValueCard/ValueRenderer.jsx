@@ -26,10 +26,13 @@ const Attribute = styled.div`
   overflow: hidden;
   text-overflow: ellipsis;
   ${props => (props.unit || props.isSmall) && !props.isVertical && `max-width: 66%`};
-  ${props => props.color && `color: ${props.color}`}
+  ${props => props.color && `color: ${props.color}`};
+  display: flex;
 `;
 const AttributeValue = styled.span`
+  line-height: ${props => (props.isSmall ? '2.0rem' : '2.5rem')};
   font-size: ${props => (props.isSmall ? '2.0rem' : '2.5rem')};
+  margin-bottom: 0.25rem;
   font-weight: lighter;
   ${props => props.layout === CARD_LAYOUTS.VERTICAL && `text-align: left;`};
   white-space: nowrap;
