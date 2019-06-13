@@ -104,7 +104,12 @@ const AttributeLabel = styled.div`
   ${props =>
     (props.isVertical || props.size === CARD_SIZES.XSMALL || props.size === CARD_SIZES.SMALL) &&
     `padding-top: 0.25rem;`};
-  ${props => !(props.isVertical || props.size === CARD_SIZES.XSMALL) && `padding-left: 0.5rem`};
+  ${props =>
+    !(
+      props.isVertical ||
+      props.size === CARD_SIZES.XSMALL ||
+      props.size === CARD_SIZES.XSMALLWIDE
+    ) && `padding-left: 0.5rem`};
   order: ${props => (props.isVertical && props.size !== CARD_SIZES.XSMALLWIDE ? 0 : 2)};
   color: ${COLORS.gray};
   font-weight: lighter;
@@ -191,12 +196,13 @@ const ValueCard = ({ title, content, size, values, ...others }) => {
   };
 
   const isXS = size === CARD_SIZES.XSMALL;
+  const isXSWide = size === CARD_SIZES.XSMALLWIDE;
 
   return (
     <withSize.SizeMe>
       {({ size: measuredSize }) => {
         // Measure the size to determine whether to render in vertical or horizontal
-        const isVertical = !measuredSize || measuredSize.width < 300;
+        const isVertical = !measuredSize || measuredSize.width < 300 || isXSWide;
         return (
           <Card
             title={title}
