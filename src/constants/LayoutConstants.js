@@ -1,7 +1,7 @@
 export const COLORS = {
-  RED: 'rgb(217,3,103)',
-  BLUE: 'rgb(25,98,253)',
-  YELLOW: 'rgb(254,213,34)',
+  RED: 'rgb(221,95,138)',
+  BLUE: 'rgb(124,210,210)',
+  PURPLE: 'rgb(127,77,240)',
 };
 
 export const CARD_SIZES = {

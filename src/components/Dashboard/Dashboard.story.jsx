@@ -139,7 +139,7 @@ const originalCards = [
       title: 'Alerts',
       data: [
         { label: 'Sev 3', value: 2, color: COLORS.RED },
-        { label: 'Sev 2', value: 7, color: COLORS.YELLOW },
+        { label: 'Sev 2', value: 7, color: COLORS.PURPLE },
         { label: 'Sev 1', value: 32, color: COLORS.BLUE },
       ],
     },
@@ -226,7 +226,7 @@ const originalCards = [
               x: new Date(i.timestamp + timeOffset).toISOString(),
               y: Math.ceil(i.humidity / 10),
             })),
-          color: COLORS.YELLOW,
+          color: COLORS.PURPLE,
         },
         {
           label: 'Sev 3',
@@ -253,7 +253,7 @@ const originalCards = [
       title: 'Alerts',
       data: [
         { label: 'Sev 3', value: 6, color: COLORS.RED },
-        { label: 'Sev 2', value: 9, color: COLORS.YELLOW },
+        { label: 'Sev 2', value: 9, color: COLORS.PURPLE },
         { label: 'Sev 1', value: 18, color: COLORS.BLUE },
       ],
     },

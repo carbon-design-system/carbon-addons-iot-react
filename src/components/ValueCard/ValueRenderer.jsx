@@ -29,7 +29,7 @@ const Attribute = styled.div`
   ${props => props.color && `color: ${props.color}`}
 `;
 const AttributeValue = styled.span`
-  font-size: ${props => (props.isSmall ? '2.5rem' : '3.0rem')};
+  font-size: ${props => (props.isSmall ? '2.0rem' : '2.5rem')};
   font-weight: lighter;
   ${props => props.layout === CARD_LAYOUTS.VERTICAL && `text-align: left;`};
   white-space: nowrap;
