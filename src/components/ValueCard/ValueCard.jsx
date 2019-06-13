@@ -34,21 +34,23 @@ const ContentWrapper = styled.div`
   `}
 `;
 
+/**
+ * Responsible for rendering the Attribute and the Label for a given attribute
+ * isVertical means that the label is rendering above the Attribute
+ */
 const AttributeWrapper = styled.div`
   ${props =>
-    (props.layout === CARD_LAYOUTS.HORIZONTAL || props.size === CARD_SIZES.SMALL) &&
     !props.isVertical
       ? ` flex-direction: row;`
-      : props.layout === CARD_LAYOUTS.VERTICAL || props.isVertical
-      ? ` 
+      : ` 
     padding: 0 ${CARD_CONTENT_PADDING}px;
     flex-direction: column;
     align-items: flex-end;
-  `
-      : ''}
+  `}
   width: 100%;
   display: flex;
   align-items: center;
+  ${props => (props.isVertical ? `` : 'justify-content: space-around;')}
   padding: 0px ${CARD_CONTENT_PADDING}px;
 `;
 
@@ -62,27 +64,46 @@ const AttributeValueWrapper = styled.div`
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  ${props => (props.isVertical ? `width: 100%` : 'max-width: 50%')}
+  ${props => (props.isVertical ? `width: 100%` : 'width: 50%')}
 `;
 
+/**
+ *
+ * Returns the font size in rems for a label
+ * @param {*} param0
+ */
+const determineLabelFontSize = ({ size, layout, isVertical }) => {
+  if (layout === CARD_LAYOUTS.HORIZONTAL && !CARD_SIZES.WIDE) {
+    return 1.25;
+  }
+  if (isVertical) {
+    return 0.875;
+  }
+  let fontSize = 1.25;
+  switch (size) {
+    case CARD_SIZES.XSMALL:
+    case CARD_SIZES.XSMALLWIDE:
+      fontSize = 0.875;
+      break;
+    case CARD_SIZES.SMALL:
+    case CARD_SIZES.TALL:
+    case CARD_SIZES.WIDE:
+      fontSize = 1;
+      break;
+    default:
+  }
+  return fontSize;
+};
+
+/**
+ * Render a given attribute label
+ */
 const AttributeLabel = styled.div`
-  ${props =>
-    props.layout === CARD_LAYOUTS.HORIZONTAL && `padding-bottom: 0.25rem; font-size: 1.25rem;`};
-  ${props =>
-    props.isVertical || (props.size === CARD_SIZES.XSMALL || props.size === CARD_SIZES.XSMALLWIDE)
-      ? `font-size: .875rem`
-      : props.size === CARD_SIZES.SMALL // small can go slightly bigger labels
-      ? `font-size: 1.00rem`
-      : `font-size: 1.25rem`};
-  text-align: ${props =>
-    props.layout === CARD_LAYOUTS.VERTICAL ||
-    props.size === CARD_SIZES.XSMALL ||
-    props.size === CARD_SIZES.XSMALLWIDE
-      ? 'left'
-      : 'right'};
+  ${props => `font-size: ${determineLabelFontSize(props)}rem;`};
+  text-align: ${props => (props.isVertical ? 'left' : 'right')};
   ${props =>
     (props.isVertical || props.size === CARD_SIZES.XSMALL || props.size === CARD_SIZES.SMALL) &&
-    `padding-bottom: 0.25rem; padding-top: 0.25rem;`};
+    `padding-top: 0.25rem;`};
   ${props => !(props.isVertical || props.size === CARD_SIZES.XSMALL) && `padding-left: 0.5rem`};
   order: ${props => (props.isVertical && props.size !== CARD_SIZES.XSMALLWIDE ? 0 : 2)};
   color: ${COLORS.gray};
@@ -90,7 +111,8 @@ const AttributeLabel = styled.div`
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-  ${props => (props.isVertical ? `width: 100%` : 'max-width: 50%')};
+  padding-bottom: 0.25rem;
+  ${props => (props.isVertical ? `width: 100%` : 'width: 50%')};
 `;
 
 const determineLayout = (size, attributes) => {
@@ -251,7 +273,8 @@ const ValueCard = ({ title, content, size, values, ...others }) => {
                         {attribute.label}
                       </AttributeLabel>
                     </AttributeWrapper>
-                    {i < attributes.length - 1 ? (
+                    {i < attributes.length - 1 &&
+                    (isVertical || layout === CARD_LAYOUTS.VERTICAL) ? (
                       <AttributeWrapper
                         layout={layout}
                         isVertical={isVertical}

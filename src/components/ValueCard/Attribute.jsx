@@ -86,6 +86,9 @@ const defaultProps = {
   secondaryValue: null,
 };
 
+/**
+ * An attribute has a Value, Units and maybe a Threshold or Trend.
+ */
 const Attribute = ({
   value,
   unit,
@@ -141,6 +144,7 @@ const Attribute = ({
                 unit={unit}
                 layout={layout}
                 isSmall={isSmall}
+                size={size}
                 thresholds={thresholds}
                 precision={precision}
                 isVertical={isVertical}

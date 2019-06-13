@@ -30,6 +30,28 @@ storiesOf('ValueCard', module)
       </div>
     );
   })
+  .add('xsmall / long', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.XSMALL);
+    return (
+      <div style={{ width: text('cardWidth', `${getCardMinSize('lg', size).x}px`), margin: 20 }}>
+        <ValueCard
+          title={text('title', 'Occupancy')}
+          id="facilitycard"
+          content={{
+            attributes: object('attributes', [
+              {
+                dataSourceId: 'occupancy',
+                unit: '%',
+              },
+            ]),
+          }}
+          breakpoint="lg"
+          size={size}
+          values={{ occupancy: text('occupancy', 'Really really busy') }}
+        />
+      </div>
+    );
+  })
   .add('xsmall / units', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.XSMALL);
     return (

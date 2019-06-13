@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import { CARD_LAYOUTS } from '../../constants/LayoutConstants';
+import { CARD_LAYOUTS, CARD_SIZES } from '../../constants/LayoutConstants';
 
 const propTypes = {
   value: PropTypes.any, // eslint-disable-line
@@ -10,6 +10,8 @@ const propTypes = {
   layout: PropTypes.oneOf(Object.values(CARD_LAYOUTS)),
   isSmall: PropTypes.bool,
   precision: PropTypes.number,
+  /** the card size */
+  size: PropTypes.string.isRequired,
   color: PropTypes.string,
   isVertical: PropTypes.bool,
 };
@@ -29,13 +31,25 @@ const Attribute = styled.div`
   ${props => props.color && `color: ${props.color}`};
   display: flex;
 `;
+
+/** Returns font size in rem */
+const determineFontSize = ({ value, size, isSmall }) => {
+  if (typeof value === 'string' && size === CARD_SIZES.XSMALL) {
+    return value.length > 4 ? 1 : 2;
+  }
+  return isSmall ? 2 : 2.5;
+};
+
+/** Renders the actual attribute value */
 const AttributeValue = styled.span`
   line-height: ${props => (props.isSmall ? '2.0rem' : '2.5rem')};
-  font-size: ${props => (props.isSmall ? '2.0rem' : '2.5rem')};
-  margin-bottom: 0.25rem;
+  font-size: ${props => `${determineFontSize(props)}rem`};
+  padding-bottom: 0.25rem;
   font-weight: lighter;
   ${props => props.layout === CARD_LAYOUTS.VERTICAL && `text-align: left;`};
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 `;
 
 const StyledBoolean = styled.span`
@@ -43,7 +57,7 @@ const StyledBoolean = styled.span`
 `;
 
 /** This components job is determining how to render different kinds of card values */
-const ValueRenderer = ({ value, unit, layout, precision, isSmall, color, isVertical }) => {
+const ValueRenderer = ({ value, size, unit, layout, precision, isSmall, color, isVertical }) => {
   let renderValue = value;
   if (typeof value === 'boolean') {
     renderValue = <StyledBoolean>{value.toString()}</StyledBoolean>;
@@ -62,7 +76,13 @@ const ValueRenderer = ({ value, unit, layout, precision, isSmall, color, isVerti
   }
   return (
     <Attribute unit={unit} isSmall={isSmall} color={color} isVertical={isVertical}>
-      <AttributeValue title={`${value} ${unit || ''}`} layout={layout} isSmall={isSmall}>
+      <AttributeValue
+        size={size}
+        title={`${value} ${unit || ''}`}
+        layout={layout}
+        isSmall={isSmall}
+        value={value}
+      >
         {renderValue}
       </AttributeValue>
     </Attribute>

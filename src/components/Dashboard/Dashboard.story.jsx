@@ -308,6 +308,7 @@ storiesOf('Dashboard (Experimental)', module)
     return (
       <StatefulDashboard
         title={text('title', 'Munich Building')}
+        lastUpdated={Date()}
         isEditable={boolean('isEditable', false)}
         isLoading={boolean('isLoading', false)}
       />
@@ -326,6 +327,7 @@ storiesOf('Dashboard (Experimental)', module)
     return (
       <StatefulDashboard
         title={text('title', 'Munich Building')}
+        lastUpdated={Date()}
         isEditable={boolean('isEditable', true)}
         i18n={{
           lastUpdatedLabel: text('lastUpdatedLabel', 'Last updated: '),
