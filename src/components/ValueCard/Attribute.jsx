@@ -6,7 +6,7 @@ import { Icon } from 'carbon-components-react';
 import { iconCaretUp, iconCaretDown } from 'carbon-icons';
 import withSize from 'react-sizeme';
 
-import { CARD_LAYOUTS } from '../../constants/LayoutConstants';
+import { CARD_LAYOUTS, CARD_SIZES } from '../../constants/LayoutConstants';
 
 import ValueRenderer from './ValueRenderer';
 import UnitRenderer from './UnitRenderer';
@@ -15,7 +15,10 @@ const StyledAttribute = styled.div`
   display: flex;
   align-items: flex-end;
   order: 1;
-  width: 100%;
+  ${props =>
+    !props.label || props.isVertical || props.size === CARD_SIZES.XSMALL
+      ? 'width: 100%'
+      : 'width: 50%'};
 `;
 
 const TrendIcon = styled(Icon)`
@@ -60,6 +63,7 @@ const propTypes = {
   }),
   /** need to render smaller attribute */
   isSmall: PropTypes.bool,
+  label: PropTypes.string,
   isVertical: PropTypes.bool, // are the attributes and labels in a column?
   thresholds: PropTypes.arrayOf(
     PropTypes.shape({
@@ -78,6 +82,7 @@ const defaultProps = {
   thresholds: [],
   isVertical: false,
   isSmall: false,
+  label: null,
   secondaryValue: null,
 };
 
@@ -90,6 +95,8 @@ const Attribute = ({
   precision,
   isVertical,
   isSmall,
+  label,
+  size, // eslint-disable-line
 }) => {
   // matching threshold will be the first match in the list, or a value of null
   const matchingThreshold = thresholds
@@ -127,7 +134,7 @@ const Attribute = ({
     <withSize.SizeMe>
       {({ size: measuredSize }) => {
         return (
-          <StyledAttribute>
+          <StyledAttribute size={size} isVertical={isVertical} label={label}>
             {!isNil(value) ? (
               <ValueRenderer
                 value={value}

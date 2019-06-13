@@ -62,17 +62,17 @@ const AttributeValueWrapper = styled.div`
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  ${props => (props.isVertical ? `width: 100%` : '')}
+  ${props => (props.isVertical ? `width: 100%` : 'max-width: 50%')}
 `;
 
 const AttributeLabel = styled.div`
   ${props =>
     props.layout === CARD_LAYOUTS.HORIZONTAL && `padding-bottom: 0.25rem; font-size: 1.25rem;`};
   ${props =>
-    props.isVertical
-      ? props.size === CARD_SIZES.XSMALL || props.size === CARD_SIZES.XSMALLWIDE
-        ? `font-size: .875rem`
-        : `font-size: 1.0rem`
+    props.isVertical || (props.size === CARD_SIZES.XSMALL || props.size === CARD_SIZES.XSMALLWIDE)
+      ? `font-size: .875rem`
+      : props.size === CARD_SIZES.SMALL // small can go slightly bigger labels
+      ? `font-size: 1.00rem`
       : `font-size: 1.25rem`};
   text-align: ${props =>
     props.layout === CARD_LAYOUTS.VERTICAL ||
@@ -88,9 +88,9 @@ const AttributeLabel = styled.div`
   color: ${COLORS.gray};
   font-weight: lighter;
   white-space: nowrap;
-  ${props => props.isVertical && `width: 100%`};
-  ${props => props.isVertical && `text-overflow: ellipsis`};
-  ${props => props.isVertical && `overflow: hidden`};
+  text-overflow: ellipsis;
+  overflow: hidden;
+  ${props => (props.isVertical ? `width: 100%` : 'max-width: 50%')};
 `;
 
 const determineLayout = (size, attributes) => {
@@ -204,6 +204,7 @@ const ValueCard = ({ title, content, size, values, ...others }) => {
                     ) : null}
                     <Attribute
                       isVertical={isVertical}
+                      size={size}
                       isSmall={!isNil(attributes[0].secondaryValue) || !isNil(attributes[0].label)}
                       layout={layout}
                       {...attributes[0]}
@@ -231,6 +232,7 @@ const ValueCard = ({ title, content, size, values, ...others }) => {
                         isVertical={isVertical}
                         layout={layout}
                         {...attribute}
+                        size={size}
                         value={determineValue(attribute.dataSourceId, values)}
                         isSmall={isVertical}
                         secondaryValue={
