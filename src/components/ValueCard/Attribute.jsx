@@ -163,9 +163,14 @@ const Attribute = ({
               isVertical={isVertical}
               color={valueColor}
             />
-            {!measuredSize || measuredSize.width > 100 ? (
-              <UnitRenderer value={value} unit={unit} layout={layout} />
-            ) : null}
+
+            <UnitRenderer
+              isVisible={!measuredSize || measuredSize.width > 100}
+              value={value}
+              unit={unit}
+              layout={layout}
+            />
+
             {!isNil(secondaryValue) && (!measuredSize || measuredSize.width > 100) ? (
               <AttributeSecondaryValue color={secondaryValue.color} trend={secondaryValue.trend}>
                 {secondaryValue.trend && secondaryValue.trend === 'up' ? (

@@ -8,11 +8,13 @@ const propTypes = {
   value: PropTypes.any, // eslint-disable-line
   unit: PropTypes.string,
   layout: PropTypes.string,
+  isVisible: PropTypes.bool,
 };
 
 const defaultProps = {
   unit: '',
   layout: null,
+  isVisible: true,
 };
 
 const AttributeUnit = styled.span`
@@ -30,23 +32,23 @@ const AttributeUnit = styled.span`
 `;
 
 /** This components job is determining how to render different kinds units */
-const UnitRenderer = ({ value, unit, layout }) => {
-  if (typeof value === 'number') {
-    return (
-      <AttributeUnit layout={layout}>
-        {value > 1000000000000
-          ? `T${unit}`
-          : value > 1000000000
-          ? `B${unit}`
-          : value > 1000000
-          ? `M${unit}`
-          : value > 1000
-          ? `K${unit}`
-          : unit}
-      </AttributeUnit>
-    );
+const UnitRenderer = ({ value, isVisible, unit, layout }) => {
+  let renderUnit = unit;
+  let showUnit = isVisible;
+  // Should I truncate?
+  if (typeof value === 'number' && value > 1000) {
+    renderUnit =
+      value > 1000000000000
+        ? `T${unit}`
+        : value > 1000000000
+        ? `B${unit}`
+        : value > 1000000
+        ? `M${unit}`
+        : `K${unit}`;
+    // Need to show the unit if the value has been truncated
+    showUnit = true;
   }
-  return <AttributeUnit layout={layout}>{unit}</AttributeUnit>;
+  return showUnit ? <AttributeUnit layout={layout}>{renderUnit}</AttributeUnit> : null;
 };
 
 UnitRenderer.propTypes = propTypes;

@@ -219,7 +219,7 @@ const ValueCard = ({ title, content, size, values, ...others }) => {
           size === CARD_SIZES.XSMALLWIDE
             ? layout === CARD_LAYOUTS.HORIZONTAL
             : !measuredSize || measuredSize.width < 300;
-        console.log(title, size, layout, isVertical);
+
         return (
           <Card
             title={title}
