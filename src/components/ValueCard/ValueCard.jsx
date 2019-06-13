@@ -127,6 +127,7 @@ const determineLayout = (size, attributes) => {
       break;
     case CARD_SIZES.TALL:
     case CARD_SIZES.MEDIUM:
+    case CARD_SIZES.WIDE:
       if (attributes.length > 2) {
         layout = CARD_LAYOUTS.VERTICAL;
       }
@@ -137,7 +138,6 @@ const determineLayout = (size, attributes) => {
       }
       break;
 
-    case CARD_SIZES.WIDE:
     case CARD_SIZES.XLARGE:
       if (attributes.length > 5) {
         layout = CARD_LAYOUTS.VERTICAL;
