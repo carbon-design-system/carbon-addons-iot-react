@@ -46,7 +46,7 @@ const AttributeWrapper = styled.div`
     flex-direction: column;
     align-items: flex-end;
   `}
-  width: 100%;
+    width: 100%;
   display: flex;
   align-items: center;
   ${props => (props.isVertical ? `` : 'justify-content: space-around;')}
@@ -116,8 +116,13 @@ const AttributeLabel = styled.div`
   ${props =>
     (props.isVertical || props.size === CARD_SIZES.XSMALL || props.size === CARD_SIZES.SMALL) &&
     `padding-top: 0.25rem;`};
-  ${props => !(props.isVertical || props.size === CARD_SIZES.XSMALL) && `padding-left: 0.5rem`};
-  order: ${props => (props.isVertical && props.size !== CARD_SIZES.XSMALLWIDE ? 0 : 2)};
+  ${props =>
+    !(
+      props.isVertical ||
+      props.size === CARD_SIZES.XSMALL ||
+      props.size === CARD_SIZES.XSMALLWIDE
+    ) && `padding-left: 0.5rem`};
+  order: ${props => (props.isVertical ? 0 : 2)};
   color: ${COLORS.gray};
   font-weight: lighter;
   ${props => (shouldLabelWrap(props) ? `` : `white-space: nowrap;`)}
@@ -127,12 +132,17 @@ const AttributeLabel = styled.div`
   ${props => (props.isVertical ? `width: 100%` : 'width: 50%')};
 `;
 
-const determineLayout = (size, attributes) => {
+const determineLayout = (size, attributes, measuredWidth) => {
   let layout = CARD_LAYOUTS.HORIZONTAL;
   switch (size) {
     case CARD_SIZES.XSMALL:
-    case CARD_SIZES.XSMALLWIDE:
       layout = CARD_LAYOUTS.HORIZONTAL;
+      break;
+    case CARD_SIZES.XSMALLWIDE:
+      layout =
+        (!measuredWidth || measuredWidth < 300) && attributes.length > 1
+          ? CARD_LAYOUTS.VERTICAL
+          : CARD_LAYOUTS.HORIZONTAL;
       break;
     case CARD_SIZES.SMALL:
       layout = CARD_LAYOUTS.VERTICAL;
@@ -194,9 +204,6 @@ const determineAttributes = (size, attributes) => {
 };
 
 const ValueCard = ({ title, content, size, values, ...others }) => {
-  const layout = determineLayout(size, content && content.attributes);
-  const attributes = determineAttributes(size, content && content.attributes);
-
   const availableActions = {
     expand: false,
     ...others.availableActions,
@@ -205,8 +212,15 @@ const ValueCard = ({ title, content, size, values, ...others }) => {
   return (
     <withSize.SizeMe>
       {({ size: measuredSize }) => {
-        // Measure the size to determine whether to render in vertical or horizontal
-        const isVertical = !measuredSize || measuredSize.width < 300;
+        const layout = determineLayout(size, content && content.attributes, measuredSize.width);
+        const attributes = determineAttributes(size, content && content.attributes);
+
+        // Measure the size to determine whether to render the attribute label above the value
+        const isVertical =
+          size === CARD_SIZES.XSMALLWIDE
+            ? layout === CARD_LAYOUTS.HORIZONTAL
+            : !measuredSize || measuredSize.width < 300;
+        console.log(title, size, layout, isVertical);
         return (
           <Card
             title={title}
