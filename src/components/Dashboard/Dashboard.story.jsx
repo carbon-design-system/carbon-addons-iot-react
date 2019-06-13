@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 /*
 import uuidv1 from 'uuid/v1';
 */
-import { text, boolean, object } from '@storybook/addon-knobs';
+import { text, boolean } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 /*
 import { Button } from 'carbon-components-react';
@@ -10,15 +10,7 @@ import moment from 'moment';
 */
 
 import { chartData, tableColumns, tableData } from '../../utils/sample';
-import {
-  COLORS,
-  DASHBOARD_BREAKPOINTS,
-  DASHBOARD_COLUMNS,
-  CARD_DIMENSIONS,
-  ROW_HEIGHT,
-  CARD_SIZES,
-  CARD_TYPES,
-} from '../../constants/LayoutConstants';
+import { COLORS, CARD_SIZES, CARD_TYPES } from '../../constants/LayoutConstants';
 
 import Dashboard from './Dashboard';
 
@@ -260,100 +252,6 @@ const originalCards = [
   },
 ];
 
-export const DASHBOARD_SIZES_16_COL = {
-  MAX: 'max',
-  XLARGE: 'xl',
-  LARGE: 'lg',
-  MEDIUM: 'md',
-  SMALL: 'sm',
-  XSMALL: 'xs',
-};
-
-export const DASHBOARD_COLUMNS_16_COL = {
-  max: 16,
-  xl: 16,
-  lg: 16,
-  md: 8,
-  sm: 4,
-  xs: 4,
-};
-
-export const DASHBOARD_BREAKPOINTS_16_COL = {
-  max: 1800,
-  xl: 1312,
-  lg: 1056,
-  md: 672,
-  sm: 480,
-  xs: 320,
-};
-
-const CARD_DIMENSIONS_16_COL = {
-  XSMALL: {
-    max: { w: 2, h: 1 },
-    xl: { w: 2, h: 1 },
-    lg: { w: 2, h: 1 },
-    md: { w: 2, h: 1 },
-    sm: { w: 2, h: 1 },
-    xs: { w: 2, h: 1 },
-  },
-  XSMALLWIDE: {
-    max: { w: 3, h: 1 },
-    xl: { w: 4, h: 1 },
-    lg: { w: 4, h: 1 },
-    md: { w: 4, h: 1 },
-    sm: { w: 2, h: 1 },
-    xs: { w: 4, h: 1 },
-  },
-  SMALL: {
-    max: { w: 2, h: 2 },
-    xl: { w: 4, h: 2 },
-    lg: { w: 4, h: 2 },
-    md: { w: 4, h: 2 },
-    sm: { w: 2, h: 2 },
-    xs: { w: 4, h: 2 },
-  },
-  TALL: {
-    max: { w: 2, h: 4 },
-    xl: { w: 4, h: 4 },
-    lg: { w: 4, h: 4 },
-    md: { w: 4, h: 4 },
-    sm: { w: 2, h: 4 },
-    xs: { w: 4, h: 4 },
-  },
-  MEDIUM: {
-    max: { w: 6, h: 2 },
-    xl: { w: 8, h: 2 },
-    lg: { w: 8, h: 2 },
-    md: { w: 8, h: 2 },
-    sm: { w: 4, h: 2 },
-    xs: { w: 4, h: 2 },
-  },
-  WIDE: {
-    max: { w: 8, h: 2 },
-    xl: { w: 8, h: 2 },
-    lg: { w: 12, h: 2 },
-    md: { w: 8, h: 2 },
-    sm: { w: 4, h: 2 },
-    xs: { w: 4, h: 2 },
-  },
-  LARGE: {
-    max: { w: 6, h: 4 },
-    xl: { w: 8, h: 4 },
-    lg: { w: 8, h: 4 },
-    md: { w: 8, h: 4 },
-    sm: { w: 4, h: 4 },
-    xs: { w: 4, h: 4 },
-  },
-  XLARGE: {
-    max: { w: 8, h: 4 },
-    xl: { w: 12, h: 4 },
-    lg: { w: 16, h: 4 },
-    md: { w: 8, h: 4 },
-    sm: { w: 4, h: 4 },
-    xs: { w: 4, h: 4 },
-  },
-};
-
 const StatefulDashboard = ({ ...props }) => {
   const [cards, setCards] = useState(originalCards);
 
@@ -406,29 +304,12 @@ const StatefulDashboard = ({ ...props }) => {
 };
 
 storiesOf('Dashboard (Experimental)', module)
-  .add('basic - 12 col', () => {
+  .add('basic', () => {
     return (
       <StatefulDashboard
         title={text('title', 'Munich Building')}
         isEditable={boolean('isEditable', false)}
         isLoading={boolean('isLoading', false)}
-        dashboardBreakpoints={object('breakpoints', DASHBOARD_BREAKPOINTS)}
-        dashboardColumns={object('columns', DASHBOARD_COLUMNS)}
-        cardDimensions={object('card dimensions', CARD_DIMENSIONS)}
-        rowHeight={object('row height', ROW_HEIGHT)}
-      />
-    );
-  })
-  .add('basic - 16 col', () => {
-    return (
-      <StatefulDashboard
-        title={text('title', 'Munich Building')}
-        isEditable={boolean('isEditable', false)}
-        isLoading={boolean('isLoading', false)}
-        dashboardBreakpoints={object('breakpoints', DASHBOARD_BREAKPOINTS_16_COL)}
-        dashboardColumns={object('columns', DASHBOARD_COLUMNS_16_COL)}
-        cardDimensions={object('card dimensions', CARD_DIMENSIONS_16_COL)}
-        rowHeight={object('row height', ROW_HEIGHT)}
       />
     );
   })
@@ -438,10 +319,6 @@ storiesOf('Dashboard (Experimental)', module)
         title={text('title', 'Munich Building')}
         isEditable={boolean('isEditable', false)}
         isLoading={boolean('isLoading', true)}
-        dashboardBreakpoints={object('breakpoints', DASHBOARD_BREAKPOINTS)}
-        dashboardColumns={object('columns', DASHBOARD_COLUMNS)}
-        cardDimensions={object('card dimensions', CARD_DIMENSIONS)}
-        rowHeight={object('row height', ROW_HEIGHT)}
       />
     );
   })
@@ -461,10 +338,6 @@ storiesOf('Dashboard (Experimental)', module)
           cloneCardLabel: text('cloneCardLabel', 'Clone card'),
           deleteCardLabel: text('deleteCardLabel', 'Delete card'),
         }}
-        dashboardBreakpoints={object('breakpoints', DASHBOARD_BREAKPOINTS)}
-        dashboardColumns={object('columns', DASHBOARD_COLUMNS)}
-        cardDimensions={object('card dimensions', CARD_DIMENSIONS)}
-        rowHeight={object('row height', ROW_HEIGHT)}
       />
     );
   })
@@ -491,10 +364,6 @@ storiesOf('Dashboard (Experimental)', module)
     ];
     const extraProps = {
       lastUpdated: 'Now',
-      dashboardBreakpoints: DASHBOARD_BREAKPOINTS_16_COL,
-      dashboardColumns: DASHBOARD_COLUMNS_16_COL,
-      cardDimensions: CARD_DIMENSIONS_16_COL,
-      rowHeight: ROW_HEIGHT,
     };
     const dashboards = [
       <Dashboard
