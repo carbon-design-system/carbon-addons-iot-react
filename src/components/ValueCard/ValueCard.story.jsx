@@ -495,7 +495,7 @@ storiesOf('ValueCard', module)
   .add('tall / vertical /  6', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.TALL);
     return (
-      <div style={{ width: text('cardWidth', `300px`), margin: 20 }}>
+      <div style={{ width: text('cardWidth', `250px`), margin: 20 }}>
         <ValueCard
           title={text('title', 'Facility Conditions')}
           id="facilitycard"
@@ -509,10 +509,10 @@ storiesOf('ValueCard', module)
                 precision: 1,
               },
               { label: 'Utilization', dataSourceId: 'utilization', unit: '%' },
-              { label: 'Utilization', dataSourceId: 'next', unit: '%' },
+              { label: 'CPU', dataSourceId: 'cpu', unit: '%' },
               { label: 'Humidity', dataSourceId: 'humidity', unit: '%' },
-              { label: 'Utilization', dataSourceId: 'next3', unit: '%' },
-              { label: 'Utilization', dataSourceId: 'next4', unit: '%' },
+              { label: 'Air flow', dataSourceId: 'air_flow', unit: '%' },
+              { label: 'Air quality', dataSourceId: 'air_quality', unit: '%' },
             ]),
           }}
           breakpoint="lg"
@@ -522,6 +522,9 @@ storiesOf('ValueCard', module)
             averageTemp: number('averageTemp', 76.7),
             utilization: number('utilization', 76),
             humidity: number('humidity', 76),
+            cpu: number('cpu', 76),
+            air_flow: number('air_flow', 76),
+            air_quality: number('air_quality', 76),
           }}
         />
       </div>

@@ -6,10 +6,13 @@ import { CARD_LAYOUTS } from '../../constants/LayoutConstants';
 
 const propTypes = {
   value: PropTypes.any, // eslint-disable-line
+  unit: PropTypes.string,
+  layout: PropTypes.string,
 };
 
 const defaultProps = {
   unit: '',
+  layout: null,
 };
 
 const AttributeUnit = styled.span`
@@ -43,7 +46,7 @@ const UnitRenderer = ({ value, unit, layout }) => {
       </AttributeUnit>
     );
   }
-  return unit;
+  return <AttributeUnit layout={layout}>{unit}</AttributeUnit>;
 };
 
 UnitRenderer.propTypes = propTypes;

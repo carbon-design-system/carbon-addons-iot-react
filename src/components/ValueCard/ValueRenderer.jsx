@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import isNil from 'lodash/isNil';
 
 import { CARD_LAYOUTS, CARD_SIZES } from '../../constants/LayoutConstants';
 
@@ -73,6 +74,8 @@ const ValueRenderer = ({ value, size, unit, layout, precision, isSmall, color, i
         : value > 1000
         ? (value / 1000).toFixed(precision)
         : value.toFixed(precision);
+  } else if (isNil(value)) {
+    renderValue = '--';
   }
   return (
     <Attribute unit={unit} isSmall={isSmall} color={color} isVertical={isVertical}>

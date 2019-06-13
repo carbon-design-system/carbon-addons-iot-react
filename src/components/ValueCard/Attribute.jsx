@@ -152,21 +152,17 @@ const Attribute = ({
             isVertical={isVertical}
             label={label}
           >
-            {!isNil(value) ? (
-              <ValueRenderer
-                value={value}
-                unit={unit}
-                layout={layout}
-                isSmall={isSmall}
-                size={size}
-                thresholds={thresholds}
-                precision={precision}
-                isVertical={isVertical}
-                color={valueColor}
-              />
-            ) : (
-              ' '
-            )}
+            <ValueRenderer
+              value={value}
+              unit={unit}
+              layout={layout}
+              isSmall={isSmall}
+              size={size}
+              thresholds={thresholds}
+              precision={precision}
+              isVertical={isVertical}
+              color={valueColor}
+            />
             {!measuredSize || measuredSize.width > 100 ? (
               <UnitRenderer value={value} unit={unit} layout={layout} />
             ) : null}

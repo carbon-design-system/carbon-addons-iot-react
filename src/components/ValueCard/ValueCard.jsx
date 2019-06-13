@@ -68,9 +68,7 @@ const determineLabelFontSize = ({ size, layout, attributeCount, isVertical }) =>
   if (layout === CARD_LAYOUTS.HORIZONTAL && !CARD_SIZES.WIDE) {
     return 1.25;
   }
-  if (isVertical && attributeCount > 1) {
-    return 0.875;
-  }
+
   let fontSize = 1.25;
   switch (size) {
     case CARD_SIZES.XSMALL:
@@ -78,10 +76,11 @@ const determineLabelFontSize = ({ size, layout, attributeCount, isVertical }) =>
       fontSize = 0.875;
       break;
     case CARD_SIZES.SMALL:
-    case CARD_SIZES.TALL:
-      fontSize = !isVertical ? 1 : 1.25;
+      fontSize = isVertical && attributeCount > 2 ? 0.875 : 1;
       break;
-
+    case CARD_SIZES.TALL:
+      fontSize = isVertical && attributeCount > 5 ? 0.875 : 1;
+      break;
     case CARD_SIZES.WIDE:
     default:
   }
