@@ -13,7 +13,7 @@ import UnitRenderer from './UnitRenderer';
 
 const StyledAttribute = styled.div`
   display: flex;
-  align-items: flex-end;
+  align-items: ${props => (props.isMini ? 'center' : 'flex-end')};
   ${props => (props.isVertical && props.alignValue ? `justify-content: ${props.alignValue};` : '')};
   order: 1;
   ${props =>
@@ -48,7 +48,7 @@ const AttributeSecondaryValue = styled.div`
   color: ${props => props.color || '#777'};
   fill: ${props => props.color || '#777'};
   font-size: 0.875rem;
-  padding-left: 0.25rem;
+  padding-left: ${props => (props.isMini ? '0.5rem' : '0.25rem')};
   margin-bottom: 0.25rem;
 `;
 
@@ -70,6 +70,7 @@ const propTypes = {
   }),
   /** need to render smaller attribute */
   isSmall: PropTypes.bool,
+  isMini: PropTypes.bool,
   label: PropTypes.string,
   isVertical: PropTypes.bool, // are the attributes and labels in a column?
   thresholds: PropTypes.arrayOf(
@@ -90,6 +91,7 @@ const defaultProps = {
   isVertical: false,
   alignValue: null,
   isSmall: false,
+  isMini: false,
   label: null,
   secondaryValue: null,
 };
@@ -107,6 +109,7 @@ const Attribute = ({
   isVertical,
   alignValue,
   isSmall,
+  isMini,
   label,
   size, // eslint-disable-line
 }) => {
@@ -150,6 +153,7 @@ const Attribute = ({
             size={size}
             alignValue={alignValue}
             isVertical={isVertical}
+            isMini={isMini}
             label={label}
           >
             <ValueRenderer
@@ -157,6 +161,7 @@ const Attribute = ({
               unit={unit}
               layout={layout}
               isSmall={isSmall}
+              isMini={isMini}
               size={size}
               thresholds={thresholds}
               precision={precision}
@@ -164,16 +169,20 @@ const Attribute = ({
               color={valueColor}
             />
             {!measuredSize || measuredSize.width > 100 ? (
-              <UnitRenderer value={value} unit={unit} layout={layout} />
+              <UnitRenderer value={value} unit={unit} layout={layout} isMini={isMini} />
             ) : null}
             {!isNil(secondaryValue) && (!measuredSize || measuredSize.width > 100) ? (
-              <AttributeSecondaryValue color={secondaryValue.color} trend={secondaryValue.trend}>
+              <AttributeSecondaryValue
+                color={secondaryValue.color}
+                trend={secondaryValue.trend}
+                isMini={isMini}
+              >
                 {secondaryValue.trend && secondaryValue.trend === 'up' ? (
                   <TrendIcon icon={iconCaretUp} />
                 ) : secondaryValue.trend === 'down' ? (
                   <TrendIcon icon={iconCaretDown} />
                 ) : null}
-                {secondaryValue.value}
+                {!isMini && secondaryValue.value}
               </AttributeSecondaryValue>
             ) : null}
             {thresholdIcon ? <StyledIcon>{thresholdIcon}</StyledIcon> : null}

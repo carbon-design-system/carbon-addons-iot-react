@@ -59,6 +59,10 @@ const AttributeSeparator = styled.hr`
   width: 100%;
 `;
 
+const Spacer = styled.div`
+  flex: 1;
+`;
+
 /**
  *
  * Returns the font size in rems for a label
@@ -139,7 +143,7 @@ const determineLayout = (size, attributes, measuredWidth) => {
       break;
     case CARD_SIZES.XSMALLWIDE:
       layout =
-        (!measuredWidth || measuredWidth < 300) && attributes.length > 1
+        measuredWidth && measuredWidth < 300 && attributes.length > 1
           ? CARD_LAYOUTS.VERTICAL
           : CARD_LAYOUTS.HORIZONTAL;
       break;
@@ -219,7 +223,10 @@ const ValueCard = ({ title, content, size, values, ...others }) => {
           size === CARD_SIZES.XSMALLWIDE
             ? layout === CARD_LAYOUTS.HORIZONTAL
             : !measuredSize || measuredSize.width < 300;
-        console.log(title, size, layout, isVertical);
+
+        // Determine if we are in "mini mode" (all rendered content in attribute is the same height)
+        const isMini = size === CARD_SIZES.XSMALLWIDE && layout === CARD_LAYOUTS.VERTICAL;
+
         return (
           <Card
             title={title}
@@ -235,6 +242,7 @@ const ValueCard = ({ title, content, size, values, ...others }) => {
                     layout={layout}
                     isVertical={isVertical}
                     isSmall={attribute.secondaryValue !== undefined}
+                    isMini={isMini}
                     size={size}
                   >
                     <Attribute
@@ -244,6 +252,7 @@ const ValueCard = ({ title, content, size, values, ...others }) => {
                         size === CARD_SIZES.XSMALL &&
                         (attribute.secondaryValue !== undefined || attribute.label !== undefined)
                       }
+                      isMini={isMini}
                       alignValue={
                         size === CARD_SIZES.SMALL && attributes.length === 1 ? 'center' : undefined
                       }
@@ -257,6 +266,7 @@ const ValueCard = ({ title, content, size, values, ...others }) => {
                         }
                       }
                     />
+                    {isMini && <Spacer />}
                     <AttributeLabel
                       title={attribute.label}
                       isVertical={isVertical}
@@ -267,11 +277,14 @@ const ValueCard = ({ title, content, size, values, ...others }) => {
                       {attribute.label}
                     </AttributeLabel>
                   </AttributeWrapper>
-                  {i < attributes.length - 1 && (isVertical || layout === CARD_LAYOUTS.VERTICAL) ? (
+                  {i < attributes.length - 1 &&
+                  (isVertical || layout === CARD_LAYOUTS.VERTICAL) &&
+                  size !== CARD_SIZES.XSMALLWIDE ? (
                     <AttributeWrapper
                       layout={layout}
                       isVertical={isVertical}
                       isSmall={attribute.secondaryValue !== undefined}
+                      isMini={isMini}
                       size={size}
                     >
                       <AttributeSeparator />
