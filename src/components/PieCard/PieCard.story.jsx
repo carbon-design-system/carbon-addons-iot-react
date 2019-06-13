@@ -19,7 +19,7 @@ storiesOf('PieCard (Experimental)', module).add('basic', () => {
           title: 'Alerts',
           data: [
             { label: 'Sev 3', value: 6, color: COLORS.RED },
-            { label: 'Sev 2', value: 9, color: COLORS.YELLOW },
+            { label: 'Sev 2', value: 9, color: COLORS.PURPLE },
             { label: 'Sev 1', value: 18, color: COLORS.BLUE },
           ],
         })}

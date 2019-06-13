@@ -10,7 +10,6 @@ import Card from '../Card/Card';
 const ContentWrapper = styled.div`
   margin: 0 16px 16px 16px;
   padding-bottom: 8px;
-  width: 100%;
 `;
 
 const DonutCard = ({ title, content, content: { data }, size, ...others }) => {
@@ -47,13 +46,7 @@ const DonutCard = ({ title, content, content: { data }, size, ...others }) => {
     <Card title={title} size={size} {...others}>
       {!others.isLoading ? (
         <ContentWrapper>
-          <C3Chart
-            {...chart}
-            style={{
-              height: '100%',
-              width: '100%',
-            }}
-          />
+          <C3Chart {...chart} style={{}} />
         </ContentWrapper>
       ) : null}
     </Card>

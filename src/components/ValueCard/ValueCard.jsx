@@ -26,38 +26,48 @@ const ContentWrapper = styled.div`
   ${props =>
     props.layout === CARD_LAYOUTS.VERTICAL &&
     `
-    padding: 0.5rem 0 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    padding: 0 0 0.5rem;
   `}
 `;
 
 const AttributeWrapper = styled.div`
   ${props =>
-    props.layout === CARD_LAYOUTS.VERTICAL &&
-    ` 
+    (props.layout === CARD_LAYOUTS.HORIZONTAL || props.size === CARD_SIZES.SMALL) &&
+    !props.isVertical
+      ? ` flex-direction: row;`
+      : props.layout === CARD_LAYOUTS.VERTICAL || props.isVertical
+      ? ` 
     padding: 0 ${CARD_CONTENT_PADDING}px;
-    width: 100%;
-    
-  `}
-  ${props =>
-    props.layout === CARD_LAYOUTS.HORIZONTAL &&
-    `
-    width: 100%;
-  `}
-  padding: 0px ${CARD_CONTENT_PADDING}px  ;
+    flex-direction: column;
+    align-items: flex-end;
+  `
+      : ''}
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  padding: 0px ${CARD_CONTENT_PADDING}px;
 `;
 
+const AttributeSeparator = styled.hr`
+  margin: 0;
+  border-top: solid 1px #ccc;
+  width: 100%;
+`;
+
+/*
 const AttributeBorder = styled.div`
   display: flex;
   flex-direction: ${props => (props.isVertical ? 'column' : 'row')};
-  align-items: ${props => (props.isVertical ? 'flex-start' : 'flex-end')};
+  align-items: ${props => (props.isVertical ? 'flex-start' : 'center')};
   justify-content: space-between;
   ${props => props.hasBorder && `border-top: 1px solid ${COLORS.lightGrey}`};
   ${props => (!props.isVertical ? `padding: ${(CARD_CONTENT_PADDING * 2) / 3}px 0px` : '')};
 `;
+*/
 
 const AttributeValueWrapper = styled.div`
   white-space: nowrap;
@@ -69,13 +79,11 @@ const AttributeLabel = styled.div`
   ${props =>
     props.layout === CARD_LAYOUTS.HORIZONTAL && `padding-bottom: 0.25rem; font-size: 1.25rem;`};
   ${props =>
-    props.layout === CARD_LAYOUTS.VERTICAL ||
-    props.size === CARD_SIZES.XSMALL ||
-    props.size === CARD_SIZES.XSMALLWIDE
+    props.layout === CARD_LAYOUTS.VERTICAL
       ? props.size === CARD_SIZES.XSMALL || props.size === CARD_SIZES.XSMALLWIDE
-        ? `font-size: .875rem` // for small card sizes, small font
-        : `font-size: 1.0rem;` // otherwi
-      : null};
+        ? `font-size: .875rem`
+        : `font-size: 1.0rem`
+      : `font-size: 1.25rem`};
   text-align: ${props =>
     props.layout === CARD_LAYOUTS.VERTICAL ||
     props.size === CARD_SIZES.XSMALL ||
@@ -83,12 +91,14 @@ const AttributeLabel = styled.div`
       ? 'left'
       : 'right'};
   ${props =>
-    (props.isVertical || props.size === CARD_SIZES.XSMALL) &&
+    (props.isVertical || props.size === CARD_SIZES.XSMALL || props.size === CARD_SIZES.SMALL) &&
     `padding-bottom: 0.25rem; padding-top: 0.25rem;`};
   ${props => !(props.isVertical || props.size === CARD_SIZES.XSMALL) && `padding-left: 0.5rem`};
-  order: ${props => (props.isVertical ? 0 : 2)};
+  order: ${props => (props.isVertical && props.size !== CARD_SIZES.XSMALLWIDE ? 0 : 2)};
   color: ${COLORS.gray};
   font-weight: lighter;
+  white-space: nowrap;
+  ${props => props.isVertical && `width: 100%`};
   ${props => props.isVertical && `text-overflow: ellipsis`};
   ${props => props.isVertical && `overflow: hidden`};
 `;
@@ -159,6 +169,7 @@ const ValueCard = ({ title, content, size, values, ...others }) => {
                 <AttributeWrapper
                   layout={layout}
                   isSmall={!isNil(content.attributes[0].secondaryValue)}
+                  size={size}
                 >
                   <AttributeValueWrapper>
                     {content.attributes[0].label ? ( // Optional title attribute
@@ -198,17 +209,20 @@ const ValueCard = ({ title, content, size, values, ...others }) => {
               ) : (
                 content.attributes.map((attribute, i) => (
                   // Larger card
-                  <AttributeWrapper
-                    layout={layout}
-                    key={`${attribute.title}-${i}`}
-                    isSmall={attribute.secondaryValue !== undefined}
-                  >
-                    <AttributeBorder isVertical={isVertical} hasBorder={!isVertical && i > 0}>
+                  <React.Fragment>
+                    <AttributeWrapper
+                      layout={layout}
+                      key={`${attribute.title}-${i}`}
+                      isVertical={isVertical}
+                      isSmall={attribute.secondaryValue !== undefined}
+                      size={size}
+                    >
                       <Attribute
                         isVertical={isVertical}
                         layout={layout}
                         {...attribute}
                         value={determineValue(attribute.dataSourceId, values)}
+                        isSmall={isVertical}
                         secondaryValue={
                           attribute.secondaryValue && {
                             ...attribute.secondaryValue,
@@ -220,11 +234,23 @@ const ValueCard = ({ title, content, size, values, ...others }) => {
                         title={attribute.label}
                         isVertical={isVertical}
                         layout={layout}
+                        size={size}
                       >
                         {attribute.label}
                       </AttributeLabel>
-                    </AttributeBorder>
-                  </AttributeWrapper>
+                    </AttributeWrapper>
+                    {i < content.attributes.length - 1 && (
+                      <AttributeWrapper
+                        layout={layout}
+                        key={`${attribute.title}-${i}`}
+                        isVertical={isVertical}
+                        isSmall={attribute.secondaryValue !== undefined}
+                        size={size}
+                      >
+                        <AttributeSeparator />
+                      </AttributeWrapper>
+                    )}
+                  </React.Fragment>
                 ))
               )}
             </ContentWrapper>

@@ -21,7 +21,7 @@ describe('Dashboard testcases', () => {
               title: 'Alerts',
               attributes: [
                 { label: 'Sev 3', dataSourceId: 'data', color: COLORS.RED },
-                { label: 'Sev 2', dataSourceId: 'data2', color: COLORS.YELLOW },
+                { label: 'Sev 2', dataSourceId: 'data2', color: COLORS.PURPLE },
                 { label: 'Sev 1', dataSourceId: 'data3', color: COLORS.BLUE },
               ],
             },
