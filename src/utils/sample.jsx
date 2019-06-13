@@ -6,7 +6,7 @@ export const chartData = {
       ENTITY_ID: 'Sensor2-1',
       publishedtime: '2019-05-28T19:30:14.227+0000',
       generatedtime: '2019-05-28T18:31:15.227+0000',
-      temperature: 93,
+      temperature: 68,
       humidity: 16.68723,
       ecount: 21,
       devname: '6ctgim0Qcq',

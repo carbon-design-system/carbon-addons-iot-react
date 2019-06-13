@@ -48,6 +48,7 @@
     "react-sizeme": "^2.6.3",
     "react-transition-group": "^2.6.0",
     "react-visibility-sensor": "^5.0.2",
+    "recompose": "^0.30.0",
     "styled-components": "^4.1.3",
     "use-deep-compare-effect": "^1.2.0"
   },
@@ -58,7 +59,8 @@
     "carbon-components-react": "^6.108.0",
     "carbon-icons": "^7.x",
     "d3": "^4.12.0",
-    "react": "^16.8.3"
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
