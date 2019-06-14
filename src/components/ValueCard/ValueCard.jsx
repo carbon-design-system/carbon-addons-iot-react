@@ -118,6 +118,7 @@ const shouldLabelWrap = ({ title, isVertical }) => {
  * Render a given attribute label
  */
 const AttributeLabel = styled.div`
+  ${props => `line-height: ${determineLabelFontSize(props)}rem;`}
   ${props => `font-size: ${determineLabelFontSize(props)}rem;`};
   text-align: ${props => getLabelAlignment(props)};
   ${props =>
