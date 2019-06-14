@@ -164,7 +164,7 @@ const Attribute = ({
               isMini={isMini}
               size={size}
               thresholds={thresholds}
-              precision={size === CARD_SIZES.XSMALL && Math.abs(value) > 9 ? 0 : precision}
+              precision={precision}
               isVertical={isVertical}
               color={valueColor}
             />

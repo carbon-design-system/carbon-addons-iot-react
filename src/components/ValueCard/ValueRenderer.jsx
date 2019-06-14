@@ -66,18 +66,33 @@ const StyledBoolean = styled.span`
   text-transform: capitalize;
 `;
 
+const determinePrecision = (size, value, precision) => {
+  // If it's an integer don't return extra values
+  if (Number.isInteger(value)) {
+    return 0;
+  }
+  // If the card is xsmall we don't have room for decimals!
+  switch (size) {
+    case CARD_SIZES.XSMALL:
+      return Math.abs(value) > 9 ? 0 : precision;
+    default:
+  }
+  return precision;
+};
+
 /** This components job is determining how to render different kinds of card values */
 const ValueRenderer = ({
   value,
   size,
   unit,
   layout,
-  precision,
+  precision: precisionProp,
   isSmall,
   isMini,
   color,
   isVertical,
 }) => {
+  const precision = determinePrecision(size, value, precisionProp);
   let renderValue = value;
   if (typeof value === 'boolean') {
     renderValue = <StyledBoolean>{value.toString()}</StyledBoolean>;
