@@ -308,6 +308,7 @@ storiesOf('Dashboard (Experimental)', module)
     return (
       <StatefulDashboard
         title={text('title', 'Munich Building')}
+        lastUpdated={Date()}
         isEditable={boolean('isEditable', false)}
         isLoading={boolean('isLoading', false)}
       />
@@ -326,6 +327,7 @@ storiesOf('Dashboard (Experimental)', module)
     return (
       <StatefulDashboard
         title={text('title', 'Munich Building')}
+        lastUpdated={Date()}
         isEditable={boolean('isEditable', true)}
         i18n={{
           lastUpdatedLabel: text('lastUpdatedLabel', 'Last updated: '),
@@ -538,7 +540,7 @@ storiesOf('Dashboard (Experimental)', module)
             103.7,
             '˚F',
             'Temperature',
-            '1709384.1',
+            1709384.1,
             'people',
             'Foot Traffic',
           ],
@@ -606,7 +608,7 @@ storiesOf('Dashboard (Experimental)', module)
             null,
             'up',
             'green',
-            '1709384.1',
+            1709384.1,
             'people',
             'Foot Traffic',
             137982.2,

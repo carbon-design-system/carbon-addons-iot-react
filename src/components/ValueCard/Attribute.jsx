@@ -4,17 +4,22 @@ import styled from 'styled-components';
 import isNil from 'lodash/isNil';
 import { Icon } from 'carbon-components-react';
 import { iconCaretUp, iconCaretDown } from 'carbon-icons';
+import withSize from 'react-sizeme';
 
-import { CARD_LAYOUTS } from '../../constants/LayoutConstants';
+import { CARD_LAYOUTS, CARD_SIZES } from '../../constants/LayoutConstants';
 
 import ValueRenderer from './ValueRenderer';
 import UnitRenderer from './UnitRenderer';
 
 const StyledAttribute = styled.div`
   display: flex;
-  align-items: flex-end;
+  align-items: ${props => (props.isMini ? 'center' : 'flex-end')};
+  ${props => (props.isVertical && props.alignValue ? `justify-content: ${props.alignValue};` : '')};
   order: 1;
-  width: 100%;
+  ${props =>
+    !props.label || props.isVertical || props.size === CARD_SIZES.XSMALL
+      ? 'width: 100%'
+      : 'width: 50%'};
 `;
 
 const TrendIcon = styled(Icon)`
@@ -24,7 +29,7 @@ const TrendIcon = styled(Icon)`
 const ThresholdIconWrapper = styled.div`
   width: 1rem;
   height: 1rem;
-  margin: 0 0 0.5rem 0.5rem;
+  ${props => !props.isMini && 'margin: 0 0 0.5rem 0.5rem;'}
 `;
 
 const ThresholdIcon = styled(Icon)`
@@ -43,12 +48,19 @@ const AttributeSecondaryValue = styled.div`
   color: ${props => props.color || '#777'};
   fill: ${props => props.color || '#777'};
   font-size: 0.875rem;
-  padding-left: 0.25rem;
+  padding-left: ${props => (props.isMini ? '0.5rem' : '0.25rem')};
+  margin-bottom: ${props => (props.isMini ? '0' : '0.25rem')};
+`;
+
+const StyledIcon = styled.div`
+  margin-left: auto;
 `;
 
 const propTypes = {
   value: PropTypes.any, // eslint-disable-line
   unit: PropTypes.any, // eslint-disable-line
+  /** css rule */
+  alignValue: PropTypes.oneOf(['flex-end', 'center']),
   layout: PropTypes.oneOf(Object.values(CARD_LAYOUTS)),
   /** Optional trend information */
   secondaryValue: PropTypes.shape({
@@ -58,6 +70,8 @@ const propTypes = {
   }),
   /** need to render smaller attribute */
   isSmall: PropTypes.bool,
+  isMini: PropTypes.bool,
+  label: PropTypes.string,
   isVertical: PropTypes.bool, // are the attributes and labels in a column?
   thresholds: PropTypes.arrayOf(
     PropTypes.shape({
@@ -72,13 +86,19 @@ const propTypes = {
 
 const defaultProps = {
   layout: null,
-  precision: 0,
+  precision: 1,
   thresholds: [],
   isVertical: false,
+  alignValue: null,
   isSmall: false,
+  isMini: false,
+  label: null,
   secondaryValue: null,
 };
 
+/**
+ * An attribute has a Value, Units and maybe a Threshold or Trend.
+ */
 const Attribute = ({
   value,
   unit,
@@ -87,7 +107,11 @@ const Attribute = ({
   thresholds,
   precision,
   isVertical,
+  alignValue,
   isSmall,
+  isMini,
+  label,
+  size, // eslint-disable-line
 }) => {
   // matching threshold will be the first match in the list, or a value of null
   const matchingThreshold = thresholds
@@ -112,7 +136,7 @@ const Attribute = ({
     matchingThreshold && matchingThreshold.icon === undefined ? matchingThreshold.color : null;
   const thresholdIcon =
     matchingThreshold && matchingThreshold.icon ? (
-      <ThresholdIconWrapper>
+      <ThresholdIconWrapper isMini={isMini}>
         <ThresholdIcon
           iconTitle={`${matchingThreshold.comparison} ${matchingThreshold.value}`}
           name={matchingThreshold.icon}
@@ -122,34 +146,54 @@ const Attribute = ({
     ) : null;
 
   return (
-    <StyledAttribute>
-      {!isNil(value) ? (
-        <ValueRenderer
-          value={value}
-          unit={unit}
-          layout={layout}
-          isSmall={isSmall}
-          thresholds={thresholds}
-          precision={precision}
-          isVertical={isVertical}
-          color={valueColor}
-        />
-      ) : (
-        ' '
-      )}
-      <UnitRenderer value={value} unit={unit} layout={layout} />
-      {thresholdIcon}
-      {!isNil(secondaryValue) ? (
-        <AttributeSecondaryValue color={secondaryValue.color} trend={secondaryValue.trend}>
-          {secondaryValue.trend && secondaryValue.trend === 'up' ? (
-            <TrendIcon icon={iconCaretUp} />
-          ) : secondaryValue.trend === 'down' ? (
-            <TrendIcon icon={iconCaretDown} />
-          ) : null}
-          {secondaryValue.value}
-        </AttributeSecondaryValue>
-      ) : null}
-    </StyledAttribute>
+    <withSize.SizeMe>
+      {({ size: measuredSize }) => {
+        return (
+          <StyledAttribute
+            size={size}
+            alignValue={alignValue}
+            isVertical={isVertical}
+            isMini={isMini}
+            label={label}
+          >
+            <ValueRenderer
+              value={value}
+              unit={unit}
+              layout={layout}
+              isSmall={isSmall}
+              isMini={isMini}
+              size={size}
+              thresholds={thresholds}
+              precision={precision}
+              isVertical={isVertical}
+              color={valueColor}
+            />
+            <UnitRenderer
+              isVisible={!measuredSize || measuredSize.width > 100}
+              value={value}
+              unit={unit}
+              layout={layout}
+              isMini={isMini}
+            />
+            {!isNil(secondaryValue) && (!measuredSize || measuredSize.width > 100) ? (
+              <AttributeSecondaryValue
+                color={secondaryValue.color}
+                trend={secondaryValue.trend}
+                isMini={isMini}
+              >
+                {secondaryValue.trend && secondaryValue.trend === 'up' ? (
+                  <TrendIcon icon={iconCaretUp} />
+                ) : secondaryValue.trend === 'down' ? (
+                  <TrendIcon icon={iconCaretDown} />
+                ) : null}
+                {!isMini && secondaryValue.value}
+              </AttributeSecondaryValue>
+            ) : null}
+            {thresholdIcon ? <StyledIcon>{thresholdIcon}</StyledIcon> : null}
+          </StyledAttribute>
+        );
+      }}
+    </withSize.SizeMe>
   );
 };
 

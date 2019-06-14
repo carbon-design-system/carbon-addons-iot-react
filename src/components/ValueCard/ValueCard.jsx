@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import withSize from 'react-sizeme';
 import isEmpty from 'lodash/isEmpty';
-import isNil from 'lodash/isNil';
 
 import { ValueCardPropTypes, CardPropTypes } from '../../constants/PropTypes';
 import { CARD_LAYOUTS, CARD_SIZES, CARD_CONTENT_PADDING } from '../../constants/LayoutConstants';
@@ -34,99 +33,136 @@ const ContentWrapper = styled.div`
   `}
 `;
 
+/**
+ * Responsible for rendering the Attribute and the Label for a given attribute
+ * isVertical means that the label is rendering above the Attribute
+ */
 const AttributeWrapper = styled.div`
   ${props =>
-    (props.layout === CARD_LAYOUTS.HORIZONTAL || props.size === CARD_SIZES.SMALL) &&
     !props.isVertical
       ? ` flex-direction: row;`
-      : props.layout === CARD_LAYOUTS.VERTICAL || props.isVertical
-      ? ` 
+      : ` 
     padding: 0 ${CARD_CONTENT_PADDING}px;
     flex-direction: column;
     align-items: flex-end;
-  `
-      : ''}
-  width: 100%;
+  `}
+    width: 100%;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
+  ${props => (props.isVertical ? `` : 'justify-content: space-around;')}
   padding: 0px ${CARD_CONTENT_PADDING}px;
 `;
 
 const AttributeSeparator = styled.hr`
   margin: 0;
-  border-top: solid 1px #ccc;
+  border-top: solid 1px #eee;
   width: 100%;
 `;
 
-/*
-const AttributeBorder = styled.div`
-  display: flex;
-  flex-direction: ${props => (props.isVertical ? 'column' : 'row')};
-  align-items: ${props => (props.isVertical ? 'flex-start' : 'center')};
-  justify-content: space-between;
-  ${props => props.hasBorder && `border-top: 1px solid ${COLORS.lightGrey}`};
-  ${props => (!props.isVertical ? `padding: ${(CARD_CONTENT_PADDING * 2) / 3}px 0px` : '')};
-`;
-*/
-
-const AttributeValueWrapper = styled.div`
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+const Spacer = styled.div`
+  flex: 1;
 `;
 
-const AttributeLabel = styled.div`
-  ${props =>
-    props.layout === CARD_LAYOUTS.HORIZONTAL && `padding-bottom: 0.25rem; font-size: 1.25rem;`};
-  ${props =>
-    props.layout === CARD_LAYOUTS.VERTICAL
-      ? props.size === CARD_SIZES.XSMALL || props.size === CARD_SIZES.XSMALLWIDE
-        ? `font-size: .875rem`
-        : `font-size: 1.0rem`
-      : `font-size: 1.25rem`};
-  text-align: ${props =>
-    props.layout === CARD_LAYOUTS.VERTICAL ||
-    props.size === CARD_SIZES.XSMALL ||
-    props.size === CARD_SIZES.XSMALLWIDE
-      ? 'left'
-      : 'right'};
-  ${props =>
-    (props.isVertical || props.size === CARD_SIZES.XSMALL || props.size === CARD_SIZES.SMALL) &&
-    `padding-bottom: 0.25rem; padding-top: 0.25rem;`};
-  ${props => !(props.isVertical || props.size === CARD_SIZES.XSMALL) && `padding-left: 0.5rem`};
-  order: ${props => (props.isVertical && props.size !== CARD_SIZES.XSMALLWIDE ? 0 : 2)};
-  color: ${COLORS.gray};
-  font-weight: lighter;
-  white-space: nowrap;
-  ${props => props.isVertical && `width: 100%`};
-  ${props => props.isVertical && `text-overflow: ellipsis`};
-  ${props => props.isVertical && `overflow: hidden`};
-`;
+/**
+ *
+ * Returns the font size in rems for a label
+ * @param {*} param0
+ */
+const determineLabelFontSize = ({ size, layout, attributeCount, isVertical }) => {
+  if (layout === CARD_LAYOUTS.HORIZONTAL && !CARD_SIZES.WIDE) {
+    return 1.25;
+  }
 
-const determineLayout = (size, attributes) => {
-  let layout = CARD_LAYOUTS.HORIZONTAL;
+  let fontSize = 1.25;
   switch (size) {
     case CARD_SIZES.XSMALL:
     case CARD_SIZES.XSMALLWIDE:
+      fontSize = 0.875;
+      break;
+    case CARD_SIZES.SMALL:
+      fontSize = isVertical && attributeCount > 2 ? 0.875 : 1;
+      break;
+    case CARD_SIZES.TALL:
+      fontSize = isVertical && attributeCount > 5 ? 0.875 : 1;
+      break;
+    case CARD_SIZES.WIDE:
+    default:
+  }
+  return fontSize;
+};
+
+/** * Determines the label alignment */
+const getLabelAlignment = ({ size, isVertical, attributeCount }) => {
+  if (attributeCount === 1 && size === CARD_SIZES.SMALL && isVertical) {
+    return 'center';
+  }
+  return isVertical ? 'left' : 'right';
+};
+
+const shouldLabelWrap = ({ title, isVertical }) => {
+  if (!title || isVertical) {
+    return false;
+  }
+  const words = title.split(' ');
+  if (words.length > 1 && words.length < 3) {
+    return true;
+  }
+  return false;
+};
+
+/**
+ * Render a given attribute label
+ */
+const AttributeLabel = styled.div`
+  ${props => `font-size: ${determineLabelFontSize(props)}rem;`};
+  text-align: ${props => getLabelAlignment(props)};
+  ${props =>
+    (props.isVertical || props.size === CARD_SIZES.XSMALL || props.size === CARD_SIZES.SMALL) &&
+    `padding-top: 0.25rem;`};
+  ${props =>
+    !(
+      props.isVertical ||
+      props.size === CARD_SIZES.XSMALL ||
+      props.size === CARD_SIZES.XSMALLWIDE
+    ) && `padding-left: 0.5rem`};
+  order: ${props => (props.isVertical ? 0 : 2)};
+  color: ${COLORS.gray};
+  font-weight: lighter;
+  ${props => (shouldLabelWrap(props) ? `` : `white-space: nowrap;`)}
+  text-overflow: ellipsis;
+  overflow: hidden;
+  padding-bottom: ${props => (props.isMini ? '0' : '0.25rem')};
+  ${props => (props.isVertical ? `width: 100%` : 'width: 50%')};
+`;
+
+const determineLayout = (size, attributes, measuredWidth) => {
+  let layout = CARD_LAYOUTS.HORIZONTAL;
+  switch (size) {
+    case CARD_SIZES.XSMALL:
       layout = CARD_LAYOUTS.HORIZONTAL;
+      break;
+    case CARD_SIZES.XSMALLWIDE:
+      layout =
+        measuredWidth && measuredWidth < 300 && attributes.length > 1
+          ? CARD_LAYOUTS.VERTICAL
+          : CARD_LAYOUTS.HORIZONTAL;
       break;
     case CARD_SIZES.SMALL:
       layout = CARD_LAYOUTS.VERTICAL;
       break;
     case CARD_SIZES.TALL:
+    case CARD_SIZES.MEDIUM:
+    case CARD_SIZES.WIDE:
+      if (attributes.length > 2) {
+        layout = CARD_LAYOUTS.VERTICAL;
+      }
+      break;
+    case CARD_SIZES.LARGE:
       if (attributes.length > 2) {
         layout = CARD_LAYOUTS.VERTICAL;
       }
       break;
 
-    case CARD_SIZES.MEDIUM:
-    case CARD_SIZES.LARGE:
-      if (attributes.length > 3) {
-        layout = CARD_LAYOUTS.VERTICAL;
-      }
-      break;
-
-    case CARD_SIZES.WIDE:
     case CARD_SIZES.XLARGE:
       if (attributes.length > 5) {
         layout = CARD_LAYOUTS.VERTICAL;
@@ -141,21 +177,56 @@ const determineLayout = (size, attributes) => {
 
 const determineValue = (dataSourceId, values) => values && values[dataSourceId];
 
-const ValueCard = ({ title, content, size, values, ...others }) => {
-  const layout = determineLayout(size, content && content.attributes);
+const determineAttributes = (size, attributes) => {
+  if (!attributes || !Array.isArray(attributes)) {
+    return attributes;
+  }
+  let attributeCount = attributes.length;
+  switch (size) {
+    case CARD_SIZES.XSMALL:
+      attributeCount = 1;
+      break;
+    case CARD_SIZES.XSMALLWIDE:
+      attributeCount = 2;
+      break;
+    case CARD_SIZES.MEDIUM:
+    case CARD_SIZES.SMALL:
+    case CARD_SIZES.WIDE:
+      attributeCount = 3;
+      break;
+    case CARD_SIZES.LARGE:
+      attributeCount = 5;
+      break;
+    case CARD_SIZES.TALL:
+    case CARD_SIZES.XLARGE:
+      attributeCount = 7;
+      break;
+    default:
+  }
+  return attributes.slice(0, attributeCount);
+};
 
+const ValueCard = ({ title, content, size, values, ...others }) => {
   const availableActions = {
     expand: false,
     ...others.availableActions,
   };
 
-  const isXS = size === CARD_SIZES.XSMALL;
-
   return (
     <withSize.SizeMe>
       {({ size: measuredSize }) => {
-        // Measure the size to determine whether to render in vertical or horizontal
-        const isVertical = !measuredSize || measuredSize.width < 300;
+        const layout = determineLayout(size, content && content.attributes, measuredSize.width);
+        const attributes = determineAttributes(size, content && content.attributes);
+
+        // Measure the size to determine whether to render the attribute label above the value
+        const isVertical =
+          size === CARD_SIZES.XSMALLWIDE
+            ? layout === CARD_LAYOUTS.HORIZONTAL
+            : !measuredSize || measuredSize.width < 300;
+
+        // Determine if we are in "mini mode" (all rendered content in attribute is the same height)
+        const isMini = size === CARD_SIZES.XSMALLWIDE && layout === CARD_LAYOUTS.VERTICAL;
+
         return (
           <Card
             title={title}
@@ -165,94 +236,63 @@ const ValueCard = ({ title, content, size, values, ...others }) => {
             {...others}
           >
             <ContentWrapper layout={layout}>
-              {isXS && content.attributes.length > 0 ? ( // Small card only gets one
-                <AttributeWrapper
-                  layout={layout}
-                  isSmall={!isNil(content.attributes[0].secondaryValue)}
-                  size={size}
-                >
-                  <AttributeValueWrapper>
-                    {content.attributes[0].label ? ( // Optional title attribute
-                      <AttributeLabel
-                        title={content.attributes[0].label}
-                        isVertical={isVertical}
-                        isSmall={
-                          content.attributes[0].secondaryValue || content.attributes[0].label
-                        }
-                        layout={layout}
-                        size={size}
-                      >
-                        {content.attributes[0].label}
-                      </AttributeLabel>
-                    ) : null}
+              {attributes.map((attribute, i) => (
+                <React.Fragment key={`fragment-${attribute.dataSourceId}`}>
+                  <AttributeWrapper
+                    layout={layout}
+                    isVertical={isVertical}
+                    isSmall={attribute.secondaryValue !== undefined}
+                    isMini={isMini}
+                    size={size}
+                  >
                     <Attribute
                       isVertical={isVertical}
-                      isSmall={
-                        !isNil(content.attributes[0].secondaryValue) ||
-                        !isNil(content.attributes[0].label)
-                      }
                       layout={layout}
-                      {...content.attributes[0]}
-                      value={determineValue(content.attributes[0].dataSourceId, values)}
+                      isSmall={
+                        size === CARD_SIZES.XSMALL &&
+                        (attribute.secondaryValue !== undefined || attribute.label !== undefined)
+                      }
+                      isMini={isMini}
+                      alignValue={
+                        size === CARD_SIZES.SMALL && attributes.length === 1 ? 'center' : undefined
+                      }
+                      {...attribute}
+                      size={size}
+                      value={determineValue(attribute.dataSourceId, values)}
                       secondaryValue={
-                        content.attributes[0].secondaryValue && {
-                          ...content.attributes[0].secondaryValue,
-                          value: determineValue(
-                            content.attributes[0].secondaryValue.dataSourceId,
-                            values
-                          ),
+                        attribute.secondaryValue && {
+                          ...attribute.secondaryValue,
+                          value: determineValue(attribute.secondaryValue.dataSourceId, values),
                         }
                       }
                     />
-                  </AttributeValueWrapper>
-                </AttributeWrapper>
-              ) : (
-                content.attributes.map((attribute, i) => (
-                  // Larger card
-                  <React.Fragment>
-                    <AttributeWrapper
-                      layout={layout}
-                      key={`${attribute.title}-${i}`}
+                    {isMini && <Spacer />}
+                    <AttributeLabel
+                      title={attribute.label}
                       isVertical={isVertical}
-                      isSmall={attribute.secondaryValue !== undefined}
+                      layout={layout}
+                      isMini={isMini}
+                      attributeCount={attributes.length}
                       size={size}
                     >
-                      <Attribute
-                        isVertical={isVertical}
-                        layout={layout}
-                        {...attribute}
-                        value={determineValue(attribute.dataSourceId, values)}
-                        isSmall={isVertical}
-                        secondaryValue={
-                          attribute.secondaryValue && {
-                            ...attribute.secondaryValue,
-                            value: determineValue(attribute.secondaryValue.dataSourceId, values),
-                          }
-                        }
-                      />
-                      <AttributeLabel
-                        title={attribute.label}
-                        isVertical={isVertical}
-                        layout={layout}
-                        size={size}
-                      >
-                        {attribute.label}
-                      </AttributeLabel>
+                      {attribute.label}
+                    </AttributeLabel>
+                  </AttributeWrapper>
+                  {i < attributes.length - 1 &&
+                  (isVertical || layout === CARD_LAYOUTS.VERTICAL) &&
+                  size !== CARD_SIZES.XSMALLWIDE ? (
+                    <AttributeWrapper
+                      layout={layout}
+                      isVertical={isVertical}
+                      isSmall={attribute.secondaryValue !== undefined}
+                      isMini={isMini}
+                      size={size}
+                    >
+                      <AttributeSeparator />
                     </AttributeWrapper>
-                    {i < content.attributes.length - 1 && (
-                      <AttributeWrapper
-                        layout={layout}
-                        key={`${attribute.title}-${i}`}
-                        isVertical={isVertical}
-                        isSmall={attribute.secondaryValue !== undefined}
-                        size={size}
-                      >
-                        <AttributeSeparator />
-                      </AttributeWrapper>
-                    )}
-                  </React.Fragment>
-                ))
-              )}
+                  ) : null}
+                </React.Fragment>
+              ))}
             </ContentWrapper>
           </Card>
         );
