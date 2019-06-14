@@ -191,6 +191,8 @@ export const CardPropTypes = {
   i18n: PropTypes.shape({
     noDataLabel: PropTypes.string,
     noDataShortLabel: PropTypes.string,
+    errorLoadingDataLabel: PropTypes.string,
+    errorLoadingDataShortLabel: PropTypes.string,
     hourlyLabel: PropTypes.string,
     weeklyLabel: PropTypes.string,
     monthlyLabel: PropTypes.string,
