@@ -22,7 +22,7 @@ const defaultProps = {
   layout: CARD_LAYOUTS.HORIZONTAL,
   isSmall: false,
   isMini: false,
-  precision: 0,
+  precision: 1,
   color: null,
   isVertical: false,
 };
@@ -48,7 +48,7 @@ const determineFontSize = ({ value, size, isSmall, isMini }) => {
 const AttributeValue = styled.span`
   line-height: ${props => (props.isMini ? '1.0rem' : props.isSmall ? '2.0rem' : '2.5rem')};
   font-size: ${props => `${determineFontSize(props)}rem`};
-  padding-bottom: 0.25rem;
+  padding-bottom: ${props => (props.isMini ? '0' : '0.25rem')};
   font-weight: ${props => (props.isMini ? 'normal' : 'lighter')};
   ${props => props.layout === CARD_LAYOUTS.VERTICAL && `text-align: left;`};
   white-space: nowrap;
@@ -79,14 +79,14 @@ const ValueRenderer = ({
   if (typeof value === 'number') {
     renderValue =
       value > 1000000000000
-        ? (value / 1000000000000).toFixed(precision)
+        ? `${(value / 1000000000000).toFixed(precision)}T`
         : value > 1000000000
-        ? (value / 1000000000).toFixed(precision)
+        ? `${(value / 1000000000).toFixed(precision)}B`
         : value > 1000000
-        ? (value / 1000000).toFixed(precision)
+        ? `${(value / 1000000).toFixed(precision)}M`
         : value > 1000
-        ? (value / 1000).toFixed(precision)
-        : value.toFixed(precision);
+        ? `${(value / 1000).toFixed(precision)}K`
+        : value;
   } else if (isNil(value)) {
     renderValue = '--';
   }
