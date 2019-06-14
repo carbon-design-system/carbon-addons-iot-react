@@ -37,9 +37,15 @@ const Attribute = styled.div`
 `;
 
 /** Returns font size in rem */
-const determineFontSize = ({ value, size, isSmall, isMini }) => {
-  if (typeof value === 'string' && size === CARD_SIZES.XSMALL) {
-    return value.length > 4 ? 1 : 2;
+const determineFontSize = ({ value, size, isSmall, isMini, layout }) => {
+  if (typeof value === 'string') {
+    switch (size) {
+      case CARD_SIZES.XSMALL:
+        return value.length > 4 ? 1 : 2;
+      case CARD_SIZES.XSMALLWIDE:
+        return layout === CARD_LAYOUTS.HORIZONTAL ? 1.25 : 1;
+      default:
+    }
   }
   return isMini ? 1 : isSmall ? 2 : 2.5;
 };
@@ -48,7 +54,7 @@ const determineFontSize = ({ value, size, isSmall, isMini }) => {
 const AttributeValue = styled.span`
   line-height: ${props => (props.isMini ? '1.0rem' : props.isSmall ? '2.0rem' : '2.5rem')};
   font-size: ${props => `${determineFontSize(props)}rem`};
-  padding-bottom: ${props => (props.isMini ? '0' : '0.25rem')};
+  padding-bottom: 0.25rem;
   font-weight: ${props => (props.isMini ? 'normal' : 'lighter')};
   ${props => props.layout === CARD_LAYOUTS.VERTICAL && `text-align: left;`};
   white-space: nowrap;
@@ -86,7 +92,7 @@ const ValueRenderer = ({
         ? `${(value / 1000000).toFixed(precision)}M`
         : value > 1000
         ? `${(value / 1000).toFixed(precision)}K`
-        : value;
+        : value.toFixed(precision);
   } else if (isNil(value)) {
     renderValue = '--';
   }
