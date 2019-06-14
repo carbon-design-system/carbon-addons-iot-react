@@ -55,7 +55,7 @@ const AttributeWrapper = styled.div`
 
 const AttributeSeparator = styled.hr`
   margin: 0;
-  border-top: solid 1px #ccc;
+  border-top: solid 1px #eee;
   width: 100%;
 `;
 
@@ -131,7 +131,7 @@ const AttributeLabel = styled.div`
   ${props => (shouldLabelWrap(props) ? `` : `white-space: nowrap;`)}
   text-overflow: ellipsis;
   overflow: hidden;
-  padding-bottom: 0.25rem;
+  padding-bottom: ${props => (props.isMini ? '0' : '0.25rem')};
   ${props => (props.isVertical ? `width: 100%` : 'width: 50%')};
 `;
 
@@ -271,6 +271,7 @@ const ValueCard = ({ title, content, size, values, ...others }) => {
                       title={attribute.label}
                       isVertical={isVertical}
                       layout={layout}
+                      isMini={isMini}
                       attributeCount={attributes.length}
                       size={size}
                     >

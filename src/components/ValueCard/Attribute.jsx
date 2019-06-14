@@ -29,7 +29,7 @@ const TrendIcon = styled(Icon)`
 const ThresholdIconWrapper = styled.div`
   width: 1rem;
   height: 1rem;
-  margin: 0 0 0.5rem 0.5rem;
+  ${props => !props.isMini && 'margin: 0 0 0.5rem 0.5rem;'}
 `;
 
 const ThresholdIcon = styled(Icon)`
@@ -49,7 +49,7 @@ const AttributeSecondaryValue = styled.div`
   fill: ${props => props.color || '#777'};
   font-size: 0.875rem;
   padding-left: ${props => (props.isMini ? '0.5rem' : '0.25rem')};
-  margin-bottom: 0.25rem;
+  margin-bottom: ${props => (props.isMini ? '0' : '0.25rem')};
 `;
 
 const StyledIcon = styled.div`
@@ -86,7 +86,7 @@ const propTypes = {
 
 const defaultProps = {
   layout: null,
-  precision: 0,
+  precision: 1,
   thresholds: [],
   isVertical: false,
   alignValue: null,
@@ -136,7 +136,7 @@ const Attribute = ({
     matchingThreshold && matchingThreshold.icon === undefined ? matchingThreshold.color : null;
   const thresholdIcon =
     matchingThreshold && matchingThreshold.icon ? (
-      <ThresholdIconWrapper>
+      <ThresholdIconWrapper isMini={isMini}>
         <ThresholdIcon
           iconTitle={`${matchingThreshold.comparison} ${matchingThreshold.value}`}
           name={matchingThreshold.icon}
@@ -168,9 +168,13 @@ const Attribute = ({
               isVertical={isVertical}
               color={valueColor}
             />
-            {!measuredSize || measuredSize.width > 100 ? (
-              <UnitRenderer value={value} unit={unit} layout={layout} isMini={isMini} />
-            ) : null}
+            <UnitRenderer
+              isVisible={!measuredSize || measuredSize.width > 100}
+              value={value}
+              unit={unit}
+              layout={layout}
+              isMini={isMini}
+            />
             {!isNil(secondaryValue) && (!measuredSize || measuredSize.width > 100) ? (
               <AttributeSecondaryValue
                 color={secondaryValue.color}
