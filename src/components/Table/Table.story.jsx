@@ -568,6 +568,44 @@ storiesOf('Table', module)
       view={{ table: { selectedIds: ['row-3'] } }}
     />
   ))
+  .add('with single select and nested table rows ', () => (
+    <Table
+      columns={tableColumns}
+      data={tableData.map((i, idx) => ({
+        ...i,
+        children:
+          idx === 3
+            ? [getNewRow(idx, 'A'), getNewRow(idx, 'B')]
+            : idx === 7
+            ? [
+                getNewRow(idx, 'A'),
+                {
+                  ...getNewRow(idx, 'B'),
+                  children: [getNewRow(idx, 'B-1'), getNewRow(idx, 'B-2')],
+                },
+                getNewRow(idx, 'C'),
+                {
+                  ...getNewRow(idx, 'D'),
+                  children: [getNewRow(idx, 'D-1'), getNewRow(idx, 'D-2'), getNewRow(idx, 'D-3')],
+                },
+              ]
+            : undefined,
+      }))}
+      options={{
+        hasPagination: true,
+        hasRowSelection: 'single',
+        hasRowExpansion: true,
+        hasRowNesting: true,
+      }}
+      actions={actions}
+      view={{
+        table: {
+          expandedIds: ['row-3', 'row-7', 'row-7_B'],
+          selectedIds: ['row-3_A'],
+        },
+      }}
+    />
+  ))
   .add('with row expansion', () => (
     <Table
       columns={tableColumns}
