@@ -33,6 +33,10 @@ const ContentWrapper = styled.div`
   `}
 `;
 
+const determineAttributeWidth = ({ attributeCount, layout }) => {
+  return layout === CARD_LAYOUTS.HORIZONTAL ? `${Math.floor(100 / attributeCount)}%` : '100%';
+};
+
 /**
  * Responsible for rendering the Attribute and the Label for a given attribute
  * isVertical means that the label is rendering above the Attribute
@@ -46,7 +50,7 @@ const AttributeWrapper = styled.div`
     flex-direction: column;
     align-items: flex-end;
   `}
-    width: 100%;
+  width: ${props => determineAttributeWidth(props)};
   display: flex;
   align-items: center;
   ${props => (props.isVertical ? `` : 'justify-content: space-around;')}
@@ -55,7 +59,7 @@ const AttributeWrapper = styled.div`
 
 const AttributeSeparator = styled.hr`
   margin: 0;
-  border-top: solid 1px #eee;
+  border-top: solid 1px #dfe3e6;
   width: 100%;
 `;
 
@@ -244,6 +248,7 @@ const ValueCard = ({ title, content, size, values, ...others }) => {
                     isSmall={attribute.secondaryValue !== undefined}
                     isMini={isMini}
                     size={size}
+                    attributeCount={attributes.length}
                   >
                     <Attribute
                       isVertical={isVertical}

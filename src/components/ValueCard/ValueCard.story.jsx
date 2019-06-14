@@ -242,6 +242,62 @@ storiesOf('ValueCard', module)
       </div>
     );
   })
+  .add('xsmallwide / vertical 2', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.XSMALLWIDE);
+    return (
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+        <ValueCard
+          title={text('title', 'Status')}
+          id="facilitycard"
+          content={{
+            attributes: object('attributes', [
+              {
+                dataSourceId: 'status',
+                label: 'Status',
+              },
+              {
+                dataSourceId: 'comfortLevel',
+                label: 'Comfort level',
+              },
+            ]),
+          }}
+          breakpoint="lg"
+          size={size}
+          values={{ status: text('status', 'Good'), comfortLevel: text('comfortLevel', 'Healthy') }}
+        />
+      </div>
+    );
+  })
+  .add('xsmallwide / horizontal 2', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.XSMALLWIDE);
+    return (
+      <div style={{ width: `${number('cardWidth', 300)}px`, margin: 20 }}>
+        <ValueCard
+          title={text('title', 'Status')}
+          id="facilitycard"
+          content={{
+            attributes: object('attributes', [
+              {
+                dataSourceId: 'status',
+                label: 'Status',
+              },
+              {
+                dataSourceId: 'comfortLevel',
+                label: 'Comfort level',
+                unit: 'feels',
+              },
+            ]),
+          }}
+          breakpoint="lg"
+          size={size}
+          values={{
+            status: text('status', 'Problem'),
+            comfortLevel: text('comfortLevel', 'Healthy'),
+          }}
+        />
+      </div>
+    );
+  })
   .add('small / vertical / single', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
     return (

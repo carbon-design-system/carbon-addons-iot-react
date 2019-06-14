@@ -37,9 +37,15 @@ const Attribute = styled.div`
 `;
 
 /** Returns font size in rem */
-const determineFontSize = ({ value, size, isSmall, isMini }) => {
-  if (typeof value === 'string' && size === CARD_SIZES.XSMALL) {
-    return value.length > 4 ? 1 : 2;
+const determineFontSize = ({ value, size, isSmall, isMini, layout }) => {
+  if (typeof value === 'string') {
+    switch (size) {
+      case CARD_SIZES.XSMALL:
+        return value.length > 4 ? 1 : 2;
+      case CARD_SIZES.XSMALLWIDE:
+        return layout === CARD_LAYOUTS.HORIZONTAL ? 1.25 : 1;
+      default:
+    }
   }
   return isMini ? 1 : isSmall ? 2 : 2.5;
 };
@@ -48,7 +54,7 @@ const determineFontSize = ({ value, size, isSmall, isMini }) => {
 const AttributeValue = styled.span`
   line-height: ${props => (props.isMini ? '1.0rem' : props.isSmall ? '2.0rem' : '2.5rem')};
   font-size: ${props => `${determineFontSize(props)}rem`};
-  padding-bottom: ${props => (props.isMini ? '0' : '0.25rem')};
+  padding-bottom: 0.25rem;
   font-weight: ${props => (props.isMini ? 'normal' : 'lighter')};
   ${props => props.layout === CARD_LAYOUTS.VERTICAL && `text-align: left;`};
   white-space: nowrap;
@@ -60,18 +66,33 @@ const StyledBoolean = styled.span`
   text-transform: capitalize;
 `;
 
+const determinePrecision = (size, value, precision) => {
+  // If it's an integer don't return extra values
+  if (Number.isInteger(value)) {
+    return 0;
+  }
+  // If the card is xsmall we don't have room for decimals!
+  switch (size) {
+    case CARD_SIZES.XSMALL:
+      return Math.abs(value) > 9 ? 0 : precision;
+    default:
+  }
+  return precision;
+};
+
 /** This components job is determining how to render different kinds of card values */
 const ValueRenderer = ({
   value,
   size,
   unit,
   layout,
-  precision,
+  precision: precisionProp,
   isSmall,
   isMini,
   color,
   isVertical,
 }) => {
+  const precision = determinePrecision(size, value, precisionProp);
   let renderValue = value;
   if (typeof value === 'boolean') {
     renderValue = <StyledBoolean>{value.toString()}</StyledBoolean>;
@@ -86,7 +107,7 @@ const ValueRenderer = ({
         ? `${(value / 1000000).toFixed(precision)}M`
         : value > 1000
         ? `${(value / 1000).toFixed(precision)}K`
-        : value;
+        : value.toFixed(precision);
   } else if (isNil(value)) {
     renderValue = '--';
   }

@@ -13,7 +13,7 @@ import UnitRenderer from './UnitRenderer';
 
 const StyledAttribute = styled.div`
   display: flex;
-  align-items: ${props => (props.isMini ? 'center' : 'flex-end')};
+  align-items: ${props => (props.isMini ? 'center' : 'baseline')};
   ${props => (props.isVertical && props.alignValue ? `justify-content: ${props.alignValue};` : '')};
   order: 1;
   ${props =>
