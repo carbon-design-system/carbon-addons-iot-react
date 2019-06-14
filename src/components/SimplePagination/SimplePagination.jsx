@@ -92,25 +92,29 @@ const SimplePagination = ({
 
   return (
     <StyledContainer>
-      <StyledPageLabel>
+      <StyledPageLabel maxPage={maxPage}>
         {pageText ? `${pageText} ${page}` : pageOfPagesText(page, maxPage)}
       </StyledPageLabel>
-      <StyledButton
-        role="button"
-        tabIndex={hasPrev ? 0 : -1}
-        onClick={hasPrev ? handlePrev : undefined}
-        onKeyDown={hasPrev ? evt => handleEnterKeyDown(evt, handlePrev) : undefined}
-      >
-        <Icon name="icon--chevron--left" description={prevPageText} />
-      </StyledButton>
-      <StyledButton
-        role="button"
-        tabIndex={hasNext ? 0 : -1}
-        onClick={hasNext ? handleNext : undefined}
-        onKeyDown={hasNext ? evt => handleEnterKeyDown(evt, handleNext) : undefined}
-      >
-        <Icon name="icon--chevron--right" description={nextPageText} />
-      </StyledButton>
+      {maxPage > 1 ? (
+        <>
+          <StyledButton
+            role="button"
+            tabIndex={hasPrev ? 0 : -1}
+            onClick={hasPrev ? handlePrev : undefined}
+            onKeyDown={hasPrev ? evt => handleEnterKeyDown(evt, handlePrev) : undefined}
+          >
+            <Icon name="icon--chevron--left" description={prevPageText} />
+          </StyledButton>
+          <StyledButton
+            role="button"
+            tabIndex={hasNext ? 0 : -1}
+            onClick={hasNext ? handleNext : undefined}
+            onKeyDown={hasNext ? evt => handleEnterKeyDown(evt, handleNext) : undefined}
+          >
+            <Icon name="icon--chevron--right" description={nextPageText} />
+          </StyledButton>
+        </>
+      ) : null}
     </StyledContainer>
   );
 };
