@@ -7,7 +7,7 @@ import { getCardMinSize } from '../../utils/componentUtilityFunctions';
 
 import Card from './Card';
 
-storiesOf('Card (Experimental)', module)
+storiesOf('Card', module)
   .add('basic', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
     return (
@@ -64,7 +64,7 @@ storiesOf('Card (Experimental)', module)
   })
   .add('size gallery', () => {
     return Object.keys(CARD_SIZES).map(i => (
-      <React.Fragment>
+      <React.Fragment key={`card-${i}`}>
         <h3>{i}</h3>
         <div style={{ width: `${getCardMinSize('lg', CARD_SIZES[i]).x}px`, margin: 20 }}>
           <Card
@@ -90,7 +90,22 @@ storiesOf('Card (Experimental)', module)
           title={text('title', 'Card Title')}
           id="facilitycard"
           size={size}
-          error={text('error', 'Error loading card')}
+          error={text('error', 'API threw Nullpointer')}
+          breakpoint="lg"
+          onCardAction={(id, type, payload) => console.log('onCardAction', id, type, payload)}
+        />
+      </div>
+    );
+  })
+  .add('error/small', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.XSMALL);
+    return (
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+        <Card
+          title={text('title', 'Card Title')}
+          id="facilitycard"
+          size={size}
+          error={text('error', 'API threw Nullpointer')}
           breakpoint="lg"
           onCardAction={(id, type, payload) => console.log('onCardAction', id, type, payload)}
         />

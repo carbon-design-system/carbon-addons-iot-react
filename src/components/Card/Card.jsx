@@ -115,6 +115,8 @@ const defaultProps = {
   i18n: {
     noDataLabel: 'No data is available for this time range.',
     noDataShortLabel: 'No data',
+    errorLoadingDataLabel: 'Error loading data for this card: ',
+    errorLoadingDataShortLabel: 'Data error.',
     hourlyLabel: 'Hourly',
     weeklyLabel: 'Weekly',
     monthlyLabel: 'Monthly',
@@ -142,6 +144,8 @@ const Card = ({
   i18n: {
     noDataLabel,
     noDataShortLabel,
+    errorLoadingDataLabel,
+    errorLoadingDataShortLabel,
     hourlyLabel,
     weeklyLabel,
     monthlyLabel,
@@ -249,7 +253,11 @@ const Card = ({
       </CardHeader>
       <CardContent height={dimensions.y}>
         {error ? (
-          <EmptyMessageWrapper>{error}</EmptyMessageWrapper>
+          <EmptyMessageWrapper>
+            {size === CARD_SIZES.XSMALL || size === CARD_SIZES.XSMALLWIDE
+              ? errorLoadingDataShortLabel
+              : `${errorLoadingDataLabel} ${error}`}
+          </EmptyMessageWrapper>
         ) : isLoading ? (
           <SkeletonWrapper>
             <OptimizedSkeletonText
