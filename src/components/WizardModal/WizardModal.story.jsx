@@ -1,22 +1,13 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { Button } from 'carbon-components-react';
 import styled from 'styled-components';
 
 import WizardModal from './WizardModal';
 
 const StyledWizard = styled(WizardModal)`
   .WizardInline-custom-footer-content {
-    width: 33.33%;
-
-    button.bx--btn {
-      width: 100%;
-    }
-
-    & + div {
-      width: 66.66%;
-    }
+    padding: 1rem;
   }
 `;
 
@@ -57,7 +48,7 @@ storiesOf('WizardModal', module)
         { label: 'step3', content: 'page 3', onValidate: action('validateStep3') },
       ]}
       footer={{
-        leftContent: <Button>My Button</Button>,
+        leftContent: <p>Custom content</p>,
         previousButtonLabel: 'I18N Previous',
         nextButtonLabel: 'I18N Next',
         submitButtonLabel: 'I18N Submit',

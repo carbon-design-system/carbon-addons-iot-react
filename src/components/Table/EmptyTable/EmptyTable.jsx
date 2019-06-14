@@ -12,7 +12,6 @@ const { TableBody, TableCell, TableRow } = DataTable;
 const StyledEmptyTableRow = styled(TableRow)`
   &&& {
     &:hover td {
-      border: 1px solid ${COLORS.lightGrey};
       background: inherit;
     }
     .empty-table-cell--default {

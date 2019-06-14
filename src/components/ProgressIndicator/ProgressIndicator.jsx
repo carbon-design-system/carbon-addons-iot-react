@@ -10,9 +10,6 @@ const StyledProgressIndicator = styled(({ isVerticalMode, ...others }) => (
   <CarbonProgressIndicator {...others} />
 ))`
   &&& {
-    display: ${props => (!props.isVerticalMode ? 'inline-flex' : '')};
-    width: 100%;
-
     .bx--progress-step--complete {
       cursor: pointer;
     }
@@ -26,9 +23,9 @@ const StyledProgressStep = styled(({ showLabel, stepWidth, isVerticalMode, ...ot
   <ProgressStep {...others} />
 ))`
   &&& {
-    width: ${props => (!props.isVerticalMode && props.stepWidth ? `${props.stepWidth}px` : '')};
+    width: ${props => (!props.isVerticalMode && props.stepWidth ? `${props.stepWidth}rem` : '')};
     min-width: ${props =>
-      !props.isVerticalMode && props.stepWidth ? `${props.stepWidth}px` : '136px'};
+      !props.isVerticalMode && props.stepWidth ? `${props.stepWidth}rem` : ''};
     p {
       display: ${props => (!props.showLabel ? 'none' : 'inherit')};
     }
@@ -39,8 +36,8 @@ const StyledProgressStep = styled(({ showLabel, stepWidth, isVerticalMode, ...ot
         .bx--progress-step-button {
         flex-flow: initial;
       }
-      height: ${stepWidth ? `${stepWidth}px` : 'inherit'};
-      min-height: ${stepWidth ? `${stepWidth}px` : '80px'};
+      height: ${stepWidth ? `${stepWidth}rem` : 'inherit'};
+      min-height: ${stepWidth ? `${stepWidth}rem` : '4rem'};
       `
         : '';
     }}
@@ -67,8 +64,8 @@ const propTypes = {
 
 const defaultProps = {
   onClickItem: null,
-  showLabels: true,
-  stepWidth: 102,
+  showLabels: false,
+  stepWidth: null,
   currentItemId: null,
   isVerticalMode: false,
 };

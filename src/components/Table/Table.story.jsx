@@ -7,7 +7,7 @@ import styled from 'styled-components';
 import Arrow from '@carbon/icons-react/lib/arrow--right/20';
 import Add from '@carbon/icons-react/lib/add/20';
 import Delete from '@carbon/icons-react/lib/delete/16';
-import { iconArrowRight, iconCaretDown, iconAddSolid, iconDelete } from 'carbon-icons';
+import { iconAddSolid, iconDelete } from 'carbon-icons';
 
 import { getSortedData } from '../../utils/componentUtilityFunctions';
 
@@ -196,8 +196,15 @@ const RowExpansionContent = ({ rowId }) => (
   </div>
 );
 
+const StyledTableWidth = styled.div`
+  &&& {
+    width: 95vw;
+  }
+`;
+
 const StyledTableCustomRowHeight = styled(Table)`
   &&& {
+    width: 95vw;
     tr {
       height: 5rem;
     }
@@ -334,16 +341,18 @@ storiesOf('Table', module)
   .add(
     'Simple Stateful Example',
     () => (
-      <StatefulTable
-        {...initialState}
-        actions={actions}
-        lightweight={boolean('lightweight', false)}
-        options={{
-          hasRowSelection: select('hasRowSelection', ['multi', 'single'], 'multi'),
-          hasRowExpansion: false,
-        }}
-        view={{ table: { selectedIds: array('selectedIds', []) } }}
-      />
+      <StyledTableWidth>
+        <StatefulTable
+          {...initialState}
+          actions={actions}
+          lightweight={boolean('lightweight', false)}
+          options={{
+            hasRowSelection: select('hasRowSelection', ['multi', 'single'], 'multi'),
+            hasRowExpansion: false,
+          }}
+          view={{ table: { selectedIds: array('selectedIds', []) } }}
+        />
+      </StyledTableWidth>
     ),
     {
       info: {
@@ -357,11 +366,13 @@ storiesOf('Table', module)
   .add(
     'Stateful Example with expansion',
     () => (
-      <StatefulTable
-        {...initialState}
-        actions={actions}
-        lightweight={boolean('lightweight', false)}
-      />
+      <StyledTableWidth>
+        <StatefulTable
+          {...initialState}
+          actions={actions}
+          lightweight={boolean('lightweight', false)}
+        />
+      </StyledTableWidth>
     ),
     {
       info: {

@@ -182,7 +182,6 @@ class RowActionsCell extends React.Component {
                     key={`${id}-row-actions-button-${actionId}`}
                     kind="ghost"
                     onClick={e => onClick(e, id, actionId, onApplyRowAction)}
-                    small
                   >
                     {labelText}
                   </Button>

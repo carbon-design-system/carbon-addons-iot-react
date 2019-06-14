@@ -17,11 +17,6 @@ import HeaderMenu from './HeaderMenu';
 
 const StyledHeader = styled(CarbonHeader)`
   &&& {
-    background: ${COLORS.gray100};
-    position: fixed;
-    top: 0;
-    left: 0;
-
     .bx--skip-to-content:focus {
       min-width: 200px;
       justify-content: center;
@@ -38,7 +33,7 @@ const StyledHeader = styled(CarbonHeader)`
     }
 
     .bx--header__menu-item[role='menuitem']:focus {
-      border-color: #0062ff;
+      border-color: ${COLORS.blue60};
       outline: none;
     }
   }

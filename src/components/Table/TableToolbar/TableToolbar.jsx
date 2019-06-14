@@ -65,6 +65,10 @@ const StyledTableToolbarContent = styled(TableToolbarContent)`
 
 const StyledTableBatchActions = styled(TableBatchActions)`
   z-index: 3;
+
+  & + .bx--toolbar-action {
+    padding: 0;
+  }
 `;
 
 const propTypes = {

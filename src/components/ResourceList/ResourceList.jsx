@@ -14,6 +14,7 @@ const ResourceListSection = styled.section`
     .bx--btn {
       display: flex;
       align-items: flex-end;
+      margin: auto 0 auto auto;
 
       svg {
         margin-left: 0.25rem;
@@ -98,7 +99,6 @@ class ResourceList extends Component {
           kind="ghost"
           renderIcon={customAction.icon}
           onClick={() => customAction.onClick(rowId)}
-          small
         >
           {customAction.label}
         </Button>

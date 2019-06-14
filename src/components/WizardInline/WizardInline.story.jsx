@@ -158,7 +158,7 @@ storiesOf('WizardInline', module)
       title={text('title', 'I am a title')}
       blurb={text('blurb', 'My long blurb to explain what is going on')}
       showLabels={boolean('showLabels', true)}
-      stepWidth={number('stepWidth', 136)}
+      stepWidth={number('stepWidth', 9)}
       sidebar={sidebarComponent}
       footerLeftContent={footerComponent}
       onClose={action('closed')}

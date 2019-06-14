@@ -145,7 +145,6 @@ storiesOf('TableDetailWizard', module)
       items={itemsAndComponents}
       title={text('title', 'Create Physical Interface')}
       showLabels={boolean('showLabels', true)}
-      stepWidth={number('stepWidth', 80)}
       onClose={action('closed')}
       onSubmit={action('submit')}
       onNext={action('next')}

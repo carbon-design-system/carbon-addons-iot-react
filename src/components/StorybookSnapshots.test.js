@@ -21,6 +21,10 @@ describe(`Storybook Snapshot tests and console checks`, () => {
     // TODO: remove once carbon PR is merged
     spy.console = jest.spyOn(console, 'error').mockImplementation(e => {
       if (
+        !e.includes(
+          'The pseudo class ":first-child" is potentially unsafe when doing server-side rendering. Try changing it to ":first-of-type".'
+        ) &&
+        !e.includes('Warning: Received `true` for a non-boolean attribute `loading`.') &&
         !e.includes('Warning: Function components cannot be given refs.') &&
         !e.includes(
           // workaround storybook console error with styled components

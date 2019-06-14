@@ -13,6 +13,7 @@ export const COLORS = {
   gray80: '#3d3d3d',
   gray80hover: '#4c4c4c',
   gray70: '#565656',
+  gray20: '#dcdcdc',
   gray10: '#f3f3f3',
   blue60: '#0062ff',
   navToggle: '#282828',

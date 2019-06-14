@@ -3,38 +3,29 @@ import { rem } from 'polished';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import React from 'react';
-import Add from '@carbon/icons-react/lib/add--alt/32';
+import Add from '@carbon/icons-react/lib/add/20';
 
 import { COLORS } from '../../styles/styles';
 
 const StyledTile = styled(ClickableTile)`
-   {
+  &&& {
     border: 1px solid transparent;
-    display: flex;
+    display: inline-flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between;
     background-color: ${COLORS.superLightGray};
-    min-width: ${rem(200)};
+    min-height: 8rem;
+    min-width: 8.5rem;
     max-width: ${rem(300)};
     max-height: ${rem(250)};
-    text-align: center;
     :focus,
     :hover {
       border: 1px solid ${COLORS.blue};
     }
-  }
-`;
-const StyledIcon = styled(Add)`
-   {
-    width: ${rem(56)};
-    height: ${rem(56)};
-    margin-bottom: 1rem;
-  }
-`;
-const Title = styled.p`
-   {
-    color: gray;
+
+    svg {
+      margin: auto 0 0 auto;
+    }
   }
 `;
 
@@ -50,8 +41,8 @@ const propTypes = {
  */
 const AddCard = ({ onClick, title, className }) => (
   <StyledTile className={className} handleClick={onClick}>
-    <StyledIcon fill="grey" description={title} />
-    <Title className="title">{title}</Title>
+    <p className="title">{title}</p>
+    <Add fill={COLORS.gray100} description={title} />
   </StyledTile>
 );
 

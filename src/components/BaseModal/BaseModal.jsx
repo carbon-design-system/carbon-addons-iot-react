@@ -12,19 +12,12 @@ import classNames from 'classnames';
 import styled from 'styled-components';
 import { rem } from 'polished';
 
+import { PADDING } from '../../styles/styles';
 import { scrollErrorIntoView } from '../../utils/componentUtilityFunctions';
 import ButtonEnhanced from '../ButtonEnhanced';
-import { COLORS } from '../../styles/styles';
 
 const StyledModal = styled(ComposedModal)`
    {
-    /* is is also an error modal? */
-    &.error-modal {
-      .bx--modal-container {
-        border-top: ${COLORS.errorRed} ${rem(4)} solid;
-      }
-    }
-
     .bx--modal-container {
       @media (min-height: ${rem(515)}) {
         overflow-y: auto;
@@ -57,9 +50,7 @@ const StyledModal = styled(ComposedModal)`
     .bx--modal-header__heading {
       margin-bottom: 0.75rem;
     }
-    .bx--modal-content__text {
-      font-size: 1rem;
-    }
+
     .bx--modal-content {
       min-height: ${rem(200)};
     }
@@ -67,8 +58,9 @@ const StyledModal = styled(ComposedModal)`
 `;
 
 const StyledMessageBox = styled(InlineNotification)`
-   {
-    width: 100%;
+  &&& {
+    width: calc(100% - ${PADDING.horizontalWrapPadding} * 2);
+    margin: ${PADDING.verticalPadding} auto;
   }
 `;
 

@@ -79,19 +79,19 @@ REDUXFORM or REDUXDIALOG`,
     <BaseModal
       sendingData
       header={{
-        label: 'Add translation',
-        title: 'Dialog with added translation string to close icon',
+        label: 'No footer',
+        title: 'Dialog without footer',
       }}
       onClose={action('close')}
     />
   ))
-  .add('add description', () => (
+  .add('add translated description', () => (
     <BaseModal
       sendingData
       iconDescription="Translated string"
       header={{
-        label: 'No footer',
-        title: 'Dialog without footer',
+        label: 'Add translation',
+        title: 'Dialog with translated string for close icon',
       }}
       onClose={action('close')}
     />

@@ -14,7 +14,7 @@ const commonPageHeroProps = {
 
 storiesOf('PageHero', module)
   .add('normal', () => <PageHero {...commonPageHeroProps} />)
-  .add('normal with action', () => (
+  .add('normal with content switcher', () => (
     <PageHero
       {...commonPageHeroProps}
       switcher={{

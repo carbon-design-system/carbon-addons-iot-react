@@ -1,11 +1,11 @@
-import React from "react";
-import PropTypes from "prop-types";
-import styled from "styled-components";
-import ChevronLeft from "@carbon/icons-react/lib/chevron--left/16";
-import ChevronRight from "@carbon/icons-react/lib/chevron--right/16";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import CaretLeft from '@carbon/icons-react/lib/caret--left/20';
+import CaretRight from '@carbon/icons-react/lib/caret--right/20';
 
-import { handleEnterKeyDown } from "../../utils/componentUtilityFunctions";
-import { COLORS } from "../../styles/styles";
+import { handleEnterKeyDown } from '../../utils/componentUtilityFunctions';
+import { COLORS } from '../../styles/styles';
 
 const StyledContainer = styled.div`
   &&& {
@@ -13,9 +13,8 @@ const StyledContainer = styled.div`
     height: 3rem;
     justify-content: flex-end;
     width: 100%;
-    border: 1px solid ${COLORS.lightGrey};
-    background-color: ${COLORS.white};
-    color: ${COLORS.gray};
+    border: 1px solid ${COLORS.gray20};
+    background-color: ${COLORS.gray10};
     align-items: center;
   }
 `;
@@ -26,28 +25,18 @@ const StyledPageLabel = styled.span`
 `;
 
 const StyledButton = styled.div`
-  cursor: pointer;
-  display: flex;
-  width: 3rem;
-  height: 3rem;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid ${COLORS.lightGrey};
-  outline-offset: -3px;
-
   ${props =>
     props.onClick
-      ? `&:hover {
-    border: 1px solid ${COLORS.blue};
-    svg path {
-      fill: ${COLORS.blue};
-    }
-  }` // If the item isn't clickable remove the focus outline
+      ? `` // If the item isn't clickable remove the focus outline
       : `&:focus {
-        outline: none;
-        } cursor: default;`}
+          outline: none;
+          border: 1px solid ${COLORS.blue};
+        }
+        cursor: default;
+  `}
+
   svg path {
-    fill: ${COLORS.gray};
+    fill: ${COLORS.gray100};
   }
 `;
 
@@ -65,14 +54,14 @@ const propTypes = {
   /** Internationalized label for the word 'Previous page' */
   prevPageText: PropTypes.string,
   /** Callback when the page is changed */
-  onPage: PropTypes.func.isRequired
+  onPage: PropTypes.func.isRequired,
 };
 
 const defaultProps = {
   pageOfPagesText: (page, maxPage) => `Page ${page} of ${maxPage}`,
   pageText: null,
-  nextPageText: "Next page",
-  prevPageText: "Prev page"
+  nextPageText: 'Next page',
+  prevPageText: 'Prev page',
 };
 
 /** This is a lighter weight pagination component than the default Carbon one */
@@ -83,7 +72,7 @@ const SimplePagination = ({
   pageOfPagesText,
   page,
   maxPage,
-  onPage
+  onPage,
 }) => {
   const hasPrev = page > 1;
   const hasNext = page <= maxPage - 1;
@@ -97,24 +86,22 @@ const SimplePagination = ({
         {pageText ? `${pageText} ${page}` : pageOfPagesText(page, maxPage)}
       </StyledPageLabel>
       <StyledButton
+        className="bx--pagination__button bx--pagination__button--backward"
         role="button"
         tabIndex={hasPrev ? 0 : -1}
         onClick={hasPrev ? handlePrev : undefined}
-        onKeyDown={
-          hasPrev ? evt => handleEnterKeyDown(evt, handlePrev) : undefined
-        }
+        onKeyDown={hasPrev ? evt => handleEnterKeyDown(evt, handlePrev) : undefined}
       >
-        <ChevronLeft description={prevPageText} />
+        <CaretLeft description={prevPageText} />
       </StyledButton>
       <StyledButton
+        className="bx--pagination__button bx--pagination__button--forward"
         role="button"
         tabIndex={hasNext ? 0 : -1}
         onClick={hasNext ? handleNext : undefined}
-        onKeyDown={
-          hasNext ? evt => handleEnterKeyDown(evt, handleNext) : undefined
-        }
+        onKeyDown={hasNext ? evt => handleEnterKeyDown(evt, handleNext) : undefined}
       >
-        <ChevronRight description={nextPageText} />
+        <CaretRight description={nextPageText} />
       </StyledButton>
     </StyledContainer>
   );
