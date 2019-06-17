@@ -32,6 +32,8 @@
     }
   },
   "dependencies": {
+    "@carbon/charts": "^0.12.1",
+    "@carbon/charts-react": "^0.12.1",
     "c3": "^0.7.1",
     "classnames": "^2.2.5",
     "immutability-helper": "^2.9.0",

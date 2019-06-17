@@ -1148,6 +1148,28 @@
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
 
+"@carbon/charts-react@^0.12.2":
+  version "0.12.1"
+  resolved "https://registry.yarnpkg.com/@carbon/charts-react/-/charts-react-0.12.2.tgz#6994e0a926a8212b02b1c6a255eb366831300766"
+  integrity sha512-fBu1k9Kmrf11arLoYLitJkykIt0jCxSDNfIIgng/58hNorrzmpH0h2fcKlcC8wMlzmIJRPeDQOl2F4zCzq1xsA==
+  dependencies:
+    "@carbon/charts" "^0.12.1"
+
+"@carbon/charts@^0.12.1", "@carbon/charts@^0.12.2":
+  version "0.12.1"
+  resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-0.12.2.tgz#1b926f5b42dbc609539b583db699714e0a1f8ab1"
+  integrity sha512-vyruPOtC9wOQBmMwMz8JXJRHQwjfmbKB9svVm3f6C2D2VCwhCApX4Sdpx67nZSbWMokPn/ZNmFbT2/bn1/6kKw==
+  dependencies:
+    "@carbon/colors" "10.1.1"
+    "@carbon/utils-position" "1.1.0"
+    babel-polyfill "6.26.0"
+    resize-observer-polyfill "1.5.0"
+
+"@carbon/colors@10.1.1":
+  version "10.1.1"
+  resolved "https://registry.yarnpkg.com/@carbon/colors/-/colors-10.1.1.tgz#854c33ccdf02ac319c06923268ba89cf83a58c93"
+  integrity sha512-hni1iN0FUfQgnATqAT971WMAosl9YK7kQqp1V0vkF3d8rB/id+Y3K1GhDsXLKPfEAxdgE4+swGvID9tAY+a9kQ==
+
 "@carbon/icon-helpers@0.0.1-beta.5":
   version "0.0.1-beta.5"
   resolved "https://registry.yarnpkg.com/@carbon/icon-helpers/-/icon-helpers-0.0.1-beta.5.tgz#829e8593dbcee76e5d6300839d2b5d734f90c98d"
@@ -1178,6 +1200,11 @@
   version "10.1.0"
   resolved "https://registry.yarnpkg.com/@carbon/icons/-/icons-10.1.0.tgz#12daa64ef63c47128c2b2cc570456df5fdc34f1d"
   integrity sha512-LEgjcD2W87t6vmmv9cfEMIji92gAgadMMOmb6LqXFepPn3dQechHmejS4td8K2thOf4hIuqcOQUlJSHJwCFMuA==
+
+"@carbon/utils-position@1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@carbon/utils-position/-/utils-position-1.1.0.tgz#dbe6fe48ada221db20f1dfc8973ae4aec2caeeae"
+  integrity sha512-GFDdYkjYgMRjRcHjbN2vTreOXsRc0KGS4DPDt8WTUaU2ijAeyDzHWwg+w3XQ0JqEKOLAy+1ZWYafBxk1SaTljg==
 
 "@commitlint/cli@^7.2.1":
   version "7.2.1"
@@ -12212,6 +12239,11 @@ reserved-words@^0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/reserved-words/-/reserved-words-0.1.2.tgz#00a0940f98cd501aeaaac316411d9adc52b31ab1"
   integrity sha1-AKCUD5jNUBrqqsMWQR2a3FKzGrE=
+
+resize-observer-polyfill@1.5.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/resize-observer-polyfill/-/resize-observer-polyfill-1.5.0.tgz#660ff1d9712a2382baa2cad450a4716209f9ca69"
+  integrity sha512-M2AelyJDVR/oLnToJLtuDJRBBWUGUvvGigj1411hXhAdyFWqMaqHp7TixW3FpiLuVaikIcR1QL+zqoJoZlOgpg==
 
 resolve-cwd@^2.0.0:
   version "2.0.0"
