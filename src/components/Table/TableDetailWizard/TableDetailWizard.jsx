@@ -5,25 +5,27 @@ import { InlineNotification } from 'carbon-components-react';
 
 import WizardFooter from '../../WizardInline/WizardFooter/WizardFooter';
 import WizardContent from '../../WizardInline/WizardContent/WizardContent';
+import { COLORS } from '../../../styles/styles';
 
 import TableDetailWizardHeader from './TableDetailWizardHeader/TableDetailWizardHeader';
 import DetailWizardSidebar from './TableDetailWizardSidebar/TableDetailWizardSidebar';
 
 const StyledWizardWrapper = styled.div`
+  background-color: ${COLORS.gray10};
   display: flex;
   flex-flow: column;
   align-items: left;
   border: 1px solid #a2a2a28c;
-  border-top: none;
 
   .bx--inline-notification {
     max-width: none;
+    width: calc(100% - 2rem);
+    margin: 1rem;
   }
 `;
 
 const StyledWizardContainer = styled.div`
   display: flex;
-  background: #ffffff;
 `;
 
 const StyledMessageBox = styled(InlineNotification)`
@@ -35,6 +37,10 @@ const StyledMessageBox = styled(InlineNotification)`
 const StyledFooter = styled.div`
   .bx--modal-footer {
     justify-content: flex-end;
+
+    & > div {
+      width: 100%;
+    }
   }
 `;
 
@@ -95,7 +101,7 @@ export const defaultProps = {
   showLabels: true,
   nextDisabled: false,
   currentItemId: null,
-  stepWidth: 80,
+  stepWidth: 7,
   onNext: null,
   onBack: null,
   setItem: null,

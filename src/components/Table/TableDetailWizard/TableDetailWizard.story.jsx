@@ -165,19 +165,6 @@ storiesOf('TableDetailWizard', module)
       showLabels={boolean('showLabels', true)}
     />
   ))
-  .add('Static with Sidebar', () => (
-    <TableDetailWizard
-      items={itemsAndComponents}
-      onBack={action('back')}
-      onClose={action('Closed')}
-      onNext={action('next')}
-      onSubmit={action('submit')}
-      title={text('title', 'Create Physical Interface')}
-      currentItemId="step1"
-      setItem={action('step clicked')}
-      showLabels={boolean('showLabels', true)}
-    />
-  ))
   .add('with error', () => (
     <TableDetailWizard
       items={itemsAndComponents}
