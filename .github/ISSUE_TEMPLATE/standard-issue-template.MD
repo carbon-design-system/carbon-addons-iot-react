@@ -1,5 +1,5 @@
 ---
-name: Issue template
+name: Standard issue template
 about: Use this template when requesting a feature, reporting bug, or other
 title: [component name]: [Issue title]
 labels: ''
