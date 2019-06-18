@@ -99,8 +99,10 @@ const defaultProps = {
   toolbar: undefined,
   isLoading: false,
   isEmpty: false,
+  /** In editable mode we'll show preview data */
   isEditable: false,
   isExpanded: false,
+  /** For now we will hide the per card actions when we're editing */
   availableActions: {
     edit: false,
     clone: false,
@@ -266,7 +268,7 @@ const Card = ({
               width="100%"
             />
           </SkeletonWrapper>
-        ) : isEmpty ? (
+        ) : isEmpty && !isEditable ? (
           <EmptyMessageWrapper>{isXS ? noDataShortLabel : noDataLabel}</EmptyMessageWrapper>
         ) : (
           children
