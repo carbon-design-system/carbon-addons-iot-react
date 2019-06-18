@@ -118,6 +118,7 @@ const defaultProps = {
     errorLoadingDataLabel: 'Error loading data for this card: ',
     errorLoadingDataShortLabel: 'Data error.',
     hourlyLabel: 'Hourly',
+    dailyLabel: 'Daily',
     weeklyLabel: 'Weekly',
     monthlyLabel: 'Monthly',
     editCardLabel: 'Edit card',
@@ -147,6 +148,7 @@ const Card = ({
     errorLoadingDataLabel,
     errorLoadingDataShortLabel,
     hourlyLabel,
+    dailyLabel,
     weeklyLabel,
     monthlyLabel,
     editCardLabel,
@@ -176,12 +178,13 @@ const Card = ({
         inline
         hideLabel
         id={`timeselect-${id}`}
-        onChange={evt => console.log('new view: ', evt)} // eslint-disable-line
-        defaultValue="weekly"
+        onChange={evt => onCardAction(id, 'CHANGE_TIME_RANGE', { range: evt.target.value })} // eslint-disable-line
+        defaultValue="day"
       >
-        <SelectItem value="hourly" text={hourlyLabel} />
-        <SelectItem value="weekly" text={weeklyLabel} />
-        <SelectItem value="monthly" text={monthlyLabel} />
+        <SelectItem value="hour" text={hourlyLabel} />
+        <SelectItem value="day" text={dailyLabel} />
+        <SelectItem value="week" text={weeklyLabel} />
+        <SelectItem value="month" text={monthlyLabel} />
       </Select>
     </ToolbarItem>
   );
@@ -218,8 +221,7 @@ const Card = ({
     </StyledToolbar>
   ) : (
     <StyledToolbar>
-      {// TODO: if we keep this, expose capability under prop
-      false && timeBoxSelection}
+      {!isXS && timeBoxSelection}
       {mergedAvailableActions.expand && (
         <ToolbarItem>
           {isExpanded ? (

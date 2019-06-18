@@ -334,6 +334,7 @@ storiesOf('Dashboard (Experimental)', module)
           noDataLabel: text('noDataLabel', 'No data is available for this time range.'),
           noDataShortLabel: text('noDataShortLabel', 'No data'),
           hourlyLabel: text('hourlyLabel', 'Hourly'),
+          dailyLabel: text('dailyLabel', 'Weekly'),
           weeklyLabel: text('weeklyLabel', 'Weekly'),
           monthlyLabel: text('monthlyLabel', 'Monthly'),
           editCardLabel: text('editCardLabel', 'Edit card'),

@@ -194,6 +194,7 @@ export const CardPropTypes = {
     errorLoadingDataLabel: PropTypes.string,
     errorLoadingDataShortLabel: PropTypes.string,
     hourlyLabel: PropTypes.string,
+    dailyLabel: PropTypes.string,
     weeklyLabel: PropTypes.string,
     monthlyLabel: PropTypes.string,
     editCardLabel: PropTypes.string,
