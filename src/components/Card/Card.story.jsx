@@ -21,6 +21,7 @@ storiesOf('Card', module)
           isEditable={boolean('isEditable', false)}
           isExpanded={boolean('isExpanded', false)}
           breakpoint="lg"
+          availableActions={{ range: true }}
           onCardAction={(id, type, payload) => console.log('onCardAction', id, type, payload)}
         />
       </div>
@@ -57,6 +58,7 @@ storiesOf('Card', module)
           isEditable={boolean('isEditable', false)}
           isExpanded={boolean('isExpanded', false)}
           breakpoint="lg"
+          availableActions={{ range: true }}
           onCardAction={(id, type, payload) => console.log('onCardAction', id, type, payload)}
         />
       </div>
@@ -76,6 +78,7 @@ storiesOf('Card', module)
             isEditable={boolean('isEditable', false)}
             isExpanded={boolean('isExpanded', false)}
             breakpoint="lg"
+            availableActions={{ range: i !== CARD_SIZES.XSMALL }}
             onCardAction={(id, type, payload) => console.log('onCardAction', id, type, payload)}
           />
         </div>

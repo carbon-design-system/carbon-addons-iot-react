@@ -1148,12 +1148,12 @@
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
 
-"@carbon/charts-react@^0.12.2":
-  version "0.12.1"
-  resolved "https://registry.yarnpkg.com/@carbon/charts-react/-/charts-react-0.12.2.tgz#6994e0a926a8212b02b1c6a255eb366831300766"
-  integrity sha512-fBu1k9Kmrf11arLoYLitJkykIt0jCxSDNfIIgng/58hNorrzmpH0h2fcKlcC8wMlzmIJRPeDQOl2F4zCzq1xsA==
+"@carbon/charts-react@0.12.1":
+  version "0.12.0"
+  resolved "https://registry.yarnpkg.com/@carbon/charts-react/-/charts-react-0.12.1.tgz#cd4aea9f5092def1009490ceedcb19bafbc18b4d"
+  integrity sha512-MYdUcTvCkRIq09lxbinoDBc/NGkTgylEOrazkscFgg+oR/2yxjVeI7pJ5N0OLU4a7az2FzkiHlu3fw2SulS2gg==
   dependencies:
-    "@carbon/charts" "^0.12.1"
+    "@carbon/charts" "0.12.0"
 
 "@carbon/charts@^0.12.1", "@carbon/charts@^0.12.2":
   version "0.12.1"

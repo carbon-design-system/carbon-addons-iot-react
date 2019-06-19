@@ -4,9 +4,7 @@ import withSize from 'react-sizeme';
 import { LineChart } from '@carbon/charts-react';
 import '@carbon/charts/style.css';
 import isEmpty from 'lodash/isEmpty';
-
 import 'c3/c3.css';
-
 import styled from 'styled-components';
 
 import { TimeSeriesCardPropTypes, CardPropTypes } from '../../constants/PropTypes';
@@ -68,7 +66,7 @@ const TimeSeriesCard = ({
     //   : m.format('YYYY-MM-DD');
   };
 
-  const maxTicketPerSize = size => {
+  const maxTicksPerSize = () => {
     switch (size) {
       case CARD_SIZES.MEDIUM:
         return 6;
@@ -87,8 +85,8 @@ const TimeSeriesCard = ({
 
   return (
     <withSize.SizeMe monitorHeight>
-      {({ size: measuredSize }) => {
-        const ticksInterval = Math.round(values.length / maxTicketPerSize(size));
+      {() => {
+        const ticksInterval = Math.round(values.length / maxTicksPerSize(size));
         const labels = values
           .sort((left, right) => moment.utc(left.timestamp).diff(moment.utc(right.timestamp)))
           .map((i, idx) => {

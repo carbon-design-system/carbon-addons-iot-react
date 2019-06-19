@@ -93,6 +93,14 @@ const TinyButton = styled(Button)`
   }
 `;
 
+const StyledSelect = styled(Select)`
+  margin-right: -15px;
+  margin-top: -5px;
+  &.bx--select-input {
+    padding-right: 1.5rem;
+  }
+`;
+
 const defaultProps = {
   size: CARD_SIZES.SMALL,
   layout: CARD_SIZES.HORIZONTAL,
@@ -105,6 +113,7 @@ const defaultProps = {
     edit: false,
     clone: false,
     delete: false,
+    range: false,
     expand: false,
   },
   rowHeight: ROW_HEIGHT,
@@ -117,7 +126,11 @@ const defaultProps = {
     noDataShortLabel: 'No data',
     errorLoadingDataLabel: 'Error loading data for this card: ',
     errorLoadingDataShortLabel: 'Data error.',
-    hourlyLabel: 'Hourly',
+    dayByHourLabel: 'Last 24 hours',
+    weekByDayLabel: 'Last week - Daily',
+    monthByDayLabel: 'Last month - Daily',
+    monthByWeekLabel: 'Last month - Weekly',
+    yearByMonthLabel: 'Last year - Monthly',
     weeklyLabel: 'Weekly',
     monthlyLabel: 'Monthly',
     editCardLabel: 'Edit card',
@@ -146,9 +159,11 @@ const Card = ({
     noDataShortLabel,
     errorLoadingDataLabel,
     errorLoadingDataShortLabel,
-    hourlyLabel,
-    weeklyLabel,
-    monthlyLabel,
+    dayByHourLabel,
+    weekByDayLabel,
+    monthByDayLabel,
+    monthByWeekLabel,
+    yearByMonthLabel,
     editCardLabel,
     cloneCardLabel,
     deleteCardLabel,
@@ -172,17 +187,20 @@ const Card = ({
 
   const timeBoxSelection = (
     <ToolbarItem>
-      <Select
+      <StyledSelect
         inline
         hideLabel
         id={`timeselect-${id}`}
-        onChange={evt => console.log('new view: ', evt)} // eslint-disable-line
-        defaultValue="weekly"
+        onChange={evt => onCardAction(id, 'CHANGE_TIME_RANGE', { range: evt.target.value })} // eslint-disable-line
+        value="monthByDay"
+        defaultValue="weekByDay"
       >
-        <SelectItem value="hourly" text={hourlyLabel} />
-        <SelectItem value="weekly" text={weeklyLabel} />
-        <SelectItem value="monthly" text={monthlyLabel} />
-      </Select>
+        <SelectItem value="dayByHour" text={dayByHourLabel} />
+        <SelectItem value="weekByDay" text={weekByDayLabel} />
+        <SelectItem value="monthByDay" text={monthByDayLabel} />
+        <SelectItem value="monthByWeek" text={monthByWeekLabel} />
+        <SelectItem value="yearByMonth" text={yearByMonthLabel} />
+      </StyledSelect>
     </ToolbarItem>
   );
 
@@ -218,8 +236,7 @@ const Card = ({
     </StyledToolbar>
   ) : (
     <StyledToolbar>
-      {// TODO: if we keep this, expose capability under prop
-      false && timeBoxSelection}
+      {mergedAvailableActions.range && timeBoxSelection}
       {mergedAvailableActions.expand && (
         <ToolbarItem>
           {isExpanded ? (
