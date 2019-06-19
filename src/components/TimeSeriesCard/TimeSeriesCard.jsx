@@ -15,6 +15,8 @@ import Card from '../Card/Card';
 
 const LineChartWrapper = styled.div`
   padding-left: 16px;
+  width: 100%;
+  height: 100%;
   &&& {
     .chart-wrapper g.tick text {
       ${props =>
@@ -27,6 +29,10 @@ const LineChartWrapper = styled.div`
     .legend-wrapper {
       display: ${props => (props.isLegendHidden ? 'none' : 'block')};
     }
+    .chart-holder {
+      width: 100%;
+      height: 100%;
+    }
   }
 `;
 
@@ -38,15 +44,28 @@ const TimeSeriesCard = ({
   values,
   ...others
 }) => {
-  const formatInterval = timestamp => {
+  const formatInterval = (timestamp, sameDay, index) => {
     const m = moment.unix(timestamp / 1000);
-    return interval === 'day'
-      ? m.format('YYYY-MM-DD')
-      : interval === 'hour'
-      ? m.format('MM-DD HH:00')
+
+    return sameDay && interval === 'hour'
+      ? m.format('HH:mm')
+      : interval === 'hour' && !sameDay
+      ? m.format('Do HH:00')
+      : interval === 'day' && size === CARD_SIZES.MEDIUM && index === 0
+      ? m.format('DD MMM YYYY')
+      : interval === 'month'
+      ? m.format('MMM YYYY')
       : interval === 'minute'
       ? m.format('HH:mm')
-      : m.format('YYYY-MM-DD');
+      : m.format('DD MMM');
+
+    // return interval === 'day'
+    //   ? m.format('MM DD')
+    //   : interval === 'hour'
+    //   ? m.format('MM-DD HH:00')
+    //   : interval === 'minute'
+    //   ? m.format('HH:mm')
+    //   : m.format('YYYY-MM-DD');
   };
 
   const maxTicketPerSize = size => {
@@ -62,15 +81,21 @@ const TimeSeriesCard = ({
     }
   };
 
+  const sameDay =
+    moment(moment.unix(values[0].timestamp / 1000)).isSame(moment(), 'day') &&
+    moment(moment.unix(values[values.length - 1].timestamp / 1000)).isSame(moment(), 'day');
+
   return (
     <withSize.SizeMe monitorHeight>
       {({ size: measuredSize }) => {
         const ticksInterval = Math.round(values.length / maxTicketPerSize(size));
         const labels = values
           .sort((left, right) => moment.utc(left.timestamp).diff(moment.utc(right.timestamp)))
-          .map((i, idx) =>
-            idx % ticksInterval === 0 ? formatInterval(i[timeDataSourceId]) : ' '.repeat(idx)
-          );
+          .map((i, idx) => {
+            return idx % ticksInterval === 0
+              ? formatInterval(i[timeDataSourceId], sameDay, idx)
+              : ' '.repeat(idx);
+          });
         return (
           <Card title={title} size={size} {...others} isEmpty={isEmpty(values)}>
             {!others.isLoading && !isEmpty(values) ? (
@@ -98,6 +123,7 @@ const TimeSeriesCard = ({
                     legendClickable: true,
                     containerResizable: true,
                   }}
+                  height={size === CARD_SIZES.MEDIUM ? 200 : null}
                 />
               </LineChartWrapper>
             ) : null}
