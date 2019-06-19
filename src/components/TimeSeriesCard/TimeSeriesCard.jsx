@@ -32,10 +32,14 @@ const TimeSeriesCard = ({
 
   return (
     <withSize.SizeMe monitorHeight>
-      {({ size: measuredSize }) => {
+      {() => {
         const labels = values
-          .sort((left, right) => moment.utc(left.timeStamp).diff(moment.utc(right.timeStamp)))
-          .map((i, idx) => (idx % 2 === 0 ? formatInterval(i[timeDataSourceId]) : ' '.repeat(idx)));
+          ? values
+              .sort((left, right) => moment.utc(left.timeStamp).diff(moment.utc(right.timeStamp)))
+              .map((i, idx) =>
+                idx % 2 === 0 ? formatInterval(i[timeDataSourceId]) : ' '.repeat(idx)
+              )
+          : [];
 
         return (
           <Card title={title} size={size} {...others} isEmpty={isEmpty(values)}>
