@@ -1,5 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import { text } from '@storybook/addon-knobs';
 
 import FileDrop from './FileDrop';
 
@@ -13,7 +14,16 @@ const FileDropProps = {
 };
 
 storiesOf('FileDrop', module)
-  .add('Browse', () => <FileDrop {...FileDropProps} />)
+  .add('Browse', () => (
+    <FileDrop
+      {...FileDropProps}
+      title={text('title', 'Upload Files')}
+      description={text(
+        'description',
+        'Any file can be uploaded.  Feel free to upload more than one!'
+      )}
+    />
+  ))
   .add('Browse only one', () => (
     <FileDrop {...FileDropProps} description="Only one file can be uploaded" multiple={false} />
   ))
