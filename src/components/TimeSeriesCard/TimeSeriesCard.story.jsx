@@ -4,16 +4,16 @@ import { text, select, object, boolean } from '@storybook/addon-knobs';
 
 import { COLORS, CARD_SIZES } from '../../constants/LayoutConstants';
 import { getCardMinSize } from '../../utils/componentUtilityFunctions';
-import { getIntervalChartData, chartData } from '../../utils/sample';
+import { getIntervalChartData, chartData, generateData } from '../../utils/sample';
 
 import TimeSeriesCard from './TimeSeriesCard';
 
 // need a timeOffset to make the data always show up
 const timeOffset = new Date().getTime() - Object.values(chartData.dataItemToMostRecentTimestamp)[0];
 storiesOf('TimeSeriesCard (Experimental)', module)
-  .add('single line - no range', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
-    console.log(getIntervalChartData('day'));
+  .add('medium / single line - interval hour', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
+    // console.log(getIntervalChartData('day', 30, { min: 10, max: 100 }, 100));
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <TimeSeriesCard
@@ -32,8 +32,96 @@ storiesOf('TimeSeriesCard (Experimental)', module)
             yLabel: text('yLabel', 'Temperature (˚F)'),
             timeDataSourceId: 'timestamp',
           })}
-          values={getIntervalChartData('day').slice(0, 10)}
+          values={getIntervalChartData('day', 100, { min: 10, max: 100 }, 100)}
           interval="hour"
+          breakpoint="lg"
+          size={size}
+        />
+      </div>
+    );
+  })
+  .add('medium / single line - interval day', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
+    return (
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+        <TimeSeriesCard
+          title={text('title', 'Temperature')}
+          id="facility-temperature"
+          isLoading={boolean('isLoading', false)}
+          content={object('content', {
+            series: [
+              {
+                label: 'Temperature',
+                dataSourceId: 'temperature',
+                // color: text('color', COLORS.PURPLE),
+              },
+            ],
+
+            xLabel: text('xLabel', 'Time t'),
+            yLabel: text('yLabel', 'Temperature (˚F)'),
+            timeDataSourceId: 'timestamp',
+          })}
+          values={getIntervalChartData('day', 500, { min: 10, max: 100 }, 100)}
+          interval="day"
+          breakpoint="lg"
+          size={size}
+        />
+      </div>
+    );
+  })
+  .add('medium / single line - interval hour, values hour (Same day)', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
+    console.log(generateData(10, { min: 10, max: 100 }, 100));
+    return (
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+        <TimeSeriesCard
+          title={text('title', 'Temperature')}
+          id="facility-temperature"
+          isLoading={boolean('isLoading', false)}
+          content={object('content', {
+            series: [
+              {
+                label: 'Temperature',
+                dataSourceId: 'temperature',
+                // color: text('color', COLORS.PURPLE),
+              },
+            ],
+
+            xLabel: text('xLabel', 'Time'),
+            yLabel: text('yLabel', 'Temperature (˚F)'),
+            timeDataSourceId: 'timestamp',
+          })}
+          values={getIntervalChartData('hour', 10, { min: 10, max: 100 }, 100)}
+          interval="hour"
+          breakpoint="lg"
+          size={size}
+        />
+      </div>
+    );
+  })
+  .add('LARGE / single line - interval day', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
+    return (
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+        <TimeSeriesCard
+          title={text('title', 'Temperature')}
+          id="facility-temperature"
+          isLoading={boolean('isLoading', false)}
+          content={object('content', {
+            series: [
+              {
+                label: 'Temperature',
+                dataSourceId: 'temperature',
+                // color: text('color', COLORS.PURPLE),
+              },
+            ],
+
+            xLabel: text('xLabel', 'Time'),
+            yLabel: text('yLabel', 'Temperature (˚F)'),
+            timeDataSourceId: 'timestamp',
+          })}
+          values={getIntervalChartData('day', 30, { min: 10, max: 100 }, 100)}
+          interval="day"
           breakpoint="lg"
           size={size}
         />
@@ -127,35 +215,6 @@ storiesOf('TimeSeriesCard (Experimental)', module)
             ...data,
             timestamp: data.timestamp + timeOffset,
           }))}
-          size={size}
-        />
-      </div>
-    );
-  })
-  .add('single line - interval day - testing', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
-    // console.log('Values,', getIntervalChartData('day'));
-    return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
-        <TimeSeriesCard
-          title={text('title', 'Temperature')}
-          id="facility-temperature"
-          isLoading={boolean('isLoading', false)}
-          content={object('content', {
-            series: [
-              {
-                label: 'Temperature',
-                dataSourceId: 'temperature',
-                // color: text('color', COLORS.PURPLE),
-              },
-            ],
-            xLabel: text('xLabel', 'Time'),
-            yLabel: text('yLabel', 'Temperature (˚F)'),
-            timeDataSourceId: 'timestamp',
-          })}
-          values={getIntervalChartData('day').slice(0, 10)}
-          interval="day"
-          breakpoint="lg"
           size={size}
         />
       </div>
