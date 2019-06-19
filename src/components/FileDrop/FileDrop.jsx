@@ -39,8 +39,12 @@ const propTypes = {
   title: PropTypes.string.isRequired,
   /** Description text of file uploader */
   description: PropTypes.string.isRequired,
+  /** Optionally show the uploaded files */
+  showFiles: PropTypes.bool,
   /** Button label  */
   buttonLabel: PropTypes.string,
+  /** can multiple files be uploaded */
+  multiple: PropTypes.bool,
   /** File types that are accepted */
   accept: PropTypes.arrayOf(PropTypes.string),
   /** Componet is drag/drop */
@@ -55,6 +59,8 @@ const defaultProps = {
   id: 'FileUploader',
   buttonLabel: 'Add files',
   kind: 'browse',
+  multiple: true,
+  showFiles: true,
   accept: [],
   onData: () => {},
   onError: () => {},
@@ -156,6 +162,7 @@ class FileDrop extends React.Component {
   };
 
   addNewFiles = files => {
+    const { multiple } = this.props;
     const filenames = Array.prototype.map.call(files, f => f.name);
     this.setState(state => ({
       files: state.files
@@ -167,7 +174,9 @@ class FileDrop extends React.Component {
           }))
         )
         .filter(
-          (elem, index, arr) => index === arr.findIndex(indexFound => indexFound.name === elem.name)
+          (elem, index, arr) =>
+            index === arr.findIndex(indexFound => indexFound.name === elem.name) &&
+            (multiple || index === 0) // only support the first if set to multiple=false
         ),
     }));
     this.readFileContent(files);
@@ -200,7 +209,7 @@ class FileDrop extends React.Component {
   };
 
   render = () => {
-    const { id, title, description, buttonLabel, accept, kind } = this.props;
+    const { id, title, description, buttonLabel, accept, kind, multiple, showFiles } = this.props;
     const { hover } = this.state;
 
     const dradAndDropText = 'Drag and drop you file here or ';
@@ -261,7 +270,7 @@ class FileDrop extends React.Component {
           type="file"
           ref={ref => (this.fileInput = ref)} // eslint-disable-line
           accept={accept}
-          multiple
+          multiple={multiple}
           onChange={this.handleChange}
         />
         <Text
@@ -272,7 +281,7 @@ class FileDrop extends React.Component {
         >
           {linkElement}
         </Text>
-        {fileNameElements}
+        {showFiles ? fileNameElements : null}
       </div>
     ) : (
       <div id={id} className="bx--form-item">
@@ -280,13 +289,13 @@ class FileDrop extends React.Component {
         <p className="bx--label-description">{description}</p>
         <FileUploaderButton
           labelText={buttonLabel}
-          multiple
+          multiple={multiple}
           buttonKind="secondary"
           onChange={this.handleChange}
           disableLabelChanges
           accept={accept}
         />
-        {fileNameElements}
+        {showFiles ? fileNameElements : null}
       </div>
     );
   };
