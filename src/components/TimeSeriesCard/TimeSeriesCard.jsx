@@ -4,12 +4,29 @@ import withSize from 'react-sizeme';
 import { LineChart } from '@carbon/charts-react';
 import '@carbon/charts/style.css';
 import isEmpty from 'lodash/isEmpty';
-
 import 'c3/c3.css';
+import styled from 'styled-components';
 
 import { TimeSeriesCardPropTypes, CardPropTypes } from '../../constants/PropTypes';
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 import Card from '../Card/Card';
+
+const LineChartWrapper = styled.div`
+  padding-left: 16px;
+  &&& {
+    .chart-wrapper g.tick text {
+      ${props =>
+        props.size === CARD_SIZES.MEDIUM &&
+        `
+          transform: initial !important;
+          text-anchor: initial !important;
+        `}
+    }
+    .legend-wrapper {
+      display: ${props => (props.isLegendHidden ? 'none' : 'block')};
+    }
+  }
+`;
 
 const TimeSeriesCard = ({
   title,
@@ -30,46 +47,57 @@ const TimeSeriesCard = ({
       : m.format('YYYY-MM-DD');
   };
 
+  const maxTicksPerSize = () => {
+    switch (size) {
+      case CARD_SIZES.MEDIUM:
+        return 6;
+      case CARD_SIZES.LARGE:
+        return 12;
+      case CARD_SIZES.XLARGE:
+        return 20;
+      default:
+        return 10;
+    }
+  };
+
   return (
     <withSize.SizeMe monitorHeight>
       {() => {
+        const ticksInterval = Math.round(values.length / maxTicksPerSize(size));
         const labels = values
-          ? values
-              .sort((left, right) => moment.utc(left.timeStamp).diff(moment.utc(right.timeStamp)))
-              .map((i, idx) =>
-                idx % 2 === 0 ? formatInterval(i[timeDataSourceId]) : ' '.repeat(idx)
-              )
-          : [];
-
+          .sort((left, right) => moment.utc(left.timestamp).diff(moment.utc(right.timestamp)))
+          .map((i, idx) =>
+            idx % ticksInterval === 0 ? formatInterval(i[timeDataSourceId]) : ' '.repeat(idx)
+          );
         return (
           <Card title={title} size={size} {...others} isEmpty={isEmpty(values)}>
             {!others.isLoading && !isEmpty(values) ? (
-              <LineChart
-                data={{
-                  labels,
-                  datasets: series.map(({ dataSourceId, label }) => ({
-                    label,
-                    data: values.map(i => i[dataSourceId]),
-                  })),
-                }}
-                options={{
-                  animations: false,
-                  accessibility: false,
-                  scales: {
-                    x: {
-                      title: xLabel,
-                      // ticks: 6,
+              <LineChartWrapper size={size} isLegendHidden={series.length === 1}>
+                <LineChart
+                  data={{
+                    labels,
+                    datasets: series.map(({ dataSourceId, label }) => ({
+                      label,
+                      data: values.map(i => i[dataSourceId]),
+                    })),
+                  }}
+                  options={{
+                    animations: false,
+                    accessibility: false,
+                    scales: {
+                      x: {
+                        title: xLabel,
+                      },
+                      y: {
+                        title: yLabel,
+                        // numberOfTicks: 8,
+                      },
                     },
-                    y: {
-                      title: yLabel,
-                      // ticks: 3,
-                      // numberOfTicks: 3,
-                    },
-                  },
-                  legendClickable: true,
-                  containerResizable: true,
-                }}
-              />
+                    legendClickable: true,
+                    containerResizable: true,
+                  }}
+                />
+              </LineChartWrapper>
             ) : null}
           </Card>
         );

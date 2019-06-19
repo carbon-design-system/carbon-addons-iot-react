@@ -113,6 +113,7 @@ const defaultProps = {
     edit: false,
     clone: false,
     delete: false,
+    range: false,
     expand: false,
   },
   rowHeight: ROW_HEIGHT,
@@ -235,7 +236,7 @@ const Card = ({
     </StyledToolbar>
   ) : (
     <StyledToolbar>
-      {!isXS && timeBoxSelection}
+      {mergedAvailableActions.range && timeBoxSelection}
       {mergedAvailableActions.expand && (
         <ToolbarItem>
           {isExpanded ? (
