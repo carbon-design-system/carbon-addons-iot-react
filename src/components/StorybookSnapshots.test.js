@@ -29,6 +29,18 @@ describe(`Storybook Snapshot tests and console checks`, () => {
         !e.includes(
           // workaround storybook console error with styled components
           'Warning: Failed prop type: Invalid prop `type` of type `object` supplied to `PropTable`, expected `function'
+        ) &&
+        !e.includes(
+          // workaround storybook console error with styled components
+          'prop type `element` is invalid; it must be a function, usually from the `prop-types` package, but received `undefined`'
+        ) &&
+        !e.includes(
+          // workaround storybook console error with styled components
+          'Warning: Failed prop type: Invalid prop `type` of type `object` supplied to `TableComponent`, expected `function`'
+        ) &&
+        !e.includes(
+          // workaround storybook console error with styled components
+          'Warning: Failed prop type: The prop `children` is marked as required in `Td`, but its value is `null`.'
         )
       ) {
         done.fail(e);

@@ -14,152 +14,152 @@ import { COLORS, PADDING } from '../../styles/styles';
 
 // import CarbonSideNav from './CarbonSideNav';
 
-const sStyledSideNav = styled(CarbonSideNav)`
-  &&& {
-    background-color: ${COLORS.gray100};
-    border-top: 1px solid #3c4646;
-    height: calc(100% - 3rem);
+// const sStyledSideNav = styled(CarbonSideNav)`
+//   &&& {
+//     background-color: ${COLORS.gray100};
+//     border-top: 1px solid #3c4646;
+//     height: calc(100% - 3rem);
 
-    .bx--side-nav__menu[role='menu'] .bx--side-nav__link[role='menuitem'] {
-      height: 2rem;
-      min-height: 2rem;
-      padding-left: 3.5rem;
-    }
+//     .bx--side-nav__menu[role='menu'] .bx--side-nav__link[role='menuitem'] {
+//       height: 2rem;
+//       min-height: 2rem;
+//       padding-left: 3.5rem;
+//     }
 
-    .bx--side-nav__link {
-      position: relative;
-      display: flex;
-      align-items: center;
-      text-decoration: none;
-      min-height: 3rem;
-      padding-right: 1rem;
-      font-weight: 400;
-    }
+//     .bx--side-nav__link {
+//       position: relative;
+//       display: flex;
+//       align-items: center;
+//       text-decoration: none;
+//       min-height: 3rem;
+//       padding-right: 1rem;
+//       font-weight: 400;
+//     }
 
-    button {
-      appearance: none;
-      width: 100%;
-      background: transparent;
+//     button {
+//       appearance: none;
+//       width: 100%;
+//       background: transparent;
 
-      &.bx--side-nav__toggle {
-        background: ${COLORS.navToggle};
+//       &.bx--side-nav__toggle {
+//         background: ${COLORS.navToggle};
 
-        :hover {
-          background: ${COLORS.gray80};
-        }
-      }
-    }
+//         :hover {
+//           background: ${COLORS.gray80};
+//         }
+//       }
+//     }
 
-    button.bx--side-nav__link {
-      border: none;
-    }
+//     button.bx--side-nav__link {
+//       border: none;
+//     }
 
-    .bx--side-nav__link > .bx--side-nav__link-text {
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      color: ${COLORS.gray10};
-      font-size: 0.875rem;
-      letter-spacing: 0.1px;
-      line-height: 1.25rem;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-    }
+//     .bx--side-nav__link > .bx--side-nav__link-text {
+//       white-space: nowrap;
+//       overflow: hidden;
+//       text-overflow: ellipsis;
+//       color: ${COLORS.gray10};
+//       font-size: 0.875rem;
+//       letter-spacing: 0.1px;
+//       line-height: 1.25rem;
+//       -webkit-user-select: none;
+//       -moz-user-select: none;
+//       -ms-user-select: none;
+//       user-select: none;
+//     }
 
-    .bx--side-nav__link:focus {
-      outline: 4px solid ${COLORS.blue60};
-      outline-offset: -4px;
-    }
-  }
-`;
-const sStyledSideNavLink = styled(SideNavLink)`
-  &&& {
-    position: relative;
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    min-height: 3rem;
-    padding-right: 1rem;
-    font-weight: 400;
+//     .bx--side-nav__link:focus {
+//       outline: 4px solid ${COLORS.blue60};
+//       outline-offset: -4px;
+//     }
+//   }
+// `;
+// const sStyledSideNavLink = styled(SideNavLink)`
+//   &&& {
+//     position: relative;
+//     display: flex;
+//     align-items: center;
+//     text-decoration: none;
+//     min-height: 3rem;
+//     padding-right: 1rem;
+//     font-weight: 400;
 
-    &.bx--side-nav__link--current {
-      background-color: ${COLORS.gray70};
-    }
+//     &.bx--side-nav__link--current {
+//       background-color: ${COLORS.gray70};
+//     }
 
-    :focus {
-      outline: 4px solid ${COLORS.blue60};
-      outline-offset: -4px;
-    }
+//     :focus {
+//       outline: 4px solid ${COLORS.blue60};
+//       outline-offset: -4px;
+//     }
 
-    :hover {
-      background-color: ${COLORS.gray80};
-    }
+//     :hover {
+//       background-color: ${COLORS.gray80};
+//     }
 
-    > .bx--side-nav__link-text {
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      color: ${COLORS.gray10};
-      font-size: 0.875rem;
-      letter-spacing: 0.1px;
-      line-height: 1.25rem;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-    }
+//     > .bx--side-nav__link-text {
+//       white-space: nowrap;
+//       overflow: hidden;
+//       text-overflow: ellipsis;
+//       color: ${COLORS.gray10};
+//       font-size: 0.875rem;
+//       letter-spacing: 0.1px;
+//       line-height: 1.25rem;
+//       -webkit-user-select: none;
+//       -moz-user-select: none;
+//       -ms-user-select: none;
+//       user-select: none;
+//     }
 
-    > .bx--side-nav__icon {
-      margin-right: 0.5rem;
-    }
-  }
-`;
+//     > .bx--side-nav__icon {
+//       margin-right: 0.5rem;
+//     }
+//   }
+// `;
 
-const StyledSideNavMenu = styled(SideNavMenu)`
-  &&& {
-    background-color: ${COLORS.gray100};
+// const StyledSideNavMenu = styled(SideNavMenu)`
+//   &&& {
+//     background-color: ${COLORS.gray100};
 
-    :not(.bx--side-nav__item--active):hover {
-      background-color: ${COLORS.gray100};
-    }
+//     :not(.bx--side-nav__item--active):hover {
+//       background-color: ${COLORS.gray100};
+//     }
 
-    > button:hover {
-      background-color: ${COLORS.gray80};
-    }
+//     > button:hover {
+//       background-color: ${COLORS.gray80};
+//     }
 
-    :hover {
-      background-color: ${COLORS.gray80};
-    }
+//     :hover {
+//       background-color: ${COLORS.gray80};
+//     }
 
-    [aria-expanded='true'] {
-      background-color: ${COLORS.gray80};
+//     [aria-expanded='true'] {
+//       background-color: ${COLORS.gray80};
 
-      :hover {
-        background-color: ${COLORS.gray80hover};
-      }
+//       :hover {
+//         background-color: ${COLORS.gray80hover};
+//       }
 
-      + ul {
-        background-color: ${COLORS.gray80};
-      }
+//       + ul {
+//         background-color: ${COLORS.gray80};
+//       }
 
-      + ul .bx--side-nav__link:hover {
-        background-color: ${COLORS.gray80hover};
-      }
-    }
-    /* We have to apply these styles when we switch out a tag for something else */
-    .bx--side-nav__link--current::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      width: 4px;
-      background-color: ${COLORS.blue60};
-    }
-  }
-`;
+//       + ul .bx--side-nav__link:hover {
+//         background-color: ${COLORS.gray80hover};
+//       }
+//     }
+//     /* We have to apply these styles when we switch out a tag for something else */
+//     .bx--side-nav__link--current::before {
+//       content: '';
+//       position: absolute;
+//       top: 0;
+//       bottom: 0;
+//       left: 0;
+//       width: 4px;
+//       background-color: ${COLORS.blue60};
+//     }
+//   }
+// `;
 
 // new styles
 
@@ -214,7 +214,7 @@ const StyledSideNav = styled(CarbonSideNav)`
       bottom: 0;
       left: 0;
       width: 4px;
-      background-color: #0062ff;
+      background-color: ${COLORS.blue60};
     }
 
     .bx--side-nav__menu[role='menu'] .bx--side-nav__link[role='menuitem'] {
@@ -334,7 +334,12 @@ const SideNav = ({ links, defaultExpanded, isSideNavExpanded, onClickSideNavExpa
   });
 
   return (
-    <StyledSideNav aria-label="Side navigation" defaultExpanded={defaultExpanded} isFixedNav>
+    <StyledSideNav
+      className={classnames({ 'bx--side-nav--expanded': isSideNavExpanded })}
+      aria-label="Side navigation"
+      defaultExpanded={defaultExpanded}
+      isFixedNav
+    >
       <SideNavItems>{nav}</SideNavItems>
     </StyledSideNav>
   );

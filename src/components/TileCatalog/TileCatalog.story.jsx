@@ -75,7 +75,7 @@ storiesOf('TileCatalog', module)
       {...commonTileCatalogProps}
       search={{
         placeHolderText: 'Search catalog',
-        onSearch: action('onSearch'),
+        onSearch: console.log('searched'),
       }}
       pagination={{ pageSize: 6, onPage: action('onPage') }}
     />

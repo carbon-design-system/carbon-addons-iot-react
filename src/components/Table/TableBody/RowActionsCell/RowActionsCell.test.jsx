@@ -1,5 +1,6 @@
 import { mount } from 'enzyme';
 import React from 'react';
+import Add from '@carbon/icons-react/lib/add/20';
 
 import RowActionsCell from './RowActionsCell';
 
@@ -14,7 +15,7 @@ describe('RowActionsCell', () => {
     mockApplyRowAction.mockClear();
   });
   test('click handler', () => {
-    const actions = [{ id: 'addAction', icon: 'icon--add' }];
+    const actions = [{ id: 'addAction', renderIcon: Add, iconDescription: 'See more' }];
     const wrapper = mount(<RowActionsCell {...commonRowActionsProps} actions={actions} />);
     const button = wrapper.find('.bx--btn');
     // one button should render
@@ -23,7 +24,9 @@ describe('RowActionsCell', () => {
     expect(mockApplyRowAction).toHaveBeenCalledTimes(1);
   });
   test('custom SVG in button', () => {
-    const actions = [{ id: 'addAction', renderIcon: () => <svg title="my svg" /> }];
+    const actions = [
+      { id: 'addAction', renderIcon: () => <svg title="my svg" />, iconDescription: 'See more' },
+    ];
     const wrapper = mount(<RowActionsCell {...commonRowActionsProps} actions={actions} />);
     const button = wrapper.find('.bx--btn');
     // one button should render
