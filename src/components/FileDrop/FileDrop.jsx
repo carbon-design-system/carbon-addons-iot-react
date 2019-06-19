@@ -36,9 +36,9 @@ const propTypes = {
   /** DOM ID */
   id: PropTypes.string,
   /** Title text  */
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
   /** Description text of file uploader */
-  description: PropTypes.string.isRequired,
+  description: PropTypes.string,
   /** Optionally show the uploaded files */
   showFiles: PropTypes.bool,
   /** Button label  */
@@ -58,6 +58,8 @@ const propTypes = {
 const defaultProps = {
   id: 'FileUploader',
   buttonLabel: 'Add files',
+  title: null,
+  description: null,
   kind: 'browse',
   multiple: true,
   showFiles: true,
@@ -165,7 +167,7 @@ class FileDrop extends React.Component {
     const { multiple } = this.props;
     const filenames = Array.prototype.map.call(files, f => f.name);
     this.setState(state => ({
-      files: state.files
+      files: (multiple ? state.files : []) // if we're not multiple, always restart
         .concat(
           filenames.map(name => ({
             name,
@@ -285,8 +287,8 @@ class FileDrop extends React.Component {
       </div>
     ) : (
       <div id={id} className="bx--form-item">
-        <strong className="bx--label">{title}</strong>
-        <p className="bx--label-description">{description}</p>
+        {title ? <strong className="bx--label">{title}</strong> : null}
+        {description ? <p className="bx--label-description">{description}</p> : null}
         <FileUploaderButton
           labelText={buttonLabel}
           multiple={multiple}
