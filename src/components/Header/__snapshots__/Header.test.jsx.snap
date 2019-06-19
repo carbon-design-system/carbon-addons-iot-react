@@ -11,6 +11,10 @@ exports[`Header testcases should render 1`] = `
   >
     Skip to main content
   </SkipToContent>
+  <HeaderMenuButton
+    aria-label="Open menu"
+    onClick={null}
+  />
   <HeaderName
     href="#"
     prefix="IBM"

@@ -166,11 +166,13 @@ const getNewRow = (idx, suffix = '', withActions = false) => ({
         {
           id: 'drilldown',
           renderIcon: Arrow,
+          iconDescription: 'Drill in',
           labelText: 'Drill in',
         },
         {
           id: 'Add',
           renderIcon: Add,
+          iconDescription: 'Add',
           labelText: 'Add',
           isOverflow: true,
         },
@@ -264,12 +266,14 @@ export const initialState = {
         ? {
             id: 'drilldown',
             renderIcon: Arrow,
+            iconDescription: 'Drill in',
             labelText: 'Drill in',
           }
         : null,
       {
         id: 'Add',
         renderIcon: iconAddSolid,
+        iconDescription: 'Add',
         labelText: 'Add',
         isOverflow: true,
       },
@@ -278,6 +282,7 @@ export const initialState = {
         renderIcon: iconDelete,
         labelText: 'Delete',
         isOverflow: true,
+        iconDescription: 'Delete',
       },
     ].filter(i => i),
   })),
@@ -676,18 +681,21 @@ storiesOf('Table', module)
               ? {
                   id: 'drilldown',
                   renderIcon: Arrow,
+                  iconDescription: 'See more',
                   labelText: 'See more',
                 }
               : null,
             {
               id: 'add',
               renderIcon: iconAddSolid,
+              iconDescription: 'Add',
               labelText: 'Add',
               isOverflow: true,
             },
             {
               id: 'delete',
               renderIcon: iconDelete,
+              iconDescription: 'Delete',
               labelText: 'Delete',
               isOverflow: true,
             },
