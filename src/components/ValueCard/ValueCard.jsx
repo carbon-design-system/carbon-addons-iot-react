@@ -211,7 +211,7 @@ const determineAttributes = (size, attributes) => {
   return attributes.slice(0, attributeCount);
 };
 
-const ValueCard = ({ title, content, size, values, ...others }) => {
+const ValueCard = ({ title, content, size, values, isEditable, ...others }) => {
   const availableActions = {
     expand: false,
     ...others.availableActions,
@@ -238,6 +238,7 @@ const ValueCard = ({ title, content, size, values, ...others }) => {
             size={size}
             availableActions={availableActions}
             isEmpty={isEmpty(values)}
+            isEditable={isEditable}
             {...others}
           >
             <ContentWrapper layout={layout}>
@@ -263,12 +264,14 @@ const ValueCard = ({ title, content, size, values, ...others }) => {
                         size === CARD_SIZES.SMALL && attributes.length === 1 ? 'center' : undefined
                       }
                       {...attribute}
-                      size={size}
-                      value={determineValue(attribute.dataSourceId, values)}
+                      size={size} // When the card is in the editable state, we will show a preview
+                      value={isEditable ? '--' : determineValue(attribute.dataSourceId, values)}
                       secondaryValue={
                         attribute.secondaryValue && {
                           ...attribute.secondaryValue,
-                          value: determineValue(attribute.secondaryValue.dataSourceId, values),
+                          value: isEditable // When the card is in the editable state, we will show a preview
+                            ? '--'
+                            : determineValue(attribute.secondaryValue.dataSourceId, values),
                         }
                       }
                     />
