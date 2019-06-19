@@ -165,7 +165,7 @@ class FileDrop extends React.Component {
     const { multiple } = this.props;
     const filenames = Array.prototype.map.call(files, f => f.name);
     this.setState(state => ({
-      files: state.files
+      files: (multiple ? state.files : []) // if we're not multiple, always restart
         .concat(
           filenames.map(name => ({
             name,
