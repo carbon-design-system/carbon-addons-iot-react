@@ -4,7 +4,6 @@ import { DataTable, Button } from 'carbon-components-react';
 import styled from 'styled-components';
 import Bee32 from '@carbon/icons-react/lib/bee/32';
 
-import { COLORS } from '../../../styles/styles';
 import { EmptyStatePropTypes } from '../TablePropTypes';
 
 const { TableBody, TableCell, TableRow } = DataTable;

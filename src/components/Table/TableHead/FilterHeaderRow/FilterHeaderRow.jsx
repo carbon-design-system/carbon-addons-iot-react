@@ -18,6 +18,10 @@ const { TableHeader, TableRow } = DataTable;
 // `;
 const StyledTableHeader = styled(TableHeader)`
   &&& {
+    span.bx--table-header-label {
+      padding-top: 0;
+    }
+
     .bx--form-item input {
       min-width: 12.75rem;
     }

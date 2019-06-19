@@ -10,6 +10,8 @@ const StyledProgressIndicator = styled(({ isVerticalMode, ...others }) => (
   <CarbonProgressIndicator {...others} />
 ))`
   &&& {
+    display: inline-flex;
+
     .bx--progress-step--complete {
       cursor: pointer;
     }

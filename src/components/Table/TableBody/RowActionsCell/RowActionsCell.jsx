@@ -17,6 +17,13 @@ import RowActionsError from './RowActionsError';
 
 const { TableCell } = DataTable;
 
+const StyledTableCell = styled(TableCell)`
+  && {
+    padding: 0;
+    vertical-align: middle;
+  }
+`;
+
 const RowActionsContainer = styled.div`
   &&& {
     display: flex;
@@ -32,10 +39,7 @@ const RowActionsContainer = styled.div`
     > *:focus {
       opacity: 1;
     }
-    color: ${props => (props.isRowExpanded ? COLORS.white : '')};
-    svg {
-      stroke: ${props => (props.isRowExpanded ? COLORS.white : '')};
-    }
+
     /* the spinner was a little too big and causing the row to scroll so need to scale down a bit */
     .bx--loading--small {
       width: 1.875rem;
@@ -63,9 +67,7 @@ const StyledOverflowMenu = styled(({ isRowExpanded, isOpen, ...other }) => (
 ))`
   &&& {
     margin-left: 0.5rem;
-    color: ${props => (props.isRowExpanded ? COLORS.white : '')};
     svg {
-      fill: ${props => (props.isRowExpanded ? COLORS.white : '')};
       margin-left: ${props => (props.hideLabel !== 'false' ? '0' : '')};
     }
     opacity: ${props => (props.isOpen || props.isRowExpanded ? 1 : 0)};
@@ -154,7 +156,7 @@ class RowActionsCell extends React.Component {
     const { isOpen } = this.state;
     const hasOverflow = actions && actions.filter(action => action.isOverflow).length > 0;
     return actions && actions.length > 0 ? (
-      <TableCell key={`${id}-row-actions-cell`}>
+      <StyledTableCell key={`${id}-row-actions-cell`}>
         <RowActionsContainer
           visible={isRowExpanded || isRowActionRunning || rowActionsError}
           isRowExpanded={isRowExpanded}
@@ -225,7 +227,7 @@ class RowActionsCell extends React.Component {
             </Fragment>
           )}
         </RowActionsContainer>
-      </TableCell>
+      </StyledTableCell>
     ) : null;
   }
 }

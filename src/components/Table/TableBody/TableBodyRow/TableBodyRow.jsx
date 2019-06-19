@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { DataTable, Checkbox } from 'carbon-components-react';
 import styled from 'styled-components';
 
-import { COLORS } from '../../../../styles/styles';
 import RowActionsCell from '../RowActionsCell/RowActionsCell';
 import TableCellRenderer from '../../TableCellRenderer/TableCellRenderer';
 import {
@@ -12,6 +11,7 @@ import {
   TableColumnsPropTypes,
 } from '../../TablePropTypes';
 import { stopPropagationAndCallback } from '../../../../utils/componentUtilityFunctions';
+import { COLORS } from '../../../../styles/styles';
 
 const { TableRow, TableExpandRow, TableCell } = DataTable;
 
@@ -179,6 +179,11 @@ const StyledTableExpandRow = styled(TableExpandRow)`
         : `
     `}
     cursor: pointer;
+    td {
+      div .bx--btn--ghost:hover {
+        background: ${COLORS.gray20};
+      }
+    }
     :hover {
       td {
         div > * {
@@ -255,6 +260,7 @@ const StyledTableCellRow = styled(TableCell)`
 const StyledNestedSpan = styled.span`
   position: relative;
   left: ${props => props.nestingOffset}px;
+  display: block;
 `;
 
 const TableBodyRow = ({

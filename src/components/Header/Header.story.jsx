@@ -14,22 +14,19 @@ const StyledHeader = styled(Header)`
    {
     margin-top: 3rem;
 
-    .bx--header__menu-item[role='menuitem'] {
+    .bx--header__menu .bx--header__menu-item[role='menuitem'] {
       align-items: center;
+      border: 0.125rem solid transparent;
       color: #f3f3f3;
       display: flex;
-      padding: 0 1rem;
+      padding: 1rem;
       height: 100%;
       font-size: 0.875rem;
       font-weight: 400;
       letter-spacing: 0;
       line-height: 1.125rem;
       text-decoration: none;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
       user-select: none;
-      border: 4px solid transparent;
     }
 
     button.bx--header__menu-item {

@@ -7,6 +7,7 @@ import styled from 'styled-components';
 import AppSwitcher from '@carbon/icons-react/lib/app-switcher/24';
 import Chip from '@carbon/icons-react/lib/chip/24';
 import Group from '@carbon/icons-react/lib/group/24';
+import { HeaderContainer } from 'carbon-components-react/lib/components/UIShell';
 
 import Header from '../Header';
 
@@ -28,13 +29,7 @@ const RouterComponent = ({ children, ...rest }) => <div {...rest}>{children}</di
 /* eslint-disable*/
 const links = [
   {
-    icon: (
-      <AppSwitcher
-        fill="white"
-        description="Icon"
-        className="bx--header__menu-item bx--header__menu-title"
-      />
-    ),
+    icon: AppSwitcher,
     isEnabled: true,
     metaData: {
       onClick: action('menu click'),
@@ -47,13 +42,7 @@ const links = [
   {
     current: true,
     isEnabled: true,
-    icon: (
-      <Chip
-        fill="white"
-        description="Icon"
-        className="bx--header__menu-item bx--header__menu-title"
-      />
-    ),
+    icon: Chip,
     metaData: {
       label: 'Devices',
       href: 'https://google.com',
@@ -64,13 +53,7 @@ const links = [
   },
   {
     isEnabled: true,
-    icon: (
-      <Group
-        fill="white"
-        description="Icon"
-        className="bx--header__menu-item bx--header__menu-title"
-      />
-    ),
+    icon: Group,
     metaData: {
       label: 'Members',
       element: 'button',
@@ -116,8 +99,20 @@ const HeaderProps = {
 };
 
 storiesOf('SideNav', module).add('SideNav component', () => (
-  <>
-    <Header {...HeaderProps} />
-    <SideNav links={links} />
-  </>
+  <HeaderContainer
+    render={({ isSideNavExpanded, onClickSideNavExpand }) => (
+      <>
+        <Header
+          {...HeaderProps}
+          isSideNavExpanded={isSideNavExpanded}
+          onClickSideNavExpand={onClickSideNavExpand}
+        />
+        <SideNav
+          links={links}
+          isSideNavExpanded={isSideNavExpanded}
+          onClickSideNavExpand={onClickSideNavExpand}
+        />
+      </>
+    )}
+  />
 ));

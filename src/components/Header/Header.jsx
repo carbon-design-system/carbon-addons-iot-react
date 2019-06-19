@@ -1,5 +1,6 @@
 import {
   Header as CarbonHeader,
+  HeaderMenuButton,
   HeaderName,
   HeaderGlobalBar,
   HeaderGlobalAction,
@@ -18,8 +19,13 @@ import HeaderMenu from './HeaderMenu';
 const StyledHeader = styled(CarbonHeader)`
   &&& {
     .bx--skip-to-content:focus {
-      min-width: 200px;
+      min-width: 240px;
       justify-content: center;
+      border: 0.125rem solid ${COLORS.white};
+    }
+
+    .bx--header__menu-toggle {
+      display: block;
     }
 
     .bx--header__menu-title[role='menuitem'][aria-expanded='true'] + .bx--header__menu {
@@ -33,7 +39,7 @@ const StyledHeader = styled(CarbonHeader)`
     }
 
     .bx--header__menu-item[role='menuitem']:focus {
-      border-color: ${COLORS.blue60};
+      border-color: ${COLORS.white};
       outline: none;
     }
   }
@@ -80,9 +86,14 @@ const propTypes = {
       ),
     })
   ).isRequired,
+  /** Bit to flip that tells header to render the nav toggle button */
+  hasSideNav: PropTypes.bool,
+  onClickSideNavExpand: PropTypes.func,
 };
 
 const defaultProps = {
+  onClickSideNavExpand: null,
+  hasSideNav: true,
   prefix: 'IBM',
   className: 'main-header',
   skipto: '#main-content',
@@ -91,7 +102,15 @@ const defaultProps = {
 /**
  * Clickable card that shows "Add" button
  */
-const Header = ({ appName, className, actionItems, prefix, skipto }) => {
+const Header = ({
+  appName,
+  className,
+  actionItems,
+  prefix,
+  skipto,
+  hasSideNav,
+  onClickSideNavExpand,
+}) => {
   const actionBtnContent = actionItems.map(item => {
     if (item.hasOwnProperty('childContent')) {
       const children = item.childContent.map(childItem => (
@@ -127,6 +146,7 @@ const Header = ({ appName, className, actionItems, prefix, skipto }) => {
   return (
     <StyledHeader className={className} aria-label="main header">
       <SkipToContent href={skipto} />
+      {hasSideNav && <HeaderMenuButton aria-label="Open menu" onClick={onClickSideNavExpand} />}
       <HeaderName href="#" prefix={prefix}>
         {appName}
       </HeaderName>

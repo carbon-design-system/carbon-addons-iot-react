@@ -205,7 +205,7 @@ const StyledTableWidth = styled.div`
 const StyledTableCustomRowHeight = styled(Table)`
   &&& {
     width: 95vw;
-    tr {
+    & tr {
       height: 5rem;
     }
   }
@@ -378,7 +378,7 @@ storiesOf('Table', module)
       info: {
         text:
           'This table has expanded rows.  To support expanded rows, make sure to pass the expandedData prop to the table and set options.hasRowExpansion=true.',
-        // Syntax highlighting blowing up since storybook packge upgrades.
+        // Syntax highlighting blowing up since storybook packge upgrades. issue with storybook https://github.com/storybookjs/storybook/issues/5915
         // ~~~js
         // expandedData={[
         //   {rowId: 'row-0',content: <RowExpansionContent />},
