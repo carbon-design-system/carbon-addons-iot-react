@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
 import ProgressIndicator from '../../ProgressIndicator/ProgressIndicator';
 import PageHeader from '../../Page/PageHeader';
+
+const StyledPageHeader = styled(PageHeader)`
+  margin-bottom: 1.5rem;
+`;
 
 class WizardHeader extends Component {
   static propTypes = {
@@ -35,7 +40,7 @@ class WizardHeader extends Component {
     const { currentItemId, setItem, items, showLabels, stepWidth, ...others } = this.props;
 
     return (
-      <PageHeader {...others}>
+      <StyledPageHeader {...others}>
         <ProgressIndicator
           currentItemId={currentItemId}
           items={items.map(item => ({ id: item.id, label: item.name }))}
@@ -43,7 +48,7 @@ class WizardHeader extends Component {
           onClickItem={setItem}
           stepWidth={stepWidth}
         />
-      </PageHeader>
+      </StyledPageHeader>
     );
   };
 }

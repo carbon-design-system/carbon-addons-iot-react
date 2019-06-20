@@ -28,6 +28,7 @@ export { tileCatalogReducer } from './components/TileCatalog/tileCatalogReducer'
 export * as tableActions from './components/Table/tableActionCreators';
 // Page related helpers
 export PageHero from './components/Page/PageHero';
+export EditPage from './components/Page/EditPage';
 export PageWorkArea from './components/Page/PageWorkArea';
 export NavigationBar from './components/NavigationBar/NavigationBar';
 export Header from './components/Header';

@@ -5,7 +5,6 @@ import styled from 'styled-components';
 const StyledPageHeader = styled.div`
   display: flex;
   flex-flow: column nowrap;
-  margin-bottom: 1.5rem;
 
   .bx--progress {
     padding: 1rem 1rem;
