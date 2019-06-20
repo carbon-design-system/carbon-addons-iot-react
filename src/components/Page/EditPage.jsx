@@ -19,7 +19,7 @@ const StyledPageContent = styled.div`
    {
     display: flex;
     flex-flow: column;
-    min-height: calc(100vh - 250px);
+    min-height: calc(100vh - 300px);
   }
 `;
 
