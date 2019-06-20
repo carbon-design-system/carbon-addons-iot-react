@@ -6,7 +6,6 @@ import {
   HeaderGlobalAction,
   SkipToContent,
   HeaderMenuItem,
-  HeaderMenu,
 } from 'carbon-components-react/lib/components/UIShell';
 import { rem } from 'polished';
 import styled from 'styled-components';
@@ -15,7 +14,7 @@ import React from 'react';
 
 import { COLORS } from '../../styles/styles';
 
-// import HeaderMenu from './HeaderMenu';
+import HeaderMenu from './HeaderMenu';
 
 const StyledHeader = styled(CarbonHeader)`
   &&& {
@@ -128,7 +127,7 @@ const Header = ({
           aria-label={item.label}
           isMenu={false}
           renderMenuContent={() => item.btnContent}
-          menuLinkName={item.label}
+          menuLinkName={item.menuLinkName ? item.menuLinkName : ''}
         >
           {children}
         </HeaderMenu>
