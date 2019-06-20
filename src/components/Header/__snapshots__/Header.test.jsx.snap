@@ -41,7 +41,7 @@ exports[`Header testcases should render 1`] = `
       aria-label="help"
       isMenu={false}
       key="menu-item-help"
-      menuLinkName="help"
+      menuLinkName=""
       renderMenuContent={[Function]}
     >
       <ForwardRef(HeaderMenuItem)
