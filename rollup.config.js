@@ -51,6 +51,7 @@ export default {
           'Header',
           'HeaderName',
           'HeaderMenu',
+          'HeaderMenuButton',
           'HeaderGlobalBar',
           'HeaderGlobalAction',
           'SkipToContent',
