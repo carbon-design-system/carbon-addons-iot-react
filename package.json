@@ -32,7 +32,6 @@
     }
   },
   "dependencies": {
-    "@carbon/charts-react": "0.12.1",
     "c3": "^0.7.1",
     "classnames": "^2.2.5",
     "immutability-helper": "^2.9.0",
@@ -88,7 +87,7 @@
     "@babel/preset-react": "^7.0.0",
     "@babel/runtime": "^7.0.0",
     "@carbon/charts": "0.12.1",
-    "@carbon/charts-react": "^0.12.2",
+    "@carbon/charts-react": "0.12.1",
     "@carbon/icons": "^10.1.0",
     "@carbon/icons-react": "^10.1.1",
     "@commitlint/cli": "^7.2.1",
