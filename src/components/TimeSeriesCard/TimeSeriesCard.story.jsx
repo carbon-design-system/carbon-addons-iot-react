@@ -4,7 +4,7 @@ import { text, select, object, boolean } from '@storybook/addon-knobs';
 
 import { COLORS, CARD_SIZES } from '../../constants/LayoutConstants';
 import { getCardMinSize } from '../../utils/componentUtilityFunctions';
-import { getIntervalChartData, chartData, generateData } from '../../utils/sample';
+import { getIntervalChartData, chartData } from '../../utils/sample';
 
 import TimeSeriesCard from './TimeSeriesCard';
 
@@ -446,8 +446,7 @@ storiesOf('TimeSeriesCard (Experimental)', module)
       </div>
     );
   })
-
-  .add('LARGE / single line - interval day', () => {
+  .add('large / single line - interval day (High Temperature number)', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
@@ -468,8 +467,139 @@ storiesOf('TimeSeriesCard (Experimental)', module)
             yLabel: text('yLabel', 'Temperature (˚F)'),
             timeDataSourceId: 'timestamp',
           })}
-          values={getIntervalChartData('day', 30, { min: 10, max: 100 }, 100)}
+          values={getIntervalChartData('day', 12, { min: 2000, max: 7000 }, 100)}
           interval="day"
+          breakpoint="lg"
+          size={size}
+        />
+      </div>
+    );
+  })
+  .add('large / single line - interval day (Low Pressure number)', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
+    return (
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+        <TimeSeriesCard
+          title={text('title', 'Pressure')}
+          id="facility-Pressure"
+          isLoading={boolean('isLoading', false)}
+          content={object('content', {
+            series: [
+              {
+                label: 'Pressure',
+                dataSourceId: 'pressure',
+                // color: text('color', COLORS.PURPLE),
+              },
+            ],
+
+            xLabel: text('xLabel', 'Time'),
+            yLabel: text('yLabel', 'Pressure'),
+            timeDataSourceId: 'timestamp',
+          })}
+          values={getIntervalChartData('day', 10, { min: 10, max: 100 }, 1000)}
+          interval="day"
+          breakpoint="lg"
+          size={size}
+        />
+      </div>
+    );
+  })
+  .add('large / multi line - interval hour (Same day)', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
+    return (
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+        <TimeSeriesCard
+          title={text('title', 'Temperature')}
+          id="facility-temperature"
+          isLoading={boolean('isLoading', false)}
+          content={object('content', {
+            series: [
+              {
+                label: 'Temperature',
+                dataSourceId: 'temperature',
+                // color: text('color', COLORS.PURPLE),
+              },
+              {
+                label: 'Pressure',
+                dataSourceId: 'pressure',
+                // color: text('color', COLORS.PURPLE),
+              },
+            ],
+
+            xLabel: text('xLabel', 'Time'),
+            yLabel: text('yLabel', 'Temperature (˚F)'),
+            timeDataSourceId: 'timestamp',
+          })}
+          values={getIntervalChartData('minute', 12, { min: 10, max: 100 }, 100)}
+          interval="hour"
+          breakpoint="lg"
+          size={size}
+        />
+      </div>
+    );
+  })
+  .add('large / multi line - (Custom color)', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
+    return (
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+        <TimeSeriesCard
+          title={text('title', 'Temperature')}
+          id="facility-temperature"
+          isLoading={boolean('isLoading', false)}
+          content={object('content', {
+            series: [
+              {
+                label: 'Temperature',
+                dataSourceId: 'temperature',
+                color: text('color', COLORS.MAGENTA),
+              },
+              {
+                label: 'Pressure',
+                dataSourceId: 'pressure',
+                color: text('color', COLORS.TEAL),
+              },
+            ],
+
+            xLabel: text('xLabel', 'Time'),
+            yLabel: text('yLabel', 'Temperature (˚F)'),
+            timeDataSourceId: 'timestamp',
+          })}
+          values={getIntervalChartData('minute', 12, { min: 10, max: 100 }, 100)}
+          interval="hour"
+          breakpoint="lg"
+          size={size}
+        />
+      </div>
+    );
+  })
+  .add('large / multi line - (No X/Y Label)', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
+    return (
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+        <TimeSeriesCard
+          title={text('title', 'Temperature')}
+          id="facility-temperature"
+          isLoading={boolean('isLoading', false)}
+          content={object('content', {
+            series: [
+              {
+                label: 'Temperature',
+                dataSourceId: 'temperature',
+                color: text('color', COLORS.MAGENTA),
+              },
+              {
+                label: 'Pressure',
+                dataSourceId: 'pressure',
+                color: text('color', COLORS.TEAL),
+              },
+            ],
+
+            xLabel: text('xLabel', ''),
+            yLabel: text('yLabel', ''),
+            timeDataSourceId: 'timestamp',
+          })}
+          values={getIntervalChartData('minute', 12, { min: 10, max: 100 }, 100)}
+          interval="hour"
           breakpoint="lg"
           size={size}
         />
