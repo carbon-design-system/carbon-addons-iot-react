@@ -62,6 +62,7 @@ const EditPage = ({
   const handleSave = async () => {
     setSaving(true);
     await onSave();
+    onClose();
     setSaving(false);
   };
   return (
