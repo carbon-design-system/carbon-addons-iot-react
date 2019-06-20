@@ -60,11 +60,36 @@ describe(`Storybook Snapshot tests and console checks`, () => {
   });
   initStoryshots({
     storyKindRegex: /^((?!.*?Experimental).)*$/,
-    test: snapshotWithOptions({
-      createNodeMock: () =>
+    test: snapshotWithOptions(story => ({
+      createNodeMock: element => {
+        // https://github.com/storybookjs/storybook/tree/next/addons/storyshots/storyshots-core#using-createnodemock-to-mock-refs
         // fallback is to mock something, otherwise our refs are invalid
-        document.createElement('div'),
-    }),
+
+        // these stories require an input be nested within the ref, for compatibility with Carbon's TableToolbarSearch component
+        const storiesNeedingNestedInputRefs = [
+          'Table.minitable',
+          'Table.with simple search',
+          'Table.Stateful Example with row nesting',
+          'Table.Stateful Example with expansion',
+          'TileCatalog.with search',
+        ];
+        if (
+          storiesNeedingNestedInputRefs.includes(story.kind) ||
+          storiesNeedingNestedInputRefs.includes(`${story.kind}.${story.name}`)
+        ) {
+          const div = document.createElement('div');
+          div.className = 'from-initStoryshots-createNodeMock'; // to assist in debugging
+          div.innerHTML = "<input type='text'></input>";
+          return div;
+        }
+
+        if (element.type === 'input') {
+          return document.createElement('input');
+        }
+
+        return document.createElement('div');
+      },
+    })),
   });
 
   afterAll(() => {
