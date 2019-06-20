@@ -1,4 +1,5 @@
 import React from 'react';
+import moment from 'moment';
 
 export const chartData = {
   events: [
@@ -2415,6 +2416,34 @@ export const chartData = {
     status: 1559071814227,
   },
 };
+
+const randomIntFromInterval = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
+const randomDecimal = divideBy => Math.floor(Math.random() * (1000 - 100) + 100) / divideBy;
+
+export const generateData = (quantity, intInterval, decimals) => {
+  return Array(quantity)
+    .fill(0)
+    .map(() => {
+      return {
+        ENTITY_ID: 'Sensor2-1',
+        temperature: randomIntFromInterval(intInterval.min, intInterval.max),
+        humidity: randomDecimal(decimals), // 16.68723,
+        ecount: randomIntFromInterval(1, 60),
+        devname: '6ctgim0Qcq',
+        pressure: randomDecimal(decimals), // 62.29777,
+        status: true,
+      };
+    });
+};
+
+export const getIntervalChartData = (interval = 'day', quantity, intInterval, decimals) =>
+  generateData(quantity, intInterval, decimals).map((i, idx) => ({
+    ...i,
+    timestamp:
+      moment()
+        .subtract(idx, `${interval}s`)
+        .unix() * 1000,
+  }));
 
 const renderCustomCell = (
   { value } // eslint-disable-line

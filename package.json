@@ -21,7 +21,7 @@
     "prepare": "yarn build",
     "start": "yarn storybook",
     "storybook": "start-storybook -p 3000",
-    "test": "jest",
+    "test": "jest --no-cache",
     "test:watch": "jest --watchAll",
     "test:update": "jest -u"
   },
@@ -53,6 +53,8 @@
     "use-deep-compare-effect": "^1.2.0"
   },
   "peerDependencies": {
+    "@carbon/charts": "^0.12.2",
+    "@carbon/charts-react": "^0.12.2",
     "@carbon/icons": "^10.1.0",
     "@carbon/icons-react": "^0.0.1-alpha.12",
     "carbon-components": "^9.84.14",
@@ -84,6 +86,8 @@
     "@babel/preset-flow": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
     "@babel/runtime": "^7.0.0",
+    "@carbon/charts": "0.12.1",
+    "@carbon/charts-react": "0.12.1",
     "@carbon/icons": "^10.1.0",
     "@carbon/icons-react": "^10.1.1",
     "@commitlint/cli": "^7.2.1",
