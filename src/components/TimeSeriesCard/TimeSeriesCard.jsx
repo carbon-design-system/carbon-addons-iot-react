@@ -50,7 +50,7 @@ const determinePrecision = (size, value, precision) => {
 
 const TimeSeriesCard = ({
   title,
-  content: { series, timeDataSourceId, xLabel, yLabel },
+  content: { series, timeDataSourceId, xLabel, yLabel, unit },
   size,
   interval,
   values,
@@ -161,7 +161,7 @@ const TimeSeriesCard = ({
                           } else if (isNil(axisValue)) {
                             renderValue = '--';
                           }
-                          return renderValue;
+                          return `${renderValue} ${unit || ''}`;
                         },
                         // numberOfTicks: 8,
                       },
