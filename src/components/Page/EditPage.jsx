@@ -61,9 +61,12 @@ const EditPage = ({
   const [isSaving, setSaving] = useState();
   const handleSave = async () => {
     setSaving(true);
-    await onSave();
-    onClose();
-    setSaving(false);
+    try {
+      await onSave();
+      onClose();
+    } catch {
+      setSaving(false);
+    }
   };
   return (
     <StyledEditPage className={classNames('bx--modal-container', className)}>

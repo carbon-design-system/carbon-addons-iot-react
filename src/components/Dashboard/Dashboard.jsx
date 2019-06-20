@@ -272,8 +272,8 @@ const Dashboard = ({
       <DashboardHeader
         title={title}
         description={description}
-        lastUpdated={!isEditable && lastUpdated}
-        lastUpdatedLabel={!isEditable && lastUpdatedLabel}
+        lastUpdated={!isEditable ? lastUpdated : null}
+        lastUpdatedLabel={!isEditable ? lastUpdatedLabel : null}
         filter={filter}
       />
       <StyledGridLayout
