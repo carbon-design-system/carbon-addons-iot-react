@@ -17,12 +17,8 @@ const LineChartWrapper = styled.div`
   height: 100%;
   &&& {
     .chart-wrapper g.tick text {
-      ${props =>
-        props.size === CARD_SIZES.MEDIUM &&
-        `
-          transform: initial !important;
-          text-anchor: initial !important;
-        `}
+      transform: initial !important;
+      text-anchor: initial !important;
     }
     .legend-wrapper {
       display: ${props => (props.isLegendHidden ? 'none' : 'block')};
@@ -42,17 +38,31 @@ const TimeSeriesCard = ({
   values,
   ...others
 }) => {
-  const formatInterval = (timestamp, sameDay, index) => {
+  const sameDay =
+    moment(moment.unix(values[0].timestamp / 1000)).isSame(moment(), 'day') &&
+    moment(moment.unix(values[values.length - 1].timestamp / 1000)).isSame(moment(), 'day');
+
+  const sameYear =
+    moment(moment.unix(values[0].timestamp / 1000)).isSame(moment(), 'year') &&
+    moment(moment.unix(values[values.length - 1].timestamp / 1000)).isSame(moment(), 'year');
+
+  const formatInterval = (timestamp, index) => {
     const m = moment.unix(timestamp / 1000);
 
-    return sameDay && interval === 'hour'
+    return sameDay && interval === 'hour' && index === 0
+      ? m.format('DD MMM YYYY')
+      : sameDay && interval === 'hour'
       ? m.format('HH:mm')
       : interval === 'hour' && !sameDay
       ? m.format('Do HH:00')
-      : interval === 'day' && size === CARD_SIZES.MEDIUM && index === 0
+      : interval === 'day' && index === 0
       ? m.format('DD MMM YYYY')
-      : interval === 'month'
+      : interval === 'month' && !sameYear
       ? m.format('MMM YYYY')
+      : interval === 'month' && sameYear && index === 0
+      ? m.format('MMM YYYY')
+      : interval === 'month' && sameYear
+      ? m.format('MMM')
       : interval === 'minute'
       ? m.format('HH:mm')
       : m.format('DD MMM');
@@ -71,17 +81,13 @@ const TimeSeriesCard = ({
       case CARD_SIZES.MEDIUM:
         return 6;
       case CARD_SIZES.LARGE:
-        return 12;
+        return 8;
       case CARD_SIZES.XLARGE:
         return 20;
       default:
         return 10;
     }
   };
-
-  const sameDay =
-    moment(moment.unix(values[0].timestamp / 1000)).isSame(moment(), 'day') &&
-    moment(moment.unix(values[values.length - 1].timestamp / 1000)).isSame(moment(), 'day');
 
   return (
     <withSize.SizeMe monitorHeight>
@@ -91,7 +97,7 @@ const TimeSeriesCard = ({
           .sort((left, right) => moment.utc(left.timestamp).diff(moment.utc(right.timestamp)))
           .map((i, idx) => {
             return idx % ticksInterval === 0
-              ? formatInterval(i[timeDataSourceId], sameDay, idx)
+              ? formatInterval(i[timeDataSourceId], idx)
               : ' '.repeat(idx);
           });
         return (

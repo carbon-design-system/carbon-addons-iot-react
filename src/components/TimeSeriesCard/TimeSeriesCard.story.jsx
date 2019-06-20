@@ -243,7 +243,36 @@ storiesOf('TimeSeriesCard (Experimental)', module)
       </div>
     );
   })
-  .add('medium / single line - interval month, values month (Year Monthly)', () => {
+  .add('medium / single line - interval month, values month (Year Monthly/ Same Year)', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
+    return (
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+        <TimeSeriesCard
+          title={text('title', 'Temperature')}
+          id="facility-temperature"
+          isLoading={boolean('isLoading', false)}
+          content={object('content', {
+            series: [
+              {
+                label: 'Temperature',
+                dataSourceId: 'temperature',
+                // color: text('color', COLORS.PURPLE),
+              },
+            ],
+
+            xLabel: text('xLabel', 'Time'),
+            yLabel: text('yLabel', 'Temperature (˚F)'),
+            timeDataSourceId: 'timestamp',
+          })}
+          values={getIntervalChartData('month', 5, { min: 10, max: 100 }, 100)}
+          interval="month"
+          breakpoint="lg"
+          size={size}
+        />
+      </div>
+    );
+  })
+  .add('medium / single line - interval month, values month (Year Monthly/ Diff Year)', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
@@ -411,6 +440,35 @@ storiesOf('TimeSeriesCard (Experimental)', module)
           })}
           values={getIntervalChartData('day', 30, { min: 10, max: 100 }, 100)}
           interval="day"
+          breakpoint="lg"
+          size={size}
+        />
+      </div>
+    );
+  })
+  .add('large / single line - interval month, values month (Year Monthly/ Same Year)', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
+    return (
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+        <TimeSeriesCard
+          title={text('title', 'Temperature')}
+          id="facility-temperature"
+          isLoading={boolean('isLoading', false)}
+          content={object('content', {
+            series: [
+              {
+                label: 'Temperature',
+                dataSourceId: 'temperature',
+                // color: text('color', COLORS.PURPLE),
+              },
+            ],
+
+            xLabel: text('xLabel', 'Time'),
+            yLabel: text('yLabel', 'Temperature (˚F)'),
+            timeDataSourceId: 'timestamp',
+          })}
+          values={getIntervalChartData('month', 6, { min: 10, max: 100 }, 100)}
+          interval="month"
           breakpoint="lg"
           size={size}
         />
