@@ -17,7 +17,8 @@ const LineChartWrapper = styled.div`
   padding-top: ${props => (props.isLegendHidden ? '16px' : '0px')};
   padding-bottom: 16px;
   width: 100%;
-  height: ${props => `${props.height * 0.9}px`};
+  height: 100%;
+
   &&& {
     .chart-wrapper g.tick text {
       transform: initial !important;
@@ -55,23 +56,29 @@ const TimeSeriesCard = ({
   values,
   ...others
 }) => {
-  const sameDay =
-    moment(moment.unix(values[0].timestamp / 1000)).isSame(moment(), 'day') &&
-    moment(moment.unix(values[values.length - 1].timestamp / 1000)).isSame(moment(), 'day');
+  const valueSort = values.sort((left, right) =>
+    moment.utc(left.timestamp).diff(moment.utc(right.timestamp))
+  );
 
   const sameYear =
-    moment(moment.unix(values[0].timestamp / 1000)).isSame(moment(), 'year') &&
-    moment(moment.unix(values[values.length - 1].timestamp / 1000)).isSame(moment(), 'year');
+    !isEmpty(values) &&
+    moment(moment.unix(valueSort[0].timestamp / 1000)).isSame(moment(), 'year') &&
+    moment(moment.unix(valueSort[valueSort.length - 1].timestamp / 1000)).isSame(moment(), 'year');
 
-  const formatInterval = (timestamp, index) => {
+  const formatInterval = (timestamp, index, ticksInterval) => {
     const m = moment.unix(timestamp / 1000);
 
-    return sameDay && interval === 'hour' && index === 0
+    return interval === 'hour' && index === 0
       ? m.format('DD MMM YYYY')
-      : sameDay && interval === 'hour'
+      : interval === 'hour' &&
+        index !== 0 &&
+        !moment(moment.unix(valueSort[index - ticksInterval].timestamp / 1000)).isSame(
+          moment.unix(valueSort[index].timestamp / 1000),
+          'day'
+        )
+      ? m.format('DD MMM')
+      : interval === 'hour'
       ? m.format('HH:mm')
-      : interval === 'hour' && !sameDay
-      ? m.format('Do HH:00')
       : interval === 'day' && index === 0
       ? m.format('DD MMM YYYY')
       : interval === 'month' && !sameYear
@@ -82,7 +89,7 @@ const TimeSeriesCard = ({
       ? m.format('MMM')
       : interval === 'minute'
       ? m.format('HH:mm')
-      : m.format('DD MMM');
+      : m.format('DD MMM YYYY');
 
     // return interval === 'day'
     //   ? m.format('MM DD')
@@ -109,21 +116,16 @@ const TimeSeriesCard = ({
   return (
     <withSize.SizeMe monitorHeight>
       {({ size: measuredSize }) => {
-        const ticksInterval = Math.round(values.length / maxTicksPerSize(size));
-        const labels = values
-          .sort((left, right) => moment.utc(left.timestamp).diff(moment.utc(right.timestamp)))
-          .map((i, idx) =>
-            idx % ticksInterval === 0 ? formatInterval(i[timeDataSourceId], idx) : ' '.repeat(idx)
-          );
+        const ticksInterval = Math.round(valueSort.length / maxTicksPerSize(size));
+        const labels = valueSort.map((i, idx) =>
+          idx % ticksInterval === 0
+            ? formatInterval(i[timeDataSourceId], idx, ticksInterval)
+            : ' '.repeat(idx)
+        );
         return (
           <Card title={title} size={size} {...others} isEmpty={isEmpty(values)}>
             {!others.isLoading && !isEmpty(values) ? (
-              <LineChartWrapper
-                size={size}
-                isLegendHidden={series.length === 1}
-                height={measuredSize.height}
-                width={measuredSize.width}
-              >
+              <LineChartWrapper size={size} isLegendHidden={series.length === 1}>
                 <LineChart
                   data={{
                     labels,
@@ -167,7 +169,7 @@ const TimeSeriesCard = ({
                     legendClickable: true,
                     containerResizable: true,
                   }}
-                  // height={size === CARD_SIZES.MEDIUM ? 200 : null}
+                  height={measuredSize.height}
                 />
               </LineChartWrapper>
             ) : null}

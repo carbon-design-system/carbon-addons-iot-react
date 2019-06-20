@@ -9,7 +9,7 @@ import { getIntervalChartData, chartData } from '../../utils/sample';
 import TimeSeriesCard from './TimeSeriesCard';
 
 // need a timeOffset to make the data always show up
-const timeOffset = new Date().getTime() - Object.values(chartData.dataItemToMostRecentTimestamp)[0];
+// const timeOffset = new Date().getTime() - Object.values(chartData.dataItemToMostRecentTimestamp)[0];
 storiesOf('TimeSeriesCard (Experimental)', module)
   .add('medium / single line - interval hour', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
@@ -504,7 +504,7 @@ storiesOf('TimeSeriesCard (Experimental)', module)
       </div>
     );
   })
-  .add('large / multi line - interval hour (Same day)', () => {
+  .add('large / multi line - no interval', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
@@ -530,8 +530,7 @@ storiesOf('TimeSeriesCard (Experimental)', module)
             yLabel: text('yLabel', 'Temperature (˚F)'),
             timeDataSourceId: 'timestamp',
           })}
-          values={getIntervalChartData('minute', 12, { min: 10, max: 100 }, 100)}
-          interval="hour"
+          values={getIntervalChartData('day', 12, { min: 10, max: 100 }, 100)}
           breakpoint="lg"
           size={size}
         />
@@ -606,98 +605,6 @@ storiesOf('TimeSeriesCard (Experimental)', module)
       </div>
     );
   })
-  .add('multi line - no range', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
-    return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
-        <TimeSeriesCard
-          title={text('title', 'Facility Metrics')}
-          id="facility-multi"
-          isLoading={boolean('isLoading', false)}
-          content={object('content', {
-            series: [
-              {
-                label: 'Temperature',
-                dataSourceId: 'temperature',
-                color: text('color', COLORS.PURPLE),
-              },
-              {
-                label: 'Pressure',
-                dataSourceId: 'pressure',
-                color: COLORS.TEAL,
-              },
-            ],
-            timeDataSourceId: 'timestamp',
-          })}
-          breakpoint="lg"
-          values={chartData.events.slice(0, 20)}
-          size={size}
-        />
-      </div>
-    );
-  })
-  .add('single line - day', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
-    return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
-        <TimeSeriesCard
-          title={text('title', 'Temperature')}
-          id="facility-temperature"
-          isLoading={boolean('isLoading', false)}
-          content={object('content', {
-            series: [
-              {
-                label: 'Temperature',
-                dataSourceId: 'temperature',
-                color: COLORS.PURPLE,
-              },
-            ],
-            timeDataSourceId: 'timestamp',
-          })}
-          range="day"
-          interval="hour"
-          breakpoint="lg"
-          // Need to update the values to have recent dates
-          values={chartData.events.slice(0, 20).map(data => ({
-            ...data,
-            timestamp: data.timestamp + timeOffset,
-          }))}
-          size={size}
-        />
-      </div>
-    );
-  })
-  .add('single line - week', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
-    return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
-        <TimeSeriesCard
-          title={text('title', 'Pressure')}
-          id="facility-temperature"
-          isLoading={boolean('isLoading', false)}
-          range="week"
-          interval="day"
-          content={object('content', {
-            series: [
-              {
-                label: 'Pressure',
-                dataSourceId: 'pressure',
-                color: COLORS.MAGENTA,
-              },
-            ],
-            timeDataSourceId: 'timestamp',
-          })}
-          breakpoint="lg"
-          // Need to update the values to have recent dates
-          values={chartData.events.slice(0, 20).map(data => ({
-            ...data,
-            timestamp: data.timestamp + timeOffset,
-          }))}
-          size={size}
-        />
-      </div>
-    );
-  })
   .add('empty', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
     return (
@@ -716,7 +623,6 @@ storiesOf('TimeSeriesCard (Experimental)', module)
             ],
             timeDataSourceId: 'timestamp',
           })}
-          range="day"
           interval="hour"
           breakpoint="lg"
           values={[]}
