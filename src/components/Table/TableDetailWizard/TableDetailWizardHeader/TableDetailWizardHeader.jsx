@@ -29,7 +29,12 @@ const TableDetailWizardHeader = ({ title, onClose, className }) => (
   <StyledDivWizardHeader className={className}>
     <StyledDivHeading>{title}</StyledDivHeading>
     <StyledButton>
-      <Button kind="ghost" renderIcon={() => <Close />} onClick={() => onClose()} />
+      <Button
+        kind="ghost"
+        renderIcon={() => <Close />}
+        iconDescription={title}
+        onClick={() => onClose()}
+      />
     </StyledButton>
   </StyledDivWizardHeader>
 );

@@ -128,6 +128,7 @@ const Header = ({
           aria-label={item.label}
           isMenu={false}
           renderMenuContent={() => item.btnContent}
+          menuLinkName={item.label}
         >
           {children}
         </HeaderMenu>

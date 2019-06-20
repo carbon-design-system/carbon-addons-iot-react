@@ -41,6 +41,10 @@ describe(`Storybook Snapshot tests and console checks`, () => {
         !e.includes(
           // workaround storybook console error with styled components
           'Warning: Failed prop type: The prop `children` is marked as required in `Td`, but its value is `null`.'
+        ) &&
+        // Carbon issue - https://github.com/carbon-design-system/carbon/issues/3088
+        !e.includes(
+          'Warning: Failed prop type: ComboBox: prop type `downshiftProps` is invalid; it must be a function, usually from the `prop-types` package, but received `object`'
         )
       ) {
         done.fail(e);

@@ -277,19 +277,17 @@ const propTypes = {
     })
   ).isRequired,
   isSideNavExpanded: PropTypes.bool,
-  onClickSideNavExpand: PropTypes.func,
 };
 
 const defaultProps = {
   defaultExpanded: false,
   isSideNavExpanded: false,
-  onClickSideNavExpand: null,
 };
 
 /**
  * Side Navigation. part of UI shell
  */
-const SideNav = ({ links, defaultExpanded, isSideNavExpanded, onClickSideNavExpand }) => {
+const SideNav = ({ links, defaultExpanded, isSideNavExpanded }) => {
   const nav = links.map(link => {
     const enabled = link.isEnabled ? link.isEnabled : false;
     if (!enabled) {
