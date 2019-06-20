@@ -698,4 +698,32 @@ storiesOf('ValueCard', module)
         />
       </div>
     );
+  })
+  .add('editable', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
+    return (
+      <div style={{ width: text('cardWidth', `${getCardMinSize('lg', size).x}px`), margin: 20 }}>
+        <ValueCard
+          title={text('title', 'Really really really long card title?')}
+          id="facilitycard"
+          isEditable
+          content={{
+            attributes: [
+              {
+                label: 'Monthly summary',
+                dataSourceId: 'monthlySummary',
+                unit: text('unit', 'Wh'),
+              },
+              {
+                label: 'Yearly summary',
+                dataSourceId: 'yearlySummary',
+                unit: text('unit', 'Wh'),
+              },
+            ],
+          }}
+          breakpoint="lg"
+          size={size}
+        />
+      </div>
+    );
   });

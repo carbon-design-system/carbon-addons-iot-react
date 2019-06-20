@@ -1,5 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import { text } from '@storybook/addon-knobs';
 
 import FileDrop from './FileDrop';
 
@@ -13,5 +14,42 @@ const FileDropProps = {
 };
 
 storiesOf('FileDrop', module)
-  .add('Browse', () => <FileDrop {...FileDropProps} />)
-  .add('Drag and drop', () => <FileDrop {...FileDropProps} kind="drag-and-drop" />);
+  .add('Browse', () => (
+    <FileDrop
+      {...FileDropProps}
+      title={text('title', 'Upload Files')}
+      description={text(
+        'description',
+        'Any file can be uploaded.  Feel free to upload more than one!'
+      )}
+    />
+  ))
+  .add('Browse only one', () => (
+    <FileDrop {...FileDropProps} description="Only one file can be uploaded" multiple={false} />
+  ))
+  .add('Drag and drop', () => <FileDrop {...FileDropProps} kind="drag-and-drop" />)
+  .add('Drag only one file', () => (
+    <FileDrop
+      {...FileDropProps}
+      description="Only one file can be uploaded"
+      multiple={false}
+      kind="drag-and-drop"
+    />
+  ))
+  .add('Show files false', () => (
+    <FileDrop
+      {...FileDropProps}
+      description="Only one file can be uploaded"
+      showFiles={false}
+      multiple={false}
+      kind="drag-and-drop"
+    />
+  ))
+  .add('Accept JSON', () => (
+    <FileDrop
+      {...FileDropProps}
+      description="Only JSON can be uploaded"
+      accept={['json']}
+      kind="drag-and-drop"
+    />
+  ));
