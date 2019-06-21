@@ -686,4 +686,41 @@ storiesOf('TimeSeriesCard (Experimental)', module)
         />
       </div>
     );
+  })
+  .add('isEditable', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
+    return (
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+        <TimeSeriesCard
+          title={text('title', 'Temperature')}
+          id="facility-temperature"
+          isLoading={boolean('isLoading', false)}
+          isEditable={boolean('isEditable', true)}
+          content={object('content', {
+            series: [
+              {
+                label: 'Temperature',
+                dataSourceId: 'temperature',
+                color: COLORS.PURPLE,
+              },
+              {
+                label: 'Pressure',
+                dataSourceId: 'pressure',
+                color: COLORS.MAGENTA,
+              },
+              {
+                label: 'Humidity',
+                dataSourceId: 'humidity',
+                color: COLORS.TEAL,
+              },
+            ],
+            timeDataSourceId: 'timestamp',
+          })}
+          interval="hour"
+          breakpoint="lg"
+          values={[]}
+          size={size}
+        />
+      </div>
+    );
   });

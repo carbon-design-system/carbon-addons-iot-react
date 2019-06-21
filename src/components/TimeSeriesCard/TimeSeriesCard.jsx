@@ -12,6 +12,8 @@ import { TimeSeriesCardPropTypes, CardPropTypes } from '../../constants/PropType
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 import Card from '../Card/Card';
 
+import { generateSampleValues } from './timeSeriesUtils';
+
 const LineChartWrapper = styled.div`
   padding-left: 16px;
   padding-top: ${props => (props.isLegendHidden ? '16px' : '0px')};
@@ -53,12 +55,14 @@ const TimeSeriesCard = ({
   content: { series, timeDataSourceId, xLabel, yLabel, unit },
   size,
   interval,
-  values,
+  isEditable,
+  values: valuesProp,
   ...others
 }) => {
-  const valueSort = values.sort((left, right) =>
-    moment.utc(left.timestamp).diff(moment.utc(right.timestamp))
-  );
+  const values = isEditable ? generateSampleValues(series, timeDataSourceId) : valuesProp;
+  const valueSort = values
+    ? values.sort((left, right) => moment.utc(left.timestamp).diff(moment.utc(right.timestamp)))
+    : [];
 
   const sameYear =
     !isEmpty(values) &&
@@ -123,7 +127,13 @@ const TimeSeriesCard = ({
             : ' '.repeat(idx)
         );
         return (
-          <Card title={title} size={size} {...others} isEmpty={isEmpty(values)}>
+          <Card
+            title={title}
+            size={size}
+            {...others}
+            isEditable={isEditable}
+            isEmpty={isEmpty(values)}
+          >
             {!others.isLoading && !isEmpty(values) ? (
               <LineChartWrapper size={size} isLegendHidden={series.length === 1}>
                 <LineChart
