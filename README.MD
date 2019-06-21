@@ -14,13 +14,13 @@
     <img src="https://cdn.jsdelivr.net/gh/storybookjs/brand@master/badge/badge-storybook.svg" alt="Our Storybook" />
   </a>
   <a href="https://travis-ci.org/IBM/carbon-addons-iot-react">
-    <img src="https://travis-ci.org/IBM/carbon-addons-iot-react.svg?branch=master" alt="Build Status" />
+    <img src="https://travis-ci.org/IBM/carbon-addons-iot-react.svg?branch=beta" alt="Build Status" />
   </a>
   <a href="https://www.npmjs.com/package/carbon-addons-iot-react">
     <img src="https://img.shields.io/npm/v/carbon-addons-iot-react/beta.svg" alt="@beta release" />
   </a>
-  <a href="https://coveralls.io/github/IBM/carbon-addons-iot-react?branch=master">
-    <img src="https://coveralls.io/repos/github/IBM/carbon-addons-iot-react/badge.svg?branch=master" alt="Coverage Report" />
+  <a href="https://coveralls.io/github/IBM/carbon-addons-iot-react?branch=beta">
+    <img src="https://coveralls.io/repos/github/IBM/carbon-addons-iot-react/badge.svg?branch=beta" alt="Coverage Report" />
   </a>
   <a href="https://github.com/IBM/carbon-addons-iot-react/blob/master/LICENSE">
     <img src="https://img.shields.io/badge/license-Apache--2.0-blue.svg" alt="Carbon add-ons for Watson IoT is released under the Apache-2.0 license" />
@@ -32,16 +32,18 @@
 
 ## Getting Started
 
+Add the `@beta` suffix to the package name to install the latest release from the `beta` branch:
+
 Run the following command using [npm](https://www.npmjs.com/):
 
 ```bash
-npm install -S carbon-components carbon-components-react carbon-icons carbon-addons-iot-react
+npm install -S carbon-components carbon-components-react carbon-icons carbon-addons-iot-react@beta
 ```
 
 If you prefer [Yarn](https://yarnpkg.com/en/), use the following command instead:
 
 ```bash
-yarn add carbon-components carbon-components-react carbon-icons carbon-addons-iot-react
+yarn add carbon-components carbon-components-react carbon-icons carbon-addons-iot-react@beta
 ```
 
 You can then import any component that you need by doing the following in your project:
