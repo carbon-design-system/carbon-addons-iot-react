@@ -60,6 +60,10 @@ const propTypes = {
   dashboardBreakpoints: DashboardBreakpointsPropTypes,
   /** map of number of columns to a given dashboard layout */
   dashboardColumns: DashboardColumnsPropTypes,
+  /** Add function callback if the layout is changed by dragging */
+  onLayoutChange: PropTypes.func,
+  /** Add function callback if the breakpoint has changed by dragging */
+  onBreakpointChange: PropTypes.func,
   onCardAction: PropTypes.func,
   /** Is the dashboard in edit mode? */
   isEditable: PropTypes.bool,
@@ -92,6 +96,8 @@ const defaultProps = {
   isLoading: false,
   description: null,
   lastUpdated: null,
+  onLayoutChange: null,
+  onBreakpointChange: null,
   i18n: {
     lastUpdatedLabel: 'Last updated: ',
     noDataLabel: 'No data is available for this time range.',
@@ -143,6 +149,8 @@ const Dashboard = ({
   layouts,
   isEditable,
   isLoading,
+  onLayoutChange,
+  onBreakpointChange,
   className,
 }) => {
   const [breakpoint, setBreakpoint] = useState('lg');
@@ -290,14 +298,13 @@ const Dashboard = ({
         preventCollision={false}
         // Stop the initial animation
         shouldAnimate={isEditable}
-        // TODO: need to consider preserving their loose packing decisions on layout change
-        // TODO: also, should we reorder our cards based on the layout change, and regenerate all
-        //       other layouts?  for example, moving card 5 to before card 2 in lg should mean
-        //       that the order changes for xl, md, sm, xs, etc. layouts
-        /* onLayoutChange={
-        layout =>  console.log('new layout, time to regenerate', JSON.stringify(layout)
-      } */
-        onBreakpointChange={newBreakpoint => setBreakpoint(newBreakpoint)}
+        onLayoutChange={layout => onLayoutChange && onLayoutChange(layout)}
+        onBreakpointChange={newBreakpoint => {
+          setBreakpoint(newBreakpoint);
+          if (onBreakpointChange) {
+            onBreakpointChange(newBreakpoint);
+          }
+        }}
         isResizable={false}
         isDraggable={isEditable}
       >
