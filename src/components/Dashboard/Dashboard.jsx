@@ -298,7 +298,9 @@ const Dashboard = ({
         preventCollision={false}
         // Stop the initial animation
         shouldAnimate={isEditable}
-        onLayoutChange={layout => onLayoutChange && onLayoutChange(layout)}
+        onLayoutChange={(layout, allLayouts) =>
+          onLayoutChange && onLayoutChange(layout, allLayouts)
+        }
         onBreakpointChange={newBreakpoint => {
           setBreakpoint(newBreakpoint);
           if (onBreakpointChange) {
