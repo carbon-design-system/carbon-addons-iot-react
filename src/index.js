@@ -38,4 +38,9 @@ export SideNav from './components/SideNav';
 export Dashboard from './components/Dashboard/Dashboard';
 export Card from './components/Card/Card';
 export ValueCard from './components/ValueCard/ValueCard';
-export { CARD_TYPES, CARD_SIZES } from './constants/LayoutConstants';
+export {
+  CARD_TYPES,
+  CARD_SIZES,
+  DASHBOARD_BREAKPOINTS,
+  DASHBOARD_SIZES,
+} from './constants/LayoutConstants';

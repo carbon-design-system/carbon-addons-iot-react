@@ -4,6 +4,7 @@ import uuidv1 from 'uuid/v1';
 */
 import { text, boolean } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
 /*
 import { Button } from 'carbon-components-react';
 import moment from 'moment';
@@ -311,6 +312,8 @@ storiesOf('Dashboard (Experimental)', module)
         lastUpdated={Date()}
         isEditable={boolean('isEditable', false)}
         isLoading={boolean('isLoading', false)}
+        onBreakpointChange={action('onBreakpointChange')}
+        onLayoutChange={action('onLayoutChange')}
       />
     );
   })
