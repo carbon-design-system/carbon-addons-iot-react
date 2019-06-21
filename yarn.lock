@@ -1321,6 +1321,11 @@
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
 
+"@carbon/colors@10.2.0":
+  version "10.2.0"
+  resolved "https://registry.yarnpkg.com/@carbon/colors/-/colors-10.2.0.tgz#a9b0f2372fdf231a34b070ec8cff3f9d7a044fbd"
+  integrity sha512-WH6IQNt/HfqExMhTcgIBJN6Cqunrr+udtEKZAE3k8eMlBceKpiidfzgVNbAVKAujGjgwDR60XF+gQGRbteCWUg==
+
 "@carbon/icon-helpers@10.1.1":
   version "10.1.1"
   resolved "https://registry.yarnpkg.com/@carbon/icon-helpers/-/icon-helpers-10.1.1.tgz#08affd6f68936ba48beca7a732b0e70bd5ab8ca0"
@@ -1351,6 +1356,13 @@
   version "10.1.0"
   resolved "https://registry.yarnpkg.com/@carbon/icons/-/icons-10.1.0.tgz#12daa64ef63c47128c2b2cc570456df5fdc34f1d"
   integrity sha512-LEgjcD2W87t6vmmv9cfEMIji92gAgadMMOmb6LqXFepPn3dQechHmejS4td8K2thOf4hIuqcOQUlJSHJwCFMuA==
+
+"@carbon/themes@^10.3.0":
+  version "10.3.0"
+  resolved "https://registry.yarnpkg.com/@carbon/themes/-/themes-10.3.0.tgz#c31f687f5ca2f58ec89ff8505f24b431a561cc36"
+  integrity sha512-Ig9Dmn4f2PWD7SWvRmXcc8AbNBnZkIZSlYPge/rlStQbGX4jDjQ51ksHPEA46fWtEwo1et1Qc6ZQfJwW/0Fs+w==
+  dependencies:
+    "@carbon/colors" "10.2.0"
 
 "@commitlint/cli@^7.2.1":
   version "7.2.1"

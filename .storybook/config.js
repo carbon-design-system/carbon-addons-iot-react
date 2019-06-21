@@ -1,13 +1,20 @@
 import React from 'react';
-import { configure, addDecorator } from '@storybook/react';
+import { configure, addDecorator, addParameters } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 import { checkA11y } from '@storybook/addon-a11y';
 import { withKnobs } from '@storybook/addon-knobs';
 import { initializeRTL } from 'storybook-addon-rtl';
+import theme from './theme';
 
 initializeRTL();
 
 import Container from './Container';
+
+addParameters({
+  options: {
+    theme: theme,
+  },
+});
 
 addDecorator(
   withInfo({

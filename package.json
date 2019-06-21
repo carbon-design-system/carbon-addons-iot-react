@@ -12,6 +12,7 @@
   "bugs": {
     "url": "https://github.com/IBM/carbon-addons-iot-react/issues"
   },
+  "homepage": "https://github.com/IBM/carbon-addons-iot-react",
   "scripts": {
     "build": "rollup -c",
     "build:storybook": "build-storybook",
@@ -32,6 +33,7 @@
     }
   },
   "dependencies": {
+    "@carbon/themes": "^10.3.0",
     "c3": "^0.7.1",
     "classnames": "^2.2.5",
     "immutability-helper": "^2.9.0",
