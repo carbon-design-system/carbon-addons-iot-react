@@ -174,12 +174,12 @@ export const CardPropTypes = {
   layout: PropTypes.oneOf(Object.values(CARD_LAYOUTS)),
   breakpoint: PropTypes.oneOf(Object.values(DASHBOARD_SIZES)),
   /** Optional range to pass at the card level */
-  range: PropTypes.oneOfType([
-    PropTypes.oneOf(['day', 'week', 'month']),
-    PropTypes.shape({
-      start: PropTypes.instanceOf(Date),
-      end: PropTypes.instanceOf(Date),
-    }),
+  timeRange: PropTypes.oneOf([
+    'dayByHour',
+    'weekByDay',
+    'monthByDay',
+    'monthByWeek',
+    'yearByMonth',
   ]),
   availableActions: PropTypes.shape({
     edit: PropTypes.bool,

@@ -106,6 +106,7 @@ const defaultProps = {
   size: CARD_SIZES.SMALL,
   layout: CARD_SIZES.HORIZONTAL,
   toolbar: undefined,
+  timeRange: undefined,
   isLoading: false,
   isEmpty: false,
   /** In editable mode we'll show preview data */
@@ -154,6 +155,7 @@ const Card = ({
   error,
   id,
   tooltip,
+  timeRange,
   onCardAction,
   availableActions,
   breakpoint,
@@ -195,7 +197,7 @@ const Card = ({
         hideLabel
         id={`timeselect-${id}`}
         onChange={evt => onCardAction(id, 'CHANGE_TIME_RANGE', { range: evt.target.value })} // eslint-disable-line
-        value="monthByDay"
+        value={timeRange}
         defaultValue="weekByDay"
       >
         <SelectItem value="dayByHour" text={dayByHourLabel} />
