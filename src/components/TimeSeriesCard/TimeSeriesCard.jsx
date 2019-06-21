@@ -1,6 +1,5 @@
 import React from 'react';
 import moment from 'moment';
-import withSize from 'react-sizeme';
 import { LineChart } from '@carbon/charts-react';
 import '@carbon/charts/style.css';
 import isEmpty from 'lodash/isEmpty';
@@ -18,6 +17,7 @@ const LineChartWrapper = styled.div`
   padding-left: 16px;
   padding-top: ${props => (props.isLegendHidden ? '16px' : '0px')};
   padding-bottom: 16px;
+  position: absolute;
   width: 100%;
   height: 100%;
 
@@ -122,76 +122,64 @@ const TimeSeriesCard = ({
     }
   };
 
+  const ticksInterval = Math.round(valueSort.length / maxTicksPerSize(size));
+  const labels = valueSort.map((i, idx) =>
+    idx % ticksInterval === 0
+      ? formatInterval(i[timeDataSourceId], idx, ticksInterval)
+      : ' '.repeat(idx)
+  );
+
   return (
-    <withSize.SizeMe monitorHeight>
-      {({ size: measuredSize }) => {
-        const ticksInterval = Math.round(valueSort.length / maxTicksPerSize(size));
-        const labels = valueSort.map((i, idx) =>
-          idx % ticksInterval === 0
-            ? formatInterval(i[timeDataSourceId], idx, ticksInterval)
-            : ' '.repeat(idx)
-        );
-        return (
-          <Card
-            title={title}
-            size={size}
-            {...others}
-            isEditable={isEditable}
-            isEmpty={isEmpty(values)}
-          >
-            {!others.isLoading && !isEmpty(values) ? (
-              <LineChartWrapper size={size} isLegendHidden={series.length === 1}>
-                <LineChart
-                  data={{
-                    labels,
-                    datasets: series.map(({ dataSourceId, label, color }) => ({
-                      label,
-                      backgroundColors: color ? [color] : null,
-                      data: values.map(i => i[dataSourceId]),
-                    })),
-                  }}
-                  options={{
-                    animations: false,
-                    accessibility: false,
-                    scales: {
-                      x: {
-                        title: xLabel,
-                      },
-                      y: {
-                        title: yLabel,
-                        formatter: axisValue => {
-                          const precision = determinePrecision(size, axisValue, 1);
-                          let renderValue = axisValue;
-                          if (typeof axisValue === 'number') {
-                            renderValue =
-                              axisValue > 1000000000000
-                                ? `${(axisValue / 1000000000000).toFixed(precision)}T`
-                                : axisValue > 1000000000
-                                ? `${(axisValue / 1000000000).toFixed(precision)}B`
-                                : axisValue > 1000000
-                                ? `${(axisValue / 1000000).toFixed(precision)}M`
-                                : axisValue > 1000
-                                ? `${(axisValue / 1000).toFixed(precision)}K`
-                                : axisValue.toFixed(precision);
-                          } else if (isNil(axisValue)) {
-                            renderValue = '--';
-                          }
-                          return `${renderValue} ${unit || ''}`;
-                        },
-                        // numberOfTicks: 8,
-                      },
-                    },
-                    legendClickable: true,
-                    containerResizable: true,
-                  }}
-                  height={measuredSize.height}
-                />
-              </LineChartWrapper>
-            ) : null}
-          </Card>
-        );
-      }}
-    </withSize.SizeMe>
+    <Card title={title} size={size} {...others} isEditable={isEditable} isEmpty={isEmpty(values)}>
+      {!others.isLoading && !isEmpty(values) ? (
+        <LineChartWrapper size={size} isLegendHidden={series.length === 1}>
+          <LineChart
+            data={{
+              labels,
+              datasets: series.map(({ dataSourceId, label, color }) => ({
+                label,
+                backgroundColors: color ? [color] : null,
+                data: values.map(i => i[dataSourceId]),
+              })),
+            }}
+            options={{
+              animations: false,
+              accessibility: false,
+              scales: {
+                x: {
+                  title: xLabel,
+                },
+                y: {
+                  title: yLabel,
+                  formatter: axisValue => {
+                    const precision = determinePrecision(size, axisValue, 1);
+                    let renderValue = axisValue;
+                    if (typeof axisValue === 'number') {
+                      renderValue =
+                        axisValue > 1000000000000
+                          ? `${(axisValue / 1000000000000).toFixed(precision)}T`
+                          : axisValue > 1000000000
+                          ? `${(axisValue / 1000000000).toFixed(precision)}B`
+                          : axisValue > 1000000
+                          ? `${(axisValue / 1000000).toFixed(precision)}M`
+                          : axisValue > 1000
+                          ? `${(axisValue / 1000).toFixed(precision)}K`
+                          : axisValue.toFixed(precision);
+                    } else if (isNil(axisValue)) {
+                      renderValue = '--';
+                    }
+                    return `${renderValue} ${unit || ''}`;
+                  },
+                  // numberOfTicks: 8,
+                },
+              },
+              legendClickable: true,
+              containerResizable: true,
+            }}
+          />
+        </LineChartWrapper>
+      ) : null}
+    </Card>
   );
 };
 
@@ -199,6 +187,7 @@ TimeSeriesCard.propTypes = { ...CardPropTypes, ...TimeSeriesCardPropTypes };
 
 TimeSeriesCard.defaultProps = {
   size: CARD_SIZES.MEDIUM,
+  values: [],
 };
 
 export default TimeSeriesCard;
