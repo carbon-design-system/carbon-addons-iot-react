@@ -52,6 +52,7 @@ export const CardHeader = styled.div`
 
 export const CardContent = styled.div`
   flex: 1;
+  position: relative;
 `;
 
 const CardTitle = styled.span`
@@ -270,7 +271,7 @@ const Card = ({
         </CardTitle>
         {toolbar}
       </CardHeader>
-      <CardContent height={dimensions.y}>
+      <CardContent>
         {error ? (
           <EmptyMessageWrapper>
             {size === CARD_SIZES.XSMALL || size === CARD_SIZES.XSMALLWIDE

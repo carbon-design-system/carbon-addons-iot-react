@@ -10,7 +10,7 @@ import { Button } from 'carbon-components-react';
 import moment from 'moment';
 */
 
-import { chartData, tableColumns, tableData } from '../../utils/sample';
+import { getIntervalChartData, chartData, tableColumns, tableData } from '../../utils/sample';
 import { COLORS, CARD_SIZES, CARD_TYPES } from '../../constants/LayoutConstants';
 
 import Dashboard from './Dashboard';
@@ -178,6 +178,25 @@ const originalCards = [
     values: { health: 'Healthy' },
   },
   {
+    title: 'Temperature',
+    id: 'facility-temperature-timeseries',
+    size: CARD_SIZES.MEDIUM,
+    type: CARD_TYPES.TIMESERIES,
+    content: {
+      series: [
+        {
+          label: 'Temperature',
+          dataSourceId: 'temperature',
+        },
+      ],
+      xLabel: 'Time',
+      yLabel: 'Temperature (˚F)',
+      timeDataSourceId: 'timestamp',
+    },
+    values: getIntervalChartData('day', 10, { min: 10, max: 100 }, 100),
+    interval: 'hour',
+  },
+  {
     title: 'Alerts',
     id: 'alert-table1',
     size: CARD_SIZES.LARGE,
@@ -250,6 +269,31 @@ const originalCards = [
         { label: 'Sev 1', value: 18, color: COLORS.BLUE },
       ],
     },
+  },
+  {
+    title: 'Environment',
+    id: 'facility-multi-timeseries',
+    size: CARD_SIZES.LARGE,
+    type: CARD_TYPES.TIMESERIES,
+    content: {
+      series: [
+        {
+          label: 'Temperature',
+          dataSourceId: 'temperature',
+          // color: text('color', COLORS.PURPLE),
+        },
+        {
+          label: 'Pressure',
+          dataSourceId: 'pressure',
+          // color: text('color', COLORS.PURPLE),
+        },
+      ],
+      xLabel: 'Time',
+      yLabel: 'Temperature (˚F)',
+      timeDataSourceId: 'timestamp',
+    },
+    values: getIntervalChartData('day', 10, { min: 10, max: 100 }, 100),
+    interval: 'hour',
   },
 ];
 
