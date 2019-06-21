@@ -61,13 +61,18 @@ const TimeSeriesCard = ({
 }) => {
   const values = isEditable ? generateSampleValues(series, timeDataSourceId) : valuesProp;
   const valueSort = values
-    ? values.sort((left, right) => moment.utc(left.timestamp).diff(moment.utc(right.timestamp)))
+    ? values.sort((left, right) =>
+        moment.utc(left[timeDataSourceId]).diff(moment.utc(right[timeDataSourceId]))
+      )
     : [];
 
   const sameYear =
     !isEmpty(values) &&
-    moment(moment.unix(valueSort[0].timestamp / 1000)).isSame(moment(), 'year') &&
-    moment(moment.unix(valueSort[valueSort.length - 1].timestamp / 1000)).isSame(moment(), 'year');
+    moment(moment.unix(valueSort[0][timeDataSourceId] / 1000)).isSame(moment(), 'year') &&
+    moment(moment.unix(valueSort[valueSort.length - 1][timeDataSourceId] / 1000)).isSame(
+      moment(),
+      'year'
+    );
 
   const formatInterval = (timestamp, index, ticksInterval) => {
     const m = moment.unix(timestamp / 1000);
