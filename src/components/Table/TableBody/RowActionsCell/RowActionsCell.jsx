@@ -239,6 +239,7 @@ class RowActionsCell extends React.Component {
                           )
                         }
                         floatingMenu
+                        disabled={action.disabled}
                       />
                     ))}
                 </StyledOverflowMenu>
