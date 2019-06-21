@@ -6,15 +6,21 @@ import '@carbon/charts/style.css';
 import isEmpty from 'lodash/isEmpty';
 import 'c3/c3.css';
 import styled from 'styled-components';
+import isNil from 'lodash/isNil';
 
 import { TimeSeriesCardPropTypes, CardPropTypes } from '../../constants/PropTypes';
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 import Card from '../Card/Card';
 
+import { generateSampleValues } from './timeSeriesUtils';
+
 const LineChartWrapper = styled.div`
   padding-left: 16px;
+  padding-top: ${props => (props.isLegendHidden ? '16px' : '0px')};
+  padding-bottom: 16px;
   width: 100%;
   height: 100%;
+
   &&& {
     .chart-wrapper g.tick text {
       transform: initial !important;
@@ -30,31 +36,58 @@ const LineChartWrapper = styled.div`
   }
 `;
 
+const determinePrecision = (size, value, precision) => {
+  // If it's an integer don't return extra values
+  if (Number.isInteger(value)) {
+    return 0;
+  }
+  // If the card is xsmall we don't have room for decimals!
+  switch (size) {
+    case CARD_SIZES.XSMALL:
+      return Math.abs(value) > 9 ? 0 : precision;
+    default:
+  }
+  return precision;
+};
+
 const TimeSeriesCard = ({
   title,
-  content: { series, timeDataSourceId, xLabel, yLabel },
+  content: { series, timeDataSourceId, xLabel, yLabel, unit },
   size,
   interval,
-  values,
+  isEditable,
+  values: valuesProp,
   ...others
 }) => {
-  const sameDay =
-    moment(moment.unix(values[0].timestamp / 1000)).isSame(moment(), 'day') &&
-    moment(moment.unix(values[values.length - 1].timestamp / 1000)).isSame(moment(), 'day');
+  const values = isEditable ? generateSampleValues(series, timeDataSourceId) : valuesProp;
+  const valueSort = values
+    ? values.sort((left, right) =>
+        moment.utc(left[timeDataSourceId]).diff(moment.utc(right[timeDataSourceId]))
+      )
+    : [];
 
   const sameYear =
-    moment(moment.unix(values[0].timestamp / 1000)).isSame(moment(), 'year') &&
-    moment(moment.unix(values[values.length - 1].timestamp / 1000)).isSame(moment(), 'year');
+    !isEmpty(values) &&
+    moment(moment.unix(valueSort[0][timeDataSourceId] / 1000)).isSame(moment(), 'year') &&
+    moment(moment.unix(valueSort[valueSort.length - 1][timeDataSourceId] / 1000)).isSame(
+      moment(),
+      'year'
+    );
 
-  const formatInterval = (timestamp, index) => {
+  const formatInterval = (timestamp, index, ticksInterval) => {
     const m = moment.unix(timestamp / 1000);
 
-    return sameDay && interval === 'hour' && index === 0
+    return interval === 'hour' && index === 0
       ? m.format('DD MMM YYYY')
-      : sameDay && interval === 'hour'
+      : interval === 'hour' &&
+        index !== 0 &&
+        !moment(moment.unix(valueSort[index - ticksInterval].timestamp / 1000)).isSame(
+          moment.unix(valueSort[index].timestamp / 1000),
+          'day'
+        )
+      ? m.format('DD MMM')
+      : interval === 'hour'
       ? m.format('HH:mm')
-      : interval === 'hour' && !sameDay
-      ? m.format('Do HH:00')
       : interval === 'day' && index === 0
       ? m.format('DD MMM YYYY')
       : interval === 'month' && !sameYear
@@ -65,7 +98,7 @@ const TimeSeriesCard = ({
       ? m.format('MMM')
       : interval === 'minute'
       ? m.format('HH:mm')
-      : m.format('DD MMM');
+      : m.format('DD MMM YYYY');
 
     // return interval === 'day'
     //   ? m.format('MM DD')
@@ -81,9 +114,9 @@ const TimeSeriesCard = ({
       case CARD_SIZES.MEDIUM:
         return 6;
       case CARD_SIZES.LARGE:
-        return 8;
+        return 6;
       case CARD_SIZES.XLARGE:
-        return 20;
+        return 14;
       default:
         return 10;
     }
@@ -91,24 +124,29 @@ const TimeSeriesCard = ({
 
   return (
     <withSize.SizeMe monitorHeight>
-      {() => {
-        const ticksInterval = Math.round(values.length / maxTicksPerSize(size));
-        const labels = values
-          .sort((left, right) => moment.utc(left.timestamp).diff(moment.utc(right.timestamp)))
-          .map((i, idx) => {
-            return idx % ticksInterval === 0
-              ? formatInterval(i[timeDataSourceId], idx)
-              : ' '.repeat(idx);
-          });
+      {({ size: measuredSize }) => {
+        const ticksInterval = Math.round(valueSort.length / maxTicksPerSize(size));
+        const labels = valueSort.map((i, idx) =>
+          idx % ticksInterval === 0
+            ? formatInterval(i[timeDataSourceId], idx, ticksInterval)
+            : ' '.repeat(idx)
+        );
         return (
-          <Card title={title} size={size} {...others} isEmpty={isEmpty(values)}>
+          <Card
+            title={title}
+            size={size}
+            {...others}
+            isEditable={isEditable}
+            isEmpty={isEmpty(values)}
+          >
             {!others.isLoading && !isEmpty(values) ? (
               <LineChartWrapper size={size} isLegendHidden={series.length === 1}>
                 <LineChart
                   data={{
                     labels,
-                    datasets: series.map(({ dataSourceId, label }) => ({
+                    datasets: series.map(({ dataSourceId, label, color }) => ({
                       label,
+                      backgroundColors: color ? [color] : null,
                       data: values.map(i => i[dataSourceId]),
                     })),
                   }}
@@ -121,13 +159,32 @@ const TimeSeriesCard = ({
                       },
                       y: {
                         title: yLabel,
+                        formatter: axisValue => {
+                          const precision = determinePrecision(size, axisValue, 1);
+                          let renderValue = axisValue;
+                          if (typeof axisValue === 'number') {
+                            renderValue =
+                              axisValue > 1000000000000
+                                ? `${(axisValue / 1000000000000).toFixed(precision)}T`
+                                : axisValue > 1000000000
+                                ? `${(axisValue / 1000000000).toFixed(precision)}B`
+                                : axisValue > 1000000
+                                ? `${(axisValue / 1000000).toFixed(precision)}M`
+                                : axisValue > 1000
+                                ? `${(axisValue / 1000).toFixed(precision)}K`
+                                : axisValue.toFixed(precision);
+                          } else if (isNil(axisValue)) {
+                            renderValue = '--';
+                          }
+                          return `${renderValue} ${unit || ''}`;
+                        },
                         // numberOfTicks: 8,
                       },
                     },
                     legendClickable: true,
                     containerResizable: true,
                   }}
-                  height={size === CARD_SIZES.MEDIUM ? 200 : null}
+                  height={measuredSize.height}
                 />
               </LineChartWrapper>
             ) : null}
