@@ -193,8 +193,10 @@ const originalCards = [
       yLabel: 'Temperature (˚F)',
       timeDataSourceId: 'timestamp',
     },
-    values: getIntervalChartData('day', 10, { min: 10, max: 100 }, 100),
+    values: getIntervalChartData('day', 7, { min: 10, max: 100 }, 100),
     interval: 'hour',
+    timeRange: 'weekByDay',
+    availableActions: { range: true },
   },
   {
     title: 'Alerts',
@@ -292,8 +294,10 @@ const originalCards = [
       yLabel: 'Temperature (˚F)',
       timeDataSourceId: 'timestamp',
     },
-    values: getIntervalChartData('day', 10, { min: 10, max: 100 }, 100),
-    interval: 'hour',
+    values: getIntervalChartData('month', 12, { min: 10, max: 100 }, 100),
+    interval: 'month',
+    timeRange: 'yearByMonth',
+    availableActions: { range: true },
   },
 ];
 
@@ -330,7 +334,40 @@ const StatefulDashboard = ({ ...props }) => {
     if (type === 'CLOSE_EXPANDED_CARD') {
       setCards(cards.map(i => (i.id === id ? { ...i, isExpanded: false } : i)));
     }
-    if (type === 'TABLE_CARD_ROW_ACTION') {
+    if (type === 'CHANGE_TIME_RANGE') {
+      const { range } = payload;
+      const cardRange =
+        range === 'dayByHour'
+          ? { interval: 'hour', num: 24 }
+          : range === 'weekByDay'
+          ? { interval: 'day', num: 7 }
+          : range === 'monthByDay'
+          ? { interval: 'day', num: 30 }
+          : range === 'monthByWeek'
+          ? { interval: 'week', num: 4 }
+          : range === 'yearByMonth'
+          ? { interval: 'month', num: 12 }
+          : { interval: 'day', num: 7 };
+
+      setCards(
+        cards.map(i =>
+          i.id === id
+            ? {
+                ...i,
+                interval: cardRange.interval,
+                timeRange: range,
+                values: getIntervalChartData(
+                  cardRange.interval,
+                  cardRange.num,
+                  { min: 10, mx: 100 },
+                  100
+                ),
+              }
+            : i
+        )
+      );
+    }
+    if (type === 'table_card_row_action') {
       console.log(id, type, payload);
     }
   };

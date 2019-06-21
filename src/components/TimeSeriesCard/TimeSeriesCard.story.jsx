@@ -69,6 +69,37 @@ storiesOf('TimeSeriesCard (Experimental)', module)
       </div>
     );
   })
+  .add('medium / single line - timeRange dayByHour', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
+    return (
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+        <TimeSeriesCard
+          title={text('title', 'Temperature')}
+          id="facility-temperature"
+          isLoading={boolean('isLoading', false)}
+          content={object('content', {
+            series: [
+              {
+                label: 'Temperature',
+                dataSourceId: 'temperature',
+                // color: text('color', COLORS.PURPLE),
+              },
+            ],
+
+            xLabel: text('xLabel', 'Time t'),
+            yLabel: text('yLabel', 'Temperature (˚F)'),
+            timeDataSourceId: 'timestamp',
+          })}
+          values={getIntervalChartData('day', 10, { min: 10, max: 100 }, 100)}
+          availableActions={{ range: true }}
+          interval="day"
+          timeRange="dayByHour"
+          breakpoint="lg"
+          size={size}
+        />
+      </div>
+    );
+  })
   .add('medium / single line - interval hour (Same day)', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
     return (
