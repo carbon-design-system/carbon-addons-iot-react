@@ -21,6 +21,8 @@ const LinkButton = styled.button`
     outline: none;
     color: ${COLORS.blue};
     cursor: pointer;
+    margin-left: 0.25rem;
+    text-decoration: underline;
   }
 `;
 
@@ -53,6 +55,7 @@ const propTypes = {
   onData: PropTypes.func,
   /** Callback for file load errors */
   onError: PropTypes.func,
+  dragAndDropLabel: PropTypes.string,
 };
 
 const defaultProps = {
@@ -66,6 +69,7 @@ const defaultProps = {
   accept: [],
   onData: () => {},
   onError: () => {},
+  dragAndDropLabel: 'Drag and drop your file here or ',
 };
 
 /**
@@ -211,14 +215,23 @@ class FileDrop extends React.Component {
   };
 
   render = () => {
-    const { id, title, description, buttonLabel, accept, kind, multiple, showFiles } = this.props;
+    const {
+      id,
+      title,
+      description,
+      buttonLabel,
+      accept,
+      kind,
+      multiple,
+      showFiles,
+      className,
+      dragAndDropLabel,
+    } = this.props;
     const { hover } = this.state;
-
-    const dradAndDropText = 'Drag and drop you file here or ';
 
     const linkElement = (
       <div>
-        {dradAndDropText}
+        {dragAndDropLabel}
         <span
           onClick={() => {
             if (this.fileInput) {
@@ -227,7 +240,7 @@ class FileDrop extends React.Component {
           }}
           role="presentation"
         >
-          <LinkButton> upload </LinkButton>
+          <LinkButton>{buttonLabel}</LinkButton>
         </span>
         <div>{description}</div>
       </div>
@@ -265,7 +278,7 @@ class FileDrop extends React.Component {
     );
 
     return kind === 'drag-and-drop' ? (
-      <div>
+      <div className={className}>
         <strong className="bx--label">{title}</strong>
         <input
           style={{ visibility: 'hidden' }}
