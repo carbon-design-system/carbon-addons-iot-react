@@ -19,7 +19,17 @@ const StyledPageContent = styled.div`
    {
     display: flex;
     flex-flow: column;
-    min-height: calc(100vh - 300px);
+    min-height: calc(100vh - 250px);
+    padding-bottom: 7rem;
+  }
+`;
+
+const StyledPageFooter = styled.div`
+  &&& {
+    position: fixed;
+    bottom: 0rem;
+    left: 0rem;
+    right: 2rem;
   }
 `;
 
@@ -72,14 +82,14 @@ const EditPage = ({
     <StyledEditPage className={classNames('bx--modal-container', className)}>
       <PageHeader {...others} onClose={onClose} i18n={i18n} />
       <StyledPageContent>{children}</StyledPageContent>
-      <div className="bx--modal-footer">
+      <StyledPageFooter className="bx--modal-footer">
         <ButtonEnhanced kind="secondary" onClick={onClose}>
           {cancelLabel}
         </ButtonEnhanced>
         <ButtonEnhanced onClick={handleSave} loading={isSaving}>
           {saveLabel}
         </ButtonEnhanced>
-      </div>
+      </StyledPageFooter>
     </StyledEditPage>
   );
 };
