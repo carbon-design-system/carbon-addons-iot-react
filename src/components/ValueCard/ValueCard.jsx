@@ -182,11 +182,8 @@ const determineLayout = (size, attributes, measuredWidth) => {
 
 const determineValue = (dataSourceId, values) => values && values[dataSourceId];
 
-const determineAttributes = (size, attributes) => {
-  if (!attributes || !Array.isArray(attributes)) {
-    return attributes;
-  }
-  let attributeCount = attributes.length;
+export const determineMaxValueCardAttributeCount = (size, currentAttributeCount) => {
+  let attributeCount = currentAttributeCount;
   switch (size) {
     case CARD_SIZES.XSMALL:
       attributeCount = 1;
@@ -208,6 +205,14 @@ const determineAttributes = (size, attributes) => {
       break;
     default:
   }
+  return attributeCount;
+};
+
+const determineAttributes = (size, attributes) => {
+  if (!attributes || !Array.isArray(attributes)) {
+    return attributes;
+  }
+  const attributeCount = determineMaxValueCardAttributeCount(size, attributes.length);
   return attributes.slice(0, attributeCount);
 };
 
