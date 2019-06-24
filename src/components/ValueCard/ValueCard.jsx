@@ -216,6 +216,17 @@ const determineAttributes = (size, attributes) => {
   return attributes.slice(0, attributeCount);
 };
 
+const isLabelAboveValue = (size, layout, attributes, measuredSize) => {
+  switch (size) {
+    case CARD_SIZES.XSMALLWIDE:
+      return layout === CARD_LAYOUTS.HORIZONTAL;
+    case CARD_SIZES.SMALL:
+      return attributes.length === 1 || !measuredSize || measuredSize.width < 300;
+    default:
+      return !measuredSize || measuredSize.width < 300;
+  }
+};
+
 const ValueCard = ({ title, content, size, values, isEditable, ...others }) => {
   const availableActions = {
     expand: false,
@@ -229,10 +240,12 @@ const ValueCard = ({ title, content, size, values, isEditable, ...others }) => {
         const attributes = determineAttributes(size, content && content.attributes);
 
         // Measure the size to determine whether to render the attribute label above the value
-        const isVertical =
-          size === CARD_SIZES.XSMALLWIDE
-            ? layout === CARD_LAYOUTS.HORIZONTAL
-            : !measuredSize || measuredSize.width < 300;
+        const isVertical = isLabelAboveValue(
+          size,
+          layout,
+          content ? content.attributes : [],
+          measuredSize
+        );
 
         // Determine if we are in "mini mode" (all rendered content in attribute is the same height)
         const isMini = size === CARD_SIZES.XSMALLWIDE && layout === CARD_LAYOUTS.VERTICAL;
