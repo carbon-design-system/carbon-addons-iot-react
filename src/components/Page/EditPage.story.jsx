@@ -14,6 +14,7 @@ const commonEditPageProps = {
 
 storiesOf('EditPage', module)
   .add('normal', () => <EditPage {...commonEditPageProps} />)
+  .add('isLoading', () => <EditPage {...commonEditPageProps} isLoading />)
   .add('with blurb', () => (
     <EditPage {...commonEditPageProps} blurb={text('blurb', 'My blurrrrbbbb!!')} />
   ));

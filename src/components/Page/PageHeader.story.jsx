@@ -12,6 +12,7 @@ const commonPageHeaderProps = {
 
 storiesOf('PageHeader', module)
   .add('normal', () => <PageHeader {...commonPageHeaderProps} />)
+  .add('is loading', () => <PageHeader {...commonPageHeaderProps} isLoading />)
   .add('with blurb', () => (
     <PageHeader {...commonPageHeaderProps} blurb={text('blurb', 'My blurrrrbbbb!!')} />
   ))

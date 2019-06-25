@@ -1,6 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { text } from '@storybook/addon-knobs';
+import { action } from '@storybook/addon-actions';
 
 import FileDrop from './FileDrop';
 
@@ -9,8 +10,8 @@ const FileDropProps = {
   description: 'Any file can be uploaded.  Feel free to upload more than one!',
   buttonLabel: 'Try it out!',
   kind: 'browse',
-  onData: data => console.log('FileDrop.onData', data),
-  onError: err => console.log('FileDrop.onError', err),
+  onData: action('onData'),
+  onError: action('onError'),
 };
 
 storiesOf('FileDrop', module)

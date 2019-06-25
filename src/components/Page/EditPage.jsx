@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import styled from 'styled-components';
+import { SkeletonText } from 'carbon-components-react';
 
 import ButtonEnhanced from '../ButtonEnhanced/ButtonEnhanced';
 
@@ -38,6 +39,7 @@ const propTypes = {
   children: PropTypes.node.isRequired,
   onClose: PropTypes.func.isRequired,
   onSave: PropTypes.func.isRequired,
+  isLoading: PropTypes.bool,
   /** Labels needed to support i18n */
   i18n: PropTypes.shape({
     saveLabel: PropTypes.string,
@@ -48,6 +50,7 @@ const propTypes = {
 
 const defaultProps = {
   className: null,
+  isLoading: false,
   i18n: {
     saveLabel: 'Save',
     cancelLabel: 'Cancel',
@@ -66,6 +69,7 @@ const EditPage = ({
   children,
   i18n: { saveLabel, cancelLabel },
   i18n,
+  isLoading,
   ...others
 }) => {
   const [isSaving, setSaving] = useState();
@@ -80,16 +84,27 @@ const EditPage = ({
   };
   return (
     <StyledEditPage className={classNames('bx--modal-container', className)}>
-      <PageHeader {...others} onClose={onClose} i18n={i18n} />
-      <StyledPageContent>{children}</StyledPageContent>
-      <StyledPageFooter className="bx--modal-footer">
-        <ButtonEnhanced kind="secondary" onClick={onClose}>
-          {cancelLabel}
-        </ButtonEnhanced>
-        <ButtonEnhanced onClick={handleSave} loading={isSaving}>
-          {saveLabel}
-        </ButtonEnhanced>
-      </StyledPageFooter>
+      {isLoading ? (
+        <Fragment>
+          <PageHeader {...others} onClose={onClose} i18n={i18n} isLoading />
+          <StyledPageContent>
+            <SkeletonText width="30%" />
+          </StyledPageContent>
+        </Fragment>
+      ) : (
+        <Fragment>
+          <PageHeader {...others} onClose={onClose} i18n={i18n} />
+          <StyledPageContent>{children}</StyledPageContent>
+          <StyledPageFooter className="bx--modal-footer">
+            <ButtonEnhanced kind="secondary" onClick={onClose}>
+              {cancelLabel}
+            </ButtonEnhanced>
+            <ButtonEnhanced onClick={handleSave} loading={isSaving}>
+              {saveLabel}
+            </ButtonEnhanced>
+          </StyledPageFooter>
+        </Fragment>
+      )}
     </StyledEditPage>
   );
 };
