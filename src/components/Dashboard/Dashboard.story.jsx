@@ -359,7 +359,7 @@ const StatefulDashboard = ({ ...props }) => {
                 values: getIntervalChartData(
                   cardRange.interval,
                   cardRange.num,
-                  { min: 10, mx: 100 },
+                  { min: 10, max: 100 },
                   100
                 ),
               }
