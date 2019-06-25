@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 import moment from 'moment';
 import { LineChart } from '@carbon/charts-react';
 import '@carbon/charts/style.css';
@@ -6,6 +6,7 @@ import isEmpty from 'lodash/isEmpty';
 import 'c3/c3.css';
 import styled from 'styled-components';
 import isNil from 'lodash/isNil';
+import useDeepCompareEffect from 'use-deep-compare-effect';
 
 import { TimeSeriesCardPropTypes, CardPropTypes } from '../../constants/PropTypes';
 import { CARD_SIZES } from '../../constants/LayoutConstants';
@@ -68,6 +69,7 @@ const TimeSeriesCard = ({
   interval,
   isEditable,
   values: valuesProp,
+  locale,
   ...others
 }) => {
   let chartRef = useRef();
@@ -89,6 +91,7 @@ const TimeSeriesCard = ({
     );
 
   const formatInterval = (timestamp, index, ticksInterval) => {
+    moment.locale(locale);
     const m = moment.unix(timestamp / 1000);
 
     return interval === 'hour' && index === 0
@@ -135,12 +138,15 @@ const TimeSeriesCard = ({
       : ' '.repeat(idx)
   );
 
-  useEffect(() => {
-    if (chartRef) {
-      const chartData = formatChartData(labels, series, values);
-      chartRef.chart.setData(chartData);
-    }
-  });
+  useDeepCompareEffect(
+    () => {
+      if (chartRef) {
+        const chartData = formatChartData(labels, series, values);
+        chartRef.chart.setData(chartData);
+      }
+    },
+    [values]
+  );
 
   return (
     <Card title={title} size={size} {...others} isEditable={isEditable} isEmpty={isEmpty(values)}>
