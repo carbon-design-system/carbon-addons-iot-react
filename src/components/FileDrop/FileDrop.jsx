@@ -235,6 +235,11 @@ class FileDrop extends React.Component {
         <span
           onClick={() => {
             if (this.fileInput) {
+              if (!multiple) {
+                this.setState({ files: [] });
+              }
+              this.fileInput.files = null;
+              this.fileInput.value = null;
               this.fileInput.click();
             }
           }}
