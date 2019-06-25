@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import moment from 'moment';
 import { LineChart } from '@carbon/charts-react';
 import '@carbon/charts/style.css';
@@ -50,6 +50,17 @@ const determinePrecision = (size, value, precision) => {
   return precision;
 };
 
+const formatChartData = (labels, series, values) => {
+  return {
+    labels,
+    datasets: series.map(({ dataSourceId, label, color }) => ({
+      label,
+      backgroundColors: color ? [color] : null,
+      data: values.map(i => i[dataSourceId]),
+    })),
+  };
+};
+
 const TimeSeriesCard = ({
   title,
   content: { series, timeDataSourceId, xLabel, yLabel, unit },
@@ -59,7 +70,10 @@ const TimeSeriesCard = ({
   values: valuesProp,
   ...others
 }) => {
+  let chartRef = useRef();
+
   const values = isEditable ? generateSampleValues(series, timeDataSourceId) : valuesProp;
+
   const valueSort = values
     ? values.sort((left, right) =>
         moment.utc(left[timeDataSourceId]).diff(moment.utc(right[timeDataSourceId]))
@@ -99,14 +113,6 @@ const TimeSeriesCard = ({
       : interval === 'minute'
       ? m.format('HH:mm')
       : m.format('DD MMM YYYY');
-
-    // return interval === 'day'
-    //   ? m.format('MM DD')
-    //   : interval === 'hour'
-    //   ? m.format('MM-DD HH:00')
-    //   : interval === 'minute'
-    //   ? m.format('HH:mm')
-    //   : m.format('YYYY-MM-DD');
   };
 
   const maxTicksPerSize = () => {
@@ -129,19 +135,22 @@ const TimeSeriesCard = ({
       : ' '.repeat(idx)
   );
 
+  useEffect(() => {
+    if (chartRef) {
+      const chartData = formatChartData(labels, series, values);
+      chartRef.chart.setData(chartData);
+    }
+  });
+
   return (
     <Card title={title} size={size} {...others} isEditable={isEditable} isEmpty={isEmpty(values)}>
       {!others.isLoading && !isEmpty(values) ? (
         <LineChartWrapper size={size} isLegendHidden={series.length === 1}>
           <LineChart
-            data={{
-              labels,
-              datasets: series.map(({ dataSourceId, label, color }) => ({
-                label,
-                backgroundColors: color ? [color] : null,
-                data: values.map(i => i[dataSourceId]),
-              })),
+            ref={el => {
+              chartRef = el;
             }}
+            data={formatChartData(labels, series, values)}
             options={{
               animations: false,
               accessibility: false,
