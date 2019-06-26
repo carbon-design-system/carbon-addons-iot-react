@@ -2445,6 +2445,19 @@ export const getIntervalChartData = (interval = 'day', quantity, intInterval, de
         .unix() * 1000,
   }));
 
+export const getPeriodChartData = (interval = 'day', period = 'week', intInterval, decimals) => {
+  const endTime = moment();
+  const startTime = moment().startOf(period);
+  const quantity = endTime.diff(startTime, `${interval}s`) + 1;
+  return generateData(quantity, intInterval, decimals).map((i, idx) => ({
+    ...i,
+    timestamp:
+      moment()
+        .subtract(idx, `${interval}s`)
+        .unix() * 1000,
+  }));
+};
+
 const renderCustomCell = (
   { value } // eslint-disable-line
 ) => (
