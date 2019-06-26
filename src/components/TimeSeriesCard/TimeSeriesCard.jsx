@@ -122,8 +122,11 @@ const TimeSeriesCard = ({
 
   const maxTicksPerSize = () => {
     switch (size) {
+      case CARD_SIZES.SMALL:
+        return 2;
       case CARD_SIZES.MEDIUM:
-        return 6;
+        return 4;
+      case CARD_SIZES.WIDE:
       case CARD_SIZES.LARGE:
         return 6;
       case CARD_SIZES.XLARGE:
@@ -147,7 +150,7 @@ const TimeSeriesCard = ({
         chartRef.chart.setData(chartData);
       }
     },
-    [values]
+    [values, labels, series]
   );
 
   return (
