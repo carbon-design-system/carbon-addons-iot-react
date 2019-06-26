@@ -110,12 +110,16 @@ const TimeSeriesCard = ({
       ? m.format('HH:mm')
       : interval === 'day' && index === 0
       ? m.format('DD MMM YYYY')
+      : interval === 'day' && index !== 0
+      ? m.format('DD MMM')
       : interval === 'month' && !sameYear
       ? m.format('MMM YYYY')
       : interval === 'month' && sameYear && index === 0
       ? m.format('MMM YYYY')
       : interval === 'month' && sameYear
       ? m.format('MMM')
+      : interval === 'year'
+      ? m.format('YYYY')
       : interval === 'minute'
       ? m.format('HH:mm')
       : m.format('DD MMM YYYY');
