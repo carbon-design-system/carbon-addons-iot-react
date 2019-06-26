@@ -690,7 +690,7 @@ storiesOf('TimeSeriesCard (Experimental)', module)
             timeDataSourceId: 'timestamp',
           })}
           values={getIntervalChartData('year', 5, { min: 10, max: 100 }, 100)}
-          interval="day"
+          interval="year"
           breakpoint="lg"
           size={size}
         />
