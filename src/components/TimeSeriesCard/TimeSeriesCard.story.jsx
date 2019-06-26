@@ -1,12 +1,15 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { text, select, object, boolean } from '@storybook/addon-knobs';
+import memoize from 'lodash/memoize';
 
 import { COLORS, CARD_SIZES } from '../../constants/LayoutConstants';
 import { getCardMinSize } from '../../utils/componentUtilityFunctions';
-import { getIntervalChartData, chartData } from '../../utils/sample';
+import { getIntervalChartData as getFakeData, chartData } from '../../utils/sample';
 
 import TimeSeriesCard from './TimeSeriesCard';
+
+const getIntervalChartData = memoize(getFakeData);
 
 // need a timeOffset to make the data always show up
 // const timeOffset = new Date().getTime() - Object.values(chartData.dataItemToMostRecentTimestamp)[0];
