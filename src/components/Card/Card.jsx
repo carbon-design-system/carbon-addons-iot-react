@@ -2,16 +2,20 @@ import React from 'react';
 import {
   Toolbar,
   ToolbarItem,
+  ToolbarTitle,
+  ToolbarOption,
   Tooltip,
   OverflowMenu,
   OverflowMenuItem,
   Button,
   Select,
   SelectItem,
+  SelectItemGroup,
   SkeletonText,
 } from 'carbon-components-react';
 import { pure } from 'recompose';
 import Close16 from '@carbon/icons-react/lib/close/16';
+import ChevronDown16 from '@carbon/icons-react/lib/chevron--down/16';
 import Popup20 from '@carbon/icons-react/lib/popup/20';
 import styled from 'styled-components';
 
@@ -94,12 +98,15 @@ const TinyButton = styled(Button)`
   }
 `;
 
-const StyledSelect = styled(Select)`
-  margin-right: -15px;
-  margin-top: -5px;
-  &.bx--select-input {
-    padding-right: 1.5rem;
+const StyledOverflowMenu = styled(OverflowMenu)`
+  & svg.bx--overflow-menu__icon {
+    padding: 0;
   }
+`;
+
+const TimeRangeLabel = styled.span`
+  font-size: 0.875rem;
+  font-weight: normal;
 `;
 
 const defaultProps = {
@@ -130,11 +137,20 @@ const defaultProps = {
     noDataShortLabel: 'No data',
     errorLoadingDataLabel: 'Error loading data for this card: ',
     errorLoadingDataShortLabel: 'Data error.',
-    dayByHourLabel: 'Last 24 hours',
-    weekByDayLabel: 'Last week - Daily',
-    monthByDayLabel: 'Last month - Daily',
-    monthByWeekLabel: 'Last month - Weekly',
-    yearByMonthLabel: 'Last year - Monthly',
+    timeRangeLabel: 'Time range',
+    rollingPeriodLabel: 'Rolling period',
+    last24HoursLabel: 'Last 24 hrs',
+    last7DaysLabel: 'Last 7 days',
+    lastMonthLabel: 'Last month',
+    lastQuarterLabel: 'Last quarter',
+    lastYearLabel: 'Last year',
+    periodToDateLabel: 'Period to date',
+    thisWeekLabel: 'This week',
+    thisMonthLabel: 'This month',
+    thisQuarterLabel: 'This quarter',
+    thisYearLabel: 'This year',
+    hourlyLabel: 'Hourly',
+    dailyLabel: 'Daily',
     weeklyLabel: 'Weekly',
     monthlyLabel: 'Monthly',
     editCardLabel: 'Edit card',
@@ -159,20 +175,7 @@ const Card = ({
   onCardAction,
   availableActions,
   breakpoint,
-  i18n: {
-    noDataLabel,
-    noDataShortLabel,
-    errorLoadingDataLabel,
-    errorLoadingDataShortLabel,
-    dayByHourLabel,
-    weekByDayLabel,
-    monthByDayLabel,
-    monthByWeekLabel,
-    yearByMonthLabel,
-    editCardLabel,
-    cloneCardLabel,
-    deleteCardLabel,
-  },
+  i18n,
   ...others
 }) => {
   const isXS = size === CARD_SIZES.XSMALL;
@@ -190,22 +193,53 @@ const Card = ({
     ...availableActions,
   };
 
+  const strings = {
+    ...defaultProps.i18n,
+    ...i18n,
+  };
+
+  const timeBoxLabels = {
+    last24Hours: strings.last24HoursLabel,
+    last7Days: strings.last7DaysLabel,
+    lastMonth: strings.lastMonthLabel,
+    lastQuarter: strings.lastQuarterLabel,
+    lastYear: strings.lastYearLabel,
+    thisWeek: strings.thisWeekLabel,
+    thisMonth: strings.thisMonthLabel,
+    thisQuarter: strings.thisQuarterLabel,
+    thisYear: strings.thisYearLabel,
+  };
+
   const timeBoxSelection = (
     <ToolbarItem>
-      <StyledSelect
-        inline
-        hideLabel
-        id={`timeselect-${id}`}
-        onChange={evt => onCardAction(id, 'CHANGE_TIME_RANGE', { range: evt.target.value })} // eslint-disable-line
-        value={timeRange}
-        defaultValue="weekByDay"
-      >
-        <SelectItem value="dayByHour" text={dayByHourLabel} />
-        <SelectItem value="weekByDay" text={weekByDayLabel} />
-        <SelectItem value="monthByDay" text={monthByDayLabel} />
-        <SelectItem value="monthByWeek" text={monthByWeekLabel} />
-        <SelectItem value="yearByMonth" text={yearByMonthLabel} />
-      </StyledSelect>
+      <TimeRangeLabel>{timeBoxLabels[timeRange]}</TimeRangeLabel>
+      <StyledOverflowMenu floatingMenu renderIcon={ChevronDown16}>
+        <ToolbarTitle title={strings.timeRangeLabel} />
+        <ToolbarOption>
+          <Select
+            hideLabel
+            id={`timeselect-${id}`}
+            onChange={evt => onCardAction(id, 'CHANGE_TIME_RANGE', { range: evt.target.value })}
+            value={timeRange}
+            defaultValue={strings.last24HoursLabel}
+          >
+            <SelectItemGroup label={strings.rollingPeriodLabel}>
+              {Object.keys(timeBoxLabels)
+                .filter(i => i.includes('last'))
+                .map(i => (
+                  <SelectItem key={i} value={i} text={timeBoxLabels[i]} />
+                ))}
+            </SelectItemGroup>
+            <SelectItemGroup label={strings.periodToDateLabel}>
+              {Object.keys(timeBoxLabels)
+                .filter(i => i.includes('this'))
+                .map(i => (
+                  <SelectItem key={i} value={i} text={timeBoxLabels[i]} />
+                ))}
+            </SelectItemGroup>
+          </Select>
+        </ToolbarOption>
+      </StyledOverflowMenu>
     </ToolbarItem>
   );
 
@@ -219,20 +253,20 @@ const Card = ({
             {mergedAvailableActions.edit && (
               <OverflowMenuItem
                 onClick={() => onCardAction(id, 'EDIT_CARD')}
-                itemText={editCardLabel}
+                itemText={strings.editCardLabel}
               />
             )}
             {mergedAvailableActions.clone && (
               <OverflowMenuItem
                 onClick={() => onCardAction(id, 'CLONE_CARD')}
-                itemText={cloneCardLabel}
+                itemText={strings.cloneCardLabel}
               />
             )}
             {mergedAvailableActions.delete && (
               <OverflowMenuItem
                 isDelete
                 onClick={() => onCardAction(id, 'DELETE_CARD')}
-                itemText={deleteCardLabel}
+                itemText={strings.deleteCardLabel}
               />
             )}
           </OverflowMenu>
@@ -277,8 +311,8 @@ const Card = ({
         {error ? (
           <EmptyMessageWrapper>
             {size === CARD_SIZES.XSMALL || size === CARD_SIZES.XSMALLWIDE
-              ? errorLoadingDataShortLabel
-              : `${errorLoadingDataLabel} ${error}`}
+              ? strings.errorLoadingDataShortLabel
+              : `${strings.errorLoadingDataLabel} ${error}`}
           </EmptyMessageWrapper>
         ) : isLoading ? (
           <SkeletonWrapper>
@@ -289,7 +323,9 @@ const Card = ({
             />
           </SkeletonWrapper>
         ) : isEmpty && !isEditable ? (
-          <EmptyMessageWrapper>{isXS ? noDataShortLabel : noDataLabel}</EmptyMessageWrapper>
+          <EmptyMessageWrapper>
+            {isXS ? strings.noDataShortLabel : strings.noDataLabel}
+          </EmptyMessageWrapper>
         ) : (
           children
         )}

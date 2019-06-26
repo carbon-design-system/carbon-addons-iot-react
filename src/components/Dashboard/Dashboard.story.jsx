@@ -10,7 +10,13 @@ import { Button } from 'carbon-components-react';
 import moment from 'moment';
 */
 
-import { getIntervalChartData, chartData, tableColumns, tableData } from '../../utils/sample';
+import {
+  getIntervalChartData,
+  getPeriodChartData,
+  chartData,
+  tableColumns,
+  tableData,
+} from '../../utils/sample';
 import { COLORS, CARD_SIZES, CARD_TYPES } from '../../constants/LayoutConstants';
 
 import Dashboard from './Dashboard';
@@ -195,7 +201,7 @@ const originalCards = [
     },
     values: getIntervalChartData('day', 7, { min: 10, max: 100 }, 100),
     interval: 'hour',
-    timeRange: 'weekByDay',
+    timeRange: 'last7Days',
     availableActions: { range: true },
   },
   {
@@ -296,7 +302,7 @@ const originalCards = [
     },
     values: getIntervalChartData('month', 12, { min: 10, max: 100 }, 100),
     interval: 'month',
-    timeRange: 'yearByMonth',
+    timeRange: 'lastYear',
     availableActions: { range: true },
   },
 ];
@@ -337,16 +343,24 @@ const StatefulDashboard = ({ ...props }) => {
     if (type === 'CHANGE_TIME_RANGE') {
       const { range } = payload;
       const cardRange =
-        range === 'dayByHour'
+        range === 'last24Hours'
           ? { interval: 'hour', num: 24 }
-          : range === 'weekByDay'
+          : range === 'last7Days'
           ? { interval: 'day', num: 7 }
-          : range === 'monthByDay'
+          : range === 'lastMonth'
           ? { interval: 'day', num: 30 }
-          : range === 'monthByWeek'
-          ? { interval: 'week', num: 4 }
-          : range === 'yearByMonth'
+          : range === 'lastQuarter'
+          ? { interval: 'week', num: 12 }
+          : range === 'lastYear'
           ? { interval: 'month', num: 12 }
+          : range === 'thisWeek'
+          ? { interval: 'day', period: 'week' }
+          : range === 'thisMonth'
+          ? { interval: 'day', period: 'month' }
+          : range === 'thisQuarter'
+          ? { interval: 'week', period: 'quarter' }
+          : range === 'thisYear'
+          ? { interval: 'month', period: 'year' }
           : { interval: 'day', num: 7 };
 
       setCards(
@@ -356,12 +370,19 @@ const StatefulDashboard = ({ ...props }) => {
                 ...i,
                 interval: cardRange.interval,
                 timeRange: range,
-                values: getIntervalChartData(
-                  cardRange.interval,
-                  cardRange.num,
-                  { min: 10, max: 100 },
-                  100
-                ),
+                values: cardRange.period
+                  ? getPeriodChartData(
+                      cardRange.interval,
+                      cardRange.period,
+                      { min: 10, max: 100 },
+                      100
+                    )
+                  : getIntervalChartData(
+                      cardRange.interval,
+                      cardRange.num,
+                      { min: 10, max: 100 },
+                      100
+                    ),
               }
             : i
         )

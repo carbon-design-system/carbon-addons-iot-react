@@ -14,7 +14,7 @@ storiesOf('Card', module)
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <Card
           title={text('title', 'Card Title')}
-          id="facilitycard"
+          id="facilitycard-basic"
           size={size}
           isLoading={boolean('isLoading', false)}
           isEmpty={boolean('isEmpty', false)}
@@ -33,7 +33,7 @@ storiesOf('Card', module)
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <Card
           title={text('title', 'Card Title')}
-          id="facilitycard"
+          id="facilitycard-with-loading"
           size={size}
           isLoading={boolean('isLoading', true)}
           isEmpty={boolean('isEmpty', false)}
@@ -51,7 +51,7 @@ storiesOf('Card', module)
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <Card
           title={text('title', 'Card Title')}
-          id="facilitycard"
+          id="facilitycard-empty"
           size={size}
           isLoading={boolean('isLoading', false)}
           isEmpty={boolean('isEmpty', true)}
@@ -71,7 +71,7 @@ storiesOf('Card', module)
         <div style={{ width: `${getCardMinSize('lg', CARD_SIZES[i]).x}px`, margin: 20 }}>
           <Card
             title={text('title', 'Card Title')}
-            id="facilitycard"
+            id={`facilitycard-size-gallery-${i}`}
             size={CARD_SIZES[i]}
             isLoading={boolean('isLoading', false)}
             isEmpty={boolean('isEmpty', true)}
@@ -91,7 +91,7 @@ storiesOf('Card', module)
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <Card
           title={text('title', 'Card Title')}
-          id="facilitycard"
+          id="facilitycard-error"
           size={size}
           error={text('error', 'API threw Nullpointer')}
           breakpoint="lg"
@@ -106,7 +106,7 @@ storiesOf('Card', module)
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <Card
           title={text('title', 'Card Title')}
-          id="facilitycard"
+          id="facilitycard-error-small"
           size={size}
           error={text('error', 'API threw Nullpointer')}
           breakpoint="lg"
