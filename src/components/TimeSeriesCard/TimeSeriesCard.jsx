@@ -140,7 +140,7 @@ const TimeSeriesCard = ({
 
   useDeepCompareEffect(
     () => {
-      if (chartRef) {
+      if (chartRef && chartRef.chart) {
         const chartData = formatChartData(labels, series, values);
         chartRef.chart.setData(chartData);
       }
