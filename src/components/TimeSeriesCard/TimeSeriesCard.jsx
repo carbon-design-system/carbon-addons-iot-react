@@ -3,9 +3,9 @@ import moment from 'moment';
 import { LineChart } from '@carbon/charts-react';
 import '@carbon/charts/style.css';
 import isEmpty from 'lodash/isEmpty';
-import 'c3/c3.css';
 import styled from 'styled-components';
 import isNil from 'lodash/isNil';
+import memoize from 'lodash/memoize';
 import useDeepCompareEffect from 'use-deep-compare-effect';
 
 import { TimeSeriesCardPropTypes, CardPropTypes } from '../../constants/PropTypes';
@@ -62,6 +62,8 @@ const formatChartData = (labels, series, values) => {
   };
 };
 
+const memoizedGenerateSampleValues = memoize(generateSampleValues);
+
 const TimeSeriesCard = ({
   title,
   content: { series, timeDataSourceId, xLabel, yLabel, unit },
@@ -74,7 +76,7 @@ const TimeSeriesCard = ({
 }) => {
   let chartRef = useRef();
 
-  const values = isEditable ? generateSampleValues(series, timeDataSourceId) : valuesProp;
+  const values = isEditable ? memoizedGenerateSampleValues(series, timeDataSourceId) : valuesProp;
 
   const valueSort = values
     ? values.sort((left, right) =>
