@@ -16,6 +16,7 @@ import { generateSampleValues } from './timeSeriesUtils';
 
 const LineChartWrapper = styled.div`
   padding-left: 16px;
+  padding-right: 1rem;
   padding-top: ${props => (props.isLegendHidden ? '16px' : '0px')};
   padding-bottom: 16px;
   position: absolute;
