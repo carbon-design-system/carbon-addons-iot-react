@@ -665,6 +665,35 @@ storiesOf('TimeSeriesCard (Experimental)', module)
       </div>
     );
   })
+  .add('large / 5 years', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
+    return (
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+        <TimeSeriesCard
+          title={text('title', 'Temperature')}
+          id="facility-temperature"
+          isLoading={boolean('isLoading', false)}
+          content={object('content', {
+            series: [
+              {
+                label: 'Temperature',
+                dataSourceId: 'temperature',
+                color: text('color', COLORS.MAGENTA),
+              },
+            ],
+            unit: '˚F',
+            xLabel: text('xLabel', 'Time'),
+            yLabel: text('yLabel', 'Temperature'),
+            timeDataSourceId: 'timestamp',
+          })}
+          values={getIntervalChartData('year', 5, { min: 10, max: 100 }, 100)}
+          interval="day"
+          breakpoint="lg"
+          size={size}
+        />
+      </div>
+    );
+  })
   .add('large / LOCALE DATE', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
     return (
