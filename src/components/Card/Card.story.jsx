@@ -1,6 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { text, select, boolean } from '@storybook/addon-knobs';
+import { action } from '@storybook/addon-actions';
 
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 import { getCardMinSize } from '../../utils/componentUtilityFunctions';
@@ -22,7 +23,7 @@ storiesOf('Card', module)
           isExpanded={boolean('isExpanded', false)}
           breakpoint="lg"
           availableActions={{ range: true }}
-          onCardAction={(id, type, payload) => console.log('onCardAction', id, type, payload)}
+          onCardAction={action('onCardAction')}
         />
       </div>
     );
@@ -40,7 +41,72 @@ storiesOf('Card', module)
           isEditable={boolean('isEditable', false)}
           isExpanded={boolean('isExpanded', false)}
           breakpoint="lg"
-          onCardAction={(id, type, payload) => console.log('onCardAction', id, type, payload)}
+          onCardAction={action('onCardAction')}
+        />
+      </div>
+    );
+  })
+  .add('with range selector', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
+    return (
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+        <Card
+          title={text('title', 'Card Title')}
+          id="facilitycard-with-loading"
+          size={size}
+          isLoading={boolean('isLoading', false)}
+          isEmpty={boolean('isEmpty', false)}
+          isEditable={boolean('isEditable', false)}
+          isExpanded={boolean('isExpanded', false)}
+          breakpoint="lg"
+          onCardAction={action('onCardAction')}
+          availableActions={{
+            range: true,
+          }}
+        />
+      </div>
+    );
+  })
+  .add('is editable', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
+    return (
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+        <Card
+          title={text('title', 'Card Title')}
+          id="facilitycard-with-loading"
+          size={size}
+          isLoading={boolean('isLoading', false)}
+          isEmpty={boolean('isEmpty', false)}
+          isEditable={boolean('isEditable', true)}
+          isExpanded={boolean('isExpanded', false)}
+          breakpoint="lg"
+          onCardAction={action('onCardAction')}
+          availableActions={{
+            edit: true,
+            clone: true,
+            delete: true,
+          }}
+        />
+      </div>
+    );
+  })
+  .add('is expandable', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
+    return (
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+        <Card
+          title={text('title', 'Card Title')}
+          id="facilitycard-with-loading"
+          size={size}
+          isLoading={boolean('isLoading', false)}
+          isEmpty={boolean('isEmpty', false)}
+          isEditable={boolean('isEditable', true)}
+          isExpanded={boolean('isExpanded', false)}
+          breakpoint="lg"
+          onCardAction={action('onCardAction')}
+          availableActions={{
+            expand: true,
+          }}
         />
       </div>
     );
@@ -59,7 +125,7 @@ storiesOf('Card', module)
           isExpanded={boolean('isExpanded', false)}
           breakpoint="lg"
           availableActions={{ range: true }}
-          onCardAction={(id, type, payload) => console.log('onCardAction', id, type, payload)}
+          onCardAction={action('onCardAction')}
         />
       </div>
     );
@@ -79,7 +145,7 @@ storiesOf('Card', module)
             isExpanded={boolean('isExpanded', false)}
             breakpoint="lg"
             availableActions={{ range: i !== CARD_SIZES.XSMALL }}
-            onCardAction={(id, type, payload) => console.log('onCardAction', id, type, payload)}
+            onCardAction={action('onCardAction')}
           />
         </div>
       </React.Fragment>
@@ -94,8 +160,9 @@ storiesOf('Card', module)
           id="facilitycard-error"
           size={size}
           error={text('error', 'API threw Nullpointer')}
+          isLoading={boolean('isLoading', false)}
           breakpoint="lg"
-          onCardAction={(id, type, payload) => console.log('onCardAction', id, type, payload)}
+          onCardAction={action('onCardAction')}
         />
       </div>
     );
@@ -109,8 +176,9 @@ storiesOf('Card', module)
           id="facilitycard-error-small"
           size={size}
           error={text('error', 'API threw Nullpointer')}
+          isLoading={boolean('isLoading', false)}
           breakpoint="lg"
-          onCardAction={(id, type, payload) => console.log('onCardAction', id, type, payload)}
+          onCardAction={action('onCardAction')}
         />
       </div>
     );
