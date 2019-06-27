@@ -24,7 +24,7 @@ const LineChartWrapper = styled.div`
   height: 100%;
 
   &&& {
-    .chart-wrapper g.tick text {
+    .chart-wrapper g.x.axis g.tick text {
       transform: initial !important;
       text-anchor: initial !important;
     }
@@ -202,6 +202,7 @@ const TimeSeriesCard = ({
                   title: yLabel,
                   formatter: axisValue => valueFormatter(axisValue, size, unit),
                   // numberOfTicks: 8,
+                  yMaxAdjuster: yMaxValue => yMaxValue * 1.3,
                 },
               },
               legendClickable: true,
