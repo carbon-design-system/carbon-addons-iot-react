@@ -181,7 +181,7 @@ const Card = ({
   ...others
 }) => {
   const [tooltipId, setTooltipId] = useState(uuidv1());
-  const [timeRange, setTimeRange] = useState(timeRangeProp || '');
+  const [timeRange, setTimeRange] = useState(timeRangeProp);
   const isXS = size === CARD_SIZES.XSMALL;
   const dimensions = getCardMinSize(
     breakpoint,
@@ -231,7 +231,7 @@ const Card = ({
               onCardAction(id, 'CHANGE_TIME_RANGE', { range: evt.target.value });
               setTimeRange(evt.target.value);
             }}
-            value={timeRange}
+            value={timeRange || ''}
           >
             <SelectItemGroup label={strings.rollingPeriodLabel}>
               {Object.keys(timeBoxLabels)
