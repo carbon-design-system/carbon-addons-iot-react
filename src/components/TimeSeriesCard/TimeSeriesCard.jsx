@@ -24,6 +24,9 @@ const LineChartWrapper = styled.div`
   height: 100%;
 
   &&& {
+    .chart-wrapper g.y.axis.yAxes g.tick:first-of-type {
+      display: none;
+    }
     .chart-wrapper g.tick text {
       transform: initial !important;
       text-anchor: initial !important;
@@ -95,6 +98,7 @@ const TimeSeriesCard = ({
   locale,
   ...others
 }) => {
+  console.log('Chart', valuesProp);
   let chartRef = useRef();
 
   const values = isEditable ? memoizedGenerateSampleValues(series, timeDataSourceId) : valuesProp;
@@ -199,6 +203,7 @@ const TimeSeriesCard = ({
                   title: yLabel,
                   formatter: axisValue => valueFormatter(axisValue, size, unit),
                   // numberOfTicks: 8,
+                  yMaxAdjuster: yMaxValue => yMaxValue * 1.3,
                 },
               },
               legendClickable: true,

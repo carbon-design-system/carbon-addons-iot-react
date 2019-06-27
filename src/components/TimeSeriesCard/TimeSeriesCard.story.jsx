@@ -727,6 +727,40 @@ storiesOf('TimeSeriesCard (Experimental)', module)
       </div>
     );
   })
+  .add('large / Small Data', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
+    return (
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+        <TimeSeriesCard
+          title={text('title', 'Pressure')}
+          id="facility-pressure"
+          isLoading={boolean('isLoading', false)}
+          content={object('content', {
+            series: [
+              {
+                label: 'Pressure',
+                dataSourceId: 'pressure',
+                // color: text('color', COLORS.PURPLE),
+              },
+              {
+                label: 'Temperature',
+                dataSourceId: 'temperature',
+                // color: text('color', COLORS.PURPLE),
+              },
+            ],
+
+            xLabel: text('xLabel', 'Time'),
+            yLabel: text('yLabel', 'pressure'),
+            timeDataSourceId: 'timestamp',
+          })}
+          values={getIntervalChartData('month', 12, { min: 0.1, max: 10 }, -100)}
+          interval="month"
+          breakpoint="lg"
+          size={size}
+        />
+      </div>
+    );
+  })
   .add('empty', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
     return (
