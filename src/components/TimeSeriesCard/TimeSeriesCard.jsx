@@ -148,15 +148,12 @@ const TimeSeriesCard = ({
       : ' '.repeat(idx)
   );
 
-  useDeepCompareEffect(
-    () => {
-      if (chartRef && chartRef.chart) {
-        const chartData = formatChartData(labels, series, values);
-        chartRef.chart.setData(chartData);
-      }
-    },
-    [values, labels, series]
-  );
+  useDeepCompareEffect(() => {
+    if (chartRef && chartRef.chart) {
+      const chartData = formatChartData(labels, series, values);
+      chartRef.chart.setData(chartData);
+    }
+  }, [values, labels, series]);
 
   return (
     <Card title={title} size={size} {...others} isEditable={isEditable} isEmpty={isEmpty(values)}>
@@ -201,6 +198,8 @@ const TimeSeriesCard = ({
               legendClickable: true,
               containerResizable: true,
             }}
+            width="100%"
+            height="100%"
           />
         </LineChartWrapper>
       ) : null}
