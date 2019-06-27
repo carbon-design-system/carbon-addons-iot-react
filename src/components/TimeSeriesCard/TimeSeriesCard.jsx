@@ -63,6 +63,26 @@ const formatChartData = (labels, series, values) => {
   };
 };
 
+const valueFormatter = (value, size, unit) => {
+  const precision = determinePrecision(size, value, 1);
+  let renderValue = value;
+  if (typeof value === 'number') {
+    renderValue =
+      value > 1000000000000
+        ? `${(value / 1000000000000).toFixed(precision)}T`
+        : value > 1000000000
+        ? `${(value / 1000000000).toFixed(precision)}B`
+        : value > 1000000
+        ? `${(value / 1000000).toFixed(precision)}M`
+        : value > 1000
+        ? `${(value / 1000).toFixed(precision)}K`
+        : value.toFixed(precision);
+  } else if (isNil(value)) {
+    renderValue = '--';
+  }
+  return `${renderValue} ${unit || ''}`;
+};
+
 const memoizedGenerateSampleValues = memoize(generateSampleValues);
 
 const TimeSeriesCard = ({
@@ -177,30 +197,15 @@ const TimeSeriesCard = ({
                 },
                 y: {
                   title: yLabel,
-                  formatter: axisValue => {
-                    const precision = determinePrecision(size, axisValue, 1);
-                    let renderValue = axisValue;
-                    if (typeof axisValue === 'number') {
-                      renderValue =
-                        axisValue > 1000000000000
-                          ? `${(axisValue / 1000000000000).toFixed(precision)}T`
-                          : axisValue > 1000000000
-                          ? `${(axisValue / 1000000000).toFixed(precision)}B`
-                          : axisValue > 1000000
-                          ? `${(axisValue / 1000000).toFixed(precision)}M`
-                          : axisValue > 1000
-                          ? `${(axisValue / 1000).toFixed(precision)}K`
-                          : axisValue.toFixed(precision);
-                    } else if (isNil(axisValue)) {
-                      renderValue = '--';
-                    }
-                    return `${renderValue} ${unit || ''}`;
-                  },
+                  formatter: axisValue => valueFormatter(axisValue, size, unit),
                   // numberOfTicks: 8,
                 },
               },
               legendClickable: true,
               containerResizable: true,
+              tooltip: {
+                formatter: tooltipValue => valueFormatter(tooltipValue, size, unit),
+              },
             }}
             width="100%"
             height="100%"
