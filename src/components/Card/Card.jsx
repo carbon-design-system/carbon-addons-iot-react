@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
+import uuidv1 from 'uuid/v1';
+import toClass from 'recompose/toClass';
 import {
   Toolbar,
   ToolbarItem,
@@ -171,13 +173,15 @@ const Card = ({
   error,
   id,
   tooltip,
-  timeRange,
+  timeRange: timeRangeProp,
   onCardAction,
   availableActions,
   breakpoint,
   i18n,
   ...others
 }) => {
+  const [tooltipId, setTooltipId] = useState(uuidv1());
+  const [timeRange, setTimeRange] = useState(timeRangeProp || '');
   const isXS = size === CARD_SIZES.XSMALL;
   const dimensions = getCardMinSize(
     breakpoint,
@@ -210,18 +214,24 @@ const Card = ({
     thisYear: strings.thisYearLabel,
   };
 
+  // Need to convert to class components to give OverflowMenu somewhere to pass the ref
+  const ToolbarTitleClass = toClass(ToolbarTitle);
+  const ToolbarOptionClass = toClass(ToolbarOption);
   const timeBoxSelection = (
     <ToolbarItem>
       <TimeRangeLabel>{timeBoxLabels[timeRange]}</TimeRangeLabel>
       <StyledOverflowMenu floatingMenu renderIcon={ChevronDown16}>
-        <ToolbarTitle title={strings.timeRangeLabel} />
-        <ToolbarOption>
+        <ToolbarTitleClass title={strings.timeRangeLabel} />
+        <ToolbarOptionClass>
           <Select
             hideLabel
             id={`timeselect-${id}`}
-            onChange={evt => onCardAction(id, 'CHANGE_TIME_RANGE', { range: evt.target.value })}
+            onChange={evt => {
+              setTooltipId(uuidv1());
+              onCardAction(id, 'CHANGE_TIME_RANGE', { range: evt.target.value });
+              setTimeRange(evt.target.value);
+            }}
             value={timeRange}
-            defaultValue={strings.last24HoursLabel}
           >
             <SelectItemGroup label={strings.rollingPeriodLabel}>
               {Object.keys(timeBoxLabels)
@@ -238,13 +248,13 @@ const Card = ({
                 ))}
             </SelectItemGroup>
           </Select>
-        </ToolbarOption>
+        </ToolbarOptionClass>
       </StyledOverflowMenu>
     </ToolbarItem>
   );
 
   const toolbar = isEditable ? (
-    <StyledToolbar>
+    <StyledToolbar key={tooltipId}>
       {(mergedAvailableActions.edit ||
         mergedAvailableActions.clone ||
         mergedAvailableActions.delete) && (
@@ -252,20 +262,29 @@ const Card = ({
           <OverflowMenu floatingMenu>
             {mergedAvailableActions.edit && (
               <OverflowMenuItem
-                onClick={() => onCardAction(id, 'EDIT_CARD')}
+                onClick={() => {
+                  setTooltipId(uuidv1());
+                  onCardAction(id, 'EDIT_CARD');
+                }}
                 itemText={strings.editCardLabel}
               />
             )}
             {mergedAvailableActions.clone && (
               <OverflowMenuItem
-                onClick={() => onCardAction(id, 'CLONE_CARD')}
+                onClick={() => {
+                  setTooltipId(uuidv1());
+                  onCardAction(id, 'CLONE_CARD');
+                }}
                 itemText={strings.cloneCardLabel}
               />
             )}
             {mergedAvailableActions.delete && (
               <OverflowMenuItem
                 isDelete
-                onClick={() => onCardAction(id, 'DELETE_CARD')}
+                onClick={() => {
+                  setTooltipId(uuidv1());
+                  onCardAction(id, 'DELETE_CARD');
+                }}
                 itemText={strings.deleteCardLabel}
               />
             )}
@@ -274,7 +293,7 @@ const Card = ({
       )}
     </StyledToolbar>
   ) : (
-    <StyledToolbar>
+    <StyledToolbar key={tooltipId}>
       {mergedAvailableActions.range && timeBoxSelection}
       {mergedAvailableActions.expand && (
         <ToolbarItem>
@@ -290,7 +309,9 @@ const Card = ({
               kind="ghost"
               small
               renderIcon={Popup20}
-              onClick={() => onCardAction(id, 'OPEN_EXPANDED_CARD')}
+              onClick={() => {
+                onCardAction(id, 'OPEN_EXPANDED_CARD');
+              }}
             />
           )}
         </ToolbarItem>
@@ -308,13 +329,7 @@ const Card = ({
         {toolbar}
       </CardHeader>
       <CardContent>
-        {error ? (
-          <EmptyMessageWrapper>
-            {size === CARD_SIZES.XSMALL || size === CARD_SIZES.XSMALLWIDE
-              ? strings.errorLoadingDataShortLabel
-              : `${strings.errorLoadingDataLabel} ${error}`}
-          </EmptyMessageWrapper>
-        ) : isLoading ? (
+        {isLoading ? (
           <SkeletonWrapper>
             <OptimizedSkeletonText
               paragraph
@@ -322,6 +337,12 @@ const Card = ({
               width="100%"
             />
           </SkeletonWrapper>
+        ) : error ? (
+          <EmptyMessageWrapper>
+            {size === CARD_SIZES.XSMALL || size === CARD_SIZES.XSMALLWIDE
+              ? strings.errorLoadingDataShortLabel
+              : `${strings.errorLoadingDataLabel} ${error}`}
+          </EmptyMessageWrapper>
         ) : isEmpty && !isEditable ? (
           <EmptyMessageWrapper>
             {isXS ? strings.noDataShortLabel : strings.noDataLabel}
