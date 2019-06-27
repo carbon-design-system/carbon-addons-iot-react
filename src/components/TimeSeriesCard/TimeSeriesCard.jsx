@@ -63,6 +63,26 @@ const formatChartData = (labels, series, values) => {
   };
 };
 
+const valueFormatter = (value, size, unit) => {
+  const precision = determinePrecision(size, value, 1);
+  let renderValue = value;
+  if (typeof value === 'number') {
+    renderValue =
+      value > 1000000000000
+        ? `${(value / 1000000000000).toFixed(precision)}T`
+        : value > 1000000000
+        ? `${(value / 1000000000).toFixed(precision)}B`
+        : value > 1000000
+        ? `${(value / 1000000).toFixed(precision)}M`
+        : value > 1000
+        ? `${(value / 1000).toFixed(precision)}K`
+        : value.toFixed(precision);
+  } else if (isNil(value)) {
+    renderValue = '--';
+  }
+  return `${renderValue} ${unit || ''}`;
+};
+
 const memoizedGenerateSampleValues = memoize(generateSampleValues);
 
 const TimeSeriesCard = ({
@@ -94,7 +114,11 @@ const TimeSeriesCard = ({
     );
 
   const formatInterval = (timestamp, index, ticksInterval) => {
-    moment.locale(locale);
+    // moment locale default to english
+    moment.locale('en');
+    if (locale) {
+      moment.locale(locale);
+    }
     const m = moment.unix(timestamp / 1000);
 
     return interval === 'hour' && index === 0
@@ -148,15 +172,12 @@ const TimeSeriesCard = ({
       : ' '.repeat(idx)
   );
 
-  useDeepCompareEffect(
-    () => {
-      if (chartRef && chartRef.chart) {
-        const chartData = formatChartData(labels, series, values);
-        chartRef.chart.setData(chartData);
-      }
-    },
-    [values, labels, series]
-  );
+  useDeepCompareEffect(() => {
+    if (chartRef && chartRef.chart) {
+      const chartData = formatChartData(labels, series, values);
+      chartRef.chart.setData(chartData);
+    }
+  }, [values, labels, series]);
 
   return (
     <Card title={title} size={size} {...others} isEditable={isEditable} isEmpty={isEmpty(values)}>
@@ -176,31 +197,18 @@ const TimeSeriesCard = ({
                 },
                 y: {
                   title: yLabel,
-                  formatter: axisValue => {
-                    const precision = determinePrecision(size, axisValue, 1);
-                    let renderValue = axisValue;
-                    if (typeof axisValue === 'number') {
-                      renderValue =
-                        axisValue > 1000000000000
-                          ? `${(axisValue / 1000000000000).toFixed(precision)}T`
-                          : axisValue > 1000000000
-                          ? `${(axisValue / 1000000000).toFixed(precision)}B`
-                          : axisValue > 1000000
-                          ? `${(axisValue / 1000000).toFixed(precision)}M`
-                          : axisValue > 1000
-                          ? `${(axisValue / 1000).toFixed(precision)}K`
-                          : axisValue.toFixed(precision);
-                    } else if (isNil(axisValue)) {
-                      renderValue = '--';
-                    }
-                    return `${renderValue} ${unit || ''}`;
-                  },
+                  formatter: axisValue => valueFormatter(axisValue, size, unit),
                   // numberOfTicks: 8,
                 },
               },
               legendClickable: true,
               containerResizable: true,
+              tooltip: {
+                formatter: tooltipValue => valueFormatter(tooltipValue, size, unit),
+              },
             }}
+            width="100%"
+            height="100%"
           />
         </LineChartWrapper>
       ) : null}
