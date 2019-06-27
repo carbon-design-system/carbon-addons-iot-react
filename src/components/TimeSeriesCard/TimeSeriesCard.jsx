@@ -94,7 +94,11 @@ const TimeSeriesCard = ({
     );
 
   const formatInterval = (timestamp, index, ticksInterval) => {
-    moment.locale(locale);
+    // moment locale default to english
+    moment.locale('en');
+    if (locale) {
+      moment.locale(locale);
+    }
     const m = moment.unix(timestamp / 1000);
 
     return interval === 'hour' && index === 0
