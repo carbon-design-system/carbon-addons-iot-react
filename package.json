@@ -33,8 +33,13 @@
     }
   },
   "dependencies": {
+    "@carbon/icons": "^10.1.0",
+    "@carbon/icons-react": "^10.1.1",
     "@carbon/themes": "^10.3.0",
     "c3": "^0.7.1",
+    "carbon-components": "^10.3.1",
+    "carbon-components-react": "^7.3.1",
+    "carbon-icons": "^7.0.7",
     "classnames": "^2.2.5",
     "immutability-helper": "^2.9.0",
     "lodash": "^4.17.11",
@@ -54,11 +59,6 @@
     "use-deep-compare-effect": "^1.2.0"
   },
   "peerDependencies": {
-    "@carbon/icons": "^10.1.0",
-    "@carbon/icons-react": "^10.1.1",
-    "carbon-components": "^10.2.0",
-    "carbon-components-react": "^7.2.0",
-    "carbon-icons": "^7.0.7",
     "d3": "^4.12.0",
     "react": "^16.8.3"
   },
@@ -84,8 +84,6 @@
     "@babel/preset-flow": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
     "@babel/runtime": "^7.0.0",
-    "@carbon/icons": "^10.1.0",
-    "@carbon/icons-react": "^10.1.1",
     "@commitlint/cli": "^7.2.1",
     "@commitlint/config-conventional": "^7.1.2",
     "@semantic-release/commit-analyzer": "^6.1.0",
@@ -109,9 +107,6 @@
     "babel-plugin-react-docgen": "^2.0.0",
     "babel-plugin-require-context-hook": "^1.0.0",
     "babel-plugin-styled-components": "^1.10.0",
-    "carbon-components": "10.3.1",
-    "carbon-components-react": "7.3.1",
-    "carbon-icons": "^7.0.7",
     "coveralls": "^3.0.2",
     "css-loader": "^2.1.0",
     "enzyme": "^3.8.0",
