@@ -40,6 +40,7 @@ describe('StatefulTable tests with Mock reducer', () => {
       payload: { data: [], isLoading: undefined, view: expect.any(Object) },
       instanceId: null,
       type: 'TABLE_REGISTER',
+      totalItems: 0,
     });
     statefulTable.setProps({ data: initialState.data });
     // Then table dispatches another item with the real data
@@ -47,6 +48,7 @@ describe('StatefulTable tests with Mock reducer', () => {
       payload: { data: initialState.data, isLoading: undefined, view: expect.any(Object) },
       instanceId: null,
       type: 'TABLE_REGISTER',
+      totalItems: initialState.data.length,
     });
   });
   test('check callbacks are propagated up!', () => {

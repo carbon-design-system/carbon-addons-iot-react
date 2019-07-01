@@ -18,9 +18,9 @@ export const TABLE_SEARCH_APPLY = 'TABLE_SEARCH_APPLY';
 export const TABLE_EMPTY_STATE_ACTION = 'TABLE_EMPTY_STATE_ACTION';
 export const TABLE_LOADING_SET = 'TABLE_LOADING_SET';
 
-export const tableRegister = (data, totalItems, instanceId = null) => ({
+export const tableRegister = ({ data, isLoading, view, totalItems, instanceId = null }) => ({
   type: TABLE_REGISTER,
-  payload: data,
+  payload: { data, view, isLoading },
   totalItems,
   instanceId,
 });

@@ -216,11 +216,17 @@ export const tableReducer = (state = {}, action) => {
     case TABLE_REGISTER: {
       const updatedData = action.payload.data || state.data;
       const { view } = action.payload;
+      const pagination = get(state, 'view.pagination')
+        ? {
+            totalItems: { $set: updatedData.length },
+          }
+        : {};
       return update(state, {
         data: {
           $set: updatedData,
         },
         view: {
+          pagination,
           table: {
             filteredData: {
               $set: filterSearchAndSort(
@@ -230,6 +236,7 @@ export const tableReducer = (state = {}, action) => {
                 get(state, 'view.filters')
               ),
             },
+
             loadingState: {
               $set: {
                 isLoading: action.payload.isLoading,
