@@ -20,8 +20,7 @@ export const TABLE_LOADING_SET = 'TABLE_LOADING_SET';
 
 export const tableRegister = ({ data, isLoading, view, totalItems, instanceId = null }) => ({
   type: TABLE_REGISTER,
-  payload: { data, view, isLoading },
-  totalItems,
+  payload: { data, view, isLoading, totalItems },
   instanceId,
 });
 
