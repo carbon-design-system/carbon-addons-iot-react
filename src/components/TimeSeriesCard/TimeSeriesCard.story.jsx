@@ -661,7 +661,7 @@ storiesOf('TimeSeriesCard (Experimental)', module)
       </div>
     );
   })
-  .add('large / UNITS', () => {
+  .add('large / units', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
