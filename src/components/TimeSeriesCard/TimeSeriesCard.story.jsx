@@ -340,7 +340,7 @@ storiesOf('TimeSeriesCard (Experimental)', module)
       </div>
     );
   })
-  .add('medium / single line - years', () => {
+  .add('medium / single line - interval year (Two data point)', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
@@ -548,7 +548,7 @@ storiesOf('TimeSeriesCard (Experimental)', module)
       </div>
     );
   })
-  .add('large / single line - interval month years range', () => {
+  .add('large / single line - year interval (One data point)', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
