@@ -42,7 +42,14 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
   // Need to initially sort and filter the tables data, but preserve the selectedId
   useDeepCompareEffect(
     () => {
-      dispatch(tableRegister({ data: initialData, isLoading, view: initialState }));
+      dispatch(
+        tableRegister({
+          data: initialData,
+          isLoading,
+          view: initialState,
+          totalItems: initialData.length,
+        })
+      );
     },
     [initialData, isLoading, initialState]
   );
