@@ -166,7 +166,11 @@ const TimeSeriesCard = ({
     }
   };
 
-  const ticksInterval = Math.round(valueSort.length / maxTicksPerSize(size));
+  const ticksInterval =
+    Math.round(valueSort.length / maxTicksPerSize(size)) !== 0
+      ? Math.round(valueSort.length / maxTicksPerSize(size))
+      : 1;
+
   const labels = valueSort.map((i, idx) =>
     idx % ticksInterval === 0
       ? formatInterval(i[timeDataSourceId], idx, ticksInterval)
