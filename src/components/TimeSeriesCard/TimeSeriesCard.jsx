@@ -18,7 +18,7 @@ const LineChartWrapper = styled.div`
   padding-left: 16px;
   padding-right: 1rem;
   padding-top: ${props => (props.isLegendHidden ? '16px' : '0px')};
-  padding-bottom: 16px;
+  padding-bottom: ${props => (!props.size === CARD_SIZES.MEDIUM ? '16px' : '0px')};
   position: absolute;
   width: 100%;
   height: 100%;
@@ -29,7 +29,8 @@ const LineChartWrapper = styled.div`
       text-anchor: initial !important;
     }
     .legend-wrapper {
-      display: ${props => (props.isLegendHidden ? 'none' : 'block')};
+      display: ${props => (props.isLegendHidden ? 'none' : 'inline-block')};
+      height: ${props => (!props.size === CARD_SIZES.MEDIUM ? '40px' : '20px')} !important;
     }
     .chart-holder {
       width: 100%;
