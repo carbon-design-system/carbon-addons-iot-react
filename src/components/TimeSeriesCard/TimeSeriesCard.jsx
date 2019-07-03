@@ -7,6 +7,7 @@ import styled from 'styled-components';
 import isNil from 'lodash/isNil';
 import memoize from 'lodash/memoize';
 import useDeepCompareEffect from 'use-deep-compare-effect';
+import withSize from 'react-sizeme';
 
 import { TimeSeriesCardPropTypes, CardPropTypes } from '../../constants/PropTypes';
 import { CARD_SIZES } from '../../constants/LayoutConstants';
@@ -21,7 +22,7 @@ const LineChartWrapper = styled.div`
   padding-bottom: ${props => (!props.size === CARD_SIZES.MEDIUM ? '16px' : '0px')};
   position: absolute;
   width: 100%;
-  height: 100%;
+  height: ${props => props.contentHeight};
 
   &&& {
     .chart-wrapper g.x.axis g.tick text {
@@ -38,6 +39,24 @@ const LineChartWrapper = styled.div`
     }
   }
 `;
+
+const determineHeight = (size, measuredWidth) => {
+  let height = '100%';
+  switch (size) {
+    case CARD_SIZES.MEDIUM:
+    case CARD_SIZES.LARGE:
+      if (measuredWidth && measuredWidth > 635) {
+        height = '90%';
+      }
+      break;
+    case CARD_SIZES.XLARGE:
+      height = '90%';
+      break;
+    default:
+      break;
+  }
+  return height;
+};
 
 const determinePrecision = (size, value, precision) => {
   // If it's an integer don't return extra values
@@ -188,40 +207,57 @@ const TimeSeriesCard = ({
   );
 
   return (
-    <Card title={title} size={size} {...others} isEditable={isEditable} isEmpty={isEmpty(values)}>
-      {!others.isLoading && !isEmpty(values) ? (
-        <LineChartWrapper size={size} isLegendHidden={series.length === 1}>
-          <LineChart
-            ref={el => {
-              chartRef = el;
-            }}
-            data={formatChartData(labels, series, values)}
-            options={{
-              animations: false,
-              accessibility: false,
-              scales: {
-                x: {
-                  title: xLabel,
-                },
-                y: {
-                  title: yLabel,
-                  formatter: axisValue => valueFormatter(axisValue, size, unit),
-                  // numberOfTicks: 8,
-                  yMaxAdjuster: yMaxValue => yMaxValue * 1.3,
-                },
-              },
-              legendClickable: true,
-              containerResizable: true,
-              tooltip: {
-                formatter: tooltipValue => valueFormatter(tooltipValue, size, unit),
-              },
-            }}
-            width="100%"
-            height="100%"
-          />
-        </LineChartWrapper>
-      ) : null}
-    </Card>
+    <withSize.SizeMe>
+      {({ size: measuredSize }) => {
+        const height = determineHeight(size, measuredSize.width);
+        return (
+          <Card
+            title={title}
+            size={size}
+            {...others}
+            isEditable={isEditable}
+            isEmpty={isEmpty(values)}
+          >
+            {!others.isLoading && !isEmpty(values) ? (
+              <LineChartWrapper
+                size={size}
+                contentHeight={height}
+                isLegendHidden={series.length === 1}
+              >
+                <LineChart
+                  ref={el => {
+                    chartRef = el;
+                  }}
+                  data={formatChartData(labels, series, values)}
+                  options={{
+                    animations: false,
+                    accessibility: false,
+                    scales: {
+                      x: {
+                        title: xLabel,
+                      },
+                      y: {
+                        title: yLabel,
+                        formatter: axisValue => valueFormatter(axisValue, size, unit),
+                        // numberOfTicks: 8,
+                        yMaxAdjuster: yMaxValue => yMaxValue * 1.3,
+                      },
+                    },
+                    legendClickable: true,
+                    containerResizable: true,
+                    tooltip: {
+                      formatter: tooltipValue => valueFormatter(tooltipValue, size, unit),
+                    },
+                  }}
+                  width="100%"
+                  height="100%"
+                />
+              </LineChartWrapper>
+            ) : null}
+          </Card>
+        );
+      }}
+    </withSize.SizeMe>
   );
 };
 
