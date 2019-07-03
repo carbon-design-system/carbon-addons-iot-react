@@ -55,7 +55,6 @@ const StyledTabChildren = styled.div`
   background: ${COLORS.superLightGray};
   padding-left: ${PADDING.horizontalWrapPadding};
   padding-right: ${PADDING.horizontalWrapPadding};
-  min-height: 100vh;
 `;
 
 const StyledActions = styled.div`
