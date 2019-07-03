@@ -15,13 +15,13 @@
   "homepage": "https://github.com/IBM/carbon-addons-iot-react",
   "scripts": {
     "build": "rollup -c",
-    "build:storybook": "build-storybook",
+    "build:storybook": "build-storybook -s public/production",
     "format": "prettier --write \"**/*.{scss,css,js,jsx,md,ts}\"",
     "format:diff": "prettier --list-different \"**/*.{scss,css,js,jsx,md,ts}\"",
     "lint": "yarn eslint .",
     "prepare": "yarn build",
     "start": "yarn storybook",
-    "storybook": "start-storybook -p 3000",
+    "storybook": "start-storybook -p 3000 -s public/development",
     "test": "jest",
     "test:watch": "jest --watchAll",
     "test:update": "jest -u"
