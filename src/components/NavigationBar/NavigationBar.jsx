@@ -55,7 +55,6 @@ const StyledTabChildren = styled.div`
   background: ${COLORS.superLightGray};
   padding-left: ${PADDING.horizontalWrapPadding};
   padding-right: ${PADDING.horizontalWrapPadding};
-  min-height: 100vh;
 `;
 
 const StyledActions = styled.div`
@@ -121,6 +120,7 @@ const NavigationBar = ({ tabs, hero, actions, onSelectionChange, workArea, ...ot
     {workArea || null}
     <StyledNavigationContainer hasActions={actions.length > 0}>
       {workArea ? <StyledOverlay /> : null}
+      {hero}
       <StyledTabToContent>
         <Tabs
           {...others}
@@ -129,18 +129,19 @@ const NavigationBar = ({ tabs, hero, actions, onSelectionChange, workArea, ...ot
           {tabs.map(({ children, id, ...other }) => (
             <Tab key={id} {...other}>
               <StyledTabContent>
-                {hero}
                 <StyledTabChildren>{children}</StyledTabChildren>
               </StyledTabContent>
             </Tab>
           ))}
         </Tabs>
       </StyledTabToContent>
-      <StyledActions>
-        {actions.map(({ id, ...other }) => (
-          <Button key={id} {...other} />
-        ))}
-      </StyledActions>
+      {actions && actions.length > 0 ? (
+        <StyledActions>
+          {actions.map(({ id, ...other }) => (
+            <Button key={id} {...other} />
+          ))}
+        </StyledActions>
+      ) : null}
     </StyledNavigationContainer>
   </Fragment>
 );

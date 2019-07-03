@@ -61,6 +61,7 @@ const StatefulNavigationBar = () => {
 
 storiesOf('NavigationBar', module)
   .add('normal', () => <NavigationBar {...navBarProps} />)
+  .add('start with tab 2 selected', () => <NavigationBar {...navBarProps} selected={1} />)
   .add('with actions', () => (
     <NavigationBar
       {...navBarProps}
