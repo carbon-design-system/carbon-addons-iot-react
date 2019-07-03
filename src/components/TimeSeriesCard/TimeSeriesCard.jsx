@@ -21,7 +21,7 @@ const LineChartWrapper = styled.div`
   padding-bottom: ${props => (!props.size === CARD_SIZES.MEDIUM ? '16px' : '0px')};
   position: absolute;
   width: 100%;
-  height: 100%;
+  height: ${props => (props.size !== CARD_SIZES.XLARGE ? '100%' : '90%')};
 
   &&& {
     .chart-wrapper g.x.axis g.tick text {
