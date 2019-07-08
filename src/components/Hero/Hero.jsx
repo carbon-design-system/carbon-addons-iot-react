@@ -88,8 +88,7 @@ const Hero = ({ title, description, className, rightContent, breadcrumb, secunda
         <StyledBreadcrumb>{breadcrumb || null}</StyledBreadcrumb>
         <StyledTitle>{title}</StyledTitle>
         <StyledHeroWrap>
-          {' '}
-          {description ? <StyledPageDescription>{description}</StyledPageDescription> : null}{' '}
+          {description ? <StyledPageDescription>{description}</StyledPageDescription> : null}
         </StyledHeroWrap>
         {secundaryNav}
       </StyledTitleSection>
