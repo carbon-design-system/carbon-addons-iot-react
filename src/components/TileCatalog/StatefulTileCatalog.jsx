@@ -29,29 +29,35 @@ const StatefulTileCatalog = ({
 
   const [state, dispatch] = useReducer(tileCatalogReducer, initialState);
 
-  useDeepCompareEffect(() => {
-    // If we get passed a new set of tiles reset!
-    dispatch({
-      type: TILE_ACTIONS.RESET,
-      payload: {
-        ...props,
-        selectedTileId: selectedTileIdProp,
-        tiles: tilesProp,
-        search,
-        pagination,
-      },
-    });
-    // If we totally change the tiles data, we should generate a selection event for the initial default selection
-    if (onSelection && tilesProp.length > 0 && !selectedTileIdProp) {
-      onSelection(tilesProp[0].id);
-    }
-  }, [tilesProp.map(tile => omit(tile, 'renderContent'))]);
+  useDeepCompareEffect(
+    () => {
+      // If we get passed a new set of tiles reset!
+      dispatch({
+        type: TILE_ACTIONS.RESET,
+        payload: {
+          ...props,
+          selectedTileId: selectedTileIdProp,
+          tiles: tilesProp,
+          search,
+          pagination,
+        },
+      });
+      // If we totally change the tiles data, we should generate a selection event for the initial default selection
+      if (onSelection && tilesProp.length > 0 && !selectedTileIdProp) {
+        onSelection(tilesProp[0].id);
+      }
+    },
+    [tilesProp.map(tile => omit(tile, 'renderContent'))]
+  );
 
-  useEffect(() => {
-    if (selectedTileIdProp) {
-      dispatch({ type: TILE_ACTIONS.SELECT, payload: selectedTileIdProp });
-    }
-  }, [selectedTileIdProp]);
+  useEffect(
+    () => {
+      if (selectedTileIdProp) {
+        dispatch({ type: TILE_ACTIONS.SELECT, payload: selectedTileIdProp });
+      }
+    },
+    [selectedTileIdProp]
+  );
 
   const {
     page,

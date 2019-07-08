@@ -175,17 +175,24 @@ export const CardPropTypes = {
   breakpoint: PropTypes.oneOf(Object.values(DASHBOARD_SIZES)),
   /** Optional range to pass at the card level */
   timeRange: PropTypes.oneOf([
-    'dayByHour',
-    'weekByDay',
-    'monthByDay',
-    'monthByWeek',
-    'yearByMonth',
+    'last24Hours',
+    'last7Days',
+    'lastMonth',
+    'lastQuarter',
+    'lastYear',
+    'thisWeek',
+    'thisMonth',
+    'thisQuarter',
+    'thisYear',
   ]),
+  /** Interval for time series configuration */
+  interval: PropTypes.oneOf(['hour', 'day', 'week', 'month', 'year']),
   availableActions: PropTypes.shape({
     edit: PropTypes.bool,
     clone: PropTypes.bool,
     delete: PropTypes.bool,
     expand: PropTypes.bool,
+    range: PropTypes.bool,
   }),
   /** All the labels that need translation */
   i18n: PropTypes.shape({

@@ -40,9 +40,19 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
   const [state, dispatch] = useReducer(tableReducer, { data: initialData, view: initialState });
   const isLoading = get(initialState, 'table.loadingState.isLoading');
   // Need to initially sort and filter the tables data, but preserve the selectedId
-  useDeepCompareEffect(() => {
-    dispatch(tableRegister({ data: initialData, isLoading, view: initialState }));
-  }, [initialData, isLoading, initialState]);
+  useDeepCompareEffect(
+    () => {
+      dispatch(
+        tableRegister({
+          data: initialData,
+          isLoading,
+          view: initialState,
+          totalItems: initialData.length,
+        })
+      );
+    },
+    [initialData, isLoading, initialState]
+  );
 
   const {
     view,

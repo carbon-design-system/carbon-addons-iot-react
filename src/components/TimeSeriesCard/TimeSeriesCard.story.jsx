@@ -1,5 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
 import { text, select, object, boolean } from '@storybook/addon-knobs';
 import memoize from 'lodash/memoize';
 
@@ -39,6 +40,7 @@ storiesOf('TimeSeriesCard (Experimental)', module)
           interval="hour"
           breakpoint="lg"
           size={size}
+          onCardAction={action('onCardAction')}
         />
       </div>
     );
@@ -68,6 +70,7 @@ storiesOf('TimeSeriesCard (Experimental)', module)
           interval="day"
           breakpoint="lg"
           size={size}
+          onCardAction={action('onCardAction')}
         />
       </div>
     );
@@ -99,6 +102,7 @@ storiesOf('TimeSeriesCard (Experimental)', module)
           timeRange="dayByHour"
           breakpoint="lg"
           size={size}
+          onCardAction={action('onCardAction')}
         />
       </div>
     );
@@ -128,6 +132,7 @@ storiesOf('TimeSeriesCard (Experimental)', module)
           interval="hour"
           breakpoint="lg"
           size={size}
+          onCardAction={action('onCardAction')}
         />
       </div>
     );
@@ -157,6 +162,7 @@ storiesOf('TimeSeriesCard (Experimental)', module)
           interval="hour"
           breakpoint="lg"
           size={size}
+          onCardAction={action('onCardAction')}
         />
       </div>
     );
@@ -186,6 +192,7 @@ storiesOf('TimeSeriesCard (Experimental)', module)
           interval="day"
           breakpoint="lg"
           size={size}
+          onCardAction={action('onCardAction')}
         />
       </div>
     );
@@ -215,6 +222,7 @@ storiesOf('TimeSeriesCard (Experimental)', module)
           interval="day"
           breakpoint="lg"
           size={size}
+          onCardAction={action('onCardAction')}
         />
       </div>
     );
@@ -244,6 +252,7 @@ storiesOf('TimeSeriesCard (Experimental)', module)
           interval="day"
           breakpoint="lg"
           size={size}
+          onCardAction={action('onCardAction')}
         />
       </div>
     );
@@ -273,6 +282,7 @@ storiesOf('TimeSeriesCard (Experimental)', module)
           interval="month"
           breakpoint="lg"
           size={size}
+          onCardAction={action('onCardAction')}
         />
       </div>
     );
@@ -302,6 +312,7 @@ storiesOf('TimeSeriesCard (Experimental)', module)
           interval="month"
           breakpoint="lg"
           size={size}
+          onCardAction={action('onCardAction')}
         />
       </div>
     );
@@ -443,6 +454,7 @@ storiesOf('TimeSeriesCard (Experimental)', module)
           interval="hour"
           breakpoint="lg"
           size={size}
+          onCardAction={action('onCardAction')}
         />
       </div>
     );
@@ -472,6 +484,7 @@ storiesOf('TimeSeriesCard (Experimental)', module)
           interval="hour"
           breakpoint="lg"
           size={size}
+          onCardAction={action('onCardAction')}
         />
       </div>
     );
@@ -501,6 +514,7 @@ storiesOf('TimeSeriesCard (Experimental)', module)
           interval="day"
           breakpoint="lg"
           size={size}
+          onCardAction={action('onCardAction')}
         />
       </div>
     );
@@ -530,6 +544,7 @@ storiesOf('TimeSeriesCard (Experimental)', module)
           interval="day"
           breakpoint="lg"
           size={size}
+          onCardAction={action('onCardAction')}
         />
       </div>
     );
@@ -559,6 +574,7 @@ storiesOf('TimeSeriesCard (Experimental)', module)
           interval="month"
           breakpoint="lg"
           size={size}
+          onCardAction={action('onCardAction')}
         />
       </div>
     );
@@ -588,6 +604,7 @@ storiesOf('TimeSeriesCard (Experimental)', module)
           interval="month"
           breakpoint="lg"
           size={size}
+          onCardAction={action('onCardAction')}
         />
       </div>
     );
@@ -646,6 +663,7 @@ storiesOf('TimeSeriesCard (Experimental)', module)
           interval="day"
           breakpoint="lg"
           size={size}
+          onCardAction={action('onCardAction')}
         />
       </div>
     );
@@ -675,6 +693,7 @@ storiesOf('TimeSeriesCard (Experimental)', module)
           interval="day"
           breakpoint="lg"
           size={size}
+          onCardAction={action('onCardAction')}
         />
       </div>
     );
@@ -708,6 +727,7 @@ storiesOf('TimeSeriesCard (Experimental)', module)
           values={getIntervalChartData('day', 12, { min: 10, max: 100 }, 100)}
           breakpoint="lg"
           size={size}
+          onCardAction={action('onCardAction')}
         />
       </div>
     );
@@ -742,6 +762,7 @@ storiesOf('TimeSeriesCard (Experimental)', module)
           interval="hour"
           breakpoint="lg"
           size={size}
+          onCardAction={action('onCardAction')}
         />
       </div>
     );
@@ -776,11 +797,12 @@ storiesOf('TimeSeriesCard (Experimental)', module)
           interval="hour"
           breakpoint="lg"
           size={size}
+          onCardAction={action('onCardAction')}
         />
       </div>
     );
   })
-  .add('large / UNITS', () => {
+  .add('large / units', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
@@ -805,6 +827,7 @@ storiesOf('TimeSeriesCard (Experimental)', module)
           interval="day"
           breakpoint="lg"
           size={size}
+          onCardAction={action('onCardAction')}
         />
       </div>
     );
@@ -834,6 +857,7 @@ storiesOf('TimeSeriesCard (Experimental)', module)
           interval="year"
           breakpoint="lg"
           size={size}
+          onCardAction={action('onCardAction')}
         />
       </div>
     );
@@ -864,6 +888,7 @@ storiesOf('TimeSeriesCard (Experimental)', module)
           interval="day"
           breakpoint="lg"
           size={size}
+          onCardAction={action('onCardAction')}
         />
       </div>
     );
@@ -924,6 +949,7 @@ storiesOf('TimeSeriesCard (Experimental)', module)
           breakpoint="lg"
           values={[]}
           size={size}
+          onCardAction={action('onCardAction')}
         />
       </div>
     );
@@ -951,6 +977,7 @@ storiesOf('TimeSeriesCard (Experimental)', module)
           breakpoint="lg"
           values={chartData.events.slice(0, 20)}
           size={size}
+          onCardAction={action('onCardAction')}
         />
       </div>
     );
@@ -988,6 +1015,7 @@ storiesOf('TimeSeriesCard (Experimental)', module)
           breakpoint="lg"
           values={[]}
           size={size}
+          onCardAction={action('onCardAction')}
         />
       </div>
     );
