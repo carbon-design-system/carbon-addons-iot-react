@@ -142,7 +142,7 @@ const TimeSeriesCard = ({
     const m = moment.unix(timestamp / 1000);
 
     return interval === 'hour' && index === 0
-      ? m.format('DD MMM YYYY')
+      ? m.format('DD MMM')
       : interval === 'hour' &&
         index !== 0 &&
         !moment(moment.unix(valueSort[index - ticksInterval].timestamp / 1000)).isSame(
@@ -153,7 +153,7 @@ const TimeSeriesCard = ({
       : interval === 'hour'
       ? m.format('HH:mm')
       : interval === 'day' && index === 0
-      ? m.format('DD MMM YYYY')
+      ? m.format('DD MMM')
       : interval === 'day' && index !== 0
       ? m.format('DD MMM')
       : interval === 'month' && !sameYear

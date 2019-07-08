@@ -398,12 +398,22 @@ storiesOf('TimeSeriesCard (Experimental)', module)
               {
                 label: 'Temperature',
                 dataSourceId: 'temperature',
-                color: text('color', COLORS.MAGENTA),
+                // color: text('color', COLORS.MAGENTA),
               },
               {
                 label: 'Pressure',
                 dataSourceId: 'pressure',
-                color: text('color', COLORS.TEAL),
+                // color: text('color', COLORS.TEAL),
+              },
+              {
+                label: 'Humidity',
+                dataSourceId: 'humidity',
+                // color: text('color', COLORS.TEAL),
+              },
+              {
+                label: 'Count',
+                dataSourceId: 'ecount',
+                // color: text('color', COLORS.TEAL),
               },
             ],
 
