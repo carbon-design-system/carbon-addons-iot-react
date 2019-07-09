@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Fragment } from 'react';
 import styled from 'styled-components';
+import { Breadcrumb, BreadcrumbItem } from 'carbon-components-react';
 
 import { COLORS } from '../../styles/styles';
 
@@ -11,10 +12,14 @@ const propTypes = {
   description: PropTypes.node,
   /** Optional What to render in the right side of the hero */
   rightContent: PropTypes.node,
-  /** Breadcrumb to show */
-  breadcrumb: PropTypes.node,
-  /** secundary nav to show */
-  secundaryNav: PropTypes.node,
+  /** Breadcrumbs to show */
+  breadcrumb: PropTypes.arrayOf(
+    PropTypes.shape({
+      label: PropTypes.string.isRequired,
+      href: PropTypes.string,
+      isCurrentPage: PropTypes.bool, // defaults to false
+    })
+  ),
   className: PropTypes.string,
 };
 
@@ -23,8 +28,7 @@ const defaultProps = {
   description: null,
   className: null,
   rightContent: null,
-  breadcrumb: null,
-  secundaryNav: null,
+  breadcrumb: [],
 };
 
 const StyledHero = styled.div`
@@ -74,23 +78,28 @@ const StyledRightContent = styled.div`
   flex-basis: 25%;
 `;
 
-const StyledBreadcrumb = styled.div`
+const StyledBreadcrumb = styled(Breadcrumb)`
   margin-bottom: 24px;
 `;
 
 /**
  * Renders the hero text and styles for the page.  Can either render Breadcrumb, Title with description and secundary nav.
  */
-const Hero = ({ title, description, className, rightContent, breadcrumb, secundaryNav }) => (
+const Hero = ({ title, description, className, rightContent, breadcrumb }) => (
   <StyledHero className={className}>
     <Fragment>
       <StyledTitleSection>
-        <StyledBreadcrumb>{breadcrumb || null}</StyledBreadcrumb>
+        <StyledBreadcrumb noTrailingSlash>
+          {breadcrumb.map(({ href = undefined, isCurrentPage = false, label }) => (
+            <BreadcrumbItem href={href} isCurrentPage={isCurrentPage}>
+              <span>{label}</span>
+            </BreadcrumbItem>
+          ))}
+        </StyledBreadcrumb>
         <StyledTitle>{title}</StyledTitle>
         <StyledHeroWrap>
           {description ? <StyledPageDescription>{description}</StyledPageDescription> : null}
         </StyledHeroWrap>
-        {secundaryNav}
       </StyledTitleSection>
       {rightContent ? <StyledRightContent>{rightContent}</StyledRightContent> : null}
     </Fragment>
