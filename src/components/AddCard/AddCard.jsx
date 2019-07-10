@@ -13,14 +13,13 @@ const StyledTile = styled(ClickableTile)`
     display: inline-flex;
     flex-direction: column;
     justify-content: space-between;
-    background-color: ${COLORS.superLightGray};
     min-height: 8rem;
     min-width: 8.5rem;
     max-width: ${rem(300)};
     max-height: ${rem(250)};
     :focus,
-    :hover {
-      border: 1px solid ${COLORS.blue};
+    :active {
+      border: 1px solid ${COLORS.blue60};
     }
 
     svg {

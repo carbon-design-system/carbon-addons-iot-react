@@ -1357,10 +1357,10 @@
   resolved "https://registry.yarnpkg.com/@carbon/icons/-/icons-10.1.0.tgz#12daa64ef63c47128c2b2cc570456df5fdc34f1d"
   integrity sha512-LEgjcD2W87t6vmmv9cfEMIji92gAgadMMOmb6LqXFepPn3dQechHmejS4td8K2thOf4hIuqcOQUlJSHJwCFMuA==
 
-"@carbon/themes@^10.3.0":
-  version "10.3.0"
-  resolved "https://registry.yarnpkg.com/@carbon/themes/-/themes-10.3.0.tgz#c31f687f5ca2f58ec89ff8505f24b431a561cc36"
-  integrity sha512-Ig9Dmn4f2PWD7SWvRmXcc8AbNBnZkIZSlYPge/rlStQbGX4jDjQ51ksHPEA46fWtEwo1et1Qc6ZQfJwW/0Fs+w==
+"@carbon/themes@^10.3.1":
+  version "10.3.1"
+  resolved "https://registry.yarnpkg.com/@carbon/themes/-/themes-10.3.1.tgz#f951af77d49bc8146f691a290f1d76afa27da0a3"
+  integrity sha512-5UviZgzQriksQIBgrJ6I/qkmI8pR3GWw4WQ+tdHyw5LpDstzwxRIUf3emz/lBEPPxsEYOaf31nJ4DOFETMCr0Q==
   dependencies:
     "@carbon/colors" "10.2.0"
 

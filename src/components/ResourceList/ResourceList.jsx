@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { Button } from 'carbon-components-react';
 import styled from 'styled-components';
 
+import { COLORS } from '../../styles/styles';
+
 const ResourceListSection = styled.section`
    {
     &.bx--structured-list--selection
@@ -17,6 +19,7 @@ const ResourceListSection = styled.section`
       margin: auto 0 auto auto;
 
       svg {
+        fill: ${COLORS.blue60};
         margin-left: 0.25rem;
       }
     }

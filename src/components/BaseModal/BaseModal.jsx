@@ -131,6 +131,8 @@ export const BaseModalPropTypes = {
   invalid: PropTypes.bool, // eslint-disable-line react/boolean-prop-naming
   /** Callback to submit the dialog/form */
   onSubmit: PropTypes.func,
+  /** switchc to render footer buttons or not (carbon consistency) */
+  passiveModal: PropTypes.bool,
 };
 
 /**
@@ -164,6 +166,7 @@ class BaseModal extends React.Component {
     children: null,
     header: {},
     iconDescription: 'Close',
+    passiveModal: true,
   };
 
   componentDidUpdate(prevProps) {
@@ -198,6 +201,7 @@ class BaseModal extends React.Component {
       isLarge,
       onSubmit,
       iconDescription,
+      passiveModal,
     } = this.props;
     const { label, title, helpText } = header;
     // First check for dataErrors as they are worse than form errors
@@ -231,7 +235,7 @@ class BaseModal extends React.Component {
             onCloseButtonClick={this.handleClearError}
           />
         ) : null}
-        {footer || onSubmit ? (
+        {(!passiveModal && footer) || onSubmit ? (
           <StyledModalFooter>
             {React.isValidElement(footer) ? (
               footer

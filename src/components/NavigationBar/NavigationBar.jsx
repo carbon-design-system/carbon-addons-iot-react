@@ -11,7 +11,7 @@ const StyledNavigationContainer = styled.div`
   padding-top: 3rem;
 
   ul[role='tablist'] {
-    padding-left: 0;
+    padding-left: ${PADDING.horizontalWrapPadding};
     padding-right: ${PADDING.horizontalWrapPadding};
     align-items: center;
     height: 100%;

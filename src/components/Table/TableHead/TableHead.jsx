@@ -78,7 +78,15 @@ const defaultProps = {
   closeMenuText: 'Close menu',
 };
 
-const StyledCheckboxTableHeader = styled(TableHeader)``;
+const StyledCheckboxTableHeader = styled(TableHeader)`
+  && {
+    vertical-align: middle;
+
+    & > span {
+      padding: 0;
+    }
+  }
+`;
 
 const StyledCarbonTableHead = styled(({ lightweight, ...others }) => (
   <CarbonTableHead {...others} />
