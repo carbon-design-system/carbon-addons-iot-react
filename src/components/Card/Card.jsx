@@ -59,6 +59,7 @@ export const CardHeader = styled.div`
 export const CardContent = styled.div`
   flex: 1;
   position: relative;
+  height: ${props => props.dimensions.y - CARD_TITLE_HEIGHT}px;
 `;
 
 const CardTitle = styled.span`
@@ -328,7 +329,7 @@ const Card = ({
         </CardTitle>
         {toolbar}
       </CardHeader>
-      <CardContent>
+      <CardContent dimensions={dimensions}>
         {isLoading ? (
           <SkeletonWrapper>
             <OptimizedSkeletonText

@@ -131,6 +131,18 @@ export const DonutCardPropTypes = {
   }).isRequired,
 };
 
+export const ImageCardPropTypes = {
+  content: PropTypes.shape({
+    title: PropTypes.string,
+    data: PropTypes.arrayOf(
+      PropTypes.shape({
+        src: PropTypes.string.isRequired,
+        alt: PropTypes.string.isRequired,
+      })
+    ),
+  }).isRequired,
+};
+
 export const PieCardPropTypes = DonutCardPropTypes;
 
 export const DashboardLayoutPropTypes = PropTypes.shape({
