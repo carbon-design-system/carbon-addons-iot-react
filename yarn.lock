@@ -1155,10 +1155,20 @@
   dependencies:
     "@carbon/charts" "0.12.0"
 
-"@carbon/charts@0.12.1", "@carbon/charts@^0.12.1":
+"@carbon/charts@0.12.1":
   version "0.12.0"
   resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-0.12.1.tgz#edf430989625662eaa5a67c85854a9fd161b34ad"
   integrity sha512-klzI8nKrY6GCuUkC6VQEEpXipt6VJS5c9jZP4zfBjEw25iuDI5ar+wdZAN7PYoFpneu2RLpOmbnMSZZsLEmXqQ==
+  dependencies:
+    "@carbon/colors" "10.1.1"
+    "@carbon/utils-position" "1.1.0"
+    babel-polyfill "6.26.0"
+    resize-observer-polyfill "1.5.0"
+
+"@carbon/charts@^0.12.1":
+  version "0.12.4"
+  resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-0.12.5.tgz#76fad24223ba03b3c6315654c2bbb98b2e395b56"
+  integrity sha512-9oLOoGZGngiadCvHLel+JjJMt5fW292h0F7KjiVYpJ/JX31fPM6ZDLRqXnNE9nX+J0+jKoB7vxfAmqhVAYnYzg==
   dependencies:
     "@carbon/colors" "10.1.1"
     "@carbon/utils-position" "1.1.0"
