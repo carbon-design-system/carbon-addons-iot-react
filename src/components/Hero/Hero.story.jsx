@@ -16,10 +16,19 @@ const breadcrumb = [
   { label: 'Item 1', isCurrentPage: true },
 ];
 
+const tooltip = {
+  message:
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ut auctor tortor, et condimentum dolor.',
+  href: '/',
+  linkLabel: 'Learn more',
+};
 storiesOf('Hero (Experimental)', module)
   .add('normal', () => <Hero title="Explore" />)
   .add('with description', () => (
     <Hero title="Explore" description={commonPageHeroProps.description} />
   ))
   .add('with rigth content', () => <Hero {...commonPageHeroProps} />)
-  .add('with breadcrumb', () => <Hero {...commonPageHeroProps} breadcrumb={breadcrumb} />);
+  .add('with breadcrumb', () => <Hero {...commonPageHeroProps} breadcrumb={breadcrumb} />)
+  .add('with tooltip', () => (
+    <Hero {...commonPageHeroProps} breadcrumb={breadcrumb} tooltip={tooltip} />
+  ));

@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
 import React, { Fragment } from 'react';
 import styled from 'styled-components';
-import { Breadcrumb, BreadcrumbItem } from 'carbon-components-react';
+import Info from '@carbon/icons-react/lib/information/20';
+import { Breadcrumb, BreadcrumbItem, Tooltip } from 'carbon-components-react';
 
 import { COLORS } from '../../styles/styles';
 
@@ -20,6 +21,11 @@ const propTypes = {
       isCurrentPage: PropTypes.bool, // defaults to false
     })
   ),
+  tooltip: PropTypes.shape({
+    message: PropTypes.string.isRequired,
+    href: PropTypes.string,
+    linkLabel: PropTypes.string,
+  }),
   className: PropTypes.string,
 };
 
@@ -29,6 +35,7 @@ const defaultProps = {
   className: null,
   rightContent: null,
   breadcrumb: [],
+  tooltip: null,
 };
 
 const StyledHero = styled.div`
@@ -85,7 +92,7 @@ const StyledBreadcrumb = styled(Breadcrumb)`
 /**
  * Renders the hero text and styles for the page.  Can either render Breadcrumb, Title with description and secundary nav.
  */
-const Hero = ({ title, description, className, rightContent, breadcrumb }) => (
+const Hero = ({ title, description, className, rightContent, breadcrumb, tooltip }) => (
   <StyledHero className={className}>
     <Fragment>
       <StyledTitleSection>
@@ -96,7 +103,27 @@ const Hero = ({ title, description, className, rightContent, breadcrumb }) => (
             </BreadcrumbItem>
           ))}
         </StyledBreadcrumb>
-        <StyledTitle>{title}</StyledTitle>
+        <StyledTitle>
+          {title}
+          {tooltip ? (
+            <Tooltip
+              clickToOpen
+              tabIndex={0}
+              triggerText=""
+              triggerId="tooltip"
+              renderIcon={React.forwardRef((props, ref) => (
+                <Info ref={ref} />
+              ))}
+            >
+              <p>{tooltip.message}</p>
+              <div className="bx--tooltip__footer">
+                <a href={tooltip.href} className="bx--link">
+                  {tooltip.linkLabel}
+                </a>
+              </div>
+            </Tooltip>
+          ) : null}
+        </StyledTitle>
         <StyledHeroWrap>
           {description ? <StyledPageDescription>{description}</StyledPageDescription> : null}
         </StyledHeroWrap>
