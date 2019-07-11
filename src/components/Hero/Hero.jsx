@@ -45,7 +45,6 @@ const StyledHero = styled.div`
   padding-right: 32px;
   padding-bottom: 24px;
   display: flex;
-  flex: 1 1;
   flex-flow: row nowrap;
 `;
 
