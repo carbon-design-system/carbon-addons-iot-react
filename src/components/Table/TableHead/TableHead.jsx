@@ -85,12 +85,17 @@ const StyledCheckboxTableHeader = styled(TableHeader)`
     & > span {
       padding: 0;
     }
-  }
 `;
 
 const StyledCarbonTableHead = styled(({ lightweight, ...others }) => (
   <CarbonTableHead {...others} />
-))``;
+))`
+  th {
+    height: 3rem;
+    border-top: none;
+    border-bottom: none;
+  }
+`;
 
 const StyledCustomTableHeader = styled(TableHeader)`
   &&& {
@@ -108,6 +113,8 @@ const StyledCustomTableHeader = styled(TableHeader)`
     }}
 
     vertical-align: middle;
+
+    &
   }
 `;
 
