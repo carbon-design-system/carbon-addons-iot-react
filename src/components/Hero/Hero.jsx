@@ -4,8 +4,6 @@ import styled from 'styled-components';
 import Info from '@carbon/icons-react/lib/information/20';
 import { Breadcrumb, BreadcrumbItem, Tooltip } from 'carbon-components-react';
 
-import { COLORS } from '../../styles/styles';
-
 const propTypes = {
   /** Title of the page  */
   title: PropTypes.node,
@@ -39,11 +37,7 @@ const defaultProps = {
 };
 
 const StyledHero = styled.div`
-  background: ${COLORS.white};
-  padding-top: 32px;
-  padding-left: 32px;
-  padding-right: 32px;
-  padding-bottom: 24px;
+  padding: 2rem 2rem 1.5rem 2rem;
   display: flex;
   flex-flow: row nowrap;
 `;
@@ -56,8 +50,6 @@ const StyledTitle = styled.div`
   align-items: center;
   display: flex;
   font-weight: 400;
-  line-height: 1.25rem;
-  margin-bottom: 24px;
   font-size: 1.75rem;
   color: #171717;
 `;
@@ -72,7 +64,7 @@ const StyledHeroWrap = styled.div`
 `;
 
 const StyledPageDescription = styled.p`
-  margin-bottom: 24px;
+  margin-top: 1.5rem;
   color: #171717;
   font-size: 0.875rem;
   line-height: 1.5rem;
@@ -85,7 +77,7 @@ const StyledRightContent = styled.div`
 `;
 
 const StyledBreadcrumb = styled(Breadcrumb)`
-  margin-bottom: 24px;
+  margin-bottom: 0.5rem;
 `;
 
 /**
