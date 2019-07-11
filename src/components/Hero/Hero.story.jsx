@@ -22,6 +22,7 @@ const tooltip = {
   href: '/',
   linkLabel: 'Learn more',
 };
+
 storiesOf('Hero (Experimental)', module)
   .add('normal', () => <Hero title="Explore" />)
   .add('with description', () => (
@@ -31,4 +32,7 @@ storiesOf('Hero (Experimental)', module)
   .add('with breadcrumb', () => <Hero {...commonPageHeroProps} breadcrumb={breadcrumb} />)
   .add('with tooltip', () => (
     <Hero {...commonPageHeroProps} breadcrumb={breadcrumb} tooltip={tooltip} />
+  ))
+  .add('with tooltip (no link)', () => (
+    <Hero {...commonPageHeroProps} breadcrumb={breadcrumb} tooltip={{ message: tooltip.message }} />
   ));

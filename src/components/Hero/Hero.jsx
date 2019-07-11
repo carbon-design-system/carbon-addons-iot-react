@@ -99,7 +99,7 @@ const Hero = ({ title, description, className, rightContent, breadcrumb, tooltip
         <StyledBreadcrumb noTrailingSlash>
           {breadcrumb.map(({ href = undefined, isCurrentPage = false, label }) => (
             <BreadcrumbItem href={href} isCurrentPage={isCurrentPage}>
-              <span>{label}</span>
+              <a href={href}>{label}</a>
             </BreadcrumbItem>
           ))}
         </StyledBreadcrumb>
@@ -116,11 +116,13 @@ const Hero = ({ title, description, className, rightContent, breadcrumb, tooltip
               ))}
             >
               <p>{tooltip.message}</p>
-              <div className="bx--tooltip__footer">
-                <a href={tooltip.href} className="bx--link">
-                  {tooltip.linkLabel}
-                </a>
-              </div>
+              {tooltip.href && tooltip.linkLabel ? (
+                <div className="bx--tooltip__footer">
+                  <a href={tooltip.href} className="bx--link">
+                    {tooltip.linkLabel}
+                  </a>
+                </div>
+              ) : null}
             </Tooltip>
           ) : null}
         </StyledTitle>
