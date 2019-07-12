@@ -111,6 +111,11 @@ const StyledCheckboxTableCell = styled(TableCell)`
   && {
     padding-bottom: 0.5rem;
     width: 2.5rem;
+
+    /* Added to undo carbon component. this needs to be removed when we redo this table */
+    &::after {
+      background-color: transparent !important;
+    }
   }
 `;
 
@@ -134,7 +139,7 @@ const StyledTableRow = styled(TableRow)`
 const StyledSingleSelectedTableRow = styled(TableRow)`
   &&& {
     background: ${COLORS.lightBlue};
-    border-left: 5px solid ${COLORS.blue};
+    border-left: 5px solid ${COLORS.blue60};
 
     td {
       margin-left: -5px;
@@ -172,7 +177,7 @@ const StyledTableExpandRow = styled(TableExpandRow)`
         left: 0;
         height: 100%;
         width: ${props['data-nesting-offset']}px;
-        background-color: rgb(229,237,237);
+        background-color: ${COLORS.gray20};
         border-right: solid 1px rgb(223,227,230);
       }
     `
@@ -201,8 +206,9 @@ const StyledTableExpandRowExpanded = styled(TableExpandRow)`
       props['data-row-nesting']
         ? `
 
-        td.bx--table-expand {
+        td.bx--table-expand, td {
           position: relative;
+          border-color: ${COLORS.gray20};
         }
         td > button.bx--table-expand__button {
           position: relative;

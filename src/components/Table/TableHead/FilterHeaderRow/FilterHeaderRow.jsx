@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { ComboBox, DataTable, FormItem, Icon, TextInput } from 'carbon-components-react';
-import { iconClose } from 'carbon-icons';
+import { ComboBox, DataTable, FormItem, TextInput } from 'carbon-components-react';
+import Close from '@carbon/icons-react/lib/close/16';
 import styled from 'styled-components';
 
+import { COLORS } from '../../../../styles/styles';
 import { defaultFunction, handleEnterKeyDown } from '../../../../utils/componentUtilityFunctions';
 
 const { TableHeader, TableRow } = DataTable;
@@ -42,6 +43,28 @@ const StyledTableHeader = styled(TableHeader)`
       `
         : '';
     }};
+
+    .bx--tag--filter {
+      background-color: transparent;
+
+      &:focus {
+        outline: 2px solid ${COLORS.blue60};
+        outline-offset: -2px;
+
+        svg {
+          border: none;
+        }
+      }
+
+      & > svg {
+        fill: ${COLORS.gray100};
+        border-radius: 0;
+
+        &:hover {
+          background-color: transparent;
+        }
+      }
+    }
   }
 `;
 const StyledFormItem = styled(FormItem)`
@@ -184,7 +207,7 @@ class FilterHeaderRow extends Component {
         {ordering
           .filter(c => !c.isHidden)
           .map((c, i) => {
-            const column = columns.find(i => c.columnId === i.id);
+            const column = columns.find(item => c.columnId === item.id);
             const columnStateValue = this.state[column.id]; // eslint-disable-line
 
             // undefined check has the effect of making isFilterable default to true
@@ -201,8 +224,9 @@ class FilterHeaderRow extends Component {
                   itemToString={item => (item ? item.text : '')}
                   initialSelectedItem={{
                     id: columnStateValue,
-                    text: (column.options.find(i => i.id === columnStateValue) || { text: '' })
-                      .text, // eslint-disable-line react/destructuring-assignment
+                    text: (
+                      column.options.find(option => option.id === columnStateValue) || { text: '' }
+                    ).text, // eslint-disable-line react/destructuring-assignment
                   }}
                   placeholder={column.placeholderText || 'Choose an option'}
                   onChange={evt => {
@@ -242,7 +266,8 @@ class FilterHeaderRow extends Component {
                       }}
                       title={clearFilterText}
                     >
-                      <Icon icon={iconClose} description={clearFilterText} focusable="false" />
+                      <Close description={clearFilterText} />
+                      {/* <Icon icon={iconClose} description={clearFilterText} focusable="false" /> */}
                     </div>
                   ) : null}
                 </StyledFormItem>

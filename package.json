@@ -33,7 +33,7 @@
     }
   },
   "dependencies": {
-    "@carbon/themes": "^10.3.0",
+    "@carbon/themes": "^10.3.1",
     "c3": "^0.7.1",
     "classnames": "^2.2.5",
     "immutability-helper": "^2.9.0",

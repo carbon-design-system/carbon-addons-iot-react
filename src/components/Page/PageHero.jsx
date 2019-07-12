@@ -91,9 +91,8 @@ const StyledPageHeroWrap = styled.div`
 
 const StyledPageBlurb = styled.p`
   margin-bottom: 1rem;
-  color: ${COLORS.gray};
   font-size: 0.875rem;
-  line-height: 1.5rem;
+  line-height: 1.25rem;
   max-width: 50rem;
   flex: 1 1 20%;
 `;

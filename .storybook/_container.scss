@@ -10,10 +10,15 @@ $feature-flags: (
   ui-shell: true,
 );
 
+@import '@carbon/themes/scss/themes';
+$carbon--theme: $carbon--theme--g10;
+
+// Use the gray 10 theme
+@include carbon--theme();
 @import '~carbon-components/scss/globals/scss/styles';
 
 // .storybook-container {
-//   // background: #f9fafb;
+//   background: #f3f3f3;
 // }
 
 .storybook-container > div {

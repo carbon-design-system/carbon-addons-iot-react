@@ -375,6 +375,7 @@ storiesOf('Table', module)
         <StatefulTable
           {...initialState}
           actions={actions}
+          isSortable
           lightweight={boolean('lightweight', false)}
         />
       </StyledTableWidth>
