@@ -12,13 +12,7 @@ const propTypes = {
   /** Optional What to render in the right side of the hero */
   rightContent: PropTypes.node,
   /** Breadcrumbs to show */
-  breadcrumb: PropTypes.arrayOf(
-    PropTypes.shape({
-      label: PropTypes.string.isRequired,
-      href: PropTypes.string,
-      isCurrentPage: PropTypes.bool, // defaults to false
-    })
-  ),
+  breadcrumb: PropTypes.arrayOf(PropTypes.node),
   tooltip: PropTypes.shape({
     message: PropTypes.string.isRequired,
     href: PropTypes.string,
@@ -38,12 +32,12 @@ const defaultProps = {
 
 const StyledHero = styled.div`
   padding: 2rem 2rem 1.5rem 2rem;
-  display: flex;
-  flex-flow: row nowrap;
 `;
 
 const StyledTitleSection = styled.div`
-  flex-basis: 75%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 `;
 
 const StyledTitle = styled.div`
@@ -54,30 +48,18 @@ const StyledTitle = styled.div`
   color: #171717;
 `;
 
-const StyledHeroWrap = styled.div`
-  align-items: flex-start;
-  display: flex;
-  margin: 0 auto;
-  width: 100%;
-  justify-content: space-between;
-  transition: padding 0.2s;
-`;
-
 const StyledPageDescription = styled.p`
   margin-top: 1.5rem;
   color: #171717;
   font-size: 0.875rem;
-  line-height: 1.5rem;
-  max-width: 50rem;
-  flex: 1 1 20%;
+  line-height: 1.375rem;
+  max-width: 40rem;
 `;
 
-const StyledRightContent = styled.div`
-  flex-basis: 25%;
-`;
+const StyledRightContent = styled.div``;
 
 const StyledBreadcrumb = styled(Breadcrumb)`
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
 `;
 
 /**
@@ -86,14 +68,12 @@ const StyledBreadcrumb = styled(Breadcrumb)`
 const Hero = ({ title, description, className, rightContent, breadcrumb, tooltip }) => (
   <StyledHero className={className}>
     <Fragment>
+      <StyledBreadcrumb>
+        {breadcrumb.map(crumb => (
+          <BreadcrumbItem>{crumb}</BreadcrumbItem>
+        ))}
+      </StyledBreadcrumb>
       <StyledTitleSection>
-        <StyledBreadcrumb noTrailingSlash>
-          {breadcrumb.map(({ href = undefined, isCurrentPage = false, label }) => (
-            <BreadcrumbItem href={href} isCurrentPage={isCurrentPage}>
-              <a href={href}>{label}</a>
-            </BreadcrumbItem>
-          ))}
-        </StyledBreadcrumb>
         <StyledTitle>
           {title}
           {tooltip ? (
@@ -117,11 +97,9 @@ const Hero = ({ title, description, className, rightContent, breadcrumb, tooltip
             </Tooltip>
           ) : null}
         </StyledTitle>
-        <StyledHeroWrap>
-          {description ? <StyledPageDescription>{description}</StyledPageDescription> : null}
-        </StyledHeroWrap>
+        {rightContent ? <StyledRightContent>{rightContent}</StyledRightContent> : null}
       </StyledTitleSection>
-      {rightContent ? <StyledRightContent>{rightContent}</StyledRightContent> : null}
+      {description ? <StyledPageDescription>{description}</StyledPageDescription> : null}
     </Fragment>
   </StyledHero>
 );
