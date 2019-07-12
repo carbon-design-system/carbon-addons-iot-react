@@ -1,5 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import { Button } from 'carbon-components-react';
 
 import Hero from './Hero';
 
@@ -10,11 +11,7 @@ const commonPageHeroProps = {
   rightContent: <div style={{ textAlign: 'right' }}>Right Content</div>,
 };
 
-const breadcrumb = [
-  { label: 'Home', href: '/' },
-  { label: 'Items', href: '/items' },
-  { label: 'Item 1', isCurrentPage: true },
-];
+const breadcrumb = [<a href="/">Home</a>, <a href="/">Type</a>, <span>Instance</span>];
 
 const tooltip = {
   message:
@@ -28,7 +25,18 @@ storiesOf('Hero (Experimental)', module)
   .add('with description', () => (
     <Hero title="Explore" description={commonPageHeroProps.description} />
   ))
-  .add('with rigth content', () => <Hero {...commonPageHeroProps} />)
+  .add('with right content', () => (
+    <Hero
+      {...commonPageHeroProps}
+      rightContent={
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+          <div>Here is a long message relating some status...&nbsp;</div>
+          <Button kind="secondary">Cancel</Button>
+          <Button kind="primary">Take action!</Button>
+        </div>
+      }
+    />
+  ))
   .add('with breadcrumb', () => <Hero {...commonPageHeroProps} breadcrumb={breadcrumb} />)
   .add('with tooltip', () => (
     <Hero {...commonPageHeroProps} breadcrumb={breadcrumb} tooltip={tooltip} />
