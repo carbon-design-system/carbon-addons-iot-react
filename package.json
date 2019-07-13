@@ -35,7 +35,7 @@
     "c3": "^0.7.1",
     "classnames": "^2.2.5",
     "immutability-helper": "^2.9.0",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.13",
     "moment": "^2.24.0",
     "polished": "^2.3.3",
     "prop-types": "^15.6.2",
