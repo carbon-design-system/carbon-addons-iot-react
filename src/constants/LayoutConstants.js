@@ -22,6 +22,7 @@ export const CARD_SIZES = {
 export const CARD_TYPES = {
   TIMESERIES: 'TIMESERIES',
   VALUE: 'VALUE',
+  IMAGE: 'IMAGE',
   TABLE: 'TABLE',
   DONUT: 'DONUT',
   PIE: 'PIE',
