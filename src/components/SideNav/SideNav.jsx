@@ -16,14 +16,14 @@ import { COLORS, PADDING } from '../../styles/styles';
 
 const StyledSideNav = styled(CarbonSideNav)`
   && {
-    width: 3rem;
-    @media screen and (min-width: 1056px) {
-      transform: translateX(0);
-    }
-
     &.bx--side-nav--expanded {
       width: 16rem;
       transform: translateX(0);
+    }
+
+    @media screen and (min-width: 1056px) {
+      transform: translateX(0);
+      width: 3rem;
     }
 
     .bx--side-nav__link {
@@ -188,7 +188,6 @@ const SideNav = ({ links, defaultExpanded, isSideNavExpanded }) => {
       className={classnames({ 'bx--side-nav--expanded': isSideNavExpanded })}
       aria-label="Side navigation"
       defaultExpanded={defaultExpanded}
-      isFixedNav
     >
       <SideNavItems>{nav}</SideNavItems>
     </StyledSideNav>
