@@ -1,3 +1,1 @@
-import AccordionStory from 'carbon-components-react/lib/components/Accordion/Accordion-story';
-
-export { AccordionStory };
+export default from 'carbon-components-react/lib/components/Accordion/Accordion-story';

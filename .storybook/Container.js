@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './_container.scss';
+import '../src/index.scss';
 
 export default class Container extends Component {
   render() {

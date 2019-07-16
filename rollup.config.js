@@ -42,6 +42,7 @@ export default {
   plugins: [
     resolve({ browser: true, extensions: ['.mjs', '.js', '.jsx', '.json'] }),
     postcss({
+      extract: true,
       plugins: [],
     }),
     commonjs({

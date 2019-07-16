@@ -1,3 +1,6 @@
+// Styles
+export styles from './index.scss';
+
 // Components
 export ButtonEnhanced from './components/ButtonEnhanced';
 export Table from './components/Table';
