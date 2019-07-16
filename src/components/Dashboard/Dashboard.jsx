@@ -15,6 +15,7 @@ import {
   DashboardLayoutPropTypes,
 } from '../../constants/PropTypes';
 import ValueCard from '../ValueCard/ValueCard';
+import ImageCard from '../ImageCard/ImageCard';
 import DonutCard from '../DonutCard/DonutCard';
 import TableCard from '../TableCard/TableCard';
 import BarChartCard from '../BarChartCard/BarChartCard';
@@ -159,6 +160,21 @@ const Dashboard = ({
     <div key={card.id}>
       {card.type === CARD_TYPES.VALUE ? (
         <ValueCard
+          {...card}
+          i18n={i18n}
+          isLoading={card.isLoading || isLoading}
+          isEditable={isEditable}
+          onCardAction={onCardAction}
+          key={card.id}
+          breakpoint={breakpoint}
+          dashboardBreakpoints={dashboardBreakpoints}
+          dashboardColumns={dashboardColumns}
+          cardDimensions={cardDimensions}
+          rowHeight={rowHeight}
+        />
+      ) : null}
+      {card.type === CARD_TYPES.IMAGE ? (
+        <ImageCard
           {...card}
           i18n={i18n}
           isLoading={card.isLoading || isLoading}
