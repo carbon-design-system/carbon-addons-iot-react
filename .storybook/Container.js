@@ -15,7 +15,7 @@ export default class Container extends Component {
           alignItems: 'center',
         }}
       >
-        {story()}
+        <div style={{ width: '100%' }}>{story()}</div>
       </div>
     );
   }
