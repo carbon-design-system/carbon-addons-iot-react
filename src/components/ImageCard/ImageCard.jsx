@@ -17,8 +17,11 @@ const ImageCard = ({ title, content, content: { data: image }, size, ...others }
     <Card title={title} size={size} {...others}>
       {!others.isLoading ? (
         <ContentWrapper>
-          {image && image.src && <ImageHotspots src={image.src} alt={image.alt} />}
-          <p>Error retrieving image.</p>
+          {image && image.src ? (
+            <ImageHotspots src={image.src} alt={image.alt} />
+          ) : (
+            <p>Error retrieving image.</p>
+          )}
         </ContentWrapper>
       ) : null}
     </Card>
