@@ -18,7 +18,6 @@ storiesOf('ImageCard (Experimental)', module).add('basic', () => {
         title={text('title', 'Image')}
         id="image-hotspots"
         content={object('content', {
-          title: 'Image',
           data: image,
         })}
         breakpoint="lg"
