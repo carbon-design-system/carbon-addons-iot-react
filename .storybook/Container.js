@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './_container.scss';
+import '../src/index.scss';
 
 export default class Container extends Component {
   render() {
@@ -15,7 +15,7 @@ export default class Container extends Component {
           alignItems: 'center',
         }}
       >
-        {story()}
+        <div style={{ width: '100%' }}>{story()}</div>
       </div>
     );
   }

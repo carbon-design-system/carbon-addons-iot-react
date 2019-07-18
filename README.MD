@@ -37,14 +37,16 @@ Add the `@beta` suffix to the package name to install the latest release from th
 Run the following command using [npm](https://www.npmjs.com/):
 
 ```bash
-npm install -S carbon-components carbon-components-react carbon-icons carbon-addons-iot-react@beta
+npm install -S carbon-addons-iot-react@beta
 ```
 
 If you prefer [Yarn](https://yarnpkg.com/en/), use the following command instead:
 
 ```bash
-yarn add carbon-components carbon-components-react carbon-icons carbon-addons-iot-react@beta
+yarn add carbon-addons-iot-react@beta
 ```
+
+Note that previously, v1.x required installation of additional packages `carbon-components`, `carbon-components-react`, `carbon-icons`. This is no longer necessary as we now wrap Carbon as a dependency and re-export components and styles.
 
 You can then import any component that you need by doing the following in your project:
 
