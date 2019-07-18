@@ -1149,14 +1149,14 @@
     to-fast-properties "^2.0.0"
 
 "@carbon/charts-react@0.12.1":
-  version "0.12.0"
+  version "0.12.1"
   resolved "https://registry.yarnpkg.com/@carbon/charts-react/-/charts-react-0.12.1.tgz#cd4aea9f5092def1009490ceedcb19bafbc18b4d"
   integrity sha512-MYdUcTvCkRIq09lxbinoDBc/NGkTgylEOrazkscFgg+oR/2yxjVeI7pJ5N0OLU4a7az2FzkiHlu3fw2SulS2gg==
   dependencies:
-    "@carbon/charts" "0.12.0"
+    "@carbon/charts" "^0.12.1"
 
 "@carbon/charts@0.12.1":
-  version "0.12.0"
+  version "0.12.1"
   resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-0.12.1.tgz#edf430989625662eaa5a67c85854a9fd161b34ad"
   integrity sha512-klzI8nKrY6GCuUkC6VQEEpXipt6VJS5c9jZP4zfBjEw25iuDI5ar+wdZAN7PYoFpneu2RLpOmbnMSZZsLEmXqQ==
   dependencies:
@@ -8929,13 +8929,14 @@ lodash.without@~4.4.0:
   version "4.4.0"
   resolved "https://registry.yarnpkg.com/lodash.without/-/lodash.without-4.4.0.tgz#3cd4574a00b67bae373a94b748772640507b7aac"
 
-lodash@4.17.11, lodash@>4.17.4, lodash@^4.0.1, lodash@^4.13.1, lodash@^4.17.11, lodash@^4.17.4, lodash@^4.2.0, lodash@^4.2.1:
+lodash@4.17.11:
   version "4.17.11"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.11.tgz#b39ea6229ef607ecd89e2c8df12536891cac9b8d"
 
-lodash@^4.0.0, lodash@^4.15.0, lodash@^4.17.10, lodash@^4.17.5, lodash@~4.17.10:
-  version "4.17.10"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.10.tgz#1b7793cf7259ea38fb3661d4d38b3260af8ae4e7"
+lodash@>4.17.4, lodash@^4.0.0, lodash@^4.0.1, lodash@^4.13.1, lodash@^4.15.0, lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.13, lodash@^4.17.4, lodash@^4.17.5, lodash@^4.2.0, lodash@^4.2.1, lodash@~4.17.10:
+  version "4.17.13"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.13.tgz#0bdc3a6adc873d2f4e0c4bac285df91b64fc7b93"
+  integrity sha512-vm3/XWXfWtRua0FkUyEHBZy8kCPjErNBT9fJx8Zvs+U6zjqPbTUOpkaoum3O5uiA8sm+yNMHXfYkTUHFoMxFNA==
 
 log-driver@^1.2.7:
   version "1.2.7"
