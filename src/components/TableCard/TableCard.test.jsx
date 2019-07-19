@@ -46,8 +46,6 @@ describe('TableCard', () => {
         size={CARD_SIZES.XLARGE}
       />
     );
-
-    console.log(wrapper.find('TableHeader').debug());
     expect(wrapper.find('TableHeader').length).toBe(tableColumns.length);
   });
   test('Columns displayed Large', () => {
