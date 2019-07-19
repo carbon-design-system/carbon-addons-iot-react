@@ -34,6 +34,27 @@ const StyledStatefulTable = styled(({ showHeader, ...rest }) => <StatefulTable {
   height: 100%;
   margin: 0 -1px;
   position: relative;
+
+  &&& {
+    .bx--data-table-v2 thead tr:nth-child(2) {
+      height: 3rem;
+
+      th {
+        padding-top: 5px;
+        padding-bottom: 10px;
+
+        input {
+          height: 2rem;
+        }
+      }
+      th div {
+        display: block;
+        max-width: 90%;
+        width: 90%;
+      }
+    }
+  }
+
   .bx--table-toolbar {
     padding-bottom: 2px;
     padding-top: 0px;
@@ -47,19 +68,6 @@ const StyledStatefulTable = styled(({ showHeader, ...rest }) => <StatefulTable {
     display: ${props => (!props.showHeader ? 'none' : '')};
     tr {
       height: 2rem;
-    }
-
-    tr:nth-child(2) {
-      height: 3rem;
-
-      th {
-        padding-top: 5px;
-        padding-bottom: 10px;
-
-        input {
-          height: 2rem;
-        }
-      }
     }
   }
 

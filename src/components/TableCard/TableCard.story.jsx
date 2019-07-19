@@ -124,13 +124,9 @@ storiesOf('Table Card (Experimental)', module)
       CARD_SIZES.LARGE
     );
 
-    console.log('tableCustomColumns', tableColumns);
-
     const tableCustomColumns = tableColumns.map((item, index) =>
       index === 0 ? { ...item, renderDataFunction: renderCustomCell } : item
     );
-
-    console.log(tableCustomColumns);
 
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
