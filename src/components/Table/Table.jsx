@@ -39,9 +39,15 @@ const StyledPagination = sizeMe({ noPlaceholder: true })(styled(
     .bx--pagination__left,
     .bx--pagination__text {
       display: ${props =>
-        (props.size && props.size.width && props.size.width < 600) || props.isItemPerPageHidden
-          ? 'none'
-          : 'flex'};
+        props.size && props.size.width && props.size.width < 500 ? 'none' : 'flex'};
+    }
+    .bx--pagination__left span:first-child,
+    .bx--pagination__left .bx--form-item {
+      display: ${props => (props.isItemPerPageHidden ? 'none' : '')};
+    }
+    .bx--select .bx--select-input ~ .bx--select__arrow {
+      align-self: center;
+      top: 0px;
     }
   }
 `);
