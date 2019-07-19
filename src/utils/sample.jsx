@@ -2458,29 +2458,57 @@ export const getPeriodChartData = (interval = 'day', period = 'week', intInterva
   }));
 };
 
-const renderCustomCell = (
+export const renderCustomCell = (
   { value } // eslint-disable-line
 ) => (
   <div>
     <svg height="10" width="10">
       <circle cx="5" cy="5" r="3" stroke="none" strokeWidth="1" fill="red" />
     </svg>
-    <span style={{ marginLeft: '10px' }}>{value}</span>
+    <span
+      style={{
+        marginLeft: '10px',
+        overflow: 'hidden',
+        whiteSpace: 'nowrap',
+        textOverflow: 'ellipsis',
+        width: '150px',
+        display: 'inline-block',
+      }}
+    >
+      {value}
+    </span>
   </div>
 );
 
-const actions1 = [
+export const actions1 = [
   { id: 'open', label: 'Open' },
   { id: 'view', labelText: 'View' },
   { id: 'openTicket', labelText: 'Open Ticket' },
 ];
 
-const actions2 = [{ id: 'open', icon: 'icon--edit' }];
+export const actions2 = [{ id: 'open', icon: 'icon--edit' }];
 
 export const tableColumns = [
-  { id: 'alert', name: 'Alert', renderDataFunction: renderCustomCell, priority: 1 },
-  { id: 'creator', name: 'Creator', priority: 3 },
-  { id: 'hour', name: 'Hour', priority: 2 },
+  {
+    id: 'alert',
+    name: 'Alert',
+    priority: 1,
+    filter: { placeholderText: 'pick a string' },
+  },
+  {
+    id: 'creator',
+    name: 'Creator',
+    priority: 3,
+    filter: {
+      placeholderText: 'pick a string',
+    },
+  },
+  {
+    id: 'hour',
+    name: 'Hour',
+    priority: 2,
+    filter: { placeholderText: 'pick a string' },
+  },
 ];
 
 export const tableData = [
@@ -2491,7 +2519,6 @@ export const tableData = [
       creator: 'ME',
       hour: '16:20h',
     },
-    actions: actions1,
   },
   {
     id: `row-2`,
@@ -2500,7 +2527,6 @@ export const tableData = [
       creator: 'ME',
       hour: '09:40h',
     },
-    actions: actions2,
   },
   {
     id: `row-3`,
@@ -2509,7 +2535,6 @@ export const tableData = [
       creator: 'Line Supervisor',
       hour: '16:20h',
     },
-    actions: actions1,
   },
   {
     id: `row-4`,
@@ -2534,7 +2559,6 @@ export const tableData = [
       creator: 'Line Supervisor',
       hour: '16:20h',
     },
-    actions: actions2,
   },
   {
     id: `row-7`,
@@ -2543,7 +2567,6 @@ export const tableData = [
       creator: 'Line Supervisor',
       hour: '16:20h',
     },
-    actions: actions2,
   },
   {
     id: `row-8`,
@@ -2552,7 +2575,6 @@ export const tableData = [
       creator: 'Line Supervisor',
       hour: '16:20h',
     },
-    actions: actions1,
   },
   {
     id: `row-9`,
@@ -2561,7 +2583,6 @@ export const tableData = [
       creator: 'Line Supervisor',
       hour: '16:20h',
     },
-    actions: actions1,
   },
   {
     id: `row-10`,
@@ -2570,6 +2591,13 @@ export const tableData = [
       creator: 'Admin',
       hour: '16:20h',
     },
-    actions: actions2,
+  },
+  {
+    id: `row-11`,
+    values: {
+      alert: 'AHI010 proccess need to optimize, adjust Y variables',
+      creator: 'Admin',
+      hour: '10:20h',
+    },
   },
 ];

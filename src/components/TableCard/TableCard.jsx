@@ -11,6 +11,10 @@ const StyledOverflowMenu = styled(OverflowMenu)`
   &&& {
     margin-left: 10px;
     opacity: 1;
+    overflow-y: hidden;
+    display: flex;
+    align-items: center;
+
     .bx--overflow-menu__icon {
       transform: none;
     }
@@ -25,19 +29,42 @@ const StyledActionIcon = styled(Icon)`
   }
 `;
 
-const StyledStatefulTable = styled(StatefulTable)`
+const StyledStatefulTable = styled(({ showHeader, ...rest }) => <StatefulTable {...rest} />)`
   flex: inherit;
   height: 100%;
   margin: 0 -1px;
   position: relative;
   .bx--table-toolbar {
-    display: none;
+    padding-bottom: 2px;
+    padding-top: 0px;
   }
-  .bx--data-table-v2 tr {
-    height: 2.95rem;
+  .bx--data-table-v2 th:first-of-type,
+  .bx--data-table-v2 td:first-of-type {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
-  .bx--data-table-v2 tr {
-    height: 2.95rem;
+  .bx--data-table-v2 thead {
+    display: ${props => (!props.showHeader ? 'none' : '')};
+    tr {
+      height: 2rem;
+    }
+
+    tr:nth-child(2) {
+      height: 3rem;
+
+      th {
+        padding-top: 5px;
+        padding-bottom: 10px;
+
+        input {
+          height: 2rem;
+        }
+      }
+    }
+  }
+
+  .bx--data-table-v2 tbody tr {
+    height: 2.5rem;
   }
   .bx--data-table-v2-container + .bx--pagination {
     border: 1px solid #dfe3e6;
@@ -45,6 +72,13 @@ const StyledStatefulTable = styled(StatefulTable)`
   .bx--pagination {
     position: absolute;
     bottom: 0;
+  }
+  .bx--toolbar-search-container {
+    margin-left: 1rem;
+  }
+
+  .bx--data-table-v2-container {
+    max-height: 435px;
   }
 `;
 
@@ -55,6 +89,9 @@ const TableCard = ({
   size,
   view,
   onCardAction,
+  showHeader,
+  hasRowExpansion,
+  expandedRows,
   ...others
 }) => {
   const renderActionCell = cellItem => {
@@ -72,7 +109,12 @@ const TableCard = ({
         name={actionList[0].icon}
       />
     ) : actionList && actionList.length > 1 ? (
-      <StyledOverflowMenu floatingMenu>
+      <StyledOverflowMenu
+        floatingMenu
+        renderIcon={() => (
+          <Icon name="icon--overflow-menu" width="16px" height="16" fill="#5a6872" />
+        )}
+      >
         {actionList.map(item => {
           return (
             <OverflowMenuItem
@@ -111,6 +153,7 @@ const TableCard = ({
     .map(i => ({
       ...i,
       isSortable: true,
+      width: i.width ? i.width : size === CARD_SIZES.TALL ? '150px' : '', // force the text wrap
     }))
     .concat(hasActionColumn ? actionColumn : [])
     .map(column => {
@@ -141,25 +184,51 @@ const TableCard = ({
       }))
     : data;
 
+  // is columns recieved is different from the columnsToRender show card expand
+  const isExpandable =
+    columns.length !== columnsToRender.filter(item => item.id !== 'actionColumn').length;
+
+  const hasFilter = size !== CARD_SIZES.TALL;
+
   return (
-    <Card id={id} title={title} size={size} onCardAction={onCardAction} {...others}>
+    <Card
+      id={id}
+      title={title}
+      size={size}
+      onCardAction={onCardAction}
+      availableActions={{ expand: isExpandable }}
+      {...others}
+    >
       <StyledStatefulTable
         columns={columnsToRender}
         data={tableData}
         options={{
           hasPagination: true,
+          hasSearch: true,
+          hasFilter,
+          hasRowExpansion,
         }}
+        expandedData={expandedRows}
         actions={{
-          table: { onRowClicked: () => {} },
+          table: { onRowClicked: () => {}, onRowExpanded: () => {} },
           pagination: { onChangePage: () => {} },
+          toolbar: {
+            onClearAllFilters: () => {},
+            onToggleFilter: () => {},
+          },
         }}
         view={{
           pagination: {
-            pageSize: 9,
-            pageSizes: [9],
+            pageSize: 10,
+            pageSizes: [10],
             isItemPerPageHidden: true,
           },
+          toolbar: {
+            activeBar: null,
+          },
+          filters: [],
         }}
+        showHeader={showHeader}
       />
     </Card>
   );
@@ -169,5 +238,6 @@ TableCard.propTypes = { ...CardPropTypes, ...TableCardPropTypes };
 TableCard.displayName = 'TableCard';
 TableCard.defaultProps = {
   size: CARD_SIZES.LARGE,
+  showHeader: true,
 };
 export default TableCard;
