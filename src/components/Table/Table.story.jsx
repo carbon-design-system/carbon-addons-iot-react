@@ -382,21 +382,29 @@ storiesOf('Table', module)
     ),
     {
       info: {
-        text:
-          'This table has expanded rows.  To support expanded rows, make sure to pass the expandedData prop to the table and set options.hasRowExpansion=true.',
-        // Syntax highlighting blowing up since storybook packge upgrades. issue with storybook https://github.com/storybookjs/storybook/issues/5915
-        // ~~~js
-        // expandedData={[
-        //   {rowId: 'row-0',content: <RowExpansionContent />},
-        //   {rowId: 'row-1',content: <RowExpansionContent />},
-        //   {rowId: 'row-2',content: <RowExpansionContent />},
-        //   …
-        // ]}
+        text: `
 
-        // options = {
-        //   hasRowExpansion:true
-        // }
-        // ~~~,
+        This table has expanded rows.  To support expanded rows, make sure to pass the expandedData prop to the table and set options.hasRowExpansion=true.
+
+        <br />
+
+        ~~~js
+        expandedData={[
+          {rowId: 'row-0',content: <RowExpansionContent />},
+          {rowId: 'row-1',content: <RowExpansionContent />},
+          {rowId: 'row-2',content: <RowExpansionContent />},
+          …
+        ]}
+
+        options = {
+          hasRowExpansion:true
+        }
+
+        ~~~
+
+        <br />
+
+        `,
         propTables: [Table],
         propTablesExclude: [StatefulTable],
       },
@@ -464,44 +472,44 @@ storiesOf('Table', module)
       info: {
         text: `
 
-          This stateful table has nested rows.  To setup your table this way you must pass a children prop along with each of your data rows.
+        This stateful table has nested rows.  To setup your table this way you must pass a children prop along with each of your data rows.
 
+        <br />
 
-          You must also set hasRowExpansion to true in your table options
+        ~~~js
+        data=[
+          {
+            id: 'rowid',
+            values: {
+              col1: 'value1
+            },
+            children: [
+              {
+                id: 'child-rowid,
+                values: {
+                  col1: 'nested-value1'
+                }
+              }
+            ]
+          }
+        ]
+        ~~~
 
+        <br />
 
-          `,
-        // text: `
+        You must also set hasRowExpansion to true in your table options
 
-        // This stateful table has nested rows.  To setup your table this way you must pass a children prop along with each of your data rows.
+        <br />
 
-        // ~~~js
-        // data=[
-        //   {
-        //     id: 'rowid',
-        //     values: {
-        //       col1: 'value1
-        //     },
-        //     children: [
-        //       {
-        //         id: 'child-rowid,
-        //         values: {
-        //           col1: 'nested-value1'
-        //         }
-        //       }
-        //     ]
-        //   }
-        // ]
-        // ~~~
+        ~~~js
+          options={
+            hasRowExpansion: true
+          }
+        ~~~
 
-        // You must also set hasRowExpansion to true in your table options
-        // ~~~js
-        //   options={
-        //     hasRowExpansion: true
-        //   }
-        // ~~~
+        <br />
 
-        // `,
+        `,
         propTables: [Table],
         propTablesExclude: [StatefulTable],
       },
@@ -514,33 +522,30 @@ storiesOf('Table', module)
       info: {
         text: `
 
-      For basic table support, you can render the functional <Table/> component with only the columns and data props.  This table does not have any state management built in.  If you want that, use the <StatefulTable/> component or you will need to implement your own listeners and state management.  You can reuse our tableReducer and tableActions with the useReducer hook to update state.
+        For basic table support, you can render the functional <Table/> component with only the columns and data props.  This table does not have any state management built in.  If you want that, use the <StatefulTable/> component or you will need to implement your own listeners and state management.  You can reuse our tableReducer and tableActions with the useReducer hook to update state.
 
+        <br />
 
-      `,
-        // Need fix for syntaxhighlighter issue with addons info package
-        // text: `
+        ~~~js
+        import { tableReducer, tableActions } from 'carbon-addons-iot-react';
 
-        // For basic table support, you can render the functional <Table/> component with only the columns and data props.  This table does not have any state management built in.  If you want that, use the <StatefulTable/> component or you will need to implement your own listeners and state management.  You can reuse our tableReducer and tableActions with the useReducer hook to update state.
+        const [state, dispatch] = useReducer(tableReducer, { data: initialData, view: initialState });
 
-        // ~~~js
-        // import { tableReducer, tableActions } from 'carbon-addons-iot-react';
+        const actions = {
+          table: {
+            onChangeSort: column => {
+              dispatch(tableActions.tableColumnSort(column));
+            },
+          }
+        }
 
-        // const [state, dispatch] = useReducer(tableReducer, { data: initialData, view: initialState });
+        <Table
+          {...state}
+          ...
+        ~~~
 
-        // const actions = {
-        //   table: {
-        //     onChangeSort: column => {
-        //       dispatch(tableActions.tableColumnSort(column));
-        //     },
-        //   }
-        // }
-
-        // <Table
-        //   {...state}
-        //   ...
-        // ~~~
-        // `,
+        <br />
+        `,
       },
     }
   )
@@ -739,73 +744,79 @@ storiesOf('Table', module)
       info: {
         text: `
 
+        To add custom row actions to each row you need to pass a rowActions array along with every row of your data.  The RowActionsPropTypes is defined as:
 
-        To add custom row actions to each row you need to pass a rowActions array along with every row of your data.
+        <br />
 
+        ~~~js
+        RowActionPropTypes = PropTypes.arrayOf(
+          PropTypes.shape({
+            /** Unique id of the action */
+            id: PropTypes.string.isRequired,
+            /** icon ultimately gets passed through all the way to <Button>, which has this same copied proptype definition for icon */
+            icon: PropTypes.oneOfType([
+              PropTypes.shape({
+                width: PropTypes.string,
+                height: PropTypes.string,
+                viewBox: PropTypes.string.isRequired,
+                svgData: PropTypes.object.isRequired,
+              }),
+              PropTypes.string,
+              PropTypes.node,
+            ]),
+            disabled: PropTypes.bool,
+            labelText: PropTypes.string,
+            /** Action should go into the overflow menu, not be rendered inline in the row */
+            isOverflow: PropTypes.bool,
+          })
+        );
+
+        data.map(row=>{id: row.id, values: {id: row.id}, rowActions=[{id: delete, icon: 'icon--delete', labelText: 'Delete'}]})
+        ~~~
+
+        <br />
 
         You also need to set the options prop on the table to get the rowActions to render.
 
+        <br />
 
-        To listen to the row actions and trigger an event you should pass a function to the actions prop.
+        ~~~js
+        options = {
+          hasRowActions: true
+        }
+        ~~~
 
+        <br />
+
+        To listen to the row actions and trigger an event you should pass a function to the actions prop:
+
+        <br />
+
+        ~~~js
+        actions={
+          table: {
+            onApplyRowAction: myCustomListener
+          }
+        }
+        ~~~
+
+        <br />
 
         The onApplyRowAction is called with the actionid, and then the rowid that was clicked.  If you return a promise, the table will assume this is an asynchronous action and will show an In Progress indicator until you resolve or reject the promise.
 
+        <br />
+
+        ~~~js
+          const myCustomListener = (actionid, rowid)=> {
+            if (actionid === 'myexpectedaction') {
+              console.log(\`perform action on row: \${rowid}\`)
+            }
+          }
+        ~~~
+
+        <br />
+
         `,
-        // text: `
-
-        // To add custom row actions to each row you need to pass a rowActions array along with every row of your data.  The RowActionsPropTypes is defined as:
-        // ~~~js
-        // RowActionPropTypes = PropTypes.arrayOf(
-        //   PropTypes.shape({
-        //     /** Unique id of the action */
-        //     id: PropTypes.string.isRequired,
-        //     /** icon ultimately gets passed through all the way to <Button>, which has this same copied proptype definition for icon */
-        //     icon: PropTypes.oneOfType([
-        //       PropTypes.shape({
-        //         width: PropTypes.string,
-        //         height: PropTypes.string,
-        //         viewBox: PropTypes.string.isRequired,
-        //         svgData: PropTypes.object.isRequired,
-        //       }),
-        //       PropTypes.string,
-        //       PropTypes.node,
-        //     ]),
-        //     disabled: PropTypes.bool,
-        //     labelText: PropTypes.string,
-        //     /** Action should go into the overflow menu, not be rendered inline in the row */
-        //     isOverflow: PropTypes.bool,
-        //   })
-        // );
-
-        // data.map(row=>{id: row.id, values: {id: row.id}, rowActions=[{id: delete, icon: 'icon--delete', labelText: 'Delete'}]})
-        // ~~~
-
-        // You also need to set the options prop on the table to get the rowActions to render.
-        // ~~~js
-        // options = {
-        //   hasRowActions: true
-        // }
-        // ~~~
-
-        // To listen to the row actions and trigger an event you should pass a function to the actions prop:
-        // ~~~js
-        // actions={
-        //   table: {
-        //     onApplyRowAction: myCustomListener
-        //   }
-        // }
-        // ~~~
-
-        // The onApplyRowAction is called with the actionid, and then the rowid that was clicked.  If you return a promise, the table will assume this is an asynchronous action and will show an In Progress indicator until you resolve or reject the promise.
-        // ~~~js
-        //   const myCustomListener = (actionid, rowid)=> {
-        //     if (actionid === 'myexpectedaction') {
-        //       console.log(\`perform action on row: \${rowid}\`)
-        //     }
-        //   }
-        // ~~~
-        // `,
       },
     }
   )
@@ -867,6 +878,10 @@ storiesOf('Table', module)
     {
       info: {
         text: `To render a custom widget in a table cell, pass a renderDataFunction prop along with your column metadata.
+
+        <br />
+
+        ~~~js
             The renderDataFunction is called with this payload
            {
               value: PropTypes.any (current cell value),
@@ -874,6 +889,9 @@ storiesOf('Table', module)
               rowId: PropTypes.string,
               row: the full data for this rowPropTypes.object like this {col: value, col2: value}
            }
+        ~~~
+
+        <br />
           `,
       },
     }
@@ -1286,56 +1304,56 @@ storiesOf('Table', module)
       info: {
         text: `
 
-          By default the table shows all of its internal strings in English.  If you want to support multiple languages, you must populate these i18n keys with the appropriate label for the selected UI language.
+        By default the table shows all of its internal strings in English.  If you want to support multiple languages, you must populate these i18n keys with the appropriate label for the selected UI language.
 
-          `,
-        // text: `
+        <br />
 
-        // By default the table shows all of its internal strings in English.  If you want to support multiple languages, you must populate these i18n keys with the appropriate label for the selected UI language.
-        // ~~~js
-        //   i18n={
+        ~~~js
+          i18n={
 
-        //     /** pagination */
-        //     pageBackwardAria,
-        //     pageForwardAria,
-        //     pageNumberAria,
-        //     itemsPerPage,
-        //     itemsRange,
-        //     currentPage,
-        //     itemsRangeWithTotal,
-        //     pageRange,
+            /** pagination */
+            pageBackwardAria,
+            pageForwardAria,
+            pageNumberAria,
+            itemsPerPage,
+            itemsRange,
+            currentPage,
+            itemsRangeWithTotal,
+            pageRange,
 
-        //     /** table body */
-        //     overflowMenuAria,
-        //     clickToExpandAria,
-        //     clickToCollapseAria,
-        //     selectAllAria,
-        //     selectRowAria,
+            /** table body */
+            overflowMenuAria,
+            clickToExpandAria,
+            clickToCollapseAria,
+            selectAllAria,
+            selectRowAria,
 
-        //     /** toolbar */
-        //     clearAllFilters,
-        //     searchPlaceholder,
-        //     columnSelectionButtonAria,
-        //     filterButtonAria,
-        //     clearFilterAria,
-        //     filterAria,
-        //     openMenuAria,
-        //     closeMenuAria,
-        //     clearSelectionAria,
+            /** toolbar */
+            clearAllFilters,
+            searchPlaceholder,
+            columnSelectionButtonAria,
+            filterButtonAria,
+            clearFilterAria,
+            filterAria,
+            openMenuAria,
+            closeMenuAria,
+            clearSelectionAria,
 
-        //     /** empty state */
-        //     emptyMessage,
-        //     emptyMessageWithFilters,
-        //     emptyButtonLabel,
-        //     emptyButtonLabelWithFilters,
-        //     inProgressText,
-        //     actionFailedText,
-        //     learnMoreText,
-        //     dismissText,
-        //   }
-        // ~~~
+            /** empty state */
+            emptyMessage,
+            emptyMessageWithFilters,
+            emptyButtonLabel,
+            emptyButtonLabelWithFilters,
+            inProgressText,
+            actionFailedText,
+            learnMoreText,
+            dismissText,
+          }
+        ~~~
 
-        // `,
+        <br />
+
+        `,
         propTables: [Table],
         propTablesExclude: [StatefulTable],
       },
