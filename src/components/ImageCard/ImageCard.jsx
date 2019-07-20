@@ -12,14 +12,16 @@ const ContentWrapper = styled.div`
   padding: 0 16px 16px 16px;
 `;
 
-const supportedSizes = [CARD_SIZES.MEDIUM, CARD_SIZES.WIDE, CARD_SIZES.LARGE, CARD_SIZES.XLARGE];
-
 const ImageCard = ({ title, content, content: { data: image }, size, ...others }) => {
+  const supportedSizes = [CARD_SIZES.MEDIUM, CARD_SIZES.WIDE, CARD_SIZES.LARGE, CARD_SIZES.XLARGE];
+  const supportedSize = supportedSizes.includes(size);
+  const availableActions = { expand: supportedSize };
+
   return (
-    <Card title={title} size={size} {...others}>
+    <Card title={title} size={size} availableActions={availableActions} {...others}>
       {!others.isLoading ? (
         <ContentWrapper>
-          {supportedSizes.includes(size) ? (
+          {supportedSize ? (
             image && image.src ? (
               <ImageHotspots src={image.src} alt={image.alt} />
             ) : (
