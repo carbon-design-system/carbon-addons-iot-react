@@ -22,8 +22,8 @@ describe('TableCard', () => {
         title="Open Alerts"
         content={{
           columns: tableColumns,
-          data: tableDataWithActions,
         }}
+        values={tableDataWithActions}
         onCardAction={onCardAction}
         size={CARD_SIZES.LARGE}
       />
@@ -41,8 +41,8 @@ describe('TableCard', () => {
         title="Open Alerts"
         content={{
           columns: tableColumns,
-          data: tableData,
         }}
+        values={tableData}
         size={CARD_SIZES.XLARGE}
       />
     );
@@ -54,8 +54,8 @@ describe('TableCard', () => {
         title="Open Alerts"
         content={{
           columns: tableColumns,
-          data: tableData,
         }}
+        values={tableData}
         size={CARD_SIZES.LARGE}
       />
     );
@@ -69,8 +69,8 @@ describe('TableCard', () => {
         title="Open Alerts"
         content={{
           columns: tableColumns,
-          data: tableData,
         }}
+        values={tableData}
         size={CARD_SIZES.TALL}
       />
     );
@@ -91,8 +91,8 @@ describe('TableCard', () => {
         title="Open Alerts"
         content={{
           columns: tableColumns,
-          data: tableDataWithActions,
         }}
+        values={tableDataWithActions}
         size={CARD_SIZES.LARGE}
       />
     );
