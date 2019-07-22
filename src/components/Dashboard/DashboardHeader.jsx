@@ -39,6 +39,10 @@ const StyledLeft = styled.div`
     padding-bottom: 1rem;
     margin-bottom: 0rem;
   }
+  > h2 {
+    font-size: 1.75rem;
+    font-weight: 400;
+  }
   > p,
   div {
     color: ${COLORS.gray};

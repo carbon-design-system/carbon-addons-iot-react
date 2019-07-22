@@ -69,8 +69,8 @@ const Hero = ({ title, description, className, rightContent, breadcrumb, tooltip
   <StyledHero className={className}>
     <Fragment>
       <StyledBreadcrumb>
-        {breadcrumb.map(crumb => (
-          <BreadcrumbItem>{crumb}</BreadcrumbItem>
+        {breadcrumb.map((crumb, index) => (
+          <BreadcrumbItem key={`breadcrumb-${index}`}>{crumb}</BreadcrumbItem>
         ))}
       </StyledBreadcrumb>
       <StyledTitleSection>
