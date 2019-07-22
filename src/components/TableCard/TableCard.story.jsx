@@ -18,9 +18,9 @@ storiesOf('Table Card (Experimental)', module)
           title={text('title', 'Open Alerts')}
           id="table-list"
           content={{
-            data: tableData,
             columns: tableColumns,
           }}
+          values={tableData}
           onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
           size={size}
         />
@@ -35,9 +35,9 @@ storiesOf('Table Card (Experimental)', module)
           title={text('title', 'Open Alerts')}
           id="table-list"
           content={{
-            data: tableData,
             columns: tableColumns,
           }}
+          values={tableData}
           onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
           size={size}
         />
@@ -52,9 +52,9 @@ storiesOf('Table Card (Experimental)', module)
           title={text('title', 'Open Alerts')}
           id="table-list"
           content={{
-            data: tableData,
             columns: tableColumns,
           }}
+          values={tableData}
           onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
           size={size}
         />
@@ -80,9 +80,9 @@ storiesOf('Table Card (Experimental)', module)
           title={text('title', 'Open Alerts')}
           id="table-list"
           content={{
-            data: tableDataWithActions,
             columns: tableColumns,
           }}
+          values={tableDataWithActions}
           onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
           size={size}
         />
@@ -108,9 +108,9 @@ storiesOf('Table Card (Experimental)', module)
           title={text('title', 'Open Alerts')}
           id="table-list"
           content={{
-            data: tableDataWithActions,
             columns: tableColumns,
           }}
+          values={tableDataWithActions}
           onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
           size={size}
         />
@@ -134,9 +134,9 @@ storiesOf('Table Card (Experimental)', module)
           title={text('title', 'Open Alerts')}
           id="table-list"
           content={{
-            data: tableData,
             columns: tableCustomColumns,
           }}
+          values={tableData}
           onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
           size={size}
         />
@@ -160,9 +160,9 @@ storiesOf('Table Card (Experimental)', module)
           title={text('title', 'Open Alerts')}
           id="table-list"
           content={{
-            data: tableData,
             columns: tableCustomColumns,
           }}
+          values={tableData}
           onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
           size={size}
         />
@@ -200,11 +200,10 @@ storiesOf('Table Card (Experimental)', module)
           title={text('title', 'Open Alerts')}
           id="table-list"
           content={{
-            data: tableData,
             columns: tableColumns,
+            expandedRows,
           }}
-          hasRowExpansion
-          expandedRows={expandedRows}
+          values={tableData}
           onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
           size={size}
         />
@@ -219,11 +218,11 @@ storiesOf('Table Card (Experimental)', module)
           title={text('title', 'Open Alerts')}
           id="table-list"
           content={{
-            data: tableData,
             columns: tableColumns,
+            showHeader: boolean('showHeader', false),
           }}
+          values={tableData}
           onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
-          showHeader={boolean('showHeader', false)}
           size={size}
         />
       </div>
@@ -246,11 +245,11 @@ storiesOf('Table Card (Experimental)', module)
           title={text('title', 'Open Alerts')}
           id="table-list"
           content={{
-            data: tableDataWithLink,
             columns: tableColumns,
+            showHeader: boolean('showHeader', false),
           }}
+          values={tableDataWithLink}
           onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
-          showHeader={boolean('showHeader', false)}
           size={size}
         />
       </div>
@@ -265,7 +264,24 @@ storiesOf('Table Card (Experimental)', module)
           title={text('title', 'Open Alerts')}
           id="table-list"
           content={{
-            data: tableData.map(i => ({ id: i.id, values: i.values })),
+            columns: tableColumns,
+          }}
+          values={tableData.map(i => ({ id: i.id, values: i.values }))}
+          onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
+          size={size}
+        />
+      </div>
+    );
+  })
+  .add('empty table', () => {
+    const size = CARD_SIZES.LARGE;
+
+    return (
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+        <TableCard
+          title={text('title', 'Open Alerts')}
+          id="table-list"
+          content={{
             columns: tableColumns,
           }}
           onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}

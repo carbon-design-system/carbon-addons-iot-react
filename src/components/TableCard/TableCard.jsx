@@ -93,13 +93,10 @@ const StyledStatefulTable = styled(({ showHeader, ...rest }) => <StatefulTable {
 const TableCard = ({
   id,
   title,
-  content: { columns, data },
+  content: { columns, showHeader, expandedRows },
   size,
-  view,
   onCardAction,
-  showHeader,
-  hasRowExpansion,
-  expandedRows,
+  values: data,
   ...others
 }) => {
   const renderActionCell = cellItem => {
@@ -198,6 +195,8 @@ const TableCard = ({
 
   const hasFilter = size !== CARD_SIZES.TALL;
 
+  const hasRowExpansion = !!(expandedRows && expandedRows.length);
+
   return (
     <Card
       id={id}
@@ -236,7 +235,7 @@ const TableCard = ({
           },
           filters: [],
         }}
-        showHeader={showHeader}
+        showHeader={showHeader !== undefined ? showHeader : true}
       />
     </Card>
   );
@@ -246,6 +245,6 @@ TableCard.propTypes = { ...CardPropTypes, ...TableCardPropTypes };
 TableCard.displayName = 'TableCard';
 TableCard.defaultProps = {
   size: CARD_SIZES.LARGE,
-  showHeader: true,
+  values: [],
 };
 export default TableCard;
