@@ -1,1 +1,1 @@
-export default from 'carbon-components-react/lib/components/TextArea/TextArea-story'
+export default from 'carbon-components-react/lib/components/TextArea/Textarea-story';
