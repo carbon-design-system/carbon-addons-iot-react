@@ -20,11 +20,12 @@ const tooltip = {
   linkLabel: 'Learn more',
 };
 
-storiesOf('Hero (Experimental)', module)
+storiesOf('Hero', module)
   .add('normal', () => <Hero title="Explore" />)
   .add('with description', () => (
     <Hero title="Explore" description={commonPageHeroProps.description} />
   ))
+  .add('isLoading', () => <Hero title="Explore" isLoading />)
   .add('with right content', () => (
     <Hero
       {...commonPageHeroProps}
