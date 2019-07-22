@@ -58,7 +58,7 @@ export const commonTileCatalogProps = {
   onSelection: action('onSelection'),
 };
 
-storiesOf('TileCatalog', module)
+storiesOf('Watson IoT|TileCatalog', module)
   .add('default', () => (
     <StatefulTileCatalog
       {...commonTileCatalogProps}

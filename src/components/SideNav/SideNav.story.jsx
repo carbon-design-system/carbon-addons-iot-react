@@ -97,7 +97,7 @@ const HeaderProps = {
   ],
 };
 
-storiesOf('SideNav', module).add('SideNav component', () => (
+storiesOf('Watson IoT|SideNav', module).add('SideNav component', () => (
   <HeaderContainer
     render={({ isSideNavExpanded, onClickSideNavExpand }) => (
       <>

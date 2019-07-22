@@ -139,7 +139,7 @@ const HeaderProps = {
   ],
 };
 
-storiesOf('Header', module)
+storiesOf('Watson IoT|Header', module)
   .add('Header action buttons with dropdowns', () => <StyledHeader {...HeaderProps} />)
   .add('Header no submenu', () => (
     <StyledHeader

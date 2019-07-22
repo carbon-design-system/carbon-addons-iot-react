@@ -11,7 +11,7 @@ const CustomFooter = styled.div`
   }
 `;
 
-storiesOf('BaseModal', module) // Ugh I shouldn't have to add these info here, but it's not being picked up by react-docgen!
+storiesOf('Watson IoT|BaseModal', module) // Ugh I shouldn't have to add these info here, but it's not being picked up by react-docgen!
   .addParameters({
     info: `Renders a carbon modal dialog.  This dialog adds these additional features on top of the base carbon dialog:
     - adds header.helpText prop to explain dialog

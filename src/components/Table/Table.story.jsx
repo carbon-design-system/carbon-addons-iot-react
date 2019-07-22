@@ -342,7 +342,7 @@ export const initialState = {
   },
 };
 
-storiesOf('Table', module)
+storiesOf('Watson IoT|Table', module)
   .add(
     'Simple Stateful Example',
     () => (

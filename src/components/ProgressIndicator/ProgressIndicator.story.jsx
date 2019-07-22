@@ -43,7 +43,7 @@ class ProgressIndicatorExample extends Component {
 }
 
 /* Adds the stories */
-storiesOf('ProgressIndicator', module)
+storiesOf('Watson IoT|ProgressIndicator', module)
   .add('Stateful', () => <ProgressIndicatorExample />)
   .add('presentation', () => (
     <ProgressIndicator

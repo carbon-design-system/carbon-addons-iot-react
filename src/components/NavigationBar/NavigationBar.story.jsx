@@ -64,7 +64,7 @@ const StatefulNavigationBar = () => {
   );
 };
 
-storiesOf('NavigationBar', module)
+storiesOf('Watson IoT|NavigationBar', module)
   .add('normal', () => <NavigationBar {...navBarProps} />)
   .add('with actions', () => (
     <NavigationBar
