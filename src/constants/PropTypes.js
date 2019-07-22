@@ -196,6 +196,7 @@ export const CardPropTypes = {
     'thisMonth',
     'thisQuarter',
     'thisYear',
+    '',
   ]),
   /** Interval for time series configuration */
   interval: PropTypes.oneOf(['hour', 'day', 'week', 'month', 'year']),
