@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { Button } from 'carbon-components-react';
 import styled from 'styled-components';
 
 import Button from '../../Button/Button';
