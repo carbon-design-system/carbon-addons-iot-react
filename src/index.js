@@ -2,7 +2,7 @@
 export styles from './index.scss';
 
 // Components
-export ButtonEnhanced from './components/ButtonEnhanced';
+export Button from './components/Button';
 export Table from './components/Table';
 export AddCard from './components/AddCard';
 export ComposedModal from './components/ComposedModal';
@@ -43,7 +43,6 @@ export {
   AccordionItem,
   Breadcrumb,
   BreadcrumbItem,
-  Button,
   Checkbox,
   CodeSnippet,
   ComboBox,

@@ -8,7 +8,6 @@ import styled from 'styled-components';
 
 import { TableSearchPropTypes } from '../TablePropTypes';
 // import { COLORS } from '../../../styles/styles';
-// import ButtonEnhanced from '../../ButtonEnhanced';
 
 const {
   TableToolbar: CarbonTableToolbar,

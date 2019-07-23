@@ -38,7 +38,7 @@ const defaultProps = {
 /**
  * Carbon button with added ability to show loading state
  */
-const ButtonEnhanced = props => {
+const Button = props => {
   const { children, loading, disabled, className, ...other } = props;
   return (
     <StyledButton
@@ -52,7 +52,7 @@ const ButtonEnhanced = props => {
   );
 };
 
-ButtonEnhanced.propTypes = propTypes;
-ButtonEnhanced.defaultProps = defaultProps;
+Button.propTypes = propTypes;
+Button.defaultProps = defaultProps;
 
-export default ButtonEnhanced;
+export default Button;

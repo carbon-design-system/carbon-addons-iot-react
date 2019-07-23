@@ -2,21 +2,21 @@ import React from 'react';
 import { mount } from 'enzyme';
 import { Loading } from 'carbon-components-react';
 
-import ButtonEnhanced from './ButtonEnhanced';
+import Button from './Button';
 
 const commonProps = {
   onClick: () => console.log('clicked'),
 };
 
-describe('ButtonEnhanced', () => {
+describe('Button', () => {
   test('loading', () => {
     const wrapper = mount(
-      <ButtonEnhanced loading {...commonProps}>
+      <Button loading {...commonProps}>
         Click Me
-      </ButtonEnhanced>
+      </Button>
     );
     expect(wrapper.find(Loading)).toHaveLength(1);
-    const notLoadingWrapper = mount(<ButtonEnhanced {...commonProps}>Click Me</ButtonEnhanced>);
+    const notLoadingWrapper = mount(<Button {...commonProps}>Click Me</Button>);
     expect(notLoadingWrapper.find(Loading)).toHaveLength(0);
   });
 });

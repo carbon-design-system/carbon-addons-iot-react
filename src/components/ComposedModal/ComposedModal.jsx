@@ -14,7 +14,7 @@ import { rem } from 'polished';
 
 import { PADDING } from '../../styles/styles';
 import { scrollErrorIntoView } from '../../utils/componentUtilityFunctions';
-import ButtonEnhanced from '../ButtonEnhanced';
+import Button from '../Button';
 
 const StyledModal = styled(CarbonComposedModal)`
    {
@@ -243,10 +243,10 @@ class ComposedModal extends React.Component {
               footer
             ) : (
               <Fragment>
-                <ButtonEnhanced kind="secondary" onClick={onClose}>
+                <Button kind="secondary" onClick={onClose}>
                   {(footer && footer.secondaryButtonLabel) || 'Cancel'}
-                </ButtonEnhanced>
-                <ButtonEnhanced
+                </Button>
+                <Button
                   kind={type === 'warn' ? 'danger' : 'primary'}
                   loading={
                     (typeof sendingData === 'boolean' && sendingData) ||
@@ -255,7 +255,7 @@ class ComposedModal extends React.Component {
                   onClick={onSubmit}
                 >
                   {(footer && footer.primaryButtonLabel) || 'Save'}
-                </ButtonEnhanced>
+                </Button>
               </Fragment>
             )}
           </StyledModalFooter>

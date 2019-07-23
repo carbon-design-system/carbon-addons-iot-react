@@ -6,7 +6,7 @@ For each component, this keeps track of whether formal I18N testing, a11y testin
 | ----------------- | :---------: | ----------: | ----------- |
 | AddCard           |     Yes     |             |             |
 | ComposedModal     |     Yes     |             |             |
-| ButtonEnhanced    |     Yes     |             |             |
+| Button            |     Yes     |             |             |
 | FileDrop          |             |             |             |
 | Header            |             |             |             |
 | NavigationBar     |     Yes     |             |             |
