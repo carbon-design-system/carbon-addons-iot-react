@@ -19,7 +19,7 @@ const commonWizardProps = {
 storiesOf('WizardModal', module)
   .addParameters({
     info: `
-  Extends BaseModal to add Carbon's ProgressIndicator and Wizard pages and local state.  Refer to the BaseModal component for additional props that can be passed
+  Extends ComposedModal to add Carbon's ProgressIndicator and Wizard pages and local state.  Refer to the ComposedModal component for additional props that can be passed
   `,
   })
   .add('basic wizard modal', () => (
