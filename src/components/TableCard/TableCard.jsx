@@ -7,6 +7,7 @@ import { CardPropTypes, TableCardPropTypes } from '../../constants/PropTypes';
 import Card from '../Card/Card';
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 import StatefulTable from '../Table/StatefulTable';
+import { generateTableSampleValues } from '../TimeSeriesCard/timeSeriesUtils';
 
 const StyledOverflowMenu = styled(OverflowMenu)`
   &&& {
@@ -107,6 +108,7 @@ const TableCard = ({
   size,
   onCardAction,
   values: data,
+  isEditable,
   ...others
 }) => {
   const renderActionCell = cellItem => {
@@ -194,33 +196,35 @@ const TableCard = ({
     .map(column => (column.type && column.type === 'TIMESTAMP' ? column.id : null))
     .filter(i => i);
 
-  const tableData =
-    hasActionColumn || filteredTimestampColumns.length
-      ? data.map(i => {
-          // if has custom action
-          const action = hasActionColumn ? { actionColumn: JSON.stringify(i.actions || []) } : null;
+  // if we're in editable mode, generate fake data
+  const tableData = isEditable
+    ? generateTableSampleValues(columns.map(column => column.id))
+    : hasActionColumn || filteredTimestampColumns.length
+    ? data.map(i => {
+        // if has custom action
+        const action = hasActionColumn ? { actionColumn: JSON.stringify(i.actions || []) } : null;
 
-          // if has column with timestamp
-          const valueUpdated = filteredTimestampColumns.length
-            ? Object.keys(i.values)
-                .map(value =>
-                  filteredTimestampColumns.includes(value)
-                    ? { [value]: moment(i.values[value]).format('LTS') }
-                    : null
-                )
-                .filter(v => v)[0]
-            : null;
+        // if has column with timestamp
+        const valueUpdated = filteredTimestampColumns.length
+          ? Object.keys(i.values)
+              .map(value =>
+                filteredTimestampColumns.includes(value)
+                  ? { [value]: moment(i.values[value]).format('LTS') }
+                  : null
+              )
+              .filter(v => v)[0]
+          : null;
 
-          return {
-            id: i.id,
-            values: {
-              ...i.values,
-              ...action,
-              ...valueUpdated,
-            },
-          };
-        })
-      : data;
+        return {
+          id: i.id,
+          values: {
+            ...i.values,
+            ...action,
+            ...valueUpdated,
+          },
+        };
+      })
+    : data;
 
   // format expanded rows to send to Table component
   const expandedRowsFormatted = [];
@@ -259,6 +263,7 @@ const TableCard = ({
       size={size}
       onCardAction={onCardAction}
       availableActions={{ expand: isExpandable }}
+      isEditable={isEditable}
       {...others}
     >
       <StyledStatefulTable

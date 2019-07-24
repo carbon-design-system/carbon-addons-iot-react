@@ -227,7 +227,7 @@ storiesOf('Table Card (Experimental)', module)
         ...item,
         values: {
           ...item.values,
-          alert: <a href="#">{item.values.alert}</a>,
+          alert: <a href="#">{item.values.alert}</a>, //eslint-disable-line
         },
       };
     });
@@ -276,6 +276,24 @@ storiesOf('Table Card (Experimental)', module)
           content={{
             columns: tableColumns,
           }}
+          onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
+          size={size}
+        />
+      </div>
+    );
+  })
+  .add('editable', () => {
+    const size = CARD_SIZES.LARGE;
+
+    return (
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+        <TableCard
+          title={text('title', 'Open Alerts')}
+          id="table-list"
+          content={{
+            columns: tableColumns,
+          }}
+          isEditable
           onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
           size={size}
         />
