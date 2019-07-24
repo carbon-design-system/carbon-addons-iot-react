@@ -11642,10 +11642,10 @@ react-grid-layout@^0.16.6:
     react-draggable "3.x"
     react-resizable "1.x"
 
-react-image-hotspots@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/react-image-hotspots/-/react-image-hotspots-1.2.0.tgz#4dfb459a5de128098423c943838f5ba5b1f597b9"
-  integrity sha512-MCjsqrAGryLQrGKq2fZ7mpq9hnuGFCKY3sey3sWavm9pIox4Pu9DJ62GAFovM4fjNonHOQ8L97+FRHX6zZgKmA==
+react-image-hotspots@^1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/react-image-hotspots/-/react-image-hotspots-1.3.0.tgz#67877fdbb17e8a35fb6e05f19e6c19c05ce9011d"
+  integrity sha512-P2VqUi64NwlykVvbFJ+rZz44nlCKDLEutj2nBr1qnysET4mGqROx3DUU4NyjgB0Of06CUyLAU6VbiTEKxCMAMQ==
 
 react-inspector@^2.3.0:
   version "2.3.1"
