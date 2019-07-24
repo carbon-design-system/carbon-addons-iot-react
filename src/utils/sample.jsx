@@ -2493,21 +2493,18 @@ export const tableColumns = [
     id: 'alert',
     name: 'Alert',
     priority: 1,
-    filter: { placeholderText: 'pick a string' },
   },
   {
     id: 'creator',
     name: 'Creator',
     priority: 3,
-    filter: {
-      placeholderText: 'pick a string',
-    },
+    filter: { placeholderText: 'pick a string' },
   },
   {
     id: 'hour',
     name: 'Hour',
     priority: 2,
-    filter: { placeholderText: 'pick a string' },
+    type: 'TIMESTAMP',
   },
 ];
 
@@ -2517,7 +2514,8 @@ export const tableData = [
     values: {
       alert: 'AHI005 Asset failure',
       creator: 'ME',
-      hour: '16:20h',
+      hour: 1563877570000,
+      long_description: 'long description for a given event payload',
     },
   },
   {
@@ -2525,7 +2523,8 @@ export const tableData = [
     values: {
       alert: 'AHI003 process need to optimize, adjust X variables',
       creator: 'ME',
-      hour: '09:40h',
+      hour: 1563873970000,
+      long_description: 'long description for a given event payload',
     },
   },
   {
@@ -2533,7 +2532,8 @@ export const tableData = [
     values: {
       alert: 'AHI001 proccess need to optimize, adjust Y variables',
       creator: 'Line Supervisor',
-      hour: '16:20h',
+      hour: 1563873970000,
+      long_description: 'long description for a given event payload',
     },
   },
   {
@@ -2541,7 +2541,8 @@ export const tableData = [
     values: {
       alert: 'AHI001 proccess need to optimize, adjust Y variables',
       creator: 'Line Supervisor',
-      hour: '16:20h',
+      hour: 1563877570000,
+      other_description: 'other description for a given event payload',
     },
   },
   {
@@ -2549,7 +2550,7 @@ export const tableData = [
     values: {
       alert: 'AHI001 proccess need to optimize',
       creator: 'Line Supervisor',
-      hour: '16:20h',
+      hour: 1563874210000,
     },
   },
   {
@@ -2557,7 +2558,7 @@ export const tableData = [
     values: {
       alert: 'AHI001 proccess need to optimize.',
       creator: 'Line Supervisor',
-      hour: '16:20h',
+      hour: 1563874210000,
     },
   },
   {
@@ -2565,7 +2566,7 @@ export const tableData = [
     values: {
       alert: 'AHI001 proccess need to optimize',
       creator: 'Line Supervisor',
-      hour: '16:20h',
+      hour: 1563870610000,
     },
   },
   {
@@ -2573,7 +2574,7 @@ export const tableData = [
     values: {
       alert: 'AHI001 proccess need to optimize, adjust Y variables',
       creator: 'Line Supervisor',
-      hour: '16:20h',
+      hour: 1563870610000,
     },
   },
   {
@@ -2581,7 +2582,7 @@ export const tableData = [
     values: {
       alert: 'AHI001 proccess need to optimize, adjust Y variables',
       creator: 'Line Supervisor',
-      hour: '16:20h',
+      hour: 1563873970000,
     },
   },
   {
@@ -2589,7 +2590,7 @@ export const tableData = [
     values: {
       alert: 'AHI010 proccess need to optimize, adjust Y variables',
       creator: 'Admin',
-      hour: '16:20h',
+      hour: 1563873970000,
     },
   },
   {
@@ -2597,7 +2598,7 @@ export const tableData = [
     values: {
       alert: 'AHI010 proccess need to optimize, adjust Y variables',
       creator: 'Admin',
-      hour: '10:20h',
+      hour: 1563877570000,
     },
   },
 ];

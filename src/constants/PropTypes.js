@@ -83,15 +83,17 @@ export const TableCardPropTypes = {
         name: PropTypes.string.isRequired,
         priority: PropTypes.number,
         renderer: PropTypes.func,
+        type: PropTypes.string,
       })
     ).isRequired,
     showHeader: PropTypes.bool,
     expandedRows: PropTypes.arrayOf(
       PropTypes.shape({
-        rowId: PropTypes.string.isRequired,
-        content: PropTypes.node,
+        id: PropTypes.string.isRequired,
+        label: PropTypes.string.isRequired,
       })
     ),
+    sort: PropTypes.oneOf(['ASC', 'DESC']),
   }).isRequired,
   value: PropTypes.arrayOf(
     PropTypes.shape({

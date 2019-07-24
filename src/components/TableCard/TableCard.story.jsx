@@ -19,6 +19,7 @@ storiesOf('Table Card (Experimental)', module)
           id="table-list"
           content={{
             columns: tableColumns,
+            sort: 'DESC',
           }}
           values={tableData}
           onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
@@ -151,7 +152,7 @@ storiesOf('Table Card (Experimental)', module)
     );
 
     const tableCustomColumns = tableColumns.map((item, index) =>
-      index === 0 ? { ...item, width: '150px', name: 'Alert with long string name' } : item
+      index === 0 ? { ...item, width: '250px', name: 'Alert with long string name' } : item
     );
 
     return (
@@ -176,24 +177,6 @@ storiesOf('Table Card (Experimental)', module)
       CARD_SIZES.LARGE
     );
 
-    const RowExpansionContent = ({ rowId }) => (
-      <div key={`${rowId}-expansion`} style={{ padding: 20 }}>
-        <h3 key={`${rowId}-title`}>{rowId}</h3>
-        <ul style={{ lineHeight: '22px' }}>
-          {Object.entries(tableData.find(i => i.id === rowId).values).map(([key, value]) => (
-            <li key={`${rowId}-${key}`}>
-              <b>{key}</b>: {value}
-            </li>
-          ))}
-        </ul>
-      </div>
-    );
-
-    const expandedRows = tableData.map(item => ({
-      rowId: item.id,
-      content: <RowExpansionContent rowId={item.id} />,
-    }));
-
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <TableCard
@@ -201,7 +184,16 @@ storiesOf('Table Card (Experimental)', module)
           id="table-list"
           content={{
             columns: tableColumns,
-            expandedRows,
+            expandedRows: [
+              {
+                id: 'long_description',
+                label: 'Description',
+              },
+              {
+                id: 'other_description',
+                label: 'Different content to show',
+              },
+            ],
           }}
           values={tableData}
           onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
