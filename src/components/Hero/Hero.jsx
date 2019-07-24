@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React, { Fragment } from 'react';
 import styled from 'styled-components';
 import Info from '@carbon/icons-react/lib/information/20';
-import { Breadcrumb, BreadcrumbItem, Tooltip } from 'carbon-components-react';
+import { Breadcrumb, BreadcrumbItem, Tooltip, SkeletonText } from 'carbon-components-react';
 
 const propTypes = {
   /** Title of the page  */
@@ -18,6 +18,8 @@ const propTypes = {
     href: PropTypes.string,
     linkLabel: PropTypes.string,
   }),
+  /** Is the page actively loading */
+  isLoading: PropTypes.bool,
   className: PropTypes.string,
 };
 
@@ -28,6 +30,7 @@ const defaultProps = {
   rightContent: null,
   breadcrumb: [],
   tooltip: null,
+  isLoading: false,
 };
 
 const StyledHero = styled.div`
@@ -65,42 +68,46 @@ const StyledBreadcrumb = styled(Breadcrumb)`
 /**
  * Renders the hero text and styles for the page.  Can either render Breadcrumb, Title with description and secundary nav.
  */
-const Hero = ({ title, description, className, rightContent, breadcrumb, tooltip }) => (
+const Hero = ({ title, description, className, rightContent, breadcrumb, tooltip, isLoading }) => (
   <StyledHero className={className}>
-    <Fragment>
-      <StyledBreadcrumb>
-        {breadcrumb.map(crumb => (
-          <BreadcrumbItem>{crumb}</BreadcrumbItem>
-        ))}
-      </StyledBreadcrumb>
-      <StyledTitleSection>
-        <StyledTitle>
-          {title}
-          {tooltip ? (
-            <Tooltip
-              clickToOpen
-              tabIndex={0}
-              triggerText=""
-              triggerId="tooltip"
-              renderIcon={React.forwardRef((props, ref) => (
-                <Info ref={ref} />
-              ))}
-            >
-              <p>{tooltip.message}</p>
-              {tooltip.href && tooltip.linkLabel ? (
-                <div className="bx--tooltip__footer">
-                  <a href={tooltip.href} className="bx--link">
-                    {tooltip.linkLabel}
-                  </a>
-                </div>
-              ) : null}
-            </Tooltip>
-          ) : null}
-        </StyledTitle>
-        {rightContent ? <StyledRightContent>{rightContent}</StyledRightContent> : null}
-      </StyledTitleSection>
-      {description ? <StyledPageDescription>{description}</StyledPageDescription> : null}
-    </Fragment>
+    {isLoading ? (
+      <SkeletonText width="30%" />
+    ) : (
+      <Fragment>
+        <StyledBreadcrumb>
+          {breadcrumb.map((crumb, index) => (
+            <BreadcrumbItem key={`breadcrumb-${index}`}>{crumb}</BreadcrumbItem>
+          ))}
+        </StyledBreadcrumb>
+        <StyledTitleSection>
+          <StyledTitle>
+            {title}
+            {tooltip ? (
+              <Tooltip
+                clickToOpen
+                tabIndex={0}
+                triggerText=""
+                triggerId="tooltip"
+                renderIcon={React.forwardRef((props, ref) => (
+                  <Info ref={ref} />
+                ))}
+              >
+                <p>{tooltip.message}</p>
+                {tooltip.href && tooltip.linkLabel ? (
+                  <div className="bx--tooltip__footer">
+                    <a href={tooltip.href} className="bx--link">
+                      {tooltip.linkLabel}
+                    </a>
+                  </div>
+                ) : null}
+              </Tooltip>
+            ) : null}
+          </StyledTitle>
+          {rightContent ? <StyledRightContent>{rightContent}</StyledRightContent> : null}
+        </StyledTitleSection>
+        {description ? <StyledPageDescription>{description}</StyledPageDescription> : null}
+      </Fragment>
+    )}
   </StyledHero>
 );
 

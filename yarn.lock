@@ -1149,14 +1149,14 @@
     to-fast-properties "^2.0.0"
 
 "@carbon/charts-react@0.12.1":
-  version "0.12.1"
+  version "0.12.0"
   resolved "https://registry.yarnpkg.com/@carbon/charts-react/-/charts-react-0.12.1.tgz#cd4aea9f5092def1009490ceedcb19bafbc18b4d"
   integrity sha512-MYdUcTvCkRIq09lxbinoDBc/NGkTgylEOrazkscFgg+oR/2yxjVeI7pJ5N0OLU4a7az2FzkiHlu3fw2SulS2gg==
   dependencies:
-    "@carbon/charts" "^0.12.1"
+    "@carbon/charts" "0.12.0"
 
 "@carbon/charts@0.12.1":
-  version "0.12.1"
+  version "0.12.0"
   resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-0.12.1.tgz#edf430989625662eaa5a67c85854a9fd161b34ad"
   integrity sha512-klzI8nKrY6GCuUkC6VQEEpXipt6VJS5c9jZP4zfBjEw25iuDI5ar+wdZAN7PYoFpneu2RLpOmbnMSZZsLEmXqQ==
   dependencies:
@@ -11642,10 +11642,10 @@ react-grid-layout@^0.16.6:
     react-draggable "3.x"
     react-resizable "1.x"
 
-react-image-hotspots@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/react-image-hotspots/-/react-image-hotspots-1.1.0.tgz#2b1901337fde01d5fff3746a65ab825e853ef711"
-  integrity sha512-uD6SnorDiI5SRWx2fVoaVPPyyyUUhgKMl/DETXuM+yiXyWCSrwkx9PJLvW4gbfDeOewqmYnsPY27R4tr0DnovA==
+react-image-hotspots@^1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/react-image-hotspots/-/react-image-hotspots-1.3.0.tgz#67877fdbb17e8a35fb6e05f19e6c19c05ce9011d"
+  integrity sha512-P2VqUi64NwlykVvbFJ+rZz44nlCKDLEutj2nBr1qnysET4mGqROx3DUU4NyjgB0Of06CUyLAU6VbiTEKxCMAMQ==
 
 react-inspector@^2.3.0:
   version "2.3.1"
