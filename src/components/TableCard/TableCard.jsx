@@ -104,7 +104,7 @@ const StyledExpandedRowContent = styled.div`
 const TableCard = ({
   id,
   title,
-  content: { columns, showHeader, expandedRows, sort },
+  content: { columns = [], showHeader, expandedRows, sort },
   size,
   onCardAction,
   values: data,
@@ -295,10 +295,14 @@ const TableCard = ({
           },
           filters: [],
           table: {
-            sort: {
-              columnId: columnStartSort.id,
-              direction: sort,
-            },
+            ...(columnStartSort
+              ? {
+                  sort: {
+                    columnId: columnStartSort.id,
+                    direction: sort,
+                  },
+                }
+              : {}),
           },
         }}
         showHeader={showHeader !== undefined ? showHeader : true}
