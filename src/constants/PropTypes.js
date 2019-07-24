@@ -83,22 +83,31 @@ export const TableCardPropTypes = {
         name: PropTypes.string.isRequired,
         priority: PropTypes.number,
         renderer: PropTypes.func,
+        type: PropTypes.string,
       })
     ).isRequired,
-    data: PropTypes.arrayOf(
+    showHeader: PropTypes.bool,
+    expandedRows: PropTypes.arrayOf(
       PropTypes.shape({
         id: PropTypes.string.isRequired,
-        values: PropTypes.object.isRequired,
-        actions: PropTypes.arrayOf(
-          PropTypes.shape({
-            id: PropTypes.string.isRequired,
-            label: PropTypes.string,
-            icon: PropTypes.string,
-          })
-        ),
+        label: PropTypes.string.isRequired,
       })
-    ).isRequired,
+    ),
+    sort: PropTypes.oneOf(['ASC', 'DESC']),
   }).isRequired,
+  value: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      values: PropTypes.object.isRequired,
+      actions: PropTypes.arrayOf(
+        PropTypes.shape({
+          id: PropTypes.string.isRequired,
+          label: PropTypes.string,
+          icon: PropTypes.string,
+        })
+      ),
+    })
+  ),
 };
 
 export const BarChartDatasetPropTypes = PropTypes.shape({

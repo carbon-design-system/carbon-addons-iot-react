@@ -67,6 +67,7 @@ const CardTitle = styled.span`
   overflow: hidden;
   text-overflow: ellipsis;
   line-height: 20px;
+  font-size: 14px;
 `;
 
 const StyledToolbar = styled(Toolbar)`

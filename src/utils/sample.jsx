@@ -2458,29 +2458,54 @@ export const getPeriodChartData = (interval = 'day', period = 'week', intInterva
   }));
 };
 
-const renderCustomCell = (
+export const renderCustomCell = (
   { value } // eslint-disable-line
 ) => (
   <div>
     <svg height="10" width="10">
       <circle cx="5" cy="5" r="3" stroke="none" strokeWidth="1" fill="red" />
     </svg>
-    <span style={{ marginLeft: '10px' }}>{value}</span>
+    <span
+      style={{
+        marginLeft: '10px',
+        overflow: 'hidden',
+        whiteSpace: 'nowrap',
+        textOverflow: 'ellipsis',
+        width: '150px',
+        display: 'inline-block',
+      }}
+    >
+      {value}
+    </span>
   </div>
 );
 
-const actions1 = [
+export const actions1 = [
   { id: 'open', label: 'Open' },
   { id: 'view', labelText: 'View' },
   { id: 'openTicket', labelText: 'Open Ticket' },
 ];
 
-const actions2 = [{ id: 'open', icon: 'icon--edit' }];
+export const actions2 = [{ id: 'open', icon: 'icon--edit' }];
 
 export const tableColumns = [
-  { id: 'alert', name: 'Alert', renderDataFunction: renderCustomCell, priority: 1 },
-  { id: 'creator', name: 'Creator', priority: 3 },
-  { id: 'hour', name: 'Hour', priority: 2 },
+  {
+    id: 'alert',
+    name: 'Alert',
+    priority: 1,
+  },
+  {
+    id: 'creator',
+    name: 'Creator',
+    priority: 3,
+    filter: { placeholderText: 'pick a string' },
+  },
+  {
+    id: 'hour',
+    name: 'Hour',
+    priority: 2,
+    type: 'TIMESTAMP',
+  },
 ];
 
 export const tableData = [
@@ -2489,34 +2514,35 @@ export const tableData = [
     values: {
       alert: 'AHI005 Asset failure',
       creator: 'ME',
-      hour: '16:20h',
+      hour: 1563877570000,
+      long_description: 'long description for a given event payload',
     },
-    actions: actions1,
   },
   {
     id: `row-2`,
     values: {
       alert: 'AHI003 process need to optimize, adjust X variables',
       creator: 'ME',
-      hour: '09:40h',
+      hour: 1563873970000,
+      long_description: 'long description for a given event payload',
     },
-    actions: actions2,
   },
   {
     id: `row-3`,
     values: {
       alert: 'AHI001 proccess need to optimize, adjust Y variables',
       creator: 'Line Supervisor',
-      hour: '16:20h',
+      hour: 1563873970000,
+      long_description: 'long description for a given event payload',
     },
-    actions: actions1,
   },
   {
     id: `row-4`,
     values: {
       alert: 'AHI001 proccess need to optimize, adjust Y variables',
       creator: 'Line Supervisor',
-      hour: '16:20h',
+      hour: 1563877570000,
+      other_description: 'other description for a given event payload',
     },
   },
   {
@@ -2524,7 +2550,7 @@ export const tableData = [
     values: {
       alert: 'AHI001 proccess need to optimize',
       creator: 'Line Supervisor',
-      hour: '16:20h',
+      hour: 1563874210000,
     },
   },
   {
@@ -2532,44 +2558,47 @@ export const tableData = [
     values: {
       alert: 'AHI001 proccess need to optimize.',
       creator: 'Line Supervisor',
-      hour: '16:20h',
+      hour: 1563874210000,
     },
-    actions: actions2,
   },
   {
     id: `row-7`,
     values: {
       alert: 'AHI001 proccess need to optimize',
       creator: 'Line Supervisor',
-      hour: '16:20h',
+      hour: 1563870610000,
     },
-    actions: actions2,
   },
   {
     id: `row-8`,
     values: {
       alert: 'AHI001 proccess need to optimize, adjust Y variables',
       creator: 'Line Supervisor',
-      hour: '16:20h',
+      hour: 1563870610000,
     },
-    actions: actions1,
   },
   {
     id: `row-9`,
     values: {
       alert: 'AHI001 proccess need to optimize, adjust Y variables',
       creator: 'Line Supervisor',
-      hour: '16:20h',
+      hour: 1563873970000,
     },
-    actions: actions1,
   },
   {
     id: `row-10`,
     values: {
       alert: 'AHI010 proccess need to optimize, adjust Y variables',
       creator: 'Admin',
-      hour: '16:20h',
+      hour: 1563873970000,
     },
-    actions: actions2,
+  },
+  {
+    id: `row-11`,
+    values: {
+      alert: 'AHI010 proccess need to optimize, adjust Y variables',
+      creator: 'Admin',
+      hour: 1563877570000,
+    },
   },
 ];
