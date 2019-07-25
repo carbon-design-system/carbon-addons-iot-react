@@ -9,7 +9,7 @@ import { tableColumns, tableData, actions1, actions2, renderCustomCell } from '.
 
 import TableCard from './TableCard';
 
-storiesOf('Table Card (Experimental)', module)
+storiesOf('Table Card', module)
   .add('size - large', () => {
     const size = CARD_SIZES.LARGE;
     return (
@@ -214,33 +214,6 @@ storiesOf('Table Card (Experimental)', module)
             showHeader: boolean('showHeader', false),
           }}
           values={tableData}
-          onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
-          size={size}
-        />
-      </div>
-    );
-  })
-  .add('size - tall with link text', () => {
-    const size = CARD_SIZES.TALL;
-    const tableDataWithLink = tableData.map(item => {
-      return {
-        ...item,
-        values: {
-          ...item.values,
-          alert: <a href="#">{item.values.alert}</a>, //eslint-disable-line
-        },
-      };
-    });
-    return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
-        <TableCard
-          title={text('title', 'Open Alerts')}
-          id="table-list"
-          content={{
-            columns: tableColumns,
-            showHeader: boolean('showHeader', false),
-          }}
-          values={tableDataWithLink}
           onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
           size={size}
         />

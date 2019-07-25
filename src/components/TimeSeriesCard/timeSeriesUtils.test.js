@@ -13,7 +13,11 @@ describe('timeSeriesUtils', () => {
     expect(sampleValues[0].pressure).toBeDefined();
   });
   test('generateTableSampleValues', () => {
-    const tableSampleValues = generateTableSampleValues(['column1', 'column2', 'column3']);
+    const tableSampleValues = generateTableSampleValues([
+      { id: 'column1' },
+      { id: 'column2' },
+      { id: 'column3', type: 'TIMESTAMP' },
+    ]);
     expect(tableSampleValues).toHaveLength(10);
     expect(every(tableSampleValues, 'id')).toEqual(true); // every row should have its own id
     expect(every(tableSampleValues, 'values')).toEqual(true); // every row should have its own values
