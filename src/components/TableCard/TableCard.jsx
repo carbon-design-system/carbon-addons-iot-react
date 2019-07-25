@@ -95,9 +95,11 @@ const StyledStatefulTable = styled(({ showHeader, ...rest }) => <StatefulTable {
 const StyledExpandedRowContent = styled.div`
   padding-left: 35px;
   padding-bottom: 15px;
-  padding-top: 15px;
-  h3 {
-    margin-bottom: 20px;
+  padding-top: 16px;
+  p {
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 600;
   }
 `;
 
@@ -238,7 +240,7 @@ const TableCard = ({
             rowId: item.id,
             content: (
               <StyledExpandedRowContent>
-                <h3>{expandedItem.label}</h3>
+                <p>{expandedItem.label}</p>
                 {item.values[expandedItem.id]}
               </StyledExpandedRowContent>
             ),
