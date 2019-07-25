@@ -96,6 +96,8 @@ const propTypes = {
    * Inbound tableState
    */
   tableState: PropTypes.shape({
+    /** is the toolbar currently disabled */
+    isDisabled: PropTypes.bool,
     /** Which toolbar is currently active */
     activeBar: PropTypes.oneOf(['column', 'filter']),
     /** total number of selected rows */
@@ -155,6 +157,7 @@ const TableToolbar = ({
     search,
     activeBar,
     customToolbarContent,
+    isDisabled,
   },
 }) => (
   <StyledCarbonTableToolbar className={className}>
@@ -163,6 +166,7 @@ const TableToolbar = ({
         {...search}
         onChange={event => onApplySearch(event.currentTarget ? event.currentTarget.value : '')}
         placeHolderText={searchPlaceholderText}
+        disabled={isDisabled}
       />
     ) : null}
     <StyledTableToolbarContent>
@@ -190,6 +194,7 @@ const TableToolbar = ({
           iconDescription={columnSelectionText}
           isActive={activeBar === 'column'}
           onClick={onToggleColumnSelection}
+          disabled={isDisabled}
         />
       ) : null}
       {hasFilter ? (
@@ -199,6 +204,7 @@ const TableToolbar = ({
           iconDescription={filterText}
           isActive={activeBar === 'filter'}
           onClick={onToggleFilter}
+          disabled={isDisabled}
         />
       ) : null}
     </StyledTableToolbarContent>

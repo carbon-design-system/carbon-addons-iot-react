@@ -198,7 +198,7 @@ const TableCard = ({
 
   // if we're in editable mode, generate fake data
   const tableData = isEditable
-    ? generateTableSampleValues(columns.map(column => column.id))
+    ? generateTableSampleValues(columns)
     : hasActionColumn || filteredTimestampColumns.length
     ? data.map(i => {
         // if has custom action
@@ -292,6 +292,7 @@ const TableCard = ({
           },
           toolbar: {
             activeBar: null,
+            isDisabled: isEditable,
           },
           filters: [],
           table: {
