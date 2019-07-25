@@ -169,6 +169,8 @@ const TableCard = ({
   const columnsToRender = columns
     .map(i => ({
       ...i,
+      id: i.dataSourceId,
+      name: i.label,
       isSortable: true,
       width: i.width ? i.width : size === CARD_SIZES.TALL ? '150px' : '', // force the text wrap
       filter: i.filter ? i.filter : {}, // if filter not send we send empty object
@@ -193,12 +195,12 @@ const TableCard = ({
     .filter(i => i);
 
   const filteredTimestampColumns = columns
-    .map(column => (column.type && column.type === 'TIMESTAMP' ? column.id : null))
+    .map(column => (column.type && column.type === 'TIMESTAMP' ? column.dataSourceId : null))
     .filter(i => i);
 
   // if we're in editable mode, generate fake data
   const tableData = isEditable
-    ? generateTableSampleValues(columns.map(column => column.id))
+    ? generateTableSampleValues(columns.map(column => column.dataSourceId))
     : hasActionColumn || filteredTimestampColumns.length
     ? data.map(i => {
         // if has custom action
@@ -295,6 +297,7 @@ const TableCard = ({
           },
           filters: [],
           table: {
+            onChangeSort: () => {},
             ...(columnStartSort
               ? {
                   sort: {
