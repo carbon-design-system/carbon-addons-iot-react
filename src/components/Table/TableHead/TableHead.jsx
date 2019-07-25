@@ -107,6 +107,7 @@ const StyledCustomTableHeader = styled(TableHeader)`
         max-width: ${width};
         white-space: nowrap;
         overflow-x: hidden;
+        overflow-y: hidden;
         text-overflow: ellipsis;
       `
         : '';

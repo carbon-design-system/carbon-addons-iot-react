@@ -292,6 +292,7 @@ const TableCard = ({
           },
           toolbar: {
             activeBar: null,
+            isDisabled: isEditable,
           },
           filters: [],
           table: {
