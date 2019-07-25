@@ -1,6 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { text, select, object } from '@storybook/addon-knobs';
+import omit from 'lodash/omit';
 
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 import { getCardMinSize } from '../../utils/componentUtilityFunctions';
@@ -19,17 +20,33 @@ const content = {
   ],
 };
 
-storiesOf('ImageCard (Experimental)', module).add('basic', () => {
-  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.XLARGE);
-  return (
-    <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
-      <ImageCard
-        title={text('title', 'Image')}
-        id="image-hotspots"
-        content={object('content', content)}
-        breakpoint="lg"
-        size={size}
-      />
-    </div>
-  );
-});
+storiesOf('ImageCard (Experimental)', module)
+  .add('basic', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.XLARGE);
+    return (
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+        <ImageCard
+          title={text('title', 'Image')}
+          id="image-hotspots"
+          content={object('content', content)}
+          breakpoint="lg"
+          size={size}
+        />
+      </div>
+    );
+  })
+  .add('isEditable', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.XLARGE);
+    return (
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+        <ImageCard
+          title={text('title', 'Image')}
+          isEditable
+          id="image-hotspots"
+          content={object('content', omit(content, ['src']))}
+          breakpoint="lg"
+          size={size}
+        />
+      </div>
+    );
+  });
