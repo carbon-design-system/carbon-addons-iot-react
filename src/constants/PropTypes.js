@@ -79,8 +79,8 @@ export const TableCardPropTypes = {
   content: PropTypes.shape({
     columns: PropTypes.arrayOf(
       PropTypes.shape({
-        id: PropTypes.string.isRequired,
-        name: PropTypes.string.isRequired,
+        dataSourceId: PropTypes.string.isRequired,
+        label: PropTypes.string.isRequired,
         priority: PropTypes.number,
         renderer: PropTypes.func,
         type: PropTypes.string,

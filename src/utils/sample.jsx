@@ -2490,19 +2490,19 @@ export const actions2 = [{ id: 'open', icon: 'icon--edit' }];
 
 export const tableColumns = [
   {
-    id: 'alert',
-    name: 'Alert',
+    dataSourceId: 'alert',
+    label: 'Alert',
     priority: 1,
   },
   {
-    id: 'creator',
-    name: 'Creator',
+    dataSourceId: 'creator',
+    label: 'Creator',
     priority: 3,
     filter: { placeholderText: 'pick a string' },
   },
   {
-    id: 'hour',
-    name: 'Hour',
+    dataSourceId: 'hour',
+    label: 'Hour',
     priority: 2,
     type: 'TIMESTAMP',
   },

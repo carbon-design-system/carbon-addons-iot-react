@@ -95,9 +95,11 @@ const StyledStatefulTable = styled(({ showHeader, ...rest }) => <StatefulTable {
 const StyledExpandedRowContent = styled.div`
   padding-left: 35px;
   padding-bottom: 15px;
-  padding-top: 15px;
-  h3 {
-    margin-bottom: 20px;
+  padding-top: 16px;
+  p {
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 600;
   }
 `;
 
@@ -169,6 +171,8 @@ const TableCard = ({
   const columnsToRender = columns
     .map(i => ({
       ...i,
+      id: i.dataSourceId,
+      name: i.label,
       isSortable: true,
       width: i.width ? i.width : size === CARD_SIZES.TALL ? '150px' : '', // force the text wrap
       filter: i.filter ? i.filter : {}, // if filter not send we send empty object
@@ -193,7 +197,7 @@ const TableCard = ({
     .filter(i => i);
 
   const filteredTimestampColumns = columns
-    .map(column => (column.type && column.type === 'TIMESTAMP' ? column.id : null))
+    .map(column => (column.type && column.type === 'TIMESTAMP' ? column.dataSourceId : null))
     .filter(i => i);
 
   // if we're in editable mode, generate fake data
@@ -236,7 +240,7 @@ const TableCard = ({
             rowId: item.id,
             content: (
               <StyledExpandedRowContent>
-                <h3>{expandedItem.label}</h3>
+                <p>{expandedItem.label}</p>
                 {item.values[expandedItem.id]}
               </StyledExpandedRowContent>
             ),
@@ -296,6 +300,7 @@ const TableCard = ({
           },
           filters: [],
           table: {
+            onChangeSort: () => {},
             ...(columnStartSort
               ? {
                   sort: {
