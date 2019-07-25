@@ -23,7 +23,7 @@ export const generateTableSampleValues = columns => {
   return sampleValues.map(() => ({
     id: uuidv1(),
     values: columns.reduce((obj, column) => {
-      obj[column] = '...'; // eslint-disable-line
+      obj[column.id] = column.type === 'TIMESTAMP' ? 'hh:mm:ss' : '--'; // eslint-disable-line
       return obj;
     }, {}),
   }));

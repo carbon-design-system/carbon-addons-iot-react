@@ -120,6 +120,8 @@ const propTypes = {
       ),
       /** Simple search state */
       search: TableSearchPropTypes,
+      /** is the toolbar currently disabled */
+      isDisabled: PropTypes.bool,
     }),
     table: PropTypes.shape({
       isSelectAllSelected: PropTypes.bool,
@@ -344,7 +346,14 @@ const Table = props => {
         tableState={{
           totalSelected: view.table.selectedIds.length,
           totalFilters: view.filters ? view.filters.length : 0,
-          ...pick(view.toolbar, 'batchActions', 'search', 'activeBar', 'customToolbarContent'),
+          ...pick(
+            view.toolbar,
+            'batchActions',
+            'search',
+            'activeBar',
+            'customToolbarContent',
+            'isDisabled'
+          ),
         }}
       />
       <TableContainer>
