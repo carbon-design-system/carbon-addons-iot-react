@@ -14,9 +14,9 @@ describe('timeSeriesUtils', () => {
   });
   test('generateTableSampleValues', () => {
     const tableSampleValues = generateTableSampleValues([
-      { id: 'column1' },
-      { id: 'column2' },
-      { id: 'column3', type: 'TIMESTAMP' },
+      { dataSourceId: 'column1' },
+      { dataSourceId: 'column2' },
+      { dataSourceId: 'column3', type: 'TIMESTAMP' },
     ]);
     expect(tableSampleValues).toHaveLength(10);
     expect(every(tableSampleValues, 'id')).toEqual(true); // every row should have its own id
