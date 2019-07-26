@@ -103,11 +103,12 @@ const ProgressIndicator = ({
       currentIndex={currentStep}
       isVerticalMode={isVerticalMode}
     >
-      {items.map(({ id, label }) => (
+      {items.map(({ id, label, secondaryLabel, description }) => (
         <StyledProgressStep
           key={id}
           label={label}
-          description={label}
+          secondaryLabel={secondaryLabel}
+          description={description || label}
           showLabel={showLabels || currentItemId === id}
           stepWidth={stepWidth}
           isVerticalMode={isVerticalMode}
