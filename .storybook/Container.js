@@ -9,7 +9,7 @@ export default class Container extends Component {
       <div
         className="storybook-container"
         style={{
-          padding: '1em',
+          padding: '3em',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
