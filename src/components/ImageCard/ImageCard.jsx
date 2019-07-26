@@ -33,7 +33,13 @@ const ImageCard = ({ title, content, size, onCardAction, isEditable, ...others }
             isEditable && !src ? (
               <Image32 width="100%" height="100%" />
             ) : content && src ? (
-              <ImageHotspots src={src} alt={alt} hotspots={hotspots} hideFullscreenControl />
+              <ImageHotspots
+                src={src}
+                alt={alt}
+                hotspots={hotspots}
+                hideFullscreenControl
+                hideMinimap
+              />
             ) : (
               <p>Error retrieving image.</p>
             )
