@@ -13,14 +13,20 @@ const ContentWrapper = styled.div`
   padding: 0 16px 16px 16px;
 `;
 
-const ImageCard = ({ title, content, size, isEditable, ...others }) => {
+const ImageCard = ({ title, content, size, onCardAction, isEditable, ...others }) => {
   const { src, alt, hotspots } = content;
   const supportedSizes = [CARD_SIZES.MEDIUM, CARD_SIZES.WIDE, CARD_SIZES.LARGE, CARD_SIZES.XLARGE];
   const supportedSize = supportedSizes.includes(size);
   const availableActions = { expand: supportedSize };
 
   return (
-    <Card title={title} size={size} availableActions={availableActions} {...others}>
+    <Card
+      title={title}
+      size={size}
+      onCardAction={onCardAction}
+      availableActions={availableActions}
+      {...others}
+    >
       {!others.isLoading ? (
         <ContentWrapper>
           {supportedSize ? (

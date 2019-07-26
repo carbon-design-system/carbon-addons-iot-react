@@ -18,6 +18,7 @@ import {
   tableData,
 } from '../../utils/sample';
 import { COLORS, CARD_SIZES, CARD_TYPES } from '../../constants/LayoutConstants';
+import imageFile from '../ImageCard/landscape.jpg';
 
 import Dashboard from './Dashboard';
 
@@ -304,6 +305,17 @@ const originalCards = [
     interval: 'month',
     timeRange: 'lastYear',
     availableActions: { range: true },
+  },
+  {
+    title: 'Floor Map',
+    id: 'floor map picture',
+    size: CARD_SIZES.MEDIUM,
+    type: CARD_TYPES.IMAGE,
+    content: {
+      alt: 'Floor Map',
+      image: 'firstfloor',
+      src: imageFile,
+    },
   },
 ];
 
