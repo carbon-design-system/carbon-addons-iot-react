@@ -4,7 +4,6 @@ import '../src/index.scss';
 export default class Container extends Component {
   render() {
     const { story } = this.props;
-    console.log(story);
 
     return (
       <div
