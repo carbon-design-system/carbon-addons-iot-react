@@ -4,18 +4,19 @@ import '../src/index.scss';
 export default class Container extends Component {
   render() {
     const { story } = this.props;
+    console.log(story);
 
     return (
       <div
         className="storybook-container"
         style={{
-          padding: '3em',
+          padding: '3rem',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
         }}
       >
-        <div style={{ width: '100%' }}>{story()}</div>
+        {story()}
       </div>
     );
   }

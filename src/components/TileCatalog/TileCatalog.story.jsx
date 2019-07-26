@@ -1,3 +1,5 @@
+import { callbackify } from 'util';
+
 import React, { useState, useEffect } from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
@@ -93,7 +95,9 @@ storiesOf('Watson IoT|TileCatalog', module)
   ))
   .add('loading', () => <StatefulTileCatalog {...commonTileCatalogProps} isLoading />)
   .add('error', () => (
-    <StatefulTileCatalog {...commonTileCatalogProps} tiles={[]} error="In error state" />
+    <div style={{ width: 'calc(100vw - 6rem)' }}>
+      <StatefulTileCatalog {...commonTileCatalogProps} tiles={[]} error="In error state" />
+    </div>
   ))
   .add('async loaded wait one second', () => {
     const Container = () => {

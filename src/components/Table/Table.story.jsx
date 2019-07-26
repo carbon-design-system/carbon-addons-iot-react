@@ -200,13 +200,13 @@ const RowExpansionContent = ({ rowId }) => (
 
 const StyledTableWidth = styled.div`
   &&& {
-    width: 95vw;
+    width: calc(100vw - 6rem);
   }
 `;
 
 const StyledTableCustomRowHeight = styled(Table)`
   &&& {
-    width: 95vw;
+    width: calc(100vw - 6rem);
     & tr {
       height: 5rem;
     }
@@ -1081,14 +1081,16 @@ storiesOf('Watson IoT|Table', module)
     'with fixed column width',
     () => (
       // You don't need to use styled components, just pass a className to the Table component and use selectors to find the correct column
-      <Table
-        columns={tableColumns.map((i, idx) => ({
-          width: idx % 2 === 0 ? '20rem' : '10rem',
-          ...i,
-        }))}
-        data={tableData}
-        actions={actions}
-      />
+      <div style={{ width: 'calc(100vw - 6rem)' }}>
+        <Table
+          columns={tableColumns.map((i, idx) => ({
+            width: idx % 2 === 0 ? '20rem' : '10rem',
+            ...i,
+          }))}
+          data={tableData}
+          actions={actions}
+        />
+      </div>
     ),
     {
       info: {
