@@ -8,7 +8,7 @@ const ButtonEnhancedProps = {
   onClick: action('click'),
 };
 
-storiesOf('ButtonEnhanced', module)
+storiesOf('Watson IoT|ButtonEnhanced', module)
   .add('loading', () => (
     <ButtonEnhanced {...ButtonEnhancedProps} loading>
       Test ButtonEnhanced

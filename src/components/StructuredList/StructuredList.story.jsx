@@ -47,7 +47,7 @@ const data = [
   },
 ];
 
-storiesOf('StructuredList', module)
+storiesOf('Watson IoT|StructuredList', module)
   .add('default ', () => (
     <StructuredList
       design={select('Row design', ['normal', 'mini'], 'mini')}

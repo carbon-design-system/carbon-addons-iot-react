@@ -59,7 +59,7 @@ describe(`Storybook Snapshot tests and console checks`, () => {
     jest.setTimeout(15000);
   });
   initStoryshots({
-    storyKindRegex: /^((?!.*?Experimental).)*$/,
+    storyKindRegex: /^Watson\sIoT/,
     test: snapshotWithOptions(story => ({
       createNodeMock: element => {
         // https://github.com/storybookjs/storybook/tree/next/addons/storyshots/storyshots-core#using-createnodemock-to-mock-refs
@@ -67,11 +67,11 @@ describe(`Storybook Snapshot tests and console checks`, () => {
 
         // these stories require an input be nested within the ref, for compatibility with Carbon's TableToolbarSearch component
         const storiesNeedingNestedInputRefs = [
-          'Table.minitable',
-          'Table.with simple search',
-          'Table.Stateful Example with row nesting',
-          'Table.Stateful Example with expansion',
-          'TileCatalog.with search',
+          'Watson IoT|Table.minitable',
+          'Watson IoT|Table.with simple search',
+          'Watson IoT|Table.Stateful Example with row nesting',
+          'Watson IoT|Table.Stateful Example with expansion',
+          'Watson IoT|TileCatalog.with search',
         ];
         if (
           storiesNeedingNestedInputRefs.includes(story.kind) ||
