@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { iconFilter } from 'carbon-icons';
+// import { iconFilter } from 'carbon-icons';
 import IconColumnSelector from '@carbon/icons-react/lib/column/20';
+import IconFilter from '@carbon/icons-react/lib/filter/20';
 import { DataTable, Button } from 'carbon-components-react';
 import styled from 'styled-components';
 
@@ -200,7 +201,7 @@ const TableToolbar = ({
       {hasFilter ? (
         <StyledTableToolbarAction
           className="bx--btn--sm"
-          icon={iconFilter}
+          renderIcon={() => <IconFilter />}
           iconDescription={filterText}
           isActive={activeBar === 'filter'}
           onClick={onToggleFilter}
