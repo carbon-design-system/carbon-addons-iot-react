@@ -26,7 +26,7 @@ const LineChartWrapper = styled.div`
 
   &&& {
     .chart-wrapper g.x.axis g.tick text {
-      transform: initial !important;
+      transform: rotateY(0);
       text-anchor: initial !important;
     }
     .legend-wrapper {
@@ -34,6 +34,10 @@ const LineChartWrapper = styled.div`
       height: ${props => (!props.size === CARD_SIZES.MEDIUM ? '40px' : '20px')} !important;
     }
     .chart-holder {
+      width: 100%;
+      height: 100%;
+    }
+    .chart-svg {
       width: 100%;
       height: 100%;
     }
