@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import {
   ProgressIndicator as CarbonProgressIndicator,
   ProgressStep,
+  Tooltip,
 } from 'carbon-components-react';
 import styled from 'styled-components';
 
@@ -29,7 +30,14 @@ const StyledProgressStep = styled(({ showLabel, stepWidth, isVerticalMode, ...ot
     min-width: ${props =>
       !props.isVerticalMode && props.stepWidth ? `${props.stepWidth}rem` : ''};
     p {
-      display: ${props => (!props.showLabel ? 'none' : 'inherit')};
+      display: ${props => (!props.showLabel ? 'none' : '')};
+
+      &:hover::after {
+        content: attr(data-label);
+        width: 100%;
+        position: absolute;
+        top: 100%;
+      }
     }
     ${props => {
       const { isVerticalMode, stepWidth } = props;
@@ -45,6 +53,22 @@ const StyledProgressStep = styled(({ showLabel, stepWidth, isVerticalMode, ...ot
     }}
   }
 `;
+
+const ToolTipWrapper = ({ onClick, triggerText, tooltipId, content }) => {
+  return (
+    <div onClick={onClick} onKeyPress={onClick}>
+      <Tooltip
+        direction="bottom"
+        showIcon={false}
+        triggerClassName="bx--progress-label"
+        triggerText={triggerText}
+        tooltipId={tooltipId}
+      >
+        {content}
+      </Tooltip>
+    </div>
+  );
+};
 
 const IDPropTypes = PropTypes.oneOfType([PropTypes.string, PropTypes.number]);
 
@@ -62,6 +86,8 @@ const propTypes = {
   stepWidth: PropTypes.number,
   /** progress indicator is vertical */
   isVerticalMode: PropTypes.bool,
+  /** optional value to pass to tooltip if other than label */
+  toolTipContent: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -70,6 +96,7 @@ const defaultProps = {
   stepWidth: null,
   currentItemId: null,
   isVerticalMode: false,
+  toolTipContent: null,
 };
 
 /** This component extends the default Carbon ProgressIndicator.  It adds the ability to hideLabels on non-current steps and set a maximum stepWidth in pixels */
@@ -81,7 +108,9 @@ const ProgressIndicator = ({
   stepWidth,
   className,
   isVerticalMode,
+  toolTipContent,
 }) => {
+  const content = toolTipContent || false;
   const handleChange = index => {
     if (onClickItem) {
       // Parent components are expecting the id not the index
@@ -107,11 +136,20 @@ const ProgressIndicator = ({
         <StyledProgressStep
           key={id}
           label={label}
+          data-label={label}
           secondaryLabel={secondaryLabel}
           description={description || label}
           showLabel={showLabels || currentItemId === id}
           stepWidth={stepWidth}
           isVerticalMode={isVerticalMode}
+          renderLabel={() => (
+            <ToolTipWrapper
+              onClick={onClickItem}
+              triggerText={label}
+              tooltipId={id}
+              content={content || label}
+            />
+          )}
         />
       ))}
     </StyledProgressIndicator>

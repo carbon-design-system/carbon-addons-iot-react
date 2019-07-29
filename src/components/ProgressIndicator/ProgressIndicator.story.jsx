@@ -39,6 +39,7 @@ class ProgressIndicatorExample extends Component {
     return (
       <ProgressIndicator
         items={items}
+        onChange={this.setItem}
         onClickItem={this.setItem}
         currentItemId={currentItemId}
         showLabels={boolean('showlabels', true)}
