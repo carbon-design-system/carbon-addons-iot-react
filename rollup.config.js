@@ -6,6 +6,7 @@ import { uglify } from 'rollup-plugin-uglify';
 import filesize from 'rollup-plugin-filesize';
 import postcss from 'rollup-plugin-postcss';
 import copy from 'rollup-plugin-copy';
+import autoprefixer from 'autoprefixer';
 
 const env = process.env.NODE_ENV || 'development';
 const prodSettings = env === 'development' ? [] : [uglify(), filesize()];
@@ -46,7 +47,7 @@ export default {
       extract: 'lib/css/carbon-addons-iot-react.css',
       sourceMap: true,
       use: ['sass'],
-      plugins: [],
+      plugins: [autoprefixer],
     }),
     copy({
       targets: [
@@ -132,8 +133,7 @@ export default {
         },
         { src: ['src/components/AddCard/_add-card.scss'], dest: 'lib/scss/components/AddCard' },
       ],
-      // verbose: env !== 'development', // output file copy list on production builds for easier debugging
-      verbose: true,
+      verbose: env !== 'development', // output file copy list on production builds for easier debugging
     }),
     commonjs({
       namedExports: {
