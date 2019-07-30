@@ -33,7 +33,7 @@
   </a>
 </p>
 
-## Getting Started
+## Installation
 
 Add the `@beta` suffix to the package name to install the latest release from the `beta` branch:
 
@@ -54,6 +54,16 @@ You can then import any component that you need by doing the following in your p
 ```js
 import { BaseModal } from 'carbon-addons-iot-react';
 ```
+
+## 🚀 Quick Start
+
+If you'd like to test drive everything here, run the following command to create a new project preconfigured with everything you need to begin to build an application.
+
+```sh
+npx create-iot-react-app <app-name>
+```
+
+More [info on `create-iot-react-app` here](https://github.com/davidicus/create-iot-react-app)
 
 ## Styling
 
