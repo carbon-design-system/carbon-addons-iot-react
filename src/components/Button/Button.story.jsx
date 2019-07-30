@@ -8,7 +8,7 @@ const ButtonProps = {
   onClick: action('click'),
 };
 
-storiesOf('Button', module)
+storiesOf('Watson IoT|Button', module)
   .add('loading', () => (
     <Button {...ButtonProps} loading>
       Test Button

@@ -52,7 +52,7 @@ class ResourceListSimple extends Component {
   };
 }
 
-storiesOf('ResourceList', module)
+storiesOf('Watson IoT|ResourceList', module)
   .add('default', () => <ResourceListSimple />)
   .add('with extra content', () => (
     <ResourceListSimple

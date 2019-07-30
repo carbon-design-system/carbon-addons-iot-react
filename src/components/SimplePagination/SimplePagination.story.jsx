@@ -12,7 +12,7 @@ const StyledSimplePagination = styled.div`
   }
 `;
 
-storiesOf('SimplePagination', module).add('default', () => (
+storiesOf('Watson IoT|SimplePagination', module).add('default', () => (
   <StyledSimplePagination>
     <SimplePagination
       page={number('page', 1)}

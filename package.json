@@ -151,6 +151,7 @@
     "sass-loader": "^7.1.0",
     "semantic-release": "^16.0.0-beta.19",
     "storybook-addon-rtl": "^0.2.2",
+    "storybook-readme": "^5.0.5",
     "style-loader": "^0.23.1",
     "uuid": "^3.3.2",
     "webpack": "^4.28.4",

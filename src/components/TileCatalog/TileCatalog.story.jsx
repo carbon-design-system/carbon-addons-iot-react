@@ -58,7 +58,7 @@ export const commonTileCatalogProps = {
   onSelection: action('onSelection'),
 };
 
-storiesOf('TileCatalog', module)
+storiesOf('Watson IoT|TileCatalog', module)
   .add('default', () => (
     <StatefulTileCatalog
       {...commonTileCatalogProps}
@@ -93,7 +93,9 @@ storiesOf('TileCatalog', module)
   ))
   .add('loading', () => <StatefulTileCatalog {...commonTileCatalogProps} isLoading />)
   .add('error', () => (
-    <StatefulTileCatalog {...commonTileCatalogProps} tiles={[]} error="In error state" />
+    <div style={{ width: 'calc(100vw - 6rem)' }}>
+      <StatefulTileCatalog {...commonTileCatalogProps} tiles={[]} error="In error state" />
+    </div>
   ))
   .add('async loaded wait one second', () => {
     const Container = () => {

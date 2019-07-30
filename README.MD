@@ -13,6 +13,9 @@
   <a href="https://carbon-addons-iot-react.com">
     <img src="https://cdn.jsdelivr.net/gh/storybookjs/brand@master/badge/badge-storybook.svg" alt="Our Storybook" />
   </a>
+  <a href="https://app.netlify.com/sites/carbon-addons-iot-react/deploys">
+    <img src="https://api.netlify.com/api/v1/badges/d037c99a-d51a-4729-bf7c-589679e2663e/deploy-status" alt="Netlify status" />
+  </a>
   <a href="https://travis-ci.org/IBM/carbon-addons-iot-react">
     <img src="https://travis-ci.org/IBM/carbon-addons-iot-react.svg?branch=beta" alt="Build Status" />
   </a>
@@ -78,3 +81,7 @@ class SVGPathElement extends HTMLElement {}
 
 window.SVGPathElement = SVGPathElement;
 ```
+
+<a href="https://www.netlify.com">
+    <img src="https://www.netlify.com/img/global/badges/netlify-light.svg" alt="Deploys by Netlify" />
+</a>

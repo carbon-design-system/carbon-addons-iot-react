@@ -150,7 +150,7 @@ const footerComponent = <StyledFooterContent>this is footer content</StyledFoote
 
 // Simple Static Wizard Stories
 
-storiesOf('WizardInline', module)
+storiesOf('Watson IoT|WizardInline', module)
   .add('Stateful example', () => (
     <StatefulWizardInline
       currentItemId="step1"
