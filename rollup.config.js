@@ -5,6 +5,7 @@ import replace from 'rollup-plugin-replace';
 import { uglify } from 'rollup-plugin-uglify';
 import filesize from 'rollup-plugin-filesize';
 import postcss from 'rollup-plugin-postcss';
+import copy from 'rollup-plugin-copy';
 
 const env = process.env.NODE_ENV || 'development';
 const prodSettings = env === 'development' ? [] : [uglify(), filesize()];
@@ -42,8 +43,97 @@ export default {
   plugins: [
     resolve({ browser: true, extensions: ['.mjs', '.js', '.jsx', '.json'] }),
     postcss({
-      extract: true,
+      extract: 'lib/css/carbon-addons-iot-react.css',
+      sourceMap: true,
+      use: ['sass'],
       plugins: [],
+    }),
+    copy({
+      targets: [
+        { src: 'styles.scss', dest: 'lib/scss/globals/scss' },
+        {
+          src: [
+            // ---------------
+            // Carbon Globals
+            // ---------------
+            // These are listed individually so that we can easily override
+            // these with our own versions of these files.
+            '!node_modules/carbon-components/scss/globals/scss/styles.scss', // don't include Carbon's master sass file, we export our own
+            'node_modules/carbon-components/scss/globals/scss/_feature-flags.scss',
+            'node_modules/carbon-components/scss/globals/scss/_vars.scss',
+            'node_modules/carbon-components/scss/globals/scss/_colors.scss',
+            'node_modules/carbon-components/scss/globals/scss/_theme.scss',
+            'node_modules/carbon-components/scss/globals/scss/_mixins.scss',
+            'node_modules/carbon-components/scss/globals/scss/_layout.scss',
+            'node_modules/carbon-components/scss/globals/scss/_layer.scss',
+            'node_modules/carbon-components/scss/globals/scss/_spacing.scss',
+            'node_modules/carbon-components/scss/globals/scss/_typography.scss',
+            'node_modules/carbon-components/scss/globals/scss/_vendor',
+            'node_modules/carbon-components/scss/globals/scss/_css--reset.scss',
+            'node_modules/carbon-components/scss/globals/scss/_css--font-face.scss',
+            'node_modules/carbon-components/scss/globals/scss/_css--helpers.scss',
+            'node_modules/carbon-components/scss/globals/scss/_css--body.scss',
+            'node_modules/carbon-components/scss/globals/grid',
+          ],
+          dest: 'lib/scss/globals/scss',
+        },
+        {
+          src: [
+            // ------------------------------
+            // Carbon Components Proxy Styles
+            // ------------------------------
+            // These are listed individually so that we can easily override
+            // these with our own versions of these files.
+            'node_modules/carbon-components/scss/components/button',
+            'node_modules/carbon-components/scss/components/copy-button',
+            'node_modules/carbon-components/scss/components/file-uploader',
+            'node_modules/carbon-components/scss/components/checkbox',
+            'node_modules/carbon-components/scss/components/combo-box',
+            'node_modules/carbon-components/scss/components/radio-button',
+            'node_modules/carbon-components/scss/components/toggle',
+            'node_modules/carbon-components/scss/components/search',
+            'node_modules/carbon-components/scss/components/select',
+            'node_modules/carbon-components/scss/components/text-input',
+            'node_modules/carbon-components/scss/components/text-area',
+            'node_modules/carbon-components/scss/components/number-input',
+            'node_modules/carbon-components/scss/components/form',
+            'node_modules/carbon-components/scss/components/link',
+            'node_modules/carbon-components/scss/components/list-box',
+            'node_modules/carbon-components/scss/components/list',
+            'node_modules/carbon-components/scss/components/data-table',
+            'node_modules/carbon-components/scss/components/structured-list',
+            'node_modules/carbon-components/scss/components/code-snippet',
+            'node_modules/carbon-components/scss/components/overflow-menu',
+            'node_modules/carbon-components/scss/components/content-switcher',
+            'node_modules/carbon-components/scss/components/date-picker',
+            'node_modules/carbon-components/scss/components/dropdown',
+            'node_modules/carbon-components/scss/components/loading',
+            'node_modules/carbon-components/scss/components/modal',
+            'node_modules/carbon-components/scss/components/multi-select',
+            'node_modules/carbon-components/scss/components/notification',
+            'node_modules/carbon-components/scss/components/notification',
+            'node_modules/carbon-components/scss/components/tooltip',
+            'node_modules/carbon-components/scss/components/tabs',
+            'node_modules/carbon-components/scss/components/tag',
+            'node_modules/carbon-components/scss/components/pagination',
+            'node_modules/carbon-components/scss/components/accordion',
+            'node_modules/carbon-components/scss/components/progress-indicator',
+            'node_modules/carbon-components/scss/components/breadcrumb',
+            'node_modules/carbon-components/scss/components/toolbar',
+            'node_modules/carbon-components/scss/components/time-picker',
+            'node_modules/carbon-components/scss/components/slider',
+            'node_modules/carbon-components/scss/components/tile',
+            'node_modules/carbon-components/scss/components/skeleton',
+            'node_modules/carbon-components/scss/components/inline-loading',
+            'node_modules/carbon-components/scss/components/pagination-nav',
+            'node_modules/carbon-components/scss/components/ui-shell',
+          ],
+          dest: 'lib/scss/components',
+        },
+        { src: ['src/components/AddCard/_add-card.scss'], dest: 'lib/scss/components/AddCard' },
+      ],
+      // verbose: env !== 'development', // output file copy list on production builds for easier debugging
+      verbose: true,
     }),
     commonjs({
       namedExports: {
@@ -69,7 +159,6 @@ export default {
 
       include: 'node_modules/**',
     }),
-
     babel({
       exclude: 'node_modules/**',
     }),
