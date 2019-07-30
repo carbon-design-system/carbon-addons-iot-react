@@ -1,1 +1,1 @@
-export default from 'carbon-components-react/lib/components/TooltipDefinition/TooltipDefinition-story'
+export default from 'carbon-components-react/lib/components/TooltipDefinition/TooltipDefinition-story';
