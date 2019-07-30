@@ -63,7 +63,7 @@ What's included
 carbon-addons-iot-react/
 ├── css
 │   ├── carbon-addons-iot-react.css
-│   └── carbon-components.css.map
+│   └── carbon-addons-iot-react.css.map
 ├── scss
 │   └── components
 │       └── modal
