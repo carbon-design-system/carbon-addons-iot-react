@@ -1,1 +1,1 @@
-export default from 'carbon-components-react/lib/components/Link/Link-story'
+export default from 'carbon-components-react/lib/components/Link/Link-story';

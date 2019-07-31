@@ -1,1 +1,1 @@
-export default from 'carbon-components-react/lib/components/Toggle/Toggle-story'
+export default from 'carbon-components-react/lib/components/Toggle/Toggle-story';
