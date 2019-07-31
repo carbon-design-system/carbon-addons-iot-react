@@ -33,7 +33,7 @@
   </a>
 </p>
 
-## Getting Started
+## Installation
 
 Add the `@beta` suffix to the package name to install the latest release from the `beta` branch:
 
@@ -49,13 +49,53 @@ If you prefer [Yarn](https://yarnpkg.com/en/), use the following command instead
 yarn add carbon-addons-iot-react@beta
 ```
 
-Note that previously, v1.x required installation of additional packages `carbon-components`, `carbon-components-react`, `carbon-icons`. This is no longer necessary as we now wrap Carbon as a dependency and re-export components and styles.
-
 You can then import any component that you need by doing the following in your project:
 
 ```js
 import { BaseModal } from 'carbon-addons-iot-react';
 ```
+
+## 🚀 Quick Start
+
+If you'd like to test drive everything here, run the following command to create a new project preconfigured with everything you need to begin to build an application.
+
+```sh
+npx create-iot-react-app <app-name>
+```
+
+More [info on `create-iot-react-app` here](https://github.com/davidicus/create-iot-react-app)
+
+## Styling
+
+What's included
+
+```
+carbon-addons-iot-react/
+├── css
+│   ├── carbon-addons-iot-react.css
+│   └── carbon-addons-iot-react.css.map
+├── scss
+│   └── components
+│       └── modal
+│           └── _modal.scss
+│       └── ...
+│   └── globals
+│       └── scss
+│           └── _vars.scss
+│           └── ...
+```
+
+Compiled CSS files are provided for ease of use getting started.
+
+Using individual sass files (instead of the compiled .css) infers usage of a SCSS pre-processor. All Sass files use the `*.scss` file extension. For transpiling Sass code, use node-sass based Sass compilers, for example, WebPack sass-loader or gulp-sass. Make sure your build process uses autoprefixer to ensure vendor prefixes are automatically added to your output CSS.
+
+At this time we only provide the individual partial files for `global` and `components`. This will require you to construct the central entrypoint in your application, such as the ./src/styles.scss file in this repo used to generate the provided .css files.
+
+Feedback and improvement requests regarding this configuration would be appreciated, [please contribute to this issue](https://github.com/IBM/carbon-addons-iot-react/issues/426).
+
+## Dependencies
+
+Usage of this package does not require you to instal additional Carbon packages; `carbon-components`, `carbon-icons`, or `@carbon` packages (`@carbon/grid`, `@carbon-layout`, etc) as peer dependencies. You may still need these packages if you use them directly in your project.
 
 ## 📚 Docs
 
