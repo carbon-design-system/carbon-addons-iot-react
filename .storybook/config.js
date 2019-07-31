@@ -26,6 +26,8 @@ addDecorator(withA11y);
 addDecorator(withKnobs);
 
 function loadStories() {
+  require('./Welcome.story.jsx'); // Welcome story should always be the first in the side nav heirarchy
+
   const req = require.context('../src/components', true, /\.story\.jsx$/);
   req.keys().forEach(filename => req(filename));
 }
