@@ -39,7 +39,6 @@ const links = [
     linkContent: 'Boards',
   },
   {
-    current: true,
     isEnabled: true,
     icon: Chip,
     metaData: {
@@ -66,10 +65,19 @@ const links = [
           element: 'button',
         },
         content: 'Yet another link',
+        isActive: true,
       },
     ],
   },
 ];
+
+const switcherProps = {
+  options: ['ExampleOne', 'ExampleTwo'],
+  labelText: 'ExampleOne',
+  onChange: () => {},
+  className: 'class',
+  switcherTitle: 'Applications',
+};
 
 // const link = <Icon name="header--help" fill="white" description="Icon" />;
 const HeaderProps = {
@@ -112,6 +120,7 @@ storiesOf('Watson IoT|SideNav', module).add(
             links={links}
             isSideNavExpanded={isSideNavExpanded}
             onClickSideNavExpand={onClickSideNavExpand}
+            switcherProps={switcherProps}
           />
         </>
       )}
