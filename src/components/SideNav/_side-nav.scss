@@ -1,6 +1,8 @@
 @import '~carbon-components/scss/globals/scss/vars';
 @import '~carbon-components/scss/globals/scss/layout';
 
+@import '~carbon-components/scss/components/ui-shell/side-nav';
+
 .bx--side-nav {
   background-color: $interactive-02;
   color: $ui-02;

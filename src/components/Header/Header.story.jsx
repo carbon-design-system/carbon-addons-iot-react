@@ -12,8 +12,6 @@ React.Fragment = ({ children }) => children;
 
 const StyledHeader = styled(Header)`
    {
-    margin-top: 3rem;
-
     .bx--header__menu .bx--header__menu-item[role='menuitem'] {
       align-items: center;
       border: 0.125rem solid transparent;
@@ -38,6 +36,10 @@ const StyledHeader = styled(Header)`
       display: inline-block;
       vertical-align: middle;
     }
+
+    .bx--header__menu-title[role='menuitem'][aria-expanded='true'] + .bx--header__menu {
+      z-index: 6001;
+    }
   }
 `;
 
@@ -60,7 +62,7 @@ const HeaderProps = {
   actionItems: [
     {
       label: 'alerts',
-      onClick: action('pop alert modal'),
+      onClick: action('click fired'),
       btnContent: <NotificationOn fill="white" description="Icon" />,
     },
     {
@@ -139,8 +141,22 @@ const HeaderProps = {
   ],
 };
 
+const headerPanel = {
+  className: 'header-panel',
+  /* eslint-disable */
+
+  content: React.forwardRef((props, ref) => (
+    <a href="#" ref={ref} {...props}>
+      Header panel content
+    </a>
+  )),
+  /* eslint-enable */
+};
+
 storiesOf('Watson IoT|Header', module)
-  .add('Header action buttons with dropdowns', () => <StyledHeader {...HeaderProps} />)
+  .add('Header action buttons with dropdowns', () => (
+    <StyledHeader {...HeaderProps} headerPanel={headerPanel} />
+  ))
   .add('Header no submenu', () => (
     <StyledHeader
       {...HeaderProps}
