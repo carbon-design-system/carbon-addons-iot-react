@@ -12,7 +12,7 @@ import AppSwitcher from '@carbon/icons-react/lib/app-switcher/20';
 import { rem } from 'polished';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import React, { useState, useCallback, useRef } from 'react';
+import React, { useState, useCallback } from 'react';
 
 import { COLORS } from '../../styles/styles';
 
@@ -125,7 +125,6 @@ const Header = ({
   onClickSideNavExpand,
   headerPanel,
 }) => {
-  const headerPanelContent = useRef(null);
   const [expanded, setExpanded] = useState(false);
   const handleHeaderPanelTriggerClick = useCallback(
     () => {
@@ -167,7 +166,11 @@ const Header = ({
   });
   if (headerPanel) {
     actionBtnContent.push(
-      <StyledGlobalAction aria-label="header-panel-trigger" onClick={handleHeaderPanelTriggerClick}>
+      <StyledGlobalAction
+        aria-label="header-panel-trigger"
+        key="AppSwitcher"
+        onClick={handleHeaderPanelTriggerClick}
+      >
         <AppSwitcher fill="white" description="Icon" />
       </StyledGlobalAction>
     );
@@ -188,7 +191,7 @@ const Header = ({
           expanded={expanded}
         >
           <div>
-            <headerPanel.content ref={headerPanelContent} />
+            <headerPanel.content />
           </div>
         </HeaderPanel>
       )}
