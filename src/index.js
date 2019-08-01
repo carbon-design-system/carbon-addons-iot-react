@@ -1,5 +1,5 @@
 // Styles
-export styles from './index.scss';
+export styles from './styles.scss';
 
 // Components
 export Button from './components/Button';
