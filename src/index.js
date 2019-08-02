@@ -20,7 +20,7 @@ export StatefulTileCatalog from './components/TileCatalog/StatefulTileCatalog';
 export SimplePagination from './components/SimplePagination/SimplePagination';
 export CatalogContent from './components/TileCatalog/CatalogContent';
 export ProgressIndicator from './components/ProgressIndicator/ProgressIndicator';
-export StructuredList from './components/StructuredList/StructuredList';
+export ComposedStructuredList from './components/ComposedStructuredList/ComposedStructuredList';
 export ResourceList from './components/ResourceList/ResourceList';
 export FileDrop from './components/FileDrop/FileDrop';
 

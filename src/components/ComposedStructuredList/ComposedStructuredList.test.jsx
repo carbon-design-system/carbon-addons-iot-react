@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import StructuredList from './StructuredList';
+import ComposedStructuredList from './ComposedStructuredList';
 
 const columns = [
   {
@@ -50,7 +50,12 @@ describe('Structured List', () => {
   test('onRowClick', () => {
     const onRowClick = jest.fn();
     const wrapper = mount(
-      <StructuredList design="normal" columns={columns} data={data} onRowClick={onRowClick} />
+      <ComposedStructuredList
+        design="normal"
+        columns={columns}
+        data={data}
+        onRowClick={onRowClick}
+      />
     );
     wrapper
       .find('div[onClick]')
