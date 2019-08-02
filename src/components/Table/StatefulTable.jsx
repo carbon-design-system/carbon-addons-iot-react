@@ -124,7 +124,7 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
     },
     table: {
       onChangeSort: column => {
-        dispatch(tableColumnSort(column));
+        dispatch(tableColumnSort(column, columns));
         callbackParent(onChangeSort, column);
       },
       onRowSelected: (rowId, isSelected) => {

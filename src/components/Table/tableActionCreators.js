@@ -65,9 +65,10 @@ export const tableActionApply = (id, instanceId = null) => ({
 });
 
 /** Table column actions */
-export const tableColumnSort = (column, instanceId = null) => ({
+export const tableColumnSort = (column, columns, instanceId = null) => ({
   type: TABLE_COLUMN_SORT,
   payload: column,
+  columns,
   instanceId,
 });
 export const tableColumnOrder = (ordering, instanceId = null) => ({

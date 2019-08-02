@@ -2521,7 +2521,7 @@ export const tableData = [
   {
     id: `row-2`,
     values: {
-      alert: 'AHI003 process need to optimize, adjust X variables',
+      alert: 'AHI003 process need to optimize adjust X variables',
       creator: 'ME',
       hour: 1563873970000,
       long_description: 'long description for a given event payload',
@@ -2530,16 +2530,16 @@ export const tableData = [
   {
     id: `row-3`,
     values: {
-      alert: 'AHI001 proccess need to optimize, adjust Y variables',
+      alert: 'AHI001 proccess need to optimize adjust Y variables',
       creator: 'Line Supervisor',
-      hour: 1563873970000,
+      hour: 1564756946000,
       long_description: 'long description for a given event payload',
     },
   },
   {
     id: `row-4`,
     values: {
-      alert: 'AHI001 proccess need to optimize, adjust Y variables',
+      alert: 'AHI001 proccess need to optimize adjust Y variables',
       creator: 'Line Supervisor',
       hour: 1563877570000,
       other_description: 'other description for a given event payload',
@@ -2572,7 +2572,7 @@ export const tableData = [
   {
     id: `row-8`,
     values: {
-      alert: 'AHI001 proccess need to optimize, adjust Y variables',
+      alert: 'AHI001 proccess need to optimize adjust Y variables',
       creator: 'Line Supervisor',
       hour: 1563870610000,
     },
@@ -2580,7 +2580,7 @@ export const tableData = [
   {
     id: `row-9`,
     values: {
-      alert: 'AHI001 proccess need to optimize, adjust Y variables',
+      alert: 'AHI001 proccess need to optimize adjust Y variables',
       creator: 'Line Supervisor',
       hour: 1563873970000,
     },
@@ -2588,7 +2588,7 @@ export const tableData = [
   {
     id: `row-10`,
     values: {
-      alert: 'AHI010 proccess need to optimize, adjust Y variables',
+      alert: 'AHI010 proccess need to optimize adjust Y variables',
       creator: 'Admin',
       hour: 1563873970000,
     },
@@ -2596,7 +2596,7 @@ export const tableData = [
   {
     id: `row-11`,
     values: {
-      alert: 'AHI010 proccess need to optimize, adjust Y variables',
+      alert: 'AHI010 proccess need to optimize adjust Y variables',
       creator: 'Admin',
       hour: 1563877570000,
     },
