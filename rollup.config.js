@@ -148,6 +148,7 @@ export default {
           'SkipToContent',
           'HeaderMenuItem',
           'HeaderNavigation',
+          'HeaderPanel',
           'SideNav',
           'SideNavItems',
           'SideNavLink',
