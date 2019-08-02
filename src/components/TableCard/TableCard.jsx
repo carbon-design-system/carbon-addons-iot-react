@@ -1,7 +1,8 @@
 import React from 'react';
-import { OverflowMenu, OverflowMenuItem, Icon } from 'carbon-components-react';
+import { OverflowMenu, OverflowMenuItem, Icon, Button } from 'carbon-components-react';
 import styled from 'styled-components';
 import moment from 'moment';
+import Download16 from '@carbon/icons-react/lib/download/16';
 
 import { CardPropTypes, TableCardPropTypes } from '../../constants/PropTypes';
 import Card from '../Card/Card';
@@ -51,8 +52,6 @@ const StyledStatefulTable = styled(({ showHeader, ...rest }) => <StatefulTable {
       }
       th div {
         display: block;
-        max-width: 90%;
-        width: 90%;
       }
     }
   }
@@ -101,6 +100,23 @@ const StyledExpandedRowContent = styled.div`
     font-size: 14px;
     font-weight: 600;
   }
+`;
+
+const ToolbarButton = styled(Button)`
+  &.bx--btn > svg {
+    margin: 0;
+  }
+`;
+
+const StyledIcon = styled(Icon)`
+  width: 16px;
+  height: 16px;
+  ${props =>
+    props.color &&
+    `
+    color: ${props.color};
+    fill: ${props.color};
+  `}
 `;
 
 const TableCard = ({
@@ -166,14 +182,27 @@ const TableCard = ({
     },
   ];
 
-  const hasActionColumn = data.filter(i => i.actions).length > 0;
+  // if there is icon row add column
+  const iconColumn = [
+    {
+      id: 'iconColumn',
+      name: '',
+      width: '20px',
+      isSortable: false,
+      priority: 1,
+    },
+  ];
 
-  const columnsToRender = columns
+  const hasActionColumn = data.filter(i => i.actions).length > 0;
+  const hasIconColumn = data.filter(i => i.rowIcon).length > 0;
+
+  const newColumns = hasIconColumn ? [...iconColumn, ...columns] : columns;
+  const columnsToRender = newColumns
     .map(i => ({
       ...i,
-      id: i.dataSourceId,
-      name: i.label,
-      isSortable: true,
+      id: i.dataSourceId ? i.dataSourceId : i.id,
+      name: i.label ? i.label : i.name,
+      isSortable: true, // i.isSortable ? i.isSortable : true,
       width: i.width ? i.width : size === CARD_SIZES.TALL ? '150px' : '', // force the text wrap
       filter: i.filter ? i.filter : {}, // if filter not send we send empty object
     }))
@@ -219,9 +248,17 @@ const TableCard = ({
               .filter(v => v)[0]
           : null;
 
+        // check if any row has the rowIcon , if so add as a new row
+        const icon = i.rowIcon
+          ? {
+              iconColumn: <StyledIcon name={i.rowIcon.icon} color={i.rowIcon.color} />,
+            }
+          : null;
+
         return {
           id: i.id,
           values: {
+            ...icon,
             ...i.values,
             ...action,
             ...valueUpdated,
@@ -250,9 +287,47 @@ const TableCard = ({
     });
   }
 
+  const csvDownloadHandler = () => {
+    let csv = '';
+    // get all keys availavle and merge it
+    let object = [];
+    data.forEach(item => {
+      object = [...object, ...Object.keys(item.values)];
+    });
+    object = [...new Set(object)];
+    csv += `${object.join(',')}\n`;
+    data.forEach(item => {
+      object.forEach(arrayHeader => {
+        csv += `${item.values[arrayHeader] ? item.values[arrayHeader] : ''},`;
+      });
+      csv += `\n`;
+    });
+
+    const exportedFilenmae = `${title}.csv` || 'export.csv';
+
+    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+    if (navigator.msSaveBlob) {
+      // IE 10+
+      navigator.msSaveBlob(blob, exportedFilenmae);
+    } else {
+      const link = document.createElement('a');
+      if (link.download !== undefined) {
+        // Browsers that support HTML5 download attribute
+        const url = URL.createObjectURL(blob);
+        link.setAttribute('href', url);
+        link.setAttribute('download', exportedFilenmae);
+        link.style.visibility = 'hidden';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      }
+    }
+  };
+
   // is columns recieved is different from the columnsToRender show card expand
   const isExpandable =
-    columns.length !== columnsToRender.filter(item => item.id !== 'actionColumn').length;
+    columns.length !==
+    columnsToRender.filter(item => item.id !== 'actionColumn' && item.id !== 'iconColumn').length;
 
   const hasFilter = size !== CARD_SIZES.TALL;
 
@@ -281,7 +356,11 @@ const TableCard = ({
         }}
         expandedData={expandedRowsFormatted}
         actions={{
-          table: { onRowClicked: () => {}, onRowExpanded: () => {} },
+          table: {
+            onRowClicked: () => {},
+            onRowExpanded: () => {},
+            onChangeSort: () => {},
+          },
           pagination: { onChangePage: () => {} },
           toolbar: {
             onClearAllFilters: () => {},
@@ -297,10 +376,17 @@ const TableCard = ({
           toolbar: {
             activeBar: null,
             isDisabled: isEditable,
+            customToolbarContent: (
+              <ToolbarButton
+                kind="ghost"
+                small
+                renderIcon={Download16}
+                onClick={() => csvDownloadHandler()}
+              />
+            ),
           },
           filters: [],
           table: {
-            onChangeSort: () => {},
             ...(columnStartSort
               ? {
                   sort: {

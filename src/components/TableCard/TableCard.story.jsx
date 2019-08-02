@@ -5,7 +5,7 @@ import { action } from '@storybook/addon-actions';
 
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 import { getCardMinSize } from '../../utils/componentUtilityFunctions';
-import { tableColumns, tableData, actions1, actions2, renderCustomCell } from '../../utils/sample';
+import { tableColumns, tableData, actions1, actions2 } from '../../utils/sample';
 
 import TableCard from './TableCard';
 
@@ -125,9 +125,23 @@ storiesOf('Table Card', module)
       CARD_SIZES.LARGE
     );
 
-    const tableCustomColumns = tableColumns.map((item, index) =>
-      index === 0 ? { ...item, renderDataFunction: renderCustomCell } : item
-    );
+    const tableDataWithIcon = tableData.map((item, index) => {
+      return index % 2
+        ? {
+            ...item,
+            rowIcon: {
+              color: 'green',
+              icon: 'icon--checkmark--solid',
+            },
+          }
+        : {
+            ...item,
+            rowIcon: {
+              color: 'red',
+              icon: 'icon--warning',
+            },
+          };
+    });
 
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
@@ -135,9 +149,9 @@ storiesOf('Table Card', module)
           title={text('title', 'Open Alerts')}
           id="table-list"
           content={{
-            columns: tableCustomColumns,
+            columns: tableColumns,
           }}
-          values={tableData}
+          values={tableDataWithIcon}
           onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
           size={size}
         />
@@ -191,7 +205,7 @@ storiesOf('Table Card', module)
               },
               {
                 id: 'other_description',
-                label: 'Different content to show',
+                label: 'Other content to show',
               },
             ],
           }}
