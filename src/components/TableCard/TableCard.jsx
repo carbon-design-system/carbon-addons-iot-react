@@ -308,9 +308,11 @@ const TableCard = ({
               .filter(v => v)[0]
           : null;
 
-        const matchingThresholdValue = matchingThreshold(thresholds, i.values);
+        const matchingThresholdValue = thresholds ? matchingThreshold(thresholds, i.values) : null;
         const icon = thresholds
-          ? { iconColumn: matchingThresholdValue ? matchingThresholdValue.type : null }
+          ? {
+              iconColumn: matchingThresholdValue ? matchingThresholdValue.type : null,
+            }
           : null;
 
         return {
