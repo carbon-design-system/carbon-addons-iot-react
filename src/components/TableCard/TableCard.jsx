@@ -3,7 +3,6 @@ import { OverflowMenu, OverflowMenuItem, Icon, Button } from 'carbon-components-
 import styled from 'styled-components';
 import moment from 'moment';
 import Download16 from '@carbon/icons-react/lib/download/16';
-import IconFilter from '@carbon/icons-react/lib/filter/20';
 
 import { CardPropTypes, TableCardPropTypes } from '../../constants/PropTypes';
 import Card from '../Card/Card';
@@ -120,51 +119,6 @@ const StyledIcon = styled(Icon)`
   `}
 `;
 
-const threholdIconRow = (thresholds, row) => {
-  const matchingThreshold = thresholds
-    .filter(t => {
-      switch (t.comparison) {
-        case '<':
-          return row.values[t.dataSourceId] < t.value;
-        case '>':
-          return row.values[t.dataSourceId] > t.value;
-        case '=':
-          return row.values[t.dataSourceId] === t.value;
-        case '<=':
-          return row.values[t.dataSourceId] <= t.value;
-        case '>=':
-          return row.values[t.dataSourceId] >= t.value;
-        default:
-          return false;
-      }
-    })
-    .concat([null])[0];
-
-  let threholdIcon = null;
-  if (matchingThreshold) {
-    switch (matchingThreshold.type) {
-      case 'LOW':
-        threholdIcon = (
-          <StyledIcon iconTitle={matchingThreshold.type} name="warning--glyph" color="#fdd13b" />
-        ); // yellow
-        break;
-      case 'HIGH':
-        threholdIcon = (
-          <StyledIcon iconTitle={matchingThreshold.type} name="warning--solid" color="#db1e28" />
-        ); // red
-        break;
-      case 'MEDIUM':
-        threholdIcon = (
-          <StyledIcon iconTitle={matchingThreshold.type} name="warning--solid" color="#fc7b1e" />
-        ); // orange
-        break;
-      default:
-        break;
-    }
-  }
-  return threholdIcon;
-};
-
 const TableCard = ({
   id,
   title,
@@ -216,6 +170,51 @@ const TableCard = ({
     ) : null;
   };
 
+  const threholdIconRow = cellItem => {
+    const matchingThreshold = thresholds
+      .filter(t => {
+        switch (t.comparison) {
+          case '<':
+            return cellItem.row[t.dataSourceId] < t.value;
+          case '>':
+            return cellItem.row[t.dataSourceId] > t.value;
+          case '=':
+            return cellItem.row[t.dataSourceId] === t.value;
+          case '<=':
+            return cellItem.row[t.dataSourceId] <= t.value;
+          case '>=':
+            return cellItem.row[t.dataSourceId] >= t.value;
+          default:
+            return false;
+        }
+      })
+      .concat([null])[0];
+
+    let threholdIcon = null;
+    if (matchingThreshold) {
+      switch (matchingThreshold.type) {
+        case 'LOW':
+          threholdIcon = (
+            <StyledIcon iconTitle={matchingThreshold.type} name="warning--glyph" color="#fdd13b" />
+          ); // yellow
+          break;
+        case 'HIGH':
+          threholdIcon = (
+            <StyledIcon iconTitle={matchingThreshold.type} name="warning--solid" color="#db1e28" />
+          ); // red
+          break;
+        case 'MEDIUM':
+          threholdIcon = (
+            <StyledIcon iconTitle={matchingThreshold.type} name="warning--solid" color="#fc7b1e" />
+          ); // orange
+          break;
+        default:
+          break;
+      }
+    }
+    return threholdIcon;
+  };
+
   // always add the last action column has default
   const actionColumn = [
     {
@@ -235,6 +234,7 @@ const TableCard = ({
       name: '',
       width: '20px',
       isSortable: false,
+      renderDataFunction: threholdIconRow,
       priority: 1,
     },
   ];
@@ -293,13 +293,9 @@ const TableCard = ({
               .filter(v => v)[0]
           : null;
 
-        // threhold icon to be rendered
-        const icon = thresholds ? { iconColumn: threholdIconRow(thresholds, i) } : null;
-
         return {
           id: i.id,
           values: {
-            ...icon,
             ...i.values,
             ...action,
             ...valueUpdated,
