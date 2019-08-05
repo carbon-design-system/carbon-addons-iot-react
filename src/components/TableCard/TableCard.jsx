@@ -3,6 +3,7 @@ import { OverflowMenu, OverflowMenuItem, Icon, Button } from 'carbon-components-
 import styled from 'styled-components';
 import moment from 'moment';
 import Download16 from '@carbon/icons-react/lib/download/16';
+import IconFilter from '@carbon/icons-react/lib/filter/20';
 
 import { CardPropTypes, TableCardPropTypes } from '../../constants/PropTypes';
 import Card from '../Card/Card';
@@ -119,10 +120,55 @@ const StyledIcon = styled(Icon)`
   `}
 `;
 
+const threholdIconRow = (thresholds, row) => {
+  const matchingThreshold = thresholds
+    .filter(t => {
+      switch (t.comparison) {
+        case '<':
+          return row.values[t.dataSourceId] < t.value;
+        case '>':
+          return row.values[t.dataSourceId] > t.value;
+        case '=':
+          return row.values[t.dataSourceId] === t.value;
+        case '<=':
+          return row.values[t.dataSourceId] <= t.value;
+        case '>=':
+          return row.values[t.dataSourceId] >= t.value;
+        default:
+          return false;
+      }
+    })
+    .concat([null])[0];
+
+  let threholdIcon = null;
+  if (matchingThreshold) {
+    switch (matchingThreshold.type) {
+      case 'LOW':
+        threholdIcon = (
+          <StyledIcon iconTitle={matchingThreshold.type} name="warning--glyph" color="#fdd13b" />
+        ); // yellow
+        break;
+      case 'HIGH':
+        threholdIcon = (
+          <StyledIcon iconTitle={matchingThreshold.type} name="warning--solid" color="#db1e28" />
+        ); // red
+        break;
+      case 'MEDIUM':
+        threholdIcon = (
+          <StyledIcon iconTitle={matchingThreshold.type} name="warning--solid" color="#fc7b1e" />
+        ); // orange
+        break;
+      default:
+        break;
+    }
+  }
+  return threholdIcon;
+};
+
 const TableCard = ({
   id,
   title,
-  content: { columns = [], showHeader, expandedRows, sort },
+  content: { columns = [], showHeader, expandedRows, sort, thresholds },
   size,
   onCardAction,
   values: data,
@@ -194,9 +240,8 @@ const TableCard = ({
   ];
 
   const hasActionColumn = data.filter(i => i.actions).length > 0;
-  const hasIconColumn = data.filter(i => i.rowIcon).length > 0;
 
-  const newColumns = hasIconColumn ? [...iconColumn, ...columns] : columns;
+  const newColumns = thresholds ? [...iconColumn, ...columns] : columns;
   const columnsToRender = newColumns
     .map(i => ({
       ...i,
@@ -248,12 +293,8 @@ const TableCard = ({
               .filter(v => v)[0]
           : null;
 
-        // check if any row has the rowIcon , if so add as a new row
-        const icon = i.rowIcon
-          ? {
-              iconColumn: <StyledIcon name={i.rowIcon.icon} color={i.rowIcon.color} />,
-            }
-          : null;
+        // threhold icon to be rendered
+        const icon = thresholds ? { iconColumn: threholdIconRow(thresholds, i) } : null;
 
         return {
           id: i.id,

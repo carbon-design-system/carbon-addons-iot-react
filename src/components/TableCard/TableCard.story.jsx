@@ -122,26 +122,36 @@ storiesOf('Table Card', module)
     const size = select(
       'size',
       [CARD_SIZES.LARGE, CARD_SIZES.XLARGE, CARD_SIZES.TALL],
-      CARD_SIZES.LARGE
+      CARD_SIZES.XLARGE
     );
 
-    const tableDataWithIcon = tableData.map((item, index) => {
-      return index % 2
-        ? {
-            ...item,
-            rowIcon: {
-              color: 'green',
-              icon: 'icon--checkmark--solid',
-            },
-          }
-        : {
-            ...item,
-            rowIcon: {
-              color: 'red',
-              icon: 'icon--warning',
-            },
-          };
-    });
+    const thresholds = [
+      // this threshold is applied to the whole row, not a particular attribute
+      {
+        dataSourceId: 'count',
+        comparison: '<',
+        value: 5,
+        type: 'LOW', // High threshold, medium, or low used for sorting and defined filtration
+      },
+      {
+        dataSourceId: 'count',
+        comparison: '>=',
+        value: 10,
+        type: 'HIGH', // High threshold, medium, or low used for sorting and defined filtration
+      },
+      {
+        dataSourceId: 'count',
+        comparison: '=',
+        value: 7,
+        type: 'MEDIUM', // High threshold, medium, or low used for sorting and defined filtration
+      },
+      {
+        dataSourceId: 'alert',
+        comparison: '=',
+        value: 7,
+        type: 'MEDIUM', // High threshold, medium, or low used for sorting and defined filtration
+      },
+    ];
 
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
@@ -150,8 +160,9 @@ storiesOf('Table Card', module)
           id="table-list"
           content={{
             columns: tableColumns,
+            thresholds,
           }}
-          values={tableDataWithIcon}
+          values={tableData}
           onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
           size={size}
         />
