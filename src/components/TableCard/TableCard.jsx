@@ -119,6 +119,27 @@ const StyledIcon = styled(Icon)`
   `}
 `;
 
+const matchingThreshold = (thresholds, item) => {
+  return thresholds
+    .filter(t => {
+      switch (t.comparison) {
+        case '<':
+          return item[t.dataSourceId] < t.value;
+        case '>':
+          return item[t.dataSourceId] > t.value;
+        case '=':
+          return item[t.dataSourceId] === t.value;
+        case '<=':
+          return item[t.dataSourceId] <= t.value;
+        case '>=':
+          return item[t.dataSourceId] >= t.value;
+        default:
+          return false;
+      }
+    })
+    .concat([null])[0];
+};
+
 const TableCard = ({
   id,
   title,
@@ -171,41 +192,35 @@ const TableCard = ({
   };
 
   const threholdIconRow = cellItem => {
-    const matchingThreshold = thresholds
-      .filter(t => {
-        switch (t.comparison) {
-          case '<':
-            return cellItem.row[t.dataSourceId] < t.value;
-          case '>':
-            return cellItem.row[t.dataSourceId] > t.value;
-          case '=':
-            return cellItem.row[t.dataSourceId] === t.value;
-          case '<=':
-            return cellItem.row[t.dataSourceId] <= t.value;
-          case '>=':
-            return cellItem.row[t.dataSourceId] >= t.value;
-          default:
-            return false;
-        }
-      })
-      .concat([null])[0];
-
+    const matchingThresholdValue = matchingThreshold(thresholds, cellItem.row);
     let threholdIcon = null;
-    if (matchingThreshold) {
-      switch (matchingThreshold.type) {
+    if (matchingThresholdValue) {
+      switch (matchingThresholdValue.type) {
         case 'LOW':
           threholdIcon = (
-            <StyledIcon iconTitle={matchingThreshold.type} name="warning--glyph" color="#fdd13b" />
+            <StyledIcon
+              iconTitle={matchingThresholdValue.type}
+              name="warning--glyph"
+              color="#fdd13b"
+            />
           ); // yellow
           break;
         case 'HIGH':
           threholdIcon = (
-            <StyledIcon iconTitle={matchingThreshold.type} name="warning--solid" color="#db1e28" />
+            <StyledIcon
+              iconTitle={matchingThresholdValue.type}
+              name="warning--solid"
+              color="#db1e28"
+            />
           ); // red
           break;
         case 'MEDIUM':
           threholdIcon = (
-            <StyledIcon iconTitle={matchingThreshold.type} name="warning--solid" color="#fc7b1e" />
+            <StyledIcon
+              iconTitle={matchingThresholdValue.type}
+              name="warning--solid"
+              color="#fc7b1e"
+            />
           ); // orange
           break;
         default:
@@ -233,7 +248,7 @@ const TableCard = ({
       id: 'iconColumn',
       name: '',
       width: '20px',
-      isSortable: false,
+      isSortable: true,
       renderDataFunction: threholdIconRow,
       priority: 1,
     },
@@ -247,7 +262,7 @@ const TableCard = ({
       ...i,
       id: i.dataSourceId ? i.dataSourceId : i.id,
       name: i.label ? i.label : i.name,
-      isSortable: true, // i.isSortable ? i.isSortable : true,
+      isSortable: true,
       width: i.width ? i.width : size === CARD_SIZES.TALL ? '150px' : '', // force the text wrap
       filter: i.filter ? i.filter : {}, // if filter not send we send empty object
     }))
@@ -293,9 +308,15 @@ const TableCard = ({
               .filter(v => v)[0]
           : null;
 
+        const matchingThresholdValue = matchingThreshold(thresholds, i.values);
+        const icon = thresholds
+          ? { iconColumn: matchingThresholdValue ? matchingThresholdValue.type : null }
+          : null;
+
         return {
           id: i.id,
           values: {
+            ...icon,
             ...i.values,
             ...action,
             ...valueUpdated,
