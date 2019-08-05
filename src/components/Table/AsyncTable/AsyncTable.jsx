@@ -174,7 +174,7 @@ const AsyncTable = ({ fetchData }) => {
     },
     table: {
       onChangeSort: column => {
-        dispatch(baseTableActions.tableColumnSort(column));
+        dispatch(baseTableActions.tableColumnSort(column, columns));
       },
       onRowSelected: (rowId, isSelected) => {
         dispatch(baseTableActions.tableRowSelect(rowId, isSelected));

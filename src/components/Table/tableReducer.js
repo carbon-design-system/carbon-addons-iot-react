@@ -182,7 +182,15 @@ export const tableReducer = (state = {}, action) => {
       const currentSort = get(state, 'view.table.sort');
       const currentSortDir =
         currentSort && currentSort.columnId === columnId ? currentSort.direction : 'NONE';
+
       const nextSortDir = sorts[(sorts.findIndex(i => i === currentSortDir) + 1) % sorts.length];
+
+      // validate if there is any column of timestamp type
+      const isTimestampColumn =
+        action.columns &&
+        action.columns.filter(column => column.id === columnId && column.type === 'TIMESTAMP')
+          .length > 0;
+
       return baseTableReducer(
         update(state, {
           view: {
@@ -193,7 +201,8 @@ export const tableReducer = (state = {}, action) => {
                     ? getSortedData(
                         state.view.table.filteredData || state.data,
                         columnId,
-                        nextSortDir
+                        nextSortDir,
+                        isTimestampColumn
                       )
                     : filterData(state.data, state.view.filters), // reset to original filters
               },

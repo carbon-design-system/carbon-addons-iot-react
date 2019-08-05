@@ -2495,8 +2495,8 @@ export const tableColumns = [
     priority: 1,
   },
   {
-    dataSourceId: 'creator',
-    label: 'Creator',
+    dataSourceId: 'count',
+    label: 'Count',
     priority: 3,
     filter: { placeholderText: 'pick a string' },
   },
@@ -2513,7 +2513,7 @@ export const tableData = [
     id: `row-1`,
     values: {
       alert: 'AHI005 Asset failure',
-      creator: 'ME',
+      count: 10,
       hour: 1563877570000,
       long_description: 'long description for a given event payload',
     },
@@ -2521,8 +2521,8 @@ export const tableData = [
   {
     id: `row-2`,
     values: {
-      alert: 'AHI003 process need to optimize, adjust X variables',
-      creator: 'ME',
+      alert: 'AHI003 process need to optimize adjust X variables',
+      count: 1,
       hour: 1563873970000,
       long_description: 'long description for a given event payload',
     },
@@ -2530,17 +2530,17 @@ export const tableData = [
   {
     id: `row-3`,
     values: {
-      alert: 'AHI001 proccess need to optimize, adjust Y variables',
-      creator: 'Line Supervisor',
-      hour: 1563873970000,
+      alert: 'AHI001 proccess need to optimize adjust Y variables',
+      count: 3,
+      hour: 1564756946000,
       long_description: 'long description for a given event payload',
     },
   },
   {
     id: `row-4`,
     values: {
-      alert: 'AHI001 proccess need to optimize, adjust Y variables',
-      creator: 'Line Supervisor',
+      alert: 'AHI001 proccess need to optimize adjust Y variables',
+      count: 5,
       hour: 1563877570000,
       other_description: 'other description for a given event payload',
     },
@@ -2549,7 +2549,7 @@ export const tableData = [
     id: `row-5`,
     values: {
       alert: 'AHI001 proccess need to optimize',
-      creator: 'Line Supervisor',
+      count: 10,
       hour: 1563874210000,
     },
   },
@@ -2557,7 +2557,7 @@ export const tableData = [
     id: `row-6`,
     values: {
       alert: 'AHI001 proccess need to optimize.',
-      creator: 'Line Supervisor',
+      count: 30,
       hour: 1563874210000,
     },
   },
@@ -2565,39 +2565,39 @@ export const tableData = [
     id: `row-7`,
     values: {
       alert: 'AHI001 proccess need to optimize',
-      creator: 'Line Supervisor',
+      count: 9,
       hour: 1563870610000,
     },
   },
   {
     id: `row-8`,
     values: {
-      alert: 'AHI001 proccess need to optimize, adjust Y variables',
-      creator: 'Line Supervisor',
+      alert: 'AHI001 proccess need to optimize adjust Y variables',
+      count: 7,
       hour: 1563870610000,
     },
   },
   {
     id: `row-9`,
     values: {
-      alert: 'AHI001 proccess need to optimize, adjust Y variables',
-      creator: 'Line Supervisor',
+      alert: 'AHI001 proccess need to optimize adjust Y variables',
+      count: 0,
       hour: 1563873970000,
     },
   },
   {
     id: `row-10`,
     values: {
-      alert: 'AHI010 proccess need to optimize, adjust Y variables',
-      creator: 'Admin',
+      alert: 'AHI010 proccess need to optimize adjust Y variables',
+      count: 2,
       hour: 1563873970000,
     },
   },
   {
     id: `row-11`,
     values: {
-      alert: 'AHI010 proccess need to optimize, adjust Y variables',
-      creator: 'Admin',
+      alert: 'AHI010 proccess need to optimize adjust Y variables',
+      count: 5,
       hour: 1563877570000,
     },
   },
