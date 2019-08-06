@@ -192,7 +192,6 @@ const WizardInline = ({
         />
         {error ? (
           <StyledMessageBox
-            key={JSON.stringify(error)}
             title={error}
             subtitle=""
             kind="error"
