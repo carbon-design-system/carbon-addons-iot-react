@@ -29,7 +29,7 @@ const defaultProps = {
 /**
  * This component renders a hotspot with content over an image
  */
-const Hotspot = ({ x, y, content, icon, color, width, height }) => {
+const Hotspot = ({ x, y, content, icon, color, width, height, ...others }) => {
   const hotspotStyle = {
     position: 'absolute',
     top: `${y}%`,
@@ -54,6 +54,7 @@ const Hotspot = ({ x, y, content, icon, color, width, height }) => {
   return (
     <div style={hotspotStyle}>
       <Tooltip
+        {...others}
         triggerText={
           icon ? (
             <Icon fill={color} name={icon} width={`${width}px`} height={`${height}px`} />
