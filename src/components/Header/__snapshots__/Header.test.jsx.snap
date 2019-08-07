@@ -27,14 +27,9 @@ exports[`Header testcases should render 1`] = `
       key="menu-item-alerts-global"
       onClick={[MockFunction]}
     >
-      <Notification20
+      <ForwardRef(Notification20)
         description="Icon"
         fill="white"
-        height={20}
-        preserveAspectRatio="xMidYMid meet"
-        viewBox="0 0 32 32"
-        width={20}
-        xmlns="http://www.w3.org/2000/svg"
       />
     </Header__StyledGlobalAction>
     <ForwardRef
@@ -57,14 +52,9 @@ exports[`Header testcases should render 1`] = `
         <Component>
           <span>
             JohnDoe@ibm.com
-            <UserAvatar20
+            <ForwardRef(UserAvatar20)
               description="Icon"
               fill="white"
-              height={20}
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 32 32"
-              width={20}
-              xmlns="http://www.w3.org/2000/svg"
             />
           </span>
         </Component>
