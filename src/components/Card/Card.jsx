@@ -38,7 +38,6 @@ const OptimizedSkeletonText = pure(SkeletonText);
 
 /** Full card */
 const CardWrapper = styled.div`
-  border: solid 1px #ddd;
   background: white;
   height: ${props => props.dimensions.y}px;
   min-width: ${props => props.dimensions.x}px;
