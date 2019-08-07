@@ -131,25 +131,25 @@ storiesOf('Table Card', module)
         dataSourceId: 'count',
         comparison: '<',
         value: 5,
-        type: 'LOW', // High threshold, medium, or low used for sorting and defined filtration
+        severity: 3, // High threshold, medium, or low used for sorting and defined filtration
       },
       {
         dataSourceId: 'count',
         comparison: '>=',
         value: 10,
-        type: 'HIGH', // High threshold, medium, or low used for sorting and defined filtration
+        severity: 1, // High threshold, medium, or low used for sorting and defined filtration
       },
       {
         dataSourceId: 'count',
         comparison: '=',
         value: 7,
-        type: 'MEDIUM', // High threshold, medium, or low used for sorting and defined filtration
+        severity: 2, // High threshold, medium, or low used for sorting and defined filtration
       },
       {
         dataSourceId: 'alert',
         comparison: '=',
         value: 7,
-        type: 'MEDIUM', // High threshold, medium, or low used for sorting and defined filtration
+        severity: 2, // High threshold, medium, or low used for sorting and defined filtration
       },
     ];
 

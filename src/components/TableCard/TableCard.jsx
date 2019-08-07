@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { OverflowMenu, OverflowMenuItem, Icon, Button } from 'carbon-components-react';
 import styled from 'styled-components';
 import moment from 'moment';
@@ -196,33 +196,15 @@ const TableCard = ({
     const matchingThresholdValue = matchingThreshold(thresholds, cellItem.row);
     let threholdIcon = null;
     if (matchingThresholdValue) {
-      switch (matchingThresholdValue.type) {
-        case 'LOW':
-          threholdIcon = (
-            <StyledIcon
-              iconTitle={matchingThresholdValue.type}
-              name="warning--glyph"
-              color="#fdd13b"
-            />
-          ); // yellow
+      switch (matchingThresholdValue.severity) {
+        case 3:
+          threholdIcon = <StyledIcon iconTitle="LOW" name="warning--glyph" color="#fdd13b" />; // yellow
           break;
-        case 'HIGH':
-          threholdIcon = (
-            <StyledIcon
-              iconTitle={matchingThresholdValue.type}
-              name="warning--solid"
-              color="#db1e28"
-            />
-          ); // red
+        case 1:
+          threholdIcon = <StyledIcon iconTitle="HIGH" name="warning--solid" color="#db1e28" />; // red
           break;
-        case 'MEDIUM':
-          threholdIcon = (
-            <StyledIcon
-              iconTitle={matchingThresholdValue.type}
-              name="warning--solid"
-              color="#fc7b1e"
-            />
-          ); // orange
+        case 2:
+          threholdIcon = <StyledIcon iconTitle="MEDIUM" name="warning--solid" color="#fc7b1e" />; // orange
           break;
         default:
           break;
@@ -291,7 +273,7 @@ const TableCard = ({
     .filter(i => i);
 
   // if we're in editable mode, generate fake data
-  const tableDataUpdated = isEditable
+  const tableData = isEditable
     ? generateTableSampleValues(columns)
     : hasActionColumn || filteredTimestampColumns.length
     ? data.map(i => {
@@ -312,7 +294,7 @@ const TableCard = ({
         const matchingThresholdValue = thresholds ? matchingThreshold(thresholds, i.values) : null;
         const icon = thresholds
           ? {
-              iconColumn: matchingThresholdValue ? matchingThresholdValue.type : null,
+              iconColumn: matchingThresholdValue ? matchingThresholdValue.severity : null,
             }
           : null;
 
@@ -327,8 +309,6 @@ const TableCard = ({
         };
       })
     : data;
-
-  const [tableData, setTableData] = useState(tableDataUpdated);
 
   // format expanded rows to send to Table component
   const expandedRowsFormatted = [];
@@ -349,46 +329,6 @@ const TableCard = ({
       });
     });
   }
-
-  const customColumnSort = (columnId, direction) => {
-    const tableDataSorted = tableData.map(i => i);
-    const val = direction === 'ASC' ? -1 : 1;
-    if (columnId === 'iconColumn') {
-      const tableDataSorted2 = tableDataSorted.sort((a, b) => {
-        if (
-          a.values[columnId] === 'LOW' &&
-          (b.values[columnId] === 'MEDIUM' || b.values[columnId] === 'HIGH')
-        ) {
-          // a is minor then b  -> -1
-          return -val;
-        }
-
-        if (a.values[columnId] === 'MEDIUM' && b.values[columnId] === 'LOW') {
-          // a is bigger than b -> 1
-          return val;
-        }
-        if (a.values[columnId] === 'MEDIUM' && b.values[columnId] === 'HIGH') {
-          // a is minor than b -> -1
-          return -val;
-        }
-        if (
-          a.values[columnId] === 'HIGH' &&
-          (b.values[columnId] === 'LOW' || b.values[columnId] === 'MEDIUM')
-        ) {
-          // a is bigger than b -> 1
-          return val;
-        }
-        if (a.values[columnId] === null) {
-          return 1;
-        }
-        if (b.values[columnId] === null) {
-          return -1;
-        }
-        return 0;
-      });
-      setTableData(tableDataSorted2);
-    }
-  };
 
   const csvDownloadHandler = () => {
     let csv = '';
@@ -446,7 +386,7 @@ const TableCard = ({
           table: {
             onRowClicked: () => {},
             onRowExpanded: () => {},
-            onChangeSort: customColumnSort,
+            onChangeSort: () => {},
           },
           pagination: { onChangePage: () => {} },
           toolbar: {
