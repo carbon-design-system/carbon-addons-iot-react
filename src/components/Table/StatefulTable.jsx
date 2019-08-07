@@ -57,7 +57,7 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
   const {
     view,
     view: {
-      table: { filteredData, selectedIds },
+      table: { filteredData, selectedIds, sort },
     },
   } = state;
 
@@ -124,8 +124,9 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
     },
     table: {
       onChangeSort: column => {
+        const sortDirection = sort ? sort.direction : undefined;
         dispatch(tableColumnSort(column, columns));
-        callbackParent(onChangeSort, column);
+        callbackParent(onChangeSort, column, sortDirection);
       },
       onRowSelected: (rowId, isSelected) => {
         dispatch(tableRowSelect(rowId, isSelected, options.hasRowSelection));

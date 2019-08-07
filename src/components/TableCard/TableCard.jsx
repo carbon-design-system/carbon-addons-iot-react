@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { OverflowMenu, OverflowMenuItem, Icon, Button } from 'carbon-components-react';
 import styled from 'styled-components';
 import moment from 'moment';
 import Download16 from '@carbon/icons-react/lib/download/16';
+import fileDownload from 'js-file-download';
 
 import { CardPropTypes, TableCardPropTypes } from '../../constants/PropTypes';
 import Card from '../Card/Card';
@@ -290,7 +291,7 @@ const TableCard = ({
     .filter(i => i);
 
   // if we're in editable mode, generate fake data
-  const tableData = isEditable
+  const tableDataUpdated = isEditable
     ? generateTableSampleValues(columns)
     : hasActionColumn || filteredTimestampColumns.length
     ? data.map(i => {
@@ -327,6 +328,8 @@ const TableCard = ({
       })
     : data;
 
+  const [tableData, setTableData] = useState(tableDataUpdated);
+
   // format expanded rows to send to Table component
   const expandedRowsFormatted = [];
   if (expandedRows && expandedRows.length) {
@@ -347,6 +350,46 @@ const TableCard = ({
     });
   }
 
+  const customColumnSort = (columnId, direction) => {
+    const tableDataSorted = tableData.map(i => i);
+    const val = direction === 'ASC' ? -1 : 1;
+    if (columnId === 'iconColumn') {
+      const tableDataSorted2 = tableDataSorted.sort((a, b) => {
+        if (
+          a.values[columnId] === 'LOW' &&
+          (b.values[columnId] === 'MEDIUM' || b.values[columnId] === 'HIGH')
+        ) {
+          // a is minor then b  -> -1
+          return -val;
+        }
+
+        if (a.values[columnId] === 'MEDIUM' && b.values[columnId] === 'LOW') {
+          // a is bigger than b -> 1
+          return val;
+        }
+        if (a.values[columnId] === 'MEDIUM' && b.values[columnId] === 'HIGH') {
+          // a is minor than b -> -1
+          return -val;
+        }
+        if (
+          a.values[columnId] === 'HIGH' &&
+          (b.values[columnId] === 'LOW' || b.values[columnId] === 'MEDIUM')
+        ) {
+          // a is bigger than b -> 1
+          return val;
+        }
+        if (a.values[columnId] === null) {
+          return 1;
+        }
+        if (b.values[columnId] === null) {
+          return -1;
+        }
+        return 0;
+      });
+      setTableData(tableDataSorted2);
+    }
+  };
+
   const csvDownloadHandler = () => {
     let csv = '';
     // get all keys availavle and merge it
@@ -365,23 +408,7 @@ const TableCard = ({
 
     const exportedFilenmae = `${title}.csv` || 'export.csv';
 
-    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
-    if (navigator.msSaveBlob) {
-      // IE 10+
-      navigator.msSaveBlob(blob, exportedFilenmae);
-    } else {
-      const link = document.createElement('a');
-      if (link.download !== undefined) {
-        // Browsers that support HTML5 download attribute
-        const url = URL.createObjectURL(blob);
-        link.setAttribute('href', url);
-        link.setAttribute('download', exportedFilenmae);
-        link.style.visibility = 'hidden';
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-      }
-    }
+    fileDownload(csv, exportedFilenmae);
   };
 
   // is columns recieved is different from the columnsToRender show card expand
@@ -419,7 +446,7 @@ const TableCard = ({
           table: {
             onRowClicked: () => {},
             onRowExpanded: () => {},
-            onChangeSort: () => {},
+            onChangeSort: customColumnSort,
           },
           pagination: { onChangePage: () => {} },
           toolbar: {
