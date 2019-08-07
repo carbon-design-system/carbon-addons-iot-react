@@ -36,7 +36,14 @@ export const getSortedData = (inputData, columnId, direction, isTimestampColumn)
 
   return sortedData.sort((a, b) => {
     const val = direction === 'ASC' ? -1 : 1;
+    if (a.values[columnId] === null) {
+      return 1;
+    }
+    if (b.values[columnId] === null) {
+      return -1;
+    }
     if (isTimestampColumn) {
+      // support the sort if we have column with timestamp
       const dateA = moment(a.values[columnId]);
       const dateB = moment(b.values[columnId]);
 
@@ -57,6 +64,7 @@ export const getSortedData = (inputData, columnId, direction, isTimestampColumn)
     if (a.values[columnId] > b.values[columnId]) {
       return -val;
     }
+
     return 0;
   });
 };

@@ -3,6 +3,7 @@ import { OverflowMenu, OverflowMenuItem, Icon, Button } from 'carbon-components-
 import styled from 'styled-components';
 import moment from 'moment';
 import Download16 from '@carbon/icons-react/lib/download/16';
+import fileDownload from 'js-file-download';
 
 import { CardPropTypes, TableCardPropTypes } from '../../constants/PropTypes';
 import Card from '../Card/Card';
@@ -195,33 +196,15 @@ const TableCard = ({
     const matchingThresholdValue = matchingThreshold(thresholds, cellItem.row);
     let threholdIcon = null;
     if (matchingThresholdValue) {
-      switch (matchingThresholdValue.type) {
-        case 'LOW':
-          threholdIcon = (
-            <StyledIcon
-              iconTitle={matchingThresholdValue.type}
-              name="warning--glyph"
-              color="#fdd13b"
-            />
-          ); // yellow
+      switch (matchingThresholdValue.severity) {
+        case 3:
+          threholdIcon = <StyledIcon iconTitle="LOW" name="warning--glyph" color="#fdd13b" />; // yellow
           break;
-        case 'HIGH':
-          threholdIcon = (
-            <StyledIcon
-              iconTitle={matchingThresholdValue.type}
-              name="warning--solid"
-              color="#db1e28"
-            />
-          ); // red
+        case 1:
+          threholdIcon = <StyledIcon iconTitle="HIGH" name="warning--solid" color="#db1e28" />; // red
           break;
-        case 'MEDIUM':
-          threholdIcon = (
-            <StyledIcon
-              iconTitle={matchingThresholdValue.type}
-              name="warning--solid"
-              color="#fc7b1e"
-            />
-          ); // orange
+        case 2:
+          threholdIcon = <StyledIcon iconTitle="MEDIUM" name="warning--solid" color="#fc7b1e" />; // orange
           break;
         default:
           break;
@@ -311,7 +294,7 @@ const TableCard = ({
         const matchingThresholdValue = thresholds ? matchingThreshold(thresholds, i.values) : null;
         const icon = thresholds
           ? {
-              iconColumn: matchingThresholdValue ? matchingThresholdValue.type : null,
+              iconColumn: matchingThresholdValue ? matchingThresholdValue.severity : null,
             }
           : null;
 
@@ -365,23 +348,7 @@ const TableCard = ({
 
     const exportedFilenmae = `${title}.csv` || 'export.csv';
 
-    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
-    if (navigator.msSaveBlob) {
-      // IE 10+
-      navigator.msSaveBlob(blob, exportedFilenmae);
-    } else {
-      const link = document.createElement('a');
-      if (link.download !== undefined) {
-        // Browsers that support HTML5 download attribute
-        const url = URL.createObjectURL(blob);
-        link.setAttribute('href', url);
-        link.setAttribute('download', exportedFilenmae);
-        link.style.visibility = 'hidden';
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-      }
-    }
+    fileDownload(csv, exportedFilenmae);
   };
 
   // is columns recieved is different from the columnsToRender show card expand
