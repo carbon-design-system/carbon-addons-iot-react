@@ -74,6 +74,8 @@ const propTypes = {
   cardDimensions: CardSizesToDimensionsPropTypes,
   /** Optional filter that should be rendered top right */
   filter: PropTypes.node,
+  /** Optional sidebar content that should be rendered left of the dashboard cards */
+  sidebar: PropTypes.node,
   /** All the labels that need translation */
   i18n: PropTypes.shape({
     lastUpdatedLabel: PropTypes.string,
@@ -121,6 +123,7 @@ const defaultProps = {
   dashboardBreakpoints: DASHBOARD_BREAKPOINTS,
   dashboardColumns: DASHBOARD_COLUMNS,
   filter: null,
+  sidebar: null,
 };
 
 const GridLayout = WidthProvider(Responsive);
@@ -146,6 +149,7 @@ const Dashboard = ({
   cardDimensions,
   dashboardColumns,
   filter,
+  sidebar,
   rowHeight,
   layouts,
   isEditable,
@@ -304,30 +308,35 @@ const Dashboard = ({
         lastUpdatedLabel={!isEditable ? lastUpdatedLabel : null}
         filter={filter}
       />
-      <StyledGridLayout
-        layouts={generatedLayouts}
-        compactType="vertical"
-        cols={dashboardColumns}
-        breakpoints={dashboardBreakpoints}
-        margin={[GUTTER, GUTTER]}
-        rowHeight={rowHeight[breakpoint]}
-        preventCollision={false}
-        // Stop the initial animation
-        shouldAnimate={isEditable}
-        onLayoutChange={(layout, allLayouts) =>
-          onLayoutChange && onLayoutChange(layout, allLayouts)
-        }
-        onBreakpointChange={newBreakpoint => {
-          setBreakpoint(newBreakpoint);
-          if (onBreakpointChange) {
-            onBreakpointChange(newBreakpoint);
-          }
-        }}
-        isResizable={false}
-        isDraggable={isEditable}
-      >
-        {gridContents}
-      </StyledGridLayout>
+      <div style={{ display: 'flex' }}>
+        {sidebar && <div style={{ flex: 0 }}>{sidebar}</div>}
+        <div style={{ flex: 1 }}>
+          <StyledGridLayout
+            layouts={generatedLayouts}
+            compactType="vertical"
+            cols={dashboardColumns}
+            breakpoints={dashboardBreakpoints}
+            margin={[GUTTER, GUTTER]}
+            rowHeight={rowHeight[breakpoint]}
+            preventCollision={false}
+            // Stop the initial animation
+            shouldAnimate={isEditable}
+            onLayoutChange={(layout, allLayouts) =>
+              onLayoutChange && onLayoutChange(layout, allLayouts)
+            }
+            onBreakpointChange={newBreakpoint => {
+              setBreakpoint(newBreakpoint);
+              if (onBreakpointChange) {
+                onBreakpointChange(newBreakpoint);
+              }
+            }}
+            isResizable={false}
+            isDraggable={isEditable}
+          >
+            {gridContents}
+          </StyledGridLayout>
+        </div>
+      </div>
     </div>
   );
 };

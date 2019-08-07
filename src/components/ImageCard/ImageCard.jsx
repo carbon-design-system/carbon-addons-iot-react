@@ -1,11 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-import ImageHotspots from 'react-image-hotspots';
 import Image32 from '@carbon/icons-react/lib/image/32';
 
 import { ImageCardPropTypes, CardPropTypes } from '../../constants/PropTypes';
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 import Card from '../Card/Card';
+
+import ImageHotspots from './ImageHotspots';
 
 const ContentWrapper = styled.div`
   height: 100%;
@@ -33,13 +34,7 @@ const ImageCard = ({ title, content, size, onCardAction, isEditable, ...others }
             isEditable && !src ? (
               <Image32 width="100%" height="100%" />
             ) : content && src ? (
-              <ImageHotspots
-                src={src}
-                alt={alt}
-                hotspots={hotspots}
-                hideFullscreenControl
-                hideMinimap
-              />
+              <ImageHotspots src={src} alt={alt} hotspots={hotspots} hideFullscreenControl />
             ) : (
               <p>Error retrieving image.</p>
             )

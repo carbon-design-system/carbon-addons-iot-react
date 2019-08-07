@@ -190,13 +190,6 @@ const WizardInline = ({
           onClose={onClose}
           stepWidth={stepWidth}
         />
-
-        <StyledWizardContainer>
-          {sidebar ? <WizardSidebar sidebar={sidebar} /> : null}
-          <div data-id="WizardInlineContent" className="bx--modal-content">
-            <WizardContent component={currentItemObj.component} />
-          </div>
-        </StyledWizardContainer>
         {error ? (
           <StyledMessageBox
             title={error}
@@ -205,6 +198,14 @@ const WizardInline = ({
             onCloseButtonClick={handleClearError}
           />
         ) : null}
+
+        <StyledWizardContainer>
+          {sidebar ? <WizardSidebar sidebar={sidebar} /> : null}
+          <div data-id="WizardInlineContent" className="bx--modal-content">
+            <WizardContent component={currentItemObj.component} />
+          </div>
+        </StyledWizardContainer>
+
         <StyledFooter className={className}>
           <div data-id="WizardInlineFooter" className="bx--modal-footer">
             <WizardFooter

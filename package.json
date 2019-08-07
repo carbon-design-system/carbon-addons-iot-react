@@ -45,7 +45,6 @@
     "react-dnd-html5-backend": "2.5.1",
     "react-dnd-test-backend": "^7.2.0",
     "react-grid-layout": "^0.16.6",
-    "react-image-hotspots": "^1.4.1",
     "react-resizable": "^1.8.0",
     "react-sizeme": "^2.6.3",
     "react-transition-group": "^2.6.0",

@@ -11403,10 +11403,6 @@ react-grid-layout@^0.16.6:
     react-draggable "3.x"
     react-resizable "1.x"
 
-react-image-hotspots@^1.4.1:
-  version "1.4.1"
-  resolved "https://registry.yarnpkg.com/react-image-hotspots/-/react-image-hotspots-1.4.1.tgz#68e324cb93e99f3457ddcfb62fa4c255e6da5deb"
-
 react-inspector@^2.3.0:
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/react-inspector/-/react-inspector-2.3.1.tgz#f0eb7f520669b545b441af9d38ec6d706e5f649c"
