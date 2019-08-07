@@ -35,6 +35,7 @@ const Hotspot = ({ x, y, content, icon, color, width, height, ...others }) => {
     top: `${y}%`,
     left: `${x}%`,
     fontFamily: 'Sans-Serif',
+    pointerEvents: 'auto',
   };
 
   const defaultIcon = (
