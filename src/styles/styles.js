@@ -2,7 +2,7 @@
 // TO BE DEPRECATED
 // ----------------
 // These definitions support legacy styled-component styles and are to be deprecated in favor of Sass.
-// Please see the new Sass entry point: ./src/index.scss
+// Please see the new Sass entry point: ./src/styles.scss
 
 export const COLORS = {
   superLightGray: '#f9fafb',
