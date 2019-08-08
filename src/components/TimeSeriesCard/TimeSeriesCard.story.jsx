@@ -1009,9 +1009,10 @@ storiesOf('TimeSeriesCard (Experimental)', module)
                 color: COLORS.TEAL,
               },
             ],
+            xLabel: text('xLabel', 'Time'),
             timeDataSourceId: 'timestamp',
           })}
-          interval="hour"
+          interval={select('interval', ['hour', 'day', 'week', 'month', 'year'], 'hour')}
           breakpoint="lg"
           values={[]}
           size={size}
