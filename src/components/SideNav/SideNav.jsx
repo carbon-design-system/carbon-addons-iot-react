@@ -4,86 +4,11 @@ import {
   SideNavLink,
   SideNavMenu,
   SideNavMenuItem,
+  // SideNavSwitcher,
 } from 'carbon-components-react//lib/components/UIShell';
-import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import React from 'react';
 import classnames from 'classnames';
-
-import { COLORS, PADDING } from '../../styles/styles';
-
-// import CarbonSideNav from './CarbonSideNav';
-
-const StyledSideNav = styled(CarbonSideNav)`
-  && {
-    &.bx--side-nav--expanded {
-      width: 16rem;
-      transform: translateX(0);
-    }
-
-    @media screen and (min-width: 1056px) {
-      transform: translateX(0);
-      width: 3rem;
-    }
-
-    .bx--side-nav__link {
-      font-weight: 600;
-      outline: 2px solid transparent;
-      outline-offset: -2px;
-      font-size: 0.875rem;
-      line-height: 1.125rem;
-      letter-spacing: 0.16px;
-      position: relative;
-      display: flex;
-      align-items: center;
-      text-decoration: none;
-      min-height: 2rem;
-      padding: 0 ${PADDING.horizontalWrapPadding};
-      transition: color 110ms, background-color 110ms, outline 110ms;
-
-      :focus {
-        outline: 2px solid ${COLORS.blue60};
-        outline-offset: -2px;
-      }
-
-      :hover {
-        background-color: ${COLORS.gray10hover};
-        color: ${COLORS.gray100};
-      }
-    }
-
-    button.bx--side-nav__link {
-      appearance: none;
-      border: none;
-      width: 100%;
-    }
-
-    .bx--side-nav__link[aria-current='page']::before,
-    .bx--side-nav__link--current::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      width: 4px;
-      background-color: ${COLORS.blue60};
-    }
-
-    .bx--side-nav__menu[role='menu'] .bx--side-nav__link[role='menuitem'] {
-      height: 2rem;
-      min-height: 2rem;
-      padding-left: 2rem;
-    }
-
-    .bx--side-nav__link--current {
-      background: ${COLORS.gray20};
-    }
-
-    .bx--side-nav__item.bx--side-nav__item--icon .bx--side-nav__link[role='menuitem'] {
-      padding-left: 4.5rem;
-    }
-  }
-`;
 
 const propTypes = {
   /** Specify whether the side navigation is expanded or collapsed */
@@ -129,11 +54,14 @@ const propTypes = {
     })
   ).isRequired,
   isSideNavExpanded: PropTypes.bool,
+  /** An array of strings which will be options of switcher */
+  // switcherProps: PropTypes.obj,
 };
 
 const defaultProps = {
   defaultExpanded: false,
   isSideNavExpanded: false,
+  // switcherProps: null,
 };
 
 /**
@@ -146,17 +74,24 @@ const SideNav = ({ links, defaultExpanded, isSideNavExpanded }) => {
       return null;
     }
     if (link.hasOwnProperty('childContent')) {
-      const children = link.childContent.map(childlink => (
-        <SideNavMenuItem
-          key={`menu-link-${link.childContent.indexOf(childlink)}-child`}
-          isActive={childlink.current}
-          {...childlink.metaData}
-        >
-          {childlink.content}
-        </SideNavMenuItem>
-      ));
+      let parentActive = false;
+      const children = link.childContent.map(childlink => {
+        if (childlink.isActive) {
+          parentActive = true;
+        }
+        return (
+          <SideNavMenuItem
+            key={`menu-link-${link.childContent.indexOf(childlink)}-child`}
+            isActive={childlink.isActive}
+            {...childlink.metaData}
+          >
+            {childlink.content}
+          </SideNavMenuItem>
+        );
+      });
       return (
         <SideNavMenu
+          isActive={parentActive}
           className={classnames({ disabled: link.isEnabled })}
           renderIcon={link.icon}
           aria-label="dropdown"
@@ -175,7 +110,7 @@ const SideNav = ({ links, defaultExpanded, isSideNavExpanded }) => {
         onClick={link.metaData.onClick}
         href={link.metaData.href}
         renderIcon={link.icon}
-        isActive={link.current}
+        isActive={link.isActive}
         {...link.metaData}
       >
         {link.linkContent}
@@ -184,13 +119,14 @@ const SideNav = ({ links, defaultExpanded, isSideNavExpanded }) => {
   });
 
   return (
-    <StyledSideNav
+    <CarbonSideNav
       className={classnames({ 'bx--side-nav--expanded': isSideNavExpanded })}
       aria-label="Side navigation"
       defaultExpanded={defaultExpanded}
     >
+      {/* {switcherProps && <SideNavSwitcher {...switcherProps} />} */}
       <SideNavItems>{nav}</SideNavItems>
-    </StyledSideNav>
+    </CarbonSideNav>
   );
 };
 

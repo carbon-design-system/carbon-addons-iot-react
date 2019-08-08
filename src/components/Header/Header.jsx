@@ -6,11 +6,13 @@ import {
   HeaderGlobalAction,
   SkipToContent,
   HeaderMenuItem,
+  HeaderPanel,
 } from 'carbon-components-react/lib/components/UIShell';
+import AppSwitcher from '@carbon/icons-react/lib/app-switcher/20';
 import { rem } from 'polished';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { useState, useCallback } from 'react';
 
 import { COLORS } from '../../styles/styles';
 
@@ -74,6 +76,9 @@ const propTypes = {
     PropTypes.shape({
       label: PropTypes.string.isRequired,
       onClick: PropTypes.func,
+      /** declare control of header panel from this action item. Can only be one panel for now */
+      // @TODO: allow  mutliple header panels
+      headerPanel: PropTypes.bool,
       btnContent: PropTypes.any.isRequired,
       childContent: PropTypes.arrayOf(
         PropTypes.shape({
@@ -89,6 +94,13 @@ const propTypes = {
   /** Bit to flip that tells header to render the nav toggle button */
   hasSideNav: PropTypes.bool,
   onClickSideNavExpand: PropTypes.func,
+  /** Header panel props */
+  headerPanel: PropTypes.shape({
+    /** Optionally provide a custom class to apply to the underlying <li> node */
+    className: PropTypes.string,
+    /** the content of the header panel  */
+    content: PropTypes.any,
+  }),
 };
 
 const defaultProps = {
@@ -97,6 +109,7 @@ const defaultProps = {
   prefix: 'IBM',
   className: 'main-header',
   skipto: '#main-content',
+  headerPanel: null,
 };
 
 /**
@@ -110,7 +123,15 @@ const Header = ({
   skipto,
   hasSideNav,
   onClickSideNavExpand,
+  headerPanel,
 }) => {
+  const [expanded, setExpanded] = useState(false);
+  const handleHeaderPanelTriggerClick = useCallback(
+    () => {
+      setExpanded(!expanded);
+    },
+    [expanded]
+  );
   const actionBtnContent = actionItems.map(item => {
     if (item.hasOwnProperty('childContent')) {
       const children = item.childContent.map(childItem => (
@@ -143,6 +164,17 @@ const Header = ({
       </StyledGlobalAction>
     );
   });
+  if (headerPanel) {
+    actionBtnContent.push(
+      <StyledGlobalAction
+        aria-label="header-panel-trigger"
+        key="AppSwitcher"
+        onClick={handleHeaderPanelTriggerClick}
+      >
+        <AppSwitcher fill="white" description="Icon" />
+      </StyledGlobalAction>
+    );
+  }
 
   return (
     <StyledHeader className={className} aria-label="main header">
@@ -152,6 +184,17 @@ const Header = ({
         {appName}
       </HeaderName>
       <HeaderGlobalBar>{actionBtnContent}</HeaderGlobalBar>
+      {headerPanel && (
+        <HeaderPanel
+          aria-label="Header Panel"
+          className={headerPanel.className ? headerPanel.className : null}
+          expanded={expanded}
+        >
+          <div>
+            <headerPanel.content />
+          </div>
+        </HeaderPanel>
+      )}
     </StyledHeader>
   );
 };

@@ -1,9 +1,8 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { Button } from 'carbon-components-react';
 import styled from 'styled-components';
 
-import ButtonEnhanced from '../../ButtonEnhanced/ButtonEnhanced';
+import Button from '../../Button/Button';
 
 const StyledFooterButtons = styled.div`
   display: flex;
@@ -69,9 +68,9 @@ const WizardFooter = ({
           {nextLabel}
         </Button>
       ) : (
-        <ButtonEnhanced onClick={onSubmit} disabled={nextDisabled} loading={sendingData}>
+        <Button onClick={onSubmit} disabled={nextDisabled} loading={sendingData}>
           {submitLabel}
-        </ButtonEnhanced>
+        </Button>
       )}
     </StyledFooterButtons>
   </Fragment>

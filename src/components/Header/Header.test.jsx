@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import Notification from '@carbon/icons-react/lib/notification/20';
 import Avatar from '@carbon/icons-react/lib/user--avatar/20';
 import HeaderHelp from '@carbon/icons-react/lib/help/20';
@@ -48,7 +48,7 @@ describe('Header testcases', () => {
       },
     ];
 
-    const header = shallow(
+    const header = mount(
       <Header
         title="My Title"
         user="j@test.com"

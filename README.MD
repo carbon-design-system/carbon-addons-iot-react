@@ -52,7 +52,7 @@ yarn add carbon-addons-iot-react@beta
 You can then import any component that you need by doing the following in your project:
 
 ```js
-import { BaseModal } from 'carbon-addons-iot-react';
+import { ComposedModal } from 'carbon-addons-iot-react';
 ```
 
 ## 🚀 Quick Start

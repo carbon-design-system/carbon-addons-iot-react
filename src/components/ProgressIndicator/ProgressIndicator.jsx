@@ -29,7 +29,14 @@ const StyledProgressStep = styled(({ showLabel, stepWidth, isVerticalMode, ...ot
     min-width: ${props =>
       !props.isVerticalMode && props.stepWidth ? `${props.stepWidth}rem` : ''};
     p {
-      display: ${props => (!props.showLabel ? 'none' : 'inherit')};
+      display: ${props => (!props.showLabel ? 'none' : '')};
+
+      &:hover::after {
+        content: attr(data-label);
+        width: 100%;
+        position: absolute;
+        top: 100%;
+      }
     }
     ${props => {
       const { isVerticalMode, stepWidth } = props;
@@ -103,11 +110,13 @@ const ProgressIndicator = ({
       currentIndex={currentStep}
       isVerticalMode={isVerticalMode}
     >
-      {items.map(({ id, label }) => (
+      {items.map(({ id, label, secondaryLabel, description }) => (
         <StyledProgressStep
           key={id}
           label={label}
-          description={label}
+          data-label={label}
+          secondaryLabel={secondaryLabel}
+          description={description || label}
           showLabel={showLabels || currentItemId === id}
           stepWidth={stepWidth}
           isVerticalMode={isVerticalMode}
