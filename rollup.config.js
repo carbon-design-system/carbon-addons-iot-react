@@ -133,7 +133,7 @@ export default {
         },
         { src: ['src/components/AddCard/_add-card.scss'], dest: 'lib/scss/components/AddCard' },
         {
-          src: ['src/components/ProgressIndicator/progress-indicator.scss'],
+          src: ['src/components/ProgressIndicator/_progress-indicator.scss'],
           dest: 'lib/scss/components/ProgressIndicator',
         },
         { src: ['src/components/SideNav/_side-nav.scss'], dest: 'lib/scss/components/SideNav' },
