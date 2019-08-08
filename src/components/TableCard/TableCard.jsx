@@ -230,7 +230,7 @@ const TableCard = ({
     {
       id: 'iconColumn',
       name: '',
-      width: '20px',
+      width: '30px',
       isSortable: true,
       renderDataFunction: threholdIconRow,
       priority: 1,
@@ -315,17 +315,15 @@ const TableCard = ({
   if (expandedRows && expandedRows.length) {
     expandedRows.forEach(expandedItem => {
       tableData.forEach(item => {
-        if (item.values.hasOwnProperty(expandedItem.id)) {
-          expandedRowsFormatted.push({
-            rowId: item.id,
-            content: (
-              <StyledExpandedRowContent>
-                <p>{expandedItem.label}</p>
-                {item.values[expandedItem.id]}
-              </StyledExpandedRowContent>
-            ),
-          });
-        }
+        expandedRowsFormatted.push({
+          rowId: item.id,
+          content: (
+            <StyledExpandedRowContent>
+              <p>{expandedItem.label}</p>
+              {item.values.hasOwnProperty(expandedItem.id) ? item.values[expandedItem.id] : null}
+            </StyledExpandedRowContent>
+          ),
+        });
       });
     });
   }

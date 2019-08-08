@@ -161,6 +161,12 @@ storiesOf('Table Card', module)
           content={{
             columns: tableColumns,
             thresholds,
+            expandedRows: [
+              {
+                id: 'long_description',
+                label: 'Description',
+              },
+            ],
           }}
           values={tableData}
           onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
