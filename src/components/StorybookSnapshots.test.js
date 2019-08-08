@@ -42,9 +42,13 @@ describe(`Storybook Snapshot tests and console checks`, () => {
           // workaround storybook console error with styled components
           'Warning: Failed prop type: The prop `children` is marked as required in `Td`, but its value is `null`.'
         ) &&
-        // Carbon issue - https://github.com/carbon-design-system/carbon/issues/3088
         !e.includes(
-          'Warning: Failed prop type: ComboBox: prop type `downshiftProps` is invalid; it must be a function, usually from the `prop-types` package, but received `object`'
+          // Carbon issue - https://github.com/carbon-design-system/carbon/issues/3656
+          'The prop `small` for Button has been deprecated in favor of `size`. Please use `size="small"` instead.'
+        ) &&
+        !e.includes(
+          // Carbon issue - https://github.com/carbon-design-system/carbon/issues/3658, should be fixed in 10.4.2
+          'Warning: Failed prop type: Invalid prop `aria-hidden` of type `boolean` supplied to `Icon`, expected `string`.'
         )
       ) {
         done.fail(e);

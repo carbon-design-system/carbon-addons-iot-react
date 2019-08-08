@@ -34,12 +34,12 @@
     }
   },
   "dependencies": {
-    "@carbon/icons": "^10.1.0",
-    "@carbon/icons-react": "^10.1.1",
-    "@carbon/themes": "^10.3.1",
+    "@carbon/icons": "^10.4.0",
+    "@carbon/icons-react": "^10.4.1",
+    "@carbon/themes": "^10.4.0",
     "c3": "^0.7.1",
-    "carbon-components": "^10.3.1",
-    "carbon-components-react": "^7.3.1",
+    "carbon-components": "^10.4.1",
+    "carbon-components-react": "^7.4.1",
     "carbon-icons": "^7.0.7",
     "classnames": "^2.2.5",
     "immutability-helper": "^2.9.0",
