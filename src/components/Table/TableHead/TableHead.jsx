@@ -158,9 +158,9 @@ const TableHead = ({
 
         {ordering.map(item => {
           const matchingColumnMeta = columns.find(column => column.id === item.columnId);
-          const hasSort = sort && sort.columnId === matchingColumnMeta.id;
+          const hasSort = matchingColumnMeta && sort && sort.columnId === matchingColumnMeta.id;
 
-          return !item.isHidden ? (
+          return !item.isHidden && matchingColumnMeta ? (
             <StyledCustomTableHeader
               id={`column-${matchingColumnMeta.id}`}
               key={`column-${matchingColumnMeta.id}`}
