@@ -5,8 +5,8 @@ For each component, this keeps track of whether formal I18N testing, a11y testin
 | Component         | I18N Tested | A11y Tested | LtoR Tested |
 | ----------------- | :---------: | ----------: | ----------- |
 | AddCard           |     Yes     |             |             |
-| BaseModal         |     Yes     |             |             |
-| ButtonEnhanced    |     Yes     |             |             |
+| ComposedModal     |     Yes     |             |             |
+| Button            |     Yes     |             |             |
 | FileDrop          |             |             |             |
 | Header            |             |             |             |
 | NavigationBar     |     Yes     |             |             |

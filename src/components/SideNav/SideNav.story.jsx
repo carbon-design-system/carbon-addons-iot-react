@@ -39,7 +39,6 @@ const links = [
     linkContent: 'Boards',
   },
   {
-    current: true,
     isEnabled: true,
     icon: Chip,
     metaData: {
@@ -66,10 +65,19 @@ const links = [
           element: 'button',
         },
         content: 'Yet another link',
+        isActive: true,
       },
     ],
   },
 ];
+
+const switcherProps = {
+  options: ['ExampleOne', 'ExampleTwo'],
+  labelText: 'ExampleOne',
+  onChange: () => {},
+  className: 'class',
+  switcherTitle: 'Applications',
+};
 
 // const link = <Icon name="header--help" fill="white" description="Icon" />;
 const HeaderProps = {
@@ -97,21 +105,55 @@ const HeaderProps = {
   ],
 };
 
-storiesOf('Watson IoT|SideNav', module).add('SideNav component', () => (
-  <HeaderContainer
-    render={({ isSideNavExpanded, onClickSideNavExpand }) => (
-      <>
-        <Header
-          {...HeaderProps}
-          isSideNavExpanded={isSideNavExpanded}
-          onClickSideNavExpand={onClickSideNavExpand}
-        />
-        <SideNav
-          links={links}
-          isSideNavExpanded={isSideNavExpanded}
-          onClickSideNavExpand={onClickSideNavExpand}
-        />
-      </>
-    )}
-  />
-));
+storiesOf('Watson IoT|SideNav', module).add(
+  'SideNav component',
+  () => (
+    <HeaderContainer
+      render={({ isSideNavExpanded, onClickSideNavExpand }) => (
+        <>
+          <Header
+            {...HeaderProps}
+            isSideNavExpanded={isSideNavExpanded}
+            onClickSideNavExpand={onClickSideNavExpand}
+          />
+          <SideNav
+            links={links}
+            isSideNavExpanded={isSideNavExpanded}
+            onClickSideNavExpand={onClickSideNavExpand}
+            switcherProps={switcherProps}
+          />
+        </>
+      )}
+    />
+  ),
+  {
+    info: {
+      text: `
+      When implementing the Header and SideNav components you must utilized the HeaderContainer component
+
+      <br/>
+
+      ~~~js
+      <HeaderContainer
+      render={({ isSideNavExpanded, onClickSideNavExpand }) => (
+        <>
+          <Header
+            {...HeaderProps}
+            isSideNavExpanded={isSideNavExpanded}
+            onClickSideNavExpand={onClickSideNavExpand}
+          />
+          <SideNav
+            links={links}
+            isSideNavExpanded={isSideNavExpanded}
+            onClickSideNavExpand={onClickSideNavExpand}
+          />
+        </>
+      )}
+    />
+
+      ~~~
+
+      `,
+    },
+  }
+);

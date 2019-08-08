@@ -132,6 +132,11 @@ export default {
           dest: 'lib/scss/components',
         },
         { src: ['src/components/AddCard/_add-card.scss'], dest: 'lib/scss/components/AddCard' },
+        {
+          src: ['src/components/ProgressIndicator/_progress-indicator.scss'],
+          dest: 'lib/scss/components/ProgressIndicator',
+        },
+        { src: ['src/components/SideNav/_side-nav.scss'], dest: 'lib/scss/components/SideNav' },
       ],
       verbose: env !== 'development', // output file copy list on production builds for easier debugging
     }),
@@ -148,6 +153,7 @@ export default {
           'SkipToContent',
           'HeaderMenuItem',
           'HeaderNavigation',
+          'HeaderPanel',
           'SideNav',
           'SideNavItems',
           'SideNavLink',

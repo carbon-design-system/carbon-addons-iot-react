@@ -1,7 +1,7 @@
 /* Used dependencies */
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { boolean, number, text } from '@storybook/addon-knobs';
+import { boolean, text } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 
 import TableDetailWizard from './TableDetailWizard';

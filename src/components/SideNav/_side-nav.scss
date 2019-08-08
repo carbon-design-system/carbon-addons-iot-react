@@ -1,0 +1,125 @@
+@import '~carbon-components/scss/globals/scss/vars';
+@import '~carbon-components/scss/globals/scss/layout';
+
+@import '~carbon-components/scss/components/ui-shell/side-nav';
+
+.bx--side-nav {
+  background-color: $interactive-02;
+  color: $ui-02;
+
+  @media (min-width: 66em) {
+    transform: translateX(0);
+    width: 3rem;
+  }
+
+  &--expanded {
+    width: 16rem;
+    transform: translateX(0);
+  }
+
+  &__icon > svg {
+    fill: $ui-01;
+  }
+
+  //TODO: remove after we have updated carbon-components-react above 7.3.1
+  &__footer {
+    display: none;
+  }
+
+  &__submenu[aria-haspopup='true'],
+  .bx--side-nav__link,
+  a.bx--side-nav__link--current > span.bx--side-nav__link-text {
+    color: $ui-02;
+  }
+
+  .bx--side-nav__link--current {
+    background-color: $gray-70;
+    color: $ui-02;
+  }
+
+  .bx--side-nav__menu {
+    background-color: $inverse-02;
+  }
+}
+
+.bx--side-nav__item--active {
+  background-color: $gray-70;
+  color: $ui-02;
+
+  & .bx--side-nav__submenu-title {
+    color: $ui-02;
+  }
+
+  & .bx--side-nav__submenu[aria-expanded='false'] {
+    background-color: $gray-70;
+    color: $ui-02;
+  }
+}
+
+.bx--side-nav__link {
+  font-weight: 600;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+  font-size: 0.875rem;
+  line-height: 1.125rem;
+  letter-spacing: 0.16px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  min-height: 2rem;
+  padding: 0 $spacing-05;
+  transition: color 110ms, background-color 110ms, outline 110ms;
+
+  &:focus {
+    outline: 2px solid $interactive-01;
+    outline-offset: -2px;
+  }
+}
+
+a.bx--side-nav__link > .bx--side-nav__link-text {
+  color: $ui-02;
+}
+
+.bx--side-nav__item:not(.bx--side-nav__item--active) > .bx--side-nav__link:hover {
+  background-color: $inverse-02;
+
+  & > span {
+    color: $ui-02;
+  }
+}
+
+.bx--side-nav__item:hover {
+  & .bx--side-nav__submenu,
+  & .bx--side-nav__menu,
+  & .bx--side-nav__link {
+    background-color: $inverse-02;
+  }
+}
+
+button.bx--side-nav__link {
+  appearance: none;
+  border: none;
+  width: 100%;
+}
+
+.bx--side-nav__link[aria-current='page']::before,
+.bx--side-nav__link--current::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 4px;
+  background-color: $interactive-01;
+}
+
+.bx--side-nav__menu[role='menu'] .bx--side-nav__link[role='menuitem'] {
+  height: 2rem;
+  min-height: 2rem;
+  padding-left: 2rem;
+}
+
+.bx--side-nav__item.bx--side-nav__item--icon .bx--side-nav__link[role='menuitem'] {
+  padding-left: 4.5rem;
+}

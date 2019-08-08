@@ -2,10 +2,10 @@
 export styles from './styles.scss';
 
 // Components
-export ButtonEnhanced from './components/ButtonEnhanced';
+export Button from './components/Button';
 export Table from './components/Table';
 export AddCard from './components/AddCard';
-export BaseModal from './components/BaseModal';
+export ComposedModal from './components/ComposedModal';
 export WizardModal from './components/WizardModal';
 export WizardInline from './components/WizardInline/WizardInline';
 export StatefulWizardInline from './components/WizardInline/StatefulWizardInline';
@@ -20,7 +20,7 @@ export StatefulTileCatalog from './components/TileCatalog/StatefulTileCatalog';
 export SimplePagination from './components/SimplePagination/SimplePagination';
 export CatalogContent from './components/TileCatalog/CatalogContent';
 export ProgressIndicator from './components/ProgressIndicator/ProgressIndicator';
-export StructuredList from './components/StructuredList/StructuredList';
+export ComposedStructuredList from './components/ComposedStructuredList/ComposedStructuredList';
 export ResourceList from './components/ResourceList/ResourceList';
 export FileDrop from './components/FileDrop/FileDrop';
 
@@ -43,11 +43,9 @@ export {
   AccordionItem,
   Breadcrumb,
   BreadcrumbItem,
-  Button,
   Checkbox,
   CodeSnippet,
   ComboBox,
-  ComposedModal,
   ModalHeader,
   ModalBody,
   ModalFooter,
