@@ -59,7 +59,7 @@ const StyledFooter = styled.div`
 
 export const propTypes = {
   /** Title in the header */
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
   blurb: PropTypes.string,
   /** Id of current step */
   currentItemId: PropTypes.string,
@@ -111,6 +111,7 @@ export const propTypes = {
 };
 
 export const defaultProps = {
+  title: null,
   sidebar: null,
   footerLeftContent: null,
   showLabels: true,

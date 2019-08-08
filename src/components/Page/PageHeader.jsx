@@ -28,7 +28,7 @@ const StyledDivHeading = styled.div`
 class PageHeader extends Component {
   static propTypes = {
     /** Title in the header  */
-    title: PropTypes.string.isRequired,
+    title: PropTypes.string,
     isLoading: PropTypes.bool,
     blurb: PropTypes.string,
     children: PropTypes.node,
@@ -37,6 +37,7 @@ class PageHeader extends Component {
   };
 
   static defaultProps = {
+    title: null,
     blurb: null,
     children: null,
     isLoading: false,
@@ -68,7 +69,7 @@ class PageHeader extends Component {
           <Fragment>
             <div className="bx--modal-header">
               <StyledDivHeading>
-                <p className="bx--modal-header__heading bx--type-beta">{title}</p>
+                {title ? <p className="bx--modal-header__heading bx--type-beta">{title}</p> : null}
               </StyledDivHeading>
               {children || null}
               <button
