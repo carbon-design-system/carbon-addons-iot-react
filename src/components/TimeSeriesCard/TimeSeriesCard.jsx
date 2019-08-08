@@ -111,7 +111,7 @@ const memoizedGenerateSampleValues = memoize(generateSampleValues);
 
 const TimeSeriesCard = ({
   title,
-  content: { series, timeDataSourceId, xLabel, yLabel, unit },
+  content: { series, timeDataSourceId = 'timestamp', xLabel, yLabel, unit },
   size,
   interval,
   isEditable,
@@ -121,7 +121,9 @@ const TimeSeriesCard = ({
 }) => {
   let chartRef = useRef();
 
-  const values = isEditable ? memoizedGenerateSampleValues(series, timeDataSourceId) : valuesProp;
+  const values = isEditable
+    ? memoizedGenerateSampleValues(series, timeDataSourceId, interval)
+    : valuesProp;
 
   const valueSort = values
     ? values.sort((left, right) =>

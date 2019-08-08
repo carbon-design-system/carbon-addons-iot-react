@@ -69,7 +69,7 @@ export const TimeSeriesCardPropTypes = {
     xLabel: PropTypes.string,
     yLabel: PropTypes.string,
     /** Which attribute is the time attribute */
-    timeDataSourceId: PropTypes.string.isRequired,
+    timeDataSourceId: PropTypes.string,
   }).isRequired,
   /** array of data from the backend for instance [{timestamp: 134234234234, temperature: 35, humidity: 10}, ...] */
   values: PropTypes.arrayOf(PropTypes.object),

@@ -8,7 +8,17 @@ describe('timeSeriesUtils', () => {
       [{ dataSourceId: 'temperature' }, { dataSourceId: 'pressure' }],
       'timestamp'
     );
-    expect(sampleValues).toHaveLength(10);
+    expect(sampleValues).toHaveLength(7);
+    expect(sampleValues[0].temperature).toBeDefined();
+    expect(sampleValues[0].pressure).toBeDefined();
+  });
+  test('generateSampleValues hour', () => {
+    const sampleValues = generateSampleValues(
+      [{ dataSourceId: 'temperature' }, { dataSourceId: 'pressure' }],
+      'timestamp',
+      'hour'
+    );
+    expect(sampleValues).toHaveLength(24);
     expect(sampleValues[0].temperature).toBeDefined();
     expect(sampleValues[0].pressure).toBeDefined();
   });
