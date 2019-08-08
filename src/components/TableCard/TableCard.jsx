@@ -250,7 +250,7 @@ const TableCard = ({
     .map(i => ({
       ...i,
       id: i.dataSourceId ? i.dataSourceId : i.id,
-      name: i.label ? i.label : i.dataSourceId || i.id, // don't force label to be required
+      name: i.label ? i.label : i.dataSourceId || '', // don't force label to be required
       isSortable: true,
       width: i.width ? i.width : size === CARD_SIZES.TALL ? '150px' : '', // force the text wrap
       filter: i.filter ? i.filter : {}, // if filter not send we send empty object
