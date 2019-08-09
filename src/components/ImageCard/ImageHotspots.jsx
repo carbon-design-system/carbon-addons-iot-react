@@ -161,18 +161,27 @@ class ImageHotspots extends React.Component {
       image: {
         ...state.image,
         offsetX: image.offsetX >= 0 ? 0 : deltaX >= 0 ? offsetXMax : image.offsetX,
-        offsetY: image.offsetY >= 0 ? 0 : deltaY >= 0 ? offsetYMax : image.offsetY,
+        offsetY:
+          image.offsetY >= 0
+            ? container.height > image.height
+              ? container.height / 2 - image.height / 2
+              : 0
+            : deltaY >= 0
+            ? container.height > image.height
+              ? container.height / 2 - image.height / 2
+              : offsetYMax
+            : image.offsetY,
       },
       minimap: {
         ...state.minimap,
         offsetX:
-          image.offsetX >= 0
+          image.offsetX >= 0 || image.width < container.width
             ? 0
             : deltaX >= 0
             ? -((minimap.height / image.height) * offsetXMax)
             : -((minimap.height / image.height) * image.offsetX),
         offsetY:
-          image.offsetY >= 0
+          image.offsetY >= 0 || image.height < container.height
             ? 0
             : deltaY >= 0
             ? -((minimap.height / image.height) * offsetYMax)
@@ -229,7 +238,7 @@ class ImageHotspots extends React.Component {
         ratio,
         orientation,
         offsetX: 0,
-        offsetY: 0,
+        offsetY: container.height / 2 - height / 2,
       },
       minimap: {
         ...minimap,
@@ -295,6 +304,7 @@ class ImageHotspots extends React.Component {
             width,
             height,
             scale,
+            offsetY: container.height > height ? container.height / 2 - height / 2 : 0,
           },
           draggable: scale > 1,
         }));
@@ -303,7 +313,16 @@ class ImageHotspots extends React.Component {
       // Reset image position
       if (scale === 1) {
         this.setState(prevState => ({
-          image: { ...prevState.image, offsetX: 0, offsetY: 0 },
+          image: {
+            ...prevState.image,
+            offsetX: 0,
+            offsetY: container.height / 2 - height / 2,
+          },
+          minimap: {
+            ...prevState.minimap,
+            offsetX: 0,
+            offsetY: 0,
+          },
         }));
       }
     }
@@ -446,8 +465,16 @@ class ImageHotspots extends React.Component {
       <div
         ref={this.container}
         style={containerStyle}
-        onMouseOut={this.stopDrag}
-        onBlur={this.stopDrag}
+        onMouseOut={event => {
+          if (dragging) {
+            this.stopDrag(event);
+          }
+        }}
+        onBlur={event => {
+          if (dragging) {
+            this.stopDrag(event);
+          }
+        }}
       >
         {src && (
           <img
@@ -465,7 +492,11 @@ class ImageHotspots extends React.Component {
                 this.whileDrag(evt);
               }
             }}
-            onMouseUp={this.stopDrag}
+            onMouseUp={event => {
+              if (dragging) {
+                this.stopDrag(event);
+              }
+            }}
           />
         )}
         {!hideHotspots && hotspots && (
