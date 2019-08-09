@@ -153,13 +153,17 @@ storiesOf('Table Card', module)
       },
     ];
 
+    const tableCustomColumns = tableColumns.map(item =>
+      item.dataSourceId === 'count' ? { ...item, precision: 1 } : { ...item }
+    );
+
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <TableCard
           title={text('title', 'Open Alerts')}
           id="table-list"
           content={{
-            columns: tableColumns,
+            columns: tableCustomColumns,
             thresholds,
             expandedRows: [
               {
@@ -167,6 +171,7 @@ storiesOf('Table Card', module)
                 label: 'Description',
               },
             ],
+            precision: 1,
           }}
           values={tableData}
           onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}

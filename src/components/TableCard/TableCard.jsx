@@ -3,7 +3,10 @@ import { OverflowMenu, OverflowMenuItem, Icon, Button } from 'carbon-components-
 import styled from 'styled-components';
 import moment from 'moment';
 import Download16 from '@carbon/icons-react/lib/download/16';
+import WarningAlt16 from '@carbon/icons-react/lib/warning--alt--filled/16';
+import WarningAltFilled16 from '@carbon/icons-react/lib/warning--filled/16';
 import fileDownload from 'js-file-download';
+import isNil from 'lodash/isNil';
 
 import { CardPropTypes, TableCardPropTypes } from '../../constants/PropTypes';
 import Card from '../Card/Card';
@@ -109,15 +112,27 @@ const ToolbarButton = styled(Button)`
   }
 `;
 
-const StyledIcon = styled(Icon)`
-  width: 16px;
-  height: 16px;
-  ${props =>
-    props.color &&
-    `
-    color: ${props.color};
-    fill: ${props.color};
-  `}
+const CustomIcon = styled(Button)`
+  &&& {
+    &.bx--btn--sm {
+      padding: 0;
+      .bx--btn__icon {
+        margin-left: 0;
+        ${props =>
+          props.color &&
+          `
+            color: ${props.color};
+            fill: ${props.color};
+        `}
+      }
+    }
+    cursor: default;
+    :hover,
+    :active {
+      fill: #000000;
+      background-color: #0000;
+    }
+  }
 `;
 
 const matchingThreshold = (thresholds, item) => {
@@ -139,6 +154,26 @@ const matchingThreshold = (thresholds, item) => {
       }
     })
     .concat([null])[0];
+};
+
+const determinePrecisionAndValue = (precision, value) => {
+  const precisionDefined = Number.isInteger(value) ? 0 : precision;
+
+  if (typeof value === 'number') {
+    return value > 1000000000000
+      ? `${(value / 1000000000000).toFixed(precisionDefined)}T`
+      : value > 1000000000
+      ? `${(value / 1000000000).toFixed(precisionDefined)}B`
+      : value > 1000000
+      ? `${(value / 1000000).toFixed(precisionDefined)}M`
+      : value > 1000
+      ? `${(value / 1000).toFixed(precisionDefined)}K`
+      : value.toFixed(precisionDefined);
+  }
+  if (isNil(value)) {
+    return '--';
+  }
+  return '--';
 };
 
 const TableCard = ({
@@ -198,13 +233,37 @@ const TableCard = ({
     if (matchingThresholdValue) {
       switch (matchingThresholdValue.severity) {
         case 3:
-          threholdIcon = <StyledIcon iconTitle="LOW" name="warning--glyph" color="#fdd13b" />; // yellow
+          threholdIcon = (
+            <CustomIcon
+              kind="ghost"
+              small
+              renderIcon={WarningAlt16}
+              color="#fdd13b"
+              title={`${matchingThresholdValue.comparison} ${matchingThresholdValue.value}`}
+            />
+          );
           break;
         case 1:
-          threholdIcon = <StyledIcon iconTitle="HIGH" name="warning--solid" color="#db1e28" />; // red
+          threholdIcon = (
+            <CustomIcon
+              kind="ghost"
+              small
+              renderIcon={WarningAltFilled16}
+              color="#db1e28"
+              title={`${matchingThresholdValue.comparison} ${matchingThresholdValue.value}`}
+            />
+          );
           break;
         case 2:
-          threholdIcon = <StyledIcon iconTitle="MEDIUM" name="warning--solid" color="#fc7b1e" />; // orange
+          threholdIcon = (
+            <CustomIcon
+              kind="ghost"
+              small
+              renderIcon={WarningAltFilled16}
+              color="#fc7b1e"
+              title={`${matchingThresholdValue.comparison} ${matchingThresholdValue.value}`}
+            />
+          );
           break;
         default:
           break;
@@ -234,6 +293,23 @@ const TableCard = ({
       isSortable: true,
       renderDataFunction: threholdIconRow,
       priority: 1,
+      filter: {
+        placeholderText: 'pick',
+        options: [
+          {
+            id: 1,
+            text: '1',
+          },
+          {
+            id: 2,
+            text: '2',
+          },
+          {
+            id: 3,
+            text: '3',
+          },
+        ],
+      },
     },
   ];
 
@@ -272,22 +348,43 @@ const TableCard = ({
     .map(column => (column.type && column.type === 'TIMESTAMP' ? column.dataSourceId : null))
     .filter(i => i);
 
+  const filteredPrecisionColumns = columns
+    .map(column =>
+      column.precision ? { dataSourceId: column.dataSourceId, precision: column.precision } : null
+    )
+    .filter(i => i);
+
   // if we're in editable mode, generate fake data
   const tableData = isEditable
     ? generateTableSampleValues(columns)
-    : hasActionColumn || filteredTimestampColumns.length
+    : hasActionColumn || filteredTimestampColumns.length || filteredPrecisionColumns.length
     ? data.map(i => {
         // if has custom action
         const action = hasActionColumn ? { actionColumn: JSON.stringify(i.actions || []) } : null;
 
         // if has column with timestamp
-        const valueUpdated = filteredTimestampColumns.length
+        const timestampUpdated = filteredTimestampColumns.length
           ? Object.keys(i.values)
               .map(value =>
                 filteredTimestampColumns.includes(value)
                   ? { [value]: moment(i.values[value]).format('LLL') }
                   : null
               )
+              .filter(v => v)[0]
+          : null;
+
+        // if column have custom precision value
+        const precisionUpdated = filteredPrecisionColumns.length
+          ? Object.keys(i.values)
+              .map(value => {
+                const precision = filteredPrecisionColumns.find(
+                  item => item.dataSourceId === value
+                );
+
+                return precision
+                  ? { [value]: determinePrecisionAndValue(precision.precision, i.values[value]) }
+                  : null;
+              })
               .filter(v => v)[0]
           : null;
 
@@ -304,7 +401,8 @@ const TableCard = ({
             ...icon,
             ...i.values,
             ...action,
-            ...valueUpdated,
+            ...timestampUpdated,
+            ...precisionUpdated,
           },
         };
       })
