@@ -89,7 +89,7 @@ export const TableCardPropTypes = {
     showHeader: PropTypes.bool,
     expandedRows: PropTypes.arrayOf(
       PropTypes.shape({
-        id: PropTypes.string.isRequired,
+        id: PropTypes.string,
         label: PropTypes.string.isRequired,
       })
     ),
