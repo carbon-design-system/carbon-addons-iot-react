@@ -312,4 +312,23 @@ storiesOf('Table Card', module)
         />
       </div>
     );
+  })
+  .add('editable with expanded rows', () => {
+    const size = CARD_SIZES.LARGE;
+
+    return (
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+        <TableCard
+          title={text('title', 'Open Alerts')}
+          id="table-list"
+          content={{
+            columns: tableColumns,
+            expandedRows: [{}],
+          }}
+          isEditable
+          onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
+          size={size}
+        />
+      </div>
+    );
   });

@@ -90,7 +90,7 @@ export const TableCardPropTypes = {
     expandedRows: PropTypes.arrayOf(
       PropTypes.shape({
         id: PropTypes.string,
-        label: PropTypes.string.isRequired,
+        label: PropTypes.string,
       })
     ),
     sort: PropTypes.oneOf(['ASC', 'DESC']),
