@@ -409,20 +409,23 @@ const TableCard = ({
     : data;
 
   // format expanded rows to send to Table component
-  const expandedRowsFormatted = [];
+  let expandedRowsFormatted = [];
   if (expandedRows && expandedRows.length) {
     expandedRows.forEach(expandedItem => {
-      tableData.forEach(item => {
-        expandedRowsFormatted.push({
-          rowId: item.id,
-          content: (
-            <StyledExpandedRowContent>
-              <p>{expandedItem.label}</p>
-              {item.values.hasOwnProperty(expandedItem.id) ? item.values[expandedItem.id] : null}
-            </StyledExpandedRowContent>
-          ),
+      const expandedRowData = tableData
+        .filter(item => item.values.hasOwnProperty(expandedItem.id))
+        .map(item => {
+          return {
+            rowId: item.id,
+            content: (
+              <StyledExpandedRowContent>
+                <p>{expandedItem.label}</p>
+                {item.values[expandedItem.id]}
+              </StyledExpandedRowContent>
+            ),
+          };
         });
-      });
+      expandedRowsFormatted = [...expandedRowsFormatted, ...expandedRowData];
     });
   }
 

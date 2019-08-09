@@ -170,6 +170,10 @@ storiesOf('Table Card', module)
                 id: 'long_description',
                 label: 'Description',
               },
+              {
+                id: 'other_description',
+                label: 'Other Description',
+              },
             ],
             precision: 1,
           }}
