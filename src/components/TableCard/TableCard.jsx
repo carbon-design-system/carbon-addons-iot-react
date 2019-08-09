@@ -297,15 +297,15 @@ const TableCard = ({
         placeholderText: 'pick',
         options: [
           {
-            id: 1,
+            id: '1',
             text: '1',
           },
           {
-            id: 2,
+            id: '2',
             text: '2',
           },
           {
-            id: 3,
+            id: '3',
             text: '3',
           },
         ],
@@ -418,7 +418,7 @@ const TableCard = ({
           return {
             rowId: item.id,
             content: (
-              <StyledExpandedRowContent>
+              <StyledExpandedRowContent key={`${item.id}-expanded`}>
                 <p>{expandedItem.label}</p>
                 {item.values[expandedItem.id]}
               </StyledExpandedRowContent>
