@@ -34,7 +34,6 @@ stories.add('default', () => {
       <ImageHotspots
         src={text('Image', landscape)}
         alt={text('Alternate text', 'Sample image')}
-        hideFullscreenControl={boolean('Hide fullscreen control', false)}
         hideZoomControls={boolean('Hide zoom controls', false)}
         hotspots={object('Hotspots', hotspots)}
         hideHotspots={boolean('Hide hotspots', false)}
@@ -50,7 +49,6 @@ stories.add('landscape image & landscape container', () => {
       <ImageHotspots
         src={text('Image', landscape)}
         alt={text('Alternate text', 'Sample image')}
-        hideFullscreenControl={boolean('Hide fullscreen control', false)}
         hideZoomControls={boolean('Hide zoom controls', false)}
         hotspots={object('Hotspots', hotspots)}
         hideHotspots={boolean('Hide hotspots', false)}
@@ -66,7 +64,6 @@ stories.add('landscape image & portrait container', () => {
       <ImageHotspots
         src={text('Image', landscape)}
         alt={text('Alternate text', 'Sample image')}
-        hideFullscreenControl={boolean('Hide fullscreen control', false)}
         hideZoomControls={boolean('Hide zoom controls', false)}
         hotspots={object('Hotspots', hotspots)}
         hideHotspots={boolean('Hide hotspots', false)}
@@ -82,7 +79,6 @@ stories.add('portrait image & landscape container', () => {
       <ImageHotspots
         src={text('Image', portrait)}
         alt={text('Alternate text', 'Sample image')}
-        hideFullscreenControl={boolean('Hide fullscreen control', false)}
         hideZoomControls={boolean('Hide zoom controls', false)}
         hotspots={object('Hotspots', hotspots)}
         hideHotspots={boolean('Hide hotspots', false)}
@@ -98,7 +94,6 @@ stories.add('portrait image & portrait container', () => {
       <ImageHotspots
         src={text('Image', portrait)}
         alt={text('Alternate text', 'Sample image')}
-        hideFullscreenControl={boolean('Hide fullscreen control', false)}
         hideZoomControls={boolean('Hide zoom controls', false)}
         hotspots={object('Hotspots', hotspots)}
         hideHotspots={boolean('Hide hotspots', false)}
