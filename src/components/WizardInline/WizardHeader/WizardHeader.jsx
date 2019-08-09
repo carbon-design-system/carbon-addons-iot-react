@@ -12,7 +12,7 @@ const StyledPageHeader = styled(PageHeader)`
 class WizardHeader extends Component {
   static propTypes = {
     /** Title in the header  */
-    title: PropTypes.string.isRequired,
+    title: PropTypes.string,
     blurb: PropTypes.string,
     currentItemId: PropTypes.string.isRequired,
     setItem: PropTypes.func.isRequired,
@@ -29,6 +29,7 @@ class WizardHeader extends Component {
   };
 
   static defaultProps = {
+    title: null,
     blurb: null,
     showLabels: true,
     stepWidth: 136,

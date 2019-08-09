@@ -36,7 +36,9 @@ const StyledActionIcon = styled(Icon)`
   }
 `;
 
-const StyledStatefulTable = styled(({ showHeader, ...rest }) => <StatefulTable {...rest} />)`
+const StyledStatefulTable = styled(({ showHeader, data, ...rest }) => (
+  <StatefulTable {...rest} data={data} />
+))`
   flex: inherit;
   height: 100%;
   margin: 0 -1px;
@@ -91,7 +93,11 @@ const StyledStatefulTable = styled(({ showHeader, ...rest }) => <StatefulTable {
   }
 
   .bx--data-table-v2-container {
-    max-height: 435px;
+    /* if the table is empty, go fullscreen */
+    ${props => (props.data && props.data.length > 0 ? `max-height: 435px;` : `height: 100%`)}
+  }
+  .bx--data-table-v2 {
+    ${props => (props.data && props.data.length > 0 ? `height: initial` : `height: 100%`)}
   }
 `;
 
@@ -320,7 +326,7 @@ const TableCard = ({
     .map(i => ({
       ...i,
       id: i.dataSourceId ? i.dataSourceId : i.id,
-      name: i.label ? i.label : i.name,
+      name: i.label ? i.label : i.dataSourceId || '', // don't force label to be required
       isSortable: true,
       width: i.width ? i.width : size === CARD_SIZES.TALL ? '150px' : '', // force the text wrap
       filter: i.filter ? i.filter : {}, // if filter not send we send empty object
