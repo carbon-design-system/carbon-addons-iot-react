@@ -15,6 +15,7 @@ const propTypes = {
   hideZoomControls: PropTypes.bool,
   hideHotspots: PropTypes.bool,
   hideMinimap: PropTypes.bool,
+  background: PropTypes.string,
 };
 
 const defaultProps = {
@@ -24,6 +25,7 @@ const defaultProps = {
   hideZoomControls: false,
   hideHotspots: false,
   hideMinimap: false,
+  background: '#eee',
 };
 
 class ImageHotspots extends React.Component {
@@ -36,6 +38,7 @@ class ImageHotspots extends React.Component {
         height: undefined,
         ratio: undefined,
         orientation: undefined,
+        background: '#eee',
       },
       image: {
         initialWidth: undefined,
@@ -80,13 +83,14 @@ class ImageHotspots extends React.Component {
       hideHotspots,
       hideMinimap,
       hotspots,
+      background,
     } = this.props;
     const { offsetWidth: width, offsetHeight: height } = this.container.current;
     const orientation = width > height ? 'landscape' : 'portrait';
     const ratio = orientation === 'landscape' ? width / height : height / width;
 
     this.setState({
-      container: { width, height, ratio, orientation },
+      container: { width, height, ratio, orientation, background },
       hideFullscreenControl,
       hideZoomControls,
       hideHotspots,
@@ -334,7 +338,7 @@ class ImageHotspots extends React.Component {
   };
 
   render = () => {
-    const { src, alt, hotspots } = this.props;
+    const { src, alt, hotspots, background } = this.props;
     const {
       container,
       image,
@@ -355,7 +359,7 @@ class ImageHotspots extends React.Component {
       position: 'relative',
       overflow: 'hidden',
       textAlign: 'center',
-      background: '#eee',
+      background: background || this.state.background,
     };
 
     const imageStyle = {
