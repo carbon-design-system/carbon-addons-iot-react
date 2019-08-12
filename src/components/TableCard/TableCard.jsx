@@ -3,8 +3,6 @@ import { OverflowMenu, OverflowMenuItem, Icon, Button } from 'carbon-components-
 import styled from 'styled-components';
 import moment from 'moment';
 import Download16 from '@carbon/icons-react/lib/download/16';
-import WarningAlt16 from '@carbon/icons-react/lib/warning--alt--filled/16';
-import WarningAltFilled16 from '@carbon/icons-react/lib/warning--filled/16';
 import fileDownload from 'js-file-download';
 import isNil from 'lodash/isNil';
 import uniqBy from 'lodash/uniqBy';
@@ -124,29 +122,6 @@ const StyledExpandedRowContent = styled.div`
 const ToolbarButton = styled(Button)`
   &.bx--btn > svg {
     margin: 0;
-  }
-`;
-
-const CustomIcon = styled(Button)`
-  &&& {
-    &.bx--btn--sm {
-      padding: 0;
-      .bx--btn__icon {
-        margin-left: 0;
-        ${props =>
-          props.color &&
-          `
-            color: ${props.color};
-            fill: ${props.color};
-        `}
-      }
-    }
-    cursor: default;
-    :hover,
-    :active {
-      fill: #000000;
-      background-color: #0000;
-    }
   }
 `;
 
