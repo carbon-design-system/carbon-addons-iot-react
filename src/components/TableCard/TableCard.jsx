@@ -7,6 +7,7 @@ import WarningAlt16 from '@carbon/icons-react/lib/warning--alt--filled/16';
 import WarningAltFilled16 from '@carbon/icons-react/lib/warning--filled/16';
 import fileDownload from 'js-file-download';
 import isNil from 'lodash/isNil';
+import uniqBy from 'lodash/uniqBy';
 
 import { CardPropTypes, TableCardPropTypes } from '../../constants/PropTypes';
 import Card from '../Card/Card';
@@ -58,6 +59,15 @@ const StyledStatefulTable = styled(({ showHeader, data, ...rest }) => (
       }
       th div {
         display: block;
+        .bx--list-box {
+          height: auto;
+        }
+      }
+      th div.bx--list-box {
+        height: auto;
+        .bx--list-box__selection {
+          height: inherit;
+        }
       }
     }
   }
@@ -234,40 +244,50 @@ const TableCard = ({
 
   const threholdIconRow = cellItem => {
     const matchingThresholdValue = matchingThreshold(thresholds, cellItem.row);
+
     let threholdIcon = null;
     if (matchingThresholdValue) {
       switch (matchingThresholdValue.severity) {
         case 3:
           threholdIcon = (
-            <CustomIcon
-              kind="ghost"
-              small
-              renderIcon={WarningAlt16}
-              color="#fdd13b"
-              title={`${matchingThresholdValue.comparison} ${matchingThresholdValue.value}`}
-            />
+            <div>
+              <CustomIcon
+                kind="ghost"
+                small
+                renderIcon={WarningAlt16}
+                color="#fdd13b"
+                title={`${matchingThresholdValue.comparison} ${matchingThresholdValue.value}`}
+              />{' '}
+              Low
+            </div>
           );
           break;
         case 1:
           threholdIcon = (
-            <CustomIcon
-              kind="ghost"
-              small
-              renderIcon={WarningAltFilled16}
-              color="#db1e28"
-              title={`${matchingThresholdValue.comparison} ${matchingThresholdValue.value}`}
-            />
+            <div>
+              <CustomIcon
+                kind="ghost"
+                small
+                renderIcon={WarningAltFilled16}
+                color="#db1e28"
+                title={`${matchingThresholdValue.comparison} ${matchingThresholdValue.value}`}
+              />{' '}
+              High
+            </div>
           );
           break;
         case 2:
           threholdIcon = (
-            <CustomIcon
-              kind="ghost"
-              small
-              renderIcon={WarningAltFilled16}
-              color="#fc7b1e"
-              title={`${matchingThresholdValue.comparison} ${matchingThresholdValue.value}`}
-            />
+            <div>
+              <CustomIcon
+                kind="ghost"
+                small
+                renderIcon={WarningAltFilled16}
+                color="#fc7b1e"
+                title={`${matchingThresholdValue.comparison} ${matchingThresholdValue.value}`}
+              />{' '}
+              Medium
+            </div>
           );
           break;
         default:
@@ -289,17 +309,26 @@ const TableCard = ({
     },
   ];
 
-  // if there is icon row add column
-  const iconColumn = [
-    {
-      id: 'iconColumn',
-      name: '',
-      width: '30px',
+  const hasActionColumn = data.filter(i => i.actions).length > 0;
+  const uniqueThresholds = uniqBy(thresholds, 'dataSourceId');
+
+  // filter to gett the indexes for each one
+  const columnsUpdated = columns;
+  const indexes = columns
+    .map((column, index) =>
+      uniqueThresholds.filter(item => item.dataSourceId === column.dataSourceId)[0] ? index : null
+    )
+    .filter(i => i);
+  indexes.forEach((i, index) =>
+    columnsUpdated.splice(index !== 0 ? i + 1 : i, 0, {
+      id: `iconColumn`,
+      label: 'Severity',
+      width: '120px',
       isSortable: true,
       renderDataFunction: threholdIconRow,
       priority: 1,
       filter: {
-        placeholderText: 'pick',
+        placeholderText: 'Severity',
         options: [
           {
             id: '1',
@@ -315,12 +344,11 @@ const TableCard = ({
           },
         ],
       },
-    },
-  ];
+    })
+  );
 
-  const hasActionColumn = data.filter(i => i.actions).length > 0;
+  const newColumns = thresholds ? columnsUpdated : columns;
 
-  const newColumns = thresholds ? [...iconColumn, ...columns] : columns;
   const columnsToRender = newColumns
     .map(i => ({
       ...i,
@@ -379,6 +407,7 @@ const TableCard = ({
           : null;
 
         const matchingThresholdValue = thresholds ? matchingThreshold(thresholds, i.values) : null;
+
         const icon = thresholds
           ? {
               iconColumn: matchingThresholdValue ? matchingThresholdValue.severity : null,
@@ -412,6 +441,9 @@ const TableCard = ({
         };
       })
     : data;
+
+  console.log('Columns:::', newColumns);
+  console.log('Table Data:::', tableData);
 
   // format expanded rows to send to Table component
   let expandedRowsFormatted = [];
