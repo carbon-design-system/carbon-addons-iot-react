@@ -234,6 +234,12 @@ class ImageHotspots extends React.Component {
   };
 
   onWindowResize = () => {
+    const { offsetWidth: width, offsetHeight: height } = this.container.current;
+    const orientation = width > height ? 'landscape' : 'portrait';
+    const ratio = orientation === 'landscape' ? width / height : height / width;
+
+    this.setState({ container: { width, height, ratio, orientation } });
+
     this.zoom(this.state.image.scale);
   };
 
