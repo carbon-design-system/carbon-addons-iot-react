@@ -161,7 +161,10 @@ const Dashboard = ({
   const [breakpoint, setBreakpoint] = useState('lg');
 
   const renderCard = card => (
-    <div key={card.id}>
+    <div
+      key={card.id}
+      style={card.isExpanded ? { height: '100%', width: '100%', padding: 50 } : {}}
+    >
       {card.type === CARD_TYPES.VALUE ? (
         <ValueCard
           {...card}
@@ -297,9 +300,7 @@ const Dashboard = ({
   return (
     <div className={className}>
       {expandedCard && (
-        <div className="bx--modal is-visible">
-          {renderCard({ ...expandedCard, size: CARD_SIZES.XLARGE })}
-        </div>
+        <div className="bx--modal is-visible">{renderCard({ ...expandedCard })}</div>
       )}
       <DashboardHeader
         title={title}

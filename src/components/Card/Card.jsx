@@ -41,6 +41,7 @@ const CardWrapper = styled.div`
   background: white;
   height: ${props => props.dimensions.y}px;
   min-width: ${props => props.dimensions.x}px;
+  ${props => (props.isExpanded ? 'height: 100%; width: 100%;' : '')};
   display: flex;
   flex-direction: column;
 `;
@@ -321,7 +322,7 @@ const Card = ({
   );
 
   return (
-    <CardWrapper id={id} dimensions={dimensions} {...others}>
+    <CardWrapper id={id} dimensions={dimensions} isExpanded={isExpanded} {...others}>
       <CardHeader>
         <CardTitle title={title}>
           {title}&nbsp;
