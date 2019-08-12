@@ -145,12 +145,6 @@ storiesOf('Table Card', module)
         value: 7,
         severity: 2, // High threshold, medium, or low used for sorting and defined filtration
       },
-      {
-        dataSourceId: 'alert',
-        comparison: '=',
-        value: 7,
-        severity: 2, // High threshold, medium, or low used for sorting and defined filtration
-      },
     ];
 
     const tableCustomColumns = tableColumns.map(item =>
@@ -175,7 +169,6 @@ storiesOf('Table Card', module)
                 label: 'Other Description',
               },
             ],
-            precision: 1,
           }}
           values={tableData}
           onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}

@@ -140,15 +140,15 @@ const matchingThreshold = (thresholds, item) => {
     .filter(t => {
       switch (t.comparison) {
         case '<':
-          return item[t.dataSourceId] < t.value;
+          return parseFloat(item[t.dataSourceId]) < t.value;
         case '>':
-          return item[t.dataSourceId] > t.value;
+          return parseFloat(item[t.dataSourceId]) > t.value;
         case '=':
-          return item[t.dataSourceId] === t.value;
+          return parseFloat(item[t.dataSourceId]) === t.value;
         case '<=':
-          return item[t.dataSourceId] <= t.value;
+          return parseFloat(item[t.dataSourceId]) <= t.value;
         case '>=':
-          return item[t.dataSourceId] >= t.value;
+          return parseFloat(item[t.dataSourceId]) >= t.value;
         default:
           return false;
       }
@@ -373,6 +373,13 @@ const TableCard = ({
               .filter(v => v)[0]
           : null;
 
+        const matchingThresholdValue = thresholds ? matchingThreshold(thresholds, i.values) : null;
+        const icon = thresholds
+          ? {
+              iconColumn: matchingThresholdValue ? matchingThresholdValue.severity : null,
+            }
+          : null;
+
         // if column have custom precision value
         const precisionUpdated = filteredPrecisionColumns.length
           ? Object.keys(i.values)
@@ -386,13 +393,6 @@ const TableCard = ({
                   : null;
               })
               .filter(v => v)[0]
-          : null;
-
-        const matchingThresholdValue = thresholds ? matchingThreshold(thresholds, i.values) : null;
-        const icon = thresholds
-          ? {
-              iconColumn: matchingThresholdValue ? matchingThresholdValue.severity : null,
-            }
           : null;
 
         return {
@@ -421,7 +421,7 @@ const TableCard = ({
         rowId: dataItem.id,
         content: (
           <StyledExpandedRowContent key={`${dataItem.id}-expanded`}>
-            <p>{expandedItem ? expandedItem.label : '--'}</p>
+            <p key={`${dataItem.id}-label`}>{expandedItem ? expandedItem.label : '--'}</p>
             {expandedItem ? dataItem.values[expandedItem.id] : null}
           </StyledExpandedRowContent>
         ),
