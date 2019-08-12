@@ -36,9 +36,7 @@ const StyledActionIcon = styled(Icon)`
   }
 `;
 
-const StyledStatefulTable = styled(({ showHeader, data, ...rest }) => (
-  <StatefulTable {...rest} data={data} />
-))`
+const StyledStatefulTable = styled(({ showHeader, ...rest }) => <StatefulTable {...rest} />)`
   flex: inherit;
   height: 100%;
   margin: 0 -1px;
@@ -93,11 +91,7 @@ const StyledStatefulTable = styled(({ showHeader, data, ...rest }) => (
   }
 
   .bx--data-table-v2-container {
-    /* if the table is empty, go fullscreen */
-    ${props => (props.data && props.data.length > 0 ? `max-height: 435px;` : `height: 100%`)}
-  }
-  .bx--data-table-v2 {
-    ${props => (props.data && props.data.length > 0 ? `height: initial` : `height: 100%`)}
+    max-height: 435px;
   }
 `;
 
@@ -326,7 +320,7 @@ const TableCard = ({
     .map(i => ({
       ...i,
       id: i.dataSourceId ? i.dataSourceId : i.id,
-      name: i.label ? i.label : i.dataSourceId || '', // don't force label to be required
+      name: i.label ? i.label : i.name,
       isSortable: true,
       width: i.width ? i.width : size === CARD_SIZES.TALL ? '150px' : '', // force the text wrap
       filter: i.filter ? i.filter : {}, // if filter not send we send empty object
@@ -415,31 +409,23 @@ const TableCard = ({
     : data;
 
   // format expanded rows to send to Table component
-  const expandedRowsFormatted = [];
+  let expandedRowsFormatted = [];
   if (expandedRows && expandedRows.length) {
-    expandedRows.forEach(expandedItem => {
-      tableData.forEach(item => {
-        if (item.values.hasOwnProperty(expandedItem.id)) {
-          expandedRowsFormatted.push({
-            rowId: item.id,
-            content: (
-              <StyledExpandedRowContent key={`${item.id}-expanded`}>
-                <p>{expandedItem.label}</p>
-                {item.values[expandedItem.id]}
-              </StyledExpandedRowContent>
-            ),
-          });
-        } else {
-          expandedRowsFormatted.push({
-            rowId: item.id,
-            content: (
-              <StyledExpandedRowContent key={`${item.id}-expanded`}>
-                <p>--</p>
-              </StyledExpandedRowContent>
-            ),
-          });
-        }
-      });
+    expandedRowsFormatted = tableData.map(dataItem => {
+      // filter the data keys and find the expandaded row exist for that key
+      const expandedItem = Object.keys(dataItem.values)
+        .map(value => expandedRows.find(item => item.id === value))
+        .filter(i => i)[0];
+
+      return {
+        rowId: dataItem.id,
+        content: (
+          <StyledExpandedRowContent key={`${dataItem.id}-expanded`}>
+            <p>{expandedItem ? expandedItem.label : '--'}</p>
+            {expandedItem ? dataItem.values[expandedItem.id] : null}
+          </StyledExpandedRowContent>
+        ),
+      };
     });
   }
 
