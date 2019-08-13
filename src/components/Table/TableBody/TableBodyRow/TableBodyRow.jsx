@@ -54,8 +54,7 @@ const propTypes = {
   id: PropTypes.string.isRequired,
   /** some columns might be hidden, so total columns has the overall total */
   totalColumns: PropTypes.number.isRequired,
-  /** table Id */
-  tableId: PropTypes.string.isRequired,
+
   /** contents of the row each object value is a renderable node keyed by column id */
   values: PropTypes.objectOf(PropTypes.node).isRequired,
 
@@ -127,7 +126,9 @@ const StyledTableRow = styled(TableRow)`
   }
 `;
 
-const StyledSingleSelectedTableRow = styled(TableRow)`
+const StyledSingleSelectedTableRow = styled(({ hasRowSelection, ...props }) => (
+  <TableRow {...props} />
+))`
   &&& {
     background: ${COLORS.lightBlue};
 
@@ -147,7 +148,9 @@ const StyledSingleSelectedTableRow = styled(TableRow)`
     }
 `;
 
-const StyledTableExpandRow = styled(TableExpandRow)`
+const StyledTableExpandRow = styled(({ hasRowSelection, ...props }) => (
+  <TableExpandRow {...props} />
+))`
   &&& {
     ${props =>
       props['data-child-count'] === 0 && props['data-row-nesting']
@@ -214,7 +217,9 @@ const StyledTableExpandRow = styled(TableExpandRow)`
   }
 `;
 
-const StyledTableExpandRowExpanded = styled(TableExpandRow)`
+const StyledTableExpandRowExpanded = styled(({ hasRowSelection, ...props }) => (
+  <TableExpandRow {...props} />
+))`
   &&& {
     cursor: pointer;
     ${props =>
@@ -287,7 +292,7 @@ const StyledTableExpandRowExpanded = styled(TableExpandRow)`
   }
 `;
 
-const StyledExpansionTableRow = styled(TableRow)`
+const StyledExpansionTableRow = styled(({ hasRowSelection, ...props }) => <TableRow {...props} />)`
   &&& {
     td {
       background-color: inherit;
@@ -355,7 +360,6 @@ const StyledNestedSpan = styled.span`
 
 const TableBodyRow = ({
   id,
-  tableId,
   totalColumns,
   ordering,
   columns,
@@ -472,7 +476,6 @@ const TableBodyRow = ({
     isExpanded ? (
       <React.Fragment key={id}>
         <StyledTableExpandRowExpanded
-          id={`${tableId}-Row-${id}`}
           ariaLabel={clickToCollapseAria}
           expandIconDescription={clickToCollapseAria}
           isExpanded
@@ -501,7 +504,6 @@ const TableBodyRow = ({
       </React.Fragment>
     ) : (
       <StyledTableExpandRow
-        id={`${tableId}-Row-${id}`}
         key={id}
         data-row-nesting={hasRowNesting}
         data-child-count={nestingChildCount}

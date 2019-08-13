@@ -2513,7 +2513,7 @@ export const tableData = [
     id: `row-1`,
     values: {
       alert: 'AHI005 Asset failure',
-      count: 10,
+      count: 1.2039201932,
       hour: 1563877570000,
       long_description: 'long description for a given event payload',
     },
@@ -2522,7 +2522,7 @@ export const tableData = [
     id: `row-2`,
     values: {
       alert: 'AHI003 process need to optimize adjust X variables',
-      count: 1,
+      count: 1.10329291,
       hour: 1563873970000,
       long_description: 'long description for a given event payload',
     },
