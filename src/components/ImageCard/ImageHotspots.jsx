@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Icon } from 'carbon-components-react';
 
 import Hotspot, { propTypes as HotspotPropTypes } from './Hotspot';
 
@@ -14,6 +15,7 @@ const propTypes = {
   hideZoomControls: PropTypes.bool,
   hideHotspots: PropTypes.bool,
   hideMinimap: PropTypes.bool,
+  background: PropTypes.string,
 };
 
 const defaultProps = {
@@ -22,6 +24,7 @@ const defaultProps = {
   hideZoomControls: false,
   hideHotspots: false,
   hideMinimap: false,
+  background: '#eee',
 };
 
 class ImageHotspots extends React.Component {
@@ -34,6 +37,7 @@ class ImageHotspots extends React.Component {
         height: undefined,
         ratio: undefined,
         orientation: undefined,
+        background: '#eee',
       },
       image: {
         initialWidth: undefined,
@@ -71,13 +75,19 @@ class ImageHotspots extends React.Component {
   }
 
   componentDidMount = () => {
-    const { hideZoomControls, hideHotspots, hideMinimap, hotspots } = this.props;
+    const {
+      hideZoomControls,
+      hideHotspots,
+      hideMinimap,
+      hotspots,
+      background
+    } = this.props;
     const { offsetWidth: width, offsetHeight: height } = this.container.current;
     const orientation = width > height ? 'landscape' : 'portrait';
     const ratio = orientation === 'landscape' ? width / height : height / width;
 
     this.setState({
-      container: { width, height, ratio, orientation },
+      container: { width, height, ratio, orientation, background },
       hideZoomControls,
       hideHotspots,
       hideMinimap,
@@ -151,18 +161,27 @@ class ImageHotspots extends React.Component {
       image: {
         ...state.image,
         offsetX: image.offsetX >= 0 ? 0 : deltaX >= 0 ? offsetXMax : image.offsetX,
-        offsetY: image.offsetY >= 0 ? 0 : deltaY >= 0 ? offsetYMax : image.offsetY,
+        offsetY:
+          image.offsetY >= 0
+            ? container.height > image.height
+              ? container.height / 2 - image.height / 2
+              : 0
+            : deltaY >= 0
+            ? container.height > image.height
+              ? container.height / 2 - image.height / 2
+              : offsetYMax
+            : image.offsetY,
       },
       minimap: {
         ...state.minimap,
         offsetX:
-          image.offsetX >= 0
+          image.offsetX >= 0 || image.width < container.width
             ? 0
             : deltaX >= 0
             ? -((minimap.height / image.height) * offsetXMax)
             : -((minimap.height / image.height) * image.offsetX),
         offsetY:
-          image.offsetY >= 0
+          image.offsetY >= 0 || image.height < container.height
             ? 0
             : deltaY >= 0
             ? -((minimap.height / image.height) * offsetYMax)
@@ -219,7 +238,7 @@ class ImageHotspots extends React.Component {
         ratio,
         orientation,
         offsetX: 0,
-        offsetY: 0,
+        offsetY: container.height / 2 - height / 2,
       },
       minimap: {
         ...minimap,
@@ -280,6 +299,7 @@ class ImageHotspots extends React.Component {
             width,
             height,
             scale,
+            offsetY: container.height > height ? container.height / 2 - height / 2 : 0,
           },
           draggable: scale > 1,
         }));
@@ -288,14 +308,23 @@ class ImageHotspots extends React.Component {
       // Reset image position
       if (scale === 1) {
         this.setState(prevState => ({
-          image: { ...prevState.image, offsetX: 0, offsetY: 0 },
+          image: {
+            ...prevState.image,
+            offsetX: 0,
+            offsetY: container.height / 2 - height / 2,
+          },
+          minimap: {
+            ...prevState.minimap,
+            offsetX: 0,
+            offsetY: 0,
+          },
         }));
       }
     }
   };
 
   render = () => {
-    const { src, alt, hotspots } = this.props;
+    const { src, alt, hotspots, background } = this.props;
     const {
       container,
       image,
@@ -314,7 +343,7 @@ class ImageHotspots extends React.Component {
       position: 'relative',
       overflow: 'hidden',
       textAlign: 'center',
-      background: '#eee',
+      background: background || this.state.background,
     };
 
     const imageStyle = {
@@ -398,8 +427,16 @@ class ImageHotspots extends React.Component {
       <div
         ref={this.container}
         style={containerStyle}
-        onMouseOut={this.stopDrag}
-        onBlur={this.stopDrag}
+        onMouseOut={event => {
+          if (dragging) {
+            this.stopDrag(event);
+          }
+        }}
+        onBlur={event => {
+          if (dragging) {
+            this.stopDrag(event);
+          }
+        }}
       >
         {src && (
           <img
@@ -417,7 +454,11 @@ class ImageHotspots extends React.Component {
                 this.whileDrag(evt);
               }
             }}
-            onMouseUp={this.stopDrag}
+            onMouseUp={event => {
+              if (dragging) {
+                this.stopDrag(event);
+              }
+            }}
           />
         )}
         {!hideHotspots && hotspots && (
@@ -438,11 +479,15 @@ class ImageHotspots extends React.Component {
         {!hideZoomControls && (
           <>
             <div style={bottomControlsStyle}>
-              <button type="button" style={buttonStyle} onClick={() => this.zoom(1)}>
-                Fit
-              </button>
-              <br />
-              <br />
+              {draggable && (
+                <>
+                  <button type="button" style={buttonStyle} onClick={() => this.zoom(1)}>
+                    <Icon name="icon--minimize" width="100%" height="100%" />
+                  </button>
+                  <br />
+                  <br />
+                </>
+              )}
               <button type="button" style={buttonStyle} onClick={() => this.zoom(image.scale + 1)}>
                 +
               </button>

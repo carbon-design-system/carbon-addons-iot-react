@@ -11,7 +11,6 @@ const mockActions = {
 };
 
 const tableRowProps = {
-  tableId: 'tableId',
   totalColumns: 1,
   id: 'tableRow',
   ordering: [{ columnId: 'col1', isHidden: false }],

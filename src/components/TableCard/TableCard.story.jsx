@@ -145,13 +145,11 @@ storiesOf('Table Card', module)
         value: 7,
         severity: 2, // High threshold, medium, or low used for sorting and defined filtration
       },
-      {
-        dataSourceId: 'alert',
-        comparison: '=',
-        value: 7,
-        severity: 2, // High threshold, medium, or low used for sorting and defined filtration
-      },
     ];
+
+    const tableCustomColumns = tableColumns.map(item =>
+      item.dataSourceId === 'count' ? { ...item, precision: 1 } : { ...item }
+    );
 
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
@@ -159,12 +157,16 @@ storiesOf('Table Card', module)
           title={text('title', 'Open Alerts')}
           id="table-list"
           content={{
-            columns: tableColumns,
+            columns: tableCustomColumns,
             thresholds,
             expandedRows: [
               {
                 id: 'long_description',
                 label: 'Description',
+              },
+              {
+                id: 'other_description',
+                label: 'Other Description',
               },
             ],
           }}
@@ -296,6 +298,25 @@ storiesOf('Table Card', module)
           id="table-list"
           content={{
             columns: tableColumns,
+          }}
+          isEditable
+          onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
+          size={size}
+        />
+      </div>
+    );
+  })
+  .add('editable with expanded rows', () => {
+    const size = CARD_SIZES.LARGE;
+
+    return (
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+        <TableCard
+          title={text('title', 'Open Alerts')}
+          id="table-list"
+          content={{
+            columns: tableColumns,
+            expandedRows: [{}],
           }}
           isEditable
           onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}

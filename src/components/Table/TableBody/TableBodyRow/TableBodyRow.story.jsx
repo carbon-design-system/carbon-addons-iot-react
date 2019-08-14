@@ -13,7 +13,6 @@ const tableBodyRowProps = {
   columns: [{ id: 'string', name: 'String' }],
   id: 'rowId',
   totalColumns: 1,
-  tableId: 'tableId',
   values: { string: 'My String' },
   tableActions: actions(
     'onRowSelected',
