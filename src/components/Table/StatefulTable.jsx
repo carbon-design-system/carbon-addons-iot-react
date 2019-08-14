@@ -45,7 +45,14 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
   // Need to initially sort and filter the tables data, but preserve the selectedId
   useDeepCompareEffect(
     () => {
-      dispatch(tableRegister({ data: initialData, isLoading, view: initialState }));
+      dispatch(
+        tableRegister({
+          data: initialData,
+          isLoading,
+          view: initialState,
+          totalItems: initialData.length,
+        })
+      );
     },
     [initialData, isLoading, initialState]
   );
@@ -53,7 +60,7 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
   const {
     view,
     view: {
-      table: { filteredData, selectedIds },
+      table: { filteredData, selectedIds, sort },
     },
   } = state;
 
@@ -120,8 +127,9 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
     },
     table: {
       onChangeSort: column => {
-        dispatch(tableColumnSort(column));
-        callbackParent(onChangeSort, column);
+        const sortDirection = sort ? sort.direction : undefined;
+        dispatch(tableColumnSort(column, columns));
+        callbackParent(onChangeSort, column, sortDirection);
       },
       onRowSelected: (rowId, isSelected) => {
         dispatch(tableRowSelect(rowId, isSelected, options.hasRowSelection));

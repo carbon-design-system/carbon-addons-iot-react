@@ -58,7 +58,7 @@ const StyledFooter = styled.div`
 
 export const propTypes = {
   /** Title in the header */
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
   blurb: PropTypes.string,
   /** Id of current step */
   currentItemId: PropTypes.string,
@@ -110,6 +110,7 @@ export const propTypes = {
 };
 
 export const defaultProps = {
+  title: null,
   sidebar: null,
   footerLeftContent: null,
   showLabels: true,
@@ -189,13 +190,6 @@ const WizardInline = ({
           onClose={onClose}
           stepWidth={stepWidth}
         />
-
-        <StyledWizardContainer>
-          {sidebar ? <WizardSidebar sidebar={sidebar} /> : null}
-          <div data-id="WizardInlineContent" className="bx--modal-content">
-            <WizardContent component={currentItemObj.component} />
-          </div>
-        </StyledWizardContainer>
         {error ? (
           <StyledMessageBox
             title={error}
@@ -204,6 +198,14 @@ const WizardInline = ({
             onCloseButtonClick={handleClearError}
           />
         ) : null}
+
+        <StyledWizardContainer>
+          {sidebar ? <WizardSidebar sidebar={sidebar} /> : null}
+          <div data-id="WizardInlineContent" className="bx--modal-content">
+            <WizardContent component={currentItemObj.component} />
+          </div>
+        </StyledWizardContainer>
+
         <StyledFooter className={className}>
           <div data-id="WizardInlineFooter" className="bx--modal-footer">
             <WizardFooter

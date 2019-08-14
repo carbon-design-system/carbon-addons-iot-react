@@ -69,7 +69,7 @@ export const TimeSeriesCardPropTypes = {
     xLabel: PropTypes.string,
     yLabel: PropTypes.string,
     /** Which attribute is the time attribute */
-    timeDataSourceId: PropTypes.string.isRequired,
+    timeDataSourceId: PropTypes.string,
   }).isRequired,
   /** array of data from the backend for instance [{timestamp: 134234234234, temperature: 35, humidity: 10}, ...] */
   values: PropTypes.arrayOf(PropTypes.object),
@@ -79,26 +79,35 @@ export const TableCardPropTypes = {
   content: PropTypes.shape({
     columns: PropTypes.arrayOf(
       PropTypes.shape({
-        id: PropTypes.string.isRequired,
-        name: PropTypes.string.isRequired,
+        dataSourceId: PropTypes.string.isRequired,
+        label: PropTypes.string.isRequired,
         priority: PropTypes.number,
         renderer: PropTypes.func,
+        type: PropTypes.string,
       })
     ).isRequired,
-    data: PropTypes.arrayOf(
+    showHeader: PropTypes.bool,
+    expandedRows: PropTypes.arrayOf(
       PropTypes.shape({
-        id: PropTypes.string.isRequired,
-        values: PropTypes.object.isRequired,
-        actions: PropTypes.arrayOf(
-          PropTypes.shape({
-            id: PropTypes.string.isRequired,
-            label: PropTypes.string,
-            icon: PropTypes.string,
-          })
-        ),
+        id: PropTypes.string,
+        label: PropTypes.string,
       })
-    ).isRequired,
+    ),
+    sort: PropTypes.oneOf(['ASC', 'DESC']),
   }).isRequired,
+  value: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      values: PropTypes.object.isRequired,
+      actions: PropTypes.arrayOf(
+        PropTypes.shape({
+          id: PropTypes.string.isRequired,
+          label: PropTypes.string,
+          icon: PropTypes.string,
+        })
+      ),
+    })
+  ),
 };
 
 export const BarChartDatasetPropTypes = PropTypes.shape({
@@ -126,6 +135,18 @@ export const DonutCardPropTypes = {
         label: PropTypes.string.isRequired,
         value: PropTypes.number.isRequired,
         color: PropTypes.string,
+      })
+    ),
+  }).isRequired,
+};
+
+export const ImageCardPropTypes = {
+  content: PropTypes.shape({
+    title: PropTypes.string,
+    data: PropTypes.arrayOf(
+      PropTypes.shape({
+        src: PropTypes.string.isRequired,
+        alt: PropTypes.string.isRequired,
       })
     ),
   }).isRequired,
@@ -174,26 +195,38 @@ export const CardPropTypes = {
   layout: PropTypes.oneOf(Object.values(CARD_LAYOUTS)),
   breakpoint: PropTypes.oneOf(Object.values(DASHBOARD_SIZES)),
   /** Optional range to pass at the card level */
-  range: PropTypes.oneOfType([
-    PropTypes.oneOf(['day', 'week', 'month']),
-    PropTypes.shape({
-      start: PropTypes.instanceOf(Date),
-      end: PropTypes.instanceOf(Date),
-    }),
+  timeRange: PropTypes.oneOf([
+    'last24Hours',
+    'last7Days',
+    'lastMonth',
+    'lastQuarter',
+    'lastYear',
+    'thisWeek',
+    'thisMonth',
+    'thisQuarter',
+    'thisYear',
+    '',
   ]),
+  /** Interval for time series configuration */
+  interval: PropTypes.oneOf(['hour', 'day', 'week', 'month', 'year']),
   availableActions: PropTypes.shape({
     edit: PropTypes.bool,
     clone: PropTypes.bool,
     delete: PropTypes.bool,
     expand: PropTypes.bool,
+    range: PropTypes.bool,
   }),
   /** All the labels that need translation */
   i18n: PropTypes.shape({
     noDataLabel: PropTypes.string,
     noDataShortLabel: PropTypes.string,
-    hourlyLabel: PropTypes.string,
-    weeklyLabel: PropTypes.string,
-    monthlyLabel: PropTypes.string,
+    errorLoadingDataLabel: PropTypes.string,
+    errorLoadingDataShortLabel: PropTypes.string,
+    dayByHourLabel: PropTypes.string,
+    weekByDayLabel: PropTypes.string,
+    monthByDayLabel: PropTypes.string,
+    monthByWeekLabel: PropTypes.string,
+    yearByMonthLabel: PropTypes.string,
     editCardLabel: PropTypes.string,
     cloneCardLabel: PropTypes.string,
     deleteCardLabel: PropTypes.string,

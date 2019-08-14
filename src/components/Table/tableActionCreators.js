@@ -18,10 +18,9 @@ export const TABLE_SEARCH_APPLY = 'TABLE_SEARCH_APPLY';
 export const TABLE_EMPTY_STATE_ACTION = 'TABLE_EMPTY_STATE_ACTION';
 export const TABLE_LOADING_SET = 'TABLE_LOADING_SET';
 
-export const tableRegister = (data, totalItems, instanceId = null) => ({
+export const tableRegister = ({ data, isLoading, view, totalItems, instanceId = null }) => ({
   type: TABLE_REGISTER,
-  payload: data,
-  totalItems,
+  payload: { data, view, isLoading, totalItems },
   instanceId,
 });
 
@@ -66,9 +65,10 @@ export const tableActionApply = (id, instanceId = null) => ({
 });
 
 /** Table column actions */
-export const tableColumnSort = (column, instanceId = null) => ({
+export const tableColumnSort = (column, columns, instanceId = null) => ({
   type: TABLE_COLUMN_SORT,
   payload: column,
+  columns,
   instanceId,
 });
 export const tableColumnOrder = (ordering, instanceId = null) => ({

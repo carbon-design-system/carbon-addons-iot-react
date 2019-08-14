@@ -21,6 +21,8 @@ const LinkButton = styled.button`
     outline: none;
     color: ${COLORS.blue60};
     cursor: pointer;
+    margin-left: 0.25rem;
+    text-decoration: underline;
   }
 `;
 
@@ -35,11 +37,15 @@ const propTypes = {
   /** DOM ID */
   id: PropTypes.string,
   /** Title text  */
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
   /** Description text of file uploader */
-  description: PropTypes.string.isRequired,
+  description: PropTypes.string,
+  /** Optionally show the uploaded files */
+  showFiles: PropTypes.bool,
   /** Button label  */
   buttonLabel: PropTypes.string,
+  /** can multiple files be uploaded */
+  multiple: PropTypes.bool,
   /** File types that are accepted */
   accept: PropTypes.arrayOf(PropTypes.string),
   /** Componet is drag/drop */
@@ -48,15 +54,21 @@ const propTypes = {
   onData: PropTypes.func,
   /** Callback for file load errors */
   onError: PropTypes.func,
+  dragAndDropLabel: PropTypes.string,
 };
 
 const defaultProps = {
   id: 'FileUploader',
   buttonLabel: 'Add files',
+  title: null,
+  description: null,
   kind: 'browse',
+  multiple: true,
+  showFiles: true,
   accept: [],
   onData: () => {},
   onError: () => {},
+  dragAndDropLabel: 'Drag and drop your file here or ',
 };
 
 /**
@@ -155,9 +167,10 @@ class FileDrop extends React.Component {
   };
 
   addNewFiles = files => {
+    const { multiple } = this.props;
     const filenames = Array.prototype.map.call(files, f => f.name);
     this.setState(state => ({
-      files: state.files
+      files: (multiple ? state.files : []) // if we're not multiple, always restart
         .concat(
           filenames.map(name => ({
             name,
@@ -166,7 +179,9 @@ class FileDrop extends React.Component {
           }))
         )
         .filter(
-          (elem, index, arr) => index === arr.findIndex(indexFound => indexFound.name === elem.name)
+          (elem, index, arr) =>
+            index === arr.findIndex(indexFound => indexFound.name === elem.name) &&
+            (multiple || index === 0) // only support the first if set to multiple=false
         ),
     }));
     this.readFileContent(files);
@@ -199,23 +214,37 @@ class FileDrop extends React.Component {
   };
 
   render = () => {
-    const { id, title, description, buttonLabel, accept, kind } = this.props;
+    const {
+      id,
+      title,
+      description,
+      buttonLabel,
+      accept,
+      kind,
+      multiple,
+      showFiles,
+      className,
+      dragAndDropLabel,
+    } = this.props;
     const { hover } = this.state;
-
-    const dradAndDropText = 'Drag and drop you file here or ';
 
     const linkElement = (
       <div>
-        {dradAndDropText}
+        {dragAndDropLabel}
         <span
           onClick={() => {
             if (this.fileInput) {
+              if (!multiple) {
+                this.setState({ files: [] });
+              }
+              this.fileInput.files = null;
+              this.fileInput.value = null;
               this.fileInput.click();
             }
           }}
           role="presentation"
         >
-          <LinkButton> upload </LinkButton>
+          <LinkButton>{buttonLabel}</LinkButton>
         </span>
         <div>{description}</div>
       </div>
@@ -253,14 +282,14 @@ class FileDrop extends React.Component {
     );
 
     return kind === 'drag-and-drop' ? (
-      <div>
+      <div className={className}>
         <strong className="bx--label">{title}</strong>
         <input
           style={{ visibility: 'hidden' }}
           type="file"
           ref={ref => (this.fileInput = ref)} // eslint-disable-line
           accept={accept}
-          multiple
+          multiple={multiple}
           onChange={this.handleChange}
         />
         <Text
@@ -271,21 +300,21 @@ class FileDrop extends React.Component {
         >
           {linkElement}
         </Text>
-        {fileNameElements}
+        {showFiles ? fileNameElements : null}
       </div>
     ) : (
       <div id={id} className="bx--form-item">
-        <strong className="bx--label">{title}</strong>
-        <p className="bx--label-description">{description}</p>
+        {title ? <strong className="bx--label">{title}</strong> : null}
+        {description ? <p className="bx--label-description">{description}</p> : null}
         <FileUploaderButton
           labelText={buttonLabel}
-          multiple
+          multiple={multiple}
           buttonKind="secondary"
           onChange={this.handleChange}
           disableLabelChanges
           accept={accept}
         />
-        {fileNameElements}
+        {showFiles ? fileNameElements : null}
       </div>
     );
   };
