@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Icon } from 'carbon-components-react';
 
 import Hotspot, { propTypes as HotspotPropTypes } from './Hotspot';
 
@@ -528,11 +529,15 @@ class ImageHotspots extends React.Component {
         {!hideZoomControls && (
           <>
             <div style={bottomControlsStyle}>
-              <button type="button" style={buttonStyle} onClick={() => this.zoom(1)}>
-                Fit
-              </button>
-              <br />
-              <br />
+              {draggable && (
+                <>
+                  <button type="button" style={buttonStyle} onClick={() => this.zoom(1)}>
+                    <Icon name="icon--minimize" width="100%" height="100%" />
+                  </button>
+                  <br />
+                  <br />
+                </>
+              )}
               <button type="button" style={buttonStyle} onClick={() => this.zoom(image.scale + 1)}>
                 +
               </button>
