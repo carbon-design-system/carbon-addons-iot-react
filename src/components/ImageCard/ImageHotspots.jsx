@@ -12,7 +12,6 @@ const propTypes = {
   /** optional array of hotspots to render over the image */
   hotspots: PropTypes.arrayOf(PropTypes.shape(HotspotPropTypes)),
   /** optional features to enable or disable */
-  hideFullscreenControl: PropTypes.bool,
   hideZoomControls: PropTypes.bool,
   hideHotspots: PropTypes.bool,
   hideMinimap: PropTypes.bool,
@@ -22,7 +21,6 @@ const propTypes = {
 const defaultProps = {
   hotspots: [],
   alt: null,
-  hideFullscreenControl: false,
   hideZoomControls: false,
   hideHotspots: false,
   hideMinimap: false,
@@ -59,7 +57,6 @@ class ImageHotspots extends React.Component {
         offsetX: 0,
         offsetY: 0,
       },
-      hideFullscreenControl: false,
       hideZoomControls: false,
       hideHotspots: false,
       hideMinimap: false,
@@ -79,12 +76,11 @@ class ImageHotspots extends React.Component {
 
   componentDidMount = () => {
     const {
-      hideFullscreenControl,
       hideZoomControls,
       hideHotspots,
       hideMinimap,
       hotspots,
-      background,
+      background
     } = this.props;
     const { offsetWidth: width, offsetHeight: height } = this.container.current;
     const orientation = width > height ? 'landscape' : 'portrait';
@@ -92,7 +88,6 @@ class ImageHotspots extends React.Component {
 
     this.setState({
       container: { width, height, ratio, orientation, background },
-      hideFullscreenControl,
       hideZoomControls,
       hideHotspots,
       hideMinimap,
@@ -258,18 +253,13 @@ class ImageHotspots extends React.Component {
   };
 
   onWindowResize = () => {
-    this.zoom(this.state.image.scale);
-  };
+    const { offsetWidth: width, offsetHeight: height } = this.container.current;
+    const orientation = width > height ? 'landscape' : 'portrait';
+    const ratio = orientation === 'landscape' ? width / height : height / width;
 
-  toggleFullscreen = () => {
-    const { fullscreen } = this.state;
-    if (!fullscreen) {
-      this.requestFullscreen(this.container.current);
-      this.setState({ fullscreen: true });
-    } else {
-      this.exitFullscreen();
-      this.setState({ fullscreen: false });
-    }
+    this.setState({ container: { width, height, ratio, orientation } });
+
+    this.zoom(this.state.image.scale);
   };
 
   zoom = scale => {
@@ -333,39 +323,13 @@ class ImageHotspots extends React.Component {
     }
   };
 
-  requestFullscreen = element => {
-    if (element.requestFullscreen) {
-      element.requestFullscreen();
-    } else if (element.mozRequestFullScreen) {
-      element.mozRequestFullScreen();
-    } else if (element.webkitRequestFullscreen) {
-      element.webkitRequestFullscreen();
-    } else if (element.msRequestFullscreen) {
-      element.msRequestFullscreen();
-    }
-  };
-
-  exitFullscreen = () => {
-    if (document.exitFullscreen) {
-      document.exitFullscreen();
-    } else if (document.mozCancelFullScreen) {
-      document.mozCancelFullScreen();
-    } else if (document.webkitExitFullscreen) {
-      document.webkitExitFullscreen();
-    } else if (document.msExitFullscreen) {
-      document.msExitFullscreen();
-    }
-  };
-
   render = () => {
     const { src, alt, hotspots, background } = this.props;
     const {
       container,
       image,
       minimap,
-      fullscreen,
       dragging,
-      hideFullscreenControl,
       hideZoomControls,
       hideHotspots,
       hideMinimap,
@@ -395,13 +359,6 @@ class ImageHotspots extends React.Component {
       right: image.offsetX >= 0 ? 0 : 'auto',
       margin: 'auto',
       pointerEvents: 'none',
-    };
-
-    const topControlsStyle = {
-      position: 'absolute',
-      top: 10,
-      right: 10,
-      pointerEvents: this.state.dragging ? 'none' : 'auto',
     };
 
     const bottomControlsStyle = {
@@ -517,13 +474,6 @@ class ImageHotspots extends React.Component {
                 />
               );
             })}
-          </div>
-        )}
-        {!hideFullscreenControl && (
-          <div style={topControlsStyle}>
-            <button type="button" style={buttonStyle} onClick={() => this.toggleFullscreen()}>
-              {fullscreen ? 'X' : 'FS'}
-            </button>
           </div>
         )}
         {!hideZoomControls && (
