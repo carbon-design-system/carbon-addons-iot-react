@@ -16,13 +16,16 @@ const propTypes = {
   lastUpdatedLabel: PropTypes.string,
   /** Optional filter component that might be used to filter this dashboard */
   filter: PropTypes.node,
+  /** If the component should render the last updated section */
+  hasLastUpdated: PropTypes.bool,
 };
 
 const defaultProps = {
   description: null,
   lastUpdated: null,
-  lastUpdatedLabel: 'Last updated:',
+  lastUpdatedLabel: null,
   filter: null,
+  hasLastUpdated: true,
 };
 
 const StyledDashboardHeader = styled.div`
@@ -34,7 +37,6 @@ const StyledDashboardHeader = styled.div`
 const StyledLeft = styled.div`
   display: flex;
   flex-flow: column;
-  > h2,
   > p {
     padding-bottom: 1rem;
     margin-bottom: 0rem;
@@ -42,6 +44,7 @@ const StyledLeft = styled.div`
   > h2 {
     font-size: 1.75rem;
     font-weight: 400;
+    margin-bottom: 0rem;
   }
   > p,
   div {
@@ -59,13 +62,20 @@ const LastUpdated = styled.div`
 `;
 
 /** Renders the dashboard header at the top of the dashboard */
-const DashboardHeader = ({ title, description, lastUpdated, lastUpdatedLabel, filter }) => {
+const DashboardHeader = ({
+  title,
+  description,
+  lastUpdated,
+  lastUpdatedLabel,
+  filter,
+  hasLastUpdated,
+}) => {
   return (
     <StyledDashboardHeader>
       <StyledLeft>
         <h2>{title}</h2>
         {description ? <p>{description}</p> : null}
-        {lastUpdatedLabel ? (
+        {hasLastUpdated ? (
           <LastUpdated>
             {lastUpdatedLabel} {lastUpdated || <SkeletonText />}
           </LastUpdated>
