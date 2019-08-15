@@ -32,8 +32,8 @@ const defaultProps = {
 const Hotspot = ({ x, y, content, icon, color, width, height, ...others }) => {
   const hotspotStyle = {
     position: 'absolute',
-    top: `${y}%`,
-    left: `${x}%`,
+    top: `calc(${y}% - ${height / 2}px)`,
+    left: `calc(${x}% - ${width / 2}px)`,
     fontFamily: 'Sans-Serif',
     pointerEvents: 'auto',
   };
