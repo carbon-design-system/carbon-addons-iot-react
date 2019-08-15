@@ -541,7 +541,6 @@ const TableBodyRow = ({
     <StyledTableRow
       key={id}
       isSelected={isSelected}
-      hasRowSelection={hasRowSelection}
       onClick={() => {
         if (hasRowSelection === 'single') {
           onRowSelected(id, true);
