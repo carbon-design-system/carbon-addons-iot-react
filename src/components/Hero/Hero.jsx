@@ -11,6 +11,8 @@ const propTypes = {
   description: PropTypes.node,
   /** Optional What to render in the right side of the hero */
   rightContent: PropTypes.node,
+  /** Optional what to render in the right side of the breadcrumb */
+  rightContentBreadcrumb: PropTypes.node,
   /** Breadcrumbs to show */
   breadcrumb: PropTypes.arrayOf(PropTypes.node),
   tooltip: PropTypes.shape({
@@ -28,19 +30,21 @@ const defaultProps = {
   description: null,
   className: null,
   rightContent: null,
-  breadcrumb: [],
+  rightContentBreadcrumb: null,
+  breadcrumb: null,
   tooltip: null,
   isLoading: false,
 };
 
 const StyledHero = styled.div`
-  padding: 2rem 2rem 1.5rem 2rem;
+  padding: 1rem 2rem 0.5rem 2rem;
 `;
 
 const StyledTitleSection = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding-top: ${props => (!props.breadcrumb ? '16px' : '0px')};
 `;
 
 const StyledTitle = styled.div`
@@ -48,6 +52,7 @@ const StyledTitle = styled.div`
   display: flex;
   font-weight: 400;
   font-size: 1.75rem;
+  line-height: 2.25rem;
   color: #171717;
 `;
 
@@ -62,24 +67,44 @@ const StyledPageDescription = styled.p`
 const StyledRightContent = styled.div``;
 
 const StyledBreadcrumb = styled(Breadcrumb)`
-  margin-bottom: 0.75rem;
+  margin-bottom: 0;
+`;
+
+const StyledBreadcrumbDiv = styled.div`
+  display: flex;
+  justify-content: space-between;
 `;
 
 /**
  * Renders the hero text and styles for the page.  Can either render Breadcrumb, Title with description and secundary nav.
  */
-const Hero = ({ title, description, className, rightContent, breadcrumb, tooltip, isLoading }) => (
+const Hero = ({
+  title,
+  description,
+  className,
+  rightContent,
+  breadcrumb,
+  rightContentBreadcrumb,
+  tooltip,
+  isLoading,
+}) => (
   <StyledHero className={className}>
     {isLoading ? (
       <SkeletonText width="30%" />
     ) : (
       <Fragment>
-        <StyledBreadcrumb>
-          {breadcrumb.map((crumb, index) => (
-            <BreadcrumbItem key={`breadcrumb-${index}`}>{crumb}</BreadcrumbItem>
-          ))}
-        </StyledBreadcrumb>
-        <StyledTitleSection>
+        {breadcrumb ? (
+          <StyledBreadcrumbDiv>
+            <StyledBreadcrumb>
+              {breadcrumb.map((crumb, index) => (
+                <BreadcrumbItem key={`breadcrumb-${index}`}>{crumb}</BreadcrumbItem>
+              ))}
+            </StyledBreadcrumb>
+            <StyledRightContent>{rightContentBreadcrumb}</StyledRightContent>
+          </StyledBreadcrumbDiv>
+        ) : null}
+
+        <StyledTitleSection breadcrumb={!!breadcrumb}>
           <StyledTitle>
             {title}
             {tooltip ? (
@@ -110,7 +135,6 @@ const Hero = ({ title, description, className, rightContent, breadcrumb, tooltip
     )}
   </StyledHero>
 );
-
 Hero.propTypes = propTypes;
 Hero.defaultProps = defaultProps;
 
