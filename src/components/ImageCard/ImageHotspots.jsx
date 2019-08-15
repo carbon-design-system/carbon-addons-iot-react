@@ -54,6 +54,8 @@ class ImageHotspots extends React.Component {
         initialSize: 100,
         width: undefined,
         height: undefined,
+        guideWidth: undefined,
+        guideHeight: undefined,
         offsetX: 0,
         offsetY: 0,
       },
@@ -75,13 +77,7 @@ class ImageHotspots extends React.Component {
   }
 
   componentDidMount = () => {
-    const {
-      hideZoomControls,
-      hideHotspots,
-      hideMinimap,
-      hotspots,
-      background
-    } = this.props;
+    const { hideZoomControls, hideHotspots, hideMinimap, hotspots, background } = this.props;
     const { offsetWidth: width, offsetHeight: height } = this.container.current;
     const orientation = width > height ? 'landscape' : 'portrait';
     const ratio = orientation === 'landscape' ? width / height : height / width;
@@ -244,6 +240,8 @@ class ImageHotspots extends React.Component {
         ...minimap,
         width: orientation === 'landscape' ? minimap.initialSize : minimap.initialSize / ratio,
         height: orientation === 'portrait' ? minimap.initialSize : minimap.initialSize / ratio,
+        guideWidth: orientation === 'landscape' ? minimap.initialSize : minimap.initialSize / ratio,
+        guideHeight: orientation === 'portrait' ? minimap.initialSize : minimap.initialSize / ratio,
       },
       hideZoomControls: hideZoomControls || !resizable,
       hideMinimap: hideMinimap || !resizable,
@@ -264,7 +262,7 @@ class ImageHotspots extends React.Component {
 
   zoom = scale => {
     if (scale > 0) {
-      const { container, image } = this.state;
+      const { container, image, minimap } = this.state;
 
       const width =
         container.orientation === image.orientation
@@ -292,6 +290,38 @@ class ImageHotspots extends React.Component {
           ? (container.width / image.ratio) * scale // landscape image and portrait container
           : container.height * scale; // portrait image and landscape container
 
+      const guideWidth =
+        container.width >= width ? minimap.width : minimap.width / (width / container.width);
+      const guideHeight =
+        container.height >= height ? minimap.height : minimap.height / (height / container.height);
+
+      const deltaX = Math.round(width - image.width);
+      const deltaY = Math.round(height - image.height);
+      const guideDeltaX = Math.round(guideWidth - minimap.guideWidth);
+      const guideDeltaY = Math.round(guideHeight - minimap.guideHeight);
+
+      const offsetX = image.offsetX - deltaX / 2;
+      const offsetY = image.offsetY - deltaY / 2;
+      const guideOffsetX = Math.round(minimap.offsetX - guideDeltaX / 2);
+      const guideOffsetY = Math.round(minimap.offsetY - guideDeltaY / 2);
+
+      const offsetXMax =
+        container.orientation === image.orientation
+          ? -Math.abs(Math.round(width - container.width))
+          : -Math.abs(Math.round(container.width - width));
+      const offsetYMax =
+        container.orientation === image.orientation
+          ? -Math.abs(Math.round(container.height - height))
+          : -Math.abs(Math.round(height - container.height));
+      const guideOffsetXMax =
+        container.orientation === image.orientation
+          ? Math.round(minimap.width - guideWidth)
+          : Math.round(minimap.width - guideWidth);
+      const guideOffsetYMax =
+        container.orientation === image.orientation
+          ? Math.round(minimap.height - guideHeight)
+          : Math.round(minimap.height - guideHeight);
+
       if (image.initialWidth > width && image.initialHeight > height) {
         this.setState(prevState => ({
           image: {
@@ -299,7 +329,32 @@ class ImageHotspots extends React.Component {
             width,
             height,
             scale,
-            offsetY: container.height > height ? container.height / 2 - height / 2 : 0,
+            offsetX: offsetX >= 0 ? 0 : image.offsetX <= offsetXMax ? offsetXMax : offsetX,
+            offsetY:
+              container.height > height
+                ? container.height / 2 - height / 2
+                : offsetY >= 0
+                ? 0
+                : image.offsetY < offsetYMax
+                ? offsetYMax
+                : offsetY,
+          },
+          minimap: {
+            ...prevState.minimap,
+            guideWidth,
+            guideHeight,
+            offsetX:
+              guideOffsetX <= 0
+                ? 0
+                : minimap.offsetX < guideOffsetXMax
+                ? guideOffsetX
+                : guideOffsetXMax,
+            offsetY:
+              guideOffsetY <= 0 || height < container.height
+                ? 0
+                : minimap.offsetY < guideOffsetYMax
+                ? guideOffsetY
+                : guideOffsetYMax,
           },
           draggable: scale > 1,
         }));
@@ -389,6 +444,8 @@ class ImageHotspots extends React.Component {
     };
 
     const guideStyle = {
+      width: minimap.guideWidth,
+      height: minimap.guideHeight,
       position: 'absolute',
       display: 'block',
       left: minimap.offsetX,
@@ -412,15 +469,6 @@ class ImageHotspots extends React.Component {
         hotspotsStyle.width = image.height / image.ratio;
         hotspotsStyle.height = image.height;
       }
-
-      guideStyle.width =
-        container.width >= image.width
-          ? minimap.width
-          : minimap.width / (image.width / container.width);
-      guideStyle.height =
-        container.height >= image.height
-          ? minimap.height
-          : minimap.height / (image.height / container.height);
     }
     /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
     return (
