@@ -305,22 +305,10 @@ class ImageHotspots extends React.Component {
       const guideOffsetX = Math.round(minimap.offsetX - guideDeltaX / 2);
       const guideOffsetY = Math.round(minimap.offsetY - guideDeltaY / 2);
 
-      const offsetXMax =
-        container.orientation === image.orientation
-          ? -Math.abs(Math.round(width - container.width))
-          : -Math.abs(Math.round(container.width - width));
-      const offsetYMax =
-        container.orientation === image.orientation
-          ? -Math.abs(Math.round(container.height - height))
-          : -Math.abs(Math.round(height - container.height));
-      const guideOffsetXMax =
-        container.orientation === image.orientation
-          ? Math.round(minimap.width - guideWidth)
-          : Math.round(minimap.width - guideWidth);
-      const guideOffsetYMax =
-        container.orientation === image.orientation
-          ? Math.round(minimap.height - guideHeight)
-          : Math.round(minimap.height - guideHeight);
+      const offsetXMax = -Math.abs(Math.round(container.width - width));
+      const offsetYMax = -Math.abs(Math.round(container.height - height));
+      const guideOffsetXMax = Math.round(minimap.width - guideWidth);
+      const guideOffsetYMax = Math.round(minimap.height - guideHeight);
 
       if (image.initialWidth > width && image.initialHeight > height) {
         this.setState(prevState => ({
@@ -329,7 +317,12 @@ class ImageHotspots extends React.Component {
             width,
             height,
             scale,
-            offsetX: offsetX >= 0 ? 0 : image.offsetX <= offsetXMax ? offsetXMax : offsetX,
+            offsetX:
+              offsetX >= 0 || container.width > width
+                ? 0
+                : image.offsetX <= offsetXMax
+                ? offsetXMax
+                : offsetX,
             offsetY:
               container.height > height
                 ? container.height / 2 - height / 2
