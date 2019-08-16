@@ -23,7 +23,7 @@ const propTypes = {
 const defaultProps = {
   description: null,
   lastUpdated: null,
-  lastUpdatedLabel: null,
+  lastUpdatedLabel: 'Last updated:',
   filter: null,
   hasLastUpdated: true,
 };
