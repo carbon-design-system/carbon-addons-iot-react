@@ -18,6 +18,7 @@ const content = {
     { x: 45, y: 50, content: <span style={{ padding: '10px' }}>Stairs</span> },
     { x: 45, y: 75, content: <span style={{ padding: '10px' }}>Stairs</span> },
   ],
+  zoomMax: 10,
 };
 
 storiesOf('ImageCard (Experimental)', module)

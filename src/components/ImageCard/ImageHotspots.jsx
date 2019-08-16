@@ -16,6 +16,7 @@ const propTypes = {
   hideHotspots: PropTypes.bool,
   hideMinimap: PropTypes.bool,
   background: PropTypes.string,
+  zoomMax: PropTypes.number,
 };
 
 const defaultProps = {
@@ -25,6 +26,7 @@ const defaultProps = {
   hideHotspots: false,
   hideMinimap: false,
   background: '#eee',
+  zoomMax: undefined,
 };
 
 class ImageHotspots extends React.Component {
@@ -75,13 +77,7 @@ class ImageHotspots extends React.Component {
   }
 
   componentDidMount = () => {
-    const {
-      hideZoomControls,
-      hideHotspots,
-      hideMinimap,
-      hotspots,
-      background
-    } = this.props;
+    const { hideZoomControls, hideHotspots, hideMinimap, hotspots, background } = this.props;
     const { offsetWidth: width, offsetHeight: height } = this.container.current;
     const orientation = width > height ? 'landscape' : 'portrait';
     const ratio = orientation === 'landscape' ? width / height : height / width;
@@ -265,6 +261,7 @@ class ImageHotspots extends React.Component {
   zoom = scale => {
     if (scale > 0) {
       const { container, image } = this.state;
+      const { zoomMax } = this.props;
 
       const width =
         container.orientation === image.orientation
@@ -292,7 +289,10 @@ class ImageHotspots extends React.Component {
           ? (container.width / image.ratio) * scale // landscape image and portrait container
           : container.height * scale; // portrait image and landscape container
 
-      if (image.initialWidth > width && image.initialHeight > height) {
+      if (
+        (zoomMax && scale < zoomMax) ||
+        (image.initialWidth > width && image.initialHeight > height)
+      ) {
         this.setState(prevState => ({
           image: {
             ...prevState.image,
