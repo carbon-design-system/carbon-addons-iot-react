@@ -14,6 +14,5 @@ module.exports = {
   outputFormat: ['json'],
   label: ['master'],
   outputFolder: 'results',
-  // baselineFolder: 'baselines',
   checkHiddenContent: false,
 };
