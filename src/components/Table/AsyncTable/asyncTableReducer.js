@@ -14,7 +14,7 @@ export default (state, action) => {
     case baseTableActions.TABLE_REGISTER:
       return update(baseTableReducer(state, action), {
         data: {
-          $set: action.payload,
+          $set: action.payload.data,
         },
         view: {
           pagination: {

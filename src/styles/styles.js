@@ -24,6 +24,10 @@ export const COLORS = {
   gray10hover: '#e5e5e5',
   blue60: '#0062ff',
   navToggle: '#282828',
+  purple: '#8A3FFC',
+  teal: '#009C98',
+  magenta: '#EE538B',
+  cyan: '#0072C3',
 };
 
 export const TYPOGRAPHY = {

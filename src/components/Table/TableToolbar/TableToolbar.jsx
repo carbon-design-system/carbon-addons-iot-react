@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import { iconFilter } from 'carbon-icons';
 import IconColumnSelector from '@carbon/icons-react/lib/column/20';
 import IconFilter from '@carbon/icons-react/lib/filter/20';
 import { DataTable, Button } from 'carbon-components-react';
@@ -97,6 +96,8 @@ const propTypes = {
    * Inbound tableState
    */
   tableState: PropTypes.shape({
+    /** is the toolbar currently disabled */
+    isDisabled: PropTypes.bool,
     /** Which toolbar is currently active */
     activeBar: PropTypes.oneOf(['column', 'filter']),
     /** total number of selected rows */
@@ -148,6 +149,7 @@ const TableToolbar = ({
     search,
     // activeBar,
     customToolbarContent,
+    isDisabled,
   },
 }) => (
   <StyledCarbonTableToolbar className={className}>
@@ -167,6 +169,7 @@ const TableToolbar = ({
         {...search}
         onChange={event => onApplySearch(event.currentTarget ? event.currentTarget.value : '')}
         placeHolderText={searchPlaceholderText}
+        disabled={isDisabled}
       />
     ) : null}
     <StyledTableToolbarContent>

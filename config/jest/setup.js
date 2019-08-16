@@ -26,3 +26,14 @@ window.SVGPathElement = SVGPathElement;
 import sizeMe from 'react-sizeme';
 
 sizeMe.noPlaceholders = true;
+
+// Force the timezone to be the same everywhere
+const moment = require.requireActual('moment-timezone');
+moment.fn.local = moment.fn.utc; // mock the local function to return utc
+jest.doMock('moment', () => {
+  moment.tz.setDefault('America/Chicago');
+  return moment;
+});
+Date.prototype.getTimezoneOffset = () => 300; // mock date offset
+Date.now = jest.fn(() => 1537538254000); // mock internal date
+Date.prototype.getLocaleString = () => 'Mock Date!';
