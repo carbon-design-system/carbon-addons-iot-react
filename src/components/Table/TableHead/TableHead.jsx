@@ -107,6 +107,7 @@ const StyledCustomTableHeader = styled(TableHeader)`
         max-width: ${width};
         white-space: nowrap;
         overflow-x: hidden;
+        overflow-y: hidden;
         text-overflow: ellipsis;
       `
         : '';
@@ -161,9 +162,9 @@ const TableHead = ({
 
         {ordering.map(item => {
           const matchingColumnMeta = columns.find(column => column.id === item.columnId);
-          const hasSort = sort && sort.columnId === matchingColumnMeta.id;
+          const hasSort = matchingColumnMeta && sort && sort.columnId === matchingColumnMeta.id;
 
-          return !item.isHidden ? (
+          return !item.isHidden && matchingColumnMeta ? (
             <StyledCustomTableHeader
               id={`column-${matchingColumnMeta.id}`}
               key={`column-${matchingColumnMeta.id}`}

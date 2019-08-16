@@ -45,9 +45,15 @@ const StyledPagination = sizeMe({ noPlaceholder: true })(styled(
     .bx--pagination__left,
     .bx--pagination__text {
       display: ${props =>
-        (props.size && props.size.width && props.size.width < 600) || props.isItemPerPageHidden
-          ? 'none'
-          : 'flex'};
+        props.size && props.size.width && props.size.width < 500 ? 'none' : 'flex'};
+    }
+    .bx--pagination__left span:first-child,
+    .bx--pagination__left .bx--form-item {
+      display: ${props => (props.isItemPerPageHidden ? 'none' : '')};
+    }
+    .bx--select .bx--select-input ~ .bx--select__arrow {
+      align-self: center;
+      top: 0px;
     }
   }
 `);
@@ -112,6 +118,8 @@ const propTypes = {
       ),
       /** Simple search state */
       search: TableSearchPropTypes,
+      /** is the toolbar currently disabled */
+      isDisabled: PropTypes.bool,
     }),
     table: PropTypes.shape({
       isSelectAllSelected: PropTypes.bool,
@@ -337,7 +345,14 @@ const Table = props => {
         tableState={{
           totalSelected: view.table.selectedIds.length,
           totalFilters: view.filters ? view.filters.length : 0,
-          ...pick(view.toolbar, 'batchActions', 'search', 'activeBar', 'customToolbarContent'),
+          ...pick(
+            view.toolbar,
+            'batchActions',
+            'search',
+            'activeBar',
+            'customToolbarContent',
+            'isDisabled'
+          ),
         }}
       />
       <CarbonTable {...others}>

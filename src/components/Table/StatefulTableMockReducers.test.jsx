@@ -37,14 +37,19 @@ describe('StatefulTable tests with Mock reducer', () => {
     expect(statefulTable.find(EmptyTable)).toHaveLength(1);
     // First we're called by empty array
     expect(mockDispatch).toHaveBeenCalledWith({
-      payload: { data: [], isLoading: undefined, view: expect.any(Object) },
+      payload: { data: [], isLoading: undefined, view: expect.any(Object), totalItems: 0 },
       instanceId: null,
       type: 'TABLE_REGISTER',
     });
     statefulTable.setProps({ data: initialState.data });
     // Then table dispatches another item with the real data
     expect(mockDispatch).toHaveBeenCalledWith({
-      payload: { data: initialState.data, isLoading: undefined, view: expect.any(Object) },
+      payload: {
+        data: initialState.data,
+        isLoading: undefined,
+        view: expect.any(Object),
+        totalItems: initialState.data.length,
+      },
       instanceId: null,
       type: 'TABLE_REGISTER',
     });
