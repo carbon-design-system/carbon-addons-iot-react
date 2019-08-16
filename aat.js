@@ -15,4 +15,5 @@ module.exports = {
   label: ['master'],
   outputFolder: 'results',
   checkHiddenContent: false,
+  baseA11yServerURL: 'https://able.ibm.com/tools',
 };
