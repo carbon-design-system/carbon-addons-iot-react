@@ -206,7 +206,7 @@ storiesOf('Watson IoT|WizardInline', module)
       currentItemId="step1"
       setItem={action('step clicked')}
       showLabels={boolean('showLabels', true)}
-      error="Error on the form"
+      error={text('error', 'Error on the form')}
       onClearError={action('clear error')}
     />
   ))

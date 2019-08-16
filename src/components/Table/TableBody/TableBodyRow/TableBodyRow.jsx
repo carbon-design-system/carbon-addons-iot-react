@@ -54,8 +54,7 @@ const propTypes = {
   id: PropTypes.string.isRequired,
   /** some columns might be hidden, so total columns has the overall total */
   totalColumns: PropTypes.number.isRequired,
-  /** table Id */
-  tableId: PropTypes.string.isRequired,
+
   /** contents of the row each object value is a renderable node keyed by column id */
   values: PropTypes.objectOf(PropTypes.node).isRequired,
 
@@ -129,27 +128,34 @@ const StyledTableRow = styled(TableRow)`
         }
       }
     }
-    ${props => (props['data-single-select'] === 'single' ? `cursor:pointer` : null)}
-
-    }
-
   }
 `;
 
-const StyledSingleSelectedTableRow = styled(TableRow)`
+const StyledSingleSelectedTableRow = styled(({ hasRowSelection, ...props }) => (
+  <TableRow {...props} />
+))`
   &&& {
     background: ${COLORS.lightBlue};
-    border-left: 5px solid ${COLORS.blue60};
 
-    td {
-      margin-left: -5px;
+    td:first-of-type {
+      position: relative;
     }
 
-    cursor: pointer;
-  }
+    td:first-of-type:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 3px;
+      background-color: ${COLORS.blue};
+      border-right: solid 1px rgb(223,227,230);
+    }
 `;
 
-const StyledTableExpandRow = styled(TableExpandRow)`
+const StyledTableExpandRow = styled(({ hasRowSelection, ...props }) => (
+  <TableExpandRow {...props} />
+))`
   &&& {
     ${props =>
       props['data-child-count'] === 0 && props['data-row-nesting']
@@ -196,10 +202,34 @@ const StyledTableExpandRow = styled(TableExpandRow)`
         }
       }
     }
+
+    ${props =>
+      props.hasRowSelection === 'single' && props.isSelected
+        ? `
+        background: ${COLORS.lightBlue};
+
+        td:first-of-type {
+          position: relative;
+        }
+    
+        td:first-of-type:after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 3px;
+          background-color: ${COLORS.blue};
+          border-right: solid 1px rgb(223,227,230);
+        }
+        `
+        : ``}
   }
 `;
 
-const StyledTableExpandRowExpanded = styled(TableExpandRow)`
+const StyledTableExpandRowExpanded = styled(({ hasRowSelection, ...props }) => (
+  <TableExpandRow {...props} />
+))`
   &&& {
     cursor: pointer;
     ${props =>
@@ -221,10 +251,32 @@ const StyledTableExpandRowExpanded = styled(TableExpandRow)`
         }
         `
         : ``}
+
+    ${props =>
+      props.hasRowSelection === 'single' && props.isSelected
+        ? `
+        background: ${COLORS.lightBlue};
+
+        td:first-of-type {
+          position: relative;
+        }
+    
+        td:first-of-type:after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 3px;
+          background-color: ${COLORS.blue};
+          border-right: solid 1px rgb(223,227,230);
+        }
+        `
+        : ``}
   }
 `;
 
-const StyledExpansionTableRow = styled(TableRow)`
+const StyledExpansionTableRow = styled(({ hasRowSelection, ...props }) => <TableRow {...props} />)`
   &&& {
     td {
       background-color: inherit;
@@ -242,6 +294,28 @@ const StyledExpansionTableRow = styled(TableRow)`
         border-width: 0 0 0 4px;
       }
     }
+
+    ${props =>
+      props.hasRowSelection === 'single' && props.isSelected
+        ? `
+        background: ${COLORS.lightBlue};
+
+        td:first-of-type {
+          position: relative;
+        }
+    
+        td:first-of-type:after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 3px;
+          background-color: ${COLORS.blue};
+          border-right: solid 1px rgb(223,227,230);
+        }
+        `
+        : ``}
   }
 `;
 
@@ -271,7 +345,6 @@ const StyledNestedSpan = styled.span`
 
 const TableBodyRow = ({
   id,
-  tableId,
   totalColumns,
   ordering,
   columns,
@@ -301,7 +374,11 @@ const TableBodyRow = ({
   rowActionsError,
   rowDetails,
 }) => {
-  const nestingOffset = nestingLevel * 16;
+  const singleSelectionIndicatorWidth = hasRowSelection === 'single' ? 0 : 5;
+  const nestingOffset =
+    hasRowSelection === 'single'
+      ? nestingLevel * 16 - singleSelectionIndicatorWidth
+      : nestingLevel * 16;
   const rowSelectionCell =
     hasRowSelection === 'multi' ? (
       <StyledCheckboxTableCell
@@ -384,10 +461,11 @@ const TableBodyRow = ({
     isExpanded ? (
       <React.Fragment key={id}>
         <StyledTableExpandRowExpanded
-          id={`${tableId}-Row-${id}`}
           ariaLabel={clickToCollapseAria}
           expandIconDescription={clickToCollapseAria}
           isExpanded
+          isSelected={isSelected}
+          hasRowSelection={hasRowSelection}
           data-row-nesting={hasRowNesting}
           data-nesting-offset={nestingOffset}
           onExpand={evt => stopPropagationAndCallback(evt, onRowExpanded, id, false)}
@@ -411,7 +489,6 @@ const TableBodyRow = ({
       </React.Fragment>
     ) : (
       <StyledTableExpandRow
-        id={`${tableId}-Row-${id}`}
         key={id}
         data-row-nesting={hasRowNesting}
         data-child-count={nestingChildCount}
@@ -419,6 +496,8 @@ const TableBodyRow = ({
         ariaLabel={clickToExpandAria}
         expandIconDescription={clickToExpandAria}
         isExpanded={false}
+        isSelected={isSelected}
+        hasRowSelection={hasRowSelection}
         onExpand={evt => stopPropagationAndCallback(evt, onRowExpanded, id, true)}
         onClick={() => {
           if (shouldExpandOnRowClick) {
@@ -446,7 +525,8 @@ const TableBodyRow = ({
   ) : (
     <StyledTableRow
       key={id}
-      data-single-select={hasRowSelection}
+      isSelected={isSelected}
+      hasRowSelection={hasRowSelection}
       onClick={() => {
         if (hasRowSelection === 'single') {
           onRowSelected(id, true);

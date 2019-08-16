@@ -1,4 +1,5 @@
 import delay from 'lodash/delay';
+import moment from 'moment';
 
 import {
   GUTTER,
@@ -29,11 +30,30 @@ export const handleEnterKeyDown = (evt, callback) => {
 
 export const defaultFunction = name => () => console.info(`${name} not implemented`); //eslint-disable-line
 
-export const getSortedData = (inputData, columnId, direction) => {
+export const getSortedData = (inputData, columnId, direction, isTimestampColumn) => {
   // clone inputData because sort mutates the array
   const sortedData = inputData.map(i => i);
+
   return sortedData.sort((a, b) => {
     const val = direction === 'ASC' ? -1 : 1;
+    if (a.values[columnId] === null) {
+      return 1;
+    }
+    if (b.values[columnId] === null) {
+      return -1;
+    }
+    if (isTimestampColumn) {
+      // support the sort if we have column with timestamp
+      const dateA = moment(a.values[columnId]);
+      const dateB = moment(b.values[columnId]);
+
+      if (dateA < dateB) {
+        return val;
+      }
+      if (dateA > dateB) {
+        return -val;
+      }
+    }
     if (typeof a.values[columnId] === 'string') {
       const compare = a.values[columnId].localeCompare(b.values[columnId]);
       return direction === 'ASC' ? compare : -compare;
@@ -44,6 +64,7 @@ export const getSortedData = (inputData, columnId, direction) => {
     if (a.values[columnId] > b.values[columnId]) {
       return -val;
     }
+
     return 0;
   });
 };

@@ -82,27 +82,31 @@ const SimplePagination = ({
 
   return (
     <StyledContainer>
-      <StyledPageLabel>
+      <StyledPageLabel maxPage={maxPage}>
         {pageText ? `${pageText} ${page}` : pageOfPagesText(page, maxPage)}
       </StyledPageLabel>
-      <StyledButton
-        className="bx--pagination__button bx--pagination__button--backward"
-        role="button"
-        tabIndex={hasPrev ? 0 : -1}
-        onClick={hasPrev ? handlePrev : undefined}
-        onKeyDown={hasPrev ? evt => handleEnterKeyDown(evt, handlePrev) : undefined}
-      >
-        <CaretLeft description={prevPageText} />
-      </StyledButton>
-      <StyledButton
-        className="bx--pagination__button bx--pagination__button--forward"
-        role="button"
-        tabIndex={hasNext ? 0 : -1}
-        onClick={hasNext ? handleNext : undefined}
-        onKeyDown={hasNext ? evt => handleEnterKeyDown(evt, handleNext) : undefined}
-      >
-        <CaretRight description={nextPageText} />
-      </StyledButton>
+      {maxPage > 1 ? (
+        <>
+          <StyledButton
+            className="bx--pagination__button bx--pagination__button--backward"
+            role="button"
+            tabIndex={hasPrev ? 0 : -1}
+            onClick={hasPrev ? handlePrev : undefined}
+            onKeyDown={hasPrev ? evt => handleEnterKeyDown(evt, handlePrev) : undefined}
+          >
+            <CaretLeft description={prevPageText} />
+          </StyledButton>
+          <StyledButton
+            className="bx--pagination__button bx--pagination__button--forward"
+            role="button"
+            tabIndex={hasNext ? 0 : -1}
+            onClick={hasNext ? handleNext : undefined}
+            onKeyDown={hasNext ? evt => handleEnterKeyDown(evt, handleNext) : undefined}
+          >
+            <CaretRight description={nextPageText} />
+          </StyledButton>
+        </>
+      ) : null}
     </StyledContainer>
   );
 };

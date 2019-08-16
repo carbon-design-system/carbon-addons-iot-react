@@ -19,7 +19,7 @@ const defaultProps = {
   hasRowSelection: false,
   hasRowExpansion: false,
   hasRowActions: false,
-  rowCount: 0,
+  rowCount: 10,
   columns: [],
 };
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import moment from 'moment';
 
 export const chartData = {
   events: [
@@ -6,7 +7,7 @@ export const chartData = {
       ENTITY_ID: 'Sensor2-1',
       publishedtime: '2019-05-28T19:30:14.227+0000',
       generatedtime: '2019-05-28T18:31:15.227+0000',
-      temperature: 93,
+      temperature: 68,
       humidity: 16.68723,
       ecount: 21,
       devname: '6ctgim0Qcq',
@@ -2416,29 +2417,95 @@ export const chartData = {
   },
 };
 
-const renderCustomCell = (
+const randomIntFromInterval = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
+const randomDecimal = divideBy => Math.floor(Math.random() * (1000 - 100) + 100) / divideBy;
+
+export const generateData = (quantity, intInterval, decimals) => {
+  return Array(quantity)
+    .fill(0)
+    .map(() => {
+      return {
+        ENTITY_ID: 'Sensor2-1',
+        temperature: randomIntFromInterval(intInterval.min, intInterval.max),
+        humidity: randomDecimal(decimals), // 16.68723,
+        ecount: randomIntFromInterval(1, 60),
+        devname: '6ctgim0Qcq',
+        pressure: randomDecimal(decimals), // 62.29777,
+        status: true,
+      };
+    });
+};
+
+export const getIntervalChartData = (interval = 'day', quantity, intInterval, decimals) =>
+  generateData(quantity, intInterval, decimals).map((i, idx) => ({
+    ...i,
+    timestamp:
+      moment()
+        .subtract(idx, `${interval}s`)
+        .unix() * 1000,
+  }));
+
+export const getPeriodChartData = (interval = 'day', period = 'week', intInterval, decimals) => {
+  const endTime = moment();
+  const startTime = moment().startOf(period);
+  const quantity = endTime.diff(startTime, `${interval}s`) + 1;
+  return generateData(quantity, intInterval, decimals).map((i, idx) => ({
+    ...i,
+    timestamp:
+      moment()
+        .subtract(idx, `${interval}s`)
+        .unix() * 1000,
+  }));
+};
+
+export const renderCustomCell = (
   { value } // eslint-disable-line
 ) => (
   <div>
     <svg height="10" width="10">
       <circle cx="5" cy="5" r="3" stroke="none" strokeWidth="1" fill="red" />
     </svg>
-    <span style={{ marginLeft: '10px' }}>{value}</span>
+    <span
+      style={{
+        marginLeft: '10px',
+        overflow: 'hidden',
+        whiteSpace: 'nowrap',
+        textOverflow: 'ellipsis',
+        width: '150px',
+        display: 'inline-block',
+      }}
+    >
+      {value}
+    </span>
   </div>
 );
 
-const actions1 = [
+export const actions1 = [
   { id: 'open', label: 'Open' },
   { id: 'view', labelText: 'View' },
   { id: 'openTicket', labelText: 'Open Ticket' },
 ];
 
-const actions2 = [{ id: 'open', icon: 'icon--edit' }];
+export const actions2 = [{ id: 'open', icon: 'icon--edit' }];
 
 export const tableColumns = [
-  { id: 'alert', name: 'Alert', renderDataFunction: renderCustomCell, priority: 1 },
-  { id: 'creator', name: 'Creator', priority: 3 },
-  { id: 'hour', name: 'Hour', priority: 2 },
+  {
+    dataSourceId: 'alert',
+    label: 'Alert',
+    priority: 1,
+  },
+  {
+    dataSourceId: 'count',
+    label: 'Count',
+    priority: 3,
+    filter: { placeholderText: 'pick a string' },
+  },
+  {
+    dataSourceId: 'hour',
+    label: 'Hour',
+    priority: 2,
+    type: 'TIMESTAMP',
+  },
 ];
 
 export const tableData = [
@@ -2446,88 +2513,92 @@ export const tableData = [
     id: `row-1`,
     values: {
       alert: 'AHI005 Asset failure',
-      creator: 'ME',
-      hour: '16:20h',
+      count: 1.2039201932,
+      hour: 1563877570000,
+      long_description: 'long description for a given event payload',
     },
-    actions: actions1,
   },
   {
     id: `row-2`,
     values: {
-      alert: 'AHI003 process need to optimize, adjust X variables',
-      creator: 'ME',
-      hour: '09:40h',
+      alert: 'AHI003 process need to optimize adjust X variables',
+      count: 1.10329291,
+      hour: 1563873970000,
+      long_description: 'long description for a given event payload',
     },
-    actions: actions2,
   },
   {
     id: `row-3`,
     values: {
-      alert: 'AHI001 proccess need to optimize, adjust Y variables',
-      creator: 'Line Supervisor',
-      hour: '16:20h',
+      alert: 'AHI001 proccess need to optimize adjust Y variables',
+      count: 3,
+      hour: 1564756946000,
+      long_description: 'long description for a given event payload',
     },
-    actions: actions1,
   },
   {
     id: `row-4`,
     values: {
-      alert: 'AHI001 proccess need to optimize, adjust Y variables',
-      creator: 'Line Supervisor',
-      hour: '16:20h',
+      alert: 'AHI001 proccess need to optimize adjust Y variables',
+      count: 5,
+      hour: 1563877570000,
+      other_description: 'other description for a given event payload',
     },
   },
   {
     id: `row-5`,
     values: {
       alert: 'AHI001 proccess need to optimize',
-      creator: 'Line Supervisor',
-      hour: '16:20h',
+      count: 10,
+      hour: 1563874210000,
     },
   },
   {
     id: `row-6`,
     values: {
       alert: 'AHI001 proccess need to optimize.',
-      creator: 'Line Supervisor',
-      hour: '16:20h',
+      count: 30,
+      hour: 1563874210000,
     },
-    actions: actions2,
   },
   {
     id: `row-7`,
     values: {
       alert: 'AHI001 proccess need to optimize',
-      creator: 'Line Supervisor',
-      hour: '16:20h',
+      count: 9,
+      hour: 1563870610000,
     },
-    actions: actions2,
   },
   {
     id: `row-8`,
     values: {
-      alert: 'AHI001 proccess need to optimize, adjust Y variables',
-      creator: 'Line Supervisor',
-      hour: '16:20h',
+      alert: 'AHI001 proccess need to optimize adjust Y variables',
+      count: 7,
+      hour: 1563870610000,
     },
-    actions: actions1,
   },
   {
     id: `row-9`,
     values: {
-      alert: 'AHI001 proccess need to optimize, adjust Y variables',
-      creator: 'Line Supervisor',
-      hour: '16:20h',
+      alert: 'AHI001 proccess need to optimize adjust Y variables',
+      count: 0,
+      hour: 1563873970000,
     },
-    actions: actions1,
   },
   {
     id: `row-10`,
     values: {
-      alert: 'AHI010 proccess need to optimize, adjust Y variables',
-      creator: 'Admin',
-      hour: '16:20h',
+      alert: 'AHI010 proccess need to optimize adjust Y variables',
+      count: 2,
+      hour: 1563873970000,
     },
-    actions: actions2,
+  },
+  {
+    id: `row-11`,
+    values: {
+      alert: 'AHI010 proccess need to optimize adjust Y variables',
+      count: 5,
+      hour: 1563877570000,
+    },
   },
 ];
