@@ -21,7 +21,6 @@ cache:
   yarn: true
 
 install:
-  - echo $AAT_AUTH_TOKEN
   - yarn install
   - yarn list
 
