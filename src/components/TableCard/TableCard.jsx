@@ -110,10 +110,8 @@ const StyledStatefulTable = styled(({ showHeader, data, ...rest }) => (
 
 const StyledExpandedRowContent = styled.div`
   padding-left: 35px;
-  padding-bottom: ${props => (props.allNumbers ? `8px` : `24px`)};
-
+  padding-bottom: 8px;
   padding-top: 24px;
-  ${props => (!props.allNumbers ? `display: flex; ` : ``)}
 
   p {
     margin-bottom: 8px;
@@ -137,10 +135,10 @@ const StyledSpan = styled.span`
 `;
 
 const StyledExpandedDiv = styled.div`
-  ${props =>
-    props.allNumbers
-      ? `display: flex; flex-direction: row; align-items: baseline; margin-bottom: 16px;`
-      : `margin-right: 60px`}
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  margin-bottom: 16px;
 `;
 
 const matchingThreshold = (thresholds, item) => {
@@ -494,17 +492,13 @@ const TableCard = ({
         .map(value => expandedRows.filter(item => item.id === value)[0])
         .filter(i => i);
 
-      const hasNumber = expandedItem
-        .map(item => typeof dataItem.values[item.id] === 'number')
-        .every(i => i === true);
-
       return {
         rowId: dataItem.id,
         content: (
-          <StyledExpandedRowContent key={`${dataItem.id}-expanded`} allNumbers={hasNumber}>
+          <StyledExpandedRowContent key={`${dataItem.id}-expanded`}>
             {expandedItem.length ? (
               expandedItem.map((item, index) => (
-                <StyledExpandedDiv allNumbers={hasNumber} key={`${item.id}-expanded-${index}`}>
+                <StyledExpandedDiv key={`${item.id}-expanded-${index}`}>
                   <p key={`${item.id}-label`} style={{ marginRight: '5px' }}>
                     {item ? item.label : '--'}
                   </p>
