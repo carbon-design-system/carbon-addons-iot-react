@@ -1,6 +1,3 @@
-# required - Provide the authentication token available at http://ibm.biz/A11yToolsLandingPage
-authToken: f3a11acc-bdc8-412c-9570-fe3ac1c165db/753321ac-23c1-4f27-9691-896a60cf2670
-
 # optional - Specify the rule archive
 # i.e. For May rule archive use ruleArchive: 2017MayDeploy
 # Default: latest
