@@ -2534,6 +2534,7 @@ export const tableData = [
       count: 3,
       hour: 1564756946000,
       long_description: 'long description for a given event payload',
+      pressure: 10,
     },
   },
   {
@@ -2543,6 +2544,7 @@ export const tableData = [
       count: 5,
       hour: 1563877570000,
       other_description: 'other description for a given event payload',
+      long_description: 'long description for a given event payload',
     },
   },
   {
@@ -2551,6 +2553,8 @@ export const tableData = [
       alert: 'AHI001 proccess need to optimize',
       count: 10,
       hour: 1563874210000,
+      pressure: 10,
+      temperature: 80,
     },
   },
   {
