@@ -1,7 +1,7 @@
 module.exports = {
   authToken: process.env.AAT_AUTH_TOKEN,
   ruleArchive: 'latest',
-  policies: ['IBM_Accessibility_WCAG21'],
+  policies: ['IBM_Accessibility', 'IBM_Accessibility_WCAG21'],
   failLevels: ['violation'],
   reportLevels: [
     'violation',
