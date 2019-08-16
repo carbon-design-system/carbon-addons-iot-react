@@ -92,6 +92,8 @@ const propTypes = {
     cloneCardLabel: PropTypes.string,
     deleteCardLabel: PropTypes.string,
   }),
+  /** If the header should render the last updated section */
+  hasLastUpdated: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -124,6 +126,7 @@ const defaultProps = {
   dashboardColumns: DASHBOARD_COLUMNS,
   filter: null,
   sidebar: null,
+  hasLastUpdated: true,
 };
 
 const GridLayout = WidthProvider(Responsive);
@@ -143,6 +146,7 @@ const Dashboard = ({
   title,
   description,
   lastUpdated,
+  hasLastUpdated,
   i18n: { lastUpdatedLabel },
   i18n,
   dashboardBreakpoints,
@@ -307,7 +311,9 @@ const Dashboard = ({
         description={description}
         lastUpdated={!isEditable ? lastUpdated : null}
         lastUpdatedLabel={!isEditable ? lastUpdatedLabel : null}
+        isLoading={isLoading}
         filter={filter}
+        hasLastUpdated={hasLastUpdated}
       />
       <div style={{ display: 'flex' }}>
         {sidebar && <div style={{ flex: 0 }}>{sidebar}</div>}
