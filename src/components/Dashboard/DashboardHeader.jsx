@@ -75,7 +75,7 @@ const DashboardHeader = ({
       <StyledLeft>
         <h2>{title}</h2>
         {description ? <p>{description}</p> : null}
-        {hasLastUpdated ? (
+        {hasLastUpdated && lastUpdatedLabel ? (
           <LastUpdated>
             {lastUpdatedLabel} {lastUpdated || <SkeletonText />}
           </LastUpdated>

@@ -6,6 +6,7 @@ import Download16 from '@carbon/icons-react/lib/download/16';
 import fileDownload from 'js-file-download';
 import isNil from 'lodash/isNil';
 import uniqBy from 'lodash/uniqBy';
+import cloneDeep from 'lodash/cloneDeep';
 
 import { CardPropTypes, TableCardPropTypes } from '../../constants/PropTypes';
 import Card from '../Card/Card';
@@ -159,7 +160,15 @@ const matchingThreshold = (thresholds, item) => {
           return false;
       }
     })
-    .concat([null])[0];
+    .reduce((highestSeverityThreshold, threshold) => {
+      if (!highestSeverityThreshold) {
+        highestSeverityThreshold = threshold; //eslint-disable-line
+      } // The lowest severity is actually the most severe
+      else if (highestSeverityThreshold.severity > threshold.severity) {
+        highestSeverityThreshold = threshold; //eslint-disable-line
+      }
+      return highestSeverityThreshold;
+    }, null);
 };
 
 const determinePrecisionAndValue = (precision, value) => {
@@ -354,7 +363,7 @@ const TableCard = ({
   const uniqueThresholds = uniqBy(thresholds, 'dataSourceId');
 
   // filter to gett the indexes for each one
-  const columnsUpdated = columns;
+  const columnsUpdated = cloneDeep(columns);
 
   // Don't add the icon column in sample mode
   if (!isEditable) {
