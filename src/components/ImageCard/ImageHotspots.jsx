@@ -75,13 +75,7 @@ class ImageHotspots extends React.Component {
   }
 
   componentDidMount = () => {
-    const {
-      hideZoomControls,
-      hideHotspots,
-      hideMinimap,
-      hotspots,
-      background
-    } = this.props;
+    const { hideZoomControls, hideHotspots, hideMinimap, hotspots, background } = this.props;
     const { offsetWidth: width, offsetHeight: height } = this.container.current;
     const orientation = width > height ? 'landscape' : 'portrait';
     const ratio = orientation === 'landscape' ? width / height : height / width;
