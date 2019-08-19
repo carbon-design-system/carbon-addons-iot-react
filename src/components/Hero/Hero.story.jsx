@@ -38,6 +38,13 @@ storiesOf('Hero', module)
       }
     />
   ))
+  .add('with brreadcrumb with right content', () => (
+    <Hero
+      {...commonPageHeroProps}
+      breadcrumb={breadcrumb}
+      rightContentBreadcrumb={<div style={{ textAlign: 'right' }}>breadcrumb Right Content</div>}
+    />
+  ))
   .add('with breadcrumb', () => <Hero {...commonPageHeroProps} breadcrumb={breadcrumb} />)
   .add('with tooltip', () => (
     <Hero {...commonPageHeroProps} breadcrumb={breadcrumb} tooltip={tooltip} />

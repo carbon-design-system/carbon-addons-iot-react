@@ -168,6 +168,14 @@ storiesOf('Table Card', module)
                 id: 'other_description',
                 label: 'Other Description',
               },
+              {
+                id: 'pressure',
+                label: 'Pressure',
+              },
+              {
+                id: 'temperature',
+                label: 'Temperature',
+              },
             ],
           }}
           values={tableData}

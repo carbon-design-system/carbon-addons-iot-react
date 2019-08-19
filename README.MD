@@ -1,4 +1,6 @@
-# IoT Widget Library
+# Carbon Addons for Watson IoT
+
+> v1.x
 
 [![Build Status](https://travis-ci.com/IBM/carbon-addons-iot-react.svg?branch=master)](https://travis-ci.com/IBM/carbon-addons-iot-react)
 [![Coverage Status](https://coveralls.io/repos/github/IBM/carbon-addons-iot-react/badge.svg?branch=master)](https://coveralls.io/github/IBM/carbon-addons-iot-react?branch=master)

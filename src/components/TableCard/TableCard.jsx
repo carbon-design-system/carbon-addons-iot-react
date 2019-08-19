@@ -110,8 +110,9 @@ const StyledStatefulTable = styled(({ showHeader, data, ...rest }) => (
 
 const StyledExpandedRowContent = styled.div`
   padding-left: 35px;
-  padding-bottom: 15px;
-  padding-top: 16px;
+  padding-bottom: 8px;
+  padding-top: 24px;
+
   p {
     margin-bottom: 8px;
     font-size: 14px;
@@ -131,6 +132,13 @@ const StyledIconDiv = styled.div`
 
 const StyledSpan = styled.span`
   margin-left: 5px;
+`;
+
+const StyledExpandedDiv = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  margin-bottom: 16px;
 `;
 
 const matchingThreshold = (thresholds, item) => {
@@ -484,15 +492,28 @@ const TableCard = ({
     expandedRowsFormatted = tableData.map(dataItem => {
       // filter the data keys and find the expandaded row exist for that key
       const expandedItem = Object.keys(dataItem.values)
-        .map(value => expandedRows.find(item => item.id === value))
-        .filter(i => i)[0];
+        .map(value => expandedRows.filter(item => item.id === value)[0])
+        .filter(i => i);
 
       return {
         rowId: dataItem.id,
         content: (
           <StyledExpandedRowContent key={`${dataItem.id}-expanded`}>
-            <p key={`${dataItem.id}-label`}>{expandedItem ? expandedItem.label : '--'}</p>
-            {expandedItem ? dataItem.values[expandedItem.id] : null}
+            {expandedItem.length ? (
+              expandedItem.map((item, index) => (
+                <StyledExpandedDiv key={`${item.id}-expanded-${index}`}>
+                  <p key={`${item.id}-label`} style={{ marginRight: '5px' }}>
+                    {item ? item.label : '--'}
+                  </p>
+                  <span>{item ? dataItem.values[item.id] : null}</span>
+                </StyledExpandedDiv>
+              ))
+            ) : (
+              <StyledExpandedDiv key={`${dataItem.id}-expanded`}>
+                {' '}
+                <p key={`${dataItem.id}-label`}>--</p>
+              </StyledExpandedDiv>
+            )}
           </StyledExpandedRowContent>
         ),
       };

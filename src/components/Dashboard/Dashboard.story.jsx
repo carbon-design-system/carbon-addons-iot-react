@@ -437,6 +437,18 @@ storiesOf('Dashboard (Experimental)', module)
       />
     );
   })
+  .add('basic - without last updated header', () => {
+    return (
+      <StatefulDashboard
+        title={text('title', 'Munich Building')}
+        isEditable={boolean('isEditable', false)}
+        isLoading={boolean('isLoading', false)}
+        onBreakpointChange={action('onBreakpointChange')}
+        onLayoutChange={action('onLayoutChange')}
+        hasLastUpdated={false}
+      />
+    );
+  })
   .add('sidebar', () => {
     return (
       <StatefulDashboard
