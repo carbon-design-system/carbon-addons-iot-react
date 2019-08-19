@@ -347,39 +347,42 @@ const TableCard = ({
 
   // filter to gett the indexes for each one
   const columnsUpdated = columns;
-  const indexes = columns
-    .map((column, index) =>
-      uniqueThresholds.filter(item => item.dataSourceId === column.dataSourceId)[0] ? index : null
-    )
-    .filter(i => i);
-  indexes.forEach((i, index) =>
-    columnsUpdated.splice(index !== 0 ? i + 1 : i, 0, {
-      id: `iconColumn`,
-      label: 'Severity',
-      width: '120px',
-      isSortable: true,
-      renderDataFunction: threholdIconRow,
-      priority: 1,
-      filter: {
-        placeholderText: 'Severity',
-        options: [
-          {
-            id: '1',
-            text: '1',
-          },
-          {
-            id: '2',
-            text: '2',
-          },
-          {
-            id: '3',
-            text: '3',
-          },
-        ],
-      },
-    })
-  );
 
+  // Don't add the icon column in sample mode
+  if (!isEditable) {
+    const indexes = columns
+      .map((column, index) =>
+        uniqueThresholds.filter(item => item.dataSourceId === column.dataSourceId)[0] ? index : null
+      )
+      .filter(i => !isNil(i));
+    indexes.forEach((i, index) =>
+      columnsUpdated.splice(index !== 0 ? i + 1 : i, 0, {
+        id: `iconColumn`,
+        label: 'Severity',
+        width: '120px',
+        isSortable: true,
+        renderDataFunction: threholdIconRow,
+        priority: 1,
+        filter: {
+          placeholderText: 'Severity',
+          options: [
+            {
+              id: '1',
+              text: '1',
+            },
+            {
+              id: '2',
+              text: '2',
+            },
+            {
+              id: '3',
+              text: '3',
+            },
+          ],
+        },
+      })
+    );
+  }
   const newColumns = thresholds ? columnsUpdated : columns;
 
   const columnsToRender = newColumns
@@ -412,13 +415,13 @@ const TableCard = ({
 
   const filteredTimestampColumns = columns
     .map(column => (column.type && column.type === 'TIMESTAMP' ? column.dataSourceId : null))
-    .filter(i => i);
+    .filter(i => !isNil(i));
 
   const filteredPrecisionColumns = columns
     .map(column =>
       column.precision ? { dataSourceId: column.dataSourceId, precision: column.precision } : null
     )
-    .filter(i => i);
+    .filter(i => !isNil(i));
 
   // if we're in editable mode, generate fake data
   const tableData = isEditable
@@ -436,7 +439,7 @@ const TableCard = ({
                   ? { [value]: moment(i.values[value]).format('LLL') }
                   : null
               )
-              .filter(v => v)[0]
+              .filter(v => !isNil(v))[0]
           : null;
 
         const matchingThresholdValue = thresholds ? matchingThreshold(thresholds, i.values) : null;
