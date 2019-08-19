@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { DataTable, Checkbox } from 'carbon-components-react';
 import styled from 'styled-components';
 
-import { COLORS } from '../../../../styles/styles';
 import RowActionsCell from '../RowActionsCell/RowActionsCell';
 import TableCellRenderer from '../../TableCellRenderer/TableCellRenderer';
 import {
@@ -12,6 +11,7 @@ import {
   TableColumnsPropTypes,
 } from '../../TablePropTypes';
 import { stopPropagationAndCallback } from '../../../../utils/componentUtilityFunctions';
+import { COLORS } from '../../../../styles/styles';
 
 const { TableRow, TableExpandRow, TableCell } = DataTable;
 
@@ -110,6 +110,11 @@ const StyledCheckboxTableCell = styled(TableCell)`
   && {
     padding-bottom: 0.5rem;
     width: 2.5rem;
+
+    /* Added to undo carbon component. this needs to be removed when we redo this table */
+    &::after {
+      background-color: transparent !important;
+    }
   }
 `;
 
@@ -155,12 +160,12 @@ const StyledTableExpandRow = styled(({ hasRowSelection, ...props }) => (
     ${props =>
       props['data-child-count'] === 0 && props['data-row-nesting']
         ? `
-    td > button.bx--table-expand-v2__button {
+    td > button.bx--table-expand__button {
       display: none;
     }
     `
         : `
-    td > button.bx--table-expand-v2__button {
+    td > button.bx--table-expand__button {
       position: relative;
       left: ${props['data-nesting-offset']}px;
     }
@@ -168,7 +173,7 @@ const StyledTableExpandRow = styled(({ hasRowSelection, ...props }) => (
     ${props =>
       props['data-nesting-offset'] > 0
         ? `
-      td.bx--table-expand-v2 {
+      td.bx--table-expand {
         position: relative;
       }
       td:first-of-type:before {
@@ -178,13 +183,18 @@ const StyledTableExpandRow = styled(({ hasRowSelection, ...props }) => (
         left: 0;
         height: 100%;
         width: ${props['data-nesting-offset']}px;
-        background-color: rgb(229,237,237);
+        background-color: ${COLORS.gray20};
         border-right: solid 1px rgb(223,227,230);
       }
     `
         : `
     `}
     cursor: pointer;
+    td {
+      div .bx--btn--ghost:hover {
+        background: ${COLORS.gray20};
+      }
+    }
     :hover {
       td {
         div > * {
@@ -223,49 +233,23 @@ const StyledTableExpandRowExpanded = styled(({ hasRowSelection, ...props }) => (
   &&& {
     cursor: pointer;
     ${props =>
-      (props['data-child-count'] === 0 && props['data-row-nesting']) || !props['data-row-nesting']
+      props['data-row-nesting']
         ? `
-    td {
-      background-color: ${COLORS.blue};
-      border-color: ${COLORS.blue};
-      color: white;
-      button {
-        svg {
-          fill: white;
+
+        td.bx--table-expand, td {
+          position: relative;
+          border-color: ${COLORS.gray20};
         }
-      }
-      border-top: 1px solid ${COLORS.blue};
-      :first-of-type {
-        border-left: 1px solid ${COLORS.blue};
-      }
-      :last-of-type {
-        border-right: 1px solid ${COLORS.blue};
-      }
-    }
-    `
-        : props['data-row-nesting']
-        ? `
-    :hover {
-      td {
-        border-bottom: 1px solid ${COLORS.blue};
-      }
-      td:first-of-type {
-        border-left: 1px solid ${COLORS.blue};
-      }
-    }
-    td.bx--table-expand-v2 {
-      position: relative;
-    }
-    td > button.bx--table-expand-v2__button {
-      position: relative;
-      left: ${props['data-nesting-offset']}px;
-    }
-    td:first-of-type:before {
-      width: ${props['data-nesting-offset']}px;
-      background-color: rgb(229,237,237);
-      border-right: solid 1px rgb(223,227,230);
-    }
-    `
+        td > button.bx--table-expand__button {
+          position: relative;
+          left: ${props['data-nesting-offset']}px;
+        }
+        td:first-of-type:before {
+          width: ${props['data-nesting-offset']}px;
+          background-color: rgb(229,237,237);
+          border-right: solid 1px rgb(223,227,230);
+        }
+        `
         : ``}
 
     ${props =>
@@ -356,6 +340,7 @@ const StyledTableCellRow = styled(TableCell)`
 const StyledNestedSpan = styled.span`
   position: relative;
   left: ${props => props.nestingOffset}px;
+  display: block;
 `;
 
 const TableBodyRow = ({

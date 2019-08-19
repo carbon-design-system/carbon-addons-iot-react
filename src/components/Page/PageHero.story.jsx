@@ -12,9 +12,9 @@ const commonPageHeroProps = {
   rightContent: <div style={{ textAlign: 'right' }}>Right Content</div>,
 };
 
-storiesOf('PageHero', module)
+storiesOf('Watson IoT|PageHero', module)
   .add('normal', () => <PageHero {...commonPageHeroProps} />)
-  .add('normal with action', () => (
+  .add('normal with content switcher', () => (
     <PageHero
       {...commonPageHeroProps}
       switcher={{

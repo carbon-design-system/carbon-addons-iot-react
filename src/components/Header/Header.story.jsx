@@ -1,8 +1,10 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { Icon } from 'carbon-components-react';
 import styled from 'styled-components';
+import NotificationOn from '@carbon/icons-react/lib/notification/20';
+import HeaderHelp from '@carbon/icons-react/lib/help/20';
+import Avatar from '@carbon/icons-react/lib/user--avatar/20';
 
 import Header from './Header';
 
@@ -10,24 +12,19 @@ React.Fragment = ({ children }) => children;
 
 const StyledHeader = styled(Header)`
    {
-    margin-top: 3rem;
-
-    .bx--header__menu-item[role='menuitem'] {
+    .bx--header__menu .bx--header__menu-item[role='menuitem'] {
       align-items: center;
+      border: 0.125rem solid transparent;
       color: #f3f3f3;
       display: flex;
-      padding: 0 1rem;
+      padding: 1rem;
       height: 100%;
       font-size: 0.875rem;
       font-weight: 400;
       letter-spacing: 0;
       line-height: 1.125rem;
       text-decoration: none;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
       user-select: none;
-      border: 4px solid transparent;
     }
 
     button.bx--header__menu-item {
@@ -38,6 +35,10 @@ const StyledHeader = styled(Header)`
     .bx--text-truncate--end * {
       display: inline-block;
       vertical-align: middle;
+    }
+
+    .bx--header__menu-title[role='menuitem'][aria-expanded='true'] + .bx--header__menu {
+      z-index: 6001;
     }
   }
 `;
@@ -53,14 +54,6 @@ const User = styled.p`
   }
 `;
 
-const StyledIcon = styled(Icon)`
-   {
-    width: 25px;
-    height: 25px;
-  }
-`;
-
-// const link = <Icon name="header--help" fill="white" description="Icon" />;
 const HeaderProps = {
   user: 'JohnDoe@ibm.com',
   tenant: 'TenantId: Acme',
@@ -69,15 +62,14 @@ const HeaderProps = {
   actionItems: [
     {
       label: 'alerts',
-      onClick: action('pop alert modal'),
-      btnContent: <StyledIcon name="notification-on" fill="white" description="Icon" />,
+      onClick: action('click fired'),
+      btnContent: <NotificationOn fill="white" description="Icon" />,
     },
     {
       label: 'help',
       onClick: action('help drop open'),
       btnContent: (
-        <StyledIcon
-          name="header--help"
+        <HeaderHelp
           fill="white"
           description="Icon"
           className="bx--header__menu-item bx--header__menu-title"
@@ -101,10 +93,10 @@ const HeaderProps = {
             element: 'button',
           },
           content: (
-            <React.Fragment>
+            <span>
               JohnDoe@ibm.com
-              <StyledIcon name="header--avatar" fill="white" description="Icon" />
-            </React.Fragment>
+              <Avatar fill="white" description="Icon" />
+            </span>
           ),
         },
       ],
@@ -117,7 +109,7 @@ const HeaderProps = {
           <User>
             JohnDoe@ibm.com<span>TenantId: Acme</span>
           </User>
-          <StyledIcon name="header--avatar" fill="white" description="Icon" />
+          <Avatar fill="white" description="Icon" />
         </React.Fragment>
       ),
       childContent: [
@@ -140,7 +132,7 @@ const HeaderProps = {
           content: (
             <React.Fragment>
               JohnDoe@ibm.com
-              <StyledIcon name="header--avatar" fill="white" description="Icon" />
+              <Avatar fill="white" description="Icon" />
             </React.Fragment>
           ),
         },
@@ -149,8 +141,22 @@ const HeaderProps = {
   ],
 };
 
-storiesOf('Header', module)
-  .add('Header action buttons with dropdowns', () => <StyledHeader {...HeaderProps} />)
+const headerPanel = {
+  className: 'header-panel',
+  /* eslint-disable */
+
+  content: React.forwardRef((props, ref) => (
+    <a href="#" ref={ref} {...props}>
+      Header panel content
+    </a>
+  )),
+  /* eslint-enable */
+};
+
+storiesOf('Watson IoT|Header', module)
+  .add('Header action buttons with dropdowns', () => (
+    <StyledHeader {...HeaderProps} headerPanel={headerPanel} />
+  ))
   .add('Header no submenu', () => (
     <StyledHeader
       {...HeaderProps}
@@ -163,7 +169,7 @@ storiesOf('Header', module)
               <User>
                 JohnDoe@ibm.com<span>TenantId: Acme</span>
               </User>
-              <StyledIcon name="header--avatar" fill="white" description="Icon" />
+              <Avatar fill="white" description="Icon" />
             </React.Fragment>
           ),
         },

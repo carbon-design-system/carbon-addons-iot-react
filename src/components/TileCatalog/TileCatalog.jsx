@@ -1,12 +1,15 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { RadioTile, Tile, Search, SkeletonText } from 'carbon-components-react';
+import { RadioTile, Tile, SkeletonText, DataTable } from 'carbon-components-react';
 import Bee32 from '@carbon/icons-react/lib/bee/32';
 
 import SimplePagination from '../SimplePagination/SimplePagination';
+import { COLORS } from '../../styles/styles';
 
 import TileGroup from './TileGroup';
+
+const { TableToolbarSearch } = DataTable;
 
 const StyledContainerDiv = styled.div`
   display: flex;
@@ -14,14 +17,23 @@ const StyledContainerDiv = styled.div`
 `;
 
 const StyledCatalogHeader = styled.div`
+  background: ${COLORS.gray10};
+
   display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  height: 40px;
-  margin-bottom: 0.5rem;
-  align-items: center;
-  .bx--search {
-    max-width: 250px;
+  height: 3rem;
+
+  .bx--toolbar-action:active:not([disabled]) {
+    outline-color: transparent;
+  }
+
+  .bx--toolbar-search-container-expandable {
+    max-width: 40%;
+    padding: 0;
+    width: auto;
+  }
+
+  .bx--search-input:focus {
+    width: 100%;
   }
 `;
 
@@ -35,10 +47,6 @@ const StyledEmptyTile = styled(Tile)`
       padding-bottom: 0.5rem;
     }
   }
-`;
-
-const StyledTitle = styled.span`
-  font-weight: bold;
 `;
 
 export const propTypes = {
@@ -106,7 +114,6 @@ const defaultProps = {
 const TileCatalog = ({
   id,
   className,
-  title,
   isLoading,
   error,
   search,
@@ -123,9 +130,9 @@ const TileCatalog = ({
   return (
     <StyledContainerDiv className={className}>
       <StyledCatalogHeader>
-        <StyledTitle>{title}</StyledTitle>
         {search && search.placeHolderText ? (
-          <Search
+          <TableToolbarSearch
+            small
             value={searchState}
             labelText={search.placeHolderText}
             placeHolderText={search.placeHolderText}

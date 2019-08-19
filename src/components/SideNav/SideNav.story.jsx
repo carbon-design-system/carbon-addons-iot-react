@@ -1,12 +1,12 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { Icon } from 'carbon-components-react';
 import { rem } from 'polished';
 import styled from 'styled-components';
 import AppSwitcher from '@carbon/icons-react/lib/app-switcher/24';
 import Chip from '@carbon/icons-react/lib/chip/24';
 import Group from '@carbon/icons-react/lib/group/24';
+import { HeaderContainer } from 'carbon-components-react/lib/components/UIShell';
 
 import Header from '../Header';
 
@@ -23,25 +23,12 @@ const User = styled.p`
   }
 `;
 
-const StyledIcon = styled(Icon)`
-   {
-    width: 25px;
-    height: 25px;
-  }
-`;
-
 const RouterComponent = ({ children, ...rest }) => <div {...rest}>{children}</div>;
 
 /* eslint-disable*/
 const links = [
   {
-    icon: (
-      <AppSwitcher
-        fill="white"
-        description="Icon"
-        className="bx--header__menu-item bx--header__menu-title"
-      />
-    ),
+    icon: AppSwitcher,
     isEnabled: true,
     metaData: {
       onClick: action('menu click'),
@@ -52,15 +39,8 @@ const links = [
     linkContent: 'Boards',
   },
   {
-    current: true,
     isEnabled: true,
-    icon: (
-      <Chip
-        fill="white"
-        description="Icon"
-        className="bx--header__menu-item bx--header__menu-title"
-      />
-    ),
+    icon: Chip,
     metaData: {
       label: 'Devices',
       href: 'https://google.com',
@@ -71,13 +51,7 @@ const links = [
   },
   {
     isEnabled: true,
-    icon: (
-      <Group
-        fill="white"
-        description="Icon"
-        className="bx--header__menu-item bx--header__menu-title"
-      />
-    ),
+    icon: Group,
     metaData: {
       label: 'Members',
       element: 'button',
@@ -91,10 +65,19 @@ const links = [
           element: 'button',
         },
         content: 'Yet another link',
+        isActive: true,
       },
     ],
   },
 ];
+
+const switcherProps = {
+  options: ['ExampleOne', 'ExampleTwo'],
+  labelText: 'ExampleOne',
+  onChange: () => {},
+  className: 'class',
+  switcherTitle: 'Applications',
+};
 
 // const link = <Icon name="header--help" fill="white" description="Icon" />;
 const HeaderProps = {
@@ -111,16 +94,66 @@ const HeaderProps = {
           <User>
             JohnDoe@ibm.com<span>TenantId: Acme</span>
           </User>
-          <StyledIcon name="header--avatar" fill="white" description="Icon" />
+          <Group
+            fill="white"
+            description="Icon"
+            className="bx--header__menu-item bx--header__menu-title"
+          />
         </React.Fragment>
       ),
     },
   ],
 };
 
-storiesOf('SideNav', module).add('SideNav component', () => (
-  <>
-    <Header {...HeaderProps} />
-    <SideNav links={links} />
-  </>
-));
+storiesOf('Watson IoT|SideNav', module).add(
+  'SideNav component',
+  () => (
+    <HeaderContainer
+      render={({ isSideNavExpanded, onClickSideNavExpand }) => (
+        <>
+          <Header
+            {...HeaderProps}
+            isSideNavExpanded={isSideNavExpanded}
+            onClickSideNavExpand={onClickSideNavExpand}
+          />
+          <SideNav
+            links={links}
+            isSideNavExpanded={isSideNavExpanded}
+            onClickSideNavExpand={onClickSideNavExpand}
+            switcherProps={switcherProps}
+          />
+        </>
+      )}
+    />
+  ),
+  {
+    info: {
+      text: `
+      When implementing the Header and SideNav components you must utilized the HeaderContainer component
+
+      <br/>
+
+      ~~~js
+      <HeaderContainer
+      render={({ isSideNavExpanded, onClickSideNavExpand }) => (
+        <>
+          <Header
+            {...HeaderProps}
+            isSideNavExpanded={isSideNavExpanded}
+            onClickSideNavExpand={onClickSideNavExpand}
+          />
+          <SideNav
+            links={links}
+            isSideNavExpanded={isSideNavExpanded}
+            onClickSideNavExpand={onClickSideNavExpand}
+          />
+        </>
+      )}
+    />
+
+      ~~~
+
+      `,
+    },
+  }
+);

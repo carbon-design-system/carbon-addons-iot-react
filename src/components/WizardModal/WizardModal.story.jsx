@@ -1,19 +1,25 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { Button } from 'carbon-components-react';
+import styled from 'styled-components';
 
 import WizardModal from './WizardModal';
+
+const StyledWizard = styled(WizardModal)`
+  .WizardInline-custom-footer-content {
+    padding: 1rem;
+  }
+`;
 
 const commonWizardProps = {
   onSubmit: action('submit'),
   onClose: action('close'),
 };
 
-storiesOf('WizardModal', module)
+storiesOf('Watson IoT|WizardModal', module)
   .addParameters({
     info: `
-  Extends BaseModal to add Carbon's ProgressIndicator and Wizard pages and local state.  Refer to the BaseModal component for additional props that can be passed
+  Extends ComposedModal to add Carbon's ProgressIndicator and Wizard pages and local state.  Refer to the ComposedModal component for additional props that can be passed
   `,
   })
   .add('basic wizard modal', () => (
@@ -31,7 +37,7 @@ storiesOf('WizardModal', module)
     />
   ))
   .add('custom footer', () => (
-    <WizardModal
+    <StyledWizard
       header={{
         label: 'Wizard With Custom Footer ',
         title: 'Gimme 3 Steps',
@@ -42,7 +48,7 @@ storiesOf('WizardModal', module)
         { label: 'step3', content: 'page 3', onValidate: action('validateStep3') },
       ]}
       footer={{
-        leftContent: <Button>My Button</Button>,
+        leftContent: <p>Custom content</p>,
         previousButtonLabel: 'I18N Previous',
         nextButtonLabel: 'I18N Next',
         submitButtonLabel: 'I18N Submit',

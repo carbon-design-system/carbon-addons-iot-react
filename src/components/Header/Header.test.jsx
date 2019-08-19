@@ -1,6 +1,8 @@
 import React from 'react';
-import { shallow } from 'enzyme';
-import { Icon } from 'carbon-components-react';
+import { mount } from 'enzyme';
+import Notification from '@carbon/icons-react/lib/notification/20';
+import Avatar from '@carbon/icons-react/lib/user--avatar/20';
+import HeaderHelp from '@carbon/icons-react/lib/help/20';
 
 import Header from './Header';
 
@@ -14,14 +16,13 @@ describe('Header testcases', () => {
       {
         label: 'alerts',
         onClick,
-        btnContent: <Icon name="notification-on" fill="white" description="Icon" />,
+        btnContent: <Notification fill="white" description="Icon" />,
       },
       {
         label: 'help',
         onClick,
         btnContent: (
-          <Icon
-            name="header--help"
+          <HeaderHelp
             fill="white"
             description="Icon"
             className="bx--header__menu-item bx--header__menu-title"
@@ -38,7 +39,7 @@ describe('Header testcases', () => {
               <React.Fragment>
                 <span>
                   JohnDoe@ibm.com
-                  <Icon name="header--avatar" fill="white" description="Icon" />
+                  <Avatar fill="white" description="Icon" />
                 </span>
               </React.Fragment>
             ),
@@ -47,7 +48,7 @@ describe('Header testcases', () => {
       },
     ];
 
-    const header = shallow(
+    const header = mount(
       <Header
         title="My Title"
         user="j@test.com"

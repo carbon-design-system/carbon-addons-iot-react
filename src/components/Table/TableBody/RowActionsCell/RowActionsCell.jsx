@@ -17,6 +17,13 @@ import RowActionsError from './RowActionsError';
 
 const { TableCell } = DataTable;
 
+const StyledTableCell = styled(TableCell)`
+  && {
+    padding: 0;
+    vertical-align: middle;
+  }
+`;
+
 const RowActionsContainer = styled.div`
   &&& {
     display: flex;
@@ -32,10 +39,7 @@ const RowActionsContainer = styled.div`
     > *:focus {
       opacity: 1;
     }
-    color: ${props => (props.isRowExpanded ? COLORS.white : '')};
-    svg {
-      stroke: ${props => (props.isRowExpanded ? COLORS.white : '')};
-    }
+
     /* the spinner was a little too big and causing the row to scroll so need to scale down a bit */
     .bx--loading--small {
       width: 1.875rem;
@@ -63,35 +67,13 @@ const StyledOverflowMenu = styled(({ isRowExpanded, isOpen, ...other }) => (
 ))`
   &&& {
     margin-left: 0.5rem;
-    color: ${props => (props.isRowExpanded ? COLORS.white : '')};
     svg {
-      fill: ${props => (props.isRowExpanded ? COLORS.white : '')};
       margin-left: ${props => (props.hideLabel !== 'false' ? '0' : '')};
     }
     opacity: ${props => (props.isOpen || props.isRowExpanded ? 1 : 0)};
   }
   &&&:hover > svg {
     fill: ${COLORS.blue};
-  }
-`;
-
-// Don't pass through the isRowExpanded or hideLabel prop to the button
-const RowActionButton = styled(({ isRowExpanded, hideLabel, isOverflow, ...other }) => (
-  <Button {...other} />
-))`
-  &&& {
-    color: ${props => (props.isRowExpanded ? COLORS.white : '')};
-    svg {
-      fill: ${props => (props.isRowExpanded ? COLORS.white : '')};
-      margin-left: ${props => (props.hideLabel !== 'false' ? '0' : '')};
-    }
-    :hover,
-    :focus {
-      color: ${props => (!props.isRowExpanded ? COLORS.white : '')};
-      svg {
-        fill: ${props => (!props.isRowExpanded ? COLORS.white : '')};
-      }
-    }
   }
 `;
 
@@ -174,7 +156,7 @@ class RowActionsCell extends React.Component {
     const { isOpen } = this.state;
     const hasOverflow = actions && actions.filter(action => action.isOverflow).length > 0;
     return actions && actions.length > 0 ? (
-      <TableCell key={`${id}-row-actions-cell`}>
+      <StyledTableCell key={`${id}-row-actions-cell`}>
         <RowActionsContainer
           visible={isRowExpanded || isRowActionRunning || rowActionsError}
           isRowExpanded={isRowExpanded}
@@ -197,21 +179,18 @@ class RowActionsCell extends React.Component {
               {actions
                 .filter(action => !action.isOverflow)
                 .map(({ id: actionId, labelText, ...others }) => (
-                  <RowActionButton
+                  <Button
                     {...others}
+                    iconDescription={overflowMenuAria}
                     key={`${id}-row-actions-button-${actionId}`}
                     kind="ghost"
                     onClick={e => onClick(e, id, actionId, onApplyRowAction)}
-                    small
-                    hideLabel={`${!labelText}`}
-                    isRowExpanded={isRowExpanded}
                   >
                     {labelText}
-                  </RowActionButton>
+                  </Button>
                 ))}
               {hasOverflow ? (
                 <StyledOverflowMenu
-                  floatingMenu
                   flipped
                   ariaLabel={overflowMenuAria}
                   onClick={event => event.stopPropagation()}
@@ -229,9 +208,13 @@ class RowActionsCell extends React.Component {
                         onClick={e => onClick(e, id, action.id, onApplyRowAction)}
                         requireTitle
                         itemText={
-                          action.icon ? (
+                          action.renderIcon ? (
                             <OverflowMenuContent>
-                              <StyledIcon name={action.icon} iconTitle={action.labelText} />
+                              <StyledIcon
+                                icon={action.renderIcon}
+                                description={action.labelText}
+                                iconTitle={action.labelText}
+                              />
                               {action.labelText}
                             </OverflowMenuContent>
                           ) : (
@@ -247,7 +230,7 @@ class RowActionsCell extends React.Component {
             </Fragment>
           )}
         </RowActionsContainer>
-      </TableCell>
+      </StyledTableCell>
     ) : null;
   }
 }

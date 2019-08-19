@@ -118,7 +118,10 @@ const AsyncTable = ({ fetchData }) => {
 
           // update the table data
           dispatch(
-            baseTableActions.tableRegister([...state.data, ...tableData], data.meta.totalRows)
+            baseTableActions.tableRegister(
+              { data: [...state.data, ...tableData] },
+              data.meta.totalRows
+            )
           );
 
           // and reset the table's loading state

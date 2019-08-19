@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { select } from '@storybook/addon-knobs';
-import { Icon } from 'carbon-components-react';
+import Add from '@carbon/icons-react/lib/add/32';
 
 import StatefulTileCatalog from './StatefulTileCatalog';
 import CatalogContent from './CatalogContent';
@@ -10,9 +10,7 @@ import CatalogContent from './CatalogContent';
 const longDescription =
   'Really long string with lots of lots of text too much to show on one line and when it wraps it might cause some interesting issues especially if it starts vertically wrapping outside of tile bounds at the bottom of the tile';
 
-const tileRenderFunction = ({ values }) => (
-  <CatalogContent {...values} icon={<Icon width="50" height="50" name="icon--add" />} />
-);
+const tileRenderFunction = ({ values }) => <CatalogContent {...values} icon={<Add />} />;
 
 export const commonTileCatalogProps = {
   title: 'My Tile Catalog',
@@ -60,7 +58,7 @@ export const commonTileCatalogProps = {
   onSelection: action('onSelection'),
 };
 
-storiesOf('TileCatalog', module)
+storiesOf('Watson IoT|TileCatalog', module)
   .add('default', () => (
     <StatefulTileCatalog
       {...commonTileCatalogProps}
@@ -77,7 +75,7 @@ storiesOf('TileCatalog', module)
       {...commonTileCatalogProps}
       search={{
         placeHolderText: 'Search catalog',
-        onSearch: action('onSearch'),
+        onSearch: action('search'),
       }}
       pagination={{ pageSize: 6, onPage: action('onPage') }}
     />
@@ -95,7 +93,9 @@ storiesOf('TileCatalog', module)
   ))
   .add('loading', () => <StatefulTileCatalog {...commonTileCatalogProps} isLoading />)
   .add('error', () => (
-    <StatefulTileCatalog {...commonTileCatalogProps} tiles={[]} error="In error state" />
+    <div style={{ width: 'calc(100vw - 6rem)' }}>
+      <StatefulTileCatalog {...commonTileCatalogProps} tiles={[]} error="In error state" />
+    </div>
   ))
   .add('async loaded wait one second', () => {
     const Container = () => {

@@ -19,7 +19,7 @@ const LinkButton = styled.button`
     padding: 0;
     font: inherit;
     outline: none;
-    color: ${COLORS.blue};
+    color: ${COLORS.blue60};
     cursor: pointer;
     margin-left: 0.25rem;
     text-decoration: underline;
@@ -30,7 +30,6 @@ const Text = styled.div`
    {
     padding: 15px;
     line-height: 30px;
-    color: #556873;
   }
 `;
 

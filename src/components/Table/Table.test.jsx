@@ -147,7 +147,7 @@ describe('Table', () => {
       />
     );
     wrapper
-      .find('.bx--table-expand-v2__button')
+      .find('.bx--table-expand__button')
       .at(0)
       .simulate('click');
     expect(mockActions.table.onRowExpanded).toHaveBeenCalled();
@@ -164,7 +164,7 @@ describe('Table', () => {
       />
     );
     wrapper
-      .find('.bx--table-expand-v2__button')
+      .find('.bx--table-expand__button')
       .at(1)
       .simulate('click');
     expect(mockActions.table.onRowExpanded).toHaveBeenCalled();

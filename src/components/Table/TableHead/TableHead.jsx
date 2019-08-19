@@ -79,21 +79,21 @@ const defaultProps = {
 };
 
 const StyledCheckboxTableHeader = styled(TableHeader)`
-  &&& {
-    padding-bottom: 0.5rem;
-    width: 2.5rem;
-  }
+  && {
+    vertical-align: middle;
+
+    & > span {
+      padding: 0;
+    }
 `;
 
 const StyledCarbonTableHead = styled(({ lightweight, ...others }) => (
   <CarbonTableHead {...others} />
 ))`
-  &&& {
-    ${props =>
-      props.lightweight === 'true' && {
-        backgroundColor: '#fff',
-        borderBottom: '2px solid #305ba3',
-      }}
+  th {
+    height: 3rem;
+    border-top: none;
+    border-bottom: none;
   }
 `;
 
@@ -112,6 +112,10 @@ const StyledCustomTableHeader = styled(TableHeader)`
       `
         : '';
     }}
+
+    vertical-align: middle;
+
+    &
   }
 `;
 

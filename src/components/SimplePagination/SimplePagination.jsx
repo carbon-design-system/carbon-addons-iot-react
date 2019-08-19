@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { Icon } from 'carbon-components-react';
+import CaretLeft from '@carbon/icons-react/lib/caret--left/20';
+import CaretRight from '@carbon/icons-react/lib/caret--right/20';
 
 import { handleEnterKeyDown } from '../../utils/componentUtilityFunctions';
 import { COLORS } from '../../styles/styles';
@@ -12,9 +13,8 @@ const StyledContainer = styled.div`
     height: 3rem;
     justify-content: flex-end;
     width: 100%;
-    border: 1px solid ${COLORS.lightGrey};
-    background-color: ${COLORS.white};
-    color: ${COLORS.gray};
+    border: 1px solid ${COLORS.gray20};
+    background-color: ${COLORS.gray10};
     align-items: center;
   }
 `;
@@ -25,28 +25,18 @@ const StyledPageLabel = styled.span`
 `;
 
 const StyledButton = styled.div`
-  cursor: pointer;
-  display: flex;
-  width: 3rem;
-  height: 3rem;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid ${COLORS.lightGrey};
-  outline-offset: -3px;
-
   ${props =>
     props.onClick
-      ? `&:hover {
-    border: 1px solid ${COLORS.blue};
-    svg path {
-      fill: ${COLORS.blue};
-    }
-  }` // If the item isn't clickable remove the focus outline
-      : `&:focus { 
-        outline: none;
-        } cursor: default;`}
+      ? `` // If the item isn't clickable remove the focus outline
+      : `&:focus {
+          outline: none;
+          border: 1px solid ${COLORS.blue};
+        }
+        cursor: default;
+  `}
+
   svg path {
-    fill: ${COLORS.gray};
+    fill: ${COLORS.gray100};
   }
 `;
 
@@ -98,20 +88,22 @@ const SimplePagination = ({
       {maxPage > 1 ? (
         <>
           <StyledButton
+            className="bx--pagination__button bx--pagination__button--backward"
             role="button"
             tabIndex={hasPrev ? 0 : -1}
             onClick={hasPrev ? handlePrev : undefined}
             onKeyDown={hasPrev ? evt => handleEnterKeyDown(evt, handlePrev) : undefined}
           >
-            <Icon name="icon--chevron--left" description={prevPageText} />
+            <CaretLeft description={prevPageText} />
           </StyledButton>
           <StyledButton
+            className="bx--pagination__button bx--pagination__button--forward"
             role="button"
             tabIndex={hasNext ? 0 : -1}
             onClick={hasNext ? handleNext : undefined}
             onKeyDown={hasNext ? evt => handleEnterKeyDown(evt, handleNext) : undefined}
           >
-            <Icon name="icon--chevron--right" description={nextPageText} />
+            <CaretRight description={nextPageText} />
           </StyledButton>
         </>
       ) : null}

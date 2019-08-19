@@ -100,7 +100,7 @@ export default class SideNav extends React.Component {
         {children}
         <SideNavFooter
           assistiveText={assistiveText}
-          isExpanded={isExpanded}
+          expanded={isExpanded}
           onToggle={this.handleExpand}
         />
       </nav>

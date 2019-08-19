@@ -158,6 +158,7 @@ class HeaderMenu extends React.Component {
 
       // Return focus to menu button when the user hits ESC.
       this.menuButtonRef.focus();
+      return;
     }
   };
 

@@ -3,12 +3,16 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import isNil from 'lodash/isNil';
 
-import BaseModal from '../BaseModal/BaseModal';
+import ComposedModal from '../ComposedModal/ComposedModal';
 import ProgressIndicator from '../ProgressIndicator/ProgressIndicator';
 import WizardFooter from '../WizardInline/WizardFooter/WizardFooter';
 
-const StyledModal = styled(BaseModal)`
+const StyledModal = styled(ComposedModal)`
    {
+    .bx--modal-container {
+      min-width: 410px;
+    }
+
     .bx--progress {
       /* need to pad some space for the focus outlines*/
       padding: 3px;
@@ -18,6 +22,11 @@ const StyledModal = styled(BaseModal)`
     }
     > div + div {
       padding-top: 1rem;
+    }
+
+    .bx--modal-content {
+      width: 100%;
+      padding: 0 1rem;
     }
   }
 `;
@@ -31,7 +40,7 @@ const StyledWizardContent = styled.div`
 `;
 
 /**
- * Extends BaseModal to add wizard, refer to that component for common props
+ * Extends ComposedModal to add wizard, refer to that component for common props
  */
 class WizardModal extends Component {
   static propTypes = {

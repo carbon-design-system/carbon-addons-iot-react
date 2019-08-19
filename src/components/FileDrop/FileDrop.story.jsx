@@ -14,7 +14,7 @@ const FileDropProps = {
   onError: action('onError'),
 };
 
-storiesOf('FileDrop', module)
+storiesOf('Watson IoT|FileDrop', module)
   .add('Browse', () => (
     <FileDrop
       {...FileDropProps}

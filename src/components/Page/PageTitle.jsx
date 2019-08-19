@@ -17,8 +17,8 @@ const StyledPageSection = styled.span`
 const StyledPageTitleH1 = styled.h1`
   align-items: center;
   display: flex;
-  padding-top: 1rem;
-  margin-bottom: 24px;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
   font-weight: 400;
   line-height: 1.25rem;
 `;

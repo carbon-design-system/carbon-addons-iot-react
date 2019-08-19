@@ -2,25 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { DragSource, DropTarget } from 'react-dnd';
 import styled from 'styled-components';
-import { Icon } from 'carbon-components-react';
-import { iconDraggable } from 'carbon-icons';
+import { Button } from 'carbon-components-react';
+import Draggable from '@carbon/icons-react/lib/draggable/16';
 
-const IconStyled = styled(Icon)`
-   {
-    margin: 0 0.25rem 0 0.75rem;
-    vertical-align: middle;
-  }
-`;
-
-const StyledColumnSelectContainer = styled.div`
+const StyledColumnSelectContainer = styled(Button)`
   & {
-    background: #fff;
     margin: 0 1rem 1rem 0;
-    padding: 0.5rem;
-    border: solid 2px #3d70b2;
-    border-radius: 2px;
     cursor: pointer;
-    color: #3d70b2;
     opacity: ${props => (props.isHidden ? 0.5 : 1)};
   }
 `;
@@ -34,22 +22,25 @@ const ColumnHeaderSelect = ({
   onClick,
 }) => (
   <StyledColumnSelectContainer
+    kind="secondary"
     key={columnId}
     onClick={() => onClick()}
     role="presentation"
     isHidden={isHidden}
+    renderIcon={Draggable}
+    size="small"
     ref={instance => {
       connectDragSource(instance);
       connectDropTarget(instance);
     }}
   >
     {children}
-    <IconStyled
+    {/* <IconStyled
       style={{ cursor: 'move' }}
       icon={iconDraggable}
       description="Dragable column"
       focusable="false"
-    />
+    /> */}
   </StyledColumnSelectContainer>
 );
 

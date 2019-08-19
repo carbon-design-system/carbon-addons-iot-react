@@ -1,31 +1,30 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { ComboBox, DataTable, FormItem, Icon, TextInput } from 'carbon-components-react';
-import { iconClose } from 'carbon-icons';
+import { ComboBox, DataTable, FormItem, TextInput } from 'carbon-components-react';
+import Close from '@carbon/icons-react/lib/close/16';
 import styled from 'styled-components';
 
+import { COLORS } from '../../../../styles/styles';
 import { defaultFunction, handleEnterKeyDown } from '../../../../utils/componentUtilityFunctions';
 
 const { TableHeader, TableRow } = DataTable;
 
-const StyledTableRow = styled(TableRow)`
-  &&& {
-    th {
-      padding-top: 0.5rem;
-      padding-bottom: 1.5rem;
-    }
-  }
-`;
+// const TableRow = styled(TableRow)`
+//   &&& {
+//     th {
+//       padding-top: 0.5rem;
+//       padding-bottom: 1.5rem;
+//     }
+//   }
+// `;
 const StyledTableHeader = styled(TableHeader)`
   &&& {
-    border-top: none;
+    span.bx--table-header-label {
+      padding-top: 0;
+    }
 
-    .bx--form-item {
-      display: table-cell;
-
-      input {
-        min-width: 12.75rem;
-      }
+    .bx--form-item input {
+      min-width: 12.75rem;
     }
 
     .bx--list-box input[role='combobox'] {
@@ -44,10 +43,33 @@ const StyledTableHeader = styled(TableHeader)`
       `
         : '';
     }};
+
+    .bx--tag--filter {
+      background-color: transparent;
+
+      &:focus {
+        outline: 2px solid ${COLORS.blue60};
+        outline-offset: -2px;
+
+        svg {
+          border: none;
+        }
+      }
+
+      & > svg {
+        fill: ${COLORS.gray100};
+        border-radius: 0;
+
+        &:hover {
+          background-color: transparent;
+        }
+      }
+    }
   }
 `;
 const StyledFormItem = styled(FormItem)`
   &&& {
+    display: inline-block;
     position: relative;
 
     input {
@@ -56,6 +78,8 @@ const StyledFormItem = styled(FormItem)`
 
     .bx--list-box__selection {
       right: 0;
+      top: 50%;
+      transform: translateY(-50%);
     }
   }
 `;
@@ -177,13 +201,13 @@ class FilterHeaderRow extends Component {
       lightweight,
     } = this.props;
     return isVisible ? (
-      <StyledTableRow>
+      <TableRow>
         {hasRowSelection === 'multi' ? <StyledTableHeader /> : null}
         {hasRowExpansion ? <StyledTableHeader /> : null}
         {ordering
           .filter(c => !c.isHidden)
-          .map(c => {
-            const column = columns.find(i => c.columnId === i.id);
+          .map((c, i) => {
+            const column = columns.find(item => c.columnId === item.id);
             const columnStateValue = this.state[column.id]; // eslint-disable-line
 
             // undefined check has the effect of making isFilterable default to true
@@ -193,14 +217,16 @@ class FilterHeaderRow extends Component {
                 <div />
               ) : column.options ? (
                 <ComboBox
+                  id={`column-${i}`}
                   aria-label={filterText}
                   translateWithId={this.handleTranslation}
                   items={column.options}
                   itemToString={item => (item ? item.text : '')}
                   initialSelectedItem={{
                     id: columnStateValue,
-                    text: (column.options.find(i => i.id === columnStateValue) || { text: '' })
-                      .text, // eslint-disable-line react/destructuring-assignment
+                    text: (
+                      column.options.find(option => option.id === columnStateValue) || { text: '' }
+                    ).text, // eslint-disable-line react/destructuring-assignment
                   }}
                   placeholder={column.placeholderText || 'Choose an option'}
                   onChange={evt => {
@@ -240,7 +266,8 @@ class FilterHeaderRow extends Component {
                       }}
                       title={clearFilterText}
                     >
-                      <Icon icon={iconClose} description={clearFilterText} focusable="false" />
+                      <Close description={clearFilterText} />
+                      {/* <Icon icon={iconClose} description={clearFilterText} focusable="false" /> */}
                     </div>
                   ) : null}
                 </StyledFormItem>
@@ -257,7 +284,7 @@ class FilterHeaderRow extends Component {
             );
           })}
         {hasRowActions ? <StyledTableHeader /> : null}
-      </StyledTableRow>
+      </TableRow>
     ) : null;
   }
 }

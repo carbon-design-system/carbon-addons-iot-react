@@ -1,3 +1,9 @@
+// ----------------
+// TO BE DEPRECATED
+// ----------------
+// These definitions support legacy styled-component styles and are to be deprecated in favor of Sass.
+// Please see the new Sass entry point: ./src/styles.scss
+
 export const COLORS = {
   superLightGray: '#f9fafb',
   darkGray: '#152935',
@@ -9,6 +15,15 @@ export const COLORS = {
   errorRed: '#e62325',
   okayGreen: '#5aa700',
   white: '#fff',
+  gray100: '#171717',
+  gray80: '#3d3d3d',
+  gray80hover: '#4c4c4c',
+  gray70: '#565656',
+  gray20: '#dcdcdc',
+  gray10: '#f3f3f3',
+  gray10hover: '#e5e5e5',
+  blue60: '#0062ff',
+  navToggle: '#282828',
   purple: '#8A3FFC',
   teal: '#009C98',
   magenta: '#EE538B',
@@ -21,7 +36,7 @@ export const TYPOGRAPHY = {
 
 export const PADDING = {
   verticalPadding: '1rem',
-  horizontalWrapPadding: '2rem',
+  horizontalWrapPadding: '1rem',
 };
 
 export const SIZES = {

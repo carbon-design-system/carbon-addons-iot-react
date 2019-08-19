@@ -1,7 +1,7 @@
 /* Used dependencies */
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { boolean, number, text } from '@storybook/addon-knobs';
+import { boolean, text } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 
 import TableDetailWizard from './TableDetailWizard';
@@ -138,14 +138,13 @@ export const itemsAndComponents = items.map((item, i) => ({
   component: itemComponents[i],
 }));
 
-storiesOf('TableDetailWizard', module)
+storiesOf('Watson IoT|TableDetailWizard', module)
   .add('Stateful example', () => (
     <StatefulTableDetailWizard
       currentItemId="step1"
       items={itemsAndComponents}
       title={text('title', 'Create Physical Interface')}
       showLabels={boolean('showLabels', true)}
-      stepWidth={number('stepWidth', 80)}
       onClose={action('closed')}
       onSubmit={action('submit')}
       onNext={action('next')}
@@ -162,19 +161,6 @@ storiesOf('TableDetailWizard', module)
       onSubmit={action('submit')}
       title={text('title', 'Create Physical Interface')}
       currentItemId="step2"
-      setItem={action('step clicked')}
-      showLabels={boolean('showLabels', true)}
-    />
-  ))
-  .add('Static with Sidebar', () => (
-    <TableDetailWizard
-      items={itemsAndComponents}
-      onBack={action('back')}
-      onClose={action('Closed')}
-      onNext={action('next')}
-      onSubmit={action('submit')}
-      title={text('title', 'Create Physical Interface')}
-      currentItemId="step1"
       setItem={action('step clicked')}
       showLabels={boolean('showLabels', true)}
     />

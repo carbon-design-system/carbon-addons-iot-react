@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { boolean, number, select } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
+import { ProgressIndicatorSkeleton } from 'carbon-components-react';
 
 import ProgressIndicator from './ProgressIndicator';
 
@@ -10,8 +11,13 @@ const items = [
   {
     id: 'step1',
     label: 'First step',
+    secondaryLabel: 'secondary label',
+    description: 'This is displayed when step icon is hovered',
   },
-  { id: 'step2', label: 'Second Step' },
+  {
+    id: 'step2',
+    label: 'Second Step',
+  },
   { id: 'step3', label: 'Third Step' },
   { id: 'step4', label: 'Fourth Step' },
   { id: 'step5', label: 'Fifth Step' },
@@ -33,10 +39,10 @@ class ProgressIndicatorExample extends Component {
     return (
       <ProgressIndicator
         items={items}
+        onChange={this.setItem}
         onClickItem={this.setItem}
         currentItemId={currentItemId}
         showLabels={boolean('showlabels', true)}
-        stepWidth={number('stepWidth', 136)}
         isVerticalMode={boolean('isVerticalMode', false)}
       />
     );
@@ -44,15 +50,15 @@ class ProgressIndicatorExample extends Component {
 }
 
 /* Adds the stories */
-storiesOf('ProgressIndicator', module)
+storiesOf('Watson IoT|ProgressIndicator', module)
   .add('Stateful', () => <ProgressIndicatorExample />)
   .add('presentation', () => (
     <ProgressIndicator
       items={items}
       currentItemId={select('id', items.map(item => item.id), items[0].id)}
       onClickItem={action('onClickItem')}
+      stepWidth={number('stepWidth', 9)}
       showLabels={boolean('showlabels', true)}
-      stepWidth={number('stepWidth', 136)}
     />
   ))
   .add('presentation vertical', () => (
@@ -61,16 +67,20 @@ storiesOf('ProgressIndicator', module)
       currentItemId={select('id', items.map(item => item.id), items[0].id)}
       onClickItem={action('onClickItem')}
       showLabels={boolean('showlabels', true)}
-      stepWidth={number('stepWidth', 136)}
       isVerticalMode
     />
   ))
   .add('hideLabels and default stepWidth', () => (
     <ProgressIndicator
       items={items}
-      currentItemId={select('id', items.map(item => item.id), items[0].id)}
+      currentItemId={select('id', items.map(item => item.id), items[1].id)}
       onClickItem={action('onClickItem')}
-      showLabels={boolean('showlabels', false)}
-      stepWidth={number('stepWidth', 0)}
     />
-  ));
+  ))
+  .add('skeleton', () => <ProgressIndicatorSkeleton />, {
+    info: {
+      text: `
+            Placeholder skeleton state to use when content is loading.
+        `,
+    },
+  });

@@ -69,12 +69,12 @@ describe('StatefulTileCatalog', () => {
         selectedTileId="test7"
       />
     );
-
+    console.log(wrapper.filter('span'));
     // On page 2 because of the selectedTileId
     expect(
       wrapper
         .find('span')
-        .at(1)
+        .at(0)
         .text()
     ).toContain('Page 2');
   });
@@ -87,7 +87,7 @@ describe('StatefulTileCatalog', () => {
     expect(
       wrapper
         .find('span')
-        .at(1)
+        .at(0)
         .text()
     ).toContain('Page 1');
     const nextButton = wrapper.find('div[tabIndex=0]');
@@ -96,7 +96,7 @@ describe('StatefulTileCatalog', () => {
     expect(
       wrapper
         .find('span')
-        .at(1)
+        .at(0)
         .text()
     ).toContain('Page 2');
 
@@ -108,7 +108,7 @@ describe('StatefulTileCatalog', () => {
     expect(
       wrapper
         .find('span')
-        .at(1)
+        .at(0)
         .text()
     ).toContain('Page 1');
 

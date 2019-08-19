@@ -6,66 +6,66 @@ import { DataTable, Button } from 'carbon-components-react';
 import styled from 'styled-components';
 
 import { TableSearchPropTypes } from '../TablePropTypes';
-import { COLORS } from '../../../styles/styles';
+// import { COLORS } from '../../../styles/styles';
 
 const {
   TableToolbar: CarbonTableToolbar,
   TableToolbarContent,
-  TableToolbarAction,
+  // TableToolbarAction,
   TableBatchActions,
   TableBatchAction,
   TableToolbarSearch,
 } = DataTable;
 
-const StyledTableToolbarAction = styled(({ isActive, ...other }) => (
-  <TableToolbarAction {...other} />
-))`
+const ToolbarSVGWrapper = styled.button`
   &&& {
-    padding-right: 0.75rem;
+    background: transparent;
+    border: none;
     display: flex;
-    height: 2.5rem;
-    width: unset;
+    cursor: pointer;
+    height: 3rem;
+    width: 3rem;
+    padding: 1rem;
+    outline: 2px solid transparent;
 
-    :focus {
-      height: calc(2.5rem - 2px);
-
-      > svg {
-        fill: ${COLORS.blue};
-      }
+    :hover {
+      background: #e5e5e5;
     }
 
-    :not(:focus) > svg {
-      fill: ${props => (props.isActive ? COLORS.blue : COLORS.gray)};
+    &:active,
+    &:focus {
+      outline: 2px solid #0062ff;
+      outline-offset: -2px;
     }
   }
 `;
 
+const StyledToolbarSearch = styled(TableToolbarSearch)`
+  &&& {
+    flex-grow: 2;
+  }
+`;
+
 const StyledCarbonTableToolbar = styled(CarbonTableToolbar)`
-   {
-    &&& {
-      width: 100%;
-      padding-top: 0.25rem;
-    }
+  &&& {
+    width: 100%;
+    padding-top: 0.125rem;
   }
 `;
 
 // Need to save one px on the right for the focus
 const StyledTableToolbarContent = styled(TableToolbarContent)`
   &&& {
-    padding-right: 1px;
-    align-items: center;
+    flex: 1;
     font-size: 0.875rem;
-    height: 2.25rem;
-    > div + * {
-      margin-left: 0.75rem;
-    }
   }
 `;
 
-// add margin to the right of the Clear filters button
-const StyledClearFiltersButton = styled(Button)`
-  &&& {
-    margin-right: 0.5rem;
+const StyledTableBatchActions = styled(TableBatchActions)`
+  z-index: 3;
+
+  & + .bx--toolbar-action {
+    padding: 0;
   }
 `;
 
@@ -111,15 +111,7 @@ const propTypes = {
       PropTypes.shape({
         id: PropTypes.string.isRequired,
         labelText: PropTypes.string.isRequired,
-        icon: PropTypes.oneOfType([
-          PropTypes.shape({
-            width: PropTypes.string,
-            height: PropTypes.string,
-            viewBox: PropTypes.string.isRequired,
-            svgData: PropTypes.object.isRequired,
-          }),
-          PropTypes.string,
-        ]),
+        icon: PropTypes.node,
         iconDescription: PropTypes.string,
       })
     ),
@@ -155,14 +147,25 @@ const TableToolbar = ({
     totalFilters,
     batchActions,
     search,
-    activeBar,
+    // activeBar,
     customToolbarContent,
     isDisabled,
   },
 }) => (
   <StyledCarbonTableToolbar className={className}>
+    <StyledTableBatchActions
+      onCancel={onCancelBatchAction}
+      shouldShowBatchActions={hasRowSelection === 'multi' && totalSelected > 0}
+      totalSelected={totalSelected}
+    >
+      {batchActions.map(({ id, labelText, ...others }) => (
+        <TableBatchAction key={id} onClick={() => onApplyBatchAction(id)} {...others}>
+          {labelText}
+        </TableBatchAction>
+      ))}
+    </StyledTableBatchActions>
     {hasSearch ? (
-      <TableToolbarSearch
+      <StyledToolbarSearch
         {...search}
         onChange={event => onApplySearch(event.currentTarget ? event.currentTarget.value : '')}
         placeHolderText={searchPlaceholderText}
@@ -170,42 +173,21 @@ const TableToolbar = ({
       />
     ) : null}
     <StyledTableToolbarContent>
-      <TableBatchActions
-        onCancel={onCancelBatchAction}
-        shouldShowBatchActions={hasRowSelection === 'multi' && totalSelected > 0}
-        totalSelected={totalSelected}
-      >
-        {batchActions.map(({ id, labelText, ...others }) => (
-          <TableBatchAction key={id} onClick={() => onApplyBatchAction(id)} {...others}>
-            {labelText}
-          </TableBatchAction>
-        ))}
-      </TableBatchActions>
       {customToolbarContent || null}
       {totalFilters > 0 ? (
-        <StyledClearFiltersButton kind="secondary" onClick={onClearAllFilters} small>
+        <Button kind="secondary" onClick={onClearAllFilters}>
           {clearAllFiltersText}
-        </StyledClearFiltersButton>
+        </Button>
       ) : null}
       {hasColumnSelection ? (
-        <StyledTableToolbarAction
-          className="bx--btn--sm"
-          renderIcon={() => <IconColumnSelector />}
-          iconDescription={columnSelectionText}
-          isActive={activeBar === 'column'}
-          onClick={onToggleColumnSelection}
-          disabled={isDisabled}
-        />
+        <ToolbarSVGWrapper onClick={onToggleColumnSelection}>
+          <IconColumnSelector description={columnSelectionText} />
+        </ToolbarSVGWrapper>
       ) : null}
       {hasFilter ? (
-        <StyledTableToolbarAction
-          className="bx--btn--sm"
-          renderIcon={() => <IconFilter />}
-          iconDescription={filterText}
-          isActive={activeBar === 'filter'}
-          onClick={onToggleFilter}
-          disabled={isDisabled}
-        />
+        <ToolbarSVGWrapper onClick={onToggleFilter}>
+          <IconFilter description={filterText} />
+        </ToolbarSVGWrapper>
       ) : null}
     </StyledTableToolbarContent>
   </StyledCarbonTableToolbar>

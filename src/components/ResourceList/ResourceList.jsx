@@ -3,8 +3,26 @@ import PropTypes from 'prop-types';
 import { Button } from 'carbon-components-react';
 import styled from 'styled-components';
 
+import { COLORS } from '../../styles/styles';
+
 const ResourceListSection = styled.section`
    {
+    &.bx--structured-list--selection
+      .bx--structured-list-row:hover:not(.bx--structured-list-row--header-row)
+      > .bx--structured-list-td {
+      border: none;
+    }
+
+    .bx--btn {
+      display: flex;
+      align-items: flex-end;
+      margin: auto 0 auto auto;
+
+      svg {
+        fill: ${COLORS.blue60};
+        margin-left: 0.25rem;
+      }
+    }
   }
 `;
 
@@ -82,9 +100,8 @@ class ResourceList extends Component {
       >
         <Button
           kind="ghost"
-          icon={customAction.icon}
+          renderIcon={customAction.icon}
           onClick={() => customAction.onClick(rowId)}
-          small
         >
           {customAction.label}
         </Button>

@@ -3,41 +3,39 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { InlineNotification } from 'carbon-components-react';
 
+import { PADDING } from '../../styles/styles';
+
 import WizardHeader from './WizardHeader/WizardHeader';
 import WizardFooter from './WizardFooter/WizardFooter';
 import WizardSidebar from './WizardLeftSidebar/WizardSidebar';
 import WizardContent from './WizardContent/WizardContent';
 
 const StyledWizardWrapper = styled.div`
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-
   .bx--modal-content[data-id='WizardInlineContent'] {
-    padding: 0rem 1rem;
-    margin-bottom: 48px;
     max-height: 80vh;
     overflow: auto;
-    width: 100%;
+    width: auto;
   }
 
   .bx--modal-container[data-id='WizardInlineContainer'] {
     min-width: 630px;
     max-width: 90%;
+    margin: ${PADDING.verticalPadding} auto;
     width: 90%;
-    margin-top: 24px;
-    padding-top: 32px;
-    padding-bottom: 72px;
+    padding-bottom: 4.5rem;
   }
 `;
 
 const StyledWizardContainer = styled.div`
   display: flex;
+  padding: 0 ${PADDING.horizontalWrapPadding} 0 0;
 `;
 
 const StyledMessageBox = styled(InlineNotification)`
-   {
-    width: 100%;
+  &&& {
+    width: calc(100% - ${PADDING.horizontalWrapPadding} * 2);
+    margin: ${PADDING.verticalPadding} auto;
+    max-width: unset;
   }
 `;
 
@@ -50,10 +48,11 @@ const StyledFooter = styled.div`
   line-height: 40px;
 
   .bx--modal-footer[data-id='WizardInlineFooter'] {
-    justify-content: space-between;
-    padding: 1rem 3rem 1rem 40px;
-    max-height: 72px;
     width: 100%;
+
+    & > * {
+      width: 100%;
+    }
   }
 `;
 
@@ -118,7 +117,7 @@ export const defaultProps = {
   nextDisabled: false,
   currentItemId: null,
   blurb: null,
-  stepWidth: 136,
+  stepWidth: 8,
   onNext: null,
   onBack: null,
   setItem: null,

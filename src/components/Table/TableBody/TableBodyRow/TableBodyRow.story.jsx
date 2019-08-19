@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { actions } from '@storybook/addon-actions';
 import { boolean } from '@storybook/addon-knobs';
 import { DataTable } from 'carbon-components-react';
+import Add from '@carbon/icons-react/lib/add/32';
 
 import TableBodyRow from './TableBodyRow';
 
@@ -30,7 +31,7 @@ const TableDecorator = storyFn => (
     </Table>
   </TableContainer>
 );
-storiesOf('TableBodyRow', module)
+storiesOf('Watson IoT|TableBodyRow', module)
   // Table rows need to be rendered in a tbody or else they'll throw an error
   .addDecorator(TableDecorator)
   .add('normal', () => <TableBodyRow {...tableBodyRowProps} />)
@@ -38,14 +39,14 @@ storiesOf('TableBodyRow', module)
     <TableBodyRow
       {...tableBodyRowProps}
       isExpanded={boolean('isExpanded', false)}
-      rowActions={[{ id: 'add', icon: 'icon--add' }]}
+      rowActions={[{ id: 'add', renderIcon: Add }]}
       options={{ hasRowActions: true, hasRowExpansion: true }}
     />
   ))
   .add('rowActions running', () => (
     <TableBodyRow
       {...tableBodyRowProps}
-      rowActions={[{ id: 'add', icon: 'icon--add' }]}
+      rowActions={[{ id: 'add', renderIcon: Add }]}
       options={{ hasRowActions: true, hasRowExpansion: true }}
       isRowActionRunning
       isExpanded={boolean('isExpanded', false)}
@@ -54,7 +55,7 @@ storiesOf('TableBodyRow', module)
   .add('rowActions error', () => (
     <TableBodyRow
       {...tableBodyRowProps}
-      rowActions={[{ id: 'add', icon: 'icon--add' }]}
+      rowActions={[{ id: 'add', renderIcon: Add }]}
       options={{ hasRowActions: true, hasRowExpansion: true }}
       rowActionsError={{
         title: 'Import failed:',

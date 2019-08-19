@@ -3,9 +3,16 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { boolean, number, text } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
+import styled from 'styled-components';
 
 import WizardInline from './WizardInline';
 import StatefulWizardInline from './StatefulWizardInline';
+
+const StyledFooterContent = styled.p`
+  height: 100%;
+  line-height: 100%;
+  padding: 1rem;
+`;
 
 const items = [
   {
@@ -139,11 +146,11 @@ export const itemsAndComponents = items.map((item, i) => ({
 }));
 
 const sidebarComponent = <div>sidebar</div>;
-const footerComponent = <div>this is footer content</div>;
+const footerComponent = <StyledFooterContent>this is footer content</StyledFooterContent>;
 
 // Simple Static Wizard Stories
 
-storiesOf('WizardInline', module)
+storiesOf('Watson IoT|WizardInline', module)
   .add('Stateful example', () => (
     <StatefulWizardInline
       currentItemId="step1"
@@ -151,7 +158,7 @@ storiesOf('WizardInline', module)
       title={text('title', 'I am a title')}
       blurb={text('blurb', 'My long blurb to explain what is going on')}
       showLabels={boolean('showLabels', true)}
-      stepWidth={number('stepWidth', 136)}
+      stepWidth={number('stepWidth', 9)}
       sidebar={sidebarComponent}
       footerLeftContent={footerComponent}
       onClose={action('closed')}

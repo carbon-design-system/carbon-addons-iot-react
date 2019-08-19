@@ -3,6 +3,7 @@ import { select } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import { storiesOf } from '@storybook/react';
 import Bee32 from '@carbon/icons-react/lib/bee/32';
+import Edit from '@carbon/icons-react/lib/edit/16';
 
 import ResourceList from './ResourceList';
 
@@ -51,7 +52,7 @@ class ResourceListSimple extends Component {
   };
 }
 
-storiesOf('ResourceList', module)
+storiesOf('Watson IoT|ResourceList', module)
   .add('default', () => <ResourceListSimple />)
   .add('with extra content', () => (
     <ResourceListSimple
@@ -70,7 +71,7 @@ storiesOf('ResourceList', module)
       customAction={{
         onClick: action('customAction.onClick'),
         label: 'Configure',
-        icon: 'edit',
+        icon: () => <Edit />,
       }}
     />
   ));

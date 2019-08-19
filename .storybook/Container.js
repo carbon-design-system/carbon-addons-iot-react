@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './_container.scss';
+import '../src/styles.scss';
 
 export default class Container extends Component {
   render() {
@@ -9,7 +9,7 @@ export default class Container extends Component {
       <div
         className="storybook-container"
         style={{
-          padding: '1em',
+          padding: '3rem',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',

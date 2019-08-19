@@ -3,8 +3,19 @@ import PropTypes from 'prop-types';
 import { ContentSwitcher, Switch } from 'carbon-components-react';
 import styled from 'styled-components';
 
+// import { COLORS, PADDING } from '../../styles/styles';
+
 const StyledContentSwitcher = styled(ContentSwitcher)`
-  margin-bottom: 24px;
+  && {
+    height: auto;
+    margin-bottom: 1rem;
+    justify-content: flex-start;
+
+    .bx--content-switcher-btn {
+      position: relative;
+      max-width: 10rem;
+    }
+  }
 `;
 
 const propTypes = {
@@ -31,7 +42,7 @@ const defaultProps = {
 const PageSwitcher = ({ switcher: { onChange, selectedIndex, options } }) => (
   <StyledContentSwitcher onChange={id => onChange(id)} selectedIndex={selectedIndex}>
     {options.map(item => (
-      <Switch key={item.id} name={item.id} text={item.text} />
+      <Switch key={item.id} name={item.id} text={item.text} data-tip={item.text} />
     ))}
   </StyledContentSwitcher>
 );

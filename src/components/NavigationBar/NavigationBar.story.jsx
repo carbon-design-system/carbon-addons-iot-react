@@ -1,6 +1,7 @@
 import React, { Fragment, useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
+import styled from 'styled-components';
 
 import PageHero from '../Page/PageHero';
 import PageWorkArea from '../Page/PageWorkArea';
@@ -8,6 +9,10 @@ import WizardInline from '../WizardInline/StatefulWizardInline';
 import { itemsAndComponents } from '../WizardInline/WizardInline.story';
 
 import NavigationBar from './NavigationBar';
+
+const StyledDirections = styled.div`
+  padding: 1rem;
+`;
 
 const commonPageHeroProps = {
   section: 'Explore',
@@ -35,10 +40,10 @@ const StatefulNavigationBar = () => {
   };
   return (
     <Fragment>
-      <span>
+      <StyledDirections>
         To interact with the workarea, click the New Entity Type button. To close the workarea,
         click the Cancel button or finish the flow.
-      </span>
+      </StyledDirections>
       <NavigationBar
         {...navBarProps}
         workArea={
@@ -59,7 +64,7 @@ const StatefulNavigationBar = () => {
   );
 };
 
-storiesOf('NavigationBar', module)
+storiesOf('Watson IoT|NavigationBar', module)
   .add('normal', () => <NavigationBar {...navBarProps} />)
   .add('start with tab 2 selected', () => <NavigationBar {...navBarProps} selected={1} />)
   .add('with actions', () => (
