@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 import { Tooltip, Icon } from 'carbon-components-react';
 
 export const propTypes = {
@@ -26,18 +27,31 @@ const defaultProps = {
   height: 25,
 };
 
+const StyledHotspot = styled(({ className, children }) => (
+  <div className={className}>{children}</div>
+))`
+  position: absolute;
+  ${props => `
+    top: calc(${props.y}% - ${props.height / 2}px);
+    left: calc(${props.x}% - ${props.width / 2}px);
+  `}
+  font-family: Sans-Serif;
+  pointer-events: auto;
+
+  .bx--tooltip__label {
+    border: solid 1px #aaa;
+    padding: 4px;
+    background: white;
+    opacity: 0.9;
+    border-radius: 4px;
+    box-shadow: 0 0 8px #777;
+  }
+`;
+
 /**
  * This component renders a hotspot with content over an image
  */
 const Hotspot = ({ x, y, content, icon, color, width, height, ...others }) => {
-  const hotspotStyle = {
-    position: 'absolute',
-    top: `calc(${y}% - ${height / 2}px)`,
-    left: `calc(${x}% - ${width / 2}px)`,
-    fontFamily: 'Sans-Serif',
-    pointerEvents: 'auto',
-  };
-
   const defaultIcon = (
     <svg width={width} height={height}>
       <circle
@@ -47,13 +61,13 @@ const Hotspot = ({ x, y, content, icon, color, width, height, ...others }) => {
         stroke="black"
         strokeWidth="1"
         fill={color}
-        opacity="0.5"
+        opacity="1"
       />
     </svg>
   );
 
   return (
-    <div style={hotspotStyle}>
+    <StyledHotspot x={x} y={y} width={width} height={height}>
       <Tooltip
         {...others}
         triggerText={
@@ -70,7 +84,7 @@ const Hotspot = ({ x, y, content, icon, color, width, height, ...others }) => {
       >
         {content}
       </Tooltip>
-    </div>
+    </StyledHotspot>
   );
 };
 
