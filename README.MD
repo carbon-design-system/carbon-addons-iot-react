@@ -1,28 +1,26 @@
 # Carbon Addons for Watson IoT
 
-> v1.x
+> v1.x - Carbon v9 implementation
 
-[![Build Status](https://travis-ci.com/IBM/carbon-addons-iot-react.svg?branch=master)](https://travis-ci.com/IBM/carbon-addons-iot-react)
-[![Coverage Status](https://coveralls.io/repos/github/IBM/carbon-addons-iot-react/badge.svg?branch=master)](https://coveralls.io/github/IBM/carbon-addons-iot-react?branch=master)
+[![Build Status](https://travis-ci.org/IBM/carbon-addons-iot-react.svg?branch=1.x)](https://travis-ci.org/IBM/carbon-addons-iot-react/branches)
+[![Coverage Status](https://coveralls.io/repos/github/IBM/carbon-addons-iot-react/badge.svg?branch=1.x)](https://coveralls.io/github/IBM/carbon-addons-iot-react?branch=1.x)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/d037c99a-d51a-4729-bf7c-589679e2663e/deploy-status)](https://app.netlify.com/sites/carbon-addons-iot-react/deploys)
 [![Netlify Notice](https://www.netlify.com/img/global/badges/netlify-light.svg)](https://www.netlify.com)
 
-This library contains React components shared between all IBM IoT products to unify our look and feel. These widgets are usually based on the carbon-components-react widgets. These components cover additional usecases specific to our IoT product line, much like this repository does for the IBM Cloud team: <https://github.com/carbon-design-system/carbon-addons-cloud-react>
-
-> For a look at what's coming up in `v2.x`, including Carbon v10 updates, [check out the `beta` branch](https://github.com/IBM/carbon-addons-iot-react/tree/beta)
+This library contains React components shared between IBM IoT products to unify our look and feel. These widgets are usually based on the carbon-components-react components. These components cover additional usecases specific to our IoT product line, much like this repository does for the IBM Cloud team: <https://github.com/carbon-design-system/carbon-addons-cloud-react>
 
 ## Getting Started
 
 Run the following command using [npm](https://www.npmjs.com/):
 
 ```bash
-npm install -S carbon-components carbon-components-react carbon-icons carbon-addons-iot-react
+npm install -S carbon-components carbon-components-react carbon-icons carbon-addons-iot-react@release-1.x
 ```
 
 If you prefer [Yarn](https://yarnpkg.com/en/), use the following command instead:
 
 ```bash
-yarn add carbon-components carbon-components-react carbon-icons carbon-addons-iot-react
+yarn add carbon-components carbon-components-react carbon-icons carbon-addons-iot-react@release-1.x
 ```
 
 You can then import any component that you need by doing the following in your project:
@@ -30,6 +28,8 @@ You can then import any component that you need by doing the following in your p
 ```js
 import { BaseModal } from 'carbon-addons-iot-react';
 ```
+
+> Note: You can choose to install the package and follow all v1 releases by using the dist-tag like above, `release-1.x`. Alternatively, you can modify your existing `package.json` to specify an appropriate [caret range](https://yarnpkg.com/en/docs/dependency-versions#toc-caret-ranges), e.g., `^1.90.0`.
 
 ## Running Tests
 
