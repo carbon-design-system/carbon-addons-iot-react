@@ -73,7 +73,7 @@ export default {
             'node_modules/carbon-components/scss/globals/scss/_layer.scss',
             'node_modules/carbon-components/scss/globals/scss/_spacing.scss',
             'node_modules/carbon-components/scss/globals/scss/_typography.scss',
-            'node_modules/carbon-components/scss/globals/scss/_vendor',
+            'node_modules/carbon-components/scss/globals/scss/vendor',
             'node_modules/carbon-components/scss/globals/scss/_css--reset.scss',
             'node_modules/carbon-components/scss/globals/scss/_css--font-face.scss',
             'node_modules/carbon-components/scss/globals/scss/_css--helpers.scss',
