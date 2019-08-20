@@ -479,7 +479,7 @@ const TableCard = ({
           ? Object.keys(i.values)
               .map(value =>
                 filteredTimestampColumns.includes(value)
-                  ? { [value]: moment(i.values[value]).format('LLL') }
+                  ? { [value]: moment(i.values[value]).format('L HH:mm') }
                   : null
               )
               .filter(v => !isNil(v))[0]
