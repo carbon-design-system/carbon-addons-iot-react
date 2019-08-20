@@ -93,6 +93,14 @@ export const TableCardPropTypes = {
         label: PropTypes.string,
       })
     ),
+    thresholds: PropTypes.arrayOf(
+      PropTypes.shape({
+        dataSourceId: PropTypes.string.isRequired,
+        comparison: PropTypes.oneOf(['<', '>', '=', '<=', '>=']).isRequired,
+        value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+        severity: PropTypes.oneOf([1, 2, 3]),
+      })
+    ),
     sort: PropTypes.oneOf(['ASC', 'DESC']),
   }).isRequired,
   value: PropTypes.arrayOf(

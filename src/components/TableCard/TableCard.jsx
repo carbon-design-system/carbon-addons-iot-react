@@ -6,6 +6,7 @@ import Download16 from '@carbon/icons-react/lib/download/16';
 import fileDownload from 'js-file-download';
 import isNil from 'lodash/isNil';
 import uniqBy from 'lodash/uniqBy';
+import cloneDeep from 'lodash/cloneDeep';
 
 import { CardPropTypes, TableCardPropTypes } from '../../constants/PropTypes';
 import Card from '../Card/Card';
@@ -141,9 +142,17 @@ const StyledExpandedDiv = styled.div`
   margin-bottom: 16px;
 `;
 
-const matchingThreshold = (thresholds, item) => {
+/**
+ * Returns an array of matching thresholds will only return the highest severity threshold for a column
+ * If passed a columnId, it filters the threshold check on the current column only
+ */
+export const findMatchingThresholds = (thresholds, item, columnId) => {
   return thresholds
     .filter(t => {
+      // Does the threshold apply to the current column?
+      if (columnId && !columnId.includes(t.dataSourceId)) {
+        return false;
+      }
       switch (t.comparison) {
         case '<':
           return parseFloat(item[t.dataSourceId]) < t.value;
@@ -159,7 +168,21 @@ const matchingThreshold = (thresholds, item) => {
           return false;
       }
     })
-    .concat([null])[0];
+    .reduce((highestSeverityThreshold, threshold) => {
+      const currentThresholdIndex = highestSeverityThreshold.findIndex(
+        currentThreshold => currentThreshold.dataSourceId === threshold.dataSourceId
+      );
+      if (
+        // If I don't have a threshold currently for this column
+        currentThresholdIndex < 0
+      ) {
+        highestSeverityThreshold.push(threshold); //eslint-disable-line
+      } // The lowest severity is actually the most severe
+      else if (highestSeverityThreshold[currentThresholdIndex].severity > threshold.severity) {
+        highestSeverityThreshold[currentThresholdIndex] = threshold; //eslint-disable-line
+      }
+      return highestSeverityThreshold;
+    }, []);
 };
 
 const determinePrecisionAndValue = (precision, value) => {
@@ -233,16 +256,22 @@ const TableCard = ({
     ) : null;
   };
 
-  const threholdIconRow = cellItem => {
-    const matchingThresholdValue = matchingThreshold(thresholds, cellItem.row);
+  const renderThresholdIcon = cellItem => {
+    const matchingThresholdValue = findMatchingThresholds(
+      thresholds,
+      cellItem.row,
+      cellItem.columnId
+    )[0];
 
-    let threholdIcon = null;
+    let thresholdIcon = null;
     if (matchingThresholdValue) {
       switch (matchingThresholdValue.severity) {
         case 3:
-          threholdIcon = (
+          thresholdIcon = (
             <StyledIconDiv
-              title={`${matchingThresholdValue.comparison} ${matchingThresholdValue.value}`}
+              title={`${matchingThresholdValue.dataSourceId} ${matchingThresholdValue.comparison} ${
+                matchingThresholdValue.value
+              }`}
             >
               <svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1">
                 <g id="Artboard-Copy" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
@@ -266,9 +295,11 @@ const TableCard = ({
           );
           break;
         case 1:
-          threholdIcon = (
+          thresholdIcon = (
             <StyledIconDiv
-              title={`${matchingThresholdValue.comparison} ${matchingThresholdValue.value}`}
+              title={`${matchingThresholdValue.dataSourceId} ${matchingThresholdValue.comparison} ${
+                matchingThresholdValue.value
+              }`}
             >
               <svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1">
                 <g
@@ -302,9 +333,11 @@ const TableCard = ({
           );
           break;
         case 2:
-          threholdIcon = (
+          thresholdIcon = (
             <StyledIconDiv
-              title={`${matchingThresholdValue.comparison} ${matchingThresholdValue.value}`}
+              title={`${matchingThresholdValue.dataSourceId} ${matchingThresholdValue.comparison} ${
+                matchingThresholdValue.value
+              }`}
             >
               <svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1">
                 <g id="Artboard" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
@@ -335,7 +368,7 @@ const TableCard = ({
           break;
       }
     }
-    return threholdIcon;
+    return thresholdIcon;
   };
 
   // always add the last action column has default
@@ -353,41 +386,46 @@ const TableCard = ({
   const hasActionColumn = data.filter(i => i.actions).length > 0;
   const uniqueThresholds = uniqBy(thresholds, 'dataSourceId');
 
-  // filter to gett the indexes for each one
-  const columnsUpdated = columns;
-  const indexes = columns
-    .map((column, index) =>
-      uniqueThresholds.filter(item => item.dataSourceId === column.dataSourceId)[0] ? index : null
-    )
-    .filter(i => i);
-  indexes.forEach((i, index) =>
-    columnsUpdated.splice(index !== 0 ? i + 1 : i, 0, {
-      id: `iconColumn`,
-      label: 'Severity',
-      width: '120px',
-      isSortable: true,
-      renderDataFunction: threholdIconRow,
-      priority: 1,
-      filter: {
-        placeholderText: 'Severity',
-        options: [
-          {
-            id: '1',
-            text: '1',
-          },
-          {
-            id: '2',
-            text: '2',
-          },
-          {
-            id: '3',
-            text: '3',
-          },
-        ],
-      },
-    })
-  );
+  // filter to get the indexes for each one
+  const columnsUpdated = cloneDeep(columns);
 
+  // Don't add the icon column in sample mode
+  if (!isEditable) {
+    const indexes = columns
+      .map((column, index) =>
+        uniqueThresholds.filter(item => item.dataSourceId === column.dataSourceId)[0]
+          ? { i: index, columnId: column.dataSourceId }
+          : null
+      )
+      .filter(i => !isNil(i));
+    indexes.forEach(({ i, columnId }, index) =>
+      columnsUpdated.splice(index !== 0 ? i + 1 : i, 0, {
+        id: `iconColumn-${columnId}`,
+        label: 'Severity',
+        width: '120px',
+        isSortable: true,
+        renderDataFunction: renderThresholdIcon,
+        priority: 1,
+        filter: {
+          placeholderText: 'Severity',
+          options: [
+            {
+              id: '1',
+              text: '1',
+            },
+            {
+              id: '2',
+              text: '2',
+            },
+            {
+              id: '3',
+              text: '3',
+            },
+          ],
+        },
+      })
+    );
+  }
   const newColumns = thresholds ? columnsUpdated : columns;
 
   const columnsToRender = newColumns
@@ -420,13 +458,13 @@ const TableCard = ({
 
   const filteredTimestampColumns = columns
     .map(column => (column.type && column.type === 'TIMESTAMP' ? column.dataSourceId : null))
-    .filter(i => i);
+    .filter(i => !isNil(i));
 
   const filteredPrecisionColumns = columns
     .map(column =>
       column.precision ? { dataSourceId: column.dataSourceId, precision: column.precision } : null
     )
-    .filter(i => i);
+    .filter(i => !isNil(i));
 
   // if we're in editable mode, generate fake data
   const tableData = isEditable
@@ -441,18 +479,24 @@ const TableCard = ({
           ? Object.keys(i.values)
               .map(value =>
                 filteredTimestampColumns.includes(value)
-                  ? { [value]: moment(i.values[value]).format('LLL') }
+                  ? { [value]: moment(i.values[value]).format('L HH:mm') }
                   : null
               )
-              .filter(v => v)[0]
+              .filter(v => !isNil(v))[0]
           : null;
 
-        const matchingThresholdValue = thresholds ? matchingThreshold(thresholds, i.values) : null;
+        const matchingThresholds = thresholds ? findMatchingThresholds(thresholds, i.values) : null;
 
-        const icon = thresholds
-          ? {
-              iconColumn: matchingThresholdValue ? matchingThresholdValue.severity : null,
-            }
+        // map each of the matching thresholds into a data object
+        const iconColumns = matchingThresholds
+          ? matchingThresholds.reduce(
+              (thresholdData, threshold) => {
+                thresholdData[`iconColumn-${threshold.dataSourceId}`] = threshold.severity; // eslint-disable-line
+                return thresholdData;
+              },
+
+              {}
+            )
           : null;
 
         // if column have custom precision value
@@ -473,7 +517,7 @@ const TableCard = ({
         return {
           id: i.id,
           values: {
-            ...icon,
+            ...iconColumns,
             ...i.values,
             ...action,
             ...timestampUpdated,
@@ -541,7 +585,8 @@ const TableCard = ({
   // is columns recieved is different from the columnsToRender show card expand
   const isExpandable =
     columns.length !==
-    columnsToRender.filter(item => item.id !== 'actionColumn' && item.id !== 'iconColumn').length;
+    columnsToRender.filter(item => item.id !== 'actionColumn' && !item.id.includes('iconColumn'))
+      .length;
 
   const hasFilter = size !== CARD_SIZES.TALL;
 
