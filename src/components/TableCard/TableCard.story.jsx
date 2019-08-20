@@ -332,4 +332,26 @@ storiesOf('Table Card', module)
         />
       </div>
     );
+  })
+  .add('with matching thresholds', () => {
+    const size = CARD_SIZES.LARGE;
+    return (
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+        <TableCard
+          title={text('title', 'Open Alerts')}
+          id="table-list"
+          content={{
+            columns: tableColumns,
+            expandedRows: [{}],
+            thresholds: [
+              { dataSourceId: 'count', comparison: '>', value: 0, severity: 3 },
+              { dataSourceId: 'count', comparison: '>', value: 2, severity: 1 },
+            ],
+          }}
+          values={tableData.map(i => ({ id: i.id, values: i.values }))}
+          onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
+          size={size}
+        />
+      </div>
+    );
   });
