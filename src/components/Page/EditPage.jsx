@@ -1,18 +1,17 @@
 import React, { useState, Fragment } from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
 import styled from 'styled-components';
 import { SkeletonText } from 'carbon-components-react';
 
 import ButtonEnhanced from '../ButtonEnhanced/ButtonEnhanced';
-
-import PageHeader from './PageHeader';
+import Hero, { HeroPropTypes } from '../Hero/Hero';
 
 const StyledEditPage = styled.div`
   &&& {
     width: 100%;
     max-width: 100%;
     max-height: unset;
+    border: 0;
   }
 `;
 
@@ -20,7 +19,8 @@ const StyledPageContent = styled.div`
    {
     display: flex;
     flex-flow: column;
-    min-height: calc(100vh - 250px);
+    min-height: calc(100vh - 125px);
+    padding: 1rem 2rem;
     padding-bottom: 7rem;
   }
 `;
@@ -35,6 +35,7 @@ const StyledPageFooter = styled.div`
 `;
 
 const propTypes = {
+  ...HeroPropTypes,
   className: PropTypes.string,
   children: PropTypes.node.isRequired,
   onClose: PropTypes.func.isRequired,
@@ -70,30 +71,33 @@ const EditPage = ({
   i18n: { saveLabel, cancelLabel },
   i18n,
   isLoading,
+  blurb,
   ...others
 }) => {
   const [isSaving, setSaving] = useState();
   const handleSave = async () => {
     setSaving(true);
     try {
-      await onSave();
-      onClose();
+      // if they return false from onSave don't close
+      if (await onSave()) {
+        onClose();
+      }
     } catch {
       setSaving(false);
     }
   };
   return (
-    <StyledEditPage className={classNames('bx--modal-container', className)}>
+    <StyledEditPage className={className}>
       {isLoading ? (
         <Fragment>
-          <PageHeader {...others} onClose={onClose} i18n={i18n} isLoading />
+          <Hero {...others} description={blurb} onClose={onClose} i18n={i18n} isLoading />
           <StyledPageContent>
             <SkeletonText width="30%" />
           </StyledPageContent>
         </Fragment>
       ) : (
         <Fragment>
-          <PageHeader {...others} onClose={onClose} i18n={i18n} />
+          <Hero {...others} description={blurb} onClose={onClose} i18n={i18n} />
           <StyledPageContent>{children}</StyledPageContent>
           <StyledPageFooter className="bx--modal-footer">
             <ButtonEnhanced kind="secondary" onClick={onClose}>
