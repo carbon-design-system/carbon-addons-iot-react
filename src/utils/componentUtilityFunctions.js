@@ -54,14 +54,14 @@ export const getSortedData = (inputData, columnId, direction, isTimestampColumn)
         return -val;
       }
     }
-    if (typeof a.values[columnId] === 'string') {
+    if (typeof a.values[columnId] === 'string' && Number.isNaN(a.values[columnId])) {
       const compare = a.values[columnId].localeCompare(b.values[columnId]);
       return direction === 'ASC' ? compare : -compare;
     }
-    if (a.values[columnId] < b.values[columnId]) {
+    if (Number(a.values[columnId]) < Number(b.values[columnId])) {
       return val;
     }
-    if (a.values[columnId] > b.values[columnId]) {
+    if (Number(a.values[columnId]) > Number(b.values[columnId])) {
       return -val;
     }
 
