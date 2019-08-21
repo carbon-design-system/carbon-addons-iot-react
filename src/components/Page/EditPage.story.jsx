@@ -11,10 +11,11 @@ const commonEditPageProps = {
   onSave: action('onSave'),
   children: <div>child</div>,
 };
-
+const breadcrumb = [<a href="/">Home</a>, <a href="/">Type</a>, <span>Instance</span>];
 storiesOf('EditPage', module)
   .add('normal', () => <EditPage {...commonEditPageProps} />)
   .add('isLoading', () => <EditPage {...commonEditPageProps} isLoading />)
   .add('with blurb', () => (
     <EditPage {...commonEditPageProps} blurb={text('blurb', 'My blurrrrbbbb!!')} />
-  ));
+  ))
+  .add('with breadcrumb', () => <EditPage {...commonEditPageProps} breadcrumb={breadcrumb} />);

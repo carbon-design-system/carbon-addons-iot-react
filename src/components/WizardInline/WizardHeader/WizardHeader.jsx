@@ -1,12 +1,17 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 import ProgressIndicator from '../../ProgressIndicator/ProgressIndicator';
-import PageHeader from '../../Page/PageHeader';
+import Hero from '../../Hero/Hero';
 
-const StyledPageHeader = styled(PageHeader)`
+const StyledHero = styled(Hero)`
   margin-bottom: 1.5rem;
+  padding: 0;
+`;
+
+const StyledProgressIndicator = styled(ProgressIndicator)`
+  padding-bottom: 1.5rem;
 `;
 
 class WizardHeader extends Component {
@@ -41,15 +46,16 @@ class WizardHeader extends Component {
     const { currentItemId, setItem, items, showLabels, stepWidth, ...others } = this.props;
 
     return (
-      <StyledPageHeader {...others}>
-        <ProgressIndicator
+      <Fragment>
+        <StyledHero {...others} />
+        <StyledProgressIndicator
           currentItemId={currentItemId}
           items={items.map(item => ({ id: item.id, label: item.name }))}
           showLabels={showLabels}
           onClickItem={setItem}
           stepWidth={stepWidth}
         />
-      </StyledPageHeader>
+      </Fragment>
     );
   };
 }
