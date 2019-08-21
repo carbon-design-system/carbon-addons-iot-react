@@ -14,7 +14,6 @@ const StyledWizardWrapper = styled.div`
   align-items: center;
 
   .bx--modal-content[data-id='WizardInlineContent'] {
-    padding: 0rem 1rem;
     margin-bottom: 48px;
     max-height: 80vh;
     overflow: auto;
