@@ -35,13 +35,13 @@ export const filterData = (data, filters) =>
         filters.reduce(
           (acc, { columnId, value }) =>
             acc &&
-            ((!isNil(values[columnId]) &&  // only if the values is not null/undefined
-              values[columnId] && 
+            (!isNil(values[columnId]) && // only if the values is not null/undefined
+              values[columnId] &&
               values[columnId].toString &&
               values[columnId]
                 .toString()
                 .toLowerCase()
-                .includes(value.toString().toLowerCase()))), 
+                .includes(value.toString().toLowerCase())),
           true
         )
       );
@@ -79,7 +79,6 @@ export const tableReducer = (state = {}, action) => {
   switch (action.type) {
     // Filter Actions
     case TABLE_FILTER_APPLY: {
-      console.log('Filter selected::::')
       const newFilters = Object.entries(action.payload)
         .map(([key, value]) =>
           value !== ''
