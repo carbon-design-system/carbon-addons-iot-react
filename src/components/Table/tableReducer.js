@@ -26,41 +26,25 @@ import {
 import { baseTableReducer } from './baseTableReducer';
 
 // Little utility to filter data
-export const filterData = (data, filters) => {
-  console.log('filters:::', filters)
-
-  const oi = !filters || filters.length === 0
+export const filterData = (data, filters) =>
+  !filters || filters.length === 0
     ? data
-    : data.filter(({ values }) => {
-      console.log('Value in here::::', values["iconColumn-count"])
-      // console.log('To string::', values["iconColumn-count"].toString)
-
-      console.log('Tessst nil', isNil(values["iconColumn-count"]))
-
-      // console.log('To test::', values["iconColumn-count"].toString().toLowerCase())
-
-
+    : data.filter(({ values }) =>
         // return false if a value doesn't match a valid filter
         // TODO Currently assumes every value has a toString method, need to support filtering on custom cell contents
-      return filters.reduce(
+        filters.reduce(
           (acc, { columnId, value }) =>
             acc &&
-            ((!isNil(values[columnId]) && values[columnId] &&
+            ((!isNil(values[columnId]) &&  // only if the values is not null/undefined
+              values[columnId] && 
               values[columnId].toString &&
               values[columnId]
                 .toString()
                 .toLowerCase()
-                .includes(value.toString().toLowerCase()))),
+                .includes(value.toString().toLowerCase()))), 
           true
         )
-
-    }
-        
       );
-      console.log('Oi', oi)
-
-      return oi
-}
 // Little utility to search
 
 export const searchData = (data, searchString) =>
