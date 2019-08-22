@@ -97,7 +97,7 @@ const StyledActions = styled.div`
   display: flex;
   flex-flow: row;
   flex-grow: 0;
-  padding-top: 1rem;
+  align-items: center;
   > div + div {
     margin-left: 1rem;
   }
@@ -130,6 +130,7 @@ const DashboardHeader = ({
         <StyledActions>
           {actions.map(action => (
             <div
+              key={action.id}
               tabIndex={0}
               role="button"
               onClick={() => onDashboardAction(action.id)}
