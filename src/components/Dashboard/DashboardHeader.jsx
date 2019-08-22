@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import { SkeletonText } from 'carbon-components-react';
+import { SkeletonText, Icon } from 'carbon-components-react';
 
+import { handleEnterKeyDown } from '../../utils/componentUtilityFunctions';
 import { COLORS } from '../../styles/styles';
 
 const propTypes = {
@@ -18,6 +19,27 @@ const propTypes = {
   filter: PropTypes.node,
   /** If the component should render the last updated section */
   hasLastUpdated: PropTypes.bool,
+  /** optional actions that will be rendered in the Dashboard header and used in onDashboardAction */
+  actions: PropTypes.arrayOf(
+    PropTypes.shape({
+      /** Unique id of the action */
+      id: PropTypes.string.isRequired,
+      /** icon ultimately gets passed through all the way to <Button>, which has this same copied proptype definition for icon */
+      icon: PropTypes.oneOfType([
+        PropTypes.shape({
+          width: PropTypes.string,
+          height: PropTypes.string,
+          viewBox: PropTypes.string.isRequired,
+          svgData: PropTypes.object.isRequired,
+        }),
+        PropTypes.string,
+        PropTypes.node,
+      ]),
+      labelText: PropTypes.string,
+    })
+  ),
+  /** callback invoked if a dashboard action is clicked */
+  onDashboardAction: PropTypes.func,
 };
 
 const defaultProps = {
@@ -25,6 +47,8 @@ const defaultProps = {
   lastUpdated: null,
   lastUpdatedLabel: 'Last updated:',
   filter: null,
+  actions: [],
+  onDashboardAction: null,
   hasLastUpdated: true,
 };
 
@@ -51,6 +75,7 @@ const StyledLeft = styled.div`
     color: ${COLORS.gray};
   }
 `;
+
 const LastUpdated = styled.div`
   display: flex;
   white-space: nowrap;
@@ -58,6 +83,23 @@ const LastUpdated = styled.div`
   > p {
     margin-left: 1rem;
     margin-bottom: 0rem;
+  }
+`;
+const StyledRight = styled.div`
+  display: flex;
+  flex-flow: row;
+  flex-grow: 0;
+  > div + div {
+    margin-left: 1rem;
+  }
+`;
+const StyledActions = styled.div`
+  display: flex;
+  flex-flow: row;
+  flex-grow: 0;
+  padding-top: 1rem;
+  > div + div {
+    margin-left: 1rem;
   }
 `;
 
@@ -69,6 +111,8 @@ const DashboardHeader = ({
   lastUpdatedLabel,
   filter,
   hasLastUpdated,
+  actions,
+  onDashboardAction,
 }) => {
   return (
     <StyledDashboardHeader>
@@ -81,7 +125,25 @@ const DashboardHeader = ({
           </LastUpdated>
         ) : null}
       </StyledLeft>
-      <div>{filter}</div>
+      <StyledRight>
+        {filter}
+        <StyledActions>
+          {actions.map(action => (
+            <div
+              tabIndex={0}
+              role="button"
+              onClick={() => onDashboardAction(action.id)}
+              onKeyDown={event => handleEnterKeyDown(event, () => onDashboardAction(action.id))}
+            >
+              {typeof action.icon === 'string' ? (
+                <Icon name={action.icon} title={action.label} />
+              ) : (
+                <Icon {...action.icon} title={action.label} />
+              )}
+            </div>
+          ))}
+        </StyledActions>
+      </StyledRight>
     </StyledDashboardHeader>
   );
 };
