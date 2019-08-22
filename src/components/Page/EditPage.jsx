@@ -12,6 +12,7 @@ const StyledEditPage = styled.div`
     max-width: 100%;
     max-height: unset;
     border: 0;
+    position: relative;
   }
 `;
 

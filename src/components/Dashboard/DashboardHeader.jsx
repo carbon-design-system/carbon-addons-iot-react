@@ -97,7 +97,7 @@ const StyledActions = styled.div`
   display: flex;
   flex-flow: row;
   flex-grow: 0;
-  padding-top: 1rem;
+  align-items: center;
   > div + div {
     margin-left: 1rem;
   }
