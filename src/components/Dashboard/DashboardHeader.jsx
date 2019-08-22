@@ -130,6 +130,7 @@ const DashboardHeader = ({
         <StyledActions>
           {actions.map(action => (
             <div
+              key={action.id}
               tabIndex={0}
               role="button"
               onClick={() => onDashboardAction(action.id)}
