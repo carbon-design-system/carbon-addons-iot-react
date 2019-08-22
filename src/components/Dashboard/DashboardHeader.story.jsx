@@ -39,4 +39,48 @@ storiesOf('Dashboard Header (Experimental)', module)
         }
       />
     );
+  })
+  .add('with custom actions', () => {
+    return (
+      <DashboardHeader
+        title={text('title', 'Monthly Building: Munich')}
+        description={text('description', 'Shows an overview of daily data for a building')}
+        lastUpdated={text('lastUpdated', '03/31/2019 13:55')}
+        actions={[
+          { id: 'edit', label: 'Edit', icon: 'edit' },
+          { id: 'delete', label: 'Delete', icon: 'delete' },
+        ]}
+        onDashboardAction={action('onDashboardAction')}
+      />
+    );
+  })
+  .add('with filter and custom actions', () => {
+    return (
+      <DashboardHeader
+        title={text('title', 'Monthly Building: Munich')}
+        description={text('description', 'Shows an overview of daily data for a building')}
+        lastUpdated={text('lastUpdated', '03/31/2019 13:55')}
+        filter={
+          <DatePicker id="date-picker" onChange={action('onChangeDate')} datePickerType="single">
+            <DatePickerInput
+              id="date-picker-input-id"
+              className="some-class"
+              hideLabel
+              labelText="Select day"
+              pattern="d{1,2}/d{4}"
+              placeholder="mm/dd/yyyy"
+              invalidText="A valid value is required"
+              iconDescription="Icon description"
+              onClick={action('onClickDate')}
+              onChange={action('onTextChange')}
+            />
+          </DatePicker>
+        }
+        actions={[
+          { id: 'edit', label: 'Edit', icon: 'edit' },
+          { id: 'delete', label: 'Delete', icon: 'delete' },
+        ]}
+        onDashboardAction={action('onDashboardAction')}
+      />
+    );
   });

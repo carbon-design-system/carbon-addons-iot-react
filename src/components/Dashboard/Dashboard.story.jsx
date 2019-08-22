@@ -449,6 +449,20 @@ storiesOf('Dashboard (Experimental)', module)
       />
     );
   })
+  .add('custom actions', () => {
+    return (
+      <StatefulDashboard
+        title={text('title', 'Munich Building')}
+        isEditable={boolean('isEditable', false)}
+        isLoading={boolean('isLoading', false)}
+        onBreakpointChange={action('onBreakpointChange')}
+        onLayoutChange={action('onLayoutChange')}
+        actions={[{ id: 'edit', label: 'Edit', icon: 'edit--glyph' }]}
+        onDashboardAction={action('onDashboardAction')}
+        hasLastUpdated={false}
+      />
+    );
+  })
   .add('sidebar', () => {
     return (
       <StatefulDashboard
