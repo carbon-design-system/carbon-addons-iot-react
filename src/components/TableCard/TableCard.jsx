@@ -57,7 +57,7 @@ const StyledStatefulTable = styled(({ showHeader, data, ...rest }) => (
           height: 2rem;
         }
       }
-      th div {
+      th div.bx--form-item {
         display: block;
         .bx--list-box {
           height: auto;
@@ -70,6 +70,9 @@ const StyledStatefulTable = styled(({ showHeader, data, ...rest }) => (
         }
       }
     }
+  }
+  .bx--list-box__menu-item {
+    height: 2rem;
   }
 
   .bx--table-toolbar {
