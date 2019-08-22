@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import Info from '@carbon/icons-react/lib/information/20';
 import { Breadcrumb, BreadcrumbItem, Tooltip, SkeletonText } from 'carbon-components-react';
 
-const propTypes = {
+export const HeroPropTypes = {
   /** Title of the page  */
   title: PropTypes.node,
   /** Details about what the page shows */
@@ -22,6 +22,9 @@ const propTypes = {
   }),
   /** Is the page actively loading */
   isLoading: PropTypes.bool,
+  /** support closing the page, this causes a close button to show */
+  onClose: PropTypes.func,
+  i18n: PropTypes.shape({ closeLabel: PropTypes.string }),
   className: PropTypes.string,
 };
 
@@ -33,11 +36,13 @@ const defaultProps = {
   rightContentBreadcrumb: null,
   breadcrumb: null,
   tooltip: null,
+  onClose: null,
+  i18n: { closeLabel: 'Close' },
   isLoading: false,
 };
 
 const StyledHero = styled.div`
-  padding: 1rem 2rem 0.5rem 2rem;
+  padding: 1.5rem 2rem 0.5rem 2rem;
 `;
 
 const StyledTitleSection = styled.div`
@@ -68,6 +73,7 @@ const StyledRightContent = styled.div``;
 
 const StyledBreadcrumb = styled(Breadcrumb)`
   margin-bottom: 0;
+  padding-bottom: 0.5rem;
 `;
 
 const StyledBreadcrumbDiv = styled.div`
@@ -87,6 +93,8 @@ const Hero = ({
   rightContentBreadcrumb,
   tooltip,
   isLoading,
+  i18n: { closeLabel },
+  onClose,
 }) => (
   <StyledHero className={className}>
     {isLoading ? (
@@ -129,13 +137,36 @@ const Hero = ({
             ) : null}
           </StyledTitle>
           {rightContent ? <StyledRightContent>{rightContent}</StyledRightContent> : null}
+          {onClose ? (
+            <button
+              className="bx--modal-close"
+              type="button"
+              data-modal-close
+              aria-label={closeLabel}
+              onClick={onClose}
+            >
+              <svg
+                className="bx--modal-close__icon"
+                width="10"
+                height="10"
+                viewBox="0 0 10 10"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <title>{closeLabel}</title>
+                <path
+                  d="M6.32 5L10 8.68 8.68 10 5 6.32 1.32 10 0 8.68 3.68 5 0 1.32 1.32 0 5 3.68 8.68 0 10 1.32 6.32 5z"
+                  fillRule="nonzero"
+                />
+              </svg>
+            </button>
+          ) : null}
         </StyledTitleSection>
         {description ? <StyledPageDescription>{description}</StyledPageDescription> : null}
       </Fragment>
     )}
   </StyledHero>
 );
-Hero.propTypes = propTypes;
+Hero.propTypes = HeroPropTypes;
 Hero.defaultProps = defaultProps;
 
 export default Hero;

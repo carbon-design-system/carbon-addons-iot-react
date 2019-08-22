@@ -14,7 +14,6 @@ const StyledWizardWrapper = styled.div`
   align-items: center;
 
   .bx--modal-content[data-id='WizardInlineContent'] {
-    padding: 0rem 1rem;
     margin-bottom: 48px;
     max-height: 80vh;
     overflow: auto;
@@ -61,6 +60,8 @@ export const propTypes = {
   /** Title in the header */
   title: PropTypes.string,
   blurb: PropTypes.string,
+  /** Breadcrumbs to show */
+  breadcrumb: PropTypes.arrayOf(PropTypes.node),
   /** Id of current step */
   currentItemId: PropTypes.string,
   /** Array of items representing pages of wizard. Must contain id, name, component. Optional: backLabel, nextLabel, nextDisabled */
@@ -103,6 +104,8 @@ export const propTypes = {
   stepWidth: PropTypes.number,
   /** is the wizard actively sending data should disable the button */
   sendingData: PropTypes.bool,
+  /** should we show the close button at the top of the screen */
+  showCloseButton: PropTypes.bool,
 
   /** Form Error Details */
   error: PropTypes.string,
@@ -112,8 +115,10 @@ export const propTypes = {
 
 export const defaultProps = {
   title: null,
+  breadcrumb: null,
   sidebar: null,
   footerLeftContent: null,
+  showCloseButton: true,
   showLabels: true,
   nextDisabled: false,
   currentItemId: null,
@@ -135,6 +140,7 @@ export const defaultProps = {
 
 const WizardInline = ({
   title,
+  breadcrumb,
   blurb,
   currentItemId,
   items,
@@ -150,6 +156,7 @@ const WizardInline = ({
   submitLabel,
   onSubmit,
   onClose,
+  showCloseButton,
   nextDisabled,
   sendingData,
   stepWidth,
@@ -184,11 +191,12 @@ const WizardInline = ({
           title={title}
           blurb={blurb}
           currentItemId={currentItemId}
+          breadcrumb={breadcrumb}
           // only go if current step passes validation
           setItem={id => isValid(() => setItem(id))}
           items={items}
           showLabels={showLabels}
-          onClose={onClose}
+          onClose={showCloseButton ? onClose : null}
           stepWidth={stepWidth}
         />
         {error ? (

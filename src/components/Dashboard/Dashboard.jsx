@@ -36,6 +36,25 @@ import DashboardHeader from './DashboardHeader';
 const propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string,
+  /** optional actions that will be rendered in the Dashboard header and used in onDashboardAction */
+  actions: PropTypes.arrayOf(
+    PropTypes.shape({
+      /** Unique id of the action */
+      id: PropTypes.string.isRequired,
+      /** icon ultimately gets passed through all the way to <Button>, which has this same copied proptype definition for icon */
+      icon: PropTypes.oneOfType([
+        PropTypes.shape({
+          width: PropTypes.string,
+          height: PropTypes.string,
+          viewBox: PropTypes.string.isRequired,
+          svgData: PropTypes.object.isRequired,
+        }),
+        PropTypes.string,
+        PropTypes.node,
+      ]),
+      labelText: PropTypes.string,
+    })
+  ),
   lastUpdated: PropTypes.string,
   cards: PropTypes.arrayOf(
     PropTypes.shape({
@@ -65,6 +84,8 @@ const propTypes = {
   onLayoutChange: PropTypes.func,
   /** Add function callback if the breakpoint has changed by dragging */
   onBreakpointChange: PropTypes.func,
+  /** Callback called when an action is clicked.  The id of the action is passed to the callback */
+  onDashboardAction: PropTypes.func,
   onCardAction: PropTypes.func,
   /** Is the dashboard in edit mode? */
   isEditable: PropTypes.bool,
@@ -102,6 +123,7 @@ const defaultProps = {
   description: null,
   lastUpdated: null,
   onLayoutChange: null,
+  onDashboardAction: null,
   onBreakpointChange: null,
   i18n: {
     lastUpdatedLabel: 'Last updated: ',
@@ -126,6 +148,7 @@ const defaultProps = {
   dashboardColumns: DASHBOARD_COLUMNS,
   filter: null,
   sidebar: null,
+  actions: [],
   hasLastUpdated: true,
 };
 
@@ -161,6 +184,8 @@ const Dashboard = ({
   onLayoutChange,
   onBreakpointChange,
   className,
+  actions,
+  onDashboardAction,
 }) => {
   const [breakpoint, setBreakpoint] = useState('lg');
 
@@ -314,6 +339,8 @@ const Dashboard = ({
         isLoading={isLoading}
         filter={filter}
         hasLastUpdated={hasLastUpdated}
+        actions={actions}
+        onDashboardAction={onDashboardAction}
       />
       <div style={{ display: 'flex' }}>
         {sidebar && <div style={{ flex: 0 }}>{sidebar}</div>}

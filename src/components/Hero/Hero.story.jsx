@@ -1,5 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
 import { Button } from 'carbon-components-react';
 
 import Hero from './Hero';
@@ -38,7 +39,7 @@ storiesOf('Hero', module)
       }
     />
   ))
-  .add('with brreadcrumb with right content', () => (
+  .add('with breadcrumb with right content', () => (
     <Hero
       {...commonPageHeroProps}
       breadcrumb={breadcrumb}
@@ -51,4 +52,7 @@ storiesOf('Hero', module)
   ))
   .add('with tooltip (no link)', () => (
     <Hero {...commonPageHeroProps} breadcrumb={breadcrumb} tooltip={{ message: tooltip.message }} />
+  ))
+  .add('with close button', () => (
+    <Hero {...commonPageHeroProps} breadcrumb={breadcrumb} onClose={action('close')} />
   ));
