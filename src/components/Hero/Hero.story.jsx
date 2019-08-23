@@ -45,34 +45,3 @@ storiesOf('Watson IoT|Hero', module)
   ))
   .add('with rich content', () => <Hero {...commonHeroProps} collapsed />)
   .add('isLoading', () => <Hero title={commonHeroProps.title} isLoading />);
-
-// old stories from v1
-//   .add('with right content', () => (
-//     <Hero
-//       {...commonHeroProps}
-//       rightContent={
-//         <div style={{ display: 'flex', alignItems: 'center' }}>
-//           <div>Here is a long message relating some status...&nbsp;</div>
-//           <Button kind="secondary">Cancel</Button>
-//           <Button kind="primary">Take action!</Button>
-//         </div>
-//       }
-//     />
-//   ))
-//   .add('with breadcrumb with right content', () => (
-//     <Hero
-//       {...commonPageHeroProps}
-//       breadcrumb={breadcrumb}
-//       rightContentBreadcrumb={<div>breadcrumb Right Content</div>}
-//     />
-//   ))
-
-//   .add('with tooltip', () => (
-//     <Hero {...commonPageHeroProps} breadcrumb={breadcrumb} tooltip={tooltip} />
-//   ))
-//   .add('with tooltip (no link)', () => (
-//     <Hero {...commonPageHeroProps} breadcrumb={breadcrumb} tooltip={{ message: tooltip.message }} />
-//   ))
-//   .add('with close button', () => (
-//     <Hero {...commonPageHeroProps} breadcrumb={breadcrumb} onClose={action('close')} />
-//   ));
