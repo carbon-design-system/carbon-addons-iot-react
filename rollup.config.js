@@ -141,6 +141,7 @@ export default {
           dest: 'lib/scss/components/ProgressIndicator',
         },
         { src: ['src/components/SideNav/_side-nav.scss'], dest: 'lib/scss/components/SideNav' },
+        { src: ['src/components/Hero/_hero.scss'], dest: 'lib/scss/components/Hero' },
       ],
       verbose: env !== 'development', // output file copy list on production builds for easier debugging
     }),
