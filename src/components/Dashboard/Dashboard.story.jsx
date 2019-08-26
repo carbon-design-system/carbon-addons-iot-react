@@ -315,6 +315,8 @@ const originalCards = [
       alt: 'Floor Map',
       image: 'firstfloor',
       src: imageFile,
+    },
+    values: {
       hotspots: [
         { x: 35, y: 65, content: <span style={{ padding: '10px' }}>Elevators</span> },
         { x: 45, y: 25, content: <span style={{ padding: '10px' }}>Stairs</span> },

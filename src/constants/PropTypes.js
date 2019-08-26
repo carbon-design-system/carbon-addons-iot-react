@@ -151,13 +151,11 @@ export const DonutCardPropTypes = {
 export const ImageCardPropTypes = {
   content: PropTypes.shape({
     title: PropTypes.string,
-    data: PropTypes.arrayOf(
-      PropTypes.shape({
-        src: PropTypes.string.isRequired,
-        alt: PropTypes.string.isRequired,
-      })
-    ),
+    content: PropTypes.object,
   }).isRequired,
+  values: PropTypes.shape({
+    hotspots: PropTypes.array,
+  }),
 };
 
 export const PieCardPropTypes = DonutCardPropTypes;
