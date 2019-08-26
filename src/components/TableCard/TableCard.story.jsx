@@ -138,21 +138,21 @@ storiesOf('Table Card', module)
         comparison: '>=',
         value: 10,
         severity: 1, // High threshold, medium, or low used for sorting and defined filtration
-        label: 'Count Sev'
+        label: 'Count Sev',
       },
       {
         dataSourceId: 'count',
         comparison: '=',
         value: 7,
         severity: 2, // High threshold, medium, or low used for sorting and defined filtration
-      }, 
+      },
       {
         dataSourceId: 'pressure',
         comparison: '>=',
         value: 10,
         severity: 1,
-        label: 'Pressure Sev'
-      }
+        label: 'Pressure Sev',
+      },
     ];
 
     const tableCustomColumns = tableColumns.map(item =>

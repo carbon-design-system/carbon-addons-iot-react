@@ -32,25 +32,25 @@ const StyledTableHeader = styled(TableHeader)`
       /* need to save enough room for clear and dropdown button */
       padding-right: 4rem;
       ${props => {
-      const { width } = props;
-      return width !== undefined
-        ? `
+        const { width } = props;
+        return width !== undefined
+          ? `
         min-width: calc(${width} - 10px);
         max-width: calc(${width} - 10px);
       `
-        : '';
-    }}
+          : '';
+      }}
     }
     .bx--form-item.bx--combo-box {
       ${props => {
-      const { width } = props;
-      return width !== undefined
-        ? `
+        const { width } = props;
+        return width !== undefined
+          ? `
         min-width: calc(${width} - 10px);
         max-width:calc(${width} - 10px);
       `
-        : '';
-    }}
+          : '';
+      }}
     }
 
     ${props => {

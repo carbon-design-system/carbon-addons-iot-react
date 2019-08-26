@@ -2509,8 +2509,8 @@ export const tableColumns = [
   {
     dataSourceId: 'pressure',
     label: 'Pressure',
-    priority: 2
-  }
+    priority: 2,
+  },
 ];
 
 export const tableData = [
