@@ -14,8 +14,9 @@ const ContentWrapper = styled.div`
   padding: 0 16px 16px 16px;
 `;
 
-const ImageCard = ({ title, content, size, onCardAction, isEditable, ...others }) => {
-  const { src, alt, hotspots, zoomMax } = content;
+const ImageCard = ({ title, content, values, size, onCardAction, isEditable, ...others }) => {
+  const { src } = content;
+  const hotspots = values ? values.hotspots || [] : [];
   const supportedSizes = [CARD_SIZES.MEDIUM, CARD_SIZES.WIDE, CARD_SIZES.LARGE, CARD_SIZES.XLARGE];
   const supportedSize = supportedSizes.includes(size);
   const availableActions = { expand: supportedSize };
@@ -34,7 +35,7 @@ const ImageCard = ({ title, content, size, onCardAction, isEditable, ...others }
             isEditable && !src ? (
               <Image32 width="100%" height="100%" />
             ) : content && src ? (
-              <ImageHotspots src={src} alt={alt} hotspots={hotspots} zoomMax={zoomMax} />
+              <ImageHotspots {...content} hotspots={hotspots} />
             ) : (
               <p>Error retrieving image.</p>
             )

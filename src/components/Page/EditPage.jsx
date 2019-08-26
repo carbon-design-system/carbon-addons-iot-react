@@ -79,9 +79,11 @@ const EditPage = ({
   const handleSave = async () => {
     setSaving(true);
     try {
-      // if they return false from onSave don't close
+      // if they return false from onSave don't close and clear the saving bit
       if (await onSave()) {
         onClose();
+      } else {
+        setSaving(false);
       }
     } catch {
       setSaving(false);
