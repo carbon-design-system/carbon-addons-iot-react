@@ -64,7 +64,6 @@ export default {
             // These are listed individually so that we can easily override
             // these with our own versions of these files.
             '!node_modules/carbon-components/scss/globals/scss/styles.scss', // don't include Carbon's master sass file, we export our own
-            'node_modules/carbon-components/scss/globals/grid',
             'node_modules/carbon-components/scss/globals/scss/vendor',
             'node_modules/carbon-components/scss/globals/scss/_colors.scss',
             'node_modules/carbon-components/scss/globals/scss/_css--body.scss',
@@ -75,6 +74,7 @@ export default {
             'node_modules/carbon-components/scss/globals/scss/_feature-flags.scss',
             'node_modules/carbon-components/scss/globals/scss/_functions.scss',
             'node_modules/carbon-components/scss/globals/scss/_helper-classes.scss',
+            'node_modules/carbon-components/scss/globals/scss/_helper-mixins.scss',
             'node_modules/carbon-components/scss/globals/scss/_import-once.scss',
             'node_modules/carbon-components/scss/globals/scss/_layer.scss',
             'node_modules/carbon-components/scss/globals/scss/_layout.scss',
@@ -88,6 +88,7 @@ export default {
           ],
           dest: 'lib/scss/globals/scss',
         },
+        { src: 'node_modules/carbon-components/scss/globals/grid', dest: 'lib/scss/globals' },
         {
           src: [
             // ------------------------------
