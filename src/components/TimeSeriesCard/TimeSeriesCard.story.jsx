@@ -15,6 +15,36 @@ const getIntervalChartData = memoize(getFakeData);
 // need a timeOffset to make the data always show up
 // const timeOffset = new Date().getTime() - Object.values(chartData.dataItemToMostRecentTimestamp)[0];
 storiesOf('TimeSeriesCard (Experimental)', module)
+  .add('medium / single point - interval hour', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
+    // console.log(getIntervalChartData('day', 30, { min: 10, max: 100 }, 100));
+    return (
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+        <TimeSeriesCard
+          title={text('title', 'Temperature')}
+          id="facility-temperature"
+          isLoading={boolean('isLoading', false)}
+          content={object('content', {
+            series: [
+              {
+                label: 'Temperature',
+                dataSourceId: 'temperature',
+                // color: text('color', COLORS.PURPLE),
+              },
+            ],
+            xLabel: text('xLabel', 'Time'),
+            yLabel: text('yLabel', 'Temperature (˚F)'),
+            timeDataSourceId: 'timestamp',
+          })}
+          values={getIntervalChartData('hour', 1, { min: 10, max: 100 }, 100)}
+          interval="hour"
+          breakpoint="lg"
+          size={size}
+          onCardAction={action('onCardAction')}
+        />
+      </div>
+    );
+  })
   .add('medium / single line - interval hour', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
     // console.log(getIntervalChartData('day', 30, { min: 10, max: 100 }, 100));

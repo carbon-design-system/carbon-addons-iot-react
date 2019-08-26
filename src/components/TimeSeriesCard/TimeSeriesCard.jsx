@@ -145,7 +145,7 @@ const TimeSeriesCard = ({
       'year'
     );
 
-  const formatInterval = (timestamp, index, ticksInterval) => {
+  const formatInterval = (timestamp, index, ticksInterval, length) => {
     // moment locale default to english
     moment.locale('en');
     if (locale) {
@@ -154,7 +154,9 @@ const TimeSeriesCard = ({
     const m = moment.unix(timestamp / 1000);
 
     return interval === 'hour' && index === 0
-      ? m.format('DD MMM')
+      ? length > 1
+        ? m.format('DD MMM')
+        : m.format('DD MMM HH:mm')
       : interval === 'hour' &&
         index !== 0 &&
         !moment(moment.unix(valueSort[index - ticksInterval].timestamp / 1000)).isSame(
@@ -204,7 +206,7 @@ const TimeSeriesCard = ({
 
   const labels = valueSort.map((i, idx) =>
     idx % ticksInterval === 0
-      ? formatInterval(i[timeDataSourceId], idx, ticksInterval)
+      ? formatInterval(i[timeDataSourceId], idx, ticksInterval, valueSort.length)
       : ' '.repeat(idx)
   );
 
