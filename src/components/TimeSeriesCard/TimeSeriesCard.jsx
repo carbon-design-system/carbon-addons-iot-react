@@ -30,8 +30,11 @@ const LineChartWrapper = styled.div`
       text-anchor: initial !important;
     }
     .legend-wrapper {
-      display: ${props => (props.isLegendHidden ? 'none' : 'inline-block')};
+      display: ${props => (props.isLegendHidden ? 'none' : '')};
       height: ${props => (!props.size === CARD_SIZES.MEDIUM ? '40px' : '20px')} !important;
+      margin-top: -10px ;
+      padding-right: 20px;
+
     }
     .chart-holder {
       width: 100%;
@@ -40,6 +43,7 @@ const LineChartWrapper = styled.div`
     .chart-svg {
       width: 100%;
       height: 100%;
+      margin-top: ${props => (props.isLegendHidden ? '-10px' : '')};
     }
   }
 `;

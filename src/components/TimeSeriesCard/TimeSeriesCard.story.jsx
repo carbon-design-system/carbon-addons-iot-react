@@ -735,7 +735,7 @@ storiesOf('TimeSeriesCard (Experimental)', module)
   .add('large / multi line - (Custom color)', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
     return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+      <div style={{ width: text('cardWidth', `${getCardMinSize('lg', size).x}px`), margin: 20 }}>
         <TimeSeriesCard
           title={text('title', 'Temperature')}
           id="facility-temperature"

@@ -99,6 +99,7 @@ export const TableCardPropTypes = {
         comparison: PropTypes.oneOf(['<', '>', '=', '<=', '>=']).isRequired,
         value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
         severity: PropTypes.oneOf([1, 2, 3]),
+        label: PropTypes.string,
       })
     ),
     sort: PropTypes.oneOf(['ASC', 'DESC']),
