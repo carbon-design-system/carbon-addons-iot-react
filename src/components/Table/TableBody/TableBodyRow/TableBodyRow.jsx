@@ -115,6 +115,7 @@ const StyledCheckboxTableCell = styled(TableCell)`
 
 const StyledTableRow = styled(TableRow)`
   &&& {
+    ${props => (props.onClick ? `cursor: pointer;` : ``)}
     :hover {
       td {
         /* show the row actions if the table row is hovered over */
@@ -136,6 +137,7 @@ const StyledSingleSelectedTableRow = styled(({ hasRowSelection, ...props }) => (
       position: relative;
     }
 
+    cursor: pointer;
     td:first-of-type:after {
       content: '';
       position: absolute;
