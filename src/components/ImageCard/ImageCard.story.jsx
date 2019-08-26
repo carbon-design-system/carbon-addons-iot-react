@@ -12,13 +12,16 @@ import imageFile from './landscape.jpg';
 const content = {
   src: imageFile,
   alt: 'Sample image',
+  zoomMax: 10,
+};
+
+const values = {
   hotspots: [
     { x: 35, y: 65, content: <span style={{ padding: '10px' }}>Elevators</span> },
     { x: 45, y: 25, content: <span style={{ padding: '10px' }}>Stairs</span> },
     { x: 45, y: 50, content: <span style={{ padding: '10px' }}>Stairs</span> },
     { x: 45, y: 75, content: <span style={{ padding: '10px' }}>Stairs</span> },
   ],
-  zoomMax: 10,
 };
 
 storiesOf('ImageCard (Experimental)', module)
@@ -30,6 +33,7 @@ storiesOf('ImageCard (Experimental)', module)
           title={text('title', 'Image')}
           id="image-hotspots"
           content={object('content', content)}
+          values={object('values', values)}
           breakpoint="lg"
           size={size}
         />
@@ -45,6 +49,7 @@ storiesOf('ImageCard (Experimental)', module)
           isEditable
           id="image-hotspots"
           content={object('content', omit(content, ['src']))}
+          values={object('values', values)}
           breakpoint="lg"
           size={size}
         />
