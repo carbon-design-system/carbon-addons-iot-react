@@ -333,6 +333,16 @@ storiesOf('TimeSeriesCard (Experimental)', module)
                 // color: text('color', COLORS.PURPLE),
               },
               {
+                label: 'Humidity',
+                dataSourceId: 'humidity',
+                // color: text('color', COLORS.PURPLE),
+              },
+              {
+                label: 'Ecount',
+                dataSourceId: 'ecount',
+                // color: text('color', COLORS.PURPLE),
+              },
+              {
                 label: 'Presurre',
                 dataSourceId: 'pressure',
                 // color: text('color', COLORS.PURPLE),

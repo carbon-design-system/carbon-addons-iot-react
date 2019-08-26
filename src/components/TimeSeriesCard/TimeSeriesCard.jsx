@@ -29,6 +29,9 @@ const LineChartWrapper = styled.div`
       transform: rotateY(0);
       text-anchor: initial !important;
     }
+    .expand-btn {
+      display: ${props => (props.isEditable ? 'none' : '')};
+    }
     .legend-wrapper {
       display: ${props => (props.isLegendHidden ? 'none' : '')};
       height: ${props => (!props.size === CARD_SIZES.MEDIUM ? '40px' : '20px')} !important;
@@ -205,14 +208,16 @@ const TimeSeriesCard = ({
       : ' '.repeat(idx)
   );
 
+  const lines = series.map(line => ({ ...line, color: !isEditable ? line.color : 'gray' }));
+
   useDeepCompareEffect(
     () => {
       if (chartRef && chartRef.chart) {
-        const chartData = formatChartData(labels, series, values);
+        const chartData = formatChartData(labels, lines, values);
         chartRef.chart.setData(chartData);
       }
     },
-    [values, labels, series]
+    [values, labels, lines]
   );
 
   return (
@@ -231,13 +236,14 @@ const TimeSeriesCard = ({
               <LineChartWrapper
                 size={size}
                 contentHeight={height}
-                isLegendHidden={series.length === 1}
+                isLegendHidden={lines.length === 1}
+                isEditable={isEditable}
               >
                 <LineChart
                   ref={el => {
                     chartRef = el;
                   }}
-                  data={formatChartData(labels, series, values)}
+                  data={formatChartData(labels, lines, values)}
                   options={{
                     animations: false,
                     accessibility: false,
@@ -252,11 +258,15 @@ const TimeSeriesCard = ({
                         yMaxAdjuster: yMaxValue => yMaxValue * 1.3,
                       },
                     },
-                    legendClickable: true,
+                    legendClickable: !isEditable,
                     containerResizable: true,
-                    tooltip: {
-                      formatter: tooltipValue => valueFormatter(tooltipValue, size, unit),
-                    },
+                    ...(!isEditable
+                      ? {
+                          tooltip: {
+                            formatter: tooltipValue => valueFormatter(tooltipValue, size, unit),
+                          },
+                        }
+                      : {}),
                   }}
                   width="100%"
                   height="100%"
