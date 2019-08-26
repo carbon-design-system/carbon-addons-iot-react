@@ -94,7 +94,7 @@ const formatChartData = (labels, series, values) => {
 };
 
 const valueFormatter = (value, size, unit) => {
-  const precision = determinePrecision(size, value, 1);
+  const precision = determinePrecision(size, value, value > 1 ? 1 : 3);
   let renderValue = value;
   if (typeof value === 'number') {
     renderValue =
