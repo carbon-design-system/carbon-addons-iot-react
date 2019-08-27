@@ -18,7 +18,7 @@
     "build:storybook": "build-storybook -s public/production",
     "format": "prettier --write \"**/*.{scss,css,js,jsx,md,ts}\"",
     "format:diff": "prettier --list-different \"**/*.{scss,css,js,jsx,md,ts}\"",
-    "lint": "yarn lint:javascript",
+    "lint": "yarn lint:javascript && yarn lint:stylelint",
     "lint:javascript": "eslint --ext .jsx --ext .js .",
     "lint:stylelint": "stylelint './src/**/*.scss' --syntax scss --ignorePath .gitignore",
     "prepare": "yarn build",
