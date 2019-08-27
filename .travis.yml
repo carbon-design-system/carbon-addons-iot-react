@@ -24,7 +24,7 @@ install:
   - yarn list
 
 script:
-  - yarn test
+  - yarn test --ci --maxWorkers=2 --verbose
 
 after_success:
   - npx semantic-release@beta

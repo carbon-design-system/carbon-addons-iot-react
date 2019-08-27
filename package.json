@@ -12,26 +12,53 @@
   "bugs": {
     "url": "https://github.com/IBM/carbon-addons-iot-react/issues"
   },
-  "homepage": "https://github.com/IBM/carbon-addons-iot-react",
+  "homepage": "https://carbon-addons-iot-react.com",
   "scripts": {
     "build": "rollup -c",
     "build:storybook": "build-storybook -s public/production",
     "format": "prettier --write \"**/*.{scss,css,js,jsx,md,ts}\"",
     "format:diff": "prettier --list-different \"**/*.{scss,css,js,jsx,md,ts}\"",
-    "lint": "yarn eslint .",
+    "lint": "yarn lint:javascript",
+    "lint:javascript": "eslint --ext .jsx --ext .js .",
+    "lint:stylelint": "stylelint './src/**/*.scss' --syntax scss --ignorePath .gitignore",
     "prepare": "yarn build",
     "start": "yarn storybook",
     "storybook": "start-storybook -p 3000 -s public/development",
-    "test": "jest --no-cache",
-    "test:watch": "jest --watchAll",
-    "test:update": "jest -u",
+    "test": "jest",
+    "test:watch": "jest --watchAll --runInBand --verbose",
+    "test:update": "jest --updateSnapshot",
     "test:clear": "jest --clearCache"
+  },
+  "stylelint": {
+    "extends": "stylelint-config-recommended-scss",
+    "plugins": [
+      "stylelint-scss"
+    ]
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn lint-staged && yarn test --runInBand",
+      "pre-commit": "yarn lint-staged && yarn test --silent",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
+  },
+  "lint-staged": {
+    "linters": {
+      "*.{jsx,js}": [
+        "eslint --fix"
+      ],
+      "*.{scss,css}": [
+        "yarn lint:stylelint"
+      ],
+      "*.{scss,css,js,md,jsx,json}": [
+        "yarn format",
+        "git add"
+      ]
+    }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
   },
   "dependencies": {
     "@carbon/icons": "^10.4.0",
@@ -160,25 +187,11 @@
     "storybook-addon-rtl": "^0.2.2",
     "storybook-readme": "^5.0.5",
     "style-loader": "^0.23.1",
+    "stylelint": "^10.1.0",
+    "stylelint-config-recommended-scss": "^3.3.0",
+    "stylelint-scss": "^3.10.0",
     "webpack": "^4.28.4",
     "whatwg-fetch": "^3.0.0"
-  },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
-  },
-  "lint-staged": {
-    "linters": {
-      "*.{jsx,js}": [
-        "eslint --fix"
-      ],
-      "*.{scss,css,js,md,jsx,json}": [
-        "yarn format",
-        "git add"
-      ]
-    },
-    "concurrent": false
   },
   "version": "0.0.0-development"
 }
