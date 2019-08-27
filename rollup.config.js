@@ -83,6 +83,7 @@ export default {
             'node_modules/carbon-components/scss/globals/scss/_spacing.scss',
             'node_modules/carbon-components/scss/globals/scss/_theme-tokens.scss',
             'node_modules/carbon-components/scss/globals/scss/_theme.scss',
+            'node_modules/carbon-components/scss/globals/scss/_tooltip.scss',
             'node_modules/carbon-components/scss/globals/scss/_typography.scss',
             'node_modules/carbon-components/scss/globals/scss/_vars.scss',
           ],
