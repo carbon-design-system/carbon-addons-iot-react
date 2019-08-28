@@ -75,4 +75,20 @@ storiesOf('ImageCard (Experimental)', module)
         />
       </div>
     );
+  })
+  .add('hotspots are loading', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.XLARGE);
+    return (
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+        <ImageCard
+          title={text('title', 'Image')}
+          isHotspotDataLoading
+          id="image-hotspots"
+          content={object('content', content)}
+          values={object('values', values)}
+          breakpoint="lg"
+          size={size}
+        />
+      </div>
+    );
   });

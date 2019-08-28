@@ -157,6 +157,7 @@ export const ImageCardPropTypes = {
   values: PropTypes.shape({
     hotspots: PropTypes.array,
   }),
+  isHotspotDataLoading: PropTypes.bool,
 };
 
 export const PieCardPropTypes = DonutCardPropTypes;
@@ -237,6 +238,8 @@ export const CardPropTypes = {
     editCardLabel: PropTypes.string,
     cloneCardLabel: PropTypes.string,
     deleteCardLabel: PropTypes.string,
+    closeLabel: PropTypes.string,
+    loadingDataLabel: PropTypes.string,
   }),
   tooltip: PropTypes.element,
   toolbar: PropTypes.element,
