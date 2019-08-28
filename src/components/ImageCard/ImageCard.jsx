@@ -14,7 +14,33 @@ const ContentWrapper = styled.div`
   padding: 0 16px 16px 16px;
 `;
 
-const ImageCard = ({ title, content, values, size, onCardAction, isEditable, ...others }) => {
+const EmptyDiv = styled.div`
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+const propTypes = { ...CardPropTypes, ...ImageCardPropTypes };
+
+const defaultProps = {
+  i18n: {
+    loadingDataLabel: 'Loading hotspot data',
+  },
+};
+
+const ImageCard = ({
+  title,
+  content,
+  values,
+  size,
+  onCardAction,
+  isEditable,
+  isHotspotDataLoading,
+  i18n: { loadingDataLabel },
+  ...others
+}) => {
   const { src } = content;
   const hotspots = values ? values.hotspots || [] : [];
   const supportedSizes = [CARD_SIZES.MEDIUM, CARD_SIZES.WIDE, CARD_SIZES.LARGE, CARD_SIZES.XLARGE];
@@ -33,9 +59,16 @@ const ImageCard = ({ title, content, values, size, onCardAction, isEditable, ...
         <ContentWrapper>
           {supportedSize ? (
             isEditable && !src ? (
-              <Image32 width="100%" height="100%" />
+              <EmptyDiv>
+                <Image32 width={250} height={250} fill="gray" />
+              </EmptyDiv>
             ) : content && src ? (
-              <ImageHotspots {...content} hotspots={hotspots} />
+              <ImageHotspots
+                {...content}
+                hotspots={hotspots}
+                isHotspotDataLoading={isHotspotDataLoading}
+                loadingHotspotsLabel={loadingDataLabel}
+              />
             ) : (
               <p>Error retrieving image.</p>
             )
@@ -48,10 +81,8 @@ const ImageCard = ({ title, content, values, size, onCardAction, isEditable, ...
   );
 };
 
-ImageCard.propTypes = { ...CardPropTypes, ...ImageCardPropTypes };
+ImageCard.propTypes = propTypes;
 
-ImageCard.defaultProps = {
-  size: CARD_SIZES.XLARGE,
-};
+ImageCard.defaultProps = defaultProps;
 
 export default ImageCard;

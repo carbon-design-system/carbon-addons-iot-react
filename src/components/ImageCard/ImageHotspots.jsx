@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Icon } from 'carbon-components-react';
+import { Icon, InlineLoading } from 'carbon-components-react';
 
 import Hotspot, { propTypes as HotspotPropTypes } from './Hotspot';
 
@@ -15,6 +15,7 @@ const propTypes = {
   hideZoomControls: PropTypes.bool,
   hideHotspots: PropTypes.bool,
   hideMinimap: PropTypes.bool,
+  isHotspotDataLoading: PropTypes.bool,
   background: PropTypes.string,
   zoomMax: PropTypes.number,
 };
@@ -25,6 +26,7 @@ const defaultProps = {
   hideZoomControls: false,
   hideHotspots: false,
   hideMinimap: false,
+  isHotspotDataLoading: false,
   background: '#eee',
   zoomMax: undefined,
 };
@@ -378,7 +380,7 @@ class ImageHotspots extends React.Component {
   };
 
   render = () => {
-    const { src, alt, hotspots, background } = this.props;
+    const { src, alt, hotspots, background, isHotspotDataLoading } = this.props;
     const {
       container,
       image,
@@ -508,7 +510,13 @@ class ImageHotspots extends React.Component {
             }}
           />
         )}
-        {!hideHotspots && hotspots && (
+        {isHotspotDataLoading ? (
+          <InlineLoading
+            style={{ position: 'absolute', top: 0 }}
+            description="Loading hotspot data..."
+          />
+        ) : null}
+        {!isHotspotDataLoading && !hideHotspots && hotspots && (
           <div style={hotspotsStyle}>
             {hotspots.map(hotspot => {
               return (

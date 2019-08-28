@@ -160,6 +160,7 @@ const defaultProps = {
     editCardLabel: 'Edit card',
     cloneCardLabel: 'Clone card',
     deleteCardLabel: 'Delete card',
+    closeLabel: 'Close',
   },
 };
 
@@ -180,6 +181,7 @@ const Card = ({
   availableActions,
   breakpoint,
   i18n,
+  i18n: { closeLabel },
   ...others
 }) => {
   const [tooltipId, setTooltipId] = useState(uuidv1());
@@ -304,6 +306,7 @@ const Card = ({
               kind="ghost"
               small
               renderIcon={Close16}
+              iconDescription={closeLabel}
               onClick={() => onCardAction(id, 'CLOSE_EXPANDED_CARD')}
             />
           ) : (
@@ -311,6 +314,7 @@ const Card = ({
               kind="ghost"
               small
               renderIcon={Popup20}
+              iconDescription={closeLabel}
               onClick={() => {
                 onCardAction(id, 'OPEN_EXPANDED_CARD');
               }}
