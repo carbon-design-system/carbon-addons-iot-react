@@ -1,6 +1,5 @@
 module.exports = {
   collectCoverage: true,
-  verbose: true,
   collectCoverageFrom: ['src/components/**/*.js?(x)', '!src/**/*.story.js?(x)'],
   coveragePathIgnorePatterns: ['/node_modules/', '/lib/', '/coverage/'],
   coverageReporters: ['html', 'text-summary'],

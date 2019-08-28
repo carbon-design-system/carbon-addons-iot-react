@@ -32,6 +32,27 @@
     color: $ui-02;
   }
 
+  .bx--side-nav__link {
+    font-weight: 600;
+    outline: 2px solid transparent;
+    outline-offset: -2px;
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    letter-spacing: 0.16px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    min-height: 2rem;
+    padding: 0 $spacing-05;
+    transition: color 110ms, background-color 110ms, outline 110ms;
+
+    &:focus {
+      outline: 2px solid $interactive-01;
+      outline-offset: -2px;
+    }
+  }
+
   .bx--side-nav__link--current {
     background-color: $gray-70;
     color: $ui-02;
@@ -56,37 +77,8 @@
   }
 }
 
-.bx--side-nav__link {
-  font-weight: 600;
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-  font-size: 0.875rem;
-  line-height: 1.125rem;
-  letter-spacing: 0.16px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  min-height: 2rem;
-  padding: 0 $spacing-05;
-  transition: color 110ms, background-color 110ms, outline 110ms;
-
-  &:focus {
-    outline: 2px solid $interactive-01;
-    outline-offset: -2px;
-  }
-}
-
 a.bx--side-nav__link > .bx--side-nav__link-text {
   color: $ui-02;
-}
-
-.bx--side-nav__item:not(.bx--side-nav__item--active) > .bx--side-nav__link:hover {
-  background-color: $inverse-02;
-
-  & > span {
-    color: $ui-02;
-  }
 }
 
 .bx--side-nav__item:hover {
@@ -94,6 +86,14 @@ a.bx--side-nav__link > .bx--side-nav__link-text {
   & .bx--side-nav__menu,
   & .bx--side-nav__link {
     background-color: $inverse-02;
+  }
+}
+
+.bx--side-nav__item:not(.bx--side-nav__item--active) > .bx--side-nav__link:hover {
+  background-color: $inverse-02;
+
+  & > span {
+    color: $ui-02;
   }
 }
 
