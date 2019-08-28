@@ -161,6 +161,7 @@ const defaultProps = {
     cloneCardLabel: 'Clone card',
     deleteCardLabel: 'Delete card',
     closeLabel: 'Close',
+    expandLabel: 'Expand to fullscreen',
   },
 };
 
@@ -181,7 +182,7 @@ const Card = ({
   availableActions,
   breakpoint,
   i18n,
-  i18n: { closeLabel },
+  i18n: { closeLabel, expandLabel },
   ...others
 }) => {
   const [tooltipId, setTooltipId] = useState(uuidv1());
@@ -314,7 +315,7 @@ const Card = ({
               kind="ghost"
               small
               renderIcon={Popup20}
-              iconDescription={closeLabel}
+              iconDescription={expandLabel}
               onClick={() => {
                 onCardAction(id, 'OPEN_EXPANDED_CARD');
               }}

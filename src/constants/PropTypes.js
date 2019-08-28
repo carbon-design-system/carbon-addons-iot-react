@@ -238,6 +238,7 @@ export const CardPropTypes = {
     editCardLabel: PropTypes.string,
     cloneCardLabel: PropTypes.string,
     deleteCardLabel: PropTypes.string,
+    expandLabel: PropTypes.string,
     closeLabel: PropTypes.string,
     loadingDataLabel: PropTypes.string,
   }),
