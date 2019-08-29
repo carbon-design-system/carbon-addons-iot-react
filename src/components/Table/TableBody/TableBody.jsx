@@ -128,6 +128,7 @@ const TableBody = ({
       <TableBodyRow
         key={row.id}
         isExpanded={isRowExpanded}
+        isSelectable={row.isSelectable}
         isSelected={selectedIds.includes(row.id)}
         rowDetails={
           isRowExpanded && expandedRows.find(j => j.rowId === row.id)
