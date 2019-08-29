@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useMemo } from 'react';
 import moment from 'moment';
 import { LineChart } from '@carbon/charts-react';
 import '@carbon/charts/style.css';
@@ -46,6 +46,12 @@ const LineChartWrapper = styled.div`
       width: 100%;
       height: 100%;
       margin-top: ${props => (props.isLegendHidden ? '-10px' : '')};
+      circle.dot {
+        stroke-opacity: ${props => (props.isEditable ? '1' : '')};
+      }
+    }
+    .chart-tooltip {
+      display: ${props => (props.isEditable ? 'none' : '')};
     }
   }
 `;
@@ -131,11 +137,15 @@ const TimeSeriesCard = ({
     ? memoizedGenerateSampleValues(series, timeDataSourceId, interval)
     : valuesProp;
 
-  const valueSort = values
-    ? values.sort((left, right) =>
-        moment.utc(left[timeDataSourceId]).diff(moment.utc(right[timeDataSourceId]))
-      )
-    : [];
+  const valueSort = useMemo(
+    () =>
+      values
+        ? values.sort((left, right) =>
+            moment.utc(left[timeDataSourceId]).diff(moment.utc(right[timeDataSourceId]))
+          )
+        : [],
+    [values, timeDataSourceId]
+  );
 
   const sameYear =
     !isEmpty(values) &&
@@ -222,6 +232,7 @@ const TimeSeriesCard = ({
     [values, labels, lines]
   );
 
+  const chartData = useMemo(() => formatChartData(labels, lines, values), [labels, lines, values]);
   return (
     <withSize.SizeMe>
       {({ size: measuredSize }) => {
@@ -245,7 +256,7 @@ const TimeSeriesCard = ({
                   ref={el => {
                     chartRef = el;
                   }}
-                  data={formatChartData(labels, lines, values)}
+                  data={chartData}
                   options={{
                     animations: false,
                     accessibility: false,
@@ -262,13 +273,9 @@ const TimeSeriesCard = ({
                     },
                     legendClickable: !isEditable,
                     containerResizable: true,
-                    ...(!isEditable
-                      ? {
-                          tooltip: {
-                            formatter: tooltipValue => valueFormatter(tooltipValue, size, unit),
-                          },
-                        }
-                      : {}),
+                    tooltip: {
+                      formatter: tooltipValue => valueFormatter(tooltipValue, size, unit),
+                    },
                   }}
                   width="100%"
                   height="100%"
