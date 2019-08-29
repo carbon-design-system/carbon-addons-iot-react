@@ -141,7 +141,6 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 @import '~carbon-components/scss/components/tag/tag';
 @import '~carbon-components/scss/components/pagination/pagination';
 @import '~carbon-components/scss/components/accordion/accordion';
-@import '~carbon-components/scss/components/progress-indicator/progress-indicator';
 @import '~carbon-components/scss/components/breadcrumb/breadcrumb';
 @import '~carbon-components/scss/components/toolbar/toolbar';
 @import '~carbon-components/scss/components/time-picker/time-picker';
@@ -174,6 +173,6 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 //-------------------------------------
 // carbon-addons-iot-react components
 //-------------------------------------
-@import './components/AddCard/add-card';
-@import './components/ProgressIndicator/progress-indicator';
-@import './components/SideNav/side-nav';
+@import 'components/AddCard/add-card';
+@import 'components/ProgressIndicator/progress-indicator';
+@import 'components/SideNav/side-nav';

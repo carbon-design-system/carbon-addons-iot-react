@@ -55,7 +55,7 @@ export default {
     }),
     copy({
       targets: [
-        { src: 'styles.scss', dest: 'lib/scss/globals/scss' },
+        { src: 'src/styles.scss', dest: 'lib/scss' },
         {
           src: [
             // ---------------
@@ -95,8 +95,7 @@ export default {
             // ------------------------------
             // Carbon Components Proxy Styles
             // ------------------------------
-            // These are listed individually so that we can easily override
-            // these with our own versions of these files.
+            // These are listed individually so that we can easily disinclude individual files if we override them
             'node_modules/carbon-components/scss/components/button',
             'node_modules/carbon-components/scss/components/copy-button',
             'node_modules/carbon-components/scss/components/file-uploader',
@@ -130,7 +129,6 @@ export default {
             'node_modules/carbon-components/scss/components/tag',
             'node_modules/carbon-components/scss/components/pagination',
             'node_modules/carbon-components/scss/components/accordion',
-            'node_modules/carbon-components/scss/components/progress-indicator',
             'node_modules/carbon-components/scss/components/breadcrumb',
             'node_modules/carbon-components/scss/components/toolbar',
             'node_modules/carbon-components/scss/components/time-picker',
