@@ -338,6 +338,33 @@ storiesOf('Table', module)
     }
   )
   .add(
+    'Stateful Example with every third row unselectable',
+    () => (
+      <StatefulTable
+        {...initialState}
+        data={initialState.data.map((eachRow, index) => ({
+          ...eachRow,
+          isSelectable: index % 3 !== 0,
+        }))}
+        actions={actions}
+        lightweight={boolean('lightweight', false)}
+        options={{
+          hasRowSelection: select('hasRowSelection', ['multi', 'single'], 'multi'),
+          hasRowExpansion: false,
+        }}
+        view={{ table: { selectedIds: array('selectedIds', []) } }}
+      />
+    ),
+    {
+      info: {
+        text:
+          'This is an example of the <StatefulTable> component that uses local state to handle all the table actions. This is produced by wrapping the <Table> in a container component and managing the state associated with features such the toolbar, filters, row select, etc. For more robust documentation on the prop model and source, see the other "with function" stories.',
+        propTables: [Table],
+        propTablesExclude: [StatefulTable],
+      },
+    }
+  )
+  .add(
     'Stateful Example with expansion',
     () => (
       <StatefulTable

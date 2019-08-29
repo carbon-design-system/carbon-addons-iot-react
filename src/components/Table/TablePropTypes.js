@@ -73,6 +73,8 @@ export const TableRowPropTypes = PropTypes.arrayOf(
     ]),
     /** Optional list of actions visible on row hover or expansion */
     rowActions: RowActionPropTypes,
+    /** is this particular row selectable */
+    isSelectable: PropTypes.bool,
   })
 );
 
