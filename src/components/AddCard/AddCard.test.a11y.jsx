@@ -3,9 +3,9 @@ import React from 'react';
 import { mount } from 'enzyme';
 import AAT from '@ibma/aat';
 
-import HTMLWrap from '../../a11y/a11y-test-helper.jsx';
+import HTMLWrap from '../../a11y/a11y-test-helper';
 
-import AddCard from './AddCard.jsx';
+import AddCard from './AddCard';
 /* eslint-enable */
 
 describe('AddCard a11y scan', () => {
