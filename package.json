@@ -24,10 +24,10 @@
     "prepare": "yarn build",
     "start": "yarn storybook",
     "storybook": "start-storybook -p 3000 -s public/development",
-    "test": "jest --no-cache",
+    "test": "jest",
     "test:a11y": "jest --testPathPattern='src\\/([^\\s]+)\\/([a-zA-Z0-9\\s_\\\\.\\-\\(\\):])+(\\.test\\.a11y\\.)+(js|jsx)$'",
-    "test:watch": "jest --watchAll",
-    "test:update": "jest -u",
+    "test:watch": "jest --watchAll --runInBand --verbose",
+    "test:update": "jest --updateSnapshot",
     "test:clear": "jest --clearCache"
   },
   "stylelint": {
