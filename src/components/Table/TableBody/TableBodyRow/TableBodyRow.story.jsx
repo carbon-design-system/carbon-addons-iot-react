@@ -42,6 +42,21 @@ storiesOf('TableBodyRow', module)
       options={{ hasRowActions: true, hasRowExpansion: true }}
     />
   ))
+  .add('is not selectable', () => (
+    <TableBodyRow
+      {...tableBodyRowProps}
+      isSelectable={boolean('isSelectable', false)}
+      rowActions={[{ id: 'add', icon: 'icon--add' }]}
+      options={{ hasRowActions: true, hasRowSelection: 'multi' }}
+    />
+  ))
+  .add('is selectable', () => (
+    <TableBodyRow
+      {...tableBodyRowProps}
+      rowActions={[{ id: 'add', icon: 'icon--add' }]}
+      options={{ hasRowActions: true, hasRowSelection: 'multi' }}
+    />
+  ))
   .add('rowActions running', () => (
     <TableBodyRow
       {...tableBodyRowProps}

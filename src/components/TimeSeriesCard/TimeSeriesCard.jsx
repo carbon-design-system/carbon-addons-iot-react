@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useMemo } from 'react';
 import moment from 'moment';
 import { LineChart } from '@carbon/charts-react';
 import '@carbon/charts/style.css';
@@ -29,12 +29,14 @@ const LineChartWrapper = styled.div`
       transform: rotateY(0);
       text-anchor: initial !important;
     }
+    .expand-btn {
+      display: ${props => (props.isEditable ? 'none' : '')};
+    }
     .legend-wrapper {
       display: ${props => (props.isLegendHidden ? 'none' : '')};
       height: ${props => (!props.size === CARD_SIZES.MEDIUM ? '40px' : '20px')} !important;
-      margin-top: -10px ;
+      margin-top: -10px;
       padding-right: 20px;
-
     }
     .chart-holder {
       width: 100%;
@@ -44,6 +46,12 @@ const LineChartWrapper = styled.div`
       width: 100%;
       height: 100%;
       margin-top: ${props => (props.isLegendHidden ? '-10px' : '')};
+      circle.dot {
+        stroke-opacity: ${props => (props.isEditable ? '1' : '')};
+      }
+    }
+    .chart-tooltip {
+      display: ${props => (props.isEditable ? 'none' : '')};
     }
   }
 `;
@@ -92,7 +100,7 @@ const formatChartData = (labels, series, values) => {
 };
 
 const valueFormatter = (value, size, unit) => {
-  const precision = determinePrecision(size, value, 1);
+  const precision = determinePrecision(size, value, Math.abs(value) > 1 ? 1 : 3);
   let renderValue = value;
   if (typeof value === 'number') {
     renderValue =
@@ -129,11 +137,15 @@ const TimeSeriesCard = ({
     ? memoizedGenerateSampleValues(series, timeDataSourceId, interval)
     : valuesProp;
 
-  const valueSort = values
-    ? values.sort((left, right) =>
-        moment.utc(left[timeDataSourceId]).diff(moment.utc(right[timeDataSourceId]))
-      )
-    : [];
+  const valueSort = useMemo(
+    () =>
+      values
+        ? values.sort((left, right) =>
+            moment.utc(left[timeDataSourceId]).diff(moment.utc(right[timeDataSourceId]))
+          )
+        : [],
+    [values, timeDataSourceId]
+  );
 
   const sameYear =
     !isEmpty(values) &&
@@ -143,7 +155,7 @@ const TimeSeriesCard = ({
       'year'
     );
 
-  const formatInterval = (timestamp, index, ticksInterval) => {
+  const formatInterval = (timestamp, index, ticksInterval, length) => {
     // moment locale default to english
     moment.locale('en');
     if (locale) {
@@ -152,7 +164,9 @@ const TimeSeriesCard = ({
     const m = moment.unix(timestamp / 1000);
 
     return interval === 'hour' && index === 0
-      ? m.format('DD MMM')
+      ? length > 1
+        ? m.format('DD MMM')
+        : m.format('DD MMM HH:mm')
       : interval === 'hour' &&
         index !== 0 &&
         !moment(moment.unix(valueSort[index - ticksInterval].timestamp / 1000)).isSame(
@@ -202,20 +216,23 @@ const TimeSeriesCard = ({
 
   const labels = valueSort.map((i, idx) =>
     idx % ticksInterval === 0
-      ? formatInterval(i[timeDataSourceId], idx, ticksInterval)
+      ? formatInterval(i[timeDataSourceId], idx, ticksInterval, valueSort.length)
       : ' '.repeat(idx)
   );
+
+  const lines = series.map(line => ({ ...line, color: !isEditable ? line.color : 'gray' }));
 
   useDeepCompareEffect(
     () => {
       if (chartRef && chartRef.chart) {
-        const chartData = formatChartData(labels, series, values);
+        const chartData = formatChartData(labels, lines, values);
         chartRef.chart.setData(chartData);
       }
     },
-    [values, labels, series]
+    [values, labels, lines]
   );
 
+  const chartData = useMemo(() => formatChartData(labels, lines, values), [labels, lines, values]);
   return (
     <withSize.SizeMe>
       {({ size: measuredSize }) => {
@@ -232,13 +249,14 @@ const TimeSeriesCard = ({
               <LineChartWrapper
                 size={size}
                 contentHeight={height}
-                isLegendHidden={series.length === 1}
+                isLegendHidden={lines.length === 1}
+                isEditable={isEditable}
               >
                 <LineChart
                   ref={el => {
                     chartRef = el;
                   }}
-                  data={formatChartData(labels, series, values)}
+                  data={chartData}
                   options={{
                     animations: false,
                     accessibility: false,
@@ -253,7 +271,7 @@ const TimeSeriesCard = ({
                         yMaxAdjuster: yMaxValue => yMaxValue * 1.3,
                       },
                     },
-                    legendClickable: true,
+                    legendClickable: !isEditable,
                     containerResizable: true,
                     tooltip: {
                       formatter: tooltipValue => valueFormatter(tooltipValue, size, unit),

@@ -387,7 +387,6 @@ const TableCard = ({
     },
   ];
 
-  
   const hasActionColumn = data.filter(i => i.actions).length > 0;
   const uniqueThresholds = uniqBy(thresholds, 'dataSourceId');
 
@@ -397,15 +396,18 @@ const TableCard = ({
   // Don't add the icon column in sample mode
   if (!isEditable) {
     const indexes = columns
-      .map((column, index) => 
+      .map((column, index) =>
         uniqueThresholds.filter(item => item.dataSourceId === column.dataSourceId)[0]
           ? { i: index, columnId: column.dataSourceId }
           : null
       )
       .filter(i => !isNil(i));
-    indexes.forEach(({ i, columnId }, index) => columnsUpdated.splice(index !== 0 ? i + 1 : i, 0, {
+    indexes.forEach(({ i, columnId }, index) =>
+      columnsUpdated.splice(index !== 0 ? i + 1 : i, 0, {
         id: `iconColumn-${columnId}`,
-        label: uniqueThresholds[index].label ? uniqueThresholds[index].label :  `${capitalize(columnId)} Severity`,
+        label: uniqueThresholds[index].label
+          ? uniqueThresholds[index].label
+          : `${capitalize(columnId)} Severity`,
         width: '120px',
         isSortable: true,
         renderDataFunction: renderThresholdIcon,
@@ -427,7 +429,7 @@ const TableCard = ({
             },
           ],
         },
-      })      
+      })
     );
   }
   const newColumns = thresholds ? columnsUpdated : columns;
