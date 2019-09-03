@@ -2,6 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { Add24 } from '@carbon/icons-react';
+import { Tabs, Tab } from 'carbon-components-react';
 
 import FullWidthWrapper from '../../internal/FullWidthWrapper';
 import Button from '../Button';
@@ -42,6 +43,26 @@ storiesOf('Watson IoT|PageTitleBar', module)
       description={commonPageTitleBarProps.description}
       breadcrumb={pageTitleBarBreadcrumb}
       collapsed
+    />
+  ))
+  .add('with tabs as children', () => (
+    <PageTitleBar
+      title={commonPageTitleBarProps.title}
+      description={commonPageTitleBarProps.description}
+      breadcrumb={pageTitleBarBreadcrumb}
+      tabs={
+        <Tabs>
+          <Tab label="Tab 1">
+            <div>Content for first tab.</div>
+          </Tab>
+          <Tab label="Tab 2">
+            <div>Content for second tab.</div>
+          </Tab>
+          <Tab label="Tab 3">
+            <div>Content for third tab.</div>
+          </Tab>
+        </Tabs>
+      }
     />
   ))
   .add('with editable title bar', () => (

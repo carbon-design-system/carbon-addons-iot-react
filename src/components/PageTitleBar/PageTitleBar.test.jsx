@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { SkeletonText } from 'carbon-components-react';
+import { SkeletonText, Tabs, Tab } from 'carbon-components-react';
 
 import Button from '../Button';
 
@@ -33,6 +33,32 @@ describe('PageTitleBar', () => {
     );
     expect(wrapper.find('.bx--tooltip__label')).toHaveLength(1);
     expect(wrapper.find('.page-title-bar-description')).toHaveLength(0);
+  });
+
+  test('Renders tabs and tooltip as expected', () => {
+    const wrapper = mount(
+      <PageTitleBar
+        title={commonPageTitleBarProps.title}
+        description={commonPageTitleBarProps.description}
+        breadcrumb={pageTitleBarBreadcrumb}
+        tabs={
+          <Tabs>
+            <Tab label="Tab 1">
+              <div>Content for first tab.</div>
+            </Tab>
+            <Tab label="Tab 2">
+              <div>Content for second tab.</div>
+            </Tab>
+            <Tab label="Tab 3">
+              <div>Content for third tab.</div>
+            </Tab>
+          </Tabs>
+        }
+      />
+    );
+    expect(wrapper.find('.bx--tooltip__label')).toHaveLength(1);
+    expect(wrapper.find('.page-title-bar-description')).toHaveLength(0);
+    expect(wrapper.find('.page-title-bar-tabs')).toHaveLength(1);
   });
 
   describe('Renders editable title as expected', () => {
