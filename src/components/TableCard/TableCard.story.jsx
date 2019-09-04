@@ -352,8 +352,8 @@ storiesOf('Table Card', module)
             columns: tableColumns,
             expandedRows: [{}],
             thresholds: [
-              { dataSourceId: 'count', comparison: '>', value: 0, severity: 3 },
-              { dataSourceId: 'count', comparison: '>', value: 2, severity: 1 },
+              { dataSourceId: 'count', comparison: '>', value: 0, severity: 3, label: 'Severity' },
+              { dataSourceId: 'count', comparison: '>', value: 2, severity: 1, label: 'Severity' },
             ],
           }}
           values={tableData.map(i => ({ id: i.id, values: i.values }))}
