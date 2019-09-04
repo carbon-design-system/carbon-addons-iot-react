@@ -2,6 +2,8 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
+import DeprecationNotice, { deprecatedStoryTitle } from '../../internal/DeprecationNotice';
+
 import PageHero from './PageHero';
 
 const commonPageHeroProps = {
@@ -12,7 +14,10 @@ const commonPageHeroProps = {
   rightContent: <div style={{ textAlign: 'right' }}>Right Content</div>,
 };
 
-storiesOf('Watson IoT|PageHero', module)
+storiesOf('Watson IoT|PageHero (Deprecated)', module)
+  .add(deprecatedStoryTitle, () => (
+    <DeprecationNotice deprecatedComponentName="PageHero" replacementComponentName="Hero" />
+  ))
   .add('normal', () => <PageHero {...commonPageHeroProps} />)
   .add('normal with content switcher', () => (
     <PageHero

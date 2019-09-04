@@ -10,6 +10,7 @@ import Delete from '@carbon/icons-react/lib/delete/16';
 import { iconAddSolid, iconDelete } from 'carbon-icons';
 
 import { getSortedData } from '../../utils/componentUtilityFunctions';
+import FullWidthWrapper from '../../internal/FullWidthWrapper';
 
 import Table from './Table';
 import StatefulTable from './StatefulTable';
@@ -198,15 +199,8 @@ const RowExpansionContent = ({ rowId }) => (
   </div>
 );
 
-const StyledTableWidth = styled.div`
-  &&& {
-    width: calc(100vw - 6rem);
-  }
-`;
-
 const StyledTableCustomRowHeight = styled(Table)`
   &&& {
-    width: calc(100vw - 6rem);
     & tr {
       height: 5rem;
     }
@@ -346,7 +340,7 @@ storiesOf('Watson IoT|Table', module)
   .add(
     'Simple Stateful Example',
     () => (
-      <StyledTableWidth>
+      <FullWidthWrapper>
         <StatefulTable
           {...initialState}
           actions={actions}
@@ -357,7 +351,7 @@ storiesOf('Watson IoT|Table', module)
           }}
           view={{ table: { selectedIds: array('selectedIds', []) } }}
         />
-      </StyledTableWidth>
+      </FullWidthWrapper>
     ),
     {
       info: {
@@ -371,14 +365,14 @@ storiesOf('Watson IoT|Table', module)
   .add(
     'Stateful Example with expansion',
     () => (
-      <StyledTableWidth>
+      <FullWidthWrapper>
         <StatefulTable
           {...initialState}
           actions={actions}
           isSortable
           lightweight={boolean('lightweight', false)}
         />
-      </StyledTableWidth>
+      </FullWidthWrapper>
     ),
     {
       info: {
@@ -1119,7 +1113,7 @@ storiesOf('Watson IoT|Table', module)
     'with fixed column width',
     () => (
       // You don't need to use styled components, just pass a className to the Table component and use selectors to find the correct column
-      <div style={{ width: 'calc(100vw - 6rem)' }}>
+      <FullWidthWrapper>
         <Table
           columns={tableColumns.map((i, idx) => ({
             width: idx % 2 === 0 ? '20rem' : '10rem',
@@ -1128,7 +1122,7 @@ storiesOf('Watson IoT|Table', module)
           data={tableData}
           actions={actions}
         />
-      </div>
+      </FullWidthWrapper>
     ),
     {
       info: {
@@ -1141,7 +1135,9 @@ storiesOf('Watson IoT|Table', module)
     'with custom row height',
     () => (
       // You don't need to use styled components, just pass a className to the Table component and use selectors to find the correct column
-      <StyledTableCustomRowHeight columns={tableColumns} data={tableData} actions={actions} />
+      <FullWidthWrapper>
+        <StyledTableCustomRowHeight columns={tableColumns} data={tableData} actions={actions} />
+      </FullWidthWrapper>
     ),
     {
       info: {
