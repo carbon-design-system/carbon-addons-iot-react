@@ -23,6 +23,7 @@ export ProgressIndicator from './components/ProgressIndicator/ProgressIndicator'
 export ComposedStructuredList from './components/ComposedStructuredList/ComposedStructuredList';
 export ResourceList from './components/ResourceList/ResourceList';
 export FileDrop from './components/FileDrop/FileDrop';
+export PageTitleBar from './components/PageTitleBar/PageTitleBar';
 
 // reusable reducers
 export { baseTableReducer } from './components/Table/baseTableReducer';
