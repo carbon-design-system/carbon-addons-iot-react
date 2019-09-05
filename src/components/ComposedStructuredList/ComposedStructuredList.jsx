@@ -9,6 +9,7 @@ import {
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Bee32 from '@carbon/icons-react/lib/bee/32';
+import warning from 'warning';
 
 import { COLORS } from '../../styles/styles';
 
@@ -70,6 +71,12 @@ const StructuredList = ({
   StructuredListWrapperProps,
   StructuredListHeadClassName,
 }) => {
+  if (__DEV__) {
+    warning(
+      false,
+      'ComposedStructuredList component has been deprecated and will be removed in the next release of `carbon-addons-iot-react`. \n Refactor to use StructureList component instead.'
+    );
+  }
   return (
     <Fragment>
       <StructuredListWrapperStyled

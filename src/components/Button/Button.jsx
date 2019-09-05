@@ -20,7 +20,7 @@ const propTypes = {
   /** Disable the button will be auto disabled when loading */
   disabled: PropTypes.bool,
   /** Button label */
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
   /** click handler */
   onClick: PropTypes.func.isRequired,
   className: PropTypes.string,
@@ -33,6 +33,7 @@ const defaultProps = {
   disabled: false,
   className: null,
   kind: 'primary',
+  children: null,
 };
 
 /**

@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Fragment } from 'react';
 import styled from 'styled-components';
+import warning from 'warning';
 
 import { COLORS, PADDING } from '../../styles/styles';
 
@@ -122,23 +123,31 @@ const PageHero = ({
   leftContent,
   rightContent,
   switcher,
-}) => (
-  <StyledPageHero className={className}>
-    {crumb || (
-      <Fragment>
-        {leftContent ? <StyledLeftContent>{leftContent}</StyledLeftContent> : null}
-        <StyledTitle>
-          <PageTitle section={section} title={title} />
-          {switcher && switcher.options.length ? <PageSwitcher switcher={switcher} /> : null}
-          <StyledPageHeroWrap>
-            {blurb ? <StyledPageBlurb>{blurb}</StyledPageBlurb> : null}
-          </StyledPageHeroWrap>
-        </StyledTitle>
-        {rightContent ? <StyledRightContent>{rightContent}</StyledRightContent> : null}
-      </Fragment>
-    )}
-  </StyledPageHero>
-);
+}) => {
+  if (__DEV__) {
+    warning(
+      false,
+      'PageHero component has been deprecated and will be removed in the next release of `carbon-addons-iot-react`. \n Refactor to use PageTitleBar component instead.'
+    );
+  }
+  return (
+    <StyledPageHero className={className}>
+      {crumb || (
+        <Fragment>
+          {leftContent ? <StyledLeftContent>{leftContent}</StyledLeftContent> : null}
+          <StyledTitle>
+            <PageTitle section={section} title={title} />
+            {switcher && switcher.options.length ? <PageSwitcher switcher={switcher} /> : null}
+            <StyledPageHeroWrap>
+              {blurb ? <StyledPageBlurb>{blurb}</StyledPageBlurb> : null}
+            </StyledPageHeroWrap>
+          </StyledTitle>
+          {rightContent ? <StyledRightContent>{rightContent}</StyledRightContent> : null}
+        </Fragment>
+      )}
+    </StyledPageHero>
+  );
+};
 
 PageHero.propTypes = propTypes;
 PageHero.defaultProps = defaultProps;

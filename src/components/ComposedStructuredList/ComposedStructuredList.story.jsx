@@ -3,6 +3,8 @@ import { select } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import { storiesOf } from '@storybook/react';
 
+import DeprecationNotice, { deprecatedStoryTitle } from '../../internal/DeprecationNotice';
+
 import ComposedStructuredList from './ComposedStructuredList';
 
 const columns = [
@@ -51,7 +53,13 @@ const StructuredListInputProps = {
   className: 'checks',
 };
 
-storiesOf('Watson IoT| ComposedStructuredList - (deprecated)', module)
+storiesOf('Watson IoT|ComposedStructuredList (Deprecated)', module)
+  .add(deprecatedStoryTitle, () => (
+    <DeprecationNotice
+      deprecatedComponentName="ComposedStructuredList"
+      replacementComponentName="StructuredList"
+    />
+  ))
   .add('default ', () => (
     <ComposedStructuredList
       design={select('Row design', ['normal', 'mini'], 'mini')}
