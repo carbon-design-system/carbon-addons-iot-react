@@ -529,9 +529,26 @@ const TableCard = ({
             ...timestampUpdated,
             ...precisionUpdated,
           },
+          isSelectable: false
         };
       })
     : data;
+
+
+  console.log('uniqueThresholds:::::', uniqueThresholds)
+  console.log('uniqueThresholds:::', uniqueThresholds.filter((i) => i.showOnContent))
+  const onlyShowIfColumnHasData = uniqueThresholds.filter((i) => i.showOnContent)
+    const testingTableData = onlyShowIfColumnHasData ? tableData.map((i) => {
+    console.log('content, ',i)
+    onlyShowIfColumnHasData.forEach((item) => {
+      console.log('Item:::', item.dataSourceId)
+      console.log('Value:::', i.values)
+      console.log(i.values[item.dataSourceId])
+      return i.values[item.dataSourceId] ? i : null
+    })
+  }) : tableData
+
+  console.log(testingTableData)
 
   // format expanded rows to send to Table component
   let expandedRowsFormatted = [];

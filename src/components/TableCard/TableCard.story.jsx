@@ -118,7 +118,7 @@ storiesOf('Table Card', module)
       </div>
     );
   })
-  .add('table with custom cell render', () => {
+  .add('table with thresholds, precision and expanded rows', () => {
     const size = select(
       'size',
       [CARD_SIZES.LARGE, CARD_SIZES.XLARGE, CARD_SIZES.TALL],
@@ -138,7 +138,6 @@ storiesOf('Table Card', module)
         comparison: '>=',
         value: 10,
         severity: 1, // High threshold, medium, or low used for sorting and defined filtration
-        label: 'Count Sev',
       },
       {
         dataSourceId: 'count',
@@ -185,6 +184,114 @@ storiesOf('Table Card', module)
                 label: 'Temperature',
               },
             ],
+          }}
+          values={tableData}
+          onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
+          size={size}
+        />
+      </div>
+    );
+  })
+  .add('table with thresholds', () => {
+    const size = select(
+      'size',
+      [CARD_SIZES.LARGE, CARD_SIZES.XLARGE, CARD_SIZES.TALL],
+      CARD_SIZES.XLARGE
+    );
+
+    const thresholds = [
+      // this threshold is applied to the whole row, not a particular attribute
+      {
+        dataSourceId: 'count',
+        comparison: '<',
+        value: 5,
+        severity: 3, // High threshold, medium, or low used for sorting and defined filtration
+      },
+      {
+        dataSourceId: 'count',
+        comparison: '>=',
+        value: 10,
+        severity: 1, // High threshold, medium, or low used for sorting and defined filtration
+        label: 'Count Sev',
+      },
+      {
+        dataSourceId: 'count',
+        comparison: '=',
+        value: 7,
+        severity: 2, // High threshold, medium, or low used for sorting and defined filtration
+      },
+      {
+        dataSourceId: 'pressure',
+        comparison: '>=',
+        value: 10,
+        severity: 1,
+        label: 'Pressure Sev',
+      },
+    ];
+
+    return (
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+        <TableCard
+          title={text('title', 'Open Alerts')}
+          id="table-list"
+          content={{
+            columns: tableColumns,
+            thresholds
+          }}
+          values={tableData}
+          onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
+          size={size}
+        />
+      </div>
+    );
+  })
+  .add('table with thresholds only with value', () => {
+    const size = select(
+      'size',
+      [CARD_SIZES.LARGE, CARD_SIZES.XLARGE, CARD_SIZES.TALL],
+      CARD_SIZES.XLARGE
+    );
+
+    const thresholds = [
+      // this threshold is applied to the whole row, not a particular attribute
+      {
+        dataSourceId: 'count',
+        comparison: '<',
+        value: 5,
+        severity: 3, // High threshold, medium, or low used for sorting and defined filtration
+        showOnContent: true,
+      },
+      {
+        dataSourceId: 'count',
+        comparison: '>=',
+        value: 10,
+        severity: 1, // High threshold, medium, or low used for sorting and defined filtration
+        label: 'Count Sev',
+      },
+      {
+        dataSourceId: 'count',
+        comparison: '=',
+        value: 7,
+        severity: 2, // High threshold, medium, or low used for sorting and defined filtration
+      },
+      {
+        dataSourceId: 'pressure',
+        comparison: '>=',
+        value: 10,
+        severity: 1,
+        label: 'Pressure Sev',
+        showOnContent: true,
+      },
+    ];
+
+    return (
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+        <TableCard
+          title={text('title', 'Open Alerts')}
+          id="table-list"
+          content={{
+            columns: tableColumns,
+            thresholds,
           }}
           values={tableData}
           onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
