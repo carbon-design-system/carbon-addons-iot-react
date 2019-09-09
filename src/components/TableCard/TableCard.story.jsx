@@ -236,7 +236,7 @@ storiesOf('Table Card', module)
           id="table-list"
           content={{
             columns: tableColumns,
-            thresholds
+            thresholds,
           }}
           values={tableData}
           onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
@@ -291,6 +291,32 @@ storiesOf('Table Card', module)
           content={{
             columns: tableColumns,
             thresholds,
+          }}
+          values={tableData}
+          onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
+          size={size}
+        />
+      </div>
+    );
+  })
+  .add('table with custom column sort', () => {
+    const size = select(
+      'size',
+      [CARD_SIZES.LARGE, CARD_SIZES.XLARGE, CARD_SIZES.TALL],
+      CARD_SIZES.XLARGE
+    );
+
+    const tableCustomColumns = tableColumns.map(item =>
+      item.dataSourceId === 'count' ? { ...item, sort: 'DESC' } : item
+    );
+
+    return (
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+        <TableCard
+          title={text('title', 'Open Alerts')}
+          id="table-list"
+          content={{
+            columns: tableCustomColumns,
           }}
           values={tableData}
           onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
