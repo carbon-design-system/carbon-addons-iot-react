@@ -294,7 +294,7 @@ const TableCard = ({
                   </g>
                 </g>
               </svg>
-              <StyledSpan>3</StyledSpan>
+              <StyledSpan>Low</StyledSpan>
             </StyledIconDiv>
           );
           break;
@@ -332,7 +332,7 @@ const TableCard = ({
                   </g>
                 </g>
               </svg>
-              <StyledSpan>1</StyledSpan>
+              <StyledSpan>High</StyledSpan>
             </StyledIconDiv>
           );
           break;
@@ -364,7 +364,7 @@ const TableCard = ({
                   </g>
                 </g>
               </svg>
-              <StyledSpan>2</StyledSpan>
+              <StyledSpan>Medium</StyledSpan>
             </StyledIconDiv>
           );
           break;
@@ -408,12 +408,12 @@ const TableCard = ({
         label: uniqueThresholds[index].label
           ? uniqueThresholds[index].label
           : `${capitalize(columnId)} Severity`,
-        width: '140px',
+        width: '120px',
         isSortable: true,
         renderDataFunction: renderThresholdIcon,
         priority: 1,
         filter: {
-          placeholderText: '1, 2, 3',
+          placeholderText: 'Severity',
           options: [
             {
               id: '1',
@@ -535,20 +535,8 @@ const TableCard = ({
     : data;
 
 
-  console.log('uniqueThresholds:::::', uniqueThresholds)
-  console.log('uniqueThresholds:::', uniqueThresholds.filter((i) => i.showOnContent))
-  const onlyShowIfColumnHasData = uniqueThresholds.filter((i) => i.showOnContent)
-    const testingTableData = onlyShowIfColumnHasData ? tableData.map((i) => {
-    console.log('content, ',i)
-    onlyShowIfColumnHasData.forEach((item) => {
-      console.log('Item:::', item.dataSourceId)
-      console.log('Value:::', i.values)
-      console.log(i.values[item.dataSourceId])
-      return i.values[item.dataSourceId] ? i : null
-    })
-  }) : tableData
-
-  console.log(testingTableData)
+  const onlyShowIfColumnHasData = uniqueThresholds.find((i) => i.showOnContent)
+  const tableDataOnContent = onlyShowIfColumnHasData ? tableData.map((i) => i.values[onlyShowIfColumnHasData.dataSourceId] ? i : null).filter(i => i) : tableData
 
   // format expanded rows to send to Table component
   let expandedRowsFormatted = [];
@@ -629,7 +617,7 @@ const TableCard = ({
     >
       <StyledStatefulTable
         columns={columnsToRender}
-        data={tableData}
+        data={tableDataOnContent}
         options={{
           hasPagination: true,
           hasSearch: true,

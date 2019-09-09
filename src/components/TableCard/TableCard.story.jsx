@@ -259,7 +259,6 @@ storiesOf('Table Card', module)
         comparison: '<',
         value: 5,
         severity: 3, // High threshold, medium, or low used for sorting and defined filtration
-        showOnContent: true,
       },
       {
         dataSourceId: 'count',
@@ -459,8 +458,8 @@ storiesOf('Table Card', module)
             columns: tableColumns,
             expandedRows: [{}],
             thresholds: [
-              { dataSourceId: 'count', comparison: '>', value: 0, severity: 3, label: 'Severity' },
-              { dataSourceId: 'count', comparison: '>', value: 2, severity: 1, label: 'Severity' },
+              { dataSourceId: 'count', comparison: '>', value: 0, severity: 3 },
+              { dataSourceId: 'count', comparison: '>', value: 2, severity: 1 },
             ],
           }}
           values={tableData.map(i => ({ id: i.id, values: i.values }))}
