@@ -137,9 +137,11 @@ const DashboardHeader = ({
               onKeyDown={event => handleEnterKeyDown(event, () => onDashboardAction(action.id))}
             >
               {typeof action.icon === 'string' ? (
-                <Icon name={action.icon} title={action.label} />
+                <Icon name={action.icon} description={action.labelText} />
+              ) : React.isValidElement(action.icon) ? (
+                action.icon
               ) : (
-                <Icon {...action.icon} title={action.label} />
+                <Icon {...action.icon} description={action.labelText} />
               )}
             </div>
           ))}

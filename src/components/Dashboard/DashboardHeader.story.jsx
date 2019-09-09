@@ -1,5 +1,6 @@
 import React from 'react';
 import { text } from '@storybook/addon-knobs';
+import Pin from '@carbon/icons-react/lib/pin/20';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { DatePicker, DatePickerInput } from 'carbon-components-react';
@@ -47,8 +48,8 @@ storiesOf('Dashboard Header (Experimental)', module)
         description={text('description', 'Shows an overview of daily data for a building')}
         lastUpdated={text('lastUpdated', '03/31/2019 13:55')}
         actions={[
-          { id: 'edit', label: 'Edit', icon: 'edit' },
-          { id: 'delete', label: 'Delete', icon: 'delete' },
+          { id: 'edit', labelText: 'Edit', icon: 'edit' },
+          { id: 'delete', labelText: 'Delete', icon: 'delete' },
         ]}
         onDashboardAction={action('onDashboardAction')}
       />
@@ -77,8 +78,9 @@ storiesOf('Dashboard Header (Experimental)', module)
           </DatePicker>
         }
         actions={[
-          { id: 'edit', label: 'Edit', icon: 'edit' },
-          { id: 'delete', label: 'Delete', icon: 'delete' },
+          { id: 'edit', labelText: 'Edit', icon: 'edit' },
+          { id: 'delete', labelText: 'Delete', icon: 'delete' },
+          { id: 'pin', labelText: 'Pin', icon: <Pin aria-label="Pin" /> },
         ]}
         onDashboardAction={action('onDashboardAction')}
       />
