@@ -294,7 +294,7 @@ const TableCard = ({
                   </g>
                 </g>
               </svg>
-              <StyledSpan>Low</StyledSpan>
+              <StyledSpan>3</StyledSpan>
             </StyledIconDiv>
           );
           break;
@@ -332,7 +332,7 @@ const TableCard = ({
                   </g>
                 </g>
               </svg>
-              <StyledSpan>High</StyledSpan>
+              <StyledSpan>1</StyledSpan>
             </StyledIconDiv>
           );
           break;
@@ -364,7 +364,7 @@ const TableCard = ({
                   </g>
                 </g>
               </svg>
-              <StyledSpan>Medium</StyledSpan>
+              <StyledSpan>2</StyledSpan>
             </StyledIconDiv>
           );
           break;
@@ -408,12 +408,12 @@ const TableCard = ({
         label: uniqueThresholds[index].label
           ? uniqueThresholds[index].label
           : `${capitalize(columnId)} Severity`,
-        width: '120px',
+        width: '140px',
         isSortable: true,
         renderDataFunction: renderThresholdIcon,
         priority: 1,
         filter: {
-          placeholderText: 'Severity',
+          placeholderText: '1, 2, 3',
           options: [
             {
               id: '1',
