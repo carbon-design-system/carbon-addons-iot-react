@@ -529,9 +529,15 @@ const TableCard = ({
             ...timestampUpdated,
             ...precisionUpdated,
           },
+          isSelectable: false,
         };
       })
     : data;
+
+  const onlyShowIfColumnHasData = uniqueThresholds.find(i => i.showOnContent);
+  const tableDataOnContent = onlyShowIfColumnHasData
+    ? tableData.map(i => (i.values[onlyShowIfColumnHasData.dataSourceId] ? i : null)).filter(i => i)
+    : tableData;
 
   // format expanded rows to send to Table component
   let expandedRowsFormatted = [];
@@ -598,7 +604,13 @@ const TableCard = ({
 
   const hasRowExpansion = !!(expandedRows && expandedRows.length);
 
-  const columnStartSort = columnsToRender.find(item => item.priority === 1);
+  // Defined the first column to be sorted, if column has defined sort
+  const columnStartSortDefined = columnsToRender.find(item => item.sort);
+
+  // if not sort by column provided, sort on the first priority 1 column
+  const columnStartSort = !columnStartSortDefined
+    ? columnsToRender.find(item => item.priority === 1)
+    : columnStartSortDefined;
 
   return (
     <Card
@@ -612,7 +624,7 @@ const TableCard = ({
     >
       <StyledStatefulTable
         columns={columnsToRender}
-        data={tableData}
+        data={tableDataOnContent}
         options={{
           hasPagination: true,
           hasSearch: true,
@@ -656,7 +668,7 @@ const TableCard = ({
               ? {
                   sort: {
                     columnId: columnStartSort.id,
-                    direction: sort,
+                    direction: !columnStartSortDefined ? sort : columnStartSortDefined.sort,
                   },
                 }
               : {}),
