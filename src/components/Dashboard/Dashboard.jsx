@@ -117,6 +117,7 @@ const propTypes = {
     criticalLabel: PropTypes.string,
     moderateLabel: PropTypes.string,
     lowLabel: PropTypes.string,
+    selectSeverityPlaceholder: PropTypes.string,
   }),
   /** If the header should render the last updated section */
   hasLastUpdated: PropTypes.bool,
