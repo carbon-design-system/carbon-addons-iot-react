@@ -175,7 +175,10 @@ const defaultProps = {
     moderateLabel: 'Moderate',
     lowLabel: 'Low',
     selectSeverityPlaceholder: 'Select a severity',
+    searchPlaceholder: 'Search',
+    filterButtonAria: 'Filters'
   },
+
   layouts: {},
   rowHeight: ROW_HEIGHT,
   onCardAction: null,

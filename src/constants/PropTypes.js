@@ -123,6 +123,8 @@ export const TableCardPropTypes = {
     moderateLabel: PropTypes.string,
     lowLabel: PropTypes.string,
     selectSeverityPlaceholder: PropTypes.string,
+    searchPlaceholder: PropTypes.string,
+    filterButtonAria: PropTypes.string
   }),
 };
 
