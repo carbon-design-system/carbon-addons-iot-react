@@ -100,7 +100,7 @@ export const TableCardPropTypes = {
         value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
         severity: PropTypes.oneOf([1, 2, 3]),
         label: PropTypes.string,
-        showOnContent: PropTypes.bool
+        showOnContent: PropTypes.bool,
       })
     ),
     sort: PropTypes.oneOf(['ASC', 'DESC']),
@@ -118,6 +118,12 @@ export const TableCardPropTypes = {
       ),
     })
   ),
+  i18n: PropTypes.shape({
+    criticalLabel: PropTypes.string,
+    moderateLabel: PropTypes.string,
+    lowLabel: PropTypes.string,
+    selectSeverityPlaceholder: PropTypes.string,
+  }),
 };
 
 export const BarChartDatasetPropTypes = PropTypes.shape({
