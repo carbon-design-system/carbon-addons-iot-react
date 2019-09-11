@@ -498,19 +498,39 @@ storiesOf('Dashboard (Experimental)', module)
       <StatefulDashboard
         title={text('title', 'Munich Building')}
         lastUpdated={Date()}
-        isEditable={boolean('isEditable', true)}
+        isEditable={boolean('isEditable', false)}
+        isLoading={boolean('isLoading', false)}
+        onBreakpointChange={action('onBreakpointChange')}
+        onLayoutChange={action('onLayoutChange')}
+        onDashboardAction={action('onDashboardAction')}
         i18n={{
           lastUpdatedLabel: text('lastUpdatedLabel', 'Last updated: '),
           noDataLabel: text('noDataLabel', 'No data is available for this time range.'),
           noDataShortLabel: text('noDataShortLabel', 'No data'),
-          dayByHourLabel: text('dayByHourLabel', 'Last 24 hours'),
-          weekByDayLabel: text('weekByDayLabel', 'Last week - Daily'),
-          monthByDayLabel: text('monthByDayLabel', 'Last month - Daily'),
-          monthByWeekLabel: text('monthByWeekLabel', 'Last month - Weekly'),
-          yearByMonthLabel: text('yearByMonthLabel', 'Last year - Monthly'),
+          rollingPeriodLabel: text('rollingPeriodLabel', 'Rolling period'),
+          last24HoursLabel: text('last24HoursLabel', 'Last 24 hrs'),
+          last7DaysLabel: text('last7DaysLabel', 'Last 7 days'),
+          lastMonthLabel: text('lastMonthLabel', 'Last month'),
+          lastQuarterLabel: text('lastQuarterLabel', 'Last quarter'),
+          lastYearLabel: text('lastYearLabel', 'Last year'),
+          periodToDateLabel: text('periodToDateLabel', 'Period to date'),
+          thisWeekLabel: text('thisWeekLabel', 'This week'),
+          thisMonthLabel: text('thisMonthLabel', 'This month'),
+          thisQuarterLabel: text('thisQuarterLabel', 'This quarter'),
+          thisYearLabel: text('thisYearLabel', 'This year'),
+          hourlyLabel: text('hourlyLabel', 'Hourly'),
+          dailyLabel: text('dailyLabel', 'Daily'),
+          weeklyLabel: text('weeklyLabel', 'Weekly'),
+          monthlyLabel: text('monthlyLabel', 'Monthly'),
           editCardLabel: text('editCardLabel', 'Edit card'),
           cloneCardLabel: text('cloneCardLabel', 'Clone card'),
           deleteCardLabel: text('deleteCardLabel', 'Delete card'),
+          criticalLabel: text('criticalLabel', 'Critical'),
+          moderateLabel: text('moderateLabel', 'Moderate'),
+          lowLabel: text('lowLabel', 'Low'),
+          selectSeverityPlaceholder: text('selectSeverityPlaceholder', 'Select a severity'),
+          searchPlaceholder: text('searchPlaceholder', 'Search'),
+          filterButtonAria: text('filterButtonAria', 'Filters')
         }}
       />
     );
