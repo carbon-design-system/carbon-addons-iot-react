@@ -73,6 +73,7 @@ const StyledStatefulTable = styled(({ showHeader, data, ...rest }) => (
   }
   .bx--list-box__menu-item {
     height: 2rem;
+    font-weight: normal;
   }
 
   .bx--table-toolbar {
