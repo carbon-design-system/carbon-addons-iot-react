@@ -98,6 +98,7 @@ const propTypes = {
   /** Optional sidebar content that should be rendered left of the dashboard cards */
   sidebar: PropTypes.node,
   /** All the labels that need translation */
+
   i18n: PropTypes.shape({
     lastUpdatedLabel: PropTypes.string,
     noDataLabel: PropTypes.string,
@@ -112,6 +113,10 @@ const propTypes = {
     editCardLabel: PropTypes.string,
     cloneCardLabel: PropTypes.string,
     deleteCardLabel: PropTypes.string,
+    // labels for table card
+    criticalLabel: PropTypes.string,
+    moderateLabel: PropTypes.string,
+    lowLabel: PropTypes.string,
   }),
   /** If the header should render the last updated section */
   hasLastUpdated: PropTypes.bool,
@@ -139,6 +144,10 @@ const defaultProps = {
     editCardLabel: 'Edit card',
     cloneCardLabel: 'Clone card',
     deleteCardLabel: 'Delete card',
+    criticalLabel: 'Critical',
+    moderateLabel: 'Moderate',
+    lowLabel: 'Low',
+    selectSeverityPlaceholder: 'Select a severity',
   },
   layouts: {},
   rowHeight: ROW_HEIGHT,

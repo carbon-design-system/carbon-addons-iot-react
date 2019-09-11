@@ -146,6 +146,16 @@ const StyledExpandedDiv = styled.div`
   margin-bottom: 16px;
 `;
 
+const defaultProps = {
+  size: CARD_SIZES.LARGE,
+  values: [],
+  i18n: {
+    criticalLabel: 'Critical',
+    moderateLabel: 'Moderate',
+    lowLabel: 'Low',
+    selectSeverityPlaceholder: 'Select a severity',
+  },
+};
 /**
  * Returns an array of matching thresholds will only return the highest severity threshold for a column
  * If passed a columnId, it filters the threshold check on the current column only
@@ -217,6 +227,7 @@ const TableCard = ({
   onCardAction,
   values: data,
   isEditable,
+  i18n,
   ...others
 }) => {
   const renderActionCell = cellItem => {
@@ -260,6 +271,11 @@ const TableCard = ({
     ) : null;
   };
 
+  const strings = {
+    ...defaultProps.i18n,
+    ...i18n,
+  };
+
   const renderThresholdIcon = cellItem => {
     const matchingThresholdValue = findMatchingThresholds(
       thresholds,
@@ -270,34 +286,6 @@ const TableCard = ({
     let thresholdIcon = null;
     if (matchingThresholdValue) {
       switch (matchingThresholdValue.severity) {
-        case 3:
-          thresholdIcon = (
-            <StyledIconDiv
-              title={`${matchingThresholdValue.dataSourceId} ${matchingThresholdValue.comparison} ${
-                matchingThresholdValue.value
-              }`}
-            >
-              <svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1">
-                <g id="Artboard-Copy" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
-                  <g id="Group">
-                    <path
-                      d="M8,16 C3.581722,16 0,12.418278 0,8 C0,3.581722 3.581722,0 8,0 C12.418278,0 16,3.581722 16,8 C16,12.418278 12.418278,16 8,16 Z"
-                      id="outline-color"
-                      fill="#FFFFFF"
-                    />
-                    <circle id="background-color" fill="#FDD13A" cx="8" cy="8" r="7" />
-                    <path
-                      d="M7.22,4 L8.47,4 L8.47,8 L7.22,8 L7.22,4 Z M7.875,11.9 C7.39175084,11.9 7,11.5082492 7,11.025 C7,10.5417508 7.39175084,10.15 7.875,10.15 C8.35824916,10.15 8.75,10.5417508 8.75,11.025 C8.75,11.5082492 8.35824916,11.9 7.875,11.9 Z"
-                      id="symbol-color"
-                      fill="#FFFFFF"
-                    />
-                  </g>
-                </g>
-              </svg>
-              <StyledSpan>3</StyledSpan>
-            </StyledIconDiv>
-          );
-          break;
         case 1:
           thresholdIcon = (
             <StyledIconDiv
@@ -332,7 +320,7 @@ const TableCard = ({
                   </g>
                 </g>
               </svg>
-              <StyledSpan>1</StyledSpan>
+              <StyledSpan>{strings.criticalLabel}</StyledSpan>
             </StyledIconDiv>
           );
           break;
@@ -364,7 +352,35 @@ const TableCard = ({
                   </g>
                 </g>
               </svg>
-              <StyledSpan>2</StyledSpan>
+              <StyledSpan>{strings.moderateLabel}</StyledSpan>
+            </StyledIconDiv>
+          );
+          break;
+        case 3:
+          thresholdIcon = (
+            <StyledIconDiv
+              title={`${matchingThresholdValue.dataSourceId} ${matchingThresholdValue.comparison} ${
+                matchingThresholdValue.value
+              }`}
+            >
+              <svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1">
+                <g id="Artboard-Copy" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
+                  <g id="Group">
+                    <path
+                      d="M8,16 C3.581722,16 0,12.418278 0,8 C0,3.581722 3.581722,0 8,0 C12.418278,0 16,3.581722 16,8 C16,12.418278 12.418278,16 8,16 Z"
+                      id="outline-color"
+                      fill="#FFFFFF"
+                    />
+                    <circle id="background-color" fill="#FDD13A" cx="8" cy="8" r="7" />
+                    <path
+                      d="M7.22,4 L8.47,4 L8.47,8 L7.22,8 L7.22,4 Z M7.875,11.9 C7.39175084,11.9 7,11.5082492 7,11.025 C7,10.5417508 7.39175084,10.15 7.875,10.15 C8.35824916,10.15 8.75,10.5417508 8.75,11.025 C8.75,11.5082492 8.35824916,11.9 7.875,11.9 Z"
+                      id="symbol-color"
+                      fill="#FFFFFF"
+                    />
+                  </g>
+                </g>
+              </svg>
+              <StyledSpan>{strings.lowLabel}</StyledSpan>
             </StyledIconDiv>
           );
           break;
@@ -413,19 +429,19 @@ const TableCard = ({
         renderDataFunction: renderThresholdIcon,
         priority: 1,
         filter: {
-          placeholderText: '1, 2, 3',
+          placeholderText: strings.selectSeverityPlaceholder,
           options: [
             {
               id: '1',
-              text: '1',
+              text: strings.criticalLabel,
             },
             {
               id: '2',
-              text: '2',
+              text: strings.moderateLabel,
             },
             {
               id: '3',
-              text: '3',
+              text: strings.lowLabel,
             },
           ],
         },
@@ -682,8 +698,5 @@ const TableCard = ({
 
 TableCard.propTypes = { ...CardPropTypes, ...TableCardPropTypes };
 TableCard.displayName = 'TableCard';
-TableCard.defaultProps = {
-  size: CARD_SIZES.LARGE,
-  values: [],
-};
+TableCard.defaultProps = defaultProps;
 export default TableCard;
