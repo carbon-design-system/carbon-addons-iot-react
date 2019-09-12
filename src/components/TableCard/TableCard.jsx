@@ -639,6 +639,7 @@ const TableCard = ({
       onCardAction={onCardAction}
       availableActions={{ expand: isExpandable }}
       isEditable={isEditable}
+      i18n={i18n}
       {...others}
     >
       <StyledStatefulTable
