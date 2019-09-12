@@ -38,7 +38,7 @@ const ImageCard = ({
   onCardAction,
   isEditable,
   isHotspotDataLoading,
-  i18n: { loadingDataLabel },
+  i18n: { loadingDataLabel, ...otherLabels },
   ...others
 }) => {
   const { src } = content;
@@ -54,6 +54,7 @@ const ImageCard = ({
       onCardAction={onCardAction}
       availableActions={availableActions}
       {...others}
+      i18n={otherLabels}
     >
       {!others.isLoading ? (
         <ContentWrapper>
