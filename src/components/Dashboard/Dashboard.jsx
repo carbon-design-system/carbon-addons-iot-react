@@ -121,6 +121,7 @@ const propTypes = {
     dailyLabel: PropTypes.string,
     weeklyLabel: PropTypes.string,
     monthlyLabel: PropTypes.string,
+    expandLabel: PropTypes.string,
 
     // card actions
     editCardLabel: PropTypes.string,
@@ -166,6 +167,8 @@ const defaultProps = {
     dailyLabel: 'Daily',
     weeklyLabel: 'Weekly',
     monthlyLabel: 'Monthly',
+    expandLabel: 'Expand to fullscreen',
+
     // card actions
     editCardLabel: 'Edit card',
     cloneCardLabel: 'Clone card',
@@ -176,7 +179,7 @@ const defaultProps = {
     lowLabel: 'Low',
     selectSeverityPlaceholder: 'Select a severity',
     searchPlaceholder: 'Search',
-    filterButtonAria: 'Filters'
+    filterButtonAria: 'Filters',
   },
 
   layouts: {},

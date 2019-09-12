@@ -315,7 +315,7 @@ const Card = ({
               kind="ghost"
               small
               renderIcon={Popup20}
-              iconDescription={expandLabel}
+              iconDescription={strings.expandLabel}
               onClick={() => {
                 onCardAction(id, 'OPEN_EXPANDED_CARD');
               }}
