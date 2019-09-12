@@ -530,7 +530,7 @@ storiesOf('Dashboard (Experimental)', module)
           lowLabel: text('lowLabel', 'Low'),
           selectSeverityPlaceholder: text('selectSeverityPlaceholder', 'Select a severity'),
           searchPlaceholder: text('searchPlaceholder', 'Search'),
-          filterButtonAria: text('filterButtonAria', 'Filters')
+          filterButtonAria: text('filterButtonAria', 'Filters'),
         }}
       />
     );

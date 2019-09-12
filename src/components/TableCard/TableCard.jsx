@@ -156,7 +156,7 @@ const defaultProps = {
     lowLabel: 'Low',
     selectSeverityPlaceholder: 'Select a severity',
     searchPlaceholder: 'Search',
-    filterButtonAria: 'Filters'
+    filterButtonAria: 'Filters',
   },
 };
 /**
@@ -695,7 +695,10 @@ const TableCard = ({
           },
         }}
         showHeader={showHeader !== undefined ? showHeader : true}
-        i18n={{searchPlaceholder: strings.searchPlaceholder, filterButtonAria: strings.filterButtonAria}}
+        i18n={{
+          searchPlaceholder: strings.searchPlaceholder,
+          filterButtonAria: strings.filterButtonAria,
+        }}
       />
     </Card>
   );
