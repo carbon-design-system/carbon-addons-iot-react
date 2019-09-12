@@ -70,6 +70,8 @@ const propTypes = {
   className: PropTypes.string,
   /** Provide ID for the skip to content functionality */
   skipto: PropTypes.string,
+  /** href optional url to file if you click on title */
+  url: PropTypes.string,
   /** Object of action items */
   actionItems: PropTypes.arrayOf(
     PropTypes.shape({
@@ -93,12 +95,13 @@ const defaultProps = {
   prefix: 'IBM',
   className: 'main-header',
   skipto: '#main-content',
+  url: '#',
 };
 
 /**
  * Clickable card that shows "Add" button
  */
-const Header = ({ appName, className, actionItems, prefix, skipto }) => {
+const Header = ({ appName, className, actionItems, prefix, skipto, url }) => {
   const actionBtnContent = actionItems.map(item => {
     if (item.hasOwnProperty('childContent')) {
       const children = item.childContent.map(childItem => (
@@ -134,7 +137,7 @@ const Header = ({ appName, className, actionItems, prefix, skipto }) => {
   return (
     <StyledHeader className={className} aria-label="main header">
       <SkipToContent href={skipto} />
-      <HeaderName href="#" prefix={prefix}>
+      <HeaderName href={url} prefix={prefix}>
         {appName}
       </HeaderName>
       <HeaderGlobalBar>{actionBtnContent}</HeaderGlobalBar>
