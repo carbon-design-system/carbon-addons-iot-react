@@ -4,6 +4,8 @@ import { action } from '@storybook/addon-actions';
 import { select } from '@storybook/addon-knobs';
 import Add from '@carbon/icons-react/lib/add/32';
 
+import FullWidthWrapper from '../../internal/FullWidthWrapper';
+
 import StatefulTileCatalog from './StatefulTileCatalog';
 import CatalogContent from './CatalogContent';
 
@@ -93,9 +95,9 @@ storiesOf('Watson IoT|TileCatalog', module)
   ))
   .add('loading', () => <StatefulTileCatalog {...commonTileCatalogProps} isLoading />)
   .add('error', () => (
-    <div style={{ width: 'calc(100vw - 6rem)' }}>
+    <FullWidthWrapper>
       <StatefulTileCatalog {...commonTileCatalogProps} tiles={[]} error="In error state" />
-    </div>
+    </FullWidthWrapper>
   ))
   .add('async loaded wait one second', () => {
     const Container = () => {

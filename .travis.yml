@@ -24,8 +24,8 @@ install:
   - yarn list
 
 script:
-  - yarn lint && yarn test --ci --maxWorkers=2 --verbose
+  - yarn lint
+  - travis_wait yarn test --ci --maxWorkers=2 --verbose --coverage --coverageReporters=text-lcov | yarn run coveralls # report coveralls status
 
 after_success:
   - npx semantic-release@beta
-  - yarn run jest --coverage --coverageReporters=text-lcov | yarn run coveralls # report coveralls status

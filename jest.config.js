@@ -11,8 +11,15 @@ module.exports = {
       lines: 75,
     },
   },
+  globals: {
+    __DEV__: false,
+  },
   setupFiles: ['<rootDir>/config/jest/setup.js'],
-  testMatch: ['<rootDir>/**/__tests__/**/*.js?(x)', '<rootDir>/**/?(*.)(spec|test).js?(x)'],
+  testMatch: [
+    '<rootDir>/**/__tests__/**/*.js?(x)',
+    '<rootDir>/**/?(*.)(spec|test).js?(x)',
+    '<rootDir>/**/?(*.)test.a11y.js?(x)',
+  ],
   testURL: 'http://localhost',
   transform: {
     '^.+\\.jsx?$': 'babel-jest',
