@@ -26,13 +26,13 @@ const values = {
     {
       x: 45,
       y: 25,
-      icon: 'icon--arrow--left',
+      color: '#0f0',
       content: <span style={{ padding: '10px' }}>Stairs</span>,
     },
     {
       x: 45,
       y: 50,
-      icon: 'icon--arrow--right',
+      color: '#00f',
       content: <span style={{ padding: '10px' }}>Vent Fan</span>,
     },
     {
