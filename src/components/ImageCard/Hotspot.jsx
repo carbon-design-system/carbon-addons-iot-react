@@ -39,12 +39,17 @@ const StyledHotspot = styled(({ className, children }) => (
   pointer-events: auto;
 
   .bx--tooltip__label {
-    border: solid 1px #aaa;
-    padding: 4px;
-    background: white;
-    opacity: 0.9;
-    border-radius: 4px;
-    box-shadow: 0 0 8px #777;
+    ${props =>
+      props.icon
+        ? `
+      border: solid 1px #aaa;
+      padding: 4px;
+      background: white;
+      opacity: 0.9;
+      border-radius: 4px;
+      box-shadow: 0 0 8px #777;
+    `
+        : ``}
   }
 `;
 
@@ -58,7 +63,7 @@ const Hotspot = ({ x, y, content, icon, color, width, height, ...others }) => {
         cx={width / 2}
         cy={height / 2}
         r={width / 2}
-        stroke="black"
+        stroke={color}
         strokeWidth="1"
         fill={color}
         opacity="1"
@@ -67,7 +72,7 @@ const Hotspot = ({ x, y, content, icon, color, width, height, ...others }) => {
   );
 
   return (
-    <StyledHotspot x={x} y={y} width={width} height={height}>
+    <StyledHotspot x={x} y={y} width={width} height={height} icon={icon}>
       <Tooltip
         {...others}
         triggerText={
