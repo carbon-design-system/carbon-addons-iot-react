@@ -78,9 +78,15 @@ export default {
 
         // Sass components
         {
-          src: 'src/components/**/*.scss',
+          src: ['src/components/**/*.scss', '!src/components/Notification/*.scss'],
           dest: 'lib/scss/components',
           rename: (name, extension) => sanitizeAndCamelCase(name, extension),
+        },
+
+        // Sass components with non-standard folder structure, or multiple files per folder
+        {
+          src: 'src/components/Notification/*.scss',
+          dest: 'lib/scss/components/Notification',
         },
       ],
       verbose: env !== 'development', // logs the file copy list on production builds for easier debugging
