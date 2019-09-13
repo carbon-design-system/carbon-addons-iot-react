@@ -157,8 +157,11 @@ const defaultProps = {
     selectSeverityPlaceholder: 'Select a severity',
     searchPlaceholder: 'Search',
     filterButtonAria: 'Filters',
+<<<<<<< HEAD
     defaultFilterStringPlaceholdText: 'Type and hit enter to apply',
     downloadIconDescription: 'Download table content',
+=======
+>>>>>>> 970b44733f4b0a9ceaa99d309e762be9f71bc65b
   },
 };
 /**

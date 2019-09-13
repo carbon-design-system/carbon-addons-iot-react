@@ -127,6 +127,7 @@ export const TableCardPropTypes = {
     filterButtonAria: PropTypes.string,
     defaultFilterStringPlaceholdText: PropTypes.string,
     downloadIconDescription: PropTypes.string,
+
   }),
 };
 
