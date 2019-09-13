@@ -321,6 +321,7 @@ const Card = ({
               small
               renderIcon={Popup20}
               iconDescription={strings.expandLabel}
+              title={strings.expandLabel}
               onClick={() => {
                 onCardAction(id, 'OPEN_EXPANDED_CARD');
               }}
