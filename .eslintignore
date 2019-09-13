@@ -3,3 +3,4 @@ coverage/
 config/
 lib/
 storybook-static/
+results/
