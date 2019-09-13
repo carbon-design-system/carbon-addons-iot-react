@@ -122,9 +122,9 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 @import 'components/NumberInput/number-input';
 @import 'components/Form/form';
 @import 'components/Link/link';
-@import '~carbon-components/scss/components/list-box/list-box'; // ???
-@import '~carbon-components/scss/components/list/list'; // ???
-@import '~carbon-components/scss/components/data-table/data-table'; // ???
+@import 'components/ListBox/list-box';
+@import 'components/List/list';
+@import 'components/DataTable/data-table';
 @import 'components/StructuredList/structured-list';
 @import 'components/CodeSnippet/code-snippet';
 @import 'components/OverflowMenu/overflow-menu';
@@ -146,9 +146,9 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 @import 'components/TimePicker/time-picker';
 @import 'components/Slider/slider';
 @import 'components/Tile/tile';
-@import '~carbon-components/scss/components/skeleton/skeleton'; // ???
+@import 'components/Skeleton/skeleton';
 @import 'components/InlineLoading/inline-loading';
-@import '~carbon-components/scss/components/pagination-nav/pagination-nav'; // ???
+@import 'components/PaginationNav/pagination-nav';
 
 //-------------------------------------
 // 🔬 Experimental

@@ -82,19 +82,6 @@ export default {
           dest: 'lib/scss/components',
           rename: (name, extension) => sanitizeAndCamelCase(name, extension),
         },
-
-        // Carbon components proxy styles
-        {
-          src: [
-            'node_modules/carbon-components/scss/components/list-box',
-            'node_modules/carbon-components/scss/components/list',
-            'node_modules/carbon-components/scss/components/data-table',
-            'node_modules/carbon-components/scss/components/skeleton',
-            'node_modules/carbon-components/scss/components/pagination-nav',
-          ],
-          dest: 'lib/scss/components',
-          rename: (name, extension) => sanitizeAndCamelCase(name, extension),
-        },
       ],
       verbose: env !== 'development', // logs the file copy list on production builds for easier debugging
     }),
