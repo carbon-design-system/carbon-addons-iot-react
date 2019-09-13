@@ -81,13 +81,14 @@ carbon-addons-iot-react/
 │       └── scss
 │           └── _vars.scss
 │           └── ...
+│   └── styles.scss (sass entrypoint)
 ```
 
 Compiled CSS files are provided for ease of use getting started.
 
-Using individual sass files (instead of the compiled .css) infers usage of a SCSS pre-processor. All Sass files use the `*.scss` file extension. For transpiling Sass code, use node-sass based Sass compilers, for example, WebPack sass-loader or gulp-sass. Make sure your build process uses autoprefixer to ensure vendor prefixes are automatically added to your output CSS.
+A sass entrypoint is availble at `lib/scss/styles.scss` for use in your project.
 
-At this time we only provide the individual partial files for `global` and `components`. This will require you to construct the central entrypoint in your application, such as the ./src/styles.scss file in this repo used to generate the provided .css files.
+Using sass files (instead of the compiled .css) infers usage of a SCSS pre-processor. All Sass files use the `*.scss` file extension. For transpiling Sass code, use node-sass based Sass compilers, for example, WebPack sass-loader or gulp-sass. Make sure your build process uses autoprefixer to ensure vendor prefixes are automatically added to your output CSS.
 
 Feedback and improvement requests regarding this configuration would be appreciated, [please contribute to this issue](https://github.com/IBM/carbon-addons-iot-react/issues/426).
 
