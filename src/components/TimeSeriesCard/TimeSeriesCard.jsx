@@ -1,5 +1,5 @@
 import React, { useRef, useMemo } from 'react';
-import moment from 'moment';
+import moment from 'moment/min/moment-with-locales.min';
 import { LineChart } from '@carbon/charts-react';
 import '@carbon/charts/style.css';
 import isEmpty from 'lodash/isEmpty';
@@ -222,15 +222,12 @@ const TimeSeriesCard = ({
 
   const lines = series.map(line => ({ ...line, color: !isEditable ? line.color : 'gray' }));
 
-  useDeepCompareEffect(
-    () => {
-      if (chartRef && chartRef.chart) {
-        const chartData = formatChartData(labels, lines, values);
-        chartRef.chart.setData(chartData);
-      }
-    },
-    [values, labels, lines]
-  );
+  useDeepCompareEffect(() => {
+    if (chartRef && chartRef.chart) {
+      const chartData = formatChartData(labels, lines, values);
+      chartRef.chart.setData(chartData);
+    }
+  }, [values, labels, lines]);
 
   const chartData = useMemo(() => formatChartData(labels, lines, values), [labels, lines, values]);
   return (
