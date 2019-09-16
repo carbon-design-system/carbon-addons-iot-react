@@ -141,8 +141,7 @@ const propTypes = {
     pageForwardAria: PropTypes.string,
     pageNumberAria: PropTypes.string,
     itemsPerPage: PropTypes.string,
-    itemsRange: PropTypes.string,
-    currentPage: PropTypes.string,
+    currentPage: PropTypes.func,
     itemsRangeWithTotal: PropTypes.func,
     pageRange: PropTypes.func,
     /** table body */
