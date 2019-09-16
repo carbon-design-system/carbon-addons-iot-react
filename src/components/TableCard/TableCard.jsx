@@ -159,6 +159,7 @@ const defaultProps = {
     filterButtonAria: 'Filters',
     defaultFilterStringPlaceholdText: 'Type and hit enter to apply',
     downloadIconDescription: 'Download table content',
+    emptyMessage: 'There are no alerts in this range.',
   },
 };
 /**
@@ -695,6 +696,9 @@ const TableCard = ({
                   },
                 }
               : {}),
+            emptyState: {
+              message: strings.emptyMessage,
+            },
           },
         }}
         showHeader={showHeader !== undefined ? showHeader : true}

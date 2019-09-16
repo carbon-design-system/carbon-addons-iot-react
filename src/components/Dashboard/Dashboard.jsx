@@ -162,7 +162,6 @@ const propTypes = {
     /** empty state */
     emptyMessage: PropTypes.string,
     emptyMessageWithFilters: PropTypes.string,
-    emptyButtonLabel: PropTypes.string,
     emptyButtonLabelWithFilters: PropTypes.string,
     inProgressText: PropTypes.string,
     actionFailedText: PropTypes.string,
@@ -240,7 +239,7 @@ const defaultProps = {
     closeMenuAria: 'Close menu',
     clearSelectionAria: 'Clear selection',
     /** empty state */
-    emptyMessage: 'There is no data',
+    emptyMessage: 'There are no alerts in this range.',
     emptyMessageWithFilters: 'No results match the current filters',
     emptyButtonLabel: 'Create some data',
     emptyButtonLabelWithFilters: 'Clear all filters',

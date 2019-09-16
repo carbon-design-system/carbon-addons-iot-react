@@ -590,7 +590,6 @@ storiesOf('Dashboard (Experimental)', module)
             'i18n.emptyMessageWithFilters',
             '__No results match the current filters__'
           ),
-          emptyButtonLabel: text('i18n.emptyButtonLabel', '__Create some data__'),
           emptyButtonLabelWithFilters: text('i18n.emptyButtonLabel', '__Clear all filters__'),
           inProgressText: text('i18n.inProgressText', '__In Progress__'),
           actionFailedText: text('i18n.actionFailedText', '__Action Failed__'),
