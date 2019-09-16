@@ -143,8 +143,8 @@ const propTypes = {
     itemsPerPage: PropTypes.string,
     itemsRange: PropTypes.string,
     currentPage: PropTypes.string,
-    itemsRangeWithTotal: PropTypes.string,
-    pageRange: PropTypes.string,
+    itemsRangeWithTotal: PropTypes.func,
+    pageRange: PropTypes.func,
     /** table body */
     overflowMenuAria: PropTypes.string,
     clickToExpandAria: PropTypes.string,
