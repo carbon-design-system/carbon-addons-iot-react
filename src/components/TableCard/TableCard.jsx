@@ -157,6 +157,9 @@ const defaultProps = {
     selectSeverityPlaceholder: 'Select a severity',
     searchPlaceholder: 'Search',
     filterButtonAria: 'Filters',
+    defaultFilterStringPlaceholdText: 'Type and hit enter to apply',
+    downloadIconDescription: 'Download table content',
+    emptyMessage: 'There are no alerts in this range.',
   },
 };
 /**
@@ -460,7 +463,7 @@ const TableCard = ({
       name: i.label ? i.label : i.dataSourceId || '', // don't force label to be required
       isSortable: true,
       width: i.width ? i.width : size === CARD_SIZES.TALL ? '150px' : '', // force the text wrap
-      filter: i.filter ? i.filter : {}, // if filter not send we send empty object
+      filter: i.filter ? i.filter : { placeholderText: strings.defaultFilterStringPlaceholdText }, // if filter not send we send empty object
     }))
     .concat(hasActionColumn ? actionColumn : [])
     .map(column => {
@@ -679,6 +682,7 @@ const TableCard = ({
                 small
                 renderIcon={Download16}
                 onClick={() => csvDownloadHandler()}
+                title={strings.downloadIconDescription}
               />
             ),
           },
@@ -692,13 +696,13 @@ const TableCard = ({
                   },
                 }
               : {}),
+            emptyState: {
+              message: strings.emptyMessage,
+            },
           },
         }}
         showHeader={showHeader !== undefined ? showHeader : true}
-        i18n={{
-          searchPlaceholder: strings.searchPlaceholder,
-          filterButtonAria: strings.filterButtonAria,
-        }}
+        i18n={i18n}
       />
     </Card>
   );

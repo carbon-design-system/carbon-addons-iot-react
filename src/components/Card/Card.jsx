@@ -162,6 +162,7 @@ const defaultProps = {
     deleteCardLabel: 'Delete card',
     closeLabel: 'Close',
     expandLabel: 'Expand to fullscreen',
+    overflowMenuDescription: 'open and close list of options',
   },
 };
 
@@ -182,7 +183,7 @@ const Card = ({
   availableActions,
   breakpoint,
   i18n,
-  i18n: { closeLabel, expandLabel },
+  i18n: { closeLabel },
   ...others
 }) => {
   const [tooltipId, setTooltipId] = useState(uuidv1());
@@ -225,7 +226,11 @@ const Card = ({
   const timeBoxSelection = (
     <ToolbarItem>
       <TimeRangeLabel>{timeBoxLabels[timeRange]}</TimeRangeLabel>
-      <StyledOverflowMenu floatingMenu renderIcon={ChevronDown16}>
+      <StyledOverflowMenu
+        floatingMenu
+        renderIcon={ChevronDown16}
+        iconDescription={strings.overflowMenuDescription}
+      >
         <ToolbarTitleClass title={strings.timeRangeLabel} />
         <ToolbarOptionClass>
           <Select
@@ -316,6 +321,7 @@ const Card = ({
               small
               renderIcon={Popup20}
               iconDescription={strings.expandLabel}
+              title={strings.expandLabel}
               onClick={() => {
                 onCardAction(id, 'OPEN_EXPANDED_CARD');
               }}

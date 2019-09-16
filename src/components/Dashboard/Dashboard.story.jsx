@@ -542,6 +542,10 @@ storiesOf('Dashboard (Experimental)', module)
           dailyLabel: text('dailyLabel', 'Daily'),
           weeklyLabel: text('weeklyLabel', 'Weekly'),
           monthlyLabel: text('monthlyLabel', 'Monthly'),
+          overflowMenuDescription: text(
+            'overflowMenuDescription',
+            'open and close list of options'
+          ),
           editCardLabel: text('editCardLabel', 'Edit card'),
           cloneCardLabel: text('cloneCardLabel', 'Clone card'),
           deleteCardLabel: text('deleteCardLabel', 'Delete card'),
@@ -549,8 +553,49 @@ storiesOf('Dashboard (Experimental)', module)
           moderateLabel: text('moderateLabel', 'Moderate'),
           lowLabel: text('lowLabel', 'Low'),
           selectSeverityPlaceholder: text('selectSeverityPlaceholder', 'Select a severity'),
+
+          // table i18n
           searchPlaceholder: text('searchPlaceholder', 'Search'),
           filterButtonAria: text('filterButtonAria', 'Filters'),
+          defaultFilterStringPlaceholdText: text(
+            'defaultFilterStringPlaceholdText',
+            'Type and hit enter to apply'
+          ),
+          /** pagination */
+          pageBackwardAria: text('i18n.pageBackwardAria', '__Previous page__'),
+          pageForwardAria: text('i18n.pageForwardAria', '__Next page__'),
+          pageNumberAria: text('i18n.pageNumberAria', '__Page Number__'),
+          itemsPerPage: text('i18n.itemsPerPage', '__Items per page:__'),
+          itemsRange: (min, max) => `__${min}–${max} items__`,
+          currentPage: page => `__page ${page}__`,
+          itemsRangeWithTotal: (min, max, total) => `__${min}–${max} of ${total} items__`,
+          pageRange: (current, total) => `__${current} of ${total} pages__`,
+          /** table body */
+          overflowMenuAria: text('i18n.overflowMenuAria', '__More actions__'),
+          clickToExpandAria: text('i18n.clickToExpandAria', '__Click to expand content__'),
+          clickToCollapseAria: text('i18n.clickToCollapseAria', '__Click to collapse content__'),
+          selectAllAria: text('i18n.selectAllAria', '__Select all items__'),
+          selectRowAria: text('i18n.selectRowAria', '__Select row__'),
+          /** toolbar */
+          clearAllFilters: text('i18n.clearAllFilters', '__Clear all filters__'),
+          columnSelectionButtonAria: text('i18n.columnSelectionButtonAria', '__Column Selection__'),
+          clearFilterAria: text('i18n.clearFilterAria', '__Clear filter__'),
+          filterAria: text('i18n.filterAria', '__Filter__'),
+          openMenuAria: text('i18n.openMenuAria', '__Open menu__'),
+          closeMenuAria: text('i18n.closeMenuAria', '__Close menu__'),
+          clearSelectionAria: text('i18n.clearSelectionAria', '__Clear selection__'),
+          /** empty state */
+          emptyMessage: text('i18n.emptyMessage', '__There is no data__'),
+          emptyMessageWithFilters: text(
+            'i18n.emptyMessageWithFilters',
+            '__No results match the current filters__'
+          ),
+          emptyButtonLabelWithFilters: text('i18n.emptyButtonLabel', '__Clear all filters__'),
+          inProgressText: text('i18n.inProgressText', '__In Progress__'),
+          actionFailedText: text('i18n.actionFailedText', '__Action Failed__'),
+          learnMoreText: text('i18n.learnMoreText', '__Learn More__'),
+          dismissText: text('i18n.dismissText', '__Dismiss__'),
+          downloadIconDescription: text('downloadIconDescription', 'Download table content'),
         }}
       />
     );

@@ -125,6 +125,9 @@ export const TableCardPropTypes = {
     selectSeverityPlaceholder: PropTypes.string,
     searchPlaceholder: PropTypes.string,
     filterButtonAria: PropTypes.string,
+    defaultFilterStringPlaceholdText: PropTypes.string,
+    downloadIconDescription: PropTypes.string,
+    emptyMessage: PropTypes.string,
   }),
 };
 
@@ -262,6 +265,7 @@ export const CardPropTypes = {
     expandLabel: PropTypes.string,
     closeLabel: PropTypes.string,
     loadingDataLabel: PropTypes.string,
+    overflowMenuDescription: PropTypes.string,
   }),
   tooltip: PropTypes.element,
   toolbar: PropTypes.element,
