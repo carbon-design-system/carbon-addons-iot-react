@@ -1,4 +1,4 @@
-# Carbon Addons for Watson IoT
+# Carbon Addons for Watson IoT - https://1-x.carbon-addons-iot-react.com/
 
 > v1.x - Carbon v9 implementation
 
@@ -49,7 +49,7 @@ window.SVGPathElement = SVGPathElement;
 
 ## 📚 Docs
 
-You can find more information about how to use each component by checking out our [Storybook](https://IBM.github.io/carbon-addons-iot-react/).
+You can find more information about how to use each component by checking out our [Storybook](https://1-x.carbon-addons-iot-react.com/).
 
 ## Testing
 

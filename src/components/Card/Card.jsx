@@ -40,7 +40,6 @@ const OptimizedSkeletonText = pure(SkeletonText);
 const CardWrapper = styled.div`
   background: white;
   height: ${props => props.dimensions.y}px;
-  min-width: ${props => props.dimensions.x}px;
   ${props => (props.isExpanded ? 'height: 100%; width: 100%;' : '')};
   display: flex;
   flex-direction: column;
