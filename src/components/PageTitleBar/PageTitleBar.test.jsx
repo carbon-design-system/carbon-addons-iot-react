@@ -61,6 +61,43 @@ describe('PageTitleBar', () => {
     expect(wrapper.find('.page-title-bar-tabs')).toHaveLength(1);
   });
 
+  test('Does not render tooltip when no description', () => {
+    const wrapper = mount(
+      <PageTitleBar
+        title={commonPageTitleBarProps.title}
+        breadcrumb={pageTitleBarBreadcrumb}
+        collapsed
+      />
+    );
+    expect(wrapper.find('.bx--tooltip__label')).toHaveLength(0);
+    expect(wrapper.find('.page-title-bar-description')).toHaveLength(0);
+  });
+
+  test('Does not render tooltip when no description with tabs', () => {
+    const wrapper = mount(
+      <PageTitleBar
+        title={commonPageTitleBarProps.title}
+        breadcrumb={pageTitleBarBreadcrumb}
+        tabs={
+          <Tabs>
+            <Tab label="Tab 1">
+              <div>Content for first tab.</div>
+            </Tab>
+            <Tab label="Tab 2">
+              <div>Content for second tab.</div>
+            </Tab>
+            <Tab label="Tab 3">
+              <div>Content for third tab.</div>
+            </Tab>
+          </Tabs>
+        }
+      />
+    );
+    expect(wrapper.find('.bx--tooltip__label')).toHaveLength(0);
+    expect(wrapper.find('.page-title-bar-description')).toHaveLength(0);
+    expect(wrapper.find('.page-title-bar-tabs')).toHaveLength(1);
+  });
+
   describe('Renders editable title as expected', () => {
     const onEdit = jest.fn();
     const wrapper = mount(
