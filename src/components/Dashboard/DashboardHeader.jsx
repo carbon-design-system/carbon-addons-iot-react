@@ -35,6 +35,8 @@ const propTypes = {
         PropTypes.string,
         PropTypes.node,
       ]),
+      /** Optional custom component */
+      customActionComponent: PropTypes.node,
       labelText: PropTypes.string,
     })
   ),
@@ -99,7 +101,7 @@ const StyledActions = styled.div`
   flex-grow: 0;
   align-items: center;
   > div + div {
-    margin-left: 1rem;
+    margin-left: 1.5rem;
   }
 `;
 
@@ -128,23 +130,32 @@ const DashboardHeader = ({
       <StyledRight>
         {filter}
         <StyledActions>
-          {actions.map(action => (
-            <div
-              key={action.id}
-              tabIndex={0}
-              role="button"
-              onClick={() => onDashboardAction(action.id)}
-              onKeyDown={event => handleEnterKeyDown(event, () => onDashboardAction(action.id))}
-            >
-              {typeof action.icon === 'string' ? (
-                <Icon name={action.icon} description={action.labelText} />
-              ) : React.isValidElement(action.icon) ? (
-                action.icon
-              ) : (
-                <Icon {...action.icon} description={action.labelText} />
-              )}
-            </div>
-          ))}
+          {actions.map(action =>
+            action.icon ? (
+              <div
+                key={action.id}
+                tabIndex={0}
+                role="button"
+                onClick={() => onDashboardAction(action.id)}
+                onKeyDown={event => handleEnterKeyDown(event, () => onDashboardAction(action.id))}
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  cursor: 'pointer',
+                }}
+              >
+                {typeof action.icon === 'string' ? (
+                  <Icon name={action.icon} description={action.labelText} />
+                ) : React.isValidElement(action.icon) ? (
+                  action.icon
+                ) : (
+                  <Icon {...action.icon} description={action.labelText} />
+                )}
+              </div>
+            ) : (
+              action.customActionComponent
+            )
+          )}
         </StyledActions>
       </StyledRight>
     </StyledDashboardHeader>
