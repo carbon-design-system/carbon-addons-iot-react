@@ -497,7 +497,10 @@ const TableCard = ({
   // if we're in editable mode, generate fake data
   const tableData = isEditable
     ? generateTableSampleValues(columns)
-    : hasActionColumn || filteredTimestampColumns.length || filteredPrecisionColumns.length
+    : hasActionColumn ||
+      filteredTimestampColumns.length ||
+      filteredPrecisionColumns.length ||
+      thresholds
     ? data.map(i => {
         // if has custom action
         const action = hasActionColumn ? { actionColumn: JSON.stringify(i.actions || []) } : null;
