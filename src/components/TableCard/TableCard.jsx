@@ -160,6 +160,7 @@ const defaultProps = {
     defaultFilterStringPlaceholdText: 'Type and hit enter to apply',
     downloadIconDescription: 'Download table content',
     emptyMessage: 'There are no alerts in this range.',
+    severityLabel: 'Severity',
   },
 };
 /**
@@ -429,7 +430,7 @@ const TableCard = ({
         id: `iconColumn-${columnId}`,
         label: uniqueThresholds[index].label
           ? uniqueThresholds[index].label
-          : `${capitalize(columnId)} Severity`,
+          : `${capitalize(columnId)} ${strings.severityLabel}`,
         width: '140px',
         isSortable: true,
         renderDataFunction: renderThresholdIcon,

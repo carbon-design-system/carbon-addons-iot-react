@@ -133,6 +133,7 @@ const propTypes = {
     moderateLabel: PropTypes.string,
     lowLabel: PropTypes.string,
     selectSeverityPlaceholder: PropTypes.string,
+    severityLabel: PropTypes.string,
     defaultFilterStringPlaceholdText: PropTypes.string,
     downloadIconDescription: PropTypes.string,
 
@@ -213,6 +214,7 @@ const defaultProps = {
     moderateLabel: 'Moderate',
     lowLabel: 'Low',
     selectSeverityPlaceholder: 'Select a severity',
+    severityLabel: 'Severity',
     searchPlaceholder: 'Search',
     filterButtonAria: 'Filters',
     defaultFilterStringPlaceholdText: 'Type and hit enter to apply',
