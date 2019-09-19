@@ -160,6 +160,7 @@ const defaultProps = {
     defaultFilterStringPlaceholdText: 'Type and hit enter to apply',
     downloadIconDescription: 'Download table content',
     emptyMessage: 'There are no alerts in this range.',
+    severityLabel: 'Severity',
   },
 };
 /**
@@ -429,7 +430,7 @@ const TableCard = ({
         id: `iconColumn-${columnId}`,
         label: uniqueThresholds[index].label
           ? uniqueThresholds[index].label
-          : `${capitalize(columnId)} Severity`,
+          : `${capitalize(columnId)} ${strings.severityLabel}`,
         width: '140px',
         isSortable: true,
         renderDataFunction: renderThresholdIcon,
@@ -497,7 +498,10 @@ const TableCard = ({
   // if we're in editable mode, generate fake data
   const tableData = isEditable
     ? generateTableSampleValues(columns)
-    : hasActionColumn || filteredTimestampColumns.length || filteredPrecisionColumns.length
+    : hasActionColumn ||
+      filteredTimestampColumns.length ||
+      filteredPrecisionColumns.length ||
+      thresholds
     ? data.map(i => {
         // if has custom action
         const action = hasActionColumn ? { actionColumn: JSON.stringify(i.actions || []) } : null;
