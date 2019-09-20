@@ -1397,6 +1397,38 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
+"@carbon/charts-react@0.12.1":
+  version "0.12.0"
+  resolved "https://registry.yarnpkg.com/@carbon/charts-react/-/charts-react-0.12.1.tgz#cd4aea9f5092def1009490ceedcb19bafbc18b4d"
+  integrity sha512-MYdUcTvCkRIq09lxbinoDBc/NGkTgylEOrazkscFgg+oR/2yxjVeI7pJ5N0OLU4a7az2FzkiHlu3fw2SulS2gg==
+  dependencies:
+    "@carbon/charts" "0.12.0"
+
+"@carbon/charts@0.12.1":
+  version "0.12.0"
+  resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-0.12.1.tgz#edf430989625662eaa5a67c85854a9fd161b34ad"
+  integrity sha512-klzI8nKrY6GCuUkC6VQEEpXipt6VJS5c9jZP4zfBjEw25iuDI5ar+wdZAN7PYoFpneu2RLpOmbnMSZZsLEmXqQ==
+  dependencies:
+    "@carbon/colors" "10.1.1"
+    "@carbon/utils-position" "1.1.0"
+    babel-polyfill "6.26.0"
+    resize-observer-polyfill "1.5.0"
+
+"@carbon/charts@^0.12.1":
+  version "0.12.4"
+  resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-0.12.5.tgz#76fad24223ba03b3c6315654c2bbb98b2e395b56"
+  integrity sha512-9oLOoGZGngiadCvHLel+JjJMt5fW292h0F7KjiVYpJ/JX31fPM6ZDLRqXnNE9nX+J0+jKoB7vxfAmqhVAYnYzg==
+  dependencies:
+    "@carbon/colors" "10.1.1"
+    "@carbon/utils-position" "1.1.0"
+    babel-polyfill "6.26.0"
+    resize-observer-polyfill "1.5.0"
+
+"@carbon/colors@10.1.1":
+  version "10.1.1"
+  resolved "https://registry.yarnpkg.com/@carbon/colors/-/colors-10.1.1.tgz#854c33ccdf02ac319c06923268ba89cf83a58c93"
+  integrity sha512-hni1iN0FUfQgnATqAT971WMAosl9YK7kQqp1V0vkF3d8rB/id+Y3K1GhDsXLKPfEAxdgE4+swGvID9tAY+a9kQ==
+
 "@carbon/colors@10.3.0":
   version "10.3.0"
   resolved "https://registry.yarnpkg.com/@carbon/colors/-/colors-10.3.0.tgz#99df98f141c6d3a237d72ac9b21ad58a07112348"
@@ -1437,6 +1469,11 @@
   integrity sha512-KVaSkp9XgK8yAmhJyua2DE+klRt7+R85ymQ0O79A3aOko1GWm1J2L/v+Gk8xQpU/wkNT8TFOaJtHBgGOz28Qkg==
   dependencies:
     "@carbon/colors" "10.3.0"
+
+"@carbon/utils-position@1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@carbon/utils-position/-/utils-position-1.1.0.tgz#dbe6fe48ada221db20f1dfc8973ae4aec2caeeae"
+  integrity sha512-GFDdYkjYgMRjRcHjbN2vTreOXsRc0KGS4DPDt8WTUaU2ijAeyDzHWwg+w3XQ0JqEKOLAy+1ZWYafBxk1SaTljg==
 
 "@commitlint/cli@^7.2.1":
   version "7.2.1"
@@ -14830,6 +14867,11 @@ requires-port@^1.0.0:
 reserved-words@^0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/reserved-words/-/reserved-words-0.1.2.tgz#00a0940f98cd501aeaaac316411d9adc52b31ab1"
+
+resize-observer-polyfill@1.5.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/resize-observer-polyfill/-/resize-observer-polyfill-1.5.0.tgz#660ff1d9712a2382baa2cad450a4716209f9ca69"
+  integrity sha512-M2AelyJDVR/oLnToJLtuDJRBBWUGUvvGigj1411hXhAdyFWqMaqHp7TixW3FpiLuVaikIcR1QL+zqoJoZlOgpg==
 
 resize-observer-polyfill@^1.5.1:
   version "1.5.1"

@@ -63,6 +63,8 @@
     ]
   },
   "dependencies": {
+    "@carbon/charts": "0.12.1",
+    "@carbon/charts-react": "0.12.1",
     "@carbon/icons": "^10.4.0",
     "@carbon/icons-react": "^10.4.1",
     "@carbon/themes": "^10.4.0",
