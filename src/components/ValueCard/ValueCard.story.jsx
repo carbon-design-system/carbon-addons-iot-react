@@ -449,7 +449,7 @@ storiesOf('ValueCard', module)
           size={size}
           values={{
             comfortLevel: number('comfortLevel', 89),
-            averageTemp: number('averageTemp', 76.7),
+            averageTemp: number('averageTemp', null),
             humidity: number('humidity', 76.7),
           }}
         />
