@@ -46,3 +46,4 @@ export {
   DASHBOARD_BREAKPOINTS,
   DASHBOARD_SIZES,
 } from './constants/LayoutConstants';
+export { findMatchingThresholds } from './components/TableCard/TableCard';

@@ -170,21 +170,23 @@ const defaultProps = {
 export const findMatchingThresholds = (thresholds, item, columnId) => {
   return thresholds
     .filter(t => {
+      const { comparison, value, dataSourceId } = t;
       // Does the threshold apply to the current column?
-      if (columnId && !columnId.includes(t.dataSourceId)) {
+      if (columnId && !columnId.includes(dataSourceId)) {
         return false;
       }
-      switch (t.comparison) {
+
+      switch (comparison) {
         case '<':
-          return parseFloat(item[t.dataSourceId]) < t.value;
+          return !isNil(item[dataSourceId]) && parseFloat(item[dataSourceId]) < value;
         case '>':
-          return parseFloat(item[t.dataSourceId]) > t.value;
+          return parseFloat(item[dataSourceId]) > value;
         case '=':
-          return parseFloat(item[t.dataSourceId]) === t.value;
+          return parseFloat(item[dataSourceId]) === value;
         case '<=':
-          return parseFloat(item[t.dataSourceId]) <= t.value;
+          return !isNil(item[dataSourceId]) && parseFloat(item[dataSourceId]) <= value;
         case '>=':
-          return parseFloat(item[t.dataSourceId]) >= t.value;
+          return parseFloat(item[dataSourceId]) >= value;
         default:
           return false;
       }
