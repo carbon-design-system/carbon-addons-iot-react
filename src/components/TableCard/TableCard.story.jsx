@@ -396,7 +396,7 @@ storiesOf('Watson IoT|Table Card', module)
           }}
           values={tableData}
           onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
-          size={size}
+          // size={size}
         />
       </div>
     );

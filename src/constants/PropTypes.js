@@ -114,7 +114,7 @@ export const BarChartDatasetPropTypes = PropTypes.shape({
   label: PropTypes.string.isRequired,
   values: PropTypes.arrayOf(
     PropTypes.shape({
-      x: PropTypes.number.isRequired,
+      x: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
       y: PropTypes.number.isRequired,
     })
   ),

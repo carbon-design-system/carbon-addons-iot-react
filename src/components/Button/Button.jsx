@@ -40,10 +40,11 @@ const defaultProps = {
  * Carbon button with added ability to show loading state
  */
 const Button = props => {
-  const { children, loading, disabled, className, ...other } = props;
+  const { children, loading, disabled, className, onClick, ...other } = props;
   return (
     <StyledButton
       {...other}
+      onClick={onClick}
       className={className}
       disabled={disabled || (loading !== undefined && loading !== false)}
     >

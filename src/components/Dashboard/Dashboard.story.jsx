@@ -5,17 +5,18 @@ import Checkmark from '@carbon/icons-react/lib/checkmark--filled/16';
 import Warning from '@carbon/icons-react/lib/warning--filled/16';
 import ArrowDown from '@carbon/icons-react/lib/arrow--down/16';
 import ArrowUp from '@carbon/icons-react/lib/arrow--up/16';
-/*
-import uuidv1 from 'uuid/v1';
-*/
 import { text, boolean } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
+/*
+import uuidv1 from 'uuid/v1';
+*/
 /*
 import { Button } from 'carbon-components-react';
 import moment from 'moment';
 */
 
+import FullWidthWrapper from '../../internal/FullWidthWrapper';
 import {
   getIntervalChartData,
   getPeriodChartData,
@@ -455,155 +456,170 @@ const StatefulDashboard = ({ ...props }) => {
 storiesOf('Watson IoT|Dashboard (Experimental)', module)
   .add('basic', () => {
     return (
-      <StatefulDashboard
-        title={text('title', 'Munich Building')}
-        lastUpdated={Date()}
-        isEditable={boolean('isEditable', false)}
-        isLoading={boolean('isLoading', false)}
-        onBreakpointChange={action('onBreakpointChange')}
-        onLayoutChange={action('onLayoutChange')}
-      />
+      <FullWidthWrapper>
+        <StatefulDashboard
+          title={text('title', 'Munich Building')}
+          lastUpdated={Date()}
+          isEditable={boolean('isEditable', false)}
+          isLoading={boolean('isLoading', false)}
+          onBreakpointChange={action('onBreakpointChange')}
+          onLayoutChange={action('onLayoutChange')}
+        />
+      </FullWidthWrapper>
     );
   })
   .add('basic - without last updated header', () => {
     return (
-      <StatefulDashboard
-        title={text('title', 'Munich Building')}
-        isEditable={boolean('isEditable', false)}
-        isLoading={boolean('isLoading', false)}
-        onBreakpointChange={action('onBreakpointChange')}
-        onLayoutChange={action('onLayoutChange')}
-        hasLastUpdated={false}
-      />
+      <FullWidthWrapper>
+        <StatefulDashboard
+          title={text('title', 'Munich Building')}
+          isEditable={boolean('isEditable', false)}
+          isLoading={boolean('isLoading', false)}
+          onBreakpointChange={action('onBreakpointChange')}
+          onLayoutChange={action('onLayoutChange')}
+          hasLastUpdated={false}
+        />
+      </FullWidthWrapper>
     );
   })
   .add('custom actions', () => {
     return (
-      <StatefulDashboard
-        title={text('title', 'Munich Building')}
-        isEditable={boolean('isEditable', false)}
-        isLoading={boolean('isLoading', false)}
-        onBreakpointChange={action('onBreakpointChange')}
-        onLayoutChange={action('onLayoutChange')}
-        actions={[{ id: 'edit', label: 'Edit', icon: Edit }]}
-        onDashboardAction={action('onDashboardAction')}
-        hasLastUpdated={false}
-      />
+      <FullWidthWrapper>
+        <StatefulDashboard
+          title={text('title', 'Munich Building')}
+          isEditable={boolean('isEditable', false)}
+          isLoading={boolean('isLoading', false)}
+          onBreakpointChange={action('onBreakpointChange')}
+          onLayoutChange={action('onLayoutChange')}
+          actions={[{ id: 'edit', label: 'Edit', icon: Edit }]}
+          onDashboardAction={action('onDashboardAction')}
+          hasLastUpdated={false}
+        />
+      </FullWidthWrapper>
     );
   })
   .add('sidebar', () => {
     return (
-      <StatefulDashboard
-        title={text('title', 'Munich Building')}
-        lastUpdated={Date()}
-        isEditable={boolean('isEditable', false)}
-        isLoading={boolean('isLoading', false)}
-        sidebar={
-          <div style={{ width: 300 }}>
-            <h1>Sidebar content</h1>
-            <h4>goes</h4>
-            <p>here</p>
-          </div>
-        }
-        onBreakpointChange={action('onBreakpointChange')}
-        onLayoutChange={action('onLayoutChange')}
-      />
+      <FullWidthWrapper>
+        <StatefulDashboard
+          title={text('title', 'Munich Building')}
+          lastUpdated={Date()}
+          isEditable={boolean('isEditable', false)}
+          isLoading={boolean('isLoading', false)}
+          sidebar={
+            <div style={{ width: 300 }}>
+              <h1>Sidebar content</h1>
+              <h4>goes</h4>
+              <p>here</p>
+            </div>
+          }
+          onBreakpointChange={action('onBreakpointChange')}
+          onLayoutChange={action('onLayoutChange')}
+        />
+      </FullWidthWrapper>
     );
   })
   .add('loading', () => {
     return (
-      <StatefulDashboard
-        title={text('title', 'Munich Building')}
-        isEditable={boolean('isEditable', false)}
-        isLoading={boolean('isLoading', true)}
-      />
+      <FullWidthWrapper>
+        <StatefulDashboard
+          title={text('title', 'Munich Building')}
+          isEditable={boolean('isEditable', false)}
+          isLoading={boolean('isLoading', true)}
+        />
+      </FullWidthWrapper>
     );
   })
   .add('i18n labels', () => {
     return (
-      <StatefulDashboard
-        title={text('title', 'Munich Building')}
-        lastUpdated={Date()}
-        isEditable={boolean('isEditable', false)}
-        isLoading={boolean('isLoading', false)}
-        onBreakpointChange={action('onBreakpointChange')}
-        onLayoutChange={action('onLayoutChange')}
-        onDashboardAction={action('onDashboardAction')}
-        i18n={{
-          lastUpdatedLabel: text('lastUpdatedLabel', 'Last updated: '),
-          noDataLabel: text('noDataLabel', 'No data is available for this time range.'),
-          noDataShortLabel: text('noDataShortLabel', 'No data'),
-          rollingPeriodLabel: text('rollingPeriodLabel', 'Rolling period'),
-          last24HoursLabel: text('last24HoursLabel', 'Last 24 hrs'),
-          last7DaysLabel: text('last7DaysLabel', 'Last 7 days'),
-          lastMonthLabel: text('lastMonthLabel', 'Last month'),
-          lastQuarterLabel: text('lastQuarterLabel', 'Last quarter'),
-          lastYearLabel: text('lastYearLabel', 'Last year'),
-          periodToDateLabel: text('periodToDateLabel', 'Period to date'),
-          thisWeekLabel: text('thisWeekLabel', 'This week'),
-          thisMonthLabel: text('thisMonthLabel', 'This month'),
-          thisQuarterLabel: text('thisQuarterLabel', 'This quarter'),
-          thisYearLabel: text('thisYearLabel', 'This year'),
-          hourlyLabel: text('hourlyLabel', 'Hourly'),
-          dailyLabel: text('dailyLabel', 'Daily'),
-          weeklyLabel: text('weeklyLabel', 'Weekly'),
-          monthlyLabel: text('monthlyLabel', 'Monthly'),
-          overflowMenuDescription: text(
-            'overflowMenuDescription',
-            'open and close list of options'
-          ),
-          editCardLabel: text('editCardLabel', 'Edit card'),
-          cloneCardLabel: text('cloneCardLabel', 'Clone card'),
-          deleteCardLabel: text('deleteCardLabel', 'Delete card'),
-          criticalLabel: text('criticalLabel', 'Critical'),
-          moderateLabel: text('moderateLabel', 'Moderate'),
-          lowLabel: text('lowLabel', 'Low'),
-          selectSeverityPlaceholder: text('selectSeverityPlaceholder', 'Select a severity'),
+      <FullWidthWrapper>
+        <StatefulDashboard
+          title={text('title', 'Munich Building')}
+          lastUpdated={Date()}
+          isEditable={boolean('isEditable', false)}
+          isLoading={boolean('isLoading', false)}
+          onBreakpointChange={action('onBreakpointChange')}
+          onLayoutChange={action('onLayoutChange')}
+          onDashboardAction={action('onDashboardAction')}
+          i18n={{
+            lastUpdatedLabel: text('lastUpdatedLabel', 'Last updated: '),
+            noDataLabel: text('noDataLabel', 'No data is available for this time range.'),
+            noDataShortLabel: text('noDataShortLabel', 'No data'),
+            rollingPeriodLabel: text('rollingPeriodLabel', 'Rolling period'),
+            last24HoursLabel: text('last24HoursLabel', 'Last 24 hrs'),
+            last7DaysLabel: text('last7DaysLabel', 'Last 7 days'),
+            lastMonthLabel: text('lastMonthLabel', 'Last month'),
+            lastQuarterLabel: text('lastQuarterLabel', 'Last quarter'),
+            lastYearLabel: text('lastYearLabel', 'Last year'),
+            periodToDateLabel: text('periodToDateLabel', 'Period to date'),
+            thisWeekLabel: text('thisWeekLabel', 'This week'),
+            thisMonthLabel: text('thisMonthLabel', 'This month'),
+            thisQuarterLabel: text('thisQuarterLabel', 'This quarter'),
+            thisYearLabel: text('thisYearLabel', 'This year'),
+            hourlyLabel: text('hourlyLabel', 'Hourly'),
+            dailyLabel: text('dailyLabel', 'Daily'),
+            weeklyLabel: text('weeklyLabel', 'Weekly'),
+            monthlyLabel: text('monthlyLabel', 'Monthly'),
+            overflowMenuDescription: text(
+              'overflowMenuDescription',
+              'open and close list of options'
+            ),
+            editCardLabel: text('editCardLabel', 'Edit card'),
+            cloneCardLabel: text('cloneCardLabel', 'Clone card'),
+            deleteCardLabel: text('deleteCardLabel', 'Delete card'),
+            criticalLabel: text('criticalLabel', 'Critical'),
+            moderateLabel: text('moderateLabel', 'Moderate'),
+            lowLabel: text('lowLabel', 'Low'),
+            selectSeverityPlaceholder: text('selectSeverityPlaceholder', 'Select a severity'),
 
-          // table i18n
-          searchPlaceholder: text('searchPlaceholder', 'Search'),
-          filterButtonAria: text('filterButtonAria', 'Filters'),
-          defaultFilterStringPlaceholdText: text(
-            'defaultFilterStringPlaceholdText',
-            'Type and hit enter to apply'
-          ),
-          /** pagination */
-          pageBackwardAria: text('i18n.pageBackwardAria', '__Previous page__'),
-          pageForwardAria: text('i18n.pageForwardAria', '__Next page__'),
-          pageNumberAria: text('i18n.pageNumberAria', '__Page Number__'),
-          itemsPerPage: text('i18n.itemsPerPage', '__Items per page:__'),
-          itemsRange: (min, max) => `__${min}–${max} items__`,
-          currentPage: page => `__page ${page}__`,
-          itemsRangeWithTotal: (min, max, total) => `__${min}–${max} of ${total} items__`,
-          pageRange: (current, total) => `__${current} of ${total} pages__`,
-          /** table body */
-          overflowMenuAria: text('i18n.overflowMenuAria', '__More actions__'),
-          clickToExpandAria: text('i18n.clickToExpandAria', '__Click to expand content__'),
-          clickToCollapseAria: text('i18n.clickToCollapseAria', '__Click to collapse content__'),
-          selectAllAria: text('i18n.selectAllAria', '__Select all items__'),
-          selectRowAria: text('i18n.selectRowAria', '__Select row__'),
-          /** toolbar */
-          clearAllFilters: text('i18n.clearAllFilters', '__Clear all filters__'),
-          columnSelectionButtonAria: text('i18n.columnSelectionButtonAria', '__Column Selection__'),
-          clearFilterAria: text('i18n.clearFilterAria', '__Clear filter__'),
-          filterAria: text('i18n.filterAria', '__Filter__'),
-          openMenuAria: text('i18n.openMenuAria', '__Open menu__'),
-          closeMenuAria: text('i18n.closeMenuAria', '__Close menu__'),
-          clearSelectionAria: text('i18n.clearSelectionAria', '__Clear selection__'),
-          /** empty state */
-          emptyMessage: text('i18n.emptyMessage', '__There is no data__'),
-          emptyMessageWithFilters: text(
-            'i18n.emptyMessageWithFilters',
-            '__No results match the current filters__'
-          ),
-          emptyButtonLabelWithFilters: text('i18n.emptyButtonLabel', '__Clear all filters__'),
-          inProgressText: text('i18n.inProgressText', '__In Progress__'),
-          actionFailedText: text('i18n.actionFailedText', '__Action Failed__'),
-          learnMoreText: text('i18n.learnMoreText', '__Learn More__'),
-          dismissText: text('i18n.dismissText', '__Dismiss__'),
-          downloadIconDescription: text('downloadIconDescription', 'Download table content'),
-        }}
-      />
+            // table i18n
+            searchPlaceholder: text('searchPlaceholder', 'Search'),
+            filterButtonAria: text('filterButtonAria', 'Filters'),
+            defaultFilterStringPlaceholdText: text(
+              'defaultFilterStringPlaceholdText',
+              'Type and hit enter to apply'
+            ),
+            /** pagination */
+            pageBackwardAria: text('i18n.pageBackwardAria', '__Previous page__'),
+            pageForwardAria: text('i18n.pageForwardAria', '__Next page__'),
+            pageNumberAria: text('i18n.pageNumberAria', '__Page Number__'),
+            itemsPerPage: text('i18n.itemsPerPage', '__Items per page:__'),
+            itemsRange: (min, max) => `__${min}–${max} items__`,
+            currentPage: page => `__page ${page}__`,
+            itemsRangeWithTotal: (min, max, total) => `__${min}–${max} of ${total} items__`,
+            pageRange: (current, total) => `__${current} of ${total} pages__`,
+            /** table body */
+            overflowMenuAria: text('i18n.overflowMenuAria', '__More actions__'),
+            clickToExpandAria: text('i18n.clickToExpandAria', '__Click to expand content__'),
+            clickToCollapseAria: text('i18n.clickToCollapseAria', '__Click to collapse content__'),
+            selectAllAria: text('i18n.selectAllAria', '__Select all items__'),
+            selectRowAria: text('i18n.selectRowAria', '__Select row__'),
+            /** toolbar */
+            clearAllFilters: text('i18n.clearAllFilters', '__Clear all filters__'),
+            columnSelectionButtonAria: text(
+              'i18n.columnSelectionButtonAria',
+              '__Column Selection__'
+            ),
+            clearFilterAria: text('i18n.clearFilterAria', '__Clear filter__'),
+            filterAria: text('i18n.filterAria', '__Filter__'),
+            openMenuAria: text('i18n.openMenuAria', '__Open menu__'),
+            closeMenuAria: text('i18n.closeMenuAria', '__Close menu__'),
+            clearSelectionAria: text('i18n.clearSelectionAria', '__Clear selection__'),
+            /** empty state */
+            emptyMessage: text('i18n.emptyMessage', '__There is no data__'),
+            emptyMessageWithFilters: text(
+              'i18n.emptyMessageWithFilters',
+              '__No results match the current filters__'
+            ),
+            emptyButtonLabelWithFilters: text('i18n.emptyButtonLabel', '__Clear all filters__'),
+            inProgressText: text('i18n.inProgressText', '__In Progress__'),
+            actionFailedText: text('i18n.actionFailedText', '__Action Failed__'),
+            learnMoreText: text('i18n.learnMoreText', '__Learn More__'),
+            dismissText: text('i18n.dismissText', '__Dismiss__'),
+            downloadIconDescription: text('downloadIconDescription', 'Download table content'),
+          }}
+        />
+      </FullWidthWrapper>
     );
   })
   .add('only value cards', () => {
@@ -1047,7 +1063,7 @@ storiesOf('Watson IoT|Dashboard (Experimental)', module)
     ];
 
     return (
-      <div>
+      <FullWidthWrapper>
         {dashboards.map(i => [
           <div style={{ width: 1056, paddingBottom: 50 }}>
             <h1>&quot;Largest&quot; Rendering (1056px width)</h1>
@@ -1060,6 +1076,6 @@ storiesOf('Watson IoT|Dashboard (Experimental)', module)
             {i}
           </div>,
         ])}
-      </div>
+      </FullWidthWrapper>
     );
   });
