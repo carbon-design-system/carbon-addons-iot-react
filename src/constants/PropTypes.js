@@ -104,6 +104,7 @@ export const TableCardPropTypes = {
       })
     ),
     sort: PropTypes.oneOf(['ASC', 'DESC']),
+    emptyMessage: PropTypes.string,
   }).isRequired,
   value: PropTypes.arrayOf(
     PropTypes.shape({
@@ -127,7 +128,6 @@ export const TableCardPropTypes = {
     filterButtonAria: PropTypes.string,
     defaultFilterStringPlaceholdText: PropTypes.string,
     downloadIconDescription: PropTypes.string,
-    emptyMessage: PropTypes.string,
   }),
 };
 

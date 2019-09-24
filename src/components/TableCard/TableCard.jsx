@@ -107,7 +107,12 @@ const StyledStatefulTable = styled(({ showHeader, data, ...rest }) => (
   }
   .bx--data-table-v2-container {
     /* if the table is empty, go fullscreen */
-    ${props => (props.data && props.data.length > 0 ? `max-height: 435px;` : `height: 100%`)}
+    ${props =>
+      props.data && props.data.length > 0 && !props.isExpanded
+        ? `max-height: 435px;`
+        : props.isExpanded
+        ? `height: 90%`
+        : `height: 100%`}
   }
   .bx--data-table-v2 {
     ${props => (props.data && props.data.length > 0 ? `height: initial` : `height: 100%`)}
@@ -159,8 +164,8 @@ const defaultProps = {
     filterButtonAria: 'Filters',
     defaultFilterStringPlaceholdText: 'Type and hit enter to apply',
     downloadIconDescription: 'Download table content',
-    emptyMessage: 'There are no alerts in this range.',
     severityLabel: 'Severity',
+    emptyMessage: 'There is no data for this time range.',
   },
 };
 /**
@@ -229,7 +234,7 @@ const determinePrecisionAndValue = (precision, value) => {
 const TableCard = ({
   id,
   title,
-  content: { columns = [], showHeader, expandedRows, sort, thresholds },
+  content: { columns = [], showHeader, expandedRows, sort, thresholds, emptyMessage, isExpanded },
   size,
   onCardAction,
   values: data,
@@ -652,6 +657,7 @@ const TableCard = ({
       <StyledStatefulTable
         columns={columnsToRender}
         data={tableDataOnContent}
+        isExpanded={isExpanded}
         options={{
           hasPagination: true,
           hasSearch: true,
@@ -673,8 +679,8 @@ const TableCard = ({
         }}
         view={{
           pagination: {
-            pageSize: 10,
-            pageSizes: [10],
+            pageSize: !isExpanded ? 10 : 20,
+            pageSizes: !isExpanded ? [10] : [20],
             isItemPerPageHidden: true,
           },
           toolbar: {
@@ -701,7 +707,7 @@ const TableCard = ({
                 }
               : {}),
             emptyState: {
-              message: strings.emptyMessage,
+              message: emptyMessage || strings.emptyMessage,
             },
           },
         }}
