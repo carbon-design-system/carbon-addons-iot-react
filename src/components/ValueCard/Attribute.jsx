@@ -118,13 +118,13 @@ const Attribute = ({
     .filter(t => {
       switch (t.comparison) {
         case '<':
-          return value < t.value;
+          return !isNil(value) && value < t.value;
         case '>':
           return value > t.value;
         case '=':
           return value === t.value;
         case '<=':
-          return value <= t.value;
+          return !isNil(value) && value <= t.value;
         case '>=':
           return value >= t.value;
         default:
