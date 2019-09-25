@@ -413,6 +413,7 @@ const TableBodyRow = ({
         const offset = firstVisibleColIndex === idx ? nestingOffset : 0;
         return !col.isHidden ? (
           <StyledTableCellRow
+            id={`cell-${id}-${col.columnId}`}
             key={col.columnId}
             data-column={col.columnId}
             data-offset={offset}
