@@ -20,7 +20,7 @@ import Close16 from '@carbon/icons-react/lib/close/16';
 import ChevronDown16 from '@carbon/icons-react/lib/chevron--down/16';
 import Popup20 from '@carbon/icons-react/lib/popup/20';
 import styled from 'styled-components';
-import sizeMe from 'react-sizeme';
+import SizeMe from 'react-sizeme';
 
 import {
   CARD_TITLE_HEIGHT,
@@ -38,19 +38,16 @@ import { getCardMinSize } from '../../utils/componentUtilityFunctions';
 const OptimizedSkeletonText = pure(SkeletonText);
 
 /** Full card */
-const CardWrapper = sizeMe({})(styled(({ size, isExpanded, dimensions, ...rest }) => (
-  <div {...rest} />
-))`
+const CardWrapper = styled.div`
   background: white;
   height: ${props => props.dimensions.y}px;
   ${props => (props.isExpanded ? 'height: 100%; width: 100%;' : '')};
   display: flex;
   flex-direction: column;
   span#timeRange {
-    display: ${props =>
-      props.size && props.size.width && props.size.width < 230 ? `none` : `flex`};
+    display: ${props => (props.cardWidthSize < 230 ? `none` : `flex`)};
   }
-`);
+`;
 
 /** Header */
 export const CardHeader = styled.div`
@@ -229,13 +226,16 @@ const Card = ({
   // Need to convert to class components to give OverflowMenu somewhere to pass the ref
   const ToolbarTitleClass = toClass(ToolbarTitle);
   const ToolbarOptionClass = toClass(ToolbarOption);
-  const timeBoxSelection = (
+
+  const timeBoxSelection = sizeWidth => (
     <ToolbarItem>
       <TimeRangeLabel id="timeRange">{timeBoxLabels[timeRange]}</TimeRangeLabel>
       <StyledOverflowMenu
         floatingMenu
         renderIcon={ChevronDown16}
-        iconDescription={strings.overflowMenuDescription}
+        iconDescription={
+          sizeWidth < 230 ? timeBoxLabels[timeRange] : strings.overflowMenuDescription
+        }
       >
         <ToolbarTitleClass title={strings.timeRangeLabel} />
         <ToolbarOptionClass>
@@ -269,108 +269,119 @@ const Card = ({
     </ToolbarItem>
   );
 
-  const toolbar = isEditable ? (
-    <StyledToolbar key={tooltipId}>
-      {(mergedAvailableActions.edit ||
-        mergedAvailableActions.clone ||
-        mergedAvailableActions.delete) && (
-        <ToolbarItem>
-          <OverflowMenu floatingMenu>
-            {mergedAvailableActions.edit && (
-              <OverflowMenuItem
+  const toolbar = sizeWidth =>
+    isEditable ? (
+      <StyledToolbar key={tooltipId}>
+        {(mergedAvailableActions.edit ||
+          mergedAvailableActions.clone ||
+          mergedAvailableActions.delete) && (
+          <ToolbarItem>
+            <OverflowMenu floatingMenu>
+              {mergedAvailableActions.edit && (
+                <OverflowMenuItem
+                  onClick={() => {
+                    setTooltipId(uuidv1());
+                    onCardAction(id, 'EDIT_CARD');
+                  }}
+                  itemText={strings.editCardLabel}
+                />
+              )}
+              {mergedAvailableActions.clone && (
+                <OverflowMenuItem
+                  onClick={() => {
+                    setTooltipId(uuidv1());
+                    onCardAction(id, 'CLONE_CARD');
+                  }}
+                  itemText={strings.cloneCardLabel}
+                />
+              )}
+              {mergedAvailableActions.delete && (
+                <OverflowMenuItem
+                  isDelete
+                  onClick={() => {
+                    setTooltipId(uuidv1());
+                    onCardAction(id, 'DELETE_CARD');
+                  }}
+                  itemText={strings.deleteCardLabel}
+                />
+              )}
+            </OverflowMenu>
+          </ToolbarItem>
+        )}
+      </StyledToolbar>
+    ) : (
+      <StyledToolbar key={tooltipId}>
+        {mergedAvailableActions.range && timeBoxSelection(sizeWidth)}
+        {mergedAvailableActions.expand && (
+          <ToolbarItem>
+            {isExpanded ? (
+              <TinyButton
+                kind="ghost"
+                small
+                renderIcon={Close16}
+                iconDescription={closeLabel}
+                onClick={() => onCardAction(id, 'CLOSE_EXPANDED_CARD')}
+              />
+            ) : (
+              <TinyButton
+                kind="ghost"
+                small
+                renderIcon={Popup20}
+                iconDescription={strings.expandLabel}
+                title={strings.expandLabel}
                 onClick={() => {
-                  setTooltipId(uuidv1());
-                  onCardAction(id, 'EDIT_CARD');
+                  onCardAction(id, 'OPEN_EXPANDED_CARD');
                 }}
-                itemText={strings.editCardLabel}
               />
             )}
-            {mergedAvailableActions.clone && (
-              <OverflowMenuItem
-                onClick={() => {
-                  setTooltipId(uuidv1());
-                  onCardAction(id, 'CLONE_CARD');
-                }}
-                itemText={strings.cloneCardLabel}
-              />
-            )}
-            {mergedAvailableActions.delete && (
-              <OverflowMenuItem
-                isDelete
-                onClick={() => {
-                  setTooltipId(uuidv1());
-                  onCardAction(id, 'DELETE_CARD');
-                }}
-                itemText={strings.deleteCardLabel}
-              />
-            )}
-          </OverflowMenu>
-        </ToolbarItem>
-      )}
-    </StyledToolbar>
-  ) : (
-    <StyledToolbar key={tooltipId}>
-      {mergedAvailableActions.range && timeBoxSelection}
-      {mergedAvailableActions.expand && (
-        <ToolbarItem>
-          {isExpanded ? (
-            <TinyButton
-              kind="ghost"
-              small
-              renderIcon={Close16}
-              iconDescription={closeLabel}
-              onClick={() => onCardAction(id, 'CLOSE_EXPANDED_CARD')}
-            />
-          ) : (
-            <TinyButton
-              kind="ghost"
-              small
-              renderIcon={Popup20}
-              iconDescription={strings.expandLabel}
-              title={strings.expandLabel}
-              onClick={() => {
-                onCardAction(id, 'OPEN_EXPANDED_CARD');
-              }}
-            />
-          )}
-        </ToolbarItem>
-      )}
-    </StyledToolbar>
-  );
+          </ToolbarItem>
+        )}
+      </StyledToolbar>
+    );
 
   return (
-    <CardWrapper id={id} dimensions={dimensions} isExpanded={isExpanded} {...others}>
-      <CardHeader>
-        <CardTitle title={title}>
-          {title}&nbsp;
-          {tooltip && <Tooltip triggerText="">{tooltip}</Tooltip>}
-        </CardTitle>
-        {toolbar}
-      </CardHeader>
-      <CardContent dimensions={dimensions}>
-        {isLoading ? (
-          <SkeletonWrapper>
-            <OptimizedSkeletonText
-              paragraph
-              lineCount={size === CARD_SIZES.XSMALL || size === CARD_SIZES.XSMALLWIDE ? 2 : 3}
-              width="100%"
-            />
-          </SkeletonWrapper>
-        ) : error ? (
-          <EmptyMessageWrapper>
-            {size === CARD_SIZES.XSMALL || size === CARD_SIZES.XSMALLWIDE
-              ? strings.errorLoadingDataShortLabel
-              : `${strings.errorLoadingDataLabel} ${error}`}
-          </EmptyMessageWrapper>
-        ) : isEmpty && !isEditable ? (
-          <EmptyMessageWrapper>
-            {isXS ? strings.noDataShortLabel : strings.noDataLabel}
-          </EmptyMessageWrapper>
-        ) : (
-          children
-        )}
-      </CardContent>
-    </CardWrapper>
+    <SizeMe.SizeMe>
+      {({ size: sizeWidth }) => (
+        <CardWrapper
+          id={id}
+          dimensions={dimensions}
+          isExpanded={isExpanded}
+          cardWidthSize={sizeWidth.width}
+          {...others}
+        >
+          <CardHeader>
+            <CardTitle title={title}>
+              {title}&nbsp;
+              {tooltip && <Tooltip triggerText="">{tooltip}</Tooltip>}
+            </CardTitle>
+            {toolbar(sizeWidth.width)}
+          </CardHeader>
+          <CardContent dimensions={dimensions}>
+            {isLoading ? (
+              <SkeletonWrapper>
+                <OptimizedSkeletonText
+                  paragraph
+                  lineCount={size === CARD_SIZES.XSMALL || size === CARD_SIZES.XSMALLWIDE ? 2 : 3}
+                  width="100%"
+                />
+              </SkeletonWrapper>
+            ) : error ? (
+              <EmptyMessageWrapper>
+                {size === CARD_SIZES.XSMALL || size === CARD_SIZES.XSMALLWIDE
+                  ? strings.errorLoadingDataShortLabel
+                  : `${strings.errorLoadingDataLabel} ${error}`}
+              </EmptyMessageWrapper>
+            ) : isEmpty && !isEditable ? (
+              <EmptyMessageWrapper>
+                {isXS ? strings.noDataShortLabel : strings.noDataLabel}
+              </EmptyMessageWrapper>
+            ) : (
+              children
+            )}
+          </CardContent>
+        </CardWrapper>
+      )}
+    </SizeMe.SizeMe>
   );
 };
 
