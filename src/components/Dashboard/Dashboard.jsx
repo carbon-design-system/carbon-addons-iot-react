@@ -89,7 +89,6 @@ const propTypes = {
   onBreakpointChange: PropTypes.func,
   /** Callback called when an action is clicked.  The id of the action is passed to the callback */
   onDashboardAction: PropTypes.func,
-  onCardAction: PropTypes.func,
   /** Is the dashboard in edit mode? */
   isEditable: PropTypes.bool,
   /** Is the dashboard loading data */
@@ -283,7 +282,6 @@ const StyledGridLayout = styled(GridLayout)`
 /** This component is a dumb component and only knows how to render itself */
 const Dashboard = ({
   cards,
-  onCardAction,
   title,
   description,
   lastUpdated,
