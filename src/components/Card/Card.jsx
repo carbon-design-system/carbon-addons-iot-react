@@ -20,6 +20,7 @@ import Close16 from '@carbon/icons-react/lib/close/16';
 import ChevronDown16 from '@carbon/icons-react/lib/chevron--down/16';
 import Popup20 from '@carbon/icons-react/lib/popup/20';
 import styled from 'styled-components';
+import sizeMe from 'react-sizeme';
 
 import {
   CARD_TITLE_HEIGHT,
@@ -37,13 +38,19 @@ import { getCardMinSize } from '../../utils/componentUtilityFunctions';
 const OptimizedSkeletonText = pure(SkeletonText);
 
 /** Full card */
-const CardWrapper = styled.div`
+const CardWrapper = sizeMe({})(styled(({ size, isExpanded, dimensions, ...rest }) => (
+  <div {...rest} />
+))`
   background: white;
   height: ${props => props.dimensions.y}px;
   ${props => (props.isExpanded ? 'height: 100%; width: 100%;' : '')};
   display: flex;
   flex-direction: column;
-`;
+  span#timeRange {
+    display: ${props =>
+      props.size && props.size.width && props.size.width < 230 ? `none` : `flex`};
+  }
+`);
 
 /** Header */
 export const CardHeader = styled.div`
@@ -224,7 +231,7 @@ const Card = ({
   const ToolbarOptionClass = toClass(ToolbarOption);
   const timeBoxSelection = (
     <ToolbarItem>
-      <TimeRangeLabel>{timeBoxLabels[timeRange]}</TimeRangeLabel>
+      <TimeRangeLabel id="timeRange">{timeBoxLabels[timeRange]}</TimeRangeLabel>
       <StyledOverflowMenu
         floatingMenu
         renderIcon={ChevronDown16}
