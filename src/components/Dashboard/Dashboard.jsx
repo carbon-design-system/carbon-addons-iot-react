@@ -7,6 +7,7 @@ import styled from 'styled-components';
 import find from 'lodash/find';
 import merge from 'lodash/merge';
 import omit from 'lodash/omit';
+import useDeepCompareEffect from 'use-deep-compare-effect';
 
 import { getLayout } from '../../utils/componentUtilityFunctions';
 import { determineCardRange, compareGrains } from '../../utils/cardUtilityFunctions';
@@ -308,6 +309,14 @@ const Dashboard = ({
 
   // card state
   const [cardsState, setCards] = useState(cards);
+
+  // use Effec to update card state
+  useDeepCompareEffect(
+    () => {
+      setCards(cards);
+    },
+    [cards]
+  );
 
   /** Function to handle card update */
   const updateCardInDashboard = newCard =>
