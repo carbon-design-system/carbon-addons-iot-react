@@ -204,6 +204,21 @@ const originalCards = [
     interval: 'hour',
     timeRange: 'last7Days',
     availableActions: { range: true },
+    dataSource: {
+      attributes: [
+        {
+          aggregator: 'last',
+          attribute: 'speed',
+          id: 'speed_Claudia_Sample_Robot_Type_last',
+        },
+      ],
+      groupBy: ['deviceid'],
+      range: {
+        count: -7,
+        interval: 'day',
+      },
+      timeGrain: 'day',
+    },
   },
   {
     title: 'Alerts',
@@ -305,6 +320,21 @@ const originalCards = [
     interval: 'month',
     timeRange: 'lastYear',
     availableActions: { range: true },
+    dataSource: {
+      attributes: [
+        {
+          aggregator: 'last',
+          attribute: 'speed',
+          id: 'speed_Claudia_Sample_Robot_Type_last',
+        },
+      ],
+      groupBy: ['deviceid'],
+      range: {
+        count: -7,
+        interval: 'day',
+      },
+      timeGrain: 'day',
+    },
   },
   {
     title: 'Floor Map',
@@ -447,6 +477,19 @@ const StatefulDashboard = ({ ...props }) => {
 };
 
 storiesOf('Dashboard (Experimental)', module)
+  .add('basic dashboard', () => {
+    return (
+      <Dashboard
+        title={text('title', 'Munich Building')}
+        cards={originalCards}
+        lastUpdated={Date()}
+        isEditable={boolean('isEditable', false)}
+        isLoading={boolean('isLoading', false)}
+        onBreakpointChange={action('onBreakpointChange')}
+        onLayoutChange={action('onLayoutChange')}
+      />
+    );
+  })
   .add('basic', () => {
     return (
       <StatefulDashboard

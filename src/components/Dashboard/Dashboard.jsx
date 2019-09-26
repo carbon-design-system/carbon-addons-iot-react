@@ -5,8 +5,11 @@ import 'react-grid-layout/css/styles.css';
 import 'react-resizable/css/styles.css';
 import styled from 'styled-components';
 import find from 'lodash/find';
+import merge from 'lodash/merge';
+import omit from 'lodash/omit';
 
 import { getLayout } from '../../utils/componentUtilityFunctions';
+import { determineCardRange, compareGrains } from '../../utils/cardUtilityFunctions';
 import {
   CardSizesToDimensionsPropTypes,
   RowHeightPropTypes,
@@ -170,6 +173,9 @@ const propTypes = {
   }),
   /** If the header should render the last updated section */
   hasLastUpdated: PropTypes.bool,
+
+  // new props after migration
+  timeGrain: PropTypes.string,
 };
 
 const defaultProps = {
@@ -261,6 +267,7 @@ const defaultProps = {
   sidebar: null,
   actions: [],
   hasLastUpdated: true,
+  timeGrain: null,
 };
 
 const GridLayout = WidthProvider(Responsive);
@@ -297,8 +304,63 @@ const Dashboard = ({
   className,
   actions,
   onDashboardAction,
+  timeGrain,
 }) => {
   const [breakpoint, setBreakpoint] = useState('lg');
+
+  // card state
+  const [cardsState, setCards] = useState(cards);
+
+  /** Function to handle card update */
+  const updateCardInDashboard = newCard =>
+    setCards(cardsState.map(card => (card.id === newCard.id ? newCard : card)));
+
+  // onCardAction, should have the default ones by the dashboard eg. expand other are merged from the prop
+  const handleCardAction = (id, type, payload) => {
+    // Find the right card to be updated
+    const card = cardsState.find(cardItem => cardItem.id === id);
+
+    // change time range iin card
+    if (type === 'CHANGE_TIME_RANGE') {
+      const { range: requestedRange } = payload;
+      const range = determineCardRange(requestedRange);
+
+      updateCardInDashboard({
+        ...card,
+        dataSource: {
+          ...card.dataSource,
+          range: {
+            ...card.dataSource.range,
+            ...omit(range, 'timeGrain'),
+          },
+          // Use the maximum selected grain betweeen the dashboard and the current range
+          timeGrain: compareGrains(timeGrain, range.timeGrain) < 1 ? range.timeGrain : timeGrain,
+        },
+        needsRefresh: true,
+      });
+    }
+
+    // expand card
+    if (type === 'OPEN_EXPANDED_CARD') {
+      updateCardInDashboard({
+        ...card,
+        content: {
+          ...card.content,
+          isExpanded: true,
+        },
+        isExpanded: true,
+        availableActions: merge(card.availableActions, {
+          // we will create a new card so we need to "enable" the expand so can close
+          expand: true,
+        }),
+      });
+    }
+
+    // close expanded card
+    if (type === 'CLOSE_EXPANDED_CARD') {
+      updateCardInDashboard({ ...card, isExpanded: false });
+    }
+  };
 
   const renderCard = card => (
     <div
@@ -311,7 +373,7 @@ const Dashboard = ({
           i18n={i18n}
           isLoading={card.isLoading || isLoading}
           isEditable={isEditable}
-          onCardAction={onCardAction}
+          onCardAction={handleCardAction}
           key={card.id}
           breakpoint={breakpoint}
           dashboardBreakpoints={dashboardBreakpoints}
@@ -326,7 +388,7 @@ const Dashboard = ({
           i18n={i18n}
           isLoading={card.isLoading || isLoading}
           isEditable={isEditable}
-          onCardAction={onCardAction}
+          onCardAction={handleCardAction}
           key={card.id}
           breakpoint={breakpoint}
           dashboardBreakpoints={dashboardBreakpoints}
@@ -341,7 +403,7 @@ const Dashboard = ({
           i18n={i18n}
           isLoading={card.isLoading || isLoading}
           isEditable={isEditable}
-          onCardAction={onCardAction}
+          onCardAction={handleCardAction}
           key={card.id}
           breakpoint={breakpoint}
           dashboardBreakpoints={dashboardBreakpoints}
@@ -356,7 +418,7 @@ const Dashboard = ({
           i18n={i18n}
           isLoading={card.isLoading || isLoading}
           isEditable={isEditable}
-          onCardAction={onCardAction}
+          onCardAction={handleCardAction}
           key={card.id}
           breakpoint={breakpoint}
           dashboardBreakpoints={dashboardBreakpoints}
@@ -371,7 +433,7 @@ const Dashboard = ({
           i18n={i18n}
           isLoading={card.isLoading || isLoading}
           isEditable={isEditable}
-          onCardAction={onCardAction}
+          onCardAction={handleCardAction}
           key={card.id}
           breakpoint={breakpoint}
           dashboardBreakpoints={dashboardBreakpoints}
@@ -386,7 +448,7 @@ const Dashboard = ({
           i18n={i18n}
           isLoading={card.isLoading || isLoading}
           isEditable={isEditable}
-          onCardAction={onCardAction}
+          onCardAction={handleCardAction}
           key={card.id}
           breakpoint={breakpoint}
           dashboardBreakpoints={dashboardBreakpoints}
@@ -401,7 +463,7 @@ const Dashboard = ({
           i18n={i18n}
           isLoading={card.isLoading || isLoading}
           isEditable={isEditable}
-          onCardAction={onCardAction}
+          onCardAction={handleCardAction}
           key={card.id}
           breakpoint={breakpoint}
           dashboardBreakpoints={dashboardBreakpoints}
@@ -420,22 +482,22 @@ const Dashboard = ({
         layouts && layouts[layoutName]
           ? layouts[layoutName].map(layout => {
               // if we can't find the card from the layout, assume small
-              let matchingCard = find(cards, { id: layout.i });
+              let matchingCard = find(cardsState, { id: layout.i });
               if (!matchingCard) {
                 console.error(`Error with your layout. Card with id: ${layout.i} not found`); //eslint-disable-line
                 matchingCard = { size: CARD_SIZES.SMALL };
               }
               return { ...layout, ...cardDimensions[matchingCard.size][layoutName] };
             })
-          : getLayout(layoutName, cards, dashboardColumns, cardDimensions),
+          : getLayout(layoutName, cardsState, dashboardColumns, cardDimensions),
     };
   }, {});
 
   // TODO: Can we pickup the GUTTER size and PADDING from the carbon grid styles? or css variables?
   // console.log(generatedLayouts);
 
-  const gridContents = cards.map(card => renderCard(card));
-  const expandedCard = cards.find(i => i.isExpanded) || null;
+  const gridContents = cardsState.map(card => renderCard(card));
+  const expandedCard = cardsState.find(i => i.isExpanded) || null;
 
   return (
     <div className={className}>
