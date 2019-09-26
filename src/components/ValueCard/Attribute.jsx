@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import isNil from 'lodash/isNil';
 import { Icon } from 'carbon-components-react';
-import { iconCaretUp, iconCaretDown } from 'carbon-icons';
 import withSize from 'react-sizeme';
 
+import icons from '../../utils/bundledIcons';
 import { CARD_LAYOUTS, CARD_SIZES } from '../../constants/LayoutConstants';
 
 import ValueRenderer from './ValueRenderer';
@@ -132,6 +132,9 @@ const Attribute = ({
       }
     })
     .concat([null])[0];
+
+  console.log(matchingThreshold);
+
   const valueColor =
     matchingThreshold && matchingThreshold.icon === undefined ? matchingThreshold.color : null;
   const thresholdIcon =
@@ -139,8 +142,8 @@ const Attribute = ({
       <ThresholdIconWrapper isMini={isMini}>
         <ThresholdIcon
           iconTitle={`${matchingThreshold.comparison} ${matchingThreshold.value}`}
-          name={matchingThreshold.icon}
-          color={matchingThreshold.color}
+          icon={icons[matchingThreshold.icon]}
+          fill={matchingThreshold.color}
         />
       </ThresholdIconWrapper>
     ) : null;
@@ -182,9 +185,9 @@ const Attribute = ({
                 isMini={isMini}
               >
                 {secondaryValue.trend && secondaryValue.trend === 'up' ? (
-                  <TrendIcon icon={iconCaretUp} />
+                  <TrendIcon icon={icons.caretUp} />
                 ) : secondaryValue.trend === 'down' ? (
-                  <TrendIcon icon={iconCaretDown} />
+                  <TrendIcon icon={icons.caretDown} />
                 ) : null}
                 {!isMini && secondaryValue.value}
               </AttributeSecondaryValue>

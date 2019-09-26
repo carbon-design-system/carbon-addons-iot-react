@@ -1,7 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { text, object, boolean } from '@storybook/addon-knobs';
-import Warning from '@carbon/icons-react/lib/warning--alt--filled/20';
 
 import ImageHotspots from './ImageHotspots';
 import landscape from './landscape.jpg';
@@ -14,8 +13,8 @@ const hotspots = [
     x: 10,
     y: 20,
     content: <span style={{ padding: '10px' }}>Hotspot1</span>,
-    icon: Warning,
-    color: 'white',
+    icon: 'warning',
+    color: 'red',
     width: 20,
     height: 20,
   },
@@ -23,7 +22,7 @@ const hotspots = [
     x: 50,
     y: 10,
     content: <span style={{ padding: '10px' }}>Hotspot2</span>,
-    icon: Warning,
+    icon: 'warning',
   },
   { x: 30, y: 40, content: <span style={{ padding: '10px' }}>Hotspot3</span> },
   { x: 50, y: 60, content: <span style={{ padding: '10px' }}>Hotspot4</span>, color: 'green' },

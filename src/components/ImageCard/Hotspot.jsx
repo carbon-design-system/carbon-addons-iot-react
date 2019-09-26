@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { Tooltip } from 'carbon-components-react';
+import { Icon, Tooltip } from 'carbon-components-react';
+
+import icons from '../../utils/bundledIcons';
 
 export const propTypes = {
   /** percentage from the left of the image to show this hotspot */
@@ -10,8 +12,10 @@ export const propTypes = {
   y: PropTypes.number.isRequired,
   /** the content of the hotspot */
   content: PropTypes.element.isRequired,
-  /** points to the name of a carbon icon that will trigger the hotspot (see https://v9.carbondesignsystem.com/guidelines/iconography/library) */
-  icon: PropTypes.oneOfType([PropTypes.func, PropTypes.object, PropTypes.string]),
+  /** points to one of our enumerated icon names (ex. caretUp, edit, close)
+   * TODO: add support for the carbon icon object (svgData, viewBox, width, height)
+   */
+  icon: PropTypes.string,
   /** color of the hotspot */
   color: PropTypes.string,
   /** width of the hotspot */
@@ -56,7 +60,7 @@ const StyledHotspot = styled(({ className, children }) => (
 /**
  * This component renders a hotspot with content over an image
  */
-const Hotspot = ({ x, y, content, icon: Icon, color, width, height, ...others }) => {
+const Hotspot = ({ x, y, content, icon, color, width, height, ...others }) => {
   const defaultIcon = (
     <svg width={width} height={height}>
       <circle
@@ -70,14 +74,20 @@ const Hotspot = ({ x, y, content, icon: Icon, color, width, height, ...others })
       />
     </svg>
   );
+  console.log();
 
   return (
-    <StyledHotspot x={x} y={y} width={width} height={height} icon={Icon}>
+    <StyledHotspot x={x} y={y} width={width} height={height} icon={icon}>
       <Tooltip
         {...others}
         triggerText={
-          Icon ? (
-            <Icon fill={color} width={parseInt(width, 10)} height={parseInt(height, 10)} />
+          icon ? (
+            <Icon
+              icon={icons[icon]}
+              fill={color}
+              width={parseInt(width, 10)}
+              height={parseInt(height, 10)}
+            />
           ) : (
             defaultIcon
           )

@@ -2,9 +2,8 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { text, select, object } from '@storybook/addon-knobs';
 import omit from 'lodash/omit';
-import ArrowDown from '@carbon/icons-react/lib/arrow--down/20';
-import ArrowUp from '@carbon/icons-react/lib/arrow--up/20';
 
+import icons from '../../utils/bundledIcons';
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 import { getCardMinSize } from '../../utils/componentUtilityFunctions';
 
@@ -22,7 +21,7 @@ const values = {
     {
       x: 35,
       y: 65,
-      icon: ArrowDown,
+      icon: 'arrowDown',
       content: <span style={{ padding: '10px' }}>Elevators</span>,
     },
     {
@@ -40,7 +39,7 @@ const values = {
     {
       x: 45,
       y: 75,
-      icon: ArrowUp,
+      icon: 'arrowUp',
       content: <span style={{ padding: '10px' }}>Humidity Sensor</span>,
     },
   ],

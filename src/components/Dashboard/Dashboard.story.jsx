@@ -1,13 +1,8 @@
 import React, { useState } from 'react';
-import Edit from '@carbon/icons-react/lib/edit/16';
-import Close from '@carbon/icons-react/lib/close--filled/16';
-import Checkmark from '@carbon/icons-react/lib/checkmark--filled/16';
-import Warning from '@carbon/icons-react/lib/warning--filled/16';
-import ArrowDown from '@carbon/icons-react/lib/arrow--down/16';
-import ArrowUp from '@carbon/icons-react/lib/arrow--up/16';
 import { text, boolean } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
+
 /*
 import uuidv1 from 'uuid/v1';
 */
@@ -125,8 +120,8 @@ const originalCards = [
         {
           dataSourceId: 'comfortLevel',
           thresholds: [
-            { comparison: '=', value: 'Good', icon: Checkmark, color: 'green' },
-            { comparison: '=', value: 'Bad', icon: Close, color: 'red' },
+            { comparison: '=', value: 'Good', icon: 'checkmark', color: 'green' },
+            { comparison: '=', value: 'Bad', icon: 'close', color: 'red' },
           ],
         },
       ],
@@ -183,8 +178,8 @@ const originalCards = [
         {
           dataSourceId: 'health',
           thresholds: [
-            { comparison: '=', value: 'Healthy', icon: Checkmark, color: 'green' },
-            { comparison: '=', value: 'Unhealthy', icon: Close, color: 'red' },
+            { comparison: '=', value: 'Healthy', icon: 'checkmark', color: 'green' },
+            { comparison: '=', value: 'Unhealthy', icon: 'close', color: 'red' },
           ],
         },
       ],
@@ -328,7 +323,7 @@ const originalCards = [
         {
           x: 35,
           y: 65,
-          icon: ArrowDown,
+          icon: 'arrowDown',
           content: <span style={{ padding: '10px' }}>Elevators</span>,
         },
         {
@@ -346,7 +341,7 @@ const originalCards = [
         {
           x: 45,
           y: 75,
-          icon: ArrowUp,
+          icon: 'arrowUp',
           content: <span style={{ padding: '10px' }}>Humidity Sensor</span>,
         },
       ],
@@ -491,7 +486,7 @@ storiesOf('Watson IoT|Dashboard (Experimental)', module)
           isLoading={boolean('isLoading', false)}
           onBreakpointChange={action('onBreakpointChange')}
           onLayoutChange={action('onLayoutChange')}
-          actions={[{ id: 'edit', label: 'Edit', icon: Edit }]}
+          actions={[{ id: 'edit', label: 'Edit', icon: 'edit' }]}
           onDashboardAction={action('onDashboardAction')}
           hasLastUpdated={false}
         />
@@ -624,10 +619,10 @@ storiesOf('Watson IoT|Dashboard (Experimental)', module)
   })
   .add('only value cards', () => {
     const numberThresholds = [
-      { comparison: '<', value: '40', color: 'red', icon: Close },
-      { comparison: '<', value: '70', color: 'green', icon: Checkmark },
-      { comparison: '<', value: '80', color: 'orange', icon: Warning },
-      { comparison: '>=', value: '90', color: 'red', icon: Close },
+      { comparison: '<', value: '40', color: 'red', icon: 'close' },
+      { comparison: '<', value: '70', color: 'green', icon: 'checkmark' },
+      { comparison: '<', value: '80', color: 'orange', icon: 'warning' },
+      { comparison: '>=', value: '90', color: 'red', icon: 'close' },
     ];
     const stringThresholds = [
       { comparison: '=', value: 'Low', color: 'green' },
@@ -637,11 +632,10 @@ storiesOf('Watson IoT|Dashboard (Experimental)', module)
       { comparison: '=', value: 'Severe', color: 'red' },
     ];
     const stringThresholdsWithIcons = [
-      { comparison: '=', value: 'Low', color: 'green', icon: Checkmark },
-      { comparison: '=', value: 'Guarded', color: 'blue', icon: Checkmark },
-      { comparison: '=', value: 'Elevated', color: 'gold', icon: Warning },
-      { comparison: '=', value: 'High', color: 'orange', icon: Warning },
-      { comparison: '=', value: 'Severe', color: 'red', icon: Close },
+      { comparison: '=', value: 'Low', color: 'green', icon: 'checkmark' },
+      { comparison: '=', value: 'Elevated', color: 'gold', icon: 'warning' },
+      { comparison: '=', value: 'High', color: 'orange', icon: 'warning' },
+      { comparison: '=', value: 'Severe', color: 'red', icon: 'close' },
     ];
     const extraProps = {
       lastUpdated: 'Now',
