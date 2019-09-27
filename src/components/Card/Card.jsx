@@ -340,7 +340,7 @@ const Card = ({
     );
 
   return (
-    <SizeMe.SizeMe disablePlaceholder>
+    <SizeMe.SizeMe>
       {({ size: sizeWidth }) => (
         <CardWrapper
           id={id}
