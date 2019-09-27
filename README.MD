@@ -86,7 +86,7 @@ carbon-addons-iot-react/
 
 Compiled CSS files are provided for ease of use getting started.
 
-A sass entrypoint is availble at `lib/scss/styles.scss` for use in your project.
+A sass entrypoint is available at `lib/scss/styles.scss` for use in your project.
 
 Using sass files (instead of the compiled .css) infers usage of a SCSS pre-processor. All Sass files use the `*.scss` file extension. For transpiling Sass code, use node-sass based Sass compilers, for example, WebPack sass-loader or gulp-sass. Make sure your build process uses autoprefixer to ensure vendor prefixes are automatically added to your output CSS.
 
@@ -94,7 +94,7 @@ Feedback and improvement requests regarding this configuration would be apprecia
 
 ## Dependencies
 
-Usage of this package does not require you to instal additional Carbon packages; `carbon-components`, `carbon-icons`, or `@carbon` packages (`@carbon/grid`, `@carbon-layout`, etc) as peer dependencies. You may still need these packages if you use them directly in your project.
+Usage of this package does not require you to install additional Carbon packages; `carbon-components`, `carbon-icons`, or `@carbon` packages (`@carbon/grid`, `@carbon-layout`, etc) as peer dependencies. You may still need these packages if you use them directly in your project.
 
 ## 📚 Docs
 
