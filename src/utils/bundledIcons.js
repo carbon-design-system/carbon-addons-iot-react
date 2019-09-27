@@ -9,6 +9,17 @@ import {
   iconArrowUp,
 } from 'carbon-icons';
 
+export const bundledIconNames = [
+  'caretUp',
+  'caretDown',
+  'edit',
+  'close',
+  'checkmark',
+  'warning',
+  'arrowUp',
+  'arrowDown',
+];
+
 export default {
   caretUp: iconCaretUp,
   caretDown: iconCaretDown,

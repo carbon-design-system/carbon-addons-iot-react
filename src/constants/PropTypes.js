@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types';
 
+import { bundledIconNames } from '../utils/bundledIcons';
+
 import { CARD_SIZES, CARD_LAYOUTS, DASHBOARD_SIZES } from './LayoutConstants';
 
 export const AttributePropTypes = PropTypes.shape({
@@ -17,7 +19,15 @@ export const AttributePropTypes = PropTypes.shape({
       comparison: PropTypes.oneOf(['<', '>', '=', '<=', '>=']).isRequired,
       value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
       color: PropTypes.string,
-      icon: PropTypes.string,
+      icon: PropTypes.oneOfType([
+        PropTypes.oneOf(bundledIconNames),
+        PropTypes.shape({
+          width: PropTypes.string,
+          height: PropTypes.string,
+          viewBox: PropTypes.string.isRequired,
+          svgData: PropTypes.object.isRequired,
+        }),
+      ]),
     })
   ),
   unit: PropTypes.string,
@@ -103,7 +113,15 @@ export const TableCardPropTypes = {
         PropTypes.shape({
           id: PropTypes.string.isRequired,
           label: PropTypes.string,
-          icon: PropTypes.string,
+          icon: PropTypes.oneOfType([
+            PropTypes.oneOf(bundledIconNames),
+            PropTypes.shape({
+              width: PropTypes.string,
+              height: PropTypes.string,
+              viewBox: PropTypes.string.isRequired,
+              svgData: PropTypes.object.isRequired,
+            }),
+          ]),
         })
       ),
     })

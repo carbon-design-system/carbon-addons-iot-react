@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Icon, Tooltip } from 'carbon-components-react';
 
-import icons from '../../utils/bundledIcons';
+import icons, { bundledIconNames } from '../../utils/bundledIcons';
 
 export const propTypes = {
   /** percentage from the left of the image to show this hotspot */
@@ -15,7 +15,17 @@ export const propTypes = {
   /** points to one of our enumerated icon names (ex. caretUp, edit, close)
    * TODO: add support for the carbon icon object (svgData, viewBox, width, height)
    */
-  icon: PropTypes.string,
+  icon: PropTypes.oneOfType([
+    PropTypes.oneOf(bundledIconNames),
+    PropTypes.shape({
+      width: PropTypes.string,
+      height: PropTypes.string,
+      viewBox: PropTypes.string.isRequired,
+      svgData: PropTypes.object.isRequired,
+    }),
+  ]),
+
+  iconDescription: PropTypes.string,
   /** color of the hotspot */
   color: PropTypes.string,
   /** width of the hotspot */
@@ -26,6 +36,7 @@ export const propTypes = {
 
 const defaultProps = {
   icon: null,
+  iconDescription: '',
   color: 'blue',
   width: 25,
   height: 25,
@@ -60,7 +71,7 @@ const StyledHotspot = styled(({ className, children }) => (
 /**
  * This component renders a hotspot with content over an image
  */
-const Hotspot = ({ x, y, content, icon, color, width, height, ...others }) => {
+const Hotspot = ({ x, y, content, icon, iconDescription, color, width, height, ...others }) => {
   const defaultIcon = (
     <svg width={width} height={height}>
       <circle
@@ -74,7 +85,6 @@ const Hotspot = ({ x, y, content, icon, color, width, height, ...others }) => {
       />
     </svg>
   );
-  console.log();
 
   return (
     <StyledHotspot x={x} y={y} width={width} height={height} icon={icon}>
@@ -85,8 +95,9 @@ const Hotspot = ({ x, y, content, icon, color, width, height, ...others }) => {
             <Icon
               icon={icons[icon]}
               fill={color}
-              width={parseInt(width, 10)}
-              height={parseInt(height, 10)}
+              width={parseInt(width, 10).toString()}
+              height={parseInt(height, 10).toString()}
+              description={iconDescription}
             />
           ) : (
             defaultIcon

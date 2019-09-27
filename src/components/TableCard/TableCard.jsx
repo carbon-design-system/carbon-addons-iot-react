@@ -161,6 +161,7 @@ const defaultProps = {
     defaultFilterStringPlaceholdText: 'Type and hit enter to apply',
     downloadIconDescription: 'Download table content',
     emptyMessage: 'There are no alerts in this range.',
+    overflowMenuIconDescription: 'More actions',
   },
 };
 /**
@@ -252,7 +253,12 @@ const TableCard = ({
         icon={actionList[0].icon}
       />
     ) : actionList && actionList.length > 1 ? (
-      <StyledOverflowMenu floatingMenu renderIcon={() => <OverFlowMenuIcon fill="#5a6872" />}>
+      <StyledOverflowMenu
+        floatingMenu
+        renderIcon={() => (
+          <OverFlowMenuIcon fill="#5a6872" description={i18n.overflowMenuIconDescription} />
+        )}
+      >
         {actionList.map(item => {
           return (
             <OverflowMenuItem
@@ -677,6 +683,7 @@ const TableCard = ({
                 kind="ghost"
                 small
                 renderIcon={Download16}
+                iconDescription={strings.downloadIconDescription}
                 onClick={() => csvDownloadHandler()}
                 title={strings.downloadIconDescription}
               />

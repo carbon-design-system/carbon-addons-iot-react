@@ -133,8 +133,6 @@ const Attribute = ({
     })
     .concat([null])[0];
 
-  console.log(matchingThreshold);
-
   const valueColor =
     matchingThreshold && matchingThreshold.icon === undefined ? matchingThreshold.color : null;
   const thresholdIcon =
@@ -144,6 +142,7 @@ const Attribute = ({
           iconTitle={`${matchingThreshold.comparison} ${matchingThreshold.value}`}
           icon={icons[matchingThreshold.icon]}
           fill={matchingThreshold.color}
+          description={`${matchingThreshold.comparison} ${matchingThreshold.value}`}
         />
       </ThresholdIconWrapper>
     ) : null;
