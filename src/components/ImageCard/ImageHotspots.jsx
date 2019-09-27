@@ -1,4 +1,5 @@
-import React, { useMemo, useRef, useState, useEffect } from 'react';
+import React, { useMemo, useRef, useState } from 'react';
+import useDeepCompareEffect from 'use-deep-compare-effect';
 import PropTypes from 'prop-types';
 import { InlineLoading } from 'carbon-components-react';
 
@@ -199,33 +200,50 @@ const zoom = (
   options,
   setOptions
 ) => {
-  if (scale > 0) {
-    const width = //eslint-disable-line
-      container.orientation === image.orientation
-        ? image.orientation === 'landscape'
-          ? image.ratio >= container.ratio
-            ? container.width * scale // landscape image bigger than landscape container
-            : container.height * image.ratio * scale // landscape image smaller than landscape container
-          : image.ratio >= container.ratio
-          ? (container.height / image.ratio) * scale // portrait image bigger than portrait container
-          : container.width * scale // portrait image smaller than portrait container
-        : image.orientation === 'landscape'
-        ? container.width * scale // landscape image and portrait container
-        : (container.height / image.ratio) * scale; // portrait image and landscape container
+  const width = //eslint-disable-line
+    container.orientation === image.orientation
+      ? image.orientation === 'landscape'
+        ? image.ratio >= container.ratio
+          ? container.width * scale // landscape image bigger than landscape container
+          : container.height * image.ratio * scale // landscape image smaller than landscape container
+        : image.ratio >= container.ratio
+        ? (container.height / image.ratio) * scale // portrait image bigger than portrait container
+        : container.width * scale // portrait image smaller than portrait container
+      : image.orientation === 'landscape'
+      ? container.width * scale // landscape image and portrait container
+      : (container.height / image.ratio) * scale; // portrait image and landscape container
 
-    const height = //eslint-disable-line
-      container.orientation === image.orientation
-        ? image.orientation === 'landscape'
-          ? image.ratio >= container.ratio
-            ? (container.width / image.ratio) * scale // landscape image bigger than landscape container
-            : container.height * scale // landscape image smaller than landscape container
-          : image.ratio >= container.ratio
-          ? container.height * scale // portrait image bigger than portrait container
-          : container.width * image.ratio * scale // portrait image smaller than portrait container
-        : image.orientation === 'landscape'
-        ? (container.width / image.ratio) * scale // landscape image and portrait container
-        : container.height * scale; // portrait image and landscape container
+  const height = //eslint-disable-line
+    container.orientation === image.orientation
+      ? image.orientation === 'landscape'
+        ? image.ratio >= container.ratio
+          ? (container.width / image.ratio) * scale // landscape image bigger than landscape container
+          : container.height * scale // landscape image smaller than landscape container
+        : image.ratio >= container.ratio
+        ? container.height * scale // portrait image bigger than portrait container
+        : container.width * image.ratio * scale // portrait image smaller than portrait container
+      : image.orientation === 'landscape'
+      ? (container.width / image.ratio) * scale // landscape image and portrait container
+      : container.height * scale; // portrait image and landscape container
 
+  // Reset image position
+  if (scale === 1) {
+    setImage({
+      ...image,
+      width,
+      height,
+      scale: 1,
+      offsetX: 0,
+      offsetY: container.height / 2 - height / 2,
+    });
+    setMinimap({
+      ...minimap,
+      guideHeight: minimap.height,
+      guideWidth: minimap.width,
+      offsetX: 0,
+      offsetY: 0,
+    });
+  } else if (scale > 0) {
     const guideWidth =
       container.width >= width ? minimap.width : minimap.width / (width / container.width);
     const guideHeight =
@@ -289,21 +307,28 @@ const zoom = (
       });
       setOptions({ ...options, draggable: scale > 1 });
     }
-
-    // Reset image position
-    if (scale === 1) {
-      setImage({
-        ...image,
-        offsetX: 0,
-        offsetY: container.height / 2 - height / 2,
-      });
-      setMinimap({
-        ...minimap,
-        offsetX: 0,
-        offsetY: 0,
-      });
-    }
   }
+};
+
+const onWindowResize = (
+  containerRef,
+  zoomMax,
+  container,
+  setContainer,
+  image,
+  setImage,
+  minimap,
+  setMinimap,
+  options,
+  setOptions
+) => {
+  // eslint-disable-line
+  const { offsetWidth: width, offsetHeight: height } = containerRef.current; // eslint-disable-line
+  const orientation = width > height ? 'landscape' : 'portrait'; // eslint-disable-line
+  const ratio = orientation === 'landscape' ? width / height : height / width;
+
+  setContainer({ width, height, ratio, orientation });
+  zoom(image.scale, zoomMax, container, image, setImage, minimap, setMinimap, options, setOptions);
 };
 
 /** Parent smart component with local state that renders an image with its hotspots */
@@ -339,41 +364,38 @@ const ImageHotspots = ({
     hideMinimapProp,
   });
 
-  const onWindowResize = () => {
-    const { offsetWidth: width, offsetHeight: height } = container.current; // eslint-disable-line
-    const orientation = width > height ? 'landscape' : 'portrait'; // eslint-disable-line
-    const ratio = orientation === 'landscape' ? width / height : height / width;
-
-    setContainer({ ...container, width, height, ratio, orientation });
-    zoom(
-      image.scale,
-      zoomMax,
-      container,
-      image,
-      setImage,
-      minimap,
-      setMinimap,
-      options,
-      setOptions
-    );
-  };
-
   // Once the component mounts set up the container info
-  useEffect(() => {
-    // TODO: Instead of storing the container state could we just pass these from the SizeMe down in render
-    // calculate the current size
-    const { offsetWidth: width, offsetHeight: height } = containerRef.current;
-    const orientation = width > height ? 'landscape' : 'portrait';
-    setContainer({
-      width,
-      height,
-      ratio: orientation === 'landscape' ? width / height : height / width,
-      orientation,
-      background: background || '#eee',
-    });
-    window.addEventListener('resize', onWindowResize);
-    return () => window.removeEventListener('resize', onWindowResize);
-  }, []); // eslint-disable-line
+  useDeepCompareEffect(
+    () => {
+      // TODO: Instead of storing the container state could we just pass these from the SizeMe down in render
+      // calculate the current size
+      const { offsetWidth: width, offsetHeight: height } = containerRef.current;
+      const orientation = width > height ? 'landscape' : 'portrait';
+      setContainer({
+        width,
+        height,
+        ratio: orientation === 'landscape' ? width / height : height / width,
+        orientation,
+        background: background || '#eee',
+      });
+      const resizeFunction = () =>
+        onWindowResize(
+          containerRef,
+          zoomMax,
+          container,
+          setContainer,
+          image,
+          setImage,
+          minimap,
+          setMinimap,
+          options,
+          setOptions
+        );
+      window.addEventListener('resize', resizeFunction);
+      return () => window.removeEventListener('resize', resizeFunction);
+    },
+    [background, container, image, minimap, options, zoomMax] // eslint-disable-line
+  );
 
   // Should I flatten cursor and get rid of?
   const { dragging } = cursor;
