@@ -106,16 +106,14 @@ const StyledStatefulTable = styled(({ showHeader, data, ...rest }) => (
     margin-left: 1rem;
   }
   .bx--data-table-v2-container {
-    /* if the table is empty, go fullscreen */
-    ${props =>
-      props.data && props.data.length > 0 && !props.isExpanded
-        ? `max-height: 435px;`
-        : props.isExpanded
-        ? `height: 90%`
-        : `height: 100%`}
+    ${props => (props.data && props.data.length > 0 ? `max-height: 435px;` : `height: 90%;`)}
   }
   .bx--data-table-v2 {
-    ${props => (props.data && props.data.length > 0 ? `height: initial` : `height: 100%`)}
+    /* if the table is empty, remove border */
+    ${props =>
+      props.data && props.data.length > 0
+        ? `height: initial;`
+        : `height: 100%;border-bottom: unset;`}
   }
 `;
 
