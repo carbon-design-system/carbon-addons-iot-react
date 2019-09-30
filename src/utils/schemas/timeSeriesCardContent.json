@@ -1,0 +1,70 @@
+{
+  "type": "object",
+  "required": ["content", "dataSource"],
+  "properties": {
+    "values": {
+      "type": "object"
+    },
+    "size": { "enum": ["SMALL", "MEDIUM", "WIDE", "LARGE", "XLARGE"] },
+    "content": {
+      "type": "object",
+      "properties": {
+        "series": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/line" },
+          "minItems": 1
+        },
+        "xLabel": {
+          "type": "string"
+        },
+        "yLabel": {
+          "type": "string"
+        },
+        "unit": {
+          "type": "string"
+        }
+      },
+      "required": ["series"],
+      "propertyNames": { "enum": ["series", "xLabel", "yLabel", "unit", "timeDataSourceId"] }
+    },
+    "dataSource": {
+      "type": "object",
+      "properties": {
+        "attributes": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/attribute" },
+          "minItems": 1
+        },
+        "timeGrain": { "enum": ["month", "day", "year", "hour", "week"] },
+        "groupBy": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        }
+      },
+      "required": ["attributes"],
+      "propertyNames": { "enum": ["attributes", "range", "timeGrain", "groupBy"] }
+    }
+  },
+  "definitions": {
+    "line": {
+      "type": "object",
+      "properties": {
+        "label": { "type": "string" },
+        "dataSourceId": { "type": "string" },
+        "color": { "type": "string" }
+      },
+      "required": ["label", "dataSourceId"],
+      "propertyNames": { "enum": ["label", "dataSourceId", "color"] }
+    },
+    "attribute": {
+      "type": "object",
+      "properties": {
+        "aggregator": {
+          "enum": ["max", "min", "mean", "last", "count", "first", "sum", "std"]
+        }
+      },
+      "required": ["aggregator"]
+    }
+  }
+}

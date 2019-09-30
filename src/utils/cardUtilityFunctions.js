@@ -1,3 +1,5 @@
+import { CARD_SIZES } from '../constants/LayoutConstants';
+
 /**
  * determine time range from drop down action
  * range - requested range from card dropdown action
@@ -60,4 +62,31 @@ export const compareGrains = (grain1, grain2) => {
     return -1;
   }
   return 1;
+};
+
+/** Determine the max value card attribute count */
+export const determineMaxValueCardAttributeCount = (size, currentAttributeCount) => {
+  let attributeCount = currentAttributeCount;
+  switch (size) {
+    case CARD_SIZES.XSMALL:
+      attributeCount = 1;
+      break;
+    case CARD_SIZES.XSMALLWIDE:
+      attributeCount = 2;
+      break;
+    case CARD_SIZES.MEDIUM:
+    case CARD_SIZES.SMALL:
+    case CARD_SIZES.WIDE:
+      attributeCount = 3;
+      break;
+    case CARD_SIZES.LARGE:
+      attributeCount = 5;
+      break;
+    case CARD_SIZES.TALL:
+    case CARD_SIZES.XLARGE:
+      attributeCount = 7;
+      break;
+    default:
+  }
+  return attributeCount;
 };

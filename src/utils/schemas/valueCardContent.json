@@ -1,0 +1,75 @@
+{
+  "type": "object",
+  "properties": {
+    "values": {
+      "type": "object"
+    },
+    "content": {
+      "type": "object",
+      "properties": {
+        "attributes": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/attribute" },
+          "minItems": 1
+        }
+      },
+      "required": ["attributes"]
+    },
+    "dataSource": {
+      "type": "object",
+      "required": ["attributes"],
+      "propertyNames": { "enum": ["attributes", "range"] }
+    }
+  },
+  "required": ["content", "dataSource"],
+  "definitions": {
+    "attribute": {
+      "type": "object",
+      "dataSourceId": { "type": "string" },
+      "label": { "type": "string" },
+      "unit": { "type": "string" },
+      "precision": { "type": "number" },
+      "required": ["dataSourceId"],
+      "aggregator": {
+        "enum": ["max", "min", "mean", "last", "first", "sum", "std", "count"]
+      },
+      "range": { "type": "#definitions/range" },
+      "thresholds": {
+        "type": "array",
+        "items": { "$ref": "#/definitions/threshold" },
+        "minItems": 1
+      },
+      "propertyNames": {
+        "enum": [
+          "value",
+          "dataSourceId",
+          "label",
+          "unit",
+          "precision",
+          "aggregator",
+          "range",
+          "thresholds"
+        ]
+      }
+    },
+    "threshold": {
+      "type": "object",
+      "required": ["comparison", "value"],
+      "propertyNames": { "enum": ["value", "comparison", "color", "icon"] },
+      "properties": {
+        "comparison": { "enum": ["<", ">", "=", "<=", ">="] },
+        "color": { "type": "string" },
+        "icon": { "type": "string" }
+      }
+    },
+    "range": {
+      "type": "object",
+      "properties": {
+        "count": { "type": "number" },
+        "interval": { "enum": ["hour", "day", "week", "month"] }
+      },
+      "propertyNames": { "enum": ["count", "interval"] },
+      "required": ["count", "interval"]
+    }
+  }
+}

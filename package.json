@@ -32,6 +32,7 @@
     }
   },
   "dependencies": {
+    "ajv": "^6.10.2",
     "c3": "^0.7.1",
     "classnames": "^2.2.5",
     "immutability-helper": "^2.9.0",
@@ -156,6 +157,7 @@
     "rollup-plugin-babel": "^4.3.0",
     "rollup-plugin-commonjs": "^9.2.0",
     "rollup-plugin-filesize": "^6.0.0",
+    "rollup-plugin-json": "^4.0.0",
     "rollup-plugin-node-resolve": "^4.0.0",
     "rollup-plugin-postcss": "^2.0.3",
     "rollup-plugin-replace": "^2.1.0",
