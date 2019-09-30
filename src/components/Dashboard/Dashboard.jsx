@@ -175,7 +175,7 @@ const propTypes = {
   hasLastUpdated: PropTypes.bool,
 
   // new props after migration
-  timeGrain: PropTypes.string,
+  timeGrainCallback: PropTypes.func,
 };
 
 const defaultProps = {
@@ -267,7 +267,7 @@ const defaultProps = {
   sidebar: null,
   actions: [],
   hasLastUpdated: true,
-  timeGrain: null,
+  timeGrainCallback: null,
 };
 
 const GridLayout = WidthProvider(Responsive);
@@ -303,7 +303,7 @@ const Dashboard = ({
   className,
   actions,
   onDashboardAction,
-  timeGrain,
+  timeGrainCallback,
 }) => {
   const [breakpoint, setBreakpoint] = useState('lg');
 
@@ -327,24 +327,9 @@ const Dashboard = ({
     // Find the right card to be updated
     const card = cardsState.find(cardItem => cardItem.id === id);
 
-    // change time range iin card
+    // callback time grain change from parent
     if (type === 'CHANGE_TIME_RANGE') {
-      const { range: requestedRange } = payload;
-      const range = determineCardRange(requestedRange);
-
-      updateCardInDashboard({
-        ...card,
-        dataSource: {
-          ...card.dataSource,
-          range: {
-            ...card.dataSource.range,
-            ...omit(range, 'timeGrain'),
-          },
-          // Use the maximum selected grain betweeen the dashboard and the current range
-          timeGrain: compareGrains(timeGrain, range.timeGrain) < 1 ? range.timeGrain : timeGrain,
-        },
-        needsRefresh: true,
-      });
+      return timeGrainCallback(id, type, payload);
     }
 
     // expand card
