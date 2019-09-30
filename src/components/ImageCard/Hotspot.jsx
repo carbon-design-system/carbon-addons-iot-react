@@ -58,13 +58,19 @@ const StyledHotspot = styled(({ className, children }) => (
       props.icon
         ? `
       border: solid 1px #aaa;
+      cursor: pointer;
       padding: 4px;
       background: white;
       opacity: 0.9;
       border-radius: 4px;
       box-shadow: 0 0 8px #777;
     `
-        : ``}
+        : `
+      cursor: pointer;
+      box-shadow: 0 0 4px #999;
+      border-radius: 13px;
+      background: none;
+        `}
   }
 `;
 
@@ -77,11 +83,19 @@ const Hotspot = ({ x, y, content, icon, iconDescription, color, width, height, .
       <circle
         cx={width / 2}
         cy={height / 2}
-        r={width / 2}
-        stroke={color}
-        strokeWidth="1"
-        fill={color}
+        r={width / 2 - 1}
+        stroke="white"
+        strokeWidth="2"
+        fill="none"
         opacity="1"
+      />
+      <circle
+        cx={width / 2}
+        cy={height / 2}
+        r={width / 2 - 1}
+        stroke="none"
+        fill={color}
+        opacity="0.7"
       />
     </svg>
   );

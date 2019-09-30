@@ -118,13 +118,13 @@ const Attribute = ({
     .filter(t => {
       switch (t.comparison) {
         case '<':
-          return value < t.value;
+          return !isNil(value) && value < t.value;
         case '>':
           return value > t.value;
         case '=':
           return value === t.value;
         case '<=':
-          return value <= t.value;
+          return !isNil(value) && value <= t.value;
         case '>=':
           return value >= t.value;
         default:
@@ -132,7 +132,6 @@ const Attribute = ({
       }
     })
     .concat([null])[0];
-
   const valueColor =
     matchingThreshold && matchingThreshold.icon === undefined ? matchingThreshold.color : null;
   const thresholdIcon =

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import { SkeletonText } from 'carbon-components-react';
+import { SkeletonText, Icon } from 'carbon-components-react';
 
 import { handleEnterKeyDown } from '../../utils/componentUtilityFunctions';
 import { COLORS } from '../../styles/styles';
@@ -25,7 +25,18 @@ const propTypes = {
       /** Unique id of the action */
       id: PropTypes.string.isRequired,
       /** icon ultimately gets passed through all the way to <Button>, which has this same copied proptype definition for icon */
-      icon: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
+      icon: PropTypes.oneOfType([
+        PropTypes.shape({
+          width: PropTypes.string,
+          height: PropTypes.string,
+          viewBox: PropTypes.string.isRequired,
+          svgData: PropTypes.object.isRequired,
+        }),
+        PropTypes.string,
+        PropTypes.node,
+      ]),
+      /** Optional custom component */
+      customActionComponent: PropTypes.node,
       labelText: PropTypes.string,
     })
   ),
@@ -59,7 +70,6 @@ const StyledLeft = styled.div`
   > h2 {
     font-size: 1.75rem;
     font-weight: 400;
-    line-height: 1.5;
     margin-bottom: 0rem;
   }
   > p,
@@ -91,7 +101,7 @@ const StyledActions = styled.div`
   flex-grow: 0;
   align-items: center;
   > div + div {
-    margin-left: 1rem;
+    margin-left: 1.5rem;
   }
 `;
 
@@ -120,17 +130,32 @@ const DashboardHeader = ({
       <StyledRight>
         {filter}
         <StyledActions>
-          {actions.map(action => (
-            <div
-              key={action.id}
-              tabIndex={0}
-              role="button"
-              onClick={() => onDashboardAction(action.id)}
-              onKeyDown={event => handleEnterKeyDown(event, () => onDashboardAction(action.id))}
-            >
-              <action.icon description={action.labelText} />
-            </div>
-          ))}
+          {actions.map(action =>
+            action.icon ? (
+              <div
+                key={action.id}
+                tabIndex={0}
+                role="button"
+                onClick={() => onDashboardAction(action.id)}
+                onKeyDown={event => handleEnterKeyDown(event, () => onDashboardAction(action.id))}
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  cursor: 'pointer',
+                }}
+              >
+                {typeof action.icon === 'string' ? (
+                  <Icon name={action.icon} description={action.labelText} />
+                ) : React.isValidElement(action.icon) ? (
+                  action.icon
+                ) : (
+                  <Icon {...action.icon} description={action.labelText} />
+                )}
+              </div>
+            ) : (
+              action.customActionComponent
+            )
+          )}
         </StyledActions>
       </StyledRight>
     </StyledDashboardHeader>

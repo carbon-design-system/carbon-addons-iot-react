@@ -95,4 +95,16 @@ storiesOf('Watson IoT|Dashboard Header (Experimental)', module)
         />
       </div>
     );
+  })
+  .add('with custom actions component', () => {
+    return (
+      <DashboardHeader
+        title={text('title', 'Monthly Building: Munich')}
+        description={text('description', 'Shows an overview of daily data for a building')}
+        lastUpdated={text('lastUpdated', '03/31/2019 13:55')}
+        actions={[
+          { id: 'edit', customActionComponent: <div>we can now send custom components</div> },
+        ]}
+      />
+    );
   });
