@@ -1,0 +1,877 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|NavigationBar example with workArea 1`] = `
+<div
+  className="storybook-container"
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "flexDirection": "column",
+      "padding": "3rem",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      className="NavigationBarstory__StyledDirections-sbka37-0 vDQxp"
+    >
+      To interact with the workarea, click the New Entity Type button. To close the workarea, click the Cancel button or finish the flow.
+    </div>
+    <div
+      className="NavigationBar__StyledNavigationContainer-bw68kq-0 cAEAQd"
+    >
+      <div
+        className="PageHero__StyledPageHero-sc-1k4oefb-0 jZTvNr"
+      >
+        <div
+          className="PageHero__StyledTitle-sc-1k4oefb-3 dijkPK"
+        >
+          <div
+            className="PageTitle__StyledPageTitle-sc-1x4wg61-0 MhXQw"
+          >
+            <h1
+              className="PageTitle__StyledPageTitleH1-sc-1x4wg61-2 uwbjE"
+            >
+              <span
+                className="PageTitle__StyledPageSection-sc-1x4wg61-1 dUHWaW"
+              >
+                Explore /
+              </span>
+              Your Devices
+            </h1>
+          </div>
+          <div
+            className="PageHero__StyledPageHeroWrap-sc-1k4oefb-1 dymYXa"
+          >
+            <p
+              className="PageHero__StyledPageBlurb-sc-1k4oefb-2 jjUFol"
+            >
+              Your data lake displays a detailed view of the entity types that are connected in Watson IoT Platform. To explore the metrics and dimensions of your entities in more detail, select Entities. To start applying calculations and analyzing your entity data, select Data.
+            </p>
+          </div>
+        </div>
+        <div
+          className="PageHero__StyledRightContent-sc-1k4oefb-4 jzJCmH"
+        >
+          <div>
+            Right Content
+          </div>
+        </div>
+      </div>
+      <div
+        className="NavigationBar__StyledTabToContent-bw68kq-2 buJmsc"
+      >
+        <div
+          className="bx--tabs"
+          hidden={false}
+          role="navigation"
+          selected={0}
+        >
+          <div
+            aria-label="listbox"
+            className="bx--tabs-trigger"
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            role="listbox"
+            tabIndex={0}
+          >
+            <a
+              className="bx--tabs-trigger-text"
+              href="#"
+              onClick={[Function]}
+              tabIndex={-1}
+            >
+              Tab 1
+            </a>
+            <svg
+              aria-hidden={true}
+              focusable="false"
+              height={6}
+              preserveAspectRatio="xMidYMid meet"
+              style={
+                Object {
+                  "willChange": "transform",
+                }
+              }
+              viewBox="0 0 10 6"
+              width={10}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5 6L0 1 .7.3 5 4.6 9.3.3l.7.7z"
+              />
+              <title>
+                show menu options
+              </title>
+            </svg>
+          </div>
+          <ul
+            className="bx--tabs__nav bx--tabs__nav--hidden"
+            role="tablist"
+          >
+            <li
+              className="bx--tabs__nav-item bx--tabs__nav-item--selected"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="presentation"
+              selected={true}
+              tabIndex={-1}
+            >
+              <a
+                aria-selected={true}
+                className="bx--tabs__nav-link"
+                href="#"
+                role="tab"
+                tabIndex={0}
+              >
+                Tab 1
+              </a>
+            </li>
+            <li
+              className="bx--tabs__nav-item"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="presentation"
+              selected={false}
+              tabIndex={-1}
+            >
+              <a
+                aria-selected={false}
+                className="bx--tabs__nav-link"
+                href="#"
+                role="tab"
+                tabIndex={-1}
+              >
+                Tab 2
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div
+          aria-hidden={false}
+          hidden={false}
+          selected={true}
+        >
+          <div
+            className="NavigationBar__StyledTabContent-bw68kq-3 bDLdHq"
+          >
+            <div
+              className="NavigationBar__StyledTabChildren-bw68kq-4 dtUnfM"
+            >
+              my content
+            </div>
+          </div>
+        </div>
+        <div
+          aria-hidden={true}
+          hidden={true}
+          selected={false}
+        >
+          <div
+            className="NavigationBar__StyledTabContent-bw68kq-3 bDLdHq"
+          >
+            <div
+              className="NavigationBar__StyledTabChildren-bw68kq-4 dtUnfM"
+            >
+              my content2
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="NavigationBar__StyledActions-bw68kq-5 dbjlRW"
+      >
+        <button
+          className="bx--btn bx--btn--primary"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          New Entity Type
+        </button>
+      </div>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|NavigationBar normal 1`] = `
+<div
+  className="storybook-container"
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "flexDirection": "column",
+      "padding": "3rem",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      className="NavigationBar__StyledNavigationContainer-bw68kq-0 cAEAQd"
+    >
+      <div
+        className="PageHero__StyledPageHero-sc-1k4oefb-0 jZTvNr"
+      >
+        <div
+          className="PageHero__StyledTitle-sc-1k4oefb-3 dijkPK"
+        >
+          <div
+            className="PageTitle__StyledPageTitle-sc-1x4wg61-0 MhXQw"
+          >
+            <h1
+              className="PageTitle__StyledPageTitleH1-sc-1x4wg61-2 uwbjE"
+            >
+              <span
+                className="PageTitle__StyledPageSection-sc-1x4wg61-1 dUHWaW"
+              >
+                Explore /
+              </span>
+              Your Devices
+            </h1>
+          </div>
+          <div
+            className="PageHero__StyledPageHeroWrap-sc-1k4oefb-1 dymYXa"
+          >
+            <p
+              className="PageHero__StyledPageBlurb-sc-1k4oefb-2 jjUFol"
+            >
+              Your data lake displays a detailed view of the entity types that are connected in Watson IoT Platform. To explore the metrics and dimensions of your entities in more detail, select Entities. To start applying calculations and analyzing your entity data, select Data.
+            </p>
+          </div>
+        </div>
+        <div
+          className="PageHero__StyledRightContent-sc-1k4oefb-4 jzJCmH"
+        >
+          <div>
+            Right Content
+          </div>
+        </div>
+      </div>
+      <div
+        className="NavigationBar__StyledTabToContent-bw68kq-2 buJmsc"
+      >
+        <div
+          className="bx--tabs"
+          hidden={false}
+          role="navigation"
+          selected={0}
+        >
+          <div
+            aria-label="listbox"
+            className="bx--tabs-trigger"
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            role="listbox"
+            tabIndex={0}
+          >
+            <a
+              className="bx--tabs-trigger-text"
+              href="#"
+              onClick={[Function]}
+              tabIndex={-1}
+            >
+              Tab 1
+            </a>
+            <svg
+              aria-hidden={true}
+              focusable="false"
+              height={6}
+              preserveAspectRatio="xMidYMid meet"
+              style={
+                Object {
+                  "willChange": "transform",
+                }
+              }
+              viewBox="0 0 10 6"
+              width={10}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5 6L0 1 .7.3 5 4.6 9.3.3l.7.7z"
+              />
+              <title>
+                show menu options
+              </title>
+            </svg>
+          </div>
+          <ul
+            className="bx--tabs__nav bx--tabs__nav--hidden"
+            role="tablist"
+          >
+            <li
+              className="bx--tabs__nav-item bx--tabs__nav-item--selected"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="presentation"
+              selected={true}
+              tabIndex={-1}
+            >
+              <a
+                aria-selected={true}
+                className="bx--tabs__nav-link"
+                href="#"
+                role="tab"
+                tabIndex={0}
+              >
+                Tab 1
+              </a>
+            </li>
+            <li
+              className="bx--tabs__nav-item"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="presentation"
+              selected={false}
+              tabIndex={-1}
+            >
+              <a
+                aria-selected={false}
+                className="bx--tabs__nav-link"
+                href="#"
+                role="tab"
+                tabIndex={-1}
+              >
+                Tab 2
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div
+          aria-hidden={false}
+          hidden={false}
+          selected={true}
+        >
+          <div
+            className="NavigationBar__StyledTabContent-bw68kq-3 bDLdHq"
+          >
+            <div
+              className="NavigationBar__StyledTabChildren-bw68kq-4 dtUnfM"
+            >
+              my content
+            </div>
+          </div>
+        </div>
+        <div
+          aria-hidden={true}
+          hidden={true}
+          selected={false}
+        >
+          <div
+            className="NavigationBar__StyledTabContent-bw68kq-3 bDLdHq"
+          >
+            <div
+              className="NavigationBar__StyledTabChildren-bw68kq-4 dtUnfM"
+            >
+              my content2
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|NavigationBar start with tab 2 selected 1`] = `
+<div
+  className="storybook-container"
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "flexDirection": "column",
+      "padding": "3rem",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      className="NavigationBar__StyledNavigationContainer-bw68kq-0 cAEAQd"
+    >
+      <div
+        className="PageHero__StyledPageHero-sc-1k4oefb-0 jZTvNr"
+      >
+        <div
+          className="PageHero__StyledTitle-sc-1k4oefb-3 dijkPK"
+        >
+          <div
+            className="PageTitle__StyledPageTitle-sc-1x4wg61-0 MhXQw"
+          >
+            <h1
+              className="PageTitle__StyledPageTitleH1-sc-1x4wg61-2 uwbjE"
+            >
+              <span
+                className="PageTitle__StyledPageSection-sc-1x4wg61-1 dUHWaW"
+              >
+                Explore /
+              </span>
+              Your Devices
+            </h1>
+          </div>
+          <div
+            className="PageHero__StyledPageHeroWrap-sc-1k4oefb-1 dymYXa"
+          >
+            <p
+              className="PageHero__StyledPageBlurb-sc-1k4oefb-2 jjUFol"
+            >
+              Your data lake displays a detailed view of the entity types that are connected in Watson IoT Platform. To explore the metrics and dimensions of your entities in more detail, select Entities. To start applying calculations and analyzing your entity data, select Data.
+            </p>
+          </div>
+        </div>
+        <div
+          className="PageHero__StyledRightContent-sc-1k4oefb-4 jzJCmH"
+        >
+          <div>
+            Right Content
+          </div>
+        </div>
+      </div>
+      <div
+        className="NavigationBar__StyledTabToContent-bw68kq-2 buJmsc"
+      >
+        <div
+          className="bx--tabs"
+          hidden={false}
+          role="navigation"
+          selected={1}
+        >
+          <div
+            aria-label="listbox"
+            className="bx--tabs-trigger"
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            role="listbox"
+            tabIndex={0}
+          >
+            <a
+              className="bx--tabs-trigger-text"
+              href="#"
+              onClick={[Function]}
+              tabIndex={-1}
+            >
+              Tab 2
+            </a>
+            <svg
+              aria-hidden={true}
+              focusable="false"
+              height={6}
+              preserveAspectRatio="xMidYMid meet"
+              style={
+                Object {
+                  "willChange": "transform",
+                }
+              }
+              viewBox="0 0 10 6"
+              width={10}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5 6L0 1 .7.3 5 4.6 9.3.3l.7.7z"
+              />
+              <title>
+                show menu options
+              </title>
+            </svg>
+          </div>
+          <ul
+            className="bx--tabs__nav bx--tabs__nav--hidden"
+            role="tablist"
+          >
+            <li
+              className="bx--tabs__nav-item"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="presentation"
+              selected={false}
+              tabIndex={-1}
+            >
+              <a
+                aria-selected={false}
+                className="bx--tabs__nav-link"
+                href="#"
+                role="tab"
+                tabIndex={-1}
+              >
+                Tab 1
+              </a>
+            </li>
+            <li
+              className="bx--tabs__nav-item bx--tabs__nav-item--selected"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="presentation"
+              selected={true}
+              tabIndex={-1}
+            >
+              <a
+                aria-selected={true}
+                className="bx--tabs__nav-link"
+                href="#"
+                role="tab"
+                tabIndex={0}
+              >
+                Tab 2
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div
+          aria-hidden={true}
+          hidden={true}
+          selected={false}
+        >
+          <div
+            className="NavigationBar__StyledTabContent-bw68kq-3 bDLdHq"
+          >
+            <div
+              className="NavigationBar__StyledTabChildren-bw68kq-4 dtUnfM"
+            >
+              my content
+            </div>
+          </div>
+        </div>
+        <div
+          aria-hidden={false}
+          hidden={false}
+          selected={true}
+        >
+          <div
+            className="NavigationBar__StyledTabContent-bw68kq-3 bDLdHq"
+          >
+            <div
+              className="NavigationBar__StyledTabChildren-bw68kq-4 dtUnfM"
+            >
+              my content2
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|NavigationBar with actions 1`] = `
+<div
+  className="storybook-container"
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "flexDirection": "column",
+      "padding": "3rem",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      className="NavigationBar__StyledNavigationContainer-bw68kq-0 cAEAQd"
+    >
+      <div
+        className="PageHero__StyledPageHero-sc-1k4oefb-0 jZTvNr"
+      >
+        <div
+          className="PageHero__StyledTitle-sc-1k4oefb-3 dijkPK"
+        >
+          <div
+            className="PageTitle__StyledPageTitle-sc-1x4wg61-0 MhXQw"
+          >
+            <h1
+              className="PageTitle__StyledPageTitleH1-sc-1x4wg61-2 uwbjE"
+            >
+              <span
+                className="PageTitle__StyledPageSection-sc-1x4wg61-1 dUHWaW"
+              >
+                Explore /
+              </span>
+              Your Devices
+            </h1>
+          </div>
+          <div
+            className="PageHero__StyledPageHeroWrap-sc-1k4oefb-1 dymYXa"
+          >
+            <p
+              className="PageHero__StyledPageBlurb-sc-1k4oefb-2 jjUFol"
+            >
+              Your data lake displays a detailed view of the entity types that are connected in Watson IoT Platform. To explore the metrics and dimensions of your entities in more detail, select Entities. To start applying calculations and analyzing your entity data, select Data.
+            </p>
+          </div>
+        </div>
+        <div
+          className="PageHero__StyledRightContent-sc-1k4oefb-4 jzJCmH"
+        >
+          <div>
+            Right Content
+          </div>
+        </div>
+      </div>
+      <div
+        className="NavigationBar__StyledTabToContent-bw68kq-2 buJmsc"
+      >
+        <div
+          className="bx--tabs"
+          hidden={false}
+          role="navigation"
+          selected={0}
+        >
+          <div
+            aria-label="listbox"
+            className="bx--tabs-trigger"
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            role="listbox"
+            tabIndex={0}
+          >
+            <a
+              className="bx--tabs-trigger-text"
+              href="#"
+              onClick={[Function]}
+              tabIndex={-1}
+            >
+              Tab 1
+            </a>
+            <svg
+              aria-hidden={true}
+              focusable="false"
+              height={6}
+              preserveAspectRatio="xMidYMid meet"
+              style={
+                Object {
+                  "willChange": "transform",
+                }
+              }
+              viewBox="0 0 10 6"
+              width={10}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5 6L0 1 .7.3 5 4.6 9.3.3l.7.7z"
+              />
+              <title>
+                show menu options
+              </title>
+            </svg>
+          </div>
+          <ul
+            className="bx--tabs__nav bx--tabs__nav--hidden"
+            role="tablist"
+          >
+            <li
+              className="bx--tabs__nav-item bx--tabs__nav-item--selected"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="presentation"
+              selected={true}
+              tabIndex={-1}
+            >
+              <a
+                aria-selected={true}
+                className="bx--tabs__nav-link"
+                href="#"
+                role="tab"
+                tabIndex={0}
+              >
+                Tab 1
+              </a>
+            </li>
+            <li
+              className="bx--tabs__nav-item"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="presentation"
+              selected={false}
+              tabIndex={-1}
+            >
+              <a
+                aria-selected={false}
+                className="bx--tabs__nav-link"
+                href="#"
+                role="tab"
+                tabIndex={-1}
+              >
+                Tab 2
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div
+          aria-hidden={false}
+          hidden={false}
+          selected={true}
+        >
+          <div
+            className="NavigationBar__StyledTabContent-bw68kq-3 bDLdHq"
+          >
+            <div
+              className="NavigationBar__StyledTabChildren-bw68kq-4 dtUnfM"
+            >
+              my content
+            </div>
+          </div>
+        </div>
+        <div
+          aria-hidden={true}
+          hidden={true}
+          selected={false}
+        >
+          <div
+            className="NavigationBar__StyledTabContent-bw68kq-3 bDLdHq"
+          >
+            <div
+              className="NavigationBar__StyledTabChildren-bw68kq-4 dtUnfM"
+            >
+              my content2
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="NavigationBar__StyledActions-bw68kq-5 dbjlRW"
+      >
+        <button
+          className="bx--btn bx--btn--primary"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          New Entity Type
+        </button>
+        <button
+          className="bx--btn bx--btn--secondary"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          Button 2
+        </button>
+      </div>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;

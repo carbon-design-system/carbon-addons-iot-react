@@ -1,0 +1,113 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|SimplePagination default 1`] = `
+<div
+  className="storybook-container"
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "flexDirection": "column",
+      "padding": "3rem",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      className="SimplePaginationstory__StyledSimplePagination-sc-17bs5nv-0 eccRzy"
+    >
+      <div
+        className="SimplePagination__StyledContainer-l7ezj3-0 bzKmAQ"
+      >
+        <span
+          className="SimplePagination__StyledPageLabel-l7ezj3-1 hybMqK"
+        >
+          Page 1 of 4
+        </span>
+        <div
+          className="bx--pagination__button bx--pagination__button--backward SimplePagination__StyledButton-l7ezj3-2 bxiYjR"
+          role="button"
+          tabIndex={-1}
+        >
+          <svg
+            aria-hidden={true}
+            description="Prev page"
+            focusable="false"
+            height={20}
+            preserveAspectRatio="xMidYMid meet"
+            style={
+              Object {
+                "willChange": "transform",
+              }
+            }
+            viewBox="0 0 32 32"
+            width={20}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M19 23l-8-7 8-7v14z"
+            />
+          </svg>
+        </div>
+        <div
+          className="bx--pagination__button bx--pagination__button--forward SimplePagination__StyledButton-l7ezj3-2 gxHBrs"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+          tabIndex={0}
+        >
+          <svg
+            aria-hidden={true}
+            description="Next page"
+            focusable="false"
+            height={20}
+            preserveAspectRatio="xMidYMid meet"
+            style={
+              Object {
+                "willChange": "transform",
+              }
+            }
+            viewBox="0 0 32 32"
+            width={20}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M13 9l8 7-8 7V9z"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;

@@ -1,4 +1,4 @@
-import initStoryshots, { snapshotWithOptions } from '@storybook/addon-storyshots';
+import initStoryshots, { multiSnapshotWithOptions } from '@storybook/addon-storyshots';
 import ReactDOM from 'react-dom';
 // Needed to give more information about the styled component differences in the jest snapshots
 import 'jest-styled-components';
@@ -64,7 +64,7 @@ describe(`Storybook Snapshot tests and console checks`, () => {
   });
   initStoryshots({
     storyKindRegex: /^Watson\sIoT/,
-    test: snapshotWithOptions(story => ({
+    test: multiSnapshotWithOptions(story => ({
       createNodeMock: element => {
         // https://github.com/storybookjs/storybook/tree/next/addons/storyshots/storyshots-core#using-createnodemock-to-mock-refs
         // fallback is to mock something, otherwise our refs are invalid
