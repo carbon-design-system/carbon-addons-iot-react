@@ -81,7 +81,8 @@ describe('TableCard', () => {
     );
 
     wrapper
-      .find('Icon [name="icon--edit"]')
+      .find('Icon')
+      .find({ icon: { name: 'icon--edit' } })
       .first()
       .simulate('click');
     expect(onCardAction.mock.calls).toHaveLength(1);
