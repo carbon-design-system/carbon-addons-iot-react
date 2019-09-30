@@ -15,6 +15,10 @@ To explore our components and their documentation we use storybook. To start the
 You're ready to add a new component to this library, THANK YOU! However, this is only a [PRESENTATIONAL](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0) component library. Please do not add components with any dependencies on internationalization libraries, redux, or react-router.
 Feel free to add any other types of lower-level dependencies you might need for your components (i.e. lodash, etc), but please use `yarn add` to add dependencies to the project not `npm install`.
 
+## For all new components and features
+
+For a component request or feature enhancement to be considered ‘ready to implement’, a design spec and usage guidance should be provided in the issue. Associated code pull requests will not be merged without these artifacts. 
+
 ## Submitting PRs and Commits
 
 We require all commits to follow [conventional commit](https://www.conventionalcommits.org/en/v1.0.0-beta.2/) standards. You won't be able to create a commit unless you follow those rules.
