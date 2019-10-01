@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo, useCallback } from 'react';
 import { Responsive, WidthProvider } from 'react-grid-layout';
 import PropTypes from 'prop-types';
 import 'react-grid-layout/css/styles.css';
@@ -14,13 +14,6 @@ import {
   DashboardColumnsPropTypes,
   DashboardLayoutPropTypes,
 } from '../../constants/PropTypes';
-import ValueCard from '../ValueCard/ValueCard';
-import ImageCard from '../ImageCard/ImageCard';
-import DonutCard from '../DonutCard/DonutCard';
-import TableCard from '../TableCard/TableCard';
-import BarChartCard from '../BarChartCard/BarChartCard';
-import PieCard from '../PieCard/PieCard';
-import TimeSeriesCard from '../TimeSeriesCard/TimeSeriesCard';
 import {
   DASHBOARD_COLUMNS,
   DASHBOARD_BREAKPOINTS,
@@ -28,10 +21,10 @@ import {
   CARD_SIZES,
   ROW_HEIGHT,
   GUTTER,
-  CARD_TYPES,
 } from '../../constants/LayoutConstants';
 
 import DashboardHeader from './DashboardHeader';
+import CardRenderer from './CardRenderer';
 
 const propTypes = {
   title: PropTypes.string.isRequired,
@@ -276,13 +269,13 @@ const StyledGridLayout = styled(GridLayout)`
 /** This component is a dumb component and only knows how to render itself */
 const Dashboard = ({
   cards,
-  onCardAction,
   title,
   description,
   lastUpdated,
   hasLastUpdated,
-  i18n: { lastUpdatedLabel },
+  onCardAction,
   i18n,
+  i18n: { lastUpdatedLabel },
   dashboardBreakpoints,
   cardDimensions,
   dashboardColumns,
@@ -300,147 +293,96 @@ const Dashboard = ({
 }) => {
   const [breakpoint, setBreakpoint] = useState('lg');
 
-  const renderCard = card => (
-    <div
-      key={card.id}
-      style={card.isExpanded ? { height: '100%', width: '100%', padding: 50 } : {}}
-    >
-      {card.type === CARD_TYPES.VALUE ? (
-        <ValueCard
-          {...card}
-          i18n={i18n}
-          isLoading={card.isLoading || isLoading}
-          isEditable={isEditable}
-          onCardAction={onCardAction}
-          key={card.id}
-          breakpoint={breakpoint}
-          dashboardBreakpoints={dashboardBreakpoints}
-          dashboardColumns={dashboardColumns}
-          cardDimensions={cardDimensions}
-          rowHeight={rowHeight}
-        />
-      ) : null}
-      {card.type === CARD_TYPES.IMAGE ? (
-        <ImageCard
-          {...card}
-          i18n={i18n}
-          isLoading={card.isLoading || isLoading}
-          isEditable={isEditable}
-          onCardAction={onCardAction}
-          key={card.id}
-          breakpoint={breakpoint}
-          dashboardBreakpoints={dashboardBreakpoints}
-          dashboardColumns={dashboardColumns}
-          cardDimensions={cardDimensions}
-          rowHeight={rowHeight}
-        />
-      ) : null}
-      {card.type === CARD_TYPES.TIMESERIES ? (
-        <TimeSeriesCard
-          {...card}
-          i18n={i18n}
-          isLoading={card.isLoading || isLoading}
-          isEditable={isEditable}
-          onCardAction={onCardAction}
-          key={card.id}
-          breakpoint={breakpoint}
-          dashboardBreakpoints={dashboardBreakpoints}
-          dashboardColumns={dashboardColumns}
-          cardDimensions={cardDimensions}
-          rowHeight={rowHeight}
-        />
-      ) : null}
-      {card.type === CARD_TYPES.TABLE ? (
-        <TableCard
-          {...card}
-          i18n={i18n}
-          isLoading={card.isLoading || isLoading}
-          isEditable={isEditable}
-          onCardAction={onCardAction}
-          key={card.id}
-          breakpoint={breakpoint}
-          dashboardBreakpoints={dashboardBreakpoints}
-          dashboardColumns={dashboardColumns}
-          cardDimensions={cardDimensions}
-          rowHeight={rowHeight}
-        />
-      ) : null}
-      {card.type === CARD_TYPES.DONUT ? (
-        <DonutCard
-          {...card}
-          i18n={i18n}
-          isLoading={card.isLoading || isLoading}
-          isEditable={isEditable}
-          onCardAction={onCardAction}
-          key={card.id}
-          breakpoint={breakpoint}
-          dashboardBreakpoints={dashboardBreakpoints}
-          dashboardColumns={dashboardColumns}
-          cardDimensions={cardDimensions}
-          rowHeight={rowHeight}
-        />
-      ) : null}
-      {card.type === CARD_TYPES.PIE ? (
-        <PieCard
-          {...card}
-          i18n={i18n}
-          isLoading={card.isLoading || isLoading}
-          isEditable={isEditable}
-          onCardAction={onCardAction}
-          key={card.id}
-          breakpoint={breakpoint}
-          dashboardBreakpoints={dashboardBreakpoints}
-          dashboardColumns={dashboardColumns}
-          cardDimensions={cardDimensions}
-          rowHeight={rowHeight}
-        />
-      ) : null}
-      {card.type === CARD_TYPES.BAR ? (
-        <BarChartCard
-          {...card}
-          i18n={i18n}
-          isLoading={card.isLoading || isLoading}
-          isEditable={isEditable}
-          onCardAction={onCardAction}
-          key={card.id}
-          breakpoint={breakpoint}
-          dashboardBreakpoints={dashboardBreakpoints}
-          dashboardColumns={dashboardColumns}
-          cardDimensions={cardDimensions}
-          rowHeight={rowHeight}
-        />
-      ) : null}
-    </div>
+  const generatedLayouts = useMemo(
+    () =>
+      Object.keys(dashboardBreakpoints).reduce((acc, layoutName) => {
+        return {
+          ...acc, // only generate the layout if we're not passed from the parent
+          [layoutName]:
+            layouts && layouts[layoutName]
+              ? layouts[layoutName].map(layout => {
+                  // if we can't find the card from the layout, assume small
+                  let matchingCard = find(cards, { id: layout.i });
+                  if (!matchingCard) {
+                    console.error(`Error with your layout. Card with id: ${layout.i} not found`); //eslint-disable-line
+                    matchingCard = { size: CARD_SIZES.SMALL };
+                  }
+                  return { ...layout, ...cardDimensions[matchingCard.size][layoutName] };
+                })
+              : getLayout(layoutName, cards, dashboardColumns, cardDimensions),
+        };
+      }, {}),
+    [cardDimensions, dashboardBreakpoints, dashboardColumns, layouts] // eslint-disable-line
   );
 
-  const generatedLayouts = Object.keys(dashboardBreakpoints).reduce((acc, layoutName) => {
-    return {
-      ...acc, // only generate the layout if we're not passed from the parent
-      [layoutName]:
-        layouts && layouts[layoutName]
-          ? layouts[layoutName].map(layout => {
-              // if we can't find the card from the layout, assume small
-              let matchingCard = find(cards, { id: layout.i });
-              if (!matchingCard) {
-                console.error(`Error with your layout. Card with id: ${layout.i} not found`); //eslint-disable-line
-                matchingCard = { size: CARD_SIZES.SMALL };
-              }
-              return { ...layout, ...cardDimensions[matchingCard.size][layoutName] };
-            })
-          : getLayout(layoutName, cards, dashboardColumns, cardDimensions),
-    };
-  }, {});
+  // Caching for performance
+  const cachedI18N = useMemo(() => i18n, []); // eslint-disable-line
+  const cachedMargin = useMemo(() => [GUTTER, GUTTER], []);
 
-  // TODO: Can we pickup the GUTTER size and PADDING from the carbon grid styles? or css variables?
-  // console.log(generatedLayouts);
+  const handleLayoutChange = (layout, allLayouts) =>
+    onLayoutChange && onLayoutChange(layout, allLayouts);
 
-  const gridContents = cards.map(card => renderCard(card));
+  const handleBreakpointChange = newBreakpoint => {
+    setBreakpoint(newBreakpoint);
+    if (onBreakpointChange) {
+      onBreakpointChange(newBreakpoint);
+    }
+  };
+
+  const cachedCardAction = useCallback(onCardAction, [onCardAction]); // cache the card action
+  const cachedOnLayoutChange = useCallback(handleLayoutChange, [onLayoutChange]);
+  const cachedOnBreakpointChange = useCallback(handleBreakpointChange, [onBreakpointChange]);
+
+  const gridContents = useMemo(
+    () =>
+      cards.map(card => (
+        <CardRenderer
+          card={card}
+          key={card.id}
+          onCardAction={cachedCardAction}
+          i18n={cachedI18N}
+          dashboardBreakpoints={dashboardBreakpoints}
+          cardDimensions={cardDimensions}
+          dashboardColumns={dashboardColumns}
+          rowHeight={rowHeight}
+          isLoading={isLoading}
+          isEditable={isEditable}
+          breakpoint={breakpoint}
+        />
+      )),
+    [
+      breakpoint,
+      cachedCardAction,
+      cachedI18N,
+      cardDimensions,
+      cards,
+      dashboardBreakpoints,
+      dashboardColumns,
+      isEditable,
+      isLoading,
+      rowHeight,
+    ]
+  );
   const expandedCard = cards.find(i => i.isExpanded) || null;
 
   return (
     <div className={className}>
       {expandedCard && (
-        <div className="bx--modal is-visible">{renderCard({ ...expandedCard })}</div>
+        <div className="bx--modal is-visible">
+          <CardRenderer
+            card={{ ...expandedCard }}
+            key={expandedCard.id}
+            onCardAction={cachedCardAction}
+            i18n={i18n}
+            dashboardBreakpoints={dashboardBreakpoints}
+            cardDimensions={cardDimensions}
+            dashboardColumns={dashboardColumns}
+            rowHeight={rowHeight}
+            isLoading={isLoading}
+            isEditable={isEditable}
+            breakpoint={breakpoint}
+          />
+        </div>
       )}
       <DashboardHeader
         title={title}
@@ -461,20 +403,13 @@ const Dashboard = ({
             compactType="vertical"
             cols={dashboardColumns}
             breakpoints={dashboardBreakpoints}
-            margin={[GUTTER, GUTTER]}
+            margin={cachedMargin}
             rowHeight={rowHeight[breakpoint]}
             preventCollision={false}
             // Stop the initial animation
             shouldAnimate={isEditable}
-            onLayoutChange={(layout, allLayouts) =>
-              onLayoutChange && onLayoutChange(layout, allLayouts)
-            }
-            onBreakpointChange={newBreakpoint => {
-              setBreakpoint(newBreakpoint);
-              if (onBreakpointChange) {
-                onBreakpointChange(newBreakpoint);
-              }
-            }}
+            onLayoutChange={cachedOnLayoutChange}
+            onBreakpointChange={cachedOnBreakpointChange}
             isResizable={false}
             isDraggable={isEditable}
           >
