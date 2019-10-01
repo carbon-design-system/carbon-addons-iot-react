@@ -1,4 +1,4 @@
-import React, { useMemo, useCallback } from 'react';
+import React, { useMemo } from 'react';
 import merge from 'lodash/merge';
 import isEmpty from 'lodash/isEmpty';
 
@@ -16,7 +16,6 @@ import { CARD_TYPES } from '../../constants/LayoutConstants';
  * It also caches some properties between renders to speed performance
  */
 const CardRenderer = ({
-  className,
   style, // eslint-disable-line
   card, // eslint-disable-line
   card: { availableActions, type, dataSource, isExpanded, ...others }, // eslint-disable-line
@@ -29,6 +28,7 @@ const CardRenderer = ({
   isLoading, // eslint-disable-line
   isEditable, // eslint-disable-line
   breakpoint, // eslint-disable-line
+  ...gridProps
 }) => {
   // Speed up performance by caching
   const cachedActions = useMemo(
@@ -41,15 +41,13 @@ const CardRenderer = ({
     [availableActions, dataSource, type]
   );
 
-  const cachedOnCardAction = useCallback(onCardAction, [card.id]);
-
   const cachedExpandedStyle = useMemo(
     () => (isExpanded ? merge({ height: '100%', width: '100%', padding: '50' }, style) : style),
     [isExpanded, style]
   );
 
   return (
-    <div key={card.id} className={className} style={cachedExpandedStyle}>
+    <div key={card.id} {...gridProps} style={cachedExpandedStyle}>
       {type === CARD_TYPES.VALUE ? (
         <ValueCard
           {...others}
@@ -60,7 +58,7 @@ const CardRenderer = ({
           i18n={i18n}
           isLoading={card.isLoading || isLoading}
           isEditable={isEditable}
-          onCardAction={cachedOnCardAction}
+          onCardAction={onCardAction}
           breakpoint={breakpoint}
           dashboardBreakpoints={dashboardBreakpoints}
           dashboardColumns={dashboardColumns}
@@ -77,7 +75,7 @@ const CardRenderer = ({
           i18n={i18n}
           isLoading={card.isLoading || isLoading}
           isEditable={isEditable}
-          onCardAction={cachedOnCardAction}
+          onCardAction={onCardAction}
           breakpoint={breakpoint}
           dashboardBreakpoints={dashboardBreakpoints}
           dashboardColumns={dashboardColumns}
@@ -94,7 +92,7 @@ const CardRenderer = ({
           i18n={i18n}
           isLoading={card.isLoading || isLoading}
           isEditable={isEditable}
-          onCardAction={cachedOnCardAction}
+          onCardAction={onCardAction}
           breakpoint={breakpoint}
           dashboardBreakpoints={dashboardBreakpoints}
           dashboardColumns={dashboardColumns}
@@ -111,7 +109,7 @@ const CardRenderer = ({
           i18n={i18n}
           isLoading={card.isLoading || isLoading}
           isEditable={isEditable}
-          onCardAction={cachedOnCardAction}
+          onCardAction={onCardAction}
           breakpoint={breakpoint}
           dashboardBreakpoints={dashboardBreakpoints}
           dashboardColumns={dashboardColumns}
@@ -128,7 +126,7 @@ const CardRenderer = ({
           i18n={i18n}
           isLoading={card.isLoading || isLoading}
           isEditable={isEditable}
-          onCardAction={cachedOnCardAction}
+          onCardAction={onCardAction}
           breakpoint={breakpoint}
           dashboardBreakpoints={dashboardBreakpoints}
           dashboardColumns={dashboardColumns}
@@ -145,7 +143,7 @@ const CardRenderer = ({
           i18n={i18n}
           isLoading={card.isLoading || isLoading}
           isEditable={isEditable}
-          onCardAction={cachedOnCardAction}
+          onCardAction={onCardAction}
           breakpoint={breakpoint}
           dashboardBreakpoints={dashboardBreakpoints}
           dashboardColumns={dashboardColumns}
@@ -162,7 +160,7 @@ const CardRenderer = ({
           i18n={i18n}
           isLoading={card.isLoading || isLoading}
           isEditable={isEditable}
-          onCardAction={cachedOnCardAction}
+          onCardAction={onCardAction}
           breakpoint={breakpoint}
           dashboardBreakpoints={dashboardBreakpoints}
           dashboardColumns={dashboardColumns}
