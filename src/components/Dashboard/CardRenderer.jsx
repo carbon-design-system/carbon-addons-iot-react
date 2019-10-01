@@ -16,7 +16,6 @@ import { CARD_TYPES } from '../../constants/LayoutConstants';
  * It also caches some properties between renders to speed performance
  */
 const CardRenderer = ({
-  className,
   style, // eslint-disable-line
   card, // eslint-disable-line
   card: { availableActions, type, dataSource, isExpanded, ...others }, // eslint-disable-line
@@ -29,6 +28,7 @@ const CardRenderer = ({
   isLoading, // eslint-disable-line
   isEditable, // eslint-disable-line
   breakpoint, // eslint-disable-line
+  ...gridProps
 }) => {
   // Speed up performance by caching
   const cachedActions = useMemo(
@@ -49,7 +49,7 @@ const CardRenderer = ({
   );
 
   return (
-    <div key={card.id} className={className} style={cachedExpandedStyle}>
+    <div key={card.id} {...gridProps} style={cachedExpandedStyle}>
       {type === CARD_TYPES.VALUE ? (
         <ValueCard
           {...others}
@@ -173,4 +173,4 @@ const CardRenderer = ({
     </div>
   );
 };
-export default CardRenderer;
+export default React.memo(CardRenderer);
