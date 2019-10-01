@@ -36,10 +36,7 @@ const props = {
   menuItem: () => ({
     className: 'some-class',
     disabled: boolean('Disabled (disabled)', false),
-    requireTitle: boolean(
-      'Use hover over text for menu item (requireTitle)',
-      false
-    ),
+    requireTitle: boolean('Use hover over text for menu item (requireTitle)', false),
     onClick: action('onClick'),
   }),
 };
@@ -47,11 +44,7 @@ const props = {
 const OverflowMenuExample = ({ overflowMenuProps, overflowMenuItemProps }) => (
   <>
     <OverflowMenu {...overflowMenuProps}>
-      <OverflowMenuItem
-        {...overflowMenuItemProps}
-        itemText="Option 1"
-        primaryFocus
-      />
+      <OverflowMenuItem {...overflowMenuItemProps} itemText="Option 1" primaryFocus />
       <OverflowMenuItem
         {...overflowMenuItemProps}
         itemText="Option 2 is an example of a really long string and how we recommend handling this"
@@ -59,19 +52,10 @@ const OverflowMenuExample = ({ overflowMenuProps, overflowMenuItemProps }) => (
       />
       <OverflowMenuItem {...overflowMenuItemProps} itemText="Option 3" />
       <OverflowMenuItem {...overflowMenuItemProps} itemText="Option 4" />
-      <OverflowMenuItem
-        {...overflowMenuItemProps}
-        itemText="Danger option"
-        hasDivider
-        isDelete
-      />
+      <OverflowMenuItem {...overflowMenuItemProps} itemText="Danger option" hasDivider isDelete />
     </OverflowMenu>
     <OverflowMenu {...overflowMenuProps}>
-      <OverflowMenuItem
-        {...overflowMenuItemProps}
-        itemText="Option 1"
-        primaryFocus
-      />
+      <OverflowMenuItem {...overflowMenuItemProps} itemText="Option 1" primaryFocus />
       <OverflowMenuItem
         {...overflowMenuItemProps}
         itemText="Option 2 is an example of a really long string and how we recommend handling this"
@@ -127,9 +111,7 @@ storiesOf('OverflowMenu', module)
         overflowMenuProps={{
           ...props.menu(),
           style: { width: 'auto' },
-          renderIcon: () => (
-            <div style={{ padding: '0 1rem' }}>Custom trigger</div>
-          ),
+          renderIcon: () => <div style={{ padding: '0 1rem' }}>Custom trigger</div>,
         }}
         overflowMenuItemProps={props.menuItem()}
       />

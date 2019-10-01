@@ -63,7 +63,7 @@ describe(`Storybook Snapshot tests and console checks`, () => {
     jest.setTimeout(15000);
   });
   initStoryshots({
-    storyKindRegex: /^Watson\sIoT/,
+    storyKindRegex: /^(?!.*Experimental).*Watson\sIoT/,
     test: snapshotWithOptions(story => ({
       createNodeMock: element => {
         // https://github.com/storybookjs/storybook/tree/next/addons/storyshots/storyshots-core#using-createnodemock-to-mock-refs
@@ -76,6 +76,7 @@ describe(`Storybook Snapshot tests and console checks`, () => {
           'Watson IoT|Table.Stateful Example with row nesting',
           'Watson IoT|Table.Stateful Example with expansion',
           'Watson IoT|TileCatalog.with search',
+          'Watson IoT|TableCard',
         ];
         if (
           storiesNeedingNestedInputRefs.includes(story.kind) ||

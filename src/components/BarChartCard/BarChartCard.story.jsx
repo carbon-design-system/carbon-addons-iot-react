@@ -8,7 +8,7 @@ import { chartData } from '../../utils/sample';
 
 import BarChartCard from './BarChartCard';
 
-storiesOf('Watson IoT|BarChartCard (Experimental)', module).add('basic', () => {
+storiesOf('Watson IoT Experimental|BarChartCard', module).add('basic', () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
   const field = 'temperature';
   const timeOffset = new Date().getTime() - chartData.dataItemToMostRecentTimestamp[field];

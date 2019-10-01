@@ -448,7 +448,7 @@ const StatefulDashboard = ({ ...props }) => {
   return <Dashboard cards={cards} onCardAction={handleCardAction} {...props} />;
 };
 
-storiesOf('Watson IoT|Dashboard (Experimental)', module)
+storiesOf('Watson IoT Experimental|Dashboard', module)
   .add('basic', () => {
     return (
       <FullWidthWrapper>

@@ -316,7 +316,7 @@ const Card = ({
             {isExpanded ? (
               <TinyButton
                 kind="ghost"
-                small
+                size="small"
                 renderIcon={Close16}
                 iconDescription={closeLabel}
                 onClick={() => onCardAction(id, 'CLOSE_EXPANDED_CARD')}
@@ -324,7 +324,7 @@ const Card = ({
             ) : (
               <TinyButton
                 kind="ghost"
-                small
+                size="small"
                 renderIcon={Popup20}
                 iconDescription={strings.expandLabel}
                 title={strings.expandLabel}

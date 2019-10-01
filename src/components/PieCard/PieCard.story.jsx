@@ -7,7 +7,7 @@ import { getCardMinSize } from '../../utils/componentUtilityFunctions';
 
 import PieCard from './PieCard';
 
-storiesOf('Watson IoT|PieCard (Experimental)', module).add('basic', () => {
+storiesOf('Watson IoT Experimental|PieCard', module).add('basic', () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
   return (
     <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
