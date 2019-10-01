@@ -183,9 +183,9 @@ const Attribute = ({
                 isMini={isMini}
               >
                 {secondaryValue.trend && secondaryValue.trend === 'up' ? (
-                  <TrendIcon icon={icons.caretUp} />
+                  <TrendIcon icon={icons.caretUp} description="trending up" />
                 ) : secondaryValue.trend === 'down' ? (
-                  <TrendIcon icon={icons.caretDown} />
+                  <TrendIcon icon={icons.caretDown} description="trending down" />
                 ) : null}
                 {!isMini && secondaryValue.value}
               </AttributeSecondaryValue>
