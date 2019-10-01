@@ -202,6 +202,9 @@ class ComposedModal extends React.Component {
       onSubmit,
       iconDescription,
       passiveModal,
+      onClearError,
+      submitFailed,
+      invalid,
       ...props
     } = this.props;
     const { label, title, helpText } = header;
