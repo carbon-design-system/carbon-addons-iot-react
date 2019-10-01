@@ -76,6 +76,7 @@ describe(`Storybook Snapshot tests and console checks`, () => {
           'Watson IoT|Table.Stateful Example with row nesting',
           'Watson IoT|Table.Stateful Example with expansion',
           'Watson IoT|TileCatalog.with search',
+          'Watson IoT|TableCard',
         ];
         if (
           storiesNeedingNestedInputRefs.includes(story.kind) ||
