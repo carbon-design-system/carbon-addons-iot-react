@@ -91,7 +91,7 @@ class ListCardSimple extends Component {
   };
 }
 
-storiesOf('Watson IoT|ListCard (Experimental)', module).add('basic', () => {
+storiesOf('Watson IoT Experimental|ListCard', module).add('basic', () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
 
   return <ListCardSimple id="ListCard" title={text('Text', 'Simple List with Icon')} size={size} />;

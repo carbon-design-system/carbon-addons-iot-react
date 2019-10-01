@@ -9,7 +9,7 @@ import { DatePicker, DatePickerInput } from 'carbon-components-react';
 
 import DashboardHeader from './DashboardHeader';
 
-storiesOf('Watson IoT|Dashboard Header (Experimental)', module)
+storiesOf('Watson IoT Experimental|Dashboard Header', module)
   .add('basic', () => {
     return (
       <div style={{ minWidth: '1000px' }}>

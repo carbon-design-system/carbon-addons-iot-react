@@ -20,10 +20,15 @@ storiesOf('Getting Started|Welcome', module).add('About Storybook', () => (
       component library, view the different states of each component, and interactively develop and
       test components.
     </p>
-    <p style={bodyShort02}>This storybook has two sections:</p>
+    <p style={bodyShort02}>This storybook has 3 sections:</p>
     <p style={bodyShort02}>
       <strong>Watson IoT</strong> - Components that are either extensions of Carbon components, or
       totally custom components not available in Carbon.
+    </p>
+    <p style={bodyShort02}>
+      <strong>Watson IoT Experimental</strong> - Similar to above, but these components are not yet
+      finalized or stable. The APIs of these components may change rapidly and are not required to
+      have associated tests, including snapshots.
     </p>
     <p style={bodyShort02}>
       <strong>Carbon</strong> - Components imported from Carbon and re-exported with no
