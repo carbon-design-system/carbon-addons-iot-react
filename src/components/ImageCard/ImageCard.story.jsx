@@ -3,7 +3,6 @@ import { storiesOf } from '@storybook/react';
 import { text, select, object } from '@storybook/addon-knobs';
 import omit from 'lodash/omit';
 
-import icons from '../../utils/bundledIcons';
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 import { getCardMinSize } from '../../utils/componentUtilityFunctions';
 

@@ -56,7 +56,7 @@ class ListCardSimple extends Component {
       hasMoreData: true,
     };
   }
-
+  /* eslint-disable */
   fetchMoreListItems = () => {
     setTimeout(
       function() {
@@ -68,6 +68,7 @@ class ListCardSimple extends Component {
       2000
     );
   };
+  /* eslint-enable */
 
   render = () => {
     const { data, isLoading, hasMoreData } = this.state;
