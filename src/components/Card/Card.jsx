@@ -231,7 +231,6 @@ const Card = ({
     <ToolbarItem>
       <TimeRangeLabel id="timeRange">{timeBoxLabels[timeRange]}</TimeRangeLabel>
       <StyledOverflowMenu
-        floatingMenu
         renderIcon={ChevronDown16}
         iconDescription={
           sizeWidth < 230 ? timeBoxLabels[timeRange] : strings.overflowMenuDescription
@@ -276,7 +275,7 @@ const Card = ({
           mergedAvailableActions.clone ||
           mergedAvailableActions.delete) && (
           <ToolbarItem>
-            <OverflowMenu floatingMenu>
+            <OverflowMenu>
               {mergedAvailableActions.edit && (
                 <OverflowMenuItem
                   onClick={() => {

@@ -221,7 +221,6 @@ class RowActionsCell extends React.Component {
                             action.labelText
                           )
                         }
-                        floatingMenu
                         disabled={action.disabled}
                       />
                     ))}
