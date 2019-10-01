@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Icon } from 'carbon-components-react';
+import { iconMinimize } from 'carbon-icons';
 
 import Minimap, { MinimapPropTypes } from './Minimap';
 
@@ -12,12 +13,18 @@ const propTypes = {
   onZoomToFit: PropTypes.func.isRequired,
   onZoomOut: PropTypes.func.isRequired,
   onZoomIn: PropTypes.func.isRequired,
+  i18n: PropTypes.shape({
+    minimizeIconDescription: PropTypes.string,
+  }),
 };
 
 const defaultProps = {
   draggable: false,
   dragging: false,
   hideMinimap: false,
+  i18n: {
+    minimizeIconDescription: 'Minimize',
+  },
 };
 
 const ImageControls = ({
@@ -28,6 +35,7 @@ const ImageControls = ({
   onZoomToFit,
   onZoomIn,
   onZoomOut,
+  i18n: { minimizeIconDescription },
 }) => {
   const bottomControlsStyle = {
     position: 'absolute',
@@ -49,7 +57,12 @@ const ImageControls = ({
         {draggable && (
           <>
             <button type="button" style={buttonStyle} onClick={onZoomToFit}>
-              <Icon name="icon--minimize" width="100%" height="100%" />
+              <Icon
+                icon={iconMinimize}
+                description={minimizeIconDescription}
+                width="100%"
+                height="100%"
+              />
             </button>
             <br />
             <br />
