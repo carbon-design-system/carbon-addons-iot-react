@@ -76,7 +76,13 @@ const PageTitleBar = ({
           <div className="page-title-bar-title--text">
             <h2>{title}</h2>
             {description && (collapsed || tabs) ? (
-              <Tooltip tabIndex={0} triggerText="" triggerId="tooltip" renderIcon={Information24}>
+              <Tooltip
+                tabIndex={0}
+                triggerText=""
+                triggerId="tooltip"
+                tooltipId="tooltip"
+                renderIcon={Information24}
+              >
                 <p>{description}</p>
               </Tooltip>
             ) : null}
