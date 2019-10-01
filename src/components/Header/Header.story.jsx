@@ -104,14 +104,7 @@ const HeaderProps = {
     {
       label: 'user',
       onClick: action('click'),
-      btnContent: (
-        <React.Fragment>
-          <User>
-            JohnDoe@ibm.com<span>TenantId: Acme</span>
-          </User>
-          <Avatar fill="white" description="Icon" />
-        </React.Fragment>
-      ),
+      btnContent: <Avatar fill="white" description="Icon" />,
       childContent: [
         {
           metaData: {
@@ -164,14 +157,7 @@ storiesOf('Watson IoT|Header', module)
         {
           label: 'user',
           onClick: action('click'),
-          btnContent: (
-            <React.Fragment>
-              <User>
-                JohnDoe@ibm.com<span>TenantId: Acme</span>
-              </User>
-              <Avatar fill="white" description="Icon" />
-            </React.Fragment>
-          ),
+          btnContent: <Avatar fill="white" description="Icon" />,
         },
       ]}
     />

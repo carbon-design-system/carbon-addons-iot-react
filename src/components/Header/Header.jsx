@@ -1,15 +1,18 @@
 import {
   Header as CarbonHeader,
+  HeaderMenuButton,
   HeaderName,
   HeaderGlobalBar,
   HeaderGlobalAction,
   SkipToContent,
   HeaderMenuItem,
+  HeaderPanel,
 } from 'carbon-components-react/lib/components/UIShell';
+import AppSwitcher from '@carbon/icons-react/lib/app-switcher/20';
 import { rem } from 'polished';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { useState, useCallback } from 'react';
 
 import { COLORS } from '../../styles/styles';
 
@@ -17,28 +20,28 @@ import HeaderMenu from './HeaderMenu';
 
 const StyledHeader = styled(CarbonHeader)`
   &&& {
-    background: ${COLORS.darkGray};
-    position: fixed;
-    top: 0;
-    left: 0;
+    .bx--skip-to-content:focus {
+      min-width: 240px;
+      justify-content: center;
+      border: 0.125rem solid ${COLORS.white};
+    }
+
+    .bx--header__menu-toggle {
+      display: block;
+    }
+
+    .bx--header__menu-title[role='menuitem'][aria-expanded='true'] + .bx--header__menu {
+      left: auto;
+      right: 0;
+    }
 
     .bx--header__menu {
       min-width: 12.5rem;
       width: auto;
     }
 
-    .bx--header__menu .bx--header__menu-item[role='menuitem']:hover,
-    .bx--header__menu .bx--header__menu-item[role='menuitem']:focus {
-      background: ${COLORS.darkGray};
-    }
-
-    .bx--header__menu.bx--header__menu-item[role='menuitem']:hover,
-    a.bx--header__menu-item[role='menuitem']:active {
-      background: ${COLORS.darkGrayHover};
-    }
-
     .bx--header__menu-item[role='menuitem']:focus {
-      border-color: #0062ff;
+      border-color: ${COLORS.white};
       outline: none;
     }
   }
@@ -52,9 +55,7 @@ const StyledGlobalAction = styled(HeaderGlobalAction)`
     padding: 0 ${rem(15)};
     position: relative;
     width: auto;
-    :hover {
-      background-color: ${COLORS.darkGrayHover};
-    }
+
     span {
       display: flex;
     }
@@ -77,6 +78,9 @@ const propTypes = {
     PropTypes.shape({
       label: PropTypes.string.isRequired,
       onClick: PropTypes.func,
+      /** declare control of header panel from this action item. Can only be one panel for now */
+      // @TODO: allow  mutliple header panels
+      headerPanel: PropTypes.bool,
       btnContent: PropTypes.any.isRequired,
       childContent: PropTypes.arrayOf(
         PropTypes.shape({
@@ -89,19 +93,49 @@ const propTypes = {
       ),
     })
   ).isRequired,
+  /** Bit to flip that tells header to render the nav toggle button */
+  hasSideNav: PropTypes.bool,
+  onClickSideNavExpand: PropTypes.func,
+  /** Header panel props */
+  headerPanel: PropTypes.shape({
+    /** Optionally provide a custom class to apply to the underlying <li> node */
+    className: PropTypes.string,
+    /** the content of the header panel  */
+    content: PropTypes.any,
+  }),
 };
 
 const defaultProps = {
+  onClickSideNavExpand: null,
+  hasSideNav: true,
   prefix: 'IBM',
   className: 'main-header',
   skipto: '#main-content',
+  headerPanel: null,
   url: '#',
 };
 
 /**
  * Clickable card that shows "Add" button
  */
-const Header = ({ appName, className, actionItems, prefix, skipto, url }) => {
+const Header = ({
+  appName,
+  className,
+  actionItems,
+  prefix,
+  skipto,
+  hasSideNav,
+  onClickSideNavExpand,
+  headerPanel,
+  url,
+}) => {
+  const [expanded, setExpanded] = useState(false);
+  const handleHeaderPanelTriggerClick = useCallback(
+    () => {
+      setExpanded(!expanded);
+    },
+    [expanded]
+  );
   const actionBtnContent = actionItems.map(item => {
     if (item.hasOwnProperty('childContent')) {
       const children = item.childContent.map(childItem => (
@@ -118,6 +152,7 @@ const Header = ({ appName, className, actionItems, prefix, skipto, url }) => {
           aria-label={item.label}
           isMenu={false}
           renderMenuContent={() => item.btnContent}
+          menuLinkName={item.menuLinkName ? item.menuLinkName : ''}
         >
           {children}
         </HeaderMenu>
@@ -133,14 +168,37 @@ const Header = ({ appName, className, actionItems, prefix, skipto, url }) => {
       </StyledGlobalAction>
     );
   });
+  if (headerPanel) {
+    actionBtnContent.push(
+      <StyledGlobalAction
+        aria-label="header-panel-trigger"
+        key="AppSwitcher"
+        onClick={handleHeaderPanelTriggerClick}
+      >
+        <AppSwitcher fill="white" description="Icon" />
+      </StyledGlobalAction>
+    );
+  }
 
   return (
     <StyledHeader className={className} aria-label="main header">
       <SkipToContent href={skipto} />
+      {hasSideNav && <HeaderMenuButton aria-label="Open menu" onClick={onClickSideNavExpand} />}
       <HeaderName href={url} prefix={prefix}>
         {appName}
       </HeaderName>
       <HeaderGlobalBar>{actionBtnContent}</HeaderGlobalBar>
+      {headerPanel && (
+        <HeaderPanel
+          aria-label="Header Panel"
+          className={headerPanel.className ? headerPanel.className : null}
+          expanded={expanded}
+        >
+          <div>
+            <headerPanel.content />
+          </div>
+        </HeaderPanel>
+      )}
     </StyledHeader>
   );
 };

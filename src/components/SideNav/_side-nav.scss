@@ -4,7 +4,7 @@
 @import '~carbon-components/scss/components/ui-shell/side-nav';
 
 .bx--side-nav {
-  background-color: $interactive-02;
+  background-color: $ui-05;
   color: $ui-02;
 
   @media (min-width: 66em) {
@@ -15,6 +15,24 @@
   &--expanded {
     width: 16rem;
     transform: translateX(0);
+  }
+
+  &:not(.bx--side-nav--expanded) {
+    .bx--side-nav__item--active .bx--side-nav__submenu[aria-expanded='true']::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 4px;
+      background-color: #0062ff;
+    }
+
+    .bx--side-nav__link[aria-current='page'],
+    .bx--side-nav__link--current,
+    .bx--side-nav__link--current:before {
+      background: $ui-05;
+    }
   }
 
   &__icon > svg {
