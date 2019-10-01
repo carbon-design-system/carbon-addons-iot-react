@@ -5,6 +5,7 @@ import { rem } from 'polished';
 import styled from 'styled-components';
 import AppSwitcher from '@carbon/icons-react/lib/app-switcher/24';
 import Chip from '@carbon/icons-react/lib/chip/24';
+import Dashboard from '@carbon/icons-react/lib/dashboard/24';
 import Group from '@carbon/icons-react/lib/group/24';
 import { HeaderContainer } from 'carbon-components-react/lib/components/UIShell';
 
@@ -48,6 +49,17 @@ const links = [
       target: '_blank',
     },
     linkContent: 'Devices',
+  },
+  {
+    isEnabled: false,
+    icon: Dashboard,
+    metaData: {
+      label: 'Dashboards',
+      href: 'https://google.com',
+      element: 'a',
+      target: '_blank',
+    },
+    linkContent: 'Dashboards',
   },
   {
     isEnabled: true,

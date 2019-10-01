@@ -112,7 +112,7 @@ const propTypes = {
   /** listen to tab change if you want to trigger something on change, not fired on the initial render.  Sends the selected tab id */
   onSelectionChange: PropTypes.func,
   /** TEMP: component to render Hero within Nav Bar across all tab content, we think the tabs will move down over the table and different content will show for each */
-  hero: PropTypes.node.isRequired,
+  hero: PropTypes.node,
   /** workarea renders directly above tabs if passed */
   workArea: PropTypes.node,
 };
@@ -121,6 +121,7 @@ const defaultProps = {
   actions: [],
   /** by default I think we should hide any TabContent that's not selected */
   hidden: false,
+  hero: null,
   onSelectionChange: null,
   workArea: null,
 };

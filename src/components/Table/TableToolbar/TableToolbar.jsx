@@ -70,6 +70,8 @@ const StyledTableBatchActions = styled(TableBatchActions)`
 `;
 
 const propTypes = {
+  /** id of table */
+  tableId: PropTypes.string.isRequired,
   /** global table options */
   options: PropTypes.shape({
     hasFilter: PropTypes.bool,
@@ -127,8 +129,8 @@ const defaultProps = {
 };
 
 const TableToolbar = ({
+  tableId,
   className,
-
   clearAllFiltersText,
   searchPlaceholderText,
   columnSelectionText,
@@ -167,6 +169,7 @@ const TableToolbar = ({
     {hasSearch ? (
       <StyledToolbarSearch
         {...search}
+        id={`${tableId}-toolbar-search`}
         onChange={event => onApplySearch(event.currentTarget ? event.currentTarget.value : '')}
         placeHolderText={searchPlaceholderText}
         disabled={isDisabled}
