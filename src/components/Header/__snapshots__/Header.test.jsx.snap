@@ -45,13 +45,11 @@ exports[`Header testcases should render 1`] = `
   }
   appName="platform"
   className="main-header"
-  hasSideNav={true}
-  headerPanel={null}
-  onClickSideNavExpand={null}
   prefix="IBM"
   skipto="#main-content"
   tenant="acme"
   title="My Title"
+  url="#"
   user="j@test.com"
 >
   <Header__StyledHeader
@@ -68,13 +66,15 @@ exports[`Header testcases should render 1`] = `
           "componentStyle": ComponentStyle {
             "componentId": "Header__StyledHeader-sc-14tpcyv-0",
             "isStatic": true,
-            "lastClassName": "hmKiPy",
+            "lastClassName": "gzxHYc",
             "rules": Array [
-              "&&&{.bx--skip-to-content:focus{min-width:240px;justify-content:center;border:0.125rem solid ",
-              "#fff",
-              ";}.bx--header__menu-toggle{display:block;}.bx--header__menu-title[role='menuitem'][aria-expanded='true'] + .bx--header__menu{left:auto;right:0;}.bx--header__menu{min-width:12.5rem;width:auto;}.bx--header__menu-item[role='menuitem']:focus{border-color:",
-              "#fff",
-              ";outline:none;}}",
+              "&&&{background:",
+              "#152935",
+              ";position:fixed;top:0;left:0;.bx--header__menu{min-width:12.5rem;width:auto;}.bx--header__menu .bx--header__menu-item[role='menuitem']:hover,.bx--header__menu .bx--header__menu-item[role='menuitem']:focus{background:",
+              "#152935",
+              ";}.bx--header__menu.bx--header__menu-item[role='menuitem']:hover,a.bx--header__menu-item[role='menuitem']:active{background:",
+              "#2d3f48",
+              ";}.bx--header__menu-item[role='menuitem']:focus{border-color:#0062ff;outline:none;}}",
             ],
           },
           "displayName": "Header__StyledHeader",
@@ -92,11 +92,11 @@ exports[`Header testcases should render 1`] = `
     >
       <Header
         aria-label="main header"
-        className="main-header Header__StyledHeader-sc-14tpcyv-0 hmKiPy"
+        className="main-header Header__StyledHeader-sc-14tpcyv-0 gzxHYc"
       >
         <header
           aria-label="main header"
-          className="bx--header main-header Header__StyledHeader-sc-14tpcyv-0 hmKiPy"
+          className="bx--header main-header Header__StyledHeader-sc-14tpcyv-0 gzxHYc"
           role="banner"
         >
           <SkipToContent
@@ -111,47 +111,6 @@ exports[`Header testcases should render 1`] = `
               Skip to main content
             </a>
           </SkipToContent>
-          <HeaderMenuButton
-            aria-label="Open menu"
-            onClick={null}
-          >
-            <button
-              aria-label="Open menu"
-              className="bx--header__action bx--header__menu-trigger bx--header__menu-toggle bx--header__menu-toggle__hidden"
-              onClick={null}
-              title="Open menu"
-              type="button"
-            >
-              <ForwardRef(Menu20)>
-                <Icon
-                  height={20}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 20 20"
-                  width={20}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <svg
-                    aria-hidden={true}
-                    focusable="false"
-                    height={20}
-                    preserveAspectRatio="xMidYMid meet"
-                    style={
-                      Object {
-                        "willChange": "transform",
-                      }
-                    }
-                    viewBox="0 0 20 20"
-                    width={20}
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M2 14.8h16V16H2zm0-3.6h16v1.2H2zm0-3.6h16v1.2H2zM2 4h16v1.2H2z"
-                    />
-                  </svg>
-                </Icon>
-              </ForwardRef(Menu20)>
-            </button>
-          </HeaderMenuButton>
           <HeaderName
             href="#"
             prefix="IBM"
@@ -195,11 +154,13 @@ exports[`Header testcases should render 1`] = `
                       "componentStyle": ComponentStyle {
                         "componentId": "Header__StyledGlobalAction-sc-14tpcyv-1",
                         "isStatic": true,
-                        "lastClassName": "hzqpaE",
+                        "lastClassName": "EFGTf",
                         "rules": Array [
                           "&&&{align-items:center;display:flex;justify-content:center;min-width:3rem;padding:0 ",
                           "0.9375rem",
-                          ";position:relative;width:auto;span{display:flex;}}",
+                          ";position:relative;width:auto;:hover{background-color:",
+                          "#2d3f48",
+                          ";}span{display:flex;}}",
                         ],
                       },
                       "displayName": "Header__StyledGlobalAction",
@@ -218,12 +179,12 @@ exports[`Header testcases should render 1`] = `
                 >
                   <HeaderGlobalAction
                     aria-label="alerts"
-                    className="Header__StyledGlobalAction-sc-14tpcyv-1 hzqpaE"
+                    className="Header__StyledGlobalAction-sc-14tpcyv-1 EFGTf"
                     onClick={[MockFunction]}
                   >
                     <button
                       aria-label="alerts"
-                      className="Header__StyledGlobalAction-sc-14tpcyv-1 hzqpaE bx--header__action"
+                      className="Header__StyledGlobalAction-sc-14tpcyv-1 EFGTf bx--header__action"
                       onClick={[MockFunction]}
                       type="button"
                     >
@@ -270,14 +231,12 @@ exports[`Header testcases should render 1`] = `
                 aria-label="help"
                 isMenu={false}
                 key="menu-item-help"
-                menuLinkName=""
                 renderMenuContent={[Function]}
               >
                 <HeaderMenu
                   aria-label="help"
                   focusRef={null}
                   isMenu={false}
-                  menuLinkName=""
                   renderMenuContent={[Function]}
                 >
                   <div

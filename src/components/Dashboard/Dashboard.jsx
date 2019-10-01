@@ -42,7 +42,16 @@ const propTypes = {
       /** Unique id of the action */
       id: PropTypes.string.isRequired,
       /** icon ultimately gets passed through all the way to <Button>, which has this same copied proptype definition for icon */
-      icon: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
+      icon: PropTypes.oneOfType([
+        PropTypes.shape({
+          width: PropTypes.string,
+          height: PropTypes.string,
+          viewBox: PropTypes.string.isRequired,
+          svgData: PropTypes.object.isRequired,
+        }),
+        PropTypes.string,
+        PropTypes.node,
+      ]),
       labelText: PropTypes.string,
     })
   ),
@@ -124,6 +133,7 @@ const propTypes = {
     moderateLabel: PropTypes.string,
     lowLabel: PropTypes.string,
     selectSeverityPlaceholder: PropTypes.string,
+    severityLabel: PropTypes.string,
     defaultFilterStringPlaceholdText: PropTypes.string,
     downloadIconDescription: PropTypes.string,
 
@@ -132,10 +142,9 @@ const propTypes = {
     pageForwardAria: PropTypes.string,
     pageNumberAria: PropTypes.string,
     itemsPerPage: PropTypes.string,
-    itemsRange: PropTypes.string,
-    currentPage: PropTypes.string,
-    itemsRangeWithTotal: PropTypes.string,
-    pageRange: PropTypes.string,
+    currentPage: PropTypes.func,
+    itemsRangeWithTotal: PropTypes.func,
+    pageRange: PropTypes.func,
     /** table body */
     overflowMenuAria: PropTypes.string,
     clickToExpandAria: PropTypes.string,
@@ -205,6 +214,7 @@ const defaultProps = {
     moderateLabel: 'Moderate',
     lowLabel: 'Low',
     selectSeverityPlaceholder: 'Select a severity',
+    severityLabel: 'Severity',
     searchPlaceholder: 'Search',
     filterButtonAria: 'Filters',
     defaultFilterStringPlaceholdText: 'Type and hit enter to apply',

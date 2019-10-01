@@ -396,7 +396,7 @@ storiesOf('Watson IoT|Table Card', module)
           }}
           values={tableData}
           onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
-          // size={size}
+          size={size}
         />
       </div>
     );
@@ -549,6 +549,7 @@ storiesOf('Watson IoT|Table Card', module)
             moderateLabel: text('moderateLabel', 'Moderate'),
             lowLabel: text('lowLabel', 'Low'),
             selectSeverityPlaceholder: text('selectSeverityPlaceholder', 'Select a severity'),
+            severityLabel: text('severityLabel', '__Severity__'),
 
             // table i18n
             searchPlaceholder: text('searchPlaceholder', 'Search'),

@@ -566,6 +566,7 @@ storiesOf('Watson IoT|Dashboard (Experimental)', module)
             moderateLabel: text('moderateLabel', 'Moderate'),
             lowLabel: text('lowLabel', 'Low'),
             selectSeverityPlaceholder: text('selectSeverityPlaceholder', 'Select a severity'),
+            severityLabel: text('selectSeverityPlaceholder', '__Severity__'),
 
             // table i18n
             searchPlaceholder: text('searchPlaceholder', 'Search'),

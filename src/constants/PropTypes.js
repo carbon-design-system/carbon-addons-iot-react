@@ -103,7 +103,18 @@ export const TableCardPropTypes = {
         label: PropTypes.string,
       })
     ),
+    thresholds: PropTypes.arrayOf(
+      PropTypes.shape({
+        dataSourceId: PropTypes.string.isRequired,
+        comparison: PropTypes.oneOf(['<', '>', '=', '<=', '>=']).isRequired,
+        value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+        severity: PropTypes.oneOf([1, 2, 3]),
+        label: PropTypes.string,
+        showOnContent: PropTypes.bool,
+      })
+    ),
     sort: PropTypes.oneOf(['ASC', 'DESC']),
+    emptyMessage: PropTypes.string,
   }).isRequired,
   value: PropTypes.arrayOf(
     PropTypes.shape({
@@ -126,13 +137,23 @@ export const TableCardPropTypes = {
       ),
     })
   ),
+  i18n: PropTypes.shape({
+    criticalLabel: PropTypes.string,
+    moderateLabel: PropTypes.string,
+    lowLabel: PropTypes.string,
+    selectSeverityPlaceholder: PropTypes.string,
+    searchPlaceholder: PropTypes.string,
+    filterButtonAria: PropTypes.string,
+    defaultFilterStringPlaceholdText: PropTypes.string,
+    downloadIconDescription: PropTypes.string,
+  }),
 };
 
 export const BarChartDatasetPropTypes = PropTypes.shape({
   label: PropTypes.string.isRequired,
   values: PropTypes.arrayOf(
     PropTypes.shape({
-      x: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
+      x: PropTypes.number.isRequired,
       y: PropTypes.number.isRequired,
     })
   ),
@@ -161,13 +182,12 @@ export const DonutCardPropTypes = {
 export const ImageCardPropTypes = {
   content: PropTypes.shape({
     title: PropTypes.string,
-    data: PropTypes.arrayOf(
-      PropTypes.shape({
-        src: PropTypes.string.isRequired,
-        alt: PropTypes.string.isRequired,
-      })
-    ),
+    content: PropTypes.object,
   }).isRequired,
+  values: PropTypes.shape({
+    hotspots: PropTypes.array,
+  }),
+  isHotspotDataLoading: PropTypes.bool,
 };
 
 export const PieCardPropTypes = DonutCardPropTypes;
@@ -240,14 +260,30 @@ export const CardPropTypes = {
     noDataShortLabel: PropTypes.string,
     errorLoadingDataLabel: PropTypes.string,
     errorLoadingDataShortLabel: PropTypes.string,
-    dayByHourLabel: PropTypes.string,
-    weekByDayLabel: PropTypes.string,
-    monthByDayLabel: PropTypes.string,
-    monthByWeekLabel: PropTypes.string,
-    yearByMonthLabel: PropTypes.string,
+    // card labels
+    rollingPeriodLabel: PropTypes.string,
+    last24HoursLabel: PropTypes.string,
+    last7DaysLabel: PropTypes.string,
+    lastMonthLabel: PropTypes.string,
+    lastQuarterLabel: PropTypes.string,
+    lastYearLabel: PropTypes.string,
+    periodToDateLabel: PropTypes.string,
+    thisWeekLabel: PropTypes.string,
+    thisMonthLabel: PropTypes.string,
+    thisQuarterLabel: PropTypes.string,
+    thisYearLabel: PropTypes.string,
+    hourlyLabel: PropTypes.string,
+    dailyLabel: PropTypes.string,
+    weeklyLabel: PropTypes.string,
+    monthlyLabel: PropTypes.string,
+    // card actions
     editCardLabel: PropTypes.string,
     cloneCardLabel: PropTypes.string,
     deleteCardLabel: PropTypes.string,
+    expandLabel: PropTypes.string,
+    closeLabel: PropTypes.string,
+    loadingDataLabel: PropTypes.string,
+    overflowMenuDescription: PropTypes.string,
   }),
   tooltip: PropTypes.element,
   toolbar: PropTypes.element,

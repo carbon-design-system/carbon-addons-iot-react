@@ -41,6 +41,23 @@ describe('TableCard', () => {
     expect(twoMatchingThresholds[1].severity).toEqual(1);
     expect(twoMatchingThresholds[1].dataSourceId).toEqual('airflow_max');
   });
+  test('findMatchingThresholds no column', () => {
+    const thresholds = [{ comparison: '<', dataSourceId: 'airflow_mean', severity: 1, value: 4.5 }];
+    const oneMatchingThreshold = findMatchingThresholds(thresholds, { airflow_mean: 4 });
+    expect(oneMatchingThreshold).toHaveLength(1);
+    // The highest severity should match
+    expect(oneMatchingThreshold[0].severity).toEqual(1);
+
+    // shouldn't match on null values
+    const zeroMatchingThreshold = findMatchingThresholds(thresholds, { airflow_mean: null });
+    expect(zeroMatchingThreshold).toHaveLength(0);
+    // shouldn't match on null values
+    const zeroMatchingThreshold2 = findMatchingThresholds(
+      [{ comparison: '<=', dataSourceId: 'airflow_mean', severity: 1, value: 4.5 }],
+      { airflow_mean: null }
+    );
+    expect(zeroMatchingThreshold2).toHaveLength(0);
+  });
   test('Clicked row actions', () => {
     const onCardAction = jest.fn();
 
@@ -64,7 +81,8 @@ describe('TableCard', () => {
     );
 
     wrapper
-      .find('Icon [name="icon--edit"]')
+      .find('Icon')
+      .find({ icon: { name: 'icon--edit' } })
       .first()
       .simulate('click');
     expect(onCardAction.mock.calls).toHaveLength(1);
