@@ -6,11 +6,9 @@ import 'react-resizable/css/styles.css';
 import styled from 'styled-components';
 import find from 'lodash/find';
 import merge from 'lodash/merge';
-import omit from 'lodash/omit';
 import useDeepCompareEffect from 'use-deep-compare-effect';
 
 import { getLayout } from '../../utils/componentUtilityFunctions';
-import { determineCardRange, compareGrains } from '../../utils/cardUtilityFunctions';
 import {
   CardSizesToDimensionsPropTypes,
   RowHeightPropTypes,
@@ -259,7 +257,6 @@ const defaultProps = {
 
   layouts: {},
   rowHeight: ROW_HEIGHT,
-  onCardAction: null,
   cardDimensions: CARD_DIMENSIONS,
   dashboardBreakpoints: DASHBOARD_BREAKPOINTS,
   dashboardColumns: DASHBOARD_COLUMNS,
@@ -352,6 +349,7 @@ const Dashboard = ({
     if (type === 'CLOSE_EXPANDED_CARD') {
       updateCardInDashboard({ ...card, isExpanded: false });
     }
+    return null;
   };
 
   const renderCard = card => (
