@@ -1,5 +1,4 @@
 import moment from 'moment';
-import uuidv1 from 'uuid/v1';
 
 /** Generate fake values for my line chart */
 export const generateSampleValues = (series, timeDataSourceId, timeGrain = 'day') => {
@@ -41,10 +40,10 @@ export const generateSampleValues = (series, timeDataSourceId, timeGrain = 'day'
  * Generate fake data to fill table columns for the preview mode of the table in the dashboard
  * @param {*} columns
  */
-export const generateTableSampleValues = columns => {
+export const generateTableSampleValues = (id, columns) => {
   const sampleValues = Array(10).fill(1);
-  return sampleValues.map(() => ({
-    id: uuidv1(),
+  return sampleValues.map((item, index) => ({
+    id: `sample-values-${id}-${index}`,
     values: columns.reduce((obj, column) => {
       obj[column.dataSourceId] = column.type === 'TIMESTAMP' ? 'hh:mm:ss' : '--'; // eslint-disable-line
       return obj;
