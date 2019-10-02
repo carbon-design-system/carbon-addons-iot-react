@@ -1,0 +1,103 @@
+{
+  "properties": {
+    "title": { "type": "string" },
+    "description": { "type": "string" },
+    "cards": { "items": { "$ref": "#/definitions/card" }, "minItems": 1 },
+    "layouts": { "$ref": "#/definitions/layouts" },
+    "_id": { "type": "string" },
+    "_rev": { "type": "string" },
+    "entitytype_id": { "type": "string" },
+    "tenantId": { "type": "string" },
+    "timeGrain": { "enum": ["month", "day", "year", "hour", "week"] }
+  },
+  "required": ["title", "cards"],
+  "propertyNames": {
+    "enum": [
+      "title",
+      "cards",
+      "layouts",
+      "data",
+      "_id",
+      "_rev",
+      "entitytype_id",
+      "tenantId",
+      "description",
+      "timeGrain"
+    ]
+  },
+  "definitions": {
+    "card": {
+      "type": "object",
+      "properties": {
+        "type": { "enum": ["VALUE", "TABLE", "TIMESERIES", "IMAGE"] },
+        "size": {
+          "enum": ["XSMALL", "SMALL", "XSMALLWIDE", "MEDIUM", "TALL", "WIDE", "LARGE", "XLARGE"]
+        },
+        "title": { "type": "string" },
+        "dataSource": {
+          "type": "object",
+          "attributes": {
+            "type": "array",
+            "items": { "$ref": "#/definitions/attribute" },
+            "minItems": 1
+          },
+          "timeGrain": { "enum": ["month", "day", "year", "hour", "week"] },
+          "groupBy": {
+            "type": "array",
+            "items": { "type": "string" },
+            "minItems": 1
+          },
+          "range": { "$ref": "#/definitions/range" },
+          "required": ["attributes"],
+          "propertyNames": { "enum": ["attributes", "range", "timeGrain", "groupBy"] }
+        }
+      },
+      "propertyNames": {
+        "enum": ["type", "size", "title", "dataSource", "content", "id"]
+      },
+      "required": ["type", "size", "title", "id", "content"]
+    },
+    "range": {
+      "type": "object",
+      "properties": {
+        "type": { "enum": ["periodToDate", "rolling"] },
+        "count": { "type": "number" },
+        "interval": { "enum": ["month", "day", "year", "hour", "week"] }
+      },
+      "required": ["count", "interval"],
+      "propertyNames": { "enum": ["type", "count", "interval"] }
+    },
+    "layouts": {
+      "type": "object",
+      "properties": {
+        "lg": { "items": { "$ref": "#/definitions/layout" } },
+        "xl": { "items": { "$ref": "#/definitions/layout" } },
+        "md": { "items": { "$ref": "#/definitions/layout" } },
+        "sm": { "items": { "$ref": "#/definitions/layout" } },
+        "xs": { "items": { "$ref": "#/definitions/layout" } },
+        "max": { "items": { "$ref": "#/definitions/layout" } }
+      },
+      "propertyNames": { "enum": ["xl", "lg", "md", "sm", "xs", "max"] }
+    },
+    "layout": {
+      "type": "object",
+      "properties": {
+        "x": { "type": "number" },
+        "y": { "type": "number" }
+      },
+      "propertyNames": { "enum": ["i", "x", "y"] }
+    },
+    "attribute": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "attribute": { "type": "string" },
+        "aggregator": {
+          "enum": ["min", "max", "mean", "first", "count", "std", "sum", "last"]
+        }
+      },
+      "propertyNames": { "enum": ["id", "attribute", "aggregator", "range"] },
+      "required": ["id", "attribute"]
+    }
+  }
+}

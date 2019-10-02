@@ -5,6 +5,7 @@ import replace from 'rollup-plugin-replace';
 import { uglify } from 'rollup-plugin-uglify';
 import filesize from 'rollup-plugin-filesize';
 import postcss from 'rollup-plugin-postcss';
+import json from 'rollup-plugin-json';
 
 const env = process.env.NODE_ENV || 'development';
 const prodSettings = env === 'development' ? [] : [uglify(), filesize()];
@@ -77,6 +78,25 @@ export default {
     }),
     replace({
       'process.env.NODE_ENV': JSON.stringify(env),
+    }),
+    json({
+      // All JSON files will be parsed by default,
+      // but you can also specifically include/exclude files
+      exclude: ['node_modules'],
+
+      // for tree-shaking, properties will be declared as
+      // variables, using either `var` or `const`
+      preferConst: true, // Default: false
+
+      // specify indentation for the generated default export —
+      // defaults to '\t'
+      indent: '  ',
+
+      // ignores indent and generates the smallest code
+      compact: true, // Default: false
+
+      // generate a named export for every property of the JSON object
+      namedExports: true, // Default: true
     }),
     ...prodSettings,
   ],

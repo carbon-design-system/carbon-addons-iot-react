@@ -204,6 +204,21 @@ const originalCards = [
     interval: 'hour',
     timeRange: 'last7Days',
     availableActions: { range: true },
+    dataSource: {
+      attributes: [
+        {
+          aggregator: 'last',
+          attribute: 'speed',
+          id: 'speed_Claudia_Sample_Robot_Type_last',
+        },
+      ],
+      groupBy: ['deviceid'],
+      range: {
+        count: -7,
+        interval: 'day',
+      },
+      timeGrain: 'day',
+    },
   },
   {
     title: 'Alerts',
@@ -305,6 +320,21 @@ const originalCards = [
     interval: 'month',
     timeRange: 'lastYear',
     availableActions: { range: true },
+    dataSource: {
+      attributes: [
+        {
+          aggregator: 'last',
+          attribute: 'speed',
+          id: 'speed_Claudia_Sample_Robot_Type_last',
+        },
+      ],
+      groupBy: ['deviceid'],
+      range: {
+        count: -7,
+        interval: 'day',
+      },
+      timeGrain: 'day',
+    },
   },
   {
     title: 'Floor Map',
@@ -368,6 +398,55 @@ const StatefulDashboard = ({ ...props }) => {
     ]);
   };
   */
+
+  const handleTimegrainCallback = (id, type, payload) => {
+    const { range } = payload;
+    const cardRange =
+      range === 'last24Hours'
+        ? { interval: 'hour', num: 24 }
+        : range === 'last7Days'
+        ? { interval: 'day', num: 7 }
+        : range === 'lastMonth'
+        ? { interval: 'day', num: 30 }
+        : range === 'lastQuarter'
+        ? { interval: 'week', num: 12 }
+        : range === 'lastYear'
+        ? { interval: 'month', num: 12 }
+        : range === 'thisWeek'
+        ? { interval: 'day', period: 'week' }
+        : range === 'thisMonth'
+        ? { interval: 'day', period: 'month' }
+        : range === 'thisQuarter'
+        ? { interval: 'week', period: 'quarter' }
+        : range === 'thisYear'
+        ? { interval: 'month', period: 'year' }
+        : { interval: 'day', num: 7 };
+
+    setCards(
+      cards.map(i =>
+        i.id === id
+          ? {
+              ...i,
+              interval: cardRange.interval,
+              timeRange: range,
+              values: cardRange.period
+                ? getPeriodChartData(
+                    cardRange.interval,
+                    cardRange.period,
+                    { min: 10, max: 100 },
+                    100
+                  )
+                : getIntervalChartData(
+                    cardRange.interval,
+                    cardRange.num,
+                    { min: 10, max: 100 },
+                    100
+                  ),
+            }
+          : i
+      )
+    );
+  };
 
   const handleCardAction = (id, type, payload) => {
     console.log(id, type, payload);
@@ -443,10 +522,30 @@ const StatefulDashboard = ({ ...props }) => {
     </div>
   );
   */
-  return <Dashboard cards={cards} onCardAction={handleCardAction} {...props} />;
+  return (
+    <Dashboard
+      cards={cards}
+      onCardAction={handleCardAction}
+      timeGrainCallback={handleTimegrainCallback}
+      {...props}
+    />
+  );
 };
 
 storiesOf('Dashboard (Experimental)', module)
+  .add('basic dashboard', () => {
+    return (
+      <Dashboard
+        title={text('title', 'Munich Building')}
+        cards={originalCards}
+        lastUpdated={Date()}
+        isEditable={boolean('isEditable', false)}
+        isLoading={boolean('isLoading', false)}
+        onBreakpointChange={action('onBreakpointChange')}
+        onLayoutChange={action('onLayoutChange')}
+      />
+    );
+  })
   .add('basic', () => {
     return (
       <StatefulDashboard

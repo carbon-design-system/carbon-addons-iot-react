@@ -5,6 +5,8 @@ import 'react-grid-layout/css/styles.css';
 import 'react-resizable/css/styles.css';
 import styled from 'styled-components';
 import find from 'lodash/find';
+import merge from 'lodash/merge';
+import useDeepCompareEffect from 'use-deep-compare-effect';
 
 import { getLayout } from '../../utils/componentUtilityFunctions';
 import {
@@ -163,6 +165,9 @@ const propTypes = {
   }),
   /** If the header should render the last updated section */
   hasLastUpdated: PropTypes.bool,
+
+  // new props after migration
+  timeGrainCallback: PropTypes.func,
 };
 
 const defaultProps = {
@@ -172,6 +177,7 @@ const defaultProps = {
   lastUpdated: null,
   onLayoutChange: null,
   onDashboardAction: null,
+  onCardAction: null,
   onBreakpointChange: null,
   i18n: {
     lastUpdatedLabel: 'Last updated: ',
@@ -246,7 +252,6 @@ const defaultProps = {
 
   layouts: {},
   rowHeight: ROW_HEIGHT,
-  onCardAction: null,
   cardDimensions: CARD_DIMENSIONS,
   dashboardBreakpoints: DASHBOARD_BREAKPOINTS,
   dashboardColumns: DASHBOARD_COLUMNS,
@@ -254,6 +259,7 @@ const defaultProps = {
   sidebar: null,
   actions: [],
   hasLastUpdated: true,
+  timeGrainCallback: null,
 };
 
 const GridLayout = WidthProvider(Responsive);
@@ -290,8 +296,57 @@ const Dashboard = ({
   className,
   actions,
   onDashboardAction,
+  timeGrainCallback,
 }) => {
   const [breakpoint, setBreakpoint] = useState('lg');
+
+  // card state
+  const [cardsState, setCards] = useState(cards);
+
+  // use Effec to update card state
+  useDeepCompareEffect(
+    () => {
+      setCards(cards);
+    },
+    [cards]
+  );
+
+  /** Function to handle card update */
+  const updateCardInDashboard = newCard =>
+    setCards(cardsState.map(card => (card.id === newCard.id ? newCard : card)));
+
+  // onCardAction, should have the default ones by the dashboard eg. expand other are merged from the prop
+  const handleCardAction = (id, type, payload) => {
+    // Find the right card to be updated
+    const card = cardsState.find(cardItem => cardItem.id === id);
+
+    // callback time grain change from parent
+    if (type === 'CHANGE_TIME_RANGE') {
+      return timeGrainCallback(id, type, payload);
+    }
+
+    // expand card
+    if (type === 'OPEN_EXPANDED_CARD') {
+      updateCardInDashboard({
+        ...card,
+        content: {
+          ...card.content,
+          isExpanded: true,
+        },
+        isExpanded: true,
+        availableActions: merge(card.availableActions, {
+          // we will create a new card so we need to "enable" the expand so can close
+          expand: true,
+        }),
+      });
+    }
+
+    // close expanded card
+    if (type === 'CLOSE_EXPANDED_CARD') {
+      updateCardInDashboard({ ...card, isExpanded: false });
+    }
+    return null;
+  };
 
   const generatedLayouts = useMemo(
     () =>

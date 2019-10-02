@@ -44,7 +44,7 @@ export SideNav from './components/SideNav';
 // Dashboard
 export Dashboard from './components/Dashboard/Dashboard';
 export Card from './components/Card/Card';
-export ValueCard, { determineMaxValueCardAttributeCount } from './components/ValueCard/ValueCard';
+export ValueCard from './components/ValueCard/ValueCard';
 export {
   CARD_TYPES,
   CARD_SIZES,
@@ -52,3 +52,4 @@ export {
   DASHBOARD_SIZES,
 } from './constants/LayoutConstants';
 export { findMatchingThresholds } from './components/TableCard/TableCard';
+export { validateDashboardJSON } from './utils/schemas/validators';

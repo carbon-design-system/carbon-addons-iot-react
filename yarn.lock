@@ -1151,14 +1151,12 @@
 "@carbon/charts-react@0.12.1":
   version "0.12.0"
   resolved "https://registry.yarnpkg.com/@carbon/charts-react/-/charts-react-0.12.1.tgz#cd4aea9f5092def1009490ceedcb19bafbc18b4d"
-  integrity sha512-MYdUcTvCkRIq09lxbinoDBc/NGkTgylEOrazkscFgg+oR/2yxjVeI7pJ5N0OLU4a7az2FzkiHlu3fw2SulS2gg==
   dependencies:
     "@carbon/charts" "0.12.0"
 
 "@carbon/charts@0.12.1":
   version "0.12.0"
   resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-0.12.1.tgz#edf430989625662eaa5a67c85854a9fd161b34ad"
-  integrity sha512-klzI8nKrY6GCuUkC6VQEEpXipt6VJS5c9jZP4zfBjEw25iuDI5ar+wdZAN7PYoFpneu2RLpOmbnMSZZsLEmXqQ==
   dependencies:
     "@carbon/colors" "10.1.1"
     "@carbon/utils-position" "1.1.0"
@@ -2529,6 +2527,15 @@ ajv@^6.1.0:
     fast-json-stable-stringify "^2.0.0"
     json-schema-traverse "^0.4.1"
     uri-js "^4.2.1"
+
+ajv@^6.10.2:
+  version "6.10.2"
+  resolved "https://registry.yarnpkg.com/ajv/-/ajv-6.10.2.tgz#d3cea04d6b017b2894ad69040fec8b623eb4bd52"
+  dependencies:
+    fast-deep-equal "^2.0.1"
+    fast-json-stable-stringify "^2.0.0"
+    json-schema-traverse "^0.4.1"
+    uri-js "^4.2.2"
 
 ajv@^6.5.3, ajv@^6.5.5, ajv@^6.6.1:
   version "6.6.2"
@@ -5893,6 +5900,10 @@ estraverse@^4.0.0, estraverse@^4.1.0, estraverse@^4.1.1, estraverse@^4.2.0:
 estree-walker@^0.5.2:
   version "0.5.2"
   resolved "https://registry.yarnpkg.com/estree-walker/-/estree-walker-0.5.2.tgz#d3850be7529c9580d815600b53126515e146dd39"
+
+estree-walker@^0.6.1:
+  version "0.6.1"
+  resolved "https://registry.yarnpkg.com/estree-walker/-/estree-walker-0.6.1.tgz#53049143f40c6eb918b23671d1fe3219f3a1b362"
 
 esutils@^2.0.0, esutils@^2.0.2:
   version "2.0.2"
@@ -12241,6 +12252,12 @@ rollup-plugin-filesize@^6.0.0:
     gzip-size "^5.0.0"
     terser "^3.10.0"
 
+rollup-plugin-json@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/rollup-plugin-json/-/rollup-plugin-json-4.0.0.tgz#a18da0a4b30bf5ca1ee76ddb1422afbb84ae2b9e"
+  dependencies:
+    rollup-pluginutils "^2.5.0"
+
 rollup-plugin-node-resolve@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/rollup-plugin-node-resolve/-/rollup-plugin-node-resolve-4.0.0.tgz#9bc6b8205e9936cc0e26bba2415f1ecf1e64d9b2"
@@ -12291,6 +12308,12 @@ rollup-pluginutils@^2.0.1, rollup-pluginutils@^2.3.0, rollup-pluginutils@^2.3.3:
   dependencies:
     estree-walker "^0.5.2"
     micromatch "^2.3.11"
+
+rollup-pluginutils@^2.5.0:
+  version "2.8.2"
+  resolved "https://registry.yarnpkg.com/rollup-pluginutils/-/rollup-pluginutils-2.8.2.tgz#72f2af0748b592364dbd3389e600e5a9444a351e"
+  dependencies:
+    estree-walker "^0.6.1"
 
 rollup@^1.1.0:
   version "1.1.0"
