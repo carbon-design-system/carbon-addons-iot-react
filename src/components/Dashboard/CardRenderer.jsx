@@ -47,7 +47,7 @@ const CardRenderer = React.memo(
   ({
     style, // eslint-disable-line
     card, // eslint-disable-line
-    card: { availableActions, type, dataSource, isExpanded, ...others }, // eslint-disable-line
+    card: { availableActions, type, dataSource, ...others }, // eslint-disable-line
     onCardAction, // eslint-disable-line
     i18n, // eslint-disable-line
     dashboardBreakpoints, // eslint-disable-line
@@ -73,8 +73,9 @@ const CardRenderer = React.memo(
     );
 
     const cachedExpandedStyle = useMemo(
-      () => (isExpanded ? merge({ height: '100%', width: '100%', padding: '50' }, style) : style),
-      [isExpanded, style]
+      () =>
+        card.isExpanded ? merge({ height: '100%', width: '100%', padding: '50px' }, style) : style,
+      [card.isExpanded, style]
     );
 
     return (
@@ -203,4 +204,7 @@ const CardRenderer = React.memo(
     );
   }
 );
+CachedCardRenderer.defaultProps = {
+  style: {},
+};
 export default CachedCardRenderer;

@@ -5,7 +5,6 @@ import 'react-grid-layout/css/styles.css';
 import 'react-resizable/css/styles.css';
 import styled from 'styled-components';
 import find from 'lodash/find';
-import useDeepCompareEffect from 'use-deep-compare-effect';
 
 import { getLayout } from '../../utils/componentUtilityFunctions';
 import {
@@ -296,26 +295,11 @@ const Dashboard = ({
 }) => {
   const [breakpoint, setBreakpoint] = useState('lg');
 
-  // card state
-  const [cardsState, setCards] = useState(cards);
-
-  // use Effec to update card state
-  useDeepCompareEffect(
-    () => {
-      setCards(cards);
-    },
-    [cards]
-  );
-
-  /** Function to handle card update */
-  const updateCardInDashboard = newCard =>
-    setCards(cardsState.map(card => (card.id === newCard.id ? newCard : card)));
+  // keep track of the expanded card id
+  const [expandedId, setExpandedId] = useState();
 
   // onCardAction, should have the default ones by the dashboard eg. expand other are merged from the prop
   const handleCardAction = (id, type, payload) => {
-    // Find the right card to be updated
-    const card = cardsState.find(cardItem => cardItem.id === id);
-
     // callback time grain change from parent
     if (type === 'CHANGE_TIME_RANGE') {
       return timeGrainCallback(id, type, payload);
@@ -323,26 +307,12 @@ const Dashboard = ({
 
     // expand card
     if (type === 'OPEN_EXPANDED_CARD') {
-      updateCardInDashboard({
-        ...card,
-        content: {
-          ...card.content,
-          isExpanded: true,
-        },
-        isExpanded: true,
-      });
+      setExpandedId(id);
     }
 
     // close expanded card
     if (type === 'CLOSE_EXPANDED_CARD') {
-      updateCardInDashboard({
-        ...card,
-        content: {
-          ...card.content,
-          isExpanded: false,
-        },
-        isExpanded: false,
-      });
+      setExpandedId(null);
     }
     return null;
   };
@@ -415,14 +385,22 @@ const Dashboard = ({
       rowHeight,
     ]
   );
-  const expandedCard = cards.find(i => i.isExpanded) || null;
+  // Cache the expanded card
+  const expandedCard = useMemo(() => cards.find(i => i.id === expandedId) || null, [
+    cards,
+    expandedId,
+  ]);
 
   return (
     <div className={className}>
       {expandedCard && (
         <div className="bx--modal is-visible">
           <CardRenderer
-            card={{ ...expandedCard }}
+            card={{
+              ...expandedCard,
+              content: { ...expandedCard.content, isExpanded: true },
+              isExpanded: true,
+            }}
             key={expandedCard.id}
             onCardAction={handleCardAction}
             i18n={i18n}
