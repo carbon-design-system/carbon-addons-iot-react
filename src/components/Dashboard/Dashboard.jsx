@@ -5,6 +5,7 @@ import 'react-grid-layout/css/styles.css';
 import 'react-resizable/css/styles.css';
 import styled from 'styled-components';
 import find from 'lodash/find';
+import some from 'lodash/some';
 
 import { getLayout } from '../../utils/componentUtilityFunctions';
 import {
@@ -81,8 +82,6 @@ const propTypes = {
   onDashboardAction: PropTypes.func,
   /** Is the dashboard in edit mode? */
   isEditable: PropTypes.bool,
-  /** Is the dashboard loading data */
-  isLoading: PropTypes.bool,
   /** array of configurable sizes to dimensions */
   cardDimensions: CardSizesToDimensionsPropTypes,
   /** Optional filter that should be rendered top right */
@@ -169,7 +168,6 @@ const propTypes = {
 
 const defaultProps = {
   isEditable: false,
-  isLoading: false,
   description: null,
   lastUpdated: null,
   onLayoutChange: null,
@@ -285,7 +283,6 @@ const Dashboard = ({
   rowHeight,
   layouts,
   isEditable,
-  isLoading,
   onLayoutChange,
   onBreakpointChange,
   className,
@@ -355,6 +352,9 @@ const Dashboard = ({
 
   const cachedOnLayoutChange = useCallback(handleLayoutChange, [onLayoutChange]);
   const cachedOnBreakpointChange = useCallback(handleBreakpointChange, [onBreakpointChange]);
+
+  // Is any card in the dashboard loading?
+  const isLoading = useMemo(() => some(cards, i => i.isLoading || i.isHotspotDataLoading), [cards]);
 
   const gridContents = useMemo(
     () =>

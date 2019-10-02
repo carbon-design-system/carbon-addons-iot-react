@@ -14,7 +14,6 @@ import { CARD_TYPES } from '../../constants/LayoutConstants';
 
 const CachedCardRenderer = ({
   style, //eslint-disable-line
-  card, // eslint-disable-line
   onCardAction, //eslint-disable-line
   isLoading, // eslint-disable-line
   ...others
@@ -26,14 +25,13 @@ const CachedCardRenderer = ({
     },
     [style] // need to do a deep compare on style
   );
-  // Have to reset the card action callback once the dashboard has finished loading
-  const cachedOnCardAction = useCallback(onCardAction, [card, isLoading]);
+  // Have to reset the card action callback once the whole dashboard has finished loading to get the latest dashboard
+  const cachedOnCardAction = useCallback(onCardAction, [isLoading]);
   return (
     <CardRenderer
       {...others}
       isLoading={isLoading}
       onCardAction={cachedOnCardAction}
-      card={card}
       style={cachedStyle}
     />
   );
@@ -88,7 +86,6 @@ const CardRenderer = React.memo(
             dataSource={dataSource}
             type={type}
             i18n={i18n}
-            isLoading={card.isLoading || isLoading}
             isEditable={isEditable}
             onCardAction={onCardAction}
             breakpoint={breakpoint}
@@ -105,7 +102,6 @@ const CardRenderer = React.memo(
             dataSource={dataSource}
             type={type}
             i18n={i18n}
-            isLoading={card.isLoading || isLoading}
             isEditable={isEditable}
             onCardAction={onCardAction}
             breakpoint={breakpoint}
@@ -122,7 +118,6 @@ const CardRenderer = React.memo(
             dataSource={dataSource}
             type={type}
             i18n={i18n}
-            isLoading={card.isLoading || isLoading}
             isEditable={isEditable}
             onCardAction={onCardAction}
             breakpoint={breakpoint}
@@ -139,7 +134,6 @@ const CardRenderer = React.memo(
             dataSource={dataSource}
             type={type}
             i18n={i18n}
-            isLoading={card.isLoading || isLoading}
             isEditable={isEditable}
             onCardAction={onCardAction}
             breakpoint={breakpoint}
@@ -156,7 +150,6 @@ const CardRenderer = React.memo(
             dataSource={dataSource}
             type={type}
             i18n={i18n}
-            isLoading={card.isLoading || isLoading}
             isEditable={isEditable}
             onCardAction={onCardAction}
             breakpoint={breakpoint}
@@ -173,7 +166,6 @@ const CardRenderer = React.memo(
             dataSource={dataSource}
             type={type}
             i18n={i18n}
-            isLoading={card.isLoading || isLoading}
             isEditable={isEditable}
             onCardAction={onCardAction}
             breakpoint={breakpoint}
@@ -190,7 +182,6 @@ const CardRenderer = React.memo(
             dataSource={dataSource}
             type={type}
             i18n={i18n}
-            isLoading={card.isLoading || isLoading}
             isEditable={isEditable}
             onCardAction={onCardAction}
             breakpoint={breakpoint}
