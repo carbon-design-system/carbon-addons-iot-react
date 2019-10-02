@@ -23,7 +23,7 @@ describe('timeSeriesUtils', () => {
     expect(sampleValues[0].pressure).toBeDefined();
   });
   test('generateTableSampleValues', () => {
-    const tableSampleValues = generateTableSampleValues([
+    const tableSampleValues = generateTableSampleValues('test', [
       { dataSourceId: 'column1' },
       { dataSourceId: 'column2' },
       { dataSourceId: 'column3', type: 'TIMESTAMP' },

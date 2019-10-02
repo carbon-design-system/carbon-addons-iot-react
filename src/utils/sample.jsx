@@ -2487,7 +2487,7 @@ export const actions1 = [
   { id: 'openTicket', labelText: 'Open Ticket' },
 ];
 
-export const actions2 = [{ id: 'open', icon: iconEdit }];
+export const actions2 = [{ id: 'open', label: 'open', icon: iconEdit }];
 
 export const tableColumns = [
   {

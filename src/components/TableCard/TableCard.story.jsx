@@ -9,7 +9,7 @@ import { tableColumns, tableData, actions1, actions2 } from '../../utils/sample'
 
 import TableCard from './TableCard';
 
-storiesOf('Watson IoT Experimental|TableCard', module)
+storiesOf('Watson IoT|TableCard', module)
   .add('size - large', () => {
     const size = CARD_SIZES.LARGE;
     return (

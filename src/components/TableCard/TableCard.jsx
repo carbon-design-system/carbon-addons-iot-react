@@ -256,6 +256,7 @@ const TableCard = ({
           });
         }}
         icon={actionList[0].icon}
+        description={actionList[0].label}
       />
     ) : actionList && actionList.length > 1 ? (
       <StyledOverflowMenu
@@ -531,7 +532,7 @@ const TableCard = ({
   const tableDataWithTimestamp = useMemo(
     () =>
       isEditable
-        ? generateTableSampleValues(columns)
+        ? generateTableSampleValues(id, columns)
         : hasActionColumn ||
           filteredTimestampColumns.length ||
           filteredPrecisionColumns.length ||
@@ -600,13 +601,14 @@ const TableCard = ({
           })
         : tableData,
     [
-      columns,
-      tableData,
-      filteredPrecisionColumns,
-      filteredTimestampColumns,
-      hasActionColumn,
       isEditable,
+      id,
+      columns,
+      hasActionColumn,
+      filteredTimestampColumns,
+      filteredPrecisionColumns,
       thresholds,
+      tableData,
     ]
   );
 
