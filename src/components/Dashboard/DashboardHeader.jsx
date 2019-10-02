@@ -5,6 +5,7 @@ import { SkeletonText, Icon } from 'carbon-components-react';
 
 import { handleEnterKeyDown } from '../../utils/componentUtilityFunctions';
 import { COLORS } from '../../styles/styles';
+import icons, { bundledIconNames } from '../../utils/bundledIcons';
 
 const propTypes = {
   /** title of the dashboard */
@@ -26,14 +27,14 @@ const propTypes = {
       id: PropTypes.string.isRequired,
       /** icon ultimately gets passed through all the way to <Button>, which has this same copied proptype definition for icon */
       icon: PropTypes.oneOfType([
+        PropTypes.oneOf(bundledIconNames),
         PropTypes.shape({
           width: PropTypes.string,
           height: PropTypes.string,
           viewBox: PropTypes.string.isRequired,
           svgData: PropTypes.object.isRequired,
         }),
-        PropTypes.string,
-        PropTypes.node,
+        PropTypes.element,
       ]),
       /** Optional custom component */
       customActionComponent: PropTypes.node,
@@ -145,11 +146,11 @@ const DashboardHeader = ({
                 }}
               >
                 {typeof action.icon === 'string' ? (
-                  <Icon name={action.icon} description={action.labelText} />
+                  <Icon icon={icons[action.icon]} description={action.labelText} />
                 ) : React.isValidElement(action.icon) ? (
                   action.icon
                 ) : (
-                  <Icon {...action.icon} description={action.labelText} />
+                  <Icon icon={action.icon} description={action.labelText} />
                 )}
               </div>
             ) : (

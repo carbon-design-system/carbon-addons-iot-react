@@ -55,8 +55,8 @@ storiesOf('Watson IoT Experimental|Dashboard Header', module)
           description={text('description', 'Shows an overview of daily data for a building')}
           lastUpdated={text('lastUpdated', '03/31/2019 13:55')}
           actions={[
-            { id: 'edit', labelText: 'Edit', icon: Edit },
-            { id: 'delete', labelText: 'Delete', icon: Delete },
+            { id: 'edit', labelText: 'Edit', icon: <Edit /> },
+            { id: 'delete', labelText: 'Delete', icon: <Delete /> },
           ]}
           onDashboardAction={action('onDashboardAction')}
         />
@@ -87,9 +87,9 @@ storiesOf('Watson IoT Experimental|Dashboard Header', module)
             </DatePicker>
           }
           actions={[
-            { id: 'edit', labelText: 'Edit', icon: Edit },
-            { id: 'delete', labelText: 'Delete', icon: Delete },
-            { id: 'pin', labelText: 'Pin', icon: Pin },
+            { id: 'edit', labelText: 'Edit', icon: <Edit /> },
+            { id: 'delete', labelText: 'Delete', icon: <Delete /> },
+            { id: 'pin', labelText: 'Pin', icon: <Pin /> },
           ]}
           onDashboardAction={action('onDashboardAction')}
         />
