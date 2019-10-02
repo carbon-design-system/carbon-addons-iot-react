@@ -25,7 +25,7 @@ storiesOf('Watson IoT Experimental|BarChartCard', module).add('basic', () => {
               values: chartData.events
                 .filter((i, idx) => idx < 10)
                 .map(i => ({
-                  x: new Date(i.timestamp + timeOffset).toISOString(),
+                  x: new Date(i.timestamp + timeOffset).getTime(),
                   y: i[field],
                 })),
               color: COLORS.RED,
@@ -35,7 +35,7 @@ storiesOf('Watson IoT Experimental|BarChartCard', module).add('basic', () => {
               values: chartData.events
                 .filter((i, idx) => idx < 10)
                 .map(i => ({
-                  x: new Date(i.timestamp + timeOffset).toISOString(),
+                  x: new Date(i.timestamp + timeOffset).getTime(),
                   y: i[field],
                 })),
               color: COLORS.BLUE,
