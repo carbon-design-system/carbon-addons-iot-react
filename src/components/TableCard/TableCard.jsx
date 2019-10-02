@@ -732,7 +732,7 @@ const TableCard = ({
             customToolbarContent: (
               <ToolbarButton
                 kind="ghost"
-                small
+                size="small"
                 renderIcon={Download16}
                 iconDescription={strings.downloadIconDescription}
                 onClick={() => csvDownloadHandler()}
