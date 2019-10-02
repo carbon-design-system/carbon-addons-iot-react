@@ -399,6 +399,55 @@ const StatefulDashboard = ({ ...props }) => {
   };
   */
 
+  const handleTimegrainCallback = (id, type, payload) => {
+    const { range } = payload;
+    const cardRange =
+      range === 'last24Hours'
+        ? { interval: 'hour', num: 24 }
+        : range === 'last7Days'
+        ? { interval: 'day', num: 7 }
+        : range === 'lastMonth'
+        ? { interval: 'day', num: 30 }
+        : range === 'lastQuarter'
+        ? { interval: 'week', num: 12 }
+        : range === 'lastYear'
+        ? { interval: 'month', num: 12 }
+        : range === 'thisWeek'
+        ? { interval: 'day', period: 'week' }
+        : range === 'thisMonth'
+        ? { interval: 'day', period: 'month' }
+        : range === 'thisQuarter'
+        ? { interval: 'week', period: 'quarter' }
+        : range === 'thisYear'
+        ? { interval: 'month', period: 'year' }
+        : { interval: 'day', num: 7 };
+
+    setCards(
+      cards.map(i =>
+        i.id === id
+          ? {
+              ...i,
+              interval: cardRange.interval,
+              timeRange: range,
+              values: cardRange.period
+                ? getPeriodChartData(
+                    cardRange.interval,
+                    cardRange.period,
+                    { min: 10, max: 100 },
+                    100
+                  )
+                : getIntervalChartData(
+                    cardRange.interval,
+                    cardRange.num,
+                    { min: 10, max: 100 },
+                    100
+                  ),
+            }
+          : i
+      )
+    );
+  };
+
   const handleCardAction = (id, type, payload) => {
     console.log(id, type, payload);
     if (type === 'DELETE_CARD') {
@@ -473,7 +522,14 @@ const StatefulDashboard = ({ ...props }) => {
     </div>
   );
   */
-  return <Dashboard cards={cards} onCardAction={handleCardAction} {...props} />;
+  return (
+    <Dashboard
+      cards={cards}
+      onCardAction={handleCardAction}
+      timeGrainCallback={handleTimegrainCallback}
+      {...props}
+    />
+  );
 };
 
 storiesOf('Dashboard (Experimental)', module)
