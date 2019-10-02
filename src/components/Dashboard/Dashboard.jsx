@@ -81,7 +81,6 @@ const propTypes = {
   onBreakpointChange: PropTypes.func,
   /** Callback called when an action is clicked.  The id of the action is passed to the callback */
   onDashboardAction: PropTypes.func,
-  onCardAction: PropTypes.func,
   /** Is the dashboard in edit mode? */
   isEditable: PropTypes.bool,
   /** Is the dashboard loading data */
@@ -177,7 +176,6 @@ const defaultProps = {
   lastUpdated: null,
   onLayoutChange: null,
   onDashboardAction: null,
-  onCardAction: null,
   onBreakpointChange: null,
   i18n: {
     lastUpdatedLabel: 'Last updated: ',
@@ -279,7 +277,6 @@ const Dashboard = ({
   description,
   lastUpdated,
   hasLastUpdated,
-  onCardAction,
   i18n,
   i18n: { lastUpdatedLabel },
   dashboardBreakpoints,
@@ -384,7 +381,7 @@ const Dashboard = ({
     }
   };
 
-  const cachedCardAction = useCallback(onCardAction, [onCardAction]); // cache the card action
+  const cachedCardAction = useCallback(handleCardAction, [cardsState]); // cache the card action on the card state
   const cachedOnLayoutChange = useCallback(handleLayoutChange, [onLayoutChange]);
   const cachedOnBreakpointChange = useCallback(handleBreakpointChange, [onBreakpointChange]);
 

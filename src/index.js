@@ -53,3 +53,4 @@ export {
 } from './constants/LayoutConstants';
 export { findMatchingThresholds } from './components/TableCard/TableCard';
 export { validateDashboardJSON } from './utils/schemas/validators';
+export { determineCardRange } from './utils/cardUtilityFunctions';
