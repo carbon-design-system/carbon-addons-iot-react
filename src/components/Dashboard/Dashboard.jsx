@@ -5,7 +5,6 @@ import 'react-grid-layout/css/styles.css';
 import 'react-resizable/css/styles.css';
 import styled from 'styled-components';
 import find from 'lodash/find';
-import merge from 'lodash/merge';
 import useDeepCompareEffect from 'use-deep-compare-effect';
 
 import { getLayout } from '../../utils/componentUtilityFunctions';
@@ -331,16 +330,19 @@ const Dashboard = ({
           isExpanded: true,
         },
         isExpanded: true,
-        availableActions: merge(card.availableActions, {
-          // we will create a new card so we need to "enable" the expand so can close
-          expand: true,
-        }),
       });
     }
 
     // close expanded card
     if (type === 'CLOSE_EXPANDED_CARD') {
-      updateCardInDashboard({ ...card, isExpanded: false });
+      updateCardInDashboard({
+        ...card,
+        content: {
+          ...card.content,
+          isExpanded: false,
+        },
+        isExpanded: false,
+      });
     }
     return null;
   };
@@ -381,7 +383,6 @@ const Dashboard = ({
     }
   };
 
-  const cachedCardAction = useCallback(handleCardAction, [cardsState]); // cache the card action on the card state
   const cachedOnLayoutChange = useCallback(handleLayoutChange, [onLayoutChange]);
   const cachedOnBreakpointChange = useCallback(handleBreakpointChange, [onBreakpointChange]);
 
@@ -391,7 +392,7 @@ const Dashboard = ({
         <CardRenderer
           card={card}
           key={card.id}
-          onCardAction={cachedCardAction}
+          onCardAction={handleCardAction}
           i18n={cachedI18N}
           dashboardBreakpoints={dashboardBreakpoints}
           cardDimensions={cardDimensions}
@@ -401,10 +402,9 @@ const Dashboard = ({
           isEditable={isEditable}
           breakpoint={breakpoint}
         />
-      )),
+      )), // eslint-disable-next-line
     [
       breakpoint,
-      cachedCardAction,
       cachedI18N,
       cardDimensions,
       cards,
@@ -424,7 +424,7 @@ const Dashboard = ({
           <CardRenderer
             card={{ ...expandedCard }}
             key={expandedCard.id}
-            onCardAction={cachedCardAction}
+            onCardAction={handleCardAction}
             i18n={i18n}
             dashboardBreakpoints={dashboardBreakpoints}
             cardDimensions={cardDimensions}
