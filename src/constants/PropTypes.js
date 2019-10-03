@@ -277,6 +277,4 @@ export const CardPropTypes = {
   dashboardColumns: DashboardColumnsPropTypes,
   /** array of configurable sizes to dimensions */
   cardDimensions: CardSizesToDimensionsPropTypes,
-  /** the content to show in the card */
-  children: PropTypes.node,
 };
