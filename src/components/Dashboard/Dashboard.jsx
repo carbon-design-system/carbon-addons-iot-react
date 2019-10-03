@@ -16,10 +16,7 @@ import {
 } from '../../constants/PropTypes';
 import ValueCard from '../ValueCard/ValueCard';
 import ImageCard from '../ImageCard/ImageCard';
-import DonutCard from '../DonutCard/DonutCard';
 import TableCard from '../TableCard/TableCard';
-import BarChartCard from '../BarChartCard/BarChartCard';
-import PieCard from '../PieCard/PieCard';
 import TimeSeriesCard from '../TimeSeriesCard/TimeSeriesCard';
 import {
   DASHBOARD_COLUMNS,
@@ -365,51 +362,9 @@ const Dashboard = ({
           rowHeight={rowHeight}
         />
       ) : null}
-      {card.type === CARD_TYPES.DONUT ? (
-        <DonutCard
-          {...card}
-          i18n={i18n}
-          isLoading={card.isLoading || isLoading}
-          isEditable={isEditable}
-          onCardAction={onCardAction}
-          key={card.id}
-          breakpoint={breakpoint}
-          dashboardBreakpoints={dashboardBreakpoints}
-          dashboardColumns={dashboardColumns}
-          cardDimensions={cardDimensions}
-          rowHeight={rowHeight}
-        />
-      ) : null}
-      {card.type === CARD_TYPES.PIE ? (
-        <PieCard
-          {...card}
-          i18n={i18n}
-          isLoading={card.isLoading || isLoading}
-          isEditable={isEditable}
-          onCardAction={onCardAction}
-          key={card.id}
-          breakpoint={breakpoint}
-          dashboardBreakpoints={dashboardBreakpoints}
-          dashboardColumns={dashboardColumns}
-          cardDimensions={cardDimensions}
-          rowHeight={rowHeight}
-        />
-      ) : null}
-      {card.type === CARD_TYPES.BAR ? (
-        <BarChartCard
-          {...card}
-          i18n={i18n}
-          isLoading={card.isLoading || isLoading}
-          isEditable={isEditable}
-          onCardAction={onCardAction}
-          key={card.id}
-          breakpoint={breakpoint}
-          dashboardBreakpoints={dashboardBreakpoints}
-          dashboardColumns={dashboardColumns}
-          cardDimensions={cardDimensions}
-          rowHeight={rowHeight}
-        />
-      ) : null}
+      {card.type === CARD_TYPES.DONUT ? <p>Donut chart is TBD</p> : null}
+      {card.type === CARD_TYPES.PIE ? <p>Pie chart is TBD</p> : null}
+      {card.type === CARD_TYPES.BAR ? <p>Bar chart is TBD</p> : null}
     </div>
   );
 
