@@ -540,7 +540,6 @@ storiesOf('Dashboard (Experimental)', module)
         cards={originalCards}
         lastUpdated={Date()}
         isEditable={boolean('isEditable', false)}
-        isLoading={boolean('isLoading', false)}
         onBreakpointChange={action('onBreakpointChange')}
         onLayoutChange={action('onLayoutChange')}
       />
@@ -552,7 +551,6 @@ storiesOf('Dashboard (Experimental)', module)
         title={text('title', 'Munich Building')}
         lastUpdated={Date()}
         isEditable={boolean('isEditable', false)}
-        isLoading={boolean('isLoading', false)}
         onBreakpointChange={action('onBreakpointChange')}
         onLayoutChange={action('onLayoutChange')}
       />
@@ -563,7 +561,6 @@ storiesOf('Dashboard (Experimental)', module)
       <StatefulDashboard
         title={text('title', 'Munich Building')}
         isEditable={boolean('isEditable', false)}
-        isLoading={boolean('isLoading', false)}
         onBreakpointChange={action('onBreakpointChange')}
         onLayoutChange={action('onLayoutChange')}
         hasLastUpdated={false}
@@ -575,7 +572,6 @@ storiesOf('Dashboard (Experimental)', module)
       <StatefulDashboard
         title={text('title', 'Munich Building')}
         isEditable={boolean('isEditable', false)}
-        isLoading={boolean('isLoading', false)}
         onBreakpointChange={action('onBreakpointChange')}
         onLayoutChange={action('onLayoutChange')}
         actions={[{ id: 'edit', label: 'Edit', icon: 'edit--glyph' }]}
@@ -590,7 +586,6 @@ storiesOf('Dashboard (Experimental)', module)
         title={text('title', 'Munich Building')}
         lastUpdated={Date()}
         isEditable={boolean('isEditable', false)}
-        isLoading={boolean('isLoading', false)}
         sidebar={
           <div style={{ width: 300 }}>
             <h1>Sidebar content</h1>
@@ -603,22 +598,12 @@ storiesOf('Dashboard (Experimental)', module)
       />
     );
   })
-  .add('loading', () => {
-    return (
-      <StatefulDashboard
-        title={text('title', 'Munich Building')}
-        isEditable={boolean('isEditable', false)}
-        isLoading={boolean('isLoading', true)}
-      />
-    );
-  })
   .add('i18n labels', () => {
     return (
       <StatefulDashboard
         title={text('title', 'Munich Building')}
         lastUpdated={Date()}
         isEditable={boolean('isEditable', false)}
-        isLoading={boolean('isLoading', false)}
         onBreakpointChange={action('onBreakpointChange')}
         onLayoutChange={action('onLayoutChange')}
         onDashboardAction={action('onDashboardAction')}
