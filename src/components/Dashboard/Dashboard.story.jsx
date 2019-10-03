@@ -685,6 +685,42 @@ storiesOf('Dashboard (Experimental)', module)
       />
     );
   })
+  .add('full screen table card', () => {
+    const data = [...Array(35)].map((id, index) => ({
+      id: `row-${index}`,
+      values: {
+        timestamp: 1569819600000,
+        deviceid: 'Campus_EGL',
+        peopleCount_EnterpriseBuilding_mean: 150.5335383714,
+        headCount_EnterpriseBuilding_mean: 240,
+        capacity_EnterpriseBuilding_mean: 300,
+        allocatedSeats_EnterpriseBuilding_mean: 240,
+      },
+    }));
+    return (
+      <Dashboard
+        title="Expandable card, click expand to expand table"
+        cards={[
+          {
+            title: 'Expanded card',
+            id: `expandedcard`,
+            size: CARD_SIZES.LARGE,
+            type: CARD_TYPES.TABLE,
+            content: {
+              columns: [
+                { dataSourceId: 'timestamp' },
+                { dataSourceId: 'Campus_EGL' },
+                { dataSourceId: 'peopleCount_EnterpriseBuilding_mean' },
+                { dataSourceId: 'headCount_EnterpriseBuilding_mean' },
+                { dataSourceId: 'capacity_EnterpriseBuilding_mean' },
+              ],
+            },
+            values: data,
+          },
+        ]}
+      />
+    );
+  })
   .add('only value cards', () => {
     const numberThresholds = [
       { comparison: '<', value: '40', color: 'red', icon: 'icon--close--solid' },
