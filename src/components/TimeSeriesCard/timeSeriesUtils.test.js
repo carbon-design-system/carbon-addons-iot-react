@@ -18,9 +18,38 @@ describe('timeSeriesUtils', () => {
       'timestamp',
       'hour'
     );
+
     expect(sampleValues).toHaveLength(24);
     expect(sampleValues[0].temperature).toBeDefined();
     expect(sampleValues[0].pressure).toBeDefined();
+
+    const sampleValues2 = generateSampleValues(
+      [{ dataSourceId: 'temperature' }, { dataSourceId: 'pressure' }],
+      'timestamp',
+      'week'
+    );
+    expect(sampleValues2).toHaveLength(4);
+
+    const sampleValues3 = generateSampleValues(
+      [{ dataSourceId: 'temperature' }, { dataSourceId: 'pressure' }],
+      'timestamp',
+      'month'
+    );
+    expect(sampleValues3).toHaveLength(12);
+
+    const sampleValues4 = generateSampleValues(
+      [{ dataSourceId: 'temperature' }, { dataSourceId: 'pressure' }],
+      'timestamp',
+      'year'
+    );
+    expect(sampleValues4).toHaveLength(5);
+
+    const sampleValues5 = generateSampleValues(
+      [{ dataSourceId: 'temperature' }, { dataSourceId: 'pressure' }],
+      'timestamp',
+      'other'
+    );
+    expect(sampleValues5).toHaveLength(7);
   });
   test('generateTableSampleValues', () => {
     const tableSampleValues = generateTableSampleValues('test', [

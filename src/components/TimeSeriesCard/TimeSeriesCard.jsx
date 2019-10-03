@@ -56,7 +56,7 @@ const LineChartWrapper = styled.div`
   }
 `;
 
-const determineHeight = (size, measuredWidth) => {
+export const determineHeight = (size, measuredWidth) => {
   let height = '100%';
   switch (size) {
     case CARD_SIZES.MEDIUM:
@@ -74,7 +74,7 @@ const determineHeight = (size, measuredWidth) => {
   return height;
 };
 
-const determinePrecision = (size, value, precision) => {
+export const determinePrecision = (size, value, precision) => {
   // If it's an integer don't return extra values
   if (Number.isInteger(value)) {
     return 0;
@@ -88,7 +88,7 @@ const determinePrecision = (size, value, precision) => {
   return precision;
 };
 
-const formatChartData = (labels, series, values) => {
+export const formatChartData = (labels, series, values) => {
   return {
     labels,
     datasets: series.map(({ dataSourceId, label, color }) => ({
@@ -99,7 +99,7 @@ const formatChartData = (labels, series, values) => {
   };
 };
 
-const valueFormatter = (value, size, unit) => {
+export const valueFormatter = (value, size, unit) => {
   const precision = determinePrecision(size, value, Math.abs(value) > 1 ? 1 : 3);
   let renderValue = value;
   if (typeof value === 'number') {
