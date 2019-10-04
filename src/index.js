@@ -1,3 +1,8 @@
+// Needed so that any component that uses sizeme can be jest tested
+import sizeMe from 'react-sizeme';
+
+sizeMe.noPlaceholders = true;
+
 // Styles
 export styles from './styles.scss';
 
@@ -37,6 +42,18 @@ export PageWorkArea from './components/Page/PageWorkArea';
 export NavigationBar from './components/NavigationBar/NavigationBar';
 export Header from './components/Header';
 export SideNav from './components/SideNav';
+
+// Dashboard
+export Dashboard from './components/Dashboard/Dashboard';
+export Card from './components/Card/Card';
+export ValueCard, { determineMaxValueCardAttributeCount } from './components/ValueCard/ValueCard';
+export {
+  CARD_TYPES,
+  CARD_SIZES,
+  DASHBOARD_BREAKPOINTS,
+  DASHBOARD_SIZES,
+} from './constants/LayoutConstants';
+export { findMatchingThresholds } from './components/TableCard/TableCard';
 
 // Carbon proxy
 export {

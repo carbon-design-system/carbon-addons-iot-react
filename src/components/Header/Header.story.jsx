@@ -43,17 +43,6 @@ const StyledHeader = styled(Header)`
   }
 `;
 
-const User = styled.p`
-   {
-    color: white;
-    font-size: 0.75rem;
-    text-align: left;
-    margin-right: 0.5rem;
-    display: flex;
-    flex-direction: column;
-  }
-`;
-
 const HeaderProps = {
   user: 'JohnDoe@ibm.com',
   tenant: 'TenantId: Acme',
@@ -104,14 +93,7 @@ const HeaderProps = {
     {
       label: 'user',
       onClick: action('click'),
-      btnContent: (
-        <React.Fragment>
-          <User>
-            JohnDoe@ibm.com<span>TenantId: Acme</span>
-          </User>
-          <Avatar fill="white" description="Icon" />
-        </React.Fragment>
-      ),
+      btnContent: <Avatar fill="white" description="Icon" />,
       childContent: [
         {
           metaData: {
@@ -164,14 +146,7 @@ storiesOf('Watson IoT|Header', module)
         {
           label: 'user',
           onClick: action('click'),
-          btnContent: (
-            <React.Fragment>
-              <User>
-                JohnDoe@ibm.com<span>TenantId: Acme</span>
-              </User>
-              <Avatar fill="white" description="Icon" />
-            </React.Fragment>
-          ),
+          btnContent: <Avatar fill="white" description="Icon" />,
         },
       ]}
     />

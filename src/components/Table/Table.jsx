@@ -328,6 +328,7 @@ const Table = props => {
     // <StyledTableDiv id={id} className={className} style={style}>
     <StyledTableContainer>
       <TableToolbar
+        tableId={id}
         clearAllFiltersText={i18n.clearAllFilters}
         columnSelectionText={i18n.columnSelectionButtonAria}
         filterText={i18n.filterButtonAria}

@@ -2,7 +2,11 @@ import React from 'react';
 import { mount } from 'enzyme';
 import { HeaderMenuItem } from 'carbon-components-react/lib/components/UIShell';
 
-import HeaderMenu from './HeaderMenu';
+import HeaderMenu, { matches, keys } from './HeaderMenu';
+
+const event = {
+  which: 13,
+};
 
 describe('HeaderMenu', () => {
   let mountNode;
@@ -79,5 +83,9 @@ describe('HeaderMenu', () => {
 
     expect(headerMenuText).not.toMatch('Accessibility label');
     expect(headerMenuAnchorChildText).toMatch('Some other text');
+  });
+
+  it('should match', () => {
+    expect(matches(event, [keys.ENTER, keys.SPACE])).toEqual(true);
   });
 });

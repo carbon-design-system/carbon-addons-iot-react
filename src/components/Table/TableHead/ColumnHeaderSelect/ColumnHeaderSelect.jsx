@@ -9,7 +9,7 @@ const StyledColumnSelectContainer = styled(Button)`
   & {
     margin: 0 1rem 1rem 0;
     cursor: pointer;
-    opacity: ${props => (props.isHidden ? 0.5 : 1)};
+    opacity: ${props => (props['data-ishidden'] ? 0.5 : 1)};
   }
 `;
 
@@ -26,7 +26,7 @@ const ColumnHeaderSelect = ({
     key={columnId}
     onClick={() => onClick()}
     role="presentation"
-    isHidden={isHidden}
+    data-ishidden={isHidden}
     renderIcon={Draggable}
     size="small"
     ref={instance => {

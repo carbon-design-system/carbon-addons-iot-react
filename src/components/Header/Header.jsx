@@ -71,6 +71,8 @@ const propTypes = {
   className: PropTypes.string,
   /** Provide ID for the skip to content functionality */
   skipto: PropTypes.string,
+  /** href optional url to file if you click on title */
+  url: PropTypes.string,
   /** Object of action items */
   actionItems: PropTypes.arrayOf(
     PropTypes.shape({
@@ -110,6 +112,7 @@ const defaultProps = {
   className: 'main-header',
   skipto: '#main-content',
   headerPanel: null,
+  url: '#',
 };
 
 /**
@@ -124,6 +127,7 @@ const Header = ({
   hasSideNav,
   onClickSideNavExpand,
   headerPanel,
+  url,
 }) => {
   const [expanded, setExpanded] = useState(false);
   const handleHeaderPanelTriggerClick = useCallback(
@@ -180,7 +184,7 @@ const Header = ({
     <StyledHeader className={className} aria-label="main header">
       <SkipToContent href={skipto} />
       {hasSideNav && <HeaderMenuButton aria-label="Open menu" onClick={onClickSideNavExpand} />}
-      <HeaderName href="#" prefix={prefix}>
+      <HeaderName href={url} prefix={prefix}>
         {appName}
       </HeaderName>
       <HeaderGlobalBar>{actionBtnContent}</HeaderGlobalBar>
