@@ -8,7 +8,7 @@ import ImageControls from './ImageControls';
 
 const propTypes = {
   /** source of the local image file to display */
-  src: PropTypes.string.isRequired,
+  src: PropTypes.string,
   /** alt tag and shown on mouseover */
   alt: PropTypes.string,
   /** optional array of hotspots to render over the image */
@@ -23,6 +23,7 @@ const propTypes = {
 };
 
 const defaultProps = {
+  src: null,
   hotspots: [],
   alt: null,
   hideZoomControls: false,
