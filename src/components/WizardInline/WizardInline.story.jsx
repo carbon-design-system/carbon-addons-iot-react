@@ -181,6 +181,20 @@ storiesOf('Watson IoT|WizardInline', module)
       showLabels={boolean('showLabels', true)}
     />
   ))
+  .add('with breadcrumbs', () => (
+    <WizardInline
+      breadcrumb={[<a href="/">Home</a>, <a href="/">Type</a>, <span>Instance</span>]}
+      items={itemsAndComponents}
+      onBack={action('back')}
+      onClose={action('Closed')}
+      onNext={action('next')}
+      onSubmit={action('submit')}
+      title={text('title', 'Static Wizard')}
+      currentItemId="step2"
+      setItem={action('step clicked')}
+      showLabels={boolean('showLabels', true)}
+    />
+  ))
   .add('Static with Sidebar', () => (
     <WizardInline
       items={itemsAndComponents}

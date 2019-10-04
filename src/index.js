@@ -46,7 +46,7 @@ export SideNav from './components/SideNav';
 // Dashboard
 export Dashboard from './components/Dashboard/Dashboard';
 export Card from './components/Card/Card';
-export ValueCard, { determineMaxValueCardAttributeCount } from './components/ValueCard/ValueCard';
+export ValueCard from './components/ValueCard/ValueCard';
 export {
   CARD_TYPES,
   CARD_SIZES,
@@ -228,3 +228,8 @@ export {
   SideNavMenuItem,
   SideNavSwitcher,
 } from 'carbon-components-react';
+export { validateDashboardJSON } from './utils/schemas/validators';
+export {
+  determineCardRange,
+  determineMaxValueCardAttributeCount,
+} from './utils/cardUtilityFunctions';

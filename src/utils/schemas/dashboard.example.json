@@ -1,0 +1,38 @@
+{
+  "title": "My Dashboard",
+  "data": {
+    "entityType": "Building"
+  },
+  "cards": [
+    {
+      "type": "VALUE",
+      "size": "MEDIUM",
+      "title": "Facility Conditions",
+      "id": "card1",
+      "dataSource": {
+        "attributes": [
+          { "id": "status", "attribute": "status" },
+          { "id": "comfort", "attribute": "comfort" }
+        ]
+      },
+      "content": {
+        "attributes": [
+          { "dataSourceId": "status", "label": "Overall Status" },
+          { "dataSourceId": "comfort", "label": "Comfort Level", "unit": "%" }
+        ]
+      }
+    },
+    {
+      "type": "VALUE",
+      "size": "SMALL",
+      "title": "Munich",
+      "id": "card2",
+      "dataSource": { "attributes": [{ "id": "alerts", "attribute": "alerts" }] },
+      "content": { "attributes": [{ "dataSourceId": "alerts", "label": "Alerts" }] }
+    }
+  ],
+  "layouts": {
+    "lg": [{ "i": "card1", "x": 1, "y": 0 }, { "i": "card2", "x": 0, "y": 0 }],
+    "md": [{ "i": "card1", "x": 1, "y": 0 }, { "i": "card2", "x": 0, "y": 0 }]
+  }
+}

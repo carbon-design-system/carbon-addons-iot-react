@@ -118,17 +118,34 @@ const StyledCheckboxTableCell = styled(TableCell)`
   }
 `;
 
-const StyledTableRow = styled(TableRow)`
+const StyledTableRow = styled(({ isSelectable, ...others }) => <TableRow {...others} />)`
   &&& {
+    ${props => (props.onClick && props.isSelectable !== false ? `cursor: pointer;` : ``)}
     :hover {
       td {
         /* show the row actions if the table row is hovered over */
-        div > * {
+        div > *:not(label) {
           opacity: 1;
         }
       }
     }
-  }
+    ${(
+      props // turn off hover states if the row is set not selectable
+    ) =>
+      props.isSelectable === false
+        ? `td:first-of-type {
+      border-left: 1px solid #dfe3e6;
+    }
+    td {
+      background-color: inherit;
+      border-top: 1px solid #dfe3e6;
+      border-bottom: 1px solid #dfe3e6;
+    }
+    td:last-of-type {
+      border-right: 1px solid #dfe3e6;
+    }
+  }`
+        : ``}
 `;
 
 const StyledSingleSelectedTableRow = styled(({ hasRowSelection, ...props }) => (
@@ -141,6 +158,7 @@ const StyledSingleSelectedTableRow = styled(({ hasRowSelection, ...props }) => (
       position: relative;
     }
 
+    cursor: pointer;
     td:first-of-type:after {
       content: '';
       position: absolute;
@@ -197,7 +215,7 @@ const StyledTableExpandRow = styled(({ hasRowSelection, ...props }) => (
     }
     :hover {
       td {
-        div > * {
+        div > *:not(label) {
           opacity: 1;
         }
       }
@@ -366,6 +384,7 @@ const TableBodyRow = ({
   actionFailedText,
   learnMoreText,
   dismissText,
+  isSelectable,
   values,
   nestingLevel,
   nestingChildCount,
@@ -383,11 +402,15 @@ const TableBodyRow = ({
     hasRowSelection === 'multi' ? (
       <StyledCheckboxTableCell
         key={`${id}-row-selection-cell`}
-        onClick={e => {
-          onRowSelected(id, !isSelected);
-          e.preventDefault();
-          e.stopPropagation();
-        }}
+        onClick={
+          isSelectable !== false
+            ? e => {
+                onRowSelected(id, !isSelected);
+                e.preventDefault();
+                e.stopPropagation();
+              }
+            : null
+        }
       >
         {/* TODO: Replace checkbox with TableSelectRow component when onChange bug is fixed
       https://github.com/IBM/carbon-components-react/issues/1247
@@ -399,6 +422,7 @@ const TableBodyRow = ({
             labelText={selectRowAria}
             hideLabel
             checked={isSelected}
+            disabled={isSelectable === false}
           />
         </StyledNestedSpan>
       </StyledCheckboxTableCell>
@@ -474,10 +498,12 @@ const TableBodyRow = ({
             if (shouldExpandOnRowClick) {
               onRowExpanded(id, false);
             }
-            if (hasRowSelection === 'single') {
+            if (hasRowSelection === 'single' && isSelectable !== false) {
               onRowSelected(id, true);
             }
-            onRowClicked(id);
+            if (isSelectable !== false) {
+              onRowClicked(id);
+            }
           }}
         >
           {tableCells}
@@ -504,10 +530,12 @@ const TableBodyRow = ({
           if (shouldExpandOnRowClick) {
             onRowExpanded(id, true);
           }
-          if (hasRowSelection === 'single') {
+          if (hasRowSelection === 'single' && isSelectable !== false) {
             onRowSelected(id, true);
           }
-          onRowClicked(id);
+          if (isSelectable !== false) {
+            onRowClicked(id);
+          }
         }}
       >
         {tableCells}
@@ -517,8 +545,10 @@ const TableBodyRow = ({
     <StyledSingleSelectedTableRow
       key={id}
       onClick={() => {
-        onRowClicked(id);
-        onRowSelected(id, true);
+        if (isSelectable !== false) {
+          onRowClicked(id);
+          onRowSelected(id, true);
+        }
       }}
     >
       {tableCells}
@@ -527,11 +557,14 @@ const TableBodyRow = ({
     <StyledTableRow
       key={id}
       isSelected={isSelected}
+      isSelectable={isSelectable}
       onClick={() => {
-        if (hasRowSelection === 'single') {
-          onRowSelected(id, true);
+        if (isSelectable !== false) {
+          if (hasRowSelection === 'single') {
+            onRowSelected(id, true);
+          }
+          onRowClicked(id);
         }
-        onRowClicked(id);
       }}
     >
       {tableCells}

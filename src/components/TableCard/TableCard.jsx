@@ -107,7 +107,10 @@ const StyledStatefulTable = styled(({ showHeader, data, ...rest }) => (
     margin-left: 1rem;
   }
   .bx--data-table-v2-container {
-    ${props => (props.data && props.data.length > 0 ? `max-height: 435px;` : `height: 90%;`)}
+    ${props =>
+      props.data && props.data.length > 0 && !props.isExpanded
+        ? `max-height: 435px;`
+        : `height: 90%;`}
   }
   .bx--data-table-v2 {
     /* if the table is empty, remove border */
@@ -699,67 +702,72 @@ const TableCard = ({
       i18n={i18n}
       {...others}
     >
-      <StyledStatefulTable
-        columns={columnsToRender}
-        data={tableDataWithTimestamp}
-        isExpanded={isExpanded}
-        options={{
-          hasPagination: true,
-          hasSearch: true,
-          hasFilter,
-          hasRowExpansion,
-        }}
-        expandedData={expandedRowsFormatted}
-        actions={{
-          table: {
-            onRowClicked: () => {},
-            onRowExpanded: () => {},
-            onChangeSort: () => {},
-          },
-          pagination: { onChangePage: () => {} },
-          toolbar: {
-            onClearAllFilters: () => {},
-            onToggleFilter: () => {},
-          },
-        }}
-        view={{
-          pagination: {
-            pageSize: !isExpanded ? 10 : 20,
-            pageSizes: !isExpanded ? [10] : [20],
-            isItemPerPageHidden: true,
-          },
-          toolbar: {
-            activeBar: null,
-            isDisabled: isEditable,
-            customToolbarContent: (
-              <ToolbarButton
-                kind="ghost"
-                size="small"
-                renderIcon={Download16}
-                iconDescription={strings.downloadIconDescription}
-                onClick={() => csvDownloadHandler()}
-                title={strings.downloadIconDescription}
-              />
-            ),
-          },
-          filters: [],
-          table: {
-            ...(columnStartSort
-              ? {
-                  sort: {
-                    columnId: columnStartSort.id,
-                    direction: !columnStartSortDefined ? sort : columnStartSortDefined.sort,
-                  },
-                }
-              : {}),
-            emptyState: {
-              message: emptyMessage || strings.emptyMessage,
-            },
-          },
-        }}
-        showHeader={showHeader !== undefined ? showHeader : true}
-        i18n={i18n}
-      />
+      {({ height }) => {
+        const numberOfRowsPerPage = height ? Math.floor((height - 160) / 40) : 10;
+        return (
+          <StyledStatefulTable
+            columns={columnsToRender}
+            data={tableDataWithTimestamp}
+            isExpanded={isExpanded}
+            options={{
+              hasPagination: true,
+              hasSearch: true,
+              hasFilter,
+              hasRowExpansion,
+            }}
+            expandedData={expandedRowsFormatted}
+            actions={{
+              table: {
+                onRowClicked: () => {},
+                onRowExpanded: () => {},
+                onChangeSort: () => {},
+              },
+              pagination: { onChangePage: () => {} },
+              toolbar: {
+                onClearAllFilters: () => {},
+                onToggleFilter: () => {},
+              },
+            }}
+            view={{
+              pagination: {
+                pageSize: numberOfRowsPerPage,
+                pageSizes: [numberOfRowsPerPage],
+                isItemPerPageHidden: true,
+              },
+              toolbar: {
+                activeBar: null,
+                isDisabled: isEditable,
+                customToolbarContent: (
+                  <ToolbarButton
+                    kind="ghost"
+                    size="small"
+                    renderIcon={Download16}
+                    iconDescription={strings.downloadIconDescription}
+                    onClick={() => csvDownloadHandler()}
+                    title={strings.downloadIconDescription}
+                  />
+                ),
+              },
+              filters: [],
+              table: {
+                ...(columnStartSort
+                  ? {
+                      sort: {
+                        columnId: columnStartSort.id,
+                        direction: !columnStartSortDefined ? sort : columnStartSortDefined.sort,
+                      },
+                    }
+                  : {}),
+                emptyState: {
+                  message: emptyMessage || strings.emptyMessage,
+                },
+              },
+            }}
+            showHeader={showHeader !== undefined ? showHeader : true}
+            i18n={i18n}
+          />
+        );
+      }}
     </Card>
   );
 };

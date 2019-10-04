@@ -2507,6 +2507,11 @@ export const tableColumns = [
     priority: 2,
     type: 'TIMESTAMP',
   },
+  {
+    dataSourceId: 'pressure',
+    label: 'Pressure',
+    priority: 2,
+  },
 ];
 
 export const tableData = [

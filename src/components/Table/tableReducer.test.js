@@ -52,18 +52,6 @@ describe('table reducer testcases', () => {
     test('TABLE_FILTER_CLEAR', () => {
       expect(tableReducer(initialState, tableFilterClear()).view.filters).toEqual([]);
     });
-    test('TABLE_FILTER_APPLY filter with invalid column id', () => {
-      const updatedState = tableReducer(
-        initialState,
-        tableFilterApply({ invalidColumnName: 'filtervalue' })
-      );
-      // Apply the filter visually
-      expect(updatedState.view.filters).toEqual([
-        { columnId: 'invalidColumnName', value: 'filtervalue' },
-      ]);
-      // but data should be the same
-      expect(updatedState.view.table.filteredData).toEqual(initialState.data);
-    });
     test('TABLE_FILTER_APPLY filter should filter data', () => {
       const updatedState = tableReducer(
         initialState,
