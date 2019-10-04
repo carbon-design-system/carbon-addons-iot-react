@@ -12,7 +12,7 @@ const commonEditPageProps = {
   children: <div>child</div>,
 };
 const breadcrumb = [<a href="/">Home</a>, <a href="/">Type</a>, <span>Instance</span>];
-storiesOf('EditPage', module)
+storiesOf('Watson IoT|EditPage', module)
   .add('normal', () => <EditPage {...commonEditPageProps} />)
   .add('isLoading', () => <EditPage {...commonEditPageProps} isLoading />)
   .add('with blurb', () => (

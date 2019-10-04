@@ -47,7 +47,13 @@ const StyledStatefulTable = styled(({ showHeader, data, ...rest }) => (
   position: relative;
 
   &&& {
-    .bx--data-table-v2 thead tr:nth-child(2) {
+    .bx--data-table-container {
+      ${props =>
+        props.data && props.data.length > 0 && !props.isExpanded
+          ? `max-height: 435px;`
+          : `height: 90%;`}
+    }
+    .bx--data-table thead tr:nth-child(2) {
       height: 3rem;
 
       th {
@@ -81,22 +87,22 @@ const StyledStatefulTable = styled(({ showHeader, data, ...rest }) => (
     padding-bottom: 2px;
     padding-top: 0px;
   }
-  .bx--data-table-v2 th:first-of-type,
-  .bx--data-table-v2 td:first-of-type {
+  .bx--data-table th:first-of-type,
+  .bx--data-table td:first-of-type {
     padding-left: 1rem;
     padding-right: 1rem;
   }
-  .bx--data-table-v2 thead {
+  .bx--data-table thead {
     display: ${props => (!props.showHeader ? 'none' : '')};
     tr {
       height: 2rem;
     }
   }
 
-  .bx--data-table-v2 tbody tr {
+  .bx--data-table tbody tr {
     height: 2.5rem;
   }
-  .bx--data-table-v2-container + .bx--pagination {
+  .bx--data-table-container + .bx--pagination {
     border: 1px solid #dfe3e6;
   }
   .bx--pagination {
@@ -106,18 +112,8 @@ const StyledStatefulTable = styled(({ showHeader, data, ...rest }) => (
   .bx--toolbar-search-container {
     margin-left: 1rem;
   }
-  .bx--data-table-v2-container {
-    ${props =>
-      props.data && props.data.length > 0 && !props.isExpanded
-        ? `max-height: 435px;`
-        : `height: 90%;`}
-  }
-  .bx--data-table-v2 {
-    /* if the table is empty, remove border */
-    ${props =>
-      props.data && props.data.length > 0
-        ? `height: initial;`
-        : `height: 100%;border-bottom: unset;`}
+  .bx--data-table {
+    ${props => (props.data && props.data.length > 0 ? `height: initial;` : `height: 100%;`)}
   }
 `;
 

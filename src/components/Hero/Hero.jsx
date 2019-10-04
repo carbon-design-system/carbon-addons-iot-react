@@ -128,7 +128,8 @@ const Hero = ({
                   clickToOpen
                   tabIndex={0}
                   triggerText=""
-                  triggerId="tooltip"
+                  tooltipId="hero-tooltip"
+                  triggerId="hero-tooltip-trigger"
                   renderIcon={React.forwardRef((props, ref) => (
                     <Info ref={ref} />
                   ))}

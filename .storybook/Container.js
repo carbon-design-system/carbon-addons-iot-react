@@ -12,7 +12,7 @@ export default class Container extends Component {
           padding: '3rem',
           display: 'flex',
           flexDirection: 'column',
-          alignItems: 'center',
+          alignItems: 'stretch',
         }}
       >
         {story()}

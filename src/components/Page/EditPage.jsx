@@ -32,6 +32,8 @@ const StyledPageFooter = styled.div`
     bottom: 0rem;
     left: 0rem;
     right: 2rem;
+    display: flex;
+    justify-content: flex-end;
   }
 `;
 
@@ -102,7 +104,7 @@ const EditPage = ({
         <Fragment>
           <Hero {...others} description={blurb} onClose={onClose} i18n={i18n} />
           <StyledPageContent>{children}</StyledPageContent>
-          <StyledPageFooter className="bx--modal-footer">
+          <StyledPageFooter>
             <Button kind="secondary" onClick={onClose}>
               {cancelLabel}
             </Button>
