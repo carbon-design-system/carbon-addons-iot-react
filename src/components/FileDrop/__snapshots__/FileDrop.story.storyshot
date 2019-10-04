@@ -135,6 +135,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|FileD
         Any file can be uploaded.  Feel free to upload more than one!
       </p>
       <label
+        aria-disabled={false}
         className="bx--btn bx--btn--sm bx--btn--secondary"
         htmlFor="id1"
         onChange={[Function]}
@@ -222,6 +223,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|FileD
         Only one file can be uploaded
       </p>
       <label
+        aria-disabled={false}
         className="bx--btn bx--btn--sm bx--btn--secondary"
         htmlFor="id2"
         onChange={[Function]}

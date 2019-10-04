@@ -79,14 +79,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|SideN
           onClick={[Function]}
           type="button"
         >
-          <p
-            className="SideNavstory__User-sc-1xuki3-0 izjVyE"
-          >
-            JohnDoe@ibm.com
-            <span>
-              TenantId: Acme
-            </span>
-          </p>
           <svg
             aria-hidden={true}
             className="bx--header__menu-item bx--header__menu-title"

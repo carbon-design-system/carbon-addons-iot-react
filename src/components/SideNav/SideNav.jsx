@@ -68,55 +68,57 @@ const defaultProps = {
  * Side Navigation. part of UI shell
  */
 const SideNav = ({ links, defaultExpanded, isSideNavExpanded }) => {
-  const nav = links.map(link => {
-    const enabled = link.isEnabled ? link.isEnabled : false;
-    if (!enabled) {
-      return null;
-    }
-    if (link.hasOwnProperty('childContent')) {
-      let parentActive = false;
-      const children = link.childContent.map(childlink => {
-        if (childlink.isActive) {
-          parentActive = true;
-        }
+  const nav = links
+    .map(link => {
+      const enabled = link.isEnabled ? link.isEnabled : false;
+      if (!enabled) {
+        return null;
+      }
+      if (link.hasOwnProperty('childContent')) {
+        let parentActive = false;
+        const children = link.childContent.map(childlink => {
+          if (childlink.isActive) {
+            parentActive = true;
+          }
+          return (
+            <SideNavMenuItem
+              key={`menu-link-${link.childContent.indexOf(childlink)}-child`}
+              isActive={childlink.isActive}
+              {...childlink.metaData}
+            >
+              {childlink.content}
+            </SideNavMenuItem>
+          );
+        });
         return (
-          <SideNavMenuItem
-            key={`menu-link-${link.childContent.indexOf(childlink)}-child`}
-            isActive={childlink.isActive}
-            {...childlink.metaData}
+          <SideNavMenu
+            isActive={parentActive}
+            className={classnames({ disabled: link.isEnabled })}
+            renderIcon={link.icon}
+            aria-label="dropdown"
+            key={`menu-link-${links.indexOf(link)}-dropdown`}
+            title={link.linkContent}
           >
-            {childlink.content}
-          </SideNavMenuItem>
+            {children}
+          </SideNavMenu>
         );
-      });
+      }
       return (
-        <SideNavMenu
-          isActive={parentActive}
+        <SideNavLink
           className={classnames({ disabled: link.isEnabled })}
+          key={`menu-link-${link.metaData.label.replace(/\s/g, '')}-global`}
+          aria-label={link.metaData.label}
+          onClick={link.metaData.onClick}
+          href={link.metaData.href}
           renderIcon={link.icon}
-          aria-label="dropdown"
-          key={`menu-link-${links.indexOf(link)}-dropdown`}
-          title={link.linkContent}
+          isActive={link.isActive}
+          {...link.metaData}
         >
-          {children}
-        </SideNavMenu>
+          {link.linkContent}
+        </SideNavLink>
       );
-    }
-    return (
-      <SideNavLink
-        className={classnames({ disabled: link.isEnabled })}
-        key={`menu-link-${link.metaData.label.replace(/\s/g, '')}-global`}
-        aria-label={link.metaData.label}
-        onClick={link.metaData.onClick}
-        href={link.metaData.href}
-        renderIcon={link.icon}
-        isActive={link.isActive}
-        {...link.metaData}
-      >
-        {link.linkContent}
-      </SideNavLink>
-    );
-  });
+    })
+    .filter(i => i);
 
   return (
     <CarbonSideNav

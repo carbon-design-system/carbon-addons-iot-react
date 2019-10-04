@@ -346,7 +346,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
                   tabIndex={0}
                 >
                   <svg
-                    aria-label="First step"
+                    aria-hidden={true}
                     focusable="false"
                     height={16}
                     preserveAspectRatio="xMidYMid meet"
@@ -633,7 +633,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
                   tabIndex={0}
                 >
                   <svg
-                    aria-label="First step"
+                    aria-hidden={true}
                     focusable="false"
                     height={16}
                     preserveAspectRatio="xMidYMid meet"
@@ -678,7 +678,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
                   tabIndex={0}
                 >
                   <svg
-                    aria-label="Device Information step goes here"
+                    aria-hidden={true}
                     focusable="false"
                     height={16}
                     preserveAspectRatio="xMidYMid meet"
@@ -723,7 +723,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
                   tabIndex={0}
                 >
                   <svg
-                    aria-label="Long step"
+                    aria-hidden={true}
                     focusable="false"
                     height={16}
                     preserveAspectRatio="xMidYMid meet"

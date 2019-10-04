@@ -180,7 +180,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   type="button"
                 >
                   <svg
-                    aria-hidden={true}
+                    aria-hidden="true"
                     aria-label="More actions"
                     className="bx--btn__icon"
                     focusable="false"
@@ -331,7 +331,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                 >
                   
                   <div
-                    aria-expanded={false}
+                    aria-describedby="tooltip"
                     aria-haspopup="true"
                     className="bx--tooltip__trigger"
                     onBlur={[Function]}

@@ -22,16 +22,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Compo
   >
     <div
       className="bx--modal is-visible ComposedModal__StyledModal-sc-12pj5f-0 eVCcTg"
-      invalid={false}
       onBlur={[Function]}
-      onClearError={null}
       onClick={[Function]}
       onClose={[Function]}
       onKeyDown={[Function]}
       onTransitionEnd={[Function]}
       open={true}
       role="presentation"
-      submitFailed={false}
       tabIndex={-1}
     >
       <div
@@ -129,16 +126,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Compo
   >
     <div
       className="bx--modal is-visible big-modal ComposedModal__StyledModal-sc-12pj5f-0 eVCcTg"
-      invalid={false}
       onBlur={[Function]}
-      onClearError={null}
       onClick={[Function]}
       onClose={[Function]}
       onKeyDown={[Function]}
       onTransitionEnd={[Function]}
       open={true}
       role="presentation"
-      submitFailed={false}
       tabIndex={-1}
     >
       <div
@@ -263,16 +257,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Compo
   >
     <div
       className="bx--modal is-visible ComposedModal__StyledModal-sc-12pj5f-0 eVCcTg"
-      invalid={false}
       onBlur={[Function]}
-      onClearError={null}
       onClick={[Function]}
       onClose={[Function]}
       onKeyDown={[Function]}
       onTransitionEnd={[Function]}
       open={true}
       role="presentation"
-      submitFailed={false}
       tabIndex={-1}
     >
       <div
@@ -370,16 +361,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Compo
   >
     <div
       className="bx--modal is-visible ComposedModal__StyledModal-sc-12pj5f-0 eVCcTg"
-      invalid={false}
       onBlur={[Function]}
-      onClearError={[Function]}
       onClick={[Function]}
       onClose={[Function]}
       onKeyDown={[Function]}
       onTransitionEnd={[Function]}
       open={true}
       role="presentation"
-      submitFailed={false}
       tabIndex={-1}
     >
       <div
@@ -649,16 +637,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Compo
   >
     <div
       className="bx--modal is-visible ComposedModal__StyledModal-sc-12pj5f-0 eVCcTg"
-      invalid={false}
       onBlur={[Function]}
-      onClearError={null}
       onClick={[Function]}
       onClose={[Function]}
       onKeyDown={[Function]}
       onTransitionEnd={[Function]}
       open={true}
       role="presentation"
-      submitFailed={false}
       tabIndex={-1}
     >
       <div
@@ -768,16 +753,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Compo
   >
     <div
       className="bx--modal is-visible ComposedModal__StyledModal-sc-12pj5f-0 eVCcTg"
-      invalid={false}
       onBlur={[Function]}
-      onClearError={null}
       onClick={[Function]}
       onClose={[Function]}
       onKeyDown={[Function]}
       onTransitionEnd={[Function]}
       open={true}
       role="presentation"
-      submitFailed={false}
       tabIndex={-1}
     >
       <div
@@ -875,16 +857,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Compo
   >
     <div
       className="bx--modal is-visible ComposedModal__StyledModal-sc-12pj5f-0 eVCcTg"
-      invalid={false}
       onBlur={[Function]}
-      onClearError={null}
       onClick={[Function]}
       onClose={[Function]}
       onKeyDown={[Function]}
       onTransitionEnd={[Function]}
       open={true}
       role="presentation"
-      submitFailed={false}
       tabIndex={-1}
     >
       <div
@@ -1030,16 +1009,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Compo
   >
     <div
       className="bx--modal is-visible error-modal ComposedModal__StyledModal-sc-12pj5f-0 eVCcTg"
-      invalid={false}
       onBlur={[Function]}
-      onClearError={null}
       onClick={[Function]}
       onClose={[Function]}
       onKeyDown={[Function]}
       onTransitionEnd={[Function]}
       open={true}
       role="presentation"
-      submitFailed={false}
       tabIndex={-1}
     >
       <div

@@ -353,7 +353,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   tabIndex={0}
                 >
                   <svg
-                    aria-label="Identity"
+                    aria-hidden={true}
                     focusable="false"
                     height={16}
                     preserveAspectRatio="xMidYMid meet"

@@ -359,7 +359,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageT
               Page title
             </h2>
             <button
-              className="page-title-bar-title--edit Button__StyledButton-sc-19kycwu-0 gTXQZR bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-bottom"
+              className="page-title-bar-title--edit Button__StyledButton-sc-19kycwu-0 gTXQZR bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center"
               disabled={false}
               onClick={[Function]}
               tabIndex={0}
@@ -371,7 +371,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageT
                 Edit page title
               </span>
               <svg
-                aria-hidden={true}
+                aria-hidden="true"
                 aria-label="Edit page title"
                 className="bx--btn__icon"
                 focusable="false"
@@ -473,7 +473,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageT
             >
               
               <div
-                aria-expanded={false}
+                aria-describedby="tooltip"
                 aria-haspopup="true"
                 className="bx--tooltip__trigger"
                 onBlur={[Function]}
@@ -514,6 +514,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageT
           <button
             className="some-right-content Button__StyledButton-sc-19kycwu-0 gTXQZR bx--btn bx--btn--primary"
             disabled={false}
+            onClick={[Function]}
             tabIndex={0}
             type="button"
           >
@@ -650,7 +651,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageT
             >
               
               <div
-                aria-expanded={false}
+                aria-describedby="tooltip"
                 aria-haspopup="true"
                 className="bx--tooltip__trigger"
                 onBlur={[Function]}
@@ -934,7 +935,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageT
             >
               
               <div
-                aria-expanded={false}
+                aria-describedby="tooltip"
                 aria-haspopup="true"
                 className="bx--tooltip__trigger"
                 onBlur={[Function]}

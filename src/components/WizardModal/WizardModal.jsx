@@ -176,7 +176,7 @@ class WizardModal extends Component {
   };
 
   render() {
-    const { steps, className, ...other } = this.props;
+    const { steps, className, currentStepIndex, ...other } = this.props;
     // Transform object to be what Progress Indicator expects
     const items = steps.map((step, index) => ({ id: index, label: step.label }));
     const { step: stepIndex } = this.state;

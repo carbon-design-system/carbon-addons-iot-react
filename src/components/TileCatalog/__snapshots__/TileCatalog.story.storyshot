@@ -1904,12 +1904,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
           tabIndex="0"
         >
           <div
-            aria-labelledby="entityType-searchbox-label"
-            className="bx--search bx--search--sm bx--search-maginfier"
-            role="search"
+            className="bx--search bx--search--sm"
           >
             <svg
-              aria-label="Search catalog"
+              aria-hidden={true}
               className="bx--search-magnifier"
               focusable="false"
               height={16}
@@ -1931,7 +1929,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
             <label
               className="bx--label"
               htmlFor="entityType-searchbox"
-              id="entityType-searchbox-label"
             >
               Search catalog
             </label>
@@ -1945,12 +1942,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
               value=""
             />
             <button
+              aria-label="Clear search input"
               className="bx--search-close bx--search-close--hidden"
               onClick={[Function]}
               type="button"
             >
               <svg
-                aria-hidden={true}
+                aria-label="Clear search input"
                 focusable="false"
                 height={16}
                 preserveAspectRatio="xMidYMid meet"

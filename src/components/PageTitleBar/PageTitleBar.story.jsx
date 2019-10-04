@@ -13,7 +13,7 @@ export const commonPageTitleBarProps = {
   title: 'Page title',
   description: 'Descriptive text about this page and what the user can or should do on it',
   rightContent: (
-    <Button className="some-right-content" renderIcon={Add24}>
+    <Button className="some-right-content" renderIcon={Add24} onClick={action('click')}>
       Right Content
     </Button>
   ),

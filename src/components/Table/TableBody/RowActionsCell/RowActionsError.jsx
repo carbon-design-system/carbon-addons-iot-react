@@ -64,6 +64,7 @@ const RowActionsError = ({
         tabIndex={0}
         triggerText=""
         triggerId="tooltip-error"
+        tooltipId="tooltip"
         renderIcon={React.forwardRef((props, ref) => (
           <Warn ref={ref} />
         ))}

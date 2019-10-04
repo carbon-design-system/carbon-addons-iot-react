@@ -259,7 +259,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Progr
           tabIndex={0}
         >
           <svg
-            aria-label="This is displayed when step icon is hovered"
+            aria-hidden={true}
             focusable="false"
             height={16}
             preserveAspectRatio="xMidYMid meet"

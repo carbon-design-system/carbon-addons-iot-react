@@ -22,17 +22,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
   >
     <div
       className="bx--modal is-visible WizardModal__StyledModal-sc-4j7w2v-0 eknHny ComposedModal__StyledModal-sc-12pj5f-0 eVCcTg"
-      currentStepIndex={0}
-      invalid={false}
       onBlur={[Function]}
-      onClearError={null}
       onClick={[Function]}
       onClose={[Function]}
       onKeyDown={[Function]}
       onTransitionEnd={[Function]}
       open={true}
       role="presentation"
-      submitFailed={false}
       tabIndex={-1}
     >
       <div
@@ -253,17 +249,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
   >
     <div
       className="bx--modal is-visible WizardModalstory__StyledWizard-sc-1z46gj-0 eiobyI WizardModal__StyledModal-sc-4j7w2v-0 eknHny ComposedModal__StyledModal-sc-12pj5f-0 eVCcTg"
-      currentStepIndex={0}
-      invalid={false}
       onBlur={[Function]}
-      onClearError={null}
       onClick={[Function]}
       onClose={[Function]}
       onKeyDown={[Function]}
       onTransitionEnd={[Function]}
       open={true}
       role="presentation"
-      submitFailed={false}
       tabIndex={-1}
     >
       <div
@@ -491,17 +483,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
   >
     <div
       className="bx--modal is-visible WizardModal__StyledModal-sc-4j7w2v-0 eknHny ComposedModal__StyledModal-sc-12pj5f-0 eVCcTg"
-      currentStepIndex={2}
-      invalid={false}
       onBlur={[Function]}
-      onClearError={null}
       onClick={[Function]}
       onClose={[Function]}
       onKeyDown={[Function]}
       onTransitionEnd={[Function]}
       open={true}
       role="presentation"
-      submitFailed={false}
       tabIndex={-1}
     >
       <div
@@ -566,7 +554,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
                 tabIndex={0}
               >
                 <svg
-                  aria-label="step1"
+                  aria-hidden={true}
                   focusable="false"
                   height={16}
                   preserveAspectRatio="xMidYMid meet"
@@ -611,7 +599,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
                 tabIndex={0}
               >
                 <svg
-                  aria-label="step2"
+                  aria-hidden={true}
                   focusable="false"
                   height={16}
                   preserveAspectRatio="xMidYMid meet"
