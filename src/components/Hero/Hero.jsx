@@ -100,7 +100,7 @@ const Hero = ({
   if (__DEV__) {
     warning(
       false,
-      'PageHero component has been deprecated and will be removed in the next release of `carbon-addons-iot-react`. \n Refactor to use PageTitleBar component instead.'
+      'Hero component has been deprecated and will be removed in the next release of `carbon-addons-iot-react`. \n Refactor to use PageTitleBar component instead.'
     );
   }
   return (
