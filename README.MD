@@ -98,7 +98,7 @@ Usage of this package does not require you to install additional Carbon packages
 
 ## 📚 Docs
 
-You can find more information about how to use each component by checking out our [Storybook](https://1-x.carbon-addons-iot-react.com/).
+You can find more information about how to use each component by checking out the [Storybook](https://carbon-addons-iot-react.com/).
 
 ## 🤲 Contributing
 
