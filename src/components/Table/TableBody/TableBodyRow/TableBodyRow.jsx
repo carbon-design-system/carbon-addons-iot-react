@@ -127,25 +127,18 @@ const StyledTableRow = styled(({ isSelectable, ...others }) => <TableRow {...oth
         div > *:not(label) {
           opacity: 1;
         }
+        ${props =>
+          props.isSelectable === false
+            ? `background-color: inherit; color:#565656;border-bottom-color:#dcdcdc;border-top-color:#ffffff;`
+            : ``} /* turn off hover states if the row is set not selectable */
       }
+      ${props =>
+        props.isSelectable === false
+          ? `background-color: inherit; color:#565656;border-bottom-color:#dcdcdc;border-top-color:#ffffff;`
+          : ``} /* turn off hover states if the row is set not selectable */
     }
-    ${(
-      props // turn off hover states if the row is set not selectable
-    ) =>
-      props.isSelectable === false
-        ? `td:first-of-type {
-      border-left: 1px solid #dfe3e6;
-    }
-    td {
-      background-color: inherit;
-      border-top: 1px solid #dfe3e6;
-      border-bottom: 1px solid #dfe3e6;
-    }
-    td:last-of-type {
-      border-right: 1px solid #dfe3e6;
-    }
-  }`
-        : ``}
+    
+    
 `;
 
 const StyledSingleSelectedTableRow = styled(({ hasRowSelection, ...props }) => (
