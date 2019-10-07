@@ -1,4 +1,4 @@
-import React, { useMemo, useState, useCallback } from 'react';
+import React, { useMemo, useState, useCallback, useEffect } from 'react';
 import merge from 'lodash/merge';
 import isEmpty from 'lodash/isEmpty';
 import omit from 'lodash/omit';
@@ -17,7 +17,6 @@ import { determineCardRange, compareGrains } from '../../utils/cardUtilityFuncti
 const CachedCardRenderer = ({
   style, //eslint-disable-line
   onCardAction, //eslint-disable-line
-  isLoading, // eslint-disable-line
   ...others
 }) => {
   const [cachedStyle, setCachedStyle] = useState(style);
@@ -28,27 +27,20 @@ const CachedCardRenderer = ({
     },
     [style] // need to do a deep compare on style
   );
-  // Have to reset the card action callback once the whole dashboard has finished loading to get the latest dashboard
-  const cachedOnCardAction = useCallback(onCardAction, [isLoading]);
-  return (
-    <CardRenderer
-      {...others}
-      isLoading={isLoading}
-      onCardAction={cachedOnCardAction}
-      style={cachedStyle}
-    />
-  );
+  const cachedOnCardAction = useCallback(onCardAction, []);
+  return <CardRenderer {...others} onCardAction={cachedOnCardAction} style={cachedStyle} />;
 };
 
 /**
- * This component decides which card component to render when passed a certain card type
+ * This component decides which card component to render when passed a certain card type.
+ * It keeps the local state of the card (which determines which range selection is being shown, etc)
  * It also caches some properties between renders to speed performance
  */
 const CardRenderer = React.memo(
   ({
     style, // eslint-disable-line
-    card, // eslint-disable-line
-    card: { availableActions, type, dataSource, ...others }, // eslint-disable-line
+    card: cardProp, // eslint-disable-line
+    card: { availableActions, type, dataSource }, // eslint-disable-line
     onCardAction, // eslint-disable-line
     i18n, // eslint-disable-line
     dashboardBreakpoints, // eslint-disable-line
@@ -62,7 +54,29 @@ const CardRenderer = React.memo(
     timeGrain, // eslint-disable-line
     ...gridProps
   }) => {
-    // Speed up performance by caching
+    /**
+     * Local state for the card
+     */
+    const [card, setCard] = useState(cardProp);
+
+    // If the dashboard has triggered a bulk load, refetch the data
+    useEffect(
+      () => {
+        const fetchData = async () => {
+          // Set state to loading
+          setCard({ ...card, isLoading: true });
+          const cardWithData = await onFetchData(card);
+          console.log(`cardWithData From Bulk Load: ${JSON.stringify(cardWithData)}`);
+          setCard({ ...cardWithData, isLoading: false });
+        };
+        if (isLoading) {
+          fetchData(card);
+        }
+      },
+      [isLoading] // eslint-disable-line
+    );
+
+    // Speed up performance by caching the available actions
     const cachedActions = useMemo(
       () =>
         merge(availableActions, {
@@ -78,16 +92,20 @@ const CardRenderer = React.memo(
     const cachedExpandedStyle = useMemo(
       () =>
         card.isExpanded ? merge({ height: '100%', width: '100%', padding: '50px' }, style) : style,
-      [card.isExpanded, style]
+      [card && card.isExpanded, style] // eslint-disable-line
     );
 
+    /**
+     * Listen to the card's range action to decide whether to trigger a data refetch
+     */
     const cachedOnCardAction = useCallback(
-      (id, actionType, payload) => {
+      async (id, actionType, payload) => {
         // callback time grain change from parent
         if (actionType === 'CHANGE_TIME_RANGE') {
           const range = determineCardRange(payload.range);
-          const updatedCard = {
+          const cardWithUpdatedRange = {
             ...card,
+            isLoading: true,
             dataSource: {
               ...card.dataSource,
               range: {
@@ -100,7 +118,10 @@ const CardRenderer = React.memo(
             },
           };
 
-          onFetchData(updatedCard);
+          setCard({ ...cardWithUpdatedRange, isLoading: true });
+          const cardWithData = await onFetchData(cardWithUpdatedRange);
+          console.log(`cardWithData From Action: ${JSON.stringify(cardWithData)}`);
+          setCard({ ...cardWithData, isLoading: false });
         }
         onCardAction(id, actionType, payload);
       },
@@ -111,7 +132,7 @@ const CardRenderer = React.memo(
       <div key={card.id} {...gridProps} style={cachedExpandedStyle}>
         {type === CARD_TYPES.VALUE ? (
           <ValueCard
-            {...others}
+            {...card}
             key={card.id}
             availableActions={cachedActions}
             dataSource={dataSource}
@@ -127,7 +148,7 @@ const CardRenderer = React.memo(
           />
         ) : type === CARD_TYPES.IMAGE ? (
           <ImageCard
-            {...others}
+            {...card}
             key={card.id}
             availableActions={cachedActions}
             dataSource={dataSource}
@@ -143,7 +164,7 @@ const CardRenderer = React.memo(
           />
         ) : type === CARD_TYPES.TIMESERIES ? (
           <TimeSeriesCard
-            {...others}
+            {...card}
             key={card.id}
             availableActions={cachedActions}
             dataSource={dataSource}
@@ -159,7 +180,7 @@ const CardRenderer = React.memo(
           />
         ) : type === CARD_TYPES.TABLE ? (
           <TableCard
-            {...others}
+            {...card}
             key={card.id}
             availableActions={cachedActions}
             dataSource={dataSource}
@@ -175,7 +196,7 @@ const CardRenderer = React.memo(
           />
         ) : type === CARD_TYPES.DONUT ? (
           <DonutCard
-            {...others}
+            {...card}
             key={card.id}
             availableActions={cachedActions}
             dataSource={dataSource}
@@ -191,7 +212,7 @@ const CardRenderer = React.memo(
           />
         ) : type === CARD_TYPES.PIE ? (
           <PieCard
-            {...others}
+            {...card}
             key={card.id}
             availableActions={cachedActions}
             dataSource={dataSource}
@@ -207,7 +228,7 @@ const CardRenderer = React.memo(
           />
         ) : type === CARD_TYPES.BAR ? (
           <BarChartCard
-            {...others}
+            {...card}
             key={card.id}
             availableActions={cachedActions}
             dataSource={dataSource}

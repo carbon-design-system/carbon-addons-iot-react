@@ -5,7 +5,6 @@ import 'react-grid-layout/css/styles.css';
 import 'react-resizable/css/styles.css';
 import styled from 'styled-components';
 import find from 'lodash/find';
-import some from 'lodash/some';
 
 import { getLayout } from '../../utils/componentUtilityFunctions';
 import {
@@ -49,7 +48,6 @@ const propTypes = {
       labelText: PropTypes.string,
     })
   ),
-  lastUpdated: PropTypes.string,
   cards: PropTypes.arrayOf(
     PropTypes.shape({
       content: PropTypes.object,
@@ -165,12 +163,14 @@ const propTypes = {
   // new props after migration
   onFetchData: PropTypes.func,
   timeGrain: PropTypes.string,
+  isLoading: PropTypes.bool,
+  /** once all the cards have finished loading, update the bulk load */
+  setIsLoading: PropTypes.func.isRequired,
 };
 
 const defaultProps = {
   isEditable: false,
   description: null,
-  lastUpdated: null,
   onLayoutChange: null,
   onDashboardAction: null,
   onBreakpointChange: null,
@@ -256,6 +256,7 @@ const defaultProps = {
   hasLastUpdated: true,
   onFetchData: null,
   timeGrain: null,
+  isLoading: false,
 };
 
 const GridLayout = WidthProvider(Responsive);
@@ -273,7 +274,6 @@ const Dashboard = ({
   cards,
   title,
   description,
-  lastUpdated,
   hasLastUpdated,
   i18n,
   i18n: { lastUpdatedLabel },
@@ -290,11 +290,12 @@ const Dashboard = ({
   className,
   actions,
   onDashboardAction,
+  isLoading,
+  setIsLoading, // eslint-disable-line
   onFetchData,
   timeGrain,
 }) => {
   const [breakpoint, setBreakpoint] = useState('lg');
-
   // keep track of the expanded card id
   const [expandedId, setExpandedId] = useState();
 
@@ -351,28 +352,27 @@ const Dashboard = ({
   const cachedOnLayoutChange = useCallback(handleLayoutChange, [onLayoutChange]);
   const cachedOnBreakpointChange = useCallback(handleBreakpointChange, [onBreakpointChange]);
 
-  // Is any card in the dashboard loading?
-  const isLoading = useMemo(() => some(cards, i => i.isLoading || i.isHotspotDataLoading), [cards]);
-
   const gridContents = useMemo(
     () =>
-      cards.map(card => (
-        <CardRenderer
-          card={card}
-          key={card.id}
-          onCardAction={handleCardAction}
-          i18n={cachedI18N}
-          dashboardBreakpoints={dashboardBreakpoints}
-          cardDimensions={cardDimensions}
-          dashboardColumns={dashboardColumns}
-          rowHeight={rowHeight}
-          isLoading={isLoading}
-          isEditable={isEditable}
-          breakpoint={breakpoint}
-          onFetchData={onFetchData}
-          timeGrain={timeGrain}
-        />
-      )), // eslint-disable-next-line
+      cards.map(card =>
+        card ? (
+          <CardRenderer
+            card={card}
+            key={card.id}
+            onCardAction={handleCardAction}
+            i18n={cachedI18N}
+            dashboardBreakpoints={dashboardBreakpoints}
+            cardDimensions={cardDimensions}
+            dashboardColumns={dashboardColumns}
+            rowHeight={rowHeight}
+            isLoading={isLoading}
+            isEditable={isEditable}
+            breakpoint={breakpoint}
+            onFetchData={onFetchData}
+            timeGrain={timeGrain}
+          />
+        ) : null
+      ), // eslint-disable-next-line
     [
       breakpoint,
       cachedI18N,
@@ -421,7 +421,6 @@ const Dashboard = ({
       <DashboardHeader
         title={title}
         description={description}
-        lastUpdated={!isEditable ? lastUpdated : null}
         lastUpdatedLabel={!isEditable ? lastUpdatedLabel : null}
         isLoading={isLoading}
         filter={filter}
