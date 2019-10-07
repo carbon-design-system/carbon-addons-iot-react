@@ -1,6 +1,59 @@
 @import '~carbon-components/scss/globals/scss/vars';
 @import '~carbon-components/scss/globals/scss/layout';
 
-.card-overflow {
-  width: auto;
+.card {
+  &--title {
+    font-size: rem(14px);
+    line-height: rem(18px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    & + * {
+      margin-left: $spacing-05;
+    }
+  }
+
+  &--header {
+    padding: $spacing-05;
+    flex: 0 0 $spacing-09;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: bold;
+  }
+
+  &--toolbar {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  &--overflow {
+    width: auto;
+  }
+
+  &--toolbar-action {
+    color: $ui-05;
+    border-width: 2px;
+    display: flex;
+    height: 2rem;
+    justify-content: center;
+    min-height: 2rem;
+    min-width: 2rem;
+    width: 2rem;
+
+    .card--toolbar & {
+      margin: 0;
+      padding: 0;
+    }
+
+    svg.bx--overflow-menu__icon {
+      height: auto;
+      width: auto;
+    }
+  }
+
+  &--toolbar-timerange-lable {
+    margin-right: $spacing-03;
+  }
 }

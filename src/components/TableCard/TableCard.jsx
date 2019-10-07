@@ -694,7 +694,7 @@ const TableCard = ({
       title={title}
       size={size}
       onCardAction={onCardAction}
-      availableActions={{ expand: isExpandable }}
+      availableActions={{ expand: isExpandable, range: true }}
       isEditable={isEditable}
       i18n={i18n}
       {...others}
