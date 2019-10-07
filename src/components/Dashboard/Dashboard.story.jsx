@@ -526,7 +526,8 @@ const StatefulDashboard = ({ ...props }) => {
     <Dashboard
       cards={cards}
       onCardAction={handleCardAction}
-      timeGrainCallback={handleTimegrainCallback}
+      onFetchData={handleTimegrainCallback}
+      timeGrain="day"
       {...props}
     />
   );

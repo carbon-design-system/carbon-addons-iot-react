@@ -1,6 +1,7 @@
 import React, { useMemo, useState, useCallback } from 'react';
 import merge from 'lodash/merge';
 import isEmpty from 'lodash/isEmpty';
+import omit from 'lodash/omit';
 import useDeepCompareEffect from 'use-deep-compare-effect';
 
 import ValueCard from '../ValueCard/ValueCard';
@@ -11,6 +12,7 @@ import BarChartCard from '../BarChartCard/BarChartCard';
 import PieCard from '../PieCard/PieCard';
 import TimeSeriesCard from '../TimeSeriesCard/TimeSeriesCard';
 import { CARD_TYPES } from '../../constants/LayoutConstants';
+import { determineCardRange, compareGrains } from '../../utils/cardUtilityFunctions';
 
 const CachedCardRenderer = ({
   style, //eslint-disable-line
@@ -19,6 +21,7 @@ const CachedCardRenderer = ({
   ...others
 }) => {
   const [cachedStyle, setCachedStyle] = useState(style);
+
   useDeepCompareEffect(
     () => {
       setCachedStyle(style);
@@ -55,6 +58,8 @@ const CardRenderer = React.memo(
     isLoading, // eslint-disable-line
     isEditable, // eslint-disable-line
     breakpoint, // eslint-disable-line
+    onFetchData, // eslint-disable-line
+    timeGrain, // eslint-disable-line
     ...gridProps
   }) => {
     // Speed up performance by caching
@@ -76,6 +81,32 @@ const CardRenderer = React.memo(
       [card.isExpanded, style]
     );
 
+    const cachedOnCardAction = useCallback(
+      (id, actionType, payload) => {
+        // callback time grain change from parent
+        if (actionType === 'CHANGE_TIME_RANGE') {
+          const range = determineCardRange(payload.range);
+          const updatedCard = {
+            ...card,
+            dataSource: {
+              ...card.dataSource,
+              range: {
+                ...range,
+                ...omit(range, 'timeGrain'),
+              },
+              // Use the maximum selected grain betweeen the dashboard and the current range
+              timeGrain:
+                compareGrains(timeGrain, range.timeGrain) < 1 ? range.timeGrain : timeGrain,
+            },
+          };
+
+          onFetchData(updatedCard);
+        }
+        onCardAction(id, actionType, payload);
+      },
+      [card, onCardAction, onFetchData, timeGrain]
+    );
+
     return (
       <div key={card.id} {...gridProps} style={cachedExpandedStyle}>
         {type === CARD_TYPES.VALUE ? (
@@ -87,7 +118,7 @@ const CardRenderer = React.memo(
             type={type}
             i18n={i18n}
             isEditable={isEditable}
-            onCardAction={onCardAction}
+            onCardAction={cachedOnCardAction}
             breakpoint={breakpoint}
             dashboardBreakpoints={dashboardBreakpoints}
             dashboardColumns={dashboardColumns}
@@ -103,7 +134,7 @@ const CardRenderer = React.memo(
             type={type}
             i18n={i18n}
             isEditable={isEditable}
-            onCardAction={onCardAction}
+            onCardAction={cachedOnCardAction}
             breakpoint={breakpoint}
             dashboardBreakpoints={dashboardBreakpoints}
             dashboardColumns={dashboardColumns}
@@ -119,7 +150,7 @@ const CardRenderer = React.memo(
             type={type}
             i18n={i18n}
             isEditable={isEditable}
-            onCardAction={onCardAction}
+            onCardAction={cachedOnCardAction}
             breakpoint={breakpoint}
             dashboardBreakpoints={dashboardBreakpoints}
             dashboardColumns={dashboardColumns}
@@ -135,7 +166,7 @@ const CardRenderer = React.memo(
             type={type}
             i18n={i18n}
             isEditable={isEditable}
-            onCardAction={onCardAction}
+            onCardAction={cachedOnCardAction}
             breakpoint={breakpoint}
             dashboardBreakpoints={dashboardBreakpoints}
             dashboardColumns={dashboardColumns}
@@ -151,7 +182,7 @@ const CardRenderer = React.memo(
             type={type}
             i18n={i18n}
             isEditable={isEditable}
-            onCardAction={onCardAction}
+            onCardAction={cachedOnCardAction}
             breakpoint={breakpoint}
             dashboardBreakpoints={dashboardBreakpoints}
             dashboardColumns={dashboardColumns}
@@ -167,7 +198,7 @@ const CardRenderer = React.memo(
             type={type}
             i18n={i18n}
             isEditable={isEditable}
-            onCardAction={onCardAction}
+            onCardAction={cachedOnCardAction}
             breakpoint={breakpoint}
             dashboardBreakpoints={dashboardBreakpoints}
             dashboardColumns={dashboardColumns}
@@ -183,7 +214,7 @@ const CardRenderer = React.memo(
             type={type}
             i18n={i18n}
             isEditable={isEditable}
-            onCardAction={onCardAction}
+            onCardAction={cachedOnCardAction}
             breakpoint={breakpoint}
             dashboardBreakpoints={dashboardBreakpoints}
             dashboardColumns={dashboardColumns}

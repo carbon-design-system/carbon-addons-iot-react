@@ -163,7 +163,8 @@ const propTypes = {
   hasLastUpdated: PropTypes.bool,
 
   // new props after migration
-  timeGrainCallback: PropTypes.func,
+  onFetchData: PropTypes.func,
+  timeGrain: PropTypes.string,
 };
 
 const defaultProps = {
@@ -253,7 +254,8 @@ const defaultProps = {
   sidebar: null,
   actions: [],
   hasLastUpdated: true,
-  timeGrainCallback: null,
+  onFetchData: null,
+  timeGrain: null,
 };
 
 const GridLayout = WidthProvider(Responsive);
@@ -288,7 +290,8 @@ const Dashboard = ({
   className,
   actions,
   onDashboardAction,
-  timeGrainCallback,
+  onFetchData,
+  timeGrain,
 }) => {
   const [breakpoint, setBreakpoint] = useState('lg');
 
@@ -296,12 +299,7 @@ const Dashboard = ({
   const [expandedId, setExpandedId] = useState();
 
   // onCardAction, should have the default ones by the dashboard eg. expand other are merged from the prop
-  const handleCardAction = (id, type, payload) => {
-    // callback time grain change from parent
-    if (type === 'CHANGE_TIME_RANGE') {
-      return timeGrainCallback(id, type, payload);
-    }
-
+  const handleCardAction = (id, type) => {
     // expand card
     if (type === 'OPEN_EXPANDED_CARD') {
       setExpandedId(id);
@@ -371,6 +369,8 @@ const Dashboard = ({
           isLoading={isLoading}
           isEditable={isEditable}
           breakpoint={breakpoint}
+          onFetchData={onFetchData}
+          timeGrain={timeGrain}
         />
       )), // eslint-disable-next-line
     [
@@ -383,6 +383,8 @@ const Dashboard = ({
       isEditable,
       isLoading,
       rowHeight,
+      onFetchData,
+      timeGrain,
     ]
   );
   // Cache the expanded card
@@ -411,6 +413,8 @@ const Dashboard = ({
             isLoading={isLoading}
             isEditable={isEditable}
             breakpoint={breakpoint}
+            onFetchData={onFetchData}
+            timeGrain={timeGrain}
           />
         </div>
       )}
