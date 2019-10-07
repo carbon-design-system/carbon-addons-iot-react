@@ -1,5 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
+import Edit16 from '@carbon/icons-react/lib/edit/16';
 
 import ResourceList from './ResourceList';
 
@@ -52,7 +53,7 @@ describe('Resource List', () => {
         customAction={{
           onClick: actionClick,
           label: 'Configure',
-          icon: 'edit',
+          icon: Edit16,
         }}
       />
     );

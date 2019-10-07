@@ -8,20 +8,35 @@ yarn install
 
 ## Exploring components
 
-To explore our components and their documentation we use storybook. To start the storybook server, run: `yarn storybook` then open a browser to <http://localhost:3000>.
+To explore our components and their documentation we use storybook. To start the storybook server, run: `yarn start` then open a browser to <http://localhost:3000>.
 
 ## Adding a new component
 
 You're ready to add a new component to this library, THANK YOU! However, this is only a [PRESENTATIONAL](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0) component library. Please do not add components with any dependencies on internationalization libraries, redux, or react-router.
-Feel free to add any other types of lower-level dependencies you might need for your components (i.e. lodash, etc), but please use `yarn add` to add dependencies to the project not `npm install`.
 
 ## For all new components and features
 
-For a component request or feature enhancement to be considered ‘ready to implement’, a design spec and usage guidance should be provided in the issue. Associated code pull requests will not be merged without these artifacts. 
+For a component request or feature enhancement to be considered ‘ready to implement’, a design spec and usage guidance should be provided in the issue. Associated code pull requests will not be merged without these artifacts.
 
-## Submitting PRs and Commits
+## Dependencies
 
-We require all commits to follow [conventional commit](https://www.conventionalcommits.org/en/v1.0.0-beta.2/) standards. You won't be able to create a commit unless you follow those rules.
+Dependencies must be added via `yarn add <packageName>`. Please do not use `npm install <packageName>`.
+
+When adding new `dependencies` or `devDependencies` to the codebase, the associated pull request should include justification for the package and the alternatives considered.
+
+Any change to `dependencies` (including version bumps) will impact consumers that are required to go through open source approvals within their organization. This approval process is not always a trivial task. `devDependencies` are less of a concern as they are not included in the exported package.
+
+## Submitting pull requests and commits
+
+We require all commits to follow the [conventional commit](https://www.conventionalcommits.org/en/v1.0.0-beta.2/#summary) format. You won't be able to create a commit unless you follow those rules. The [recent commits in the repository](https://github.com/IBM/carbon-addons-iot-react/commits/master) show examples of the format and how it's generally used.
+
+Commits are not required to contain a link to an issue. If you choose to do so, you can avoid the 72 character limit by placing the link in the body of the commit. Example:
+
+```sh
+git commit -m "fix(table): columns need unique ids" -m "#123"
+```
+
+Pull requests must contain a link to a relevant issue. If applicable, [automatically close issues from PRs via the keywords](https://help.github.com/en/articles/closing-issues-using-keywords).
 
 ## Styling new components
 
@@ -35,15 +50,15 @@ fail because the snapshots will no longer match. You will be prevented from push
 
 ## Updating snapshots
 
-To update the snapshot, type `u` after the snapshot difference has been detected by our unit test engine.
+After the unit test engine has detected a snapshot difference, all snapshots can be updated by running `yarn test:update`.
 _Do not blindly update snapshots to pass the testcase._ Make sure the detected change is intentional and not unintentional before updating the snapshot.
 
-## Minimum Code Coverage
+## Minimum code coverage
 
 We enforce code coverage thresholds in our project. If you add code but do not cover it with unit tests, the git push may fail because we have fallen under our code coverage thresholds. Please add storybook stories or unit tests to cover your new code before checking in. _Do not reduce the code coverage threshold to get around this constraint._
 To understand what lines of code are NOT covered by our current testcases, open the coverage/index.html file in a browser and investigate.
 
-## Setting up VSCode to share our Settings/Extensions
+## Setting up VSCode to share our settings and extensions
 
 We're using some pretty cool VSCode extensions to make our internal development easier. If you'd like to reuse the same ones follow these instructions!
 

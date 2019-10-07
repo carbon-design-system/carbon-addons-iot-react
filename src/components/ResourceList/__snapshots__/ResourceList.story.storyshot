@@ -257,6 +257,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Resou
               Configure
               <svg
                 aria-hidden={true}
+                className="bx--btn__icon"
                 focusable="false"
                 height={16}
                 preserveAspectRatio="xMidYMid meet"
@@ -308,6 +309,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Resou
               Configure
               <svg
                 aria-hidden={true}
+                className="bx--btn__icon"
                 focusable="false"
                 height={16}
                 preserveAspectRatio="xMidYMid meet"
@@ -359,6 +361,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Resou
               Configure
               <svg
                 aria-hidden={true}
+                className="bx--btn__icon"
                 focusable="false"
                 height={16}
                 preserveAspectRatio="xMidYMid meet"
