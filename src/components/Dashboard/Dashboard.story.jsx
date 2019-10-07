@@ -1156,4 +1156,70 @@ storiesOf('Dashboard (Experimental)', module)
         ])}
       </div>
     );
-  });
+  })
+  .add(
+    'for custom card component',
+    () => (
+      <Dashboard
+        title={text('title', 'Munich Building')}
+        cards={originalCards}
+        lastUpdated={Date()}
+        isEditable={boolean('isEditable', false)}
+        isLoading={boolean('isLoading', false)}
+        onBreakpointChange={action('onBreakpointChange')}
+        onLayoutChange={action('onLayoutChange')}
+      />
+    ),
+    {
+      info: {
+        text: `Development of new card components needs to follow patterns and provide some functionalities.
+
+          1 - Create a new card component
+          2 - Follow the pattern for the values and content, card template:
+          {
+            type: 'VALUE' -> card type defined
+            title: 'card title',
+            description: 'card custom description',
+            dataSource: {
+              attributes: [
+                {
+                  id: 'id for attribute',
+                  attribute: 'temperature', -> attribute from data lake
+                  aggregator: 'mean', -> aggregator tthat will be done in data lake
+                  range: {
+                    // we are not passing this to the API layer directly, we are interpreting and adjusting the startDate and endDate appropriately
+                    type: 'periodToDate' // required either 'periodToDate' or 'rolling'
+                    // If today is June 25th periodToDate is june 1st to today, rolling is may 25 to today
+                    count: -1, // count can be only be negative
+                    interval: 'month' // the thing you're counting
+                    offsetCount: -1,
+                    offsetInterval: 'year'
+                  }
+                  timeGrain: ['montly', 'day', 'year', 'hour']
+                }
+              ]
+            },
+            content: {
+              // properties specific for the card, needs to have object/array with value matching the data source attribute id eg.
+              columns:[
+                "dataSourceId": "id for attribute"
+              ]
+
+            },
+            values: [ // array of the values to populate the card
+              {
+                //key needs to be the data source id with it's value eg.
+                "id for attribute": 10
+
+              }
+            ]
+
+          }
+          3 - Create a validator for it "utils/schemas/validators", so whenever changes are made we make sure it's being corretly used.
+          
+          `,
+        propTables: [Dashboard],
+        propTablesExclude: [StatefulDashboard],
+      },
+    }
+  );
