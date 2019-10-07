@@ -1,0 +1,562 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|FileDrop Accept JSON 1`] = `
+<div
+  className="storybook-container"
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "flexDirection": "column",
+      "padding": "3rem",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div>
+      <strong
+        className="bx--label"
+      >
+        Upload Files
+      </strong>
+      <input
+        accept={
+          Array [
+            "json",
+          ]
+        }
+        multiple={true}
+        onChange={[Function]}
+        style={
+          Object {
+            "visibility": "hidden",
+          }
+        }
+        type="file"
+      />
+      <div
+        className="FileDrop__Text-xfd081-2 iynxPm"
+        onDragLeave={[Function]}
+        onDragOver={[Function]}
+        onDrop={[Function]}
+        style={
+          Object {
+            "border": "1px dashed #8C8C8C",
+          }
+        }
+      >
+        <div>
+          Drag and drop your file here or 
+          <span
+            onClick={[Function]}
+            role="presentation"
+          >
+            <button
+              className="FileDrop__LinkButton-xfd081-1 jAHgUA"
+            >
+              Try it out!
+            </button>
+          </span>
+          <div>
+            Only JSON can be uploaded
+          </div>
+        </div>
+      </div>
+      <div
+        className="bx--file-container"
+      />
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|FileDrop Browse 1`] = `
+<div
+  className="storybook-container"
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "flexDirection": "column",
+      "padding": "3rem",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      className="bx--form-item"
+      id="FileUploader"
+    >
+      <strong
+        className="bx--label"
+      >
+        Upload Files
+      </strong>
+      <p
+        className="bx--label-description"
+      >
+        Any file can be uploaded.  Feel free to upload more than one!
+      </p>
+      <label
+        aria-disabled={false}
+        className="bx--btn bx--btn--sm bx--btn--secondary"
+        htmlFor="id1"
+        onChange={[Function]}
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        tabIndex={0}
+      >
+        Try it out!
+      </label>
+      <input
+        accept={Array []}
+        className="bx--visually-hidden"
+        disabled={false}
+        id="id1"
+        multiple={true}
+        onChange={[Function]}
+        onClick={[Function]}
+        tabIndex="-1"
+        type="file"
+      />
+      <div
+        className="bx--file-container"
+      />
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|FileDrop Browse only one 1`] = `
+<div
+  className="storybook-container"
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "flexDirection": "column",
+      "padding": "3rem",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      className="bx--form-item"
+      id="FileUploader"
+    >
+      <strong
+        className="bx--label"
+      >
+        Upload Files
+      </strong>
+      <p
+        className="bx--label-description"
+      >
+        Only one file can be uploaded
+      </p>
+      <label
+        aria-disabled={false}
+        className="bx--btn bx--btn--sm bx--btn--secondary"
+        htmlFor="id2"
+        onChange={[Function]}
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        tabIndex={0}
+      >
+        Try it out!
+      </label>
+      <input
+        accept={Array []}
+        className="bx--visually-hidden"
+        disabled={false}
+        id="id2"
+        multiple={false}
+        onChange={[Function]}
+        onClick={[Function]}
+        tabIndex="-1"
+        type="file"
+      />
+      <div
+        className="bx--file-container"
+      />
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|FileDrop Drag and drop 1`] = `
+<div
+  className="storybook-container"
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "flexDirection": "column",
+      "padding": "3rem",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div>
+      <strong
+        className="bx--label"
+      >
+        Upload Files
+      </strong>
+      <input
+        accept={Array []}
+        multiple={true}
+        onChange={[Function]}
+        style={
+          Object {
+            "visibility": "hidden",
+          }
+        }
+        type="file"
+      />
+      <div
+        className="FileDrop__Text-xfd081-2 iynxPm"
+        onDragLeave={[Function]}
+        onDragOver={[Function]}
+        onDrop={[Function]}
+        style={
+          Object {
+            "border": "1px dashed #8C8C8C",
+          }
+        }
+      >
+        <div>
+          Drag and drop your file here or 
+          <span
+            onClick={[Function]}
+            role="presentation"
+          >
+            <button
+              className="FileDrop__LinkButton-xfd081-1 jAHgUA"
+            >
+              Try it out!
+            </button>
+          </span>
+          <div>
+            Any file can be uploaded.  Feel free to upload more than one!
+          </div>
+        </div>
+      </div>
+      <div
+        className="bx--file-container"
+      />
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|FileDrop Drag only one file 1`] = `
+<div
+  className="storybook-container"
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "flexDirection": "column",
+      "padding": "3rem",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div>
+      <strong
+        className="bx--label"
+      >
+        Upload Files
+      </strong>
+      <input
+        accept={Array []}
+        multiple={false}
+        onChange={[Function]}
+        style={
+          Object {
+            "visibility": "hidden",
+          }
+        }
+        type="file"
+      />
+      <div
+        className="FileDrop__Text-xfd081-2 iynxPm"
+        onDragLeave={[Function]}
+        onDragOver={[Function]}
+        onDrop={[Function]}
+        style={
+          Object {
+            "border": "1px dashed #8C8C8C",
+          }
+        }
+      >
+        <div>
+          Drag and drop your file here or 
+          <span
+            onClick={[Function]}
+            role="presentation"
+          >
+            <button
+              className="FileDrop__LinkButton-xfd081-1 jAHgUA"
+            >
+              Try it out!
+            </button>
+          </span>
+          <div>
+            Only one file can be uploaded
+          </div>
+        </div>
+      </div>
+      <div
+        className="bx--file-container"
+      />
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|FileDrop Show files false 1`] = `
+<div
+  className="storybook-container"
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "flexDirection": "column",
+      "padding": "3rem",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div>
+      <strong
+        className="bx--label"
+      >
+        Upload Files
+      </strong>
+      <input
+        accept={Array []}
+        multiple={false}
+        onChange={[Function]}
+        style={
+          Object {
+            "visibility": "hidden",
+          }
+        }
+        type="file"
+      />
+      <div
+        className="FileDrop__Text-xfd081-2 iynxPm"
+        onDragLeave={[Function]}
+        onDragOver={[Function]}
+        onDrop={[Function]}
+        style={
+          Object {
+            "border": "1px dashed #8C8C8C",
+          }
+        }
+      >
+        <div>
+          Drag and drop your file here or 
+          <span
+            onClick={[Function]}
+            role="presentation"
+          >
+            <button
+              className="FileDrop__LinkButton-xfd081-1 jAHgUA"
+            >
+              Try it out!
+            </button>
+          </span>
+          <div>
+            Only one file can be uploaded
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
