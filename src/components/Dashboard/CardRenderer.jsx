@@ -66,6 +66,7 @@ const CardRenderer = React.memo(
     isEditable, // eslint-disable-line
     breakpoint, // eslint-disable-line
     onFetchData, // eslint-disable-line
+    onSetupCard, // eslint-disable-line
     timeGrain, // eslint-disable-line
     ...gridProps
   }) => {
@@ -77,11 +78,19 @@ const CardRenderer = React.memo(
     // If the dashboard has triggered a bulk load, refetch the data
     useEffect(
       () => {
+        const setupAndLoadCard = async () => {
+          let updatedCard = card;
+          // Image cards require extra setup before loading data
+          if (card.type === CARD_TYPES.IMAGE && !card.content.src) {
+            updatedCard = await onSetupCard(card);
+          }
+          loadCardData(updatedCard, setCard, onFetchData, timeGrain);
+        };
         if (isLoading) {
-          loadCardData(card, setCard, onFetchData, timeGrain);
+          setupAndLoadCard();
         }
       },
-      [isLoading] // eslint-disable-line
+      [isLoading, card.content.src] // eslint-disable-line
     );
 
     // Speed up performance by caching the available actions

@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { text, select, object } from '@storybook/addon-knobs';
+import { text, select, object, boolean } from '@storybook/addon-knobs';
 import omit from 'lodash/omit';
 
 import { CARD_SIZES } from '../../constants/LayoutConstants';
@@ -82,12 +82,29 @@ storiesOf('ImageCard (Experimental)', module)
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <ImageCard
           title={text('title', 'Image')}
-          isHotspotDataLoading
+          isLoading={boolean('isLoading', true)}
           id="image-hotspots"
           content={object('content', content)}
           values={object('values', values)}
           breakpoint="lg"
           size={size}
+        />
+      </div>
+    );
+  })
+  .add('error', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.XLARGE);
+    return (
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+        <ImageCard
+          title={text('title', 'Image')}
+          isLoading={boolean('isLoading', true)}
+          id="image-hotspots"
+          content={object('content', content)}
+          values={object('values', values)}
+          breakpoint="lg"
+          size={size}
+          error={text('error', 'API threw Nullpointer')}
         />
       </div>
     );

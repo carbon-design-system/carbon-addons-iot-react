@@ -161,6 +161,7 @@ const propTypes = {
   hasLastUpdated: PropTypes.bool,
 
   // new props after migration
+  onSetupCard: PropTypes.func,
   onFetchData: PropTypes.func,
   timeGrain: PropTypes.string,
   isLoading: PropTypes.bool,
@@ -254,6 +255,7 @@ const defaultProps = {
   sidebar: null,
   actions: [],
   hasLastUpdated: true,
+  onSetupCard: null,
   onFetchData: null,
   timeGrain: null,
   isLoading: false,
@@ -292,6 +294,7 @@ const Dashboard = ({
   onDashboardAction,
   isLoading,
   setIsLoading, // eslint-disable-line
+  onSetupCard,
   onFetchData,
   timeGrain,
 }) => {
@@ -368,6 +371,7 @@ const Dashboard = ({
             isLoading={isLoading}
             isEditable={isEditable}
             breakpoint={breakpoint}
+            onSetupCard={onSetupCard}
             onFetchData={onFetchData}
             timeGrain={timeGrain}
           />
@@ -414,6 +418,7 @@ const Dashboard = ({
             isEditable={isEditable}
             breakpoint={breakpoint}
             onFetchData={onFetchData}
+            onSetupCard={onSetupCard}
             timeGrain={timeGrain}
           />
         </div>
