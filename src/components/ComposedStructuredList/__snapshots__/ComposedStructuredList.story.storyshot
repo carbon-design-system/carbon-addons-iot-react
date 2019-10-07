@@ -1,0 +1,897 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ComposedStructuredList (Deprecated) custom cell renderer 1`] = `
+<div
+  className="storybook-container"
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "flexDirection": "column",
+      "padding": "3rem",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <section
+      aria-label="Structured list section"
+      className="bx--structured-list ComposedStructuredList__StructuredListWrapperStyled-oz9xih-0 bQEmNU bx--structured-list--selection"
+    >
+      <div
+        className="bx--structured-list-thead"
+      >
+        <div
+          className="bx--structured-list-row bx--structured-list-row--header-row"
+        >
+          <div
+            className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 eMheOS bx--structured-list-th"
+            title="A"
+          >
+            A
+          </div>
+          <div
+            className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 eMheOS bx--structured-list-th"
+            title="B"
+          >
+            B
+          </div>
+          <div
+            className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 eMheOS bx--structured-list-th"
+            title="C"
+          >
+            C
+          </div>
+        </div>
+      </div>
+      <div
+        className="bx--structured-list-tbody"
+        onKeyDown={[Function]}
+      >
+        <div
+          className="bx--structured-list-row"
+          onClick={[Function]}
+        >
+          <div
+            className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 eMheOS bx--structured-list-td bx--structured-list-content--nowrap"
+            style={Object {}}
+            title={null}
+          >
+            <span
+              style={
+                Object {
+                  "color": "blue",
+                }
+              }
+            >
+              <div />
+            </span>
+          </div>
+          <div
+            className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 eMheOS bx--structured-list-td bx--structured-list-content--nowrap"
+            style={Object {}}
+            title="hey B"
+          >
+            <span
+              style={
+                Object {
+                  "color": "blue",
+                }
+              }
+            >
+              hey B
+            </span>
+          </div>
+          <div
+            className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 eMheOS bx--structured-list-td bx--structured-list-content--nowrap"
+            style={Object {}}
+            title="hey C"
+          >
+            <span
+              style={
+                Object {
+                  "color": "blue",
+                }
+              }
+            >
+              hey C
+            </span>
+          </div>
+        </div>
+        <div
+          className="bx--structured-list-row"
+          onClick={[Function]}
+        >
+          <div
+            className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 eMheOS bx--structured-list-td bx--structured-list-content--nowrap"
+            style={Object {}}
+            title="hey A again fixed column width"
+          >
+            <span
+              style={
+                Object {
+                  "color": "blue",
+                }
+              }
+            >
+              hey A again fixed column width
+            </span>
+          </div>
+          <div
+            className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 eMheOS bx--structured-list-td bx--structured-list-content--nowrap"
+            style={Object {}}
+            title="hey B again"
+          >
+            <span
+              style={
+                Object {
+                  "color": "blue",
+                }
+              }
+            >
+              hey B again
+            </span>
+          </div>
+          <div
+            className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 eMheOS bx--structured-list-td bx--structured-list-content--nowrap"
+            style={Object {}}
+            title="hey C again"
+          >
+            <span
+              style={
+                Object {
+                  "color": "blue",
+                }
+              }
+            >
+              hey C again
+            </span>
+          </div>
+        </div>
+        <div
+          className="bx--structured-list-row"
+          onClick={[Function]}
+        >
+          <div
+            className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 eMheOS bx--structured-list-td bx--structured-list-content--nowrap"
+            style={Object {}}
+            title="hey hey A"
+          >
+            <span
+              style={
+                Object {
+                  "color": "blue",
+                }
+              }
+            >
+              hey hey A
+            </span>
+          </div>
+          <div
+            className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 eMheOS bx--structured-list-td bx--structured-list-content--nowrap"
+            style={Object {}}
+            title="hey hey B"
+          >
+            <span
+              style={
+                Object {
+                  "color": "blue",
+                }
+              }
+            >
+              hey hey B
+            </span>
+          </div>
+          <div
+            className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 eMheOS bx--structured-list-td bx--structured-list-content--nowrap"
+            style={Object {}}
+            title="hey hey C"
+          >
+            <span
+              style={
+                Object {
+                  "color": "blue",
+                }
+              }
+            >
+              hey hey C
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ComposedStructuredList (Deprecated) default  1`] = `
+<div
+  className="storybook-container"
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "flexDirection": "column",
+      "padding": "3rem",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <section
+      aria-label="Structured list section"
+      className="bx--structured-list ComposedStructuredList__StructuredListWrapperStyled-oz9xih-0 bQEmNU bx--structured-list--selection"
+    >
+      <div
+        className="bx--structured-list-thead"
+      >
+        <div
+          className="bx--structured-list-row bx--structured-list-row--header-row"
+        >
+          <div
+            className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 eMheOS bx--structured-list-th"
+            title="A"
+          >
+            A
+          </div>
+          <div
+            className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 eMheOS bx--structured-list-th"
+            title="B"
+          >
+            B
+          </div>
+          <div
+            className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 eMheOS bx--structured-list-th"
+            title="C"
+          >
+            C
+          </div>
+        </div>
+      </div>
+      <div
+        className="bx--structured-list-tbody"
+        onKeyDown={[Function]}
+      >
+        <div
+          className="bx--structured-list-row"
+          onClick={[Function]}
+        >
+          <div
+            className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 eMheOS bx--structured-list-td bx--structured-list-content--nowrap"
+            style={Object {}}
+            title={null}
+          >
+            <div />
+          </div>
+          <div
+            className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 eMheOS bx--structured-list-td bx--structured-list-content--nowrap"
+            style={Object {}}
+            title="hey B"
+          >
+            hey B
+          </div>
+          <div
+            className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 eMheOS bx--structured-list-td bx--structured-list-content--nowrap"
+            style={Object {}}
+            title="hey C"
+          >
+            hey C
+          </div>
+        </div>
+        <div
+          className="bx--structured-list-row"
+          onClick={[Function]}
+        >
+          <div
+            className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 eMheOS bx--structured-list-td bx--structured-list-content--nowrap"
+            style={Object {}}
+            title="hey A again fixed column width"
+          >
+            hey A again fixed column width
+          </div>
+          <div
+            className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 eMheOS bx--structured-list-td bx--structured-list-content--nowrap"
+            style={Object {}}
+            title="hey B again"
+          >
+            hey B again
+          </div>
+          <div
+            className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 eMheOS bx--structured-list-td bx--structured-list-content--nowrap"
+            style={Object {}}
+            title="hey C again"
+          >
+            hey C again
+          </div>
+        </div>
+        <div
+          className="bx--structured-list-row"
+          onClick={[Function]}
+        >
+          <div
+            className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 eMheOS bx--structured-list-td bx--structured-list-content--nowrap"
+            style={Object {}}
+            title="hey hey A"
+          >
+            hey hey A
+          </div>
+          <div
+            className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 eMheOS bx--structured-list-td bx--structured-list-content--nowrap"
+            style={Object {}}
+            title="hey hey B"
+          >
+            hey hey B
+          </div>
+          <div
+            className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 eMheOS bx--structured-list-td bx--structured-list-content--nowrap"
+            style={Object {}}
+            title="hey hey C"
+          >
+            hey hey C
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ComposedStructuredList (Deprecated) with empty state 1`] = `
+<div
+  className="storybook-container"
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "flexDirection": "column",
+      "padding": "3rem",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <section
+      aria-label="Structured list section"
+      className="bx--structured-list ComposedStructuredList__StructuredListWrapperStyled-oz9xih-0 bQEmNU bx--structured-list--selection"
+    >
+      <div
+        className="bx--structured-list-thead"
+      >
+        <div
+          className="bx--structured-list-row bx--structured-list-row--header-row"
+        >
+          <div
+            className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 eMheOS bx--structured-list-th"
+            title="A"
+          >
+            A
+          </div>
+          <div
+            className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 eMheOS bx--structured-list-th"
+            title="B"
+          >
+            B
+          </div>
+          <div
+            className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 eMheOS bx--structured-list-th"
+            title="C"
+          >
+            C
+          </div>
+        </div>
+      </div>
+      <div
+        className="bx--structured-list-tbody"
+        onKeyDown={[Function]}
+      />
+      <div
+        className="ComposedStructuredList__EmptyContent-oz9xih-1 foGiwV"
+      >
+        <svg
+          aria-hidden={true}
+          fill="#5a6872"
+          focusable="false"
+          height={100}
+          preserveAspectRatio="xMidYMid meet"
+          style={
+            Object {
+              "willChange": "transform",
+            }
+          }
+          viewBox="0 0 32 32"
+          width={100}
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M16 10a6 6 0 0 0-6 6v8a6 6 0 0 0 12 0v-8a6 6 0 0 0-6-6zm-4.25 7.87h8.5v4.25h-8.5zM16 28.25A4.27 4.27 0 0 1 11.75 24v-.13h8.5V24A4.27 4.27 0 0 1 16 28.25zm4.25-12.13h-8.5V16a4.25 4.25 0 0 1 8.5 0zm10.41 3.09L24 13v9.1a4 4 0 0 0 8 0 3.83 3.83 0 0 0-1.34-2.89zM28 24.35a2.25 2.25 0 0 1-2.25-2.25V17l3.72 3.47A2.05 2.05 0 0 1 30.2 22a2.25 2.25 0 0 1-2.2 2.35zM0 22.1a4 4 0 0 0 8 0V13l-6.66 6.21A3.88 3.88 0 0 0 0 22.1zm2.48-1.56L6.25 17v5.1a2.25 2.25 0 0 1-4.5 0 2.05 2.05 0 0 1 .73-1.56zM15 5.5A3.5 3.5 0 1 0 11.5 9 3.5 3.5 0 0 0 15 5.5zm-5.25 0a1.75 1.75 0 1 1 1.75 1.75A1.77 1.77 0 0 1 9.75 5.5zM20.5 2A3.5 3.5 0 1 0 24 5.5 3.5 3.5 0 0 0 20.5 2zm0 5.25a1.75 1.75 0 1 1 1.75-1.75 1.77 1.77 0 0 1-1.75 1.75z"
+          />
+        </svg>
+        <div
+          className="ComposedStructuredList__LoadingDiv-oz9xih-2 bGZVQQ"
+        >
+          No data is available yet.
+        </div>
+      </div>
+    </section>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ComposedStructuredList (Deprecated) with empty state with fixed column width 1`] = `
+<div
+  className="storybook-container"
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "flexDirection": "column",
+      "padding": "3rem",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <section
+      aria-label="Structured list section"
+      className="bx--structured-list ComposedStructuredList__StructuredListWrapperStyled-oz9xih-0 bmhAOa bx--structured-list--selection"
+    >
+      <div
+        className="bx--structured-list-thead"
+      >
+        <div
+          className="bx--structured-list-row bx--structured-list-row--header-row"
+        >
+          <div
+            className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 jXwlwq bx--structured-list-th"
+            title="A"
+            width="10rem"
+          >
+            A
+          </div>
+          <div
+            className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 cxDUvP bx--structured-list-th"
+            title="B"
+            width="12rem"
+          >
+            B
+          </div>
+          <div
+            className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 uqYLz bx--structured-list-th"
+            title="C"
+            width="14rem"
+          >
+            C
+          </div>
+        </div>
+      </div>
+      <div
+        className="bx--structured-list-tbody"
+        onKeyDown={[Function]}
+      />
+      <div
+        className="ComposedStructuredList__EmptyContent-oz9xih-1 foGiwV"
+      >
+        <svg
+          aria-hidden={true}
+          fill="#5a6872"
+          focusable="false"
+          height={100}
+          preserveAspectRatio="xMidYMid meet"
+          style={
+            Object {
+              "willChange": "transform",
+            }
+          }
+          viewBox="0 0 32 32"
+          width={100}
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M16 10a6 6 0 0 0-6 6v8a6 6 0 0 0 12 0v-8a6 6 0 0 0-6-6zm-4.25 7.87h8.5v4.25h-8.5zM16 28.25A4.27 4.27 0 0 1 11.75 24v-.13h8.5V24A4.27 4.27 0 0 1 16 28.25zm4.25-12.13h-8.5V16a4.25 4.25 0 0 1 8.5 0zm10.41 3.09L24 13v9.1a4 4 0 0 0 8 0 3.83 3.83 0 0 0-1.34-2.89zM28 24.35a2.25 2.25 0 0 1-2.25-2.25V17l3.72 3.47A2.05 2.05 0 0 1 30.2 22a2.25 2.25 0 0 1-2.2 2.35zM0 22.1a4 4 0 0 0 8 0V13l-6.66 6.21A3.88 3.88 0 0 0 0 22.1zm2.48-1.56L6.25 17v5.1a2.25 2.25 0 0 1-4.5 0 2.05 2.05 0 0 1 .73-1.56zM15 5.5A3.5 3.5 0 1 0 11.5 9 3.5 3.5 0 0 0 15 5.5zm-5.25 0a1.75 1.75 0 1 1 1.75 1.75A1.77 1.77 0 0 1 9.75 5.5zM20.5 2A3.5 3.5 0 1 0 24 5.5 3.5 3.5 0 0 0 20.5 2zm0 5.25a1.75 1.75 0 1 1 1.75-1.75 1.77 1.77 0 0 1-1.75 1.75z"
+          />
+        </svg>
+        <div
+          className="ComposedStructuredList__LoadingDiv-oz9xih-2 bGZVQQ"
+        >
+          No data is available yet.
+        </div>
+      </div>
+    </section>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ComposedStructuredList (Deprecated) with fixed column widths 1`] = `
+<div
+  className="storybook-container"
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "flexDirection": "column",
+      "padding": "3rem",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <section
+      aria-label="Structured list section"
+      className="bx--structured-list ComposedStructuredList__StructuredListWrapperStyled-oz9xih-0 bmhAOa bx--structured-list--selection"
+    >
+      <div
+        className="bx--structured-list-thead"
+      >
+        <div
+          className="bx--structured-list-row bx--structured-list-row--header-row"
+        >
+          <div
+            className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 jXwlwq bx--structured-list-th"
+            title="A"
+            width="10rem"
+          >
+            A
+          </div>
+          <div
+            className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 cxDUvP bx--structured-list-th"
+            title="B"
+            width="12rem"
+          >
+            B
+          </div>
+          <div
+            className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 uqYLz bx--structured-list-th"
+            title="C"
+            width="14rem"
+          >
+            C
+          </div>
+        </div>
+      </div>
+      <div
+        className="bx--structured-list-tbody"
+        onKeyDown={[Function]}
+      >
+        <div
+          className="bx--structured-list-row"
+          onClick={[Function]}
+        >
+          <div
+            className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 jXwlwq bx--structured-list-td bx--structured-list-content--nowrap"
+            style={Object {}}
+            title={null}
+            width="10rem"
+          >
+            <div />
+          </div>
+          <div
+            className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 cxDUvP bx--structured-list-td bx--structured-list-content--nowrap"
+            style={Object {}}
+            title="hey B"
+            width="12rem"
+          >
+            hey B
+          </div>
+          <div
+            className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 uqYLz bx--structured-list-td bx--structured-list-content--nowrap"
+            style={Object {}}
+            title="hey C"
+            width="14rem"
+          >
+            hey C
+          </div>
+        </div>
+        <div
+          className="bx--structured-list-row"
+          onClick={[Function]}
+        >
+          <div
+            className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 jXwlwq bx--structured-list-td bx--structured-list-content--nowrap"
+            style={Object {}}
+            title="hey A again fixed column width"
+            width="10rem"
+          >
+            hey A again fixed column width
+          </div>
+          <div
+            className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 cxDUvP bx--structured-list-td bx--structured-list-content--nowrap"
+            style={Object {}}
+            title="hey B again"
+            width="12rem"
+          >
+            hey B again
+          </div>
+          <div
+            className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 uqYLz bx--structured-list-td bx--structured-list-content--nowrap"
+            style={Object {}}
+            title="hey C again"
+            width="14rem"
+          >
+            hey C again
+          </div>
+        </div>
+        <div
+          className="bx--structured-list-row"
+          onClick={[Function]}
+        >
+          <div
+            className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 jXwlwq bx--structured-list-td bx--structured-list-content--nowrap"
+            style={Object {}}
+            title="hey hey A"
+            width="10rem"
+          >
+            hey hey A
+          </div>
+          <div
+            className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 cxDUvP bx--structured-list-td bx--structured-list-content--nowrap"
+            style={Object {}}
+            title="hey hey B"
+            width="12rem"
+          >
+            hey hey B
+          </div>
+          <div
+            className="ComposedStructuredList__StyledStructuredListCell-oz9xih-3 uqYLz bx--structured-list-td bx--structured-list-content--nowrap"
+            style={Object {}}
+            title="hey hey C"
+            width="14rem"
+          >
+            hey hey C
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ComposedStructuredList (Deprecated) ️⛔ Deprecation Notice  1`] = `
+<div
+  className="storybook-container"
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "flexDirection": "column",
+      "padding": "3rem",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      className="bx--toast-notification bx--toast-notification--warning"
+      kind="warning"
+      role="alert"
+      style={
+        Object {
+          "marginBottom": ".5rem",
+          "minWidth": "30rem",
+        }
+      }
+      timeout={0}
+    >
+      <svg
+        aria-hidden={true}
+        className="bx--toast-notification__icon"
+        focusable="false"
+        height={20}
+        preserveAspectRatio="xMidYMid meet"
+        style={
+          Object {
+            "willChange": "transform",
+          }
+        }
+        viewBox="0 0 20 20"
+        width={20}
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M10 1c-5 0-9 4-9 9s4 9 9 9 9-4 9-9-4-9-9-9zm-.8 4h1.5v7H9.2V5zm.8 11c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1z"
+        />
+        <path
+          d="M9.2 5h1.5v7H9.2V5zm.8 11c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1z"
+          data-icon-path="inner-path"
+          opacity="0"
+        />
+        <title>
+          
+        </title>
+      </svg>
+      <div
+        className="bx--toast-notification__details"
+      >
+        <h3
+          className="bx--toast-notification__title"
+        >
+          Deprecation Notice
+        </h3>
+        <div
+          className="bx--toast-notification__subtitle"
+        >
+          ComposedStructuredList has been deprecated and will be removed in the next major version of carbon-addons-iot-react.
+        </div>
+        <div
+          className="bx--toast-notification__caption"
+        >
+          Refactor usages of ComposedStructuredList to use StructuredList instead.
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;

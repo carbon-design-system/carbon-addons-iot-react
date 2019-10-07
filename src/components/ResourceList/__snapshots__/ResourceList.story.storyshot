@@ -1,0 +1,691 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ResourceList default 1`] = `
+<div
+  className="storybook-container"
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "flexDirection": "column",
+      "padding": "3rem",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <section
+      className="bx--structured-list bx--structured-list--border bx--structured-list--selection ResourceList__ResourceListSection-sc-27rnbq-0 gAnvjz"
+    >
+      <div
+        className="bx--structured-list-tbody"
+      >
+        <label
+          aria-label="Item A"
+          className=" bx--structured-list-row"
+          onClick={[Function]}
+          tabIndex={0}
+        >
+          <div
+            className="bx--structured-list-td bx--structured-list-content--nowrap"
+          >
+            <strong>
+              Item A
+            </strong>
+          </div>
+          <div
+            className="bx--structured-list-td"
+          >
+            Lorem ipsun dolor sit amet, consectetur adipiscing elit. Nunc dui magna, finibus id tortor sed.
+          </div>
+          <input
+            checked={false}
+            className="bx--structured-list-input"
+            readOnly={true}
+            tabIndex={-1}
+            title="Item A"
+            type="radio"
+            value="Item A"
+          />
+          <div
+            className="bx--structured-list-td"
+            style={
+              Object {
+                "verticalAlign": "middle",
+              }
+            }
+          >
+            <svg
+              className="bx--structured-list-svg"
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
+            >
+              <path
+                d="M8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16zm3.646-10.854L6.75 10.043 4.354 7.646l-.708.708 3.104 3.103 5.604-5.603-.708-.708z"
+                fillRule="evenodd"
+              />
+            </svg>
+          </div>
+        </label>
+        <label
+          aria-label="Item B"
+          className=" bx--structured-list-row"
+          onClick={[Function]}
+          tabIndex={1}
+        >
+          <div
+            className="bx--structured-list-td bx--structured-list-content--nowrap"
+          >
+            <strong>
+              Item B
+            </strong>
+          </div>
+          <div
+            className="bx--structured-list-td"
+          >
+            Lorem ipsun dolor sit amet, consectetur adipiscing elit. Nunc dui magna, finibus id tortor sed.
+          </div>
+          <input
+            checked={false}
+            className="bx--structured-list-input"
+            readOnly={true}
+            tabIndex={-1}
+            title="Item B"
+            type="radio"
+            value="Item B"
+          />
+          <div
+            className="bx--structured-list-td"
+            style={
+              Object {
+                "verticalAlign": "middle",
+              }
+            }
+          >
+            <svg
+              className="bx--structured-list-svg"
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
+            >
+              <path
+                d="M8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16zm3.646-10.854L6.75 10.043 4.354 7.646l-.708.708 3.104 3.103 5.604-5.603-.708-.708z"
+                fillRule="evenodd"
+              />
+            </svg>
+          </div>
+        </label>
+        <label
+          aria-label="Item C"
+          className=" bx--structured-list-row"
+          onClick={[Function]}
+          tabIndex={2}
+        >
+          <div
+            className="bx--structured-list-td bx--structured-list-content--nowrap"
+          >
+            <strong>
+              Item C
+            </strong>
+          </div>
+          <div
+            className="bx--structured-list-td"
+          >
+            Lorem ipsun dolor sit amet, consectetur adipiscing elit. Nunc dui magna, finibus id tortor sed. Lorem ipsun dolor sit amet, consectetur adipiscing elit. Nunc dui magna, finibus id tortor sed.Lorem ipsun dolor sit amet, consectetur adipiscing elit. Nunc dui magna, finibus id tortor sed.Lorem ipsun dolor sit amet, consectetur adipiscing elit. Nunc dui magna, finibus id tortor sed.Lorem ipsun dolor sit amet, consectetur adipiscing elit. Nunc dui magna, finibus id tortor sed.Lorem ipsun dolor sit amet, consectetur adipiscing elit. Nunc dui magna, finibus id tortor sed.Lorem ipsun dolor sit amet, consectetur adipiscing elit. Nunc dui magna, finibus id tortor sed.
+          </div>
+          <input
+            checked={false}
+            className="bx--structured-list-input"
+            readOnly={true}
+            tabIndex={-1}
+            title="Item C"
+            type="radio"
+            value="Item C"
+          />
+          <div
+            className="bx--structured-list-td"
+            style={
+              Object {
+                "verticalAlign": "middle",
+              }
+            }
+          >
+            <svg
+              className="bx--structured-list-svg"
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
+            >
+              <path
+                d="M8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16zm3.646-10.854L6.75 10.043 4.354 7.646l-.708.708 3.104 3.103 5.604-5.603-.708-.708z"
+                fillRule="evenodd"
+              />
+            </svg>
+          </div>
+        </label>
+      </div>
+    </section>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ResourceList with action 1`] = `
+<div
+  className="storybook-container"
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "flexDirection": "column",
+      "padding": "3rem",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <section
+      className="bx--structured-list bx--structured-list--border bx--structured-list--selection ResourceList__ResourceListSection-sc-27rnbq-0 gAnvjz"
+    >
+      <div
+        className="bx--structured-list-tbody"
+      >
+        <label
+          aria-label="Item A"
+          className=" bx--structured-list-row"
+          onClick={[Function]}
+          tabIndex={-1}
+        >
+          <div
+            className="bx--structured-list-td bx--structured-list-content--nowrap"
+          >
+            <strong>
+              Item A
+            </strong>
+          </div>
+          <div
+            className="bx--structured-list-td"
+          >
+            Lorem ipsun dolor sit amet, consectetur adipiscing elit. Nunc dui magna, finibus id tortor sed.
+          </div>
+          <div
+            className="bx--structured-list-td bx--structured-list-content--nowrap ResourceList__CustomActionDiv-sc-27rnbq-2 gHaTLR"
+            role="presentation"
+          >
+            <button
+              className="bx--btn bx--btn--ghost"
+              disabled={false}
+              onClick={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              Configure
+              <svg
+                aria-hidden={true}
+                className="bx--btn__icon"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                style={
+                  Object {
+                    "willChange": "transform",
+                  }
+                }
+                viewBox="0 0 16 16"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M1 13h14v1H1zm11.7-8.5c.4-.4.4-1 0-1.4l-1.8-1.8c-.4-.4-1-.4-1.4 0L2 8.8V12h3.2l7.5-7.5zM10.2 2L12 3.8l-1.5 1.5-1.8-1.8L10.2 2zM3 11V9.2l5-5L9.8 6l-5 5H3z"
+                />
+              </svg>
+            </button>
+          </div>
+        </label>
+        <label
+          aria-label="Item B"
+          className=" bx--structured-list-row"
+          onClick={[Function]}
+          tabIndex={-1}
+        >
+          <div
+            className="bx--structured-list-td bx--structured-list-content--nowrap"
+          >
+            <strong>
+              Item B
+            </strong>
+          </div>
+          <div
+            className="bx--structured-list-td"
+          >
+            Lorem ipsun dolor sit amet, consectetur adipiscing elit. Nunc dui magna, finibus id tortor sed.
+          </div>
+          <div
+            className="bx--structured-list-td bx--structured-list-content--nowrap ResourceList__CustomActionDiv-sc-27rnbq-2 gHaTLR"
+            role="presentation"
+          >
+            <button
+              className="bx--btn bx--btn--ghost"
+              disabled={false}
+              onClick={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              Configure
+              <svg
+                aria-hidden={true}
+                className="bx--btn__icon"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                style={
+                  Object {
+                    "willChange": "transform",
+                  }
+                }
+                viewBox="0 0 16 16"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M1 13h14v1H1zm11.7-8.5c.4-.4.4-1 0-1.4l-1.8-1.8c-.4-.4-1-.4-1.4 0L2 8.8V12h3.2l7.5-7.5zM10.2 2L12 3.8l-1.5 1.5-1.8-1.8L10.2 2zM3 11V9.2l5-5L9.8 6l-5 5H3z"
+                />
+              </svg>
+            </button>
+          </div>
+        </label>
+        <label
+          aria-label="Item C"
+          className=" bx--structured-list-row"
+          onClick={[Function]}
+          tabIndex={-1}
+        >
+          <div
+            className="bx--structured-list-td bx--structured-list-content--nowrap"
+          >
+            <strong>
+              Item C
+            </strong>
+          </div>
+          <div
+            className="bx--structured-list-td"
+          >
+            Lorem ipsun dolor sit amet, consectetur adipiscing elit. Nunc dui magna, finibus id tortor sed. Lorem ipsun dolor sit amet, consectetur adipiscing elit. Nunc dui magna, finibus id tortor sed.Lorem ipsun dolor sit amet, consectetur adipiscing elit. Nunc dui magna, finibus id tortor sed.Lorem ipsun dolor sit amet, consectetur adipiscing elit. Nunc dui magna, finibus id tortor sed.Lorem ipsun dolor sit amet, consectetur adipiscing elit. Nunc dui magna, finibus id tortor sed.Lorem ipsun dolor sit amet, consectetur adipiscing elit. Nunc dui magna, finibus id tortor sed.Lorem ipsun dolor sit amet, consectetur adipiscing elit. Nunc dui magna, finibus id tortor sed.
+          </div>
+          <div
+            className="bx--structured-list-td bx--structured-list-content--nowrap ResourceList__CustomActionDiv-sc-27rnbq-2 gHaTLR"
+            role="presentation"
+          >
+            <button
+              className="bx--btn bx--btn--ghost"
+              disabled={false}
+              onClick={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              Configure
+              <svg
+                aria-hidden={true}
+                className="bx--btn__icon"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                style={
+                  Object {
+                    "willChange": "transform",
+                  }
+                }
+                viewBox="0 0 16 16"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M1 13h14v1H1zm11.7-8.5c.4-.4.4-1 0-1.4l-1.8-1.8c-.4-.4-1-.4-1.4 0L2 8.8V12h3.2l7.5-7.5zM10.2 2L12 3.8l-1.5 1.5-1.8-1.8L10.2 2zM3 11V9.2l5-5L9.8 6l-5 5H3z"
+                />
+              </svg>
+            </button>
+          </div>
+        </label>
+      </div>
+    </section>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ResourceList with extra content 1`] = `
+<div
+  className="storybook-container"
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "flexDirection": "column",
+      "padding": "3rem",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <section
+      className="bx--structured-list bx--structured-list--border bx--structured-list--selection ResourceList__ResourceListSection-sc-27rnbq-0 gAnvjz"
+    >
+      <div
+        className="bx--structured-list-tbody"
+      >
+        <label
+          aria-label="Item A"
+          className=" bx--structured-list-row"
+          onClick={[Function]}
+          tabIndex={0}
+        >
+          <div
+            className="bx--structured-list-td"
+          >
+            <div>
+              <h5>
+                row-0
+              </h5>
+              <svg
+                aria-hidden={true}
+                focusable="false"
+                height={32}
+                preserveAspectRatio="xMidYMid meet"
+                style={
+                  Object {
+                    "willChange": "transform",
+                  }
+                }
+                viewBox="0 0 32 32"
+                width={32}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M16 10a6 6 0 0 0-6 6v8a6 6 0 0 0 12 0v-8a6 6 0 0 0-6-6zm-4.25 7.87h8.5v4.25h-8.5zM16 28.25A4.27 4.27 0 0 1 11.75 24v-.13h8.5V24A4.27 4.27 0 0 1 16 28.25zm4.25-12.13h-8.5V16a4.25 4.25 0 0 1 8.5 0zm10.41 3.09L24 13v9.1a4 4 0 0 0 8 0 3.83 3.83 0 0 0-1.34-2.89zM28 24.35a2.25 2.25 0 0 1-2.25-2.25V17l3.72 3.47A2.05 2.05 0 0 1 30.2 22a2.25 2.25 0 0 1-2.2 2.35zM0 22.1a4 4 0 0 0 8 0V13l-6.66 6.21A3.88 3.88 0 0 0 0 22.1zm2.48-1.56L6.25 17v5.1a2.25 2.25 0 0 1-4.5 0 2.05 2.05 0 0 1 .73-1.56zM15 5.5A3.5 3.5 0 1 0 11.5 9 3.5 3.5 0 0 0 15 5.5zm-5.25 0a1.75 1.75 0 1 1 1.75 1.75A1.77 1.77 0 0 1 9.75 5.5zM20.5 2A3.5 3.5 0 1 0 24 5.5 3.5 3.5 0 0 0 20.5 2zm0 5.25a1.75 1.75 0 1 1 1.75-1.75 1.77 1.77 0 0 1-1.75 1.75z"
+                />
+              </svg>
+            </div>
+          </div>
+          <div
+            className="bx--structured-list-td bx--structured-list-content--nowrap"
+          >
+            <strong>
+              Item A
+            </strong>
+          </div>
+          <div
+            className="bx--structured-list-td"
+          >
+            Lorem ipsun dolor sit amet, consectetur adipiscing elit. Nunc dui magna, finibus id tortor sed.
+          </div>
+          <input
+            checked={false}
+            className="bx--structured-list-input"
+            readOnly={true}
+            tabIndex={-1}
+            title="Item A"
+            type="radio"
+            value="Item A"
+          />
+          <div
+            className="bx--structured-list-td"
+            style={
+              Object {
+                "verticalAlign": "middle",
+              }
+            }
+          >
+            <svg
+              className="bx--structured-list-svg"
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
+            >
+              <path
+                d="M8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16zm3.646-10.854L6.75 10.043 4.354 7.646l-.708.708 3.104 3.103 5.604-5.603-.708-.708z"
+                fillRule="evenodd"
+              />
+            </svg>
+          </div>
+        </label>
+        <label
+          aria-label="Item B"
+          className=" bx--structured-list-row"
+          onClick={[Function]}
+          tabIndex={1}
+        >
+          <div
+            className="bx--structured-list-td"
+          >
+            <div>
+              <h5>
+                row-1
+              </h5>
+              <svg
+                aria-hidden={true}
+                focusable="false"
+                height={32}
+                preserveAspectRatio="xMidYMid meet"
+                style={
+                  Object {
+                    "willChange": "transform",
+                  }
+                }
+                viewBox="0 0 32 32"
+                width={32}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M16 10a6 6 0 0 0-6 6v8a6 6 0 0 0 12 0v-8a6 6 0 0 0-6-6zm-4.25 7.87h8.5v4.25h-8.5zM16 28.25A4.27 4.27 0 0 1 11.75 24v-.13h8.5V24A4.27 4.27 0 0 1 16 28.25zm4.25-12.13h-8.5V16a4.25 4.25 0 0 1 8.5 0zm10.41 3.09L24 13v9.1a4 4 0 0 0 8 0 3.83 3.83 0 0 0-1.34-2.89zM28 24.35a2.25 2.25 0 0 1-2.25-2.25V17l3.72 3.47A2.05 2.05 0 0 1 30.2 22a2.25 2.25 0 0 1-2.2 2.35zM0 22.1a4 4 0 0 0 8 0V13l-6.66 6.21A3.88 3.88 0 0 0 0 22.1zm2.48-1.56L6.25 17v5.1a2.25 2.25 0 0 1-4.5 0 2.05 2.05 0 0 1 .73-1.56zM15 5.5A3.5 3.5 0 1 0 11.5 9 3.5 3.5 0 0 0 15 5.5zm-5.25 0a1.75 1.75 0 1 1 1.75 1.75A1.77 1.77 0 0 1 9.75 5.5zM20.5 2A3.5 3.5 0 1 0 24 5.5 3.5 3.5 0 0 0 20.5 2zm0 5.25a1.75 1.75 0 1 1 1.75-1.75 1.77 1.77 0 0 1-1.75 1.75z"
+                />
+              </svg>
+            </div>
+          </div>
+          <div
+            className="bx--structured-list-td bx--structured-list-content--nowrap"
+          >
+            <strong>
+              Item B
+            </strong>
+          </div>
+          <div
+            className="bx--structured-list-td"
+          >
+            Lorem ipsun dolor sit amet, consectetur adipiscing elit. Nunc dui magna, finibus id tortor sed.
+          </div>
+          <input
+            checked={false}
+            className="bx--structured-list-input"
+            readOnly={true}
+            tabIndex={-1}
+            title="Item B"
+            type="radio"
+            value="Item B"
+          />
+          <div
+            className="bx--structured-list-td"
+            style={
+              Object {
+                "verticalAlign": "middle",
+              }
+            }
+          >
+            <svg
+              className="bx--structured-list-svg"
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
+            >
+              <path
+                d="M8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16zm3.646-10.854L6.75 10.043 4.354 7.646l-.708.708 3.104 3.103 5.604-5.603-.708-.708z"
+                fillRule="evenodd"
+              />
+            </svg>
+          </div>
+        </label>
+        <label
+          aria-label="Item C"
+          className=" bx--structured-list-row"
+          onClick={[Function]}
+          tabIndex={2}
+        >
+          <div
+            className="bx--structured-list-td"
+          >
+            <div>
+              <h5>
+                row-2
+              </h5>
+              <svg
+                aria-hidden={true}
+                focusable="false"
+                height={32}
+                preserveAspectRatio="xMidYMid meet"
+                style={
+                  Object {
+                    "willChange": "transform",
+                  }
+                }
+                viewBox="0 0 32 32"
+                width={32}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M16 10a6 6 0 0 0-6 6v8a6 6 0 0 0 12 0v-8a6 6 0 0 0-6-6zm-4.25 7.87h8.5v4.25h-8.5zM16 28.25A4.27 4.27 0 0 1 11.75 24v-.13h8.5V24A4.27 4.27 0 0 1 16 28.25zm4.25-12.13h-8.5V16a4.25 4.25 0 0 1 8.5 0zm10.41 3.09L24 13v9.1a4 4 0 0 0 8 0 3.83 3.83 0 0 0-1.34-2.89zM28 24.35a2.25 2.25 0 0 1-2.25-2.25V17l3.72 3.47A2.05 2.05 0 0 1 30.2 22a2.25 2.25 0 0 1-2.2 2.35zM0 22.1a4 4 0 0 0 8 0V13l-6.66 6.21A3.88 3.88 0 0 0 0 22.1zm2.48-1.56L6.25 17v5.1a2.25 2.25 0 0 1-4.5 0 2.05 2.05 0 0 1 .73-1.56zM15 5.5A3.5 3.5 0 1 0 11.5 9 3.5 3.5 0 0 0 15 5.5zm-5.25 0a1.75 1.75 0 1 1 1.75 1.75A1.77 1.77 0 0 1 9.75 5.5zM20.5 2A3.5 3.5 0 1 0 24 5.5 3.5 3.5 0 0 0 20.5 2zm0 5.25a1.75 1.75 0 1 1 1.75-1.75 1.77 1.77 0 0 1-1.75 1.75z"
+                />
+              </svg>
+            </div>
+          </div>
+          <div
+            className="bx--structured-list-td bx--structured-list-content--nowrap"
+          >
+            <strong>
+              Item C
+            </strong>
+          </div>
+          <div
+            className="bx--structured-list-td"
+          >
+            Lorem ipsun dolor sit amet, consectetur adipiscing elit. Nunc dui magna, finibus id tortor sed. Lorem ipsun dolor sit amet, consectetur adipiscing elit. Nunc dui magna, finibus id tortor sed.Lorem ipsun dolor sit amet, consectetur adipiscing elit. Nunc dui magna, finibus id tortor sed.Lorem ipsun dolor sit amet, consectetur adipiscing elit. Nunc dui magna, finibus id tortor sed.Lorem ipsun dolor sit amet, consectetur adipiscing elit. Nunc dui magna, finibus id tortor sed.Lorem ipsun dolor sit amet, consectetur adipiscing elit. Nunc dui magna, finibus id tortor sed.Lorem ipsun dolor sit amet, consectetur adipiscing elit. Nunc dui magna, finibus id tortor sed.
+          </div>
+          <input
+            checked={false}
+            className="bx--structured-list-input"
+            readOnly={true}
+            tabIndex={-1}
+            title="Item C"
+            type="radio"
+            value="Item C"
+          />
+          <div
+            className="bx--structured-list-td"
+            style={
+              Object {
+                "verticalAlign": "middle",
+              }
+            }
+          >
+            <svg
+              className="bx--structured-list-svg"
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
+            >
+              <path
+                d="M8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16zm3.646-10.854L6.75 10.043 4.354 7.646l-.708.708 3.104 3.103 5.604-5.603-.708-.708z"
+                fillRule="evenodd"
+              />
+            </svg>
+          </div>
+        </label>
+      </div>
+    </section>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
