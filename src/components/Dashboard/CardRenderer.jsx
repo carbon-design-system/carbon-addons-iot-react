@@ -31,6 +31,21 @@ const CachedCardRenderer = ({
   return <CardRenderer {...others} onCardAction={cachedOnCardAction} style={cachedStyle} />;
 };
 
+/** Asynchronous reusable function to load Card Data */
+const loadCardData = async (card, setCard, onFetchData, timeGrain) => {
+  // Set state to loading
+  setCard({ ...card, isLoading: true });
+  const cardWithData = await onFetchData(
+    card,
+    card.type !== CARD_TYPES.IMAGE && card.type !== CARD_TYPES.VALUE
+  );
+  setCard({
+    ...cardWithData,
+    timeGrain: compareGrains(timeGrain, card.timeGrain) < 1 ? card.timeGrain : timeGrain,
+    isLoading: false,
+  });
+};
+
 /**
  * This component decides which card component to render when passed a certain card type.
  * It keeps the local state of the card (which determines which range selection is being shown, etc)
@@ -62,15 +77,8 @@ const CardRenderer = React.memo(
     // If the dashboard has triggered a bulk load, refetch the data
     useEffect(
       () => {
-        const fetchData = async () => {
-          // Set state to loading
-          setCard({ ...card, isLoading: true });
-          const cardWithData = await onFetchData(card);
-          console.log(`cardWithData From Bulk Load: ${JSON.stringify(cardWithData)}`);
-          setCard({ ...cardWithData, isLoading: false });
-        };
         if (isLoading) {
-          fetchData(card);
+          loadCardData(card, setCard, onFetchData, timeGrain);
         }
       },
       [isLoading] // eslint-disable-line
@@ -102,10 +110,11 @@ const CardRenderer = React.memo(
       async (id, actionType, payload) => {
         // callback time grain change from parent
         if (actionType === 'CHANGE_TIME_RANGE') {
+          // First update the range
           const range = determineCardRange(payload.range);
           const cardWithUpdatedRange = {
             ...card,
-            isLoading: true,
+            isLoading: true, // set loading
             dataSource: {
               ...card.dataSource,
               range: {
@@ -117,11 +126,8 @@ const CardRenderer = React.memo(
                 compareGrains(timeGrain, range.timeGrain) < 1 ? range.timeGrain : timeGrain,
             },
           };
-
-          setCard({ ...cardWithUpdatedRange, isLoading: true });
-          const cardWithData = await onFetchData(cardWithUpdatedRange);
-          console.log(`cardWithData From Action: ${JSON.stringify(cardWithData)}`);
-          setCard({ ...cardWithData, isLoading: false });
+          // Then trigger a load of the card data
+          loadCardData(cardWithUpdatedRange, setCard, onFetchData, timeGrain);
         }
         onCardAction(id, actionType, payload);
       },
