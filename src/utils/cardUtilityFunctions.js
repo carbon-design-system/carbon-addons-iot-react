@@ -12,6 +12,8 @@ export const determineCardRange = range => {
       return { interval: 'week', count: -1, timeGrain: 'day', type: 'rolling' };
     case 'lastMonth':
       return { interval: 'month', count: -1, timeGrain: 'day', type: 'rolling' };
+    case 'lastQuarter':
+      return { interval: 'quarter', count: -1, timeGrain: 'month', type: 'rolling' };
     case 'lastYear':
       return {
         interval: 'year',
@@ -33,6 +35,8 @@ export const determineCardRange = range => {
         timeGrain: 'day',
         type: 'periodToDate',
       };
+    case 'thisQuarter':
+      return { interval: 'quarter', count: -1, timeGrain: 'month', type: 'periodToDate' };
     case 'thisYear':
       return {
         interval: 'year',

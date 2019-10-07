@@ -5,8 +5,7 @@ import 'react-grid-layout/css/styles.css';
 import 'react-resizable/css/styles.css';
 import styled from 'styled-components';
 import find from 'lodash/find';
-import merge from 'lodash/merge';
-import useDeepCompareEffect from 'use-deep-compare-effect';
+import some from 'lodash/some';
 
 import { getLayout } from '../../utils/componentUtilityFunctions';
 import {
@@ -81,11 +80,8 @@ const propTypes = {
   onBreakpointChange: PropTypes.func,
   /** Callback called when an action is clicked.  The id of the action is passed to the callback */
   onDashboardAction: PropTypes.func,
-  onCardAction: PropTypes.func,
   /** Is the dashboard in edit mode? */
   isEditable: PropTypes.bool,
-  /** Is the dashboard loading data */
-  isLoading: PropTypes.bool,
   /** array of configurable sizes to dimensions */
   cardDimensions: CardSizesToDimensionsPropTypes,
   /** Optional filter that should be rendered top right */
@@ -172,12 +168,10 @@ const propTypes = {
 
 const defaultProps = {
   isEditable: false,
-  isLoading: false,
   description: null,
   lastUpdated: null,
   onLayoutChange: null,
   onDashboardAction: null,
-  onCardAction: null,
   onBreakpointChange: null,
   i18n: {
     lastUpdatedLabel: 'Last updated: ',
@@ -279,7 +273,6 @@ const Dashboard = ({
   description,
   lastUpdated,
   hasLastUpdated,
-  onCardAction,
   i18n,
   i18n: { lastUpdatedLabel },
   dashboardBreakpoints,
@@ -290,7 +283,6 @@ const Dashboard = ({
   rowHeight,
   layouts,
   isEditable,
-  isLoading,
   onLayoutChange,
   onBreakpointChange,
   className,
@@ -300,26 +292,11 @@ const Dashboard = ({
 }) => {
   const [breakpoint, setBreakpoint] = useState('lg');
 
-  // card state
-  const [cardsState, setCards] = useState(cards);
-
-  // use Effec to update card state
-  useDeepCompareEffect(
-    () => {
-      setCards(cards);
-    },
-    [cards]
-  );
-
-  /** Function to handle card update */
-  const updateCardInDashboard = newCard =>
-    setCards(cardsState.map(card => (card.id === newCard.id ? newCard : card)));
+  // keep track of the expanded card id
+  const [expandedId, setExpandedId] = useState();
 
   // onCardAction, should have the default ones by the dashboard eg. expand other are merged from the prop
   const handleCardAction = (id, type, payload) => {
-    // Find the right card to be updated
-    const card = cardsState.find(cardItem => cardItem.id === id);
-
     // callback time grain change from parent
     if (type === 'CHANGE_TIME_RANGE') {
       return timeGrainCallback(id, type, payload);
@@ -327,23 +304,12 @@ const Dashboard = ({
 
     // expand card
     if (type === 'OPEN_EXPANDED_CARD') {
-      updateCardInDashboard({
-        ...card,
-        content: {
-          ...card.content,
-          isExpanded: true,
-        },
-        isExpanded: true,
-        availableActions: merge(card.availableActions, {
-          // we will create a new card so we need to "enable" the expand so can close
-          expand: true,
-        }),
-      });
+      setExpandedId(id);
     }
 
     // close expanded card
     if (type === 'CLOSE_EXPANDED_CARD') {
-      updateCardInDashboard({ ...card, isExpanded: false });
+      setExpandedId(null);
     }
     return null;
   };
@@ -384,9 +350,11 @@ const Dashboard = ({
     }
   };
 
-  const cachedCardAction = useCallback(onCardAction, [onCardAction]); // cache the card action
   const cachedOnLayoutChange = useCallback(handleLayoutChange, [onLayoutChange]);
   const cachedOnBreakpointChange = useCallback(handleBreakpointChange, [onBreakpointChange]);
+
+  // Is any card in the dashboard loading?
+  const isLoading = useMemo(() => some(cards, i => i.isLoading || i.isHotspotDataLoading), [cards]);
 
   const gridContents = useMemo(
     () =>
@@ -394,7 +362,7 @@ const Dashboard = ({
         <CardRenderer
           card={card}
           key={card.id}
-          onCardAction={cachedCardAction}
+          onCardAction={handleCardAction}
           i18n={cachedI18N}
           dashboardBreakpoints={dashboardBreakpoints}
           cardDimensions={cardDimensions}
@@ -404,10 +372,9 @@ const Dashboard = ({
           isEditable={isEditable}
           breakpoint={breakpoint}
         />
-      )),
+      )), // eslint-disable-next-line
     [
       breakpoint,
-      cachedCardAction,
       cachedI18N,
       cardDimensions,
       cards,
@@ -418,16 +385,24 @@ const Dashboard = ({
       rowHeight,
     ]
   );
-  const expandedCard = cards.find(i => i.isExpanded) || null;
+  // Cache the expanded card
+  const expandedCard = useMemo(() => cards.find(i => i.id === expandedId) || null, [
+    cards,
+    expandedId,
+  ]);
 
   return (
     <div className={className}>
       {expandedCard && (
         <div className="bx--modal is-visible">
           <CardRenderer
-            card={{ ...expandedCard }}
+            card={{
+              ...expandedCard,
+              content: { ...expandedCard.content, isExpanded: true },
+              isExpanded: true,
+            }}
             key={expandedCard.id}
-            onCardAction={cachedCardAction}
+            onCardAction={handleCardAction}
             i18n={i18n}
             dashboardBreakpoints={dashboardBreakpoints}
             cardDimensions={cardDimensions}

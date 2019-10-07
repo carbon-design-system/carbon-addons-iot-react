@@ -540,7 +540,6 @@ storiesOf('Dashboard (Experimental)', module)
         cards={originalCards}
         lastUpdated={Date()}
         isEditable={boolean('isEditable', false)}
-        isLoading={boolean('isLoading', false)}
         onBreakpointChange={action('onBreakpointChange')}
         onLayoutChange={action('onLayoutChange')}
       />
@@ -552,7 +551,6 @@ storiesOf('Dashboard (Experimental)', module)
         title={text('title', 'Munich Building')}
         lastUpdated={Date()}
         isEditable={boolean('isEditable', false)}
-        isLoading={boolean('isLoading', false)}
         onBreakpointChange={action('onBreakpointChange')}
         onLayoutChange={action('onLayoutChange')}
       />
@@ -563,7 +561,6 @@ storiesOf('Dashboard (Experimental)', module)
       <StatefulDashboard
         title={text('title', 'Munich Building')}
         isEditable={boolean('isEditable', false)}
-        isLoading={boolean('isLoading', false)}
         onBreakpointChange={action('onBreakpointChange')}
         onLayoutChange={action('onLayoutChange')}
         hasLastUpdated={false}
@@ -575,7 +572,6 @@ storiesOf('Dashboard (Experimental)', module)
       <StatefulDashboard
         title={text('title', 'Munich Building')}
         isEditable={boolean('isEditable', false)}
-        isLoading={boolean('isLoading', false)}
         onBreakpointChange={action('onBreakpointChange')}
         onLayoutChange={action('onLayoutChange')}
         actions={[{ id: 'edit', label: 'Edit', icon: 'edit--glyph' }]}
@@ -590,7 +586,6 @@ storiesOf('Dashboard (Experimental)', module)
         title={text('title', 'Munich Building')}
         lastUpdated={Date()}
         isEditable={boolean('isEditable', false)}
-        isLoading={boolean('isLoading', false)}
         sidebar={
           <div style={{ width: 300 }}>
             <h1>Sidebar content</h1>
@@ -603,22 +598,12 @@ storiesOf('Dashboard (Experimental)', module)
       />
     );
   })
-  .add('loading', () => {
-    return (
-      <StatefulDashboard
-        title={text('title', 'Munich Building')}
-        isEditable={boolean('isEditable', false)}
-        isLoading={boolean('isLoading', true)}
-      />
-    );
-  })
   .add('i18n labels', () => {
     return (
       <StatefulDashboard
         title={text('title', 'Munich Building')}
         lastUpdated={Date()}
         isEditable={boolean('isEditable', false)}
-        isLoading={boolean('isLoading', false)}
         onBreakpointChange={action('onBreakpointChange')}
         onLayoutChange={action('onLayoutChange')}
         onDashboardAction={action('onDashboardAction')}
@@ -697,6 +682,42 @@ storiesOf('Dashboard (Experimental)', module)
           dismissText: text('i18n.dismissText', '__Dismiss__'),
           downloadIconDescription: text('downloadIconDescription', 'Download table content'),
         }}
+      />
+    );
+  })
+  .add('full screen table card', () => {
+    const data = [...Array(35)].map((id, index) => ({
+      id: `row-${index}`,
+      values: {
+        timestamp: 1569819600000,
+        deviceid: 'Campus_EGL',
+        peopleCount_EnterpriseBuilding_mean: 150.5335383714,
+        headCount_EnterpriseBuilding_mean: 240,
+        capacity_EnterpriseBuilding_mean: 300,
+        allocatedSeats_EnterpriseBuilding_mean: 240,
+      },
+    }));
+    return (
+      <Dashboard
+        title="Expandable card, click expand to expand table"
+        cards={[
+          {
+            title: 'Expanded card',
+            id: `expandedcard`,
+            size: CARD_SIZES.LARGE,
+            type: CARD_TYPES.TABLE,
+            content: {
+              columns: [
+                { dataSourceId: 'timestamp' },
+                { dataSourceId: 'Campus_EGL' },
+                { dataSourceId: 'peopleCount_EnterpriseBuilding_mean' },
+                { dataSourceId: 'headCount_EnterpriseBuilding_mean' },
+                { dataSourceId: 'capacity_EnterpriseBuilding_mean' },
+              ],
+            },
+            values: data,
+          },
+        ]}
       />
     );
   })
