@@ -80,10 +80,15 @@ const propTypes = {
   }).isRequired,
 
   /** internationalized labels */
-  searchPlaceholderText: PropTypes.string,
-  clearAllFiltersText: PropTypes.string,
-  columnSelectionText: PropTypes.string,
-  filterText: PropTypes.string,
+  i18n: PropTypes.shape({
+    clearAllFilters: PropTypes.string,
+    columnSelectionButtonAria: PropTypes.string,
+    filterButtonAria: PropTypes.string,
+    searchPlaceholder: PropTypes.string,
+    batchCancel: PropTypes.string,
+    itemsSelected: PropTypes.string,
+    itemSelected: PropTypes.string,
+  }),
   /**
    * Action callbacks to update tableState
    */
@@ -122,19 +127,35 @@ const propTypes = {
 };
 
 const defaultProps = {
-  clearAllFiltersText: 'Clear all filters',
-  searchPlaceholderText: 'Search',
-  columnSelectionText: 'Column selection',
-  filterText: 'Filter',
+  i18n: {
+    clearAllFilters: 'Clear all filters',
+    columnSelectionButtonAria: 'Column selection',
+    filterButtonAria: 'Filter',
+    searchPlaceholder: 'Search',
+    batchCancel: 'Cancel',
+    itemsSelected: 'items selected',
+    itemSelected: 'item selected',
+  },
+};
+
+const translateWithId = (i18n, id, state) => {
+  const { batchCancel, itemsSelected, itemSelected } = i18n;
+  switch (id) {
+    case 'carbon.table.batch.cancel':
+      return batchCancel;
+    case 'carbon.table.batch.items.selected':
+      return `${state.totalSelected} ${itemsSelected}`;
+    case 'carbon.table.batch.item.selected':
+      return `${state.totalSelected} ${itemSelected}`;
+    default:
+      return '';
+  }
 };
 
 const TableToolbar = ({
   tableId,
   className,
-  clearAllFiltersText,
-  searchPlaceholderText,
-  columnSelectionText,
-  filterText,
+  i18n,
   options: { hasColumnSelection, hasFilter, hasSearch, hasRowSelection },
   actions: {
     onCancelBatchAction,
@@ -159,6 +180,7 @@ const TableToolbar = ({
       onCancel={onCancelBatchAction}
       shouldShowBatchActions={hasRowSelection === 'multi' && totalSelected > 0}
       totalSelected={totalSelected}
+      translateWithId={(...args) => translateWithId(i18n, ...args)}
     >
       {batchActions.map(({ id, labelText, ...others }) => (
         <TableBatchAction key={id} onClick={() => onApplyBatchAction(id)} {...others}>
@@ -171,7 +193,7 @@ const TableToolbar = ({
         {...search}
         id={`${tableId}-toolbar-search`}
         onChange={event => onApplySearch(event.currentTarget ? event.currentTarget.value : '')}
-        placeHolderText={searchPlaceholderText}
+        placeHolderText={i18n.searchPlaceholder}
         disabled={isDisabled}
       />
     ) : null}
@@ -179,17 +201,17 @@ const TableToolbar = ({
       {customToolbarContent || null}
       {totalFilters > 0 ? (
         <Button kind="secondary" onClick={onClearAllFilters}>
-          {clearAllFiltersText}
+          {i18n.clearAllFilters}
         </Button>
       ) : null}
       {hasColumnSelection ? (
         <ToolbarSVGWrapper onClick={onToggleColumnSelection}>
-          <IconColumnSelector description={columnSelectionText} />
+          <IconColumnSelector description={i18n.columnSelection} />
         </ToolbarSVGWrapper>
       ) : null}
       {hasFilter ? (
         <ToolbarSVGWrapper onClick={onToggleFilter}>
-          <IconFilter description={filterText} />
+          <IconFilter description={i18n.filterButtonAria} />
         </ToolbarSVGWrapper>
       ) : null}
     </StyledTableToolbarContent>

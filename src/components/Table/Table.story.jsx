@@ -1348,6 +1348,9 @@ storiesOf('Watson IoT|Table', module)
           openMenuAria: text('i18n.openMenuAria', '__Open menu__'),
           closeMenuAria: text('i18n.closeMenuAria', '__Close menu__'),
           clearSelectionAria: text('i18n.clearSelectionAria', '__Clear selection__'),
+          batchCancel: text('i18n.batchCancel', '__Cancel__'),
+          itemsSelected: text('i18n.itemsSelected', '__items selected__'),
+          itemSelected: text('i18n.itemSelected', '__item selected__'),
           /** empty state */
           emptyMessage: text('i18n.emptyMessage', '__There is no data__'),
           emptyMessageWithFilters: text(

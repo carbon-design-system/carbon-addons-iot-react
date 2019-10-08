@@ -139,6 +139,9 @@ export const I18NPropTypes = PropTypes.shape({
   openMenuAria: PropTypes.string,
   closeMenuAria: PropTypes.string,
   clearSelectionAria: PropTypes.string,
+  batchCancel: PropTypes.string,
+  itemsSelected: PropTypes.string,
+  itemSelected: PropTypes.string,
   /** Row actions in table body */
   /** I18N label for in progress */
   inProgressText: PropTypes.string, // eslint-disable-line
