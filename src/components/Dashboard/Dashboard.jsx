@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useCallback } from 'react';
+import React, { useState, useMemo, useCallback, useEffect, useRef } from 'react';
 import { Responsive, WidthProvider } from 'react-grid-layout';
 import PropTypes from 'prop-types';
 import 'react-grid-layout/css/styles.css';
@@ -294,6 +294,7 @@ const Dashboard = ({
   onDashboardAction,
   isLoading,
   setIsLoading, // eslint-disable-line
+  onSetRefresh, // eslint-disable-line
   onSetupCard,
   onFetchData,
   timeGrain,
@@ -301,6 +302,39 @@ const Dashboard = ({
   const [breakpoint, setBreakpoint] = useState('lg');
   // keep track of the expanded card id
   const [expandedId, setExpandedId] = useState();
+
+  // Keep track of whether any cards are loading or not, (doesn't need to be in state)
+  const cardsLoadingRef = useRef();
+
+  // Setup the loading tracker for the cards if the dashboard decides to load
+  useEffect(
+    () => {
+      if (isLoading) {
+        cardsLoadingRef.current = [];
+        onSetRefresh(null);
+      } else {
+        cardsLoadingRef.current = undefined;
+      }
+    },
+    [isLoading] // eslint-disable-line
+  );
+
+  // Listen to the card fetches to determine whether all cards have finished loading
+  const handleOnFetchData = useCallback(
+    (card, ...args) => {
+      return onFetchData(card, ...args).finally(() => {
+        if (cardsLoadingRef.current && !cardsLoadingRef.current.includes(card.id)) {
+          cardsLoadingRef.current.push(card.id);
+          // If the card array count matches the card count, we call setIsLoading to false, and clear the array
+          if (cardsLoadingRef.current.length === cards.length) {
+            setIsLoading(false);
+            onSetRefresh(Date.now());
+          }
+        }
+      });
+    },
+    [onFetchData, cards.length] // eslint-disable-line
+  );
 
   // onCardAction, should have the default ones by the dashboard eg. expand other are merged from the prop
   const handleCardAction = (id, type) => {
@@ -372,7 +406,7 @@ const Dashboard = ({
             isEditable={isEditable}
             breakpoint={breakpoint}
             onSetupCard={onSetupCard}
-            onFetchData={onFetchData}
+            onFetchData={handleOnFetchData}
             timeGrain={timeGrain}
           />
         ) : null
@@ -387,7 +421,7 @@ const Dashboard = ({
       isEditable,
       isLoading,
       rowHeight,
-      onFetchData,
+      handleOnFetchData,
       timeGrain,
     ]
   );
@@ -417,7 +451,7 @@ const Dashboard = ({
             isLoading={isLoading}
             isEditable={isEditable}
             breakpoint={breakpoint}
-            onFetchData={onFetchData}
+            onFetchData={handleOnFetchData}
             onSetupCard={onSetupCard}
             timeGrain={timeGrain}
           />

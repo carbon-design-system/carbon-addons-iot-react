@@ -71,7 +71,8 @@ const CardRenderer = React.memo(
     ...gridProps
   }) => {
     /**
-     * Local state for the card
+     * Local state for the card, keeps track of whether it is loading or not, and the current state of the Range Selector
+     * And which data range is being requested.
      */
     const [card, setCard] = useState(cardProp);
 
