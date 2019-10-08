@@ -34,4 +34,15 @@ describe('RowActionsCell', () => {
     button.at(0).simulate('click');
     expect(mockApplyRowAction).toHaveBeenCalledTimes(1);
   });
+
+  test('overflow menu trigger has ID', () => {
+    const actions = [
+      { id: 'addAction', renderIcon: Add, iconDescription: 'See more', isOverflow: true },
+    ];
+    const wrapper = mount(<RowActionsCell {...commonRowActionsProps} actions={actions} />);
+    // rowId is the id of the row as defined in the commonRowActionsProps
+    const button = wrapper.find('#rowId-row-actions-cell-overflow');
+    // should have found the overflow menu
+    expect(button.length).toBeGreaterThan(0);
+  });
 });
