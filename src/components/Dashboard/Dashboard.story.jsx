@@ -206,6 +206,21 @@ const originalCards = [
     interval: 'hour',
     timeRange: 'last7Days',
     availableActions: { range: true },
+    dataSource: {
+      attributes: [
+        {
+          aggregator: 'last',
+          attribute: 'speed',
+          id: 'speed_Claudia_Sample_Robot_Type_last',
+        },
+      ],
+      groupBy: ['deviceid'],
+      range: {
+        count: -7,
+        interval: 'day',
+      },
+      timeGrain: 'day',
+    },
   },
   {
     title: 'Alerts',
@@ -307,6 +322,21 @@ const originalCards = [
     interval: 'month',
     timeRange: 'lastYear',
     availableActions: { range: true },
+    dataSource: {
+      attributes: [
+        {
+          aggregator: 'last',
+          attribute: 'speed',
+          id: 'speed_Claudia_Sample_Robot_Type_last',
+        },
+      ],
+      groupBy: ['deviceid'],
+      range: {
+        count: -7,
+        interval: 'day',
+      },
+      timeGrain: 'day',
+    },
   },
   {
     title: 'Floor Map',
@@ -370,6 +400,55 @@ const StatefulDashboard = ({ ...props }) => {
     ]);
   };
   */
+
+  const handleTimegrainCallback = (id, type, payload) => {
+    const { range } = payload;
+    const cardRange =
+      range === 'last24Hours'
+        ? { interval: 'hour', num: 24 }
+        : range === 'last7Days'
+        ? { interval: 'day', num: 7 }
+        : range === 'lastMonth'
+        ? { interval: 'day', num: 30 }
+        : range === 'lastQuarter'
+        ? { interval: 'week', num: 12 }
+        : range === 'lastYear'
+        ? { interval: 'month', num: 12 }
+        : range === 'thisWeek'
+        ? { interval: 'day', period: 'week' }
+        : range === 'thisMonth'
+        ? { interval: 'day', period: 'month' }
+        : range === 'thisQuarter'
+        ? { interval: 'week', period: 'quarter' }
+        : range === 'thisYear'
+        ? { interval: 'month', period: 'year' }
+        : { interval: 'day', num: 7 };
+
+    setCards(
+      cards.map(i =>
+        i.id === id
+          ? {
+              ...i,
+              interval: cardRange.interval,
+              timeRange: range,
+              values: cardRange.period
+                ? getPeriodChartData(
+                    cardRange.interval,
+                    cardRange.period,
+                    { min: 10, max: 100 },
+                    100
+                  )
+                : getIntervalChartData(
+                    cardRange.interval,
+                    cardRange.num,
+                    { min: 10, max: 100 },
+                    100
+                  ),
+            }
+          : i
+      )
+    );
+  };
 
   const handleCardAction = (id, type, payload) => {
     console.log(id, type, payload);
@@ -445,7 +524,14 @@ const StatefulDashboard = ({ ...props }) => {
     </div>
   );
   */
-  return <Dashboard cards={cards} onCardAction={handleCardAction} {...props} />;
+  return (
+    <Dashboard
+      cards={cards}
+      onCardAction={handleCardAction}
+      timeGrainCallback={handleTimegrainCallback}
+      {...props}
+    />
+  );
 };
 
 storiesOf('Watson IoT Experimental|Dashboard', module)
@@ -456,7 +542,6 @@ storiesOf('Watson IoT Experimental|Dashboard', module)
           title={text('title', 'Munich Building')}
           lastUpdated={Date()}
           isEditable={boolean('isEditable', false)}
-          isLoading={boolean('isLoading', false)}
           onBreakpointChange={action('onBreakpointChange')}
           onLayoutChange={action('onLayoutChange')}
         />
@@ -469,7 +554,6 @@ storiesOf('Watson IoT Experimental|Dashboard', module)
         <StatefulDashboard
           title={text('title', 'Munich Building')}
           isEditable={boolean('isEditable', false)}
-          isLoading={boolean('isLoading', false)}
           onBreakpointChange={action('onBreakpointChange')}
           onLayoutChange={action('onLayoutChange')}
           hasLastUpdated={false}
@@ -500,7 +584,6 @@ storiesOf('Watson IoT Experimental|Dashboard', module)
           title={text('title', 'Munich Building')}
           lastUpdated={Date()}
           isEditable={boolean('isEditable', false)}
-          isLoading={boolean('isLoading', false)}
           sidebar={
             <div style={{ width: 300 }}>
               <h1>Sidebar content</h1>
@@ -514,17 +597,6 @@ storiesOf('Watson IoT Experimental|Dashboard', module)
       </FullWidthWrapper>
     );
   })
-  .add('loading', () => {
-    return (
-      <FullWidthWrapper>
-        <StatefulDashboard
-          title={text('title', 'Munich Building')}
-          isEditable={boolean('isEditable', false)}
-          isLoading={boolean('isLoading', true)}
-        />
-      </FullWidthWrapper>
-    );
-  })
   .add('i18n labels', () => {
     return (
       <FullWidthWrapper>
@@ -532,7 +604,6 @@ storiesOf('Watson IoT Experimental|Dashboard', module)
           title={text('title', 'Munich Building')}
           lastUpdated={Date()}
           isEditable={boolean('isEditable', false)}
-          isLoading={boolean('isLoading', false)}
           onBreakpointChange={action('onBreakpointChange')}
           onLayoutChange={action('onLayoutChange')}
           onDashboardAction={action('onDashboardAction')}
@@ -616,6 +687,42 @@ storiesOf('Watson IoT Experimental|Dashboard', module)
           }}
         />
       </FullWidthWrapper>
+    );
+  })
+  .add('full screen table card', () => {
+    const data = [...Array(35)].map((id, index) => ({
+      id: `row-${index}`,
+      values: {
+        timestamp: 1569819600000,
+        deviceid: 'Campus_EGL',
+        peopleCount_EnterpriseBuilding_mean: 150.5335383714,
+        headCount_EnterpriseBuilding_mean: 240,
+        capacity_EnterpriseBuilding_mean: 300,
+        allocatedSeats_EnterpriseBuilding_mean: 240,
+      },
+    }));
+    return (
+      <Dashboard
+        title="Expandable card, click expand to expand table"
+        cards={[
+          {
+            title: 'Expanded card',
+            id: `expandedcard`,
+            size: CARD_SIZES.LARGE,
+            type: CARD_TYPES.TABLE,
+            content: {
+              columns: [
+                { dataSourceId: 'timestamp' },
+                { dataSourceId: 'Campus_EGL' },
+                { dataSourceId: 'peopleCount_EnterpriseBuilding_mean' },
+                { dataSourceId: 'headCount_EnterpriseBuilding_mean' },
+                { dataSourceId: 'capacity_EnterpriseBuilding_mean' },
+              ],
+            },
+            values: data,
+          },
+        ]}
+      />
     );
   })
   .add('only value cards', () => {

@@ -60,7 +60,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Heade
       </button>
       <a
         className="bx--header__name"
-        href="#"
+        href="http://localhost:8989"
       >
         <span
           className="bx--header__name--prefix"
@@ -452,7 +452,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Heade
       </button>
       <a
         className="bx--header__name"
-        href="#"
+        href="http://localhost:8989"
       >
         <span
           className="bx--header__name--prefix"

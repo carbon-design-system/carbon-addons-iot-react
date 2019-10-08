@@ -43,11 +43,16 @@ const StyledStatefulTable = styled(({ showHeader, data, ...rest }) => (
 ))`
   flex: inherit;
   height: 100%;
-  margin: 0 -1px;
   position: relative;
-
+  overflow-y: hidden;
   &&& {
-    .bx--data-table-v2 thead tr:nth-child(2) {
+    .bx--data-table-container {
+      ${props =>
+        props.data && props.data.length > 0 && !props.isExpanded
+          ? `max-height: 435px;`
+          : `height: 90%;`}
+    }
+    .bx--data-table thead tr:nth-child(2) {
       height: 3rem;
 
       th {
@@ -81,22 +86,22 @@ const StyledStatefulTable = styled(({ showHeader, data, ...rest }) => (
     padding-bottom: 2px;
     padding-top: 0px;
   }
-  .bx--data-table-v2 th:first-of-type,
-  .bx--data-table-v2 td:first-of-type {
+  .bx--data-table th:first-of-type,
+  .bx--data-table td:first-of-type {
     padding-left: 1rem;
     padding-right: 1rem;
   }
-  .bx--data-table-v2 thead {
+  .bx--data-table thead {
     display: ${props => (!props.showHeader ? 'none' : '')};
     tr {
       height: 2rem;
     }
   }
 
-  .bx--data-table-v2 tbody tr {
+  .bx--data-table tbody tr {
     height: 2.5rem;
   }
-  .bx--data-table-v2-container + .bx--pagination {
+  .bx--data-table-container + .bx--pagination {
     border: 1px solid #dfe3e6;
   }
   .bx--pagination {
@@ -106,15 +111,8 @@ const StyledStatefulTable = styled(({ showHeader, data, ...rest }) => (
   .bx--toolbar-search-container {
     margin-left: 1rem;
   }
-  .bx--data-table-v2-container {
-    ${props => (props.data && props.data.length > 0 ? `max-height: 435px;` : `height: 90%;`)}
-  }
-  .bx--data-table-v2 {
-    /* if the table is empty, remove border */
-    ${props =>
-      props.data && props.data.length > 0
-        ? `height: initial;`
-        : `height: 100%;border-bottom: unset;`}
+  .bx--data-table {
+    ${props => (props.data && props.data.length > 0 ? `height: initial;` : `height: 100%;`)}
   }
 `;
 
@@ -699,67 +697,72 @@ const TableCard = ({
       i18n={i18n}
       {...others}
     >
-      <StyledStatefulTable
-        columns={columnsToRender}
-        data={tableDataWithTimestamp}
-        isExpanded={isExpanded}
-        options={{
-          hasPagination: true,
-          hasSearch: true,
-          hasFilter,
-          hasRowExpansion,
-        }}
-        expandedData={expandedRowsFormatted}
-        actions={{
-          table: {
-            onRowClicked: () => {},
-            onRowExpanded: () => {},
-            onChangeSort: () => {},
-          },
-          pagination: { onChangePage: () => {} },
-          toolbar: {
-            onClearAllFilters: () => {},
-            onToggleFilter: () => {},
-          },
-        }}
-        view={{
-          pagination: {
-            pageSize: !isExpanded ? 10 : 20,
-            pageSizes: !isExpanded ? [10] : [20],
-            isItemPerPageHidden: true,
-          },
-          toolbar: {
-            activeBar: null,
-            isDisabled: isEditable,
-            customToolbarContent: (
-              <ToolbarButton
-                kind="ghost"
-                size="small"
-                renderIcon={Download16}
-                iconDescription={strings.downloadIconDescription}
-                onClick={() => csvDownloadHandler()}
-                title={strings.downloadIconDescription}
-              />
-            ),
-          },
-          filters: [],
-          table: {
-            ...(columnStartSort
-              ? {
-                  sort: {
-                    columnId: columnStartSort.id,
-                    direction: !columnStartSortDefined ? sort : columnStartSortDefined.sort,
-                  },
-                }
-              : {}),
-            emptyState: {
-              message: emptyMessage || strings.emptyMessage,
-            },
-          },
-        }}
-        showHeader={showHeader !== undefined ? showHeader : true}
-        i18n={i18n}
-      />
+      {({ height }) => {
+        const numberOfRowsPerPage = !isNil(height) ? Math.floor((height - 48 * 3) / 48) : 10;
+        return (
+          <StyledStatefulTable
+            columns={columnsToRender}
+            data={tableDataWithTimestamp}
+            isExpanded={isExpanded}
+            options={{
+              hasPagination: true,
+              hasSearch: true,
+              hasFilter,
+              hasRowExpansion,
+            }}
+            expandedData={expandedRowsFormatted}
+            actions={{
+              table: {
+                onRowClicked: () => {},
+                onRowExpanded: () => {},
+                onChangeSort: () => {},
+              },
+              pagination: { onChangePage: () => {} },
+              toolbar: {
+                onClearAllFilters: () => {},
+                onToggleFilter: () => {},
+              },
+            }}
+            view={{
+              pagination: {
+                pageSize: numberOfRowsPerPage,
+                pageSizes: [numberOfRowsPerPage],
+                isItemPerPageHidden: true,
+              },
+              toolbar: {
+                activeBar: null,
+                isDisabled: isEditable,
+                customToolbarContent: (
+                  <ToolbarButton
+                    kind="ghost"
+                    size="small"
+                    renderIcon={Download16}
+                    iconDescription={strings.downloadIconDescription}
+                    onClick={() => csvDownloadHandler()}
+                    title={strings.downloadIconDescription}
+                  />
+                ),
+              },
+              filters: [],
+              table: {
+                ...(columnStartSort
+                  ? {
+                      sort: {
+                        columnId: columnStartSort.id,
+                        direction: !columnStartSortDefined ? sort : columnStartSortDefined.sort,
+                      },
+                    }
+                  : {}),
+                emptyState: {
+                  message: emptyMessage || strings.emptyMessage,
+                },
+              },
+            }}
+            showHeader={showHeader !== undefined ? showHeader : true}
+            i18n={i18n}
+          />
+        );
+      }}
     </Card>
   );
 };

@@ -35,13 +35,13 @@ export const filterData = (data, filters) =>
         filters.reduce(
           (acc, { columnId, value }) =>
             acc &&
-            ((values[columnId] &&
+            (!isNil(values[columnId]) && // only if the values is not null/undefined
+              values[columnId] &&
               values[columnId].toString &&
               values[columnId]
                 .toString()
                 .toLowerCase()
-                .includes(value.toString().toLowerCase())) ||
-              isNil(values[columnId])), // If passed an invalid column keep going)
+                .includes(value.toString().toLowerCase())),
           true
         )
       );
@@ -225,9 +225,12 @@ export const tableReducer = (state = {}, action) => {
     case TABLE_REGISTER: {
       const updatedData = action.payload.data || state.data;
       const { view, totalItems } = action.payload;
+      const { pageSize, pageSizes } = get(view, 'pagination') || {};
       const pagination = get(state, 'view.pagination')
         ? {
             totalItems: { $set: totalItems || updatedData.length },
+            pageSize: { $set: pageSize },
+            pageSizes: { $set: pageSizes },
           }
         : {};
       return update(state, {

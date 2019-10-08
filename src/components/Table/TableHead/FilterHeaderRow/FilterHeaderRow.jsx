@@ -30,15 +30,37 @@ const StyledTableHeader = styled(TableHeader)`
     .bx--list-box input[role='combobox'] {
       /* need to save enough room for clear and dropdown button */
       padding-right: 4rem;
+      ${props => {
+        const { width } = props;
+        return width !== undefined
+          ? `
+        min-width: calc(${width} - 10px);
+        max-width: calc(${width} - 10px);
+      `
+          : '';
+      }}
     }
+    .bx--form-item.bx--combo-box {
+      ${props => {
+        const { width } = props;
+        return width !== undefined
+          ? `
+        min-width: calc(${width} - 10px);
+        max-width:calc(${width} - 10px);
+      `
+          : '';
+      }}
+    }
+
     ${props => {
-      const { width } = props;
+      const { width, isSelectColumn } = props;
+
       return width !== undefined
         ? `
         min-width: ${width};
         max-width: ${width};
         white-space: nowrap;
-        overflow-x: hidden;
+        overflow-x: ${!isSelectColumn ? 'hidden' : 'inherit'};
         text-overflow: ellipsis;
       `
         : '';
@@ -278,6 +300,7 @@ class FilterHeaderRow extends Component {
                 data-column={column.id}
                 key={`FilterHeader${column.id}`}
                 width={column.width}
+                isSelectColumn={!!column.options}
               >
                 {headerContent}
               </StyledTableHeader>

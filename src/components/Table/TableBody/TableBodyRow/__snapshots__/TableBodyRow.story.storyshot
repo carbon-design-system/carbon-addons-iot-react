@@ -1,5 +1,263 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TableBodyRow is not selectable 1`] = `
+<div
+  className="storybook-container"
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "flexDirection": "column",
+      "padding": "3rem",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      className="bx--data-table-container"
+    >
+      <table
+        className="bx--data-table bx--data-table--no-border"
+      >
+        <tbody
+          aria-live="polite"
+        >
+          <tr
+            className="TableBodyRow__StyledTableRow-sc-103itxu-1 bhcNUt"
+            onClick={[Function]}
+          >
+            <td
+              className="TableBodyRow__StyledCheckboxTableCell-sc-103itxu-0 fGLUuZ"
+              onClick={null}
+            >
+              <span
+                className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
+              >
+                <div
+                  className="bx--form-item bx--checkbox-wrapper"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    disabled={true}
+                    id="select-row-rowId"
+                    onChange={[Function]}
+                    type="checkbox"
+                  />
+                  <label
+                    className="bx--checkbox-label"
+                    htmlFor="select-row-rowId"
+                    title={null}
+                  >
+                    <span
+                      className="bx--checkbox-label-text bx--visually-hidden"
+                    >
+                      Select row
+                    </span>
+                  </label>
+                </div>
+              </span>
+            </td>
+            <td
+              className="TableBodyRow__StyledTableCellRow-sc-103itxu-6 cAOSTW"
+              data-column="string"
+              data-offset={0}
+              id="cell-rowId-string"
+              offset={0}
+            >
+              <span
+                className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
+              >
+                <span
+                  title="My String"
+                >
+                  My String
+                </span>
+              </span>
+            </td>
+            <td
+              className="RowActionsCell__StyledTableCell-sc-1toqqj7-0 bGkBkT"
+            >
+              <div
+                className="RowActionsCell__RowActionsContainer-sc-1toqqj7-1 hHPyiu"
+              >
+                <button
+                  className="bx--btn bx--btn--ghost"
+                  disabled={false}
+                  icon="icon--add"
+                  onClick={[Function]}
+                  tabIndex={0}
+                  type="button"
+                />
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TableBodyRow is selectable 1`] = `
+<div
+  className="storybook-container"
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "flexDirection": "column",
+      "padding": "3rem",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      className="bx--data-table-container"
+    >
+      <table
+        className="bx--data-table bx--data-table--no-border"
+      >
+        <tbody
+          aria-live="polite"
+        >
+          <tr
+            className="TableBodyRow__StyledTableRow-sc-103itxu-1 iSXVEC"
+            onClick={[Function]}
+          >
+            <td
+              className="TableBodyRow__StyledCheckboxTableCell-sc-103itxu-0 fGLUuZ"
+              onClick={[Function]}
+            >
+              <span
+                className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
+              >
+                <div
+                  className="bx--form-item bx--checkbox-wrapper"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    disabled={false}
+                    id="select-row-rowId"
+                    onChange={[Function]}
+                    type="checkbox"
+                  />
+                  <label
+                    className="bx--checkbox-label"
+                    htmlFor="select-row-rowId"
+                    title={null}
+                  >
+                    <span
+                      className="bx--checkbox-label-text bx--visually-hidden"
+                    >
+                      Select row
+                    </span>
+                  </label>
+                </div>
+              </span>
+            </td>
+            <td
+              className="TableBodyRow__StyledTableCellRow-sc-103itxu-6 cAOSTW"
+              data-column="string"
+              data-offset={0}
+              id="cell-rowId-string"
+              offset={0}
+            >
+              <span
+                className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
+              >
+                <span
+                  title="My String"
+                >
+                  My String
+                </span>
+              </span>
+            </td>
+            <td
+              className="RowActionsCell__StyledTableCell-sc-1toqqj7-0 bGkBkT"
+            >
+              <div
+                className="RowActionsCell__RowActionsContainer-sc-1toqqj7-1 hHPyiu"
+              >
+                <button
+                  className="bx--btn bx--btn--ghost"
+                  disabled={false}
+                  icon="icon--add"
+                  onClick={[Function]}
+                  tabIndex={0}
+                  type="button"
+                />
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TableBodyRow normal 1`] = `
 <div
   className="storybook-container"
@@ -30,7 +288,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
           aria-live="polite"
         >
           <tr
-            className="TableBodyRow__StyledTableRow-sc-103itxu-1 cqZfoF"
+            className="TableBodyRow__StyledTableRow-sc-103itxu-1 iSXVEC"
             onClick={[Function]}
           >
             <td
@@ -111,7 +369,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
           aria-live="polite"
         >
           <tr
-            className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-3 fkcPSV"
+            className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-3 hRplJq"
             data-child-count={0}
             data-nesting-offset={0}
             data-parent-row={true}
@@ -264,7 +522,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
           aria-live="polite"
         >
           <tr
-            className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-3 fkcPSV"
+            className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-3 hRplJq"
             data-child-count={0}
             data-nesting-offset={0}
             data-parent-row={true}
@@ -434,7 +692,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
           aria-live="polite"
         >
           <tr
-            className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-3 fkcPSV"
+            className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-3 hRplJq"
             data-child-count={0}
             data-nesting-offset={0}
             data-parent-row={true}

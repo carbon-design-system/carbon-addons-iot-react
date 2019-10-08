@@ -325,8 +325,7 @@ const Table = props => {
       view.toolbar.search.value !== '');
 
   return (
-    // <StyledTableDiv id={id} className={className} style={style}>
-    <StyledTableContainer>
+    <StyledTableContainer style={style} className={className}>
       <TableToolbar
         tableId={id}
         clearAllFiltersText={i18n.clearAllFilters}
@@ -466,8 +465,6 @@ const Table = props => {
         />
       ) : null}
     </StyledTableContainer>
-
-    // </StyledTableDiv>
   );
 };
 
