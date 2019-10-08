@@ -1,5 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
 import { text, select, object, boolean } from '@storybook/addon-knobs';
 import omit from 'lodash/omit';
 
@@ -56,6 +57,7 @@ storiesOf('ImageCard (Experimental)', module)
           values={object('values', values)}
           breakpoint="lg"
           size={size}
+          onCardAction={action('onCardAction')}
         />
       </div>
     );
@@ -72,6 +74,7 @@ storiesOf('ImageCard (Experimental)', module)
           values={object('values', values)}
           breakpoint="lg"
           size={size}
+          onCardAction={action('onCardAction')}
         />
       </div>
     );
@@ -88,6 +91,7 @@ storiesOf('ImageCard (Experimental)', module)
           values={object('values', values)}
           breakpoint="lg"
           size={size}
+          onCardAction={action('onCardAction')}
         />
       </div>
     );
@@ -104,6 +108,7 @@ storiesOf('ImageCard (Experimental)', module)
           values={object('values', values)}
           breakpoint="lg"
           size={size}
+          onCardAction={action('onCardAction')}
           error={text('error', 'API threw Nullpointer')}
         />
       </div>
