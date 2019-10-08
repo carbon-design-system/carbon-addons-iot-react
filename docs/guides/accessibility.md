@@ -10,6 +10,6 @@ The `carbon-addons-iot-react` project cares about accessibility. We have incorpo
 
 ## Designer considerations
 
-![designer considerations](https://files.slack.com/files-pri/T27SFGS2W-FM0SPAERE/screen_shot_2019-08-02_at_4.09.37_pm.png)
+![interaction annotations](https://user-images.githubusercontent.com/3360588/66408666-f9739f00-e9b4-11e9-92a6-9422c34e1995.png)
 
-![Designer considerations 2](https://files.slack.com/files-pri/T27SFGS2W-FM0SPAEQ0/screen_shot_2019-08-02_at_4.10.05_pm.png)
+![state checklist](https://user-images.githubusercontent.com/3360588/66408681-ff698000-e9b4-11e9-8aa3-c207661e611c.png)
