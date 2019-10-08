@@ -88,6 +88,15 @@ describe(`Storybook Snapshot tests and console checks`, () => {
           return div;
         }
 
+        // Needed for DatePicker refererence in carbon-components-react
+        if (story.kind === 'Watson IoT|Dashboard Header') {
+          const fragment = document.createDocumentFragment();
+          const div = document.createElement('div');
+          div.className = 'from-initStoryshots-createNodeMock'; // to assist in debugging
+          fragment.appendChild(div);
+          return fragment.childNodes;
+        }
+
         if (element.type === 'input') {
           return document.createElement('input');
         }
