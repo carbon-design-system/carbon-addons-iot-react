@@ -63,6 +63,7 @@
     ]
   },
   "dependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.6.0",
     "@carbon/charts": "0.12.1",
     "@carbon/charts-react": "0.12.1",
     "@carbon/icons": "^10.6.1",

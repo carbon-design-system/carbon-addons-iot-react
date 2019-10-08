@@ -22,6 +22,22 @@ class SVGPathElement extends HTMLElement {}
 
 window.SVGPathElement = SVGPathElement;
 
+window.Element.prototype.getComputedTextLength = function() {
+  return 200;
+};
+
+// Needed to mock resize observer
+class ResizeObserver {
+  observe() {
+    // do nothing
+  }
+  unobserve() {
+    // do nothing
+  }
+}
+
+window.ResizeObserver = ResizeObserver;
+
 // Needed so that any component that uses sizeme can be jest tested
 import sizeMe from 'react-sizeme';
 
