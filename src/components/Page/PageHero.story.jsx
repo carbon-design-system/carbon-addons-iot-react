@@ -2,6 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
+import FullWidthWrapper from '../../internal/FullWidthWrapper';
 import DeprecationNotice, { deprecatedStoryTitle } from '../../internal/DeprecationNotice';
 
 import PageHero from './PageHero';
@@ -15,6 +16,7 @@ const commonPageHeroProps = {
 };
 
 storiesOf('Watson IoT|PageHero (Deprecated)', module)
+  .addDecorator(storyFn => <FullWidthWrapper>{storyFn()}</FullWidthWrapper>)
   .add(deprecatedStoryTitle, () => (
     <DeprecationNotice deprecatedComponentName="PageHero" replacementComponentName="Hero" />
   ))

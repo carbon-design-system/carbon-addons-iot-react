@@ -1,7 +1,10 @@
 const { JSDOM } = require('jsdom');
+const d3 = require('d3');
 
-const jsdom = new JSDOM('<!doctype html><html><body></body></html>');
+const jsdom = new JSDOM('<!doctype html><html><body></body></html>', { pretendToBeVisual: true });
 const { window } = jsdom;
+
+window.d3 = d3.select(window.document); //get d3 into the dom
 
 function copyProps(src, target) {
   Object.defineProperties(target, {

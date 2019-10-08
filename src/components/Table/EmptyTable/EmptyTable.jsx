@@ -28,6 +28,11 @@ const StyledEmptyTableRow = styled(TableRow)`
         margin: 0.5rem;
       }
     }
+
+    td {
+      /* if the table is empty, remove border */
+      border-bottom: unset;
+    }
   }
 `;
 

@@ -1,4 +1,4 @@
-import React, { useRef, useMemo } from 'react';
+import React, { useRef, useMemo, useCallback } from 'react';
 import moment from 'moment/min/moment-with-locales.min';
 import { LineChart } from '@carbon/charts-react';
 import '@carbon/charts/style.css';
@@ -155,72 +155,85 @@ const TimeSeriesCard = ({
       'year'
     );
 
-  const formatInterval = (timestamp, index, ticksInterval, length) => {
-    // moment locale default to english
-    moment.locale('en');
-    if (locale) {
-      moment.locale(locale);
-    }
-    const m = moment.unix(timestamp / 1000);
+  const formatInterval = useCallback(
+    (timestamp, index, ticksInterval, length) => {
+      // moment locale default to english
+      moment.locale('en');
+      if (locale) {
+        moment.locale(locale);
+      }
+      const m = moment.unix(timestamp / 1000);
 
-    return interval === 'hour' && index === 0
-      ? length > 1
+      return interval === 'hour' && index === 0
+        ? length > 1
+          ? m.format('DD MMM')
+          : m.format('DD MMM HH:mm')
+        : interval === 'hour' &&
+          index !== 0 &&
+          !moment(moment.unix(valueSort[index - ticksInterval].timestamp / 1000)).isSame(
+            moment.unix(valueSort[index].timestamp / 1000),
+            'day'
+          )
         ? m.format('DD MMM')
-        : m.format('DD MMM HH:mm')
-      : interval === 'hour' &&
-        index !== 0 &&
-        !moment(moment.unix(valueSort[index - ticksInterval].timestamp / 1000)).isSame(
-          moment.unix(valueSort[index].timestamp / 1000),
-          'day'
-        )
-      ? m.format('DD MMM')
-      : interval === 'hour'
-      ? m.format('HH:mm')
-      : interval === 'day' && index === 0
-      ? m.format('DD MMM')
-      : interval === 'day' && index !== 0
-      ? m.format('DD MMM')
-      : interval === 'month' && !sameYear
-      ? m.format('MMM YYYY')
-      : interval === 'month' && sameYear && index === 0
-      ? m.format('MMM YYYY')
-      : interval === 'month' && sameYear
-      ? m.format('MMM')
-      : interval === 'year'
-      ? m.format('YYYY')
-      : interval === 'minute'
-      ? m.format('HH:mm')
-      : m.format('DD MMM YYYY');
-  };
+        : interval === 'hour'
+        ? m.format('HH:mm')
+        : interval === 'day' && index === 0
+        ? m.format('DD MMM')
+        : interval === 'day' && index !== 0
+        ? m.format('DD MMM')
+        : interval === 'month' && !sameYear
+        ? m.format('MMM YYYY')
+        : interval === 'month' && sameYear && index === 0
+        ? m.format('MMM YYYY')
+        : interval === 'month' && sameYear
+        ? m.format('MMM')
+        : interval === 'year'
+        ? m.format('YYYY')
+        : interval === 'minute'
+        ? m.format('HH:mm')
+        : m.format('DD MMM YYYY');
+    },
+    [interval, locale, sameYear, valueSort]
+  );
 
-  const maxTicksPerSize = () => {
-    switch (size) {
-      case CARD_SIZES.SMALL:
-        return 2;
-      case CARD_SIZES.MEDIUM:
-        return 4;
-      case CARD_SIZES.WIDE:
-      case CARD_SIZES.LARGE:
-        return 6;
-      case CARD_SIZES.XLARGE:
-        return 14;
-      default:
-        return 10;
-    }
-  };
+  const maxTicksPerSize = useCallback(
+    () => {
+      switch (size) {
+        case CARD_SIZES.SMALL:
+          return 2;
+        case CARD_SIZES.MEDIUM:
+          return 4;
+        case CARD_SIZES.WIDE:
+        case CARD_SIZES.LARGE:
+          return 6;
+        case CARD_SIZES.XLARGE:
+          return 14;
+        default:
+          return 10;
+      }
+    },
+    [size]
+  );
 
   const ticksInterval =
     Math.round(valueSort.length / maxTicksPerSize(size)) !== 0
       ? Math.round(valueSort.length / maxTicksPerSize(size))
       : 1;
 
-  const labels = valueSort.map((i, idx) =>
-    idx % ticksInterval === 0
-      ? formatInterval(i[timeDataSourceId], idx, ticksInterval, valueSort.length)
-      : ' '.repeat(idx)
+  const labels = useMemo(
+    () =>
+      valueSort.map((i, idx) =>
+        idx % ticksInterval === 0
+          ? formatInterval(i[timeDataSourceId], idx, ticksInterval, valueSort.length)
+          : ' '.repeat(idx)
+      ),
+    [formatInterval, ticksInterval, timeDataSourceId, valueSort]
   );
 
-  const lines = series.map(line => ({ ...line, color: !isEditable ? line.color : 'gray' }));
+  const lines = useMemo(
+    () => series.map(line => ({ ...line, color: !isEditable ? line.color : 'gray' })),
+    [isEditable, series]
+  );
 
   useDeepCompareEffect(
     () => {

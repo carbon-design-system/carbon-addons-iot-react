@@ -311,7 +311,7 @@ const Card = ({
     );
 
   return (
-    <SizeMe.SizeMe>
+    <SizeMe.SizeMe monitorHeight>
       {({ size: sizeWidth }) => (
         <CardWrapper
           id={id}
@@ -323,7 +323,15 @@ const Card = ({
           <div className="card--header">
             <span className="card--title" title={title}>
               {title}&nbsp;
-              {tooltip && <Tooltip triggerText="">{tooltip}</Tooltip>}
+              {tooltip && (
+                <Tooltip
+                  triggerId={`card-tooltip-trigger-${id}`}
+                  tooltipId={`card-tooltip-${id}`}
+                  triggerText=""
+                >
+                  {tooltip}
+                </Tooltip>
+              )}
             </span>
             {toolbar(sizeWidth.width)}
           </div>
@@ -346,6 +354,8 @@ const Card = ({
               <EmptyMessageWrapper>
                 {isXS ? strings.noDataShortLabel : strings.noDataLabel}
               </EmptyMessageWrapper>
+            ) : typeof children === 'function' ? ( // pass the measured size down to the children if it's an render function
+              children(sizeWidth)
             ) : (
               children
             )}

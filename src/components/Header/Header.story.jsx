@@ -46,6 +46,7 @@ const StyledHeader = styled(Header)`
 const HeaderProps = {
   user: 'JohnDoe@ibm.com',
   tenant: 'TenantId: Acme',
+  url: 'http://localhost:8989',
   className: 'custom-class-name',
   appName: 'Watson IoT Platform ',
   actionItems: [

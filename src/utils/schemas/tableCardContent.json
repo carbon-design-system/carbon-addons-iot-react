@@ -1,0 +1,107 @@
+{
+  "type": "object",
+  "required": ["content", "dataSource"],
+  "properties": {
+    "values": {
+      "type": "object"
+    },
+    "size": { "enum": ["TALL", "LARGE", "XLARGE"] },
+    "content": {
+      "type": "object",
+      "properties": {
+        "columns": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/column" },
+          "minItems": 1
+        },
+        "thresholds": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/threshold" },
+          "minItems": 1
+        },
+        "expandedRows": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/expandedRow" },
+          "minItems": 1
+        },
+        "showHeader": {
+          "type": "boolean"
+        },
+        "sort": {
+          "enum": ["ASC", "DESC"]
+        },
+        "rowTypeName": {
+          "type": "string"
+        }
+      },
+      "required": ["columns"],
+      "propertyNames": {
+        "enum": ["columns", "showHeader", "sort", "thresholds", "expandedRows", "rowTypeName"]
+      }
+    },
+    "dataSource": {
+      "type": "object",
+      "properties": {
+        "attributes": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/attribute" },
+          "minItems": 1
+        },
+        "timeGrain": { "enum": ["month", "day", "year", "hour", "week"] },
+        "groupBy": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        }
+      },
+      "required": ["attributes"],
+      "propertyNames": { "enum": ["attributes", "range", "timeGrain", "groupBy"] }
+    }
+  },
+  "definitions": {
+    "column": {
+      "type": "object",
+      "properties": {
+        "label": { "type": "string" },
+        "dataSourceId": { "type": "string" },
+        "priority": { "type": "number" },
+        "filter": { "type": "object", "properties": { "placeholderText": { "type": "string" } } },
+        "type": { "type": "string" }
+      },
+      "required": ["dataSourceId"],
+      "propertyNames": { "enum": ["label", "dataSourceId", "priority", "filter", "type"] }
+    },
+    "attribute": {
+      "type": "object",
+      "properties": {
+        "aggregator": {
+          "enum": ["max", "min", "mean", "last", "first", "sum", "std", "count"]
+        }
+      },
+      "required": ["aggregator"]
+    },
+    "threshold": {
+      "type": "object",
+      "propertyNames": {
+        "enum": ["dataSourceId", "value", "comparison", "severity", "label", "showOnContent"]
+      },
+      "required": ["comparison", "value", "dataSourceId", "severity"],
+      "properties": {
+        "dataSourceId": { "type": "string" },
+        "comparison": { "enum": ["<", ">", "=", "<=", ">="] },
+        "severity": { "enum": [1, 2, 3] },
+        "label": { "type": "string" },
+        "showOnContent": { "type": "boolean" }
+      }
+    },
+    "expandedRow": {
+      "type": "object",
+      "propertyNames": { "enum": ["dataSourceId", "label"] },
+      "required": ["dataSourceId", "label"],
+      "properties": {
+        "dataSourceId": { "type": "string" },
+        "label": { "type": "string" }
+      }
+    }
+  }
+}

@@ -1,0 +1,145 @@
+{
+  "type": "object",
+  "required": ["content"],
+  "properties": {
+    "values": {
+      "type": "object"
+    },
+    "content": {
+      "type": "object",
+      "properties": {
+        "image": { "type": "string" },
+        "alt": { "type": "string" },
+        "zoomMax": { "type": "number" },
+        "hideZoomControls": { "type": "boolean" },
+        "hideMinimap": { "type": "boolean" },
+        "hotspots": {
+          "type": "array",
+          "items": {
+            "required": ["content", "locations"],
+            "propertyNames": {
+              "enum": ["content", "icon", "color", "background", "locations", "thresholds"]
+            },
+            "icon": { "type": "string" },
+            "color": { "type": "string" },
+            "background": { "type": "string" },
+            "content": {
+              "type": "object",
+              "required": ["title", "attributes"],
+              "propertyNames": { "enum": ["title", "attributes"] },
+              "title": "string",
+              "attributes": {
+                "type": "array",
+                "items": { "$ref": "#/definitions/attribute" },
+                "minItems": 1
+              }
+            },
+            "locations": {
+              "type": "array",
+              "items": { "$ref": "#/definitions/location" },
+              "minItems": 1
+            },
+            "thresholds": {
+              "type": "array",
+              "items": { "$ref": "#/definitions/thresholds" },
+              "minItems": 1
+            }
+          }
+        }
+      },
+      "required": ["image", "alt"],
+      "propertyNames": {
+        "enum": ["image", "alt", "zoomMax", "hideZoomControls", "hideMinimap", "hotspots"]
+      }
+    },
+    "dataSource": {
+      "type": "object",
+      "properties": {
+        "attributes": {
+          "type": "array",
+          "items": {
+            "required": ["id", "attribute"],
+            "propertyNames": { "enum": ["id", "attribute", "aggregator"] },
+            "id": "string",
+            "attribute": "string",
+            "aggregator": {
+              "enum": ["max", "min", "mean", "last", "first", "sum", "std", "count"]
+            }
+          },
+          "minItems": 1
+        },
+        "groupBy": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        }
+      },
+      "required": ["attributes"],
+      "propertyNames": { "enum": ["attributes", "range", "groupBy"] }
+    }
+  },
+  "definitions": {
+    "location": {
+      "type": "object",
+      "properties": {
+        "x": { "type": "number" },
+        "y": { "type": "number" },
+        "xDataSourceId": { "type": "string" },
+        "yDataSourceId": { "type": "string" },
+        "dataFilter": {
+          "type": "object"
+        }
+      },
+      "oneOf": [{ "required": ["x", "y"] }, { "required": ["xDataSourceId", "yDataSourceId"] }],
+      "propertyNames": { "enum": ["x", "y", "xDataSourceId", "yDataSourceId", "dataFilter"] }
+    },
+    "attribute": {
+      "type": "object",
+      "dataSourceId": { "type": "string" },
+      "label": { "type": "string" },
+      "unit": { "type": "string" },
+      "precision": { "type": "number" },
+      "required": ["dataSourceId"],
+      "aggregator": {
+        "enum": ["max", "min", "mean", "last", "first", "sum", "std", "count"]
+      },
+      "range": { "type": "#definitions/range" },
+      "thresholds": {
+        "type": "array",
+        "items": { "$ref": "#/definitions/threshold" },
+        "minItems": 1
+      },
+      "propertyNames": {
+        "enum": [
+          "value",
+          "dataSourceId",
+          "label",
+          "unit",
+          "precision",
+          "aggregator",
+          "range",
+          "thresholds"
+        ]
+      }
+    },
+    "threshold": {
+      "type": "object",
+      "required": ["comparison", "value"],
+      "propertyNames": { "enum": ["value", "comparison", "color", "background", "icon"] },
+      "properties": {
+        "comparison": { "enum": ["<", ">", "=", "<=", ">="] },
+        "color": { "type": "string" },
+        "icon": { "type": "string" }
+      }
+    },
+    "range": {
+      "type": "object",
+      "properties": {
+        "count": { "type": "number" },
+        "interval": { "enum": ["hour", "day", "week", "month"] }
+      },
+      "propertyNames": { "enum": ["count", "interval"] },
+      "required": ["count", "interval"]
+    }
+  }
+}

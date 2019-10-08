@@ -1,4 +1,4 @@
-# Setting up the project
+# Setting up the repository
 
 if you don't already have yarn on your Mac then '**brew install yarn**' first
 
@@ -8,7 +8,7 @@ yarn install
 
 ## Exploring components
 
-To explore our components and their documentation we use storybook. To start the storybook server, run: `yarn start` then open a browser to <http://localhost:3000>.
+A Storybook is provided to explore the components and their documentation. To start the storybook server, run: `yarn start` then open a browser to <http://localhost:3000>.
 
 ## Adding a new component
 
@@ -28,7 +28,7 @@ Any change to `dependencies` (including version bumps) will impact consumers tha
 
 ## Submitting pull requests and commits
 
-We require all commits to follow the [conventional commit](https://www.conventionalcommits.org/en/v1.0.0-beta.2/#summary) format. You won't be able to create a commit unless you follow those rules. The [recent commits in the repository](https://github.com/IBM/carbon-addons-iot-react/commits/master) show examples of the format and how it's generally used.
+Commits must follow the [conventional commit](https://www.conventionalcommits.org/en/v1.0.0-beta.2/#summary) format. You won't be able to create a commit unless you follow those rules. The [recent commits in the repository](https://github.com/IBM/carbon-addons-iot-react/commits/master) show examples of the format and how it's generally used.
 
 Commits are not required to contain a link to an issue. If you choose to do so, you can avoid the 72 character limit by placing the link in the body of the commit. Example:
 
@@ -40,31 +40,35 @@ Pull requests must contain a link to a relevant issue. If applicable, [automatic
 
 ## Styling new components
 
-We've decided to use [styled-components](https://www.styled-components.com/) to apply css styles to our React components. Please don't add any new CSS-in-JS library as a dependency.
+Components should have their own sass partial in which the corresponding styles are contained. If a component does not have one, please add it.
+
+Do not use `styled-components`. Any components using it should be refactored to the sass partial approach. This helps promote consistency with the Carbon Design System.
 
 ## Testing changes
 
-We have an automated unit test bucket that runs when you execute `yarn test:watch`.
-Before every push, we automatically run our test suite and take snapshots of all of our current component fixtures. If you have made visual changes to a component, our tests will
-fail because the snapshots will no longer match. You will be prevented from pushing to git until you fix this error.
+An automated unit test bucket runs when you execute `yarn test`.
+
+Before every push, the test suite is ran automatically and takes snapshots of all of the current component stories. If you have made changes to a component, our tests will likely fail because the snapshots will no longer match. You will be prevented from pushing to git until you fix this error.
 
 ## Updating snapshots
 
 After the unit test engine has detected a snapshot difference, all snapshots can be updated by running `yarn test:update`.
+
 _Do not blindly update snapshots to pass the testcase._ Make sure the detected change is intentional and not unintentional before updating the snapshot.
 
 ## Minimum code coverage
 
-We enforce code coverage thresholds in our project. If you add code but do not cover it with unit tests, the git push may fail because we have fallen under our code coverage thresholds. Please add storybook stories or unit tests to cover your new code before checking in. _Do not reduce the code coverage threshold to get around this constraint._
-To understand what lines of code are NOT covered by our current testcases, open the coverage/index.html file in a browser and investigate.
+Code coverage thresholds are enforced in the repository. If you add code but do not cover it with unit tests, the git push may fail because the coverage fell to a level under the required code coverage thresholds. Please add storybook stories or unit tests to cover your new code before checking in. _Do not reduce the code coverage threshold to get around this constraint._
 
-## Setting up VSCode to share our settings and extensions
+To understand what lines of code are NOT covered by the current testcases, open the coverage/index.html file in a browser and investigate.
 
-We're using some pretty cool VSCode extensions to make our internal development easier. If you'd like to reuse the same ones follow these instructions!
+## Setting up VSCode to share settings and extensions
+
+Some contributors to this repository are using some pretty cool VSCode extensions to make local development easier. If you'd like to reuse the same ones follow these instructions!
 
 <http://shanalikhan.github.io/2015/12/15/Visual-Studio-Code-Sync-Settings.html>
 
-Here's our Gist ID to download/share settings from:
+Here's the Gist ID to download/share settings from:
 5e3fb697c29f2aaa058145a3349a8229
 
 After installing the VSCode Sync, restart VSCode, go to the Command Palette
