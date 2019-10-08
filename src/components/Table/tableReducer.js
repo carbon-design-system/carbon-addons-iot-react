@@ -225,9 +225,12 @@ export const tableReducer = (state = {}, action) => {
     case TABLE_REGISTER: {
       const updatedData = action.payload.data || state.data;
       const { view, totalItems } = action.payload;
+      const { pageSize, pageSizes } = get(view, 'pagination') || {};
       const pagination = get(state, 'view.pagination')
         ? {
             totalItems: { $set: totalItems || updatedData.length },
+            pageSize: { $set: pageSize },
+            pageSizes: { $set: pageSizes },
           }
         : {};
       return update(state, {

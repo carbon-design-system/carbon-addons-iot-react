@@ -43,9 +43,8 @@ const StyledStatefulTable = styled(({ showHeader, data, ...rest }) => (
 ))`
   flex: inherit;
   height: 100%;
-  margin: 0 -1px;
   position: relative;
-
+  overflow-y: hidden;
   &&& {
     .bx--data-table-container {
       ${props =>
@@ -699,7 +698,7 @@ const TableCard = ({
       {...others}
     >
       {({ height }) => {
-        const numberOfRowsPerPage = height ? Math.floor((height - 160) / 40) : 10;
+        const numberOfRowsPerPage = !isNil(height) ? Math.floor((height - 48 * 3) / 48) : 10;
         return (
           <StyledStatefulTable
             columns={columnsToRender}
