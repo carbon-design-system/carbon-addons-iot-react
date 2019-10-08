@@ -42,9 +42,24 @@
     min-width: 2rem;
     width: 2rem;
 
+    &:hover {
+      background-color: $hover-ui;
+      color: $ui-05;
+    }
+
+    &:focus {
+      border-color: transparent;
+      outline: 2px solid #0062ff;
+      outline-offset: -2px;
+    }
+
     .card--toolbar & {
       margin: 0;
       padding: 0;
+    }
+
+    svg {
+      fill: $icon-02;
     }
 
     svg.bx--overflow-menu__icon {

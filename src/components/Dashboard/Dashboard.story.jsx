@@ -26,7 +26,7 @@ import Dashboard from './Dashboard';
 
 const timeOffset = new Date().getTime() - chartData.dataItemToMostRecentTimestamp.temperature;
 
-const originalCards = [
+export const originalCards = [
   {
     title: 'Facility Metrics',
     id: 'facilitycard',
@@ -453,6 +453,7 @@ storiesOf('Watson IoT Experimental|Dashboard', module)
     return (
       <FullWidthWrapper>
         <StatefulDashboard
+          description="This is a description for this Dashboard"
           title={text('title', 'Munich Building')}
           lastUpdated={Date()}
           isEditable={boolean('isEditable', false)}
@@ -486,7 +487,7 @@ storiesOf('Watson IoT Experimental|Dashboard', module)
           isLoading={boolean('isLoading', false)}
           onBreakpointChange={action('onBreakpointChange')}
           onLayoutChange={action('onLayoutChange')}
-          actions={[{ id: 'edit', label: 'Edit', icon: 'edit' }]}
+          actions={[{ id: 'edit', labelText: 'Edit', icon: 'edit' }]}
           onDashboardAction={action('onDashboardAction')}
           hasLastUpdated={false}
         />
