@@ -57,7 +57,7 @@ export const CardContent = styled.div`
   height: ${props => props.dimensions.y - CARD_TITLE_HEIGHT}px;
 `;
 
-const SkeletonWrapper = styled.div`
+export const SkeletonWrapper = styled.div`
   padding: ${CARD_CONTENT_PADDING}px;
   width: 80%;
 `;
@@ -208,6 +208,7 @@ const Card = ({
         <ToolbarTitle title={strings.timeRangeLabel} />
         <ToolbarOption>
           <Select
+            className="time-select"
             hideLabel
             id={`timeselect-${id}`}
             onChange={evt => {
