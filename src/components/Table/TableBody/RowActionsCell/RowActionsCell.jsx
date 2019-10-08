@@ -191,6 +191,7 @@ class RowActionsCell extends React.Component {
                 ))}
               {hasOverflow ? (
                 <StyledOverflowMenu
+                  id={`${id}-row-actions-cell-overflow`}
                   flipped
                   ariaLabel={overflowMenuAria}
                   onClick={event => event.stopPropagation()}
