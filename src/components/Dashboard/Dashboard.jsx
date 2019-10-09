@@ -1,11 +1,10 @@
-import React, { useState, useMemo, useCallback } from 'react';
+import React, { useState, useMemo, useCallback, useEffect, useRef } from 'react';
 import { Responsive, WidthProvider } from 'react-grid-layout';
 import PropTypes from 'prop-types';
 import 'react-grid-layout/css/styles.css';
 import 'react-resizable/css/styles.css';
 import styled from 'styled-components';
 import find from 'lodash/find';
-import some from 'lodash/some';
 
 import { getLayout } from '../../utils/componentUtilityFunctions';
 import {
@@ -49,7 +48,6 @@ const propTypes = {
       labelText: PropTypes.string,
     })
   ),
-  lastUpdated: PropTypes.string,
   cards: PropTypes.arrayOf(
     PropTypes.shape({
       content: PropTypes.object,
@@ -163,13 +161,17 @@ const propTypes = {
   hasLastUpdated: PropTypes.bool,
 
   // new props after migration
-  timeGrainCallback: PropTypes.func,
+  onSetupCard: PropTypes.func,
+  onFetchData: PropTypes.func,
+  timeGrain: PropTypes.string,
+  isLoading: PropTypes.bool,
+  /** once all the cards have finished loading, update the bulk load */
+  setIsLoading: PropTypes.func.isRequired,
 };
 
 const defaultProps = {
   isEditable: false,
   description: null,
-  lastUpdated: null,
   onLayoutChange: null,
   onDashboardAction: null,
   onBreakpointChange: null,
@@ -253,7 +255,10 @@ const defaultProps = {
   sidebar: null,
   actions: [],
   hasLastUpdated: true,
-  timeGrainCallback: null,
+  onSetupCard: null,
+  onFetchData: null,
+  timeGrain: null,
+  isLoading: false,
 };
 
 const GridLayout = WidthProvider(Responsive);
@@ -271,7 +276,6 @@ const Dashboard = ({
   cards,
   title,
   description,
-  lastUpdated,
   hasLastUpdated,
   i18n,
   i18n: { lastUpdatedLabel },
@@ -288,20 +292,52 @@ const Dashboard = ({
   className,
   actions,
   onDashboardAction,
-  timeGrainCallback,
+  isLoading,
+  setIsLoading, // eslint-disable-line
+  onSetRefresh, // eslint-disable-line
+  onSetupCard,
+  onFetchData,
+  timeGrain,
 }) => {
   const [breakpoint, setBreakpoint] = useState('lg');
-
   // keep track of the expanded card id
   const [expandedId, setExpandedId] = useState();
 
-  // onCardAction, should have the default ones by the dashboard eg. expand other are merged from the prop
-  const handleCardAction = (id, type, payload) => {
-    // callback time grain change from parent
-    if (type === 'CHANGE_TIME_RANGE') {
-      return timeGrainCallback(id, type, payload);
-    }
+  // Keep track of whether any cards are loading or not, (doesn't need to be in state)
+  const cardsLoadingRef = useRef();
 
+  // Setup the loading tracker for the cards if the dashboard decides to load
+  useEffect(
+    () => {
+      if (isLoading) {
+        cardsLoadingRef.current = [];
+        onSetRefresh(null);
+      } else {
+        cardsLoadingRef.current = undefined;
+      }
+    },
+    [isLoading] // eslint-disable-line
+  );
+
+  // Listen to the card fetches to determine whether all cards have finished loading
+  const handleOnFetchData = useCallback(
+    (card, ...args) => {
+      return onFetchData(card, ...args).finally(() => {
+        if (cardsLoadingRef.current && !cardsLoadingRef.current.includes(card.id)) {
+          cardsLoadingRef.current.push(card.id);
+          // If the card array count matches the card count, we call setIsLoading to false, and clear the array
+          if (cardsLoadingRef.current.length === cards.length) {
+            setIsLoading(false);
+            onSetRefresh(Date.now());
+          }
+        }
+      });
+    },
+    [onFetchData, cards.length] // eslint-disable-line
+  );
+
+  // onCardAction, should have the default ones by the dashboard eg. expand other are merged from the prop
+  const handleCardAction = (id, type) => {
     // expand card
     if (type === 'OPEN_EXPANDED_CARD') {
       setExpandedId(id);
@@ -353,26 +389,28 @@ const Dashboard = ({
   const cachedOnLayoutChange = useCallback(handleLayoutChange, [onLayoutChange]);
   const cachedOnBreakpointChange = useCallback(handleBreakpointChange, [onBreakpointChange]);
 
-  // Is any card in the dashboard loading?
-  const isLoading = useMemo(() => some(cards, i => i.isLoading || i.isHotspotDataLoading), [cards]);
-
   const gridContents = useMemo(
     () =>
-      cards.map(card => (
-        <CardRenderer
-          card={card}
-          key={card.id}
-          onCardAction={handleCardAction}
-          i18n={cachedI18N}
-          dashboardBreakpoints={dashboardBreakpoints}
-          cardDimensions={cardDimensions}
-          dashboardColumns={dashboardColumns}
-          rowHeight={rowHeight}
-          isLoading={isLoading}
-          isEditable={isEditable}
-          breakpoint={breakpoint}
-        />
-      )), // eslint-disable-next-line
+      cards.map(card =>
+        card ? (
+          <CardRenderer
+            card={card}
+            key={card.id}
+            onCardAction={handleCardAction}
+            i18n={cachedI18N}
+            dashboardBreakpoints={dashboardBreakpoints}
+            cardDimensions={cardDimensions}
+            dashboardColumns={dashboardColumns}
+            rowHeight={rowHeight}
+            isLoading={isLoading}
+            isEditable={isEditable}
+            breakpoint={breakpoint}
+            onSetupCard={onSetupCard}
+            onFetchData={handleOnFetchData}
+            timeGrain={timeGrain}
+          />
+        ) : null
+      ), // eslint-disable-next-line
     [
       breakpoint,
       cachedI18N,
@@ -383,6 +421,8 @@ const Dashboard = ({
       isEditable,
       isLoading,
       rowHeight,
+      handleOnFetchData,
+      timeGrain,
     ]
   );
   // Cache the expanded card
@@ -411,13 +451,15 @@ const Dashboard = ({
             isLoading={isLoading}
             isEditable={isEditable}
             breakpoint={breakpoint}
+            onFetchData={handleOnFetchData}
+            onSetupCard={onSetupCard}
+            timeGrain={timeGrain}
           />
         </div>
       )}
       <DashboardHeader
         title={title}
         description={description}
-        lastUpdated={!isEditable ? lastUpdated : null}
         lastUpdatedLabel={!isEditable ? lastUpdatedLabel : null}
         isLoading={isLoading}
         filter={filter}
