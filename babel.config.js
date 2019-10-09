@@ -7,7 +7,6 @@ module.exports = function generateConfig(api) {
       'babel-plugin-lodash',
       'babel-plugin-styled-components',
       'babel-plugin-react-docgen',
-      '@babel/plugin-transform-modules-commonjs',
       '@babel/plugin-syntax-dynamic-import',
       '@babel/plugin-syntax-import-meta',
       '@babel/plugin-proposal-class-properties',

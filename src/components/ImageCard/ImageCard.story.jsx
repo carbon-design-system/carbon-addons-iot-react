@@ -44,7 +44,7 @@ const values = {
   ],
 };
 
-storiesOf('Watson IoT Experimental|ImageCard', module)
+storiesOf('Watson IoT|ImageCard', module)
   .add('basic', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.XLARGE);
     return (

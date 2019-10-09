@@ -63,7 +63,6 @@
     ]
   },
   "dependencies": {
-    "@babel/plugin-transform-modules-commonjs": "^7.6.0",
     "@carbon/charts": "0.12.1",
     "@carbon/charts-react": "0.12.1",
     "@carbon/icons": "^10.6.1",
@@ -98,8 +97,8 @@
   },
   "peerDependencies": {
     "d3": "^4.12.0",
-    "react": "^16.8.3",
-    "react-dom": "^16.8.3"
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",

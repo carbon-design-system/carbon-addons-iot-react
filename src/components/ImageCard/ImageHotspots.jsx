@@ -504,6 +504,7 @@ const ImageHotspots = ({
         <InlineLoading
           style={{ position: 'absolute', top: 0 }}
           description="Loading hotspot data..."
+          status="active"
         />
       ) : null}
       {!isHotspotDataLoading && !hideHotspots && hotspots && (

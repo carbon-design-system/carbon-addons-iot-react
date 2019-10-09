@@ -49,6 +49,10 @@ describe(`Storybook Snapshot tests and console checks`, () => {
         !e.includes(
           // Carbon issue - https://github.com/carbon-design-system/carbon/issues/3658, should be fixed in 10.4.2
           'Warning: Failed prop type: Invalid prop `aria-hidden` of type `boolean` supplied to `Icon`, expected `string`.'
+        ) &&
+        !e.includes(
+          // https://github.com/carbon-design-system/carbon/pull/3933
+          'The prop `success` for InlineLoading has been deprecated in favor of `status`. Please use `status="finished"` instead.'
         )
       ) {
         done.fail(e);
