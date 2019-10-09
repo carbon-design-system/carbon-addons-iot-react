@@ -53,6 +53,9 @@ describe(`Storybook Snapshot tests and console checks`, () => {
         !e.includes(
           // https://github.com/carbon-design-system/carbon/pull/3933
           'The prop `success` for InlineLoading has been deprecated in favor of `status`. Please use `status="finished"` instead.'
+        ) &&
+        !e.includes(
+          'Warning: The Toolbar component has been deprecated and will be removed in the next major release of `carbon-components-react`'
         )
       ) {
         done.fail(e);

@@ -14,7 +14,7 @@ const getIntervalChartData = memoize(getFakeData);
 
 // need a timeOffset to make the data always show up
 // const timeOffset = new Date().getTime() - Object.values(chartData.dataItemToMostRecentTimestamp)[0];
-storiesOf('Watson IoT', module)
+storiesOf('Watson IoT|TimeSeriesCard', module)
   .add('medium / single point - interval hour', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
     // console.log(getIntervalChartData('day', 30, { min: 10, max: 100 }, 100));

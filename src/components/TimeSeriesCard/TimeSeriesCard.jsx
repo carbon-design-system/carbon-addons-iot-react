@@ -1,5 +1,6 @@
 import React, { useRef, useMemo, useCallback } from 'react';
 import moment from 'moment/min/moment-with-locales.min';
+// TODO: fix once carbon/charts 0.16.10 comes out
 import LineChart from '@carbon/charts-react/line-chart';
 import '@carbon/charts/style.css';
 import isEmpty from 'lodash/isEmpty';
