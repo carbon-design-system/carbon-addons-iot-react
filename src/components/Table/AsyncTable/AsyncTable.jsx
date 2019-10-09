@@ -6,7 +6,7 @@ import * as baseTableActions from '../tableActionCreators';
 
 import reducer from './asyncTableReducer';
 
-const AsyncTable = ({ fetchData }) => {
+const AsyncTable = ({ fetchData, id }) => {
   const columns = [
     { id: 'firstName', name: 'First Name', isSortable: true },
     { id: 'lastName', name: 'Last Name', isSortable: true },
@@ -26,8 +26,8 @@ const AsyncTable = ({ fetchData }) => {
         isSelectAllSelected: false,
         selectedIds: [],
         sort: undefined,
-        ordering: columns.map(({ id }) => ({
-          columnId: id,
+        ordering: columns.map(({ id: columnId }) => ({
+          columnId,
           isHidden: false,
         })),
         expandedIds: [],
@@ -168,8 +168,8 @@ const AsyncTable = ({ fetchData }) => {
       onCancelBatchAction: () => {
         dispatch(baseTableActions.tableActionCancel());
       },
-      onApplyBatchAction: id => {
-        dispatch(baseTableActions.tableActionApply(id));
+      onApplyBatchAction: actionId => {
+        dispatch(baseTableActions.tableActionApply(actionId));
       },
       onApplySearch: string => {
         dispatch(baseTableActions.tableSearchApply(string));
@@ -204,6 +204,7 @@ const AsyncTable = ({ fetchData }) => {
 
   return (
     <Table
+      id={id}
       columns={columns}
       data={state.data}
       view={state.view}
@@ -224,6 +225,12 @@ const AsyncTable = ({ fetchData }) => {
 
 AsyncTable.propTypes = {
   fetchData: PropTypes.func.isRequired,
+  /** The unique id of the table */
+  id: PropTypes.string,
+};
+
+AsyncTable.defaultProps = {
+  id: 'AsyncTable',
 };
 
 export default AsyncTable;

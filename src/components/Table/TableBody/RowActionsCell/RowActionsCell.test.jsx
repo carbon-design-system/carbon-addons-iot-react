@@ -1,12 +1,12 @@
 import { mount } from 'enzyme';
 import React from 'react';
-import Add from '@carbon/icons-react/lib/add/20';
+import { Add32, Edit16 } from '@carbon/icons-react';
 
 import RowActionsCell from './RowActionsCell';
 
 const mockApplyRowAction = jest.fn();
 const commonRowActionsProps = {
-  id: 'rowId',
+  id: 'tableId-rowId',
   onApplyRowAction: mockApplyRowAction,
 };
 
@@ -15,7 +15,7 @@ describe('RowActionsCell', () => {
     mockApplyRowAction.mockClear();
   });
   test('click handler', () => {
-    const actions = [{ id: 'addAction', renderIcon: Add, iconDescription: 'See more' }];
+    const actions = [{ id: 'addAction', renderIcon: Add32, iconDescription: 'See more' }];
     const wrapper = mount(<RowActionsCell {...commonRowActionsProps} actions={actions} />);
     const button = wrapper.find('.bx--btn');
     // one button should render
@@ -37,12 +37,12 @@ describe('RowActionsCell', () => {
 
   test('overflow menu trigger has ID', () => {
     const actions = [
-      { id: 'addAction', renderIcon: Add, iconDescription: 'See more', isOverflow: true },
+      { id: 'add', renderIcon: Add32, iconDescription: 'See more' },
+      { id: 'edit', renderIcon: Edit16, isOverflow: true, labelText: 'Edit' },
     ];
     const wrapper = mount(<RowActionsCell {...commonRowActionsProps} actions={actions} />);
-    // rowId is the id of the row as defined in the commonRowActionsProps
-    const button = wrapper.find('#rowId-row-actions-cell-overflow');
-    // should have found the overflow menu
-    expect(button.length).toBeGreaterThan(0);
+    const button = wrapper.find('OverflowMenu #tableId-rowId-row-actions-cell-overflow');
+    // Only one id should be present
+    expect(button).toHaveLength(1);
   });
 });

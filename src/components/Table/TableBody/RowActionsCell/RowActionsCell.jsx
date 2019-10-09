@@ -211,11 +211,15 @@ class RowActionsCell extends React.Component {
                         itemText={
                           action.renderIcon ? (
                             <OverflowMenuContent>
-                              <StyledIcon
-                                icon={action.renderIcon}
-                                description={action.labelText}
-                                iconTitle={action.labelText}
-                              />
+                              {typeof action.renderIcon === 'string' ? (
+                                <StyledIcon
+                                  icon={action.renderIcon}
+                                  description={action.labelText}
+                                  iconTitle={action.labelText}
+                                />
+                              ) : (
+                                <action.renderIcon />
+                              )}
                               {action.labelText}
                             </OverflowMenuContent>
                           ) : (
