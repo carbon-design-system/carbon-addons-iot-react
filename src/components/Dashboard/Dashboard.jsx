@@ -166,7 +166,7 @@ const propTypes = {
   timeGrain: PropTypes.string,
   isLoading: PropTypes.bool,
   /** once all the cards have finished loading, update the bulk load */
-  setIsLoading: PropTypes.func.isRequired,
+  setIsLoading: PropTypes.func,
 };
 
 const defaultProps = {
@@ -259,6 +259,7 @@ const defaultProps = {
   onFetchData: null,
   timeGrain: null,
   isLoading: false,
+  setIsLoading: null,
 };
 
 const GridLayout = WidthProvider(Responsive);
