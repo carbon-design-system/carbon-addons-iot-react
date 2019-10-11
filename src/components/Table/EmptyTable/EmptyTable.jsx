@@ -37,6 +37,8 @@ const StyledEmptyTableRow = styled(TableRow)`
 `;
 
 const propTypes = {
+  /** The unique id of the table */
+  id: PropTypes.string,
   /** Empty state to render, either a custom element or an object */
   emptyState: EmptyStatePropTypes.isRequired,
   totalColumns: PropTypes.number.isRequired,
@@ -45,17 +47,19 @@ const propTypes = {
 };
 
 const defaultProps = {
+  id: 'EmptyTable',
   onEmptyStateAction: null,
 };
 
 const EmptyTable = ({
+  id,
   totalColumns,
   isFiltered,
   emptyState,
   onEmptyStateAction,
   emptyState: { messageWithFilters, message, buttonLabel, buttonLabelWithFilters },
 }) => (
-  <TableBody>
+  <TableBody id={id}>
     <StyledEmptyTableRow>
       <TableCell colSpan={totalColumns}>
         {React.isValidElement(emptyState) ? (
