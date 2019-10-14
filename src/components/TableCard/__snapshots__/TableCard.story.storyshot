@@ -33,21 +33,21 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
         id="table-list"
       >
         <div
-          className="Card__CardHeader-v5r71h-1 dYbAjC"
+          className="card--header"
         >
           <span
-            className="Card__CardTitle-v5r71h-3 ivROVb"
+            className="card--title"
             title="Open Alerts"
           >
             Open Alerts
              
           </span>
           <div
-            className="bx--toolbar Card__StyledToolbar-v5r71h-4 iZXuG"
+            className="bx--toolbar card--toolbar"
           />
         </div>
         <div
-          className="Card__CardContent-v5r71h-2 cxdfjl"
+          className="Card__CardContent-v5r71h-1 fabdLf"
         >
           <div
             className="TableCard__StyledStatefulTable-q9l5bz-2 fPCxYp Table__StyledTableContainer-sc-1kalfns-0 fkxdXs bx--data-table-container"
@@ -1293,21 +1293,21 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
         id="table-list"
       >
         <div
-          className="Card__CardHeader-v5r71h-1 dYbAjC"
+          className="card--header"
         >
           <span
-            className="Card__CardTitle-v5r71h-3 ivROVb"
+            className="card--title"
             title="Open Alerts"
           >
             Open Alerts
              
           </span>
           <div
-            className="bx--toolbar Card__StyledToolbar-v5r71h-4 iZXuG"
+            className="bx--toolbar card--toolbar"
           />
         </div>
         <div
-          className="Card__CardContent-v5r71h-2 cxdfjl"
+          className="Card__CardContent-v5r71h-1 fabdLf"
         >
           <div
             className="TableCard__StyledStatefulTable-q9l5bz-2 fPCxYp Table__StyledTableContainer-sc-1kalfns-0 fkxdXs bx--data-table-container"
@@ -2917,20 +2917,68 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
         id="table-list"
       >
         <div
-          className="Card__CardHeader-v5r71h-1 dYbAjC"
+          className="card--header"
         >
           <span
-            className="Card__CardTitle-v5r71h-3 ivROVb"
+            className="card--title"
             title="Open Alerts"
           >
             Open Alerts
              
           </span>
           <div
-            className="bx--toolbar Card__StyledToolbar-v5r71h-4 iZXuG"
+            className="bx--toolbar card--toolbar"
           >
+            <span
+              className="card--toolbar-timerange-lable Card__TimeRangeLabel-v5r71h-5 bSwbuP"
+              id="timeRange"
+            />
+            <div
+              aria-expanded={false}
+              aria-haspopup={true}
+              aria-label="Menu"
+              className="card--toolbar-action bx--overflow-menu"
+              onClick={[Function]}
+              onClose={[Function]}
+              onKeyDown={[Function]}
+              open={false}
+              role="button"
+              tabIndex={0}
+            >
+              <svg
+                aria-label="open and close list of options"
+                className="bx--overflow-menu__icon"
+                focusable="false"
+                height={20}
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                preserveAspectRatio="xMidYMid meet"
+                role="img"
+                style={
+                  Object {
+                    "willChange": "transform",
+                  }
+                }
+                viewBox="0 0 32 32"
+                width={20}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
+                />
+                <path
+                  d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
+                />
+                <path
+                  d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
+                />
+                <title>
+                  open and close list of options
+                </title>
+              </svg>
+            </div>
             <button
-              className="Card__TinyButton-v5r71h-7 gDdkec bx--btn bx--btn--sm bx--btn--ghost"
+              className="card--toolbar-action Card__TinyButton-v5r71h-4 fggzfz bx--btn bx--btn--sm bx--btn--ghost"
               disabled={false}
               onClick={[Function]}
               tabIndex={0}
@@ -2965,7 +3013,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
           </div>
         </div>
         <div
-          className="Card__CardContent-v5r71h-2 cxdfjl"
+          className="Card__CardContent-v5r71h-1 fabdLf"
         >
           <div
             className="TableCard__StyledStatefulTable-q9l5bz-2 hTCKqa Table__StyledTableContainer-sc-1kalfns-0 fkxdXs bx--data-table-container"
@@ -3435,21 +3483,70 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
         id="table-list"
       >
         <div
-          className="Card__CardHeader-v5r71h-1 dYbAjC"
+          className="card--header"
         >
           <span
-            className="Card__CardTitle-v5r71h-3 ivROVb"
+            className="card--title"
             title="Open Alerts"
           >
             Open Alerts
              
           </span>
           <div
-            className="bx--toolbar Card__StyledToolbar-v5r71h-4 iZXuG"
-          />
+            className="bx--toolbar card--toolbar"
+          >
+            <span
+              className="card--toolbar-timerange-lable Card__TimeRangeLabel-v5r71h-5 bSwbuP"
+              id="timeRange"
+            />
+            <div
+              aria-expanded={false}
+              aria-haspopup={true}
+              aria-label="Menu"
+              className="card--toolbar-action bx--overflow-menu"
+              onClick={[Function]}
+              onClose={[Function]}
+              onKeyDown={[Function]}
+              open={false}
+              role="button"
+              tabIndex={0}
+            >
+              <svg
+                aria-label="open and close list of options"
+                className="bx--overflow-menu__icon"
+                focusable="false"
+                height={20}
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                preserveAspectRatio="xMidYMid meet"
+                role="img"
+                style={
+                  Object {
+                    "willChange": "transform",
+                  }
+                }
+                viewBox="0 0 32 32"
+                width={20}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
+                />
+                <path
+                  d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
+                />
+                <path
+                  d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
+                />
+                <title>
+                  open and close list of options
+                </title>
+              </svg>
+            </div>
+          </div>
         </div>
         <div
-          className="Card__CardContent-v5r71h-2 cxdfjl"
+          className="Card__CardContent-v5r71h-1 fabdLf"
         >
           <div
             className="TableCard__StyledStatefulTable-q9l5bz-2 fPCxYp Table__StyledTableContainer-sc-1kalfns-0 fkxdXs bx--data-table-container"
@@ -5723,20 +5820,68 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
         id="table-list"
       >
         <div
-          className="Card__CardHeader-v5r71h-1 dYbAjC"
+          className="card--header"
         >
           <span
-            className="Card__CardTitle-v5r71h-3 ivROVb"
+            className="card--title"
             title="Open Alerts"
           >
             Open Alerts
              
           </span>
           <div
-            className="bx--toolbar Card__StyledToolbar-v5r71h-4 iZXuG"
+            className="bx--toolbar card--toolbar"
           >
+            <span
+              className="card--toolbar-timerange-lable Card__TimeRangeLabel-v5r71h-5 bSwbuP"
+              id="timeRange"
+            />
+            <div
+              aria-expanded={false}
+              aria-haspopup={true}
+              aria-label="Menu"
+              className="card--toolbar-action bx--overflow-menu"
+              onClick={[Function]}
+              onClose={[Function]}
+              onKeyDown={[Function]}
+              open={false}
+              role="button"
+              tabIndex={0}
+            >
+              <svg
+                aria-label="open and close list of options"
+                className="bx--overflow-menu__icon"
+                focusable="false"
+                height={20}
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                preserveAspectRatio="xMidYMid meet"
+                role="img"
+                style={
+                  Object {
+                    "willChange": "transform",
+                  }
+                }
+                viewBox="0 0 32 32"
+                width={20}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
+                />
+                <path
+                  d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
+                />
+                <path
+                  d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
+                />
+                <title>
+                  open and close list of options
+                </title>
+              </svg>
+            </div>
             <button
-              className="Card__TinyButton-v5r71h-7 gDdkec bx--btn bx--btn--sm bx--btn--ghost"
+              className="card--toolbar-action Card__TinyButton-v5r71h-4 fggzfz bx--btn bx--btn--sm bx--btn--ghost"
               disabled={false}
               onClick={[Function]}
               tabIndex={0}
@@ -5771,7 +5916,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
           </div>
         </div>
         <div
-          className="Card__CardContent-v5r71h-2 cxdfjl"
+          className="Card__CardContent-v5r71h-1 fabdLf"
         >
           <div
             className="TableCard__StyledStatefulTable-q9l5bz-2 fPCxYp Table__StyledTableContainer-sc-1kalfns-0 fkxdXs bx--data-table-container"
@@ -6976,20 +7121,68 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
         id="table-list"
       >
         <div
-          className="Card__CardHeader-v5r71h-1 dYbAjC"
+          className="card--header"
         >
           <span
-            className="Card__CardTitle-v5r71h-3 ivROVb"
+            className="card--title"
             title="Open Alerts"
           >
             Open Alerts
              
           </span>
           <div
-            className="bx--toolbar Card__StyledToolbar-v5r71h-4 iZXuG"
+            className="bx--toolbar card--toolbar"
           >
+            <span
+              className="card--toolbar-timerange-lable Card__TimeRangeLabel-v5r71h-5 bSwbuP"
+              id="timeRange"
+            />
+            <div
+              aria-expanded={false}
+              aria-haspopup={true}
+              aria-label="Menu"
+              className="card--toolbar-action bx--overflow-menu"
+              onClick={[Function]}
+              onClose={[Function]}
+              onKeyDown={[Function]}
+              open={false}
+              role="button"
+              tabIndex={0}
+            >
+              <svg
+                aria-label="open and close list of options"
+                className="bx--overflow-menu__icon"
+                focusable="false"
+                height={20}
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                preserveAspectRatio="xMidYMid meet"
+                role="img"
+                style={
+                  Object {
+                    "willChange": "transform",
+                  }
+                }
+                viewBox="0 0 32 32"
+                width={20}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
+                />
+                <path
+                  d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
+                />
+                <path
+                  d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
+                />
+                <title>
+                  open and close list of options
+                </title>
+              </svg>
+            </div>
             <button
-              className="Card__TinyButton-v5r71h-7 gDdkec bx--btn bx--btn--sm bx--btn--ghost"
+              className="card--toolbar-action Card__TinyButton-v5r71h-4 fggzfz bx--btn bx--btn--sm bx--btn--ghost"
               disabled={false}
               onClick={[Function]}
               tabIndex={0}
@@ -7024,7 +7217,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
           </div>
         </div>
         <div
-          className="Card__CardContent-v5r71h-2 cxdfjl"
+          className="Card__CardContent-v5r71h-1 fabdLf"
         >
           <div
             className="TableCard__StyledStatefulTable-q9l5bz-2 fPCxYp Table__StyledTableContainer-sc-1kalfns-0 fkxdXs bx--data-table-container"
@@ -8230,20 +8423,68 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
         id="table-list"
       >
         <div
-          className="Card__CardHeader-v5r71h-1 dYbAjC"
+          className="card--header"
         >
           <span
-            className="Card__CardTitle-v5r71h-3 ivROVb"
+            className="card--title"
             title="Open Alerts"
           >
             Open Alerts
              
           </span>
           <div
-            className="bx--toolbar Card__StyledToolbar-v5r71h-4 iZXuG"
+            className="bx--toolbar card--toolbar"
           >
+            <span
+              className="card--toolbar-timerange-lable Card__TimeRangeLabel-v5r71h-5 bSwbuP"
+              id="timeRange"
+            />
+            <div
+              aria-expanded={false}
+              aria-haspopup={true}
+              aria-label="Menu"
+              className="card--toolbar-action bx--overflow-menu"
+              onClick={[Function]}
+              onClose={[Function]}
+              onKeyDown={[Function]}
+              open={false}
+              role="button"
+              tabIndex={0}
+            >
+              <svg
+                aria-label="open and close list of options"
+                className="bx--overflow-menu__icon"
+                focusable="false"
+                height={20}
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                preserveAspectRatio="xMidYMid meet"
+                role="img"
+                style={
+                  Object {
+                    "willChange": "transform",
+                  }
+                }
+                viewBox="0 0 32 32"
+                width={20}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
+                />
+                <path
+                  d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
+                />
+                <path
+                  d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
+                />
+                <title>
+                  open and close list of options
+                </title>
+              </svg>
+            </div>
             <button
-              className="Card__TinyButton-v5r71h-7 gDdkec bx--btn bx--btn--sm bx--btn--ghost"
+              className="card--toolbar-action Card__TinyButton-v5r71h-4 fggzfz bx--btn bx--btn--sm bx--btn--ghost"
               disabled={false}
               onClick={[Function]}
               tabIndex={0}
@@ -8278,7 +8519,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
           </div>
         </div>
         <div
-          className="Card__CardContent-v5r71h-2 cxdfjl"
+          className="Card__CardContent-v5r71h-1 fabdLf"
         >
           <div
             className="TableCard__StyledStatefulTable-q9l5bz-2 fPCxYp Table__StyledTableContainer-sc-1kalfns-0 fkxdXs bx--data-table-container"
@@ -9021,20 +9262,68 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
         id="table-list"
       >
         <div
-          className="Card__CardHeader-v5r71h-1 dYbAjC"
+          className="card--header"
         >
           <span
-            className="Card__CardTitle-v5r71h-3 ivROVb"
+            className="card--title"
             title="Open Alerts"
           >
             Open Alerts
              
           </span>
           <div
-            className="bx--toolbar Card__StyledToolbar-v5r71h-4 iZXuG"
+            className="bx--toolbar card--toolbar"
           >
+            <span
+              className="card--toolbar-timerange-lable Card__TimeRangeLabel-v5r71h-5 bSwbuP"
+              id="timeRange"
+            />
+            <div
+              aria-expanded={false}
+              aria-haspopup={true}
+              aria-label="Menu"
+              className="card--toolbar-action bx--overflow-menu"
+              onClick={[Function]}
+              onClose={[Function]}
+              onKeyDown={[Function]}
+              open={false}
+              role="button"
+              tabIndex={0}
+            >
+              <svg
+                aria-label="open and close list of options"
+                className="bx--overflow-menu__icon"
+                focusable="false"
+                height={20}
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                preserveAspectRatio="xMidYMid meet"
+                role="img"
+                style={
+                  Object {
+                    "willChange": "transform",
+                  }
+                }
+                viewBox="0 0 32 32"
+                width={20}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
+                />
+                <path
+                  d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
+                />
+                <path
+                  d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
+                />
+                <title>
+                  open and close list of options
+                </title>
+              </svg>
+            </div>
             <button
-              className="Card__TinyButton-v5r71h-7 gDdkec bx--btn bx--btn--sm bx--btn--ghost"
+              className="card--toolbar-action Card__TinyButton-v5r71h-4 fggzfz bx--btn bx--btn--sm bx--btn--ghost"
               disabled={false}
               onClick={[Function]}
               tabIndex={0}
@@ -9069,7 +9358,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
           </div>
         </div>
         <div
-          className="Card__CardContent-v5r71h-2 cxdfjl"
+          className="Card__CardContent-v5r71h-1 fabdLf"
         >
           <div
             className="TableCard__StyledStatefulTable-q9l5bz-2 ibhTDu Table__StyledTableContainer-sc-1kalfns-0 fkxdXs bx--data-table-container"
@@ -9812,21 +10101,70 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
         id="table-list"
       >
         <div
-          className="Card__CardHeader-v5r71h-1 dYbAjC"
+          className="card--header"
         >
           <span
-            className="Card__CardTitle-v5r71h-3 ivROVb"
+            className="card--title"
             title="Open Alerts"
           >
             Open Alerts
              
           </span>
           <div
-            className="bx--toolbar Card__StyledToolbar-v5r71h-4 iZXuG"
-          />
+            className="bx--toolbar card--toolbar"
+          >
+            <span
+              className="card--toolbar-timerange-lable Card__TimeRangeLabel-v5r71h-5 bSwbuP"
+              id="timeRange"
+            />
+            <div
+              aria-expanded={false}
+              aria-haspopup={true}
+              aria-label="Menu"
+              className="card--toolbar-action bx--overflow-menu"
+              onClick={[Function]}
+              onClose={[Function]}
+              onKeyDown={[Function]}
+              open={false}
+              role="button"
+              tabIndex={0}
+            >
+              <svg
+                aria-label="open and close list of options"
+                className="bx--overflow-menu__icon"
+                focusable="false"
+                height={20}
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                preserveAspectRatio="xMidYMid meet"
+                role="img"
+                style={
+                  Object {
+                    "willChange": "transform",
+                  }
+                }
+                viewBox="0 0 32 32"
+                width={20}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
+                />
+                <path
+                  d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
+                />
+                <path
+                  d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
+                />
+                <title>
+                  open and close list of options
+                </title>
+              </svg>
+            </div>
+          </div>
         </div>
         <div
-          className="Card__CardContent-v5r71h-2 cxdfjl"
+          className="Card__CardContent-v5r71h-1 fabdLf"
         >
           <div
             className="TableCard__StyledStatefulTable-q9l5bz-2 fPCxYp Table__StyledTableContainer-sc-1kalfns-0 fkxdXs bx--data-table-container"
@@ -11274,21 +11612,70 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
         id="table-list"
       >
         <div
-          className="Card__CardHeader-v5r71h-1 dYbAjC"
+          className="card--header"
         >
           <span
-            className="Card__CardTitle-v5r71h-3 ivROVb"
+            className="card--title"
             title="Open Alerts"
           >
             Open Alerts
              
           </span>
           <div
-            className="bx--toolbar Card__StyledToolbar-v5r71h-4 iZXuG"
-          />
+            className="bx--toolbar card--toolbar"
+          >
+            <span
+              className="card--toolbar-timerange-lable Card__TimeRangeLabel-v5r71h-5 bSwbuP"
+              id="timeRange"
+            />
+            <div
+              aria-expanded={false}
+              aria-haspopup={true}
+              aria-label="Menu"
+              className="card--toolbar-action bx--overflow-menu"
+              onClick={[Function]}
+              onClose={[Function]}
+              onKeyDown={[Function]}
+              open={false}
+              role="button"
+              tabIndex={0}
+            >
+              <svg
+                aria-label="open and close list of options"
+                className="bx--overflow-menu__icon"
+                focusable="false"
+                height={20}
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                preserveAspectRatio="xMidYMid meet"
+                role="img"
+                style={
+                  Object {
+                    "willChange": "transform",
+                  }
+                }
+                viewBox="0 0 32 32"
+                width={20}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
+                />
+                <path
+                  d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
+                />
+                <path
+                  d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
+                />
+                <title>
+                  open and close list of options
+                </title>
+              </svg>
+            </div>
+          </div>
         </div>
         <div
-          className="Card__CardContent-v5r71h-2 cxdfjl"
+          className="Card__CardContent-v5r71h-1 fabdLf"
         >
           <div
             className="TableCard__StyledStatefulTable-q9l5bz-2 fPCxYp Table__StyledTableContainer-sc-1kalfns-0 fkxdXs bx--data-table-container"
@@ -12737,20 +13124,68 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
         id="table-list"
       >
         <div
-          className="Card__CardHeader-v5r71h-1 dYbAjC"
+          className="card--header"
         >
           <span
-            className="Card__CardTitle-v5r71h-3 ivROVb"
+            className="card--title"
             title="Open Alerts"
           >
             Open Alerts
              
           </span>
           <div
-            className="bx--toolbar Card__StyledToolbar-v5r71h-4 iZXuG"
+            className="bx--toolbar card--toolbar"
           >
+            <span
+              className="card--toolbar-timerange-lable Card__TimeRangeLabel-v5r71h-5 bSwbuP"
+              id="timeRange"
+            />
+            <div
+              aria-expanded={false}
+              aria-haspopup={true}
+              aria-label="Menu"
+              className="card--toolbar-action bx--overflow-menu"
+              onClick={[Function]}
+              onClose={[Function]}
+              onKeyDown={[Function]}
+              open={false}
+              role="button"
+              tabIndex={0}
+            >
+              <svg
+                aria-label="open and close list of options"
+                className="bx--overflow-menu__icon"
+                focusable="false"
+                height={20}
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                preserveAspectRatio="xMidYMid meet"
+                role="img"
+                style={
+                  Object {
+                    "willChange": "transform",
+                  }
+                }
+                viewBox="0 0 32 32"
+                width={20}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
+                />
+                <path
+                  d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
+                />
+                <path
+                  d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
+                />
+                <title>
+                  open and close list of options
+                </title>
+              </svg>
+            </div>
             <button
-              className="Card__TinyButton-v5r71h-7 gDdkec bx--btn bx--btn--sm bx--btn--ghost"
+              className="card--toolbar-action Card__TinyButton-v5r71h-4 fggzfz bx--btn bx--btn--sm bx--btn--ghost"
               disabled={false}
               onClick={[Function]}
               tabIndex={0}
@@ -12785,7 +13220,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
           </div>
         </div>
         <div
-          className="Card__CardContent-v5r71h-2 cxdfjl"
+          className="Card__CardContent-v5r71h-1 fabdLf"
         >
           <div
             className="TableCard__StyledStatefulTable-q9l5bz-2 fPCxYp Table__StyledTableContainer-sc-1kalfns-0 fkxdXs bx--data-table-container"
@@ -13990,20 +14425,68 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
         id="table-list"
       >
         <div
-          className="Card__CardHeader-v5r71h-1 dYbAjC"
+          className="card--header"
         >
           <span
-            className="Card__CardTitle-v5r71h-3 ivROVb"
+            className="card--title"
             title="Open Alerts"
           >
             Open Alerts
              
           </span>
           <div
-            className="bx--toolbar Card__StyledToolbar-v5r71h-4 iZXuG"
+            className="bx--toolbar card--toolbar"
           >
+            <span
+              className="card--toolbar-timerange-lable Card__TimeRangeLabel-v5r71h-5 bSwbuP"
+              id="timeRange"
+            />
+            <div
+              aria-expanded={false}
+              aria-haspopup={true}
+              aria-label="Menu"
+              className="card--toolbar-action bx--overflow-menu"
+              onClick={[Function]}
+              onClose={[Function]}
+              onKeyDown={[Function]}
+              open={false}
+              role="button"
+              tabIndex={0}
+            >
+              <svg
+                aria-label="open and close list of options"
+                className="bx--overflow-menu__icon"
+                focusable="false"
+                height={20}
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                preserveAspectRatio="xMidYMid meet"
+                role="img"
+                style={
+                  Object {
+                    "willChange": "transform",
+                  }
+                }
+                viewBox="0 0 32 32"
+                width={20}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
+                />
+                <path
+                  d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
+                />
+                <path
+                  d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
+                />
+                <title>
+                  open and close list of options
+                </title>
+              </svg>
+            </div>
             <button
-              className="Card__TinyButton-v5r71h-7 gDdkec bx--btn bx--btn--sm bx--btn--ghost"
+              className="card--toolbar-action Card__TinyButton-v5r71h-4 fggzfz bx--btn bx--btn--sm bx--btn--ghost"
               disabled={false}
               onClick={[Function]}
               tabIndex={0}
@@ -14038,7 +14521,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
           </div>
         </div>
         <div
-          className="Card__CardContent-v5r71h-2 cxdfjl"
+          className="Card__CardContent-v5r71h-1 fabdLf"
         >
           <div
             className="TableCard__StyledStatefulTable-q9l5bz-2 fPCxYp Table__StyledTableContainer-sc-1kalfns-0 fkxdXs bx--data-table-container"
@@ -15840,20 +16323,68 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
         id="table-list"
       >
         <div
-          className="Card__CardHeader-v5r71h-1 dYbAjC"
+          className="card--header"
         >
           <span
-            className="Card__CardTitle-v5r71h-3 ivROVb"
+            className="card--title"
             title="Open Alerts"
           >
             Open Alerts
              
           </span>
           <div
-            className="bx--toolbar Card__StyledToolbar-v5r71h-4 iZXuG"
+            className="bx--toolbar card--toolbar"
           >
+            <span
+              className="card--toolbar-timerange-lable Card__TimeRangeLabel-v5r71h-5 bSwbuP"
+              id="timeRange"
+            />
+            <div
+              aria-expanded={false}
+              aria-haspopup={true}
+              aria-label="Menu"
+              className="card--toolbar-action bx--overflow-menu"
+              onClick={[Function]}
+              onClose={[Function]}
+              onKeyDown={[Function]}
+              open={false}
+              role="button"
+              tabIndex={0}
+            >
+              <svg
+                aria-label="open and close list of options"
+                className="bx--overflow-menu__icon"
+                focusable="false"
+                height={20}
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                preserveAspectRatio="xMidYMid meet"
+                role="img"
+                style={
+                  Object {
+                    "willChange": "transform",
+                  }
+                }
+                viewBox="0 0 32 32"
+                width={20}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
+                />
+                <path
+                  d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
+                />
+                <path
+                  d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
+                />
+                <title>
+                  open and close list of options
+                </title>
+              </svg>
+            </div>
             <button
-              className="Card__TinyButton-v5r71h-7 gDdkec bx--btn bx--btn--sm bx--btn--ghost"
+              className="card--toolbar-action Card__TinyButton-v5r71h-4 fggzfz bx--btn bx--btn--sm bx--btn--ghost"
               disabled={false}
               onClick={[Function]}
               tabIndex={0}
@@ -15888,7 +16419,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
           </div>
         </div>
         <div
-          className="Card__CardContent-v5r71h-2 cxdfjl"
+          className="Card__CardContent-v5r71h-1 fabdLf"
         >
           <div
             className="TableCard__StyledStatefulTable-q9l5bz-2 fPCxYp Table__StyledTableContainer-sc-1kalfns-0 fkxdXs bx--data-table-container"
@@ -17457,20 +17988,68 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
         id="table-list"
       >
         <div
-          className="Card__CardHeader-v5r71h-1 dYbAjC"
+          className="card--header"
         >
           <span
-            className="Card__CardTitle-v5r71h-3 ivROVb"
+            className="card--title"
             title="Open Alerts"
           >
             Open Alerts
              
           </span>
           <div
-            className="bx--toolbar Card__StyledToolbar-v5r71h-4 iZXuG"
+            className="bx--toolbar card--toolbar"
           >
+            <span
+              className="card--toolbar-timerange-lable Card__TimeRangeLabel-v5r71h-5 bSwbuP"
+              id="timeRange"
+            />
+            <div
+              aria-expanded={false}
+              aria-haspopup={true}
+              aria-label="Menu"
+              className="card--toolbar-action bx--overflow-menu"
+              onClick={[Function]}
+              onClose={[Function]}
+              onKeyDown={[Function]}
+              open={false}
+              role="button"
+              tabIndex={0}
+            >
+              <svg
+                aria-label="open and close list of options"
+                className="bx--overflow-menu__icon"
+                focusable="false"
+                height={20}
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                preserveAspectRatio="xMidYMid meet"
+                role="img"
+                style={
+                  Object {
+                    "willChange": "transform",
+                  }
+                }
+                viewBox="0 0 32 32"
+                width={20}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
+                />
+                <path
+                  d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
+                />
+                <path
+                  d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
+                />
+                <title>
+                  open and close list of options
+                </title>
+              </svg>
+            </div>
             <button
-              className="Card__TinyButton-v5r71h-7 gDdkec bx--btn bx--btn--sm bx--btn--ghost"
+              className="card--toolbar-action Card__TinyButton-v5r71h-4 fggzfz bx--btn bx--btn--sm bx--btn--ghost"
               disabled={false}
               onClick={[Function]}
               tabIndex={0}
@@ -17505,7 +18084,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
           </div>
         </div>
         <div
-          className="Card__CardContent-v5r71h-2 cxdfjl"
+          className="Card__CardContent-v5r71h-1 fabdLf"
         >
           <div
             className="TableCard__StyledStatefulTable-q9l5bz-2 fPCxYp Table__StyledTableContainer-sc-1kalfns-0 fkxdXs bx--data-table-container"
@@ -19027,21 +19606,70 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
         id="table-list"
       >
         <div
-          className="Card__CardHeader-v5r71h-1 dYbAjC"
+          className="card--header"
         >
           <span
-            className="Card__CardTitle-v5r71h-3 ivROVb"
+            className="card--title"
             title="Open Alerts"
           >
             Open Alerts
              
           </span>
           <div
-            className="bx--toolbar Card__StyledToolbar-v5r71h-4 iZXuG"
-          />
+            className="bx--toolbar card--toolbar"
+          >
+            <span
+              className="card--toolbar-timerange-lable Card__TimeRangeLabel-v5r71h-5 bSwbuP"
+              id="timeRange"
+            />
+            <div
+              aria-expanded={false}
+              aria-haspopup={true}
+              aria-label="Menu"
+              className="card--toolbar-action bx--overflow-menu"
+              onClick={[Function]}
+              onClose={[Function]}
+              onKeyDown={[Function]}
+              open={false}
+              role="button"
+              tabIndex={0}
+            >
+              <svg
+                aria-label="open and close list of options"
+                className="bx--overflow-menu__icon"
+                focusable="false"
+                height={20}
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                preserveAspectRatio="xMidYMid meet"
+                role="img"
+                style={
+                  Object {
+                    "willChange": "transform",
+                  }
+                }
+                viewBox="0 0 32 32"
+                width={20}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
+                />
+                <path
+                  d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
+                />
+                <path
+                  d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
+                />
+                <title>
+                  open and close list of options
+                </title>
+              </svg>
+            </div>
+          </div>
         </div>
         <div
-          className="Card__CardContent-v5r71h-2 cxdfjl"
+          className="Card__CardContent-v5r71h-1 fabdLf"
         >
           <div
             className="TableCard__StyledStatefulTable-q9l5bz-2 fPCxYp Table__StyledTableContainer-sc-1kalfns-0 fkxdXs bx--data-table-container"
@@ -21315,21 +21943,70 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
         id="table-list"
       >
         <div
-          className="Card__CardHeader-v5r71h-1 dYbAjC"
+          className="card--header"
         >
           <span
-            className="Card__CardTitle-v5r71h-3 ivROVb"
+            className="card--title"
             title="Open Alerts"
           >
             Open Alerts
              
           </span>
           <div
-            className="bx--toolbar Card__StyledToolbar-v5r71h-4 iZXuG"
-          />
+            className="bx--toolbar card--toolbar"
+          >
+            <span
+              className="card--toolbar-timerange-lable Card__TimeRangeLabel-v5r71h-5 bSwbuP"
+              id="timeRange"
+            />
+            <div
+              aria-expanded={false}
+              aria-haspopup={true}
+              aria-label="Menu"
+              className="card--toolbar-action bx--overflow-menu"
+              onClick={[Function]}
+              onClose={[Function]}
+              onKeyDown={[Function]}
+              open={false}
+              role="button"
+              tabIndex={0}
+            >
+              <svg
+                aria-label="open and close list of options"
+                className="bx--overflow-menu__icon"
+                focusable="false"
+                height={20}
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                preserveAspectRatio="xMidYMid meet"
+                role="img"
+                style={
+                  Object {
+                    "willChange": "transform",
+                  }
+                }
+                viewBox="0 0 32 32"
+                width={20}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
+                />
+                <path
+                  d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
+                />
+                <path
+                  d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
+                />
+                <title>
+                  open and close list of options
+                </title>
+              </svg>
+            </div>
+          </div>
         </div>
         <div
-          className="Card__CardContent-v5r71h-2 cxdfjl"
+          className="Card__CardContent-v5r71h-1 fabdLf"
         >
           <div
             className="TableCard__StyledStatefulTable-q9l5bz-2 fPCxYp Table__StyledTableContainer-sc-1kalfns-0 fkxdXs bx--data-table-container"
@@ -22557,21 +23234,70 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
         id="table-list"
       >
         <div
-          className="Card__CardHeader-v5r71h-1 dYbAjC"
+          className="card--header"
         >
           <span
-            className="Card__CardTitle-v5r71h-3 ivROVb"
+            className="card--title"
             title="Open Alerts"
           >
             Open Alerts
              
           </span>
           <div
-            className="bx--toolbar Card__StyledToolbar-v5r71h-4 iZXuG"
-          />
+            className="bx--toolbar card--toolbar"
+          >
+            <span
+              className="card--toolbar-timerange-lable Card__TimeRangeLabel-v5r71h-5 bSwbuP"
+              id="timeRange"
+            />
+            <div
+              aria-expanded={false}
+              aria-haspopup={true}
+              aria-label="Menu"
+              className="card--toolbar-action bx--overflow-menu"
+              onClick={[Function]}
+              onClose={[Function]}
+              onKeyDown={[Function]}
+              open={false}
+              role="button"
+              tabIndex={0}
+            >
+              <svg
+                aria-label="open and close list of options"
+                className="bx--overflow-menu__icon"
+                focusable="false"
+                height={20}
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                preserveAspectRatio="xMidYMid meet"
+                role="img"
+                style={
+                  Object {
+                    "willChange": "transform",
+                  }
+                }
+                viewBox="0 0 32 32"
+                width={20}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
+                />
+                <path
+                  d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
+                />
+                <path
+                  d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
+                />
+                <title>
+                  open and close list of options
+                </title>
+              </svg>
+            </div>
+          </div>
         </div>
         <div
-          className="Card__CardContent-v5r71h-2 cxdfjl"
+          className="Card__CardContent-v5r71h-1 fabdLf"
         >
           <div
             className="TableCard__StyledStatefulTable-q9l5bz-2 fPCxYp Table__StyledTableContainer-sc-1kalfns-0 fkxdXs bx--data-table-container"
@@ -25209,20 +25935,68 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
         id="table-list"
       >
         <div
-          className="Card__CardHeader-v5r71h-1 dYbAjC"
+          className="card--header"
         >
           <span
-            className="Card__CardTitle-v5r71h-3 ivROVb"
+            className="card--title"
             title="Open Alerts"
           >
             Open Alerts
              
           </span>
           <div
-            className="bx--toolbar Card__StyledToolbar-v5r71h-4 iZXuG"
+            className="bx--toolbar card--toolbar"
           >
+            <span
+              className="card--toolbar-timerange-lable Card__TimeRangeLabel-v5r71h-5 bSwbuP"
+              id="timeRange"
+            />
+            <div
+              aria-expanded={false}
+              aria-haspopup={true}
+              aria-label="Menu"
+              className="card--toolbar-action bx--overflow-menu"
+              onClick={[Function]}
+              onClose={[Function]}
+              onKeyDown={[Function]}
+              open={false}
+              role="button"
+              tabIndex={0}
+            >
+              <svg
+                aria-label="open and close list of options"
+                className="bx--overflow-menu__icon"
+                focusable="false"
+                height={20}
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                preserveAspectRatio="xMidYMid meet"
+                role="img"
+                style={
+                  Object {
+                    "willChange": "transform",
+                  }
+                }
+                viewBox="0 0 32 32"
+                width={20}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
+                />
+                <path
+                  d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
+                />
+                <path
+                  d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
+                />
+                <title>
+                  open and close list of options
+                </title>
+              </svg>
+            </div>
             <button
-              className="Card__TinyButton-v5r71h-7 gDdkec bx--btn bx--btn--sm bx--btn--ghost"
+              className="card--toolbar-action Card__TinyButton-v5r71h-4 fggzfz bx--btn bx--btn--sm bx--btn--ghost"
               disabled={false}
               onClick={[Function]}
               tabIndex={0}
@@ -25257,7 +26031,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
           </div>
         </div>
         <div
-          className="Card__CardContent-v5r71h-2 cxdfjl"
+          className="Card__CardContent-v5r71h-1 fabdLf"
         >
           <div
             className="TableCard__StyledStatefulTable-q9l5bz-2 fPCxYp Table__StyledTableContainer-sc-1kalfns-0 fkxdXs bx--data-table-container"
