@@ -60,7 +60,6 @@ class ListCardSimple extends Component {
   fetchMoreListItems = () => {
     setTimeout(
       function() {
-        console.log(this.state);
         this.setState(prevState => {
           return { isLoading: false, data: [...prevState.data, ...data2], hasMoreData: false };
         });
@@ -82,7 +81,6 @@ class ListCardSimple extends Component {
           hasMoreData={hasMoreData}
           isLoading={isLoading}
           loadData={() => {
-            console.log('on loding new data::::');
             this.fetchMoreListItems();
             return this.setState({ isLoading: true });
           }}
