@@ -4,8 +4,8 @@ export const RowActionPropTypes = PropTypes.arrayOf(
   PropTypes.shape({
     /** Unique id of the action */
     id: PropTypes.string.isRequired,
-    /** icon ultimately gets passed through all the way to <Button>, which has this same copied proptype definition for icon */
-    icon: PropTypes.oneOfType([
+    /** icon ultimately gets passed through all the way to <Button>, or is rendered in the OverflowMenu, this definition handles both cases, including custom svg as a function */
+    renderIcon: PropTypes.oneOfType([
       PropTypes.shape({
         width: PropTypes.string,
         height: PropTypes.string,
@@ -14,6 +14,8 @@ export const RowActionPropTypes = PropTypes.arrayOf(
       }),
       PropTypes.string,
       PropTypes.node,
+      PropTypes.object,
+      PropTypes.func,
     ]),
     disabled: PropTypes.bool,
     labelText: PropTypes.string,
