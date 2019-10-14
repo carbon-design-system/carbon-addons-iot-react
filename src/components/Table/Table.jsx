@@ -438,6 +438,7 @@ const Table = props => {
           />
         ) : (
           <EmptyTable
+            id={id}
             totalColumns={totalColumns}
             isFiltered={isFiltered}
             emptyState={

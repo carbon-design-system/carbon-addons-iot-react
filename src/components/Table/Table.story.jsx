@@ -7,7 +7,6 @@ import styled from 'styled-components';
 import Arrow from '@carbon/icons-react/lib/arrow--right/20';
 import Add from '@carbon/icons-react/lib/add/20';
 import Delete from '@carbon/icons-react/lib/delete/16';
-import { iconAddSolid, iconDelete } from 'carbon-icons';
 
 import { getSortedData } from '../../utils/componentUtilityFunctions';
 import FullWidthWrapper from '../../internal/FullWidthWrapper';
@@ -266,14 +265,14 @@ export const initialState = {
         : null,
       {
         id: 'Add',
-        renderIcon: iconAddSolid,
+        renderIcon: Add,
         iconDescription: 'Add',
         labelText: 'Add',
         isOverflow: true,
       },
       {
         id: 'delete',
-        renderIcon: iconDelete,
+        renderIcon: Delete,
         labelText: 'Delete',
         isOverflow: true,
         iconDescription: 'Delete',
@@ -752,14 +751,14 @@ storiesOf('Watson IoT|Table', module)
               : null,
             {
               id: 'add',
-              renderIcon: iconAddSolid,
+              renderIcon: Add,
               iconDescription: 'Add',
               labelText: 'Add',
               isOverflow: true,
             },
             {
               id: 'delete',
-              renderIcon: iconDelete,
+              renderIcon: Delete,
               iconDescription: 'Delete',
               labelText: 'Delete',
               isOverflow: true,
