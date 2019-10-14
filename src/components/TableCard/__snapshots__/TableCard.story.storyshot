@@ -119,7 +119,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                     className="bx--label"
                     htmlFor="Table-toolbar-search"
                   >
-                    Filter table
+                    Search
                   </label>
                   <input
                     aria-hidden={true}
@@ -1379,7 +1379,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                     className="bx--label"
                     htmlFor="Table-toolbar-search"
                   >
-                    Filter table
+                    Search
                   </label>
                   <input
                     aria-hidden={true}
@@ -3037,7 +3037,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                     className="bx--label"
                     htmlFor="Table-toolbar-search"
                   >
-                    Filter table
+                    Search
                   </label>
                   <input
                     aria-hidden={true}
@@ -3521,7 +3521,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                     className="bx--label"
                     htmlFor="Table-toolbar-search"
                   >
-                    Filter table
+                    Search
                   </label>
                   <input
                     aria-hidden={true}
@@ -5843,7 +5843,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                     className="bx--label"
                     htmlFor="Table-toolbar-search"
                   >
-                    Filter table
+                    Search
                   </label>
                   <input
                     aria-hidden={true}
@@ -7096,7 +7096,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                     className="bx--label"
                     htmlFor="Table-toolbar-search"
                   >
-                    Filter table
+                    Search
                   </label>
                   <input
                     aria-hidden={true}
@@ -8350,7 +8350,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                     className="bx--label"
                     htmlFor="Table-toolbar-search"
                   >
-                    Filter table
+                    Search
                   </label>
                   <input
                     aria-hidden={true}
@@ -9141,7 +9141,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                     className="bx--label"
                     htmlFor="Table-toolbar-search"
                   >
-                    Filter table
+                    Search
                   </label>
                   <input
                     aria-hidden={true}
@@ -9898,7 +9898,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                     className="bx--label"
                     htmlFor="Table-toolbar-search"
                   >
-                    Filter table
+                    Search
                   </label>
                   <input
                     aria-hidden={true}
@@ -11360,7 +11360,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                     className="bx--label"
                     htmlFor="Table-toolbar-search"
                   >
-                    Filter table
+                    Search
                   </label>
                   <input
                     aria-hidden={true}
@@ -12857,7 +12857,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                     className="bx--label"
                     htmlFor="Table-toolbar-search"
                   >
-                    Filter table
+                    Search
                   </label>
                   <input
                     aria-hidden={true}
@@ -14110,7 +14110,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                     className="bx--label"
                     htmlFor="Table-toolbar-search"
                   >
-                    Filter table
+                    Search
                   </label>
                   <input
                     aria-hidden={true}
@@ -15960,7 +15960,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                     className="bx--label"
                     htmlFor="Table-toolbar-search"
                   >
-                    Filter table
+                    Search
                   </label>
                   <input
                     aria-hidden={true}
@@ -17577,7 +17577,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                     className="bx--label"
                     htmlFor="Table-toolbar-search"
                   >
-                    Filter table
+                    Search
                   </label>
                   <input
                     aria-hidden={true}
@@ -19113,7 +19113,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                     className="bx--label"
                     htmlFor="Table-toolbar-search"
                   >
-                    Filter table
+                    Search
                   </label>
                   <input
                     aria-hidden={true}
@@ -21401,7 +21401,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                     className="bx--label"
                     htmlFor="Table-toolbar-search"
                   >
-                    Filter table
+                    Search
                   </label>
                   <input
                     aria-hidden={true}
@@ -22643,7 +22643,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                     className="bx--label"
                     htmlFor="Table-toolbar-search"
                   >
-                    Filter table
+                    Search
                   </label>
                   <input
                     aria-hidden={true}
@@ -25329,7 +25329,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                     className="bx--label"
                     htmlFor="Table-toolbar-search"
                   >
-                    Filter table
+                    Search
                   </label>
                   <input
                     aria-hidden={true}

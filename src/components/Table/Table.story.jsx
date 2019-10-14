@@ -1339,6 +1339,7 @@ storiesOf('Watson IoT|Table', module)
           selectRowAria: text('i18n.selectRowAria', '__Select row__'),
           /** toolbar */
           clearAllFilters: text('i18n.clearAllFilters', '__Clear all filters__'),
+          searchLabel: text('i18n.searchLabel', '__Search__'),
           searchPlaceholder: text('i18n.searchPlaceholder', '__Search__'),
           columnSelectionButtonAria: text('i18n.columnSelectionButtonAria', '__Column Selection__'),
           filterButtonAria: text('i18n.filterButtonAria', '__Filters__'),
@@ -1350,6 +1351,9 @@ storiesOf('Watson IoT|Table', module)
           batchCancel: text('i18n.batchCancel', '__Cancel__'),
           itemsSelected: text('i18n.itemsSelected', '__items selected__'),
           itemSelected: text('i18n.itemSelected', '__item selected__'),
+          filterNone: text('i18n.filterNone', '__filterNone__'),
+          filterAscending: text('i18n.filterAscending', '__filterAscending__'),
+          filterDescending: text('i18n.filterDescending', '__filterDescending__'),
           /** empty state */
           emptyMessage: text('i18n.emptyMessage', '__There is no data__'),
           emptyMessageWithFilters: text(
