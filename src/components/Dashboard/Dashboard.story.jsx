@@ -26,7 +26,7 @@ import Dashboard from './Dashboard';
 
 const timeOffset = new Date().getTime() - chartData.dataItemToMostRecentTimestamp.temperature;
 
-const originalCards = [
+export const originalCards = [
   {
     title: 'Facility Metrics',
     id: 'facilitycard',
@@ -539,6 +539,7 @@ storiesOf('Watson IoT Experimental|Dashboard', module)
     return (
       <FullWidthWrapper>
         <StatefulDashboard
+          description="This is a description for this Dashboard"
           title={text('title', 'Munich Building')}
           lastUpdated={Date()}
           isEditable={boolean('isEditable', false)}
@@ -570,7 +571,7 @@ storiesOf('Watson IoT Experimental|Dashboard', module)
           isLoading={boolean('isLoading', false)}
           onBreakpointChange={action('onBreakpointChange')}
           onLayoutChange={action('onLayoutChange')}
-          actions={[{ id: 'edit', label: 'Edit', icon: 'edit' }]}
+          actions={[{ id: 'edit', labelText: 'Edit', icon: 'edit' }]}
           onDashboardAction={action('onDashboardAction')}
           hasLastUpdated={false}
         />
@@ -1166,16 +1167,22 @@ storiesOf('Watson IoT Experimental|Dashboard', module)
 
     return (
       <FullWidthWrapper>
-        {dashboards.map(i => [
-          <div style={{ width: 1056, paddingBottom: 50 }}>
+        {dashboards.map((dashboard, index) => [
+          <div
+            style={{ width: 1056, paddingBottom: 50 }}
+            key={`${dashboard.props.title}-${index}-1056`}
+          >
             <h1>&quot;Largest&quot; Rendering (1056px width)</h1>
             <hr />
-            {i}
+            {dashboard}
           </div>,
-          <div style={{ width: 1057, paddingBottom: 50 }}>
+          <div
+            style={{ width: 1057, paddingBottom: 50 }}
+            key={`${dashboard.props.title}-${index}-1057`}
+          >
             <h1>&quot;Tightest&quot; Rendering (1057px width)</h1>
             <hr />
-            {i}
+            {dashboard}
           </div>,
         ])}
       </FullWidthWrapper>

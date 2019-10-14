@@ -14637,6 +14637,7 @@ rechoir@^0.6.2:
 recompose@^0.30.0:
   version "0.30.0"
   resolved "https://registry.yarnpkg.com/recompose/-/recompose-0.30.0.tgz#82773641b3927e8c7d24a0d87d65aeeba18aabd0"
+  integrity sha512-ZTrzzUDa9AqUIhRk4KmVFihH0rapdCSMFXjhHbNrjAWxBuUD/guYlyysMnuHjlZC/KRiOKRtB4jf96yYSkKE8w==
   dependencies:
     "@babel/runtime" "^7.0.0"
     change-emitter "^0.1.2"

@@ -22,7 +22,7 @@ storiesOf('Watson IoT|Card', module)
           isEditable={boolean('isEditable', false)}
           isExpanded={boolean('isExpanded', false)}
           breakpoint="lg"
-          availableActions={{ range: true }}
+          availableActions={{ range: true, expand: true }}
           onCardAction={action('onCardAction')}
         />
       </div>
