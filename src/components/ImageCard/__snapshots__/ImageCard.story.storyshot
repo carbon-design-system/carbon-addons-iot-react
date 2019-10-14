@@ -33,20 +33,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
         id="image-hotspots"
       >
         <div
-          className="Card__CardHeader-v5r71h-1 dYbAjC"
+          className="card--header"
         >
           <span
-            className="Card__CardTitle-v5r71h-3 ivROVb"
+            className="card--title"
             title="Image"
           >
             Image
              
           </span>
           <div
-            className="bx--toolbar Card__StyledToolbar-v5r71h-4 iZXuG"
+            className="bx--toolbar card--toolbar"
           >
             <button
-              className="Card__TinyButton-v5r71h-7 gDdkec bx--btn bx--btn--sm bx--btn--ghost"
+              className="card--toolbar-action Card__TinyButton-v5r71h-4 fggzfz bx--btn bx--btn--sm bx--btn--ghost"
               disabled={false}
               onClick={[Function]}
               tabIndex={0}
@@ -81,7 +81,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
           </div>
         </div>
         <div
-          className="Card__CardContent-v5r71h-2 cxdfjl"
+          className="Card__CardContent-v5r71h-1 fabdLf"
         >
           <div
             className="ImageCard__ContentWrapper-sc-1p2j9dm-0 jJnAwR"
@@ -428,20 +428,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
         id="image-hotspots"
       >
         <div
-          className="Card__CardHeader-v5r71h-1 dYbAjC"
+          className="card--header"
         >
           <span
-            className="Card__CardTitle-v5r71h-3 ivROVb"
+            className="card--title"
             title="Image"
           >
             Image
              
           </span>
           <div
-            className="bx--toolbar Card__StyledToolbar-v5r71h-4 iZXuG"
+            className="bx--toolbar card--toolbar"
           >
             <button
-              className="Card__TinyButton-v5r71h-7 gDdkec bx--btn bx--btn--sm bx--btn--ghost"
+              className="card--toolbar-action Card__TinyButton-v5r71h-4 fggzfz bx--btn bx--btn--sm bx--btn--ghost"
               disabled={false}
               onClick={[Function]}
               tabIndex={0}
@@ -476,7 +476,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
           </div>
         </div>
         <div
-          className="Card__CardContent-v5r71h-2 cxdfjl"
+          className="Card__CardContent-v5r71h-1 fabdLf"
         >
           <div
             className="ImageCard__ContentWrapper-sc-1p2j9dm-0 jJnAwR"
@@ -700,20 +700,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
         id="image-hotspots"
       >
         <div
-          className="Card__CardHeader-v5r71h-1 dYbAjC"
+          className="card--header"
         >
           <span
-            className="Card__CardTitle-v5r71h-3 ivROVb"
+            className="card--title"
             title="Image"
           >
             Image
              
           </span>
           <div
-            className="bx--toolbar Card__StyledToolbar-v5r71h-4 iZXuG"
+            className="bx--toolbar card--toolbar"
           >
             <button
-              className="Card__TinyButton-v5r71h-7 gDdkec bx--btn bx--btn--sm bx--btn--ghost"
+              className="card--toolbar-action Card__TinyButton-v5r71h-4 fggzfz bx--btn bx--btn--sm bx--btn--ghost"
               disabled={false}
               onClick={[Function]}
               tabIndex={0}
@@ -748,7 +748,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
           </div>
         </div>
         <div
-          className="Card__CardContent-v5r71h-2 cxdfjl"
+          className="Card__CardContent-v5r71h-1 fabdLf"
         >
           <div
             className="ImageCard__ContentWrapper-sc-1p2j9dm-0 jJnAwR"

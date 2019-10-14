@@ -28,10 +28,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
       }
     >
       <div
-        className="DashboardHeader__StyledDashboardHeader-sc-1j4vdie-0 cJTEHY"
+        className="dashboard--header"
       >
         <div
-          className="DashboardHeader__StyledLeft-sc-1j4vdie-1 ibfQNJ"
+          className="dashboard--header-left"
         >
           <h2>
             Monthly Building: Munich
@@ -40,7 +40,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
             Shows an overview of monthly data for a building
           </p>
           <div
-            className="DashboardHeader__LastUpdated-sc-1j4vdie-2 iqfnEd"
+            className="dashboard--lastupdated"
           >
             Last updated:
              
@@ -48,10 +48,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
           </div>
         </div>
         <div
-          className="DashboardHeader__StyledRight-sc-1j4vdie-3 gZnzpJ"
+          className="dashboard--header-right"
         >
           <div
-            className="DashboardHeader__StyledActions-sc-1j4vdie-4 czHZVS"
+            className="dashboard--header-actions"
           />
         </div>
       </div>
@@ -111,10 +111,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
       }
     >
       <div
-        className="DashboardHeader__StyledDashboardHeader-sc-1j4vdie-0 cJTEHY"
+        className="dashboard--header"
       >
         <div
-          className="DashboardHeader__StyledLeft-sc-1j4vdie-1 ibfQNJ"
+          className="dashboard--header-left"
         >
           <h2>
             Monthly Building: Munich
@@ -123,7 +123,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
             Shows an overview of daily data for a building
           </p>
           <div
-            className="DashboardHeader__LastUpdated-sc-1j4vdie-2 iqfnEd"
+            className="dashboard--lastupdated"
           >
             Last updated:
              
@@ -131,12 +131,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
           </div>
         </div>
         <div
-          className="DashboardHeader__StyledRight-sc-1j4vdie-3 gZnzpJ"
+          className="dashboard--header-right"
         >
           <div
-            className="DashboardHeader__StyledActions-sc-1j4vdie-4 czHZVS"
+            className="dashboard--header-actions"
           >
             <div
+              className="card--toolbar-action"
+              id="action-icon--edit"
               onClick={[Function]}
               onKeyDown={[Function]}
               role="button"
@@ -169,6 +171,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
               </svg>
             </div>
             <div
+              className="card--toolbar-action"
+              id="action-icon--delete"
               onClick={[Function]}
               onKeyDown={[Function]}
               role="button"
@@ -255,10 +259,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
     }
   >
     <div
-      className="DashboardHeader__StyledDashboardHeader-sc-1j4vdie-0 cJTEHY"
+      className="dashboard--header"
     >
       <div
-        className="DashboardHeader__StyledLeft-sc-1j4vdie-1 ibfQNJ"
+        className="dashboard--header-left"
       >
         <h2>
           Monthly Building: Munich
@@ -267,7 +271,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
           Shows an overview of daily data for a building
         </p>
         <div
-          className="DashboardHeader__LastUpdated-sc-1j4vdie-2 iqfnEd"
+          className="dashboard--lastupdated"
         >
           Last updated:
            
@@ -275,10 +279,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
         </div>
       </div>
       <div
-        className="DashboardHeader__StyledRight-sc-1j4vdie-3 gZnzpJ"
+        className="dashboard--header-right"
       >
         <div
-          className="DashboardHeader__StyledActions-sc-1j4vdie-4 czHZVS"
+          className="dashboard--header-actions"
         >
           <div>
             we can now send custom components
@@ -341,10 +345,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
       }
     >
       <div
-        className="DashboardHeader__StyledDashboardHeader-sc-1j4vdie-0 cJTEHY"
+        className="dashboard--header"
       >
         <div
-          className="DashboardHeader__StyledLeft-sc-1j4vdie-1 ibfQNJ"
+          className="dashboard--header-left"
         >
           <h2>
             Monthly Building: Munich
@@ -353,7 +357,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
             Shows an overview of daily data for a building
           </p>
           <div
-            className="DashboardHeader__LastUpdated-sc-1j4vdie-2 iqfnEd"
+            className="dashboard--lastupdated"
           >
             Last updated:
              
@@ -361,7 +365,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
           </div>
         </div>
         <div
-          className="DashboardHeader__StyledRight-sc-1j4vdie-3 gZnzpJ"
+          className="dashboard--header-right"
         >
           <div
             className="bx--form-item"
@@ -421,7 +425,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
             </div>
           </div>
           <div
-            className="DashboardHeader__StyledActions-sc-1j4vdie-4 czHZVS"
+            className="dashboard--header-actions"
           />
         </div>
       </div>
@@ -481,10 +485,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
       }
     >
       <div
-        className="DashboardHeader__StyledDashboardHeader-sc-1j4vdie-0 cJTEHY"
+        className="dashboard--header"
       >
         <div
-          className="DashboardHeader__StyledLeft-sc-1j4vdie-1 ibfQNJ"
+          className="dashboard--header-left"
         >
           <h2>
             Monthly Building: Munich
@@ -493,7 +497,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
             Shows an overview of daily data for a building
           </p>
           <div
-            className="DashboardHeader__LastUpdated-sc-1j4vdie-2 iqfnEd"
+            className="dashboard--lastupdated"
           >
             Last updated:
              
@@ -501,7 +505,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
           </div>
         </div>
         <div
-          className="DashboardHeader__StyledRight-sc-1j4vdie-3 gZnzpJ"
+          className="dashboard--header-right"
         >
           <div
             className="bx--form-item"
@@ -561,9 +565,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
             </div>
           </div>
           <div
-            className="DashboardHeader__StyledActions-sc-1j4vdie-4 czHZVS"
+            className="dashboard--header-actions"
           >
             <div
+              className="card--toolbar-action"
+              id="action-icon--edit"
               onClick={[Function]}
               onKeyDown={[Function]}
               role="button"
@@ -596,6 +602,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
               </svg>
             </div>
             <div
+              className="card--toolbar-action"
+              id="action-icon--delete"
               onClick={[Function]}
               onKeyDown={[Function]}
               role="button"
@@ -631,6 +639,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
               </svg>
             </div>
             <div
+              className="card--toolbar-action"
+              id="action-icon--pin"
               onClick={[Function]}
               onKeyDown={[Function]}
               role="button"
