@@ -1,10 +1,8 @@
 import React from 'react';
-import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { SkeletonText, Icon } from 'carbon-components-react';
 
 import { handleEnterKeyDown } from '../../utils/componentUtilityFunctions';
-import { COLORS } from '../../styles/styles';
 import icons, { bundledIconNames } from '../../utils/bundledIcons';
 
 const propTypes = {
@@ -55,57 +53,6 @@ const defaultProps = {
   hasLastUpdated: true,
 };
 
-const StyledDashboardHeader = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-`;
-
-const StyledLeft = styled.div`
-  display: flex;
-  flex-flow: column;
-  > p {
-    padding-bottom: 1rem;
-    margin-bottom: 0rem;
-  }
-  > h2 {
-    font-size: 1.75rem;
-    font-weight: 400;
-    margin-bottom: 0rem;
-  }
-  > p,
-  div {
-    color: ${COLORS.gray};
-  }
-`;
-
-const LastUpdated = styled.div`
-  display: flex;
-  white-space: nowrap;
-  align-items: center;
-  > p {
-    margin-left: 1rem;
-    margin-bottom: 0rem;
-  }
-`;
-const StyledRight = styled.div`
-  display: flex;
-  flex-flow: row;
-  flex-grow: 0;
-  > div + div {
-    margin-left: 1rem;
-  }
-`;
-const StyledActions = styled.div`
-  display: flex;
-  flex-flow: row;
-  flex-grow: 0;
-  align-items: center;
-  > div + div {
-    margin-left: 1.5rem;
-  }
-`;
-
 /** Renders the dashboard header at the top of the dashboard */
 const DashboardHeader = ({
   title,
@@ -118,22 +65,24 @@ const DashboardHeader = ({
   onDashboardAction,
 }) => {
   return (
-    <StyledDashboardHeader>
-      <StyledLeft>
+    <div className="dashboard--header">
+      <div className="dashboard--header-left">
         <h2>{title}</h2>
         {description ? <p>{description}</p> : null}
         {hasLastUpdated && lastUpdatedLabel ? (
-          <LastUpdated>
+          <div className="dashboard--lastupdated">
             {lastUpdatedLabel} {lastUpdated || <SkeletonText />}
-          </LastUpdated>
+          </div>
         ) : null}
-      </StyledLeft>
-      <StyledRight>
+      </div>
+      <div className="dashboard--header-right">
         {filter}
-        <StyledActions>
+        <div className="dashboard--header-actions">
           {actions.map(action =>
             action.icon ? (
               <div
+                id={`action-icon--${action.id}`}
+                className="card--toolbar-action"
                 key={action.id}
                 tabIndex={0}
                 role="button"
@@ -146,20 +95,28 @@ const DashboardHeader = ({
                 }}
               >
                 {typeof action.icon === 'string' ? (
-                  <Icon icon={icons[action.icon]} description={action.labelText} />
+                  <Icon
+                    key={`icon-${action.id}`}
+                    icon={icons[action.icon]}
+                    description={action.labelText}
+                  />
                 ) : React.isValidElement(action.icon) ? (
                   action.icon
                 ) : (
-                  <Icon icon={action.icon} description={action.labelText} />
+                  <Icon
+                    key={`icon-${action.id}`}
+                    icon={action.icon}
+                    description={action.labelText}
+                  />
                 )}
               </div>
             ) : (
-              action.customActionComponent
+              React.cloneElement(action.customActionComponent, { key: `icon-${action.id}` })
             )
           )}
-        </StyledActions>
-      </StyledRight>
-    </StyledDashboardHeader>
+        </div>
+      </div>
+    </div>
   );
 };
 
