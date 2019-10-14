@@ -206,7 +206,7 @@ const TableToolbar = ({
       ) : null}
       {hasColumnSelection ? (
         <ToolbarSVGWrapper onClick={onToggleColumnSelection}>
-          <IconColumnSelector description={i18n.columnSelection} />
+          <IconColumnSelector description={i18n.columnSelectionButtonAria} />
         </ToolbarSVGWrapper>
       ) : null}
       {hasFilter ? (
