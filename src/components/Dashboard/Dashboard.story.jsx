@@ -1167,16 +1167,22 @@ storiesOf('Watson IoT Experimental|Dashboard', module)
 
     return (
       <FullWidthWrapper>
-        {dashboards.map(i => [
-          <div style={{ width: 1056, paddingBottom: 50 }}>
+        {dashboards.map((dashboard, index) => [
+          <div
+            style={{ width: 1056, paddingBottom: 50 }}
+            key={`${dashboard.props.title}-${index}-1056`}
+          >
             <h1>&quot;Largest&quot; Rendering (1056px width)</h1>
             <hr />
-            {i}
+            {dashboard}
           </div>,
-          <div style={{ width: 1057, paddingBottom: 50 }}>
+          <div
+            style={{ width: 1057, paddingBottom: 50 }}
+            key={`${dashboard.props.title}-${index}-1057`}
+          >
             <h1>&quot;Tightest&quot; Rendering (1057px width)</h1>
             <hr />
-            {i}
+            {dashboard}
           </div>,
         ])}
       </FullWidthWrapper>
