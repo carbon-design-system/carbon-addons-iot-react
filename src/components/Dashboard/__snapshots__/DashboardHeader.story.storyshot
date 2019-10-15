@@ -1,0 +1,704 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashboard Header basic 1`] = `
+<div
+  className="storybook-container"
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "flexDirection": "column",
+      "padding": "3rem",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "minWidth": "1000px",
+        }
+      }
+    >
+      <div
+        className="dashboard--header"
+      >
+        <div
+          className="dashboard--header-left"
+        >
+          <h2>
+            Monthly Building: Munich
+          </h2>
+          <p>
+            Shows an overview of monthly data for a building
+          </p>
+          <div
+            className="dashboard--lastupdated"
+          >
+            Last updated:
+             
+            03/31/2019 13:55
+          </div>
+        </div>
+        <div
+          className="dashboard--header-right"
+        >
+          <div
+            className="dashboard--header-actions"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashboard Header with custom actions 1`] = `
+<div
+  className="storybook-container"
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "flexDirection": "column",
+      "padding": "3rem",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "width": "1000px",
+        }
+      }
+    >
+      <div
+        className="dashboard--header"
+      >
+        <div
+          className="dashboard--header-left"
+        >
+          <h2>
+            Monthly Building: Munich
+          </h2>
+          <p>
+            Shows an overview of daily data for a building
+          </p>
+          <div
+            className="dashboard--lastupdated"
+          >
+            Last updated:
+             
+            03/31/2019 13:55
+          </div>
+        </div>
+        <div
+          className="dashboard--header-right"
+        >
+          <div
+            className="dashboard--header-actions"
+          >
+            <div
+              className="card--toolbar-action"
+              id="action-icon--edit"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="button"
+              style={
+                Object {
+                  "alignItems": "center",
+                  "cursor": "pointer",
+                  "display": "flex",
+                }
+              }
+              tabIndex={0}
+            >
+              <svg
+                aria-hidden={true}
+                focusable="false"
+                height={20}
+                preserveAspectRatio="xMidYMid meet"
+                style={
+                  Object {
+                    "willChange": "transform",
+                  }
+                }
+                viewBox="0 0 32 32"
+                width={20}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M2 27h28v2H2zM25.41 9a2 2 0 0 0 0-2.83l-3.58-3.58a2 2 0 0 0-2.83 0l-15 15V24h6.41zm-5-5L24 7.59l-3 3L17.41 7zM6 22v-3.59l10-10L19.59 12l-10 10z"
+                />
+              </svg>
+            </div>
+            <div
+              className="card--toolbar-action"
+              id="action-icon--delete"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="button"
+              style={
+                Object {
+                  "alignItems": "center",
+                  "cursor": "pointer",
+                  "display": "flex",
+                }
+              }
+              tabIndex={0}
+            >
+              <svg
+                aria-hidden={true}
+                focusable="false"
+                height={20}
+                preserveAspectRatio="xMidYMid meet"
+                style={
+                  Object {
+                    "willChange": "transform",
+                  }
+                }
+                viewBox="0 0 32 32"
+                width={20}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 12h2v12h-2zm6 0h2v12h-2z"
+                />
+                <path
+                  d="M4 6v2h2v20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8h2V6zm4 22V8h16v20zm4-26h8v2h-8z"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashboard Header with custom actions component 1`] = `
+<div
+  className="storybook-container"
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "flexDirection": "column",
+      "padding": "3rem",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      className="dashboard--header"
+    >
+      <div
+        className="dashboard--header-left"
+      >
+        <h2>
+          Monthly Building: Munich
+        </h2>
+        <p>
+          Shows an overview of daily data for a building
+        </p>
+        <div
+          className="dashboard--lastupdated"
+        >
+          Last updated:
+           
+          03/31/2019 13:55
+        </div>
+      </div>
+      <div
+        className="dashboard--header-right"
+      >
+        <div
+          className="dashboard--header-actions"
+        >
+          <div>
+            we can now send custom components
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashboard Header with filter 1`] = `
+<div
+  className="storybook-container"
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "flexDirection": "column",
+      "padding": "3rem",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "width": "1000px",
+        }
+      }
+    >
+      <div
+        className="dashboard--header"
+      >
+        <div
+          className="dashboard--header-left"
+        >
+          <h2>
+            Monthly Building: Munich
+          </h2>
+          <p>
+            Shows an overview of daily data for a building
+          </p>
+          <div
+            className="dashboard--lastupdated"
+          >
+            Last updated:
+             
+            03/31/2019 13:55
+          </div>
+        </div>
+        <div
+          className="dashboard--header-right"
+        >
+          <div
+            className="bx--form-item"
+          >
+            <div
+              className="bx--date-picker bx--date-picker--single"
+              id="date-picker"
+            >
+              <div
+                className="bx--date-picker-container"
+              >
+                <label
+                  className="bx--label"
+                  htmlFor="date-picker-input-id"
+                >
+                  Select day
+                </label>
+                <div
+                  className="bx--date-picker-input__wrapper"
+                >
+                  <input
+                    className="bx--date-picker__input"
+                    disabled={false}
+                    id="date-picker-input-id"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    pattern="d{1,2}/d{4}"
+                    placeholder="mm/dd/yyyy"
+                    type="text"
+                  />
+                  <svg
+                    aria-label="Icon description"
+                    className="bx--date-picker__icon"
+                    focusable="false"
+                    height={16}
+                    onClick={[Function]}
+                    preserveAspectRatio="xMidYMid meet"
+                    role="img"
+                    style={
+                      Object {
+                        "willChange": "transform",
+                      }
+                    }
+                    viewBox="0 0 16 16"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M13 2h-2V1h-1v1H6V1H5v1H3c-.6 0-1 .4-1 1v10c0 .6.4 1 1 1h10c.6 0 1-.4 1-1V3c0-.6-.4-1-1-1zm0 11H3V6h10v7zm0-8H3V3h2v1h1V3h4v1h1V3h2v2z"
+                    />
+                    <title>
+                      Icon description
+                    </title>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="dashboard--header-actions"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashboard Header with filter and custom actions 1`] = `
+<div
+  className="storybook-container"
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "flexDirection": "column",
+      "padding": "3rem",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "width": "1000px",
+        }
+      }
+    >
+      <div
+        className="dashboard--header"
+      >
+        <div
+          className="dashboard--header-left"
+        >
+          <h2>
+            Monthly Building: Munich
+          </h2>
+          <p>
+            Shows an overview of daily data for a building
+          </p>
+          <div
+            className="dashboard--lastupdated"
+          >
+            Last updated:
+             
+            03/31/2019 13:55
+          </div>
+        </div>
+        <div
+          className="dashboard--header-right"
+        >
+          <div
+            className="bx--form-item"
+          >
+            <div
+              className="bx--date-picker bx--date-picker--single"
+              id="date-picker"
+            >
+              <div
+                className="bx--date-picker-container"
+              >
+                <label
+                  className="bx--label bx--visually-hidden"
+                  htmlFor="date-picker-input-id"
+                >
+                  Select day
+                </label>
+                <div
+                  className="bx--date-picker-input__wrapper"
+                >
+                  <input
+                    className="bx--date-picker__input"
+                    disabled={false}
+                    id="date-picker-input-id"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    pattern="d{1,2}/d{4}"
+                    placeholder="mm/dd/yyyy"
+                    type="text"
+                  />
+                  <svg
+                    aria-label="Icon description"
+                    className="bx--date-picker__icon"
+                    focusable="false"
+                    height={16}
+                    onClick={[Function]}
+                    preserveAspectRatio="xMidYMid meet"
+                    role="img"
+                    style={
+                      Object {
+                        "willChange": "transform",
+                      }
+                    }
+                    viewBox="0 0 16 16"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M13 2h-2V1h-1v1H6V1H5v1H3c-.6 0-1 .4-1 1v10c0 .6.4 1 1 1h10c.6 0 1-.4 1-1V3c0-.6-.4-1-1-1zm0 11H3V6h10v7zm0-8H3V3h2v1h1V3h4v1h1V3h2v2z"
+                    />
+                    <title>
+                      Icon description
+                    </title>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="dashboard--header-actions"
+          >
+            <div
+              className="card--toolbar-action"
+              id="action-icon--edit"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="button"
+              style={
+                Object {
+                  "alignItems": "center",
+                  "cursor": "pointer",
+                  "display": "flex",
+                }
+              }
+              tabIndex={0}
+            >
+              <svg
+                aria-hidden={true}
+                focusable="false"
+                height={20}
+                preserveAspectRatio="xMidYMid meet"
+                style={
+                  Object {
+                    "willChange": "transform",
+                  }
+                }
+                viewBox="0 0 32 32"
+                width={20}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M2 27h28v2H2zM25.41 9a2 2 0 0 0 0-2.83l-3.58-3.58a2 2 0 0 0-2.83 0l-15 15V24h6.41zm-5-5L24 7.59l-3 3L17.41 7zM6 22v-3.59l10-10L19.59 12l-10 10z"
+                />
+              </svg>
+            </div>
+            <div
+              className="card--toolbar-action"
+              id="action-icon--delete"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="button"
+              style={
+                Object {
+                  "alignItems": "center",
+                  "cursor": "pointer",
+                  "display": "flex",
+                }
+              }
+              tabIndex={0}
+            >
+              <svg
+                aria-hidden={true}
+                focusable="false"
+                height={20}
+                preserveAspectRatio="xMidYMid meet"
+                style={
+                  Object {
+                    "willChange": "transform",
+                  }
+                }
+                viewBox="0 0 32 32"
+                width={20}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 12h2v12h-2zm6 0h2v12h-2z"
+                />
+                <path
+                  d="M4 6v2h2v20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8h2V6zm4 22V8h16v20zm4-26h8v2h-8z"
+                />
+              </svg>
+            </div>
+            <div
+              className="card--toolbar-action"
+              id="action-icon--pin"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="button"
+              style={
+                Object {
+                  "alignItems": "center",
+                  "cursor": "pointer",
+                  "display": "flex",
+                }
+              }
+              tabIndex={0}
+            >
+              <svg
+                aria-hidden={true}
+                focusable="false"
+                height={20}
+                preserveAspectRatio="xMidYMid meet"
+                style={
+                  Object {
+                    "willChange": "transform",
+                  }
+                }
+                viewBox="0 0 32 32"
+                width={20}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M28.59 13.31L30 11.9 20 2l-1.31 1.42 1.18 1.18-11.49 9.72-1.72-1.71L5.25 14l5.66 5.68L2 28.58 3.41 30l8.91-8.91L18 26.75l1.39-1.42-1.71-1.71 9.72-11.49zM16.26 22.2L9.8 15.74 21.29 6 26 10.71z"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;

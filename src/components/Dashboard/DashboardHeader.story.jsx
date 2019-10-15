@@ -9,7 +9,7 @@ import { DatePicker, DatePickerInput } from 'carbon-components-react';
 
 import DashboardHeader from './DashboardHeader';
 
-storiesOf('Watson IoT Experimental|Dashboard Header', module)
+storiesOf('Watson IoT|Dashboard Header', module)
   .add('basic', () => {
     return (
       <div style={{ minWidth: '1000px' }}>
@@ -103,7 +103,12 @@ storiesOf('Watson IoT Experimental|Dashboard Header', module)
         description={text('description', 'Shows an overview of daily data for a building')}
         lastUpdated={text('lastUpdated', '03/31/2019 13:55')}
         actions={[
-          { id: 'edit', customActionComponent: <div>we can now send custom components</div> },
+          {
+            id: 'edit',
+            customActionComponent: (
+              <div key="my custom component">we can now send custom components</div>
+            ),
+          },
         ]}
       />
     );
