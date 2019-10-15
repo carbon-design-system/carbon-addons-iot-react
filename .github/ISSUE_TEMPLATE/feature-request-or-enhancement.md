@@ -1,13 +1,12 @@
 ---
 name: "Feature request or enhancement \U0001F4A1"
 about: Suggest an idea for improvement
-title: "[ComponentName] request_title"
-labels: ":hammer:  Enhancement"
+title: '[ComponentName] request_title'
+labels: ':hammer:  Enhancement'
 assignees: ''
-
 ---
 
-<!-- 
+<!--
 
 Use this template if you want to request a new feature, or a change to an
 existing feature.
@@ -25,7 +24,6 @@ Please describe your request in one or two sentences.
 **Additional context**
 Add any other context or screenshots about the feature request here.
 
-
 ### Specific timeline issues / requests
 
 Do you want this work within a specific time period? Is it related to an
@@ -34,7 +32,6 @@ upcoming release?
 _NB: The core contributors will try to work with your timeline, but it's not
 guaranteed. The earlier you make a request in advance of a desired delivery
 date, the better!_
-
 
 ### Available extra resources
 
