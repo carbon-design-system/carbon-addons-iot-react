@@ -6,7 +6,8 @@ import RowActionsCell from './RowActionsCell';
 
 const mockApplyRowAction = jest.fn();
 const commonRowActionsProps = {
-  id: 'tableId-rowId',
+  id: 'rowId',
+  tableId: 'tableId',
   onApplyRowAction: mockApplyRowAction,
 };
 

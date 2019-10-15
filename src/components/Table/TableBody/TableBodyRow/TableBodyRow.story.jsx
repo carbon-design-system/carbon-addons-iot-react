@@ -13,6 +13,7 @@ const tableBodyRowProps = {
   ordering: [{ columnId: 'string' }],
   columns: [{ id: 'string', name: 'String' }],
   id: 'rowId',
+  tableId: 'tableId',
   totalColumns: 1,
   values: { string: 'My String' },
   tableActions: actions(

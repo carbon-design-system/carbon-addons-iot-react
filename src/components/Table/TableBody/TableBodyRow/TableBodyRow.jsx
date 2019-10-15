@@ -52,6 +52,8 @@ const propTypes = {
 
   /** The unique row id */
   id: PropTypes.string.isRequired,
+  /** The unique id for the table */
+  tableId: PropTypes.string.isRequired,
   /** some columns might be hidden, so total columns has the overall total */
   totalColumns: PropTypes.number.isRequired,
 
@@ -356,6 +358,7 @@ const StyledNestedSpan = styled.span`
 
 const TableBodyRow = ({
   id,
+  tableId,
   totalColumns,
   ordering,
   columns,
@@ -411,7 +414,7 @@ const TableBodyRow = ({
       */}
         <StyledNestedSpan nestingOffset={nestingOffset}>
           <Checkbox
-            id={`select-row-${id}`}
+            id={`select-row-${tableId}-${id}`}
             labelText={selectRowAria}
             hideLabel
             checked={isSelected}
@@ -430,7 +433,7 @@ const TableBodyRow = ({
         const offset = firstVisibleColIndex === idx ? nestingOffset : 0;
         return !col.isHidden ? (
           <StyledTableCellRow
-            id={`cell-${id}-${col.columnId}`}
+            id={`cell-${tableId}-${id}-${col.columnId}`}
             key={col.columnId}
             data-column={col.columnId}
             data-offset={offset}
@@ -456,6 +459,7 @@ const TableBodyRow = ({
       {hasRowActions && rowActions && rowActions.length > 0 ? (
         <RowActionsCell
           id={id}
+          tableId={tableId}
           actions={rowActions}
           isRowActionRunning={isRowActionRunning}
           isRowExpanded={isExpanded && !hasRowNesting}
@@ -469,7 +473,7 @@ const TableBodyRow = ({
           onClearError={onClearRowError ? () => onClearRowError(id) : null}
         />
       ) : nestingLevel > 0 && hasRowActions ? (
-        <TableCell key={`${id}-row-actions-cell`} />
+        <TableCell key={`${tableId}-${id}-row-actions-cell`} />
       ) : (
         undefined
       )}
