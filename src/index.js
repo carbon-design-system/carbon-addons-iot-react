@@ -113,6 +113,7 @@ export {
   MultiSelect,
   ToastNotification,
   InlineNotification,
+  NotificationActionButton,
   NotificationButton,
   NotificationTextDetails,
   NumberInput,

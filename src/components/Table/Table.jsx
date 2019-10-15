@@ -406,7 +406,7 @@ const Table = props => {
           />
         ) : visibleData && visibleData.length ? (
           <TableBody
-            id={id}
+            tableId={id}
             rows={visibleData}
             rowActionsState={view.table.rowActions}
             expandedRows={expandedData}

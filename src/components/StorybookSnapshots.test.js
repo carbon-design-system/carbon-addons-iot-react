@@ -49,6 +49,13 @@ describe(`Storybook Snapshot tests and console checks`, () => {
         !e.includes(
           // Carbon issue - https://github.com/carbon-design-system/carbon/issues/3658, should be fixed in 10.4.2
           'Warning: Failed prop type: Invalid prop `aria-hidden` of type `boolean` supplied to `Icon`, expected `string`.'
+        ) &&
+        !e.includes(
+          // https://github.com/carbon-design-system/carbon/pull/3933
+          'The prop `success` for InlineLoading has been deprecated in favor of `status`. Please use `status="finished"` instead.'
+        ) &&
+        !e.includes(
+          'Warning: The Toolbar component has been deprecated and will be removed in the next major release of `carbon-components-react`'
         )
       ) {
         done.fail(e);
@@ -86,6 +93,15 @@ describe(`Storybook Snapshot tests and console checks`, () => {
           div.className = 'from-initStoryshots-createNodeMock'; // to assist in debugging
           div.innerHTML = "<input type='text'></input>";
           return div;
+        }
+
+        // Needed for DatePicker refererence in carbon-components-react
+        if (story.kind === 'Watson IoT|Dashboard Header') {
+          const fragment = document.createDocumentFragment();
+          const div = document.createElement('div');
+          div.className = 'from-initStoryshots-createNodeMock'; // to assist in debugging
+          fragment.appendChild(div);
+          return fragment.childNodes;
         }
 
         if (element.type === 'input') {
