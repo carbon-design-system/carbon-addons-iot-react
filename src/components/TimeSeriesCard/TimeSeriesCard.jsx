@@ -13,7 +13,7 @@ import { TimeSeriesCardPropTypes, CardPropTypes } from '../../constants/PropType
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 import Card from '../Card/Card';
 
-import { generateSampleValues } from './timeSeriesUtils';
+import { generateSampleValues, isValuesEmpty } from './timeSeriesUtils';
 
 const LineChartWrapper = styled.div`
   padding-left: 16px;
@@ -92,7 +92,7 @@ const formatChartData = (labels, series, values) => {
   return {
     labels,
     datasets: series.map(({ dataSourceId, label, color }) => ({
-      label,
+      label, // filter out any null records
       backgroundColors: color ? [color] : null,
       data: values.map(i => i[dataSourceId]),
     })),
@@ -136,6 +136,8 @@ const TimeSeriesCard = ({
   const values = isEditable
     ? memoizedGenerateSampleValues(series, timeDataSourceId, interval)
     : valuesProp;
+
+  const isAllValuesEmpty = isValuesEmpty(valuesProp, timeDataSourceId);
 
   const valueSort = useMemo(
     () =>
@@ -256,9 +258,9 @@ const TimeSeriesCard = ({
             size={size}
             {...others}
             isEditable={isEditable}
-            isEmpty={isEmpty(values)}
+            isEmpty={isAllValuesEmpty}
           >
-            {!others.isLoading && !isEmpty(values) ? (
+            {!others.isLoading && !isAllValuesEmpty ? (
               <LineChartWrapper
                 size={size}
                 contentHeight={height}
