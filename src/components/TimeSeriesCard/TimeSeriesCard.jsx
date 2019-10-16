@@ -29,6 +29,9 @@ const LineChartWrapper = styled.div`
       transform: rotateY(0);
       text-anchor: initial !important;
     }
+    .chart-wrapper svg.chart-svg g.x.grid g.tick line {
+      stroke: #dcdcdc;
+    }
     .expand-btn {
       display: ${props => (props.isEditable ? 'none' : '')};
     }
