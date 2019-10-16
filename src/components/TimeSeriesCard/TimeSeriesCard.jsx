@@ -92,7 +92,7 @@ const formatChartData = (labels, series, values) => {
   return {
     labels,
     datasets: series.map(({ dataSourceId, label, color }) => ({
-      label, // filter out any null records
+      label,
       backgroundColors: color ? [color] : null,
       data: values.map(i => i[dataSourceId]),
     })),
