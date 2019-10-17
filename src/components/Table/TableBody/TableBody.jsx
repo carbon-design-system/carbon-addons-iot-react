@@ -16,6 +16,8 @@ import TableBodyRow from './TableBodyRow/TableBodyRow';
 const { TableBody: CarbonTableBody } = DataTable;
 
 const propTypes = {
+  /** The unique id of the table */
+  tableId: PropTypes.string.isRequired,
   rows: TableRowPropTypes,
   expandedRows: ExpandedRowsPropTypes,
   columns: TableColumnsPropTypes,
@@ -85,6 +87,7 @@ const defaultProps = {
 };
 
 const TableBody = ({
+  tableId,
   rows,
   columns,
   expandedIds,
@@ -147,6 +150,7 @@ const TableBody = ({
         learnMoreText={learnMoreText}
         dismissText={dismissText}
         columns={columns}
+        tableId={tableId}
         id={row.id}
         totalColumns={totalColumns}
         options={{

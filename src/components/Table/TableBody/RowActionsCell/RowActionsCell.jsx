@@ -82,6 +82,8 @@ const propTypes = {
   isRowExpanded: PropTypes.bool,
   /** Unique id for each row, passed back for each click */
   id: PropTypes.string.isRequired,
+  /** Unique id for the table */
+  tableId: PropTypes.string.isRequired,
   /** Array with all the actions to render */
   actions: RowActionPropTypes,
   /** Callback called if a row action is clicked */
@@ -142,6 +144,7 @@ class RowActionsCell extends React.Component {
     const {
       isRowExpanded,
       id,
+      tableId,
       actions,
       onApplyRowAction,
       overflowMenuAria,
@@ -191,6 +194,7 @@ class RowActionsCell extends React.Component {
                 ))}
               {hasOverflow ? (
                 <StyledOverflowMenu
+                  id={`${tableId}-${id}-row-actions-cell-overflow`}
                   flipped
                   ariaLabel={overflowMenuAria}
                   onClick={event => event.stopPropagation()}
@@ -210,11 +214,15 @@ class RowActionsCell extends React.Component {
                         itemText={
                           action.renderIcon ? (
                             <OverflowMenuContent>
-                              <StyledIcon
-                                icon={action.renderIcon}
-                                description={action.labelText}
-                                iconTitle={action.labelText}
-                              />
+                              {typeof action.renderIcon === 'string' ? (
+                                <StyledIcon
+                                  icon={action.renderIcon}
+                                  description={action.labelText}
+                                  iconTitle={action.labelText}
+                                />
+                              ) : (
+                                <action.renderIcon />
+                              )}
                               {action.labelText}
                             </OverflowMenuContent>
                           ) : (

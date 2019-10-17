@@ -78,7 +78,7 @@ const ListCard = ({ id, title, size, data, isLoading, loadData, hasMoreData, ...
                 })
               : null}
 
-            {isLoading ? <InlineLoading description="Loading data..." /> : null}
+            {isLoading ? <InlineLoading description="Loading data..." status="active" /> : null}
           </StructuredListBody>
         </StructuredListWrapper>
       </StyledContentWrapper>

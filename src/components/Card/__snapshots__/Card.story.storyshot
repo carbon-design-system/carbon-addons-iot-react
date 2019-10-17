@@ -33,27 +33,27 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
         id="facilitycard-basic"
       >
         <div
-          className="Card__CardHeader-v5r71h-1 dYbAjC"
+          className="card--header"
         >
           <span
-            className="Card__CardTitle-v5r71h-3 ivROVb"
+            className="card--title"
             title="Card Title"
           >
             Card Title
              
           </span>
           <div
-            className="bx--toolbar Card__StyledToolbar-v5r71h-4 iZXuG"
+            className="bx--toolbar card--toolbar"
           >
             <span
-              className="Card__TimeRangeLabel-v5r71h-9 ebXFRr"
+              className="card--toolbar-timerange-lable Card__TimeRangeLabel-v5r71h-5 bSwbuP"
               id="timeRange"
             />
             <div
               aria-expanded={false}
               aria-haspopup={true}
               aria-label="Menu"
-              className="Card__StyledOverflowMenu-v5r71h-8 gdmWMK bx--overflow-menu"
+              className="card--toolbar-action bx--overflow-menu"
               onClick={[Function]}
               onClose={[Function]}
               onKeyDown={[Function]}
@@ -65,7 +65,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                 aria-label="open and close list of options"
                 className="bx--overflow-menu__icon"
                 focusable="false"
-                height={16}
+                height={20}
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 preserveAspectRatio="xMidYMid meet"
@@ -75,22 +75,61 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                     "willChange": "transform",
                   }
                 }
-                viewBox="0 0 16 16"
-                width={16}
+                viewBox="0 0 32 32"
+                width={20}
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M8 11L3 6l.7-.7L8 9.6l4.3-4.3.7.7z"
+                  d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
+                />
+                <path
+                  d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
+                />
+                <path
+                  d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
                 />
                 <title>
                   open and close list of options
                 </title>
               </svg>
             </div>
+            <button
+              className="card--toolbar-action Card__TinyButton-v5r71h-4 fggzfz bx--btn bx--btn--sm bx--btn--ghost"
+              disabled={false}
+              onClick={[Function]}
+              tabIndex={0}
+              title="Expand to fullscreen"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                aria-label="Expand to fullscreen"
+                className="bx--btn__icon"
+                focusable="false"
+                height={20}
+                preserveAspectRatio="xMidYMid meet"
+                role="img"
+                style={
+                  Object {
+                    "willChange": "transform",
+                  }
+                }
+                viewBox="0 0 32 32"
+                width={20}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M28 4H10a2.006 2.006 0 0 0-2 2v14a2.006 2.006 0 0 0 2 2h18a2.006 2.006 0 0 0 2-2V6a2.006 2.006 0 0 0-2-2zm0 16H10V6h18z"
+                />
+                <path
+                  d="M18 26H4V16h2v-2H4a2.006 2.006 0 0 0-2 2v10a2.006 2.006 0 0 0 2 2h14a2.006 2.006 0 0 0 2-2v-2h-2z"
+                />
+              </svg>
+            </button>
           </div>
         </div>
         <div
-          className="Card__CardContent-v5r71h-2 kpEDvX"
+          className="Card__CardContent-v5r71h-1 gTExVy"
         />
       </div>
     </div>
@@ -154,24 +193,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
         id="facilitycard-error"
       >
         <div
-          className="Card__CardHeader-v5r71h-1 dYbAjC"
+          className="card--header"
         >
           <span
-            className="Card__CardTitle-v5r71h-3 ivROVb"
+            className="card--title"
             title="Card Title"
           >
             Card Title
              
           </span>
           <div
-            className="bx--toolbar Card__StyledToolbar-v5r71h-4 iZXuG"
+            className="bx--toolbar card--toolbar"
           />
         </div>
         <div
-          className="Card__CardContent-v5r71h-2 kpEDvX"
+          className="Card__CardContent-v5r71h-1 gTExVy"
         >
           <div
-            className="Card__EmptyMessageWrapper-v5r71h-6 fDejXV"
+            className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
           >
             Error loading data for this card:  API threw Nullpointer
           </div>
@@ -238,24 +277,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
         id="facilitycard-error-small"
       >
         <div
-          className="Card__CardHeader-v5r71h-1 dYbAjC"
+          className="card--header"
         >
           <span
-            className="Card__CardTitle-v5r71h-3 ivROVb"
+            className="card--title"
             title="Card Title"
           >
             Card Title
              
           </span>
           <div
-            className="bx--toolbar Card__StyledToolbar-v5r71h-4 iZXuG"
+            className="bx--toolbar card--toolbar"
           />
         </div>
         <div
-          className="Card__CardContent-v5r71h-2 eHaGPu"
+          className="Card__CardContent-v5r71h-1 gPUVrT"
         >
           <div
-            className="Card__EmptyMessageWrapper-v5r71h-6 fDejXV"
+            className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
           >
             Data error.
           </div>
@@ -322,17 +361,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
         id="facilitycard-with-loading"
       >
         <div
-          className="Card__CardHeader-v5r71h-1 dYbAjC"
+          className="card--header"
         >
           <span
-            className="Card__CardTitle-v5r71h-3 ivROVb"
+            className="card--title"
             title="Card Title"
           >
             Card Title
              
           </span>
           <div
-            className="bx--toolbar Card__StyledToolbar-v5r71h-4 iZXuG"
+            className="bx--toolbar card--toolbar"
           >
             <div
               aria-expanded={false}
@@ -387,7 +426,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
           </div>
         </div>
         <div
-          className="Card__CardContent-v5r71h-2 kpEDvX"
+          className="Card__CardContent-v5r71h-1 gTExVy"
         />
       </div>
     </div>
@@ -451,21 +490,21 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
         id="facilitycard-with-loading"
       >
         <div
-          className="Card__CardHeader-v5r71h-1 dYbAjC"
+          className="card--header"
         >
           <span
-            className="Card__CardTitle-v5r71h-3 ivROVb"
+            className="card--title"
             title="Card Title"
           >
             Card Title
              
           </span>
           <div
-            className="bx--toolbar Card__StyledToolbar-v5r71h-4 iZXuG"
+            className="bx--toolbar card--toolbar"
           />
         </div>
         <div
-          className="Card__CardContent-v5r71h-2 kpEDvX"
+          className="Card__CardContent-v5r71h-1 gTExVy"
         />
       </div>
     </div>
@@ -532,24 +571,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
         id="facilitycard-size-gallery-XSMALL"
       >
         <div
-          className="Card__CardHeader-v5r71h-1 dYbAjC"
+          className="card--header"
         >
           <span
-            className="Card__CardTitle-v5r71h-3 ivROVb"
+            className="card--title"
             title="Card Title"
           >
             Card Title
              
           </span>
           <div
-            className="bx--toolbar Card__StyledToolbar-v5r71h-4 iZXuG"
+            className="bx--toolbar card--toolbar"
           />
         </div>
         <div
-          className="Card__CardContent-v5r71h-2 eHaGPu"
+          className="Card__CardContent-v5r71h-1 gPUVrT"
         >
           <div
-            className="Card__EmptyMessageWrapper-v5r71h-6 fDejXV"
+            className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
           >
             No data
           </div>
@@ -572,27 +611,27 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
         id="facilitycard-size-gallery-XSMALLWIDE"
       >
         <div
-          className="Card__CardHeader-v5r71h-1 dYbAjC"
+          className="card--header"
         >
           <span
-            className="Card__CardTitle-v5r71h-3 ivROVb"
+            className="card--title"
             title="Card Title"
           >
             Card Title
              
           </span>
           <div
-            className="bx--toolbar Card__StyledToolbar-v5r71h-4 iZXuG"
+            className="bx--toolbar card--toolbar"
           >
             <span
-              className="Card__TimeRangeLabel-v5r71h-9 ebXFRr"
+              className="card--toolbar-timerange-lable Card__TimeRangeLabel-v5r71h-5 bSwbuP"
               id="timeRange"
             />
             <div
               aria-expanded={false}
               aria-haspopup={true}
               aria-label="Menu"
-              className="Card__StyledOverflowMenu-v5r71h-8 gdmWMK bx--overflow-menu"
+              className="card--toolbar-action bx--overflow-menu"
               onClick={[Function]}
               onClose={[Function]}
               onKeyDown={[Function]}
@@ -604,7 +643,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                 aria-label="open and close list of options"
                 className="bx--overflow-menu__icon"
                 focusable="false"
-                height={16}
+                height={20}
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 preserveAspectRatio="xMidYMid meet"
@@ -614,12 +653,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                     "willChange": "transform",
                   }
                 }
-                viewBox="0 0 16 16"
-                width={16}
+                viewBox="0 0 32 32"
+                width={20}
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M8 11L3 6l.7-.7L8 9.6l4.3-4.3.7.7z"
+                  d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
+                />
+                <path
+                  d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
+                />
+                <path
+                  d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
                 />
                 <title>
                   open and close list of options
@@ -629,10 +674,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
           </div>
         </div>
         <div
-          className="Card__CardContent-v5r71h-2 eHaGPu"
+          className="Card__CardContent-v5r71h-1 gPUVrT"
         >
           <div
-            className="Card__EmptyMessageWrapper-v5r71h-6 fDejXV"
+            className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
           >
             No data is available for this time range.
           </div>
@@ -655,27 +700,27 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
         id="facilitycard-size-gallery-SMALL"
       >
         <div
-          className="Card__CardHeader-v5r71h-1 dYbAjC"
+          className="card--header"
         >
           <span
-            className="Card__CardTitle-v5r71h-3 ivROVb"
+            className="card--title"
             title="Card Title"
           >
             Card Title
              
           </span>
           <div
-            className="bx--toolbar Card__StyledToolbar-v5r71h-4 iZXuG"
+            className="bx--toolbar card--toolbar"
           >
             <span
-              className="Card__TimeRangeLabel-v5r71h-9 ebXFRr"
+              className="card--toolbar-timerange-lable Card__TimeRangeLabel-v5r71h-5 bSwbuP"
               id="timeRange"
             />
             <div
               aria-expanded={false}
               aria-haspopup={true}
               aria-label="Menu"
-              className="Card__StyledOverflowMenu-v5r71h-8 gdmWMK bx--overflow-menu"
+              className="card--toolbar-action bx--overflow-menu"
               onClick={[Function]}
               onClose={[Function]}
               onKeyDown={[Function]}
@@ -687,7 +732,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                 aria-label="open and close list of options"
                 className="bx--overflow-menu__icon"
                 focusable="false"
-                height={16}
+                height={20}
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 preserveAspectRatio="xMidYMid meet"
@@ -697,12 +742,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                     "willChange": "transform",
                   }
                 }
-                viewBox="0 0 16 16"
-                width={16}
+                viewBox="0 0 32 32"
+                width={20}
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M8 11L3 6l.7-.7L8 9.6l4.3-4.3.7.7z"
+                  d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
+                />
+                <path
+                  d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
+                />
+                <path
+                  d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
                 />
                 <title>
                   open and close list of options
@@ -712,10 +763,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
           </div>
         </div>
         <div
-          className="Card__CardContent-v5r71h-2 kpEDvX"
+          className="Card__CardContent-v5r71h-1 gTExVy"
         >
           <div
-            className="Card__EmptyMessageWrapper-v5r71h-6 fDejXV"
+            className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
           >
             No data is available for this time range.
           </div>
@@ -738,27 +789,27 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
         id="facilitycard-size-gallery-TALL"
       >
         <div
-          className="Card__CardHeader-v5r71h-1 dYbAjC"
+          className="card--header"
         >
           <span
-            className="Card__CardTitle-v5r71h-3 ivROVb"
+            className="card--title"
             title="Card Title"
           >
             Card Title
              
           </span>
           <div
-            className="bx--toolbar Card__StyledToolbar-v5r71h-4 iZXuG"
+            className="bx--toolbar card--toolbar"
           >
             <span
-              className="Card__TimeRangeLabel-v5r71h-9 ebXFRr"
+              className="card--toolbar-timerange-lable Card__TimeRangeLabel-v5r71h-5 bSwbuP"
               id="timeRange"
             />
             <div
               aria-expanded={false}
               aria-haspopup={true}
               aria-label="Menu"
-              className="Card__StyledOverflowMenu-v5r71h-8 gdmWMK bx--overflow-menu"
+              className="card--toolbar-action bx--overflow-menu"
               onClick={[Function]}
               onClose={[Function]}
               onKeyDown={[Function]}
@@ -770,7 +821,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                 aria-label="open and close list of options"
                 className="bx--overflow-menu__icon"
                 focusable="false"
-                height={16}
+                height={20}
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 preserveAspectRatio="xMidYMid meet"
@@ -780,12 +831,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                     "willChange": "transform",
                   }
                 }
-                viewBox="0 0 16 16"
-                width={16}
+                viewBox="0 0 32 32"
+                width={20}
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M8 11L3 6l.7-.7L8 9.6l4.3-4.3.7.7z"
+                  d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
+                />
+                <path
+                  d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
+                />
+                <path
+                  d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
                 />
                 <title>
                   open and close list of options
@@ -795,10 +852,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
           </div>
         </div>
         <div
-          className="Card__CardContent-v5r71h-2 cxdfjl"
+          className="Card__CardContent-v5r71h-1 fabdLf"
         >
           <div
-            className="Card__EmptyMessageWrapper-v5r71h-6 fDejXV"
+            className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
           >
             No data is available for this time range.
           </div>
@@ -821,27 +878,27 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
         id="facilitycard-size-gallery-MEDIUM"
       >
         <div
-          className="Card__CardHeader-v5r71h-1 dYbAjC"
+          className="card--header"
         >
           <span
-            className="Card__CardTitle-v5r71h-3 ivROVb"
+            className="card--title"
             title="Card Title"
           >
             Card Title
              
           </span>
           <div
-            className="bx--toolbar Card__StyledToolbar-v5r71h-4 iZXuG"
+            className="bx--toolbar card--toolbar"
           >
             <span
-              className="Card__TimeRangeLabel-v5r71h-9 ebXFRr"
+              className="card--toolbar-timerange-lable Card__TimeRangeLabel-v5r71h-5 bSwbuP"
               id="timeRange"
             />
             <div
               aria-expanded={false}
               aria-haspopup={true}
               aria-label="Menu"
-              className="Card__StyledOverflowMenu-v5r71h-8 gdmWMK bx--overflow-menu"
+              className="card--toolbar-action bx--overflow-menu"
               onClick={[Function]}
               onClose={[Function]}
               onKeyDown={[Function]}
@@ -853,7 +910,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                 aria-label="open and close list of options"
                 className="bx--overflow-menu__icon"
                 focusable="false"
-                height={16}
+                height={20}
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 preserveAspectRatio="xMidYMid meet"
@@ -863,12 +920,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                     "willChange": "transform",
                   }
                 }
-                viewBox="0 0 16 16"
-                width={16}
+                viewBox="0 0 32 32"
+                width={20}
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M8 11L3 6l.7-.7L8 9.6l4.3-4.3.7.7z"
+                  d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
+                />
+                <path
+                  d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
+                />
+                <path
+                  d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
                 />
                 <title>
                   open and close list of options
@@ -878,10 +941,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
           </div>
         </div>
         <div
-          className="Card__CardContent-v5r71h-2 kpEDvX"
+          className="Card__CardContent-v5r71h-1 gTExVy"
         >
           <div
-            className="Card__EmptyMessageWrapper-v5r71h-6 fDejXV"
+            className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
           >
             No data is available for this time range.
           </div>
@@ -904,27 +967,27 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
         id="facilitycard-size-gallery-WIDE"
       >
         <div
-          className="Card__CardHeader-v5r71h-1 dYbAjC"
+          className="card--header"
         >
           <span
-            className="Card__CardTitle-v5r71h-3 ivROVb"
+            className="card--title"
             title="Card Title"
           >
             Card Title
              
           </span>
           <div
-            className="bx--toolbar Card__StyledToolbar-v5r71h-4 iZXuG"
+            className="bx--toolbar card--toolbar"
           >
             <span
-              className="Card__TimeRangeLabel-v5r71h-9 ebXFRr"
+              className="card--toolbar-timerange-lable Card__TimeRangeLabel-v5r71h-5 bSwbuP"
               id="timeRange"
             />
             <div
               aria-expanded={false}
               aria-haspopup={true}
               aria-label="Menu"
-              className="Card__StyledOverflowMenu-v5r71h-8 gdmWMK bx--overflow-menu"
+              className="card--toolbar-action bx--overflow-menu"
               onClick={[Function]}
               onClose={[Function]}
               onKeyDown={[Function]}
@@ -936,7 +999,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                 aria-label="open and close list of options"
                 className="bx--overflow-menu__icon"
                 focusable="false"
-                height={16}
+                height={20}
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 preserveAspectRatio="xMidYMid meet"
@@ -946,12 +1009,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                     "willChange": "transform",
                   }
                 }
-                viewBox="0 0 16 16"
-                width={16}
+                viewBox="0 0 32 32"
+                width={20}
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M8 11L3 6l.7-.7L8 9.6l4.3-4.3.7.7z"
+                  d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
+                />
+                <path
+                  d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
+                />
+                <path
+                  d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
                 />
                 <title>
                   open and close list of options
@@ -961,10 +1030,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
           </div>
         </div>
         <div
-          className="Card__CardContent-v5r71h-2 kpEDvX"
+          className="Card__CardContent-v5r71h-1 gTExVy"
         >
           <div
-            className="Card__EmptyMessageWrapper-v5r71h-6 fDejXV"
+            className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
           >
             No data is available for this time range.
           </div>
@@ -987,27 +1056,27 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
         id="facilitycard-size-gallery-LARGE"
       >
         <div
-          className="Card__CardHeader-v5r71h-1 dYbAjC"
+          className="card--header"
         >
           <span
-            className="Card__CardTitle-v5r71h-3 ivROVb"
+            className="card--title"
             title="Card Title"
           >
             Card Title
              
           </span>
           <div
-            className="bx--toolbar Card__StyledToolbar-v5r71h-4 iZXuG"
+            className="bx--toolbar card--toolbar"
           >
             <span
-              className="Card__TimeRangeLabel-v5r71h-9 ebXFRr"
+              className="card--toolbar-timerange-lable Card__TimeRangeLabel-v5r71h-5 bSwbuP"
               id="timeRange"
             />
             <div
               aria-expanded={false}
               aria-haspopup={true}
               aria-label="Menu"
-              className="Card__StyledOverflowMenu-v5r71h-8 gdmWMK bx--overflow-menu"
+              className="card--toolbar-action bx--overflow-menu"
               onClick={[Function]}
               onClose={[Function]}
               onKeyDown={[Function]}
@@ -1019,7 +1088,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                 aria-label="open and close list of options"
                 className="bx--overflow-menu__icon"
                 focusable="false"
-                height={16}
+                height={20}
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 preserveAspectRatio="xMidYMid meet"
@@ -1029,12 +1098,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                     "willChange": "transform",
                   }
                 }
-                viewBox="0 0 16 16"
-                width={16}
+                viewBox="0 0 32 32"
+                width={20}
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M8 11L3 6l.7-.7L8 9.6l4.3-4.3.7.7z"
+                  d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
+                />
+                <path
+                  d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
+                />
+                <path
+                  d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
                 />
                 <title>
                   open and close list of options
@@ -1044,10 +1119,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
           </div>
         </div>
         <div
-          className="Card__CardContent-v5r71h-2 cxdfjl"
+          className="Card__CardContent-v5r71h-1 fabdLf"
         >
           <div
-            className="Card__EmptyMessageWrapper-v5r71h-6 fDejXV"
+            className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
           >
             No data is available for this time range.
           </div>
@@ -1070,27 +1145,27 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
         id="facilitycard-size-gallery-XLARGE"
       >
         <div
-          className="Card__CardHeader-v5r71h-1 dYbAjC"
+          className="card--header"
         >
           <span
-            className="Card__CardTitle-v5r71h-3 ivROVb"
+            className="card--title"
             title="Card Title"
           >
             Card Title
              
           </span>
           <div
-            className="bx--toolbar Card__StyledToolbar-v5r71h-4 iZXuG"
+            className="bx--toolbar card--toolbar"
           >
             <span
-              className="Card__TimeRangeLabel-v5r71h-9 ebXFRr"
+              className="card--toolbar-timerange-lable Card__TimeRangeLabel-v5r71h-5 bSwbuP"
               id="timeRange"
             />
             <div
               aria-expanded={false}
               aria-haspopup={true}
               aria-label="Menu"
-              className="Card__StyledOverflowMenu-v5r71h-8 gdmWMK bx--overflow-menu"
+              className="card--toolbar-action bx--overflow-menu"
               onClick={[Function]}
               onClose={[Function]}
               onKeyDown={[Function]}
@@ -1102,7 +1177,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                 aria-label="open and close list of options"
                 className="bx--overflow-menu__icon"
                 focusable="false"
-                height={16}
+                height={20}
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 preserveAspectRatio="xMidYMid meet"
@@ -1112,12 +1187,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                     "willChange": "transform",
                   }
                 }
-                viewBox="0 0 16 16"
-                width={16}
+                viewBox="0 0 32 32"
+                width={20}
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M8 11L3 6l.7-.7L8 9.6l4.3-4.3.7.7z"
+                  d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
+                />
+                <path
+                  d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
+                />
+                <path
+                  d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
                 />
                 <title>
                   open and close list of options
@@ -1127,10 +1208,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
           </div>
         </div>
         <div
-          className="Card__CardContent-v5r71h-2 cxdfjl"
+          className="Card__CardContent-v5r71h-1 fabdLf"
         >
           <div
-            className="Card__EmptyMessageWrapper-v5r71h-6 fDejXV"
+            className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
           >
             No data is available for this time range.
           </div>
@@ -1197,27 +1278,27 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
         id="facilitycard-empty"
       >
         <div
-          className="Card__CardHeader-v5r71h-1 dYbAjC"
+          className="card--header"
         >
           <span
-            className="Card__CardTitle-v5r71h-3 ivROVb"
+            className="card--title"
             title="Card Title"
           >
             Card Title
              
           </span>
           <div
-            className="bx--toolbar Card__StyledToolbar-v5r71h-4 iZXuG"
+            className="bx--toolbar card--toolbar"
           >
             <span
-              className="Card__TimeRangeLabel-v5r71h-9 ebXFRr"
+              className="card--toolbar-timerange-lable Card__TimeRangeLabel-v5r71h-5 bSwbuP"
               id="timeRange"
             />
             <div
               aria-expanded={false}
               aria-haspopup={true}
               aria-label="Menu"
-              className="Card__StyledOverflowMenu-v5r71h-8 gdmWMK bx--overflow-menu"
+              className="card--toolbar-action bx--overflow-menu"
               onClick={[Function]}
               onClose={[Function]}
               onKeyDown={[Function]}
@@ -1229,7 +1310,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                 aria-label="open and close list of options"
                 className="bx--overflow-menu__icon"
                 focusable="false"
-                height={16}
+                height={20}
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 preserveAspectRatio="xMidYMid meet"
@@ -1239,12 +1320,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                     "willChange": "transform",
                   }
                 }
-                viewBox="0 0 16 16"
-                width={16}
+                viewBox="0 0 32 32"
+                width={20}
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M8 11L3 6l.7-.7L8 9.6l4.3-4.3.7.7z"
+                  d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
+                />
+                <path
+                  d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
+                />
+                <path
+                  d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
                 />
                 <title>
                   open and close list of options
@@ -1254,10 +1341,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
           </div>
         </div>
         <div
-          className="Card__CardContent-v5r71h-2 kpEDvX"
+          className="Card__CardContent-v5r71h-1 gTExVy"
         >
           <div
-            className="Card__EmptyMessageWrapper-v5r71h-6 fDejXV"
+            className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
           >
             No data is available for this time range.
           </div>
@@ -1324,24 +1411,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
         id="facilitycard-with-loading"
       >
         <div
-          className="Card__CardHeader-v5r71h-1 dYbAjC"
+          className="card--header"
         >
           <span
-            className="Card__CardTitle-v5r71h-3 ivROVb"
+            className="card--title"
             title="Card Title"
           >
             Card Title
              
           </span>
           <div
-            className="bx--toolbar Card__StyledToolbar-v5r71h-4 iZXuG"
+            className="bx--toolbar card--toolbar"
           />
         </div>
         <div
-          className="Card__CardContent-v5r71h-2 kpEDvX"
+          className="Card__CardContent-v5r71h-1 gTExVy"
         >
           <div
-            className="Card__SkeletonWrapper-v5r71h-5 jhvhVs"
+            className="Card__SkeletonWrapper-v5r71h-2 fqjitN"
           >
             <div>
               <p
@@ -1433,27 +1520,27 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
         id="facilitycard-with-loading"
       >
         <div
-          className="Card__CardHeader-v5r71h-1 dYbAjC"
+          className="card--header"
         >
           <span
-            className="Card__CardTitle-v5r71h-3 ivROVb"
+            className="card--title"
             title="Card Title"
           >
             Card Title
              
           </span>
           <div
-            className="bx--toolbar Card__StyledToolbar-v5r71h-4 iZXuG"
+            className="bx--toolbar card--toolbar"
           >
             <span
-              className="Card__TimeRangeLabel-v5r71h-9 ebXFRr"
+              className="card--toolbar-timerange-lable Card__TimeRangeLabel-v5r71h-5 bSwbuP"
               id="timeRange"
             />
             <div
               aria-expanded={false}
               aria-haspopup={true}
               aria-label="Menu"
-              className="Card__StyledOverflowMenu-v5r71h-8 gdmWMK bx--overflow-menu"
+              className="card--toolbar-action bx--overflow-menu"
               onClick={[Function]}
               onClose={[Function]}
               onKeyDown={[Function]}
@@ -1465,7 +1552,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                 aria-label="open and close list of options"
                 className="bx--overflow-menu__icon"
                 focusable="false"
-                height={16}
+                height={20}
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 preserveAspectRatio="xMidYMid meet"
@@ -1475,12 +1562,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                     "willChange": "transform",
                   }
                 }
-                viewBox="0 0 16 16"
-                width={16}
+                viewBox="0 0 32 32"
+                width={20}
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M8 11L3 6l.7-.7L8 9.6l4.3-4.3.7.7z"
+                  d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
+                />
+                <path
+                  d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
+                />
+                <path
+                  d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
                 />
                 <title>
                   open and close list of options
@@ -1490,7 +1583,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
           </div>
         </div>
         <div
-          className="Card__CardContent-v5r71h-2 kpEDvX"
+          className="Card__CardContent-v5r71h-1 gTExVy"
         />
       </div>
     </div>
