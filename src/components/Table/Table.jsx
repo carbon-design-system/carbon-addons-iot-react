@@ -259,17 +259,24 @@ export const defaultProps = baseProps => ({
     clearAllFilters: 'Clear all filters',
     columnSelectionButtonAria: 'Column Selection',
     filterButtonAria: 'Filters',
+    searchLabel: 'Search',
     searchPlaceholder: 'Search',
     clearFilterAria: 'Clear filter',
     filterAria: 'Filter',
     openMenuAria: 'Open menu',
     closeMenuAria: 'Close menu',
     clearSelectionAria: 'Clear selection',
+    batchCancel: 'Cancel',
+    itemsSelected: 'items selected',
+    itemSelected: 'item selected',
     /** empty state */
     emptyMessage: 'There is no data',
     emptyMessageWithFilters: 'No results match the current filters',
     emptyButtonLabel: 'Create some data',
     emptyButtonLabelWithFilters: 'Clear all filters',
+    filterNone: 'Unsort rows by this header',
+    filterAscending: 'Sort rows by this header in ascending order',
+    filterDescending: 'Sort rows by this header in descending order',
   },
 });
 
@@ -328,10 +335,19 @@ const Table = props => {
     <StyledTableContainer style={style} className={className}>
       <TableToolbar
         tableId={id}
-        clearAllFiltersText={i18n.clearAllFilters}
-        columnSelectionText={i18n.columnSelectionButtonAria}
-        filterText={i18n.filterButtonAria}
-        searchPlaceholderText={i18n.searchPlaceholder}
+        i18n={{
+          clearAllFilters: i18n.clearAllFilters,
+          columnSelectionButtonAria: i18n.columnSelectionButtonAria,
+          filterButtonAria: i18n.filterButtonAria,
+          searchLabel: i18n.searchLabel,
+          searchPlaceholder: i18n.searchPlaceholder,
+          batchCancel: i18n.batchCancel,
+          itemsSelected: i18n.itemsSelected,
+          itemSelected: i18n.itemSelected,
+          filterNone: i18n.filterNone,
+          filterAscending: i18n.filterAscending,
+          filterDescending: i18n.filterDescending,
+        }}
         actions={pick(
           actions.toolbar,
           'onCancelBatchAction',
