@@ -13,7 +13,7 @@ import { TimeSeriesCardPropTypes, CardPropTypes } from '../../constants/PropType
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 import Card from '../Card/Card';
 
-import { generateSampleValues } from './timeSeriesUtils';
+import { generateSampleValues, isValuesEmpty } from './timeSeriesUtils';
 
 const LineChartWrapper = styled.div`
   padding-left: 16px;
@@ -28,6 +28,9 @@ const LineChartWrapper = styled.div`
     .chart-wrapper g.x.axis g.tick text {
       transform: rotateY(0);
       text-anchor: initial !important;
+    }
+    .chart-wrapper svg.chart-svg g.x.grid g.tick line {
+      stroke: #dcdcdc;
     }
     .expand-btn {
       display: ${props => (props.isEditable ? 'none' : '')};
@@ -136,6 +139,8 @@ const TimeSeriesCard = ({
   const values = isEditable
     ? memoizedGenerateSampleValues(series, timeDataSourceId, interval)
     : valuesProp;
+
+  const isAllValuesEmpty = isValuesEmpty(valuesProp, timeDataSourceId);
 
   const valueSort = useMemo(
     () =>
@@ -256,9 +261,9 @@ const TimeSeriesCard = ({
             size={size}
             {...others}
             isEditable={isEditable}
-            isEmpty={isEmpty(values)}
+            isEmpty={isAllValuesEmpty}
           >
-            {!others.isLoading && !isEmpty(values) ? (
+            {!others.isLoading && !isAllValuesEmpty ? (
               <LineChartWrapper
                 size={size}
                 contentHeight={height}
