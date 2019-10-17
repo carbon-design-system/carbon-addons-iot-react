@@ -37,3 +37,12 @@ A clear and concise description of what you expected to happen.
 If applicable, add screenshots to help explain your problem.
 
 Add any other context about the problem here.
+
+### Specific timeline issues / requests
+
+Do you want this work within a specific time period? Is it related to an
+upcoming release?
+
+_NB: The core contributors will try to work with your timeline, but it's not
+guaranteed. The earlier you make a request in advance of a desired delivery
+date, the better!_
