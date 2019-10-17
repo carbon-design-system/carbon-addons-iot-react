@@ -1,20 +1,68 @@
-# Setting up the repository
+# Contributing
 
-if you don't already have yarn on your Mac then '**brew install yarn**' first
+## Prerequisites
 
-```bash
+Before contributing to `carbon-addons-iot-react`, you should make sure you have the following tools
+installed:
+
+- [Node.js](https://nodejs.org/en/download/) v10 or above here or follow their
+  installation through a package manager
+  [here](https://nodejs.org/en/download/package-manager/))
+  - If you're on macOS, we recommend using
+    [`nvm`](https://github.com/nvm-sh/nvm) to help manage different versions of
+    Node.js [nvm](https://github.com/nvm-sh/nvm/blob/master/README.md) as your
+    version manager for Node.
+- Git
+- [Yarn](https://yarnpkg.com/en/docs/install)
+
+You'll also need a code editor to make changes. There are many to
+choose from but some popular options are
+[VSCode](https://code.visualstudio.com/), [Atom](https://atom.io), and
+[Sublime](https://www.sublimetext.com/).
+
+With that all in place, you're ready to start contributing!
+
+### Developing on Windows 10
+
+To get a Windows environment set up for contributing to this codebase, you'll need to set up the Windows Subsystem for Linux (WSL).
+
+To set up WSL, follow [this guide published by the Carbon team](https://github.com/carbon-design-system/carbon/blob/master/docs/guides/setup/windows.md). The steps should be the same, except that you'll be cloning this repository instead of the Carbon repository.
+
+```sh
+git clone git@github.com:IBM/carbon-addons-iot-react.git
+```
+
+or with `https`:
+
+```sh
+git clone https://github.com/IBM/carbon-addons-iot-react.git
+```
+
+## Build and start the development server
+
+From the root directory of the project, run:
+
+```sh
+# To install the project's dependencies
 yarn install
 ```
 
-## Exploring components
+To get your development server running and to start coding, run:
 
-A Storybook is provided to explore the components and their documentation. To start the storybook server, run: `yarn start` then open a browser to <http://localhost:3000>.
+```sh
+yarn start
+```
 
-## Adding a new component
+This will start a development server where you can see any changes you are
+making to components in our react components Storybook.
 
-You're ready to add a new component to this library, THANK YOU! However, this is only a [PRESENTATIONAL](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0) component library. Please do not add components with any dependencies on internationalization libraries, redux, or react-router.
+Once it's done building, you can edit source code or create new components. The
+system is set up to automatically bundle your changes/additions. Visit
+http://localhost:3000 to see the changes happen on the fly.
 
-## For all new components and features
+## Adding a new component or feature
+
+You're ready to add a new component or feature to this library, THANK YOU! However, this is only a [_presentational_](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0) component library. Please do not add components with any dependencies on internationalization libraries, redux, react-router, etc.
 
 For a component request or feature enhancement to be considered ‘ready to implement’, a design spec and usage guidance should be provided in the issue. Associated code pull requests will not be merged without these artifacts.
 
@@ -30,7 +78,7 @@ Any change to `dependencies` (including version bumps) will impact consumers tha
 
 Commits must follow the [conventional commit](https://www.conventionalcommits.org/en/v1.0.0-beta.2/#summary) format. You won't be able to create a commit unless you follow those rules. The [recent commits in the repository](https://github.com/IBM/carbon-addons-iot-react/commits/master) show examples of the format and how it's generally used.
 
-Commits are not required to contain a link to an issue. If you choose to do so, you can avoid the 72 character limit by placing the link in the body of the commit. Example:
+Commits are preferred but not required to contain a link to an issue. If you choose to link commits to an issue, the 72 character limit can be avoided by placing the link in the body of the commit. Example:
 
 ```sh
 git commit -m "fix(table): columns need unique ids" -m "#123"
