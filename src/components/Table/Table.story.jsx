@@ -7,7 +7,6 @@ import styled from 'styled-components';
 import Arrow from '@carbon/icons-react/lib/arrow--right/20';
 import Add from '@carbon/icons-react/lib/add/20';
 import Delete from '@carbon/icons-react/lib/delete/16';
-import { iconAddSolid, iconDelete } from 'carbon-icons';
 
 import { getSortedData } from '../../utils/componentUtilityFunctions';
 import FullWidthWrapper from '../../internal/FullWidthWrapper';
@@ -266,14 +265,14 @@ export const initialState = {
         : null,
       {
         id: 'Add',
-        renderIcon: iconAddSolid,
+        renderIcon: Add,
         iconDescription: 'Add',
         labelText: 'Add',
         isOverflow: true,
       },
       {
         id: 'delete',
-        renderIcon: iconDelete,
+        renderIcon: Delete,
         labelText: 'Delete',
         isOverflow: true,
         iconDescription: 'Delete',
@@ -752,14 +751,14 @@ storiesOf('Watson IoT|Table', module)
               : null,
             {
               id: 'add',
-              renderIcon: iconAddSolid,
+              renderIcon: Add,
               iconDescription: 'Add',
               labelText: 'Add',
               isOverflow: true,
             },
             {
               id: 'delete',
-              renderIcon: iconDelete,
+              renderIcon: Delete,
               iconDescription: 'Delete',
               labelText: 'Delete',
               isOverflow: true,
@@ -1340,6 +1339,7 @@ storiesOf('Watson IoT|Table', module)
           selectRowAria: text('i18n.selectRowAria', '__Select row__'),
           /** toolbar */
           clearAllFilters: text('i18n.clearAllFilters', '__Clear all filters__'),
+          searchLabel: text('i18n.searchLabel', '__Search__'),
           searchPlaceholder: text('i18n.searchPlaceholder', '__Search__'),
           columnSelectionButtonAria: text('i18n.columnSelectionButtonAria', '__Column Selection__'),
           filterButtonAria: text('i18n.filterButtonAria', '__Filters__'),
@@ -1348,6 +1348,12 @@ storiesOf('Watson IoT|Table', module)
           openMenuAria: text('i18n.openMenuAria', '__Open menu__'),
           closeMenuAria: text('i18n.closeMenuAria', '__Close menu__'),
           clearSelectionAria: text('i18n.clearSelectionAria', '__Clear selection__'),
+          batchCancel: text('i18n.batchCancel', '__Cancel__'),
+          itemsSelected: text('i18n.itemsSelected', '__items selected__'),
+          itemSelected: text('i18n.itemSelected', '__item selected__'),
+          filterNone: text('i18n.filterNone', '__filterNone__'),
+          filterAscending: text('i18n.filterAscending', '__filterAscending__'),
+          filterDescending: text('i18n.filterDescending', '__filterDescending__'),
           /** empty state */
           emptyMessage: text('i18n.emptyMessage', '__There is no data__'),
           emptyMessageWithFilters: text(

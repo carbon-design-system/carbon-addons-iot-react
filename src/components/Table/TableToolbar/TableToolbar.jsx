@@ -4,6 +4,7 @@ import IconColumnSelector from '@carbon/icons-react/lib/column/20';
 import IconFilter from '@carbon/icons-react/lib/filter/20';
 import { DataTable, Button } from 'carbon-components-react';
 import styled from 'styled-components';
+import { sortStates } from 'carbon-components-react/lib/components/DataTable/state/sorting';
 
 import { TableSearchPropTypes } from '../TablePropTypes';
 // import { COLORS } from '../../../styles/styles';
@@ -80,10 +81,19 @@ const propTypes = {
   }).isRequired,
 
   /** internationalized labels */
-  searchPlaceholderText: PropTypes.string,
-  clearAllFiltersText: PropTypes.string,
-  columnSelectionText: PropTypes.string,
-  filterText: PropTypes.string,
+  i18n: PropTypes.shape({
+    clearAllFilters: PropTypes.string,
+    columnSelectionButtonAria: PropTypes.string,
+    filterButtonAria: PropTypes.string,
+    searchLabel: PropTypes.string,
+    searchPlaceholder: PropTypes.string,
+    batchCancel: PropTypes.string,
+    itemsSelected: PropTypes.string,
+    itemSelected: PropTypes.string,
+    filterNone: PropTypes.string,
+    filterAscending: PropTypes.string,
+    filterDescending: PropTypes.string,
+  }),
   /**
    * Action callbacks to update tableState
    */
@@ -122,19 +132,57 @@ const propTypes = {
 };
 
 const defaultProps = {
-  clearAllFiltersText: 'Clear all filters',
-  searchPlaceholderText: 'Search',
-  columnSelectionText: 'Column selection',
-  filterText: 'Filter',
+  i18n: {
+    clearAllFilters: 'Clear all filters',
+    columnSelectionButtonAria: 'Column selection',
+    filterButtonAria: 'Filter',
+    searchLabel: 'Search',
+    searchPlaceholder: 'Search',
+    batchCancel: 'Cancel',
+    itemsSelected: 'items selected',
+    itemSelected: 'item selected',
+    filterNone: 'Unsort rows by this header',
+    filterAscending: 'Sort rows by this header in ascending order',
+    filterDescending: 'Sort rows by this header in descending order',
+  },
+};
+
+const translateWithId = (i18n, id, state) => {
+  const { batchCancel, itemsSelected, itemSelected } = i18n;
+  switch (id) {
+    case 'carbon.table.batch.cancel':
+      return batchCancel;
+    case 'carbon.table.batch.items.selected':
+      return `${state.totalSelected} ${itemsSelected}`;
+    case 'carbon.table.batch.item.selected':
+      return `${state.totalSelected} ${itemSelected}`;
+    case 'carbon.table.toolbar.search.label':
+      return i18n.searchLabel;
+    case 'carbon.table.toolbar.search.placeholder':
+      return i18n.searchPlaceholder;
+    case 'carbon.table.header.icon.description':
+      if (state.isSortHeader) {
+        // When transitioning, we know that the sequence of states is as follows:
+        // NONE -> ASC -> DESC -> NONE
+        if (state.sortDirection === sortStates.NONE) {
+          return i18n.filterAscending;
+        }
+        if (state.sortDirection === sortStates.ASC) {
+          return i18n.filterDescending;
+        }
+
+        return i18n.filterNone;
+      }
+      return i18n.filterAscending;
+    default:
+      return '';
+  }
 };
 
 const TableToolbar = ({
   tableId,
   className,
-  clearAllFiltersText,
-  searchPlaceholderText,
-  columnSelectionText,
-  filterText,
+  i18n,
   options: { hasColumnSelection, hasFilter, hasSearch, hasRowSelection },
   actions: {
     onCancelBatchAction,
@@ -159,6 +207,7 @@ const TableToolbar = ({
       onCancel={onCancelBatchAction}
       shouldShowBatchActions={hasRowSelection === 'multi' && totalSelected > 0}
       totalSelected={totalSelected}
+      translateWithId={(...args) => translateWithId(i18n, ...args)}
     >
       {batchActions.map(({ id, labelText, ...others }) => (
         <TableBatchAction key={id} onClick={() => onApplyBatchAction(id)} {...others}>
@@ -169,9 +218,9 @@ const TableToolbar = ({
     {hasSearch ? (
       <StyledToolbarSearch
         {...search}
+        translateWithId={(...args) => translateWithId(i18n, ...args)}
         id={`${tableId}-toolbar-search`}
         onChange={event => onApplySearch(event.currentTarget ? event.currentTarget.value : '')}
-        placeHolderText={searchPlaceholderText}
         disabled={isDisabled}
       />
     ) : null}
@@ -179,17 +228,17 @@ const TableToolbar = ({
       {customToolbarContent || null}
       {totalFilters > 0 ? (
         <Button kind="secondary" onClick={onClearAllFilters}>
-          {clearAllFiltersText}
+          {i18n.clearAllFilters}
         </Button>
       ) : null}
       {hasColumnSelection ? (
         <ToolbarSVGWrapper onClick={onToggleColumnSelection}>
-          <IconColumnSelector description={columnSelectionText} />
+          <IconColumnSelector description={i18n.columnSelectionButtonAria} />
         </ToolbarSVGWrapper>
       ) : null}
       {hasFilter ? (
         <ToolbarSVGWrapper onClick={onToggleFilter}>
-          <IconFilter description={filterText} />
+          <IconFilter description={i18n.filterButtonAria} />
         </ToolbarSVGWrapper>
       ) : null}
     </StyledTableToolbarContent>
