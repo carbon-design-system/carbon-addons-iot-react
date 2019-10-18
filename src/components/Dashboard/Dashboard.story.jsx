@@ -5,6 +5,7 @@ import uuidv1 from 'uuid/v1';
 import { text, boolean } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
+
 /*
 import { Button } from 'carbon-components-react';
 import moment from 'moment';
@@ -717,6 +718,27 @@ storiesOf('Dashboard (Experimental)', module)
               ],
             },
             values: data,
+          },
+        ]}
+      />
+    );
+  })
+  .add('full screen image card', () => {
+    const content = {
+      src: imageFile,
+      alt: 'Sample image',
+      zoomMax: 10,
+    };
+    return (
+      <Dashboard
+        title="Expandable card, click expand to expand image"
+        cards={[
+          {
+            title: 'Expanded card',
+            id: `expandedcard`,
+            size: CARD_SIZES.LARGE,
+            type: CARD_TYPES.IMAGE,
+            content,
           },
         ]}
       />

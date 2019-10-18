@@ -38,6 +38,7 @@ const ImageCard = ({
   size,
   onCardAction,
   isEditable,
+  isExpanded,
   isLoading,
   i18n: { loadingDataLabel, ...otherLabels },
   ...others
@@ -57,6 +58,7 @@ const ImageCard = ({
       onCardAction={onCardAction}
       availableActions={availableActions}
       isLoading={isCardLoading} // only show the spinner if we don't have an image
+      isExpanded={isExpanded}
       {...others}
       i18n={otherLabels}
     >
@@ -70,6 +72,7 @@ const ImageCard = ({
             ) : content && src ? (
               <ImageHotspots
                 {...content}
+                isExpanded={isExpanded}
                 hotspots={hotspots}
                 isHotspotDataLoading={isLoading}
                 loadingHotspotsLabel={loadingDataLabel}

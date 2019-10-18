@@ -237,7 +237,8 @@ const determinePrecisionAndValue = (precision, value) => {
 const TableCard = ({
   id,
   title,
-  content: { columns = [], showHeader, expandedRows, sort, thresholds, emptyMessage, isExpanded },
+  isExpanded,
+  content: { columns = [], showHeader, expandedRows, sort, thresholds, emptyMessage },
   size,
   onCardAction,
   values: data,
@@ -696,11 +697,14 @@ const TableCard = ({
       onCardAction={onCardAction}
       availableActions={{ expand: isExpandable }}
       isEditable={isEditable}
+      isExpanded={isExpanded}
       i18n={i18n}
       {...others}
     >
       {({ height }) => {
-        const numberOfRowsPerPage = height ? Math.floor((height - 160) / 40) : 10;
+        const numberOfRowsPerPage = !isNil(height)
+          ? Math.floor((height - (48 + 2 * 40 + 32)) / 40)
+          : 10;
         return (
           <StyledStatefulTable
             columns={columnsToRender}
