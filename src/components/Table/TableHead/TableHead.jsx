@@ -178,6 +178,7 @@ const TableHead = ({
                 }
               }}
               sortDirection={hasSort ? sort.direction : 'NONE'}
+              className={`bx--table-header-label-${matchingColumnMeta.align}`}
             >
               <TableCellRenderer>{matchingColumnMeta.name}</TableCellRenderer>
             </StyledCustomTableHeader>

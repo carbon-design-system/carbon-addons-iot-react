@@ -82,6 +82,7 @@ export const TableColumnsPropTypes = PropTypes.arrayOf(
     name: PropTypes.string.isRequired,
     isSortable: PropTypes.bool,
     width: PropTypes.string, // ex: 150px, or 2rem
+    align: PropTypes.string, // ex: start, center, end
     /** for each column you can register a render callback function that is called with this object payload
      * {
      *    value: PropTypes.any (current cell value),
