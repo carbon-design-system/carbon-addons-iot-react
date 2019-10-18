@@ -16,7 +16,6 @@ import { determineCardRange, compareGrains } from '../../utils/cardUtilityFuncti
 
 const CachedCardRenderer = ({
   style, //eslint-disable-line
-  onCardAction, //eslint-disable-line
   ...others
 }) => {
   const [cachedStyle, setCachedStyle] = useState(style);
@@ -27,8 +26,7 @@ const CachedCardRenderer = ({
     },
     [style] // need to do a deep compare on style
   );
-  const cachedOnCardAction = useCallback(onCardAction, []);
-  return <CardRenderer {...others} onCardAction={cachedOnCardAction} style={cachedStyle} />;
+  return <CardRenderer {...others} style={cachedStyle} />;
 };
 
 /** Asynchronous reusable function to load Card Data */
@@ -75,6 +73,8 @@ const CardRenderer = React.memo(
      * And which data range is being requested.
      */
     const [card, setCard] = useState(cardProp);
+    // keep track of the expanded card id
+    const [isExpanded, setIsExpanded] = useState();
 
     // If the dashboard has triggered a bulk load, refetch the data
     useEffect(
@@ -108,9 +108,8 @@ const CardRenderer = React.memo(
     );
 
     const cachedExpandedStyle = useMemo(
-      () =>
-        card.isExpanded ? merge({ height: '100%', width: '100%', padding: '50px' }, style) : style,
-      [card && card.isExpanded, style] // eslint-disable-line
+      () => (isExpanded ? { height: '100%', width: '100%', padding: '50px' } : style),
+      [isExpanded, style] // eslint-disable-line
     );
 
     /**
@@ -138,20 +137,32 @@ const CardRenderer = React.memo(
           };
           // Then trigger a load of the card data
           loadCardData(cardWithUpdatedRange, setCard, onFetchData, timeGrain);
+        } else if (actionType === 'OPEN_EXPANDED_CARD') {
+          setIsExpanded(true);
         }
-        onCardAction(id, actionType, payload);
+
+        // close expanded card
+        if (actionType === 'CLOSE_EXPANDED_CARD') {
+          setIsExpanded(false);
+        }
       },
-      [card, onCardAction, onFetchData, timeGrain]
+      [card, onFetchData, timeGrain]
     );
 
     return (
-      <div key={card.id} {...gridProps} style={cachedExpandedStyle}>
+      <div
+        key={card.id}
+        {...gridProps}
+        className={isExpanded ? 'bx--modal is-visible' : gridProps.className}
+        style={cachedExpandedStyle}
+      >
         {type === CARD_TYPES.VALUE ? (
           <ValueCard
             {...card}
             key={card.id}
             availableActions={cachedActions}
             dataSource={dataSource}
+            isExpanded={isExpanded}
             type={type}
             i18n={i18n}
             isEditable={isEditable}
@@ -168,6 +179,7 @@ const CardRenderer = React.memo(
             key={card.id}
             availableActions={cachedActions}
             dataSource={dataSource}
+            isExpanded={isExpanded}
             type={type}
             i18n={i18n}
             isEditable={isEditable}
@@ -184,6 +196,7 @@ const CardRenderer = React.memo(
             key={card.id}
             availableActions={cachedActions}
             dataSource={dataSource}
+            isExpanded={isExpanded}
             type={type}
             i18n={i18n}
             isEditable={isEditable}
@@ -200,6 +213,7 @@ const CardRenderer = React.memo(
             key={card.id}
             availableActions={cachedActions}
             dataSource={dataSource}
+            isExpanded={isExpanded}
             type={type}
             i18n={i18n}
             isEditable={isEditable}
@@ -216,6 +230,7 @@ const CardRenderer = React.memo(
             key={card.id}
             availableActions={cachedActions}
             dataSource={dataSource}
+            isExpanded={isExpanded}
             type={type}
             i18n={i18n}
             isEditable={isEditable}
@@ -232,6 +247,7 @@ const CardRenderer = React.memo(
             key={card.id}
             availableActions={cachedActions}
             dataSource={dataSource}
+            isExpanded={isExpanded}
             type={type}
             i18n={i18n}
             isEditable={isEditable}
@@ -248,6 +264,7 @@ const CardRenderer = React.memo(
             key={card.id}
             availableActions={cachedActions}
             dataSource={dataSource}
+            isExpanded={isExpanded}
             type={type}
             i18n={i18n}
             isEditable={isEditable}

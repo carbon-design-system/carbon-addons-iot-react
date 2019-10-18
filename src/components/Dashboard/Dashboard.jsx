@@ -301,8 +301,6 @@ const Dashboard = ({
   timeGrain,
 }) => {
   const [breakpoint, setBreakpoint] = useState('lg');
-  // keep track of the expanded card id
-  const [expandedId, setExpandedId] = useState();
 
   // Keep track of whether any cards are loading or not, (doesn't need to be in state)
   const cardsLoadingRef = useRef();
@@ -336,20 +334,6 @@ const Dashboard = ({
     },
     [onFetchData, cards.length] // eslint-disable-line
   );
-
-  // onCardAction, should have the default ones by the dashboard eg. expand other are merged from the prop
-  const handleCardAction = (id, type) => {
-    // expand card
-    if (type === 'OPEN_EXPANDED_CARD') {
-      setExpandedId(id);
-    }
-
-    // close expanded card
-    if (type === 'CLOSE_EXPANDED_CARD') {
-      setExpandedId(null);
-    }
-    return null;
-  };
 
   const generatedLayouts = useMemo(
     () =>
@@ -397,7 +381,6 @@ const Dashboard = ({
           <CardRenderer
             card={card}
             key={card.id}
-            onCardAction={handleCardAction}
             i18n={cachedI18N}
             dashboardBreakpoints={dashboardBreakpoints}
             cardDimensions={cardDimensions}
@@ -426,38 +409,9 @@ const Dashboard = ({
       timeGrain,
     ]
   );
-  // Cache the expanded card
-  const expandedCard = useMemo(() => cards.find(i => i.id === expandedId) || null, [
-    cards,
-    expandedId,
-  ]);
 
   return (
     <div className={className}>
-      {expandedCard && (
-        <div className="bx--modal is-visible">
-          <CardRenderer
-            card={{
-              ...expandedCard,
-              content: { ...expandedCard.content, isExpanded: true },
-              isExpanded: true,
-            }}
-            key={expandedCard.id}
-            onCardAction={handleCardAction}
-            i18n={i18n}
-            dashboardBreakpoints={dashboardBreakpoints}
-            cardDimensions={cardDimensions}
-            dashboardColumns={dashboardColumns}
-            rowHeight={rowHeight}
-            isLoading={isLoading}
-            isEditable={isEditable}
-            breakpoint={breakpoint}
-            onFetchData={handleOnFetchData}
-            onSetupCard={onSetupCard}
-            timeGrain={timeGrain}
-          />
-        </div>
-      )}
       <DashboardHeader
         title={title}
         description={description}
