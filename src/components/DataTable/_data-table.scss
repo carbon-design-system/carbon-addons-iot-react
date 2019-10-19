@@ -1,1 +1,62 @@
 @import '~carbon-components/scss/components/data-table/data-table';
+
+.bx--table-header-label {
+  &-start {
+    span.bx--table-header-label {
+      width: 100%;
+      text-align: start;
+    }
+  }
+  &-center {
+    span.bx--table-header-label {
+      width: 100%;
+      text-align: center;
+    }
+  }
+  &-end {
+    span.bx--table-header-label {
+      width: 100%;
+      text-align: end;
+    }
+  }
+}
+html[dir='rtl'] {
+  td.data-table {
+    &-start {
+      padding-right: 1.25rem;
+      padding-left: 1.25rem;
+    }
+    &-end {
+      padding-left: 3.25rem;
+      padding-right: 1.25rem;
+    }
+  }
+  .bx--data-table td:last-of-type {
+    padding-left: 3.25rem;
+  }
+  .bx--data-table td:first-of-type {
+    padding-left: 0.8rem;
+  }
+}
+html[dir='ltr'] {
+  td.data-table {
+    &-start {
+      padding-right: 1.25rem;
+      padding-left: 1.25rem;
+    }
+    &-end {
+      padding-left: 1.25rem;
+      padding-right: 3.25rem;
+    }
+  }
+  .bx--data-table td:last-of-type {
+    padding-right: 3.25rem;
+  }
+  .bx--data-table td:first-of-type {
+    padding-left: 0.8rem;
+  }
+}
+.bx--table-sort__icon-unsorted,
+.bx--table-sort__icon {
+  margin: 0.5rem;
+}
