@@ -14,9 +14,14 @@
       display: flex;
 
       h2 {
-        @include type-style('productive-heading-04');
+        @include type-style('productive-heading-03');
       }
     }
+  }
+
+  &-header {
+    display: flex;
+    align-items: center;
   }
 
   &-description {
@@ -28,7 +33,6 @@
   &-breadcrumb {
     display: flex;
     justify-content: space-between;
-    margin-bottom: $spacing-03;
   }
 
   &-loading {
