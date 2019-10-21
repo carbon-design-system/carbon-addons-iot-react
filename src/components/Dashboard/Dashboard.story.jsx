@@ -1,29 +1,13 @@
-import React, { useState } from 'react';
-/*
-import uuidv1 from 'uuid/v1';
-*/
+import React from 'react';
 import { text, boolean } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
-/*
-import { Button } from 'carbon-components-react';
-import moment from 'moment';
-*/
-
-import {
-  getIntervalChartData,
-  getPeriodChartData,
-  chartData,
-  tableColumns,
-  tableData,
-} from '../../utils/sample';
-import { COLORS, CARD_SIZES, CARD_TYPES } from '../../constants/LayoutConstants';
+import { getIntervalChartData, tableColumns, tableData } from '../../utils/sample';
+import { CARD_SIZES, CARD_TYPES } from '../../constants/LayoutConstants';
 import imageFile from '../ImageCard/landscape.jpg';
 
 import Dashboard from './Dashboard';
-
-const timeOffset = new Date().getTime() - chartData.dataItemToMostRecentTimestamp.temperature;
 
 const originalCards = [
   {
@@ -128,24 +112,6 @@ const originalCards = [
     values: { comfortLevel: 'Bad' },
   },
   {
-    title: 'Alerts (Section 2)',
-    tooltip: 'This view showcases the variety of alert severities present in your context.',
-    id: 'facilitycard-pie',
-    size: CARD_SIZES.SMALL,
-    type: CARD_TYPES.PIE,
-    availableActions: {
-      delete: true,
-    },
-    content: {
-      title: 'Alerts',
-      data: [
-        { label: 'Sev 3', value: 2, color: COLORS.RED },
-        { label: 'Sev 2', value: 7, color: COLORS.PURPLE },
-        { label: 'Sev 1', value: 32, color: COLORS.BLUE },
-      ],
-    },
-  },
-  {
     title: 'Foot Traffic',
     id: 'facilitycard-xs4',
     size: CARD_SIZES.XSMALL,
@@ -235,67 +201,6 @@ const originalCards = [
     },
   },
   {
-    title: 'Alerts (Weekly)',
-    id: 'xlarge-bar-alerts',
-    size: CARD_SIZES.LARGE,
-    type: CARD_TYPES.BAR,
-    availableActions: {
-      delete: true,
-      expand: true,
-    },
-    content: {
-      data: [
-        {
-          label: 'Sev 1',
-          values: chartData.events
-            .filter((i, idx) => idx < 7)
-            .map(i => ({
-              x: new Date(i.timestamp + timeOffset).toISOString(),
-              y: Math.ceil(i.pressure / 10),
-            })),
-          color: COLORS.BLUE,
-        },
-        {
-          label: 'Sev 2',
-          values: chartData.events
-            .filter((i, idx) => idx < 7)
-            .map(i => ({
-              x: new Date(i.timestamp + timeOffset).toISOString(),
-              y: Math.ceil(i.humidity / 10),
-            })),
-          color: COLORS.PURPLE,
-        },
-        {
-          label: 'Sev 3',
-          values: chartData.events
-            .filter((i, idx) => idx < 7)
-            .map(i => ({
-              x: new Date(i.timestamp + timeOffset).toISOString(),
-              y: Math.ceil(i.temperature / 10),
-            })),
-          color: COLORS.RED,
-        },
-      ],
-    },
-  },
-  {
-    title: 'Alerts (Section 1)',
-    id: 'facilitycard-donut',
-    size: CARD_SIZES.SMALL,
-    type: CARD_TYPES.DONUT,
-    availableActions: {
-      delete: true,
-    },
-    content: {
-      title: 'Alerts',
-      data: [
-        { label: 'Sev 3', value: 6, color: COLORS.RED },
-        { label: 'Sev 2', value: 9, color: COLORS.PURPLE },
-        { label: 'Sev 1', value: 18, color: COLORS.BLUE },
-      ],
-    },
-  },
-  {
     title: 'Environment',
     id: 'facility-multi-timeseries',
     size: CARD_SIZES.LARGE,
@@ -378,216 +283,60 @@ const originalCards = [
   },
 ];
 
-const StatefulDashboard = ({ ...props }) => {
-  const [cards, setCards] = useState(originalCards);
-
-  /*
-  const handleAdd = () => {
-    setCards([
-      ...cards,
-      {
-        title: 'SMALL', // faker.company.companyName(),
-        id: uuidv1(),
-        size: CARD_SIZES.SMALL,
-        type: CARD_TYPES.VALUE,
-        content: [
-          { title: 'Comfort Level', value: 89, unit: '%' },
-          { title: 'Utilization', value: 76, unit: '%' },
-          { title: 'Number of Alerts', value: 17 },
-        ],
-      },
-    ]);
-  };
-  */
-
-  const handleTimegrainCallback = (id, type, payload) => {
-    const { range } = payload;
-    const cardRange =
-      range === 'last24Hours'
-        ? { interval: 'hour', num: 24 }
-        : range === 'last7Days'
-        ? { interval: 'day', num: 7 }
-        : range === 'lastMonth'
-        ? { interval: 'day', num: 30 }
-        : range === 'lastQuarter'
-        ? { interval: 'week', num: 12 }
-        : range === 'lastYear'
-        ? { interval: 'month', num: 12 }
-        : range === 'thisWeek'
-        ? { interval: 'day', period: 'week' }
-        : range === 'thisMonth'
-        ? { interval: 'day', period: 'month' }
-        : range === 'thisQuarter'
-        ? { interval: 'week', period: 'quarter' }
-        : range === 'thisYear'
-        ? { interval: 'month', period: 'year' }
-        : { interval: 'day', num: 7 };
-
-    setCards(
-      cards.map(i =>
-        i.id === id
-          ? {
-              ...i,
-              interval: cardRange.interval,
-              timeRange: range,
-              values: cardRange.period
-                ? getPeriodChartData(
-                    cardRange.interval,
-                    cardRange.period,
-                    { min: 10, max: 100 },
-                    100
-                  )
-                : getIntervalChartData(
-                    cardRange.interval,
-                    cardRange.num,
-                    { min: 10, max: 100 },
-                    100
-                  ),
-            }
-          : i
-      )
-    );
-  };
-
-  const handleCardAction = (id, type, payload) => {
-    console.log(id, type, payload);
-    if (type === 'DELETE_CARD') {
-      setCards(cards.filter(i => i.id !== id));
-    }
-    if (type === 'OPEN_EXPANDED_CARD') {
-      setCards(cards.map(i => (i.id === id ? { ...i, isExpanded: true } : i)));
-    }
-    if (type === 'CLOSE_EXPANDED_CARD') {
-      setCards(cards.map(i => (i.id === id ? { ...i, isExpanded: false } : i)));
-    }
-    if (type === 'CHANGE_TIME_RANGE') {
-      const { range } = payload;
-      const cardRange =
-        range === 'last24Hours'
-          ? { interval: 'hour', num: 24 }
-          : range === 'last7Days'
-          ? { interval: 'day', num: 7 }
-          : range === 'lastMonth'
-          ? { interval: 'day', num: 30 }
-          : range === 'lastQuarter'
-          ? { interval: 'week', num: 12 }
-          : range === 'lastYear'
-          ? { interval: 'month', num: 12 }
-          : range === 'thisWeek'
-          ? { interval: 'day', period: 'week' }
-          : range === 'thisMonth'
-          ? { interval: 'day', period: 'month' }
-          : range === 'thisQuarter'
-          ? { interval: 'week', period: 'quarter' }
-          : range === 'thisYear'
-          ? { interval: 'month', period: 'year' }
-          : { interval: 'day', num: 7 };
-
-      setCards(
-        cards.map(i =>
-          i.id === id
-            ? {
-                ...i,
-                interval: cardRange.interval,
-                timeRange: range,
-                values: cardRange.period
-                  ? getPeriodChartData(
-                      cardRange.interval,
-                      cardRange.period,
-                      { min: 10, max: 100 },
-                      100
-                    )
-                  : getIntervalChartData(
-                      cardRange.interval,
-                      cardRange.num,
-                      { min: 10, max: 100 },
-                      100
-                    ),
-              }
-            : i
-        )
-      );
-    }
-    if (type === 'table_card_row_action') {
-      console.log(id, type, payload);
-    }
-  };
-
-  /*
-  return (
-    <div>
-      <Button style={{ margin: '20px 0 0 20px' }} onClick={handleAdd}>
-        Add card
-      </Button>
-      <Dashboard cards={cards} onCardAction={handleCardAction} {...props} />
-    </div>
-  );
-  */
-  return (
-    <Dashboard
-      cards={cards}
-      onCardAction={handleCardAction}
-      onFetchData={handleTimegrainCallback}
-      timeGrain="day"
-      {...props}
-    />
-  );
+const commonDashboardProps = {
+  title: text('title', 'Munich Building'),
+  cards: originalCards,
+  onFetchData: (card, isTimeseriesData) => {
+    action('onFetchData')(card, isTimeseriesData);
+    return Promise.resolve({ ...card, values: [] });
+  },
+  lastUpdated: Date(),
+  isEditable: boolean('isEditable', false),
+  isLoading: boolean('isLoading', false),
+  onBreakpointChange: action('onBreakpointChange'),
+  onLayoutChange: action('onLayoutChange'),
 };
 
 storiesOf('Dashboard (Experimental)', module)
-  .add('basic dashboard', () => {
-    return (
-      <Dashboard
-        title={text('title', 'Munich Building')}
-        cards={originalCards}
-        lastUpdated={Date()}
-        isEditable={boolean('isEditable', false)}
-        onBreakpointChange={action('onBreakpointChange')}
-        onLayoutChange={action('onLayoutChange')}
-      />
-    );
-  })
-  .add('basic', () => {
-    return (
-      <StatefulDashboard
-        title={text('title', 'Munich Building')}
-        lastUpdated={Date()}
-        isEditable={boolean('isEditable', false)}
-        onBreakpointChange={action('onBreakpointChange')}
-        onLayoutChange={action('onLayoutChange')}
-      />
-    );
-  })
+  .add(
+    'basic dashboard',
+    () => {
+      return <Dashboard {...commonDashboardProps} />;
+    },
+    {
+      info: {
+        text: `
+        ## Data Fetching
+        To wire this dashboard to your own backend, implement the onFetchData callback to retrieve data for each card.  
+        You will be passed an object containing all of the card props (including the currently selected range of the card) and can use these to determine which data to fetch.
+        
+        Return a promise that will resolve into an updated card object with data values
+        For instance you could return {...card, values: [{timestamp: 1234123123,temperature: 35.5}]}
+
+        If you want to trigger all the cards of the dashboard to load from an outside event (like a change in the data range that the dashboard is displaying), set the isLoading bit to true.
+        Once all the cards have finished loading the setIsLoading(false) will be called from the Dashboard.
+        
+        # Component Overview
+        `,
+      },
+    }
+  )
   .add('basic - without last updated header', () => {
-    return (
-      <StatefulDashboard
-        title={text('title', 'Munich Building')}
-        isEditable={boolean('isEditable', false)}
-        onBreakpointChange={action('onBreakpointChange')}
-        onLayoutChange={action('onLayoutChange')}
-        hasLastUpdated={false}
-      />
-    );
+    return <Dashboard {...commonDashboardProps} hasLastUpdated={false} />;
   })
   .add('custom actions', () => {
     return (
-      <StatefulDashboard
-        title={text('title', 'Munich Building')}
-        isEditable={boolean('isEditable', false)}
-        onBreakpointChange={action('onBreakpointChange')}
-        onLayoutChange={action('onLayoutChange')}
+      <Dashboard
+        {...commonDashboardProps}
         actions={[{ id: 'edit', label: 'Edit', icon: 'edit--glyph' }]}
         onDashboardAction={action('onDashboardAction')}
-        hasLastUpdated={false}
       />
     );
   })
   .add('sidebar', () => {
     return (
-      <StatefulDashboard
-        title={text('title', 'Munich Building')}
-        lastUpdated={Date()}
-        isEditable={boolean('isEditable', false)}
+      <Dashboard
+        {...commonDashboardProps}
         sidebar={
           <div style={{ width: 300 }}>
             <h1>Sidebar content</h1>
@@ -595,20 +344,13 @@ storiesOf('Dashboard (Experimental)', module)
             <p>here</p>
           </div>
         }
-        onBreakpointChange={action('onBreakpointChange')}
-        onLayoutChange={action('onLayoutChange')}
       />
     );
   })
   .add('i18n labels', () => {
     return (
-      <StatefulDashboard
-        title={text('title', 'Munich Building')}
-        lastUpdated={Date()}
-        isEditable={boolean('isEditable', false)}
-        onBreakpointChange={action('onBreakpointChange')}
-        onLayoutChange={action('onLayoutChange')}
-        onDashboardAction={action('onDashboardAction')}
+      <Dashboard
+        {...commonDashboardProps}
         i18n={{
           lastUpdatedLabel: text('lastUpdatedLabel', 'Last updated: '),
           noDataLabel: text('noDataLabel', 'No data is available for this time range.'),
@@ -1200,70 +942,4 @@ storiesOf('Dashboard (Experimental)', module)
         ])}
       </div>
     );
-  })
-  .add(
-    'for custom card component',
-    () => (
-      <Dashboard
-        title={text('title', 'Munich Building')}
-        cards={originalCards}
-        lastUpdated={Date()}
-        isEditable={boolean('isEditable', false)}
-        isLoading={boolean('isLoading', false)}
-        onBreakpointChange={action('onBreakpointChange')}
-        onLayoutChange={action('onLayoutChange')}
-      />
-    ),
-    {
-      info: {
-        text: `Development of new card components needs to follow patterns and provide some functionalities.
-
-          1 - Create a new card component
-          2 - Follow the pattern for the values and content, card template:
-          {
-            type: 'VALUE' -> card type defined
-            title: 'card title',
-            description: 'card custom description',
-            dataSource: {
-              attributes: [
-                {
-                  id: 'id for attribute',
-                  attribute: 'temperature', -> attribute from data lake
-                  aggregator: 'mean', -> aggregator tthat will be done in data lake
-                  range: {
-                    // we are not passing this to the API layer directly, we are interpreting and adjusting the startDate and endDate appropriately
-                    type: 'periodToDate' // required either 'periodToDate' or 'rolling'
-                    // If today is June 25th periodToDate is june 1st to today, rolling is may 25 to today
-                    count: -1, // count can be only be negative
-                    interval: 'month' // the thing you're counting
-                    offsetCount: -1,
-                    offsetInterval: 'year'
-                  }
-                  timeGrain: ['montly', 'day', 'year', 'hour']
-                }
-              ]
-            },
-            content: {
-              // properties specific for the card, needs to have object/array with value matching the data source attribute id eg.
-              columns:[
-                "dataSourceId": "id for attribute"
-              ]
-
-            },
-            values: [ // array of the values to populate the card
-              {
-                //key needs to be the data source id with it's value eg.
-                "id for attribute": 10
-
-              }
-            ]
-
-          }
-          3 - Create a validator for it "utils/schemas/validators", so whenever changes are made we make sure it's being corretly used.
-          
-          `,
-        propTables: [Dashboard],
-        propTablesExclude: [StatefulDashboard],
-      },
-    }
-  );
+  });

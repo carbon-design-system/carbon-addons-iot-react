@@ -66,28 +66,37 @@ const propTypes = {
     sm: PropTypes.arrayOf(DashboardLayoutPropTypes),
     xs: PropTypes.arrayOf(DashboardLayoutPropTypes),
   }),
-  /** Row height in pixels for each layout */
-  rowHeight: RowHeightPropTypes,
-  /** media query pixel measurement that determines which particular dashboard layout should be used */
-  dashboardBreakpoints: DashboardBreakpointsPropTypes,
-  /** map of number of columns to a given dashboard layout */
-  dashboardColumns: DashboardColumnsPropTypes,
-  /** Add function callback if the layout is changed by dragging */
-  onLayoutChange: PropTypes.func,
-  /** Add function callback if the breakpoint has changed by dragging */
-  onBreakpointChange: PropTypes.func,
-  /** Callback called when an action is clicked.  The id of the action is passed to the callback */
-  onDashboardAction: PropTypes.func,
+
   /** Is the dashboard in edit mode? */
   isEditable: PropTypes.bool,
-  /** array of configurable sizes to dimensions */
-  cardDimensions: CardSizesToDimensionsPropTypes,
   /** Optional filter that should be rendered top right */
   filter: PropTypes.node,
   /** Optional sidebar content that should be rendered left of the dashboard cards */
   sidebar: PropTypes.node,
-  /** All the labels that need translation */
+  /** If the header should render the last updated section */
+  hasLastUpdated: PropTypes.bool,
 
+  // Callback functions
+  /** Callback called when a card should fetch its data, called with the card props and a boolean that determines whether a card supports timeseries data or not.  Return a promise that returns the updated card object with values.  It will be passed downstream to your card as props to update. */
+  onFetchData: PropTypes.func,
+  /** Optional Function that is called back if the card has a setup phase before data fetching */
+  onSetupCard: PropTypes.func,
+  /** Optionally listen to layout changes to update a dashboard template */
+  onLayoutChange: PropTypes.func,
+  /** Optionally listen to window resize events to update a dashboard template */
+  onBreakpointChange: PropTypes.func,
+  /** Callback called when an action is clicked.  The id of the action is passed to the callback */
+  onDashboardAction: PropTypes.func,
+
+  // Data related properties
+  /** If the overall dashboard should be using a timeGrain, we pass it here */
+  timeGrain: PropTypes.string,
+  /** Property that will trigger all cards to load again */
+  isLoading: PropTypes.bool,
+  /** once all the cards have finished loading this will be called */
+  setIsLoading: PropTypes.func,
+
+  /** All the labels that need translation */
   i18n: PropTypes.shape({
     lastUpdatedLabel: PropTypes.string,
     noDataLabel: PropTypes.string,
@@ -157,16 +166,15 @@ const propTypes = {
     learnMoreText: PropTypes.string,
     dismissText: PropTypes.string,
   }),
-  /** If the header should render the last updated section */
-  hasLastUpdated: PropTypes.bool,
 
-  // new props after migration
-  onSetupCard: PropTypes.func,
-  onFetchData: PropTypes.func,
-  timeGrain: PropTypes.string,
-  isLoading: PropTypes.bool,
-  /** once all the cards have finished loading, update the bulk load */
-  setIsLoading: PropTypes.func,
+  /** (Optional) Row height in pixels for each layout */
+  rowHeight: RowHeightPropTypes,
+  /** (Optional) media query pixel measurement that determines which particular dashboard layout should be used */
+  dashboardBreakpoints: DashboardBreakpointsPropTypes,
+  /** (Optional) map of number of columns to a given dashboard layout */
+  dashboardColumns: DashboardColumnsPropTypes,
+  /** (Optional) array of configurable sizes to dimensions */
+  cardDimensions: CardSizesToDimensionsPropTypes,
 };
 
 const defaultProps = {
@@ -272,7 +280,14 @@ const StyledGridLayout = styled(GridLayout)`
   }
 `;
 
-/** This component is a dumb component and only knows how to render itself */
+/** This component renders one individual dashboard. The passed cards are set into a grid layout based on the individual card sizes and layouts.
+ * It keeps track of whether any cards are actively loading data and shows a loading spinner at the top.
+ * It listens to all the cards data fetching, and updates it's overall refresh date once all cards have finished fetching data.
+ *
+ * To enable your cards to fetch data, you must implement the onFetchData callback.  The callback is called with the full card prop object,
+ * and then a boolean that describes whether to return timeseries data or not.  You should asynchronously return an array of values from your callback to populate your
+ * cards with data.
+ */
 const Dashboard = ({
   cards,
   title,
