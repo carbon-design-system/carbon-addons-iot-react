@@ -12,10 +12,15 @@ import PageTitleBar from './PageTitleBar';
 export const commonPageTitleBarProps = {
   title: 'Page title',
   description: 'Descriptive text about this page and what the user can or should do on it',
-  rightContent: (
-    <Button className="some-right-content" renderIcon={Add24} onClick={action('click')}>
-      Right Content
-    </Button>
+  extraContent: (
+    <div style={{ display: 'flex', alignItems: 'center' }}>
+      <span style={{ marginRight: '1rem' }}>
+        <b>Last updated:</b> yesterday
+      </span>
+      <Button className="some-right-content" renderIcon={Add24} onClick={action('click')}>
+        Take an action
+      </Button>
+    </div>
   ),
 };
 
@@ -74,4 +79,27 @@ storiesOf('Watson IoT|PageTitleBar', module)
     />
   ))
   .add('with rich content', () => <PageTitleBar {...commonPageTitleBarProps} collapsed />)
+  .add('with everything', () => (
+    <PageTitleBar
+      title={commonPageTitleBarProps.title}
+      description={commonPageTitleBarProps.description}
+      breadcrumb={pageTitleBarBreadcrumb}
+      extraContent={commonPageTitleBarProps.extraContent}
+      editable
+      tabs={
+        <Tabs>
+          <Tab label="Tab 1">
+            <div>Content for first tab.</div>
+          </Tab>
+          <Tab label="Tab 2">
+            <div>Content for second tab.</div>
+          </Tab>
+          <Tab label="Tab 3">
+            <div>Content for third tab.</div>
+          </Tab>
+        </Tabs>
+      }
+      onEdit={action('edit')}
+    />
+  ))
   .add('isLoading', () => <PageTitleBar title={commonPageTitleBarProps.title} isLoading />);
