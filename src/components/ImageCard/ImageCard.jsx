@@ -39,6 +39,7 @@ const ImageCard = ({
   onCardAction,
   isEditable,
   isExpanded,
+  error,
   isLoading,
   i18n: { loadingDataLabel, ...otherLabels },
   ...others
@@ -49,7 +50,7 @@ const ImageCard = ({
   const supportedSize = supportedSizes.includes(size);
   const availableActions = { expand: supportedSize };
 
-  const isCardLoading = isNil(src) && !isEditable;
+  const isCardLoading = isNil(src) && !isEditable && !error;
 
   return (
     <Card
@@ -60,6 +61,7 @@ const ImageCard = ({
       isLoading={isCardLoading} // only show the spinner if we don't have an image
       isExpanded={isExpanded}
       {...others}
+      error={error}
       i18n={otherLabels}
     >
       {!isCardLoading ? (
