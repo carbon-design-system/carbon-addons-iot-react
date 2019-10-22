@@ -53,7 +53,6 @@ const StyledPagination = sizeMe({ noPlaceholder: true })(styled(
     }
     .bx--select .bx--select-input ~ .bx--select__arrow {
       align-self: center;
-      top: 0px;
     }
   }
 `);
