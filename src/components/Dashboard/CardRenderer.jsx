@@ -81,8 +81,11 @@ const CardRenderer = React.memo(
           // Image cards require extra setup before loading data
           if (onSetupCard && card.type === CARD_TYPES.IMAGE && !card.content.src) {
             updatedCard = await onSetupCard(card);
+            setCard(updatedCard);
           }
-          loadCardData(updatedCard, setCard, onFetchData, timeGrain);
+          if (!updatedCard.error) {
+            loadCardData(updatedCard, setCard, onFetchData, timeGrain);
+          }
         };
         if (isLoading) {
           setupAndLoadCard();

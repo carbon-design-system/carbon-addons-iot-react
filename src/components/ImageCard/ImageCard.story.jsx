@@ -113,4 +113,22 @@ storiesOf('Watson IoT|ImageCard', module)
         />
       </div>
     );
+  })
+  .add('error loading image', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.XLARGE);
+    return (
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+        <ImageCard
+          title={text('title', 'Image')}
+          isLoading={boolean('isLoading', true)}
+          id="image-hotspots"
+          content={object('content', omit(content, ['src']))}
+          values={object('values', values)}
+          breakpoint="lg"
+          size={size}
+          onCardAction={action('onCardAction')}
+          error={text('error', `Error no image found called ImageID`)}
+        />
+      </div>
+    );
   });
