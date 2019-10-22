@@ -37,7 +37,7 @@ const StyledActionIcon = styled(Icon)`
   }
 `;
 
-const StyledStatefulTable = styled(({ showHeader, data, ...rest }) => (
+const StyledStatefulTable = styled(({ showHeader, isExpanded, data, ...rest }) => (
   <StatefulTable {...rest} data={data} />
 ))`
   flex: inherit;
