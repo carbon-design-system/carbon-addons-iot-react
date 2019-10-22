@@ -181,7 +181,9 @@ const determineLayout = (size, attributes, measuredWidth) => {
   return layout;
 };
 
-const determineValue = (dataSourceId, values) => values && values[dataSourceId];
+/** Support either an array of values or an object of values */
+export const determineValue = (dataSourceId, values) =>
+  Array.isArray(values) ? values[0] && values[0][dataSourceId] : values && values[dataSourceId];
 
 const determineAttributes = (size, attributes) => {
   if (!attributes || !Array.isArray(attributes)) {

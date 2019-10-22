@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import isNil from 'lodash/isNil';
 import Image32 from '@carbon/icons-react/lib/image/32';
 
 import { ImageCardPropTypes, CardPropTypes } from '../../constants/PropTypes';
@@ -37,7 +38,8 @@ const ImageCard = ({
   size,
   onCardAction,
   isEditable,
-  isHotspotDataLoading,
+  isExpanded,
+  isLoading,
   i18n: { loadingDataLabel, ...otherLabels },
   ...others
 }) => {
@@ -47,27 +49,32 @@ const ImageCard = ({
   const supportedSize = supportedSizes.includes(size);
   const availableActions = { expand: supportedSize };
 
+  const isCardLoading = isNil(src) && !isEditable;
+
   return (
     <Card
       title={title}
       size={size}
       onCardAction={onCardAction}
       availableActions={availableActions}
+      isLoading={isCardLoading} // only show the spinner if we don't have an image
+      isExpanded={isExpanded}
       {...others}
       i18n={otherLabels}
     >
-      {!others.isLoading ? (
+      {!isCardLoading ? (
         <ContentWrapper>
           {supportedSize ? (
-            isEditable && !src ? (
+            isEditable ? (
               <EmptyDiv>
                 <Image32 width={250} height={250} fill="gray" />
               </EmptyDiv>
             ) : content && src ? (
               <ImageHotspots
                 {...content}
+                isExpanded={isExpanded}
                 hotspots={hotspots}
-                isHotspotDataLoading={isHotspotDataLoading}
+                isHotspotDataLoading={isLoading}
                 loadingHotspotsLabel={loadingDataLabel}
               />
             ) : (
