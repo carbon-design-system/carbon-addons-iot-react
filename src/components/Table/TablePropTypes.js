@@ -130,6 +130,7 @@ export const I18NPropTypes = PropTypes.shape({
   selectAllAria: PropTypes.string,
   selectRowAria: PropTypes.string,
   /** toolbar */
+  searchLabel: PropTypes.string,
   searchPlaceholder: PropTypes.string,
   clearAllFilters: PropTypes.string,
   columnSelectionButtonAria: PropTypes.string,
@@ -139,6 +140,9 @@ export const I18NPropTypes = PropTypes.shape({
   openMenuAria: PropTypes.string,
   closeMenuAria: PropTypes.string,
   clearSelectionAria: PropTypes.string,
+  batchCancel: PropTypes.string,
+  itemsSelected: PropTypes.string,
+  itemSelected: PropTypes.string,
   /** Row actions in table body */
   /** I18N label for in progress */
   inProgressText: PropTypes.string, // eslint-disable-line
@@ -148,6 +152,9 @@ export const I18NPropTypes = PropTypes.shape({
   learnMoreText: PropTypes.string, // eslint-disable-line
   /** I18N label for dismiss */
   dismissText: PropTypes.string, // eslint-disable-line
+  filterNone: PropTypes.string,
+  filterAscending: PropTypes.string,
+  filterDescending: PropTypes.string,
 });
 
 export const TableSearchPropTypes = PropTypes.shape({
