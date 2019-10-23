@@ -328,7 +328,7 @@ const ImageHotspots = ({
   background,
   src,
   height: heightProp,
-  width,
+  width: widthProp,
   alt,
   isHotspotDataLoading,
   zoomMax,
@@ -350,7 +350,8 @@ const ImageHotspots = ({
     hideMinimapProp,
   });
 
-  const height = heightProp - 80; // Need to adjust for card chrome
+  const height = heightProp - (48 + 16); // Need to adjust for card chrome
+  const width = widthProp - 16 * 2; // need to adjust for card chrome
   const orientation = width > height ? 'landscape' : 'portrait';
   const ratio = orientation === 'landscape' ? width / height : height / width;
 
