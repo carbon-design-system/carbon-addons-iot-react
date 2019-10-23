@@ -7,7 +7,7 @@ const nodeEnvironmentCheck = new webpack.DefinePlugin({
 module.exports = {
   mode: isDev ? 'development' : 'production',
   devtool: isDev ? '#cheap-module-eval-source-map' : 'source-map',
-  plugins: [nodeEnvironmentCheck],
+  plugins: [nodeEnvironmentCheck, new webpack.IgnorePlugin(/^\.\/locale$/, /moment\/min$/)],
   module: {
     rules: [
       {

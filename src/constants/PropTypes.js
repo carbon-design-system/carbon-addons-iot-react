@@ -57,7 +57,7 @@ export const DashboardColumnsPropTypes = PropTypes.shape({
 export const ValueCardPropTypes = {
   content: PropTypes.shape({ attributes: PropTypes.arrayOf(AttributePropTypes).isRequired }),
   /** Value card expects its values passed as an object with key value pairs */
-  values: PropTypes.object,
+  values: PropTypes.oneOfType([PropTypes.object, PropTypes.arrayOf(PropTypes.object)]),
 };
 
 export const TimeSeriesDatasetPropTypes = PropTypes.shape({
@@ -187,7 +187,6 @@ export const ImageCardPropTypes = {
   values: PropTypes.shape({
     hotspots: PropTypes.array,
   }),
-  isHotspotDataLoading: PropTypes.bool,
 };
 
 export const PieCardPropTypes = DonutCardPropTypes;

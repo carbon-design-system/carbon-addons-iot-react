@@ -1,32 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { text, boolean } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
-/*
-import uuidv1 from 'uuid/v1';
-*/
-/*
-import { Button } from 'carbon-components-react';
-import moment from 'moment';
-*/
-
 import FullWidthWrapper from '../../internal/FullWidthWrapper';
-import {
-  getIntervalChartData,
-  getPeriodChartData,
-  chartData,
-  tableColumns,
-  tableData,
-} from '../../utils/sample';
-import { COLORS, CARD_SIZES, CARD_TYPES } from '../../constants/LayoutConstants';
+import { getIntervalChartData, tableColumns, tableData } from '../../utils/sample';
+import { CARD_SIZES, CARD_TYPES } from '../../constants/LayoutConstants';
 import imageFile from '../ImageCard/landscape.jpg';
 
 import Dashboard from './Dashboard';
 
-const timeOffset = new Date().getTime() - chartData.dataItemToMostRecentTimestamp.temperature;
-
-export const originalCards = [
+const originalCards = [
   {
     title: 'Facility Metrics',
     id: 'facilitycard',
@@ -129,24 +113,6 @@ export const originalCards = [
     values: { comfortLevel: 'Bad' },
   },
   {
-    title: 'Alerts (Section 2)',
-    tooltip: 'This view showcases the variety of alert severities present in your context.',
-    id: 'facilitycard-pie',
-    size: CARD_SIZES.SMALL,
-    type: CARD_TYPES.PIE,
-    availableActions: {
-      delete: true,
-    },
-    content: {
-      title: 'Alerts',
-      data: [
-        { label: 'Sev 3', value: 2, color: COLORS.RED },
-        { label: 'Sev 2', value: 7, color: COLORS.PURPLE },
-        { label: 'Sev 1', value: 32, color: COLORS.BLUE },
-      ],
-    },
-  },
-  {
     title: 'Foot Traffic',
     id: 'facilitycard-xs4',
     size: CARD_SIZES.XSMALL,
@@ -236,67 +202,6 @@ export const originalCards = [
     },
   },
   {
-    title: 'Alerts (Weekly)',
-    id: 'xlarge-bar-alerts',
-    size: CARD_SIZES.LARGE,
-    type: CARD_TYPES.BAR,
-    availableActions: {
-      delete: true,
-      expand: true,
-    },
-    content: {
-      data: [
-        {
-          label: 'Sev 1',
-          values: chartData.events
-            .filter((i, idx) => idx < 7)
-            .map(i => ({
-              x: new Date(i.timestamp + timeOffset).toISOString(),
-              y: Math.ceil(i.pressure / 10),
-            })),
-          color: COLORS.BLUE,
-        },
-        {
-          label: 'Sev 2',
-          values: chartData.events
-            .filter((i, idx) => idx < 7)
-            .map(i => ({
-              x: new Date(i.timestamp + timeOffset).toISOString(),
-              y: Math.ceil(i.humidity / 10),
-            })),
-          color: COLORS.PURPLE,
-        },
-        {
-          label: 'Sev 3',
-          values: chartData.events
-            .filter((i, idx) => idx < 7)
-            .map(i => ({
-              x: new Date(i.timestamp + timeOffset).toISOString(),
-              y: Math.ceil(i.temperature / 10),
-            })),
-          color: COLORS.RED,
-        },
-      ],
-    },
-  },
-  {
-    title: 'Alerts (Section 1)',
-    id: 'facilitycard-donut',
-    size: CARD_SIZES.SMALL,
-    type: CARD_TYPES.DONUT,
-    availableActions: {
-      delete: true,
-    },
-    content: {
-      title: 'Alerts',
-      data: [
-        { label: 'Sev 3', value: 6, color: COLORS.RED },
-        { label: 'Sev 2', value: 9, color: COLORS.PURPLE },
-        { label: 'Sev 1', value: 18, color: COLORS.BLUE },
-      ],
-    },
-  },
-  {
     title: 'Environment',
     id: 'facility-multi-timeseries',
     size: CARD_SIZES.LARGE,
@@ -379,201 +284,62 @@ export const originalCards = [
   },
 ];
 
-const StatefulDashboard = ({ ...props }) => {
-  const [cards, setCards] = useState(originalCards);
-
-  /*
-  const handleAdd = () => {
-    setCards([
-      ...cards,
-      {
-        title: 'SMALL', // faker.company.companyName(),
-        id: uuidv1(),
-        size: CARD_SIZES.SMALL,
-        type: CARD_TYPES.VALUE,
-        content: [
-          { title: 'Comfort Level', value: 89, unit: '%' },
-          { title: 'Utilization', value: 76, unit: '%' },
-          { title: 'Number of Alerts', value: 17 },
-        ],
-      },
-    ]);
-  };
-  */
-
-  const handleTimegrainCallback = (id, type, payload) => {
-    const { range } = payload;
-    const cardRange =
-      range === 'last24Hours'
-        ? { interval: 'hour', num: 24 }
-        : range === 'last7Days'
-        ? { interval: 'day', num: 7 }
-        : range === 'lastMonth'
-        ? { interval: 'day', num: 30 }
-        : range === 'lastQuarter'
-        ? { interval: 'week', num: 12 }
-        : range === 'lastYear'
-        ? { interval: 'month', num: 12 }
-        : range === 'thisWeek'
-        ? { interval: 'day', period: 'week' }
-        : range === 'thisMonth'
-        ? { interval: 'day', period: 'month' }
-        : range === 'thisQuarter'
-        ? { interval: 'week', period: 'quarter' }
-        : range === 'thisYear'
-        ? { interval: 'month', period: 'year' }
-        : { interval: 'day', num: 7 };
-
-    setCards(
-      cards.map(i =>
-        i.id === id
-          ? {
-              ...i,
-              interval: cardRange.interval,
-              timeRange: range,
-              values: cardRange.period
-                ? getPeriodChartData(
-                    cardRange.interval,
-                    cardRange.period,
-                    { min: 10, max: 100 },
-                    100
-                  )
-                : getIntervalChartData(
-                    cardRange.interval,
-                    cardRange.num,
-                    { min: 10, max: 100 },
-                    100
-                  ),
-            }
-          : i
-      )
-    );
-  };
-
-  const handleCardAction = (id, type, payload) => {
-    console.log(id, type, payload);
-    if (type === 'DELETE_CARD') {
-      setCards(cards.filter(i => i.id !== id));
-    }
-    if (type === 'OPEN_EXPANDED_CARD') {
-      setCards(cards.map(i => (i.id === id ? { ...i, isExpanded: true } : i)));
-    }
-    if (type === 'CLOSE_EXPANDED_CARD') {
-      setCards(cards.map(i => (i.id === id ? { ...i, isExpanded: false } : i)));
-    }
-    if (type === 'CHANGE_TIME_RANGE') {
-      const { range } = payload;
-      const cardRange =
-        range === 'last24Hours'
-          ? { interval: 'hour', num: 24 }
-          : range === 'last7Days'
-          ? { interval: 'day', num: 7 }
-          : range === 'lastMonth'
-          ? { interval: 'day', num: 30 }
-          : range === 'lastQuarter'
-          ? { interval: 'week', num: 12 }
-          : range === 'lastYear'
-          ? { interval: 'month', num: 12 }
-          : range === 'thisWeek'
-          ? { interval: 'day', period: 'week' }
-          : range === 'thisMonth'
-          ? { interval: 'day', period: 'month' }
-          : range === 'thisQuarter'
-          ? { interval: 'week', period: 'quarter' }
-          : range === 'thisYear'
-          ? { interval: 'month', period: 'year' }
-          : { interval: 'day', num: 7 };
-
-      setCards(
-        cards.map(i =>
-          i.id === id
-            ? {
-                ...i,
-                interval: cardRange.interval,
-                timeRange: range,
-                values: cardRange.period
-                  ? getPeriodChartData(
-                      cardRange.interval,
-                      cardRange.period,
-                      { min: 10, max: 100 },
-                      100
-                    )
-                  : getIntervalChartData(
-                      cardRange.interval,
-                      cardRange.num,
-                      { min: 10, max: 100 },
-                      100
-                    ),
-              }
-            : i
-        )
-      );
-    }
-    if (type === 'table_card_row_action') {
-      console.log(id, type, payload);
-    }
-  };
-
-  /*
-  return (
-    <div>
-      <Button style={{ margin: '20px 0 0 20px' }} onClick={handleAdd}>
-        Add card
-      </Button>
-      <Dashboard cards={cards} onCardAction={handleCardAction} {...props} />
-    </div>
-  );
-  */
-  return (
-    <Dashboard
-      cards={cards}
-      onCardAction={handleCardAction}
-      timeGrainCallback={handleTimegrainCallback}
-      {...props}
-    />
-  );
+const commonDashboardProps = {
+  title: text('title', 'Munich Building'),
+  cards: originalCards,
+  onFetchData: (card, isTimeseriesData) => {
+    action('onFetchData')(card, isTimeseriesData);
+    return Promise.resolve({ ...card, values: [] });
+  },
+  lastUpdated: new Date('2019-10-22T00:00:00').toUTCString(),
+  isEditable: boolean('isEditable', false),
+  isLoading: boolean('isLoading', false),
+  onBreakpointChange: action('onBreakpointChange'),
+  onLayoutChange: action('onLayoutChange'),
 };
 
-storiesOf('Watson IoT Experimental|Dashboard', module)
-  .add('basic', () => {
-    return (
-      <FullWidthWrapper>
-        <StatefulDashboard
-          description="This is a description for this Dashboard"
-          title={text('title', 'Munich Building')}
-          lastUpdated={Date()}
-          isEditable={boolean('isEditable', false)}
-          onBreakpointChange={action('onBreakpointChange')}
-          onLayoutChange={action('onLayoutChange')}
-        />
-      </FullWidthWrapper>
-    );
-  })
+storiesOf('Watson IoT|Dashboard', module)
+  .add(
+    'basic dashboard',
+    () => {
+      return (
+        <FullWidthWrapper>
+          <Dashboard {...commonDashboardProps} />
+        </FullWidthWrapper>
+      );
+    },
+    {
+      info: {
+        text: `
+        ## Data Fetching
+        To wire this dashboard to your own backend, implement the onFetchData callback to retrieve data for each card.  
+        You will be passed an object containing all of the card props (including the currently selected range of the card) and can use these to determine which data to fetch.
+        
+        Return a promise that will resolve into an updated card object with data values
+        For instance you could return {...card, values: [{timestamp: 1234123123,temperature: 35.5}]}
+
+        If you want to trigger all the cards of the dashboard to load from an outside event (like a change in the data range that the dashboard is displaying), set the isLoading bit to true.
+        Once all the cards have finished loading the setIsLoading(false) will be called from the Dashboard.
+        
+        # Component Overview
+        `,
+      },
+    }
+  )
   .add('basic - without last updated header', () => {
     return (
       <FullWidthWrapper>
-        <StatefulDashboard
-          title={text('title', 'Munich Building')}
-          isEditable={boolean('isEditable', false)}
-          onBreakpointChange={action('onBreakpointChange')}
-          onLayoutChange={action('onLayoutChange')}
-          hasLastUpdated={false}
-        />
+        <Dashboard {...commonDashboardProps} hasLastUpdated={false} />
       </FullWidthWrapper>
     );
   })
   .add('custom actions', () => {
     return (
       <FullWidthWrapper>
-        <StatefulDashboard
-          title={text('title', 'Munich Building')}
-          isEditable={boolean('isEditable', false)}
-          isLoading={boolean('isLoading', false)}
-          onBreakpointChange={action('onBreakpointChange')}
-          onLayoutChange={action('onLayoutChange')}
+        <Dashboard
+          {...commonDashboardProps}
           actions={[{ id: 'edit', labelText: 'Edit', icon: 'edit' }]}
           onDashboardAction={action('onDashboardAction')}
-          hasLastUpdated={false}
         />
       </FullWidthWrapper>
     );
@@ -581,10 +347,8 @@ storiesOf('Watson IoT Experimental|Dashboard', module)
   .add('sidebar', () => {
     return (
       <FullWidthWrapper>
-        <StatefulDashboard
-          title={text('title', 'Munich Building')}
-          lastUpdated={Date()}
-          isEditable={boolean('isEditable', false)}
+        <Dashboard
+          {...commonDashboardProps}
           sidebar={
             <div style={{ width: 300 }}>
               <h1>Sidebar content</h1>
@@ -592,8 +356,6 @@ storiesOf('Watson IoT Experimental|Dashboard', module)
               <p>here</p>
             </div>
           }
-          onBreakpointChange={action('onBreakpointChange')}
-          onLayoutChange={action('onLayoutChange')}
         />
       </FullWidthWrapper>
     );
@@ -601,13 +363,8 @@ storiesOf('Watson IoT Experimental|Dashboard', module)
   .add('i18n labels', () => {
     return (
       <FullWidthWrapper>
-        <StatefulDashboard
-          title={text('title', 'Munich Building')}
-          lastUpdated={Date()}
-          isEditable={boolean('isEditable', false)}
-          onBreakpointChange={action('onBreakpointChange')}
-          onLayoutChange={action('onLayoutChange')}
-          onDashboardAction={action('onDashboardAction')}
+        <Dashboard
+          {...commonDashboardProps}
           i18n={{
             lastUpdatedLabel: text('lastUpdatedLabel', 'Last updated: '),
             noDataLabel: text('noDataLabel', 'No data is available for this time range.'),
@@ -703,27 +460,53 @@ storiesOf('Watson IoT Experimental|Dashboard', module)
       },
     }));
     return (
-      <Dashboard
-        title="Expandable card, click expand to expand table"
-        cards={[
-          {
-            title: 'Expanded card',
-            id: `expandedcard`,
-            size: CARD_SIZES.LARGE,
-            type: CARD_TYPES.TABLE,
-            content: {
-              columns: [
-                { dataSourceId: 'timestamp' },
-                { dataSourceId: 'Campus_EGL' },
-                { dataSourceId: 'peopleCount_EnterpriseBuilding_mean' },
-                { dataSourceId: 'headCount_EnterpriseBuilding_mean' },
-                { dataSourceId: 'capacity_EnterpriseBuilding_mean' },
-              ],
+      <FullWidthWrapper>
+        {' '}
+        <Dashboard
+          title="Expandable card, click expand to expand table"
+          cards={[
+            {
+              title: 'Expanded card',
+              id: `expandedcard`,
+              size: CARD_SIZES.LARGE,
+              type: CARD_TYPES.TABLE,
+              content: {
+                columns: [
+                  { dataSourceId: 'timestamp', label: 'Timestamp' },
+                  { dataSourceId: 'Campus_EGL', label: 'Campus' },
+                  { dataSourceId: 'peopleCount_EnterpriseBuilding_mean', label: 'People' },
+                  { dataSourceId: 'headCount_EnterpriseBuilding_mean', label: 'Headcount' },
+                  { dataSourceId: 'capacity_EnterpriseBuilding_mean', label: 'capacity' },
+                ],
+              },
+              values: data,
             },
-            values: data,
-          },
-        ]}
-      />
+          ]}
+        />
+      </FullWidthWrapper>
+    );
+  })
+  .add('full screen image card', () => {
+    const content = {
+      src: imageFile,
+      alt: 'Sample image',
+      zoomMax: 10,
+    };
+    return (
+      <FullWidthWrapper>
+        <Dashboard
+          title="Expandable card, click expand to expand image"
+          cards={[
+            {
+              title: 'Expanded card',
+              id: `expandedcard`,
+              size: CARD_SIZES.LARGE,
+              type: CARD_TYPES.IMAGE,
+              content,
+            },
+          ]}
+        />
+      </FullWidthWrapper>
     );
   })
   .add('only value cards', () => {
@@ -788,7 +571,7 @@ storiesOf('Watson IoT Experimental|Dashboard', module)
                   idx === 2
                     ? { dataSourceId: 'v2', trend: 'up', color: 'green' }
                     : idx === 3
-                    ? { trend: 'down', color: 'red' }
+                    ? { dataSourceId: 'v2', trend: 'down', color: 'red' }
                     : undefined,
                 label:
                   idx === 1
@@ -869,7 +652,7 @@ storiesOf('Watson IoT Experimental|Dashboard', module)
                       idx === 2
                         ? { dataSourceId: 'v2', trend: 'up', color: 'green' }
                         : idx === 3
-                        ? { trend: 'down', color: 'red' }
+                        ? { dataSourceId: 'v2', trend: 'down', color: 'red' }
                         : undefined,
                     label:
                       idx === 1
@@ -1149,7 +932,11 @@ storiesOf('Watson IoT Experimental|Dashboard', module)
                   idx === 1 ? stringThresholds : idx === 2 ? stringThresholdsWithIcons : undefined,
                 secondaryValue:
                   v[12] !== null
-                    ? { trend: v[12], color: v[12] === 'down' ? 'red' : 'green' }
+                    ? {
+                        dataSourceId: 'v2',
+                        trend: v[12],
+                        color: v[12] === 'down' ? 'red' : 'green',
+                      }
                     : undefined,
               },
             ],
