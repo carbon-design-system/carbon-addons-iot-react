@@ -1,4 +1,4 @@
-import React, { useMemo, useRef, useState } from 'react';
+import React, { useMemo, useRef, useState, useEffect } from 'react';
 import useDeepCompareEffect from 'use-deep-compare-effect';
 import PropTypes from 'prop-types';
 import { InlineLoading } from 'carbon-components-react';
@@ -18,6 +18,7 @@ const propTypes = {
   hideHotspots: PropTypes.bool,
   hideMinimap: PropTypes.bool,
   isHotspotDataLoading: PropTypes.bool,
+  isExpanded: PropTypes.bool,
   background: PropTypes.string,
   zoomMax: PropTypes.number,
 };
@@ -30,6 +31,7 @@ const defaultProps = {
   hideHotspots: false,
   hideMinimap: false,
   isHotspotDataLoading: false,
+  isExpanded: false,
   background: '#eee',
   zoomMax: undefined,
 };
@@ -329,7 +331,17 @@ const onWindowResize = (
   const ratio = orientation === 'landscape' ? width / height : height / width;
 
   setContainer({ width, height, ratio, orientation });
-  zoom(image.scale, zoomMax, container, image, setImage, minimap, setMinimap, options, setOptions);
+  zoom(
+    image.scale,
+    zoomMax,
+    { width, height, ratio, orientation },
+    image,
+    setImage,
+    minimap,
+    setMinimap,
+    options,
+    setOptions
+  );
 };
 
 /** Parent smart component with local state that renders an image with its hotspots */
@@ -339,6 +351,7 @@ const ImageHotspots = ({
   hideMinimap: hideMinimapProp,
   hotspots,
   background,
+  isExpanded,
   src,
   alt,
   isHotspotDataLoading,
@@ -396,6 +409,25 @@ const ImageHotspots = ({
       return () => window.removeEventListener('resize', resizeFunction);
     },
     [background, container, image, minimap, options, zoomMax] // eslint-disable-line
+  );
+
+  // If the image is expanded, then trigger a window resize
+  useEffect(
+    () => {
+      onWindowResize(
+        containerRef,
+        zoomMax,
+        container,
+        setContainer,
+        image,
+        setImage,
+        minimap,
+        setMinimap,
+        options,
+        setOptions
+      );
+    },
+    [isExpanded] // eslint-disable-line
   );
 
   // Should I flatten cursor and get rid of?

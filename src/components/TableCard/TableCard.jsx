@@ -38,7 +38,7 @@ const StyledActionIcon = styled(Icon)`
   }
 `;
 
-const StyledStatefulTable = styled(({ showHeader, data, ...rest }) => (
+const StyledStatefulTable = styled(({ showHeader, isExpanded, data, ...rest }) => (
   <StatefulTable {...rest} data={data} />
 ))`
   flex: inherit;
@@ -46,11 +46,50 @@ const StyledStatefulTable = styled(({ showHeader, data, ...rest }) => (
   position: relative;
   overflow-y: hidden;
   &&& {
+    .bx--pagination {
+      position: absolute;
+      bottom: 0;
+    }
     .bx--data-table-container {
       ${props =>
         props.data && props.data.length > 0 && !props.isExpanded
           ? `max-height: 435px;`
           : `height: 90%;`}
+    }
+
+    .bx--list-box__menu-item {
+      height: 2rem;
+      font-weight: normal;
+    }
+
+    .bx--table-toolbar {
+      padding-bottom: 2px;
+      padding-top: 0px;
+    }
+    .bx--data-table th:first-of-type,
+    .bx--data-table td:first-of-type {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+    .bx--data-table thead {
+      display: ${props => (!props.showHeader ? 'none' : '')};
+      tr {
+        height: 2rem;
+      }
+    }
+
+    .bx--data-table tbody tr {
+      height: 2.5rem;
+    }
+    .bx--data-table-container + .bx--pagination {
+      border: 1px solid #dfe3e6;
+    }
+
+    .bx--toolbar-search-container {
+      margin-left: 1rem;
+    }
+    .bx--data-table {
+      ${props => (props.data && props.data.length > 0 ? `height: initial;` : `height: 100%;`)}
     }
     .bx--data-table thead tr:nth-child(2) {
       height: 3rem;
@@ -76,43 +115,6 @@ const StyledStatefulTable = styled(({ showHeader, data, ...rest }) => (
         }
       }
     }
-  }
-  .bx--list-box__menu-item {
-    height: 2rem;
-    font-weight: normal;
-  }
-
-  .bx--table-toolbar {
-    padding-bottom: 2px;
-    padding-top: 0px;
-  }
-  .bx--data-table th:first-of-type,
-  .bx--data-table td:first-of-type {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-  .bx--data-table thead {
-    display: ${props => (!props.showHeader ? 'none' : '')};
-    tr {
-      height: 2rem;
-    }
-  }
-
-  .bx--data-table tbody tr {
-    height: 2.5rem;
-  }
-  .bx--data-table-container + .bx--pagination {
-    border: 1px solid #dfe3e6;
-  }
-  .bx--pagination {
-    position: absolute;
-    bottom: 0;
-  }
-  .bx--toolbar-search-container {
-    margin-left: 1rem;
-  }
-  .bx--data-table {
-    ${props => (props.data && props.data.length > 0 ? `height: initial;` : `height: 100%;`)}
   }
 `;
 
@@ -233,7 +235,8 @@ const determinePrecisionAndValue = (precision, value) => {
 const TableCard = ({
   id,
   title,
-  content: { columns = [], showHeader, expandedRows, sort, thresholds, emptyMessage, isExpanded },
+  isExpanded,
+  content: { columns = [], showHeader, expandedRows, sort, thresholds, emptyMessage },
   size,
   onCardAction,
   values: data,
@@ -694,6 +697,7 @@ const TableCard = ({
       onCardAction={onCardAction}
       availableActions={{ expand: isExpandable, range: true }}
       isEditable={isEditable}
+      isExpanded={isExpanded}
       i18n={i18n}
       {...others}
     >

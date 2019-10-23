@@ -1,11 +1,10 @@
-import React, { useState, useMemo, useCallback } from 'react';
+import React, { useState, useMemo, useCallback, useEffect, useRef } from 'react';
 import { Responsive, WidthProvider } from 'react-grid-layout';
 import PropTypes from 'prop-types';
 import 'react-grid-layout/css/styles.css';
 import 'react-resizable/css/styles.css';
 import styled from 'styled-components';
 import find from 'lodash/find';
-import some from 'lodash/some';
 
 import { getLayout } from '../../utils/componentUtilityFunctions';
 import {
@@ -49,7 +48,6 @@ const propTypes = {
       labelText: PropTypes.string,
     })
   ),
-  lastUpdated: PropTypes.string,
   cards: PropTypes.arrayOf(
     PropTypes.shape({
       content: PropTypes.object,
@@ -68,28 +66,37 @@ const propTypes = {
     sm: PropTypes.arrayOf(DashboardLayoutPropTypes),
     xs: PropTypes.arrayOf(DashboardLayoutPropTypes),
   }),
-  /** Row height in pixels for each layout */
-  rowHeight: RowHeightPropTypes,
-  /** media query pixel measurement that determines which particular dashboard layout should be used */
-  dashboardBreakpoints: DashboardBreakpointsPropTypes,
-  /** map of number of columns to a given dashboard layout */
-  dashboardColumns: DashboardColumnsPropTypes,
-  /** Add function callback if the layout is changed by dragging */
-  onLayoutChange: PropTypes.func,
-  /** Add function callback if the breakpoint has changed by dragging */
-  onBreakpointChange: PropTypes.func,
-  /** Callback called when an action is clicked.  The id of the action is passed to the callback */
-  onDashboardAction: PropTypes.func,
+
   /** Is the dashboard in edit mode? */
   isEditable: PropTypes.bool,
-  /** array of configurable sizes to dimensions */
-  cardDimensions: CardSizesToDimensionsPropTypes,
   /** Optional filter that should be rendered top right */
   filter: PropTypes.node,
   /** Optional sidebar content that should be rendered left of the dashboard cards */
   sidebar: PropTypes.node,
-  /** All the labels that need translation */
+  /** If the header should render the last updated section */
+  hasLastUpdated: PropTypes.bool,
 
+  // Callback functions
+  /** Callback called when a card should fetch its data, called with the card props and a boolean that determines whether a card supports timeseries data or not.  Return a promise that returns the updated card object with values.  It will be passed downstream to your card as props to update. */
+  onFetchData: PropTypes.func,
+  /** Optional Function that is called back if the card has a setup phase before data fetching */
+  onSetupCard: PropTypes.func,
+  /** Optionally listen to layout changes to update a dashboard template */
+  onLayoutChange: PropTypes.func,
+  /** Optionally listen to window resize events to update a dashboard template */
+  onBreakpointChange: PropTypes.func,
+  /** Callback called when an action is clicked.  The id of the action is passed to the callback */
+  onDashboardAction: PropTypes.func,
+
+  // Data related properties
+  /** If the overall dashboard should be using a timeGrain, we pass it here */
+  timeGrain: PropTypes.string,
+  /** Property that will trigger all cards to load again */
+  isLoading: PropTypes.bool,
+  /** once all the cards have finished loading this will be called */
+  setIsLoading: PropTypes.func,
+
+  /** All the labels that need translation */
   i18n: PropTypes.shape({
     lastUpdatedLabel: PropTypes.string,
     noDataLabel: PropTypes.string,
@@ -159,17 +166,20 @@ const propTypes = {
     learnMoreText: PropTypes.string,
     dismissText: PropTypes.string,
   }),
-  /** If the header should render the last updated section */
-  hasLastUpdated: PropTypes.bool,
 
-  // new props after migration
-  timeGrainCallback: PropTypes.func,
+  /** (Optional) Row height in pixels for each layout */
+  rowHeight: RowHeightPropTypes,
+  /** (Optional) media query pixel measurement that determines which particular dashboard layout should be used */
+  dashboardBreakpoints: DashboardBreakpointsPropTypes,
+  /** (Optional) map of number of columns to a given dashboard layout */
+  dashboardColumns: DashboardColumnsPropTypes,
+  /** (Optional) array of configurable sizes to dimensions */
+  cardDimensions: CardSizesToDimensionsPropTypes,
 };
 
 const defaultProps = {
   isEditable: false,
   description: null,
-  lastUpdated: null,
   onLayoutChange: null,
   onDashboardAction: null,
   onBreakpointChange: null,
@@ -253,7 +263,11 @@ const defaultProps = {
   sidebar: null,
   actions: [],
   hasLastUpdated: true,
-  timeGrainCallback: null,
+  onSetupCard: null,
+  onFetchData: null,
+  timeGrain: null,
+  isLoading: false,
+  setIsLoading: null,
 };
 
 const GridLayout = WidthProvider(Responsive);
@@ -266,12 +280,18 @@ const StyledGridLayout = styled(GridLayout)`
   }
 `;
 
-/** This component is a dumb component and only knows how to render itself */
+/** This component renders one individual dashboard. The passed cards are set into a grid layout based on the individual card sizes and layouts.
+ * It keeps track of whether any cards are actively loading data and shows a loading spinner at the top.
+ * It listens to all the cards data fetching, and updates it's overall refresh date once all cards have finished fetching data.
+ *
+ * To enable your cards to fetch data, you must implement the onFetchData callback.  The callback is called with the full card prop object,
+ * and then a boolean that describes whether to return timeseries data or not.  You should asynchronously return an array of values from your callback to populate your
+ * cards with data.
+ */
 const Dashboard = ({
   cards,
   title,
   description,
-  lastUpdated,
   hasLastUpdated,
   i18n,
   i18n: { lastUpdatedLabel },
@@ -288,31 +308,50 @@ const Dashboard = ({
   className,
   actions,
   onDashboardAction,
-  timeGrainCallback,
+  isLoading,
+  setIsLoading,
+  // TODO: remove onSetRefresh and instead listen to setIsLoading
+  onSetRefresh, // eslint-disable-line
+  onSetupCard,
+  // TODO: fix the rendering of the lastUpdated bit, to migrate in the style from our ibm repo
+  lastUpdated, // eslint-disable-line
+  onFetchData,
+  timeGrain,
 }) => {
   const [breakpoint, setBreakpoint] = useState('lg');
 
-  // keep track of the expanded card id
-  const [expandedId, setExpandedId] = useState();
+  // Keep track of whether any cards are loading or not, (doesn't need to be in state)
+  const cardsLoadingRef = useRef();
 
-  // onCardAction, should have the default ones by the dashboard eg. expand other are merged from the prop
-  const handleCardAction = (id, type, payload) => {
-    // callback time grain change from parent
-    if (type === 'CHANGE_TIME_RANGE') {
-      return timeGrainCallback(id, type, payload);
-    }
+  // Setup the loading tracker for the cards if the dashboard decides to load
+  useEffect(
+    () => {
+      if (isLoading) {
+        cardsLoadingRef.current = [];
+        onSetRefresh(null);
+      } else {
+        cardsLoadingRef.current = undefined;
+      }
+    },
+    [isLoading] // eslint-disable-line
+  );
 
-    // expand card
-    if (type === 'OPEN_EXPANDED_CARD') {
-      setExpandedId(id);
-    }
-
-    // close expanded card
-    if (type === 'CLOSE_EXPANDED_CARD') {
-      setExpandedId(null);
-    }
-    return null;
-  };
+  // Listen to the card fetches to determine whether all cards have finished loading
+  const handleOnFetchData = useCallback(
+    (card, ...args) => {
+      return onFetchData(card, ...args).finally(() => {
+        if (cardsLoadingRef.current && !cardsLoadingRef.current.includes(card.id)) {
+          cardsLoadingRef.current.push(card.id);
+          // If the card array count matches the card count, we call setIsLoading to false, and clear the array
+          if (cardsLoadingRef.current.length === cards.length) {
+            setIsLoading(false);
+            onSetRefresh(Date.now());
+          }
+        }
+      });
+    },
+    [onFetchData, cards.length] // eslint-disable-line
+  );
 
   const generatedLayouts = useMemo(
     () =>
@@ -353,26 +392,27 @@ const Dashboard = ({
   const cachedOnLayoutChange = useCallback(handleLayoutChange, [onLayoutChange]);
   const cachedOnBreakpointChange = useCallback(handleBreakpointChange, [onBreakpointChange]);
 
-  // Is any card in the dashboard loading?
-  const isLoading = useMemo(() => some(cards, i => i.isLoading || i.isHotspotDataLoading), [cards]);
-
   const gridContents = useMemo(
     () =>
-      cards.map(card => (
-        <CardRenderer
-          card={card}
-          key={card.id}
-          onCardAction={handleCardAction}
-          i18n={cachedI18N}
-          dashboardBreakpoints={dashboardBreakpoints}
-          cardDimensions={cardDimensions}
-          dashboardColumns={dashboardColumns}
-          rowHeight={rowHeight}
-          isLoading={isLoading}
-          isEditable={isEditable}
-          breakpoint={breakpoint}
-        />
-      )), // eslint-disable-next-line
+      cards.map(card =>
+        card ? (
+          <CardRenderer
+            card={card}
+            key={card.id}
+            i18n={cachedI18N}
+            dashboardBreakpoints={dashboardBreakpoints}
+            cardDimensions={cardDimensions}
+            dashboardColumns={dashboardColumns}
+            rowHeight={rowHeight}
+            isLoading={isLoading}
+            isEditable={isEditable}
+            breakpoint={breakpoint}
+            onSetupCard={onSetupCard}
+            onFetchData={handleOnFetchData}
+            timeGrain={timeGrain}
+          />
+        ) : null
+      ), // eslint-disable-next-line
     [
       breakpoint,
       cachedI18N,
@@ -383,45 +423,21 @@ const Dashboard = ({
       isEditable,
       isLoading,
       rowHeight,
+      handleOnFetchData,
+      timeGrain,
     ]
   );
-  // Cache the expanded card
-  const expandedCard = useMemo(() => cards.find(i => i.id === expandedId) || null, [
-    cards,
-    expandedId,
-  ]);
 
   return (
     <div className={className}>
-      {expandedCard && (
-        <div className="bx--modal is-visible">
-          <CardRenderer
-            card={{
-              ...expandedCard,
-              content: { ...expandedCard.content, isExpanded: true },
-              isExpanded: true,
-            }}
-            key={expandedCard.id}
-            onCardAction={handleCardAction}
-            i18n={i18n}
-            dashboardBreakpoints={dashboardBreakpoints}
-            cardDimensions={cardDimensions}
-            dashboardColumns={dashboardColumns}
-            rowHeight={rowHeight}
-            isLoading={isLoading}
-            isEditable={isEditable}
-            breakpoint={breakpoint}
-          />
-        </div>
-      )}
       <DashboardHeader
         title={title}
         description={description}
-        lastUpdated={!isEditable ? lastUpdated : null}
         lastUpdatedLabel={!isEditable ? lastUpdatedLabel : null}
         isLoading={isLoading}
         filter={filter}
         hasLastUpdated={hasLastUpdated}
+        lastUpdated={lastUpdated}
         actions={actions}
         onDashboardAction={onDashboardAction}
       />
