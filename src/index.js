@@ -230,7 +230,9 @@ export {
   SideNavSwitcher,
 } from 'carbon-components-react';
 export { validateDashboardJSON } from './utils/schemas/validators';
+
 export {
   determineCardRange,
   determineMaxValueCardAttributeCount,
+  compareGrains,
 } from './utils/cardUtilityFunctions';
