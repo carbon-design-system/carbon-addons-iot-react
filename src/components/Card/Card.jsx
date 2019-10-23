@@ -62,6 +62,7 @@ export const CardHeader = styled.div`
 export const CardContent = styled.div`
   flex: 1;
   position: relative;
+  overflow: hidden;
   height: ${props => props.dimensions.y - CARD_TITLE_HEIGHT}px;
 `;
 
@@ -186,7 +187,6 @@ const Card = ({
   availableActions,
   breakpoint,
   i18n,
-  i18n: { closeLabel },
   ...others
 }) => {
   const [tooltipId, setTooltipId] = useState(uuidv1());
@@ -319,7 +319,8 @@ const Card = ({
                 kind="ghost"
                 small
                 renderIcon={Close16}
-                iconDescription={closeLabel}
+                iconDescription={strings.closeLabel}
+                title={strings.closeLabel}
                 onClick={() => onCardAction(id, 'CLOSE_EXPANDED_CARD')}
               />
             ) : (
