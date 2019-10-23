@@ -1,6 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { text, select, object } from '@storybook/addon-knobs';
+import { action } from '@storybook/addon-actions';
+import { text, select, object, boolean } from '@storybook/addon-knobs';
 import omit from 'lodash/omit';
 
 import { CARD_SIZES } from '../../constants/LayoutConstants';
@@ -56,6 +57,7 @@ storiesOf('Watson IoT|ImageCard', module)
           values={object('values', values)}
           breakpoint="lg"
           size={size}
+          onCardAction={action('onCardAction')}
         />
       </div>
     );
@@ -72,6 +74,7 @@ storiesOf('Watson IoT|ImageCard', module)
           values={object('values', values)}
           breakpoint="lg"
           size={size}
+          onCardAction={action('onCardAction')}
         />
       </div>
     );
@@ -82,12 +85,49 @@ storiesOf('Watson IoT|ImageCard', module)
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <ImageCard
           title={text('title', 'Image')}
-          isHotspotDataLoading
+          isLoading={boolean('isLoading', true)}
           id="image-hotspots"
           content={object('content', content)}
           values={object('values', values)}
           breakpoint="lg"
           size={size}
+          onCardAction={action('onCardAction')}
+        />
+      </div>
+    );
+  })
+  .add('error', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.XLARGE);
+    return (
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+        <ImageCard
+          title={text('title', 'Image')}
+          isLoading={boolean('isLoading', true)}
+          id="image-hotspots"
+          content={object('content', content)}
+          values={object('values', values)}
+          breakpoint="lg"
+          size={size}
+          onCardAction={action('onCardAction')}
+          error={text('error', 'API threw Nullpointer')}
+        />
+      </div>
+    );
+  })
+  .add('error loading image', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.XLARGE);
+    return (
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+        <ImageCard
+          title={text('title', 'Image')}
+          isLoading={boolean('isLoading', true)}
+          id="image-hotspots"
+          content={object('content', omit(content, ['src']))}
+          values={object('values', values)}
+          breakpoint="lg"
+          size={size}
+          onCardAction={action('onCardAction')}
+          error={text('error', `Error no image found called ImageID`)}
         />
       </div>
     );

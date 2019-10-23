@@ -39,7 +39,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn lint-staged && yarn test --silent",
+      "pre-commit": "yarn lint-staged && yarn test",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
@@ -63,16 +63,16 @@
     ]
   },
   "dependencies": {
-    "@carbon/charts": "^0.16.17",
-    "@carbon/charts-react": "^0.16.17",
-    "@carbon/icons": "^10.6.1",
-    "@carbon/icons-react": "^10.6.0",
-    "@carbon/themes": "^10.6.1",
+    "@carbon/charts": "0.16.17",
+    "@carbon/charts-react": "0.16.17",
+    "@carbon/icons": "10.6.1",
+    "@carbon/icons-react": "10.6.1",
+    "@carbon/themes": "10.6.1",
     "ajv": "^6.10.2",
     "c3": "^0.7.1",
-    "carbon-components": "^10.6.4",
-    "carbon-components-react": "^7.6.4",
-    "carbon-icons": "^7.0.7",
+    "carbon-components": "10.6.4",
+    "carbon-components-react": "7.6.4",
+    "carbon-icons": "7.0.7",
     "classnames": "^2.2.5",
     "core-js": "2.6.5",
     "immutability-helper": "^2.9.0",
@@ -121,7 +121,7 @@
     "@babel/polyfill": "^7.2.5",
     "@babel/preset-env": "^7.6.3",
     "@babel/preset-flow": "^7.0.0",
-    "@babel/preset-react": "^7.0.0",
+    "@babel/preset-react": "^7.6.3",
     "@babel/runtime": "^7.0.0",
     "@commitlint/cli": "^7.2.1",
     "@commitlint/config-conventional": "^7.1.2",

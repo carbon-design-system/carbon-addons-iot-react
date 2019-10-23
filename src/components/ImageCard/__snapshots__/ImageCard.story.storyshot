@@ -395,6 +395,242 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
 </div>
 `;
 
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ImageCard error 1`] = `
+<div
+  className="storybook-container"
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "flexDirection": "column",
+      "padding": "3rem",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "margin": 20,
+          "width": "1056px",
+        }
+      }
+    >
+      <div
+        className="Card__CardWrapper-v5r71h-0 kGdXdI"
+        id="image-hotspots"
+      >
+        <div
+          className="card--header"
+        >
+          <span
+            className="card--title"
+            title="Image"
+          >
+            Image
+             
+          </span>
+          <div
+            className="bx--toolbar card--toolbar"
+          >
+            <button
+              className="card--toolbar-action Card__TinyButton-v5r71h-4 fggzfz bx--btn bx--btn--sm bx--btn--ghost"
+              disabled={false}
+              onClick={[Function]}
+              tabIndex={0}
+              title="Expand to fullscreen"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                aria-label="Expand to fullscreen"
+                className="bx--btn__icon"
+                focusable="false"
+                height={20}
+                preserveAspectRatio="xMidYMid meet"
+                role="img"
+                style={
+                  Object {
+                    "willChange": "transform",
+                  }
+                }
+                viewBox="0 0 32 32"
+                width={20}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M28 4H10a2.006 2.006 0 0 0-2 2v14a2.006 2.006 0 0 0 2 2h18a2.006 2.006 0 0 0 2-2V6a2.006 2.006 0 0 0-2-2zm0 16H10V6h18z"
+                />
+                <path
+                  d="M18 26H4V16h2v-2H4a2.006 2.006 0 0 0-2 2v10a2.006 2.006 0 0 0 2 2h14a2.006 2.006 0 0 0 2-2v-2h-2z"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div
+          className="Card__CardContent-v5r71h-1 fabdLf"
+        >
+          <div
+            className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
+          >
+            Error loading data for this card:  API threw Nullpointer
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ImageCard error loading image 1`] = `
+<div
+  className="storybook-container"
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "flexDirection": "column",
+      "padding": "3rem",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "margin": 20,
+          "width": "1056px",
+        }
+      }
+    >
+      <div
+        className="Card__CardWrapper-v5r71h-0 kGdXdI"
+        id="image-hotspots"
+      >
+        <div
+          className="card--header"
+        >
+          <span
+            className="card--title"
+            title="Image"
+          >
+            Image
+             
+          </span>
+          <div
+            className="bx--toolbar card--toolbar"
+          >
+            <button
+              className="card--toolbar-action Card__TinyButton-v5r71h-4 fggzfz bx--btn bx--btn--sm bx--btn--ghost"
+              disabled={false}
+              onClick={[Function]}
+              tabIndex={0}
+              title="Expand to fullscreen"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                aria-label="Expand to fullscreen"
+                className="bx--btn__icon"
+                focusable="false"
+                height={20}
+                preserveAspectRatio="xMidYMid meet"
+                role="img"
+                style={
+                  Object {
+                    "willChange": "transform",
+                  }
+                }
+                viewBox="0 0 32 32"
+                width={20}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M28 4H10a2.006 2.006 0 0 0-2 2v14a2.006 2.006 0 0 0 2 2h18a2.006 2.006 0 0 0 2-2V6a2.006 2.006 0 0 0-2-2zm0 16H10V6h18z"
+                />
+                <path
+                  d="M18 26H4V16h2v-2H4a2.006 2.006 0 0 0-2 2v10a2.006 2.006 0 0 0 2 2h14a2.006 2.006 0 0 0 2-2v-2h-2z"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div
+          className="Card__CardContent-v5r71h-1 fabdLf"
+        >
+          <div
+            className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
+          >
+            Error loading data for this card:  Error no image found called ImageID
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ImageCard hotspots are loading 1`] = `
 <div
   className="storybook-container"

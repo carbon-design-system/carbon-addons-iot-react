@@ -328,6 +328,77 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
 </div>
 `;
 
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card implementing a custom card 1`] = `
+<div
+  className="storybook-container"
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "flexDirection": "column",
+      "padding": "3rem",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      className="Card__CardWrapper-v5r71h-0 fbzdtE"
+      id="Card Title"
+    >
+      <div
+        className="card--header"
+      >
+        <span
+          className="card--title"
+          title="Card Title"
+        >
+          Card Title
+           
+        </span>
+        <div
+          className="bx--toolbar card--toolbar"
+        />
+      </div>
+      <div
+        className="Card__CardContent-v5r71h-1 gPUVrT"
+      >
+        [{"timestamp":12341231231,"value1":"my value"}]
+      </div>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card is editable 1`] = `
 <div
   className="storybook-container"
