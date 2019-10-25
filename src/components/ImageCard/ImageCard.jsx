@@ -64,29 +64,36 @@ const ImageCard = ({
       error={error}
       i18n={otherLabels}
     >
-      {!isCardLoading ? (
-        <ContentWrapper>
-          {supportedSize ? (
-            isEditable ? (
-              <EmptyDiv>
-                <Image32 width={250} height={250} fill="gray" />
-              </EmptyDiv>
-            ) : content && src ? (
-              <ImageHotspots
-                {...content}
-                isExpanded={isExpanded}
-                hotspots={hotspots}
-                isHotspotDataLoading={isLoading}
-                loadingHotspotsLabel={loadingDataLabel}
-              />
-            ) : (
-              <p>Error retrieving image.</p>
-            )
-          ) : (
-            <p>Size not supported.</p>
-          )}
-        </ContentWrapper>
-      ) : null}
+      {!isCardLoading
+        ? (
+            // Get width and height from parent card
+            { width, height } // eslint-disable-line
+          ) => (
+            <ContentWrapper>
+              {supportedSize ? (
+                isEditable ? (
+                  <EmptyDiv>
+                    <Image32 width={250} height={250} fill="gray" />
+                  </EmptyDiv>
+                ) : content && src ? (
+                  <ImageHotspots
+                    {...content}
+                    width={width}
+                    height={height}
+                    isExpanded={isExpanded}
+                    hotspots={hotspots}
+                    isHotspotDataLoading={isLoading}
+                    loadingHotspotsLabel={loadingDataLabel}
+                  />
+                ) : (
+                  <p>Error retrieving image.</p>
+                )
+              ) : (
+                <p>Size not supported.</p>
+              )}
+            </ContentWrapper>
+          )
+        : null}
     </Card>
   );
 };

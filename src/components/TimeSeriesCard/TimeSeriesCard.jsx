@@ -140,7 +140,7 @@ const TimeSeriesCard = ({
     ? memoizedGenerateSampleValues(series, timeDataSourceId, interval)
     : valuesProp;
 
-  const isAllValuesEmpty = isValuesEmpty(valuesProp, timeDataSourceId);
+  const isAllValuesEmpty = isValuesEmpty(values, timeDataSourceId);
 
   const valueSort = useMemo(
     () =>
