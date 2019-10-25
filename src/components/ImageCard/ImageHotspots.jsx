@@ -40,7 +40,7 @@ const defaultProps = {
   width: 150,
 };
 
-const startDrag = (event, element, cursor, setCursor) => {
+export const startDrag = (event, element, cursor, setCursor) => {
   const cursorX = event.clientX;
   const cursorY = event.clientY;
   if (element === 'image') {
@@ -56,7 +56,7 @@ const startDrag = (event, element, cursor, setCursor) => {
   event.preventDefault();
 };
 
-const whileDrag = (event, cursor, setCursor, image, setImage, minimap, setMinimap) => {
+export const whileDrag = (event, cursor, setCursor, image, setImage, minimap, setMinimap) => {
   const cursorX = event.clientX;
   const cursorY = event.clientY;
   const deltaX = cursorX - cursor.cursorX;
@@ -81,7 +81,7 @@ const whileDrag = (event, cursor, setCursor, image, setImage, minimap, setMinima
   });
 };
 
-const stopDrag = (container, image, setImage, minimap, setMinimap, cursor, setCursor) => {
+export const stopDrag = (container, image, setImage, minimap, setMinimap, cursor, setCursor) => {
   const offsetXMax =
     container.orientation === image.orientation
       ? -Math.abs(image.width - container.width)
@@ -125,7 +125,34 @@ const stopDrag = (container, image, setImage, minimap, setMinimap, cursor, setCu
   setCursor({ ...cursor, dragging: false });
 };
 
-const onImageLoad = (
+export const calculateImageWidth = (container, orientation, ratio, scale = 1) =>
+  (container.orientation === orientation
+    ? orientation === 'landscape'
+      ? ratio >= container.ratio
+        ? container.width // landscape image bigger than landscape container
+        : container.height * ratio // landscape image smaller than landscape container
+      : ratio >= container.ratio
+      ? container.height / ratio // portrait image bigger than portrait container
+      : container.width // portrait image smaller than portrait container
+    : orientation === 'landscape'
+    ? container.width // landscape image and portrait container
+    : container.height / ratio) * scale; // portrait image and landscape container
+
+export const calculateImageHeight = (container, orientation, ratio, scale = 1) =>
+  (container.orientation === orientation
+    ? orientation === 'landscape'
+      ? ratio >= container.ratio
+        ? container.width / ratio // landscape image bigger than landscape container
+        : container.height // landscape image smaller than landscape container
+      : ratio >= container.ratio
+      ? container.height // portrait image bigger than portrait container
+      : container.width * ratio // portrait image smaller than portrait container
+    : orientation === 'landscape'
+    ? container.width / ratio // landscape image and portrait container
+    : container.height) * scale; // portrait image and landscape container
+
+/** Sets initialWidth and initialHeight of an image, offsets orientations in the state */
+export const onImageLoad = (
   { target: imageLoaded },
   container,
   image,
@@ -140,31 +167,8 @@ const onImageLoad = (
   const ratio =
     orientation === 'landscape' ? initialWidth / initialHeight : initialHeight / initialWidth;
 
-  const width = // eslint-disable-line
-    container.orientation === orientation
-      ? orientation === 'landscape'
-        ? ratio >= container.ratio
-          ? container.width // landscape image bigger than landscape container
-          : container.height * ratio // landscape image smaller than landscape container
-        : ratio >= container.ratio
-        ? container.height / ratio // portrait image bigger than portrait container
-        : container.width // portrait image smaller than portrait container
-      : orientation === 'landscape'
-      ? container.width // landscape image and portrait container
-      : container.height / ratio; // portrait image and landscape container
-
-  const height = //eslint-disable-line
-    container.orientation === orientation
-      ? orientation === 'landscape'
-        ? ratio >= container.ratio
-          ? container.width / ratio // landscape image bigger than landscape container
-          : container.height // landscape image smaller than landscape container
-        : ratio >= container.ratio
-        ? container.height // portrait image bigger than portrait container
-        : container.width * ratio // portrait image smaller than portrait container
-      : orientation === 'landscape'
-      ? container.width / ratio // landscape image and portrait container
-      : container.height; // portrait image and landscape container
+  const width = calculateImageWidth(container, orientation, ratio);
+  const height = calculateImageHeight(container, orientation, ratio);
 
   const resizable = initialWidth > width || initialHeight > height;
 
@@ -196,7 +200,9 @@ const onImageLoad = (
   });
 };
 
-const zoom = (
+/** Updates the image, minimap and options based on the scale of the new zoom.
+ * Will not allow scaling beyond zoomMax */
+export const zoom = (
   scale,
   zoomMax,
   container,
@@ -207,31 +213,8 @@ const zoom = (
   options,
   setOptions
 ) => {
-  const width = //eslint-disable-line
-    container.orientation === image.orientation
-      ? image.orientation === 'landscape'
-        ? image.ratio >= container.ratio
-          ? container.width * scale // landscape image bigger than landscape container
-          : container.height * image.ratio * scale // landscape image smaller than landscape container
-        : image.ratio >= container.ratio
-        ? (container.height / image.ratio) * scale // portrait image bigger than portrait container
-        : container.width * scale // portrait image smaller than portrait container
-      : image.orientation === 'landscape'
-      ? container.width * scale // landscape image and portrait container
-      : (container.height / image.ratio) * scale; // portrait image and landscape container
-
-  const height = //eslint-disable-line
-    container.orientation === image.orientation
-      ? image.orientation === 'landscape'
-        ? image.ratio >= container.ratio
-          ? (container.width / image.ratio) * scale // landscape image bigger than landscape container
-          : container.height * scale // landscape image smaller than landscape container
-        : image.ratio >= container.ratio
-        ? container.height * scale // portrait image bigger than portrait container
-        : container.width * image.ratio * scale // portrait image smaller than portrait container
-      : image.orientation === 'landscape'
-      ? (container.width / image.ratio) * scale // landscape image and portrait container
-      : container.height * scale; // portrait image and landscape container
+  const width = calculateImageWidth(container, image.orientation, image.ratio, scale);
+  const height = calculateImageHeight(container, image.orientation, image.ratio, scale);
 
   // Reset draggability
   setOptions({ ...options, draggable: scale > 1 });
