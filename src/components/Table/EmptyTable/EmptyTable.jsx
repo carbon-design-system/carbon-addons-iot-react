@@ -10,6 +10,7 @@ const { TableBody, TableCell, TableRow } = DataTable;
 
 const StyledEmptyTableRow = styled(TableRow)`
   &&& {
+    height: calc(100% - 3rem);
     &:hover td {
       background: inherit;
     }
