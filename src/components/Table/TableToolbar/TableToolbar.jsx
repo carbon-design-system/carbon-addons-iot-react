@@ -232,7 +232,7 @@ const TableToolbar = ({
       {customToolbarContent || null}
       {totalFilters > 0 ? (
         <StyledClearFiltersButton kind="secondary" onClick={onClearAllFilters} small>
-          {i18n.clearAllFiltersText}
+          {i18n.clearAllFilters}
         </StyledClearFiltersButton>
       ) : null}
       {hasColumnSelection ? (
