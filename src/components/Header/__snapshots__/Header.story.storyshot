@@ -75,7 +75,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Heade
       >
         <button
           aria-label="alerts"
-          className="header-action-btn bx--header__action"
+          className="bx--header-action-btn bx--header__action"
           onClick={[Function]}
           type="button"
         >
@@ -101,7 +101,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Heade
           </svg>
         </button>
         <div
-          className="bx--header__submenu header-action-btn"
+          className="bx--header__submenu bx--header-action-btn"
           onBlur={[Function]}
           onClick={[Function]}
           onKeyDown={[Function]}
@@ -217,7 +217,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Heade
            
         </div>
         <div
-          className="bx--header__submenu header-action-btn"
+          className="bx--header__submenu bx--header-action-btn"
           onBlur={[Function]}
           onClick={[Function]}
           onKeyDown={[Function]}
@@ -467,7 +467,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Heade
       >
         <button
           aria-label="user"
-          className="header-action-btn bx--header__action"
+          className="bx--header-action-btn bx--header__action"
           onClick={[Function]}
           type="button"
         >

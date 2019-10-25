@@ -11,8 +11,11 @@ import {
 import AppSwitcher from '@carbon/icons-react/lib/app-switcher/20';
 import PropTypes from 'prop-types';
 import React, { useState, useCallback } from 'react';
+import { settings } from 'carbon-components';
 
 import HeaderMenu from './HeaderMenu';
+
+const { prefix: carbonPrefix } = settings;
 
 const propTypes = {
   /** Add a prefix other than IBM */
@@ -100,7 +103,7 @@ const Header = ({
       ));
       return (
         <HeaderMenu
-          className="header-action-btn"
+          className={`${carbonPrefix}--header-action-btn`}
           key={`menu-item-${item.label}`}
           aria-label={item.label}
           isMenu={false}
@@ -113,7 +116,7 @@ const Header = ({
     }
     return (
       <HeaderGlobalAction
-        className="header-action-btn"
+        className={`${carbonPrefix}--header-action-btn`}
         key={`menu-item-${item.label}-global`}
         aria-label={item.label}
         onClick={item.onClick}

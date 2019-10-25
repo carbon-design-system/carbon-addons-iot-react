@@ -148,13 +148,13 @@ exports[`Header testcases should render 1`] = `
         >
           <HeaderGlobalAction
             aria-label="alerts"
-            className="header-action-btn"
+            className="bx--header-action-btn"
             key="menu-item-alerts-global"
             onClick={[MockFunction]}
           >
             <button
               aria-label="alerts"
-              className="header-action-btn bx--header__action"
+              className="bx--header-action-btn bx--header__action"
               onClick={[MockFunction]}
               type="button"
             >
@@ -197,7 +197,7 @@ exports[`Header testcases should render 1`] = `
           </HeaderGlobalAction>
           <ForwardRef
             aria-label="help"
-            className="header-action-btn"
+            className="bx--header-action-btn"
             isMenu={false}
             key="menu-item-help"
             menuLinkName=""
@@ -205,14 +205,14 @@ exports[`Header testcases should render 1`] = `
           >
             <HeaderMenu
               aria-label="help"
-              className="header-action-btn"
+              className="bx--header-action-btn"
               focusRef={null}
               isMenu={false}
               menuLinkName=""
               renderMenuContent={[Function]}
             >
               <div
-                className="bx--header__submenu header-action-btn"
+                className="bx--header__submenu bx--header-action-btn"
                 onBlur={[Function]}
                 onClick={[Function]}
                 onKeyDown={[Function]}
