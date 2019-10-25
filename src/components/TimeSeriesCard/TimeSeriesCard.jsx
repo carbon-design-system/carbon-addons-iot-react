@@ -1,7 +1,7 @@
 import React, { useRef, useMemo, useCallback } from 'react';
 import moment from 'moment/min/moment-with-locales.min';
 import { LineChart } from '@carbon/charts-react';
-import '@carbon/charts/style.css';
+import '@carbon/charts/styles.css';
 import isEmpty from 'lodash/isEmpty';
 import styled from 'styled-components';
 import isNil from 'lodash/isNil';
@@ -278,15 +278,17 @@ const TimeSeriesCard = ({
                   options={{
                     animations: false,
                     accessibility: false,
-                    scales: {
-                      x: {
+                    axes: {
+                      bottom: {
                         title: xLabel,
+                        secondary: true,
                       },
-                      y: {
+                      left: {
                         title: yLabel,
                         formatter: axisValue => valueFormatter(axisValue, size, unit),
                         // numberOfTicks: 8,
                         yMaxAdjuster: yMaxValue => yMaxValue * 1.3,
+                        primary: true,
                       },
                     },
                     legendClickable: !isEditable,
