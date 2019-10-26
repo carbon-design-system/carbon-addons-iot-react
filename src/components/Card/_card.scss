@@ -26,6 +26,8 @@
   &--toolbar {
     margin-top: 0;
     margin-bottom: 0;
+    position: absolute;
+    right: $spacing-05;
   }
 
   &--overflow {
