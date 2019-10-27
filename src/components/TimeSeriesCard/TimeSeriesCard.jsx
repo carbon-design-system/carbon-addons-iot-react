@@ -18,8 +18,8 @@ import { generateSampleValues, isValuesEmpty } from './timeSeriesUtils';
 const LineChartWrapper = styled.div`
   padding-left: 16px;
   padding-right: 1rem;
-  padding-top: ${props => (props.isLegendHidden ? '16px' : '0px')};
-  padding-bottom: ${props => (!props.size === CARD_SIZES.MEDIUM ? '16px' : '0px')};
+  padding-top: 0px;
+  padding-bottom: 16px;
   position: absolute;
   width: 100%;
   height: ${props => props.contentHeight};
@@ -91,13 +91,13 @@ const determinePrecision = (size, value, precision) => {
   return precision;
 };
 
-const formatChartData = (labels, series, values) => {
+const formatChartData = (labels, timeDataSourceId, series, values) => {
   return {
     labels,
     datasets: series.map(({ dataSourceId, label, color }) => ({
       label,
       backgroundColors: color ? [color] : null,
-      data: values.map(i => i[dataSourceId]),
+      data: values.map(i => ({ date: new Date(i[timeDataSourceId]), value: i[dataSourceId] })),
     })),
   };
 };
@@ -244,13 +244,18 @@ const TimeSeriesCard = ({
     () => {
       if (chartRef && chartRef.chart) {
         const chartData = formatChartData(labels, lines, values);
-        chartRef.chart.setData(chartData);
+        chartRef.chart.model.setData(chartData);
       }
     },
     [values, labels, lines]
   );
 
-  const chartData = useMemo(() => formatChartData(labels, lines, values), [labels, lines, values]);
+  const chartData = useMemo(() => formatChartData(labels, timeDataSourceId, lines, values), [
+    labels,
+    timeDataSourceId,
+    lines,
+    values,
+  ]);
   return (
     <withSize.SizeMe>
       {({ size: measuredSize }) => {
@@ -281,17 +286,17 @@ const TimeSeriesCard = ({
                     axes: {
                       bottom: {
                         title: xLabel,
-                        secondary: true,
+                        type: 'time',
+                        primary: true,
                       },
                       left: {
                         title: yLabel,
                         formatter: axisValue => valueFormatter(axisValue, size, unit),
-                        // numberOfTicks: 8,
                         yMaxAdjuster: yMaxValue => yMaxValue * 1.3,
-                        primary: true,
+                        secondary: true,
                       },
                     },
-                    legendClickable: !isEditable,
+                    legend: { position: 'right', clickable: !isEditable },
                     containerResizable: true,
                     tooltip: {
                       formatter: tooltipValue => valueFormatter(tooltipValue, size, unit),
