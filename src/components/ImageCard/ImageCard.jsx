@@ -78,8 +78,8 @@ const ImageCard = ({
                 ) : content && src ? (
                   <ImageHotspots
                     {...content}
-                    width={width}
-                    height={height}
+                    width={width - 16 * 2} // Need to adjust for card chrome
+                    height={height - (48 + 16)} // Need to adjust for card chrome
                     isExpanded={isExpanded}
                     hotspots={hotspots}
                     isHotspotDataLoading={isLoading}
