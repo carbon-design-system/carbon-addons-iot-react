@@ -1,7 +1,6 @@
 import React, { useRef, useMemo, useCallback } from 'react';
 import moment from 'moment/min/moment-with-locales.min';
 import { LineChart } from '@carbon/charts-react';
-import '@carbon/charts/style.css';
 import isEmpty from 'lodash/isEmpty';
 import styled from 'styled-components';
 import isNil from 'lodash/isNil';
