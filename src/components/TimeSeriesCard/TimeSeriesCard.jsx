@@ -1,19 +1,36 @@
 import React, { useRef, useMemo, useCallback } from 'react';
 import moment from 'moment/min/moment-with-locales.min';
 import { LineChart } from '@carbon/charts-react';
-import '@carbon/charts/styles.css';
+import '@carbon/charts/dist/styles.css';
 import isEmpty from 'lodash/isEmpty';
 import styled from 'styled-components';
 import isNil from 'lodash/isNil';
 import memoize from 'lodash/memoize';
 import useDeepCompareEffect from 'use-deep-compare-effect';
 import withSize from 'react-sizeme';
+import cheerio from 'cheerio';
 
 import { TimeSeriesCardPropTypes, CardPropTypes } from '../../constants/PropTypes';
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 import Card from '../Card/Card';
 
 import { generateSampleValues, isValuesEmpty } from './timeSeriesUtils';
+
+export const handleTooltip = (data, defaultTooltip) => {
+  const $ = cheerio.load(defaultTooltip);
+  const dateLabel = `<li class='datapoint-tooltip'><p class='label'>${moment(
+    Array.isArray(data) && data[0] ? data[0].date : data.date
+  ).format('L HH:mm:ss')}</p></li>`;
+  if (Array.isArray(data)) {
+    // prepend the date inside the existing multi tooltip
+    $('.multi-tooltip > li:first-child').before(dateLabel);
+  } else {
+    // wrap to make single a multi-tooltip
+    $('.datapoint-tooltip').wrap(`<ul class='multi-tooltip'><li></li></ul>`);
+    $('.multi-tooltip > li:first-child').before(dateLabel);
+  }
+  return $.html('body > *');
+};
 
 const LineChartWrapper = styled.div`
   padding-left: 16px;
@@ -44,6 +61,7 @@ const LineChartWrapper = styled.div`
     .chart-holder {
       width: 100%;
       height: 100%;
+      padding-top: 0.25rem;
     }
     .chart-svg {
       width: 100%;
@@ -296,10 +314,11 @@ const TimeSeriesCard = ({
                         secondary: true,
                       },
                     },
-                    legend: { position: 'right', clickable: !isEditable },
+                    legend: { position: 'top', clickable: !isEditable },
                     containerResizable: true,
                     tooltip: {
                       formatter: tooltipValue => valueFormatter(tooltipValue, size, unit),
+                      customHTML: handleTooltip, // TODO: waiting for @carbon/charts support https://github.com/carbon-design-system/carbon-charts/pull/389
                     },
                   }}
                   width="100%"
