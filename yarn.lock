@@ -1551,7 +1551,7 @@
   dependencies:
     "@carbon/charts" "^0.16.17"
 
-"@carbon/charts@^0.16.17":
+"@carbon/charts@0.16.17", "@carbon/charts@^0.16.17":
   version "0.16.17"
   resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-0.16.17.tgz#cf583d4248a59df42325daca15d9e22538557ccb"
   integrity sha512-bGe9g0wHLqmvGx7+80I9OLyp9+8qAs0xIkHgtML2K2Ycay6VElNKDq61+UVkwnz3CcArsDTCNWCIzhAopEuYhQ==

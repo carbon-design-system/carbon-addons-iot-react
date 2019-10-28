@@ -89,7 +89,7 @@
     "@babel/preset-flow": "^7.0.0",
     "@babel/preset-react": "^7.6.3",
     "@babel/runtime": "^7.0.0",
-    "@carbon/charts": "^0.16.17",
+    "@carbon/charts": "0.16.17",
     "@carbon/charts-react": "^0.16.17",
     "@carbon/icons": "^10.1.0",
     "@carbon/icons-react": "^10.1.1",
