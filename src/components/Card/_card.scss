@@ -4,7 +4,7 @@
 .card {
   &--title {
     font-size: rem(14px);
-    line-height: rem(18px);
+    line-height: rem(48px);
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -15,7 +15,7 @@
   }
 
   &--header {
-    padding: $spacing-05;
+    padding: 0 $spacing-05;
     flex: 0 0 $spacing-09;
     display: flex;
     align-items: center;
@@ -26,8 +26,6 @@
   &--toolbar {
     margin-top: 0;
     margin-bottom: 0;
-    position: absolute;
-    right: $spacing-05;
   }
 
   &--overflow {
