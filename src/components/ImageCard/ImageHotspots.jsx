@@ -21,9 +21,9 @@ const propTypes = {
   /** Background color to display around the image */
   background: PropTypes.string,
   /** Current height in pixels */
-  height: PropTypes.number,
+  height: PropTypes.number.isRequired,
   /** Current width in pixels */
-  width: PropTypes.number,
+  width: PropTypes.number.isRequired,
   zoomMax: PropTypes.number,
 };
 
@@ -36,8 +36,6 @@ const defaultProps = {
   isHotspotDataLoading: false,
   background: '#eee',
   zoomMax: undefined,
-  height: 150,
-  width: 150,
 };
 
 export const startDrag = (event, element, cursor, setCursor) => {
@@ -170,7 +168,8 @@ export const onImageLoad = (
   const width = calculateImageWidth(container, orientation, ratio);
   const height = calculateImageHeight(container, orientation, ratio);
 
-  const resizable = initialWidth > width || initialHeight > height;
+  // Because the first zoom is double, the initial image has to be big enough to support
+  const resizable = initialWidth > 2 * width || initialHeight > 2 * height;
 
   setImage({
     ...image,
@@ -310,8 +309,8 @@ const ImageHotspots = ({
   hotspots,
   background,
   src,
-  height: heightProp,
-  width: widthProp,
+  height,
+  width,
   alt,
   isHotspotDataLoading,
   zoomMax,
@@ -333,8 +332,6 @@ const ImageHotspots = ({
     hideMinimapProp,
   });
 
-  const height = heightProp - (48 + 16); // Need to adjust for card chrome
-  const width = widthProp - 16 * 2; // need to adjust for card chrome
   const orientation = width > height ? 'landscape' : 'portrait';
   const ratio = orientation === 'landscape' ? width / height : height / width;
 
