@@ -33,7 +33,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|AddCa
       <svg
         aria-hidden={true}
         description="Click me"
-        fill="#171717"
+        fill="#161616"
         focusable="false"
         height={20}
         preserveAspectRatio="xMidYMid meet"
