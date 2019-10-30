@@ -1283,7 +1283,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           id="Table"
                         >
                           <tr
-                            className="EmptyTable__StyledEmptyTableRow-sc-2gw9t-0 kfMIPX"
+                            className="EmptyTable__StyledEmptyTableRow-sc-2gw9t-0 jSTkIE"
                           >
                             <td
                               colSpan={3}
@@ -1572,7 +1572,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             className="Hotspot__StyledHotspot-nlpwmi-0 fvESgj"
                           >
                             <div
-                              aria-describedby={null}
+                              aria-describedby="hotspot-35-65"
                               aria-haspopup="true"
                               aria-labelledby="hotspot-35-65"
                               className="bx--tooltip__label"
@@ -1608,7 +1608,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             className="Hotspot__StyledHotspot-nlpwmi-0 kwumIH"
                           >
                             <div
-                              aria-describedby={null}
+                              aria-describedby="hotspot-45-25"
                               aria-haspopup="true"
                               aria-labelledby="hotspot-45-25"
                               className="bx--tooltip__label"
@@ -1650,7 +1650,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             className="Hotspot__StyledHotspot-nlpwmi-0 eqtfro"
                           >
                             <div
-                              aria-describedby={null}
+                              aria-describedby="hotspot-45-50"
                               aria-haspopup="true"
                               aria-labelledby="hotspot-45-50"
                               className="bx--tooltip__label"
@@ -1692,7 +1692,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             className="Hotspot__StyledHotspot-nlpwmi-0 ezcTmr"
                           >
                             <div
-                              aria-describedby={null}
+                              aria-describedby="hotspot-45-75"
                               aria-haspopup="true"
                               aria-labelledby="hotspot-45-75"
                               className="bx--tooltip__label"
@@ -3131,7 +3131,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           id="Table"
                         >
                           <tr
-                            className="EmptyTable__StyledEmptyTableRow-sc-2gw9t-0 kfMIPX"
+                            className="EmptyTable__StyledEmptyTableRow-sc-2gw9t-0 jSTkIE"
                           >
                             <td
                               colSpan={3}
@@ -3420,7 +3420,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             className="Hotspot__StyledHotspot-nlpwmi-0 fvESgj"
                           >
                             <div
-                              aria-describedby={null}
+                              aria-describedby="hotspot-35-65"
                               aria-haspopup="true"
                               aria-labelledby="hotspot-35-65"
                               className="bx--tooltip__label"
@@ -3456,7 +3456,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             className="Hotspot__StyledHotspot-nlpwmi-0 kwumIH"
                           >
                             <div
-                              aria-describedby={null}
+                              aria-describedby="hotspot-45-25"
                               aria-haspopup="true"
                               aria-labelledby="hotspot-45-25"
                               className="bx--tooltip__label"
@@ -3498,7 +3498,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             className="Hotspot__StyledHotspot-nlpwmi-0 eqtfro"
                           >
                             <div
-                              aria-describedby={null}
+                              aria-describedby="hotspot-45-50"
                               aria-haspopup="true"
                               aria-labelledby="hotspot-45-50"
                               className="bx--tooltip__label"
@@ -3540,7 +3540,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             className="Hotspot__StyledHotspot-nlpwmi-0 ezcTmr"
                           >
                             <div
-                              aria-describedby={null}
+                              aria-describedby="hotspot-45-75"
                               aria-haspopup="true"
                               aria-labelledby="hotspot-45-75"
                               className="bx--tooltip__label"
@@ -5011,7 +5011,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           id="Table"
                         >
                           <tr
-                            className="EmptyTable__StyledEmptyTableRow-sc-2gw9t-0 kfMIPX"
+                            className="EmptyTable__StyledEmptyTableRow-sc-2gw9t-0 jSTkIE"
                           >
                             <td
                               colSpan={3}
@@ -5300,7 +5300,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             className="Hotspot__StyledHotspot-nlpwmi-0 fvESgj"
                           >
                             <div
-                              aria-describedby={null}
+                              aria-describedby="hotspot-35-65"
                               aria-haspopup="true"
                               aria-labelledby="hotspot-35-65"
                               className="bx--tooltip__label"
@@ -5336,7 +5336,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             className="Hotspot__StyledHotspot-nlpwmi-0 kwumIH"
                           >
                             <div
-                              aria-describedby={null}
+                              aria-describedby="hotspot-45-25"
                               aria-haspopup="true"
                               aria-labelledby="hotspot-45-25"
                               className="bx--tooltip__label"
@@ -5378,7 +5378,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             className="Hotspot__StyledHotspot-nlpwmi-0 eqtfro"
                           >
                             <div
-                              aria-describedby={null}
+                              aria-describedby="hotspot-45-50"
                               aria-haspopup="true"
                               aria-labelledby="hotspot-45-50"
                               className="bx--tooltip__label"
@@ -5420,7 +5420,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             className="Hotspot__StyledHotspot-nlpwmi-0 ezcTmr"
                           >
                             <div
-                              aria-describedby={null}
+                              aria-describedby="hotspot-45-75"
                               aria-haspopup="true"
                               aria-labelledby="hotspot-45-75"
                               className="bx--tooltip__label"
@@ -8989,7 +8989,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           id="Table"
                         >
                           <tr
-                            className="EmptyTable__StyledEmptyTableRow-sc-2gw9t-0 kfMIPX"
+                            className="EmptyTable__StyledEmptyTableRow-sc-2gw9t-0 jSTkIE"
                           >
                             <td
                               colSpan={3}
@@ -9278,7 +9278,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             className="Hotspot__StyledHotspot-nlpwmi-0 fvESgj"
                           >
                             <div
-                              aria-describedby={null}
+                              aria-describedby="hotspot-35-65"
                               aria-haspopup="true"
                               aria-labelledby="hotspot-35-65"
                               className="bx--tooltip__label"
@@ -9314,7 +9314,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             className="Hotspot__StyledHotspot-nlpwmi-0 kwumIH"
                           >
                             <div
-                              aria-describedby={null}
+                              aria-describedby="hotspot-45-25"
                               aria-haspopup="true"
                               aria-labelledby="hotspot-45-25"
                               className="bx--tooltip__label"
@@ -9356,7 +9356,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             className="Hotspot__StyledHotspot-nlpwmi-0 eqtfro"
                           >
                             <div
-                              aria-describedby={null}
+                              aria-describedby="hotspot-45-50"
                               aria-haspopup="true"
                               aria-labelledby="hotspot-45-50"
                               className="bx--tooltip__label"
@@ -9398,7 +9398,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             className="Hotspot__StyledHotspot-nlpwmi-0 ezcTmr"
                           >
                             <div
-                              aria-describedby={null}
+                              aria-describedby="hotspot-45-75"
                               aria-haspopup="true"
                               aria-labelledby="hotspot-45-75"
                               className="bx--tooltip__label"
@@ -21263,7 +21263,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           id="Table"
                         >
                           <tr
-                            className="EmptyTable__StyledEmptyTableRow-sc-2gw9t-0 kfMIPX"
+                            className="EmptyTable__StyledEmptyTableRow-sc-2gw9t-0 jSTkIE"
                           >
                             <td
                               colSpan={3}
@@ -21552,7 +21552,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             className="Hotspot__StyledHotspot-nlpwmi-0 fvESgj"
                           >
                             <div
-                              aria-describedby={null}
+                              aria-describedby="hotspot-35-65"
                               aria-haspopup="true"
                               aria-labelledby="hotspot-35-65"
                               className="bx--tooltip__label"
@@ -21588,7 +21588,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             className="Hotspot__StyledHotspot-nlpwmi-0 kwumIH"
                           >
                             <div
-                              aria-describedby={null}
+                              aria-describedby="hotspot-45-25"
                               aria-haspopup="true"
                               aria-labelledby="hotspot-45-25"
                               className="bx--tooltip__label"
@@ -21630,7 +21630,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             className="Hotspot__StyledHotspot-nlpwmi-0 eqtfro"
                           >
                             <div
-                              aria-describedby={null}
+                              aria-describedby="hotspot-45-50"
                               aria-haspopup="true"
                               aria-labelledby="hotspot-45-50"
                               className="bx--tooltip__label"
@@ -21672,7 +21672,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             className="Hotspot__StyledHotspot-nlpwmi-0 ezcTmr"
                           >
                             <div
-                              aria-describedby={null}
+                              aria-describedby="hotspot-45-75"
                               aria-haspopup="true"
                               aria-labelledby="hotspot-45-75"
                               className="bx--tooltip__label"

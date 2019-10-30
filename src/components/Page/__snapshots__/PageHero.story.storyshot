@@ -301,7 +301,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageH
           </div>
           <div
             className="bx--content-switcher PageSwitcher__StyledContentSwitcher-sc-1dcz28n-0 horTRL"
-            onChange={[Function]}
           >
             <button
               aria-selected={false}
@@ -311,6 +310,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageH
               onKeyDown={[Function]}
               role="tab"
               tabIndex="-1"
+              type="button"
             >
               <span
                 className="bx--content-switcher__label"
@@ -326,6 +326,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageH
               onKeyDown={[Function]}
               role="tab"
               tabIndex="0"
+              type="button"
             >
               <span
                 className="bx--content-switcher__label"
