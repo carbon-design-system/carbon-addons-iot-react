@@ -1,62 +1,67 @@
 @import '~carbon-components/scss/components/data-table/data-table';
 
-.bx--table-header-label {
+.table-header-label {
   &-start {
-    span.bx--table-header-label {
+    .bx--table-header-label {
       width: 100%;
       text-align: start;
     }
   }
+
   &-center {
-    span.bx--table-header-label {
+    .bx--table-header-label {
       width: 100%;
       text-align: center;
     }
   }
+
   &-end {
-    span.bx--table-header-label {
+    .bx--table-header-label {
       width: 100%;
       text-align: end;
     }
   }
 }
+
+.bx--data-table td:last-of-type {
+  padding-right: $spacing-09 + $spacing-02;
+}
+
+.bx--data-table td:first-of-type {
+  padding-left: $spacing-04 + $spacing-02;
+}
+
+.bx--table-sort__icon-unsorted,
+.bx--table-sort__icon {
+  margin: $spacing-03;
+}
+
+td.data-table {
+  &-start {
+    padding-right: $spacing-05 + $spacing-02;
+    padding-left: $spacing-05 + $spacing-02;
+  }
+
+  &-end {
+    padding-left: $spacing-05 + $spacing-02;
+    padding-right: $spacing-09 + $spacing-02;
+  }
+
+  padding-right: $spacing-04 + $spacing-02 !important;
+}
+
 html[dir='rtl'] {
   td.data-table {
     &-start {
-      padding-right: 1.25rem;
-      padding-left: 1.25rem;
+      padding-right: $spacing-05 + $spacing-02;
+      padding-left: $spacing-05 + $spacing-02;
     }
+
     &-end {
-      padding-left: 3.25rem;
-      padding-right: 1.25rem;
+      padding-left: $spacing-09 + $spacing-02;
+      padding-right: $spacing-05 + $spacing-02;
     }
+
+    padding-right: $spacing-04 + $spacing-02 !important;
   }
-  .bx--data-table td:last-of-type {
-    padding-left: 3.25rem;
-  }
-  .bx--data-table td:first-of-type {
-    padding-left: 0.8rem;
-  }
-}
-html[dir='ltr'] {
-  td.data-table {
-    &-start {
-      padding-right: 1.25rem;
-      padding-left: 1.25rem;
-    }
-    &-end {
-      padding-left: 1.25rem;
-      padding-right: 3.25rem;
-    }
-  }
-  .bx--data-table td:last-of-type {
-    padding-right: 3.25rem;
-  }
-  .bx--data-table td:first-of-type {
-    padding-left: 0.8rem;
-  }
-}
-.bx--table-sort__icon-unsorted,
-.bx--table-sort__icon {
-  margin: 0.5rem;
 }

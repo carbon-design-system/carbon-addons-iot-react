@@ -332,7 +332,7 @@ const StyledTableCellRow = styled(TableCell)`
         text-overflow: ellipsis;
         text-align: ${align};
       `
-        : `text-align:${props.align}`;
+        : `text-align:${align}`;
     }};
   }
 `;
@@ -411,6 +411,8 @@ const TableBodyRow = ({
       {ordering.map((col, idx) => {
         const matchingColumnMeta = columns && columns.find(column => column.id === col.columnId);
         const offset = firstVisibleColIndex === idx ? nestingOffset : 0;
+        const align =
+          matchingColumnMeta && matchingColumnMeta.align ? matchingColumnMeta.align : 'start';
         return !col.isHidden ? (
           <StyledTableCellRow
             id={`cell-${id}-${col.columnId}`}
@@ -419,8 +421,8 @@ const TableBodyRow = ({
             data-offset={offset}
             offset={offset}
             width={matchingColumnMeta && matchingColumnMeta.width}
-            align={matchingColumnMeta && matchingColumnMeta.align}
-            className={col.isSortable === true ? `data-table-${matchingColumnMeta.align}` : ``}
+            align={align}
+            className={col.isSortable === true ? `data-table-${align}` : `data-table`}
           >
             <StyledNestedSpan nestingOffset={offset}>
               {col.renderDataFunction ? (
