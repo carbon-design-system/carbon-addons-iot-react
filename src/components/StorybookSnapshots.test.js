@@ -70,7 +70,7 @@ describe(`Storybook Snapshot tests and console checks`, () => {
     jest.setTimeout(15000);
   });
   initStoryshots({
-    storyKindRegex: /^(?!.*Experimental).*Watson\sIoT/,
+    storyKindRegex: /^(?!.*Experimental).*Watson\sIoT|.*Getting\sStarted/,
     test: multiSnapshotWithOptions(story => ({
       createNodeMock: element => {
         // https://github.com/storybookjs/storybook/tree/next/addons/storyshots/storyshots-core#using-createnodemock-to-mock-refs
