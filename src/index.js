@@ -55,6 +55,15 @@ export {
 } from './constants/LayoutConstants';
 export { findMatchingThresholds } from './components/TableCard/TableCard';
 
+export {
+  PageWizard,
+  PageWizardStep,
+  PageWizardStepContent,
+  PageWizardStepTitle,
+  PageWizardStepDescription,
+  PageWizardStepExtraContent,
+} from './components/PageWizard/PageWizard';
+
 // Carbon proxy
 export {
   Accordion,
