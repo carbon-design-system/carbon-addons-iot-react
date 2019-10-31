@@ -149,7 +149,6 @@ const PageWizard = ({
   const hasPrev = currentStepIdx !== 0;
   const hasNext = currentStepIdx !== steps.length - 1;
   const currentStep = children.find((i, idx) => idx === currentStepIdx);
-  console.log(currentStep);
   const currentStepToRender = React.cloneElement(currentStep, {
     hasPrev,
     hasNext,

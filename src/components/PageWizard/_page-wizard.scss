@@ -6,7 +6,7 @@
   &--progress {
     padding-right: $spacing-05;
     flex: 0 0 12rem;
-    .bx--progress--vertical {
+    .#{$prefix}--progress--vertical {
       li {
         min-height: 4.5rem;
       }
@@ -30,7 +30,7 @@
   &--content {
     flex: 1;
     &--actions {
-      .bx--btn {
+      .#{$prefix}--btn {
         margin-right: $spacing-05;
       }
     }

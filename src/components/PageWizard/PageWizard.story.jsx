@@ -94,8 +94,8 @@ const StepValidation = ({ ...props }) => {
 
   return (
     <PageWizardStep
-      error={error}
       {...props}
+      error={error}
       onValidate={() => {
         if (firstName.length > 0 && lastName.length > 0) {
           return true;
