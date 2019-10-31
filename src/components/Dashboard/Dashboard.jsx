@@ -81,7 +81,9 @@ const propTypes = {
   onFetchData: PropTypes.func,
   /** Optional Function that is called back if the card has a setup phase before data fetching */
   onSetupCard: PropTypes.func,
-  /** Optionally listen to layout changes to update a dashboard template */
+  /** Optionally listen to layout changes to update a dashboard template
+   * Calls back with (currentLayout: Layout, allLayouts: {[key: $Keys<breakpoints>]: Layout}) => void,
+   */
   onLayoutChange: PropTypes.func,
   /** Optionally listen to window resize events to update a dashboard template */
   onBreakpointChange: PropTypes.func,
