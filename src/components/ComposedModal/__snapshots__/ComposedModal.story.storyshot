@@ -568,17 +568,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Compo
       className="bx--loading-overlay"
     >
       <div
-        aria-atomic="true"
-        aria-labelledby="loading-id-3"
+        aria-label="Active loading indicator"
         aria-live="assertive"
         className="bx--loading"
       >
-        <label
-          className="bx--visually-hidden"
-          id="loading-id-3"
-        >
-          Active loading indicator
-        </label>
         <svg
           className="bx--loading__svg"
           viewBox="-75 -75 150 150"
@@ -937,17 +930,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Compo
             type="button"
           >
             <div
-              aria-atomic="true"
-              aria-labelledby="loading-id-4"
+              aria-label="Active loading indicator"
               aria-live="assertive"
               className="bx--loading bx--loading--small"
             >
-              <label
-                className="bx--visually-hidden"
-                id="loading-id-4"
-              >
-                Active loading indicator
-              </label>
               <svg
                 className="bx--loading__svg"
                 viewBox="-75 -75 150 150"
@@ -959,13 +945,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Compo
                   className="bx--loading__background"
                   cx="0"
                   cy="0"
-                  r="26.8125"
+                  r="37.5"
                 />
                 <circle
                   className="bx--loading__stroke"
                   cx="0"
                   cy="0"
-                  r="26.8125"
+                  r="37.5"
                 />
               </svg>
             </div>

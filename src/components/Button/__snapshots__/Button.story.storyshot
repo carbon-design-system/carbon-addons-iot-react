@@ -28,17 +28,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Butto
       type="button"
     >
       <div
-        aria-atomic="true"
-        aria-labelledby="loading-id-1"
+        aria-label="Active loading indicator"
         aria-live="assertive"
         className="bx--loading bx--loading--small"
       >
-        <label
-          className="bx--visually-hidden"
-          id="loading-id-1"
-        >
-          Active loading indicator
-        </label>
         <svg
           className="bx--loading__svg"
           viewBox="-75 -75 150 150"
@@ -50,13 +43,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Butto
             className="bx--loading__background"
             cx="0"
             cy="0"
-            r="26.8125"
+            r="37.5"
           />
           <circle
             className="bx--loading__stroke"
             cx="0"
             cy="0"
-            r="26.8125"
+            r="37.5"
           />
         </svg>
       </div>
@@ -117,17 +110,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Butto
       type="button"
     >
       <div
-        aria-atomic="true"
-        aria-labelledby="loading-id-2"
+        aria-label="Active loading indicator"
         aria-live="assertive"
         className="bx--loading bx--loading--small"
       >
-        <label
-          className="bx--visually-hidden"
-          id="loading-id-2"
-        >
-          Active loading indicator
-        </label>
         <svg
           className="bx--loading__svg"
           viewBox="-75 -75 150 150"
@@ -139,13 +125,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Butto
             className="bx--loading__background"
             cx="0"
             cy="0"
-            r="26.8125"
+            r="37.5"
           />
           <circle
             className="bx--loading__stroke"
             cx="0"
             cy="0"
-            r="26.8125"
+            r="37.5"
           />
         </svg>
       </div>

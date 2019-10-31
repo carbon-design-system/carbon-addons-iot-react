@@ -964,6 +964,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
+                              role="img"
                               style={
                                 Object {
                                   "willChange": "transform",
@@ -1000,10 +1001,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               type="button"
                             >
                               <svg
-                                aria-hidden={true}
+                                aria-label="Clear search input"
                                 focusable="false"
                                 height={16}
                                 preserveAspectRatio="xMidYMid meet"
+                                role="img"
                                 style={
                                   Object {
                                     "willChange": "transform",
@@ -2810,6 +2812,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
+                              role="img"
                               style={
                                 Object {
                                   "willChange": "transform",
@@ -2846,10 +2849,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               type="button"
                             >
                               <svg
-                                aria-hidden={true}
+                                aria-label="Clear search input"
                                 focusable="false"
                                 height={16}
                                 preserveAspectRatio="xMidYMid meet"
+                                role="img"
                                 style={
                                   Object {
                                     "willChange": "transform",
@@ -4688,6 +4692,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
+                              role="img"
                               style={
                                 Object {
                                   "willChange": "transform",
@@ -4724,10 +4729,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               type="button"
                             >
                               <svg
-                                aria-hidden={true}
+                                aria-label="Clear search input"
                                 focusable="false"
                                 height={16}
                                 preserveAspectRatio="xMidYMid meet"
+                                role="img"
                                 style={
                                   Object {
                                     "willChange": "transform",
@@ -6078,6 +6084,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
+                              role="img"
                               style={
                                 Object {
                                   "willChange": "transform",
@@ -6114,10 +6121,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               type="button"
                             >
                               <svg
-                                aria-hidden={true}
+                                aria-label="Clear search input"
                                 focusable="false"
                                 height={16}
                                 preserveAspectRatio="xMidYMid meet"
+                                role="img"
                                 style={
                                   Object {
                                     "willChange": "transform",
@@ -7608,7 +7616,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             className="bx--pagination__button bx--pagination__button--backward bx--pagination__button--no-index"
                             disabled={true}
                             onClick={[Function]}
-                            type="button"
                           >
                             <svg
                               aria-hidden={true}
@@ -7634,7 +7641,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             className="bx--pagination__button bx--pagination__button--forward"
                             disabled={false}
                             onClick={[Function]}
-                            type="button"
                           >
                             <svg
                               aria-hidden={true}
@@ -8664,6 +8670,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
+                              role="img"
                               style={
                                 Object {
                                   "willChange": "transform",
@@ -8700,10 +8707,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               type="button"
                             >
                               <svg
-                                aria-hidden={true}
+                                aria-label="Clear search input"
                                 focusable="false"
                                 height={16}
                                 preserveAspectRatio="xMidYMid meet"
+                                role="img"
                                 style={
                                   Object {
                                     "willChange": "transform",
@@ -20936,6 +20944,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
+                              role="img"
                               style={
                                 Object {
                                   "willChange": "transform",
@@ -20972,10 +20981,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               type="button"
                             >
                               <svg
-                                aria-hidden={true}
+                                aria-label="Clear search input"
                                 focusable="false"
                                 height={16}
                                 preserveAspectRatio="xMidYMid meet"
+                                role="img"
                                 style={
                                   Object {
                                     "willChange": "transform",

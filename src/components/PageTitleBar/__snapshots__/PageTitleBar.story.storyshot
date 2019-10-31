@@ -181,41 +181,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageT
               className="page-title-bar-breadcrumb"
             >
               <nav
-                aria-label="Breadcrumb"
+                className="bx--breadcrumb"
               >
-                <ol
-                  className="bx--breadcrumb"
+                <div
+                  className="bx--breadcrumb-item"
                 >
-                  <li
-                    className="bx--breadcrumb-item"
+                  <a
+                    className="bx--link"
+                    href="/"
                   >
-                    <a
-                      className="bx--link"
-                      href="/"
-                    >
-                      Home
-                    </a>
-                  </li>
-                  <li
-                    className="bx--breadcrumb-item"
+                    Home
+                  </a>
+                </div>
+                <div
+                  className="bx--breadcrumb-item"
+                >
+                  <a
+                    className="bx--link"
+                    href="/"
                   >
-                    <a
-                      className="bx--link"
-                      href="/"
-                    >
-                      Type
-                    </a>
-                  </li>
-                  <li
-                    className="bx--breadcrumb-item"
+                    Type
+                  </a>
+                </div>
+                <div
+                  className="bx--breadcrumb-item"
+                >
+                  <span
+                    className="bx--link"
                   >
-                    <span
-                      className="bx--link"
-                    >
-                      Instance
-                    </span>
-                  </li>
-                </ol>
+                    Instance
+                  </span>
+                </div>
               </nav>
             </div>
             <div
@@ -494,41 +490,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageT
               className="page-title-bar-breadcrumb"
             >
               <nav
-                aria-label="Breadcrumb"
+                className="bx--breadcrumb"
               >
-                <ol
-                  className="bx--breadcrumb"
+                <div
+                  className="bx--breadcrumb-item"
                 >
-                  <li
-                    className="bx--breadcrumb-item"
+                  <a
+                    className="bx--link"
+                    href="/"
                   >
-                    <a
-                      className="bx--link"
-                      href="/"
-                    >
-                      Home
-                    </a>
-                  </li>
-                  <li
-                    className="bx--breadcrumb-item"
+                    Home
+                  </a>
+                </div>
+                <div
+                  className="bx--breadcrumb-item"
+                >
+                  <a
+                    className="bx--link"
+                    href="/"
                   >
-                    <a
-                      className="bx--link"
-                      href="/"
-                    >
-                      Type
-                    </a>
-                  </li>
-                  <li
-                    className="bx--breadcrumb-item"
+                    Type
+                  </a>
+                </div>
+                <div
+                  className="bx--breadcrumb-item"
+                >
+                  <span
+                    className="bx--link"
                   >
-                    <span
-                      className="bx--link"
-                    >
-                      Instance
-                    </span>
-                  </li>
-                </ol>
+                    Instance
+                  </span>
+                </div>
               </nav>
             </div>
             <div
@@ -1057,41 +1049,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageT
               className="page-title-bar-breadcrumb"
             >
               <nav
-                aria-label="Breadcrumb"
+                className="bx--breadcrumb"
               >
-                <ol
-                  className="bx--breadcrumb"
+                <div
+                  className="bx--breadcrumb-item"
                 >
-                  <li
-                    className="bx--breadcrumb-item"
+                  <a
+                    className="bx--link"
+                    href="/"
                   >
-                    <a
-                      className="bx--link"
-                      href="/"
-                    >
-                      Home
-                    </a>
-                  </li>
-                  <li
-                    className="bx--breadcrumb-item"
+                    Home
+                  </a>
+                </div>
+                <div
+                  className="bx--breadcrumb-item"
+                >
+                  <a
+                    className="bx--link"
+                    href="/"
                   >
-                    <a
-                      className="bx--link"
-                      href="/"
-                    >
-                      Type
-                    </a>
-                  </li>
-                  <li
-                    className="bx--breadcrumb-item"
+                    Type
+                  </a>
+                </div>
+                <div
+                  className="bx--breadcrumb-item"
+                >
+                  <span
+                    className="bx--link"
                   >
-                    <span
-                      className="bx--link"
-                    >
-                      Instance
-                    </span>
-                  </li>
-                </ol>
+                    Instance
+                  </span>
+                </div>
               </nav>
             </div>
             <div
@@ -1351,41 +1339,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageT
               className="page-title-bar-breadcrumb"
             >
               <nav
-                aria-label="Breadcrumb"
+                className="bx--breadcrumb"
               >
-                <ol
-                  className="bx--breadcrumb"
+                <div
+                  className="bx--breadcrumb-item"
                 >
-                  <li
-                    className="bx--breadcrumb-item"
+                  <a
+                    className="bx--link"
+                    href="/"
                   >
-                    <a
-                      className="bx--link"
-                      href="/"
-                    >
-                      Home
-                    </a>
-                  </li>
-                  <li
-                    className="bx--breadcrumb-item"
+                    Home
+                  </a>
+                </div>
+                <div
+                  className="bx--breadcrumb-item"
+                >
+                  <a
+                    className="bx--link"
+                    href="/"
                   >
-                    <a
-                      className="bx--link"
-                      href="/"
-                    >
-                      Type
-                    </a>
-                  </li>
-                  <li
-                    className="bx--breadcrumb-item"
+                    Type
+                  </a>
+                </div>
+                <div
+                  className="bx--breadcrumb-item"
+                >
+                  <span
+                    className="bx--link"
                   >
-                    <span
-                      className="bx--link"
-                    >
-                      Instance
-                    </span>
-                  </li>
-                </ol>
+                    Instance
+                  </span>
+                </div>
               </nav>
             </div>
             <div

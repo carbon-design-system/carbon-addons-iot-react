@@ -141,13 +141,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|FileD
         onChange={[Function]}
         onClick={[Function]}
         onKeyDown={[Function]}
+        role="button"
         tabIndex={0}
       >
-        <span
-          role="button"
-        >
-          Try it out!
-        </span>
+        Try it out!
       </label>
       <input
         accept={Array []}
@@ -232,13 +229,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|FileD
         onChange={[Function]}
         onClick={[Function]}
         onKeyDown={[Function]}
+        role="button"
         tabIndex={0}
       >
-        <span
-          role="button"
-        >
-          Try it out!
-        </span>
+        Try it out!
       </label>
       <input
         accept={Array []}

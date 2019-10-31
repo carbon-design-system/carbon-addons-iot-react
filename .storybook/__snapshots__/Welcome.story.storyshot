@@ -64,7 +64,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Getting Started|
       >
         <li
           className="bx--accordion__item"
-          onAnimationEnd={[Function]}
         >
           <button
             aria-expanded={false}
@@ -312,6 +311,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Getting Started|
                     className="bx--structured-list-td"
                   >
                     ContentSwitcher
+                  </div>
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                  >
+                    Switch
+                  </div>
+                  <div
+                    className="bx--structured-list-td"
+                  >
+                    Switch
                   </div>
                 </div>
                 <div
@@ -706,34 +719,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Getting Started|
                   <div
                     className="bx--structured-list-td"
                   >
-                    FileUploaderDropContainer
-                  </div>
-                  <div
-                    className="bx--structured-list-td"
-                  >
-                    FileUploaderDropContainer
-                  </div>
-                </div>
-                <div
-                  className="bx--structured-list-row"
-                >
-                  <div
-                    className="bx--structured-list-td"
-                  >
-                    FileUploaderItem
-                  </div>
-                  <div
-                    className="bx--structured-list-td"
-                  >
-                    FileUploaderItem
-                  </div>
-                </div>
-                <div
-                  className="bx--structured-list-row"
-                >
-                  <div
-                    className="bx--structured-list-td"
-                  >
                     Form
                   </div>
                   <div
@@ -1202,20 +1187,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Getting Started|
                     className="bx--structured-list-td"
                   >
                     SelectItemGroup
-                  </div>
-                </div>
-                <div
-                  className="bx--structured-list-row"
-                >
-                  <div
-                    className="bx--structured-list-td"
-                  >
-                    Switch
-                  </div>
-                  <div
-                    className="bx--structured-list-td"
-                  >
-                    Switch
                   </div>
                 </div>
                 <div
@@ -2808,6 +2779,102 @@ exports[`Storybook Snapshot tests and console checks Storyshots Getting Started|
                     className="bx--structured-list-td"
                   >
                     findMatchingThresholds
+                  </div>
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                  />
+                  <div
+                    className="bx--structured-list-td"
+                  >
+                    PageWizard
+                  </div>
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                  />
+                  <div
+                    className="bx--structured-list-td"
+                  >
+                    PageWizardStep
+                  </div>
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                  />
+                  <div
+                    className="bx--structured-list-td"
+                  >
+                    PageWizardStepContent
+                  </div>
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                  />
+                  <div
+                    className="bx--structured-list-td"
+                  >
+                    PageWizardStepTitle
+                  </div>
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                  />
+                  <div
+                    className="bx--structured-list-td"
+                  >
+                    PageWizardStepDescription
+                  </div>
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                  />
+                  <div
+                    className="bx--structured-list-td"
+                  >
+                    PageWizardStepExtraContent
+                  </div>
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                  />
+                  <div
+                    className="bx--structured-list-td"
+                  >
+                    FileUploaderDropContainer
+                  </div>
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                  />
+                  <div
+                    className="bx--structured-list-td"
+                  >
+                    FileUploaderItem
                   </div>
                 </div>
                 <div
