@@ -964,7 +964,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
-                              role="img"
                               style={
                                 Object {
                                   "willChange": "transform",
@@ -1001,11 +1000,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               type="button"
                             >
                               <svg
-                                aria-label="Clear search input"
+                                aria-hidden={true}
                                 focusable="false"
                                 height={16}
                                 preserveAspectRatio="xMidYMid meet"
-                                role="img"
                                 style={
                                   Object {
                                     "willChange": "transform",
@@ -1572,7 +1570,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             className="Hotspot__StyledHotspot-nlpwmi-0 fvESgj"
                           >
                             <div
-                              aria-describedby="hotspot-35-65"
+                              aria-describedby={null}
                               aria-haspopup="true"
                               aria-labelledby="hotspot-35-65"
                               className="bx--tooltip__label"
@@ -1608,7 +1606,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             className="Hotspot__StyledHotspot-nlpwmi-0 kwumIH"
                           >
                             <div
-                              aria-describedby="hotspot-45-25"
+                              aria-describedby={null}
                               aria-haspopup="true"
                               aria-labelledby="hotspot-45-25"
                               className="bx--tooltip__label"
@@ -1650,7 +1648,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             className="Hotspot__StyledHotspot-nlpwmi-0 eqtfro"
                           >
                             <div
-                              aria-describedby="hotspot-45-50"
+                              aria-describedby={null}
                               aria-haspopup="true"
                               aria-labelledby="hotspot-45-50"
                               className="bx--tooltip__label"
@@ -1692,7 +1690,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             className="Hotspot__StyledHotspot-nlpwmi-0 ezcTmr"
                           >
                             <div
-                              aria-describedby="hotspot-45-75"
+                              aria-describedby={null}
                               aria-haspopup="true"
                               aria-labelledby="hotspot-45-75"
                               className="bx--tooltip__label"
@@ -2812,7 +2810,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
-                              role="img"
                               style={
                                 Object {
                                   "willChange": "transform",
@@ -2849,11 +2846,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               type="button"
                             >
                               <svg
-                                aria-label="Clear search input"
+                                aria-hidden={true}
                                 focusable="false"
                                 height={16}
                                 preserveAspectRatio="xMidYMid meet"
-                                role="img"
                                 style={
                                   Object {
                                     "willChange": "transform",
@@ -3420,7 +3416,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             className="Hotspot__StyledHotspot-nlpwmi-0 fvESgj"
                           >
                             <div
-                              aria-describedby="hotspot-35-65"
+                              aria-describedby={null}
                               aria-haspopup="true"
                               aria-labelledby="hotspot-35-65"
                               className="bx--tooltip__label"
@@ -3456,7 +3452,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             className="Hotspot__StyledHotspot-nlpwmi-0 kwumIH"
                           >
                             <div
-                              aria-describedby="hotspot-45-25"
+                              aria-describedby={null}
                               aria-haspopup="true"
                               aria-labelledby="hotspot-45-25"
                               className="bx--tooltip__label"
@@ -3498,7 +3494,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             className="Hotspot__StyledHotspot-nlpwmi-0 eqtfro"
                           >
                             <div
-                              aria-describedby="hotspot-45-50"
+                              aria-describedby={null}
                               aria-haspopup="true"
                               aria-labelledby="hotspot-45-50"
                               className="bx--tooltip__label"
@@ -3540,7 +3536,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             className="Hotspot__StyledHotspot-nlpwmi-0 ezcTmr"
                           >
                             <div
-                              aria-describedby="hotspot-45-75"
+                              aria-describedby={null}
                               aria-haspopup="true"
                               aria-labelledby="hotspot-45-75"
                               className="bx--tooltip__label"
@@ -4692,7 +4688,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
-                              role="img"
                               style={
                                 Object {
                                   "willChange": "transform",
@@ -4729,11 +4724,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               type="button"
                             >
                               <svg
-                                aria-label="Clear search input"
+                                aria-hidden={true}
                                 focusable="false"
                                 height={16}
                                 preserveAspectRatio="xMidYMid meet"
-                                role="img"
                                 style={
                                   Object {
                                     "willChange": "transform",
@@ -5300,7 +5294,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             className="Hotspot__StyledHotspot-nlpwmi-0 fvESgj"
                           >
                             <div
-                              aria-describedby="hotspot-35-65"
+                              aria-describedby={null}
                               aria-haspopup="true"
                               aria-labelledby="hotspot-35-65"
                               className="bx--tooltip__label"
@@ -5336,7 +5330,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             className="Hotspot__StyledHotspot-nlpwmi-0 kwumIH"
                           >
                             <div
-                              aria-describedby="hotspot-45-25"
+                              aria-describedby={null}
                               aria-haspopup="true"
                               aria-labelledby="hotspot-45-25"
                               className="bx--tooltip__label"
@@ -5378,7 +5372,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             className="Hotspot__StyledHotspot-nlpwmi-0 eqtfro"
                           >
                             <div
-                              aria-describedby="hotspot-45-50"
+                              aria-describedby={null}
                               aria-haspopup="true"
                               aria-labelledby="hotspot-45-50"
                               className="bx--tooltip__label"
@@ -5420,7 +5414,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             className="Hotspot__StyledHotspot-nlpwmi-0 ezcTmr"
                           >
                             <div
-                              aria-describedby="hotspot-45-75"
+                              aria-describedby={null}
                               aria-haspopup="true"
                               aria-labelledby="hotspot-45-75"
                               className="bx--tooltip__label"
@@ -6084,7 +6078,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
-                              role="img"
                               style={
                                 Object {
                                   "willChange": "transform",
@@ -6121,11 +6114,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               type="button"
                             >
                               <svg
-                                aria-label="Clear search input"
+                                aria-hidden={true}
                                 focusable="false"
                                 height={16}
                                 preserveAspectRatio="xMidYMid meet"
-                                role="img"
                                 style={
                                   Object {
                                     "willChange": "transform",
@@ -7616,6 +7608,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             className="bx--pagination__button bx--pagination__button--backward bx--pagination__button--no-index"
                             disabled={true}
                             onClick={[Function]}
+                            type="button"
                           >
                             <svg
                               aria-hidden={true}
@@ -7641,6 +7634,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             className="bx--pagination__button bx--pagination__button--forward"
                             disabled={false}
                             onClick={[Function]}
+                            type="button"
                           >
                             <svg
                               aria-hidden={true}
@@ -8670,7 +8664,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
-                              role="img"
                               style={
                                 Object {
                                   "willChange": "transform",
@@ -8707,11 +8700,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               type="button"
                             >
                               <svg
-                                aria-label="Clear search input"
+                                aria-hidden={true}
                                 focusable="false"
                                 height={16}
                                 preserveAspectRatio="xMidYMid meet"
-                                role="img"
                                 style={
                                   Object {
                                     "willChange": "transform",
@@ -9278,7 +9270,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             className="Hotspot__StyledHotspot-nlpwmi-0 fvESgj"
                           >
                             <div
-                              aria-describedby="hotspot-35-65"
+                              aria-describedby={null}
                               aria-haspopup="true"
                               aria-labelledby="hotspot-35-65"
                               className="bx--tooltip__label"
@@ -9314,7 +9306,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             className="Hotspot__StyledHotspot-nlpwmi-0 kwumIH"
                           >
                             <div
-                              aria-describedby="hotspot-45-25"
+                              aria-describedby={null}
                               aria-haspopup="true"
                               aria-labelledby="hotspot-45-25"
                               className="bx--tooltip__label"
@@ -9356,7 +9348,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             className="Hotspot__StyledHotspot-nlpwmi-0 eqtfro"
                           >
                             <div
-                              aria-describedby="hotspot-45-50"
+                              aria-describedby={null}
                               aria-haspopup="true"
                               aria-labelledby="hotspot-45-50"
                               className="bx--tooltip__label"
@@ -9398,7 +9390,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             className="Hotspot__StyledHotspot-nlpwmi-0 ezcTmr"
                           >
                             <div
-                              aria-describedby="hotspot-45-75"
+                              aria-describedby={null}
                               aria-haspopup="true"
                               aria-labelledby="hotspot-45-75"
                               className="bx--tooltip__label"
@@ -20944,7 +20936,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
-                              role="img"
                               style={
                                 Object {
                                   "willChange": "transform",
@@ -20981,11 +20972,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               type="button"
                             >
                               <svg
-                                aria-label="Clear search input"
+                                aria-hidden={true}
                                 focusable="false"
                                 height={16}
                                 preserveAspectRatio="xMidYMid meet"
-                                role="img"
                                 style={
                                   Object {
                                     "willChange": "transform",
@@ -21552,7 +21542,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             className="Hotspot__StyledHotspot-nlpwmi-0 fvESgj"
                           >
                             <div
-                              aria-describedby="hotspot-35-65"
+                              aria-describedby={null}
                               aria-haspopup="true"
                               aria-labelledby="hotspot-35-65"
                               className="bx--tooltip__label"
@@ -21588,7 +21578,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             className="Hotspot__StyledHotspot-nlpwmi-0 kwumIH"
                           >
                             <div
-                              aria-describedby="hotspot-45-25"
+                              aria-describedby={null}
                               aria-haspopup="true"
                               aria-labelledby="hotspot-45-25"
                               className="bx--tooltip__label"
@@ -21630,7 +21620,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             className="Hotspot__StyledHotspot-nlpwmi-0 eqtfro"
                           >
                             <div
-                              aria-describedby="hotspot-45-50"
+                              aria-describedby={null}
                               aria-haspopup="true"
                               aria-labelledby="hotspot-45-50"
                               className="bx--tooltip__label"
@@ -21672,7 +21662,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             className="Hotspot__StyledHotspot-nlpwmi-0 ezcTmr"
                           >
                             <div
-                              aria-describedby="hotspot-45-75"
+                              aria-describedby={null}
                               aria-haspopup="true"
                               aria-labelledby="hotspot-45-75"
                               className="bx--tooltip__label"

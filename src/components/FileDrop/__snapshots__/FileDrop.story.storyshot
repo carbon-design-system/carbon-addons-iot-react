@@ -137,20 +137,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|FileD
       <label
         aria-disabled={false}
         className="bx--btn bx--btn--sm bx--btn--secondary"
-        htmlFor="id1"
+        htmlFor="id2"
         onChange={[Function]}
         onClick={[Function]}
         onKeyDown={[Function]}
-        role="button"
         tabIndex={0}
       >
-        Try it out!
+        <span
+          role="button"
+        >
+          Try it out!
+        </span>
       </label>
       <input
         accept={Array []}
         className="bx--visually-hidden"
         disabled={false}
-        id="id1"
+        id="id2"
         multiple={true}
         onChange={[Function]}
         onClick={[Function]}
@@ -225,20 +228,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|FileD
       <label
         aria-disabled={false}
         className="bx--btn bx--btn--sm bx--btn--secondary"
-        htmlFor="id2"
+        htmlFor="id3"
         onChange={[Function]}
         onClick={[Function]}
         onKeyDown={[Function]}
-        role="button"
         tabIndex={0}
       >
-        Try it out!
+        <span
+          role="button"
+        >
+          Try it out!
+        </span>
       </label>
       <input
         accept={Array []}
         className="bx--visually-hidden"
         disabled={false}
-        id="id2"
+        id="id3"
         multiple={false}
         onChange={[Function]}
         onClick={[Function]}

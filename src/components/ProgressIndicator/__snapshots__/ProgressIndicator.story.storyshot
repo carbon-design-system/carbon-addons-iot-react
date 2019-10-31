@@ -263,7 +263,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Progr
             focusable="false"
             height={16}
             preserveAspectRatio="xMidYMid meet"
-            role="img"
             style={
               Object {
                 "willChange": "transform",

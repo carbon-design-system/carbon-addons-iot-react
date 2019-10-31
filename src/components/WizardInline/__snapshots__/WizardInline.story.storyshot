@@ -360,7 +360,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
                 focusable="false"
                 height={16}
                 preserveAspectRatio="xMidYMid meet"
-                role="img"
                 style={
                   Object {
                     "willChange": "transform",
@@ -639,7 +638,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
                 focusable="false"
                 height={16}
                 preserveAspectRatio="xMidYMid meet"
-                role="img"
                 style={
                   Object {
                     "willChange": "transform",
@@ -684,7 +682,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
                 focusable="false"
                 height={16}
                 preserveAspectRatio="xMidYMid meet"
-                role="img"
                 style={
                   Object {
                     "willChange": "transform",
@@ -729,7 +726,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
                 focusable="false"
                 height={16}
                 preserveAspectRatio="xMidYMid meet"
-                role="img"
                 style={
                   Object {
                     "willChange": "transform",
@@ -1182,37 +1178,42 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
             className="Hero__StyledBreadcrumbDiv-nej8yx-6 brbWug"
           >
             <nav
-              className="bx--breadcrumb Hero__StyledBreadcrumb-nej8yx-5 kRUzlm"
+              aria-label="Breadcrumb"
+              className="Hero__StyledBreadcrumb-nej8yx-5 kRUzlm"
             >
-              <div
-                className="bx--breadcrumb-item"
+              <ol
+                className="bx--breadcrumb"
               >
-                <a
-                  className="bx--link"
-                  href="/"
+                <li
+                  className="bx--breadcrumb-item"
                 >
-                  Home
-                </a>
-              </div>
-              <div
-                className="bx--breadcrumb-item"
-              >
-                <a
-                  className="bx--link"
-                  href="/"
+                  <a
+                    className="bx--link"
+                    href="/"
+                  >
+                    Home
+                  </a>
+                </li>
+                <li
+                  className="bx--breadcrumb-item"
                 >
-                  Type
-                </a>
-              </div>
-              <div
-                className="bx--breadcrumb-item"
-              >
-                <span
-                  className="bx--link"
+                  <a
+                    className="bx--link"
+                    href="/"
+                  >
+                    Type
+                  </a>
+                </li>
+                <li
+                  className="bx--breadcrumb-item"
                 >
-                  Instance
-                </span>
-              </div>
+                  <span
+                    className="bx--link"
+                  >
+                    Instance
+                  </span>
+                </li>
+              </ol>
             </nav>
             <div
               className="Hero__StyledRightContent-nej8yx-4 cCeABe"
@@ -1270,7 +1271,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
                 focusable="false"
                 height={16}
                 preserveAspectRatio="xMidYMid meet"
-                role="img"
                 style={
                   Object {
                     "willChange": "transform",

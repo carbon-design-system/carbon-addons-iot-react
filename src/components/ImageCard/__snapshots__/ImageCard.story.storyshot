@@ -131,7 +131,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
                   className="Hotspot__StyledHotspot-nlpwmi-0 fvESgj"
                 >
                   <div
-                    aria-describedby="hotspot-35-65"
+                    aria-describedby={null}
                     aria-haspopup="true"
                     aria-labelledby="hotspot-35-65"
                     className="bx--tooltip__label"
@@ -167,7 +167,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
                   className="Hotspot__StyledHotspot-nlpwmi-0 kwumIH"
                 >
                   <div
-                    aria-describedby="hotspot-45-25"
+                    aria-describedby={null}
                     aria-haspopup="true"
                     aria-labelledby="hotspot-45-25"
                     className="bx--tooltip__label"
@@ -209,7 +209,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
                   className="Hotspot__StyledHotspot-nlpwmi-0 eqtfro"
                 >
                   <div
-                    aria-describedby="hotspot-45-50"
+                    aria-describedby={null}
                     aria-haspopup="true"
                     aria-labelledby="hotspot-45-50"
                     className="bx--tooltip__label"
@@ -251,7 +251,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
                   className="Hotspot__StyledHotspot-nlpwmi-0 ezcTmr"
                 >
                   <div
-                    aria-describedby="hotspot-45-75"
+                    aria-describedby={null}
                     aria-haspopup="true"
                     aria-labelledby="hotspot-45-75"
                     className="bx--tooltip__label"
@@ -760,10 +760,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
                   className="bx--inline-loading__animation"
                 >
                   <div
-                    aria-label="Active loading indicator"
+                    aria-atomic="true"
+                    aria-labelledby="loading-id-5"
                     aria-live="assertive"
                     className="bx--loading bx--loading--small"
                   >
+                    <label
+                      className="bx--visually-hidden"
+                      id="loading-id-5"
+                    >
+                      Active loading indicator
+                    </label>
                     <svg
                       className="bx--loading__svg"
                       viewBox="-75 -75 150 150"
@@ -775,22 +782,22 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
                         className="bx--loading__background"
                         cx="0"
                         cy="0"
-                        r="37.5"
+                        r="26.8125"
                       />
                       <circle
                         className="bx--loading__stroke"
                         cx="0"
                         cy="0"
-                        r="37.5"
+                        r="26.8125"
                       />
                     </svg>
                   </div>
                 </div>
-                <p
+                <div
                   className="bx--inline-loading__text"
                 >
                   Loading hotspot data...
-                </p>
+                </div>
               </div>
               <div
                 style={
