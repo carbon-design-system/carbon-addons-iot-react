@@ -65,30 +65,36 @@ export const tableColumns = [
     id: 'string',
     name: 'String',
     filter: { placeholderText: 'pick a string' },
+    align: 'start',
   },
   {
     id: 'date',
     name: 'Date',
     filter: { placeholderText: 'pick a date' },
+    align: 'center',
   },
   {
     id: 'select',
     name: 'Select',
     filter: { placeholderText: 'pick an option', options: selectData },
+    align: 'start',
   },
   {
     id: 'secretField',
     name: 'Secret Information',
+    align: 'start',
   },
   {
     id: 'status',
     name: 'Status',
     renderDataFunction: renderStatusIcon,
+    align: 'start',
   },
   {
     id: 'number',
     name: 'Number',
     filter: { placeholderText: 'pick a number' },
+    align: 'end',
   },
 ];
 

@@ -335,7 +335,7 @@ const StyledExpansionTableRow = styled(({ hasRowSelection, ...props }) => <Table
 const StyledTableCellRow = styled(TableCell)`
   &&& {
     ${props => {
-      const { width, offset } = props;
+      const { width, align } = props;
       return width !== undefined
         ? `
         min-width: ${width};
@@ -343,9 +343,9 @@ const StyledTableCellRow = styled(TableCell)`
         white-space: nowrap;
         overflow-x: hidden;
         text-overflow: ellipsis;
-        padding-right: ${offset}px;
+        text-align: ${align};
       `
-        : `padding-right: ${props.offset}px`;
+        : `text-align:${align}`;
     }};
   }
 `;
@@ -431,6 +431,8 @@ const TableBodyRow = ({
       {ordering.map((col, idx) => {
         const matchingColumnMeta = columns && columns.find(column => column.id === col.columnId);
         const offset = firstVisibleColIndex === idx ? nestingOffset : 0;
+        const align =
+          matchingColumnMeta && matchingColumnMeta.align ? matchingColumnMeta.align : 'start';
         return !col.isHidden ? (
           <StyledTableCellRow
             id={`cell-${tableId}-${id}-${col.columnId}`}
@@ -439,6 +441,8 @@ const TableBodyRow = ({
             data-offset={offset}
             offset={offset}
             width={matchingColumnMeta && matchingColumnMeta.width}
+            align={align}
+            className={col.isSortable === true ? `data-table-${align}` : `data-table`}
           >
             <StyledNestedSpan nestingOffset={offset}>
               {col.renderDataFunction ? (

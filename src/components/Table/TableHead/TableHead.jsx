@@ -163,7 +163,8 @@ const TableHead = ({
         {ordering.map(item => {
           const matchingColumnMeta = columns.find(column => column.id === item.columnId);
           const hasSort = matchingColumnMeta && sort && sort.columnId === matchingColumnMeta.id;
-
+          const align =
+            matchingColumnMeta && matchingColumnMeta.align ? matchingColumnMeta.align : 'start';
           return !item.isHidden && matchingColumnMeta ? (
             <StyledCustomTableHeader
               id={`column-${matchingColumnMeta.id}`}
@@ -178,6 +179,8 @@ const TableHead = ({
                 }
               }}
               sortDirection={hasSort ? sort.direction : 'NONE'}
+              align={align}
+              className={`table-header-label-${align}`}
             >
               <TableCellRenderer>{matchingColumnMeta.name}</TableCellRenderer>
             </StyledCustomTableHeader>
