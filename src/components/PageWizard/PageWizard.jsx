@@ -35,7 +35,7 @@ const PageWizardStep = ({ children, onValidate = () => true, ...other }) => (
         </Button>
       ) : (
         <Button
-          onClick={() => onValidate() && other.onNext()}
+          onClick={() => onValidate() && other.onSubmit()}
           disabled={other.nextDisabled}
           loading={other.sendingData}
         >
