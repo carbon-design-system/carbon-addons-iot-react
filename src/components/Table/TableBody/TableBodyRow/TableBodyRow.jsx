@@ -139,8 +139,8 @@ const StyledTableRow = styled(({ isSelectable, ...others }) => <TableRow {...oth
           ? `background-color: inherit; color:#565656;border-bottom-color:#dcdcdc;border-top-color:#ffffff;`
           : ``} /* turn off hover states if the row is set not selectable */
     }
-    
-    
+
+
 `;
 
 const StyledSingleSelectedTableRow = styled(({ hasRowSelection, ...props }) => (
@@ -224,7 +224,7 @@ const StyledTableExpandRow = styled(({ hasRowSelection, ...props }) => (
         td:first-of-type {
           position: relative;
         }
-    
+
         td:first-of-type:after {
           content: '';
           position: absolute;
@@ -273,7 +273,7 @@ const StyledTableExpandRowExpanded = styled(({ hasRowSelection, ...props }) => (
         td:first-of-type {
           position: relative;
         }
-    
+
         td:first-of-type:after {
           content: '';
           position: absolute;
@@ -316,7 +316,7 @@ const StyledExpansionTableRow = styled(({ hasRowSelection, ...props }) => <Table
         td:first-of-type {
           position: relative;
         }
-    
+
         td:first-of-type:after {
           content: '';
           position: absolute;
@@ -335,7 +335,7 @@ const StyledExpansionTableRow = styled(({ hasRowSelection, ...props }) => <Table
 const StyledTableCellRow = styled(TableCell)`
   &&& {
     ${props => {
-      const { width, align } = props;
+      const { width } = props;
       return width !== undefined
         ? `
         min-width: ${width};
@@ -343,11 +343,9 @@ const StyledTableCellRow = styled(TableCell)`
         white-space: nowrap;
         overflow-x: hidden;
         text-overflow: ellipsis;
-        text-align: ${align};
       `
-        : `text-align:${align}`;
-    }};
-  }
+        : null;
+    }}
 `;
 
 const StyledNestedSpan = styled.span`
@@ -430,7 +428,7 @@ const TableBodyRow = ({
       {rowSelectionCell}
       {ordering.map((col, idx) => {
         const matchingColumnMeta = columns && columns.find(column => column.id === col.columnId);
-        const offset = firstVisibleColIndex === idx ? nestingOffset : 0;
+        const offset = firstVisibleColIndex === idx ? nestingOffset : null;
         const align =
           matchingColumnMeta && matchingColumnMeta.align ? matchingColumnMeta.align : 'start';
         return !col.isHidden ? (
@@ -442,7 +440,7 @@ const TableBodyRow = ({
             offset={offset}
             width={matchingColumnMeta && matchingColumnMeta.width}
             align={align}
-            className={col.isSortable === true ? `data-table-${align}` : `data-table`}
+            className={`data-table-${align}`}
           >
             <StyledNestedSpan nestingOffset={offset}>
               {col.renderDataFunction ? (

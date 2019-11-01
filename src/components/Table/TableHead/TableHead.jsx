@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { DataTable, Checkbox } from 'carbon-components-react';
 import isNil from 'lodash/isNil';
 import styled from 'styled-components';
+import classnames from 'classnames';
 
 import { TableColumnsPropTypes } from '../TablePropTypes';
 import TableCellRenderer from '../TableCellRenderer/TableCellRenderer';
@@ -180,7 +181,9 @@ const TableHead = ({
               }}
               sortDirection={hasSort ? sort.direction : 'NONE'}
               align={align}
-              className={`table-header-label-${align}`}
+              className={classnames(`table-header-label-${align}`, {
+                'table-header-sortable': matchingColumnMeta.isSortable,
+              })}
             >
               <TableCellRenderer>{matchingColumnMeta.name}</TableCellRenderer>
             </StyledCustomTableHeader>

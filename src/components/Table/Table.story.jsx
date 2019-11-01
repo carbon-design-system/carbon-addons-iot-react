@@ -65,7 +65,38 @@ export const tableColumns = [
     id: 'string',
     name: 'String',
     filter: { placeholderText: 'pick a string' },
-    align: 'start',
+  },
+  {
+    id: 'date',
+    name: 'Date',
+    filter: { placeholderText: 'pick a date' },
+  },
+  {
+    id: 'select',
+    name: 'Select',
+    filter: { placeholderText: 'pick an option', options: selectData },
+  },
+  {
+    id: 'secretField',
+    name: 'Secret Information',
+  },
+  {
+    id: 'status',
+    name: 'Status',
+    renderDataFunction: renderStatusIcon,
+  },
+  {
+    id: 'number',
+    name: 'Number',
+    filter: { placeholderText: 'pick a number' },
+  },
+];
+
+export const tableColumnsWithAlignment = [
+  {
+    id: 'string',
+    name: 'String',
+    filter: { placeholderText: 'pick a string' },
   },
   {
     id: 'date',
@@ -77,18 +108,16 @@ export const tableColumns = [
     id: 'select',
     name: 'Select',
     filter: { placeholderText: 'pick an option', options: selectData },
-    align: 'start',
+    align: 'end',
   },
   {
     id: 'secretField',
     name: 'Secret Information',
-    align: 'start',
   },
   {
     id: 'status',
     name: 'Status',
     renderDataFunction: renderStatusIcon,
-    align: 'start',
   },
   {
     id: 'number',
@@ -348,6 +377,35 @@ storiesOf('Watson IoT|Table', module)
       <FullWidthWrapper>
         <StatefulTable
           {...initialState}
+          actions={actions}
+          lightweight={boolean('lightweight', false)}
+          options={{
+            hasRowSelection: select('hasRowSelection', ['multi', 'single'], 'multi'),
+            hasRowExpansion: false,
+          }}
+          view={{ table: { selectedIds: array('selectedIds', []) } }}
+        />
+      </FullWidthWrapper>
+    ),
+    {
+      info: {
+        text:
+          'This is an example of the <StatefulTable> component that uses local state to handle all the table actions. This is produced by wrapping the <Table> in a container component and managing the state associated with features such the toolbar, filters, row select, etc. For more robust documentation on the prop model and source, see the other "with function" stories.',
+        propTables: [Table],
+        propTablesExclude: [StatefulTable],
+      },
+    }
+  )
+  .add(
+    'Simple Stateful Example with alignment',
+    () => (
+      <FullWidthWrapper>
+        <StatefulTable
+          {...initialState}
+          columns={tableColumnsWithAlignment.map((i, idx) => ({
+            ...i,
+            isSortable: idx !== 1,
+          }))}
           actions={actions}
           lightweight={boolean('lightweight', false)}
           options={{
