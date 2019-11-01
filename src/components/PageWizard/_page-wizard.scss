@@ -30,6 +30,7 @@
   &--content {
     flex: 1;
     &--actions {
+      padding-top: $spacing-07;
       .#{$prefix}--btn {
         margin-right: $spacing-05;
       }
