@@ -55,6 +55,8 @@ export {
 } from './constants/LayoutConstants';
 export { findMatchingThresholds } from './components/TableCard/TableCard';
 
+// Experimental
+export ListCard from './components/ListCard/ListCard';
 export {
   PageWizard,
   PageWizardStep,
@@ -63,6 +65,7 @@ export {
   PageWizardStepDescription,
   PageWizardStepExtraContent,
 } from './components/PageWizard/PageWizard';
+export StatefulPageWizard from './components/PageWizard/StatefulPageWizard';
 
 // Carbon proxy
 export {
