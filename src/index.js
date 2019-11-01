@@ -55,6 +55,15 @@ export {
 } from './constants/LayoutConstants';
 export { findMatchingThresholds } from './components/TableCard/TableCard';
 
+export {
+  PageWizard,
+  PageWizardStep,
+  PageWizardStepContent,
+  PageWizardStepTitle,
+  PageWizardStepDescription,
+  PageWizardStepExtraContent,
+} from './components/PageWizard/PageWizard';
+
 // Carbon proxy
 export {
   Accordion,
@@ -96,9 +105,11 @@ export {
   DatePicker,
   DatePickerInput,
   Dropdown,
-  FileUploader,
   Filename,
+  FileUploader,
   FileUploaderButton,
+  FileUploaderDropContainer,
+  FileUploaderItem,
   Form,
   FormGroup,
   FormItem,
@@ -210,9 +221,9 @@ export {
   HeaderName,
   HeaderNavigation,
   HeaderPanel,
+  HeaderSideNavItems,
   Switcher,
   SwitcherItem,
-  SwitcherItemLink,
   SwitcherDivider,
   SkipToContent,
   // TODO Consolidate SideNav export from Carbon below with our SideNav export

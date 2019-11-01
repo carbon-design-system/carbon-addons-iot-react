@@ -137,6 +137,7 @@ const defaultProps = {
   },
 };
 
+/** Dumb component that renders the card basics */
 const Card = ({
   size,
   children,
