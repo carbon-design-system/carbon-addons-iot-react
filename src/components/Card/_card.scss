@@ -3,8 +3,7 @@
 
 .card {
   &--title {
-    font-size: rem(14px);
-    line-height: rem(48px);
+    @include type-style('productive-heading-01');
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
