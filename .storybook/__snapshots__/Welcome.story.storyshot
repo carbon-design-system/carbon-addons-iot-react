@@ -2819,6 +2819,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Getting Started|
                   <div
                     className="bx--structured-list-td"
                   >
+                    ListCard
+                  </div>
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                  />
+                  <div
+                    className="bx--structured-list-td"
+                  >
                     PageWizard
                   </div>
                 </div>
@@ -2880,6 +2892,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Getting Started|
                     className="bx--structured-list-td"
                   >
                     PageWizardStepExtraContent
+                  </div>
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                  />
+                  <div
+                    className="bx--structured-list-td"
+                  >
+                    StatefulPageWizard
                   </div>
                 </div>
                 <div
