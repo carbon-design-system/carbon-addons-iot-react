@@ -2,34 +2,26 @@
 
 .table-header-label {
   &-start {
-    .bx--table-header-label {
+    .#{$prefix}--table-header-label {
       width: 100%;
       text-align: start;
     }
   }
 
   &-center {
-    .bx--table-header-label {
+    .#{$prefix}--table-header-label {
       width: 100%;
       text-align: center;
     }
   }
 
   &-end {
-    .bx--table-header-label {
+    .#{$prefix}--table-header-label {
       width: 100%;
       text-align: end;
     }
   }
 }
-
-// .bx--data-table td:last-of-type {
-//   padding-right: $spacing-09 + $spacing-02;
-// }
-
-// .bx--data-table td:first-of-type {
-//   padding-left: $spacing-04 + $spacing-02;
-// }
 
 td.data-table {
   &-start {
@@ -46,8 +38,8 @@ td.data-table {
 }
 
 html[dir='rtl'] {
-  .bx--table-sort__icon-unsorted,
-  .bx--table-sort__icon {
+  .#{$prefix}--table-sort__icon-unsorted,
+  .#{$prefix}--table-sort__icon {
     margin-right: $spacing-03;
     margin-left: 0;
   }
