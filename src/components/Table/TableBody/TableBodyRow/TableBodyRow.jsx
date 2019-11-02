@@ -428,7 +428,7 @@ const TableBodyRow = ({
       {rowSelectionCell}
       {ordering.map((col, idx) => {
         const matchingColumnMeta = columns && columns.find(column => column.id === col.columnId);
-        const offset = firstVisibleColIndex === idx ? nestingOffset : null;
+        const offset = firstVisibleColIndex === idx ? nestingOffset : 0;
         const align =
           matchingColumnMeta && matchingColumnMeta.align ? matchingColumnMeta.align : 'start';
         return !col.isHidden ? (
