@@ -1,11 +1,5 @@
 @import '~carbon-components/scss/components/data-table/data-table';
 
-.table-header-label-start,
-.table-header-label-center,
-.table-header-label-end {
-  width: 100%;
-}
-
 .table-header-label {
   &-start {
     .#{$prefix}--table-header-label {
@@ -24,6 +18,12 @@
       text-align: end;
     }
   }
+}
+
+.table-header-label-start .table-header-label-start,
+.table-header-label-center .table-header-label-center,
+.table-header-label-end .table-header-label-end {
+  width: 100%;
 }
 
 td.data-table {
