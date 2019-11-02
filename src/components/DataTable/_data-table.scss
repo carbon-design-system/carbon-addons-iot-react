@@ -1,23 +1,26 @@
 @import '~carbon-components/scss/components/data-table/data-table';
 
+.table-header-label-start,
+.table-header-label-center,
+.table-header-label-end {
+  width: 100%;
+}
+
 .table-header-label {
   &-start {
     .#{$prefix}--table-header-label {
-      width: 100%;
       text-align: start;
     }
   }
 
   &-center {
     .#{$prefix}--table-header-label {
-      width: 100%;
       text-align: center;
     }
   }
 
   &-end {
     .#{$prefix}--table-header-label {
-      width: 100%;
       text-align: end;
     }
   }
