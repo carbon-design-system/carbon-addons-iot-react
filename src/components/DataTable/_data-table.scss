@@ -50,6 +50,7 @@ html[dir='rtl'] {
   td.data-table {
     &-start {
       text-align: start;
+      padding-right: $spacing-04;
     }
 
     &-center {
@@ -58,6 +59,7 @@ html[dir='rtl'] {
 
     &-end {
       text-align: end;
+      padding-left: $spacing-05;
     }
   }
 }

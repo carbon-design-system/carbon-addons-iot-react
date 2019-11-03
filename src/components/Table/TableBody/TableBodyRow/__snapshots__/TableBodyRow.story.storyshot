@@ -841,7 +841,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                 >
                   
                   <div
-                    aria-describedby="tooltip"
+                    aria-describedby={null}
                     aria-haspopup="true"
                     className="bx--tooltip__trigger"
                     onBlur={[Function]}
@@ -1007,10 +1007,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                 className="RowActionsCell__RowActionsContainer-sc-1toqqj7-1 jEXYjq"
               >
                 <div
-                  aria-label="Active loading indicator"
+                  aria-atomic="true"
+                  aria-labelledby="loading-id-8"
                   aria-live="assertive"
                   className="bx--loading bx--loading--small"
                 >
+                  <label
+                    className="bx--visually-hidden"
+                    id="loading-id-8"
+                  >
+                    Active loading indicator
+                  </label>
                   <svg
                     className="bx--loading__svg"
                     viewBox="-75 -75 150 150"
@@ -1022,13 +1029,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                       className="bx--loading__background"
                       cx="0"
                       cy="0"
-                      r="37.5"
+                      r="26.8125"
                     />
                     <circle
                       className="bx--loading__stroke"
                       cx="0"
                       cy="0"
-                      r="37.5"
+                      r="26.8125"
                     />
                   </svg>
                 </div>
