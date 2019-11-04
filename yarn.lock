@@ -1544,17 +1544,16 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@carbon/charts-react@^0.16.24":
-  version "0.16.24"
-  resolved "https://registry.yarnpkg.com/@carbon/charts-react/-/charts-react-0.16.24.tgz#dc0ebed45c166770fc1b17bc7c6f36b47d1a38a1"
-  integrity sha512-YLoMM4NB+k7qz2vAjLewojwOQn0yOFRY116UMVDeThaIaK6rvejCwJLs2OgCE6XvmMdUqq/nojNqC6JV8ch6NQ==
+"@carbon/charts-react@^0.16.25":
+  version "0.16.25"
+  resolved "https://registry.yarnpkg.com/@carbon/charts-react/-/charts-react-0.16.25.tgz#ef2e44270d3633dea3acefb1f0ed1794549ae487"
+  integrity sha512-ybfEDM7/ytXCmYVyva8CEtCRja3V+cCgl0W+jxnOf1MVtMp5vpFX9/j838shJCVdKK2YcZ14DVrNvA1jEF9ZlQ==
   dependencies:
-    "@carbon/charts" "^0.16.24"
+    "@carbon/charts" "^0.16.25"
 
-"@carbon/charts@^0.16.24":
-  version "0.16.24"
-  resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-0.16.24.tgz#c2fb599fb126d07be61a59d56c31de678ce1daac"
-  integrity sha512-7rvmx8nSKBWfZPvriYK6bkVNF9kcD8yf+p5ykRuGk8hpQAwbAqpThYKz5rh4dbqNULQvDkTBriWE1Vf9gVc4Ig==
+"@carbon/charts@^0.16.25", "@carbon/charts@https://github.com/scottdickerson/carbon-charts#carbon-charts-v0.16.26-gitpkg":
+  version "0.16.26"
+  resolved "https://github.com/scottdickerson/carbon-charts#99c9e9a0da026dd231722deead296ac8b1bfee67"
   dependencies:
     "@carbon/utils-position" "1.1.1"
     babel-polyfill "6.26.0"

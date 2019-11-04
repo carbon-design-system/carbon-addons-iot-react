@@ -1,6 +1,7 @@
 import React, { useRef, useMemo, useCallback } from 'react';
 import moment from 'moment/min/moment-with-locales.min';
 import { LineChart } from '@carbon/charts-react';
+// TODO: waiting for @carbon/charts support https://github.com/carbon-design-system/carbon-charts/pull/389
 import '@carbon/charts/dist/styles.css';
 import isEmpty from 'lodash/isEmpty';
 import styled from 'styled-components';
@@ -115,11 +116,21 @@ const formatChartData = (timeDataSourceId, series, values) => {
     labels: series.map(({ label }) => label),
     datasets: series.map(({ dataSourceId, label, color }) => ({
       label,
-      fillColors: color ? [color] : null,
+      ...(color ? { fillColors: [color] } : {}),
       data: values.map(i => ({ date: new Date(i[timeDataSourceId]), value: i[dataSourceId] })),
     })),
   };
 };
+
+/*
+const handleStrokeColor = (datasetLabel, label, value, originalStrokeColor) =>
+  value > 90 ? '#FF0000' : originalStrokeColor;
+
+const handleFillColor = (datasetLabel, label, value, originalFillColor) =>
+  value > 90 ? '#FF0000' : originalFillColor;
+
+const handleIsFilled = (datasetLabel, label, value, isFilled) => (value > 90 ? true : isFilled);
+*/
 
 const valueFormatter = (value, size, unit) => {
   const precision = determinePrecision(size, value, Math.abs(value) > 1 ? 1 : 3);
@@ -320,11 +331,14 @@ const TimeSeriesCard = ({
                     containerResizable: true,
                     tooltip: {
                       formatter: tooltipValue => valueFormatter(tooltipValue, size, unit),
-                      customHTML: handleTooltip, // TODO: waiting for @carbon/charts support https://github.com/carbon-design-system/carbon-charts/pull/389
+                      customHTML: handleTooltip,
                       gridline: {
                         enabled: false,
                       },
                     },
+                    // getStrokeColor: handleStrokeColor,
+                    // getFillColor: handleFillColor,
+                    // getIsFilled: handleIsFilled,
                   }}
                   width="100%"
                   height="100%"

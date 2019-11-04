@@ -32,6 +32,8 @@
     }
   },
   "dependencies": {
+    "@carbon/charts": "https://github.com/scottdickerson/carbon-charts#carbon-charts-v0.16.26-gitpkg",
+    "@carbon/charts-react": "^0.16.25",
     "ajv": "^6.10.2",
     "c3": "^0.7.1",
     "cheerio": "^1.0.0-rc.3",
@@ -57,8 +59,6 @@
     "uuid": "^3.3.2"
   },
   "peerDependencies": {
-    "@carbon/charts": "^0.16.17",
-    "@carbon/charts-react": "^0.16.17",
     "@carbon/icons": "^10.1.0",
     "@carbon/icons-react": "^10.1.1",
     "carbon-components": "^9.84.14",
@@ -90,8 +90,6 @@
     "@babel/preset-flow": "^7.0.0",
     "@babel/preset-react": "^7.6.3",
     "@babel/runtime": "^7.0.0",
-    "@carbon/charts": "^0.16.24",
-    "@carbon/charts-react": "^0.16.24",
     "@carbon/icons": "^10.1.0",
     "@carbon/icons-react": "^10.1.1",
     "@commitlint/cli": "^7.2.1",
@@ -186,6 +184,9 @@
       ]
     },
     "concurrent": false
+  },
+  "resolutions": {
+    "@carbon/charts": "https://github.com/scottdickerson/carbon-charts#carbon-charts-v0.16.26-gitpkg"
   },
   "version": "0.0.0-development"
 }

@@ -45,7 +45,7 @@ export default {
     'd3',
   ],
   plugins: [
-    resolve({ browser: true, extensions: ['.mjs', '.js', '.jsx', '.json'] }),
+    resolve({ browser: true, preferBuiltins: false, extensions: ['.mjs', '.js', '.jsx', '.json'] }),
     postcss({
       plugins: [],
     }),
