@@ -9,7 +9,6 @@ import isNil from 'lodash/isNil';
 import memoize from 'lodash/memoize';
 import useDeepCompareEffect from 'use-deep-compare-effect';
 import withSize from 'react-sizeme';
-// import cheerio from 'cheerio';
 
 import { TimeSeriesCardPropTypes, CardPropTypes } from '../../constants/PropTypes';
 import { CARD_SIZES } from '../../constants/LayoutConstants';
@@ -18,23 +17,21 @@ import Card from '../Card/Card';
 import { generateSampleValues, isValuesEmpty } from './timeSeriesUtils';
 
 /** Extends default tooltip with the additional date information */
-/*
 export const handleTooltip = (data, defaultTooltip) => {
-  const $ = cheerio.load(defaultTooltip);
+  console.log(`defaultTooltip: ${defaultTooltip}`);
   const dateLabel = `<li class='datapoint-tooltip'><p class='label'>${moment(
     Array.isArray(data) && data[0] ? data[0].date : data.date
   ).format('L HH:mm:ss')}</p></li>`;
+  let updatedTooltip = defaultTooltip;
   if (Array.isArray(data)) {
     // prepend the date inside the existing multi tooltip
-    $('.multi-tooltip > li:first-child').before(dateLabel);
+    updatedTooltip = defaultTooltip.replace('<li', `${dateLabel}<li`);
   } else {
     // wrap to make single a multi-tooltip
-    $('.datapoint-tooltip').wrap(`<ul class='multi-tooltip'><li></li></ul>`);
-    $('.multi-tooltip > li:first-child').before(dateLabel);
+    updatedTooltip = `<ul class='multi-tooltip'>${dateLabel}<li>${defaultTooltip}</li></ul>`;
   }
-  return $.html('body > *');
+  return updatedTooltip;
 };
-*/
 
 const LineChartWrapper = styled.div`
   padding-left: 16px;
@@ -119,7 +116,9 @@ const formatChartData = (timeDataSourceId, series, values) => {
     datasets: series.map(({ dataSourceId, label, color }) => ({
       label,
       ...(color ? { fillColors: [color] } : {}),
-      data: values.map(i => ({ date: new Date(i[timeDataSourceId]), value: i[dataSourceId] })),
+      data:
+        values &&
+        values.map(i => ({ date: new Date(i[timeDataSourceId]), value: i[dataSourceId] })),
     })),
   };
 };
@@ -333,7 +332,7 @@ const TimeSeriesCard = ({
                     containerResizable: true,
                     tooltip: {
                       formatter: tooltipValue => valueFormatter(tooltipValue, size, unit),
-                      // customHTML: handleTooltip,
+                      customHTML: handleTooltip,
                       gridline: {
                         enabled: false,
                       },

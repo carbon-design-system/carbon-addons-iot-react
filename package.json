@@ -37,7 +37,6 @@
     "@carbon/colors": "^10.1.0",
     "ajv": "^6.10.2",
     "c3": "^0.7.1",
-    "cheerio": "^1.0.0-rc.3",
     "classnames": "^2.2.5",
     "immutability-helper": "^2.9.0",
     "js-file-download": "^0.4.7",
@@ -189,8 +188,7 @@
     "concurrent": false
   },
   "resolutions": {
-    "@carbon/charts": "https://github.com/scottdickerson/carbon-charts#carbon-charts-v0.16.26-gitpkg",
-    "htmlparser2": "4.0.0"
+    "@carbon/charts": "https://github.com/scottdickerson/carbon-charts#carbon-charts-v0.16.26-gitpkg"
   },
   "version": "0.0.0-development"
 }

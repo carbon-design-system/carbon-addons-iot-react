@@ -6,8 +6,6 @@ import { uglify } from 'rollup-plugin-uglify';
 import filesize from 'rollup-plugin-filesize';
 import postcss from 'rollup-plugin-postcss';
 import json from 'rollup-plugin-json';
-// import builtins from 'rollup-plugin-node-builtins';
-// import globals from 'rollup-plugin-node-globals';
 
 const env = process.env.NODE_ENV || 'development';
 const prodSettings = env === 'development' ? [] : [uglify(), filesize()];
@@ -46,11 +44,8 @@ export default {
   plugins: [
     resolve({
       browser: true,
-      // preferBuiltins: false,
       extensions: ['.mjs', '.js', '.jsx', '.json'],
     }),
-    // builtins(),
-    // globals(),
     postcss({
       plugins: [],
     }),
