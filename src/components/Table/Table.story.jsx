@@ -97,12 +97,15 @@ export const tableColumnsWithAlignment = [
     id: 'string',
     name: 'String',
     filter: { placeholderText: 'pick a string' },
+    align: 'start',
+    isSortable: true,
   },
   {
     id: 'date',
     name: 'Date',
     filter: { placeholderText: 'pick a date' },
     align: 'center',
+    isSortable: true,
   },
   {
     id: 'select',
@@ -113,17 +116,20 @@ export const tableColumnsWithAlignment = [
   {
     id: 'secretField',
     name: 'Secret Information',
+    align: 'start',
   },
   {
     id: 'status',
     name: 'Status',
     renderDataFunction: renderStatusIcon,
+    align: 'center',
   },
   {
     id: 'number',
     name: 'Number',
     filter: { placeholderText: 'pick a number' },
     align: 'end',
+    isSortable: true,
   },
 ];
 
@@ -402,10 +408,7 @@ storiesOf('Watson IoT|Table', module)
       <FullWidthWrapper>
         <StatefulTable
           {...initialState}
-          columns={tableColumnsWithAlignment.map((i, idx) => ({
-            ...i,
-            isSortable: idx !== 1,
-          }))}
+          columns={tableColumnsWithAlignment}
           actions={actions}
           lightweight={boolean('lightweight', false)}
           options={{

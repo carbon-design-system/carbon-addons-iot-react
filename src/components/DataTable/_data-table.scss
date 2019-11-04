@@ -23,7 +23,9 @@
 .table-header-label-start .table-header-label-start,
 .table-header-label-center .table-header-label-center,
 .table-header-label-end .table-header-label-end {
-  width: 100%;
+  .#{$prefix}--table-header-label {
+    width: 100%;
+  }
 }
 
 td.data-table {
