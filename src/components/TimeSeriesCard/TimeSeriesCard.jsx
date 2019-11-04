@@ -119,7 +119,9 @@ const formatChartData = (timeDataSourceId, series, values) => {
     datasets: series.map(({ dataSourceId, label, color }) => ({
       label,
       ...(color ? { fillColors: [color] } : {}),
-      data: values.map(i => ({ date: new Date(i[timeDataSourceId]), value: i[dataSourceId] })),
+      data:
+        values &&
+        values.map(i => ({ date: new Date(i[timeDataSourceId]), value: i[dataSourceId] })),
     })),
   };
 };
