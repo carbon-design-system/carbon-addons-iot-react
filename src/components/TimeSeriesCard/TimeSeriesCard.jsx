@@ -1,13 +1,15 @@
 import React, { useRef, useMemo, useCallback } from 'react';
 import moment from 'moment/min/moment-with-locales.min';
 import { LineChart } from '@carbon/charts-react';
-import '@carbon/charts/style.css';
+// TODO: waiting for @carbon/charts support https://github.com/carbon-design-system/carbon-charts/pull/389
+import '@carbon/charts/dist/styles.css';
 import isEmpty from 'lodash/isEmpty';
 import styled from 'styled-components';
 import isNil from 'lodash/isNil';
 import memoize from 'lodash/memoize';
 import useDeepCompareEffect from 'use-deep-compare-effect';
 import withSize from 'react-sizeme';
+import cheerio from 'cheerio';
 
 import { TimeSeriesCardPropTypes, CardPropTypes } from '../../constants/PropTypes';
 import { CARD_SIZES } from '../../constants/LayoutConstants';
@@ -15,11 +17,28 @@ import Card from '../Card/Card';
 
 import { generateSampleValues, isValuesEmpty } from './timeSeriesUtils';
 
+/** Extends default tooltip with the additional date information */
+export const handleTooltip = (data, defaultTooltip) => {
+  const $ = cheerio.load(defaultTooltip);
+  const dateLabel = `<li class='datapoint-tooltip'><p class='label'>${moment(
+    Array.isArray(data) && data[0] ? data[0].date : data.date
+  ).format('L HH:mm:ss')}</p></li>`;
+  if (Array.isArray(data)) {
+    // prepend the date inside the existing multi tooltip
+    $('.multi-tooltip > li:first-child').before(dateLabel);
+  } else {
+    // wrap to make single a multi-tooltip
+    $('.datapoint-tooltip').wrap(`<ul class='multi-tooltip'><li></li></ul>`);
+    $('.multi-tooltip > li:first-child').before(dateLabel);
+  }
+  return $.html('body > *');
+};
+
 const LineChartWrapper = styled.div`
   padding-left: 16px;
   padding-right: 1rem;
-  padding-top: ${props => (props.isLegendHidden ? '16px' : '0px')};
-  padding-bottom: ${props => (!props.size === CARD_SIZES.MEDIUM ? '16px' : '0px')};
+  padding-top: 0px;
+  padding-bottom: 16px;
   position: absolute;
   width: 100%;
   height: ${props => props.contentHeight};
@@ -44,6 +63,7 @@ const LineChartWrapper = styled.div`
     .chart-holder {
       width: 100%;
       height: 100%;
+      padding-top: 0.25rem;
     }
     .chart-svg {
       width: 100%;
@@ -91,16 +111,26 @@ const determinePrecision = (size, value, precision) => {
   return precision;
 };
 
-const formatChartData = (labels, series, values) => {
+const formatChartData = (timeDataSourceId, series, values) => {
   return {
-    labels,
+    labels: series.map(({ label }) => label),
     datasets: series.map(({ dataSourceId, label, color }) => ({
       label,
-      backgroundColors: color ? [color] : null,
-      data: values.map(i => i[dataSourceId]),
+      ...(color ? { fillColors: [color] } : {}),
+      data: values.map(i => ({ date: new Date(i[timeDataSourceId]), value: i[dataSourceId] })),
     })),
   };
 };
+
+/*
+const handleStrokeColor = (datasetLabel, label, value, originalStrokeColor) =>
+  value > 90 ? '#FF0000' : originalStrokeColor;
+
+const handleFillColor = (datasetLabel, label, value, originalFillColor) =>
+  value > 90 ? '#FF0000' : originalFillColor;
+
+const handleIsFilled = (datasetLabel, label, value, isFilled) => (value > 90 ? true : isFilled);
+*/
 
 const valueFormatter = (value, size, unit) => {
   const precision = determinePrecision(size, value, Math.abs(value) > 1 ? 1 : 3);
@@ -160,8 +190,38 @@ const TimeSeriesCard = ({
       'year'
     );
 
-  const formatInterval = useCallback(
-    (timestamp, index, ticksInterval, length) => {
+  const maxTicksPerSize = useMemo(
+    () => {
+      switch (size) {
+        case CARD_SIZES.SMALL:
+          return 2;
+        case CARD_SIZES.MEDIUM:
+          return 4;
+        case CARD_SIZES.WIDE:
+        case CARD_SIZES.LARGE:
+          return 6;
+        case CARD_SIZES.XLARGE:
+          return 14;
+        default:
+          return 10;
+      }
+    },
+    [size]
+  );
+
+  /** Interval is the points between ticks */
+  const ticksInterval =
+    Math.round(valueSort.length / maxTicksPerSize) !== 0
+      ? Math.round(valueSort.length / maxTicksPerSize)
+      : 1;
+
+  const formatTick = useCallback(
+    /** *
+     * timestamp of current value
+     * index of current value
+     * ticks: array of current ticks
+     */
+    (timestamp, index, ticks) => {
       // moment locale default to english
       moment.locale('en');
       if (locale) {
@@ -170,15 +230,14 @@ const TimeSeriesCard = ({
       const m = moment.unix(timestamp / 1000);
 
       return interval === 'hour' && index === 0
-        ? length > 1
+        ? ticks.length > 1
           ? m.format('DD MMM')
           : m.format('DD MMM HH:mm')
         : interval === 'hour' &&
           index !== 0 &&
-          !moment(moment.unix(valueSort[index - ticksInterval].timestamp / 1000)).isSame(
-            moment.unix(valueSort[index].timestamp / 1000),
-            'day'
-          )
+          !moment(
+            moment.unix(valueSort[Math.max(index - ticksInterval, 0)].timestamp / 1000)
+          ).isSame(moment.unix(valueSort[index].timestamp / 1000), 'day')
         ? m.format('DD MMM')
         : interval === 'hour'
         ? m.format('HH:mm')
@@ -198,41 +257,7 @@ const TimeSeriesCard = ({
         ? m.format('HH:mm')
         : m.format('DD MMM YYYY');
     },
-    [interval, locale, sameYear, valueSort]
-  );
-
-  const maxTicksPerSize = useCallback(
-    () => {
-      switch (size) {
-        case CARD_SIZES.SMALL:
-          return 2;
-        case CARD_SIZES.MEDIUM:
-          return 4;
-        case CARD_SIZES.WIDE:
-        case CARD_SIZES.LARGE:
-          return 6;
-        case CARD_SIZES.XLARGE:
-          return 14;
-        default:
-          return 10;
-      }
-    },
-    [size]
-  );
-
-  const ticksInterval =
-    Math.round(valueSort.length / maxTicksPerSize(size)) !== 0
-      ? Math.round(valueSort.length / maxTicksPerSize(size))
-      : 1;
-
-  const labels = useMemo(
-    () =>
-      valueSort.map((i, idx) =>
-        idx % ticksInterval === 0
-          ? formatInterval(i[timeDataSourceId], idx, ticksInterval, valueSort.length)
-          : ' '.repeat(idx)
-      ),
-    [formatInterval, ticksInterval, timeDataSourceId, valueSort]
+    [interval, locale, sameYear, ticksInterval, valueSort]
   );
 
   const lines = useMemo(
@@ -240,17 +265,24 @@ const TimeSeriesCard = ({
     [isEditable, series]
   );
 
+  /** This is needed to update the chart when the lines and values change */
   useDeepCompareEffect(
     () => {
       if (chartRef && chartRef.chart) {
-        const chartData = formatChartData(labels, lines, values);
-        chartRef.chart.setData(chartData);
+        const chartData = formatChartData(lines, values);
+        chartRef.chart.model.setData(chartData);
       }
     },
-    [values, labels, lines]
+    [values, lines]
   );
 
-  const chartData = useMemo(() => formatChartData(labels, lines, values), [labels, lines, values]);
+  /** This caches the chart value */
+  const chartData = useMemo(() => formatChartData(timeDataSourceId, lines, values), [
+    timeDataSourceId,
+    lines,
+    values,
+  ]);
+
   return (
     <withSize.SizeMe>
       {({ size: measuredSize }) => {
@@ -278,22 +310,35 @@ const TimeSeriesCard = ({
                   options={{
                     animations: false,
                     accessibility: false,
-                    scales: {
-                      x: {
+                    axes: {
+                      bottom: {
                         title: xLabel,
+                        scaleType: 'time',
+                        primary: true,
+                        ticks: {
+                          max: maxTicksPerSize,
+                          formatter: formatTick,
+                        },
                       },
-                      y: {
+                      left: {
                         title: yLabel,
                         formatter: axisValue => valueFormatter(axisValue, size, unit),
-                        // numberOfTicks: 8,
                         yMaxAdjuster: yMaxValue => yMaxValue * 1.3,
+                        secondary: true,
                       },
                     },
-                    legendClickable: !isEditable,
+                    legend: { position: 'top', clickable: !isEditable },
                     containerResizable: true,
                     tooltip: {
                       formatter: tooltipValue => valueFormatter(tooltipValue, size, unit),
+                      customHTML: handleTooltip,
+                      gridline: {
+                        enabled: false,
+                      },
                     },
+                    // getStrokeColor: handleStrokeColor,
+                    // getFillColor: handleFillColor,
+                    // getIsFilled: handleIsFilled,
                   }}
                   width="100%"
                   height="100%"
