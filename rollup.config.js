@@ -6,6 +6,8 @@ import { uglify } from 'rollup-plugin-uglify';
 import filesize from 'rollup-plugin-filesize';
 import postcss from 'rollup-plugin-postcss';
 import json from 'rollup-plugin-json';
+// import builtins from 'rollup-plugin-node-builtins';
+// import globals from 'rollup-plugin-node-globals';
 
 const env = process.env.NODE_ENV || 'development';
 const prodSettings = env === 'development' ? [] : [uglify(), filesize()];
@@ -21,8 +23,6 @@ export default {
       'prop-types': 'PropTypes',
       react: 'React',
       'react-dom': 'ReactDOM',
-      '@carbon/charts': 'CarbonCharts',
-      '@carbon/charts-react': 'CarbonChartsReact',
       'carbon-icons': 'CarbonIcons',
       '@carbon/icons-react': 'CarbonIconsReact',
       'carbon-components': 'CarbonComponents',
@@ -33,19 +33,24 @@ export default {
   },
   external: [
     'react',
+    'react-dom',
     'styled-components',
     'prop-types',
     'carbon-components-react',
     'carbon-icons',
-    '@carbon/charts',
-    '@carbon/charts-react',
     '@carbon/icons',
     '@carbon/icons-react',
     'carbon-components',
     'd3',
   ],
   plugins: [
-    resolve({ browser: true, preferBuiltins: false, extensions: ['.mjs', '.js', '.jsx', '.json'] }),
+    resolve({
+      browser: true,
+      // preferBuiltins: false,
+      extensions: ['.mjs', '.js', '.jsx', '.json'],
+    }),
+    // builtins(),
+    // globals(),
     postcss({
       plugins: [],
     }),

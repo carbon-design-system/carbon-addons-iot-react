@@ -9,7 +9,7 @@ import isNil from 'lodash/isNil';
 import memoize from 'lodash/memoize';
 import useDeepCompareEffect from 'use-deep-compare-effect';
 import withSize from 'react-sizeme';
-import cheerio from 'cheerio';
+// import cheerio from 'cheerio';
 
 import { TimeSeriesCardPropTypes, CardPropTypes } from '../../constants/PropTypes';
 import { CARD_SIZES } from '../../constants/LayoutConstants';
@@ -18,6 +18,7 @@ import Card from '../Card/Card';
 import { generateSampleValues, isValuesEmpty } from './timeSeriesUtils';
 
 /** Extends default tooltip with the additional date information */
+/*
 export const handleTooltip = (data, defaultTooltip) => {
   const $ = cheerio.load(defaultTooltip);
   const dateLabel = `<li class='datapoint-tooltip'><p class='label'>${moment(
@@ -33,6 +34,7 @@ export const handleTooltip = (data, defaultTooltip) => {
   }
   return $.html('body > *');
 };
+*/
 
 const LineChartWrapper = styled.div`
   padding-left: 16px;
@@ -331,7 +333,7 @@ const TimeSeriesCard = ({
                     containerResizable: true,
                     tooltip: {
                       formatter: tooltipValue => valueFormatter(tooltipValue, size, unit),
-                      customHTML: handleTooltip,
+                      // customHTML: handleTooltip,
                       gridline: {
                         enabled: false,
                       },
