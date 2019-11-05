@@ -172,6 +172,17 @@ const TimeSeriesCard = ({
 
   const isAllValuesEmpty = isValuesEmpty(values, timeDataSourceId);
 
+  // Unfortunately the API returns the data out of order sometimes
+  const valueSort = useMemo(
+    () =>
+      values
+        ? values.sort((left, right) =>
+            moment.utc(left[timeDataSourceId]).diff(moment.utc(right[timeDataSourceId]))
+          )
+        : [],
+    [values, timeDataSourceId]
+  );
+
   const maxTicksPerSize = useMemo(
     () => {
       switch (size) {
@@ -215,18 +226,18 @@ const TimeSeriesCard = ({
   useDeepCompareEffect(
     () => {
       if (chartRef && chartRef.chart) {
-        const chartData = formatChartData(timeDataSourceId, lines, values);
+        const chartData = formatChartData(timeDataSourceId, lines, valueSort);
         chartRef.chart.model.setData(chartData);
       }
     },
-    [values, lines, timeDataSourceId]
+    [valueSort, lines, timeDataSourceId]
   );
 
   /** This caches the chart value */
-  const chartData = useMemo(() => formatChartData(timeDataSourceId, lines, values), [
+  const chartData = useMemo(() => formatChartData(timeDataSourceId, lines, valueSort), [
     timeDataSourceId,
     lines,
-    values,
+    valueSort,
   ]);
 
   return (
