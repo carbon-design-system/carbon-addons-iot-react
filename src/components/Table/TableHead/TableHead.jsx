@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { DataTable, Checkbox } from 'carbon-components-react';
 import isNil from 'lodash/isNil';
 import styled from 'styled-components';
+import classnames from 'classnames';
 
 import { TableColumnsPropTypes } from '../TablePropTypes';
 import TableCellRenderer from '../TableCellRenderer/TableCellRenderer';
@@ -163,7 +164,8 @@ const TableHead = ({
         {ordering.map(item => {
           const matchingColumnMeta = columns.find(column => column.id === item.columnId);
           const hasSort = matchingColumnMeta && sort && sort.columnId === matchingColumnMeta.id;
-
+          const align =
+            matchingColumnMeta && matchingColumnMeta.align ? matchingColumnMeta.align : 'start';
           return !item.isHidden && matchingColumnMeta ? (
             <StyledCustomTableHeader
               id={`column-${matchingColumnMeta.id}`}
@@ -178,6 +180,10 @@ const TableHead = ({
                 }
               }}
               sortDirection={hasSort ? sort.direction : 'NONE'}
+              align={align}
+              className={classnames(`table-header-label-${align}`, {
+                'table-header-sortable': matchingColumnMeta.isSortable,
+              })}
             >
               <TableCellRenderer>{matchingColumnMeta.name}</TableCellRenderer>
             </StyledCustomTableHeader>
