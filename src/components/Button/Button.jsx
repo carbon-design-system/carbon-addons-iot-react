@@ -22,7 +22,7 @@ const propTypes = {
   /** Button label */
   children: PropTypes.node,
   /** click handler */
-  onClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func, // eslint-disable-line
   className: PropTypes.string,
   /** primary, secondary, etc from carbon */
   kind: ButtonTypes.buttonKind,
