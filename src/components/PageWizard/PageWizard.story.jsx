@@ -113,6 +113,7 @@ const StepValidation = ({ ...props }) => {
           <FormGroup legendText="Name">
             <FormItem>
               <TextInput
+                id="first-name"
                 labelText="First name"
                 value={firstName}
                 onChange={evt => setFirstName(evt.target.value)}
@@ -120,6 +121,7 @@ const StepValidation = ({ ...props }) => {
             </FormItem>
             <FormItem>
               <TextInput
+                id="last-name"
                 labelText="Last name"
                 value={lastName}
                 onChange={evt => setLastName(evt.target.value)}
@@ -148,7 +150,7 @@ storiesOf('Watson IoT Experimental|PageWizard', module)
           <Link to="www.ibm.com">Something</Link>,
           <Link to="www.ibm.com">Something Else</Link>,
         ]}
-        tabs={
+        content={
           <StatefulPageWizard>
             <StepValidation id="step1" label="Step with validation" />
             {content[1]}
@@ -167,7 +169,7 @@ storiesOf('Watson IoT Experimental|PageWizard', module)
           <Link to="www.ibm.com">Something</Link>,
           <Link to="www.ibm.com">Something Else</Link>,
         ]}
-        tabs={
+        content={
           <PageWizard
             currentStepId="step1"
             onClose={action('closed')}
@@ -192,7 +194,7 @@ storiesOf('Watson IoT Experimental|PageWizard', module)
           <Link to="www.ibm.com">Something</Link>,
           <Link to="www.ibm.com">Something Else</Link>,
         ]}
-        tabs={
+        content={
           <PageWizard
             currentStepId="step1"
             onClose={action('closed')}
