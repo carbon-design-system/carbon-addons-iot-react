@@ -1,0 +1,49 @@
+@import '~carbon-components/scss/globals/scss/vars';
+
+.#{$prefix}--header {
+  .#{$prefix}--skip-to-content:focus {
+    min-width: 240px;
+    justify-content: center;
+    border: $spacing-01 solid $ui-01;
+  }
+
+  &__menu-toggle {
+    display: block;
+  }
+
+  &__name {
+    font-size: $spacing-01;
+  }
+
+  &__menu-title[role='menuitem'][aria-expanded='true'] + &__menu {
+    left: auto;
+    right: 0;
+  }
+
+  &__menu {
+    min-width: 12.5rem;
+    width: auto;
+  }
+
+  &__menu-item[role='menuitem']:focus {
+    border-color: $ui-01;
+    outline: none;
+  }
+}
+
+.#{$prefix}--header-action-btn {
+  height: 3rem;
+  width: 3rem;
+  padding: 0;
+
+  .#{$prefix}--header__menu-item[role='menuitem'] {
+    height: 100%;
+    justify-content: center;
+    padding: 0;
+    width: 100%;
+  }
+
+  span {
+    display: flex;
+  }
+}
