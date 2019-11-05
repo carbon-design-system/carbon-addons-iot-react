@@ -160,6 +160,46 @@ export const I18NPropTypes = PropTypes.shape({
   filterDescending: PropTypes.string,
 });
 
+export const defaultI18NPropTypes = {
+  /** pagination */
+  pageBackwardAria: 'Previous page',
+  pageForwardAria: 'Next page',
+  pageNumberAria: 'Page Number',
+  itemsPerPage: 'Items per page:',
+  itemsRange: (min, max) => `${min}–${max} items`,
+  currentPage: page => `page ${page}`,
+  itemsRangeWithTotal: (min, max, total) => `${min}–${max} of ${total} items`,
+  pageRange: (current, total) => `${current} of ${total} pages`,
+  /** table body */
+  overflowMenuAria: 'More actions',
+  clickToExpandAria: 'Click to expand content',
+  clickToCollapseAria: 'Click to collapse content',
+  selectAllAria: 'Select all items',
+  selectRowAria: 'Select row',
+  /** toolbar */
+  clearAllFilters: 'Clear all filters',
+  columnSelectionButtonAria: 'Column Selection',
+  filterButtonAria: 'Filters',
+  searchLabel: 'Search',
+  searchPlaceholder: 'Search',
+  clearFilterAria: 'Clear filter',
+  filterAria: 'Filter',
+  openMenuAria: 'Open menu',
+  closeMenuAria: 'Close menu',
+  clearSelectionAria: 'Clear selection',
+  batchCancel: 'Cancel',
+  itemsSelected: 'items selected',
+  itemSelected: 'item selected',
+  /** empty state */
+  emptyMessage: 'There is no data',
+  emptyMessageWithFilters: 'No results match the current filters',
+  emptyButtonLabel: 'Create some data',
+  emptyButtonLabelWithFilters: 'Clear all filters',
+  filterNone: 'Unsort rows by this header',
+  filterAscending: 'Sort rows by this header in ascending order',
+  filterDescending: 'Sort rows by this header in descending order',
+};
+
 export const TableSearchPropTypes = PropTypes.shape({
   value: PropTypes.string,
 });
