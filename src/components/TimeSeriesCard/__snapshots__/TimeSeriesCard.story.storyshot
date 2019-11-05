@@ -47,10 +47,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
           />
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 fabdLf"
+          className="Card__CardContent-v5r71h-1 jAGfWa"
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 kWQxKK"
+            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 eIxEom"
             size="XLARGE"
           >
             <div
@@ -134,7 +134,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
           />
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 fabdLf"
+          className="Card__CardContent-v5r71h-1 jAGfWa"
         >
           <div
             className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
@@ -218,10 +218,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
           />
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 fabdLf"
+          className="Card__CardContent-v5r71h-1 jAGfWa"
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 bqKozK"
+            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 TKmwI"
             size="LARGE"
           >
             <div
@@ -305,8 +305,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
           />
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 fabdLf"
-        />
+          className="Card__CardContent-v5r71h-1 jAGfWa"
+        >
+          <div
+            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 fcwvkN"
+            size="LARGE"
+          >
+            <div
+              className="chart-holder"
+            />
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -383,10 +392,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
           />
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 fabdLf"
+          className="Card__CardContent-v5r71h-1 jAGfWa"
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 bqKozK"
+            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 TKmwI"
             size="LARGE"
           >
             <div
@@ -470,10 +479,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
           />
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 fabdLf"
+          className="Card__CardContent-v5r71h-1 jAGfWa"
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 bqKozK"
+            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 TKmwI"
             size="LARGE"
           >
             <div
@@ -557,10 +566,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
           />
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 fabdLf"
+          className="Card__CardContent-v5r71h-1 jAGfWa"
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 eeTgsK"
+            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 jcRUKW"
             size="LARGE"
           >
             <div
@@ -644,10 +653,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
           />
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 fabdLf"
+          className="Card__CardContent-v5r71h-1 jAGfWa"
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 eeTgsK"
+            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 jcRUKW"
             size="LARGE"
           >
             <div
@@ -731,10 +740,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
           />
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 fabdLf"
+          className="Card__CardContent-v5r71h-1 jAGfWa"
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 eeTgsK"
+            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 jcRUKW"
             size="LARGE"
           >
             <div
@@ -818,10 +827,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
           />
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 fabdLf"
+          className="Card__CardContent-v5r71h-1 jAGfWa"
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 bqKozK"
+            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 TKmwI"
             size="LARGE"
           >
             <div
@@ -905,10 +914,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
           />
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 fabdLf"
+          className="Card__CardContent-v5r71h-1 jAGfWa"
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 bqKozK"
+            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 TKmwI"
             size="LARGE"
           >
             <div
@@ -992,10 +1001,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
           />
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 fabdLf"
+          className="Card__CardContent-v5r71h-1 jAGfWa"
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 bqKozK"
+            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 TKmwI"
             size="LARGE"
           >
             <div
@@ -1079,10 +1088,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
           />
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 fabdLf"
+          className="Card__CardContent-v5r71h-1 jAGfWa"
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 bqKozK"
+            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 TKmwI"
             size="LARGE"
           >
             <div
@@ -1166,10 +1175,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
           />
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 fabdLf"
+          className="Card__CardContent-v5r71h-1 jAGfWa"
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 bqKozK"
+            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 TKmwI"
             size="LARGE"
           >
             <div
@@ -1253,10 +1262,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
           />
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 fabdLf"
+          className="Card__CardContent-v5r71h-1 jAGfWa"
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 bqKozK"
+            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 TKmwI"
             size="LARGE"
           >
             <div
@@ -1340,10 +1349,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
           />
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 fabdLf"
+          className="Card__CardContent-v5r71h-1 jAGfWa"
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 bqKozK"
+            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 TKmwI"
             size="LARGE"
           >
             <div
@@ -1427,10 +1436,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
           />
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 fabdLf"
+          className="Card__CardContent-v5r71h-1 jAGfWa"
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 bqKozK"
+            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 TKmwI"
             size="LARGE"
           >
             <div
@@ -1514,10 +1523,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
           />
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 fabdLf"
+          className="Card__CardContent-v5r71h-1 jAGfWa"
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 bqKozK"
+            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 TKmwI"
             size="LARGE"
           >
             <div
@@ -1601,10 +1610,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
           />
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 fabdLf"
+          className="Card__CardContent-v5r71h-1 jAGfWa"
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 bqKozK"
+            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 TKmwI"
             size="LARGE"
           >
             <div
@@ -1688,10 +1697,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
           />
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 gTExVy"
+          className="Card__CardContent-v5r71h-1 hDVRgE"
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 eeTgsK"
+            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 jcRUKW"
             size="MEDIUM"
           >
             <div
@@ -1775,10 +1784,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
           />
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 gTExVy"
+          className="Card__CardContent-v5r71h-1 hDVRgE"
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 eeTgsK"
+            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 jcRUKW"
             size="MEDIUM"
           >
             <div
@@ -1862,10 +1871,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
           />
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 gTExVy"
+          className="Card__CardContent-v5r71h-1 hDVRgE"
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 bqKozK"
+            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 TKmwI"
             size="MEDIUM"
           >
             <div
@@ -1949,10 +1958,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
           />
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 gTExVy"
+          className="Card__CardContent-v5r71h-1 hDVRgE"
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 bqKozK"
+            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 TKmwI"
             size="MEDIUM"
           >
             <div
@@ -2036,10 +2045,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
           />
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 gTExVy"
+          className="Card__CardContent-v5r71h-1 hDVRgE"
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 bqKozK"
+            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 TKmwI"
             size="MEDIUM"
           >
             <div
@@ -2123,10 +2132,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
           />
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 gTExVy"
+          className="Card__CardContent-v5r71h-1 hDVRgE"
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 bqKozK"
+            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 TKmwI"
             size="MEDIUM"
           >
             <div
@@ -2210,10 +2219,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
           />
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 gTExVy"
+          className="Card__CardContent-v5r71h-1 hDVRgE"
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 bqKozK"
+            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 TKmwI"
             size="MEDIUM"
           >
             <div
@@ -2297,10 +2306,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
           />
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 gTExVy"
+          className="Card__CardContent-v5r71h-1 hDVRgE"
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 bqKozK"
+            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 TKmwI"
             size="MEDIUM"
           >
             <div
@@ -2384,10 +2393,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
           />
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 gTExVy"
+          className="Card__CardContent-v5r71h-1 hDVRgE"
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 bqKozK"
+            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 TKmwI"
             size="MEDIUM"
           >
             <div
@@ -2471,10 +2480,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
           />
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 gTExVy"
+          className="Card__CardContent-v5r71h-1 hDVRgE"
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 bqKozK"
+            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 TKmwI"
             size="MEDIUM"
           >
             <div
@@ -2558,10 +2567,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
           />
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 gTExVy"
+          className="Card__CardContent-v5r71h-1 hDVRgE"
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 bqKozK"
+            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 TKmwI"
             size="MEDIUM"
           >
             <div
@@ -2645,10 +2654,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
           />
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 gTExVy"
+          className="Card__CardContent-v5r71h-1 hDVRgE"
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 eeTgsK"
+            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 jcRUKW"
             size="MEDIUM"
           >
             <div
@@ -2783,10 +2792,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
           </div>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 gTExVy"
+          className="Card__CardContent-v5r71h-1 hDVRgE"
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 bqKozK"
+            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 TKmwI"
             size="MEDIUM"
           >
             <div
@@ -2870,10 +2879,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
           />
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 gTExVy"
+          className="Card__CardContent-v5r71h-1 hDVRgE"
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 bqKozK"
+            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 TKmwI"
             size="MEDIUM"
           >
             <div

@@ -129,7 +129,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
           </div>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 gTExVy"
+          className="Card__CardContent-v5r71h-1 hDVRgE"
         />
       </div>
     </div>
@@ -207,7 +207,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
           />
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 gTExVy"
+          className="Card__CardContent-v5r71h-1 hDVRgE"
         >
           <div
             className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
@@ -291,7 +291,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
           />
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 gPUVrT"
+          className="Card__CardContent-v5r71h-1 hoCWQe"
         >
           <div
             className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
@@ -367,7 +367,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
         />
       </div>
       <div
-        className="Card__CardContent-v5r71h-1 gPUVrT"
+        className="Card__CardContent-v5r71h-1 hoCWQe"
       >
         [{"timestamp":12341231231,"value1":"my value"}]
       </div>
@@ -497,7 +497,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
           </div>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 gTExVy"
+          className="Card__CardContent-v5r71h-1 hDVRgE"
         />
       </div>
     </div>
@@ -575,7 +575,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
           />
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 gTExVy"
+          className="Card__CardContent-v5r71h-1 hDVRgE"
         />
       </div>
     </div>
@@ -656,7 +656,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
           />
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 gPUVrT"
+          className="Card__CardContent-v5r71h-1 hoCWQe"
         >
           <div
             className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
@@ -745,7 +745,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
           </div>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 gPUVrT"
+          className="Card__CardContent-v5r71h-1 hoCWQe"
         >
           <div
             className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
@@ -834,7 +834,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
           </div>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 gTExVy"
+          className="Card__CardContent-v5r71h-1 hDVRgE"
         >
           <div
             className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
@@ -923,7 +923,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
           </div>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 fabdLf"
+          className="Card__CardContent-v5r71h-1 jAGfWa"
         >
           <div
             className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
@@ -1012,7 +1012,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
           </div>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 gTExVy"
+          className="Card__CardContent-v5r71h-1 hDVRgE"
         >
           <div
             className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
@@ -1101,7 +1101,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
           </div>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 gTExVy"
+          className="Card__CardContent-v5r71h-1 hDVRgE"
         >
           <div
             className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
@@ -1190,7 +1190,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
           </div>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 fabdLf"
+          className="Card__CardContent-v5r71h-1 jAGfWa"
         >
           <div
             className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
@@ -1279,7 +1279,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
           </div>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 fabdLf"
+          className="Card__CardContent-v5r71h-1 jAGfWa"
         >
           <div
             className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
@@ -1412,7 +1412,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
           </div>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 gTExVy"
+          className="Card__CardContent-v5r71h-1 hDVRgE"
         >
           <div
             className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
@@ -1496,7 +1496,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
           />
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 gTExVy"
+          className="Card__CardContent-v5r71h-1 hDVRgE"
         >
           <div
             className="Card__SkeletonWrapper-v5r71h-2 fqjitN"
@@ -1654,7 +1654,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
           </div>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 gTExVy"
+          className="Card__CardContent-v5r71h-1 hDVRgE"
         />
       </div>
     </div>

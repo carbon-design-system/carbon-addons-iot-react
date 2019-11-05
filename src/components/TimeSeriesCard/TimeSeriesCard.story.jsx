@@ -338,7 +338,7 @@ storiesOf('Watson IoT|TimeSeriesCard', module)
             yLabel: text('yLabel', 'Temperature (˚F)'),
             timeDataSourceId: 'timestamp',
           })}
-          values={getIntervalChartData('month', 12, { min: 10, max: 100 }, 100)}
+          values={getIntervalChartData('month', 24, { min: 10, max: 100 }, 100)}
           interval="month"
           breakpoint="lg"
           size={size}
@@ -640,7 +640,7 @@ storiesOf('Watson IoT|TimeSeriesCard', module)
             yLabel: text('yLabel', 'Temperature (˚F)'),
             timeDataSourceId: 'timestamp',
           })}
-          values={getIntervalChartData('month', 12, { min: 10, max: 100 }, 100)}
+          values={getIntervalChartData('month', 24, { min: 10, max: 100 }, 100)}
           interval="month"
           breakpoint="lg"
           size={size}

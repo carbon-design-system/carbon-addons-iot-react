@@ -22,7 +22,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|SideN
   >
     <header
       aria-label="main header"
-      className="bx--header custom-class-name Header__StyledHeader-sc-14tpcyv-0 hmKiPy"
+      className="bx--header custom-class-name"
       role="banner"
     >
       <a
@@ -75,7 +75,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|SideN
       >
         <button
           aria-label="user"
-          className="Header__StyledGlobalAction-sc-14tpcyv-1 hzqpaE bx--header__action"
+          className="bx--header-action-btn bx--header__action"
           onClick={[Function]}
           type="button"
         >
