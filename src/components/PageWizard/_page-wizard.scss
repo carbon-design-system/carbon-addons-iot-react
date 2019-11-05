@@ -1,0 +1,39 @@
+@import '~carbon-components/scss/globals/scss/vars';
+@import '~carbon-components/scss/globals/scss/typography';
+
+.page-wizard {
+  display: flex;
+  &--progress {
+    padding-right: $spacing-05;
+    flex: 0 0 12rem;
+    .#{$prefix}--progress--vertical {
+      li {
+        min-height: 4.5rem;
+      }
+    }
+  }
+  &--step {
+    padding-bottom: $spacing-07;
+    @include type-style('body-long-01');
+    &--title {
+      @include type-style('productive-heading-02');
+      margin-bottom: $spacing-03;
+    }
+    &--description {
+      margin-bottom: $spacing-04;
+      max-width: 40rem;
+    }
+    &--extra-content {
+      display: none; /* TODO: render as sidebar */
+    }
+  }
+  &--content {
+    flex: 1;
+    &--actions {
+      padding-top: $spacing-07;
+      .#{$prefix}--btn {
+        margin-right: $spacing-05;
+      }
+    }
+  }
+}

@@ -1,4 +1,4 @@
-// export default from 'carbon-components-react/lib/components/OverflowMenu/OverflowMenu-story';
+// Copied from https://github.com/carbon-design-system/carbon/blob/v10.7.3/packages/react/src/components/OverflowMenu/OverflowMenu-story.js
 
 /**
  * Copyright IBM Corp. 2016, 2018
@@ -12,7 +12,8 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, boolean, select, text } from '@storybook/addon-knobs';
 import { withReadme } from 'storybook-readme';
-import { OverflowMenu, OverflowMenuItem } from 'carbon-components-react';
+
+import { OverflowMenu, OverflowMenuItem } from '../../index';
 
 import OverflowREADME from './README.md';
 
@@ -54,13 +55,6 @@ const OverflowMenuExample = ({ overflowMenuProps, overflowMenuItemProps }) => (
       <OverflowMenuItem {...overflowMenuItemProps} itemText="Option 4" />
       <OverflowMenuItem {...overflowMenuItemProps} itemText="Danger option" hasDivider isDelete />
     </OverflowMenu>
-    <OverflowMenu {...overflowMenuProps}>
-      <OverflowMenuItem {...overflowMenuItemProps} itemText="Option 1" primaryFocus />
-      <OverflowMenuItem
-        {...overflowMenuItemProps}
-        itemText="Option 2 is an example of a really long string and how we recommend handling this"
-      />
-    </OverflowMenu>
   </>
 );
 
@@ -99,6 +93,7 @@ storiesOf('OverflowMenu', module)
         text: `
             Overflow Menu is used when additional options are available to the user and there is a space constraint.
             Create Overflow Menu Item components for each option on the menu.
+
             When given \`href\` props, menu items render as <a> tags to facilitate usability.
           `,
       },
@@ -110,8 +105,9 @@ storiesOf('OverflowMenu', module)
       <OverflowMenuExample
         overflowMenuProps={{
           ...props.menu(),
+          ariaLabel: null,
           style: { width: 'auto' },
-          renderIcon: () => <div style={{ padding: '0 1rem' }}>Custom trigger</div>,
+          renderIcon: () => <div style={{ padding: '0 1rem' }}>Menu</div>,
         }}
         overflowMenuItemProps={props.menuItem()}
       />
