@@ -50,12 +50,12 @@ storiesOf('Watson IoT|PageTitleBar', module)
       collapsed
     />
   ))
-  .add('with tabs as children', () => (
+  .add('with content', () => (
     <PageTitleBar
       title={commonPageTitleBarProps.title}
       description={commonPageTitleBarProps.description}
       breadcrumb={pageTitleBarBreadcrumb}
-      tabs={
+      content={
         <Tabs>
           <Tab label="Tab 1">
             <div>Content for first tab.</div>
@@ -86,7 +86,7 @@ storiesOf('Watson IoT|PageTitleBar', module)
       breadcrumb={pageTitleBarBreadcrumb}
       extraContent={commonPageTitleBarProps.extraContent}
       editable
-      tabs={
+      content={
         <Tabs>
           <Tab label="Tab 1">
             <div>Content for first tab.</div>
