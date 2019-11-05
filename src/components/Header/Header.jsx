@@ -9,58 +9,13 @@ import {
   HeaderPanel,
 } from 'carbon-components-react/lib/components/UIShell';
 import AppSwitcher from '@carbon/icons-react/lib/app-switcher/20';
-import { rem } from 'polished';
-import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import React, { useState, useCallback } from 'react';
-
-import { COLORS } from '../../styles/styles';
+import { settings } from 'carbon-components';
 
 import HeaderMenu from './HeaderMenu';
 
-const StyledHeader = styled(CarbonHeader)`
-  &&& {
-    .bx--skip-to-content:focus {
-      min-width: 240px;
-      justify-content: center;
-      border: 0.125rem solid ${COLORS.white};
-    }
-
-    .bx--header__menu-toggle {
-      display: block;
-    }
-
-    .bx--header__menu-title[role='menuitem'][aria-expanded='true'] + .bx--header__menu {
-      left: auto;
-      right: 0;
-    }
-
-    .bx--header__menu {
-      min-width: 12.5rem;
-      width: auto;
-    }
-
-    .bx--header__menu-item[role='menuitem']:focus {
-      border-color: ${COLORS.white};
-      outline: none;
-    }
-  }
-`;
-const StyledGlobalAction = styled(HeaderGlobalAction)`
-  &&& {
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    min-width: 3rem;
-    padding: 0 ${rem(15)};
-    position: relative;
-    width: auto;
-
-    span {
-      display: flex;
-    }
-  }
-`;
+const { prefix: carbonPrefix } = settings;
 
 const propTypes = {
   /** Add a prefix other than IBM */
@@ -148,6 +103,7 @@ const Header = ({
       ));
       return (
         <HeaderMenu
+          className={`${carbonPrefix}--header-action-btn`}
           key={`menu-item-${item.label}`}
           aria-label={item.label}
           isMenu={false}
@@ -159,29 +115,30 @@ const Header = ({
       );
     }
     return (
-      <StyledGlobalAction
+      <HeaderGlobalAction
+        className={`${carbonPrefix}--header-action-btn`}
         key={`menu-item-${item.label}-global`}
         aria-label={item.label}
         onClick={item.onClick}
       >
         {item.btnContent}
-      </StyledGlobalAction>
+      </HeaderGlobalAction>
     );
   });
   if (headerPanel) {
     actionBtnContent.push(
-      <StyledGlobalAction
+      <HeaderGlobalAction
         aria-label="header-panel-trigger"
         key="AppSwitcher"
         onClick={handleHeaderPanelTriggerClick}
       >
         <AppSwitcher fill="white" description="Icon" />
-      </StyledGlobalAction>
+      </HeaderGlobalAction>
     );
   }
 
   return (
-    <StyledHeader className={className} aria-label="main header">
+    <CarbonHeader className={className} aria-label="main header">
       <SkipToContent href={skipto} />
       {hasSideNav && <HeaderMenuButton aria-label="Open menu" onClick={onClickSideNavExpand} />}
       <HeaderName href={url} prefix={prefix}>
@@ -199,7 +156,7 @@ const Header = ({
           </div>
         </HeaderPanel>
       )}
-    </StyledHeader>
+    </CarbonHeader>
   );
 };
 

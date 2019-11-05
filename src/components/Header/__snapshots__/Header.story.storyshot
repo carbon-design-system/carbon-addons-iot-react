@@ -22,7 +22,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Heade
   >
     <header
       aria-label="main header"
-      className="bx--header custom-class-name Headerstory__StyledHeader-st8jpc-0 hBPBX Header__StyledHeader-sc-14tpcyv-0 hmKiPy"
+      className="bx--header custom-class-name Headerstory__StyledHeader-st8jpc-0 hBPBX"
       role="banner"
     >
       <a
@@ -75,7 +75,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Heade
       >
         <button
           aria-label="alerts"
-          className="Header__StyledGlobalAction-sc-14tpcyv-1 hzqpaE bx--header__action"
+          className="bx--header-action-btn bx--header__action"
           onClick={[Function]}
           type="button"
         >
@@ -101,7 +101,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Heade
           </svg>
         </button>
         <div
-          className="bx--header__submenu"
+          className="bx--header__submenu bx--header-action-btn"
           onBlur={[Function]}
           onClick={[Function]}
           onKeyDown={[Function]}
@@ -217,7 +217,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Heade
            
         </div>
         <div
-          className="bx--header__submenu"
+          className="bx--header__submenu bx--header-action-btn"
           onBlur={[Function]}
           onClick={[Function]}
           onKeyDown={[Function]}
@@ -326,7 +326,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Heade
         </div>
         <button
           aria-label="header-panel-trigger"
-          className="Header__StyledGlobalAction-sc-14tpcyv-1 hzqpaE bx--header__action"
+          className="bx--header__action"
           onClick={[Function]}
           type="button"
         >
@@ -414,7 +414,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Heade
   >
     <header
       aria-label="main header"
-      className="bx--header custom-class-name Headerstory__StyledHeader-st8jpc-0 hBPBX Header__StyledHeader-sc-14tpcyv-0 hmKiPy"
+      className="bx--header custom-class-name Headerstory__StyledHeader-st8jpc-0 hBPBX"
       role="banner"
     >
       <a
@@ -467,7 +467,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Heade
       >
         <button
           aria-label="user"
-          className="Header__StyledGlobalAction-sc-14tpcyv-1 hzqpaE bx--header__action"
+          className="bx--header-action-btn bx--header__action"
           onClick={[Function]}
           type="button"
         >
