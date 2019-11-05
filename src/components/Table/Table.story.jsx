@@ -92,6 +92,47 @@ export const tableColumns = [
   },
 ];
 
+export const tableColumnsWithAlignment = [
+  {
+    id: 'string',
+    name: 'String',
+    filter: { placeholderText: 'pick a string' },
+    align: 'start',
+    isSortable: true,
+  },
+  {
+    id: 'date',
+    name: 'Date',
+    filter: { placeholderText: 'pick a date' },
+    align: 'center',
+    isSortable: true,
+  },
+  {
+    id: 'select',
+    name: 'Select',
+    filter: { placeholderText: 'pick an option', options: selectData },
+    align: 'end',
+  },
+  {
+    id: 'secretField',
+    name: 'Secret Information',
+    align: 'start',
+  },
+  {
+    id: 'status',
+    name: 'Status',
+    renderDataFunction: renderStatusIcon,
+    align: 'center',
+  },
+  {
+    id: 'number',
+    name: 'Number',
+    filter: { placeholderText: 'pick a number' },
+    align: 'end',
+    isSortable: true,
+  },
+];
+
 export const tableColumnsFixedWidth = tableColumns.map(i => ({
   ...i,
   width:
@@ -342,6 +383,32 @@ storiesOf('Watson IoT|Table', module)
       <FullWidthWrapper>
         <StatefulTable
           {...initialState}
+          actions={actions}
+          lightweight={boolean('lightweight', false)}
+          options={{
+            hasRowSelection: select('hasRowSelection', ['multi', 'single'], 'multi'),
+            hasRowExpansion: false,
+          }}
+          view={{ table: { selectedIds: array('selectedIds', []) } }}
+        />
+      </FullWidthWrapper>
+    ),
+    {
+      info: {
+        text:
+          'This is an example of the <StatefulTable> component that uses local state to handle all the table actions. This is produced by wrapping the <Table> in a container component and managing the state associated with features such the toolbar, filters, row select, etc. For more robust documentation on the prop model and source, see the other "with function" stories.',
+        propTables: [Table],
+        propTablesExclude: [StatefulTable],
+      },
+    }
+  )
+  .add(
+    'Simple Stateful Example with alignment',
+    () => (
+      <FullWidthWrapper>
+        <StatefulTable
+          {...initialState}
+          columns={tableColumnsWithAlignment}
           actions={actions}
           lightweight={boolean('lightweight', false)}
           options={{

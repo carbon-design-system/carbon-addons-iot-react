@@ -964,7 +964,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
-                              role="img"
                               style={
                                 Object {
                                   "willChange": "transform",
@@ -1001,11 +1000,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               type="button"
                             >
                               <svg
-                                aria-label="Clear search input"
+                                aria-hidden={true}
                                 focusable="false"
                                 height={16}
                                 preserveAspectRatio="xMidYMid meet"
-                                role="img"
                                 style={
                                   Object {
                                     "willChange": "transform",
@@ -1089,11 +1087,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         >
                           <tr>
                             <th
-                              className="TableHead__StyledCustomTableHeader-sc-1fviaow-2 cnPAGg"
+                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 cnPAGg"
                               scope="col"
                             >
                               <button
-                                className="TableHead__StyledCustomTableHeader-sc-1fviaow-2 cnPAGg bx--table-sort bx--table-sort--active"
+                                align="start"
+                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 cnPAGg bx--table-sort bx--table-sort--active"
                                 data-column="alert"
                                 id="column-alert"
                                 onClick={[Function]}
@@ -1152,11 +1151,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </th>
                             <th
                               aria-sort="none"
-                              className="TableHead__StyledCustomTableHeader-sc-1fviaow-2 cnPAGg"
+                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 cnPAGg"
                               scope="col"
                             >
                               <button
-                                className="TableHead__StyledCustomTableHeader-sc-1fviaow-2 cnPAGg bx--table-sort"
+                                align="start"
+                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 cnPAGg bx--table-sort"
                                 data-column="hour"
                                 id="column-hour"
                                 onClick={[Function]}
@@ -1215,11 +1215,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </th>
                             <th
                               aria-sort="none"
-                              className="TableHead__StyledCustomTableHeader-sc-1fviaow-2 cnPAGg"
+                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 cnPAGg"
                               scope="col"
                             >
                               <button
-                                className="TableHead__StyledCustomTableHeader-sc-1fviaow-2 cnPAGg bx--table-sort"
+                                align="start"
+                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 cnPAGg bx--table-sort"
                                 data-column="pressure"
                                 id="column-pressure"
                                 onClick={[Function]}
@@ -1283,7 +1284,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           id="Table"
                         >
                           <tr
-                            className="EmptyTable__StyledEmptyTableRow-sc-2gw9t-0 kfMIPX"
+                            className="EmptyTable__StyledEmptyTableRow-sc-2gw9t-0 jSTkIE"
                           >
                             <td
                               colSpan={3}
@@ -1883,7 +1884,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
             >
               Last updated: 
                
-              Tue, 22 Oct 2019 05:00:00 GMT
+              Mon, 21 Oct 2019 18:30:00 GMT
             </div>
           </div>
           <div
@@ -2812,7 +2813,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
-                              role="img"
                               style={
                                 Object {
                                   "willChange": "transform",
@@ -2849,11 +2849,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               type="button"
                             >
                               <svg
-                                aria-label="Clear search input"
+                                aria-hidden={true}
                                 focusable="false"
                                 height={16}
                                 preserveAspectRatio="xMidYMid meet"
-                                role="img"
                                 style={
                                   Object {
                                     "willChange": "transform",
@@ -2937,11 +2936,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         >
                           <tr>
                             <th
-                              className="TableHead__StyledCustomTableHeader-sc-1fviaow-2 cnPAGg"
+                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 cnPAGg"
                               scope="col"
                             >
                               <button
-                                className="TableHead__StyledCustomTableHeader-sc-1fviaow-2 cnPAGg bx--table-sort bx--table-sort--active"
+                                align="start"
+                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 cnPAGg bx--table-sort bx--table-sort--active"
                                 data-column="alert"
                                 id="column-alert"
                                 onClick={[Function]}
@@ -3000,11 +3000,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </th>
                             <th
                               aria-sort="none"
-                              className="TableHead__StyledCustomTableHeader-sc-1fviaow-2 cnPAGg"
+                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 cnPAGg"
                               scope="col"
                             >
                               <button
-                                className="TableHead__StyledCustomTableHeader-sc-1fviaow-2 cnPAGg bx--table-sort"
+                                align="start"
+                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 cnPAGg bx--table-sort"
                                 data-column="hour"
                                 id="column-hour"
                                 onClick={[Function]}
@@ -3063,11 +3064,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </th>
                             <th
                               aria-sort="none"
-                              className="TableHead__StyledCustomTableHeader-sc-1fviaow-2 cnPAGg"
+                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 cnPAGg"
                               scope="col"
                             >
                               <button
-                                className="TableHead__StyledCustomTableHeader-sc-1fviaow-2 cnPAGg bx--table-sort"
+                                align="start"
+                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 cnPAGg bx--table-sort"
                                 data-column="pressure"
                                 id="column-pressure"
                                 onClick={[Function]}
@@ -3131,7 +3133,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           id="Table"
                         >
                           <tr
-                            className="EmptyTable__StyledEmptyTableRow-sc-2gw9t-0 kfMIPX"
+                            className="EmptyTable__StyledEmptyTableRow-sc-2gw9t-0 jSTkIE"
                           >
                             <td
                               colSpan={3}
@@ -3731,7 +3733,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
             >
               Last updated: 
                
-              Tue, 22 Oct 2019 05:00:00 GMT
+              Mon, 21 Oct 2019 18:30:00 GMT
             </div>
           </div>
           <div
@@ -4692,7 +4694,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
-                              role="img"
                               style={
                                 Object {
                                   "willChange": "transform",
@@ -4729,11 +4730,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               type="button"
                             >
                               <svg
-                                aria-label="Clear search input"
+                                aria-hidden={true}
                                 focusable="false"
                                 height={16}
                                 preserveAspectRatio="xMidYMid meet"
-                                role="img"
                                 style={
                                   Object {
                                     "willChange": "transform",
@@ -4817,11 +4817,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         >
                           <tr>
                             <th
-                              className="TableHead__StyledCustomTableHeader-sc-1fviaow-2 cnPAGg"
+                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 cnPAGg"
                               scope="col"
                             >
                               <button
-                                className="TableHead__StyledCustomTableHeader-sc-1fviaow-2 cnPAGg bx--table-sort bx--table-sort--active"
+                                align="start"
+                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 cnPAGg bx--table-sort bx--table-sort--active"
                                 data-column="alert"
                                 id="column-alert"
                                 onClick={[Function]}
@@ -4880,11 +4881,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </th>
                             <th
                               aria-sort="none"
-                              className="TableHead__StyledCustomTableHeader-sc-1fviaow-2 cnPAGg"
+                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 cnPAGg"
                               scope="col"
                             >
                               <button
-                                className="TableHead__StyledCustomTableHeader-sc-1fviaow-2 cnPAGg bx--table-sort"
+                                align="start"
+                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 cnPAGg bx--table-sort"
                                 data-column="hour"
                                 id="column-hour"
                                 onClick={[Function]}
@@ -4943,11 +4945,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </th>
                             <th
                               aria-sort="none"
-                              className="TableHead__StyledCustomTableHeader-sc-1fviaow-2 cnPAGg"
+                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 cnPAGg"
                               scope="col"
                             >
                               <button
-                                className="TableHead__StyledCustomTableHeader-sc-1fviaow-2 cnPAGg bx--table-sort"
+                                align="start"
+                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 cnPAGg bx--table-sort"
                                 data-column="pressure"
                                 id="column-pressure"
                                 onClick={[Function]}
@@ -5011,7 +5014,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           id="Table"
                         >
                           <tr
-                            className="EmptyTable__StyledEmptyTableRow-sc-2gw9t-0 kfMIPX"
+                            className="EmptyTable__StyledEmptyTableRow-sc-2gw9t-0 jSTkIE"
                           >
                             <td
                               colSpan={3}
@@ -6084,7 +6087,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
-                              role="img"
                               style={
                                 Object {
                                   "willChange": "transform",
@@ -6121,11 +6123,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               type="button"
                             >
                               <svg
-                                aria-label="Clear search input"
+                                aria-hidden={true}
                                 focusable="false"
                                 height={16}
                                 preserveAspectRatio="xMidYMid meet"
-                                role="img"
                                 style={
                                   Object {
                                     "willChange": "transform",
@@ -6210,11 +6211,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           <tr>
                             <th
                               aria-sort="none"
-                              className="TableHead__StyledCustomTableHeader-sc-1fviaow-2 cnPAGg"
+                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 cnPAGg"
                               scope="col"
                             >
                               <button
-                                className="TableHead__StyledCustomTableHeader-sc-1fviaow-2 cnPAGg bx--table-sort"
+                                align="start"
+                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 cnPAGg bx--table-sort"
                                 data-column="timestamp"
                                 id="column-timestamp"
                                 onClick={[Function]}
@@ -6273,11 +6275,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </th>
                             <th
                               aria-sort="none"
-                              className="TableHead__StyledCustomTableHeader-sc-1fviaow-2 cnPAGg"
+                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 cnPAGg"
                               scope="col"
                             >
                               <button
-                                className="TableHead__StyledCustomTableHeader-sc-1fviaow-2 cnPAGg bx--table-sort"
+                                align="start"
+                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 cnPAGg bx--table-sort"
                                 data-column="Campus_EGL"
                                 id="column-Campus_EGL"
                                 onClick={[Function]}
@@ -6336,11 +6339,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </th>
                             <th
                               aria-sort="none"
-                              className="TableHead__StyledCustomTableHeader-sc-1fviaow-2 cnPAGg"
+                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 cnPAGg"
                               scope="col"
                             >
                               <button
-                                className="TableHead__StyledCustomTableHeader-sc-1fviaow-2 cnPAGg bx--table-sort"
+                                align="start"
+                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 cnPAGg bx--table-sort"
                                 data-column="peopleCount_EnterpriseBuilding_mean"
                                 id="column-peopleCount_EnterpriseBuilding_mean"
                                 onClick={[Function]}
@@ -6399,11 +6403,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </th>
                             <th
                               aria-sort="none"
-                              className="TableHead__StyledCustomTableHeader-sc-1fviaow-2 cnPAGg"
+                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 cnPAGg"
                               scope="col"
                             >
                               <button
-                                className="TableHead__StyledCustomTableHeader-sc-1fviaow-2 cnPAGg bx--table-sort"
+                                align="start"
+                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 cnPAGg bx--table-sort"
                                 data-column="headCount_EnterpriseBuilding_mean"
                                 id="column-headCount_EnterpriseBuilding_mean"
                                 onClick={[Function]}
@@ -6462,11 +6467,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </th>
                             <th
                               aria-sort="none"
-                              className="TableHead__StyledCustomTableHeader-sc-1fviaow-2 cnPAGg"
+                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 cnPAGg"
                               scope="col"
                             >
                               <button
-                                className="TableHead__StyledCustomTableHeader-sc-1fviaow-2 cnPAGg bx--table-sort"
+                                align="start"
+                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 cnPAGg bx--table-sort"
                                 data-column="capacity_EnterpriseBuilding_mean"
                                 id="column-capacity_EnterpriseBuilding_mean"
                                 onClick={[Function]}
@@ -6533,7 +6539,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             onClick={[Function]}
                           >
                             <td
-                              className="TableBodyRow__StyledTableCellRow-sc-103itxu-6 hSVhya"
+                              align="start"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
                               data-column="timestamp"
                               data-offset={0}
                               id="cell-Table-row-0-timestamp"
@@ -6551,7 +6558,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               </span>
                             </td>
                             <td
-                              className="TableBodyRow__StyledTableCellRow-sc-103itxu-6 hSVhya"
+                              align="start"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
                               data-column="Campus_EGL"
                               data-offset={0}
                               id="cell-Table-row-0-Campus_EGL"
@@ -6563,7 +6571,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               />
                             </td>
                             <td
-                              className="TableBodyRow__StyledTableCellRow-sc-103itxu-6 hSVhya"
+                              align="start"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
                               data-column="peopleCount_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-Table-row-0-peopleCount_EnterpriseBuilding_mean"
@@ -6581,7 +6590,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               </span>
                             </td>
                             <td
-                              className="TableBodyRow__StyledTableCellRow-sc-103itxu-6 hSVhya"
+                              align="start"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
                               data-column="headCount_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-Table-row-0-headCount_EnterpriseBuilding_mean"
@@ -6599,7 +6609,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               </span>
                             </td>
                             <td
-                              className="TableBodyRow__StyledTableCellRow-sc-103itxu-6 hSVhya"
+                              align="start"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
                               data-column="capacity_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-Table-row-0-capacity_EnterpriseBuilding_mean"
@@ -6622,7 +6633,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             onClick={[Function]}
                           >
                             <td
-                              className="TableBodyRow__StyledTableCellRow-sc-103itxu-6 hSVhya"
+                              align="start"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
                               data-column="timestamp"
                               data-offset={0}
                               id="cell-Table-row-1-timestamp"
@@ -6640,7 +6652,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               </span>
                             </td>
                             <td
-                              className="TableBodyRow__StyledTableCellRow-sc-103itxu-6 hSVhya"
+                              align="start"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
                               data-column="Campus_EGL"
                               data-offset={0}
                               id="cell-Table-row-1-Campus_EGL"
@@ -6652,7 +6665,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               />
                             </td>
                             <td
-                              className="TableBodyRow__StyledTableCellRow-sc-103itxu-6 hSVhya"
+                              align="start"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
                               data-column="peopleCount_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-Table-row-1-peopleCount_EnterpriseBuilding_mean"
@@ -6670,7 +6684,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               </span>
                             </td>
                             <td
-                              className="TableBodyRow__StyledTableCellRow-sc-103itxu-6 hSVhya"
+                              align="start"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
                               data-column="headCount_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-Table-row-1-headCount_EnterpriseBuilding_mean"
@@ -6688,7 +6703,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               </span>
                             </td>
                             <td
-                              className="TableBodyRow__StyledTableCellRow-sc-103itxu-6 hSVhya"
+                              align="start"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
                               data-column="capacity_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-Table-row-1-capacity_EnterpriseBuilding_mean"
@@ -6711,7 +6727,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             onClick={[Function]}
                           >
                             <td
-                              className="TableBodyRow__StyledTableCellRow-sc-103itxu-6 hSVhya"
+                              align="start"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
                               data-column="timestamp"
                               data-offset={0}
                               id="cell-Table-row-2-timestamp"
@@ -6729,7 +6746,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               </span>
                             </td>
                             <td
-                              className="TableBodyRow__StyledTableCellRow-sc-103itxu-6 hSVhya"
+                              align="start"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
                               data-column="Campus_EGL"
                               data-offset={0}
                               id="cell-Table-row-2-Campus_EGL"
@@ -6741,7 +6759,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               />
                             </td>
                             <td
-                              className="TableBodyRow__StyledTableCellRow-sc-103itxu-6 hSVhya"
+                              align="start"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
                               data-column="peopleCount_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-Table-row-2-peopleCount_EnterpriseBuilding_mean"
@@ -6759,7 +6778,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               </span>
                             </td>
                             <td
-                              className="TableBodyRow__StyledTableCellRow-sc-103itxu-6 hSVhya"
+                              align="start"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
                               data-column="headCount_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-Table-row-2-headCount_EnterpriseBuilding_mean"
@@ -6777,7 +6797,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               </span>
                             </td>
                             <td
-                              className="TableBodyRow__StyledTableCellRow-sc-103itxu-6 hSVhya"
+                              align="start"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
                               data-column="capacity_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-Table-row-2-capacity_EnterpriseBuilding_mean"
@@ -6800,7 +6821,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             onClick={[Function]}
                           >
                             <td
-                              className="TableBodyRow__StyledTableCellRow-sc-103itxu-6 hSVhya"
+                              align="start"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
                               data-column="timestamp"
                               data-offset={0}
                               id="cell-Table-row-3-timestamp"
@@ -6818,7 +6840,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               </span>
                             </td>
                             <td
-                              className="TableBodyRow__StyledTableCellRow-sc-103itxu-6 hSVhya"
+                              align="start"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
                               data-column="Campus_EGL"
                               data-offset={0}
                               id="cell-Table-row-3-Campus_EGL"
@@ -6830,7 +6853,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               />
                             </td>
                             <td
-                              className="TableBodyRow__StyledTableCellRow-sc-103itxu-6 hSVhya"
+                              align="start"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
                               data-column="peopleCount_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-Table-row-3-peopleCount_EnterpriseBuilding_mean"
@@ -6848,7 +6872,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               </span>
                             </td>
                             <td
-                              className="TableBodyRow__StyledTableCellRow-sc-103itxu-6 hSVhya"
+                              align="start"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
                               data-column="headCount_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-Table-row-3-headCount_EnterpriseBuilding_mean"
@@ -6866,7 +6891,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               </span>
                             </td>
                             <td
-                              className="TableBodyRow__StyledTableCellRow-sc-103itxu-6 hSVhya"
+                              align="start"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
                               data-column="capacity_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-Table-row-3-capacity_EnterpriseBuilding_mean"
@@ -6889,7 +6915,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             onClick={[Function]}
                           >
                             <td
-                              className="TableBodyRow__StyledTableCellRow-sc-103itxu-6 hSVhya"
+                              align="start"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
                               data-column="timestamp"
                               data-offset={0}
                               id="cell-Table-row-4-timestamp"
@@ -6907,7 +6934,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               </span>
                             </td>
                             <td
-                              className="TableBodyRow__StyledTableCellRow-sc-103itxu-6 hSVhya"
+                              align="start"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
                               data-column="Campus_EGL"
                               data-offset={0}
                               id="cell-Table-row-4-Campus_EGL"
@@ -6919,7 +6947,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               />
                             </td>
                             <td
-                              className="TableBodyRow__StyledTableCellRow-sc-103itxu-6 hSVhya"
+                              align="start"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
                               data-column="peopleCount_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-Table-row-4-peopleCount_EnterpriseBuilding_mean"
@@ -6937,7 +6966,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               </span>
                             </td>
                             <td
-                              className="TableBodyRow__StyledTableCellRow-sc-103itxu-6 hSVhya"
+                              align="start"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
                               data-column="headCount_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-Table-row-4-headCount_EnterpriseBuilding_mean"
@@ -6955,7 +6985,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               </span>
                             </td>
                             <td
-                              className="TableBodyRow__StyledTableCellRow-sc-103itxu-6 hSVhya"
+                              align="start"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
                               data-column="capacity_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-Table-row-4-capacity_EnterpriseBuilding_mean"
@@ -6978,7 +7009,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             onClick={[Function]}
                           >
                             <td
-                              className="TableBodyRow__StyledTableCellRow-sc-103itxu-6 hSVhya"
+                              align="start"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
                               data-column="timestamp"
                               data-offset={0}
                               id="cell-Table-row-5-timestamp"
@@ -6996,7 +7028,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               </span>
                             </td>
                             <td
-                              className="TableBodyRow__StyledTableCellRow-sc-103itxu-6 hSVhya"
+                              align="start"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
                               data-column="Campus_EGL"
                               data-offset={0}
                               id="cell-Table-row-5-Campus_EGL"
@@ -7008,7 +7041,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               />
                             </td>
                             <td
-                              className="TableBodyRow__StyledTableCellRow-sc-103itxu-6 hSVhya"
+                              align="start"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
                               data-column="peopleCount_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-Table-row-5-peopleCount_EnterpriseBuilding_mean"
@@ -7026,7 +7060,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               </span>
                             </td>
                             <td
-                              className="TableBodyRow__StyledTableCellRow-sc-103itxu-6 hSVhya"
+                              align="start"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
                               data-column="headCount_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-Table-row-5-headCount_EnterpriseBuilding_mean"
@@ -7044,7 +7079,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               </span>
                             </td>
                             <td
-                              className="TableBodyRow__StyledTableCellRow-sc-103itxu-6 hSVhya"
+                              align="start"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
                               data-column="capacity_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-Table-row-5-capacity_EnterpriseBuilding_mean"
@@ -7067,7 +7103,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             onClick={[Function]}
                           >
                             <td
-                              className="TableBodyRow__StyledTableCellRow-sc-103itxu-6 hSVhya"
+                              align="start"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
                               data-column="timestamp"
                               data-offset={0}
                               id="cell-Table-row-6-timestamp"
@@ -7085,7 +7122,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               </span>
                             </td>
                             <td
-                              className="TableBodyRow__StyledTableCellRow-sc-103itxu-6 hSVhya"
+                              align="start"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
                               data-column="Campus_EGL"
                               data-offset={0}
                               id="cell-Table-row-6-Campus_EGL"
@@ -7097,7 +7135,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               />
                             </td>
                             <td
-                              className="TableBodyRow__StyledTableCellRow-sc-103itxu-6 hSVhya"
+                              align="start"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
                               data-column="peopleCount_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-Table-row-6-peopleCount_EnterpriseBuilding_mean"
@@ -7115,7 +7154,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               </span>
                             </td>
                             <td
-                              className="TableBodyRow__StyledTableCellRow-sc-103itxu-6 hSVhya"
+                              align="start"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
                               data-column="headCount_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-Table-row-6-headCount_EnterpriseBuilding_mean"
@@ -7133,7 +7173,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               </span>
                             </td>
                             <td
-                              className="TableBodyRow__StyledTableCellRow-sc-103itxu-6 hSVhya"
+                              align="start"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
                               data-column="capacity_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-Table-row-6-capacity_EnterpriseBuilding_mean"
@@ -7156,7 +7197,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             onClick={[Function]}
                           >
                             <td
-                              className="TableBodyRow__StyledTableCellRow-sc-103itxu-6 hSVhya"
+                              align="start"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
                               data-column="timestamp"
                               data-offset={0}
                               id="cell-Table-row-7-timestamp"
@@ -7174,7 +7216,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               </span>
                             </td>
                             <td
-                              className="TableBodyRow__StyledTableCellRow-sc-103itxu-6 hSVhya"
+                              align="start"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
                               data-column="Campus_EGL"
                               data-offset={0}
                               id="cell-Table-row-7-Campus_EGL"
@@ -7186,7 +7229,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               />
                             </td>
                             <td
-                              className="TableBodyRow__StyledTableCellRow-sc-103itxu-6 hSVhya"
+                              align="start"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
                               data-column="peopleCount_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-Table-row-7-peopleCount_EnterpriseBuilding_mean"
@@ -7204,7 +7248,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               </span>
                             </td>
                             <td
-                              className="TableBodyRow__StyledTableCellRow-sc-103itxu-6 hSVhya"
+                              align="start"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
                               data-column="headCount_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-Table-row-7-headCount_EnterpriseBuilding_mean"
@@ -7222,7 +7267,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               </span>
                             </td>
                             <td
-                              className="TableBodyRow__StyledTableCellRow-sc-103itxu-6 hSVhya"
+                              align="start"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
                               data-column="capacity_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-Table-row-7-capacity_EnterpriseBuilding_mean"
@@ -7245,7 +7291,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             onClick={[Function]}
                           >
                             <td
-                              className="TableBodyRow__StyledTableCellRow-sc-103itxu-6 hSVhya"
+                              align="start"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
                               data-column="timestamp"
                               data-offset={0}
                               id="cell-Table-row-8-timestamp"
@@ -7263,7 +7310,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               </span>
                             </td>
                             <td
-                              className="TableBodyRow__StyledTableCellRow-sc-103itxu-6 hSVhya"
+                              align="start"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
                               data-column="Campus_EGL"
                               data-offset={0}
                               id="cell-Table-row-8-Campus_EGL"
@@ -7275,7 +7323,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               />
                             </td>
                             <td
-                              className="TableBodyRow__StyledTableCellRow-sc-103itxu-6 hSVhya"
+                              align="start"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
                               data-column="peopleCount_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-Table-row-8-peopleCount_EnterpriseBuilding_mean"
@@ -7293,7 +7342,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               </span>
                             </td>
                             <td
-                              className="TableBodyRow__StyledTableCellRow-sc-103itxu-6 hSVhya"
+                              align="start"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
                               data-column="headCount_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-Table-row-8-headCount_EnterpriseBuilding_mean"
@@ -7311,7 +7361,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               </span>
                             </td>
                             <td
-                              className="TableBodyRow__StyledTableCellRow-sc-103itxu-6 hSVhya"
+                              align="start"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
                               data-column="capacity_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-Table-row-8-capacity_EnterpriseBuilding_mean"
@@ -7334,7 +7385,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             onClick={[Function]}
                           >
                             <td
-                              className="TableBodyRow__StyledTableCellRow-sc-103itxu-6 hSVhya"
+                              align="start"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
                               data-column="timestamp"
                               data-offset={0}
                               id="cell-Table-row-9-timestamp"
@@ -7352,7 +7404,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               </span>
                             </td>
                             <td
-                              className="TableBodyRow__StyledTableCellRow-sc-103itxu-6 hSVhya"
+                              align="start"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
                               data-column="Campus_EGL"
                               data-offset={0}
                               id="cell-Table-row-9-Campus_EGL"
@@ -7364,7 +7417,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               />
                             </td>
                             <td
-                              className="TableBodyRow__StyledTableCellRow-sc-103itxu-6 hSVhya"
+                              align="start"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
                               data-column="peopleCount_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-Table-row-9-peopleCount_EnterpriseBuilding_mean"
@@ -7382,7 +7436,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               </span>
                             </td>
                             <td
-                              className="TableBodyRow__StyledTableCellRow-sc-103itxu-6 hSVhya"
+                              align="start"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
                               data-column="headCount_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-Table-row-9-headCount_EnterpriseBuilding_mean"
@@ -7400,7 +7455,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               </span>
                             </td>
                             <td
-                              className="TableBodyRow__StyledTableCellRow-sc-103itxu-6 hSVhya"
+                              align="start"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
                               data-column="capacity_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-Table-row-9-capacity_EnterpriseBuilding_mean"
@@ -7616,6 +7672,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             className="bx--pagination__button bx--pagination__button--backward bx--pagination__button--no-index"
                             disabled={true}
                             onClick={[Function]}
+                            type="button"
                           >
                             <svg
                               aria-hidden={true}
@@ -7641,6 +7698,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             className="bx--pagination__button bx--pagination__button--forward"
                             disabled={false}
                             onClick={[Function]}
+                            type="button"
                           >
                             <svg
                               aria-hidden={true}
@@ -7741,7 +7799,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
             >
               Last updated: 
                
-              Tue, 22 Oct 2019 05:00:00 GMT
+              Mon, 21 Oct 2019 18:30:00 GMT
             </div>
           </div>
           <div
@@ -8670,7 +8728,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
-                              role="img"
                               style={
                                 Object {
                                   "willChange": "transform",
@@ -8707,11 +8764,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               type="button"
                             >
                               <svg
-                                aria-label="Clear search input"
+                                aria-hidden={true}
                                 focusable="false"
                                 height={16}
                                 preserveAspectRatio="xMidYMid meet"
-                                role="img"
                                 style={
                                   Object {
                                     "willChange": "transform",
@@ -8795,11 +8851,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         >
                           <tr>
                             <th
-                              className="TableHead__StyledCustomTableHeader-sc-1fviaow-2 cnPAGg"
+                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 cnPAGg"
                               scope="col"
                             >
                               <button
-                                className="TableHead__StyledCustomTableHeader-sc-1fviaow-2 cnPAGg bx--table-sort bx--table-sort--active"
+                                align="start"
+                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 cnPAGg bx--table-sort bx--table-sort--active"
                                 data-column="alert"
                                 id="column-alert"
                                 onClick={[Function]}
@@ -8858,11 +8915,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </th>
                             <th
                               aria-sort="none"
-                              className="TableHead__StyledCustomTableHeader-sc-1fviaow-2 cnPAGg"
+                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 cnPAGg"
                               scope="col"
                             >
                               <button
-                                className="TableHead__StyledCustomTableHeader-sc-1fviaow-2 cnPAGg bx--table-sort"
+                                align="start"
+                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 cnPAGg bx--table-sort"
                                 data-column="hour"
                                 id="column-hour"
                                 onClick={[Function]}
@@ -8921,11 +8979,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </th>
                             <th
                               aria-sort="none"
-                              className="TableHead__StyledCustomTableHeader-sc-1fviaow-2 cnPAGg"
+                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 cnPAGg"
                               scope="col"
                             >
                               <button
-                                className="TableHead__StyledCustomTableHeader-sc-1fviaow-2 cnPAGg bx--table-sort"
+                                align="start"
+                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 cnPAGg bx--table-sort"
                                 data-column="pressure"
                                 id="column-pressure"
                                 onClick={[Function]}
@@ -8989,7 +9048,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           id="Table"
                         >
                           <tr
-                            className="EmptyTable__StyledEmptyTableRow-sc-2gw9t-0 kfMIPX"
+                            className="EmptyTable__StyledEmptyTableRow-sc-2gw9t-0 jSTkIE"
                           >
                             <td
                               colSpan={3}
@@ -19990,7 +20049,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
             >
               Last updated: 
                
-              Tue, 22 Oct 2019 05:00:00 GMT
+              Mon, 21 Oct 2019 18:30:00 GMT
             </div>
           </div>
           <div
@@ -20944,7 +21003,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
-                              role="img"
                               style={
                                 Object {
                                   "willChange": "transform",
@@ -20981,11 +21039,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               type="button"
                             >
                               <svg
-                                aria-label="Clear search input"
+                                aria-hidden={true}
                                 focusable="false"
                                 height={16}
                                 preserveAspectRatio="xMidYMid meet"
-                                role="img"
                                 style={
                                   Object {
                                     "willChange": "transform",
@@ -21069,11 +21126,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         >
                           <tr>
                             <th
-                              className="TableHead__StyledCustomTableHeader-sc-1fviaow-2 cnPAGg"
+                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 cnPAGg"
                               scope="col"
                             >
                               <button
-                                className="TableHead__StyledCustomTableHeader-sc-1fviaow-2 cnPAGg bx--table-sort bx--table-sort--active"
+                                align="start"
+                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 cnPAGg bx--table-sort bx--table-sort--active"
                                 data-column="alert"
                                 id="column-alert"
                                 onClick={[Function]}
@@ -21132,11 +21190,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </th>
                             <th
                               aria-sort="none"
-                              className="TableHead__StyledCustomTableHeader-sc-1fviaow-2 cnPAGg"
+                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 cnPAGg"
                               scope="col"
                             >
                               <button
-                                className="TableHead__StyledCustomTableHeader-sc-1fviaow-2 cnPAGg bx--table-sort"
+                                align="start"
+                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 cnPAGg bx--table-sort"
                                 data-column="hour"
                                 id="column-hour"
                                 onClick={[Function]}
@@ -21195,11 +21254,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </th>
                             <th
                               aria-sort="none"
-                              className="TableHead__StyledCustomTableHeader-sc-1fviaow-2 cnPAGg"
+                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 cnPAGg"
                               scope="col"
                             >
                               <button
-                                className="TableHead__StyledCustomTableHeader-sc-1fviaow-2 cnPAGg bx--table-sort"
+                                align="start"
+                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 cnPAGg bx--table-sort"
                                 data-column="pressure"
                                 id="column-pressure"
                                 onClick={[Function]}
@@ -21263,7 +21323,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           id="Table"
                         >
                           <tr
-                            className="EmptyTable__StyledEmptyTableRow-sc-2gw9t-0 kfMIPX"
+                            className="EmptyTable__StyledEmptyTableRow-sc-2gw9t-0 jSTkIE"
                           >
                             <td
                               colSpan={3}
