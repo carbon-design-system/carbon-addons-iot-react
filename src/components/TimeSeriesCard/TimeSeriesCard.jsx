@@ -18,7 +18,6 @@ import { generateSampleValues, isValuesEmpty } from './timeSeriesUtils';
 
 /** Extends default tooltip with the additional date information */
 export const handleTooltip = (data, defaultTooltip) => {
-  console.log(`defaultTooltip: ${defaultTooltip}`);
   const dateLabel = `<li class='datapoint-tooltip'><p class='label'>${moment(
     Array.isArray(data) && data[0] ? data[0].date : data.date
   ).format('L HH:mm:ss')}</p></li>`;
@@ -270,11 +269,11 @@ const TimeSeriesCard = ({
   useDeepCompareEffect(
     () => {
       if (chartRef && chartRef.chart) {
-        const chartData = formatChartData(lines, values);
+        const chartData = formatChartData(timeDataSourceId, lines, values);
         chartRef.chart.model.setData(chartData);
       }
     },
-    [values, lines]
+    [values, lines, timeDataSourceId]
   );
 
   /** This caches the chart value */
