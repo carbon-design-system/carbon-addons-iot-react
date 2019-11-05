@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { DataTable, Checkbox } from 'carbon-components-react';
+import { sortStates } from 'carbon-components-react/lib/components/DataTable/state/sorting';
 import isNil from 'lodash/isNil';
 import styled from 'styled-components';
 
@@ -29,6 +30,9 @@ const propTypes = {
   clearSelectionText: PropTypes.string,
   openMenuText: PropTypes.string,
   closeMenuText: PropTypes.string,
+  filterAscending: PropTypes.string,
+  filterDescending: PropTypes.string,
+  filterNone: PropTypes.string,
 
   /** Current state of the table */
   tableState: PropTypes.shape({
@@ -76,6 +80,9 @@ const defaultProps = {
   clearSelectionText: 'Clear selection',
   openMenuText: 'Open menu',
   closeMenuText: 'Close menu',
+  filterAscending: 'Unsort rows by this headers',
+  filterDescending: 'Sort rows by this header in descending order',
+  filterNone: 'Unsort rows by this header',
 };
 
 const StyledCheckboxTableHeader = styled(TableHeader)`
@@ -133,16 +140,40 @@ const TableHead = ({
   clearSelectionText,
   openMenuText,
   closeMenuText,
+  filterAscending,
+  filterDescending,
+  filterNone,
   lightweight,
 }) => {
   const filterBarActive = activeBar === 'filter';
+
+  const translateWithId = (id, state) => {
+    switch (id) {
+      case 'carbon.table.header.icon.description':
+        if (state.isSortHeader) {
+          // When transitioning, we know that the sequence of states is as follows:
+          // NONE -> ASC -> DESC -> NONE
+          if (state.sortDirection === sortStates.NONE) {
+            return filterAscending;
+          }
+          if (state.sortDirection === sortStates.ASC) {
+            return filterDescending;
+          }
+
+          return filterNone;
+        }
+        return filterAscending;
+      default:
+        return '';
+    }
+  };
 
   return (
     <StyledCarbonTableHead lightweight={`${lightweight}`}>
       <TableRow>
         {hasRowExpansion ? <TableExpandHeader /> : null}
         {hasRowSelection === 'multi' ? (
-          <StyledCheckboxTableHeader>
+          <StyledCheckboxTableHeader translateWithId={(...args) => translateWithId(...args)}>
             {/* TODO: Replace checkbox with TableSelectAll component when onChange bug is fixed
                     https://github.com/IBM/carbon-components-react/issues/1088 */}
             <Checkbox
@@ -174,6 +205,7 @@ const TableHead = ({
                 }
               }}
               sortDirection={hasSort ? sort.direction : 'NONE'}
+              translateWithId={(...args) => translateWithId(...args)}
             >
               <TableCellRenderer>{matchingColumnMeta.name}</TableCellRenderer>
             </StyledCustomTableHeader>

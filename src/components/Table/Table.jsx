@@ -390,6 +390,9 @@ const Table = props => {
             clearSelectionText={i18n.clearSelectionAria}
             openMenuText={i18n.openMenuAria}
             closeMenuText={i18n.closeMenuAria}
+            filterAscending={i18n.filterAscending}
+            filterDescending={i18n.filterDescending}
+            filterNone={i18n.filterNone}
             tableState={{
               activeBar: view.toolbar.activeBar,
               filters: view.filters,
