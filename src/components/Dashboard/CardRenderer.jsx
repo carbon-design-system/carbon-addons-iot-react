@@ -11,6 +11,10 @@ import TimeSeriesCard from '../TimeSeriesCard/TimeSeriesCard';
 import { CARD_TYPES } from '../../constants/LayoutConstants';
 import { determineCardRange, compareGrains } from '../../utils/cardUtilityFunctions';
 
+/**
+ *
+ * This component is needed to cache the style object for performance reasons because unfortunately, the style object changes with every render from React Grid Layout
+ */
 const CachedCardRenderer = ({
   style, //eslint-disable-line
   ...others
@@ -27,7 +31,7 @@ const CachedCardRenderer = ({
 };
 
 /** Asynchronous reusable function to load Card Data */
-const loadCardData = async (card, setCard, onFetchData, timeGrain) => {
+export const loadCardData = async (card, setCard, onFetchData, timeGrain) => {
   // Set state to loading
   setCard({ ...card, isLoading: true });
   const cardWithData = await onFetchData(
@@ -45,6 +49,10 @@ const loadCardData = async (card, setCard, onFetchData, timeGrain) => {
  * This component decides which card component to render when passed a certain card type.
  * It keeps the local state of the card (which determines which range selection is being shown, etc)
  * It also caches some properties between renders to speed performance
+ *
+ * It watches the isLoading bit to see if the card needs to trigger a data reload.  If the isLoading bit changes to true
+ * it will trigger the dashboard's onSetupCard function and then it's onFetchData function to retrieve the updated card properties
+ * for each card.
  */
 const CardRenderer = React.memo(
   ({

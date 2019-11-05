@@ -1,0 +1,25 @@
+.storybook-welcome {
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+.storybook-welcome img {
+  width: 50%;
+  margin: 0 25% 2rem;
+}
+
+.storybook-welcome p {
+  font-size: 1rem;
+  line-height: 1.375rem;
+  font-weight: 400;
+  letter-spacing: 0px;
+  margin-bottom: 1rem;
+}
+
+.bx--accordion {
+  padding-top: 2rem;
+}
+
+.bx--accordion__content {
+  padding: 1rem;
+}

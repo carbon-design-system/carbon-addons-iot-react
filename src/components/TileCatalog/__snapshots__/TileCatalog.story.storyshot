@@ -1912,7 +1912,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
               focusable="false"
               height={16}
               preserveAspectRatio="xMidYMid meet"
-              role="img"
               style={
                 Object {
                   "willChange": "transform",
@@ -1948,11 +1947,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
               type="button"
             >
               <svg
-                aria-label="Clear search input"
+                aria-hidden={true}
                 focusable="false"
                 height={16}
                 preserveAspectRatio="xMidYMid meet"
-                role="img"
                 style={
                   Object {
                     "willChange": "transform",

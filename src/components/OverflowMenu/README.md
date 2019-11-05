@@ -1,3 +1,5 @@
+> Copied from https://github.com/carbon-design-system/carbon/blob/v10.7.3/packages/react/src/components/OverflowMenu/README.md
+
 # `OverflowMenu` component
 
 > Overflow Menu is used when additional options are available to the user and
