@@ -1,5 +1,6 @@
 import delay from 'lodash/delay';
 import moment from 'moment';
+import { sortStates } from 'carbon-components-react/lib/components/DataTable/state/sorting';
 
 import {
   GUTTER,
@@ -8,6 +9,38 @@ import {
   ROW_HEIGHT,
   DASHBOARD_COLUMNS,
 } from '../constants/LayoutConstants';
+
+export const tableTranslateWithId = (i18n, id, state) => {
+  const { batchCancel, itemsSelected, itemSelected } = i18n;
+  switch (id) {
+    case 'carbon.table.batch.cancel':
+      return batchCancel;
+    case 'carbon.table.batch.items.selected':
+      return `${state.totalSelected} ${itemsSelected}`;
+    case 'carbon.table.batch.item.selected':
+      return `${state.totalSelected} ${itemSelected}`;
+    case 'carbon.table.toolbar.search.label':
+      return i18n.searchLabel;
+    case 'carbon.table.toolbar.search.placeholder':
+      return i18n.searchPlaceholder;
+    case 'carbon.table.header.icon.description':
+      if (state.isSortHeader) {
+        // When transitioning, we know that the sequence of states is as follows:
+        // NONE -> ASC -> DESC -> NONE
+        if (state.sortDirection === sortStates.NONE) {
+          return i18n.filterAscending;
+        }
+        if (state.sortDirection === sortStates.ASC) {
+          return i18n.filterDescending;
+        }
+
+        return i18n.filterNone;
+      }
+      return i18n.filterAscending;
+    default:
+      return '';
+  }
+};
 
 /** This function assumes you're using carbon widgets */
 export function scrollErrorIntoView(focus = true) {
