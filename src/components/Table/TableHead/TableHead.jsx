@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { DataTable, Checkbox } from 'carbon-components-react';
-import { sortStates } from 'carbon-components-react/lib/components/DataTable/state/sorting';
 import isNil from 'lodash/isNil';
 import styled from 'styled-components';
 
-import { TableColumnsPropTypes } from '../TablePropTypes';
+import { TableColumnsPropTypes, I18NPropTypes, defaultI18NPropTypes } from '../TablePropTypes';
 import TableCellRenderer from '../TableCellRenderer/TableCellRenderer';
+import { tableTranslateWithId } from '../../../utils/componentUtilityFunctions';
 
 import ColumnHeaderRow from './ColumnHeaderRow/ColumnHeaderRow';
 import FilterHeaderRow from './FilterHeaderRow/FilterHeaderRow';
@@ -30,9 +30,6 @@ const propTypes = {
   clearSelectionText: PropTypes.string,
   openMenuText: PropTypes.string,
   closeMenuText: PropTypes.string,
-  filterAscending: PropTypes.string,
-  filterDescending: PropTypes.string,
-  filterNone: PropTypes.string,
 
   /** Current state of the table */
   tableState: PropTypes.shape({
@@ -69,6 +66,7 @@ const propTypes = {
   }).isRequired,
   /** lightweight  */
   lightweight: PropTypes.bool,
+  i18n: I18NPropTypes,
 };
 
 const defaultProps = {
@@ -80,9 +78,9 @@ const defaultProps = {
   clearSelectionText: 'Clear selection',
   openMenuText: 'Open menu',
   closeMenuText: 'Close menu',
-  filterAscending: 'Unsort rows by this headers',
-  filterDescending: 'Sort rows by this header in descending order',
-  filterNone: 'Unsort rows by this header',
+  i18n: {
+    ...defaultI18NPropTypes,
+  },
 };
 
 const StyledCheckboxTableHeader = styled(TableHeader)`
@@ -140,33 +138,10 @@ const TableHead = ({
   clearSelectionText,
   openMenuText,
   closeMenuText,
-  filterAscending,
-  filterDescending,
-  filterNone,
   lightweight,
+  i18n,
 }) => {
   const filterBarActive = activeBar === 'filter';
-
-  const translateWithId = (id, state) => {
-    switch (id) {
-      case 'carbon.table.header.icon.description':
-        if (state.isSortHeader) {
-          // When transitioning, we know that the sequence of states is as follows:
-          // NONE -> ASC -> DESC -> NONE
-          if (state.sortDirection === sortStates.NONE) {
-            return filterAscending;
-          }
-          if (state.sortDirection === sortStates.ASC) {
-            return filterDescending;
-          }
-
-          return filterNone;
-        }
-        return filterAscending;
-      default:
-        return '';
-    }
-  };
 
   return (
     <StyledCarbonTableHead lightweight={`${lightweight}`}>
@@ -204,8 +179,8 @@ const TableHead = ({
                   onChangeSort(matchingColumnMeta.id);
                 }
               }}
+              translateWithId={(...args) => tableTranslateWithId(i18n, ...args)}
               sortDirection={hasSort ? sort.direction : 'NONE'}
-              translateWithId={(...args) => translateWithId(...args)}
             >
               <TableCellRenderer>{matchingColumnMeta.name}</TableCellRenderer>
             </StyledCustomTableHeader>
