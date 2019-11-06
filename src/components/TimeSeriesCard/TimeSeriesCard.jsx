@@ -13,23 +13,12 @@ import { TimeSeriesCardPropTypes, CardPropTypes } from '../../constants/PropType
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 import Card from '../Card/Card';
 
-import { generateSampleValues, isValuesEmpty, formatGraphTick } from './timeSeriesUtils';
-
-/** Extends default tooltip with the additional date information */
-export const handleTooltip = (data, defaultTooltip) => {
-  const dateLabel = `<li class='datapoint-tooltip'><p class='label'>${moment(
-    Array.isArray(data) && data[0] ? data[0].date : data.date
-  ).format('L HH:mm:ss')}</p></li>`;
-  let updatedTooltip = defaultTooltip;
-  if (Array.isArray(data)) {
-    // prepend the date inside the existing multi tooltip
-    updatedTooltip = defaultTooltip.replace('<li', `${dateLabel}<li`);
-  } else {
-    // wrap to make single a multi-tooltip
-    updatedTooltip = `<ul class='multi-tooltip'>${dateLabel}<li>${defaultTooltip}</li></ul>`;
-  }
-  return updatedTooltip;
-};
+import {
+  generateSampleValues,
+  isValuesEmpty,
+  formatGraphTick,
+  findMatchingAlertRange,
+} from './timeSeriesUtils';
 
 const LineChartWrapper = styled.div`
   padding-left: 16px;
@@ -121,16 +110,6 @@ const formatChartData = (timeDataSourceId, series, values) => {
   };
 };
 
-/*
-const handleStrokeColor = (datasetLabel, label, value, originalStrokeColor) =>
-  value > 90 ? '#FF0000' : originalStrokeColor;
-
-const handleFillColor = (datasetLabel, label, value, originalFillColor) =>
-  value > 90 ? '#FF0000' : originalFillColor;
-
-const handleIsFilled = (datasetLabel, label, value, isFilled) => (value > 90 ? true : isFilled);
-*/
-
 const valueFormatter = (value, size, unit) => {
   const precision = determinePrecision(size, value, Math.abs(value) > 1 ? 1 : 3);
   let renderValue = value;
@@ -155,12 +134,13 @@ const memoizedGenerateSampleValues = memoize(generateSampleValues);
 
 const TimeSeriesCard = ({
   title,
-  content: { series, timeDataSourceId = 'timestamp', xLabel, yLabel, unit },
+  content: { series, timeDataSourceId = 'timestamp', alertRanges, xLabel, yLabel, unit },
   size,
   interval,
   isEditable,
   values: valuesProp,
   locale,
+  i18n: { alertDetected },
   ...others
 }) => {
   let chartRef = useRef();
@@ -221,6 +201,54 @@ const TimeSeriesCard = ({
     () => series.map(line => ({ ...line, color: !isEditable ? line.color : 'gray' })),
     [isEditable, series]
   );
+
+  /** Extends default tooltip with the additional date information */
+  const handleTooltip = (data, defaultTooltip) => {
+    const dateLabel = `<li class='datapoint-tooltip'><p class='label'>${moment(
+      Array.isArray(data) && data[0] ? data[0].date : data.date
+    ).format('L HH:mm:ss')}</p></li>`;
+    const matchingAlertRange = findMatchingAlertRange(alertRanges, data);
+    const matchingAlertLabel = matchingAlertRange
+      ? `<li class='datapoint-tooltip'><p class='label'>${alertDetected} ${
+          matchingAlertRange.details
+        }</p></li>`
+      : '';
+    let updatedTooltip = defaultTooltip;
+    if (Array.isArray(data)) {
+      // prepend the date inside the existing multi tooltip
+      updatedTooltip = defaultTooltip
+        .replace('<li', `${dateLabel}<li`)
+        .replace('</ul', `${matchingAlertLabel}</ul`);
+    } else {
+      // wrap to make single a multi-tooltip
+      updatedTooltip = `<ul class='multi-tooltip'>${dateLabel}<li>${defaultTooltip}</li>${matchingAlertLabel}</ul>`;
+    }
+    return updatedTooltip;
+  };
+
+  const handleStrokeColor = (datasetLabel, label, value, data, originalStrokeColor) => {
+    if (!isNil(value)) {
+      const matchingAlertRange = findMatchingAlertRange(alertRanges, data);
+      return matchingAlertRange ? matchingAlertRange.color : originalStrokeColor;
+    }
+    return originalStrokeColor;
+  };
+
+  const handleFillColor = (datasetLabel, label, value, data, originalFillColor) => {
+    if (!isNil(value)) {
+      const matchingAlertRange = findMatchingAlertRange(alertRanges, data);
+      return matchingAlertRange ? matchingAlertRange.color : originalFillColor;
+    }
+    return originalFillColor;
+  };
+
+  const handleIsFilled = (datasetLabel, label, value, data, isFilled) => {
+    if (!isNil(value)) {
+      const matchingAlertRange = findMatchingAlertRange(alertRanges, data);
+      return matchingAlertRange ? true : isFilled;
+    }
+    return isFilled;
+  };
 
   /** This is needed to update the chart when the lines and values change */
   useDeepCompareEffect(
@@ -293,9 +321,9 @@ const TimeSeriesCard = ({
                         enabled: false,
                       },
                     },
-                    // getStrokeColor: handleStrokeColor,
-                    // getFillColor: handleFillColor,
-                    // getIsFilled: handleIsFilled,
+                    getStrokeColor: handleStrokeColor,
+                    getFillColor: handleFillColor,
+                    getIsFilled: handleIsFilled,
                   }}
                   width="100%"
                   height="100%"
@@ -314,6 +342,9 @@ TimeSeriesCard.propTypes = { ...CardPropTypes, ...TimeSeriesCardPropTypes };
 TimeSeriesCard.defaultProps = {
   size: CARD_SIZES.MEDIUM,
   values: [],
+  i18n: {
+    alertDetected: 'Alert detected:',
+  },
 };
 
 export default TimeSeriesCard;
