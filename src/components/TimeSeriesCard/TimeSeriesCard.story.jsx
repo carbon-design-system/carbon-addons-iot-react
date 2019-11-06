@@ -75,6 +75,50 @@ storiesOf('TimeSeriesCard (Experimental)', module)
       </div>
     );
   })
+  .add('medium / single line - alert ranges', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
+    // console.log(getIntervalChartData('day', 30, { min: 10, max: 100 }, 100));
+    return (
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+        <TimeSeriesCard
+          title={text('title', 'Temperature')}
+          id="facility-temperature"
+          isLoading={boolean('isLoading', false)}
+          content={object('content', {
+            series: [
+              {
+                label: 'Temperature',
+                dataSourceId: 'temperature',
+                // color: text('color', COLORS.PURPLE),
+              },
+            ],
+            xLabel: text('xLabel', 'Time'),
+            yLabel: text('yLabel', 'Temperature (˚F)'),
+            timeDataSourceId: 'timestamp',
+            alertRanges: [
+              {
+                startTimestamp: 1572313622000,
+                endTimestamp: 1572486422000,
+                color: '#FF0000',
+                details: 'Alert name',
+              },
+              {
+                startTimestamp: 1572804320000,
+                endTimestamp: 1572824320000,
+                color: '#FFFF00',
+                details: 'Less severe',
+              },
+            ],
+          })}
+          values={getIntervalChartData('day', 10, { min: 10, max: 100 }, 100)}
+          interval="hour"
+          breakpoint="lg"
+          size={size}
+          onCardAction={action('onCardAction')}
+        />
+      </div>
+    );
+  })
   .add('medium / single line - interval day', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
     return (

@@ -22,12 +22,14 @@ const validateImageCardJSON = ajv.compile(imageCardContentSchema);
 
 /** Is a dataSource missing from the attributes and the groupBy section of the card */
 export const findMissingDataSource = (attributes, dataSource, groupBy) => {
-  const dataSourceIds = dataSource.map(data => data.id);
-  return attributes.find(
-    attribute =>
-      !dataSourceIds.includes(attribute.dataSourceId) &&
-      (!groupBy || (groupBy && !groupBy.includes(attribute.dataSourceId)))
-  );
+  const dataSourceIds = Array.isArray(dataSource) && dataSource.map(data => data.id);
+  return Array.isArray(dataSourceIds)
+    ? attributes.find(
+        attribute =>
+          !dataSourceIds.includes(attribute.dataSourceId) &&
+          (!groupBy || (groupBy && !groupBy.includes(attribute.dataSourceId)))
+      )
+    : undefined;
 };
 
 export const checkForUniqueness = (array, attribute) =>
@@ -43,19 +45,21 @@ export const validateAggregators = (dataSource, dataAttributes) => {
     .map(dataAttribute => dataAttribute.name);
 
   // Check that only non numeric aggregators are used
-  dataSource.forEach(data => {
-    if (
-      nonNumericAttributes.includes(data.attribute) &&
-      data.aggregator &&
-      !['first', 'last', 'count'].includes(data.aggregator)
-    ) {
-      cardErrors.push({
-        message: `Datasource attribute ${
-          data.attribute
-        } is non-numeric but you attempted to apply a numeric aggregator: ${data.aggregator}.`,
-      });
-    }
-  });
+  if (Array.isArray(dataSource)) {
+    dataSource.forEach(data => {
+      if (
+        nonNumericAttributes.includes(data.attribute) &&
+        data.aggregator &&
+        !['first', 'last', 'count'].includes(data.aggregator)
+      ) {
+        cardErrors.push({
+          message: `Datasource attribute ${
+            data.attribute
+          } is non-numeric but you attempted to apply a numeric aggregator: ${data.aggregator}.`,
+        });
+      }
+    });
+  }
   return cardErrors;
 };
 
@@ -78,9 +82,9 @@ export const validateCard = (card, dataAttributes) => {
     // Check that all the datasource attributes exist on the object
     if (Array.isArray(dataAttributes)) {
       const dataAttributeNames = dataAttributes.map(dataAttribute => dataAttribute.name);
-      const missingAttribute = dataSource.find(
-        data => !dataAttributeNames.includes(data.attribute)
-      );
+      const missingAttribute =
+        Array.isArray(dataSource) &&
+        dataSource.find(data => !dataAttributeNames.includes(data.attribute));
       if (missingAttribute) {
         cardErrors.push({
           message: `Datasource attribute ${
