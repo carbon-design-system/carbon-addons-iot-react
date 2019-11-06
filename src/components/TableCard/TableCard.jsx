@@ -305,9 +305,7 @@ const TableCard = ({
         case 1:
           thresholdIcon = (
             <StyledIconDiv
-              title={`${matchingThresholdValue.dataSourceId} ${matchingThresholdValue.comparison} ${
-                matchingThresholdValue.value
-              }`}
+              title={`${matchingThresholdValue.dataSourceId} ${matchingThresholdValue.comparison} ${matchingThresholdValue.value}`}
             >
               <svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1">
                 <g
@@ -343,9 +341,7 @@ const TableCard = ({
         case 2:
           thresholdIcon = (
             <StyledIconDiv
-              title={`${matchingThresholdValue.dataSourceId} ${matchingThresholdValue.comparison} ${
-                matchingThresholdValue.value
-              }`}
+              title={`${matchingThresholdValue.dataSourceId} ${matchingThresholdValue.comparison} ${matchingThresholdValue.value}`}
             >
               <svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1">
                 <g id="Artboard" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
@@ -375,9 +371,7 @@ const TableCard = ({
         case 3:
           thresholdIcon = (
             <StyledIconDiv
-              title={`${matchingThresholdValue.dataSourceId} ${matchingThresholdValue.comparison} ${
-                matchingThresholdValue.value
-              }`}
+              title={`${matchingThresholdValue.dataSourceId} ${matchingThresholdValue.comparison} ${matchingThresholdValue.value}`}
             >
               <svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1">
                 <g id="Artboard-Copy" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
@@ -745,6 +739,7 @@ const TableCard = ({
                     renderIcon={Download16}
                     onClick={() => csvDownloadHandler()}
                     title={strings.downloadIconDescription}
+                    iconDescription={strings.downloadIconDescription}
                   />
                 ),
               },
