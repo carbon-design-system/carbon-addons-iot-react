@@ -7,29 +7,17 @@ import styled from 'styled-components';
 import isNil from 'lodash/isNil';
 import memoize from 'lodash/memoize';
 import useDeepCompareEffect from 'use-deep-compare-effect';
-import withSize from 'react-sizeme';
 
 import { TimeSeriesCardPropTypes, CardPropTypes } from '../../constants/PropTypes';
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 import Card from '../Card/Card';
 
-import { generateSampleValues, isValuesEmpty, formatGraphTick } from './timeSeriesUtils';
-
-/** Extends default tooltip with the additional date information */
-export const handleTooltip = (data, defaultTooltip) => {
-  const dateLabel = `<li class='datapoint-tooltip'><p class='label'>${moment(
-    Array.isArray(data) && data[0] ? data[0].date : data.date
-  ).format('L HH:mm:ss')}</p></li>`;
-  let updatedTooltip = defaultTooltip;
-  if (Array.isArray(data)) {
-    // prepend the date inside the existing multi tooltip
-    updatedTooltip = defaultTooltip.replace('<li', `${dateLabel}<li`);
-  } else {
-    // wrap to make single a multi-tooltip
-    updatedTooltip = `<ul class='multi-tooltip'>${dateLabel}<li>${defaultTooltip}</li></ul>`;
-  }
-  return updatedTooltip;
-};
+import {
+  generateSampleValues,
+  isValuesEmpty,
+  formatGraphTick,
+  findMatchingAlertRange,
+} from './timeSeriesUtils';
 
 const LineChartWrapper = styled.div`
   padding-left: 16px;
@@ -38,7 +26,7 @@ const LineChartWrapper = styled.div`
   padding-bottom: 16px;
   position: absolute;
   width: 100%;
-  height: ${props => props.contentHeight};
+  height: 100%;
 
   &&& {
     .chart-wrapper g.x.axis g.tick text {
@@ -52,7 +40,6 @@ const LineChartWrapper = styled.div`
       display: ${props => (props.isEditable ? 'none' : '')};
     }
     .legend-wrapper {
-      display: ${props => (props.isLegendHidden ? 'none' : '')};
       height: ${props => (!props.size === CARD_SIZES.MEDIUM ? '40px' : '20px')} !important;
       margin-top: -10px;
       padding-right: 20px;
@@ -62,10 +49,12 @@ const LineChartWrapper = styled.div`
       height: 100%;
       padding-top: 0.25rem;
     }
+    .axis-title {
+      font-weight: 500;
+    }
     .chart-svg {
       width: 100%;
       height: 100%;
-      margin-top: ${props => (props.isLegendHidden ? '-10px' : '')};
       circle.dot {
         stroke-opacity: ${props => (props.isEditable ? '1' : '')};
       }
@@ -75,24 +64,6 @@ const LineChartWrapper = styled.div`
     }
   }
 `;
-
-const determineHeight = (size, measuredWidth) => {
-  let height = '100%';
-  switch (size) {
-    case CARD_SIZES.MEDIUM:
-    case CARD_SIZES.LARGE:
-      if (measuredWidth && measuredWidth > 635) {
-        height = '90%';
-      }
-      break;
-    case CARD_SIZES.XLARGE:
-      height = '90%';
-      break;
-    default:
-      break;
-  }
-  return height;
-};
 
 const determinePrecision = (size, value, precision) => {
   // If it's an integer don't return extra values
@@ -121,16 +92,6 @@ const formatChartData = (timeDataSourceId, series, values) => {
   };
 };
 
-/*
-const handleStrokeColor = (datasetLabel, label, value, originalStrokeColor) =>
-  value > 90 ? '#FF0000' : originalStrokeColor;
-
-const handleFillColor = (datasetLabel, label, value, originalFillColor) =>
-  value > 90 ? '#FF0000' : originalFillColor;
-
-const handleIsFilled = (datasetLabel, label, value, isFilled) => (value > 90 ? true : isFilled);
-*/
-
 const valueFormatter = (value, size, unit) => {
   const precision = determinePrecision(size, value, Math.abs(value) > 1 ? 1 : 3);
   let renderValue = value;
@@ -155,12 +116,13 @@ const memoizedGenerateSampleValues = memoize(generateSampleValues);
 
 const TimeSeriesCard = ({
   title,
-  content: { series, timeDataSourceId = 'timestamp', xLabel, yLabel, unit },
+  content: { series, timeDataSourceId = 'timestamp', alertRanges, xLabel, yLabel, unit },
   size,
   interval,
   isEditable,
   values: valuesProp,
   locale,
+  i18n: { alertDetected },
   ...others
 }) => {
   let chartRef = useRef();
@@ -222,6 +184,54 @@ const TimeSeriesCard = ({
     [isEditable, series]
   );
 
+  /** Extends default tooltip with the additional date information */
+  const handleTooltip = (data, defaultTooltip) => {
+    const dateLabel = `<li class='datapoint-tooltip'><p class='label'>${moment(
+      Array.isArray(data) && data[0] ? data[0].date : data.date
+    ).format('L HH:mm:ss')}</p></li>`;
+    const matchingAlertRange = findMatchingAlertRange(alertRanges, data);
+    const matchingAlertLabel = matchingAlertRange
+      ? `<li class='datapoint-tooltip'><p class='label'>${alertDetected} ${
+          matchingAlertRange.details
+        }</p></li>`
+      : '';
+    let updatedTooltip = defaultTooltip;
+    if (Array.isArray(data)) {
+      // prepend the date inside the existing multi tooltip
+      updatedTooltip = defaultTooltip
+        .replace('<li', `${dateLabel}<li`)
+        .replace('</ul', `${matchingAlertLabel}</ul`);
+    } else {
+      // wrap to make single a multi-tooltip
+      updatedTooltip = `<ul class='multi-tooltip'>${dateLabel}<li>${defaultTooltip}</li>${matchingAlertLabel}</ul>`;
+    }
+    return updatedTooltip;
+  };
+
+  const handleStrokeColor = (datasetLabel, label, value, data, originalStrokeColor) => {
+    if (!isNil(value)) {
+      const matchingAlertRange = findMatchingAlertRange(alertRanges, data);
+      return matchingAlertRange ? matchingAlertRange.color : originalStrokeColor;
+    }
+    return originalStrokeColor;
+  };
+
+  const handleFillColor = (datasetLabel, label, value, data, originalFillColor) => {
+    if (!isNil(value)) {
+      const matchingAlertRange = findMatchingAlertRange(alertRanges, data);
+      return matchingAlertRange ? matchingAlertRange.color : originalFillColor;
+    }
+    return originalFillColor;
+  };
+
+  const handleIsFilled = (datasetLabel, label, value, data, isFilled) => {
+    if (!isNil(value)) {
+      const matchingAlertRange = findMatchingAlertRange(alertRanges, data);
+      return matchingAlertRange ? true : isFilled;
+    }
+    return isFilled;
+  };
+
   /** This is needed to update the chart when the lines and values change */
   useDeepCompareEffect(
     () => {
@@ -241,71 +251,53 @@ const TimeSeriesCard = ({
   ]);
 
   return (
-    <withSize.SizeMe>
-      {({ size: measuredSize }) => {
-        const height = determineHeight(size, measuredSize.width);
-        return (
-          <Card
-            title={title}
-            size={size}
-            {...others}
-            isEditable={isEditable}
-            isEmpty={isAllValuesEmpty}
-          >
-            {!others.isLoading && !isAllValuesEmpty ? (
-              <LineChartWrapper
-                size={size}
-                contentHeight={height}
-                isLegendHidden={lines.length === 1}
-                isEditable={isEditable}
-              >
-                <LineChart
-                  ref={el => {
-                    chartRef = el;
-                  }}
-                  data={chartData}
-                  options={{
-                    animations: false,
-                    accessibility: false,
-                    axes: {
-                      bottom: {
-                        title: xLabel,
-                        scaleType: 'time',
-                        primary: true,
-                        ticks: {
-                          max: maxTicksPerSize,
-                          formatter: formatTick,
-                        },
-                      },
-                      left: {
-                        title: yLabel,
-                        formatter: axisValue => valueFormatter(axisValue, size, unit),
-                        yMaxAdjuster: yMaxValue => yMaxValue * 1.3,
-                        secondary: true,
-                      },
-                    },
-                    legend: { position: 'top', clickable: !isEditable },
-                    containerResizable: true,
-                    tooltip: {
-                      formatter: tooltipValue => valueFormatter(tooltipValue, size, unit),
-                      customHTML: handleTooltip,
-                      gridline: {
-                        enabled: false,
-                      },
-                    },
-                    // getStrokeColor: handleStrokeColor,
-                    // getFillColor: handleFillColor,
-                    // getIsFilled: handleIsFilled,
-                  }}
-                  width="100%"
-                  height="100%"
-                />
-              </LineChartWrapper>
-            ) : null}
-          </Card>
-        );
-      }}
-    </withSize.SizeMe>
+    <Card title={title} size={size} {...others} isEditable={isEditable} isEmpty={isAllValuesEmpty}>
+      {!others.isLoading && !isAllValuesEmpty ? (
+        <LineChartWrapper size={size} isEditable={isEditable}>
+          <LineChart
+            ref={el => {
+              chartRef = el;
+            }}
+            data={chartData}
+            options={{
+              animations: false,
+              accessibility: false,
+              axes: {
+                bottom: {
+                  title: xLabel,
+                  scaleType: 'time',
+                  primary: true,
+                  ticks: {
+                    max: maxTicksPerSize,
+                    formatter: formatTick,
+                  },
+                },
+                left: {
+                  title: yLabel,
+                  formatter: axisValue => valueFormatter(axisValue, size, unit),
+                  yMaxAdjuster: yMaxValue => yMaxValue * 1.3,
+                  secondary: true,
+                },
+              },
+              legend: { position: 'top', clickable: !isEditable, visible: lines.length > 1 },
+              containerResizable: true,
+              tooltip: {
+                formatter: tooltipValue => valueFormatter(tooltipValue, size, unit),
+                customHTML: handleTooltip,
+                gridline: {
+                  enabled: false,
+                },
+              },
+              getStrokeColor: handleStrokeColor,
+              getFillColor: handleFillColor,
+              getIsFilled: handleIsFilled,
+            }}
+            width="100%"
+            height="100%"
+          />
+        </LineChartWrapper>
+      ) : null}
+    </Card>
   );
 };
 
@@ -314,6 +306,9 @@ TimeSeriesCard.propTypes = { ...CardPropTypes, ...TimeSeriesCardPropTypes };
 TimeSeriesCard.defaultProps = {
   size: CARD_SIZES.MEDIUM,
   values: [],
+  i18n: {
+    alertDetected: 'Alert detected:',
+  },
 };
 
 export default TimeSeriesCard;

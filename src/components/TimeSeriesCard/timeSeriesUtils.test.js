@@ -5,6 +5,7 @@ import {
   generateTableSampleValues,
   isValuesEmpty,
   formatGraphTick,
+  findMatchingAlertRange,
 } from './timeSeriesUtils';
 
 describe('timeSeriesUtils', () => {
@@ -90,5 +91,21 @@ describe('timeSeriesUtils', () => {
     expect(
       formatGraphTick(1561957200000, 1, [1, 2, 3, 4, 5, 6], 'month', null, 1572584400000)
     ).toContain('Jul');
+  });
+  test('findMatchingAlertRange', () => {
+    const data = {
+      date: new Date(1573073951),
+    };
+    const alertRange = [
+      {
+        startTimestamp: 1573073950,
+        endTimestamp: 1573073951,
+        color: '#FF0000',
+        details: 'Alert details',
+      },
+    ];
+    const matchingAlertRange = findMatchingAlertRange(alertRange, data);
+    expect(matchingAlertRange.color).toEqual('#FF0000');
+    expect(matchingAlertRange.details).toEqual('Alert details');
   });
 });
