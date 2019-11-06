@@ -198,6 +198,7 @@ export const defaultI18NPropTypes = {
   filterNone: 'Unsort rows by this header',
   filterAscending: 'Sort rows by this header in ascending order',
   filterDescending: 'Sort rows by this header in descending order',
+  rowCountLabel: 'Results',
 };
 
 export const TableSearchPropTypes = PropTypes.shape({

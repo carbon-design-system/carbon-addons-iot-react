@@ -70,6 +70,14 @@ const StyledTableBatchActions = styled(TableBatchActions)`
   }
 `;
 
+const ToolBarResultLabel = styled.label`
+  &&& {
+    display: flex;
+    position: relative;
+    height: 3rem;
+    padding: 1rem;
+  }
+`;
 const propTypes = {
   /** id of table */
   tableId: PropTypes.string.isRequired,
@@ -78,6 +86,7 @@ const propTypes = {
     hasFilter: PropTypes.bool,
     hasSearch: PropTypes.bool,
     hasColumnSelection: PropTypes.bool,
+    hasRowCount: PropTypes.bool,
   }).isRequired,
 
   /** internationalized labels */
@@ -93,6 +102,7 @@ const propTypes = {
     filterNone: PropTypes.string,
     filterAscending: PropTypes.string,
     filterDescending: PropTypes.string,
+    rowCountLabel: PropTypes.string,
   }),
   /**
    * Action callbacks to update tableState
@@ -141,7 +151,7 @@ const TableToolbar = ({
   tableId,
   className,
   i18n,
-  options: { hasColumnSelection, hasFilter, hasSearch, hasRowSelection },
+  options: { hasColumnSelection, hasFilter, hasSearch, hasRowSelection, hasRowCount },
   actions: {
     onCancelBatchAction,
     onApplyBatchAction,
@@ -158,6 +168,7 @@ const TableToolbar = ({
     // activeBar,
     customToolbarContent,
     isDisabled,
+    totalItemsCount,
   },
 }) => (
   <StyledCarbonTableToolbar className={className}>
@@ -173,16 +184,21 @@ const TableToolbar = ({
         </TableBatchAction>
       ))}
     </StyledTableBatchActions>
-    {hasSearch ? (
-      <StyledToolbarSearch
-        {...search}
-        translateWithId={(...args) => tableTranslateWithId(i18n, ...args)}
-        id={`${tableId}-toolbar-search`}
-        onChange={event => onApplySearch(event.currentTarget ? event.currentTarget.value : '')}
-        disabled={isDisabled}
-      />
+    {hasRowCount ? (
+      <ToolBarResultLabel>
+        {i18n.rowCountLabel}: {totalItemsCount}
+      </ToolBarResultLabel>
     ) : null}
     <StyledTableToolbarContent>
+      {hasSearch ? (
+        <StyledToolbarSearch
+          {...search}
+          translateWithId={(...args) => tableTranslateWithId(i18n, ...args)}
+          id={`${tableId}-toolbar-search`}
+          onChange={event => onApplySearch(event.currentTarget ? event.currentTarget.value : '')}
+          disabled={isDisabled}
+        />
+      ) : null}
       {customToolbarContent || null}
       {totalFilters > 0 ? (
         <Button kind="secondary" onClick={onClearAllFilters}>
