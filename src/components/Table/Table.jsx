@@ -84,6 +84,7 @@ const propTypes = {
     hasSearch: PropTypes.bool,
     hasColumnSelection: PropTypes.bool,
     shouldLazyRender: PropTypes.bool,
+    hasRowCount: PropTypes.bool,
   }),
 
   /** Initial state of the table, should be updated via a local state wrapper component implementation or via a central store/redux see StatefulTable component for an example */
@@ -346,6 +347,7 @@ const Table = props => {
           filterNone: i18n.filterNone,
           filterAscending: i18n.filterAscending,
           filterDescending: i18n.filterDescending,
+          rowCountLabel: i18n.rowCountLabel,
         }}
         actions={pick(
           actions.toolbar,
@@ -356,10 +358,18 @@ const Table = props => {
           'onToggleFilter',
           'onApplySearch'
         )}
-        options={pick(options, 'hasColumnSelection', 'hasFilter', 'hasSearch', 'hasRowSelection')}
+        options={pick(
+          options,
+          'hasColumnSelection',
+          'hasFilter',
+          'hasSearch',
+          'hasRowSelection',
+          'hasRowCount'
+        )}
         tableState={{
           totalSelected: view.table.selectedIds.length,
           totalFilters: view.filters ? view.filters.length : 0,
+          totalItemsCount: view.pagination.totalItems,
           ...pick(
             view.toolbar,
             'batchActions',

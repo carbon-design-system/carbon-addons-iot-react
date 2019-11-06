@@ -75,3 +75,7 @@ html[dir='rtl'] {
     padding-right: $spacing-04;
   }
 }
+
+.#{$prefix}--toolbar-search-container-active .#{$prefix}--search .#{$prefix}--search-input {
+  padding-right: $spacing-09;
+}

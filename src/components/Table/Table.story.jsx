@@ -428,6 +428,27 @@ storiesOf('Watson IoT|Table', module)
       },
     }
   )
+  .add('Stateful Example with Row Count', () => (
+    <FullWidthWrapper>
+      <StatefulTable
+        {...initialState}
+        options={{
+          hasSearch: true,
+          hasPagination: true,
+          hasRowSelection: 'multi',
+          hasFilter: true,
+          hasRowActions: true,
+          hasRowCount: boolean('Show Row Count', true),
+        }}
+        view={{
+          toolbar: { activeBar: null },
+        }}
+        i18n={{
+          rowCountLabel: text('Row Count Label', 'Results'),
+        }}
+      />
+    </FullWidthWrapper>
+  ))
   .add(
     'Stateful Example with every third row unselectable',
     () => (

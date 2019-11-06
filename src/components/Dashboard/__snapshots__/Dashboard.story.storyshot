@@ -948,59 +948,22 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           </div>
                         </div>
                         <div
-                          className="bx--toolbar-action bx--toolbar-search-container-expandable"
-                          onBlur={[Function]}
-                          onClick={[Function]}
-                          onFocus={[Function]}
-                          role="searchbox"
-                          tabIndex="0"
+                          className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-3 jTKDEr"
                         >
                           <div
-                            className="bx--search bx--search--sm TableToolbar__StyledToolbarSearch-sc-17lb3av-1 jCiaXI"
+                            className="bx--toolbar-action bx--toolbar-search-container-expandable"
+                            onBlur={[Function]}
+                            onClick={[Function]}
+                            onFocus={[Function]}
+                            role="searchbox"
+                            tabIndex="0"
                           >
-                            <svg
-                              aria-hidden={true}
-                              className="bx--search-magnifier"
-                              focusable="false"
-                              height={16}
-                              preserveAspectRatio="xMidYMid meet"
-                              style={
-                                Object {
-                                  "willChange": "transform",
-                                }
-                              }
-                              viewBox="0 0 16 16"
-                              width={16}
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M15 14.3L10.7 10c1.9-2.3 1.6-5.8-.7-7.7S4.2.7 2.3 3 .7 8.8 3 10.7c2 1.7 5 1.7 7 0l4.3 4.3.7-.7zM2 6.5C2 4 4 2 6.5 2S11 4 11 6.5 9 11 6.5 11 2 9 2 6.5z"
-                              />
-                            </svg>
-                            <label
-                              className="bx--label"
-                              htmlFor="Table-toolbar-search"
-                            >
-                              Search
-                            </label>
-                            <input
-                              aria-hidden={true}
-                              className="bx--search-input"
-                              disabled={false}
-                              id="Table-toolbar-search"
-                              onChange={[Function]}
-                              placeholder="Search"
-                              type="text"
-                              value=""
-                            />
-                            <button
-                              aria-label="Clear search input"
-                              className="bx--search-close bx--search-close--hidden"
-                              onClick={[Function]}
-                              type="button"
+                            <div
+                              className="bx--search bx--search--sm TableToolbar__StyledToolbarSearch-sc-17lb3av-1 jCiaXI"
                             >
                               <svg
                                 aria-hidden={true}
+                                className="bx--search-magnifier"
                                 focusable="false"
                                 height={16}
                                 preserveAspectRatio="xMidYMid meet"
@@ -1014,15 +977,52 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                 xmlns="http://www.w3.org/2000/svg"
                               >
                                 <path
-                                  d="M12 4.7l-.7-.7L8 7.3 4.7 4l-.7.7L7.3 8 4 11.3l.7.7L8 8.7l3.3 3.3.7-.7L8.7 8z"
+                                  d="M15 14.3L10.7 10c1.9-2.3 1.6-5.8-.7-7.7S4.2.7 2.3 3 .7 8.8 3 10.7c2 1.7 5 1.7 7 0l4.3 4.3.7-.7zM2 6.5C2 4 4 2 6.5 2S11 4 11 6.5 9 11 6.5 11 2 9 2 6.5z"
                                 />
                               </svg>
-                            </button>
+                              <label
+                                className="bx--label"
+                                htmlFor="Table-toolbar-search"
+                              >
+                                Search
+                              </label>
+                              <input
+                                aria-hidden={true}
+                                className="bx--search-input"
+                                disabled={false}
+                                id="Table-toolbar-search"
+                                onChange={[Function]}
+                                placeholder="Search"
+                                type="text"
+                                value=""
+                              />
+                              <button
+                                aria-label="Clear search input"
+                                className="bx--search-close bx--search-close--hidden"
+                                onClick={[Function]}
+                                type="button"
+                              >
+                                <svg
+                                  aria-hidden={true}
+                                  focusable="false"
+                                  height={16}
+                                  preserveAspectRatio="xMidYMid meet"
+                                  style={
+                                    Object {
+                                      "willChange": "transform",
+                                    }
+                                  }
+                                  viewBox="0 0 16 16"
+                                  width={16}
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M12 4.7l-.7-.7L8 7.3 4.7 4l-.7.7L7.3 8 4 11.3l.7.7L8 8.7l3.3 3.3.7-.7L8.7 8z"
+                                  />
+                                </svg>
+                              </button>
+                            </div>
                           </div>
-                        </div>
-                        <div
-                          className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-3 jTKDEr"
-                        >
                           <button
                             className="TableCard__ToolbarButton-q9l5bz-4 iFxaZU bx--btn bx--btn--sm bx--btn--ghost"
                             disabled={false}
@@ -2797,59 +2797,22 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           </div>
                         </div>
                         <div
-                          className="bx--toolbar-action bx--toolbar-search-container-expandable"
-                          onBlur={[Function]}
-                          onClick={[Function]}
-                          onFocus={[Function]}
-                          role="searchbox"
-                          tabIndex="0"
+                          className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-3 jTKDEr"
                         >
                           <div
-                            className="bx--search bx--search--sm TableToolbar__StyledToolbarSearch-sc-17lb3av-1 jCiaXI"
+                            className="bx--toolbar-action bx--toolbar-search-container-expandable"
+                            onBlur={[Function]}
+                            onClick={[Function]}
+                            onFocus={[Function]}
+                            role="searchbox"
+                            tabIndex="0"
                           >
-                            <svg
-                              aria-hidden={true}
-                              className="bx--search-magnifier"
-                              focusable="false"
-                              height={16}
-                              preserveAspectRatio="xMidYMid meet"
-                              style={
-                                Object {
-                                  "willChange": "transform",
-                                }
-                              }
-                              viewBox="0 0 16 16"
-                              width={16}
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M15 14.3L10.7 10c1.9-2.3 1.6-5.8-.7-7.7S4.2.7 2.3 3 .7 8.8 3 10.7c2 1.7 5 1.7 7 0l4.3 4.3.7-.7zM2 6.5C2 4 4 2 6.5 2S11 4 11 6.5 9 11 6.5 11 2 9 2 6.5z"
-                              />
-                            </svg>
-                            <label
-                              className="bx--label"
-                              htmlFor="Table-toolbar-search"
-                            >
-                              Search
-                            </label>
-                            <input
-                              aria-hidden={true}
-                              className="bx--search-input"
-                              disabled={false}
-                              id="Table-toolbar-search"
-                              onChange={[Function]}
-                              placeholder="Search"
-                              type="text"
-                              value=""
-                            />
-                            <button
-                              aria-label="Clear search input"
-                              className="bx--search-close bx--search-close--hidden"
-                              onClick={[Function]}
-                              type="button"
+                            <div
+                              className="bx--search bx--search--sm TableToolbar__StyledToolbarSearch-sc-17lb3av-1 jCiaXI"
                             >
                               <svg
                                 aria-hidden={true}
+                                className="bx--search-magnifier"
                                 focusable="false"
                                 height={16}
                                 preserveAspectRatio="xMidYMid meet"
@@ -2863,15 +2826,52 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                 xmlns="http://www.w3.org/2000/svg"
                               >
                                 <path
-                                  d="M12 4.7l-.7-.7L8 7.3 4.7 4l-.7.7L7.3 8 4 11.3l.7.7L8 8.7l3.3 3.3.7-.7L8.7 8z"
+                                  d="M15 14.3L10.7 10c1.9-2.3 1.6-5.8-.7-7.7S4.2.7 2.3 3 .7 8.8 3 10.7c2 1.7 5 1.7 7 0l4.3 4.3.7-.7zM2 6.5C2 4 4 2 6.5 2S11 4 11 6.5 9 11 6.5 11 2 9 2 6.5z"
                                 />
                               </svg>
-                            </button>
+                              <label
+                                className="bx--label"
+                                htmlFor="Table-toolbar-search"
+                              >
+                                Search
+                              </label>
+                              <input
+                                aria-hidden={true}
+                                className="bx--search-input"
+                                disabled={false}
+                                id="Table-toolbar-search"
+                                onChange={[Function]}
+                                placeholder="Search"
+                                type="text"
+                                value=""
+                              />
+                              <button
+                                aria-label="Clear search input"
+                                className="bx--search-close bx--search-close--hidden"
+                                onClick={[Function]}
+                                type="button"
+                              >
+                                <svg
+                                  aria-hidden={true}
+                                  focusable="false"
+                                  height={16}
+                                  preserveAspectRatio="xMidYMid meet"
+                                  style={
+                                    Object {
+                                      "willChange": "transform",
+                                    }
+                                  }
+                                  viewBox="0 0 16 16"
+                                  width={16}
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M12 4.7l-.7-.7L8 7.3 4.7 4l-.7.7L7.3 8 4 11.3l.7.7L8 8.7l3.3 3.3.7-.7L8.7 8z"
+                                  />
+                                </svg>
+                              </button>
+                            </div>
                           </div>
-                        </div>
-                        <div
-                          className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-3 jTKDEr"
-                        >
                           <button
                             className="TableCard__ToolbarButton-q9l5bz-4 iFxaZU bx--btn bx--btn--sm bx--btn--ghost"
                             disabled={false}
@@ -4678,59 +4678,22 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           </div>
                         </div>
                         <div
-                          className="bx--toolbar-action bx--toolbar-search-container-expandable"
-                          onBlur={[Function]}
-                          onClick={[Function]}
-                          onFocus={[Function]}
-                          role="searchbox"
-                          tabIndex="0"
+                          className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-3 jTKDEr"
                         >
                           <div
-                            className="bx--search bx--search--sm TableToolbar__StyledToolbarSearch-sc-17lb3av-1 jCiaXI"
+                            className="bx--toolbar-action bx--toolbar-search-container-expandable"
+                            onBlur={[Function]}
+                            onClick={[Function]}
+                            onFocus={[Function]}
+                            role="searchbox"
+                            tabIndex="0"
                           >
-                            <svg
-                              aria-hidden={true}
-                              className="bx--search-magnifier"
-                              focusable="false"
-                              height={16}
-                              preserveAspectRatio="xMidYMid meet"
-                              style={
-                                Object {
-                                  "willChange": "transform",
-                                }
-                              }
-                              viewBox="0 0 16 16"
-                              width={16}
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M15 14.3L10.7 10c1.9-2.3 1.6-5.8-.7-7.7S4.2.7 2.3 3 .7 8.8 3 10.7c2 1.7 5 1.7 7 0l4.3 4.3.7-.7zM2 6.5C2 4 4 2 6.5 2S11 4 11 6.5 9 11 6.5 11 2 9 2 6.5z"
-                              />
-                            </svg>
-                            <label
-                              className="bx--label"
-                              htmlFor="Table-toolbar-search"
-                            >
-                              Search
-                            </label>
-                            <input
-                              aria-hidden={true}
-                              className="bx--search-input"
-                              disabled={false}
-                              id="Table-toolbar-search"
-                              onChange={[Function]}
-                              placeholder="Search"
-                              type="text"
-                              value=""
-                            />
-                            <button
-                              aria-label="Clear search input"
-                              className="bx--search-close bx--search-close--hidden"
-                              onClick={[Function]}
-                              type="button"
+                            <div
+                              className="bx--search bx--search--sm TableToolbar__StyledToolbarSearch-sc-17lb3av-1 jCiaXI"
                             >
                               <svg
                                 aria-hidden={true}
+                                className="bx--search-magnifier"
                                 focusable="false"
                                 height={16}
                                 preserveAspectRatio="xMidYMid meet"
@@ -4744,15 +4707,52 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                 xmlns="http://www.w3.org/2000/svg"
                               >
                                 <path
-                                  d="M12 4.7l-.7-.7L8 7.3 4.7 4l-.7.7L7.3 8 4 11.3l.7.7L8 8.7l3.3 3.3.7-.7L8.7 8z"
+                                  d="M15 14.3L10.7 10c1.9-2.3 1.6-5.8-.7-7.7S4.2.7 2.3 3 .7 8.8 3 10.7c2 1.7 5 1.7 7 0l4.3 4.3.7-.7zM2 6.5C2 4 4 2 6.5 2S11 4 11 6.5 9 11 6.5 11 2 9 2 6.5z"
                                 />
                               </svg>
-                            </button>
+                              <label
+                                className="bx--label"
+                                htmlFor="Table-toolbar-search"
+                              >
+                                Search
+                              </label>
+                              <input
+                                aria-hidden={true}
+                                className="bx--search-input"
+                                disabled={false}
+                                id="Table-toolbar-search"
+                                onChange={[Function]}
+                                placeholder="Search"
+                                type="text"
+                                value=""
+                              />
+                              <button
+                                aria-label="Clear search input"
+                                className="bx--search-close bx--search-close--hidden"
+                                onClick={[Function]}
+                                type="button"
+                              >
+                                <svg
+                                  aria-hidden={true}
+                                  focusable="false"
+                                  height={16}
+                                  preserveAspectRatio="xMidYMid meet"
+                                  style={
+                                    Object {
+                                      "willChange": "transform",
+                                    }
+                                  }
+                                  viewBox="0 0 16 16"
+                                  width={16}
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M12 4.7l-.7-.7L8 7.3 4.7 4l-.7.7L7.3 8 4 11.3l.7.7L8 8.7l3.3 3.3.7-.7L8.7 8z"
+                                  />
+                                </svg>
+                              </button>
+                            </div>
                           </div>
-                        </div>
-                        <div
-                          className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-3 jTKDEr"
-                        >
                           <button
                             className="TableCard__ToolbarButton-q9l5bz-4 iFxaZU bx--btn bx--btn--sm bx--btn--ghost"
                             disabled={false}
@@ -6071,59 +6071,22 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           </div>
                         </div>
                         <div
-                          className="bx--toolbar-action bx--toolbar-search-container-expandable"
-                          onBlur={[Function]}
-                          onClick={[Function]}
-                          onFocus={[Function]}
-                          role="searchbox"
-                          tabIndex="0"
+                          className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-3 jTKDEr"
                         >
                           <div
-                            className="bx--search bx--search--sm TableToolbar__StyledToolbarSearch-sc-17lb3av-1 jCiaXI"
+                            className="bx--toolbar-action bx--toolbar-search-container-expandable"
+                            onBlur={[Function]}
+                            onClick={[Function]}
+                            onFocus={[Function]}
+                            role="searchbox"
+                            tabIndex="0"
                           >
-                            <svg
-                              aria-hidden={true}
-                              className="bx--search-magnifier"
-                              focusable="false"
-                              height={16}
-                              preserveAspectRatio="xMidYMid meet"
-                              style={
-                                Object {
-                                  "willChange": "transform",
-                                }
-                              }
-                              viewBox="0 0 16 16"
-                              width={16}
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M15 14.3L10.7 10c1.9-2.3 1.6-5.8-.7-7.7S4.2.7 2.3 3 .7 8.8 3 10.7c2 1.7 5 1.7 7 0l4.3 4.3.7-.7zM2 6.5C2 4 4 2 6.5 2S11 4 11 6.5 9 11 6.5 11 2 9 2 6.5z"
-                              />
-                            </svg>
-                            <label
-                              className="bx--label"
-                              htmlFor="Table-toolbar-search"
-                            >
-                              Search
-                            </label>
-                            <input
-                              aria-hidden={true}
-                              className="bx--search-input"
-                              disabled={false}
-                              id="Table-toolbar-search"
-                              onChange={[Function]}
-                              placeholder="Search"
-                              type="text"
-                              value=""
-                            />
-                            <button
-                              aria-label="Clear search input"
-                              className="bx--search-close bx--search-close--hidden"
-                              onClick={[Function]}
-                              type="button"
+                            <div
+                              className="bx--search bx--search--sm TableToolbar__StyledToolbarSearch-sc-17lb3av-1 jCiaXI"
                             >
                               <svg
                                 aria-hidden={true}
+                                className="bx--search-magnifier"
                                 focusable="false"
                                 height={16}
                                 preserveAspectRatio="xMidYMid meet"
@@ -6137,15 +6100,52 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                 xmlns="http://www.w3.org/2000/svg"
                               >
                                 <path
-                                  d="M12 4.7l-.7-.7L8 7.3 4.7 4l-.7.7L7.3 8 4 11.3l.7.7L8 8.7l3.3 3.3.7-.7L8.7 8z"
+                                  d="M15 14.3L10.7 10c1.9-2.3 1.6-5.8-.7-7.7S4.2.7 2.3 3 .7 8.8 3 10.7c2 1.7 5 1.7 7 0l4.3 4.3.7-.7zM2 6.5C2 4 4 2 6.5 2S11 4 11 6.5 9 11 6.5 11 2 9 2 6.5z"
                                 />
                               </svg>
-                            </button>
+                              <label
+                                className="bx--label"
+                                htmlFor="Table-toolbar-search"
+                              >
+                                Search
+                              </label>
+                              <input
+                                aria-hidden={true}
+                                className="bx--search-input"
+                                disabled={false}
+                                id="Table-toolbar-search"
+                                onChange={[Function]}
+                                placeholder="Search"
+                                type="text"
+                                value=""
+                              />
+                              <button
+                                aria-label="Clear search input"
+                                className="bx--search-close bx--search-close--hidden"
+                                onClick={[Function]}
+                                type="button"
+                              >
+                                <svg
+                                  aria-hidden={true}
+                                  focusable="false"
+                                  height={16}
+                                  preserveAspectRatio="xMidYMid meet"
+                                  style={
+                                    Object {
+                                      "willChange": "transform",
+                                    }
+                                  }
+                                  viewBox="0 0 16 16"
+                                  width={16}
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M12 4.7l-.7-.7L8 7.3 4.7 4l-.7.7L7.3 8 4 11.3l.7.7L8 8.7l3.3 3.3.7-.7L8.7 8z"
+                                  />
+                                </svg>
+                              </button>
+                            </div>
                           </div>
-                        </div>
-                        <div
-                          className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-3 jTKDEr"
-                        >
                           <button
                             className="TableCard__ToolbarButton-q9l5bz-4 iFxaZU bx--btn bx--btn--sm bx--btn--ghost"
                             disabled={false}
@@ -8712,59 +8712,22 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           </div>
                         </div>
                         <div
-                          className="bx--toolbar-action bx--toolbar-search-container-expandable"
-                          onBlur={[Function]}
-                          onClick={[Function]}
-                          onFocus={[Function]}
-                          role="searchbox"
-                          tabIndex="0"
+                          className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-3 jTKDEr"
                         >
                           <div
-                            className="bx--search bx--search--sm TableToolbar__StyledToolbarSearch-sc-17lb3av-1 jCiaXI"
+                            className="bx--toolbar-action bx--toolbar-search-container-expandable"
+                            onBlur={[Function]}
+                            onClick={[Function]}
+                            onFocus={[Function]}
+                            role="searchbox"
+                            tabIndex="0"
                           >
-                            <svg
-                              aria-hidden={true}
-                              className="bx--search-magnifier"
-                              focusable="false"
-                              height={16}
-                              preserveAspectRatio="xMidYMid meet"
-                              style={
-                                Object {
-                                  "willChange": "transform",
-                                }
-                              }
-                              viewBox="0 0 16 16"
-                              width={16}
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M15 14.3L10.7 10c1.9-2.3 1.6-5.8-.7-7.7S4.2.7 2.3 3 .7 8.8 3 10.7c2 1.7 5 1.7 7 0l4.3 4.3.7-.7zM2 6.5C2 4 4 2 6.5 2S11 4 11 6.5 9 11 6.5 11 2 9 2 6.5z"
-                              />
-                            </svg>
-                            <label
-                              className="bx--label"
-                              htmlFor="Table-toolbar-search"
-                            >
-                              Search
-                            </label>
-                            <input
-                              aria-hidden={true}
-                              className="bx--search-input"
-                              disabled={false}
-                              id="Table-toolbar-search"
-                              onChange={[Function]}
-                              placeholder="Search"
-                              type="text"
-                              value=""
-                            />
-                            <button
-                              aria-label="Clear search input"
-                              className="bx--search-close bx--search-close--hidden"
-                              onClick={[Function]}
-                              type="button"
+                            <div
+                              className="bx--search bx--search--sm TableToolbar__StyledToolbarSearch-sc-17lb3av-1 jCiaXI"
                             >
                               <svg
                                 aria-hidden={true}
+                                className="bx--search-magnifier"
                                 focusable="false"
                                 height={16}
                                 preserveAspectRatio="xMidYMid meet"
@@ -8778,15 +8741,52 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                 xmlns="http://www.w3.org/2000/svg"
                               >
                                 <path
-                                  d="M12 4.7l-.7-.7L8 7.3 4.7 4l-.7.7L7.3 8 4 11.3l.7.7L8 8.7l3.3 3.3.7-.7L8.7 8z"
+                                  d="M15 14.3L10.7 10c1.9-2.3 1.6-5.8-.7-7.7S4.2.7 2.3 3 .7 8.8 3 10.7c2 1.7 5 1.7 7 0l4.3 4.3.7-.7zM2 6.5C2 4 4 2 6.5 2S11 4 11 6.5 9 11 6.5 11 2 9 2 6.5z"
                                 />
                               </svg>
-                            </button>
+                              <label
+                                className="bx--label"
+                                htmlFor="Table-toolbar-search"
+                              >
+                                Search
+                              </label>
+                              <input
+                                aria-hidden={true}
+                                className="bx--search-input"
+                                disabled={false}
+                                id="Table-toolbar-search"
+                                onChange={[Function]}
+                                placeholder="Search"
+                                type="text"
+                                value=""
+                              />
+                              <button
+                                aria-label="Clear search input"
+                                className="bx--search-close bx--search-close--hidden"
+                                onClick={[Function]}
+                                type="button"
+                              >
+                                <svg
+                                  aria-hidden={true}
+                                  focusable="false"
+                                  height={16}
+                                  preserveAspectRatio="xMidYMid meet"
+                                  style={
+                                    Object {
+                                      "willChange": "transform",
+                                    }
+                                  }
+                                  viewBox="0 0 16 16"
+                                  width={16}
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M12 4.7l-.7-.7L8 7.3 4.7 4l-.7.7L7.3 8 4 11.3l.7.7L8 8.7l3.3 3.3.7-.7L8.7 8z"
+                                  />
+                                </svg>
+                              </button>
+                            </div>
                           </div>
-                        </div>
-                        <div
-                          className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-3 jTKDEr"
-                        >
                           <button
                             className="TableCard__ToolbarButton-q9l5bz-4 iFxaZU bx--btn bx--btn--sm bx--btn--ghost"
                             disabled={false}
@@ -20987,59 +20987,22 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           </div>
                         </div>
                         <div
-                          className="bx--toolbar-action bx--toolbar-search-container-expandable"
-                          onBlur={[Function]}
-                          onClick={[Function]}
-                          onFocus={[Function]}
-                          role="searchbox"
-                          tabIndex="0"
+                          className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-3 jTKDEr"
                         >
                           <div
-                            className="bx--search bx--search--sm TableToolbar__StyledToolbarSearch-sc-17lb3av-1 jCiaXI"
+                            className="bx--toolbar-action bx--toolbar-search-container-expandable"
+                            onBlur={[Function]}
+                            onClick={[Function]}
+                            onFocus={[Function]}
+                            role="searchbox"
+                            tabIndex="0"
                           >
-                            <svg
-                              aria-hidden={true}
-                              className="bx--search-magnifier"
-                              focusable="false"
-                              height={16}
-                              preserveAspectRatio="xMidYMid meet"
-                              style={
-                                Object {
-                                  "willChange": "transform",
-                                }
-                              }
-                              viewBox="0 0 16 16"
-                              width={16}
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M15 14.3L10.7 10c1.9-2.3 1.6-5.8-.7-7.7S4.2.7 2.3 3 .7 8.8 3 10.7c2 1.7 5 1.7 7 0l4.3 4.3.7-.7zM2 6.5C2 4 4 2 6.5 2S11 4 11 6.5 9 11 6.5 11 2 9 2 6.5z"
-                              />
-                            </svg>
-                            <label
-                              className="bx--label"
-                              htmlFor="Table-toolbar-search"
-                            >
-                              Search
-                            </label>
-                            <input
-                              aria-hidden={true}
-                              className="bx--search-input"
-                              disabled={false}
-                              id="Table-toolbar-search"
-                              onChange={[Function]}
-                              placeholder="Search"
-                              type="text"
-                              value=""
-                            />
-                            <button
-                              aria-label="Clear search input"
-                              className="bx--search-close bx--search-close--hidden"
-                              onClick={[Function]}
-                              type="button"
+                            <div
+                              className="bx--search bx--search--sm TableToolbar__StyledToolbarSearch-sc-17lb3av-1 jCiaXI"
                             >
                               <svg
                                 aria-hidden={true}
+                                className="bx--search-magnifier"
                                 focusable="false"
                                 height={16}
                                 preserveAspectRatio="xMidYMid meet"
@@ -21053,15 +21016,52 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                 xmlns="http://www.w3.org/2000/svg"
                               >
                                 <path
-                                  d="M12 4.7l-.7-.7L8 7.3 4.7 4l-.7.7L7.3 8 4 11.3l.7.7L8 8.7l3.3 3.3.7-.7L8.7 8z"
+                                  d="M15 14.3L10.7 10c1.9-2.3 1.6-5.8-.7-7.7S4.2.7 2.3 3 .7 8.8 3 10.7c2 1.7 5 1.7 7 0l4.3 4.3.7-.7zM2 6.5C2 4 4 2 6.5 2S11 4 11 6.5 9 11 6.5 11 2 9 2 6.5z"
                                 />
                               </svg>
-                            </button>
+                              <label
+                                className="bx--label"
+                                htmlFor="Table-toolbar-search"
+                              >
+                                Search
+                              </label>
+                              <input
+                                aria-hidden={true}
+                                className="bx--search-input"
+                                disabled={false}
+                                id="Table-toolbar-search"
+                                onChange={[Function]}
+                                placeholder="Search"
+                                type="text"
+                                value=""
+                              />
+                              <button
+                                aria-label="Clear search input"
+                                className="bx--search-close bx--search-close--hidden"
+                                onClick={[Function]}
+                                type="button"
+                              >
+                                <svg
+                                  aria-hidden={true}
+                                  focusable="false"
+                                  height={16}
+                                  preserveAspectRatio="xMidYMid meet"
+                                  style={
+                                    Object {
+                                      "willChange": "transform",
+                                    }
+                                  }
+                                  viewBox="0 0 16 16"
+                                  width={16}
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M12 4.7l-.7-.7L8 7.3 4.7 4l-.7.7L7.3 8 4 11.3l.7.7L8 8.7l3.3 3.3.7-.7L8.7 8z"
+                                  />
+                                </svg>
+                              </button>
+                            </div>
                           </div>
-                        </div>
-                        <div
-                          className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-3 jTKDEr"
-                        >
                           <button
                             className="TableCard__ToolbarButton-q9l5bz-4 iFxaZU bx--btn bx--btn--sm bx--btn--ghost"
                             disabled={false}
