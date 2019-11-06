@@ -41,7 +41,6 @@ const LineChartWrapper = styled.div`
       display: ${props => (props.isEditable ? 'none' : '')};
     }
     .legend-wrapper {
-      display: ${props => (props.isLegendHidden ? 'none' : '')};
       height: ${props => (!props.size === CARD_SIZES.MEDIUM ? '40px' : '20px')} !important;
       margin-top: -10px;
       padding-right: 20px;
@@ -51,10 +50,12 @@ const LineChartWrapper = styled.div`
       height: 100%;
       padding-top: 0.25rem;
     }
+    .axis-title {
+      font-weight: 500;
+    }
     .chart-svg {
       width: 100%;
       height: 100%;
-      margin-top: ${props => (props.isLegendHidden ? '-10px' : '')};
       circle.dot {
         stroke-opacity: ${props => (props.isEditable ? '1' : '')};
       }
@@ -281,12 +282,7 @@ const TimeSeriesCard = ({
             isEmpty={isAllValuesEmpty}
           >
             {!others.isLoading && !isAllValuesEmpty ? (
-              <LineChartWrapper
-                size={size}
-                contentHeight={height}
-                isLegendHidden={lines.length === 1}
-                isEditable={isEditable}
-              >
+              <LineChartWrapper size={size} contentHeight={height} isEditable={isEditable}>
                 <LineChart
                   ref={el => {
                     chartRef = el;
@@ -312,7 +308,7 @@ const TimeSeriesCard = ({
                         secondary: true,
                       },
                     },
-                    legend: { position: 'top', clickable: !isEditable },
+                    legend: { position: 'top', clickable: !isEditable, visible: lines.length > 1 },
                     containerResizable: true,
                     tooltip: {
                       formatter: tooltipValue => valueFormatter(tooltipValue, size, unit),
