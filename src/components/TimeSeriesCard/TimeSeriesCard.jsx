@@ -3,7 +3,6 @@ import moment from 'moment/min/moment-with-locales.min';
 import { LineChart } from '@carbon/charts-react';
 // TODO: waiting for @carbon/charts support https://github.com/carbon-design-system/carbon-charts/pull/389
 import '@carbon/charts/dist/styles.css';
-import isEmpty from 'lodash/isEmpty';
 import styled from 'styled-components';
 import isNil from 'lodash/isNil';
 import memoize from 'lodash/memoize';
@@ -14,11 +13,10 @@ import { TimeSeriesCardPropTypes, CardPropTypes } from '../../constants/PropType
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 import Card from '../Card/Card';
 
-import { generateSampleValues, isValuesEmpty } from './timeSeriesUtils';
+import { generateSampleValues, isValuesEmpty, formatGraphTick } from './timeSeriesUtils';
 
 /** Extends default tooltip with the additional date information */
 export const handleTooltip = (data, defaultTooltip) => {
-  console.log(`defaultTooltip: ${defaultTooltip}`);
   const dateLabel = `<li class='datapoint-tooltip'><p class='label'>${moment(
     Array.isArray(data) && data[0] ? data[0].date : data.date
   ).format('L HH:mm:ss')}</p></li>`;
@@ -166,6 +164,7 @@ const TimeSeriesCard = ({
   ...others
 }) => {
   let chartRef = useRef();
+  const previousTick = useRef();
 
   const values = isEditable
     ? memoizedGenerateSampleValues(series, timeDataSourceId, interval)
@@ -173,6 +172,7 @@ const TimeSeriesCard = ({
 
   const isAllValuesEmpty = isValuesEmpty(values, timeDataSourceId);
 
+  // Unfortunately the API returns the data out of order sometimes
   const valueSort = useMemo(
     () =>
       values
@@ -182,14 +182,6 @@ const TimeSeriesCard = ({
         : [],
     [values, timeDataSourceId]
   );
-
-  const sameYear =
-    !isEmpty(values) &&
-    moment(moment.unix(valueSort[0][timeDataSourceId] / 1000)).isSame(moment(), 'year') &&
-    moment(moment.unix(valueSort[valueSort.length - 1][timeDataSourceId] / 1000)).isSame(
-      moment(),
-      'year'
-    );
 
   const maxTicksPerSize = useMemo(
     () => {
@@ -210,12 +202,6 @@ const TimeSeriesCard = ({
     [size]
   );
 
-  /** Interval is the points between ticks */
-  const ticksInterval =
-    Math.round(valueSort.length / maxTicksPerSize) !== 0
-      ? Math.round(valueSort.length / maxTicksPerSize)
-      : 1;
-
   const formatTick = useCallback(
     /** *
      * timestamp of current value
@@ -223,42 +209,12 @@ const TimeSeriesCard = ({
      * ticks: array of current ticks
      */
     (timestamp, index, ticks) => {
-      // moment locale default to english
-      moment.locale('en');
-      if (locale) {
-        moment.locale(locale);
-      }
-      const m = moment.unix(timestamp / 1000);
-
-      return interval === 'hour' && index === 0
-        ? ticks.length > 1
-          ? m.format('DD MMM')
-          : m.format('DD MMM HH:mm')
-        : interval === 'hour' &&
-          index !== 0 &&
-          !moment(
-            moment.unix(valueSort[Math.max(index - ticksInterval, 0)].timestamp / 1000)
-          ).isSame(moment.unix(valueSort[index].timestamp / 1000), 'day')
-        ? m.format('DD MMM')
-        : interval === 'hour'
-        ? m.format('HH:mm')
-        : interval === 'day' && index === 0
-        ? m.format('DD MMM')
-        : interval === 'day' && index !== 0
-        ? m.format('DD MMM')
-        : interval === 'month' && !sameYear
-        ? m.format('MMM YYYY')
-        : interval === 'month' && sameYear && index === 0
-        ? m.format('MMM YYYY')
-        : interval === 'month' && sameYear
-        ? m.format('MMM')
-        : interval === 'year'
-        ? m.format('YYYY')
-        : interval === 'minute'
-        ? m.format('HH:mm')
-        : m.format('DD MMM YYYY');
+      const previousTimestamp = previousTick.current;
+      // store current in the previous tick
+      previousTick.current = timestamp;
+      return formatGraphTick(timestamp, index, ticks, interval, locale, previousTimestamp);
     },
-    [interval, locale, sameYear, ticksInterval, valueSort]
+    [interval, locale]
   );
 
   const lines = useMemo(
@@ -270,18 +226,18 @@ const TimeSeriesCard = ({
   useDeepCompareEffect(
     () => {
       if (chartRef && chartRef.chart) {
-        const chartData = formatChartData(lines, values);
+        const chartData = formatChartData(timeDataSourceId, lines, valueSort);
         chartRef.chart.model.setData(chartData);
       }
     },
-    [values, lines]
+    [valueSort, lines, timeDataSourceId]
   );
 
   /** This caches the chart value */
-  const chartData = useMemo(() => formatChartData(timeDataSourceId, lines, values), [
+  const chartData = useMemo(() => formatChartData(timeDataSourceId, lines, valueSort), [
     timeDataSourceId,
     lines,
-    values,
+    valueSort,
   ]);
 
   return (
