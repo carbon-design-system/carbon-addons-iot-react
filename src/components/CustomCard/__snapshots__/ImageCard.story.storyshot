@@ -1,0 +1,1054 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ImageCard basic 1`] = `
+<div
+  className="storybook-container"
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "flexDirection": "column",
+      "padding": "3rem",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "margin": 20,
+          "width": "1056px",
+        }
+      }
+    >
+      <div
+        className="Card__CardWrapper-v5r71h-0 kGdXdI"
+        id="image-hotspots"
+      >
+        <div
+          className="card--header"
+        >
+          <span
+            className="card--title"
+            title="Image"
+          >
+            Image
+             
+          </span>
+          <div
+            className="bx--toolbar card--toolbar"
+          >
+            <button
+              className="card--toolbar-action Card__TinyButton-v5r71h-4 fggzfz bx--btn bx--btn--sm bx--btn--ghost"
+              disabled={false}
+              onClick={[Function]}
+              tabIndex={0}
+              title="Expand to fullscreen"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                aria-label="Expand to fullscreen"
+                className="bx--btn__icon"
+                focusable="false"
+                height={20}
+                preserveAspectRatio="xMidYMid meet"
+                role="img"
+                style={
+                  Object {
+                    "willChange": "transform",
+                  }
+                }
+                viewBox="0 0 32 32"
+                width={20}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M28 4H10a2.006 2.006 0 0 0-2 2v14a2.006 2.006 0 0 0 2 2h18a2.006 2.006 0 0 0 2-2V6a2.006 2.006 0 0 0-2-2zm0 16H10V6h18z"
+                />
+                <path
+                  d="M18 26H4V16h2v-2H4a2.006 2.006 0 0 0-2 2v10a2.006 2.006 0 0 0 2 2h14a2.006 2.006 0 0 0 2-2v-2h-2z"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div
+          className="Card__CardContent-v5r71h-1 fabdLf"
+        >
+          <div
+            className="ImageCard__ContentWrapper-sc-1p2j9dm-0 jJnAwR"
+          >
+            <div
+              onBlur={[Function]}
+              onMouseOut={[Function]}
+              style={
+                Object {
+                  "background": "#eee",
+                  "height": "100%",
+                  "overflow": "hidden",
+                  "position": "relative",
+                  "textAlign": "center",
+                  "width": "100%",
+                }
+              }
+            >
+              <img
+                alt="Sample image"
+                onLoad={[Function]}
+                onMouseDown={[Function]}
+                onMouseMove={[Function]}
+                onMouseUp={[Function]}
+                src="landscape.jpg"
+                style={
+                  Object {
+                    "left": undefined,
+                    "position": "relative",
+                    "top": undefined,
+                  }
+                }
+              />
+              <div
+                style={
+                  Object {
+                    "left": undefined,
+                    "margin": "auto",
+                    "pointerEvents": "none",
+                    "position": "absolute",
+                    "right": "auto",
+                    "top": undefined,
+                  }
+                }
+              >
+                <div
+                  className="Hotspot__StyledHotspot-nlpwmi-0 fvESgj"
+                >
+                  <div
+                    aria-describedby={null}
+                    aria-haspopup="true"
+                    aria-labelledby="hotspot-35-65"
+                    className="bx--tooltip__label"
+                    id="hotspot-35-65"
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    onMouseOut={[Function]}
+                    onMouseOver={[Function]}
+                    role="button"
+                    tabIndex={0}
+                  >
+                    <svg
+                      aria-label=""
+                      fill="blue"
+                      fillRule="evenodd"
+                      height="25"
+                      role="img"
+                      viewBox="0 0 14 16"
+                      width="25"
+                    >
+                      <title>
+                        
+                      </title>
+                      <path
+                        d="M8 11.953l3.905-4.09 1.453 1.374L7 16 .635 9.238l1.452-1.376L6 11.954V0h2v11.953z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  className="Hotspot__StyledHotspot-nlpwmi-0 kwumIH"
+                >
+                  <div
+                    aria-describedby={null}
+                    aria-haspopup="true"
+                    aria-labelledby="hotspot-45-25"
+                    className="bx--tooltip__label"
+                    id="hotspot-45-25"
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    onMouseOut={[Function]}
+                    onMouseOver={[Function]}
+                    role="button"
+                    tabIndex={0}
+                  >
+                    <svg
+                      height={25}
+                      width={25}
+                    >
+                      <circle
+                        cx={12.5}
+                        cy={12.5}
+                        fill="none"
+                        opacity="1"
+                        r={11.5}
+                        stroke="white"
+                        strokeWidth="2"
+                      />
+                      <circle
+                        cx={12.5}
+                        cy={12.5}
+                        fill="#0f0"
+                        opacity="0.7"
+                        r={11.5}
+                        stroke="none"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  className="Hotspot__StyledHotspot-nlpwmi-0 eqtfro"
+                >
+                  <div
+                    aria-describedby={null}
+                    aria-haspopup="true"
+                    aria-labelledby="hotspot-45-50"
+                    className="bx--tooltip__label"
+                    id="hotspot-45-50"
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    onMouseOut={[Function]}
+                    onMouseOver={[Function]}
+                    role="button"
+                    tabIndex={0}
+                  >
+                    <svg
+                      height={25}
+                      width={25}
+                    >
+                      <circle
+                        cx={12.5}
+                        cy={12.5}
+                        fill="none"
+                        opacity="1"
+                        r={11.5}
+                        stroke="white"
+                        strokeWidth="2"
+                      />
+                      <circle
+                        cx={12.5}
+                        cy={12.5}
+                        fill="#00f"
+                        opacity="0.7"
+                        r={11.5}
+                        stroke="none"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  className="Hotspot__StyledHotspot-nlpwmi-0 ezcTmr"
+                >
+                  <div
+                    aria-describedby={null}
+                    aria-haspopup="true"
+                    aria-labelledby="hotspot-45-75"
+                    className="bx--tooltip__label"
+                    id="hotspot-45-75"
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    onMouseOut={[Function]}
+                    onMouseOver={[Function]}
+                    role="button"
+                    tabIndex={0}
+                  >
+                    <svg
+                      aria-label=""
+                      fill="blue"
+                      fillRule="evenodd"
+                      height="25"
+                      role="img"
+                      viewBox="0 0 14 16"
+                      width="25"
+                    >
+                      <title>
+                        
+                      </title>
+                      <path
+                        d="M5.993 4.047l-3.905 4.09L.635 6.763 6.992 0l6.366 6.762-1.452 1.376-3.913-4.092V16h-2V4.047z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div
+                style={
+                  Object {
+                    "bottom": 10,
+                    "pointerEvents": "auto",
+                    "position": "absolute",
+                    "right": 10,
+                  }
+                }
+              >
+                <button
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "background": "#fff",
+                      "border": "none",
+                      "boxShadow": "0px 0px 2px 0px rgba(0,0,0,0.5)",
+                      "height": "25px",
+                      "width": "25px",
+                    }
+                  }
+                  type="button"
+                >
+                  +
+                </button>
+                <br />
+                <button
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "background": "#fff",
+                      "border": "none",
+                      "boxShadow": "0px 0px 2px 0px rgba(0,0,0,0.5)",
+                      "height": "25px",
+                      "width": "25px",
+                    }
+                  }
+                  type="button"
+                >
+                  -
+                </button>
+              </div>
+              <div
+                style={
+                  Object {
+                    "background": "#fff",
+                    "bottom": 10,
+                    "boxShadow": "0px 0px 2px 0px rgba(0,0,0,0.5)",
+                    "display": "block",
+                    "height": null,
+                    "left": 10,
+                    "pointerEvents": "none",
+                    "position": "absolute",
+                    "width": null,
+                  }
+                }
+              >
+                <img
+                  alt="Minimap"
+                  height={null}
+                  src="landscape.jpg"
+                  width={null}
+                />
+                <div
+                  style={
+                    Object {
+                      "background": "rgba(64, 139, 252, 0.1)",
+                      "border": "1px solid rgba(64, 139, 252, 0.8)",
+                      "display": "block",
+                      "height": null,
+                      "left": 0,
+                      "pointerEvents": "none",
+                      "position": "absolute",
+                      "top": 0,
+                      "width": null,
+                    }
+                  }
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ImageCard error 1`] = `
+<div
+  className="storybook-container"
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "flexDirection": "column",
+      "padding": "3rem",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "margin": 20,
+          "width": "1056px",
+        }
+      }
+    >
+      <div
+        className="Card__CardWrapper-v5r71h-0 kGdXdI"
+        id="image-hotspots"
+      >
+        <div
+          className="card--header"
+        >
+          <span
+            className="card--title"
+            title="Image"
+          >
+            Image
+             
+          </span>
+          <div
+            className="bx--toolbar card--toolbar"
+          >
+            <button
+              className="card--toolbar-action Card__TinyButton-v5r71h-4 fggzfz bx--btn bx--btn--sm bx--btn--ghost"
+              disabled={false}
+              onClick={[Function]}
+              tabIndex={0}
+              title="Expand to fullscreen"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                aria-label="Expand to fullscreen"
+                className="bx--btn__icon"
+                focusable="false"
+                height={20}
+                preserveAspectRatio="xMidYMid meet"
+                role="img"
+                style={
+                  Object {
+                    "willChange": "transform",
+                  }
+                }
+                viewBox="0 0 32 32"
+                width={20}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M28 4H10a2.006 2.006 0 0 0-2 2v14a2.006 2.006 0 0 0 2 2h18a2.006 2.006 0 0 0 2-2V6a2.006 2.006 0 0 0-2-2zm0 16H10V6h18z"
+                />
+                <path
+                  d="M18 26H4V16h2v-2H4a2.006 2.006 0 0 0-2 2v10a2.006 2.006 0 0 0 2 2h14a2.006 2.006 0 0 0 2-2v-2h-2z"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div
+          className="Card__CardContent-v5r71h-1 fabdLf"
+        >
+          <div
+            className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
+          >
+            Error loading data for this card:  API threw Nullpointer
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ImageCard error loading image 1`] = `
+<div
+  className="storybook-container"
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "flexDirection": "column",
+      "padding": "3rem",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "margin": 20,
+          "width": "1056px",
+        }
+      }
+    >
+      <div
+        className="Card__CardWrapper-v5r71h-0 kGdXdI"
+        id="image-hotspots"
+      >
+        <div
+          className="card--header"
+        >
+          <span
+            className="card--title"
+            title="Image"
+          >
+            Image
+             
+          </span>
+          <div
+            className="bx--toolbar card--toolbar"
+          >
+            <button
+              className="card--toolbar-action Card__TinyButton-v5r71h-4 fggzfz bx--btn bx--btn--sm bx--btn--ghost"
+              disabled={false}
+              onClick={[Function]}
+              tabIndex={0}
+              title="Expand to fullscreen"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                aria-label="Expand to fullscreen"
+                className="bx--btn__icon"
+                focusable="false"
+                height={20}
+                preserveAspectRatio="xMidYMid meet"
+                role="img"
+                style={
+                  Object {
+                    "willChange": "transform",
+                  }
+                }
+                viewBox="0 0 32 32"
+                width={20}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M28 4H10a2.006 2.006 0 0 0-2 2v14a2.006 2.006 0 0 0 2 2h18a2.006 2.006 0 0 0 2-2V6a2.006 2.006 0 0 0-2-2zm0 16H10V6h18z"
+                />
+                <path
+                  d="M18 26H4V16h2v-2H4a2.006 2.006 0 0 0-2 2v10a2.006 2.006 0 0 0 2 2h14a2.006 2.006 0 0 0 2-2v-2h-2z"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div
+          className="Card__CardContent-v5r71h-1 fabdLf"
+        >
+          <div
+            className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
+          >
+            Error loading data for this card:  Error no image found called ImageID
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ImageCard hotspots are loading 1`] = `
+<div
+  className="storybook-container"
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "flexDirection": "column",
+      "padding": "3rem",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "margin": 20,
+          "width": "1056px",
+        }
+      }
+    >
+      <div
+        className="Card__CardWrapper-v5r71h-0 kGdXdI"
+        id="image-hotspots"
+      >
+        <div
+          className="card--header"
+        >
+          <span
+            className="card--title"
+            title="Image"
+          >
+            Image
+             
+          </span>
+          <div
+            className="bx--toolbar card--toolbar"
+          >
+            <button
+              className="card--toolbar-action Card__TinyButton-v5r71h-4 fggzfz bx--btn bx--btn--sm bx--btn--ghost"
+              disabled={false}
+              onClick={[Function]}
+              tabIndex={0}
+              title="Expand to fullscreen"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                aria-label="Expand to fullscreen"
+                className="bx--btn__icon"
+                focusable="false"
+                height={20}
+                preserveAspectRatio="xMidYMid meet"
+                role="img"
+                style={
+                  Object {
+                    "willChange": "transform",
+                  }
+                }
+                viewBox="0 0 32 32"
+                width={20}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M28 4H10a2.006 2.006 0 0 0-2 2v14a2.006 2.006 0 0 0 2 2h18a2.006 2.006 0 0 0 2-2V6a2.006 2.006 0 0 0-2-2zm0 16H10V6h18z"
+                />
+                <path
+                  d="M18 26H4V16h2v-2H4a2.006 2.006 0 0 0-2 2v10a2.006 2.006 0 0 0 2 2h14a2.006 2.006 0 0 0 2-2v-2h-2z"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div
+          className="Card__CardContent-v5r71h-1 fabdLf"
+        >
+          <div
+            className="ImageCard__ContentWrapper-sc-1p2j9dm-0 jJnAwR"
+          >
+            <div
+              onBlur={[Function]}
+              onMouseOut={[Function]}
+              style={
+                Object {
+                  "background": "#eee",
+                  "height": "100%",
+                  "overflow": "hidden",
+                  "position": "relative",
+                  "textAlign": "center",
+                  "width": "100%",
+                }
+              }
+            >
+              <img
+                alt="Sample image"
+                onLoad={[Function]}
+                onMouseDown={[Function]}
+                onMouseMove={[Function]}
+                onMouseUp={[Function]}
+                src="landscape.jpg"
+                style={
+                  Object {
+                    "left": undefined,
+                    "position": "relative",
+                    "top": undefined,
+                  }
+                }
+              />
+              <div
+                aria-live="assertive"
+                className="bx--inline-loading"
+                style={
+                  Object {
+                    "position": "absolute",
+                    "top": 0,
+                  }
+                }
+              >
+                <div
+                  className="bx--inline-loading__animation"
+                >
+                  <div
+                    aria-atomic="true"
+                    aria-labelledby="loading-id-5"
+                    aria-live="assertive"
+                    className="bx--loading bx--loading--small"
+                  >
+                    <label
+                      className="bx--visually-hidden"
+                      id="loading-id-5"
+                    >
+                      Active loading indicator
+                    </label>
+                    <svg
+                      className="bx--loading__svg"
+                      viewBox="-75 -75 150 150"
+                    >
+                      <title>
+                        Active loading indicator
+                      </title>
+                      <circle
+                        className="bx--loading__background"
+                        cx="0"
+                        cy="0"
+                        r="26.8125"
+                      />
+                      <circle
+                        className="bx--loading__stroke"
+                        cx="0"
+                        cy="0"
+                        r="26.8125"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  className="bx--inline-loading__text"
+                >
+                  Loading hotspot data...
+                </div>
+              </div>
+              <div
+                style={
+                  Object {
+                    "bottom": 10,
+                    "pointerEvents": "auto",
+                    "position": "absolute",
+                    "right": 10,
+                  }
+                }
+              >
+                <button
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "background": "#fff",
+                      "border": "none",
+                      "boxShadow": "0px 0px 2px 0px rgba(0,0,0,0.5)",
+                      "height": "25px",
+                      "width": "25px",
+                    }
+                  }
+                  type="button"
+                >
+                  +
+                </button>
+                <br />
+                <button
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "background": "#fff",
+                      "border": "none",
+                      "boxShadow": "0px 0px 2px 0px rgba(0,0,0,0.5)",
+                      "height": "25px",
+                      "width": "25px",
+                    }
+                  }
+                  type="button"
+                >
+                  -
+                </button>
+              </div>
+              <div
+                style={
+                  Object {
+                    "background": "#fff",
+                    "bottom": 10,
+                    "boxShadow": "0px 0px 2px 0px rgba(0,0,0,0.5)",
+                    "display": "block",
+                    "height": null,
+                    "left": 10,
+                    "pointerEvents": "none",
+                    "position": "absolute",
+                    "width": null,
+                  }
+                }
+              >
+                <img
+                  alt="Minimap"
+                  height={null}
+                  src="landscape.jpg"
+                  width={null}
+                />
+                <div
+                  style={
+                    Object {
+                      "background": "rgba(64, 139, 252, 0.1)",
+                      "border": "1px solid rgba(64, 139, 252, 0.8)",
+                      "display": "block",
+                      "height": null,
+                      "left": 0,
+                      "pointerEvents": "none",
+                      "position": "absolute",
+                      "top": 0,
+                      "width": null,
+                    }
+                  }
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ImageCard isEditable 1`] = `
+<div
+  className="storybook-container"
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "flexDirection": "column",
+      "padding": "3rem",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "margin": 20,
+          "width": "1056px",
+        }
+      }
+    >
+      <div
+        className="Card__CardWrapper-v5r71h-0 kGdXdI"
+        id="image-hotspots"
+      >
+        <div
+          className="card--header"
+        >
+          <span
+            className="card--title"
+            title="Image"
+          >
+            Image
+             
+          </span>
+          <div
+            className="bx--toolbar card--toolbar"
+          >
+            <button
+              className="card--toolbar-action Card__TinyButton-v5r71h-4 fggzfz bx--btn bx--btn--sm bx--btn--ghost"
+              disabled={false}
+              onClick={[Function]}
+              tabIndex={0}
+              title="Expand to fullscreen"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                aria-label="Expand to fullscreen"
+                className="bx--btn__icon"
+                focusable="false"
+                height={20}
+                preserveAspectRatio="xMidYMid meet"
+                role="img"
+                style={
+                  Object {
+                    "willChange": "transform",
+                  }
+                }
+                viewBox="0 0 32 32"
+                width={20}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M28 4H10a2.006 2.006 0 0 0-2 2v14a2.006 2.006 0 0 0 2 2h18a2.006 2.006 0 0 0 2-2V6a2.006 2.006 0 0 0-2-2zm0 16H10V6h18z"
+                />
+                <path
+                  d="M18 26H4V16h2v-2H4a2.006 2.006 0 0 0-2 2v10a2.006 2.006 0 0 0 2 2h14a2.006 2.006 0 0 0 2-2v-2h-2z"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div
+          className="Card__CardContent-v5r71h-1 fabdLf"
+        >
+          <div
+            className="ImageCard__ContentWrapper-sc-1p2j9dm-0 jJnAwR"
+          >
+            <div
+              className="ImageCard__EmptyDiv-sc-1p2j9dm-1 dkLZTG"
+            >
+              <svg
+                aria-hidden={true}
+                fill="gray"
+                focusable="false"
+                height={250}
+                preserveAspectRatio="xMidYMid meet"
+                style={
+                  Object {
+                    "willChange": "transform",
+                  }
+                }
+                viewBox="0 0 32 32"
+                width={250}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M19 14a3 3 0 1 0-3-3 3 3 0 0 0 3 3zm0-4a1 1 0 1 1-1 1 1 1 0 0 1 1-1z"
+                />
+                <path
+                  d="M26 4H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h20a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 22H6v-6l5-5 5.59 5.59a2 2 0 0 0 2.82 0L21 19l5 5zm0-4.83l-3.59-3.59a2 2 0 0 0-2.82 0L18 19.17l-5.59-5.59a2 2 0 0 0-2.82 0L6 17.17V6h20z"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;

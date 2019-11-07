@@ -189,6 +189,13 @@ export const ImageCardPropTypes = {
   }),
 };
 
+export const CustomCardPropTypes = {
+  content: PropTypes.shape({
+    element: PropTypes.element,
+  }).isRequired,
+  cardClick: PropTypes.func,
+};
+
 export const PieCardPropTypes = DonutCardPropTypes;
 
 export const DashboardLayoutPropTypes = PropTypes.shape({

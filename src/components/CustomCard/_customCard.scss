@@ -1,0 +1,8 @@
+@import '~carbon-components/scss/globals/scss/vars';
+
+.customCard {
+  .card--header {
+    display: none;
+  }
+  overflow: auto;
+}

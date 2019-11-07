@@ -27,6 +27,7 @@ export const CARD_TYPES = {
   DONUT: 'DONUT',
   PIE: 'PIE',
   BAR: 'BAR',
+  CUSTOM: 'CUSTOM',
 };
 
 export const DASHBOARD_SIZES = {

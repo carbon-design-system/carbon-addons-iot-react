@@ -7,6 +7,7 @@ import useDeepCompareEffect from 'use-deep-compare-effect';
 import ValueCard from '../ValueCard/ValueCard';
 import ImageCard from '../ImageCard/ImageCard';
 import TableCard from '../TableCard/TableCard';
+import CustomCard from '../CustomCard/CustomCard';
 import TimeSeriesCard from '../TimeSeriesCard/TimeSeriesCard';
 import { CARD_TYPES } from '../../constants/LayoutConstants';
 import { determineCardRange, compareGrains } from '../../utils/cardUtilityFunctions';
@@ -71,6 +72,7 @@ const CardRenderer = React.memo(
     onFetchData, // eslint-disable-line
     onSetupCard, // eslint-disable-line
     timeGrain, // eslint-disable-line
+    cardClicked, //eslint-disable-line
     ...gridProps
   }) => {
     /**
@@ -192,6 +194,24 @@ const CardRenderer = React.memo(
             i18n={i18n}
             isEditable={isEditable}
             onCardAction={cachedOnCardAction}
+            breakpoint={breakpoint}
+            dashboardBreakpoints={dashboardBreakpoints}
+            dashboardColumns={dashboardColumns}
+            cardDimensions={cardDimensions}
+            rowHeight={rowHeight}
+          />
+        ) : type === CARD_TYPES.CUSTOM ? (
+          <CustomCard
+            {...card}
+            key={card.id}
+            availableActions={cachedActions}
+            dataSource={dataSource}
+            isExpanded={isExpanded}
+            type={type}
+            i18n={i18n}
+            isEditable={isEditable}
+            onCardAction={cachedOnCardAction}
+            cardClicked={cardClicked}
             breakpoint={breakpoint}
             dashboardBreakpoints={dashboardBreakpoints}
             dashboardColumns={dashboardColumns}
