@@ -32,7 +32,7 @@
     }
   },
   "dependencies": {
-    "@carbon/charts": "https://github.com/scottdickerson/carbon-charts#carbon-charts-v0.16.26-gitpkg",
+    "@carbon/charts": "https://github.com/scottdickerson/carbon-charts#carbon-charts-v0.16.27-gitpkg",
     "@carbon/charts-react": "^0.16.25",
     "@carbon/colors": "^10.1.0",
     "ajv": "^6.10.2",
@@ -188,7 +188,7 @@
     "concurrent": false
   },
   "resolutions": {
-    "@carbon/charts": "https://github.com/scottdickerson/carbon-charts#carbon-charts-v0.16.26-gitpkg"
+    "@carbon/charts": "https://github.com/scottdickerson/carbon-charts#carbon-charts-v0.16.27-gitpkg"
   },
   "version": "0.0.0-development"
 }
