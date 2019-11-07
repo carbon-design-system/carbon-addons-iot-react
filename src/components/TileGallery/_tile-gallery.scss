@@ -1,0 +1,215 @@
+@import '~carbon-components/scss/globals/scss/vars';
+@import '~carbon-components/scss/globals/scss/typography';
+
+.tile-gallery {
+  &--favorites {
+    font-size: 1rem;
+    font-weight: bold;
+    border-bottom: rem(1px) solid $ui-03;
+    padding-bottom: 1.5rem;
+    padding-top: 1.5rem;
+  }
+  &--controls {
+    display: flex;
+    flex-grow: 1;
+    justify-content: flex-end;
+    align-items: center;
+    &--search {
+      .#{$prefix}--search-input {
+        height: 2.5rem;
+        font-size: 0.875rem;
+      }
+    }
+    & > * {
+      margin-left: 1rem;
+    }
+    .bx--form-item {
+      flex-grow: 0;
+      flex-basis: 20rem;
+    }
+    .bx--content-switcher {
+      width: 10rem;
+    }
+    .bx--content-switcher-btn {
+      padding: 0 1rem;
+      width: 5rem;
+    }
+  }
+  .accordion {
+    .bx--accordion__title {
+      font-size: 1rem;
+      font-weight: bold;
+    }
+    .bx--accordion__item:last-child {
+      border-bottom: none;
+    }
+    .bx--accordion__item {
+      border-top: none;
+    }
+    .bx--accordion__heading {
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: rem(1px) solid $ui-03;
+      flex-direction: row;
+    }
+  }
+}
+
+.empty-state {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.dashboard-tile {
+  text-decoration: none;
+  margin-right: 1rem;
+  height: rem(128px);
+  flex-basis: 30%;
+  min-width: rem(200px);
+  position: relative;
+  margin-top: 1rem;
+  box-shadow: none;
+  border: solid rem(1px) $ui-background;
+  .top {
+    display: flex;
+    align-items: center;
+    line-height: 2rem;
+    margin-bottom: 0.375rem;
+    margin-top: -0.5rem;
+  }
+  &-add {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    max-width: rem(200px);
+    justify-content: space-between;
+    font-weight: 700;
+    > svg {
+      align-self: flex-end;
+    }
+  }
+  .title {
+    font-weight: bold;
+    flex: 1;
+    padding-right: 1rem;
+    color: $text-01;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow-x: hidden;
+  }
+  .options {
+    flex: 0;
+    color: $text-01;
+    .bx--overflow-menu {
+      height: 2rem;
+      margin-right: -0.5rem;
+    }
+    .bx--inline-loading {
+      flex-direction: row-reverse;
+      margin-left: 0.5rem;
+    }
+    .bx--inline-loading__text {
+      margin-bottom: 0;
+    }
+  }
+  .dimensions,
+  .time,
+  .description {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow-x: hidden;
+  }
+  small {
+    color: $text-01;
+  }
+}
+
+.titlePinned {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-weight: bold;
+  .summary-text {
+    color: $text-01;
+  }
+  .summary-pin-name {
+    color: $link-01;
+  }
+}
+
+.overflowMenu {
+  margin-top: -0.5rem;
+  margin-left: auto;
+}
+
+.dashboard-pin-card-title {
+  height: 16rem;
+  flex: 0 0 16rem;
+  .topSection {
+    display: flex;
+    justify-content: center;
+    background: $ui-02;
+    align-items: center;
+    margin-bottom: 0.9375rem;
+    height: 12rem;
+    position: relative;
+    width: 100%;
+  }
+  .image {
+    display: block;
+    padding-left: rem(5px);
+  }
+  .descriptionPinned {
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    transition: 0.5s ease;
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    span {
+      color: $ui-background;
+    }
+  }
+  .descriptionPinned:hover {
+    background: rgba(41, 41, 41, 0.8);
+    opacity: 1;
+  }
+  .titlePinned {
+    margin-left: 0.5rem;
+    width: 11rem;
+    margin-top: 0.125rem;
+  }
+}
+
+.dashboard-pin-list-title {
+  height: 5.9375rem;
+  flex: 0 0 31.25rem;
+  box-shadow: none;
+  border-bottom: 0.0625rem solid rgb(223, 227, 230);
+  background: $ui-01;
+  &:hover {
+    background: $ui-03;
+    border: none;
+  }
+  .titlePinned {
+    margin-left: 0.9375rem;
+    margin-top: 0.125rem;
+  }
+  .descriptionPinned {
+    padding-left: 2rem;
+    // color: '#717e87'
+    color: $ui-04;
+  }
+}
+
+.dashboard-pin-share-link-toast {
+  width: unset;
+}
