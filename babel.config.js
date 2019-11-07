@@ -6,7 +6,7 @@ module.exports = function generateConfig(api) {
         '@babel/preset-env',
         {
           targets: {
-            browsers: ['last 1 version', 'ie >= 11'],
+            browsers: ['last 2 version', 'ie >= 11'],
           },
           useBuiltIns: 'usage',
           corejs: 2,
