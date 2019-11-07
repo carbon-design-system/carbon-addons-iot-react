@@ -2843,9 +2843,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
               open={false}
               role="button"
               tabIndex={0}
+              title="Open and close list of options"
             >
               <svg
-                aria-label="open and close list of options"
+                aria-label="Open and close list of options"
                 className="bx--overflow-menu__icon"
                 focusable="false"
                 height={20}
@@ -2872,7 +2873,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
                   d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
                 />
                 <title>
-                  open and close list of options
+                  Open and close list of options
                 </title>
               </svg>
             </div>

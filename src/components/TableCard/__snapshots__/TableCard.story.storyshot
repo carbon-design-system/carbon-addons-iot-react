@@ -3010,9 +3010,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
               open={false}
               role="button"
               tabIndex={0}
+              title="Open and close list of options"
             >
               <svg
-                aria-label="open and close list of options"
+                aria-label="Open and close list of options"
                 className="bx--overflow-menu__icon"
                 focusable="false"
                 height={20}
@@ -3039,7 +3040,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
                 />
                 <title>
-                  open and close list of options
+                  Open and close list of options
                 </title>
               </svg>
             </div>
@@ -3577,9 +3578,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
               open={false}
               role="button"
               tabIndex={0}
+              title="Open and close list of options"
             >
               <svg
-                aria-label="open and close list of options"
+                aria-label="Open and close list of options"
                 className="bx--overflow-menu__icon"
                 focusable="false"
                 height={20}
@@ -3606,7 +3608,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
                 />
                 <title>
-                  open and close list of options
+                  Open and close list of options
                 </title>
               </svg>
             </div>
@@ -3853,16 +3855,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </th>
                   <th
                     aria-sort="none"
-                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 fYPovf"
+                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 agCfw"
                     scope="col"
                   >
                     <button
                       align="start"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 fYPovf bx--table-sort"
+                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 agCfw bx--table-sort"
                       data-column="iconColumn-count"
                       id="column-iconColumn-count"
                       onClick={[Function]}
-                      width="200px"
+                      width="200pxpx"
                     >
                       <span
                         className="bx--table-header-label"
@@ -4045,16 +4047,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </th>
                   <th
                     aria-sort="none"
-                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 fYPovf"
+                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 agCfw"
                     scope="col"
                   >
                     <button
                       align="start"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 fYPovf bx--table-sort"
+                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 agCfw bx--table-sort"
                       data-column="iconColumn-pressure"
                       id="column-iconColumn-pressure"
                       onClick={[Function]}
-                      width="200px"
+                      width="200pxpx"
                     >
                       <span
                         className="bx--table-header-label"
@@ -4201,12 +4203,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </td>
                   <td
                     align="start"
-                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jcUMAM"
+                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 eVzASG"
                     data-column="iconColumn-count"
                     data-offset={0}
                     id="cell-Table-row-11-iconColumn-count"
                     offset={0}
-                    width="200px"
+                    width="200pxpx"
                   >
                     <span
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
@@ -4252,12 +4254,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </td>
                   <td
                     align="start"
-                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jcUMAM"
+                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 eVzASG"
                     data-column="iconColumn-pressure"
                     data-offset={0}
                     id="cell-Table-row-11-iconColumn-pressure"
                     offset={0}
-                    width="200px"
+                    width="200pxpx"
                   >
                     <span
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
@@ -4302,12 +4304,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </td>
                   <td
                     align="start"
-                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jcUMAM"
+                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 eVzASG"
                     data-column="iconColumn-count"
                     data-offset={0}
                     id="cell-Table-row-10-iconColumn-count"
                     offset={0}
-                    width="200px"
+                    width="200pxpx"
                   >
                     <span
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
@@ -4400,12 +4402,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </td>
                   <td
                     align="start"
-                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jcUMAM"
+                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 eVzASG"
                     data-column="iconColumn-pressure"
                     data-offset={0}
                     id="cell-Table-row-10-iconColumn-pressure"
                     offset={0}
-                    width="200px"
+                    width="200pxpx"
                   >
                     <span
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
@@ -4450,12 +4452,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </td>
                   <td
                     align="start"
-                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jcUMAM"
+                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 eVzASG"
                     data-column="iconColumn-count"
                     data-offset={0}
                     id="cell-Table-row-1-iconColumn-count"
                     offset={0}
-                    width="200px"
+                    width="200pxpx"
                   >
                     <span
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
@@ -4548,12 +4550,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </td>
                   <td
                     align="start"
-                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jcUMAM"
+                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 eVzASG"
                     data-column="iconColumn-pressure"
                     data-offset={0}
                     id="cell-Table-row-1-iconColumn-pressure"
                     offset={0}
-                    width="200px"
+                    width="200pxpx"
                   >
                     <span
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
@@ -4598,12 +4600,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </td>
                   <td
                     align="start"
-                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jcUMAM"
+                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 eVzASG"
                     data-column="iconColumn-count"
                     data-offset={0}
                     id="cell-Table-row-2-iconColumn-count"
                     offset={0}
-                    width="200px"
+                    width="200pxpx"
                   >
                     <span
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
@@ -4696,12 +4698,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </td>
                   <td
                     align="start"
-                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jcUMAM"
+                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 eVzASG"
                     data-column="iconColumn-pressure"
                     data-offset={0}
                     id="cell-Table-row-2-iconColumn-pressure"
                     offset={0}
-                    width="200px"
+                    width="200pxpx"
                   >
                     <span
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
@@ -4746,12 +4748,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </td>
                   <td
                     align="start"
-                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jcUMAM"
+                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 eVzASG"
                     data-column="iconColumn-count"
                     data-offset={0}
                     id="cell-Table-row-6-iconColumn-count"
                     offset={0}
-                    width="200px"
+                    width="200pxpx"
                   >
                     <span
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
@@ -4842,12 +4844,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </td>
                   <td
                     align="start"
-                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jcUMAM"
+                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 eVzASG"
                     data-column="iconColumn-pressure"
                     data-offset={0}
                     id="cell-Table-row-6-iconColumn-pressure"
                     offset={0}
-                    width="200px"
+                    width="200pxpx"
                   >
                     <span
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
@@ -4892,12 +4894,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </td>
                   <td
                     align="start"
-                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jcUMAM"
+                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 eVzASG"
                     data-column="iconColumn-count"
                     data-offset={0}
                     id="cell-Table-row-4-iconColumn-count"
                     offset={0}
-                    width="200px"
+                    width="200pxpx"
                   >
                     <span
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
@@ -4943,12 +4945,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </td>
                   <td
                     align="start"
-                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jcUMAM"
+                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 eVzASG"
                     data-column="iconColumn-pressure"
                     data-offset={0}
                     id="cell-Table-row-4-iconColumn-pressure"
                     offset={0}
-                    width="200px"
+                    width="200pxpx"
                   >
                     <span
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
@@ -4993,12 +4995,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </td>
                   <td
                     align="start"
-                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jcUMAM"
+                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 eVzASG"
                     data-column="iconColumn-count"
                     data-offset={0}
                     id="cell-Table-row-8-iconColumn-count"
                     offset={0}
-                    width="200px"
+                    width="200pxpx"
                   >
                     <span
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
@@ -5089,12 +5091,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </td>
                   <td
                     align="start"
-                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jcUMAM"
+                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 eVzASG"
                     data-column="iconColumn-pressure"
                     data-offset={0}
                     id="cell-Table-row-8-iconColumn-pressure"
                     offset={0}
-                    width="200px"
+                    width="200pxpx"
                   >
                     <span
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
@@ -5139,12 +5141,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </td>
                   <td
                     align="start"
-                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jcUMAM"
+                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 eVzASG"
                     data-column="iconColumn-count"
                     data-offset={0}
                     id="cell-Table-row-9-iconColumn-count"
                     offset={0}
-                    width="200px"
+                    width="200pxpx"
                   >
                     <span
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
@@ -5237,12 +5239,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </td>
                   <td
                     align="start"
-                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jcUMAM"
+                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 eVzASG"
                     data-column="iconColumn-pressure"
                     data-offset={0}
                     id="cell-Table-row-9-iconColumn-pressure"
                     offset={0}
-                    width="200px"
+                    width="200pxpx"
                   >
                     <span
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
@@ -5287,12 +5289,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </td>
                   <td
                     align="start"
-                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jcUMAM"
+                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 eVzASG"
                     data-column="iconColumn-count"
                     data-offset={0}
                     id="cell-Table-row-3-iconColumn-count"
                     offset={0}
-                    width="200px"
+                    width="200pxpx"
                   >
                     <span
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
@@ -5385,12 +5387,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </td>
                   <td
                     align="start"
-                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jcUMAM"
+                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 eVzASG"
                     data-column="iconColumn-pressure"
                     data-offset={0}
                     id="cell-Table-row-3-iconColumn-pressure"
                     offset={0}
-                    width="200px"
+                    width="200pxpx"
                   >
                     <span
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
@@ -5486,12 +5488,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </td>
                   <td
                     align="start"
-                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jcUMAM"
+                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 eVzASG"
                     data-column="iconColumn-count"
                     data-offset={0}
                     id="cell-Table-row-5-iconColumn-count"
                     offset={0}
-                    width="200px"
+                    width="200pxpx"
                   >
                     <span
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
@@ -5582,12 +5584,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </td>
                   <td
                     align="start"
-                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jcUMAM"
+                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 eVzASG"
                     data-column="iconColumn-pressure"
                     data-offset={0}
                     id="cell-Table-row-5-iconColumn-pressure"
                     offset={0}
-                    width="200px"
+                    width="200pxpx"
                   >
                     <span
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
@@ -5980,9 +5982,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
               open={false}
               role="button"
               tabIndex={0}
+              title="Open and close list of options"
             >
               <svg
-                aria-label="open and close list of options"
+                aria-label="Open and close list of options"
                 className="bx--overflow-menu__icon"
                 focusable="false"
                 height={20}
@@ -6009,7 +6012,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
                 />
                 <title>
-                  open and close list of options
+                  Open and close list of options
                 </title>
               </svg>
             </div>
@@ -7314,9 +7317,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
               open={false}
               role="button"
               tabIndex={0}
+              title="Open and close list of options"
             >
               <svg
-                aria-label="open and close list of options"
+                aria-label="Open and close list of options"
                 className="bx--overflow-menu__icon"
                 focusable="false"
                 height={20}
@@ -7343,7 +7347,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
                 />
                 <title>
-                  open and close list of options
+                  Open and close list of options
                 </title>
               </svg>
             </div>
@@ -8649,9 +8653,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
               open={false}
               role="button"
               tabIndex={0}
+              title="Open and close list of options"
             >
               <svg
-                aria-label="open and close list of options"
+                aria-label="Open and close list of options"
                 className="bx--overflow-menu__icon"
                 focusable="false"
                 height={20}
@@ -8678,7 +8683,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
                 />
                 <title>
-                  open and close list of options
+                  Open and close list of options
                 </title>
               </svg>
             </div>
@@ -9499,9 +9504,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
               open={false}
               role="button"
               tabIndex={0}
+              title="Open and close list of options"
             >
               <svg
-                aria-label="open and close list of options"
+                aria-label="Open and close list of options"
                 className="bx--overflow-menu__icon"
                 focusable="false"
                 height={20}
@@ -9528,7 +9534,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
                 />
                 <title>
-                  open and close list of options
+                  Open and close list of options
                 </title>
               </svg>
             </div>
@@ -10349,9 +10355,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
               open={false}
               role="button"
               tabIndex={0}
+              title="Open and close list of options"
             >
               <svg
-                aria-label="open and close list of options"
+                aria-label="Open and close list of options"
                 className="bx--overflow-menu__icon"
                 focusable="false"
                 height={20}
@@ -10378,7 +10385,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
                 />
                 <title>
-                  open and close list of options
+                  Open and close list of options
                 </title>
               </svg>
             </div>
@@ -11904,9 +11911,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
               open={false}
               role="button"
               tabIndex={0}
+              title="Open and close list of options"
             >
               <svg
-                aria-label="open and close list of options"
+                aria-label="Open and close list of options"
                 className="bx--overflow-menu__icon"
                 focusable="false"
                 height={20}
@@ -11933,7 +11941,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
                 />
                 <title>
-                  open and close list of options
+                  Open and close list of options
                 </title>
               </svg>
             </div>
@@ -13460,9 +13468,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
               open={false}
               role="button"
               tabIndex={0}
+              title="Open and close list of options"
             >
               <svg
-                aria-label="open and close list of options"
+                aria-label="Open and close list of options"
                 className="bx--overflow-menu__icon"
                 focusable="false"
                 height={20}
@@ -13489,7 +13498,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
                 />
                 <title>
-                  open and close list of options
+                  Open and close list of options
                 </title>
               </svg>
             </div>
@@ -14794,9 +14803,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
               open={false}
               role="button"
               tabIndex={0}
+              title="Open and close list of options"
             >
               <svg
-                aria-label="open and close list of options"
+                aria-label="Open and close list of options"
                 className="bx--overflow-menu__icon"
                 focusable="false"
                 height={20}
@@ -14823,7 +14833,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
                 />
                 <title>
-                  open and close list of options
+                  Open and close list of options
                 </title>
               </svg>
             </div>
@@ -16736,9 +16746,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
               open={false}
               role="button"
               tabIndex={0}
+              title="Open and close list of options"
             >
               <svg
-                aria-label="open and close list of options"
+                aria-label="Open and close list of options"
                 className="bx--overflow-menu__icon"
                 focusable="false"
                 height={20}
@@ -16765,7 +16776,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
                 />
                 <title>
-                  open and close list of options
+                  Open and close list of options
                 </title>
               </svg>
             </div>
@@ -18434,9 +18445,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
               open={false}
               role="button"
               tabIndex={0}
+              title="Open and close list of options"
             >
               <svg
-                aria-label="open and close list of options"
+                aria-label="Open and close list of options"
                 className="bx--overflow-menu__icon"
                 focusable="false"
                 height={20}
@@ -18463,7 +18475,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
                 />
                 <title>
-                  open and close list of options
+                  Open and close list of options
                 </title>
               </svg>
             </div>
@@ -20096,9 +20108,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
               open={false}
               role="button"
               tabIndex={0}
+              title="Open and close list of options"
             >
               <svg
-                aria-label="open and close list of options"
+                aria-label="Open and close list of options"
                 className="bx--overflow-menu__icon"
                 focusable="false"
                 height={20}
@@ -20125,7 +20138,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
                 />
                 <title>
-                  open and close list of options
+                  Open and close list of options
                 </title>
               </svg>
             </div>
@@ -20372,16 +20385,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </th>
                   <th
                     aria-sort="none"
-                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 fYPovf"
+                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 agCfw"
                     scope="col"
                   >
                     <button
                       align="start"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 fYPovf bx--table-sort"
+                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 agCfw bx--table-sort"
                       data-column="iconColumn-count"
                       id="column-iconColumn-count"
                       onClick={[Function]}
-                      width="200px"
+                      width="200pxpx"
                     >
                       <span
                         className="bx--table-header-label"
@@ -20564,16 +20577,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </th>
                   <th
                     aria-sort="none"
-                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 fYPovf"
+                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 agCfw"
                     scope="col"
                   >
                     <button
                       align="start"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 fYPovf bx--table-sort"
+                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 agCfw bx--table-sort"
                       data-column="iconColumn-pressure"
                       id="column-iconColumn-pressure"
                       onClick={[Function]}
-                      width="200px"
+                      width="200pxpx"
                     >
                       <span
                         className="bx--table-header-label"
@@ -20720,12 +20733,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </td>
                   <td
                     align="start"
-                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jcUMAM"
+                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 eVzASG"
                     data-column="iconColumn-count"
                     data-offset={0}
                     id="cell-Table-row-11-iconColumn-count"
                     offset={0}
-                    width="200px"
+                    width="200pxpx"
                   >
                     <span
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
@@ -20771,12 +20784,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </td>
                   <td
                     align="start"
-                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jcUMAM"
+                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 eVzASG"
                     data-column="iconColumn-pressure"
                     data-offset={0}
                     id="cell-Table-row-11-iconColumn-pressure"
                     offset={0}
-                    width="200px"
+                    width="200pxpx"
                   >
                     <span
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
@@ -20821,12 +20834,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </td>
                   <td
                     align="start"
-                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jcUMAM"
+                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 eVzASG"
                     data-column="iconColumn-count"
                     data-offset={0}
                     id="cell-Table-row-10-iconColumn-count"
                     offset={0}
-                    width="200px"
+                    width="200pxpx"
                   >
                     <span
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
@@ -20919,12 +20932,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </td>
                   <td
                     align="start"
-                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jcUMAM"
+                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 eVzASG"
                     data-column="iconColumn-pressure"
                     data-offset={0}
                     id="cell-Table-row-10-iconColumn-pressure"
                     offset={0}
-                    width="200px"
+                    width="200pxpx"
                   >
                     <span
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
@@ -20969,12 +20982,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </td>
                   <td
                     align="start"
-                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jcUMAM"
+                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 eVzASG"
                     data-column="iconColumn-count"
                     data-offset={0}
                     id="cell-Table-row-1-iconColumn-count"
                     offset={0}
-                    width="200px"
+                    width="200pxpx"
                   >
                     <span
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
@@ -21067,12 +21080,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </td>
                   <td
                     align="start"
-                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jcUMAM"
+                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 eVzASG"
                     data-column="iconColumn-pressure"
                     data-offset={0}
                     id="cell-Table-row-1-iconColumn-pressure"
                     offset={0}
-                    width="200px"
+                    width="200pxpx"
                   >
                     <span
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
@@ -21117,12 +21130,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </td>
                   <td
                     align="start"
-                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jcUMAM"
+                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 eVzASG"
                     data-column="iconColumn-count"
                     data-offset={0}
                     id="cell-Table-row-2-iconColumn-count"
                     offset={0}
-                    width="200px"
+                    width="200pxpx"
                   >
                     <span
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
@@ -21215,12 +21228,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </td>
                   <td
                     align="start"
-                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jcUMAM"
+                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 eVzASG"
                     data-column="iconColumn-pressure"
                     data-offset={0}
                     id="cell-Table-row-2-iconColumn-pressure"
                     offset={0}
-                    width="200px"
+                    width="200pxpx"
                   >
                     <span
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
@@ -21265,12 +21278,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </td>
                   <td
                     align="start"
-                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jcUMAM"
+                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 eVzASG"
                     data-column="iconColumn-count"
                     data-offset={0}
                     id="cell-Table-row-6-iconColumn-count"
                     offset={0}
-                    width="200px"
+                    width="200pxpx"
                   >
                     <span
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
@@ -21361,12 +21374,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </td>
                   <td
                     align="start"
-                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jcUMAM"
+                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 eVzASG"
                     data-column="iconColumn-pressure"
                     data-offset={0}
                     id="cell-Table-row-6-iconColumn-pressure"
                     offset={0}
-                    width="200px"
+                    width="200pxpx"
                   >
                     <span
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
@@ -21411,12 +21424,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </td>
                   <td
                     align="start"
-                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jcUMAM"
+                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 eVzASG"
                     data-column="iconColumn-count"
                     data-offset={0}
                     id="cell-Table-row-4-iconColumn-count"
                     offset={0}
-                    width="200px"
+                    width="200pxpx"
                   >
                     <span
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
@@ -21462,12 +21475,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </td>
                   <td
                     align="start"
-                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jcUMAM"
+                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 eVzASG"
                     data-column="iconColumn-pressure"
                     data-offset={0}
                     id="cell-Table-row-4-iconColumn-pressure"
                     offset={0}
-                    width="200px"
+                    width="200pxpx"
                   >
                     <span
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
@@ -21512,12 +21525,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </td>
                   <td
                     align="start"
-                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jcUMAM"
+                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 eVzASG"
                     data-column="iconColumn-count"
                     data-offset={0}
                     id="cell-Table-row-8-iconColumn-count"
                     offset={0}
-                    width="200px"
+                    width="200pxpx"
                   >
                     <span
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
@@ -21608,12 +21621,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </td>
                   <td
                     align="start"
-                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jcUMAM"
+                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 eVzASG"
                     data-column="iconColumn-pressure"
                     data-offset={0}
                     id="cell-Table-row-8-iconColumn-pressure"
                     offset={0}
-                    width="200px"
+                    width="200pxpx"
                   >
                     <span
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
@@ -21658,12 +21671,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </td>
                   <td
                     align="start"
-                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jcUMAM"
+                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 eVzASG"
                     data-column="iconColumn-count"
                     data-offset={0}
                     id="cell-Table-row-9-iconColumn-count"
                     offset={0}
-                    width="200px"
+                    width="200pxpx"
                   >
                     <span
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
@@ -21756,12 +21769,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </td>
                   <td
                     align="start"
-                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jcUMAM"
+                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 eVzASG"
                     data-column="iconColumn-pressure"
                     data-offset={0}
                     id="cell-Table-row-9-iconColumn-pressure"
                     offset={0}
-                    width="200px"
+                    width="200pxpx"
                   >
                     <span
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
@@ -21806,12 +21819,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </td>
                   <td
                     align="start"
-                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jcUMAM"
+                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 eVzASG"
                     data-column="iconColumn-count"
                     data-offset={0}
                     id="cell-Table-row-3-iconColumn-count"
                     offset={0}
-                    width="200px"
+                    width="200pxpx"
                   >
                     <span
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
@@ -21904,12 +21917,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </td>
                   <td
                     align="start"
-                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jcUMAM"
+                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 eVzASG"
                     data-column="iconColumn-pressure"
                     data-offset={0}
                     id="cell-Table-row-3-iconColumn-pressure"
                     offset={0}
-                    width="200px"
+                    width="200pxpx"
                   >
                     <span
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
@@ -22005,12 +22018,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </td>
                   <td
                     align="start"
-                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jcUMAM"
+                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 eVzASG"
                     data-column="iconColumn-count"
                     data-offset={0}
                     id="cell-Table-row-5-iconColumn-count"
                     offset={0}
-                    width="200px"
+                    width="200pxpx"
                   >
                     <span
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
@@ -22101,12 +22114,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </td>
                   <td
                     align="start"
-                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jcUMAM"
+                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 eVzASG"
                     data-column="iconColumn-pressure"
                     data-offset={0}
                     id="cell-Table-row-5-iconColumn-pressure"
                     offset={0}
-                    width="200px"
+                    width="200pxpx"
                   >
                     <span
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
@@ -22499,9 +22512,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
               open={false}
               role="button"
               tabIndex={0}
+              title="Open and close list of options"
             >
               <svg
-                aria-label="open and close list of options"
+                aria-label="Open and close list of options"
                 className="bx--overflow-menu__icon"
                 focusable="false"
                 height={20}
@@ -22528,7 +22542,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
                 />
                 <title>
-                  open and close list of options
+                  Open and close list of options
                 </title>
               </svg>
             </div>
@@ -22775,16 +22789,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </th>
                   <th
                     aria-sort="none"
-                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 fYPovf"
+                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 agCfw"
                     scope="col"
                   >
                     <button
                       align="start"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 fYPovf bx--table-sort"
+                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 agCfw bx--table-sort"
                       data-column="iconColumn-count"
                       id="column-iconColumn-count"
                       onClick={[Function]}
-                      width="200px"
+                      width="200pxpx"
                     >
                       <span
                         className="bx--table-header-label"
@@ -22967,16 +22981,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </th>
                   <th
                     aria-sort="none"
-                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 fYPovf"
+                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 agCfw"
                     scope="col"
                   >
                     <button
                       align="start"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 fYPovf bx--table-sort"
+                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 agCfw bx--table-sort"
                       data-column="iconColumn-pressure"
                       id="column-iconColumn-pressure"
                       onClick={[Function]}
-                      width="200px"
+                      width="200pxpx"
                     >
                       <span
                         className="bx--table-header-label"
@@ -23123,12 +23137,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </td>
                   <td
                     align="start"
-                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jcUMAM"
+                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 eVzASG"
                     data-column="iconColumn-count"
                     data-offset={0}
                     id="cell-Table-row-3-iconColumn-count"
                     offset={0}
-                    width="200px"
+                    width="200pxpx"
                   >
                     <span
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
@@ -23221,12 +23235,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </td>
                   <td
                     align="start"
-                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jcUMAM"
+                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 eVzASG"
                     data-column="iconColumn-pressure"
                     data-offset={0}
                     id="cell-Table-row-3-iconColumn-pressure"
                     offset={0}
-                    width="200px"
+                    width="200pxpx"
                   >
                     <span
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
@@ -23322,12 +23336,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </td>
                   <td
                     align="start"
-                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jcUMAM"
+                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 eVzASG"
                     data-column="iconColumn-count"
                     data-offset={0}
                     id="cell-Table-row-5-iconColumn-count"
                     offset={0}
-                    width="200px"
+                    width="200pxpx"
                   >
                     <span
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
@@ -23418,12 +23432,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </td>
                   <td
                     align="start"
-                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jcUMAM"
+                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 eVzASG"
                     data-column="iconColumn-pressure"
                     data-offset={0}
                     id="cell-Table-row-5-iconColumn-pressure"
                     offset={0}
-                    width="200px"
+                    width="200pxpx"
                   >
                     <span
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
@@ -23808,9 +23822,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
               open={false}
               role="button"
               tabIndex={0}
+              title="Open and close list of options"
             >
               <svg
-                aria-label="open and close list of options"
+                aria-label="Open and close list of options"
                 className="bx--overflow-menu__icon"
                 focusable="false"
                 height={20}
@@ -23837,7 +23852,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
                 />
                 <title>
-                  open and close list of options
+                  Open and close list of options
                 </title>
               </svg>
             </div>
@@ -24088,16 +24103,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </th>
                   <th
                     aria-sort="none"
-                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 fYPovf"
+                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 agCfw"
                     scope="col"
                   >
                     <button
                       align="start"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 fYPovf bx--table-sort"
+                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 agCfw bx--table-sort"
                       data-column="iconColumn-count"
                       id="column-iconColumn-count"
                       onClick={[Function]}
-                      width="200px"
+                      width="200pxpx"
                     >
                       <span
                         className="bx--table-header-label"
@@ -24280,16 +24295,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </th>
                   <th
                     aria-sort="none"
-                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 fYPovf"
+                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 agCfw"
                     scope="col"
                   >
                     <button
                       align="start"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 fYPovf bx--table-sort"
+                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 agCfw bx--table-sort"
                       data-column="iconColumn-pressure"
                       id="column-iconColumn-pressure"
                       onClick={[Function]}
-                      width="200px"
+                      width="200pxpx"
                     >
                       <span
                         className="bx--table-header-label"
@@ -24472,12 +24487,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </td>
                   <td
                     align="start"
-                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jcUMAM"
+                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 eVzASG"
                     data-column="iconColumn-count"
                     data-offset={0}
                     id="cell-Table-row-11-iconColumn-count"
                     offset={0}
-                    width="200px"
+                    width="200pxpx"
                   >
                     <span
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
@@ -24523,12 +24538,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </td>
                   <td
                     align="start"
-                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jcUMAM"
+                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 eVzASG"
                     data-column="iconColumn-pressure"
                     data-offset={0}
                     id="cell-Table-row-11-iconColumn-pressure"
                     offset={0}
-                    width="200px"
+                    width="200pxpx"
                   >
                     <span
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
@@ -24609,12 +24624,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </td>
                   <td
                     align="start"
-                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jcUMAM"
+                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 eVzASG"
                     data-column="iconColumn-count"
                     data-offset={0}
                     id="cell-Table-row-10-iconColumn-count"
                     offset={0}
-                    width="200px"
+                    width="200pxpx"
                   >
                     <span
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
@@ -24707,12 +24722,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </td>
                   <td
                     align="start"
-                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jcUMAM"
+                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 eVzASG"
                     data-column="iconColumn-pressure"
                     data-offset={0}
                     id="cell-Table-row-10-iconColumn-pressure"
                     offset={0}
-                    width="200px"
+                    width="200pxpx"
                   >
                     <span
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
@@ -24793,12 +24808,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </td>
                   <td
                     align="start"
-                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jcUMAM"
+                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 eVzASG"
                     data-column="iconColumn-count"
                     data-offset={0}
                     id="cell-Table-row-1-iconColumn-count"
                     offset={0}
-                    width="200px"
+                    width="200pxpx"
                   >
                     <span
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
@@ -24891,12 +24906,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </td>
                   <td
                     align="start"
-                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jcUMAM"
+                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 eVzASG"
                     data-column="iconColumn-pressure"
                     data-offset={0}
                     id="cell-Table-row-1-iconColumn-pressure"
                     offset={0}
-                    width="200px"
+                    width="200pxpx"
                   >
                     <span
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
@@ -24977,12 +24992,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </td>
                   <td
                     align="start"
-                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jcUMAM"
+                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 eVzASG"
                     data-column="iconColumn-count"
                     data-offset={0}
                     id="cell-Table-row-2-iconColumn-count"
                     offset={0}
-                    width="200px"
+                    width="200pxpx"
                   >
                     <span
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
@@ -25075,12 +25090,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </td>
                   <td
                     align="start"
-                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jcUMAM"
+                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 eVzASG"
                     data-column="iconColumn-pressure"
                     data-offset={0}
                     id="cell-Table-row-2-iconColumn-pressure"
                     offset={0}
-                    width="200px"
+                    width="200pxpx"
                   >
                     <span
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
@@ -25161,12 +25176,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </td>
                   <td
                     align="start"
-                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jcUMAM"
+                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 eVzASG"
                     data-column="iconColumn-count"
                     data-offset={0}
                     id="cell-Table-row-6-iconColumn-count"
                     offset={0}
-                    width="200px"
+                    width="200pxpx"
                   >
                     <span
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
@@ -25257,12 +25272,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </td>
                   <td
                     align="start"
-                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jcUMAM"
+                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 eVzASG"
                     data-column="iconColumn-pressure"
                     data-offset={0}
                     id="cell-Table-row-6-iconColumn-pressure"
                     offset={0}
-                    width="200px"
+                    width="200pxpx"
                   >
                     <span
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
@@ -25343,12 +25358,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </td>
                   <td
                     align="start"
-                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jcUMAM"
+                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 eVzASG"
                     data-column="iconColumn-count"
                     data-offset={0}
                     id="cell-Table-row-4-iconColumn-count"
                     offset={0}
-                    width="200px"
+                    width="200pxpx"
                   >
                     <span
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
@@ -25394,12 +25409,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </td>
                   <td
                     align="start"
-                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jcUMAM"
+                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 eVzASG"
                     data-column="iconColumn-pressure"
                     data-offset={0}
                     id="cell-Table-row-4-iconColumn-pressure"
                     offset={0}
-                    width="200px"
+                    width="200pxpx"
                   >
                     <span
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
@@ -25480,12 +25495,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </td>
                   <td
                     align="start"
-                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jcUMAM"
+                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 eVzASG"
                     data-column="iconColumn-count"
                     data-offset={0}
                     id="cell-Table-row-8-iconColumn-count"
                     offset={0}
-                    width="200px"
+                    width="200pxpx"
                   >
                     <span
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
@@ -25576,12 +25591,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </td>
                   <td
                     align="start"
-                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jcUMAM"
+                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 eVzASG"
                     data-column="iconColumn-pressure"
                     data-offset={0}
                     id="cell-Table-row-8-iconColumn-pressure"
                     offset={0}
-                    width="200px"
+                    width="200pxpx"
                   >
                     <span
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
@@ -25662,12 +25677,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </td>
                   <td
                     align="start"
-                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jcUMAM"
+                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 eVzASG"
                     data-column="iconColumn-count"
                     data-offset={0}
                     id="cell-Table-row-9-iconColumn-count"
                     offset={0}
-                    width="200px"
+                    width="200pxpx"
                   >
                     <span
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
@@ -25760,12 +25775,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </td>
                   <td
                     align="start"
-                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jcUMAM"
+                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 eVzASG"
                     data-column="iconColumn-pressure"
                     data-offset={0}
                     id="cell-Table-row-9-iconColumn-pressure"
                     offset={0}
-                    width="200px"
+                    width="200pxpx"
                   >
                     <span
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
@@ -25846,12 +25861,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </td>
                   <td
                     align="start"
-                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jcUMAM"
+                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 eVzASG"
                     data-column="iconColumn-count"
                     data-offset={0}
                     id="cell-Table-row-3-iconColumn-count"
                     offset={0}
-                    width="200px"
+                    width="200pxpx"
                   >
                     <span
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
@@ -25944,12 +25959,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </td>
                   <td
                     align="start"
-                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jcUMAM"
+                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 eVzASG"
                     data-column="iconColumn-pressure"
                     data-offset={0}
                     id="cell-Table-row-3-iconColumn-pressure"
                     offset={0}
-                    width="200px"
+                    width="200pxpx"
                   >
                     <span
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
@@ -26081,12 +26096,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </td>
                   <td
                     align="start"
-                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jcUMAM"
+                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 eVzASG"
                     data-column="iconColumn-count"
                     data-offset={0}
                     id="cell-Table-row-5-iconColumn-count"
                     offset={0}
-                    width="200px"
+                    width="200pxpx"
                   >
                     <span
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
@@ -26177,12 +26192,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </td>
                   <td
                     align="start"
-                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jcUMAM"
+                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 eVzASG"
                     data-column="iconColumn-pressure"
                     data-offset={0}
                     id="cell-Table-row-5-iconColumn-pressure"
                     offset={0}
-                    width="200px"
+                    width="200pxpx"
                   >
                     <span
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
@@ -26575,9 +26590,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
               open={false}
               role="button"
               tabIndex={0}
+              title="Open and close list of options"
             >
               <svg
-                aria-label="open and close list of options"
+                aria-label="Open and close list of options"
                 className="bx--overflow-menu__icon"
                 focusable="false"
                 height={20}
@@ -26604,7 +26620,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
                 />
                 <title>
-                  open and close list of options
+                  Open and close list of options
                 </title>
               </svg>
             </div>
@@ -26888,16 +26904,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </th>
                   <th
                     aria-sort="none"
-                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 fYPovf"
+                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 agCfw"
                     scope="col"
                   >
                     <button
                       align="start"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 fYPovf bx--table-sort"
+                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 agCfw bx--table-sort"
                       data-column="iconColumn-count"
                       id="column-iconColumn-count"
                       onClick={[Function]}
-                      width="200px"
+                      width="200pxpx"
                     >
                       <span
                         className="bx--table-header-label"
@@ -27144,12 +27160,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </td>
                   <td
                     align="start"
-                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jcUMAM"
+                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 eVzASG"
                     data-column="iconColumn-count"
                     data-offset={0}
                     id="cell-Table-row-11-iconColumn-count"
                     offset={0}
-                    width="200px"
+                    width="200pxpx"
                   >
                     <span
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
@@ -27294,12 +27310,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </td>
                   <td
                     align="start"
-                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jcUMAM"
+                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 eVzASG"
                     data-column="iconColumn-count"
                     data-offset={0}
                     id="cell-Table-row-10-iconColumn-count"
                     offset={0}
-                    width="200px"
+                    width="200pxpx"
                   >
                     <span
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
@@ -27446,12 +27462,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </td>
                   <td
                     align="start"
-                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jcUMAM"
+                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 eVzASG"
                     data-column="iconColumn-count"
                     data-offset={0}
                     id="cell-Table-row-1-iconColumn-count"
                     offset={0}
-                    width="200px"
+                    width="200pxpx"
                   >
                     <span
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
@@ -27598,12 +27614,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </td>
                   <td
                     align="start"
-                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jcUMAM"
+                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 eVzASG"
                     data-column="iconColumn-count"
                     data-offset={0}
                     id="cell-Table-row-2-iconColumn-count"
                     offset={0}
-                    width="200px"
+                    width="200pxpx"
                   >
                     <span
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
@@ -27750,12 +27766,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </td>
                   <td
                     align="start"
-                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jcUMAM"
+                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 eVzASG"
                     data-column="iconColumn-count"
                     data-offset={0}
                     id="cell-Table-row-6-iconColumn-count"
                     offset={0}
-                    width="200px"
+                    width="200pxpx"
                   >
                     <span
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
@@ -27900,12 +27916,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </td>
                   <td
                     align="start"
-                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jcUMAM"
+                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 eVzASG"
                     data-column="iconColumn-count"
                     data-offset={0}
                     id="cell-Table-row-4-iconColumn-count"
                     offset={0}
-                    width="200px"
+                    width="200pxpx"
                   >
                     <span
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
@@ -28050,12 +28066,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </td>
                   <td
                     align="start"
-                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jcUMAM"
+                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 eVzASG"
                     data-column="iconColumn-count"
                     data-offset={0}
                     id="cell-Table-row-8-iconColumn-count"
                     offset={0}
-                    width="200px"
+                    width="200pxpx"
                   >
                     <span
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
@@ -28200,12 +28216,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </td>
                   <td
                     align="start"
-                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jcUMAM"
+                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 eVzASG"
                     data-column="iconColumn-count"
                     data-offset={0}
                     id="cell-Table-row-9-iconColumn-count"
                     offset={0}
-                    width="200px"
+                    width="200pxpx"
                   >
                     <span
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
@@ -28305,12 +28321,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </td>
                   <td
                     align="start"
-                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jcUMAM"
+                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 eVzASG"
                     data-column="iconColumn-count"
                     data-offset={0}
                     id="cell-Table-row-3-iconColumn-count"
                     offset={0}
-                    width="200px"
+                    width="200pxpx"
                   >
                     <span
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
@@ -28461,12 +28477,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </td>
                   <td
                     align="start"
-                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jcUMAM"
+                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 eVzASG"
                     data-column="iconColumn-count"
                     data-offset={0}
                     id="cell-Table-row-5-iconColumn-count"
                     offset={0}
-                    width="200px"
+                    width="200pxpx"
                   >
                     <span
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"

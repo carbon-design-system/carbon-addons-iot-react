@@ -134,7 +134,7 @@ const defaultProps = {
     deleteCardLabel: 'Delete card',
     closeLabel: 'Close',
     expandLabel: 'Expand to fullscreen',
-    overflowMenuDescription: 'open and close list of options',
+    overflowMenuDescription: 'Open and close list of options',
   },
 };
 
@@ -200,6 +200,7 @@ const Card = ({
       <OverflowMenu
         className="card--toolbar-action"
         flipped
+        title={strings.overflowMenuDescription}
         menuOptionsClass="card--overflow"
         renderIcon={EventSchedule}
         iconDescription={
@@ -246,7 +247,7 @@ const Card = ({
           mergedAvailableActions.clone ||
           mergedAvailableActions.delete) && (
           <ToolbarItem>
-            <OverflowMenu flipped>
+            <OverflowMenu flipped title={strings.overflowMenuDescription}>
               {mergedAvailableActions.edit && (
                 <OverflowMenuItem
                   onClick={() => {
