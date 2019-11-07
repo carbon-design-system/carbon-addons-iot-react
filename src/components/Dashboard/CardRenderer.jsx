@@ -72,7 +72,7 @@ const CardRenderer = React.memo(
     onFetchData, // eslint-disable-line
     onSetupCard, // eslint-disable-line
     timeGrain, // eslint-disable-line
-    cardClicked, //eslint-disable-line
+    onClick, //eslint-disable-line
     ...gridProps
   }) => {
     /**
@@ -211,7 +211,7 @@ const CardRenderer = React.memo(
             i18n={i18n}
             isEditable={isEditable}
             onCardAction={cachedOnCardAction}
-            cardClicked={cardClicked}
+            onClick={onClick}
             breakpoint={breakpoint}
             dashboardBreakpoints={dashboardBreakpoints}
             dashboardColumns={dashboardColumns}

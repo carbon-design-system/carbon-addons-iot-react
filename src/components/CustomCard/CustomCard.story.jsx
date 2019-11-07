@@ -32,7 +32,7 @@ storiesOf('Watson IoT Experimental|CustomCard', module).add('basic', () => {
             </p>
           </div>
         }
-        onClick={action('onClick')}
+        onClick={() => console.log('card clicked')}
         breakpoint="lg"
         size={size}
         onCardAction={action('onCardAction')}
