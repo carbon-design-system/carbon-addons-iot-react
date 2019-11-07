@@ -376,6 +376,7 @@ const Table = props => {
         <CarbonTable {...others}>
           <TableHead
             {...others}
+            i18n={i18n}
             lightweight={lightweight}
             options={pick(options, 'hasRowSelection', 'hasRowExpansion', 'hasRowActions')}
             columns={columns}

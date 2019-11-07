@@ -170,16 +170,24 @@ const propTypes = {
       ),
     })
   ).isRequired,
+  i18n: PropTypes.shape({
+    closeText: PropTypes.string,
+    openText: PropTypes.string,
+  }),
 };
 
 const defaultProps = {
   defaultExpanded: false,
+  i18n: {
+    closeText: 'Close',
+    openText: 'Open',
+  },
 };
 
 /**
  * Side Navigation. part of UI shell
  */
-const SideNav = ({ links, defaultExpanded }) => {
+const SideNav = ({ links, defaultExpanded, i18n }) => {
   const nav = links.map(link => {
     const enabled = link.isEnabled ? link.isEnabled : false;
     if (!enabled) {
@@ -222,8 +230,15 @@ const SideNav = ({ links, defaultExpanded }) => {
     );
   });
 
+  const translateById = id =>
+    id !== 'carbon.sidenav.state.closed' ? i18n.closeText : i18n.openText;
+
   return (
-    <StyledSideNav aria-label="Side navigation" defaultExpanded={defaultExpanded}>
+    <StyledSideNav
+      translateById={translateById}
+      aria-label="Side navigation"
+      defaultExpanded={defaultExpanded}
+    >
       <SideNavItems>{nav}</SideNavItems>
     </StyledSideNav>
   );

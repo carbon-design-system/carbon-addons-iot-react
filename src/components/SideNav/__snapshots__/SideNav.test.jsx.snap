@@ -4,6 +4,12 @@ exports[`SideNav testcases should render one level of navigation links 1`] = `
 <SideNav
   aria-label="Side navigation"
   defaultExpanded={false}
+  i18n={
+    Object {
+      "closeText": "Close",
+      "openText": "Open",
+    }
+  }
   links={
     Array [
       Object {
@@ -32,6 +38,7 @@ exports[`SideNav testcases should render one level of navigation links 1`] = `
   <SideNav__StyledSideNav
     aria-label="Side navigation"
     defaultExpanded={false}
+    translateById={[Function]}
   >
     <StyledComponent
       aria-label="Side navigation"
@@ -145,6 +152,7 @@ the label you want displayed or read by screen readers.",
         }
       }
       forwardedRef={null}
+      translateById={[Function]}
     >
       <SideNav
         aria-label="Side navigation"
@@ -387,6 +395,12 @@ exports[`SideNav testcases should render two levels of navigation links 1`] = `
 <SideNav
   aria-label="Side navigation"
   defaultExpanded={false}
+  i18n={
+    Object {
+      "closeText": "Close",
+      "openText": "Open",
+    }
+  }
   links={
     Array [
       Object {
@@ -464,6 +478,7 @@ exports[`SideNav testcases should render two levels of navigation links 1`] = `
   <SideNav__StyledSideNav
     aria-label="Side navigation"
     defaultExpanded={false}
+    translateById={[Function]}
   >
     <StyledComponent
       aria-label="Side navigation"
@@ -577,6 +592,7 @@ the label you want displayed or read by screen readers.",
         }
       }
       forwardedRef={null}
+      translateById={[Function]}
     >
       <SideNav
         aria-label="Side navigation"

@@ -4,8 +4,9 @@ import { DataTable, Checkbox } from 'carbon-components-react';
 import isNil from 'lodash/isNil';
 import styled from 'styled-components';
 
-import { TableColumnsPropTypes } from '../TablePropTypes';
+import { TableColumnsPropTypes, I18NPropTypes, defaultI18NPropTypes } from '../TablePropTypes';
 import TableCellRenderer from '../TableCellRenderer/TableCellRenderer';
+import { tableTranslateWithId } from '../../../utils/componentUtilityFunctions';
 
 import ColumnHeaderRow from './ColumnHeaderRow/ColumnHeaderRow';
 import FilterHeaderRow from './FilterHeaderRow/FilterHeaderRow';
@@ -65,6 +66,7 @@ const propTypes = {
   }).isRequired,
   /** lightweight  */
   lightweight: PropTypes.bool,
+  i18n: I18NPropTypes,
 };
 
 const defaultProps = {
@@ -76,6 +78,9 @@ const defaultProps = {
   clearSelectionText: 'Clear selection',
   openMenuText: 'Open menu',
   closeMenuText: 'Close menu',
+  i18n: {
+    ...defaultI18NPropTypes,
+  },
 };
 
 const StyledCheckboxTableHeader = styled(TableHeader)`
@@ -136,6 +141,7 @@ const TableHead = ({
   openMenuText,
   closeMenuText,
   lightweight,
+  i18n,
 }) => {
   const filterBarActive = activeBar === 'filter';
 
@@ -144,7 +150,7 @@ const TableHead = ({
       <TableRow>
         {hasRowExpansion ? <TableExpandHeader /> : null}
         {hasRowSelection === 'multi' ? (
-          <StyledCheckboxTableHeader>
+          <StyledCheckboxTableHeader translateWithId={(...args) => translateWithId(...args)}>
             {/* TODO: Replace checkbox with TableSelectAll component when onChange bug is fixed
                     https://github.com/IBM/carbon-components-react/issues/1088 */}
             <Checkbox
@@ -175,6 +181,7 @@ const TableHead = ({
                   onChangeSort(matchingColumnMeta.id);
                 }
               }}
+              translateWithId={(...args) => tableTranslateWithId(i18n, ...args)}
               sortDirection={hasSort ? sort.direction : 'NONE'}
             >
               <TableCellRenderer>{matchingColumnMeta.name}</TableCellRenderer>
