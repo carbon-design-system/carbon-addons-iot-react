@@ -974,4 +974,184 @@ storiesOf('Watson IoT|Dashboard', module)
         ])}
       </FullWidthWrapper>
     );
+  })
+  .add('landing page dashboard', () => {
+    return (
+      <FullWidthWrapper>
+        <Dashboard
+          title=""
+          actions={[]}
+          cards={[
+            {
+              content: (
+                <div style={{ margin: '12px' }}>
+                  <h4>View Dashboards</h4>
+                  <br />
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, harum.</p>
+                </div>
+              ),
+              id: 'viewDashboards',
+              size: 'SMALL',
+              title: 'View Dashboards',
+              type: 'CUSTOM',
+            },
+            {
+              content: (
+                <div style={{ margin: '12px' }}>
+                  <h4>Connect Devices</h4>
+                  <br />
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, harum.</p>
+                </div>
+              ),
+              id: 'connectDevices',
+              size: 'SMALL',
+              title: 'Connect Devices',
+              type: 'CUSTOM',
+            },
+            {
+              content: (
+                <div style={{ margin: '12px' }}>
+                  <h4>Monitor Entities</h4>
+                  <br />
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, harum.</p>
+                </div>
+              ),
+              id: 'monitorEntities',
+              size: 'SMALL',
+              title: 'Monitor Entities',
+              type: 'CUSTOM',
+            },
+            {
+              content: (
+                <div style={{ margin: '12px' }}>
+                  <h4>Track Usage</h4>
+                  <br />
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, harum.</p>
+                </div>
+              ),
+              id: 'trackUsage',
+              size: 'XSMALLWIDE',
+              title: 'Track Usage',
+              type: 'CUSTOM',
+            },
+            {
+              content: (
+                <div style={{ margin: '12px' }}>
+                  <h4>Administer Users</h4>
+                  <br />
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, harum.</p>
+                </div>
+              ),
+              id: 'administerUsers',
+              size: 'XSMALLWIDE',
+              title: 'Administer Users',
+              type: 'CUSTOM',
+            },
+          ]}
+          dashboardBreakpoints={{
+            lg: 1056,
+            max: 1800,
+            md: 672,
+            sm: 480,
+            xl: 1312,
+            xs: 320,
+          }}
+          dashboardColumns={{
+            lg: 16,
+            max: 16,
+            md: 8,
+            sm: 4,
+            xl: 16,
+            xs: 4,
+          }}
+          description={null}
+          filter={null}
+          hasLastUpdated={false}
+          i18n={{
+            actionFailedText: 'Action Failed',
+            clearAllFilters: 'Clear all filters',
+            clearFilterAria: 'Clear filter',
+            clearSelectionAria: 'Clear selection',
+            clickToCollapseAria: 'Click to collapse content',
+            clickToExpandAria: 'Click to expand content',
+            cloneCardLabel: 'Clone card',
+            closeMenuAria: 'Close menu',
+            columnSelectionButtonAria: 'Column Selection',
+            criticalLabel: 'Critical',
+            currentPage: function noRefCheck() {},
+            dailyLabel: 'Daily',
+            defaultFilterStringPlaceholdText: 'Type and hit enter to apply',
+            deleteCardLabel: 'Delete card',
+            dismissText: 'Dismiss',
+            downloadIconDescription: 'Download table content',
+            editCardLabel: 'Edit card',
+            emptyButtonLabel: 'Create some data',
+            emptyButtonLabelWithFilters: 'Clear all filters',
+            emptyMessage: 'There are no alerts in this range.',
+            emptyMessageWithFilters: 'No results match the current filters',
+            errorLoadingDataLabel: 'Error loading data for this card: ',
+            errorLoadingDataShortLabel: 'Data error.',
+            expandLabel: 'Expand to fullscreen',
+            filterAria: 'Filter',
+            filterButtonAria: 'Filters',
+            hourlyLabel: 'Hourly',
+            inProgressText: 'In Progress',
+            itemsPerPage: 'Items per page:',
+            itemsRangeWithTotal: function noRefCheck() {},
+            last24HoursLabel: 'Last 24 hrs',
+            last7DaysLabel: 'Last 7 days',
+            lastMonthLabel: 'Last month',
+            lastQuarterLabel: 'Last quarter',
+            lastUpdatedLabel: 'Last updated: ',
+            lastYearLabel: 'Last year',
+            learnMoreText: 'Learn More',
+            lowLabel: 'Low',
+            moderateLabel: 'Moderate',
+            monthlyLabel: 'Monthly',
+            noDataLabel: 'No data is available for this time range.',
+            noDataShortLabel: 'No data',
+            openMenuAria: 'Open menu',
+            overflowMenuAria: 'More actions',
+            overflowMenuDescription: 'open and close list of options',
+            pageBackwardAria: 'Previous page',
+            pageForwardAria: 'Next page',
+            pageNumberAria: 'Page Number',
+            pageRange: function noRefCheck() {},
+            periodToDateLabel: 'Period to date',
+            rollingPeriodLabel: 'Rolling period',
+            searchPlaceholder: 'Search',
+            selectAllAria: 'Select all items',
+            selectRowAria: 'Select row',
+            selectSeverityPlaceholder: 'Select a severity',
+            severityLabel: 'Severity',
+            thisMonthLabel: 'This month',
+            thisQuarterLabel: 'This quarter',
+            thisWeekLabel: 'This week',
+            thisYearLabel: 'This year',
+            weeklyLabel: 'Weekly',
+          }}
+          isEditable={false}
+          isLoading={false}
+          lastUpdated="Tue, 22 Oct 2019 05:00:00 GMT"
+          layouts={{}}
+          onBreakpointChange={function noRefCheck() {}}
+          onDashboardAction={null}
+          onFetchData={function noRefCheck() {}}
+          onLayoutChange={function noRefCheck() {}}
+          onSetupCard={null}
+          rowHeight={{
+            lg: 128,
+            max: 128,
+            md: 128,
+            sm: 128,
+            xl: 128,
+            xs: 128,
+          }}
+          setIsLoading={null}
+          sidebar={null}
+          timeGrain={null}
+          // title="Munich Building"
+        />
+      </FullWidthWrapper>
+    );
   });

@@ -9606,6 +9606,386 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
 </div>
 `;
 
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashboard landing page dashboard 1`] = `
+<div
+  className="storybook-container"
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "flexDirection": "column",
+      "padding": "3rem",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "width": "calc(100vw - 6rem)",
+        }
+      }
+    >
+      <div>
+        <div
+          className="dashboard--header"
+        >
+          <div
+            className="dashboard--header-left"
+          >
+            <h2>
+              
+            </h2>
+          </div>
+          <div
+            className="dashboard--header-right"
+          >
+            <div
+              className="dashboard--header-actions"
+            />
+          </div>
+        </div>
+        <div
+          style={
+            Object {
+              "display": "flex",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "flex": 1,
+              }
+            }
+          >
+            <div
+              className="react-grid-layout Dashboard__StyledGridLayout-up3zyz-0 leaKVS"
+              style={
+                Object {
+                  "height": "304px",
+                }
+              }
+            >
+              <div
+                className="react-grid-item cssTransforms"
+                style={
+                  Object {
+                    "MozTransform": "translate(16px,16px)",
+                    "OTransform": "translate(16px,16px)",
+                    "WebkitTransform": "translate(16px,16px)",
+                    "height": "272px",
+                    "msTransform": "translate(16px,16px)",
+                    "position": "absolute",
+                    "transform": "translate(16px,16px)",
+                    "width": "300px",
+                  }
+                }
+              >
+                <div
+                  className="customCard Card__CardWrapper-v5r71h-0 cynIXT"
+                  id="viewDashboards"
+                  onClick={[Function]}
+                  type="CUSTOM"
+                >
+                  <div
+                    className="card--header"
+                  >
+                    <span
+                      className="card--title"
+                      title="View Dashboards"
+                    >
+                      View Dashboards
+                       
+                    </span>
+                    <div
+                      className="bx--toolbar card--toolbar"
+                    />
+                  </div>
+                  <div
+                    className="Card__CardContent-v5r71h-1 gTExVy"
+                  >
+                    <div
+                      style={
+                        Object {
+                          "margin": "12px",
+                        }
+                      }
+                    >
+                      <h4>
+                        View Dashboards
+                      </h4>
+                      <br />
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, harum.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="react-grid-item cssTransforms"
+                style={
+                  Object {
+                    "MozTransform": "translate(332px,16px)",
+                    "OTransform": "translate(332px,16px)",
+                    "WebkitTransform": "translate(332px,16px)",
+                    "height": "272px",
+                    "msTransform": "translate(332px,16px)",
+                    "position": "absolute",
+                    "transform": "translate(332px,16px)",
+                    "width": "300px",
+                  }
+                }
+              >
+                <div
+                  className="customCard Card__CardWrapper-v5r71h-0 cynIXT"
+                  id="connectDevices"
+                  onClick={[Function]}
+                  type="CUSTOM"
+                >
+                  <div
+                    className="card--header"
+                  >
+                    <span
+                      className="card--title"
+                      title="Connect Devices"
+                    >
+                      Connect Devices
+                       
+                    </span>
+                    <div
+                      className="bx--toolbar card--toolbar"
+                    />
+                  </div>
+                  <div
+                    className="Card__CardContent-v5r71h-1 gTExVy"
+                  >
+                    <div
+                      style={
+                        Object {
+                          "margin": "12px",
+                        }
+                      }
+                    >
+                      <h4>
+                        Connect Devices
+                      </h4>
+                      <br />
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, harum.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="react-grid-item cssTransforms"
+                style={
+                  Object {
+                    "MozTransform": "translate(648px,16px)",
+                    "OTransform": "translate(648px,16px)",
+                    "WebkitTransform": "translate(648px,16px)",
+                    "height": "272px",
+                    "msTransform": "translate(648px,16px)",
+                    "position": "absolute",
+                    "transform": "translate(648px,16px)",
+                    "width": "300px",
+                  }
+                }
+              >
+                <div
+                  className="customCard Card__CardWrapper-v5r71h-0 cynIXT"
+                  id="monitorEntities"
+                  onClick={[Function]}
+                  type="CUSTOM"
+                >
+                  <div
+                    className="card--header"
+                  >
+                    <span
+                      className="card--title"
+                      title="Monitor Entities"
+                    >
+                      Monitor Entities
+                       
+                    </span>
+                    <div
+                      className="bx--toolbar card--toolbar"
+                    />
+                  </div>
+                  <div
+                    className="Card__CardContent-v5r71h-1 gTExVy"
+                  >
+                    <div
+                      style={
+                        Object {
+                          "margin": "12px",
+                        }
+                      }
+                    >
+                      <h4>
+                        Monitor Entities
+                      </h4>
+                      <br />
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, harum.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="react-grid-item cssTransforms"
+                style={
+                  Object {
+                    "MozTransform": "translate(964px,16px)",
+                    "OTransform": "translate(964px,16px)",
+                    "WebkitTransform": "translate(964px,16px)",
+                    "height": "128px",
+                    "msTransform": "translate(964px,16px)",
+                    "position": "absolute",
+                    "transform": "translate(964px,16px)",
+                    "width": "300px",
+                  }
+                }
+              >
+                <div
+                  className="customCard Card__CardWrapper-v5r71h-0 fbzdtE"
+                  id="trackUsage"
+                  onClick={[Function]}
+                  type="CUSTOM"
+                >
+                  <div
+                    className="card--header"
+                  >
+                    <span
+                      className="card--title"
+                      title="Track Usage"
+                    >
+                      Track Usage
+                       
+                    </span>
+                    <div
+                      className="bx--toolbar card--toolbar"
+                    />
+                  </div>
+                  <div
+                    className="Card__CardContent-v5r71h-1 gPUVrT"
+                  >
+                    <div
+                      style={
+                        Object {
+                          "margin": "12px",
+                        }
+                      }
+                    >
+                      <h4>
+                        Track Usage
+                      </h4>
+                      <br />
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, harum.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="react-grid-item cssTransforms"
+                style={
+                  Object {
+                    "MozTransform": "translate(964px,160px)",
+                    "OTransform": "translate(964px,160px)",
+                    "WebkitTransform": "translate(964px,160px)",
+                    "height": "128px",
+                    "msTransform": "translate(964px,160px)",
+                    "position": "absolute",
+                    "transform": "translate(964px,160px)",
+                    "width": "300px",
+                  }
+                }
+              >
+                <div
+                  className="customCard Card__CardWrapper-v5r71h-0 fbzdtE"
+                  id="administerUsers"
+                  onClick={[Function]}
+                  type="CUSTOM"
+                >
+                  <div
+                    className="card--header"
+                  >
+                    <span
+                      className="card--title"
+                      title="Administer Users"
+                    >
+                      Administer Users
+                       
+                    </span>
+                    <div
+                      className="bx--toolbar card--toolbar"
+                    />
+                  </div>
+                  <div
+                    className="Card__CardContent-v5r71h-1 gPUVrT"
+                  >
+                    <div
+                      style={
+                        Object {
+                          "margin": "12px",
+                        }
+                      }
+                    >
+                      <h4>
+                        Administer Users
+                      </h4>
+                      <br />
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, harum.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashboard only value cards 1`] = `
 <div
   className="storybook-container"
