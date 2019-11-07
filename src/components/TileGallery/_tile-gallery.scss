@@ -53,6 +53,14 @@
       flex-direction: row;
     }
   }
+
+  &--section {
+    &--items {
+      display: flex;
+      padding-bottom: 2rem;
+      flex-flow: row wrap;
+    }
+  }
 }
 
 .empty-state {

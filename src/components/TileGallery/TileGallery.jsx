@@ -93,9 +93,11 @@ const TileGallerySection = ({ children, title, isOpen = true, onClick = () => {}
           }}
           open={open}
         >
-          {React.Children.map(children, tileGalleryItem =>
-            React.cloneElement(tileGalleryItem, { mode: rest.mode })
-          )}
+          <div className="tile-gallery--section--items">
+            {React.Children.map(children, tileGalleryItem =>
+              React.cloneElement(tileGalleryItem, { mode: rest.mode })
+            )}
+          </div>
         </AccordionItem>
       </Accordion>
     </div>
