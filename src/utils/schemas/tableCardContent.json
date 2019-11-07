@@ -47,15 +47,15 @@
           "items": { "$ref": "#/definitions/attribute" },
           "minItems": 1
         },
-        "timeGrain": { "enum": ["month", "day", "year", "hour", "week"] },
+        "timeGrain": { "enum": ["month", "day", "year", "hour", "week", "input"] },
         "groupBy": {
           "type": "array",
           "items": { "type": "string" },
           "minItems": 1
         }
       },
-      "required": ["attributes"],
-      "propertyNames": { "enum": ["attributes", "range", "timeGrain", "groupBy"] }
+      "oneOf": [{ "required": ["attributes"] }, { "required": ["type"] }],
+      "propertyNames": { "enum": ["attributes", "type", "range", "timeGrain", "groupBy"] }
     }
   },
   "definitions": {

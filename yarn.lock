@@ -1660,9 +1660,9 @@
   dependencies:
     "@carbon/charts" "^0.16.25"
 
-"@carbon/charts@^0.16.25", "@carbon/charts@https://github.com/scottdickerson/carbon-charts#carbon-charts-v0.16.26-gitpkg":
-  version "0.16.26"
-  resolved "https://github.com/scottdickerson/carbon-charts#99c9e9a0da026dd231722deead296ac8b1bfee67"
+"@carbon/charts@^0.16.25", "@carbon/charts@https://github.com/scottdickerson/carbon-charts#carbon-charts-v0.16.27-gitpkg":
+  version "0.16.27"
+  resolved "https://github.com/scottdickerson/carbon-charts#fde40cf259455a2a14761f7088f6c1151a474366"
   dependencies:
     "@carbon/utils-position" "1.1.1"
     babel-polyfill "6.26.0"

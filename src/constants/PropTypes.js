@@ -81,6 +81,9 @@ export const TimeSeriesCardPropTypes = {
     /** Which attribute is the time attribute */
     timeDataSourceId: PropTypes.string,
   }).isRequired,
+  i18n: PropTypes.shape({
+    alertDetected: PropTypes.string,
+  }),
   /** array of data from the backend for instance [{timestamp: 134234234234, temperature: 35, humidity: 10}, ...] */
   values: PropTypes.arrayOf(PropTypes.object),
 };

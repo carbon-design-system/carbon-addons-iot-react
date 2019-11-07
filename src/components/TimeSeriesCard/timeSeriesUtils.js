@@ -112,3 +112,16 @@ export const formatGraphTick = (
     ? currentTimestamp.format('HH:mm')
     : currentTimestamp.format('DD MMM YYYY');
 };
+
+/** compare the current datapoint to a list of alert ranges */
+export const findMatchingAlertRange = (alertRanges, data) => {
+  const currentDatapointTimestamp = data && data.date && data.date.valueOf();
+  return (
+    Array.isArray(alertRanges) &&
+    alertRanges.find(
+      alert =>
+        currentDatapointTimestamp <= alert.endTimestamp &&
+        currentDatapointTimestamp >= alert.startTimestamp
+    )
+  );
+};
