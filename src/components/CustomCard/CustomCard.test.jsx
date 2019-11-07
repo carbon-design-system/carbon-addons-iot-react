@@ -1,20 +1,16 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
-import { select } from '@storybook/addon-knobs';
+import { mount } from 'enzyme';
 
 import { CARD_SIZES } from '../../constants/LayoutConstants';
-import { getCardMinSize } from '../../utils/componentUtilityFunctions';
 
 import CustomCard from './CustomCard';
 
-storiesOf('Watson IoT Experimental|CustomCard', module).add('basic', () => {
-  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
-  return (
-    <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+describe('Custom Card', () => {
+  // handle click function test
+  test('onClick', () => {
+    const onClick = jest.fn();
+    const wrapper = mount(
       <CustomCard
-        // title={text('title', 'Image')}
-        id="customCardSample"
         content={
           <div>
             <h3>custom title in card</h3>
@@ -32,12 +28,14 @@ storiesOf('Watson IoT Experimental|CustomCard', module).add('basic', () => {
             </p>
           </div>
         }
-        onClick={action('onClick')}
-        breakpoint="lg"
-        size={size}
-        onCardAction={action('onCardAction')}
-        title=""
+        onClick={onClick}
+        size={CARD_SIZES.MEDIUM}
       />
-    </div>
-  );
+    );
+    wrapper
+      .find('div[onClick]')
+      .first()
+      .simulate('click');
+    expect(onClick.mock.calls).toHaveLength(1);
+  });
 });

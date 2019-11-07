@@ -190,10 +190,8 @@ export const ImageCardPropTypes = {
 };
 
 export const CustomCardPropTypes = {
-  content: PropTypes.shape({
-    element: PropTypes.element,
-  }).isRequired,
-  cardClick: PropTypes.func,
+  content: PropTypes.node.isRequired,
+  onClick: PropTypes.func,
 };
 
 export const PieCardPropTypes = DonutCardPropTypes;

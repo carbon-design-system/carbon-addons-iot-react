@@ -1,8 +1,9 @@
-@import '~carbon-components/scss/globals/scss/vars';
-
 .customCard {
   .card--header {
     display: none;
   }
   overflow: auto;
+  &:hover {
+    box-shadow: 0 0 4px blue;
+  }
 }
