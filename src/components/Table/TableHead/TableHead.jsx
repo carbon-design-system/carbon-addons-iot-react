@@ -155,7 +155,7 @@ const TableHead = ({
       <TableRow>
         {hasRowExpansion ? <TableExpandHeader /> : null}
         {hasRowSelection === 'multi' ? (
-          <StyledCheckboxTableHeader>
+          <StyledCheckboxTableHeader translateWithId={(...args) => tableTranslateWithId(...args)}>
             {/* TODO: Replace checkbox with TableSelectAll component when onChange bug is fixed
                     https://github.com/IBM/carbon-components-react/issues/1088 */}
             <Checkbox
