@@ -109,12 +109,14 @@ const StyledCustomTableHeader = styled(TableHeader)`
       const { width } = props;
       return width !== undefined
         ? `
-        min-width: ${width};
-        max-width: ${width};
-        white-space: nowrap;
-        overflow-x: hidden;
-        overflow-y: hidden;
-        text-overflow: ellipsis;
+       .bx--table-header-label { 
+          min-width: ${width};
+          max-width: ${width};
+          white-space: nowrap;
+          overflow-x: hidden;
+          overflow-y: hidden;
+          text-overflow: ellipsis;
+        }
       `
         : '';
     }}
