@@ -69,9 +69,15 @@ export StatefulPageWizard from './components/PageWizard/StatefulPageWizard';
 
 export {
   TileGallery,
-  TileGallerySection,
-  TileGalleryItem,
 } from './components/TileGallery/TileGallery';
+
+export {
+  TileGallerySection,
+} from './components/TileGallery/TileGallerySection';
+
+export {
+  TileGalleryItem,
+} from './components/TileGallery/TileGalleryItem';
 
 // Carbon proxy
 export {
