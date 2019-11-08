@@ -35,8 +35,6 @@ export default {
       'prop-types': 'PropTypes',
       react: 'React',
       'react-dom': 'ReactDOM',
-      '@carbon/charts': 'CarbonCharts',
-      '@carbon/charts-react': 'CarbonChartsReact',
       'carbon-icons': 'CarbonIcons',
       '@carbon/icons-react': 'CarbonIconsReact',
       'carbon-components': 'CarbonComponents',
@@ -47,19 +45,21 @@ export default {
   },
   external: [
     'react',
+    'react-dom',
     'styled-components',
     'prop-types',
     'carbon-components-react',
     'carbon-icons',
-    '@carbon/charts',
-    '@carbon/charts-react',
     '@carbon/icons',
     '@carbon/icons-react',
     'carbon-components',
     'd3',
   ],
   plugins: [
-    resolve({ browser: true, extensions: ['.mjs', '.js', '.jsx', '.json'] }),
+    resolve({
+      browser: true,
+      extensions: ['.mjs', '.js', '.jsx', '.json'],
+    }),
     postcss({
       extract: 'lib/css/carbon-addons-iot-react.css',
       sourceMap: true,
