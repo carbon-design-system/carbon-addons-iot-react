@@ -81,6 +81,9 @@ export const TimeSeriesCardPropTypes = {
     /** Which attribute is the time attribute */
     timeDataSourceId: PropTypes.string,
   }).isRequired,
+  i18n: PropTypes.shape({
+    alertDetected: PropTypes.string,
+  }),
   /** array of data from the backend for instance [{timestamp: 134234234234, temperature: 35, humidity: 10}, ...] */
   values: PropTypes.arrayOf(PropTypes.object),
 };
@@ -90,6 +93,8 @@ export const TableCardPropTypes = {
     columns: PropTypes.arrayOf(
       PropTypes.shape({
         dataSourceId: PropTypes.string.isRequired,
+        /** optional width in pixels, default is no enforced max width */
+        width: PropTypes.number,
         label: PropTypes.string.isRequired,
         priority: PropTypes.number,
         renderer: PropTypes.func,

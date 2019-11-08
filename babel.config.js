@@ -1,7 +1,20 @@
 module.exports = function generateConfig(api) {
   api.cache(true);
   return {
-    presets: [['@babel/preset-env'], '@babel/preset-react', '@babel/preset-flow'],
+    presets: [
+      [
+        '@babel/preset-env',
+        {
+          targets: {
+            browsers: ['last 2 version', 'ie >= 11'],
+          },
+          useBuiltIns: 'usage',
+          corejs: 2,
+        },
+      ],
+      '@babel/preset-react',
+      '@babel/preset-flow',
+    ],
     ignore: ['__mocks__'],
     plugins: [
       'babel-plugin-lodash',
