@@ -1,3 +1,4 @@
+/** optional file that can be imported if certain testcases need to manage their own JSDOM */
 const { JSDOM } = require('jsdom');
 const d3 = require('d3');
 

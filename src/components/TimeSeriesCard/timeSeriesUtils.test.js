@@ -1,6 +1,12 @@
 import every from 'lodash/every';
 
-import { generateSampleValues, generateTableSampleValues, isValuesEmpty } from './timeSeriesUtils';
+import {
+  generateSampleValues,
+  generateTableSampleValues,
+  isValuesEmpty,
+  formatGraphTick,
+  findMatchingAlertRange,
+} from './timeSeriesUtils';
 
 describe('timeSeriesUtils', () => {
   test('isValuesEmpty', () => {
@@ -96,5 +102,39 @@ describe('timeSeriesUtils', () => {
     expect(tableSampleValues[0].values).toHaveProperty('column1');
     expect(tableSampleValues[0].values).toHaveProperty('column2');
     expect(tableSampleValues[0].values).toHaveProperty('column3');
+  });
+  test('formatGraphTick', () => {
+    // hour different day
+    expect(
+      formatGraphTick(1572933600000, 1, [1, 2, 3, 4, 5, 6], 'hour', null, 1572912000000)
+    ).toContain('05 Nov');
+    // hour same day
+    expect(
+      formatGraphTick(1572933600000, 1, [1, 2, 3, 4, 5, 6], 'hour', null, 1572933600000)
+    ).toContain('00:00');
+    // month different year
+    expect(
+      formatGraphTick(1546322400000, 1, [1, 2, 3, 4, 5, 6], 'month', null, 1522558800000)
+    ).toContain('Jan 2019');
+    // month same year
+    expect(
+      formatGraphTick(1561957200000, 1, [1, 2, 3, 4, 5, 6], 'month', null, 1572584400000)
+    ).toContain('Jul');
+  });
+  test('findMatchingAlertRange', () => {
+    const data = {
+      date: new Date(1573073951),
+    };
+    const alertRange = [
+      {
+        startTimestamp: 1573073950,
+        endTimestamp: 1573073951,
+        color: '#FF0000',
+        details: 'Alert details',
+      },
+    ];
+    const matchingAlertRange = findMatchingAlertRange(alertRange, data);
+    expect(matchingAlertRange.color).toEqual('#FF0000');
+    expect(matchingAlertRange.details).toEqual('Alert details');
   });
 });

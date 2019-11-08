@@ -63,3 +63,65 @@ export const generateTableSampleValues = (id, columns) => {
     }, {}),
   }));
 };
+/** *
+ * timestamp of current value
+ * index of current value
+ * ticks: array of current ticks
+ */
+export const formatGraphTick = (
+  timestamp,
+  index,
+  ticks,
+  interval,
+  locale,
+  previousTickTimestamp
+) => {
+  // moment locale default to english
+  moment.locale('en');
+  if (locale) {
+    moment.locale(locale);
+  }
+  const currentTimestamp = moment.unix(timestamp / 1000);
+
+  const sameDay = moment(previousTickTimestamp).isSame(currentTimestamp, 'day');
+  const sameYear = moment(previousTickTimestamp).isSame(currentTimestamp, 'year');
+
+  return interval === 'hour' && index === 0
+    ? ticks.length > 1
+      ? currentTimestamp.format('DD MMM')
+      : currentTimestamp.format('DD MMM HH:mm')
+    : interval === 'hour' && index !== 0 && !sameDay
+    ? currentTimestamp.format('DD MMM')
+    : interval === 'hour'
+    ? currentTimestamp.format('HH:mm')
+    : interval === 'day' && index === 0
+    ? currentTimestamp.format('DD MMM')
+    : interval === 'day' && index !== 0
+    ? currentTimestamp.format('DD MMM')
+    : interval === 'month' && !sameYear
+    ? currentTimestamp.format('MMM YYYY')
+    : interval === 'month' && sameYear && index === 0
+    ? currentTimestamp.format('MMM YYYY')
+    : interval === 'month' && sameYear
+    ? currentTimestamp.format('MMM')
+    : interval === 'year' && sameYear && index !== 0
+    ? currentTimestamp.format('MMM') // if we're on the year boundary and the same year, then don't repeat
+    : interval === 'year' && (!sameYear || index === 0)
+    ? currentTimestamp.format('YYYY')
+    : interval === 'minute'
+    ? currentTimestamp.format('HH:mm')
+    : currentTimestamp.format('DD MMM YYYY');
+};
+
+/** compare the current datapoint to a list of alert ranges */
+export const findMatchingAlertRange = (alertRanges, data) => {
+  const currentDatapointTimestamp = data && data.date && data.date.valueOf();
+  return (
+    Array.isArray(alertRanges) &&
+    alertRanges.find(
+      alert =>
+        currentDatapointTimestamp <= alert.endTimestamp &&
+        currentDatapointTimestamp >= alert.startTimestamp
+    )
+  );
+};
