@@ -67,6 +67,12 @@ export {
 } from './components/PageWizard/PageWizard';
 export StatefulPageWizard from './components/PageWizard/StatefulPageWizard';
 
+export {
+  TileGallery,
+  TileGallerySection,
+  TileGalleryItem,
+} from './components/TileGallery/TileGallery';
+
 // Carbon proxy
 export {
   Accordion,

@@ -2,9 +2,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { PageTitleBar, Link } from '../../index';
-
-import { TileGallery, TileGallerySection, TileGalleryItem } from './TileGallery';
+import { PageTitleBar, TileGallery, TileGallerySection, TileGalleryItem, Link } from '../../index';
 
 export const content = (
   <TileGallery>
