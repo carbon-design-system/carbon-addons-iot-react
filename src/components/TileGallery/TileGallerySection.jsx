@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 
 import { Accordion, AccordionItem } from '../../index';
 
-const TileGallerySection = ({ children, title, isOpen = true, hasAccordion = true, onClick = () => {}, ...rest }) => {
+const TileGallerySection = ({ children, title, isOpen = true, onClick = () => {}, ...rest }) => {
   const [open, setOpen] = useState(isOpen);
   return (
     <div className="tile-gallery--section">
-      {hasAccordion ? (
+      {title ? (
         <Accordion>
           <AccordionItem
             title={title}
