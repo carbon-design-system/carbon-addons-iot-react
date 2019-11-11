@@ -2,7 +2,6 @@ import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 
 import ProgressIndicator from '../../ProgressIndicator/ProgressIndicator';
-import PageTitleBar from '../../PageTitleBar/PageTitleBar';
 
 class WizardHeader extends Component {
   static propTypes = {
