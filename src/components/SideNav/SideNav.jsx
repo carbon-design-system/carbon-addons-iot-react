@@ -56,18 +56,26 @@ const propTypes = {
   isSideNavExpanded: PropTypes.bool,
   /** An array of strings which will be options of switcher */
   // switcherProps: PropTypes.obj,
+  i18n: PropTypes.shape({
+    closeText: PropTypes.string,
+    openText: PropTypes.string,
+  }),
 };
 
 const defaultProps = {
   defaultExpanded: false,
   isSideNavExpanded: false,
   // switcherProps: null,
+  i18n: {
+    closeText: 'Close',
+    openText: 'Open',
+  },
 };
 
 /**
  * Side Navigation. part of UI shell
  */
-const SideNav = ({ links, defaultExpanded, isSideNavExpanded }) => {
+const SideNav = ({ links, defaultExpanded, isSideNavExpanded, i18n }) => {
   const nav = links
     .map(link => {
       const enabled = link.isEnabled ? link.isEnabled : false;
@@ -120,9 +128,13 @@ const SideNav = ({ links, defaultExpanded, isSideNavExpanded }) => {
     })
     .filter(i => i);
 
+  const translateById = id =>
+    id !== 'carbon.sidenav.state.closed' ? i18n.closeText : i18n.openText;
+
   return (
     <CarbonSideNav
       className={classnames({ 'bx--side-nav--expanded': isSideNavExpanded })}
+      translateById={translateById}
       aria-label="Side navigation"
       defaultExpanded={defaultExpanded}
     >

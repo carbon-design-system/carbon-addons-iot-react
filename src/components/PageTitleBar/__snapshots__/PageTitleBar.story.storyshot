@@ -260,6 +260,300 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageT
 </div>
 `;
 
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageTitleBar with content 1`] = `
+<div
+  className="storybook-container"
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "flexDirection": "column",
+      "padding": "3rem",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "width": "calc(100vw - 6rem)",
+        }
+      }
+    >
+      <div
+        className="page-title-bar"
+      >
+        <div
+          className="page-title-bar-header"
+        >
+          <div>
+            <div
+              className="page-title-bar-breadcrumb"
+            >
+              <nav
+                aria-label="Breadcrumb"
+              >
+                <ol
+                  className="bx--breadcrumb"
+                >
+                  <li
+                    className="bx--breadcrumb-item"
+                  >
+                    <a
+                      className="bx--link"
+                      href="/"
+                    >
+                      Home
+                    </a>
+                  </li>
+                  <li
+                    className="bx--breadcrumb-item"
+                  >
+                    <a
+                      className="bx--link"
+                      href="/"
+                    >
+                      Type
+                    </a>
+                  </li>
+                  <li
+                    className="bx--breadcrumb-item"
+                  >
+                    <span
+                      className="bx--link"
+                    >
+                      Instance
+                    </span>
+                  </li>
+                </ol>
+              </nav>
+            </div>
+            <div
+              className="page-title-bar-title"
+            >
+              <div
+                className="page-title-bar-title--text"
+              >
+                <h2>
+                  Page title
+                </h2>
+                <div
+                  className="bx--tooltip__label"
+                  id="tooltip"
+                >
+                  
+                  <div
+                    aria-describedby={null}
+                    aria-haspopup="true"
+                    className="bx--tooltip__trigger"
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    onMouseOut={[Function]}
+                    onMouseOver={[Function]}
+                    role="button"
+                    tabIndex={0}
+                  >
+                    <svg
+                      aria-hidden={true}
+                      description={null}
+                      focusable="false"
+                      height={20}
+                      preserveAspectRatio="xMidYMid meet"
+                      role={null}
+                      style={
+                        Object {
+                          "willChange": "transform",
+                        }
+                      }
+                      viewBox="0 0 32 32"
+                      width={20}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M17 22v-9h-4v2h2v7h-3v2h8v-2h-3zM16 7a1.5 1.5 0 1 0 1.5 1.5A1.5 1.5 0 0 0 16 7z"
+                      />
+                      <path
+                        d="M16 30a14 14 0 1 1 14-14 14 14 0 0 1-14 14zm0-26a12 12 0 1 0 12 12A12 12 0 0 0 16 4z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="page-title-bar-content"
+        >
+          <div
+            className="bx--tabs"
+            role="navigation"
+            selected={0}
+          >
+            <div
+              aria-label="listbox"
+              className="bx--tabs-trigger"
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              role="listbox"
+              tabIndex={0}
+            >
+              <a
+                className="bx--tabs-trigger-text"
+                href="#"
+                onClick={[Function]}
+                tabIndex={-1}
+              >
+                Tab 1
+              </a>
+              <svg
+                aria-hidden={true}
+                focusable="false"
+                height={6}
+                preserveAspectRatio="xMidYMid meet"
+                style={
+                  Object {
+                    "willChange": "transform",
+                  }
+                }
+                viewBox="0 0 10 6"
+                width={10}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M5 6L0 1 .7.3 5 4.6 9.3.3l.7.7z"
+                />
+                <title>
+                  show menu options
+                </title>
+              </svg>
+            </div>
+            <ul
+              className="bx--tabs__nav bx--tabs__nav--hidden"
+              role="tablist"
+            >
+              <li
+                className="bx--tabs__nav-item bx--tabs__nav-item--selected"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                role="presentation"
+                selected={true}
+                tabIndex={-1}
+              >
+                <a
+                  aria-selected={true}
+                  className="bx--tabs__nav-link"
+                  href="#"
+                  role="tab"
+                  tabIndex={0}
+                >
+                  Tab 1
+                </a>
+              </li>
+              <li
+                className="bx--tabs__nav-item"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                role="presentation"
+                selected={false}
+                tabIndex={-1}
+              >
+                <a
+                  aria-selected={false}
+                  className="bx--tabs__nav-link"
+                  href="#"
+                  role="tab"
+                  tabIndex={-1}
+                >
+                  Tab 2
+                </a>
+              </li>
+              <li
+                className="bx--tabs__nav-item"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                role="presentation"
+                selected={false}
+                tabIndex={-1}
+              >
+                <a
+                  aria-selected={false}
+                  className="bx--tabs__nav-link"
+                  href="#"
+                  role="tab"
+                  tabIndex={-1}
+                >
+                  Tab 3
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div
+            aria-hidden={false}
+            hidden={false}
+            selected={true}
+          >
+            <div>
+              Content for first tab.
+            </div>
+          </div>
+          <div
+            aria-hidden={true}
+            hidden={true}
+            selected={false}
+          >
+            <div>
+              Content for second tab.
+            </div>
+          </div>
+          <div
+            aria-hidden={true}
+            hidden={true}
+            selected={false}
+          >
+            <div>
+              Content for third tab.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageTitleBar with description 1`] = `
 <div
   className="storybook-container"
@@ -680,7 +974,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageT
           </div>
         </div>
         <div
-          className="page-title-bar-tabs"
+          className="page-title-bar-content"
         >
           <div
             className="bx--tabs"
@@ -987,300 +1281,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageT
                   />
                 </svg>
               </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": "12px",
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
-</div>
-`;
-
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageTitleBar with tabs as children 1`] = `
-<div
-  className="storybook-container"
-  style={
-    Object {
-      "alignItems": "center",
-      "display": "flex",
-      "flexDirection": "column",
-      "padding": "3rem",
-    }
-  }
->
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
-  >
-    <div
-      style={
-        Object {
-          "width": "calc(100vw - 6rem)",
-        }
-      }
-    >
-      <div
-        className="page-title-bar"
-      >
-        <div
-          className="page-title-bar-header"
-        >
-          <div>
-            <div
-              className="page-title-bar-breadcrumb"
-            >
-              <nav
-                aria-label="Breadcrumb"
-              >
-                <ol
-                  className="bx--breadcrumb"
-                >
-                  <li
-                    className="bx--breadcrumb-item"
-                  >
-                    <a
-                      className="bx--link"
-                      href="/"
-                    >
-                      Home
-                    </a>
-                  </li>
-                  <li
-                    className="bx--breadcrumb-item"
-                  >
-                    <a
-                      className="bx--link"
-                      href="/"
-                    >
-                      Type
-                    </a>
-                  </li>
-                  <li
-                    className="bx--breadcrumb-item"
-                  >
-                    <span
-                      className="bx--link"
-                    >
-                      Instance
-                    </span>
-                  </li>
-                </ol>
-              </nav>
-            </div>
-            <div
-              className="page-title-bar-title"
-            >
-              <div
-                className="page-title-bar-title--text"
-              >
-                <h2>
-                  Page title
-                </h2>
-                <div
-                  className="bx--tooltip__label"
-                  id="tooltip"
-                >
-                  
-                  <div
-                    aria-describedby={null}
-                    aria-haspopup="true"
-                    className="bx--tooltip__trigger"
-                    onBlur={[Function]}
-                    onClick={[Function]}
-                    onFocus={[Function]}
-                    onKeyDown={[Function]}
-                    onMouseOut={[Function]}
-                    onMouseOver={[Function]}
-                    role="button"
-                    tabIndex={0}
-                  >
-                    <svg
-                      aria-hidden={true}
-                      description={null}
-                      focusable="false"
-                      height={20}
-                      preserveAspectRatio="xMidYMid meet"
-                      role={null}
-                      style={
-                        Object {
-                          "willChange": "transform",
-                        }
-                      }
-                      viewBox="0 0 32 32"
-                      width={20}
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M17 22v-9h-4v2h2v7h-3v2h8v-2h-3zM16 7a1.5 1.5 0 1 0 1.5 1.5A1.5 1.5 0 0 0 16 7z"
-                      />
-                      <path
-                        d="M16 30a14 14 0 1 1 14-14 14 14 0 0 1-14 14zm0-26a12 12 0 1 0 12 12A12 12 0 0 0 16 4z"
-                      />
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          className="page-title-bar-tabs"
-        >
-          <div
-            className="bx--tabs"
-            role="navigation"
-            selected={0}
-          >
-            <div
-              aria-label="listbox"
-              className="bx--tabs-trigger"
-              onClick={[Function]}
-              onKeyPress={[Function]}
-              role="listbox"
-              tabIndex={0}
-            >
-              <a
-                className="bx--tabs-trigger-text"
-                href="#"
-                onClick={[Function]}
-                tabIndex={-1}
-              >
-                Tab 1
-              </a>
-              <svg
-                aria-hidden={true}
-                focusable="false"
-                height={6}
-                preserveAspectRatio="xMidYMid meet"
-                style={
-                  Object {
-                    "willChange": "transform",
-                  }
-                }
-                viewBox="0 0 10 6"
-                width={10}
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M5 6L0 1 .7.3 5 4.6 9.3.3l.7.7z"
-                />
-                <title>
-                  show menu options
-                </title>
-              </svg>
-            </div>
-            <ul
-              className="bx--tabs__nav bx--tabs__nav--hidden"
-              role="tablist"
-            >
-              <li
-                className="bx--tabs__nav-item bx--tabs__nav-item--selected"
-                onClick={[Function]}
-                onKeyDown={[Function]}
-                role="presentation"
-                selected={true}
-                tabIndex={-1}
-              >
-                <a
-                  aria-selected={true}
-                  className="bx--tabs__nav-link"
-                  href="#"
-                  role="tab"
-                  tabIndex={0}
-                >
-                  Tab 1
-                </a>
-              </li>
-              <li
-                className="bx--tabs__nav-item"
-                onClick={[Function]}
-                onKeyDown={[Function]}
-                role="presentation"
-                selected={false}
-                tabIndex={-1}
-              >
-                <a
-                  aria-selected={false}
-                  className="bx--tabs__nav-link"
-                  href="#"
-                  role="tab"
-                  tabIndex={-1}
-                >
-                  Tab 2
-                </a>
-              </li>
-              <li
-                className="bx--tabs__nav-item"
-                onClick={[Function]}
-                onKeyDown={[Function]}
-                role="presentation"
-                selected={false}
-                tabIndex={-1}
-              >
-                <a
-                  aria-selected={false}
-                  className="bx--tabs__nav-link"
-                  href="#"
-                  role="tab"
-                  tabIndex={-1}
-                >
-                  Tab 3
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div
-            aria-hidden={false}
-            hidden={false}
-            selected={true}
-          >
-            <div>
-              Content for first tab.
-            </div>
-          </div>
-          <div
-            aria-hidden={true}
-            hidden={true}
-            selected={false}
-          >
-            <div>
-              Content for second tab.
-            </div>
-          </div>
-          <div
-            aria-hidden={true}
-            hidden={true}
-            selected={false}
-          >
-            <div>
-              Content for third tab.
             </div>
           </div>
         </div>

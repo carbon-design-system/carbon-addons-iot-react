@@ -3,9 +3,11 @@ import PropTypes from 'prop-types';
 import { DataTable, Checkbox } from 'carbon-components-react';
 import isNil from 'lodash/isNil';
 import styled from 'styled-components';
+import classnames from 'classnames';
 
-import { TableColumnsPropTypes } from '../TablePropTypes';
+import { TableColumnsPropTypes, I18NPropTypes, defaultI18NPropTypes } from '../TablePropTypes';
 import TableCellRenderer from '../TableCellRenderer/TableCellRenderer';
+import { tableTranslateWithId } from '../../../utils/componentUtilityFunctions';
 
 import ColumnHeaderRow from './ColumnHeaderRow/ColumnHeaderRow';
 import FilterHeaderRow from './FilterHeaderRow/FilterHeaderRow';
@@ -65,6 +67,7 @@ const propTypes = {
   }).isRequired,
   /** lightweight  */
   lightweight: PropTypes.bool,
+  i18n: I18NPropTypes,
 };
 
 const defaultProps = {
@@ -76,6 +79,9 @@ const defaultProps = {
   clearSelectionText: 'Clear selection',
   openMenuText: 'Open menu',
   closeMenuText: 'Close menu',
+  i18n: {
+    ...defaultI18NPropTypes,
+  },
 };
 
 const StyledCheckboxTableHeader = styled(TableHeader)`
@@ -103,12 +109,14 @@ const StyledCustomTableHeader = styled(TableHeader)`
       const { width } = props;
       return width !== undefined
         ? `
-        min-width: ${width};
-        max-width: ${width};
-        white-space: nowrap;
-        overflow-x: hidden;
-        overflow-y: hidden;
-        text-overflow: ellipsis;
+       .bx--table-header-label { 
+          min-width: ${width};
+          max-width: ${width};
+          white-space: nowrap;
+          overflow-x: hidden;
+          overflow-y: hidden;
+          text-overflow: ellipsis;
+        }
       `
         : '';
     }}
@@ -138,6 +146,7 @@ const TableHead = ({
   openMenuText,
   closeMenuText,
   lightweight,
+  i18n,
 }) => {
   const filterBarActive = activeBar === 'filter';
 
@@ -146,7 +155,7 @@ const TableHead = ({
       <TableRow>
         {hasRowExpansion ? <TableExpandHeader /> : null}
         {hasRowSelection === 'multi' ? (
-          <StyledCheckboxTableHeader>
+          <StyledCheckboxTableHeader translateWithId={(...args) => tableTranslateWithId(...args)}>
             {/* TODO: Replace checkbox with TableSelectAll component when onChange bug is fixed
                     https://github.com/IBM/carbon-components-react/issues/1088 */}
             <Checkbox
@@ -163,7 +172,8 @@ const TableHead = ({
         {ordering.map(item => {
           const matchingColumnMeta = columns.find(column => column.id === item.columnId);
           const hasSort = matchingColumnMeta && sort && sort.columnId === matchingColumnMeta.id;
-
+          const align =
+            matchingColumnMeta && matchingColumnMeta.align ? matchingColumnMeta.align : 'start';
           return !item.isHidden && matchingColumnMeta ? (
             <StyledCustomTableHeader
               id={`column-${matchingColumnMeta.id}`}
@@ -177,7 +187,12 @@ const TableHead = ({
                   onChangeSort(matchingColumnMeta.id);
                 }
               }}
+              translateWithId={(...args) => tableTranslateWithId(i18n, ...args)}
               sortDirection={hasSort ? sort.direction : 'NONE'}
+              align={align}
+              className={classnames(`table-header-label-${align}`, {
+                'table-header-sortable': matchingColumnMeta.isSortable,
+              })}
             >
               <TableCellRenderer>{matchingColumnMeta.name}</TableCellRenderer>
             </StyledCustomTableHeader>

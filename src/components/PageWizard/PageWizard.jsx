@@ -35,7 +35,7 @@ const PageWizardStep = ({ children, onValidate = () => true, ...other }) => (
         </Button>
       ) : (
         <Button
-          onClick={() => onValidate() && other.onNext()}
+          onClick={() => onValidate() && other.onSubmit()}
           disabled={other.nextDisabled}
           loading={other.sendingData}
         >
@@ -171,8 +171,8 @@ const PageWizard = ({
             currentIndex={currentStepIdx}
             onChange={idx => setStep(steps[idx].id)}
           >
-            {steps.map(i => (
-              <ProgressStep description={i.description} label={i.label} />
+            {steps.map((i, idx) => (
+              <ProgressStep key={idx} description={i.description} label={i.label} />
             ))}
           </ProgressIndicator>
         </div>
