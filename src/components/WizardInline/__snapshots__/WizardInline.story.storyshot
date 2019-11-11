@@ -27,27 +27,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
         className="bx--modal-container"
         data-id="WizardInlineContainer"
       >
-        <div
-          className="wizard-inline-header page-title-bar"
+        <h2
+          blurb="My long blurb to explain what is going on"
+          breadcrumb={null}
+          className="wizard-inline-header"
+          onClose={[Function]}
         >
-          <div
-            className="page-title-bar-header"
-          >
-            <div>
-              <div
-                className="page-title-bar-title"
-              >
-                <div
-                  className="page-title-bar-title--text"
-                >
-                  <h2>
-                    I am a title
-                  </h2>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+          I am a title
+        </h2>
         <ul
           className="bx--progress wizard-inline-progress-indicator  ProgressIndicator__StyledProgressIndicator-sc-1sy51cd-0 egbeyA"
           onChange={[Function]}
@@ -290,27 +277,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
         className="bx--modal-container"
         data-id="WizardInlineContainer"
       >
-        <div
-          className="wizard-inline-header page-title-bar"
+        <h2
+          blurb={null}
+          breadcrumb={null}
+          className="wizard-inline-header"
+          onClose={[Function]}
         >
-          <div
-            className="page-title-bar-header"
-          >
-            <div>
-              <div
-                className="page-title-bar-title"
-              >
-                <div
-                  className="page-title-bar-title--text"
-                >
-                  <h2>
-                    Static Wizard
-                  </h2>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+          Static Wizard
+        </h2>
         <ul
           className="bx--progress wizard-inline-progress-indicator  ProgressIndicator__StyledProgressIndicator-sc-1sy51cd-0 egbeyA"
           onChange={[Function]}
@@ -553,27 +527,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
         className="bx--modal-container"
         data-id="WizardInlineContainer"
       >
-        <div
-          className="wizard-inline-header page-title-bar"
+        <h2
+          blurb={null}
+          breadcrumb={null}
+          className="wizard-inline-header"
+          onClose={[Function]}
         >
-          <div
-            className="page-title-bar-header"
-          >
-            <div>
-              <div
-                className="page-title-bar-title"
-              >
-                <div
-                  className="page-title-bar-title--text"
-                >
-                  <h2>
-                    Static Wizard
-                  </h2>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+          Static Wizard
+        </h2>
         <ul
           className="bx--progress wizard-inline-progress-indicator  ProgressIndicator__StyledProgressIndicator-sc-1sy51cd-0 egbeyA"
           onChange={[Function]}
@@ -857,27 +818,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
         className="bx--modal-container"
         data-id="WizardInlineContainer"
       >
-        <div
-          className="wizard-inline-header page-title-bar"
+        <h2
+          blurb={null}
+          breadcrumb={null}
+          className="wizard-inline-header"
+          onClose={[Function]}
         >
-          <div
-            className="page-title-bar-header"
-          >
-            <div>
-              <div
-                className="page-title-bar-title"
-              >
-                <div
-                  className="page-title-bar-title--text"
-                >
-                  <h2>
-                    Static Wizard
-                  </h2>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+          Static Wizard
+        </h2>
         <ul
           className="bx--progress wizard-inline-progress-indicator  ProgressIndicator__StyledProgressIndicator-sc-1sy51cd-0 egbeyA"
           onChange={[Function]}
@@ -1111,68 +1059,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
         className="bx--modal-container"
         data-id="WizardInlineContainer"
       >
-        <div
-          className="wizard-inline-header page-title-bar"
+        <h2
+          blurb={null}
+          breadcrumb={
+            Array [
+              <a
+                href="/"
+              >
+                Home
+              </a>,
+              <a
+                href="/"
+              >
+                Type
+              </a>,
+              <span>
+                Instance
+              </span>,
+            ]
+          }
+          className="wizard-inline-header"
+          onClose={[Function]}
         >
-          <div
-            className="page-title-bar-header"
-          >
-            <div>
-              <div
-                className="page-title-bar-breadcrumb"
-              >
-                <nav
-                  aria-label="Breadcrumb"
-                >
-                  <ol
-                    className="bx--breadcrumb"
-                  >
-                    <li
-                      className="bx--breadcrumb-item"
-                    >
-                      <a
-                        className="bx--link"
-                        href="/"
-                      >
-                        Home
-                      </a>
-                    </li>
-                    <li
-                      className="bx--breadcrumb-item"
-                    >
-                      <a
-                        className="bx--link"
-                        href="/"
-                      >
-                        Type
-                      </a>
-                    </li>
-                    <li
-                      className="bx--breadcrumb-item"
-                    >
-                      <span
-                        className="bx--link"
-                      >
-                        Instance
-                      </span>
-                    </li>
-                  </ol>
-                </nav>
-              </div>
-              <div
-                className="page-title-bar-title"
-              >
-                <div
-                  className="page-title-bar-title--text"
-                >
-                  <h2>
-                    Static Wizard
-                  </h2>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+          Static Wizard
+        </h2>
         <ul
           className="bx--progress wizard-inline-progress-indicator  ProgressIndicator__StyledProgressIndicator-sc-1sy51cd-0 egbeyA"
           onChange={[Function]}
@@ -1415,27 +1325,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
         className="bx--modal-container"
         data-id="WizardInlineContainer"
       >
-        <div
-          className="wizard-inline-header page-title-bar"
+        <h2
+          blurb={null}
+          breadcrumb={null}
+          className="wizard-inline-header"
+          onClose={[Function]}
         >
-          <div
-            className="page-title-bar-header"
-          >
-            <div>
-              <div
-                className="page-title-bar-title"
-              >
-                <div
-                  className="page-title-bar-title--text"
-                >
-                  <h2>
-                    Static Wizard
-                  </h2>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+          Static Wizard
+        </h2>
         <ul
           className="bx--progress wizard-inline-progress-indicator  ProgressIndicator__StyledProgressIndicator-sc-1sy51cd-0 egbeyA"
           onChange={[Function]}
