@@ -1,18 +1,8 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
 
 import ProgressIndicator from '../../ProgressIndicator/ProgressIndicator';
-import Hero from '../../Hero/Hero';
-
-const StyledHero = styled(Hero)`
-  margin-bottom: 1.5rem;
-  padding: 0;
-`;
-
-const StyledProgressIndicator = styled(ProgressIndicator)`
-  padding-bottom: 1.5rem;
-`;
+import PageTitleBar from '../../PageTitleBar/PageTitleBar';
 
 class WizardHeader extends Component {
   static propTypes = {
@@ -47,8 +37,9 @@ class WizardHeader extends Component {
 
     return (
       <Fragment>
-        <StyledHero {...others} />
-        <StyledProgressIndicator
+        <PageTitleBar className="wizard-inline-header" {...others} />
+        <ProgressIndicator
+          className="wizard-inline-progress-indicator"
           currentItemId={currentItemId}
           items={items.map(item => ({ id: item.id, label: item.name }))}
           showLabels={showLabels}
