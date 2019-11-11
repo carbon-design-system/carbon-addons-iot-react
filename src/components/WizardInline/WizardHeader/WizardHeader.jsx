@@ -33,11 +33,13 @@ class WizardHeader extends Component {
   state = {};
 
   render = () => {
-    const { currentItemId, setItem, items, showLabels, stepWidth, ...others } = this.props;
+    const { currentItemId, setItem, items, showLabels, stepWidth, title, ...others } = this.props;
 
     return (
       <Fragment>
-        <PageTitleBar className="wizard-inline-header" {...others} />
+        <h2 className="wizard-inline-header" {...others}>
+          {title}
+        </h2>
         <ProgressIndicator
           className="wizard-inline-progress-indicator"
           currentItemId={currentItemId}
