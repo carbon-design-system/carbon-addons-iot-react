@@ -35,7 +35,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
           >
             <td
               className="TableBodyRow__StyledCheckboxTableCell-sc-103itxu-0 fGLUuZ"
-              onClick={null}
+              onChange={null}
             >
               <span
                 className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
@@ -186,7 +186,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
           >
             <td
               className="TableBodyRow__StyledCheckboxTableCell-sc-103itxu-0 fGLUuZ"
-              onClick={[Function]}
+              onChange={[Function]}
             >
               <span
                 className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"

@@ -396,11 +396,10 @@ const TableBodyRow = ({
     hasRowSelection === 'multi' ? (
       <StyledCheckboxTableCell
         key={`${id}-row-selection-cell`}
-        onClick={
+        onChange={
           isSelectable !== false
             ? e => {
                 onRowSelected(id, !isSelected);
-                e.preventDefault();
                 e.stopPropagation();
               }
             : null

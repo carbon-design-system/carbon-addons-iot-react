@@ -120,9 +120,7 @@ describe('TableBodyRow', () => {
     const wrapper = mount(
       <TableBodyRow tableActions={mockActions} {...tableRowPropsWithSelection} />
     );
-    wrapper
-      .find('input')
-      .simulate('click', { preventDefault: () => true, stopPropagation: () => true });
+    wrapper.find('input').simulate('change', { stopPropagation: () => true });
     expect(mockRowSelection).toHaveBeenCalled();
   });
 
