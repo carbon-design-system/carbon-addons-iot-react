@@ -23,20 +23,26 @@ const TileGallerySection = ({ children, title, isOpen, onClick }) => {
   const [open, setOpen] = useState(isOpen);
   return (
     <div className="tile-gallery--section">
-      <Accordion>
-        <AccordionItem
-          title={title}
-          onHeadingClick={evt => {
-            setOpen(!open);
-            onClick(evt);
-          }}
-          open={open}
-        >
-          <div className="tile-gallery--section--items">
-            {React.Children.map(children, tileGalleryItem => React.cloneElement(tileGalleryItem))}
-          </div>
-        </AccordionItem>
-      </Accordion>
+      {title ? (
+        <Accordion>
+          <AccordionItem
+            title={title}
+            onHeadingClick={evt => {
+              setOpen(!open);
+              onClick(evt);
+            }}
+            open={open}
+          >
+            <div className="tile-gallery--section--items">
+              {React.Children.map(children, tileGalleryItem => React.cloneElement(tileGalleryItem))}
+            </div>
+          </AccordionItem>
+        </Accordion>
+      ) : (
+        <div className="tile-gallery--section--items">
+          {React.Children.map(children, tileGalleryItem => React.cloneElement(tileGalleryItem))}
+        </div>
+      )}
     </div>
   );
 };
