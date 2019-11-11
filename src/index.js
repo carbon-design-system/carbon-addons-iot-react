@@ -67,17 +67,11 @@ export {
 } from './components/PageWizard/PageWizard';
 export StatefulPageWizard from './components/PageWizard/StatefulPageWizard';
 
-export {
-  TileGallery,
-} from './components/TileGallery/TileGallery';
+export TileGallery from './components/TileGallery/TileGallery';
 
-export {
-  TileGallerySection,
-} from './components/TileGallery/TileGallerySection';
+export TileGallerySection from './components/TileGallery/TileGallerySection';
 
-export {
-  TileGalleryItem,
-} from './components/TileGallery/TileGalleryItem';
+export TileGalleryItem from './components/TileGallery/TileGalleryItem';
 
 // Carbon proxy
 export {

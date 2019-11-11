@@ -1,18 +1,20 @@
-import React, { Fragment, useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
-const TileGallery = ({
-  children,
-  mode = 'grid', // or "list"
-}) => {
+const propTypes = {
+  /** Component children's to be rendered */
+  children: PropTypes.node.isRequired,
+};
+
+const TileGallery = ({ children }) => {
   // otherwise render the dashboards
   return (
     <div className="tile-gallery">
-      {React.Children.map(children, tileGallerySection =>
-        React.cloneElement(tileGallerySection, { mode })
-      )}
+      {React.Children.map(children, tileGallerySection => React.cloneElement(tileGallerySection))}
     </div>
   );
 };
 
-export { TileGallery };
+TileGallery.propTypes = propTypes;
+
+export default TileGallery;

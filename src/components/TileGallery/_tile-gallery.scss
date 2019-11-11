@@ -70,16 +70,21 @@
   justify-content: center;
 }
 
+.bx--tile--clickable:hover,
+.dashboard-pin-list-title:hover {
+  background: #ffffff;
+}
+
 .dashboard-tile {
   text-decoration: none;
   margin-right: 1rem;
-  height: rem(128px);
   flex-basis: 30%;
-  min-width: rem(200px);
+  // min-width: rem(305px);
   position: relative;
   margin-top: 1rem;
   box-shadow: none;
   border: solid rem(1px) $ui-background;
+
   .top {
     display: flex;
     align-items: center;
@@ -102,7 +107,7 @@
     font-weight: bold;
     flex: 1;
     padding-right: 1rem;
-    color: $text-01;
+    color: #000000;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow-x: hidden;
@@ -134,11 +139,12 @@
   }
 }
 
-.titlePinned {
+.titleCard {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
   font-weight: bold;
+  color: #000000;
   .summary-text {
     color: $text-01;
   }
@@ -153,25 +159,22 @@
 }
 
 .dashboard-pin-card-title {
-  height: 16rem;
   flex: 0 0 16rem;
   .topSection {
     display: flex;
     justify-content: center;
-    background: $ui-02;
     align-items: center;
     margin-bottom: 0.9375rem;
-    height: 12rem;
     position: relative;
     width: 100%;
   }
-  .image {
+  .thumbnail {
     display: block;
     padding-left: rem(5px);
   }
-  .descriptionPinned {
+  .descriptionCard {
     position: absolute;
-    text-align: center;
+    text-align: left;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -180,17 +183,26 @@
     transition: 0.5s ease;
     opacity: 0;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding: 15px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-end;
     span {
       color: $ui-background;
+      margin-bottom: 5px;
+    }
+    a {
+      text-decoration: none;
+      color: #729de7;
     }
   }
-  .descriptionPinned:hover {
+  .descriptionCard:hover {
     background: rgba(41, 41, 41, 0.8);
     opacity: 1;
   }
-  .titlePinned {
+  .titleCard {
     margin-left: 0.5rem;
     width: 11rem;
     margin-top: 0.125rem;
@@ -207,11 +219,11 @@
     background: $ui-03;
     border: none;
   }
-  .titlePinned {
+  .titleCard {
     margin-left: 0.9375rem;
     margin-top: 0.125rem;
   }
-  .descriptionPinned {
+  .descriptionCard {
     padding-left: 2rem;
     // color: '#717e87'
     color: $ui-04;

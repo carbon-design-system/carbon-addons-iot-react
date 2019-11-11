@@ -1,76 +1,96 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 
-import IconStar from '@carbon/icons-react/lib/star/16';
-import IconStarFav from '@carbon/icons-react/lib/star--filled/16';
+const propTypes = {
+  /** Card title */
+  title: PropTypes.string.isRequired,
+  /** Card description */
+  description: PropTypes.string,
+  /** More info link */
+  moreInfoLink: PropTypes.string,
+  /** More info text */
+  descriptionMoreInfo: PropTypes.string,
+  /** Bottom left content for component  */
+  leftContent: PropTypes.node,
+  /** Bottom right content for component */
+  rightContent: PropTypes.node,
+  /** Card display mode */
+  mode: PropTypes.oneOf(['grid', 'tile']),
+  /** When grid type - thumbnail content */
+  thumbnail: PropTypes.node,
+  /** Href when click in card */
+  href: PropTypes.string,
+  /** Card width */
+  width: PropTypes.string,
+  /** Card height */
+  height: PropTypes.string,
+};
 
-import { OverflowMenu, OverflowMenuItem } from '../../index';
+const defaultProps = {
+  description: 'Some description',
+  moreInfoLink: null,
+  descriptionMoreInfo: 'More info...',
+  leftContent: null,
+  rightContent: null,
+  mode: 'grid',
+  thumbnail: null,
+  href: null,
+  width: '305px',
+  height: '272px',
+};
 
-const TileGalleryItem = ({ title, description, thumbnail, href, isFavorite = false, mode }) => {
-  const titleSection = !isFavorite ? (
-    <Fragment>
-      <IconStar onClick={() => alert('favorite')} />
-      {title}
-    </Fragment>
-  ) : (
-    <Fragment>
-      <IconStarFav onClick={() => alert('unfavorite')} />
-      {title}
-    </Fragment>
+const TileGalleryItem = ({
+  title,
+  description,
+  descriptionMoreInfo,
+  moreInfoLink,
+  leftContent,
+  rightContent,
+  mode,
+  thumbnail,
+  href,
+  width,
+  height,
+}) => {
+  const content = (
+    <div style={{ display: 'flex', minHeight: '24px' }}>
+      {leftContent}
+      <span className="titleCard">{title}</span>
+      {rightContent && <div className="overflowMenu">{rightContent}</div>}
+    </div>
   );
 
-  const optionSets = [['edit', 'share', 'update'], ['remove']];
-
-  const overflowMenu = (
-    <OverflowMenu floatingMenu onClick={evt => evt.preventDefault()} style={{ height: '2rem' }}>
-      {optionSets.map((options, setIdx) =>
-        options.map((option, optionIdx) => (
-          <OverflowMenuItem
-            hasDivider={optionIdx === 0 && setIdx > 0}
-            itemText={option}
-            onClick={() => alert(option)}
-          />
-        ))
-      )}
-    </OverflowMenu>
-  );
   const tile =
     mode === 'grid' ? (
-      <div key={`${title}-pinnedsummarydash`}>
+      <div key={`${title}-card`}>
         <div>
-          <div className="topSection">
-            <img className="image" alt="Dashboard Thumbnail" src={thumbnail} />
-            <div className="descriptionPinned">
+          <div className="topSection" style={{ height: `calc(${height} - 63px )` }}>
+            <Fragment className="thumbnail">{thumbnail}</Fragment>
+            <div className="descriptionCard">
               <span>{description}</span>
+              <a href={moreInfoLink}>{descriptionMoreInfo}</a>
             </div>
           </div>
         </div>
-        <div>
-          <div style={{ display: 'flex' }}>
-            {titleSection}
-            <div className="overflowMenu">{overflowMenu}</div>
-          </div>
-        </div>
+        {content}
       </div>
     ) : (
-      <div key={`${title}-pinnedsummarydash`}>
-        <div>
-          <div style={{ display: 'flex' }}>
-            {titleSection}
-            <div className="overflowMenu">{overflowMenu}</div>
-          </div>
-          <span className="descriptionPinned">{description || 'some description'}</span>
-        </div>
+      <div key={`${title}-card`}>
+        <Fragment>
+          {content}
+          <span className="descriptionCard">{description}</span>
+        </Fragment>
       </div>
     );
 
   return (
     <Fragment>
       <a
+        style={mode === 'grid' ? { width, height } : { minWidth: width }}
         className={`dashboard-tile bx--tile bx--tile--clickable dashboard-pin-${
           mode === 'grid' ? 'card' : 'list'
         }-title`}
-        key={`${title}-dashboard-pin-link`}
+        key={`${title}-card-link`}
         to={href}
       >
         {tile}
@@ -79,4 +99,7 @@ const TileGalleryItem = ({ title, description, thumbnail, href, isFavorite = fal
   );
 };
 
-export { TileGalleryItem };
+TileGalleryItem.propTypes = propTypes;
+TileGalleryItem.defaultProps = defaultProps;
+
+export default TileGalleryItem;
