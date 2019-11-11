@@ -28,43 +28,28 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
         data-id="WizardInlineContainer"
       >
         <div
-          className="WizardHeader__StyledHero-zafbe2-0 kATNdy Hero__StyledHero-nej8yx-0 fTphDS"
+          className="wizard-inline-header page-title-bar"
         >
           <div
-            className="Hero__StyledTitleSection-nej8yx-1 imCjnH"
+            className="page-title-bar-header"
           >
-            <div
-              className="Hero__StyledTitle-nej8yx-2 emqnjy"
-            >
-              I am a title
-            </div>
-            <button
-              aria-label="Close"
-              className="bx--modal-close"
-              data-modal-close={true}
-              onClick={[Function]}
-              type="button"
-            >
-              <svg
-                className="bx--modal-close__icon"
-                height="10"
-                viewBox="0 0 10 10"
-                width="10"
-                xmlns="http://www.w3.org/2000/svg"
+            <div>
+              <div
+                className="page-title-bar-title"
               >
-                <title>
-                  Close
-                </title>
-                <path
-                  d="M6.32 5L10 8.68 8.68 10 5 6.32 1.32 10 0 8.68 3.68 5 0 1.32 1.32 0 5 3.68 8.68 0 10 1.32 6.32 5z"
-                  fillRule="nonzero"
-                />
-              </svg>
-            </button>
+                <div
+                  className="page-title-bar-title--text"
+                >
+                  <h2>
+                    I am a title
+                  </h2>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <ul
-          className="bx--progress WizardHeader__StyledProgressIndicator-zafbe2-1 dpwNUl  ProgressIndicator__StyledProgressIndicator-sc-1sy51cd-0 egbeyA"
+          className="bx--progress wizard-inline-progress-indicator  ProgressIndicator__StyledProgressIndicator-sc-1sy51cd-0 egbeyA"
           onChange={[Function]}
         >
           <li
@@ -306,43 +291,28 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
         data-id="WizardInlineContainer"
       >
         <div
-          className="WizardHeader__StyledHero-zafbe2-0 kATNdy Hero__StyledHero-nej8yx-0 fTphDS"
+          className="wizard-inline-header page-title-bar"
         >
           <div
-            className="Hero__StyledTitleSection-nej8yx-1 imCjnH"
+            className="page-title-bar-header"
           >
-            <div
-              className="Hero__StyledTitle-nej8yx-2 emqnjy"
-            >
-              Static Wizard
-            </div>
-            <button
-              aria-label="Close"
-              className="bx--modal-close"
-              data-modal-close={true}
-              onClick={[Function]}
-              type="button"
-            >
-              <svg
-                className="bx--modal-close__icon"
-                height="10"
-                viewBox="0 0 10 10"
-                width="10"
-                xmlns="http://www.w3.org/2000/svg"
+            <div>
+              <div
+                className="page-title-bar-title"
               >
-                <title>
-                  Close
-                </title>
-                <path
-                  d="M6.32 5L10 8.68 8.68 10 5 6.32 1.32 10 0 8.68 3.68 5 0 1.32 1.32 0 5 3.68 8.68 0 10 1.32 6.32 5z"
-                  fillRule="nonzero"
-                />
-              </svg>
-            </button>
+                <div
+                  className="page-title-bar-title--text"
+                >
+                  <h2>
+                    Static Wizard
+                  </h2>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <ul
-          className="bx--progress WizardHeader__StyledProgressIndicator-zafbe2-1 dpwNUl  ProgressIndicator__StyledProgressIndicator-sc-1sy51cd-0 egbeyA"
+          className="bx--progress wizard-inline-progress-indicator  ProgressIndicator__StyledProgressIndicator-sc-1sy51cd-0 egbeyA"
           onChange={[Function]}
         >
           <li
@@ -584,43 +554,28 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
         data-id="WizardInlineContainer"
       >
         <div
-          className="WizardHeader__StyledHero-zafbe2-0 kATNdy Hero__StyledHero-nej8yx-0 fTphDS"
+          className="wizard-inline-header page-title-bar"
         >
           <div
-            className="Hero__StyledTitleSection-nej8yx-1 imCjnH"
+            className="page-title-bar-header"
           >
-            <div
-              className="Hero__StyledTitle-nej8yx-2 emqnjy"
-            >
-              Static Wizard
-            </div>
-            <button
-              aria-label="Close"
-              className="bx--modal-close"
-              data-modal-close={true}
-              onClick={[Function]}
-              type="button"
-            >
-              <svg
-                className="bx--modal-close__icon"
-                height="10"
-                viewBox="0 0 10 10"
-                width="10"
-                xmlns="http://www.w3.org/2000/svg"
+            <div>
+              <div
+                className="page-title-bar-title"
               >
-                <title>
-                  Close
-                </title>
-                <path
-                  d="M6.32 5L10 8.68 8.68 10 5 6.32 1.32 10 0 8.68 3.68 5 0 1.32 1.32 0 5 3.68 8.68 0 10 1.32 6.32 5z"
-                  fillRule="nonzero"
-                />
-              </svg>
-            </button>
+                <div
+                  className="page-title-bar-title--text"
+                >
+                  <h2>
+                    Static Wizard
+                  </h2>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <ul
-          className="bx--progress WizardHeader__StyledProgressIndicator-zafbe2-1 dpwNUl  ProgressIndicator__StyledProgressIndicator-sc-1sy51cd-0 egbeyA"
+          className="bx--progress wizard-inline-progress-indicator  ProgressIndicator__StyledProgressIndicator-sc-1sy51cd-0 egbeyA"
           onChange={[Function]}
         >
           <li
@@ -903,43 +858,28 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
         data-id="WizardInlineContainer"
       >
         <div
-          className="WizardHeader__StyledHero-zafbe2-0 kATNdy Hero__StyledHero-nej8yx-0 fTphDS"
+          className="wizard-inline-header page-title-bar"
         >
           <div
-            className="Hero__StyledTitleSection-nej8yx-1 imCjnH"
+            className="page-title-bar-header"
           >
-            <div
-              className="Hero__StyledTitle-nej8yx-2 emqnjy"
-            >
-              Static Wizard
-            </div>
-            <button
-              aria-label="Close"
-              className="bx--modal-close"
-              data-modal-close={true}
-              onClick={[Function]}
-              type="button"
-            >
-              <svg
-                className="bx--modal-close__icon"
-                height="10"
-                viewBox="0 0 10 10"
-                width="10"
-                xmlns="http://www.w3.org/2000/svg"
+            <div>
+              <div
+                className="page-title-bar-title"
               >
-                <title>
-                  Close
-                </title>
-                <path
-                  d="M6.32 5L10 8.68 8.68 10 5 6.32 1.32 10 0 8.68 3.68 5 0 1.32 1.32 0 5 3.68 8.68 0 10 1.32 6.32 5z"
-                  fillRule="nonzero"
-                />
-              </svg>
-            </button>
+                <div
+                  className="page-title-bar-title--text"
+                >
+                  <h2>
+                    Static Wizard
+                  </h2>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <ul
-          className="bx--progress WizardHeader__StyledProgressIndicator-zafbe2-1 dpwNUl  ProgressIndicator__StyledProgressIndicator-sc-1sy51cd-0 egbeyA"
+          className="bx--progress wizard-inline-progress-indicator  ProgressIndicator__StyledProgressIndicator-sc-1sy51cd-0 egbeyA"
           onChange={[Function]}
         >
           <li
@@ -1172,88 +1112,69 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
         data-id="WizardInlineContainer"
       >
         <div
-          className="WizardHeader__StyledHero-zafbe2-0 kATNdy Hero__StyledHero-nej8yx-0 fTphDS"
+          className="wizard-inline-header page-title-bar"
         >
           <div
-            className="Hero__StyledBreadcrumbDiv-nej8yx-6 brbWug"
+            className="page-title-bar-header"
           >
-            <nav
-              aria-label="Breadcrumb"
-              className="Hero__StyledBreadcrumb-nej8yx-5 kRUzlm"
-            >
-              <ol
-                className="bx--breadcrumb"
+            <div>
+              <div
+                className="page-title-bar-breadcrumb"
               >
-                <li
-                  className="bx--breadcrumb-item"
+                <nav
+                  aria-label="Breadcrumb"
                 >
-                  <a
-                    className="bx--link"
-                    href="/"
+                  <ol
+                    className="bx--breadcrumb"
                   >
-                    Home
-                  </a>
-                </li>
-                <li
-                  className="bx--breadcrumb-item"
+                    <li
+                      className="bx--breadcrumb-item"
+                    >
+                      <a
+                        className="bx--link"
+                        href="/"
+                      >
+                        Home
+                      </a>
+                    </li>
+                    <li
+                      className="bx--breadcrumb-item"
+                    >
+                      <a
+                        className="bx--link"
+                        href="/"
+                      >
+                        Type
+                      </a>
+                    </li>
+                    <li
+                      className="bx--breadcrumb-item"
+                    >
+                      <span
+                        className="bx--link"
+                      >
+                        Instance
+                      </span>
+                    </li>
+                  </ol>
+                </nav>
+              </div>
+              <div
+                className="page-title-bar-title"
+              >
+                <div
+                  className="page-title-bar-title--text"
                 >
-                  <a
-                    className="bx--link"
-                    href="/"
-                  >
-                    Type
-                  </a>
-                </li>
-                <li
-                  className="bx--breadcrumb-item"
-                >
-                  <span
-                    className="bx--link"
-                  >
-                    Instance
-                  </span>
-                </li>
-              </ol>
-            </nav>
-            <div
-              className="Hero__StyledRightContent-nej8yx-4 cCeABe"
-            />
-          </div>
-          <div
-            className="Hero__StyledTitleSection-nej8yx-1 djCalR"
-          >
-            <div
-              className="Hero__StyledTitle-nej8yx-2 emqnjy"
-            >
-              Static Wizard
+                  <h2>
+                    Static Wizard
+                  </h2>
+                </div>
+              </div>
             </div>
-            <button
-              aria-label="Close"
-              className="bx--modal-close"
-              data-modal-close={true}
-              onClick={[Function]}
-              type="button"
-            >
-              <svg
-                className="bx--modal-close__icon"
-                height="10"
-                viewBox="0 0 10 10"
-                width="10"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <title>
-                  Close
-                </title>
-                <path
-                  d="M6.32 5L10 8.68 8.68 10 5 6.32 1.32 10 0 8.68 3.68 5 0 1.32 1.32 0 5 3.68 8.68 0 10 1.32 6.32 5z"
-                  fillRule="nonzero"
-                />
-              </svg>
-            </button>
           </div>
         </div>
         <ul
-          className="bx--progress WizardHeader__StyledProgressIndicator-zafbe2-1 dpwNUl  ProgressIndicator__StyledProgressIndicator-sc-1sy51cd-0 egbeyA"
+          className="bx--progress wizard-inline-progress-indicator  ProgressIndicator__StyledProgressIndicator-sc-1sy51cd-0 egbeyA"
           onChange={[Function]}
         >
           <li
@@ -1495,43 +1416,28 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
         data-id="WizardInlineContainer"
       >
         <div
-          className="WizardHeader__StyledHero-zafbe2-0 kATNdy Hero__StyledHero-nej8yx-0 fTphDS"
+          className="wizard-inline-header page-title-bar"
         >
           <div
-            className="Hero__StyledTitleSection-nej8yx-1 imCjnH"
+            className="page-title-bar-header"
           >
-            <div
-              className="Hero__StyledTitle-nej8yx-2 emqnjy"
-            >
-              Static Wizard
-            </div>
-            <button
-              aria-label="Close"
-              className="bx--modal-close"
-              data-modal-close={true}
-              onClick={[Function]}
-              type="button"
-            >
-              <svg
-                className="bx--modal-close__icon"
-                height="10"
-                viewBox="0 0 10 10"
-                width="10"
-                xmlns="http://www.w3.org/2000/svg"
+            <div>
+              <div
+                className="page-title-bar-title"
               >
-                <title>
-                  Close
-                </title>
-                <path
-                  d="M6.32 5L10 8.68 8.68 10 5 6.32 1.32 10 0 8.68 3.68 5 0 1.32 1.32 0 5 3.68 8.68 0 10 1.32 6.32 5z"
-                  fillRule="nonzero"
-                />
-              </svg>
-            </button>
+                <div
+                  className="page-title-bar-title--text"
+                >
+                  <h2>
+                    Static Wizard
+                  </h2>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <ul
-          className="bx--progress WizardHeader__StyledProgressIndicator-zafbe2-1 dpwNUl  ProgressIndicator__StyledProgressIndicator-sc-1sy51cd-0 egbeyA"
+          className="bx--progress wizard-inline-progress-indicator  ProgressIndicator__StyledProgressIndicator-sc-1sy51cd-0 egbeyA"
           onChange={[Function]}
         >
           <li
