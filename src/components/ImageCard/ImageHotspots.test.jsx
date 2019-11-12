@@ -7,6 +7,7 @@ import ImageHotspots, {
   calculateImageWidth,
   startDrag,
   whileDrag,
+  onImageLoad,
 } from './ImageHotspots';
 
 describe('ImageHotspots', () => {
@@ -55,6 +56,55 @@ describe('ImageHotspots', () => {
     expect(mockSetImage).toHaveBeenCalledWith({ ...currentImage, offsetX: 100, offsetY: 100 });
     // Because the image is two times wider and taller than the minimap, the offset is reduced in ratio
     expect(mockSetMinimap).toHaveBeenCalledWith({ ...currentMinimap, offsetX: -50, offsetY: -50 });
+  });
+  it('onImageLoad', () => {
+    const imageLoadEvent = { target: { offsetWidth: 200, offsetHeight: 100 } };
+    // The container is 1/4 of the size of the image so it should be resizable
+    const container = { orientation: 'landscape', width: 50, height: 25 };
+    // No image, options, or minimap data
+    const image = {};
+    const minimap = { initialSize: 100 };
+    const options = {};
+    const mockSetImage = jest.fn();
+    const mockSetMinimap = jest.fn();
+    const mockSetOptions = jest.fn();
+    onImageLoad(
+      imageLoadEvent,
+      container,
+      image,
+      mockSetImage,
+      minimap,
+      mockSetMinimap,
+      options,
+      mockSetOptions
+    );
+    expect(mockSetImage).toHaveBeenCalledWith(
+      expect.objectContaining({
+        scale: 1,
+        ratio: 2,
+        offsetX: 0,
+        initialWidth: 200,
+        initialHeight: 100,
+        width: 50,
+        height: 25,
+      })
+    );
+    expect(mockSetMinimap).toHaveBeenCalledWith(
+      expect.objectContaining({
+        width: 100,
+        guideWidth: 100,
+        height: 50,
+        guideHeight: 50,
+      })
+    );
+    expect(mockSetOptions).toHaveBeenCalledWith(
+      expect.objectContaining({
+        draggable: false,
+        resizable: true,
+        hideZoomControls: false,
+        hideMinimap: false,
+      })
+    );
   });
   it('shows loading', () => {
     act(() => {
