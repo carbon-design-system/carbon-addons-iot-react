@@ -27,9 +27,9 @@ module.exports = {
     '^.+\\.s?css$': '<rootDir>/config/jest/cssTransform.js',
     '^(?!.*\\.(js|jsx|css|json)$)': '<rootDir>/config/jest/fileTransform.js',
   },
-  testPathIgnorePatterns: ['/config/', '/coverage/', '/lib/'],
+  testPathIgnorePatterns: ['/config/', '/lib/'],
   transformIgnorePatterns: ['/node_modules/(?!(@carbon/charts)).+(.jsx?)'],
-
+  watchPathIgnorePatterns: ['/coverage/', '/results/', '/.git/'],
   moduleFileExtensions: ['js', 'json', 'jsx'],
   snapshotSerializers: ['enzyme-to-json/serializer'],
 };
