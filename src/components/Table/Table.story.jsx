@@ -433,12 +433,12 @@ storiesOf('Watson IoT|Table', module)
       <StatefulTable
         {...initialState}
         options={{
-          hasSearch: true,
-          hasPagination: true,
+          hasSearch: boolean('Show Search', true),
+          hasPagination: boolean('Show Pagination', true),
           hasRowSelection: 'multi',
-          hasFilter: true,
-          hasRowActions: true,
-          hasRowCount: boolean('Show Row Count', true),
+          hasFilter: boolean('Show Filter', true),
+          hasRowActions: boolean('Show Row Action', true),
+          hasRowCountInHeader: boolean('Show Row Count', true),
         }}
         view={{
           toolbar: { activeBar: null },

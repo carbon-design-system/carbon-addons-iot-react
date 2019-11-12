@@ -116,6 +116,7 @@ describe('Table', () => {
 
   const options = {
     hasRowExpansion: true,
+    hasRowCountInHeader: true,
   };
 
   const view = {
@@ -219,5 +220,35 @@ describe('Table', () => {
     emptyTable.find('button').simulate('click');
     expect(mockActions.toolbar.onApplySearch).toHaveBeenCalled();
     expect(mockActions.toolbar.onClearAllFilters).toHaveBeenCalled();
+  });
+
+  test('validate row count function ', () => {
+    const wrapper = mount(
+      <Table
+        columns={tableColumns}
+        data={tableData}
+        actions={mockActions}
+        options={options}
+        view={view}
+      />
+    );
+
+    const resultLabel = 'Results';
+    const rowCounts = view.pagination.totalItems;
+    const renderRowCountField = wrapper
+      .find('Table')
+      .at(0)
+      .props()
+      .i18n.rowCountInHeader(rowCounts, resultLabel);
+    expect(renderRowCountField).toContain('Results:');
+
+    const min = 1;
+    const max = 10;
+    const renderItemRangeField = wrapper
+      .find('Table')
+      .at(0)
+      .props()
+      .i18n.itemsRange(min, max);
+    expect(renderItemRangeField).toContain('items');
   });
 });

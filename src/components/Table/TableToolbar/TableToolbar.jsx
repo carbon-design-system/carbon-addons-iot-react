@@ -70,14 +70,6 @@ const StyledTableBatchActions = styled(TableBatchActions)`
   }
 `;
 
-const ToolBarResultLabel = styled.label`
-  &&& {
-    display: flex;
-    position: relative;
-    height: 3rem;
-    padding: 1rem;
-  }
-`;
 const propTypes = {
   /** id of table */
   tableId: PropTypes.string.isRequired,
@@ -86,7 +78,7 @@ const propTypes = {
     hasFilter: PropTypes.bool,
     hasSearch: PropTypes.bool,
     hasColumnSelection: PropTypes.bool,
-    hasRowCount: PropTypes.bool,
+    hasRowCountInHeader: PropTypes.bool,
   }).isRequired,
 
   /** internationalized labels */
@@ -151,7 +143,7 @@ const TableToolbar = ({
   tableId,
   className,
   i18n,
-  options: { hasColumnSelection, hasFilter, hasSearch, hasRowSelection, hasRowCount },
+  options: { hasColumnSelection, hasFilter, hasSearch, hasRowSelection, hasRowCountInHeader },
   actions: {
     onCancelBatchAction,
     onApplyBatchAction,
@@ -168,7 +160,6 @@ const TableToolbar = ({
     // activeBar,
     customToolbarContent,
     isDisabled,
-    totalItemsCount,
   },
 }) => (
   <StyledCarbonTableToolbar className={className}>
@@ -184,10 +175,13 @@ const TableToolbar = ({
         </TableBatchAction>
       ))}
     </StyledTableBatchActions>
-    {hasRowCount ? (
-      <ToolBarResultLabel>
-        {i18n.rowCountLabel}: {totalItemsCount}
-      </ToolBarResultLabel>
+
+    {hasRowCountInHeader ? (
+      <label // eslint-disable-line
+        className="row-count-header"
+      >
+        {i18n.rowCountHeaderField}
+      </label>
     ) : null}
     <StyledTableToolbarContent>
       {hasSearch ? (

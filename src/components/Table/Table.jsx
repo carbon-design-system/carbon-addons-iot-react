@@ -84,7 +84,7 @@ const propTypes = {
     hasSearch: PropTypes.bool,
     hasColumnSelection: PropTypes.bool,
     shouldLazyRender: PropTypes.bool,
-    hasRowCount: PropTypes.bool,
+    hasRowCountInHeader: PropTypes.bool,
   }),
 
   /** Initial state of the table, should be updated via a local state wrapper component implementation or via a central store/redux see StatefulTable component for an example */
@@ -269,6 +269,8 @@ export const defaultProps = baseProps => ({
     batchCancel: 'Cancel',
     itemsSelected: 'items selected',
     itemSelected: 'item selected',
+    rowCountLabel: 'Results',
+    rowCountInHeader: (totalRowCount, rowCountLabel) => `${rowCountLabel}: ${totalRowCount}`,
     /** empty state */
     emptyMessage: 'There is no data',
     emptyMessageWithFilters: 'No results match the current filters',
@@ -347,7 +349,10 @@ const Table = props => {
           filterNone: i18n.filterNone,
           filterAscending: i18n.filterAscending,
           filterDescending: i18n.filterDescending,
-          rowCountLabel: i18n.rowCountLabel,
+          rowCountHeaderField: i18n.rowCountInHeader(
+            view.pagination.totalItems,
+            i18n.rowCountLabel
+          ),
         }}
         actions={pick(
           actions.toolbar,
@@ -364,12 +369,11 @@ const Table = props => {
           'hasFilter',
           'hasSearch',
           'hasRowSelection',
-          'hasRowCount'
+          'hasRowCountInHeader'
         )}
         tableState={{
           totalSelected: view.table.selectedIds.length,
           totalFilters: view.filters ? view.filters.length : 0,
-          totalItemsCount: view.pagination.totalItems,
           ...pick(
             view.toolbar,
             'batchActions',

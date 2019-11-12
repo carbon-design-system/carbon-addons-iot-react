@@ -78,3 +78,10 @@ html[dir='rtl'] {
 .#{$prefix}--toolbar-search-container-active .#{$prefix}--search .#{$prefix}--search-input {
   padding-right: $spacing-09;
 }
+
+.row-count-header {
+  display: flex;
+  position: relative;
+  height: $spacing-09;
+  padding: $spacing-05;
+}
