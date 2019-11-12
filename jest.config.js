@@ -15,6 +15,7 @@ module.exports = {
     __DEV__: false,
   },
   setupFiles: ['<rootDir>/config/jest/setup.js'],
+  setupFilesAfterEnv: ['<rootDir>/config/jest/setupTest.js'],
   testMatch: [
     '<rootDir>/**/__tests__/**/*.js?(x)',
     '<rootDir>/**/?(*.)(spec|test).js?(x)',
@@ -26,7 +27,7 @@ module.exports = {
     '^.+\\.s?css$': '<rootDir>/config/jest/cssTransform.js',
     '^(?!.*\\.(js|jsx|css|json)$)': '<rootDir>/config/jest/fileTransform.js',
   },
-  testPathIgnorePatterns: ['/config/', '/lib/'],
+  testPathIgnorePatterns: ['/config/', '/coverage/', '/lib/'],
   transformIgnorePatterns: ['/node_modules/(?!(@carbon/charts)).+(.jsx?)'],
 
   moduleFileExtensions: ['js', 'json', 'jsx'],

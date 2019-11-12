@@ -25,10 +25,10 @@
     "prepare": "yarn build",
     "start": "yarn storybook",
     "storybook": "start-storybook -p 3000 -s public/development",
-    "test": "jest --detectOpenHandles",
+    "test": "cross-env NODE_OPTIONS='--max-old-space-size=8096' jest --detectOpenHandles",
     "test:a11y": "jest --testPathPattern='src\\/([^\\s]+)\\/([a-zA-Z0-9\\s_\\\\.\\-\\(\\):])+(\\.test\\.a11y\\.)+(js|jsx)$'",
-    "test:watch": "jest --watchAll --runInBand --verbose",
-    "test:update": "jest --updateSnapshot",
+    "test:watch": "cross-env NODE_OPTIONS='--max-old-space-size=8096' jest  --watch --verbose",
+    "test:updateSnapshot": "cross-env NODE_OPTIONS='--max-old-space-size=8096' jest  --updateSnapshot",
     "test:clear": "jest --clearCache"
   },
   "stylelint": {
@@ -152,6 +152,7 @@
     "babel-plugin-require-context-hook": "^1.0.0",
     "babel-plugin-styled-components": "^1.10.0",
     "coveralls": "^3.0.2",
+    "cross-env": "^6.0.3",
     "css-loader": "^2.1.0",
     "enzyme": "^3.8.0",
     "enzyme-adapter-react-16": "^1.14.0",
