@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
+import { boolean } from '@storybook/addon-knobs';
 import { Form, FormGroup, FormItem, Link, TextInput } from 'carbon-components-react';
 
 import PageTitleBar from '../PageTitleBar/PageTitleBar';
@@ -202,6 +203,51 @@ storiesOf('Watson IoT Experimental|PageWizard', module)
             onNext={action('next')}
             onBack={action('back')}
             setStep={action('step clicked')}
+          >
+            {[content[0]]}
+          </PageWizard>
+        }
+      />
+    </div>
+  ))
+  .add('With Sticky Footer: stateful example w/ validation in PageTitleBar', () => (
+    <div style={{ position: 'fixed', left: 0, right: 0, top: 0, bottom: 0 }}>
+      <PageTitleBar
+        title="A cool PageWizard!"
+        description="The description from the PageTitleBar"
+        breadcrumb={[
+          <Link to="www.ibm.com">Home</Link>,
+          <Link to="www.ibm.com">Something</Link>,
+          <Link to="www.ibm.com">Something Else</Link>,
+        ]}
+        tabs={
+          <StatefulPageWizard hasStickyFooter={boolean('hasStickyFooter', true)}>
+            <StepValidation id="step1" label="Step with validation" />
+            {content[1]}
+          </StatefulPageWizard>
+        }
+      />
+    </div>
+  ))
+  .add('With Sticky Footer: only one step, in PageTitleBar', () => (
+    <div style={{ position: 'fixed', left: 0, right: 0, top: 0, bottom: 0 }}>
+      <PageTitleBar
+        title="A cool PageWizard!"
+        description="The description from the PageTitleBar"
+        breadcrumb={[
+          <Link to="www.ibm.com">Home</Link>,
+          <Link to="www.ibm.com">Something</Link>,
+          <Link to="www.ibm.com">Something Else</Link>,
+        ]}
+        tabs={
+          <PageWizard
+            currentStepId="step1"
+            onClose={action('closed')}
+            onSubmit={action('submit')}
+            onNext={action('next')}
+            onBack={action('back')}
+            setStep={action('step clicked')}
+            hasStickyFooter={boolean('hasStickyFooter', true)}
           >
             {[content[0]]}
           </PageWizard>

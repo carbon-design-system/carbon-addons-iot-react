@@ -54,6 +54,7 @@ const CardWrapper = styled.div`
 export const CardContent = styled.div`
   flex: 1;
   position: relative;
+  overflow: hidden;
   height: ${props => props.dimensions.y - CARD_TITLE_HEIGHT}px;
 `;
 
@@ -133,7 +134,7 @@ const defaultProps = {
     deleteCardLabel: 'Delete card',
     closeLabel: 'Close',
     expandLabel: 'Expand to fullscreen',
-    overflowMenuDescription: 'open and close list of options',
+    overflowMenuDescription: 'Open and close list of options',
   },
 };
 
@@ -155,7 +156,6 @@ const Card = ({
   availableActions,
   breakpoint,
   i18n,
-  i18n: { closeLabel },
   ...others
 }) => {
   const [tooltipId, setTooltipId] = useState(uuidv1());
@@ -200,6 +200,7 @@ const Card = ({
       <OverflowMenu
         className="card--toolbar-action"
         flipped
+        title={strings.overflowMenuDescription}
         menuOptionsClass="card--overflow"
         renderIcon={EventSchedule}
         iconDescription={
@@ -246,7 +247,7 @@ const Card = ({
           mergedAvailableActions.clone ||
           mergedAvailableActions.delete) && (
           <ToolbarItem>
-            <OverflowMenu flipped>
+            <OverflowMenu flipped title={strings.overflowMenuDescription}>
               {mergedAvailableActions.edit && (
                 <OverflowMenuItem
                   onClick={() => {
@@ -290,7 +291,8 @@ const Card = ({
                 kind="ghost"
                 size="small"
                 renderIcon={Close16}
-                iconDescription={closeLabel}
+                iconDescription={strings.closeLabel}
+                title={strings.closeLabel}
                 onClick={() => onCardAction(id, 'CLOSE_EXPANDED_CARD')}
               />
             ) : (

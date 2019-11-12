@@ -1,29 +1,32 @@
 import React, { useRef, useMemo, useCallback } from 'react';
 import moment from 'moment/min/moment-with-locales.min';
-// TODO: fix once carbon/charts 0.16.10 comes out
 import LineChart from '@carbon/charts-react/line-chart';
-import '@carbon/charts/style.css';
-import isEmpty from 'lodash/isEmpty';
+// TODO: waiting for @carbon/charts support https://github.com/carbon-design-system/carbon-charts/pull/389
+import '@carbon/charts/dist/styles.css';
 import styled from 'styled-components';
 import isNil from 'lodash/isNil';
 import memoize from 'lodash/memoize';
 import useDeepCompareEffect from 'use-deep-compare-effect';
-import withSize from 'react-sizeme';
 
 import { TimeSeriesCardPropTypes, CardPropTypes } from '../../constants/PropTypes';
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 import Card from '../Card/Card';
 
-import { generateSampleValues, isValuesEmpty } from './timeSeriesUtils';
+import {
+  generateSampleValues,
+  isValuesEmpty,
+  formatGraphTick,
+  findMatchingAlertRange,
+} from './timeSeriesUtils';
 
 const LineChartWrapper = styled.div`
   padding-left: 16px;
   padding-right: 1rem;
-  padding-top: ${props => (props.isLegendHidden ? '16px' : '0px')};
-  padding-bottom: ${props => (!props.size === CARD_SIZES.MEDIUM ? '16px' : '0px')};
+  padding-top: 0px;
+  padding-bottom: 16px;
   position: absolute;
   width: 100%;
-  height: ${props => props.contentHeight};
+  height: 100%;
 
   &&& {
     .chart-wrapper g.x.axis g.tick text {
@@ -37,7 +40,6 @@ const LineChartWrapper = styled.div`
       display: ${props => (props.isEditable ? 'none' : '')};
     }
     .legend-wrapper {
-      display: ${props => (props.isLegendHidden ? 'none' : '')};
       height: ${props => (!props.size === CARD_SIZES.MEDIUM ? '40px' : '20px')} !important;
       margin-top: -10px;
       padding-right: 20px;
@@ -45,11 +47,14 @@ const LineChartWrapper = styled.div`
     .chart-holder {
       width: 100%;
       height: 100%;
+      padding-top: 0.25rem;
+    }
+    .axis-title {
+      font-weight: 500;
     }
     .chart-svg {
       width: 100%;
       height: 100%;
-      margin-top: ${props => (props.isLegendHidden ? '-10px' : '')};
       circle.dot {
         stroke-opacity: ${props => (props.isEditable ? '1' : '')};
       }
@@ -59,24 +64,6 @@ const LineChartWrapper = styled.div`
     }
   }
 `;
-
-export const determineHeight = (size, measuredWidth) => {
-  let height = '100%';
-  switch (size) {
-    case CARD_SIZES.MEDIUM:
-    case CARD_SIZES.LARGE:
-      if (measuredWidth && measuredWidth > 635) {
-        height = '90%';
-      }
-      break;
-    case CARD_SIZES.XLARGE:
-      height = '90%';
-      break;
-    default:
-      break;
-  }
-  return height;
-};
 
 export const determinePrecision = (size, value, precision) => {
   // If it's an integer don't return extra values
@@ -92,13 +79,15 @@ export const determinePrecision = (size, value, precision) => {
   return precision;
 };
 
-export const formatChartData = (labels, series, values) => {
+export const formatChartData = (timeDataSourceId, series, values) => {
   return {
-    labels,
+    labels: series.map(({ label }) => label),
     datasets: series.map(({ dataSourceId, label, color }) => ({
       label,
-      backgroundColors: color ? [color] : null,
-      data: values.map(i => i[dataSourceId]),
+      ...(color ? { fillColors: [color] } : {}),
+      data:
+        values &&
+        values.map(i => ({ date: new Date(i[timeDataSourceId]), value: i[dataSourceId] })),
     })),
   };
 };
@@ -127,22 +116,25 @@ const memoizedGenerateSampleValues = memoize(generateSampleValues);
 
 const TimeSeriesCard = ({
   title,
-  content: { series, timeDataSourceId = 'timestamp', xLabel, yLabel, unit },
+  content: { series, timeDataSourceId = 'timestamp', alertRanges, xLabel, yLabel, unit },
   size,
   interval,
   isEditable,
   values: valuesProp,
   locale,
+  i18n: { alertDetected },
   ...others
 }) => {
   let chartRef = useRef();
+  const previousTick = useRef();
 
   const values = isEditable
     ? memoizedGenerateSampleValues(series, timeDataSourceId, interval)
     : valuesProp;
 
-  const isAllValuesEmpty = isValuesEmpty(valuesProp, timeDataSourceId);
+  const isAllValuesEmpty = isValuesEmpty(values, timeDataSourceId);
 
+  // Unfortunately the API returns the data out of order sometimes
   const valueSort = useMemo(
     () =>
       values
@@ -153,56 +145,7 @@ const TimeSeriesCard = ({
     [values, timeDataSourceId]
   );
 
-  const sameYear =
-    !isEmpty(values) &&
-    moment(moment.unix(valueSort[0][timeDataSourceId] / 1000)).isSame(moment(), 'year') &&
-    moment(moment.unix(valueSort[valueSort.length - 1][timeDataSourceId] / 1000)).isSame(
-      moment(),
-      'year'
-    );
-
-  const formatInterval = useCallback(
-    (timestamp, index, ticksInterval, length) => {
-      // moment locale default to english
-      moment.locale('en');
-      if (locale) {
-        moment.locale(locale);
-      }
-      const m = moment.unix(timestamp / 1000);
-
-      return interval === 'hour' && index === 0
-        ? length > 1
-          ? m.format('DD MMM')
-          : m.format('DD MMM HH:mm')
-        : interval === 'hour' &&
-          index !== 0 &&
-          !moment(moment.unix(valueSort[index - ticksInterval].timestamp / 1000)).isSame(
-            moment.unix(valueSort[index].timestamp / 1000),
-            'day'
-          )
-        ? m.format('DD MMM')
-        : interval === 'hour'
-        ? m.format('HH:mm')
-        : interval === 'day' && index === 0
-        ? m.format('DD MMM')
-        : interval === 'day' && index !== 0
-        ? m.format('DD MMM')
-        : interval === 'month' && !sameYear
-        ? m.format('MMM YYYY')
-        : interval === 'month' && sameYear && index === 0
-        ? m.format('MMM YYYY')
-        : interval === 'month' && sameYear
-        ? m.format('MMM')
-        : interval === 'year'
-        ? m.format('YYYY')
-        : interval === 'minute'
-        ? m.format('HH:mm')
-        : m.format('DD MMM YYYY');
-    },
-    [interval, locale, sameYear, valueSort]
-  );
-
-  const maxTicksPerSize = useCallback(
+  const maxTicksPerSize = useMemo(
     () => {
       switch (size) {
         case CARD_SIZES.SMALL:
@@ -221,19 +164,19 @@ const TimeSeriesCard = ({
     [size]
   );
 
-  const ticksInterval =
-    Math.round(valueSort.length / maxTicksPerSize(size)) !== 0
-      ? Math.round(valueSort.length / maxTicksPerSize(size))
-      : 1;
-
-  const labels = useMemo(
-    () =>
-      valueSort.map((i, idx) =>
-        idx % ticksInterval === 0
-          ? formatInterval(i[timeDataSourceId], idx, ticksInterval, valueSort.length)
-          : ' '.repeat(idx)
-      ),
-    [formatInterval, ticksInterval, timeDataSourceId, valueSort]
+  const formatTick = useCallback(
+    /** *
+     * timestamp of current value
+     * index of current value
+     * ticks: array of current ticks
+     */
+    (timestamp, index, ticks) => {
+      const previousTimestamp = previousTick.current;
+      // store current in the previous tick
+      previousTick.current = timestamp;
+      return formatGraphTick(timestamp, index, ticks, interval, locale, previousTimestamp);
+    },
+    [interval, locale]
   );
 
   const lines = useMemo(
@@ -241,70 +184,120 @@ const TimeSeriesCard = ({
     [isEditable, series]
   );
 
+  /** Extends default tooltip with the additional date information */
+  const handleTooltip = (data, defaultTooltip) => {
+    const dateLabel = `<li class='datapoint-tooltip'><p class='label'>${moment(
+      Array.isArray(data) && data[0] ? data[0].date : data.date
+    ).format('L HH:mm:ss')}</p></li>`;
+    const matchingAlertRange = findMatchingAlertRange(alertRanges, data);
+    const matchingAlertLabel = matchingAlertRange
+      ? `<li class='datapoint-tooltip'><p class='label'>${alertDetected} ${
+          matchingAlertRange.details
+        }</p></li>`
+      : '';
+    let updatedTooltip = defaultTooltip;
+    if (Array.isArray(data)) {
+      // prepend the date inside the existing multi tooltip
+      updatedTooltip = defaultTooltip
+        .replace('<li', `${dateLabel}<li`)
+        .replace('</ul', `${matchingAlertLabel}</ul`);
+    } else {
+      // wrap to make single a multi-tooltip
+      updatedTooltip = `<ul class='multi-tooltip'>${dateLabel}<li>${defaultTooltip}</li>${matchingAlertLabel}</ul>`;
+    }
+    return updatedTooltip;
+  };
+
+  const handleStrokeColor = (datasetLabel, label, value, data, originalStrokeColor) => {
+    if (!isNil(value)) {
+      const matchingAlertRange = findMatchingAlertRange(alertRanges, data);
+      return matchingAlertRange ? matchingAlertRange.color : originalStrokeColor;
+    }
+    return originalStrokeColor;
+  };
+
+  const handleFillColor = (datasetLabel, label, value, data, originalFillColor) => {
+    if (!isNil(value)) {
+      const matchingAlertRange = findMatchingAlertRange(alertRanges, data);
+      return matchingAlertRange ? matchingAlertRange.color : originalFillColor;
+    }
+    return originalFillColor;
+  };
+
+  const handleIsFilled = (datasetLabel, label, value, data, isFilled) => {
+    if (!isNil(value)) {
+      const matchingAlertRange = findMatchingAlertRange(alertRanges, data);
+      return matchingAlertRange ? true : isFilled;
+    }
+    return isFilled;
+  };
+
+  /** This is needed to update the chart when the lines and values change */
   useDeepCompareEffect(
     () => {
       if (chartRef && chartRef.chart) {
-        const chartData = formatChartData(labels, lines, values);
-        chartRef.chart.setData(chartData);
+        const chartData = formatChartData(timeDataSourceId, lines, valueSort);
+        chartRef.chart.model.setData(chartData);
       }
     },
-    [values, labels, lines]
+    [valueSort, lines, timeDataSourceId]
   );
 
-  const chartData = useMemo(() => formatChartData(labels, lines, values), [labels, lines, values]);
+  /** This caches the chart value */
+  const chartData = useMemo(() => formatChartData(timeDataSourceId, lines, valueSort), [
+    timeDataSourceId,
+    lines,
+    valueSort,
+  ]);
+
   return (
-    <withSize.SizeMe>
-      {({ size: measuredSize }) => {
-        const height = determineHeight(size, measuredSize.width);
-        return (
-          <Card
-            title={title}
-            size={size}
-            {...others}
-            isEditable={isEditable}
-            isEmpty={isAllValuesEmpty}
-          >
-            {!others.isLoading && !isAllValuesEmpty ? (
-              <LineChartWrapper
-                size={size}
-                contentHeight={height}
-                isLegendHidden={lines.length === 1}
-                isEditable={isEditable}
-              >
-                <LineChart
-                  ref={el => {
-                    chartRef = el;
-                  }}
-                  data={chartData}
-                  options={{
-                    animations: false,
-                    accessibility: false,
-                    scales: {
-                      x: {
-                        title: xLabel,
-                      },
-                      y: {
-                        title: yLabel,
-                        formatter: axisValue => valueFormatter(axisValue, size, unit),
-                        // numberOfTicks: 8,
-                        yMaxAdjuster: yMaxValue => yMaxValue * 1.3,
-                      },
-                    },
-                    legendClickable: !isEditable,
-                    containerResizable: true,
-                    tooltip: {
-                      formatter: tooltipValue => valueFormatter(tooltipValue, size, unit),
-                    },
-                  }}
-                  width="100%"
-                  height="100%"
-                />
-              </LineChartWrapper>
-            ) : null}
-          </Card>
-        );
-      }}
-    </withSize.SizeMe>
+    <Card title={title} size={size} {...others} isEditable={isEditable} isEmpty={isAllValuesEmpty}>
+      {!others.isLoading && !isAllValuesEmpty ? (
+        <LineChartWrapper size={size} isEditable={isEditable}>
+          <LineChart
+            ref={el => {
+              chartRef = el;
+            }}
+            data={chartData}
+            options={{
+              animations: false,
+              accessibility: false,
+              axes: {
+                bottom: {
+                  title: xLabel,
+                  scaleType: 'time',
+                  primary: true,
+                  ticks: {
+                    max: maxTicksPerSize,
+                    formatter: formatTick,
+                  },
+                },
+                left: {
+                  title: yLabel,
+                  formatter: axisValue => valueFormatter(axisValue, size, unit),
+                  yMaxAdjuster: yMaxValue => yMaxValue * 1.3,
+                  secondary: true,
+                },
+              },
+              legend: { position: 'top', clickable: !isEditable, visible: lines.length > 1 },
+              containerResizable: true,
+              tooltip: {
+                formatter: tooltipValue => valueFormatter(tooltipValue, size, unit),
+                customHTML: handleTooltip,
+                gridline: {
+                  enabled: false,
+                },
+              },
+              getStrokeColor: handleStrokeColor,
+              getFillColor: handleFillColor,
+              getIsFilled: handleIsFilled,
+            }}
+            width="100%"
+            height="100%"
+          />
+        </LineChartWrapper>
+      ) : null}
+    </Card>
   );
 };
 
@@ -313,6 +306,9 @@ TimeSeriesCard.propTypes = { ...CardPropTypes, ...TimeSeriesCardPropTypes };
 TimeSeriesCard.defaultProps = {
   size: CARD_SIZES.MEDIUM,
   values: [],
+  i18n: {
+    alertDetected: 'Alert detected:',
+  },
 };
 
 export default TimeSeriesCard;
