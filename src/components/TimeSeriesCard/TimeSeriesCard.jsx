@@ -288,9 +288,6 @@ const TimeSeriesCard = ({
                   enabled: false,
                 },
               },
-              timeScale: {
-                addSpaceOnEdges: false,
-              },
               getStrokeColor: handleStrokeColor,
               getFillColor: handleFillColor,
               getIsFilled: handleIsFilled,
