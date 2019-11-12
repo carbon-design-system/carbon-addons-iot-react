@@ -55,6 +55,7 @@ export const startDrag = (event, element, cursor, setCursor) => {
   event.preventDefault();
 };
 
+/** update the image offset based on the dragged point, and the minimap on the relative opposite from the dragged point */
 export const whileDrag = (event, cursor, setCursor, image, setImage, minimap, setMinimap) => {
   const cursorX = event.clientX;
   const cursorY = event.clientY;
