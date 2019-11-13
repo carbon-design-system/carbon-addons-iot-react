@@ -8,6 +8,7 @@ import ImageHotspots, {
   startDrag,
   whileDrag,
   onImageLoad,
+  zoom,
 } from './ImageHotspots';
 
 describe('ImageHotspots', () => {
@@ -148,5 +149,46 @@ describe('ImageHotspots', () => {
         1
       )
     ).toEqual(200);
+  });
+  test('zoom', () => {
+    const image = {
+      initialWidth: 5000,
+      width: 200,
+      initialHeight: 5000,
+      height: 200,
+    };
+    const minimap = {
+      height: 10,
+      width: 10,
+    };
+    const mockSetImage = jest.fn();
+    const mockSetMinimap = jest.fn();
+    const mockSetOptions = jest.fn();
+    zoom(10, 10, {}, image, mockSetImage, minimap, mockSetMinimap, {}, mockSetOptions);
+    // Since we're already at max zoom, the component shouldn't be updated at all
+    expect(mockSetImage).not.toHaveBeenCalled();
+    expect(mockSetMinimap).not.toHaveBeenCalled();
+    expect(mockSetOptions).not.toHaveBeenCalled();
+    // Reset the zoom level to 1 (i.e. fit to view)
+    zoom(1, 10, {}, image, mockSetImage, minimap, mockSetMinimap, {}, mockSetOptions);
+    expect(mockSetImage).toHaveBeenCalledWith(expect.objectContaining({ scale: 1, offsetX: 0 }));
+    expect(mockSetMinimap).toHaveBeenCalledWith(
+      expect.objectContaining({
+        width: 10,
+        height: 10,
+        offsetX: 0,
+        offsetY: 0,
+        guideHeight: 10,
+        guideWidth: 10,
+      })
+    );
+    expect(mockSetOptions).toHaveBeenCalledWith(expect.objectContaining({ draggable: false }));
+
+    // Finally a real zoom request, we've waited long enough
+    zoom(2, 10, {}, image, mockSetImage, {}, mockSetMinimap, {}, mockSetOptions);
+    // TODO: perform assertions on the image/minimap positioning calculations at zoom time
+    expect(mockSetImage).toHaveBeenCalled();
+    expect(mockSetMinimap).toHaveBeenCalled();
+    expect(mockSetOptions).toHaveBeenCalledWith(expect.objectContaining({ draggable: true }));
   });
 });

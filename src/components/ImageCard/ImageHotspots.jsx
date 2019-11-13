@@ -49,8 +49,6 @@ export const startDrag = (event, element, cursor, setCursor) => {
       cursorY,
       dragging: true,
     });
-  } else if (element === 'guide') {
-    // TODO
   }
   event.preventDefault();
 };
@@ -81,47 +79,8 @@ export const whileDrag = (event, cursor, setCursor, image, setImage, minimap, se
   });
 };
 
-export const stopDrag = (container, image, setImage, minimap, setMinimap, cursor, setCursor) => {
-  const offsetXMax =
-    container.orientation === image.orientation
-      ? -Math.abs(image.width - container.width)
-      : -Math.abs(container.width - image.width);
-  const offsetYMax =
-    container.orientation === image.orientation
-      ? -Math.abs(container.height - image.height)
-      : -Math.abs(image.height - container.height);
-  const deltaX = container.width - image.width - image.offsetX;
-  const deltaY = container.height - image.height - image.offsetY;
-
-  setImage({
-    ...image,
-    offsetX: image.offsetX >= 0 ? 0 : deltaX >= 0 ? offsetXMax : image.offsetX,
-    offsetY:
-      image.offsetY >= 0
-        ? container.height > image.height
-          ? container.height / 2 - image.height / 2
-          : 0
-        : deltaY >= 0
-        ? container.height > image.height
-          ? container.height / 2 - image.height / 2
-          : offsetYMax
-        : image.offsetY,
-  });
-  setMinimap({
-    ...minimap,
-    offsetX:
-      image.offsetX >= 0 || image.width < container.width
-        ? 0
-        : deltaX >= 0
-        ? -((minimap.height / image.height) * offsetXMax)
-        : -((minimap.height / image.height) * image.offsetX),
-    offsetY:
-      image.offsetY >= 0 || image.height < container.height
-        ? 0
-        : deltaY >= 0
-        ? -((minimap.height / image.height) * offsetYMax)
-        : -((minimap.height / image.height) * image.offsetY),
-  });
+/** Make sure that the pointer hasn't left the */
+export const stopDrag = (cursor, setCursor) => {
   setCursor({ ...cursor, dragging: false });
 };
 
@@ -217,9 +176,7 @@ export const zoom = (
   const width = calculateImageWidth(container, image.orientation, image.ratio, scale);
   const height = calculateImageHeight(container, image.orientation, image.ratio, scale);
 
-  // Reset draggability
-  setOptions({ ...options, draggable: scale > 1 });
-  // Reset image position
+  // Reset image position, (i.e. zoom to fit)
   if (scale === 1) {
     setImage({
       ...image,
@@ -236,31 +193,37 @@ export const zoom = (
       offsetX: 0,
       offsetY: 0,
     });
-  } else if (scale > 0) {
-    const guideWidth =
-      container.width >= width ? minimap.width : minimap.width / (width / container.width);
-    const guideHeight =
-      container.height >= height ? minimap.height : minimap.height / (height / container.height);
-
-    const deltaX = Math.round(width - image.width);
-    const deltaY = Math.round(height - image.height);
-    const guideDeltaX = Math.round(guideWidth - minimap.guideWidth);
-    const guideDeltaY = Math.round(guideHeight - minimap.guideHeight);
-
-    const offsetX = image.offsetX - deltaX / 2;
-    const offsetY = image.offsetY - deltaY / 2;
-    const guideOffsetX = Math.round(minimap.offsetX - guideDeltaX / 2);
-    const guideOffsetY = Math.round(minimap.offsetY - guideDeltaY / 2);
-
-    const offsetXMax = -Math.abs(Math.round(container.width - width));
-    const offsetYMax = -Math.abs(Math.round(container.height - height));
-    const guideOffsetXMax = Math.round(minimap.width - guideWidth);
-    const guideOffsetYMax = Math.round(minimap.height - guideHeight);
-
+    //
+    setOptions({ ...options, draggable: false });
+  }
+  // Actual zooming in request
+  else if (scale > 1) {
     if (
       (zoomMax && scale < zoomMax) ||
       (image.initialWidth > width && image.initialHeight > height)
     ) {
+      const guideWidth =
+        container.width >= width ? minimap.width : minimap.width / (width / container.width);
+      const guideHeight =
+        container.height >= height ? minimap.height : minimap.height / (height / container.height);
+
+      const deltaX = Math.round(width - image.width);
+      const deltaY = Math.round(height - image.height);
+      const guideDeltaX = Math.round(guideWidth - minimap.guideWidth);
+      const guideDeltaY = Math.round(guideHeight - minimap.guideHeight);
+
+      const offsetX = image.offsetX - deltaX / 2;
+      const offsetY = image.offsetY - deltaY / 2;
+      const guideOffsetX = Math.round(minimap.offsetX - guideDeltaX / 2);
+      const guideOffsetY = Math.round(minimap.offsetY - guideDeltaY / 2);
+
+      const offsetXMax = -Math.abs(Math.round(container.width - width));
+      const offsetYMax = -Math.abs(Math.round(container.height - height));
+      const guideOffsetXMax = Math.round(minimap.width - guideWidth);
+      const guideOffsetYMax = Math.round(minimap.height - guideHeight);
+
+      // Reset draggability if we're zooming
+      setOptions({ ...options, draggable: true });
       setImage({
         ...image,
         width,
@@ -298,7 +261,6 @@ export const zoom = (
             ? guideOffsetY
             : guideOffsetYMax,
       });
-      setOptions({ ...options, draggable: scale > 1 });
     }
   }
 };
@@ -357,7 +319,6 @@ const ImageHotspots = ({
     [container, zoomMax, image, minimap, options] // eslint-disable-line
   );
 
-  // Should I flatten cursor and get rid of?
   const { dragging } = cursor;
   const { hideZoomControls, hideHotspots, hideMinimap, draggable } = options;
   const imageLoaded = image.initialWidth && image.initialHeight;
@@ -424,12 +385,14 @@ const ImageHotspots = ({
       style={containerStyle}
       onMouseOut={() => {
         if (dragging) {
-          stopDrag(container, image, setImage, minimap, setMinimap, cursor, setCursor);
+          // If we leave the container, stop detecting the drag
+          stopDrag(cursor, setCursor);
         }
       }}
       onBlur={() => {
         if (dragging) {
-          stopDrag(container, image, setImage, minimap, setMinimap, cursor, setCursor);
+          // If we leave the container, stop detecting the drag
+          stopDrag(cursor, setCursor);
         }
       }}
     >
@@ -453,7 +416,7 @@ const ImageHotspots = ({
           }}
           onMouseUp={() => {
             if (dragging) {
-              stopDrag(container, image, setImage, minimap, setMinimap, cursor, setCursor);
+              stopDrag(cursor, setCursor);
             }
           }}
         />
