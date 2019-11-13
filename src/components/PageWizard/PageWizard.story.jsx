@@ -88,7 +88,7 @@ export const content = [
   </PageWizardStep>,
 ];
 
-const StepValidation = ({ ...props }) => {
+export const StepValidation = ({ ...props }) => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [error, setError] = useState(null);
@@ -115,6 +115,7 @@ const StepValidation = ({ ...props }) => {
             <FormItem>
               <TextInput
                 id="first-name"
+                data-testid="first-name"
                 labelText="First name"
                 value={firstName}
                 onChange={evt => setFirstName(evt.target.value)}
@@ -123,6 +124,7 @@ const StepValidation = ({ ...props }) => {
             <FormItem>
               <TextInput
                 id="last-name"
+                data-testid="last-name"
                 labelText="Last name"
                 value={lastName}
                 onChange={evt => setLastName(evt.target.value)}
