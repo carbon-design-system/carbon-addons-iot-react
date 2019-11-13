@@ -11,9 +11,9 @@ const propTypes = {
   /** More info text */
   descriptionMoreInfo: PropTypes.string,
   /** Bottom left content for component  */
-  leftContent: PropTypes.node,
+  icon: PropTypes.node,
   /** Bottom right content for component */
-  rightContent: PropTypes.node,
+  afterContent: PropTypes.node,
   /** Card display mode */
   mode: PropTypes.oneOf(['grid', 'tile']),
   /** When grid type - thumbnail content */
@@ -24,19 +24,22 @@ const propTypes = {
   width: PropTypes.string,
   /** Card height */
   height: PropTypes.string,
+  /** Specify an optional className to be applied to the container node */
+  className: PropTypes.string,
 };
 
 const defaultProps = {
   description: 'Some description',
   moreInfoLink: null,
   descriptionMoreInfo: 'More info...',
-  leftContent: null,
-  rightContent: null,
+  icon: null,
+  afterContent: null,
   mode: 'grid',
   thumbnail: null,
   href: null,
   width: '305px',
   height: '272px',
+  className: null,
 };
 
 const TileGalleryItem = ({
@@ -44,19 +47,20 @@ const TileGalleryItem = ({
   description,
   descriptionMoreInfo,
   moreInfoLink,
-  leftContent,
-  rightContent,
+  icon,
+  afterContent,
   mode,
   thumbnail,
   href,
   width,
   height,
+  className,
 }) => {
   const content = (
     <div style={{ display: 'flex', minHeight: '24px' }}>
-      {leftContent}
+      {icon}
       <span className="titleCard">{title}</span>
-      {rightContent && <div className="overflowMenu">{rightContent}</div>}
+      {afterContent && <div className="overflowMenu">{afterContent}</div>}
     </div>
   );
 
@@ -87,11 +91,11 @@ const TileGalleryItem = ({
     <Fragment>
       <a
         style={mode === 'grid' ? { width, height } : { minWidth: width }}
-        className={`dashboard-tile bx--tile bx--tile--clickable dashboard-pin-${
+        className={`${className} dashboard-tile bx--tile bx--tile--clickable dashboard-pin-${
           mode === 'grid' ? 'card' : 'list'
         }-title`}
         key={`${title}-card-link`}
-        to={href}
+        href={href}
       >
         {tile}
       </a>

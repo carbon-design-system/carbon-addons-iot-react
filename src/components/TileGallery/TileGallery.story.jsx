@@ -24,11 +24,11 @@ export const content = (
       <TileGalleryItem
         title="Manage"
         description="Detailed description of this particular Solution could go here"
-        descriptionMoreInfo="https://www.ibm.com/br-pt/cloud/internet-of-things?mhsrc=ibmsearch_a&mhq=iot"
+        moreInfoLink="https://www.ibm.com/br-pt/cloud/internet-of-things?mhsrc=ibmsearch_a&mhq=iot"
         mode="grid"
         thumbnail={<Rocket fill="black" description="Icon" width="50" height="50" />}
-        leftContent={<Check fill="#40be65" onClick={() => alert('favorite')} />}
-        rightContent={
+        icon={<Check fill="#40be65" onClick={() => alert('favorite')} />}
+        afterContent={
           <OverflowMenu
             floatingMenu
             onClick={evt => evt.preventDefault()}
@@ -44,11 +44,11 @@ export const content = (
       <TileGalleryItem
         title="Monitor"
         description="Detailed description of this particular Solution could go here"
-        descriptionMoreInfo="https://www.ibm.com/br-pt/cloud/internet-of-things?mhsrc=ibmsearch_a&mhq=iot"
+        moreInfoLink="https://www.ibm.com/br-pt/cloud/internet-of-things?mhsrc=ibmsearch_a&mhq=iot"
         mode="grid"
         thumbnail={<Activity fill="black" description="Icon" width="50" height="50" />}
-        leftContent={<Check fill="#40be65" onClick={() => alert('favorite')} />}
-        rightContent={
+        icon={<Check fill="#40be65" onClick={() => alert('favorite')} />}
+        afterContent={
           <OverflowMenu
             floatingMenu
             onClick={evt => evt.preventDefault()}
@@ -64,11 +64,11 @@ export const content = (
       <TileGalleryItem
         title="Health"
         description="Detailed description of this particular Solution could go here"
-        descriptionMoreInfo="https://www.ibm.com/br-pt/cloud/internet-of-things?mhsrc=ibmsearch_a&mhq=iot"
+        moreInfoLink="https://www.ibm.com/br-pt/cloud/internet-of-things?mhsrc=ibmsearch_a&mhq=iot"
         mode="grid"
         thumbnail={<Sunny fill="black" description="Icon" width="50" height="50" />}
-        leftContent={<Check fill="#40be65" onClick={() => alert('favorite')} />}
-        rightContent={
+        icon={<Check fill="#40be65" onClick={() => alert('favorite')} />}
+        afterContent={
           <OverflowMenu
             floatingMenu
             onClick={evt => evt.preventDefault()}
@@ -86,11 +86,11 @@ export const content = (
       <TileGalleryItem
         title="Health"
         description="Detailed description of this particular Solution could go here"
-        descriptionMoreInfo="https://www.ibm.com/br-pt/cloud/internet-of-things?mhsrc=ibmsearch_a&mhq=iot"
+        moreInfoLink="https://www.ibm.com/br-pt/cloud/internet-of-things?mhsrc=ibmsearch_a&mhq=iot"
         mode="grid"
         thumbnail={<Sunny fill="black" description="Icon" width="50" height="50" />}
-        leftContent={<Check fill="#40be65" onClick={() => alert('favorite')} />}
-        rightContent={
+        icon={<Check fill="#40be65" onClick={() => alert('favorite')} />}
+        afterContent={
           <OverflowMenu
             floatingMenu
             onClick={evt => evt.preventDefault()}
@@ -129,15 +129,16 @@ storiesOf('Watson IoT Experimental|TileGallery', module)
     <TileGalleryItem
       title="Manage"
       description="Detailed description of this particular Solution could go here"
-      descriptionMoreInfo="https://www.ibm.com/br-pt/cloud/internet-of-things?mhsrc=ibmsearch_a&mhq=iot"
+      moreInfoLink="https://www.ibm.com/br-pt/cloud/internet-of-things?mhsrc=ibmsearch_a&mhq=iot"
       mode="grid"
       thumbnail={<Rocket fill="black" description="Icon" width="50" height="50" />}
-      leftContent={<Check fill="#40be65" onClick={() => alert('favorite')} />}
-      rightContent={
+      icon={<Check fill="#40be65" onClick={() => alert('favorite')} />}
+      afterContent={
         <OverflowMenu floatingMenu onClick={evt => evt.preventDefault()} style={{ height: '2rem' }}>
           <OverflowMenuItem itemText="Set as home page" onClick={() => alert('Set as home page')} />
         </OverflowMenu>
       }
+      href="https://www.ibm.com/br-pt/cloud/internet-of-things?mhsrc=ibmsearch_a&mhq=iot"
       width={text('Card width', '305px')}
       height={text('Card height', '272px')}
     />
@@ -147,8 +148,8 @@ storiesOf('Watson IoT Experimental|TileGallery', module)
       title="Test"
       description="The first one"
       mode="tile"
-      leftContent={<IconStarFav fill="black" onClick={() => alert('favorite')} />}
-      rightContent={
+      icon={<IconStarFav fill="black" onClick={() => alert('favorite')} />}
+      afterContent={
         <OverflowMenu floatingMenu onClick={evt => evt.preventDefault()} style={{ height: '2rem' }}>
           <OverflowMenuItem itemText="Set as home page" onClick={() => alert('Set as home page')} />
         </OverflowMenu>
