@@ -10,7 +10,7 @@ const propTypes = {
   moreInfoLink: PropTypes.string,
   /** More info text */
   descriptionMoreInfo: PropTypes.string,
-  /** Bottom left content for component  */
+  /** Bottom left  icon  */
   icon: PropTypes.node,
   /** Bottom right content for component */
   afterContent: PropTypes.node,
@@ -69,7 +69,7 @@ const TileGalleryItem = ({
       <div key={`${title}-card`}>
         <div>
           <div className="topSection" style={{ height: `calc(${height} - 63px )` }}>
-            <Fragment className="thumbnail">{thumbnail}</Fragment>
+            <div className="thumbnail">{thumbnail}</div>
             <div className="descriptionCard">
               <span>{description}</span>
               <a href={moreInfoLink}>{descriptionMoreInfo}</a>

@@ -73,6 +73,12 @@ export TileGallerySection from './components/TileGallery/TileGallerySection';
 
 export TileGalleryItem from './components/TileGallery/TileGalleryItem';
 
+export TileGalleryViewSwitcher from './components/TileGallery/TileGalleryViewSwitcher';
+
+export TileGallerySearch from './components/TileGallery/TileGallerySearch';
+
+export StatefulTileGallery from './components/TileGallery/StatefulTileGallery';
+
 // Carbon proxy
 export {
   Accordion,

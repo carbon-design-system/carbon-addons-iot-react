@@ -6,6 +6,8 @@ const propTypes = {
   children: PropTypes.node.isRequired,
 };
 
+const defaultProps = {};
+
 const TileGallery = ({ children }) => {
   // otherwise render the dashboards
   return (
@@ -16,5 +18,6 @@ const TileGallery = ({ children }) => {
 };
 
 TileGallery.propTypes = propTypes;
+TileGallery.defaultProps = defaultProps;
 
 export default TileGallery;

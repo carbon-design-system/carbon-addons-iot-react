@@ -7,7 +7,7 @@ const propTypes = {
   /** Component children's to be rendered */
   children: PropTypes.node.isRequired,
   /** Section title */
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
   /** Section is open or not */
   isOpen: PropTypes.bool,
   /** Callback for accordion item click */
@@ -17,10 +17,18 @@ const propTypes = {
 const defaultProps = {
   isOpen: true,
   onClick: () => {},
+  title: null,
 };
 
 const TileGallerySection = ({ children, title, isOpen, onClick }) => {
   const [open, setOpen] = useState(isOpen);
+
+  const galleryItems = (
+    <div className="tile-gallery--section--items">
+      {React.Children.map(children, tileGalleryItem => React.cloneElement(tileGalleryItem))}
+    </div>
+  );
+
   return (
     <div className="tile-gallery--section">
       {title ? (
@@ -33,15 +41,11 @@ const TileGallerySection = ({ children, title, isOpen, onClick }) => {
             }}
             open={open}
           >
-            <div className="tile-gallery--section--items">
-              {React.Children.map(children, tileGalleryItem => React.cloneElement(tileGalleryItem))}
-            </div>
+            {galleryItems}
           </AccordionItem>
         </Accordion>
       ) : (
-        <div className="tile-gallery--section--items">
-          {React.Children.map(children, tileGalleryItem => React.cloneElement(tileGalleryItem))}
-        </div>
+        galleryItems
       )}
     </div>
   );
