@@ -108,7 +108,7 @@ const defaultProps = {
   cardDimensions: CARD_DIMENSIONS,
   dashboardBreakpoints: DASHBOARD_BREAKPOINTS,
   dashboardColumns: DASHBOARD_COLUMNS,
-  hideHeader: false,
+  hideheader: false,
   i18n: {
     noDataLabel: 'No data is available for this time range.',
     noDataShortLabel: 'No data',
@@ -157,7 +157,7 @@ const Card = ({
   availableActions,
   breakpoint,
   i18n,
-  hideHeader,
+  hideheader,
   ...others
 }) => {
   const [tooltipId, setTooltipId] = useState(uuidv1());
@@ -325,7 +325,7 @@ const Card = ({
           cardWidthSize={sizeWidth.width}
           {...others}
         >
-          {!hideHeader && (
+          {!hideheader && (
             <div className="card--header">
               <span className="card--title" title={title}>
                 {title}&nbsp;

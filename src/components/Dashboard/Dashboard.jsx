@@ -76,7 +76,7 @@ const propTypes = {
   /** If the header should render the last updated section */
   hasLastUpdated: PropTypes.bool,
 
-  hideHeader: PropTypes.bool,
+  hideheader: PropTypes.bool,
 
   // Callback functions
   /** Callback called when a card should fetch its data, called with the card props and a boolean that determines whether a card supports timeseries data or not.  Return a promise that returns the updated card object with values.  It will be passed downstream to your card as props to update. */
@@ -188,7 +188,7 @@ const defaultProps = {
   onLayoutChange: null,
   onDashboardAction: null,
   onBreakpointChange: null,
-  hideHeader: false,
+  hideheader: false,
   i18n: {
     lastUpdatedLabel: 'Last updated: ',
     noDataLabel: 'No data is available for this time range.',
@@ -309,7 +309,7 @@ const Dashboard = ({
   rowHeight,
   layouts,
   isEditable,
-  hideHeader,
+  hideheader,
   onLayoutChange,
   onBreakpointChange,
   className,
@@ -413,7 +413,7 @@ const Dashboard = ({
             rowHeight={rowHeight}
             isLoading={isLoading}
             isEditable={isEditable}
-            hideHeader={hideHeader}
+            hideheader={hideheader}
             breakpoint={breakpoint}
             onSetupCard={onSetupCard}
             onFetchData={handleOnFetchData}

@@ -250,6 +250,8 @@ const CardRenderer = React.memo(
             dashboardColumns={dashboardColumns}
             cardDimensions={cardDimensions}
             rowHeight={rowHeight}
+            data={card.content.data}
+            loadData={card.content.loadData}
           />
         ) : type === CARD_TYPES.CUSTOM ? (
           <Card

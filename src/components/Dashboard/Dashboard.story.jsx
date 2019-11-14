@@ -981,7 +981,7 @@ storiesOf('Watson IoT|Dashboard', module)
   .add('landing page dashboard', () => {
     return (
       <FullWidthWrapper>
-        <div style={{ width: 1056 }}>
+        <div>
           <Dashboard
             title=""
             actions={[]}
@@ -1004,7 +1004,7 @@ storiesOf('Watson IoT|Dashboard', module)
                 id: 'viewDashboards',
                 size: 'SMALL',
                 title: 'View Dashboards',
-                hideHeader: true,
+                hideheader: true,
                 type: 'CUSTOM',
               },
               {
@@ -1027,7 +1027,7 @@ storiesOf('Watson IoT|Dashboard', module)
                 id: 'connectDevices',
                 size: 'SMALL',
                 title: 'Connect Devices',
-                hideHeader: true,
+                hideheader: true,
                 type: 'CUSTOM',
               },
               {
@@ -1048,7 +1048,7 @@ storiesOf('Watson IoT|Dashboard', module)
                 id: 'monitorEntities',
                 size: 'SMALL',
                 title: 'Monitor Entities',
-                hideHeader: true,
+                hideheader: true,
                 type: 'CUSTOM',
               },
               {
@@ -1061,7 +1061,7 @@ storiesOf('Watson IoT|Dashboard', module)
                 id: 'trackUsage',
                 size: 'XSMALLWIDE',
                 title: 'Track Usage',
-                hideHeader: true,
+                hideheader: true,
                 type: 'CUSTOM',
               },
               {
@@ -1073,7 +1073,7 @@ storiesOf('Watson IoT|Dashboard', module)
                 ),
                 id: 'administerUsers',
                 size: 'XSMALLWIDE',
-                hideHeader: true,
+                hideheader: true,
                 title: 'Administer Users',
                 type: 'CUSTOM',
               },
@@ -1181,55 +1181,92 @@ storiesOf('Watson IoT|Dashboard', module)
             sidebar={null}
             timeGrain={null}
           />
-        </div>
-        <div style={{ width: 1056 }}>
           <Dashboard
             title=""
             actions={[]}
             cards={[
               {
-                content: (
-                  <div style={{ margin: '12px' }}>
-                    <h4>View Dashboards</h4>
-                    <br />
-                    <p>View pinned dashboards to keep track of your world in IoT.</p>
-                    <div style={{ textAlign: 'right', position: 'absolute', bottom: '0' }}>
-                      <img
-                        style={{ width: '50%' }}
-                        src={iconViewDashboards}
-                        alt="View Dashboards"
-                      />
-                    </div>
-                  </div>
-                ),
-                id: 'viewDashboards',
-                size: 'SMALL',
-                title: 'View Dashboards',
-                hideHeader: true,
-                type: 'CUSTOM',
+                content: {
+                  data: [
+                    {
+                      id: 'row-9',
+                      value: 'Explore entity metrics in the data lake',
+                      link:
+                        'https://www.ibm.com/support/knowledgecenter/SSQP8H/iot/guides/micro-explore.html',
+                      rightContent: (
+                        <span>
+                          View your device data in the entity view of the main Watson IoT Platform
+                          dashboard. If your plan includes Watson IoT Platform Analytics, the data
+                          is stored in the data lake for later retrieval and processing.
+                        </span>
+                      ),
+                    },
+                    {
+                      id: 'row-10',
+                      value: 'Perform simple calculations on your entity metrics',
+                      link:
+                        'https://www.ibm.com/support/knowledgecenter/SSQP8H/iot/guides/micro-calculate.html',
+                      rightContent: (
+                        <span>
+                          Process your entity metrics by running simple or complex calculations to
+                          create calculated metrics.
+                        </span>
+                      ),
+                    },
+                    {
+                      id: 'row-11',
+                      value: 'View entity metrics in a monitoring dashboard',
+                      link:
+                        'https://www.ibm.com/support/knowledgecenter/SSQP8H/iot/guides/micro-monitor.html',
+                      rightContent: (
+                        <span>
+                          Visualize your entity metrics in monitoring dashboards to get an overview
+                          of your data.
+                        </span>
+                      ),
+                    },
+                  ],
+                  loadData: () => {},
+                },
+                id: 'tutorials',
+                size: 'WIDE',
+                title: 'Tutorials',
+                hideheader: false,
+                type: 'LIST',
               },
               {
-                content: (
-                  <div style={{ margin: '12px' }}>
-                    <h4>Connect Devices</h4>
-                    <br />
-                    <p>
-                      Connect devices and collect data by using the Watson IoT Platform Service.
-                    </p>
-                    <div style={{ textAlign: 'right', position: 'absolute', bottom: '0' }}>
-                      <img
-                        style={{ width: '50%' }}
-                        src={iconConnectDevices}
-                        alt="Connect Devices"
-                      />
-                    </div>
-                  </div>
-                ),
-                id: 'connectDevices',
-                size: 'SMALL',
-                title: 'Connect Devices',
-                hideHeader: true,
-                type: 'CUSTOM',
+                content: {
+                  data: [
+                    {
+                      id: 'row-9',
+                      value:
+                        'Notice - IBM Watson IoT Platform support for IBM Cloud resource groups',
+                      link: 'https://internetofthings.ibmcloud.com',
+                    },
+                    {
+                      id: 'row-10',
+                      value: 'New Connectivity Status API now available on IBM Watson IoT Platform',
+                      link: 'https://internetofthings.ibmcloud.com',
+                    },
+                    {
+                      id: 'row-11',
+                      value: 'Advanced Notice - Sunset of SPAPI support',
+                      link: 'https://internetofthings.ibmcloud.com',
+                    },
+                    {
+                      id: 'row-12',
+                      value:
+                        'Advanced Notice - Withdrawal of RTI features from Watson IoT Platform',
+                      link: 'https://internetofthings.ibmcloud.com',
+                    },
+                  ],
+                  loadData: () => {},
+                },
+                id: 'announcements',
+                size: 'WIDE',
+                title: 'Announcements',
+                hideheader: false,
+                type: 'LIST',
               },
             ]}
             dashboardBreakpoints={{

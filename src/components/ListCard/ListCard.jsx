@@ -41,13 +41,25 @@ const StyledContentWrapper = styled.div`
   }
 `;
 
-// const StyledLeftSpan = styled.div`
-//   &&& {
+const StyledValueSpan = styled.div`
+  &&& {
+    flex: 0 0 200px;
+    flex: 1;
+    padding-right: 12px;
+  }
+`;
 
-//   }
-// `
-
-const ListCard = ({ id, title, size, data, isLoading, loadData, hasMoreData, ...others }) => {
+const ListCard = ({
+  id,
+  title,
+  size,
+  data,
+  isLoading,
+  loadData,
+  hasMoreData,
+  layout,
+  ...others
+}) => {
   const handleScroll = e => {
     const element = e.target;
     //  height of the elements content - height element’s content is scrolled vertically === height of the scrollable part of the element
@@ -70,14 +82,18 @@ const ListCard = ({ id, title, size, data, isLoading, loadData, hasMoreData, ...
                   return (
                     <StructuredListRow key={item.id}>
                       <StyledStructuredListCell key={`${item.id}-cell`}>
-                        {item.link ? (
-                          <Link style={{ display: 'inherit' }} target="_blank" href={item.link}>
-                            {item.value}
-                          </Link>
-                        ) : (
-                          item.value
-                        )}
-                        <StyledSpan>{item.rightContent ? item.rightContent : null}</StyledSpan>
+                        <StyledValueSpan>
+                          {item.link ? (
+                            <Link style={{ display: 'inherit' }} target="_blank" href={item.link}>
+                              {item.value}
+                            </Link>
+                          ) : (
+                            item.value
+                          )}
+                        </StyledValueSpan>
+                        {item.rightContent ? (
+                          <StyledSpan>{item.rightContent ? item.rightContent : null}</StyledSpan>
+                        ) : null}
                       </StyledStructuredListCell>
                     </StructuredListRow>
                   );
@@ -105,11 +121,13 @@ ListCard.propTypes = {
   isLoading: PropTypes.bool,
   hasMoreData: PropTypes.bool,
   loadData: PropTypes.func.isRequired,
+  layout: PropTypes.string,
 };
 
 ListCard.defaultProps = {
   isLoading: false,
   hasMoreData: false,
+  layout: '',
 };
 
 ListCard.displayName = 'ListCard';
