@@ -94,7 +94,6 @@ const propTypes = {
     filterNone: PropTypes.string,
     filterAscending: PropTypes.string,
     filterDescending: PropTypes.string,
-    rowCountLabel: PropTypes.string,
   }),
   /**
    * Action callbacks to update tableState
@@ -116,6 +115,7 @@ const propTypes = {
     activeBar: PropTypes.oneOf(['column', 'filter']),
     /** total number of selected rows */
     totalSelected: PropTypes.number,
+    totalItemsCount: PropTypes.number,
     /** row selection option */
     hasRowSelection: PropTypes.oneOf(['multi', 'single', false]),
     /** optional content to render inside the toolbar  */
@@ -160,6 +160,7 @@ const TableToolbar = ({
     // activeBar,
     customToolbarContent,
     isDisabled,
+    totalItemsCount,
   },
 }) => (
   <StyledCarbonTableToolbar className={className}>
@@ -180,7 +181,7 @@ const TableToolbar = ({
       <label // eslint-disable-line
         className="row-count-header"
       >
-        {i18n.rowCountHeaderField}
+        {i18n.rowCountInHeader(totalItemsCount, i18n.rowCountLabel)}
       </label>
     ) : null}
     <StyledTableToolbarContent>

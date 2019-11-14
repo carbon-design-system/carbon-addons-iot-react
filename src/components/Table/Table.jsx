@@ -349,10 +349,8 @@ const Table = props => {
           filterNone: i18n.filterNone,
           filterAscending: i18n.filterAscending,
           filterDescending: i18n.filterDescending,
-          rowCountHeaderField: i18n.rowCountInHeader(
-            view.pagination.totalItems,
-            i18n.rowCountLabel
-          ),
+          rowCountLabel: i18n.rowCountLabel,
+          rowCountInHeader: i18n.rowCountInHeader,
         }}
         actions={pick(
           actions.toolbar,
@@ -374,6 +372,7 @@ const Table = props => {
         tableState={{
           totalSelected: view.table.selectedIds.length,
           totalFilters: view.filters ? view.filters.length : 0,
+          totalItemsCount: view.pagination.totalItems,
           ...pick(
             view.toolbar,
             'batchActions',
