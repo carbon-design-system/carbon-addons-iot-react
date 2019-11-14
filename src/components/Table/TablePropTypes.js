@@ -158,7 +158,6 @@ export const I18NPropTypes = PropTypes.shape({
   filterNone: PropTypes.string,
   filterAscending: PropTypes.string,
   filterDescending: PropTypes.string,
-  rowCountLabel: PropTypes.string,
   rowCountInHeader: PropTypes.func,
 });
 
@@ -200,7 +199,6 @@ export const defaultI18NPropTypes = {
   filterNone: 'Unsort rows by this header',
   filterAscending: 'Sort rows by this header in ascending order',
   filterDescending: 'Sort rows by this header in descending order',
-  rowCountLabel: 'Results',
   rowCountInHeader: (totalRowCount, rowCountLabel) => `${rowCountLabel}: ${totalRowCount}`,
 };
 
