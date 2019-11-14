@@ -5578,6 +5578,592 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
 </div>
 `;
 
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashboard custom renderIcon 1`] = `
+<div
+  className="storybook-container"
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "flexDirection": "column",
+      "padding": "3rem",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "width": "calc(100vw - 6rem)",
+        }
+      }
+    >
+      <div>
+        <div
+          className="dashboard--header"
+        >
+          <div
+            className="dashboard--header-left"
+          >
+            <h2>
+              Munich Building
+            </h2>
+            <div
+              className="dashboard--lastupdated"
+            >
+              Last updated: 
+               
+              Tue, 22 Oct 2019 05:00:00 GMT
+            </div>
+          </div>
+          <div
+            className="dashboard--header-right"
+          >
+            <div
+              className="dashboard--header-actions"
+            />
+          </div>
+        </div>
+        <div
+          style={
+            Object {
+              "display": "flex",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "flex": 1,
+              }
+            }
+          >
+            <div
+              className="react-grid-layout Dashboard__StyledGridLayout-up3zyz-0 leaKVS"
+              style={
+                Object {
+                  "height": "304px",
+                }
+              }
+            >
+              <div
+                className="react-grid-item cssTransforms"
+                style={
+                  Object {
+                    "MozTransform": "translate(16px,16px)",
+                    "OTransform": "translate(16px,16px)",
+                    "WebkitTransform": "translate(16px,16px)",
+                    "height": "128px",
+                    "msTransform": "translate(16px,16px)",
+                    "position": "absolute",
+                    "transform": "translate(16px,16px)",
+                    "width": "142px",
+                  }
+                }
+              >
+                <div
+                  className="Card__CardWrapper-v5r71h-0 fbzdtE"
+                  id="facilitycard-comfort-level"
+                  type="VALUE"
+                >
+                  <div
+                    className="card--header"
+                  >
+                    <span
+                      className="card--title"
+                      title="Comfort Level"
+                    >
+                      Comfort Level
+                       
+                    </span>
+                    <div
+                      className="bx--toolbar card--toolbar"
+                    />
+                  </div>
+                  <div
+                    className="Card__CardContent-v5r71h-1 hoCWQe"
+                  >
+                    <div
+                      className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
+                    >
+                      <div
+                        className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
+                        size="XSMALL"
+                      >
+                        <div
+                          className="Attribute__StyledAttribute-dhraql-0 eCIOAU"
+                          label={null}
+                          size="XSMALL"
+                        >
+                          <div
+                            className="ValueRenderer__Attribute-f4stpz-0 loxLrG"
+                            color={null}
+                          >
+                            <span
+                              className="ValueRenderer__AttributeValue-f4stpz-1 eZajlg"
+                              size="XSMALL"
+                              title="Bad "
+                              value="Bad"
+                            >
+                              Bad
+                            </span>
+                          </div>
+                          <div
+                            className="Attribute__StyledIcon-dhraql-5 gssLPC"
+                          >
+                            <div
+                              className="Attribute__ThresholdIconWrapper-dhraql-2 iEsJiF"
+                            >
+                              <svg
+                                description="= Bad"
+                                fill="red"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
+                                role="img"
+                                style={
+                                  Object {
+                                    "willChange": "transform",
+                                  }
+                                }
+                                title="= Bad"
+                                viewBox="0 0 16 16"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M14.72 7.35l-3-3.06A1 1 0 0 0 11 4H5a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1V8a1 1 0 0 0-.28-.65zM11 5l3 3h-3zm-6 9V5h5v3a1 1 0 0 0 1 1h3v5z"
+                                />
+                                <path
+                                  d="M2 9H1V2a1 1 0 0 1 1-1h7v1H2z"
+                                />
+                                <title>
+                                  = Bad
+                                </title>
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          className="ValueCard__AttributeLabel-hyxf2q-4 cAOhas"
+                          size="XSMALL"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="react-grid-item cssTransforms"
+                style={
+                  Object {
+                    "MozTransform": "translate(174px,16px)",
+                    "OTransform": "translate(174px,16px)",
+                    "WebkitTransform": "translate(174px,16px)",
+                    "height": "272px",
+                    "msTransform": "translate(174px,16px)",
+                    "position": "absolute",
+                    "transform": "translate(174px,16px)",
+                    "width": "616px",
+                  }
+                }
+              >
+                <div
+                  className="Card__CardWrapper-v5r71h-0 cynIXT"
+                  id="floor map picture"
+                  type="IMAGE"
+                >
+                  <div
+                    className="card--header"
+                  >
+                    <span
+                      className="card--title"
+                      title="Floor Map"
+                    >
+                      Floor Map
+                       
+                    </span>
+                    <div
+                      className="bx--toolbar card--toolbar"
+                    >
+                      <button
+                        className="card--toolbar-action Card__TinyButton-v5r71h-4 fggzfz bx--btn bx--btn--sm bx--btn--ghost"
+                        disabled={false}
+                        onClick={[Function]}
+                        tabIndex={0}
+                        title="Expand to fullscreen"
+                        type="button"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          aria-label="Expand to fullscreen"
+                          className="bx--btn__icon"
+                          focusable="false"
+                          height={20}
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          style={
+                            Object {
+                              "willChange": "transform",
+                            }
+                          }
+                          viewBox="0 0 32 32"
+                          width={20}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M28 4H10a2.006 2.006 0 0 0-2 2v14a2.006 2.006 0 0 0 2 2h18a2.006 2.006 0 0 0 2-2V6a2.006 2.006 0 0 0-2-2zm0 16H10V6h18z"
+                          />
+                          <path
+                            d="M18 26H4V16h2v-2H4a2.006 2.006 0 0 0-2 2v10a2.006 2.006 0 0 0 2 2h14a2.006 2.006 0 0 0 2-2v-2h-2z"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                  <div
+                    className="Card__CardContent-v5r71h-1 hDVRgE"
+                  >
+                    <div
+                      className="ImageCard__ContentWrapper-sc-1p2j9dm-0 jJnAwR"
+                    >
+                      <div
+                        onBlur={[Function]}
+                        onMouseOut={[Function]}
+                        style={
+                          Object {
+                            "background": "#eee",
+                            "height": "100%",
+                            "overflow": "hidden",
+                            "position": "relative",
+                            "textAlign": "center",
+                            "width": "100%",
+                          }
+                        }
+                      >
+                        <img
+                          alt="Floor Map"
+                          onLoad={[Function]}
+                          onMouseDown={[Function]}
+                          onMouseMove={[Function]}
+                          onMouseUp={[Function]}
+                          src="landscape.jpg"
+                          style={
+                            Object {
+                              "left": undefined,
+                              "position": "relative",
+                              "top": undefined,
+                            }
+                          }
+                        />
+                        <div
+                          style={
+                            Object {
+                              "left": undefined,
+                              "margin": "auto",
+                              "pointerEvents": "none",
+                              "position": "absolute",
+                              "right": "auto",
+                              "top": undefined,
+                            }
+                          }
+                        >
+                          <div
+                            className="Hotspot__StyledHotspot-nlpwmi-0 fvESgj"
+                          >
+                            <div
+                              aria-describedby={null}
+                              aria-haspopup="true"
+                              aria-labelledby="hotspot-35-65"
+                              className="bx--tooltip__label"
+                              id="hotspot-35-65"
+                              onBlur={[Function]}
+                              onClick={[Function]}
+                              onFocus={[Function]}
+                              onKeyDown={[Function]}
+                              onMouseOut={[Function]}
+                              onMouseOver={[Function]}
+                              role="button"
+                              tabIndex={0}
+                            >
+                              <svg
+                                aria-hidden={true}
+                                fill="blue"
+                                focusable="false"
+                                height={25}
+                                preserveAspectRatio="xMidYMid meet"
+                                style={
+                                  Object {
+                                    "willChange": "transform",
+                                  }
+                                }
+                                title=""
+                                viewBox="0 0 16 16"
+                                width={25}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M8 1C4.1 1 1 4.1 1 8s3.1 7 7 7 7-3.1 7-7-3.1-7-7-7zm2.7 10.5L4.5 5.3l.8-.8 6.2 6.2-.8.8z"
+                                />
+                                <path
+                                  d="M10.7 11.5L4.5 5.3l.8-.8 6.2 6.2-.8.8z"
+                                  data-icon-path="inner-path"
+                                  fill="none"
+                                  opacity="0"
+                                />
+                                
+                              </svg>
+                            </div>
+                          </div>
+                          <div
+                            className="Hotspot__StyledHotspot-nlpwmi-0 kwumIH"
+                          >
+                            <div
+                              aria-describedby={null}
+                              aria-haspopup="true"
+                              aria-labelledby="hotspot-45-25"
+                              className="bx--tooltip__label"
+                              id="hotspot-45-25"
+                              onBlur={[Function]}
+                              onClick={[Function]}
+                              onFocus={[Function]}
+                              onKeyDown={[Function]}
+                              onMouseOut={[Function]}
+                              onMouseOver={[Function]}
+                              role="button"
+                              tabIndex={0}
+                            >
+                              <svg
+                                height={25}
+                                width={25}
+                              >
+                                <circle
+                                  cx={12.5}
+                                  cy={12.5}
+                                  fill="none"
+                                  opacity="1"
+                                  r={11.5}
+                                  stroke="white"
+                                  strokeWidth="2"
+                                />
+                                <circle
+                                  cx={12.5}
+                                  cy={12.5}
+                                  fill="#0f0"
+                                  opacity="0.7"
+                                  r={11.5}
+                                  stroke="none"
+                                />
+                              </svg>
+                            </div>
+                          </div>
+                          <div
+                            className="Hotspot__StyledHotspot-nlpwmi-0 eqtfro"
+                          >
+                            <div
+                              aria-describedby={null}
+                              aria-haspopup="true"
+                              aria-labelledby="hotspot-45-50"
+                              className="bx--tooltip__label"
+                              id="hotspot-45-50"
+                              onBlur={[Function]}
+                              onClick={[Function]}
+                              onFocus={[Function]}
+                              onKeyDown={[Function]}
+                              onMouseOut={[Function]}
+                              onMouseOver={[Function]}
+                              role="button"
+                              tabIndex={0}
+                            >
+                              <svg
+                                height={25}
+                                width={25}
+                              >
+                                <circle
+                                  cx={12.5}
+                                  cy={12.5}
+                                  fill="none"
+                                  opacity="1"
+                                  r={11.5}
+                                  stroke="white"
+                                  strokeWidth="2"
+                                />
+                                <circle
+                                  cx={12.5}
+                                  cy={12.5}
+                                  fill="#00f"
+                                  opacity="0.7"
+                                  r={11.5}
+                                  stroke="none"
+                                />
+                              </svg>
+                            </div>
+                          </div>
+                          <div
+                            className="Hotspot__StyledHotspot-nlpwmi-0 ezcTmr"
+                          >
+                            <div
+                              aria-describedby={null}
+                              aria-haspopup="true"
+                              aria-labelledby="hotspot-45-75"
+                              className="bx--tooltip__label"
+                              id="hotspot-45-75"
+                              onBlur={[Function]}
+                              onClick={[Function]}
+                              onFocus={[Function]}
+                              onKeyDown={[Function]}
+                              onMouseOut={[Function]}
+                              onMouseOver={[Function]}
+                              role="button"
+                              tabIndex={0}
+                            >
+                              <svg
+                                aria-hidden={true}
+                                fill="blue"
+                                focusable="false"
+                                height={25}
+                                preserveAspectRatio="xMidYMid meet"
+                                style={
+                                  Object {
+                                    "willChange": "transform",
+                                  }
+                                }
+                                title=""
+                                viewBox="0 0 16 16"
+                                width={25}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M11.2 2c-1 0-2 .4-2.7 1.1l-.5.6-.6-.6C6 1.6 3.6 1.6 2.1 3.1S.6 7 2.1 8.5l5.9 6 5.9-6c1.5-1.5 1.5-3.9 0-5.4-.7-.7-1.7-1.1-2.7-1.1z"
+                                />
+                                
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          style={
+                            Object {
+                              "bottom": 10,
+                              "pointerEvents": "auto",
+                              "position": "absolute",
+                              "right": 10,
+                            }
+                          }
+                        >
+                          <button
+                            onClick={[Function]}
+                            style={
+                              Object {
+                                "background": "#fff",
+                                "border": "none",
+                                "boxShadow": "0px 0px 2px 0px rgba(0,0,0,0.5)",
+                                "height": "25px",
+                                "width": "25px",
+                              }
+                            }
+                            type="button"
+                          >
+                            +
+                          </button>
+                          <br />
+                          <button
+                            onClick={[Function]}
+                            style={
+                              Object {
+                                "background": "#fff",
+                                "border": "none",
+                                "boxShadow": "0px 0px 2px 0px rgba(0,0,0,0.5)",
+                                "height": "25px",
+                                "width": "25px",
+                              }
+                            }
+                            type="button"
+                          >
+                            -
+                          </button>
+                        </div>
+                        <div
+                          style={
+                            Object {
+                              "background": "#fff",
+                              "bottom": 10,
+                              "boxShadow": "0px 0px 2px 0px rgba(0,0,0,0.5)",
+                              "display": "block",
+                              "height": null,
+                              "left": 10,
+                              "pointerEvents": "none",
+                              "position": "absolute",
+                              "width": null,
+                            }
+                          }
+                        >
+                          <img
+                            alt="Minimap"
+                            height={null}
+                            src="landscape.jpg"
+                            width={null}
+                          />
+                          <div
+                            style={
+                              Object {
+                                "background": "rgba(64, 139, 252, 0.1)",
+                                "border": "1px solid rgba(64, 139, 252, 0.8)",
+                                "display": "block",
+                                "height": null,
+                                "left": 0,
+                                "pointerEvents": "none",
+                                "position": "absolute",
+                                "top": 0,
+                                "width": null,
+                              }
+                            }
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashboard full screen image card 1`] = `
 <div
   className="storybook-container"

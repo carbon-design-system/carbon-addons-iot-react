@@ -7,6 +7,9 @@ import {
   iconWarningSolid,
   iconArrowDown,
   iconArrowUp,
+  iconHeaderUser,
+  iconInfo,
+  iconHelp,
 } from 'carbon-icons';
 
 export const bundledIconNames = [
@@ -18,6 +21,9 @@ export const bundledIconNames = [
   'warning',
   'arrowUp',
   'arrowDown',
+  'user',
+  'info',
+  'help',
 ];
 
 export default {
@@ -29,4 +35,7 @@ export default {
   warning: iconWarningSolid,
   arrowUp: iconArrowUp,
   arrowDown: iconArrowDown,
+  user: iconHeaderUser,
+  info: iconInfo,
+  help: iconHelp,
 };
