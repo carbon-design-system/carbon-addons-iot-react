@@ -181,7 +181,7 @@ const TableToolbar = ({
       <label // eslint-disable-line
         className="row-count-header"
       >
-        {i18n.rowCountInHeader(totalItemsCount, i18n.rowCountLabel)}
+        {i18n.rowCountInHeader(totalItemsCount)}
       </label>
     ) : null}
     <StyledTableToolbarContent>

@@ -199,7 +199,7 @@ export const defaultI18NPropTypes = {
   filterNone: 'Unsort rows by this header',
   filterAscending: 'Sort rows by this header in ascending order',
   filterDescending: 'Sort rows by this header in descending order',
-  rowCountInHeader: (totalRowCount, rowCountLabel) => `${rowCountLabel}: ${totalRowCount}`,
+  rowCountInHeader: totalRowCount => `Results: ${totalRowCount}`,
 };
 
 export const TableSearchPropTypes = PropTypes.shape({

@@ -233,13 +233,12 @@ describe('Table', () => {
       />
     );
 
-    const resultLabel = 'Results';
     const rowCounts = view.pagination.totalItems;
     const renderRowCountField = wrapper
       .find('Table')
       .at(0)
       .props()
-      .i18n.rowCountInHeader(rowCounts, resultLabel);
+      .i18n.rowCountInHeader(rowCounts);
     expect(renderRowCountField).toContain('Results:');
 
     const min = 1;

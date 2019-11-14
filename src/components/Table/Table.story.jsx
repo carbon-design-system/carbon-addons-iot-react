@@ -444,7 +444,8 @@ storiesOf('Watson IoT|Table', module)
           toolbar: { activeBar: null },
         }}
         i18n={{
-          rowCountLabel: text('Row Count Label', 'Results'),
+          rowCountInHeader: totalRowCount =>
+            `${text('Row Count Label', 'Results')} : ${totalRowCount}`,
         }}
       />
     </FullWidthWrapper>

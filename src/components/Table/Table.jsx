@@ -269,8 +269,7 @@ export const defaultProps = baseProps => ({
     batchCancel: 'Cancel',
     itemsSelected: 'items selected',
     itemSelected: 'item selected',
-    rowCountLabel: 'Results',
-    rowCountInHeader: (totalRowCount, rowCountLabel) => `${rowCountLabel}: ${totalRowCount}`,
+    rowCountInHeader: totalRowCount => `Results: ${totalRowCount}`,
     /** empty state */
     emptyMessage: 'There is no data',
     emptyMessageWithFilters: 'No results match the current filters',
