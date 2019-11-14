@@ -8,6 +8,9 @@ import { getIntervalChartData, tableColumns, tableData } from '../../utils/sampl
 import { CARD_SIZES, CARD_TYPES } from '../../constants/LayoutConstants';
 import imageFile from '../ImageCard/landscape.jpg';
 
+import iconConnectDevices from './ConnectDevicesIcon.png';
+import iconMonitorEntities from './MonitorEntitiesIcon.png';
+import iconViewDashboards from './ViewDashboardsIcon.png';
 import Dashboard from './Dashboard';
 
 const originalCards = [
@@ -972,6 +975,367 @@ storiesOf('Watson IoT|Dashboard', module)
             {dashboard}
           </div>,
         ])}
+      </FullWidthWrapper>
+    );
+  })
+  .add('landing page dashboard', () => {
+    return (
+      <FullWidthWrapper>
+        <div style={{ width: 1056 }}>
+          <Dashboard
+            title=""
+            actions={[]}
+            cards={[
+              {
+                content: (
+                  <div style={{ margin: '12px' }}>
+                    <h4>View Dashboards</h4>
+                    <br />
+                    <p>View pinned dashboards to keep track of your world in IoT.</p>
+                    <div style={{ textAlign: 'right', position: 'absolute', bottom: '0' }}>
+                      <img
+                        style={{ width: '50%' }}
+                        src={iconViewDashboards}
+                        alt="View Dashboards"
+                      />
+                    </div>
+                  </div>
+                ),
+                id: 'viewDashboards',
+                size: 'SMALL',
+                title: 'View Dashboards',
+                hideHeader: true,
+                type: 'CUSTOM',
+              },
+              {
+                content: (
+                  <div style={{ margin: '12px' }}>
+                    <h4>Connect Devices</h4>
+                    <br />
+                    <p>
+                      Connect devices and collect data by using the Watson IoT Platform Service.
+                    </p>
+                    <div style={{ textAlign: 'right', position: 'absolute', bottom: '0' }}>
+                      <img
+                        style={{ width: '50%' }}
+                        src={iconConnectDevices}
+                        alt="Connect Devices"
+                      />
+                    </div>
+                  </div>
+                ),
+                id: 'connectDevices',
+                size: 'SMALL',
+                title: 'Connect Devices',
+                hideHeader: true,
+                type: 'CUSTOM',
+              },
+              {
+                content: (
+                  <div style={{ margin: '12px' }}>
+                    <h4>Monitor Entities</h4>
+                    <br />
+                    <p>Expore your entities and analyze their associated data.</p>
+                    <div style={{ textAlign: 'right', position: 'absolute', bottom: '0' }}>
+                      <img
+                        style={{ width: '50%' }}
+                        src={iconMonitorEntities}
+                        alt="Monitor Entities"
+                      />
+                    </div>
+                  </div>
+                ),
+                id: 'monitorEntities',
+                size: 'SMALL',
+                title: 'Monitor Entities',
+                hideHeader: true,
+                type: 'CUSTOM',
+              },
+              {
+                content: (
+                  <div style={{ margin: '12px' }}>
+                    <h4>Track Usage</h4>
+                    <br />
+                  </div>
+                ),
+                id: 'trackUsage',
+                size: 'XSMALLWIDE',
+                title: 'Track Usage',
+                hideHeader: true,
+                type: 'CUSTOM',
+              },
+              {
+                content: (
+                  <div style={{ margin: '12px' }}>
+                    <h4>Administer Users</h4>
+                    <br />
+                  </div>
+                ),
+                id: 'administerUsers',
+                size: 'XSMALLWIDE',
+                hideHeader: true,
+                title: 'Administer Users',
+                type: 'CUSTOM',
+              },
+            ]}
+            dashboardBreakpoints={{
+              lg: 1056,
+              max: 1800,
+              md: 672,
+              sm: 480,
+              xl: 1312,
+              xs: 320,
+            }}
+            dashboardColumns={{
+              lg: 16,
+              max: 16,
+              md: 8,
+              sm: 4,
+              xl: 16,
+              xs: 4,
+            }}
+            description={null}
+            filter={null}
+            hasLastUpdated={false}
+            i18n={{
+              actionFailedText: 'Action Failed',
+              clearAllFilters: 'Clear all filters',
+              clearFilterAria: 'Clear filter',
+              clearSelectionAria: 'Clear selection',
+              clickToCollapseAria: 'Click to collapse content',
+              clickToExpandAria: 'Click to expand content',
+              cloneCardLabel: 'Clone card',
+              closeMenuAria: 'Close menu',
+              columnSelectionButtonAria: 'Column Selection',
+              criticalLabel: 'Critical',
+              currentPage: function noRefCheck() {},
+              dailyLabel: 'Daily',
+              defaultFilterStringPlaceholdText: 'Type and hit enter to apply',
+              deleteCardLabel: 'Delete card',
+              dismissText: 'Dismiss',
+              downloadIconDescription: 'Download table content',
+              editCardLabel: 'Edit card',
+              emptyButtonLabel: 'Create some data',
+              emptyButtonLabelWithFilters: 'Clear all filters',
+              emptyMessage: 'There are no alerts in this range.',
+              emptyMessageWithFilters: 'No results match the current filters',
+              errorLoadingDataLabel: 'Error loading data for this card: ',
+              errorLoadingDataShortLabel: 'Data error.',
+              expandLabel: 'Expand to fullscreen',
+              filterAria: 'Filter',
+              filterButtonAria: 'Filters',
+              hourlyLabel: 'Hourly',
+              inProgressText: 'In Progress',
+              itemsPerPage: 'Items per page:',
+              itemsRangeWithTotal: function noRefCheck() {},
+              last24HoursLabel: 'Last 24 hrs',
+              last7DaysLabel: 'Last 7 days',
+              lastMonthLabel: 'Last month',
+              lastQuarterLabel: 'Last quarter',
+              lastUpdatedLabel: 'Last updated: ',
+              lastYearLabel: 'Last year',
+              learnMoreText: 'Learn More',
+              lowLabel: 'Low',
+              moderateLabel: 'Moderate',
+              monthlyLabel: 'Monthly',
+              noDataLabel: 'No data is available for this time range.',
+              noDataShortLabel: 'No data',
+              openMenuAria: 'Open menu',
+              overflowMenuAria: 'More actions',
+              overflowMenuDescription: 'open and close list of options',
+              pageBackwardAria: 'Previous page',
+              pageForwardAria: 'Next page',
+              pageNumberAria: 'Page Number',
+              pageRange: function noRefCheck() {},
+              periodToDateLabel: 'Period to date',
+              rollingPeriodLabel: 'Rolling period',
+              searchPlaceholder: 'Search',
+              selectAllAria: 'Select all items',
+              selectRowAria: 'Select row',
+              selectSeverityPlaceholder: 'Select a severity',
+              severityLabel: 'Severity',
+              thisMonthLabel: 'This month',
+              thisQuarterLabel: 'This quarter',
+              thisWeekLabel: 'This week',
+              thisYearLabel: 'This year',
+              weeklyLabel: 'Weekly',
+            }}
+            isEditable={false}
+            isLoading={false}
+            lastUpdated="Tue, 22 Oct 2019 05:00:00 GMT"
+            layouts={{}}
+            onBreakpointChange={function noRefCheck() {}}
+            onDashboardAction={null}
+            onFetchData={function noRefCheck() {}}
+            onLayoutChange={function noRefCheck() {}}
+            onSetupCard={null}
+            rowHeight={{
+              lg: 128,
+              max: 128,
+              md: 128,
+              sm: 128,
+              xl: 128,
+              xs: 128,
+            }}
+            setIsLoading={null}
+            sidebar={null}
+            timeGrain={null}
+          />
+        </div>
+        <div style={{ width: 1056 }}>
+          <Dashboard
+            title=""
+            actions={[]}
+            cards={[
+              {
+                content: (
+                  <div style={{ margin: '12px' }}>
+                    <h4>View Dashboards</h4>
+                    <br />
+                    <p>View pinned dashboards to keep track of your world in IoT.</p>
+                    <div style={{ textAlign: 'right', position: 'absolute', bottom: '0' }}>
+                      <img
+                        style={{ width: '50%' }}
+                        src={iconViewDashboards}
+                        alt="View Dashboards"
+                      />
+                    </div>
+                  </div>
+                ),
+                id: 'viewDashboards',
+                size: 'SMALL',
+                title: 'View Dashboards',
+                hideHeader: true,
+                type: 'CUSTOM',
+              },
+              {
+                content: (
+                  <div style={{ margin: '12px' }}>
+                    <h4>Connect Devices</h4>
+                    <br />
+                    <p>
+                      Connect devices and collect data by using the Watson IoT Platform Service.
+                    </p>
+                    <div style={{ textAlign: 'right', position: 'absolute', bottom: '0' }}>
+                      <img
+                        style={{ width: '50%' }}
+                        src={iconConnectDevices}
+                        alt="Connect Devices"
+                      />
+                    </div>
+                  </div>
+                ),
+                id: 'connectDevices',
+                size: 'SMALL',
+                title: 'Connect Devices',
+                hideHeader: true,
+                type: 'CUSTOM',
+              },
+            ]}
+            dashboardBreakpoints={{
+              lg: 1056,
+              max: 1800,
+              md: 672,
+              sm: 480,
+              xl: 1312,
+              xs: 320,
+            }}
+            dashboardColumns={{
+              lg: 16,
+              max: 16,
+              md: 8,
+              sm: 4,
+              xl: 16,
+              xs: 4,
+            }}
+            description={null}
+            filter={null}
+            hasLastUpdated={false}
+            i18n={{
+              actionFailedText: 'Action Failed',
+              clearAllFilters: 'Clear all filters',
+              clearFilterAria: 'Clear filter',
+              clearSelectionAria: 'Clear selection',
+              clickToCollapseAria: 'Click to collapse content',
+              clickToExpandAria: 'Click to expand content',
+              cloneCardLabel: 'Clone card',
+              closeMenuAria: 'Close menu',
+              columnSelectionButtonAria: 'Column Selection',
+              criticalLabel: 'Critical',
+              currentPage: function noRefCheck() {},
+              dailyLabel: 'Daily',
+              defaultFilterStringPlaceholdText: 'Type and hit enter to apply',
+              deleteCardLabel: 'Delete card',
+              dismissText: 'Dismiss',
+              downloadIconDescription: 'Download table content',
+              editCardLabel: 'Edit card',
+              emptyButtonLabel: 'Create some data',
+              emptyButtonLabelWithFilters: 'Clear all filters',
+              emptyMessage: 'There are no alerts in this range.',
+              emptyMessageWithFilters: 'No results match the current filters',
+              errorLoadingDataLabel: 'Error loading data for this card: ',
+              errorLoadingDataShortLabel: 'Data error.',
+              expandLabel: 'Expand to fullscreen',
+              filterAria: 'Filter',
+              filterButtonAria: 'Filters',
+              hourlyLabel: 'Hourly',
+              inProgressText: 'In Progress',
+              itemsPerPage: 'Items per page:',
+              itemsRangeWithTotal: function noRefCheck() {},
+              last24HoursLabel: 'Last 24 hrs',
+              last7DaysLabel: 'Last 7 days',
+              lastMonthLabel: 'Last month',
+              lastQuarterLabel: 'Last quarter',
+              lastUpdatedLabel: 'Last updated: ',
+              lastYearLabel: 'Last year',
+              learnMoreText: 'Learn More',
+              lowLabel: 'Low',
+              moderateLabel: 'Moderate',
+              monthlyLabel: 'Monthly',
+              noDataLabel: 'No data is available for this time range.',
+              noDataShortLabel: 'No data',
+              openMenuAria: 'Open menu',
+              overflowMenuAria: 'More actions',
+              overflowMenuDescription: 'open and close list of options',
+              pageBackwardAria: 'Previous page',
+              pageForwardAria: 'Next page',
+              pageNumberAria: 'Page Number',
+              pageRange: function noRefCheck() {},
+              periodToDateLabel: 'Period to date',
+              rollingPeriodLabel: 'Rolling period',
+              searchPlaceholder: 'Search',
+              selectAllAria: 'Select all items',
+              selectRowAria: 'Select row',
+              selectSeverityPlaceholder: 'Select a severity',
+              severityLabel: 'Severity',
+              thisMonthLabel: 'This month',
+              thisQuarterLabel: 'This quarter',
+              thisWeekLabel: 'This week',
+              thisYearLabel: 'This year',
+              weeklyLabel: 'Weekly',
+            }}
+            isEditable={false}
+            isLoading={false}
+            lastUpdated="Tue, 22 Oct 2019 05:00:00 GMT"
+            layouts={{}}
+            onBreakpointChange={function noRefCheck() {}}
+            onDashboardAction={null}
+            onFetchData={function noRefCheck() {}}
+            onLayoutChange={function noRefCheck() {}}
+            onSetupCard={null}
+            rowHeight={{
+              lg: 128,
+              max: 128,
+              md: 128,
+              sm: 128,
+              xl: 128,
+              xs: 128,
+            }}
+            setIsLoading={null}
+            sidebar={null}
+            timeGrain={null}
+          />
+        </div>
       </FullWidthWrapper>
     );
   });

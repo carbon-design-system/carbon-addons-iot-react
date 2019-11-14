@@ -108,6 +108,7 @@ const defaultProps = {
   cardDimensions: CARD_DIMENSIONS,
   dashboardBreakpoints: DASHBOARD_BREAKPOINTS,
   dashboardColumns: DASHBOARD_COLUMNS,
+  hideHeader: false,
   i18n: {
     noDataLabel: 'No data is available for this time range.',
     noDataShortLabel: 'No data',
@@ -156,6 +157,7 @@ const Card = ({
   availableActions,
   breakpoint,
   i18n,
+  hideHeader,
   ...others
 }) => {
   const [tooltipId, setTooltipId] = useState(uuidv1());
@@ -323,21 +325,24 @@ const Card = ({
           cardWidthSize={sizeWidth.width}
           {...others}
         >
-          <div className="card--header">
-            <span className="card--title" title={title}>
-              {title}&nbsp;
-              {tooltip && (
-                <Tooltip
-                  triggerId={`card-tooltip-trigger-${id}`}
-                  tooltipId={`card-tooltip-${id}`}
-                  triggerText=""
-                >
-                  {tooltip}
-                </Tooltip>
-              )}
-            </span>
-            {toolbar(sizeWidth.width)}
-          </div>
+          {!hideHeader && (
+            <div className="card--header">
+              <span className="card--title" title={title}>
+                {title}&nbsp;
+                {tooltip && (
+                  <Tooltip
+                    triggerId={`card-tooltip-trigger-${id}`}
+                    tooltipId={`card-tooltip-${id}`}
+                    triggerText=""
+                  >
+                    {tooltip}
+                  </Tooltip>
+                )}
+              </span>
+              {toolbar(sizeWidth.width)}
+            </div>
+          )}
+
           <CardContent dimensions={dimensions}>
             {isLoading ? (
               <SkeletonWrapper>

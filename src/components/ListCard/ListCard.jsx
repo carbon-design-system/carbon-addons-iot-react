@@ -41,6 +41,12 @@ const StyledContentWrapper = styled.div`
   }
 `;
 
+// const StyledLeftSpan = styled.div`
+//   &&& {
+
+//   }
+// `
+
 const ListCard = ({ id, title, size, data, isLoading, loadData, hasMoreData, ...others }) => {
   const handleScroll = e => {
     const element = e.target;

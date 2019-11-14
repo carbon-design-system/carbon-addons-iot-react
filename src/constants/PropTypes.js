@@ -233,6 +233,7 @@ export const CardPropTypes = {
   isEmpty: PropTypes.bool,
   isEditable: PropTypes.bool,
   isExpanded: PropTypes.bool,
+  hideHeader: PropTypes.bool,
   size: PropTypes.oneOf(Object.values(CARD_SIZES)),
   layout: PropTypes.oneOf(Object.values(CARD_LAYOUTS)),
   breakpoint: PropTypes.oneOf(Object.values(DASHBOARD_SIZES)),
