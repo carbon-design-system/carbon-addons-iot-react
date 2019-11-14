@@ -75,9 +75,8 @@ storiesOf('Watson IoT|ImageCard', module)
           values={object('values', values)}
           breakpoint="lg"
           size={size}
-          renderIcon={(name, props = {}) => {
-            console.log('renderIcon', name, props);
-            return name === 'arrowDown' ? (
+          renderIcon={(name, props = {}) =>
+            name === 'arrowDown' ? (
               <Bee16 {...props}>
                 <title>{props.title}</title>
               </Bee16>
@@ -87,8 +86,8 @@ storiesOf('Watson IoT|ImageCard', module)
               </Checkmark16>
             ) : (
               <span>Unknown</span>
-            );
-          }}
+            )
+          }
           onCardAction={action('onCardAction')}
         />
       </div>

@@ -215,9 +215,8 @@ storiesOf('Watson IoT|ValueCard', module)
         <ValueCard
           title={text('title', 'Alert Count')}
           id="facilitycard"
-          renderIcon={(name, props = {}) => {
-            console.log('renderIcon', name, props);
-            return name === 'bee' ? (
+          renderIcon={(name, props = {}) =>
+            name === 'bee' ? (
               <Bee16 {...props}>
                 <title>{props.title}</title>
               </Bee16>
@@ -227,8 +226,8 @@ storiesOf('Watson IoT|ValueCard', module)
               </Checkmark16>
             ) : (
               <span>Unknown</span>
-            );
-          }}
+            )
+          }
           content={{
             attributes: [
               {
