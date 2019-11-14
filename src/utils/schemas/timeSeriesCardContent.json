@@ -70,8 +70,7 @@
         "aggregator": {
           "enum": ["max", "min", "mean", "last", "count", "first", "sum", "std"]
         }
-      },
-      "required": ["aggregator"]
+      }
     },
     "alertRange": {
       "type": "object",
