@@ -5,6 +5,11 @@ import styled from 'styled-components';
 import NotificationOn from '@carbon/icons-react/lib/notification/20';
 import HeaderHelp from '@carbon/icons-react/lib/help/20';
 import Avatar from '@carbon/icons-react/lib/user--avatar/20';
+import {
+  SideNavItems,
+  SideNavMenu,
+  SideNavMenuItem,
+} from 'carbon-components-react//lib/components/UIShell';
 
 import Header from './Header';
 
@@ -129,9 +134,36 @@ const headerPanel = {
   /* eslint-disable */
 
   content: React.forwardRef((props, ref) => (
-    <a href="#" ref={ref} {...props}>
-      Header panel content
-    </a>
+    <SideNavItems href="#" ref={ref} {...props} className="right-panel-items">
+      <SideNavMenu title="Option 1" className="right-panel-menu">
+        <SideNavMenuItem
+          href="https://carbon-addons-iot-react.com"
+          className="right-panel-menu-item"
+        >
+          option1-1
+        </SideNavMenuItem>
+        <SideNavMenuItem
+          href="https://carbon-addons-iot-react.com"
+          className="right-panel-menu-item"
+        >
+          option1-2
+        </SideNavMenuItem>
+      </SideNavMenu>
+      <SideNavMenu title="Option 2" className="right-panel-menu">
+        <SideNavMenuItem
+          href="https://carbon-addons-iot-react.com"
+          className="right-panel-menu-item"
+        >
+          option2-1
+        </SideNavMenuItem>
+        <SideNavMenuItem
+          href="https://carbon-addons-iot-react.com"
+          className="right-panel-menu-item"
+        >
+          option2-2
+        </SideNavMenuItem>
+      </SideNavMenu>
+    </SideNavItems>
   )),
   /* eslint-enable */
 };

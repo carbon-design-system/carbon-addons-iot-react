@@ -47,3 +47,19 @@
     display: flex;
   }
 }
+
+.right-panel {
+  &-items,
+  &-menu {
+    overflow: visible;
+  }
+
+  &-menu {
+    height: auto;
+    width: 100%;
+  }
+}
+
+.header-panel [aria-expanded='true'] + .#{$prefix}--side-nav__menu {
+  height: auto;
+}

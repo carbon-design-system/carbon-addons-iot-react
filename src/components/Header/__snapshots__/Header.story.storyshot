@@ -357,11 +357,162 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Heade
         className="bx--header-panel header-panel"
       >
         <div>
-          <a
-            href="#"
+          <ul
+            className="bx--side-nav__items right-panel-items"
           >
-            Header panel content
-          </a>
+            <li
+              className="bx--side-nav__item right-panel-menu"
+            >
+              <button
+                aria-expanded={false}
+                aria-haspopup="true"
+                className="bx--side-nav__submenu"
+                onClick={[Function]}
+                type="button"
+              >
+                <span
+                  className="bx--side-nav__submenu-title"
+                >
+                  Option 1
+                </span>
+                <div
+                  className="bx--side-nav__icon bx--side-nav__icon--small bx--side-nav__submenu-chevron"
+                >
+                  <svg
+                    aria-hidden={true}
+                    focusable="false"
+                    height={20}
+                    preserveAspectRatio="xMidYMid meet"
+                    style={
+                      Object {
+                        "willChange": "transform",
+                      }
+                    }
+                    viewBox="0 0 32 32"
+                    width={20}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M16 22L6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"
+                    />
+                  </svg>
+                </div>
+              </button>
+              <ul
+                className="bx--side-nav__menu"
+                role="menu"
+              >
+                <li
+                  className="bx--side-nav__menu-item right-panel-menu-item"
+                  role="none"
+                >
+                  <a
+                    className="bx--side-nav__link"
+                    href="https://carbon-addons-iot-react.com"
+                    role="menuitem"
+                  >
+                    <span
+                      className="bx--side-nav__link-text"
+                    >
+                      option1-1
+                    </span>
+                  </a>
+                </li>
+                <li
+                  className="bx--side-nav__menu-item right-panel-menu-item"
+                  role="none"
+                >
+                  <a
+                    className="bx--side-nav__link"
+                    href="https://carbon-addons-iot-react.com"
+                    role="menuitem"
+                  >
+                    <span
+                      className="bx--side-nav__link-text"
+                    >
+                      option1-2
+                    </span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li
+              className="bx--side-nav__item right-panel-menu"
+            >
+              <button
+                aria-expanded={false}
+                aria-haspopup="true"
+                className="bx--side-nav__submenu"
+                onClick={[Function]}
+                type="button"
+              >
+                <span
+                  className="bx--side-nav__submenu-title"
+                >
+                  Option 2
+                </span>
+                <div
+                  className="bx--side-nav__icon bx--side-nav__icon--small bx--side-nav__submenu-chevron"
+                >
+                  <svg
+                    aria-hidden={true}
+                    focusable="false"
+                    height={20}
+                    preserveAspectRatio="xMidYMid meet"
+                    style={
+                      Object {
+                        "willChange": "transform",
+                      }
+                    }
+                    viewBox="0 0 32 32"
+                    width={20}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M16 22L6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"
+                    />
+                  </svg>
+                </div>
+              </button>
+              <ul
+                className="bx--side-nav__menu"
+                role="menu"
+              >
+                <li
+                  className="bx--side-nav__menu-item right-panel-menu-item"
+                  role="none"
+                >
+                  <a
+                    className="bx--side-nav__link"
+                    href="https://carbon-addons-iot-react.com"
+                    role="menuitem"
+                  >
+                    <span
+                      className="bx--side-nav__link-text"
+                    >
+                      option2-1
+                    </span>
+                  </a>
+                </li>
+                <li
+                  className="bx--side-nav__menu-item right-panel-menu-item"
+                  role="none"
+                >
+                  <a
+                    className="bx--side-nav__link"
+                    href="https://carbon-addons-iot-react.com"
+                    role="menuitem"
+                  >
+                    <span
+                      className="bx--side-nav__link-text"
+                    >
+                      option2-2
+                    </span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
         </div>
       </div>
     </header>
