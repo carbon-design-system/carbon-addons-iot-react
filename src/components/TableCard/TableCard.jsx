@@ -238,7 +238,7 @@ const TableCard = ({
   id,
   title,
   isExpanded,
-  content: { columns = [], showHeader, expandedRows, sort, thresholds },
+  content: { columns = [], showHeader, expandedRows, sort, thresholds, emptyMessage },
   size,
   onCardAction,
   values: data,
@@ -760,7 +760,7 @@ const TableCard = ({
                     }
                   : {}),
                 emptyState: {
-                  message: strings.emptyMessage,
+                  message: emptyMessage || strings.emptyMessage,
                 },
               },
             }}
