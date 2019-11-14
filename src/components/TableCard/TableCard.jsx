@@ -484,7 +484,7 @@ const TableCard = ({
           id: i.dataSourceId ? i.dataSourceId : i.id,
           name: i.label ? i.label : i.dataSourceId || '', // don't force label to be required
           isSortable: true,
-          width: i.width ? i.width : size === CARD_SIZES.TALL ? '150px' : '', // force the text wrap
+          width: i.width ? `${i.width}px` : size === CARD_SIZES.TALL ? '150px' : '', // force the text wrap
           filter: i.filter
             ? i.filter
             : { placeholderText: strings.defaultFilterStringPlaceholdText }, // if filter not send we send empty object

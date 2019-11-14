@@ -13,10 +13,15 @@ exports[`SideNav testcases should render one level of navigation links 1`] = `
   links={
     Array [
       Object {
-        "icon": <ForwardRef(AppSwitcher24)
+        "icon": <ForwardRef
           className="bx--header__menu-item bx--header__menu-title"
           description="Icon"
           fill="white"
+          height={24}
+          preserveAspectRatio="xMidYMid meet"
+          viewBox="0 0 24 24"
+          width={24}
+          xmlns="http://www.w3.org/2000/svg"
         />,
         "isEnabled": true,
         "linkContent": "Boards",
@@ -125,7 +130,7 @@ the label you want displayed or read by screen readers.",
           "attrs": Array [],
           "componentStyle": ComponentStyle {
             "componentId": "SideNav__StyledSideNav-yn3bk8-0",
-            "isStatic": false,
+            "isStatic": true,
             "lastClassName": "jQkcEV",
             "rules": Array [
               "&&&{background-color:",
@@ -170,10 +175,15 @@ the label you want displayed or read by screen readers.",
                 className="disabled"
                 element="a"
                 icon={
-                  <ForwardRef(AppSwitcher24)
+                  <ForwardRef
                     className="bx--header__menu-item bx--header__menu-title"
                     description="Icon"
                     fill="white"
+                    height={24}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 24 24"
+                    width={24}
+                    xmlns="http://www.w3.org/2000/svg"
                   />
                 }
                 key="menu-link-Boards-global"
@@ -191,7 +201,7 @@ the label you want displayed or read by screen readers.",
                       "attrs": Array [],
                       "componentStyle": ComponentStyle {
                         "componentId": "SideNav__StyledSideNavLink-yn3bk8-1",
-                        "isStatic": false,
+                        "isStatic": true,
                         "lastClassName": "hllekx",
                         "rules": Array [
                           "&&&{position:relative;display:flex;align-items:center;text-decoration:none;min-height:3rem;padding-right:1rem;font-weight:400;:focus{outline:4px solid #0062ff;outline-offset:-4px;}:hover{background-color:",
@@ -212,10 +222,15 @@ the label you want displayed or read by screen readers.",
                   }
                   forwardedRef={null}
                   icon={
-                    <ForwardRef(AppSwitcher24)
+                    <ForwardRef
                       className="bx--header__menu-item bx--header__menu-title"
                       description="Icon"
                       fill="white"
+                      height={24}
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 24 24"
+                      width={24}
+                      xmlns="http://www.w3.org/2000/svg"
                     />
                   }
                   label="Boards"
@@ -224,13 +239,18 @@ the label you want displayed or read by screen readers.",
                 >
                   <SideNavLink
                     aria-label="Boards"
-                    className="SideNav__StyledSideNavLink-yn3bk8-1 hllekx disabled"
+                    className="disabled SideNav__StyledSideNavLink-yn3bk8-1 hllekx"
                     element="a"
                     icon={
-                      <ForwardRef(AppSwitcher24)
+                      <ForwardRef
                         className="bx--header__menu-item bx--header__menu-title"
                         description="Icon"
                         fill="white"
+                        height={24}
+                        preserveAspectRatio="xMidYMid meet"
+                        viewBox="0 0 24 24"
+                        width={24}
+                        xmlns="http://www.w3.org/2000/svg"
                       />
                     }
                     label="Boards"
@@ -243,7 +263,7 @@ the label you want displayed or read by screen readers.",
                       >
                         <Link
                           aria-label="Boards"
-                          className="bx--side-nav__link SideNav__StyledSideNavLink-yn3bk8-1 hllekx disabled"
+                          className="bx--side-nav__link disabled SideNav__StyledSideNavLink-yn3bk8-1 hllekx"
                           element="a"
                           label="Boards"
                           onClick={[MockFunction]}
@@ -251,7 +271,7 @@ the label you want displayed or read by screen readers.",
                         >
                           <a
                             aria-label="Boards"
-                            className="bx--side-nav__link SideNav__StyledSideNavLink-yn3bk8-1 hllekx disabled"
+                            className="bx--side-nav__link disabled SideNav__StyledSideNavLink-yn3bk8-1 hllekx"
                             label="Boards"
                             onClick={[MockFunction]}
                             tabIndex={0}
@@ -262,44 +282,38 @@ the label you want displayed or read by screen readers.",
                               <div
                                 className="bx--side-nav__icon bx--side-nav__icon--small"
                               >
-                                <ForwardRef(AppSwitcher24)
+                                <AppSwitcher24
                                   className="bx--header__menu-item bx--header__menu-title"
                                   description="Icon"
                                   fill="white"
+                                  height={24}
+                                  preserveAspectRatio="xMidYMid meet"
+                                  viewBox="0 0 24 24"
+                                  width={24}
+                                  xmlns="http://www.w3.org/2000/svg"
                                 >
-                                  <Icon
+                                  <svg
+                                    aria-hidden={true}
                                     className="bx--header__menu-item bx--header__menu-title"
                                     description="Icon"
                                     fill="white"
+                                    focusable="false"
                                     height={24}
                                     preserveAspectRatio="xMidYMid meet"
+                                    style={
+                                      Object {
+                                        "willChange": "transform",
+                                      }
+                                    }
                                     viewBox="0 0 24 24"
                                     width={24}
                                     xmlns="http://www.w3.org/2000/svg"
                                   >
-                                    <svg
-                                      aria-hidden={true}
-                                      className="bx--header__menu-item bx--header__menu-title"
-                                      description="Icon"
-                                      fill="white"
-                                      focusable="false"
-                                      height={24}
-                                      preserveAspectRatio="xMidYMid meet"
-                                      style={
-                                        Object {
-                                          "willChange": "transform",
-                                        }
-                                      }
-                                      viewBox="0 0 24 24"
-                                      width={24}
-                                      xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                      <path
-                                        d="M18 18h3v3h-3zm-7.5 0h3v3h-3zM3 18h3v3H3zm15-7.5h3v3h-3zm-7.5 0h3v3h-3zm-7.5 0h3v3H3zM18 3h3v3h-3zm-7.5 0h3v3h-3zM3 3h3v3H3z"
-                                      />
-                                    </svg>
-                                  </Icon>
-                                </ForwardRef(AppSwitcher24)>
+                                    <path
+                                      d="M18 18h3v3h-3zm-7.5 0h3v3h-3zM3 18h3v3H3zm15-7.5h3v3h-3zm-7.5 0h3v3h-3zm-7.5 0h3v3H3zM18 3h3v3h-3zm-7.5 0h3v3h-3zM3 3h3v3H3z"
+                                    />
+                                  </svg>
+                                </AppSwitcher24>
                               </div>
                             </SideNavIcon>
                             <SideNavLinkText>
@@ -390,10 +404,15 @@ exports[`SideNav testcases should render two levels of navigation links 1`] = `
   links={
     Array [
       Object {
-        "icon": <ForwardRef(AppSwitcher24)
+        "icon": <ForwardRef
           className="bx--header__menu-item bx--header__menu-title"
           description="Icon"
           fill="white"
+          height={24}
+          preserveAspectRatio="xMidYMid meet"
+          viewBox="0 0 24 24"
+          width={24}
+          xmlns="http://www.w3.org/2000/svg"
         />,
         "isEnabled": true,
         "linkContent": "Boards",
@@ -406,10 +425,15 @@ exports[`SideNav testcases should render two levels of navigation links 1`] = `
       },
       Object {
         "current": true,
-        "icon": <ForwardRef(Chip24)
+        "icon": <ForwardRef
           className="bx--header__menu-item bx--header__menu-title"
           description="Icon"
           fill="white"
+          height={24}
+          preserveAspectRatio="xMidYMid meet"
+          viewBox="0 0 32 32"
+          width={24}
+          xmlns="http://www.w3.org/2000/svg"
         />,
         "isEnabled": true,
         "linkContent": "Devices",
@@ -431,10 +455,15 @@ exports[`SideNav testcases should render two levels of navigation links 1`] = `
             },
           },
         ],
-        "icon": <ForwardRef(Group24)
+        "icon": <ForwardRef
           className="bx--header__menu-item bx--header__menu-title"
           description="Icon"
           fill="white"
+          height={24}
+          preserveAspectRatio="xMidYMid meet"
+          viewBox="0 0 32 32"
+          width={24}
+          xmlns="http://www.w3.org/2000/svg"
         />,
         "isEnabled": true,
         "linkContent": "Members",
@@ -541,7 +570,7 @@ the label you want displayed or read by screen readers.",
           "attrs": Array [],
           "componentStyle": ComponentStyle {
             "componentId": "SideNav__StyledSideNav-yn3bk8-0",
-            "isStatic": false,
+            "isStatic": true,
             "lastClassName": "jQkcEV",
             "rules": Array [
               "&&&{background-color:",
@@ -586,10 +615,15 @@ the label you want displayed or read by screen readers.",
                 className="disabled"
                 element="a"
                 icon={
-                  <ForwardRef(AppSwitcher24)
+                  <ForwardRef
                     className="bx--header__menu-item bx--header__menu-title"
                     description="Icon"
                     fill="white"
+                    height={24}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 24 24"
+                    width={24}
+                    xmlns="http://www.w3.org/2000/svg"
                   />
                 }
                 key="menu-link-Boards-global"
@@ -607,7 +641,7 @@ the label you want displayed or read by screen readers.",
                       "attrs": Array [],
                       "componentStyle": ComponentStyle {
                         "componentId": "SideNav__StyledSideNavLink-yn3bk8-1",
-                        "isStatic": false,
+                        "isStatic": true,
                         "lastClassName": "hllekx",
                         "rules": Array [
                           "&&&{position:relative;display:flex;align-items:center;text-decoration:none;min-height:3rem;padding-right:1rem;font-weight:400;:focus{outline:4px solid #0062ff;outline-offset:-4px;}:hover{background-color:",
@@ -628,10 +662,15 @@ the label you want displayed or read by screen readers.",
                   }
                   forwardedRef={null}
                   icon={
-                    <ForwardRef(AppSwitcher24)
+                    <ForwardRef
                       className="bx--header__menu-item bx--header__menu-title"
                       description="Icon"
                       fill="white"
+                      height={24}
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 24 24"
+                      width={24}
+                      xmlns="http://www.w3.org/2000/svg"
                     />
                   }
                   label="Boards"
@@ -640,13 +679,18 @@ the label you want displayed or read by screen readers.",
                 >
                   <SideNavLink
                     aria-label="Boards"
-                    className="SideNav__StyledSideNavLink-yn3bk8-1 hllekx disabled"
+                    className="disabled SideNav__StyledSideNavLink-yn3bk8-1 hllekx"
                     element="a"
                     icon={
-                      <ForwardRef(AppSwitcher24)
+                      <ForwardRef
                         className="bx--header__menu-item bx--header__menu-title"
                         description="Icon"
                         fill="white"
+                        height={24}
+                        preserveAspectRatio="xMidYMid meet"
+                        viewBox="0 0 24 24"
+                        width={24}
+                        xmlns="http://www.w3.org/2000/svg"
                       />
                     }
                     label="Boards"
@@ -659,7 +703,7 @@ the label you want displayed or read by screen readers.",
                       >
                         <Link
                           aria-label="Boards"
-                          className="bx--side-nav__link SideNav__StyledSideNavLink-yn3bk8-1 hllekx disabled"
+                          className="bx--side-nav__link disabled SideNav__StyledSideNavLink-yn3bk8-1 hllekx"
                           element="a"
                           label="Boards"
                           onClick={[MockFunction]}
@@ -667,7 +711,7 @@ the label you want displayed or read by screen readers.",
                         >
                           <a
                             aria-label="Boards"
-                            className="bx--side-nav__link SideNav__StyledSideNavLink-yn3bk8-1 hllekx disabled"
+                            className="bx--side-nav__link disabled SideNav__StyledSideNavLink-yn3bk8-1 hllekx"
                             label="Boards"
                             onClick={[MockFunction]}
                             tabIndex={0}
@@ -678,44 +722,38 @@ the label you want displayed or read by screen readers.",
                               <div
                                 className="bx--side-nav__icon bx--side-nav__icon--small"
                               >
-                                <ForwardRef(AppSwitcher24)
+                                <AppSwitcher24
                                   className="bx--header__menu-item bx--header__menu-title"
                                   description="Icon"
                                   fill="white"
+                                  height={24}
+                                  preserveAspectRatio="xMidYMid meet"
+                                  viewBox="0 0 24 24"
+                                  width={24}
+                                  xmlns="http://www.w3.org/2000/svg"
                                 >
-                                  <Icon
+                                  <svg
+                                    aria-hidden={true}
                                     className="bx--header__menu-item bx--header__menu-title"
                                     description="Icon"
                                     fill="white"
+                                    focusable="false"
                                     height={24}
                                     preserveAspectRatio="xMidYMid meet"
+                                    style={
+                                      Object {
+                                        "willChange": "transform",
+                                      }
+                                    }
                                     viewBox="0 0 24 24"
                                     width={24}
                                     xmlns="http://www.w3.org/2000/svg"
                                   >
-                                    <svg
-                                      aria-hidden={true}
-                                      className="bx--header__menu-item bx--header__menu-title"
-                                      description="Icon"
-                                      fill="white"
-                                      focusable="false"
-                                      height={24}
-                                      preserveAspectRatio="xMidYMid meet"
-                                      style={
-                                        Object {
-                                          "willChange": "transform",
-                                        }
-                                      }
-                                      viewBox="0 0 24 24"
-                                      width={24}
-                                      xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                      <path
-                                        d="M18 18h3v3h-3zm-7.5 0h3v3h-3zM3 18h3v3H3zm15-7.5h3v3h-3zm-7.5 0h3v3h-3zm-7.5 0h3v3H3zM18 3h3v3h-3zm-7.5 0h3v3h-3zM3 3h3v3H3z"
-                                      />
-                                    </svg>
-                                  </Icon>
-                                </ForwardRef(AppSwitcher24)>
+                                    <path
+                                      d="M18 18h3v3h-3zm-7.5 0h3v3h-3zM3 18h3v3H3zm15-7.5h3v3h-3zm-7.5 0h3v3h-3zm-7.5 0h3v3H3zM18 3h3v3h-3zm-7.5 0h3v3h-3zM3 3h3v3H3z"
+                                    />
+                                  </svg>
+                                </AppSwitcher24>
                               </div>
                             </SideNavIcon>
                             <SideNavLinkText>
@@ -738,10 +776,15 @@ the label you want displayed or read by screen readers.",
                 element="a"
                 href="https://google.com"
                 icon={
-                  <ForwardRef(Chip24)
+                  <ForwardRef
                     className="bx--header__menu-item bx--header__menu-title"
                     description="Icon"
                     fill="white"
+                    height={24}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width={24}
+                    xmlns="http://www.w3.org/2000/svg"
                   />
                 }
                 isActive={true}
@@ -759,7 +802,7 @@ the label you want displayed or read by screen readers.",
                       "attrs": Array [],
                       "componentStyle": ComponentStyle {
                         "componentId": "SideNav__StyledSideNavLink-yn3bk8-1",
-                        "isStatic": false,
+                        "isStatic": true,
                         "lastClassName": "hllekx",
                         "rules": Array [
                           "&&&{position:relative;display:flex;align-items:center;text-decoration:none;min-height:3rem;padding-right:1rem;font-weight:400;:focus{outline:4px solid #0062ff;outline-offset:-4px;}:hover{background-color:",
@@ -781,10 +824,15 @@ the label you want displayed or read by screen readers.",
                   forwardedRef={null}
                   href="https://google.com"
                   icon={
-                    <ForwardRef(Chip24)
+                    <ForwardRef
                       className="bx--header__menu-item bx--header__menu-title"
                       description="Icon"
                       fill="white"
+                      height={24}
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 32 32"
+                      width={24}
+                      xmlns="http://www.w3.org/2000/svg"
                     />
                   }
                   isActive={true}
@@ -793,14 +841,19 @@ the label you want displayed or read by screen readers.",
                 >
                   <SideNavLink
                     aria-label="Devices"
-                    className="SideNav__StyledSideNavLink-yn3bk8-1 hllekx disabled"
+                    className="disabled SideNav__StyledSideNavLink-yn3bk8-1 hllekx"
                     element="a"
                     href="https://google.com"
                     icon={
-                      <ForwardRef(Chip24)
+                      <ForwardRef
                         className="bx--header__menu-item bx--header__menu-title"
                         description="Icon"
                         fill="white"
+                        height={24}
+                        preserveAspectRatio="xMidYMid meet"
+                        viewBox="0 0 32 32"
+                        width={24}
+                        xmlns="http://www.w3.org/2000/svg"
                       />
                     }
                     isActive={true}
@@ -813,7 +866,7 @@ the label you want displayed or read by screen readers.",
                       >
                         <Link
                           aria-label="Devices"
-                          className="bx--side-nav__link bx--side-nav__link--current SideNav__StyledSideNavLink-yn3bk8-1 hllekx disabled"
+                          className="bx--side-nav__link bx--side-nav__link--current disabled SideNav__StyledSideNavLink-yn3bk8-1 hllekx"
                           element="a"
                           href="https://google.com"
                           label="Devices"
@@ -821,7 +874,7 @@ the label you want displayed or read by screen readers.",
                         >
                           <a
                             aria-label="Devices"
-                            className="bx--side-nav__link bx--side-nav__link--current SideNav__StyledSideNavLink-yn3bk8-1 hllekx disabled"
+                            className="bx--side-nav__link bx--side-nav__link--current disabled SideNav__StyledSideNavLink-yn3bk8-1 hllekx"
                             href="https://google.com"
                             label="Devices"
                             target="_blank"
@@ -832,47 +885,41 @@ the label you want displayed or read by screen readers.",
                               <div
                                 className="bx--side-nav__icon bx--side-nav__icon--small"
                               >
-                                <ForwardRef(Chip24)
+                                <Chip24
                                   className="bx--header__menu-item bx--header__menu-title"
                                   description="Icon"
                                   fill="white"
+                                  height={24}
+                                  preserveAspectRatio="xMidYMid meet"
+                                  viewBox="0 0 32 32"
+                                  width={24}
+                                  xmlns="http://www.w3.org/2000/svg"
                                 >
-                                  <Icon
+                                  <svg
+                                    aria-hidden={true}
                                     className="bx--header__menu-item bx--header__menu-title"
                                     description="Icon"
                                     fill="white"
+                                    focusable="false"
                                     height={24}
                                     preserveAspectRatio="xMidYMid meet"
+                                    style={
+                                      Object {
+                                        "willChange": "transform",
+                                      }
+                                    }
                                     viewBox="0 0 32 32"
                                     width={24}
                                     xmlns="http://www.w3.org/2000/svg"
                                   >
-                                    <svg
-                                      aria-hidden={true}
-                                      className="bx--header__menu-item bx--header__menu-title"
-                                      description="Icon"
-                                      fill="white"
-                                      focusable="false"
-                                      height={24}
-                                      preserveAspectRatio="xMidYMid meet"
-                                      style={
-                                        Object {
-                                          "willChange": "transform",
-                                        }
-                                      }
-                                      viewBox="0 0 32 32"
-                                      width={24}
-                                      xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                      <path
-                                        d="M11 11v10h10V11zm8 8h-6v-6h6z"
-                                      />
-                                      <path
-                                        d="M30 13v-2h-4V8a2 2 0 0 0-2-2h-3V2h-2v4h-6V2h-2v4H8a2 2 0 0 0-2 2v3H2v2h4v6H2v2h4v3a2 2 0 0 0 2 2h3v4h2v-4h6v4h2v-4h3a2 2 0 0 0 2-2v-3h4v-2h-4v-6zm-6 11H8V8h16z"
-                                      />
-                                    </svg>
-                                  </Icon>
-                                </ForwardRef(Chip24)>
+                                    <path
+                                      d="M11 11v10h10V11zm8 8h-6v-6h6z"
+                                    />
+                                    <path
+                                      d="M30 13v-2h-4V8a2 2 0 0 0-2-2h-3V2h-2v4h-6V2h-2v4H8a2 2 0 0 0-2 2v3H2v2h4v6H2v2h4v3a2 2 0 0 0 2 2h3v4h2v-4h6v4h2v-4h3a2 2 0 0 0 2-2v-3h4v-2h-4v-6zm-6 11H8V8h16z"
+                                    />
+                                  </svg>
+                                </Chip24>
                               </div>
                             </SideNavIcon>
                             <SideNavLinkText>
@@ -893,10 +940,15 @@ the label you want displayed or read by screen readers.",
                 aria-label="dropdown"
                 className="disabled"
                 icon={
-                  <ForwardRef(Group24)
+                  <ForwardRef
                     className="bx--header__menu-item bx--header__menu-title"
                     description="Icon"
                     fill="white"
+                    height={24}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width={24}
+                    xmlns="http://www.w3.org/2000/svg"
                   />
                 }
                 key="menu-link-2-dropdown"
@@ -911,7 +963,7 @@ the label you want displayed or read by screen readers.",
                       "attrs": Array [],
                       "componentStyle": ComponentStyle {
                         "componentId": "SideNav__StyledSideNavMenu-yn3bk8-2",
-                        "isStatic": false,
+                        "isStatic": true,
                         "lastClassName": "cVDWRM",
                         "rules": Array [
                           "&&&{background-color:",
@@ -942,22 +994,32 @@ the label you want displayed or read by screen readers.",
                   }
                   forwardedRef={null}
                   icon={
-                    <ForwardRef(Group24)
+                    <ForwardRef
                       className="bx--header__menu-item bx--header__menu-title"
                       description="Icon"
                       fill="white"
+                      height={24}
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 32 32"
+                      width={24}
+                      xmlns="http://www.w3.org/2000/svg"
                     />
                   }
                   title="Members"
                 >
                   <ForwardRef
                     aria-label="dropdown"
-                    className="SideNav__StyledSideNavMenu-yn3bk8-2 cVDWRM disabled"
+                    className="disabled SideNav__StyledSideNavMenu-yn3bk8-2 cVDWRM"
                     icon={
-                      <ForwardRef(Group24)
+                      <ForwardRef
                         className="bx--header__menu-item bx--header__menu-title"
                         description="Icon"
                         fill="white"
+                        height={24}
+                        preserveAspectRatio="xMidYMid meet"
+                        viewBox="0 0 32 32"
+                        width={24}
+                        xmlns="http://www.w3.org/2000/svg"
                       />
                     }
                     title="Members"
@@ -965,20 +1027,25 @@ the label you want displayed or read by screen readers.",
                     <SideNavMenu
                       aria-label="dropdown"
                       buttonRef={null}
-                      className="SideNav__StyledSideNavMenu-yn3bk8-2 cVDWRM disabled"
+                      className="disabled SideNav__StyledSideNavMenu-yn3bk8-2 cVDWRM"
                       defaultExpanded={false}
                       icon={
-                        <ForwardRef(Group24)
+                        <ForwardRef
                           className="bx--header__menu-item bx--header__menu-title"
                           description="Icon"
                           fill="white"
+                          height={24}
+                          preserveAspectRatio="xMidYMid meet"
+                          viewBox="0 0 32 32"
+                          width={24}
+                          xmlns="http://www.w3.org/2000/svg"
                         />
                       }
                       isActive={false}
                       title="Members"
                     >
                       <li
-                        className="bx--side-nav__item SideNav__StyledSideNavMenu-yn3bk8-2 cVDWRM disabled"
+                        className="bx--side-nav__item disabled SideNav__StyledSideNavMenu-yn3bk8-2 cVDWRM"
                       >
                         <button
                           aria-expanded={false}
@@ -993,44 +1060,38 @@ the label you want displayed or read by screen readers.",
                             <div
                               className="bx--side-nav__icon"
                             >
-                              <ForwardRef(Group24)
+                              <Group24
                                 className="bx--header__menu-item bx--header__menu-title"
                                 description="Icon"
                                 fill="white"
+                                height={24}
+                                preserveAspectRatio="xMidYMid meet"
+                                viewBox="0 0 32 32"
+                                width={24}
+                                xmlns="http://www.w3.org/2000/svg"
                               >
-                                <Icon
+                                <svg
+                                  aria-hidden={true}
                                   className="bx--header__menu-item bx--header__menu-title"
                                   description="Icon"
                                   fill="white"
+                                  focusable="false"
                                   height={24}
                                   preserveAspectRatio="xMidYMid meet"
+                                  style={
+                                    Object {
+                                      "willChange": "transform",
+                                    }
+                                  }
                                   viewBox="0 0 32 32"
                                   width={24}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
-                                  <svg
-                                    aria-hidden={true}
-                                    className="bx--header__menu-item bx--header__menu-title"
-                                    description="Icon"
-                                    fill="white"
-                                    focusable="false"
-                                    height={24}
-                                    preserveAspectRatio="xMidYMid meet"
-                                    style={
-                                      Object {
-                                        "willChange": "transform",
-                                      }
-                                    }
-                                    viewBox="0 0 32 32"
-                                    width={24}
-                                    xmlns="http://www.w3.org/2000/svg"
-                                  >
-                                    <path
-                                      d="M31 30h-2v-3a3 3 0 0 0-3-3h-4a3 3 0 0 0-3 3v3h-2v-3a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5zm-7-18a3 3 0 1 1-3 3 3 3 0 0 1 3-3m0-2a5 5 0 1 0 5 5 5 5 0 0 0-5-5zm-9 12h-2v-3a3 3 0 0 0-3-3H6a3 3 0 0 0-3 3v3H1v-3a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5zM8 4a3 3 0 1 1-3 3 3 3 0 0 1 3-3m0-2a5 5 0 1 0 5 5 5 5 0 0 0-5-5z"
-                                    />
-                                  </svg>
-                                </Icon>
-                              </ForwardRef(Group24)>
+                                  <path
+                                    d="M31 30h-2v-3a3 3 0 0 0-3-3h-4a3 3 0 0 0-3 3v3h-2v-3a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5zm-7-18a3 3 0 1 1-3 3 3 3 0 0 1 3-3m0-2a5 5 0 1 0 5 5 5 5 0 0 0-5-5zm-9 12h-2v-3a3 3 0 0 0-3-3H6a3 3 0 0 0-3 3v3H1v-3a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5zM8 4a3 3 0 1 1-3 3 3 3 0 0 1 3-3m0-2a5 5 0 1 0 5 5 5 5 0 0 0-5-5z"
+                                  />
+                                </svg>
+                              </Group24>
                             </div>
                           </SideNavIcon>
                           <span

@@ -83,6 +83,8 @@ export const TableCardPropTypes = {
     columns: PropTypes.arrayOf(
       PropTypes.shape({
         dataSourceId: PropTypes.string.isRequired,
+        /** optional width in pixels, default is no enforced max width */
+        width: PropTypes.number,
         label: PropTypes.string.isRequired,
         priority: PropTypes.number,
         renderer: PropTypes.func,

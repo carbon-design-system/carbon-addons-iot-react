@@ -64,12 +64,13 @@
       "properties": {
         "label": { "type": "string" },
         "dataSourceId": { "type": "string" },
+        "width": { "type": "number" },
         "priority": { "type": "number" },
         "filter": { "type": "object", "properties": { "placeholderText": { "type": "string" } } },
         "type": { "type": "string" }
       },
       "required": ["dataSourceId"],
-      "propertyNames": { "enum": ["label", "dataSourceId", "priority", "filter", "type"] }
+      "propertyNames": { "enum": ["label", "dataSourceId", "priority", "filter", "type", "width"] }
     },
     "attribute": {
       "type": "object",
