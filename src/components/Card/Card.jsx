@@ -14,7 +14,6 @@ import {
   SelectItemGroup,
   SkeletonText,
 } from 'carbon-components-react';
-import { pure } from 'recompose';
 import Close16 from '@carbon/icons-react/lib/close/16';
 // import ChevronDown from '@carbon/icons-react/lib/chevron--down/20';
 import EventSchedule from '@carbon/icons-react/lib/event--schedule/20';
@@ -35,7 +34,7 @@ import {
 import { CardPropTypes } from '../../constants/PropTypes';
 import { getCardMinSize } from '../../utils/componentUtilityFunctions';
 
-const OptimizedSkeletonText = pure(SkeletonText);
+const OptimizedSkeletonText = React.memo(SkeletonText);
 
 /** Full card */
 const CardWrapper = styled.div`
