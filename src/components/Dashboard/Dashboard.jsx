@@ -89,7 +89,9 @@ const propTypes = {
   onBreakpointChange: PropTypes.func,
   /** Callback called when an action is clicked.  The id of the action is passed to the callback */
   onDashboardAction: PropTypes.func,
-  /** Callback called when a card determines what icon render based on a named string in card config */
+  /** Callback called when a card determines what icon render based on a named string in card config
+   *    example usage: renderIconByName(name = 'my--checkmark--icon', props = { title: 'A checkmark', etc. })
+   */
   renderIconByName: PropTypes.func,
 
   // Data related properties
