@@ -2,6 +2,7 @@ import React from 'react';
 import { text, boolean } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
+import { FavoriteFilled16, ErrorFilled16, CopyFile16 } from '@carbon/icons-react';
 
 import FullWidthWrapper from '../../internal/FullWidthWrapper';
 import { getIntervalChartData, tableColumns, tableData } from '../../utils/sample';
@@ -972,6 +973,37 @@ storiesOf('Watson IoT|Dashboard', module)
             {dashboard}
           </div>,
         ])}
+      </FullWidthWrapper>
+    );
+  })
+  .add('custom renderIconByName', () => {
+    return (
+      <FullWidthWrapper>
+        <Dashboard
+          {...commonDashboardProps}
+          cards={originalCards.filter(
+            i => i.id === 'floor map picture' || i.id === 'facilitycard-comfort-level'
+          )}
+          renderIconByName={(name, props = {}) =>
+            name === 'arrowUp' ? (
+              <FavoriteFilled16 {...props}>
+                {props.title && <title>{props.title}</title>}
+              </FavoriteFilled16>
+            ) : name === 'arrowDown' ? (
+              <ErrorFilled16 {...props}>
+                {props.title && <title>{props.title}</title>}
+              </ErrorFilled16>
+            ) : name === 'close' ? (
+              <CopyFile16 {...props}>{props.title && <title>{props.title}</title>}</CopyFile16>
+            ) : name === 'checkmark' ? (
+              <FavoriteFilled16 {...props}>
+                {props.title && <title>{props.title}</title>}
+              </FavoriteFilled16>
+            ) : (
+              <span>Unknown</span>
+            )
+          }
+        />
       </FullWidthWrapper>
     );
   });

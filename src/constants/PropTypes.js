@@ -19,15 +19,7 @@ export const AttributePropTypes = PropTypes.shape({
       comparison: PropTypes.oneOf(['<', '>', '=', '<=', '>=']).isRequired,
       value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
       color: PropTypes.string,
-      icon: PropTypes.oneOfType([
-        PropTypes.oneOf(bundledIconNames),
-        PropTypes.shape({
-          width: PropTypes.string,
-          height: PropTypes.string,
-          viewBox: PropTypes.string.isRequired,
-          svgData: PropTypes.object.isRequired,
-        }),
-      ]),
+      icon: PropTypes.string,
     })
   ),
   unit: PropTypes.string,

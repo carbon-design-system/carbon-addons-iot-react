@@ -1,6 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { text, select, object, boolean, number } from '@storybook/addon-knobs';
+import { Bee16, Checkmark16 } from '@carbon/icons-react';
 
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 import { getCardMinSize } from '../../utils/componentUtilityFunctions';
@@ -194,6 +195,48 @@ storiesOf('Watson IoT|ValueCard', module)
                     comparison: '<',
                     value: 5,
                     icon: 'checkmark',
+                    color: 'green',
+                  },
+                ],
+              },
+            ],
+          }}
+          breakpoint="lg"
+          size={size}
+          values={{ alertCount: number('alertCount', 4) }}
+        />
+      </div>
+    );
+  })
+  .add('xsmall / thresholds (number, custom renderIconByName)', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.XSMALL);
+    return (
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+        <ValueCard
+          title={text('title', 'Alert Count')}
+          id="facilitycard"
+          renderIconByName={(name, props = {}) =>
+            name === 'bee' ? (
+              <Bee16 {...props}>
+                <title>{props.title}</title>
+              </Bee16>
+            ) : name === 'checkmark' ? (
+              <Checkmark16 {...props}>
+                <title>{props.title}</title>
+              </Checkmark16>
+            ) : (
+              <span>Unknown</span>
+            )
+          }
+          content={{
+            attributes: [
+              {
+                dataSourceId: 'alertCount',
+                thresholds: [
+                  {
+                    comparison: '<',
+                    value: 5,
+                    icon: 'bee',
                     color: 'green',
                   },
                 ],

@@ -70,6 +70,7 @@ const CardRenderer = React.memo(
     breakpoint, // eslint-disable-line
     onFetchData, // eslint-disable-line
     onSetupCard, // eslint-disable-line
+    renderIconByName, // eslint-disable-line
     timeGrain, // eslint-disable-line
     ...gridProps
   }) => {
@@ -157,6 +158,23 @@ const CardRenderer = React.memo(
       [card, onFetchData, timeGrain]
     );
 
+    const commonCardProps = {
+      key: card.id,
+      availableActions: cachedActions,
+      dataSource,
+      isExpanded,
+      type,
+      i18n,
+      isEditable,
+      onCardAction: cachedOnCardAction,
+      renderIconByName,
+      breakpoint,
+      dashboardBreakpoints,
+      dashboardColumns,
+      cardDimensions,
+      rowHeight,
+    };
+
     return (
       <div
         key={card.id}
@@ -165,73 +183,13 @@ const CardRenderer = React.memo(
         style={cachedExpandedStyle}
       >
         {type === CARD_TYPES.VALUE ? (
-          <ValueCard
-            {...card}
-            key={card.id}
-            availableActions={cachedActions}
-            dataSource={dataSource}
-            isExpanded={isExpanded}
-            type={type}
-            i18n={i18n}
-            isEditable={isEditable}
-            onCardAction={cachedOnCardAction}
-            breakpoint={breakpoint}
-            dashboardBreakpoints={dashboardBreakpoints}
-            dashboardColumns={dashboardColumns}
-            cardDimensions={cardDimensions}
-            rowHeight={rowHeight}
-          />
+          <ValueCard {...card} {...commonCardProps} />
         ) : type === CARD_TYPES.IMAGE ? (
-          <ImageCard
-            {...card}
-            key={card.id}
-            availableActions={cachedActions}
-            dataSource={dataSource}
-            isExpanded={isExpanded}
-            type={type}
-            i18n={i18n}
-            isEditable={isEditable}
-            onCardAction={cachedOnCardAction}
-            breakpoint={breakpoint}
-            dashboardBreakpoints={dashboardBreakpoints}
-            dashboardColumns={dashboardColumns}
-            cardDimensions={cardDimensions}
-            rowHeight={rowHeight}
-          />
+          <ImageCard {...card} {...commonCardProps} />
         ) : type === CARD_TYPES.TIMESERIES ? (
-          <TimeSeriesCard
-            {...card}
-            key={card.id}
-            availableActions={cachedActions}
-            dataSource={dataSource}
-            isExpanded={isExpanded}
-            type={type}
-            i18n={i18n}
-            isEditable={isEditable}
-            onCardAction={cachedOnCardAction}
-            breakpoint={breakpoint}
-            dashboardBreakpoints={dashboardBreakpoints}
-            dashboardColumns={dashboardColumns}
-            cardDimensions={cardDimensions}
-            rowHeight={rowHeight}
-          />
+          <TimeSeriesCard {...card} {...commonCardProps} />
         ) : type === CARD_TYPES.TABLE ? (
-          <TableCard
-            {...card}
-            key={card.id}
-            availableActions={cachedActions}
-            dataSource={dataSource}
-            isExpanded={isExpanded}
-            type={type}
-            i18n={i18n}
-            isEditable={isEditable}
-            onCardAction={cachedOnCardAction}
-            breakpoint={breakpoint}
-            dashboardBreakpoints={dashboardBreakpoints}
-            dashboardColumns={dashboardColumns}
-            cardDimensions={cardDimensions}
-            rowHeight={rowHeight}
-          />
+          <TableCard {...card} {...commonCardProps} />
         ) : null}
       </div>
     );
