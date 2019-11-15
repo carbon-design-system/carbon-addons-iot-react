@@ -679,7 +679,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageT
                   Page title
                 </h2>
                 <button
-                  className="page-title-bar-title--edit Button__StyledButton-sc-19kycwu-0 gTXQZR bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center"
+                  className="page-title-bar-title--edit Button__StyledButton-sc-19kycwu-0 PhzAJ bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center"
                   disabled={false}
                   onClick={[Function]}
                   tabIndex={0}
@@ -878,7 +878,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageT
                   </div>
                 </div>
                 <button
-                  className="page-title-bar-title--edit Button__StyledButton-sc-19kycwu-0 gTXQZR bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center"
+                  className="page-title-bar-title--edit Button__StyledButton-sc-19kycwu-0 PhzAJ bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center"
                   disabled={false}
                   onClick={[Function]}
                   tabIndex={0}
@@ -943,7 +943,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageT
                  yesterday
               </span>
               <button
-                className="some-right-content Button__StyledButton-sc-19kycwu-0 gTXQZR bx--btn bx--btn--primary"
+                className="some-right-content Button__StyledButton-sc-19kycwu-0 PhzAJ bx--btn bx--btn--primary"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
@@ -1254,7 +1254,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageT
                  yesterday
               </span>
               <button
-                className="some-right-content Button__StyledButton-sc-19kycwu-0 gTXQZR bx--btn bx--btn--primary"
+                className="some-right-content Button__StyledButton-sc-19kycwu-0 PhzAJ bx--btn bx--btn--primary"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}

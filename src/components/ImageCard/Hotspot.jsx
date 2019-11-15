@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Icon, Tooltip } from 'carbon-components-react';
 
-import icons, { bundledIconNames } from '../../utils/bundledIcons';
+import icons from '../../utils/bundledIcons';
 
 export const propTypes = {
   /** percentage from the left of the image to show this hotspot */
@@ -15,16 +15,7 @@ export const propTypes = {
   /** points to one of our enumerated icon names (ex. caretUp, edit, close)
    * TODO: add support for the carbon icon object (svgData, viewBox, width, height)
    */
-  icon: PropTypes.oneOfType([
-    PropTypes.oneOf(bundledIconNames),
-    PropTypes.shape({
-      width: PropTypes.string,
-      height: PropTypes.string,
-      viewBox: PropTypes.string.isRequired,
-      svgData: PropTypes.object.isRequired,
-    }),
-  ]),
-
+  icon: PropTypes.string,
   iconDescription: PropTypes.string,
   /** color of the hotspot */
   color: PropTypes.string,
@@ -32,6 +23,8 @@ export const propTypes = {
   width: PropTypes.number,
   /** height of the hotspot */
   height: PropTypes.number,
+  /** optional function to provide icon based on name */
+  renderIconByName: PropTypes.func,
 };
 
 const defaultProps = {
@@ -40,6 +33,7 @@ const defaultProps = {
   color: 'blue',
   width: 25,
   height: 25,
+  renderIconByName: null,
 };
 
 const StyledHotspot = styled(({ className, children }) => (
@@ -77,7 +71,18 @@ const StyledHotspot = styled(({ className, children }) => (
 /**
  * This component renders a hotspot with content over an image
  */
-const Hotspot = ({ x, y, content, icon, iconDescription, color, width, height, ...others }) => {
+const Hotspot = ({
+  x,
+  y,
+  content,
+  icon,
+  iconDescription,
+  color,
+  width,
+  height,
+  renderIconByName,
+  ...others
+}) => {
   const defaultIcon = (
     <svg width={width} height={height}>
       <circle
@@ -100,23 +105,32 @@ const Hotspot = ({ x, y, content, icon, iconDescription, color, width, height, .
     </svg>
   );
 
+  const iconToRender = icon ? (
+    renderIconByName ? (
+      renderIconByName(icon, {
+        title: iconDescription,
+        fill: color,
+        width,
+        height,
+      })
+    ) : (
+      <Icon
+        icon={icons[icon] || icons.help}
+        fill={color}
+        width={parseInt(width, 10).toString()}
+        height={parseInt(height, 10).toString()}
+        description={iconDescription}
+      />
+    )
+  ) : (
+    defaultIcon
+  );
+
   return (
     <StyledHotspot x={x} y={y} width={width} height={height} icon={icon}>
       <Tooltip
         {...others}
-        triggerText={
-          icon ? (
-            <Icon
-              icon={icons[icon]}
-              fill={color}
-              width={parseInt(width, 10).toString()}
-              height={parseInt(height, 10).toString()}
-              description={iconDescription}
-            />
-          ) : (
-            defaultIcon
-          )
-        }
+        triggerText={iconToRender}
         showIcon={false}
         clickToOpen
         triggerId={`hotspot-${x}-${y}`}
