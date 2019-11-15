@@ -9766,14 +9766,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           style={
                             Object {
                               "bottom": "0",
+                              "padding": "0 36px 16px 0",
                               "position": "absolute",
                               "textAlign": "right",
+                              "width": "100%",
                             }
                           }
                         >
                           <img
                             alt="View Dashboards"
-                            src="ViewDashboardsIcon.png"
+                            src="dashboard.svg"
                             style={
                               Object {
                                 "width": "50%",
@@ -9807,14 +9809,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           style={
                             Object {
                               "bottom": "0",
+                              "padding": "0 36px 16px 0",
                               "position": "absolute",
                               "textAlign": "right",
+                              "width": "100%",
                             }
                           }
                         >
                           <img
                             alt="View Dashboards"
-                            src="ViewDashboardsIcon.png"
+                            src="dashboard.svg"
                             style={
                               Object {
                                 "width": "50%",
@@ -9863,14 +9867,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           style={
                             Object {
                               "bottom": "0",
+                              "padding": "0 36px 16px 0",
                               "position": "absolute",
                               "textAlign": "right",
+                              "width": "100%",
                             }
                           }
                         >
                           <img
                             alt="Connect Devices"
-                            src="ConnectDevicesIcon.png"
+                            src="computer-chip.svg"
                             style={
                               Object {
                                 "width": "50%",
@@ -9904,14 +9910,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           style={
                             Object {
                               "bottom": "0",
+                              "padding": "0 36px 16px 0",
                               "position": "absolute",
                               "textAlign": "right",
+                              "width": "100%",
                             }
                           }
                         >
                           <img
                             alt="Connect Devices"
-                            src="ConnectDevicesIcon.png"
+                            src="computer-chip.svg"
                             style={
                               Object {
                                 "width": "50%",
@@ -9960,14 +9968,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           style={
                             Object {
                               "bottom": "0",
+                              "padding": "0 36px 16px 0",
                               "position": "absolute",
                               "textAlign": "right",
+                              "width": "100%",
                             }
                           }
                         >
                           <img
                             alt="Monitor Entities"
-                            src="MonitorEntitiesIcon.png"
+                            src="data-scientist-illustration.svg"
                             style={
                               Object {
                                 "width": "50%",
@@ -10001,14 +10011,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           style={
                             Object {
                               "bottom": "0",
+                              "padding": "0 36px 16px 0",
                               "position": "absolute",
                               "textAlign": "right",
+                              "width": "100%",
                             }
                           }
                         >
                           <img
                             alt="Monitor Entities"
-                            src="MonitorEntitiesIcon.png"
+                            src="data-scientist-illustration.svg"
                             style={
                               Object {
                                 "width": "50%",
@@ -10050,6 +10062,21 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           Track Usage
                         </h4>
                         <br />
+                        <div
+                          style={
+                            Object {
+                              "bottom": "0",
+                              "padding": "0 36px 16px 0",
+                              "position": "absolute",
+                              "textAlign": "right",
+                              "width": "100%",
+                            }
+                          }
+                        >
+                          <ForwardRef(Application32)
+                            aria-label="Track Usage"
+                          />
+                        </div>
                       </div>
                     }
                     id="trackUsage"
@@ -10069,6 +10096,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           Track Usage
                         </h4>
                         <br />
+                        <div
+                          style={
+                            Object {
+                              "bottom": "0",
+                              "padding": "0 36px 16px 0",
+                              "position": "absolute",
+                              "textAlign": "right",
+                              "width": "100%",
+                            }
+                          }
+                        >
+                          <svg
+                            aria-label="Track Usage"
+                            focusable="false"
+                            height={32}
+                            preserveAspectRatio="xMidYMid meet"
+                            role="img"
+                            style={
+                              Object {
+                                "willChange": "transform",
+                              }
+                            }
+                            viewBox="0 0 32 32"
+                            width={32}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M16 18H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2zM6 6v10h10V6zm20 6v4h-4v-4h4m0-2h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2zm0 12v4h-4v-4h4m0-2h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2zm-10 2v4h-4v-4h4m0-2h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2z"
+                            />
+                          </svg>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -10103,6 +10161,21 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           Administer Users
                         </h4>
                         <br />
+                        <div
+                          style={
+                            Object {
+                              "bottom": "0",
+                              "padding": "0 36px 16px 0",
+                              "position": "absolute",
+                              "textAlign": "right",
+                              "width": "100%",
+                            }
+                          }
+                        >
+                          <ForwardRef(Group32)
+                            aria-label="Track Usage"
+                          />
+                        </div>
                       </div>
                     }
                     id="administerUsers"
@@ -10122,6 +10195,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           Administer Users
                         </h4>
                         <br />
+                        <div
+                          style={
+                            Object {
+                              "bottom": "0",
+                              "padding": "0 36px 16px 0",
+                              "position": "absolute",
+                              "textAlign": "right",
+                              "width": "100%",
+                            }
+                          }
+                        >
+                          <svg
+                            aria-label="Track Usage"
+                            focusable="false"
+                            height={32}
+                            preserveAspectRatio="xMidYMid meet"
+                            role="img"
+                            style={
+                              Object {
+                                "willChange": "transform",
+                              }
+                            }
+                            viewBox="0 0 32 32"
+                            width={32}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M31 30h-2v-3a3 3 0 0 0-3-3h-4a3 3 0 0 0-3 3v3h-2v-3a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5zm-7-18a3 3 0 1 1-3 3 3 3 0 0 1 3-3m0-2a5 5 0 1 0 5 5 5 5 0 0 0-5-5zm-9 12h-2v-3a3 3 0 0 0-3-3H6a3 3 0 0 0-3 3v3H1v-3a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5zM8 4a3 3 0 1 1-3 3 3 3 0 0 1 3-3m0-2a5 5 0 1 0 5 5 5 5 0 0 0-5-5z"
+                            />
+                          </svg>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -10256,10 +10360,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               className="bx--structured-list-row"
                             >
                               <div
-                                className="ListCard__StyledStructuredListCell-u7vzr0-1 chEYEC bx--structured-list-td"
+                                className="ListCard__StyledStructuredListCell-u7vzr0-1 jEQfZQ bx--structured-list-td"
                               >
                                 <div
-                                  className="ListCard__StyledValueSpan-u7vzr0-3 iNemgT"
+                                  className="ListCard__StyledValueSpan-u7vzr0-3 gZXxBO"
                                 >
                                   <a
                                     className="bx--link"
@@ -10287,10 +10391,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               className="bx--structured-list-row"
                             >
                               <div
-                                className="ListCard__StyledStructuredListCell-u7vzr0-1 chEYEC bx--structured-list-td"
+                                className="ListCard__StyledStructuredListCell-u7vzr0-1 jEQfZQ bx--structured-list-td"
                               >
                                 <div
-                                  className="ListCard__StyledValueSpan-u7vzr0-3 iNemgT"
+                                  className="ListCard__StyledValueSpan-u7vzr0-3 gZXxBO"
                                 >
                                   <a
                                     className="bx--link"
@@ -10318,10 +10422,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               className="bx--structured-list-row"
                             >
                               <div
-                                className="ListCard__StyledStructuredListCell-u7vzr0-1 chEYEC bx--structured-list-td"
+                                className="ListCard__StyledStructuredListCell-u7vzr0-1 jEQfZQ bx--structured-list-td"
                               >
                                 <div
-                                  className="ListCard__StyledValueSpan-u7vzr0-3 iNemgT"
+                                  className="ListCard__StyledValueSpan-u7vzr0-3 gZXxBO"
                                 >
                                   <a
                                     className="bx--link"
@@ -10432,10 +10536,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               className="bx--structured-list-row"
                             >
                               <div
-                                className="ListCard__StyledStructuredListCell-u7vzr0-1 chEYEC bx--structured-list-td"
+                                className="ListCard__StyledStructuredListCell-u7vzr0-1 jEQfZQ bx--structured-list-td"
                               >
                                 <div
-                                  className="ListCard__StyledValueSpan-u7vzr0-3 iNemgT"
+                                  className="ListCard__StyledValueSpan-u7vzr0-3 gZXxBO"
                                 >
                                   <a
                                     className="bx--link"
@@ -10456,10 +10560,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               className="bx--structured-list-row"
                             >
                               <div
-                                className="ListCard__StyledStructuredListCell-u7vzr0-1 chEYEC bx--structured-list-td"
+                                className="ListCard__StyledStructuredListCell-u7vzr0-1 jEQfZQ bx--structured-list-td"
                               >
                                 <div
-                                  className="ListCard__StyledValueSpan-u7vzr0-3 iNemgT"
+                                  className="ListCard__StyledValueSpan-u7vzr0-3 gZXxBO"
                                 >
                                   <a
                                     className="bx--link"
@@ -10480,10 +10584,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               className="bx--structured-list-row"
                             >
                               <div
-                                className="ListCard__StyledStructuredListCell-u7vzr0-1 chEYEC bx--structured-list-td"
+                                className="ListCard__StyledStructuredListCell-u7vzr0-1 jEQfZQ bx--structured-list-td"
                               >
                                 <div
-                                  className="ListCard__StyledValueSpan-u7vzr0-3 iNemgT"
+                                  className="ListCard__StyledValueSpan-u7vzr0-3 gZXxBO"
                                 >
                                   <a
                                     className="bx--link"
@@ -10504,10 +10608,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               className="bx--structured-list-row"
                             >
                               <div
-                                className="ListCard__StyledStructuredListCell-u7vzr0-1 chEYEC bx--structured-list-td"
+                                className="ListCard__StyledStructuredListCell-u7vzr0-1 jEQfZQ bx--structured-list-td"
                               >
                                 <div
-                                  className="ListCard__StyledValueSpan-u7vzr0-3 iNemgT"
+                                  className="ListCard__StyledValueSpan-u7vzr0-3 gZXxBO"
                                 >
                                   <a
                                     className="bx--link"

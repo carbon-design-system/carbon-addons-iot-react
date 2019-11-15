@@ -28,6 +28,7 @@ const StyledStructuredListCell = styled(StructuredListCell)`
     display: flex;
     padding-left: 10px;
     padding-right: 10px;
+    max-width: 100%;
   }
 `;
 
@@ -43,7 +44,7 @@ const StyledContentWrapper = styled.div`
 
 const StyledValueSpan = styled.div`
   &&& {
-    flex: 0 0 200px;
+    /* flex: 0 0 200px; */
     flex: 1;
     padding-right: 12px;
   }

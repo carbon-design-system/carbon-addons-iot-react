@@ -2,15 +2,16 @@ import React from 'react';
 import { text, boolean } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
+import { Application32, Group32 } from '@carbon/icons-react';
 
 import FullWidthWrapper from '../../internal/FullWidthWrapper';
 import { getIntervalChartData, tableColumns, tableData } from '../../utils/sample';
 import { CARD_SIZES, CARD_TYPES } from '../../constants/LayoutConstants';
 import imageFile from '../ImageCard/landscape.jpg';
 
-import iconConnectDevices from './ConnectDevicesIcon.png';
-import iconMonitorEntities from './MonitorEntitiesIcon.png';
-import iconViewDashboards from './ViewDashboardsIcon.png';
+import iconViewDashboards from './dashboard.svg';
+import iconMonitorEntities from './data-scientist-illustration.svg';
+import iconConnectDevices from './computer-chip.svg';
 import Dashboard from './Dashboard';
 
 const originalCards = [
@@ -992,7 +993,15 @@ storiesOf('Watson IoT|Dashboard', module)
                     <h4>View Dashboards</h4>
                     <br />
                     <p>View pinned dashboards to keep track of your world in IoT.</p>
-                    <div style={{ textAlign: 'right', position: 'absolute', bottom: '0' }}>
+                    <div
+                      style={{
+                        textAlign: 'right',
+                        position: 'absolute',
+                        bottom: '0',
+                        width: '100%',
+                        padding: '0 36px 16px 0',
+                      }}
+                    >
                       <img
                         style={{ width: '50%' }}
                         src={iconViewDashboards}
@@ -1015,7 +1024,15 @@ storiesOf('Watson IoT|Dashboard', module)
                     <p>
                       Connect devices and collect data by using the Watson IoT Platform Service.
                     </p>
-                    <div style={{ textAlign: 'right', position: 'absolute', bottom: '0' }}>
+                    <div
+                      style={{
+                        textAlign: 'right',
+                        position: 'absolute',
+                        bottom: '0',
+                        width: '100%',
+                        padding: '0 36px 16px 0',
+                      }}
+                    >
                       <img
                         style={{ width: '50%' }}
                         src={iconConnectDevices}
@@ -1036,7 +1053,15 @@ storiesOf('Watson IoT|Dashboard', module)
                     <h4>Monitor Entities</h4>
                     <br />
                     <p>Expore your entities and analyze their associated data.</p>
-                    <div style={{ textAlign: 'right', position: 'absolute', bottom: '0' }}>
+                    <div
+                      style={{
+                        textAlign: 'right',
+                        position: 'absolute',
+                        bottom: '0',
+                        width: '100%',
+                        padding: '0 36px 16px 0',
+                      }}
+                    >
                       <img
                         style={{ width: '50%' }}
                         src={iconMonitorEntities}
@@ -1056,6 +1081,17 @@ storiesOf('Watson IoT|Dashboard', module)
                   <div style={{ margin: '12px' }}>
                     <h4>Track Usage</h4>
                     <br />
+                    <div
+                      style={{
+                        textAlign: 'right',
+                        position: 'absolute',
+                        bottom: '0',
+                        width: '100%',
+                        padding: '0 36px 16px 0',
+                      }}
+                    >
+                      <Application32 aria-label="Track Usage" />
+                    </div>
                   </div>
                 ),
                 id: 'trackUsage',
@@ -1069,6 +1105,17 @@ storiesOf('Watson IoT|Dashboard', module)
                   <div style={{ margin: '12px' }}>
                     <h4>Administer Users</h4>
                     <br />
+                    <div
+                      style={{
+                        textAlign: 'right',
+                        position: 'absolute',
+                        bottom: '0',
+                        width: '100%',
+                        padding: '0 36px 16px 0',
+                      }}
+                    >
+                      <Group32 aria-label="Track Usage" />
+                    </div>
                   </div>
                 ),
                 id: 'administerUsers',
