@@ -2,7 +2,7 @@ import React from 'react';
 import { text, boolean } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { FavoriteFilled16, ErrorFilled16, CopyFile16, Application32, Group32 } from '@carbon/icons-react';
+import { Application32, Group32 } from '@carbon/icons-react';
 
 import FullWidthWrapper from '../../internal/FullWidthWrapper';
 import { getIntervalChartData, tableColumns, tableData } from '../../utils/sample';
