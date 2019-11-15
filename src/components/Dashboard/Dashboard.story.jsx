@@ -976,7 +976,7 @@ storiesOf('Watson IoT|Dashboard', module)
       </FullWidthWrapper>
     );
   })
-  .add('custom renderIcon', () => {
+  .add('custom renderIconByName', () => {
     return (
       <FullWidthWrapper>
         <Dashboard
@@ -984,7 +984,7 @@ storiesOf('Watson IoT|Dashboard', module)
           cards={originalCards.filter(
             i => i.id === 'floor map picture' || i.id === 'facilitycard-comfort-level'
           )}
-          renderIcon={(name, props = {}) =>
+          renderIconByName={(name, props = {}) =>
             name === 'arrowUp' ? (
               <FavoriteFilled16 {...props}>
                 {props.title && <title>{props.title}</title>}

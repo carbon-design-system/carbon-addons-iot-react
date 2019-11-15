@@ -81,7 +81,7 @@ const propTypes = {
       icon: PropTypes.string,
     })
   ),
-  renderIcon: PropTypes.func,
+  renderIconByName: PropTypes.func,
   precision: PropTypes.number,
 };
 
@@ -94,7 +94,7 @@ const defaultProps = {
   isSmall: false,
   isMini: false,
   label: null,
-  renderIcon: null,
+  renderIconByName: null,
   secondaryValue: null,
 };
 
@@ -113,7 +113,7 @@ const Attribute = ({
   isSmall,
   isMini,
   label,
-  renderIcon,
+  renderIconByName,
   size, // eslint-disable-line
 }) => {
   // matching threshold will be the first match in the list, or a value of null
@@ -148,8 +148,8 @@ const Attribute = ({
   const thresholdIcon =
     matchingThreshold && matchingThreshold.icon ? (
       <ThresholdIconWrapper isMini={isMini}>
-        {renderIcon ? (
-          renderIcon(matchingThreshold.icon, thresholdIconProps)
+        {renderIconByName ? (
+          renderIconByName(matchingThreshold.icon, thresholdIconProps)
         ) : (
           <ThresholdIcon
             icon={icons[matchingThreshold.icon] || icons.help}

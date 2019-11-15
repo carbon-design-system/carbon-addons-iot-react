@@ -24,7 +24,7 @@ export const propTypes = {
   /** height of the hotspot */
   height: PropTypes.number,
   /** optional function to provide icon based on name */
-  renderIcon: PropTypes.func,
+  renderIconByName: PropTypes.func,
 };
 
 const defaultProps = {
@@ -33,7 +33,7 @@ const defaultProps = {
   color: 'blue',
   width: 25,
   height: 25,
-  renderIcon: null,
+  renderIconByName: null,
 };
 
 const StyledHotspot = styled(({ className, children }) => (
@@ -80,7 +80,7 @@ const Hotspot = ({
   color,
   width,
   height,
-  renderIcon,
+  renderIconByName,
   ...others
 }) => {
   const defaultIcon = (
@@ -106,8 +106,8 @@ const Hotspot = ({
   );
 
   const iconToRender = icon ? (
-    renderIcon ? (
-      renderIcon(icon, {
+    renderIconByName ? (
+      renderIconByName(icon, {
         title: iconDescription,
         fill: color,
         width,

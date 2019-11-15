@@ -90,7 +90,7 @@ const propTypes = {
   /** Callback called when an action is clicked.  The id of the action is passed to the callback */
   onDashboardAction: PropTypes.func,
   /** Callback called when a card determines what icon render based on a named string in card config */
-  renderIcon: PropTypes.func,
+  renderIconByName: PropTypes.func,
 
   // Data related properties
   /** If the overall dashboard should be using a timeGrain, we pass it here */
@@ -269,7 +269,7 @@ const defaultProps = {
   hasLastUpdated: true,
   onSetupCard: null,
   onFetchData: null,
-  renderIcon: null,
+  renderIconByName: null,
   timeGrain: null,
   isLoading: false,
   setIsLoading: null,
@@ -320,7 +320,7 @@ const Dashboard = ({
   onSetupCard,
   // TODO: fix the rendering of the lastUpdated bit, to migrate in the style from our ibm repo
   lastUpdated, // eslint-disable-line
-  renderIcon,
+  renderIconByName,
   onFetchData,
   timeGrain,
 }) => {
@@ -415,7 +415,7 @@ const Dashboard = ({
             breakpoint={breakpoint}
             onSetupCard={onSetupCard}
             onFetchData={handleOnFetchData}
-            renderIcon={renderIcon}
+            renderIconByName={renderIconByName}
             timeGrain={timeGrain}
           />
         ) : null

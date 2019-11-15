@@ -42,7 +42,7 @@ const ImageCard = ({
   error,
   isLoading,
   i18n: { loadingDataLabel, ...otherLabels },
-  renderIcon,
+  renderIconByName,
   ...others
 }) => {
   const { src } = content;
@@ -85,7 +85,7 @@ const ImageCard = ({
                     hotspots={hotspots}
                     isHotspotDataLoading={isLoading}
                     loadingHotspotsLabel={loadingDataLabel}
-                    renderIcon={renderIcon}
+                    renderIconByName={renderIconByName}
                   />
                 ) : (
                   <p>Error retrieving image.</p>

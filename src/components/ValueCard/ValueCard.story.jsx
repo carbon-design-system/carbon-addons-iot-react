@@ -208,14 +208,14 @@ storiesOf('Watson IoT|ValueCard', module)
       </div>
     );
   })
-  .add('xsmall / thresholds (number, custom icon)', () => {
+  .add('xsmall / thresholds (number, custom renderIconByName)', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.XSMALL);
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <ValueCard
           title={text('title', 'Alert Count')}
           id="facilitycard"
-          renderIcon={(name, props = {}) =>
+          renderIconByName={(name, props = {}) =>
             name === 'bee' ? (
               <Bee16 {...props}>
                 <title>{props.title}</title>

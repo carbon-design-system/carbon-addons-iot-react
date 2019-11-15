@@ -5578,7 +5578,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashboard custom renderIcon 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashboard custom renderIconByName 1`] = `
 <div
   className="storybook-container"
   style={

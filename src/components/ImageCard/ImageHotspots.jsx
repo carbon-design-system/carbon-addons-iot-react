@@ -25,7 +25,7 @@ const propTypes = {
   /** Current width in pixels */
   width: PropTypes.number.isRequired,
   zoomMax: PropTypes.number,
-  renderIcon: PropTypes.func,
+  renderIconByName: PropTypes.func,
 };
 
 const defaultProps = {
@@ -38,7 +38,7 @@ const defaultProps = {
   isHotspotDataLoading: false,
   background: '#eee',
   zoomMax: undefined,
-  renderIcon: null,
+  renderIconByName: null,
 };
 
 export const startDrag = (event, element, cursor, setCursor) => {
@@ -317,7 +317,7 @@ const ImageHotspots = ({
   alt,
   isHotspotDataLoading,
   zoomMax,
-  renderIcon,
+  renderIconByName,
 }) => {
   // Image needs to be stored in state because we're dragging it around when zoomed in, and we need to keep track of when it loads
   const [image, setImage] = useState({});
@@ -399,11 +399,11 @@ const ImageHotspots = ({
             style={hotspotsStyle}
             offsetX={image.offsetX}
             offsetY={image.offsetY}
-            renderIcon={renderIcon}
+            renderIconByName={renderIconByName}
           />
         );
       }),
-    [hotspots, hotspotsStyle, image.offsetX, image.offsetY, renderIcon]
+    [hotspots, hotspotsStyle, image.offsetX, image.offsetY, renderIconByName]
   );
 
   if (imageLoaded) {

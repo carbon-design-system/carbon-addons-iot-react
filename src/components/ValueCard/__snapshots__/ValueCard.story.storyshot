@@ -2700,7 +2700,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ValueCard xsmall / thresholds (number, custom icon) 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ValueCard xsmall / thresholds (number, custom renderIconByName) 1`] = `
 <div
   className="storybook-container"
   style={

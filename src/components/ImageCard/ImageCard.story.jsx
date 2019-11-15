@@ -64,7 +64,7 @@ storiesOf('Watson IoT|ImageCard', module)
       </div>
     );
   })
-  .add('custom renderIcon', () => {
+  .add('custom renderIconByName', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.XLARGE);
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
@@ -75,7 +75,7 @@ storiesOf('Watson IoT|ImageCard', module)
           values={object('values', values)}
           breakpoint="lg"
           size={size}
-          renderIcon={(name, props = {}) =>
+          renderIconByName={(name, props = {}) =>
             name === 'arrowDown' ? (
               <Bee16 {...props}>
                 <title>{props.title}</title>
