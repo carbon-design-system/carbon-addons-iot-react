@@ -3,6 +3,7 @@ import { text, boolean } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { Application32, Group32 } from '@carbon/icons-react';
+import { ClickableTile } from 'carbon-components-react';
 
 import FullWidthWrapper from '../../internal/FullWidthWrapper';
 import { getIntervalChartData, tableColumns, tableData } from '../../utils/sample';
@@ -989,26 +990,31 @@ storiesOf('Watson IoT|Dashboard', module)
             cards={[
               {
                 content: (
-                  <div style={{ margin: '12px' }}>
-                    <h4>View Dashboards</h4>
-                    <br />
-                    <p>View pinned dashboards to keep track of your world in IoT.</p>
-                    <div
-                      style={{
-                        textAlign: 'right',
-                        position: 'absolute',
-                        bottom: '0',
-                        width: '100%',
-                        padding: '0 36px 16px 0',
-                      }}
-                    >
-                      <img
-                        style={{ width: '50%' }}
-                        src={iconViewDashboards}
-                        alt="View Dashboards"
-                      />
+                  <ClickableTile
+                    href="https://internetofthings.ibmcloud.com"
+                    style={{ height: '100%', padding: '0 0 0 0' }}
+                  >
+                    <div style={{ padding: '12px' }}>
+                      <h4>View Dashboards</h4>
+                      <br />
+                      <p>View pinned dashboards to keep track of your world in IoT.</p>
+                      <div
+                        style={{
+                          textAlign: 'right',
+                          position: 'absolute',
+                          bottom: '0',
+                          width: '100%',
+                          padding: '0 36px 16px 0',
+                        }}
+                      >
+                        <img
+                          style={{ width: '50%' }}
+                          src={iconViewDashboards}
+                          alt="View Dashboards"
+                        />
+                      </div>
                     </div>
-                  </div>
+                  </ClickableTile>
                 ),
                 id: 'viewDashboards',
                 size: 'SMALL',
@@ -1018,28 +1024,33 @@ storiesOf('Watson IoT|Dashboard', module)
               },
               {
                 content: (
-                  <div style={{ margin: '12px' }}>
-                    <h4>Connect Devices</h4>
-                    <br />
-                    <p>
-                      Connect devices and collect data by using the Watson IoT Platform Service.
-                    </p>
-                    <div
-                      style={{
-                        textAlign: 'right',
-                        position: 'absolute',
-                        bottom: '0',
-                        width: '100%',
-                        padding: '0 36px 16px 0',
-                      }}
-                    >
-                      <img
-                        style={{ width: '50%' }}
-                        src={iconConnectDevices}
-                        alt="Connect Devices"
-                      />
+                  <ClickableTile
+                    href="https://internetofthings.ibmcloud.com"
+                    style={{ height: '100%', padding: '0 0 0 0' }}
+                  >
+                    <div style={{ padding: '12px' }}>
+                      <h4>Connect Devices</h4>
+                      <br />
+                      <p>
+                        Connect devices and collect data by using the Watson IoT Platform Service.
+                      </p>
+                      <div
+                        style={{
+                          textAlign: 'right',
+                          position: 'absolute',
+                          bottom: '0',
+                          width: '100%',
+                          padding: '0 36px 16px 0',
+                        }}
+                      >
+                        <img
+                          style={{ width: '50%' }}
+                          src={iconConnectDevices}
+                          alt="Connect Devices"
+                        />
+                      </div>
                     </div>
-                  </div>
+                  </ClickableTile>
                 ),
                 id: 'connectDevices',
                 size: 'SMALL',
@@ -1049,7 +1060,7 @@ storiesOf('Watson IoT|Dashboard', module)
               },
               {
                 content: (
-                  <div style={{ margin: '12px' }}>
+                  <div style={{ padding: '12px' }}>
                     <h4>Monitor Entities</h4>
                     <br />
                     <p>Expore your entities and analyze their associated data.</p>
@@ -1078,7 +1089,7 @@ storiesOf('Watson IoT|Dashboard', module)
               },
               {
                 content: (
-                  <div style={{ margin: '12px' }}>
+                  <div style={{ padding: '12px' }}>
                     <h4>Track Usage</h4>
                     <br />
                     <div
@@ -1102,7 +1113,7 @@ storiesOf('Watson IoT|Dashboard', module)
               },
               {
                 content: (
-                  <div style={{ margin: '12px' }}>
+                  <div style={{ padding: '12px' }}>
                     <h4>Administer Users</h4>
                     <br />
                     <div
