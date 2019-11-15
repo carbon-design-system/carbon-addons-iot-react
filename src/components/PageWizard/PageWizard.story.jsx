@@ -257,4 +257,31 @@ storiesOf('Watson IoT Experimental|PageWizard', module)
       />
     </div>
   ))
+  .add('One step page with loading button in sticky footer, in PageTitleBar', () => (
+    <div style={{ position: 'fixed', left: 0, right: 0, top: 0, bottom: 0 }}>
+      <PageTitleBar
+        title="A cool PageWizard!"
+        description="The description from the PageTitleBar"
+        breadcrumb={[
+          <Link to="www.ibm.com">Home</Link>,
+          <Link to="www.ibm.com">Something</Link>,
+          <Link to="www.ibm.com">Something Else</Link>,
+        ]}
+        content={
+          <PageWizard
+            currentStepId="step1"
+            onClose={action('closed')}
+            onSubmit={action('submit')}
+            onNext={action('next')}
+            onBack={action('back')}
+            setStep={action('step clicked')}
+            sendingData={boolean('sendingData', true)}
+            hasStickyFooter={boolean('hasStickyFooter', true)}
+          >
+            {[content[0]]}
+          </PageWizard>
+        }
+      />
+    </div>
+  ))
   .add('w/ i18n', () => <div>TODO</div>);

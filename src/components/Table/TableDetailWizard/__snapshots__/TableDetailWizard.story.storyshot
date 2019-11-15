@@ -218,7 +218,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
             className="WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
           >
             <button
-              className="Button__StyledButton-sc-19kycwu-0 gTXQZR bx--btn bx--btn--secondary"
+              className="Button__StyledButton-sc-19kycwu-0 PhzAJ bx--btn bx--btn--secondary"
               disabled={false}
               onClick={[Function]}
               tabIndex={0}
@@ -227,7 +227,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
               Cancel
             </button>
             <button
-              className="Button__StyledButton-sc-19kycwu-0 gTXQZR bx--btn bx--btn--primary"
+              className="Button__StyledButton-sc-19kycwu-0 PhzAJ bx--btn bx--btn--primary"
               disabled={false}
               onClick={[Function]}
               tabIndex={0}
@@ -501,7 +501,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
             className="WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
           >
             <button
-              className="Button__StyledButton-sc-19kycwu-0 gTXQZR bx--btn bx--btn--secondary"
+              className="Button__StyledButton-sc-19kycwu-0 PhzAJ bx--btn bx--btn--secondary"
               disabled={false}
               onClick={[Function]}
               tabIndex={0}
@@ -510,7 +510,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
               Back
             </button>
             <button
-              className="Button__StyledButton-sc-19kycwu-0 gTXQZR bx--btn bx--btn--primary"
+              className="Button__StyledButton-sc-19kycwu-0 PhzAJ bx--btn bx--btn--primary"
               disabled={false}
               onClick={[Function]}
               tabIndex={0}
@@ -846,7 +846,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
             className="WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
           >
             <button
-              className="Button__StyledButton-sc-19kycwu-0 gTXQZR bx--btn bx--btn--secondary"
+              className="Button__StyledButton-sc-19kycwu-0 PhzAJ bx--btn bx--btn--secondary"
               disabled={false}
               onClick={[Function]}
               tabIndex={0}
@@ -855,7 +855,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
               Cancel
             </button>
             <button
-              className="Button__StyledButton-sc-19kycwu-0 gTXQZR bx--btn bx--btn--primary"
+              className="Button__StyledButton-sc-19kycwu-0 PhzAJ bx--btn bx--btn--primary"
               disabled={false}
               onClick={[Function]}
               tabIndex={0}
