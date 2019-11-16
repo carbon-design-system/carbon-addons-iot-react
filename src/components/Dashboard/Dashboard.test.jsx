@@ -2,12 +2,14 @@ import { mount } from 'enzyme';
 import React from 'react';
 import Add from '@carbon/icons-react/lib/add/20';
 import { iconCrash } from 'carbon-icons';
+import { render, fireEvent } from '@testing-library/react';
 
 import { CARD_SIZES, CARD_TYPES, COLORS } from '../../constants/LayoutConstants';
 import { tableColumns, tableData } from '../../utils/sample';
 import imageFile from '../ImageCard/landscape.jpg';
 
 import Dashboard from './Dashboard';
+import { loadCardData } from './CardRenderer';
 
 const CustomIcon = () => <div>Custom element</div>;
 const cardValues = [
@@ -62,6 +64,12 @@ const cardValues = [
     id: 'floor map picture',
     size: CARD_SIZES.MEDIUM,
     type: CARD_TYPES.IMAGE,
+    onSetupCard() {
+      return { ...cardValues[3] };
+    },
+    availableActions: {
+      range: true,
+    },
     content: {
       alt: 'Floor Map',
       image: 'firstfloor',
@@ -159,5 +167,77 @@ describe('Dashboard testcases', () => {
       .find('#action-icon--edit')
       .simulate('keyDown', { key: 'Enter', keyCode: 13, which: 13 });
     expect(wrapper.prop('onDashboardAction')).toHaveBeenCalled();
+  });
+
+  test('card renderer', async () => {
+    let state = {
+      hasLoaded: false,
+    };
+    const setCard = cardObj => {
+      state = {
+        ...state,
+        ...cardObj,
+      };
+    };
+
+    const onFetchData = () => ({ hasLoaded: true });
+    await loadCardData(state, setCard, onFetchData, 'month');
+    expect(state.hasLoaded).toEqual(true);
+
+    wrapper = mount(
+      <Dashboard
+        title="My Dashboard"
+        layouts={{ lg: [{ id: 'bogus', x: 0, y: 0 }] }}
+        actions={[
+          { id: 'edit', labelText: 'Edit', icon: 'edit' },
+          { id: 'crash', labelText: 'Crash', icon: iconCrash },
+          { id: 'expand', labelText: 'Expand', icon: iconCrash },
+        ]}
+        cards={[
+          {
+            ...cardValues[3],
+            content: {
+              alt: 'Floor Map',
+              image: 'firstfloor',
+              src: null,
+            },
+            isLoading: true,
+          },
+        ]}
+        onDashboardAction={onClick}
+        hasLastUpdated={false}
+      />
+    );
+
+    // wrapper
+    //   .find('Button')
+    //   .at(0)
+    //   .simulate('click');
+    const { getByTitle } = render(
+      <Dashboard
+        title="My Dashboard"
+        layouts={{ lg: [{ id: 'bogus', x: 0, y: 0 }] }}
+        actions={[
+          { id: 'edit', labelText: 'Edit', icon: 'edit' },
+          { id: 'crash', labelText: 'Crash', icon: iconCrash },
+          { id: 'expand', labelText: 'Expand', icon: iconCrash },
+        ]}
+        cards={[
+          {
+            ...cardValues[3],
+            content: {
+              alt: 'Floor Map',
+              image: 'firstfloor',
+              src: null,
+            },
+            isLoading: true,
+          },
+        ]}
+        onDashboardAction={onClick}
+        hasLastUpdated={false}
+      />
+    );
+    fireEvent.click(getByTitle('Expand to fullscreen'));
+    fireEvent.click(getByTitle('Close'));
   });
 });
