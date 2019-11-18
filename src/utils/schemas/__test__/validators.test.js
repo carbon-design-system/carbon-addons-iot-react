@@ -234,6 +234,14 @@ describe('validators', () => {
     expect(validateCard4.errors).toHaveLength(0);
     expect(validateCard4.isValid).toEqual(true);
   });
+  test('validateTimeSeriesCard additionalData', () => {
+    const validateCard = validateTimeSeriesCard({
+      ...mockTimeSeriesCard,
+      dataSource: { ...mockTimeSeriesCard.dataSource, additionalData: { type: 'alert' } },
+    });
+    expect(validateCard.errors).toHaveLength(0);
+    expect(validateCard.isValid).toEqual(true);
+  });
   test('validateAggregators', () => {
     const mockDataSource = [{ attribute: 'status', aggregator: 'mean' }];
     const aggregatorErrors = validateAggregators(mockDataSource, dataAttributes);
