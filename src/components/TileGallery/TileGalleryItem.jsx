@@ -15,7 +15,7 @@ const propTypes = {
   /** Bottom right content for component */
   afterContent: PropTypes.node,
   /** Card display mode */
-  mode: PropTypes.oneOf(['grid', 'tile']),
+  mode: PropTypes.oneOf(['grid', 'list']),
   /** When grid type - thumbnail content */
   thumbnail: PropTypes.node,
   /** Href when click in card */

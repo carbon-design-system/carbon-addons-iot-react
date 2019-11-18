@@ -1,13 +1,17 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-// import { content } from './TileGallery.story';
+import { galleryData } from './TileGallery.story';
 import TileGalleryItem from './TileGalleryItem';
 import TileGallerySection from './TileGallerySection';
+import TileGallerySearch from './TileGallerySearch';
+import TileGalleryViewSwitcher from './TileGalleryViewSwitcher';
+import TileGallery from './TileGallery';
+import StatefulTileGallery from './StatefulTileGallery';
 
 describe('TileGallery tests', () => {
   test('TileGalleryItem mode list', () => {
-    const wrapper = mount(<TileGalleryItem title="title" mode="tile" />);
+    const wrapper = mount(<TileGalleryItem title="title" mode="list" />);
 
     expect(
       wrapper
@@ -59,5 +63,90 @@ describe('TileGallery tests', () => {
     );
 
     expect(wrapper.find('Accordion')).toHaveLength(0);
+  });
+  test('TileGallerySearch - simulate search', () => {
+    const onChange = jest.fn();
+
+    const wrapper = mount(<TileGallerySearch onChange={onChange} />);
+
+    wrapper.find('input.bx--search-input').simulate('change', { target: { value: 'foo' } });
+
+    expect(onChange).toHaveBeenCalledTimes(1);
+  });
+  test('TileGalleryViewSwitcher - simulate change', () => {
+    const onChange = jest.fn();
+
+    const wrapper = mount(<TileGalleryViewSwitcher onChange={onChange} />);
+
+    wrapper
+      .find('button.bx--content-switcher-btn')
+      .last()
+      .simulate('click');
+
+    expect(onChange).toHaveBeenCalledTimes(1);
+  });
+  test('TileGallery', () => {
+    const wrapper = mount(
+      <TileGallery>
+        <TileGallerySection>
+          <TileGalleryItem title="title" />
+        </TileGallerySection>
+      </TileGallery>
+    );
+
+    expect(wrapper.find('TileGallerySection').props().isOpen).toEqual(true);
+  });
+  test('StatefulTileGallery', () => {
+    const searchValue = 'description';
+
+    const wrapper = mount(
+      <StatefulTileGallery
+        title="Dashboard"
+        hasSearch
+        hasSwitcher
+        hasButton
+        buttonText="Create"
+        galleryData={galleryData}
+      />
+    );
+
+    const noExtraWrapper = mount(
+      <StatefulTileGallery title="Dashboard" galleryData={galleryData} />
+    );
+
+    wrapper
+      .find('input.bx--search-input')
+      .simulate('change', { currentTarget: { value: searchValue } });
+
+    // test input value have changed
+    // expect(wrapper.find('input.bx--search-input').props().value).toEqual(searchValue);
+
+    // Test default mode
+    expect(
+      wrapper
+        .find('TileGalleryItem')
+        .first()
+        .props().mode
+    ).toEqual('grid');
+
+    // Change Tile Item mode
+    wrapper
+      .find('button.bx--content-switcher-btn')
+      .first()
+      .simulate('click');
+    console.log(`component::: ${noExtraWrapper.find('TileGallerySearch').debug()}`);
+
+    // test have changes mode prop
+    expect(
+      wrapper
+        .find('TileGalleryItem')
+        .first()
+        .props().mode
+    ).toEqual('list');
+
+    // validation on component with search/switcher/button
+    expect(noExtraWrapper.find('TileGallerySearch')).toHaveLength(0);
+    expect(noExtraWrapper.find('TileGalleryViewSwitcher')).toHaveLength(0);
+    expect(noExtraWrapper.find('Button')).toHaveLength(0);
   });
 });

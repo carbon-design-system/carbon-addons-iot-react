@@ -25,11 +25,11 @@ export const content = (
   <TileGallery>
     <TileGallerySection title="Section 1">
       <TileGalleryItem
-        title="Manage"
-        description="Detailed description of this particular Solution could go here"
+        title="Card title"
+        description="card description"
         moreInfoLink="https://www.ibm.com/br-pt/cloud/internet-of-things?mhsrc=ibmsearch_a&mhq=iot"
         mode="grid"
-        thumbnail={<Rocket fill="black" description="Icon" width="50" height="50" />}
+        thumbnail={<Rocket fill="black" description="Icon" width={50} height={50} />}
         icon={<Check fill="#40be65" onClick={() => alert('favorite')} />}
         afterContent={
           <OverflowMenu
@@ -45,11 +45,11 @@ export const content = (
         }
       />
       <TileGalleryItem
-        title="Monitor"
-        description="Detailed description of this particular Solution could go here"
+        title="Card title"
+        description="card description"
         moreInfoLink="https://www.ibm.com/br-pt/cloud/internet-of-things?mhsrc=ibmsearch_a&mhq=iot"
         mode="grid"
-        thumbnail={<Activity fill="black" description="Icon" width="50" height="50" />}
+        thumbnail={<Activity fill="black" description="Icon" width={50} height={50} />}
         icon={<Check fill="#40be65" onClick={() => alert('favorite')} />}
         afterContent={
           <OverflowMenu
@@ -65,11 +65,11 @@ export const content = (
         }
       />
       <TileGalleryItem
-        title="Health"
-        description="Detailed description of this particular Solution could go here"
+        title="Card title"
+        description="card description"
         moreInfoLink="https://www.ibm.com/br-pt/cloud/internet-of-things?mhsrc=ibmsearch_a&mhq=iot"
         mode="grid"
-        thumbnail={<Sunny fill="black" description="Icon" width="50" height="50" />}
+        thumbnail={<Sunny fill="black" description="Icon" width={50} height={50} />}
         icon={<Check fill="#40be65" onClick={() => alert('favorite')} />}
         afterContent={
           <OverflowMenu
@@ -87,11 +87,11 @@ export const content = (
     </TileGallerySection>
     <TileGallerySection title="More">
       <TileGalleryItem
-        title="Health"
-        description="Detailed description of this particular Solution could go here"
+        title="Card title"
+        description="card description"
         moreInfoLink="https://www.ibm.com/br-pt/cloud/internet-of-things?mhsrc=ibmsearch_a&mhq=iot"
         mode="grid"
-        thumbnail={<Sunny fill="black" description="Icon" width="50" height="50" />}
+        thumbnail={<Sunny fill="black" description="Icon" width={50} height={50} />}
         icon={<Check fill="#40be65" onClick={() => alert('favorite')} />}
         afterContent={
           <OverflowMenu
@@ -110,6 +110,134 @@ export const content = (
   </TileGallery>
 );
 
+export const galleryData = [
+  {
+    id: 'id1',
+    sectionTitle: 'Favorites',
+    galleryItems: [
+      {
+        title: 'Dashboard title',
+        description: 'More about your dashboard',
+        icon: <IconStarFav />,
+        afterContent: (
+          <OverflowMenu
+            floatingMenu
+            onClick={evt => evt.preventDefault()}
+            style={{ height: '2rem' }}
+          >
+            <OverflowMenuItem itemText="Edit" onClick={() => alert('Edit')} />
+            <OverflowMenuItem itemText="Share" onClick={() => alert('Share')} />
+            <OverflowMenuItem itemText="Move" onClick={() => alert('Move')} />
+            <OverflowMenuItem itemText="Delete" onClick={() => alert('Delete')} />
+          </OverflowMenu>
+        ),
+        thumbnail: <Activity />,
+        href: 'www.ibm.com',
+      },
+      {
+        title: 'Health',
+        description: 'More about your dashboard',
+        icon: <IconStarFav />,
+        afterContent: (
+          <OverflowMenu
+            floatingMenu
+            onClick={evt => evt.preventDefault()}
+            style={{ height: '2rem' }}
+          >
+            <OverflowMenuItem itemText="Edit" onClick={() => alert('Edit')} />
+            <OverflowMenuItem itemText="Share" onClick={() => alert('Share')} />
+            <OverflowMenuItem itemText="Move" onClick={() => alert('Move')} />
+            <OverflowMenuItem itemText="Delete" onClick={() => alert('Delete')} />
+          </OverflowMenu>
+        ),
+        thumbnail: <Sunny />,
+        href: 'www.ibm.com',
+      },
+      {
+        title: 'Activity',
+        description: 'More about your dashboard',
+        icon: <IconStarFav />,
+        afterContent: (
+          <OverflowMenu
+            floatingMenu
+            onClick={evt => evt.preventDefault()}
+            style={{ height: '2rem' }}
+          >
+            <OverflowMenuItem itemText="Edit" onClick={() => alert('Edit')} />
+            <OverflowMenuItem itemText="Share" onClick={() => alert('Share')} />
+            <OverflowMenuItem itemText="Move" onClick={() => alert('Move')} />
+            <OverflowMenuItem itemText="Delete" onClick={() => alert('Delete')} />
+          </OverflowMenu>
+        ),
+        thumbnail: <Activity />,
+        href: 'www.ibm.com',
+      },
+    ],
+  },
+  {
+    id: 'id2',
+    sectionTitle: 'Dashboard Category A',
+    galleryItems: [
+      {
+        title: 'Dashboard title',
+        description: 'More about your dashboard',
+        icon: <IconStarFav />,
+        afterContent: (
+          <OverflowMenu
+            floatingMenu
+            onClick={evt => evt.preventDefault()}
+            style={{ height: '2rem' }}
+          >
+            <OverflowMenuItem itemText="Edit" onClick={() => alert('Edit')} />
+            <OverflowMenuItem itemText="Share" onClick={() => alert('Share')} />
+            <OverflowMenuItem itemText="Move" onClick={() => alert('Move')} />
+            <OverflowMenuItem itemText="Delete" onClick={() => alert('Delete')} />
+          </OverflowMenu>
+        ),
+        thumbnail: <Activity />,
+        href: 'www.ibm.com',
+      },
+      {
+        title: 'Dashboard title',
+        description: 'More about your dashboard',
+        icon: <IconStarFav />,
+        afterContent: (
+          <OverflowMenu
+            floatingMenu
+            onClick={evt => evt.preventDefault()}
+            style={{ height: '2rem' }}
+          >
+            <OverflowMenuItem itemText="Edit" onClick={() => alert('Edit')} />
+            <OverflowMenuItem itemText="Share" onClick={() => alert('Share')} />
+            <OverflowMenuItem itemText="Move" onClick={() => alert('Move')} />
+            <OverflowMenuItem itemText="Delete" onClick={() => alert('Delete')} />
+          </OverflowMenu>
+        ),
+        thumbnail: <Sunny />,
+        href: 'www.ibm.com',
+      },
+      {
+        title: 'Dashboard title',
+        description: 'More about your dashboard',
+        icon: <IconStarFav />,
+        afterContent: (
+          <OverflowMenu
+            floatingMenu
+            onClick={evt => evt.preventDefault()}
+            style={{ height: '2rem' }}
+          >
+            <OverflowMenuItem itemText="Edit" onClick={() => alert('Edit')} />
+            <OverflowMenuItem itemText="Share" onClick={() => alert('Share')} />
+            <OverflowMenuItem itemText="Move" onClick={() => alert('Move')} />
+            <OverflowMenuItem itemText="Delete" onClick={() => alert('Delete')} />
+          </OverflowMenu>
+        ),
+        thumbnail: <Activity />,
+        href: 'www.ibm.com',
+      },
+    ],
+  },
+];
 storiesOf('Watson IoT Experimental|TileGallery', module)
   .addDecorator(storyFn => <FullWidthWrapper>{storyFn()}</FullWidthWrapper>)
 
@@ -118,7 +246,9 @@ storiesOf('Watson IoT Experimental|TileGallery', module)
       title="Dashboard"
       hasSearch
       hasSwitcher
-      galleryData={[{ id: 'id1', sectionTitle: 'Section 1', galleryItem: [{}] }]}
+      hasButton
+      buttonText="Create +"
+      galleryData={galleryData}
     />
   ))
   .add('basic example', () => (
@@ -140,11 +270,11 @@ storiesOf('Watson IoT Experimental|TileGallery', module)
   ))
   .add('TileGalleryItem - Grid', () => (
     <TileGalleryItem
-      title="Manage"
-      description="Detailed description of this particular Solution could go here"
+      title="Card title"
+      description="card description"
       moreInfoLink="https://www.ibm.com/br-pt/cloud/internet-of-things?mhsrc=ibmsearch_a&mhq=iot"
       mode="grid"
-      thumbnail={<Rocket fill="black" description="Icon" width="50" height="50" />}
+      thumbnail={<Rocket fill="black" description="Icon" width={50} height={50} />}
       icon={<Check fill="#40be65" onClick={() => alert('favorite')} />}
       afterContent={
         <OverflowMenu floatingMenu onClick={evt => evt.preventDefault()} style={{ height: '2rem' }}>
@@ -157,11 +287,11 @@ storiesOf('Watson IoT Experimental|TileGallery', module)
       className="some-class"
     />
   ))
-  .add('TileGalleryItem - Tile', () => (
+  .add('TileGalleryItem - List', () => (
     <TileGalleryItem
       title="Test"
       description="The first one"
-      mode="tile"
+      mode="list"
       icon={<IconStarFav fill="black" onClick={() => alert('favorite')} />}
       afterContent={
         <OverflowMenu floatingMenu onClick={evt => evt.preventDefault()} style={{ height: '2rem' }}>
@@ -177,11 +307,11 @@ storiesOf('Watson IoT Experimental|TileGallery', module)
       title={select('Select with/without section', { Title: 'Section 1', None: null }, 'Title')}
     >
       <TileGalleryItem
-        title="Manage"
+        title="Card title"
         description="Detailed description of this particular Solution could go here"
         moreInfoLink="https://www.ibm.com/br-pt/cloud/internet-of-things?mhsrc=ibmsearch_a&mhq=iot"
         mode="grid"
-        thumbnail={<Rocket fill="black" description="Icon" width="50" height="50" />}
+        thumbnail={<Rocket fill="black" description="Icon" width={50} height={50} />}
         icon={<Check fill="#40be65" onClick={() => alert('favorite')} />}
         afterContent={
           <OverflowMenu
@@ -198,11 +328,11 @@ storiesOf('Watson IoT Experimental|TileGallery', module)
         href="https://www.ibm.com/br-pt/cloud/internet-of-things?mhsrc=ibmsearch_a&mhq=iot"
       />
       <TileGalleryItem
-        title="Manage"
-        description="Detailed description of this particular Solution could go here"
+        title="Card title"
+        description="card description"
         moreInfoLink="https://www.ibm.com/br-pt/cloud/internet-of-things?mhsrc=ibmsearch_a&mhq=iot"
         mode="grid"
-        thumbnail={<Rocket fill="black" description="Icon" width="50" height="50" />}
+        thumbnail={<Rocket fill="black" description="Icon" width={50} height={50} />}
         icon={<Check fill="#40be65" onClick={() => alert('favorite')} />}
         afterContent={
           <OverflowMenu
@@ -219,11 +349,11 @@ storiesOf('Watson IoT Experimental|TileGallery', module)
         href="https://www.ibm.com/br-pt/cloud/internet-of-things?mhsrc=ibmsearch_a&mhq=iot"
       />
       <TileGalleryItem
-        title="Manage"
-        description="Detailed description of this particular Solution could go here"
+        title="Card title"
+        description="card description"
         moreInfoLink="https://www.ibm.com/br-pt/cloud/internet-of-things?mhsrc=ibmsearch_a&mhq=iot"
         mode="grid"
-        thumbnail={<Rocket fill="black" description="Icon" width="50" height="50" />}
+        thumbnail={<Rocket fill="black" description="Icon" width={50} height={50} />}
         icon={<Check fill="#40be65" onClick={() => alert('favorite')} />}
         afterContent={
           <OverflowMenu
@@ -240,4 +370,62 @@ storiesOf('Watson IoT Experimental|TileGallery', module)
         href="https://www.ibm.com/br-pt/cloud/internet-of-things?mhsrc=ibmsearch_a&mhq=iot"
       />
     </TileGallerySection>
+  ))
+  .add('TileGallerySection with TileGalleryItem - i18n', () => (
+    <StatefulTileGallery
+      title={text('title', '__Dashboard__')}
+      hasSearch
+      hasSwitcher
+      hasButton
+      buttonText={text('button', '__Create__')}
+      galleryData={[
+        {
+          id: 'id1',
+          sectionTitle: text('sectionTitle', '__Favorites__'),
+          galleryItems: [
+            {
+              title: text('title', '__Dashboard title__'),
+              description: text('description', '__More about your dashboard__'),
+              icon: <IconStarFav />,
+              afterContent: (
+                <OverflowMenu
+                  floatingMenu
+                  onClick={evt => evt.preventDefault()}
+                  style={{ height: '2rem' }}
+                  iconDescription={text('icon description', '__icon description__')}
+                >
+                  <OverflowMenuItem
+                    itemText={text('Edit', '__Edit__')}
+                    onClick={() => alert('Edit')}
+                  />
+                  <OverflowMenuItem
+                    itemText={text('Share', '__Share__')}
+                    onClick={() => alert('Share')}
+                  />
+                  <OverflowMenuItem
+                    itemText={text('Move', '__Move__')}
+                    onClick={() => alert('Move')}
+                  />
+                  <OverflowMenuItem
+                    itemText={text('Delete', '__Delete__')}
+                    onClick={() => alert('Delete')}
+                  />
+                </OverflowMenu>
+              ),
+              thumbnail: <Activity />,
+              href: 'www.ibm.com',
+            },
+          ],
+        },
+      ]}
+      i18n={{
+        searchIconDescription: text('i18n.searchIconDescription', '__Search Icon Description__'),
+        searchPlaceHolderText: text('i18n.searchPlaceHolderText', '__Search Placeholder__'),
+        searchCloseButtonText: text('i18n.searchCloseButtonText', '__Search Close Button__'),
+        listText: text('i18n.listText', '__ListText__'),
+        gridText: text('i18n.gridText', '__GridText__'),
+        descriptionMoreInfo: text('i18n.descriptionMoreInfo', '__DescriptionMoreInfo__'),
+        arrowIconDescription: text('i18n.arrowIconDescription', '__Expand/Collapse__'),
+      }}
+    />
   ));

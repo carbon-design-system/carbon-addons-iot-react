@@ -10,7 +10,7 @@ const propTypes = {
     placeHolderText: PropTypes.string,
     closeButtonText: PropTypes.string,
   }),
-  searchValue: PropTypes.string, 
+  searchValue: PropTypes.string,
   onChange: PropTypes.func,
   width: PropTypes.string,
 };
@@ -28,15 +28,17 @@ const defaultProps = {
 
 const TileGallerySearch = ({ i18n, searchValue, onChange, width }) => {
   return (
-    <Search
-      style={{ background: '#fff', width }}
-      value={searchValue}
-      labelText={i18n.iconDescription}
-      placeHolderText={i18n.placeHolderText}
-      onChange={event => onChange(event)}
-      closeButtonLabelText={i18n.closeButtonText}
-      id="dashboard-search"
-    />
+    <div style={{ display: 'flex', marginLeft: '25px', marginRight: '25px' }}>
+      <Search
+        style={{ background: '#fff', width }}
+        value={searchValue}
+        labelText={i18n.iconDescription}
+        placeHolderText={i18n.placeHolderText}
+        onChange={event => onChange(event)}
+        closeButtonLabelText={i18n.closeButtonText}
+        id="dashboard-search"
+      />
+    </div>
   );
 };
 
