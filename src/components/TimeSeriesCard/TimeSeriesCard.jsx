@@ -123,6 +123,7 @@ const TimeSeriesCard = ({
   values: valuesProp,
   locale,
   i18n: { alertDetected },
+  i18n,
   ...others
 }) => {
   let chartRef = useRef();
@@ -251,7 +252,14 @@ const TimeSeriesCard = ({
   ]);
 
   return (
-    <Card title={title} size={size} {...others} isEditable={isEditable} isEmpty={isAllValuesEmpty}>
+    <Card
+      title={title}
+      size={size}
+      i18n={i18n}
+      {...others}
+      isEditable={isEditable}
+      isEmpty={isAllValuesEmpty}
+    >
       {!others.isLoading && !isAllValuesEmpty ? (
         <LineChartWrapper size={size} isEditable={isEditable}>
           <LineChart
