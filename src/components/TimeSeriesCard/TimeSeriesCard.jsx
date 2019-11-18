@@ -44,10 +44,10 @@ const LineChartWrapper = styled.div`
     .bx--cc--chart-svg {
       width: 100%;
       height: 100%;
-      circle.dot {
+      circle.dot.unfilled {
         stroke-opacity: ${props => (props.isEditable ? '1' : '')};
       }
-      circle.dot {
+      circle.dot.unfilled {
         opacity: ${props => (props.numberOfPoints > 50 ? '0' : '1')};
       }
     }

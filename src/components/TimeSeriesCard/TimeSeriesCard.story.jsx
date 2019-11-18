@@ -1030,7 +1030,7 @@ storiesOf('TimeSeriesCard (Experimental)', module)
               },
             ],
           })}
-          values={getIntervalChartData('day', 10, { min: 10, max: 100 }, 100, 1572824320000)}
+          values={getIntervalChartData('day', 100, { min: 10, max: 100 }, 100, 1572824320000)}
           interval="hour"
           breakpoint="lg"
           size={size}
