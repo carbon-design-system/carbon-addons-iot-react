@@ -219,13 +219,12 @@ export const CardSizesToDimensionsPropTypes = PropTypes.shape({
 });
 
 export const CardPropTypes = {
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
   id: PropTypes.string,
   isLoading: PropTypes.bool,
   isEmpty: PropTypes.bool,
   isEditable: PropTypes.bool,
   isExpanded: PropTypes.bool,
-  hideheader: PropTypes.bool,
   size: PropTypes.oneOf(Object.values(CARD_SIZES)),
   layout: PropTypes.oneOf(Object.values(CARD_LAYOUTS)),
   breakpoint: PropTypes.oneOf(Object.values(DASHBOARD_SIZES)),

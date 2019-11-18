@@ -70,7 +70,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
             >
               <div
                 className="react-grid-item cssTransforms"
-                hideheader={false}
                 style={
                   Object {
                     "MozTransform": "translate(16px,16px)",
@@ -224,7 +223,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms"
-                hideheader={false}
                 style={
                   Object {
                     "MozTransform": "translate(332px,16px)",
@@ -297,7 +295,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms"
-                hideheader={false}
                 style={
                   Object {
                     "MozTransform": "translate(490px,16px)",
@@ -373,7 +370,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms"
-                hideheader={false}
                 style={
                   Object {
                     "MozTransform": "translate(648px,16px)",
@@ -449,7 +445,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms"
-                hideheader={false}
                 style={
                   Object {
                     "MozTransform": "translate(806px,16px)",
@@ -547,7 +542,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms"
-                hideheader={false}
                 style={
                   Object {
                     "MozTransform": "translate(964px,16px)",
@@ -620,7 +614,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms"
-                hideheader={false}
                 style={
                   Object {
                     "MozTransform": "translate(332px,160px)",
@@ -718,7 +711,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms"
-                hideheader={false}
                 style={
                   Object {
                     "MozTransform": "translate(648px,160px)",
@@ -852,7 +844,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms"
-                hideheader={false}
                 style={
                   Object {
                     "MozTransform": "translate(16px,304px)",
@@ -1334,7 +1325,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms"
-                hideheader={false}
                 style={
                   Object {
                     "MozTransform": "translate(648px,448px)",
@@ -1468,7 +1458,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms"
-                hideheader={false}
                 style={
                   Object {
                     "MozTransform": "translate(16px,880px)",
@@ -1932,7 +1921,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
             >
               <div
                 className="react-grid-item cssTransforms"
-                hideheader={false}
                 style={
                   Object {
                     "MozTransform": "translate(16px,16px)",
@@ -2086,7 +2074,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms"
-                hideheader={false}
                 style={
                   Object {
                     "MozTransform": "translate(332px,16px)",
@@ -2159,7 +2146,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms"
-                hideheader={false}
                 style={
                   Object {
                     "MozTransform": "translate(490px,16px)",
@@ -2235,7 +2221,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms"
-                hideheader={false}
                 style={
                   Object {
                     "MozTransform": "translate(648px,16px)",
@@ -2311,7 +2296,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms"
-                hideheader={false}
                 style={
                   Object {
                     "MozTransform": "translate(806px,16px)",
@@ -2409,7 +2393,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms"
-                hideheader={false}
                 style={
                   Object {
                     "MozTransform": "translate(964px,16px)",
@@ -2482,7 +2465,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms"
-                hideheader={false}
                 style={
                   Object {
                     "MozTransform": "translate(332px,160px)",
@@ -2580,7 +2562,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms"
-                hideheader={false}
                 style={
                   Object {
                     "MozTransform": "translate(648px,160px)",
@@ -2714,7 +2695,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms"
-                hideheader={false}
                 style={
                   Object {
                     "MozTransform": "translate(16px,304px)",
@@ -3196,7 +3176,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms"
-                hideheader={false}
                 style={
                   Object {
                     "MozTransform": "translate(648px,448px)",
@@ -3330,7 +3309,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms"
-                hideheader={false}
                 style={
                   Object {
                     "MozTransform": "translate(16px,880px)",
@@ -3826,7 +3804,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
             >
               <div
                 className="react-grid-item cssTransforms"
-                hideheader={false}
                 style={
                   Object {
                     "MozTransform": "translate(16px,16px)",
@@ -3980,7 +3957,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms"
-                hideheader={false}
                 style={
                   Object {
                     "MozTransform": "translate(332px,16px)",
@@ -4053,7 +4029,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms"
-                hideheader={false}
                 style={
                   Object {
                     "MozTransform": "translate(490px,16px)",
@@ -4129,7 +4104,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms"
-                hideheader={false}
                 style={
                   Object {
                     "MozTransform": "translate(648px,16px)",
@@ -4205,7 +4179,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms"
-                hideheader={false}
                 style={
                   Object {
                     "MozTransform": "translate(806px,16px)",
@@ -4303,7 +4276,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms"
-                hideheader={false}
                 style={
                   Object {
                     "MozTransform": "translate(964px,16px)",
@@ -4376,7 +4348,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms"
-                hideheader={false}
                 style={
                   Object {
                     "MozTransform": "translate(332px,160px)",
@@ -4474,7 +4445,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms"
-                hideheader={false}
                 style={
                   Object {
                     "MozTransform": "translate(648px,160px)",
@@ -4608,7 +4578,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms"
-                hideheader={false}
                 style={
                   Object {
                     "MozTransform": "translate(16px,304px)",
@@ -5090,7 +5059,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms"
-                hideheader={false}
                 style={
                   Object {
                     "MozTransform": "translate(648px,448px)",
@@ -5224,7 +5192,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms"
-                hideheader={false}
                 style={
                   Object {
                     "MozTransform": "translate(16px,880px)",
@@ -5695,7 +5662,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
             >
               <div
                 className="react-grid-item cssTransforms"
-                hideheader={false}
                 style={
                   Object {
                     "MozTransform": "translate(16px,16px)",
@@ -6006,7 +5972,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
             >
               <div
                 className="react-grid-item cssTransforms"
-                hideheader={false}
                 style={
                   Object {
                     "MozTransform": "translate(16px,16px)",
@@ -7875,7 +7840,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
             >
               <div
                 className="react-grid-item cssTransforms"
-                hideheader={false}
                 style={
                   Object {
                     "MozTransform": "translate(16px,16px)",
@@ -8029,7 +7993,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms"
-                hideheader={false}
                 style={
                   Object {
                     "MozTransform": "translate(332px,16px)",
@@ -8102,7 +8065,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms"
-                hideheader={false}
                 style={
                   Object {
                     "MozTransform": "translate(490px,16px)",
@@ -8178,7 +8140,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms"
-                hideheader={false}
                 style={
                   Object {
                     "MozTransform": "translate(648px,16px)",
@@ -8254,7 +8215,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms"
-                hideheader={false}
                 style={
                   Object {
                     "MozTransform": "translate(806px,16px)",
@@ -8352,7 +8312,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms"
-                hideheader={false}
                 style={
                   Object {
                     "MozTransform": "translate(964px,16px)",
@@ -8425,7 +8384,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms"
-                hideheader={false}
                 style={
                   Object {
                     "MozTransform": "translate(332px,160px)",
@@ -8523,7 +8481,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms"
-                hideheader={false}
                 style={
                   Object {
                     "MozTransform": "translate(648px,160px)",
@@ -8657,7 +8614,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms"
-                hideheader={false}
                 style={
                   Object {
                     "MozTransform": "translate(16px,304px)",
@@ -9139,7 +9095,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms"
-                hideheader={false}
                 style={
                   Object {
                     "MozTransform": "translate(648px,448px)",
@@ -9273,7 +9228,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms"
-                hideheader={false}
                 style={
                   Object {
                     "MozTransform": "translate(16px,880px)",
@@ -9660,1065 +9614,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashboard landing page dashboard 1`] = `
-<div
-  className="storybook-container"
-  style={
-    Object {
-      "alignItems": "center",
-      "display": "flex",
-      "flexDirection": "column",
-      "padding": "3rem",
-    }
-  }
->
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
-  >
-    <div
-      style={
-        Object {
-          "width": "calc(100vw - 6rem)",
-        }
-      }
-    >
-      <div>
-        <div>
-          <div
-            className="dashboard--header"
-          >
-            <div
-              className="dashboard--header-left"
-            >
-              <h2>
-                
-              </h2>
-            </div>
-            <div
-              className="dashboard--header-right"
-            >
-              <div
-                className="dashboard--header-actions"
-              />
-            </div>
-          </div>
-          <div
-            style={
-              Object {
-                "display": "flex",
-              }
-            }
-          >
-            <div
-              style={
-                Object {
-                  "flex": 1,
-                }
-              }
-            >
-              <div
-                className="react-grid-layout Dashboard__StyledGridLayout-up3zyz-0 leaKVS"
-                style={
-                  Object {
-                    "height": "304px",
-                  }
-                }
-              >
-                <div
-                  className="react-grid-item cssTransforms"
-                  hideheader={false}
-                  style={
-                    Object {
-                      "MozTransform": "translate(16px,16px)",
-                      "OTransform": "translate(16px,16px)",
-                      "WebkitTransform": "translate(16px,16px)",
-                      "height": "272px",
-                      "msTransform": "translate(16px,16px)",
-                      "position": "absolute",
-                      "transform": "translate(16px,16px)",
-                      "width": "300px",
-                    }
-                  }
-                >
-                  <div
-                    className="Card__CardWrapper-v5r71h-0 cynIXT"
-                    content={
-                      <ClickableTile
-                        clicked={false}
-                        handleClick={[Function]}
-                        handleKeyDown={[Function]}
-                        href="https://internetofthings.ibmcloud.com"
-                        style={
-                          Object {
-                            "height": "100%",
-                            "padding": "0 0 0 0",
-                          }
-                        }
-                      >
-                        <div
-                          style={
-                            Object {
-                              "padding": "12px",
-                            }
-                          }
-                        >
-                          <h4>
-                            View Dashboards
-                          </h4>
-                          <br />
-                          <p>
-                            View pinned dashboards to keep track of your world in IoT.
-                          </p>
-                          <div
-                            style={
-                              Object {
-                                "bottom": "0",
-                                "padding": "0 36px 16px 0",
-                                "position": "absolute",
-                                "textAlign": "right",
-                                "width": "100%",
-                              }
-                            }
-                          >
-                            <img
-                              alt="View Dashboards"
-                              src="dashboard.svg"
-                              style={
-                                Object {
-                                  "width": "50%",
-                                }
-                              }
-                            />
-                          </div>
-                        </div>
-                      </ClickableTile>
-                    }
-                    id="viewDashboards"
-                    type="CUSTOM"
-                  >
-                    <div
-                      className="Card__CardContent-v5r71h-1 hDVRgE"
-                    >
-                      <a
-                        className="bx--link bx--tile bx--tile--clickable"
-                        href="https://internetofthings.ibmcloud.com"
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
-                        style={
-                          Object {
-                            "height": "100%",
-                            "padding": "0 0 0 0",
-                          }
-                        }
-                      >
-                        <div
-                          style={
-                            Object {
-                              "padding": "12px",
-                            }
-                          }
-                        >
-                          <h4>
-                            View Dashboards
-                          </h4>
-                          <br />
-                          <p>
-                            View pinned dashboards to keep track of your world in IoT.
-                          </p>
-                          <div
-                            style={
-                              Object {
-                                "bottom": "0",
-                                "padding": "0 36px 16px 0",
-                                "position": "absolute",
-                                "textAlign": "right",
-                                "width": "100%",
-                              }
-                            }
-                          >
-                            <img
-                              alt="View Dashboards"
-                              src="dashboard.svg"
-                              style={
-                                Object {
-                                  "width": "50%",
-                                }
-                              }
-                            />
-                          </div>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  className="react-grid-item cssTransforms"
-                  hideheader={false}
-                  style={
-                    Object {
-                      "MozTransform": "translate(332px,16px)",
-                      "OTransform": "translate(332px,16px)",
-                      "WebkitTransform": "translate(332px,16px)",
-                      "height": "272px",
-                      "msTransform": "translate(332px,16px)",
-                      "position": "absolute",
-                      "transform": "translate(332px,16px)",
-                      "width": "300px",
-                    }
-                  }
-                >
-                  <div
-                    className="Card__CardWrapper-v5r71h-0 cynIXT"
-                    content={
-                      <ClickableTile
-                        clicked={false}
-                        handleClick={[Function]}
-                        handleKeyDown={[Function]}
-                        href="https://internetofthings.ibmcloud.com"
-                        style={
-                          Object {
-                            "height": "100%",
-                            "padding": "0 0 0 0",
-                          }
-                        }
-                      >
-                        <div
-                          style={
-                            Object {
-                              "padding": "12px",
-                            }
-                          }
-                        >
-                          <h4>
-                            Connect Devices
-                          </h4>
-                          <br />
-                          <p>
-                            Connect devices and collect data by using the Watson IoT Platform Service.
-                          </p>
-                          <div
-                            style={
-                              Object {
-                                "bottom": "0",
-                                "padding": "0 36px 16px 0",
-                                "position": "absolute",
-                                "textAlign": "right",
-                                "width": "100%",
-                              }
-                            }
-                          >
-                            <img
-                              alt="Connect Devices"
-                              src="computer-chip.svg"
-                              style={
-                                Object {
-                                  "width": "50%",
-                                }
-                              }
-                            />
-                          </div>
-                        </div>
-                      </ClickableTile>
-                    }
-                    id="connectDevices"
-                    type="CUSTOM"
-                  >
-                    <div
-                      className="Card__CardContent-v5r71h-1 hDVRgE"
-                    >
-                      <a
-                        className="bx--link bx--tile bx--tile--clickable"
-                        href="https://internetofthings.ibmcloud.com"
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
-                        style={
-                          Object {
-                            "height": "100%",
-                            "padding": "0 0 0 0",
-                          }
-                        }
-                      >
-                        <div
-                          style={
-                            Object {
-                              "padding": "12px",
-                            }
-                          }
-                        >
-                          <h4>
-                            Connect Devices
-                          </h4>
-                          <br />
-                          <p>
-                            Connect devices and collect data by using the Watson IoT Platform Service.
-                          </p>
-                          <div
-                            style={
-                              Object {
-                                "bottom": "0",
-                                "padding": "0 36px 16px 0",
-                                "position": "absolute",
-                                "textAlign": "right",
-                                "width": "100%",
-                              }
-                            }
-                          >
-                            <img
-                              alt="Connect Devices"
-                              src="computer-chip.svg"
-                              style={
-                                Object {
-                                  "width": "50%",
-                                }
-                              }
-                            />
-                          </div>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  className="react-grid-item cssTransforms"
-                  hideheader={false}
-                  style={
-                    Object {
-                      "MozTransform": "translate(648px,16px)",
-                      "OTransform": "translate(648px,16px)",
-                      "WebkitTransform": "translate(648px,16px)",
-                      "height": "272px",
-                      "msTransform": "translate(648px,16px)",
-                      "position": "absolute",
-                      "transform": "translate(648px,16px)",
-                      "width": "300px",
-                    }
-                  }
-                >
-                  <div
-                    className="Card__CardWrapper-v5r71h-0 cynIXT"
-                    content={
-                      <div
-                        style={
-                          Object {
-                            "padding": "12px",
-                          }
-                        }
-                      >
-                        <h4>
-                          Monitor Entities
-                        </h4>
-                        <br />
-                        <p>
-                          Expore your entities and analyze their associated data.
-                        </p>
-                        <div
-                          style={
-                            Object {
-                              "bottom": "0",
-                              "padding": "0 36px 16px 0",
-                              "position": "absolute",
-                              "textAlign": "right",
-                              "width": "100%",
-                            }
-                          }
-                        >
-                          <img
-                            alt="Monitor Entities"
-                            src="data-scientist-illustration.svg"
-                            style={
-                              Object {
-                                "width": "50%",
-                              }
-                            }
-                          />
-                        </div>
-                      </div>
-                    }
-                    id="monitorEntities"
-                    type="CUSTOM"
-                  >
-                    <div
-                      className="Card__CardContent-v5r71h-1 hDVRgE"
-                    >
-                      <div
-                        style={
-                          Object {
-                            "padding": "12px",
-                          }
-                        }
-                      >
-                        <h4>
-                          Monitor Entities
-                        </h4>
-                        <br />
-                        <p>
-                          Expore your entities and analyze their associated data.
-                        </p>
-                        <div
-                          style={
-                            Object {
-                              "bottom": "0",
-                              "padding": "0 36px 16px 0",
-                              "position": "absolute",
-                              "textAlign": "right",
-                              "width": "100%",
-                            }
-                          }
-                        >
-                          <img
-                            alt="Monitor Entities"
-                            src="data-scientist-illustration.svg"
-                            style={
-                              Object {
-                                "width": "50%",
-                              }
-                            }
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  className="react-grid-item cssTransforms"
-                  hideheader={false}
-                  style={
-                    Object {
-                      "MozTransform": "translate(964px,16px)",
-                      "OTransform": "translate(964px,16px)",
-                      "WebkitTransform": "translate(964px,16px)",
-                      "height": "128px",
-                      "msTransform": "translate(964px,16px)",
-                      "position": "absolute",
-                      "transform": "translate(964px,16px)",
-                      "width": "300px",
-                    }
-                  }
-                >
-                  <div
-                    className="Card__CardWrapper-v5r71h-0 fbzdtE"
-                    content={
-                      <div
-                        style={
-                          Object {
-                            "padding": "12px",
-                          }
-                        }
-                      >
-                        <h4>
-                          Track Usage
-                        </h4>
-                        <br />
-                        <div
-                          style={
-                            Object {
-                              "bottom": "0",
-                              "padding": "0 36px 16px 0",
-                              "position": "absolute",
-                              "textAlign": "right",
-                              "width": "100%",
-                            }
-                          }
-                        >
-                          <ForwardRef(Application32)
-                            aria-label="Track Usage"
-                          />
-                        </div>
-                      </div>
-                    }
-                    id="trackUsage"
-                    type="CUSTOM"
-                  >
-                    <div
-                      className="Card__CardContent-v5r71h-1 hoCWQe"
-                    >
-                      <div
-                        style={
-                          Object {
-                            "padding": "12px",
-                          }
-                        }
-                      >
-                        <h4>
-                          Track Usage
-                        </h4>
-                        <br />
-                        <div
-                          style={
-                            Object {
-                              "bottom": "0",
-                              "padding": "0 36px 16px 0",
-                              "position": "absolute",
-                              "textAlign": "right",
-                              "width": "100%",
-                            }
-                          }
-                        >
-                          <svg
-                            aria-label="Track Usage"
-                            focusable="false"
-                            height={32}
-                            preserveAspectRatio="xMidYMid meet"
-                            role="img"
-                            style={
-                              Object {
-                                "willChange": "transform",
-                              }
-                            }
-                            viewBox="0 0 32 32"
-                            width={32}
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M16 18H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2zM6 6v10h10V6zm20 6v4h-4v-4h4m0-2h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2zm0 12v4h-4v-4h4m0-2h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2zm-10 2v4h-4v-4h4m0-2h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2z"
-                            />
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  className="react-grid-item cssTransforms"
-                  hideheader={false}
-                  style={
-                    Object {
-                      "MozTransform": "translate(964px,160px)",
-                      "OTransform": "translate(964px,160px)",
-                      "WebkitTransform": "translate(964px,160px)",
-                      "height": "128px",
-                      "msTransform": "translate(964px,160px)",
-                      "position": "absolute",
-                      "transform": "translate(964px,160px)",
-                      "width": "300px",
-                    }
-                  }
-                >
-                  <div
-                    className="Card__CardWrapper-v5r71h-0 fbzdtE"
-                    content={
-                      <div
-                        style={
-                          Object {
-                            "padding": "12px",
-                          }
-                        }
-                      >
-                        <h4>
-                          Administer Users
-                        </h4>
-                        <br />
-                        <div
-                          style={
-                            Object {
-                              "bottom": "0",
-                              "padding": "0 36px 16px 0",
-                              "position": "absolute",
-                              "textAlign": "right",
-                              "width": "100%",
-                            }
-                          }
-                        >
-                          <ForwardRef(Group32)
-                            aria-label="Track Usage"
-                          />
-                        </div>
-                      </div>
-                    }
-                    id="administerUsers"
-                    type="CUSTOM"
-                  >
-                    <div
-                      className="Card__CardContent-v5r71h-1 hoCWQe"
-                    >
-                      <div
-                        style={
-                          Object {
-                            "padding": "12px",
-                          }
-                        }
-                      >
-                        <h4>
-                          Administer Users
-                        </h4>
-                        <br />
-                        <div
-                          style={
-                            Object {
-                              "bottom": "0",
-                              "padding": "0 36px 16px 0",
-                              "position": "absolute",
-                              "textAlign": "right",
-                              "width": "100%",
-                            }
-                          }
-                        >
-                          <svg
-                            aria-label="Track Usage"
-                            focusable="false"
-                            height={32}
-                            preserveAspectRatio="xMidYMid meet"
-                            role="img"
-                            style={
-                              Object {
-                                "willChange": "transform",
-                              }
-                            }
-                            viewBox="0 0 32 32"
-                            width={32}
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M31 30h-2v-3a3 3 0 0 0-3-3h-4a3 3 0 0 0-3 3v3h-2v-3a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5zm-7-18a3 3 0 1 1-3 3 3 3 0 0 1 3-3m0-2a5 5 0 1 0 5 5 5 5 0 0 0-5-5zm-9 12h-2v-3a3 3 0 0 0-3-3H6a3 3 0 0 0-3 3v3H1v-3a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5zM8 4a3 3 0 1 1-3 3 3 3 0 0 1 3-3m0-2a5 5 0 1 0 5 5 5 5 0 0 0-5-5z"
-                            />
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div>
-          <div
-            className="dashboard--header"
-          >
-            <div
-              className="dashboard--header-left"
-            >
-              <h2>
-                
-              </h2>
-            </div>
-            <div
-              className="dashboard--header-right"
-            >
-              <div
-                className="dashboard--header-actions"
-              />
-            </div>
-          </div>
-          <div
-            style={
-              Object {
-                "display": "flex",
-              }
-            }
-          >
-            <div
-              style={
-                Object {
-                  "flex": 1,
-                }
-              }
-            >
-              <div
-                className="react-grid-layout Dashboard__StyledGridLayout-up3zyz-0 leaKVS"
-                style={
-                  Object {
-                    "height": "592px",
-                  }
-                }
-              >
-                <div
-                  className="react-grid-item cssTransforms"
-                  hideheader={false}
-                  style={
-                    Object {
-                      "MozTransform": "translate(16px,16px)",
-                      "OTransform": "translate(16px,16px)",
-                      "WebkitTransform": "translate(16px,16px)",
-                      "height": "272px",
-                      "msTransform": "translate(16px,16px)",
-                      "position": "absolute",
-                      "transform": "translate(16px,16px)",
-                      "width": "932px",
-                    }
-                  }
-                >
-                  <div
-                    className="Card__CardWrapper-v5r71h-0 cynIXT"
-                    content={
-                      Object {
-                        "data": Array [
-                          Object {
-                            "id": "row-9",
-                            "link": "https://www.ibm.com/support/knowledgecenter/SSQP8H/iot/guides/micro-explore.html",
-                            "rightContent": <span>
-                              View your device data in the entity view of the main Watson IoT Platform dashboard. If your plan includes Watson IoT Platform Analytics, the data is stored in the data lake for later retrieval and processing.
-                            </span>,
-                            "value": "Explore entity metrics in the data lake",
-                          },
-                          Object {
-                            "id": "row-10",
-                            "link": "https://www.ibm.com/support/knowledgecenter/SSQP8H/iot/guides/micro-calculate.html",
-                            "rightContent": <span>
-                              Process your entity metrics by running simple or complex calculations to create calculated metrics.
-                            </span>,
-                            "value": "Perform simple calculations on your entity metrics",
-                          },
-                          Object {
-                            "id": "row-11",
-                            "link": "https://www.ibm.com/support/knowledgecenter/SSQP8H/iot/guides/micro-monitor.html",
-                            "rightContent": <span>
-                              Visualize your entity metrics in monitoring dashboards to get an overview of your data.
-                            </span>,
-                            "value": "View entity metrics in a monitoring dashboard",
-                          },
-                        ],
-                        "loadData": [Function],
-                      }
-                    }
-                    id="tutorials"
-                    onScroll={[Function]}
-                    type="LIST"
-                  >
-                    <div
-                      className="card--header"
-                    >
-                      <span
-                        className="card--title"
-                        title="Tutorials"
-                      >
-                        Tutorials
-                         
-                      </span>
-                      <div
-                        className="bx--toolbar card--toolbar"
-                      />
-                    </div>
-                    <div
-                      className="Card__CardContent-v5r71h-1 hDVRgE"
-                    >
-                      <div
-                        className="ListCard__StyledContentWrapper-u7vzr0-2 eUBMEU"
-                      >
-                        <section
-                          aria-label="Structured list section"
-                          className="bx--structured-list"
-                        >
-                          <div
-                            className="bx--structured-list-tbody"
-                            onKeyDown={[Function]}
-                          >
-                            <div
-                              className="bx--structured-list-row"
-                            >
-                              <div
-                                className="ListCard__StyledStructuredListCell-u7vzr0-1 jEQfZQ bx--structured-list-td"
-                              >
-                                <div
-                                  className="ListCard__StyledValueSpan-u7vzr0-3 gZXxBO"
-                                >
-                                  <a
-                                    className="bx--link"
-                                    href="https://www.ibm.com/support/knowledgecenter/SSQP8H/iot/guides/micro-explore.html"
-                                    style={
-                                      Object {
-                                        "display": "inherit",
-                                      }
-                                    }
-                                    target="_blank"
-                                  >
-                                    Explore entity metrics in the data lake
-                                  </a>
-                                </div>
-                                <div
-                                  className="ListCard__StyledSpan-u7vzr0-0 evKiKw"
-                                >
-                                  <span>
-                                    View your device data in the entity view of the main Watson IoT Platform dashboard. If your plan includes Watson IoT Platform Analytics, the data is stored in the data lake for later retrieval and processing.
-                                  </span>
-                                </div>
-                              </div>
-                            </div>
-                            <div
-                              className="bx--structured-list-row"
-                            >
-                              <div
-                                className="ListCard__StyledStructuredListCell-u7vzr0-1 jEQfZQ bx--structured-list-td"
-                              >
-                                <div
-                                  className="ListCard__StyledValueSpan-u7vzr0-3 gZXxBO"
-                                >
-                                  <a
-                                    className="bx--link"
-                                    href="https://www.ibm.com/support/knowledgecenter/SSQP8H/iot/guides/micro-calculate.html"
-                                    style={
-                                      Object {
-                                        "display": "inherit",
-                                      }
-                                    }
-                                    target="_blank"
-                                  >
-                                    Perform simple calculations on your entity metrics
-                                  </a>
-                                </div>
-                                <div
-                                  className="ListCard__StyledSpan-u7vzr0-0 evKiKw"
-                                >
-                                  <span>
-                                    Process your entity metrics by running simple or complex calculations to create calculated metrics.
-                                  </span>
-                                </div>
-                              </div>
-                            </div>
-                            <div
-                              className="bx--structured-list-row"
-                            >
-                              <div
-                                className="ListCard__StyledStructuredListCell-u7vzr0-1 jEQfZQ bx--structured-list-td"
-                              >
-                                <div
-                                  className="ListCard__StyledValueSpan-u7vzr0-3 gZXxBO"
-                                >
-                                  <a
-                                    className="bx--link"
-                                    href="https://www.ibm.com/support/knowledgecenter/SSQP8H/iot/guides/micro-monitor.html"
-                                    style={
-                                      Object {
-                                        "display": "inherit",
-                                      }
-                                    }
-                                    target="_blank"
-                                  >
-                                    View entity metrics in a monitoring dashboard
-                                  </a>
-                                </div>
-                                <div
-                                  className="ListCard__StyledSpan-u7vzr0-0 evKiKw"
-                                >
-                                  <span>
-                                    Visualize your entity metrics in monitoring dashboards to get an overview of your data.
-                                  </span>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </section>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  className="react-grid-item cssTransforms"
-                  hideheader={false}
-                  style={
-                    Object {
-                      "MozTransform": "translate(16px,304px)",
-                      "OTransform": "translate(16px,304px)",
-                      "WebkitTransform": "translate(16px,304px)",
-                      "height": "272px",
-                      "msTransform": "translate(16px,304px)",
-                      "position": "absolute",
-                      "transform": "translate(16px,304px)",
-                      "width": "932px",
-                    }
-                  }
-                >
-                  <div
-                    className="Card__CardWrapper-v5r71h-0 cynIXT"
-                    content={
-                      Object {
-                        "data": Array [
-                          Object {
-                            "id": "row-9",
-                            "link": "https://internetofthings.ibmcloud.com",
-                            "value": "Notice - IBM Watson IoT Platform support for IBM Cloud resource groups",
-                          },
-                          Object {
-                            "id": "row-10",
-                            "link": "https://internetofthings.ibmcloud.com",
-                            "value": "New Connectivity Status API now available on IBM Watson IoT Platform",
-                          },
-                          Object {
-                            "id": "row-11",
-                            "link": "https://internetofthings.ibmcloud.com",
-                            "value": "Advanced Notice - Sunset of SPAPI support",
-                          },
-                          Object {
-                            "id": "row-12",
-                            "link": "https://internetofthings.ibmcloud.com",
-                            "value": "Advanced Notice - Withdrawal of RTI features from Watson IoT Platform",
-                          },
-                        ],
-                        "loadData": [Function],
-                      }
-                    }
-                    id="announcements"
-                    onScroll={[Function]}
-                    type="LIST"
-                  >
-                    <div
-                      className="card--header"
-                    >
-                      <span
-                        className="card--title"
-                        title="Announcements"
-                      >
-                        Announcements
-                         
-                      </span>
-                      <div
-                        className="bx--toolbar card--toolbar"
-                      />
-                    </div>
-                    <div
-                      className="Card__CardContent-v5r71h-1 hDVRgE"
-                    >
-                      <div
-                        className="ListCard__StyledContentWrapper-u7vzr0-2 eUBMEU"
-                      >
-                        <section
-                          aria-label="Structured list section"
-                          className="bx--structured-list"
-                        >
-                          <div
-                            className="bx--structured-list-tbody"
-                            onKeyDown={[Function]}
-                          >
-                            <div
-                              className="bx--structured-list-row"
-                            >
-                              <div
-                                className="ListCard__StyledStructuredListCell-u7vzr0-1 jEQfZQ bx--structured-list-td"
-                              >
-                                <div
-                                  className="ListCard__StyledValueSpan-u7vzr0-3 gZXxBO"
-                                >
-                                  <a
-                                    className="bx--link"
-                                    href="https://internetofthings.ibmcloud.com"
-                                    style={
-                                      Object {
-                                        "display": "inherit",
-                                      }
-                                    }
-                                    target="_blank"
-                                  >
-                                    Notice - IBM Watson IoT Platform support for IBM Cloud resource groups
-                                  </a>
-                                </div>
-                              </div>
-                            </div>
-                            <div
-                              className="bx--structured-list-row"
-                            >
-                              <div
-                                className="ListCard__StyledStructuredListCell-u7vzr0-1 jEQfZQ bx--structured-list-td"
-                              >
-                                <div
-                                  className="ListCard__StyledValueSpan-u7vzr0-3 gZXxBO"
-                                >
-                                  <a
-                                    className="bx--link"
-                                    href="https://internetofthings.ibmcloud.com"
-                                    style={
-                                      Object {
-                                        "display": "inherit",
-                                      }
-                                    }
-                                    target="_blank"
-                                  >
-                                    New Connectivity Status API now available on IBM Watson IoT Platform
-                                  </a>
-                                </div>
-                              </div>
-                            </div>
-                            <div
-                              className="bx--structured-list-row"
-                            >
-                              <div
-                                className="ListCard__StyledStructuredListCell-u7vzr0-1 jEQfZQ bx--structured-list-td"
-                              >
-                                <div
-                                  className="ListCard__StyledValueSpan-u7vzr0-3 gZXxBO"
-                                >
-                                  <a
-                                    className="bx--link"
-                                    href="https://internetofthings.ibmcloud.com"
-                                    style={
-                                      Object {
-                                        "display": "inherit",
-                                      }
-                                    }
-                                    target="_blank"
-                                  >
-                                    Advanced Notice - Sunset of SPAPI support
-                                  </a>
-                                </div>
-                              </div>
-                            </div>
-                            <div
-                              className="bx--structured-list-row"
-                            >
-                              <div
-                                className="ListCard__StyledStructuredListCell-u7vzr0-1 jEQfZQ bx--structured-list-td"
-                              >
-                                <div
-                                  className="ListCard__StyledValueSpan-u7vzr0-3 gZXxBO"
-                                >
-                                  <a
-                                    className="bx--link"
-                                    href="https://internetofthings.ibmcloud.com"
-                                    style={
-                                      Object {
-                                        "display": "inherit",
-                                      }
-                                    }
-                                    target="_blank"
-                                  >
-                                    Advanced Notice - Withdrawal of RTI features from Watson IoT Platform
-                                  </a>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </section>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": "12px",
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
-</div>
-`;
-
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashboard only value cards 1`] = `
 <div
   className="storybook-container"
@@ -10804,7 +9699,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
               >
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(16px,16px)",
@@ -10877,7 +9771,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(174px,16px)",
@@ -10950,7 +9843,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(332px,16px)",
@@ -11023,7 +9915,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(490px,16px)",
@@ -11096,7 +9987,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(648px,16px)",
@@ -11169,7 +10059,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(806px,16px)",
@@ -11246,7 +10135,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(964px,16px)",
@@ -11388,7 +10276,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
               >
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(16px,16px)",
@@ -11461,7 +10348,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(174px,16px)",
@@ -11534,7 +10420,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(332px,16px)",
@@ -11607,7 +10492,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(490px,16px)",
@@ -11680,7 +10564,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(648px,16px)",
@@ -11753,7 +10636,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(806px,16px)",
@@ -11830,7 +10712,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(964px,16px)",
@@ -11972,7 +10853,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
               >
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(16px,16px)",
@@ -12045,7 +10925,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(174px,16px)",
@@ -12121,7 +11000,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(332px,16px)",
@@ -12194,7 +11072,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(490px,16px)",
@@ -12335,7 +11212,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
               >
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(16px,16px)",
@@ -12408,7 +11284,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(174px,16px)",
@@ -12484,7 +11359,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(332px,16px)",
@@ -12557,7 +11431,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(490px,16px)",
@@ -12698,7 +11571,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
               >
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(16px,16px)",
@@ -12796,7 +11668,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(174px,16px)",
@@ -12894,7 +11765,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(332px,16px)",
@@ -12992,7 +11862,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(490px,16px)",
@@ -13155,7 +12024,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
               >
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(16px,16px)",
@@ -13253,7 +12121,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(174px,16px)",
@@ -13351,7 +12218,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(332px,16px)",
@@ -13449,7 +12315,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(490px,16px)",
@@ -13612,7 +12477,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
               >
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(16px,16px)",
@@ -13685,7 +12549,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(174px,16px)",
@@ -13758,7 +12621,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(332px,16px)",
@@ -13831,7 +12693,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(490px,16px)",
@@ -13904,7 +12765,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(648px,16px)",
@@ -14042,7 +12902,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
               >
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(16px,16px)",
@@ -14115,7 +12974,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(174px,16px)",
@@ -14188,7 +13046,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(332px,16px)",
@@ -14261,7 +13118,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(490px,16px)",
@@ -14334,7 +13190,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(648px,16px)",
@@ -14472,7 +13327,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
               >
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(16px,16px)",
@@ -14545,7 +13399,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(332px,16px)",
@@ -14618,7 +13471,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(648px,16px)",
@@ -14691,7 +13543,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(964px,16px)",
@@ -14764,7 +13615,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(16px,160px)",
@@ -14837,7 +13687,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(332px,160px)",
@@ -14914,7 +13763,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(648px,160px)",
@@ -14991,7 +13839,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(964px,160px)",
@@ -15064,7 +13911,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(16px,304px)",
@@ -15140,7 +13986,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(332px,304px)",
@@ -15213,7 +14058,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(648px,304px)",
@@ -15289,7 +14133,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(964px,304px)",
@@ -15387,7 +14230,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(16px,448px)",
@@ -15485,7 +14327,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(332px,448px)",
@@ -15583,7 +14424,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(648px,448px)",
@@ -15681,7 +14521,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(964px,448px)",
@@ -15754,7 +14593,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(16px,592px)",
@@ -15827,7 +14665,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(332px,592px)",
@@ -15900,7 +14737,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(648px,592px)",
@@ -15973,7 +14809,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(964px,592px)",
@@ -16111,7 +14946,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
               >
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(16px,16px)",
@@ -16184,7 +15018,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(332px,16px)",
@@ -16257,7 +15090,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(648px,16px)",
@@ -16330,7 +15162,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(964px,16px)",
@@ -16403,7 +15234,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(16px,160px)",
@@ -16476,7 +15306,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(332px,160px)",
@@ -16553,7 +15382,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(648px,160px)",
@@ -16630,7 +15458,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(964px,160px)",
@@ -16703,7 +15530,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(16px,304px)",
@@ -16779,7 +15605,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(332px,304px)",
@@ -16852,7 +15677,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(648px,304px)",
@@ -16928,7 +15752,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(964px,304px)",
@@ -17026,7 +15849,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(16px,448px)",
@@ -17124,7 +15946,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(332px,448px)",
@@ -17222,7 +16043,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(648px,448px)",
@@ -17320,7 +16140,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(964px,448px)",
@@ -17393,7 +16212,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(16px,592px)",
@@ -17466,7 +16284,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(332px,592px)",
@@ -17539,7 +16356,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(648px,592px)",
@@ -17612,7 +16428,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(964px,592px)",
@@ -17750,7 +16565,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
               >
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(16px,16px)",
@@ -17857,7 +16671,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(332px,16px)",
@@ -17964,7 +16777,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(648px,16px)",
@@ -18136,7 +16948,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
               >
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(16px,16px)",
@@ -18243,7 +17054,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(332px,16px)",
@@ -18350,7 +17160,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(648px,16px)",
@@ -18522,7 +17331,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
               >
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(16px,16px)",
@@ -18629,7 +17437,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(332px,16px)",
@@ -18736,7 +17543,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(648px,16px)",
@@ -18908,7 +17714,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
               >
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(16px,16px)",
@@ -19015,7 +17820,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(332px,16px)",
@@ -19122,7 +17926,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(648px,16px)",
@@ -19294,7 +18097,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
               >
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(16px,16px)",
@@ -19451,7 +18253,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(332px,16px)",
@@ -19673,7 +18474,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
               >
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(16px,16px)",
@@ -19830,7 +18630,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(332px,16px)",
@@ -20052,7 +18851,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
               >
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(16px,16px)",
@@ -20206,7 +19004,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(332px,16px)",
@@ -20360,7 +19157,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(648px,16px)",
@@ -20654,7 +19450,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
               >
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(16px,16px)",
@@ -20808,7 +19603,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(332px,16px)",
@@ -20962,7 +19756,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms"
-                  hideheader={false}
                   style={
                     Object {
                       "MozTransform": "translate(648px,16px)",
@@ -21324,7 +20117,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
             >
               <div
                 className="react-grid-item cssTransforms"
-                hideheader={false}
                 style={
                   Object {
                     "MozTransform": "translate(16px,16px)",
@@ -21478,7 +20270,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms"
-                hideheader={false}
                 style={
                   Object {
                     "MozTransform": "translate(332px,16px)",
@@ -21551,7 +20342,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms"
-                hideheader={false}
                 style={
                   Object {
                     "MozTransform": "translate(490px,16px)",
@@ -21627,7 +20417,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms"
-                hideheader={false}
                 style={
                   Object {
                     "MozTransform": "translate(648px,16px)",
@@ -21703,7 +20492,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms"
-                hideheader={false}
                 style={
                   Object {
                     "MozTransform": "translate(806px,16px)",
@@ -21801,7 +20589,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms"
-                hideheader={false}
                 style={
                   Object {
                     "MozTransform": "translate(964px,16px)",
@@ -21874,7 +20661,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms"
-                hideheader={false}
                 style={
                   Object {
                     "MozTransform": "translate(332px,160px)",
@@ -21972,7 +20758,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms"
-                hideheader={false}
                 style={
                   Object {
                     "MozTransform": "translate(648px,160px)",
@@ -22106,7 +20891,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms"
-                hideheader={false}
                 style={
                   Object {
                     "MozTransform": "translate(16px,304px)",
@@ -22588,7 +21372,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms"
-                hideheader={false}
                 style={
                   Object {
                     "MozTransform": "translate(648px,448px)",
@@ -22722,7 +21505,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms"
-                hideheader={false}
                 style={
                   Object {
                     "MozTransform": "translate(16px,880px)",
@@ -23072,6 +21854,1009 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             }
                           />
                         </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashboard with custom cards 1`] = `
+<div
+  className="storybook-container"
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "flexDirection": "column",
+      "padding": "3rem",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "width": "calc(100vw - 6rem)",
+        }
+      }
+    >
+      <div>
+        <div>
+          <div
+            className="dashboard--header"
+          >
+            <div
+              className="dashboard--header-left"
+            />
+            <div
+              className="dashboard--header-right"
+            >
+              <div
+                className="dashboard--header-actions"
+              />
+            </div>
+          </div>
+          <div
+            style={
+              Object {
+                "display": "flex",
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "flex": 1,
+                }
+              }
+            >
+              <div
+                className="react-grid-layout Dashboard__StyledGridLayout-up3zyz-0 leaKVS"
+                style={
+                  Object {
+                    "height": "880px",
+                  }
+                }
+              >
+                <div
+                  className="react-grid-item cssTransforms"
+                  style={
+                    Object {
+                      "MozTransform": "translate(16px,16px)",
+                      "OTransform": "translate(16px,16px)",
+                      "WebkitTransform": "translate(16px,16px)",
+                      "height": "272px",
+                      "msTransform": "translate(16px,16px)",
+                      "position": "absolute",
+                      "transform": "translate(16px,16px)",
+                      "width": "300px",
+                    }
+                  }
+                >
+                  <div
+                    className="Card__CardWrapper-v5r71h-0 cynIXT"
+                    content={
+                      <ClickableTile
+                        clicked={false}
+                        handleClick={[Function]}
+                        handleKeyDown={[Function]}
+                        href="https://internetofthings.ibmcloud.com"
+                        style={
+                          Object {
+                            "height": "100%",
+                            "padding": "0 0 0 0",
+                          }
+                        }
+                      >
+                        <div
+                          style={
+                            Object {
+                              "padding": "12px",
+                            }
+                          }
+                        >
+                          <h4>
+                            View Dashboards
+                          </h4>
+                          <br />
+                          <p>
+                            View pinned dashboards to keep track of your world in IoT.
+                          </p>
+                          <div
+                            style={
+                              Object {
+                                "bottom": "0",
+                                "padding": "0 36px 16px 0",
+                                "position": "absolute",
+                                "textAlign": "right",
+                                "width": "100%",
+                              }
+                            }
+                          >
+                            <img
+                              alt="View Dashboards"
+                              src="dashboard.svg"
+                              style={
+                                Object {
+                                  "width": "50%",
+                                }
+                              }
+                            />
+                          </div>
+                        </div>
+                      </ClickableTile>
+                    }
+                    id="viewDashboards"
+                    type="CUSTOM"
+                  >
+                    <div
+                      className="Card__CardContent-v5r71h-1 hDVRgE"
+                    >
+                      <a
+                        className="bx--link bx--tile bx--tile--clickable"
+                        href="https://internetofthings.ibmcloud.com"
+                        onClick={[Function]}
+                        onKeyDown={[Function]}
+                        style={
+                          Object {
+                            "height": "100%",
+                            "padding": "0 0 0 0",
+                          }
+                        }
+                      >
+                        <div
+                          style={
+                            Object {
+                              "padding": "12px",
+                            }
+                          }
+                        >
+                          <h4>
+                            View Dashboards
+                          </h4>
+                          <br />
+                          <p>
+                            View pinned dashboards to keep track of your world in IoT.
+                          </p>
+                          <div
+                            style={
+                              Object {
+                                "bottom": "0",
+                                "padding": "0 36px 16px 0",
+                                "position": "absolute",
+                                "textAlign": "right",
+                                "width": "100%",
+                              }
+                            }
+                          >
+                            <img
+                              alt="View Dashboards"
+                              src="dashboard.svg"
+                              style={
+                                Object {
+                                  "width": "50%",
+                                }
+                              }
+                            />
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="react-grid-item cssTransforms"
+                  style={
+                    Object {
+                      "MozTransform": "translate(332px,16px)",
+                      "OTransform": "translate(332px,16px)",
+                      "WebkitTransform": "translate(332px,16px)",
+                      "height": "272px",
+                      "msTransform": "translate(332px,16px)",
+                      "position": "absolute",
+                      "transform": "translate(332px,16px)",
+                      "width": "300px",
+                    }
+                  }
+                >
+                  <div
+                    className="Card__CardWrapper-v5r71h-0 cynIXT"
+                    content={
+                      <ClickableTile
+                        clicked={false}
+                        handleClick={[Function]}
+                        handleKeyDown={[Function]}
+                        href="https://internetofthings.ibmcloud.com"
+                        style={
+                          Object {
+                            "height": "100%",
+                            "padding": "0 0 0 0",
+                          }
+                        }
+                      >
+                        <div
+                          style={
+                            Object {
+                              "padding": "12px",
+                            }
+                          }
+                        >
+                          <h4>
+                            Connect Devices
+                          </h4>
+                          <br />
+                          <p>
+                            Connect devices and collect data by using the Watson IoT Platform Service.
+                          </p>
+                          <div
+                            style={
+                              Object {
+                                "bottom": "0",
+                                "padding": "0 36px 16px 0",
+                                "position": "absolute",
+                                "textAlign": "right",
+                                "width": "100%",
+                              }
+                            }
+                          >
+                            <img
+                              alt="Connect Devices"
+                              src="computer-chip.svg"
+                              style={
+                                Object {
+                                  "width": "50%",
+                                }
+                              }
+                            />
+                          </div>
+                        </div>
+                      </ClickableTile>
+                    }
+                    id="connectDevices"
+                    type="CUSTOM"
+                  >
+                    <div
+                      className="Card__CardContent-v5r71h-1 hDVRgE"
+                    >
+                      <a
+                        className="bx--link bx--tile bx--tile--clickable"
+                        href="https://internetofthings.ibmcloud.com"
+                        onClick={[Function]}
+                        onKeyDown={[Function]}
+                        style={
+                          Object {
+                            "height": "100%",
+                            "padding": "0 0 0 0",
+                          }
+                        }
+                      >
+                        <div
+                          style={
+                            Object {
+                              "padding": "12px",
+                            }
+                          }
+                        >
+                          <h4>
+                            Connect Devices
+                          </h4>
+                          <br />
+                          <p>
+                            Connect devices and collect data by using the Watson IoT Platform Service.
+                          </p>
+                          <div
+                            style={
+                              Object {
+                                "bottom": "0",
+                                "padding": "0 36px 16px 0",
+                                "position": "absolute",
+                                "textAlign": "right",
+                                "width": "100%",
+                              }
+                            }
+                          >
+                            <img
+                              alt="Connect Devices"
+                              src="computer-chip.svg"
+                              style={
+                                Object {
+                                  "width": "50%",
+                                }
+                              }
+                            />
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="react-grid-item cssTransforms"
+                  style={
+                    Object {
+                      "MozTransform": "translate(648px,16px)",
+                      "OTransform": "translate(648px,16px)",
+                      "WebkitTransform": "translate(648px,16px)",
+                      "height": "272px",
+                      "msTransform": "translate(648px,16px)",
+                      "position": "absolute",
+                      "transform": "translate(648px,16px)",
+                      "width": "300px",
+                    }
+                  }
+                >
+                  <div
+                    className="Card__CardWrapper-v5r71h-0 cynIXT"
+                    content={
+                      <div
+                        style={
+                          Object {
+                            "padding": "12px",
+                          }
+                        }
+                      >
+                        <h4>
+                          Monitor Entities
+                        </h4>
+                        <br />
+                        <p>
+                          Expore your entities and analyze their associated data.
+                        </p>
+                        <div
+                          style={
+                            Object {
+                              "bottom": "0",
+                              "padding": "0 36px 16px 0",
+                              "position": "absolute",
+                              "textAlign": "right",
+                              "width": "100%",
+                            }
+                          }
+                        >
+                          <img
+                            alt="Monitor Entities"
+                            src="data-scientist-illustration.svg"
+                            style={
+                              Object {
+                                "width": "50%",
+                              }
+                            }
+                          />
+                        </div>
+                      </div>
+                    }
+                    id="monitorEntities"
+                    type="CUSTOM"
+                  >
+                    <div
+                      className="Card__CardContent-v5r71h-1 hDVRgE"
+                    >
+                      <div
+                        style={
+                          Object {
+                            "padding": "12px",
+                          }
+                        }
+                      >
+                        <h4>
+                          Monitor Entities
+                        </h4>
+                        <br />
+                        <p>
+                          Expore your entities and analyze their associated data.
+                        </p>
+                        <div
+                          style={
+                            Object {
+                              "bottom": "0",
+                              "padding": "0 36px 16px 0",
+                              "position": "absolute",
+                              "textAlign": "right",
+                              "width": "100%",
+                            }
+                          }
+                        >
+                          <img
+                            alt="Monitor Entities"
+                            src="data-scientist-illustration.svg"
+                            style={
+                              Object {
+                                "width": "50%",
+                              }
+                            }
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="react-grid-item cssTransforms"
+                  style={
+                    Object {
+                      "MozTransform": "translate(964px,16px)",
+                      "OTransform": "translate(964px,16px)",
+                      "WebkitTransform": "translate(964px,16px)",
+                      "height": "128px",
+                      "msTransform": "translate(964px,16px)",
+                      "position": "absolute",
+                      "transform": "translate(964px,16px)",
+                      "width": "300px",
+                    }
+                  }
+                >
+                  <div
+                    className="Card__CardWrapper-v5r71h-0 fbzdtE"
+                    content={
+                      <div
+                        style={
+                          Object {
+                            "padding": "12px",
+                          }
+                        }
+                      >
+                        <h4>
+                          Track Usage
+                        </h4>
+                        <br />
+                        <div
+                          style={
+                            Object {
+                              "bottom": "0",
+                              "padding": "0 36px 16px 0",
+                              "position": "absolute",
+                              "textAlign": "right",
+                              "width": "100%",
+                            }
+                          }
+                        >
+                          <ForwardRef(Application32)
+                            aria-label="Track Usage"
+                          />
+                        </div>
+                      </div>
+                    }
+                    id="trackUsage"
+                    type="CUSTOM"
+                  >
+                    <div
+                      className="Card__CardContent-v5r71h-1 hoCWQe"
+                    >
+                      <div
+                        style={
+                          Object {
+                            "padding": "12px",
+                          }
+                        }
+                      >
+                        <h4>
+                          Track Usage
+                        </h4>
+                        <br />
+                        <div
+                          style={
+                            Object {
+                              "bottom": "0",
+                              "padding": "0 36px 16px 0",
+                              "position": "absolute",
+                              "textAlign": "right",
+                              "width": "100%",
+                            }
+                          }
+                        >
+                          <svg
+                            aria-label="Track Usage"
+                            focusable="false"
+                            height={32}
+                            preserveAspectRatio="xMidYMid meet"
+                            role="img"
+                            style={
+                              Object {
+                                "willChange": "transform",
+                              }
+                            }
+                            viewBox="0 0 32 32"
+                            width={32}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M16 18H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2zM6 6v10h10V6zm20 6v4h-4v-4h4m0-2h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2zm0 12v4h-4v-4h4m0-2h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2zm-10 2v4h-4v-4h4m0-2h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2z"
+                            />
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="react-grid-item cssTransforms"
+                  style={
+                    Object {
+                      "MozTransform": "translate(964px,160px)",
+                      "OTransform": "translate(964px,160px)",
+                      "WebkitTransform": "translate(964px,160px)",
+                      "height": "128px",
+                      "msTransform": "translate(964px,160px)",
+                      "position": "absolute",
+                      "transform": "translate(964px,160px)",
+                      "width": "300px",
+                    }
+                  }
+                >
+                  <div
+                    className="Card__CardWrapper-v5r71h-0 fbzdtE"
+                    content={
+                      <div
+                        style={
+                          Object {
+                            "padding": "12px",
+                          }
+                        }
+                      >
+                        <h4>
+                          Administer Users
+                        </h4>
+                        <br />
+                        <div
+                          style={
+                            Object {
+                              "bottom": "0",
+                              "padding": "0 36px 16px 0",
+                              "position": "absolute",
+                              "textAlign": "right",
+                              "width": "100%",
+                            }
+                          }
+                        >
+                          <ForwardRef(Group32)
+                            aria-label="Track Usage"
+                          />
+                        </div>
+                      </div>
+                    }
+                    id="administerUsers"
+                    type="CUSTOM"
+                  >
+                    <div
+                      className="Card__CardContent-v5r71h-1 hoCWQe"
+                    >
+                      <div
+                        style={
+                          Object {
+                            "padding": "12px",
+                          }
+                        }
+                      >
+                        <h4>
+                          Administer Users
+                        </h4>
+                        <br />
+                        <div
+                          style={
+                            Object {
+                              "bottom": "0",
+                              "padding": "0 36px 16px 0",
+                              "position": "absolute",
+                              "textAlign": "right",
+                              "width": "100%",
+                            }
+                          }
+                        >
+                          <svg
+                            aria-label="Track Usage"
+                            focusable="false"
+                            height={32}
+                            preserveAspectRatio="xMidYMid meet"
+                            role="img"
+                            style={
+                              Object {
+                                "willChange": "transform",
+                              }
+                            }
+                            viewBox="0 0 32 32"
+                            width={32}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M31 30h-2v-3a3 3 0 0 0-3-3h-4a3 3 0 0 0-3 3v3h-2v-3a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5zm-7-18a3 3 0 1 1-3 3 3 3 0 0 1 3-3m0-2a5 5 0 1 0 5 5 5 5 0 0 0-5-5zm-9 12h-2v-3a3 3 0 0 0-3-3H6a3 3 0 0 0-3 3v3H1v-3a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5zM8 4a3 3 0 1 1-3 3 3 3 0 0 1 3-3m0-2a5 5 0 1 0 5 5 5 5 0 0 0-5-5z"
+                            />
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="react-grid-item cssTransforms"
+                  style={
+                    Object {
+                      "MozTransform": "translate(16px,304px)",
+                      "OTransform": "translate(16px,304px)",
+                      "WebkitTransform": "translate(16px,304px)",
+                      "height": "272px",
+                      "msTransform": "translate(16px,304px)",
+                      "position": "absolute",
+                      "transform": "translate(16px,304px)",
+                      "width": "932px",
+                    }
+                  }
+                >
+                  <div
+                    className="Card__CardWrapper-v5r71h-0 cynIXT"
+                    content={
+                      Object {
+                        "data": Array [
+                          Object {
+                            "id": "row-9",
+                            "link": "https://www.ibm.com/support/knowledgecenter/SSQP8H/iot/guides/micro-explore.html",
+                            "rightContent": <span>
+                              View your device data in the entity view of the main Watson IoT Platform dashboard. If your plan includes Watson IoT Platform Analytics, the data is stored in the data lake for later retrieval and processing.
+                            </span>,
+                            "value": "Explore entity metrics in the data lake",
+                          },
+                          Object {
+                            "id": "row-10",
+                            "link": "https://www.ibm.com/support/knowledgecenter/SSQP8H/iot/guides/micro-calculate.html",
+                            "rightContent": <span>
+                              Process your entity metrics by running simple or complex calculations to create calculated metrics.
+                            </span>,
+                            "value": "Perform simple calculations on your entity metrics",
+                          },
+                          Object {
+                            "id": "row-11",
+                            "link": "https://www.ibm.com/support/knowledgecenter/SSQP8H/iot/guides/micro-monitor.html",
+                            "rightContent": <span>
+                              Visualize your entity metrics in monitoring dashboards to get an overview of your data.
+                            </span>,
+                            "value": "View entity metrics in a monitoring dashboard",
+                          },
+                        ],
+                        "loadData": [Function],
+                      }
+                    }
+                    id="tutorials"
+                    onScroll={[Function]}
+                    type="LIST"
+                  >
+                    <div
+                      className="card--header"
+                    >
+                      <span
+                        className="card--title"
+                        title="Tutorials"
+                      >
+                        Tutorials
+                         
+                      </span>
+                      <div
+                        className="bx--toolbar card--toolbar"
+                      />
+                    </div>
+                    <div
+                      className="Card__CardContent-v5r71h-1 hDVRgE"
+                    >
+                      <div
+                        className="ListCard__StyledContentWrapper-u7vzr0-2 eUBMEU"
+                      >
+                        <section
+                          aria-label="Structured list section"
+                          className="bx--structured-list"
+                        >
+                          <div
+                            className="bx--structured-list-tbody"
+                            onKeyDown={[Function]}
+                          >
+                            <div
+                              className="bx--structured-list-row"
+                            >
+                              <div
+                                className="ListCard__StyledStructuredListCell-u7vzr0-1 jEQfZQ bx--structured-list-td"
+                              >
+                                <div
+                                  className="ListCard__StyledValueSpan-u7vzr0-3 gZXxBO"
+                                >
+                                  <a
+                                    className="bx--link"
+                                    href="https://www.ibm.com/support/knowledgecenter/SSQP8H/iot/guides/micro-explore.html"
+                                    style={
+                                      Object {
+                                        "display": "inherit",
+                                      }
+                                    }
+                                    target="_blank"
+                                  >
+                                    Explore entity metrics in the data lake
+                                  </a>
+                                </div>
+                                <div
+                                  className="ListCard__StyledSpan-u7vzr0-0 evKiKw"
+                                >
+                                  <span>
+                                    View your device data in the entity view of the main Watson IoT Platform dashboard. If your plan includes Watson IoT Platform Analytics, the data is stored in the data lake for later retrieval and processing.
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              className="bx--structured-list-row"
+                            >
+                              <div
+                                className="ListCard__StyledStructuredListCell-u7vzr0-1 jEQfZQ bx--structured-list-td"
+                              >
+                                <div
+                                  className="ListCard__StyledValueSpan-u7vzr0-3 gZXxBO"
+                                >
+                                  <a
+                                    className="bx--link"
+                                    href="https://www.ibm.com/support/knowledgecenter/SSQP8H/iot/guides/micro-calculate.html"
+                                    style={
+                                      Object {
+                                        "display": "inherit",
+                                      }
+                                    }
+                                    target="_blank"
+                                  >
+                                    Perform simple calculations on your entity metrics
+                                  </a>
+                                </div>
+                                <div
+                                  className="ListCard__StyledSpan-u7vzr0-0 evKiKw"
+                                >
+                                  <span>
+                                    Process your entity metrics by running simple or complex calculations to create calculated metrics.
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              className="bx--structured-list-row"
+                            >
+                              <div
+                                className="ListCard__StyledStructuredListCell-u7vzr0-1 jEQfZQ bx--structured-list-td"
+                              >
+                                <div
+                                  className="ListCard__StyledValueSpan-u7vzr0-3 gZXxBO"
+                                >
+                                  <a
+                                    className="bx--link"
+                                    href="https://www.ibm.com/support/knowledgecenter/SSQP8H/iot/guides/micro-monitor.html"
+                                    style={
+                                      Object {
+                                        "display": "inherit",
+                                      }
+                                    }
+                                    target="_blank"
+                                  >
+                                    View entity metrics in a monitoring dashboard
+                                  </a>
+                                </div>
+                                <div
+                                  className="ListCard__StyledSpan-u7vzr0-0 evKiKw"
+                                >
+                                  <span>
+                                    Visualize your entity metrics in monitoring dashboards to get an overview of your data.
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </section>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="react-grid-item cssTransforms"
+                  style={
+                    Object {
+                      "MozTransform": "translate(16px,592px)",
+                      "OTransform": "translate(16px,592px)",
+                      "WebkitTransform": "translate(16px,592px)",
+                      "height": "272px",
+                      "msTransform": "translate(16px,592px)",
+                      "position": "absolute",
+                      "transform": "translate(16px,592px)",
+                      "width": "932px",
+                    }
+                  }
+                >
+                  <div
+                    className="Card__CardWrapper-v5r71h-0 cynIXT"
+                    content={
+                      Object {
+                        "data": Array [
+                          Object {
+                            "id": "row-9",
+                            "link": "https://internetofthings.ibmcloud.com",
+                            "value": "Notice - IBM Watson IoT Platform support for IBM Cloud resource groups",
+                          },
+                          Object {
+                            "id": "row-10",
+                            "link": "https://internetofthings.ibmcloud.com",
+                            "value": "New Connectivity Status API now available on IBM Watson IoT Platform",
+                          },
+                          Object {
+                            "id": "row-11",
+                            "link": "https://internetofthings.ibmcloud.com",
+                            "value": "Advanced Notice - Sunset of SPAPI support",
+                          },
+                          Object {
+                            "id": "row-12",
+                            "link": "https://internetofthings.ibmcloud.com",
+                            "value": "Advanced Notice - Withdrawal of RTI features from Watson IoT Platform",
+                          },
+                        ],
+                        "loadData": [Function],
+                      }
+                    }
+                    id="announcements"
+                    onScroll={[Function]}
+                    type="LIST"
+                  >
+                    <div
+                      className="card--header"
+                    >
+                      <span
+                        className="card--title"
+                        title="Announcements"
+                      >
+                        Announcements
+                         
+                      </span>
+                      <div
+                        className="bx--toolbar card--toolbar"
+                      />
+                    </div>
+                    <div
+                      className="Card__CardContent-v5r71h-1 hDVRgE"
+                    >
+                      <div
+                        className="ListCard__StyledContentWrapper-u7vzr0-2 eUBMEU"
+                      >
+                        <section
+                          aria-label="Structured list section"
+                          className="bx--structured-list"
+                        >
+                          <div
+                            className="bx--structured-list-tbody"
+                            onKeyDown={[Function]}
+                          >
+                            <div
+                              className="bx--structured-list-row"
+                            >
+                              <div
+                                className="ListCard__StyledStructuredListCell-u7vzr0-1 jEQfZQ bx--structured-list-td"
+                              >
+                                <div
+                                  className="ListCard__StyledValueSpan-u7vzr0-3 gZXxBO"
+                                >
+                                  <a
+                                    className="bx--link"
+                                    href="https://internetofthings.ibmcloud.com"
+                                    style={
+                                      Object {
+                                        "display": "inherit",
+                                      }
+                                    }
+                                    target="_blank"
+                                  >
+                                    Notice - IBM Watson IoT Platform support for IBM Cloud resource groups
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              className="bx--structured-list-row"
+                            >
+                              <div
+                                className="ListCard__StyledStructuredListCell-u7vzr0-1 jEQfZQ bx--structured-list-td"
+                              >
+                                <div
+                                  className="ListCard__StyledValueSpan-u7vzr0-3 gZXxBO"
+                                >
+                                  <a
+                                    className="bx--link"
+                                    href="https://internetofthings.ibmcloud.com"
+                                    style={
+                                      Object {
+                                        "display": "inherit",
+                                      }
+                                    }
+                                    target="_blank"
+                                  >
+                                    New Connectivity Status API now available on IBM Watson IoT Platform
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              className="bx--structured-list-row"
+                            >
+                              <div
+                                className="ListCard__StyledStructuredListCell-u7vzr0-1 jEQfZQ bx--structured-list-td"
+                              >
+                                <div
+                                  className="ListCard__StyledValueSpan-u7vzr0-3 gZXxBO"
+                                >
+                                  <a
+                                    className="bx--link"
+                                    href="https://internetofthings.ibmcloud.com"
+                                    style={
+                                      Object {
+                                        "display": "inherit",
+                                      }
+                                    }
+                                    target="_blank"
+                                  >
+                                    Advanced Notice - Sunset of SPAPI support
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              className="bx--structured-list-row"
+                            >
+                              <div
+                                className="ListCard__StyledStructuredListCell-u7vzr0-1 jEQfZQ bx--structured-list-td"
+                              >
+                                <div
+                                  className="ListCard__StyledValueSpan-u7vzr0-3 gZXxBO"
+                                >
+                                  <a
+                                    className="bx--link"
+                                    href="https://internetofthings.ibmcloud.com"
+                                    style={
+                                      Object {
+                                        "display": "inherit",
+                                      }
+                                    }
+                                    target="_blank"
+                                  >
+                                    Advanced Notice - Withdrawal of RTI features from Watson IoT Platform
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </section>
                       </div>
                     </div>
                   </div>

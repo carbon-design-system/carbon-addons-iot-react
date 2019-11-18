@@ -24,7 +24,6 @@ storiesOf('Watson IoT|Card', module)
           breakpoint="lg"
           availableActions={{ range: true, expand: true }}
           onCardAction={action('onCardAction')}
-          hideheader={boolean('hideheader', false)}
         />
       </div>
     );
@@ -42,7 +41,6 @@ storiesOf('Watson IoT|Card', module)
           isEditable={boolean('isEditable', false)}
           isExpanded={boolean('isExpanded', false)}
           breakpoint="lg"
-          hideheader={boolean('hideheader', false)}
           onCardAction={action('onCardAction')}
         />
       </div>
@@ -61,7 +59,6 @@ storiesOf('Watson IoT|Card', module)
           isEditable={boolean('isEditable', false)}
           isExpanded={boolean('isExpanded', false)}
           breakpoint="lg"
-          hideheader={boolean('hideheader', false)}
           onCardAction={action('onCardAction')}
           availableActions={{
             range: true,
@@ -83,7 +80,6 @@ storiesOf('Watson IoT|Card', module)
           isEditable={boolean('isEditable', true)}
           isExpanded={boolean('isExpanded', false)}
           breakpoint="lg"
-          hideheader={boolean('hideheader', false)}
           onCardAction={action('onCardAction')}
           availableActions={{
             edit: true,
@@ -105,7 +101,6 @@ storiesOf('Watson IoT|Card', module)
           isLoading={boolean('isLoading', false)}
           isEmpty={boolean('isEmpty', false)}
           isEditable={boolean('isEditable', true)}
-          hideheader={boolean('hideheader', false)}
           isExpanded={boolean('isExpanded', false)}
           breakpoint="lg"
           onCardAction={action('onCardAction')}
@@ -127,7 +122,6 @@ storiesOf('Watson IoT|Card', module)
           isLoading={boolean('isLoading', false)}
           isEmpty={boolean('isEmpty', true)}
           isEditable={boolean('isEditable', false)}
-          hideheader={boolean('hideheader', false)}
           isExpanded={boolean('isExpanded', false)}
           breakpoint="lg"
           availableActions={{ range: true }}
@@ -148,7 +142,6 @@ storiesOf('Watson IoT|Card', module)
             isLoading={boolean('isLoading', false)}
             isEmpty={boolean('isEmpty', true)}
             isEditable={boolean('isEditable', false)}
-            hideheader={boolean('hideheader', false)}
             isExpanded={boolean('isExpanded', false)}
             breakpoint="lg"
             availableActions={{ range: i !== CARD_SIZES.XSMALL }}
@@ -167,7 +160,6 @@ storiesOf('Watson IoT|Card', module)
           id="facilitycard-error"
           size={size}
           error={text('error', 'API threw Nullpointer')}
-          hideheader={boolean('hideheader', false)}
           isLoading={boolean('isLoading', false)}
           breakpoint="lg"
           onCardAction={action('onCardAction')}
@@ -184,7 +176,6 @@ storiesOf('Watson IoT|Card', module)
           id="facilitycard-error-small"
           size={size}
           error={text('error', 'API threw Nullpointer')}
-          hideheader={boolean('hideheader', false)}
           isLoading={boolean('isLoading', false)}
           breakpoint="lg"
           onCardAction={action('onCardAction')}
@@ -202,10 +193,8 @@ storiesOf('Watson IoT|Card', module)
 
       return (
         <SampleCustomCard
-          title={text('title', 'Card Title')}
           id={text('title', 'Card Title')}
           size={size}
-          hideheader={boolean('hideheader', false)}
           isEditable={boolean('isEditable', false)}
           values={[{ timestamp: 12341231231, value1: 'my value' }]}
         />
@@ -219,6 +208,7 @@ storiesOf('Watson IoT|Card', module)
       To develop a custom card component.
        - Create a new card component that uses the base Card component
        - See the simple SampleCustomCard in the source code of this story for an example
+       - If you want to hide the title/toolbar, do not pass a title prop
        - (Optionally, if you want to use the card in a Dashboard) Extend the Card Renderer so the Dashboard knows how to render your card type
        - (Optionally, if you want to use the card in a Dashboard) Create a validator for this card type within "utils/schemas/validators" and add it to the validateDashboardJSON function used to validate dashboards on import.
        

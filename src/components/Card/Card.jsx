@@ -88,6 +88,7 @@ const TimeRangeLabel = styled.span`
 const defaultProps = {
   size: CARD_SIZES.SMALL,
   layout: CARD_SIZES.HORIZONTAL,
+  title: undefined,
   toolbar: undefined,
   timeRange: undefined,
   isLoading: false,
@@ -108,7 +109,6 @@ const defaultProps = {
   cardDimensions: CARD_DIMENSIONS,
   dashboardBreakpoints: DASHBOARD_BREAKPOINTS,
   dashboardColumns: DASHBOARD_COLUMNS,
-  hideheader: false,
   i18n: {
     noDataLabel: 'No data is available for this time range.',
     noDataShortLabel: 'No data',
@@ -157,7 +157,6 @@ const Card = ({
   availableActions,
   breakpoint,
   i18n,
-  hideheader,
   ...others
 }) => {
   const [tooltipId, setTooltipId] = useState(uuidv1());
@@ -325,7 +324,7 @@ const Card = ({
           cardWidthSize={sizeWidth.width}
           {...others}
         >
-          {!hideheader && (
+          {title !== undefined && (
             <div className="card--header">
               <span className="card--title" title={title}>
                 {title}&nbsp;
