@@ -8,6 +8,8 @@ import ValueCard from '../ValueCard/ValueCard';
 import ImageCard from '../ImageCard/ImageCard';
 import TableCard from '../TableCard/TableCard';
 import TimeSeriesCard from '../TimeSeriesCard/TimeSeriesCard';
+import ListCard from '../ListCard/ListCard';
+import Card from '../Card/Card';
 import { CARD_TYPES } from '../../constants/LayoutConstants';
 import { determineCardRange, compareGrains } from '../../utils/cardUtilityFunctions';
 
@@ -189,7 +191,60 @@ const CardRenderer = React.memo(
         ) : type === CARD_TYPES.TIMESERIES ? (
           <TimeSeriesCard {...card} {...commonCardProps} />
         ) : type === CARD_TYPES.TABLE ? (
-          <TableCard {...card} {...commonCardProps} />
+          <TableCard
+            {...card}
+            key={card.id}
+            availableActions={cachedActions}
+            dataSource={dataSource}
+            isExpanded={isExpanded}
+            type={type}
+            i18n={i18n}
+            isEditable={isEditable}
+            onCardAction={cachedOnCardAction}
+            breakpoint={breakpoint}
+            dashboardBreakpoints={dashboardBreakpoints}
+            dashboardColumns={dashboardColumns}
+            cardDimensions={cardDimensions}
+            rowHeight={rowHeight}
+          />
+        ) : type === CARD_TYPES.LIST ? (
+          <ListCard
+            {...card}
+            key={card.id}
+            availableActions={cachedActions}
+            dataSource={dataSource}
+            isExpanded={isExpanded}
+            type={type}
+            i18n={i18n}
+            isEditable={isEditable}
+            onCardAction={cachedOnCardAction}
+            breakpoint={breakpoint}
+            dashboardBreakpoints={dashboardBreakpoints}
+            dashboardColumns={dashboardColumns}
+            cardDimensions={cardDimensions}
+            rowHeight={rowHeight}
+            data={card.content.data}
+            loadData={card.content.loadData}
+          />
+        ) : type === CARD_TYPES.CUSTOM ? (
+          <Card
+            {...card}
+            key={card.id}
+            availableActions={cachedActions}
+            dataSource={dataSource}
+            isExpanded={isExpanded}
+            type={type}
+            i18n={i18n}
+            isEditable={isEditable}
+            onCardAction={cachedOnCardAction}
+            breakpoint={breakpoint}
+            dashboardBreakpoints={dashboardBreakpoints}
+            dashboardColumns={dashboardColumns}
+            cardDimensions={cardDimensions}
+            rowHeight={rowHeight}
+          >
+            {card.content}
+          </Card>
         ) : null}
       </div>
     );

@@ -88,6 +88,7 @@ const TimeRangeLabel = styled.span`
 const defaultProps = {
   size: CARD_SIZES.SMALL,
   layout: CARD_SIZES.HORIZONTAL,
+  title: undefined,
   toolbar: undefined,
   timeRange: undefined,
   isLoading: false,
@@ -323,21 +324,24 @@ const Card = ({
           cardWidthSize={sizeWidth.width}
           {...others}
         >
-          <div className="card--header">
-            <span className="card--title" title={title}>
-              {title}&nbsp;
-              {tooltip && (
-                <Tooltip
-                  triggerId={`card-tooltip-trigger-${id}`}
-                  tooltipId={`card-tooltip-${id}`}
-                  triggerText=""
-                >
-                  {tooltip}
-                </Tooltip>
-              )}
-            </span>
-            {toolbar(sizeWidth.width)}
-          </div>
+          {title !== undefined && (
+            <div className="card--header">
+              <span className="card--title" title={title}>
+                {title}&nbsp;
+                {tooltip && (
+                  <Tooltip
+                    triggerId={`card-tooltip-trigger-${id}`}
+                    tooltipId={`card-tooltip-${id}`}
+                    triggerText=""
+                  >
+                    {tooltip}
+                  </Tooltip>
+                )}
+              </span>
+              {toolbar(sizeWidth.width)}
+            </div>
+          )}
+
           <CardContent dimensions={dimensions}>
             {isLoading ? (
               <SkeletonWrapper>

@@ -27,7 +27,7 @@ import DashboardHeader from './DashboardHeader';
 import CardRenderer from './CardRenderer';
 
 const propTypes = {
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
   description: PropTypes.string,
   /** optional actions that will be rendered in the Dashboard header and used in onDashboardAction */
   actions: PropTypes.arrayOf(
@@ -132,6 +132,7 @@ const propTypes = {
     editCardLabel: PropTypes.string,
     cloneCardLabel: PropTypes.string,
     deleteCardLabel: PropTypes.string,
+
     // labels for table card
     criticalLabel: PropTypes.string,
     moderateLabel: PropTypes.string,
@@ -184,6 +185,7 @@ const propTypes = {
 };
 
 const defaultProps = {
+  title: null,
   isEditable: false,
   description: null,
   onLayoutChange: null,
