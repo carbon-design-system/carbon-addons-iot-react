@@ -33,17 +33,6 @@ const LineChartWrapper = styled.div`
       transform: rotateY(0);
       text-anchor: initial !important;
     }
-    .chart-wrapper svg.chart-svg g.x.grid g.tick line {
-      stroke: #dcdcdc;
-    }
-    .expand-btn {
-      display: ${props => (props.isEditable ? 'none' : '')};
-    }
-    .legend-wrapper {
-      height: ${props => (!props.size === CARD_SIZES.MEDIUM ? '40px' : '20px')} !important;
-      margin-top: -10px;
-      padding-right: 20px;
-    }
     .chart-holder {
       width: 100%;
       height: 100%;
@@ -52,14 +41,17 @@ const LineChartWrapper = styled.div`
     .axis-title {
       font-weight: 500;
     }
-    .chart-svg {
+    .bx--cc--chart-svg {
       width: 100%;
       height: 100%;
       circle.dot {
         stroke-opacity: ${props => (props.isEditable ? '1' : '')};
       }
+      circle.dot {
+        opacity: ${props => (props.numberOfPoints > 50 ? '0' : '1')};
+      }
     }
-    .chart-tooltip {
+    .bx--cc--tooltip {
       display: ${props => (props.isEditable ? 'none' : '')};
     }
   }
@@ -253,7 +245,11 @@ const TimeSeriesCard = ({
   return (
     <Card title={title} size={size} {...others} isEditable={isEditable} isEmpty={isAllValuesEmpty}>
       {!others.isLoading && !isAllValuesEmpty ? (
-        <LineChartWrapper size={size} isEditable={isEditable}>
+        <LineChartWrapper
+          size={size}
+          isEditable={isEditable}
+          numberOfPoints={valueSort && valueSort.length}
+        >
           <LineChart
             ref={el => {
               chartRef = el;
