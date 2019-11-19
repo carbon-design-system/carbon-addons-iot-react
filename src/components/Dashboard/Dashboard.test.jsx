@@ -2,7 +2,7 @@ import { mount } from 'enzyme';
 import React from 'react';
 import Add from '@carbon/icons-react/lib/add/20';
 import { iconCrash } from 'carbon-icons';
-import { render, fireEvent } from '@testing-library/react';
+import { render, fireEvent, getBy } from '@testing-library/react';
 
 import { CARD_SIZES, CARD_TYPES, COLORS } from '../../constants/LayoutConstants';
 import { tableColumns, tableData } from '../../utils/sample';
@@ -184,35 +184,6 @@ describe('Dashboard testcases', () => {
     await loadCardData(state, setCard, onFetchData, 'month');
     expect(state.hasLoaded).toEqual(true);
 
-    wrapper = mount(
-      <Dashboard
-        title="My Dashboard"
-        layouts={{ lg: [{ id: 'bogus', x: 0, y: 0 }] }}
-        actions={[
-          { id: 'edit', labelText: 'Edit', icon: 'edit' },
-          { id: 'crash', labelText: 'Crash', icon: iconCrash },
-          { id: 'expand', labelText: 'Expand', icon: iconCrash },
-        ]}
-        cards={[
-          {
-            ...cardValues[3],
-            content: {
-              alt: 'Floor Map',
-              image: 'firstfloor',
-              src: null,
-            },
-            isLoading: true,
-          },
-        ]}
-        onDashboardAction={onClick}
-        hasLastUpdated={false}
-      />
-    );
-
-    // wrapper
-    //   .find('Button')
-    //   .at(0)
-    //   .simulate('click');
     const { getByTitle } = render(
       <Dashboard
         title="My Dashboard"
@@ -238,6 +209,7 @@ describe('Dashboard testcases', () => {
       />
     );
     fireEvent.click(getByTitle('Expand to fullscreen'));
+    expect(getBy('.bx--modal.is-visible')).toBeTruthy();
     fireEvent.click(getByTitle('Close'));
   });
 });
