@@ -193,7 +193,6 @@ storiesOf('Watson IoT|Card', module)
 
       return (
         <SampleCustomCard
-          title={text('title', 'Card Title')}
           id={text('title', 'Card Title')}
           size={size}
           isEditable={boolean('isEditable', false)}
@@ -209,6 +208,7 @@ storiesOf('Watson IoT|Card', module)
       To develop a custom card component.
        - Create a new card component that uses the base Card component
        - See the simple SampleCustomCard in the source code of this story for an example
+       - If you want to hide the title/toolbar, do not pass a title prop
        - (Optionally, if you want to use the card in a Dashboard) Extend the Card Renderer so the Dashboard knows how to render your card type
        - (Optionally, if you want to use the card in a Dashboard) Create a validator for this card type within "utils/schemas/validators" and add it to the validateDashboardJSON function used to validate dashboards on import.
        
