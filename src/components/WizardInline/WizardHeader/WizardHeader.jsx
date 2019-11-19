@@ -36,9 +36,7 @@ class WizardHeader extends Component {
 
     return (
       <Fragment>
-        <h2 className="wizard-inline-header" {...others}>
-          {title}
-        </h2>
+        <h2 className="wizard-inline-header">{title}</h2>
         <ProgressIndicator
           className="wizard-inline-progress-indicator"
           currentItemId={currentItemId}
