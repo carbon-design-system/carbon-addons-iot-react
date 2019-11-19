@@ -28,10 +28,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
         data-id="WizardInlineContainer"
       >
         <h2
-          blurb="My long blurb to explain what is going on"
-          breadcrumb={null}
           className="wizard-inline-header"
-          onClose={[Function]}
         >
           I am a title
         </h2>
@@ -278,10 +275,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
         data-id="WizardInlineContainer"
       >
         <h2
-          blurb={null}
-          breadcrumb={null}
           className="wizard-inline-header"
-          onClose={[Function]}
         >
           Static Wizard
         </h2>
@@ -528,10 +522,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
         data-id="WizardInlineContainer"
       >
         <h2
-          blurb={null}
-          breadcrumb={null}
           className="wizard-inline-header"
-          onClose={[Function]}
         >
           Static Wizard
         </h2>
@@ -819,10 +810,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
         data-id="WizardInlineContainer"
       >
         <h2
-          blurb={null}
-          breadcrumb={null}
           className="wizard-inline-header"
-          onClose={[Function]}
         >
           Static Wizard
         </h2>
@@ -1060,26 +1048,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
         data-id="WizardInlineContainer"
       >
         <h2
-          blurb={null}
-          breadcrumb={
-            Array [
-              <a
-                href="/"
-              >
-                Home
-              </a>,
-              <a
-                href="/"
-              >
-                Type
-              </a>,
-              <span>
-                Instance
-              </span>,
-            ]
-          }
           className="wizard-inline-header"
-          onClose={[Function]}
         >
           Static Wizard
         </h2>
@@ -1326,10 +1295,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
         data-id="WizardInlineContainer"
       >
         <h2
-          blurb={null}
-          breadcrumb={null}
           className="wizard-inline-header"
-          onClose={[Function]}
         >
           Static Wizard
         </h2>
