@@ -61,7 +61,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Navig
           />
           <div>
             <div>
-              Right Content
+              Extra Content
             </div>
           </div>
         </div>
@@ -283,7 +283,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Navig
           />
           <div>
             <div>
-              Right Content
+              Extra Content
             </div>
           </div>
         </div>
@@ -492,7 +492,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Navig
           />
           <div>
             <div>
-              Right Content
+              Extra Content
             </div>
           </div>
         </div>
@@ -701,7 +701,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Navig
           />
           <div>
             <div>
-              Right Content
+              Extra Content
             </div>
           </div>
         </div>

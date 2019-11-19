@@ -20,7 +20,7 @@ const commonPageHeroProps = {
   description:
     'Your data lake displays a detailed view of the entity types that are connected in Watson IoT Platform. To explore the metrics and dimensions of your entities in more detail, select Entities. To start applying calculations and analyzing your entity data, select Data.',
   big: true,
-  extraContent: <div>Right Content</div>,
+  extraContent: <div>Extra Content</div>,
 };
 
 const navBarProps = {

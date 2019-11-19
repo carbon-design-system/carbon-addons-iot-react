@@ -7,7 +7,6 @@ class WizardHeader extends Component {
   static propTypes = {
     /** Title in the header  */
     title: PropTypes.string,
-    blurb: PropTypes.string,
     currentItemId: PropTypes.string.isRequired,
     setItem: PropTypes.func.isRequired,
     items: PropTypes.arrayOf(
@@ -18,13 +17,11 @@ class WizardHeader extends Component {
       })
     ).isRequired,
     showLabels: PropTypes.bool,
-    onClose: PropTypes.func.isRequired,
     stepWidth: PropTypes.number,
   };
 
   static defaultProps = {
     title: null,
-    blurb: null,
     showLabels: true,
     stepWidth: 136,
   };
@@ -32,7 +29,7 @@ class WizardHeader extends Component {
   state = {};
 
   render = () => {
-    const { currentItemId, setItem, items, showLabels, stepWidth, title, ...others } = this.props;
+    const { currentItemId, setItem, items, showLabels, stepWidth, title } = this.props;
 
     return (
       <Fragment>
