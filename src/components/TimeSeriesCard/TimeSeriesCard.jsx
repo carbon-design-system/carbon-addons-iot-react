@@ -209,11 +209,13 @@ const TimeSeriesCard = ({
   };
 
   const handleFillColor = (datasetLabel, label, value, data, originalFillColor) => {
+    const defaultFillColor = !isEditable ? originalFillColor : '#f3f3f3';
     if (!isNil(value)) {
       const matchingAlertRange = findMatchingAlertRange(alertRanges, data);
-      return matchingAlertRange ? matchingAlertRange.color : originalFillColor;
+      return matchingAlertRange ? matchingAlertRange.color : defaultFillColor;
     }
-    return originalFillColor;
+    // If it's editable don't fill the dot
+    return defaultFillColor;
   };
 
   const handleIsFilled = (datasetLabel, label, value, data, isFilled) => {
@@ -221,6 +223,7 @@ const TimeSeriesCard = ({
       const matchingAlertRange = findMatchingAlertRange(alertRanges, data);
       return matchingAlertRange ? true : isFilled;
     }
+
     return isFilled;
   };
 
