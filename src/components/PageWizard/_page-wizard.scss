@@ -3,6 +3,11 @@
 
 .page-wizard {
   display: flex;
+
+  &__sticky {
+    padding-bottom: 5rem;
+  }
+
   &--progress {
     padding-right: $spacing-05;
     flex: 0 0 12rem;
