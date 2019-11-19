@@ -1,16 +1,19 @@
-import React, { useRef, useMemo, useCallback } from 'react';
+import React, { Fragment, useRef, useMemo, useCallback } from 'react';
 import moment from 'moment/min/moment-with-locales.min';
 import { LineChart } from '@carbon/charts-react';
 // TODO: waiting for @carbon/charts support https://github.com/carbon-design-system/carbon-charts/pull/389
 import '@carbon/charts/dist/styles.css';
 import styled from 'styled-components';
 import isNil from 'lodash/isNil';
+import omit from 'lodash/omit';
 import memoize from 'lodash/memoize';
+import capitalize from 'lodash/capitalize';
 import useDeepCompareEffect from 'use-deep-compare-effect';
 
 import { TimeSeriesCardPropTypes, CardPropTypes } from '../../constants/PropTypes';
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 import Card from '../Card/Card';
+import StatefulTable from '../Table/StatefulTable';
 
 import {
   generateSampleValues,
@@ -18,6 +21,14 @@ import {
   formatGraphTick,
   findMatchingAlertRange,
 } from './timeSeriesUtils';
+
+const StyledTable = styled(StatefulTable)`
+  position: absolute;
+  top: 55%;
+  height: 45%;
+  width: 100%;
+  overflow-y: scroll;
+`;
 
 const LineChartWrapper = styled.div`
   padding-left: 16px;
@@ -35,7 +46,7 @@ const LineChartWrapper = styled.div`
     }
     .chart-holder {
       width: 100%;
-      height: 100%;
+      height: ${props => (props.isExpanded ? '50%' : '100%')};
       padding-top: 0.25rem;
     }
     .axis-title {
@@ -114,8 +125,9 @@ const TimeSeriesCard = ({
   isEditable,
   values: valuesProp,
   locale,
-  i18n: { alertDetected },
+  i18n: { alertDetected, noDataLabel },
   i18n,
+  isExpanded,
   ...others
 }) => {
   let chartRef = useRef();
@@ -210,11 +222,13 @@ const TimeSeriesCard = ({
   };
 
   const handleFillColor = (datasetLabel, label, value, data, originalFillColor) => {
+    const defaultFillColor = !isEditable ? originalFillColor : '#f3f3f3';
     if (!isNil(value)) {
       const matchingAlertRange = findMatchingAlertRange(alertRanges, data);
-      return matchingAlertRange ? matchingAlertRange.color : originalFillColor;
+      return matchingAlertRange ? matchingAlertRange.color : defaultFillColor;
     }
-    return originalFillColor;
+    // If it's editable don't fill the dot
+    return defaultFillColor;
   };
 
   const handleIsFilled = (datasetLabel, label, value, data, isFilled) => {
@@ -222,6 +236,7 @@ const TimeSeriesCard = ({
       const matchingAlertRange = findMatchingAlertRange(alertRanges, data);
       return matchingAlertRange ? true : isFilled;
     }
+
     return isFilled;
   };
 
@@ -243,63 +258,150 @@ const TimeSeriesCard = ({
     valueSort,
   ]);
 
+  const tableData = useMemo(
+    () => {
+      return valueSort.map((value, index) => ({
+        id: `dataindex-${index}`,
+        values: {
+          ...omit(value, timeDataSourceId), // skip the timestamp so we can format it locally
+          [timeDataSourceId]: moment(value[timeDataSourceId]).format('L HH:mm'),
+        },
+        isSelectable: false,
+      }));
+    },
+    [timeDataSourceId, valueSort]
+  );
+
+  // In expanded mode we show the data underneath the linechart in a table so need to build the columns
+  const tableColumns = useMemo(
+    () => {
+      // First column is timestamp
+      const columns = [
+        {
+          id: timeDataSourceId,
+          name: capitalize(timeDataSourceId),
+          isSortable: true,
+          type: 'TIMESTAMP',
+        },
+      ];
+      // then the rest in series order
+      return columns.concat(
+        series.map(line => ({
+          id: line.dataSourceId,
+          name: line.label,
+          isSortable: true,
+          filter: { placeholderText: i18n.defaultFilterStringPlaceholdText },
+        }))
+      );
+    },
+    [i18n.defaultFilterStringPlaceholdText, series, timeDataSourceId]
+  );
+
   return (
     <Card
       title={title}
       size={size}
       i18n={i18n}
       {...others}
+      isExpanded={isExpanded}
       isEditable={isEditable}
       isEmpty={isAllValuesEmpty}
     >
       {!others.isLoading && !isAllValuesEmpty ? (
-        <LineChartWrapper
-          size={size}
-          isEditable={isEditable}
-          numberOfPoints={valueSort && valueSort.length}
-        >
-          <LineChart
-            ref={el => {
-              chartRef = el;
-            }}
-            data={chartData}
-            options={{
-              animations: false,
-              accessibility: false,
-              axes: {
-                bottom: {
-                  title: xLabel,
-                  scaleType: 'time',
-                  primary: true,
-                  ticks: {
-                    max: maxTicksPerSize,
-                    formatter: formatTick,
+        <Fragment>
+          <LineChartWrapper
+            size={size}
+            isEditable={isEditable}
+            isExpanded={isExpanded}
+            numberOfPoints={valueSort && valueSort.length}
+          >
+            <LineChart
+              ref={el => {
+                chartRef = el;
+              }}
+              data={chartData}
+              options={{
+                animations: false,
+                accessibility: false,
+                axes: {
+                  bottom: {
+                    title: xLabel,
+                    scaleType: 'time',
+                    primary: true,
+                    ticks: {
+                      max: maxTicksPerSize,
+                      formatter: formatTick,
+                    },
+                  },
+                  left: {
+                    title: yLabel,
+                    formatter: axisValue => valueFormatter(axisValue, size, unit),
+                    yMaxAdjuster: yMaxValue => yMaxValue * 1.3,
+                    secondary: true,
                   },
                 },
-                left: {
-                  title: yLabel,
-                  formatter: axisValue => valueFormatter(axisValue, size, unit),
-                  yMaxAdjuster: yMaxValue => yMaxValue * 1.3,
-                  secondary: true,
+                legend: { position: 'top', clickable: !isEditable, visible: lines.length > 1 },
+                containerResizable: true,
+                tooltip: {
+                  formatter: tooltipValue => valueFormatter(tooltipValue, size, unit),
+                  customHTML: handleTooltip,
+                  gridline: {
+                    enabled: false,
+                  },
                 },
-              },
-              legend: { position: 'top', clickable: !isEditable, visible: lines.length > 1 },
-              containerResizable: true,
-              tooltip: {
-                formatter: tooltipValue => valueFormatter(tooltipValue, size, unit),
-                customHTML: handleTooltip,
-                gridline: {
-                  enabled: false,
+                getStrokeColor: handleStrokeColor,
+                getFillColor: handleFillColor,
+                getIsFilled: handleIsFilled,
+              }}
+              width="100%"
+              height="100%"
+            />
+          </LineChartWrapper>
+          {isExpanded ? (
+            <StyledTable
+              columns={tableColumns}
+              data={tableData}
+              isExpanded={isExpanded}
+              options={{
+                hasPagination: true,
+                hasSearch: true,
+                hasFilter: true,
+              }}
+              actions={{
+                table: {
+                  onRowClicked: () => {},
+                  onRowExpanded: () => {},
+                  onChangeSort: () => {},
                 },
-              },
-              getStrokeColor: handleStrokeColor,
-              getFillColor: handleFillColor,
-              getIsFilled: handleIsFilled,
-            }}
-            width="100%"
-            height="100%"
-          />
-        </LineChartWrapper>
+                pagination: { onChangePage: () => {} },
+                toolbar: {
+                  onClearAllFilters: () => {},
+                  onToggleFilter: () => {},
+                },
+              }}
+              view={{
+                pagination: {
+                  pageSize: 10,
+                  pageSizes: [10, 20, 30],
+                },
+                toolbar: {
+                  activeBar: null,
+                },
+                filters: [],
+                table: {
+                  sort: {
+                    columnId: timeDataSourceId,
+                    direction: 'DESC',
+                  },
+                  emptyState: {
+                    message: noDataLabel,
+                  },
+                },
+              }}
+              i18n={i18n}
+            />
+          ) : null}
+        </Fragment>
       ) : null}
     </Card>
   );
