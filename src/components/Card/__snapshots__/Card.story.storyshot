@@ -354,20 +354,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
       id="Card Title"
     >
       <div
-        className="card--header"
-      >
-        <span
-          className="card--title"
-          title="Card Title"
-        >
-          Card Title
-           
-        </span>
-        <div
-          className="bx--toolbar card--toolbar"
-        />
-      </div>
-      <div
         className="Card__CardContent-v5r71h-1 hoCWQe"
       >
         [{"timestamp":12341231231,"value1":"my value"}]

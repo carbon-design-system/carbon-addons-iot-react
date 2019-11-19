@@ -2,12 +2,17 @@ import React from 'react';
 import { text, boolean } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
+import { Application32, Group32 } from '@carbon/icons-react';
+import { ClickableTile } from 'carbon-components-react';
 
 import FullWidthWrapper from '../../internal/FullWidthWrapper';
 import { getIntervalChartData, tableColumns, tableData } from '../../utils/sample';
 import { CARD_SIZES, CARD_TYPES } from '../../constants/LayoutConstants';
 import imageFile from '../ImageCard/landscape.jpg';
 
+import iconViewDashboards from './dashboard.svg';
+import iconMonitorEntities from './data-scientist-illustration.svg';
+import iconConnectDevices from './computer-chip.svg';
 import Dashboard from './Dashboard';
 
 const originalCards = [
@@ -972,6 +977,237 @@ storiesOf('Watson IoT|Dashboard', module)
             {dashboard}
           </div>,
         ])}
+      </FullWidthWrapper>
+    );
+  })
+  .add('with custom cards', () => {
+    return (
+      <FullWidthWrapper>
+        <div>
+          <Dashboard
+            cards={[
+              {
+                content: (
+                  <ClickableTile
+                    href="https://internetofthings.ibmcloud.com"
+                    style={{ height: '100%', padding: '0 0 0 0' }}
+                  >
+                    <div style={{ padding: '12px' }}>
+                      <h4>View Dashboards</h4>
+                      <br />
+                      <p>View pinned dashboards to keep track of your world in IoT.</p>
+                      <div
+                        style={{
+                          textAlign: 'right',
+                          position: 'absolute',
+                          bottom: '0',
+                          width: '100%',
+                          padding: '0 36px 16px 0',
+                        }}
+                      >
+                        <img
+                          style={{ width: '50%' }}
+                          src={iconViewDashboards}
+                          alt="View Dashboards"
+                        />
+                      </div>
+                    </div>
+                  </ClickableTile>
+                ),
+                id: 'viewDashboards',
+                size: 'SMALL',
+                type: 'CUSTOM',
+              },
+              {
+                content: (
+                  <ClickableTile
+                    href="https://internetofthings.ibmcloud.com"
+                    style={{ height: '100%', padding: '0 0 0 0' }}
+                  >
+                    <div style={{ padding: '12px' }}>
+                      <h4>Connect Devices</h4>
+                      <br />
+                      <p>
+                        Connect devices and collect data by using the Watson IoT Platform Service.
+                      </p>
+                      <div
+                        style={{
+                          textAlign: 'right',
+                          position: 'absolute',
+                          bottom: '0',
+                          width: '100%',
+                          padding: '0 36px 16px 0',
+                        }}
+                      >
+                        <img
+                          style={{ width: '50%' }}
+                          src={iconConnectDevices}
+                          alt="Connect Devices"
+                        />
+                      </div>
+                    </div>
+                  </ClickableTile>
+                ),
+                id: 'connectDevices',
+                size: 'SMALL',
+                type: 'CUSTOM',
+              },
+              {
+                content: (
+                  <div style={{ padding: '12px' }}>
+                    <h4>Monitor Entities</h4>
+                    <br />
+                    <p>Expore your entities and analyze their associated data.</p>
+                    <div
+                      style={{
+                        textAlign: 'right',
+                        position: 'absolute',
+                        bottom: '0',
+                        width: '100%',
+                        padding: '0 36px 16px 0',
+                      }}
+                    >
+                      <img
+                        style={{ width: '50%' }}
+                        src={iconMonitorEntities}
+                        alt="Monitor Entities"
+                      />
+                    </div>
+                  </div>
+                ),
+                id: 'monitorEntities',
+                size: 'SMALL',
+                type: 'CUSTOM',
+              },
+              {
+                content: (
+                  <div style={{ padding: '12px' }}>
+                    <h4>Track Usage</h4>
+                    <br />
+                    <div
+                      style={{
+                        textAlign: 'right',
+                        position: 'absolute',
+                        bottom: '0',
+                        width: '100%',
+                        padding: '0 36px 16px 0',
+                      }}
+                    >
+                      <Application32 aria-label="Track Usage" />
+                    </div>
+                  </div>
+                ),
+                id: 'trackUsage',
+                size: 'XSMALLWIDE',
+                type: 'CUSTOM',
+              },
+              {
+                content: (
+                  <div style={{ padding: '12px' }}>
+                    <h4>Administer Users</h4>
+                    <br />
+                    <div
+                      style={{
+                        textAlign: 'right',
+                        position: 'absolute',
+                        bottom: '0',
+                        width: '100%',
+                        padding: '0 36px 16px 0',
+                      }}
+                    >
+                      <Group32 aria-label="Track Usage" />
+                    </div>
+                  </div>
+                ),
+                id: 'administerUsers',
+                size: 'XSMALLWIDE',
+                type: 'CUSTOM',
+              },
+              {
+                content: {
+                  data: [
+                    {
+                      id: 'row-9',
+                      value: 'Explore entity metrics in the data lake',
+                      link:
+                        'https://www.ibm.com/support/knowledgecenter/SSQP8H/iot/guides/micro-explore.html',
+                      rightContent: (
+                        <span>
+                          View your device data in the entity view of the main Watson IoT Platform
+                          dashboard. If your plan includes Watson IoT Platform Analytics, the data
+                          is stored in the data lake for later retrieval and processing.
+                        </span>
+                      ),
+                    },
+                    {
+                      id: 'row-10',
+                      value: 'Perform simple calculations on your entity metrics',
+                      link:
+                        'https://www.ibm.com/support/knowledgecenter/SSQP8H/iot/guides/micro-calculate.html',
+                      rightContent: (
+                        <span>
+                          Process your entity metrics by running simple or complex calculations to
+                          create calculated metrics.
+                        </span>
+                      ),
+                    },
+                    {
+                      id: 'row-11',
+                      value: 'View entity metrics in a monitoring dashboard',
+                      link:
+                        'https://www.ibm.com/support/knowledgecenter/SSQP8H/iot/guides/micro-monitor.html',
+                      rightContent: (
+                        <span>
+                          Visualize your entity metrics in monitoring dashboards to get an overview
+                          of your data.
+                        </span>
+                      ),
+                    },
+                  ],
+                  loadData: () => {},
+                },
+                id: 'tutorials',
+                size: 'WIDE',
+                title: 'Tutorials',
+                type: 'LIST',
+              },
+              {
+                content: {
+                  data: [
+                    {
+                      id: 'row-9',
+                      value:
+                        'Notice - IBM Watson IoT Platform support for IBM Cloud resource groups',
+                      link: 'https://internetofthings.ibmcloud.com',
+                    },
+                    {
+                      id: 'row-10',
+                      value: 'New Connectivity Status API now available on IBM Watson IoT Platform',
+                      link: 'https://internetofthings.ibmcloud.com',
+                    },
+                    {
+                      id: 'row-11',
+                      value: 'Advanced Notice - Sunset of SPAPI support',
+                      link: 'https://internetofthings.ibmcloud.com',
+                    },
+                    {
+                      id: 'row-12',
+                      value:
+                        'Advanced Notice - Withdrawal of RTI features from Watson IoT Platform',
+                      link: 'https://internetofthings.ibmcloud.com',
+                    },
+                  ],
+                  loadData: () => {},
+                },
+                id: 'announcements',
+                size: 'WIDE',
+                title: 'Announcements',
+                type: 'LIST',
+              },
+            ]}
+            hasLastUpdated={false}
+          />
+        </div>
       </FullWidthWrapper>
     );
   });

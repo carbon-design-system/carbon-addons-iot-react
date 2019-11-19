@@ -27,7 +27,7 @@ import DashboardHeader from './DashboardHeader';
 import CardRenderer from './CardRenderer';
 
 const propTypes = {
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
   description: PropTypes.string,
   /** optional actions that will be rendered in the Dashboard header and used in onDashboardAction */
   actions: PropTypes.arrayOf(
@@ -89,6 +89,10 @@ const propTypes = {
   onBreakpointChange: PropTypes.func,
   /** Callback called when an action is clicked.  The id of the action is passed to the callback */
   onDashboardAction: PropTypes.func,
+  /** Callback called when a card determines what icon render based on a named string in card config
+   *    example usage: renderIconByName(name = 'my--checkmark--icon', props = { title: 'A checkmark', etc. })
+   */
+  renderIconByName: PropTypes.func,
 
   // Data related properties
   /** If the overall dashboard should be using a timeGrain, we pass it here */
@@ -128,6 +132,7 @@ const propTypes = {
     editCardLabel: PropTypes.string,
     cloneCardLabel: PropTypes.string,
     deleteCardLabel: PropTypes.string,
+
     // labels for table card
     criticalLabel: PropTypes.string,
     moderateLabel: PropTypes.string,
@@ -180,6 +185,7 @@ const propTypes = {
 };
 
 const defaultProps = {
+  title: null,
   isEditable: false,
   description: null,
   onLayoutChange: null,
@@ -267,6 +273,7 @@ const defaultProps = {
   hasLastUpdated: true,
   onSetupCard: null,
   onFetchData: null,
+  renderIconByName: null,
   timeGrain: null,
   isLoading: false,
   setIsLoading: null,
@@ -317,6 +324,7 @@ const Dashboard = ({
   onSetupCard,
   // TODO: fix the rendering of the lastUpdated bit, to migrate in the style from our ibm repo
   lastUpdated, // eslint-disable-line
+  renderIconByName,
   onFetchData,
   timeGrain,
 }) => {
@@ -411,6 +419,7 @@ const Dashboard = ({
             breakpoint={breakpoint}
             onSetupCard={onSetupCard}
             onFetchData={handleOnFetchData}
+            renderIconByName={renderIconByName}
             timeGrain={timeGrain}
           />
         ) : null
