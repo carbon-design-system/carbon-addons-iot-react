@@ -1,12 +1,19 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
+import { Close20 } from '@carbon/icons-react';
 
+import PageTitleBar from '../../PageTitleBar/PageTitleBar';
+import Button from '../../Button/Button';
 import ProgressIndicator from '../../ProgressIndicator/ProgressIndicator';
 
 class WizardHeader extends Component {
   static propTypes = {
     /** Title in the header  */
     title: PropTypes.string,
+    description: PropTypes.string,
+    blurb: PropTypes.string,
+    onClose: PropTypes.func,
+    closeButtonTitle: PropTypes.func,
     currentItemId: PropTypes.string.isRequired,
     setItem: PropTypes.func.isRequired,
     items: PropTypes.arrayOf(
@@ -22,18 +29,44 @@ class WizardHeader extends Component {
 
   static defaultProps = {
     title: null,
+    blurb: null,
+    description: null,
     showLabels: true,
     stepWidth: 136,
+    onClose: null,
+    closeButtonTitle: 'Close',
   };
 
   state = {};
 
   render = () => {
-    const { currentItemId, setItem, items, showLabels, stepWidth, title } = this.props;
+    const {
+      currentItemId,
+      setItem,
+      items,
+      showLabels,
+      stepWidth,
+      title,
+      blurb,
+      description,
+      onClose,
+      closeButtonTitle,
+    } = this.props;
+
+    const closeButton = (
+      <Button className="bx--modal-close" title={closeButtonTitle} type="button">
+        <Close20 onClick={onClose} />
+      </Button>
+    );
 
     return (
       <Fragment>
-        <h2 className="wizard-inline-header">{title}</h2>
+        <PageTitleBar
+          className="wizard-inline-header"
+          title={title}
+          description={blurb || description}
+          extraContent={onClose ? closeButton : null}
+        />
         <ProgressIndicator
           className="wizard-inline-progress-indicator"
           currentItemId={currentItemId}
