@@ -9,6 +9,7 @@ import {
 } from 'carbon-components-react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import classNames from 'classnames';
 
 import { CARD_CONTENT_PADDING } from '../../constants/LayoutConstants';
 import { CardPropTypes } from '../../constants/PropTypes';
@@ -59,6 +60,7 @@ const ListCard = ({
   loadData,
   hasMoreData,
   layout,
+  className,
   ...others
 }) => {
   const handleScroll = e => {
@@ -75,15 +77,23 @@ const ListCard = ({
 
   return (
     <Card id={id} title={title} size={size} onScroll={handleScroll} {...others}>
-      <StyledContentWrapper>
+      <div
+        className={classNames('contentWrapper', className)}
+        style={{
+          paddingTop: 0,
+          paddingRight: CARD_CONTENT_PADDING,
+          paddingBottom: 0,
+          paddingLeft: CARD_CONTENT_PADDING,
+        }}
+      >
         <StructuredListWrapper>
           <StructuredListBody>
             {data
               ? data.map(item => {
                   return (
                     <StructuredListRow key={item.id}>
-                      <StyledStructuredListCell key={`${item.id}-cell`}>
-                        <StyledValueSpan>
+                      <div className={classNames('cell', className)} key={`${item.id}-cell`}>
+                        <div className={classNames('value', className)}>
                           {item.link ? (
                             <Link style={{ display: 'inherit' }} target="_blank" href={item.link}>
                               {item.value}
@@ -91,11 +101,13 @@ const ListCard = ({
                           ) : (
                             item.value
                           )}
-                        </StyledValueSpan>
+                        </div>
                         {item.rightContent ? (
-                          <StyledSpan>{item.rightContent ? item.rightContent : null}</StyledSpan>
+                          <div className={classNames('rightContent', className)}>
+                            {item.rightContent ? item.rightContent : null}
+                          </div>
                         ) : null}
-                      </StyledStructuredListCell>
+                      </div>
                     </StructuredListRow>
                   );
                 })
@@ -104,7 +116,7 @@ const ListCard = ({
             {isLoading ? <InlineLoading description="Loading data..." status="active" /> : null}
           </StructuredListBody>
         </StructuredListWrapper>
-      </StyledContentWrapper>
+      </div>
     </Card>
   );
 };

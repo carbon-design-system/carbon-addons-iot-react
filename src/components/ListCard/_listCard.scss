@@ -1,0 +1,30 @@
+@import '~carbon-components/scss/globals/scss/vars';
+
+.contentWrapper {
+  height: 100%;
+  overflow-y: auto;
+  padding: 0px;
+  width: 100%;
+  .bx--structured-list {
+    min-width: inherit;
+  }
+}
+
+.cell {
+  display: flex;
+  padding-left: 10px;
+  padding-right: 10px;
+  max-width: 100%;
+}
+
+.rightContent {
+  display: flex;
+  flex: 1;
+  align-self: center;
+  justify-content: flex-end;
+}
+
+.value {
+  flex: 1;
+  padding-right: 12px;
+}
