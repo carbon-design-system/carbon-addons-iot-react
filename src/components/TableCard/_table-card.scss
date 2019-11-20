@@ -3,24 +3,24 @@
 .toolbar-button {
   background: transparent;
   border: none;
-  color: unset;
+  color: $icon-01;
   display: flex;
   height: 3rem;
   width: 3rem;
   outline: 2px solid transparent;
 
   &:hover {
-    background: #e5e5e5;
+    background: $hover-ui;
   }
 
   &:active,
   &:focus {
-    outline: 2px solid #0062ff;
+    outline: 2px solid $link-01;
     outline-offset: -2px;
   }
 
   &.#{$prefix}--btn {
-    padding: 1rem;
+    padding: $spacing-05;
 
     & > svg {
       margin: 0;
