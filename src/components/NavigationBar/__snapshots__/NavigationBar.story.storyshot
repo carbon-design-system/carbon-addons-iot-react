@@ -29,40 +29,40 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Navig
       className="NavigationBar__StyledNavigationContainer-bw68kq-0 cAEAQd"
     >
       <div
-        className="PageHero__StyledPageHero-sc-1k4oefb-0 jZTvNr"
+        className="page-title-bar"
       >
         <div
-          className="PageHero__StyledTitle-sc-1k4oefb-3 dijkPK"
+          className="page-title-bar-header"
         >
-          <div
-            className="PageTitle__StyledPageTitle-sc-1x4wg61-0 MhXQw"
-          >
-            <h1
-              className="PageTitle__StyledPageTitleH1-sc-1x4wg61-2 uwbjE"
+          <div>
+            <div
+              className="page-title-bar-title"
             >
-              <span
-                className="PageTitle__StyledPageSection-sc-1x4wg61-1 dUHWaW"
+              <div
+                className="page-title-bar-title--text"
               >
-                Explore /
-              </span>
-              Your Devices
-            </h1>
-          </div>
-          <div
-            className="PageHero__StyledPageHeroWrap-sc-1k4oefb-1 dymYXa"
-          >
+                <h2>
+                  Your Devices
+                </h2>
+              </div>
+            </div>
             <p
-              className="PageHero__StyledPageBlurb-sc-1k4oefb-2 jjUFol"
+              className="page-title-bar-description"
             >
               Your data lake displays a detailed view of the entity types that are connected in Watson IoT Platform. To explore the metrics and dimensions of your entities in more detail, select Entities. To start applying calculations and analyzing your entity data, select Data.
             </p>
           </div>
-        </div>
-        <div
-          className="PageHero__StyledRightContent-sc-1k4oefb-4 jzJCmH"
-        >
+          <div
+            style={
+              Object {
+                "flex": 1,
+              }
+            }
+          />
           <div>
-            Right Content
+            <div>
+              Extra Content
+            </div>
           </div>
         </div>
       </div>
@@ -251,40 +251,40 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Navig
       className="NavigationBar__StyledNavigationContainer-bw68kq-0 cAEAQd"
     >
       <div
-        className="PageHero__StyledPageHero-sc-1k4oefb-0 jZTvNr"
+        className="page-title-bar"
       >
         <div
-          className="PageHero__StyledTitle-sc-1k4oefb-3 dijkPK"
+          className="page-title-bar-header"
         >
-          <div
-            className="PageTitle__StyledPageTitle-sc-1x4wg61-0 MhXQw"
-          >
-            <h1
-              className="PageTitle__StyledPageTitleH1-sc-1x4wg61-2 uwbjE"
+          <div>
+            <div
+              className="page-title-bar-title"
             >
-              <span
-                className="PageTitle__StyledPageSection-sc-1x4wg61-1 dUHWaW"
+              <div
+                className="page-title-bar-title--text"
               >
-                Explore /
-              </span>
-              Your Devices
-            </h1>
-          </div>
-          <div
-            className="PageHero__StyledPageHeroWrap-sc-1k4oefb-1 dymYXa"
-          >
+                <h2>
+                  Your Devices
+                </h2>
+              </div>
+            </div>
             <p
-              className="PageHero__StyledPageBlurb-sc-1k4oefb-2 jjUFol"
+              className="page-title-bar-description"
             >
               Your data lake displays a detailed view of the entity types that are connected in Watson IoT Platform. To explore the metrics and dimensions of your entities in more detail, select Entities. To start applying calculations and analyzing your entity data, select Data.
             </p>
           </div>
-        </div>
-        <div
-          className="PageHero__StyledRightContent-sc-1k4oefb-4 jzJCmH"
-        >
+          <div
+            style={
+              Object {
+                "flex": 1,
+              }
+            }
+          />
           <div>
-            Right Content
+            <div>
+              Extra Content
+            </div>
           </div>
         </div>
       </div>
@@ -460,40 +460,40 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Navig
       className="NavigationBar__StyledNavigationContainer-bw68kq-0 cAEAQd"
     >
       <div
-        className="PageHero__StyledPageHero-sc-1k4oefb-0 jZTvNr"
+        className="page-title-bar"
       >
         <div
-          className="PageHero__StyledTitle-sc-1k4oefb-3 dijkPK"
+          className="page-title-bar-header"
         >
-          <div
-            className="PageTitle__StyledPageTitle-sc-1x4wg61-0 MhXQw"
-          >
-            <h1
-              className="PageTitle__StyledPageTitleH1-sc-1x4wg61-2 uwbjE"
+          <div>
+            <div
+              className="page-title-bar-title"
             >
-              <span
-                className="PageTitle__StyledPageSection-sc-1x4wg61-1 dUHWaW"
+              <div
+                className="page-title-bar-title--text"
               >
-                Explore /
-              </span>
-              Your Devices
-            </h1>
-          </div>
-          <div
-            className="PageHero__StyledPageHeroWrap-sc-1k4oefb-1 dymYXa"
-          >
+                <h2>
+                  Your Devices
+                </h2>
+              </div>
+            </div>
             <p
-              className="PageHero__StyledPageBlurb-sc-1k4oefb-2 jjUFol"
+              className="page-title-bar-description"
             >
               Your data lake displays a detailed view of the entity types that are connected in Watson IoT Platform. To explore the metrics and dimensions of your entities in more detail, select Entities. To start applying calculations and analyzing your entity data, select Data.
             </p>
           </div>
-        </div>
-        <div
-          className="PageHero__StyledRightContent-sc-1k4oefb-4 jzJCmH"
-        >
+          <div
+            style={
+              Object {
+                "flex": 1,
+              }
+            }
+          />
           <div>
-            Right Content
+            <div>
+              Extra Content
+            </div>
           </div>
         </div>
       </div>
@@ -669,40 +669,40 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Navig
       className="NavigationBar__StyledNavigationContainer-bw68kq-0 cAEAQd"
     >
       <div
-        className="PageHero__StyledPageHero-sc-1k4oefb-0 jZTvNr"
+        className="page-title-bar"
       >
         <div
-          className="PageHero__StyledTitle-sc-1k4oefb-3 dijkPK"
+          className="page-title-bar-header"
         >
-          <div
-            className="PageTitle__StyledPageTitle-sc-1x4wg61-0 MhXQw"
-          >
-            <h1
-              className="PageTitle__StyledPageTitleH1-sc-1x4wg61-2 uwbjE"
+          <div>
+            <div
+              className="page-title-bar-title"
             >
-              <span
-                className="PageTitle__StyledPageSection-sc-1x4wg61-1 dUHWaW"
+              <div
+                className="page-title-bar-title--text"
               >
-                Explore /
-              </span>
-              Your Devices
-            </h1>
-          </div>
-          <div
-            className="PageHero__StyledPageHeroWrap-sc-1k4oefb-1 dymYXa"
-          >
+                <h2>
+                  Your Devices
+                </h2>
+              </div>
+            </div>
             <p
-              className="PageHero__StyledPageBlurb-sc-1k4oefb-2 jjUFol"
+              className="page-title-bar-description"
             >
               Your data lake displays a detailed view of the entity types that are connected in Watson IoT Platform. To explore the metrics and dimensions of your entities in more detail, select Entities. To start applying calculations and analyzing your entity data, select Data.
             </p>
           </div>
-        </div>
-        <div
-          className="PageHero__StyledRightContent-sc-1k4oefb-4 jzJCmH"
-        >
+          <div
+            style={
+              Object {
+                "flex": 1,
+              }
+            }
+          />
           <div>
-            Right Content
+            <div>
+              Extra Content
+            </div>
           </div>
         </div>
       </div>
