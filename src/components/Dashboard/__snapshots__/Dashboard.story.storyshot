@@ -1025,7 +1025,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-3 jTKDEr"
                         >
                           <button
-                            className="TableCard__ToolbarButton-q9l5bz-4 iFxaZU bx--btn bx--btn--sm bx--btn--ghost"
+                            className="toolbar-button bx--btn bx--btn--sm bx--btn--ghost"
                             disabled={false}
                             onClick={[Function]}
                             tabIndex={0}
@@ -2876,7 +2876,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-3 jTKDEr"
                         >
                           <button
-                            className="TableCard__ToolbarButton-q9l5bz-4 iFxaZU bx--btn bx--btn--sm bx--btn--ghost"
+                            className="toolbar-button bx--btn bx--btn--sm bx--btn--ghost"
                             disabled={false}
                             onClick={[Function]}
                             tabIndex={0}
@@ -4759,7 +4759,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-3 jTKDEr"
                         >
                           <button
-                            className="TableCard__ToolbarButton-q9l5bz-4 iFxaZU bx--btn bx--btn--sm bx--btn--ghost"
+                            className="toolbar-button bx--btn bx--btn--sm bx--btn--ghost"
                             disabled={false}
                             onClick={[Function]}
                             tabIndex={0}
@@ -6153,7 +6153,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-3 jTKDEr"
                         >
                           <button
-                            className="TableCard__ToolbarButton-q9l5bz-4 iFxaZU bx--btn bx--btn--sm bx--btn--ghost"
+                            className="toolbar-button bx--btn bx--btn--sm bx--btn--ghost"
                             disabled={false}
                             onClick={[Function]}
                             tabIndex={0}
@@ -8795,7 +8795,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-3 jTKDEr"
                         >
                           <button
-                            className="TableCard__ToolbarButton-q9l5bz-4 iFxaZU bx--btn bx--btn--sm bx--btn--ghost"
+                            className="toolbar-button bx--btn bx--btn--sm bx--btn--ghost"
                             disabled={false}
                             onClick={[Function]}
                             tabIndex={0}
@@ -21072,7 +21072,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-3 jTKDEr"
                         >
                           <button
-                            className="TableCard__ToolbarButton-q9l5bz-4 iFxaZU bx--btn bx--btn--sm bx--btn--ghost"
+                            className="toolbar-button bx--btn bx--btn--sm bx--btn--ghost"
                             disabled={false}
                             onClick={[Function]}
                             tabIndex={0}
