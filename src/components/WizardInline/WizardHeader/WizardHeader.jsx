@@ -13,7 +13,7 @@ class WizardHeader extends Component {
     description: PropTypes.string,
     blurb: PropTypes.string,
     onClose: PropTypes.func,
-    closeButtonTitle: PropTypes.func,
+    closeButtonTitle: PropTypes.string,
     currentItemId: PropTypes.string.isRequired,
     setItem: PropTypes.func.isRequired,
     items: PropTypes.arrayOf(

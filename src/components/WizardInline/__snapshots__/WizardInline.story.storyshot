@@ -27,11 +27,68 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
         className="bx--modal-container"
         data-id="WizardInlineContainer"
       >
-        <h2
-          className="wizard-inline-header"
+        <div
+          className="wizard-inline-header page-title-bar"
         >
-          I am a title
-        </h2>
+          <div
+            className="page-title-bar-header"
+          >
+            <div>
+              <div
+                className="page-title-bar-title"
+              >
+                <div
+                  className="page-title-bar-title--text"
+                >
+                  <h2>
+                    I am a title
+                  </h2>
+                </div>
+              </div>
+              <p
+                className="page-title-bar-description"
+              >
+                My long blurb to explain what is going on
+              </p>
+            </div>
+            <div
+              style={
+                Object {
+                  "flex": 1,
+                }
+              }
+            />
+            <div>
+              <button
+                className="bx--modal-close Button__StyledButton-sc-19kycwu-0 PhzAJ bx--btn bx--btn--primary"
+                disabled={false}
+                tabIndex={0}
+                title="Close"
+                type="button"
+              >
+                <svg
+                  aria-hidden={true}
+                  focusable="false"
+                  height={20}
+                  onClick={[Function]}
+                  preserveAspectRatio="xMidYMid meet"
+                  style={
+                    Object {
+                      "willChange": "transform",
+                    }
+                  }
+                  viewBox="0 0 32 32"
+                  width={20}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4l6.6 6.6L8 22.6 9.4 24l6.6-6.6 6.6 6.6 1.4-1.4-6.6-6.6L24 9.4z"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
         <ul
           className="bx--progress wizard-inline-progress-indicator  ProgressIndicator__StyledProgressIndicator-sc-1sy51cd-0 egbeyA"
           onChange={[Function]}
@@ -274,11 +331,63 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
         className="bx--modal-container"
         data-id="WizardInlineContainer"
       >
-        <h2
-          className="wizard-inline-header"
+        <div
+          className="wizard-inline-header page-title-bar"
         >
-          Static Wizard
-        </h2>
+          <div
+            className="page-title-bar-header"
+          >
+            <div>
+              <div
+                className="page-title-bar-title"
+              >
+                <div
+                  className="page-title-bar-title--text"
+                >
+                  <h2>
+                    Static Wizard
+                  </h2>
+                </div>
+              </div>
+            </div>
+            <div
+              style={
+                Object {
+                  "flex": 1,
+                }
+              }
+            />
+            <div>
+              <button
+                className="bx--modal-close Button__StyledButton-sc-19kycwu-0 PhzAJ bx--btn bx--btn--primary"
+                disabled={false}
+                tabIndex={0}
+                title="Close"
+                type="button"
+              >
+                <svg
+                  aria-hidden={true}
+                  focusable="false"
+                  height={20}
+                  onClick={[Function]}
+                  preserveAspectRatio="xMidYMid meet"
+                  style={
+                    Object {
+                      "willChange": "transform",
+                    }
+                  }
+                  viewBox="0 0 32 32"
+                  width={20}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4l6.6 6.6L8 22.6 9.4 24l6.6-6.6 6.6 6.6 1.4-1.4-6.6-6.6L24 9.4z"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
         <ul
           className="bx--progress wizard-inline-progress-indicator  ProgressIndicator__StyledProgressIndicator-sc-1sy51cd-0 egbeyA"
           onChange={[Function]}
@@ -521,11 +630,63 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
         className="bx--modal-container"
         data-id="WizardInlineContainer"
       >
-        <h2
-          className="wizard-inline-header"
+        <div
+          className="wizard-inline-header page-title-bar"
         >
-          Static Wizard
-        </h2>
+          <div
+            className="page-title-bar-header"
+          >
+            <div>
+              <div
+                className="page-title-bar-title"
+              >
+                <div
+                  className="page-title-bar-title--text"
+                >
+                  <h2>
+                    Static Wizard
+                  </h2>
+                </div>
+              </div>
+            </div>
+            <div
+              style={
+                Object {
+                  "flex": 1,
+                }
+              }
+            />
+            <div>
+              <button
+                className="bx--modal-close Button__StyledButton-sc-19kycwu-0 PhzAJ bx--btn bx--btn--primary"
+                disabled={false}
+                tabIndex={0}
+                title="Close"
+                type="button"
+              >
+                <svg
+                  aria-hidden={true}
+                  focusable="false"
+                  height={20}
+                  onClick={[Function]}
+                  preserveAspectRatio="xMidYMid meet"
+                  style={
+                    Object {
+                      "willChange": "transform",
+                    }
+                  }
+                  viewBox="0 0 32 32"
+                  width={20}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4l6.6 6.6L8 22.6 9.4 24l6.6-6.6 6.6 6.6 1.4-1.4-6.6-6.6L24 9.4z"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
         <ul
           className="bx--progress wizard-inline-progress-indicator  ProgressIndicator__StyledProgressIndicator-sc-1sy51cd-0 egbeyA"
           onChange={[Function]}
@@ -809,11 +970,63 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
         className="bx--modal-container"
         data-id="WizardInlineContainer"
       >
-        <h2
-          className="wizard-inline-header"
+        <div
+          className="wizard-inline-header page-title-bar"
         >
-          Static Wizard
-        </h2>
+          <div
+            className="page-title-bar-header"
+          >
+            <div>
+              <div
+                className="page-title-bar-title"
+              >
+                <div
+                  className="page-title-bar-title--text"
+                >
+                  <h2>
+                    Static Wizard
+                  </h2>
+                </div>
+              </div>
+            </div>
+            <div
+              style={
+                Object {
+                  "flex": 1,
+                }
+              }
+            />
+            <div>
+              <button
+                className="bx--modal-close Button__StyledButton-sc-19kycwu-0 PhzAJ bx--btn bx--btn--primary"
+                disabled={false}
+                tabIndex={0}
+                title="Close"
+                type="button"
+              >
+                <svg
+                  aria-hidden={true}
+                  focusable="false"
+                  height={20}
+                  onClick={[Function]}
+                  preserveAspectRatio="xMidYMid meet"
+                  style={
+                    Object {
+                      "willChange": "transform",
+                    }
+                  }
+                  viewBox="0 0 32 32"
+                  width={20}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4l6.6 6.6L8 22.6 9.4 24l6.6-6.6 6.6 6.6 1.4-1.4-6.6-6.6L24 9.4z"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
         <ul
           className="bx--progress wizard-inline-progress-indicator  ProgressIndicator__StyledProgressIndicator-sc-1sy51cd-0 egbeyA"
           onChange={[Function]}
@@ -1047,11 +1260,63 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
         className="bx--modal-container"
         data-id="WizardInlineContainer"
       >
-        <h2
-          className="wizard-inline-header"
+        <div
+          className="wizard-inline-header page-title-bar"
         >
-          Static Wizard
-        </h2>
+          <div
+            className="page-title-bar-header"
+          >
+            <div>
+              <div
+                className="page-title-bar-title"
+              >
+                <div
+                  className="page-title-bar-title--text"
+                >
+                  <h2>
+                    Static Wizard
+                  </h2>
+                </div>
+              </div>
+            </div>
+            <div
+              style={
+                Object {
+                  "flex": 1,
+                }
+              }
+            />
+            <div>
+              <button
+                className="bx--modal-close Button__StyledButton-sc-19kycwu-0 PhzAJ bx--btn bx--btn--primary"
+                disabled={false}
+                tabIndex={0}
+                title="Close"
+                type="button"
+              >
+                <svg
+                  aria-hidden={true}
+                  focusable="false"
+                  height={20}
+                  onClick={[Function]}
+                  preserveAspectRatio="xMidYMid meet"
+                  style={
+                    Object {
+                      "willChange": "transform",
+                    }
+                  }
+                  viewBox="0 0 32 32"
+                  width={20}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4l6.6 6.6L8 22.6 9.4 24l6.6-6.6 6.6 6.6 1.4-1.4-6.6-6.6L24 9.4z"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
         <ul
           className="bx--progress wizard-inline-progress-indicator  ProgressIndicator__StyledProgressIndicator-sc-1sy51cd-0 egbeyA"
           onChange={[Function]}
@@ -1294,11 +1559,63 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
         className="bx--modal-container"
         data-id="WizardInlineContainer"
       >
-        <h2
-          className="wizard-inline-header"
+        <div
+          className="wizard-inline-header page-title-bar"
         >
-          Static Wizard
-        </h2>
+          <div
+            className="page-title-bar-header"
+          >
+            <div>
+              <div
+                className="page-title-bar-title"
+              >
+                <div
+                  className="page-title-bar-title--text"
+                >
+                  <h2>
+                    Static Wizard
+                  </h2>
+                </div>
+              </div>
+            </div>
+            <div
+              style={
+                Object {
+                  "flex": 1,
+                }
+              }
+            />
+            <div>
+              <button
+                className="bx--modal-close Button__StyledButton-sc-19kycwu-0 PhzAJ bx--btn bx--btn--primary"
+                disabled={false}
+                tabIndex={0}
+                title="Close"
+                type="button"
+              >
+                <svg
+                  aria-hidden={true}
+                  focusable="false"
+                  height={20}
+                  onClick={[Function]}
+                  preserveAspectRatio="xMidYMid meet"
+                  style={
+                    Object {
+                      "willChange": "transform",
+                    }
+                  }
+                  viewBox="0 0 32 32"
+                  width={20}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4l6.6 6.6L8 22.6 9.4 24l6.6-6.6 6.6 6.6 1.4-1.4-6.6-6.6L24 9.4z"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
         <ul
           className="bx--progress wizard-inline-progress-indicator  ProgressIndicator__StyledProgressIndicator-sc-1sy51cd-0 egbeyA"
           onChange={[Function]}

@@ -17,8 +17,8 @@ describe('StatefulWizardInline', () => {
     const mockNext = jest.fn();
     const wrapper = mount(<StatefulWizardInline {...commonWizardProps} onNext={mockNext} />);
     const cancelAndNextButtons = wrapper.find('.bx--btn');
-    expect(cancelAndNextButtons).toHaveLength(2);
-    cancelAndNextButtons.at(1).simulate('click');
+    expect(cancelAndNextButtons).toHaveLength(3);
+    cancelAndNextButtons.at(2).simulate('click');
     expect(mockNext).toHaveBeenCalled();
   });
   test('setItem', () => {
@@ -80,7 +80,7 @@ describe('StatefulWizardInline', () => {
       />
     );
     const cancelAndNextButtons = wrapper.find('.bx--btn');
-    expect(cancelAndNextButtons).toHaveLength(2);
+    expect(cancelAndNextButtons).toHaveLength(3);
     cancelAndNextButtons.at(1).simulate('click');
     expect(mockNext).not.toHaveBeenCalled();
   });
@@ -88,8 +88,8 @@ describe('StatefulWizardInline', () => {
     const mockClose = jest.fn();
     const wrapper = mount(<StatefulWizardInline {...commonWizardProps} onClose={mockClose} />);
     const cancelAndNextButtons = wrapper.find('.bx--btn');
-    expect(cancelAndNextButtons).toHaveLength(2);
-    cancelAndNextButtons.at(0).simulate('click');
+    expect(cancelAndNextButtons).toHaveLength(3);
+    cancelAndNextButtons.at(1).simulate('click');
     expect(mockClose).toHaveBeenCalled();
   });
   test('onBack', () => {
@@ -102,8 +102,8 @@ describe('StatefulWizardInline', () => {
       />
     );
     const backAndNextButtons = wrapper.find('.bx--btn');
-    expect(backAndNextButtons).toHaveLength(2);
-    backAndNextButtons.at(0).simulate('click');
+    expect(backAndNextButtons).toHaveLength(3);
+    backAndNextButtons.at(1).simulate('click');
     expect(mockBack).toHaveBeenCalled();
   });
 });
