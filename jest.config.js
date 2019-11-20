@@ -89,6 +89,7 @@ module.exports = {
     __DEV__: false,
   },
   setupFiles: ['<rootDir>/config/jest/setup.js'],
+  setupFilesAfterEnv: ['<rootDir>/config/jest/setupTest.js'],
   testMatch: [
     '<rootDir>/**/__tests__/**/*.js?(x)',
     '<rootDir>/**/?(*.)(spec|test).js?(x)',
@@ -102,7 +103,7 @@ module.exports = {
   },
   testPathIgnorePatterns: ['/config/', '/lib/'],
   transformIgnorePatterns: ['/node_modules/(?!(@carbon/charts)).+(.jsx?)'],
-
+  watchPathIgnorePatterns: ['/coverage/', '/results/', '/.git/'],
   moduleFileExtensions: ['js', 'json', 'jsx'],
   snapshotSerializers: ['enzyme-to-json/serializer'],
 };
