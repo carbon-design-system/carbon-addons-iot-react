@@ -175,7 +175,9 @@ const PageWizard = ({
   });
 
   return (
-    <div className={['page-wizard', className].join(' ')}>
+    <div
+      className={['page-wizard', className, hasStickyFooter ? 'page-wizard__sticky' : ''].join(' ')}
+    >
       {steps.length > 1 ? (
         <div className="page-wizard--progress">
           <ProgressIndicator
