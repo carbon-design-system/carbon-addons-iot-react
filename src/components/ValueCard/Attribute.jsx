@@ -141,7 +141,7 @@ const Attribute = ({
     ? {
         title: `${matchingThreshold.comparison} ${matchingThreshold.value}`,
         fill: matchingThreshold.color,
-        tabindex: 0,
+        tabIndex: '0',
         description: `${matchingThreshold.comparison} ${matchingThreshold.value}`,
       }
     : {};
