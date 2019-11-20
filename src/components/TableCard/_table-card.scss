@@ -1,0 +1,29 @@
+@import '~carbon-components/scss/globals/scss/vars';
+
+.toolbar-button {
+  background: transparent;
+  border: none;
+  color: unset;
+  display: flex;
+  height: 3rem;
+  width: 3rem;
+  outline: 2px solid transparent;
+
+  &:hover {
+    background: #e5e5e5;
+  }
+
+  &:active,
+  &:focus {
+    outline: 2px solid #0062ff;
+    outline-offset: -2px;
+  }
+
+  &.#{$prefix}--btn {
+    padding: 1rem;
+
+    & > svg {
+      margin: 0;
+    }
+  }
+}

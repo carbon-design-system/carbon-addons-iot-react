@@ -130,12 +130,6 @@ const StyledExpandedRowContent = styled.div`
   }
 `;
 
-const ToolbarButton = styled(Button)`
-  &.bx--btn > svg {
-    margin: 0;
-  }
-`;
-
 const StyledIconDiv = styled.div`
   display: flex;
 `;
@@ -737,7 +731,8 @@ const TableCard = ({
                 activeBar: null,
                 isDisabled: isEditable,
                 customToolbarContent: (
-                  <ToolbarButton
+                  <Button
+                    className="toolbar-button"
                     kind="ghost"
                     size="small"
                     renderIcon={Download16}
