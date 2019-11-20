@@ -25,11 +25,11 @@
     "prepare": "yarn build",
     "start": "yarn storybook",
     "storybook": "start-storybook -p 3000 -s public/development",
-    "test": "cross-env NODE_OPTIONS='--max-old-space-size=8096' jest --detectOpenHandles",
-    "test:a11y": "jest --testPathPattern='src\\/([^\\s]+)\\/([a-zA-Z0-9\\s_\\\\.\\-\\(\\):])+(\\.test\\.a11y\\.)+(js|jsx)$'",
-    "test:watch": "cross-env NODE_OPTIONS='--max-old-space-size=8096' jest  --watch --verbose",
-    "test:update": "cross-env NODE_OPTIONS='--max-old-space-size=8096' jest  --updateSnapshot",
-    "test:clear": "jest --clearCache"
+    "test": "cross-env TZ=America/Chicago NODE_OPTIONS='--max-old-space-size=8096' jest --detectOpenHandles",
+    "test:a11y": "cross-env TZ=America/Chicago jest --testPathPattern='src\\/([^\\s]+)\\/([a-zA-Z0-9\\s_\\\\.\\-\\(\\):])+(\\.test\\.a11y\\.)+(js|jsx)$'",
+    "test:watch": "cross-env TZ=America/Chicago NODE_OPTIONS='--max-old-space-size=8096' jest  --watch --verbose",
+    "test:update": "cross-env TZ=America/Chicago NODE_OPTIONS='--max-old-space-size=8096' jest  --updateSnapshot",
+    "test:clear": "cross-env TZ=America/Chicago jest --clearCache"
   },
   "stylelint": {
     "extends": "stylelint-config-recommended-scss",
