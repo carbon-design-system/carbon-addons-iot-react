@@ -2783,7 +2783,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                     <svg
                       description="< 5"
                       fill="green"
-                      focusable="false"
+                      focusable="true"
                       height={16}
                       preserveAspectRatio="xMidYMid meet"
                       role="img"
@@ -2792,6 +2792,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                           "willChange": "transform",
                         }
                       }
+                      tabIndex="0"
                       title="< 5"
                       viewBox="0 0 32 32"
                       width={16}
