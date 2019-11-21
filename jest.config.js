@@ -1,10 +1,5 @@
 module.exports = {
-  collectCoverage: true,
-  collectCoverageFrom: [
-    'src/components/**/*.js?(x)',
-    '!src/**/*.story.js?(x)',
-    '!src/**/?(*.)test.a11y.js?(x)',
-  ],
+  collectCoverageFrom: ['src/components/**/*.js?(x)', '!src/**/*.story.js?(x)'],
   coveragePathIgnorePatterns: ['/node_modules/', '/lib/', '/coverage/'],
   coverageReporters: ['html', 'text-summary'],
   coverageThreshold: {
@@ -14,7 +9,7 @@ module.exports = {
       functions: 80,
       lines: 80,
     },
-    './src/components/**/!(ColumnHeaderRow|ColumnHeaderSelect|FilterHeaderRow|TableToolbar|RowActionsCell|RowActionsError|StatefulWizardInline|WizardInline|StatefulTable|StatefulTableDetailWizard|CatalogContent|FileDrop|HeaderMenu|Dashboard|CardRenderer|Attribute|UnitRenderer|ImageHotspots|ImageControls|TimeSeriesCard|ListCard|StatefulPageWizard|PageHero|PageTitle|EditPage|AsyncTable|ImageCard|WizardHeader).jsx': {
+    './src/components/**/!(ColumnHeaderRow|ColumnHeaderSelect|FilterHeaderRow|TableToolbar|RowActionsCell|RowActionsError|StatefulWizardInline|WizardInline|WizardHeader|StatefulTable|StatefulTableDetailWizard|CatalogContent|FileDrop|HeaderMenu|Dashboard|CardRenderer|Attribute|UnitRenderer|ImageHotspots|ImageControls|TimeSeriesCard|ListCard|StatefulPageWizard|PageHero|PageTitle|EditPage|AsyncTable|ImageCard).jsx': {
       statements: 80,
       branches: 80,
       functions: 80,
@@ -95,7 +90,11 @@ module.exports = {
   },
   setupFiles: ['<rootDir>/config/jest/setup.js'],
   setupFilesAfterEnv: ['<rootDir>/config/jest/setupTest.js'],
-  testMatch: ['<rootDir>/**/__tests__/**/*.js?(x)', '<rootDir>/**/?(*.)(spec|test).js?(x)'],
+  testMatch: [
+    '<rootDir>/**/__tests__/**/*.js?(x)',
+    '<rootDir>/**/?(*.)(spec|test).js?(x)',
+    '<rootDir>/**/?(*.)test.a11y.js?(x)',
+  ],
   testURL: 'http://localhost',
   transform: {
     '^.+\\.jsx?$': 'babel-jest',
