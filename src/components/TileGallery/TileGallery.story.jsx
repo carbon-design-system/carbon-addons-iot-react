@@ -282,8 +282,6 @@ storiesOf('Watson IoT Experimental|TileGallery', module)
         </OverflowMenu>
       }
       href="https://www.ibm.com/br-pt/cloud/internet-of-things?mhsrc=ibmsearch_a&mhq=iot"
-      width={text('Card width', '305px')}
-      height={text('Card height', '272px')}
       className="some-class"
     />
   ))
