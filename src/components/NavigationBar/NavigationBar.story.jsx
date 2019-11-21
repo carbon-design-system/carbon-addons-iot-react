@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import styled from 'styled-components';
 
-import PageHero from '../Page/PageHero';
+import PageTitleBar from '../PageTitleBar/PageTitleBar';
 import PageWorkArea from '../Page/PageWorkArea';
 import WizardInline from '../WizardInline/StatefulWizardInline';
 import { itemsAndComponents } from '../WizardInline/WizardInline.story';
@@ -17,10 +17,10 @@ const StyledDirections = styled.div`
 const commonPageHeroProps = {
   section: 'Explore',
   title: 'Your Devices',
-  blurb:
+  description:
     'Your data lake displays a detailed view of the entity types that are connected in Watson IoT Platform. To explore the metrics and dimensions of your entities in more detail, select Entities. To start applying calculations and analyzing your entity data, select Data.',
   big: true,
-  rightContent: <div>Right Content</div>,
+  extraContent: <div>Extra Content</div>,
 };
 
 const navBarProps = {
@@ -28,7 +28,7 @@ const navBarProps = {
     { id: 'tab1', label: 'Tab 1', children: 'my content' },
     { id: 'tab2', label: 'Tab 2', children: 'my content2' },
   ],
-  hero: <PageHero {...commonPageHeroProps} />,
+  hero: <PageTitleBar {...commonPageHeroProps} />,
   onSelectionChange: action('onSelectionChange'),
 };
 

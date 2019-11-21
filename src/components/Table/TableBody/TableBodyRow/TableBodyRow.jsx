@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { DataTable, Checkbox } from 'carbon-components-react';
 import styled from 'styled-components';
+import { settings } from 'carbon-components';
 
 import RowActionsCell from '../RowActionsCell/RowActionsCell';
 import TableCellRenderer from '../../TableCellRenderer/TableCellRenderer';
@@ -14,6 +15,7 @@ import { stopPropagationAndCallback } from '../../../../utils/componentUtilityFu
 import { COLORS } from '../../../../styles/styles';
 
 const { TableRow, TableExpandRow, TableCell } = DataTable;
+const { prefix } = settings;
 
 const propTypes = {
   /** What column ordering is currently applied to the table */
@@ -107,18 +109,6 @@ const defaultProps = {
   nestingChildCount: 0,
   options: {},
 };
-
-const StyledCheckboxTableCell = styled(TableCell)`
-  && {
-    padding-bottom: 0.5rem;
-    width: 2.5rem;
-
-    /* Added to undo carbon component. this needs to be removed when we redo this table */
-    &::after {
-      background-color: transparent !important;
-    }
-  }
-`;
 
 const StyledTableRow = styled(({ isSelectable, ...others }) => <TableRow {...others} />)`
   &&& {
@@ -394,7 +384,8 @@ const TableBodyRow = ({
       : nestingLevel * 16;
   const rowSelectionCell =
     hasRowSelection === 'multi' ? (
-      <StyledCheckboxTableCell
+      <TableCell
+        className={`${prefix}--checkbox-table-cell`}
         key={`${id}-row-selection-cell`}
         onClick={
           isSelectable !== false
@@ -419,7 +410,7 @@ const TableBodyRow = ({
             disabled={isSelectable === false}
           />
         </StyledNestedSpan>
-      </StyledCheckboxTableCell>
+      </TableCell>
     ) : null;
 
   const firstVisibleColIndex = ordering.findIndex(col => !col.isHidden);

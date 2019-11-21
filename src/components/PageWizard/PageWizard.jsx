@@ -18,7 +18,13 @@ const PageWizardStep = ({ children, onValidate = () => true, ...other }) => (
       />
     ) : null}
     {children}
-    <div className="page-wizard--content--actions">
+    <div
+      className={
+        other.hasStickyFooter
+          ? 'page-wizard--content--actions--sticky'
+          : 'page-wizard--content--actions'
+      }
+    >
       {!other.hasPrev ? (
         <Button onClick={other.onClose} kind="secondary">
           {other.i18n.cancel}
@@ -108,6 +114,9 @@ export const propTypes = {
 
   /** Form Error Details */
   error: PropTypes.string,
+
+  /** use sticky footer to show buttons at the bottom */
+  hasStickyFooter: PropTypes.bool,
 };
 
 export const defaultProps = {
@@ -127,6 +136,7 @@ export const defaultProps = {
   },
   sendingData: false,
   error: null,
+  hasStickyFooter: false,
 };
 
 const PageWizard = ({
@@ -142,6 +152,7 @@ const PageWizard = ({
   sendingData,
   className,
   error,
+  hasStickyFooter,
 }) => {
   const children = ch.length ? ch : [ch];
   const steps = React.Children.map(children, step => step.props);
@@ -160,10 +171,13 @@ const PageWizard = ({
     nextDisabled,
     sendingData,
     error,
+    hasStickyFooter,
   });
 
   return (
-    <div className={['page-wizard', className].join(' ')}>
+    <div
+      className={['page-wizard', className, hasStickyFooter ? 'page-wizard__sticky' : ''].join(' ')}
+    >
       {steps.length > 1 ? (
         <div className="page-wizard--progress">
           <ProgressIndicator

@@ -1,8 +1,8 @@
 import { mount } from 'enzyme';
 import React from 'react';
-import 'jest-styled-components';
 /* eslint-disable*/
 import { ToolbarItem, Tooltip } from 'carbon-components-react';
+import { render, fireEvent, waitForElement } from '@testing-library/react';
 
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 
@@ -12,6 +12,7 @@ const tooltipElement = <div>This is some other text</div>;
 
 const cardProps = {
   title: 'My Title',
+  id: 'my card',
 };
 
 describe('Card testcases', () => {
@@ -61,5 +62,71 @@ describe('Card testcases', () => {
       <Card {...cardProps} isLoading size={CARD_SIZES.XSMALLWIDE} tooltip={tooltipElement} />
     );
     expect(wrapper.find(SkeletonWrapper)).toHaveLength(1);
+  });
+  test('card actions', () => {
+    const mockOnCardAction = jest.fn();
+    let wrapper = mount(
+      <Card
+        {...cardProps}
+        isExpanded
+        size={CARD_SIZES.LARGE}
+        tooltip={tooltipElement}
+        onCardAction={mockOnCardAction}
+        availableActions={{ expand: true }}
+      />
+    );
+    wrapper
+      .find('.card--toolbar-action')
+      .get(0)
+      .props.onClick();
+    expect(mockOnCardAction).toHaveBeenCalledWith(cardProps.id, 'CLOSE_EXPANDED_CARD');
+
+    mockOnCardAction.mockClear();
+    let wrapper2 = mount(
+      <Card
+        {...cardProps}
+        size={CARD_SIZES.LARGE}
+        tooltip={tooltipElement}
+        onCardAction={mockOnCardAction}
+        availableActions={{ expand: true }}
+      />
+    );
+    wrapper2
+      .find('.card--toolbar-action')
+      .get(0)
+      .props.onClick();
+    expect(mockOnCardAction).toHaveBeenCalledWith(cardProps.id, 'OPEN_EXPANDED_CARD');
+  });
+  test('card editable actions', async done => {
+    const mockOnCardAction = jest.fn();
+    const { getByRole, getByTitle, getByText } = render(
+      <Card
+        {...cardProps}
+        isEditable
+        size={CARD_SIZES.LARGE}
+        tooltip={tooltipElement}
+        onCardAction={mockOnCardAction}
+        availableActions={{ edit: true, clone: true, delete: true }}
+      />
+    );
+    fireEvent.click(getByTitle('Open and close list of options'));
+    // Click on the first overflow menu item
+    const firstMenuItem = await waitForElement(() => getByText('Edit card'));
+    fireEvent.click(firstMenuItem);
+    expect(mockOnCardAction).toHaveBeenCalledWith(cardProps.id, 'EDIT_CARD');
+    mockOnCardAction.mockClear();
+    // Reopen menu
+    fireEvent.click(getByTitle('Open and close list of options'));
+    const secondElement = await waitForElement(() => getByText('Clone card'));
+    fireEvent.click(secondElement);
+    expect(mockOnCardAction).toHaveBeenCalledWith(cardProps.id, 'CLONE_CARD');
+
+    // Reopen menu
+    fireEvent.click(getByTitle('Open and close list of options'));
+    mockOnCardAction.mockClear();
+    const thirdElement = await waitForElement(() => getByText('Delete card'));
+    fireEvent.click(thirdElement);
+    expect(mockOnCardAction).toHaveBeenCalledWith(cardProps.id, 'DELETE_CARD');
+    done();
   });
 });

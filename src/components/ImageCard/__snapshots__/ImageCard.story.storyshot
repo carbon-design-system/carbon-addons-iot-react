@@ -81,7 +81,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
           </div>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 fabdLf"
+          className="Card__CardContent-v5r71h-1 jAGfWa"
         >
           <div
             className="ImageCard__ContentWrapper-sc-1p2j9dm-0 jJnAwR"
@@ -147,7 +147,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
                   >
                     <svg
                       aria-label=""
-                      fill="blue"
+                      fill="purple"
                       fillRule="evenodd"
                       height="25"
                       role="img"
@@ -395,6 +395,415 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
 </div>
 `;
 
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ImageCard custom renderIconByName 1`] = `
+<div
+  className="storybook-container"
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "flexDirection": "column",
+      "padding": "3rem",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "margin": 20,
+          "width": "1056px",
+        }
+      }
+    >
+      <div
+        className="Card__CardWrapper-v5r71h-0 kGdXdI"
+        id="image-hotspots"
+      >
+        <div
+          className="card--header"
+        >
+          <span
+            className="card--title"
+            title="Image"
+          >
+            Image
+             
+          </span>
+          <div
+            className="bx--toolbar card--toolbar"
+          >
+            <button
+              className="card--toolbar-action Card__TinyButton-v5r71h-4 fggzfz bx--btn bx--btn--sm bx--btn--ghost"
+              disabled={false}
+              onClick={[Function]}
+              tabIndex={0}
+              title="Expand to fullscreen"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                aria-label="Expand to fullscreen"
+                className="bx--btn__icon"
+                focusable="false"
+                height={20}
+                preserveAspectRatio="xMidYMid meet"
+                role="img"
+                style={
+                  Object {
+                    "willChange": "transform",
+                  }
+                }
+                viewBox="0 0 32 32"
+                width={20}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M28 4H10a2.006 2.006 0 0 0-2 2v14a2.006 2.006 0 0 0 2 2h18a2.006 2.006 0 0 0 2-2V6a2.006 2.006 0 0 0-2-2zm0 16H10V6h18z"
+                />
+                <path
+                  d="M18 26H4V16h2v-2H4a2.006 2.006 0 0 0-2 2v10a2.006 2.006 0 0 0 2 2h14a2.006 2.006 0 0 0 2-2v-2h-2z"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div
+          className="Card__CardContent-v5r71h-1 jAGfWa"
+        >
+          <div
+            className="ImageCard__ContentWrapper-sc-1p2j9dm-0 jJnAwR"
+          >
+            <div
+              onBlur={[Function]}
+              onMouseOut={[Function]}
+              style={
+                Object {
+                  "background": "#eee",
+                  "height": "100%",
+                  "overflow": "hidden",
+                  "position": "relative",
+                  "textAlign": "center",
+                  "width": "100%",
+                }
+              }
+            >
+              <img
+                alt="Sample image"
+                onLoad={[Function]}
+                onMouseDown={[Function]}
+                onMouseMove={[Function]}
+                onMouseUp={[Function]}
+                src="landscape.jpg"
+                style={
+                  Object {
+                    "left": undefined,
+                    "position": "relative",
+                    "top": undefined,
+                  }
+                }
+              />
+              <div
+                style={
+                  Object {
+                    "left": undefined,
+                    "margin": "auto",
+                    "pointerEvents": "none",
+                    "position": "absolute",
+                    "right": "auto",
+                    "top": undefined,
+                  }
+                }
+              >
+                <div
+                  className="Hotspot__StyledHotspot-nlpwmi-0 fvESgj"
+                >
+                  <div
+                    aria-describedby={null}
+                    aria-haspopup="true"
+                    aria-labelledby="hotspot-35-65"
+                    className="bx--tooltip__label"
+                    id="hotspot-35-65"
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    onMouseOut={[Function]}
+                    onMouseOver={[Function]}
+                    role="button"
+                    tabIndex={0}
+                  >
+                    <svg
+                      aria-hidden={true}
+                      fill="purple"
+                      focusable="false"
+                      height={25}
+                      preserveAspectRatio="xMidYMid meet"
+                      style={
+                        Object {
+                          "willChange": "transform",
+                        }
+                      }
+                      title=""
+                      viewBox="0 0 32 32"
+                      width={25}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M16 10a6 6 0 0 0-6 6v8a6 6 0 0 0 12 0v-8a6 6 0 0 0-6-6zm-4.25 7.87h8.5v4.25h-8.5zM16 28.25A4.27 4.27 0 0 1 11.75 24v-.13h8.5V24A4.27 4.27 0 0 1 16 28.25zm4.25-12.13h-8.5V16a4.25 4.25 0 0 1 8.5 0zm10.41 3.09L24 13v9.1a4 4 0 0 0 8 0 3.83 3.83 0 0 0-1.34-2.89zM28 24.35a2.25 2.25 0 0 1-2.25-2.25V17l3.72 3.47A2.05 2.05 0 0 1 30.2 22a2.25 2.25 0 0 1-2.2 2.35zM0 22.1a4 4 0 0 0 8 0V13l-6.66 6.21A3.88 3.88 0 0 0 0 22.1zm2.48-1.56L6.25 17v5.1a2.25 2.25 0 0 1-4.5 0 2.05 2.05 0 0 1 .73-1.56zM15 5.5A3.5 3.5 0 1 0 11.5 9 3.5 3.5 0 0 0 15 5.5zm-5.25 0a1.75 1.75 0 1 1 1.75 1.75A1.77 1.77 0 0 1 9.75 5.5zM20.5 2A3.5 3.5 0 1 0 24 5.5 3.5 3.5 0 0 0 20.5 2zm0 5.25a1.75 1.75 0 1 1 1.75-1.75 1.77 1.77 0 0 1-1.75 1.75z"
+                      />
+                      <title>
+                        
+                      </title>
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  className="Hotspot__StyledHotspot-nlpwmi-0 kwumIH"
+                >
+                  <div
+                    aria-describedby={null}
+                    aria-haspopup="true"
+                    aria-labelledby="hotspot-45-25"
+                    className="bx--tooltip__label"
+                    id="hotspot-45-25"
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    onMouseOut={[Function]}
+                    onMouseOver={[Function]}
+                    role="button"
+                    tabIndex={0}
+                  >
+                    <svg
+                      height={25}
+                      width={25}
+                    >
+                      <circle
+                        cx={12.5}
+                        cy={12.5}
+                        fill="none"
+                        opacity="1"
+                        r={11.5}
+                        stroke="white"
+                        strokeWidth="2"
+                      />
+                      <circle
+                        cx={12.5}
+                        cy={12.5}
+                        fill="#0f0"
+                        opacity="0.7"
+                        r={11.5}
+                        stroke="none"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  className="Hotspot__StyledHotspot-nlpwmi-0 eqtfro"
+                >
+                  <div
+                    aria-describedby={null}
+                    aria-haspopup="true"
+                    aria-labelledby="hotspot-45-50"
+                    className="bx--tooltip__label"
+                    id="hotspot-45-50"
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    onMouseOut={[Function]}
+                    onMouseOver={[Function]}
+                    role="button"
+                    tabIndex={0}
+                  >
+                    <svg
+                      height={25}
+                      width={25}
+                    >
+                      <circle
+                        cx={12.5}
+                        cy={12.5}
+                        fill="none"
+                        opacity="1"
+                        r={11.5}
+                        stroke="white"
+                        strokeWidth="2"
+                      />
+                      <circle
+                        cx={12.5}
+                        cy={12.5}
+                        fill="#00f"
+                        opacity="0.7"
+                        r={11.5}
+                        stroke="none"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  className="Hotspot__StyledHotspot-nlpwmi-0 ezcTmr"
+                >
+                  <div
+                    aria-describedby={null}
+                    aria-haspopup="true"
+                    aria-labelledby="hotspot-45-75"
+                    className="bx--tooltip__label"
+                    id="hotspot-45-75"
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    onMouseOut={[Function]}
+                    onMouseOver={[Function]}
+                    role="button"
+                    tabIndex={0}
+                  >
+                    <svg
+                      aria-hidden={true}
+                      fill="blue"
+                      focusable="false"
+                      height={25}
+                      preserveAspectRatio="xMidYMid meet"
+                      style={
+                        Object {
+                          "willChange": "transform",
+                        }
+                      }
+                      title=""
+                      viewBox="0 0 16 16"
+                      width={25}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M6 10.6L2.5 7.1l-.7.7 3.5 3.5.7.7 7.1-7.1-.7-.7z"
+                      />
+                      <title>
+                        
+                      </title>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div
+                style={
+                  Object {
+                    "bottom": 10,
+                    "pointerEvents": "auto",
+                    "position": "absolute",
+                    "right": 10,
+                  }
+                }
+              >
+                <button
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "background": "#fff",
+                      "border": "none",
+                      "boxShadow": "0px 0px 2px 0px rgba(0,0,0,0.5)",
+                      "height": "25px",
+                      "width": "25px",
+                    }
+                  }
+                  type="button"
+                >
+                  +
+                </button>
+                <br />
+                <button
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "background": "#fff",
+                      "border": "none",
+                      "boxShadow": "0px 0px 2px 0px rgba(0,0,0,0.5)",
+                      "height": "25px",
+                      "width": "25px",
+                    }
+                  }
+                  type="button"
+                >
+                  -
+                </button>
+              </div>
+              <div
+                style={
+                  Object {
+                    "background": "#fff",
+                    "bottom": 10,
+                    "boxShadow": "0px 0px 2px 0px rgba(0,0,0,0.5)",
+                    "display": "block",
+                    "height": null,
+                    "left": 10,
+                    "pointerEvents": "none",
+                    "position": "absolute",
+                    "width": null,
+                  }
+                }
+              >
+                <img
+                  alt="Minimap"
+                  height={null}
+                  src="landscape.jpg"
+                  width={null}
+                />
+                <div
+                  style={
+                    Object {
+                      "background": "rgba(64, 139, 252, 0.1)",
+                      "border": "1px solid rgba(64, 139, 252, 0.8)",
+                      "display": "block",
+                      "height": null,
+                      "left": 0,
+                      "pointerEvents": "none",
+                      "position": "absolute",
+                      "top": 0,
+                      "width": null,
+                    }
+                  }
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ImageCard error 1`] = `
 <div
   className="storybook-container"
@@ -476,7 +885,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
           </div>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 fabdLf"
+          className="Card__CardContent-v5r71h-1 jAGfWa"
         >
           <div
             className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
@@ -594,7 +1003,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
           </div>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 fabdLf"
+          className="Card__CardContent-v5r71h-1 jAGfWa"
         >
           <div
             className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
@@ -712,7 +1121,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
           </div>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 fabdLf"
+          className="Card__CardContent-v5r71h-1 jAGfWa"
         >
           <div
             className="ImageCard__ContentWrapper-sc-1p2j9dm-0 jJnAwR"
@@ -991,7 +1400,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
           </div>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 fabdLf"
+          className="Card__CardContent-v5r71h-1 jAGfWa"
         >
           <div
             className="ImageCard__ContentWrapper-sc-1p2j9dm-0 jJnAwR"

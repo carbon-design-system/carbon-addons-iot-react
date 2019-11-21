@@ -6,7 +6,6 @@ import { CARD_SIZES } from '../../constants/LayoutConstants';
 
 /* eslint-disable */
 import TimeSeriesCard, {
-  determineHeight,
   determinePrecision,
   formatChartData,
   valueFormatter,
@@ -43,15 +42,6 @@ describe('TimeSeriesCard tests', () => {
     wrapper = mount(<TimeSeriesCard {...timeSeriesCardProps} />);
     expect(wrapper.find('LineChart')).toHaveLength(1);
   });
-
-  test('determine height', () => {
-    expect(determineHeight(CARD_SIZES.LARGE, 700)).toEqual('90%');
-    expect(determineHeight(CARD_SIZES.LARGE, 500)).toEqual('100%');
-    expect(determineHeight(CARD_SIZES.MEDIUM, 700)).toEqual('90%');
-    expect(determineHeight(CARD_SIZES.XLARGE, 700)).toEqual('90%');
-    expect(determineHeight('default', 700)).toEqual('100%');
-  });
-
   test('determine precision', () => {
     expect(determinePrecision(CARD_SIZES.LARGE, 700)).toEqual(0);
     expect(determinePrecision(CARD_SIZES.XSMALL, 11.45)).toEqual(0);

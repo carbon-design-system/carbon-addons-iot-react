@@ -333,7 +333,7 @@ storiesOf('Watson IoT|TableCard', module)
     );
 
     const tableCustomColumns = tableColumns.map((item, index) =>
-      index === 0 ? { ...item, width: '250px', name: 'Alert with long string name' } : item
+      index === 0 ? { ...item, width: 250, name: 'Alert with long string name' } : item
     );
 
     return (

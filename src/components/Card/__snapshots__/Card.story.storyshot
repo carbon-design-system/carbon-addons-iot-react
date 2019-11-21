@@ -60,9 +60,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
               open={false}
               role="button"
               tabIndex={0}
+              title="Open and close list of options"
             >
               <svg
-                aria-label="open and close list of options"
+                aria-label="Open and close list of options"
                 className="bx--overflow-menu__icon"
                 focusable="false"
                 height={20}
@@ -89,7 +90,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                   d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
                 />
                 <title>
-                  open and close list of options
+                  Open and close list of options
                 </title>
               </svg>
             </div>
@@ -129,7 +130,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
           </div>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 gTExVy"
+          className="Card__CardContent-v5r71h-1 hDVRgE"
         />
       </div>
     </div>
@@ -207,7 +208,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
           />
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 gTExVy"
+          className="Card__CardContent-v5r71h-1 hDVRgE"
         >
           <div
             className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
@@ -291,7 +292,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
           />
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 gPUVrT"
+          className="Card__CardContent-v5r71h-1 hoCWQe"
         >
           <div
             className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
@@ -353,21 +354,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
       id="Card Title"
     >
       <div
-        className="card--header"
-      >
-        <span
-          className="card--title"
-          title="Card Title"
-        >
-          Card Title
-           
-        </span>
-        <div
-          className="bx--toolbar card--toolbar"
-        />
-      </div>
-      <div
-        className="Card__CardContent-v5r71h-1 gPUVrT"
+        className="Card__CardContent-v5r71h-1 hoCWQe"
       >
         [{"timestamp":12341231231,"value1":"my value"}]
       </div>
@@ -455,6 +442,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
               open={false}
               role="button"
               tabIndex={0}
+              title="Open and close list of options"
             >
               <svg
                 aria-label="open and close list of options"
@@ -497,7 +485,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
           </div>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 gTExVy"
+          className="Card__CardContent-v5r71h-1 hDVRgE"
         />
       </div>
     </div>
@@ -575,7 +563,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
           />
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 gTExVy"
+          className="Card__CardContent-v5r71h-1 hDVRgE"
         />
       </div>
     </div>
@@ -656,7 +644,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
           />
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 gPUVrT"
+          className="Card__CardContent-v5r71h-1 hoCWQe"
         >
           <div
             className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
@@ -709,9 +697,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
               open={false}
               role="button"
               tabIndex={0}
+              title="Open and close list of options"
             >
               <svg
-                aria-label="open and close list of options"
+                aria-label="Open and close list of options"
                 className="bx--overflow-menu__icon"
                 focusable="false"
                 height={20}
@@ -738,14 +727,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                   d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
                 />
                 <title>
-                  open and close list of options
+                  Open and close list of options
                 </title>
               </svg>
             </div>
           </div>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 gPUVrT"
+          className="Card__CardContent-v5r71h-1 hoCWQe"
         >
           <div
             className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
@@ -798,9 +787,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
               open={false}
               role="button"
               tabIndex={0}
+              title="Open and close list of options"
             >
               <svg
-                aria-label="open and close list of options"
+                aria-label="Open and close list of options"
                 className="bx--overflow-menu__icon"
                 focusable="false"
                 height={20}
@@ -827,14 +817,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                   d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
                 />
                 <title>
-                  open and close list of options
+                  Open and close list of options
                 </title>
               </svg>
             </div>
           </div>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 gTExVy"
+          className="Card__CardContent-v5r71h-1 hDVRgE"
         >
           <div
             className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
@@ -887,9 +877,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
               open={false}
               role="button"
               tabIndex={0}
+              title="Open and close list of options"
             >
               <svg
-                aria-label="open and close list of options"
+                aria-label="Open and close list of options"
                 className="bx--overflow-menu__icon"
                 focusable="false"
                 height={20}
@@ -916,14 +907,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                   d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
                 />
                 <title>
-                  open and close list of options
+                  Open and close list of options
                 </title>
               </svg>
             </div>
           </div>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 fabdLf"
+          className="Card__CardContent-v5r71h-1 jAGfWa"
         >
           <div
             className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
@@ -976,9 +967,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
               open={false}
               role="button"
               tabIndex={0}
+              title="Open and close list of options"
             >
               <svg
-                aria-label="open and close list of options"
+                aria-label="Open and close list of options"
                 className="bx--overflow-menu__icon"
                 focusable="false"
                 height={20}
@@ -1005,14 +997,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                   d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
                 />
                 <title>
-                  open and close list of options
+                  Open and close list of options
                 </title>
               </svg>
             </div>
           </div>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 gTExVy"
+          className="Card__CardContent-v5r71h-1 hDVRgE"
         >
           <div
             className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
@@ -1065,9 +1057,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
               open={false}
               role="button"
               tabIndex={0}
+              title="Open and close list of options"
             >
               <svg
-                aria-label="open and close list of options"
+                aria-label="Open and close list of options"
                 className="bx--overflow-menu__icon"
                 focusable="false"
                 height={20}
@@ -1094,14 +1087,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                   d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
                 />
                 <title>
-                  open and close list of options
+                  Open and close list of options
                 </title>
               </svg>
             </div>
           </div>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 gTExVy"
+          className="Card__CardContent-v5r71h-1 hDVRgE"
         >
           <div
             className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
@@ -1154,9 +1147,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
               open={false}
               role="button"
               tabIndex={0}
+              title="Open and close list of options"
             >
               <svg
-                aria-label="open and close list of options"
+                aria-label="Open and close list of options"
                 className="bx--overflow-menu__icon"
                 focusable="false"
                 height={20}
@@ -1183,14 +1177,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                   d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
                 />
                 <title>
-                  open and close list of options
+                  Open and close list of options
                 </title>
               </svg>
             </div>
           </div>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 fabdLf"
+          className="Card__CardContent-v5r71h-1 jAGfWa"
         >
           <div
             className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
@@ -1243,9 +1237,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
               open={false}
               role="button"
               tabIndex={0}
+              title="Open and close list of options"
             >
               <svg
-                aria-label="open and close list of options"
+                aria-label="Open and close list of options"
                 className="bx--overflow-menu__icon"
                 focusable="false"
                 height={20}
@@ -1272,14 +1267,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                   d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
                 />
                 <title>
-                  open and close list of options
+                  Open and close list of options
                 </title>
               </svg>
             </div>
           </div>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 fabdLf"
+          className="Card__CardContent-v5r71h-1 jAGfWa"
         >
           <div
             className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
@@ -1376,9 +1371,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
               open={false}
               role="button"
               tabIndex={0}
+              title="Open and close list of options"
             >
               <svg
-                aria-label="open and close list of options"
+                aria-label="Open and close list of options"
                 className="bx--overflow-menu__icon"
                 focusable="false"
                 height={20}
@@ -1405,14 +1401,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                   d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
                 />
                 <title>
-                  open and close list of options
+                  Open and close list of options
                 </title>
               </svg>
             </div>
           </div>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 gTExVy"
+          className="Card__CardContent-v5r71h-1 hDVRgE"
         >
           <div
             className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
@@ -1496,7 +1492,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
           />
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 gTExVy"
+          className="Card__CardContent-v5r71h-1 hDVRgE"
         >
           <div
             className="Card__SkeletonWrapper-v5r71h-2 fqjitN"
@@ -1618,9 +1614,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
               open={false}
               role="button"
               tabIndex={0}
+              title="Open and close list of options"
             >
               <svg
-                aria-label="open and close list of options"
+                aria-label="Open and close list of options"
                 className="bx--overflow-menu__icon"
                 focusable="false"
                 height={20}
@@ -1647,14 +1644,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                   d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
                 />
                 <title>
-                  open and close list of options
+                  Open and close list of options
                 </title>
               </svg>
             </div>
           </div>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 gTExVy"
+          className="Card__CardContent-v5r71h-1 hDVRgE"
         />
       </div>
     </div>

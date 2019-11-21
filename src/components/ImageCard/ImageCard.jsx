@@ -42,6 +42,7 @@ const ImageCard = ({
   error,
   isLoading,
   i18n: { loadingDataLabel, ...otherLabels },
+  renderIconByName,
   ...others
 }) => {
   const { src } = content;
@@ -64,29 +65,37 @@ const ImageCard = ({
       error={error}
       i18n={otherLabels}
     >
-      {!isCardLoading ? (
-        <ContentWrapper>
-          {supportedSize ? (
-            isEditable ? (
-              <EmptyDiv>
-                <Image32 width={250} height={250} fill="gray" />
-              </EmptyDiv>
-            ) : content && src ? (
-              <ImageHotspots
-                {...content}
-                isExpanded={isExpanded}
-                hotspots={hotspots}
-                isHotspotDataLoading={isLoading}
-                loadingHotspotsLabel={loadingDataLabel}
-              />
-            ) : (
-              <p>Error retrieving image.</p>
-            )
-          ) : (
-            <p>Size not supported.</p>
-          )}
-        </ContentWrapper>
-      ) : null}
+      {!isCardLoading
+        ? (
+            // Get width and height from parent card
+            { width, height } // eslint-disable-line
+          ) => (
+            <ContentWrapper>
+              {supportedSize ? (
+                isEditable ? (
+                  <EmptyDiv>
+                    <Image32 width={250} height={250} fill="gray" />
+                  </EmptyDiv>
+                ) : content && src ? (
+                  <ImageHotspots
+                    {...content}
+                    width={width - 16 * 2} // Need to adjust for card chrome
+                    height={height - (48 + 16)} // Need to adjust for card chrome
+                    isExpanded={isExpanded}
+                    hotspots={hotspots}
+                    isHotspotDataLoading={isLoading}
+                    loadingHotspotsLabel={loadingDataLabel}
+                    renderIconByName={renderIconByName}
+                  />
+                ) : (
+                  <p>Error retrieving image.</p>
+                )
+              ) : (
+                <p>Size not supported.</p>
+              )}
+            </ContentWrapper>
+          )
+        : null}
     </Card>
   );
 };

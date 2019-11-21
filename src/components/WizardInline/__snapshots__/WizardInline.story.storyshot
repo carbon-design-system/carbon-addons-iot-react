@@ -28,43 +28,69 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
         data-id="WizardInlineContainer"
       >
         <div
-          className="WizardHeader__StyledHero-zafbe2-0 kATNdy Hero__StyledHero-nej8yx-0 fTphDS"
+          className="wizard-inline-header page-title-bar"
         >
           <div
-            className="Hero__StyledTitleSection-nej8yx-1 imCjnH"
+            className="page-title-bar-header"
           >
-            <div
-              className="Hero__StyledTitle-nej8yx-2 emqnjy"
-            >
-              I am a title
-            </div>
-            <button
-              aria-label="Close"
-              className="bx--modal-close"
-              data-modal-close={true}
-              onClick={[Function]}
-              type="button"
-            >
-              <svg
-                className="bx--modal-close__icon"
-                height="10"
-                viewBox="0 0 10 10"
-                width="10"
-                xmlns="http://www.w3.org/2000/svg"
+            <div>
+              <div
+                className="page-title-bar-title"
               >
-                <title>
-                  Close
-                </title>
-                <path
-                  d="M6.32 5L10 8.68 8.68 10 5 6.32 1.32 10 0 8.68 3.68 5 0 1.32 1.32 0 5 3.68 8.68 0 10 1.32 6.32 5z"
-                  fillRule="nonzero"
-                />
-              </svg>
-            </button>
+                <div
+                  className="page-title-bar-title--text"
+                >
+                  <h2>
+                    I am a title
+                  </h2>
+                </div>
+              </div>
+              <p
+                className="page-title-bar-description"
+              >
+                My long blurb to explain what is going on
+              </p>
+            </div>
+            <div
+              style={
+                Object {
+                  "flex": 1,
+                }
+              }
+            />
+            <div>
+              <button
+                className="bx--modal-close Button__StyledButton-sc-19kycwu-0 PhzAJ bx--btn bx--btn--primary"
+                disabled={false}
+                tabIndex={0}
+                title="Close"
+                type="button"
+              >
+                <svg
+                  aria-hidden={true}
+                  focusable="false"
+                  height={20}
+                  onClick={[Function]}
+                  preserveAspectRatio="xMidYMid meet"
+                  style={
+                    Object {
+                      "willChange": "transform",
+                    }
+                  }
+                  viewBox="0 0 32 32"
+                  width={20}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4l6.6 6.6L8 22.6 9.4 24l6.6-6.6 6.6 6.6 1.4-1.4-6.6-6.6L24 9.4z"
+                  />
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
         <ul
-          className="bx--progress WizardHeader__StyledProgressIndicator-zafbe2-1 dpwNUl  ProgressIndicator__StyledProgressIndicator-sc-1sy51cd-0 egbeyA"
+          className="bx--progress wizard-inline-progress-indicator  ProgressIndicator__StyledProgressIndicator-sc-1sy51cd-0 egbeyA"
           onChange={[Function]}
         >
           <li
@@ -229,7 +255,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
               className="WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
             >
               <button
-                className="Button__StyledButton-sc-19kycwu-0 gTXQZR bx--btn bx--btn--secondary"
+                className="Button__StyledButton-sc-19kycwu-0 PhzAJ bx--btn bx--btn--secondary"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
@@ -238,7 +264,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
                 Cancel
               </button>
               <button
-                className="Button__StyledButton-sc-19kycwu-0 gTXQZR bx--btn bx--btn--primary"
+                className="Button__StyledButton-sc-19kycwu-0 PhzAJ bx--btn bx--btn--primary"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
@@ -306,43 +332,64 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
         data-id="WizardInlineContainer"
       >
         <div
-          className="WizardHeader__StyledHero-zafbe2-0 kATNdy Hero__StyledHero-nej8yx-0 fTphDS"
+          className="wizard-inline-header page-title-bar"
         >
           <div
-            className="Hero__StyledTitleSection-nej8yx-1 imCjnH"
+            className="page-title-bar-header"
           >
-            <div
-              className="Hero__StyledTitle-nej8yx-2 emqnjy"
-            >
-              Static Wizard
-            </div>
-            <button
-              aria-label="Close"
-              className="bx--modal-close"
-              data-modal-close={true}
-              onClick={[Function]}
-              type="button"
-            >
-              <svg
-                className="bx--modal-close__icon"
-                height="10"
-                viewBox="0 0 10 10"
-                width="10"
-                xmlns="http://www.w3.org/2000/svg"
+            <div>
+              <div
+                className="page-title-bar-title"
               >
-                <title>
-                  Close
-                </title>
-                <path
-                  d="M6.32 5L10 8.68 8.68 10 5 6.32 1.32 10 0 8.68 3.68 5 0 1.32 1.32 0 5 3.68 8.68 0 10 1.32 6.32 5z"
-                  fillRule="nonzero"
-                />
-              </svg>
-            </button>
+                <div
+                  className="page-title-bar-title--text"
+                >
+                  <h2>
+                    Static Wizard
+                  </h2>
+                </div>
+              </div>
+            </div>
+            <div
+              style={
+                Object {
+                  "flex": 1,
+                }
+              }
+            />
+            <div>
+              <button
+                className="bx--modal-close Button__StyledButton-sc-19kycwu-0 PhzAJ bx--btn bx--btn--primary"
+                disabled={false}
+                tabIndex={0}
+                title="Close"
+                type="button"
+              >
+                <svg
+                  aria-hidden={true}
+                  focusable="false"
+                  height={20}
+                  onClick={[Function]}
+                  preserveAspectRatio="xMidYMid meet"
+                  style={
+                    Object {
+                      "willChange": "transform",
+                    }
+                  }
+                  viewBox="0 0 32 32"
+                  width={20}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4l6.6 6.6L8 22.6 9.4 24l6.6-6.6 6.6 6.6 1.4-1.4-6.6-6.6L24 9.4z"
+                  />
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
         <ul
-          className="bx--progress WizardHeader__StyledProgressIndicator-zafbe2-1 dpwNUl  ProgressIndicator__StyledProgressIndicator-sc-1sy51cd-0 egbeyA"
+          className="bx--progress wizard-inline-progress-indicator  ProgressIndicator__StyledProgressIndicator-sc-1sy51cd-0 egbeyA"
           onChange={[Function]}
         >
           <li
@@ -507,7 +554,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
               className="WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
             >
               <button
-                className="Button__StyledButton-sc-19kycwu-0 gTXQZR bx--btn bx--btn--secondary"
+                className="Button__StyledButton-sc-19kycwu-0 PhzAJ bx--btn bx--btn--secondary"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
@@ -516,7 +563,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
                 Back
               </button>
               <button
-                className="Button__StyledButton-sc-19kycwu-0 gTXQZR bx--btn bx--btn--primary"
+                className="Button__StyledButton-sc-19kycwu-0 PhzAJ bx--btn bx--btn--primary"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
@@ -584,43 +631,64 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
         data-id="WizardInlineContainer"
       >
         <div
-          className="WizardHeader__StyledHero-zafbe2-0 kATNdy Hero__StyledHero-nej8yx-0 fTphDS"
+          className="wizard-inline-header page-title-bar"
         >
           <div
-            className="Hero__StyledTitleSection-nej8yx-1 imCjnH"
+            className="page-title-bar-header"
           >
-            <div
-              className="Hero__StyledTitle-nej8yx-2 emqnjy"
-            >
-              Static Wizard
-            </div>
-            <button
-              aria-label="Close"
-              className="bx--modal-close"
-              data-modal-close={true}
-              onClick={[Function]}
-              type="button"
-            >
-              <svg
-                className="bx--modal-close__icon"
-                height="10"
-                viewBox="0 0 10 10"
-                width="10"
-                xmlns="http://www.w3.org/2000/svg"
+            <div>
+              <div
+                className="page-title-bar-title"
               >
-                <title>
-                  Close
-                </title>
-                <path
-                  d="M6.32 5L10 8.68 8.68 10 5 6.32 1.32 10 0 8.68 3.68 5 0 1.32 1.32 0 5 3.68 8.68 0 10 1.32 6.32 5z"
-                  fillRule="nonzero"
-                />
-              </svg>
-            </button>
+                <div
+                  className="page-title-bar-title--text"
+                >
+                  <h2>
+                    Static Wizard
+                  </h2>
+                </div>
+              </div>
+            </div>
+            <div
+              style={
+                Object {
+                  "flex": 1,
+                }
+              }
+            />
+            <div>
+              <button
+                className="bx--modal-close Button__StyledButton-sc-19kycwu-0 PhzAJ bx--btn bx--btn--primary"
+                disabled={false}
+                tabIndex={0}
+                title="Close"
+                type="button"
+              >
+                <svg
+                  aria-hidden={true}
+                  focusable="false"
+                  height={20}
+                  onClick={[Function]}
+                  preserveAspectRatio="xMidYMid meet"
+                  style={
+                    Object {
+                      "willChange": "transform",
+                    }
+                  }
+                  viewBox="0 0 32 32"
+                  width={20}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4l6.6 6.6L8 22.6 9.4 24l6.6-6.6 6.6 6.6 1.4-1.4-6.6-6.6L24 9.4z"
+                  />
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
         <ul
-          className="bx--progress WizardHeader__StyledProgressIndicator-zafbe2-1 dpwNUl  ProgressIndicator__StyledProgressIndicator-sc-1sy51cd-0 egbeyA"
+          className="bx--progress wizard-inline-progress-indicator  ProgressIndicator__StyledProgressIndicator-sc-1sy51cd-0 egbeyA"
           onChange={[Function]}
         >
           <li
@@ -826,7 +894,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
               className="WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
             >
               <button
-                className="Button__StyledButton-sc-19kycwu-0 gTXQZR bx--btn bx--btn--secondary"
+                className="Button__StyledButton-sc-19kycwu-0 PhzAJ bx--btn bx--btn--secondary"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
@@ -835,7 +903,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
                 Back
               </button>
               <button
-                className="Button__StyledButton-sc-19kycwu-0 gTXQZR bx--btn bx--btn--primary"
+                className="Button__StyledButton-sc-19kycwu-0 PhzAJ bx--btn bx--btn--primary"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
@@ -903,43 +971,64 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
         data-id="WizardInlineContainer"
       >
         <div
-          className="WizardHeader__StyledHero-zafbe2-0 kATNdy Hero__StyledHero-nej8yx-0 fTphDS"
+          className="wizard-inline-header page-title-bar"
         >
           <div
-            className="Hero__StyledTitleSection-nej8yx-1 imCjnH"
+            className="page-title-bar-header"
           >
-            <div
-              className="Hero__StyledTitle-nej8yx-2 emqnjy"
-            >
-              Static Wizard
-            </div>
-            <button
-              aria-label="Close"
-              className="bx--modal-close"
-              data-modal-close={true}
-              onClick={[Function]}
-              type="button"
-            >
-              <svg
-                className="bx--modal-close__icon"
-                height="10"
-                viewBox="0 0 10 10"
-                width="10"
-                xmlns="http://www.w3.org/2000/svg"
+            <div>
+              <div
+                className="page-title-bar-title"
               >
-                <title>
-                  Close
-                </title>
-                <path
-                  d="M6.32 5L10 8.68 8.68 10 5 6.32 1.32 10 0 8.68 3.68 5 0 1.32 1.32 0 5 3.68 8.68 0 10 1.32 6.32 5z"
-                  fillRule="nonzero"
-                />
-              </svg>
-            </button>
+                <div
+                  className="page-title-bar-title--text"
+                >
+                  <h2>
+                    Static Wizard
+                  </h2>
+                </div>
+              </div>
+            </div>
+            <div
+              style={
+                Object {
+                  "flex": 1,
+                }
+              }
+            />
+            <div>
+              <button
+                className="bx--modal-close Button__StyledButton-sc-19kycwu-0 PhzAJ bx--btn bx--btn--primary"
+                disabled={false}
+                tabIndex={0}
+                title="Close"
+                type="button"
+              >
+                <svg
+                  aria-hidden={true}
+                  focusable="false"
+                  height={20}
+                  onClick={[Function]}
+                  preserveAspectRatio="xMidYMid meet"
+                  style={
+                    Object {
+                      "willChange": "transform",
+                    }
+                  }
+                  viewBox="0 0 32 32"
+                  width={20}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4l6.6 6.6L8 22.6 9.4 24l6.6-6.6 6.6 6.6 1.4-1.4-6.6-6.6L24 9.4z"
+                  />
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
         <ul
-          className="bx--progress WizardHeader__StyledProgressIndicator-zafbe2-1 dpwNUl  ProgressIndicator__StyledProgressIndicator-sc-1sy51cd-0 egbeyA"
+          className="bx--progress wizard-inline-progress-indicator  ProgressIndicator__StyledProgressIndicator-sc-1sy51cd-0 egbeyA"
           onChange={[Function]}
         >
           <li
@@ -1095,7 +1184,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
               className="WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
             >
               <button
-                className="Button__StyledButton-sc-19kycwu-0 gTXQZR bx--btn bx--btn--secondary"
+                className="Button__StyledButton-sc-19kycwu-0 PhzAJ bx--btn bx--btn--secondary"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
@@ -1104,7 +1193,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
                 Cancel
               </button>
               <button
-                className="Button__StyledButton-sc-19kycwu-0 gTXQZR bx--btn bx--btn--primary"
+                className="Button__StyledButton-sc-19kycwu-0 PhzAJ bx--btn bx--btn--primary"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
@@ -1172,88 +1261,64 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
         data-id="WizardInlineContainer"
       >
         <div
-          className="WizardHeader__StyledHero-zafbe2-0 kATNdy Hero__StyledHero-nej8yx-0 fTphDS"
+          className="wizard-inline-header page-title-bar"
         >
           <div
-            className="Hero__StyledBreadcrumbDiv-nej8yx-6 brbWug"
+            className="page-title-bar-header"
           >
-            <nav
-              aria-label="Breadcrumb"
-              className="Hero__StyledBreadcrumb-nej8yx-5 kRUzlm"
-            >
-              <ol
-                className="bx--breadcrumb"
+            <div>
+              <div
+                className="page-title-bar-title"
               >
-                <li
-                  className="bx--breadcrumb-item"
+                <div
+                  className="page-title-bar-title--text"
                 >
-                  <a
-                    className="bx--link"
-                    href="/"
-                  >
-                    Home
-                  </a>
-                </li>
-                <li
-                  className="bx--breadcrumb-item"
-                >
-                  <a
-                    className="bx--link"
-                    href="/"
-                  >
-                    Type
-                  </a>
-                </li>
-                <li
-                  className="bx--breadcrumb-item"
-                >
-                  <span
-                    className="bx--link"
-                  >
-                    Instance
-                  </span>
-                </li>
-              </ol>
-            </nav>
-            <div
-              className="Hero__StyledRightContent-nej8yx-4 cCeABe"
-            />
-          </div>
-          <div
-            className="Hero__StyledTitleSection-nej8yx-1 djCalR"
-          >
-            <div
-              className="Hero__StyledTitle-nej8yx-2 emqnjy"
-            >
-              Static Wizard
+                  <h2>
+                    Static Wizard
+                  </h2>
+                </div>
+              </div>
             </div>
-            <button
-              aria-label="Close"
-              className="bx--modal-close"
-              data-modal-close={true}
-              onClick={[Function]}
-              type="button"
-            >
-              <svg
-                className="bx--modal-close__icon"
-                height="10"
-                viewBox="0 0 10 10"
-                width="10"
-                xmlns="http://www.w3.org/2000/svg"
+            <div
+              style={
+                Object {
+                  "flex": 1,
+                }
+              }
+            />
+            <div>
+              <button
+                className="bx--modal-close Button__StyledButton-sc-19kycwu-0 PhzAJ bx--btn bx--btn--primary"
+                disabled={false}
+                tabIndex={0}
+                title="Close"
+                type="button"
               >
-                <title>
-                  Close
-                </title>
-                <path
-                  d="M6.32 5L10 8.68 8.68 10 5 6.32 1.32 10 0 8.68 3.68 5 0 1.32 1.32 0 5 3.68 8.68 0 10 1.32 6.32 5z"
-                  fillRule="nonzero"
-                />
-              </svg>
-            </button>
+                <svg
+                  aria-hidden={true}
+                  focusable="false"
+                  height={20}
+                  onClick={[Function]}
+                  preserveAspectRatio="xMidYMid meet"
+                  style={
+                    Object {
+                      "willChange": "transform",
+                    }
+                  }
+                  viewBox="0 0 32 32"
+                  width={20}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4l6.6 6.6L8 22.6 9.4 24l6.6-6.6 6.6 6.6 1.4-1.4-6.6-6.6L24 9.4z"
+                  />
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
         <ul
-          className="bx--progress WizardHeader__StyledProgressIndicator-zafbe2-1 dpwNUl  ProgressIndicator__StyledProgressIndicator-sc-1sy51cd-0 egbeyA"
+          className="bx--progress wizard-inline-progress-indicator  ProgressIndicator__StyledProgressIndicator-sc-1sy51cd-0 egbeyA"
           onChange={[Function]}
         >
           <li
@@ -1418,7 +1483,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
               className="WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
             >
               <button
-                className="Button__StyledButton-sc-19kycwu-0 gTXQZR bx--btn bx--btn--secondary"
+                className="Button__StyledButton-sc-19kycwu-0 PhzAJ bx--btn bx--btn--secondary"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
@@ -1427,7 +1492,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
                 Back
               </button>
               <button
-                className="Button__StyledButton-sc-19kycwu-0 gTXQZR bx--btn bx--btn--primary"
+                className="Button__StyledButton-sc-19kycwu-0 PhzAJ bx--btn bx--btn--primary"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
@@ -1495,43 +1560,64 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
         data-id="WizardInlineContainer"
       >
         <div
-          className="WizardHeader__StyledHero-zafbe2-0 kATNdy Hero__StyledHero-nej8yx-0 fTphDS"
+          className="wizard-inline-header page-title-bar"
         >
           <div
-            className="Hero__StyledTitleSection-nej8yx-1 imCjnH"
+            className="page-title-bar-header"
           >
-            <div
-              className="Hero__StyledTitle-nej8yx-2 emqnjy"
-            >
-              Static Wizard
-            </div>
-            <button
-              aria-label="Close"
-              className="bx--modal-close"
-              data-modal-close={true}
-              onClick={[Function]}
-              type="button"
-            >
-              <svg
-                className="bx--modal-close__icon"
-                height="10"
-                viewBox="0 0 10 10"
-                width="10"
-                xmlns="http://www.w3.org/2000/svg"
+            <div>
+              <div
+                className="page-title-bar-title"
               >
-                <title>
-                  Close
-                </title>
-                <path
-                  d="M6.32 5L10 8.68 8.68 10 5 6.32 1.32 10 0 8.68 3.68 5 0 1.32 1.32 0 5 3.68 8.68 0 10 1.32 6.32 5z"
-                  fillRule="nonzero"
-                />
-              </svg>
-            </button>
+                <div
+                  className="page-title-bar-title--text"
+                >
+                  <h2>
+                    Static Wizard
+                  </h2>
+                </div>
+              </div>
+            </div>
+            <div
+              style={
+                Object {
+                  "flex": 1,
+                }
+              }
+            />
+            <div>
+              <button
+                className="bx--modal-close Button__StyledButton-sc-19kycwu-0 PhzAJ bx--btn bx--btn--primary"
+                disabled={false}
+                tabIndex={0}
+                title="Close"
+                type="button"
+              >
+                <svg
+                  aria-hidden={true}
+                  focusable="false"
+                  height={20}
+                  onClick={[Function]}
+                  preserveAspectRatio="xMidYMid meet"
+                  style={
+                    Object {
+                      "willChange": "transform",
+                    }
+                  }
+                  viewBox="0 0 32 32"
+                  width={20}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4l6.6 6.6L8 22.6 9.4 24l6.6-6.6 6.6 6.6 1.4-1.4-6.6-6.6L24 9.4z"
+                  />
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
         <ul
-          className="bx--progress WizardHeader__StyledProgressIndicator-zafbe2-1 dpwNUl  ProgressIndicator__StyledProgressIndicator-sc-1sy51cd-0 egbeyA"
+          className="bx--progress wizard-inline-progress-indicator  ProgressIndicator__StyledProgressIndicator-sc-1sy51cd-0 egbeyA"
           onChange={[Function]}
         >
           <li
@@ -1758,7 +1844,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
               className="WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
             >
               <button
-                className="Button__StyledButton-sc-19kycwu-0 gTXQZR bx--btn bx--btn--secondary"
+                className="Button__StyledButton-sc-19kycwu-0 PhzAJ bx--btn bx--btn--secondary"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}
@@ -1767,7 +1853,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
                 Cancel
               </button>
               <button
-                className="Button__StyledButton-sc-19kycwu-0 gTXQZR bx--btn bx--btn--primary"
+                className="Button__StyledButton-sc-19kycwu-0 PhzAJ bx--btn bx--btn--primary"
                 disabled={false}
                 onClick={[Function]}
                 tabIndex={0}

@@ -14,7 +14,6 @@ import {
   SelectItemGroup,
   SkeletonText,
 } from 'carbon-components-react';
-import { pure } from 'recompose';
 import Close16 from '@carbon/icons-react/lib/close/16';
 // import ChevronDown from '@carbon/icons-react/lib/chevron--down/20';
 import EventSchedule from '@carbon/icons-react/lib/event--schedule/20';
@@ -35,7 +34,7 @@ import {
 import { CardPropTypes } from '../../constants/PropTypes';
 import { getCardMinSize } from '../../utils/componentUtilityFunctions';
 
-const OptimizedSkeletonText = pure(SkeletonText);
+const OptimizedSkeletonText = React.memo(SkeletonText);
 
 /** Full card */
 const CardWrapper = styled.div`
@@ -54,6 +53,7 @@ const CardWrapper = styled.div`
 export const CardContent = styled.div`
   flex: 1;
   position: relative;
+  overflow: hidden;
   height: ${props => props.dimensions.y - CARD_TITLE_HEIGHT}px;
 `;
 
@@ -87,6 +87,7 @@ const TimeRangeLabel = styled.span`
 const defaultProps = {
   size: CARD_SIZES.SMALL,
   layout: CARD_SIZES.HORIZONTAL,
+  title: undefined,
   toolbar: undefined,
   timeRange: undefined,
   isLoading: false,
@@ -133,7 +134,7 @@ const defaultProps = {
     deleteCardLabel: 'Delete card',
     closeLabel: 'Close',
     expandLabel: 'Expand to fullscreen',
-    overflowMenuDescription: 'open and close list of options',
+    overflowMenuDescription: 'Open and close list of options',
   },
 };
 
@@ -155,7 +156,6 @@ const Card = ({
   availableActions,
   breakpoint,
   i18n,
-  i18n: { closeLabel },
   ...others
 }) => {
   const [tooltipId, setTooltipId] = useState(uuidv1());
@@ -200,6 +200,7 @@ const Card = ({
       <OverflowMenu
         className="card--toolbar-action"
         flipped
+        title={strings.overflowMenuDescription}
         menuOptionsClass="card--overflow"
         renderIcon={EventSchedule}
         iconDescription={
@@ -246,7 +247,7 @@ const Card = ({
           mergedAvailableActions.clone ||
           mergedAvailableActions.delete) && (
           <ToolbarItem>
-            <OverflowMenu flipped>
+            <OverflowMenu flipped title={strings.overflowMenuDescription}>
               {mergedAvailableActions.edit && (
                 <OverflowMenuItem
                   onClick={() => {
@@ -290,7 +291,8 @@ const Card = ({
                 kind="ghost"
                 size="small"
                 renderIcon={Close16}
-                iconDescription={closeLabel}
+                iconDescription={strings.closeLabel}
+                title={strings.closeLabel}
                 onClick={() => onCardAction(id, 'CLOSE_EXPANDED_CARD')}
               />
             ) : (
@@ -321,21 +323,24 @@ const Card = ({
           cardWidthSize={sizeWidth.width}
           {...others}
         >
-          <div className="card--header">
-            <span className="card--title" title={title}>
-              {title}&nbsp;
-              {tooltip && (
-                <Tooltip
-                  triggerId={`card-tooltip-trigger-${id}`}
-                  tooltipId={`card-tooltip-${id}`}
-                  triggerText=""
-                >
-                  {tooltip}
-                </Tooltip>
-              )}
-            </span>
-            {toolbar(sizeWidth.width)}
-          </div>
+          {title !== undefined && (
+            <div className="card--header">
+              <span className="card--title" title={title}>
+                {title}&nbsp;
+                {tooltip && (
+                  <Tooltip
+                    triggerId={`card-tooltip-trigger-${id}`}
+                    tooltipId={`card-tooltip-${id}`}
+                    triggerText=""
+                  >
+                    {tooltip}
+                  </Tooltip>
+                )}
+              </span>
+              {toolbar(sizeWidth.width)}
+            </div>
+          )}
+
           <CardContent dimensions={dimensions}>
             {isLoading ? (
               <SkeletonWrapper>

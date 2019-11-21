@@ -3,6 +3,11 @@
 
 .page-wizard {
   display: flex;
+
+  &__sticky {
+    padding-bottom: 5rem;
+  }
+
   &--progress {
     padding-right: $spacing-05;
     flex: 0 0 12rem;
@@ -31,6 +36,18 @@
     flex: 1;
     &--actions {
       padding-top: $spacing-07;
+      .#{$prefix}--btn {
+        margin-right: $spacing-05;
+      }
+    }
+    &--actions--sticky {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: $ui-01;
+      padding: $spacing-05 $spacing-07;
+      border-top: rem(1px) solid $ui-03;
       .#{$prefix}--btn {
         margin-right: $spacing-05;
       }
