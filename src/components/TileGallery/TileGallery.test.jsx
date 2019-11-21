@@ -39,6 +39,7 @@ describe('TileGallery tests', () => {
   });
   test('TileGallerySection - have default onClick', () => {
     expect(TileGallerySection.defaultProps.onClick).toBeDefined();
+    expect(TileGallerySection.defaultProps.onClick()).toBe(undefined);
   });
   test('TileGallerySection', () => {
     const onClick = jest.fn();
@@ -68,7 +69,12 @@ describe('TileGallery tests', () => {
     expect(wrapper.find('Accordion')).toHaveLength(0);
   });
   test('TileGallerySearch - have default onChange', () => {
+    console.log(
+      'TileGallerySearch.defaultProps.onChange:::',
+      TileGallerySearch.defaultProps.onChange
+    );
     expect(TileGallerySearch.defaultProps.onChange).toBeDefined();
+    expect(TileGallerySearch.defaultProps.onChange()).toBe(undefined);
   });
   test('TileGallerySearch - simulate search', () => {
     const onChange = jest.fn();
@@ -81,6 +87,7 @@ describe('TileGallery tests', () => {
   });
   test('TileGalleryViewSwitcher - have default onChange', () => {
     expect(TileGalleryViewSwitcher.defaultProps.onChange).toBeDefined();
+    expect(TileGalleryViewSwitcher.defaultProps.onChange()).toBe(undefined);
   });
   test('TileGalleryViewSwitcher - simulate change', () => {
     const onChange = jest.fn();
