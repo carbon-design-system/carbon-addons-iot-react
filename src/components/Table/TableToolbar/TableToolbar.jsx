@@ -187,12 +187,13 @@ const TableToolbar = ({
           </TableBatchAction>
         ))}
       </TableBatchActions>
-      {customToolbarContent || null}
+
       {totalFilters > 0 ? (
         <StyledClearFiltersButton kind="secondary" onClick={onClearAllFilters} small>
           {i18n.clearAllFilters}
         </StyledClearFiltersButton>
       ) : null}
+      {customToolbarContent || null}
       {hasColumnSelection ? (
         <StyledTableToolbarAction
           className="bx--btn--sm"

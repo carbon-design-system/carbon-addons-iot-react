@@ -10,6 +10,7 @@ import memoize from 'lodash/memoize';
 import capitalize from 'lodash/capitalize';
 import useDeepCompareEffect from 'use-deep-compare-effect';
 
+import { csvDownloadHandler } from '../../utils/componentUtilityFunctions';
 import { TimeSeriesCardPropTypes, CardPropTypes } from '../../constants/PropTypes';
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 import Card from '../Card/Card';
@@ -377,6 +378,7 @@ const TimeSeriesCard = ({
                 toolbar: {
                   onClearAllFilters: () => {},
                   onToggleFilter: () => {},
+                  onDownloadCSV: () => csvDownloadHandler(tableData, title),
                 },
               }}
               view={{

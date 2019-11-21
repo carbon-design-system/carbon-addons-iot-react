@@ -107,6 +107,7 @@ const propTypes = {
     rollingPeriodLabel: PropTypes.string,
     last24HoursLabel: PropTypes.string,
     last7DaysLabel: PropTypes.string,
+    defaultLabel: PropTypes.string,
     lastMonthLabel: PropTypes.string,
     lastQuarterLabel: PropTypes.string,
     lastYearLabel: PropTypes.string,
@@ -121,6 +122,7 @@ const propTypes = {
     monthlyLabel: PropTypes.string,
     expandLabel: PropTypes.string,
     overflowMenuDescription: PropTypes.string,
+    alertDetected: PropTypes.string,
 
     // card actions
     editCardLabel: PropTypes.string,
@@ -189,8 +191,10 @@ const defaultProps = {
     noDataShortLabel: 'No data',
     errorLoadingDataLabel: 'Error loading data for this card: ',
     errorLoadingDataShortLabel: 'Data error.',
+    alertDetected: 'Alert detected: ',
     // card labels
     rollingPeriodLabel: 'Rolling period',
+    defaultLabel: 'Default',
     last24HoursLabel: 'Last 24 hrs',
     last7DaysLabel: 'Last 7 days',
     lastMonthLabel: 'Last month',

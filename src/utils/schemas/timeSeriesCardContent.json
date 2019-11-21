@@ -81,7 +81,7 @@
         "type": { "type": "string" }
       },
       "required": ["type"],
-      "propertyNames": { "enum": ["type"] }
+      "propertyNames": { "enum": ["type", "dataFilter"] }
     },
     "alertRange": {
       "type": "object",

@@ -2,7 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import merge from 'lodash/merge';
 import pick from 'lodash/pick';
-import { PaginationV2, DataTable } from 'carbon-components-react';
+import { PaginationV2, DataTable, Button } from 'carbon-components-react';
+import Download16 from '@carbon/icons-react/lib/download/16';
 import isNil from 'lodash/isNil';
 import styled from 'styled-components';
 import sizeMe from 'react-sizeme';
@@ -51,6 +52,12 @@ const StyledPagination = sizeMe({ noPlaceholder: true })(styled(
     }
   }
 `);
+
+const ToolbarButton = styled(Button)`
+  &.bx--btn > svg {
+    margin: 0;
+  }
+`;
 
 const propTypes = {
   /** DOM ID for component */
@@ -165,6 +172,8 @@ const propTypes = {
       onApplyBatchAction: PropTypes.func,
       /** Apply a search criteria to the table */
       onApplySearch: PropTypes.func,
+      /** Download the table contents */
+      onDownloadCSV: PropTypes.func,
     }),
     /** table wide actions */
     table: PropTypes.shape({
@@ -276,6 +285,7 @@ export const defaultProps = baseProps => ({
     emptyMessageWithFilters: 'No results match the current filters',
     emptyButtonLabel: 'Create some data',
     emptyButtonLabelWithFilters: 'Clear all filters',
+    downloadIconDescription: 'Download table content',
     filterNone: 'Unsort rows by this header',
     filterAscending: 'Sort rows by this header in ascending order',
     filterDescending: 'Sort rows by this header in descending order',
@@ -290,6 +300,9 @@ const Table = props => {
     expandedData,
     view,
     actions,
+    actions: {
+      toolbar: { onDownloadCSV },
+    },
     options,
     lightweight,
     className,
@@ -369,7 +382,17 @@ const Table = props => {
             'activeBar',
             'customToolbarContent',
             'isDisabled'
-          ),
+          ), // if a download CSV handler is passed, then we should allow downloads
+          customToolbarContent: onDownloadCSV ? (
+            <ToolbarButton
+              kind="ghost"
+              small
+              renderIcon={Download16}
+              onClick={onDownloadCSV}
+              title={i18n.downloadIconDescription}
+              iconDescription={i18n.downloadIconDescription}
+            />
+          ) : null,
         }}
       />
       <TableContainer>

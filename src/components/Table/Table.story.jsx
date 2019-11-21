@@ -5,7 +5,7 @@ import { action } from '@storybook/addon-actions';
 import { boolean, text, number, select, array } from '@storybook/addon-knobs';
 import styled from 'styled-components';
 
-import { getSortedData } from '../../utils/componentUtilityFunctions';
+import { getSortedData, csvDownloadHandler } from '../../utils/componentUtilityFunctions';
 
 import Table from './Table';
 import StatefulTable from './StatefulTable';
@@ -369,7 +369,7 @@ storiesOf('Table', module)
     () => (
       <StatefulTable
         {...initialState}
-        actions={actions}
+        actions={{ ...actions, toolbar: { ...actions.toolbar, onDownloadCSV: csvDownloadHandler } }}
         lightweight={boolean('lightweight', false)}
       />
     ),
