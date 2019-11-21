@@ -1767,14 +1767,16 @@
   dependencies:
     "@carbon/charts" "^0.16.25"
 
-"@carbon/charts@^0.16.25", "@carbon/charts@https://github.com/scottdickerson/carbon-charts#carbon-charts-v0.16.27-gitpkg":
-  version "0.16.27"
-  resolved "https://github.com/scottdickerson/carbon-charts#fde40cf259455a2a14761f7088f6c1151a474366"
+"@carbon/charts@^0.16.25", "@carbon/charts@https://github.com/scottdickerson/carbon-charts#carbon-charts-v0.16.28-gitpkg":
+  version "0.16.28"
+  uid "4f77105a6cdac8b203b62ab831a97eca05ad5354"
+  resolved "https://github.com/scottdickerson/carbon-charts#4f77105a6cdac8b203b62ab831a97eca05ad5354"
   dependencies:
     "@carbon/utils-position" "1.1.1"
     babel-polyfill "6.26.0"
     carbon-components "10.5.0"
     lodash-es "4.17.15"
+    moment "^2.24.0"
     resize-observer-polyfill "1.5.0"
 
 "@carbon/colors@10.5.0", "@carbon/colors@^10.1.0":

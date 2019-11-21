@@ -832,7 +832,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     className="Card__CardContent-v5r71h-1 hDVRgE"
                   >
                     <div
-                      className="TimeSeriesCard__LineChartWrapper-q25vbg-0 lhdDAg"
+                      className="TimeSeriesCard__LineChartWrapper-q25vbg-1 ldWnXS"
                       size="MEDIUM"
                     >
                       <div
@@ -1025,21 +1025,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-3 jTKDEr"
                         >
                           <button
-                            className="TableCard__ToolbarButton-q9l5bz-4 iFxaZU bx--btn bx--btn--sm bx--btn--ghost"
-                            disabled={false}
+                            className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 dEzVra"
                             onClick={[Function]}
-                            tabIndex={0}
-                            title="Download table content"
-                            type="button"
                           >
                             <svg
-                              aria-hidden="true"
-                              aria-label="Download table content"
-                              className="bx--btn__icon"
+                              aria-hidden={true}
+                              description="Download table content"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
-                              role="img"
                               style={
                                 Object {
                                   "willChange": "transform",
@@ -1446,7 +1440,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     className="Card__CardContent-v5r71h-1 jAGfWa"
                   >
                     <div
-                      className="TimeSeriesCard__LineChartWrapper-q25vbg-0 lhdDAg"
+                      className="TimeSeriesCard__LineChartWrapper-q25vbg-1 ldWnXS"
                       size="LARGE"
                     >
                       <div
@@ -2683,7 +2677,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     className="Card__CardContent-v5r71h-1 hDVRgE"
                   >
                     <div
-                      className="TimeSeriesCard__LineChartWrapper-q25vbg-0 lhdDAg"
+                      className="TimeSeriesCard__LineChartWrapper-q25vbg-1 ldWnXS"
                       size="MEDIUM"
                     >
                       <div
@@ -2876,21 +2870,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-3 jTKDEr"
                         >
                           <button
-                            className="TableCard__ToolbarButton-q9l5bz-4 iFxaZU bx--btn bx--btn--sm bx--btn--ghost"
-                            disabled={false}
+                            className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 dEzVra"
                             onClick={[Function]}
-                            tabIndex={0}
-                            title="Download table content"
-                            type="button"
                           >
                             <svg
-                              aria-hidden="true"
-                              aria-label="Download table content"
-                              className="bx--btn__icon"
+                              aria-hidden={true}
+                              description="Download table content"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
-                              role="img"
                               style={
                                 Object {
                                   "willChange": "transform",
@@ -3297,7 +3285,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     className="Card__CardContent-v5r71h-1 jAGfWa"
                   >
                     <div
-                      className="TimeSeriesCard__LineChartWrapper-q25vbg-0 lhdDAg"
+                      className="TimeSeriesCard__LineChartWrapper-q25vbg-1 ldWnXS"
                       size="LARGE"
                     >
                       <div
@@ -4566,7 +4554,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     className="Card__CardContent-v5r71h-1 hDVRgE"
                   >
                     <div
-                      className="TimeSeriesCard__LineChartWrapper-q25vbg-0 lhdDAg"
+                      className="TimeSeriesCard__LineChartWrapper-q25vbg-1 ldWnXS"
                       size="MEDIUM"
                     >
                       <div
@@ -4759,21 +4747,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-3 jTKDEr"
                         >
                           <button
-                            className="TableCard__ToolbarButton-q9l5bz-4 iFxaZU bx--btn bx--btn--sm bx--btn--ghost"
-                            disabled={false}
+                            className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 dEzVra"
                             onClick={[Function]}
-                            tabIndex={0}
-                            title="Download table content"
-                            type="button"
                           >
                             <svg
-                              aria-hidden="true"
-                              aria-label="Download table content"
-                              className="bx--btn__icon"
+                              aria-hidden={true}
+                              description="Download table content"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
-                              role="img"
                               style={
                                 Object {
                                   "willChange": "transform",
@@ -5180,7 +5162,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     className="Card__CardContent-v5r71h-1 jAGfWa"
                   >
                     <div
-                      className="TimeSeriesCard__LineChartWrapper-q25vbg-0 lhdDAg"
+                      className="TimeSeriesCard__LineChartWrapper-q25vbg-1 ldWnXS"
                       size="LARGE"
                     >
                       <div
@@ -5891,6 +5873,194 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
 </div>
 `;
 
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashboard full screen line card 1`] = `
+<div
+  className="storybook-container"
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "flexDirection": "column",
+      "padding": "3rem",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div>
+      <div
+        className="dashboard--header"
+      >
+        <div
+          className="dashboard--header-left"
+        >
+          <h2>
+            Expandable card, click expand to expand line
+          </h2>
+          <div
+            className="dashboard--lastupdated"
+          >
+            Last updated: 
+             
+            <p
+              className="bx--skeleton__text"
+              style={
+                Object {
+                  "width": "100%",
+                }
+              }
+            />
+          </div>
+        </div>
+        <div
+          className="dashboard--header-right"
+        >
+          <div
+            className="dashboard--header-actions"
+          />
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "display": "flex",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "flex": 1,
+            }
+          }
+        >
+          <div
+            className="react-grid-layout Dashboard__StyledGridLayout-up3zyz-0 leaKVS"
+            style={
+              Object {
+                "height": "592px",
+              }
+            }
+          >
+            <div
+              className="react-grid-item cssTransforms"
+              style={
+                Object {
+                  "MozTransform": "translate(16px,16px)",
+                  "OTransform": "translate(16px,16px)",
+                  "WebkitTransform": "translate(16px,16px)",
+                  "height": "560px",
+                  "msTransform": "translate(16px,16px)",
+                  "position": "absolute",
+                  "transform": "translate(16px,16px)",
+                  "width": "616px",
+                }
+              }
+            >
+              <div
+                className="Card__CardWrapper-v5r71h-0 kGdXdI"
+                id="expandedcard"
+                type="TIMESERIES"
+              >
+                <div
+                  className="card--header"
+                >
+                  <span
+                    className="card--title"
+                    title="Expanded card"
+                  >
+                    Expanded card
+                     
+                  </span>
+                  <div
+                    className="bx--toolbar card--toolbar"
+                  >
+                    <button
+                      className="card--toolbar-action Card__TinyButton-v5r71h-4 fggzfz bx--btn bx--btn--sm bx--btn--ghost"
+                      disabled={false}
+                      onClick={[Function]}
+                      tabIndex={0}
+                      title="Expand to fullscreen"
+                      type="button"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        aria-label="Expand to fullscreen"
+                        className="bx--btn__icon"
+                        focusable="false"
+                        height={20}
+                        preserveAspectRatio="xMidYMid meet"
+                        role="img"
+                        style={
+                          Object {
+                            "willChange": "transform",
+                          }
+                        }
+                        viewBox="0 0 32 32"
+                        width={20}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M28 4H10a2.006 2.006 0 0 0-2 2v14a2.006 2.006 0 0 0 2 2h18a2.006 2.006 0 0 0 2-2V6a2.006 2.006 0 0 0-2-2zm0 16H10V6h18z"
+                        />
+                        <path
+                          d="M18 26H4V16h2v-2H4a2.006 2.006 0 0 0-2 2v10a2.006 2.006 0 0 0 2 2h14a2.006 2.006 0 0 0 2-2v-2h-2z"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div
+                  className="Card__CardContent-v5r71h-1 jAGfWa"
+                >
+                  <div
+                    className="TimeSeriesCard__LineChartWrapper-q25vbg-1 ldWnXS"
+                    size="LARGE"
+                  >
+                    <div
+                      className="chart-holder"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashboard full screen table card 1`] = `
 <div
   className="storybook-container"
@@ -6153,21 +6323,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-3 jTKDEr"
                         >
                           <button
-                            className="TableCard__ToolbarButton-q9l5bz-4 iFxaZU bx--btn bx--btn--sm bx--btn--ghost"
-                            disabled={false}
+                            className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 dEzVra"
                             onClick={[Function]}
-                            tabIndex={0}
-                            title="Download table content"
-                            type="button"
                           >
                             <svg
-                              aria-hidden="true"
-                              aria-label="Download table content"
-                              className="bx--btn__icon"
+                              aria-hidden={true}
+                              description="Download table content"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
-                              role="img"
                               style={
                                 Object {
                                   "willChange": "transform",
@@ -8529,10 +8693,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         open={false}
                         role="button"
                         tabIndex={0}
-                        title="Open and close list of options"
+                        title="open and close list of options"
                       >
                         <svg
-                          aria-label="Open and close list of options"
+                          aria-label="open and close list of options"
                           className="bx--overflow-menu__icon"
                           focusable="false"
                           height={20}
@@ -8559,7 +8723,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
                           />
                           <title>
-                            Open and close list of options
+                            open and close list of options
                           </title>
                         </svg>
                       </div>
@@ -8602,7 +8766,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     className="Card__CardContent-v5r71h-1 hDVRgE"
                   >
                     <div
-                      className="TimeSeriesCard__LineChartWrapper-q25vbg-0 lhdDAg"
+                      className="TimeSeriesCard__LineChartWrapper-q25vbg-1 ldWnXS"
                       size="MEDIUM"
                     >
                       <div
@@ -8795,21 +8959,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-3 jTKDEr"
                         >
                           <button
-                            className="TableCard__ToolbarButton-q9l5bz-4 iFxaZU bx--btn bx--btn--sm bx--btn--ghost"
-                            disabled={false}
+                            className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 dEzVra"
                             onClick={[Function]}
-                            tabIndex={0}
-                            title="Download table content"
-                            type="button"
                           >
                             <svg
-                              aria-hidden="true"
-                              aria-label="Download table content"
-                              className="bx--btn__icon"
+                              aria-hidden={true}
+                              description="Download table content"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
-                              role="img"
                               style={
                                 Object {
                                   "willChange": "transform",
@@ -9143,10 +9301,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         open={false}
                         role="button"
                         tabIndex={0}
-                        title="Open and close list of options"
+                        title="open and close list of options"
                       >
                         <svg
-                          aria-label="Open and close list of options"
+                          aria-label="open and close list of options"
                           className="bx--overflow-menu__icon"
                           focusable="false"
                           height={20}
@@ -9173,7 +9331,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
                           />
                           <title>
-                            Open and close list of options
+                            open and close list of options
                           </title>
                         </svg>
                       </div>
@@ -9216,7 +9374,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     className="Card__CardContent-v5r71h-1 jAGfWa"
                   >
                     <div
-                      className="TimeSeriesCard__LineChartWrapper-q25vbg-0 lhdDAg"
+                      className="TimeSeriesCard__LineChartWrapper-q25vbg-1 ldWnXS"
                       size="LARGE"
                     >
                       <div
@@ -20879,7 +21037,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     className="Card__CardContent-v5r71h-1 hDVRgE"
                   >
                     <div
-                      className="TimeSeriesCard__LineChartWrapper-q25vbg-0 lhdDAg"
+                      className="TimeSeriesCard__LineChartWrapper-q25vbg-1 ldWnXS"
                       size="MEDIUM"
                     >
                       <div
@@ -21072,21 +21230,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-3 jTKDEr"
                         >
                           <button
-                            className="TableCard__ToolbarButton-q9l5bz-4 iFxaZU bx--btn bx--btn--sm bx--btn--ghost"
-                            disabled={false}
+                            className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 dEzVra"
                             onClick={[Function]}
-                            tabIndex={0}
-                            title="Download table content"
-                            type="button"
                           >
                             <svg
-                              aria-hidden="true"
-                              aria-label="Download table content"
-                              className="bx--btn__icon"
+                              aria-hidden={true}
+                              description="Download table content"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
-                              role="img"
                               style={
                                 Object {
                                   "willChange": "transform",
@@ -21493,7 +21645,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     className="Card__CardContent-v5r71h-1 jAGfWa"
                   >
                     <div
-                      className="TimeSeriesCard__LineChartWrapper-q25vbg-0 lhdDAg"
+                      className="TimeSeriesCard__LineChartWrapper-q25vbg-1 ldWnXS"
                       size="LARGE"
                     >
                       <div

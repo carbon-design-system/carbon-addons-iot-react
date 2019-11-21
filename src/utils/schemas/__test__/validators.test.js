@@ -16,6 +16,7 @@ import {
   validateDashboardJSON,
   validateValueCard,
   validateTimeSeriesCard,
+  validateTableCard,
   validateCard,
   validateAggregators,
 } from '../validators';
@@ -151,6 +152,34 @@ describe('validators', () => {
     expect(validateCard.errors).not.toHaveLength(0);
     expect(validateCard.isValid).toEqual(false);
   });
+  test('validateTimeSeriesCard raw', () => {
+    const mockRawTimeSeriesCard = {
+      content: {
+        series: [
+          {
+            dataSourceId: 'acc',
+            label: 'Raw acceleration',
+          },
+        ],
+        unit: 'm/sec',
+      },
+      dataSource: {
+        attributes: [
+          {
+            attribute: 'acc',
+            id: 'acc',
+          },
+        ],
+      },
+      id: 'raw-data',
+      size: 'LARGE',
+      title: 'Raw acceleration',
+      type: 'TIMESERIES',
+    };
+    const validateCard = validateTimeSeriesCard(mockRawTimeSeriesCard);
+    expect(validateCard.errors).toHaveLength(0);
+    expect(validateCard.isValid).toEqual(true);
+  });
   test('validateTimeSeriesCard in dashboard missing series', () => {
     const mockDashboard = {
       ...dashboardExample,
@@ -205,6 +234,14 @@ describe('validators', () => {
     expect(validateCard4.errors).toHaveLength(0);
     expect(validateCard4.isValid).toEqual(true);
   });
+  test('validateTimeSeriesCard additionalData', () => {
+    const validateCard = validateTimeSeriesCard({
+      ...mockTimeSeriesCard,
+      dataSource: { ...mockTimeSeriesCard.dataSource, additionalData: { type: 'alert' } },
+    });
+    expect(validateCard.errors).toHaveLength(0);
+    expect(validateCard.isValid).toEqual(true);
+  });
   test('validateAggregators', () => {
     const mockDataSource = [{ attribute: 'status', aggregator: 'mean' }];
     const aggregatorErrors = validateAggregators(mockDataSource, dataAttributes);
@@ -216,5 +253,81 @@ describe('validators', () => {
     const mockDataSource3 = [{ attribute: 'comfort', aggregator: 'mean' }];
     const aggregatorErrors3 = validateAggregators(mockDataSource3, dataAttributes);
     expect(aggregatorErrors3).toHaveLength(0);
+  });
+  test('validateTableCard GOOD', () => {
+    const mockTableCard = {
+      content: {
+        columns: [
+          {
+            dataSourceId: 'manufacturer',
+          },
+          {
+            dataSourceId: 'load',
+          },
+          {
+            dataSourceId: 'timestamp',
+            type: 'TIMESTAMP',
+          },
+        ],
+      },
+      dataSource: {
+        attributes: [
+          {
+            aggregator: 'mean',
+            attribute: 'load',
+            id: 'load',
+          },
+        ],
+        range: {
+          type: 'periodToDate',
+          count: -1,
+          interval: 'month',
+        },
+        groupBy: ['manufacturer'],
+        timeGrain: 'day',
+      },
+      id: 'load',
+      size: 'XLARGE',
+      title: 'Load per day',
+      type: 'TABLE',
+    };
+    const validateCard = validateTableCard(mockTableCard);
+    expect(validateCard.errors).toHaveLength(0);
+    expect(validateCard.isValid).toEqual(true);
+  });
+  test('validateTableCard Raw data, no aggregation', () => {
+    const mockTableCard = {
+      content: {
+        columns: [
+          {
+            dataSourceId: 'load',
+          },
+          {
+            dataSourceId: 'timestamp',
+            type: 'TIMESTAMP',
+          },
+        ],
+      },
+      dataSource: {
+        attributes: [
+          {
+            attribute: 'load',
+            id: 'load',
+          },
+        ],
+        range: {
+          type: 'periodToDate',
+          count: -1,
+          interval: 'month',
+        },
+      },
+      id: 'load',
+      size: 'XLARGE',
+      title: 'Load per day',
+      type: 'TABLE',
+    };
+    const validateCard = validateTableCard(mockTableCard);
+    expect(validateCard.errors).toHaveLength(0);
+    expect(validateCard.isValid).toEqual(true);
   });
 });

@@ -78,8 +78,7 @@
         "aggregator": {
           "enum": ["max", "min", "mean", "last", "first", "sum", "std", "count"]
         }
-      },
-      "required": ["aggregator"]
+      }
     },
     "threshold": {
       "type": "object",

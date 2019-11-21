@@ -161,21 +161,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                 className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-3 jTKDEr"
               >
                 <button
-                  className="TableCard__ToolbarButton-q9l5bz-4 iFxaZU bx--btn bx--btn--sm bx--btn--ghost"
-                  disabled={false}
+                  className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 dEzVra"
                   onClick={[Function]}
-                  tabIndex={0}
-                  title="Download table content"
-                  type="button"
                 >
                   <svg
-                    aria-hidden="true"
-                    aria-label="Download table content"
-                    className="bx--btn__icon"
+                    aria-hidden={true}
+                    description="Download table content"
                     focusable="false"
                     height={16}
                     preserveAspectRatio="xMidYMid meet"
-                    role="img"
                     style={
                       Object {
                         "willChange": "transform",
@@ -1454,21 +1448,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                 className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-3 jTKDEr"
               >
                 <button
-                  className="TableCard__ToolbarButton-q9l5bz-4 iFxaZU bx--btn bx--btn--sm bx--btn--ghost"
-                  disabled={false}
+                  className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 dEzVra"
                   onClick={[Function]}
-                  tabIndex={0}
-                  title="Download table content"
-                  type="button"
                 >
                   <svg
-                    aria-hidden="true"
-                    aria-label="Download table content"
-                    className="bx--btn__icon"
+                    aria-hidden={true}
+                    description="Download table content"
                     focusable="false"
                     height={16}
                     preserveAspectRatio="xMidYMid meet"
-                    role="img"
                     style={
                       Object {
                         "willChange": "transform",
@@ -3193,21 +3181,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                 className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-3 jTKDEr"
               >
                 <button
-                  className="TableCard__ToolbarButton-q9l5bz-4 iFxaZU bx--btn bx--btn--sm bx--btn--ghost"
-                  disabled={false}
+                  className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 dEzVra"
                   onClick={[Function]}
-                  tabIndex={0}
-                  title="Download table content"
-                  type="button"
                 >
                   <svg
-                    aria-hidden="true"
-                    aria-label="Download table content"
-                    className="bx--btn__icon"
+                    aria-hidden={true}
+                    description="Download table content"
                     focusable="false"
                     height={16}
                     preserveAspectRatio="xMidYMid meet"
-                    role="img"
                     style={
                       Object {
                         "willChange": "transform",
@@ -3728,21 +3710,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                 className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-3 jTKDEr"
               >
                 <button
-                  className="TableCard__ToolbarButton-q9l5bz-4 iFxaZU bx--btn bx--btn--sm bx--btn--ghost"
-                  disabled={false}
+                  className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 dEzVra"
                   onClick={[Function]}
-                  tabIndex={0}
-                  title="Download table content"
-                  type="button"
                 >
                   <svg
-                    aria-hidden="true"
-                    aria-label="Download table content"
-                    className="bx--btn__icon"
+                    aria-hidden={true}
+                    description="Download table content"
                     focusable="false"
                     height={16}
                     preserveAspectRatio="xMidYMid meet"
-                    role="img"
                     style={
                       Object {
                         "willChange": "transform",
@@ -4315,7 +4291,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                     >
                       <div
-                        className="TableCard__StyledIconDiv-q9l5bz-5 kQkprB"
+                        className="TableCard__StyledIconDiv-q9l5bz-4 fFnvlh"
                         title="count < 5"
                       >
                         <svg
@@ -4355,7 +4331,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                           </g>
                         </svg>
                         <span
-                          className="TableCard__StyledSpan-q9l5bz-6 jbPfYa"
+                          className="TableCard__StyledSpan-q9l5bz-5 bPtSrU"
                         >
                           Low
                         </span>
@@ -4463,7 +4439,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                     >
                       <div
-                        className="TableCard__StyledIconDiv-q9l5bz-5 kQkprB"
+                        className="TableCard__StyledIconDiv-q9l5bz-4 fFnvlh"
                         title="count < 5"
                       >
                         <svg
@@ -4503,7 +4479,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                           </g>
                         </svg>
                         <span
-                          className="TableCard__StyledSpan-q9l5bz-6 jbPfYa"
+                          className="TableCard__StyledSpan-q9l5bz-5 bPtSrU"
                         >
                           Low
                         </span>
@@ -4611,7 +4587,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                     >
                       <div
-                        className="TableCard__StyledIconDiv-q9l5bz-5 kQkprB"
+                        className="TableCard__StyledIconDiv-q9l5bz-4 fFnvlh"
                         title="count < 5"
                       >
                         <svg
@@ -4651,7 +4627,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                           </g>
                         </svg>
                         <span
-                          className="TableCard__StyledSpan-q9l5bz-6 jbPfYa"
+                          className="TableCard__StyledSpan-q9l5bz-5 bPtSrU"
                         >
                           Low
                         </span>
@@ -4759,7 +4735,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                     >
                       <div
-                        className="TableCard__StyledIconDiv-q9l5bz-5 kQkprB"
+                        className="TableCard__StyledIconDiv-q9l5bz-4 fFnvlh"
                         title="count >= 10"
                       >
                         <svg
@@ -4797,7 +4773,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                           </g>
                         </svg>
                         <span
-                          className="TableCard__StyledSpan-q9l5bz-6 jbPfYa"
+                          className="TableCard__StyledSpan-q9l5bz-5 bPtSrU"
                         >
                           Critical
                         </span>
@@ -5006,7 +4982,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                     >
                       <div
-                        className="TableCard__StyledIconDiv-q9l5bz-5 kQkprB"
+                        className="TableCard__StyledIconDiv-q9l5bz-4 fFnvlh"
                         title="count = 7"
                       >
                         <svg
@@ -5044,7 +5020,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                           </g>
                         </svg>
                         <span
-                          className="TableCard__StyledSpan-q9l5bz-6 jbPfYa"
+                          className="TableCard__StyledSpan-q9l5bz-5 bPtSrU"
                         >
                           Moderate
                         </span>
@@ -5152,7 +5128,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                     >
                       <div
-                        className="TableCard__StyledIconDiv-q9l5bz-5 kQkprB"
+                        className="TableCard__StyledIconDiv-q9l5bz-4 fFnvlh"
                         title="count < 5"
                       >
                         <svg
@@ -5192,7 +5168,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                           </g>
                         </svg>
                         <span
-                          className="TableCard__StyledSpan-q9l5bz-6 jbPfYa"
+                          className="TableCard__StyledSpan-q9l5bz-5 bPtSrU"
                         >
                           Low
                         </span>
@@ -5300,7 +5276,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                     >
                       <div
-                        className="TableCard__StyledIconDiv-q9l5bz-5 kQkprB"
+                        className="TableCard__StyledIconDiv-q9l5bz-4 fFnvlh"
                         title="count < 5"
                       >
                         <svg
@@ -5340,7 +5316,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                           </g>
                         </svg>
                         <span
-                          className="TableCard__StyledSpan-q9l5bz-6 jbPfYa"
+                          className="TableCard__StyledSpan-q9l5bz-5 bPtSrU"
                         >
                           Low
                         </span>
@@ -5398,7 +5374,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                     >
                       <div
-                        className="TableCard__StyledIconDiv-q9l5bz-5 kQkprB"
+                        className="TableCard__StyledIconDiv-q9l5bz-4 fFnvlh"
                         title="pressure >= 10"
                       >
                         <svg
@@ -5436,7 +5412,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                           </g>
                         </svg>
                         <span
-                          className="TableCard__StyledSpan-q9l5bz-6 jbPfYa"
+                          className="TableCard__StyledSpan-q9l5bz-5 bPtSrU"
                         >
                           Critical
                         </span>
@@ -5499,7 +5475,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                     >
                       <div
-                        className="TableCard__StyledIconDiv-q9l5bz-5 kQkprB"
+                        className="TableCard__StyledIconDiv-q9l5bz-4 fFnvlh"
                         title="count >= 10"
                       >
                         <svg
@@ -5537,7 +5513,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                           </g>
                         </svg>
                         <span
-                          className="TableCard__StyledSpan-q9l5bz-6 jbPfYa"
+                          className="TableCard__StyledSpan-q9l5bz-5 bPtSrU"
                         >
                           Critical
                         </span>
@@ -5595,7 +5571,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                     >
                       <div
-                        className="TableCard__StyledIconDiv-q9l5bz-5 kQkprB"
+                        className="TableCard__StyledIconDiv-q9l5bz-4 fFnvlh"
                         title="pressure >= 10"
                       >
                         <svg
@@ -5633,7 +5609,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                           </g>
                         </svg>
                         <span
-                          className="TableCard__StyledSpan-q9l5bz-6 jbPfYa"
+                          className="TableCard__StyledSpan-q9l5bz-5 bPtSrU"
                         >
                           Critical
                         </span>
@@ -6165,21 +6141,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                 className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-3 jTKDEr"
               >
                 <button
-                  className="TableCard__ToolbarButton-q9l5bz-4 iFxaZU bx--btn bx--btn--sm bx--btn--ghost"
-                  disabled={false}
+                  className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 dEzVra"
                   onClick={[Function]}
-                  tabIndex={0}
-                  title="Download table content"
-                  type="button"
                 >
                   <svg
-                    aria-hidden="true"
-                    aria-label="Download table content"
-                    className="bx--btn__icon"
+                    aria-hidden={true}
+                    description="Download table content"
                     focusable="false"
                     height={16}
                     preserveAspectRatio="xMidYMid meet"
-                    role="img"
                     style={
                       Object {
                         "willChange": "transform",
@@ -7500,21 +7470,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                 className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-3 jTKDEr"
               >
                 <button
-                  className="TableCard__ToolbarButton-q9l5bz-4 iFxaZU bx--btn bx--btn--sm bx--btn--ghost"
-                  disabled={false}
+                  className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 dEzVra"
                   onClick={[Function]}
-                  tabIndex={0}
-                  title="Download table content"
-                  type="button"
                 >
                   <svg
-                    aria-hidden="true"
-                    aria-label="Download table content"
-                    className="bx--btn__icon"
+                    aria-hidden={true}
+                    description="Download table content"
                     focusable="false"
                     height={16}
                     preserveAspectRatio="xMidYMid meet"
-                    role="img"
                     style={
                       Object {
                         "willChange": "transform",
@@ -8836,21 +8800,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                 className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-3 jTKDEr"
               >
                 <button
-                  className="TableCard__ToolbarButton-q9l5bz-4 iFxaZU bx--btn bx--btn--sm bx--btn--ghost"
-                  disabled={false}
+                  className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 dEzVra"
                   onClick={[Function]}
-                  tabIndex={0}
-                  title="Download table content"
-                  type="button"
                 >
                   <svg
-                    aria-hidden="true"
-                    aria-label="Download table content"
-                    className="bx--btn__icon"
+                    aria-hidden={true}
+                    description="Download table content"
                     focusable="false"
                     height={16}
                     preserveAspectRatio="xMidYMid meet"
-                    role="img"
                     style={
                       Object {
                         "willChange": "transform",
@@ -9687,21 +9645,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                 className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-3 jTKDEr"
               >
                 <button
-                  className="TableCard__ToolbarButton-q9l5bz-4 iFxaZU bx--btn bx--btn--sm bx--btn--ghost"
-                  disabled={false}
+                  className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 dEzVra"
                   onClick={[Function]}
-                  tabIndex={0}
-                  title="Download table content"
-                  type="button"
                 >
                   <svg
-                    aria-hidden="true"
-                    aria-label="Download table content"
-                    className="bx--btn__icon"
+                    aria-hidden={true}
+                    description="Download table content"
                     focusable="false"
                     height={16}
                     preserveAspectRatio="xMidYMid meet"
-                    role="img"
                     style={
                       Object {
                         "willChange": "transform",
@@ -10505,21 +10457,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                 className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-3 jTKDEr"
               >
                 <button
-                  className="TableCard__ToolbarButton-q9l5bz-4 iFxaZU bx--btn bx--btn--sm bx--btn--ghost"
-                  disabled={false}
+                  className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 dEzVra"
                   onClick={[Function]}
-                  tabIndex={0}
-                  title="Download table content"
-                  type="button"
                 >
                   <svg
-                    aria-hidden="true"
-                    aria-label="Download table content"
-                    className="bx--btn__icon"
+                    aria-hidden={true}
+                    description="Download table content"
                     focusable="false"
                     height={16}
                     preserveAspectRatio="xMidYMid meet"
-                    role="img"
                     style={
                       Object {
                         "willChange": "transform",
@@ -12061,21 +12007,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                 className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-3 jTKDEr"
               >
                 <button
-                  className="TableCard__ToolbarButton-q9l5bz-4 iFxaZU bx--btn bx--btn--sm bx--btn--ghost"
-                  disabled={false}
+                  className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 dEzVra"
                   onClick={[Function]}
-                  tabIndex={0}
-                  title="Download table content"
-                  type="button"
                 >
                   <svg
-                    aria-hidden="true"
-                    aria-label="Download table content"
-                    className="bx--btn__icon"
+                    aria-hidden={true}
+                    description="Download table content"
                     focusable="false"
                     height={16}
                     preserveAspectRatio="xMidYMid meet"
-                    role="img"
                     style={
                       Object {
                         "willChange": "transform",
@@ -13651,21 +13591,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                 className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-3 jTKDEr"
               >
                 <button
-                  className="TableCard__ToolbarButton-q9l5bz-4 iFxaZU bx--btn bx--btn--sm bx--btn--ghost"
-                  disabled={false}
+                  className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 dEzVra"
                   onClick={[Function]}
-                  tabIndex={0}
-                  title="Download table content"
-                  type="button"
                 >
                   <svg
-                    aria-hidden="true"
-                    aria-label="Download table content"
-                    className="bx--btn__icon"
+                    aria-hidden={true}
+                    description="Download table content"
                     focusable="false"
                     height={16}
                     preserveAspectRatio="xMidYMid meet"
-                    role="img"
                     style={
                       Object {
                         "willChange": "transform",
@@ -14986,21 +14920,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                 className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-3 jTKDEr"
               >
                 <button
-                  className="TableCard__ToolbarButton-q9l5bz-4 iFxaZU bx--btn bx--btn--sm bx--btn--ghost"
-                  disabled={false}
+                  className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 dEzVra"
                   onClick={[Function]}
-                  tabIndex={0}
-                  title="Download table content"
-                  type="button"
                 >
                   <svg
-                    aria-hidden="true"
-                    aria-label="Download table content"
-                    className="bx--btn__icon"
+                    aria-hidden={true}
+                    description="Download table content"
                     focusable="false"
                     height={16}
                     preserveAspectRatio="xMidYMid meet"
-                    role="img"
                     style={
                       Object {
                         "willChange": "transform",
@@ -16929,21 +16857,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                 className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-3 jTKDEr"
               >
                 <button
-                  className="TableCard__ToolbarButton-q9l5bz-4 iFxaZU bx--btn bx--btn--sm bx--btn--ghost"
-                  disabled={false}
+                  className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 dEzVra"
                   onClick={[Function]}
-                  tabIndex={0}
-                  title="Download table content"
-                  type="button"
                 >
                   <svg
-                    aria-hidden="true"
-                    aria-label="Download table content"
-                    className="bx--btn__icon"
+                    aria-hidden={true}
+                    description="Download table content"
                     focusable="false"
                     height={16}
                     preserveAspectRatio="xMidYMid meet"
-                    role="img"
                     style={
                       Object {
                         "willChange": "transform",
@@ -18628,21 +18550,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                 className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-3 jTKDEr"
               >
                 <button
-                  className="TableCard__ToolbarButton-q9l5bz-4 iFxaZU bx--btn bx--btn--sm bx--btn--ghost"
-                  disabled={false}
+                  className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 dEzVra"
                   onClick={[Function]}
-                  tabIndex={0}
-                  title="Download table content"
-                  type="button"
                 >
                   <svg
-                    aria-hidden="true"
-                    aria-label="Download table content"
-                    className="bx--btn__icon"
+                    aria-hidden={true}
+                    description="Download table content"
                     focusable="false"
                     height={16}
                     preserveAspectRatio="xMidYMid meet"
-                    role="img"
                     style={
                       Object {
                         "willChange": "transform",
@@ -20258,21 +20174,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                 className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-3 jTKDEr"
               >
                 <button
-                  className="TableCard__ToolbarButton-q9l5bz-4 iFxaZU bx--btn bx--btn--sm bx--btn--ghost"
-                  disabled={false}
+                  className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 dEzVra"
                   onClick={[Function]}
-                  tabIndex={0}
-                  title="Download table content"
-                  type="button"
                 >
                   <svg
-                    aria-hidden="true"
-                    aria-label="Download table content"
-                    className="bx--btn__icon"
+                    aria-hidden={true}
+                    description="Download table content"
                     focusable="false"
                     height={16}
                     preserveAspectRatio="xMidYMid meet"
-                    role="img"
                     style={
                       Object {
                         "willChange": "transform",
@@ -20845,7 +20755,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                     >
                       <div
-                        className="TableCard__StyledIconDiv-q9l5bz-5 kQkprB"
+                        className="TableCard__StyledIconDiv-q9l5bz-4 fFnvlh"
                         title="count < 5"
                       >
                         <svg
@@ -20885,7 +20795,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                           </g>
                         </svg>
                         <span
-                          className="TableCard__StyledSpan-q9l5bz-6 jbPfYa"
+                          className="TableCard__StyledSpan-q9l5bz-5 bPtSrU"
                         >
                           Low
                         </span>
@@ -20993,7 +20903,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                     >
                       <div
-                        className="TableCard__StyledIconDiv-q9l5bz-5 kQkprB"
+                        className="TableCard__StyledIconDiv-q9l5bz-4 fFnvlh"
                         title="count < 5"
                       >
                         <svg
@@ -21033,7 +20943,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                           </g>
                         </svg>
                         <span
-                          className="TableCard__StyledSpan-q9l5bz-6 jbPfYa"
+                          className="TableCard__StyledSpan-q9l5bz-5 bPtSrU"
                         >
                           Low
                         </span>
@@ -21141,7 +21051,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                     >
                       <div
-                        className="TableCard__StyledIconDiv-q9l5bz-5 kQkprB"
+                        className="TableCard__StyledIconDiv-q9l5bz-4 fFnvlh"
                         title="count < 5"
                       >
                         <svg
@@ -21181,7 +21091,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                           </g>
                         </svg>
                         <span
-                          className="TableCard__StyledSpan-q9l5bz-6 jbPfYa"
+                          className="TableCard__StyledSpan-q9l5bz-5 bPtSrU"
                         >
                           Low
                         </span>
@@ -21289,7 +21199,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                     >
                       <div
-                        className="TableCard__StyledIconDiv-q9l5bz-5 kQkprB"
+                        className="TableCard__StyledIconDiv-q9l5bz-4 fFnvlh"
                         title="count >= 10"
                       >
                         <svg
@@ -21327,7 +21237,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                           </g>
                         </svg>
                         <span
-                          className="TableCard__StyledSpan-q9l5bz-6 jbPfYa"
+                          className="TableCard__StyledSpan-q9l5bz-5 bPtSrU"
                         >
                           Critical
                         </span>
@@ -21536,7 +21446,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                     >
                       <div
-                        className="TableCard__StyledIconDiv-q9l5bz-5 kQkprB"
+                        className="TableCard__StyledIconDiv-q9l5bz-4 fFnvlh"
                         title="count = 7"
                       >
                         <svg
@@ -21574,7 +21484,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                           </g>
                         </svg>
                         <span
-                          className="TableCard__StyledSpan-q9l5bz-6 jbPfYa"
+                          className="TableCard__StyledSpan-q9l5bz-5 bPtSrU"
                         >
                           Moderate
                         </span>
@@ -21682,7 +21592,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                     >
                       <div
-                        className="TableCard__StyledIconDiv-q9l5bz-5 kQkprB"
+                        className="TableCard__StyledIconDiv-q9l5bz-4 fFnvlh"
                         title="count < 5"
                       >
                         <svg
@@ -21722,7 +21632,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                           </g>
                         </svg>
                         <span
-                          className="TableCard__StyledSpan-q9l5bz-6 jbPfYa"
+                          className="TableCard__StyledSpan-q9l5bz-5 bPtSrU"
                         >
                           Low
                         </span>
@@ -21830,7 +21740,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                     >
                       <div
-                        className="TableCard__StyledIconDiv-q9l5bz-5 kQkprB"
+                        className="TableCard__StyledIconDiv-q9l5bz-4 fFnvlh"
                         title="count < 5"
                       >
                         <svg
@@ -21870,7 +21780,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                           </g>
                         </svg>
                         <span
-                          className="TableCard__StyledSpan-q9l5bz-6 jbPfYa"
+                          className="TableCard__StyledSpan-q9l5bz-5 bPtSrU"
                         >
                           Low
                         </span>
@@ -21928,7 +21838,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                     >
                       <div
-                        className="TableCard__StyledIconDiv-q9l5bz-5 kQkprB"
+                        className="TableCard__StyledIconDiv-q9l5bz-4 fFnvlh"
                         title="pressure >= 10"
                       >
                         <svg
@@ -21966,7 +21876,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                           </g>
                         </svg>
                         <span
-                          className="TableCard__StyledSpan-q9l5bz-6 jbPfYa"
+                          className="TableCard__StyledSpan-q9l5bz-5 bPtSrU"
                         >
                           Critical
                         </span>
@@ -22029,7 +21939,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                     >
                       <div
-                        className="TableCard__StyledIconDiv-q9l5bz-5 kQkprB"
+                        className="TableCard__StyledIconDiv-q9l5bz-4 fFnvlh"
                         title="count >= 10"
                       >
                         <svg
@@ -22067,7 +21977,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                           </g>
                         </svg>
                         <span
-                          className="TableCard__StyledSpan-q9l5bz-6 jbPfYa"
+                          className="TableCard__StyledSpan-q9l5bz-5 bPtSrU"
                         >
                           Critical
                         </span>
@@ -22125,7 +22035,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                     >
                       <div
-                        className="TableCard__StyledIconDiv-q9l5bz-5 kQkprB"
+                        className="TableCard__StyledIconDiv-q9l5bz-4 fFnvlh"
                         title="pressure >= 10"
                       >
                         <svg
@@ -22163,7 +22073,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                           </g>
                         </svg>
                         <span
-                          className="TableCard__StyledSpan-q9l5bz-6 jbPfYa"
+                          className="TableCard__StyledSpan-q9l5bz-5 bPtSrU"
                         >
                           Critical
                         </span>
@@ -22662,21 +22572,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                 className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-3 jTKDEr"
               >
                 <button
-                  className="TableCard__ToolbarButton-q9l5bz-4 iFxaZU bx--btn bx--btn--sm bx--btn--ghost"
-                  disabled={false}
+                  className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 dEzVra"
                   onClick={[Function]}
-                  tabIndex={0}
-                  title="Download table content"
-                  type="button"
                 >
                   <svg
-                    aria-hidden="true"
-                    aria-label="Download table content"
-                    className="bx--btn__icon"
+                    aria-hidden={true}
+                    description="Download table content"
                     focusable="false"
                     height={16}
                     preserveAspectRatio="xMidYMid meet"
-                    role="img"
                     style={
                       Object {
                         "willChange": "transform",
@@ -23148,7 +23052,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                     >
                       <div
-                        className="TableCard__StyledIconDiv-q9l5bz-5 kQkprB"
+                        className="TableCard__StyledIconDiv-q9l5bz-4 fFnvlh"
                         title="count < 5"
                       >
                         <svg
@@ -23188,7 +23092,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                           </g>
                         </svg>
                         <span
-                          className="TableCard__StyledSpan-q9l5bz-6 jbPfYa"
+                          className="TableCard__StyledSpan-q9l5bz-5 bPtSrU"
                         >
                           Low
                         </span>
@@ -23246,7 +23150,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                     >
                       <div
-                        className="TableCard__StyledIconDiv-q9l5bz-5 kQkprB"
+                        className="TableCard__StyledIconDiv-q9l5bz-4 fFnvlh"
                         title="pressure >= 10"
                       >
                         <svg
@@ -23284,7 +23188,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                           </g>
                         </svg>
                         <span
-                          className="TableCard__StyledSpan-q9l5bz-6 jbPfYa"
+                          className="TableCard__StyledSpan-q9l5bz-5 bPtSrU"
                         >
                           Critical
                         </span>
@@ -23347,7 +23251,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                     >
                       <div
-                        className="TableCard__StyledIconDiv-q9l5bz-5 kQkprB"
+                        className="TableCard__StyledIconDiv-q9l5bz-4 fFnvlh"
                         title="count >= 10"
                       >
                         <svg
@@ -23385,7 +23289,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                           </g>
                         </svg>
                         <span
-                          className="TableCard__StyledSpan-q9l5bz-6 jbPfYa"
+                          className="TableCard__StyledSpan-q9l5bz-5 bPtSrU"
                         >
                           Critical
                         </span>
@@ -23443,7 +23347,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                     >
                       <div
-                        className="TableCard__StyledIconDiv-q9l5bz-5 kQkprB"
+                        className="TableCard__StyledIconDiv-q9l5bz-4 fFnvlh"
                         title="pressure >= 10"
                       >
                         <svg
@@ -23481,7 +23385,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                           </g>
                         </svg>
                         <span
-                          className="TableCard__StyledSpan-q9l5bz-6 jbPfYa"
+                          className="TableCard__StyledSpan-q9l5bz-5 bPtSrU"
                         >
                           Critical
                         </span>
@@ -23972,21 +23876,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                 className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-3 jTKDEr"
               >
                 <button
-                  className="TableCard__ToolbarButton-q9l5bz-4 iFxaZU bx--btn bx--btn--sm bx--btn--ghost"
-                  disabled={false}
+                  className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 dEzVra"
                   onClick={[Function]}
-                  tabIndex={0}
-                  title="Download table content"
-                  type="button"
                 >
                   <svg
-                    aria-hidden="true"
-                    aria-label="Download table content"
-                    className="bx--btn__icon"
+                    aria-hidden={true}
+                    description="Download table content"
                     focusable="false"
                     height={16}
                     preserveAspectRatio="xMidYMid meet"
-                    role="img"
                     style={
                       Object {
                         "willChange": "transform",
@@ -24635,7 +24533,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                     >
                       <div
-                        className="TableCard__StyledIconDiv-q9l5bz-5 kQkprB"
+                        className="TableCard__StyledIconDiv-q9l5bz-4 fFnvlh"
                         title="count < 5"
                       >
                         <svg
@@ -24675,7 +24573,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                           </g>
                         </svg>
                         <span
-                          className="TableCard__StyledSpan-q9l5bz-6 jbPfYa"
+                          className="TableCard__StyledSpan-q9l5bz-5 bPtSrU"
                         >
                           Low
                         </span>
@@ -24819,7 +24717,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                     >
                       <div
-                        className="TableCard__StyledIconDiv-q9l5bz-5 kQkprB"
+                        className="TableCard__StyledIconDiv-q9l5bz-4 fFnvlh"
                         title="count < 5"
                       >
                         <svg
@@ -24859,7 +24757,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                           </g>
                         </svg>
                         <span
-                          className="TableCard__StyledSpan-q9l5bz-6 jbPfYa"
+                          className="TableCard__StyledSpan-q9l5bz-5 bPtSrU"
                         >
                           Low
                         </span>
@@ -25003,7 +24901,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                     >
                       <div
-                        className="TableCard__StyledIconDiv-q9l5bz-5 kQkprB"
+                        className="TableCard__StyledIconDiv-q9l5bz-4 fFnvlh"
                         title="count < 5"
                       >
                         <svg
@@ -25043,7 +24941,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                           </g>
                         </svg>
                         <span
-                          className="TableCard__StyledSpan-q9l5bz-6 jbPfYa"
+                          className="TableCard__StyledSpan-q9l5bz-5 bPtSrU"
                         >
                           Low
                         </span>
@@ -25187,7 +25085,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                     >
                       <div
-                        className="TableCard__StyledIconDiv-q9l5bz-5 kQkprB"
+                        className="TableCard__StyledIconDiv-q9l5bz-4 fFnvlh"
                         title="count >= 10"
                       >
                         <svg
@@ -25225,7 +25123,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                           </g>
                         </svg>
                         <span
-                          className="TableCard__StyledSpan-q9l5bz-6 jbPfYa"
+                          className="TableCard__StyledSpan-q9l5bz-5 bPtSrU"
                         >
                           Critical
                         </span>
@@ -25506,7 +25404,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                     >
                       <div
-                        className="TableCard__StyledIconDiv-q9l5bz-5 kQkprB"
+                        className="TableCard__StyledIconDiv-q9l5bz-4 fFnvlh"
                         title="count = 7"
                       >
                         <svg
@@ -25544,7 +25442,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                           </g>
                         </svg>
                         <span
-                          className="TableCard__StyledSpan-q9l5bz-6 jbPfYa"
+                          className="TableCard__StyledSpan-q9l5bz-5 bPtSrU"
                         >
                           Moderate
                         </span>
@@ -25688,7 +25586,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                     >
                       <div
-                        className="TableCard__StyledIconDiv-q9l5bz-5 kQkprB"
+                        className="TableCard__StyledIconDiv-q9l5bz-4 fFnvlh"
                         title="count < 5"
                       >
                         <svg
@@ -25728,7 +25626,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                           </g>
                         </svg>
                         <span
-                          className="TableCard__StyledSpan-q9l5bz-6 jbPfYa"
+                          className="TableCard__StyledSpan-q9l5bz-5 bPtSrU"
                         >
                           Low
                         </span>
@@ -25872,7 +25770,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                     >
                       <div
-                        className="TableCard__StyledIconDiv-q9l5bz-5 kQkprB"
+                        className="TableCard__StyledIconDiv-q9l5bz-4 fFnvlh"
                         title="count < 5"
                       >
                         <svg
@@ -25912,7 +25810,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                           </g>
                         </svg>
                         <span
-                          className="TableCard__StyledSpan-q9l5bz-6 jbPfYa"
+                          className="TableCard__StyledSpan-q9l5bz-5 bPtSrU"
                         >
                           Low
                         </span>
@@ -25970,7 +25868,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                     >
                       <div
-                        className="TableCard__StyledIconDiv-q9l5bz-5 kQkprB"
+                        className="TableCard__StyledIconDiv-q9l5bz-4 fFnvlh"
                         title="pressure >= 10"
                       >
                         <svg
@@ -26008,7 +25906,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                           </g>
                         </svg>
                         <span
-                          className="TableCard__StyledSpan-q9l5bz-6 jbPfYa"
+                          className="TableCard__StyledSpan-q9l5bz-5 bPtSrU"
                         >
                           Critical
                         </span>
@@ -26107,7 +26005,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                     >
                       <div
-                        className="TableCard__StyledIconDiv-q9l5bz-5 kQkprB"
+                        className="TableCard__StyledIconDiv-q9l5bz-4 fFnvlh"
                         title="count >= 10"
                       >
                         <svg
@@ -26145,7 +26043,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                           </g>
                         </svg>
                         <span
-                          className="TableCard__StyledSpan-q9l5bz-6 jbPfYa"
+                          className="TableCard__StyledSpan-q9l5bz-5 bPtSrU"
                         >
                           Critical
                         </span>
@@ -26203,7 +26101,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                     >
                       <div
-                        className="TableCard__StyledIconDiv-q9l5bz-5 kQkprB"
+                        className="TableCard__StyledIconDiv-q9l5bz-4 fFnvlh"
                         title="pressure >= 10"
                       >
                         <svg
@@ -26241,7 +26139,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                           </g>
                         </svg>
                         <span
-                          className="TableCard__StyledSpan-q9l5bz-6 jbPfYa"
+                          className="TableCard__StyledSpan-q9l5bz-5 bPtSrU"
                         >
                           Critical
                         </span>
@@ -26773,21 +26671,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                 className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-3 jTKDEr"
               >
                 <button
-                  className="TableCard__ToolbarButton-q9l5bz-4 iFxaZU bx--btn bx--btn--sm bx--btn--ghost"
-                  disabled={false}
+                  className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 dEzVra"
                   onClick={[Function]}
-                  tabIndex={0}
-                  title="Download table content"
-                  type="button"
                 >
                   <svg
-                    aria-hidden="true"
-                    aria-label="Download table content"
-                    className="bx--btn__icon"
+                    aria-hidden={true}
+                    description="Download table content"
                     focusable="false"
                     height={16}
                     preserveAspectRatio="xMidYMid meet"
-                    role="img"
                     style={
                       Object {
                         "willChange": "transform",
@@ -27171,7 +27063,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                     >
                       <div
-                        className="TableCard__StyledIconDiv-q9l5bz-5 kQkprB"
+                        className="TableCard__StyledIconDiv-q9l5bz-4 fFnvlh"
                         title="count > 2"
                       >
                         <svg
@@ -27209,7 +27101,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                           </g>
                         </svg>
                         <span
-                          className="TableCard__StyledSpan-q9l5bz-6 jbPfYa"
+                          className="TableCard__StyledSpan-q9l5bz-5 bPtSrU"
                         >
                           Critical
                         </span>
@@ -27321,7 +27213,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                     >
                       <div
-                        className="TableCard__StyledIconDiv-q9l5bz-5 kQkprB"
+                        className="TableCard__StyledIconDiv-q9l5bz-4 fFnvlh"
                         title="count > 0"
                       >
                         <svg
@@ -27361,7 +27253,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                           </g>
                         </svg>
                         <span
-                          className="TableCard__StyledSpan-q9l5bz-6 jbPfYa"
+                          className="TableCard__StyledSpan-q9l5bz-5 bPtSrU"
                         >
                           Low
                         </span>
@@ -27473,7 +27365,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                     >
                       <div
-                        className="TableCard__StyledIconDiv-q9l5bz-5 kQkprB"
+                        className="TableCard__StyledIconDiv-q9l5bz-4 fFnvlh"
                         title="count > 0"
                       >
                         <svg
@@ -27513,7 +27405,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                           </g>
                         </svg>
                         <span
-                          className="TableCard__StyledSpan-q9l5bz-6 jbPfYa"
+                          className="TableCard__StyledSpan-q9l5bz-5 bPtSrU"
                         >
                           Low
                         </span>
@@ -27625,7 +27517,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                     >
                       <div
-                        className="TableCard__StyledIconDiv-q9l5bz-5 kQkprB"
+                        className="TableCard__StyledIconDiv-q9l5bz-4 fFnvlh"
                         title="count > 0"
                       >
                         <svg
@@ -27665,7 +27557,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                           </g>
                         </svg>
                         <span
-                          className="TableCard__StyledSpan-q9l5bz-6 jbPfYa"
+                          className="TableCard__StyledSpan-q9l5bz-5 bPtSrU"
                         >
                           Low
                         </span>
@@ -27777,7 +27669,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                     >
                       <div
-                        className="TableCard__StyledIconDiv-q9l5bz-5 kQkprB"
+                        className="TableCard__StyledIconDiv-q9l5bz-4 fFnvlh"
                         title="count > 2"
                       >
                         <svg
@@ -27815,7 +27707,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                           </g>
                         </svg>
                         <span
-                          className="TableCard__StyledSpan-q9l5bz-6 jbPfYa"
+                          className="TableCard__StyledSpan-q9l5bz-5 bPtSrU"
                         >
                           Critical
                         </span>
@@ -27927,7 +27819,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                     >
                       <div
-                        className="TableCard__StyledIconDiv-q9l5bz-5 kQkprB"
+                        className="TableCard__StyledIconDiv-q9l5bz-4 fFnvlh"
                         title="count > 2"
                       >
                         <svg
@@ -27965,7 +27857,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                           </g>
                         </svg>
                         <span
-                          className="TableCard__StyledSpan-q9l5bz-6 jbPfYa"
+                          className="TableCard__StyledSpan-q9l5bz-5 bPtSrU"
                         >
                           Critical
                         </span>
@@ -28077,7 +27969,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                     >
                       <div
-                        className="TableCard__StyledIconDiv-q9l5bz-5 kQkprB"
+                        className="TableCard__StyledIconDiv-q9l5bz-4 fFnvlh"
                         title="count > 2"
                       >
                         <svg
@@ -28115,7 +28007,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                           </g>
                         </svg>
                         <span
-                          className="TableCard__StyledSpan-q9l5bz-6 jbPfYa"
+                          className="TableCard__StyledSpan-q9l5bz-5 bPtSrU"
                         >
                           Critical
                         </span>
@@ -28332,7 +28224,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                     >
                       <div
-                        className="TableCard__StyledIconDiv-q9l5bz-5 kQkprB"
+                        className="TableCard__StyledIconDiv-q9l5bz-4 fFnvlh"
                         title="count > 2"
                       >
                         <svg
@@ -28370,7 +28262,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                           </g>
                         </svg>
                         <span
-                          className="TableCard__StyledSpan-q9l5bz-6 jbPfYa"
+                          className="TableCard__StyledSpan-q9l5bz-5 bPtSrU"
                         >
                           Critical
                         </span>
@@ -28488,7 +28380,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                       className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                     >
                       <div
-                        className="TableCard__StyledIconDiv-q9l5bz-5 kQkprB"
+                        className="TableCard__StyledIconDiv-q9l5bz-4 fFnvlh"
                         title="count > 2"
                       >
                         <svg
@@ -28526,7 +28418,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                           </g>
                         </svg>
                         <span
-                          className="TableCard__StyledSpan-q9l5bz-6 jbPfYa"
+                          className="TableCard__StyledSpan-q9l5bz-5 bPtSrU"
                         >
                           Critical
                         </span>
