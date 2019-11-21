@@ -14,7 +14,7 @@ module.exports = {
       functions: 80,
       lines: 80,
     },
-    './src/components/**/!(ColumnHeaderRow|ColumnHeaderSelect|FilterHeaderRow|TableToolbar|RowActionsCell|RowActionsError|StatefulWizardInline|WizardInline|StatefulTable|StatefulTableDetailWizard|CatalogContent|FileDrop|HeaderMenu|Dashboard|CardRenderer|Attribute|UnitRenderer|ImageHotspots|ImageControls|TimeSeriesCard|ListCard|StatefulPageWizard|PageHero|PageTitle|EditPage|AsyncTable|ImageCard).jsx': {
+    './src/components/**/!(ColumnHeaderRow|ColumnHeaderSelect|FilterHeaderRow|TableToolbar|RowActionsCell|RowActionsError|StatefulWizardInline|WizardInline|StatefulTable|StatefulTableDetailWizard|CatalogContent|FileDrop|HeaderMenu|Dashboard|CardRenderer|Attribute|UnitRenderer|ImageHotspots|ImageControls|TimeSeriesCard|ListCard|StatefulPageWizard|PageHero|PageTitle|EditPage|AsyncTable|ImageCard|WizardHeader).jsx': {
       statements: 80,
       branches: 80,
       functions: 80,
@@ -63,7 +63,7 @@ module.exports = {
       lines: 69,
       functions: 77,
     },
-    './src/components/ListCard/ListCard.jsx': { branches: 69 },
+    './src/components/ListCard/ListCard.jsx': { branches: 66 },
     './src/components/PageWizard/StatefulPageWizard.jsx': {
       statements: 12,
       branches: 0,
@@ -84,6 +84,7 @@ module.exports = {
     },
     './src/components/Table/TableHead/ColumnHeaderSelect/ColumnHeaderSelect.jsx': { branches: 75 },
     './src/components/WizardInline/WizardInline.jsx': { branches: 77 },
+    './src/components/WizardInline/WizardHeader/WizardHeader.jsx': { branches: 75 },
     './src/components/Page/PageHero.jsx': { branches: 77 },
     './src/components/Page/PageTitle.jsx': { branches: 75 },
     './src/components/ImageCard/ImageCard.jsx': { branches: 76 },
