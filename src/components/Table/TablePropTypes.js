@@ -137,6 +137,7 @@ export const I18NPropTypes = PropTypes.shape({
   filterButtonAria: PropTypes.string,
   clearFilterAria: PropTypes.string,
   filterAria: PropTypes.string,
+  downloadIconDescription: PropTypes.string,
   openMenuAria: PropTypes.string,
   closeMenuAria: PropTypes.string,
   clearSelectionAria: PropTypes.string,
