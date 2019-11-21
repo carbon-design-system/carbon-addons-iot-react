@@ -78,6 +78,7 @@ const propTypes = {
     hasFilter: PropTypes.bool,
     hasSearch: PropTypes.bool,
     hasColumnSelection: PropTypes.bool,
+    hasRowCountInHeader: PropTypes.bool,
   }).isRequired,
 
   /** internationalized labels */
@@ -114,6 +115,7 @@ const propTypes = {
     activeBar: PropTypes.oneOf(['column', 'filter']),
     /** total number of selected rows */
     totalSelected: PropTypes.number,
+    totalItemsCount: PropTypes.number,
     /** row selection option */
     hasRowSelection: PropTypes.oneOf(['multi', 'single', false]),
     /** optional content to render inside the toolbar  */
@@ -141,7 +143,7 @@ const TableToolbar = ({
   tableId,
   className,
   i18n,
-  options: { hasColumnSelection, hasFilter, hasSearch, hasRowSelection },
+  options: { hasColumnSelection, hasFilter, hasSearch, hasRowSelection, hasRowCountInHeader },
   actions: {
     onCancelBatchAction,
     onApplyBatchAction,
@@ -158,6 +160,7 @@ const TableToolbar = ({
     // activeBar,
     customToolbarContent,
     isDisabled,
+    totalItemsCount,
   },
 }) => (
   <StyledCarbonTableToolbar className={className}>
@@ -173,16 +176,24 @@ const TableToolbar = ({
         </TableBatchAction>
       ))}
     </StyledTableBatchActions>
-    {hasSearch ? (
-      <StyledToolbarSearch
-        {...search}
-        translateWithId={(...args) => tableTranslateWithId(i18n, ...args)}
-        id={`${tableId}-toolbar-search`}
-        onChange={event => onApplySearch(event.currentTarget ? event.currentTarget.value : '')}
-        disabled={isDisabled}
-      />
+
+    {hasRowCountInHeader ? (
+      <label // eslint-disable-line
+        className="row-count-header"
+      >
+        {i18n.rowCountInHeader(totalItemsCount)}
+      </label>
     ) : null}
     <StyledTableToolbarContent>
+      {hasSearch ? (
+        <StyledToolbarSearch
+          {...search}
+          translateWithId={(...args) => tableTranslateWithId(i18n, ...args)}
+          id={`${tableId}-toolbar-search`}
+          onChange={event => onApplySearch(event.currentTarget ? event.currentTarget.value : '')}
+          disabled={isDisabled}
+        />
+      ) : null}
       {customToolbarContent || null}
       {totalFilters > 0 ? (
         <Button kind="secondary" onClick={onClearAllFilters}>

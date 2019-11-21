@@ -3,6 +3,7 @@ import React from 'react';
 import merge from 'lodash/merge';
 
 import Table from './Table';
+import TableToolbar from './TableToolbar/TableToolbar';
 import EmptyTable from './EmptyTable/EmptyTable';
 
 const selectData = [
@@ -116,8 +117,17 @@ describe('Table', () => {
 
   const options = {
     hasRowExpansion: true,
+    hasRowCountInHeader: true,
+  };
+  const options2 = {
+    hasRowExpansion: true,
+    hasRowCountInHeader: false,
   };
 
+  const tableState = {
+    totalSelected: 0,
+    batchActions: [],
+  };
   const view = {
     filters: [],
     pagination: {
@@ -219,5 +229,50 @@ describe('Table', () => {
     emptyTable.find('button').simulate('click');
     expect(mockActions.toolbar.onApplySearch).toHaveBeenCalled();
     expect(mockActions.toolbar.onClearAllFilters).toHaveBeenCalled();
+  });
+
+  test('validate row count function ', () => {
+    const wrapper = mount(
+      <Table
+        columns={tableColumns}
+        data={tableData}
+        actions={mockActions}
+        options={options}
+        view={view}
+      />
+    );
+
+    const rowCounts = view.pagination.totalItems;
+    const renderRowCountField = wrapper
+      .find('Table')
+      .at(0)
+      .props()
+      .i18n.rowCountInHeader(rowCounts);
+    expect(renderRowCountField).toContain('Results:');
+
+    const min = 1;
+    const max = 10;
+    const renderItemRangeField = wrapper
+      .find('Table')
+      .at(0)
+      .props()
+      .i18n.itemsRange(min, max);
+    expect(renderItemRangeField).toContain('items');
+  });
+
+  test('validate show/hide hasRowCountInHeader property ', () => {
+    const tableHeaderWrapper = mount(
+      <TableToolbar actions={mockActions} options={options} tableState={tableState} />
+    );
+    //  Should render Row count label when hasRowCountInHeader (option) property is true
+    const renderRowCountLabel = tableHeaderWrapper.find('.row-count-header');
+    expect(renderRowCountLabel).toHaveLength(1);
+
+    const tableHeaderWrapper2 = mount(
+      <TableToolbar actions={mockActions} options={options2} tableState={tableState} />
+    );
+    //  Should not render Row count label when hasRowCountInHeader (option2) property is false
+    const renderRowCountLabel2 = tableHeaderWrapper2.find('.row-count-header');
+    expect(renderRowCountLabel2).toHaveLength(0);
   });
 });
