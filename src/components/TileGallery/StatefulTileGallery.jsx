@@ -116,7 +116,7 @@ const StatefulTileGallery = ({
       description={description}
       className={className}
       extraContent={
-        <div style={{ display: 'flex' }}>
+        <div className="extraContent">
           {hasSearch ? (
             <TileGallerySearch
               searchValue={search}

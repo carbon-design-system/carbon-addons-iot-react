@@ -20,10 +20,6 @@ const propTypes = {
   thumbnail: PropTypes.node,
   /** Href when click in card */
   href: PropTypes.string,
-  /** Card width */
-  width: PropTypes.string,
-  /** Card height */
-  height: PropTypes.string,
   /** Specify an optional className to be applied to the container node */
   className: PropTypes.string,
 };
@@ -37,8 +33,6 @@ const defaultProps = {
   mode: 'grid',
   thumbnail: null,
   href: null,
-  width: '305px',
-  height: '272px',
   className: null,
 };
 
@@ -52,8 +46,6 @@ const TileGalleryItem = ({
   mode,
   thumbnail,
   href,
-  width,
-  height,
   className,
 }) => {
   const content = (
@@ -67,13 +59,11 @@ const TileGalleryItem = ({
   const tile =
     mode === 'grid' ? (
       <div key={`${title}-card`}>
-        <div>
-          <div className="topSection" style={{ height: `calc(${height} - 63px )` }}>
-            <div className="thumbnail">{thumbnail}</div>
-            <div className="descriptionCard">
-              <span>{description}</span>
-              <a href={moreInfoLink}>{descriptionMoreInfo}</a>
-            </div>
+        <div className="topSection">
+          <div className="thumbnail">{thumbnail}</div>
+          <div className="descriptionCard">
+            <span>{description}</span>
+            <a href={moreInfoLink}>{descriptionMoreInfo}</a>
           </div>
         </div>
         {content}
@@ -90,7 +80,6 @@ const TileGalleryItem = ({
   return (
     <Fragment>
       <a
-        style={mode === 'grid' ? { width, height } : { minWidth: width }}
         className={`${className} dashboard-tile bx--tile bx--tile--clickable dashboard-pin-${
           mode === 'grid' ? 'card' : 'list'
         }-title`}

@@ -28,7 +28,7 @@ const defaultProps = {
 
 const TileGallerySearch = ({ i18n, searchValue, onChange, width }) => {
   return (
-    <div style={{ display: 'flex', marginLeft: '25px', marginRight: '25px' }}>
+    <div>
       <Search
         style={{ background: '#fff', width }}
         value={searchValue}
