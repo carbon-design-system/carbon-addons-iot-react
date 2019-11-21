@@ -2,8 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import merge from 'lodash/merge';
 import pick from 'lodash/pick';
-import { PaginationV2, DataTable, Button } from 'carbon-components-react';
-import Download16 from '@carbon/icons-react/lib/download/16';
+import { PaginationV2, DataTable } from 'carbon-components-react';
 import isNil from 'lodash/isNil';
 import styled from 'styled-components';
 import sizeMe from 'react-sizeme';
@@ -52,12 +51,6 @@ const StyledPagination = sizeMe({ noPlaceholder: true })(styled(
     }
   }
 `);
-
-const ToolbarButton = styled(Button)`
-  &.bx--btn > svg {
-    margin: 0;
-  }
-`;
 
 const propTypes = {
   /** DOM ID for component */
@@ -300,9 +293,6 @@ const Table = props => {
     expandedData,
     view,
     actions,
-    actions: {
-      toolbar: { onDownloadCSV },
-    },
     options,
     lightweight,
     className,
@@ -361,6 +351,7 @@ const Table = props => {
           filterNone: i18n.filterNone,
           filterAscending: i18n.filterAscending,
           filterDescending: i18n.filterDescending,
+          downloadIconDescription: i18n.downloadIconDescription,
         }}
         actions={pick(
           actions.toolbar,
@@ -369,7 +360,8 @@ const Table = props => {
           'onClearAllFilters',
           'onToggleColumnSelection',
           'onToggleFilter',
-          'onApplySearch'
+          'onApplySearch',
+          'onDownloadCSV'
         )}
         options={pick(options, 'hasColumnSelection', 'hasFilter', 'hasSearch', 'hasRowSelection')}
         tableState={{
@@ -382,17 +374,7 @@ const Table = props => {
             'activeBar',
             'customToolbarContent',
             'isDisabled'
-          ), // if a download CSV handler is passed, then we should allow downloads
-          customToolbarContent: onDownloadCSV ? (
-            <ToolbarButton
-              kind="ghost"
-              small
-              renderIcon={Download16}
-              onClick={onDownloadCSV}
-              title={i18n.downloadIconDescription}
-              iconDescription={i18n.downloadIconDescription}
-            />
-          ) : null,
+          ),
         }}
       />
       <TableContainer>

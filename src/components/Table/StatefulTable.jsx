@@ -122,9 +122,7 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
         callbackParent(onApplySearch, string);
         dispatch(tableSearchApply(string));
       },
-      onDownloadCSV: () => {
-        callbackParent(onDownloadCSV);
-      },
+      onDownloadCSV,
     },
     table: {
       onChangeSort: column => {
