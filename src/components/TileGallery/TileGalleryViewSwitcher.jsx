@@ -1,7 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import List from '@carbon/icons-react/lib/list/32';
-import Grid from '@carbon/icons-react/lib/grid/32';
 
 import { ContentSwitcher, Switch } from '../../index';
 
