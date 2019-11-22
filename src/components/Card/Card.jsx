@@ -115,6 +115,7 @@ const defaultProps = {
     errorLoadingDataShortLabel: 'Data error.',
     timeRangeLabel: 'Time range',
     rollingPeriodLabel: 'Rolling period',
+    defaultLabel: 'Default',
     last24HoursLabel: 'Last 24 hrs',
     last7DaysLabel: 'Last 7 days',
     lastMonthLabel: 'Last month',
@@ -220,6 +221,7 @@ const Card = ({
             }}
             value={timeRange || ''}
           >
+            <SelectItem value="default" text={strings.defaultLabel} />
             <SelectItemGroup label={strings.rollingPeriodLabel}>
               {Object.keys(timeBoxLabels)
                 .filter(i => i.includes('last'))

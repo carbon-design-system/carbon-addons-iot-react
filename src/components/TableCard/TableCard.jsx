@@ -1,9 +1,7 @@
 import React, { useMemo } from 'react';
-import { OverflowMenu, OverflowMenuItem, Icon, Button } from 'carbon-components-react';
+import { OverflowMenu, OverflowMenuItem, Icon } from 'carbon-components-react';
 import styled from 'styled-components';
 import moment from 'moment';
-import Download16 from '@carbon/icons-react/lib/download/16';
-import fileDownload from 'js-file-download';
 import isNil from 'lodash/isNil';
 import uniqBy from 'lodash/uniqBy';
 import cloneDeep from 'lodash/cloneDeep';
@@ -15,6 +13,7 @@ import Card from '../Card/Card';
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 import StatefulTable from '../Table/StatefulTable';
 import { generateTableSampleValues } from '../TimeSeriesCard/timeSeriesUtils';
+import { csvDownloadHandler } from '../../utils/componentUtilityFunctions';
 
 const StyledOverflowMenu = styled(OverflowMenu)`
   &&& {
@@ -127,12 +126,6 @@ const StyledExpandedRowContent = styled.div`
     margin-bottom: 8px;
     font-size: 14px;
     font-weight: 600;
-  }
-`;
-
-const ToolbarButton = styled(Button)`
-  &.bx--btn > svg {
-    margin: 0;
   }
 `;
 
@@ -650,27 +643,6 @@ const TableCard = ({
     [expandedRows, tableData]
   );
 
-  const csvDownloadHandler = () => {
-    let csv = '';
-    // get all keys availavle and merge it
-    let object = [];
-    data.forEach(item => {
-      object = [...object, ...Object.keys(item.values)];
-    });
-    object = [...new Set(object)];
-    csv += `${object.join(',')}\n`;
-    data.forEach(item => {
-      object.forEach(arrayHeader => {
-        csv += `${item.values[arrayHeader] ? item.values[arrayHeader] : ''},`;
-      });
-      csv += `\n`;
-    });
-
-    const exportedFilenmae = `${title}.csv` || 'export.csv';
-
-    fileDownload(csv, exportedFilenmae);
-  };
-
   // is columns recieved is different from the columnsToRender show card expand
   const isExpandable =
     columns.length !==
@@ -725,6 +697,7 @@ const TableCard = ({
               toolbar: {
                 onClearAllFilters: () => {},
                 onToggleFilter: () => {},
+                onDownloadCSV: () => csvDownloadHandler(tableDataWithTimestamp, title),
               },
             }}
             view={{
@@ -736,16 +709,6 @@ const TableCard = ({
               toolbar: {
                 activeBar: null,
                 isDisabled: isEditable,
-                customToolbarContent: (
-                  <ToolbarButton
-                    kind="ghost"
-                    size="small"
-                    renderIcon={Download16}
-                    iconDescription={strings.downloadIconDescription}
-                    onClick={() => csvDownloadHandler()}
-                    title={strings.downloadIconDescription}
-                  />
-                ),
               },
               filters: [],
               table: {

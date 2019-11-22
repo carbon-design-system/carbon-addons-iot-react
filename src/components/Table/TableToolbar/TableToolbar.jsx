@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import IconColumnSelector from '@carbon/icons-react/lib/column/20';
 import IconFilter from '@carbon/icons-react/lib/filter/20';
 import { DataTable, Button } from 'carbon-components-react';
+import Download16 from '@carbon/icons-react/lib/download/16';
 import styled from 'styled-components';
 
 import { TableSearchPropTypes, defaultI18NPropTypes } from '../TablePropTypes';
@@ -151,6 +152,7 @@ const TableToolbar = ({
     onToggleColumnSelection,
     onToggleFilter,
     onApplySearch,
+    onDownloadCSV,
   },
   tableState: {
     totalSelected,
@@ -199,6 +201,11 @@ const TableToolbar = ({
         <Button kind="secondary" onClick={onClearAllFilters}>
           {i18n.clearAllFilters}
         </Button>
+      ) : null}
+      {onDownloadCSV ? (
+        <ToolbarSVGWrapper onClick={onDownloadCSV}>
+          <Download16 description={i18n.downloadIconDescription} />
+        </ToolbarSVGWrapper>
       ) : null}
       {hasColumnSelection ? (
         <ToolbarSVGWrapper onClick={onToggleColumnSelection}>
