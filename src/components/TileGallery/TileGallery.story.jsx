@@ -3,7 +3,15 @@ import React, { Fragment } from 'react';
 import { storiesOf } from '@storybook/react';
 import { text, select } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
-import { Check16, Rocket32, IconStarFav16, Activity32, Sunny32 } from '@carbon/icons-react';
+import {
+  CheckmarkFilled16,
+  Rocket32,
+  StarFilled16,
+  Activity32,
+  Sunny32,
+} from '@carbon/icons-react';
+// import { green40 } from '@carbon/colors';
+import { spacing07 } from '@carbon/layout';
 
 import {
   TileGallery,
@@ -17,11 +25,11 @@ import {
 import FullWidthWrapper from '../../internal/FullWidthWrapper';
 
 const overflowComponent = (
-  <OverflowMenu onClick={evt => evt.preventDefault()} style={{ height: '2rem' }}>
-    <OverflowMenuItem itemText="Edit" onClick={() => action('Edit')} />
-    <OverflowMenuItem itemText="Share" onClick={() => action('Share')} />
-    <OverflowMenuItem itemText="Move" onClick={() => action('Move')} />
-    <OverflowMenuItem itemText="Delete" onClick={() => action('Delete')} />
+  <OverflowMenu onClick={evt => evt.preventDefault()} style={{ height: spacing07 }}>
+    <OverflowMenuItem itemText="Edit" onClick={action('Edit')} />
+    <OverflowMenuItem itemText="Share" onClick={action('Share')} />
+    <OverflowMenuItem itemText="Move" onClick={action('Move')} />
+    <OverflowMenuItem itemText="Delete" onClick={action('Delete')} />
   </OverflowMenu>
 );
 
@@ -36,7 +44,7 @@ export const content = (
         moreInfoLink="https://www.ibm.com/br-pt/cloud/internet-of-things?mhsrc=ibmsearch_a&mhq=iot"
         mode="grid"
         thumbnail={<Rocket32 fill="black" description="Icon" width={50} height={50} />}
-        icon={<Check16 fill="#40be65" onClick={action('clicked')} />}
+        icon={<CheckmarkFilled16 fill="#40be65" onClick={action('clicked')} />}
         afterContent={overflowComponent}
       />
       <TileGalleryItem
@@ -45,7 +53,7 @@ export const content = (
         moreInfoLink="https://www.ibm.com/br-pt/cloud/internet-of-things?mhsrc=ibmsearch_a&mhq=iot"
         mode="grid"
         thumbnail={<Activity32 fill="black" description="Icon" width={50} height={50} />}
-        icon={<Check16 fill="#40be65" onClick={() => action('clicked')} />}
+        icon={<CheckmarkFilled16 fill="#40be65" onClick={action('clicked')} />}
         afterContent={overflowComponent}
       />
       <TileGalleryItem
@@ -54,7 +62,7 @@ export const content = (
         moreInfoLink="https://www.ibm.com/br-pt/cloud/internet-of-things?mhsrc=ibmsearch_a&mhq=iot"
         mode="grid"
         thumbnail={<Sunny32 fill="black" description="Icon" width={50} height={50} />}
-        icon={<Check16 fill="#40be65" onClick={() => action('clicked')} />}
+        icon={<CheckmarkFilled16 fill="#40be65" onClick={action('clicked')} />}
         afterContent={overflowComponent}
       />
     </TileGallerySection>
@@ -65,7 +73,7 @@ export const content = (
         moreInfoLink="https://www.ibm.com/br-pt/cloud/internet-of-things?mhsrc=ibmsearch_a&mhq=iot"
         mode="grid"
         thumbnail={<Sunny32 fill="black" description="Icon" width={50} height={50} />}
-        icon={<Check16 fill="#40be65" onClick={() => action('clicked')} />}
+        icon={<CheckmarkFilled16 fill="#40be65" onClick={action('clicked')} />}
         afterContent={overflowComponent}
       />
     </TileGallerySection>
@@ -80,7 +88,7 @@ export const galleryData = [
       {
         title: 'Dashboard title',
         description: 'More about your dashboard',
-        icon: <IconStarFav16 />,
+        icon: <StarFilled16 />,
         afterContent: overflowComponent,
         thumbnail: <Activity32 />,
         href: 'www.ibm.com',
@@ -88,7 +96,7 @@ export const galleryData = [
       {
         title: 'Health',
         description: 'More about your dashboard',
-        icon: <IconStarFav16 />,
+        icon: <StarFilled16 />,
         afterContent: overflowComponent,
         thumbnail: <Sunny32 />,
         href: 'www.ibm.com',
@@ -96,7 +104,7 @@ export const galleryData = [
       {
         title: 'Activity',
         description: 'More about your dashboard',
-        icon: <IconStarFav16 />,
+        icon: <StarFilled16 />,
         afterContent: overflowComponent,
         thumbnail: <Activity32 />,
         href: 'www.ibm.com',
@@ -110,7 +118,7 @@ export const galleryData = [
       {
         title: 'Dashboard title',
         description: 'More about your dashboard',
-        icon: <IconStarFav16 />,
+        icon: <StarFilled16 />,
         afterContent: overflowComponent,
         thumbnail: <Activity32 />,
         href: 'www.ibm.com',
@@ -118,7 +126,7 @@ export const galleryData = [
       {
         title: 'Dashboard title',
         description: 'More about your dashboard',
-        icon: <IconStarFav16 />,
+        icon: <StarFilled16 />,
         afterContent: overflowComponent,
         thumbnail: <Sunny32 />,
         href: 'www.ibm.com',
@@ -126,7 +134,7 @@ export const galleryData = [
       {
         title: 'Dashboard title',
         description: 'More about your dashboard',
-        icon: <IconStarFav16 />,
+        icon: <StarFilled16 />,
         afterContent: overflowComponent,
         thumbnail: <Activity32 />,
         href: 'www.ibm.com',
@@ -160,7 +168,7 @@ storiesOf('Watson IoT Experimental|TileGallery', module)
       moreInfoLink="https://www.ibm.com/br-pt/cloud/internet-of-things?mhsrc=ibmsearch_a&mhq=iot"
       mode="grid"
       thumbnail={<Rocket32 fill="black" description="Icon" width={50} height={50} />}
-      icon={<Check16 fill="#40be65" onClick={() => action('Icon Clicked')} />}
+      icon={<CheckmarkFilled16 fill="#40be65" onClick={action('Icon Clicked')} />}
       afterContent={overflowComponent}
       href="https://www.ibm.com/br-pt/cloud/internet-of-things?mhsrc=ibmsearch_a&mhq=iot"
       className="not-active"
@@ -171,7 +179,7 @@ storiesOf('Watson IoT Experimental|TileGallery', module)
       title="Test"
       description="The first one"
       mode="list"
-      icon={<IconStarFav16 fill="black" onClick={() => action('Icon clicked')} />}
+      icon={<StarFilled16 fill="black" onClick={action('Icon clicked')} />}
       afterContent={overflowComponent}
     />
   ))
@@ -194,28 +202,22 @@ storiesOf('Watson IoT Experimental|TileGallery', module)
             {
               title: text('title', '__Dashboard title__'),
               description: text('description', '__More about your dashboard__'),
-              icon: <IconStarFav16 />,
+              icon: <StarFilled16 />,
               afterContent: (
                 <OverflowMenu
                   onClick={evt => evt.preventDefault()}
-                  style={{ height: '2rem' }}
+                  style={{ height: spacing07 }}
                   iconDescription={text('icon description', '__icon description__')}
                 >
-                  <OverflowMenuItem
-                    itemText={text('Edit', '__Edit__')}
-                    onClick={() => action('Edit')}
-                  />
+                  <OverflowMenuItem itemText={text('Edit', '__Edit__')} onClick={action('Edit')} />
                   <OverflowMenuItem
                     itemText={text('Share', '__Share__')}
-                    onClick={() => action('Share')}
+                    onClick={action('Share')}
                   />
-                  <OverflowMenuItem
-                    itemText={text('Move', '__Move__')}
-                    onClick={() => action('Move')}
-                  />
+                  <OverflowMenuItem itemText={text('Move', '__Move__')} onClick={action('Move')} />
                   <OverflowMenuItem
                     itemText={text('Delete', '__Delete__')}
-                    onClick={() => action('Deleted')}
+                    onClick={action('Deleted')}
                   />
                 </OverflowMenu>
               ),
