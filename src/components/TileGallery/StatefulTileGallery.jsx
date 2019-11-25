@@ -47,7 +47,15 @@ const propTypes = {
           title: PropTypes.string.isRequired,
           description: PropTypes.string,
           moreInfoLink: PropTypes.string,
-          icon: PropTypes.node,
+          icon: PropTypes.oneOfType([
+            PropTypes.shape({
+              width: PropTypes.string,
+              height: PropTypes.string,
+              viewBox: PropTypes.string.isRequired,
+              svgData: PropTypes.object.isRequired,
+            }),
+            PropTypes.node,
+          ]),
           afterContent: PropTypes.node,
           thumbnail: PropTypes.node,
           href: PropTypes.string,

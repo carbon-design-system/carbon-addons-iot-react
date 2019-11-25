@@ -11,7 +11,15 @@ const propTypes = {
   /** More info text */
   descriptionMoreInfo: PropTypes.string,
   /** Bottom left  icon  */
-  icon: PropTypes.node,
+  icon: PropTypes.oneOfType([
+    PropTypes.shape({
+      width: PropTypes.string,
+      height: PropTypes.string,
+      viewBox: PropTypes.string.isRequired,
+      svgData: PropTypes.object.isRequired,
+    }),
+    PropTypes.node,
+  ]),
   /** Bottom right content for component */
   afterContent: PropTypes.node,
   /** Card display mode */
