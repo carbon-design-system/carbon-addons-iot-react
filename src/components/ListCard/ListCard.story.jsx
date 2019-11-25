@@ -15,7 +15,7 @@ const data = [
     id: 'row-4',
     value: 'Row content 4',
     link: 'https://internetofthings.ibmcloud.com/',
-    rightContent: (
+    extraContent: (
       <svg height="10" width="30">
         <circle cx="5" cy="5" r="3" stroke="none" strokeWidth="1" fill="red" />
       </svg>
@@ -35,7 +35,7 @@ const data2 = [
     id: 'row-12',
     value: 'Row content 12',
     link: 'https://internetofthings.ibmcloud.com/',
-    rightContent: (
+    extraContent: (
       <svg height="10" width="30">
         <circle cx="5" cy="5" r="3" stroke="none" strokeWidth="1" fill="red" />
       </svg>

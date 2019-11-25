@@ -22525,27 +22525,27 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       Object {
                         "data": Array [
                           Object {
-                            "id": "row-9",
-                            "link": "https://www.ibm.com/support/knowledgecenter/SSQP8H/iot/guides/micro-explore.html",
-                            "rightContent": <span>
+                            "extraContent": <span>
                               View your device data in the entity view of the main Watson IoT Platform dashboard. If your plan includes Watson IoT Platform Analytics, the data is stored in the data lake for later retrieval and processing.
                             </span>,
+                            "id": "row-9",
+                            "link": "https://www.ibm.com/support/knowledgecenter/SSQP8H/iot/guides/micro-explore.html",
                             "value": "Explore entity metrics in the data lake",
                           },
                           Object {
-                            "id": "row-10",
-                            "link": "https://www.ibm.com/support/knowledgecenter/SSQP8H/iot/guides/micro-calculate.html",
-                            "rightContent": <span>
+                            "extraContent": <span>
                               Process your entity metrics by running simple or complex calculations to create calculated metrics.
                             </span>,
+                            "id": "row-10",
+                            "link": "https://www.ibm.com/support/knowledgecenter/SSQP8H/iot/guides/micro-calculate.html",
                             "value": "Perform simple calculations on your entity metrics",
                           },
                           Object {
-                            "id": "row-11",
-                            "link": "https://www.ibm.com/support/knowledgecenter/SSQP8H/iot/guides/micro-monitor.html",
-                            "rightContent": <span>
+                            "extraContent": <span>
                               Visualize your entity metrics in monitoring dashboards to get an overview of your data.
                             </span>,
+                            "id": "row-11",
+                            "link": "https://www.ibm.com/support/knowledgecenter/SSQP8H/iot/guides/micro-monitor.html",
                             "value": "View entity metrics in a monitoring dashboard",
                           },
                         ],
@@ -22574,7 +22574,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       className="Card__CardContent-v5r71h-1 hDVRgE"
                     >
                       <div
-                        className="ListCard__StyledContentWrapper-u7vzr0-2 eUBMEU"
+                        className="list-card"
+                        style={
+                          Object {
+                            "paddingBottom": 0,
+                            "paddingLeft": 16,
+                            "paddingRight": 16,
+                            "paddingTop": 0,
+                          }
+                        }
                       >
                         <section
                           aria-label="Structured list section"
@@ -22588,10 +22596,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               className="bx--structured-list-row"
                             >
                               <div
-                                className="ListCard__StyledStructuredListCell-u7vzr0-1 jEQfZQ bx--structured-list-td"
+                                className="list-card--item"
                               >
                                 <div
-                                  className="ListCard__StyledValueSpan-u7vzr0-3 gZXxBO"
+                                  className="list-card--item--value"
                                 >
                                   <a
                                     className="bx--link"
@@ -22607,7 +22615,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                   </a>
                                 </div>
                                 <div
-                                  className="ListCard__StyledSpan-u7vzr0-0 evKiKw"
+                                  className="list-card--item--extra-content"
                                 >
                                   <span>
                                     View your device data in the entity view of the main Watson IoT Platform dashboard. If your plan includes Watson IoT Platform Analytics, the data is stored in the data lake for later retrieval and processing.
@@ -22619,10 +22627,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               className="bx--structured-list-row"
                             >
                               <div
-                                className="ListCard__StyledStructuredListCell-u7vzr0-1 jEQfZQ bx--structured-list-td"
+                                className="list-card--item"
                               >
                                 <div
-                                  className="ListCard__StyledValueSpan-u7vzr0-3 gZXxBO"
+                                  className="list-card--item--value"
                                 >
                                   <a
                                     className="bx--link"
@@ -22638,7 +22646,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                   </a>
                                 </div>
                                 <div
-                                  className="ListCard__StyledSpan-u7vzr0-0 evKiKw"
+                                  className="list-card--item--extra-content"
                                 >
                                   <span>
                                     Process your entity metrics by running simple or complex calculations to create calculated metrics.
@@ -22650,10 +22658,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               className="bx--structured-list-row"
                             >
                               <div
-                                className="ListCard__StyledStructuredListCell-u7vzr0-1 jEQfZQ bx--structured-list-td"
+                                className="list-card--item"
                               >
                                 <div
-                                  className="ListCard__StyledValueSpan-u7vzr0-3 gZXxBO"
+                                  className="list-card--item--value"
                                 >
                                   <a
                                     className="bx--link"
@@ -22669,7 +22677,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                   </a>
                                 </div>
                                 <div
-                                  className="ListCard__StyledSpan-u7vzr0-0 evKiKw"
+                                  className="list-card--item--extra-content"
                                 >
                                   <span>
                                     Visualize your entity metrics in monitoring dashboards to get an overview of your data.
@@ -22749,7 +22757,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       className="Card__CardContent-v5r71h-1 hDVRgE"
                     >
                       <div
-                        className="ListCard__StyledContentWrapper-u7vzr0-2 eUBMEU"
+                        className="list-card"
+                        style={
+                          Object {
+                            "paddingBottom": 0,
+                            "paddingLeft": 16,
+                            "paddingRight": 16,
+                            "paddingTop": 0,
+                          }
+                        }
                       >
                         <section
                           aria-label="Structured list section"
@@ -22763,10 +22779,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               className="bx--structured-list-row"
                             >
                               <div
-                                className="ListCard__StyledStructuredListCell-u7vzr0-1 jEQfZQ bx--structured-list-td"
+                                className="list-card--item"
                               >
                                 <div
-                                  className="ListCard__StyledValueSpan-u7vzr0-3 gZXxBO"
+                                  className="list-card--item--value"
                                 >
                                   <a
                                     className="bx--link"
@@ -22787,10 +22803,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               className="bx--structured-list-row"
                             >
                               <div
-                                className="ListCard__StyledStructuredListCell-u7vzr0-1 jEQfZQ bx--structured-list-td"
+                                className="list-card--item"
                               >
                                 <div
-                                  className="ListCard__StyledValueSpan-u7vzr0-3 gZXxBO"
+                                  className="list-card--item--value"
                                 >
                                   <a
                                     className="bx--link"
@@ -22811,10 +22827,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               className="bx--structured-list-row"
                             >
                               <div
-                                className="ListCard__StyledStructuredListCell-u7vzr0-1 jEQfZQ bx--structured-list-td"
+                                className="list-card--item"
                               >
                                 <div
-                                  className="ListCard__StyledValueSpan-u7vzr0-3 gZXxBO"
+                                  className="list-card--item--value"
                                 >
                                   <a
                                     className="bx--link"
@@ -22835,10 +22851,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               className="bx--structured-list-row"
                             >
                               <div
-                                className="ListCard__StyledStructuredListCell-u7vzr0-1 jEQfZQ bx--structured-list-td"
+                                className="list-card--item"
                               >
                                 <div
-                                  className="ListCard__StyledValueSpan-u7vzr0-3 gZXxBO"
+                                  className="list-card--item--value"
                                 >
                                   <a
                                     className="bx--link"
