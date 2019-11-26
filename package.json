@@ -25,10 +25,10 @@
     "prepare": "yarn build",
     "start": "yarn storybook",
     "storybook": "start-storybook -p 3000 -s public/development",
-    "test": "cross-env TZ=America/Chicago NODE_OPTIONS='--max-old-space-size=8096' jest --testPathPattern='.*\\.test\\.js(x)?' --detectOpenHandles --coverage",
+    "test": "cross-env TZ=America/Chicago NODE_OPTIONS='--max-old-space-size=8096' jest --testPathPattern='.*\\.test\\.js(x)?' --coverage",
     "test:a11y": "cross-env TZ=America/Chicago jest --forceExit --testPathPattern='.*\\.a11y\\.js(x)?'",
-    "test:watch": "cross-env TZ=America/Chicago NODE_OPTIONS='--max-old-space-size=8096' jest  --watch --verbose --coverage",
-    "test:update": "cross-env TZ=America/Chicago NODE_OPTIONS='--max-old-space-size=8096' jest  --updateSnapshot",
+    "test:watch": "cross-env TZ=America/Chicago NODE_OPTIONS='--max-old-space-size=8096' jest --testPathPattern='.*\\.test\\.js(x)?' --watch --verbose --coverage",
+    "test:update": "cross-env TZ=America/Chicago NODE_OPTIONS='--max-old-space-size=8096' jest src/components/StorybookSnapshots.test.js --updateSnapshot",
     "test:clear": "cross-env TZ=America/Chicago jest --clearCache"
   },
   "stylelint": {
