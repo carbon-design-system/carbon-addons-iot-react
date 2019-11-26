@@ -8,7 +8,7 @@ import Arrow from '@carbon/icons-react/lib/arrow--right/20';
 import Add from '@carbon/icons-react/lib/add/20';
 import Delete from '@carbon/icons-react/lib/delete/16';
 
-import { getSortedData } from '../../utils/componentUtilityFunctions';
+import { getSortedData, csvDownloadHandler } from '../../utils/componentUtilityFunctions';
 import FullWidthWrapper from '../../internal/FullWidthWrapper';
 
 import Table from './Table';
@@ -483,7 +483,10 @@ storiesOf('Watson IoT|Table', module)
       <FullWidthWrapper>
         <StatefulTable
           {...initialState}
-          actions={actions}
+          actions={{
+            ...actions,
+            toolbar: { ...actions.toolbar, onDownloadCSV: csvDownloadHandler },
+          }}
           isSortable
           lightweight={boolean('lightweight', false)}
         />

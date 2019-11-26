@@ -163,6 +163,8 @@ const propTypes = {
       onApplyBatchAction: PropTypes.func,
       /** Apply a search criteria to the table */
       onApplySearch: PropTypes.func,
+      /** Download the table contents */
+      onDownloadCSV: PropTypes.func,
     }),
     /** table wide actions */
     table: PropTypes.shape({
@@ -275,6 +277,7 @@ export const defaultProps = baseProps => ({
     emptyMessageWithFilters: 'No results match the current filters',
     emptyButtonLabel: 'Create some data',
     emptyButtonLabelWithFilters: 'Clear all filters',
+    downloadIconDescription: 'Download table content',
     filterNone: 'Unsort rows by this header',
     filterAscending: 'Sort rows by this header in ascending order',
     filterDescending: 'Sort rows by this header in descending order',
@@ -348,6 +351,7 @@ const Table = props => {
           filterNone: i18n.filterNone,
           filterAscending: i18n.filterAscending,
           filterDescending: i18n.filterDescending,
+          downloadIconDescription: i18n.downloadIconDescription,
           rowCountInHeader: i18n.rowCountInHeader,
         }}
         actions={pick(
@@ -357,7 +361,8 @@ const Table = props => {
           'onClearAllFilters',
           'onToggleColumnSelection',
           'onToggleFilter',
-          'onApplySearch'
+          'onApplySearch',
+          'onDownloadCSV'
         )}
         options={pick(
           options,
