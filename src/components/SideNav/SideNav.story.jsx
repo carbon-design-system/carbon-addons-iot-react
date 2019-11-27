@@ -36,6 +36,7 @@ const links = [
       href: 'https://google.com',
       element: 'a',
       target: '_blank',
+      isActive: true,
     },
     linkContent: 'Devices',
   },
@@ -47,6 +48,7 @@ const links = [
       href: 'https://google.com',
       element: 'a',
       target: '_blank',
+      isActive: true,
     },
     linkContent: 'Dashboards',
   },
@@ -61,12 +63,13 @@ const links = [
     childContent: [
       {
         metaData: {
-          label: 'Devices',
+          label: 'Yet another link',
+          title: 'Yet another link',
           onClick: action('inner menu click'),
           element: 'button',
         },
         content: 'Yet another link',
-        isActive: true,
+        // isActive: true,
       },
     ],
   },
