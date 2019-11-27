@@ -28,6 +28,17 @@ const links = [
       // isActive: true,
     },
     linkContent: 'Boards',
+    childContent: [
+      {
+        metaData: {
+          label: 'Yet another link',
+          title: 'Yet another link',
+          onClick: action('inner menu click'),
+          element: 'button',
+        },
+        content: 'Yet another link',
+      },
+    ],
   },
   {
     isEnabled: true,

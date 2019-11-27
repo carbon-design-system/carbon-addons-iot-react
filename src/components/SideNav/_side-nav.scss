@@ -69,6 +69,7 @@
     }
 
     [aria-expanded='true'] + .#{$prefix}--side-nav__menu {
+      height: 0;
       .#{$prefix}--side-nav__link--current,
       .#{$prefix}--side-nav__link--current::before {
         background: $ui-05;
