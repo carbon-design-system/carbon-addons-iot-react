@@ -161,7 +161,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|SideN
         >
           <a
             aria-label="Devices"
-            className="bx--side-nav__link bx--side-nav__link--current disabled"
+            className="bx--side-nav__link disabled"
             href="https://google.com"
             label="Devices"
             target="_blank"
@@ -199,7 +199,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|SideN
           </a>
         </li>
         <li
-          className="bx--side-nav__item bx--side-nav__item--icon bx--side-nav__item--large disabled"
+          className="bx--side-nav__item bx--side-nav__item--active bx--side-nav__item--icon bx--side-nav__item--large disabled"
         >
           <button
             aria-expanded={false}
@@ -267,7 +267,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|SideN
               role="none"
             >
               <button
-                className="bx--side-nav__link"
+                className="bx--side-nav__link bx--side-nav__link--current"
                 label="Yet another link"
                 onClick={[Function]}
                 role="menuitem"

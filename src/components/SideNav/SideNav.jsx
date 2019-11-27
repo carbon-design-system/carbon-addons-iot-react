@@ -75,7 +75,7 @@ const defaultProps = {
 /**
  * Side Navigation. part of UI shell
  */
-const SideNav = ({ links, defaultExpanded, isSideNavExpanded, i18n, onToggle, ...props }) => {
+const SideNav = ({ links, defaultExpanded, isSideNavExpanded, i18n, ...props }) => {
   const nav = links
     .map(link => {
       const enabled = link.isEnabled ? link.isEnabled : false;
