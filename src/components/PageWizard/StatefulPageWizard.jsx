@@ -17,15 +17,11 @@ const StatefulPageWizard = ({
   const prevStep = currentStepIndex > 0 ? steps[currentStepIndex - 1] : undefined;
   const handleNext = id => {
     setCurrentStepId(id);
-    if (onNext) {
-      onNext(id);
-    }
+    onNext(id);
   };
   const handleBack = id => {
     setCurrentStepId(id);
-    if (onBack) {
-      onBack(id);
-    }
+    onBack(id);
   };
 
   return (
@@ -36,9 +32,7 @@ const StatefulPageWizard = ({
       currentStepId={currentStepId}
       setStep={id => {
         setCurrentStepId(id);
-        if (setStep) {
-          setStep(id);
-        }
+        setStep(id);
       }}
     >
       {children}

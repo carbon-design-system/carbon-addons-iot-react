@@ -123,9 +123,9 @@ export const defaultProps = {
   children: [],
   nextDisabled: false,
   currentStepId: null,
-  onNext: null,
-  onBack: null,
-  setStep: null,
+  onNext: () => {},
+  onBack: () => {},
+  setStep: () => {},
   onClose: null,
   onSubmit: null,
   i18n: {
