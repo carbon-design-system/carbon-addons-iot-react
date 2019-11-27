@@ -117,4 +117,19 @@ describe('StatefulPageWizard tests', () => {
     fireEvent.click(getByText('Step 2'));
     expect(mocks.setStep).toHaveBeenCalledTimes(1);
   });
+
+  test("not passing onBack function doesn't blow things up", () => {
+    const i18n = {
+      back: 'Back',
+      next: 'Next',
+    };
+    const renderedElement = render(
+      <StatefulPageWizard currentStepId="step2" i18n={i18n} hasStickyFooter>
+        {content}
+      </StatefulPageWizard>
+    );
+    fireEvent.click(renderedElement.getByText(i18n.back));
+    fireEvent.click(renderedElement.getByText(i18n.next));
+    expect(renderedElement.container.innerHTML).toBeTruthy();
+  });
 });

@@ -126,8 +126,8 @@ export const defaultProps = {
   onNext: () => {},
   onBack: () => {},
   setStep: () => {},
-  onClose: null,
-  onSubmit: null,
+  onClose: () => {},
+  onSubmit: () => {},
   i18n: {
     back: 'Back',
     next: 'Next',

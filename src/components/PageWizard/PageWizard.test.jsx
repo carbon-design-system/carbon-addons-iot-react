@@ -98,19 +98,4 @@ describe('PageWizard tests', () => {
     fireEvent.click(getByText(i18n.next));
     expect(mocks.onNext).toHaveBeenCalledTimes(1);
   });
-
-  test("not passing onBack function doesn't blow things up", () => {
-    const i18n = {
-      back: 'Back',
-      next: 'Next',
-    };
-    const renderedElement = render(
-      <PageWizard currentStepId="step2" i18n={i18n} hasStickyFooter>
-        {content}
-      </PageWizard>
-    );
-    fireEvent.click(renderedElement.getByText(i18n.back));
-    fireEvent.click(renderedElement.getByText(i18n.next));
-    expect(renderedElement.container.innerHTML).toBeTruthy();
-  });
 });
