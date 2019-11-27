@@ -4,6 +4,7 @@ import {
   StructuredListWrapper,
   StructuredListBody,
   StructuredListRow,
+  StructuredListCell,
   Link,
 } from 'carbon-components-react';
 import PropTypes from 'prop-types';
@@ -54,11 +55,8 @@ const ListCard = ({
               ? data.map(item => {
                   return (
                     <StructuredListRow key={item.id}>
-                      <div
-                        className={classNames('list-card--item', className)}
-                        key={`${item.id}-cell`}
-                      >
-                        <div className={classNames('list-card--item--value', className)}>
+                      <StructuredListCell className="list-card--item" key={`${item.id}-cell`}>
+                        <div className="list-card--item--value">
                           {item.link ? (
                             <Link style={{ display: 'inherit' }} target="_blank" href={item.link}>
                               {item.value}
@@ -68,11 +66,11 @@ const ListCard = ({
                           )}
                         </div>
                         {item.extraContent ? (
-                          <div className={classNames('list-card--item--extra-content', className)}>
+                          <div className="list-card--item--extra-content">
                             {item.extraContent ? item.extraContent : null}
                           </div>
                         ) : null}
-                      </div>
+                      </StructuredListCell>
                     </StructuredListRow>
                   );
                 })

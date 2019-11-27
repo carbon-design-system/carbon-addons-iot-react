@@ -22596,7 +22596,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               className="bx--structured-list-row"
                             >
                               <div
-                                className="list-card--item"
+                                className="list-card--item bx--structured-list-td"
                               >
                                 <div
                                   className="list-card--item--value"
@@ -22627,7 +22627,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               className="bx--structured-list-row"
                             >
                               <div
-                                className="list-card--item"
+                                className="list-card--item bx--structured-list-td"
                               >
                                 <div
                                   className="list-card--item--value"
@@ -22658,7 +22658,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               className="bx--structured-list-row"
                             >
                               <div
-                                className="list-card--item"
+                                className="list-card--item bx--structured-list-td"
                               >
                                 <div
                                   className="list-card--item--value"
@@ -22779,7 +22779,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               className="bx--structured-list-row"
                             >
                               <div
-                                className="list-card--item"
+                                className="list-card--item bx--structured-list-td"
                               >
                                 <div
                                   className="list-card--item--value"
@@ -22803,7 +22803,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               className="bx--structured-list-row"
                             >
                               <div
-                                className="list-card--item"
+                                className="list-card--item bx--structured-list-td"
                               >
                                 <div
                                   className="list-card--item--value"
@@ -22827,7 +22827,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               className="bx--structured-list-row"
                             >
                               <div
-                                className="list-card--item"
+                                className="list-card--item bx--structured-list-td"
                               >
                                 <div
                                   className="list-card--item--value"
@@ -22851,7 +22851,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               className="bx--structured-list-row"
                             >
                               <div
-                                className="list-card--item"
+                                className="list-card--item bx--structured-list-td"
                               >
                                 <div
                                   className="list-card--item--value"
