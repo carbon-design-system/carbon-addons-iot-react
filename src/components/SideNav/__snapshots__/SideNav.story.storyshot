@@ -118,17 +118,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|SideN
         className="bx--side-nav__items"
       >
         <li
-          className="bx--side-nav__item bx--side-nav__item--large"
+          className="bx--side-nav__item bx--side-nav__item--icon bx--side-nav__item--large disabled"
         >
-          <div
-            aria-label="Boards"
-            className="bx--side-nav__link disabled"
-            label="Boards"
+          <button
+            aria-expanded={false}
+            aria-haspopup="true"
+            className="bx--side-nav__submenu"
             onClick={[Function]}
-            tabIndex={0}
+            type="button"
           >
             <div
-              className="bx--side-nav__icon bx--side-nav__icon--small"
+              className="bx--side-nav__icon"
             >
               <svg
                 aria-hidden={true}
@@ -150,11 +150,56 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|SideN
               </svg>
             </div>
             <span
-              className="bx--side-nav__link-text"
+              className="bx--side-nav__submenu-title"
             >
               Boards
             </span>
-          </div>
+            <div
+              className="bx--side-nav__icon bx--side-nav__icon--small bx--side-nav__submenu-chevron"
+            >
+              <svg
+                aria-hidden={true}
+                focusable="false"
+                height={20}
+                preserveAspectRatio="xMidYMid meet"
+                style={
+                  Object {
+                    "willChange": "transform",
+                  }
+                }
+                viewBox="0 0 32 32"
+                width={20}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M16 22L6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"
+                />
+              </svg>
+            </div>
+          </button>
+          <ul
+            className="bx--side-nav__menu"
+            role="menu"
+          >
+            <li
+              className="bx--side-nav__menu-item"
+              role="none"
+            >
+              <button
+                className="bx--side-nav__link"
+                label="Yet another link"
+                onClick={[Function]}
+                role="menuitem"
+                title="Yet another link"
+              >
+                <span
+                  className="bx--side-nav__link-text"
+                >
+                  Yet another link
+                </span>
+              </button>
+            </li>
+          </ul>
         </li>
         <li
           className="bx--side-nav__item bx--side-nav__item--large"
