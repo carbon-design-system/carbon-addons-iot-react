@@ -59,17 +59,16 @@ const defaultProps = {
  *
  * @param {number} t, threshold must be a valid number
  */
-const setThreshold = t => {
-  if (t < MINIMUM_OVERFLOW_THRESHOLD) {
-    return MINIMUM_OVERFLOW_THRESHOLD;
-  }
-  return t;
-};
+const setThreshold = (t < MINIMUM_OVERFLOW_THRESHOLD) ? MINIMUM_OVERFLOW_THRESHOLD : t; 
 
-const Breadcrumb = ({ className, children, noTrailingSlash, threshold, ...other }) => {
+const Breadcrumb = props => {
+  const { className, children, noTrailingSlash, threshold, ...other } = props;
+  
   const xthreshold = setThreshold(threshold);
   const showOverflow = children ? children.length > xthreshold : false;
-  const wrapChildren = React.Children.toArray(children).filter((c, i) => {
+  
+  /** childrenWithProps is array */
+  const childrenWithProps = React.Children.toArray(children).filter((c, i) => {
     if (i !== 0 && i !== children.length - 1) {
       return React.cloneElement(c, {
         name: i,
@@ -78,40 +77,35 @@ const Breadcrumb = ({ className, children, noTrailingSlash, threshold, ...other 
     return null;
   });
 
+  /** wrapChildren wrapped children array as node */
+  const wrapChildren = (
+    <li>
+      { childrenWithProps }
+    </li>
+  )
+  // const React.Children.map
+
   // const OverflowItems = () => {
   //   return showOverflow ? children[0: children.length-2] : null;
   // }
 
   return (
     <div className="bx--col-lg-16 bx--col-md-8 bx--col-sm-4">
-      <StyledBreadcrumb {...other} className={className} noTrailingSlash={noTrailingSlash}>
-        {showOverflow ? (
+      { showOverflow ? (
+        <StyledBreadcrumb {...other} className={className} noTrailingSlash={noTrailingSlash}>
           <CarbonBreadcrumb>
             {children[0]}
             <StyledOverflowMenu renderIcon={StyledOverflowIcon20}>
-              {/* {React.Children.map(children,(c, index) => {
-                    if(index !== 0 || index !== children.length - 1){
-                        return (
-                
-                            React.cloneElement(c, {
-                            
-                            color: "red",
-                            name: index,
-                            
-                            })
-                        )
-                    } 
-                    return null;
-                // console.log(c)
-                })} */}
               {wrapChildren}
             </StyledOverflowMenu>
             {children[children.length - 1]}
           </CarbonBreadcrumb>
-        ) : (
-          <div>{children}</div>
-        )}
-      </StyledBreadcrumb>
+        </StyledBreadcrumb>
+      ) : (
+        <StyledBreadcrumb {...other} className={className} noTrailingSlash={noTrailingSlash}>
+          {children}
+        </StyledBreadcrumb>
+      )} 
     </div>
   );
 };
