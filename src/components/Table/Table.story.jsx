@@ -7,6 +7,7 @@ import styled from 'styled-components';
 import Arrow from '@carbon/icons-react/lib/arrow--right/20';
 import Add from '@carbon/icons-react/lib/add/20';
 import Delete from '@carbon/icons-react/lib/delete/16';
+import { TextInput as CarbonTextInput } from 'carbon-components-react';
 
 import { getSortedData } from '../../utils/componentUtilityFunctions';
 import FullWidthWrapper from '../../internal/FullWidthWrapper';
@@ -60,6 +61,28 @@ const renderStatusIcon = ({ value: status }) => {
       );
   }
 };
+
+const editData = ({value}) => {
+  return (
+    <CarbonTextInput
+      value={value}
+      compactValidation={true}
+      onChange={function noRefCheck(){}}
+      onClick={function noRefCheck(){}}
+      type="text"
+      disabled={false}
+      invalid={false}
+      light
+      defaultValue="This is not a default value"
+      placeholder="Placeholder text"
+      helperText=""
+      invalidText=""
+      labelText=""
+      hideLabel
+    />
+  )
+};
+
 export const tableColumns = [
   {
     id: 'string',
@@ -70,15 +93,18 @@ export const tableColumns = [
     id: 'date',
     name: 'Date',
     filter: { placeholderText: 'pick a date' },
+    editDataFunction: editData,
   },
   {
     id: 'select',
     name: 'Select',
     filter: { placeholderText: 'pick an option', options: selectData },
+    editDataFunction: editData,
   },
   {
     id: 'secretField',
     name: 'Secret Information',
+    editDataFunction: editData,
   },
   {
     id: 'status',
@@ -89,6 +115,7 @@ export const tableColumns = [
     id: 'number',
     name: 'Number',
     filter: { placeholderText: 'pick a number' },
+    editDataFunction: editData,
   },
 ];
 
@@ -264,6 +291,7 @@ const actions = {
     onApplyFilter: action('onApplyFilter'),
     onToggleFilter: action('onToggleFilter'),
     onToggleColumnSelection: action('onToggleColumnSelection'),
+    onToggleEdit: action('onToggleEdit'),
     /** Specify a callback for when the user clicks toolbar button to clear all filters. Recieves a parameter of the current filter values for each column */
     onClearAllFilters: action('onClearAllFilters'),
     onCancelBatchAction: action('onCancelBatchAction'),
@@ -1421,6 +1449,7 @@ storiesOf('Watson IoT|Table', module)
           filterNone: text('i18n.filterNone', '__filterNone__'),
           filterAscending: text('i18n.filterAscending', '__filterAscending__'),
           filterDescending: text('i18n.filterDescending', '__filterDescending__'),
+          batchSave: text('i18n.batchSave', '__Save__'),
           /** empty state */
           emptyMessage: text('i18n.emptyMessage', '__There is no data__'),
           emptyMessageWithFilters: text(
@@ -1490,6 +1519,58 @@ storiesOf('Watson IoT|Table', module)
         <br />
 
         `,
+        propTables: [Table],
+        propTablesExclude: [StatefulTable],
+      },
+    }
+  )
+  .add(
+    'In-line editing of Data Table',
+    () => {
+      const editDataFunction = ({value}) => {
+          <CarbonTextInput
+            value={value}
+            compactValidation={true}
+            onChange={function noRefCheck(){}}
+            onClick={function noRefCheck(){}}
+            type="text"
+            disabled={false}
+            invalid={false}
+            light
+            defaultValue="This is not a default value"
+            placeholder="Placeholder text"
+            helperText=""
+            invalidText=""
+            labelText=""
+            hideLabel
+          />
+      };
+      return (
+        <FullWidthWrapper>
+          <StatefulTable
+            {...initialState}
+            actions={actions}
+            lightweight={boolean('lightweight', false)}
+            options={{
+              hasFilter: false,
+              hasPagination: true,
+              hasRowSelection: select('hasRowSelection', ['multi', 'single'], 'multi'),
+              hasRowExpansion: false,
+              hasSearch: true,
+              hasColumnSelection: true,
+              hasEdit: true,
+            }}
+            view={{
+              table: { selectedIds: array('selectedIds', []) },
+            }}
+          />
+        </FullWidthWrapper>
+      );
+    },
+    {
+      info: {
+        text:
+          'Use can edit the data of visible columns using appropriate component, and save multiple row edits at once.',
         propTables: [Table],
         propTablesExclude: [StatefulTable],
       },
