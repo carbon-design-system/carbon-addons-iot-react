@@ -31,11 +31,12 @@ const propTypes = {
   clearSelectionText: PropTypes.string,
   openMenuText: PropTypes.string,
   closeMenuText: PropTypes.string,
+  disabledText: PropTypes.string,
 
   /** Current state of the table */
   tableState: PropTypes.shape({
     /** Which toolbar is currently active */
-    activeBar: PropTypes.oneOf(['column', 'filter']),
+    activeBar: PropTypes.oneOf(['column', 'filter', 'edit']),
     /** What's currently selected in the table? */
     selection: PropTypes.shape({
       isSelectAllIndeterminate: PropTypes.bool,
@@ -49,6 +50,7 @@ const propTypes = {
         columnId: PropTypes.string.isRequired,
         /* Visibility of column in table, defaults to false */
         isHidden: PropTypes.bool,
+        editDataFunction: PropTypes.func,
       })
     ).isRequired,
     /** Optional list of applied column filters */
@@ -79,6 +81,7 @@ const defaultProps = {
   clearSelectionText: 'Clear selection',
   openMenuText: 'Open menu',
   closeMenuText: 'Close menu',
+  disabledText: 'Disabled',
   i18n: {
     ...defaultI18NPropTypes,
   },
@@ -146,60 +149,103 @@ const TableHead = ({
   openMenuText,
   closeMenuText,
   lightweight,
+  disabledText,
   i18n,
 }) => {
   const filterBarActive = activeBar === 'filter';
 
   return (
     <StyledCarbonTableHead lightweight={`${lightweight}`}>
-      <TableRow>
-        {hasRowExpansion ? <TableExpandHeader /> : null}
-        {hasRowSelection === 'multi' ? (
-          <StyledCheckboxTableHeader translateWithId={(...args) => tableTranslateWithId(...args)}>
-            {/* TODO: Replace checkbox with TableSelectAll component when onChange bug is fixed
-                    https://github.com/IBM/carbon-components-react/issues/1088 */}
-            <Checkbox
-              id="select-all"
-              labelText={selectAllText}
-              hideLabel
-              indeterminate={isSelectAllIndeterminate}
-              checked={isSelectAllSelected}
-              onChange={() => onSelectAll(!isSelectAllSelected)}
-            />
-          </StyledCheckboxTableHeader>
-        ) : null}
+      {activeBar === 'edit' ? (
+        <TableRow>
+          {hasRowSelection === 'multi' ? (
+            <StyledCheckboxTableHeader translateWithId={(...args) => tableTranslateWithId(...args)}>
+              <Checkbox
+                id="disabled-checkbox"
+                labelText={disabledText}
+                hideLabel
+                indeterminate={false}
+                checked={false}
+                disabled
+              />
+            </StyledCheckboxTableHeader>
+          ) : null}
 
-        {ordering.map(item => {
-          const matchingColumnMeta = columns.find(column => column.id === item.columnId);
-          const hasSort = matchingColumnMeta && sort && sort.columnId === matchingColumnMeta.id;
-          const align =
-            matchingColumnMeta && matchingColumnMeta.align ? matchingColumnMeta.align : 'start';
-          return !item.isHidden && matchingColumnMeta ? (
-            <StyledCustomTableHeader
-              id={`column-${matchingColumnMeta.id}`}
-              key={`column-${matchingColumnMeta.id}`}
-              data-column={matchingColumnMeta.id}
-              isSortable={matchingColumnMeta.isSortable}
-              isSortHeader={hasSort}
-              width={matchingColumnMeta.width}
-              onClick={() => {
-                if (matchingColumnMeta.isSortable && onChangeSort) {
-                  onChangeSort(matchingColumnMeta.id);
-                }
-              }}
-              translateWithId={(...args) => tableTranslateWithId(i18n, ...args)}
-              sortDirection={hasSort ? sort.direction : 'NONE'}
-              align={align}
-              className={classnames(`table-header-label-${align}`, {
-                'table-header-sortable': matchingColumnMeta.isSortable,
-              })}
-            >
-              <TableCellRenderer>{matchingColumnMeta.name}</TableCellRenderer>
-            </StyledCustomTableHeader>
-          ) : null;
-        })}
-        {options.hasRowActions ? <TableHeader>&nbsp;</TableHeader> : null}
-      </TableRow>
+          {ordering.map(item => {
+            const matchingColumnMeta = columns.find(column => column.id === item.columnId);
+            const align =
+              matchingColumnMeta && matchingColumnMeta.align ? matchingColumnMeta.align : 'start';
+            return !item.isHidden && matchingColumnMeta ? (
+              <StyledCustomTableHeader
+                id={`column-${matchingColumnMeta.id}`}
+                key={`column-${matchingColumnMeta.id}`}
+                data-column={matchingColumnMeta.id}
+                isSortable={false}
+                isSortHeader={false}
+                width={matchingColumnMeta.width}
+                translateWithId={(...args) => tableTranslateWithId(i18n, ...args)}
+                align={align}
+                className={classnames(`table-header-label-${align}`, {
+                  'table-header-sortable': matchingColumnMeta.isSortable,
+                })}
+                disabled
+              >
+                <TableCellRenderer>{matchingColumnMeta.name}</TableCellRenderer>
+              </StyledCustomTableHeader>
+            ) : null;
+          })}
+        </TableRow>
+      ) : (
+        <TableRow>
+          {hasRowExpansion ? <TableExpandHeader /> : null}
+          {hasRowSelection === 'multi' ? (
+            <StyledCheckboxTableHeader translateWithId={(...args) => tableTranslateWithId(...args)}>
+              {/* TODO: Replace checkbox with TableSelectAll component when onChange bug is fixed
+                      https://github.com/IBM/carbon-components-react/issues/1088 */}
+              <Checkbox
+                id="select-all"
+                labelText={selectAllText}
+                hideLabel
+                indeterminate={isSelectAllIndeterminate}
+                checked={isSelectAllSelected}
+                onChange={() => onSelectAll(!isSelectAllSelected)}
+              />
+            </StyledCheckboxTableHeader>
+          ) : null}
+
+          {ordering.map(item => {
+            const matchingColumnMeta = columns.find(column => column.id === item.columnId);
+            const hasSort = matchingColumnMeta && sort && sort.columnId === matchingColumnMeta.id;
+            const align =
+              matchingColumnMeta && matchingColumnMeta.align ? matchingColumnMeta.align : 'start';
+            return !item.isHidden && matchingColumnMeta ? (
+              <StyledCustomTableHeader
+                id={`column-${matchingColumnMeta.id}`}
+                key={`column-${matchingColumnMeta.id}`}
+                data-column={matchingColumnMeta.id}
+                isSortable={matchingColumnMeta.isSortable}
+                isSortHeader={hasSort}
+                width={matchingColumnMeta.width}
+                onClick={() => {
+                  if (matchingColumnMeta.isSortable && onChangeSort) {
+                    onChangeSort(matchingColumnMeta.id);
+                  }
+                }}
+                translateWithId={(...args) => tableTranslateWithId(i18n, ...args)}
+                sortDirection={hasSort ? sort.direction : 'NONE'}
+                align={align}
+                className={classnames(`table-header-label-${align}`, {
+                  'table-header-sortable': matchingColumnMeta.isSortable,
+                })}
+              >
+                <TableCellRenderer>{matchingColumnMeta.name}</TableCellRenderer>
+              </StyledCustomTableHeader>
+            ) : null;
+          })}
+          {options.hasRowActions ? <TableHeader>&nbsp;</TableHeader> : null}
+        </TableRow>
+      )}
+
       {filterBarActive && (
         <FilterHeaderRow
           columns={columns.map(column => ({

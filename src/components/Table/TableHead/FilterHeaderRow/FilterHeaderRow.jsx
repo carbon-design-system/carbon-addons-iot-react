@@ -135,6 +135,7 @@ class FilterHeaderRow extends Component {
         columnId: PropTypes.string.isRequired,
         /* Visibility of column in table, defaults to false */
         isHidden: PropTypes.bool,
+        editDataFunction: PropTypes.func,
       })
     ).isRequired,
     filters: PropTypes.arrayOf(
