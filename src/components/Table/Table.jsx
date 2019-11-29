@@ -84,6 +84,7 @@ const propTypes = {
     hasSearch: PropTypes.bool,
     hasColumnSelection: PropTypes.bool,
     shouldLazyRender: PropTypes.bool,
+    hasEdit: PropTypes.bool,
   }),
 
   /** Initial state of the table, should be updated via a local state wrapper component implementation or via a central store/redux see StatefulTable component for an example */
@@ -103,7 +104,7 @@ const propTypes = {
     ),
     toolbar: PropTypes.shape({
       /** Specify which header row to display, will display default header row if null */
-      activeBar: PropTypes.oneOf(['filter', 'column']),
+      activeBar: PropTypes.oneOf(['filter', 'column', 'edit']),
       /** optional content to render inside the toolbar  */
       customToolbarContent: PropTypes.node,
       /** Specify which batch actions to render in the batch action bar. If empty, no batch action toolbar will display */
@@ -134,6 +135,7 @@ const propTypes = {
           columnId: PropTypes.string.isRequired,
           /* Visibility of column in table, defaults to false */
           isHidden: PropTypes.bool,
+          editDataFunction: PropTypes.func,
         })
       ),
       /** what is the current state of the row actions */
@@ -162,6 +164,7 @@ const propTypes = {
       onApplyBatchAction: PropTypes.func,
       /** Apply a search criteria to the table */
       onApplySearch: PropTypes.func,
+      onToggleEdit: PropTypes.func,
     }),
     /** table wide actions */
     table: PropTypes.shape({
@@ -195,6 +198,7 @@ export const defaultProps = baseProps => ({
     hasSearch: false,
     hasColumnSelection: false,
     shouldLazyRender: false,
+    hasEdit: false,
   },
   view: {
     pagination: {
@@ -215,7 +219,7 @@ export const defaultProps = baseProps => ({
       selectedIds: [],
       rowActions: [],
       sort: {},
-      ordering: baseProps.columns && baseProps.columns.map(i => ({ columnId: i.id })),
+      ordering: baseProps.columns && baseProps.columns.map(i => ({ columnId: i.id, editDataFunction: i.editDataFunction })),
       loadingState: {
         rowCount: 5,
       },
@@ -228,6 +232,7 @@ export const defaultProps = baseProps => ({
       onToggleColumnSelection: defaultFunction('actions.toolbar.onToggleColumnSelection'),
       onApplyBatchAction: defaultFunction('actions.toolbar.onApplyBatchAction'),
       onCancelBatchAction: defaultFunction('actions.toolbar.onCancelBatchAction'),
+      onToggleEdit: defaultFunction('actions.toolbar.onToggleEdit'),
     },
     table: {
       onChangeSort: defaultFunction('actions.table.onChangeSort'),
@@ -268,6 +273,7 @@ export const defaultProps = baseProps => ({
     batchCancel: 'Cancel',
     itemsSelected: 'items selected',
     itemSelected: 'item selected',
+    batchSave: 'Save',
     /** empty state */
     emptyMessage: 'There is no data',
     emptyMessageWithFilters: 'No results match the current filters',
@@ -346,6 +352,7 @@ const Table = props => {
           filterNone: i18n.filterNone,
           filterAscending: i18n.filterAscending,
           filterDescending: i18n.filterDescending,
+          batchSave: i18n.batchSave,
         }}
         actions={pick(
           actions.toolbar,
@@ -354,9 +361,10 @@ const Table = props => {
           'onClearAllFilters',
           'onToggleColumnSelection',
           'onToggleFilter',
-          'onApplySearch'
+          'onApplySearch',
+          'onToggleEdit'
         )}
-        options={pick(options, 'hasColumnSelection', 'hasFilter', 'hasSearch', 'hasRowSelection')}
+        options={pick(options, 'hasColumnSelection', 'hasFilter', 'hasSearch', 'hasRowSelection', 'hasEdit')}
         tableState={{
           totalSelected: view.table.selectedIds.length,
           totalFilters: view.filters ? view.filters.length : 0,
@@ -443,6 +451,7 @@ const Table = props => {
               'onRowExpanded',
               'onRowClicked'
             )}
+            activeBar={view.toolbar.activeBar}
           />
         ) : (
           <EmptyTable
