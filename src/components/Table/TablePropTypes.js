@@ -95,6 +95,7 @@ export const TableColumnsPropTypes = PropTypes.arrayOf(
      *    row: PropTypes.object like this {col: value, col2: value}
      * }, you should return the node that should render within that cell */
     renderDataFunction: PropTypes.func,
+    editDataFunction: PropTypes.func,
 
     /**
      * If omitted, no filter input will be shown for this column
@@ -146,6 +147,7 @@ export const I18NPropTypes = PropTypes.shape({
   batchCancel: PropTypes.string,
   itemsSelected: PropTypes.string,
   itemSelected: PropTypes.string,
+  batchSave: PropTypes.string,
   /** Row actions in table body */
   /** I18N label for in progress */
   inProgressText: PropTypes.string, // eslint-disable-line
@@ -180,6 +182,7 @@ export const defaultI18NPropTypes = {
   clearAllFilters: 'Clear all filters',
   columnSelectionButtonAria: 'Column Selection',
   filterButtonAria: 'Filters',
+  editButtonAria: 'Edit',
   searchLabel: 'Search',
   searchPlaceholder: 'Search',
   clearFilterAria: 'Clear filter',
@@ -190,6 +193,7 @@ export const defaultI18NPropTypes = {
   batchCancel: 'Cancel',
   itemsSelected: 'items selected',
   itemSelected: 'item selected',
+  batchSave: 'Save',
   /** empty state */
   emptyMessage: 'There is no data',
   emptyMessageWithFilters: 'No results match the current filters',
