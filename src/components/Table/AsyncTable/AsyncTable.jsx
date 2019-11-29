@@ -162,6 +162,9 @@ const AsyncTable = ({ fetchData, id }) => {
       onToggleColumnSelection: () => {
         dispatch(baseTableActions.tableToolbarToggle('column'));
       },
+      onToggleEdit: () => {
+        dispatch(baseTableActions.tableToolbarToggle('edit'));
+      },
       onClearAllFilters: () => {
         dispatch(baseTableActions.tableFilterClear());
       },

@@ -74,6 +74,7 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
     onCancelBatchAction,
     onApplyBatchAction,
     onApplySearch,
+    onToggleEdit,
   } = toolbar || {};
   const {
     onChangeSort,
@@ -107,6 +108,10 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
       onToggleColumnSelection: () => {
         dispatch(tableToolbarToggle('column'));
         callbackParent(onToggleColumnSelection, 'column');
+      },
+      onToggleEdit: () => {
+        dispatch(tableToolbarToggle('edit'));
+        callbackParent(onToggleEdit, 'edit');
       },
       onClearAllFilters: () => {
         dispatch(tableFilterClear());

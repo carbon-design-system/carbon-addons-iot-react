@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import IconColumnSelector from '@carbon/icons-react/lib/column/20';
 import IconFilter from '@carbon/icons-react/lib/filter/20';
+import IconEdit from '@carbon/icons-react/lib/edit/20';
 import { DataTable, Button } from 'carbon-components-react';
 import styled from 'styled-components';
 
@@ -70,6 +71,10 @@ const StyledTableBatchActions = styled(TableBatchActions)`
   }
 `;
 
+const StyledCarbonButton = styled(Button)`
+
+`;
+
 const propTypes = {
   /** id of table */
   tableId: PropTypes.string.isRequired,
@@ -78,6 +83,7 @@ const propTypes = {
     hasFilter: PropTypes.bool,
     hasSearch: PropTypes.bool,
     hasColumnSelection: PropTypes.bool,
+    hasEdit: PropTypes.bool,
   }).isRequired,
 
   /** internationalized labels */
@@ -85,6 +91,7 @@ const propTypes = {
     clearAllFilters: PropTypes.string,
     columnSelectionButtonAria: PropTypes.string,
     filterButtonAria: PropTypes.string,
+    editButtonAria: PropTypes.string,
     searchLabel: PropTypes.string,
     searchPlaceholder: PropTypes.string,
     batchCancel: PropTypes.string,
@@ -93,6 +100,7 @@ const propTypes = {
     filterNone: PropTypes.string,
     filterAscending: PropTypes.string,
     filterDescending: PropTypes.string,
+    batchSave: PropTypes.string,
   }),
   /**
    * Action callbacks to update tableState
@@ -103,6 +111,7 @@ const propTypes = {
     onClearAllFilters: PropTypes.func,
     onToggleColumnSelection: PropTypes.func,
     onToggleFilter: PropTypes.func,
+    onToggleEdit: PropTypes.func,
   }).isRequired,
   /**
    * Inbound tableState
@@ -111,7 +120,7 @@ const propTypes = {
     /** is the toolbar currently disabled */
     isDisabled: PropTypes.bool,
     /** Which toolbar is currently active */
-    activeBar: PropTypes.oneOf(['column', 'filter']),
+    activeBar: PropTypes.oneOf(['column', 'filter', 'edit']),
     /** total number of selected rows */
     totalSelected: PropTypes.number,
     /** row selection option */
@@ -141,7 +150,7 @@ const TableToolbar = ({
   tableId,
   className,
   i18n,
-  options: { hasColumnSelection, hasFilter, hasSearch, hasRowSelection },
+  options: { hasColumnSelection, hasFilter, hasSearch, hasRowSelection, hasEdit },
   actions: {
     onCancelBatchAction,
     onApplyBatchAction,
@@ -149,13 +158,14 @@ const TableToolbar = ({
     onToggleColumnSelection,
     onToggleFilter,
     onApplySearch,
+    onToggleEdit,
   },
   tableState: {
     totalSelected,
     totalFilters,
     batchActions,
     search,
-    // activeBar,
+    activeBar,
     customToolbarContent,
     isDisabled,
   },
@@ -182,24 +192,40 @@ const TableToolbar = ({
         disabled={isDisabled}
       />
     ) : null}
-    <StyledTableToolbarContent>
-      {customToolbarContent || null}
-      {totalFilters > 0 ? (
-        <Button kind="secondary" onClick={onClearAllFilters}>
-          {i18n.clearAllFilters}
-        </Button>
-      ) : null}
-      {hasColumnSelection ? (
-        <ToolbarSVGWrapper onClick={onToggleColumnSelection}>
-          <IconColumnSelector description={i18n.columnSelectionButtonAria} />
-        </ToolbarSVGWrapper>
-      ) : null}
-      {hasFilter ? (
-        <ToolbarSVGWrapper onClick={onToggleFilter}>
-          <IconFilter description={i18n.filterButtonAria} />
-        </ToolbarSVGWrapper>
-      ) : null}
-    </StyledTableToolbarContent>
+    {activeBar === 'edit' ? (
+      <StyledTableToolbarContent>
+        <StyledCarbonButton kind='ghost' onClick={onToggleEdit} >
+          {i18n.batchCancel}
+        </StyledCarbonButton>
+        <StyledCarbonButton onClick={onToggleEdit} >
+          {i18n.batchSave}
+        </StyledCarbonButton>
+      </StyledTableToolbarContent>
+    ) : (
+      <StyledTableToolbarContent>
+        {customToolbarContent || null}
+        {totalFilters > 0 ? (
+          <Button kind="secondary" onClick={onClearAllFilters}>
+            {i18n.clearAllFilters}
+          </Button>
+        ) : null}
+        {hasColumnSelection ? (
+          <ToolbarSVGWrapper onClick={onToggleColumnSelection}>
+            <IconColumnSelector description={i18n.columnSelectionButtonAria} />
+          </ToolbarSVGWrapper>
+        ) : null}
+        {hasFilter ? (
+          <ToolbarSVGWrapper onClick={onToggleFilter}>
+            <IconFilter description={i18n.filterButtonAria} />
+          </ToolbarSVGWrapper>
+        ) : null}
+        {hasEdit ? (
+          <ToolbarSVGWrapper onClick={onToggleEdit}>
+            <IconEdit description={i18n.editButtonAria} />
+          </ToolbarSVGWrapper>
+        ) : null}
+      </StyledTableToolbarContent>
+    )}
   </StyledCarbonTableToolbar>
 );
 
