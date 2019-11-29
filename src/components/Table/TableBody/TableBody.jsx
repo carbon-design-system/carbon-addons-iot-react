@@ -62,8 +62,10 @@ const propTypes = {
       columnId: PropTypes.string.isRequired,
       /* Visibility of column in table, defaults to false */
       isHidden: PropTypes.bool,
+      editDataFunction: PropTypes.func,
     })
   ).isRequired,
+  activeBar: PropTypes.oneOf(['column', 'filter', 'edit']),
 };
 
 const defaultProps = {
@@ -111,6 +113,7 @@ const TableBody = ({
   shouldExpandOnRowClick,
   shouldLazyRender,
   ordering,
+  activeBar,
 }) => {
   // Need to merge the ordering and the columns since the columns have the renderer function
   const orderingMap = useMemo(
