@@ -1,6 +1,5 @@
 import { mount } from 'enzyme';
 import React from 'react';
-import 'jest-styled-components';
 /* eslint-disable*/
 import { ToolbarItem, Tooltip } from 'carbon-components-react';
 import { render, fireEvent, waitForElement } from '@testing-library/react';

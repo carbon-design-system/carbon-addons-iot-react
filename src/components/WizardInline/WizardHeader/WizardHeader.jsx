@@ -1,24 +1,19 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import { Close20 } from '@carbon/icons-react';
 
+import PageTitleBar from '../../PageTitleBar/PageTitleBar';
+import Button from '../../Button/Button';
 import ProgressIndicator from '../../ProgressIndicator/ProgressIndicator';
-import Hero from '../../Hero/Hero';
-
-const StyledHero = styled(Hero)`
-  margin-bottom: 1.5rem;
-  padding: 0;
-`;
-
-const StyledProgressIndicator = styled(ProgressIndicator)`
-  padding-bottom: 1.5rem;
-`;
 
 class WizardHeader extends Component {
   static propTypes = {
     /** Title in the header  */
     title: PropTypes.string,
+    description: PropTypes.string,
     blurb: PropTypes.string,
+    onClose: PropTypes.func,
+    closeButtonTitle: PropTypes.string,
     currentItemId: PropTypes.string.isRequired,
     setItem: PropTypes.func.isRequired,
     items: PropTypes.arrayOf(
@@ -29,26 +24,51 @@ class WizardHeader extends Component {
       })
     ).isRequired,
     showLabels: PropTypes.bool,
-    onClose: PropTypes.func.isRequired,
     stepWidth: PropTypes.number,
   };
 
   static defaultProps = {
     title: null,
     blurb: null,
+    description: null,
     showLabels: true,
     stepWidth: 136,
+    onClose: null,
+    closeButtonTitle: 'Close',
   };
 
   state = {};
 
   render = () => {
-    const { currentItemId, setItem, items, showLabels, stepWidth, ...others } = this.props;
+    const {
+      currentItemId,
+      setItem,
+      items,
+      showLabels,
+      stepWidth,
+      title,
+      blurb,
+      description,
+      onClose,
+      closeButtonTitle,
+    } = this.props;
+
+    const closeButton = (
+      <Button className="bx--modal-close" title={closeButtonTitle} type="button">
+        <Close20 onClick={onClose} />
+      </Button>
+    );
 
     return (
       <Fragment>
-        <StyledHero {...others} />
-        <StyledProgressIndicator
+        <PageTitleBar
+          className="wizard-inline-header"
+          title={title}
+          description={blurb || description}
+          extraContent={onClose ? closeButton : null}
+        />
+        <ProgressIndicator
+          className="wizard-inline-progress-indicator"
           currentItemId={currentItemId}
           items={items.map(item => ({ id: item.id, label: item.name }))}
           showLabels={showLabels}

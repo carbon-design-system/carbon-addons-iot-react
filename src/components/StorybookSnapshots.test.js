@@ -1,7 +1,5 @@
 import initStoryshots, { multiSnapshotWithOptions } from '@storybook/addon-storyshots';
 import ReactDOM from 'react-dom';
-// Needed to give more information about the styled component differences in the jest snapshots
-import 'jest-styled-components';
 
 const realFindDOMNode = ReactDOM.findDOMNode;
 const RealDate = Date;
@@ -25,6 +23,10 @@ describe(`Storybook Snapshot tests and console checks`, () => {
           'The pseudo class ":first-child" is potentially unsafe when doing server-side rendering. Try changing it to ":first-of-type".'
         ) &&
         !e.includes('Warning: Received `true` for a non-boolean attribute `loading`.') &&
+        // deprecation warning for our WizardInline component. Can remove once it is removed from package
+        !e.includes(
+          'Warning: \nThe prop `blurb` for WizardInline has been deprecated in favor of `description`'
+        ) &&
         !e.includes('Warning: Function components cannot be given refs.') &&
         !e.includes(
           // workaround storybook console error with styled components

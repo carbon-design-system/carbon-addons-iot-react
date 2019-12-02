@@ -832,7 +832,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     className="Card__CardContent-v5r71h-1 hDVRgE"
                   >
                     <div
-                      className="TimeSeriesCard__LineChartWrapper-q25vbg-0 lhdDAg"
+                      className="TimeSeriesCard__LineChartWrapper-q25vbg-1 ldWnXS"
                       size="MEDIUM"
                     >
                       <div
@@ -949,59 +949,22 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           </div>
                         </div>
                         <div
-                          className="bx--toolbar-action bx--toolbar-search-container-expandable"
-                          onBlur={[Function]}
-                          onClick={[Function]}
-                          onFocus={[Function]}
-                          role="searchbox"
-                          tabIndex="0"
+                          className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-3 jTKDEr"
                         >
                           <div
-                            className="bx--search bx--search--sm TableToolbar__StyledToolbarSearch-sc-17lb3av-1 jCiaXI"
+                            className="bx--toolbar-action bx--toolbar-search-container-expandable"
+                            onBlur={[Function]}
+                            onClick={[Function]}
+                            onFocus={[Function]}
+                            role="searchbox"
+                            tabIndex="0"
                           >
-                            <svg
-                              aria-hidden={true}
-                              className="bx--search-magnifier"
-                              focusable="false"
-                              height={16}
-                              preserveAspectRatio="xMidYMid meet"
-                              style={
-                                Object {
-                                  "willChange": "transform",
-                                }
-                              }
-                              viewBox="0 0 16 16"
-                              width={16}
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M15 14.3L10.7 10c1.9-2.3 1.6-5.8-.7-7.7S4.2.7 2.3 3 .7 8.8 3 10.7c2 1.7 5 1.7 7 0l4.3 4.3.7-.7zM2 6.5C2 4 4 2 6.5 2S11 4 11 6.5 9 11 6.5 11 2 9 2 6.5z"
-                              />
-                            </svg>
-                            <label
-                              className="bx--label"
-                              htmlFor="Table-toolbar-search"
-                            >
-                              Search
-                            </label>
-                            <input
-                              aria-hidden={true}
-                              className="bx--search-input"
-                              disabled={false}
-                              id="Table-toolbar-search"
-                              onChange={[Function]}
-                              placeholder="Search"
-                              type="text"
-                              value=""
-                            />
-                            <button
-                              aria-label="Clear search input"
-                              className="bx--search-close bx--search-close--hidden"
-                              onClick={[Function]}
-                              type="button"
+                            <div
+                              className="bx--search bx--search--sm TableToolbar__StyledToolbarSearch-sc-17lb3av-1 jCiaXI"
                             >
                               <svg
                                 aria-hidden={true}
+                                className="bx--search-magnifier"
                                 focusable="false"
                                 height={16}
                                 preserveAspectRatio="xMidYMid meet"
@@ -1015,31 +978,62 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                 xmlns="http://www.w3.org/2000/svg"
                               >
                                 <path
-                                  d="M12 4.7l-.7-.7L8 7.3 4.7 4l-.7.7L7.3 8 4 11.3l.7.7L8 8.7l3.3 3.3.7-.7L8.7 8z"
+                                  d="M15 14.3L10.7 10c1.9-2.3 1.6-5.8-.7-7.7S4.2.7 2.3 3 .7 8.8 3 10.7c2 1.7 5 1.7 7 0l4.3 4.3.7-.7zM2 6.5C2 4 4 2 6.5 2S11 4 11 6.5 9 11 6.5 11 2 9 2 6.5z"
                                 />
                               </svg>
-                            </button>
+                              <label
+                                className="bx--label"
+                                htmlFor="Table-toolbar-search"
+                              >
+                                Search
+                              </label>
+                              <input
+                                aria-hidden={true}
+                                className="bx--search-input"
+                                disabled={false}
+                                id="Table-toolbar-search"
+                                onChange={[Function]}
+                                placeholder="Search"
+                                type="text"
+                                value=""
+                              />
+                              <button
+                                aria-label="Clear search input"
+                                className="bx--search-close bx--search-close--hidden"
+                                onClick={[Function]}
+                                type="button"
+                              >
+                                <svg
+                                  aria-hidden={true}
+                                  focusable="false"
+                                  height={16}
+                                  preserveAspectRatio="xMidYMid meet"
+                                  style={
+                                    Object {
+                                      "willChange": "transform",
+                                    }
+                                  }
+                                  viewBox="0 0 16 16"
+                                  width={16}
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M12 4.7l-.7-.7L8 7.3 4.7 4l-.7.7L7.3 8 4 11.3l.7.7L8 8.7l3.3 3.3.7-.7L8.7 8z"
+                                  />
+                                </svg>
+                              </button>
+                            </div>
                           </div>
-                        </div>
-                        <div
-                          className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-3 jTKDEr"
-                        >
                           <button
-                            className="TableCard__ToolbarButton-q9l5bz-4 iFxaZU bx--btn bx--btn--sm bx--btn--ghost"
-                            disabled={false}
+                            className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 dEzVra"
                             onClick={[Function]}
-                            tabIndex={0}
-                            title="Download table content"
-                            type="button"
                           >
                             <svg
-                              aria-hidden="true"
-                              aria-label="Download table content"
-                              className="bx--btn__icon"
+                              aria-hidden={true}
+                              description="Download table content"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
-                              role="img"
                               style={
                                 Object {
                                   "willChange": "transform",
@@ -1446,7 +1440,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     className="Card__CardContent-v5r71h-1 jAGfWa"
                   >
                     <div
-                      className="TimeSeriesCard__LineChartWrapper-q25vbg-0 lhdDAg"
+                      className="TimeSeriesCard__LineChartWrapper-q25vbg-1 ldWnXS"
                       size="LARGE"
                     >
                       <div
@@ -2683,7 +2677,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     className="Card__CardContent-v5r71h-1 hDVRgE"
                   >
                     <div
-                      className="TimeSeriesCard__LineChartWrapper-q25vbg-0 lhdDAg"
+                      className="TimeSeriesCard__LineChartWrapper-q25vbg-1 ldWnXS"
                       size="MEDIUM"
                     >
                       <div
@@ -2800,59 +2794,22 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           </div>
                         </div>
                         <div
-                          className="bx--toolbar-action bx--toolbar-search-container-expandable"
-                          onBlur={[Function]}
-                          onClick={[Function]}
-                          onFocus={[Function]}
-                          role="searchbox"
-                          tabIndex="0"
+                          className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-3 jTKDEr"
                         >
                           <div
-                            className="bx--search bx--search--sm TableToolbar__StyledToolbarSearch-sc-17lb3av-1 jCiaXI"
+                            className="bx--toolbar-action bx--toolbar-search-container-expandable"
+                            onBlur={[Function]}
+                            onClick={[Function]}
+                            onFocus={[Function]}
+                            role="searchbox"
+                            tabIndex="0"
                           >
-                            <svg
-                              aria-hidden={true}
-                              className="bx--search-magnifier"
-                              focusable="false"
-                              height={16}
-                              preserveAspectRatio="xMidYMid meet"
-                              style={
-                                Object {
-                                  "willChange": "transform",
-                                }
-                              }
-                              viewBox="0 0 16 16"
-                              width={16}
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M15 14.3L10.7 10c1.9-2.3 1.6-5.8-.7-7.7S4.2.7 2.3 3 .7 8.8 3 10.7c2 1.7 5 1.7 7 0l4.3 4.3.7-.7zM2 6.5C2 4 4 2 6.5 2S11 4 11 6.5 9 11 6.5 11 2 9 2 6.5z"
-                              />
-                            </svg>
-                            <label
-                              className="bx--label"
-                              htmlFor="Table-toolbar-search"
-                            >
-                              Search
-                            </label>
-                            <input
-                              aria-hidden={true}
-                              className="bx--search-input"
-                              disabled={false}
-                              id="Table-toolbar-search"
-                              onChange={[Function]}
-                              placeholder="Search"
-                              type="text"
-                              value=""
-                            />
-                            <button
-                              aria-label="Clear search input"
-                              className="bx--search-close bx--search-close--hidden"
-                              onClick={[Function]}
-                              type="button"
+                            <div
+                              className="bx--search bx--search--sm TableToolbar__StyledToolbarSearch-sc-17lb3av-1 jCiaXI"
                             >
                               <svg
                                 aria-hidden={true}
+                                className="bx--search-magnifier"
                                 focusable="false"
                                 height={16}
                                 preserveAspectRatio="xMidYMid meet"
@@ -2866,31 +2823,62 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                 xmlns="http://www.w3.org/2000/svg"
                               >
                                 <path
-                                  d="M12 4.7l-.7-.7L8 7.3 4.7 4l-.7.7L7.3 8 4 11.3l.7.7L8 8.7l3.3 3.3.7-.7L8.7 8z"
+                                  d="M15 14.3L10.7 10c1.9-2.3 1.6-5.8-.7-7.7S4.2.7 2.3 3 .7 8.8 3 10.7c2 1.7 5 1.7 7 0l4.3 4.3.7-.7zM2 6.5C2 4 4 2 6.5 2S11 4 11 6.5 9 11 6.5 11 2 9 2 6.5z"
                                 />
                               </svg>
-                            </button>
+                              <label
+                                className="bx--label"
+                                htmlFor="Table-toolbar-search"
+                              >
+                                Search
+                              </label>
+                              <input
+                                aria-hidden={true}
+                                className="bx--search-input"
+                                disabled={false}
+                                id="Table-toolbar-search"
+                                onChange={[Function]}
+                                placeholder="Search"
+                                type="text"
+                                value=""
+                              />
+                              <button
+                                aria-label="Clear search input"
+                                className="bx--search-close bx--search-close--hidden"
+                                onClick={[Function]}
+                                type="button"
+                              >
+                                <svg
+                                  aria-hidden={true}
+                                  focusable="false"
+                                  height={16}
+                                  preserveAspectRatio="xMidYMid meet"
+                                  style={
+                                    Object {
+                                      "willChange": "transform",
+                                    }
+                                  }
+                                  viewBox="0 0 16 16"
+                                  width={16}
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M12 4.7l-.7-.7L8 7.3 4.7 4l-.7.7L7.3 8 4 11.3l.7.7L8 8.7l3.3 3.3.7-.7L8.7 8z"
+                                  />
+                                </svg>
+                              </button>
+                            </div>
                           </div>
-                        </div>
-                        <div
-                          className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-3 jTKDEr"
-                        >
                           <button
-                            className="TableCard__ToolbarButton-q9l5bz-4 iFxaZU bx--btn bx--btn--sm bx--btn--ghost"
-                            disabled={false}
+                            className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 dEzVra"
                             onClick={[Function]}
-                            tabIndex={0}
-                            title="Download table content"
-                            type="button"
                           >
                             <svg
-                              aria-hidden="true"
-                              aria-label="Download table content"
-                              className="bx--btn__icon"
+                              aria-hidden={true}
+                              description="Download table content"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
-                              role="img"
                               style={
                                 Object {
                                   "willChange": "transform",
@@ -3297,7 +3285,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     className="Card__CardContent-v5r71h-1 jAGfWa"
                   >
                     <div
-                      className="TimeSeriesCard__LineChartWrapper-q25vbg-0 lhdDAg"
+                      className="TimeSeriesCard__LineChartWrapper-q25vbg-1 ldWnXS"
                       size="LARGE"
                     >
                       <div
@@ -4566,7 +4554,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     className="Card__CardContent-v5r71h-1 hDVRgE"
                   >
                     <div
-                      className="TimeSeriesCard__LineChartWrapper-q25vbg-0 lhdDAg"
+                      className="TimeSeriesCard__LineChartWrapper-q25vbg-1 ldWnXS"
                       size="MEDIUM"
                     >
                       <div
@@ -4683,59 +4671,22 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           </div>
                         </div>
                         <div
-                          className="bx--toolbar-action bx--toolbar-search-container-expandable"
-                          onBlur={[Function]}
-                          onClick={[Function]}
-                          onFocus={[Function]}
-                          role="searchbox"
-                          tabIndex="0"
+                          className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-3 jTKDEr"
                         >
                           <div
-                            className="bx--search bx--search--sm TableToolbar__StyledToolbarSearch-sc-17lb3av-1 jCiaXI"
+                            className="bx--toolbar-action bx--toolbar-search-container-expandable"
+                            onBlur={[Function]}
+                            onClick={[Function]}
+                            onFocus={[Function]}
+                            role="searchbox"
+                            tabIndex="0"
                           >
-                            <svg
-                              aria-hidden={true}
-                              className="bx--search-magnifier"
-                              focusable="false"
-                              height={16}
-                              preserveAspectRatio="xMidYMid meet"
-                              style={
-                                Object {
-                                  "willChange": "transform",
-                                }
-                              }
-                              viewBox="0 0 16 16"
-                              width={16}
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M15 14.3L10.7 10c1.9-2.3 1.6-5.8-.7-7.7S4.2.7 2.3 3 .7 8.8 3 10.7c2 1.7 5 1.7 7 0l4.3 4.3.7-.7zM2 6.5C2 4 4 2 6.5 2S11 4 11 6.5 9 11 6.5 11 2 9 2 6.5z"
-                              />
-                            </svg>
-                            <label
-                              className="bx--label"
-                              htmlFor="Table-toolbar-search"
-                            >
-                              Search
-                            </label>
-                            <input
-                              aria-hidden={true}
-                              className="bx--search-input"
-                              disabled={false}
-                              id="Table-toolbar-search"
-                              onChange={[Function]}
-                              placeholder="Search"
-                              type="text"
-                              value=""
-                            />
-                            <button
-                              aria-label="Clear search input"
-                              className="bx--search-close bx--search-close--hidden"
-                              onClick={[Function]}
-                              type="button"
+                            <div
+                              className="bx--search bx--search--sm TableToolbar__StyledToolbarSearch-sc-17lb3av-1 jCiaXI"
                             >
                               <svg
                                 aria-hidden={true}
+                                className="bx--search-magnifier"
                                 focusable="false"
                                 height={16}
                                 preserveAspectRatio="xMidYMid meet"
@@ -4749,31 +4700,62 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                 xmlns="http://www.w3.org/2000/svg"
                               >
                                 <path
-                                  d="M12 4.7l-.7-.7L8 7.3 4.7 4l-.7.7L7.3 8 4 11.3l.7.7L8 8.7l3.3 3.3.7-.7L8.7 8z"
+                                  d="M15 14.3L10.7 10c1.9-2.3 1.6-5.8-.7-7.7S4.2.7 2.3 3 .7 8.8 3 10.7c2 1.7 5 1.7 7 0l4.3 4.3.7-.7zM2 6.5C2 4 4 2 6.5 2S11 4 11 6.5 9 11 6.5 11 2 9 2 6.5z"
                                 />
                               </svg>
-                            </button>
+                              <label
+                                className="bx--label"
+                                htmlFor="Table-toolbar-search"
+                              >
+                                Search
+                              </label>
+                              <input
+                                aria-hidden={true}
+                                className="bx--search-input"
+                                disabled={false}
+                                id="Table-toolbar-search"
+                                onChange={[Function]}
+                                placeholder="Search"
+                                type="text"
+                                value=""
+                              />
+                              <button
+                                aria-label="Clear search input"
+                                className="bx--search-close bx--search-close--hidden"
+                                onClick={[Function]}
+                                type="button"
+                              >
+                                <svg
+                                  aria-hidden={true}
+                                  focusable="false"
+                                  height={16}
+                                  preserveAspectRatio="xMidYMid meet"
+                                  style={
+                                    Object {
+                                      "willChange": "transform",
+                                    }
+                                  }
+                                  viewBox="0 0 16 16"
+                                  width={16}
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M12 4.7l-.7-.7L8 7.3 4.7 4l-.7.7L7.3 8 4 11.3l.7.7L8 8.7l3.3 3.3.7-.7L8.7 8z"
+                                  />
+                                </svg>
+                              </button>
+                            </div>
                           </div>
-                        </div>
-                        <div
-                          className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-3 jTKDEr"
-                        >
                           <button
-                            className="TableCard__ToolbarButton-q9l5bz-4 iFxaZU bx--btn bx--btn--sm bx--btn--ghost"
-                            disabled={false}
+                            className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 dEzVra"
                             onClick={[Function]}
-                            tabIndex={0}
-                            title="Download table content"
-                            type="button"
                           >
                             <svg
-                              aria-hidden="true"
-                              aria-label="Download table content"
-                              className="bx--btn__icon"
+                              aria-hidden={true}
+                              description="Download table content"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
-                              role="img"
                               style={
                                 Object {
                                   "willChange": "transform",
@@ -5180,7 +5162,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     className="Card__CardContent-v5r71h-1 jAGfWa"
                   >
                     <div
-                      className="TimeSeriesCard__LineChartWrapper-q25vbg-0 lhdDAg"
+                      className="TimeSeriesCard__LineChartWrapper-q25vbg-1 ldWnXS"
                       size="LARGE"
                     >
                       <div
@@ -5891,6 +5873,194 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
 </div>
 `;
 
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashboard full screen line card 1`] = `
+<div
+  className="storybook-container"
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "flexDirection": "column",
+      "padding": "3rem",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div>
+      <div
+        className="dashboard--header"
+      >
+        <div
+          className="dashboard--header-left"
+        >
+          <h2>
+            Expandable card, click expand to expand line
+          </h2>
+          <div
+            className="dashboard--lastupdated"
+          >
+            Last updated: 
+             
+            <p
+              className="bx--skeleton__text"
+              style={
+                Object {
+                  "width": "100%",
+                }
+              }
+            />
+          </div>
+        </div>
+        <div
+          className="dashboard--header-right"
+        >
+          <div
+            className="dashboard--header-actions"
+          />
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "display": "flex",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "flex": 1,
+            }
+          }
+        >
+          <div
+            className="react-grid-layout Dashboard__StyledGridLayout-up3zyz-0 leaKVS"
+            style={
+              Object {
+                "height": "592px",
+              }
+            }
+          >
+            <div
+              className="react-grid-item cssTransforms"
+              style={
+                Object {
+                  "MozTransform": "translate(16px,16px)",
+                  "OTransform": "translate(16px,16px)",
+                  "WebkitTransform": "translate(16px,16px)",
+                  "height": "560px",
+                  "msTransform": "translate(16px,16px)",
+                  "position": "absolute",
+                  "transform": "translate(16px,16px)",
+                  "width": "616px",
+                }
+              }
+            >
+              <div
+                className="Card__CardWrapper-v5r71h-0 kGdXdI"
+                id="expandedcard"
+                type="TIMESERIES"
+              >
+                <div
+                  className="card--header"
+                >
+                  <span
+                    className="card--title"
+                    title="Expanded card"
+                  >
+                    Expanded card
+                     
+                  </span>
+                  <div
+                    className="bx--toolbar card--toolbar"
+                  >
+                    <button
+                      className="card--toolbar-action Card__TinyButton-v5r71h-4 fggzfz bx--btn bx--btn--sm bx--btn--ghost"
+                      disabled={false}
+                      onClick={[Function]}
+                      tabIndex={0}
+                      title="Expand to fullscreen"
+                      type="button"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        aria-label="Expand to fullscreen"
+                        className="bx--btn__icon"
+                        focusable="false"
+                        height={20}
+                        preserveAspectRatio="xMidYMid meet"
+                        role="img"
+                        style={
+                          Object {
+                            "willChange": "transform",
+                          }
+                        }
+                        viewBox="0 0 32 32"
+                        width={20}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M28 4H10a2.006 2.006 0 0 0-2 2v14a2.006 2.006 0 0 0 2 2h18a2.006 2.006 0 0 0 2-2V6a2.006 2.006 0 0 0-2-2zm0 16H10V6h18z"
+                        />
+                        <path
+                          d="M18 26H4V16h2v-2H4a2.006 2.006 0 0 0-2 2v10a2.006 2.006 0 0 0 2 2h14a2.006 2.006 0 0 0 2-2v-2h-2z"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div
+                  className="Card__CardContent-v5r71h-1 jAGfWa"
+                >
+                  <div
+                    className="TimeSeriesCard__LineChartWrapper-q25vbg-1 ldWnXS"
+                    size="LARGE"
+                  >
+                    <div
+                      className="chart-holder"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashboard full screen table card 1`] = `
 <div
   className="storybook-container"
@@ -6077,59 +6247,22 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           </div>
                         </div>
                         <div
-                          className="bx--toolbar-action bx--toolbar-search-container-expandable"
-                          onBlur={[Function]}
-                          onClick={[Function]}
-                          onFocus={[Function]}
-                          role="searchbox"
-                          tabIndex="0"
+                          className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-3 jTKDEr"
                         >
                           <div
-                            className="bx--search bx--search--sm TableToolbar__StyledToolbarSearch-sc-17lb3av-1 jCiaXI"
+                            className="bx--toolbar-action bx--toolbar-search-container-expandable"
+                            onBlur={[Function]}
+                            onClick={[Function]}
+                            onFocus={[Function]}
+                            role="searchbox"
+                            tabIndex="0"
                           >
-                            <svg
-                              aria-hidden={true}
-                              className="bx--search-magnifier"
-                              focusable="false"
-                              height={16}
-                              preserveAspectRatio="xMidYMid meet"
-                              style={
-                                Object {
-                                  "willChange": "transform",
-                                }
-                              }
-                              viewBox="0 0 16 16"
-                              width={16}
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M15 14.3L10.7 10c1.9-2.3 1.6-5.8-.7-7.7S4.2.7 2.3 3 .7 8.8 3 10.7c2 1.7 5 1.7 7 0l4.3 4.3.7-.7zM2 6.5C2 4 4 2 6.5 2S11 4 11 6.5 9 11 6.5 11 2 9 2 6.5z"
-                              />
-                            </svg>
-                            <label
-                              className="bx--label"
-                              htmlFor="Table-toolbar-search"
-                            >
-                              Search
-                            </label>
-                            <input
-                              aria-hidden={true}
-                              className="bx--search-input"
-                              disabled={false}
-                              id="Table-toolbar-search"
-                              onChange={[Function]}
-                              placeholder="Search"
-                              type="text"
-                              value=""
-                            />
-                            <button
-                              aria-label="Clear search input"
-                              className="bx--search-close bx--search-close--hidden"
-                              onClick={[Function]}
-                              type="button"
+                            <div
+                              className="bx--search bx--search--sm TableToolbar__StyledToolbarSearch-sc-17lb3av-1 jCiaXI"
                             >
                               <svg
                                 aria-hidden={true}
+                                className="bx--search-magnifier"
                                 focusable="false"
                                 height={16}
                                 preserveAspectRatio="xMidYMid meet"
@@ -6143,31 +6276,62 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                 xmlns="http://www.w3.org/2000/svg"
                               >
                                 <path
-                                  d="M12 4.7l-.7-.7L8 7.3 4.7 4l-.7.7L7.3 8 4 11.3l.7.7L8 8.7l3.3 3.3.7-.7L8.7 8z"
+                                  d="M15 14.3L10.7 10c1.9-2.3 1.6-5.8-.7-7.7S4.2.7 2.3 3 .7 8.8 3 10.7c2 1.7 5 1.7 7 0l4.3 4.3.7-.7zM2 6.5C2 4 4 2 6.5 2S11 4 11 6.5 9 11 6.5 11 2 9 2 6.5z"
                                 />
                               </svg>
-                            </button>
+                              <label
+                                className="bx--label"
+                                htmlFor="Table-toolbar-search"
+                              >
+                                Search
+                              </label>
+                              <input
+                                aria-hidden={true}
+                                className="bx--search-input"
+                                disabled={false}
+                                id="Table-toolbar-search"
+                                onChange={[Function]}
+                                placeholder="Search"
+                                type="text"
+                                value=""
+                              />
+                              <button
+                                aria-label="Clear search input"
+                                className="bx--search-close bx--search-close--hidden"
+                                onClick={[Function]}
+                                type="button"
+                              >
+                                <svg
+                                  aria-hidden={true}
+                                  focusable="false"
+                                  height={16}
+                                  preserveAspectRatio="xMidYMid meet"
+                                  style={
+                                    Object {
+                                      "willChange": "transform",
+                                    }
+                                  }
+                                  viewBox="0 0 16 16"
+                                  width={16}
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M12 4.7l-.7-.7L8 7.3 4.7 4l-.7.7L7.3 8 4 11.3l.7.7L8 8.7l3.3 3.3.7-.7L8.7 8z"
+                                  />
+                                </svg>
+                              </button>
+                            </div>
                           </div>
-                        </div>
-                        <div
-                          className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-3 jTKDEr"
-                        >
                           <button
-                            className="TableCard__ToolbarButton-q9l5bz-4 iFxaZU bx--btn bx--btn--sm bx--btn--ghost"
-                            disabled={false}
+                            className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 dEzVra"
                             onClick={[Function]}
-                            tabIndex={0}
-                            title="Download table content"
-                            type="button"
                           >
                             <svg
-                              aria-hidden="true"
-                              aria-label="Download table content"
-                              className="bx--btn__icon"
+                              aria-hidden={true}
+                              description="Download table content"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
-                              role="img"
                               style={
                                 Object {
                                   "willChange": "transform",
@@ -6541,12 +6705,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           aria-live="polite"
                         >
                           <tr
-                            className="TableBodyRow__StyledTableRow-sc-103itxu-1 iSXVEC"
+                            className="TableBodyRow__StyledTableRow-sc-103itxu-0 hdodpz"
                             onClick={[Function]}
                           >
                             <td
                               align="start"
-                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                               data-column="timestamp"
                               data-offset={0}
                               id="cell-Table-row-0-timestamp"
@@ -6554,7 +6718,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
+                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                               >
                                 <span
                                   title={1569819600000}
@@ -6565,7 +6729,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </td>
                             <td
                               align="start"
-                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                               data-column="Campus_EGL"
                               data-offset={0}
                               id="cell-Table-row-0-Campus_EGL"
@@ -6573,12 +6737,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
+                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                               />
                             </td>
                             <td
                               align="start"
-                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                               data-column="peopleCount_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-Table-row-0-peopleCount_EnterpriseBuilding_mean"
@@ -6586,7 +6750,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
+                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                               >
                                 <span
                                   title={150.5335383714}
@@ -6597,7 +6761,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </td>
                             <td
                               align="start"
-                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                               data-column="headCount_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-Table-row-0-headCount_EnterpriseBuilding_mean"
@@ -6605,7 +6769,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
+                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                               >
                                 <span
                                   title={240}
@@ -6616,7 +6780,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </td>
                             <td
                               align="start"
-                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                               data-column="capacity_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-Table-row-0-capacity_EnterpriseBuilding_mean"
@@ -6624,7 +6788,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
+                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                               >
                                 <span
                                   title={300}
@@ -6635,12 +6799,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </td>
                           </tr>
                           <tr
-                            className="TableBodyRow__StyledTableRow-sc-103itxu-1 iSXVEC"
+                            className="TableBodyRow__StyledTableRow-sc-103itxu-0 hdodpz"
                             onClick={[Function]}
                           >
                             <td
                               align="start"
-                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                               data-column="timestamp"
                               data-offset={0}
                               id="cell-Table-row-1-timestamp"
@@ -6648,7 +6812,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
+                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                               >
                                 <span
                                   title={1569819600000}
@@ -6659,7 +6823,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </td>
                             <td
                               align="start"
-                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                               data-column="Campus_EGL"
                               data-offset={0}
                               id="cell-Table-row-1-Campus_EGL"
@@ -6667,12 +6831,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
+                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                               />
                             </td>
                             <td
                               align="start"
-                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                               data-column="peopleCount_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-Table-row-1-peopleCount_EnterpriseBuilding_mean"
@@ -6680,7 +6844,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
+                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                               >
                                 <span
                                   title={150.5335383714}
@@ -6691,7 +6855,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </td>
                             <td
                               align="start"
-                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                               data-column="headCount_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-Table-row-1-headCount_EnterpriseBuilding_mean"
@@ -6699,7 +6863,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
+                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                               >
                                 <span
                                   title={240}
@@ -6710,7 +6874,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </td>
                             <td
                               align="start"
-                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                               data-column="capacity_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-Table-row-1-capacity_EnterpriseBuilding_mean"
@@ -6718,7 +6882,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
+                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                               >
                                 <span
                                   title={300}
@@ -6729,12 +6893,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </td>
                           </tr>
                           <tr
-                            className="TableBodyRow__StyledTableRow-sc-103itxu-1 iSXVEC"
+                            className="TableBodyRow__StyledTableRow-sc-103itxu-0 hdodpz"
                             onClick={[Function]}
                           >
                             <td
                               align="start"
-                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                               data-column="timestamp"
                               data-offset={0}
                               id="cell-Table-row-2-timestamp"
@@ -6742,7 +6906,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
+                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                               >
                                 <span
                                   title={1569819600000}
@@ -6753,7 +6917,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </td>
                             <td
                               align="start"
-                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                               data-column="Campus_EGL"
                               data-offset={0}
                               id="cell-Table-row-2-Campus_EGL"
@@ -6761,12 +6925,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
+                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                               />
                             </td>
                             <td
                               align="start"
-                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                               data-column="peopleCount_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-Table-row-2-peopleCount_EnterpriseBuilding_mean"
@@ -6774,7 +6938,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
+                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                               >
                                 <span
                                   title={150.5335383714}
@@ -6785,7 +6949,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </td>
                             <td
                               align="start"
-                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                               data-column="headCount_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-Table-row-2-headCount_EnterpriseBuilding_mean"
@@ -6793,7 +6957,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
+                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                               >
                                 <span
                                   title={240}
@@ -6804,7 +6968,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </td>
                             <td
                               align="start"
-                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                               data-column="capacity_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-Table-row-2-capacity_EnterpriseBuilding_mean"
@@ -6812,7 +6976,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
+                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                               >
                                 <span
                                   title={300}
@@ -6823,12 +6987,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </td>
                           </tr>
                           <tr
-                            className="TableBodyRow__StyledTableRow-sc-103itxu-1 iSXVEC"
+                            className="TableBodyRow__StyledTableRow-sc-103itxu-0 hdodpz"
                             onClick={[Function]}
                           >
                             <td
                               align="start"
-                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                               data-column="timestamp"
                               data-offset={0}
                               id="cell-Table-row-3-timestamp"
@@ -6836,7 +7000,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
+                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                               >
                                 <span
                                   title={1569819600000}
@@ -6847,7 +7011,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </td>
                             <td
                               align="start"
-                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                               data-column="Campus_EGL"
                               data-offset={0}
                               id="cell-Table-row-3-Campus_EGL"
@@ -6855,12 +7019,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
+                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                               />
                             </td>
                             <td
                               align="start"
-                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                               data-column="peopleCount_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-Table-row-3-peopleCount_EnterpriseBuilding_mean"
@@ -6868,7 +7032,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
+                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                               >
                                 <span
                                   title={150.5335383714}
@@ -6879,7 +7043,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </td>
                             <td
                               align="start"
-                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                               data-column="headCount_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-Table-row-3-headCount_EnterpriseBuilding_mean"
@@ -6887,7 +7051,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
+                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                               >
                                 <span
                                   title={240}
@@ -6898,7 +7062,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </td>
                             <td
                               align="start"
-                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                               data-column="capacity_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-Table-row-3-capacity_EnterpriseBuilding_mean"
@@ -6906,7 +7070,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
+                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                               >
                                 <span
                                   title={300}
@@ -6917,12 +7081,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </td>
                           </tr>
                           <tr
-                            className="TableBodyRow__StyledTableRow-sc-103itxu-1 iSXVEC"
+                            className="TableBodyRow__StyledTableRow-sc-103itxu-0 hdodpz"
                             onClick={[Function]}
                           >
                             <td
                               align="start"
-                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                               data-column="timestamp"
                               data-offset={0}
                               id="cell-Table-row-4-timestamp"
@@ -6930,7 +7094,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
+                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                               >
                                 <span
                                   title={1569819600000}
@@ -6941,7 +7105,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </td>
                             <td
                               align="start"
-                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                               data-column="Campus_EGL"
                               data-offset={0}
                               id="cell-Table-row-4-Campus_EGL"
@@ -6949,12 +7113,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
+                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                               />
                             </td>
                             <td
                               align="start"
-                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                               data-column="peopleCount_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-Table-row-4-peopleCount_EnterpriseBuilding_mean"
@@ -6962,7 +7126,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
+                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                               >
                                 <span
                                   title={150.5335383714}
@@ -6973,7 +7137,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </td>
                             <td
                               align="start"
-                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                               data-column="headCount_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-Table-row-4-headCount_EnterpriseBuilding_mean"
@@ -6981,7 +7145,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
+                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                               >
                                 <span
                                   title={240}
@@ -6992,7 +7156,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </td>
                             <td
                               align="start"
-                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                               data-column="capacity_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-Table-row-4-capacity_EnterpriseBuilding_mean"
@@ -7000,7 +7164,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
+                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                               >
                                 <span
                                   title={300}
@@ -7011,12 +7175,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </td>
                           </tr>
                           <tr
-                            className="TableBodyRow__StyledTableRow-sc-103itxu-1 iSXVEC"
+                            className="TableBodyRow__StyledTableRow-sc-103itxu-0 hdodpz"
                             onClick={[Function]}
                           >
                             <td
                               align="start"
-                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                               data-column="timestamp"
                               data-offset={0}
                               id="cell-Table-row-5-timestamp"
@@ -7024,7 +7188,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
+                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                               >
                                 <span
                                   title={1569819600000}
@@ -7035,7 +7199,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </td>
                             <td
                               align="start"
-                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                               data-column="Campus_EGL"
                               data-offset={0}
                               id="cell-Table-row-5-Campus_EGL"
@@ -7043,12 +7207,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
+                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                               />
                             </td>
                             <td
                               align="start"
-                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                               data-column="peopleCount_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-Table-row-5-peopleCount_EnterpriseBuilding_mean"
@@ -7056,7 +7220,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
+                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                               >
                                 <span
                                   title={150.5335383714}
@@ -7067,7 +7231,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </td>
                             <td
                               align="start"
-                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                               data-column="headCount_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-Table-row-5-headCount_EnterpriseBuilding_mean"
@@ -7075,7 +7239,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
+                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                               >
                                 <span
                                   title={240}
@@ -7086,7 +7250,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </td>
                             <td
                               align="start"
-                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                               data-column="capacity_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-Table-row-5-capacity_EnterpriseBuilding_mean"
@@ -7094,7 +7258,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
+                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                               >
                                 <span
                                   title={300}
@@ -7105,12 +7269,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </td>
                           </tr>
                           <tr
-                            className="TableBodyRow__StyledTableRow-sc-103itxu-1 iSXVEC"
+                            className="TableBodyRow__StyledTableRow-sc-103itxu-0 hdodpz"
                             onClick={[Function]}
                           >
                             <td
                               align="start"
-                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                               data-column="timestamp"
                               data-offset={0}
                               id="cell-Table-row-6-timestamp"
@@ -7118,7 +7282,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
+                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                               >
                                 <span
                                   title={1569819600000}
@@ -7129,7 +7293,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </td>
                             <td
                               align="start"
-                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                               data-column="Campus_EGL"
                               data-offset={0}
                               id="cell-Table-row-6-Campus_EGL"
@@ -7137,12 +7301,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
+                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                               />
                             </td>
                             <td
                               align="start"
-                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                               data-column="peopleCount_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-Table-row-6-peopleCount_EnterpriseBuilding_mean"
@@ -7150,7 +7314,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
+                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                               >
                                 <span
                                   title={150.5335383714}
@@ -7161,7 +7325,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </td>
                             <td
                               align="start"
-                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                               data-column="headCount_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-Table-row-6-headCount_EnterpriseBuilding_mean"
@@ -7169,7 +7333,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
+                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                               >
                                 <span
                                   title={240}
@@ -7180,7 +7344,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </td>
                             <td
                               align="start"
-                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                               data-column="capacity_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-Table-row-6-capacity_EnterpriseBuilding_mean"
@@ -7188,7 +7352,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
+                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                               >
                                 <span
                                   title={300}
@@ -7199,12 +7363,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </td>
                           </tr>
                           <tr
-                            className="TableBodyRow__StyledTableRow-sc-103itxu-1 iSXVEC"
+                            className="TableBodyRow__StyledTableRow-sc-103itxu-0 hdodpz"
                             onClick={[Function]}
                           >
                             <td
                               align="start"
-                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                               data-column="timestamp"
                               data-offset={0}
                               id="cell-Table-row-7-timestamp"
@@ -7212,7 +7376,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
+                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                               >
                                 <span
                                   title={1569819600000}
@@ -7223,7 +7387,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </td>
                             <td
                               align="start"
-                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                               data-column="Campus_EGL"
                               data-offset={0}
                               id="cell-Table-row-7-Campus_EGL"
@@ -7231,12 +7395,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
+                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                               />
                             </td>
                             <td
                               align="start"
-                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                               data-column="peopleCount_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-Table-row-7-peopleCount_EnterpriseBuilding_mean"
@@ -7244,7 +7408,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
+                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                               >
                                 <span
                                   title={150.5335383714}
@@ -7255,7 +7419,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </td>
                             <td
                               align="start"
-                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                               data-column="headCount_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-Table-row-7-headCount_EnterpriseBuilding_mean"
@@ -7263,7 +7427,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
+                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                               >
                                 <span
                                   title={240}
@@ -7274,7 +7438,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </td>
                             <td
                               align="start"
-                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                               data-column="capacity_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-Table-row-7-capacity_EnterpriseBuilding_mean"
@@ -7282,7 +7446,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
+                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                               >
                                 <span
                                   title={300}
@@ -7293,12 +7457,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </td>
                           </tr>
                           <tr
-                            className="TableBodyRow__StyledTableRow-sc-103itxu-1 iSXVEC"
+                            className="TableBodyRow__StyledTableRow-sc-103itxu-0 hdodpz"
                             onClick={[Function]}
                           >
                             <td
                               align="start"
-                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                               data-column="timestamp"
                               data-offset={0}
                               id="cell-Table-row-8-timestamp"
@@ -7306,7 +7470,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
+                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                               >
                                 <span
                                   title={1569819600000}
@@ -7317,7 +7481,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </td>
                             <td
                               align="start"
-                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                               data-column="Campus_EGL"
                               data-offset={0}
                               id="cell-Table-row-8-Campus_EGL"
@@ -7325,12 +7489,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
+                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                               />
                             </td>
                             <td
                               align="start"
-                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                               data-column="peopleCount_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-Table-row-8-peopleCount_EnterpriseBuilding_mean"
@@ -7338,7 +7502,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
+                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                               >
                                 <span
                                   title={150.5335383714}
@@ -7349,7 +7513,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </td>
                             <td
                               align="start"
-                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                               data-column="headCount_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-Table-row-8-headCount_EnterpriseBuilding_mean"
@@ -7357,7 +7521,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
+                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                               >
                                 <span
                                   title={240}
@@ -7368,7 +7532,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </td>
                             <td
                               align="start"
-                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                               data-column="capacity_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-Table-row-8-capacity_EnterpriseBuilding_mean"
@@ -7376,7 +7540,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
+                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                               >
                                 <span
                                   title={300}
@@ -7387,12 +7551,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </td>
                           </tr>
                           <tr
-                            className="TableBodyRow__StyledTableRow-sc-103itxu-1 iSXVEC"
+                            className="TableBodyRow__StyledTableRow-sc-103itxu-0 hdodpz"
                             onClick={[Function]}
                           >
                             <td
                               align="start"
-                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                               data-column="timestamp"
                               data-offset={0}
                               id="cell-Table-row-9-timestamp"
@@ -7400,7 +7564,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
+                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                               >
                                 <span
                                   title={1569819600000}
@@ -7411,7 +7575,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </td>
                             <td
                               align="start"
-                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                               data-column="Campus_EGL"
                               data-offset={0}
                               id="cell-Table-row-9-Campus_EGL"
@@ -7419,12 +7583,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
+                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                               />
                             </td>
                             <td
                               align="start"
-                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                               data-column="peopleCount_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-Table-row-9-peopleCount_EnterpriseBuilding_mean"
@@ -7432,7 +7596,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
+                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                               >
                                 <span
                                   title={150.5335383714}
@@ -7443,7 +7607,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </td>
                             <td
                               align="start"
-                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                               data-column="headCount_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-Table-row-9-headCount_EnterpriseBuilding_mean"
@@ -7451,7 +7615,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
+                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                               >
                                 <span
                                   title={240}
@@ -7462,7 +7626,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </td>
                             <td
                               align="start"
-                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-6 jlcAKj"
+                              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                               data-column="capacity_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-Table-row-9-capacity_EnterpriseBuilding_mean"
@@ -7470,7 +7634,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-7 vTxhy"
+                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                               >
                                 <span
                                   title={300}
@@ -8529,10 +8693,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         open={false}
                         role="button"
                         tabIndex={0}
-                        title="Open and close list of options"
+                        title="open and close list of options"
                       >
                         <svg
-                          aria-label="Open and close list of options"
+                          aria-label="open and close list of options"
                           className="bx--overflow-menu__icon"
                           focusable="false"
                           height={20}
@@ -8559,7 +8723,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
                           />
                           <title>
-                            Open and close list of options
+                            open and close list of options
                           </title>
                         </svg>
                       </div>
@@ -8602,7 +8766,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     className="Card__CardContent-v5r71h-1 hDVRgE"
                   >
                     <div
-                      className="TimeSeriesCard__LineChartWrapper-q25vbg-0 lhdDAg"
+                      className="TimeSeriesCard__LineChartWrapper-q25vbg-1 ldWnXS"
                       size="MEDIUM"
                     >
                       <div
@@ -8719,59 +8883,22 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           </div>
                         </div>
                         <div
-                          className="bx--toolbar-action bx--toolbar-search-container-expandable"
-                          onBlur={[Function]}
-                          onClick={[Function]}
-                          onFocus={[Function]}
-                          role="searchbox"
-                          tabIndex="0"
+                          className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-3 jTKDEr"
                         >
                           <div
-                            className="bx--search bx--search--sm TableToolbar__StyledToolbarSearch-sc-17lb3av-1 jCiaXI"
+                            className="bx--toolbar-action bx--toolbar-search-container-expandable"
+                            onBlur={[Function]}
+                            onClick={[Function]}
+                            onFocus={[Function]}
+                            role="searchbox"
+                            tabIndex="0"
                           >
-                            <svg
-                              aria-hidden={true}
-                              className="bx--search-magnifier"
-                              focusable="false"
-                              height={16}
-                              preserveAspectRatio="xMidYMid meet"
-                              style={
-                                Object {
-                                  "willChange": "transform",
-                                }
-                              }
-                              viewBox="0 0 16 16"
-                              width={16}
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M15 14.3L10.7 10c1.9-2.3 1.6-5.8-.7-7.7S4.2.7 2.3 3 .7 8.8 3 10.7c2 1.7 5 1.7 7 0l4.3 4.3.7-.7zM2 6.5C2 4 4 2 6.5 2S11 4 11 6.5 9 11 6.5 11 2 9 2 6.5z"
-                              />
-                            </svg>
-                            <label
-                              className="bx--label"
-                              htmlFor="Table-toolbar-search"
-                            >
-                              Search
-                            </label>
-                            <input
-                              aria-hidden={true}
-                              className="bx--search-input"
-                              disabled={false}
-                              id="Table-toolbar-search"
-                              onChange={[Function]}
-                              placeholder="Search"
-                              type="text"
-                              value=""
-                            />
-                            <button
-                              aria-label="Clear search input"
-                              className="bx--search-close bx--search-close--hidden"
-                              onClick={[Function]}
-                              type="button"
+                            <div
+                              className="bx--search bx--search--sm TableToolbar__StyledToolbarSearch-sc-17lb3av-1 jCiaXI"
                             >
                               <svg
                                 aria-hidden={true}
+                                className="bx--search-magnifier"
                                 focusable="false"
                                 height={16}
                                 preserveAspectRatio="xMidYMid meet"
@@ -8785,31 +8912,62 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                 xmlns="http://www.w3.org/2000/svg"
                               >
                                 <path
-                                  d="M12 4.7l-.7-.7L8 7.3 4.7 4l-.7.7L7.3 8 4 11.3l.7.7L8 8.7l3.3 3.3.7-.7L8.7 8z"
+                                  d="M15 14.3L10.7 10c1.9-2.3 1.6-5.8-.7-7.7S4.2.7 2.3 3 .7 8.8 3 10.7c2 1.7 5 1.7 7 0l4.3 4.3.7-.7zM2 6.5C2 4 4 2 6.5 2S11 4 11 6.5 9 11 6.5 11 2 9 2 6.5z"
                                 />
                               </svg>
-                            </button>
+                              <label
+                                className="bx--label"
+                                htmlFor="Table-toolbar-search"
+                              >
+                                Search
+                              </label>
+                              <input
+                                aria-hidden={true}
+                                className="bx--search-input"
+                                disabled={false}
+                                id="Table-toolbar-search"
+                                onChange={[Function]}
+                                placeholder="Search"
+                                type="text"
+                                value=""
+                              />
+                              <button
+                                aria-label="Clear search input"
+                                className="bx--search-close bx--search-close--hidden"
+                                onClick={[Function]}
+                                type="button"
+                              >
+                                <svg
+                                  aria-hidden={true}
+                                  focusable="false"
+                                  height={16}
+                                  preserveAspectRatio="xMidYMid meet"
+                                  style={
+                                    Object {
+                                      "willChange": "transform",
+                                    }
+                                  }
+                                  viewBox="0 0 16 16"
+                                  width={16}
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M12 4.7l-.7-.7L8 7.3 4.7 4l-.7.7L7.3 8 4 11.3l.7.7L8 8.7l3.3 3.3.7-.7L8.7 8z"
+                                  />
+                                </svg>
+                              </button>
+                            </div>
                           </div>
-                        </div>
-                        <div
-                          className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-3 jTKDEr"
-                        >
                           <button
-                            className="TableCard__ToolbarButton-q9l5bz-4 iFxaZU bx--btn bx--btn--sm bx--btn--ghost"
-                            disabled={false}
+                            className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 dEzVra"
                             onClick={[Function]}
-                            tabIndex={0}
-                            title="Download table content"
-                            type="button"
                           >
                             <svg
-                              aria-hidden="true"
-                              aria-label="Download table content"
-                              className="bx--btn__icon"
+                              aria-hidden={true}
+                              description="Download table content"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
-                              role="img"
                               style={
                                 Object {
                                   "willChange": "transform",
@@ -9143,10 +9301,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         open={false}
                         role="button"
                         tabIndex={0}
-                        title="Open and close list of options"
+                        title="open and close list of options"
                       >
                         <svg
-                          aria-label="Open and close list of options"
+                          aria-label="open and close list of options"
                           className="bx--overflow-menu__icon"
                           focusable="false"
                           height={20}
@@ -9173,7 +9331,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
                           />
                           <title>
-                            Open and close list of options
+                            open and close list of options
                           </title>
                         </svg>
                       </div>
@@ -9216,7 +9374,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     className="Card__CardContent-v5r71h-1 jAGfWa"
                   >
                     <div
-                      className="TimeSeriesCard__LineChartWrapper-q25vbg-0 lhdDAg"
+                      className="TimeSeriesCard__LineChartWrapper-q25vbg-1 ldWnXS"
                       size="LARGE"
                     >
                       <div
@@ -20879,7 +21037,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     className="Card__CardContent-v5r71h-1 hDVRgE"
                   >
                     <div
-                      className="TimeSeriesCard__LineChartWrapper-q25vbg-0 lhdDAg"
+                      className="TimeSeriesCard__LineChartWrapper-q25vbg-1 ldWnXS"
                       size="MEDIUM"
                     >
                       <div
@@ -20996,59 +21154,22 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           </div>
                         </div>
                         <div
-                          className="bx--toolbar-action bx--toolbar-search-container-expandable"
-                          onBlur={[Function]}
-                          onClick={[Function]}
-                          onFocus={[Function]}
-                          role="searchbox"
-                          tabIndex="0"
+                          className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-3 jTKDEr"
                         >
                           <div
-                            className="bx--search bx--search--sm TableToolbar__StyledToolbarSearch-sc-17lb3av-1 jCiaXI"
+                            className="bx--toolbar-action bx--toolbar-search-container-expandable"
+                            onBlur={[Function]}
+                            onClick={[Function]}
+                            onFocus={[Function]}
+                            role="searchbox"
+                            tabIndex="0"
                           >
-                            <svg
-                              aria-hidden={true}
-                              className="bx--search-magnifier"
-                              focusable="false"
-                              height={16}
-                              preserveAspectRatio="xMidYMid meet"
-                              style={
-                                Object {
-                                  "willChange": "transform",
-                                }
-                              }
-                              viewBox="0 0 16 16"
-                              width={16}
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M15 14.3L10.7 10c1.9-2.3 1.6-5.8-.7-7.7S4.2.7 2.3 3 .7 8.8 3 10.7c2 1.7 5 1.7 7 0l4.3 4.3.7-.7zM2 6.5C2 4 4 2 6.5 2S11 4 11 6.5 9 11 6.5 11 2 9 2 6.5z"
-                              />
-                            </svg>
-                            <label
-                              className="bx--label"
-                              htmlFor="Table-toolbar-search"
-                            >
-                              Search
-                            </label>
-                            <input
-                              aria-hidden={true}
-                              className="bx--search-input"
-                              disabled={false}
-                              id="Table-toolbar-search"
-                              onChange={[Function]}
-                              placeholder="Search"
-                              type="text"
-                              value=""
-                            />
-                            <button
-                              aria-label="Clear search input"
-                              className="bx--search-close bx--search-close--hidden"
-                              onClick={[Function]}
-                              type="button"
+                            <div
+                              className="bx--search bx--search--sm TableToolbar__StyledToolbarSearch-sc-17lb3av-1 jCiaXI"
                             >
                               <svg
                                 aria-hidden={true}
+                                className="bx--search-magnifier"
                                 focusable="false"
                                 height={16}
                                 preserveAspectRatio="xMidYMid meet"
@@ -21062,31 +21183,62 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                 xmlns="http://www.w3.org/2000/svg"
                               >
                                 <path
-                                  d="M12 4.7l-.7-.7L8 7.3 4.7 4l-.7.7L7.3 8 4 11.3l.7.7L8 8.7l3.3 3.3.7-.7L8.7 8z"
+                                  d="M15 14.3L10.7 10c1.9-2.3 1.6-5.8-.7-7.7S4.2.7 2.3 3 .7 8.8 3 10.7c2 1.7 5 1.7 7 0l4.3 4.3.7-.7zM2 6.5C2 4 4 2 6.5 2S11 4 11 6.5 9 11 6.5 11 2 9 2 6.5z"
                                 />
                               </svg>
-                            </button>
+                              <label
+                                className="bx--label"
+                                htmlFor="Table-toolbar-search"
+                              >
+                                Search
+                              </label>
+                              <input
+                                aria-hidden={true}
+                                className="bx--search-input"
+                                disabled={false}
+                                id="Table-toolbar-search"
+                                onChange={[Function]}
+                                placeholder="Search"
+                                type="text"
+                                value=""
+                              />
+                              <button
+                                aria-label="Clear search input"
+                                className="bx--search-close bx--search-close--hidden"
+                                onClick={[Function]}
+                                type="button"
+                              >
+                                <svg
+                                  aria-hidden={true}
+                                  focusable="false"
+                                  height={16}
+                                  preserveAspectRatio="xMidYMid meet"
+                                  style={
+                                    Object {
+                                      "willChange": "transform",
+                                    }
+                                  }
+                                  viewBox="0 0 16 16"
+                                  width={16}
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M12 4.7l-.7-.7L8 7.3 4.7 4l-.7.7L7.3 8 4 11.3l.7.7L8 8.7l3.3 3.3.7-.7L8.7 8z"
+                                  />
+                                </svg>
+                              </button>
+                            </div>
                           </div>
-                        </div>
-                        <div
-                          className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-3 jTKDEr"
-                        >
                           <button
-                            className="TableCard__ToolbarButton-q9l5bz-4 iFxaZU bx--btn bx--btn--sm bx--btn--ghost"
-                            disabled={false}
+                            className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 dEzVra"
                             onClick={[Function]}
-                            tabIndex={0}
-                            title="Download table content"
-                            type="button"
                           >
                             <svg
-                              aria-hidden="true"
-                              aria-label="Download table content"
-                              className="bx--btn__icon"
+                              aria-hidden={true}
+                              description="Download table content"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
-                              role="img"
                               style={
                                 Object {
                                   "willChange": "transform",
@@ -21493,7 +21645,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     className="Card__CardContent-v5r71h-1 jAGfWa"
                   >
                     <div
-                      className="TimeSeriesCard__LineChartWrapper-q25vbg-0 lhdDAg"
+                      className="TimeSeriesCard__LineChartWrapper-q25vbg-1 ldWnXS"
                       size="LARGE"
                     >
                       <div

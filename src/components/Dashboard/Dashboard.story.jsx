@@ -491,6 +491,29 @@ storiesOf('Watson IoT|Dashboard', module)
       </FullWidthWrapper>
     );
   })
+  .add('full screen line card', () => {
+    const data = getIntervalChartData('day', 7, { min: 10, max: 100 }, 100);
+    return (
+      <Dashboard
+        title="Expandable card, click expand to expand line"
+        cards={[
+          {
+            title: 'Expanded card',
+            id: `expandedcard`,
+            size: CARD_SIZES.LARGE,
+            type: CARD_TYPES.TIMESERIES,
+            content: {
+              series: [
+                { dataSourceId: 'temperature', label: 'Temperature' },
+                { dataSourceId: 'pressure', label: 'Pressure' },
+              ],
+            },
+            values: data,
+          },
+        ]}
+      />
+    );
+  })
   .add('full screen image card', () => {
     const content = {
       src: imageFile,

@@ -81,6 +81,8 @@ const CardRenderer = React.memo(
      * And which data range is being requested.
      */
     const [card, setCard] = useState(cardProp);
+    // Keep track of the original datasource setting
+    const [originalDataSource] = useState(dataSource);
     // keep track of the expanded card id
     const [isExpanded, setIsExpanded] = useState();
 
@@ -131,7 +133,10 @@ const CardRenderer = React.memo(
         // callback time grain change from parent
         if (actionType === 'CHANGE_TIME_RANGE') {
           // First update the range
-          const range = determineCardRange(payload.range);
+          const range =
+            payload && payload.range !== 'default'
+              ? determineCardRange(payload.range)
+              : originalDataSource.range; // If default, then reset the card range
           const cardWithUpdatedRange = {
             ...card,
             isLoading: true, // set loading
@@ -157,7 +162,7 @@ const CardRenderer = React.memo(
           setIsExpanded(false);
         }
       },
-      [card, onFetchData, timeGrain]
+      [card, onFetchData, originalDataSource && originalDataSource.range, timeGrain] // eslint-disable-line
     );
 
     const commonCardProps = {

@@ -84,6 +84,7 @@ const propTypes = {
     hasSearch: PropTypes.bool,
     hasColumnSelection: PropTypes.bool,
     shouldLazyRender: PropTypes.bool,
+    hasRowCountInHeader: PropTypes.bool,
   }),
 
   /** Initial state of the table, should be updated via a local state wrapper component implementation or via a central store/redux see StatefulTable component for an example */
@@ -162,6 +163,8 @@ const propTypes = {
       onApplyBatchAction: PropTypes.func,
       /** Apply a search criteria to the table */
       onApplySearch: PropTypes.func,
+      /** Download the table contents */
+      onDownloadCSV: PropTypes.func,
     }),
     /** table wide actions */
     table: PropTypes.shape({
@@ -268,11 +271,13 @@ export const defaultProps = baseProps => ({
     batchCancel: 'Cancel',
     itemsSelected: 'items selected',
     itemSelected: 'item selected',
+    rowCountInHeader: totalRowCount => `Results: ${totalRowCount}`,
     /** empty state */
     emptyMessage: 'There is no data',
     emptyMessageWithFilters: 'No results match the current filters',
     emptyButtonLabel: 'Create some data',
     emptyButtonLabelWithFilters: 'Clear all filters',
+    downloadIconDescription: 'Download table content',
     filterNone: 'Unsort rows by this header',
     filterAscending: 'Sort rows by this header in ascending order',
     filterDescending: 'Sort rows by this header in descending order',
@@ -346,6 +351,8 @@ const Table = props => {
           filterNone: i18n.filterNone,
           filterAscending: i18n.filterAscending,
           filterDescending: i18n.filterDescending,
+          downloadIconDescription: i18n.downloadIconDescription,
+          rowCountInHeader: i18n.rowCountInHeader,
         }}
         actions={pick(
           actions.toolbar,
@@ -354,12 +361,21 @@ const Table = props => {
           'onClearAllFilters',
           'onToggleColumnSelection',
           'onToggleFilter',
-          'onApplySearch'
+          'onApplySearch',
+          'onDownloadCSV'
         )}
-        options={pick(options, 'hasColumnSelection', 'hasFilter', 'hasSearch', 'hasRowSelection')}
+        options={pick(
+          options,
+          'hasColumnSelection',
+          'hasFilter',
+          'hasSearch',
+          'hasRowSelection',
+          'hasRowCountInHeader'
+        )}
         tableState={{
           totalSelected: view.table.selectedIds.length,
           totalFilters: view.filters ? view.filters.length : 0,
+          totalItemsCount: view.pagination.totalItems,
           ...pick(
             view.toolbar,
             'batchActions',
