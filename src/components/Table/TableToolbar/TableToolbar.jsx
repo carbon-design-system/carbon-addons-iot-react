@@ -183,7 +183,7 @@ const TableToolbar = ({
         </TableBatchAction>
       ))}
     </StyledTableBatchActions>
-    {hasSearch ? (
+    {(hasSearch && !hasEdit) ? (
       <StyledToolbarSearch
         {...search}
         translateWithId={(...args) => tableTranslateWithId(i18n, ...args)}
@@ -208,6 +208,15 @@ const TableToolbar = ({
           <Button kind="secondary" onClick={onClearAllFilters}>
             {i18n.clearAllFilters}
           </Button>
+        ) : null}
+        {(hasSearch && hasEdit) ? (
+          <StyledToolbarSearch
+            {...search}
+            translateWithId={(...args) => tableTranslateWithId(i18n, ...args)}
+            id={`${tableId}-toolbar-search`}
+            onChange={event => onApplySearch(event.currentTarget ? event.currentTarget.value : '')}
+            disabled={isDisabled}
+          />
         ) : null}
         {hasColumnSelection ? (
           <ToolbarSVGWrapper onClick={onToggleColumnSelection}>
