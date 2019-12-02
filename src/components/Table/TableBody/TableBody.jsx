@@ -175,6 +175,7 @@ const TableBody = ({
         )}
         rowActions={row.rowActions}
         values={row.values}
+        activeBar={activeBar}
       />
     );
     return shouldShowChildren

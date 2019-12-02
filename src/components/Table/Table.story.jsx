@@ -62,18 +62,18 @@ const renderStatusIcon = ({ value: status }) => {
   }
 };
 
-const editData = ({value}) => {
+const editData = ({rowId, value}) => {
   return (
     <CarbonTextInput
+      id={rowId}
       value={value}
-      compactValidation={true}
+      compactvalidation='true'
       onChange={function noRefCheck(){}}
       onClick={function noRefCheck(){}}
       type="text"
       disabled={false}
       invalid={false}
       light
-      defaultValue="This is not a default value"
       placeholder="Placeholder text"
       helperText=""
       invalidText=""
@@ -1527,17 +1527,17 @@ storiesOf('Watson IoT|Table', module)
   .add(
     'In-line editing of Data Table',
     () => {
-      const editDataFunction = ({value}) => {
+      const editDataFunction = ({rowId, value}) => {
           <CarbonTextInput
+            id={rowId}
             value={value}
-            compactValidation={true}
+            compactvalidation='true'
             onChange={function noRefCheck(){}}
             onClick={function noRefCheck(){}}
             type="text"
             disabled={false}
             invalid={false}
             light
-            defaultValue="This is not a default value"
             placeholder="Placeholder text"
             helperText=""
             invalidText=""

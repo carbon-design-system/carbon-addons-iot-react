@@ -93,6 +93,8 @@ const propTypes = {
   learnMoreText: PropTypes.string,
   /** I18N label for dismiss */
   dismissText: PropTypes.string,
+  /** table toolbar */
+  activeBar: PropTypes.oneOf(['column', 'filter', 'edit']),
 };
 
 const defaultProps = {
@@ -387,18 +389,20 @@ const TableBodyRow = ({
   isRowActionRunning,
   rowActionsError,
   rowDetails,
+  activeBar,
 }) => {
   const singleSelectionIndicatorWidth = hasRowSelection === 'single' ? 0 : 5;
   const nestingOffset =
     hasRowSelection === 'single'
       ? nestingLevel * 16 - singleSelectionIndicatorWidth
       : nestingLevel * 16;
+  const isCheckboxSelectable = activeBar !== 'edit' ? isSelectable : false;
   const rowSelectionCell =
     hasRowSelection === 'multi' ? (
       <StyledCheckboxTableCell
         key={`${id}-row-selection-cell`}
         onClick={
-          isSelectable !== false
+          isCheckboxSelectable !== false
             ? e => {
                 onRowSelected(id, !isSelected);
                 e.preventDefault();
@@ -417,7 +421,7 @@ const TableBodyRow = ({
             labelText={selectRowAria}
             hideLabel
             checked={isSelected}
-            disabled={isSelectable === false}
+            disabled={isCheckboxSelectable === false}
           />
         </StyledNestedSpan>
       </StyledCheckboxTableCell>
@@ -443,6 +447,7 @@ const TableBodyRow = ({
             align={align}
             className={`data-table-${align}`}
           >
+          {activeBar !== 'edit' ? (
             <StyledNestedSpan nestingOffset={offset}>
               {col.renderDataFunction ? (
                 col.renderDataFunction({
@@ -456,6 +461,20 @@ const TableBodyRow = ({
                 <TableCellRenderer>{values[col.columnId]}</TableCellRenderer>
               )}
             </StyledNestedSpan>
+          ) : (
+            <StyledNestedSpan nestingOffset={offset}>
+              {col.editDataFunction ? (
+                col.editDataFunction({
+                  value: values[col.columnId],
+                  columnId: col.columnId,
+                  rowId: id,
+                  row: values,
+                })
+              ) : (
+                <TableCellRenderer>{values[col.columnId]}</TableCellRenderer>
+              )}
+            </StyledNestedSpan>
+          )}
           </StyledTableCellRow>
         ) : null;
       })}
@@ -498,10 +517,10 @@ const TableBodyRow = ({
             if (shouldExpandOnRowClick) {
               onRowExpanded(id, false);
             }
-            if (hasRowSelection === 'single' && isSelectable !== false) {
+            if (hasRowSelection === 'single' && isCheckboxSelectable !== false) {
               onRowSelected(id, true);
             }
-            if (isSelectable !== false) {
+            if (isCheckboxSelectable !== false) {
               onRowClicked(id);
             }
           }}
@@ -530,10 +549,10 @@ const TableBodyRow = ({
           if (shouldExpandOnRowClick) {
             onRowExpanded(id, true);
           }
-          if (hasRowSelection === 'single' && isSelectable !== false) {
+          if (hasRowSelection === 'single' && isCheckboxSelectable !== false) {
             onRowSelected(id, true);
           }
-          if (isSelectable !== false) {
+          if (isCheckboxSelectable !== false) {
             onRowClicked(id);
           }
         }}
@@ -545,7 +564,7 @@ const TableBodyRow = ({
     <StyledSingleSelectedTableRow
       key={id}
       onClick={() => {
-        if (isSelectable !== false) {
+        if (isCheckboxSelectable !== false) {
           onRowClicked(id);
           onRowSelected(id, true);
         }
@@ -557,9 +576,9 @@ const TableBodyRow = ({
     <StyledTableRow
       key={id}
       isSelected={isSelected}
-      isSelectable={isSelectable}
+      isSelectable={isCheckboxSelectable}
       onClick={() => {
-        if (isSelectable !== false) {
+        if (isCheckboxSelectable !== false) {
           if (hasRowSelection === 'single') {
             onRowSelected(id, true);
           }
