@@ -491,6 +491,29 @@ storiesOf('Watson IoT|Dashboard', module)
       </FullWidthWrapper>
     );
   })
+  .add('full screen line card', () => {
+    const data = getIntervalChartData('day', 7, { min: 10, max: 100 }, 100);
+    return (
+      <Dashboard
+        title="Expandable card, click expand to expand line"
+        cards={[
+          {
+            title: 'Expanded card',
+            id: `expandedcard`,
+            size: CARD_SIZES.LARGE,
+            type: CARD_TYPES.TIMESERIES,
+            content: {
+              series: [
+                { dataSourceId: 'temperature', label: 'Temperature' },
+                { dataSourceId: 'pressure', label: 'Pressure' },
+              ],
+            },
+            values: data,
+          },
+        ]}
+      />
+    );
+  })
   .add('full screen image card', () => {
     const content = {
       src: imageFile,
@@ -1131,7 +1154,7 @@ storiesOf('Watson IoT|Dashboard', module)
                       value: 'Explore entity metrics in the data lake',
                       link:
                         'https://www.ibm.com/support/knowledgecenter/SSQP8H/iot/guides/micro-explore.html',
-                      rightContent: (
+                      extraContent: (
                         <span>
                           View your device data in the entity view of the main Watson IoT Platform
                           dashboard. If your plan includes Watson IoT Platform Analytics, the data
@@ -1144,7 +1167,7 @@ storiesOf('Watson IoT|Dashboard', module)
                       value: 'Perform simple calculations on your entity metrics',
                       link:
                         'https://www.ibm.com/support/knowledgecenter/SSQP8H/iot/guides/micro-calculate.html',
-                      rightContent: (
+                      extraContent: (
                         <span>
                           Process your entity metrics by running simple or complex calculations to
                           create calculated metrics.
@@ -1156,7 +1179,7 @@ storiesOf('Watson IoT|Dashboard', module)
                       value: 'View entity metrics in a monitoring dashboard',
                       link:
                         'https://www.ibm.com/support/knowledgecenter/SSQP8H/iot/guides/micro-monitor.html',
-                      rightContent: (
+                      extraContent: (
                         <span>
                           Visualize your entity metrics in monitoring dashboards to get an overview
                           of your data.

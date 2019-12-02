@@ -1,6 +1,7 @@
 import delay from 'lodash/delay';
 import moment from 'moment';
 import { sortStates } from 'carbon-components-react/lib/components/DataTable/state/sorting';
+import fileDownload from 'js-file-download';
 
 import {
   GUTTER,
@@ -9,6 +10,28 @@ import {
   ROW_HEIGHT,
   DASHBOARD_COLUMNS,
 } from '../constants/LayoutConstants';
+
+/** Helper function to support downloading data as CSV */
+export const csvDownloadHandler = (data, title = 'export') => {
+  let csv = '';
+  // get all keys availavle and merge it
+  let object = [];
+  data.forEach(item => {
+    object = [...object, ...Object.keys(item.values)];
+  });
+  object = [...new Set(object)];
+  csv += `${object.join(',')}\n`;
+  data.forEach(item => {
+    object.forEach(arrayHeader => {
+      csv += `${item.values[arrayHeader] ? item.values[arrayHeader] : ''},`;
+    });
+    csv += `\n`;
+  });
+
+  const exportedFilenmae = `${title}.csv`;
+
+  fileDownload(csv, exportedFilenmae);
+};
 
 export const tableTranslateWithId = (i18n, id, state) => {
   const { batchCancel, itemsSelected, itemSelected } = i18n;

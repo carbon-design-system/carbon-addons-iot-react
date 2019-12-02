@@ -2437,11 +2437,25 @@ export const generateData = (quantity, intInterval, decimals) => {
     });
 };
 
-export const getIntervalChartData = (interval = 'day', quantity, intInterval, decimals) =>
+/**
+ *
+ * @param {*} interval
+ * @param {*} quantity
+ * @param {*} intInterval
+ * @param {*} decimals
+ * @param {integer} startingPoint (optional) starting offset for the chart
+ */
+export const getIntervalChartData = (
+  interval = 'day',
+  quantity,
+  intInterval,
+  decimals,
+  startingPoint
+) =>
   generateData(quantity, intInterval, decimals).map((i, idx) => ({
     ...i,
     timestamp:
-      moment()
+      moment(startingPoint)
         .subtract(idx, `${interval}s`)
         .unix() * 1000,
   }));
