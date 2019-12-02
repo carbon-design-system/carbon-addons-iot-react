@@ -66,7 +66,6 @@ const editData = ({rowId, value}) => {
   return (
     <CarbonTextInput
       id={rowId}
-      value={value}
       compactvalidation='true'
       onChange={function noRefCheck(){}}
       onClick={function noRefCheck(){}}
@@ -74,6 +73,7 @@ const editData = ({rowId, value}) => {
       disabled={false}
       invalid={false}
       light
+      defaultValue={value}
       placeholder="Placeholder text"
       helperText=""
       invalidText=""
@@ -1530,7 +1530,6 @@ storiesOf('Watson IoT|Table', module)
       const editDataFunction = ({rowId, value}) => {
           <CarbonTextInput
             id={rowId}
-            value={value}
             compactvalidation='true'
             onChange={function noRefCheck(){}}
             onClick={function noRefCheck(){}}
@@ -1538,6 +1537,7 @@ storiesOf('Watson IoT|Table', module)
             disabled={false}
             invalid={false}
             light
+            defaultValue={value}
             placeholder="Placeholder text"
             helperText=""
             invalidText=""
