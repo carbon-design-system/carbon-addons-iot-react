@@ -68,8 +68,8 @@ const editData = ({rowId, value, columnId}) => {
       id={rowId}
       compactvalidation='true'
       onChange={e => {
-          const tableDataId = tableData.findIndex(element => element.id ? element.id === rowId : null);
-          tableData[tableDataId].values[columnId] = (e.currentTarget ? e.currentTarget.value : "");
+          const rowIndex = tableData.findIndex(element => element.id ? element.id === rowId : null);
+          tableData[rowIndex].values[columnId] = (e.currentTarget ? e.currentTarget.value : "");
         }
       }
       onClick={function noRefCheck(){}}
