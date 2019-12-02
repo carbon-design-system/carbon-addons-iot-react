@@ -165,7 +165,8 @@ const propTypes = {
       /** Apply a search criteria to the table */
       onApplySearch: PropTypes.func,
       onToggleEdit: PropTypes.func,
-      onCancelEditAction: PropTypes.func
+      onCancelEditAction: PropTypes.func,
+      onSaveEditAction: PropTypes.func,
     }),
     /** table wide actions */
     table: PropTypes.shape({
@@ -235,6 +236,7 @@ export const defaultProps = baseProps => ({
       onCancelBatchAction: defaultFunction('actions.toolbar.onCancelBatchAction'),
       onToggleEdit: defaultFunction('actions.toolbar.onToggleEdit'),
       onCancelEditAction: defaultFunction('actions.toolbar.onCancelEditAction'),
+      onSaveEditAction: defaultFunction('actions.toolbar.onSaveEditAction'),
     },
     table: {
       onChangeSort: defaultFunction('actions.table.onChangeSort'),
@@ -366,6 +368,7 @@ const Table = props => {
           'onApplySearch',
           'onToggleEdit',
           'onCancelEditAction',
+          'onSaveEditAction',
         )}
         options={pick(options, 'hasColumnSelection', 'hasFilter', 'hasSearch', 'hasRowSelection', 'hasEdit')}
         tableState={{

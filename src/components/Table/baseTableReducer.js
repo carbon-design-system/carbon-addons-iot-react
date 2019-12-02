@@ -18,6 +18,7 @@ import {
   TABLE_SEARCH_APPLY,
   TABLE_LOADING_SET,
   TABLE_EDIT_CANCEL,
+  TABLE_EDIT_SAVE,
 } from './tableActionCreators';
 
 export const baseTableReducer = (state = {}, action) => {
@@ -147,7 +148,16 @@ export const baseTableReducer = (state = {}, action) => {
       return update(state, {
          view: {
           toolbar: {
-            activeBar: { $set: '' },
+            activeBar: { $set: null },
+          },
+         },
+      });
+    }
+    case TABLE_EDIT_SAVE: {
+      return update(state, {
+        view: {
+          toolbar: {
+            activeBar: { $set: null },
           },
          },
       });

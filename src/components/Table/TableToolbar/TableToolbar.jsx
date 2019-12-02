@@ -113,6 +113,7 @@ const propTypes = {
     onToggleFilter: PropTypes.func,
     onToggleEdit: PropTypes.func,
     onCancelEditAction: PropTypes.func,
+    onSaveEditAction: PropTypes.func,
   }).isRequired,
   /**
    * Inbound tableState
@@ -161,6 +162,7 @@ const TableToolbar = ({
     onApplySearch,
     onToggleEdit,
     onCancelEditAction,
+    onSaveEditAction,
   },
   tableState: {
     totalSelected,
@@ -199,7 +201,7 @@ const TableToolbar = ({
         <StyledCarbonButton kind='ghost' onClick={onCancelEditAction} >
           {i18n.batchCancel}
         </StyledCarbonButton>
-        <StyledCarbonButton onClick={onToggleEdit} >
+        <StyledCarbonButton onClick={onSaveEditAction} >
           {i18n.batchSave}
         </StyledCarbonButton>
       </StyledTableToolbarContent>

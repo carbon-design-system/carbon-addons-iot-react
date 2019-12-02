@@ -18,6 +18,7 @@ export const TABLE_SEARCH_APPLY = 'TABLE_SEARCH_APPLY';
 export const TABLE_EMPTY_STATE_ACTION = 'TABLE_EMPTY_STATE_ACTION';
 export const TABLE_LOADING_SET = 'TABLE_LOADING_SET';
 export const TABLE_EDIT_CANCEL = 'TABLE_EDIT_CANCEL';
+export const TABLE_EDIT_SAVE = 'TABLE_EDIT_SAVE';
 
 export const tableRegister = ({ data, isLoading, view, totalItems, instanceId = null }) => ({
   type: TABLE_REGISTER,
@@ -66,6 +67,10 @@ export const tableActionApply = (id, instanceId = null) => ({
 });
 export const tableEditCancel = (instanceId = null) => ({
   type: TABLE_EDIT_CANCEL,
+  instanceId,
+});
+export const tableEditSave = (instanceId = null) => ({
+  type: TABLE_EDIT_SAVE,
   instanceId,
 });
 

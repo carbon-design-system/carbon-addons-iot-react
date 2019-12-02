@@ -180,6 +180,9 @@ const AsyncTable = ({ fetchData, id }) => {
       onCancelEditAction: () => {
         dispatch(baseTableActions.tableEditCancel());
       },
+      onSaveEditAction: () => {
+        dispatch(baseTableActions.tableEditSave());
+      },
     },
     table: {
       onChangeSort: column => {

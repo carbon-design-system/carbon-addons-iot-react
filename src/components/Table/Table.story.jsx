@@ -62,12 +62,16 @@ const renderStatusIcon = ({ value: status }) => {
   }
 };
 
-const editData = ({rowId, value}) => {
+const editData = ({rowId, value, columnId}) => {
   return (
     <CarbonTextInput
       id={rowId}
       compactvalidation='true'
-      onChange={function noRefCheck(){}}
+      onChange={e => {
+          const tableDataId = tableData.findIndex(element => element.id ? element.id === rowId : null);
+          tableData[tableDataId].values[columnId] = (e.currentTarget ? e.currentTarget.value : "");
+        }
+      }
       onClick={function noRefCheck(){}}
       type="text"
       disabled={false}
@@ -298,6 +302,7 @@ const actions = {
     onApplyBatchAction: action('onApplyBatchAction'),
     onApplySearch: action('onApplySearch'),
     onCancelEditAction: action('onCancelEditAction'),
+    onSaveEditAction: action('onSaveEditAction'),
   },
   table: {
     onRowClicked: action('onRowClicked'),
@@ -1528,24 +1533,6 @@ storiesOf('Watson IoT|Table', module)
   .add(
     'In-line editing of Data Table',
     () => {
-      const editDataFunction = ({rowId, value}) => {
-          <CarbonTextInput
-            id={rowId}
-            compactvalidation='true'
-            onChange={function noRefCheck(){}}
-            onClick={function noRefCheck(){}}
-            type="text"
-            disabled={false}
-            invalid={false}
-            light
-            defaultValue={value}
-            placeholder="Placeholder text"
-            helperText=""
-            invalidText=""
-            labelText=""
-            hideLabel
-          />
-      };
       return (
         <FullWidthWrapper>
           <StatefulTable
