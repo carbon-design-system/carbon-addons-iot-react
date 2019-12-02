@@ -297,6 +297,7 @@ const actions = {
     onCancelBatchAction: action('onCancelBatchAction'),
     onApplyBatchAction: action('onApplyBatchAction'),
     onApplySearch: action('onApplySearch'),
+    onCancelEditAction: action('onCancelEditAction'),
   },
   table: {
     onRowClicked: action('onRowClicked'),

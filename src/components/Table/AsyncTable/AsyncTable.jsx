@@ -177,6 +177,9 @@ const AsyncTable = ({ fetchData, id }) => {
       onApplySearch: string => {
         dispatch(baseTableActions.tableSearchApply(string));
       },
+      onCancelEditAction: () => {
+        dispatch(baseTableActions.tableEditCancel());
+      },
     },
     table: {
       onChangeSort: column => {

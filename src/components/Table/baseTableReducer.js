@@ -17,6 +17,7 @@ import {
   TABLE_COLUMN_ORDER,
   TABLE_SEARCH_APPLY,
   TABLE_LOADING_SET,
+  TABLE_EDIT_CANCEL,
 } from './tableActionCreators';
 
 export const baseTableReducer = (state = {}, action) => {
@@ -140,6 +141,15 @@ export const baseTableReducer = (state = {}, action) => {
             isSelectAllIndeterminate: { $set: false },
           },
         },
+      });
+    }
+    case TABLE_EDIT_CANCEL: {
+      return update(state, {
+         view: {
+          toolbar: {
+            activeBar: { $set: '' },
+          },
+         },
       });
     }
     // Row Actions

@@ -21,6 +21,7 @@ import {
   tableRowActionStart,
   tableRowActionComplete,
   tableRowActionError,
+  tableEditCancel,
 } from './tableActionCreators';
 import Table, { defaultProps } from './Table';
 
@@ -75,6 +76,7 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
     onApplyBatchAction,
     onApplySearch,
     onToggleEdit,
+    onCancelEditAction,
   } = toolbar || {};
   const {
     onChangeSort,
@@ -128,6 +130,10 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
       onApplySearch: string => {
         callbackParent(onApplySearch, string);
         dispatch(tableSearchApply(string));
+      },
+      onCancelEditAction: () => {
+        dispatch(tableEditCancel());
+        callbackParent(onCancelEditAction);
       },
     },
     table: {

@@ -17,6 +17,7 @@ export const TABLE_ROW_EXPAND = 'TABLE_ROW_EXPAND';
 export const TABLE_SEARCH_APPLY = 'TABLE_SEARCH_APPLY';
 export const TABLE_EMPTY_STATE_ACTION = 'TABLE_EMPTY_STATE_ACTION';
 export const TABLE_LOADING_SET = 'TABLE_LOADING_SET';
+export const TABLE_EDIT_CANCEL = 'TABLE_EDIT_CANCEL';
 
 export const tableRegister = ({ data, isLoading, view, totalItems, instanceId = null }) => ({
   type: TABLE_REGISTER,
@@ -61,6 +62,10 @@ export const tableActionCancel = (instanceId = null) => ({
 export const tableActionApply = (id, instanceId = null) => ({
   type: TABLE_ACTION_APPLY,
   payload: id,
+  instanceId,
+});
+export const tableEditCancel = (instanceId = null) => ({
+  type: TABLE_EDIT_CANCEL,
   instanceId,
 });
 

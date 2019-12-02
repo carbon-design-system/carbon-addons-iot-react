@@ -153,7 +153,6 @@ const TableHead = ({
   i18n,
 }) => {
   const filterBarActive = activeBar === 'filter';
-
   return (
     <StyledCarbonTableHead lightweight={`${lightweight}`}>
       {activeBar === 'edit' ? (

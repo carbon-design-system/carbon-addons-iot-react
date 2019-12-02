@@ -22,6 +22,7 @@ import {
   TABLE_COLUMN_ORDER,
   TABLE_REGISTER,
   TABLE_SEARCH_APPLY,
+  TABLE_EDIT_CANCEL,
 } from './tableActionCreators';
 import { baseTableReducer } from './baseTableReducer';
 
@@ -174,6 +175,10 @@ export const tableReducer = (state = {}, action) => {
       }
       return baseTableReducer(state, action);
     }
+    case TABLE_EDIT_CANCEL: {
+      return baseTableReducer(state, action);
+    }
+
     // Column operations
     case TABLE_COLUMN_SORT: {
       // TODO should check that columnId actually is valid
