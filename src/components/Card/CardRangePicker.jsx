@@ -33,8 +33,6 @@ export const CardRangePickerPropTypes = {
   ]),
   /** callback to handle interactions with the range picker */
   onCardAction: PropTypes.func.isRequired,
-  /** callback to close the overflow menu */
-  onClose: PropTypes.func.isRequired,
   /** set of internationalized labels */
   i18n: PropTypes.objectOf(PropTypes.oneOfType([PropTypes.string, PropTypes.func])).isRequired,
 };
@@ -44,7 +42,7 @@ const defaultProps = {
   width: 0,
 };
 
-const CardRangePicker = ({ i18n, width, timeRange: timeRangeProp, onCardAction, onClose }) => {
+const CardRangePicker = ({ i18n, width, timeRange: timeRangeProp, onCardAction }) => {
   const [timeRange, setTimeRange] = useState(timeRangeProp);
   // maps the timebox internal label to a translated string
   const timeBoxLabels = {
@@ -70,7 +68,6 @@ const CardRangePicker = ({ i18n, width, timeRange: timeRangeProp, onCardAction, 
         <OverflowMenuItem
           key="default"
           onClick={() => {
-            onClose();
             onCardAction('CHANGE_TIME_RANGE', { range: 'default' });
             setTimeRange('default');
           }}
@@ -83,7 +80,6 @@ const CardRangePicker = ({ i18n, width, timeRange: timeRangeProp, onCardAction, 
               key={i}
               hasDivider={index === 0}
               onClick={() => {
-                onClose();
                 onCardAction('CHANGE_TIME_RANGE', { range: i });
                 setTimeRange(i);
               }}
@@ -97,7 +93,6 @@ const CardRangePicker = ({ i18n, width, timeRange: timeRangeProp, onCardAction, 
               key={i}
               hasDivider={index === 0}
               onClick={() => {
-                onClose();
                 onCardAction('CHANGE_TIME_RANGE', { range: i });
                 setTimeRange(i);
               }}
