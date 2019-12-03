@@ -49,7 +49,6 @@ const TileGalleryItem = ({
   onClick,
   className,
 }) => {
-  console.log(React.isValidElement(description));
   const content = (
     <div style={{ display: 'flex', minHeight: '24px' }}>
       {icon}
