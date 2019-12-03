@@ -5,13 +5,8 @@
 Before contributing to `carbon-addons-iot-react`, you should make sure you have the following tools
 installed:
 
-- [Node.js](https://nodejs.org/en/download/) v10 or above here or follow their
-  installation through a package manager
-  [here](https://nodejs.org/en/download/package-manager/))
-  - If you're on macOS, we recommend using
-    [`nvm`](https://github.com/nvm-sh/nvm) to help manage different versions of
-    Node.js [nvm](https://github.com/nvm-sh/nvm/blob/master/README.md) as your
-    version manager for Node.
+- [Node.js](https://nodejs.org/en/download/) - the required version is specified in the [`.nvmrc`](/.nvmrc)
+  - If you're on macOS or using WSL on Windows, we recommend using [`nvm`](https://github.com/nvm-sh/nvm) as your version manager for Node.
 - Git
 - [Yarn](https://yarnpkg.com/en/docs/install)
 
@@ -53,12 +48,9 @@ To get your development server running and to start coding, run:
 yarn start
 ```
 
-This will start a development server where you can see any changes you are
-making to components in our react components Storybook.
+This will start a development server where you can see any changes you are making to components in our react components Storybook.
 
-Once it's done building, you can edit source code or create new components. The
-system is set up to automatically bundle your changes/additions. Visit
-http://localhost:3000 to see the changes happen on the fly.
+Once it's done building, you can edit source code or create new components. The system is set up to automatically bundle your changes/additions. Visit http://localhost:3000 to see the changes happen on the fly.
 
 ## Adding a new component or feature
 
@@ -112,17 +104,13 @@ To understand what lines of code are NOT covered by the current testcases, open 
 
 ## Setting up VSCode to share settings and extensions
 
-Some contributors to this repository are using some pretty cool VSCode extensions to make local development easier. If you'd like to reuse the same ones follow these instructions!
+Some contributors to this repository are using some pretty cool VSCode extensions to make local development easier. If you'd like to reuse the same ones, follow [the instructions to set up the VSCode Settings Sync](http://shanalikhan.github.io/2015/12/15/Visual-Studio-Code-Sync-Settings.html).
 
-<http://shanalikhan.github.io/2015/12/15/Visual-Studio-Code-Sync-Settings.html>
+Here's the Gist ID to download/share settings from: `5e3fb697c29f2aaa058145a3349a8229`
 
-Here's the Gist ID to download/share settings from:
-5e3fb697c29f2aaa058145a3349a8229
-
-After installing the VSCode Sync, restart VSCode, go to the Command Palette
-and search for Sync. Select Sync : Advanced Options-> Sync : Download Settings from Public GIST
+After installing the VSCode Sync, restart VSCode, go to the Command Palette and search for Sync. Select Sync : Advanced Options-> Sync : Download Settings from Public GIST
 
 Then Sync : Download Settings. It will ask you for a Public GIST URL, here it is.
 
 Here's the Public GIST URL:
-<https://gist.github.com/scottdickerson/5e3fb697c29f2aaa058145a3349a8229>
+https://gist.github.com/scottdickerson/5e3fb697c29f2aaa058145a3349a8229

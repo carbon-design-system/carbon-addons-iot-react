@@ -10,7 +10,7 @@ module.exports = {
       functions: 80,
       lines: 80,
     },
-    './src/components/**/!(ColumnHeaderRow|ColumnHeaderSelect|FilterHeaderRow|TableToolbar|RowActionsCell|RowActionsError|StatefulTable|StatefulTableDetailWizard|CatalogContent|FileDrop|HeaderMenu|Dashboard|CardRenderer|Attribute|UnitRenderer|ImageHotspots|ImageControls|TimeSeriesCard|ListCard|StatefulPageWizard|PageHero|PageTitle|EditPage|AsyncTable|ImageCard|WizardHeader).jsx': {
+    './src/components/**/!(ColumnHeaderRow|ColumnHeaderSelect|FilterHeaderRow|TableToolbar|RowActionsCell|RowActionsError|StatefulTable|StatefulTableDetailWizard|CatalogContent|FileDrop|HeaderMenu|Dashboard|CardRenderer|Attribute|UnitRenderer|ImageHotspots|ImageControls|TimeSeriesCard|ListCard|PageHero|PageTitle|EditPage|AsyncTable|ImageCard|WizardHeader).jsx': {
       statements: 80,
       branches: 80,
       functions: 80,
@@ -59,12 +59,6 @@ module.exports = {
       functions: 77,
     },
     './src/components/ListCard/ListCard.jsx': { branches: 66 },
-    './src/components/PageWizard/StatefulPageWizard.jsx': {
-      statements: 12,
-      branches: 0,
-      lines: 13,
-      functions: 0,
-    },
     './src/components/Page/EditPage.jsx': {
       statements: 64,
       branches: 50,
