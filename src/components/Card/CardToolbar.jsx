@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import uuidv1 from 'uuid/v1';
 import omit from 'lodash/omit';
 import styled from 'styled-components';
 import Close16 from '@carbon/icons-react/lib/close/16';
@@ -51,17 +50,14 @@ const CardToolbar = ({
   timeRange,
   onCardAction,
 }) => {
-  const [tooltipId, setTooltipId] = useState(uuidv1());
-
   return isEditable ? (
-    <StyledToolbar key={tooltipId}>
+    <StyledToolbar>
       {(availableActions.edit || availableActions.clone || availableActions.delete) && (
         <ToolbarItem>
           <OverflowMenu floatingMenu>
             {availableActions.edit && (
               <OverflowMenuItem
                 onClick={() => {
-                  setTooltipId(uuidv1());
                   onCardAction('EDIT_CARD');
                 }}
                 itemText={i18n.editCardLabel}
@@ -70,7 +66,6 @@ const CardToolbar = ({
             {availableActions.clone && (
               <OverflowMenuItem
                 onClick={() => {
-                  setTooltipId(uuidv1());
                   onCardAction('CLONE_CARD');
                 }}
                 itemText={i18n.cloneCardLabel}
@@ -80,7 +75,6 @@ const CardToolbar = ({
               <OverflowMenuItem
                 isDelete
                 onClick={() => {
-                  setTooltipId(uuidv1());
                   onCardAction('DELETE_CARD');
                 }}
                 itemText={i18n.deleteCardLabel}
@@ -91,14 +85,13 @@ const CardToolbar = ({
       )}
     </StyledToolbar>
   ) : (
-    <StyledToolbar key={tooltipId}>
+    <StyledToolbar>
       {availableActions.range ? (
         <CardRangePicker
           width={width}
           i18n={i18n}
           timeRange={timeRange}
           onCardAction={onCardAction}
-          onClose={() => setTooltipId(uuidv1())}
         />
       ) : null}
       {availableActions.expand ? (
