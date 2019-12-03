@@ -1,15 +1,14 @@
-import { mount } from 'enzyme';
 import React from 'react';
-import Add from '@carbon/icons-react/lib/add/20';
 import { iconCrash } from 'carbon-icons';
+import { render, fireEvent } from '@testing-library/react';
 
 import { CARD_SIZES, CARD_TYPES, COLORS } from '../../constants/LayoutConstants';
 import { tableColumns, tableData } from '../../utils/sample';
 import imageFile from '../ImageCard/landscape.jpg';
 
 import Dashboard from './Dashboard';
+import { loadCardData } from './CardRenderer';
 
-const CustomIcon = () => <div>Custom element</div>;
 const cardValues = [
   {
     title: 'Alerts (Section 1)',
@@ -122,48 +121,52 @@ const cardValues = [
 ];
 
 const onClick = jest.fn();
-let wrapper = mount(
-  <Dashboard
-    description="This is a description for this Dashboard"
-    title="My Dashboard"
-    layouts={{ lg: [{ id: 'bogus', x: 0, y: 0 }] }}
-    actions={[
-      { id: 'edit', labelText: 'Edit', icon: 'edit' },
-      { id: 'add', labelText: 'Add', icon: <Add /> },
-      { id: 'custom', labelText: 'Custom', customActionComponent: <CustomIcon /> },
-    ]}
-    cards={cardValues}
-    onDashboardAction={onClick}
-  />
-);
-describe('Dashboard testcases', () => {
-  test('verify dashboard still renders with bad layout', () => {
-    // should still render even with incorrect layout
-    expect(wrapper).toBeDefined();
+
+describe('CardRenderer testcases', () => {
+  test('load card data', async () => {
+    let state = {
+      hasLoaded: false,
+    };
+    const setCard = cardObj => {
+      state = {
+        ...state,
+        ...cardObj,
+      };
+    };
+
+    const onFetchData = () => ({ hasLoaded: true });
+    await loadCardData(state, setCard, onFetchData, 'month');
+    expect(state.hasLoaded).toEqual(true);
   });
 
-  test('verify onDashboardAction is called on click', () => {
-    wrapper.find('#action-icon--edit').simulate('click');
-    expect(wrapper.prop('onDashboardAction')).toHaveBeenCalled();
-  });
-
-  test('verify onDashboardAction is called on enter keydown', () => {
-    wrapper = mount(
+  test('expanded card rendered', async () => {
+    const { getByTitle } = render(
       <Dashboard
         title="My Dashboard"
         layouts={{ lg: [{ id: 'bogus', x: 0, y: 0 }] }}
         actions={[
           { id: 'edit', labelText: 'Edit', icon: 'edit' },
           { id: 'crash', labelText: 'Crash', icon: iconCrash },
+          { id: 'expand', labelText: 'Expand', icon: iconCrash },
         ]}
-        cards={cardValues}
+        cards={[
+          {
+            ...cardValues[3],
+            content: {
+              alt: 'Floor Map',
+              image: 'firstfloor',
+              src: null,
+            },
+            isLoading: true,
+          },
+        ]}
         onDashboardAction={onClick}
         hasLastUpdated={false}
       />
     );
-    wrapper
-      .find('#action-icon--edit')
-      .simulate('keyDown', { key: 'Enter', keyCode: 13, which: 13 });
-    expect(wrapper.prop('onDashboardAction')).toHaveBeenCalled();
+    fireEvent.click(getByTitle('Expand to fullscreen'));
+    expect(getByTitle('Close')).toBeTruthy();
+    fireEvent.click(getByTitle('Close'));
+    expect(getByTitle('Expand to fullscreen')).toBeTruthy();
   });
 });
