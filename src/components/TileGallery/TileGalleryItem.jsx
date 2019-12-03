@@ -53,7 +53,18 @@ const TileGalleryItem = ({
     <div style={{ display: 'flex', minHeight: '24px' }}>
       {icon}
       <span className="titleCard">{title}</span>
-      {afterContent && <div className="overflowMenu">{afterContent}</div>}
+      {afterContent && (
+        <div
+          className="overflowMenu"
+          onClick={evt => {
+            evt.preventDefault();
+            evt.stopPropagation();
+          }}
+          role="presentation"
+        >
+          {afterContent}
+        </div>
+      )}
     </div>
   );
 
@@ -86,7 +97,7 @@ const TileGalleryItem = ({
           mode === 'grid' ? 'card' : 'list'
         }-title`}
         key={`${title}-card-link`}
-        handleClick={evt => onClick(evt)}
+        handleClick={onClick}
       >
         {tile}
       </ClickableTile>

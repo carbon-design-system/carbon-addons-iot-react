@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 
 import { galleryData } from './TileGallery.story';
 import TileGalleryItem from './TileGalleryItem';
@@ -48,9 +48,14 @@ describe('TileGallery tests', () => {
     expect(wrapper.find('div.descriptionCard').contains(descriptionNode)).toEqual(true);
   });
   test('TileGalleryItem afterContent', () => {
-    const wrapper = mount(
+    const wrapper = shallow(
       <TileGalleryItem title="title" afterContent={<div>after content</div>} />
     );
+
+    wrapper.find('div.overflowMenu').simulate('click', {
+      preventDefault() {},
+      stopPropagation() {},
+    });
 
     expect(wrapper.find('div.overflowMenu')).toHaveLength(1);
   });
