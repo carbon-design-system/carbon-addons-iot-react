@@ -9,7 +9,7 @@ module.exports = {
       functions: 80,
       lines: 80,
     },
-    './src/components/**/!(ColumnHeaderRow|ColumnHeaderSelect|FilterHeaderRow|TableToolbar|RowActionsCell|RowActionsError|StatefulWizardInline|WizardInline|WizardHeader|StatefulTable|StatefulTableDetailWizard|CatalogContent|FileDrop|HeaderMenu|Dashboard|CardRenderer|Attribute|UnitRenderer|ImageHotspots|ImageControls|TimeSeriesCard|ListCard|StatefulPageWizard|PageHero|PageTitle|EditPage|AsyncTable|ImageCard).jsx': {
+    './src/components/**/!(ColumnHeaderRow|ColumnHeaderSelect|FilterHeaderRow|TableToolbar|RowActionsCell|RowActionsError|StatefulTable|StatefulTableDetailWizard|CatalogContent|FileDrop|HeaderMenu|Dashboard|CardRenderer|Attribute|UnitRenderer|ImageHotspots|ImageControls|TimeSeriesCard|ListCard|PageHero|PageTitle|EditPage|AsyncTable|ImageCard|WizardHeader).jsx': {
       statements: 80,
       branches: 80,
       functions: 80,
@@ -26,7 +26,6 @@ module.exports = {
       functions: 75,
     },
     './src/components/Table/TableBody/RowActionsCell/RowActionsError.jsx': { functions: 66 },
-    './src/components/WizardInline/StatefulWizardInline.jsx': { branches: 53 },
     './src/components/Table/StatefulTable.jsx': { branches: 66 },
     './src/components/TileCatalog/CatalogContent.jsx': { branches: 50 },
     './src/components/FileDrop/FileDrop.jsx': { branches: 53, functions: 75 },
@@ -59,12 +58,6 @@ module.exports = {
       functions: 77,
     },
     './src/components/ListCard/ListCard.jsx': { branches: 66 },
-    './src/components/PageWizard/StatefulPageWizard.jsx': {
-      statements: 12,
-      branches: 0,
-      lines: 13,
-      functions: 0,
-    },
     './src/components/Page/EditPage.jsx': {
       statements: 64,
       branches: 50,
@@ -78,8 +71,6 @@ module.exports = {
       functions: 13,
     },
     './src/components/Table/TableHead/ColumnHeaderSelect/ColumnHeaderSelect.jsx': { branches: 75 },
-    './src/components/WizardInline/WizardInline.jsx': { branches: 77 },
-    './src/components/WizardInline/WizardHeader/WizardHeader.jsx': { branches: 75 },
     './src/components/Page/PageHero.jsx': { branches: 77 },
     './src/components/Page/PageTitle.jsx': { branches: 75 },
     './src/components/ImageCard/ImageCard.jsx': { branches: 76 },
