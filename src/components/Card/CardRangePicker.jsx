@@ -78,9 +78,10 @@ const CardRangePicker = ({ i18n, width, timeRange: timeRangeProp, onCardAction, 
         />
         {Object.keys(timeBoxLabels)
           .filter(i => i.includes('last'))
-          .map(i => (
+          .map((i, index) => (
             <OverflowMenuItem
               key={i}
+              hasDivider={index === 0}
               onClick={() => {
                 onClose();
                 onCardAction('CHANGE_TIME_RANGE', { range: i });
@@ -91,9 +92,10 @@ const CardRangePicker = ({ i18n, width, timeRange: timeRangeProp, onCardAction, 
           ))}
         {Object.keys(timeBoxLabels)
           .filter(i => i.includes('this'))
-          .map(i => (
+          .map((i, index) => (
             <OverflowMenuItem
               key={i}
+              hasDivider={index === 0}
               onClick={() => {
                 onClose();
                 onCardAction('CHANGE_TIME_RANGE', { range: i });
