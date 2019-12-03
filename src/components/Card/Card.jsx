@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import uuidv1 from 'uuid/v1';
 import toClass from 'recompose/toClass';
+import VisibilitySensor from 'react-visibility-sensor';
 import {
   Toolbar,
   ToolbarItem,
@@ -127,6 +128,8 @@ const defaultProps = {
   /** In editable mode we'll show preview data */
   isEditable: false,
   isExpanded: false,
+  /** only show the content if the card is visible */
+  isLazyLoading: false,
   /** For now we will hide the per card actions when we're editing */
   availableActions: {
     edit: false,
@@ -180,6 +183,7 @@ const Card = ({
   isEmpty,
   isEditable,
   isExpanded,
+  isLazyLoading,
   error,
   id,
   tooltip,
@@ -343,50 +347,58 @@ const Card = ({
     );
 
   return (
-    <SizeMe.SizeMe monitorHeight>
-      {({ size: sizeWidth }) => (
-        <CardWrapper
-          id={id}
-          dimensions={dimensions}
-          isExpanded={isExpanded}
-          cardWidthSize={sizeWidth.width}
-          {...others}
-        >
-          <CardHeader>
-            <CardTitle title={title}>
-              {title}&nbsp;
-              {tooltip && <Tooltip triggerText="">{tooltip}</Tooltip>}
-            </CardTitle>
-            {toolbar(sizeWidth.width)}
-          </CardHeader>
-          <CardContent dimensions={dimensions}>
-            {isLoading ? (
-              <SkeletonWrapper>
-                <OptimizedSkeletonText
-                  paragraph
-                  lineCount={size === CARD_SIZES.XSMALL || size === CARD_SIZES.XSMALLWIDE ? 2 : 3}
-                  width="100%"
-                />
-              </SkeletonWrapper>
-            ) : error ? (
-              <EmptyMessageWrapper>
-                {size === CARD_SIZES.XSMALL || size === CARD_SIZES.XSMALLWIDE
-                  ? strings.errorLoadingDataShortLabel
-                  : `${strings.errorLoadingDataLabel} ${error}`}
-              </EmptyMessageWrapper>
-            ) : isEmpty && !isEditable ? (
-              <EmptyMessageWrapper>
-                {isXS ? strings.noDataShortLabel : strings.noDataLabel}
-              </EmptyMessageWrapper>
-            ) : typeof children === 'function' ? ( // pass the measured size down to the children if it's an render function
-              children(sizeWidth)
-            ) : (
-              children
-            )}
-          </CardContent>
-        </CardWrapper>
+    <VisibilitySensor partialVisibility offset={{ top: 10 }}>
+      {({ isVisible }) => (
+        <SizeMe.SizeMe monitorHeight>
+          {({ size: sizeWidth }) => (
+            <CardWrapper
+              id={id}
+              dimensions={dimensions}
+              isExpanded={isExpanded}
+              cardWidthSize={sizeWidth.width}
+              {...others}
+            >
+              <CardHeader>
+                <CardTitle title={title}>
+                  {title}&nbsp;
+                  {tooltip && <Tooltip triggerText="">{tooltip}</Tooltip>}
+                </CardTitle>
+                {toolbar(sizeWidth.width)}
+              </CardHeader>
+              <CardContent dimensions={dimensions}>
+                {!isVisible && isLazyLoading ? ( // if not visible don't show anything
+                  ''
+                ) : isLoading ? (
+                  <SkeletonWrapper>
+                    <OptimizedSkeletonText
+                      paragraph
+                      lineCount={
+                        size === CARD_SIZES.XSMALL || size === CARD_SIZES.XSMALLWIDE ? 2 : 3
+                      }
+                      width="100%"
+                    />
+                  </SkeletonWrapper>
+                ) : error ? (
+                  <EmptyMessageWrapper>
+                    {size === CARD_SIZES.XSMALL || size === CARD_SIZES.XSMALLWIDE
+                      ? strings.errorLoadingDataShortLabel
+                      : `${strings.errorLoadingDataLabel} ${error}`}
+                  </EmptyMessageWrapper>
+                ) : isEmpty && !isEditable ? (
+                  <EmptyMessageWrapper>
+                    {isXS ? strings.noDataShortLabel : strings.noDataLabel}
+                  </EmptyMessageWrapper>
+                ) : typeof children === 'function' ? ( // pass the measured size down to the children if it's an render function
+                  children(sizeWidth)
+                ) : (
+                  children
+                )}
+              </CardContent>
+            </CardWrapper>
+          )}
+        </SizeMe.SizeMe>
       )}
-    </SizeMe.SizeMe>
+    </VisibilitySensor>
   );
 };
 
