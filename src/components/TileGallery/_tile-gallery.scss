@@ -29,10 +29,13 @@
 }
 
 .tile-gallery {
-  .accordion {
+  &--section {
     .#{$prefix}--accordion__title {
       font-size: $spacing-05;
       font-weight: bold;
+    }
+    .#{$prefix}--accordion__content {
+      padding-left: 0;
     }
     .#{$prefix}--accordion__item:last-child {
       border-bottom: none;
@@ -41,14 +44,9 @@
       border-top: none;
     }
     .#{$prefix}--accordion__heading {
-      padding-top: $spacing-06;
-      padding-bottom: $spacing-06;
       border-bottom: rem(1px) solid $ui-03;
-      flex-direction: row;
     }
-  }
 
-  &--section {
     &--items {
       display: flex;
       padding-bottom: $spacing-07;
