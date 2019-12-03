@@ -1,25 +1,7 @@
-import React, { useState } from 'react';
-import uuidv1 from 'uuid/v1';
-import toClass from 'recompose/toClass';
+import React, { useCallback, useMemo } from 'react';
 import VisibilitySensor from 'react-visibility-sensor';
-import {
-  Toolbar,
-  ToolbarItem,
-  ToolbarTitle,
-  ToolbarOption,
-  Tooltip,
-  OverflowMenu,
-  OverflowMenuItem,
-  Button,
-  Select,
-  SelectItem,
-  SelectItemGroup,
-  SkeletonText,
-} from 'carbon-components-react';
+import { Tooltip, SkeletonText } from 'carbon-components-react';
 import { pure } from 'recompose';
-import Close16 from '@carbon/icons-react/lib/close/16';
-import ChevronDown16 from '@carbon/icons-react/lib/chevron--down/16';
-import Popup20 from '@carbon/icons-react/lib/popup/20';
 import styled from 'styled-components';
 import SizeMe from 'react-sizeme';
 
@@ -35,6 +17,8 @@ import {
 } from '../../constants/LayoutConstants';
 import { CardPropTypes } from '../../constants/PropTypes';
 import { getCardMinSize } from '../../utils/componentUtilityFunctions';
+
+import CardToolbar from './CardToolbar';
 
 const OptimizedSkeletonText = pure(SkeletonText);
 
@@ -75,16 +59,6 @@ const CardTitle = styled.span`
   font-size: 14px;
 `;
 
-const StyledToolbar = styled(Toolbar)`
-  &.bx--toolbar {
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-  div.bx--overflow-menu {
-    height: 30px;
-  }
-`;
-
 const SkeletonWrapper = styled.div`
   padding: ${CARD_CONTENT_PADDING}px;
   width: 80%;
@@ -99,23 +73,6 @@ const EmptyMessageWrapper = styled.div`
   padding: 0 ${CARD_CONTENT_PADDING}px ${CARD_CONTENT_PADDING}px;
   text-align: center;
   line-height: 1.3;
-`;
-
-const TinyButton = styled(Button)`
-  &.bx--btn > svg {
-    margin: 0;
-  }
-`;
-
-const StyledOverflowMenu = styled(OverflowMenu)`
-  & svg.bx--overflow-menu__icon {
-    padding: 0;
-  }
-`;
-
-const TimeRangeLabel = styled.span`
-  font-size: 0.875rem;
-  font-weight: normal;
 `;
 
 const defaultProps = {
@@ -187,15 +144,13 @@ const Card = ({
   error,
   id,
   tooltip,
-  timeRange: timeRangeProp,
+  timeRange,
   onCardAction,
   availableActions,
   breakpoint,
   i18n,
   ...others
 }) => {
-  const [tooltipId, setTooltipId] = useState(uuidv1());
-  const [timeRange, setTimeRange] = useState(timeRangeProp);
   const isXS = size === CARD_SIZES.XSMALL;
   const dimensions = getCardMinSize(
     breakpoint,
@@ -206,145 +161,25 @@ const Card = ({
     others.dashboardColumns
   );
 
-  const mergedAvailableActions = {
-    ...defaultProps.availableActions,
-    ...availableActions,
-  };
+  // Need to cache the default available actions so it doesn't rerender
+  const mergedAvailableActions = useMemo(
+    () => ({
+      ...defaultProps.availableActions,
+      ...availableActions,
+    }),
+    [availableActions]
+  );
 
   const strings = {
     ...defaultProps.i18n,
     ...i18n,
   };
 
-  const timeBoxLabels = {
-    last24Hours: strings.last24HoursLabel,
-    last7Days: strings.last7DaysLabel,
-    lastMonth: strings.lastMonthLabel,
-    lastQuarter: strings.lastQuarterLabel,
-    lastYear: strings.lastYearLabel,
-    thisWeek: strings.thisWeekLabel,
-    thisMonth: strings.thisMonthLabel,
-    thisQuarter: strings.thisQuarterLabel,
-    thisYear: strings.thisYearLabel,
-  };
-
-  // Need to convert to class components to give OverflowMenu somewhere to pass the ref
-  const ToolbarTitleClass = toClass(ToolbarTitle);
-  const ToolbarOptionClass = toClass(ToolbarOption);
-
-  const timeBoxSelection = sizeWidth => (
-    <ToolbarItem>
-      <TimeRangeLabel id="timeRange">{timeBoxLabels[timeRange]}</TimeRangeLabel>
-      <StyledOverflowMenu
-        floatingMenu
-        renderIcon={ChevronDown16}
-        iconDescription={
-          sizeWidth < 230 ? timeBoxLabels[timeRange] : strings.overflowMenuDescription
-        }
-      >
-        <ToolbarTitleClass title={strings.timeRangeLabel} />
-        <ToolbarOptionClass>
-          <Select
-            hideLabel
-            id={`timeselect-${id}`}
-            onChange={evt => {
-              setTooltipId(uuidv1());
-              onCardAction(id, 'CHANGE_TIME_RANGE', { range: evt.target.value });
-              setTimeRange(evt.target.value);
-            }}
-            value={timeRange || ''}
-          >
-            <SelectItem value="default" text={strings.defaultLabel} />
-            <SelectItemGroup label={strings.rollingPeriodLabel}>
-              {Object.keys(timeBoxLabels)
-                .filter(i => i.includes('last'))
-                .map(i => (
-                  <SelectItem key={i} value={i} text={timeBoxLabels[i]} />
-                ))}
-            </SelectItemGroup>
-            <SelectItemGroup label={strings.periodToDateLabel}>
-              {Object.keys(timeBoxLabels)
-                .filter(i => i.includes('this'))
-                .map(i => (
-                  <SelectItem key={i} value={i} text={timeBoxLabels[i]} />
-                ))}
-            </SelectItemGroup>
-          </Select>
-        </ToolbarOptionClass>
-      </StyledOverflowMenu>
-    </ToolbarItem>
-  );
-
-  const toolbar = sizeWidth =>
-    isEditable ? (
-      <StyledToolbar key={tooltipId}>
-        {(mergedAvailableActions.edit ||
-          mergedAvailableActions.clone ||
-          mergedAvailableActions.delete) && (
-          <ToolbarItem>
-            <OverflowMenu floatingMenu>
-              {mergedAvailableActions.edit && (
-                <OverflowMenuItem
-                  onClick={() => {
-                    setTooltipId(uuidv1());
-                    onCardAction(id, 'EDIT_CARD');
-                  }}
-                  itemText={strings.editCardLabel}
-                />
-              )}
-              {mergedAvailableActions.clone && (
-                <OverflowMenuItem
-                  onClick={() => {
-                    setTooltipId(uuidv1());
-                    onCardAction(id, 'CLONE_CARD');
-                  }}
-                  itemText={strings.cloneCardLabel}
-                />
-              )}
-              {mergedAvailableActions.delete && (
-                <OverflowMenuItem
-                  isDelete
-                  onClick={() => {
-                    setTooltipId(uuidv1());
-                    onCardAction(id, 'DELETE_CARD');
-                  }}
-                  itemText={strings.deleteCardLabel}
-                />
-              )}
-            </OverflowMenu>
-          </ToolbarItem>
-        )}
-      </StyledToolbar>
-    ) : (
-      <StyledToolbar key={tooltipId}>
-        {mergedAvailableActions.range && timeBoxSelection(sizeWidth)}
-        {mergedAvailableActions.expand && (
-          <ToolbarItem>
-            {isExpanded ? (
-              <TinyButton
-                kind="ghost"
-                small
-                renderIcon={Close16}
-                iconDescription={strings.closeLabel}
-                title={strings.closeLabel}
-                onClick={() => onCardAction(id, 'CLOSE_EXPANDED_CARD')}
-              />
-            ) : (
-              <TinyButton
-                kind="ghost"
-                small
-                renderIcon={Popup20}
-                iconDescription={strings.expandLabel}
-                title={strings.expandLabel}
-                onClick={() => {
-                  onCardAction(id, 'OPEN_EXPANDED_CARD');
-                }}
-              />
-            )}
-          </ToolbarItem>
-        )}
-      </StyledToolbar>
-    );
+  /** adds the id to the card action */
+  const cachedOnCardAction = useCallback((...args) => onCardAction(id, ...args), [
+    onCardAction,
+    id,
+  ]);
 
   return (
     <VisibilitySensor partialVisibility offset={{ top: 10 }}>
@@ -363,7 +198,15 @@ const Card = ({
                   {title}&nbsp;
                   {tooltip && <Tooltip triggerText="">{tooltip}</Tooltip>}
                 </CardTitle>
-                {toolbar(sizeWidth.width)}
+                <CardToolbar
+                  width={sizeWidth.width}
+                  availableActions={mergedAvailableActions}
+                  i18n={strings}
+                  isEditable={isEditable}
+                  isExpanded={isExpanded}
+                  timeRange={timeRange}
+                  onCardAction={cachedOnCardAction}
+                />
               </CardHeader>
               <CardContent dimensions={dimensions}>
                 {!isVisible && isLazyLoading ? ( // if not visible don't show anything
