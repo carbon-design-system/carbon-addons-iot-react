@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
-import { Search } from '../../index';
+import { Search } from 'carbon-components-react';
 
 const propTypes = {
   /** i18n strings */
