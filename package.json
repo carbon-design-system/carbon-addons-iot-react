@@ -63,7 +63,7 @@
     ]
   },
   "dependencies": {
-    "@carbon/charts": "https://github.com/scottdickerson/carbon-charts#carbon-charts-v0.16.27-gitpkg",
+    "@carbon/charts": "https://github.com/scottdickerson/carbon-charts#carbon-charts-v0.16.28-gitpkg",
     "@carbon/charts-react": "^0.16.25",
     "@carbon/colors": "^10.1.0",
     "@carbon/icons": "10.6.1",
@@ -210,7 +210,7 @@
     "whatwg-fetch": "^3.0.0"
   },
   "resolutions": {
-    "@carbon/charts": "https://github.com/scottdickerson/carbon-charts#carbon-charts-v0.16.27-gitpkg"
+    "@carbon/charts": "https://github.com/scottdickerson/carbon-charts#carbon-charts-v0.16.28-gitpkg"
   },
   "version": "0.0.0-development"
 }

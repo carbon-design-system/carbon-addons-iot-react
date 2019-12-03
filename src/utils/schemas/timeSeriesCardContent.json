@@ -42,6 +42,9 @@
           "items": { "$ref": "#/definitions/attribute" },
           "minItems": 1
         },
+        "additionalData": {
+          "$ref": "#/definitions/additionalData"
+        },
         "timeGrain": { "enum": ["month", "day", "year", "hour", "week", "input"] },
         "groupBy": {
           "type": "array",
@@ -50,7 +53,7 @@
         }
       },
       "required": ["attributes"],
-      "propertyNames": { "enum": ["attributes", "range", "timeGrain", "groupBy"] }
+      "propertyNames": { "enum": ["attributes", "range", "timeGrain", "groupBy", "additionalData"] }
     }
   },
   "definitions": {
@@ -70,8 +73,15 @@
         "aggregator": {
           "enum": ["max", "min", "mean", "last", "count", "first", "sum", "std"]
         }
+      }
+    },
+    "additionalData": {
+      "type": "object",
+      "properties": {
+        "type": { "type": "string" }
       },
-      "required": ["aggregator"]
+      "required": ["type"],
+      "propertyNames": { "enum": ["type", "dataFilter"] }
     },
     "alertRange": {
       "type": "object",

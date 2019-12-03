@@ -62,6 +62,12 @@ const cardValues = [
     id: 'floor map picture',
     size: CARD_SIZES.MEDIUM,
     type: CARD_TYPES.IMAGE,
+    onSetupCard() {
+      return { ...cardValues[3] };
+    },
+    availableActions: {
+      range: true,
+    },
     content: {
       alt: 'Floor Map',
       image: 'firstfloor',
