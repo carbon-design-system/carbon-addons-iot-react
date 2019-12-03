@@ -140,6 +140,7 @@ export const I18NPropTypes = PropTypes.shape({
   filterButtonAria: PropTypes.string,
   clearFilterAria: PropTypes.string,
   filterAria: PropTypes.string,
+  downloadIconDescription: PropTypes.string,
   openMenuAria: PropTypes.string,
   closeMenuAria: PropTypes.string,
   clearSelectionAria: PropTypes.string,
@@ -158,6 +159,7 @@ export const I18NPropTypes = PropTypes.shape({
   filterNone: PropTypes.string,
   filterAscending: PropTypes.string,
   filterDescending: PropTypes.string,
+  rowCountInHeader: PropTypes.func,
 });
 
 export const defaultI18NPropTypes = {
@@ -198,6 +200,7 @@ export const defaultI18NPropTypes = {
   filterNone: 'Unsort rows by this header',
   filterAscending: 'Sort rows by this header in ascending order',
   filterDescending: 'Sort rows by this header in descending order',
+  rowCountInHeader: totalRowCount => `Results: ${totalRowCount}`,
 };
 
 export const TableSearchPropTypes = PropTypes.shape({

@@ -27,7 +27,7 @@ import DashboardHeader from './DashboardHeader';
 import CardRenderer from './CardRenderer';
 
 const propTypes = {
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
   description: PropTypes.string,
   /** optional actions that will be rendered in the Dashboard header and used in onDashboardAction */
   actions: PropTypes.arrayOf(
@@ -89,6 +89,10 @@ const propTypes = {
   onBreakpointChange: PropTypes.func,
   /** Callback called when an action is clicked.  The id of the action is passed to the callback */
   onDashboardAction: PropTypes.func,
+  /** Callback called when a card determines what icon render based on a named string in card config
+   *    example usage: renderIconByName(name = 'my--checkmark--icon', props = { title: 'A checkmark', etc. })
+   */
+  renderIconByName: PropTypes.func,
 
   // Data related properties
   /** If the overall dashboard should be using a timeGrain, we pass it here */
@@ -109,6 +113,7 @@ const propTypes = {
     rollingPeriodLabel: PropTypes.string,
     last24HoursLabel: PropTypes.string,
     last7DaysLabel: PropTypes.string,
+    defaultLabel: PropTypes.string,
     lastMonthLabel: PropTypes.string,
     lastQuarterLabel: PropTypes.string,
     lastYearLabel: PropTypes.string,
@@ -123,11 +128,13 @@ const propTypes = {
     monthlyLabel: PropTypes.string,
     expandLabel: PropTypes.string,
     overflowMenuDescription: PropTypes.string,
+    alertDetected: PropTypes.string,
 
     // card actions
     editCardLabel: PropTypes.string,
     cloneCardLabel: PropTypes.string,
     deleteCardLabel: PropTypes.string,
+
     // labels for table card
     criticalLabel: PropTypes.string,
     moderateLabel: PropTypes.string,
@@ -180,6 +187,7 @@ const propTypes = {
 };
 
 const defaultProps = {
+  title: null,
   isEditable: false,
   description: null,
   onLayoutChange: null,
@@ -191,8 +199,10 @@ const defaultProps = {
     noDataShortLabel: 'No data',
     errorLoadingDataLabel: 'Error loading data for this card: ',
     errorLoadingDataShortLabel: 'Data error.',
+    alertDetected: 'Alert detected: ',
     // card labels
     rollingPeriodLabel: 'Rolling period',
+    defaultLabel: 'Default',
     last24HoursLabel: 'Last 24 hrs',
     last7DaysLabel: 'Last 7 days',
     lastMonthLabel: 'Last month',
@@ -208,7 +218,7 @@ const defaultProps = {
     weeklyLabel: 'Weekly',
     monthlyLabel: 'Monthly',
     expandLabel: 'Expand to fullscreen',
-    overflowMenuDescription: 'open and close list of options',
+    overflowMenuDescription: 'Open and close list of options',
 
     // card actions
     editCardLabel: 'Edit card',
@@ -267,6 +277,7 @@ const defaultProps = {
   hasLastUpdated: true,
   onSetupCard: null,
   onFetchData: null,
+  renderIconByName: null,
   timeGrain: null,
   isLoading: false,
   setIsLoading: null,
@@ -317,6 +328,7 @@ const Dashboard = ({
   onSetupCard,
   // TODO: fix the rendering of the lastUpdated bit, to migrate in the style from our ibm repo
   lastUpdated, // eslint-disable-line
+  renderIconByName,
   onFetchData,
   timeGrain,
 }) => {
@@ -411,6 +423,7 @@ const Dashboard = ({
             breakpoint={breakpoint}
             onSetupCard={onSetupCard}
             onFetchData={handleOnFetchData}
+            renderIconByName={renderIconByName}
             timeGrain={timeGrain}
           />
         ) : null

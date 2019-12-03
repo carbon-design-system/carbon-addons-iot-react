@@ -8,7 +8,7 @@ import Arrow from '@carbon/icons-react/lib/arrow--right/20';
 import Add from '@carbon/icons-react/lib/add/20';
 import Delete from '@carbon/icons-react/lib/delete/16';
 
-import { getSortedData } from '../../utils/componentUtilityFunctions';
+import { getSortedData, csvDownloadHandler } from '../../utils/componentUtilityFunctions';
 import FullWidthWrapper from '../../internal/FullWidthWrapper';
 
 import Table from './Table';
@@ -428,6 +428,28 @@ storiesOf('Watson IoT|Table', module)
       },
     }
   )
+  .add('Stateful Example with Row Count', () => (
+    <FullWidthWrapper>
+      <StatefulTable
+        {...initialState}
+        options={{
+          hasSearch: boolean('Show Search', true),
+          hasPagination: boolean('Show Pagination', true),
+          hasRowSelection: 'multi',
+          hasFilter: boolean('Show Filter', true),
+          hasRowActions: boolean('Show Row Action', true),
+          hasRowCountInHeader: boolean('Show Row Count', true),
+        }}
+        view={{
+          toolbar: { activeBar: null },
+        }}
+        i18n={{
+          rowCountInHeader: totalRowCount =>
+            `${text('Row Count Label', 'Results')}: ${totalRowCount}`,
+        }}
+      />
+    </FullWidthWrapper>
+  ))
   .add(
     'Stateful Example with every third row unselectable',
     () => (
@@ -461,7 +483,10 @@ storiesOf('Watson IoT|Table', module)
       <FullWidthWrapper>
         <StatefulTable
           {...initialState}
-          actions={actions}
+          actions={{
+            ...actions,
+            toolbar: { ...actions.toolbar, onDownloadCSV: csvDownloadHandler },
+          }}
           isSortable
           lightweight={boolean('lightweight', false)}
         />

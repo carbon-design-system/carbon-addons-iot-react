@@ -204,7 +204,7 @@ const isLabelAboveValue = (size, layout, attributes, measuredSize) => {
   }
 };
 
-const ValueCard = ({ title, content, size, values, isEditable, ...others }) => {
+const ValueCard = ({ title, content, size, values, isEditable, i18n, ...others }) => {
   const availableActions = {
     expand: false,
     ...others.availableActions,
@@ -234,6 +234,7 @@ const ValueCard = ({ title, content, size, values, isEditable, ...others }) => {
             availableActions={availableActions}
             isEmpty={isEmpty(values)}
             isEditable={isEditable}
+            i18n={i18n}
             {...others}
           >
             <ContentWrapper layout={layout}>
@@ -259,6 +260,7 @@ const ValueCard = ({ title, content, size, values, isEditable, ...others }) => {
                         size === CARD_SIZES.SMALL && attributes.length === 1 ? 'center' : undefined
                       }
                       {...attribute}
+                      renderIconByName={others.renderIconByName}
                       size={size} // When the card is in the editable state, we will show a preview
                       value={isEditable ? '--' : determineValue(attribute.dataSourceId, values)}
                       secondaryValue={

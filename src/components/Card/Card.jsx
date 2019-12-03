@@ -14,7 +14,6 @@ import {
   SelectItemGroup,
   SkeletonText,
 } from 'carbon-components-react';
-import { pure } from 'recompose';
 import Close16 from '@carbon/icons-react/lib/close/16';
 // import ChevronDown from '@carbon/icons-react/lib/chevron--down/20';
 import EventSchedule from '@carbon/icons-react/lib/event--schedule/20';
@@ -35,7 +34,7 @@ import {
 import { CardPropTypes } from '../../constants/PropTypes';
 import { getCardMinSize } from '../../utils/componentUtilityFunctions';
 
-const OptimizedSkeletonText = pure(SkeletonText);
+const OptimizedSkeletonText = React.memo(SkeletonText);
 
 /** Full card */
 const CardWrapper = styled.div`
@@ -88,6 +87,7 @@ const TimeRangeLabel = styled.span`
 const defaultProps = {
   size: CARD_SIZES.SMALL,
   layout: CARD_SIZES.HORIZONTAL,
+  title: undefined,
   toolbar: undefined,
   timeRange: undefined,
   isLoading: false,
@@ -115,6 +115,7 @@ const defaultProps = {
     errorLoadingDataShortLabel: 'Data error.',
     timeRangeLabel: 'Time range',
     rollingPeriodLabel: 'Rolling period',
+    defaultLabel: 'Default',
     last24HoursLabel: 'Last 24 hrs',
     last7DaysLabel: 'Last 7 days',
     lastMonthLabel: 'Last month',
@@ -220,6 +221,7 @@ const Card = ({
             }}
             value={timeRange || ''}
           >
+            <SelectItem value="default" text={strings.defaultLabel} />
             <SelectItemGroup label={strings.rollingPeriodLabel}>
               {Object.keys(timeBoxLabels)
                 .filter(i => i.includes('last'))
@@ -323,21 +325,24 @@ const Card = ({
           cardWidthSize={sizeWidth.width}
           {...others}
         >
-          <div className="card--header">
-            <span className="card--title" title={title}>
-              {title}&nbsp;
-              {tooltip && (
-                <Tooltip
-                  triggerId={`card-tooltip-trigger-${id}`}
-                  tooltipId={`card-tooltip-${id}`}
-                  triggerText=""
-                >
-                  {tooltip}
-                </Tooltip>
-              )}
-            </span>
-            {toolbar(sizeWidth.width)}
-          </div>
+          {title !== undefined && (
+            <div className="card--header">
+              <span className="card--title" title={title}>
+                {title}&nbsp;
+                {tooltip && (
+                  <Tooltip
+                    triggerId={`card-tooltip-trigger-${id}`}
+                    tooltipId={`card-tooltip-${id}`}
+                    triggerText=""
+                  >
+                    {tooltip}
+                  </Tooltip>
+                )}
+              </span>
+              {toolbar(sizeWidth.width)}
+            </div>
+          )}
+
           <CardContent dimensions={dimensions}>
             {isLoading ? (
               <SkeletonWrapper>

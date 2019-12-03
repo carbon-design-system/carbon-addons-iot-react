@@ -7,7 +7,7 @@ import icons, { bundledIconNames } from '../../utils/bundledIcons';
 
 const propTypes = {
   /** title of the dashboard */
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
   /** Optional description of the dashboard */
   description: PropTypes.string,
   /** string that represents the last updated date */
@@ -44,6 +44,7 @@ const propTypes = {
 };
 
 const defaultProps = {
+  title: null,
   description: null,
   lastUpdated: null,
   lastUpdatedLabel: 'Last updated:',
@@ -67,7 +68,7 @@ const DashboardHeader = ({
   return (
     <div className="dashboard--header">
       <div className="dashboard--header-left">
-        <h2>{title}</h2>
+        {title ? <h2>{title}</h2> : null}
         {description ? <p>{description}</p> : null}
         {hasLastUpdated && lastUpdatedLabel ? (
           <div className="dashboard--lastupdated">

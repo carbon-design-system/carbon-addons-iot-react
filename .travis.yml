@@ -1,7 +1,4 @@
 language: node_js
-# fix to workaround node/jest incompatibility https://github.com/facebook/jest/issues/8069.
-node_js:
-  - 8
 
 stages:
   - name: after_success

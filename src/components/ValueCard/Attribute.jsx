@@ -81,6 +81,7 @@ const propTypes = {
       icon: PropTypes.string,
     })
   ),
+  renderIconByName: PropTypes.func,
   precision: PropTypes.number,
 };
 
@@ -93,6 +94,7 @@ const defaultProps = {
   isSmall: false,
   isMini: false,
   label: null,
+  renderIconByName: null,
   secondaryValue: null,
 };
 
@@ -111,6 +113,7 @@ const Attribute = ({
   isSmall,
   isMini,
   label,
+  renderIconByName,
   size, // eslint-disable-line
 }) => {
   // matching threshold will be the first match in the list, or a value of null
@@ -134,15 +137,27 @@ const Attribute = ({
     .concat([null])[0];
   const valueColor =
     matchingThreshold && matchingThreshold.icon === undefined ? matchingThreshold.color : null;
+  const thresholdIconProps = matchingThreshold
+    ? {
+        title: `${matchingThreshold.comparison} ${matchingThreshold.value}`,
+        fill: matchingThreshold.color,
+        tabIndex: '0',
+        description: `${matchingThreshold.comparison} ${matchingThreshold.value}`,
+      }
+    : {};
   const thresholdIcon =
     matchingThreshold && matchingThreshold.icon ? (
       <ThresholdIconWrapper isMini={isMini}>
-        <ThresholdIcon
-          iconTitle={`${matchingThreshold.comparison} ${matchingThreshold.value}`}
-          icon={icons[matchingThreshold.icon]}
-          fill={matchingThreshold.color}
-          description={`${matchingThreshold.comparison} ${matchingThreshold.value}`}
-        />
+        {renderIconByName ? (
+          renderIconByName(matchingThreshold.icon, thresholdIconProps)
+        ) : (
+          <ThresholdIcon
+            icon={icons[matchingThreshold.icon] || icons.help}
+            iconTitle={`${matchingThreshold.comparison} ${matchingThreshold.value}`}
+            fill={matchingThreshold.color}
+            description={`${matchingThreshold.comparison} ${matchingThreshold.value}`}
+          />
+        )}
       </ThresholdIconWrapper>
     ) : null;
 
