@@ -59,7 +59,6 @@ module.exports = {
       lines: 69,
       functions: 77,
     },
-    './src/components/ListCard/ListCard.jsx': { branches: 66 },
     './src/components/Page/EditPage.jsx': {
       statements: 64,
       branches: 50,
