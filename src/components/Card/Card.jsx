@@ -128,7 +128,7 @@ const defaultProps = {
   /** In editable mode we'll show preview data */
   isEditable: false,
   isExpanded: false,
-  /** only show the content if the card is visible */
+  /** performance option: only render the content of the card to the ReactDOM if the card is visible on screen */
   isLazyLoading: false,
   /** For now we will hide the per card actions when we're editing */
   availableActions: {
