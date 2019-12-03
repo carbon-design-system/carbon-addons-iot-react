@@ -86,7 +86,7 @@ Do not use `styled-components`. Any components using it should be refactored to 
 
 ## Testing changes
 
-An automated unit test bucket runs when you execute `yarn test`.
+An automated unit test bucket runs when you execute `yarn test:base`.
 
 Before every push, the test suite is ran automatically and takes snapshots of all of the current component stories. If you have made changes to a component, our tests will likely fail because the snapshots will no longer match. You will be prevented from pushing to git until you fix this error.
 
