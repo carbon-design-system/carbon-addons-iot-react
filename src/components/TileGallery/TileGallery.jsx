@@ -5,7 +5,8 @@ import TileGallerySection from './TileGallerySection';
 
 const propTypes = {
   /** Component children's to be rendered */
-  children: PropTypes.instanceOf(TileGallerySection).isRequired,
+  children: PropTypes.arrayOf(PropTypes.shape({ type: PropTypes.oneOf([TileGallerySection]) }))
+    .isRequired,
 };
 
 const defaultProps = {};

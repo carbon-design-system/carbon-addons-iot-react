@@ -91,7 +91,7 @@ export const galleryData = [
         icon: <StarFilled16 />,
         afterContent: overflowComponent,
         thumbnail: <Activity32 />,
-        href: 'www.ibm.com',
+        onClick: action('Card Clicked'),
       },
       {
         title: 'Health',
@@ -99,7 +99,7 @@ export const galleryData = [
         icon: <StarFilled16 />,
         afterContent: overflowComponent,
         thumbnail: <Sunny32 />,
-        href: 'www.ibm.com',
+        onClick: action('Card Clicked'),
       },
       {
         title: 'Activity',
@@ -107,7 +107,7 @@ export const galleryData = [
         icon: <StarFilled16 />,
         afterContent: overflowComponent,
         thumbnail: <Activity32 />,
-        href: 'www.ibm.com',
+        onClick: action('Card Clicked'),
       },
     ],
   },
@@ -121,7 +121,7 @@ export const galleryData = [
         icon: <StarFilled16 />,
         afterContent: overflowComponent,
         thumbnail: <Activity32 />,
-        href: 'www.ibm.com',
+        onClick: action('Card Clicked'),
       },
       {
         title: 'Dashboard title',
@@ -129,7 +129,7 @@ export const galleryData = [
         icon: <StarFilled16 />,
         afterContent: overflowComponent,
         thumbnail: <Sunny32 />,
-        href: 'www.ibm.com',
+        onClick: action('Card Clicked'),
       },
       {
         title: 'Dashboard title',
@@ -137,7 +137,7 @@ export const galleryData = [
         icon: <StarFilled16 />,
         afterContent: overflowComponent,
         thumbnail: <Activity32 />,
-        href: 'www.ibm.com',
+        onClick: action('Card Clicked'),
       },
     ],
   },
@@ -170,7 +170,7 @@ storiesOf('Watson IoT Experimental|TileGallery', module)
       thumbnail={<Rocket32 fill="black" description="Icon" width={50} height={50} />}
       icon={<CheckmarkFilled16 fill="#40be65" onClick={action('Icon Clicked')} />}
       afterContent={overflowComponent}
-      href="https://www.ibm.com/br-pt/cloud/internet-of-things?mhsrc=ibmsearch_a&mhq=iot"
+      onClick={action('Card Clicked')}
       className="not-active"
     />
   ))
@@ -181,6 +181,7 @@ storiesOf('Watson IoT Experimental|TileGallery', module)
       mode="list"
       icon={<StarFilled16 fill="black" onClick={action('Icon clicked')} />}
       afterContent={overflowComponent}
+      onClick={action('Card Clicked')}
     />
   ))
   .add('TileGalleryViewSwitcher', () => <TileGalleryViewSwitcher />)
@@ -222,7 +223,7 @@ storiesOf('Watson IoT Experimental|TileGallery', module)
                 </OverflowMenu>
               ),
               thumbnail: <Activity32 />,
-              href: 'www.ibm.com',
+              onClick: action('Card Clicked'),
             },
           ],
         },

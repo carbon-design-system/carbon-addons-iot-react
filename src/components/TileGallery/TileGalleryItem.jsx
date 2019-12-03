@@ -1,15 +1,12 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
+import { ClickableTile } from 'carbon-components-react';
 
 const propTypes = {
   /** Card title */
   title: PropTypes.string.isRequired,
   /** Card description */
   description: PropTypes.string,
-  /** More info link */
-  moreInfoLink: PropTypes.string,
-  /** More info text */
-  descriptionMoreInfo: PropTypes.string,
   /** Bottom left  icon  */
   icon: PropTypes.oneOfType([
     PropTypes.shape({
@@ -26,34 +23,30 @@ const propTypes = {
   mode: PropTypes.oneOf(['grid', 'list']),
   /** When grid type - thumbnail content */
   thumbnail: PropTypes.node,
-  /** Href when click in card */
-  href: PropTypes.string,
+  /** onClick card */
+  onClick: PropTypes.func,
   /** Specify an optional className to be applied to the container node */
   className: PropTypes.string,
 };
 
 const defaultProps = {
   description: 'Some description',
-  moreInfoLink: null,
-  descriptionMoreInfo: 'More info...',
   icon: null,
   afterContent: null,
   mode: 'grid',
   thumbnail: null,
-  href: null,
+  onClick: () => {},
   className: null,
 };
 
 const TileGalleryItem = ({
   title,
   description,
-  descriptionMoreInfo,
-  moreInfoLink,
   icon,
   afterContent,
   mode,
   thumbnail,
-  href,
+  onClick,
   className,
 }) => {
   const content = (
@@ -71,7 +64,6 @@ const TileGalleryItem = ({
           <div className="thumbnail">{thumbnail}</div>
           <div className="descriptionCard">
             <span>{description}</span>
-            <a href={moreInfoLink}>{descriptionMoreInfo}</a>
           </div>
         </div>
         {content}
@@ -87,15 +79,15 @@ const TileGalleryItem = ({
 
   return (
     <Fragment>
-      <a
+      <ClickableTile
         className={`${className} dashboard-tile bx--tile bx--tile--clickable dashboard-pin-${
           mode === 'grid' ? 'card' : 'list'
         }-title`}
         key={`${title}-card-link`}
-        href={href}
+        handleClick={evt => onClick(evt)}
       >
         {tile}
-      </a>
+      </ClickableTile>
     </Fragment>
   );
 };
