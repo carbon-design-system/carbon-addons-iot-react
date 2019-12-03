@@ -177,7 +177,7 @@ storiesOf('Watson IoT Experimental|TileGallery', module)
   .add('TileGalleryItem - List', () => (
     <TileGalleryItem
       title="Test"
-      description="The first one"
+      description={<div style={{ backgroundColor: 'black' }}>The first one</div>}
       mode="list"
       icon={<StarFilled16 fill="black" onClick={action('Icon clicked')} />}
       afterContent={overflowComponent}

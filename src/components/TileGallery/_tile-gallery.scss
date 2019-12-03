@@ -179,8 +179,10 @@
       margin-left: 0.9375rem;
     }
     .descriptionCard {
-      padding-left: $spacing-07;
-      color: $ui-04;
+      span {
+        padding-left: $spacing-07;
+        color: $ui-04;
+      }
     }
   }
 }

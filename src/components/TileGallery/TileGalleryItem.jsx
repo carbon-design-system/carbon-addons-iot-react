@@ -5,8 +5,8 @@ import { ClickableTile } from 'carbon-components-react';
 const propTypes = {
   /** Card title */
   title: PropTypes.string.isRequired,
-  /** Card description */
-  description: PropTypes.string,
+  /** Card description/content */
+  description: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   /** Bottom left  icon  */
   icon: PropTypes.oneOfType([
     PropTypes.shape({
@@ -49,6 +49,7 @@ const TileGalleryItem = ({
   onClick,
   className,
 }) => {
+  console.log(React.isValidElement(description));
   const content = (
     <div style={{ display: 'flex', minHeight: '24px' }}>
       {icon}
@@ -63,7 +64,7 @@ const TileGalleryItem = ({
         <div className="topSection">
           <div className="thumbnail">{thumbnail}</div>
           <div className="descriptionCard">
-            <span>{description}</span>
+            {!React.isValidElement(description) ? <span>{description}</span> : description}
           </div>
         </div>
         {content}
@@ -72,7 +73,9 @@ const TileGalleryItem = ({
       <div key={`${title}-card`}>
         <Fragment>
           {content}
-          <span className="descriptionCard">{description}</span>
+          <div className="descriptionCard">
+            {!React.isValidElement(description) ? <span>{description}</span> : description}
+          </div>
         </Fragment>
       </div>
     );
