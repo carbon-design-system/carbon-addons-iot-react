@@ -20,6 +20,14 @@ describe('TileGallery tests', () => {
         .hasClass('dashboard-pin-list-title')
     ).toEqual(true);
   });
+  test('TileGalleryItem mode list with node description', () => {
+    const descriptionNode = <div>Test node</div>;
+    const wrapper = mount(
+      <TileGalleryItem title="title" mode="list" description={descriptionNode} />
+    );
+
+    expect(wrapper.find('div.descriptionCard').contains(descriptionNode)).toEqual(true);
+  });
   test('TileGalleryItem mode card', () => {
     const wrapper = mount(<TileGalleryItem title="title" mode="grid" />);
 
@@ -30,12 +38,34 @@ describe('TileGallery tests', () => {
         .hasClass('dashboard-pin-card-title')
     ).toEqual(true);
   });
+  test('TileGalleryItem mode card with node description', () => {
+    const descriptionNode = <div>Test node</div>;
+
+    const wrapper = mount(
+      <TileGalleryItem title="title" mode="grid" description={descriptionNode} />
+    );
+
+    expect(wrapper.find('div.descriptionCard').contains(descriptionNode)).toEqual(true);
+  });
   test('TileGalleryItem afterContent', () => {
     const wrapper = mount(
       <TileGalleryItem title="title" afterContent={<div>after content</div>} />
     );
 
     expect(wrapper.find('div.overflowMenu')).toHaveLength(1);
+  });
+  test('TileGalleryItem - have default onClick', () => {
+    expect(TileGalleryItem.defaultProps.onClick).toBeDefined();
+    expect(TileGalleryItem.defaultProps.onClick()).toBe(undefined);
+  });
+  test('TileGalleryItem - simulate onClick', () => {
+    const onClick = jest.fn();
+
+    const wrapper = mount(<TileGalleryItem title="title" mode="grid" onClick={onClick} />);
+
+    wrapper.find('a.bx--link').simulate('click', { target: {} });
+
+    expect(onClick).toHaveBeenCalledTimes(1);
   });
   test('TileGallerySection - have default onClick', () => {
     expect(TileGallerySection.defaultProps.onClick).toBeDefined();
@@ -69,10 +99,6 @@ describe('TileGallery tests', () => {
     expect(wrapper.find('Accordion')).toHaveLength(0);
   });
   test('TileGallerySearch - have default onChange', () => {
-    console.log(
-      'TileGallerySearch.defaultProps.onChange:::',
-      TileGallerySearch.defaultProps.onChange
-    );
     expect(TileGallerySearch.defaultProps.onChange).toBeDefined();
     expect(TileGallerySearch.defaultProps.onChange()).toBe(undefined);
   });
@@ -150,7 +176,7 @@ describe('TileGallery tests', () => {
       .find('button.bx--content-switcher-btn')
       .first()
       .simulate('click');
-    console.log(`component::: ${noExtraWrapper.find('TileGallerySearch').debug()}`);
+    // console.log(`component::: ${noExtraWrapper.find('TileGallerySearch').debug()}`);
 
     // test have changes mode prop
     expect(
