@@ -88,10 +88,7 @@ const CardRenderer = React.memo(
             updatedCard = await onSetupCard(card);
             setCard(updatedCard);
           }
-          if (!updatedCard.setupError) {
-            // don't load the card data if the setup failed
-            loadCardData(updatedCard, setCard, onFetchData, timeGrain);
-          }
+          loadCardData(updatedCard, setCard, onFetchData, timeGrain);
         };
         if (isLoading) {
           setupAndLoadCard();
