@@ -387,14 +387,8 @@ const TableBodyRow = ({
       <TableCell
         className={`${prefix}--checkbox-table-cell`}
         key={`${id}-row-selection-cell`}
-        onChange={
-          isSelectable !== false
-            ? e => {
-                onRowSelected(id, !isSelected);
-                e.stopPropagation();
-              }
-            : null
-        }
+        onChange={isSelectable !== false ? () => onRowSelected(id, !isSelected) : null}
+        onClick={e => e.stopPropagation()}
       >
         {/* TODO: Replace checkbox with TableSelectRow component when onChange bug is fixed
       https://github.com/IBM/carbon-components-react/issues/1247
