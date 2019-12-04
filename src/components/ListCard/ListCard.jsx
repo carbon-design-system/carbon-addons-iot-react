@@ -66,9 +66,7 @@ const ListCard = ({
                           )}
                         </div>
                         {item.extraContent ? (
-                          <div className="list-card--item--extra-content">
-                            {item.extraContent ? item.extraContent : null}
-                          </div>
+                          <div className="list-card--item--extra-content">{item.extraContent}</div>
                         ) : null}
                       </StructuredListCell>
                     </StructuredListRow>

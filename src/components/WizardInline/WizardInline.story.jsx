@@ -5,6 +5,8 @@ import { boolean, number, text } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import styled from 'styled-components';
 
+import DeprecationNotice, { deprecatedStoryTitle } from '../../internal/DeprecationNotice';
+
 import WizardInline from './WizardInline';
 import StatefulWizardInline from './StatefulWizardInline';
 
@@ -150,7 +152,13 @@ const footerComponent = <StyledFooterContent>this is footer content</StyledFoote
 
 // Simple Static Wizard Stories
 
-storiesOf('Watson IoT|WizardInline', module)
+storiesOf('Watson IoT|WizardInline (Deprecated)', module)
+  .add(deprecatedStoryTitle, () => (
+    <DeprecationNotice
+      deprecatedComponentName="WizardInline"
+      replacementComponentName="PageWizard"
+    />
+  ))
   .add('Stateful example', () => (
     <StatefulWizardInline
       currentItemId="step1"
