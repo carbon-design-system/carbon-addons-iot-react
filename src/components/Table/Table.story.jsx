@@ -86,6 +86,11 @@ export const tableColumns = [
     name: 'Number',
     filter: { placeholderText: 'pick a number' },
   },
+  {
+    id: 'boolean',
+    name: 'Boolean',
+    filter: { placeholderText: 'true or false' },
+  },
 ];
 
 export const tableColumnsFixedWidth = tableColumns.map(i => ({
@@ -102,6 +107,8 @@ export const tableColumnsFixedWidth = tableColumns.map(i => ({
       : i.id === 'status'
       ? '100px'
       : i.id === 'number'
+      ? '80px'
+      : i.id === 'boolean'
       ? '80px'
       : undefined,
 }));
@@ -147,6 +154,10 @@ const getStatus = idx => {
   }
 };
 
+const getBoolean = index => {
+  return index % 2 === 0;
+};
+
 const getNewRow = (idx, suffix = '', withActions = false) => ({
   id: `row-${idx}${suffix ? `_${suffix}` : ''}`,
   values: {
@@ -156,6 +167,7 @@ const getNewRow = (idx, suffix = '', withActions = false) => ({
     secretField: getString(idx, 10) + suffix,
     number: idx * idx,
     status: getStatus(idx),
+    boolean: getBoolean(idx),
   },
   rowActions: withActions
     ? [
