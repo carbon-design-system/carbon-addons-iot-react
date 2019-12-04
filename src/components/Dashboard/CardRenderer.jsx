@@ -88,9 +88,7 @@ const CardRenderer = React.memo(
             updatedCard = await onSetupCard(card);
             setCard(updatedCard);
           }
-          if (!updatedCard.error) {
-            loadCardData(updatedCard, setCard, onFetchData, timeGrain);
-          }
+          loadCardData(updatedCard, setCard, onFetchData, timeGrain);
         };
         if (isLoading) {
           setupAndLoadCard();
@@ -184,6 +182,7 @@ const CardRenderer = React.memo(
         ) : type === CARD_TYPES.IMAGE ? (
           <ImageCard
             {...card}
+            error={card.setupError || card.error}
             key={card.id}
             availableActions={cachedActions}
             dataSource={dataSource}
