@@ -111,6 +111,32 @@
   &.#{$prefix}--link:hover {
     text-decoration: none;
   }
+
+  &.dashboard-pin-list-title {
+    height: 5.9375rem;
+    flex: 0 0 31.25rem;
+    box-shadow: none;
+    border-bottom: 0.0625rem solid rgb(223, 227, 230);
+    background: $ui-01;
+    cursor: pointer;
+    pointer-events: auto;
+    touch-action: auto;
+
+    &:hover {
+      background: $ui-03;
+      border: none;
+    }
+    .titleCard {
+      margin-left: 0.9375rem;
+    }
+    .descriptionCard {
+      span {
+        padding-left: $spacing-07;
+        color: $ui-04;
+      }
+    }
+  }
+
   &.dashboard-pin-card-title {
     height: 16rem;
     flex: 0 0 16rem;
@@ -156,31 +182,6 @@
       margin-left: $spacing-03;
       width: 11rem;
       margin-top: 0.125rem;
-    }
-  }
-
-  &.dashboard-pin-list-title {
-    height: 5.9375rem;
-    flex: 0 0 31.25rem;
-    box-shadow: none;
-    border-bottom: 0.0625rem solid rgb(223, 227, 230);
-    background: $ui-01;
-    cursor: pointer;
-    pointer-events: auto;
-    touch-action: auto;
-
-    &:hover {
-      background: $ui-03;
-      border: none;
-    }
-    .titleCard {
-      margin-left: 0.9375rem;
-    }
-    .descriptionCard {
-      span {
-        padding-left: $spacing-07;
-        color: $ui-04;
-      }
     }
   }
 }
