@@ -75,7 +75,7 @@ const defaultProps = {
 /**
  * Side Navigation. part of UI shell
  */
-const SideNav = ({ links, defaultExpanded, isSideNavExpanded, i18n }) => {
+const SideNav = ({ links, defaultExpanded, isSideNavExpanded, i18n, ...props }) => {
   const nav = links
     .map(link => {
       const enabled = link.isEnabled ? link.isEnabled : false;
@@ -106,6 +106,7 @@ const SideNav = ({ links, defaultExpanded, isSideNavExpanded, i18n }) => {
             aria-label="dropdown"
             key={`menu-link-${links.indexOf(link)}-dropdown`}
             title={link.linkContent}
+            large
           >
             {children}
           </SideNavMenu>
@@ -121,6 +122,7 @@ const SideNav = ({ links, defaultExpanded, isSideNavExpanded, i18n }) => {
           renderIcon={link.icon}
           isActive={link.isActive}
           {...link.metaData}
+          large
         >
           {link.linkContent}
         </SideNavLink>
@@ -137,6 +139,7 @@ const SideNav = ({ links, defaultExpanded, isSideNavExpanded, i18n }) => {
       translateById={translateById}
       aria-label="Side navigation"
       defaultExpanded={defaultExpanded}
+      {...props} // spreading here as base component does not pass to DOM element.
     >
       {/* {switcherProps && <SideNavSwitcher {...switcherProps} />} */}
       <SideNavItems>{nav}</SideNavItems>
