@@ -2,7 +2,7 @@ import React from 'react';
 import { mount } from 'enzyme';
 import TestBackend from 'react-dnd-test-backend';
 import { DragDropContext } from 'react-dnd';
-import { render } from '@testing-library/react';
+import { render, getByTitle } from '@testing-library/react';
 
 import { UnconnectedColumnHeaderRow } from './ColumnHeaderRow';
 
@@ -57,59 +57,49 @@ describe('TableHead', () => {
 describe('ColumnHeaderRow test', () => {
   test('when hasRowExpansion set to true', () => {
     const tableHeadProps = {
-      /** List of columns */
-      columns: [
-        { id: 'col1', name: 'Column 1', isSortable: false },
-        { id: 'col2', name: 'Column 2', isSortable: false },
-      ] /** Ordering list */,
-      ordering: [{ columnId: 'col1', isHidden: false }, { columnId: 'col2', isHidden: false }],
-      tableOptions: {
-        hasRowSelection: 'multi',
-        hasRowExpansion: true,
-      },
-      onChangeOrdering: jest.fn(),
+      ...commonTableHeadProps,
+      tableOptions: { ...commonTableHeadProps.tableOptions, hasRowExpansion: true },
     };
 
-    const renderedElement = render(<UnconnectedColumnHeaderRow {...tableHeadProps} />);
-    expect(renderedElement.container.innerHTML).toContain('colspan="2"');
+    const { getByTitle } = render(
+      <table>
+        <thead>
+          <UnconnectedColumnHeaderRow {...tableHeadProps} />
+        </thead>
+      </table>
+    );
+    // console.log(getByTitle('Column 1'));
   });
 
   test('when ordering is empty so that nothing to order', () => {
     const tableHeadProps = {
-      /** List of columns */
-      columns: [
-        { id: 'col1', name: 'Column 1', isSortable: false },
-        { id: 'col2', name: 'Column 2', isSortable: false },
-      ] /** Ordering list */,
+      ...commonTableHeadProps,
       ordering: [],
-      tableOptions: {
-        hasRowSelection: false,
-        hasRowExpansion: false,
-      },
-      onChangeOrdering: jest.fn(),
     };
 
-    const renderedElement = render(<UnconnectedColumnHeaderRow {...tableHeadProps} />);
+    const renderedElement = render(
+      <table>
+        <thead>
+          <UnconnectedColumnHeaderRow {...tableHeadProps} />
+        </thead>
+      </table>
+    );
     expect(renderedElement.container.innerHTML).toContain('colspan="2"');
   });
 
   test('when hasRowActions set to true', () => {
     const tableHeadProps = {
-      /** List of columns */
-      columns: [
-        { id: 'col1', name: 'Column 1', isSortable: false },
-        { id: 'col2', name: 'Column 2', isSortable: false },
-      ] /** Ordering list */,
-      ordering: [{ columnId: 'col1', isHidden: false }, { columnId: 'col2', isHidden: false }],
-      tableOptions: {
-        hasRowSelection: false,
-        hasRowExpansion: false,
-        hasRowActions: true,
-      },
-      onChangeOrdering: jest.fn(),
+      ...commonTableHeadProps,
+      tableOptions: { ...commonTableHeadProps.tableOptions, hasRowActions: true },
     };
 
-    const renderedElement = render(<UnconnectedColumnHeaderRow {...tableHeadProps} />);
+    const renderedElement = render(
+      <table>
+        <thead>
+          <UnconnectedColumnHeaderRow {...tableHeadProps} />
+        </thead>
+      </table>
+    );
     expect(renderedElement.container.innerHTML).toContain('colspan="3"');
   });
 });
