@@ -32,6 +32,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
         className="Card__CardWrapper-v5r71h-0 kGdXdI"
         id="table-list"
       >
+         
         <div
           className="card--header"
         >
@@ -1319,6 +1320,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
         className="Card__CardWrapper-v5r71h-0 kGdXdI"
         id="table-list"
       >
+         
         <div
           className="card--header"
         >
@@ -2970,6 +2972,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
         className="Card__CardWrapper-v5r71h-0 kGdXdI"
         id="table-list"
       >
+         
         <div
           className="card--header"
         >
@@ -2984,7 +2987,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
             className="bx--toolbar card--toolbar"
           >
             <span
-              className="card--toolbar-timerange-lable Card__TimeRangeLabel-v5r71h-5 bSwbuP"
+              className="card--toolbar-timerange-lable CardRangePicker__TimeRangeLabel-ns6bu0-0 QmRa"
               id="timeRange"
             />
             <div
@@ -3001,7 +3004,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
               title="Open and close list of options"
             >
               <svg
-                aria-label="Open and close list of options"
+                aria-label="open and close list of options"
                 className="bx--overflow-menu__icon"
                 focusable="false"
                 height={20}
@@ -3028,12 +3031,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
                 />
                 <title>
-                  Open and close list of options
+                  open and close list of options
                 </title>
               </svg>
             </div>
             <button
-              className="card--toolbar-action Card__TinyButton-v5r71h-4 fggzfz bx--btn bx--btn--sm bx--btn--ghost"
+              className="card--toolbar-action CardToolbar__TinyButton-sc-1ekh8ti-0 eITXBg bx--btn bx--btn--sm bx--btn--ghost"
               disabled={false}
               onClick={[Function]}
               tabIndex={0}
@@ -3532,6 +3535,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
         className="Card__CardWrapper-v5r71h-0 kGdXdI"
         id="table-list"
       >
+         
         <div
           className="card--header"
         >
@@ -3546,7 +3550,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
             className="bx--toolbar card--toolbar"
           >
             <span
-              className="card--toolbar-timerange-lable Card__TimeRangeLabel-v5r71h-5 bSwbuP"
+              className="card--toolbar-timerange-lable CardRangePicker__TimeRangeLabel-ns6bu0-0 QmRa"
               id="timeRange"
             />
             <div
@@ -3563,7 +3567,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
               title="Open and close list of options"
             >
               <svg
-                aria-label="Open and close list of options"
+                aria-label="open and close list of options"
                 className="bx--overflow-menu__icon"
                 focusable="false"
                 height={20}
@@ -3590,7 +3594,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
                 />
                 <title>
-                  Open and close list of options
+                  open and close list of options
                 </title>
               </svg>
             </div>
@@ -5930,6 +5934,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
         className="Card__CardWrapper-v5r71h-0 kGdXdI"
         id="table-list"
       >
+         
         <div
           className="card--header"
         >
@@ -5944,7 +5949,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
             className="bx--toolbar card--toolbar"
           >
             <span
-              className="card--toolbar-timerange-lable Card__TimeRangeLabel-v5r71h-5 bSwbuP"
+              className="card--toolbar-timerange-lable CardRangePicker__TimeRangeLabel-ns6bu0-0 QmRa"
               id="timeRange"
             />
             <div
@@ -5961,7 +5966,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
               title="Open and close list of options"
             >
               <svg
-                aria-label="Open and close list of options"
+                aria-label="open and close list of options"
                 className="bx--overflow-menu__icon"
                 focusable="false"
                 height={20}
@@ -5988,12 +5993,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
                 />
                 <title>
-                  Open and close list of options
+                  open and close list of options
                 </title>
               </svg>
             </div>
             <button
-              className="card--toolbar-action Card__TinyButton-v5r71h-4 fggzfz bx--btn bx--btn--sm bx--btn--ghost"
+              className="card--toolbar-action CardToolbar__TinyButton-sc-1ekh8ti-0 eITXBg bx--btn bx--btn--sm bx--btn--ghost"
               disabled={false}
               onClick={[Function]}
               tabIndex={0}
@@ -7259,6 +7264,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
         className="Card__CardWrapper-v5r71h-0 kGdXdI"
         id="table-list"
       >
+         
         <div
           className="card--header"
         >
@@ -7273,7 +7279,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
             className="bx--toolbar card--toolbar"
           >
             <span
-              className="card--toolbar-timerange-lable Card__TimeRangeLabel-v5r71h-5 bSwbuP"
+              className="card--toolbar-timerange-lable CardRangePicker__TimeRangeLabel-ns6bu0-0 QmRa"
               id="timeRange"
             />
             <div
@@ -7290,7 +7296,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
               title="Open and close list of options"
             >
               <svg
-                aria-label="Open and close list of options"
+                aria-label="open and close list of options"
                 className="bx--overflow-menu__icon"
                 focusable="false"
                 height={20}
@@ -7317,12 +7323,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
                 />
                 <title>
-                  Open and close list of options
+                  open and close list of options
                 </title>
               </svg>
             </div>
             <button
-              className="card--toolbar-action Card__TinyButton-v5r71h-4 fggzfz bx--btn bx--btn--sm bx--btn--ghost"
+              className="card--toolbar-action CardToolbar__TinyButton-sc-1ekh8ti-0 eITXBg bx--btn bx--btn--sm bx--btn--ghost"
               disabled={false}
               onClick={[Function]}
               tabIndex={0}
@@ -8589,6 +8595,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
         className="Card__CardWrapper-v5r71h-0 kGdXdI"
         id="table-list"
       >
+         
         <div
           className="card--header"
         >
@@ -8603,7 +8610,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
             className="bx--toolbar card--toolbar"
           >
             <span
-              className="card--toolbar-timerange-lable Card__TimeRangeLabel-v5r71h-5 bSwbuP"
+              className="card--toolbar-timerange-lable CardRangePicker__TimeRangeLabel-ns6bu0-0 QmRa"
               id="timeRange"
             />
             <div
@@ -8620,7 +8627,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
               title="Open and close list of options"
             >
               <svg
-                aria-label="Open and close list of options"
+                aria-label="open and close list of options"
                 className="bx--overflow-menu__icon"
                 focusable="false"
                 height={20}
@@ -8647,12 +8654,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
                 />
                 <title>
-                  Open and close list of options
+                  open and close list of options
                 </title>
               </svg>
             </div>
             <button
-              className="card--toolbar-action Card__TinyButton-v5r71h-4 fggzfz bx--btn bx--btn--sm bx--btn--ghost"
+              className="card--toolbar-action CardToolbar__TinyButton-sc-1ekh8ti-0 eITXBg bx--btn bx--btn--sm bx--btn--ghost"
               disabled={false}
               onClick={[Function]}
               tabIndex={0}
@@ -9434,6 +9441,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
         className="Card__CardWrapper-v5r71h-0 kGdXdI"
         id="table-list"
       >
+         
         <div
           className="card--header"
         >
@@ -9448,7 +9456,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
             className="bx--toolbar card--toolbar"
           >
             <span
-              className="card--toolbar-timerange-lable Card__TimeRangeLabel-v5r71h-5 bSwbuP"
+              className="card--toolbar-timerange-lable CardRangePicker__TimeRangeLabel-ns6bu0-0 QmRa"
               id="timeRange"
             />
             <div
@@ -9465,7 +9473,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
               title="Open and close list of options"
             >
               <svg
-                aria-label="Open and close list of options"
+                aria-label="open and close list of options"
                 className="bx--overflow-menu__icon"
                 focusable="false"
                 height={20}
@@ -9492,12 +9500,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
                 />
                 <title>
-                  Open and close list of options
+                  open and close list of options
                 </title>
               </svg>
             </div>
             <button
-              className="card--toolbar-action Card__TinyButton-v5r71h-4 fggzfz bx--btn bx--btn--sm bx--btn--ghost"
+              className="card--toolbar-action CardToolbar__TinyButton-sc-1ekh8ti-0 eITXBg bx--btn bx--btn--sm bx--btn--ghost"
               disabled={false}
               onClick={[Function]}
               tabIndex={0}
@@ -10279,6 +10287,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
         className="Card__CardWrapper-v5r71h-0 kGdXdI"
         id="table-list"
       >
+         
         <div
           className="card--header"
         >
@@ -10293,7 +10302,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
             className="bx--toolbar card--toolbar"
           >
             <span
-              className="card--toolbar-timerange-lable Card__TimeRangeLabel-v5r71h-5 bSwbuP"
+              className="card--toolbar-timerange-lable CardRangePicker__TimeRangeLabel-ns6bu0-0 QmRa"
               id="timeRange"
             />
             <div
@@ -10310,7 +10319,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
               title="Open and close list of options"
             >
               <svg
-                aria-label="Open and close list of options"
+                aria-label="open and close list of options"
                 className="bx--overflow-menu__icon"
                 focusable="false"
                 height={20}
@@ -10337,7 +10346,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
                 />
                 <title>
-                  Open and close list of options
+                  open and close list of options
                 </title>
               </svg>
             </div>
@@ -11829,6 +11838,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
         className="Card__CardWrapper-v5r71h-0 kGdXdI"
         id="table-list"
       >
+         
         <div
           className="card--header"
         >
@@ -11843,7 +11853,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
             className="bx--toolbar card--toolbar"
           >
             <span
-              className="card--toolbar-timerange-lable Card__TimeRangeLabel-v5r71h-5 bSwbuP"
+              className="card--toolbar-timerange-lable CardRangePicker__TimeRangeLabel-ns6bu0-0 QmRa"
               id="timeRange"
             />
             <div
@@ -11860,7 +11870,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
               title="Open and close list of options"
             >
               <svg
-                aria-label="Open and close list of options"
+                aria-label="open and close list of options"
                 className="bx--overflow-menu__icon"
                 focusable="false"
                 height={20}
@@ -11887,7 +11897,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
                 />
                 <title>
-                  Open and close list of options
+                  open and close list of options
                 </title>
               </svg>
             </div>
@@ -13380,6 +13390,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
         className="Card__CardWrapper-v5r71h-0 kGdXdI"
         id="table-list"
       >
+         
         <div
           className="card--header"
         >
@@ -13394,7 +13405,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
             className="bx--toolbar card--toolbar"
           >
             <span
-              className="card--toolbar-timerange-lable Card__TimeRangeLabel-v5r71h-5 bSwbuP"
+              className="card--toolbar-timerange-lable CardRangePicker__TimeRangeLabel-ns6bu0-0 QmRa"
               id="timeRange"
             />
             <div
@@ -13411,7 +13422,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
               title="Open and close list of options"
             >
               <svg
-                aria-label="Open and close list of options"
+                aria-label="open and close list of options"
                 className="bx--overflow-menu__icon"
                 focusable="false"
                 height={20}
@@ -13438,12 +13449,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
                 />
                 <title>
-                  Open and close list of options
+                  open and close list of options
                 </title>
               </svg>
             </div>
             <button
-              className="card--toolbar-action Card__TinyButton-v5r71h-4 fggzfz bx--btn bx--btn--sm bx--btn--ghost"
+              className="card--toolbar-action CardToolbar__TinyButton-sc-1ekh8ti-0 eITXBg bx--btn bx--btn--sm bx--btn--ghost"
               disabled={false}
               onClick={[Function]}
               tabIndex={0}
@@ -14709,6 +14720,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
         className="Card__CardWrapper-v5r71h-0 kGdXdI"
         id="table-list"
       >
+         
         <div
           className="card--header"
         >
@@ -14723,7 +14735,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
             className="bx--toolbar card--toolbar"
           >
             <span
-              className="card--toolbar-timerange-lable Card__TimeRangeLabel-v5r71h-5 bSwbuP"
+              className="card--toolbar-timerange-lable CardRangePicker__TimeRangeLabel-ns6bu0-0 QmRa"
               id="timeRange"
             />
             <div
@@ -14740,7 +14752,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
               title="Open and close list of options"
             >
               <svg
-                aria-label="Open and close list of options"
+                aria-label="open and close list of options"
                 className="bx--overflow-menu__icon"
                 focusable="false"
                 height={20}
@@ -14767,12 +14779,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
                 />
                 <title>
-                  Open and close list of options
+                  open and close list of options
                 </title>
               </svg>
             </div>
             <button
-              className="card--toolbar-action Card__TinyButton-v5r71h-4 fggzfz bx--btn bx--btn--sm bx--btn--ghost"
+              className="card--toolbar-action CardToolbar__TinyButton-sc-1ekh8ti-0 eITXBg bx--btn bx--btn--sm bx--btn--ghost"
               disabled={false}
               onClick={[Function]}
               tabIndex={0}
@@ -16646,6 +16658,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
         className="Card__CardWrapper-v5r71h-0 kGdXdI"
         id="table-list"
       >
+         
         <div
           className="card--header"
         >
@@ -16660,7 +16673,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
             className="bx--toolbar card--toolbar"
           >
             <span
-              className="card--toolbar-timerange-lable Card__TimeRangeLabel-v5r71h-5 bSwbuP"
+              className="card--toolbar-timerange-lable CardRangePicker__TimeRangeLabel-ns6bu0-0 QmRa"
               id="timeRange"
             />
             <div
@@ -16677,7 +16690,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
               title="Open and close list of options"
             >
               <svg
-                aria-label="Open and close list of options"
+                aria-label="open and close list of options"
                 className="bx--overflow-menu__icon"
                 focusable="false"
                 height={20}
@@ -16704,12 +16717,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
                 />
                 <title>
-                  Open and close list of options
+                  open and close list of options
                 </title>
               </svg>
             </div>
             <button
-              className="card--toolbar-action Card__TinyButton-v5r71h-4 fggzfz bx--btn bx--btn--sm bx--btn--ghost"
+              className="card--toolbar-action CardToolbar__TinyButton-sc-1ekh8ti-0 eITXBg bx--btn bx--btn--sm bx--btn--ghost"
               disabled={false}
               onClick={[Function]}
               tabIndex={0}
@@ -18339,6 +18352,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
         className="Card__CardWrapper-v5r71h-0 kGdXdI"
         id="table-list"
       >
+         
         <div
           className="card--header"
         >
@@ -18353,7 +18367,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
             className="bx--toolbar card--toolbar"
           >
             <span
-              className="card--toolbar-timerange-lable Card__TimeRangeLabel-v5r71h-5 bSwbuP"
+              className="card--toolbar-timerange-lable CardRangePicker__TimeRangeLabel-ns6bu0-0 QmRa"
               id="timeRange"
             />
             <div
@@ -18370,7 +18384,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
               title="Open and close list of options"
             >
               <svg
-                aria-label="Open and close list of options"
+                aria-label="open and close list of options"
                 className="bx--overflow-menu__icon"
                 focusable="false"
                 height={20}
@@ -18397,12 +18411,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
                 />
                 <title>
-                  Open and close list of options
+                  open and close list of options
                 </title>
               </svg>
             </div>
             <button
-              className="card--toolbar-action Card__TinyButton-v5r71h-4 fggzfz bx--btn bx--btn--sm bx--btn--ghost"
+              className="card--toolbar-action CardToolbar__TinyButton-sc-1ekh8ti-0 eITXBg bx--btn bx--btn--sm bx--btn--ghost"
               disabled={false}
               onClick={[Function]}
               tabIndex={0}
@@ -19996,6 +20010,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
         className="Card__CardWrapper-v5r71h-0 kGdXdI"
         id="table-list"
       >
+         
         <div
           className="card--header"
         >
@@ -20010,7 +20025,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
             className="bx--toolbar card--toolbar"
           >
             <span
-              className="card--toolbar-timerange-lable Card__TimeRangeLabel-v5r71h-5 bSwbuP"
+              className="card--toolbar-timerange-lable CardRangePicker__TimeRangeLabel-ns6bu0-0 QmRa"
               id="timeRange"
             />
             <div
@@ -20027,7 +20042,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
               title="Open and close list of options"
             >
               <svg
-                aria-label="Open and close list of options"
+                aria-label="open and close list of options"
                 className="bx--overflow-menu__icon"
                 focusable="false"
                 height={20}
@@ -20054,7 +20069,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
                 />
                 <title>
-                  Open and close list of options
+                  open and close list of options
                 </title>
               </svg>
             </div>
@@ -22394,6 +22409,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
         className="Card__CardWrapper-v5r71h-0 kGdXdI"
         id="table-list"
       >
+         
         <div
           className="card--header"
         >
@@ -22408,7 +22424,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
             className="bx--toolbar card--toolbar"
           >
             <span
-              className="card--toolbar-timerange-lable Card__TimeRangeLabel-v5r71h-5 bSwbuP"
+              className="card--toolbar-timerange-lable CardRangePicker__TimeRangeLabel-ns6bu0-0 QmRa"
               id="timeRange"
             />
             <div
@@ -22425,7 +22441,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
               title="Open and close list of options"
             >
               <svg
-                aria-label="Open and close list of options"
+                aria-label="open and close list of options"
                 className="bx--overflow-menu__icon"
                 focusable="false"
                 height={20}
@@ -22452,7 +22468,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
                 />
                 <title>
-                  Open and close list of options
+                  open and close list of options
                 </title>
               </svg>
             </div>
@@ -23698,6 +23714,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
         className="Card__CardWrapper-v5r71h-0 kGdXdI"
         id="table-list"
       >
+         
         <div
           className="card--header"
         >
@@ -23712,7 +23729,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
             className="bx--toolbar card--toolbar"
           >
             <span
-              className="card--toolbar-timerange-lable Card__TimeRangeLabel-v5r71h-5 bSwbuP"
+              className="card--toolbar-timerange-lable CardRangePicker__TimeRangeLabel-ns6bu0-0 QmRa"
               id="timeRange"
             />
             <div
@@ -23729,7 +23746,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
               title="Open and close list of options"
             >
               <svg
-                aria-label="Open and close list of options"
+                aria-label="open and close list of options"
                 className="bx--overflow-menu__icon"
                 focusable="false"
                 height={20}
@@ -23756,7 +23773,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
                 />
                 <title>
-                  Open and close list of options
+                  open and close list of options
                 </title>
               </svg>
             </div>
@@ -26460,6 +26477,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
         className="Card__CardWrapper-v5r71h-0 kGdXdI"
         id="table-list"
       >
+         
         <div
           className="card--header"
         >
@@ -26474,7 +26492,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
             className="bx--toolbar card--toolbar"
           >
             <span
-              className="card--toolbar-timerange-lable Card__TimeRangeLabel-v5r71h-5 bSwbuP"
+              className="card--toolbar-timerange-lable CardRangePicker__TimeRangeLabel-ns6bu0-0 QmRa"
               id="timeRange"
             />
             <div
@@ -26491,7 +26509,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
               title="Open and close list of options"
             >
               <svg
-                aria-label="Open and close list of options"
+                aria-label="open and close list of options"
                 className="bx--overflow-menu__icon"
                 focusable="false"
                 height={20}
@@ -26518,12 +26536,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
                 />
                 <title>
-                  Open and close list of options
+                  open and close list of options
                 </title>
               </svg>
             </div>
             <button
-              className="card--toolbar-action Card__TinyButton-v5r71h-4 fggzfz bx--btn bx--btn--sm bx--btn--ghost"
+              className="card--toolbar-action CardToolbar__TinyButton-sc-1ekh8ti-0 eITXBg bx--btn bx--btn--sm bx--btn--ghost"
               disabled={false}
               onClick={[Function]}
               tabIndex={0}

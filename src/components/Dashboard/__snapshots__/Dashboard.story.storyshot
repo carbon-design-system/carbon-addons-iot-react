@@ -88,6 +88,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   id="facilitycard"
                   type="VALUE"
                 >
+                   
                   <div
                     className="card--header"
                   >
@@ -241,6 +242,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   id="facilitycard-xs"
                   type="VALUE"
                 >
+                   
                   <div
                     className="card--header"
                   >
@@ -313,6 +315,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   id="facilitycard-xs2"
                   type="VALUE"
                 >
+                   
                   <div
                     className="card--header"
                   >
@@ -388,6 +391,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   id="facilitycard-xs3"
                   type="VALUE"
                 >
+                   
                   <div
                     className="card--header"
                   >
@@ -463,6 +467,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   id="facilitycard-comfort-level"
                   type="VALUE"
                 >
+                   
                   <div
                     className="card--header"
                   >
@@ -560,6 +565,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   id="facilitycard-xs4"
                   type="VALUE"
                 >
+                   
                   <div
                     className="card--header"
                   >
@@ -632,6 +638,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   id="facilitycard-health"
                   type="VALUE"
                 >
+                   
                   <div
                     className="card--header"
                   >
@@ -729,6 +736,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   id="facility-temperature-timeseries"
                   type="TIMESERIES"
                 >
+                   
                   <div
                     className="card--header"
                   >
@@ -743,7 +751,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       className="bx--toolbar card--toolbar"
                     >
                       <span
-                        className="card--toolbar-timerange-lable Card__TimeRangeLabel-v5r71h-5 bSwbuP"
+                        className="card--toolbar-timerange-lable CardRangePicker__TimeRangeLabel-ns6bu0-0 QmRa"
                         id="timeRange"
                       >
                         Last 7 days
@@ -762,7 +770,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         title="Open and close list of options"
                       >
                         <svg
-                          aria-label="Open and close list of options"
+                          aria-label="Last 7 days"
                           className="bx--overflow-menu__icon"
                           focusable="false"
                           height={20}
@@ -789,12 +797,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
                           />
                           <title>
-                            Open and close list of options
+                            Last 7 days
                           </title>
                         </svg>
                       </div>
                       <button
-                        className="card--toolbar-action Card__TinyButton-v5r71h-4 fggzfz bx--btn bx--btn--sm bx--btn--ghost"
+                        className="card--toolbar-action CardToolbar__TinyButton-sc-1ekh8ti-0 eITXBg bx--btn bx--btn--sm bx--btn--ghost"
                         disabled={false}
                         onClick={[Function]}
                         tabIndex={0}
@@ -862,6 +870,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   id="alert-table1"
                   type="TABLE"
                 >
+                   
                   <div
                     className="card--header"
                   >
@@ -876,7 +885,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       className="bx--toolbar card--toolbar"
                     >
                       <button
-                        className="card--toolbar-action Card__TinyButton-v5r71h-4 fggzfz bx--btn bx--btn--sm bx--btn--ghost"
+                        className="card--toolbar-action CardToolbar__TinyButton-sc-1ekh8ti-0 eITXBg bx--btn bx--btn--sm bx--btn--ghost"
                         disabled={false}
                         onClick={[Function]}
                         tabIndex={0}
@@ -1337,6 +1346,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   id="facility-multi-timeseries"
                   type="TIMESERIES"
                 >
+                   
                   <div
                     className="card--header"
                   >
@@ -1351,7 +1361,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       className="bx--toolbar card--toolbar"
                     >
                       <span
-                        className="card--toolbar-timerange-lable Card__TimeRangeLabel-v5r71h-5 bSwbuP"
+                        className="card--toolbar-timerange-lable CardRangePicker__TimeRangeLabel-ns6bu0-0 QmRa"
                         id="timeRange"
                       >
                         Last year
@@ -1370,7 +1380,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         title="Open and close list of options"
                       >
                         <svg
-                          aria-label="Open and close list of options"
+                          aria-label="Last year"
                           className="bx--overflow-menu__icon"
                           focusable="false"
                           height={20}
@@ -1397,12 +1407,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
                           />
                           <title>
-                            Open and close list of options
+                            Last year
                           </title>
                         </svg>
                       </div>
                       <button
-                        className="card--toolbar-action Card__TinyButton-v5r71h-4 fggzfz bx--btn bx--btn--sm bx--btn--ghost"
+                        className="card--toolbar-action CardToolbar__TinyButton-sc-1ekh8ti-0 eITXBg bx--btn bx--btn--sm bx--btn--ghost"
                         disabled={false}
                         onClick={[Function]}
                         tabIndex={0}
@@ -1470,6 +1480,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   id="floor map picture"
                   type="IMAGE"
                 >
+                   
                   <div
                     className="card--header"
                   >
@@ -1484,7 +1495,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       className="bx--toolbar card--toolbar"
                     >
                       <button
-                        className="card--toolbar-action Card__TinyButton-v5r71h-4 fggzfz bx--btn bx--btn--sm bx--btn--ghost"
+                        className="card--toolbar-action CardToolbar__TinyButton-sc-1ekh8ti-0 eITXBg bx--btn bx--btn--sm bx--btn--ghost"
                         disabled={false}
                         onClick={[Function]}
                         tabIndex={0}
@@ -1933,6 +1944,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   id="facilitycard"
                   type="VALUE"
                 >
+                   
                   <div
                     className="card--header"
                   >
@@ -2086,6 +2098,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   id="facilitycard-xs"
                   type="VALUE"
                 >
+                   
                   <div
                     className="card--header"
                   >
@@ -2158,6 +2171,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   id="facilitycard-xs2"
                   type="VALUE"
                 >
+                   
                   <div
                     className="card--header"
                   >
@@ -2233,6 +2247,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   id="facilitycard-xs3"
                   type="VALUE"
                 >
+                   
                   <div
                     className="card--header"
                   >
@@ -2308,6 +2323,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   id="facilitycard-comfort-level"
                   type="VALUE"
                 >
+                   
                   <div
                     className="card--header"
                   >
@@ -2405,6 +2421,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   id="facilitycard-xs4"
                   type="VALUE"
                 >
+                   
                   <div
                     className="card--header"
                   >
@@ -2477,6 +2494,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   id="facilitycard-health"
                   type="VALUE"
                 >
+                   
                   <div
                     className="card--header"
                   >
@@ -2574,6 +2592,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   id="facility-temperature-timeseries"
                   type="TIMESERIES"
                 >
+                   
                   <div
                     className="card--header"
                   >
@@ -2588,7 +2607,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       className="bx--toolbar card--toolbar"
                     >
                       <span
-                        className="card--toolbar-timerange-lable Card__TimeRangeLabel-v5r71h-5 bSwbuP"
+                        className="card--toolbar-timerange-lable CardRangePicker__TimeRangeLabel-ns6bu0-0 QmRa"
                         id="timeRange"
                       >
                         Last 7 days
@@ -2607,7 +2626,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         title="Open and close list of options"
                       >
                         <svg
-                          aria-label="Open and close list of options"
+                          aria-label="Last 7 days"
                           className="bx--overflow-menu__icon"
                           focusable="false"
                           height={20}
@@ -2634,12 +2653,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
                           />
                           <title>
-                            Open and close list of options
+                            Last 7 days
                           </title>
                         </svg>
                       </div>
                       <button
-                        className="card--toolbar-action Card__TinyButton-v5r71h-4 fggzfz bx--btn bx--btn--sm bx--btn--ghost"
+                        className="card--toolbar-action CardToolbar__TinyButton-sc-1ekh8ti-0 eITXBg bx--btn bx--btn--sm bx--btn--ghost"
                         disabled={false}
                         onClick={[Function]}
                         tabIndex={0}
@@ -2707,6 +2726,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   id="alert-table1"
                   type="TABLE"
                 >
+                   
                   <div
                     className="card--header"
                   >
@@ -2721,7 +2741,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       className="bx--toolbar card--toolbar"
                     >
                       <button
-                        className="card--toolbar-action Card__TinyButton-v5r71h-4 fggzfz bx--btn bx--btn--sm bx--btn--ghost"
+                        className="card--toolbar-action CardToolbar__TinyButton-sc-1ekh8ti-0 eITXBg bx--btn bx--btn--sm bx--btn--ghost"
                         disabled={false}
                         onClick={[Function]}
                         tabIndex={0}
@@ -3182,6 +3202,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   id="facility-multi-timeseries"
                   type="TIMESERIES"
                 >
+                   
                   <div
                     className="card--header"
                   >
@@ -3196,7 +3217,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       className="bx--toolbar card--toolbar"
                     >
                       <span
-                        className="card--toolbar-timerange-lable Card__TimeRangeLabel-v5r71h-5 bSwbuP"
+                        className="card--toolbar-timerange-lable CardRangePicker__TimeRangeLabel-ns6bu0-0 QmRa"
                         id="timeRange"
                       >
                         Last year
@@ -3215,7 +3236,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         title="Open and close list of options"
                       >
                         <svg
-                          aria-label="Open and close list of options"
+                          aria-label="Last year"
                           className="bx--overflow-menu__icon"
                           focusable="false"
                           height={20}
@@ -3242,12 +3263,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
                           />
                           <title>
-                            Open and close list of options
+                            Last year
                           </title>
                         </svg>
                       </div>
                       <button
-                        className="card--toolbar-action Card__TinyButton-v5r71h-4 fggzfz bx--btn bx--btn--sm bx--btn--ghost"
+                        className="card--toolbar-action CardToolbar__TinyButton-sc-1ekh8ti-0 eITXBg bx--btn bx--btn--sm bx--btn--ghost"
                         disabled={false}
                         onClick={[Function]}
                         tabIndex={0}
@@ -3315,6 +3336,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   id="floor map picture"
                   type="IMAGE"
                 >
+                   
                   <div
                     className="card--header"
                   >
@@ -3329,7 +3351,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       className="bx--toolbar card--toolbar"
                     >
                       <button
-                        className="card--toolbar-action Card__TinyButton-v5r71h-4 fggzfz bx--btn bx--btn--sm bx--btn--ghost"
+                        className="card--toolbar-action CardToolbar__TinyButton-sc-1ekh8ti-0 eITXBg bx--btn bx--btn--sm bx--btn--ghost"
                         disabled={false}
                         onClick={[Function]}
                         tabIndex={0}
@@ -3810,6 +3832,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   id="facilitycard"
                   type="VALUE"
                 >
+                   
                   <div
                     className="card--header"
                   >
@@ -3963,6 +3986,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   id="facilitycard-xs"
                   type="VALUE"
                 >
+                   
                   <div
                     className="card--header"
                   >
@@ -4035,6 +4059,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   id="facilitycard-xs2"
                   type="VALUE"
                 >
+                   
                   <div
                     className="card--header"
                   >
@@ -4110,6 +4135,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   id="facilitycard-xs3"
                   type="VALUE"
                 >
+                   
                   <div
                     className="card--header"
                   >
@@ -4185,6 +4211,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   id="facilitycard-comfort-level"
                   type="VALUE"
                 >
+                   
                   <div
                     className="card--header"
                   >
@@ -4282,6 +4309,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   id="facilitycard-xs4"
                   type="VALUE"
                 >
+                   
                   <div
                     className="card--header"
                   >
@@ -4354,6 +4382,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   id="facilitycard-health"
                   type="VALUE"
                 >
+                   
                   <div
                     className="card--header"
                   >
@@ -4451,6 +4480,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   id="facility-temperature-timeseries"
                   type="TIMESERIES"
                 >
+                   
                   <div
                     className="card--header"
                   >
@@ -4465,7 +4495,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       className="bx--toolbar card--toolbar"
                     >
                       <span
-                        className="card--toolbar-timerange-lable Card__TimeRangeLabel-v5r71h-5 bSwbuP"
+                        className="card--toolbar-timerange-lable CardRangePicker__TimeRangeLabel-ns6bu0-0 QmRa"
                         id="timeRange"
                       >
                         Last 7 days
@@ -4484,7 +4514,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         title="Open and close list of options"
                       >
                         <svg
-                          aria-label="Open and close list of options"
+                          aria-label="Last 7 days"
                           className="bx--overflow-menu__icon"
                           focusable="false"
                           height={20}
@@ -4511,12 +4541,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
                           />
                           <title>
-                            Open and close list of options
+                            Last 7 days
                           </title>
                         </svg>
                       </div>
                       <button
-                        className="card--toolbar-action Card__TinyButton-v5r71h-4 fggzfz bx--btn bx--btn--sm bx--btn--ghost"
+                        className="card--toolbar-action CardToolbar__TinyButton-sc-1ekh8ti-0 eITXBg bx--btn bx--btn--sm bx--btn--ghost"
                         disabled={false}
                         onClick={[Function]}
                         tabIndex={0}
@@ -4584,6 +4614,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   id="alert-table1"
                   type="TABLE"
                 >
+                   
                   <div
                     className="card--header"
                   >
@@ -4598,7 +4629,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       className="bx--toolbar card--toolbar"
                     >
                       <button
-                        className="card--toolbar-action Card__TinyButton-v5r71h-4 fggzfz bx--btn bx--btn--sm bx--btn--ghost"
+                        className="card--toolbar-action CardToolbar__TinyButton-sc-1ekh8ti-0 eITXBg bx--btn bx--btn--sm bx--btn--ghost"
                         disabled={false}
                         onClick={[Function]}
                         tabIndex={0}
@@ -5059,6 +5090,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   id="facility-multi-timeseries"
                   type="TIMESERIES"
                 >
+                   
                   <div
                     className="card--header"
                   >
@@ -5073,7 +5105,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       className="bx--toolbar card--toolbar"
                     >
                       <span
-                        className="card--toolbar-timerange-lable Card__TimeRangeLabel-v5r71h-5 bSwbuP"
+                        className="card--toolbar-timerange-lable CardRangePicker__TimeRangeLabel-ns6bu0-0 QmRa"
                         id="timeRange"
                       >
                         Last year
@@ -5092,7 +5124,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         title="Open and close list of options"
                       >
                         <svg
-                          aria-label="Open and close list of options"
+                          aria-label="Last year"
                           className="bx--overflow-menu__icon"
                           focusable="false"
                           height={20}
@@ -5119,12 +5151,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
                           />
                           <title>
-                            Open and close list of options
+                            Last year
                           </title>
                         </svg>
                       </div>
                       <button
-                        className="card--toolbar-action Card__TinyButton-v5r71h-4 fggzfz bx--btn bx--btn--sm bx--btn--ghost"
+                        className="card--toolbar-action CardToolbar__TinyButton-sc-1ekh8ti-0 eITXBg bx--btn bx--btn--sm bx--btn--ghost"
                         disabled={false}
                         onClick={[Function]}
                         tabIndex={0}
@@ -5192,6 +5224,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   id="floor map picture"
                   type="IMAGE"
                 >
+                   
                   <div
                     className="card--header"
                   >
@@ -5206,7 +5239,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       className="bx--toolbar card--toolbar"
                     >
                       <button
-                        className="card--toolbar-action Card__TinyButton-v5r71h-4 fggzfz bx--btn bx--btn--sm bx--btn--ghost"
+                        className="card--toolbar-action CardToolbar__TinyButton-sc-1ekh8ti-0 eITXBg bx--btn bx--btn--sm bx--btn--ghost"
                         disabled={false}
                         onClick={[Function]}
                         tabIndex={0}
@@ -5662,6 +5695,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   id="expandedcard"
                   type="IMAGE"
                 >
+                   
                   <div
                     className="card--header"
                   >
@@ -5676,7 +5710,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       className="bx--toolbar card--toolbar"
                     >
                       <button
-                        className="card--toolbar-action Card__TinyButton-v5r71h-4 fggzfz bx--btn bx--btn--sm bx--btn--ghost"
+                        className="card--toolbar-action CardToolbar__TinyButton-sc-1ekh8ti-0 eITXBg bx--btn bx--btn--sm bx--btn--ghost"
                         disabled={false}
                         onClick={[Function]}
                         tabIndex={0}
@@ -5968,6 +6002,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 id="expandedcard"
                 type="TIMESERIES"
               >
+                 
                 <div
                   className="card--header"
                 >
@@ -5982,7 +6017,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     className="bx--toolbar card--toolbar"
                   >
                     <button
-                      className="card--toolbar-action Card__TinyButton-v5r71h-4 fggzfz bx--btn bx--btn--sm bx--btn--ghost"
+                      className="card--toolbar-action CardToolbar__TinyButton-sc-1ekh8ti-0 eITXBg bx--btn bx--btn--sm bx--btn--ghost"
                       disabled={false}
                       onClick={[Function]}
                       tabIndex={0}
@@ -6160,6 +6195,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   id="expandedcard"
                   type="TABLE"
                 >
+                   
                   <div
                     className="card--header"
                   >
@@ -6174,7 +6210,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       className="bx--toolbar card--toolbar"
                     >
                       <button
-                        className="card--toolbar-action Card__TinyButton-v5r71h-4 fggzfz bx--btn bx--btn--sm bx--btn--ghost"
+                        className="card--toolbar-action CardToolbar__TinyButton-sc-1ekh8ti-0 eITXBg bx--btn bx--btn--sm bx--btn--ghost"
                         disabled={false}
                         onClick={[Function]}
                         tabIndex={0}
@@ -8022,6 +8058,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   id="facilitycard"
                   type="VALUE"
                 >
+                   
                   <div
                     className="card--header"
                   >
@@ -8175,6 +8212,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   id="facilitycard-xs"
                   type="VALUE"
                 >
+                   
                   <div
                     className="card--header"
                   >
@@ -8247,6 +8285,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   id="facilitycard-xs2"
                   type="VALUE"
                 >
+                   
                   <div
                     className="card--header"
                   >
@@ -8322,6 +8361,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   id="facilitycard-xs3"
                   type="VALUE"
                 >
+                   
                   <div
                     className="card--header"
                   >
@@ -8397,6 +8437,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   id="facilitycard-comfort-level"
                   type="VALUE"
                 >
+                   
                   <div
                     className="card--header"
                   >
@@ -8494,6 +8535,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   id="facilitycard-xs4"
                   type="VALUE"
                 >
+                   
                   <div
                     className="card--header"
                   >
@@ -8566,6 +8608,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   id="facilitycard-health"
                   type="VALUE"
                 >
+                   
                   <div
                     className="card--header"
                   >
@@ -8663,6 +8706,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   id="facility-temperature-timeseries"
                   type="TIMESERIES"
                 >
+                   
                   <div
                     className="card--header"
                   >
@@ -8677,7 +8721,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       className="bx--toolbar card--toolbar"
                     >
                       <span
-                        className="card--toolbar-timerange-lable Card__TimeRangeLabel-v5r71h-5 bSwbuP"
+                        className="card--toolbar-timerange-lable CardRangePicker__TimeRangeLabel-ns6bu0-0 QmRa"
                         id="timeRange"
                       >
                         Last 7 days
@@ -8696,7 +8740,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         title="open and close list of options"
                       >
                         <svg
-                          aria-label="open and close list of options"
+                          aria-label="Last 7 days"
                           className="bx--overflow-menu__icon"
                           focusable="false"
                           height={20}
@@ -8723,12 +8767,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
                           />
                           <title>
-                            open and close list of options
+                            Last 7 days
                           </title>
                         </svg>
                       </div>
                       <button
-                        className="card--toolbar-action Card__TinyButton-v5r71h-4 fggzfz bx--btn bx--btn--sm bx--btn--ghost"
+                        className="card--toolbar-action CardToolbar__TinyButton-sc-1ekh8ti-0 eITXBg bx--btn bx--btn--sm bx--btn--ghost"
                         disabled={false}
                         onClick={[Function]}
                         tabIndex={0}
@@ -8796,6 +8840,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   id="alert-table1"
                   type="TABLE"
                 >
+                   
                   <div
                     className="card--header"
                   >
@@ -8810,7 +8855,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       className="bx--toolbar card--toolbar"
                     >
                       <button
-                        className="card--toolbar-action Card__TinyButton-v5r71h-4 fggzfz bx--btn bx--btn--sm bx--btn--ghost"
+                        className="card--toolbar-action CardToolbar__TinyButton-sc-1ekh8ti-0 eITXBg bx--btn bx--btn--sm bx--btn--ghost"
                         disabled={false}
                         onClick={[Function]}
                         tabIndex={0}
@@ -9271,6 +9316,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   id="facility-multi-timeseries"
                   type="TIMESERIES"
                 >
+                   
                   <div
                     className="card--header"
                   >
@@ -9285,7 +9331,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       className="bx--toolbar card--toolbar"
                     >
                       <span
-                        className="card--toolbar-timerange-lable Card__TimeRangeLabel-v5r71h-5 bSwbuP"
+                        className="card--toolbar-timerange-lable CardRangePicker__TimeRangeLabel-ns6bu0-0 QmRa"
                         id="timeRange"
                       >
                         Last year
@@ -9304,7 +9350,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         title="open and close list of options"
                       >
                         <svg
-                          aria-label="open and close list of options"
+                          aria-label="Last year"
                           className="bx--overflow-menu__icon"
                           focusable="false"
                           height={20}
@@ -9331,12 +9377,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
                           />
                           <title>
-                            open and close list of options
+                            Last year
                           </title>
                         </svg>
                       </div>
                       <button
-                        className="card--toolbar-action Card__TinyButton-v5r71h-4 fggzfz bx--btn bx--btn--sm bx--btn--ghost"
+                        className="card--toolbar-action CardToolbar__TinyButton-sc-1ekh8ti-0 eITXBg bx--btn bx--btn--sm bx--btn--ghost"
                         disabled={false}
                         onClick={[Function]}
                         tabIndex={0}
@@ -9404,6 +9450,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   id="floor map picture"
                   type="IMAGE"
                 >
+                   
                   <div
                     className="card--header"
                   >
@@ -9418,7 +9465,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       className="bx--toolbar card--toolbar"
                     >
                       <button
-                        className="card--toolbar-action Card__TinyButton-v5r71h-4 fggzfz bx--btn bx--btn--sm bx--btn--ghost"
+                        className="card--toolbar-action CardToolbar__TinyButton-sc-1ekh8ti-0 eITXBg bx--btn bx--btn--sm bx--btn--ghost"
                         disabled={false}
                         onClick={[Function]}
                         tabIndex={0}
@@ -9875,6 +9922,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmall-number-0"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -9947,6 +9995,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmall-number-1"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -10019,6 +10068,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmall-number-2"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -10091,6 +10141,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmall-number-3"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -10163,6 +10214,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmall-number-4"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -10235,6 +10287,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmall-number-5"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -10311,6 +10364,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmall-number-6"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -10452,6 +10506,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmall-number-0"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -10524,6 +10579,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmall-number-1"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -10596,6 +10652,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmall-number-2"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -10668,6 +10725,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmall-number-3"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -10740,6 +10798,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmall-number-4"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -10812,6 +10871,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmall-number-5"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -10888,6 +10948,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmall-number-6"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -11029,6 +11090,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmall-number-0"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -11101,6 +11163,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmall-number-1"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -11176,6 +11239,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmall-number-2"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -11248,6 +11312,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmall-number-3"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -11388,6 +11453,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmall-number-0"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -11460,6 +11526,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmall-number-1"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -11535,6 +11602,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmall-number-2"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -11607,6 +11675,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmall-number-3"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -11747,6 +11816,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmall-number-threshold-0"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -11844,6 +11914,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmall-number-threshold-1"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -11941,6 +12012,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmall-number-threshold-2"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -12038,6 +12110,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmall-number-threshold-3"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -12200,6 +12273,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmall-number-threshold-0"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -12297,6 +12371,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmall-number-threshold-1"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -12394,6 +12469,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmall-number-threshold-2"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -12491,6 +12567,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmall-number-threshold-3"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -12653,6 +12730,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmall-string-threshold-0"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -12725,6 +12803,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmall-string-threshold-1"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -12797,6 +12876,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmall-string-threshold-2"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -12869,6 +12949,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmall-string-threshold-3"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -12941,6 +13022,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmall-string-threshold-4"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -13078,6 +13160,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmall-string-threshold-0"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -13150,6 +13233,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmall-string-threshold-1"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -13222,6 +13306,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmall-string-threshold-2"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -13294,6 +13379,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmall-string-threshold-3"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -13366,6 +13452,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmall-string-threshold-4"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -13503,6 +13590,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmallwide-number-0"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -13575,6 +13663,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmallwide-number-1"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -13647,6 +13736,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmallwide-number-2"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -13719,6 +13809,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmallwide-number-3"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -13791,6 +13882,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmallwide-number-4"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -13863,6 +13955,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmallwide-number-5"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -13939,6 +14032,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmallwide-number-6"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -14015,6 +14109,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmallwide-number-trend-0"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -14087,6 +14182,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmallwide-number-trend-1"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -14162,6 +14258,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmallwide-number-trend-2"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -14234,6 +14331,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmallwide-number-trend-3"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -14309,6 +14407,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmallwide-number-threshold-0"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -14406,6 +14505,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmallwide-number-threshold-1"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -14503,6 +14603,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmallwide-number-threshold-2"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -14600,6 +14701,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmallwide-number-threshold-3"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -14697,6 +14799,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmallwide-string-threshold-0"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -14769,6 +14872,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmallwide-string-threshold-1"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -14841,6 +14945,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmallwide-string-threshold-2"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -14913,6 +15018,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmallwide-string-threshold-3"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -14985,6 +15091,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmallwide-string-threshold-4"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -15122,6 +15229,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmallwide-number-0"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -15194,6 +15302,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmallwide-number-1"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -15266,6 +15375,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmallwide-number-2"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -15338,6 +15448,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmallwide-number-3"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -15410,6 +15521,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmallwide-number-4"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -15482,6 +15594,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmallwide-number-5"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -15558,6 +15671,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmallwide-number-6"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -15634,6 +15748,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmallwide-number-trend-0"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -15706,6 +15821,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmallwide-number-trend-1"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -15781,6 +15897,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmallwide-number-trend-2"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -15853,6 +15970,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmallwide-number-trend-3"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -15928,6 +16046,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmallwide-number-threshold-0"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -16025,6 +16144,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmallwide-number-threshold-1"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -16122,6 +16242,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmallwide-number-threshold-2"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -16219,6 +16340,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmallwide-number-threshold-3"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -16316,6 +16438,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmallwide-string-threshold-0"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -16388,6 +16511,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmallwide-string-threshold-1"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -16460,6 +16584,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmallwide-string-threshold-2"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -16532,6 +16657,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmallwide-string-threshold-3"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -16604,6 +16730,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmallwide-string-threshold-4"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -16741,6 +16868,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmallwide-multi-0"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -16847,6 +16975,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmallwide-multi-1"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -16953,6 +17082,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmallwide-multi-2"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -17124,6 +17254,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmallwide-multi-0"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -17230,6 +17361,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmallwide-multi-1"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -17336,6 +17468,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmallwide-multi-2"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -17507,6 +17640,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmallwide-multi-0"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -17613,6 +17747,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmallwide-multi-1"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -17719,6 +17854,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmallwide-multi-2"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -17890,6 +18026,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmallwide-multi-0"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -17996,6 +18133,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmallwide-multi-1"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -18102,6 +18240,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmallwide-multi-2"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -18273,6 +18412,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmallwide-multi-number-threshold-0"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -18429,6 +18569,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmallwide-multi-number-threshold-1"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -18650,6 +18791,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmallwide-multi-number-threshold-0"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -18806,6 +18948,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmallwide-multi-number-threshold-1"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -19027,6 +19170,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmallwide-multi-number-threshold-0"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -19180,6 +19324,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmallwide-multi-number-threshold-1"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -19333,6 +19478,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmallwide-multi-number-threshold-2"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -19626,6 +19772,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmallwide-multi-number-threshold-0"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -19779,6 +19926,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmallwide-multi-number-threshold-1"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -19932,6 +20080,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="xsmallwide-multi-number-threshold-2"
                     type="VALUE"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -20293,6 +20442,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   id="facilitycard"
                   type="VALUE"
                 >
+                   
                   <div
                     className="card--header"
                   >
@@ -20446,6 +20596,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   id="facilitycard-xs"
                   type="VALUE"
                 >
+                   
                   <div
                     className="card--header"
                   >
@@ -20518,6 +20669,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   id="facilitycard-xs2"
                   type="VALUE"
                 >
+                   
                   <div
                     className="card--header"
                   >
@@ -20593,6 +20745,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   id="facilitycard-xs3"
                   type="VALUE"
                 >
+                   
                   <div
                     className="card--header"
                   >
@@ -20668,6 +20821,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   id="facilitycard-comfort-level"
                   type="VALUE"
                 >
+                   
                   <div
                     className="card--header"
                   >
@@ -20765,6 +20919,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   id="facilitycard-xs4"
                   type="VALUE"
                 >
+                   
                   <div
                     className="card--header"
                   >
@@ -20837,6 +20992,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   id="facilitycard-health"
                   type="VALUE"
                 >
+                   
                   <div
                     className="card--header"
                   >
@@ -20934,6 +21090,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   id="facility-temperature-timeseries"
                   type="TIMESERIES"
                 >
+                   
                   <div
                     className="card--header"
                   >
@@ -20948,7 +21105,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       className="bx--toolbar card--toolbar"
                     >
                       <span
-                        className="card--toolbar-timerange-lable Card__TimeRangeLabel-v5r71h-5 bSwbuP"
+                        className="card--toolbar-timerange-lable CardRangePicker__TimeRangeLabel-ns6bu0-0 QmRa"
                         id="timeRange"
                       >
                         Last 7 days
@@ -20967,7 +21124,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         title="Open and close list of options"
                       >
                         <svg
-                          aria-label="Open and close list of options"
+                          aria-label="Last 7 days"
                           className="bx--overflow-menu__icon"
                           focusable="false"
                           height={20}
@@ -20994,12 +21151,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
                           />
                           <title>
-                            Open and close list of options
+                            Last 7 days
                           </title>
                         </svg>
                       </div>
                       <button
-                        className="card--toolbar-action Card__TinyButton-v5r71h-4 fggzfz bx--btn bx--btn--sm bx--btn--ghost"
+                        className="card--toolbar-action CardToolbar__TinyButton-sc-1ekh8ti-0 eITXBg bx--btn bx--btn--sm bx--btn--ghost"
                         disabled={false}
                         onClick={[Function]}
                         tabIndex={0}
@@ -21067,6 +21224,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   id="alert-table1"
                   type="TABLE"
                 >
+                   
                   <div
                     className="card--header"
                   >
@@ -21081,7 +21239,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       className="bx--toolbar card--toolbar"
                     >
                       <button
-                        className="card--toolbar-action Card__TinyButton-v5r71h-4 fggzfz bx--btn bx--btn--sm bx--btn--ghost"
+                        className="card--toolbar-action CardToolbar__TinyButton-sc-1ekh8ti-0 eITXBg bx--btn bx--btn--sm bx--btn--ghost"
                         disabled={false}
                         onClick={[Function]}
                         tabIndex={0}
@@ -21542,6 +21700,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   id="facility-multi-timeseries"
                   type="TIMESERIES"
                 >
+                   
                   <div
                     className="card--header"
                   >
@@ -21556,7 +21715,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       className="bx--toolbar card--toolbar"
                     >
                       <span
-                        className="card--toolbar-timerange-lable Card__TimeRangeLabel-v5r71h-5 bSwbuP"
+                        className="card--toolbar-timerange-lable CardRangePicker__TimeRangeLabel-ns6bu0-0 QmRa"
                         id="timeRange"
                       >
                         Last year
@@ -21575,7 +21734,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         title="Open and close list of options"
                       >
                         <svg
-                          aria-label="Open and close list of options"
+                          aria-label="Last year"
                           className="bx--overflow-menu__icon"
                           focusable="false"
                           height={20}
@@ -21602,12 +21761,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
                           />
                           <title>
-                            Open and close list of options
+                            Last year
                           </title>
                         </svg>
                       </div>
                       <button
-                        className="card--toolbar-action Card__TinyButton-v5r71h-4 fggzfz bx--btn bx--btn--sm bx--btn--ghost"
+                        className="card--toolbar-action CardToolbar__TinyButton-sc-1ekh8ti-0 eITXBg bx--btn bx--btn--sm bx--btn--ghost"
                         disabled={false}
                         onClick={[Function]}
                         tabIndex={0}
@@ -21675,6 +21834,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   id="floor map picture"
                   type="IMAGE"
                 >
+                   
                   <div
                     className="card--header"
                   >
@@ -21689,7 +21849,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       className="bx--toolbar card--toolbar"
                     >
                       <button
-                        className="card--toolbar-action Card__TinyButton-v5r71h-4 fggzfz bx--btn bx--btn--sm bx--btn--ghost"
+                        className="card--toolbar-action CardToolbar__TinyButton-sc-1ekh8ti-0 eITXBg bx--btn bx--btn--sm bx--btn--ghost"
                         disabled={false}
                         onClick={[Function]}
                         tabIndex={0}
@@ -22179,6 +22339,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="viewDashboards"
                     type="CUSTOM"
                   >
+                     
                     <div
                       className="Card__CardContent-v5r71h-1 hDVRgE"
                     >
@@ -22305,6 +22466,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="connectDevices"
                     type="CUSTOM"
                   >
+                     
                     <div
                       className="Card__CardContent-v5r71h-1 hDVRgE"
                     >
@@ -22418,6 +22580,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="monitorEntities"
                     type="CUSTOM"
                   >
+                     
                     <div
                       className="Card__CardContent-v5r71h-1 hDVRgE"
                     >
@@ -22509,6 +22672,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="trackUsage"
                     type="CUSTOM"
                   >
+                     
                     <div
                       className="Card__CardContent-v5r71h-1 hoCWQe"
                     >
@@ -22607,6 +22771,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="administerUsers"
                     type="CUSTOM"
                   >
+                     
                     <div
                       className="Card__CardContent-v5r71h-1 hoCWQe"
                     >
@@ -22708,6 +22873,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     onScroll={[Function]}
                     type="LIST"
                   >
+                     
                     <div
                       className="card--header"
                     >
@@ -22891,6 +23057,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     onScroll={[Function]}
                     type="LIST"
                   >
+                     
                     <div
                       className="card--header"
                     >
