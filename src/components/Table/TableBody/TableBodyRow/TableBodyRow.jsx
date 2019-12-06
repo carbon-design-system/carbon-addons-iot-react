@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { DataTable, Checkbox } from 'carbon-components-react';
 import styled from 'styled-components';
+import { TextInput as CarbonTextInput } from 'carbon-components-react';
 
 import RowActionsCell from '../RowActionsCell/RowActionsCell';
 import TableCellRenderer from '../../TableCellRenderer/TableCellRenderer';
@@ -78,6 +79,7 @@ const propTypes = {
     onRowClicked: PropTypes.func,
     onApplyRowAction: PropTypes.func,
     onRowExpanded: PropTypes.func,
+    onApplyEdit: PropTypes.func,
   }).isRequired,
   /** optional per-row actions */
   rowActions: RowActionPropTypes,
@@ -370,7 +372,7 @@ const TableBodyRow = ({
     hasRowNesting,
     shouldExpandOnRowClick,
   },
-  tableActions: { onRowSelected, onRowExpanded, onRowClicked, onApplyRowAction, onClearRowError },
+  tableActions: { onRowSelected, onRowExpanded, onRowClicked, onApplyRowAction, onClearRowError, onApplyEdit },
   isExpanded,
   isSelected,
   selectRowAria,
@@ -464,12 +466,22 @@ const TableBodyRow = ({
           ) : (
             <StyledNestedSpan nestingOffset={offset}>
               {col.editDataFunction ? (
-                col.editDataFunction({
-                  value: values[col.columnId],
-                  columnId: col.columnId,
-                  rowId: id,
-                  row: values,
-                })
+                <CarbonTextInput
+                id={id}
+                compactvalidation='true'
+                onChange={ event => onApplyEdit(event.currentTarget ? event.currentTarget.value : '', col.columnId, values[col.columnId], id, values) }
+                onClick={function noRefCheck(){}}
+                type="text"
+                disabled={false}
+                invalid={false}
+                light
+                defaultValue={values[col.columnId]}
+                placeholder="Placeholder text"
+                helperText=""
+                invalidText=""
+                labelText=""
+                hideLabel
+              />
               ) : (
                 <TableCellRenderer>{values[col.columnId]}</TableCellRenderer>
               )}

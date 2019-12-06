@@ -14,6 +14,7 @@ const AsyncTable = ({ fetchData, id }) => {
 
   const [state, dispatch] = useReducer(reducer, {
     data: [],
+    oldData: [],
     view: {
       filters: [],
       pagination: {
@@ -201,6 +202,9 @@ const AsyncTable = ({ fetchData, id }) => {
       onChangeOrdering: ordering => {
         dispatch(baseTableActions.tableColumnOrder(ordering));
       },
+      onApplyEdit: (targetValue, columnId, columnValue, rowId, rowValues) => {
+        dispatch(tableEditApply(targetValue, columnId, columnValue, rowId, rowValues));
+      },
 
       // These actions don't have any impact on table state
       // (and we don't need to make use of them in this example)
@@ -216,6 +220,7 @@ const AsyncTable = ({ fetchData, id }) => {
       id={id}
       columns={columns}
       data={state.data}
+      oldData={state.oldData}
       view={state.view}
       actions={actions}
       options={{

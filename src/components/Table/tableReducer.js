@@ -24,6 +24,7 @@ import {
   TABLE_SEARCH_APPLY,
   TABLE_EDIT_CANCEL,
   TABLE_EDIT_SAVE,
+  TABLE_EDIT_APPLY,
 } from './tableActionCreators';
 import { baseTableReducer } from './baseTableReducer';
 
@@ -180,6 +181,15 @@ export const tableReducer = (state = {}, action) => {
       return baseTableReducer(state, action);
     }
     case TABLE_EDIT_SAVE: {
+      return baseTableReducer(state, action);
+    }
+    case TABLE_EDIT_APPLY: {
+      const rowId = action.payload.rowId;
+      const columnId = action.payload.columnId;
+      const targetValue = action.payload.targetValue;
+      const columnValue = action.payload.columnValue;
+      const rowIndex = state.data.findIndex(element => element.id ? element.id === rowId : null);
+      state.data[rowIndex].values[columnId] = targetValue;
       return baseTableReducer(state, action);
     }
 

@@ -23,6 +23,7 @@ import {
   tableRowActionError,
   tableEditCancel,
   tableEditSave,
+  tableEditApply,
 } from './tableActionCreators';
 import Table, { defaultProps } from './Table';
 
@@ -90,6 +91,7 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
     onClearRowError,
     onEmptyStateAction,
     onChangeOrdering,
+    onApplyEdit,
   } = table || {};
 
   // In addition to updating the store, I always callback to the parent in case they want to do something
@@ -183,6 +185,10 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
       onChangeOrdering: ordering => {
         dispatch(tableColumnOrder(ordering));
         callbackParent(onChangeOrdering, ordering);
+      },
+      onApplyEdit: (targetValue, columnId, columnValue, rowId, rowValues) => {
+        dispatch(tableEditApply(targetValue, columnId, columnValue, rowId, rowValues));
+        callbackParent(onApplyEdit, targetValue, columnId, columnValue, rowId, rowValues);
       },
     },
   };

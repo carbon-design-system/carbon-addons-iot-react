@@ -62,30 +62,7 @@ const renderStatusIcon = ({ value: status }) => {
   }
 };
 
-const editData = ({rowId, value, columnId}) => {
-  return (
-    <CarbonTextInput
-      id={rowId}
-      compactvalidation='true'
-      onChange={e => {
-          const rowIndex = tableData.findIndex(element => element.id ? element.id === rowId : null);
-          tableData[rowIndex].values[columnId] = (e.currentTarget ? e.currentTarget.value : "");
-        }
-      }
-      onClick={function noRefCheck(){}}
-      type="text"
-      disabled={false}
-      invalid={false}
-      light
-      defaultValue={value}
-      placeholder="Placeholder text"
-      helperText=""
-      invalidText=""
-      labelText=""
-      hideLabel
-    />
-  )
-};
+const editData = () => {};
 
 export const tableColumns = [
   {
@@ -313,6 +290,7 @@ const actions = {
     onRowExpanded: action('onRowExpanded'),
     onChangeOrdering: action('onChangeOrdering'),
     onChangeSort: action('onChangeSort'),
+    onApplyEdit: action('onApplyEdit'),
   },
 };
 // const exampletext = (

@@ -68,6 +68,7 @@ const propTypes = {
   columns: TableColumnsPropTypes.isRequired,
   /** Row value data for the body of the table */
   data: TableRowPropTypes.isRequired,
+  oldData: PropTypes.object,
   /** Expanded data for the table details */
   expandedData: ExpandedRowsPropTypes,
   /** Optional properties to customize how the table should be rendered */
@@ -180,6 +181,7 @@ const propTypes = {
       onClearRowError: PropTypes.func,
       onEmptyStateAction: PropTypes.func,
       onChangeOrdering: PropTypes.func,
+      onApplyEdit: PropTypes.func,
     }).isRequired,
   }),
   i18n: I18NPropTypes,
@@ -245,6 +247,7 @@ export const defaultProps = baseProps => ({
       onApplyRowAction: defaultFunction('actions.table.onApplyRowAction'),
       onEmptyStateAction: defaultFunction('actions.table.onEmptyStateAction'),
       onChangeOrdering: defaultFunction('actions.table.onChangeOrdering'),
+      onApplyEdit: defaultFunction('actions.table.onApplyEdit'),
     },
   },
   i18n: {
@@ -302,6 +305,7 @@ const Table = props => {
     className,
     style,
     i18n,
+    oldData,
     ...others
   } = merge({}, defaultProps(props), props);
 
@@ -380,7 +384,7 @@ const Table = props => {
             'search',
             'activeBar',
             'customToolbarContent',
-            'isDisabled'
+            'isDisabled',
           ),
         }}
       />
@@ -455,7 +459,8 @@ const Table = props => {
               'onApplyRowAction',
               'onClearRowError',
               'onRowExpanded',
-              'onRowClicked'
+              'onRowClicked',
+              'onApplyEdit',
             )}
             activeBar={view.toolbar.activeBar}
           />
