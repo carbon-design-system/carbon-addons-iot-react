@@ -96,9 +96,7 @@ const CardRenderer = React.memo(
             updatedCard = await onSetupCard(card);
             setCard(updatedCard);
           }
-          if (!updatedCard.error) {
-            loadCardData(updatedCard, setCard, onFetchData, timeGrain);
-          }
+          loadCardData(updatedCard, setCard, onFetchData, timeGrain);
         };
         if (isLoading) {
           setupAndLoadCard();
@@ -192,7 +190,7 @@ const CardRenderer = React.memo(
         {type === CARD_TYPES.VALUE ? (
           <ValueCard {...card} {...commonCardProps} />
         ) : type === CARD_TYPES.IMAGE ? (
-          <ImageCard {...card} {...commonCardProps} />
+          <ImageCard {...card} {...commonCardProps} error={card.setupError || card.error} />
         ) : type === CARD_TYPES.TIMESERIES ? (
           <TimeSeriesCard {...card} {...commonCardProps} />
         ) : type === CARD_TYPES.TABLE ? (

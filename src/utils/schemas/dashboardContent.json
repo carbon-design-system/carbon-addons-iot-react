@@ -64,7 +64,7 @@
       "properties": {
         "type": { "enum": ["periodToDate", "rolling"] },
         "count": { "type": "number" },
-        "interval": { "enum": ["month", "day", "year", "hour", "week"] }
+        "interval": { "enum": ["minute", "hour", "day", "week", "month", "quarter", "year"] }
       },
       "required": ["count", "interval"],
       "propertyNames": { "enum": ["type", "count", "interval"] }
