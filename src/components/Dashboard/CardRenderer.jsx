@@ -1,4 +1,5 @@
 import React, { useMemo, useState, useCallback, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import merge from 'lodash/merge';
 import isEmpty from 'lodash/isEmpty';
 import omit from 'lodash/omit';
@@ -58,15 +59,8 @@ export const loadCardData = async (card, setCard, onFetchData, timeGrain) => {
  */
 const CardRenderer = React.memo(
   ({
-    style, // eslint-disable-line
-    card: cardProp, // eslint-disable-line
-    card: { availableActions, type, dataSource }, // eslint-disable-line
     onCardAction, // eslint-disable-line
     i18n, // eslint-disable-line
-    dashboardBreakpoints, // eslint-disable-line
-    cardDimensions, // eslint-disable-line
-    dashboardColumns, // eslint-disable-line
-    rowHeight, // eslint-disable-line
     isLoading, // eslint-disable-line
     isEditable, // eslint-disable-line
     breakpoint, // eslint-disable-line
@@ -74,8 +68,10 @@ const CardRenderer = React.memo(
     onSetupCard, // eslint-disable-line
     renderIconByName, // eslint-disable-line
     timeGrain, // eslint-disable-line
-    ...gridProps
+    ...cardProp // pass through the card props
   }) => {
+    const { dataSource, availableActions, type } = cardProp;
+
     /**
      * Local state for the card, keeps track of whether it is loading or not, and the current state of the Range Selector
      * And which data range is being requested.
@@ -102,7 +98,7 @@ const CardRenderer = React.memo(
           setupAndLoadCard();
         }
       },
-      [isLoading, card.content.src] // eslint-disable-line
+      [isLoading, card.content && card.content.src] // eslint-disable-line
     );
 
     // Speed up performance by caching the available actions
@@ -118,11 +114,6 @@ const CardRenderer = React.memo(
       [availableActions, dataSource, type]
     );
 
-    const cachedExpandedStyle = useMemo(
-      () => (isExpanded ? { height: '100%', width: '100%', padding: '50px' } : style),
-      [isExpanded, style] // eslint-disable-line
-    );
-
     /**
      * Listen to the card's range action to decide whether to trigger a data refetch
      */
@@ -136,10 +127,10 @@ const CardRenderer = React.memo(
               ? determineCardRange(payload.range)
               : originalDataSource.range; // If default, then reset the card range
           const cardWithUpdatedRange = {
-            ...card,
+            ...cardProp,
             isLoading: true, // set loading
             dataSource: {
-              ...card.dataSource,
+              ...cardProp.dataSource,
               range: {
                 ...range,
                 ...omit(range, 'timeGrain'),
@@ -164,95 +155,40 @@ const CardRenderer = React.memo(
     );
 
     const commonCardProps = {
-      key: card.id,
+      ...cardProp,
+      key: cardProp.id,
       availableActions: cachedActions,
-      dataSource,
       isExpanded,
-      type,
       i18n,
       isEditable,
       onCardAction: cachedOnCardAction,
       renderIconByName,
       breakpoint,
-      dashboardBreakpoints,
-      dashboardColumns,
-      cardDimensions,
-      rowHeight,
     };
 
-    return (
-      <div
-        key={card.id}
-        {...gridProps}
-        className={isExpanded ? 'bx--modal is-visible' : gridProps.className}
-        style={cachedExpandedStyle}
-      >
-        {type === CARD_TYPES.VALUE ? (
-          <ValueCard {...card} {...commonCardProps} />
-        ) : type === CARD_TYPES.IMAGE ? (
-          <ImageCard {...card} {...commonCardProps} error={card.setupError || card.error} />
-        ) : type === CARD_TYPES.TIMESERIES ? (
-          <TimeSeriesCard {...card} {...commonCardProps} />
-        ) : type === CARD_TYPES.TABLE ? (
-          <TableCard
-            {...card}
-            key={card.id}
-            availableActions={cachedActions}
-            dataSource={dataSource}
-            isExpanded={isExpanded}
-            type={type}
-            i18n={i18n}
-            isEditable={isEditable}
-            onCardAction={cachedOnCardAction}
-            breakpoint={breakpoint}
-            dashboardBreakpoints={dashboardBreakpoints}
-            dashboardColumns={dashboardColumns}
-            cardDimensions={cardDimensions}
-            rowHeight={rowHeight}
-          />
-        ) : type === CARD_TYPES.LIST ? (
-          <ListCard
-            {...card}
-            key={card.id}
-            availableActions={cachedActions}
-            dataSource={dataSource}
-            isExpanded={isExpanded}
-            type={type}
-            i18n={i18n}
-            isEditable={isEditable}
-            onCardAction={cachedOnCardAction}
-            breakpoint={breakpoint}
-            dashboardBreakpoints={dashboardBreakpoints}
-            dashboardColumns={dashboardColumns}
-            cardDimensions={cardDimensions}
-            rowHeight={rowHeight}
-            data={card.content.data}
-            loadData={card.content.loadData}
-          />
-        ) : type === CARD_TYPES.CUSTOM ? (
-          <Card
-            {...card}
-            key={card.id}
-            availableActions={cachedActions}
-            dataSource={dataSource}
-            isExpanded={isExpanded}
-            type={type}
-            i18n={i18n}
-            isEditable={isEditable}
-            onCardAction={cachedOnCardAction}
-            breakpoint={breakpoint}
-            dashboardBreakpoints={dashboardBreakpoints}
-            dashboardColumns={dashboardColumns}
-            cardDimensions={cardDimensions}
-            rowHeight={rowHeight}
-          >
-            {card.content}
-          </Card>
-        ) : null}
-      </div>
-    );
+    return type === CARD_TYPES.VALUE ? (
+      <ValueCard {...commonCardProps} />
+    ) : type === CARD_TYPES.IMAGE ? (
+      <ImageCard {...commonCardProps} error={cardProp.setupError || cardProp.error} />
+    ) : type === CARD_TYPES.TIMESERIES ? (
+      <TimeSeriesCard {...commonCardProps} />
+    ) : type === CARD_TYPES.TABLE ? (
+      <TableCard {...commonCardProps} />
+    ) : type === CARD_TYPES.LIST ? (
+      <ListCard
+        {...commonCardProps}
+        data={cardProp.content.data}
+        loadData={cardProp.content.loadData}
+      />
+    ) : type === CARD_TYPES.CUSTOM ? (
+      <Card {...commonCardProps}>{cardProp.content}</Card>
+    ) : null;
   }
 );
+
+CachedCardRenderer.propTypes = {
+  style: PropTypes.objectOf(PropTypes.string),
+};
 CachedCardRenderer.defaultProps = {
   style: {},
 };
