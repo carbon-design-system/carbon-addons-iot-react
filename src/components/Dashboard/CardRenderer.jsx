@@ -155,7 +155,7 @@ const CardRenderer = React.memo(
     );
 
     const commonCardProps = {
-      ...cardProp,
+      ...card,
       key: cardProp.id,
       availableActions: cachedActions,
       isExpanded,
@@ -169,19 +169,15 @@ const CardRenderer = React.memo(
     return type === CARD_TYPES.VALUE ? (
       <ValueCard {...commonCardProps} />
     ) : type === CARD_TYPES.IMAGE ? (
-      <ImageCard {...commonCardProps} error={cardProp.setupError || cardProp.error} />
+      <ImageCard {...commonCardProps} error={card.setupError || card.error} />
     ) : type === CARD_TYPES.TIMESERIES ? (
       <TimeSeriesCard {...commonCardProps} />
     ) : type === CARD_TYPES.TABLE ? (
       <TableCard {...commonCardProps} />
     ) : type === CARD_TYPES.LIST ? (
-      <ListCard
-        {...commonCardProps}
-        data={cardProp.content.data}
-        loadData={cardProp.content.loadData}
-      />
+      <ListCard {...commonCardProps} data={card.content.data} loadData={card.content.loadData} />
     ) : type === CARD_TYPES.CUSTOM ? (
-      <Card {...commonCardProps}>{cardProp.content}</Card>
+      <Card {...commonCardProps}>{card.content}</Card>
     ) : null;
   }
 );

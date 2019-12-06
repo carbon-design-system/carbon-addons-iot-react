@@ -19,6 +19,7 @@ const GridLayout = WidthProvider(Responsive);
 
 const StyledGridLayout = styled(GridLayout)`
   &&& {
+    position: relative;
     .react-grid-item.cssTransforms {
       transition-property: ${props => (props.shouldAnimate ? 'transform' : 'none')};
     }
@@ -87,9 +88,9 @@ const DashboardGrid = ({
                   let matchingCard = find(children, { props: { id: layout.i } });
                   if (!matchingCard) {
                     console.warn(`Error with your layout. Card with id: ${layout.i} not found`); //eslint-disable-line
-                    matchingCard = { size: CARD_SIZES.SMALL };
+                    matchingCard = { props: { size: CARD_SIZES.SMALL } };
                   }
-                  return { ...layout, ...CARD_DIMENSIONS[matchingCard.size][layoutName] };
+                  return { ...layout, ...CARD_DIMENSIONS[matchingCard.props.size][layoutName] };
                 })
               : getLayout(
                   layoutName,
