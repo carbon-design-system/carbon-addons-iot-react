@@ -131,15 +131,6 @@
         "color": { "type": "string" },
         "icon": { "type": "string" }
       }
-    },
-    "range": {
-      "type": "object",
-      "properties": {
-        "count": { "type": "number" },
-        "interval": { "enum": ["hour", "day", "week", "month"] }
-      },
-      "propertyNames": { "enum": ["count", "interval"] },
-      "required": ["count", "interval"]
     }
   }
 }

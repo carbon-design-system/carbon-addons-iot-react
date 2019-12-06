@@ -242,7 +242,7 @@ export const CardPropTypes = {
     '',
   ]),
   /** Interval for time series configuration */
-  interval: PropTypes.oneOf(['hour', 'day', 'week', 'month', 'year']),
+  interval: PropTypes.oneOf(['minute', 'hour', 'day', 'week', 'quarter', 'month', 'year']),
   availableActions: PropTypes.shape({
     edit: PropTypes.bool,
     clone: PropTypes.bool,

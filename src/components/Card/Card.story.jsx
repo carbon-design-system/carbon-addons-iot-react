@@ -100,7 +100,7 @@ storiesOf('Watson IoT|Card', module)
           size={size}
           isLoading={boolean('isLoading', false)}
           isEmpty={boolean('isEmpty', false)}
-          isEditable={boolean('isEditable', true)}
+          isEditable={boolean('isEditable', false)}
           isExpanded={boolean('isExpanded', false)}
           breakpoint="lg"
           onCardAction={action('onCardAction')}
