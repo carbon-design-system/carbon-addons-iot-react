@@ -60,7 +60,7 @@ const propTypes = {
   totalColumns: PropTypes.number.isRequired,
 
   /** contents of the row each object value is a renderable node keyed by column id */
-  values: PropTypes.objectOf(PropTypes.node).isRequired,
+  values: PropTypes.objectOf(PropTypes.oneOfType([PropTypes.node, PropTypes.bool])).isRequired,
 
   /** is the row currently selected */
   isSelected: PropTypes.bool,

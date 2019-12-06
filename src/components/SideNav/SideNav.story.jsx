@@ -25,8 +25,20 @@ const links = [
       tabIndex: 0,
       label: 'Boards',
       element: RouterComponent,
+      // isActive: true,
     },
     linkContent: 'Boards',
+    childContent: [
+      {
+        metaData: {
+          label: 'Yet another link',
+          title: 'Yet another link',
+          onClick: action('inner menu click'),
+          element: 'button',
+        },
+        content: 'Yet another link',
+      },
+    ],
   },
   {
     isEnabled: true,
@@ -61,7 +73,8 @@ const links = [
     childContent: [
       {
         metaData: {
-          label: 'Devices',
+          label: 'Yet another link',
+          title: 'Yet another link',
           onClick: action('inner menu click'),
           element: 'button',
         },
