@@ -2735,6 +2735,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Getting Started|
                   <div
                     className="bx--structured-list-td"
                   >
+                    DashboardGrid
+                  </div>
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                  />
+                  <div
+                    className="bx--structured-list-td"
+                  >
                     Card
                   </div>
                 </div>
