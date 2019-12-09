@@ -3,6 +3,7 @@ import VisibilitySensor from 'react-visibility-sensor';
 import { Tooltip, SkeletonText } from 'carbon-components-react';
 import styled from 'styled-components';
 import SizeMe from 'react-sizeme';
+import { settings } from 'carbon-components';
 
 import {
   CARD_TITLE_HEIGHT,
@@ -18,6 +19,8 @@ import { CardPropTypes } from '../../constants/PropTypes';
 import { getCardMinSize } from '../../utils/componentUtilityFunctions';
 
 import CardToolbar from './CardToolbar';
+
+const { prefix } = settings;
 
 const OptimizedSkeletonText = React.memo(SkeletonText);
 
@@ -256,7 +259,7 @@ const Card = ({
     </VisibilitySensor>
   );
 
-  return isExpanded ? <div className="bx--modal is-visible">{card}</div> : card;
+  return isExpanded ? <div className={`${prefix}--modal is-visible`}>{card}</div> : card;
 };
 
 Card.propTypes = CardPropTypes;
