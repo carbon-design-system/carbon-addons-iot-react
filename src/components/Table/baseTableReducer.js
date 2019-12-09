@@ -114,14 +114,14 @@ export const baseTableReducer = (state = {}, action) => {
     // Toolbar Actions
     case TABLE_TOOLBAR_TOGGLE: {
       const filterToggled = state.view.toolbar.activeBar === action.payload ? null : action.payload;
-      var curData = [];
-      var data = state.data;
-      for (var i=0; i<data.length; i++) {
-        var values = data[i].values;
-        var curRowData = {};
-        for (var v in values) {
-          curRowData[v] = values[v];
-        }
+      const curData = [];
+      const { data } = state;
+      for (let i = 0; i < data.length; i += 1) {
+        const { values } = data[i];
+        const curRowData = {};
+        Object.keys(values).forEach(key => {
+          curRowData[key] = values[key];
+        });
         curData.push(curRowData);
       }
       return update(state, {
@@ -158,26 +158,25 @@ export const baseTableReducer = (state = {}, action) => {
       });
     }
     case TABLE_EDIT_CANCEL: {
-      var oldData = state.oldData;
-      var data = state.data;
-      var oldDataArr = new Array;
-      for (var i=0; i<oldData.length; i++) {
-        for (var o in oldData[i]) {
-          oldDataArr.push(oldData[i][o]);
-        }
+      const { oldData } = state;
+      const { data } = state;
+      const oldDataArr = [];
+      for (let i = 0; i < oldData.length; i += 1) {
+        Object.keys(oldData[i]).forEach(key => {
+          oldDataArr.push(oldData[i][key]);
+        });
       }
-      var n=0;
-      for (var i=0; i<data.length; i++) {
-        for (var d in data[i].values) {
-          data[i].values[d] = oldDataArr[n++];
-        }
+      for (let i = 0; i < data.length; i += 1) {
+        Object.keys(data[i].values).forEach(key => {
+          data[i].values[key] = oldDataArr.shift();
+        });
       }
       return update(state, {
-         view: {
+        view: {
           toolbar: {
             activeBar: { $set: null },
           },
-         },
+        },
       });
     }
     case TABLE_EDIT_SAVE: {
@@ -186,7 +185,7 @@ export const baseTableReducer = (state = {}, action) => {
           toolbar: {
             activeBar: { $set: null },
           },
-         },
+        },
       });
     }
     case TABLE_TOAST_TOGGLE: {
@@ -196,7 +195,7 @@ export const baseTableReducer = (state = {}, action) => {
           toolbar: {
             activeBar: { $set: toastToggled },
           },
-         },
+        },
       });
     }
     case TABLE_EDIT_APPLY: {
