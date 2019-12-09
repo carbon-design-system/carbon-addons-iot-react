@@ -3,8 +3,7 @@ import PropTypes from 'prop-types';
 import IconColumnSelector from '@carbon/icons-react/lib/column/20';
 import IconFilter from '@carbon/icons-react/lib/filter/20';
 import IconEdit from '@carbon/icons-react/lib/edit/20';
-import { DataTable, Button } from 'carbon-components-react';
-import { ToastNotification } from 'carbon-components-react';
+import { DataTable, Button, ToastNotification } from 'carbon-components-react';
 import styled from 'styled-components';
 
 import { TableSearchPropTypes, defaultI18NPropTypes } from '../TablePropTypes';
@@ -72,13 +71,9 @@ const StyledTableBatchActions = styled(TableBatchActions)`
   }
 `;
 
-const StyledCarbonButton = styled(Button)`
+const StyledCarbonButton = styled(Button)``;
 
-`;
-
-const StyledCarbonToastNotification = styled(ToastNotification)`
-
-`;
+const StyledCarbonToastNotification = styled(ToastNotification)``;
 
 const propTypes = {
   /** id of table */
@@ -194,7 +189,7 @@ const TableToolbar = ({
         </TableBatchAction>
       ))}
     </StyledTableBatchActions>
-    {(hasSearch && !hasEdit) ? (
+    {hasSearch && !hasEdit ? (
       <StyledToolbarSearch
         {...search}
         translateWithId={(...args) => tableTranslateWithId(i18n, ...args)}
@@ -205,35 +200,33 @@ const TableToolbar = ({
     ) : null}
     {activeBar === 'edit' ? (
       <StyledTableToolbarContent>
-        <StyledCarbonButton kind='ghost' onClick={onCancelEditAction} >
+        <StyledCarbonButton kind="ghost" onClick={onCancelEditAction}>
           {i18n.batchCancel}
         </StyledCarbonButton>
-        <StyledCarbonButton onClick={onSaveEditAction} >
-          {i18n.batchSave}
-        </StyledCarbonButton>
+        <StyledCarbonButton onClick={onSaveEditAction}>{i18n.batchSave}</StyledCarbonButton>
       </StyledTableToolbarContent>
     ) : activeBar === 'undo' ? (
-        <StyledCarbonToastNotification
-          caption=""
-          hideCloseButton={false}
-          iconDescription="undo changes and close"
-          kind="success"
-          lowContrast
-          notificationType="toast"
-          onCloseButtonClick={onUndoEditAction}
-          role="alert"
-          style={{
-            marginBottom: '.5rem',
-            minWidth: '30rem',
-            position: 'fixed',
-            top: 0,
-            right: 0,
-            zIndex: 1,
-          }}
-          subtitle="Click to undo changes"
-          timeout={0}
-          title="Your changes have been saved."
-        />
+      <StyledCarbonToastNotification
+        caption=""
+        hideCloseButton={false}
+        iconDescription="undo changes and close"
+        kind="success"
+        lowContrast
+        notificationType="toast"
+        onCloseButtonClick={onUndoEditAction}
+        role="alert"
+        style={{
+          marginBottom: '.5rem',
+          minWidth: '30rem',
+          position: 'fixed',
+          top: 0,
+          right: 0,
+          zIndex: 1,
+        }}
+        subtitle="Click to undo changes"
+        timeout={0}
+        title="Your changes have been saved."
+      />
     ) : (
       <StyledTableToolbarContent>
         {customToolbarContent || null}
@@ -242,7 +235,7 @@ const TableToolbar = ({
             {i18n.clearAllFilters}
           </Button>
         ) : null}
-        {(hasSearch && hasEdit) ? (
+        {hasSearch && hasEdit ? (
           <StyledToolbarSearch
             {...search}
             translateWithId={(...args) => tableTranslateWithId(i18n, ...args)}

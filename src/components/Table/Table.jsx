@@ -68,7 +68,7 @@ const propTypes = {
   columns: TableColumnsPropTypes.isRequired,
   /** Row value data for the body of the table */
   data: TableRowPropTypes.isRequired,
-  oldData: PropTypes.object,
+  oldData: PropTypes.arrayOf(PropTypes.object),
   /** Expanded data for the table details */
   expandedData: ExpandedRowsPropTypes,
   /** Optional properties to customize how the table should be rendered */
@@ -224,7 +224,9 @@ export const defaultProps = baseProps => ({
       selectedIds: [],
       rowActions: [],
       sort: {},
-      ordering: baseProps.columns && baseProps.columns.map(i => ({ columnId: i.id, editDataFunction: i.editDataFunction })),
+      ordering:
+        baseProps.columns &&
+        baseProps.columns.map(i => ({ columnId: i.id, editDataFunction: i.editDataFunction })),
       loadingState: {
         rowCount: 5,
       },
@@ -375,9 +377,16 @@ const Table = props => {
           'onToggleEdit',
           'onCancelEditAction',
           'onSaveEditAction',
-          'onUndoEditAction',
+          'onUndoEditAction'
         )}
-        options={pick(options, 'hasColumnSelection', 'hasFilter', 'hasSearch', 'hasRowSelection', 'hasEdit')}
+        options={pick(
+          options,
+          'hasColumnSelection',
+          'hasFilter',
+          'hasSearch',
+          'hasRowSelection',
+          'hasEdit'
+        )}
         tableState={{
           totalSelected: view.table.selectedIds.length,
           totalFilters: view.filters ? view.filters.length : 0,
@@ -387,7 +396,7 @@ const Table = props => {
             'search',
             'activeBar',
             'customToolbarContent',
-            'isDisabled',
+            'isDisabled'
           ),
         }}
       />
@@ -463,7 +472,7 @@ const Table = props => {
               'onClearRowError',
               'onRowExpanded',
               'onRowClicked',
-              'onApplyEdit',
+              'onApplyEdit'
             )}
             activeBar={view.toolbar.activeBar}
           />

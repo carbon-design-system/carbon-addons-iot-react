@@ -144,9 +144,9 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
       onSaveEditAction: () => {
         dispatch(tableEditSave());
         dispatch(tableToastToggle('undo'));
-        window.hideToastTimeoutID = setTimeout(function(){
-          dispatch(tableToastToggle())
-        },4000)
+        window.hideToastTimeoutID = setTimeout(function() {
+          dispatch(tableToastToggle());
+        }, 4000);
         callbackParent(onSaveEditAction);
       },
       onUndoEditAction: () => {
@@ -198,9 +198,9 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
         dispatch(tableColumnOrder(ordering));
         callbackParent(onChangeOrdering, ordering);
       },
-      onApplyEdit: (targetValue, columnId, columnValue, rowId, rowValues) => {
-        dispatch(tableEditApply(targetValue, columnId, columnValue, rowId, rowValues));
-        callbackParent(onApplyEdit, targetValue, columnId, columnValue, rowId, rowValues);
+      onApplyEdit: (targetValue, columnId, rowId) => {
+        dispatch(tableEditApply(targetValue, columnId, rowId));
+        callbackParent(onApplyEdit, targetValue, columnId, rowId);
       },
     },
   };

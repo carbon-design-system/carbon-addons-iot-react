@@ -80,9 +80,9 @@ export const tableToastToggle = (toolbar, instanceId = null) => ({
   payload: toolbar,
   instanceId,
 });
-export const tableEditApply = (targetValue, columnId, columnValue, rowId, rowValues, instanceId = null) => ({
+export const tableEditApply = (targetValue, columnId, rowId, instanceId = null) => ({
   type: TABLE_EDIT_APPLY,
-  payload: {targetValue, columnId, columnValue, rowId, rowValues},
+  payload: { targetValue, columnId, rowId },
   instanceId,
 });
 

@@ -87,6 +87,7 @@ const defaultProps = {
   hasRowActions: false,
   shouldExpandOnRowClick: false,
   shouldLazyRender: false,
+  activeBar: null,
 };
 
 const TableBody = ({
@@ -173,7 +174,7 @@ const TableBody = ({
           'onRowExpanded',
           'onRowClicked',
           'onClearRowError',
-          'onApplyEdit',
+          'onApplyEdit'
         )}
         rowActions={row.rowActions}
         values={row.values}

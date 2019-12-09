@@ -188,12 +188,10 @@ export const tableReducer = (state = {}, action) => {
       return baseTableReducer(state, action);
     }
     case TABLE_EDIT_APPLY: {
-      const rowId = action.payload.rowId;
-      const columnId = action.payload.columnId;
-      const targetValue = action.payload.targetValue;
-      const columnValue = action.payload.columnValue;
-      const rowIndex = state.data.findIndex(element => element.id ? element.id === rowId : null);
-      state.data[rowIndex].values[columnId] = targetValue;
+      const curState = state;
+      const { rowId, columnId, targetValue } = action.payload;
+      const rowIndex = state.data.findIndex(element => (element.id ? element.id === rowId : null));
+      curState.data[rowIndex].values[columnId] = targetValue;
       return baseTableReducer(state, action);
     }
 
