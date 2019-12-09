@@ -136,7 +136,7 @@ const propTypes = {
           columnId: PropTypes.string.isRequired,
           /* Visibility of column in table, defaults to false */
           isHidden: PropTypes.bool,
-          editDataFunction: PropTypes.func,
+          editDataFunction: PropTypes.bool,
         })
       ),
       /** what is the current state of the row actions */

@@ -31,7 +31,7 @@ const propTypes = {
        *    row: PropTypes.object like this {col: value, col2: value}
        * }, you should return the node that should render within that cell */
       renderDataFunction: PropTypes.func,
-      editDataFunction: PropTypes.func,
+      editDataFunction: PropTypes.bool,
     })
   ).isRequired,
   /** internationalized label */

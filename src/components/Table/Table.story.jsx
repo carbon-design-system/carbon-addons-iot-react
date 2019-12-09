@@ -62,8 +62,6 @@ const renderStatusIcon = ({ value: status }) => {
   }
 };
 
-const editData = () => {};
-
 export const tableColumns = [
   {
     id: 'string',
@@ -74,18 +72,18 @@ export const tableColumns = [
     id: 'date',
     name: 'Date',
     filter: { placeholderText: 'pick a date' },
-    editDataFunction: editData,
+    editDataFunction: true,
   },
   {
     id: 'select',
     name: 'Select',
     filter: { placeholderText: 'pick an option', options: selectData },
-    editDataFunction: editData,
+    editDataFunction: true,
   },
   {
     id: 'secretField',
     name: 'Secret Information',
-    editDataFunction: editData,
+    editDataFunction: true,
   },
   {
     id: 'status',
@@ -96,7 +94,7 @@ export const tableColumns = [
     id: 'number',
     name: 'Number',
     filter: { placeholderText: 'pick a number' },
-    editDataFunction: editData,
+    editDataFunction: true,
   },
 ];
 

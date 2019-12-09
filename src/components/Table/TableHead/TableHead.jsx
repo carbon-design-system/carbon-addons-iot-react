@@ -50,7 +50,7 @@ const propTypes = {
         columnId: PropTypes.string.isRequired,
         /* Visibility of column in table, defaults to false */
         isHidden: PropTypes.bool,
-        editDataFunction: PropTypes.func,
+        editDataFunction: PropTypes.bool,
       })
     ).isRequired,
     /** Optional list of applied column filters */
