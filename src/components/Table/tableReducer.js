@@ -25,6 +25,7 @@ import {
   TABLE_EDIT_CANCEL,
   TABLE_EDIT_SAVE,
   TABLE_EDIT_APPLY,
+  TABLE_TOAST_TOGGLE,
 } from './tableActionCreators';
 import { baseTableReducer } from './baseTableReducer';
 
@@ -181,6 +182,9 @@ export const tableReducer = (state = {}, action) => {
       return baseTableReducer(state, action);
     }
     case TABLE_EDIT_SAVE: {
+      return baseTableReducer(state, action);
+    }
+    case TABLE_TOAST_TOGGLE: {
       return baseTableReducer(state, action);
     }
     case TABLE_EDIT_APPLY: {

@@ -36,7 +36,7 @@ const propTypes = {
   /** Current state of the table */
   tableState: PropTypes.shape({
     /** Which toolbar is currently active */
-    activeBar: PropTypes.oneOf(['column', 'filter', 'edit']),
+    activeBar: PropTypes.oneOf(['column', 'filter', 'edit', 'undo']),
     /** What's currently selected in the table? */
     selection: PropTypes.shape({
       isSelectAllIndeterminate: PropTypes.bool,

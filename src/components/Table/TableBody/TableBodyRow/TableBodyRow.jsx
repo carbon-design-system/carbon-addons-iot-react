@@ -96,7 +96,7 @@ const propTypes = {
   /** I18N label for dismiss */
   dismissText: PropTypes.string,
   /** table toolbar */
-  activeBar: PropTypes.oneOf(['column', 'filter', 'edit']),
+  activeBar: PropTypes.oneOf(['column', 'filter', 'edit', 'undo']),
 };
 
 const defaultProps = {

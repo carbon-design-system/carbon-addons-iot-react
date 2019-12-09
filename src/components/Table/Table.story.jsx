@@ -280,6 +280,7 @@ const actions = {
     onApplySearch: action('onApplySearch'),
     onCancelEditAction: action('onCancelEditAction'),
     onSaveEditAction: action('onSaveEditAction'),
+    onUndoEditAction: action('onUndoEditAction'),
   },
   table: {
     onRowClicked: action('onRowClicked'),

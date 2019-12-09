@@ -105,7 +105,7 @@ const propTypes = {
     ),
     toolbar: PropTypes.shape({
       /** Specify which header row to display, will display default header row if null */
-      activeBar: PropTypes.oneOf(['filter', 'column', 'edit']),
+      activeBar: PropTypes.oneOf(['filter', 'column', 'edit', 'undo']),
       /** optional content to render inside the toolbar  */
       customToolbarContent: PropTypes.node,
       /** Specify which batch actions to render in the batch action bar. If empty, no batch action toolbar will display */
@@ -168,6 +168,7 @@ const propTypes = {
       onToggleEdit: PropTypes.func,
       onCancelEditAction: PropTypes.func,
       onSaveEditAction: PropTypes.func,
+      onUndoEditAction: PropTypes.func,
     }),
     /** table wide actions */
     table: PropTypes.shape({
@@ -239,6 +240,7 @@ export const defaultProps = baseProps => ({
       onToggleEdit: defaultFunction('actions.toolbar.onToggleEdit'),
       onCancelEditAction: defaultFunction('actions.toolbar.onCancelEditAction'),
       onSaveEditAction: defaultFunction('actions.toolbar.onSaveEditAction'),
+      onUndoEditAction: defaultFunction('actions.toolbar.onUndoEditAction'),
     },
     table: {
       onChangeSort: defaultFunction('actions.table.onChangeSort'),
@@ -373,6 +375,7 @@ const Table = props => {
           'onToggleEdit',
           'onCancelEditAction',
           'onSaveEditAction',
+          'onUndoEditAction',
         )}
         options={pick(options, 'hasColumnSelection', 'hasFilter', 'hasSearch', 'hasRowSelection', 'hasEdit')}
         tableState={{

@@ -24,6 +24,7 @@ import {
   tableEditCancel,
   tableEditSave,
   tableEditApply,
+  tableToastToggle,
 } from './tableActionCreators';
 import Table, { defaultProps } from './Table';
 
@@ -80,6 +81,7 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
     onToggleEdit,
     onCancelEditAction,
     onSaveEditAction,
+    onUndoEditAction,
   } = toolbar || {};
   const {
     onChangeSort,
@@ -141,7 +143,17 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
       },
       onSaveEditAction: () => {
         dispatch(tableEditSave());
+        dispatch(tableToastToggle('undo'));
+        window.hideToastTimeoutID = setTimeout(function(){
+          dispatch(tableToastToggle())
+        },4000)
         callbackParent(onSaveEditAction);
+      },
+      onUndoEditAction: () => {
+        clearTimeout(window.hideToastTimeoutID);
+        dispatch(tableToastToggle());
+        dispatch(tableEditCancel());
+        callbackParent(onUndoEditAction);
       },
     },
     table: {

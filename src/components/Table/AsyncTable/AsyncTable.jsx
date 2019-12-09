@@ -178,12 +178,6 @@ const AsyncTable = ({ fetchData, id }) => {
       onApplySearch: string => {
         dispatch(baseTableActions.tableSearchApply(string));
       },
-      onCancelEditAction: () => {
-        dispatch(baseTableActions.tableEditCancel());
-      },
-      onSaveEditAction: () => {
-        dispatch(baseTableActions.tableEditSave());
-      },
     },
     table: {
       onChangeSort: column => {
@@ -201,9 +195,6 @@ const AsyncTable = ({ fetchData, id }) => {
       },
       onChangeOrdering: ordering => {
         dispatch(baseTableActions.tableColumnOrder(ordering));
-      },
-      onApplyEdit: (targetValue, columnId, columnValue, rowId, rowValues) => {
-        dispatch(tableEditApply(targetValue, columnId, columnValue, rowId, rowValues));
       },
 
       // These actions don't have any impact on table state

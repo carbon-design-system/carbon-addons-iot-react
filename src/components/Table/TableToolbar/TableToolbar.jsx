@@ -4,6 +4,7 @@ import IconColumnSelector from '@carbon/icons-react/lib/column/20';
 import IconFilter from '@carbon/icons-react/lib/filter/20';
 import IconEdit from '@carbon/icons-react/lib/edit/20';
 import { DataTable, Button } from 'carbon-components-react';
+import { ToastNotification } from 'carbon-components-react';
 import styled from 'styled-components';
 
 import { TableSearchPropTypes, defaultI18NPropTypes } from '../TablePropTypes';
@@ -75,6 +76,10 @@ const StyledCarbonButton = styled(Button)`
 
 `;
 
+const StyledCarbonToastNotification = styled(ToastNotification)`
+
+`;
+
 const propTypes = {
   /** id of table */
   tableId: PropTypes.string.isRequired,
@@ -114,6 +119,7 @@ const propTypes = {
     onToggleEdit: PropTypes.func,
     onCancelEditAction: PropTypes.func,
     onSaveEditAction: PropTypes.func,
+    onUndoEditAction: PropTypes.func,
   }).isRequired,
   /**
    * Inbound tableState
@@ -122,7 +128,7 @@ const propTypes = {
     /** is the toolbar currently disabled */
     isDisabled: PropTypes.bool,
     /** Which toolbar is currently active */
-    activeBar: PropTypes.oneOf(['column', 'filter', 'edit']),
+    activeBar: PropTypes.oneOf(['column', 'filter', 'edit', 'undo']),
     /** total number of selected rows */
     totalSelected: PropTypes.number,
     /** row selection option */
@@ -163,6 +169,7 @@ const TableToolbar = ({
     onToggleEdit,
     onCancelEditAction,
     onSaveEditAction,
+    onUndoEditAction,
   },
   tableState: {
     totalSelected,
@@ -205,6 +212,28 @@ const TableToolbar = ({
           {i18n.batchSave}
         </StyledCarbonButton>
       </StyledTableToolbarContent>
+    ) : activeBar === 'undo' ? (
+        <StyledCarbonToastNotification
+          caption=""
+          hideCloseButton={false}
+          iconDescription="undo changes and close"
+          kind="success"
+          lowContrast
+          notificationType="toast"
+          onCloseButtonClick={onUndoEditAction}
+          role="alert"
+          style={{
+            marginBottom: '.5rem',
+            minWidth: '30rem',
+            position: 'fixed',
+            top: 0,
+            right: 0,
+            zIndex: 1,
+          }}
+          subtitle="Click to undo changes"
+          timeout={0}
+          title="Your changes have been saved."
+        />
     ) : (
       <StyledTableToolbarContent>
         {customToolbarContent || null}

@@ -20,6 +20,7 @@ import {
   TABLE_EDIT_CANCEL,
   TABLE_EDIT_SAVE,
   TABLE_EDIT_APPLY,
+  TABLE_TOAST_TOGGLE,
 } from './tableActionCreators';
 
 export const baseTableReducer = (state = {}, action) => {
@@ -184,6 +185,16 @@ export const baseTableReducer = (state = {}, action) => {
         view: {
           toolbar: {
             activeBar: { $set: null },
+          },
+         },
+      });
+    }
+    case TABLE_TOAST_TOGGLE: {
+      const toastToggled = action.payload ? action.payload : null;
+      return update(state, {
+        view: {
+          toolbar: {
+            activeBar: { $set: toastToggled },
           },
          },
       });

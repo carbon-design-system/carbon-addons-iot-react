@@ -66,7 +66,7 @@ const propTypes = {
       editDataFunction: PropTypes.func,
     })
   ).isRequired,
-  activeBar: PropTypes.oneOf(['column', 'filter', 'edit']),
+  activeBar: PropTypes.oneOf(['column', 'filter', 'edit', 'undo']),
 };
 
 const defaultProps = {
