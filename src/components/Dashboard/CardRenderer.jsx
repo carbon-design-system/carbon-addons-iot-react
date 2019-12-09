@@ -98,7 +98,7 @@ const CardRenderer = React.memo(
           setupAndLoadCard();
         }
       },
-      [isLoading, card.content && card.content.src] // eslint-disable-line
+      [isLoading, card.content.src] // eslint-disable-line
     );
 
     // Speed up performance by caching the available actions
@@ -127,7 +127,7 @@ const CardRenderer = React.memo(
               ? determineCardRange(payload.range)
               : originalDataSource.range; // If default, then reset the card range
           const cardWithUpdatedRange = {
-            ...cardProp,
+            ...card, // expand the current card state
             isLoading: true, // set loading
             dataSource: {
               ...cardProp.dataSource,
@@ -156,6 +156,8 @@ const CardRenderer = React.memo(
 
     const commonCardProps = {
       ...card,
+      style: cardProp.style, // these come from grid layout and not state
+      className: cardProp.className, // these come from grid layout and not state
       key: cardProp.id,
       availableActions: cachedActions,
       isExpanded,
