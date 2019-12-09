@@ -15,7 +15,7 @@ import iconMonitorEntities from './data-scientist-illustration.svg';
 import iconConnectDevices from './computer-chip.svg';
 import Dashboard from './Dashboard';
 
-const originalCards = [
+export const originalCards = [
   {
     title: 'Facility Metrics',
     id: 'facilitycard',

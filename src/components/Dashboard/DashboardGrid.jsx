@@ -33,7 +33,14 @@ export const DashboardGridPropTypes = {
   breakpoint: PropTypes.oneOf(['max', 'xl', 'lg', 'md', 'sm', 'xs']),
   /** Is the dashboard currently in the editable state */
   isEditable: PropTypes.bool,
-  /** current set of react-grid-layout rules for laying the cards out */
+  /** current set of react-grid-layout rules for laying the cards out
+   * Layout is an array of objects with the format:
+   * {x: number, y: number, w: number, h: number}
+   * The index into the layout must match the key used on each item component.
+   * If you choose to use custom keys, you can specify that key in the layout
+   * array objects like so:
+   * {i: string, x: number, y: number, w: number, h: number}
+   */
   layouts: PropTypes.shape({
     max: PropTypes.arrayOf(DashboardLayoutPropTypes),
     xl: PropTypes.arrayOf(DashboardLayoutPropTypes),
@@ -42,7 +49,8 @@ export const DashboardGridPropTypes = {
     sm: PropTypes.arrayOf(DashboardLayoutPropTypes),
     xs: PropTypes.arrayOf(DashboardLayoutPropTypes),
   }),
-  /** Optionally listen to layout changes to update a dashboard template
+  /**
+   * Optionally listen to layout changes to update a dashboard template
    * Calls back with (currentLayout: Layout, allLayouts: {[key: $Keys<breakpoints>]: Layout}) => void,
    */
   onLayoutChange: PropTypes.func,
@@ -64,7 +72,17 @@ const defaultProps = {
  * This is a stateless component but it does have some caching to help optimize performance.
  *
  * Gutter size and card dimensions, row heights, dashboard breakpoints, and column grids are standardized across IoT,
- * it passes this information down to each cards as it renders them
+ * it passes this information down to each cards as it renders them.
+ *
+ * If the dashboardgrid is set to editable mode, it supports dragging and dropping the cards around.
+ * On each change to card position, the onLayoutChange callback will be triggered.
+ *
+ * If the window is resized, the onBreakpointChange event will be fired.
+ *
+ * You can also pass any of the additional properties documented here:
+ * https://github.com/STRML/react-grid-layout#grid-layout-props
+ *
+ *
  */
 const DashboardGrid = ({
   children,
@@ -73,6 +91,7 @@ const DashboardGrid = ({
   layouts,
   onLayoutChange,
   onBreakpointChange,
+  ...others
 }) => {
   const generatedLayouts = useMemo(
     () =>
@@ -141,6 +160,7 @@ const DashboardGrid = ({
         onBreakpointChange={onBreakpointChange}
         isResizable={false}
         isDraggable={isEditable}
+        {...others}
       >
         {cards}
       </StyledGridLayout>
