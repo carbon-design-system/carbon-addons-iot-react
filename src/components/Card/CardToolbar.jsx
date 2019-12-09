@@ -90,7 +90,7 @@ const CardToolbar = ({
           {isExpanded ? (
             <TinyButton
               kind="ghost"
-              small
+              size="small"
               renderIcon={Close16}
               className="card--toolbar-action"
               iconDescription={i18n.closeLabel}
@@ -100,7 +100,7 @@ const CardToolbar = ({
           ) : (
             <TinyButton
               kind="ghost"
-              small
+              size="small"
               renderIcon={Popup20}
               className="card--toolbar-action"
               iconDescription={i18n.expandLabel}

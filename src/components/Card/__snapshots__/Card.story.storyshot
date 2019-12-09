@@ -32,7 +32,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
         className="Card__CardWrapper-v5r71h-0 cynIXT"
         id="facilitycard-basic"
       >
-         
         <div
           className="card--header"
         >
@@ -194,7 +193,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
         className="Card__CardWrapper-v5r71h-0 cynIXT"
         id="facilitycard-error"
       >
-         
         <div
           className="card--header"
         >
@@ -279,7 +277,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
         className="Card__CardWrapper-v5r71h-0 fbzdtE"
         id="facilitycard-error-small"
       >
-         
         <div
           className="card--header"
         >
@@ -356,7 +353,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
       className="Card__CardWrapper-v5r71h-0 fbzdtE"
       id="Card Title"
     >
-       
       <div
         className="Card__CardContent-v5r71h-1 hoCWQe"
       >
@@ -422,7 +418,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
         className="Card__CardWrapper-v5r71h-0 cynIXT"
         id="facilitycard-with-loading"
       >
-         
         <div
           className="card--header"
         >
@@ -553,7 +548,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
         className="Card__CardWrapper-v5r71h-0 cynIXT"
         id="facilitycard-with-loading"
       >
-         
         <div
           className="card--header"
         >
@@ -669,7 +663,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
         className="Card__CardWrapper-v5r71h-0 fbzdtE"
         id="facilitycard-size-gallery-XSMALL"
       >
-         
         <div
           className="card--header"
         >
@@ -710,7 +703,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
         className="Card__CardWrapper-v5r71h-0 fbzdtE"
         id="facilitycard-size-gallery-XSMALLWIDE"
       >
-         
         <div
           className="card--header"
         >
@@ -801,7 +793,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
         className="Card__CardWrapper-v5r71h-0 cynIXT"
         id="facilitycard-size-gallery-SMALL"
       >
-         
         <div
           className="card--header"
         >
@@ -892,7 +883,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
         className="Card__CardWrapper-v5r71h-0 kGdXdI"
         id="facilitycard-size-gallery-TALL"
       >
-         
         <div
           className="card--header"
         >
@@ -983,7 +973,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
         className="Card__CardWrapper-v5r71h-0 cynIXT"
         id="facilitycard-size-gallery-MEDIUM"
       >
-         
         <div
           className="card--header"
         >
@@ -1074,7 +1063,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
         className="Card__CardWrapper-v5r71h-0 cynIXT"
         id="facilitycard-size-gallery-WIDE"
       >
-         
         <div
           className="card--header"
         >
@@ -1165,7 +1153,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
         className="Card__CardWrapper-v5r71h-0 kGdXdI"
         id="facilitycard-size-gallery-LARGE"
       >
-         
         <div
           className="card--header"
         >
@@ -1256,7 +1243,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
         className="Card__CardWrapper-v5r71h-0 kGdXdI"
         id="facilitycard-size-gallery-XLARGE"
       >
-         
         <div
           className="card--header"
         >
@@ -1391,7 +1377,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
         className="Card__CardWrapper-v5r71h-0 cynIXT"
         id="facilitycard-empty"
       >
-         
         <div
           className="card--header"
         >
@@ -1526,7 +1511,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
         className="Card__CardWrapper-v5r71h-0 cynIXT"
         id="facilitycard-with-loading"
       >
-         
         <div
           className="card--header"
         >
@@ -1636,7 +1620,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
         className="Card__CardWrapper-v5r71h-0 cynIXT"
         id="facilitycard-with-loading"
       >
-         
         <div
           className="card--header"
         >
