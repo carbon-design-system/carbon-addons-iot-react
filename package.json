@@ -23,6 +23,7 @@
     "lint:javascript": "eslint --ext .jsx --ext .js .",
     "lint:stylelint": "stylelint './src/**/*.scss' --syntax scss --ignorePath .gitignore",
     "prepare": "yarn build",
+    "publish-npm": "yarn semantic-release",
     "start": "yarn storybook",
     "storybook": "start-storybook -p 3000 -s public/development",
     "test": "yarn test:a11y && yarn test:base",
