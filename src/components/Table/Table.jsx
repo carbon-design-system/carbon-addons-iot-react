@@ -136,7 +136,6 @@ const propTypes = {
           columnId: PropTypes.string.isRequired,
           /* Visibility of column in table, defaults to false */
           isHidden: PropTypes.bool,
-          editDataFunction: PropTypes.bool,
         })
       ),
       /** what is the current state of the row actions */
@@ -182,7 +181,6 @@ const propTypes = {
       onClearRowError: PropTypes.func,
       onEmptyStateAction: PropTypes.func,
       onChangeOrdering: PropTypes.func,
-      onApplyEdit: PropTypes.func,
     }).isRequired,
   }),
   i18n: I18NPropTypes,
@@ -251,7 +249,6 @@ export const defaultProps = baseProps => ({
       onApplyRowAction: defaultFunction('actions.table.onApplyRowAction'),
       onEmptyStateAction: defaultFunction('actions.table.onEmptyStateAction'),
       onChangeOrdering: defaultFunction('actions.table.onChangeOrdering'),
-      onApplyEdit: defaultFunction('actions.table.onApplyEdit'),
     },
   },
   i18n: {
@@ -471,8 +468,7 @@ const Table = props => {
               'onApplyRowAction',
               'onClearRowError',
               'onRowExpanded',
-              'onRowClicked',
-              'onApplyEdit'
+              'onRowClicked'
             )}
             activeBar={view.toolbar.activeBar}
           />

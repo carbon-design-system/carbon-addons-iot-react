@@ -24,7 +24,6 @@ import {
   TABLE_SEARCH_APPLY,
   TABLE_EDIT_CANCEL,
   TABLE_EDIT_SAVE,
-  TABLE_EDIT_APPLY,
   TABLE_TOAST_TOGGLE,
 } from './tableActionCreators';
 import { baseTableReducer } from './baseTableReducer';
@@ -187,14 +186,6 @@ export const tableReducer = (state = {}, action) => {
     case TABLE_TOAST_TOGGLE: {
       return baseTableReducer(state, action);
     }
-    case TABLE_EDIT_APPLY: {
-      const curState = state;
-      const { rowId, columnId, targetValue } = action.payload;
-      const rowIndex = state.data.findIndex(element => (element.id ? element.id === rowId : null));
-      curState.data[rowIndex].values[columnId] = targetValue;
-      return baseTableReducer(state, action);
-    }
-
     // Column operations
     case TABLE_COLUMN_SORT: {
       // TODO should check that columnId actually is valid

@@ -7,6 +7,7 @@ import styled from 'styled-components';
 import Arrow from '@carbon/icons-react/lib/arrow--right/20';
 import Add from '@carbon/icons-react/lib/add/20';
 import Delete from '@carbon/icons-react/lib/delete/16';
+import { TextInput as CarbonTextInput } from 'carbon-components-react';
 
 import { getSortedData } from '../../utils/componentUtilityFunctions';
 import FullWidthWrapper from '../../internal/FullWidthWrapper';
@@ -61,42 +62,6 @@ const renderStatusIcon = ({ value: status }) => {
   }
 };
 
-export const tableColumns = [
-  {
-    id: 'string',
-    name: 'String',
-    filter: { placeholderText: 'pick a string' },
-  },
-  {
-    id: 'date',
-    name: 'Date',
-    filter: { placeholderText: 'pick a date' },
-    editDataFunction: true,
-  },
-  {
-    id: 'select',
-    name: 'Select',
-    filter: { placeholderText: 'pick an option', options: selectData },
-    editDataFunction: true,
-  },
-  {
-    id: 'secretField',
-    name: 'Secret Information',
-    editDataFunction: true,
-  },
-  {
-    id: 'status',
-    name: 'Status',
-    renderDataFunction: renderStatusIcon,
-  },
-  {
-    id: 'number',
-    name: 'Number',
-    filter: { placeholderText: 'pick a number' },
-    editDataFunction: true,
-  },
-];
-
 export const tableColumnsWithAlignment = [
   {
     id: 'string',
@@ -137,29 +102,6 @@ export const tableColumnsWithAlignment = [
     isSortable: true,
   },
 ];
-
-export const tableColumnsFixedWidth = tableColumns.map(i => ({
-  ...i,
-  width:
-    i.id === 'string'
-      ? '300px'
-      : i.id === 'date'
-      ? '180px'
-      : i.id === 'select'
-      ? '120px'
-      : i.id === 'secretField'
-      ? '300px'
-      : i.id === 'status'
-      ? '100px'
-      : i.id === 'number'
-      ? '80px'
-      : undefined,
-}));
-
-const defaultOrdering = tableColumns.map(c => ({
-  columnId: c.id,
-  isHidden: c.id === 'secretField',
-}));
 
 const words = [
   'toyota',
@@ -244,6 +186,89 @@ const RowExpansionContent = ({ rowId }) => (
   </div>
 );
 
+const editDefaultData = ({ rowId, value, columnId }) => {
+  return (
+    <CarbonTextInput
+      id={rowId}
+      compactvalidation="true"
+      onChange={e => {
+        // const data = tableData;
+        const rowIndex = tableData.findIndex(element => (element.id ? element.id === rowId : null));
+        tableData[rowIndex].values[columnId] = e.currentTarget ? e.currentTarget.value : '';
+      }}
+      type="text"
+      disabled={false}
+      invalid={false}
+      light
+      defaultValue={value}
+      placeholder="Placeholder text"
+      helperText=""
+      invalidText=""
+      labelText=""
+      hideLabel
+    />
+  );
+};
+
+export const tableColumns = [
+  {
+    id: 'string',
+    name: 'String',
+    filter: { placeholderText: 'pick a string' },
+  },
+  {
+    id: 'date',
+    name: 'Date',
+    filter: { placeholderText: 'pick a date' },
+    editDataFunction: editDefaultData,
+  },
+  {
+    id: 'select',
+    name: 'Select',
+    filter: { placeholderText: 'pick an option', options: selectData },
+    editDataFunction: editDefaultData,
+  },
+  {
+    id: 'secretField',
+    name: 'Secret Information',
+    editDataFunction: editDefaultData,
+  },
+  {
+    id: 'status',
+    name: 'Status',
+    renderDataFunction: renderStatusIcon,
+  },
+  {
+    id: 'number',
+    name: 'Number',
+    filter: { placeholderText: 'pick a number' },
+    editDataFunction: editDefaultData,
+  },
+];
+
+export const tableColumnsFixedWidth = tableColumns.map(i => ({
+  ...i,
+  width:
+    i.id === 'string'
+      ? '300px'
+      : i.id === 'date'
+      ? '180px'
+      : i.id === 'select'
+      ? '120px'
+      : i.id === 'secretField'
+      ? '300px'
+      : i.id === 'status'
+      ? '100px'
+      : i.id === 'number'
+      ? '80px'
+      : undefined,
+}));
+
+const defaultOrdering = tableColumns.map(c => ({
+  columnId: c.id,
+  isHidden: c.id === 'secretField',
+}));
+
 const StyledTableCustomRowHeight = styled(Table)`
   &&& {
     & tr {
@@ -288,7 +313,6 @@ const actions = {
     onRowExpanded: action('onRowExpanded'),
     onChangeOrdering: action('onChangeOrdering'),
     onChangeSort: action('onChangeSort'),
-    onApplyEdit: action('onApplyEdit'),
   },
 };
 // const exampletext = (

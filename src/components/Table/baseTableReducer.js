@@ -19,7 +19,6 @@ import {
   TABLE_LOADING_SET,
   TABLE_EDIT_CANCEL,
   TABLE_EDIT_SAVE,
-  TABLE_EDIT_APPLY,
   TABLE_TOAST_TOGGLE,
 } from './tableActionCreators';
 
@@ -197,9 +196,6 @@ export const baseTableReducer = (state = {}, action) => {
           },
         },
       });
-    }
-    case TABLE_EDIT_APPLY: {
-      return update(state, {});
     }
     // Row Actions
     case TABLE_ROW_ACTION_START:

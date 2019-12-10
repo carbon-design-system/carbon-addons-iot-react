@@ -55,7 +55,6 @@ const propTypes = {
     onRowClicked: PropTypes.func,
     onApplyRowActions: PropTypes.func,
     onRowExpanded: PropTypes.func,
-    onApplyEdit: PropTypes.func,
   }).isRequired,
   /** What column ordering is currently applied to the table */
   ordering: PropTypes.arrayOf(
@@ -63,7 +62,6 @@ const propTypes = {
       columnId: PropTypes.string.isRequired,
       /* Visibility of column in table, defaults to false */
       isHidden: PropTypes.bool,
-      editDataFunction: PropTypes.bool,
     })
   ).isRequired,
   activeBar: PropTypes.oneOf(['column', 'filter', 'edit', 'undo']),
@@ -173,8 +171,7 @@ const TableBody = ({
           'onApplyRowAction',
           'onRowExpanded',
           'onRowClicked',
-          'onClearRowError',
-          'onApplyEdit'
+          'onClearRowError'
         )}
         rowActions={row.rowActions}
         values={row.values}

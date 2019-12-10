@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { DataTable, Checkbox, TextInput as CarbonTextInput } from 'carbon-components-react';
+import { DataTable, Checkbox } from 'carbon-components-react';
 import styled from 'styled-components';
 
 import RowActionsCell from '../RowActionsCell/RowActionsCell';
@@ -30,7 +30,7 @@ const propTypes = {
        *    row: PropTypes.object like this {col: value, col2: value}
        * }, you should return the node that should render within that cell */
       renderDataFunction: PropTypes.func,
-      editDataFunction: PropTypes.bool,
+      editDataFunction: PropTypes.func,
     })
   ).isRequired,
   /** internationalized label */
@@ -78,7 +78,6 @@ const propTypes = {
     onRowClicked: PropTypes.func,
     onApplyRowAction: PropTypes.func,
     onRowExpanded: PropTypes.func,
-    onApplyEdit: PropTypes.func,
   }).isRequired,
   /** optional per-row actions */
   rowActions: RowActionPropTypes,
@@ -143,8 +142,7 @@ const StyledTableRow = styled(({ isSelectable, ...others }) => <TableRow {...oth
           ? `background-color: inherit; color:#565656;border-bottom-color:#dcdcdc;border-top-color:#ffffff;`
           : ``} /* turn off hover states if the row is set not selectable */
     }
-
-
+  }
 `;
 
 const StyledSingleSelectedTableRow = styled(({ hasRowSelection, ...props }) => (
@@ -350,6 +348,7 @@ const StyledTableCellRow = styled(TableCell)`
       `
         : null;
     }}
+  }
 `;
 
 const StyledNestedSpan = styled.span`
@@ -371,14 +370,7 @@ const TableBodyRow = ({
     hasRowNesting,
     shouldExpandOnRowClick,
   },
-  tableActions: {
-    onRowSelected,
-    onRowExpanded,
-    onRowClicked,
-    onApplyRowAction,
-    onClearRowError,
-    onApplyEdit,
-  },
+  tableActions: { onRowSelected, onRowExpanded, onRowClicked, onApplyRowAction, onClearRowError },
   isExpanded,
   isSelected,
   selectRowAria,
@@ -472,27 +464,11 @@ const TableBodyRow = ({
             ) : (
               <StyledNestedSpan nestingOffset={offset}>
                 {col.editDataFunction ? (
-                  <CarbonTextInput
-                    id={id}
-                    compactvalidation="true"
-                    onChange={event =>
-                      onApplyEdit(
-                        event.currentTarget ? event.currentTarget.value : '',
-                        col.columnId,
-                        id
-                      )
-                    }
-                    type="text"
-                    disabled={false}
-                    invalid={false}
-                    light
-                    defaultValue={values[col.columnId]}
-                    placeholder="Placeholder text"
-                    helperText=""
-                    invalidText=""
-                    labelText=""
-                    hideLabel
-                  />
+                  col.editDataFunction({
+                    value: values[col.columnId],
+                    columnId: col.columnId,
+                    rowId: id,
+                  })
                 ) : (
                   <TableCellRenderer>{values[col.columnId]}</TableCellRenderer>
                 )}

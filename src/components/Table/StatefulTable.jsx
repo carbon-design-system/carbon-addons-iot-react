@@ -23,7 +23,6 @@ import {
   tableRowActionError,
   tableEditCancel,
   tableEditSave,
-  tableEditApply,
   tableToastToggle,
 } from './tableActionCreators';
 import Table, { defaultProps } from './Table';
@@ -93,7 +92,6 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
     onClearRowError,
     onEmptyStateAction,
     onChangeOrdering,
-    onApplyEdit,
   } = table || {};
 
   // In addition to updating the store, I always callback to the parent in case they want to do something
@@ -144,7 +142,7 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
       onSaveEditAction: () => {
         dispatch(tableEditSave());
         dispatch(tableToastToggle('undo'));
-        window.hideToastTimeoutID = setTimeout(function() {
+        window.hideToastTimeoutID = setTimeout(function hideToastTimeout() {
           dispatch(tableToastToggle());
         }, 4000);
         callbackParent(onSaveEditAction);
@@ -197,10 +195,6 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
       onChangeOrdering: ordering => {
         dispatch(tableColumnOrder(ordering));
         callbackParent(onChangeOrdering, ordering);
-      },
-      onApplyEdit: (targetValue, columnId, rowId) => {
-        dispatch(tableEditApply(targetValue, columnId, rowId));
-        callbackParent(onApplyEdit, targetValue, columnId, rowId);
       },
     },
   };
