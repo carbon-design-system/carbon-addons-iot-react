@@ -100,122 +100,42 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Heade
             />
           </svg>
         </button>
-        <div
-          className="bx--header__submenu bx--header-action-btn"
-          onBlur={[Function]}
+        <button
+          aria-label="help"
+          className="bx--header-action-btn bx--header__action"
           onClick={[Function]}
-          onKeyDown={[Function]}
+          type="button"
         >
-           
-          <a
-            aria-expanded={false}
-            aria-haspopup="menu"
-            aria-label="help"
+          <svg
+            aria-hidden={true}
             className="bx--header__menu-item bx--header__menu-title"
-            href="javascript:void(0)"
-            onKeyDown={[Function]}
-            role="menuitem"
-            tabIndex={0}
-          >
-            <svg
-              aria-hidden={true}
-              className="bx--header__menu-item bx--header__menu-title"
-              description="Icon"
-              fill="white"
-              focusable="false"
-              height={20}
-              preserveAspectRatio="xMidYMid meet"
-              style={
-                Object {
-                  "willChange": "transform",
-                }
+            description="Icon"
+            fill="white"
+            focusable="false"
+            height={20}
+            preserveAspectRatio="xMidYMid meet"
+            style={
+              Object {
+                "willChange": "transform",
               }
-              viewBox="0 0 32 32"
-              width={20}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M16 2a14 14 0 1 0 14 14A14 14 0 0 0 16 2zm0 26a12 12 0 1 1 12-12 12 12 0 0 1-12 12z"
-              />
-              <circle
-                cx="16"
-                cy="23.5"
-                r="1.5"
-              />
-              <path
-                d="M17 8h-1.5a4.49 4.49 0 0 0-4.5 4.5v.5h2v-.5a2.5 2.5 0 0 1 2.5-2.5H17a2.5 2.5 0 0 1 0 5h-2v4.5h2V17a4.5 4.5 0 0 0 0-9z"
-              />
-            </svg>
-          </a>
-          <ul
-            aria-label="help"
-            className="bx--header__menu"
-            role="menu"
+            }
+            viewBox="0 0 32 32"
+            width={20}
+            xmlns="http://www.w3.org/2000/svg"
           >
-            <li
-              role="none"
-            >
-              <a
-                className="bx--header__menu-item"
-                href="http://google.com"
-                rel="noopener noreferrer"
-                role="menuitem"
-                tabIndex={0}
-                target="_blank"
-                title="this is a title"
-              >
-                <span
-                  className="bx--text-truncate--end"
-                >
-                  this is my message to you
-                </span>
-              </a>
-            </li>
-            <li
-              className="this"
-              role="none"
-            >
-              <button
-                className="bx--header__menu-item"
-                onClick={[Function]}
-                role="menuitem"
-                tabIndex={0}
-              >
-                <span
-                  className="bx--text-truncate--end"
-                >
-                  <span>
-                    JohnDoe@ibm.com
-                    <svg
-                      aria-hidden={true}
-                      description="Icon"
-                      fill="white"
-                      focusable="false"
-                      height={20}
-                      preserveAspectRatio="xMidYMid meet"
-                      style={
-                        Object {
-                          "willChange": "transform",
-                        }
-                      }
-                      viewBox="0 0 32 32"
-                      width={20}
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M16 2a14 14 0 1 0 14 14A14 14 0 0 0 16 2zm-6 24.38v-2A3.22 3.22 0 0 1 13 21h6a3.22 3.22 0 0 1 3 3.39v2a11.92 11.92 0 0 1-12 0zm14-1.46v-.61A5.21 5.21 0 0 0 19 19h-6a5.2 5.2 0 0 0-5 5.31v.59a12 12 0 1 1 16 0z"
-                      />
-                      <path
-                        d="M16 7a5 5 0 1 0 5 5 5 5 0 0 0-5-5zm0 8a3 3 0 1 1 3-3 3 3 0 0 1-3 3z"
-                      />
-                    </svg>
-                  </span>
-                </span>
-              </button>
-            </li>
-          </ul>
-           
-        </div>
+            <path
+              d="M16 2a14 14 0 1 0 14 14A14 14 0 0 0 16 2zm0 26a12 12 0 1 1 12-12 12 12 0 0 1-12 12z"
+            />
+            <circle
+              cx="16"
+              cy="23.5"
+              r="1.5"
+            />
+            <path
+              d="M17 8h-1.5a4.49 4.49 0 0 0-4.5 4.5v.5h2v-.5a2.5 2.5 0 0 1 2.5-2.5H17a2.5 2.5 0 0 1 0 5h-2v4.5h2V17a4.5 4.5 0 0 0 0-9z"
+            />
+          </svg>
+        </button>
         <div
           className="bx--header__submenu bx--header-action-btn"
           onBlur={[Function]}
@@ -351,6 +271,52 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Heade
             />
           </svg>
         </button>
+      </div>
+      <div
+        aria-label="Header Panel"
+        className="bx--header-panel action-btn-headerpanel"
+      >
+        <div
+          element="a"
+          href="http://google.com"
+          rel="noopener noreferrer"
+          target="_blank"
+          title="this is a title"
+        >
+          this is my message to you
+        </div>
+        <div
+          className="this"
+          element="button"
+          onClick={[Function]}
+        >
+          <span>
+            JohnDoe@ibm.com
+            <svg
+              aria-hidden={true}
+              description="Icon"
+              fill="white"
+              focusable="false"
+              height={20}
+              preserveAspectRatio="xMidYMid meet"
+              style={
+                Object {
+                  "willChange": "transform",
+                }
+              }
+              viewBox="0 0 32 32"
+              width={20}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16 2a14 14 0 1 0 14 14A14 14 0 0 0 16 2zm-6 24.38v-2A3.22 3.22 0 0 1 13 21h6a3.22 3.22 0 0 1 3 3.39v2a11.92 11.92 0 0 1-12 0zm14-1.46v-.61A5.21 5.21 0 0 0 19 19h-6a5.2 5.2 0 0 0-5 5.31v.59a12 12 0 1 1 16 0z"
+              />
+              <path
+                d="M16 7a5 5 0 1 0 5 5 5 5 0 0 0-5-5zm0 8a3 3 0 1 1 3-3 3 3 0 0 1-3 3z"
+              />
+            </svg>
+          </span>
+        </div>
       </div>
       <div
         aria-label="Header Panel"

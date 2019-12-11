@@ -57,7 +57,7 @@ const HeaderProps = {
     },
     {
       label: 'help',
-      onClick: action('help drop open'),
+      headerPanel: true,
       btnContent: (
         <HeaderHelp
           fill="white"
@@ -93,7 +93,6 @@ const HeaderProps = {
     },
     {
       label: 'user',
-      onClick: action('click'),
       btnContent: <Avatar fill="white" description="Icon" />,
       childContent: [
         {

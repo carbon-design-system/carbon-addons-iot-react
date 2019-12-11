@@ -149,7 +149,7 @@ exports[`Header testcases should render 1`] = `
           <HeaderGlobalAction
             aria-label="alerts"
             className="bx--header-action-btn"
-            key="menu-item-alerts-global"
+            key="menu-item-alerts-global-0"
             onClick={[MockFunction]}
           >
             <button

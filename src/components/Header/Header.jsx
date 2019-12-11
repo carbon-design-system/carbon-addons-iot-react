@@ -10,7 +10,7 @@ import {
 } from 'carbon-components-react/lib/components/UIShell';
 import AppSwitcher from '@carbon/icons-react/lib/app-switcher/20';
 import PropTypes from 'prop-types';
-import React, { useState, useCallback } from 'react';
+import React, { useState } from 'react';
 import { settings } from 'carbon-components';
 
 import HeaderMenu from './HeaderMenu';
@@ -33,8 +33,7 @@ const propTypes = {
     PropTypes.shape({
       label: PropTypes.string.isRequired,
       onClick: PropTypes.func,
-      /** declare control of header panel from this action item. Can only be one panel for now */
-      // @TODO: allow  mutliple header panels
+      /** declare control of header panel from this action item.  */
       headerPanel: PropTypes.bool,
       btnContent: PropTypes.any.isRequired,
       childContent: PropTypes.arrayOf(
@@ -84,15 +83,49 @@ const Header = ({
   headerPanel,
   url,
 }) => {
-  const [expanded, setExpanded] = useState(false);
-  const handleHeaderPanelTriggerClick = useCallback(
-    () => {
-      setExpanded(!expanded);
-    },
-    [expanded]
-  );
-  const actionBtnContent = actionItems.map(item => {
+  const [expandedItem, setExpandedItem] = useState({});
+  const handleExpandedState = index => {
+    setExpandedItem({
+      [index]: !expandedItem[index],
+    });
+  };
+  const headerpanels = [];
+  const actionBtnContent = actionItems.map((item, i) => {
     if (item.hasOwnProperty('childContent')) {
+      if (item.hasOwnProperty('headerPanel')) {
+        const panelChildren = item.childContent.map(childItem => (
+          <div
+            key={`headerpanelmenu-item-${item.label +
+              item.childContent.indexOf(childItem)}-child-${i}`}
+            {...childItem.metaData}
+          >
+            {childItem.content}
+          </div>
+        ));
+        // setExpandedItem((expandedItem[i] = false));
+        headerpanels.push(
+          <HeaderPanel
+            key={`panel-${i}`}
+            aria-label="Header Panel"
+            className="action-btn-headerpanel"
+            expanded={expandedItem[item.label]}
+          >
+            {panelChildren}
+          </HeaderPanel>
+        );
+
+        return (
+          <HeaderGlobalAction
+            className={`${carbonPrefix}--header-action-btn`}
+            key={`menu-item-${item.label}-global`}
+            aria-label={item.label}
+            /* eslint-disable */
+            onClick={() => handleExpandedState(item.label)}
+          >
+            {item.btnContent}
+          </HeaderGlobalAction>
+        );
+      }
       const children = item.childContent.map(childItem => (
         <HeaderMenuItem
           key={`menu-item-${item.label + item.childContent.indexOf(childItem)}-child`}
@@ -117,7 +150,7 @@ const Header = ({
     return (
       <HeaderGlobalAction
         className={`${carbonPrefix}--header-action-btn`}
-        key={`menu-item-${item.label}-global`}
+        key={`menu-item-${item.label}-global-${i}`}
         aria-label={item.label}
         onClick={item.onClick}
       >
@@ -130,13 +163,14 @@ const Header = ({
       <HeaderGlobalAction
         aria-label="header-panel-trigger"
         key="AppSwitcher"
-        onClick={handleHeaderPanelTriggerClick}
+        onClick={() => handleExpandedState('AppSwitcher')}
       >
         <AppSwitcher fill="white" description="Icon" />
       </HeaderGlobalAction>
     );
   }
-
+  console.log(expandedItem);
+  const actionBtnHeaderPanels = headerpanels.map(i => i);
   return (
     <CarbonHeader className={className} aria-label="main header">
       <SkipToContent href={skipto} />
@@ -145,11 +179,12 @@ const Header = ({
         {appName}
       </HeaderName>
       <HeaderGlobalBar>{actionBtnContent}</HeaderGlobalBar>
+      {actionBtnHeaderPanels}
       {headerPanel && (
         <HeaderPanel
           aria-label="Header Panel"
           className={headerPanel.className ? headerPanel.className : null}
-          expanded={expanded}
+          expanded={expandedItem['AppSwitcher']}
         >
           <div>
             <headerPanel.content />
