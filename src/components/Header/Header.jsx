@@ -118,6 +118,7 @@ const Header = ({
           <HeaderGlobalAction
             className={`${carbonPrefix}--header-action-btn`}
             key={`menu-item-${item.label}-global`}
+            title={item.label}
             aria-label={item.label}
             /* eslint-disable */
             onClick={() => handleExpandedState(item.label)}
@@ -169,7 +170,7 @@ const Header = ({
       </HeaderGlobalAction>
     );
   }
-  console.log(expandedItem);
+
   const actionBtnHeaderPanels = headerpanels.map(i => i);
   return (
     <CarbonHeader className={className} aria-label="main header">

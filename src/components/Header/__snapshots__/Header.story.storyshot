@@ -104,6 +104,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Heade
           aria-label="help"
           className="bx--header-action-btn bx--header__action"
           onClick={[Function]}
+          title="help"
           type="button"
         >
           <svg
