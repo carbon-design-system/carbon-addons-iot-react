@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import merge from 'lodash/merge';
 import pick from 'lodash/pick';
@@ -345,6 +345,32 @@ const Table = props => {
       !isNil(view.toolbar.search.value) &&
       view.toolbar.search.value !== '');
 
+  /** type of editBar */
+  const [editBar, setEditBar] = useState(null);
+  /** current data when clicked edit icon */
+  const [curData, setCurData] = useState([]);
+
+  /**
+   * receive types of edit bar from TableToolbar.jsx,
+   * and deliver it to TableHeader, TableBody.jsx, etc.
+   * */
+  const handleGetActiveEditBar = activeEditBar => {
+    setEditBar(activeEditBar);
+  };
+  /** when clicked edit icon, save the current data in 'curData' */
+  const handleGetSaveCurData = saveCurData => {
+    if (saveCurData && curData !== data) {
+      /** set 'curData' equals to 'data */
+      setCurData(data);
+    }
+  };
+  /** when clicked cancel button or the toast, update 'data' by equaling 'curData' */
+  const handleGetUndoEdit = undoEdit => {
+    if (undoEdit) {
+      /** update 'data', and 'data' equals to 'curData' */
+    }
+  };
+
   return (
     <StyledTableContainer style={style} className={className}>
       <TableToolbar
@@ -396,6 +422,9 @@ const Table = props => {
             'isDisabled'
           ),
         }}
+        getActiveEditBar={handleGetActiveEditBar}
+        getSaveCurData={handleGetSaveCurData}
+        getUndoEdit={handleGetUndoEdit}
       />
       <CarbonTable {...others}>
         <TableHead
@@ -424,6 +453,7 @@ const Table = props => {
               isSelectAllIndeterminate: view.table.isSelectAllIndeterminate,
             },
           }}
+          editBar={editBar}
         />
         {view.table.loadingState.isLoading ? (
           <TableSkeletonWithHeaders
@@ -471,6 +501,7 @@ const Table = props => {
               'onRowClicked'
             )}
             activeBar={view.toolbar.activeBar}
+            editBar={editBar}
           />
         ) : (
           <EmptyTable

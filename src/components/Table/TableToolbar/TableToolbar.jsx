@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import IconColumnSelector from '@carbon/icons-react/lib/column/20';
 import IconFilter from '@carbon/icons-react/lib/filter/20';
@@ -111,10 +111,10 @@ const propTypes = {
     onClearAllFilters: PropTypes.func,
     onToggleColumnSelection: PropTypes.func,
     onToggleFilter: PropTypes.func,
-    onToggleEdit: PropTypes.func,
-    onCancelEditAction: PropTypes.func,
-    onSaveEditAction: PropTypes.func,
-    onUndoEditAction: PropTypes.func,
+    // onToggleEdit: PropTypes.func,
+    // onCancelEditAction: PropTypes.func,
+    // onSaveEditAction: PropTypes.func,
+    // onUndoEditAction: PropTypes.func,
   }).isRequired,
   /**
    * Inbound tableState
@@ -141,12 +141,18 @@ const propTypes = {
     ),
     search: TableSearchPropTypes,
   }).isRequired,
+  getActiveEditBar: PropTypes.func,
+  getSaveCurData: PropTypes.func,
+  getUndoEdit: PropTypes.func,
 };
 
 const defaultProps = {
   i18n: {
     ...defaultI18NPropTypes,
   },
+  getActiveEditBar: null,
+  getSaveCurData: null,
+  getUndoEdit: null,
 };
 
 const TableToolbar = ({
@@ -161,108 +167,202 @@ const TableToolbar = ({
     onToggleColumnSelection,
     onToggleFilter,
     onApplySearch,
-    onToggleEdit,
-    onCancelEditAction,
-    onSaveEditAction,
-    onUndoEditAction,
+    // onToggleEdit,
+    // onCancelEditAction,
+    // onSaveEditAction,
+    // onUndoEditAction,
   },
   tableState: {
     totalSelected,
     totalFilters,
     batchActions,
     search,
-    activeBar,
+    // activeBar,
     customToolbarContent,
     isDisabled,
   },
-}) => (
-  <StyledCarbonTableToolbar className={className}>
-    <StyledTableBatchActions
-      onCancel={onCancelBatchAction}
-      shouldShowBatchActions={hasRowSelection === 'multi' && totalSelected > 0}
-      totalSelected={totalSelected}
-      translateWithId={(...args) => tableTranslateWithId(i18n, ...args)}
-    >
-      {batchActions.map(({ id, labelText, ...others }) => (
-        <TableBatchAction key={id} onClick={() => onApplyBatchAction(id)} {...others}>
-          {labelText}
-        </TableBatchAction>
-      ))}
-    </StyledTableBatchActions>
-    {hasSearch && !hasEdit ? (
-      <StyledToolbarSearch
-        {...search}
+  getActiveEditBar,
+  getSaveCurData,
+  getUndoEdit,
+}) => {
+  /**
+   * There are two types of edit bar, 'buttons' and 'toast'.
+   * 'buttons' is to display save and cancel buttons,
+   * 'toast' is to display toast with undo option,
+   * 'null' is to display default table toolbar.
+   * */
+  const [activeEditBar, setActiveEditBar] = useState(null);
+  /**
+   * When clicked edit icon, set 'saveCurData' as 'true',
+   * then will save a temp data named 'curData' in Table.jsx.
+   */
+  const [saveCurData, setSaveCurData] = useState(false);
+  /**
+   * When clicked save button, a timeout counted down to close the toast,
+   * when clicked cancel button, the timeout was cleared.
+   * */
+  const [isHidingToast, setIsHidingToast] = useState(false);
+  /**
+   * When click cancel button or the toast, undid the edited data.
+   */
+  const [undoEdit, setUndo] = useState(false);
+
+  /** On click edit icon */
+  const onToggleEdit = () => {
+    setActiveEditBar('buttons');
+    setSaveCurData(true);
+    setUndo(false);
+  };
+  /** On click save button */
+  const onSaveEditAction = () => {
+    setActiveEditBar('toast');
+    setSaveCurData(false);
+    setIsHidingToast(true);
+    setUndo(false);
+  };
+  /** On click cancel button */
+  const onCancelEditAction = () => {
+    setActiveEditBar(null);
+    setSaveCurData(false);
+    setUndo(true);
+  };
+  /** On click toast */
+  const onUndoEditAction = () => {
+    setActiveEditBar(null);
+    setSaveCurData(false);
+    setIsHidingToast(false);
+    setUndo(true);
+  };
+
+  /** when 'activeEditBar' changed, deliver it to Table.jsx */
+  useEffect(
+    () => {
+      getActiveEditBar(activeEditBar);
+    },
+    [activeEditBar, getActiveEditBar]
+  );
+  /** when 'saveCurData' changed, deliver it to Table.jsx */
+  useEffect(
+    () => {
+      getSaveCurData(saveCurData);
+    },
+    [getSaveCurData, saveCurData]
+  );
+  /** when 'undoEdit' changed, deliver it to Table.jsx */
+  useEffect(
+    () => {
+      getUndoEdit(undoEdit);
+    },
+    [getUndoEdit, undoEdit]
+  );
+  /** a timeout to close the toast */
+  useEffect(
+    () => {
+      let timeoutID;
+      if (isHidingToast) {
+        timeoutID = setTimeout(() => {
+          setActiveEditBar(null);
+          setIsHidingToast(false);
+        }, 4000);
+      }
+      return () => {
+        clearTimeout(timeoutID);
+      };
+    },
+    [isHidingToast]
+  );
+
+  return (
+    <StyledCarbonTableToolbar className={className}>
+      <StyledTableBatchActions
+        onCancel={onCancelBatchAction}
+        shouldShowBatchActions={hasRowSelection === 'multi' && totalSelected > 0}
+        totalSelected={totalSelected}
         translateWithId={(...args) => tableTranslateWithId(i18n, ...args)}
-        id={`${tableId}-toolbar-search`}
-        onChange={event => onApplySearch(event.currentTarget ? event.currentTarget.value : '')}
-        disabled={isDisabled}
-      />
-    ) : null}
-    {activeBar === 'edit' ? (
-      <StyledTableToolbarContent>
-        <StyledCarbonButton kind="ghost" onClick={onCancelEditAction}>
-          {i18n.batchCancel}
-        </StyledCarbonButton>
-        <StyledCarbonButton onClick={onSaveEditAction}>{i18n.batchSave}</StyledCarbonButton>
-      </StyledTableToolbarContent>
-    ) : activeBar === 'undo' ? (
-      <StyledCarbonToastNotification
-        caption=""
-        hideCloseButton={false}
-        iconDescription="undo changes and close"
-        kind="success"
-        lowContrast
-        notificationType="toast"
-        onCloseButtonClick={onUndoEditAction}
-        role="alert"
-        style={{
-          marginBottom: '.5rem',
-          minWidth: '30rem',
-          position: 'fixed',
-          top: 0,
-          right: 0,
-          zIndex: 1,
-        }}
-        subtitle="Click to undo changes"
-        timeout={0}
-        title="Your changes have been saved."
-      />
-    ) : (
-      <StyledTableToolbarContent>
-        {customToolbarContent || null}
-        {totalFilters > 0 ? (
-          <Button kind="secondary" onClick={onClearAllFilters}>
-            {i18n.clearAllFilters}
-          </Button>
-        ) : null}
-        {hasSearch && hasEdit ? (
-          <StyledToolbarSearch
-            {...search}
-            translateWithId={(...args) => tableTranslateWithId(i18n, ...args)}
-            id={`${tableId}-toolbar-search`}
-            onChange={event => onApplySearch(event.currentTarget ? event.currentTarget.value : '')}
-            disabled={isDisabled}
-          />
-        ) : null}
-        {hasColumnSelection ? (
-          <ToolbarSVGWrapper onClick={onToggleColumnSelection}>
-            <IconColumnSelector description={i18n.columnSelectionButtonAria} />
-          </ToolbarSVGWrapper>
-        ) : null}
-        {hasFilter ? (
-          <ToolbarSVGWrapper onClick={onToggleFilter}>
-            <IconFilter description={i18n.filterButtonAria} />
-          </ToolbarSVGWrapper>
-        ) : null}
-        {hasEdit ? (
-          <ToolbarSVGWrapper onClick={onToggleEdit}>
-            <IconEdit description={i18n.editButtonAria} />
-          </ToolbarSVGWrapper>
-        ) : null}
-      </StyledTableToolbarContent>
-    )}
-  </StyledCarbonTableToolbar>
-);
+      >
+        {batchActions.map(({ id, labelText, ...others }) => (
+          <TableBatchAction key={id} onClick={() => onApplyBatchAction(id)} {...others}>
+            {labelText}
+          </TableBatchAction>
+        ))}
+      </StyledTableBatchActions>
+      {hasSearch && !hasEdit ? (
+        <StyledToolbarSearch
+          {...search}
+          translateWithId={(...args) => tableTranslateWithId(i18n, ...args)}
+          id={`${tableId}-toolbar-search`}
+          onChange={event => onApplySearch(event.currentTarget ? event.currentTarget.value : '')}
+          disabled={isDisabled}
+        />
+      ) : null}
+      {activeEditBar === 'buttons' ? (
+        <StyledTableToolbarContent>
+          <StyledCarbonButton kind="ghost" onClick={onCancelEditAction}>
+            {i18n.batchCancel}
+          </StyledCarbonButton>
+          <StyledCarbonButton onClick={onSaveEditAction}>{i18n.batchSave}</StyledCarbonButton>
+        </StyledTableToolbarContent>
+      ) : activeEditBar === 'toast' ? (
+        <StyledCarbonToastNotification
+          caption=""
+          hideCloseButton={false}
+          iconDescription="undo changes and close"
+          kind="success"
+          lowContrast
+          notificationType="toast"
+          onCloseButtonClick={onUndoEditAction}
+          role="alert"
+          style={{
+            marginBottom: '.5rem',
+            minWidth: '30rem',
+            position: 'fixed',
+            top: 0,
+            right: 0,
+            zIndex: 1,
+          }}
+          subtitle="Click to undo changes"
+          timeout={0}
+          title="Your changes have been saved."
+        />
+      ) : (
+        <StyledTableToolbarContent>
+          {customToolbarContent || null}
+          {totalFilters > 0 ? (
+            <Button kind="secondary" onClick={onClearAllFilters}>
+              {i18n.clearAllFilters}
+            </Button>
+          ) : null}
+          {hasSearch && hasEdit ? (
+            <StyledToolbarSearch
+              {...search}
+              translateWithId={(...args) => tableTranslateWithId(i18n, ...args)}
+              id={`${tableId}-toolbar-search`}
+              onChange={event =>
+                onApplySearch(event.currentTarget ? event.currentTarget.value : '')
+              }
+              disabled={isDisabled}
+            />
+          ) : null}
+          {hasColumnSelection ? (
+            <ToolbarSVGWrapper onClick={onToggleColumnSelection}>
+              <IconColumnSelector description={i18n.columnSelectionButtonAria} />
+            </ToolbarSVGWrapper>
+          ) : null}
+          {hasFilter ? (
+            <ToolbarSVGWrapper onClick={onToggleFilter}>
+              <IconFilter description={i18n.filterButtonAria} />
+            </ToolbarSVGWrapper>
+          ) : null}
+          {hasEdit ? (
+            <ToolbarSVGWrapper onClick={onToggleEdit}>
+              <IconEdit description={i18n.editButtonAria} />
+            </ToolbarSVGWrapper>
+          ) : null}
+        </StyledTableToolbarContent>
+      )}
+    </StyledCarbonTableToolbar>
+  );
+};
 
 TableToolbar.propTypes = propTypes;
 TableToolbar.defaultProps = defaultProps;

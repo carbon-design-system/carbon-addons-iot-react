@@ -95,6 +95,7 @@ const propTypes = {
   dismissText: PropTypes.string,
   /** table toolbar */
   activeBar: PropTypes.oneOf(['column', 'filter', 'edit', 'undo']),
+  editBar: PropTypes.oneOf(['buttons', 'toast']),
 };
 
 const defaultProps = {
@@ -109,6 +110,7 @@ const defaultProps = {
   nestingLevel: 0,
   nestingChildCount: 0,
   options: {},
+  editBar: null,
 };
 
 const StyledCheckboxTableCell = styled(TableCell)`
@@ -389,14 +391,14 @@ const TableBodyRow = ({
   isRowActionRunning,
   rowActionsError,
   rowDetails,
-  activeBar,
+  editBar,
 }) => {
   const singleSelectionIndicatorWidth = hasRowSelection === 'single' ? 0 : 5;
   const nestingOffset =
     hasRowSelection === 'single'
       ? nestingLevel * 16 - singleSelectionIndicatorWidth
       : nestingLevel * 16;
-  const isCheckboxSelectable = activeBar !== 'edit' ? isSelectable : false;
+  const isCheckboxSelectable = editBar !== 'buttons' ? isSelectable : false;
   const rowSelectionCell =
     hasRowSelection === 'multi' ? (
       <StyledCheckboxTableCell
@@ -447,7 +449,7 @@ const TableBodyRow = ({
             align={align}
             className={`data-table-${align}`}
           >
-            {activeBar !== 'edit' ? (
+            {editBar !== 'buttons' ? (
               <StyledNestedSpan nestingOffset={offset}>
                 {col.renderDataFunction ? (
                   col.renderDataFunction({

@@ -65,6 +65,7 @@ const propTypes = {
     })
   ).isRequired,
   activeBar: PropTypes.oneOf(['column', 'filter', 'edit', 'undo']),
+  editBar: PropTypes.oneOf(['buttons', 'toast']),
 };
 
 const defaultProps = {
@@ -86,6 +87,7 @@ const defaultProps = {
   shouldExpandOnRowClick: false,
   shouldLazyRender: false,
   activeBar: null,
+  editBar: null,
 };
 
 const TableBody = ({
@@ -114,6 +116,7 @@ const TableBody = ({
   shouldLazyRender,
   ordering,
   activeBar,
+  editBar,
 }) => {
   // Need to merge the ordering and the columns since the columns have the renderer function
   const orderingMap = useMemo(
@@ -176,6 +179,7 @@ const TableBody = ({
         rowActions={row.rowActions}
         values={row.values}
         activeBar={activeBar}
+        editBar={editBar}
       />
     );
     return shouldShowChildren

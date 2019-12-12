@@ -191,8 +191,11 @@ const editDefaultData = ({ rowId, value, columnId }) => {
     <CarbonTextInput
       id={rowId}
       compactvalidation="true"
+      /**
+       * set 'tableData' equals to current input value,
+       * update state.data
+       */
       onChange={e => {
-        // const data = tableData;
         const rowIndex = tableData.findIndex(element => (element.id ? element.id === rowId : null));
         tableData[rowIndex].values[columnId] = e.currentTarget ? e.currentTarget.value : '';
       }}

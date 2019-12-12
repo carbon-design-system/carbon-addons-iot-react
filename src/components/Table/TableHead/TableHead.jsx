@@ -69,6 +69,7 @@ const propTypes = {
   /** lightweight  */
   lightweight: PropTypes.bool,
   i18n: I18NPropTypes,
+  editBar: PropTypes.oneOf(['buttons', 'toast']),
 };
 
 const defaultProps = {
@@ -84,6 +85,7 @@ const defaultProps = {
   i18n: {
     ...defaultI18NPropTypes,
   },
+  editBar: null,
 };
 
 const StyledCheckboxTableHeader = styled(TableHeader)`
@@ -93,6 +95,7 @@ const StyledCheckboxTableHeader = styled(TableHeader)`
     & > span {
       padding: 0;
     }
+  }
 `;
 
 const StyledCarbonTableHead = styled(({ lightweight, ...others }) => (
@@ -150,11 +153,12 @@ const TableHead = ({
   lightweight,
   disabledText,
   i18n,
+  editBar,
 }) => {
   const filterBarActive = activeBar === 'filter';
   return (
     <StyledCarbonTableHead lightweight={`${lightweight}`}>
-      {activeBar === 'edit' ? (
+      {editBar === 'buttons' ? (
         <TableRow>
           {hasRowSelection === 'multi' ? (
             <StyledCheckboxTableHeader translateWithId={(...args) => tableTranslateWithId(...args)}>
@@ -168,7 +172,6 @@ const TableHead = ({
               />
             </StyledCheckboxTableHeader>
           ) : null}
-
           {ordering.map(item => {
             const matchingColumnMeta = columns.find(column => column.id === item.columnId);
             const align =
