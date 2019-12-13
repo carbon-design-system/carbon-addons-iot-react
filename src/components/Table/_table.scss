@@ -1,0 +1,10 @@
+@import '~carbon-components/scss/components/data-table/data-table';
+
+.toast {
+  margin-bottom: 0.5rem;
+  min-width: 30rem;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1;
+}

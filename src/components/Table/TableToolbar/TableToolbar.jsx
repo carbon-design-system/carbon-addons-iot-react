@@ -250,6 +250,7 @@ const TableToolbar = ({
         </StyledTableToolbarContent>
       ) : activeEditBar === 'toast' ? (
         <ToastNotification
+          className="toast"
           caption=""
           hideCloseButton={false}
           iconDescription="undo changes and close"
@@ -258,14 +259,6 @@ const TableToolbar = ({
           notificationType="toast"
           onCloseButtonClick={onToastClose}
           role="alert"
-          style={{
-            marginBottom: '.5rem',
-            minWidth: '30rem',
-            position: 'fixed',
-            top: 0,
-            right: 0,
-            zIndex: 1,
-          }}
           subtitle="Click to undo changes"
           timeout={0}
           title="Your changes have been saved."
