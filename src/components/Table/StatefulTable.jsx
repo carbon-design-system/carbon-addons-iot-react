@@ -21,9 +21,6 @@ import {
   tableRowActionStart,
   tableRowActionComplete,
   tableRowActionError,
-  // tableEditCancel,
-  // tableEditSave,
-  // tableToastToggle,
   tableDataSave,
   tableDataUndo,
 } from './tableActionCreators';
@@ -81,9 +78,6 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
     onApplySearch,
     onSaveCurData,
     onUndoEditData,
-    // onCancelEditAction,
-    // onSaveEditAction,
-    // onUndoEditAction,
   } = toolbar || {};
   const {
     onChangeSort,
@@ -142,24 +136,6 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
         callbackParent(onApplySearch, string);
         dispatch(tableSearchApply(string));
       },
-      // onCancelEditAction: () => {
-      //   dispatch(tableEditCancel());
-      //   callbackParent(onCancelEditAction);
-      // },
-      // onSaveEditAction: () => {
-      //   dispatch(tableEditSave());
-      //   dispatch(tableToastToggle('undo'));
-      //   window.hideToastTimeoutID = setTimeout(function hideToastTimeout() {
-      //     dispatch(tableToastToggle());
-      //   }, 4000);
-      //   callbackParent(onSaveEditAction);
-      // },
-      // onUndoEditAction: () => {
-      //   clearTimeout(window.hideToastTimeoutID);
-      //   dispatch(tableToastToggle());
-      //   dispatch(tableEditCancel());
-      //   callbackParent(onUndoEditAction);
-      // },
     },
     table: {
       onChangeSort: column => {

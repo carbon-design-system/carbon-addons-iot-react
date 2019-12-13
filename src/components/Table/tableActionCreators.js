@@ -17,9 +17,6 @@ export const TABLE_ROW_EXPAND = 'TABLE_ROW_EXPAND';
 export const TABLE_SEARCH_APPLY = 'TABLE_SEARCH_APPLY';
 export const TABLE_EMPTY_STATE_ACTION = 'TABLE_EMPTY_STATE_ACTION';
 export const TABLE_LOADING_SET = 'TABLE_LOADING_SET';
-export const TABLE_EDIT_CANCEL = 'TABLE_EDIT_CANCEL';
-export const TABLE_EDIT_SAVE = 'TABLE_EDIT_SAVE';
-export const TABLE_TOAST_TOGGLE = 'TABLE_TOAST_TOGGLE';
 export const TABLE_DATA_SAVE = 'TABLE_DATA_SAVE';
 export const TABLE_DATA_UNDO = 'TABLE_DATA_UNDO';
 
@@ -66,19 +63,6 @@ export const tableActionCancel = (instanceId = null) => ({
 export const tableActionApply = (id, instanceId = null) => ({
   type: TABLE_ACTION_APPLY,
   payload: id,
-  instanceId,
-});
-export const tableEditCancel = (instanceId = null) => ({
-  type: TABLE_EDIT_CANCEL,
-  instanceId,
-});
-export const tableEditSave = (instanceId = null) => ({
-  type: TABLE_EDIT_SAVE,
-  instanceId,
-});
-export const tableToastToggle = (toolbar, instanceId = null) => ({
-  type: TABLE_TOAST_TOGGLE,
-  payload: toolbar,
   instanceId,
 });
 export const tableDataSave = (instanceId = null) => ({

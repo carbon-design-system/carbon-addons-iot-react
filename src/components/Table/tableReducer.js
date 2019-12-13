@@ -22,9 +22,6 @@ import {
   TABLE_COLUMN_ORDER,
   TABLE_REGISTER,
   TABLE_SEARCH_APPLY,
-  TABLE_EDIT_CANCEL,
-  TABLE_EDIT_SAVE,
-  TABLE_TOAST_TOGGLE,
   TABLE_DATA_SAVE,
   TABLE_DATA_UNDO,
 } from './tableActionCreators';
@@ -177,15 +174,6 @@ export const tableReducer = (state = {}, action) => {
           action
         );
       }
-      return baseTableReducer(state, action);
-    }
-    case TABLE_EDIT_CANCEL: {
-      return baseTableReducer(state, action);
-    }
-    case TABLE_EDIT_SAVE: {
-      return baseTableReducer(state, action);
-    }
-    case TABLE_TOAST_TOGGLE: {
       return baseTableReducer(state, action);
     }
     case TABLE_DATA_SAVE: {

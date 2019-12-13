@@ -191,10 +191,6 @@ const editDefaultData = ({ rowId, value, columnId }) => {
     <CarbonTextInput
       id={rowId}
       compactvalidation="true"
-      /**
-       * set 'tableData' equals to current input value,
-       * update state.data
-       */
       onChange={e => {
         const rowIndex = tableData.findIndex(element => (element.id ? element.id === rowId : null));
         tableData[rowIndex].values[columnId] = e.currentTarget ? e.currentTarget.value : '';
@@ -304,9 +300,6 @@ const actions = {
     onCancelBatchAction: action('onCancelBatchAction'),
     onApplyBatchAction: action('onApplyBatchAction'),
     onApplySearch: action('onApplySearch'),
-    onCancelEditAction: action('onCancelEditAction'),
-    onSaveEditAction: action('onSaveEditAction'),
-    // onUndoEditAction: action('onUndoEditAction'),
   },
   table: {
     onRowClicked: action('onRowClicked'),

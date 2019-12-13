@@ -104,7 +104,7 @@ const propTypes = {
     ),
     toolbar: PropTypes.shape({
       /** Specify which header row to display, will display default header row if null */
-      activeBar: PropTypes.oneOf(['filter', 'column', 'edit', 'undo']),
+      activeBar: PropTypes.oneOf(['filter', 'column']),
       /** optional content to render inside the toolbar  */
       customToolbarContent: PropTypes.node,
       /** Specify which batch actions to render in the batch action bar. If empty, no batch action toolbar will display */
@@ -165,9 +165,6 @@ const propTypes = {
       onApplySearch: PropTypes.func,
       onSaveCurData: PropTypes.func,
       onUndoEditData: PropTypes.func,
-      onCancelEditAction: PropTypes.func,
-      onSaveEditAction: PropTypes.func,
-      // onUndoEditAction: PropTypes.func,
     }),
     /** table wide actions */
     table: PropTypes.shape({
@@ -239,9 +236,6 @@ export const defaultProps = baseProps => ({
       onCancelBatchAction: defaultFunction('actions.toolbar.onCancelBatchAction'),
       onSaveCurData: defaultFunction('actions.toolbar.onSaveCurData'),
       onUndoEditData: defaultFunction('actions.toolbar.onUndoEditData'),
-      onCancelEditAction: defaultFunction('actions.toolbar.onCancelEditAction'),
-      onSaveEditAction: defaultFunction('actions.toolbar.onSaveEditAction'),
-      // onUndoEditAction: defaultFunction('actions.toolbar.onUndoEditAction'),
     },
     table: {
       onChangeSort: defaultFunction('actions.table.onChangeSort'),
@@ -347,28 +341,9 @@ const Table = props => {
 
   /** type of editBar */
   const [editBar, setEditBar] = useState(null);
-  /** current data when clicked edit icon */
-  // const [curData, setCurData] = useState([]);
 
-  /**
-   * receive types of edit bar from TableToolbar.jsx,
-   * and deliver it to TableHeader, TableBody.jsx, etc.
-   * */
   const handleGetActiveEditBar = activeEditBar => {
     setEditBar(activeEditBar);
-  };
-  /** when clicked edit icon, save the current data in 'curData' */
-  // const handleGetSaveCurData = saveCurData => {
-  //   if (saveCurData && curData !== data) {
-  //     /** set 'curData' equals to 'data */
-  //     setCurData(data);
-  //   }
-  // };
-  /** when clicked cancel button or the toast, update 'data' by equaling 'curData' */
-  const handleGetUndoEdit = undoEdit => {
-    if (undoEdit) {
-      /** update 'data', and 'data' equals to 'curData' */
-    }
   };
 
   return (
@@ -398,10 +373,7 @@ const Table = props => {
           'onToggleFilter',
           'onApplySearch',
           'onSaveCurData',
-          'onUndoEditData',
-          'onCancelEditAction',
-          'onSaveEditAction'
-          // 'onUndoEditAction'
+          'onUndoEditData'
         )}
         options={pick(
           options,
@@ -424,8 +396,6 @@ const Table = props => {
           ),
         }}
         getActiveEditBar={handleGetActiveEditBar}
-        // getSaveCurData={handleGetSaveCurData}
-        getUndoEdit={handleGetUndoEdit}
       />
       <CarbonTable {...others}>
         <TableHead
@@ -501,7 +471,6 @@ const Table = props => {
               'onRowExpanded',
               'onRowClicked'
             )}
-            activeBar={view.toolbar.activeBar}
             editBar={editBar}
           />
         ) : (

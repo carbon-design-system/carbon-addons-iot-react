@@ -64,7 +64,6 @@ const propTypes = {
       isHidden: PropTypes.bool,
     })
   ).isRequired,
-  activeBar: PropTypes.oneOf(['column', 'filter', 'edit', 'undo']),
   editBar: PropTypes.oneOf(['buttons', 'toast']),
 };
 
@@ -86,7 +85,6 @@ const defaultProps = {
   hasRowActions: false,
   shouldExpandOnRowClick: false,
   shouldLazyRender: false,
-  activeBar: null,
   editBar: null,
 };
 
@@ -115,7 +113,6 @@ const TableBody = ({
   shouldExpandOnRowClick,
   shouldLazyRender,
   ordering,
-  activeBar,
   editBar,
 }) => {
   // Need to merge the ordering and the columns since the columns have the renderer function
@@ -178,7 +175,6 @@ const TableBody = ({
         )}
         rowActions={row.rowActions}
         values={row.values}
-        activeBar={activeBar}
         editBar={editBar}
       />
     );

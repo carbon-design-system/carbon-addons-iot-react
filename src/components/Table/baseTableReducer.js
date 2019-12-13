@@ -17,9 +17,6 @@ import {
   TABLE_COLUMN_ORDER,
   TABLE_SEARCH_APPLY,
   TABLE_LOADING_SET,
-  TABLE_EDIT_CANCEL,
-  TABLE_EDIT_SAVE,
-  TABLE_TOAST_TOGGLE,
 } from './tableActionCreators';
 
 export const baseTableReducer = (state = {}, action) => {
@@ -141,47 +138,6 @@ export const baseTableReducer = (state = {}, action) => {
             selectedIds: { $set: [] },
             isSelectAllSelected: { $set: false },
             isSelectAllIndeterminate: { $set: false },
-          },
-        },
-      });
-    }
-    case TABLE_EDIT_CANCEL: {
-      const { preData } = state;
-      const { data } = state;
-      const oldDataArr = [];
-      for (let i = 0; i < preData.length; i += 1) {
-        Object.keys(preData[i]).forEach(key => {
-          oldDataArr.push(preData[i][key]);
-        });
-      }
-      for (let i = 0; i < data.length; i += 1) {
-        Object.keys(data[i].values).forEach(key => {
-          data[i].values[key] = oldDataArr.shift();
-        });
-      }
-      return update(state, {
-        view: {
-          toolbar: {
-            activeBar: { $set: null },
-          },
-        },
-      });
-    }
-    case TABLE_EDIT_SAVE: {
-      return update(state, {
-        view: {
-          toolbar: {
-            activeBar: { $set: null },
-          },
-        },
-      });
-    }
-    case TABLE_TOAST_TOGGLE: {
-      const toastToggled = action.payload ? action.payload : null;
-      return update(state, {
-        view: {
-          toolbar: {
-            activeBar: { $set: toastToggled },
           },
         },
       });

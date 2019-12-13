@@ -71,10 +71,6 @@ const StyledTableBatchActions = styled(TableBatchActions)`
   }
 `;
 
-const StyledCarbonButton = styled(Button)``;
-
-const StyledCarbonToastNotification = styled(ToastNotification)``;
-
 const propTypes = {
   /** id of table */
   tableId: PropTypes.string.isRequired,
@@ -121,7 +117,7 @@ const propTypes = {
     /** is the toolbar currently disabled */
     isDisabled: PropTypes.bool,
     /** Which toolbar is currently active */
-    activeBar: PropTypes.oneOf(['column', 'filter', 'edit', 'undo']),
+    activeBar: PropTypes.oneOf(['column', 'filter']),
     /** total number of selected rows */
     totalSelected: PropTypes.number,
     /** row selection option */
@@ -167,9 +163,6 @@ const TableToolbar = ({
     onApplySearch,
     onSaveCurData,
     onUndoEditData,
-    // onCancelEditAction,
-    // onSaveEditAction,
-    // onUndoEditAction,
   },
   tableState: {
     totalSelected,
@@ -181,83 +174,34 @@ const TableToolbar = ({
     isDisabled,
   },
   getActiveEditBar,
-  // getSaveCurData,
-  // getUndoEdit,
 }) => {
-  /**
-   * There are two types of edit bar, 'buttons' and 'toast'.
-   * 'buttons' is to display save and cancel buttons,
-   * 'toast' is to display toast with undo option,
-   * 'null' is to display default table toolbar.
-   * */
   const [activeEditBar, setActiveEditBar] = useState(null);
-  // /**
-  //  * When clicked edit icon, set 'saveCurData' as 'true',
-  //  * then will save a temp data named 'curData' in Table.jsx.
-  //  */
-  // const [saveCurData, setSaveCurData] = useState(false);
-  /**
-   * When clicked save button, a timeout counted down to close the toast,
-   * when clicked cancel button, the timeout was cleared.
-   * */
   const [isHidingToast, setIsHidingToast] = useState(false);
-  // /**
-  //  * When click cancel button or the toast, undid the edited data.
-  //  */
-  // const [undoEdit, setUndo] = useState(false);
 
-  /** On click edit icon */
   const onToggleEdit = () => {
     setActiveEditBar('buttons');
     onSaveCurData();
-    // setSaveCurData(true);
-    // setUndo(false);
   };
-  /** On click cancel button */
   const onCancelEditAction = () => {
     setActiveEditBar(null);
     onUndoEditData();
-    // setSaveCurData(false);
-    // setUndo(true);
   };
-  /** On click save button */
   const onSaveEditAction = () => {
     setActiveEditBar('toast');
-    // setSaveCurData(false);
     setIsHidingToast(true);
-    // setUndo(false);
   };
-  /** On click toast */
   const onToastClose = () => {
     setActiveEditBar(null);
-    // setSaveCurData(false);
     setIsHidingToast(false);
     onUndoEditData();
-    // setUndo(true);
   };
 
-  /** when 'activeEditBar' changed, deliver it to Table.jsx */
   useEffect(
     () => {
       getActiveEditBar(activeEditBar);
     },
     [activeEditBar, getActiveEditBar]
   );
-  // /** when 'saveCurData' changed, deliver it to Table.jsx */
-  // useEffect(
-  //   () => {
-  //     getSaveCurData(saveCurData);
-  //   },
-  //   [getSaveCurData, saveCurData]
-  // );
-  // /** when 'undoEdit' changed, deliver it to Table.jsx */
-  // useEffect(
-  //   () => {
-  //     getUndoEdit(undoEdit);
-  //   },
-  //   [getUndoEdit, undoEdit]
-  // );
-  /** a timeout to close the toast */
   useEffect(
     () => {
       let timeoutID;
@@ -299,13 +243,13 @@ const TableToolbar = ({
       ) : null}
       {activeEditBar === 'buttons' ? (
         <StyledTableToolbarContent>
-          <StyledCarbonButton kind="ghost" onClick={onCancelEditAction}>
+          <Button kind="ghost" onClick={onCancelEditAction}>
             {i18n.batchCancel}
-          </StyledCarbonButton>
-          <StyledCarbonButton onClick={onSaveEditAction}>{i18n.batchSave}</StyledCarbonButton>
+          </Button>
+          <Button onClick={onSaveEditAction}>{i18n.batchSave}</Button>
         </StyledTableToolbarContent>
       ) : activeEditBar === 'toast' ? (
-        <StyledCarbonToastNotification
+        <ToastNotification
           caption=""
           hideCloseButton={false}
           iconDescription="undo changes and close"
