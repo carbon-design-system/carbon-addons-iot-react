@@ -186,7 +186,7 @@ const RowExpansionContent = ({ rowId }) => (
   </div>
 );
 
-const editDefaultData = ({ rowId, value, columnId }) => {
+const editInputData = ({ rowId, value, columnId }) => {
   return (
     <CarbonTextInput
       id={rowId}
@@ -247,7 +247,7 @@ export const tableColumns = [
     id: 'date',
     name: 'Date',
     filter: { placeholderText: 'pick a date' },
-    editDataFunction: editDefaultData,
+    editDataFunction: editInputData,
   },
   {
     id: 'select',
@@ -258,7 +258,7 @@ export const tableColumns = [
   {
     id: 'secretField',
     name: 'Secret Information',
-    editDataFunction: editDefaultData,
+    editDataFunction: editInputData,
   },
   {
     id: 'status',
@@ -269,7 +269,7 @@ export const tableColumns = [
     id: 'number',
     name: 'Number',
     filter: { placeholderText: 'pick a number' },
-    editDataFunction: editDefaultData,
+    editDataFunction: editInputData,
   },
 ];
 
