@@ -79,7 +79,11 @@ export default {
 
         // Sass components
         {
-          src: ['src/components/**/*.scss', '!src/components/Notification/*.scss'],
+          src: [
+            'src/components/**/*.scss',
+            '!src/components/Notification/*.scss',
+            '!src/components/Table/TableHead/*.scss',
+          ],
           dest: 'lib/scss/components',
           rename: (name, extension) => sanitizeAndCamelCase(name, extension),
         },
@@ -88,6 +92,10 @@ export default {
         {
           src: 'src/components/Notification/*.scss',
           dest: 'lib/scss/components/Notification',
+        },
+        {
+          src: 'src/components/Table/TableHead/*.scss',
+          dest: 'lib/scss/components/Table/TableHead',
         },
       ],
       verbose: env !== 'development', // logs the file copy list on production builds for easier debugging
