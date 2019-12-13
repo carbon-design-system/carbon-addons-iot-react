@@ -11,6 +11,7 @@ const PageWizardStep = ({ children, onValidate = () => true, ...other }) => (
   <div className="page-wizard--step">
     {other.error ? (
       <InlineNotification
+        lowContrast
         title={other.error}
         subtitle=""
         kind="error"
