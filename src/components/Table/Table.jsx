@@ -219,9 +219,7 @@ export const defaultProps = baseProps => ({
       selectedIds: [],
       rowActions: [],
       sort: {},
-      ordering:
-        baseProps.columns &&
-        baseProps.columns.map(i => ({ columnId: i.id, editDataFunction: i.editDataFunction })),
+      ordering: baseProps.columns && baseProps.columns.map(i => ({ columnId: i.id })),
       loadingState: {
         rowCount: 5,
       },
