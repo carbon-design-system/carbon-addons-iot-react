@@ -6,14 +6,16 @@ import {
   HeaderGlobalAction,
   SkipToContent,
   HeaderMenuItem,
-  HeaderPanel,
+  // HeaderPanel,
 } from 'carbon-components-react/lib/components/UIShell';
 import AppSwitcher from '@carbon/icons-react/lib/app-switcher/20';
 import PropTypes from 'prop-types';
-import React, { useState } from 'react';
+import React, { useState, useRef, createRef } from 'react';
 import { settings } from 'carbon-components';
+import cn from 'classnames';
 
 import HeaderMenu from './HeaderMenu';
+import HeaderPanel from './HeaderPanel';
 
 const { prefix: carbonPrefix } = settings;
 
@@ -83,34 +85,56 @@ const Header = ({
   headerPanel,
   url,
 }) => {
+  // dynamic refs for global action dropdown
+  const refs = {};
+  // ref for App Switcher - only create if there is going to be one
+  const appSwitch = headerPanel ? createRef() : null;
   const [expandedItem, setExpandedItem] = useState({});
-  const handleExpandedState = index => {
+
+  // create state for focus
+  // use effect to call focus
+
+  // expanded state and focus for headerpanels
+  const handleExpandedState = (index, ref) => {
+    if (!expandedItem[index]) {
+      ref.current.focus();
+    }
     setExpandedItem({
       [index]: !expandedItem[index],
     });
   };
-  const headerpanels = [];
+
+  const setRefFunction = i => {
+    refs[`ref${i}`] = createRef();
+    // console.log('inside ref:', element, ref);
+    return refs[`ref${i}`];
+  };
+  const actionBtnHeaderPanels = [];
   const actionBtnContent = actionItems.map((item, i) => {
     if (item.hasOwnProperty('childContent')) {
       if (item.hasOwnProperty('headerPanel')) {
         const panelChildren = item.childContent.map(childItem => (
-          <div
-            key={`headerpanelmenu-item-${item.label +
-              item.childContent.indexOf(childItem)}-child-${i}`}
-            {...childItem.metaData}
-          >
-            {childItem.content}
-          </div>
+          <li key={`listitem-${i * Math.random()}`}>
+            <childItem.metaData.element
+              key={`headerpanelmenu-item-${item.label +
+                item.childContent.indexOf(childItem)}-child-${i}`}
+              {...childItem.metaData}
+            >
+              {childItem.content}
+            </childItem.metaData.element>
+          </li>
         ));
         // setExpandedItem((expandedItem[i] = false));
-        headerpanels.push(
+        const thisRef = setRefFunction(i);
+        actionBtnHeaderPanels.push(
           <HeaderPanel
+            ref={thisRef}
             key={`panel-${i}`}
             aria-label="Header Panel"
             className="action-btn-headerpanel"
             expanded={expandedItem[item.label]}
           >
-            {panelChildren}
+            <ul>{panelChildren}</ul>
           </HeaderPanel>
         );
 
@@ -121,7 +145,7 @@ const Header = ({
             title={item.label}
             aria-label={item.label}
             /* eslint-disable */
-            onClick={() => handleExpandedState(item.label)}
+            onClick={() => handleExpandedState(item.label, thisRef)}
           >
             {item.btnContent}
           </HeaderGlobalAction>
@@ -164,14 +188,13 @@ const Header = ({
       <HeaderGlobalAction
         aria-label="header-panel-trigger"
         key="AppSwitcher"
-        onClick={() => handleExpandedState('AppSwitcher')}
+        onClick={() => handleExpandedState('AppSwitcher', appSwitch)}
       >
         <AppSwitcher fill="white" description="Icon" />
       </HeaderGlobalAction>
     );
   }
 
-  const actionBtnHeaderPanels = headerpanels.map(i => i);
   return (
     <CarbonHeader className={className} aria-label="main header">
       <SkipToContent href={skipto} />
@@ -183,8 +206,11 @@ const Header = ({
       {actionBtnHeaderPanels}
       {headerPanel && (
         <HeaderPanel
+          ref={appSwitch}
           aria-label="Header Panel"
-          className={headerPanel.className ? headerPanel.className : null}
+          className={cn(`${carbonPrefix}--app-switcher`, {
+            [headerPanel.className]: headerPanel.className,
+          })}
           expanded={expandedItem['AppSwitcher']}
         >
           <div>

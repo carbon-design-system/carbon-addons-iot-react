@@ -47,3 +47,8 @@
     display: flex;
   }
 }
+
+.#{$prefix}--app-switcher {
+  background-color: $ui-01;
+  border: none;
+}
