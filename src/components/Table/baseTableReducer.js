@@ -113,18 +113,7 @@ export const baseTableReducer = (state = {}, action) => {
     // Toolbar Actions
     case TABLE_TOOLBAR_TOGGLE: {
       const filterToggled = state.view.toolbar.activeBar === action.payload ? null : action.payload;
-      const curData = [];
-      const { data } = state;
-      for (let i = 0; i < data.length; i += 1) {
-        const { values } = data[i];
-        const curRowData = {};
-        Object.keys(values).forEach(key => {
-          curRowData[key] = values[key];
-        });
-        curData.push(curRowData);
-      }
       return update(state, {
-        oldData: { $set: curData },
         view: {
           toolbar: {
             activeBar: {
@@ -157,12 +146,12 @@ export const baseTableReducer = (state = {}, action) => {
       });
     }
     case TABLE_EDIT_CANCEL: {
-      const { oldData } = state;
+      const { preData } = state;
       const { data } = state;
       const oldDataArr = [];
-      for (let i = 0; i < oldData.length; i += 1) {
-        Object.keys(oldData[i]).forEach(key => {
-          oldDataArr.push(oldData[i][key]);
+      for (let i = 0; i < preData.length; i += 1) {
+        Object.keys(preData[i]).forEach(key => {
+          oldDataArr.push(preData[i][key]);
         });
       }
       for (let i = 0; i < data.length; i += 1) {

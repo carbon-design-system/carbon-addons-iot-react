@@ -297,7 +297,8 @@ const actions = {
     onApplyFilter: action('onApplyFilter'),
     onToggleFilter: action('onToggleFilter'),
     onToggleColumnSelection: action('onToggleColumnSelection'),
-    onToggleEdit: action('onToggleEdit'),
+    onSaveCurData: action('onSaveCurData'),
+    onUndoEditData: action('onUndoEditData'),
     /** Specify a callback for when the user clicks toolbar button to clear all filters. Recieves a parameter of the current filter values for each column */
     onClearAllFilters: action('onClearAllFilters'),
     onCancelBatchAction: action('onCancelBatchAction'),
@@ -305,7 +306,7 @@ const actions = {
     onApplySearch: action('onApplySearch'),
     onCancelEditAction: action('onCancelEditAction'),
     onSaveEditAction: action('onSaveEditAction'),
-    onUndoEditAction: action('onUndoEditAction'),
+    // onUndoEditAction: action('onUndoEditAction'),
   },
   table: {
     onRowClicked: action('onRowClicked'),

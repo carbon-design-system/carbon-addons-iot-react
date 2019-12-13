@@ -111,10 +111,8 @@ const propTypes = {
     onClearAllFilters: PropTypes.func,
     onToggleColumnSelection: PropTypes.func,
     onToggleFilter: PropTypes.func,
-    // onToggleEdit: PropTypes.func,
-    // onCancelEditAction: PropTypes.func,
-    // onSaveEditAction: PropTypes.func,
-    // onUndoEditAction: PropTypes.func,
+    onSaveCurData: PropTypes.func,
+    onUndoEditData: PropTypes.func,
   }).isRequired,
   /**
    * Inbound tableState
@@ -167,7 +165,8 @@ const TableToolbar = ({
     onToggleColumnSelection,
     onToggleFilter,
     onApplySearch,
-    // onToggleEdit,
+    onSaveCurData,
+    onUndoEditData,
     // onCancelEditAction,
     // onSaveEditAction,
     // onUndoEditAction,
@@ -182,8 +181,8 @@ const TableToolbar = ({
     isDisabled,
   },
   getActiveEditBar,
-  getSaveCurData,
-  getUndoEdit,
+  // getSaveCurData,
+  // getUndoEdit,
 }) => {
   /**
    * There are two types of edit bar, 'buttons' and 'toast'.
@@ -192,46 +191,49 @@ const TableToolbar = ({
    * 'null' is to display default table toolbar.
    * */
   const [activeEditBar, setActiveEditBar] = useState(null);
-  /**
-   * When clicked edit icon, set 'saveCurData' as 'true',
-   * then will save a temp data named 'curData' in Table.jsx.
-   */
-  const [saveCurData, setSaveCurData] = useState(false);
+  // /**
+  //  * When clicked edit icon, set 'saveCurData' as 'true',
+  //  * then will save a temp data named 'curData' in Table.jsx.
+  //  */
+  // const [saveCurData, setSaveCurData] = useState(false);
   /**
    * When clicked save button, a timeout counted down to close the toast,
    * when clicked cancel button, the timeout was cleared.
    * */
   const [isHidingToast, setIsHidingToast] = useState(false);
-  /**
-   * When click cancel button or the toast, undid the edited data.
-   */
-  const [undoEdit, setUndo] = useState(false);
+  // /**
+  //  * When click cancel button or the toast, undid the edited data.
+  //  */
+  // const [undoEdit, setUndo] = useState(false);
 
   /** On click edit icon */
   const onToggleEdit = () => {
     setActiveEditBar('buttons');
-    setSaveCurData(true);
-    setUndo(false);
-  };
-  /** On click save button */
-  const onSaveEditAction = () => {
-    setActiveEditBar('toast');
-    setSaveCurData(false);
-    setIsHidingToast(true);
-    setUndo(false);
+    onSaveCurData();
+    // setSaveCurData(true);
+    // setUndo(false);
   };
   /** On click cancel button */
   const onCancelEditAction = () => {
     setActiveEditBar(null);
-    setSaveCurData(false);
-    setUndo(true);
+    onUndoEditData();
+    // setSaveCurData(false);
+    // setUndo(true);
+  };
+  /** On click save button */
+  const onSaveEditAction = () => {
+    setActiveEditBar('toast');
+    // setSaveCurData(false);
+    setIsHidingToast(true);
+    // setUndo(false);
   };
   /** On click toast */
-  const onUndoEditAction = () => {
+  const onToastClose = () => {
     setActiveEditBar(null);
-    setSaveCurData(false);
+    // setSaveCurData(false);
     setIsHidingToast(false);
-    setUndo(true);
+    onUndoEditData();
+    // setUndo(true);
   };
 
   /** when 'activeEditBar' changed, deliver it to Table.jsx */
@@ -241,20 +243,20 @@ const TableToolbar = ({
     },
     [activeEditBar, getActiveEditBar]
   );
-  /** when 'saveCurData' changed, deliver it to Table.jsx */
-  useEffect(
-    () => {
-      getSaveCurData(saveCurData);
-    },
-    [getSaveCurData, saveCurData]
-  );
-  /** when 'undoEdit' changed, deliver it to Table.jsx */
-  useEffect(
-    () => {
-      getUndoEdit(undoEdit);
-    },
-    [getUndoEdit, undoEdit]
-  );
+  // /** when 'saveCurData' changed, deliver it to Table.jsx */
+  // useEffect(
+  //   () => {
+  //     getSaveCurData(saveCurData);
+  //   },
+  //   [getSaveCurData, saveCurData]
+  // );
+  // /** when 'undoEdit' changed, deliver it to Table.jsx */
+  // useEffect(
+  //   () => {
+  //     getUndoEdit(undoEdit);
+  //   },
+  //   [getUndoEdit, undoEdit]
+  // );
   /** a timeout to close the toast */
   useEffect(
     () => {
@@ -310,7 +312,7 @@ const TableToolbar = ({
           kind="success"
           lowContrast
           notificationType="toast"
-          onCloseButtonClick={onUndoEditAction}
+          onCloseButtonClick={onToastClose}
           role="alert"
           style={{
             marginBottom: '.5rem',

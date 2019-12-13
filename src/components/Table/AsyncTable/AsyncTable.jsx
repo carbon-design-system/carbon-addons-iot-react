@@ -14,7 +14,7 @@ const AsyncTable = ({ fetchData, id }) => {
 
   const [state, dispatch] = useReducer(reducer, {
     data: [],
-    oldData: [],
+    preData: [],
     view: {
       filters: [],
       pagination: {
@@ -163,6 +163,12 @@ const AsyncTable = ({ fetchData, id }) => {
       onToggleColumnSelection: () => {
         dispatch(baseTableActions.tableToolbarToggle('column'));
       },
+      onSaveCurData: () => {
+        dispatch(baseTableActions.tableDataSave());
+      },
+      onUndoEditData: () => {
+        dispatch(baseTableActions.tableDataUndo());
+      },
       onClearAllFilters: () => {
         dispatch(baseTableActions.tableFilterClear());
       },
@@ -207,7 +213,6 @@ const AsyncTable = ({ fetchData, id }) => {
       id={id}
       columns={columns}
       data={state.data}
-      oldData={state.oldData}
       view={state.view}
       actions={actions}
       options={{

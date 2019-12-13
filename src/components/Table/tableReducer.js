@@ -25,6 +25,8 @@ import {
   TABLE_EDIT_CANCEL,
   TABLE_EDIT_SAVE,
   TABLE_TOAST_TOGGLE,
+  TABLE_DATA_SAVE,
+  TABLE_DATA_UNDO,
 } from './tableActionCreators';
 import { baseTableReducer } from './baseTableReducer';
 
@@ -185,6 +187,37 @@ export const tableReducer = (state = {}, action) => {
     }
     case TABLE_TOAST_TOGGLE: {
       return baseTableReducer(state, action);
+    }
+    case TABLE_DATA_SAVE: {
+      const curData = [];
+      const { data } = state;
+      for (let i = 0; i < data.length; i += 1) {
+        const { values } = data[i];
+        const curRowData = {};
+        Object.keys(values).forEach(key => {
+          curRowData[key] = values[key];
+        });
+        curData.push(curRowData);
+      }
+      return update(state, {
+        preData: { $set: curData },
+      });
+    }
+    case TABLE_DATA_UNDO: {
+      const { preData } = state;
+      const { data } = state;
+      const preDataArr = [];
+      for (let i = 0; i < preData.length; i += 1) {
+        Object.keys(preData[i]).forEach(key => {
+          preDataArr.push(preData[i][key]);
+        });
+      }
+      for (let i = 0; i < data.length; i += 1) {
+        Object.keys(data[i].values).forEach(key => {
+          data[i].values[key] = preDataArr.shift();
+        });
+      }
+      return update(state, {});
     }
     // Column operations
     case TABLE_COLUMN_SORT: {

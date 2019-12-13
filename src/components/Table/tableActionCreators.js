@@ -20,6 +20,8 @@ export const TABLE_LOADING_SET = 'TABLE_LOADING_SET';
 export const TABLE_EDIT_CANCEL = 'TABLE_EDIT_CANCEL';
 export const TABLE_EDIT_SAVE = 'TABLE_EDIT_SAVE';
 export const TABLE_TOAST_TOGGLE = 'TABLE_TOAST_TOGGLE';
+export const TABLE_DATA_SAVE = 'TABLE_DATA_SAVE';
+export const TABLE_DATA_UNDO = 'TABLE_DATA_UNDO';
 
 export const tableRegister = ({ data, isLoading, view, totalItems, instanceId = null }) => ({
   type: TABLE_REGISTER,
@@ -77,6 +79,14 @@ export const tableEditSave = (instanceId = null) => ({
 export const tableToastToggle = (toolbar, instanceId = null) => ({
   type: TABLE_TOAST_TOGGLE,
   payload: toolbar,
+  instanceId,
+});
+export const tableDataSave = (instanceId = null) => ({
+  type: TABLE_DATA_SAVE,
+  instanceId,
+});
+export const tableDataUndo = (instanceId = null) => ({
+  type: TABLE_DATA_UNDO,
   instanceId,
 });
 

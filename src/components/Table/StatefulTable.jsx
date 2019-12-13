@@ -21,9 +21,11 @@ import {
   tableRowActionStart,
   tableRowActionComplete,
   tableRowActionError,
-  tableEditCancel,
-  tableEditSave,
-  tableToastToggle,
+  // tableEditCancel,
+  // tableEditSave,
+  // tableToastToggle,
+  tableDataSave,
+  tableDataUndo,
 } from './tableActionCreators';
 import Table, { defaultProps } from './Table';
 
@@ -77,10 +79,11 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
     onCancelBatchAction,
     onApplyBatchAction,
     onApplySearch,
-    onToggleEdit,
-    onCancelEditAction,
-    onSaveEditAction,
-    onUndoEditAction,
+    onSaveCurData,
+    onUndoEditData,
+    // onCancelEditAction,
+    // onSaveEditAction,
+    // onUndoEditAction,
   } = toolbar || {};
   const {
     onChangeSort,
@@ -115,9 +118,13 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
         dispatch(tableToolbarToggle('column'));
         callbackParent(onToggleColumnSelection, 'column');
       },
-      onToggleEdit: () => {
-        dispatch(tableToolbarToggle('edit'));
-        callbackParent(onToggleEdit, 'edit');
+      onSaveCurData: () => {
+        dispatch(tableDataSave());
+        callbackParent(onSaveCurData);
+      },
+      onUndoEditData: () => {
+        dispatch(tableDataUndo());
+        callbackParent(onUndoEditData);
       },
       onClearAllFilters: () => {
         dispatch(tableFilterClear());
@@ -135,24 +142,24 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
         callbackParent(onApplySearch, string);
         dispatch(tableSearchApply(string));
       },
-      onCancelEditAction: () => {
-        dispatch(tableEditCancel());
-        callbackParent(onCancelEditAction);
-      },
-      onSaveEditAction: () => {
-        dispatch(tableEditSave());
-        dispatch(tableToastToggle('undo'));
-        window.hideToastTimeoutID = setTimeout(function hideToastTimeout() {
-          dispatch(tableToastToggle());
-        }, 4000);
-        callbackParent(onSaveEditAction);
-      },
-      onUndoEditAction: () => {
-        clearTimeout(window.hideToastTimeoutID);
-        dispatch(tableToastToggle());
-        dispatch(tableEditCancel());
-        callbackParent(onUndoEditAction);
-      },
+      // onCancelEditAction: () => {
+      //   dispatch(tableEditCancel());
+      //   callbackParent(onCancelEditAction);
+      // },
+      // onSaveEditAction: () => {
+      //   dispatch(tableEditSave());
+      //   dispatch(tableToastToggle('undo'));
+      //   window.hideToastTimeoutID = setTimeout(function hideToastTimeout() {
+      //     dispatch(tableToastToggle());
+      //   }, 4000);
+      //   callbackParent(onSaveEditAction);
+      // },
+      // onUndoEditAction: () => {
+      //   clearTimeout(window.hideToastTimeoutID);
+      //   dispatch(tableToastToggle());
+      //   dispatch(tableEditCancel());
+      //   callbackParent(onUndoEditAction);
+      // },
     },
     table: {
       onChangeSort: column => {
