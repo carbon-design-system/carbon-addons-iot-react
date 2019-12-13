@@ -11,10 +11,10 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, boolean, number } from '@storybook/addon-knobs';
-import { BreadcrumbItem } from 'carbon-components-react';
+// import { BreadcrumbItem } from 'carbon-components-react';
 
 import Breadcrumb from './Breadcrumb';
-// import BreadcrumbItem from './BreadcrumbItem';
+import BreadcrumbItem from './BreadcrumbItem';
 
 const props = () => ({
   className: 'some-class',
@@ -28,15 +28,17 @@ storiesOf('Watson IoT | Breadcrumb', module)
   .add(
     'default',
     () => {
-      const windowWidth = number('container size', 500);
+      const windowWidth = number('container width', 500);
       return (
-        <Breadcrumb {...props()} style={{ width: windowWidth, border: `2px solid` }}>
-          <BreadcrumbItem>
-            <a href="/#">Breadcrumb 1</a>
-          </BreadcrumbItem>
-          <BreadcrumbItem href="#">Breadcrumb 2</BreadcrumbItem>
-          <BreadcrumbItem href="#">Breadcrumb 3</BreadcrumbItem>
-        </Breadcrumb>
+        <div style={{ width: windowWidth, border: `2px solid` }}>
+          <Breadcrumb {...props()} style={{ border: `1px solid red` }}>
+            <BreadcrumbItem>
+              <a href="/#">Breadcrumb 1</a>
+            </BreadcrumbItem>
+            <BreadcrumbItem href="#">Breadcrumb 2</BreadcrumbItem>
+            <BreadcrumbItem href="#">Breadcrumb 3</BreadcrumbItem>
+          </Breadcrumb>
+        </div>
       );
     },
     {
@@ -118,17 +120,19 @@ storiesOf('Watson IoT | Breadcrumb', module)
   // ),
   // );
   .add('with overflow menu', () => {
-    const windowWidth = number('container size', 500);
+    const windowWidth = number('container width', 500);
     return (
-      <Breadcrumb {...props()} style={{ width: windowWidth, border: `2px solid` }}>
-        <BreadcrumbItem>
-          <a href="/#">Breadcrumb 1</a>
-        </BreadcrumbItem>
-        <BreadcrumbItem href="#">Breadcrumb 2</BreadcrumbItem>
-        <BreadcrumbItem href="#">Breadcrumb 3</BreadcrumbItem>
-        <BreadcrumbItem href="#">Breadcrumb 4</BreadcrumbItem>
-        <BreadcrumbItem href="#">Breadcrumb 5</BreadcrumbItem>
-        <BreadcrumbItem href="#">Breadcrumb 6</BreadcrumbItem>
-      </Breadcrumb>
+      <div style={{ width: windowWidth, border: `2px solid` }}>
+        <Breadcrumb {...props()}>
+          <BreadcrumbItem>
+            <a href="/#">Breadcrumb 1</a>
+          </BreadcrumbItem>
+          <BreadcrumbItem href="#">Breadcrumb 2</BreadcrumbItem>
+          <BreadcrumbItem href="#">Breadcrumb 3</BreadcrumbItem>
+          <BreadcrumbItem href="#">Breadcrumb 4</BreadcrumbItem>
+          <BreadcrumbItem href="#">Breadcrumb 5</BreadcrumbItem>
+          <BreadcrumbItem href="#">Breadcrumb 6</BreadcrumbItem>
+        </Breadcrumb>
+      </div>
     );
   });
