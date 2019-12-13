@@ -218,16 +218,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
               >
                 <tr>
                   <th
-                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI"
+                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB"
                     scope="col"
                   >
                     <button
                       align="start"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI bx--table-sort bx--table-sort--active"
+                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB bx--table-sort bx--table-sort--active"
                       data-column="alert"
                       id="column-alert"
                       onClick={[Function]}
-                      width=""
+                      style={
+                        Object {
+                          "width": undefined,
+                        }
+                      }
                     >
                       <span
                         className="bx--table-header-label"
@@ -237,6 +241,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                         >
                           Alert
                         </span>
+                        <div
+                          className="column-resize-wrapper"
+                          onMouseDown={[Function]}
+                          role="button"
+                          tabIndex="0"
+                        />
                       </span>
                       <svg
                         aria-label="Unsort rows by this header"
@@ -282,16 +292,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </th>
                   <th
                     aria-sort="none"
-                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI"
+                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB"
                     scope="col"
                   >
                     <button
                       align="start"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI bx--table-sort"
+                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB bx--table-sort"
                       data-column="hour"
                       id="column-hour"
                       onClick={[Function]}
-                      width=""
+                      style={
+                        Object {
+                          "width": undefined,
+                        }
+                      }
                     >
                       <span
                         className="bx--table-header-label"
@@ -301,6 +315,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                         >
                           Hour
                         </span>
+                        <div
+                          className="column-resize-wrapper"
+                          onMouseDown={[Function]}
+                          role="button"
+                          tabIndex="0"
+                        />
                       </span>
                       <svg
                         aria-label="Sort rows by this header in ascending order"
@@ -346,16 +366,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </th>
                   <th
                     aria-sort="none"
-                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI"
+                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB"
                     scope="col"
                   >
                     <button
                       align="start"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI bx--table-sort"
+                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB bx--table-sort"
                       data-column="pressure"
                       id="column-pressure"
                       onClick={[Function]}
-                      width=""
+                      style={
+                        Object {
+                          "width": undefined,
+                        }
+                      }
                     >
                       <span
                         className="bx--table-header-label"
@@ -365,6 +389,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                         >
                           Pressure
                         </span>
+                        <div
+                          className="column-resize-wrapper"
+                          onMouseDown={[Function]}
+                          role="button"
+                          tabIndex="0"
+                        />
                       </span>
                       <svg
                         aria-label="Sort rows by this header in ascending order"
@@ -1509,16 +1539,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                     scope="col"
                   />
                   <th
-                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI"
+                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB"
                     scope="col"
                   >
                     <button
                       align="start"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI bx--table-sort bx--table-sort--active"
+                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB bx--table-sort bx--table-sort--active"
                       data-column="alert"
                       id="column-alert"
                       onClick={[Function]}
-                      width=""
+                      style={
+                        Object {
+                          "width": undefined,
+                        }
+                      }
                     >
                       <span
                         className="bx--table-header-label"
@@ -1528,6 +1562,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                         >
                           Alert
                         </span>
+                        <div
+                          className="column-resize-wrapper"
+                          onMouseDown={[Function]}
+                          role="button"
+                          tabIndex="0"
+                        />
                       </span>
                       <svg
                         aria-label="Unsort rows by this header"
@@ -1573,16 +1613,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </th>
                   <th
                     aria-sort="none"
-                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI"
+                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB"
                     scope="col"
                   >
                     <button
                       align="start"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI bx--table-sort"
+                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB bx--table-sort"
                       data-column="hour"
                       id="column-hour"
                       onClick={[Function]}
-                      width=""
+                      style={
+                        Object {
+                          "width": undefined,
+                        }
+                      }
                     >
                       <span
                         className="bx--table-header-label"
@@ -1592,6 +1636,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                         >
                           Hour
                         </span>
+                        <div
+                          className="column-resize-wrapper"
+                          onMouseDown={[Function]}
+                          role="button"
+                          tabIndex="0"
+                        />
                       </span>
                       <svg
                         aria-label="Sort rows by this header in ascending order"
@@ -1637,16 +1687,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </th>
                   <th
                     aria-sort="none"
-                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI"
+                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB"
                     scope="col"
                   >
                     <button
                       align="start"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI bx--table-sort"
+                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB bx--table-sort"
                       data-column="pressure"
                       id="column-pressure"
                       onClick={[Function]}
-                      width=""
+                      style={
+                        Object {
+                          "width": undefined,
+                        }
+                      }
                     >
                       <span
                         className="bx--table-header-label"
@@ -1656,6 +1710,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                         >
                           Pressure
                         </span>
+                        <div
+                          className="column-resize-wrapper"
+                          onMouseDown={[Function]}
+                          role="button"
+                          tabIndex="0"
+                        />
                       </span>
                       <svg
                         aria-label="Sort rows by this header in ascending order"
@@ -3238,16 +3298,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
               >
                 <tr>
                   <th
-                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI"
+                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB"
                     scope="col"
                   >
                     <button
                       align="start"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI bx--table-sort bx--table-sort--active"
+                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB bx--table-sort bx--table-sort--active"
                       data-column="alert"
                       id="column-alert"
                       onClick={[Function]}
-                      width=""
+                      style={
+                        Object {
+                          "width": undefined,
+                        }
+                      }
                     >
                       <span
                         className="bx--table-header-label"
@@ -3257,6 +3321,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                         >
                           Alert
                         </span>
+                        <div
+                          className="column-resize-wrapper"
+                          onMouseDown={[Function]}
+                          role="button"
+                          tabIndex="0"
+                        />
                       </span>
                       <svg
                         aria-label="Unsort rows by this header"
@@ -3302,16 +3372,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </th>
                   <th
                     aria-sort="none"
-                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI"
+                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB"
                     scope="col"
                   >
                     <button
                       align="start"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI bx--table-sort"
+                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB bx--table-sort"
                       data-column="hour"
                       id="column-hour"
                       onClick={[Function]}
-                      width=""
+                      style={
+                        Object {
+                          "width": undefined,
+                        }
+                      }
                     >
                       <span
                         className="bx--table-header-label"
@@ -3321,6 +3395,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                         >
                           Hour
                         </span>
+                        <div
+                          className="column-resize-wrapper"
+                          onMouseDown={[Function]}
+                          role="button"
+                          tabIndex="0"
+                        />
                       </span>
                       <svg
                         aria-label="Sort rows by this header in ascending order"
@@ -3366,16 +3446,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </th>
                   <th
                     aria-sort="none"
-                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI"
+                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB"
                     scope="col"
                   >
                     <button
                       align="start"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI bx--table-sort"
+                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB bx--table-sort"
                       data-column="pressure"
                       id="column-pressure"
                       onClick={[Function]}
-                      width=""
+                      style={
+                        Object {
+                          "width": undefined,
+                        }
+                      }
                     >
                       <span
                         className="bx--table-header-label"
@@ -3385,6 +3469,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                         >
                           Pressure
                         </span>
+                        <div
+                          className="column-resize-wrapper"
+                          onMouseDown={[Function]}
+                          role="button"
+                          tabIndex="0"
+                        />
                       </span>
                       <svg
                         aria-label="Sort rows by this header in ascending order"
@@ -3767,16 +3857,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
               >
                 <tr>
                   <th
-                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI"
+                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB"
                     scope="col"
                   >
                     <button
                       align="start"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI bx--table-sort bx--table-sort--active"
+                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB bx--table-sort bx--table-sort--active"
                       data-column="alert"
                       id="column-alert"
                       onClick={[Function]}
-                      width=""
+                      style={
+                        Object {
+                          "width": undefined,
+                        }
+                      }
                     >
                       <span
                         className="bx--table-header-label"
@@ -3786,6 +3880,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                         >
                           Alert
                         </span>
+                        <div
+                          className="column-resize-wrapper"
+                          onMouseDown={[Function]}
+                          role="button"
+                          tabIndex="0"
+                        />
                       </span>
                       <svg
                         aria-label="Unsort rows by this header"
@@ -3831,16 +3931,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </th>
                   <th
                     aria-sort="none"
-                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 agCfw"
+                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB"
                     scope="col"
                   >
                     <button
                       align="start"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 agCfw bx--table-sort"
+                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB bx--table-sort"
                       data-column="iconColumn-count"
                       id="column-iconColumn-count"
                       onClick={[Function]}
-                      width="200pxpx"
+                      style={
+                        Object {
+                          "width": undefined,
+                        }
+                      }
                     >
                       <span
                         className="bx--table-header-label"
@@ -3850,6 +3954,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                         >
                           Count __Severity__
                         </span>
+                        <div
+                          className="column-resize-wrapper"
+                          onMouseDown={[Function]}
+                          role="button"
+                          tabIndex="0"
+                        />
                       </span>
                       <svg
                         aria-label="Sort rows by this header in ascending order"
@@ -3895,16 +4005,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </th>
                   <th
                     aria-sort="none"
-                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI"
+                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB"
                     scope="col"
                   >
                     <button
                       align="start"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI bx--table-sort"
+                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB bx--table-sort"
                       data-column="count"
                       id="column-count"
                       onClick={[Function]}
-                      width=""
+                      style={
+                        Object {
+                          "width": undefined,
+                        }
+                      }
                     >
                       <span
                         className="bx--table-header-label"
@@ -3914,6 +4028,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                         >
                           Count
                         </span>
+                        <div
+                          className="column-resize-wrapper"
+                          onMouseDown={[Function]}
+                          role="button"
+                          tabIndex="0"
+                        />
                       </span>
                       <svg
                         aria-label="Sort rows by this header in ascending order"
@@ -3959,16 +4079,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </th>
                   <th
                     aria-sort="none"
-                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI"
+                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB"
                     scope="col"
                   >
                     <button
                       align="start"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI bx--table-sort"
+                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB bx--table-sort"
                       data-column="hour"
                       id="column-hour"
                       onClick={[Function]}
-                      width=""
+                      style={
+                        Object {
+                          "width": undefined,
+                        }
+                      }
                     >
                       <span
                         className="bx--table-header-label"
@@ -3978,6 +4102,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                         >
                           Hour
                         </span>
+                        <div
+                          className="column-resize-wrapper"
+                          onMouseDown={[Function]}
+                          role="button"
+                          tabIndex="0"
+                        />
                       </span>
                       <svg
                         aria-label="Sort rows by this header in ascending order"
@@ -4023,16 +4153,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </th>
                   <th
                     aria-sort="none"
-                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 agCfw"
+                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB"
                     scope="col"
                   >
                     <button
                       align="start"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 agCfw bx--table-sort"
+                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB bx--table-sort"
                       data-column="iconColumn-pressure"
                       id="column-iconColumn-pressure"
                       onClick={[Function]}
-                      width="200pxpx"
+                      style={
+                        Object {
+                          "width": undefined,
+                        }
+                      }
                     >
                       <span
                         className="bx--table-header-label"
@@ -4042,6 +4176,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                         >
                           Pressure Sev
                         </span>
+                        <div
+                          className="column-resize-wrapper"
+                          onMouseDown={[Function]}
+                          role="button"
+                          tabIndex="0"
+                        />
                       </span>
                       <svg
                         aria-label="Sort rows by this header in ascending order"
@@ -4087,16 +4227,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </th>
                   <th
                     aria-sort="none"
-                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI"
+                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB"
                     scope="col"
                   >
                     <button
                       align="start"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI bx--table-sort"
+                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB bx--table-sort"
                       data-column="pressure"
                       id="column-pressure"
                       onClick={[Function]}
-                      width=""
+                      style={
+                        Object {
+                          "width": undefined,
+                        }
+                      }
                     >
                       <span
                         className="bx--table-header-label"
@@ -4106,6 +4250,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                         >
                           Pressure
                         </span>
+                        <div
+                          className="column-resize-wrapper"
+                          onMouseDown={[Function]}
+                          role="button"
+                          tabIndex="0"
+                        />
                       </span>
                       <svg
                         aria-label="Sort rows by this header in ascending order"
@@ -6198,16 +6348,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
               >
                 <tr>
                   <th
-                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI"
+                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB"
                     scope="col"
                   >
                     <button
                       align="start"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI bx--table-sort bx--table-sort--active"
+                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB bx--table-sort bx--table-sort--active"
                       data-column="alert"
                       id="column-alert"
                       onClick={[Function]}
-                      width=""
+                      style={
+                        Object {
+                          "width": undefined,
+                        }
+                      }
                     >
                       <span
                         className="bx--table-header-label"
@@ -6217,6 +6371,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                         >
                           Alert
                         </span>
+                        <div
+                          className="column-resize-wrapper"
+                          onMouseDown={[Function]}
+                          role="button"
+                          tabIndex="0"
+                        />
                       </span>
                       <svg
                         aria-label="Unsort rows by this header"
@@ -6262,16 +6422,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </th>
                   <th
                     aria-sort="none"
-                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI"
+                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB"
                     scope="col"
                   >
                     <button
                       align="start"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI bx--table-sort"
+                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB bx--table-sort"
                       data-column="hour"
                       id="column-hour"
                       onClick={[Function]}
-                      width=""
+                      style={
+                        Object {
+                          "width": undefined,
+                        }
+                      }
                     >
                       <span
                         className="bx--table-header-label"
@@ -6281,6 +6445,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                         >
                           Hour
                         </span>
+                        <div
+                          className="column-resize-wrapper"
+                          onMouseDown={[Function]}
+                          role="button"
+                          tabIndex="0"
+                        />
                       </span>
                       <svg
                         aria-label="Sort rows by this header in ascending order"
@@ -6326,16 +6496,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </th>
                   <th
                     aria-sort="none"
-                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI"
+                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB"
                     scope="col"
                   >
                     <button
                       align="start"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI bx--table-sort"
+                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB bx--table-sort"
                       data-column="pressure"
                       id="column-pressure"
                       onClick={[Function]}
-                      width=""
+                      style={
+                        Object {
+                          "width": undefined,
+                        }
+                      }
                     >
                       <span
                         className="bx--table-header-label"
@@ -6345,6 +6519,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                         >
                           Pressure
                         </span>
+                        <div
+                          className="column-resize-wrapper"
+                          onMouseDown={[Function]}
+                          role="button"
+                          tabIndex="0"
+                        />
                       </span>
                       <svg
                         aria-label="Sort rows by this header in ascending order"
@@ -7528,16 +7708,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                 <tr>
                   <th
                     aria-sort="descending"
-                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI"
+                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB"
                     scope="col"
                   >
                     <button
                       align="start"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI bx--table-sort bx--table-sort--active bx--table-sort--ascending"
+                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB bx--table-sort bx--table-sort--active bx--table-sort--ascending"
                       data-column="alert"
                       id="column-alert"
                       onClick={[Function]}
-                      width=""
+                      style={
+                        Object {
+                          "width": undefined,
+                        }
+                      }
                     >
                       <span
                         className="bx--table-header-label"
@@ -7547,6 +7731,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                         >
                           Alert
                         </span>
+                        <div
+                          className="column-resize-wrapper"
+                          onMouseDown={[Function]}
+                          role="button"
+                          tabIndex="0"
+                        />
                       </span>
                       <svg
                         aria-label="Unsort rows by this header"
@@ -7592,16 +7782,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </th>
                   <th
                     aria-sort="none"
-                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI"
+                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB"
                     scope="col"
                   >
                     <button
                       align="start"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI bx--table-sort"
+                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB bx--table-sort"
                       data-column="hour"
                       id="column-hour"
                       onClick={[Function]}
-                      width=""
+                      style={
+                        Object {
+                          "width": undefined,
+                        }
+                      }
                     >
                       <span
                         className="bx--table-header-label"
@@ -7611,6 +7805,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                         >
                           Hour
                         </span>
+                        <div
+                          className="column-resize-wrapper"
+                          onMouseDown={[Function]}
+                          role="button"
+                          tabIndex="0"
+                        />
                       </span>
                       <svg
                         aria-label="Sort rows by this header in ascending order"
@@ -7656,16 +7856,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </th>
                   <th
                     aria-sort="none"
-                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI"
+                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB"
                     scope="col"
                   >
                     <button
                       align="start"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI bx--table-sort"
+                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB bx--table-sort"
                       data-column="pressure"
                       id="column-pressure"
                       onClick={[Function]}
-                      width=""
+                      style={
+                        Object {
+                          "width": undefined,
+                        }
+                      }
                     >
                       <span
                         className="bx--table-header-label"
@@ -7675,6 +7879,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                         >
                           Pressure
                         </span>
+                        <div
+                          className="column-resize-wrapper"
+                          onMouseDown={[Function]}
+                          role="button"
+                          tabIndex="0"
+                        />
                       </span>
                       <svg
                         aria-label="Sort rows by this header in ascending order"
@@ -8833,16 +9043,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
               >
                 <tr>
                   <th
-                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 cQqCmJ"
+                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB"
                     scope="col"
                   >
                     <button
                       align="start"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 cQqCmJ bx--table-sort bx--table-sort--active"
+                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB bx--table-sort bx--table-sort--active"
                       data-column="alert"
                       id="column-alert"
                       onClick={[Function]}
-                      width="150px"
+                      style={
+                        Object {
+                          "width": undefined,
+                        }
+                      }
                     >
                       <span
                         className="bx--table-header-label"
@@ -8852,6 +9066,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                         >
                           Alert
                         </span>
+                        <div
+                          className="column-resize-wrapper"
+                          onMouseDown={[Function]}
+                          role="button"
+                          tabIndex="0"
+                        />
                       </span>
                       <svg
                         aria-label="Unsort rows by this header"
@@ -9678,16 +9898,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
               >
                 <tr>
                   <th
-                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 cQqCmJ"
+                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB"
                     scope="col"
                   >
                     <button
                       align="start"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 cQqCmJ bx--table-sort bx--table-sort--active"
+                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB bx--table-sort bx--table-sort--active"
                       data-column="alert"
                       id="column-alert"
                       onClick={[Function]}
-                      width="150px"
+                      style={
+                        Object {
+                          "width": undefined,
+                        }
+                      }
                     >
                       <span
                         className="bx--table-header-label"
@@ -9697,6 +9921,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                         >
                           Alert
                         </span>
+                        <div
+                          className="column-resize-wrapper"
+                          onMouseDown={[Function]}
+                          role="button"
+                          tabIndex="0"
+                        />
                       </span>
                       <svg
                         aria-label="Unsort rows by this header"
@@ -10514,16 +10744,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
               >
                 <tr>
                   <th
-                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI"
+                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB"
                     scope="col"
                   >
                     <button
                       align="start"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI bx--table-sort bx--table-sort--active"
+                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB bx--table-sort bx--table-sort--active"
                       data-column="alert"
                       id="column-alert"
                       onClick={[Function]}
-                      width=""
+                      style={
+                        Object {
+                          "width": undefined,
+                        }
+                      }
                     >
                       <span
                         className="bx--table-header-label"
@@ -10533,6 +10767,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                         >
                           Alert
                         </span>
+                        <div
+                          className="column-resize-wrapper"
+                          onMouseDown={[Function]}
+                          role="button"
+                          tabIndex="0"
+                        />
                       </span>
                       <svg
                         aria-label="Unsort rows by this header"
@@ -10578,16 +10818,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </th>
                   <th
                     aria-sort="none"
-                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI"
+                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB"
                     scope="col"
                   >
                     <button
                       align="start"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI bx--table-sort"
+                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB bx--table-sort"
                       data-column="count"
                       id="column-count"
                       onClick={[Function]}
-                      width=""
+                      style={
+                        Object {
+                          "width": undefined,
+                        }
+                      }
                     >
                       <span
                         className="bx--table-header-label"
@@ -10597,6 +10841,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                         >
                           Count
                         </span>
+                        <div
+                          className="column-resize-wrapper"
+                          onMouseDown={[Function]}
+                          role="button"
+                          tabIndex="0"
+                        />
                       </span>
                       <svg
                         aria-label="Sort rows by this header in ascending order"
@@ -10642,16 +10892,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </th>
                   <th
                     aria-sort="none"
-                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI"
+                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB"
                     scope="col"
                   >
                     <button
                       align="start"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI bx--table-sort"
+                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB bx--table-sort"
                       data-column="hour"
                       id="column-hour"
                       onClick={[Function]}
-                      width=""
+                      style={
+                        Object {
+                          "width": undefined,
+                        }
+                      }
                     >
                       <span
                         className="bx--table-header-label"
@@ -10661,6 +10915,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                         >
                           Hour
                         </span>
+                        <div
+                          className="column-resize-wrapper"
+                          onMouseDown={[Function]}
+                          role="button"
+                          tabIndex="0"
+                        />
                       </span>
                       <svg
                         aria-label="Sort rows by this header in ascending order"
@@ -10706,16 +10966,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </th>
                   <th
                     aria-sort="none"
-                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI"
+                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB"
                     scope="col"
                   >
                     <button
                       align="start"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI bx--table-sort"
+                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB bx--table-sort"
                       data-column="pressure"
                       id="column-pressure"
                       onClick={[Function]}
-                      width=""
+                      style={
+                        Object {
+                          "width": undefined,
+                        }
+                      }
                     >
                       <span
                         className="bx--table-header-label"
@@ -10725,6 +10989,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                         >
                           Pressure
                         </span>
+                        <div
+                          className="column-resize-wrapper"
+                          onMouseDown={[Function]}
+                          role="button"
+                          tabIndex="0"
+                        />
                       </span>
                       <svg
                         aria-label="Sort rows by this header in ascending order"
@@ -12065,16 +12335,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                 <tr>
                   <th
                     aria-sort="none"
-                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI"
+                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB"
                     scope="col"
                   >
                     <button
                       align="start"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI bx--table-sort"
+                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB bx--table-sort"
                       data-column="alert"
                       id="column-alert"
                       onClick={[Function]}
-                      width=""
+                      style={
+                        Object {
+                          "width": undefined,
+                        }
+                      }
                     >
                       <span
                         className="bx--table-header-label"
@@ -12084,6 +12358,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                         >
                           Alert
                         </span>
+                        <div
+                          className="column-resize-wrapper"
+                          onMouseDown={[Function]}
+                          role="button"
+                          tabIndex="0"
+                        />
                       </span>
                       <svg
                         aria-label="Sort rows by this header in ascending order"
@@ -12129,16 +12409,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </th>
                   <th
                     aria-sort="descending"
-                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI"
+                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB"
                     scope="col"
                   >
                     <button
                       align="start"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI bx--table-sort bx--table-sort--active bx--table-sort--ascending"
+                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB bx--table-sort bx--table-sort--active bx--table-sort--ascending"
                       data-column="count"
                       id="column-count"
                       onClick={[Function]}
-                      width=""
+                      style={
+                        Object {
+                          "width": undefined,
+                        }
+                      }
                     >
                       <span
                         className="bx--table-header-label"
@@ -12148,6 +12432,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                         >
                           Count
                         </span>
+                        <div
+                          className="column-resize-wrapper"
+                          onMouseDown={[Function]}
+                          role="button"
+                          tabIndex="0"
+                        />
                       </span>
                       <svg
                         aria-label="Unsort rows by this header"
@@ -12193,16 +12483,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </th>
                   <th
                     aria-sort="none"
-                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI"
+                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB"
                     scope="col"
                   >
                     <button
                       align="start"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI bx--table-sort"
+                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB bx--table-sort"
                       data-column="hour"
                       id="column-hour"
                       onClick={[Function]}
-                      width=""
+                      style={
+                        Object {
+                          "width": undefined,
+                        }
+                      }
                     >
                       <span
                         className="bx--table-header-label"
@@ -12212,6 +12506,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                         >
                           Hour
                         </span>
+                        <div
+                          className="column-resize-wrapper"
+                          onMouseDown={[Function]}
+                          role="button"
+                          tabIndex="0"
+                        />
                       </span>
                       <svg
                         aria-label="Sort rows by this header in ascending order"
@@ -12257,16 +12557,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </th>
                   <th
                     aria-sort="none"
-                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI"
+                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB"
                     scope="col"
                   >
                     <button
                       align="start"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI bx--table-sort"
+                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB bx--table-sort"
                       data-column="pressure"
                       id="column-pressure"
                       onClick={[Function]}
-                      width=""
+                      style={
+                        Object {
+                          "width": undefined,
+                        }
+                      }
                     >
                       <span
                         className="bx--table-header-label"
@@ -12276,6 +12580,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                         >
                           Pressure
                         </span>
+                        <div
+                          className="column-resize-wrapper"
+                          onMouseDown={[Function]}
+                          role="button"
+                          tabIndex="0"
+                        />
                       </span>
                       <svg
                         aria-label="Sort rows by this header in ascending order"
@@ -13648,16 +13958,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
               >
                 <tr>
                   <th
-                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 emMmdK"
+                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB"
                     scope="col"
                   >
                     <button
                       align="start"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 emMmdK bx--table-sort bx--table-sort--active"
+                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB bx--table-sort bx--table-sort--active"
                       data-column="alert"
                       id="column-alert"
                       onClick={[Function]}
-                      width="250px"
+                      style={
+                        Object {
+                          "width": undefined,
+                        }
+                      }
                     >
                       <span
                         className="bx--table-header-label"
@@ -13667,6 +13981,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                         >
                           Alert
                         </span>
+                        <div
+                          className="column-resize-wrapper"
+                          onMouseDown={[Function]}
+                          role="button"
+                          tabIndex="0"
+                        />
                       </span>
                       <svg
                         aria-label="Unsort rows by this header"
@@ -13712,16 +14032,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </th>
                   <th
                     aria-sort="none"
-                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI"
+                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB"
                     scope="col"
                   >
                     <button
                       align="start"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI bx--table-sort"
+                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB bx--table-sort"
                       data-column="hour"
                       id="column-hour"
                       onClick={[Function]}
-                      width=""
+                      style={
+                        Object {
+                          "width": undefined,
+                        }
+                      }
                     >
                       <span
                         className="bx--table-header-label"
@@ -13731,6 +14055,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                         >
                           Hour
                         </span>
+                        <div
+                          className="column-resize-wrapper"
+                          onMouseDown={[Function]}
+                          role="button"
+                          tabIndex="0"
+                        />
                       </span>
                       <svg
                         aria-label="Sort rows by this header in ascending order"
@@ -13776,16 +14106,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </th>
                   <th
                     aria-sort="none"
-                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI"
+                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB"
                     scope="col"
                   >
                     <button
                       align="start"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI bx--table-sort"
+                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB bx--table-sort"
                       data-column="pressure"
                       id="column-pressure"
                       onClick={[Function]}
-                      width=""
+                      style={
+                        Object {
+                          "width": undefined,
+                        }
+                      }
                     >
                       <span
                         className="bx--table-header-label"
@@ -13795,6 +14129,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                         >
                           Pressure
                         </span>
+                        <div
+                          className="column-resize-wrapper"
+                          onMouseDown={[Function]}
+                          role="button"
+                          tabIndex="0"
+                        />
                       </span>
                       <svg
                         aria-label="Sort rows by this header in ascending order"
@@ -14977,16 +15317,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
               >
                 <tr>
                   <th
-                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI"
+                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB"
                     scope="col"
                   >
                     <button
                       align="start"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI bx--table-sort bx--table-sort--active"
+                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB bx--table-sort bx--table-sort--active"
                       data-column="alert"
                       id="column-alert"
                       onClick={[Function]}
-                      width=""
+                      style={
+                        Object {
+                          "width": undefined,
+                        }
+                      }
                     >
                       <span
                         className="bx--table-header-label"
@@ -14996,6 +15340,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                         >
                           Alert
                         </span>
+                        <div
+                          className="column-resize-wrapper"
+                          onMouseDown={[Function]}
+                          role="button"
+                          tabIndex="0"
+                        />
                       </span>
                       <svg
                         aria-label="Unsort rows by this header"
@@ -15041,16 +15391,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </th>
                   <th
                     aria-sort="none"
-                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI"
+                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB"
                     scope="col"
                   >
                     <button
                       align="start"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI bx--table-sort"
+                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB bx--table-sort"
                       data-column="hour"
                       id="column-hour"
                       onClick={[Function]}
-                      width=""
+                      style={
+                        Object {
+                          "width": undefined,
+                        }
+                      }
                     >
                       <span
                         className="bx--table-header-label"
@@ -15060,6 +15414,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                         >
                           Hour
                         </span>
+                        <div
+                          className="column-resize-wrapper"
+                          onMouseDown={[Function]}
+                          role="button"
+                          tabIndex="0"
+                        />
                       </span>
                       <svg
                         aria-label="Sort rows by this header in ascending order"
@@ -15105,16 +15465,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </th>
                   <th
                     aria-sort="none"
-                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI"
+                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB"
                     scope="col"
                   >
                     <button
                       align="start"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI bx--table-sort"
+                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB bx--table-sort"
                       data-column="pressure"
                       id="column-pressure"
                       onClick={[Function]}
-                      width=""
+                      style={
+                        Object {
+                          "width": undefined,
+                        }
+                      }
                     >
                       <span
                         className="bx--table-header-label"
@@ -15124,6 +15488,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                         >
                           Pressure
                         </span>
+                        <div
+                          className="column-resize-wrapper"
+                          onMouseDown={[Function]}
+                          role="button"
+                          tabIndex="0"
+                        />
                       </span>
                       <svg
                         aria-label="Sort rows by this header in ascending order"
@@ -15169,11 +15539,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </th>
                   <th
                     align="start"
-                    className="table-header-label-start TableHead__StyledCustomTableHeader-sc-1fviaow-2 bYtogt"
+                    className="table-header-label-start TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB"
                     data-column="actionColumn"
                     id="column-actionColumn"
                     scope="col"
-                    width="60px"
+                    style={
+                      Object {
+                        "width": undefined,
+                      }
+                    }
                   >
                     <span
                       className="bx--table-header-label"
@@ -15183,6 +15557,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                       >
                         
                       </span>
+                      <div
+                        className="column-resize-wrapper"
+                        onMouseDown={[Function]}
+                        role="button"
+                        tabIndex="0"
+                      />
                     </span>
                   </th>
                 </tr>
@@ -16918,16 +17298,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                     scope="col"
                   />
                   <th
-                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI"
+                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB"
                     scope="col"
                   >
                     <button
                       align="start"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI bx--table-sort bx--table-sort--active"
+                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB bx--table-sort bx--table-sort--active"
                       data-column="alert"
                       id="column-alert"
                       onClick={[Function]}
-                      width=""
+                      style={
+                        Object {
+                          "width": undefined,
+                        }
+                      }
                     >
                       <span
                         className="bx--table-header-label"
@@ -16937,6 +17321,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                         >
                           Alert
                         </span>
+                        <div
+                          className="column-resize-wrapper"
+                          onMouseDown={[Function]}
+                          role="button"
+                          tabIndex="0"
+                        />
                       </span>
                       <svg
                         aria-label="Unsort rows by this header"
@@ -16982,16 +17372,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </th>
                   <th
                     aria-sort="none"
-                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI"
+                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB"
                     scope="col"
                   >
                     <button
                       align="start"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI bx--table-sort"
+                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB bx--table-sort"
                       data-column="hour"
                       id="column-hour"
                       onClick={[Function]}
-                      width=""
+                      style={
+                        Object {
+                          "width": undefined,
+                        }
+                      }
                     >
                       <span
                         className="bx--table-header-label"
@@ -17001,6 +17395,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                         >
                           Hour
                         </span>
+                        <div
+                          className="column-resize-wrapper"
+                          onMouseDown={[Function]}
+                          role="button"
+                          tabIndex="0"
+                        />
                       </span>
                       <svg
                         aria-label="Sort rows by this header in ascending order"
@@ -17046,16 +17446,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </th>
                   <th
                     aria-sort="none"
-                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI"
+                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB"
                     scope="col"
                   >
                     <button
                       align="start"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI bx--table-sort"
+                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB bx--table-sort"
                       data-column="pressure"
                       id="column-pressure"
                       onClick={[Function]}
-                      width=""
+                      style={
+                        Object {
+                          "width": undefined,
+                        }
+                      }
                     >
                       <span
                         className="bx--table-header-label"
@@ -17065,6 +17469,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                         >
                           Pressure
                         </span>
+                        <div
+                          className="column-resize-wrapper"
+                          onMouseDown={[Function]}
+                          role="button"
+                          tabIndex="0"
+                        />
                       </span>
                       <svg
                         aria-label="Sort rows by this header in ascending order"
@@ -18607,16 +19017,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
               >
                 <tr>
                   <th
-                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI"
+                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB"
                     scope="col"
                   >
                     <button
                       align="start"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI bx--table-sort bx--table-sort--active"
+                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB bx--table-sort bx--table-sort--active"
                       data-column="alert"
                       id="column-alert"
                       onClick={[Function]}
-                      width=""
+                      style={
+                        Object {
+                          "width": undefined,
+                        }
+                      }
                     >
                       <span
                         className="bx--table-header-label"
@@ -18626,6 +19040,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                         >
                           Alert
                         </span>
+                        <div
+                          className="column-resize-wrapper"
+                          onMouseDown={[Function]}
+                          role="button"
+                          tabIndex="0"
+                        />
                       </span>
                       <svg
                         aria-label="Unsort rows by this header"
@@ -18671,16 +19091,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </th>
                   <th
                     aria-sort="none"
-                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI"
+                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB"
                     scope="col"
                   >
                     <button
                       align="start"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI bx--table-sort"
+                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB bx--table-sort"
                       data-column="hour"
                       id="column-hour"
                       onClick={[Function]}
-                      width=""
+                      style={
+                        Object {
+                          "width": undefined,
+                        }
+                      }
                     >
                       <span
                         className="bx--table-header-label"
@@ -18690,6 +19114,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                         >
                           Hour
                         </span>
+                        <div
+                          className="column-resize-wrapper"
+                          onMouseDown={[Function]}
+                          role="button"
+                          tabIndex="0"
+                        />
                       </span>
                       <svg
                         aria-label="Sort rows by this header in ascending order"
@@ -18735,16 +19165,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </th>
                   <th
                     aria-sort="none"
-                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI"
+                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB"
                     scope="col"
                   >
                     <button
                       align="start"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI bx--table-sort"
+                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB bx--table-sort"
                       data-column="pressure"
                       id="column-pressure"
                       onClick={[Function]}
-                      width=""
+                      style={
+                        Object {
+                          "width": undefined,
+                        }
+                      }
                     >
                       <span
                         className="bx--table-header-label"
@@ -18754,6 +19188,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                         >
                           Pressure
                         </span>
+                        <div
+                          className="column-resize-wrapper"
+                          onMouseDown={[Function]}
+                          role="button"
+                          tabIndex="0"
+                        />
                       </span>
                       <svg
                         aria-label="Sort rows by this header in ascending order"
@@ -18799,11 +19239,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </th>
                   <th
                     align="start"
-                    className="table-header-label-start TableHead__StyledCustomTableHeader-sc-1fviaow-2 bYtogt"
+                    className="table-header-label-start TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB"
                     data-column="actionColumn"
                     id="column-actionColumn"
                     scope="col"
-                    width="60px"
+                    style={
+                      Object {
+                        "width": undefined,
+                      }
+                    }
                   >
                     <span
                       className="bx--table-header-label"
@@ -18813,6 +19257,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                       >
                         
                       </span>
+                      <div
+                        className="column-resize-wrapper"
+                        onMouseDown={[Function]}
+                        role="button"
+                        tabIndex="0"
+                      />
                     </span>
                   </th>
                 </tr>
@@ -20231,16 +20681,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
               >
                 <tr>
                   <th
-                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI"
+                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB"
                     scope="col"
                   >
                     <button
                       align="start"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI bx--table-sort bx--table-sort--active"
+                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB bx--table-sort bx--table-sort--active"
                       data-column="alert"
                       id="column-alert"
                       onClick={[Function]}
-                      width=""
+                      style={
+                        Object {
+                          "width": undefined,
+                        }
+                      }
                     >
                       <span
                         className="bx--table-header-label"
@@ -20250,6 +20704,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                         >
                           Alert
                         </span>
+                        <div
+                          className="column-resize-wrapper"
+                          onMouseDown={[Function]}
+                          role="button"
+                          tabIndex="0"
+                        />
                       </span>
                       <svg
                         aria-label="Unsort rows by this header"
@@ -20295,16 +20755,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </th>
                   <th
                     aria-sort="none"
-                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 agCfw"
+                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB"
                     scope="col"
                   >
                     <button
                       align="start"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 agCfw bx--table-sort"
+                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB bx--table-sort"
                       data-column="iconColumn-count"
                       id="column-iconColumn-count"
                       onClick={[Function]}
-                      width="200pxpx"
+                      style={
+                        Object {
+                          "width": undefined,
+                        }
+                      }
                     >
                       <span
                         className="bx--table-header-label"
@@ -20314,6 +20778,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                         >
                           Count Severity
                         </span>
+                        <div
+                          className="column-resize-wrapper"
+                          onMouseDown={[Function]}
+                          role="button"
+                          tabIndex="0"
+                        />
                       </span>
                       <svg
                         aria-label="Sort rows by this header in ascending order"
@@ -20359,16 +20829,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </th>
                   <th
                     aria-sort="none"
-                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI"
+                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB"
                     scope="col"
                   >
                     <button
                       align="start"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI bx--table-sort"
+                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB bx--table-sort"
                       data-column="count"
                       id="column-count"
                       onClick={[Function]}
-                      width=""
+                      style={
+                        Object {
+                          "width": undefined,
+                        }
+                      }
                     >
                       <span
                         className="bx--table-header-label"
@@ -20378,6 +20852,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                         >
                           Count
                         </span>
+                        <div
+                          className="column-resize-wrapper"
+                          onMouseDown={[Function]}
+                          role="button"
+                          tabIndex="0"
+                        />
                       </span>
                       <svg
                         aria-label="Sort rows by this header in ascending order"
@@ -20423,16 +20903,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </th>
                   <th
                     aria-sort="none"
-                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI"
+                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB"
                     scope="col"
                   >
                     <button
                       align="start"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI bx--table-sort"
+                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB bx--table-sort"
                       data-column="hour"
                       id="column-hour"
                       onClick={[Function]}
-                      width=""
+                      style={
+                        Object {
+                          "width": undefined,
+                        }
+                      }
                     >
                       <span
                         className="bx--table-header-label"
@@ -20442,6 +20926,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                         >
                           Hour
                         </span>
+                        <div
+                          className="column-resize-wrapper"
+                          onMouseDown={[Function]}
+                          role="button"
+                          tabIndex="0"
+                        />
                       </span>
                       <svg
                         aria-label="Sort rows by this header in ascending order"
@@ -20487,16 +20977,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </th>
                   <th
                     aria-sort="none"
-                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 agCfw"
+                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB"
                     scope="col"
                   >
                     <button
                       align="start"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 agCfw bx--table-sort"
+                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB bx--table-sort"
                       data-column="iconColumn-pressure"
                       id="column-iconColumn-pressure"
                       onClick={[Function]}
-                      width="200pxpx"
+                      style={
+                        Object {
+                          "width": undefined,
+                        }
+                      }
                     >
                       <span
                         className="bx--table-header-label"
@@ -20506,6 +21000,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                         >
                           Pressure Sev
                         </span>
+                        <div
+                          className="column-resize-wrapper"
+                          onMouseDown={[Function]}
+                          role="button"
+                          tabIndex="0"
+                        />
                       </span>
                       <svg
                         aria-label="Sort rows by this header in ascending order"
@@ -20551,16 +21051,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </th>
                   <th
                     aria-sort="none"
-                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI"
+                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB"
                     scope="col"
                   >
                     <button
                       align="start"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI bx--table-sort"
+                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB bx--table-sort"
                       data-column="pressure"
                       id="column-pressure"
                       onClick={[Function]}
-                      width=""
+                      style={
+                        Object {
+                          "width": undefined,
+                        }
+                      }
                     >
                       <span
                         className="bx--table-header-label"
@@ -20570,6 +21074,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                         >
                           Pressure
                         </span>
+                        <div
+                          className="column-resize-wrapper"
+                          onMouseDown={[Function]}
+                          role="button"
+                          tabIndex="0"
+                        />
                       </span>
                       <svg
                         aria-label="Sort rows by this header in ascending order"
@@ -22629,16 +23139,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
               >
                 <tr>
                   <th
-                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI"
+                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB"
                     scope="col"
                   >
                     <button
                       align="start"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI bx--table-sort bx--table-sort--active"
+                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB bx--table-sort bx--table-sort--active"
                       data-column="alert"
                       id="column-alert"
                       onClick={[Function]}
-                      width=""
+                      style={
+                        Object {
+                          "width": undefined,
+                        }
+                      }
                     >
                       <span
                         className="bx--table-header-label"
@@ -22648,6 +23162,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                         >
                           Alert
                         </span>
+                        <div
+                          className="column-resize-wrapper"
+                          onMouseDown={[Function]}
+                          role="button"
+                          tabIndex="0"
+                        />
                       </span>
                       <svg
                         aria-label="Unsort rows by this header"
@@ -22693,16 +23213,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </th>
                   <th
                     aria-sort="none"
-                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 agCfw"
+                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB"
                     scope="col"
                   >
                     <button
                       align="start"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 agCfw bx--table-sort"
+                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB bx--table-sort"
                       data-column="iconColumn-count"
                       id="column-iconColumn-count"
                       onClick={[Function]}
-                      width="200pxpx"
+                      style={
+                        Object {
+                          "width": undefined,
+                        }
+                      }
                     >
                       <span
                         className="bx--table-header-label"
@@ -22712,6 +23236,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                         >
                           Count Severity
                         </span>
+                        <div
+                          className="column-resize-wrapper"
+                          onMouseDown={[Function]}
+                          role="button"
+                          tabIndex="0"
+                        />
                       </span>
                       <svg
                         aria-label="Sort rows by this header in ascending order"
@@ -22757,16 +23287,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </th>
                   <th
                     aria-sort="none"
-                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI"
+                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB"
                     scope="col"
                   >
                     <button
                       align="start"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI bx--table-sort"
+                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB bx--table-sort"
                       data-column="count"
                       id="column-count"
                       onClick={[Function]}
-                      width=""
+                      style={
+                        Object {
+                          "width": undefined,
+                        }
+                      }
                     >
                       <span
                         className="bx--table-header-label"
@@ -22776,6 +23310,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                         >
                           Count
                         </span>
+                        <div
+                          className="column-resize-wrapper"
+                          onMouseDown={[Function]}
+                          role="button"
+                          tabIndex="0"
+                        />
                       </span>
                       <svg
                         aria-label="Sort rows by this header in ascending order"
@@ -22821,16 +23361,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </th>
                   <th
                     aria-sort="none"
-                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI"
+                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB"
                     scope="col"
                   >
                     <button
                       align="start"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI bx--table-sort"
+                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB bx--table-sort"
                       data-column="hour"
                       id="column-hour"
                       onClick={[Function]}
-                      width=""
+                      style={
+                        Object {
+                          "width": undefined,
+                        }
+                      }
                     >
                       <span
                         className="bx--table-header-label"
@@ -22840,6 +23384,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                         >
                           Hour
                         </span>
+                        <div
+                          className="column-resize-wrapper"
+                          onMouseDown={[Function]}
+                          role="button"
+                          tabIndex="0"
+                        />
                       </span>
                       <svg
                         aria-label="Sort rows by this header in ascending order"
@@ -22885,16 +23435,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </th>
                   <th
                     aria-sort="none"
-                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 agCfw"
+                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB"
                     scope="col"
                   >
                     <button
                       align="start"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 agCfw bx--table-sort"
+                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB bx--table-sort"
                       data-column="iconColumn-pressure"
                       id="column-iconColumn-pressure"
                       onClick={[Function]}
-                      width="200pxpx"
+                      style={
+                        Object {
+                          "width": undefined,
+                        }
+                      }
                     >
                       <span
                         className="bx--table-header-label"
@@ -22904,6 +23458,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                         >
                           Pressure Sev
                         </span>
+                        <div
+                          className="column-resize-wrapper"
+                          onMouseDown={[Function]}
+                          role="button"
+                          tabIndex="0"
+                        />
                       </span>
                       <svg
                         aria-label="Sort rows by this header in ascending order"
@@ -22949,16 +23509,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </th>
                   <th
                     aria-sort="none"
-                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI"
+                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB"
                     scope="col"
                   >
                     <button
                       align="start"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI bx--table-sort"
+                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB bx--table-sort"
                       data-column="pressure"
                       id="column-pressure"
                       onClick={[Function]}
-                      width=""
+                      style={
+                        Object {
+                          "width": undefined,
+                        }
+                      }
                     >
                       <span
                         className="bx--table-header-label"
@@ -22968,6 +23532,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                         >
                           Pressure
                         </span>
+                        <div
+                          className="column-resize-wrapper"
+                          onMouseDown={[Function]}
+                          role="button"
+                          tabIndex="0"
+                        />
                       </span>
                       <svg
                         aria-label="Sort rows by this header in ascending order"
@@ -23937,16 +24507,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                     scope="col"
                   />
                   <th
-                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI"
+                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB"
                     scope="col"
                   >
                     <button
                       align="start"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI bx--table-sort bx--table-sort--active"
+                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB bx--table-sort bx--table-sort--active"
                       data-column="alert"
                       id="column-alert"
                       onClick={[Function]}
-                      width=""
+                      style={
+                        Object {
+                          "width": undefined,
+                        }
+                      }
                     >
                       <span
                         className="bx--table-header-label"
@@ -23956,6 +24530,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                         >
                           Alert
                         </span>
+                        <div
+                          className="column-resize-wrapper"
+                          onMouseDown={[Function]}
+                          role="button"
+                          tabIndex="0"
+                        />
                       </span>
                       <svg
                         aria-label="Unsort rows by this header"
@@ -24001,16 +24581,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </th>
                   <th
                     aria-sort="none"
-                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 agCfw"
+                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB"
                     scope="col"
                   >
                     <button
                       align="start"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 agCfw bx--table-sort"
+                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB bx--table-sort"
                       data-column="iconColumn-count"
                       id="column-iconColumn-count"
                       onClick={[Function]}
-                      width="200pxpx"
+                      style={
+                        Object {
+                          "width": undefined,
+                        }
+                      }
                     >
                       <span
                         className="bx--table-header-label"
@@ -24020,6 +24604,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                         >
                           Count Severity
                         </span>
+                        <div
+                          className="column-resize-wrapper"
+                          onMouseDown={[Function]}
+                          role="button"
+                          tabIndex="0"
+                        />
                       </span>
                       <svg
                         aria-label="Sort rows by this header in ascending order"
@@ -24065,16 +24655,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </th>
                   <th
                     aria-sort="none"
-                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI"
+                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB"
                     scope="col"
                   >
                     <button
                       align="start"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI bx--table-sort"
+                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB bx--table-sort"
                       data-column="count"
                       id="column-count"
                       onClick={[Function]}
-                      width=""
+                      style={
+                        Object {
+                          "width": undefined,
+                        }
+                      }
                     >
                       <span
                         className="bx--table-header-label"
@@ -24084,6 +24678,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                         >
                           Count
                         </span>
+                        <div
+                          className="column-resize-wrapper"
+                          onMouseDown={[Function]}
+                          role="button"
+                          tabIndex="0"
+                        />
                       </span>
                       <svg
                         aria-label="Sort rows by this header in ascending order"
@@ -24129,16 +24729,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </th>
                   <th
                     aria-sort="none"
-                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI"
+                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB"
                     scope="col"
                   >
                     <button
                       align="start"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI bx--table-sort"
+                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB bx--table-sort"
                       data-column="hour"
                       id="column-hour"
                       onClick={[Function]}
-                      width=""
+                      style={
+                        Object {
+                          "width": undefined,
+                        }
+                      }
                     >
                       <span
                         className="bx--table-header-label"
@@ -24148,6 +24752,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                         >
                           Hour
                         </span>
+                        <div
+                          className="column-resize-wrapper"
+                          onMouseDown={[Function]}
+                          role="button"
+                          tabIndex="0"
+                        />
                       </span>
                       <svg
                         aria-label="Sort rows by this header in ascending order"
@@ -24193,16 +24803,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </th>
                   <th
                     aria-sort="none"
-                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 agCfw"
+                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB"
                     scope="col"
                   >
                     <button
                       align="start"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 agCfw bx--table-sort"
+                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB bx--table-sort"
                       data-column="iconColumn-pressure"
                       id="column-iconColumn-pressure"
                       onClick={[Function]}
-                      width="200pxpx"
+                      style={
+                        Object {
+                          "width": undefined,
+                        }
+                      }
                     >
                       <span
                         className="bx--table-header-label"
@@ -24212,6 +24826,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                         >
                           Pressure Sev
                         </span>
+                        <div
+                          className="column-resize-wrapper"
+                          onMouseDown={[Function]}
+                          role="button"
+                          tabIndex="0"
+                        />
                       </span>
                       <svg
                         aria-label="Sort rows by this header in ascending order"
@@ -24257,16 +24877,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </th>
                   <th
                     aria-sort="none"
-                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI"
+                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB"
                     scope="col"
                   >
                     <button
                       align="start"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI bx--table-sort"
+                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB bx--table-sort"
                       data-column="pressure"
                       id="column-pressure"
                       onClick={[Function]}
-                      width=""
+                      style={
+                        Object {
+                          "width": undefined,
+                        }
+                      }
                     >
                       <span
                         className="bx--table-header-label"
@@ -24276,6 +24900,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                         >
                           Pressure
                         </span>
+                        <div
+                          className="column-resize-wrapper"
+                          onMouseDown={[Function]}
+                          role="button"
+                          tabIndex="0"
+                        />
                       </span>
                       <svg
                         aria-label="Sort rows by this header in ascending order"
@@ -26732,16 +27362,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                     scope="col"
                   />
                   <th
-                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI"
+                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB"
                     scope="col"
                   >
                     <button
                       align="start"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI bx--table-sort bx--table-sort--active"
+                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB bx--table-sort bx--table-sort--active"
                       data-column="alert"
                       id="column-alert"
                       onClick={[Function]}
-                      width=""
+                      style={
+                        Object {
+                          "width": undefined,
+                        }
+                      }
                     >
                       <span
                         className="bx--table-header-label"
@@ -26751,6 +27385,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                         >
                           Alert
                         </span>
+                        <div
+                          className="column-resize-wrapper"
+                          onMouseDown={[Function]}
+                          role="button"
+                          tabIndex="0"
+                        />
                       </span>
                       <svg
                         aria-label="Unsort rows by this header"
@@ -26796,16 +27436,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </th>
                   <th
                     aria-sort="none"
-                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 agCfw"
+                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB"
                     scope="col"
                   >
                     <button
                       align="start"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 agCfw bx--table-sort"
+                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB bx--table-sort"
                       data-column="iconColumn-count"
                       id="column-iconColumn-count"
                       onClick={[Function]}
-                      width="200pxpx"
+                      style={
+                        Object {
+                          "width": undefined,
+                        }
+                      }
                     >
                       <span
                         className="bx--table-header-label"
@@ -26815,6 +27459,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                         >
                           Severity
                         </span>
+                        <div
+                          className="column-resize-wrapper"
+                          onMouseDown={[Function]}
+                          role="button"
+                          tabIndex="0"
+                        />
                       </span>
                       <svg
                         aria-label="Sort rows by this header in ascending order"
@@ -26860,16 +27510,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </th>
                   <th
                     aria-sort="none"
-                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI"
+                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB"
                     scope="col"
                   >
                     <button
                       align="start"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI bx--table-sort"
+                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB bx--table-sort"
                       data-column="hour"
                       id="column-hour"
                       onClick={[Function]}
-                      width=""
+                      style={
+                        Object {
+                          "width": undefined,
+                        }
+                      }
                     >
                       <span
                         className="bx--table-header-label"
@@ -26879,6 +27533,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                         >
                           Hour
                         </span>
+                        <div
+                          className="column-resize-wrapper"
+                          onMouseDown={[Function]}
+                          role="button"
+                          tabIndex="0"
+                        />
                       </span>
                       <svg
                         aria-label="Sort rows by this header in ascending order"
@@ -26924,16 +27584,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </th>
                   <th
                     aria-sort="none"
-                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI"
+                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB"
                     scope="col"
                   >
                     <button
                       align="start"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 celqsI bx--table-sort"
+                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB bx--table-sort"
                       data-column="pressure"
                       id="column-pressure"
                       onClick={[Function]}
-                      width=""
+                      style={
+                        Object {
+                          "width": undefined,
+                        }
+                      }
                     >
                       <span
                         className="bx--table-header-label"
@@ -26943,6 +27607,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                         >
                           Pressure
                         </span>
+                        <div
+                          className="column-resize-wrapper"
+                          onMouseDown={[Function]}
+                          role="button"
+                          tabIndex="0"
+                        />
                       </span>
                       <svg
                         aria-label="Sort rows by this header in ascending order"

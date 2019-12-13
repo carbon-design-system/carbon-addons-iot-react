@@ -149,6 +149,33 @@ const TableHead = ({
   i18n,
 }) => {
   const filterBarActive = activeBar === 'filter';
+  let isResizable = false;
+  let startWidth = 0;
+  let startX = 0;
+  let currentElement = '<>';
+  const onMouseMovecallback = e => {
+    if (isResizable) {
+      currentElement.style.width = `${startWidth + (e.pageX - startX)}px`;
+    }
+  };
+
+  const onMouseUpcallback = () => {
+    if (isResizable) {
+      isResizable = false;
+      document.removeEventListener('mousemove', onMouseMovecallback, true);
+      document.removeEventListener('mouseup', onMouseUpcallback, true);
+    }
+  };
+  const style = { width: undefined };
+
+  const onMouseDownCallback = event => {
+    currentElement = event.target.closest('th');
+    startX = event.pageX;
+    startWidth = currentElement.clientWidth;
+    isResizable = true;
+    document.addEventListener('mousemove', onMouseMovecallback, true);
+    document.addEventListener('mouseup', onMouseUpcallback, true);
+  };
 
   return (
     <StyledCarbonTableHead lightweight={`${lightweight}`}>
@@ -181,7 +208,7 @@ const TableHead = ({
               data-column={matchingColumnMeta.id}
               isSortable={matchingColumnMeta.isSortable}
               isSortHeader={hasSort}
-              width={matchingColumnMeta.width}
+              style={style}
               onClick={() => {
                 if (matchingColumnMeta.isSortable && onChangeSort) {
                   onChangeSort(matchingColumnMeta.id);
@@ -195,6 +222,12 @@ const TableHead = ({
               })}
             >
               <TableCellRenderer>{matchingColumnMeta.name}</TableCellRenderer>
+              <div
+                role="button"
+                className="column-resize-wrapper"
+                onMouseDown={onMouseDownCallback}
+                tabIndex="0"
+              />
             </StyledCustomTableHeader>
           ) : null;
         })}

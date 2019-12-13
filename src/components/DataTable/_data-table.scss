@@ -97,3 +97,22 @@ html[dir='rtl'] {
   height: $spacing-09;
   padding: $spacing-05;
 }
+
+.#{$prefix}--data-table th {
+  position: relative;
+}
+.column-resize-wrapper {
+  top: 0;
+  right: -8px;
+  width: 8px;
+  cursor: col-resize;
+  height: 100%;
+  z-index: 1;
+  position: absolute;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  &:hover {
+    background-color: #34a9db;
+  }
+}
