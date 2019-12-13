@@ -1,55 +1,58 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import styled from 'styled-components';
+import { settings } from 'carbon-components';
+import './_breadcrumboverflowitem.scss';
 
-const StyledDiv = styled.div`
-   {
-    .bx--breadcrumb-item {
-      font-weight: 400;
-      width: 100%;
-      height: 100%;
-      border: none;
-      display: inline-flex;
-      align-items: center;
-      background-color: transparent;
-      text-align: left;
-      padding: 0 1rem;
-      cursor: pointer;
-      color: #393939;
-      max-width: 11.25rem;
-      transition: outline 110ms cubic-bezier(0, 0, 0.38, 0.9),
-        background-color 110ms cubic-bezier(0, 0, 0.38, 0.9),
-        color 110ms cubic-bezier(0, 0, 0.38, 0.9);
+const { prefix } = settings;
 
-      &:hover {
-        color: #393939;
-      }
+// const StyledDiv = styled.div`
+//    {
+//   .bx--breadcrumb-item {
+//     font-weight: 400;
+//     width: 100%;
+//     height: 100%;
+//     border: none;
+//     display: inline-flex;
+//     align-items: center;
+//     background-color: transparent;
+//     text-align: left;
+//     padding: 0 1rem;
+//     cursor: pointer;
+//     color: #393939;
+//     max-width: 11.25rem;
+//     transition: outline 110ms cubic-bezier(0, 0, 0.38, 0.9),
+//       background-color 110ms cubic-bezier(0, 0, 0.38, 0.9),
+//       color 110ms cubic-bezier(0, 0, 0.38, 0.9);
 
-      &:focus {
-        @include focus-outline('outline');
-      }
+//     &:hover {
+//       color: #393939;
+//     }
 
-      &::-moz-focus-inner {
-        border: none;
-      }
-    }
+//     &:focus {
+//       @include focus-outline('outline');
+//     }
 
-    .bx--breadcrumb-item::after {
-      content: ' ';
-    }
+//     &::-moz-focus-inner {
+//       border: none;
+//     }
+//   }
 
-    .bx--breadcrumb-item .bx--link {
-      color: #393939;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+//   .bx--breadcrumb-item::after {
+//     content: ' ';
+//   }
 
-      &:hover {
-        color: #393939;
-      }
-    }
-  }
-`;
+//   .bx--breadcrumb-item .bx--link {
+//     color: #393939;
+//     white-space: nowrap;
+//     overflow: hidden;
+//     text-overflow: ellipsis;
+
+//     &:hover {
+//       color: #393939;
+//     }
+//   }
+// }
+// `;
 
 class BreadcrumbOverflowItem extends React.Component {
   XbreadItem = React.createRef();
@@ -104,8 +107,8 @@ class BreadcrumbOverflowItem extends React.Component {
     } = this.props;
 
     return (
-      <StyledDiv
-        className="bx--overflow-menu-options__option"
+      <div
+        className={`${prefix}--overflow-menu-options__option`}
         {...other}
         tabIndex={0}
         role="menuitem"
@@ -118,7 +121,7 @@ class BreadcrumbOverflowItem extends React.Component {
         index={index}
       >
         {children}
-      </StyledDiv>
+      </div>
     );
   }
 }

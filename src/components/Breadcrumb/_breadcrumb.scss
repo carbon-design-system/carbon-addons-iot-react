@@ -1,28 +1,14 @@
 @import '~carbon-components/scss/components/breadcrumb/breadcrumb';
 
-.test {
-  color: red;
-}
-
 .breadcrumb-container {
   width: 100%;
-  background-color: red;
 }
 
-.test-breadcrumb-overflow {
+.breadcrumb-overflow {
   position: relative;
   font-size: 3em;
   margin: 0 auto;
   top: -40%;
-  // &:before {
-  //     font-size: 3em;
-  //     content: '/';
-  //     color: #171717;
-  //     left: -.7rem;
-  //     position: absolute;
-  //     top: 50%;
-  //     transform: translatey(-50%);
-  //   }
   &:after {
     font-size: 1.5rem;
     content: '/';
