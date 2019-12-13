@@ -7,7 +7,7 @@ import styled from 'styled-components';
 import Arrow from '@carbon/icons-react/lib/arrow--right/20';
 import Add from '@carbon/icons-react/lib/add/20';
 import Delete from '@carbon/icons-react/lib/delete/16';
-import { TextInput as CarbonTextInput } from 'carbon-components-react';
+import { TextInput as CarbonTextInput, Select, SelectItem } from 'carbon-components-react';
 
 import { getSortedData } from '../../utils/componentUtilityFunctions';
 import FullWidthWrapper from '../../internal/FullWidthWrapper';
@@ -209,6 +209,34 @@ const editDefaultData = ({ rowId, value, columnId }) => {
   );
 };
 
+const editSelectData = ({ rowId, value, columnId }) => {
+  return (
+    <Select
+      className="some-class"
+      defaultValue={value}
+      disabled={false}
+      helperText=""
+      hideLabel
+      iconDescription="open list of options"
+      id="select-1"
+      inline={false}
+      invalid={false}
+      invalidText="A valid value is required"
+      labelText="Select"
+      light
+      onChange={e => {
+        const rowIndex = tableData.findIndex(element => (element.id ? element.id === rowId : null));
+        tableData[rowIndex].values[columnId] = e.currentTarget ? e.currentTarget.value : '';
+      }}
+    >
+      <SelectItem disabled hidden text="Choose an option" value="placeholder-item" />
+      <SelectItem disabled={false} hidden={false} text="Option-A" value="option-A" />
+      <SelectItem disabled={false} hidden={false} text="Option-B" value="option-B" />
+      <SelectItem disabled={false} hidden={false} text="Option-C" value="option-C" />
+    </Select>
+  );
+};
+
 export const tableColumns = [
   {
     id: 'string',
@@ -225,7 +253,7 @@ export const tableColumns = [
     id: 'select',
     name: 'Select',
     filter: { placeholderText: 'pick an option', options: selectData },
-    editDataFunction: editDefaultData,
+    editDataFunction: editSelectData,
   },
   {
     id: 'secretField',
