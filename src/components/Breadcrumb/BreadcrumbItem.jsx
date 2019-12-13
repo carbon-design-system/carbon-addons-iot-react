@@ -26,7 +26,7 @@ const BreadcrumbItem = props => {
       // }
       setWidth(node.getBoundingClientRect().width);
     }
-  });
+  }, []);
 
   return (
     <div ref={measuredRef} width={width}>

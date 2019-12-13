@@ -56,7 +56,9 @@ const Breadcrumb = props => {
       setTotalWidth(curTotalWidth);
     }
     // setIsInitial(false);
-  }, [breadcrumbRef, containerWidth]);
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   // 🧐 set breadcrumb children & responce container change
   useEffect(() => {
@@ -78,7 +80,9 @@ const Breadcrumb = props => {
         }
       }
     }
-  }, [breadcrumbItemsWidth, children, containerWidth]);
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [containerWidth]);
 
   const showOverflowMenu = containerWidth > totalWidth ? 'no' : 'yes';
 
