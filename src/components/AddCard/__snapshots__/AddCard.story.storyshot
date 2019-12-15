@@ -2,78 +2,94 @@
 
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|AddCard handles click 1`] = `
 <div
-  className="storybook-container"
   style={
     Object {
       "alignItems": "center",
+      "bottom": "0",
       "display": "flex",
-      "flexDirection": "column",
-      "padding": "3rem",
+      "left": "0",
+      "overflow": "auto",
+      "position": "fixed",
+      "right": "0",
+      "top": "0",
     }
   }
 >
   <div
     style={
       Object {
-        "position": "relative",
-        "zIndex": 0,
+        "margin": "auto",
+        "maxHeight": "100%",
       }
     }
   >
-    <a
-      className="bx--link bx--tile bx--tile--clickable add-card"
-      onClick={[Function]}
-      onKeyDown={[Function]}
+    <div
+      className="storybook-container"
     >
-      <p
-        className="title"
-      >
-        Click me
-      </p>
-      <svg
-        aria-hidden={true}
-        description="Click me"
-        fill="#161616"
-        focusable="false"
-        height={20}
-        preserveAspectRatio="xMidYMid meet"
+      <div
         style={
           Object {
-            "willChange": "transform",
+            "position": "relative",
+            "zIndex": 0,
           }
         }
-        viewBox="0 0 32 32"
-        width={20}
-        xmlns="http://www.w3.org/2000/svg"
       >
-        <path
-          d="M17 15V7h-2v8H7v2h8v8h2v-8h8v-2h-8z"
-        />
-      </svg>
-    </a>
+        <a
+          className="bx--link bx--tile bx--tile--clickable add-card"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+        >
+          <p
+            className="title"
+          >
+            Click me
+          </p>
+          <svg
+            aria-hidden={true}
+            description="Click me"
+            fill="#161616"
+            focusable="false"
+            height={20}
+            preserveAspectRatio="xMidYMid meet"
+            style={
+              Object {
+                "willChange": "transform",
+              }
+            }
+            viewBox="0 0 32 32"
+            width={20}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M17 15V7h-2v8H7v2h8v8h2v-8h8v-2h-8z"
+            />
+          </svg>
+        </a>
+      </div>
+      <button
+        className="info__show-button"
+        onClick={[Function]}
+        style={
+          Object {
+            "background": "#027ac5",
+            "border": "none",
+            "borderRadius": "0 0 0 5px",
+            "color": "#fff",
+            "cursor": "pointer",
+            "display": "block",
+            "fontFamily": "sans-serif",
+            "fontSize": "12px",
+            "padding": "5px 15px",
+            "position": "fixed",
+            "right": 0,
+            "top": 0,
+          }
+        }
+        type="button"
+      >
+        Show Info
+      </button>
+    </div>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": "12px",
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
 </div>
 `;

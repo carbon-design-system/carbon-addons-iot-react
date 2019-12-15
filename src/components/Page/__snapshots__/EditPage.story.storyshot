@@ -2,505 +2,569 @@
 
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|EditPage isLoading 1`] = `
 <div
-  className="storybook-container"
   style={
     Object {
       "alignItems": "center",
+      "bottom": "0",
       "display": "flex",
-      "flexDirection": "column",
-      "padding": "3rem",
+      "left": "0",
+      "overflow": "auto",
+      "position": "fixed",
+      "right": "0",
+      "top": "0",
     }
   }
 >
   <div
     style={
       Object {
-        "position": "relative",
-        "zIndex": 0,
+        "margin": "auto",
+        "maxHeight": "100%",
       }
     }
   >
     <div
-      style={
-        Object {
-          "width": "calc(100vw - 6rem)",
-        }
-      }
+      className="storybook-container"
     >
       <div
-        className="EditPage__StyledEditPage-gpmt4s-0 gHSBnh"
+        style={
+          Object {
+            "position": "relative",
+            "zIndex": 0,
+          }
+        }
       >
         <div
-          className="Hero__StyledHero-nej8yx-0 fTphDS"
-        >
-          <p
-            className="bx--skeleton__text"
-            style={
-              Object {
-                "width": "30%",
-              }
+          style={
+            Object {
+              "width": "calc(100vw - 6rem)",
             }
-          />
-        </div>
-        <div
-          className="EditPage__StyledPageContent-gpmt4s-1 hrCgLC"
+          }
         >
-          <p
-            className="bx--skeleton__text"
-            style={
-              Object {
-                "width": "30%",
-              }
-            }
-          />
+          <div
+            className="EditPage__StyledEditPage-gpmt4s-0 gHSBnh"
+          >
+            <div
+              className="Hero__StyledHero-nej8yx-0 fTphDS"
+            >
+              <p
+                className="bx--skeleton__text"
+                style={
+                  Object {
+                    "width": "30%",
+                  }
+                }
+              />
+            </div>
+            <div
+              className="EditPage__StyledPageContent-gpmt4s-1 hrCgLC"
+            >
+              <p
+                className="bx--skeleton__text"
+                style={
+                  Object {
+                    "width": "30%",
+                  }
+                }
+              />
+            </div>
+          </div>
         </div>
       </div>
+      <button
+        className="info__show-button"
+        onClick={[Function]}
+        style={
+          Object {
+            "background": "#027ac5",
+            "border": "none",
+            "borderRadius": "0 0 0 5px",
+            "color": "#fff",
+            "cursor": "pointer",
+            "display": "block",
+            "fontFamily": "sans-serif",
+            "fontSize": "12px",
+            "padding": "5px 15px",
+            "position": "fixed",
+            "right": 0,
+            "top": 0,
+          }
+        }
+        type="button"
+      >
+        Show Info
+      </button>
     </div>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": "12px",
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
 </div>
 `;
 
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|EditPage normal 1`] = `
 <div
-  className="storybook-container"
   style={
     Object {
       "alignItems": "center",
+      "bottom": "0",
       "display": "flex",
-      "flexDirection": "column",
-      "padding": "3rem",
+      "left": "0",
+      "overflow": "auto",
+      "position": "fixed",
+      "right": "0",
+      "top": "0",
     }
   }
 >
   <div
     style={
       Object {
-        "position": "relative",
-        "zIndex": 0,
+        "margin": "auto",
+        "maxHeight": "100%",
       }
     }
   >
     <div
-      style={
-        Object {
-          "width": "calc(100vw - 6rem)",
-        }
-      }
+      className="storybook-container"
     >
       <div
-        className="EditPage__StyledEditPage-gpmt4s-0 gHSBnh"
+        style={
+          Object {
+            "position": "relative",
+            "zIndex": 0,
+          }
+        }
       >
         <div
-          className="Hero__StyledHero-nej8yx-0 fTphDS"
+          style={
+            Object {
+              "width": "calc(100vw - 6rem)",
+            }
+          }
         >
           <div
-            className="Hero__StyledTitleSection-nej8yx-1 imCjnH"
+            className="EditPage__StyledEditPage-gpmt4s-0 gHSBnh"
           >
             <div
-              className="Hero__StyledTitle-nej8yx-2 emqnjy"
+              className="Hero__StyledHero-nej8yx-0 fTphDS"
             >
-              Page Title
-            </div>
-            <button
-              aria-label="Close,"
-              className="bx--modal-close"
-              data-modal-close={true}
-              onClick={[Function]}
-              type="button"
-            >
-              <svg
-                className="bx--modal-close__icon"
-                height="10"
-                viewBox="0 0 10 10"
-                width="10"
-                xmlns="http://www.w3.org/2000/svg"
+              <div
+                className="Hero__StyledTitleSection-nej8yx-1 imCjnH"
               >
-                <title>
-                  Close,
-                </title>
-                <path
-                  d="M6.32 5L10 8.68 8.68 10 5 6.32 1.32 10 0 8.68 3.68 5 0 1.32 1.32 0 5 3.68 8.68 0 10 1.32 6.32 5z"
-                  fillRule="nonzero"
-                />
-              </svg>
-            </button>
+                <div
+                  className="Hero__StyledTitle-nej8yx-2 emqnjy"
+                >
+                  Page Title
+                </div>
+                <button
+                  aria-label="Close,"
+                  className="bx--modal-close"
+                  data-modal-close={true}
+                  onClick={[Function]}
+                  type="button"
+                >
+                  <svg
+                    className="bx--modal-close__icon"
+                    height="10"
+                    viewBox="0 0 10 10"
+                    width="10"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <title>
+                      Close,
+                    </title>
+                    <path
+                      d="M6.32 5L10 8.68 8.68 10 5 6.32 1.32 10 0 8.68 3.68 5 0 1.32 1.32 0 5 3.68 8.68 0 10 1.32 6.32 5z"
+                      fillRule="nonzero"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div
+              className="EditPage__StyledPageContent-gpmt4s-1 hrCgLC"
+            >
+              <div>
+                child
+              </div>
+            </div>
+            <div
+              className="EditPage__StyledPageFooter-gpmt4s-2 dDMsJw"
+            >
+              <button
+                className="Button__StyledButton-sc-19kycwu-0 PhzAJ bx--btn bx--btn--secondary"
+                disabled={false}
+                onClick={[Function]}
+                tabIndex={0}
+                type="button"
+              >
+                Cancel
+              </button>
+              <button
+                className="Button__StyledButton-sc-19kycwu-0 PhzAJ bx--btn bx--btn--primary"
+                disabled={false}
+                onClick={[Function]}
+                tabIndex={0}
+                type="button"
+              >
+                Save
+              </button>
+            </div>
           </div>
-        </div>
-        <div
-          className="EditPage__StyledPageContent-gpmt4s-1 hrCgLC"
-        >
-          <div>
-            child
-          </div>
-        </div>
-        <div
-          className="EditPage__StyledPageFooter-gpmt4s-2 dDMsJw"
-        >
-          <button
-            className="Button__StyledButton-sc-19kycwu-0 PhzAJ bx--btn bx--btn--secondary"
-            disabled={false}
-            onClick={[Function]}
-            tabIndex={0}
-            type="button"
-          >
-            Cancel
-          </button>
-          <button
-            className="Button__StyledButton-sc-19kycwu-0 PhzAJ bx--btn bx--btn--primary"
-            disabled={false}
-            onClick={[Function]}
-            tabIndex={0}
-            type="button"
-          >
-            Save
-          </button>
         </div>
       </div>
+      <button
+        className="info__show-button"
+        onClick={[Function]}
+        style={
+          Object {
+            "background": "#027ac5",
+            "border": "none",
+            "borderRadius": "0 0 0 5px",
+            "color": "#fff",
+            "cursor": "pointer",
+            "display": "block",
+            "fontFamily": "sans-serif",
+            "fontSize": "12px",
+            "padding": "5px 15px",
+            "position": "fixed",
+            "right": 0,
+            "top": 0,
+          }
+        }
+        type="button"
+      >
+        Show Info
+      </button>
     </div>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": "12px",
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
 </div>
 `;
 
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|EditPage with blurb 1`] = `
 <div
-  className="storybook-container"
   style={
     Object {
       "alignItems": "center",
+      "bottom": "0",
       "display": "flex",
-      "flexDirection": "column",
-      "padding": "3rem",
+      "left": "0",
+      "overflow": "auto",
+      "position": "fixed",
+      "right": "0",
+      "top": "0",
     }
   }
 >
   <div
     style={
       Object {
-        "position": "relative",
-        "zIndex": 0,
+        "margin": "auto",
+        "maxHeight": "100%",
       }
     }
   >
     <div
-      style={
-        Object {
-          "width": "calc(100vw - 6rem)",
-        }
-      }
+      className="storybook-container"
     >
       <div
-        className="EditPage__StyledEditPage-gpmt4s-0 gHSBnh"
+        style={
+          Object {
+            "position": "relative",
+            "zIndex": 0,
+          }
+        }
       >
         <div
-          className="Hero__StyledHero-nej8yx-0 fTphDS"
+          style={
+            Object {
+              "width": "calc(100vw - 6rem)",
+            }
+          }
         >
           <div
-            className="Hero__StyledTitleSection-nej8yx-1 imCjnH"
+            className="EditPage__StyledEditPage-gpmt4s-0 gHSBnh"
           >
             <div
-              className="Hero__StyledTitle-nej8yx-2 emqnjy"
+              className="Hero__StyledHero-nej8yx-0 fTphDS"
             >
-              Page Title
-            </div>
-            <button
-              aria-label="Close,"
-              className="bx--modal-close"
-              data-modal-close={true}
-              onClick={[Function]}
-              type="button"
-            >
-              <svg
-                className="bx--modal-close__icon"
-                height="10"
-                viewBox="0 0 10 10"
-                width="10"
-                xmlns="http://www.w3.org/2000/svg"
+              <div
+                className="Hero__StyledTitleSection-nej8yx-1 imCjnH"
               >
-                <title>
-                  Close,
-                </title>
-                <path
-                  d="M6.32 5L10 8.68 8.68 10 5 6.32 1.32 10 0 8.68 3.68 5 0 1.32 1.32 0 5 3.68 8.68 0 10 1.32 6.32 5z"
-                  fillRule="nonzero"
-                />
-              </svg>
-            </button>
+                <div
+                  className="Hero__StyledTitle-nej8yx-2 emqnjy"
+                >
+                  Page Title
+                </div>
+                <button
+                  aria-label="Close,"
+                  className="bx--modal-close"
+                  data-modal-close={true}
+                  onClick={[Function]}
+                  type="button"
+                >
+                  <svg
+                    className="bx--modal-close__icon"
+                    height="10"
+                    viewBox="0 0 10 10"
+                    width="10"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <title>
+                      Close,
+                    </title>
+                    <path
+                      d="M6.32 5L10 8.68 8.68 10 5 6.32 1.32 10 0 8.68 3.68 5 0 1.32 1.32 0 5 3.68 8.68 0 10 1.32 6.32 5z"
+                      fillRule="nonzero"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <p
+                className="Hero__StyledPageDescription-nej8yx-3 hgaTeB"
+              >
+                My blurrrrbbbb!!
+              </p>
+            </div>
+            <div
+              className="EditPage__StyledPageContent-gpmt4s-1 hrCgLC"
+            >
+              <div>
+                child
+              </div>
+            </div>
+            <div
+              className="EditPage__StyledPageFooter-gpmt4s-2 dDMsJw"
+            >
+              <button
+                className="Button__StyledButton-sc-19kycwu-0 PhzAJ bx--btn bx--btn--secondary"
+                disabled={false}
+                onClick={[Function]}
+                tabIndex={0}
+                type="button"
+              >
+                Cancel
+              </button>
+              <button
+                className="Button__StyledButton-sc-19kycwu-0 PhzAJ bx--btn bx--btn--primary"
+                disabled={false}
+                onClick={[Function]}
+                tabIndex={0}
+                type="button"
+              >
+                Save
+              </button>
+            </div>
           </div>
-          <p
-            className="Hero__StyledPageDescription-nej8yx-3 hgaTeB"
-          >
-            My blurrrrbbbb!!
-          </p>
-        </div>
-        <div
-          className="EditPage__StyledPageContent-gpmt4s-1 hrCgLC"
-        >
-          <div>
-            child
-          </div>
-        </div>
-        <div
-          className="EditPage__StyledPageFooter-gpmt4s-2 dDMsJw"
-        >
-          <button
-            className="Button__StyledButton-sc-19kycwu-0 PhzAJ bx--btn bx--btn--secondary"
-            disabled={false}
-            onClick={[Function]}
-            tabIndex={0}
-            type="button"
-          >
-            Cancel
-          </button>
-          <button
-            className="Button__StyledButton-sc-19kycwu-0 PhzAJ bx--btn bx--btn--primary"
-            disabled={false}
-            onClick={[Function]}
-            tabIndex={0}
-            type="button"
-          >
-            Save
-          </button>
         </div>
       </div>
+      <button
+        className="info__show-button"
+        onClick={[Function]}
+        style={
+          Object {
+            "background": "#027ac5",
+            "border": "none",
+            "borderRadius": "0 0 0 5px",
+            "color": "#fff",
+            "cursor": "pointer",
+            "display": "block",
+            "fontFamily": "sans-serif",
+            "fontSize": "12px",
+            "padding": "5px 15px",
+            "position": "fixed",
+            "right": 0,
+            "top": 0,
+          }
+        }
+        type="button"
+      >
+        Show Info
+      </button>
     </div>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": "12px",
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
 </div>
 `;
 
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|EditPage with breadcrumb 1`] = `
 <div
-  className="storybook-container"
   style={
     Object {
       "alignItems": "center",
+      "bottom": "0",
       "display": "flex",
-      "flexDirection": "column",
-      "padding": "3rem",
+      "left": "0",
+      "overflow": "auto",
+      "position": "fixed",
+      "right": "0",
+      "top": "0",
     }
   }
 >
   <div
     style={
       Object {
-        "position": "relative",
-        "zIndex": 0,
+        "margin": "auto",
+        "maxHeight": "100%",
       }
     }
   >
     <div
-      style={
-        Object {
-          "width": "calc(100vw - 6rem)",
-        }
-      }
+      className="storybook-container"
     >
       <div
-        className="EditPage__StyledEditPage-gpmt4s-0 gHSBnh"
+        style={
+          Object {
+            "position": "relative",
+            "zIndex": 0,
+          }
+        }
       >
         <div
-          className="Hero__StyledHero-nej8yx-0 fTphDS"
+          style={
+            Object {
+              "width": "calc(100vw - 6rem)",
+            }
+          }
         >
           <div
-            className="Hero__StyledBreadcrumbDiv-nej8yx-6 brbWug"
-          >
-            <nav
-              aria-label="Breadcrumb"
-              className="Hero__StyledBreadcrumb-nej8yx-5 kRUzlm"
-            >
-              <ol
-                className="bx--breadcrumb"
-              >
-                <li
-                  className="bx--breadcrumb-item"
-                >
-                  <a
-                    className="bx--link"
-                    href="/"
-                  >
-                    Home
-                  </a>
-                </li>
-                <li
-                  className="bx--breadcrumb-item"
-                >
-                  <a
-                    className="bx--link"
-                    href="/"
-                  >
-                    Type
-                  </a>
-                </li>
-                <li
-                  className="bx--breadcrumb-item"
-                >
-                  <span
-                    className="bx--link"
-                  >
-                    Instance
-                  </span>
-                </li>
-              </ol>
-            </nav>
-            <div
-              className="Hero__StyledRightContent-nej8yx-4 cCeABe"
-            />
-          </div>
-          <div
-            className="Hero__StyledTitleSection-nej8yx-1 djCalR"
+            className="EditPage__StyledEditPage-gpmt4s-0 gHSBnh"
           >
             <div
-              className="Hero__StyledTitle-nej8yx-2 emqnjy"
+              className="Hero__StyledHero-nej8yx-0 fTphDS"
             >
-              Page Title
-            </div>
-            <button
-              aria-label="Close,"
-              className="bx--modal-close"
-              data-modal-close={true}
-              onClick={[Function]}
-              type="button"
-            >
-              <svg
-                className="bx--modal-close__icon"
-                height="10"
-                viewBox="0 0 10 10"
-                width="10"
-                xmlns="http://www.w3.org/2000/svg"
+              <div
+                className="Hero__StyledBreadcrumbDiv-nej8yx-6 brbWug"
               >
-                <title>
-                  Close,
-                </title>
-                <path
-                  d="M6.32 5L10 8.68 8.68 10 5 6.32 1.32 10 0 8.68 3.68 5 0 1.32 1.32 0 5 3.68 8.68 0 10 1.32 6.32 5z"
-                  fillRule="nonzero"
+                <nav
+                  aria-label="Breadcrumb"
+                  className="Hero__StyledBreadcrumb-nej8yx-5 kRUzlm"
+                >
+                  <ol
+                    className="bx--breadcrumb"
+                  >
+                    <li
+                      className="bx--breadcrumb-item"
+                    >
+                      <a
+                        className="bx--link"
+                        href="/"
+                      >
+                        Home
+                      </a>
+                    </li>
+                    <li
+                      className="bx--breadcrumb-item"
+                    >
+                      <a
+                        className="bx--link"
+                        href="/"
+                      >
+                        Type
+                      </a>
+                    </li>
+                    <li
+                      className="bx--breadcrumb-item"
+                    >
+                      <span
+                        className="bx--link"
+                      >
+                        Instance
+                      </span>
+                    </li>
+                  </ol>
+                </nav>
+                <div
+                  className="Hero__StyledRightContent-nej8yx-4 cCeABe"
                 />
-              </svg>
-            </button>
+              </div>
+              <div
+                className="Hero__StyledTitleSection-nej8yx-1 djCalR"
+              >
+                <div
+                  className="Hero__StyledTitle-nej8yx-2 emqnjy"
+                >
+                  Page Title
+                </div>
+                <button
+                  aria-label="Close,"
+                  className="bx--modal-close"
+                  data-modal-close={true}
+                  onClick={[Function]}
+                  type="button"
+                >
+                  <svg
+                    className="bx--modal-close__icon"
+                    height="10"
+                    viewBox="0 0 10 10"
+                    width="10"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <title>
+                      Close,
+                    </title>
+                    <path
+                      d="M6.32 5L10 8.68 8.68 10 5 6.32 1.32 10 0 8.68 3.68 5 0 1.32 1.32 0 5 3.68 8.68 0 10 1.32 6.32 5z"
+                      fillRule="nonzero"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div
+              className="EditPage__StyledPageContent-gpmt4s-1 hrCgLC"
+            >
+              <div>
+                child
+              </div>
+            </div>
+            <div
+              className="EditPage__StyledPageFooter-gpmt4s-2 dDMsJw"
+            >
+              <button
+                className="Button__StyledButton-sc-19kycwu-0 PhzAJ bx--btn bx--btn--secondary"
+                disabled={false}
+                onClick={[Function]}
+                tabIndex={0}
+                type="button"
+              >
+                Cancel
+              </button>
+              <button
+                className="Button__StyledButton-sc-19kycwu-0 PhzAJ bx--btn bx--btn--primary"
+                disabled={false}
+                onClick={[Function]}
+                tabIndex={0}
+                type="button"
+              >
+                Save
+              </button>
+            </div>
           </div>
-        </div>
-        <div
-          className="EditPage__StyledPageContent-gpmt4s-1 hrCgLC"
-        >
-          <div>
-            child
-          </div>
-        </div>
-        <div
-          className="EditPage__StyledPageFooter-gpmt4s-2 dDMsJw"
-        >
-          <button
-            className="Button__StyledButton-sc-19kycwu-0 PhzAJ bx--btn bx--btn--secondary"
-            disabled={false}
-            onClick={[Function]}
-            tabIndex={0}
-            type="button"
-          >
-            Cancel
-          </button>
-          <button
-            className="Button__StyledButton-sc-19kycwu-0 PhzAJ bx--btn bx--btn--primary"
-            disabled={false}
-            onClick={[Function]}
-            tabIndex={0}
-            type="button"
-          >
-            Save
-          </button>
         </div>
       </div>
+      <button
+        className="info__show-button"
+        onClick={[Function]}
+        style={
+          Object {
+            "background": "#027ac5",
+            "border": "none",
+            "borderRadius": "0 0 0 5px",
+            "color": "#fff",
+            "cursor": "pointer",
+            "display": "block",
+            "fontFamily": "sans-serif",
+            "fontSize": "12px",
+            "padding": "5px 15px",
+            "position": "fixed",
+            "right": 0,
+            "top": 0,
+          }
+        }
+        type="button"
+      >
+        Show Info
+      </button>
     </div>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": "12px",
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
 </div>
 `;
