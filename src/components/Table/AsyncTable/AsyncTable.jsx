@@ -14,7 +14,6 @@ const AsyncTable = ({ fetchData, id }) => {
 
   const [state, dispatch] = useReducer(reducer, {
     data: [],
-    preData: [],
     view: {
       filters: [],
       pagination: {
