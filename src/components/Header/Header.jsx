@@ -10,7 +10,7 @@ import {
 } from 'carbon-components-react/lib/components/UIShell';
 import AppSwitcher from '@carbon/icons-react/lib/app-switcher/20';
 import PropTypes from 'prop-types';
-import React, { useState, useRef, createRef } from 'react';
+import React, { useState, createRef } from 'react';
 import { settings } from 'carbon-components';
 import cn from 'classnames';
 
@@ -52,7 +52,7 @@ const propTypes = {
   /** Bit to flip that tells header to render the nav toggle button */
   hasSideNav: PropTypes.bool,
   onClickSideNavExpand: PropTypes.func,
-  /** Header panel props */
+  /** Main app switcher Header panel props */
   headerPanel: PropTypes.shape({
     /** Optionally provide a custom class to apply to the underlying <li> node */
     className: PropTypes.string,
@@ -111,17 +111,20 @@ const Header = ({
   const actionBtnContent = actionItems.map((item, i) => {
     if (item.hasOwnProperty('childContent')) {
       if (item.hasOwnProperty('headerPanel')) {
-        const panelChildren = item.childContent.map(childItem => (
-          <li key={`listitem-${i * Math.random()}`}>
-            <childItem.metaData.element
-              key={`headerpanelmenu-item-${item.label +
-                item.childContent.indexOf(childItem)}-child-${i}`}
-              {...childItem.metaData}
-            >
-              {childItem.content}
-            </childItem.metaData.element>
-          </li>
-        ));
+        const panelChildren = item.childContent.map(childItem => {
+          const ChildElement = childItem?.metaData?.element || 'a';
+          return (
+            <li key={`listitem-${i * Math.random()}`}>
+              <ChildElement
+                key={`headerpanelmenu-item-${item.label +
+                  item.childContent.indexOf(childItem)}-child-${i}`}
+                {...childItem.metaData}
+              >
+                {childItem.content}
+              </ChildElement>
+            </li>
+          );
+        });
 
         const thisRef = setRefFunction(i);
         actionBtnHeaderPanels.push(
