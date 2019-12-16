@@ -290,6 +290,7 @@ const actions = {
     onApplyRowAction: action('onApplyRowAction'),
     onRowExpanded: action('onRowExpanded'),
     onChangeOrdering: action('onChangeOrdering'),
+    onColumnSelectionConfig: action('onColumnSelectionConfig'),
     onChangeSort: action('onChangeSort'),
   },
 };
@@ -1109,7 +1110,7 @@ storiesOf('Watson IoT|Table', module)
       />
     );
   })
-  .add('with customized columns', () => (
+  .add('with column selection', () => (
     <Table
       columns={tableColumns}
       data={tableData}
@@ -1118,6 +1119,7 @@ storiesOf('Watson IoT|Table', module)
         hasPagination: true,
         hasRowSelection: 'multi',
         hasColumnSelection: true,
+        hasColumnSelectionConfig: boolean('hasColumnSelectionConfig', true),
       }}
       view={{
         toolbar: {
@@ -1127,6 +1129,7 @@ storiesOf('Watson IoT|Table', module)
           ordering: defaultOrdering,
         },
       }}
+      i18n={{ columnSelectionConfig: text('i18n.columnSelectionConfig', '__Manage columns__') }}
     />
   ))
   .add('with no results', () => (

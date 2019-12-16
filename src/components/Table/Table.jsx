@@ -83,6 +83,7 @@ const propTypes = {
     /** has simple search capability */
     hasSearch: PropTypes.bool,
     hasColumnSelection: PropTypes.bool,
+    hasColumnSelectionConfig: PropTypes.bool,
     shouldLazyRender: PropTypes.bool,
     hasRowCountInHeader: PropTypes.bool,
   }),
@@ -178,6 +179,7 @@ const propTypes = {
       onClearRowError: PropTypes.func,
       onEmptyStateAction: PropTypes.func,
       onChangeOrdering: PropTypes.func,
+      onColumnSelectionConfig: PropTypes.func,
     }).isRequired,
   }),
   i18n: I18NPropTypes,
@@ -197,6 +199,7 @@ export const defaultProps = baseProps => ({
     hasOnlyPageData: false,
     hasSearch: false,
     hasColumnSelection: false,
+    hasColumnSelectionConfig: false,
     shouldLazyRender: false,
   },
   view: {
@@ -239,6 +242,7 @@ export const defaultProps = baseProps => ({
       onApplyRowAction: defaultFunction('actions.table.onApplyRowAction'),
       onEmptyStateAction: defaultFunction('actions.table.onEmptyStateAction'),
       onChangeOrdering: defaultFunction('actions.table.onChangeOrdering'),
+      onColumnSelectionConfig: defaultFunction('actions.table.onColumnSelectionConfig'),
     },
   },
   i18n: {
@@ -260,6 +264,7 @@ export const defaultProps = baseProps => ({
     /** toolbar */
     clearAllFilters: 'Clear all filters',
     columnSelectionButtonAria: 'Column Selection',
+    columnSelectionConfig: 'Manage Columns',
     filterButtonAria: 'Filters',
     searchLabel: 'Search',
     searchPlaceholder: 'Search',
@@ -391,12 +396,24 @@ const Table = props => {
           {...others}
           i18n={i18n}
           lightweight={lightweight}
-          options={pick(options, 'hasRowSelection', 'hasRowExpansion', 'hasRowActions')}
+          options={pick(
+            options,
+            'hasRowSelection',
+            'hasRowExpansion',
+            'hasRowActions',
+            'hasColumnSelectionConfig'
+          )}
           columns={columns}
           filters={view.filters}
           actions={{
             ...pick(actions.toolbar, 'onApplyFilter'),
-            ...pick(actions.table, 'onSelectAll', 'onChangeSort', 'onChangeOrdering'),
+            ...pick(
+              actions.table,
+              'onSelectAll',
+              'onChangeSort',
+              'onChangeOrdering',
+              'onColumnSelectionConfig'
+            ),
           }}
           selectAllText={i18n.selectAllAria}
           clearFilterText={i18n.clearFilterAria}
