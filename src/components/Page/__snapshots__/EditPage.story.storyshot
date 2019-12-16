@@ -504,3 +504,113 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|EditP
   </button>
 </div>
 `;
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|EditPage (Deprecated) ️⛔ Deprecation Notice  1`] = `
+<div
+  className="storybook-container"
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "flexDirection": "column",
+      "padding": "3rem",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      style={Object {}}
+    >
+      <div
+        className="bx--toast-notification bx--toast-notification--warning"
+        kind="warning"
+        role="alert"
+        style={
+          Object {
+            "marginBottom": ".5rem",
+            "minWidth": "30rem",
+          }
+        }
+        timeout={0}
+      >
+        <svg
+          aria-hidden={true}
+          className="bx--toast-notification__icon"
+          focusable="false"
+          height={20}
+          preserveAspectRatio="xMidYMid meet"
+          style={
+            Object {
+              "willChange": "transform",
+            }
+          }
+          viewBox="0 0 20 20"
+          width={20}
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M10 1c-5 0-9 4-9 9s4 9 9 9 9-4 9-9-4-9-9-9zm-.8 4h1.5v7H9.2V5zm.8 11c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1z"
+          />
+          <path
+            d="M9.2 5h1.5v7H9.2V5zm.8 11c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1z"
+            data-icon-path="inner-path"
+            opacity="0"
+          />
+          <title>
+            
+          </title>
+        </svg>
+        <div
+          className="bx--toast-notification__details"
+        >
+          <h3
+            className="bx--toast-notification__title"
+          >
+            Deprecation Notice
+          </h3>
+          <div
+            className="bx--toast-notification__subtitle"
+          >
+            EditPage has been deprecated and will be removed in the next major version of carbon-addons-iot-react.
+          </div>
+          <div
+            className="bx--toast-notification__caption"
+          >
+            Refactor usages of EditPage to use PageWizard instead.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
