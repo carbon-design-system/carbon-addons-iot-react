@@ -25,6 +25,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
   >
     <div
       className="storybook-container"
+      style={
+        Object {
+          "padding": "3rem",
+        }
+      }
     >
       <div
         style={
@@ -307,6 +312,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
   >
     <div
       className="storybook-container"
+      style={
+        Object {
+          "padding": "3rem",
+        }
+      }
     >
       <div
         style={
@@ -606,6 +616,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
   >
     <div
       className="storybook-container"
+      style={
+        Object {
+          "padding": "3rem",
+        }
+      }
     >
       <div
         style={
