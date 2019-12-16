@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|EditPage isLoading 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|EditPage (Deprecated) isLoading 1`] = `
 <div
   className="storybook-container"
   style={
@@ -83,7 +83,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|EditP
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|EditPage normal 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|EditPage (Deprecated) normal 1`] = `
 <div
   className="storybook-container"
   style={
@@ -207,7 +207,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|EditP
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|EditPage with blurb 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|EditPage (Deprecated) with blurb 1`] = `
 <div
   className="storybook-container"
   style={
@@ -336,7 +336,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|EditP
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|EditPage with breadcrumb 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|EditPage (Deprecated) with breadcrumb 1`] = `
 <div
   className="storybook-container"
   style={

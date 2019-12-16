@@ -14,7 +14,7 @@ const commonEditPageProps = {
   children: <div>child</div>,
 };
 const breadcrumb = [<a href="/">Home</a>, <a href="/">Type</a>, <span>Instance</span>];
-storiesOf('Watson IoT|EditPage', module)
+storiesOf('Watson IoT|EditPage (Deprecated)', module)
   .addDecorator(storyFn => <FullWidthWrapper>{storyFn()}</FullWidthWrapper>)
   .add('normal', () => <EditPage {...commonEditPageProps} />)
   .add('isLoading', () => <EditPage {...commonEditPageProps} isLoading />)
