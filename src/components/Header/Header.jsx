@@ -91,9 +91,6 @@ const Header = ({
   const appSwitch = headerPanel ? createRef() : null;
   const [expandedItem, setExpandedItem] = useState({});
 
-  // create state for focus
-  // use effect to call focus
-
   // expanded state and focus for headerpanels
   const handleExpandedState = (index, ref) => {
     if (!expandedItem[index]) {
@@ -104,11 +101,12 @@ const Header = ({
     });
   };
 
+  // create refs dynamically
   const setRefFunction = i => {
     refs[`ref${i}`] = createRef();
-    // console.log('inside ref:', element, ref);
     return refs[`ref${i}`];
   };
+
   const actionBtnHeaderPanels = [];
   const actionBtnContent = actionItems.map((item, i) => {
     if (item.hasOwnProperty('childContent')) {
@@ -124,7 +122,7 @@ const Header = ({
             </childItem.metaData.element>
           </li>
         ));
-        // setExpandedItem((expandedItem[i] = false));
+
         const thisRef = setRefFunction(i);
         actionBtnHeaderPanels.push(
           <HeaderPanel
