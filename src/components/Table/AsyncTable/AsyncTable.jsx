@@ -162,12 +162,6 @@ const AsyncTable = ({ fetchData, id }) => {
       onToggleColumnSelection: () => {
         dispatch(baseTableActions.tableToolbarToggle('column'));
       },
-      onSaveCurData: () => {
-        dispatch(baseTableActions.tableDataSave());
-      },
-      onUndoEditData: () => {
-        dispatch(baseTableActions.tableDataUndo());
-      },
       onClearAllFilters: () => {
         dispatch(baseTableActions.tableFilterClear());
       },
