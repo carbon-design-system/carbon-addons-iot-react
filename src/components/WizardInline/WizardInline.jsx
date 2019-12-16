@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { InlineNotification } from 'carbon-components-react';
+import warning from 'warning';
 
 import { PADDING } from '../../styles/styles';
 import deprecate from '../../internal/deprecate';
@@ -175,6 +176,13 @@ const WizardInline = ({
   onClearError,
   closeButtonTitle,
 }) => {
+  if (__DEV__) {
+    warning(
+      false,
+      'WizardInline component has been deprecated and will be removed in the next release of `carbon-addons-iot-react`. \n Refactor to use PageWizard component instead.'
+    );
+  }
+
   const currentItemObj = items.find(({ id }) => currentItemId === id) || items[0];
   const currentItemIndex = items.findIndex(({ id }) => currentItemId === id);
   const hasNext = currentItemIndex !== items.length - 1;

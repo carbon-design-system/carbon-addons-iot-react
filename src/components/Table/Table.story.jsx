@@ -8,7 +8,7 @@ import Arrow from '@carbon/icons-react/lib/arrow--right/20';
 import Add from '@carbon/icons-react/lib/add/20';
 import Delete from '@carbon/icons-react/lib/delete/16';
 
-import { getSortedData } from '../../utils/componentUtilityFunctions';
+import { getSortedData, csvDownloadHandler } from '../../utils/componentUtilityFunctions';
 import FullWidthWrapper from '../../internal/FullWidthWrapper';
 
 import Table from './Table';
@@ -90,6 +90,11 @@ export const tableColumns = [
     name: 'Number',
     filter: { placeholderText: 'pick a number' },
   },
+  {
+    id: 'boolean',
+    name: 'Boolean',
+    filter: { placeholderText: 'true or false' },
+  },
 ];
 
 export const tableColumnsWithAlignment = [
@@ -148,6 +153,8 @@ export const tableColumnsFixedWidth = tableColumns.map(i => ({
       ? '100px'
       : i.id === 'number'
       ? '80px'
+      : i.id === 'boolean'
+      ? '80px'
       : undefined,
 }));
 
@@ -192,6 +199,10 @@ const getStatus = idx => {
   }
 };
 
+const getBoolean = index => {
+  return index % 2 === 0;
+};
+
 const getNewRow = (idx, suffix = '', withActions = false) => ({
   id: `row-${idx}${suffix ? `_${suffix}` : ''}`,
   values: {
@@ -201,6 +212,7 @@ const getNewRow = (idx, suffix = '', withActions = false) => ({
     secretField: getString(idx, 10) + suffix,
     number: idx * idx,
     status: getStatus(idx),
+    boolean: getBoolean(idx),
   },
   rowActions: withActions
     ? [
@@ -278,6 +290,7 @@ const actions = {
     onApplyRowAction: action('onApplyRowAction'),
     onRowExpanded: action('onRowExpanded'),
     onChangeOrdering: action('onChangeOrdering'),
+    onColumnSelectionConfig: action('onColumnSelectionConfig'),
     onChangeSort: action('onChangeSort'),
   },
 };
@@ -428,6 +441,28 @@ storiesOf('Watson IoT|Table', module)
       },
     }
   )
+  .add('Stateful Example with Row Count', () => (
+    <FullWidthWrapper>
+      <StatefulTable
+        {...initialState}
+        options={{
+          hasSearch: boolean('Show Search', true),
+          hasPagination: boolean('Show Pagination', true),
+          hasRowSelection: 'multi',
+          hasFilter: boolean('Show Filter', true),
+          hasRowActions: boolean('Show Row Action', true),
+          hasRowCountInHeader: boolean('Show Row Count', true),
+        }}
+        view={{
+          toolbar: { activeBar: null },
+        }}
+        i18n={{
+          rowCountInHeader: totalRowCount =>
+            `${text('Row Count Label', 'Results')}: ${totalRowCount}`,
+        }}
+      />
+    </FullWidthWrapper>
+  ))
   .add(
     'Stateful Example with every third row unselectable',
     () => (
@@ -461,7 +496,10 @@ storiesOf('Watson IoT|Table', module)
       <FullWidthWrapper>
         <StatefulTable
           {...initialState}
-          actions={actions}
+          actions={{
+            ...actions,
+            toolbar: { ...actions.toolbar, onDownloadCSV: csvDownloadHandler },
+          }}
           isSortable
           lightweight={boolean('lightweight', false)}
         />
@@ -1072,7 +1110,7 @@ storiesOf('Watson IoT|Table', module)
       />
     );
   })
-  .add('with customized columns', () => (
+  .add('with column selection', () => (
     <Table
       columns={tableColumns}
       data={tableData}
@@ -1081,6 +1119,7 @@ storiesOf('Watson IoT|Table', module)
         hasPagination: true,
         hasRowSelection: 'multi',
         hasColumnSelection: true,
+        hasColumnSelectionConfig: boolean('hasColumnSelectionConfig', true),
       }}
       view={{
         toolbar: {
@@ -1090,6 +1129,7 @@ storiesOf('Watson IoT|Table', module)
           ordering: defaultOrdering,
         },
       }}
+      i18n={{ columnSelectionConfig: text('i18n.columnSelectionConfig', '__Manage columns__') }}
     />
   ))
   .add('with no results', () => (

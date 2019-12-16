@@ -1,6 +1,5 @@
 import { mount } from 'enzyme';
 import React from 'react';
-import 'jest-styled-components';
 /* eslint-disable*/
 import { ToolbarItem, Tooltip } from 'carbon-components-react';
 import { render, fireEvent, waitForElement } from '@testing-library/react';
@@ -48,12 +47,8 @@ describe('Card testcases', () => {
     expect(wrapper.find(ToolbarItem)).toHaveLength(0);
   });
 
-  test('prop based styles', () => {
-    //isEXpanded should set the height to 100%
-    let wrapper = mount(
-      <Card {...cardProps} isExpanded size={CARD_SIZES.LARGE} tooltip={tooltipElement} />
-    );
-    expect(wrapper).toHaveStyleRule('height', '100%');
+  test('additional prop based elements', () => {
+    let wrapper = mount(<Card {...cardProps} size={CARD_SIZES.LARGE} tooltip={tooltipElement} />);
     // tooltip prop will render a tooltip in the header
     expect(wrapper.find(Tooltip)).toHaveLength(1);
     // without the isLoading prop SkeletonWrapper should not be rendered
@@ -63,6 +58,13 @@ describe('Card testcases', () => {
       <Card {...cardProps} isLoading size={CARD_SIZES.XSMALLWIDE} tooltip={tooltipElement} />
     );
     expect(wrapper.find(SkeletonWrapper)).toHaveLength(1);
+  });
+  test('isExpanded', () => {
+    let wrapper = mount(
+      <Card {...cardProps} isExpanded size={CARD_SIZES.LARGE} tooltip={tooltipElement} />
+    );
+    //isExpanded renders the modal wrapper around it
+    expect(wrapper.find('.bx--modal')).toHaveLength(1);
   });
   test('card actions', () => {
     const mockOnCardAction = jest.fn();

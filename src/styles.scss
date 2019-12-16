@@ -149,6 +149,7 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 @import 'components/Skeleton/skeleton';
 @import 'components/InlineLoading/inline-loading';
 @import 'components/PaginationNav/pagination-nav';
+@import 'components/Table/table';
 
 //-------------------------------------
 // 🔬 Experimental
@@ -181,4 +182,5 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 @import 'components/Dashboard/dashboard';
 @import 'components/Header/header';
 @import 'components/PageWizard/page-wizard';
+@import 'components/ListCard/listCard';
 @import 'components/WizardInline/wizard-inline';

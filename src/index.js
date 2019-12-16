@@ -45,15 +45,18 @@ export SideNav from './components/SideNav';
 
 // Dashboard
 export Dashboard from './components/Dashboard/Dashboard';
+export DashboardGrid from './components/Dashboard/DashboardGrid';
 export Card from './components/Card/Card';
 export ValueCard from './components/ValueCard/ValueCard';
+export TimeSeriesCard from './components/TimeSeriesCard/TimeSeriesCard';
+export ImageCard from './components/ImageCard/ImageCard';
+export TableCard, { findMatchingThresholds } from './components/TableCard/TableCard';
 export {
   CARD_TYPES,
   CARD_SIZES,
   DASHBOARD_BREAKPOINTS,
   DASHBOARD_SIZES,
 } from './constants/LayoutConstants';
-export { findMatchingThresholds } from './components/TableCard/TableCard';
 
 // Experimental
 export ListCard from './components/ListCard/ListCard';

@@ -1,7 +1,4 @@
 language: node_js
-# fix to workaround node/jest incompatibility https://github.com/facebook/jest/issues/8069.
-node_js:
-  - 8
 
 stages:
   - name: after_success
@@ -28,4 +25,4 @@ script:
   - travis_wait yarn test --ci --maxWorkers=2 --verbose --coverage --coverageReporters=text-lcov | yarn run coveralls # report coveralls status
 
 after_success:
-  - npx semantic-release@beta
+  - yarn publish-npm

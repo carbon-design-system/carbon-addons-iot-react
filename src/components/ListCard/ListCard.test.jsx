@@ -11,7 +11,7 @@ const data = [
     id: 'row-4',
     value: 'Row content 4',
     link: 'https://internetofthings.ibmcloud.com/',
-    rightContent: (
+    extraContent: (
       <svg height="10" width="30">
         <circle cx="5" cy="5" r="3" stroke="none" strokeWidth="1" fill="red" />
       </svg>
@@ -32,10 +32,10 @@ const mockScrollEvent = {
     getBoundingClientRect: () => ({}),
   },
   stopPropagation: jest.fn(),
-  target: {},
+  target: { scrollHeight: 100, scrollTop: 0, clientHeight: 100 },
 };
 
-describe('ListCard', () => {
+describe('ListCard tests', () => {
   test('LoadData', () => {
     const onLoadData = jest.fn();
 
@@ -45,6 +45,17 @@ describe('ListCard', () => {
 
     wrapper.find('Card').prop('onScroll')(mockScrollEvent);
   });
+
+  test('LoadData when data is null', () => {
+    const onLoadData = jest.fn();
+
+    const wrapper = mount(
+      <ListCard title="Testing" loadData={onLoadData} hasMoreData isLoading={false} />
+    );
+
+    expect(wrapper.find('InlineLoading')).toHaveLength(0);
+  });
+
   test('Inline Loading', () => {
     const onLoadData = jest.fn();
 
