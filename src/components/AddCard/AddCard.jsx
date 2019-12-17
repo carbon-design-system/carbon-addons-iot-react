@@ -1,9 +1,10 @@
-import { ClickableTile } from 'carbon-components-react';
 import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
 import { g10 } from '@carbon/themes';
 import Add from '@carbon/icons-react/lib/add/20';
+
+import { ClickableTile } from '../..';
 
 const propTypes = {
   /** Title to show on the card */
