@@ -1,4 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
+
 import {
   InlineLoading,
   StructuredListWrapper,
@@ -6,10 +9,7 @@ import {
   StructuredListRow,
   StructuredListCell,
   Link,
-} from 'carbon-components-react';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
-
+} from '../..';
 import { CARD_CONTENT_PADDING } from '../../constants/LayoutConstants';
 import { CardPropTypes } from '../../constants/PropTypes';
 import Card from '../Card/Card';
