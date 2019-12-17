@@ -2,9 +2,12 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { DragDropContext } from 'react-dnd';
 import HTML5Backend from 'react-dnd-html5-backend';
-import { DataTable } from 'carbon-components-react';
+import { DataTable, Button } from 'carbon-components-react';
 import styled from 'styled-components';
+import { Settings16 } from '@carbon/icons-react';
 
+import { defaultFunction } from '../../../../utils/componentUtilityFunctions';
+import { defaultI18NPropTypes } from '../../TablePropTypes';
 import ColumnHeaderSelect from '../ColumnHeaderSelect/ColumnHeaderSelect';
 
 const { TableHeader, TableRow } = DataTable;
@@ -68,11 +71,19 @@ class ColumnHeaderRow extends Component {
         isHidden: PropTypes.bool,
       })
     ).isRequired,
-    tableOptions: PropTypes.shape({
+    options: PropTypes.shape({
       hasRowSelection: PropTypes.oneOf(['multi', 'single', false]),
       hasRowExpansion: PropTypes.bool,
+      hasColumnSelectionConfig: PropTypes.bool,
     }).isRequired,
     onChangeOrdering: PropTypes.func.isRequired,
+    onColumnSelectionConfig: PropTypes.func,
+    columnSelectionConfigText: PropTypes.string,
+  };
+
+  static defaultProps = {
+    onColumnSelectionConfig: defaultFunction('actions.table.onColumnSelectionConfig'),
+    columnSelectionConfigText: defaultI18NPropTypes.columnSelectionConfig,
   };
 
   reorderColumn = (srcIndex, destIndex) => {
@@ -97,7 +108,9 @@ class ColumnHeaderRow extends Component {
     const {
       columns,
       ordering,
-      tableOptions: { hasRowSelection, hasRowExpansion, hasRowActions },
+      options: { hasRowSelection, hasRowExpansion, hasRowActions, hasColumnSelectionConfig },
+      onColumnSelectionConfig,
+      columnSelectionConfigText,
     } = this.props;
 
     const visibleColumns = columns.filter(
@@ -122,6 +135,17 @@ class ColumnHeaderRow extends Component {
               </ColumnHeaderSelect>
             ))}
           </StyledColumnSelectWrapper>
+          {hasColumnSelectionConfig ? (
+            <Button
+              className="column-header__btn"
+              kind="ghost"
+              size="small"
+              renderIcon={Settings16}
+              onClick={() => onColumnSelectionConfig()}
+            >
+              {columnSelectionConfigText}
+            </Button>
+          ) : null}
         </StyledTableHeader>
       </StyledColumnSelectTableRow>
     );

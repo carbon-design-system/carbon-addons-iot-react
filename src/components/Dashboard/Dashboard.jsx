@@ -1,29 +1,11 @@
 import React, { useState, useMemo, useCallback, useEffect, useRef } from 'react';
-import { Responsive, WidthProvider } from 'react-grid-layout';
 import PropTypes from 'prop-types';
 import 'react-grid-layout/css/styles.css';
 import 'react-resizable/css/styles.css';
-import styled from 'styled-components';
-import find from 'lodash/find';
-
-import { getLayout } from '../../utils/componentUtilityFunctions';
-import {
-  CardSizesToDimensionsPropTypes,
-  RowHeightPropTypes,
-  DashboardBreakpointsPropTypes,
-  DashboardColumnsPropTypes,
-  DashboardLayoutPropTypes,
-} from '../../constants/PropTypes';
-import {
-  DASHBOARD_COLUMNS,
-  DASHBOARD_BREAKPOINTS,
-  CARD_DIMENSIONS,
-  CARD_SIZES,
-  ROW_HEIGHT,
-  GUTTER,
-} from '../../constants/LayoutConstants';
+import omit from 'lodash/omit';
 
 import DashboardHeader from './DashboardHeader';
+import DashboardGrid, { DashboardGridPropTypes } from './DashboardGrid';
 import CardRenderer from './CardRenderer';
 
 const propTypes = {
@@ -58,17 +40,7 @@ const propTypes = {
       error: PropTypes.node,
     })
   ).isRequired,
-  layouts: PropTypes.shape({
-    max: PropTypes.arrayOf(DashboardLayoutPropTypes),
-    xl: PropTypes.arrayOf(DashboardLayoutPropTypes),
-    lg: PropTypes.arrayOf(DashboardLayoutPropTypes),
-    md: PropTypes.arrayOf(DashboardLayoutPropTypes),
-    sm: PropTypes.arrayOf(DashboardLayoutPropTypes),
-    xs: PropTypes.arrayOf(DashboardLayoutPropTypes),
-  }),
 
-  /** Is the dashboard in edit mode? */
-  isEditable: PropTypes.bool,
   /** Optional filter that should be rendered top right */
   filter: PropTypes.node,
   /** Optional sidebar content that should be rendered left of the dashboard cards */
@@ -81,12 +53,6 @@ const propTypes = {
   onFetchData: PropTypes.func,
   /** Optional Function that is called back if the card has a setup phase before data fetching */
   onSetupCard: PropTypes.func,
-  /** Optionally listen to layout changes to update a dashboard template
-   * Calls back with (currentLayout: Layout, allLayouts: {[key: $Keys<breakpoints>]: Layout}) => void,
-   */
-  onLayoutChange: PropTypes.func,
-  /** Optionally listen to window resize events to update a dashboard template */
-  onBreakpointChange: PropTypes.func,
   /** Callback called when an action is clicked.  The id of the action is passed to the callback */
   onDashboardAction: PropTypes.func,
   /** Callback called when a card determines what icon render based on a named string in card config
@@ -175,24 +141,13 @@ const propTypes = {
     learnMoreText: PropTypes.string,
     dismissText: PropTypes.string,
   }),
-
-  /** (Optional) Row height in pixels for each layout */
-  rowHeight: RowHeightPropTypes,
-  /** (Optional) media query pixel measurement that determines which particular dashboard layout should be used */
-  dashboardBreakpoints: DashboardBreakpointsPropTypes,
-  /** (Optional) map of number of columns to a given dashboard layout */
-  dashboardColumns: DashboardColumnsPropTypes,
-  /** (Optional) array of configurable sizes to dimensions */
-  cardDimensions: CardSizesToDimensionsPropTypes,
+  ...omit(DashboardGridPropTypes, ['children', 'breakpoint']),
 };
 
 const defaultProps = {
   title: null,
-  isEditable: false,
   description: null,
-  onLayoutChange: null,
   onDashboardAction: null,
-  onBreakpointChange: null,
   i18n: {
     lastUpdatedLabel: 'Last updated: ',
     noDataLabel: 'No data is available for this time range.',
@@ -266,11 +221,6 @@ const defaultProps = {
     downloadIconDescription: 'Download table content',
   },
 
-  layouts: {},
-  rowHeight: ROW_HEIGHT,
-  cardDimensions: CARD_DIMENSIONS,
-  dashboardBreakpoints: DASHBOARD_BREAKPOINTS,
-  dashboardColumns: DASHBOARD_COLUMNS,
   filter: null,
   sidebar: null,
   actions: [],
@@ -283,20 +233,15 @@ const defaultProps = {
   setIsLoading: null,
 };
 
-const GridLayout = WidthProvider(Responsive);
-
-const StyledGridLayout = styled(GridLayout)`
-  &&& {
-    .react-grid-item.cssTransforms {
-      transition-property: ${props => (props.shouldAnimate ? 'transform' : 'none')};
-    }
-  }
-`;
-
-/** This component renders one individual dashboard. The passed cards are set into a grid layout based on the individual card sizes and layouts.
+/**
+ * This component renders one individual dashboard from an array of properties. The passed cards are set into a grid layout based on the individual card sizes and layouts.
+ * It keeps track of the current breakpoint and passes it down to the rendered cards.
+ * This dashboard only supports a fixed set of card types and uses the CardRenderer to make those determinations
+ * If you want to render a custom card type you should compose your own dashboard component with the DashboardHeader, DashboardGrid, and Card components.
+ *
+ * Data Loading:
  * It keeps track of whether any cards are actively loading data and shows a loading spinner at the top.
  * It listens to all the cards data fetching, and updates it's overall refresh date once all cards have finished fetching data.
- *
  * To enable your cards to fetch data, you must implement the onFetchData callback.  The callback is called with the full card prop object,
  * and then a boolean that describes whether to return timeseries data or not.  You should asynchronously return an array of values from your callback to populate your
  * cards with data.
@@ -308,12 +253,8 @@ const Dashboard = ({
   hasLastUpdated,
   i18n,
   i18n: { lastUpdatedLabel },
-  dashboardBreakpoints,
-  cardDimensions,
-  dashboardColumns,
   filter,
   sidebar,
-  rowHeight,
   layouts,
   isEditable,
   onLayoutChange,
@@ -367,57 +308,28 @@ const Dashboard = ({
     [onFetchData, cards.length] // eslint-disable-line
   );
 
-  const generatedLayouts = useMemo(
-    () =>
-      Object.keys(dashboardBreakpoints).reduce((acc, layoutName) => {
-        return {
-          ...acc, // only generate the layout if we're not passed from the parent
-          [layoutName]:
-            layouts && layouts[layoutName]
-              ? layouts[layoutName].map(layout => {
-                  // if we can't find the card from the layout, assume small
-                  let matchingCard = find(cards, { id: layout.i });
-                  if (!matchingCard) {
-                    console.error(`Error with your layout. Card with id: ${layout.i} not found`); //eslint-disable-line
-                    matchingCard = { size: CARD_SIZES.SMALL };
-                  }
-                  return { ...layout, ...cardDimensions[matchingCard.size][layoutName] };
-                })
-              : getLayout(layoutName, cards, dashboardColumns, cardDimensions),
-        };
-      }, {}),
-    [cardDimensions, dashboardBreakpoints, dashboardColumns, layouts] // eslint-disable-line
-  );
-
   // Caching for performance
   const cachedI18N = useMemo(() => i18n, []); // eslint-disable-line
-  const cachedMargin = useMemo(() => [GUTTER, GUTTER], []);
 
-  const handleLayoutChange = (layout, allLayouts) =>
-    onLayoutChange && onLayoutChange(layout, allLayouts);
+  const cachedOnBreakpointChange = useCallback(
+    newBreakpoint => {
+      setBreakpoint(newBreakpoint);
+      if (onBreakpointChange) {
+        onBreakpointChange(newBreakpoint);
+      }
+    },
+    [onBreakpointChange]
+  );
 
-  const handleBreakpointChange = newBreakpoint => {
-    setBreakpoint(newBreakpoint);
-    if (onBreakpointChange) {
-      onBreakpointChange(newBreakpoint);
-    }
-  };
-
-  const cachedOnLayoutChange = useCallback(handleLayoutChange, [onLayoutChange]);
-  const cachedOnBreakpointChange = useCallback(handleBreakpointChange, [onBreakpointChange]);
-
+  // Uses our shared renderer for each card that knows how to render a fixed set of card types
   const gridContents = useMemo(
     () =>
       cards.map(card =>
         card ? (
           <CardRenderer
-            card={card}
-            key={card.id}
+            {...card}
+            key={`renderer-${card.id}`}
             i18n={cachedI18N}
-            dashboardBreakpoints={dashboardBreakpoints}
-            cardDimensions={cardDimensions}
-            dashboardColumns={dashboardColumns}
-            rowHeight={rowHeight}
             isLoading={isLoading}
             isEditable={isEditable}
             breakpoint={breakpoint}
@@ -428,19 +340,7 @@ const Dashboard = ({
           />
         ) : null
       ), // eslint-disable-next-line
-    [
-      breakpoint,
-      cachedI18N,
-      cardDimensions,
-      cards,
-      dashboardBreakpoints,
-      dashboardColumns,
-      isEditable,
-      isLoading,
-      rowHeight,
-      handleOnFetchData,
-      timeGrain,
-    ]
+    [breakpoint, cachedI18N, cards, isEditable, isLoading, handleOnFetchData, timeGrain]
   );
 
   return (
@@ -458,25 +358,15 @@ const Dashboard = ({
       />
       <div style={{ display: 'flex' }}>
         {sidebar && <div style={{ flex: 0 }}>{sidebar}</div>}
-        <div style={{ flex: 1 }}>
-          <StyledGridLayout
-            layouts={generatedLayouts}
-            compactType="vertical"
-            cols={dashboardColumns}
-            breakpoints={dashboardBreakpoints}
-            margin={cachedMargin}
-            rowHeight={rowHeight[breakpoint]}
-            preventCollision={false}
-            // Stop the initial animation
-            shouldAnimate={isEditable}
-            onLayoutChange={cachedOnLayoutChange}
-            onBreakpointChange={cachedOnBreakpointChange}
-            isResizable={false}
-            isDraggable={isEditable}
-          >
-            {gridContents}
-          </StyledGridLayout>
-        </div>
+        <DashboardGrid
+          layouts={layouts}
+          onLayoutChange={onLayoutChange}
+          isEditable={isEditable}
+          breakpoint={breakpoint}
+          onBreakpointChange={cachedOnBreakpointChange}
+        >
+          {gridContents}
+        </DashboardGrid>
       </div>
     </div>
   );

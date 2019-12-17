@@ -9,14 +9,13 @@ module.exports = {
       functions: 80,
       lines: 80,
     },
-    './src/components/**/!(ColumnHeaderRow|ColumnHeaderSelect|FilterHeaderRow|TableToolbar|RowActionsCell|RowActionsError|StatefulTable|StatefulTableDetailWizard|CatalogContent|FileDrop|HeaderMenu|Dashboard|CardRenderer|Attribute|UnitRenderer|ImageHotspots|ImageControls|TimeSeriesCard|PageHero|PageTitle|EditPage|AsyncTable|ImageCard|WizardHeader).jsx': {
+    './src/components/**/!(ColumnHeaderSelect|FilterHeaderRow|TableToolbar|RowActionsCell|RowActionsError|StatefulTable|StatefulTableDetailWizard|CatalogContent|FileDrop|HeaderMenu|Dashboard|CardRenderer|Attribute|UnitRenderer|ImageHotspots|ImageControls|TimeSeriesCard|PageHero|PageTitle|EditPage|AsyncTable|ImageCard|WizardHeader).jsx': {
       statements: 80,
       branches: 80,
       functions: 80,
       lines: 80,
     },
     // The overrides below are to be fixed/deleted via https://github.com/IBM/carbon-addons-iot-react/issues/707
-    './src/components/Table/TableHead/ColumnHeaderRow/ColumnHeaderRow.jsx': { branches: 70 },
     './src/components/Table/TableHead/FilterHeaderRow/FilterHeaderRow.jsx': { branches: 70 },
     './src/components/Table/TableToolbar/TableToolbar.jsx': { functions: 66 },
     './src/components/Table/TableBody/RowActionsCell/RowActionsCell.jsx': {

@@ -137,6 +137,7 @@ export const I18NPropTypes = PropTypes.shape({
   searchPlaceholder: PropTypes.string,
   clearAllFilters: PropTypes.string,
   columnSelectionButtonAria: PropTypes.string,
+  columnSelectionConfig: PropTypes.string,
   filterButtonAria: PropTypes.string,
   clearFilterAria: PropTypes.string,
   filterAria: PropTypes.string,
@@ -181,6 +182,7 @@ export const defaultI18NPropTypes = {
   /** toolbar */
   clearAllFilters: 'Clear all filters',
   columnSelectionButtonAria: 'Column Selection',
+  columnSelectionConfig: 'Manage columns',
   filterButtonAria: 'Filters',
   searchLabel: 'Search',
   searchPlaceholder: 'Search',

@@ -3,6 +3,7 @@ import VisibilitySensor from 'react-visibility-sensor';
 import { Tooltip, SkeletonText } from 'carbon-components-react';
 import styled from 'styled-components';
 import SizeMe from 'react-sizeme';
+import { settings } from 'carbon-components';
 
 import {
   CARD_TITLE_HEIGHT,
@@ -18,6 +19,8 @@ import { CardPropTypes } from '../../constants/PropTypes';
 import { getCardMinSize } from '../../utils/componentUtilityFunctions';
 
 import CardToolbar from './CardToolbar';
+
+const { prefix } = settings;
 
 const OptimizedSkeletonText = React.memo(SkeletonText);
 
@@ -145,6 +148,8 @@ const Card = ({
   availableActions,
   breakpoint,
   i18n,
+  style,
+  className,
   ...others
 }) => {
   const isXS = size === CARD_SIZES.XSMALL;
@@ -177,19 +182,22 @@ const Card = ({
     id,
   ]);
 
-  return (
+  const card = (
     <VisibilitySensor partialVisibility offset={{ top: 10 }}>
       {({ isVisible }) => (
         <SizeMe.SizeMe monitorHeight>
           {({ size: sizeWidth }) => (
             <CardWrapper
+              {...others}
               id={id}
               dimensions={dimensions}
               isExpanded={isExpanded}
               cardWidthSize={sizeWidth.width}
-              {...others}
+              style={
+                !isExpanded ? style : { height: 'calc(100% - 50px)', width: 'calc(100% - 50px)' }
+              }
+              className={className}
             >
-              {' '}
               {title !== undefined && (
                 <CardHeader>
                   <CardTitle title={title}>
@@ -250,6 +258,8 @@ const Card = ({
       )}
     </VisibilitySensor>
   );
+
+  return isExpanded ? <div className={`${prefix}--modal is-visible`}>{card}</div> : card;
 };
 
 Card.propTypes = CardPropTypes;

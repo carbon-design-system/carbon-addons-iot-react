@@ -224,6 +224,7 @@ export const CardPropTypes = {
   isLoading: PropTypes.bool,
   isEmpty: PropTypes.bool,
   isEditable: PropTypes.bool,
+  /** goes full screen if expanded */
   isExpanded: PropTypes.bool,
   size: PropTypes.oneOf(Object.values(CARD_SIZES)),
   layout: PropTypes.oneOf(Object.values(CARD_LAYOUTS)),
