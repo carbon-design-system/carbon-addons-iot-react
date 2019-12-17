@@ -6,16 +6,16 @@ import {
   HeaderGlobalAction,
   SkipToContent,
   HeaderMenuItem,
-  // HeaderPanel,
+  HeaderPanel,
 } from 'carbon-components-react/lib/components/UIShell';
 import AppSwitcher from '@carbon/icons-react/lib/app-switcher/20';
 import PropTypes from 'prop-types';
-import React, { useState, createRef } from 'react';
+import React, { useState, createRef, useEffect } from 'react';
 import { settings } from 'carbon-components';
 import cn from 'classnames';
 
 import HeaderMenu from './HeaderMenu';
-import HeaderPanel from './HeaderPanel';
+// import HeaderPanel from './HeaderPanel';
 
 const { prefix: carbonPrefix } = settings;
 
@@ -90,15 +90,56 @@ const Header = ({
   // ref for App Switcher - only create if there is going to be one
   const appSwitch = headerPanel ? createRef() : null;
   const [expandedItem, setExpandedItem] = useState({});
+  // const [openMenuItem, setOpenMenuItem] = useState();
+  // useEffect(
+  //   () => {
+  //     // action on update of movies
+  //     if (openMenuItem) {
+  //       console.log(openMenuItem.classList.contains('action-btn__trigger'));
+  //     }
+  //   },
+  //   [openMenuItem]
+  // );
 
   // expanded state and focus for headerpanels
-  const handleExpandedState = (index, ref) => {
-    if (!expandedItem[index]) {
-      ref.current.focus();
+  const handleExpandedState = (e, index) => {
+    const clicked = e.currentTarget;
+    // console.log('types: ', e.type, e.relatedTarget);
+    // setOpenMenuItem(clicked);
+
+    // if (!expandedItem[index]) {
+    //   ref.current.focus();
+    // }
+    if (index) {
+      console.log('index');
+      setExpandedItem({
+        [index]: !expandedItem[index],
+      });
+    } else {
+      console.log('not');
+      setExpandedItem(prev => {
+        const oldHeaderPanel = Object.keys(prev)[0];
+        return {
+          [oldHeaderPanel]: false,
+        };
+      });
     }
-    setExpandedItem({
-      [index]: !expandedItem[index],
-    });
+  };
+
+  const handleTabOrder = e => {
+    // console.log('blurred ', e.target);
+    // if (e.target.parentNode.parentNode.parentNode.contains(e.relatedTarget)) {
+    //   return;
+    // }
+
+    if (!e.target.parentNode.parentNode.contains(e.relatedTarget)) {
+      setExpandedItem(prev => {
+        const oldHeaderPanel = Object.keys(prev)[0];
+        return {
+          [oldHeaderPanel]: false,
+        };
+      });
+    }
   };
 
   // create refs dynamically
@@ -127,29 +168,50 @@ const Header = ({
         });
 
         const thisRef = setRefFunction(i);
-        actionBtnHeaderPanels.push(
-          <HeaderPanel
-            ref={thisRef}
-            key={`panel-${i}`}
-            aria-label="Header Panel"
-            className="action-btn-headerpanel"
-            expanded={expandedItem[item.label]}
-          >
-            <ul>{panelChildren}</ul>
-          </HeaderPanel>
-        );
+        // actionBtnHeaderPanels.push(
+        //   <HeaderPanel
+        //     // onBlur={e => handleTabOrder(e)}
+        //     ref={thisRef}
+        //     key={`panel-${i}`}
+        //     aria-label="Header Panel"
+        //     className={cn('action-btn__headerpanel', {
+        //       'action-btn__headerpanel--closed': expandedItem[item.label],
+        //     })}
+        //     expanded={expandedItem[item.label]}
+        //   >
+        //     <ul>{panelChildren}</ul>
+        //   </HeaderPanel>
+        // );
 
         return (
-          <HeaderGlobalAction
-            className={`${carbonPrefix}--header-action-btn`}
-            key={`menu-item-${item.label}-global`}
-            title={item.label}
-            aria-label={item.label}
-            /* eslint-disable */
-            onClick={() => handleExpandedState(item.label, thisRef)}
-          >
-            {item.btnContent}
-          </HeaderGlobalAction>
+          <div className={`${carbonPrefix}--header__submenu ${carbonPrefix}--header-action-btn`}>
+            <HeaderGlobalAction
+              // onBlur={e => handleTabOrder(e)}
+              className={`${carbonPrefix}--header-action-btn action-btn__trigger`}
+              key={`menu-item-${item.label}-global`}
+              title={item.label}
+              aria-label={item.label}
+              aria-haspopup="menu"
+              role="menuitem"
+              onClick={e => handleExpandedState(e, item.label, thisRef)}
+            >
+              {item.btnContent}
+            </HeaderGlobalAction>
+            <HeaderPanel
+              onBlur={e => handleTabOrder(e)}
+              ref={thisRef}
+              key={`panel-${i}`}
+              aria-label="Header Panel"
+              className={cn('action-btn__headerpanel', {
+                'action-btn__headerpanel--closed': !expandedItem[item.label],
+              })}
+              expanded={expandedItem[item.label]}
+            >
+              <ul aria-label={item.label} role="menu">
+                {panelChildren}
+              </ul>
+            </HeaderPanel>
+          </div>
         );
       }
       const children = item.childContent.map(childItem => (
@@ -161,16 +223,18 @@ const Header = ({
         </HeaderMenuItem>
       ));
       return (
-        <HeaderMenu
-          className={`${carbonPrefix}--header-action-btn`}
-          key={`menu-item-${item.label}`}
-          aria-label={item.label}
-          isMenu={false}
-          renderMenuContent={() => item.btnContent}
-          menuLinkName={item.menuLinkName ? item.menuLinkName : ''}
-        >
-          {children}
-        </HeaderMenu>
+        <div onFocus={e => handleExpandedState(e)}>
+          <HeaderMenu
+            className={`${carbonPrefix}--header-action-btn`}
+            key={`menu-item-${item.label}`}
+            aria-label={item.label}
+            isMenu={false}
+            renderMenuContent={() => item.btnContent}
+            menuLinkName={item.menuLinkName ? item.menuLinkName : ''}
+          >
+            {children}
+          </HeaderMenu>
+        </div>
       );
     }
     return (
@@ -189,7 +253,7 @@ const Header = ({
       <HeaderGlobalAction
         aria-label="header-panel-trigger"
         key="AppSwitcher"
-        onClick={() => handleExpandedState('AppSwitcher', appSwitch)}
+        onClick={e => handleExpandedState(e, 'AppSwitcher', appSwitch)}
       >
         <AppSwitcher fill="white" description="Icon" />
       </HeaderGlobalAction>
@@ -212,7 +276,7 @@ const Header = ({
           className={cn(`${carbonPrefix}--app-switcher`, {
             [headerPanel.className]: headerPanel.className,
           })}
-          expanded={expandedItem['AppSwitcher']}
+          expanded={expandedItem.AppSwitcher}
         >
           <div>
             <headerPanel.content />

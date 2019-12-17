@@ -52,3 +52,9 @@
   background-color: $ui-01;
   border: none;
 }
+
+.action-btn__headerpanel {
+  &--closed * {
+    display: none;
+  }
+}

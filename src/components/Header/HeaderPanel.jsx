@@ -34,7 +34,7 @@ const HeaderPanel = React.forwardRef(function HeaderPanel(
   });
 
   return (
-    <div tabIndex="0" {...other} className={className} {...accessibilityLabel} ref={ref}>
+    <div tabIndex="-1" {...other} className={className} {...accessibilityLabel} ref={ref}>
       {children}
     </div>
   );
