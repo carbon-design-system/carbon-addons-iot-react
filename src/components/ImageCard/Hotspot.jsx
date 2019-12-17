@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { Icon, Tooltip } from 'carbon-components-react';
 
+import { Icon, Tooltip } from '../..';
 import icons from '../../utils/bundledIcons';
 
 export const propTypes = {

@@ -1,7 +1,8 @@
 import React, { useMemo, useState } from 'react';
 import useDeepCompareEffect from 'use-deep-compare-effect';
 import PropTypes from 'prop-types';
-import { InlineLoading } from 'carbon-components-react';
+
+import { InlineLoading } from '../..';
 
 import Hotspot, { propTypes as HotspotPropTypes } from './Hotspot';
 import ImageControls from './ImageControls';
