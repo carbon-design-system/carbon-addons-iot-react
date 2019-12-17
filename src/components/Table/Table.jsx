@@ -83,8 +83,10 @@ const propTypes = {
     /** has simple search capability */
     hasSearch: PropTypes.bool,
     hasColumnSelection: PropTypes.bool,
+    hasColumnSelectionConfig: PropTypes.bool,
     shouldLazyRender: PropTypes.bool,
     hasEdit: PropTypes.bool,
+    hasRowCountInHeader: PropTypes.bool,
   }),
 
   /** Initial state of the table, should be updated via a local state wrapper component implementation or via a central store/redux see StatefulTable component for an example */
@@ -165,6 +167,8 @@ const propTypes = {
       onApplySearch: PropTypes.func,
       onSaveCurData: PropTypes.func,
       onUndoEditData: PropTypes.func,
+      /** Download the table contents */
+      onDownloadCSV: PropTypes.func,
     }),
     /** table wide actions */
     table: PropTypes.shape({
@@ -178,6 +182,7 @@ const propTypes = {
       onClearRowError: PropTypes.func,
       onEmptyStateAction: PropTypes.func,
       onChangeOrdering: PropTypes.func,
+      onColumnSelectionConfig: PropTypes.func,
     }).isRequired,
   }),
   i18n: I18NPropTypes,
@@ -197,6 +202,7 @@ export const defaultProps = baseProps => ({
     hasOnlyPageData: false,
     hasSearch: false,
     hasColumnSelection: false,
+    hasColumnSelectionConfig: false,
     shouldLazyRender: false,
     hasEdit: false,
   },
@@ -242,6 +248,7 @@ export const defaultProps = baseProps => ({
       onApplyRowAction: defaultFunction('actions.table.onApplyRowAction'),
       onEmptyStateAction: defaultFunction('actions.table.onEmptyStateAction'),
       onChangeOrdering: defaultFunction('actions.table.onChangeOrdering'),
+      onColumnSelectionConfig: defaultFunction('actions.table.onColumnSelectionConfig'),
     },
   },
   i18n: {
@@ -263,6 +270,7 @@ export const defaultProps = baseProps => ({
     /** toolbar */
     clearAllFilters: 'Clear all filters',
     columnSelectionButtonAria: 'Column Selection',
+    columnSelectionConfig: 'Manage Columns',
     filterButtonAria: 'Filters',
     searchLabel: 'Search',
     searchPlaceholder: 'Search',
@@ -275,11 +283,13 @@ export const defaultProps = baseProps => ({
     itemsSelected: 'items selected',
     itemSelected: 'item selected',
     batchSave: 'Save',
+    rowCountInHeader: totalRowCount => `Results: ${totalRowCount}`,
     /** empty state */
     emptyMessage: 'There is no data',
     emptyMessageWithFilters: 'No results match the current filters',
     emptyButtonLabel: 'Create some data',
     emptyButtonLabelWithFilters: 'Clear all filters',
+    downloadIconDescription: 'Download table content',
     filterNone: 'Unsort rows by this header',
     filterAscending: 'Sort rows by this header in ascending order',
     filterDescending: 'Sort rows by this header in descending order',
@@ -361,6 +371,8 @@ const Table = props => {
           filterAscending: i18n.filterAscending,
           filterDescending: i18n.filterDescending,
           batchSave: i18n.batchSave,
+          downloadIconDescription: i18n.downloadIconDescription,
+          rowCountInHeader: i18n.rowCountInHeader,
         }}
         actions={pick(
           actions.toolbar,
@@ -371,7 +383,8 @@ const Table = props => {
           'onToggleFilter',
           'onApplySearch',
           'onSaveCurData',
-          'onUndoEditData'
+          'onUndoEditData',
+          'onDownloadCSV'
         )}
         options={pick(
           options,
@@ -379,11 +392,13 @@ const Table = props => {
           'hasFilter',
           'hasSearch',
           'hasRowSelection',
-          'hasEdit'
+          'hasEdit',
+          'hasRowCountInHeader'
         )}
         tableState={{
           totalSelected: view.table.selectedIds.length,
           totalFilters: view.filters ? view.filters.length : 0,
+          totalItemsCount: view.pagination.totalItems,
           ...pick(
             view.toolbar,
             'batchActions',
@@ -400,12 +415,24 @@ const Table = props => {
           {...others}
           i18n={i18n}
           lightweight={lightweight}
-          options={pick(options, 'hasRowSelection', 'hasRowExpansion', 'hasRowActions')}
+          options={pick(
+            options,
+            'hasRowSelection',
+            'hasRowExpansion',
+            'hasRowActions',
+            'hasColumnSelectionConfig'
+          )}
           columns={columns}
           filters={view.filters}
           actions={{
             ...pick(actions.toolbar, 'onApplyFilter'),
-            ...pick(actions.table, 'onSelectAll', 'onChangeSort', 'onChangeOrdering'),
+            ...pick(
+              actions.table,
+              'onSelectAll',
+              'onChangeSort',
+              'onChangeOrdering',
+              'onColumnSelectionConfig'
+            ),
           }}
           selectAllText={i18n.selectAllAria}
           clearFilterText={i18n.clearFilterAria}

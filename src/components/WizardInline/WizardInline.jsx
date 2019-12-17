@@ -2,8 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { InlineNotification } from 'carbon-components-react';
+import warning from 'warning';
 
 import { PADDING } from '../../styles/styles';
+import deprecate from '../../internal/deprecate';
 
 import WizardHeader from './WizardHeader/WizardHeader';
 import WizardFooter from './WizardFooter/WizardFooter';
@@ -59,7 +61,11 @@ const StyledFooter = styled.div`
 export const propTypes = {
   /** Title in the header */
   title: PropTypes.string,
-  blurb: PropTypes.string,
+  description: PropTypes.string,
+  blurb: deprecate(
+    PropTypes.string,
+    '\nThe prop `blurb` for WizardInline has been deprecated in favor of `description`'
+  ),
   /** Breadcrumbs to show */
   breadcrumb: PropTypes.arrayOf(PropTypes.node),
   /** Id of current step */
@@ -82,6 +88,8 @@ export const propTypes = {
   onClose: PropTypes.func,
   /** action triggered if the inline wizard has submitted final step */
   onSubmit: PropTypes.func,
+  /** string to pass to close button icon title prop */
+  closeButtonTitle: PropTypes.string,
   /** label to show on the cancel button */
   cancelLabel: PropTypes.node,
   /** label to show on the back button */
@@ -123,11 +131,13 @@ export const defaultProps = {
   nextDisabled: false,
   currentItemId: null,
   blurb: null,
+  description: null,
   stepWidth: 8,
   onNext: null,
   onBack: null,
   setItem: null,
   onClose: null,
+  closeButtonTitle: 'Close',
   onSubmit: null,
   backLabel: 'Back',
   nextLabel: 'Next',
@@ -141,6 +151,7 @@ export const defaultProps = {
 const WizardInline = ({
   title,
   breadcrumb,
+  description,
   blurb,
   currentItemId,
   items,
@@ -163,7 +174,15 @@ const WizardInline = ({
   className,
   error,
   onClearError,
+  closeButtonTitle,
 }) => {
+  if (__DEV__) {
+    warning(
+      false,
+      'WizardInline component has been deprecated and will be removed in the next release of `carbon-addons-iot-react`. \n Refactor to use PageWizard component instead.'
+    );
+  }
+
   const currentItemObj = items.find(({ id }) => currentItemId === id) || items[0];
   const currentItemIndex = items.findIndex(({ id }) => currentItemId === id);
   const hasNext = currentItemIndex !== items.length - 1;
@@ -189,6 +208,7 @@ const WizardInline = ({
       <div data-id="WizardInlineContainer" className="bx--modal-container">
         <WizardHeader
           title={title}
+          description={description}
           blurb={blurb}
           currentItemId={currentItemId}
           breadcrumb={breadcrumb}
@@ -198,6 +218,7 @@ const WizardInline = ({
           showLabels={showLabels}
           onClose={showCloseButton ? onClose : null}
           stepWidth={stepWidth}
+          closeButtonTitle={closeButtonTitle}
         />
         {error ? (
           <StyledMessageBox

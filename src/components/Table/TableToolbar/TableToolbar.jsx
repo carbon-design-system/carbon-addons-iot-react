@@ -4,6 +4,7 @@ import IconColumnSelector from '@carbon/icons-react/lib/column/20';
 import IconFilter from '@carbon/icons-react/lib/filter/20';
 import IconEdit from '@carbon/icons-react/lib/edit/20';
 import { DataTable, Button, ToastNotification } from 'carbon-components-react';
+import Download16 from '@carbon/icons-react/lib/download/16';
 import styled from 'styled-components';
 
 import { TableSearchPropTypes, defaultI18NPropTypes } from '../TablePropTypes';
@@ -80,6 +81,7 @@ const propTypes = {
     hasSearch: PropTypes.bool,
     hasColumnSelection: PropTypes.bool,
     hasEdit: PropTypes.bool,
+    hasRowCountInHeader: PropTypes.bool,
   }).isRequired,
 
   /** internationalized labels */
@@ -120,6 +122,7 @@ const propTypes = {
     activeBar: PropTypes.oneOf(['column', 'filter']),
     /** total number of selected rows */
     totalSelected: PropTypes.number,
+    totalItemsCount: PropTypes.number,
     /** row selection option */
     hasRowSelection: PropTypes.oneOf(['multi', 'single', false]),
     /** optional content to render inside the toolbar  */
@@ -144,7 +147,7 @@ const defaultProps = {
   i18n: {
     ...defaultI18NPropTypes,
   },
-  getActiveEditBar: null,
+  getActiveEditBar: () => {},
   getSaveCurData: null,
   getUndoEdit: null,
 };
@@ -153,7 +156,14 @@ const TableToolbar = ({
   tableId,
   className,
   i18n,
-  options: { hasColumnSelection, hasFilter, hasSearch, hasRowSelection, hasEdit },
+  options: {
+    hasColumnSelection,
+    hasFilter,
+    hasSearch,
+    hasRowSelection,
+    hasRowCountInHeader,
+    hasEdit,
+  },
   actions: {
     onCancelBatchAction,
     onApplyBatchAction,
@@ -163,6 +173,7 @@ const TableToolbar = ({
     onApplySearch,
     onSaveCurData,
     onUndoEditData,
+    onDownloadCSV,
   },
   tableState: {
     totalSelected,
@@ -172,6 +183,7 @@ const TableToolbar = ({
     // activeBar,
     customToolbarContent,
     isDisabled,
+    totalItemsCount,
   },
   getActiveEditBar,
 }) => {
@@ -232,6 +244,15 @@ const TableToolbar = ({
           </TableBatchAction>
         ))}
       </StyledTableBatchActions>
+
+      {hasRowCountInHeader ? (
+        <label // eslint-disable-line
+          className="row-count-header"
+        >
+          {i18n.rowCountInHeader(totalItemsCount)}
+        </label>
+      ) : null}
+
       {hasSearch && !hasEdit ? (
         <StyledToolbarSearch
           {...search}
@@ -281,6 +302,11 @@ const TableToolbar = ({
               }
               disabled={isDisabled}
             />
+          ) : null}
+          {onDownloadCSV ? (
+            <ToolbarSVGWrapper onClick={onDownloadCSV}>
+              <Download16 description={i18n.downloadIconDescription} />
+            </ToolbarSVGWrapper>
           ) : null}
           {hasColumnSelection ? (
             <ToolbarSVGWrapper onClick={onToggleColumnSelection}>

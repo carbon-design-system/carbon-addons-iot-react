@@ -11,6 +11,7 @@ const PageWizardStep = ({ children, onValidate = () => true, ...other }) => (
   <div className="page-wizard--step">
     {other.error ? (
       <InlineNotification
+        lowContrast
         title={other.error}
         subtitle=""
         kind="error"
@@ -123,11 +124,11 @@ export const defaultProps = {
   children: [],
   nextDisabled: false,
   currentStepId: null,
-  onNext: null,
-  onBack: null,
-  setStep: null,
-  onClose: null,
-  onSubmit: null,
+  onNext: () => {},
+  onBack: () => {},
+  setStep: () => {},
+  onClose: () => {},
+  onSubmit: () => {},
   i18n: {
     back: 'Back',
     next: 'Next',

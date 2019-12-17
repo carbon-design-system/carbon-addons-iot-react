@@ -78,6 +78,7 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
     onApplySearch,
     onSaveCurData,
     onUndoEditData,
+    onDownloadCSV,
   } = toolbar || {};
   const {
     onChangeSort,
@@ -136,6 +137,7 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
         callbackParent(onApplySearch, string);
         dispatch(tableSearchApply(string));
       },
+      onDownloadCSV,
     },
     table: {
       onChangeSort: column => {

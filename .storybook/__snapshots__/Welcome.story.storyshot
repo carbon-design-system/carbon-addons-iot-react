@@ -2735,6 +2735,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Getting Started|
                   <div
                     className="bx--structured-list-td"
                   >
+                    DashboardGrid
+                  </div>
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                  />
+                  <div
+                    className="bx--structured-list-td"
+                  >
                     Card
                   </div>
                 </div>
@@ -2748,6 +2760,54 @@ exports[`Storybook Snapshot tests and console checks Storyshots Getting Started|
                     className="bx--structured-list-td"
                   >
                     ValueCard
+                  </div>
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                  />
+                  <div
+                    className="bx--structured-list-td"
+                  >
+                    TimeSeriesCard
+                  </div>
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                  />
+                  <div
+                    className="bx--structured-list-td"
+                  >
+                    ImageCard
+                  </div>
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                  />
+                  <div
+                    className="bx--structured-list-td"
+                  >
+                    TableCard
+                  </div>
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                  />
+                  <div
+                    className="bx--structured-list-td"
+                  >
+                    findMatchingThresholds
                   </div>
                 </div>
                 <div
@@ -2796,18 +2856,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Getting Started|
                     className="bx--structured-list-td"
                   >
                     DASHBOARD_SIZES
-                  </div>
-                </div>
-                <div
-                  className="bx--structured-list-row"
-                >
-                  <div
-                    className="bx--structured-list-td"
-                  />
-                  <div
-                    className="bx--structured-list-td"
-                  >
-                    findMatchingThresholds
                   </div>
                 </div>
                 <div

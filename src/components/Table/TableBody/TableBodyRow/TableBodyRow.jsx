@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { DataTable, Checkbox } from 'carbon-components-react';
 import styled from 'styled-components';
+import { settings } from 'carbon-components';
 
 import RowActionsCell from '../RowActionsCell/RowActionsCell';
 import TableCellRenderer from '../../TableCellRenderer/TableCellRenderer';
@@ -14,6 +15,7 @@ import { stopPropagationAndCallback } from '../../../../utils/componentUtilityFu
 import { COLORS } from '../../../../styles/styles';
 
 const { TableRow, TableExpandRow, TableCell } = DataTable;
+const { prefix } = settings;
 
 const propTypes = {
   /** What column ordering is currently applied to the table */
@@ -58,7 +60,7 @@ const propTypes = {
   totalColumns: PropTypes.number.isRequired,
 
   /** contents of the row each object value is a renderable node keyed by column id */
-  values: PropTypes.objectOf(PropTypes.node).isRequired,
+  values: PropTypes.objectOf(PropTypes.oneOfType([PropTypes.node, PropTypes.bool])).isRequired,
 
   /** is the row currently selected */
   isSelected: PropTypes.bool,
@@ -110,18 +112,6 @@ const defaultProps = {
   options: {},
   editBar: null,
 };
-
-const StyledCheckboxTableCell = styled(TableCell)`
-  && {
-    padding-bottom: 0.5rem;
-    width: 2.5rem;
-
-    /* Added to undo carbon component. this needs to be removed when we redo this table */
-    &::after {
-      background-color: transparent !important;
-    }
-  }
-`;
 
 const StyledTableRow = styled(({ isSelectable, ...others }) => <TableRow {...others} />)`
   &&& {
@@ -399,9 +389,10 @@ const TableBodyRow = ({
   const isCheckboxSelectable = editBar !== 'buttons' ? isSelectable : false;
   const rowSelectionCell =
     hasRowSelection === 'multi' ? (
-      <StyledCheckboxTableCell
+      <TableCell
+        className={`${prefix}--checkbox-table-cell`}
         key={`${id}-row-selection-cell`}
-        onClick={
+        onChange={
           isCheckboxSelectable !== false
             ? e => {
                 onRowSelected(id, !isSelected);
@@ -410,6 +401,7 @@ const TableBodyRow = ({
               }
             : null
         }
+        onClick={e => e.stopPropagation()}
       >
         {/* TODO: Replace checkbox with TableSelectRow component when onChange bug is fixed
       https://github.com/IBM/carbon-components-react/issues/1247
@@ -424,7 +416,7 @@ const TableBodyRow = ({
             disabled={isCheckboxSelectable === false}
           />
         </StyledNestedSpan>
-      </StyledCheckboxTableCell>
+      </TableCell>
     ) : null;
 
   const firstVisibleColIndex = ordering.findIndex(col => !col.isHidden);

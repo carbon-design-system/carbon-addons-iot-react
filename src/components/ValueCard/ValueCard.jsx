@@ -204,7 +204,7 @@ const isLabelAboveValue = (size, layout, attributes, measuredSize) => {
   }
 };
 
-const ValueCard = ({ title, content, size, values, isEditable, ...others }) => {
+const ValueCard = ({ title, content, size, values, isEditable, i18n, ...others }) => {
   const availableActions = {
     expand: false,
     ...others.availableActions,
@@ -234,6 +234,7 @@ const ValueCard = ({ title, content, size, values, isEditable, ...others }) => {
             availableActions={availableActions}
             isEmpty={isEmpty(values)}
             isEditable={isEditable}
+            i18n={i18n}
             {...others}
           >
             <ContentWrapper layout={layout}>

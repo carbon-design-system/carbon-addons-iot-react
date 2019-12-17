@@ -259,10 +259,11 @@ export const tableReducer = (state = {}, action) => {
       const updatedData = action.payload.data || state.data;
       const { view, totalItems } = action.payload;
       const { pageSize, pageSizes } = get(view, 'pagination') || {};
+      const paginationFromState = get(state, 'view.pagination');
       const pagination = get(state, 'view.pagination')
         ? {
             totalItems: { $set: totalItems || updatedData.length },
-            pageSize: { $set: pageSize },
+            pageSize: { $set: paginationFromState.pageSize || pageSize },
             pageSizes: { $set: pageSizes },
           }
         : {};
