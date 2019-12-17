@@ -1,7 +1,8 @@
 import { mount } from 'enzyme';
 import React from 'react';
+
 /* eslint-disable*/
-import { ToolbarItem, Tooltip } from 'carbon-components-react';
+import { ToolbarItem, Tooltip } from '../..';
 import { render, fireEvent, waitForElement } from '@testing-library/react';
 
 import { CARD_SIZES } from '../../constants/LayoutConstants';

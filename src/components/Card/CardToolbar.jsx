@@ -4,13 +4,9 @@ import omit from 'lodash/omit';
 import styled from 'styled-components';
 import Close16 from '@carbon/icons-react/lib/close/16';
 import Popup20 from '@carbon/icons-react/lib/popup/20';
-import {
-  Toolbar,
-  ToolbarItem,
-  OverflowMenu,
-  OverflowMenuItem,
-  Button,
-} from 'carbon-components-react';
+import { Button } from 'carbon-components-react';
+
+import { Toolbar, ToolbarItem, OverflowMenu, OverflowMenuItem } from '../..';
 
 import CardRangePicker, { CardRangePickerPropTypes } from './CardRangePicker';
 

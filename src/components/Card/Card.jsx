@@ -1,10 +1,10 @@
 import React, { useCallback, useMemo } from 'react';
 import VisibilitySensor from 'react-visibility-sensor';
-import { Tooltip, SkeletonText } from 'carbon-components-react';
 import styled from 'styled-components';
 import SizeMe from 'react-sizeme';
 import { settings } from 'carbon-components';
 
+import { Tooltip, SkeletonText } from '../..';
 import {
   CARD_TITLE_HEIGHT,
   CARD_CONTENT_PADDING,
@@ -22,7 +22,7 @@ import CardToolbar from './CardToolbar';
 
 const { prefix } = settings;
 
-const OptimizedSkeletonText = React.memo(SkeletonText);
+const OptimizedSkeletonText = React.memo(props => <SkeletonText {...props} />);
 
 /** Full card */
 const CardWrapper = styled.div`
