@@ -1,8 +1,9 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { Tabs, Tab, Button } from 'carbon-components-react';
+import { Button } from 'carbon-components-react';
 
+import { Tabs, Tab } from '../..';
 import { COLORS, PADDING, SIZES } from '../../styles/styles';
 
 const StyledNavigationContainer = styled.div`

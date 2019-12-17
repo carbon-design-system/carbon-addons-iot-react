@@ -1,8 +1,8 @@
 import React, { useState, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { SkeletonText } from 'carbon-components-react';
 
+import { SkeletonText } from '../..';
 import Button from '../Button/Button';
 import Hero, { HeroPropTypes } from '../Hero/Hero';
 
