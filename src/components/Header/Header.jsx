@@ -1,5 +1,10 @@
+import { Header as CarbonHeader } from 'carbon-components-react/lib/components/UIShell';
+import AppSwitcher from '@carbon/icons-react/lib/app-switcher/20';
+import PropTypes from 'prop-types';
+import React, { useState, useCallback } from 'react';
+import { settings } from 'carbon-components';
+
 import {
-  Header as CarbonHeader,
   HeaderMenuButton,
   HeaderName,
   HeaderGlobalBar,
@@ -7,11 +12,7 @@ import {
   SkipToContent,
   HeaderMenuItem,
   HeaderPanel,
-} from 'carbon-components-react/lib/components/UIShell';
-import AppSwitcher from '@carbon/icons-react/lib/app-switcher/20';
-import PropTypes from 'prop-types';
-import React, { useState, useCallback } from 'react';
-import { settings } from 'carbon-components';
+} from '../..';
 
 import HeaderMenu from './HeaderMenu';
 

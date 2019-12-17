@@ -1,7 +1,8 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { HeaderMenuItem } from 'carbon-components-react/lib/components/UIShell';
 import { render, fireEvent } from '@testing-library/react';
+
+import { HeaderMenuItem } from '../..';
 
 import HeaderMenu, { matches, keys } from './HeaderMenu';
 
