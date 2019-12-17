@@ -2,7 +2,7 @@
 @import '~carbon-components/scss/globals/scss/typography';
 
 // StatefulTileGallery extra content
-.extraContent {
+.extra-content {
   display: flex;
   flex-grow: 1;
   justify-content: flex-end;
@@ -83,7 +83,7 @@
       min-width: 3.5rem;
     }
   }
-  .descriptionCard {
+  .description-card {
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow-x: hidden;
@@ -91,7 +91,7 @@
   small {
     color: $text-01;
   }
-  .titleCard {
+  .title-card {
     white-space: nowrap;
     text-overflow: ellipsis;
     color: $carbon--black-100;
@@ -104,7 +104,7 @@
   .dashboard-pin-list-title:hover {
     background: $carbon--white-0;
   }
-  .overflowMenu {
+  .overflow-menu {
     margin-top: -0.5rem;
     margin-left: auto;
   }
@@ -126,10 +126,10 @@
       background: $ui-03;
       border: none;
     }
-    .titleCard {
+    .title-card {
       margin-left: 0.9375rem;
     }
-    .descriptionCard {
+    .description-card {
       span {
         padding-left: $spacing-07;
         color: $ui-04;
@@ -143,7 +143,7 @@
     cursor: pointer;
     pointer-events: auto;
     touch-action: auto;
-    .topSection {
+    .top-section {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -157,7 +157,7 @@
       display: block;
       padding-left: rem(5px);
     }
-    .descriptionCard {
+    .description-card {
       position: absolute;
       text-align: center;
       top: 50%;
@@ -174,11 +174,11 @@
         color: $ui-background;
       }
     }
-    .descriptionCard:hover {
+    .description-card:hover {
       background: rgba(41, 41, 41, 0.8);
       opacity: 1;
     }
-    .titleCard {
+    .title-card {
       margin-left: $spacing-03;
       width: 11rem;
       margin-top: 0.125rem;

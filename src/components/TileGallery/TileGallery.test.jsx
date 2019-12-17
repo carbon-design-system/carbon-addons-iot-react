@@ -26,7 +26,7 @@ describe('TileGallery tests', () => {
       <TileGalleryItem title="title" mode="list" description={descriptionNode} />
     );
 
-    expect(wrapper.find('div.descriptionCard').contains(descriptionNode)).toEqual(true);
+    expect(wrapper.find('div.description-card').contains(descriptionNode)).toEqual(true);
   });
   test('TileGalleryItem mode card', () => {
     const wrapper = mount(<TileGalleryItem title="title" mode="grid" />);
@@ -45,19 +45,19 @@ describe('TileGallery tests', () => {
       <TileGalleryItem title="title" mode="grid" description={descriptionNode} />
     );
 
-    expect(wrapper.find('div.descriptionCard').contains(descriptionNode)).toEqual(true);
+    expect(wrapper.find('div.description-card').contains(descriptionNode)).toEqual(true);
   });
   test('TileGalleryItem afterContent', () => {
     const wrapper = shallow(
       <TileGalleryItem title="title" afterContent={<div>after content</div>} />
     );
 
-    wrapper.find('div.overflowMenu').simulate('click', {
+    wrapper.find('div.overflow-menu').simulate('click', {
       preventDefault() {},
       stopPropagation() {},
     });
 
-    expect(wrapper.find('div.overflowMenu')).toHaveLength(1);
+    expect(wrapper.find('div.overflow-menu')).toHaveLength(1);
   });
   test('TileGalleryItem - have default onClick', () => {
     expect(TileGalleryItem.defaultProps.onClick).toBeDefined();

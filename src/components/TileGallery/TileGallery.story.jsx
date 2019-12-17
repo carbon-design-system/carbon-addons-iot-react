@@ -10,7 +10,7 @@ import {
   Activity32,
   Sunny32,
 } from '@carbon/icons-react';
-// import { green40 } from '@carbon/colors';
+import { green40 } from '@carbon/colors';
 import { spacing07 } from '@carbon/layout';
 
 import {
@@ -44,7 +44,7 @@ export const content = (
         moreInfoLink="https://www.ibm.com/br-pt/cloud/internet-of-things?mhsrc=ibmsearch_a&mhq=iot"
         mode="grid"
         thumbnail={<Rocket32 fill="black" description="Icon" width={50} height={50} />}
-        icon={<CheckmarkFilled16 fill="#40be65" onClick={action('clicked')} />}
+        icon={<CheckmarkFilled16 fill={green40} onClick={action('clicked')} />}
         afterContent={overflowComponent}
       />
       <TileGalleryItem
@@ -53,7 +53,7 @@ export const content = (
         moreInfoLink="https://www.ibm.com/br-pt/cloud/internet-of-things?mhsrc=ibmsearch_a&mhq=iot"
         mode="grid"
         thumbnail={<Activity32 fill="black" description="Icon" width={50} height={50} />}
-        icon={<CheckmarkFilled16 fill="#40be65" onClick={action('clicked')} />}
+        icon={<CheckmarkFilled16 fill={green40} onClick={action('clicked')} />}
         afterContent={overflowComponent}
       />
       <TileGalleryItem
@@ -62,7 +62,7 @@ export const content = (
         moreInfoLink="https://www.ibm.com/br-pt/cloud/internet-of-things?mhsrc=ibmsearch_a&mhq=iot"
         mode="grid"
         thumbnail={<Sunny32 fill="black" description="Icon" width={50} height={50} />}
-        icon={<CheckmarkFilled16 fill="#40be65" onClick={action('clicked')} />}
+        icon={<CheckmarkFilled16 fill={green40} onClick={action('clicked')} />}
         afterContent={overflowComponent}
       />
     </TileGallerySection>
@@ -73,7 +73,7 @@ export const content = (
         moreInfoLink="https://www.ibm.com/br-pt/cloud/internet-of-things?mhsrc=ibmsearch_a&mhq=iot"
         mode="grid"
         thumbnail={<Sunny32 fill="black" description="Icon" width={50} height={50} />}
-        icon={<CheckmarkFilled16 fill="#40be65" onClick={action('clicked')} />}
+        icon={<CheckmarkFilled16 fill={green40} onClick={action('clicked')} />}
         afterContent={overflowComponent}
       />
     </TileGallerySection>
@@ -157,9 +157,9 @@ storiesOf('Watson IoT Experimental|TileGallery', module)
     />
   ))
   .add('basic example ', () => (
-    <div style={{ position: 'fixed', left: 0, right: 0, top: 0, bottom: 0 }}>
+    <FullWidthWrapper>
       <TileGallery>{content}</TileGallery>
-    </div>
+    </FullWidthWrapper>
   ))
   .add('TileGalleryItem - Grid', () => (
     <TileGalleryItem
@@ -168,7 +168,7 @@ storiesOf('Watson IoT Experimental|TileGallery', module)
       moreInfoLink="https://www.ibm.com/br-pt/cloud/internet-of-things?mhsrc=ibmsearch_a&mhq=iot"
       mode="grid"
       thumbnail={<Rocket32 fill="black" description="Icon" width={50} height={50} />}
-      icon={<CheckmarkFilled16 fill="#40be65" onClick={action('Icon Clicked')} />}
+      icon={<CheckmarkFilled16 fill={green40} onClick={action('Icon Clicked')} />}
       afterContent={overflowComponent}
       onClick={action('Card Clicked')}
       className="not-active"
@@ -186,7 +186,7 @@ storiesOf('Watson IoT Experimental|TileGallery', module)
   ))
   .add('TileGalleryViewSwitcher', () => <TileGalleryViewSwitcher />)
   .add('TileGallerySection with TileGalleryItem Grid', () => (
-    <div style={{ position: 'fixed', left: 0, right: 0, top: 0, bottom: 0 }}>{content}</div>
+    <FullWidthWrapper>{content}</FullWidthWrapper>
   ))
   .add('TileGallerySection with TileGalleryItem - i18n', () => (
     <StatefulTileGallery

@@ -124,7 +124,7 @@ const StatefulTileGallery = ({
       description={description}
       className={className}
       extraContent={
-        <div className="extraContent">
+        <div className="extra-content">
           {hasSearch ? (
             <TileGallerySearch
               searchValue={search}

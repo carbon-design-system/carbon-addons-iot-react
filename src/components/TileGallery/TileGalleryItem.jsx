@@ -52,10 +52,10 @@ const TileGalleryItem = ({
   const content = (
     <div style={{ display: 'flex', minHeight: '24px' }}>
       {icon}
-      <span className="titleCard">{title}</span>
+      <span className="title-card">{title}</span>
       {afterContent && (
         <div
-          className="overflowMenu"
+          className="overflow-menu"
           onClick={evt => {
             evt.preventDefault();
             evt.stopPropagation();
@@ -71,9 +71,9 @@ const TileGalleryItem = ({
   const tile =
     mode === 'grid' ? (
       <div key={`${title}-card`}>
-        <div className="topSection">
+        <div className="top-section">
           <div className="thumbnail">{thumbnail}</div>
-          <div className="descriptionCard">
+          <div className="description-card">
             {!React.isValidElement(description) ? <span>{description}</span> : description}
           </div>
         </div>
@@ -83,7 +83,7 @@ const TileGalleryItem = ({
       <div key={`${title}-card`}>
         <Fragment>
           {content}
-          <div className="descriptionCard">
+          <div className="description-card">
             {!React.isValidElement(description) ? <span>{description}</span> : description}
           </div>
         </Fragment>
