@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Filename, FileUploaderButton } from 'carbon-components-react';
 import styled from 'styled-components';
 
+import { Filename, FileUploaderButton } from '../..';
 import { COLORS } from '../../styles/styles';
 
 const Span = styled.span`
