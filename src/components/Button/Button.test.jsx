@@ -1,6 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { Loading } from 'carbon-components-react';
+
+import { Loading } from '../..';
 
 import Button from './Button';
 
