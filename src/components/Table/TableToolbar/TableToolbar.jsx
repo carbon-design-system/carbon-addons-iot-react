@@ -175,7 +175,6 @@ const TableToolbar = ({
   },
   getActiveEditBar,
 }) => {
-  /** Which edit bar is currently active */
   const [activeEditBar, setActiveEditBar] = useState(null);
   const [isHidingToast, setIsHidingToast] = useState(false);
 
