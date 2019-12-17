@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { SkeletonText, Tabs, Tab } from 'carbon-components-react';
 
+import { SkeletonText, Tabs, Tab } from '../..';
 import Button from '../Button';
 
 import PageTitleBar from './PageTitleBar';

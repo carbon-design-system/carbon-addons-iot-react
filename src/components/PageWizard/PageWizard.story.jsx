@@ -3,8 +3,8 @@ import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { boolean } from '@storybook/addon-knobs';
-import { Form, FormGroup, FormItem, Link, TextInput } from 'carbon-components-react';
 
+import { Form, FormGroup, FormItem, Link, TextInput } from '../..';
 import PageTitleBar from '../PageTitleBar/PageTitleBar';
 
 import {

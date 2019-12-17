@@ -2,8 +2,8 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { Add24 } from '@carbon/icons-react';
-import { Tabs, Tab } from 'carbon-components-react';
 
+import { Tabs, Tab } from '../..';
 import FullWidthWrapper from '../../internal/FullWidthWrapper';
 import Button from '../Button';
 
