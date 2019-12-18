@@ -182,6 +182,7 @@ const AsyncTable = ({ fetchData, id }) => {
       onRowSelected: (rowId, isSelected) => {
         dispatch(baseTableActions.tableRowSelect(rowId, isSelected));
       },
+
       onSelectAll: isSelected => {
         dispatch(baseTableActions.tableRowSelectAll(isSelected));
       },
