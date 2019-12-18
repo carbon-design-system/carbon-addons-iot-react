@@ -10,7 +10,7 @@ import {
 } from 'carbon-components-react/lib/components/UIShell';
 import AppSwitcher from '@carbon/icons-react/lib/app-switcher/20';
 import PropTypes from 'prop-types';
-import React, { useState, createRef } from 'react';
+import React, { useState } from 'react';
 import { settings } from 'carbon-components';
 import cn from 'classnames';
 
@@ -102,9 +102,9 @@ const Header = ({
     }
   };
 
+  // close header panel when focus is lost
   const handleCloseOnTab = e => {
     if (!e.target.parentNode.contains(e.relatedTarget)) {
-      // action btn to action btn
       setExpandedItem(prev => {
         const oldHeaderPanel = Object.keys(prev)[0];
         return {
@@ -116,9 +116,12 @@ const Header = ({
 
   const handleClickOutside = (e, label) => {
     if (
-      e.relatedTarget.title !== label &&
-      !e.target.parentNode.parentNode.contains(e.relatedTarget)
+      // not header panel trigger
+      e?.relatedTarget?.title !== label &&
+      // not in headerpanel
+      !e?.target?.parentNode?.parentNode?.parentNode.contains(e.relatedTarget)
     ) {
+      // close panel
       handleExpandedState();
     }
   };
@@ -143,7 +146,11 @@ const Header = ({
         });
 
         return (
-          <div className={`${carbonPrefix}--header__submenu ${carbonPrefix}--header-action-btn`}>
+          <div
+            data-testid="action-btn__group"
+            className={`${carbonPrefix}--header__submenu ${carbonPrefix}--header-action-btn action-btn__group`}
+            key={`submenu-${i}`}
+          >
             <HeaderGlobalAction
               className={`${carbonPrefix}--header-action-btn action-btn__trigger`}
               key={`menu-item-${item.label}-global`}
@@ -157,6 +164,7 @@ const Header = ({
               {item.btnContent}
             </HeaderGlobalAction>
             <HeaderPanel
+              tabIndex="-1"
               onBlur={e => handleClickOutside(e, item.label)}
               key={`panel-${i}`}
               aria-label="Header Panel"
@@ -181,7 +189,11 @@ const Header = ({
         </HeaderMenuItem>
       ));
       return (
-        <div onFocus={() => handleExpandedState()}>
+        <div
+          onFocus={() => handleExpandedState()}
+          className={`${carbonPrefix}--header__submenu`}
+          key={`wrapper-${i}`}
+        >
           <HeaderMenu
             className={`${carbonPrefix}--header-action-btn`}
             key={`menu-item-${item.label}`}

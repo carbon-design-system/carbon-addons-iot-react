@@ -54,6 +54,8 @@
 }
 
 .action-btn__headerpanel {
+  outline: none;
+
   &--closed * {
     display: none;
   }

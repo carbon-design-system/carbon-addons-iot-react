@@ -1,5 +1,4 @@
 import React from 'react';
-import { mount } from 'enzyme';
 import { render, fireEvent } from '@testing-library/react';
 import Notification from '@carbon/icons-react/lib/notification/20';
 import Avatar from '@carbon/icons-react/lib/user--avatar/20';
@@ -10,46 +9,68 @@ import Header from './Header';
 React.Fragment = ({ children }) => children;
 
 describe('Header testcases', () => {
-  // it.skip('skip this suite', () => {});
+  const onClick = jest.fn();
+  const actionItems = [
+    {
+      label: 'alerts',
+      onClick,
+      btnContent: <Notification fill="white" description="Icon" />,
+    },
+    {
+      label: 'help',
+      headerPanel: true,
+      btnContent: (
+        <HeaderHelp
+          fill="white"
+          description="Icon"
+          className="bx--header__menu-item bx--header__menu-title"
+        />
+      ),
+      childContent: [
+        {
+          onCLick: () => console.log('hi'),
+          content: <p>This is a link</p>,
+        },
+        {
+          onCLick: () => console.log('hi'),
+          content: (
+            <React.Fragment>
+              <span>
+                JohnDoe@ibm.com
+                <Avatar fill="white" description="Icon" />
+              </span>
+            </React.Fragment>
+          ),
+        },
+      ],
+    },
+    {
+      label: 'other help',
+      onClick,
+      btnContent: (
+        <HeaderHelp
+          fill="white"
+          description="Icon"
+          className="bx--header__menu-item bx--header__menu-title"
+        />
+      ),
+      childContent: [
+        {
+          onCLick: () => console.log('hi'),
+          content: (
+            <React.Fragment>
+              <span>
+                JohnDoe@ibm.com
+                <Avatar fill="white" description="Icon" />
+              </span>
+            </React.Fragment>
+          ),
+        },
+      ],
+    },
+  ];
   it('should render', () => {
-    const onClick = jest.fn();
-    const actionItems = [
-      {
-        label: 'alerts',
-        onClick,
-        btnContent: <Notification fill="white" description="Icon" />,
-      },
-      {
-        label: 'help',
-        onClick,
-        btnContent: (
-          <HeaderHelp
-            fill="white"
-            description="Icon"
-            className="bx--header__menu-item bx--header__menu-title"
-          />
-        ),
-        childContent: [
-          {
-            onCLick: () => console.log('hi'),
-            content: <p>This is a link</p>,
-          },
-          {
-            onCLick: () => console.log('hi'),
-            content: (
-              <React.Fragment>
-                <span>
-                  JohnDoe@ibm.com
-                  <Avatar fill="white" description="Icon" />
-                </span>
-              </React.Fragment>
-            ),
-          },
-        ],
-      },
-    ];
-
-    const header = mount(
+    const { container } = render(
       <Header
         title="My Title"
         user="j@test.com"
@@ -58,42 +79,11 @@ describe('Header testcases', () => {
         actionItems={actionItems}
       />
     );
-
-    expect(header).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 
   it('action btn should open side panel', () => {
-    const actionItems = [
-      {
-        label: 'help',
-        headerPanel: true,
-        btnContent: (
-          <HeaderHelp
-            fill="white"
-            description="Icon"
-            className="bx--header__menu-item bx--header__menu-title"
-          />
-        ),
-        childContent: [
-          {
-            onCLick: () => console.log('hi'),
-            content: <p>This is a link</p>,
-          },
-          {
-            onCLick: () => console.log('hi'),
-            content: (
-              <React.Fragment>
-                <span>
-                  JohnDoe@ibm.com
-                  <Avatar fill="white" description="Icon" />
-                </span>
-              </React.Fragment>
-            ),
-          },
-        ],
-      },
-    ];
-    const { container, getByTitle } = render(
+    const { container, getByTitle, getByText } = render(
       <Header
         title="My Title"
         user="j@test.com"
@@ -102,7 +92,9 @@ describe('Header testcases', () => {
         actionItems={actionItems}
       />
     );
-    fireEvent.click(getByTitle('help'));
-    expect(container.querySelector('button')).toBeTruthy();
+    // fireEvent.click(getByTitle('help'));
+    // fireEvent.focus(getByText('This is a link'));
+    expect(getByText('This is a link')).toBeTruthy();
+    // fireEvent.blur(container.querySelector('.action-btn__group'));
   });
 });
