@@ -11,7 +11,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, boolean, number } from '@storybook/addon-knobs';
-// import { BreadcrumbItem } from 'carbon-components-react';
+import { BreadcrumbSkeleton } from 'carbon-components-react';
 
 import Breadcrumb from './Breadcrumb';
 import BreadcrumbItem from './BreadcrumbItem';
@@ -28,17 +28,14 @@ storiesOf('Watson IoT | Breadcrumb', module)
   .add(
     'default',
     () => {
-      const windowWidth = number('container width', 500);
       return (
-        <div style={{ width: windowWidth, border: `2px solid` }}>
-          <Breadcrumb {...props()} style={{ border: `1px solid red` }}>
-            <BreadcrumbItem>
-              <a href="/#">Breadcrumb 1</a>
-            </BreadcrumbItem>
-            <BreadcrumbItem href="#">Breadcrumb 2</BreadcrumbItem>
-            <BreadcrumbItem href="#">Breadcrumb 3</BreadcrumbItem>
-          </Breadcrumb>
-        </div>
+        <Breadcrumb {...props()}>
+          <BreadcrumbItem>
+            <a href="/#">Breadcrumb 1</a>
+          </BreadcrumbItem>
+          <BreadcrumbItem href="#">Breadcrumb 2</BreadcrumbItem>
+          <BreadcrumbItem href="#">Breadcrumb 3</BreadcrumbItem>
+        </Breadcrumb>
       );
     },
     {
@@ -49,65 +46,70 @@ storiesOf('Watson IoT | Breadcrumb', module)
       },
     }
   )
-  // .add('no trailing slash',() => (
-  //     <Breadcrumb {...props()} noTrailingSlash>
-  //       <BreadcrumbItem>
-  //         <a href="/#">Breadcrumb 1</a>
-  //       </BreadcrumbItem>
-  //       <BreadcrumbItem href="#">Breadcrumb 2</BreadcrumbItem>
-  //       <BreadcrumbItem href="#">Breadcrumb 3</BreadcrumbItem>
-  //     </Breadcrumb>
-  //   ),
-  //   {
-  //     info: {
-  //       text:
-  //         'You can choose not to render a trailing slash with the `noTrailingSlash` prop',
-  //     },
-  //   }
-  // )
-  // .add('skeleton', () => <BreadcrumbSkeleton />, {
-  //   info: {
-  //     text: `
-  //         Placeholder skeleton state to use when content is loading.
-  //         `,
-  //   },
-  // })
-  // .add('current page',() => (
-  //     <Breadcrumb {...props()}>
-  //       <BreadcrumbItem>
-  //         <a href="/#">Breadcrumb 1</a>
-  //       </BreadcrumbItem>
-  //       <BreadcrumbItem href="#">Breadcrumb 2</BreadcrumbItem>
-  //       <BreadcrumbItem href="#" isCurrentPage>
-  //         Breadcrumb 3
-  //       </BreadcrumbItem>
-  //     </Breadcrumb>
-  //   ),
-  //   {
-  //     info: {
-  //       text:
-  //         'You can specify a BreadcrumbItem component as the current page with the `isCurrentPage` prop',
-  //     },
-  //   }
-  // )
-  // .add('current page with aria-current',() => (
-  //     <Breadcrumb {...props()}>
-  //       <BreadcrumbItem>
-  //         <a href="/#">Breadcrumb 1</a>
-  //       </BreadcrumbItem>
-  //       <BreadcrumbItem href="#">Breadcrumb 2</BreadcrumbItem>
-  //       <BreadcrumbItem href="#" aria-current="page">
-  //         Breadcrumb 3
-  //       </BreadcrumbItem>
-  //     </Breadcrumb>
-  //   ),
-  //   {
-  //     info: {
-  //       text:
-  //         'You can specify a BreadcrumbItem component as the current page with the `aria-current` prop by specifying `aria-current="page"`',
-  //     },
-  //   }
-  // )
+  .add(
+    'no trailing slash',
+    () => (
+      <Breadcrumb {...props()} noTrailingSlash>
+        <BreadcrumbItem>
+          <a href="/#">Breadcrumb 1</a>
+        </BreadcrumbItem>
+        <BreadcrumbItem href="#">Breadcrumb 2</BreadcrumbItem>
+        <BreadcrumbItem href="#">Breadcrumb 3</BreadcrumbItem>
+      </Breadcrumb>
+    ),
+    {
+      info: {
+        text: 'You can choose not to render a trailing slash with the `noTrailingSlash` prop',
+      },
+    }
+  )
+  .add('skeleton', () => <BreadcrumbSkeleton />, {
+    info: {
+      text: `
+          Placeholder skeleton state to use when content is loading.
+          `,
+    },
+  })
+  .add(
+    'current page',
+    () => (
+      <Breadcrumb {...props()}>
+        <BreadcrumbItem>
+          <a href="/#">Breadcrumb 1</a>
+        </BreadcrumbItem>
+        <BreadcrumbItem href="#">Breadcrumb 2</BreadcrumbItem>
+        <BreadcrumbItem href="#" isCurrentPage>
+          Breadcrumb 3
+        </BreadcrumbItem>
+      </Breadcrumb>
+    ),
+    {
+      info: {
+        text:
+          'You can specify a BreadcrumbItem component as the current page with the `isCurrentPage` prop',
+      },
+    }
+  )
+  .add(
+    'current page with aria-current',
+    () => (
+      <Breadcrumb {...props()}>
+        <BreadcrumbItem>
+          <a href="/#">Breadcrumb 1</a>
+        </BreadcrumbItem>
+        <BreadcrumbItem href="#">Breadcrumb 2</BreadcrumbItem>
+        <BreadcrumbItem href="#" aria-current="page">
+          Breadcrumb 3
+        </BreadcrumbItem>
+      </Breadcrumb>
+    ),
+    {
+      info: {
+        text:
+          'You can specify a BreadcrumbItem component as the current page with the `aria-current` prop by specifying `aria-current="page"`',
+      },
+    }
+  )
   // .add('with truncation', () => (
   //   <Breadcrumb {...props()}>
   //     <BreadcrumbItem href="/">Breadcrumb Item1</BreadcrumbItem>
@@ -118,21 +120,79 @@ storiesOf('Watson IoT | Breadcrumb', module)
   //     <BreadcrumbItem href="/">Breadcrumb Item6</BreadcrumbItem>
   //   </Breadcrumb>
   // ),
-  // );
-  .add('with overflow menu', () => {
-    const windowWidth = number('container width', 500);
-    return (
-      <div style={{ width: windowWidth, border: `2px solid` }}>
-        <Breadcrumb {...props()}>
-          <BreadcrumbItem>
-            <a href="/#">Breadcrumb 1</a>
-          </BreadcrumbItem>
-          <BreadcrumbItem href="#">Breadcrumb 2</BreadcrumbItem>
-          <BreadcrumbItem href="#">Breadcrumb 3</BreadcrumbItem>
-          <BreadcrumbItem href="#">Breadcrumb 4</BreadcrumbItem>
-          <BreadcrumbItem href="#">Breadcrumb 5</BreadcrumbItem>
-          <BreadcrumbItem href="#">Breadcrumb 6</BreadcrumbItem>
-        </Breadcrumb>
-      </div>
-    );
-  });
+  // )
+  .add(
+    'with overflow menu at 320px width',
+    () => {
+      const windowWidth = number('container width', 320);
+      return (
+        <div style={{ width: windowWidth }}>
+          <Breadcrumb {...props()}>
+            <BreadcrumbItem>
+              <a href="/#">Breadcrumb 1</a>
+            </BreadcrumbItem>
+            <BreadcrumbItem href="#">Breadcrumb 2</BreadcrumbItem>
+            <BreadcrumbItem href="#">Breadcrumb 3</BreadcrumbItem>
+            <BreadcrumbItem href="#">Breadcrumb 4</BreadcrumbItem>
+            <BreadcrumbItem href="#">Breadcrumb 5</BreadcrumbItem>
+            <BreadcrumbItem href="#">Breadcrumb 6</BreadcrumbItem>
+          </Breadcrumb>
+        </div>
+      );
+    },
+    {
+      info: {
+        text: 'You can set container width, and the Breadcrumb will adjust its length dynamicly',
+      },
+    }
+  )
+  .add(
+    'with overflow menu at 672px width',
+    () => {
+      const windowWidth = number('container width', 672);
+      return (
+        <div style={{ width: windowWidth }}>
+          <Breadcrumb {...props()}>
+            <BreadcrumbItem>
+              <a href="/#">Breadcrumb 1</a>
+            </BreadcrumbItem>
+            <BreadcrumbItem href="#">Breadcrumb 2</BreadcrumbItem>
+            <BreadcrumbItem href="#">Breadcrumb 3</BreadcrumbItem>
+            <BreadcrumbItem href="#">Breadcrumb 4</BreadcrumbItem>
+            <BreadcrumbItem href="#">Breadcrumb 5</BreadcrumbItem>
+            <BreadcrumbItem href="#">Breadcrumb 6</BreadcrumbItem>
+          </Breadcrumb>
+        </div>
+      );
+    },
+    {
+      info: {
+        text: 'You can set container width, and the Breadcrumb will adjust its length dynamicly',
+      },
+    }
+  )
+  .add(
+    'with overflow menu at 1056px width',
+    () => {
+      const windowWidth = number('container width', 1056);
+      return (
+        <div style={{ width: windowWidth }}>
+          <Breadcrumb {...props()}>
+            <BreadcrumbItem>
+              <a href="/#">Breadcrumb 1</a>
+            </BreadcrumbItem>
+            <BreadcrumbItem href="#">Breadcrumb 2</BreadcrumbItem>
+            <BreadcrumbItem href="#">Breadcrumb 3</BreadcrumbItem>
+            <BreadcrumbItem href="#">Breadcrumb 4</BreadcrumbItem>
+            <BreadcrumbItem href="#">Breadcrumb 5</BreadcrumbItem>
+            <BreadcrumbItem href="#">Breadcrumb 6</BreadcrumbItem>
+          </Breadcrumb>
+        </div>
+      );
+    },
+    {
+      info: {
+        text: 'You can set container width, and the Breadcrumb will adjust its length dynamicly',
+      },
+    }
+  );
