@@ -264,10 +264,12 @@ const TableToolbar = ({
       ) : null}
       {activeEditBar === 'buttons' ? (
         <StyledTableToolbarContent>
-          <Button kind="ghost" onClick={onCancelEditAction}>
+          <Button className="buttons" kind="ghost" onClick={onCancelEditAction}>
             {i18n.batchCancel}
           </Button>
-          <Button onClick={onSaveEditAction}>{i18n.batchSave}</Button>
+          <Button className="buttons" onClick={onSaveEditAction}>
+            {i18n.batchSave}
+          </Button>
         </StyledTableToolbarContent>
       ) : activeEditBar === 'toast' ? (
         <ToastNotification
