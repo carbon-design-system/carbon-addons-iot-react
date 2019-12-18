@@ -1,10 +1,9 @@
 import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
-import {
-  ProgressIndicator as CarbonProgressIndicator,
-  ProgressStep,
-} from 'carbon-components-react';
+import { ProgressIndicator as CarbonProgressIndicator } from 'carbon-components-react';
 import styled from 'styled-components';
+
+import { ProgressStep } from '../..';
 
 const StyledProgressIndicator = styled(({ isVerticalMode, ...others }) => (
   <CarbonProgressIndicator {...others} />
