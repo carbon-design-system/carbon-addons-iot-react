@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import { OverflowMenu, OverflowMenuItem, Icon } from 'carbon-components-react';
+import { OverflowMenu, Icon } from 'carbon-components-react';
 import styled from 'styled-components';
 import moment from 'moment';
 import isNil from 'lodash/isNil';
@@ -8,6 +8,7 @@ import cloneDeep from 'lodash/cloneDeep';
 import capitalize from 'lodash/capitalize';
 import OverFlowMenuIcon from '@carbon/icons-react/lib/overflow-menu--vertical/16';
 
+import { OverflowMenuItem } from '../..';
 import { CardPropTypes, TableCardPropTypes } from '../../constants/PropTypes';
 import Card from '../Card/Card';
 import { CARD_SIZES } from '../../constants/LayoutConstants';
