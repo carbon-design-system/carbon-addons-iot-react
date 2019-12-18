@@ -10,12 +10,11 @@ import {
 } from 'carbon-components-react/lib/components/UIShell';
 import AppSwitcher from '@carbon/icons-react/lib/app-switcher/20';
 import PropTypes from 'prop-types';
-import React, { useState, createRef, useEffect } from 'react';
+import React, { useState, createRef } from 'react';
 import { settings } from 'carbon-components';
 import cn from 'classnames';
 
 import HeaderMenu from './HeaderMenu';
-// import HeaderPanel from './HeaderPanel';
 
 const { prefix: carbonPrefix } = settings;
 
@@ -85,38 +84,15 @@ const Header = ({
   headerPanel,
   url,
 }) => {
-  // dynamic refs for global action dropdown
-  const refs = {};
-  // ref for App Switcher - only create if there is going to be one
-  const appSwitch = headerPanel ? createRef() : null;
   const [expandedItem, setExpandedItem] = useState({});
-  // const [openMenuItem, setOpenMenuItem] = useState();
-  // useEffect(
-  //   () => {
-  //     // action on update of movies
-  //     if (openMenuItem) {
-  //       console.log(openMenuItem.classList.contains('action-btn__trigger'));
-  //     }
-  //   },
-  //   [openMenuItem]
-  // );
 
-  // expanded state and focus for headerpanels
-  const handleExpandedState = (e, index) => {
-    const clicked = e.currentTarget;
-    // console.log('types: ', e.type, e.relatedTarget);
-    // setOpenMenuItem(clicked);
-
-    // if (!expandedItem[index]) {
-    //   ref.current.focus();
-    // }
+  // expanded state  for headerpanels
+  const handleExpandedState = index => {
     if (index) {
-      console.log('index');
       setExpandedItem({
         [index]: !expandedItem[index],
       });
     } else {
-      console.log('not');
       setExpandedItem(prev => {
         const oldHeaderPanel = Object.keys(prev)[0];
         return {
@@ -126,13 +102,9 @@ const Header = ({
     }
   };
 
-  const handleTabOrder = e => {
-    // console.log('blurred ', e.target);
-    // if (e.target.parentNode.parentNode.parentNode.contains(e.relatedTarget)) {
-    //   return;
-    // }
-
-    if (!e.target.parentNode.parentNode.contains(e.relatedTarget)) {
+  const handleCloseOnTab = e => {
+    if (!e.target.parentNode.contains(e.relatedTarget)) {
+      // action btn to action btn
       setExpandedItem(prev => {
         const oldHeaderPanel = Object.keys(prev)[0];
         return {
@@ -142,10 +114,13 @@ const Header = ({
     }
   };
 
-  // create refs dynamically
-  const setRefFunction = i => {
-    refs[`ref${i}`] = createRef();
-    return refs[`ref${i}`];
+  const handleClickOutside = (e, label) => {
+    if (
+      e.relatedTarget.title !== label &&
+      !e.target.parentNode.parentNode.contains(e.relatedTarget)
+    ) {
+      handleExpandedState();
+    }
   };
 
   const actionBtnHeaderPanels = [];
@@ -155,7 +130,7 @@ const Header = ({
         const panelChildren = item.childContent.map(childItem => {
           const ChildElement = childItem?.metaData?.element || 'a';
           return (
-            <li key={`listitem-${i * Math.random()}`}>
+            <li key={`listitem-${i * Math.random()}`} className="action-btn__headerpanel-li">
               <ChildElement
                 key={`headerpanelmenu-item-${item.label +
                   item.childContent.indexOf(childItem)}-child-${i}`}
@@ -167,39 +142,22 @@ const Header = ({
           );
         });
 
-        const thisRef = setRefFunction(i);
-        // actionBtnHeaderPanels.push(
-        //   <HeaderPanel
-        //     // onBlur={e => handleTabOrder(e)}
-        //     ref={thisRef}
-        //     key={`panel-${i}`}
-        //     aria-label="Header Panel"
-        //     className={cn('action-btn__headerpanel', {
-        //       'action-btn__headerpanel--closed': expandedItem[item.label],
-        //     })}
-        //     expanded={expandedItem[item.label]}
-        //   >
-        //     <ul>{panelChildren}</ul>
-        //   </HeaderPanel>
-        // );
-
         return (
           <div className={`${carbonPrefix}--header__submenu ${carbonPrefix}--header-action-btn`}>
             <HeaderGlobalAction
-              // onBlur={e => handleTabOrder(e)}
               className={`${carbonPrefix}--header-action-btn action-btn__trigger`}
               key={`menu-item-${item.label}-global`}
               title={item.label}
               aria-label={item.label}
               aria-haspopup="menu"
               role="menuitem"
-              onClick={e => handleExpandedState(e, item.label, thisRef)}
+              onClick={() => handleExpandedState(item.label)}
+              onBlur={e => handleCloseOnTab(e)}
             >
               {item.btnContent}
             </HeaderGlobalAction>
             <HeaderPanel
-              onBlur={e => handleTabOrder(e)}
-              ref={thisRef}
+              onBlur={e => handleClickOutside(e, item.label)}
               key={`panel-${i}`}
               aria-label="Header Panel"
               className={cn('action-btn__headerpanel', {
@@ -223,7 +181,7 @@ const Header = ({
         </HeaderMenuItem>
       ));
       return (
-        <div onFocus={e => handleExpandedState(e)}>
+        <div onFocus={() => handleExpandedState()}>
           <HeaderMenu
             className={`${carbonPrefix}--header-action-btn`}
             key={`menu-item-${item.label}`}
@@ -242,7 +200,10 @@ const Header = ({
         className={`${carbonPrefix}--header-action-btn`}
         key={`menu-item-${item.label}-global-${i}`}
         aria-label={item.label}
-        onClick={item.onClick}
+        onClick={() => {
+          handleExpandedState();
+          item.onClick();
+        }}
       >
         {item.btnContent}
       </HeaderGlobalAction>
@@ -253,7 +214,8 @@ const Header = ({
       <HeaderGlobalAction
         aria-label="header-panel-trigger"
         key="AppSwitcher"
-        onClick={e => handleExpandedState(e, 'AppSwitcher', appSwitch)}
+        onClick={() => handleExpandedState('AppSwitcher')}
+        title="AppSwitcher"
       >
         <AppSwitcher fill="white" description="Icon" />
       </HeaderGlobalAction>
@@ -271,7 +233,6 @@ const Header = ({
       {actionBtnHeaderPanels}
       {headerPanel && (
         <HeaderPanel
-          ref={appSwitch}
           aria-label="Header Panel"
           className={cn(`${carbonPrefix}--app-switcher`, {
             [headerPanel.className]: headerPanel.className,
