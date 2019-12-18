@@ -148,8 +148,8 @@ const defaultProps = {
     ...defaultI18NPropTypes,
   },
   getActiveEditBar: () => {},
-  getSaveCurData: null,
-  getUndoEdit: null,
+  getSaveCurData: () => {},
+  getUndoEdit: () => {},
 };
 
 const TableToolbar = ({
