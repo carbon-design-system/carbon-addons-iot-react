@@ -35,7 +35,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Heade
       >
         <a
           className="bx--skip-to-content"
-          href="#main-content"
+          href="skip"
           tabIndex="0"
         >
           Skip to main content
@@ -118,7 +118,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Heade
               className="bx--header-action-btn action-btn__trigger bx--header__action"
               onBlur={[Function]}
               onClick={[Function]}
-              role="menuitem"
               title="help"
               type="button"
             >
@@ -371,6 +370,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Heade
           </div>
         </div>
       </header>
+      <div
+        id="skip"
+      />
     </div>
   </div>
   <button
@@ -426,7 +428,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Heade
     >
       <a
         className="bx--skip-to-content"
-        href="#main-content"
+        href="skip"
         tabIndex="0"
       >
         Skip to main content

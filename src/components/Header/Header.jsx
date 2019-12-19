@@ -157,7 +157,7 @@ const Header = ({
               title={item.label}
               aria-label={item.label}
               aria-haspopup="menu"
-              role="menuitem"
+              aria-expanded={expandedItem[item.label]}
               onClick={() => handleExpandedState(item.label)}
               onBlur={e => handleCloseOnTab(e)}
             >

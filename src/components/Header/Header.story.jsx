@@ -49,6 +49,7 @@ const HeaderProps = {
   url: 'http://localhost:8989',
   className: 'custom-class-name',
   appName: 'Watson IoT Platform ',
+  skipto: 'skip',
   actionItems: [
     {
       label: 'alerts',
@@ -139,6 +140,7 @@ storiesOf('Watson IoT|Header', module)
   .add('Header action buttons with dropdowns', () => (
     <div style={{ width: '100%', height: '100vh' }}>
       <StyledHeader {...HeaderProps} headerPanel={headerPanel} />
+      <div id="skip" />
     </div>
   ))
   .add('Header no submenu', () => (

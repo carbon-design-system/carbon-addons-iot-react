@@ -78,7 +78,6 @@ exports[`Header testcases should render 1`] = `
           aria-haspopup="menu"
           aria-label="help"
           class="bx--header-action-btn action-btn__trigger bx--header__action"
-          role="menuitem"
           title="help"
           type="button"
         >

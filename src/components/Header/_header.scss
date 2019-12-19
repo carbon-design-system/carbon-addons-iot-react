@@ -48,6 +48,27 @@
   }
 }
 
+.#{$prefix}--header__menu-item[role='menuitem'] {
+  display: flex;
+  align-items: center;
+  color: #c6c6c6;
+  height: 100%;
+  font-size: 0.875rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.125rem;
+  text-decoration: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 2px solid #0000;
+  transition: background-color 110ms, border-color 110ms, color 110ms;
+  justify-content: center;
+  padding: 0;
+  width: 100%;
+}
+
 .#{$prefix}--app-switcher {
   background-color: $ui-01;
   border: none;
