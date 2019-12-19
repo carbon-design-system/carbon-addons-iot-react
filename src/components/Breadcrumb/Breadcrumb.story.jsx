@@ -13,6 +13,8 @@ import { action } from '@storybook/addon-actions';
 import { withKnobs, boolean, number } from '@storybook/addon-knobs';
 import { BreadcrumbSkeleton } from 'carbon-components-react';
 
+import FullWidthWrapper from '../../internal/FullWidthWrapper';
+
 import Breadcrumb from './Breadcrumb';
 import BreadcrumbItem from './BreadcrumbItem';
 
@@ -20,8 +22,18 @@ const props = () => ({
   className: 'some-class',
   noTrailingSlash: boolean('No trailing slash (noTrailingSlash)', false),
   onClick: action('onClick'),
-  threshold: '4',
 });
+
+const PolyfillWarning = () => (
+  <p style={{ marginTop: '5rem' }}>
+    Note: This prop utilizes a{' '}
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserver">ResizeObserver</a> to
+    detect changes to the container width. A{' '}
+    <a href="https://www.npmjs.com/package/resize-observer-polyfill">polyfill</a> will likely need
+    to be added to your application due to{' '}
+    <a href="https://caniuse.com/#feat=resizeobserver">current browser support</a>.
+  </p>
+);
 
 storiesOf('Watson IoT | Breadcrumb', module)
   .addDecorator(withKnobs)
@@ -29,13 +41,13 @@ storiesOf('Watson IoT | Breadcrumb', module)
     'default',
     () => {
       return (
+        // <FullWidthWrapper>
         <Breadcrumb {...props()}>
-          <BreadcrumbItem>
-            <a href="/#">Breadcrumb 1</a>
-          </BreadcrumbItem>
+          <BreadcrumbItem href="#">Breadcrumb 1</BreadcrumbItem>
           <BreadcrumbItem href="#">Breadcrumb 2</BreadcrumbItem>
           <BreadcrumbItem href="#">Breadcrumb 3</BreadcrumbItem>
         </Breadcrumb>
+        // </FullWidthWrapper>
       );
     },
     {
@@ -110,34 +122,55 @@ storiesOf('Watson IoT | Breadcrumb', module)
       },
     }
   )
-  // .add('with truncation', () => (
-  //   <Breadcrumb {...props()}>
-  //     <BreadcrumbItem href="/">Breadcrumb Item1</BreadcrumbItem>
-  //     <BreadcrumbItem href="/">Breadcrumb Item2</BreadcrumbItem>
-  //     <BreadcrumbItem href="/">Breadcrumb Item3</BreadcrumbItem>
-  //     <BreadcrumbItem href="/">Breadcrumb Item4</BreadcrumbItem>
-  //     <BreadcrumbItem href="/">Breadcrumb Item5</BreadcrumbItem>
-  //     <BreadcrumbItem href="/">Breadcrumb Item6</BreadcrumbItem>
-  //   </Breadcrumb>
-  // ),
-  // )
   .add(
-    'with overflow menu at 320px width',
+    'with useResizeObserver',
     () => {
-      const windowWidth = number('container width', 320);
       return (
-        <div style={{ width: windowWidth }}>
-          <Breadcrumb {...props()}>
-            <BreadcrumbItem>
-              <a href="/#">Breadcrumb 1</a>
-            </BreadcrumbItem>
+        <>
+          {/* <FullWidthWrapper> */}
+          <Breadcrumb useResizeObserver {...props()}>
+            <BreadcrumbItem href="#">Breadcrumb 1</BreadcrumbItem>
             <BreadcrumbItem href="#">Breadcrumb 2</BreadcrumbItem>
             <BreadcrumbItem href="#">Breadcrumb 3</BreadcrumbItem>
             <BreadcrumbItem href="#">Breadcrumb 4</BreadcrumbItem>
             <BreadcrumbItem href="#">Breadcrumb 5</BreadcrumbItem>
             <BreadcrumbItem href="#">Breadcrumb 6</BreadcrumbItem>
+            <BreadcrumbItem href="#">Breadcrumb 7</BreadcrumbItem>
+            <BreadcrumbItem href="#">Breadcrumb 8</BreadcrumbItem>
           </Breadcrumb>
-        </div>
+          {/* </FullWidthWrapper> */}
+          <PolyfillWarning />
+        </>
+      );
+    },
+    {
+      info: {
+        text: `
+          Breadcrumbs can be automatically collapsed into an overflow menu by toggling 'useResizeObserver'. Note, this requires the containing application to provide a polyfill for ResizeObserver!
+        `,
+      },
+    }
+  )
+  .add(
+    'with useResizeObserver, 320px width',
+    () => {
+      const containerWidth = number('container width', 320);
+      return (
+        <>
+          <div style={{ width: containerWidth }}>
+            <Breadcrumb {...props()}>
+              <BreadcrumbItem>
+                <a href="/#">Breadcrumb 1</a>
+              </BreadcrumbItem>
+              <BreadcrumbItem href="#">Breadcrumb 2</BreadcrumbItem>
+              <BreadcrumbItem href="#">Breadcrumb 3</BreadcrumbItem>
+              <BreadcrumbItem href="#">Breadcrumb 4</BreadcrumbItem>
+              <BreadcrumbItem href="#">Breadcrumb 5</BreadcrumbItem>
+              <BreadcrumbItem href="#">Breadcrumb 6</BreadcrumbItem>
+            </Breadcrumb>
+          </div>
+          <PolyfillWarning />
+        </>
       );
     },
     {
@@ -147,22 +180,25 @@ storiesOf('Watson IoT | Breadcrumb', module)
     }
   )
   .add(
-    'with overflow menu at 672px width',
+    'with useResizeObserver, 672px width',
     () => {
-      const windowWidth = number('container width', 672);
+      const containerWidth = number('container width', 672);
       return (
-        <div style={{ width: windowWidth }}>
-          <Breadcrumb {...props()}>
-            <BreadcrumbItem>
-              <a href="/#">Breadcrumb 1</a>
-            </BreadcrumbItem>
-            <BreadcrumbItem href="#">Breadcrumb 2</BreadcrumbItem>
-            <BreadcrumbItem href="#">Breadcrumb 3</BreadcrumbItem>
-            <BreadcrumbItem href="#">Breadcrumb 4</BreadcrumbItem>
-            <BreadcrumbItem href="#">Breadcrumb 5</BreadcrumbItem>
-            <BreadcrumbItem href="#">Breadcrumb 6</BreadcrumbItem>
-          </Breadcrumb>
-        </div>
+        <>
+          <div style={{ width: containerWidth }}>
+            <Breadcrumb {...props()}>
+              <BreadcrumbItem>
+                <a href="/#">Breadcrumb 1</a>
+              </BreadcrumbItem>
+              <BreadcrumbItem href="#">Breadcrumb 2</BreadcrumbItem>
+              <BreadcrumbItem href="#">Breadcrumb 3</BreadcrumbItem>
+              <BreadcrumbItem href="#">Breadcrumb 4</BreadcrumbItem>
+              <BreadcrumbItem href="#">Breadcrumb 5</BreadcrumbItem>
+              <BreadcrumbItem href="#">Breadcrumb 6</BreadcrumbItem>
+            </Breadcrumb>
+          </div>
+          <PolyfillWarning />
+        </>
       );
     },
     {
@@ -172,22 +208,25 @@ storiesOf('Watson IoT | Breadcrumb', module)
     }
   )
   .add(
-    'with overflow menu at 1056px width',
+    'with useResizeObserver, 1056px width',
     () => {
-      const windowWidth = number('container width', 1056);
+      const containerWidth = number('container width', 1056);
       return (
-        <div style={{ width: windowWidth }}>
-          <Breadcrumb {...props()}>
-            <BreadcrumbItem>
-              <a href="/#">Breadcrumb 1</a>
-            </BreadcrumbItem>
-            <BreadcrumbItem href="#">Breadcrumb 2</BreadcrumbItem>
-            <BreadcrumbItem href="#">Breadcrumb 3</BreadcrumbItem>
-            <BreadcrumbItem href="#">Breadcrumb 4</BreadcrumbItem>
-            <BreadcrumbItem href="#">Breadcrumb 5</BreadcrumbItem>
-            <BreadcrumbItem href="#">Breadcrumb 6</BreadcrumbItem>
-          </Breadcrumb>
-        </div>
+        <>
+          <div style={{ width: containerWidth }}>
+            <Breadcrumb {...props()}>
+              <BreadcrumbItem>
+                <a href="/#">Breadcrumb 1</a>
+              </BreadcrumbItem>
+              <BreadcrumbItem href="#">Breadcrumb 2</BreadcrumbItem>
+              <BreadcrumbItem href="#">Breadcrumb 3</BreadcrumbItem>
+              <BreadcrumbItem href="#">Breadcrumb 4</BreadcrumbItem>
+              <BreadcrumbItem href="#">Breadcrumb 5</BreadcrumbItem>
+              <BreadcrumbItem href="#">Breadcrumb 6</BreadcrumbItem>
+            </Breadcrumb>
+          </div>
+          <PolyfillWarning />
+        </>
       );
     },
     {

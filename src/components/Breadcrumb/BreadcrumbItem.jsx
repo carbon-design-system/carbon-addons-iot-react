@@ -14,9 +14,9 @@ const BreadcrumbItem = React.forwardRef((props, ref) => {
   const { children, ...other } = props;
 
   return (
-    <div ref={ref}>
+    <span ref={ref}>
       <CarbonBreadcrumbItem {...other}>{children}</CarbonBreadcrumbItem>
-    </div>
+    </span>
   );
 });
 
