@@ -460,6 +460,7 @@ const TableBodyRow = ({
                     value: values[col.columnId],
                     columnId: col.columnId,
                     rowId: id,
+                    row: values,
                   })
                 ) : (
                   <TableCellRenderer>{values[col.columnId]}</TableCellRenderer>
