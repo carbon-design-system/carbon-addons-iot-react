@@ -25,4 +25,4 @@ script:
   - travis_wait yarn test --ci --maxWorkers=2 --verbose --coverage --coverageReporters=text-lcov | yarn run coveralls # report coveralls status
 
 after_success:
-  - npx semantic-release@beta
+  - yarn publish-npm

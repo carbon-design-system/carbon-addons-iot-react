@@ -90,6 +90,11 @@ export const tableColumns = [
     name: 'Number',
     filter: { placeholderText: 'pick a number' },
   },
+  {
+    id: 'boolean',
+    name: 'Boolean',
+    filter: { placeholderText: 'true or false' },
+  },
 ];
 
 export const tableColumnsWithAlignment = [
@@ -148,6 +153,8 @@ export const tableColumnsFixedWidth = tableColumns.map(i => ({
       ? '100px'
       : i.id === 'number'
       ? '80px'
+      : i.id === 'boolean'
+      ? '80px'
       : undefined,
 }));
 
@@ -192,6 +199,10 @@ const getStatus = idx => {
   }
 };
 
+const getBoolean = index => {
+  return index % 2 === 0;
+};
+
 const getNewRow = (idx, suffix = '', withActions = false) => ({
   id: `row-${idx}${suffix ? `_${suffix}` : ''}`,
   values: {
@@ -201,6 +212,7 @@ const getNewRow = (idx, suffix = '', withActions = false) => ({
     secretField: getString(idx, 10) + suffix,
     number: idx * idx,
     status: getStatus(idx),
+    boolean: getBoolean(idx),
   },
   rowActions: withActions
     ? [
@@ -278,6 +290,7 @@ const actions = {
     onApplyRowAction: action('onApplyRowAction'),
     onRowExpanded: action('onRowExpanded'),
     onChangeOrdering: action('onChangeOrdering'),
+    onColumnSelectionConfig: action('onColumnSelectionConfig'),
     onChangeSort: action('onChangeSort'),
   },
 };
@@ -1097,7 +1110,7 @@ storiesOf('Watson IoT|Table', module)
       />
     );
   })
-  .add('with customized columns', () => (
+  .add('with column selection', () => (
     <Table
       columns={tableColumns}
       data={tableData}
@@ -1106,6 +1119,7 @@ storiesOf('Watson IoT|Table', module)
         hasPagination: true,
         hasRowSelection: 'multi',
         hasColumnSelection: true,
+        hasColumnSelectionConfig: boolean('hasColumnSelectionConfig', true),
       }}
       view={{
         toolbar: {
@@ -1115,6 +1129,7 @@ storiesOf('Watson IoT|Table', module)
           ordering: defaultOrdering,
         },
       }}
+      i18n={{ columnSelectionConfig: text('i18n.columnSelectionConfig', '__Manage columns__') }}
     />
   ))
   .add('with no results', () => (

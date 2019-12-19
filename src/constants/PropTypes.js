@@ -224,6 +224,7 @@ export const CardPropTypes = {
   isLoading: PropTypes.bool,
   isEmpty: PropTypes.bool,
   isEditable: PropTypes.bool,
+  /** goes full screen if expanded */
   isExpanded: PropTypes.bool,
   size: PropTypes.oneOf(Object.values(CARD_SIZES)),
   layout: PropTypes.oneOf(Object.values(CARD_LAYOUTS)),
@@ -242,7 +243,7 @@ export const CardPropTypes = {
     '',
   ]),
   /** Interval for time series configuration */
-  interval: PropTypes.oneOf(['hour', 'day', 'week', 'month', 'year']),
+  interval: PropTypes.oneOf(['minute', 'hour', 'day', 'week', 'quarter', 'month', 'year']),
   availableActions: PropTypes.shape({
     edit: PropTypes.bool,
     clone: PropTypes.bool,

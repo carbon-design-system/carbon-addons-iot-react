@@ -45,6 +45,7 @@ export SideNav from './components/SideNav';
 
 // Dashboard
 export Dashboard from './components/Dashboard/Dashboard';
+export DashboardGrid from './components/Dashboard/DashboardGrid';
 export Card from './components/Card/Card';
 export ValueCard from './components/ValueCard/ValueCard';
 export TimeSeriesCard from './components/TimeSeriesCard/TimeSeriesCard';

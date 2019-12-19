@@ -166,4 +166,54 @@ describe('Dashboard testcases', () => {
       .simulate('keyDown', { key: 'Enter', keyCode: 13, which: 13 });
     expect(wrapper.prop('onDashboardAction')).toHaveBeenCalled();
   });
+
+  test('verify onFetchData is called by each card if loading changes to true', done => {
+    const mockOnFetchData = jest.fn().mockImplementation(() => Promise.resolve([]));
+
+    const mockOnSetRefresh = jest.fn().mockImplementation(refreshDate => {
+      if (refreshDate) {
+        // Wait for the final set refresh call to exit the testcase
+        done();
+      }
+    });
+    const mockSetIsLoading = jest.fn();
+
+    wrapper = mount(
+      <Dashboard
+        title="My Dashboard"
+        layouts={{ lg: [{ id: 'bogus', x: 0, y: 0 }] }}
+        actions={[
+          { id: 'edit', labelText: 'Edit', icon: 'edit' },
+          { id: 'crash', labelText: 'Crash', icon: iconCrash },
+        ]}
+        cards={cardValues}
+        onDashboardAction={onClick}
+        hasLastUpdated={false}
+        onFetchData={mockOnFetchData}
+        onSetRefresh={mockOnSetRefresh}
+        setIsLoading={mockSetIsLoading}
+      />
+    );
+    wrapper.setProps({ isLoading: true });
+    expect(mockOnFetchData).toHaveBeenCalledTimes(5);
+  });
+  test('verify onLayoutChange is called when the dashboard renders', () => {
+    const mockOnLayoutChange = jest.fn();
+
+    wrapper = mount(
+      <Dashboard
+        title="My Dashboard"
+        layouts={{ lg: [{ id: 'bogus', x: 0, y: 0 }] }}
+        actions={[
+          { id: 'edit', labelText: 'Edit', icon: 'edit' },
+          { id: 'crash', labelText: 'Crash', icon: iconCrash },
+        ]}
+        cards={cardValues}
+        onDashboardAction={onClick}
+        hasLastUpdated={false}
+        onLayoutChange={mockOnLayoutChange}
+      />
+    );
+    expect(mockOnLayoutChange).toHaveBeenCalled();
+  });
 });

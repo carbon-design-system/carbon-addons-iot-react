@@ -60,7 +60,7 @@ const propTypes = {
   totalColumns: PropTypes.number.isRequired,
 
   /** contents of the row each object value is a renderable node keyed by column id */
-  values: PropTypes.objectOf(PropTypes.node).isRequired,
+  values: PropTypes.objectOf(PropTypes.oneOfType([PropTypes.node, PropTypes.bool])).isRequired,
 
   /** is the row currently selected */
   isSelected: PropTypes.bool,
@@ -387,15 +387,8 @@ const TableBodyRow = ({
       <TableCell
         className={`${prefix}--checkbox-table-cell`}
         key={`${id}-row-selection-cell`}
-        onClick={
-          isSelectable !== false
-            ? e => {
-                onRowSelected(id, !isSelected);
-                e.preventDefault();
-                e.stopPropagation();
-              }
-            : null
-        }
+        onChange={isSelectable !== false ? () => onRowSelected(id, !isSelected) : null}
+        onClick={e => e.stopPropagation()}
       >
         {/* TODO: Replace checkbox with TableSelectRow component when onChange bug is fixed
       https://github.com/IBM/carbon-components-react/issues/1247

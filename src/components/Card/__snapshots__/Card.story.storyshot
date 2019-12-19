@@ -46,7 +46,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
             className="bx--toolbar card--toolbar"
           >
             <span
-              className="card--toolbar-timerange-lable Card__TimeRangeLabel-v5r71h-5 bSwbuP"
+              className="card--toolbar-timerange-lable CardRangePicker__TimeRangeLabel-ns6bu0-0 QmRa"
               id="timeRange"
             />
             <div
@@ -63,7 +63,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
               title="Open and close list of options"
             >
               <svg
-                aria-label="Open and close list of options"
+                aria-label="open and close list of options"
                 className="bx--overflow-menu__icon"
                 focusable="false"
                 height={20}
@@ -90,12 +90,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                   d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
                 />
                 <title>
-                  Open and close list of options
+                  open and close list of options
                 </title>
               </svg>
             </div>
             <button
-              className="card--toolbar-action Card__TinyButton-v5r71h-4 fggzfz bx--btn bx--btn--sm bx--btn--ghost"
+              className="card--toolbar-action CardToolbar__TinyButton-sc-1ekh8ti-0 eITXBg bx--btn bx--btn--sm bx--btn--ghost"
               disabled={false}
               onClick={[Function]}
               tabIndex={0}
@@ -560,7 +560,41 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
           </span>
           <div
             className="bx--toolbar card--toolbar"
-          />
+          >
+            <button
+              className="card--toolbar-action CardToolbar__TinyButton-sc-1ekh8ti-0 eITXBg bx--btn bx--btn--sm bx--btn--ghost"
+              disabled={false}
+              onClick={[Function]}
+              tabIndex={0}
+              title="Expand to fullscreen"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                aria-label="Expand to fullscreen"
+                className="bx--btn__icon"
+                focusable="false"
+                height={20}
+                preserveAspectRatio="xMidYMid meet"
+                role="img"
+                style={
+                  Object {
+                    "willChange": "transform",
+                  }
+                }
+                viewBox="0 0 32 32"
+                width={20}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M28 4H10a2.006 2.006 0 0 0-2 2v14a2.006 2.006 0 0 0 2 2h18a2.006 2.006 0 0 0 2-2V6a2.006 2.006 0 0 0-2-2zm0 16H10V6h18z"
+                />
+                <path
+                  d="M18 26H4V16h2v-2H4a2.006 2.006 0 0 0-2 2v10a2.006 2.006 0 0 0 2 2h14a2.006 2.006 0 0 0 2-2v-2h-2z"
+                />
+              </svg>
+            </button>
+          </div>
         </div>
         <div
           className="Card__CardContent-v5r71h-1 hDVRgE"
@@ -683,7 +717,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
             className="bx--toolbar card--toolbar"
           >
             <span
-              className="card--toolbar-timerange-lable Card__TimeRangeLabel-v5r71h-5 bSwbuP"
+              className="card--toolbar-timerange-lable CardRangePicker__TimeRangeLabel-ns6bu0-0 QmRa"
               id="timeRange"
             />
             <div
@@ -700,7 +734,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
               title="Open and close list of options"
             >
               <svg
-                aria-label="Open and close list of options"
+                aria-label="open and close list of options"
                 className="bx--overflow-menu__icon"
                 focusable="false"
                 height={20}
@@ -727,7 +761,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                   d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
                 />
                 <title>
-                  Open and close list of options
+                  open and close list of options
                 </title>
               </svg>
             </div>
@@ -773,7 +807,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
             className="bx--toolbar card--toolbar"
           >
             <span
-              className="card--toolbar-timerange-lable Card__TimeRangeLabel-v5r71h-5 bSwbuP"
+              className="card--toolbar-timerange-lable CardRangePicker__TimeRangeLabel-ns6bu0-0 QmRa"
               id="timeRange"
             />
             <div
@@ -790,7 +824,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
               title="Open and close list of options"
             >
               <svg
-                aria-label="Open and close list of options"
+                aria-label="open and close list of options"
                 className="bx--overflow-menu__icon"
                 focusable="false"
                 height={20}
@@ -817,7 +851,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                   d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
                 />
                 <title>
-                  Open and close list of options
+                  open and close list of options
                 </title>
               </svg>
             </div>
@@ -863,7 +897,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
             className="bx--toolbar card--toolbar"
           >
             <span
-              className="card--toolbar-timerange-lable Card__TimeRangeLabel-v5r71h-5 bSwbuP"
+              className="card--toolbar-timerange-lable CardRangePicker__TimeRangeLabel-ns6bu0-0 QmRa"
               id="timeRange"
             />
             <div
@@ -880,7 +914,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
               title="Open and close list of options"
             >
               <svg
-                aria-label="Open and close list of options"
+                aria-label="open and close list of options"
                 className="bx--overflow-menu__icon"
                 focusable="false"
                 height={20}
@@ -907,7 +941,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                   d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
                 />
                 <title>
-                  Open and close list of options
+                  open and close list of options
                 </title>
               </svg>
             </div>
@@ -953,7 +987,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
             className="bx--toolbar card--toolbar"
           >
             <span
-              className="card--toolbar-timerange-lable Card__TimeRangeLabel-v5r71h-5 bSwbuP"
+              className="card--toolbar-timerange-lable CardRangePicker__TimeRangeLabel-ns6bu0-0 QmRa"
               id="timeRange"
             />
             <div
@@ -970,7 +1004,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
               title="Open and close list of options"
             >
               <svg
-                aria-label="Open and close list of options"
+                aria-label="open and close list of options"
                 className="bx--overflow-menu__icon"
                 focusable="false"
                 height={20}
@@ -997,7 +1031,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                   d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
                 />
                 <title>
-                  Open and close list of options
+                  open and close list of options
                 </title>
               </svg>
             </div>
@@ -1043,7 +1077,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
             className="bx--toolbar card--toolbar"
           >
             <span
-              className="card--toolbar-timerange-lable Card__TimeRangeLabel-v5r71h-5 bSwbuP"
+              className="card--toolbar-timerange-lable CardRangePicker__TimeRangeLabel-ns6bu0-0 QmRa"
               id="timeRange"
             />
             <div
@@ -1060,7 +1094,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
               title="Open and close list of options"
             >
               <svg
-                aria-label="Open and close list of options"
+                aria-label="open and close list of options"
                 className="bx--overflow-menu__icon"
                 focusable="false"
                 height={20}
@@ -1087,7 +1121,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                   d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
                 />
                 <title>
-                  Open and close list of options
+                  open and close list of options
                 </title>
               </svg>
             </div>
@@ -1133,7 +1167,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
             className="bx--toolbar card--toolbar"
           >
             <span
-              className="card--toolbar-timerange-lable Card__TimeRangeLabel-v5r71h-5 bSwbuP"
+              className="card--toolbar-timerange-lable CardRangePicker__TimeRangeLabel-ns6bu0-0 QmRa"
               id="timeRange"
             />
             <div
@@ -1150,7 +1184,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
               title="Open and close list of options"
             >
               <svg
-                aria-label="Open and close list of options"
+                aria-label="open and close list of options"
                 className="bx--overflow-menu__icon"
                 focusable="false"
                 height={20}
@@ -1177,7 +1211,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                   d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
                 />
                 <title>
-                  Open and close list of options
+                  open and close list of options
                 </title>
               </svg>
             </div>
@@ -1223,7 +1257,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
             className="bx--toolbar card--toolbar"
           >
             <span
-              className="card--toolbar-timerange-lable Card__TimeRangeLabel-v5r71h-5 bSwbuP"
+              className="card--toolbar-timerange-lable CardRangePicker__TimeRangeLabel-ns6bu0-0 QmRa"
               id="timeRange"
             />
             <div
@@ -1240,7 +1274,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
               title="Open and close list of options"
             >
               <svg
-                aria-label="Open and close list of options"
+                aria-label="open and close list of options"
                 className="bx--overflow-menu__icon"
                 focusable="false"
                 height={20}
@@ -1267,7 +1301,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                   d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
                 />
                 <title>
-                  Open and close list of options
+                  open and close list of options
                 </title>
               </svg>
             </div>
@@ -1357,7 +1391,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
             className="bx--toolbar card--toolbar"
           >
             <span
-              className="card--toolbar-timerange-lable Card__TimeRangeLabel-v5r71h-5 bSwbuP"
+              className="card--toolbar-timerange-lable CardRangePicker__TimeRangeLabel-ns6bu0-0 QmRa"
               id="timeRange"
             />
             <div
@@ -1374,7 +1408,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
               title="Open and close list of options"
             >
               <svg
-                aria-label="Open and close list of options"
+                aria-label="open and close list of options"
                 className="bx--overflow-menu__icon"
                 focusable="false"
                 height={20}
@@ -1401,7 +1435,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                   d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
                 />
                 <title>
-                  Open and close list of options
+                  open and close list of options
                 </title>
               </svg>
             </div>
@@ -1600,7 +1634,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
             className="bx--toolbar card--toolbar"
           >
             <span
-              className="card--toolbar-timerange-lable Card__TimeRangeLabel-v5r71h-5 bSwbuP"
+              className="card--toolbar-timerange-lable CardRangePicker__TimeRangeLabel-ns6bu0-0 QmRa"
               id="timeRange"
             />
             <div
@@ -1617,7 +1651,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
               title="Open and close list of options"
             >
               <svg
-                aria-label="Open and close list of options"
+                aria-label="open and close list of options"
                 className="bx--overflow-menu__icon"
                 focusable="false"
                 height={20}
@@ -1644,7 +1678,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                   d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
                 />
                 <title>
-                  Open and close list of options
+                  open and close list of options
                 </title>
               </svg>
             </div>
