@@ -110,6 +110,8 @@ exports[`Header testcases should render 1`] = `
         <div
           aria-label="Header Panel"
           class="bx--header-panel action-btn__headerpanel action-btn__headerpanel--closed"
+          data-testid="action-btn__panel"
+          tabindex="-1"
         >
           <ul
             aria-label="help"
@@ -156,6 +158,7 @@ exports[`Header testcases should render 1`] = `
       </div>
       <div
         class="bx--header__submenu"
+        data-testid="headermenu"
       >
         <div
           class="bx--header__submenu bx--header-action-btn"

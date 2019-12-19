@@ -164,6 +164,7 @@ const Header = ({
               {item.btnContent}
             </HeaderGlobalAction>
             <HeaderPanel
+              data-testid="action-btn__panel"
               tabIndex="-1"
               onBlur={e => handleClickOutside(e, item.label)}
               key={`panel-${i}`}
@@ -190,6 +191,7 @@ const Header = ({
       ));
       return (
         <div
+          data-testid="headermenu"
           onFocus={() => handleExpandedState()}
           className={`${carbonPrefix}--header__submenu`}
           key={`wrapper-${i}`}

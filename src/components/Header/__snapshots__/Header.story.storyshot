@@ -155,7 +155,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Heade
             <div
               aria-label="Header Panel"
               className="bx--header-panel action-btn__headerpanel action-btn__headerpanel--closed"
+              data-testid="action-btn__panel"
               onBlur={[Function]}
+              tabIndex="-1"
             >
               <ul
                 aria-label="help"
@@ -215,6 +217,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Heade
           </div>
           <div
             className="bx--header__submenu"
+            data-testid="headermenu"
             onFocus={[Function]}
           >
             <div
