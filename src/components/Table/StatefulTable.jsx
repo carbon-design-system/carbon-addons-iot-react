@@ -76,7 +76,7 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
     onCancelBatchAction,
     onApplyBatchAction,
     onApplySearch,
-    onSaveCurData,
+    onSaveData,
     onUndoEditData,
     onDownloadCSV,
   } = toolbar || {};
@@ -113,9 +113,9 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
         dispatch(tableToolbarToggle('column'));
         callbackParent(onToggleColumnSelection, 'column');
       },
-      onSaveCurData: () => {
+      onSaveData: () => {
         dispatch(tableDataSave());
-        callbackParent(onSaveCurData);
+        callbackParent(onSaveData);
       },
       onUndoEditData: () => {
         dispatch(tableDataUndo());

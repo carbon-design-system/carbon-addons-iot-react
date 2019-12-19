@@ -165,7 +165,7 @@ const propTypes = {
       onApplyBatchAction: PropTypes.func,
       /** Apply a search criteria to the table */
       onApplySearch: PropTypes.func,
-      onSaveCurData: PropTypes.func,
+      onSaveData: PropTypes.func,
       onUndoEditData: PropTypes.func,
       /** Download the table contents */
       onDownloadCSV: PropTypes.func,
@@ -238,7 +238,7 @@ export const defaultProps = baseProps => ({
       onToggleColumnSelection: defaultFunction('actions.toolbar.onToggleColumnSelection'),
       onApplyBatchAction: defaultFunction('actions.toolbar.onApplyBatchAction'),
       onCancelBatchAction: defaultFunction('actions.toolbar.onCancelBatchAction'),
-      onSaveCurData: defaultFunction('actions.toolbar.onSaveCurData'),
+      onSaveData: defaultFunction('actions.toolbar.onSaveData'),
       onUndoEditData: defaultFunction('actions.toolbar.onUndoEditData'),
     },
     table: {
@@ -382,7 +382,7 @@ const Table = props => {
           'onToggleColumnSelection',
           'onToggleFilter',
           'onApplySearch',
-          'onSaveCurData',
+          'onSaveData',
           'onUndoEditData',
           'onDownloadCSV'
         )}

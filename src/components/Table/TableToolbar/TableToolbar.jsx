@@ -109,7 +109,7 @@ const propTypes = {
     onClearAllFilters: PropTypes.func,
     onToggleColumnSelection: PropTypes.func,
     onToggleFilter: PropTypes.func,
-    onSaveCurData: PropTypes.func,
+    onSaveData: PropTypes.func,
     onUndoEditData: PropTypes.func,
   }).isRequired,
   /**
@@ -171,7 +171,7 @@ const TableToolbar = ({
     onToggleColumnSelection,
     onToggleFilter,
     onApplySearch,
-    onSaveCurData,
+    onSaveData,
     onUndoEditData,
     onDownloadCSV,
   },
@@ -192,7 +192,7 @@ const TableToolbar = ({
 
   const onToggleEdit = () => {
     setActiveEditBar('buttons');
-    onSaveCurData();
+    onSaveData();
   };
   const onCancelEditAction = () => {
     setActiveEditBar(null);

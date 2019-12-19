@@ -333,7 +333,7 @@ const actions = {
     onApplyFilter: action('onApplyFilter'),
     onToggleFilter: action('onToggleFilter'),
     onToggleColumnSelection: action('onToggleColumnSelection'),
-    onSaveCurData: action('onSaveCurData'),
+    onSaveData: action('onSaveData'),
     onUndoEditData: action('onUndoEditData'),
     /** Specify a callback for when the user clicks toolbar button to clear all filters. Recieves a parameter of the current filter values for each column */
     onClearAllFilters: action('onClearAllFilters'),
