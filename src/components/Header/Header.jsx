@@ -35,7 +35,7 @@ const propTypes = {
       label: PropTypes.string.isRequired,
       onClick: PropTypes.func,
       /** declare control of header panel from this action item.  */
-      headerPanel: PropTypes.bool,
+      hasHeaderPanel: PropTypes.bool,
       btnContent: PropTypes.any.isRequired,
       childContent: PropTypes.arrayOf(
         PropTypes.shape({
@@ -129,7 +129,7 @@ const Header = ({
   const actionBtnHeaderPanels = [];
   const actionBtnContent = actionItems.map((item, i) => {
     if (item.hasOwnProperty('childContent')) {
-      if (item.hasOwnProperty('headerPanel')) {
+      if (item.hasOwnProperty('hasHeaderPanel')) {
         const panelChildren = item.childContent.map(childItem => {
           const ChildElement = childItem?.metaData?.element || 'a';
           return (

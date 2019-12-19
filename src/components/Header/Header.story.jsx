@@ -57,7 +57,7 @@ const HeaderProps = {
     },
     {
       label: 'help',
-      headerPanel: true,
+      hasHeaderPanel: true,
       btnContent: (
         <HeaderHelp
           fill="white"
