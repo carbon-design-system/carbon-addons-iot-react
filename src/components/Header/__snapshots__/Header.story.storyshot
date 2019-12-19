@@ -231,9 +231,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Heade
                 aria-haspopup="menu"
                 aria-label="user"
                 className="bx--header__menu-item bx--header__menu-title"
+                data-testid="menuitem"
                 href="javascript:void(0)"
                 onKeyDown={[Function]}
-                role="menuitem"
                 tabIndex={0}
               >
                 <svg

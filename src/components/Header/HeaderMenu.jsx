@@ -199,7 +199,7 @@ class HeaderMenu extends React.Component {
           href="javascript:void(0)"
           onKeyDown={this.handleOnKeyDown}
           ref={this.handleMenuButtonRef}
-          role="menuitem"
+          data-testid="menuitem"
           tabIndex={0}
           aria-label={ariaLabel}
         >
