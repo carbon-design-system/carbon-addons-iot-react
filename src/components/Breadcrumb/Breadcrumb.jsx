@@ -6,9 +6,12 @@ import {
 } from 'carbon-components-react';
 import useResizeObserverHook from 'use-resize-observer';
 import classNames from 'classnames';
+import { settings } from 'carbon-components';
 
 import BreadcrumbOverflowItem from './BreadcrumbOverflowItem';
 import './_breadcrumb.scss';
+
+const { prefix } = settings;
 
 const propTypes = {
   /** Pass in the BreadcrumbItem's for your Breadcrumb */
@@ -23,15 +26,15 @@ const defaultProps = {
 
 const Breadcrumb = props => {
   const { children, className, useResizeObserver, ...other } = props;
+
   const [breadcrumbItemsWidth, setBreadcrumbItemsWidth] = useState([]);
   const [totalBreadcrumbItemsWidth, setTotalBreadcrumbItemsWidth] = useState(0);
   const { ref: breadcrumbRef, width: containerWidth } = useResizeObserverHook({
     useDefaults: false,
   });
-  // const [breadcrumbChildren, setBreadcrumbChildren] = useState(children);
   const [overflowIndex, setOverflowIndex] = useState(0);
-  const childRef = React.Children.map(children, useRef);
 
+  const childRef = React.Children.map(children, useRef);
   const childrenWithRef = React.Children.map(children, (child, index) =>
     React.cloneElement(child, {
       ref: childRef[index],
@@ -39,36 +42,30 @@ const Breadcrumb = props => {
     })
   );
 
-  /** intial to get children total width */
+  /** Initial effect on mount to get breadcrumb item widths */
   useEffect(() => {
     if (useResizeObserver) {
-      // let itemWidths = [];
-      // childrenWithRef.forEach(childWithRef => {
-      //   itemWidths.push(
-      //     Math.floor(childWithRef.ref.current.getBoundingClientRect().width)
-      //   );
-      // });
-
       setBreadcrumbItemsWidth(
         childrenWithRef.map(childWithRef => {
-          return Math.floor(childWithRef.ref.current.getBoundingClientRect().width);
+          return Math.ceil(childWithRef.ref.current.getBoundingClientRect().width);
         })
       );
 
       setTotalBreadcrumbItemsWidth(
         childrenWithRef.reduce((acc, childWithRef) => {
-          return acc + Math.floor(childWithRef.ref.current.getBoundingClientRect().width);
+          return acc + Math.ceil(childWithRef.ref.current.getBoundingClientRect().width);
         }, 0)
       );
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  /** adjust overflow items number to responce container width  */
+  /** Subsequent effect to evaluate the container/items width and determine which items should be placed in overflow menu  */
   useEffect(
     () => {
       if (useResizeObserver && containerWidth < totalBreadcrumbItemsWidth) {
-        let mutableTotalBreadcrumbItemsWidth = totalBreadcrumbItemsWidth;
+        // Additionally take into account the width of the overflow menu icon, 32px
+        let mutableTotalBreadcrumbItemsWidth = totalBreadcrumbItemsWidth + 32;
 
         // iterate over the middle breadcrumb items (exclude first, exclude last)
         for (let i = 1; i <= breadcrumbItemsWidth.length - 2; i += 1) {
@@ -83,38 +80,37 @@ const Breadcrumb = props => {
 
         // despite collapsing all items into overflow, the container is still too small
         // we should begin to ellipsis the first/last items
-        if (containerWidth < mutableTotalBreadcrumbItemsWidth) {
+        if (containerWidth <= mutableTotalBreadcrumbItemsWidth) {
           setOverflowIndex(-1);
         }
       }
     },
-    [containerWidth, totalBreadcrumbItemsWidth, children, breadcrumbItemsWidth, useResizeObserver]
+    [
+      containerWidth,
+      totalBreadcrumbItemsWidth,
+      children,
+      breadcrumbItemsWidth,
+      useResizeObserver,
+      overflowIndex,
+    ]
   );
 
   if (useResizeObserver) {
-    console.log(
-      `RENDER 
-      containerWidth: ${containerWidth}, totalBreadcrumbItemsWidth: ${totalBreadcrumbItemsWidth}`
-    );
-
     return (
       <div ref={breadcrumbRef}>
         {totalBreadcrumbItemsWidth > containerWidth ? (
           <>
             <CarbonBreadcrumb
               className={classNames(className, {
-                'breadcrumb-item--hidden': typeof containerWidth === 'undefined',
+                [`${prefix}--breadcrumb-item--hidden`]: typeof containerWidth === 'undefined',
+                [`${prefix}--breadcrumb--truncate`]: overflowIndex === -1,
               })}
               {...other}
             >
-              {overflowIndex === -1 ? (
-                <div style={{ textOverflow: `ellipsis`, overflow: `hidden` }}>
-                  {childrenWithRef[0]}
-                </div>
-              ) : (
-                childrenWithRef[0]
-              )}
-              <CarbonOverflowMenu renderIcon={() => <div className="breadcrumb-overflow">...</div>}>
+              {childrenWithRef[0]}
+              <CarbonOverflowMenu
+                renderIcon={() => <div className={`${prefix}--breadcrumb-overflow`}>...</div>}
+              >
                 {React.Children.map(childrenWithRef, (child, i) => {
                   if (i !== 0 && i <= overflowIndex) {
                     return <BreadcrumbOverflowItem>{child}</BreadcrumbOverflowItem>;
@@ -122,19 +118,16 @@ const Breadcrumb = props => {
                   return null;
                 })}
               </CarbonOverflowMenu>
-              {overflowIndex === -1 ? (
-                <div style={{ textOverflow: `ellipsis`, overflow: `hidden` }}>
-                  {childrenWithRef[childrenWithRef.length - 1]}
-                </div>
-              ) : (
-                childrenWithRef.slice(overflowIndex + 1, childrenWithRef.length)
-              )}
+              {overflowIndex === -1
+                ? childrenWithRef[childrenWithRef.length - 1]
+                : childrenWithRef.slice(overflowIndex + 1, childrenWithRef.length)}
             </CarbonBreadcrumb>
           </>
         ) : (
           <CarbonBreadcrumb
             className={classNames(className, {
-              'breadcrumb-item--hidden': typeof containerWidth === 'undefined',
+              [`${prefix}--breadcrumb-item--hidden`]: typeof containerWidth === 'undefined',
+              [`${prefix}--breadcrumb--truncate`]: overflowIndex === -1,
             })}
             {...other}
           >

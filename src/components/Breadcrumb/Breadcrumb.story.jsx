@@ -13,8 +13,6 @@ import { action } from '@storybook/addon-actions';
 import { withKnobs, boolean, number } from '@storybook/addon-knobs';
 import { BreadcrumbSkeleton } from 'carbon-components-react';
 
-import FullWidthWrapper from '../../internal/FullWidthWrapper';
-
 import Breadcrumb from './Breadcrumb';
 import BreadcrumbItem from './BreadcrumbItem';
 
@@ -41,13 +39,11 @@ storiesOf('Watson IoT | Breadcrumb', module)
     'default',
     () => {
       return (
-        // <FullWidthWrapper>
         <Breadcrumb {...props()}>
           <BreadcrumbItem href="#">Breadcrumb 1</BreadcrumbItem>
           <BreadcrumbItem href="#">Breadcrumb 2</BreadcrumbItem>
           <BreadcrumbItem href="#">Breadcrumb 3</BreadcrumbItem>
         </Breadcrumb>
-        // </FullWidthWrapper>
       );
     },
     {
@@ -127,18 +123,16 @@ storiesOf('Watson IoT | Breadcrumb', module)
     () => {
       return (
         <>
-          {/* <FullWidthWrapper> */}
           <Breadcrumb useResizeObserver {...props()}>
-            <BreadcrumbItem href="#">Breadcrumb 1</BreadcrumbItem>
-            <BreadcrumbItem href="#">Breadcrumb 2</BreadcrumbItem>
-            <BreadcrumbItem href="#">Breadcrumb 3</BreadcrumbItem>
-            <BreadcrumbItem href="#">Breadcrumb 4</BreadcrumbItem>
-            <BreadcrumbItem href="#">Breadcrumb 5</BreadcrumbItem>
-            <BreadcrumbItem href="#">Breadcrumb 6</BreadcrumbItem>
-            <BreadcrumbItem href="#">Breadcrumb 7</BreadcrumbItem>
-            <BreadcrumbItem href="#">Breadcrumb 8</BreadcrumbItem>
+            <BreadcrumbItem href="#">1 Home</BreadcrumbItem>
+            <BreadcrumbItem href="#">2 Devices</BreadcrumbItem>
+            <BreadcrumbItem href="#">3 A really long page name</BreadcrumbItem>
+            <BreadcrumbItem href="#">4 Another page</BreadcrumbItem>
+            <BreadcrumbItem href="#">5th level page</BreadcrumbItem>
+            <BreadcrumbItem href="#">6</BreadcrumbItem>
+            <BreadcrumbItem href="#">7 page</BreadcrumbItem>
+            <BreadcrumbItem href="#">8 pages, current level</BreadcrumbItem>
           </Breadcrumb>
-          {/* </FullWidthWrapper> */}
           <PolyfillWarning />
         </>
       );

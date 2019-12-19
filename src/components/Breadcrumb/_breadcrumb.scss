@@ -1,36 +1,44 @@
 @import '~carbon-components/scss/components/breadcrumb/breadcrumb';
 
-.bx--breadcrumb {
-  overflow: hidden;
-  white-space: nowrap;
+.#{$prefix}--breadcrumb {
+  // overflow: hidden;
+  // white-space: nowrap;
+  display: flex;
+  flex-wrap: wrap;
 
-  & > * {
-    overflow: hidden;
-    white-space: nowrap;
+  // & > * {
+  //   overflow: hidden;
+  //   white-space: nowrap;
+  // }
+}
+
+.#{$prefix}--breadcrumb--truncate {
+  .#{$prefix}--breadcrumb {
+    flex-wrap: nowrap;
+
+    & > * {
+      min-width: 0; // https://css-tricks.com/flexbox-truncated-text/
+    }
+  }
+
+  .#{$prefix}--breadcrumb-item {
+    // overflow: hidden;
+    // white-space: nowrap;
+
+    & > * {
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
   }
 }
 
-.bx--breadcrumb-item {
-  overflow: hidden;
-  white-space: nowrap;
-}
-
-.breadcrumb-item--hidden {
+.#{$prefix}--breadcrumb-item--hidden {
   visibility: hidden;
 }
 
-.breadcrumb-overflow {
-  // position: relative;
-  // font-size: 3em;
-  // margin: 0 auto;
-  // top: -40%;
+.#{$prefix}--breadcrumb-overflow {
   &:after {
-    // font-size: 1.5rem;
     content: '/';
-    // color: #171717;
-    // right: -0.7rem;
-    // position: absolute;
-    // top: 80%;
-    // transform: translatey(-50%);
   }
 }
