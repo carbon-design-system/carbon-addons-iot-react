@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { InlineNotification } from 'carbon-components-react';
 import warning from 'warning';
 
+import { InlineNotification } from '../Notification';
 import { PADDING } from '../../styles/styles';
 import deprecate from '../../internal/deprecate';
 

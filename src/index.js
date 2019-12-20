@@ -186,6 +186,8 @@ export {
 } from './components/StructuredList';
 export { Switch } from './components/Switch';
 export { Tab, Tabs, TabContent, TabsSkeleton } from './components/Tabs';
+export { Tag, TagSkeleton } from './components/Tag';
+export { TextArea, TextAreaSkeleton } from './components/TextArea';
 export { TextInput, TextInputSkeleton } from './components/TextInput';
 export {
   Tile,
@@ -195,6 +197,9 @@ export {
   TileAboveTheFoldContent,
   TileBelowTheFoldContent,
 } from './components/Tile';
+export { TimePicker } from './components/TimePicker';
+export { Toggle, ToggleSkeleton } from './components/Toggle';
+export { ToggleSmall, ToggleSmallSkeleton } from './components/ToggleSmall';
 export {
   Toolbar,
   ToolbarItem,
@@ -203,6 +208,8 @@ export {
   ToolbarDivider,
 } from './components/Toolbar';
 export { Tooltip } from './components/Tooltip';
+export { TooltipDefinition } from './components/TooltipDefinition';
+export { TooltipIcon } from './components/TooltipIcon';
 export {
   Content,
   Switcher,
@@ -210,6 +217,7 @@ export {
   SwitcherDivider,
   SkipToContent,
 } from './components/UIShell';
+export { UnorderedList } from './components/UnorderedList';
 export {
   Copy,
   DangerButton,
@@ -220,25 +228,13 @@ export {
   SecondaryButton,
   SelectItem,
   SelectItemGroup,
-  Tag,
-  TextArea,
   TileGroup,
-  TimePicker,
   TimePickerSelect,
-  Toggle,
-  ToggleSmall,
   ToolbarSearch,
-  TooltipDefinition,
-  TooltipIcon,
-  UnorderedList,
   DataTableSkeleton,
   RadioButtonSkeleton,
   SearchSkeleton,
   StructuredListSkeleton,
-  TagSkeleton,
-  TextAreaSkeleton,
-  ToggleSkeleton,
-  ToggleSmallSkeleton,
 } from 'carbon-components-react';
 export { validateDashboardJSON } from './utils/schemas/validators';
 
