@@ -89,6 +89,7 @@ export { Checkbox, CheckboxSkeleton } from './components/Checkbox';
 export { CodeSnippet, CodeSnippetSkeleton } from './components/CodeSnippet';
 export { ComboBox } from './components/ComboBox';
 export { ContentSwitcher } from './components/ContentSwitcher';
+export { CopyButton } from './components/CopyButton';
 // export {
 // TODO consolidate Carbon's datatable exports below with our table exports
 // default as DataTable,
@@ -112,6 +113,8 @@ export { ContentSwitcher } from './components/ContentSwitcher';
 // TableToolbarContent,
 // TableToolbarSearch,
 // TableToolbarMenu,} from './components/DataTable;
+export { DatePicker, DatePickerSkeleton } from './components/DatePicker';
+export { DatePickerInput } from './components/DatePickerInput';
 export { Form } from './components/Form';
 export { FormGroup } from './components/FormGroup';
 export { FormItem } from './components/FormItem';
@@ -187,10 +190,7 @@ export {
 } from './components/UIShell';
 export {
   Copy,
-  CopyButton,
   DangerButton,
-  DatePicker,
-  DatePickerInput,
   Dropdown,
   Filename,
   FileUploader,
@@ -241,7 +241,6 @@ export {
   TextAreaSkeleton,
   ToggleSkeleton,
   ToggleSmallSkeleton,
-  DatePickerSkeleton,
 } from 'carbon-components-react';
 export { validateDashboardJSON } from './utils/schemas/validators';
 

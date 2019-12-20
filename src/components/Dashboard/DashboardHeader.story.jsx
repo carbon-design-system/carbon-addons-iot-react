@@ -6,7 +6,8 @@ import Delete from '@carbon/icons-react/lib/delete/20';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
-import { DatePicker, DatePickerInput } from '../..';
+import { DatePicker } from '../DatePicker';
+import { DatePickerInput } from '../DatePickerInput';
 
 import DashboardHeader from './DashboardHeader';
 
