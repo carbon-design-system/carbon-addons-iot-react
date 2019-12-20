@@ -4,7 +4,11 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { boolean } from '@storybook/addon-knobs';
 
-import { Form, FormGroup, FormItem, Link, TextInput } from '../..';
+import { Form } from '../Form';
+import { FormItem } from '../FormItem';
+import { FormGroup } from '../FormGroup';
+import { Link } from '../Link';
+import { TextInput } from '../TextInput';
 import PageTitleBar from '../PageTitleBar/PageTitleBar';
 
 import {

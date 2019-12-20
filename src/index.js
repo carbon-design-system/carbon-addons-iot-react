@@ -87,10 +87,12 @@ export StatefulPageWizard from './components/PageWizard/StatefulPageWizard';
 export { Accordion, AccordionItem, AccordionSkeleton } from './components/Accordion';
 export { Breadcrumb, BreadcrumbItem, BreadcrumbSkeleton } from './components/Breadcrumb';
 export { ContentSwitcher } from './components/ContentSwitcher';
+export { Form } from './components/Form';
+export { FormGroup } from './components/FormGroup';
+export { FormItem } from './components/FormItem';
 export { Icon, IconSkeleton } from './components/Icon';
 export { InlineLoading } from './components/InlineLoading';
 export { Link } from './components/Link';
-export { Tooltip } from './components/Tooltip';
 export {
   ToastNotification,
   InlineNotification,
@@ -115,6 +117,8 @@ export {
 } from './components/StructuredList';
 export { Switch } from './components/Switch';
 export { Tab, Tabs, TabContent, TabsSkeleton } from './components/Tabs';
+export { TextInput, TextInputSkeleton } from './components/TextInput';
+export { Tooltip } from './components/Tooltip';
 export {
   Content,
   Switcher,
@@ -162,9 +166,6 @@ export {
   FileUploaderButton,
   FileUploaderDropContainer,
   FileUploaderItem,
-  Form,
-  FormGroup,
-  FormItem,
   FormLabel,
   ListItem,
   // Loading,
@@ -189,7 +190,6 @@ export {
   Slider,
   Tag,
   TextArea,
-  TextInput,
   Tile,
   ClickableTile,
   SelectableTile,
@@ -225,7 +225,6 @@ export {
   StructuredListSkeleton,
   TagSkeleton,
   TextAreaSkeleton,
-  TextInputSkeleton,
   ToggleSkeleton,
   ToggleSmallSkeleton,
   DatePickerSkeleton,
