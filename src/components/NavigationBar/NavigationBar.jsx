@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Button } from 'carbon-components-react';
 
-import { Tabs, Tab } from '../..';
+import { Tabs, Tab } from '../Tabs';
 import { COLORS, PADDING, SIZES } from '../../styles/styles';
 
 const StyledNavigationContainer = styled.div`

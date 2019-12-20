@@ -57,9 +57,9 @@ module.exports = {
       functions: 77,
     },
     './src/components/Page/EditPage.jsx': {
-      statements: 64,
+      statements: 63,
       branches: 50,
-      lines: 64,
+      lines: 63,
       functions: 50,
     },
     './src/components/Table/AsyncTable/AsyncTable.jsx': {

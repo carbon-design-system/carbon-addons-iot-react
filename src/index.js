@@ -7,7 +7,7 @@ sizeMe.noPlaceholders = true;
 export styles from './styles.scss';
 
 // Components
-export Button from './components/Button';
+export Button, { ButtonSkeleton } from './components/Button';
 export Table from './components/Table';
 export AddCard from './components/AddCard';
 export ComposedModal from './components/ComposedModal';
@@ -29,6 +29,7 @@ export ComposedStructuredList from './components/ComposedStructuredList/Composed
 export ResourceList from './components/ResourceList/ResourceList';
 export FileDrop from './components/FileDrop/FileDrop';
 export PageTitleBar from './components/PageTitleBar/PageTitleBar';
+export Loading from './components/Loading';
 
 // reusable reducers
 export { baseTableReducer } from './components/Table/baseTableReducer';
@@ -39,8 +40,20 @@ export * as tableActions from './components/Table/tableActionCreators';
 // Page related helpers
 export PageHero from './components/Page/PageHero';
 export PageWorkArea from './components/Page/PageWorkArea';
+export EditPage from './components/Page/EditPage';
 export NavigationBar from './components/NavigationBar/NavigationBar';
-export Header from './components/Header';
+export Header, {
+  HeaderContainer,
+  HeaderGlobalAction,
+  HeaderGlobalBar,
+  HeaderMenu,
+  HeaderMenuButton,
+  HeaderMenuItem,
+  HeaderName,
+  HeaderNavigation,
+  HeaderPanel,
+  HeaderSideNavItems,
+} from './components/Header';
 export SideNav from './components/SideNav';
 
 // Dashboard
@@ -71,18 +84,38 @@ export {
 export StatefulPageWizard from './components/PageWizard/StatefulPageWizard';
 
 // Carbon proxy
+export { Accordion, AccordionItem, AccordionSkeleton } from './components/Accordion';
+export { Breadcrumb, BreadcrumbItem, BreadcrumbSkeleton } from './components/Breadcrumb';
+export { ContentSwitcher } from './components/ContentSwitcher';
+export { Icon, IconSkeleton } from './components/Icon';
+export { InlineLoading } from './components/InlineLoading';
+export { Link } from './components/Link';
+export { Tooltip } from './components/Tooltip';
+export { SkeletonText } from './components/SkeletonText';
 export {
-  Accordion,
-  AccordionItem,
-  Breadcrumb,
-  BreadcrumbItem,
+  StructuredListWrapper,
+  StructuredListHead,
+  StructuredListBody,
+  StructuredListRow,
+  StructuredListInput,
+  StructuredListCell,
+} from './components/StructuredList';
+export { Switch } from './components/Switch';
+export { Tab, Tabs, TabContent, TabsSkeleton } from './components/Tabs';
+export {
+  Content,
+  Switcher,
+  SwitcherItem,
+  SwitcherDivider,
+  SkipToContent,
+} from './components/UIShell';
+export {
   Checkbox,
   CodeSnippet,
   ComboBox,
   ModalHeader,
   ModalBody,
   ModalFooter,
-  ContentSwitcher,
   Copy,
   CopyButton,
   DangerButton,
@@ -120,11 +153,8 @@ export {
   FormGroup,
   FormItem,
   FormLabel,
-  Icon,
-  InlineLoading,
-  Link,
   ListItem,
-  Loading,
+  // Loading,
   Modal,
   ModalWrapper,
   MultiSelect,
@@ -151,17 +181,7 @@ export {
   Select,
   SelectItem,
   SelectItemGroup,
-  Switch,
   Slider,
-  StructuredListWrapper,
-  StructuredListHead,
-  StructuredListBody,
-  StructuredListRow,
-  StructuredListInput,
-  StructuredListCell,
-  Tab,
-  TabContent,
-  Tabs,
   Tag,
   TextArea,
   TextInput,
@@ -183,16 +203,11 @@ export {
   ToolbarOption,
   ToolbarDivider,
   ToolbarSearch,
-  Tooltip,
   TooltipDefinition,
   TooltipIcon,
   UnorderedList,
-  SkeletonText,
   SkeletonPlaceholder,
   DataTableSkeleton,
-  AccordionSkeleton,
-  BreadcrumbSkeleton,
-  ButtonSkeleton,
   CheckboxSkeleton,
   CodeSnippetSkeleton,
   DropdownSkeleton,
@@ -204,34 +219,12 @@ export {
   SelectSkeleton,
   SliderSkeleton,
   StructuredListSkeleton,
-  TabsSkeleton,
   TagSkeleton,
   TextAreaSkeleton,
   TextInputSkeleton,
   ToggleSkeleton,
   ToggleSmallSkeleton,
-  IconSkeleton,
   DatePickerSkeleton,
-  // -----------------------
-  // UI Shell proxy exports
-  // -----------------------
-  Content,
-  // TODO Consolidate Header export from Carbon below with our Header export
-  // Header,
-  HeaderContainer,
-  HeaderGlobalAction,
-  HeaderGlobalBar,
-  HeaderMenu,
-  HeaderMenuButton,
-  HeaderMenuItem,
-  HeaderName,
-  HeaderNavigation,
-  HeaderPanel,
-  HeaderSideNavItems,
-  Switcher,
-  SwitcherItem,
-  SwitcherDivider,
-  SkipToContent,
   // TODO Consolidate SideNav export from Carbon below with our SideNav export
   // SideNav,
   SideNavDetails,

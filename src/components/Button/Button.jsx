@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button as CarbonButton, Loading } from 'carbon-components-react';
+import { Button as CarbonButton } from 'carbon-components-react';
 import { ButtonTypes } from 'carbon-components-react/lib/prop-types/types';
 import styled from 'styled-components';
 import { settings } from 'carbon-components';
+
+import Loading from '../Loading';
 
 const { prefix } = settings;
 

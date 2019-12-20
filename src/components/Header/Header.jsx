@@ -4,17 +4,18 @@ import PropTypes from 'prop-types';
 import React, { useState, useCallback } from 'react';
 import { settings } from 'carbon-components';
 
+import { SkipToContent } from '../UIShell';
+
+import HeaderMenu from './HeaderMenu';
+
 import {
   HeaderMenuButton,
   HeaderName,
   HeaderGlobalBar,
   HeaderGlobalAction,
-  SkipToContent,
   HeaderMenuItem,
   HeaderPanel,
-} from '../..';
-
-import HeaderMenu from './HeaderMenu';
+} from '.';
 
 const { prefix: carbonPrefix } = settings;
 

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { iconMinimize } from 'carbon-icons';
 
-import { Icon } from '../..';
+import { Icon } from '../Icon';
 
 import Minimap, { MinimapPropTypes } from './Minimap';
 
