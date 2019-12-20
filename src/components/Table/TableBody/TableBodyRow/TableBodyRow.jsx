@@ -95,7 +95,7 @@ const propTypes = {
   /** I18N label for dismiss */
   dismissText: PropTypes.string,
   /** table toolbar */
-  editBar: PropTypes.oneOf(['buttons', 'toast']),
+  editBar: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -110,7 +110,7 @@ const defaultProps = {
   nestingLevel: 0,
   nestingChildCount: 0,
   options: {},
-  editBar: null,
+  editBar: false,
 };
 
 const StyledTableRow = styled(({ isSelectable, ...others }) => <TableRow {...others} />)`
@@ -386,7 +386,7 @@ const TableBodyRow = ({
     hasRowSelection === 'single'
       ? nestingLevel * 16 - singleSelectionIndicatorWidth
       : nestingLevel * 16;
-  const isCheckboxSelectable = editBar !== 'buttons' ? isSelectable : false;
+  const isCheckboxSelectable = !editBar ? isSelectable : false;
   const rowSelectionCell =
     hasRowSelection === 'multi' ? (
       <TableCell
@@ -439,7 +439,7 @@ const TableBodyRow = ({
             align={align}
             className={`data-table-${align}`}
           >
-            {editBar !== 'buttons' ? (
+            {!editBar ? (
               <StyledNestedSpan nestingOffset={offset}>
                 {col.renderDataFunction ? (
                   col.renderDataFunction({

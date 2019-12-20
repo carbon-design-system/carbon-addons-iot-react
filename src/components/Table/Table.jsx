@@ -347,8 +347,7 @@ const Table = props => {
       !isNil(view.toolbar.search.value) &&
       view.toolbar.search.value !== '');
 
-  /** type of editBar */
-  const [editBar, setEditBar] = useState(null);
+  const [editBar, setEditBar] = useState(false);
 
   const handleGetActiveEditBar = activeEditBar => {
     setEditBar(activeEditBar);

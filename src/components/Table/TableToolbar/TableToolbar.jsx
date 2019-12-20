@@ -187,23 +187,26 @@ const TableToolbar = ({
   },
   getActiveEditBar,
 }) => {
-  const [activeEditBar, setActiveEditBar] = useState(null);
+  const [activeEditBar, setActiveEditBar] = useState(false);
+  const [showAlert, setShowAlert] = useState(false);
   const [isHidingAlert, setIsHidingAlert] = useState(false);
 
   const onToggleEdit = () => {
-    setActiveEditBar('buttons');
+    setActiveEditBar(true);
     onSaveData();
   };
   const onCancelEditAction = () => {
-    setActiveEditBar(null);
+    setActiveEditBar(false);
     onUndoEditData();
   };
   const onSaveEditAction = () => {
-    setActiveEditBar('toast');
+    setActiveEditBar(null);
+    setShowAlert(true);
     setIsHidingAlert(true);
   };
-  const onToastClose = () => {
-    setActiveEditBar(null);
+  const onAlertClose = () => {
+    setActiveEditBar(false);
+    setShowAlert(false);
     setIsHidingAlert(false);
     onUndoEditData();
   };
@@ -219,7 +222,8 @@ const TableToolbar = ({
       let timeoutID;
       if (isHidingAlert) {
         timeoutID = setTimeout(() => {
-          setActiveEditBar(null);
+          setActiveEditBar(false);
+          setShowAlert(false);
           setIsHidingAlert(false);
         }, 4000);
       }
@@ -262,7 +266,7 @@ const TableToolbar = ({
           disabled={isDisabled}
         />
       ) : null}
-      {activeEditBar === 'buttons' ? (
+      {activeEditBar ? (
         <StyledTableToolbarContent>
           <Button className="buttons" kind="ghost" onClick={onCancelEditAction}>
             {i18n.batchCancel}
@@ -271,7 +275,7 @@ const TableToolbar = ({
             {i18n.batchSave}
           </Button>
         </StyledTableToolbarContent>
-      ) : activeEditBar === 'toast' ? (
+      ) : showAlert ? (
         <ToastNotification
           className="toast"
           caption=""
@@ -280,7 +284,7 @@ const TableToolbar = ({
           kind="success"
           lowContrast
           notificationType="toast"
-          onCloseButtonClick={onToastClose}
+          onCloseButtonClick={onAlertClose}
           role="alert"
           subtitle="Click to undo changes"
           timeout={0}

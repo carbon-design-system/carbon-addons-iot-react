@@ -70,7 +70,7 @@ const propTypes = {
   /** lightweight  */
   lightweight: PropTypes.bool,
   i18n: I18NPropTypes,
-  editBar: PropTypes.oneOf(['buttons', 'toast']),
+  editBar: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -86,7 +86,7 @@ const defaultProps = {
   i18n: {
     ...defaultI18NPropTypes,
   },
-  editBar: null,
+  editBar: false,
 };
 
 const StyledCheckboxTableHeader = styled(TableHeader)`
@@ -159,7 +159,7 @@ const TableHead = ({
   const filterBarActive = activeBar === 'filter';
   return (
     <StyledCarbonTableHead lightweight={`${lightweight}`}>
-      {editBar === 'buttons' ? (
+      {editBar ? (
         <TableRow>
           {hasRowSelection === 'multi' ? (
             <StyledCheckboxTableHeader translateWithId={(...args) => tableTranslateWithId(...args)}>

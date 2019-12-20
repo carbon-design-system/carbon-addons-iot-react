@@ -64,7 +64,7 @@ const propTypes = {
       isHidden: PropTypes.bool,
     })
   ).isRequired,
-  editBar: PropTypes.oneOf(['buttons', 'toast']),
+  editBar: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -85,7 +85,7 @@ const defaultProps = {
   hasRowActions: false,
   shouldExpandOnRowClick: false,
   shouldLazyRender: false,
-  editBar: null,
+  editBar: false,
 };
 
 const TableBody = ({
