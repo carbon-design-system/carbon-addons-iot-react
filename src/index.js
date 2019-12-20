@@ -7,7 +7,7 @@ sizeMe.noPlaceholders = true;
 export styles from './styles.scss';
 
 // Components
-export Button from './components/Button';
+export Button, { ButtonSkeleton } from './components/Button';
 export Table from './components/Table';
 export AddCard from './components/AddCard';
 export ComposedModal from './components/ComposedModal';
@@ -29,6 +29,7 @@ export ComposedStructuredList from './components/ComposedStructuredList/Composed
 export ResourceList from './components/ResourceList/ResourceList';
 export FileDrop from './components/FileDrop/FileDrop';
 export PageTitleBar from './components/PageTitleBar/PageTitleBar';
+export Loading from './components/Loading';
 
 // reusable reducers
 export { baseTableReducer } from './components/Table/baseTableReducer';
@@ -124,7 +125,7 @@ export {
   InlineLoading,
   Link,
   ListItem,
-  Loading,
+  // Loading,
   Modal,
   ModalWrapper,
   MultiSelect,
@@ -192,7 +193,6 @@ export {
   DataTableSkeleton,
   AccordionSkeleton,
   BreadcrumbSkeleton,
-  ButtonSkeleton,
   CheckboxSkeleton,
   CodeSnippetSkeleton,
   DropdownSkeleton,
