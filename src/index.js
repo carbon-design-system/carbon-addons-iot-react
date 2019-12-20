@@ -72,9 +72,8 @@ export {
 export StatefulPageWizard from './components/PageWizard/StatefulPageWizard';
 
 // Carbon proxy
+export { Accordion, AccordionItem, AccordionSkeleton } from './components/Accordion';
 export {
-  Accordion,
-  AccordionItem,
   Breadcrumb,
   BreadcrumbItem,
   Checkbox,
@@ -191,7 +190,6 @@ export {
   SkeletonText,
   SkeletonPlaceholder,
   DataTableSkeleton,
-  AccordionSkeleton,
   BreadcrumbSkeleton,
   CheckboxSkeleton,
   CodeSnippetSkeleton,
