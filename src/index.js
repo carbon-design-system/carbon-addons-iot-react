@@ -91,6 +91,19 @@ export { Icon, IconSkeleton } from './components/Icon';
 export { InlineLoading } from './components/InlineLoading';
 export { Link } from './components/Link';
 export { Tooltip } from './components/Tooltip';
+export {
+  ToastNotification,
+  InlineNotification,
+  NotificationActionButton,
+  NotificationButton,
+  NotificationTextDetails,
+} from './components/Notification';
+export {
+  // TODO Consolidate ProgressIndicator export from Carbon below with our ProgressIndicator export
+  // ProgressIndicator,
+  ProgressStep,
+  ProgressIndicatorSkeleton,
+} from './components/ProgressIndicator';
 export { SkeletonText } from './components/SkeletonText';
 export {
   StructuredListWrapper,
@@ -158,20 +171,12 @@ export {
   Modal,
   ModalWrapper,
   MultiSelect,
-  ToastNotification,
-  InlineNotification,
-  NotificationActionButton,
-  NotificationButton,
-  NotificationTextDetails,
   NumberInput,
   OrderedList,
   OverflowMenu,
   OverflowMenuItem,
   Pagination,
   PrimaryButton,
-  // TODO Consolidate ProgressIndicator export from Carbon below with our ProgressIndicator export
-  // ProgressIndicator,
-  ProgressStep,
   RadioButton,
   RadioButtonGroup,
   Search,
@@ -213,7 +218,6 @@ export {
   DropdownSkeleton,
   FileUploaderSkeleton,
   NumberInputSkeleton,
-  ProgressIndicatorSkeleton,
   RadioButtonSkeleton,
   SearchSkeleton,
   SelectSkeleton,

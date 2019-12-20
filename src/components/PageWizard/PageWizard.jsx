@@ -2,8 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { ProgressIndicator } from 'carbon-components-react';
 
-import { InlineNotification, ProgressStep } from '../..';
+import { InlineNotification } from '../Notification';
 import Button from '../Button/Button';
+import { ProgressStep } from '../ProgressIndicator';
 
 const childrenPropType = PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]);
 
