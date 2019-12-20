@@ -1,3 +1,2 @@
 export default from './Button';
-export ButtonSkeleton from 'carbon-components-react/lib/components/Button/Button.Skeleton';
-export { Button as CarbonButton } from 'carbon-components-react';
+export { ButtonSkeleton } from 'carbon-components-react';

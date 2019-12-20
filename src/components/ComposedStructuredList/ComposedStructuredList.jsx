@@ -1,16 +1,16 @@
 import React, { Fragment } from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import Bee32 from '@carbon/icons-react/lib/bee/32';
+import warning from 'warning';
+
 import {
   StructuredListWrapper,
   StructuredListHead,
   StructuredListBody,
   StructuredListRow,
   StructuredListCell,
-} from 'carbon-components-react';
-import PropTypes from 'prop-types';
-import styled from 'styled-components';
-import Bee32 from '@carbon/icons-react/lib/bee/32';
-import warning from 'warning';
-
+} from '../StructuredList';
 import { COLORS } from '../../styles/styles';
 
 const StructuredListWrapperStyled = styled(({ isFixedWidth, ...others }) => (

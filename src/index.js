@@ -10,7 +10,7 @@ export styles from './styles.scss';
 export Button, { ButtonSkeleton } from './components/Button';
 export Table from './components/Table';
 export AddCard from './components/AddCard';
-export ComposedModal from './components/ComposedModal';
+export ComposedModal, { ModalHeader, ModalBody, ModalFooter } from './components/ComposedModal';
 export WizardModal from './components/WizardModal';
 export WizardInline from './components/WizardInline/WizardInline';
 export StatefulWizardInline from './components/WizardInline/StatefulWizardInline';
@@ -85,6 +85,9 @@ export StatefulPageWizard from './components/PageWizard/StatefulPageWizard';
 // Carbon proxy
 export { Accordion, AccordionItem, AccordionSkeleton } from './components/Accordion';
 export { Breadcrumb, BreadcrumbItem, BreadcrumbSkeleton } from './components/Breadcrumb';
+export { Checkbox, CheckboxSkeleton } from './components/Checkbox';
+export { CodeSnippet, CodeSnippetSkeleton } from './components/CodeSnippet';
+export { ComboBox } from './components/ComboBox';
 export { ContentSwitcher } from './components/ContentSwitcher';
 // export {
 // TODO consolidate Carbon's datatable exports below with our table exports
@@ -183,12 +186,6 @@ export {
   SkipToContent,
 } from './components/UIShell';
 export {
-  Checkbox,
-  CodeSnippet,
-  ComboBox,
-  ModalHeader,
-  ModalBody,
-  ModalFooter,
   Copy,
   CopyButton,
   DangerButton,
@@ -232,8 +229,6 @@ export {
   UnorderedList,
   SkeletonPlaceholder,
   DataTableSkeleton,
-  CheckboxSkeleton,
-  CodeSnippetSkeleton,
   DropdownSkeleton,
   FileUploaderSkeleton,
   NumberInputSkeleton,
