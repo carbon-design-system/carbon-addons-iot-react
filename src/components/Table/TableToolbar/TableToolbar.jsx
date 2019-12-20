@@ -188,7 +188,7 @@ const TableToolbar = ({
   getActiveEditBar,
 }) => {
   const [activeEditBar, setActiveEditBar] = useState(null);
-  const [isHidingToast, setIsHidingToast] = useState(false);
+  const [isHidingAlert, setIsHidingAlert] = useState(false);
 
   const onToggleEdit = () => {
     setActiveEditBar('buttons');
@@ -200,11 +200,11 @@ const TableToolbar = ({
   };
   const onSaveEditAction = () => {
     setActiveEditBar('toast');
-    setIsHidingToast(true);
+    setIsHidingAlert(true);
   };
   const onToastClose = () => {
     setActiveEditBar(null);
-    setIsHidingToast(false);
+    setIsHidingAlert(false);
     onUndoEditData();
   };
 
@@ -217,17 +217,17 @@ const TableToolbar = ({
   useEffect(
     () => {
       let timeoutID;
-      if (isHidingToast) {
+      if (isHidingAlert) {
         timeoutID = setTimeout(() => {
           setActiveEditBar(null);
-          setIsHidingToast(false);
+          setIsHidingAlert(false);
         }, 4000);
       }
       return () => {
         clearTimeout(timeoutID);
       };
     },
-    [isHidingToast]
+    [isHidingAlert]
   );
 
   return (
