@@ -4,7 +4,8 @@ import styled from 'styled-components';
 import SizeMe from 'react-sizeme';
 import { settings } from 'carbon-components';
 
-import { Tooltip, SkeletonText } from '../..';
+import { Tooltip } from '../Tooltip';
+import { SkeletonText } from '../SkeletonText';
 import {
   CARD_TITLE_HEIGHT,
   CARD_CONTENT_PADDING,

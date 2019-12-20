@@ -1,6 +1,7 @@
 import { mount } from 'enzyme';
 import React from 'react';
-import { Loading } from 'carbon-components-react';
+
+import { Loading } from '../Loading';
 
 import WizardModal from './WizardModal';
 

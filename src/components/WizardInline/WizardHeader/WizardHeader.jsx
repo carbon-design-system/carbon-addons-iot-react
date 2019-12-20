@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Close20 } from '@carbon/icons-react';
 
 import PageTitleBar from '../../PageTitleBar/PageTitleBar';
-import Button from '../../Button/Button';
+import Button from '../../Button';
 import ProgressIndicator from '../../ProgressIndicator/ProgressIndicator';
 
 class WizardHeader extends Component {

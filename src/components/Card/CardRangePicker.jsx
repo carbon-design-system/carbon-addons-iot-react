@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import EventSchedule from '@carbon/icons-react/lib/event--schedule/20';
 
-import { ToolbarItem, OverflowMenu, OverflowMenuItem } from '../..';
+import { ToolbarItem } from '../Toolbar';
+import { OverflowMenu } from '../OverflowMenu';
+import { OverflowMenuItem } from '../OverflowMenuItem';
 
 const TimeRangeLabel = styled.span`
   font-size: 0.875rem;

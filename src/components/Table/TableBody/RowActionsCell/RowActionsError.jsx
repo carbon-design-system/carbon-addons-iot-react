@@ -2,8 +2,9 @@ import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import Warn from '@carbon/icons-react/lib/warning--alt/16';
 import styled from 'styled-components';
-import { Tooltip, Button } from 'carbon-components-react';
+import { Button } from 'carbon-components-react';
 
+import { Tooltip } from '../../../Tooltip';
 import { RowActionErrorPropTypes } from '../../TablePropTypes';
 
 const StyledSpan = styled.span`

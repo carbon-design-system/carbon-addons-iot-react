@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import { Loading } from '../..';
+import { Loading } from '../Loading';
 
 import Button from './Button';
 

@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import isNil from 'lodash/isNil';
-import { Icon } from 'carbon-components-react';
 import withSize from 'react-sizeme';
 
+import { Icon } from '../Icon';
 import icons from '../../utils/bundledIcons';
 import { CARD_LAYOUTS, CARD_SIZES } from '../../constants/LayoutConstants';
 

@@ -1,9 +1,9 @@
 import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
-import { DataTable } from 'carbon-components-react';
 import VisibilitySensor from 'react-visibility-sensor';
 import pick from 'lodash/pick';
 
+import { DataTable } from '../../DataTable';
 import {
   ExpandedRowsPropTypes,
   TableRowPropTypes,
