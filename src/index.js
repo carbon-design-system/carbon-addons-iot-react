@@ -86,6 +86,7 @@ export StatefulPageWizard from './components/PageWizard/StatefulPageWizard';
 // Carbon proxy
 export { Accordion, AccordionItem, AccordionSkeleton } from './components/Accordion';
 export { Breadcrumb, BreadcrumbItem, BreadcrumbSkeleton } from './components/Breadcrumb';
+export { Icon, IconSkeleton } from './components/Icon';
 export { Tooltip } from './components/Tooltip';
 export { SkeletonText } from './components/SkeletonText';
 export {
@@ -140,7 +141,6 @@ export {
   FormGroup,
   FormItem,
   FormLabel,
-  Icon,
   InlineLoading,
   Link,
   ListItem,
@@ -225,7 +225,6 @@ export {
   TextInputSkeleton,
   ToggleSkeleton,
   ToggleSmallSkeleton,
-  IconSkeleton,
   DatePickerSkeleton,
   // TODO Consolidate SideNav export from Carbon below with our SideNav export
   // SideNav,
