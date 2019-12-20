@@ -1,20 +1,17 @@
-import {
-  ComposedModal as CarbonComposedModal,
-  ModalBody,
-  ModalFooter,
-  ModalHeader,
-  Loading,
-  InlineNotification,
-} from 'carbon-components-react';
 import PropTypes from 'prop-types';
 import React, { Fragment } from 'react';
 import classNames from 'classnames';
 import styled from 'styled-components';
 import { rem } from 'polished';
+import { ComposedModal as CarbonComposedModal } from 'carbon-components-react';
 
+import { InlineNotification } from '../Notification';
+import { Loading } from '../Loading';
 import { PADDING } from '../../styles/styles';
 import { scrollErrorIntoView } from '../../utils/componentUtilityFunctions';
 import Button from '../Button';
+
+import { ModalBody, ModalFooter, ModalHeader } from '.';
 
 const StyledModal = styled(CarbonComposedModal)`
    {

@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { DataTable, Checkbox } from 'carbon-components-react';
 import isNil from 'lodash/isNil';
 import styled from 'styled-components';
 import classnames from 'classnames';
 
+import { Checkbox } from '../../Checkbox';
+import { DataTable } from '../../DataTable';
 import { TableColumnsPropTypes, I18NPropTypes, defaultI18NPropTypes } from '../TablePropTypes';
 import TableCellRenderer from '../TableCellRenderer/TableCellRenderer';
 import { tableTranslateWithId } from '../../../utils/componentUtilityFunctions';

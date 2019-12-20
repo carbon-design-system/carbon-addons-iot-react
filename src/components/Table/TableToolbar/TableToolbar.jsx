@@ -2,10 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import IconColumnSelector from '@carbon/icons-react/lib/column/20';
 import IconFilter from '@carbon/icons-react/lib/filter/20';
-import { DataTable, Button } from 'carbon-components-react';
+import { Button } from 'carbon-components-react';
 import Download16 from '@carbon/icons-react/lib/download/16';
 import styled from 'styled-components';
 
+import { DataTable } from '../../DataTable';
 import { TableSearchPropTypes, defaultI18NPropTypes } from '../TablePropTypes';
 import { tableTranslateWithId } from '../../../utils/componentUtilityFunctions';
 // import { COLORS } from '../../../styles/styles';

@@ -1,15 +1,13 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import {
-  Button,
-  DataTable,
-  OverflowMenu,
-  OverflowMenuItem,
-  Icon,
-  Loading,
-} from 'carbon-components-react';
+import { Button } from 'carbon-components-react';
 import styled from 'styled-components';
 
+import { DataTable } from '../../../DataTable';
+import { OverflowMenu } from '../../../OverflowMenu';
+import { OverflowMenuItem } from '../../../OverflowMenuItem';
+import { Icon } from '../../../Icon';
+import { Loading } from '../../../Loading';
 import { RowActionPropTypes, RowActionErrorPropTypes } from '../../TablePropTypes';
 import { COLORS } from '../../../../styles/styles';
 

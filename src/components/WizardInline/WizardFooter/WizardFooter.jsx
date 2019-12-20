@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import Button from '../../Button/Button';
+import Button from '../../Button';
 
 const StyledFooterButtons = styled.div`
   display: flex;

@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { Application32, Group32 } from '@carbon/icons-react';
 
-import { ClickableTile } from '../..';
+import { ClickableTile } from '../Tile';
 import FullWidthWrapper from '../../internal/FullWidthWrapper';
 import { getIntervalChartData, tableColumns, tableData } from '../../utils/sample';
 import { CARD_SIZES, CARD_TYPES } from '../../constants/LayoutConstants';

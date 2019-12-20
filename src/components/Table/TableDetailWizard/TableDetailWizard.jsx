@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { InlineNotification } from 'carbon-components-react';
 
+import { InlineNotification } from '../../Notification';
 import WizardFooter from '../../WizardInline/WizardFooter/WizardFooter';
 import WizardContent from '../../WizardInline/WizardContent/WizardContent';
 import { COLORS } from '../../../styles/styles';

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import { Filename, FileUploaderButton } from '../..';
+import { Filename, FileUploaderButton } from '../FileUploader';
 import { COLORS } from '../../styles/styles';
 
 const Span = styled.span`

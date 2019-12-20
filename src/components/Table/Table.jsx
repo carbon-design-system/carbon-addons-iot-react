@@ -2,11 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import merge from 'lodash/merge';
 import pick from 'lodash/pick';
-import { Pagination, Table as CarbonTable, TableContainer } from 'carbon-components-react';
+import { Table as CarbonTable, TableContainer } from 'carbon-components-react';
 import isNil from 'lodash/isNil';
 import styled from 'styled-components';
 import sizeMe from 'react-sizeme';
 
+import { Pagination } from '../Pagination';
 import { defaultFunction } from '../../utils/componentUtilityFunctions';
 
 import {

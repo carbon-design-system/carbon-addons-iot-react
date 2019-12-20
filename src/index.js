@@ -10,7 +10,8 @@ export styles from './styles.scss';
 export Button, { ButtonSkeleton } from './components/Button';
 export Table from './components/Table';
 export AddCard from './components/AddCard';
-export ComposedModal from './components/ComposedModal';
+// ModalHeader, ModalBody, ModalFooter are Carbon proxy
+export ComposedModal, { ModalHeader, ModalBody, ModalFooter } from './components/ComposedModal';
 export WizardModal from './components/WizardModal';
 export WizardInline from './components/WizardInline/WizardInline';
 export StatefulWizardInline from './components/WizardInline/StatefulWizardInline';
@@ -29,7 +30,6 @@ export ComposedStructuredList from './components/ComposedStructuredList/Composed
 export ResourceList from './components/ResourceList/ResourceList';
 export FileDrop from './components/FileDrop/FileDrop';
 export PageTitleBar from './components/PageTitleBar/PageTitleBar';
-export Loading from './components/Loading';
 
 // reusable reducers
 export { baseTableReducer } from './components/Table/baseTableReducer';
@@ -42,7 +42,18 @@ export PageHero from './components/Page/PageHero';
 export PageWorkArea from './components/Page/PageWorkArea';
 export EditPage from './components/Page/EditPage';
 export NavigationBar from './components/NavigationBar/NavigationBar';
-export Header from './components/Header';
+export Header, {
+  HeaderContainer,
+  HeaderGlobalAction,
+  HeaderGlobalBar,
+  HeaderMenu,
+  HeaderMenuButton,
+  HeaderMenuItem,
+  HeaderName,
+  HeaderNavigation,
+  HeaderPanel,
+  HeaderSideNavItems,
+} from './components/Header';
 export SideNav from './components/SideNav';
 
 // Dashboard
@@ -74,163 +85,91 @@ export StatefulPageWizard from './components/PageWizard/StatefulPageWizard';
 
 // Carbon proxy
 export { Accordion, AccordionItem, AccordionSkeleton } from './components/Accordion';
+export { Breadcrumb, BreadcrumbItem, BreadcrumbSkeleton } from './components/Breadcrumb';
+export { Checkbox, CheckboxSkeleton } from './components/Checkbox';
+export { CodeSnippet, CodeSnippetSkeleton } from './components/CodeSnippet';
+export { ComboBox } from './components/ComboBox';
+export { ContentSwitcher } from './components/ContentSwitcher';
+export { Copy } from './components/Copy';
+export { CopyButton } from './components/CopyButton';
+export { DangerButton } from './components/DangerButton';
+// export {
+// TODO consolidate Carbon's datatable exports below with our table exports
+// default as DataTable,
+// Table,
+// TableActionList,
+// TableBatchAction,
+// TableBatchActions,
+// TableBody,
+// TableCell,
+// TableContainer,
+// TableExpandHeader,
+// TableExpandRow,
+// TableExpandedRow,
+// TableHead,
+// TableHeader,
+// TableRow,
+// TableSelectAll,
+// TableSelectRow,
+// TableToolbar,
+// TableToolbarAction,
+// TableToolbarContent,
+// TableToolbarSearch,
+// TableToolbarMenu,} from './components/DataTable;
+export { DataTableSkeleton } from './components/DataTableSkeleton';
+export { DatePicker, DatePickerSkeleton } from './components/DatePicker';
+export { DatePickerInput } from './components/DatePickerInput';
+export { Dropdown, DropdownSkeleton } from './components/Dropdown';
 export {
-  Breadcrumb,
-  BreadcrumbItem,
-  Checkbox,
-  CodeSnippet,
-  ComboBox,
-  ModalHeader,
-  ModalBody,
-  ModalFooter,
-  ContentSwitcher,
-  Copy,
-  CopyButton,
-  DangerButton,
-  // TODO consolidate Carbon's datatable exports below with our table exports
-  // default as DataTable,
-  // Table,
-  // TableActionList,
-  // TableBatchAction,
-  // TableBatchActions,
-  // TableBody,
-  // TableCell,
-  // TableContainer,
-  // TableExpandHeader,
-  // TableExpandRow,
-  // TableExpandedRow,
-  // TableHead,
-  // TableHeader,
-  // TableRow,
-  // TableSelectAll,
-  // TableSelectRow,
-  // TableToolbar,
-  // TableToolbarAction,
-  // TableToolbarContent,
-  // TableToolbarSearch,
-  // TableToolbarMenu,
-  DatePicker,
-  DatePickerInput,
-  Dropdown,
   Filename,
   FileUploader,
   FileUploaderButton,
   FileUploaderDropContainer,
   FileUploaderItem,
-  Form,
-  FormGroup,
-  FormItem,
-  FormLabel,
-  Icon,
-  InlineLoading,
-  Link,
-  ListItem,
-  // Loading,
-  Modal,
-  ModalWrapper,
-  MultiSelect,
+  FileUploaderSkeleton,
+} from './components/FileUploader';
+export { Form } from './components/Form';
+export { FormGroup } from './components/FormGroup';
+export { FormItem } from './components/FormItem';
+export { FormLabel } from './components/FormLabel';
+export { Icon, IconSkeleton } from './components/Icon';
+export { InlineLoading } from './components/InlineLoading';
+export { Link } from './components/Link';
+export { ListItem } from './components/ListItem';
+export { Loading } from './components/Loading';
+export { Modal } from './components/Modal';
+export { ModalWrapper } from './components/ModalWrapper';
+export { MultiSelect } from './components/MultiSelect';
+export {
   ToastNotification,
   InlineNotification,
   NotificationActionButton,
   NotificationButton,
   NotificationTextDetails,
-  NumberInput,
-  OrderedList,
-  OverflowMenu,
-  OverflowMenuItem,
-  Pagination,
-  PrimaryButton,
+} from './components/Notification';
+export { NumberInput, NumberInputSkeleton } from './components/NumberInput';
+export { OrderedList } from './components/OrderedList';
+export { OverflowMenu } from './components/OverflowMenu';
+export { OverflowMenuItem } from './components/OverflowMenuItem';
+export { Pagination } from './components/Pagination';
+export { PrimaryButton } from './components/PrimaryButton';
+export {
   // TODO Consolidate ProgressIndicator export from Carbon below with our ProgressIndicator export
   // ProgressIndicator,
   ProgressStep,
-  RadioButton,
-  RadioButtonGroup,
-  Search,
-  SearchFilterButton,
-  SearchLayoutButton,
-  SecondaryButton,
-  Select,
-  SelectItem,
-  SelectItemGroup,
-  Switch,
-  Slider,
-  StructuredListWrapper,
-  StructuredListHead,
-  StructuredListBody,
-  StructuredListRow,
-  StructuredListInput,
-  StructuredListCell,
-  Tab,
-  TabContent,
-  Tabs,
-  Tag,
-  TextArea,
-  TextInput,
-  Tile,
-  ClickableTile,
-  SelectableTile,
-  ExpandableTile,
-  TileAboveTheFoldContent,
-  TileBelowTheFoldContent,
-  RadioTile,
-  TileGroup,
-  TimePicker,
-  TimePickerSelect,
-  Toggle,
-  ToggleSmall,
-  Toolbar,
-  ToolbarItem,
-  ToolbarTitle,
-  ToolbarOption,
-  ToolbarDivider,
-  ToolbarSearch,
-  Tooltip,
-  TooltipDefinition,
-  TooltipIcon,
-  UnorderedList,
-  SkeletonText,
-  SkeletonPlaceholder,
-  DataTableSkeleton,
-  BreadcrumbSkeleton,
-  CheckboxSkeleton,
-  CodeSnippetSkeleton,
-  DropdownSkeleton,
-  FileUploaderSkeleton,
-  NumberInputSkeleton,
   ProgressIndicatorSkeleton,
-  RadioButtonSkeleton,
-  SearchSkeleton,
-  SelectSkeleton,
-  SliderSkeleton,
-  StructuredListSkeleton,
-  TabsSkeleton,
-  TagSkeleton,
-  TextAreaSkeleton,
-  TextInputSkeleton,
-  ToggleSkeleton,
-  ToggleSmallSkeleton,
-  IconSkeleton,
-  DatePickerSkeleton,
-  // -----------------------
-  // UI Shell proxy exports
-  // -----------------------
-  Content,
-  // TODO Consolidate Header export from Carbon below with our Header export
-  // Header,
-  HeaderContainer,
-  HeaderGlobalAction,
-  HeaderGlobalBar,
-  HeaderMenu,
-  HeaderMenuButton,
-  HeaderMenuItem,
-  HeaderName,
-  HeaderNavigation,
-  HeaderPanel,
-  HeaderSideNavItems,
-  Switcher,
-  SwitcherItem,
-  SwitcherDivider,
-  SkipToContent,
+} from './components/ProgressIndicator';
+export { RadioButton, RadioButtonSkeleton } from './components/RadioButton';
+export { RadioButtonGroup } from './components/RadioButtonGroup';
+export { RadioTile } from './components/RadioTile';
+export { Search, SearchSkeleton } from './components/Search';
+export { SearchFilterButton } from './components/SearchFilterButton';
+export { SearchLayoutButton } from './components/SearchLayoutButton';
+export { SecondaryButton } from './components/SecondaryButton';
+export { Select, SelectSkeleton } from './components/Select';
+export { SelectItem } from './components/SelectItem';
+export { SelectItemGroup } from './components/SelectItemGroup';
+export {
   // TODO Consolidate SideNav export from Carbon below with our SideNav export
   // SideNav,
   SideNavDetails,
@@ -244,9 +183,58 @@ export {
   SideNavMenu,
   SideNavMenuItem,
   SideNavSwitcher,
-} from 'carbon-components-react';
-export { validateDashboardJSON } from './utils/schemas/validators';
+} from './components/SideNav';
+export { SkeletonPlaceholder } from './components/SkeletonPlaceholder';
+export { SkeletonText } from './components/SkeletonText';
+export { Slider, SliderSkeleton } from './components/Slider';
+export {
+  StructuredListWrapper,
+  StructuredListHead,
+  StructuredListBody,
+  StructuredListRow,
+  StructuredListInput,
+  StructuredListCell,
+  StructuredListSkeleton,
+} from './components/StructuredList';
+export { Switch } from './components/Switch';
+export { Tab, Tabs, TabContent, TabsSkeleton } from './components/Tabs';
+export { Tag, TagSkeleton } from './components/Tag';
+export { TextArea, TextAreaSkeleton } from './components/TextArea';
+export { TextInput, TextInputSkeleton } from './components/TextInput';
+export { TileGroup } from './components/TileGroup';
+export {
+  Tile,
+  ClickableTile,
+  SelectableTile,
+  ExpandableTile,
+  TileAboveTheFoldContent,
+  TileBelowTheFoldContent,
+} from './components/Tile';
+export { TimePicker } from './components/TimePicker';
+export { TimePickerSelect } from './components/TimePickerSelect';
+export { Toggle, ToggleSkeleton } from './components/Toggle';
+export { ToggleSmall, ToggleSmallSkeleton } from './components/ToggleSmall';
+export { ToolbarSearch } from './components/ToolbarSearch';
+export {
+  Toolbar,
+  ToolbarItem,
+  ToolbarTitle,
+  ToolbarOption,
+  ToolbarDivider,
+} from './components/Toolbar';
+export { Tooltip } from './components/Tooltip';
+export { TooltipDefinition } from './components/TooltipDefinition';
+export { TooltipIcon } from './components/TooltipIcon';
+export {
+  Content,
+  Switcher,
+  SwitcherItem,
+  SwitcherDivider,
+  SkipToContent,
+} from './components/UIShell';
+export { UnorderedList } from './components/UnorderedList';
 
+export { validateDashboardJSON } from './utils/schemas/validators';
 export {
   determineCardRange,
   determineMaxValueCardAttributeCount,

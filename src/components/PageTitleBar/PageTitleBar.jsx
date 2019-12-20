@@ -2,8 +2,11 @@ import PropTypes from 'prop-types';
 import React, { Fragment } from 'react';
 import classNames from 'classnames';
 import { Information20, Edit20 } from '@carbon/icons-react';
-import { Breadcrumb, BreadcrumbItem, Tooltip, SkeletonText, Tabs } from 'carbon-components-react';
 
+import { Tabs } from '../Tabs';
+import { SkeletonText } from '../SkeletonText';
+import { Breadcrumb, BreadcrumbItem } from '../Breadcrumb';
+import { Tooltip } from '../Tooltip';
 import deprecate from '../../internal/deprecate';
 import Button from '../Button';
 
