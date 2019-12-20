@@ -34,7 +34,8 @@ const Breadcrumb = props => {
     useDefaults: false,
   });
   const [overflowIndex, setOverflowIndex] = useState(0);
-  console.log('rise obeserver: ', containerWidth);
+  const [truncate, setTruncate] = useState(false);
+  // console.log('rise obeserver: ', containerWidth);
 
   const childRef = React.Children.map(children, useRef);
   const childrenWithRef = React.Children.map(children, (child, index) =>
@@ -82,16 +83,20 @@ const Breadcrumb = props => {
       // despite collapsing all items into overflow, the container is still too small
       // we should begin to ellipsis the first/last items
       if (containerWidth <= mutableTotalBreadcrumbItemsWidth) {
-        setOverflowIndex(-1);
+        // setOverflowIndex(-1);
+        setTruncate(true);
       }
+
+      console.log('container width: ', containerWidth);
+      console.log('mutableTotalBreadcrumbItemsWidth: ', mutableTotalBreadcrumbItemsWidth);
     }
   }, [
-    containerWidth,
-    totalBreadcrumbItemsWidth,
     children,
-    breadcrumbItemsWidth,
-    useResizeObserver,
     overflowIndex,
+    containerWidth,
+    useResizeObserver,
+    breadcrumbItemsWidth,
+    totalBreadcrumbItemsWidth,
   ]);
 
   if (useResizeObserver) {
@@ -102,12 +107,11 @@ const Breadcrumb = props => {
             <CarbonBreadcrumb
               className={classNames(className, {
                 [`${prefix}--breadcrumb-item--hidden`]: typeof containerWidth === 'undefined',
-                [`${prefix}--breadcrumb--truncate`]: overflowIndex === -1,
+                [`${prefix}--breadcrumb--truncate`]: truncate === true, // overflowIndex === -1,
               })}
               {...other}
             >
               {childrenWithRef[0]}
-              {/* TODO: use carbon icon and icon class to set */}
               <span className={`${prefix}--breadcrumb-overflow`}>
                 <CarbonOverflowMenu renderIcon={OverflowMenuHorizaontal20}>
                   {React.Children.map(childrenWithRef, (child, i) => {
@@ -118,7 +122,7 @@ const Breadcrumb = props => {
                   })}
                 </CarbonOverflowMenu>
               </span>
-              {overflowIndex === -1
+              {truncate === true // overflowIndex === -1
                 ? childrenWithRef[childrenWithRef.length - 1]
                 : childrenWithRef.slice(overflowIndex + 1, childrenWithRef.length)}
             </CarbonBreadcrumb>
