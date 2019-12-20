@@ -86,6 +86,7 @@ export StatefulPageWizard from './components/PageWizard/StatefulPageWizard';
 // Carbon proxy
 export { Accordion, AccordionItem, AccordionSkeleton } from './components/Accordion';
 export { Breadcrumb, BreadcrumbItem, BreadcrumbSkeleton } from './components/Breadcrumb';
+export { Tooltip } from './components/Tooltip';
 export {
   Content,
   Switcher,
@@ -201,7 +202,6 @@ export {
   ToolbarOption,
   ToolbarDivider,
   ToolbarSearch,
-  Tooltip,
   TooltipDefinition,
   TooltipIcon,
   UnorderedList,
