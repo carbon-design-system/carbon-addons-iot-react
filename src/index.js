@@ -42,7 +42,18 @@ export PageHero from './components/Page/PageHero';
 export PageWorkArea from './components/Page/PageWorkArea';
 export EditPage from './components/Page/EditPage';
 export NavigationBar from './components/NavigationBar/NavigationBar';
-export Header from './components/Header';
+export Header, {
+  HeaderContainer,
+  HeaderGlobalAction,
+  HeaderGlobalBar,
+  HeaderMenu,
+  HeaderMenuButton,
+  HeaderMenuItem,
+  HeaderName,
+  HeaderNavigation,
+  HeaderPanel,
+  HeaderSideNavItems,
+} from './components/Header';
 export SideNav from './components/SideNav';
 
 // Dashboard
@@ -215,16 +226,6 @@ export {
   Content,
   // TODO Consolidate Header export from Carbon below with our Header export
   // Header,
-  HeaderContainer,
-  HeaderGlobalAction,
-  HeaderGlobalBar,
-  HeaderMenu,
-  HeaderMenuButton,
-  HeaderMenuItem,
-  HeaderName,
-  HeaderNavigation,
-  HeaderPanel,
-  HeaderSideNavItems,
   Switcher,
   SwitcherItem,
   SwitcherDivider,
