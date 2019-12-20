@@ -1,6 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { DataTable } from 'carbon-components-react';
+
+import { DataTable } from '../../DataTable';
 
 import TableHead from './TableHead';
 

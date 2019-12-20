@@ -115,13 +115,26 @@ export { CopyButton } from './components/CopyButton';
 // TableToolbarMenu,} from './components/DataTable;
 export { DatePicker, DatePickerSkeleton } from './components/DatePicker';
 export { DatePickerInput } from './components/DatePickerInput';
+export { Dropdown, DropdownSkeleton } from './components/Dropdown';
+export {
+  Filename,
+  FileUploader,
+  FileUploaderButton,
+  FileUploaderDropContainer,
+  FileUploaderItem,
+  FileUploaderSkeleton,
+} from './components/FileUploader';
 export { Form } from './components/Form';
 export { FormGroup } from './components/FormGroup';
 export { FormItem } from './components/FormItem';
+export { FormLabel } from './components/FormLabel';
 export { Icon, IconSkeleton } from './components/Icon';
 export { InlineLoading } from './components/InlineLoading';
 export { Link } from './components/Link';
 export { Loading } from './components/Loading';
+export { Modal } from './components/Modal';
+export { ModalWrapper } from './components/ModalWrapper';
+export { MultiSelect } from './components/MultiSelect';
 export {
   ToastNotification,
   InlineNotification,
@@ -129,15 +142,22 @@ export {
   NotificationButton,
   NotificationTextDetails,
 } from './components/Notification';
+export { NumberInput, NumberInputSkeleton } from './components/NumberInput';
+export { OrderedList } from './components/OrderedList';
 export { OverflowMenu } from './components/OverflowMenu';
 export { OverflowMenuItem } from './components/OverflowMenuItem';
+export { Pagination } from './components/Pagination';
 export {
   // TODO Consolidate ProgressIndicator export from Carbon below with our ProgressIndicator export
   // ProgressIndicator,
   ProgressStep,
   ProgressIndicatorSkeleton,
 } from './components/ProgressIndicator';
+export { RadioButton } from './components/RadioButton';
+export { RadioButtonGroup } from './components/RadioButtonGroup';
 export { RadioTile } from './components/RadioTile';
+export { Search } from './components/Search';
+export { Select, SelectSkeleton } from './components/Select';
 export {
   // TODO Consolidate SideNav export from Carbon below with our SideNav export
   // SideNav,
@@ -153,7 +173,9 @@ export {
   SideNavMenuItem,
   SideNavSwitcher,
 } from './components/SideNav';
+export { SkeletonPlaceholder } from './components/SkeletonPlaceholder';
 export { SkeletonText } from './components/SkeletonText';
+export { Slider, SliderSkeleton } from './components/Slider';
 export {
   StructuredListWrapper,
   StructuredListHead,
@@ -191,31 +213,13 @@ export {
 export {
   Copy,
   DangerButton,
-  Dropdown,
-  Filename,
-  FileUploader,
-  FileUploaderButton,
-  FileUploaderDropContainer,
-  FileUploaderItem,
-  FormLabel,
   ListItem,
-  Modal,
-  ModalWrapper,
-  MultiSelect,
-  NumberInput,
-  OrderedList,
-  Pagination,
   PrimaryButton,
-  RadioButton,
-  RadioButtonGroup,
-  Search,
   SearchFilterButton,
   SearchLayoutButton,
   SecondaryButton,
-  Select,
   SelectItem,
   SelectItemGroup,
-  Slider,
   Tag,
   TextArea,
   TileGroup,
@@ -227,15 +231,9 @@ export {
   TooltipDefinition,
   TooltipIcon,
   UnorderedList,
-  SkeletonPlaceholder,
   DataTableSkeleton,
-  DropdownSkeleton,
-  FileUploaderSkeleton,
-  NumberInputSkeleton,
   RadioButtonSkeleton,
   SearchSkeleton,
-  SelectSkeleton,
-  SliderSkeleton,
   StructuredListSkeleton,
   TagSkeleton,
   TextAreaSkeleton,

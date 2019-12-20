@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { DataTable, SkeletonText } from 'carbon-components-react';
 import styled from 'styled-components';
 
+import { DataTable } from '../../DataTable';
+import { SkeletonText } from '../../SkeletonText';
 import { COLORS } from '../../../styles/styles';
 
 const { TableBody, TableCell, TableRow } = DataTable;

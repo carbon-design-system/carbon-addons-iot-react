@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { DragDropContext } from 'react-dnd';
 import HTML5Backend from 'react-dnd-html5-backend';
-import { DataTable, Button } from 'carbon-components-react';
+import { Button } from 'carbon-components-react';
 import styled from 'styled-components';
 import { Settings16 } from '@carbon/icons-react';
 
+import { DataTable } from '../../../DataTable';
 import { defaultFunction } from '../../../../utils/componentUtilityFunctions';
 import { defaultI18NPropTypes } from '../../TablePropTypes';
 import ColumnHeaderSelect from '../ColumnHeaderSelect/ColumnHeaderSelect';

@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { DataTable, Checkbox } from 'carbon-components-react';
 import styled from 'styled-components';
 import { settings } from 'carbon-components';
 
+import { DataTable } from '../../../DataTable';
+import { Checkbox } from '../../../Checkbox';
 import RowActionsCell from '../RowActionsCell/RowActionsCell';
 import TableCellRenderer from '../../TableCellRenderer/TableCellRenderer';
 import {
