@@ -167,6 +167,13 @@ export {
   TileAboveTheFoldContent,
   TileBelowTheFoldContent,
 } from './components/Tile';
+export {
+  Toolbar,
+  ToolbarItem,
+  ToolbarTitle,
+  ToolbarOption,
+  ToolbarDivider,
+} from './components/Toolbar';
 export { Tooltip } from './components/Tooltip';
 export {
   Content,
@@ -219,11 +226,6 @@ export {
   TimePickerSelect,
   Toggle,
   ToggleSmall,
-  Toolbar,
-  ToolbarItem,
-  ToolbarTitle,
-  ToolbarOption,
-  ToolbarDivider,
   ToolbarSearch,
   TooltipDefinition,
   TooltipIcon,

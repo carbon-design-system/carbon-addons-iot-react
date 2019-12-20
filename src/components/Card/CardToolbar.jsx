@@ -4,13 +4,13 @@ import omit from 'lodash/omit';
 import styled from 'styled-components';
 import Close16 from '@carbon/icons-react/lib/close/16';
 import Popup20 from '@carbon/icons-react/lib/popup/20';
-import { Button } from 'carbon-components-react';
 
+import { CarbonButton } from '../Button';
 import { Toolbar, ToolbarItem, OverflowMenu, OverflowMenuItem } from '../..';
 
 import CardRangePicker, { CardRangePickerPropTypes } from './CardRangePicker';
 
-const TinyButton = styled(Button)`
+const TinyButton = styled(CarbonButton)`
   &.bx--btn > svg {
     margin: 0;
   }
