@@ -87,6 +87,7 @@ export StatefulPageWizard from './components/PageWizard/StatefulPageWizard';
 export { Accordion, AccordionItem, AccordionSkeleton } from './components/Accordion';
 export { Breadcrumb, BreadcrumbItem, BreadcrumbSkeleton } from './components/Breadcrumb';
 export { Tooltip } from './components/Tooltip';
+export { SkeletonText } from './components/SkeletonText';
 export {
   Content,
   Switcher,
@@ -205,7 +206,6 @@ export {
   TooltipDefinition,
   TooltipIcon,
   UnorderedList,
-  SkeletonText,
   SkeletonPlaceholder,
   DataTableSkeleton,
   CheckboxSkeleton,
