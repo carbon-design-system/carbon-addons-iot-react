@@ -13,9 +13,11 @@ import { action } from '@storybook/addon-actions';
 import { withKnobs, boolean, select, text } from '@storybook/addon-knobs';
 import { withReadme } from 'storybook-readme';
 
-import { OverflowMenu, OverflowMenuItem } from '../../index';
+import { OverflowMenuItem } from '../OverflowMenuItem';
 
 import OverflowREADME from './README.md';
+
+import { OverflowMenu } from '.';
 
 const directions = {
   'Bottom of the trigger button (bottom)': 'bottom',

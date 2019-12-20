@@ -100,6 +100,8 @@ export {
   NotificationButton,
   NotificationTextDetails,
 } from './components/Notification';
+export { OverflowMenu } from './components/OverflowMenu';
+export { OverflowMenuItem } from './components/OverflowMenuItem';
 export {
   // TODO Consolidate ProgressIndicator export from Carbon below with our ProgressIndicator export
   // ProgressIndicator,
@@ -189,8 +191,6 @@ export {
   MultiSelect,
   NumberInput,
   OrderedList,
-  OverflowMenu,
-  OverflowMenuItem,
   Pagination,
   PrimaryButton,
   RadioButton,
