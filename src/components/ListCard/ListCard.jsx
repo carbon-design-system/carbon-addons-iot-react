@@ -2,14 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
+import { InlineLoading } from '../InlineLoading';
+import { Link } from '../Link';
 import {
-  InlineLoading,
   StructuredListWrapper,
   StructuredListBody,
   StructuredListRow,
   StructuredListCell,
-  Link,
-} from '../..';
+} from '../StructuredList';
 import { CARD_CONTENT_PADDING } from '../../constants/LayoutConstants';
 import { CardPropTypes } from '../../constants/PropTypes';
 import Card from '../Card/Card';

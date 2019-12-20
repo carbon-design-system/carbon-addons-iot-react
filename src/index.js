@@ -88,8 +88,17 @@ export { Accordion, AccordionItem, AccordionSkeleton } from './components/Accord
 export { Breadcrumb, BreadcrumbItem, BreadcrumbSkeleton } from './components/Breadcrumb';
 export { Icon, IconSkeleton } from './components/Icon';
 export { InlineLoading } from './components/InlineLoading';
+export { Link } from './components/Link';
 export { Tooltip } from './components/Tooltip';
 export { SkeletonText } from './components/SkeletonText';
+export {
+  StructuredListWrapper,
+  StructuredListHead,
+  StructuredListBody,
+  StructuredListRow,
+  StructuredListInput,
+  StructuredListCell,
+} from './components/StructuredList';
 export {
   Content,
   Switcher,
@@ -142,7 +151,6 @@ export {
   FormGroup,
   FormItem,
   FormLabel,
-  Link,
   ListItem,
   // Loading,
   Modal,
@@ -173,12 +181,6 @@ export {
   SelectItemGroup,
   Switch,
   Slider,
-  StructuredListWrapper,
-  StructuredListHead,
-  StructuredListBody,
-  StructuredListRow,
-  StructuredListInput,
-  StructuredListCell,
   Tab,
   TabContent,
   Tabs,
