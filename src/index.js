@@ -87,6 +87,7 @@ export StatefulPageWizard from './components/PageWizard/StatefulPageWizard';
 export { Accordion, AccordionItem, AccordionSkeleton } from './components/Accordion';
 export { Breadcrumb, BreadcrumbItem, BreadcrumbSkeleton } from './components/Breadcrumb';
 export { Icon, IconSkeleton } from './components/Icon';
+export { InlineLoading } from './components/InlineLoading';
 export { Tooltip } from './components/Tooltip';
 export { SkeletonText } from './components/SkeletonText';
 export {
@@ -141,7 +142,6 @@ export {
   FormGroup,
   FormItem,
   FormLabel,
-  InlineLoading,
   Link,
   ListItem,
   // Loading,
