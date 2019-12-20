@@ -4,7 +4,8 @@ import styled from 'styled-components';
 import Info from '@carbon/icons-react/lib/information/20';
 import warning from 'warning';
 
-import { Breadcrumb, BreadcrumbItem, Tooltip, SkeletonText } from '../..';
+import { Breadcrumb, BreadcrumbItem } from '../Breadcrumb';
+import { Tooltip, SkeletonText } from '../..';
 
 export const HeroPropTypes = {
   /** Title of the page  */

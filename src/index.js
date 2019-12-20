@@ -7,7 +7,7 @@ sizeMe.noPlaceholders = true;
 export styles from './styles.scss';
 
 // Components
-export Button from './components/Button';
+export Button, { ButtonSkeleton } from './components/Button';
 export Table from './components/Table';
 export AddCard from './components/AddCard';
 export ComposedModal from './components/ComposedModal';
@@ -29,6 +29,7 @@ export ComposedStructuredList from './components/ComposedStructuredList/Composed
 export ResourceList from './components/ResourceList/ResourceList';
 export FileDrop from './components/FileDrop/FileDrop';
 export PageTitleBar from './components/PageTitleBar/PageTitleBar';
+export Loading from './components/Loading';
 
 // reusable reducers
 export { baseTableReducer } from './components/Table/baseTableReducer';
@@ -39,6 +40,7 @@ export * as tableActions from './components/Table/tableActionCreators';
 // Page related helpers
 export PageHero from './components/Page/PageHero';
 export PageWorkArea from './components/Page/PageWorkArea';
+export EditPage from './components/Page/EditPage';
 export NavigationBar from './components/NavigationBar/NavigationBar';
 export Header from './components/Header';
 export SideNav from './components/SideNav';
@@ -71,11 +73,9 @@ export {
 export StatefulPageWizard from './components/PageWizard/StatefulPageWizard';
 
 // Carbon proxy
+export { Accordion, AccordionItem, AccordionSkeleton } from './components/Accordion';
+export { Breadcrumb, BreadcrumbItem, BreadcrumbSkeleton } from './components/Breadcrumb';
 export {
-  Accordion,
-  AccordionItem,
-  Breadcrumb,
-  BreadcrumbItem,
   Checkbox,
   CodeSnippet,
   ComboBox,
@@ -124,7 +124,7 @@ export {
   InlineLoading,
   Link,
   ListItem,
-  Loading,
+  // Loading,
   Modal,
   ModalWrapper,
   MultiSelect,
@@ -190,9 +190,6 @@ export {
   SkeletonText,
   SkeletonPlaceholder,
   DataTableSkeleton,
-  AccordionSkeleton,
-  BreadcrumbSkeleton,
-  ButtonSkeleton,
   CheckboxSkeleton,
   CodeSnippetSkeleton,
   DropdownSkeleton,

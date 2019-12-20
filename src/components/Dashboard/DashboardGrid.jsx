@@ -93,6 +93,10 @@ const DashboardGrid = ({
   onBreakpointChange,
   ...others
 }) => {
+  // Unfortunately can't use React.Children.map because it breaks the original key which breaks react-grid-layout
+  const childrenArray = useMemo(() => (Array.isArray(children) ? children : [children]), [
+    children,
+  ]);
   const generatedLayouts = useMemo(
     () =>
       // iterate through each breakpoint
@@ -104,7 +108,7 @@ const DashboardGrid = ({
               ? layouts[layoutName].map(layout => {
                   // iterate through all the cards of the laout
                   // if we can't find the card from the layout, assume small
-                  let matchingCard = find(children, { props: { id: layout.i } });
+                  let matchingCard = find(childrenArray, { props: { id: layout.i } });
                   if (!matchingCard) {
                     console.warn(`Error with your layout. Card with id: ${layout.i} not found`); //eslint-disable-line
                     matchingCard = { props: { size: CARD_SIZES.SMALL } };
@@ -113,13 +117,13 @@ const DashboardGrid = ({
                 })
               : getLayout(
                   layoutName,
-                  children.map(card => card.props),
+                  childrenArray.map(card => card.props),
                   DASHBOARD_COLUMNS,
                   CARD_DIMENSIONS
                 ),
         };
       }, {}),
-    [children, layouts]
+    [childrenArray, layouts]
   );
   const cachedMargin = useMemo(() => [GUTTER, GUTTER], []);
 
@@ -131,7 +135,7 @@ const DashboardGrid = ({
   // add the common measurements and key to the card so that the grid layout can find it
   const cards = useMemo(
     () => {
-      return children.map(card =>
+      return childrenArray.map(card =>
         React.cloneElement(card, {
           key: card.props.id,
           dashboardBreakpoints: DASHBOARD_BREAKPOINTS,
@@ -141,7 +145,7 @@ const DashboardGrid = ({
         })
       );
     },
-    [children]
+    [childrenArray]
   );
 
   return (

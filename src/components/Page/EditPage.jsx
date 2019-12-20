@@ -1,9 +1,10 @@
 import React, { useState, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import warning from 'warning';
 
 import { SkeletonText } from '../..';
-import Button from '../Button/Button';
+import Button from '../Button';
 import Hero, { HeroPropTypes } from '../Hero/Hero';
 
 const StyledEditPage = styled.div`
@@ -77,6 +78,12 @@ const EditPage = ({
   blurb,
   ...others
 }) => {
+  if (__DEV__) {
+    warning(
+      false,
+      'EditPage component has been deprecated and will be removed in the next release of `carbon-addons-iot-react`. \n Refactor to use PageWizard component instead.'
+    );
+  }
   const [isSaving, setSaving] = useState();
   const handleSave = async () => {
     setSaving(true);
