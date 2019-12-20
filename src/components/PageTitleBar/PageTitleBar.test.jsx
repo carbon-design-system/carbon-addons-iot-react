@@ -1,7 +1,8 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import { SkeletonText, Tabs, Tab } from '../..';
+import { SkeletonText } from '../SkeletonText';
+import { Tabs, Tab } from '../Tabs';
 import Button from '../Button';
 
 import PageTitleBar from './PageTitleBar';

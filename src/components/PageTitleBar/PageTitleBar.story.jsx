@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { Add24 } from '@carbon/icons-react';
 
-import { Tabs, Tab } from '../..';
+import { Tabs, Tab } from '../Tabs';
 import FullWidthWrapper from '../../internal/FullWidthWrapper';
 import Button from '../Button';
 
