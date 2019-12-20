@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import warning from 'warning';
 
-import { SkeletonText } from '../..';
+import { SkeletonText } from '../SkeletonText';
 import Button from '../Button';
 import Hero, { HeroPropTypes } from '../Hero/Hero';
 

@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ContentSwitcher, Switch } from 'carbon-components-react';
 import styled from 'styled-components';
+
+import { Switch } from '../Switch';
+import { ContentSwitcher } from '../ContentSwitcher';
 
 // import { COLORS, PADDING } from '../../styles/styles';
 

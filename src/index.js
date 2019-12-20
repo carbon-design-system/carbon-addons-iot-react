@@ -86,6 +86,7 @@ export StatefulPageWizard from './components/PageWizard/StatefulPageWizard';
 // Carbon proxy
 export { Accordion, AccordionItem, AccordionSkeleton } from './components/Accordion';
 export { Breadcrumb, BreadcrumbItem, BreadcrumbSkeleton } from './components/Breadcrumb';
+export { ContentSwitcher } from './components/ContentSwitcher';
 export { Icon, IconSkeleton } from './components/Icon';
 export { InlineLoading } from './components/InlineLoading';
 export { Link } from './components/Link';
@@ -99,6 +100,7 @@ export {
   StructuredListInput,
   StructuredListCell,
 } from './components/StructuredList';
+export { Switch } from './components/Switch';
 export { Tab, Tabs, TabContent, TabsSkeleton } from './components/Tabs';
 export {
   Content,
@@ -114,7 +116,6 @@ export {
   ModalHeader,
   ModalBody,
   ModalFooter,
-  ContentSwitcher,
   Copy,
   CopyButton,
   DangerButton,
@@ -180,7 +181,6 @@ export {
   Select,
   SelectItem,
   SelectItemGroup,
-  Switch,
   Slider,
   Tag,
   TextArea,
