@@ -99,6 +99,7 @@ export {
   StructuredListInput,
   StructuredListCell,
 } from './components/StructuredList';
+export { Tab, Tabs, TabContent, TabsSkeleton } from './components/Tabs';
 export {
   Content,
   Switcher,
@@ -181,9 +182,6 @@ export {
   SelectItemGroup,
   Switch,
   Slider,
-  Tab,
-  TabContent,
-  Tabs,
   Tag,
   TextArea,
   TextInput,
@@ -221,7 +219,6 @@ export {
   SelectSkeleton,
   SliderSkeleton,
   StructuredListSkeleton,
-  TabsSkeleton,
   TagSkeleton,
   TextAreaSkeleton,
   TextInputSkeleton,
