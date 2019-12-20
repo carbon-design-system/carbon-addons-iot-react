@@ -6,8 +6,7 @@ import Chip from '@carbon/icons-react/lib/chip/24';
 import Dashboard from '@carbon/icons-react/lib/dashboard/24';
 import Group from '@carbon/icons-react/lib/group/24';
 
-import { HeaderContainer } from '../..';
-import Header from '../Header';
+import Header, { HeaderContainer } from '../Header';
 
 import SideNav from './SideNav';
 

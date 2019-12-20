@@ -9,7 +9,7 @@ import {
   SideNavMenu,
   SideNavMenuItem,
   // SideNavSwitcher,
-} from '../..';
+} from '.';
 
 const propTypes = {
   /** Specify whether the side navigation is expanded or collapsed */

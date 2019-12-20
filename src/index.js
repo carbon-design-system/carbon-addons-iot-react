@@ -106,6 +106,21 @@ export {
   ProgressStep,
   ProgressIndicatorSkeleton,
 } from './components/ProgressIndicator';
+export {
+  // TODO Consolidate SideNav export from Carbon below with our SideNav export
+  // SideNav,
+  SideNavDetails,
+  SideNavFooter,
+  SideNavHeader,
+  SideNavIcon,
+  SideNavItem,
+  SideNavItems,
+  SideNavLink,
+  SideNavLinkText,
+  SideNavMenu,
+  SideNavMenuItem,
+  SideNavSwitcher,
+} from './components/SideNav';
 export { SkeletonText } from './components/SkeletonText';
 export {
   StructuredListWrapper,
@@ -228,19 +243,6 @@ export {
   ToggleSkeleton,
   ToggleSmallSkeleton,
   DatePickerSkeleton,
-  // TODO Consolidate SideNav export from Carbon below with our SideNav export
-  // SideNav,
-  SideNavDetails,
-  SideNavFooter,
-  SideNavHeader,
-  SideNavIcon,
-  SideNavItem,
-  SideNavItems,
-  SideNavLink,
-  SideNavLinkText,
-  SideNavMenu,
-  SideNavMenuItem,
-  SideNavSwitcher,
 } from 'carbon-components-react';
 export { validateDashboardJSON } from './utils/schemas/validators';
 

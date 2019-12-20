@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { ProgressIndicator as CarbonProgressIndicator } from 'carbon-components-react';
 import styled from 'styled-components';
 
-import { ProgressStep } from '../..';
+import { ProgressStep } from '.';
 
 const StyledProgressIndicator = styled(({ isVerticalMode, ...others }) => (
   <CarbonProgressIndicator {...others} />
