@@ -5,7 +5,7 @@ import { ButtonTypes } from 'carbon-components-react/lib/prop-types/types';
 import styled from 'styled-components';
 import { settings } from 'carbon-components';
 
-import Loading from '../Loading';
+import { Loading } from '../Loading';
 
 const { prefix } = settings;
 

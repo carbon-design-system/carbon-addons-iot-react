@@ -29,7 +29,6 @@ export ComposedStructuredList from './components/ComposedStructuredList/Composed
 export ResourceList from './components/ResourceList/ResourceList';
 export FileDrop from './components/FileDrop/FileDrop';
 export PageTitleBar from './components/PageTitleBar/PageTitleBar';
-export Loading from './components/Loading';
 
 // reusable reducers
 export { baseTableReducer } from './components/Table/baseTableReducer';
@@ -87,12 +86,36 @@ export StatefulPageWizard from './components/PageWizard/StatefulPageWizard';
 export { Accordion, AccordionItem, AccordionSkeleton } from './components/Accordion';
 export { Breadcrumb, BreadcrumbItem, BreadcrumbSkeleton } from './components/Breadcrumb';
 export { ContentSwitcher } from './components/ContentSwitcher';
+// export {
+// TODO consolidate Carbon's datatable exports below with our table exports
+// default as DataTable,
+// Table,
+// TableActionList,
+// TableBatchAction,
+// TableBatchActions,
+// TableBody,
+// TableCell,
+// TableContainer,
+// TableExpandHeader,
+// TableExpandRow,
+// TableExpandedRow,
+// TableHead,
+// TableHeader,
+// TableRow,
+// TableSelectAll,
+// TableSelectRow,
+// TableToolbar,
+// TableToolbarAction,
+// TableToolbarContent,
+// TableToolbarSearch,
+// TableToolbarMenu,} from './components/DataTable;
 export { Form } from './components/Form';
 export { FormGroup } from './components/FormGroup';
 export { FormItem } from './components/FormItem';
 export { Icon, IconSkeleton } from './components/Icon';
 export { InlineLoading } from './components/InlineLoading';
 export { Link } from './components/Link';
+export { Loading } from './components/Loading';
 export {
   ToastNotification,
   InlineNotification,
@@ -108,6 +131,7 @@ export {
   ProgressStep,
   ProgressIndicatorSkeleton,
 } from './components/ProgressIndicator';
+export { RadioTile } from './components/RadioTile';
 export {
   // TODO Consolidate SideNav export from Carbon below with our SideNav export
   // SideNav,
@@ -135,6 +159,14 @@ export {
 export { Switch } from './components/Switch';
 export { Tab, Tabs, TabContent, TabsSkeleton } from './components/Tabs';
 export { TextInput, TextInputSkeleton } from './components/TextInput';
+export {
+  Tile,
+  ClickableTile,
+  SelectableTile,
+  ExpandableTile,
+  TileAboveTheFoldContent,
+  TileBelowTheFoldContent,
+} from './components/Tile';
 export { Tooltip } from './components/Tooltip';
 export {
   Content,
@@ -153,28 +185,6 @@ export {
   Copy,
   CopyButton,
   DangerButton,
-  // TODO consolidate Carbon's datatable exports below with our table exports
-  // default as DataTable,
-  // Table,
-  // TableActionList,
-  // TableBatchAction,
-  // TableBatchActions,
-  // TableBody,
-  // TableCell,
-  // TableContainer,
-  // TableExpandHeader,
-  // TableExpandRow,
-  // TableExpandedRow,
-  // TableHead,
-  // TableHeader,
-  // TableRow,
-  // TableSelectAll,
-  // TableSelectRow,
-  // TableToolbar,
-  // TableToolbarAction,
-  // TableToolbarContent,
-  // TableToolbarSearch,
-  // TableToolbarMenu,
   DatePicker,
   DatePickerInput,
   Dropdown,
@@ -185,7 +195,6 @@ export {
   FileUploaderItem,
   FormLabel,
   ListItem,
-  // Loading,
   Modal,
   ModalWrapper,
   MultiSelect,
@@ -205,13 +214,6 @@ export {
   Slider,
   Tag,
   TextArea,
-  Tile,
-  ClickableTile,
-  SelectableTile,
-  ExpandableTile,
-  TileAboveTheFoldContent,
-  TileBelowTheFoldContent,
-  RadioTile,
   TileGroup,
   TimePicker,
   TimePickerSelect,

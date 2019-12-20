@@ -1,16 +1,16 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { DataTable, Tile } from 'carbon-components-react';
 import Bee32 from '@carbon/icons-react/lib/bee/32';
 
-import { RadioTile, SkeletonText } from '../..';
+import { Tile } from '../Tile';
+import { TableToolbarSearch } from '../DataTable';
+import { RadioTile } from '../RadioTile';
+import { SkeletonText } from '../SkeletonText';
 import SimplePagination from '../SimplePagination/SimplePagination';
 import { COLORS } from '../../styles/styles';
 
 import TileGroup from './TileGroup';
-
-const { TableToolbarSearch } = DataTable;
 
 const StyledContainerDiv = styled.div`
   display: flex;

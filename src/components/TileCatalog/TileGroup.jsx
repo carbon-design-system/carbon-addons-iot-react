@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Tile } from 'carbon-components-react';
 import styled from 'styled-components';
 
+import { Tile } from '../Tile';
 import { MEDIA_QUERIES } from '../../styles/styles';
 
 const StyledTiles = styled.div`

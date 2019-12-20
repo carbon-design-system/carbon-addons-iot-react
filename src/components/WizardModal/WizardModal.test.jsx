@@ -1,7 +1,7 @@
 import { mount } from 'enzyme';
 import React from 'react';
 
-import { Loading } from '../..';
+import { Loading } from '../Loading';
 
 import WizardModal from './WizardModal';
 
