@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import React, { useState, useCallback } from 'react';
 import { settings } from 'carbon-components';
 
-import { SkipToContent } from '../..';
+import { SkipToContent } from '../UIShell';
 
 import HeaderMenu from './HeaderMenu';
 

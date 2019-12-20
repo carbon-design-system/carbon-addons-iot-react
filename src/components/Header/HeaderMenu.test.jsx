@@ -2,9 +2,9 @@ import React from 'react';
 import { mount } from 'enzyme';
 import { render, fireEvent } from '@testing-library/react';
 
-import { HeaderMenuItem } from '../..';
-
 import HeaderMenu, { matches, keys } from './HeaderMenu';
+
+import { HeaderMenuItem } from '.';
 
 const event = {
   which: 13,

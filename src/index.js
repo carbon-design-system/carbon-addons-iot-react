@@ -87,6 +87,13 @@ export StatefulPageWizard from './components/PageWizard/StatefulPageWizard';
 export { Accordion, AccordionItem, AccordionSkeleton } from './components/Accordion';
 export { Breadcrumb, BreadcrumbItem, BreadcrumbSkeleton } from './components/Breadcrumb';
 export {
+  Content,
+  Switcher,
+  SwitcherItem,
+  SwitcherDivider,
+  SkipToContent,
+} from './components/UIShell';
+export {
   Checkbox,
   CodeSnippet,
   ComboBox,
@@ -220,16 +227,6 @@ export {
   ToggleSmallSkeleton,
   IconSkeleton,
   DatePickerSkeleton,
-  // -----------------------
-  // UI Shell proxy exports
-  // -----------------------
-  Content,
-  // TODO Consolidate Header export from Carbon below with our Header export
-  // Header,
-  Switcher,
-  SwitcherItem,
-  SwitcherDivider,
-  SkipToContent,
   // TODO Consolidate SideNav export from Carbon below with our SideNav export
   // SideNav,
   SideNavDetails,
