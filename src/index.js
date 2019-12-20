@@ -10,6 +10,7 @@ export styles from './styles.scss';
 export Button, { ButtonSkeleton } from './components/Button';
 export Table from './components/Table';
 export AddCard from './components/AddCard';
+// ModalHeader, ModalBody, ModalFooter are Carbon proxy
 export ComposedModal, { ModalHeader, ModalBody, ModalFooter } from './components/ComposedModal';
 export WizardModal from './components/WizardModal';
 export WizardInline from './components/WizardInline/WizardInline';
@@ -89,7 +90,9 @@ export { Checkbox, CheckboxSkeleton } from './components/Checkbox';
 export { CodeSnippet, CodeSnippetSkeleton } from './components/CodeSnippet';
 export { ComboBox } from './components/ComboBox';
 export { ContentSwitcher } from './components/ContentSwitcher';
+export { Copy } from './components/Copy';
 export { CopyButton } from './components/CopyButton';
+export { DangerButton } from './components/DangerButton';
 // export {
 // TODO consolidate Carbon's datatable exports below with our table exports
 // default as DataTable,
@@ -113,6 +116,7 @@ export { CopyButton } from './components/CopyButton';
 // TableToolbarContent,
 // TableToolbarSearch,
 // TableToolbarMenu,} from './components/DataTable;
+export { DataTableSkeleton } from './components/DataTableSkeleton';
 export { DatePicker, DatePickerSkeleton } from './components/DatePicker';
 export { DatePickerInput } from './components/DatePickerInput';
 export { Dropdown, DropdownSkeleton } from './components/Dropdown';
@@ -131,6 +135,7 @@ export { FormLabel } from './components/FormLabel';
 export { Icon, IconSkeleton } from './components/Icon';
 export { InlineLoading } from './components/InlineLoading';
 export { Link } from './components/Link';
+export { ListItem } from './components/ListItem';
 export { Loading } from './components/Loading';
 export { Modal } from './components/Modal';
 export { ModalWrapper } from './components/ModalWrapper';
@@ -147,17 +152,23 @@ export { OrderedList } from './components/OrderedList';
 export { OverflowMenu } from './components/OverflowMenu';
 export { OverflowMenuItem } from './components/OverflowMenuItem';
 export { Pagination } from './components/Pagination';
+export { PrimaryButton } from './components/PrimaryButton';
 export {
   // TODO Consolidate ProgressIndicator export from Carbon below with our ProgressIndicator export
   // ProgressIndicator,
   ProgressStep,
   ProgressIndicatorSkeleton,
 } from './components/ProgressIndicator';
-export { RadioButton } from './components/RadioButton';
+export { RadioButton, RadioButtonSkeleton } from './components/RadioButton';
 export { RadioButtonGroup } from './components/RadioButtonGroup';
 export { RadioTile } from './components/RadioTile';
-export { Search } from './components/Search';
+export { Search, SearchSkeleton } from './components/Search';
+export { SearchFilterButton } from './components/SearchFilterButton';
+export { SearchLayoutButton } from './components/SearchLayoutButton';
+export { SecondaryButton } from './components/SecondaryButton';
 export { Select, SelectSkeleton } from './components/Select';
+export { SelectItem } from './components/SelectItem';
+export { SelectItemGroup } from './components/SelectItemGroup';
 export {
   // TODO Consolidate SideNav export from Carbon below with our SideNav export
   // SideNav,
@@ -183,12 +194,14 @@ export {
   StructuredListRow,
   StructuredListInput,
   StructuredListCell,
+  StructuredListSkeleton,
 } from './components/StructuredList';
 export { Switch } from './components/Switch';
 export { Tab, Tabs, TabContent, TabsSkeleton } from './components/Tabs';
 export { Tag, TagSkeleton } from './components/Tag';
 export { TextArea, TextAreaSkeleton } from './components/TextArea';
 export { TextInput, TextInputSkeleton } from './components/TextInput';
+export { TileGroup } from './components/TileGroup';
 export {
   Tile,
   ClickableTile,
@@ -198,8 +211,10 @@ export {
   TileBelowTheFoldContent,
 } from './components/Tile';
 export { TimePicker } from './components/TimePicker';
+export { TimePickerSelect } from './components/TimePickerSelect';
 export { Toggle, ToggleSkeleton } from './components/Toggle';
 export { ToggleSmall, ToggleSmallSkeleton } from './components/ToggleSmall';
+export { ToolbarSearch } from './components/ToolbarSearch';
 export {
   Toolbar,
   ToolbarItem,
@@ -218,26 +233,8 @@ export {
   SkipToContent,
 } from './components/UIShell';
 export { UnorderedList } from './components/UnorderedList';
-export {
-  Copy,
-  DangerButton,
-  ListItem,
-  PrimaryButton,
-  SearchFilterButton,
-  SearchLayoutButton,
-  SecondaryButton,
-  SelectItem,
-  SelectItemGroup,
-  TileGroup,
-  TimePickerSelect,
-  ToolbarSearch,
-  DataTableSkeleton,
-  RadioButtonSkeleton,
-  SearchSkeleton,
-  StructuredListSkeleton,
-} from 'carbon-components-react';
-export { validateDashboardJSON } from './utils/schemas/validators';
 
+export { validateDashboardJSON } from './utils/schemas/validators';
 export {
   determineCardRange,
   determineMaxValueCardAttributeCount,

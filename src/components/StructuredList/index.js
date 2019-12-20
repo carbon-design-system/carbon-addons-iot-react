@@ -5,4 +5,5 @@ export {
   StructuredListRow,
   StructuredListInput,
   StructuredListCell,
+  StructuredListSkeleton,
 } from 'carbon-components-react';
