@@ -1,0 +1,231 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Breadcrumb default 1`] = `
+<div
+  className="storybook-container"
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "flexDirection": "column",
+      "padding": "3rem",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      className="bx--col-lg-16 bx--col-md-8 bx--col-sm-4"
+    >
+      <nav
+        aria-label="Breadcrumb"
+        className="Breadcrumb__StyledBreadcrumb-sc-13nu7r6-0 hBvAPt"
+      >
+        <ol
+          className="bx--breadcrumb"
+        >
+          <div>
+            <li
+              className="bx--breadcrumb-item"
+            >
+              <a
+                className="bx--link"
+                href="/"
+              >
+                Breadcrumb Item1
+              </a>
+            </li>
+            <li
+              className="bx--breadcrumb-item"
+            >
+              <a
+                className="bx--link"
+                href="/"
+              >
+                Breadcrumb Item2
+              </a>
+            </li>
+            <li
+              className="bx--breadcrumb-item"
+            >
+              <a
+                className="bx--link"
+                href="/"
+              >
+                Breadcrumb Item3
+              </a>
+            </li>
+          </div>
+        </ol>
+      </nav>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Breadcrumb overview 1`] = `
+<div
+  className="storybook-container"
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "flexDirection": "column",
+      "padding": "3rem",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      className="bx--col-lg-16 bx--col-md-8 bx--col-sm-4"
+    >
+      <nav
+        aria-label="Breadcrumb"
+        className="Breadcrumb__StyledBreadcrumb-sc-13nu7r6-0 hBvAPt"
+      >
+        <ol
+          className="bx--breadcrumb"
+        >
+          <nav
+            aria-label="Breadcrumb"
+          >
+            <ol
+              className="bx--breadcrumb"
+            >
+              <li
+                className="bx--breadcrumb-item"
+              >
+                <a
+                  className="bx--link"
+                  href="/"
+                >
+                  Breadcrumb Item1
+                </a>
+              </li>
+              <div
+                aria-expanded={false}
+                aria-haspopup={true}
+                aria-label="Menu"
+                className="Breadcrumb__StyledOverflowMenu-sc-13nu7r6-1 dSVzNy bx--overflow-menu"
+                onClick={[Function]}
+                onClose={[Function]}
+                onKeyDown={[Function]}
+                open={false}
+                role="button"
+                tabIndex={0}
+              >
+                <svg
+                  aria-label="open and close list of options"
+                  className="bx--overflow-menu__icon Breadcrumb__StyledOverflowIcon20-sc-13nu7r6-2 cIvCwb"
+                  focusable="false"
+                  height={20}
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  preserveAspectRatio="xMidYMid meet"
+                  role="img"
+                  style={
+                    Object {
+                      "willChange": "transform",
+                    }
+                  }
+                  viewBox="0 0 32 32"
+                  width={20}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle
+                    cx="6"
+                    cy="16"
+                    r="2"
+                  />
+                  <circle
+                    cx="16"
+                    cy="16"
+                    r="2"
+                  />
+                  <circle
+                    cx="26"
+                    cy="16"
+                    r="2"
+                  />
+                  <title>
+                    open and close list of options
+                  </title>
+                </svg>
+              </div>
+              <li
+                className="bx--breadcrumb-item"
+              >
+                <a
+                  className="bx--link"
+                  href="/"
+                >
+                  Breadcrumb Item6
+                </a>
+              </li>
+            </ol>
+          </nav>
+        </ol>
+      </nav>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
