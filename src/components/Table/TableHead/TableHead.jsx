@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useRef, useState,useEffect,createRef } from 'react';
 import PropTypes from 'prop-types';
 import { DataTable, Checkbox } from 'carbon-components-react';
 import isNil from 'lodash/isNil';
@@ -11,8 +11,9 @@ import { tableTranslateWithId } from '../../../utils/componentUtilityFunctions';
 
 import ColumnHeaderRow from './ColumnHeaderRow/ColumnHeaderRow';
 import FilterHeaderRow from './FilterHeaderRow/FilterHeaderRow';
+import TableHeader from "./TableHeader";
 
-const { TableHead: CarbonTableHead, TableRow, TableExpandHeader, TableHeader } = DataTable;
+const { TableHead: CarbonTableHead, TableRow, TableExpandHeader } = DataTable;
 
 const propTypes = {
   /** Important table options that the head needs to know about */
@@ -68,6 +69,7 @@ const propTypes = {
   /** lightweight  */
   lightweight: PropTypes.bool,
   i18n: I18NPropTypes,
+  hasResize: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -82,6 +84,7 @@ const defaultProps = {
   i18n: {
     ...defaultI18NPropTypes,
   },
+  hasResize: true,
 };
 
 const StyledCheckboxTableHeader = styled(TableHeader)`
@@ -147,36 +150,43 @@ const TableHead = ({
   closeMenuText,
   lightweight,
   i18n,
+  hasResize,
 }) => {
   const filterBarActive = activeBar === 'filter';
-  let isResizable = false;
-  let startWidth = 0;
-  let startX = 0;
-  let currentElement = '<>';
-  const onMouseMovecallback = e => {
-    if (isResizable) {
-      currentElement.style.width = `${startWidth + (e.pageX - startX)}px`;
+  const utilsVar ={
+    startX: 0,
+    pressed: false,
+    index : 0
+  }
+  const [state, setState] = useState({TableHeader:[]});
+  const elementsRef = useRef(ordering.map(() => createRef()));
+  useEffect(() => {
+    const nextWidth = elementsRef.current.map(
+      ref => ref.current.getBoundingClientRect().width
+    );
+    setState(nextWidth);
+  }, []);
+  
+  const onMouseMovecallback = (e) => {
+    if (utilsVar.pressed) {
+      setState(psd => ({ ...psd, 
+        [utilsVar.index]: state[utilsVar.index] + (e.x - utilsVar.startX),
+        [utilsVar.index + 1 ]: state[utilsVar.index + 1] - (e.x - utilsVar.startX),
+      }));
     }
   };
-
   const onMouseUpcallback = () => {
-    if (isResizable) {
-      isResizable = false;
-      document.removeEventListener('mousemove', onMouseMovecallback, true);
-      document.removeEventListener('mouseup', onMouseUpcallback, true);
+    if (utilsVar.pressed) {
+      utilsVar.pressed = false;
     }
-  };
-  const style = { width: undefined };
-
-  const onMouseDownCallback = event => {
-    currentElement = event.target.closest('th');
-    startX = event.pageX;
-    startWidth = currentElement.clientWidth;
-    isResizable = true;
+  }
+  const onMouseDownCallback = (e, index) =>{
+    utilsVar.pressed = true;            
+    utilsVar.startX = e.clientX;  
+    utilsVar.index = index;  
     document.addEventListener('mousemove', onMouseMovecallback, true);
-    document.addEventListener('mouseup', onMouseUpcallback, true);
-  };
-
+    document.addEventListener('mouseup', onMouseUpcallback, true);            
+  } 
   return (
     <StyledCarbonTableHead lightweight={`${lightweight}`}>
       <TableRow>
@@ -196,7 +206,7 @@ const TableHead = ({
           </StyledCheckboxTableHeader>
         ) : null}
 
-        {ordering.map(item => {
+        {ordering.map((item,i) => {
           const matchingColumnMeta = columns.find(column => column.id === item.columnId);
           const hasSort = matchingColumnMeta && sort && sort.columnId === matchingColumnMeta.id;
           const align =
@@ -208,7 +218,8 @@ const TableHead = ({
               data-column={matchingColumnMeta.id}
               isSortable={matchingColumnMeta.isSortable}
               isSortHeader={hasSort}
-              style={style}
+              ref={elementsRef.current[i]}
+              style={{width: state[i]}}
               onClick={() => {
                 if (matchingColumnMeta.isSortable && onChangeSort) {
                   onChangeSort(matchingColumnMeta.id);
@@ -222,12 +233,11 @@ const TableHead = ({
               })}
             >
               <TableCellRenderer>{matchingColumnMeta.name}</TableCellRenderer>
-              <div
-                role="button"
-                className="column-resize-wrapper"
-                onMouseDown={onMouseDownCallback}
-                tabIndex="0"
-              />
+              {hasResize && i < ordering.length-1 ? (
+                <div role="button" className="column-resize-wrapper" 
+                onMouseDown={(e) => onMouseDownCallback(e,i)}  
+                tabIndex="0"/>
+              ): null}
             </StyledCustomTableHeader>
           ) : null;
         })}
