@@ -159,7 +159,7 @@ const DashboardGrid = ({
         rowHeight={ROW_HEIGHT[breakpoint]}
         preventCollision={false}
         // Stop the initial animation unless we need to support editing drag-and-drop
-        shouldAnimate={isEditable}
+        shouldAnimate={false}
         onLayoutChange={handleLayoutChange}
         onBreakpointChange={onBreakpointChange}
         isResizable={false}
