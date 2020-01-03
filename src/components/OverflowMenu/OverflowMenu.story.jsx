@@ -57,7 +57,6 @@ const OverflowMenuExample = ({ overflowMenuProps, overflowMenuItemProps }) => (
     </OverflowMenu>
   </>
 );
-
 storiesOf('OverflowMenu', module)
   .addDecorator(withKnobs)
   .add(
@@ -93,7 +92,6 @@ storiesOf('OverflowMenu', module)
         text: `
             Overflow Menu is used when additional options are available to the user and there is a space constraint.
             Create Overflow Menu Item components for each option on the menu.
-
             When given \`href\` props, menu items render as <a> tags to facilitate usability.
           `,
       },

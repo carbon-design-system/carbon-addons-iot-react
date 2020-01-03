@@ -23,7 +23,6 @@ const StyledModal = styled(CarbonComposedModal)`
         overflow-y: auto;
       }
     }
-
     /* support large modals for ll the sizes */
     &.big-modal {
       .bx--modal-header {
@@ -44,13 +43,10 @@ const StyledModal = styled(CarbonComposedModal)`
         }
       }
     }
-
     /* Needed for buttons when they're next to each other */
-
     .bx--modal-header__heading {
       margin-bottom: 0.75rem;
     }
-
     .bx--modal-content {
       min-height: ${rem(200)};
     }
@@ -67,11 +63,9 @@ const StyledMessageBox = styled(InlineNotification)`
 const StyledModalFooter = styled(ModalFooter)`
    {
     justify-content: flex-end;
-
     & > * {
       width: 100%;
     }
-
     .modal-greedy-spacer {
       flex-grow: 2;
       text-align: left; // needed to override the dialog style

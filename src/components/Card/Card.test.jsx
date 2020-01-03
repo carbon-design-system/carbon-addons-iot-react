@@ -1,9 +1,10 @@
 import { mount } from 'enzyme';
 import React from 'react';
-/* eslint-disable*/
-import { ToolbarItem, Tooltip } from 'carbon-components-react';
 import { render, fireEvent, waitForElement } from '@testing-library/react';
 
+/* eslint-disable*/
+import { Tooltip } from '../Tooltip';
+import { ToolbarItem } from '../Toolbar';
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 
 import Card, { SkeletonWrapper } from './Card';
@@ -60,15 +61,15 @@ describe('Card testcases', () => {
     expect(wrapper.find(SkeletonWrapper)).toHaveLength(1);
   });
   test('isExpanded', () => {
-    let wrapper = mount(
+    const wrapper = mount(
       <Card {...cardProps} isExpanded size={CARD_SIZES.LARGE} tooltip={tooltipElement} />
     );
-    //isExpanded renders the modal wrapper around it
+    // isExpanded renders the modal wrapper around it
     expect(wrapper.find('.bx--modal')).toHaveLength(1);
   });
   test('card actions', () => {
     const mockOnCardAction = jest.fn();
-    let wrapper = mount(
+    const wrapper = mount(
       <Card
         {...cardProps}
         isExpanded
@@ -85,7 +86,7 @@ describe('Card testcases', () => {
     expect(mockOnCardAction).toHaveBeenCalledWith(cardProps.id, 'CLOSE_EXPANDED_CARD');
 
     mockOnCardAction.mockClear();
-    let wrapper2 = mount(
+    const wrapper2 = mount(
       <Card
         {...cardProps}
         size={CARD_SIZES.LARGE}

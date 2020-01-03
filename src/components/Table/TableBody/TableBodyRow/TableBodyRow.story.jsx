@@ -2,8 +2,9 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { actions } from '@storybook/addon-actions';
 import { boolean } from '@storybook/addon-knobs';
-import { DataTable } from 'carbon-components-react';
 import { Add32, Edit16 } from '@carbon/icons-react';
+
+import { DataTable } from '../../../DataTable';
 
 import TableBodyRow from './TableBodyRow';
 

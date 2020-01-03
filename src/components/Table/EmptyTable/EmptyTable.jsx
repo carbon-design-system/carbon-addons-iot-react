@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { DataTable, Button } from 'carbon-components-react';
+import { Button } from 'carbon-components-react';
 import styled from 'styled-components';
 import Bee32 from '@carbon/icons-react/lib/bee/32';
 
+import { DataTable } from '../../DataTable';
 import { EmptyStatePropTypes } from '../TablePropTypes';
 
 const { TableBody, TableCell, TableRow } = DataTable;

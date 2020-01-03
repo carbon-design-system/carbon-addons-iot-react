@@ -1,19 +1,21 @@
-import {
-  Header as CarbonHeader,
-  HeaderMenuButton,
-  HeaderName,
-  HeaderGlobalBar,
-  HeaderGlobalAction,
-  SkipToContent,
-  HeaderMenuItem,
-  HeaderPanel,
-} from 'carbon-components-react/lib/components/UIShell';
+import { Header as CarbonHeader } from 'carbon-components-react/lib/components/UIShell';
 import AppSwitcher from '@carbon/icons-react/lib/app-switcher/20';
 import PropTypes from 'prop-types';
 import React, { useState, useCallback } from 'react';
 import { settings } from 'carbon-components';
 
+import { SkipToContent } from '../UIShell';
+
 import HeaderMenu from './HeaderMenu';
+
+import {
+  HeaderMenuButton,
+  HeaderName,
+  HeaderGlobalBar,
+  HeaderGlobalAction,
+  HeaderMenuItem,
+  HeaderPanel,
+} from '.';
 
 const { prefix: carbonPrefix } = settings;
 

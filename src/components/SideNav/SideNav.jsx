@@ -1,14 +1,15 @@
+import { SideNav as CarbonSideNav } from 'carbon-components-react/lib/components/UIShell';
+import PropTypes from 'prop-types';
+import React from 'react';
+import classnames from 'classnames';
+
 import {
-  SideNav as CarbonSideNav,
   SideNavItems,
   SideNavLink,
   SideNavMenu,
   SideNavMenuItem,
   // SideNavSwitcher,
-} from 'carbon-components-react//lib/components/UIShell';
-import PropTypes from 'prop-types';
-import React from 'react';
-import classnames from 'classnames';
+} from '.';
 
 const propTypes = {
   /** Specify whether the side navigation is expanded or collapsed */

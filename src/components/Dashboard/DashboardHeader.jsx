@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { SkeletonText, Icon } from 'carbon-components-react';
 
+import { SkeletonText } from '../SkeletonText';
+import { Icon } from '../Icon';
 import { handleEnterKeyDown } from '../../utils/componentUtilityFunctions';
 import icons, { bundledIconNames } from '../../utils/bundledIcons';
 
