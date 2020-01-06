@@ -1,4 +1,5 @@
 import React, { useReducer, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import useDeepCompareEffect from 'use-deep-compare-effect';
 import omit from 'lodash/omit';
 
@@ -10,6 +11,7 @@ import TileCatalog, { propTypes } from './TileCatalog';
  */
 
 const StatefulTileCatalog = ({
+  isSelectedByDefault,
   onSelection,
   pagination,
   search,
@@ -43,7 +45,7 @@ const StatefulTileCatalog = ({
         },
       });
       // If we totally change the tiles data, we should generate a selection event for the initial default selection
-      if (onSelection && tilesProp.length > 0 && !selectedTileIdProp) {
+      if (isSelectedByDefault && onSelection && tilesProp.length > 0 && !selectedTileIdProp) {
         onSelection(tilesProp[0].id);
       }
     },
@@ -115,6 +117,14 @@ const StatefulTileCatalog = ({
   );
 };
 
-StatefulTileCatalog.propTypes = propTypes;
+StatefulTileCatalog.defaultProps = {
+  isSelectedByDefault: true,
+};
+
+StatefulTileCatalog.propTypes = {
+  ...propTypes,
+  /** Will always select the first entry if set true */
+  isSelectedByDefault: PropTypes.bool,
+};
 
 export default StatefulTileCatalog;
