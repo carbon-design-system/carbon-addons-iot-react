@@ -83,6 +83,15 @@ describe('StatefulTileCatalog', () => {
     const wrapper = mount(
       <StatefulTileCatalog {...commonTileProps} pagination={{ pageSize: 5 }} />
     );
+
+    // The new first tile should be selected
+    expect(
+      wrapper
+        .find('RadioTile')
+        .at(0)
+        .prop('checked')
+    ).toEqual(true);
+
     // On page 1
     expect(
       wrapper
@@ -132,6 +141,13 @@ describe('StatefulTileCatalog', () => {
         isSelectedByDefault={false}
       />
     );
+    // The new first tile should not be selected
+    expect(
+      wrapper
+        .find('RadioTile')
+        .at(0)
+        .prop('checked')
+    ).toEqual(false);
     const newTiles = commonTileProps.tiles.slice(1, 5);
     // Back to Page 1
     mockOnSelection.mockClear();

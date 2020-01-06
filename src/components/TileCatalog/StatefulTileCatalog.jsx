@@ -22,6 +22,7 @@ const StatefulTileCatalog = ({
   const initialState = determineInitialState({
     ...props,
     selectedTileId: selectedTileIdProp,
+    isSelectedByDefault,
     tiles: tilesProp,
     search,
     pagination,
@@ -39,6 +40,7 @@ const StatefulTileCatalog = ({
         payload: {
           ...props,
           selectedTileId: selectedTileIdProp,
+          isSelectedByDefault,
           tiles: tilesProp,
           search,
           pagination,
