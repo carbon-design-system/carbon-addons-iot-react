@@ -153,40 +153,39 @@ const TableHead = ({
   hasResize,
 }) => {
   const filterBarActive = activeBar === 'filter';
-  const utilsVar ={
+  const headerVars ={
     startX: 0,
     pressed: false,
     index : 0
   }
-  const [state, setState] = useState({TableHeader:[]});
-  const elementsRef = useRef(ordering.map(() => createRef()));
+  const [columnWidth, setColumnWidth] = useState({});
+  const columnRef = useRef(ordering.map(() => createRef()));
+  
   useEffect(() => {
-    const nextWidth = elementsRef.current.map(
+    const nextWidth = columnRef.current.map(
       ref => ref.current.getBoundingClientRect().width
     );
-    setState(nextWidth);
+    setColumnWidth(nextWidth);   
   }, []);
   
-  const onMouseMovecallback = (e) => {
-    if (utilsVar.pressed) {
-      setState(psd => ({ ...psd, 
-        [utilsVar.index]: state[utilsVar.index] + (e.x - utilsVar.startX),
-        [utilsVar.index + 1 ]: state[utilsVar.index + 1] - (e.x - utilsVar.startX),
-      }));
-    }
-  };
-  const onMouseUpcallback = () => {
-    if (utilsVar.pressed) {
-      utilsVar.pressed = false;
-    }
+  const onMouseUpcallback = (e) => {
+    if (headerVars.pressed) {
+      setColumnWidth(cols => ({ ...cols, 
+        [headerVars.index]: columnWidth[headerVars.index] + (e.x - headerVars.startX),
+        [headerVars.index + 1 ]: columnWidth[headerVars.index + 1] - (e.x - headerVars.startX),
+      }));      
+      headerVars.pressed = false;
+    }    
+    document.removeEventListener('mouseup', onMouseUpcallback, true);   
   }
+
   const onMouseDownCallback = (e, index) =>{
-    utilsVar.pressed = true;            
-    utilsVar.startX = e.clientX;  
-    utilsVar.index = index;  
-    document.addEventListener('mousemove', onMouseMovecallback, true);
+    headerVars.pressed = true;            
+    headerVars.startX = e.clientX;  
+    headerVars.index = index;     
     document.addEventListener('mouseup', onMouseUpcallback, true);            
   } 
+  
   return (
     <StyledCarbonTableHead lightweight={`${lightweight}`}>
       <TableRow>
@@ -218,8 +217,8 @@ const TableHead = ({
               data-column={matchingColumnMeta.id}
               isSortable={matchingColumnMeta.isSortable}
               isSortHeader={hasSort}
-              ref={elementsRef.current[i]}
-              style={{width: state[i]}}
+              ref={columnRef.current[i]}
+              style={{width: columnWidth[i]}}
               onClick={() => {
                 if (matchingColumnMeta.isSortable && onChangeSort) {
                   onChangeSort(matchingColumnMeta.id);
@@ -234,8 +233,9 @@ const TableHead = ({
             >
               <TableCellRenderer>{matchingColumnMeta.name}</TableCellRenderer>
               {hasResize && i < ordering.length-1 ? (
-                <div role="button" className="column-resize-wrapper" 
+                <div role="button"  className="column-resize-wrapper" 
                 onMouseDown={(e) => onMouseDownCallback(e,i)}  
+                onMouseUp={(e) => onMouseUpcallback(e,i)}  
                 tabIndex="0"/>
               ): null}
             </StyledCustomTableHeader>
