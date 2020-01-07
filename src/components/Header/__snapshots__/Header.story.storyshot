@@ -30,7 +30,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Heade
     >
       <header
         aria-label="main header"
-        className="bx--header custom-class-name Headerstory__StyledHeader-st8jpc-0 hBPBX"
+        className="bx--header custom-class-name Headerstory__StyledHeader-st8jpc-0 kPvIuw"
         role="banner"
       >
         <a
@@ -423,7 +423,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Heade
   >
     <header
       aria-label="main header"
-      className="bx--header custom-class-name Headerstory__StyledHeader-st8jpc-0 hBPBX"
+      className="bx--header custom-class-name Headerstory__StyledHeader-st8jpc-0 kPvIuw"
       role="banner"
     >
       <a

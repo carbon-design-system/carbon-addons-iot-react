@@ -25,6 +25,10 @@ const StyledHeader = styled(Header)`
       line-height: 1.125rem;
       text-decoration: none;
       user-select: none;
+
+      &:focus {
+        border-color: white;
+      }
     }
 
     button.bx--header__menu-item {
