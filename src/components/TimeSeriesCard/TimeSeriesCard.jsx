@@ -105,7 +105,9 @@ export const formatChartData = (timeDataSourceId = 'timestamp', series, values) 
       ...(color ? { fillColors: [color] } : {}),
       data:
         values &&
-        values.map(i => ({ date: new Date(i[timeDataSourceId]), value: i[dataSourceId] })),
+        values // have to filter out null values from the dataset, as it causes Carbon Charts to break
+          .filter(i => !isNil(i[dataSourceId]))
+          .map(i => ({ date: new Date(i[timeDataSourceId]), value: i[dataSourceId] })),
     })),
   };
 };
