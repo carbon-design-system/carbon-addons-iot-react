@@ -21,6 +21,7 @@ exports[`HeaderMenu should render 1`] = `
         data-testid="menuitem"
         href="javascript:void(0)"
         onKeyDown={[Function]}
+        role="menuitem"
         tabIndex={0}
       >
         <defaultRenderMenuContent>

@@ -174,9 +174,7 @@ const Header = ({
               })}
               expanded={expandedItem[item.label]}
             >
-              <ul aria-label={item.label} role="menu">
-                {panelChildren}
-              </ul>
+              <ul aria-label={item.label}>{panelChildren}</ul>
             </HeaderPanel>
           </div>
         );
@@ -192,7 +190,7 @@ const Header = ({
       return (
         <div
           data-testid="headermenu"
-          onFocus={() => handleExpandedState()}
+          onFocus={handleExpandedState}
           className={`${carbonPrefix}--header__submenu`}
           key={`wrapper-${i}`}
         >

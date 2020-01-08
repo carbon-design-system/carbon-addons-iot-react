@@ -202,6 +202,7 @@ class HeaderMenu extends React.Component {
           data-testid="menuitem"
           tabIndex={0}
           aria-label={ariaLabel}
+          role="menuitem"
         >
           <MenuContent ariaLabel={ariaLabel} />
         </a>

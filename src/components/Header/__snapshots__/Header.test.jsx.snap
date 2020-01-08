@@ -114,7 +114,6 @@ exports[`Header testcases should render 1`] = `
         >
           <ul
             aria-label="help"
-            role="menu"
           >
             <li
               class="action-btn__headerpanel-li"
@@ -170,6 +169,7 @@ exports[`Header testcases should render 1`] = `
             class="bx--header__menu-item bx--header__menu-title"
             data-testid="menuitem"
             href="javascript:void(0)"
+            role="menuitem"
             tabindex="0"
           >
             <svg
