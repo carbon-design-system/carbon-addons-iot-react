@@ -55,7 +55,7 @@ const { prefix } = settings;
 // `;
 
 class BreadcrumbOverflowItem extends React.Component {
-  XbreadItem = React.createRef();
+  overflowMenuItem = React.createRef();
 
   static propTypes = {
     /** A callback to tell the parent menu component that the menu should be closed. */
@@ -79,6 +79,7 @@ class BreadcrumbOverflowItem extends React.Component {
 
   // TODO: set variable replace number
   setTabFocus = evt => {
+    console.log("overflow menu: ", evt);
     if (evt.which === 40) {
       this.props.handleOverflowMenuItemFocus(this.props.index + 1);
     }
@@ -106,6 +107,8 @@ class BreadcrumbOverflowItem extends React.Component {
       ...other
     } = this.props;
 
+    // console.log("overflow item: ", this.props);
+
     return (
       <div
         className={`${prefix}--overflow-menu-options__option`}
@@ -117,7 +120,7 @@ class BreadcrumbOverflowItem extends React.Component {
           this.setTabFocus(evt);
           onKeyDown(evt);
         }}
-        ref={this.XbreadItem}
+        ref={this.overflowMenuItem}
         index={index}
       >
         {children}
@@ -126,4 +129,7 @@ class BreadcrumbOverflowItem extends React.Component {
   }
 }
 
+// export default React.forwardRef((props, ref) => <BreadcrumbOverflowItem
+//   innerRef={ref} {...props}
+// />);
 export default BreadcrumbOverflowItem;
