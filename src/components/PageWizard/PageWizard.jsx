@@ -9,46 +9,60 @@ import { ProgressStep } from '../ProgressIndicator';
 const childrenPropType = PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]);
 
 /* TODO: move these components to separate files */
-const PageWizardStep = ({ children, onValidate = () => true, ...other }) => (
+const PageWizardStep = ({
+  children,
+  onValidate,
+  error,
+  onClearError,
+  i18n,
+  hasStickyFooter,
+  onClose,
+  hasPrev,
+  hasNext,
+  onNext,
+  nextDisabled,
+  onBack,
+  sendingData,
+  onSubmit,
+}) => (
   <div className="page-wizard--step">
-    {other.error ? (
+    {error ? (
       <InlineNotification
         lowContrast
-        title={other.error}
+        title={error}
         subtitle=""
         kind="error"
-        onCloseButtonClick={other.handleClearError}
+        onCloseButtonClick={onClearError}
+        iconDescription={i18n.close}
       />
     ) : null}
     {children}
     <div
       className={
-        other.hasStickyFooter
-          ? 'page-wizard--content--actions--sticky'
-          : 'page-wizard--content--actions'
+        hasStickyFooter ? 'page-wizard--content--actions--sticky' : 'page-wizard--content--actions'
       }
     >
-      {!other.hasPrev ? (
-        <Button onClick={other.onClose} kind="secondary">
-          {other.i18n.cancel}
+      {!hasPrev ? (
+        <Button onClick={onClose} kind="secondary">
+          {i18n.cancel}
         </Button>
       ) : null}
-      {other.hasPrev ? (
-        <Button onClick={other.onBack} kind="secondary">
-          {other.i18n.back}
+      {hasPrev ? (
+        <Button onClick={onBack} kind="secondary">
+          {i18n.back}
         </Button>
       ) : null}
-      {other.hasNext ? (
-        <Button onClick={() => onValidate() && other.onNext()} disabled={other.nextDisabled}>
-          {other.i18n.next}
+      {hasNext ? (
+        <Button onClick={() => onValidate() && onNext()} disabled={nextDisabled}>
+          {i18n.next}
         </Button>
       ) : (
         <Button
-          onClick={() => onValidate() && other.onSubmit()}
-          disabled={other.nextDisabled}
-          loading={other.sendingData}
+          onClick={() => onValidate() && onSubmit()}
+          disabled={nextDisabled}
+          loading={sendingData}
         >
-          {other.i18n.submit}
+          {i18n.submit}
         </Button>
       )}
     </div>
@@ -58,8 +72,31 @@ PageWizardStep.propTypes = {
   id: PropTypes.string.isRequired, // eslint-disable-line
   onValidate: PropTypes.func, // eslint-disable-line
   children: childrenPropType,
+  /** optional error to show for this step */
+  error: PropTypes.node,
+  /** optional callback to clear the error */
+  onClearError: PropTypes.func,
+  /** Internationalized strings */
+  i18n: PropTypes.objectOf(PropTypes.string).isRequired,
+  hasStickyFooter: PropTypes.bool,
+  onClose: PropTypes.func.isRequired,
+  hasPrev: PropTypes.bool.isRequired,
+  hasNext: PropTypes.bool.isRequired,
+  onNext: PropTypes.func.isRequired,
+  nextDisabled: PropTypes.bool,
+  onBack: PropTypes.func.isRequired,
+  sendingData: PropTypes.bool,
+  onSubmit: PropTypes.func.isRequired,
 };
-PageWizardStep.defaultProps = { children: [] };
+PageWizardStep.defaultProps = {
+  children: [],
+  error: null,
+  onClearError: null,
+  onValidate: () => true,
+  hasStickyFooter: false,
+  nextDisabled: false,
+  sendingData: false,
+};
 
 const PageWizardStepTitle = ({ children }) => (
   <div className="page-wizard--step--title">{children}</div>
@@ -106,6 +143,8 @@ export const propTypes = {
     next: PropTypes.string,
     /** label to show on the submit button */
     submit: PropTypes.string,
+    /** label to show on the close notification button */
+    close: PropTypes.string,
   }),
   /** label to show on the cancel button */
   /** function to go to step when click ProgressIndicator step. */
@@ -117,6 +156,8 @@ export const propTypes = {
 
   /** Form Error Details */
   error: PropTypes.string,
+  /** required callback to clear the error */
+  onClearError: PropTypes.func.isRequired,
 
   /** use sticky footer to show buttons at the bottom */
   hasStickyFooter: PropTypes.bool,
@@ -136,6 +177,7 @@ export const defaultProps = {
     next: 'Next',
     cancel: 'Cancel',
     submit: 'Submit',
+    close: 'Close',
   },
   sendingData: false,
   error: null,
@@ -156,6 +198,7 @@ const PageWizard = ({
   className,
   error,
   hasStickyFooter,
+  onClearError,
 }) => {
   const children = ch.length ? ch : [ch];
   const steps = React.Children.map(children, step => step.props);
@@ -175,6 +218,7 @@ const PageWizard = ({
     sendingData,
     error,
     hasStickyFooter,
+    onClearError,
   });
 
   return (

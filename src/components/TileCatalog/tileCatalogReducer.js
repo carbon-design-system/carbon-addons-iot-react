@@ -13,14 +13,22 @@ const determineEndingIndex = (page, pageSize) => {
 };
 
 /** This figures out the initial state of the reducer from the props */
-export const determineInitialState = ({ pagination, search, selectedTileId, tiles }) => {
+export const determineInitialState = ({
+  pagination,
+  isSelectedByDefault = true,
+  search,
+  selectedTileId,
+  tiles,
+}) => {
   const page = pagination && pagination.page ? pagination.page : 1;
   const pageSize = pagination && pagination.pageSize ? pagination.pageSize : 10;
   const filteredTiles = search ? searchData(tiles, search.value) : tiles;
   const startingIndex = pagination ? (page - 1) * pageSize : 0;
   const selectedTileIdState =
     selectedTileId ||
-    (filteredTiles && filteredTiles[startingIndex] ? filteredTiles[startingIndex].id : null);
+    (isSelectedByDefault && filteredTiles && filteredTiles[startingIndex]
+      ? filteredTiles[startingIndex].id
+      : null);
   let selectedPage;
   let selectedStartingIndex;
   // If a selected tile id is passed, we should page to it
