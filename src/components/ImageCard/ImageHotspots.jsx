@@ -294,9 +294,9 @@ const ImageHotspots = ({
   const [cursor, setCursor] = useState({});
   // Options need to be stored in state because based on the zoom level they may change
   const [options, setOptions] = useState({
-    hideZoomControlsProp,
-    hideHotspotsProp,
-    hideMinimapProp,
+    hideZoomControls: hideZoomControlsProp,
+    hideHotspots: hideHotspotsProp,
+    hideMinimap: hideMinimapProp,
   });
 
   const orientation = width > height ? 'landscape' : 'portrait';
@@ -440,7 +440,7 @@ const ImageHotspots = ({
           minimap={{ ...minimap, src }}
           draggable={draggable}
           dragging={dragging}
-          hideMinimap={hideMinimap}
+          hideMinimap={!dragging || hideMinimap}
           onZoomToFit={() =>
             zoom(1, zoomMax, container, image, setImage, minimap, setMinimap, options, setOptions)
           }

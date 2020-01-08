@@ -1721,43 +1721,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           -
                         </button>
                       </div>
-                      <div
-                        style={
-                          Object {
-                            "background": "#fff",
-                            "bottom": 10,
-                            "boxShadow": "0px 0px 2px 0px rgba(0,0,0,0.5)",
-                            "display": "block",
-                            "height": null,
-                            "left": 10,
-                            "pointerEvents": "none",
-                            "position": "absolute",
-                            "width": null,
-                          }
-                        }
-                      >
-                        <img
-                          alt="Minimap"
-                          height={null}
-                          src="landscape.jpg"
-                          width={null}
-                        />
-                        <div
-                          style={
-                            Object {
-                              "background": "rgba(64, 139, 252, 0.1)",
-                              "border": "1px solid rgba(64, 139, 252, 0.8)",
-                              "display": "block",
-                              "height": null,
-                              "left": 0,
-                              "pointerEvents": "none",
-                              "position": "absolute",
-                              "top": 0,
-                              "width": null,
-                            }
-                          }
-                        />
-                      </div>
                     </div>
                   </div>
                 </div>
@@ -3521,43 +3484,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         >
                           -
                         </button>
-                      </div>
-                      <div
-                        style={
-                          Object {
-                            "background": "#fff",
-                            "bottom": 10,
-                            "boxShadow": "0px 0px 2px 0px rgba(0,0,0,0.5)",
-                            "display": "block",
-                            "height": null,
-                            "left": 10,
-                            "pointerEvents": "none",
-                            "position": "absolute",
-                            "width": null,
-                          }
-                        }
-                      >
-                        <img
-                          alt="Minimap"
-                          height={null}
-                          src="landscape.jpg"
-                          width={null}
-                        />
-                        <div
-                          style={
-                            Object {
-                              "background": "rgba(64, 139, 252, 0.1)",
-                              "border": "1px solid rgba(64, 139, 252, 0.8)",
-                              "display": "block",
-                              "height": null,
-                              "left": 0,
-                              "pointerEvents": "none",
-                              "position": "absolute",
-                              "top": 0,
-                              "width": null,
-                            }
-                          }
-                        />
                       </div>
                     </div>
                   </div>
@@ -5355,43 +5281,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           -
                         </button>
                       </div>
-                      <div
-                        style={
-                          Object {
-                            "background": "#fff",
-                            "bottom": 10,
-                            "boxShadow": "0px 0px 2px 0px rgba(0,0,0,0.5)",
-                            "display": "block",
-                            "height": null,
-                            "left": 10,
-                            "pointerEvents": "none",
-                            "position": "absolute",
-                            "width": null,
-                          }
-                        }
-                      >
-                        <img
-                          alt="Minimap"
-                          height={null}
-                          src="landscape.jpg"
-                          width={null}
-                        />
-                        <div
-                          style={
-                            Object {
-                              "background": "rgba(64, 139, 252, 0.1)",
-                              "border": "1px solid rgba(64, 139, 252, 0.8)",
-                              "display": "block",
-                              "height": null,
-                              "left": 0,
-                              "pointerEvents": "none",
-                              "position": "absolute",
-                              "top": 0,
-                              "width": null,
-                            }
-                          }
-                        />
-                      </div>
                     </div>
                   </div>
                 </div>
@@ -5663,43 +5552,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         >
                           -
                         </button>
-                      </div>
-                      <div
-                        style={
-                          Object {
-                            "background": "#fff",
-                            "bottom": 10,
-                            "boxShadow": "0px 0px 2px 0px rgba(0,0,0,0.5)",
-                            "display": "block",
-                            "height": null,
-                            "left": 10,
-                            "pointerEvents": "none",
-                            "position": "absolute",
-                            "width": null,
-                          }
-                        }
-                      >
-                        <img
-                          alt="Minimap"
-                          height={null}
-                          src="landscape.jpg"
-                          width={null}
-                        />
-                        <div
-                          style={
-                            Object {
-                              "background": "rgba(64, 139, 252, 0.1)",
-                              "border": "1px solid rgba(64, 139, 252, 0.8)",
-                              "display": "block",
-                              "height": null,
-                              "left": 0,
-                              "pointerEvents": "none",
-                              "position": "absolute",
-                              "top": 0,
-                              "width": null,
-                            }
-                          }
-                        />
                       </div>
                     </div>
                   </div>
@@ -9509,43 +9361,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         >
                           -
                         </button>
-                      </div>
-                      <div
-                        style={
-                          Object {
-                            "background": "#fff",
-                            "bottom": 10,
-                            "boxShadow": "0px 0px 2px 0px rgba(0,0,0,0.5)",
-                            "display": "block",
-                            "height": null,
-                            "left": 10,
-                            "pointerEvents": "none",
-                            "position": "absolute",
-                            "width": null,
-                          }
-                        }
-                      >
-                        <img
-                          alt="Minimap"
-                          height={null}
-                          src="landscape.jpg"
-                          width={null}
-                        />
-                        <div
-                          style={
-                            Object {
-                              "background": "rgba(64, 139, 252, 0.1)",
-                              "border": "1px solid rgba(64, 139, 252, 0.8)",
-                              "display": "block",
-                              "height": null,
-                              "left": 0,
-                              "pointerEvents": "none",
-                              "position": "absolute",
-                              "top": 0,
-                              "width": null,
-                            }
-                          }
-                        />
                       </div>
                     </div>
                   </div>
@@ -21328,43 +21143,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         >
                           -
                         </button>
-                      </div>
-                      <div
-                        style={
-                          Object {
-                            "background": "#fff",
-                            "bottom": 10,
-                            "boxShadow": "0px 0px 2px 0px rgba(0,0,0,0.5)",
-                            "display": "block",
-                            "height": null,
-                            "left": 10,
-                            "pointerEvents": "none",
-                            "position": "absolute",
-                            "width": null,
-                          }
-                        }
-                      >
-                        <img
-                          alt="Minimap"
-                          height={null}
-                          src="landscape.jpg"
-                          width={null}
-                        />
-                        <div
-                          style={
-                            Object {
-                              "background": "rgba(64, 139, 252, 0.1)",
-                              "border": "1px solid rgba(64, 139, 252, 0.8)",
-                              "display": "block",
-                              "height": null,
-                              "left": 0,
-                              "pointerEvents": "none",
-                              "position": "absolute",
-                              "top": 0,
-                              "width": null,
-                            }
-                          }
-                        />
                       </div>
                     </div>
                   </div>
