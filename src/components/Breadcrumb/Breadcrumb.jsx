@@ -25,6 +25,21 @@ const defaultProps = {
   useResizeObserver: false,
 };
 
+export const keys = {
+  TAB: 9,
+  ENTER: 13,
+  ESC: 27,
+  SPACE: 32,
+  PAGEUP: 33,
+  PAGEDOWN: 34,
+  END: 35,
+  HOME: 36,
+  LEFT: 37,
+  UP: 38,
+  RIGHT: 39,
+  DOWN: 40,
+};
+
 const Breadcrumb = props => {
   const { children, className, useResizeObserver, ...other } = props;
 
@@ -60,6 +75,8 @@ const Breadcrumb = props => {
         }, 0)
       );
     }
+    // console.log('container width in mount: ', containerWidth);
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -73,7 +90,7 @@ const Breadcrumb = props => {
       for (let i = 1; i <= breadcrumbItemsWidth.length - 2; i += 1) {
         // pull one item out of the list, to see if the remaining items will fit
         mutableTotalBreadcrumbItemsWidth -= breadcrumbItemsWidth[i];
-
+        // console.log('index: ', i);
         if (containerWidth >= mutableTotalBreadcrumbItemsWidth) {
           setOverflowIndex(i);
           break;
@@ -82,10 +99,12 @@ const Breadcrumb = props => {
 
       // despite collapsing all items into overflow, the container is still too small
       // we should begin to ellipsis the first/last items
-      if (containerWidth <= mutableTotalBreadcrumbItemsWidth) {
+      if (containerWidth < mutableTotalBreadcrumbItemsWidth) {
         // setOverflowIndex(-1);
-        setTruncate(true);
+        setTruncate(true);  
       }
+      
+      console.log('change items: ', overflowIndex, containerWidth, useResizeObserver, breadcrumbItemsWidth, totalBreadcrumbItemsWidth)
 
       console.log('container width: ', containerWidth);
       console.log('mutableTotalBreadcrumbItemsWidth: ', mutableTotalBreadcrumbItemsWidth);
@@ -101,7 +120,18 @@ const Breadcrumb = props => {
 
   if (useResizeObserver) {
     return (
-      <div ref={breadcrumbRef}>
+      <div
+        ref={breadcrumbRef}
+        style={{ color: `red` }}
+        role="menu"
+        tabIndex={0}
+        onKeyDown={(evt) => {
+          console.log(evt.key);
+          if (evt.which === keys.SPACE || evt.which === keys.ENTER) {
+              console.log(evt);
+          }
+        }}
+      >
         {totalBreadcrumbItemsWidth > containerWidth ? (
           <>
             <CarbonBreadcrumb
@@ -109,12 +139,21 @@ const Breadcrumb = props => {
                 [`${prefix}--breadcrumb-item--hidden`]: typeof containerWidth === 'undefined',
                 [`${prefix}--breadcrumb--truncate`]: truncate === true, // overflowIndex === -1,
               })}
+              
+              // onKeyDown={evt => {
+              //   console.log(evt);
+              //   if (evt.which === 13 || evt.which === 32) {
+              //     console.log(evt.target);
+              //   }
+              // }}
               {...other}
             >
+              {containerWidth}
               {childrenWithRef[0]}
               <span className={`${prefix}--breadcrumb-overflow`}>
                 <CarbonOverflowMenu renderIcon={OverflowMenuHorizaontal20}>
                   {React.Children.map(childrenWithRef, (child, i) => {
+                    // console.log(child.ref.current)
                     if (i !== 0 && i <= overflowIndex) {
                       return <BreadcrumbOverflowItem>{child}</BreadcrumbOverflowItem>;
                     }
@@ -131,7 +170,7 @@ const Breadcrumb = props => {
           <CarbonBreadcrumb
             className={classNames(className, {
               [`${prefix}--breadcrumb-item--hidden`]: typeof containerWidth === 'undefined',
-              [`${prefix}--breadcrumb--truncate`]: overflowIndex === -1,
+              [`${prefix}--breadcrumb--truncate`]: truncate === true,
             })}
             {...other}
           >
