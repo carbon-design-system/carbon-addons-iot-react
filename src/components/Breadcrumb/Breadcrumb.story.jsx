@@ -124,7 +124,7 @@ storiesOf('Watson IoT | Breadcrumb', module)
       return (
         <>
           <Breadcrumb useResizeObserver {...props()}>
-            <BreadcrumbItem href="#">1 Home</BreadcrumbItem>
+            <BreadcrumbItem href="#">1 Homexxxxxxxxxxxxxxxxxxxxxx</BreadcrumbItem>
             <BreadcrumbItem href="#">2 Devices</BreadcrumbItem>
             <BreadcrumbItem href="#">3 A really long page name</BreadcrumbItem>
             <BreadcrumbItem href="#">4 Another page</BreadcrumbItem>
@@ -152,7 +152,7 @@ storiesOf('Watson IoT | Breadcrumb', module)
       return (
         <>
           <div style={{ width: containerWidth }}>
-            <Breadcrumb {...props()}>
+            <Breadcrumb useResizeObserver {...props()}>
               <BreadcrumbItem>
                 <a href="/#">Breadcrumb 1</a>
               </BreadcrumbItem>

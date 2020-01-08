@@ -29,8 +29,15 @@
   .#{$prefix}--breadcrumb-item {
     // overflow: hidden;
     // white-space: nowrap;
+    min-width: 0;
 
     & > * {
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+
+    .#{$prefix}--link {
       white-space: nowrap;
       text-overflow: ellipsis;
       overflow: hidden;
