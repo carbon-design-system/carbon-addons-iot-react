@@ -93,7 +93,7 @@ const TileGalleryItem = ({
   return (
     <Fragment>
       <ClickableTile
-        className={`${className} tile-gallery-item bx--tile bx--tile--clickable dashboard-pin-${
+        className={`${className} tile-gallery-item bx--tile bx--tile--clickable tile-${
           mode === 'grid' ? 'card' : 'list'
         }-title`}
         key={`${title}-card-link`}

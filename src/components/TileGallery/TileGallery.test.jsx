@@ -17,7 +17,7 @@ describe('TileGallery tests', () => {
       wrapper
         .find('a')
         .first()
-        .hasClass('dashboard-pin-list-title')
+        .hasClass('tile-list-title')
     ).toEqual(true);
   });
   test('TileGalleryItem mode list with node description', () => {
@@ -35,7 +35,7 @@ describe('TileGallery tests', () => {
       wrapper
         .find('a')
         .first()
-        .hasClass('dashboard-pin-card-title')
+        .hasClass('tile-card-title')
     ).toEqual(true);
   });
   test('TileGalleryItem mode card with node description', () => {

@@ -105,7 +105,7 @@
     overflow-x: hidden;
   }
   &.#{$prefix}--tile--clickable:hover,
-  .dashboard-pin-list-title:hover {
+  .tile-list-title:hover {
     background: $carbon--white-0;
   }
   .overflow-menu {
@@ -116,7 +116,7 @@
     text-decoration: none;
   }
 
-  &.dashboard-pin-list-title {
+  &.tile-list-title {
     height: 5.9375rem;
     flex: 0 0 31.25rem;
     box-shadow: none;
@@ -141,7 +141,7 @@
     }
   }
 
-  &.dashboard-pin-card-title {
+  &.tile-card-title {
     height: 16rem;
     flex: 0 0 16rem;
     cursor: pointer;
