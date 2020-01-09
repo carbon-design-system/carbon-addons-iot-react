@@ -101,10 +101,17 @@ const Breadcrumb = props => {
       // we should begin to ellipsis the first/last items
       if (containerWidth < mutableTotalBreadcrumbItemsWidth) {
         // setOverflowIndex(-1);
-        setTruncate(true);  
+        setTruncate(true);
       }
-      
-      console.log('change items: ', overflowIndex, containerWidth, useResizeObserver, breadcrumbItemsWidth, totalBreadcrumbItemsWidth)
+
+      console.log(
+        'change items: ',
+        overflowIndex,
+        containerWidth,
+        useResizeObserver,
+        breadcrumbItemsWidth,
+        totalBreadcrumbItemsWidth
+      );
 
       console.log('container width: ', containerWidth);
       console.log('mutableTotalBreadcrumbItemsWidth: ', mutableTotalBreadcrumbItemsWidth);
@@ -125,10 +132,10 @@ const Breadcrumb = props => {
         style={{ color: `red` }}
         role="menu"
         tabIndex={0}
-        onKeyDown={(evt) => {
+        onKeyDown={evt => {
           console.log(evt.key);
           if (evt.which === keys.SPACE || evt.which === keys.ENTER) {
-              console.log(evt);
+            console.log(evt);
           }
         }}
       >
@@ -139,7 +146,6 @@ const Breadcrumb = props => {
                 [`${prefix}--breadcrumb-item--hidden`]: typeof containerWidth === 'undefined',
                 [`${prefix}--breadcrumb--truncate`]: truncate === true, // overflowIndex === -1,
               })}
-              
               // onKeyDown={evt => {
               //   console.log(evt);
               //   if (evt.which === 13 || evt.which === 32) {
