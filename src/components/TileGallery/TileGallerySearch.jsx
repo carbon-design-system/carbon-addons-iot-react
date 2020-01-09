@@ -36,7 +36,7 @@ const TileGallerySearch = ({ i18n, searchValue, onChange, width }) => {
         placeHolderText={i18n.placeHolderText}
         onChange={event => onChange(event)}
         closeButtonLabelText={i18n.closeButtonText}
-        id="dashboard-search"
+        id="gallery-search"
       />
     </div>
   );
