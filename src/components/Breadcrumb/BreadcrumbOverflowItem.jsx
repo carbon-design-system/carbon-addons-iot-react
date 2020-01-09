@@ -79,7 +79,7 @@ class BreadcrumbOverflowItem extends React.Component {
 
   // TODO: set variable replace number
   setTabFocus = evt => {
-    console.log("overflow menu: ", evt);
+    console.log('overflow menu: ', evt);
     if (evt.which === 40) {
       this.props.handleOverflowMenuItemFocus(this.props.index + 1);
     }
