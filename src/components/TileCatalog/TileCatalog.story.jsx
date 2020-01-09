@@ -114,4 +114,7 @@ storiesOf('Watson IoT|TileCatalog', module)
       );
     };
     return <Container />;
-  });
+  })
+  .add('isSelectedByDefault false', () => (
+    <StatefulTileCatalog {...commonTileCatalogProps} isSelectedByDefault={false} />
+  ));
