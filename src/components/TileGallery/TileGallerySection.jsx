@@ -29,11 +29,7 @@ const defaultProps = {
 const TileGallerySection = ({ children, title, isOpen, onClick, i18n }) => {
   const [open, setOpen] = useState(isOpen);
 
-  const galleryItems = (
-    <div className="tile-gallery--section--items">
-      {React.Children.map(children, tileGalleryItem => React.cloneElement(tileGalleryItem))}
-    </div>
-  );
+  const galleryItems = <div className="tile-gallery--section--items">{children}</div>;
 
   return (
     <div className="tile-gallery--section">
