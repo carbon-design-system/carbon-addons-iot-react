@@ -50,7 +50,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
           className="Card__CardContent-v5r71h-1 jAGfWa"
         >
           <div
-            className="TableCard__StyledStatefulTable-q9l5bz-2 dfsRXe Table__StyledTableContainer-sc-1kalfns-0 fkxdXs bx--data-table-container"
+            className="TableCard__StyledStatefulTable-q9l5bz-2 SdwkD Table__StyledTableContainer-sc-1kalfns-0 fkxdXs bx--data-table-container"
           >
             <section
               aria-label="data table toolbar"
@@ -1087,17 +1087,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                             className="bx--select-option"
                             disabled={false}
                             hidden={false}
-                            value={20}
+                            value={25}
                           >
-                            20
+                            25
                           </option>
                           <option
                             className="bx--select-option"
                             disabled={false}
                             hidden={false}
-                            value={30}
+                            value={100}
                           >
-                            30
+                            100
                           </option>
                         </select>
                         <svg
@@ -1337,7 +1337,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
           className="Card__CardContent-v5r71h-1 jAGfWa"
         >
           <div
-            className="TableCard__StyledStatefulTable-q9l5bz-2 dfsRXe Table__StyledTableContainer-sc-1kalfns-0 fkxdXs bx--data-table-container"
+            className="TableCard__StyledStatefulTable-q9l5bz-2 SdwkD Table__StyledTableContainer-sc-1kalfns-0 fkxdXs bx--data-table-container"
           >
             <section
               aria-label="data table toolbar"
@@ -2738,17 +2738,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                             className="bx--select-option"
                             disabled={false}
                             hidden={false}
-                            value={20}
+                            value={25}
                           >
-                            20
+                            25
                           </option>
                           <option
                             className="bx--select-option"
                             disabled={false}
                             hidden={false}
-                            value={30}
+                            value={100}
                           >
-                            30
+                            100
                           </option>
                         </select>
                         <svg
@@ -3071,7 +3071,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
           className="Card__CardContent-v5r71h-1 jAGfWa"
         >
           <div
-            className="TableCard__StyledStatefulTable-q9l5bz-2 bsWBhi Table__StyledTableContainer-sc-1kalfns-0 fkxdXs bx--data-table-container"
+            className="TableCard__StyledStatefulTable-q9l5bz-2 kzFKjW Table__StyledTableContainer-sc-1kalfns-0 fkxdXs bx--data-table-container"
           >
             <section
               aria-label="data table toolbar"
@@ -3600,7 +3600,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
           className="Card__CardContent-v5r71h-1 jAGfWa"
         >
           <div
-            className="TableCard__StyledStatefulTable-q9l5bz-2 dfsRXe Table__StyledTableContainer-sc-1kalfns-0 fkxdXs bx--data-table-container"
+            className="TableCard__StyledStatefulTable-q9l5bz-2 SdwkD Table__StyledTableContainer-sc-1kalfns-0 fkxdXs bx--data-table-container"
           >
             <section
               aria-label="data table toolbar"
@@ -5690,17 +5690,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                             className="bx--select-option"
                             disabled={false}
                             hidden={false}
-                            value={20}
+                            value={25}
                           >
-                            20
+                            25
                           </option>
                           <option
                             className="bx--select-option"
                             disabled={false}
                             hidden={false}
-                            value={30}
+                            value={100}
                           >
-                            30
+                            100
                           </option>
                         </select>
                         <svg
@@ -6031,7 +6031,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
           className="Card__CardContent-v5r71h-1 jAGfWa"
         >
           <div
-            className="TableCard__StyledStatefulTable-q9l5bz-2 dfsRXe Table__StyledTableContainer-sc-1kalfns-0 fkxdXs bx--data-table-container"
+            className="TableCard__StyledStatefulTable-q9l5bz-2 SdwkD Table__StyledTableContainer-sc-1kalfns-0 fkxdXs bx--data-table-container"
           >
             <section
               aria-label="data table toolbar"
@@ -7019,17 +7019,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                             className="bx--select-option"
                             disabled={false}
                             hidden={false}
-                            value={20}
+                            value={25}
                           >
-                            20
+                            25
                           </option>
                           <option
                             className="bx--select-option"
                             disabled={false}
                             hidden={false}
-                            value={30}
+                            value={100}
                           >
-                            30
+                            100
                           </option>
                         </select>
                         <svg
@@ -7360,7 +7360,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
           className="Card__CardContent-v5r71h-1 jAGfWa"
         >
           <div
-            className="TableCard__StyledStatefulTable-q9l5bz-2 dfsRXe Table__StyledTableContainer-sc-1kalfns-0 fkxdXs bx--data-table-container"
+            className="TableCard__StyledStatefulTable-q9l5bz-2 SdwkD Table__StyledTableContainer-sc-1kalfns-0 fkxdXs bx--data-table-container"
           >
             <section
               aria-label="data table toolbar"
@@ -8349,17 +8349,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                             className="bx--select-option"
                             disabled={false}
                             hidden={false}
-                            value={20}
+                            value={25}
                           >
-                            20
+                            25
                           </option>
                           <option
                             className="bx--select-option"
                             disabled={false}
                             hidden={false}
-                            value={30}
+                            value={100}
                           >
-                            30
+                            100
                           </option>
                         </select>
                         <svg
@@ -8690,7 +8690,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
           className="Card__CardContent-v5r71h-1 jAGfWa"
         >
           <div
-            className="TableCard__StyledStatefulTable-q9l5bz-2 dfsRXe Table__StyledTableContainer-sc-1kalfns-0 fkxdXs bx--data-table-container"
+            className="TableCard__StyledStatefulTable-q9l5bz-2 SdwkD Table__StyledTableContainer-sc-1kalfns-0 fkxdXs bx--data-table-container"
           >
             <section
               aria-label="data table toolbar"
@@ -9194,17 +9194,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                             className="bx--select-option"
                             disabled={false}
                             hidden={false}
-                            value={20}
+                            value={25}
                           >
-                            20
+                            25
                           </option>
                           <option
                             className="bx--select-option"
                             disabled={false}
                             hidden={false}
-                            value={30}
+                            value={100}
                           >
-                            30
+                            100
                           </option>
                         </select>
                         <svg
@@ -9535,7 +9535,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
           className="Card__CardContent-v5r71h-1 jAGfWa"
         >
           <div
-            className="TableCard__StyledStatefulTable-q9l5bz-2 eXCCfG Table__StyledTableContainer-sc-1kalfns-0 fkxdXs bx--data-table-container"
+            className="TableCard__StyledStatefulTable-q9l5bz-2 RkZqR Table__StyledTableContainer-sc-1kalfns-0 fkxdXs bx--data-table-container"
           >
             <section
               aria-label="data table toolbar"
@@ -10039,17 +10039,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                             className="bx--select-option"
                             disabled={false}
                             hidden={false}
-                            value={20}
+                            value={25}
                           >
-                            20
+                            25
                           </option>
                           <option
                             className="bx--select-option"
                             disabled={false}
                             hidden={false}
-                            value={30}
+                            value={100}
                           >
-                            30
+                            100
                           </option>
                         </select>
                         <svg
@@ -10347,7 +10347,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
           className="Card__CardContent-v5r71h-1 jAGfWa"
         >
           <div
-            className="TableCard__StyledStatefulTable-q9l5bz-2 dfsRXe Table__StyledTableContainer-sc-1kalfns-0 fkxdXs bx--data-table-container"
+            className="TableCard__StyledStatefulTable-q9l5bz-2 SdwkD Table__StyledTableContainer-sc-1kalfns-0 fkxdXs bx--data-table-container"
           >
             <section
               aria-label="data table toolbar"
@@ -11589,17 +11589,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                             className="bx--select-option"
                             disabled={false}
                             hidden={false}
-                            value={20}
+                            value={25}
                           >
-                            20
+                            25
                           </option>
                           <option
                             className="bx--select-option"
                             disabled={false}
                             hidden={false}
-                            value={30}
+                            value={100}
                           >
-                            30
+                            100
                           </option>
                         </select>
                         <svg
@@ -11897,7 +11897,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
           className="Card__CardContent-v5r71h-1 jAGfWa"
         >
           <div
-            className="TableCard__StyledStatefulTable-q9l5bz-2 dfsRXe Table__StyledTableContainer-sc-1kalfns-0 fkxdXs bx--data-table-container"
+            className="TableCard__StyledStatefulTable-q9l5bz-2 SdwkD Table__StyledTableContainer-sc-1kalfns-0 fkxdXs bx--data-table-container"
           >
             <section
               aria-label="data table toolbar"
@@ -13140,17 +13140,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                             className="bx--select-option"
                             disabled={false}
                             hidden={false}
-                            value={20}
+                            value={25}
                           >
-                            20
+                            25
                           </option>
                           <option
                             className="bx--select-option"
                             disabled={false}
                             hidden={false}
-                            value={30}
+                            value={100}
                           >
-                            30
+                            100
                           </option>
                         </select>
                         <svg
@@ -13481,7 +13481,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
           className="Card__CardContent-v5r71h-1 jAGfWa"
         >
           <div
-            className="TableCard__StyledStatefulTable-q9l5bz-2 dfsRXe Table__StyledTableContainer-sc-1kalfns-0 fkxdXs bx--data-table-container"
+            className="TableCard__StyledStatefulTable-q9l5bz-2 SdwkD Table__StyledTableContainer-sc-1kalfns-0 fkxdXs bx--data-table-container"
           >
             <section
               aria-label="data table toolbar"
@@ -14469,17 +14469,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                             className="bx--select-option"
                             disabled={false}
                             hidden={false}
-                            value={20}
+                            value={25}
                           >
-                            20
+                            25
                           </option>
                           <option
                             className="bx--select-option"
                             disabled={false}
                             hidden={false}
-                            value={30}
+                            value={100}
                           >
-                            30
+                            100
                           </option>
                         </select>
                         <svg
@@ -14810,7 +14810,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
           className="Card__CardContent-v5r71h-1 jAGfWa"
         >
           <div
-            className="TableCard__StyledStatefulTable-q9l5bz-2 dfsRXe Table__StyledTableContainer-sc-1kalfns-0 fkxdXs bx--data-table-container"
+            className="TableCard__StyledStatefulTable-q9l5bz-2 SdwkD Table__StyledTableContainer-sc-1kalfns-0 fkxdXs bx--data-table-container"
           >
             <section
               aria-label="data table toolbar"
@@ -16406,17 +16406,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                             className="bx--select-option"
                             disabled={false}
                             hidden={false}
-                            value={20}
+                            value={25}
                           >
-                            20
+                            25
                           </option>
                           <option
                             className="bx--select-option"
                             disabled={false}
                             hidden={false}
-                            value={30}
+                            value={100}
                           >
-                            30
+                            100
                           </option>
                         </select>
                         <svg
@@ -16747,7 +16747,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
           className="Card__CardContent-v5r71h-1 jAGfWa"
         >
           <div
-            className="TableCard__StyledStatefulTable-q9l5bz-2 dfsRXe Table__StyledTableContainer-sc-1kalfns-0 fkxdXs bx--data-table-container"
+            className="TableCard__StyledStatefulTable-q9l5bz-2 SdwkD Table__StyledTableContainer-sc-1kalfns-0 fkxdXs bx--data-table-container"
           >
             <section
               aria-label="data table toolbar"
@@ -18099,17 +18099,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                             className="bx--select-option"
                             disabled={false}
                             hidden={false}
-                            value={20}
+                            value={25}
                           >
-                            20
+                            25
                           </option>
                           <option
                             className="bx--select-option"
                             disabled={false}
                             hidden={false}
-                            value={30}
+                            value={100}
                           >
-                            30
+                            100
                           </option>
                         </select>
                         <svg
@@ -18440,7 +18440,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
           className="Card__CardContent-v5r71h-1 jAGfWa"
         >
           <div
-            className="TableCard__StyledStatefulTable-q9l5bz-2 dfsRXe Table__StyledTableContainer-sc-1kalfns-0 fkxdXs bx--data-table-container"
+            className="TableCard__StyledStatefulTable-q9l5bz-2 SdwkD Table__StyledTableContainer-sc-1kalfns-0 fkxdXs bx--data-table-container"
           >
             <section
               aria-label="data table toolbar"
@@ -19756,17 +19756,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                             className="bx--select-option"
                             disabled={false}
                             hidden={false}
-                            value={20}
+                            value={25}
                           >
-                            20
+                            25
                           </option>
                           <option
                             className="bx--select-option"
                             disabled={false}
                             hidden={false}
-                            value={30}
+                            value={100}
                           >
-                            30
+                            100
                           </option>
                         </select>
                         <svg
@@ -20064,7 +20064,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
           className="Card__CardContent-v5r71h-1 jAGfWa"
         >
           <div
-            className="TableCard__StyledStatefulTable-q9l5bz-2 dfsRXe Table__StyledTableContainer-sc-1kalfns-0 fkxdXs bx--data-table-container"
+            className="TableCard__StyledStatefulTable-q9l5bz-2 SdwkD Table__StyledTableContainer-sc-1kalfns-0 fkxdXs bx--data-table-container"
           >
             <section
               aria-label="data table toolbar"
@@ -22154,17 +22154,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                             className="bx--select-option"
                             disabled={false}
                             hidden={false}
-                            value={20}
+                            value={25}
                           >
-                            20
+                            25
                           </option>
                           <option
                             className="bx--select-option"
                             disabled={false}
                             hidden={false}
-                            value={30}
+                            value={100}
                           >
-                            30
+                            100
                           </option>
                         </select>
                         <svg
@@ -22462,7 +22462,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
           className="Card__CardContent-v5r71h-1 jAGfWa"
         >
           <div
-            className="TableCard__StyledStatefulTable-q9l5bz-2 dfsRXe Table__StyledTableContainer-sc-1kalfns-0 fkxdXs bx--data-table-container"
+            className="TableCard__StyledStatefulTable-q9l5bz-2 SdwkD Table__StyledTableContainer-sc-1kalfns-0 fkxdXs bx--data-table-container"
           >
             <section
               aria-label="data table toolbar"
@@ -23466,17 +23466,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                             className="bx--select-option"
                             disabled={false}
                             hidden={false}
-                            value={20}
+                            value={25}
                           >
-                            20
+                            25
                           </option>
                           <option
                             className="bx--select-option"
                             disabled={false}
                             hidden={false}
-                            value={30}
+                            value={100}
                           >
-                            30
+                            100
                           </option>
                         </select>
                         <svg
@@ -23766,7 +23766,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
           className="Card__CardContent-v5r71h-1 jAGfWa"
         >
           <div
-            className="TableCard__StyledStatefulTable-q9l5bz-2 dfsRXe Table__StyledTableContainer-sc-1kalfns-0 fkxdXs bx--data-table-container"
+            className="TableCard__StyledStatefulTable-q9l5bz-2 SdwkD Table__StyledTableContainer-sc-1kalfns-0 fkxdXs bx--data-table-container"
           >
             <section
               aria-label="data table toolbar"
@@ -26220,17 +26220,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                             className="bx--select-option"
                             disabled={false}
                             hidden={false}
-                            value={20}
+                            value={25}
                           >
-                            20
+                            25
                           </option>
                           <option
                             className="bx--select-option"
                             disabled={false}
                             hidden={false}
-                            value={30}
+                            value={100}
                           >
-                            30
+                            100
                           </option>
                         </select>
                         <svg
@@ -26561,7 +26561,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
           className="Card__CardContent-v5r71h-1 jAGfWa"
         >
           <div
-            className="TableCard__StyledStatefulTable-q9l5bz-2 dfsRXe Table__StyledTableContainer-sc-1kalfns-0 fkxdXs bx--data-table-container"
+            className="TableCard__StyledStatefulTable-q9l5bz-2 SdwkD Table__StyledTableContainer-sc-1kalfns-0 fkxdXs bx--data-table-container"
           >
             <section
               aria-label="data table toolbar"
@@ -28518,17 +28518,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                             className="bx--select-option"
                             disabled={false}
                             hidden={false}
-                            value={20}
+                            value={25}
                           >
-                            20
+                            25
                           </option>
                           <option
                             className="bx--select-option"
                             disabled={false}
                             hidden={false}
-                            value={30}
+                            value={100}
                           >
-                            30
+                            100
                           </option>
                         </select>
                         <svg
