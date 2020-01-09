@@ -305,6 +305,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
                       "width": "25px",
                     }
                   }
+                  title="Zoom in"
                   type="button"
                 >
                   +
@@ -321,6 +322,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
                       "width": "25px",
                     }
                   }
+                  title="Zoom out"
                   type="button"
                 >
                   -
@@ -677,6 +679,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
                       "width": "25px",
                     }
                   }
+                  title="Zoom in"
                   type="button"
                 >
                   +
@@ -693,6 +696,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
                       "width": "25px",
                     }
                   }
+                  title="Zoom out"
                   type="button"
                 >
                   -
@@ -1155,6 +1159,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
                       "width": "25px",
                     }
                   }
+                  title="Zoom in"
                   type="button"
                 >
                   +
@@ -1171,6 +1176,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
                       "width": "25px",
                     }
                   }
+                  title="Zoom out"
                   type="button"
                 >
                   -

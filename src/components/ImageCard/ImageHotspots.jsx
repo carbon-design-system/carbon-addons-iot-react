@@ -26,6 +26,7 @@ const propTypes = {
   width: PropTypes.number.isRequired,
   zoomMax: PropTypes.number,
   renderIconByName: PropTypes.func,
+  i18n: PropTypes.objectOf(PropTypes.string),
 };
 
 const defaultProps = {
@@ -39,6 +40,11 @@ const defaultProps = {
   background: '#eee',
   zoomMax: undefined,
   renderIconByName: null,
+  i18n: {
+    zoomIn: 'Zoom in',
+    zoomOut: 'Zoom out',
+    zoomToFit: 'Zoom to fit',
+  },
 };
 
 export const startDrag = (event, element, cursor, setCursor) => {
@@ -273,6 +279,7 @@ const ImageHotspots = ({
   hideHotspots: hideHotspotsProp,
   hideMinimap: hideMinimapProp,
   hotspots,
+  i18n,
   background,
   src,
   height,
@@ -437,6 +444,7 @@ const ImageHotspots = ({
       )}
       {!hideZoomControls && (
         <ImageControls
+          i18n={i18n}
           minimap={{ ...minimap, src }}
           draggable={draggable}
           dragging={dragging}

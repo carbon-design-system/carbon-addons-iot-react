@@ -1700,6 +1700,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               "width": "25px",
                             }
                           }
+                          title="Zoom in"
                           type="button"
                         >
                           +
@@ -1716,6 +1717,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               "width": "25px",
                             }
                           }
+                          title="Zoom out"
                           type="button"
                         >
                           -
@@ -3464,6 +3466,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               "width": "25px",
                             }
                           }
+                          title="Zoom in"
                           type="button"
                         >
                           +
@@ -3480,6 +3483,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               "width": "25px",
                             }
                           }
+                          title="Zoom out"
                           type="button"
                         >
                           -
@@ -5260,6 +5264,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               "width": "25px",
                             }
                           }
+                          title="Zoom in"
                           type="button"
                         >
                           +
@@ -5276,6 +5281,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               "width": "25px",
                             }
                           }
+                          title="Zoom out"
                           type="button"
                         >
                           -
@@ -5532,6 +5538,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               "width": "25px",
                             }
                           }
+                          title="Zoom in"
                           type="button"
                         >
                           +
@@ -5548,6 +5555,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               "width": "25px",
                             }
                           }
+                          title="Zoom out"
                           type="button"
                         >
                           -
@@ -9341,6 +9349,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               "width": "25px",
                             }
                           }
+                          title="Zoom in"
                           type="button"
                         >
                           +
@@ -9357,6 +9366,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               "width": "25px",
                             }
                           }
+                          title="Zoom out"
                           type="button"
                         >
                           -
@@ -21123,6 +21133,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               "width": "25px",
                             }
                           }
+                          title="Zoom in"
                           type="button"
                         >
                           +
@@ -21139,6 +21150,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               "width": "25px",
                             }
                           }
+                          title="Zoom out"
                           type="button"
                         >
                           -

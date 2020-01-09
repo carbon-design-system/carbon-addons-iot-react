@@ -14,17 +14,16 @@ const propTypes = {
   onZoomOut: PropTypes.func.isRequired,
   onZoomIn: PropTypes.func.isRequired,
   i18n: PropTypes.shape({
-    minimizeIconDescription: PropTypes.string,
-  }),
+    zoomIn: PropTypes.string,
+    zoomOut: PropTypes.string,
+    zoomToFit: PropTypes.string,
+  }).isRequired,
 };
 
 const defaultProps = {
   draggable: false,
   dragging: false,
   hideMinimap: false,
-  i18n: {
-    minimizeIconDescription: 'Minimize',
-  },
 };
 
 const ImageControls = ({
@@ -35,7 +34,7 @@ const ImageControls = ({
   onZoomToFit,
   onZoomIn,
   onZoomOut,
-  i18n: { minimizeIconDescription },
+  i18n: { zoomToFit, zoomIn, zoomOut },
 }) => {
   const bottomControlsStyle = {
     position: 'absolute',
@@ -57,22 +56,17 @@ const ImageControls = ({
         {draggable && (
           <>
             <button type="button" style={buttonStyle} onClick={onZoomToFit}>
-              <Icon
-                icon={iconMinimize}
-                description={minimizeIconDescription}
-                width="100%"
-                height="100%"
-              />
+              <Icon icon={iconMinimize} description={zoomToFit} width="100%" height="100%" />
             </button>
             <br />
             <br />
           </>
         )}
-        <button type="button" style={buttonStyle} onClick={onZoomIn}>
+        <button title={zoomIn} type="button" style={buttonStyle} onClick={onZoomIn}>
           +
         </button>
         <br />
-        <button type="button" style={buttonStyle} onClick={onZoomOut}>
+        <button title={zoomOut} type="button" style={buttonStyle} onClick={onZoomOut}>
           -
         </button>
       </div>
