@@ -50,7 +50,7 @@ const TileGalleryItem = ({
   className,
 }) => {
   const content = (
-    <div style={{ display: 'flex', minHeight: '24px' }}>
+    <div className="content-container">
       {icon}
       <span className="title-card">{title}</span>
       {afterContent && (
@@ -93,7 +93,7 @@ const TileGalleryItem = ({
   return (
     <Fragment>
       <ClickableTile
-        className={`${className} dashboard-tile bx--tile bx--tile--clickable dashboard-pin-${
+        className={`${className} tile-gallery-item bx--tile bx--tile--clickable dashboard-pin-${
           mode === 'grid' ? 'card' : 'list'
         }-title`}
         key={`${title}-card-link`}

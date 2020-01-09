@@ -24,11 +24,7 @@ const defaultProps = {
 
 const TileGalleryViewSwitcher = ({ onChange, selectedIndex, i18n }) => {
   return (
-    <ContentSwitcher
-      onChange={event => onChange(event)}
-      selectedIndex={selectedIndex}
-      style={{ display: 'flex', marginLeft: '25px', marginRight: '25px' }}
-    >
+    <ContentSwitcher onChange={event => onChange(event)} selectedIndex={selectedIndex}>
       <Switch name="list" text={i18n.listText} />
       <Switch name="grid" text={i18n.gridText} />
     </ContentSwitcher>

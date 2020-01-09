@@ -21,6 +21,9 @@
   }
   .#{$prefix}--content-switcher {
     width: 10rem;
+    display: flex;
+    margin-left: 25px;
+    margin-right: 25px;
   }
   .#{$prefix}--content-switcher-btn {
     padding: 0 $spacing-05;
@@ -28,6 +31,7 @@
   }
 }
 
+// TileGallery component
 .tile-gallery {
   &--section {
     .#{$prefix}--accordion__title {
@@ -55,7 +59,7 @@
   }
 }
 
-.dashboard-tile {
+.tile-gallery-item {
   text-decoration: none;
   margin-right: $spacing-05;
   flex-basis: 30%;
@@ -183,5 +187,9 @@
       width: 11rem;
       margin-top: 0.125rem;
     }
+  }
+  .content-container {
+    display: flex;
+    min-height: 24px;
   }
 }

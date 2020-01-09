@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Search } from 'carbon-components-react';
+import { white } from '@carbon/colors';
 
 const propTypes = {
   /** i18n strings */
@@ -29,7 +30,7 @@ const TileGallerySearch = ({ i18n, searchValue, onChange, width }) => {
   return (
     <div>
       <Search
-        style={{ background: '#fff', width }}
+        style={{ background: white, width }}
         value={searchValue}
         labelText={i18n.iconDescription}
         placeHolderText={i18n.placeHolderText}
