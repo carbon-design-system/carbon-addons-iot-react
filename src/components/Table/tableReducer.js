@@ -227,6 +227,8 @@ export const tableReducer = (state = {}, action) => {
       const { view, totalItems } = action.payload;
       const { pageSize, pageSizes } = get(view, 'pagination') || {};
       const paginationFromState = get(state, 'view.pagination');
+      // update the column ordering if I'm passed new columns
+      const ordering = get(view, 'table.ordering') || get(state, 'view.table.ordering');
       const pagination = get(state, 'view.pagination')
         ? {
             totalItems: { $set: totalItems || updatedData.length },
@@ -241,6 +243,7 @@ export const tableReducer = (state = {}, action) => {
         view: {
           pagination,
           table: {
+            ordering: { $set: ordering },
             filteredData: {
               $set: filterSearchAndSort(
                 updatedData,

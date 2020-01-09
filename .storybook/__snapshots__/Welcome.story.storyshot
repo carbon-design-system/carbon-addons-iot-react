@@ -2711,6 +2711,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Getting Started|
                   <div
                     className="bx--structured-list-td"
                   >
+                    EditPage
+                  </div>
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                  />
+                  <div
+                    className="bx--structured-list-td"
+                  >
                     NavigationBar
                   </div>
                 </div>
@@ -2952,6 +2964,78 @@ exports[`Storybook Snapshot tests and console checks Storyshots Getting Started|
                     className="bx--structured-list-td"
                   >
                     StatefulPageWizard
+                  </div>
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                  />
+                  <div
+                    className="bx--structured-list-td"
+                  >
+                    TileGallery
+                  </div>
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                  />
+                  <div
+                    className="bx--structured-list-td"
+                  >
+                    TileGallerySection
+                  </div>
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                  />
+                  <div
+                    className="bx--structured-list-td"
+                  >
+                    TileGalleryItem
+                  </div>
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                  />
+                  <div
+                    className="bx--structured-list-td"
+                  >
+                    TileGalleryViewSwitcher
+                  </div>
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                  />
+                  <div
+                    className="bx--structured-list-td"
+                  >
+                    TileGallerySearch
+                  </div>
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                  />
+                  <div
+                    className="bx--structured-list-td"
+                  >
+                    StatefulTileGallery
                   </div>
                 </div>
                 <div

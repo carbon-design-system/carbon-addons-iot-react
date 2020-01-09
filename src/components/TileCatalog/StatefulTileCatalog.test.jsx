@@ -83,6 +83,15 @@ describe('StatefulTileCatalog', () => {
     const wrapper = mount(
       <StatefulTileCatalog {...commonTileProps} pagination={{ pageSize: 5 }} />
     );
+
+    // The new first tile should be selected
+    expect(
+      wrapper
+        .find('RadioTile')
+        .at(0)
+        .prop('checked')
+    ).toEqual(true);
+
     // On page 1
     expect(
       wrapper
@@ -122,5 +131,28 @@ describe('StatefulTileCatalog', () => {
         .at(0)
         .prop('checked')
     ).toEqual(true);
+  });
+
+  test('tiles prop change should not select if isSelectedByDefault false', () => {
+    const wrapper = mount(
+      <StatefulTileCatalog
+        {...commonTileProps}
+        pagination={{ pageSize: 5 }}
+        isSelectedByDefault={false}
+      />
+    );
+    // The new first tile should not be selected
+    expect(
+      wrapper
+        .find('RadioTile')
+        .at(0)
+        .prop('checked')
+    ).toEqual(false);
+    const newTiles = commonTileProps.tiles.slice(1, 5);
+    // Back to Page 1
+    mockOnSelection.mockClear();
+    wrapper.setProps({ tiles: newTiles });
+    // Needs to have called the selection callback for the newly default selected row
+    expect(mockOnSelection).toHaveBeenCalledTimes(0);
   });
 });
