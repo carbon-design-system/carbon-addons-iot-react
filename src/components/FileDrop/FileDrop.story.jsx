@@ -51,6 +51,7 @@ storiesOf('Watson IoT|FileDrop', module)
       {...FileDropProps}
       description="Only JSON can be uploaded"
       accept={['json']}
+      fileType="TEXT"
       kind="drag-and-drop"
     />
   ));
