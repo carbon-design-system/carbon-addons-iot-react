@@ -232,7 +232,7 @@ export const tableReducer = (state = {}, action) => {
       const pagination = get(state, 'view.pagination')
         ? {
             totalItems: { $set: totalItems || updatedData.length },
-            pageSize: { $set: paginationFromState.pageSize || pageSize },
+            pageSize: { $set: pageSize || paginationFromState.pageSize },
             pageSizes: { $set: pageSizes },
           }
         : {};

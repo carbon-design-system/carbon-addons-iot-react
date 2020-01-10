@@ -43,11 +43,13 @@ const StyledStatefulTable = styled(({ showHeader, isExpanded, data, ...rest }) =
   flex: inherit;
   height: 100%;
   position: relative;
-  overflow-y: hidden;
+  overflow-y: ${props => (!props.isExpanded ? 'hidden' : 'auto')};
+  padding-bottom: ${props => (props.isExpanded ? '3rem' : '')};
   &&& {
     .bx--pagination {
-      position: absolute;
-      bottom: 0;
+      position: ${props => (!props.isExpanded ? 'absolute' : 'fixed')};
+      bottom: ${props => (!props.isExpanded ? '0px' : '25px')};
+      ${props => (props.isExpanded ? `width: calc(100% - 50px)` : ``)}
     }
     .bx--data-table-container {
       ${props =>
@@ -703,8 +705,8 @@ const TableCard = ({
             view={{
               pagination: {
                 pageSize: numberOfRowsPerPage,
-                pageSizes: [numberOfRowsPerPage],
-                isItemPerPageHidden: true,
+                pageSizes: [numberOfRowsPerPage, 25, 100],
+                isItemPerPageHidden: !isExpanded,
               },
               toolbar: {
                 activeBar: null,
