@@ -18,6 +18,7 @@ exports[`HeaderMenu should render 1`] = `
         aria-expanded={false}
         aria-haspopup="menu"
         className="bx--header__menu-item bx--header__menu-title"
+        data-testid="menuitem"
         href="javascript:void(0)"
         onKeyDown={[Function]}
         role="menuitem"
