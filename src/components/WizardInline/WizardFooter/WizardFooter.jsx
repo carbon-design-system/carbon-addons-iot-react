@@ -37,6 +37,7 @@ const WizardFooter = ({
   onNext,
   onBack,
   onSubmit,
+  className,
   onCancel,
   cancelLabel,
   backLabel,
@@ -52,7 +53,7 @@ const WizardFooter = ({
     {footerLeftContent && (
       <div className="WizardInline-custom-footer-content">{footerLeftContent}</div>
     )}
-    <StyledFooterButtons>
+    <StyledFooterButtons className={className}>
       {!hasPrev ? (
         <Button onClick={onCancel} kind="secondary">
           {cancelLabel}
