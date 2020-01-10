@@ -259,7 +259,6 @@ export {
   SideNavMenuItem,
   SideNavSwitcher,
 } from 'carbon-components-react';
-export { validateDashboardJSON } from './utils/schemas/validators';
 
 export {
   determineCardRange,
