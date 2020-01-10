@@ -101,6 +101,11 @@ const propTypes = {
     cloneCardLabel: PropTypes.string,
     deleteCardLabel: PropTypes.string,
 
+    // image card labels:
+    zoomIn: PropTypes.string,
+    zoomOut: PropTypes.string,
+    zoomToFit: PropTypes.string,
+
     // labels for table card
     criticalLabel: PropTypes.string,
     moderateLabel: PropTypes.string,
