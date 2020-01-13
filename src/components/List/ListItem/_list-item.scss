@@ -1,0 +1,33 @@
+.list-item {
+  background: $ui-01;
+  padding: $spacing-03;
+  border-top: 1px solid $ui-01;
+  border-bottom: 1px solid $ui-03;
+  border-left: solid 4px $ui-01;
+  color: $text-05;
+
+  display: flex;
+  &__selected {
+    border-left: solid $interactive-01;
+    background: $selected-ui;
+  }
+
+  &--icon {
+    margin: $spacing-01;
+    padding: $spacing-01;
+    transform: rotate(180deg);
+  }
+
+  &--icon__selected {
+    margin: $spacing-01;
+    padding: $spacing-01;
+  }
+
+  &--content {
+    padding: $spacing-03;
+  }
+}
+
+.list-item--child {
+  padding-left: $spacing-06;
+}

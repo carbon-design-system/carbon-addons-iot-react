@@ -1,0 +1,30 @@
+.list-header {
+  display: flex;
+  align-items: center;
+  background: $ui-01;
+  padding: $spacing-03;
+  border-bottom: 1px solid $ui-03;
+  &--title {
+    flex: 0 0 50%;
+  }
+
+  &--space {
+    width: 100%;
+  }
+  &--search {
+    background: $ui-01;
+    padding: $spacing-03;
+    width: 10rem;
+  }
+
+  &--search__expanded {
+    background: $ui-01;
+    width: 80%;
+    left: 1.5rem;
+    position: absolute;
+  }
+
+  &--add {
+    padding: $spacing-03;
+  }
+}

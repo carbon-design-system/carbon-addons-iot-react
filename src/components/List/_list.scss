@@ -1,1 +1,8 @@
-@import '~carbon-components/scss/components/list/list';
+.list {
+  width: 100%;
+
+  &--search {
+    background: $ui-01;
+    width: 100%;
+  }
+}
