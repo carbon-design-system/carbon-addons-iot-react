@@ -9,7 +9,7 @@ const { TableToolbarSearch } = DataTable;
 
 const childrenPropType = PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]);
 
-const List = ({ title, hasSearch, headerHasButton, items, ...others }) => {
+const List = ({ title, search, buttons, items, ...others }) => {
   const [selectedIds, setSelectedIds] = useState([]);
   const [selectedId, setSelectedId] = useState(null);
   const [expandedId, setExpandedId] = useState(null);
@@ -48,7 +48,7 @@ const List = ({ title, hasSearch, headerHasButton, items, ...others }) => {
     paging: '',
     leftIcon: '',
     rightIcon: '',
-    search: '',
+    search: { onSearch: PropTypes.func, placeHolderText: PropTypes.string },
     headerButton: '',
     headerSum: '',
     multiSelected: '',
@@ -95,7 +95,7 @@ const List = ({ title, hasSearch, headerHasButton, items, ...others }) => {
       <ListHeader
         title={title}
         hasSearch={hasSearch}
-        hasButton={headerHasButton}
+        hasButton={buttons}
         onSearch={() => {} /*handleSearch*/}
       />
       {hasSearch ? (
