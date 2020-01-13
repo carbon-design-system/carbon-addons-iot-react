@@ -12,6 +12,7 @@ const ListItem = ({
   isExpandable,
   isSelectable,
   nestingLevel,
+  content,
   ...others
 }) => {
   return (
@@ -36,7 +37,7 @@ const ListItem = ({
           </div>
         )}
 
-        <div className="list-item--content">{others.content}</div>
+        <div className="list-item--content">{content}</div>
       </div>
     </div>
   );
