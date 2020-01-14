@@ -43,7 +43,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
              
           </span>
           <div
-            className="bx--toolbar card--toolbar"
+            className="card--toolbar"
           />
         </div>
         <div
@@ -130,7 +130,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
              
           </span>
           <div
-            className="bx--toolbar card--toolbar"
+            className="card--toolbar"
           />
         </div>
         <div
@@ -214,7 +214,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
              
           </span>
           <div
-            className="bx--toolbar card--toolbar"
+            className="card--toolbar"
           />
         </div>
         <div
@@ -301,7 +301,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
              
           </span>
           <div
-            className="bx--toolbar card--toolbar"
+            className="card--toolbar"
           />
         </div>
         <div
@@ -388,7 +388,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
              
           </span>
           <div
-            className="bx--toolbar card--toolbar"
+            className="card--toolbar"
           />
         </div>
         <div
@@ -475,7 +475,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
              
           </span>
           <div
-            className="bx--toolbar card--toolbar"
+            className="card--toolbar"
           />
         </div>
         <div
@@ -562,7 +562,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
              
           </span>
           <div
-            className="bx--toolbar card--toolbar"
+            className="card--toolbar"
           />
         </div>
         <div
@@ -649,7 +649,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
              
           </span>
           <div
-            className="bx--toolbar card--toolbar"
+            className="card--toolbar"
           />
         </div>
         <div
@@ -736,7 +736,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
              
           </span>
           <div
-            className="bx--toolbar card--toolbar"
+            className="card--toolbar"
           />
         </div>
         <div
@@ -823,7 +823,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
              
           </span>
           <div
-            className="bx--toolbar card--toolbar"
+            className="card--toolbar"
           />
         </div>
         <div
@@ -910,7 +910,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
              
           </span>
           <div
-            className="bx--toolbar card--toolbar"
+            className="card--toolbar"
           />
         </div>
         <div
@@ -997,7 +997,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
              
           </span>
           <div
-            className="bx--toolbar card--toolbar"
+            className="card--toolbar"
           />
         </div>
         <div
@@ -1084,7 +1084,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
              
           </span>
           <div
-            className="bx--toolbar card--toolbar"
+            className="card--toolbar"
           />
         </div>
         <div
@@ -1171,7 +1171,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
              
           </span>
           <div
-            className="bx--toolbar card--toolbar"
+            className="card--toolbar"
           />
         </div>
         <div
@@ -1258,7 +1258,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
              
           </span>
           <div
-            className="bx--toolbar card--toolbar"
+            className="card--toolbar"
           />
         </div>
         <div
@@ -1345,7 +1345,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
              
           </span>
           <div
-            className="bx--toolbar card--toolbar"
+            className="card--toolbar"
           />
         </div>
         <div
@@ -1432,7 +1432,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
              
           </span>
           <div
-            className="bx--toolbar card--toolbar"
+            className="card--toolbar"
           />
         </div>
         <div
@@ -1519,7 +1519,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
              
           </span>
           <div
-            className="bx--toolbar card--toolbar"
+            className="card--toolbar"
           />
         </div>
         <div
@@ -1606,7 +1606,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
              
           </span>
           <div
-            className="bx--toolbar card--toolbar"
+            className="card--toolbar"
           />
         </div>
         <div
@@ -1693,7 +1693,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
              
           </span>
           <div
-            className="bx--toolbar card--toolbar"
+            className="card--toolbar"
           />
         </div>
         <div
@@ -1780,7 +1780,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
              
           </span>
           <div
-            className="bx--toolbar card--toolbar"
+            className="card--toolbar"
           />
         </div>
         <div
@@ -1867,7 +1867,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
              
           </span>
           <div
-            className="bx--toolbar card--toolbar"
+            className="card--toolbar"
           />
         </div>
         <div
@@ -1954,7 +1954,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
              
           </span>
           <div
-            className="bx--toolbar card--toolbar"
+            className="card--toolbar"
           />
         </div>
         <div
@@ -2041,7 +2041,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
              
           </span>
           <div
-            className="bx--toolbar card--toolbar"
+            className="card--toolbar"
           />
         </div>
         <div
@@ -2128,7 +2128,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
              
           </span>
           <div
-            className="bx--toolbar card--toolbar"
+            className="card--toolbar"
           />
         </div>
         <div
@@ -2215,7 +2215,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
              
           </span>
           <div
-            className="bx--toolbar card--toolbar"
+            className="card--toolbar"
           />
         </div>
         <div
@@ -2302,7 +2302,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
              
           </span>
           <div
-            className="bx--toolbar card--toolbar"
+            className="card--toolbar"
           />
         </div>
         <div
@@ -2389,7 +2389,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
              
           </span>
           <div
-            className="bx--toolbar card--toolbar"
+            className="card--toolbar"
           />
         </div>
         <div
@@ -2476,7 +2476,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
              
           </span>
           <div
-            className="bx--toolbar card--toolbar"
+            className="card--toolbar"
           />
         </div>
         <div
@@ -2563,7 +2563,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
              
           </span>
           <div
-            className="bx--toolbar card--toolbar"
+            className="card--toolbar"
           />
         </div>
         <div
@@ -2650,7 +2650,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
              
           </span>
           <div
-            className="bx--toolbar card--toolbar"
+            className="card--toolbar"
           />
         </div>
         <div
@@ -2737,7 +2737,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
              
           </span>
           <div
-            className="bx--toolbar card--toolbar"
+            className="card--toolbar"
           />
         </div>
         <div
@@ -2824,7 +2824,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
              
           </span>
           <div
-            className="bx--toolbar card--toolbar"
+            className="card--toolbar"
           />
         </div>
         <div
@@ -2911,58 +2911,62 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
              
           </span>
           <div
-            className="bx--toolbar card--toolbar"
+            className="card--toolbar"
           >
-            <span
-              className="card--toolbar-timerange-lable CardRangePicker__TimeRangeLabel-ns6bu0-0 QmRa"
-              id="timeRange"
-            >
-              Last 7 days
-            </span>
             <div
-              aria-expanded={false}
-              aria-haspopup={true}
-              aria-label="Menu"
-              className="card--toolbar-action bx--overflow-menu"
-              onClick={[Function]}
-              onClose={[Function]}
-              onKeyDown={[Function]}
-              open={false}
-              role="button"
-              tabIndex={0}
-              title="Open and close list of options"
+              className="CardToolbar__ToolbarDateRangeWrapper-sc-1ekh8ti-1 eWLmmw"
             >
-              <svg
-                aria-label="Last 7 days"
-                className="bx--overflow-menu__icon"
-                focusable="false"
-                height={20}
-                onClick={[Function]}
-                onKeyDown={[Function]}
-                preserveAspectRatio="xMidYMid meet"
-                role="img"
-                style={
-                  Object {
-                    "willChange": "transform",
-                  }
-                }
-                viewBox="0 0 32 32"
-                width={20}
-                xmlns="http://www.w3.org/2000/svg"
+              <div
+                className="card--toolbar-timerange-label CardRangePicker__TimeRangeLabel-ns6bu0-0 QmRa"
+                id="timeRange"
               >
-                <path
-                  d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
-                />
-                <path
-                  d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
-                />
-                <path
-                  d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
-                />
-                <title>
-                  Last 7 days
-                </title>
-              </svg>
+                Last 7 days
+              </div>
+              <div
+                aria-expanded={false}
+                aria-haspopup={true}
+                aria-label="Menu"
+                className="card--toolbar-action bx--overflow-menu"
+                onClick={[Function]}
+                onClose={[Function]}
+                onKeyDown={[Function]}
+                open={false}
+                role="button"
+                tabIndex={0}
+                title="Open and close list of options"
+              >
+                <svg
+                  aria-label="Last 7 days"
+                  className="bx--overflow-menu__icon"
+                  focusable="false"
+                  height={16}
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  preserveAspectRatio="xMidYMid meet"
+                  role="img"
+                  style={
+                    Object {
+                      "willChange": "transform",
+                    }
+                  }
+                  viewBox="0 0 32 32"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
+                  />
+                  <path
+                    d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
+                  />
+                  <path
+                    d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
+                  />
+                  <title>
+                    Last 7 days
+                  </title>
+                </svg>
+              </div>
             </div>
           </div>
         </div>
@@ -3050,7 +3054,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
              
           </span>
           <div
-            className="bx--toolbar card--toolbar"
+            className="card--toolbar"
           />
         </div>
         <div

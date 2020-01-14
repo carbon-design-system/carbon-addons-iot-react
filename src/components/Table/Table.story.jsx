@@ -441,7 +441,7 @@ storiesOf('Watson IoT|Table', module)
       },
     }
   )
-  .add('Stateful Example with Row Count', () => (
+  .add('Stateful Example with Secondary Title', () => (
     <FullWidthWrapper>
       <StatefulTable
         {...initialState}
@@ -451,14 +451,10 @@ storiesOf('Watson IoT|Table', module)
           hasRowSelection: 'multi',
           hasFilter: boolean('Show Filter', true),
           hasRowActions: boolean('Show Row Action', true),
-          hasRowCountInHeader: boolean('Show Row Count', true),
+          secondaryTitle: text('Secondary Title', `Row count: ${initialState.data.length}`),
         }}
         view={{
           toolbar: { activeBar: null },
-        }}
-        i18n={{
-          rowCountInHeader: totalRowCount =>
-            `${text('Row Count Label', 'Results')}: ${totalRowCount}`,
         }}
       />
     </FullWidthWrapper>

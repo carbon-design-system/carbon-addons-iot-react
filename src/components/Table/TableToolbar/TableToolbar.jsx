@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import IconColumnSelector from '@carbon/icons-react/lib/column/20';
-import IconFilter from '@carbon/icons-react/lib/filter/20';
-import { DataTable, Button } from 'carbon-components-react';
+import IconColumnSelector from '@carbon/icons-react/lib/column/16';
+import IconFilter from '@carbon/icons-react/lib/filter/16';
+import { DataTable, Button, Tooltip } from 'carbon-components-react';
 import Download16 from '@carbon/icons-react/lib/download/16';
 import styled from 'styled-components';
 
+import deprecate from '../../../internal/deprecate';
 import { TableSearchPropTypes, defaultI18NPropTypes } from '../TablePropTypes';
 import { tableTranslateWithId } from '../../../utils/componentUtilityFunctions';
 // import { COLORS } from '../../../styles/styles';
@@ -71,6 +72,10 @@ const StyledTableBatchActions = styled(TableBatchActions)`
   }
 `;
 
+const StyledTooltipContainer = styled.div`
+  padding: 1rem 1rem 0 0;
+`;
+
 const propTypes = {
   /** id of table */
   tableId: PropTypes.string.isRequired,
@@ -79,9 +84,16 @@ const propTypes = {
     hasFilter: PropTypes.bool,
     hasSearch: PropTypes.bool,
     hasColumnSelection: PropTypes.bool,
-    hasRowCountInHeader: PropTypes.bool,
+    /** Optional boolean to render rowCount in header
+     *  NOTE: Deprecated in favor of secondaryTitle for custom use
+     */
+    hasRowCountInHeader: deprecate(
+      PropTypes.bool,
+      '\n The prop `hasRowCountInHeader` has been deprecated in favor `secondaryTitle`'
+    ),
+    secondaryTitle: PropTypes.string,
+    tooltip: PropTypes.node,
   }).isRequired,
-
   /** internationalized labels */
   i18n: PropTypes.shape({
     clearAllFilters: PropTypes.string,
@@ -144,7 +156,15 @@ const TableToolbar = ({
   tableId,
   className,
   i18n,
-  options: { hasColumnSelection, hasFilter, hasSearch, hasRowSelection, hasRowCountInHeader },
+  options: {
+    hasColumnSelection,
+    hasFilter,
+    hasSearch,
+    hasRowSelection,
+    hasRowCountInHeader,
+    secondaryTitle,
+    tooltip,
+  },
   actions: {
     onCancelBatchAction,
     onApplyBatchAction,
@@ -178,14 +198,32 @@ const TableToolbar = ({
         </TableBatchAction>
       ))}
     </StyledTableBatchActions>
-
-    {hasRowCountInHeader ? (
+    {secondaryTitle ? (
       <label // eslint-disable-line
-        className="row-count-header"
+        className="table-toolbar-secondary-title"
+      >
+        {secondaryTitle}
+      </label>
+    ) : null}
+    {// Deprecated in favor of secondaryTitle for a more general use-case
+    hasRowCountInHeader ? (
+      <label // eslint-disable-line
+        className="table-toolbar-secondary-title"
       >
         {i18n.rowCountInHeader(totalItemsCount)}
       </label>
     ) : null}
+    {tooltip && (
+      <StyledTooltipContainer>
+        <Tooltip
+          triggerId={`card-tooltip-trigger-${tableId}`}
+          tooltipId={`card-tooltip-${tableId}`}
+          triggerText=""
+        >
+          {tooltip}
+        </Tooltip>
+      </StyledTooltipContainer>
+    )}
     <StyledTableToolbarContent>
       {hasSearch ? (
         <StyledToolbarSearch
@@ -196,7 +234,6 @@ const TableToolbar = ({
           disabled={isDisabled}
         />
       ) : null}
-      {customToolbarContent || null}
       {totalFilters > 0 ? (
         <Button kind="secondary" onClick={onClearAllFilters}>
           {i18n.clearAllFilters}
@@ -217,6 +254,9 @@ const TableToolbar = ({
           <IconFilter description={i18n.filterButtonAria} />
         </ToolbarSVGWrapper>
       ) : null}
+
+      {// Default card header actions should be to the right of the table-specific actions
+      customToolbarContent || null}
     </StyledTableToolbarContent>
   </StyledCarbonTableToolbar>
 );

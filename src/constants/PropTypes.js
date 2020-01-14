@@ -94,6 +94,7 @@ export const TableCardPropTypes = {
       })
     ).isRequired,
     showHeader: PropTypes.bool,
+    tooltip: PropTypes.string,
     expandedRows: PropTypes.arrayOf(
       PropTypes.shape({
         id: PropTypes.string,

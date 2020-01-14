@@ -86,6 +86,9 @@ const propTypes = {
     hasColumnSelectionConfig: PropTypes.bool,
     shouldLazyRender: PropTypes.bool,
     hasRowCountInHeader: PropTypes.bool,
+    /** Displays smaller title in header */
+    secondaryTitle: PropTypes.node,
+    tooltip: PropTypes.string,
   }),
 
   /** Initial state of the table, should be updated via a local state wrapper component implementation or via a central store/redux see StatefulTable component for an example */
@@ -189,6 +192,13 @@ export const defaultProps = baseProps => ({
   id: 'Table',
   useZebraStyles: false,
   lightweight: false,
+  title: null,
+  tooltip: null,
+  width: null,
+  availableActions: null,
+  isEditable: null,
+  timeRange: null,
+  onCardAction: null,
   options: {
     hasPagination: false,
     hasRowSelection: false,
@@ -201,6 +211,8 @@ export const defaultProps = baseProps => ({
     hasColumnSelection: false,
     hasColumnSelectionConfig: false,
     shouldLazyRender: false,
+    secondaryTitle: null,
+    tooltip: null,
   },
   view: {
     pagination: {
@@ -302,6 +314,14 @@ const Table = props => {
     className,
     style,
     i18n,
+    // Table Toolbar props
+    secondaryTitle,
+    tooltip,
+    width,
+    availableActions,
+    isEditable,
+    timeRange,
+    onCardAction,
     ...others
   } = merge({}, defaultProps(props), props);
 
@@ -344,6 +364,8 @@ const Table = props => {
     <StyledTableContainer style={style} className={className}>
       <TableToolbar
         tableId={id}
+        secondaryTitle={secondaryTitle}
+        tooltip={tooltip}
         i18n={{
           clearAllFilters: i18n.clearAllFilters,
           columnSelectionButtonAria: i18n.columnSelectionButtonAria,
@@ -375,7 +397,9 @@ const Table = props => {
           'hasFilter',
           'hasSearch',
           'hasRowSelection',
-          'hasRowCountInHeader'
+          'hasRowCountInHeader',
+          'secondaryTitle',
+          'tooltip'
         )}
         tableState={{
           totalSelected: view.table.selectedIds.length,

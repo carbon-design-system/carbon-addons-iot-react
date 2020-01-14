@@ -1,10 +1,10 @@
 import React, { useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import EventSchedule from '@carbon/icons-react/lib/event--schedule/20';
+import EventSchedule from '@carbon/icons-react/lib/event--schedule/16';
 import { ToolbarItem, OverflowMenu, OverflowMenuItem } from 'carbon-components-react';
 
-const TimeRangeLabel = styled.span`
+const TimeRangeLabel = styled.div`
   font-size: 0.875rem;
   font-weight: normal;
 `;
@@ -58,9 +58,12 @@ const CardRangePicker = ({ i18n, timeRange: timeRangeProp, onCardAction }) => {
 
   return (
     <ToolbarItem>
-      <TimeRangeLabel id="timeRange" className="card--toolbar-timerange-lable">
-        {timeBoxLabels[timeRange]}
-      </TimeRangeLabel>
+      {timeBoxLabels[timeRange] ? (
+        <TimeRangeLabel id="timeRange" className="card--toolbar-timerange-label">
+          {timeBoxLabels[timeRange]}
+        </TimeRangeLabel>
+      ) : null}
+
       <OverflowMenu
         iconDescription={timeBoxLabels[timeRange]}
         className="card--toolbar-action"

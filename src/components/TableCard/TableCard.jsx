@@ -14,6 +14,7 @@ import { CARD_SIZES } from '../../constants/LayoutConstants';
 import StatefulTable from '../Table/StatefulTable';
 import { generateTableSampleValues } from '../TimeSeriesCard/timeSeriesUtils';
 import { csvDownloadHandler } from '../../utils/componentUtilityFunctions';
+import CardToolbar from '../Card/CardToolbar';
 
 const StyledOverflowMenu = styled(OverflowMenu)`
   &&& {
@@ -160,7 +161,26 @@ const defaultProps = {
     downloadIconDescription: 'Download table content',
     severityLabel: 'Severity',
     emptyMessage: 'There is no data for this time range.',
+    // Card-specific labels needed for combo with table toolbar
+    last24HoursLabel: 'Last 24 hrs',
+    last7DaysLabel: 'Last 7 days',
+    lastMonthLabel: 'Last month',
+    lastQuarterLabel: 'Last quarter',
+    lastYearLabel: 'Last year',
+    periodToDateLabel: 'Period to date',
+    thisWeekLabel: 'This week',
+    thisMonthLabel: 'This month',
+    thisQuarterLabel: 'This quarter',
+    thisYearLabel: 'This year',
+    hourlyLabel: 'Hourly',
+    dailyLabel: 'Daily',
+    weeklyLabel: 'Weekly',
+    monthlyLabel: 'Monthly',
+    defaultLabel: 'Default',
+    closeLabel: 'Close',
+    expandLabel: 'Expand to fullscreen',
   },
+  content: { tooltip: null },
 };
 /**
  * Returns an array of matching thresholds will only return the highest severity threshold for a column
@@ -231,12 +251,13 @@ const TableCard = ({
   id,
   title,
   isExpanded,
-  content: { columns = [], showHeader, expandedRows, sort, thresholds, emptyMessage },
+  content: { columns = [], showHeader, expandedRows, sort, thresholds, emptyMessage, tooltip },
   size,
   onCardAction,
   values: data,
   isEditable,
   i18n,
+  secondaryTitle,
   ...others
 }) => {
   const renderActionCell = cellItem => {
@@ -663,10 +684,20 @@ const TableCard = ({
     ? columnsToRender.find(item => item.priority === 1)
     : columnStartSortDefined;
 
+  const cardToolbar = (
+    <CardToolbar
+      availableActions={{ expand: isExpandable, range: true }}
+      i18n={i18n}
+      isEditable={isEditable}
+      isExpanded={isExpanded}
+      onCardAction={onCardAction}
+      {...others}
+    />
+  );
+
   return (
     <Card
       id={id}
-      title={title}
       size={size}
       onCardAction={onCardAction}
       availableActions={{ expand: isExpandable, range: true }}
@@ -687,6 +718,8 @@ const TableCard = ({
               hasSearch: true,
               hasFilter,
               hasRowExpansion,
+              secondaryTitle: title,
+              tooltip,
             }}
             expandedData={expandedRowsFormatted}
             actions={{
@@ -711,6 +744,7 @@ const TableCard = ({
               toolbar: {
                 activeBar: null,
                 isDisabled: isEditable,
+                customToolbarContent: cardToolbar,
               },
               filters: [],
               table: {
@@ -728,7 +762,7 @@ const TableCard = ({
               },
             }}
             showHeader={showHeader !== undefined ? showHeader : true}
-            i18n={i18n}
+            i18n={i18n} // TODO: add Card defaultprops ?
           />
         );
       }}
