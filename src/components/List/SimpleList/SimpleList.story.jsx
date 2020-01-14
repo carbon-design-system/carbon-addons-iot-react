@@ -42,10 +42,11 @@ storiesOf('Watson IoT Experimental|SimpleList', module)
     </div>
   ))
   .add('tall list (isFullHeight = true)', () => (
-    <div style={{ width: 500, height: 1000 }}>
+    <div style={{ width: 500, height: 1000, background: '#fee', padding: 10 }}>
       <SimpleList
         title={text('Text', 'Simple List')}
         hasSearch
+        isFullHeight
         i18n={{
           searchPlaceHolderText: 'Enter a search',
         }}
@@ -55,7 +56,7 @@ storiesOf('Watson IoT Experimental|SimpleList', module)
     </div>
   ))
   .add('tall list (isFullHeight = false)', () => (
-    <div style={{ width: 500, height: 1000 }}>
+    <div style={{ width: 500, height: 1000, background: '#fee', padding: 10 }}>
       <SimpleList
         title={text('Text', 'Simple List')}
         hasSearch

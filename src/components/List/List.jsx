@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import classnames from 'classnames';
 import ListItem from './ListItem/ListItem';
 import ListHeader from './ListHeader/ListHeader';
 import SimplePagination from '../SimplePagination/SimplePagination';
@@ -66,9 +67,19 @@ const List = ({ title, search = null, buttons, items, isFullHeight, i18n, ...oth
   const listItems = items.map(item => renderItemAndChildren(item, 0));
 
   return (
-    <div className="list">
-      <ListHeader title={title} buttons={buttons} search={search} i18n={i18n} />
-      <div>{listItems}</div>
+    <div
+      className={classnames('list', {
+        'list__full-height': isFullHeight,
+      })}
+    >
+      <ListHeader
+        className="list--header"
+        title={title}
+        buttons={buttons}
+        search={search}
+        i18n={i18n}
+      />
+      <div className="list--content">{listItems}</div>
       {/*<SimplePagination page="1" maxPage="4" onPage="1" />*/}
     </div>
   );

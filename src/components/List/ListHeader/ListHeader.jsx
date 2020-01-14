@@ -3,7 +3,7 @@ import { Search } from 'carbon-components-react';
 
 const ListHeader = ({ title, buttons, search, i18n, ...others }) => {
   return (
-    <div>
+    <div className="list-header-container">
       <div className="list-header">
         <div className="list-header--title">{title}</div>
         <div className="list-header--btn-container">{buttons}</div>

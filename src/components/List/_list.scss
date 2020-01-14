@@ -1,8 +1,16 @@
 .list {
+  display: flex;
   width: 100%;
-
-  &--search {
+  flex-direction: column;
+  &--header {
+    flex: 0;
+  }
+  &--content {
+    flex: 1 1;
     background: $ui-01;
-    width: 100%;
+  }
+
+  &__full-height {
+    height: 100%;
   }
 }

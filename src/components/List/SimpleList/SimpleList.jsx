@@ -1,7 +1,15 @@
 import React, { useState } from 'react';
 import List from '../List';
 
-const SimpleList = ({ title, hasSearch = false, buttons = [], items = [], i18n, ...others }) => {
+const SimpleList = ({
+  title,
+  hasSearch = false,
+  buttons = [],
+  items = [],
+  i18n,
+  isFullHeight,
+  ...others
+}) => {
   const [searchValue, setSearchValue] = useState(null);
   const filteredItems =
     searchValue !== null
@@ -20,7 +28,7 @@ const SimpleList = ({ title, hasSearch = false, buttons = [], items = [], i18n, 
       }
       buttons={buttons}
       i18n={i18n}
-      isFullHeight
+      isFullHeight={isFullHeight}
       items={filteredItems}
     />
   );

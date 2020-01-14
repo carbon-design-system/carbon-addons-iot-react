@@ -14,33 +14,29 @@ const ListItem = ({
   nestingLevel,
   content,
   ...others
-}) => {
-  return (
-    <div>
-      <div
-        className={classnames('list-item', {
-          'list-item__selected': selected,
-        })}
-        style={{ paddingLeft: ` ${nestingLevel * 30}px` }}
-        onClick={() => {
-          if (isSelectable) {
-            onSelect(id);
-          }
-          if (isExpandable) {
-            onExpand(id);
-          }
-        }}
-      >
-        {isExpandable && (
-          <div className="list-item--icon">
-            <Icon icon={expanded ? iconChevronUp : iconChevronDown} />
-          </div>
-        )}
-
-        <div className="list-item--content">{content}</div>
+}) => (
+  <div
+    className={classnames('list-item', {
+      'list-item__selected': selected,
+    })}
+    style={{ paddingLeft: ` ${nestingLevel * 30}px` }}
+    onClick={() => {
+      if (isSelectable) {
+        onSelect(id);
+      }
+      if (isExpandable) {
+        onExpand(id);
+      }
+    }}
+  >
+    {isExpandable && (
+      <div className="list-item--icon">
+        <Icon icon={expanded ? iconChevronUp : iconChevronDown} />
       </div>
-    </div>
-  );
-};
+    )}
+
+    <div className="list-item--content">{content}</div>
+  </div>
+);
 
 export default ListItem;
