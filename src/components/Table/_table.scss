@@ -1,7 +1,7 @@
 @import 'TableHead/table-head';
 @import '~carbon-components/scss/components/data-table/data-table';
 
-.toast {
+.#{$prefix}--toast {
   margin-bottom: 0.5rem;
   min-width: 30rem;
   position: fixed;
@@ -10,14 +10,14 @@
   z-index: 1;
 }
 
-.buttons {
-  width: 88px;
-  height: 32px;
+.#{$prefix}--toolbar-button {
+  width: 6rem;
+  height: 2rem;
   border-color: #0062ff;
-  border-width: 1px;
+  border-width: 0.02rem;
   min-height: auto;
-  margin: auto 8px;
+  margin: auto 0.4rem;
   text-align: center;
-  padding: 0px;
+  padding: 0;
   display: block;
 }

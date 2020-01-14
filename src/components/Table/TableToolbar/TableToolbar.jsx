@@ -6,10 +6,13 @@ import IconEdit from '@carbon/icons-react/lib/edit/20';
 import { DataTable, Button, ToastNotification } from 'carbon-components-react';
 import Download16 from '@carbon/icons-react/lib/download/16';
 import styled from 'styled-components';
+import { settings } from 'carbon-components';
 
 import { TableSearchPropTypes, defaultI18NPropTypes } from '../TablePropTypes';
 import { tableTranslateWithId } from '../../../utils/componentUtilityFunctions';
 // import { COLORS } from '../../../styles/styles';
+
+const { prefix } = settings;
 
 const {
   TableToolbar: CarbonTableToolbar,
@@ -268,16 +271,16 @@ const TableToolbar = ({
       ) : null}
       {activeEditBar ? (
         <StyledTableToolbarContent>
-          <Button className="buttons" kind="ghost" onClick={onCancelEditAction}>
+          <Button className={`${prefix}--toolbar-button`} kind="ghost" onClick={onCancelEditAction}>
             {i18n.batchCancel}
           </Button>
-          <Button className="buttons" onClick={onSaveEditAction}>
+          <Button className={`${prefix}--toolbar-button`} onClick={onSaveEditAction}>
             {i18n.batchSave}
           </Button>
         </StyledTableToolbarContent>
       ) : showAlert ? (
         <ToastNotification
-          className="toast"
+          className={`${prefix}--toast`}
           caption=""
           hideCloseButton={false}
           iconDescription="undo changes and close"
