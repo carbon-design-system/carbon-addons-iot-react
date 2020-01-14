@@ -30,12 +30,12 @@ storiesOf('Watson IoT Experimental|SimpleList', module)
           searchPlaceHolderText: 'Enter a search',
         }}
         buttons={buttonsToRender}
-        items={getListItems(10)}
+        items={getListItems(30)}
       />
     </div>
   ))
   .add('tall list (isFullHeight = true)', () => (
-    <div style={{ width: 500, height: 1000, background: '#fee', padding: 10 }}>
+    <div style={{ width: 500, height: 500, background: '#fee', padding: 10 }}>
       <SimpleList
         title={text('Text', 'Simple List')}
         hasSearch
@@ -44,12 +44,12 @@ storiesOf('Watson IoT Experimental|SimpleList', module)
           searchPlaceHolderText: 'Enter a search',
         }}
         buttons={buttonsToRender}
-        items={getListItems(10)}
+        items={getListItems(5)}
       />
     </div>
   ))
   .add('tall list (isFullHeight = false)', () => (
-    <div style={{ width: 500, height: 1000, background: '#fee', padding: 10 }}>
+    <div style={{ width: 500, height: 500, background: '#fee', padding: 10 }}>
       <SimpleList
         title={text('Text', 'Simple List')}
         hasSearch
@@ -57,7 +57,7 @@ storiesOf('Watson IoT Experimental|SimpleList', module)
           searchPlaceHolderText: 'Enter a search',
         }}
         buttons={buttonsToRender}
-        items={getListItems(10)}
+        items={getListItems(5)}
       />
     </div>
   ))

@@ -2,12 +2,14 @@
   display: flex;
   width: 100%;
   flex-direction: column;
+  max-height: 100%;
   &--header {
     flex: 0;
   }
   &--content {
     flex: 1 1;
     background: $ui-01;
+    overflow-y: scroll;
   }
 
   &__full-height {
