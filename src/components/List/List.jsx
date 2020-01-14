@@ -3,17 +3,13 @@ import PropTypes from 'prop-types';
 import ListItem from './ListItem/ListItem';
 import ListHeader from './ListHeader/ListHeader';
 import SimplePagination from '../SimplePagination/SimplePagination';
-import { DataTable } from 'carbon-components-react';
-
-const { TableToolbarSearch } = DataTable;
 
 const childrenPropType = PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]);
 
-const List = ({ title, search, buttons, items, ...others }) => {
+const List = ({ title, search = null, buttons, items, isFullHeight, i18n, ...others }) => {
   const [selectedIds, setSelectedIds] = useState([]);
   const [selectedId, setSelectedId] = useState(null);
   const [expandedId, setExpandedId] = useState(null);
-  const [filteredItems, setFilteredItems] = useState(items);
 
   const handleSelect = id => {
     setSelectedId(selectedId === id ? null : id);
@@ -22,40 +18,19 @@ const List = ({ title, search, buttons, items, ...others }) => {
     );
   };
 
-  const handleSearch = event => {};
   const handleExpansion = id => setExpandedId(expandedId === id ? null : id);
-
-  /*
-  const handleSearch = term => {
-    const list = items.filter(item => {
-      return item.name.toLowerCase().search(term.toLowerCase()) !== -1;
-    });
-    setFilteredItems(list);
-  };
-  */
 
   const propTypes = {
     children: childrenPropType,
     id: PropTypes.string,
     nextingLevel: PropTypes.string,
-    onSelect: PropTypes.func,
-    onExpand: PropTypes.func,
-    selected: PropTypes.bool,
-    expanded: PropTypes.bool,
-    isExpandable: PropTypes.bool,
-    isSelectable: PropTypes.bool,
-    secondColumn: '',
-    paging: '',
-    leftIcon: '',
-    rightIcon: '',
-    search: { onSearch: PropTypes.func, placeHolderText: PropTypes.string },
-    headerButton: '',
-    headerSum: '',
-    multiSelected: '',
   };
 
   const defaultProps = {
     children: [],
+    i18n: {
+      searchPlaceHolderText: 'Enter a value',
+    },
     id: null,
     nestingLevel: null,
     onSelect: () => {},
@@ -92,25 +67,9 @@ const List = ({ title, search, buttons, items, ...others }) => {
 
   return (
     <div className="list">
-      <ListHeader
-        title={title}
-        hasSearch={hasSearch}
-        hasButton={buttons}
-        onSearch={() => {} /*handleSearch*/}
-      />
-      {hasSearch ? (
-        <div>
-          <TableToolbarSearch
-            placeHolderText="Start typing to search"
-            onChange={handleSearch}
-            expanded
-            size="large"
-            className="list--search"
-          />
-        </div>
-      ) : null}
-      {listItems}
-      <SimplePagination page="1" maxPage="4" onPage="1" />
+      <ListHeader title={title} buttons={buttons} search={search} i18n={i18n} />
+      <div>{listItems}</div>
+      {/*<SimplePagination page="1" maxPage="4" onPage="1" />*/}
     </div>
   );
 };

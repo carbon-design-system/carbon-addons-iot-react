@@ -1,32 +1,24 @@
-import React, { useState } from 'react';
-import { DataTable } from 'carbon-components-react';
-import Button from '../../Button/Button';
-import { Add16 } from '@carbon/icons-react';
-import { iconAddSolid, iconSearch } from 'carbon-icons';
+import React from 'react';
+import { Search } from 'carbon-components-react';
 
-const { TableToolbarSearch } = DataTable;
-
-const ListHeader = ({ title, hasButton, hasSearch, onSearch, ...others }) => {
-  console.log(hasSearch);
-  const [expanded, setExpanded] = useState(false);
-  const [searchTerm, setSearchTerm] = useState();
-
-  const handleSearch = event => {
-    console.log(event.target.value);
-    setSearchTerm(event.target.value);
-    onSearch(event.target.value);
-  };
-
+const ListHeader = ({ title, buttons, search, i18n, ...others }) => {
   return (
-    <div
-      className="list-header"
-      onSubmit={() => {
-        onSearch(searchTerm);
-      }}
-    >
-      <span className="list-header--title">{title}</span>
-      <span className="list-header--space" />
-      {hasButton ? <Button renderIcon={Add16} hasIconOnly size="small" /> : null}
+    <div>
+      <div className="list-header">
+        <div className="list-header--title">{title}</div>
+        <div className="list-header--btn-container">{buttons}</div>
+      </div>
+      {search !== null ? (
+        <div>
+          <Search
+            placeHolderText={i18n.searchPlaceHolderText}
+            onChange={search.onChange}
+            size="sm"
+            className="list--search"
+            value={search.value}
+          />
+        </div>
+      ) : null}
     </div>
   );
 };
