@@ -43,20 +43,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
              
           </span>
           <div
-            className="bx--toolbar card--toolbar"
+            className="card--toolbar"
           >
             <button
-              className="card--toolbar-action CardToolbar__TinyButton-sc-1ekh8ti-0 eITXBg bx--btn bx--btn--sm bx--btn--ghost"
-              disabled={false}
+              className="card--toolbar-action CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
               onClick={[Function]}
-              tabIndex={0}
-              title="Expand to fullscreen"
-              type="button"
             >
               <svg
-                aria-hidden="true"
-                aria-label="Expand to fullscreen"
-                className="bx--btn__icon"
+                description="Expand to fullscreen"
                 focusable="false"
                 height={20}
                 preserveAspectRatio="xMidYMid meet"
@@ -66,6 +60,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
                     "willChange": "transform",
                   }
                 }
+                title="Expand to fullscreen"
                 viewBox="0 0 32 32"
                 width={20}
                 xmlns="http://www.w3.org/2000/svg"
@@ -403,20 +398,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
              
           </span>
           <div
-            className="bx--toolbar card--toolbar"
+            className="card--toolbar"
           >
             <button
-              className="card--toolbar-action CardToolbar__TinyButton-sc-1ekh8ti-0 eITXBg bx--btn bx--btn--sm bx--btn--ghost"
-              disabled={false}
+              className="card--toolbar-action CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
               onClick={[Function]}
-              tabIndex={0}
-              title="Expand to fullscreen"
-              type="button"
             >
               <svg
-                aria-hidden="true"
-                aria-label="Expand to fullscreen"
-                className="bx--btn__icon"
+                description="Expand to fullscreen"
                 focusable="false"
                 height={20}
                 preserveAspectRatio="xMidYMid meet"
@@ -426,6 +415,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
                     "willChange": "transform",
                   }
                 }
+                title="Expand to fullscreen"
                 viewBox="0 0 32 32"
                 width={20}
                 xmlns="http://www.w3.org/2000/svg"
@@ -777,20 +767,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
              
           </span>
           <div
-            className="bx--toolbar card--toolbar"
+            className="card--toolbar"
           >
             <button
-              className="card--toolbar-action CardToolbar__TinyButton-sc-1ekh8ti-0 eITXBg bx--btn bx--btn--sm bx--btn--ghost"
-              disabled={false}
+              className="card--toolbar-action CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
               onClick={[Function]}
-              tabIndex={0}
-              title="Expand to fullscreen"
-              type="button"
             >
               <svg
-                aria-hidden="true"
-                aria-label="Expand to fullscreen"
-                className="bx--btn__icon"
+                description="Expand to fullscreen"
                 focusable="false"
                 height={20}
                 preserveAspectRatio="xMidYMid meet"
@@ -800,6 +784,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
                     "willChange": "transform",
                   }
                 }
+                title="Expand to fullscreen"
                 viewBox="0 0 32 32"
                 width={20}
                 xmlns="http://www.w3.org/2000/svg"
@@ -895,20 +880,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
              
           </span>
           <div
-            className="bx--toolbar card--toolbar"
+            className="card--toolbar"
           >
             <button
-              className="card--toolbar-action CardToolbar__TinyButton-sc-1ekh8ti-0 eITXBg bx--btn bx--btn--sm bx--btn--ghost"
-              disabled={false}
+              className="card--toolbar-action CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
               onClick={[Function]}
-              tabIndex={0}
-              title="Expand to fullscreen"
-              type="button"
             >
               <svg
-                aria-hidden="true"
-                aria-label="Expand to fullscreen"
-                className="bx--btn__icon"
+                description="Expand to fullscreen"
                 focusable="false"
                 height={20}
                 preserveAspectRatio="xMidYMid meet"
@@ -918,6 +897,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
                     "willChange": "transform",
                   }
                 }
+                title="Expand to fullscreen"
                 viewBox="0 0 32 32"
                 width={20}
                 xmlns="http://www.w3.org/2000/svg"
@@ -1013,20 +993,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
              
           </span>
           <div
-            className="bx--toolbar card--toolbar"
+            className="card--toolbar"
           >
             <button
-              className="card--toolbar-action CardToolbar__TinyButton-sc-1ekh8ti-0 eITXBg bx--btn bx--btn--sm bx--btn--ghost"
-              disabled={false}
+              className="card--toolbar-action CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
               onClick={[Function]}
-              tabIndex={0}
-              title="Expand to fullscreen"
-              type="button"
             >
               <svg
-                aria-hidden="true"
-                aria-label="Expand to fullscreen"
-                className="bx--btn__icon"
+                description="Expand to fullscreen"
                 focusable="false"
                 height={20}
                 preserveAspectRatio="xMidYMid meet"
@@ -1036,6 +1010,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
                     "willChange": "transform",
                   }
                 }
+                title="Expand to fullscreen"
                 viewBox="0 0 32 32"
                 width={20}
                 xmlns="http://www.w3.org/2000/svg"
@@ -1257,20 +1232,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
              
           </span>
           <div
-            className="bx--toolbar card--toolbar"
+            className="card--toolbar"
           >
             <button
-              className="card--toolbar-action CardToolbar__TinyButton-sc-1ekh8ti-0 eITXBg bx--btn bx--btn--sm bx--btn--ghost"
-              disabled={false}
+              className="card--toolbar-action CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
               onClick={[Function]}
-              tabIndex={0}
-              title="Expand to fullscreen"
-              type="button"
             >
               <svg
-                aria-hidden="true"
-                aria-label="Expand to fullscreen"
-                className="bx--btn__icon"
+                description="Expand to fullscreen"
                 focusable="false"
                 height={20}
                 preserveAspectRatio="xMidYMid meet"
@@ -1280,6 +1249,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
                     "willChange": "transform",
                   }
                 }
+                title="Expand to fullscreen"
                 viewBox="0 0 32 32"
                 width={20}
                 xmlns="http://www.w3.org/2000/svg"

@@ -1,10 +1,13 @@
 import { mount } from 'enzyme';
 import React from 'react';
 /* eslint-disable*/
-import { ToolbarItem, Tooltip } from 'carbon-components-react';
+import { Tooltip } from 'carbon-components-react';
 import { render, fireEvent, waitForElement } from '@testing-library/react';
-
+import { Popup20 } from '@carbon/icons-react';
 import { CARD_SIZES } from '../../constants/LayoutConstants';
+import { ToolbarSVGWrapper } from './CardToolbar';
+
+import CardRangePicker from './CardRangePicker';
 
 import Card, { SkeletonWrapper } from './Card';
 
@@ -27,8 +30,8 @@ describe('Card testcases', () => {
     let wrapper = mount(
       <Card {...cardProps} size={CARD_SIZES.SMALL} availableActions={{ range: true }} />
     );
-    // should render icons
-    expect(wrapper.find(ToolbarItem)).toHaveLength(1);
+    // should render CardRangePicker if isEditable is false
+    expect(wrapper.find(CardRangePicker)).toHaveLength(1);
 
     wrapper = mount(
       <Card
@@ -37,14 +40,16 @@ describe('Card testcases', () => {
         availableActions={{ range: true, expand: true }}
       />
     );
-    // range icon should not render if isEditable prop is true
-    expect(wrapper.find(ToolbarItem)).toHaveLength(2);
+
+    // should render CardRangePicker and Expand
+    expect(wrapper.find(CardRangePicker)).toHaveLength(1);
+    expect(wrapper.find(Popup20)).toHaveLength(1);
 
     wrapper = mount(
       <Card {...cardProps} size={CARD_SIZES.XSMALL} isEditable availableActions={{ range: true }} />
     );
-    // range icon should not render if isEditable prop is true
-    expect(wrapper.find(ToolbarItem)).toHaveLength(0);
+    // CardRangePicker icon should not render if isEditable prop is true
+    expect(wrapper.find(CardRangePicker)).toHaveLength(0);
   });
 
   test('additional prop based elements', () => {
@@ -79,7 +84,7 @@ describe('Card testcases', () => {
       />
     );
     wrapper
-      .find('.card--toolbar-action')
+      .find(ToolbarSVGWrapper)
       .get(0)
       .props.onClick();
     expect(mockOnCardAction).toHaveBeenCalledWith(cardProps.id, 'CLOSE_EXPANDED_CARD');
@@ -95,7 +100,7 @@ describe('Card testcases', () => {
       />
     );
     wrapper2
-      .find('.card--toolbar-action')
+      .find(ToolbarSVGWrapper)
       .get(0)
       .props.onClick();
     expect(mockOnCardAction).toHaveBeenCalledWith(cardProps.id, 'OPEN_EXPANDED_CARD');
