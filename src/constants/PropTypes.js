@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 
 import { bundledIconNames } from '../utils/bundledIcons';
 
-import { CARD_SIZES, CARD_LAYOUTS, DASHBOARD_SIZES } from './LayoutConstants';
+import { CARD_SIZES, CARD_LAYOUTS, DASHBOARD_SIZES, TIME_SERIES_TYPES } from './LayoutConstants';
 
 export const AttributePropTypes = PropTypes.shape({
   label: PropTypes.string, // optional for little cards
@@ -73,6 +73,7 @@ export const TimeSeriesCardPropTypes = {
     /** Which attribute is the time attribute */
     timeDataSourceId: PropTypes.string,
   }).isRequired,
+  chartType: PropTypes.oneOf(Object.values(TIME_SERIES_TYPES)),
   i18n: PropTypes.shape({
     alertDetected: PropTypes.string,
   }),

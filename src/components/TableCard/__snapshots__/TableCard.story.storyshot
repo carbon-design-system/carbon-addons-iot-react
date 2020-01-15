@@ -204,7 +204,63 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                 </div>
                 <div
                   className="card--toolbar"
-                />
+                >
+                  <div
+                    className="CardToolbar__ToolbarDateRangeWrapper-sc-1ekh8ti-1 eWLmmw"
+                  >
+                    <div
+                      aria-expanded={false}
+                      aria-haspopup={true}
+                      aria-label="Menu"
+                      className="bx--overflow-menu"
+                      onClick={[Function]}
+                      onClose={[Function]}
+                      onKeyDown={[Function]}
+                      open={false}
+                      role="button"
+                      tabIndex={0}
+                      title="Open and close list of options"
+                    >
+                      <svg
+                        aria-label="open and close list of options"
+                        className="bx--overflow-menu__icon"
+                        focusable="false"
+                        height={16}
+                        onClick={[Function]}
+                        onKeyDown={[Function]}
+                        preserveAspectRatio="xMidYMid meet"
+                        role="img"
+                        style={
+                          Object {
+                            "willChange": "transform",
+                          }
+                        }
+                        viewBox="0 0 16 16"
+                        width={16}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <circle
+                          cx="8"
+                          cy="3"
+                          r="1"
+                        />
+                        <circle
+                          cx="8"
+                          cy="8"
+                          r="1"
+                        />
+                        <circle
+                          cx="8"
+                          cy="13"
+                          r="1"
+                        />
+                        <title>
+                          open and close list of options
+                        </title>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
               </div>
             </section>
             <table
@@ -1489,7 +1545,63 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                 </div>
                 <div
                   className="card--toolbar"
-                />
+                >
+                  <div
+                    className="CardToolbar__ToolbarDateRangeWrapper-sc-1ekh8ti-1 eWLmmw"
+                  >
+                    <div
+                      aria-expanded={false}
+                      aria-haspopup={true}
+                      aria-label="Menu"
+                      className="bx--overflow-menu"
+                      onClick={[Function]}
+                      onClose={[Function]}
+                      onKeyDown={[Function]}
+                      open={false}
+                      role="button"
+                      tabIndex={0}
+                      title="Open and close list of options"
+                    >
+                      <svg
+                        aria-label="open and close list of options"
+                        className="bx--overflow-menu__icon"
+                        focusable="false"
+                        height={16}
+                        onClick={[Function]}
+                        onKeyDown={[Function]}
+                        preserveAspectRatio="xMidYMid meet"
+                        role="img"
+                        style={
+                          Object {
+                            "willChange": "transform",
+                          }
+                        }
+                        viewBox="0 0 16 16"
+                        width={16}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <circle
+                          cx="8"
+                          cy="3"
+                          r="1"
+                        />
+                        <circle
+                          cx="8"
+                          cy="8"
+                          r="1"
+                        />
+                        <circle
+                          cx="8"
+                          cy="13"
+                          r="1"
+                        />
+                        <title>
+                          open and close list of options
+                        </title>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
               </div>
             </section>
             <table
@@ -3188,7 +3300,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                     </div>
                   </div>
                   <button
-                    className="CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
+                    className="card--toolbar-action CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
                     onClick={[Function]}
                   >
                     <svg
@@ -6138,7 +6250,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                     </div>
                   </div>
                   <button
-                    className="CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
+                    className="card--toolbar-action CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
                     onClick={[Function]}
                   >
                     <svg
@@ -7460,7 +7572,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                     </div>
                   </div>
                   <button
-                    className="CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
+                    className="card--toolbar-action CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
                     onClick={[Function]}
                   >
                     <svg
@@ -11927,7 +12039,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                     </div>
                   </div>
                   <button
-                    className="CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
+                    className="card--toolbar-action CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
                     onClick={[Function]}
                   >
                     <svg
@@ -13249,7 +13361,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                     </div>
                   </div>
                   <button
-                    className="CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
+                    className="card--toolbar-action CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
                     onClick={[Function]}
                   >
                     <svg
@@ -15179,7 +15291,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                     </div>
                   </div>
                   <button
-                    className="CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
+                    className="card--toolbar-action CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
                     onClick={[Function]}
                   >
                     <svg
@@ -16865,7 +16977,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                     </div>
                   </div>
                   <button
-                    className="CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
+                    className="card--toolbar-action CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
                     onClick={[Function]}
                   >
                     <svg
@@ -24973,7 +25085,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                     </div>
                   </div>
                   <button
-                    className="CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
+                    className="card--toolbar-action CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
                     onClick={[Function]}
                   >
                     <svg
