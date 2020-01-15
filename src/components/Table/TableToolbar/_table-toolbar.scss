@@ -1,0 +1,12 @@
+@import '~carbon-components/scss/globals/scss/vars';
+div.bx--toolbar-action.bx--toolbar-search-container-expandable {
+  > div.bx--search.bx--search--sm.table-toolbar-search {
+    flex-grow: 2;
+
+    > svg.bx--search-magnifier {
+      height: 20px;
+      fill: $icon-02;
+      padding: 0;
+    }
+  }
+}

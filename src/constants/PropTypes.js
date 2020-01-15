@@ -82,6 +82,8 @@ export const TimeSeriesCardPropTypes = {
 };
 
 export const TableCardPropTypes = {
+  tooltip: PropTypes.node,
+  title: PropTypes.string,
   content: PropTypes.shape({
     columns: PropTypes.arrayOf(
       PropTypes.shape({

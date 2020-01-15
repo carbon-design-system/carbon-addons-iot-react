@@ -96,7 +96,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                      
                   </span>
                   <div
-                    className="bx--toolbar card--toolbar"
+                    className="card--toolbar"
                   />
                 </div>
                 <div
@@ -245,7 +245,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                      
                   </span>
                   <div
-                    className="bx--toolbar card--toolbar"
+                    className="card--toolbar"
                   />
                 </div>
                 <div
@@ -313,7 +313,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                      
                   </span>
                   <div
-                    className="bx--toolbar card--toolbar"
+                    className="card--toolbar"
                   />
                 </div>
                 <div
@@ -384,7 +384,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                      
                   </span>
                   <div
-                    className="bx--toolbar card--toolbar"
+                    className="card--toolbar"
                   />
                 </div>
                 <div
@@ -455,7 +455,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                      
                   </span>
                   <div
-                    className="bx--toolbar card--toolbar"
+                    className="card--toolbar"
                   />
                 </div>
                 <div
@@ -548,7 +548,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                      
                   </span>
                   <div
-                    className="bx--toolbar card--toolbar"
+                    className="card--toolbar"
                   />
                 </div>
                 <div
@@ -616,7 +616,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                      
                   </span>
                   <div
-                    className="bx--toolbar card--toolbar"
+                    className="card--toolbar"
                   />
                 </div>
                 <div
@@ -709,71 +709,69 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                      
                   </span>
                   <div
-                    className="bx--toolbar card--toolbar"
+                    className="card--toolbar"
                   >
-                    <span
-                      className="card--toolbar-timerange-lable CardRangePicker__TimeRangeLabel-ns6bu0-0 QmRa"
-                      id="timeRange"
-                    >
-                      Last 7 days
-                    </span>
                     <div
-                      aria-expanded={false}
-                      aria-haspopup={true}
-                      aria-label="Menu"
-                      className="card--toolbar-action bx--overflow-menu"
-                      onClick={[Function]}
-                      onClose={[Function]}
-                      onKeyDown={[Function]}
-                      open={false}
-                      role="button"
-                      tabIndex={0}
-                      title="Open and close list of options"
+                      className="CardToolbar__ToolbarDateRangeWrapper-sc-1ekh8ti-1 eWLmmw"
                     >
-                      <svg
-                        aria-label="Last 7 days"
-                        className="bx--overflow-menu__icon"
-                        focusable="false"
-                        height={20}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
-                        preserveAspectRatio="xMidYMid meet"
-                        role="img"
-                        style={
-                          Object {
-                            "willChange": "transform",
-                          }
-                        }
-                        viewBox="0 0 32 32"
-                        width={20}
-                        xmlns="http://www.w3.org/2000/svg"
+                      <div
+                        className="card--toolbar-timerange-label CardRangePicker__TimeRangeLabel-ns6bu0-0 QmRa"
+                        id="timeRange"
                       >
-                        <path
-                          d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
-                        />
-                        <path
-                          d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
-                        />
-                        <path
-                          d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
-                        />
-                        <title>
-                          Last 7 days
-                        </title>
-                      </svg>
+                        Last 7 days
+                      </div>
+                      <div
+                        aria-expanded={false}
+                        aria-haspopup={true}
+                        aria-label="Menu"
+                        className="card--toolbar-action bx--overflow-menu"
+                        onClick={[Function]}
+                        onClose={[Function]}
+                        onKeyDown={[Function]}
+                        open={false}
+                        role="button"
+                        tabIndex={0}
+                        title="Open and close list of options"
+                      >
+                        <svg
+                          aria-label="Last 7 days"
+                          className="bx--overflow-menu__icon"
+                          focusable="false"
+                          height={20}
+                          onClick={[Function]}
+                          onKeyDown={[Function]}
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          style={
+                            Object {
+                              "willChange": "transform",
+                            }
+                          }
+                          viewBox="0 0 32 32"
+                          width={20}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
+                          />
+                          <path
+                            d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
+                          />
+                          <path
+                            d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
+                          />
+                          <title>
+                            Last 7 days
+                          </title>
+                        </svg>
+                      </div>
                     </div>
                     <button
-                      className="card--toolbar-action CardToolbar__TinyButton-sc-1ekh8ti-0 eITXBg bx--btn bx--btn--sm bx--btn--ghost"
-                      disabled={false}
+                      className="card--toolbar-action CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
                       onClick={[Function]}
-                      tabIndex={0}
-                      title="Expand to fullscreen"
-                      type="button"
                     >
                       <svg
-                        aria-hidden="true"
-                        aria-label="Expand to fullscreen"
-                        className="bx--btn__icon"
+                        description="Expand to fullscreen"
                         focusable="false"
                         height={20}
                         preserveAspectRatio="xMidYMid meet"
@@ -783,6 +781,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             "willChange": "transform",
                           }
                         }
+                        title="Expand to fullscreen"
                         viewBox="0 0 32 32"
                         width={20}
                         xmlns="http://www.w3.org/2000/svg"
@@ -828,65 +827,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 type="TABLE"
               >
                 <div
-                  className="card--header"
-                >
-                  <span
-                    className="card--title"
-                    title="Alerts"
-                  >
-                    Alerts
-                     
-                  </span>
-                  <div
-                    className="bx--toolbar card--toolbar"
-                  >
-                    <button
-                      className="card--toolbar-action CardToolbar__TinyButton-sc-1ekh8ti-0 eITXBg bx--btn bx--btn--sm bx--btn--ghost"
-                      disabled={false}
-                      onClick={[Function]}
-                      tabIndex={0}
-                      title="Expand to fullscreen"
-                      type="button"
-                    >
-                      <svg
-                        aria-hidden="true"
-                        aria-label="Expand to fullscreen"
-                        className="bx--btn__icon"
-                        focusable="false"
-                        height={20}
-                        preserveAspectRatio="xMidYMid meet"
-                        role="img"
-                        style={
-                          Object {
-                            "willChange": "transform",
-                          }
-                        }
-                        viewBox="0 0 32 32"
-                        width={20}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M28 4H10a2.006 2.006 0 0 0-2 2v14a2.006 2.006 0 0 0 2 2h18a2.006 2.006 0 0 0 2-2V6a2.006 2.006 0 0 0-2-2zm0 16H10V6h18z"
-                        />
-                        <path
-                          d="M18 26H4V16h2v-2H4a2.006 2.006 0 0 0-2 2v10a2.006 2.006 0 0 0 2 2h14a2.006 2.006 0 0 0 2-2v-2h-2z"
-                        />
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-                <div
                   className="Card__CardContent-v5r71h-1 jAGfWa"
                 >
                   <div
-                    className="TableCard__StyledStatefulTable-q9l5bz-2 kzFKjW Table__StyledTableContainer-sc-1kalfns-0 fkxdXs bx--data-table-container"
+                    className="TableCard__StyledStatefulTable-q9l5bz-2 kzFKjW Table__StyledTableContainer-sc-1kalfns-0 buETAI bx--data-table-container"
                   >
                     <section
                       aria-label="data table toolbar"
                       className="bx--table-toolbar"
                     >
                       <div
-                        className="bx--batch-actions TableToolbar__StyledTableBatchActions-sc-17lb3av-4 jmgrzH"
+                        className="bx--batch-actions TableToolbar__StyledTableBatchActions-sc-17lb3av-3 gnkbSD"
                       >
                         <div
                           className="bx--action-list"
@@ -913,8 +864,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           </p>
                         </div>
                       </div>
+                      <label
+                        className="table-toolbar-secondary-title"
+                      >
+                        Alerts
+                      </label>
                       <div
-                        className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-3 jTKDEr"
+                        className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-2 ksiTUe"
                       >
                         <div
                           className="bx--toolbar-action bx--toolbar-search-container-expandable"
@@ -925,7 +881,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           tabIndex="0"
                         >
                           <div
-                            className="bx--search bx--search--sm TableToolbar__StyledToolbarSearch-sc-17lb3av-1 jCiaXI"
+                            className="bx--search bx--search--sm table-toolbar-search"
                           >
                             <svg
                               aria-hidden={true}
@@ -989,32 +945,35 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </button>
                           </div>
                         </div>
-                        <button
-                          className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 dEzVra"
+                        <div
+                          className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 imYKmv"
                           onClick={[Function]}
                         >
                           <svg
                             aria-hidden={true}
                             description="Download table content"
                             focusable="false"
-                            height={16}
+                            height={20}
                             preserveAspectRatio="xMidYMid meet"
                             style={
                               Object {
                                 "willChange": "transform",
                               }
                             }
-                            viewBox="0 0 16 16"
-                            width={16}
+                            viewBox="0 0 32 32"
+                            width={20}
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M13 7l-.7-.7-3.8 3.8V1h-1v9.1L3.7 6.3 3 7l5 5zm0 5v2H3v-2H2v2c0 .6.4 1 1 1h10c.6 0 1-.4 1-1v-2h-1z"
+                              d="M26 15l-1.41-1.41L17 21.17V2h-2v19.17l-7.59-7.58L6 15l10 10 10-10z"
+                            />
+                            <path
+                              d="M26 24v4H6v-4H4v4a2 2 0 0 0 2 2h20a2 2 0 0 0 2-2v-4z"
                             />
                           </svg>
-                        </button>
-                        <button
-                          className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 dEzVra"
+                        </div>
+                        <div
+                          className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 imYKmv"
                           onClick={[Function]}
                         >
                           <svg
@@ -1036,11 +995,44 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               d="M18 28h-4a2 2 0 0 1-2-2v-7.59L4.59 11A2 2 0 0 1 4 9.59V6a2 2 0 0 1 2-2h20a2 2 0 0 1 2 2v3.59a2 2 0 0 1-.59 1.41L20 18.41V26a2 2 0 0 1-2 2zM6 6v3.59l8 8V26h4v-8.41l8-8V6z"
                             />
                           </svg>
-                        </button>
+                        </div>
+                        <div
+                          className="card--toolbar"
+                        >
+                          <button
+                            className="card--toolbar-action CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
+                            onClick={[Function]}
+                          >
+                            <svg
+                              description="Expand to fullscreen"
+                              focusable="false"
+                              height={20}
+                              preserveAspectRatio="xMidYMid meet"
+                              role="img"
+                              style={
+                                Object {
+                                  "willChange": "transform",
+                                }
+                              }
+                              title="Expand to fullscreen"
+                              viewBox="0 0 32 32"
+                              width={20}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M28 4H10a2.006 2.006 0 0 0-2 2v14a2.006 2.006 0 0 0 2 2h18a2.006 2.006 0 0 0 2-2V6a2.006 2.006 0 0 0-2-2zm0 16H10V6h18z"
+                              />
+                              <path
+                                d="M18 26H4V16h2v-2H4a2.006 2.006 0 0 0-2 2v10a2.006 2.006 0 0 0 2 2h14a2.006 2.006 0 0 0 2-2v-2h-2z"
+                              />
+                            </svg>
+                          </button>
+                        </div>
                       </div>
                     </section>
                     <table
                       className="bx--data-table bx--data-table--no-border"
+                      title={null}
                     >
                       <thead
                         className="TableHead__StyledCarbonTableHead-sc-1fviaow-1 jDaLBC"
@@ -1309,71 +1301,69 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                      
                   </span>
                   <div
-                    className="bx--toolbar card--toolbar"
+                    className="card--toolbar"
                   >
-                    <span
-                      className="card--toolbar-timerange-lable CardRangePicker__TimeRangeLabel-ns6bu0-0 QmRa"
-                      id="timeRange"
-                    >
-                      Last year
-                    </span>
                     <div
-                      aria-expanded={false}
-                      aria-haspopup={true}
-                      aria-label="Menu"
-                      className="card--toolbar-action bx--overflow-menu"
-                      onClick={[Function]}
-                      onClose={[Function]}
-                      onKeyDown={[Function]}
-                      open={false}
-                      role="button"
-                      tabIndex={0}
-                      title="Open and close list of options"
+                      className="CardToolbar__ToolbarDateRangeWrapper-sc-1ekh8ti-1 eWLmmw"
                     >
-                      <svg
-                        aria-label="Last year"
-                        className="bx--overflow-menu__icon"
-                        focusable="false"
-                        height={20}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
-                        preserveAspectRatio="xMidYMid meet"
-                        role="img"
-                        style={
-                          Object {
-                            "willChange": "transform",
-                          }
-                        }
-                        viewBox="0 0 32 32"
-                        width={20}
-                        xmlns="http://www.w3.org/2000/svg"
+                      <div
+                        className="card--toolbar-timerange-label CardRangePicker__TimeRangeLabel-ns6bu0-0 QmRa"
+                        id="timeRange"
                       >
-                        <path
-                          d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
-                        />
-                        <path
-                          d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
-                        />
-                        <path
-                          d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
-                        />
-                        <title>
-                          Last year
-                        </title>
-                      </svg>
+                        Last year
+                      </div>
+                      <div
+                        aria-expanded={false}
+                        aria-haspopup={true}
+                        aria-label="Menu"
+                        className="card--toolbar-action bx--overflow-menu"
+                        onClick={[Function]}
+                        onClose={[Function]}
+                        onKeyDown={[Function]}
+                        open={false}
+                        role="button"
+                        tabIndex={0}
+                        title="Open and close list of options"
+                      >
+                        <svg
+                          aria-label="Last year"
+                          className="bx--overflow-menu__icon"
+                          focusable="false"
+                          height={20}
+                          onClick={[Function]}
+                          onKeyDown={[Function]}
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          style={
+                            Object {
+                              "willChange": "transform",
+                            }
+                          }
+                          viewBox="0 0 32 32"
+                          width={20}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
+                          />
+                          <path
+                            d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
+                          />
+                          <path
+                            d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
+                          />
+                          <title>
+                            Last year
+                          </title>
+                        </svg>
+                      </div>
                     </div>
                     <button
-                      className="card--toolbar-action CardToolbar__TinyButton-sc-1ekh8ti-0 eITXBg bx--btn bx--btn--sm bx--btn--ghost"
-                      disabled={false}
+                      className="card--toolbar-action CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
                       onClick={[Function]}
-                      tabIndex={0}
-                      title="Expand to fullscreen"
-                      type="button"
                     >
                       <svg
-                        aria-hidden="true"
-                        aria-label="Expand to fullscreen"
-                        className="bx--btn__icon"
+                        description="Expand to fullscreen"
                         focusable="false"
                         height={20}
                         preserveAspectRatio="xMidYMid meet"
@@ -1383,6 +1373,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             "willChange": "transform",
                           }
                         }
+                        title="Expand to fullscreen"
                         viewBox="0 0 32 32"
                         width={20}
                         xmlns="http://www.w3.org/2000/svg"
@@ -1438,20 +1429,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                      
                   </span>
                   <div
-                    className="bx--toolbar card--toolbar"
+                    className="card--toolbar"
                   >
                     <button
-                      className="card--toolbar-action CardToolbar__TinyButton-sc-1ekh8ti-0 eITXBg bx--btn bx--btn--sm bx--btn--ghost"
-                      disabled={false}
+                      className="card--toolbar-action CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
                       onClick={[Function]}
-                      tabIndex={0}
-                      title="Expand to fullscreen"
-                      type="button"
                     >
                       <svg
-                        aria-hidden="true"
-                        aria-label="Expand to fullscreen"
-                        className="bx--btn__icon"
+                        description="Expand to fullscreen"
                         focusable="false"
                         height={20}
                         preserveAspectRatio="xMidYMid meet"
@@ -1461,6 +1446,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             "willChange": "transform",
                           }
                         }
+                        title="Expand to fullscreen"
                         viewBox="0 0 32 32"
                         width={20}
                         xmlns="http://www.w3.org/2000/svg"
@@ -1862,7 +1848,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                      
                   </span>
                   <div
-                    className="bx--toolbar card--toolbar"
+                    className="card--toolbar"
                   />
                 </div>
                 <div
@@ -2011,7 +1997,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                      
                   </span>
                   <div
-                    className="bx--toolbar card--toolbar"
+                    className="card--toolbar"
                   />
                 </div>
                 <div
@@ -2079,7 +2065,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                      
                   </span>
                   <div
-                    className="bx--toolbar card--toolbar"
+                    className="card--toolbar"
                   />
                 </div>
                 <div
@@ -2150,7 +2136,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                      
                   </span>
                   <div
-                    className="bx--toolbar card--toolbar"
+                    className="card--toolbar"
                   />
                 </div>
                 <div
@@ -2221,7 +2207,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                      
                   </span>
                   <div
-                    className="bx--toolbar card--toolbar"
+                    className="card--toolbar"
                   />
                 </div>
                 <div
@@ -2314,7 +2300,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                      
                   </span>
                   <div
-                    className="bx--toolbar card--toolbar"
+                    className="card--toolbar"
                   />
                 </div>
                 <div
@@ -2382,7 +2368,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                      
                   </span>
                   <div
-                    className="bx--toolbar card--toolbar"
+                    className="card--toolbar"
                   />
                 </div>
                 <div
@@ -2475,71 +2461,69 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                      
                   </span>
                   <div
-                    className="bx--toolbar card--toolbar"
+                    className="card--toolbar"
                   >
-                    <span
-                      className="card--toolbar-timerange-lable CardRangePicker__TimeRangeLabel-ns6bu0-0 QmRa"
-                      id="timeRange"
-                    >
-                      Last 7 days
-                    </span>
                     <div
-                      aria-expanded={false}
-                      aria-haspopup={true}
-                      aria-label="Menu"
-                      className="card--toolbar-action bx--overflow-menu"
-                      onClick={[Function]}
-                      onClose={[Function]}
-                      onKeyDown={[Function]}
-                      open={false}
-                      role="button"
-                      tabIndex={0}
-                      title="Open and close list of options"
+                      className="CardToolbar__ToolbarDateRangeWrapper-sc-1ekh8ti-1 eWLmmw"
                     >
-                      <svg
-                        aria-label="Last 7 days"
-                        className="bx--overflow-menu__icon"
-                        focusable="false"
-                        height={20}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
-                        preserveAspectRatio="xMidYMid meet"
-                        role="img"
-                        style={
-                          Object {
-                            "willChange": "transform",
-                          }
-                        }
-                        viewBox="0 0 32 32"
-                        width={20}
-                        xmlns="http://www.w3.org/2000/svg"
+                      <div
+                        className="card--toolbar-timerange-label CardRangePicker__TimeRangeLabel-ns6bu0-0 QmRa"
+                        id="timeRange"
                       >
-                        <path
-                          d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
-                        />
-                        <path
-                          d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
-                        />
-                        <path
-                          d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
-                        />
-                        <title>
-                          Last 7 days
-                        </title>
-                      </svg>
+                        Last 7 days
+                      </div>
+                      <div
+                        aria-expanded={false}
+                        aria-haspopup={true}
+                        aria-label="Menu"
+                        className="card--toolbar-action bx--overflow-menu"
+                        onClick={[Function]}
+                        onClose={[Function]}
+                        onKeyDown={[Function]}
+                        open={false}
+                        role="button"
+                        tabIndex={0}
+                        title="Open and close list of options"
+                      >
+                        <svg
+                          aria-label="Last 7 days"
+                          className="bx--overflow-menu__icon"
+                          focusable="false"
+                          height={20}
+                          onClick={[Function]}
+                          onKeyDown={[Function]}
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          style={
+                            Object {
+                              "willChange": "transform",
+                            }
+                          }
+                          viewBox="0 0 32 32"
+                          width={20}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
+                          />
+                          <path
+                            d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
+                          />
+                          <path
+                            d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
+                          />
+                          <title>
+                            Last 7 days
+                          </title>
+                        </svg>
+                      </div>
                     </div>
                     <button
-                      className="card--toolbar-action CardToolbar__TinyButton-sc-1ekh8ti-0 eITXBg bx--btn bx--btn--sm bx--btn--ghost"
-                      disabled={false}
+                      className="card--toolbar-action CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
                       onClick={[Function]}
-                      tabIndex={0}
-                      title="Expand to fullscreen"
-                      type="button"
                     >
                       <svg
-                        aria-hidden="true"
-                        aria-label="Expand to fullscreen"
-                        className="bx--btn__icon"
+                        description="Expand to fullscreen"
                         focusable="false"
                         height={20}
                         preserveAspectRatio="xMidYMid meet"
@@ -2549,6 +2533,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             "willChange": "transform",
                           }
                         }
+                        title="Expand to fullscreen"
                         viewBox="0 0 32 32"
                         width={20}
                         xmlns="http://www.w3.org/2000/svg"
@@ -2594,65 +2579,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 type="TABLE"
               >
                 <div
-                  className="card--header"
-                >
-                  <span
-                    className="card--title"
-                    title="Alerts"
-                  >
-                    Alerts
-                     
-                  </span>
-                  <div
-                    className="bx--toolbar card--toolbar"
-                  >
-                    <button
-                      className="card--toolbar-action CardToolbar__TinyButton-sc-1ekh8ti-0 eITXBg bx--btn bx--btn--sm bx--btn--ghost"
-                      disabled={false}
-                      onClick={[Function]}
-                      tabIndex={0}
-                      title="Expand to fullscreen"
-                      type="button"
-                    >
-                      <svg
-                        aria-hidden="true"
-                        aria-label="Expand to fullscreen"
-                        className="bx--btn__icon"
-                        focusable="false"
-                        height={20}
-                        preserveAspectRatio="xMidYMid meet"
-                        role="img"
-                        style={
-                          Object {
-                            "willChange": "transform",
-                          }
-                        }
-                        viewBox="0 0 32 32"
-                        width={20}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M28 4H10a2.006 2.006 0 0 0-2 2v14a2.006 2.006 0 0 0 2 2h18a2.006 2.006 0 0 0 2-2V6a2.006 2.006 0 0 0-2-2zm0 16H10V6h18z"
-                        />
-                        <path
-                          d="M18 26H4V16h2v-2H4a2.006 2.006 0 0 0-2 2v10a2.006 2.006 0 0 0 2 2h14a2.006 2.006 0 0 0 2-2v-2h-2z"
-                        />
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-                <div
                   className="Card__CardContent-v5r71h-1 jAGfWa"
                 >
                   <div
-                    className="TableCard__StyledStatefulTable-q9l5bz-2 kzFKjW Table__StyledTableContainer-sc-1kalfns-0 fkxdXs bx--data-table-container"
+                    className="TableCard__StyledStatefulTable-q9l5bz-2 kzFKjW Table__StyledTableContainer-sc-1kalfns-0 buETAI bx--data-table-container"
                   >
                     <section
                       aria-label="data table toolbar"
                       className="bx--table-toolbar"
                     >
                       <div
-                        className="bx--batch-actions TableToolbar__StyledTableBatchActions-sc-17lb3av-4 jmgrzH"
+                        className="bx--batch-actions TableToolbar__StyledTableBatchActions-sc-17lb3av-3 gnkbSD"
                       >
                         <div
                           className="bx--action-list"
@@ -2679,8 +2616,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           </p>
                         </div>
                       </div>
+                      <label
+                        className="table-toolbar-secondary-title"
+                      >
+                        Alerts
+                      </label>
                       <div
-                        className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-3 jTKDEr"
+                        className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-2 ksiTUe"
                       >
                         <div
                           className="bx--toolbar-action bx--toolbar-search-container-expandable"
@@ -2691,7 +2633,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           tabIndex="0"
                         >
                           <div
-                            className="bx--search bx--search--sm TableToolbar__StyledToolbarSearch-sc-17lb3av-1 jCiaXI"
+                            className="bx--search bx--search--sm table-toolbar-search"
                           >
                             <svg
                               aria-hidden={true}
@@ -2755,32 +2697,35 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </button>
                           </div>
                         </div>
-                        <button
-                          className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 dEzVra"
+                        <div
+                          className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 imYKmv"
                           onClick={[Function]}
                         >
                           <svg
                             aria-hidden={true}
                             description="Download table content"
                             focusable="false"
-                            height={16}
+                            height={20}
                             preserveAspectRatio="xMidYMid meet"
                             style={
                               Object {
                                 "willChange": "transform",
                               }
                             }
-                            viewBox="0 0 16 16"
-                            width={16}
+                            viewBox="0 0 32 32"
+                            width={20}
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M13 7l-.7-.7-3.8 3.8V1h-1v9.1L3.7 6.3 3 7l5 5zm0 5v2H3v-2H2v2c0 .6.4 1 1 1h10c.6 0 1-.4 1-1v-2h-1z"
+                              d="M26 15l-1.41-1.41L17 21.17V2h-2v19.17l-7.59-7.58L6 15l10 10 10-10z"
+                            />
+                            <path
+                              d="M26 24v4H6v-4H4v4a2 2 0 0 0 2 2h20a2 2 0 0 0 2-2v-4z"
                             />
                           </svg>
-                        </button>
-                        <button
-                          className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 dEzVra"
+                        </div>
+                        <div
+                          className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 imYKmv"
                           onClick={[Function]}
                         >
                           <svg
@@ -2802,11 +2747,44 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               d="M18 28h-4a2 2 0 0 1-2-2v-7.59L4.59 11A2 2 0 0 1 4 9.59V6a2 2 0 0 1 2-2h20a2 2 0 0 1 2 2v3.59a2 2 0 0 1-.59 1.41L20 18.41V26a2 2 0 0 1-2 2zM6 6v3.59l8 8V26h4v-8.41l8-8V6z"
                             />
                           </svg>
-                        </button>
+                        </div>
+                        <div
+                          className="card--toolbar"
+                        >
+                          <button
+                            className="card--toolbar-action CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
+                            onClick={[Function]}
+                          >
+                            <svg
+                              description="Expand to fullscreen"
+                              focusable="false"
+                              height={20}
+                              preserveAspectRatio="xMidYMid meet"
+                              role="img"
+                              style={
+                                Object {
+                                  "willChange": "transform",
+                                }
+                              }
+                              title="Expand to fullscreen"
+                              viewBox="0 0 32 32"
+                              width={20}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M28 4H10a2.006 2.006 0 0 0-2 2v14a2.006 2.006 0 0 0 2 2h18a2.006 2.006 0 0 0 2-2V6a2.006 2.006 0 0 0-2-2zm0 16H10V6h18z"
+                              />
+                              <path
+                                d="M18 26H4V16h2v-2H4a2.006 2.006 0 0 0-2 2v10a2.006 2.006 0 0 0 2 2h14a2.006 2.006 0 0 0 2-2v-2h-2z"
+                              />
+                            </svg>
+                          </button>
+                        </div>
                       </div>
                     </section>
                     <table
                       className="bx--data-table bx--data-table--no-border"
+                      title={null}
                     >
                       <thead
                         className="TableHead__StyledCarbonTableHead-sc-1fviaow-1 jDaLBC"
@@ -3075,71 +3053,69 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                      
                   </span>
                   <div
-                    className="bx--toolbar card--toolbar"
+                    className="card--toolbar"
                   >
-                    <span
-                      className="card--toolbar-timerange-lable CardRangePicker__TimeRangeLabel-ns6bu0-0 QmRa"
-                      id="timeRange"
-                    >
-                      Last year
-                    </span>
                     <div
-                      aria-expanded={false}
-                      aria-haspopup={true}
-                      aria-label="Menu"
-                      className="card--toolbar-action bx--overflow-menu"
-                      onClick={[Function]}
-                      onClose={[Function]}
-                      onKeyDown={[Function]}
-                      open={false}
-                      role="button"
-                      tabIndex={0}
-                      title="Open and close list of options"
+                      className="CardToolbar__ToolbarDateRangeWrapper-sc-1ekh8ti-1 eWLmmw"
                     >
-                      <svg
-                        aria-label="Last year"
-                        className="bx--overflow-menu__icon"
-                        focusable="false"
-                        height={20}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
-                        preserveAspectRatio="xMidYMid meet"
-                        role="img"
-                        style={
-                          Object {
-                            "willChange": "transform",
-                          }
-                        }
-                        viewBox="0 0 32 32"
-                        width={20}
-                        xmlns="http://www.w3.org/2000/svg"
+                      <div
+                        className="card--toolbar-timerange-label CardRangePicker__TimeRangeLabel-ns6bu0-0 QmRa"
+                        id="timeRange"
                       >
-                        <path
-                          d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
-                        />
-                        <path
-                          d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
-                        />
-                        <path
-                          d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
-                        />
-                        <title>
-                          Last year
-                        </title>
-                      </svg>
+                        Last year
+                      </div>
+                      <div
+                        aria-expanded={false}
+                        aria-haspopup={true}
+                        aria-label="Menu"
+                        className="card--toolbar-action bx--overflow-menu"
+                        onClick={[Function]}
+                        onClose={[Function]}
+                        onKeyDown={[Function]}
+                        open={false}
+                        role="button"
+                        tabIndex={0}
+                        title="Open and close list of options"
+                      >
+                        <svg
+                          aria-label="Last year"
+                          className="bx--overflow-menu__icon"
+                          focusable="false"
+                          height={20}
+                          onClick={[Function]}
+                          onKeyDown={[Function]}
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          style={
+                            Object {
+                              "willChange": "transform",
+                            }
+                          }
+                          viewBox="0 0 32 32"
+                          width={20}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
+                          />
+                          <path
+                            d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
+                          />
+                          <path
+                            d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
+                          />
+                          <title>
+                            Last year
+                          </title>
+                        </svg>
+                      </div>
                     </div>
                     <button
-                      className="card--toolbar-action CardToolbar__TinyButton-sc-1ekh8ti-0 eITXBg bx--btn bx--btn--sm bx--btn--ghost"
-                      disabled={false}
+                      className="card--toolbar-action CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
                       onClick={[Function]}
-                      tabIndex={0}
-                      title="Expand to fullscreen"
-                      type="button"
                     >
                       <svg
-                        aria-hidden="true"
-                        aria-label="Expand to fullscreen"
-                        className="bx--btn__icon"
+                        description="Expand to fullscreen"
                         focusable="false"
                         height={20}
                         preserveAspectRatio="xMidYMid meet"
@@ -3149,6 +3125,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             "willChange": "transform",
                           }
                         }
+                        title="Expand to fullscreen"
                         viewBox="0 0 32 32"
                         width={20}
                         xmlns="http://www.w3.org/2000/svg"
@@ -3204,20 +3181,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                      
                   </span>
                   <div
-                    className="bx--toolbar card--toolbar"
+                    className="card--toolbar"
                   >
                     <button
-                      className="card--toolbar-action CardToolbar__TinyButton-sc-1ekh8ti-0 eITXBg bx--btn bx--btn--sm bx--btn--ghost"
-                      disabled={false}
+                      className="card--toolbar-action CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
                       onClick={[Function]}
-                      tabIndex={0}
-                      title="Expand to fullscreen"
-                      type="button"
                     >
                       <svg
-                        aria-hidden="true"
-                        aria-label="Expand to fullscreen"
-                        className="bx--btn__icon"
+                        description="Expand to fullscreen"
                         focusable="false"
                         height={20}
                         preserveAspectRatio="xMidYMid meet"
@@ -3227,6 +3198,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             "willChange": "transform",
                           }
                         }
+                        title="Expand to fullscreen"
                         viewBox="0 0 32 32"
                         width={20}
                         xmlns="http://www.w3.org/2000/svg"
@@ -3660,7 +3632,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                      
                   </span>
                   <div
-                    className="bx--toolbar card--toolbar"
+                    className="card--toolbar"
                   />
                 </div>
                 <div
@@ -3809,7 +3781,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                      
                   </span>
                   <div
-                    className="bx--toolbar card--toolbar"
+                    className="card--toolbar"
                   />
                 </div>
                 <div
@@ -3877,7 +3849,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                      
                   </span>
                   <div
-                    className="bx--toolbar card--toolbar"
+                    className="card--toolbar"
                   />
                 </div>
                 <div
@@ -3948,7 +3920,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                      
                   </span>
                   <div
-                    className="bx--toolbar card--toolbar"
+                    className="card--toolbar"
                   />
                 </div>
                 <div
@@ -4019,7 +3991,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                      
                   </span>
                   <div
-                    className="bx--toolbar card--toolbar"
+                    className="card--toolbar"
                   />
                 </div>
                 <div
@@ -4112,7 +4084,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                      
                   </span>
                   <div
-                    className="bx--toolbar card--toolbar"
+                    className="card--toolbar"
                   />
                 </div>
                 <div
@@ -4180,7 +4152,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                      
                   </span>
                   <div
-                    className="bx--toolbar card--toolbar"
+                    className="card--toolbar"
                   />
                 </div>
                 <div
@@ -4273,71 +4245,69 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                      
                   </span>
                   <div
-                    className="bx--toolbar card--toolbar"
+                    className="card--toolbar"
                   >
-                    <span
-                      className="card--toolbar-timerange-lable CardRangePicker__TimeRangeLabel-ns6bu0-0 QmRa"
-                      id="timeRange"
-                    >
-                      Last 7 days
-                    </span>
                     <div
-                      aria-expanded={false}
-                      aria-haspopup={true}
-                      aria-label="Menu"
-                      className="card--toolbar-action bx--overflow-menu"
-                      onClick={[Function]}
-                      onClose={[Function]}
-                      onKeyDown={[Function]}
-                      open={false}
-                      role="button"
-                      tabIndex={0}
-                      title="Open and close list of options"
+                      className="CardToolbar__ToolbarDateRangeWrapper-sc-1ekh8ti-1 eWLmmw"
                     >
-                      <svg
-                        aria-label="Last 7 days"
-                        className="bx--overflow-menu__icon"
-                        focusable="false"
-                        height={20}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
-                        preserveAspectRatio="xMidYMid meet"
-                        role="img"
-                        style={
-                          Object {
-                            "willChange": "transform",
-                          }
-                        }
-                        viewBox="0 0 32 32"
-                        width={20}
-                        xmlns="http://www.w3.org/2000/svg"
+                      <div
+                        className="card--toolbar-timerange-label CardRangePicker__TimeRangeLabel-ns6bu0-0 QmRa"
+                        id="timeRange"
                       >
-                        <path
-                          d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
-                        />
-                        <path
-                          d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
-                        />
-                        <path
-                          d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
-                        />
-                        <title>
-                          Last 7 days
-                        </title>
-                      </svg>
+                        Last 7 days
+                      </div>
+                      <div
+                        aria-expanded={false}
+                        aria-haspopup={true}
+                        aria-label="Menu"
+                        className="card--toolbar-action bx--overflow-menu"
+                        onClick={[Function]}
+                        onClose={[Function]}
+                        onKeyDown={[Function]}
+                        open={false}
+                        role="button"
+                        tabIndex={0}
+                        title="Open and close list of options"
+                      >
+                        <svg
+                          aria-label="Last 7 days"
+                          className="bx--overflow-menu__icon"
+                          focusable="false"
+                          height={20}
+                          onClick={[Function]}
+                          onKeyDown={[Function]}
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          style={
+                            Object {
+                              "willChange": "transform",
+                            }
+                          }
+                          viewBox="0 0 32 32"
+                          width={20}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
+                          />
+                          <path
+                            d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
+                          />
+                          <path
+                            d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
+                          />
+                          <title>
+                            Last 7 days
+                          </title>
+                        </svg>
+                      </div>
                     </div>
                     <button
-                      className="card--toolbar-action CardToolbar__TinyButton-sc-1ekh8ti-0 eITXBg bx--btn bx--btn--sm bx--btn--ghost"
-                      disabled={false}
+                      className="card--toolbar-action CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
                       onClick={[Function]}
-                      tabIndex={0}
-                      title="Expand to fullscreen"
-                      type="button"
                     >
                       <svg
-                        aria-hidden="true"
-                        aria-label="Expand to fullscreen"
-                        className="bx--btn__icon"
+                        description="Expand to fullscreen"
                         focusable="false"
                         height={20}
                         preserveAspectRatio="xMidYMid meet"
@@ -4347,6 +4317,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             "willChange": "transform",
                           }
                         }
+                        title="Expand to fullscreen"
                         viewBox="0 0 32 32"
                         width={20}
                         xmlns="http://www.w3.org/2000/svg"
@@ -4392,65 +4363,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 type="TABLE"
               >
                 <div
-                  className="card--header"
-                >
-                  <span
-                    className="card--title"
-                    title="Alerts"
-                  >
-                    Alerts
-                     
-                  </span>
-                  <div
-                    className="bx--toolbar card--toolbar"
-                  >
-                    <button
-                      className="card--toolbar-action CardToolbar__TinyButton-sc-1ekh8ti-0 eITXBg bx--btn bx--btn--sm bx--btn--ghost"
-                      disabled={false}
-                      onClick={[Function]}
-                      tabIndex={0}
-                      title="Expand to fullscreen"
-                      type="button"
-                    >
-                      <svg
-                        aria-hidden="true"
-                        aria-label="Expand to fullscreen"
-                        className="bx--btn__icon"
-                        focusable="false"
-                        height={20}
-                        preserveAspectRatio="xMidYMid meet"
-                        role="img"
-                        style={
-                          Object {
-                            "willChange": "transform",
-                          }
-                        }
-                        viewBox="0 0 32 32"
-                        width={20}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M28 4H10a2.006 2.006 0 0 0-2 2v14a2.006 2.006 0 0 0 2 2h18a2.006 2.006 0 0 0 2-2V6a2.006 2.006 0 0 0-2-2zm0 16H10V6h18z"
-                        />
-                        <path
-                          d="M18 26H4V16h2v-2H4a2.006 2.006 0 0 0-2 2v10a2.006 2.006 0 0 0 2 2h14a2.006 2.006 0 0 0 2-2v-2h-2z"
-                        />
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-                <div
                   className="Card__CardContent-v5r71h-1 jAGfWa"
                 >
                   <div
-                    className="TableCard__StyledStatefulTable-q9l5bz-2 kzFKjW Table__StyledTableContainer-sc-1kalfns-0 fkxdXs bx--data-table-container"
+                    className="TableCard__StyledStatefulTable-q9l5bz-2 kzFKjW Table__StyledTableContainer-sc-1kalfns-0 buETAI bx--data-table-container"
                   >
                     <section
                       aria-label="data table toolbar"
                       className="bx--table-toolbar"
                     >
                       <div
-                        className="bx--batch-actions TableToolbar__StyledTableBatchActions-sc-17lb3av-4 jmgrzH"
+                        className="bx--batch-actions TableToolbar__StyledTableBatchActions-sc-17lb3av-3 gnkbSD"
                       >
                         <div
                           className="bx--action-list"
@@ -4477,8 +4400,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           </p>
                         </div>
                       </div>
+                      <label
+                        className="table-toolbar-secondary-title"
+                      >
+                        Alerts
+                      </label>
                       <div
-                        className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-3 jTKDEr"
+                        className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-2 ksiTUe"
                       >
                         <div
                           className="bx--toolbar-action bx--toolbar-search-container-expandable"
@@ -4489,7 +4417,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           tabIndex="0"
                         >
                           <div
-                            className="bx--search bx--search--sm TableToolbar__StyledToolbarSearch-sc-17lb3av-1 jCiaXI"
+                            className="bx--search bx--search--sm table-toolbar-search"
                           >
                             <svg
                               aria-hidden={true}
@@ -4553,32 +4481,35 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </button>
                           </div>
                         </div>
-                        <button
-                          className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 dEzVra"
+                        <div
+                          className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 imYKmv"
                           onClick={[Function]}
                         >
                           <svg
                             aria-hidden={true}
                             description="Download table content"
                             focusable="false"
-                            height={16}
+                            height={20}
                             preserveAspectRatio="xMidYMid meet"
                             style={
                               Object {
                                 "willChange": "transform",
                               }
                             }
-                            viewBox="0 0 16 16"
-                            width={16}
+                            viewBox="0 0 32 32"
+                            width={20}
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M13 7l-.7-.7-3.8 3.8V1h-1v9.1L3.7 6.3 3 7l5 5zm0 5v2H3v-2H2v2c0 .6.4 1 1 1h10c.6 0 1-.4 1-1v-2h-1z"
+                              d="M26 15l-1.41-1.41L17 21.17V2h-2v19.17l-7.59-7.58L6 15l10 10 10-10z"
+                            />
+                            <path
+                              d="M26 24v4H6v-4H4v4a2 2 0 0 0 2 2h20a2 2 0 0 0 2-2v-4z"
                             />
                           </svg>
-                        </button>
-                        <button
-                          className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 dEzVra"
+                        </div>
+                        <div
+                          className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 imYKmv"
                           onClick={[Function]}
                         >
                           <svg
@@ -4600,11 +4531,44 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               d="M18 28h-4a2 2 0 0 1-2-2v-7.59L4.59 11A2 2 0 0 1 4 9.59V6a2 2 0 0 1 2-2h20a2 2 0 0 1 2 2v3.59a2 2 0 0 1-.59 1.41L20 18.41V26a2 2 0 0 1-2 2zM6 6v3.59l8 8V26h4v-8.41l8-8V6z"
                             />
                           </svg>
-                        </button>
+                        </div>
+                        <div
+                          className="card--toolbar"
+                        >
+                          <button
+                            className="card--toolbar-action CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
+                            onClick={[Function]}
+                          >
+                            <svg
+                              description="Expand to fullscreen"
+                              focusable="false"
+                              height={20}
+                              preserveAspectRatio="xMidYMid meet"
+                              role="img"
+                              style={
+                                Object {
+                                  "willChange": "transform",
+                                }
+                              }
+                              title="Expand to fullscreen"
+                              viewBox="0 0 32 32"
+                              width={20}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M28 4H10a2.006 2.006 0 0 0-2 2v14a2.006 2.006 0 0 0 2 2h18a2.006 2.006 0 0 0 2-2V6a2.006 2.006 0 0 0-2-2zm0 16H10V6h18z"
+                              />
+                              <path
+                                d="M18 26H4V16h2v-2H4a2.006 2.006 0 0 0-2 2v10a2.006 2.006 0 0 0 2 2h14a2.006 2.006 0 0 0 2-2v-2h-2z"
+                              />
+                            </svg>
+                          </button>
+                        </div>
                       </div>
                     </section>
                     <table
                       className="bx--data-table bx--data-table--no-border"
+                      title={null}
                     >
                       <thead
                         className="TableHead__StyledCarbonTableHead-sc-1fviaow-1 jDaLBC"
@@ -4873,71 +4837,69 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                      
                   </span>
                   <div
-                    className="bx--toolbar card--toolbar"
+                    className="card--toolbar"
                   >
-                    <span
-                      className="card--toolbar-timerange-lable CardRangePicker__TimeRangeLabel-ns6bu0-0 QmRa"
-                      id="timeRange"
-                    >
-                      Last year
-                    </span>
                     <div
-                      aria-expanded={false}
-                      aria-haspopup={true}
-                      aria-label="Menu"
-                      className="card--toolbar-action bx--overflow-menu"
-                      onClick={[Function]}
-                      onClose={[Function]}
-                      onKeyDown={[Function]}
-                      open={false}
-                      role="button"
-                      tabIndex={0}
-                      title="Open and close list of options"
+                      className="CardToolbar__ToolbarDateRangeWrapper-sc-1ekh8ti-1 eWLmmw"
                     >
-                      <svg
-                        aria-label="Last year"
-                        className="bx--overflow-menu__icon"
-                        focusable="false"
-                        height={20}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
-                        preserveAspectRatio="xMidYMid meet"
-                        role="img"
-                        style={
-                          Object {
-                            "willChange": "transform",
-                          }
-                        }
-                        viewBox="0 0 32 32"
-                        width={20}
-                        xmlns="http://www.w3.org/2000/svg"
+                      <div
+                        className="card--toolbar-timerange-label CardRangePicker__TimeRangeLabel-ns6bu0-0 QmRa"
+                        id="timeRange"
                       >
-                        <path
-                          d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
-                        />
-                        <path
-                          d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
-                        />
-                        <path
-                          d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
-                        />
-                        <title>
-                          Last year
-                        </title>
-                      </svg>
+                        Last year
+                      </div>
+                      <div
+                        aria-expanded={false}
+                        aria-haspopup={true}
+                        aria-label="Menu"
+                        className="card--toolbar-action bx--overflow-menu"
+                        onClick={[Function]}
+                        onClose={[Function]}
+                        onKeyDown={[Function]}
+                        open={false}
+                        role="button"
+                        tabIndex={0}
+                        title="Open and close list of options"
+                      >
+                        <svg
+                          aria-label="Last year"
+                          className="bx--overflow-menu__icon"
+                          focusable="false"
+                          height={20}
+                          onClick={[Function]}
+                          onKeyDown={[Function]}
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          style={
+                            Object {
+                              "willChange": "transform",
+                            }
+                          }
+                          viewBox="0 0 32 32"
+                          width={20}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
+                          />
+                          <path
+                            d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
+                          />
+                          <path
+                            d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
+                          />
+                          <title>
+                            Last year
+                          </title>
+                        </svg>
+                      </div>
                     </div>
                     <button
-                      className="card--toolbar-action CardToolbar__TinyButton-sc-1ekh8ti-0 eITXBg bx--btn bx--btn--sm bx--btn--ghost"
-                      disabled={false}
+                      className="card--toolbar-action CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
                       onClick={[Function]}
-                      tabIndex={0}
-                      title="Expand to fullscreen"
-                      type="button"
                     >
                       <svg
-                        aria-hidden="true"
-                        aria-label="Expand to fullscreen"
-                        className="bx--btn__icon"
+                        description="Expand to fullscreen"
                         focusable="false"
                         height={20}
                         preserveAspectRatio="xMidYMid meet"
@@ -4947,6 +4909,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             "willChange": "transform",
                           }
                         }
+                        title="Expand to fullscreen"
                         viewBox="0 0 32 32"
                         width={20}
                         xmlns="http://www.w3.org/2000/svg"
@@ -5002,20 +4965,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                      
                   </span>
                   <div
-                    className="bx--toolbar card--toolbar"
+                    className="card--toolbar"
                   >
                     <button
-                      className="card--toolbar-action CardToolbar__TinyButton-sc-1ekh8ti-0 eITXBg bx--btn bx--btn--sm bx--btn--ghost"
-                      disabled={false}
+                      className="card--toolbar-action CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
                       onClick={[Function]}
-                      tabIndex={0}
-                      title="Expand to fullscreen"
-                      type="button"
                     >
                       <svg
-                        aria-hidden="true"
-                        aria-label="Expand to fullscreen"
-                        className="bx--btn__icon"
+                        description="Expand to fullscreen"
                         focusable="false"
                         height={20}
                         preserveAspectRatio="xMidYMid meet"
@@ -5025,6 +4982,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             "willChange": "transform",
                           }
                         }
+                        title="Expand to fullscreen"
                         viewBox="0 0 32 32"
                         width={20}
                         xmlns="http://www.w3.org/2000/svg"
@@ -5433,20 +5391,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                      
                   </span>
                   <div
-                    className="bx--toolbar card--toolbar"
+                    className="card--toolbar"
                   >
                     <button
-                      className="card--toolbar-action CardToolbar__TinyButton-sc-1ekh8ti-0 eITXBg bx--btn bx--btn--sm bx--btn--ghost"
-                      disabled={false}
+                      className="card--toolbar-action CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
                       onClick={[Function]}
-                      tabIndex={0}
-                      title="Expand to fullscreen"
-                      type="button"
                     >
                       <svg
-                        aria-hidden="true"
-                        aria-label="Expand to fullscreen"
-                        className="bx--btn__icon"
+                        description="Expand to fullscreen"
                         focusable="false"
                         height={20}
                         preserveAspectRatio="xMidYMid meet"
@@ -5456,6 +5408,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             "willChange": "transform",
                           }
                         }
+                        title="Expand to fullscreen"
                         viewBox="0 0 32 32"
                         width={20}
                         xmlns="http://www.w3.org/2000/svg"
@@ -5700,20 +5653,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                    
                 </span>
                 <div
-                  className="bx--toolbar card--toolbar"
+                  className="card--toolbar"
                 >
                   <button
-                    className="card--toolbar-action CardToolbar__TinyButton-sc-1ekh8ti-0 eITXBg bx--btn bx--btn--sm bx--btn--ghost"
-                    disabled={false}
+                    className="card--toolbar-action CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
                     onClick={[Function]}
-                    tabIndex={0}
-                    title="Expand to fullscreen"
-                    type="button"
                   >
                     <svg
-                      aria-hidden="true"
-                      aria-label="Expand to fullscreen"
-                      className="bx--btn__icon"
+                      description="Expand to fullscreen"
                       focusable="false"
                       height={20}
                       preserveAspectRatio="xMidYMid meet"
@@ -5723,6 +5670,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           "willChange": "transform",
                         }
                       }
+                      title="Expand to fullscreen"
                       viewBox="0 0 32 32"
                       width={20}
                       xmlns="http://www.w3.org/2000/svg"
@@ -5878,65 +5826,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 type="TABLE"
               >
                 <div
-                  className="card--header"
-                >
-                  <span
-                    className="card--title"
-                    title="Expanded card"
-                  >
-                    Expanded card
-                     
-                  </span>
-                  <div
-                    className="bx--toolbar card--toolbar"
-                  >
-                    <button
-                      className="card--toolbar-action CardToolbar__TinyButton-sc-1ekh8ti-0 eITXBg bx--btn bx--btn--sm bx--btn--ghost"
-                      disabled={false}
-                      onClick={[Function]}
-                      tabIndex={0}
-                      title="Expand to fullscreen"
-                      type="button"
-                    >
-                      <svg
-                        aria-hidden="true"
-                        aria-label="Expand to fullscreen"
-                        className="bx--btn__icon"
-                        focusable="false"
-                        height={20}
-                        preserveAspectRatio="xMidYMid meet"
-                        role="img"
-                        style={
-                          Object {
-                            "willChange": "transform",
-                          }
-                        }
-                        viewBox="0 0 32 32"
-                        width={20}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M28 4H10a2.006 2.006 0 0 0-2 2v14a2.006 2.006 0 0 0 2 2h18a2.006 2.006 0 0 0 2-2V6a2.006 2.006 0 0 0-2-2zm0 16H10V6h18z"
-                        />
-                        <path
-                          d="M18 26H4V16h2v-2H4a2.006 2.006 0 0 0-2 2v10a2.006 2.006 0 0 0 2 2h14a2.006 2.006 0 0 0 2-2v-2h-2z"
-                        />
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-                <div
                   className="Card__CardContent-v5r71h-1 jAGfWa"
                 >
                   <div
-                    className="TableCard__StyledStatefulTable-q9l5bz-2 SdwkD Table__StyledTableContainer-sc-1kalfns-0 fkxdXs bx--data-table-container"
+                    className="TableCard__StyledStatefulTable-q9l5bz-2 SdwkD Table__StyledTableContainer-sc-1kalfns-0 buETAI bx--data-table-container"
                   >
                     <section
                       aria-label="data table toolbar"
                       className="bx--table-toolbar"
                     >
                       <div
-                        className="bx--batch-actions TableToolbar__StyledTableBatchActions-sc-17lb3av-4 jmgrzH"
+                        className="bx--batch-actions TableToolbar__StyledTableBatchActions-sc-17lb3av-3 gnkbSD"
                       >
                         <div
                           className="bx--action-list"
@@ -5963,8 +5863,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           </p>
                         </div>
                       </div>
+                      <label
+                        className="table-toolbar-secondary-title"
+                      >
+                        Expanded card
+                      </label>
                       <div
-                        className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-3 jTKDEr"
+                        className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-2 ksiTUe"
                       >
                         <div
                           className="bx--toolbar-action bx--toolbar-search-container-expandable"
@@ -5975,7 +5880,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           tabIndex="0"
                         >
                           <div
-                            className="bx--search bx--search--sm TableToolbar__StyledToolbarSearch-sc-17lb3av-1 jCiaXI"
+                            className="bx--search bx--search--sm table-toolbar-search"
                           >
                             <svg
                               aria-hidden={true}
@@ -6038,32 +5943,35 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </button>
                           </div>
                         </div>
-                        <button
-                          className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 dEzVra"
+                        <div
+                          className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 imYKmv"
                           onClick={[Function]}
                         >
                           <svg
                             aria-hidden={true}
                             description="Download table content"
                             focusable="false"
-                            height={16}
+                            height={20}
                             preserveAspectRatio="xMidYMid meet"
                             style={
                               Object {
                                 "willChange": "transform",
                               }
                             }
-                            viewBox="0 0 16 16"
-                            width={16}
+                            viewBox="0 0 32 32"
+                            width={20}
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M13 7l-.7-.7-3.8 3.8V1h-1v9.1L3.7 6.3 3 7l5 5zm0 5v2H3v-2H2v2c0 .6.4 1 1 1h10c.6 0 1-.4 1-1v-2h-1z"
+                              d="M26 15l-1.41-1.41L17 21.17V2h-2v19.17l-7.59-7.58L6 15l10 10 10-10z"
+                            />
+                            <path
+                              d="M26 24v4H6v-4H4v4a2 2 0 0 0 2 2h20a2 2 0 0 0 2-2v-4z"
                             />
                           </svg>
-                        </button>
-                        <button
-                          className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 dEzVra"
+                        </div>
+                        <div
+                          className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 imYKmv"
                           onClick={[Function]}
                         >
                           <svg
@@ -6085,11 +5993,44 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               d="M18 28h-4a2 2 0 0 1-2-2v-7.59L4.59 11A2 2 0 0 1 4 9.59V6a2 2 0 0 1 2-2h20a2 2 0 0 1 2 2v3.59a2 2 0 0 1-.59 1.41L20 18.41V26a2 2 0 0 1-2 2zM6 6v3.59l8 8V26h4v-8.41l8-8V6z"
                             />
                           </svg>
-                        </button>
+                        </div>
+                        <div
+                          className="card--toolbar"
+                        >
+                          <button
+                            className="card--toolbar-action CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
+                            onClick={[Function]}
+                          >
+                            <svg
+                              description="Expand to fullscreen"
+                              focusable="false"
+                              height={20}
+                              preserveAspectRatio="xMidYMid meet"
+                              role="img"
+                              style={
+                                Object {
+                                  "willChange": "transform",
+                                }
+                              }
+                              title="Expand to fullscreen"
+                              viewBox="0 0 32 32"
+                              width={20}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M28 4H10a2.006 2.006 0 0 0-2 2v14a2.006 2.006 0 0 0 2 2h18a2.006 2.006 0 0 0 2-2V6a2.006 2.006 0 0 0-2-2zm0 16H10V6h18z"
+                              />
+                              <path
+                                d="M18 26H4V16h2v-2H4a2.006 2.006 0 0 0-2 2v10a2.006 2.006 0 0 0 2 2h14a2.006 2.006 0 0 0 2-2v-2h-2z"
+                              />
+                            </svg>
+                          </button>
+                        </div>
                       </div>
                     </section>
                     <table
                       className="bx--data-table bx--data-table--no-border"
+                      title={null}
                     >
                       <thead
                         className="TableHead__StyledCarbonTableHead-sc-1fviaow-1 jDaLBC"
@@ -7745,7 +7686,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                      
                   </span>
                   <div
-                    className="bx--toolbar card--toolbar"
+                    className="card--toolbar"
                   />
                 </div>
                 <div
@@ -7894,7 +7835,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                      
                   </span>
                   <div
-                    className="bx--toolbar card--toolbar"
+                    className="card--toolbar"
                   />
                 </div>
                 <div
@@ -7962,7 +7903,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                      
                   </span>
                   <div
-                    className="bx--toolbar card--toolbar"
+                    className="card--toolbar"
                   />
                 </div>
                 <div
@@ -8033,7 +7974,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                      
                   </span>
                   <div
-                    className="bx--toolbar card--toolbar"
+                    className="card--toolbar"
                   />
                 </div>
                 <div
@@ -8104,7 +8045,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                      
                   </span>
                   <div
-                    className="bx--toolbar card--toolbar"
+                    className="card--toolbar"
                   />
                 </div>
                 <div
@@ -8197,7 +8138,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                      
                   </span>
                   <div
-                    className="bx--toolbar card--toolbar"
+                    className="card--toolbar"
                   />
                 </div>
                 <div
@@ -8265,7 +8206,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                      
                   </span>
                   <div
-                    className="bx--toolbar card--toolbar"
+                    className="card--toolbar"
                   />
                 </div>
                 <div
@@ -8358,71 +8299,69 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                      
                   </span>
                   <div
-                    className="bx--toolbar card--toolbar"
+                    className="card--toolbar"
                   >
-                    <span
-                      className="card--toolbar-timerange-lable CardRangePicker__TimeRangeLabel-ns6bu0-0 QmRa"
-                      id="timeRange"
-                    >
-                      Last 7 days
-                    </span>
                     <div
-                      aria-expanded={false}
-                      aria-haspopup={true}
-                      aria-label="Menu"
-                      className="card--toolbar-action bx--overflow-menu"
-                      onClick={[Function]}
-                      onClose={[Function]}
-                      onKeyDown={[Function]}
-                      open={false}
-                      role="button"
-                      tabIndex={0}
-                      title="open and close list of options"
+                      className="CardToolbar__ToolbarDateRangeWrapper-sc-1ekh8ti-1 eWLmmw"
                     >
-                      <svg
-                        aria-label="Last 7 days"
-                        className="bx--overflow-menu__icon"
-                        focusable="false"
-                        height={20}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
-                        preserveAspectRatio="xMidYMid meet"
-                        role="img"
-                        style={
-                          Object {
-                            "willChange": "transform",
-                          }
-                        }
-                        viewBox="0 0 32 32"
-                        width={20}
-                        xmlns="http://www.w3.org/2000/svg"
+                      <div
+                        className="card--toolbar-timerange-label CardRangePicker__TimeRangeLabel-ns6bu0-0 QmRa"
+                        id="timeRange"
                       >
-                        <path
-                          d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
-                        />
-                        <path
-                          d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
-                        />
-                        <path
-                          d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
-                        />
-                        <title>
-                          Last 7 days
-                        </title>
-                      </svg>
+                        Last 7 days
+                      </div>
+                      <div
+                        aria-expanded={false}
+                        aria-haspopup={true}
+                        aria-label="Menu"
+                        className="card--toolbar-action bx--overflow-menu"
+                        onClick={[Function]}
+                        onClose={[Function]}
+                        onKeyDown={[Function]}
+                        open={false}
+                        role="button"
+                        tabIndex={0}
+                        title="open and close list of options"
+                      >
+                        <svg
+                          aria-label="Last 7 days"
+                          className="bx--overflow-menu__icon"
+                          focusable="false"
+                          height={20}
+                          onClick={[Function]}
+                          onKeyDown={[Function]}
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          style={
+                            Object {
+                              "willChange": "transform",
+                            }
+                          }
+                          viewBox="0 0 32 32"
+                          width={20}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
+                          />
+                          <path
+                            d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
+                          />
+                          <path
+                            d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
+                          />
+                          <title>
+                            Last 7 days
+                          </title>
+                        </svg>
+                      </div>
                     </div>
                     <button
-                      className="card--toolbar-action CardToolbar__TinyButton-sc-1ekh8ti-0 eITXBg bx--btn bx--btn--sm bx--btn--ghost"
-                      disabled={false}
+                      className="card--toolbar-action CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
                       onClick={[Function]}
-                      tabIndex={0}
-                      title="Expand to fullscreen"
-                      type="button"
                     >
                       <svg
-                        aria-hidden="true"
-                        aria-label="Expand to fullscreen"
-                        className="bx--btn__icon"
+                        description="Expand to fullscreen"
                         focusable="false"
                         height={20}
                         preserveAspectRatio="xMidYMid meet"
@@ -8432,6 +8371,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             "willChange": "transform",
                           }
                         }
+                        title="Expand to fullscreen"
                         viewBox="0 0 32 32"
                         width={20}
                         xmlns="http://www.w3.org/2000/svg"
@@ -8477,65 +8417,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 type="TABLE"
               >
                 <div
-                  className="card--header"
-                >
-                  <span
-                    className="card--title"
-                    title="Alerts"
-                  >
-                    Alerts
-                     
-                  </span>
-                  <div
-                    className="bx--toolbar card--toolbar"
-                  >
-                    <button
-                      className="card--toolbar-action CardToolbar__TinyButton-sc-1ekh8ti-0 eITXBg bx--btn bx--btn--sm bx--btn--ghost"
-                      disabled={false}
-                      onClick={[Function]}
-                      tabIndex={0}
-                      title="Expand to fullscreen"
-                      type="button"
-                    >
-                      <svg
-                        aria-hidden="true"
-                        aria-label="Expand to fullscreen"
-                        className="bx--btn__icon"
-                        focusable="false"
-                        height={20}
-                        preserveAspectRatio="xMidYMid meet"
-                        role="img"
-                        style={
-                          Object {
-                            "willChange": "transform",
-                          }
-                        }
-                        viewBox="0 0 32 32"
-                        width={20}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M28 4H10a2.006 2.006 0 0 0-2 2v14a2.006 2.006 0 0 0 2 2h18a2.006 2.006 0 0 0 2-2V6a2.006 2.006 0 0 0-2-2zm0 16H10V6h18z"
-                        />
-                        <path
-                          d="M18 26H4V16h2v-2H4a2.006 2.006 0 0 0-2 2v10a2.006 2.006 0 0 0 2 2h14a2.006 2.006 0 0 0 2-2v-2h-2z"
-                        />
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-                <div
                   className="Card__CardContent-v5r71h-1 jAGfWa"
                 >
                   <div
-                    className="TableCard__StyledStatefulTable-q9l5bz-2 kzFKjW Table__StyledTableContainer-sc-1kalfns-0 fkxdXs bx--data-table-container"
+                    className="TableCard__StyledStatefulTable-q9l5bz-2 kzFKjW Table__StyledTableContainer-sc-1kalfns-0 buETAI bx--data-table-container"
                   >
                     <section
                       aria-label="data table toolbar"
                       className="bx--table-toolbar"
                     >
                       <div
-                        className="bx--batch-actions TableToolbar__StyledTableBatchActions-sc-17lb3av-4 jmgrzH"
+                        className="bx--batch-actions TableToolbar__StyledTableBatchActions-sc-17lb3av-3 gnkbSD"
                       >
                         <div
                           className="bx--action-list"
@@ -8562,8 +8454,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           </p>
                         </div>
                       </div>
+                      <label
+                        className="table-toolbar-secondary-title"
+                      >
+                        Alerts
+                      </label>
                       <div
-                        className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-3 jTKDEr"
+                        className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-2 ksiTUe"
                       >
                         <div
                           className="bx--toolbar-action bx--toolbar-search-container-expandable"
@@ -8574,7 +8471,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           tabIndex="0"
                         >
                           <div
-                            className="bx--search bx--search--sm TableToolbar__StyledToolbarSearch-sc-17lb3av-1 jCiaXI"
+                            className="bx--search bx--search--sm table-toolbar-search"
                           >
                             <svg
                               aria-hidden={true}
@@ -8638,32 +8535,35 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </button>
                           </div>
                         </div>
-                        <button
-                          className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 dEzVra"
+                        <div
+                          className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 imYKmv"
                           onClick={[Function]}
                         >
                           <svg
                             aria-hidden={true}
                             description="Download table content"
                             focusable="false"
-                            height={16}
+                            height={20}
                             preserveAspectRatio="xMidYMid meet"
                             style={
                               Object {
                                 "willChange": "transform",
                               }
                             }
-                            viewBox="0 0 16 16"
-                            width={16}
+                            viewBox="0 0 32 32"
+                            width={20}
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M13 7l-.7-.7-3.8 3.8V1h-1v9.1L3.7 6.3 3 7l5 5zm0 5v2H3v-2H2v2c0 .6.4 1 1 1h10c.6 0 1-.4 1-1v-2h-1z"
+                              d="M26 15l-1.41-1.41L17 21.17V2h-2v19.17l-7.59-7.58L6 15l10 10 10-10z"
+                            />
+                            <path
+                              d="M26 24v4H6v-4H4v4a2 2 0 0 0 2 2h20a2 2 0 0 0 2-2v-4z"
                             />
                           </svg>
-                        </button>
-                        <button
-                          className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 dEzVra"
+                        </div>
+                        <div
+                          className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 imYKmv"
                           onClick={[Function]}
                         >
                           <svg
@@ -8685,11 +8585,42 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               d="M18 28h-4a2 2 0 0 1-2-2v-7.59L4.59 11A2 2 0 0 1 4 9.59V6a2 2 0 0 1 2-2h20a2 2 0 0 1 2 2v3.59a2 2 0 0 1-.59 1.41L20 18.41V26a2 2 0 0 1-2 2zM6 6v3.59l8 8V26h4v-8.41l8-8V6z"
                             />
                           </svg>
-                        </button>
+                        </div>
+                        <div
+                          className="card--toolbar"
+                        >
+                          <button
+                            className="card--toolbar-action CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
+                            onClick={[Function]}
+                          >
+                            <svg
+                              aria-hidden={true}
+                              focusable="false"
+                              height={20}
+                              preserveAspectRatio="xMidYMid meet"
+                              style={
+                                Object {
+                                  "willChange": "transform",
+                                }
+                              }
+                              viewBox="0 0 32 32"
+                              width={20}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M28 4H10a2.006 2.006 0 0 0-2 2v14a2.006 2.006 0 0 0 2 2h18a2.006 2.006 0 0 0 2-2V6a2.006 2.006 0 0 0-2-2zm0 16H10V6h18z"
+                              />
+                              <path
+                                d="M18 26H4V16h2v-2H4a2.006 2.006 0 0 0-2 2v10a2.006 2.006 0 0 0 2 2h14a2.006 2.006 0 0 0 2-2v-2h-2z"
+                              />
+                            </svg>
+                          </button>
+                        </div>
                       </div>
                     </section>
                     <table
                       className="bx--data-table bx--data-table--no-border"
+                      title={null}
                     >
                       <thead
                         className="TableHead__StyledCarbonTableHead-sc-1fviaow-1 jDaLBC"
@@ -8958,71 +8889,69 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                      
                   </span>
                   <div
-                    className="bx--toolbar card--toolbar"
+                    className="card--toolbar"
                   >
-                    <span
-                      className="card--toolbar-timerange-lable CardRangePicker__TimeRangeLabel-ns6bu0-0 QmRa"
-                      id="timeRange"
-                    >
-                      Last year
-                    </span>
                     <div
-                      aria-expanded={false}
-                      aria-haspopup={true}
-                      aria-label="Menu"
-                      className="card--toolbar-action bx--overflow-menu"
-                      onClick={[Function]}
-                      onClose={[Function]}
-                      onKeyDown={[Function]}
-                      open={false}
-                      role="button"
-                      tabIndex={0}
-                      title="open and close list of options"
+                      className="CardToolbar__ToolbarDateRangeWrapper-sc-1ekh8ti-1 eWLmmw"
                     >
-                      <svg
-                        aria-label="Last year"
-                        className="bx--overflow-menu__icon"
-                        focusable="false"
-                        height={20}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
-                        preserveAspectRatio="xMidYMid meet"
-                        role="img"
-                        style={
-                          Object {
-                            "willChange": "transform",
-                          }
-                        }
-                        viewBox="0 0 32 32"
-                        width={20}
-                        xmlns="http://www.w3.org/2000/svg"
+                      <div
+                        className="card--toolbar-timerange-label CardRangePicker__TimeRangeLabel-ns6bu0-0 QmRa"
+                        id="timeRange"
                       >
-                        <path
-                          d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
-                        />
-                        <path
-                          d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
-                        />
-                        <path
-                          d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
-                        />
-                        <title>
-                          Last year
-                        </title>
-                      </svg>
+                        Last year
+                      </div>
+                      <div
+                        aria-expanded={false}
+                        aria-haspopup={true}
+                        aria-label="Menu"
+                        className="card--toolbar-action bx--overflow-menu"
+                        onClick={[Function]}
+                        onClose={[Function]}
+                        onKeyDown={[Function]}
+                        open={false}
+                        role="button"
+                        tabIndex={0}
+                        title="open and close list of options"
+                      >
+                        <svg
+                          aria-label="Last year"
+                          className="bx--overflow-menu__icon"
+                          focusable="false"
+                          height={20}
+                          onClick={[Function]}
+                          onKeyDown={[Function]}
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          style={
+                            Object {
+                              "willChange": "transform",
+                            }
+                          }
+                          viewBox="0 0 32 32"
+                          width={20}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
+                          />
+                          <path
+                            d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
+                          />
+                          <path
+                            d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
+                          />
+                          <title>
+                            Last year
+                          </title>
+                        </svg>
+                      </div>
                     </div>
                     <button
-                      className="card--toolbar-action CardToolbar__TinyButton-sc-1ekh8ti-0 eITXBg bx--btn bx--btn--sm bx--btn--ghost"
-                      disabled={false}
+                      className="card--toolbar-action CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
                       onClick={[Function]}
-                      tabIndex={0}
-                      title="Expand to fullscreen"
-                      type="button"
                     >
                       <svg
-                        aria-hidden="true"
-                        aria-label="Expand to fullscreen"
-                        className="bx--btn__icon"
+                        description="Expand to fullscreen"
                         focusable="false"
                         height={20}
                         preserveAspectRatio="xMidYMid meet"
@@ -9032,6 +8961,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             "willChange": "transform",
                           }
                         }
+                        title="Expand to fullscreen"
                         viewBox="0 0 32 32"
                         width={20}
                         xmlns="http://www.w3.org/2000/svg"
@@ -9087,20 +9017,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                      
                   </span>
                   <div
-                    className="bx--toolbar card--toolbar"
+                    className="card--toolbar"
                   >
                     <button
-                      className="card--toolbar-action CardToolbar__TinyButton-sc-1ekh8ti-0 eITXBg bx--btn bx--btn--sm bx--btn--ghost"
-                      disabled={false}
+                      className="card--toolbar-action CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
                       onClick={[Function]}
-                      tabIndex={0}
-                      title="Expand to fullscreen"
-                      type="button"
                     >
                       <svg
-                        aria-hidden="true"
-                        aria-label="Expand to fullscreen"
-                        className="bx--btn__icon"
+                        description="Expand to fullscreen"
                         focusable="false"
                         height={20}
                         preserveAspectRatio="xMidYMid meet"
@@ -9110,6 +9034,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             "willChange": "transform",
                           }
                         }
+                        title="Expand to fullscreen"
                         viewBox="0 0 32 32"
                         width={20}
                         xmlns="http://www.w3.org/2000/svg"
@@ -9519,7 +9444,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -9587,7 +9512,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -9655,7 +9580,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -9723,7 +9648,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -9791,7 +9716,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -9859,7 +9784,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -9931,7 +9856,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -10068,7 +9993,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -10136,7 +10061,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -10204,7 +10129,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -10272,7 +10197,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -10340,7 +10265,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -10408,7 +10333,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -10480,7 +10405,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -10617,7 +10542,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -10685,7 +10610,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -10756,7 +10681,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -10824,7 +10749,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -10960,7 +10885,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -11028,7 +10953,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -11099,7 +11024,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -11167,7 +11092,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -11303,7 +11228,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -11396,7 +11321,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -11489,7 +11414,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -11582,7 +11507,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -11740,7 +11665,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -11833,7 +11758,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -11926,7 +11851,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -12019,7 +11944,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -12177,7 +12102,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -12245,7 +12170,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -12313,7 +12238,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -12381,7 +12306,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -12449,7 +12374,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -12582,7 +12507,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -12650,7 +12575,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -12718,7 +12643,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -12786,7 +12711,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -12854,7 +12779,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -12987,7 +12912,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -13055,7 +12980,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -13123,7 +13048,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -13191,7 +13116,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -13259,7 +13184,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -13327,7 +13252,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -13399,7 +13324,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -13471,7 +13396,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -13539,7 +13464,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -13610,7 +13535,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -13678,7 +13603,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -13749,7 +13674,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -13842,7 +13767,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -13935,7 +13860,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -14028,7 +13953,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -14121,7 +14046,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -14189,7 +14114,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -14257,7 +14182,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -14325,7 +14250,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -14393,7 +14318,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -14526,7 +14451,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -14594,7 +14519,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -14662,7 +14587,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -14730,7 +14655,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -14798,7 +14723,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -14866,7 +14791,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -14938,7 +14863,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -15010,7 +14935,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -15078,7 +15003,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -15149,7 +15074,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -15217,7 +15142,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -15288,7 +15213,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -15381,7 +15306,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -15474,7 +15399,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -15567,7 +15492,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -15660,7 +15585,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -15728,7 +15653,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -15796,7 +15721,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -15864,7 +15789,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -15932,7 +15857,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -16065,7 +15990,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -16167,7 +16092,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -16269,7 +16194,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -16436,7 +16361,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -16538,7 +16463,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -16640,7 +16565,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -16807,7 +16732,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -16909,7 +16834,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -17011,7 +16936,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -17178,7 +17103,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -17280,7 +17205,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -17382,7 +17307,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -17549,7 +17474,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -17701,7 +17626,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -17918,7 +17843,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -18070,7 +17995,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -18287,7 +18212,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -18436,7 +18361,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -18585,7 +18510,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -18874,7 +18799,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -19023,7 +18948,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -19172,7 +19097,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -19529,7 +19454,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                      
                   </span>
                   <div
-                    className="bx--toolbar card--toolbar"
+                    className="card--toolbar"
                   />
                 </div>
                 <div
@@ -19678,7 +19603,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                      
                   </span>
                   <div
-                    className="bx--toolbar card--toolbar"
+                    className="card--toolbar"
                   />
                 </div>
                 <div
@@ -19746,7 +19671,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                      
                   </span>
                   <div
-                    className="bx--toolbar card--toolbar"
+                    className="card--toolbar"
                   />
                 </div>
                 <div
@@ -19817,7 +19742,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                      
                   </span>
                   <div
-                    className="bx--toolbar card--toolbar"
+                    className="card--toolbar"
                   />
                 </div>
                 <div
@@ -19888,7 +19813,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                      
                   </span>
                   <div
-                    className="bx--toolbar card--toolbar"
+                    className="card--toolbar"
                   />
                 </div>
                 <div
@@ -19981,7 +19906,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                      
                   </span>
                   <div
-                    className="bx--toolbar card--toolbar"
+                    className="card--toolbar"
                   />
                 </div>
                 <div
@@ -20049,7 +19974,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                      
                   </span>
                   <div
-                    className="bx--toolbar card--toolbar"
+                    className="card--toolbar"
                   />
                 </div>
                 <div
@@ -20142,71 +20067,69 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                      
                   </span>
                   <div
-                    className="bx--toolbar card--toolbar"
+                    className="card--toolbar"
                   >
-                    <span
-                      className="card--toolbar-timerange-lable CardRangePicker__TimeRangeLabel-ns6bu0-0 QmRa"
-                      id="timeRange"
-                    >
-                      Last 7 days
-                    </span>
                     <div
-                      aria-expanded={false}
-                      aria-haspopup={true}
-                      aria-label="Menu"
-                      className="card--toolbar-action bx--overflow-menu"
-                      onClick={[Function]}
-                      onClose={[Function]}
-                      onKeyDown={[Function]}
-                      open={false}
-                      role="button"
-                      tabIndex={0}
-                      title="Open and close list of options"
+                      className="CardToolbar__ToolbarDateRangeWrapper-sc-1ekh8ti-1 eWLmmw"
                     >
-                      <svg
-                        aria-label="Last 7 days"
-                        className="bx--overflow-menu__icon"
-                        focusable="false"
-                        height={20}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
-                        preserveAspectRatio="xMidYMid meet"
-                        role="img"
-                        style={
-                          Object {
-                            "willChange": "transform",
-                          }
-                        }
-                        viewBox="0 0 32 32"
-                        width={20}
-                        xmlns="http://www.w3.org/2000/svg"
+                      <div
+                        className="card--toolbar-timerange-label CardRangePicker__TimeRangeLabel-ns6bu0-0 QmRa"
+                        id="timeRange"
                       >
-                        <path
-                          d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
-                        />
-                        <path
-                          d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
-                        />
-                        <path
-                          d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
-                        />
-                        <title>
-                          Last 7 days
-                        </title>
-                      </svg>
+                        Last 7 days
+                      </div>
+                      <div
+                        aria-expanded={false}
+                        aria-haspopup={true}
+                        aria-label="Menu"
+                        className="card--toolbar-action bx--overflow-menu"
+                        onClick={[Function]}
+                        onClose={[Function]}
+                        onKeyDown={[Function]}
+                        open={false}
+                        role="button"
+                        tabIndex={0}
+                        title="Open and close list of options"
+                      >
+                        <svg
+                          aria-label="Last 7 days"
+                          className="bx--overflow-menu__icon"
+                          focusable="false"
+                          height={20}
+                          onClick={[Function]}
+                          onKeyDown={[Function]}
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          style={
+                            Object {
+                              "willChange": "transform",
+                            }
+                          }
+                          viewBox="0 0 32 32"
+                          width={20}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
+                          />
+                          <path
+                            d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
+                          />
+                          <path
+                            d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
+                          />
+                          <title>
+                            Last 7 days
+                          </title>
+                        </svg>
+                      </div>
                     </div>
                     <button
-                      className="card--toolbar-action CardToolbar__TinyButton-sc-1ekh8ti-0 eITXBg bx--btn bx--btn--sm bx--btn--ghost"
-                      disabled={false}
+                      className="card--toolbar-action CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
                       onClick={[Function]}
-                      tabIndex={0}
-                      title="Expand to fullscreen"
-                      type="button"
                     >
                       <svg
-                        aria-hidden="true"
-                        aria-label="Expand to fullscreen"
-                        className="bx--btn__icon"
+                        description="Expand to fullscreen"
                         focusable="false"
                         height={20}
                         preserveAspectRatio="xMidYMid meet"
@@ -20216,6 +20139,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             "willChange": "transform",
                           }
                         }
+                        title="Expand to fullscreen"
                         viewBox="0 0 32 32"
                         width={20}
                         xmlns="http://www.w3.org/2000/svg"
@@ -20261,65 +20185,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 type="TABLE"
               >
                 <div
-                  className="card--header"
-                >
-                  <span
-                    className="card--title"
-                    title="Alerts"
-                  >
-                    Alerts
-                     
-                  </span>
-                  <div
-                    className="bx--toolbar card--toolbar"
-                  >
-                    <button
-                      className="card--toolbar-action CardToolbar__TinyButton-sc-1ekh8ti-0 eITXBg bx--btn bx--btn--sm bx--btn--ghost"
-                      disabled={false}
-                      onClick={[Function]}
-                      tabIndex={0}
-                      title="Expand to fullscreen"
-                      type="button"
-                    >
-                      <svg
-                        aria-hidden="true"
-                        aria-label="Expand to fullscreen"
-                        className="bx--btn__icon"
-                        focusable="false"
-                        height={20}
-                        preserveAspectRatio="xMidYMid meet"
-                        role="img"
-                        style={
-                          Object {
-                            "willChange": "transform",
-                          }
-                        }
-                        viewBox="0 0 32 32"
-                        width={20}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M28 4H10a2.006 2.006 0 0 0-2 2v14a2.006 2.006 0 0 0 2 2h18a2.006 2.006 0 0 0 2-2V6a2.006 2.006 0 0 0-2-2zm0 16H10V6h18z"
-                        />
-                        <path
-                          d="M18 26H4V16h2v-2H4a2.006 2.006 0 0 0-2 2v10a2.006 2.006 0 0 0 2 2h14a2.006 2.006 0 0 0 2-2v-2h-2z"
-                        />
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-                <div
                   className="Card__CardContent-v5r71h-1 jAGfWa"
                 >
                   <div
-                    className="TableCard__StyledStatefulTable-q9l5bz-2 kzFKjW Table__StyledTableContainer-sc-1kalfns-0 fkxdXs bx--data-table-container"
+                    className="TableCard__StyledStatefulTable-q9l5bz-2 kzFKjW Table__StyledTableContainer-sc-1kalfns-0 buETAI bx--data-table-container"
                   >
                     <section
                       aria-label="data table toolbar"
                       className="bx--table-toolbar"
                     >
                       <div
-                        className="bx--batch-actions TableToolbar__StyledTableBatchActions-sc-17lb3av-4 jmgrzH"
+                        className="bx--batch-actions TableToolbar__StyledTableBatchActions-sc-17lb3av-3 gnkbSD"
                       >
                         <div
                           className="bx--action-list"
@@ -20346,8 +20222,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           </p>
                         </div>
                       </div>
+                      <label
+                        className="table-toolbar-secondary-title"
+                      >
+                        Alerts
+                      </label>
                       <div
-                        className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-3 jTKDEr"
+                        className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-2 ksiTUe"
                       >
                         <div
                           className="bx--toolbar-action bx--toolbar-search-container-expandable"
@@ -20358,7 +20239,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           tabIndex="0"
                         >
                           <div
-                            className="bx--search bx--search--sm TableToolbar__StyledToolbarSearch-sc-17lb3av-1 jCiaXI"
+                            className="bx--search bx--search--sm table-toolbar-search"
                           >
                             <svg
                               aria-hidden={true}
@@ -20422,32 +20303,35 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </button>
                           </div>
                         </div>
-                        <button
-                          className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 dEzVra"
+                        <div
+                          className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 imYKmv"
                           onClick={[Function]}
                         >
                           <svg
                             aria-hidden={true}
                             description="Download table content"
                             focusable="false"
-                            height={16}
+                            height={20}
                             preserveAspectRatio="xMidYMid meet"
                             style={
                               Object {
                                 "willChange": "transform",
                               }
                             }
-                            viewBox="0 0 16 16"
-                            width={16}
+                            viewBox="0 0 32 32"
+                            width={20}
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M13 7l-.7-.7-3.8 3.8V1h-1v9.1L3.7 6.3 3 7l5 5zm0 5v2H3v-2H2v2c0 .6.4 1 1 1h10c.6 0 1-.4 1-1v-2h-1z"
+                              d="M26 15l-1.41-1.41L17 21.17V2h-2v19.17l-7.59-7.58L6 15l10 10 10-10z"
+                            />
+                            <path
+                              d="M26 24v4H6v-4H4v4a2 2 0 0 0 2 2h20a2 2 0 0 0 2-2v-4z"
                             />
                           </svg>
-                        </button>
-                        <button
-                          className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 dEzVra"
+                        </div>
+                        <div
+                          className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 imYKmv"
                           onClick={[Function]}
                         >
                           <svg
@@ -20469,11 +20353,44 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               d="M18 28h-4a2 2 0 0 1-2-2v-7.59L4.59 11A2 2 0 0 1 4 9.59V6a2 2 0 0 1 2-2h20a2 2 0 0 1 2 2v3.59a2 2 0 0 1-.59 1.41L20 18.41V26a2 2 0 0 1-2 2zM6 6v3.59l8 8V26h4v-8.41l8-8V6z"
                             />
                           </svg>
-                        </button>
+                        </div>
+                        <div
+                          className="card--toolbar"
+                        >
+                          <button
+                            className="card--toolbar-action CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
+                            onClick={[Function]}
+                          >
+                            <svg
+                              description="Expand to fullscreen"
+                              focusable="false"
+                              height={20}
+                              preserveAspectRatio="xMidYMid meet"
+                              role="img"
+                              style={
+                                Object {
+                                  "willChange": "transform",
+                                }
+                              }
+                              title="Expand to fullscreen"
+                              viewBox="0 0 32 32"
+                              width={20}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M28 4H10a2.006 2.006 0 0 0-2 2v14a2.006 2.006 0 0 0 2 2h18a2.006 2.006 0 0 0 2-2V6a2.006 2.006 0 0 0-2-2zm0 16H10V6h18z"
+                              />
+                              <path
+                                d="M18 26H4V16h2v-2H4a2.006 2.006 0 0 0-2 2v10a2.006 2.006 0 0 0 2 2h14a2.006 2.006 0 0 0 2-2v-2h-2z"
+                              />
+                            </svg>
+                          </button>
+                        </div>
                       </div>
                     </section>
                     <table
                       className="bx--data-table bx--data-table--no-border"
+                      title={null}
                     >
                       <thead
                         className="TableHead__StyledCarbonTableHead-sc-1fviaow-1 jDaLBC"
@@ -20742,71 +20659,69 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                      
                   </span>
                   <div
-                    className="bx--toolbar card--toolbar"
+                    className="card--toolbar"
                   >
-                    <span
-                      className="card--toolbar-timerange-lable CardRangePicker__TimeRangeLabel-ns6bu0-0 QmRa"
-                      id="timeRange"
-                    >
-                      Last year
-                    </span>
                     <div
-                      aria-expanded={false}
-                      aria-haspopup={true}
-                      aria-label="Menu"
-                      className="card--toolbar-action bx--overflow-menu"
-                      onClick={[Function]}
-                      onClose={[Function]}
-                      onKeyDown={[Function]}
-                      open={false}
-                      role="button"
-                      tabIndex={0}
-                      title="Open and close list of options"
+                      className="CardToolbar__ToolbarDateRangeWrapper-sc-1ekh8ti-1 eWLmmw"
                     >
-                      <svg
-                        aria-label="Last year"
-                        className="bx--overflow-menu__icon"
-                        focusable="false"
-                        height={20}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
-                        preserveAspectRatio="xMidYMid meet"
-                        role="img"
-                        style={
-                          Object {
-                            "willChange": "transform",
-                          }
-                        }
-                        viewBox="0 0 32 32"
-                        width={20}
-                        xmlns="http://www.w3.org/2000/svg"
+                      <div
+                        className="card--toolbar-timerange-label CardRangePicker__TimeRangeLabel-ns6bu0-0 QmRa"
+                        id="timeRange"
                       >
-                        <path
-                          d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
-                        />
-                        <path
-                          d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
-                        />
-                        <path
-                          d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
-                        />
-                        <title>
-                          Last year
-                        </title>
-                      </svg>
+                        Last year
+                      </div>
+                      <div
+                        aria-expanded={false}
+                        aria-haspopup={true}
+                        aria-label="Menu"
+                        className="card--toolbar-action bx--overflow-menu"
+                        onClick={[Function]}
+                        onClose={[Function]}
+                        onKeyDown={[Function]}
+                        open={false}
+                        role="button"
+                        tabIndex={0}
+                        title="Open and close list of options"
+                      >
+                        <svg
+                          aria-label="Last year"
+                          className="bx--overflow-menu__icon"
+                          focusable="false"
+                          height={20}
+                          onClick={[Function]}
+                          onKeyDown={[Function]}
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          style={
+                            Object {
+                              "willChange": "transform",
+                            }
+                          }
+                          viewBox="0 0 32 32"
+                          width={20}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
+                          />
+                          <path
+                            d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
+                          />
+                          <path
+                            d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
+                          />
+                          <title>
+                            Last year
+                          </title>
+                        </svg>
+                      </div>
                     </div>
                     <button
-                      className="card--toolbar-action CardToolbar__TinyButton-sc-1ekh8ti-0 eITXBg bx--btn bx--btn--sm bx--btn--ghost"
-                      disabled={false}
+                      className="card--toolbar-action CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
                       onClick={[Function]}
-                      tabIndex={0}
-                      title="Expand to fullscreen"
-                      type="button"
                     >
                       <svg
-                        aria-hidden="true"
-                        aria-label="Expand to fullscreen"
-                        className="bx--btn__icon"
+                        description="Expand to fullscreen"
                         focusable="false"
                         height={20}
                         preserveAspectRatio="xMidYMid meet"
@@ -20816,6 +20731,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             "willChange": "transform",
                           }
                         }
+                        title="Expand to fullscreen"
                         viewBox="0 0 32 32"
                         width={20}
                         xmlns="http://www.w3.org/2000/svg"
@@ -20871,20 +20787,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                      
                   </span>
                   <div
-                    className="bx--toolbar card--toolbar"
+                    className="card--toolbar"
                   >
                     <button
-                      className="card--toolbar-action CardToolbar__TinyButton-sc-1ekh8ti-0 eITXBg bx--btn bx--btn--sm bx--btn--ghost"
-                      disabled={false}
+                      className="card--toolbar-action CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
                       onClick={[Function]}
-                      tabIndex={0}
-                      title="Expand to fullscreen"
-                      type="button"
                     >
                       <svg
-                        aria-hidden="true"
-                        aria-label="Expand to fullscreen"
-                        className="bx--btn__icon"
+                        description="Expand to fullscreen"
                         focusable="false"
                         height={20}
                         preserveAspectRatio="xMidYMid meet"
@@ -20894,6 +20804,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             "willChange": "transform",
                           }
                         }
+                        title="Expand to fullscreen"
                         viewBox="0 0 32 32"
                         width={20}
                         xmlns="http://www.w3.org/2000/svg"
@@ -21845,7 +21756,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
@@ -22024,7 +21935,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                        
                     </span>
                     <div
-                      className="bx--toolbar card--toolbar"
+                      className="card--toolbar"
                     />
                   </div>
                   <div
