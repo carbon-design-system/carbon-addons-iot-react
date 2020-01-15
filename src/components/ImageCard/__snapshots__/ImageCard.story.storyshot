@@ -46,13 +46,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
             className="card--toolbar"
           >
             <button
-              className="CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 jeeBWM"
+              className="CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
               onClick={[Function]}
             >
               <svg
                 description="Expand to fullscreen"
                 focusable="false"
-                height={16}
+                height={20}
                 preserveAspectRatio="xMidYMid meet"
                 role="img"
                 style={
@@ -62,7 +62,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
                 }
                 title="Expand to fullscreen"
                 viewBox="0 0 32 32"
-                width={16}
+                width={20}
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
@@ -401,13 +401,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
             className="card--toolbar"
           >
             <button
-              className="CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 jeeBWM"
+              className="CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
               onClick={[Function]}
             >
               <svg
                 description="Expand to fullscreen"
                 focusable="false"
-                height={16}
+                height={20}
                 preserveAspectRatio="xMidYMid meet"
                 role="img"
                 style={
@@ -417,7 +417,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
                 }
                 title="Expand to fullscreen"
                 viewBox="0 0 32 32"
-                width={16}
+                width={20}
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
@@ -770,13 +770,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
             className="card--toolbar"
           >
             <button
-              className="CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 jeeBWM"
+              className="CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
               onClick={[Function]}
             >
               <svg
                 description="Expand to fullscreen"
                 focusable="false"
-                height={16}
+                height={20}
                 preserveAspectRatio="xMidYMid meet"
                 role="img"
                 style={
@@ -786,7 +786,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
                 }
                 title="Expand to fullscreen"
                 viewBox="0 0 32 32"
-                width={16}
+                width={20}
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
@@ -883,13 +883,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
             className="card--toolbar"
           >
             <button
-              className="CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 jeeBWM"
+              className="CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
               onClick={[Function]}
             >
               <svg
                 description="Expand to fullscreen"
                 focusable="false"
-                height={16}
+                height={20}
                 preserveAspectRatio="xMidYMid meet"
                 role="img"
                 style={
@@ -899,7 +899,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
                 }
                 title="Expand to fullscreen"
                 viewBox="0 0 32 32"
-                width={16}
+                width={20}
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
@@ -996,13 +996,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
             className="card--toolbar"
           >
             <button
-              className="CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 jeeBWM"
+              className="CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
               onClick={[Function]}
             >
               <svg
                 description="Expand to fullscreen"
                 focusable="false"
-                height={16}
+                height={20}
                 preserveAspectRatio="xMidYMid meet"
                 role="img"
                 style={
@@ -1012,7 +1012,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
                 }
                 title="Expand to fullscreen"
                 viewBox="0 0 32 32"
-                width={16}
+                width={20}
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
@@ -1235,13 +1235,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
             className="card--toolbar"
           >
             <button
-              className="CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 jeeBWM"
+              className="CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
               onClick={[Function]}
             >
               <svg
                 description="Expand to fullscreen"
                 focusable="false"
-                height={16}
+                height={20}
                 preserveAspectRatio="xMidYMid meet"
                 role="img"
                 style={
@@ -1251,7 +1251,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
                 }
                 title="Expand to fullscreen"
                 viewBox="0 0 32 32"
-                width={16}
+                width={20}
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path

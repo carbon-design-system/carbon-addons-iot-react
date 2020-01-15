@@ -23,8 +23,7 @@
   }
 
   &--toolbar {
-    margin-top: 0;
-    margin-bottom: 0;
+    margin: 0;
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
@@ -43,7 +42,6 @@
     min-height: 2rem;
     min-width: 2rem;
     width: 2rem;
-    padding: '10px 4px 10px 4px';
 
     &:hover {
       background-color: $hover-ui;
@@ -54,11 +52,6 @@
       border-color: transparent;
       outline: 2px solid #0062ff;
       outline-offset: -2px;
-    }
-
-    .card--toolbar & {
-      margin: 0;
-      padding: '10px 4px 10px 4px';
     }
 
     svg {

@@ -737,7 +737,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           aria-label="Last 7 days"
                           className="bx--overflow-menu__icon"
                           focusable="false"
-                          height={16}
+                          height={20}
                           onClick={[Function]}
                           onKeyDown={[Function]}
                           preserveAspectRatio="xMidYMid meet"
@@ -748,7 +748,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             }
                           }
                           viewBox="0 0 32 32"
-                          width={16}
+                          width={20}
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <path
@@ -767,13 +767,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <button
-                      className="CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 jeeBWM"
+                      className="CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
                       onClick={[Function]}
                     >
                       <svg
                         description="Expand to fullscreen"
                         focusable="false"
-                        height={16}
+                        height={20}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         style={
@@ -783,7 +783,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         }
                         title="Expand to fullscreen"
                         viewBox="0 0 32 32"
-                        width={16}
+                        width={20}
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
@@ -830,14 +830,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   className="Card__CardContent-v5r71h-1 jAGfWa"
                 >
                   <div
-                    className="TableCard__StyledStatefulTable-q9l5bz-2 kzFKjW Table__StyledTableContainer-sc-1kalfns-0 fkxdXs bx--data-table-container"
+                    className="TableCard__StyledStatefulTable-q9l5bz-2 kzFKjW Table__StyledTableContainer-sc-1kalfns-0 buETAI bx--data-table-container"
                   >
                     <section
                       aria-label="data table toolbar"
                       className="bx--table-toolbar"
                     >
                       <div
-                        className="bx--batch-actions TableToolbar__StyledTableBatchActions-sc-17lb3av-4 jmgrzH"
+                        className="bx--batch-actions TableToolbar__StyledTableBatchActions-sc-17lb3av-3 gnkbSD"
                       >
                         <div
                           className="bx--action-list"
@@ -870,7 +870,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         Alerts
                       </label>
                       <div
-                        className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-3 jTKDEr"
+                        className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-2 ksiTUe"
                       >
                         <div
                           className="bx--toolbar-action bx--toolbar-search-container-expandable"
@@ -881,7 +881,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           tabIndex="0"
                         >
                           <div
-                            className="bx--search bx--search--sm TableToolbar__StyledToolbarSearch-sc-17lb3av-1 jCiaXI"
+                            className="bx--search bx--search--sm table-toolbar-search"
                           >
                             <svg
                               aria-hidden={true}
@@ -945,65 +945,68 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </button>
                           </div>
                         </div>
-                        <button
-                          className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 dEzVra"
+                        <div
+                          className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 imYKmv"
                           onClick={[Function]}
                         >
                           <svg
                             aria-hidden={true}
                             description="Download table content"
                             focusable="false"
-                            height={16}
+                            height={20}
                             preserveAspectRatio="xMidYMid meet"
                             style={
                               Object {
                                 "willChange": "transform",
                               }
                             }
-                            viewBox="0 0 16 16"
-                            width={16}
+                            viewBox="0 0 32 32"
+                            width={20}
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M13 7l-.7-.7-3.8 3.8V1h-1v9.1L3.7 6.3 3 7l5 5zm0 5v2H3v-2H2v2c0 .6.4 1 1 1h10c.6 0 1-.4 1-1v-2h-1z"
+                              d="M26 15l-1.41-1.41L17 21.17V2h-2v19.17l-7.59-7.58L6 15l10 10 10-10z"
+                            />
+                            <path
+                              d="M26 24v4H6v-4H4v4a2 2 0 0 0 2 2h20a2 2 0 0 0 2-2v-4z"
                             />
                           </svg>
-                        </button>
-                        <button
-                          className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 dEzVra"
+                        </div>
+                        <div
+                          className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 imYKmv"
                           onClick={[Function]}
                         >
                           <svg
                             aria-hidden={true}
                             description="Filters"
                             focusable="false"
-                            height={16}
+                            height={20}
                             preserveAspectRatio="xMidYMid meet"
                             style={
                               Object {
                                 "willChange": "transform",
                               }
                             }
-                            viewBox="0 0 16 16"
-                            width={16}
+                            viewBox="0 0 32 32"
+                            width={20}
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M15 4h-2.1c-.2-1.1-1.2-2-2.4-2s-2.2.9-2.4 2H1v1h7.1c.2 1.1 1.2 2 2.4 2s2.2-.9 2.4-2H15V4zm-4.5 2C9.7 6 9 5.3 9 4.5S9.7 3 10.5 3s1.5.7 1.5 1.5S11.3 6 10.5 6zM1 12h2.1c.2 1.1 1.2 2 2.4 2s2.2-.9 2.4-2H15v-1H7.9c-.2-1.1-1.2-2-2.4-2s-2.2.9-2.4 2H1v1zm4.5-2c.8 0 1.5.7 1.5 1.5S6.3 13 5.5 13 4 12.3 4 11.5 4.7 10 5.5 10z"
+                              d="M18 28h-4a2 2 0 0 1-2-2v-7.59L4.59 11A2 2 0 0 1 4 9.59V6a2 2 0 0 1 2-2h20a2 2 0 0 1 2 2v3.59a2 2 0 0 1-.59 1.41L20 18.41V26a2 2 0 0 1-2 2zM6 6v3.59l8 8V26h4v-8.41l8-8V6z"
                             />
                           </svg>
-                        </button>
+                        </div>
                         <div
                           className="card--toolbar"
                         >
                           <button
-                            className="CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 jeeBWM"
+                            className="CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
                             onClick={[Function]}
                           >
                             <svg
                               description="Expand to fullscreen"
                               focusable="false"
-                              height={16}
+                              height={20}
                               preserveAspectRatio="xMidYMid meet"
                               role="img"
                               style={
@@ -1013,7 +1016,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               }
                               title="Expand to fullscreen"
                               viewBox="0 0 32 32"
-                              width={16}
+                              width={20}
                               xmlns="http://www.w3.org/2000/svg"
                             >
                               <path
@@ -1326,7 +1329,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           aria-label="Last year"
                           className="bx--overflow-menu__icon"
                           focusable="false"
-                          height={16}
+                          height={20}
                           onClick={[Function]}
                           onKeyDown={[Function]}
                           preserveAspectRatio="xMidYMid meet"
@@ -1337,7 +1340,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             }
                           }
                           viewBox="0 0 32 32"
-                          width={16}
+                          width={20}
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <path
@@ -1356,13 +1359,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <button
-                      className="CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 jeeBWM"
+                      className="CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
                       onClick={[Function]}
                     >
                       <svg
                         description="Expand to fullscreen"
                         focusable="false"
-                        height={16}
+                        height={20}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         style={
@@ -1372,7 +1375,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         }
                         title="Expand to fullscreen"
                         viewBox="0 0 32 32"
-                        width={16}
+                        width={20}
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
@@ -1429,13 +1432,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     className="card--toolbar"
                   >
                     <button
-                      className="CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 jeeBWM"
+                      className="CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
                       onClick={[Function]}
                     >
                       <svg
                         description="Expand to fullscreen"
                         focusable="false"
-                        height={16}
+                        height={20}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         style={
@@ -1445,7 +1448,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         }
                         title="Expand to fullscreen"
                         viewBox="0 0 32 32"
-                        width={16}
+                        width={20}
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
@@ -2486,7 +2489,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           aria-label="Last 7 days"
                           className="bx--overflow-menu__icon"
                           focusable="false"
-                          height={16}
+                          height={20}
                           onClick={[Function]}
                           onKeyDown={[Function]}
                           preserveAspectRatio="xMidYMid meet"
@@ -2497,7 +2500,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             }
                           }
                           viewBox="0 0 32 32"
-                          width={16}
+                          width={20}
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <path
@@ -2516,13 +2519,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <button
-                      className="CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 jeeBWM"
+                      className="CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
                       onClick={[Function]}
                     >
                       <svg
                         description="Expand to fullscreen"
                         focusable="false"
-                        height={16}
+                        height={20}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         style={
@@ -2532,7 +2535,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         }
                         title="Expand to fullscreen"
                         viewBox="0 0 32 32"
-                        width={16}
+                        width={20}
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
@@ -2579,14 +2582,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   className="Card__CardContent-v5r71h-1 jAGfWa"
                 >
                   <div
-                    className="TableCard__StyledStatefulTable-q9l5bz-2 kzFKjW Table__StyledTableContainer-sc-1kalfns-0 fkxdXs bx--data-table-container"
+                    className="TableCard__StyledStatefulTable-q9l5bz-2 kzFKjW Table__StyledTableContainer-sc-1kalfns-0 buETAI bx--data-table-container"
                   >
                     <section
                       aria-label="data table toolbar"
                       className="bx--table-toolbar"
                     >
                       <div
-                        className="bx--batch-actions TableToolbar__StyledTableBatchActions-sc-17lb3av-4 jmgrzH"
+                        className="bx--batch-actions TableToolbar__StyledTableBatchActions-sc-17lb3av-3 gnkbSD"
                       >
                         <div
                           className="bx--action-list"
@@ -2619,7 +2622,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         Alerts
                       </label>
                       <div
-                        className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-3 jTKDEr"
+                        className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-2 ksiTUe"
                       >
                         <div
                           className="bx--toolbar-action bx--toolbar-search-container-expandable"
@@ -2630,7 +2633,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           tabIndex="0"
                         >
                           <div
-                            className="bx--search bx--search--sm TableToolbar__StyledToolbarSearch-sc-17lb3av-1 jCiaXI"
+                            className="bx--search bx--search--sm table-toolbar-search"
                           >
                             <svg
                               aria-hidden={true}
@@ -2694,65 +2697,68 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </button>
                           </div>
                         </div>
-                        <button
-                          className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 dEzVra"
+                        <div
+                          className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 imYKmv"
                           onClick={[Function]}
                         >
                           <svg
                             aria-hidden={true}
                             description="Download table content"
                             focusable="false"
-                            height={16}
+                            height={20}
                             preserveAspectRatio="xMidYMid meet"
                             style={
                               Object {
                                 "willChange": "transform",
                               }
                             }
-                            viewBox="0 0 16 16"
-                            width={16}
+                            viewBox="0 0 32 32"
+                            width={20}
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M13 7l-.7-.7-3.8 3.8V1h-1v9.1L3.7 6.3 3 7l5 5zm0 5v2H3v-2H2v2c0 .6.4 1 1 1h10c.6 0 1-.4 1-1v-2h-1z"
+                              d="M26 15l-1.41-1.41L17 21.17V2h-2v19.17l-7.59-7.58L6 15l10 10 10-10z"
+                            />
+                            <path
+                              d="M26 24v4H6v-4H4v4a2 2 0 0 0 2 2h20a2 2 0 0 0 2-2v-4z"
                             />
                           </svg>
-                        </button>
-                        <button
-                          className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 dEzVra"
+                        </div>
+                        <div
+                          className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 imYKmv"
                           onClick={[Function]}
                         >
                           <svg
                             aria-hidden={true}
                             description="Filters"
                             focusable="false"
-                            height={16}
+                            height={20}
                             preserveAspectRatio="xMidYMid meet"
                             style={
                               Object {
                                 "willChange": "transform",
                               }
                             }
-                            viewBox="0 0 16 16"
-                            width={16}
+                            viewBox="0 0 32 32"
+                            width={20}
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M15 4h-2.1c-.2-1.1-1.2-2-2.4-2s-2.2.9-2.4 2H1v1h7.1c.2 1.1 1.2 2 2.4 2s2.2-.9 2.4-2H15V4zm-4.5 2C9.7 6 9 5.3 9 4.5S9.7 3 10.5 3s1.5.7 1.5 1.5S11.3 6 10.5 6zM1 12h2.1c.2 1.1 1.2 2 2.4 2s2.2-.9 2.4-2H15v-1H7.9c-.2-1.1-1.2-2-2.4-2s-2.2.9-2.4 2H1v1zm4.5-2c.8 0 1.5.7 1.5 1.5S6.3 13 5.5 13 4 12.3 4 11.5 4.7 10 5.5 10z"
+                              d="M18 28h-4a2 2 0 0 1-2-2v-7.59L4.59 11A2 2 0 0 1 4 9.59V6a2 2 0 0 1 2-2h20a2 2 0 0 1 2 2v3.59a2 2 0 0 1-.59 1.41L20 18.41V26a2 2 0 0 1-2 2zM6 6v3.59l8 8V26h4v-8.41l8-8V6z"
                             />
                           </svg>
-                        </button>
+                        </div>
                         <div
                           className="card--toolbar"
                         >
                           <button
-                            className="CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 jeeBWM"
+                            className="CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
                             onClick={[Function]}
                           >
                             <svg
                               description="Expand to fullscreen"
                               focusable="false"
-                              height={16}
+                              height={20}
                               preserveAspectRatio="xMidYMid meet"
                               role="img"
                               style={
@@ -2762,7 +2768,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               }
                               title="Expand to fullscreen"
                               viewBox="0 0 32 32"
-                              width={16}
+                              width={20}
                               xmlns="http://www.w3.org/2000/svg"
                             >
                               <path
@@ -3075,7 +3081,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           aria-label="Last year"
                           className="bx--overflow-menu__icon"
                           focusable="false"
-                          height={16}
+                          height={20}
                           onClick={[Function]}
                           onKeyDown={[Function]}
                           preserveAspectRatio="xMidYMid meet"
@@ -3086,7 +3092,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             }
                           }
                           viewBox="0 0 32 32"
-                          width={16}
+                          width={20}
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <path
@@ -3105,13 +3111,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <button
-                      className="CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 jeeBWM"
+                      className="CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
                       onClick={[Function]}
                     >
                       <svg
                         description="Expand to fullscreen"
                         focusable="false"
-                        height={16}
+                        height={20}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         style={
@@ -3121,7 +3127,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         }
                         title="Expand to fullscreen"
                         viewBox="0 0 32 32"
-                        width={16}
+                        width={20}
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
@@ -3178,13 +3184,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     className="card--toolbar"
                   >
                     <button
-                      className="CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 jeeBWM"
+                      className="CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
                       onClick={[Function]}
                     >
                       <svg
                         description="Expand to fullscreen"
                         focusable="false"
-                        height={16}
+                        height={20}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         style={
@@ -3194,7 +3200,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         }
                         title="Expand to fullscreen"
                         viewBox="0 0 32 32"
-                        width={16}
+                        width={20}
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
@@ -4267,7 +4273,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           aria-label="Last 7 days"
                           className="bx--overflow-menu__icon"
                           focusable="false"
-                          height={16}
+                          height={20}
                           onClick={[Function]}
                           onKeyDown={[Function]}
                           preserveAspectRatio="xMidYMid meet"
@@ -4278,7 +4284,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             }
                           }
                           viewBox="0 0 32 32"
-                          width={16}
+                          width={20}
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <path
@@ -4297,13 +4303,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <button
-                      className="CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 jeeBWM"
+                      className="CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
                       onClick={[Function]}
                     >
                       <svg
                         description="Expand to fullscreen"
                         focusable="false"
-                        height={16}
+                        height={20}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         style={
@@ -4313,7 +4319,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         }
                         title="Expand to fullscreen"
                         viewBox="0 0 32 32"
-                        width={16}
+                        width={20}
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
@@ -4360,14 +4366,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   className="Card__CardContent-v5r71h-1 jAGfWa"
                 >
                   <div
-                    className="TableCard__StyledStatefulTable-q9l5bz-2 kzFKjW Table__StyledTableContainer-sc-1kalfns-0 fkxdXs bx--data-table-container"
+                    className="TableCard__StyledStatefulTable-q9l5bz-2 kzFKjW Table__StyledTableContainer-sc-1kalfns-0 buETAI bx--data-table-container"
                   >
                     <section
                       aria-label="data table toolbar"
                       className="bx--table-toolbar"
                     >
                       <div
-                        className="bx--batch-actions TableToolbar__StyledTableBatchActions-sc-17lb3av-4 jmgrzH"
+                        className="bx--batch-actions TableToolbar__StyledTableBatchActions-sc-17lb3av-3 gnkbSD"
                       >
                         <div
                           className="bx--action-list"
@@ -4400,7 +4406,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         Alerts
                       </label>
                       <div
-                        className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-3 jTKDEr"
+                        className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-2 ksiTUe"
                       >
                         <div
                           className="bx--toolbar-action bx--toolbar-search-container-expandable"
@@ -4411,7 +4417,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           tabIndex="0"
                         >
                           <div
-                            className="bx--search bx--search--sm TableToolbar__StyledToolbarSearch-sc-17lb3av-1 jCiaXI"
+                            className="bx--search bx--search--sm table-toolbar-search"
                           >
                             <svg
                               aria-hidden={true}
@@ -4475,65 +4481,68 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </button>
                           </div>
                         </div>
-                        <button
-                          className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 dEzVra"
+                        <div
+                          className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 imYKmv"
                           onClick={[Function]}
                         >
                           <svg
                             aria-hidden={true}
                             description="Download table content"
                             focusable="false"
-                            height={16}
+                            height={20}
                             preserveAspectRatio="xMidYMid meet"
                             style={
                               Object {
                                 "willChange": "transform",
                               }
                             }
-                            viewBox="0 0 16 16"
-                            width={16}
+                            viewBox="0 0 32 32"
+                            width={20}
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M13 7l-.7-.7-3.8 3.8V1h-1v9.1L3.7 6.3 3 7l5 5zm0 5v2H3v-2H2v2c0 .6.4 1 1 1h10c.6 0 1-.4 1-1v-2h-1z"
+                              d="M26 15l-1.41-1.41L17 21.17V2h-2v19.17l-7.59-7.58L6 15l10 10 10-10z"
+                            />
+                            <path
+                              d="M26 24v4H6v-4H4v4a2 2 0 0 0 2 2h20a2 2 0 0 0 2-2v-4z"
                             />
                           </svg>
-                        </button>
-                        <button
-                          className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 dEzVra"
+                        </div>
+                        <div
+                          className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 imYKmv"
                           onClick={[Function]}
                         >
                           <svg
                             aria-hidden={true}
                             description="Filters"
                             focusable="false"
-                            height={16}
+                            height={20}
                             preserveAspectRatio="xMidYMid meet"
                             style={
                               Object {
                                 "willChange": "transform",
                               }
                             }
-                            viewBox="0 0 16 16"
-                            width={16}
+                            viewBox="0 0 32 32"
+                            width={20}
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M15 4h-2.1c-.2-1.1-1.2-2-2.4-2s-2.2.9-2.4 2H1v1h7.1c.2 1.1 1.2 2 2.4 2s2.2-.9 2.4-2H15V4zm-4.5 2C9.7 6 9 5.3 9 4.5S9.7 3 10.5 3s1.5.7 1.5 1.5S11.3 6 10.5 6zM1 12h2.1c.2 1.1 1.2 2 2.4 2s2.2-.9 2.4-2H15v-1H7.9c-.2-1.1-1.2-2-2.4-2s-2.2.9-2.4 2H1v1zm4.5-2c.8 0 1.5.7 1.5 1.5S6.3 13 5.5 13 4 12.3 4 11.5 4.7 10 5.5 10z"
+                              d="M18 28h-4a2 2 0 0 1-2-2v-7.59L4.59 11A2 2 0 0 1 4 9.59V6a2 2 0 0 1 2-2h20a2 2 0 0 1 2 2v3.59a2 2 0 0 1-.59 1.41L20 18.41V26a2 2 0 0 1-2 2zM6 6v3.59l8 8V26h4v-8.41l8-8V6z"
                             />
                           </svg>
-                        </button>
+                        </div>
                         <div
                           className="card--toolbar"
                         >
                           <button
-                            className="CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 jeeBWM"
+                            className="CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
                             onClick={[Function]}
                           >
                             <svg
                               description="Expand to fullscreen"
                               focusable="false"
-                              height={16}
+                              height={20}
                               preserveAspectRatio="xMidYMid meet"
                               role="img"
                               style={
@@ -4543,7 +4552,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               }
                               title="Expand to fullscreen"
                               viewBox="0 0 32 32"
-                              width={16}
+                              width={20}
                               xmlns="http://www.w3.org/2000/svg"
                             >
                               <path
@@ -4856,7 +4865,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           aria-label="Last year"
                           className="bx--overflow-menu__icon"
                           focusable="false"
-                          height={16}
+                          height={20}
                           onClick={[Function]}
                           onKeyDown={[Function]}
                           preserveAspectRatio="xMidYMid meet"
@@ -4867,7 +4876,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             }
                           }
                           viewBox="0 0 32 32"
-                          width={16}
+                          width={20}
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <path
@@ -4886,13 +4895,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <button
-                      className="CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 jeeBWM"
+                      className="CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
                       onClick={[Function]}
                     >
                       <svg
                         description="Expand to fullscreen"
                         focusable="false"
-                        height={16}
+                        height={20}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         style={
@@ -4902,7 +4911,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         }
                         title="Expand to fullscreen"
                         viewBox="0 0 32 32"
-                        width={16}
+                        width={20}
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
@@ -4959,13 +4968,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     className="card--toolbar"
                   >
                     <button
-                      className="CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 jeeBWM"
+                      className="CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
                       onClick={[Function]}
                     >
                       <svg
                         description="Expand to fullscreen"
                         focusable="false"
-                        height={16}
+                        height={20}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         style={
@@ -4975,7 +4984,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         }
                         title="Expand to fullscreen"
                         viewBox="0 0 32 32"
-                        width={16}
+                        width={20}
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
@@ -5385,13 +5394,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     className="card--toolbar"
                   >
                     <button
-                      className="CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 jeeBWM"
+                      className="CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
                       onClick={[Function]}
                     >
                       <svg
                         description="Expand to fullscreen"
                         focusable="false"
-                        height={16}
+                        height={20}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         style={
@@ -5401,7 +5410,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         }
                         title="Expand to fullscreen"
                         viewBox="0 0 32 32"
-                        width={16}
+                        width={20}
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
@@ -5647,13 +5656,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   className="card--toolbar"
                 >
                   <button
-                    className="CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 jeeBWM"
+                    className="CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
                     onClick={[Function]}
                   >
                     <svg
                       description="Expand to fullscreen"
                       focusable="false"
-                      height={16}
+                      height={20}
                       preserveAspectRatio="xMidYMid meet"
                       role="img"
                       style={
@@ -5663,7 +5672,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       }
                       title="Expand to fullscreen"
                       viewBox="0 0 32 32"
-                      width={16}
+                      width={20}
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
@@ -5820,14 +5829,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   className="Card__CardContent-v5r71h-1 jAGfWa"
                 >
                   <div
-                    className="TableCard__StyledStatefulTable-q9l5bz-2 SdwkD Table__StyledTableContainer-sc-1kalfns-0 fkxdXs bx--data-table-container"
+                    className="TableCard__StyledStatefulTable-q9l5bz-2 SdwkD Table__StyledTableContainer-sc-1kalfns-0 buETAI bx--data-table-container"
                   >
                     <section
                       aria-label="data table toolbar"
                       className="bx--table-toolbar"
                     >
                       <div
-                        className="bx--batch-actions TableToolbar__StyledTableBatchActions-sc-17lb3av-4 jmgrzH"
+                        className="bx--batch-actions TableToolbar__StyledTableBatchActions-sc-17lb3av-3 gnkbSD"
                       >
                         <div
                           className="bx--action-list"
@@ -5860,7 +5869,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         Expanded card
                       </label>
                       <div
-                        className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-3 jTKDEr"
+                        className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-2 ksiTUe"
                       >
                         <div
                           className="bx--toolbar-action bx--toolbar-search-container-expandable"
@@ -5871,7 +5880,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           tabIndex="0"
                         >
                           <div
-                            className="bx--search bx--search--sm TableToolbar__StyledToolbarSearch-sc-17lb3av-1 jCiaXI"
+                            className="bx--search bx--search--sm table-toolbar-search"
                           >
                             <svg
                               aria-hidden={true}
@@ -5934,65 +5943,68 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </button>
                           </div>
                         </div>
-                        <button
-                          className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 dEzVra"
+                        <div
+                          className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 imYKmv"
                           onClick={[Function]}
                         >
                           <svg
                             aria-hidden={true}
                             description="Download table content"
                             focusable="false"
-                            height={16}
+                            height={20}
                             preserveAspectRatio="xMidYMid meet"
                             style={
                               Object {
                                 "willChange": "transform",
                               }
                             }
-                            viewBox="0 0 16 16"
-                            width={16}
+                            viewBox="0 0 32 32"
+                            width={20}
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M13 7l-.7-.7-3.8 3.8V1h-1v9.1L3.7 6.3 3 7l5 5zm0 5v2H3v-2H2v2c0 .6.4 1 1 1h10c.6 0 1-.4 1-1v-2h-1z"
+                              d="M26 15l-1.41-1.41L17 21.17V2h-2v19.17l-7.59-7.58L6 15l10 10 10-10z"
+                            />
+                            <path
+                              d="M26 24v4H6v-4H4v4a2 2 0 0 0 2 2h20a2 2 0 0 0 2-2v-4z"
                             />
                           </svg>
-                        </button>
-                        <button
-                          className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 dEzVra"
+                        </div>
+                        <div
+                          className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 imYKmv"
                           onClick={[Function]}
                         >
                           <svg
                             aria-hidden={true}
                             description="Filters"
                             focusable="false"
-                            height={16}
+                            height={20}
                             preserveAspectRatio="xMidYMid meet"
                             style={
                               Object {
                                 "willChange": "transform",
                               }
                             }
-                            viewBox="0 0 16 16"
-                            width={16}
+                            viewBox="0 0 32 32"
+                            width={20}
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M15 4h-2.1c-.2-1.1-1.2-2-2.4-2s-2.2.9-2.4 2H1v1h7.1c.2 1.1 1.2 2 2.4 2s2.2-.9 2.4-2H15V4zm-4.5 2C9.7 6 9 5.3 9 4.5S9.7 3 10.5 3s1.5.7 1.5 1.5S11.3 6 10.5 6zM1 12h2.1c.2 1.1 1.2 2 2.4 2s2.2-.9 2.4-2H15v-1H7.9c-.2-1.1-1.2-2-2.4-2s-2.2.9-2.4 2H1v1zm4.5-2c.8 0 1.5.7 1.5 1.5S6.3 13 5.5 13 4 12.3 4 11.5 4.7 10 5.5 10z"
+                              d="M18 28h-4a2 2 0 0 1-2-2v-7.59L4.59 11A2 2 0 0 1 4 9.59V6a2 2 0 0 1 2-2h20a2 2 0 0 1 2 2v3.59a2 2 0 0 1-.59 1.41L20 18.41V26a2 2 0 0 1-2 2zM6 6v3.59l8 8V26h4v-8.41l8-8V6z"
                             />
                           </svg>
-                        </button>
+                        </div>
                         <div
                           className="card--toolbar"
                         >
                           <button
-                            className="CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 jeeBWM"
+                            className="CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
                             onClick={[Function]}
                           >
                             <svg
                               description="Expand to fullscreen"
                               focusable="false"
-                              height={16}
+                              height={20}
                               preserveAspectRatio="xMidYMid meet"
                               role="img"
                               style={
@@ -6002,7 +6014,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               }
                               title="Expand to fullscreen"
                               viewBox="0 0 32 32"
-                              width={16}
+                              width={20}
                               xmlns="http://www.w3.org/2000/svg"
                             >
                               <path
@@ -8315,7 +8327,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           aria-label="Last 7 days"
                           className="bx--overflow-menu__icon"
                           focusable="false"
-                          height={16}
+                          height={20}
                           onClick={[Function]}
                           onKeyDown={[Function]}
                           preserveAspectRatio="xMidYMid meet"
@@ -8326,7 +8338,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             }
                           }
                           viewBox="0 0 32 32"
-                          width={16}
+                          width={20}
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <path
@@ -8345,13 +8357,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <button
-                      className="CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 jeeBWM"
+                      className="CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
                       onClick={[Function]}
                     >
                       <svg
                         description="Expand to fullscreen"
                         focusable="false"
-                        height={16}
+                        height={20}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         style={
@@ -8361,7 +8373,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         }
                         title="Expand to fullscreen"
                         viewBox="0 0 32 32"
-                        width={16}
+                        width={20}
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
@@ -8408,14 +8420,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   className="Card__CardContent-v5r71h-1 jAGfWa"
                 >
                   <div
-                    className="TableCard__StyledStatefulTable-q9l5bz-2 kzFKjW Table__StyledTableContainer-sc-1kalfns-0 fkxdXs bx--data-table-container"
+                    className="TableCard__StyledStatefulTable-q9l5bz-2 kzFKjW Table__StyledTableContainer-sc-1kalfns-0 buETAI bx--data-table-container"
                   >
                     <section
                       aria-label="data table toolbar"
                       className="bx--table-toolbar"
                     >
                       <div
-                        className="bx--batch-actions TableToolbar__StyledTableBatchActions-sc-17lb3av-4 jmgrzH"
+                        className="bx--batch-actions TableToolbar__StyledTableBatchActions-sc-17lb3av-3 gnkbSD"
                       >
                         <div
                           className="bx--action-list"
@@ -8448,7 +8460,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         Alerts
                       </label>
                       <div
-                        className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-3 jTKDEr"
+                        className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-2 ksiTUe"
                       >
                         <div
                           className="bx--toolbar-action bx--toolbar-search-container-expandable"
@@ -8459,7 +8471,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           tabIndex="0"
                         >
                           <div
-                            className="bx--search bx--search--sm TableToolbar__StyledToolbarSearch-sc-17lb3av-1 jCiaXI"
+                            className="bx--search bx--search--sm table-toolbar-search"
                           >
                             <svg
                               aria-hidden={true}
@@ -8523,65 +8535,68 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </button>
                           </div>
                         </div>
-                        <button
-                          className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 dEzVra"
+                        <div
+                          className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 imYKmv"
                           onClick={[Function]}
                         >
                           <svg
                             aria-hidden={true}
                             description="Download table content"
                             focusable="false"
-                            height={16}
+                            height={20}
                             preserveAspectRatio="xMidYMid meet"
                             style={
                               Object {
                                 "willChange": "transform",
                               }
                             }
-                            viewBox="0 0 16 16"
-                            width={16}
+                            viewBox="0 0 32 32"
+                            width={20}
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M13 7l-.7-.7-3.8 3.8V1h-1v9.1L3.7 6.3 3 7l5 5zm0 5v2H3v-2H2v2c0 .6.4 1 1 1h10c.6 0 1-.4 1-1v-2h-1z"
+                              d="M26 15l-1.41-1.41L17 21.17V2h-2v19.17l-7.59-7.58L6 15l10 10 10-10z"
+                            />
+                            <path
+                              d="M26 24v4H6v-4H4v4a2 2 0 0 0 2 2h20a2 2 0 0 0 2-2v-4z"
                             />
                           </svg>
-                        </button>
-                        <button
-                          className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 dEzVra"
+                        </div>
+                        <div
+                          className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 imYKmv"
                           onClick={[Function]}
                         >
                           <svg
                             aria-hidden={true}
                             description="Filters"
                             focusable="false"
-                            height={16}
+                            height={20}
                             preserveAspectRatio="xMidYMid meet"
                             style={
                               Object {
                                 "willChange": "transform",
                               }
                             }
-                            viewBox="0 0 16 16"
-                            width={16}
+                            viewBox="0 0 32 32"
+                            width={20}
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M15 4h-2.1c-.2-1.1-1.2-2-2.4-2s-2.2.9-2.4 2H1v1h7.1c.2 1.1 1.2 2 2.4 2s2.2-.9 2.4-2H15V4zm-4.5 2C9.7 6 9 5.3 9 4.5S9.7 3 10.5 3s1.5.7 1.5 1.5S11.3 6 10.5 6zM1 12h2.1c.2 1.1 1.2 2 2.4 2s2.2-.9 2.4-2H15v-1H7.9c-.2-1.1-1.2-2-2.4-2s-2.2.9-2.4 2H1v1zm4.5-2c.8 0 1.5.7 1.5 1.5S6.3 13 5.5 13 4 12.3 4 11.5 4.7 10 5.5 10z"
+                              d="M18 28h-4a2 2 0 0 1-2-2v-7.59L4.59 11A2 2 0 0 1 4 9.59V6a2 2 0 0 1 2-2h20a2 2 0 0 1 2 2v3.59a2 2 0 0 1-.59 1.41L20 18.41V26a2 2 0 0 1-2 2zM6 6v3.59l8 8V26h4v-8.41l8-8V6z"
                             />
                           </svg>
-                        </button>
+                        </div>
                         <div
                           className="card--toolbar"
                         >
                           <button
-                            className="CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 jeeBWM"
+                            className="CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
                             onClick={[Function]}
                           >
                             <svg
                               aria-hidden={true}
                               focusable="false"
-                              height={16}
+                              height={20}
                               preserveAspectRatio="xMidYMid meet"
                               style={
                                 Object {
@@ -8589,7 +8604,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                 }
                               }
                               viewBox="0 0 32 32"
-                              width={16}
+                              width={20}
                               xmlns="http://www.w3.org/2000/svg"
                             >
                               <path
@@ -8902,7 +8917,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           aria-label="Last year"
                           className="bx--overflow-menu__icon"
                           focusable="false"
-                          height={16}
+                          height={20}
                           onClick={[Function]}
                           onKeyDown={[Function]}
                           preserveAspectRatio="xMidYMid meet"
@@ -8913,7 +8928,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             }
                           }
                           viewBox="0 0 32 32"
-                          width={16}
+                          width={20}
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <path
@@ -8932,13 +8947,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <button
-                      className="CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 jeeBWM"
+                      className="CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
                       onClick={[Function]}
                     >
                       <svg
                         description="Expand to fullscreen"
                         focusable="false"
-                        height={16}
+                        height={20}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         style={
@@ -8948,7 +8963,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         }
                         title="Expand to fullscreen"
                         viewBox="0 0 32 32"
-                        width={16}
+                        width={20}
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
@@ -9005,13 +9020,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     className="card--toolbar"
                   >
                     <button
-                      className="CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 jeeBWM"
+                      className="CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
                       onClick={[Function]}
                     >
                       <svg
                         description="Expand to fullscreen"
                         focusable="false"
-                        height={16}
+                        height={20}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         style={
@@ -9021,7 +9036,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         }
                         title="Expand to fullscreen"
                         viewBox="0 0 32 32"
-                        width={16}
+                        width={20}
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
@@ -20080,7 +20095,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           aria-label="Last 7 days"
                           className="bx--overflow-menu__icon"
                           focusable="false"
-                          height={16}
+                          height={20}
                           onClick={[Function]}
                           onKeyDown={[Function]}
                           preserveAspectRatio="xMidYMid meet"
@@ -20091,7 +20106,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             }
                           }
                           viewBox="0 0 32 32"
-                          width={16}
+                          width={20}
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <path
@@ -20110,13 +20125,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <button
-                      className="CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 jeeBWM"
+                      className="CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
                       onClick={[Function]}
                     >
                       <svg
                         description="Expand to fullscreen"
                         focusable="false"
-                        height={16}
+                        height={20}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         style={
@@ -20126,7 +20141,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         }
                         title="Expand to fullscreen"
                         viewBox="0 0 32 32"
-                        width={16}
+                        width={20}
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
@@ -20173,14 +20188,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   className="Card__CardContent-v5r71h-1 jAGfWa"
                 >
                   <div
-                    className="TableCard__StyledStatefulTable-q9l5bz-2 kzFKjW Table__StyledTableContainer-sc-1kalfns-0 fkxdXs bx--data-table-container"
+                    className="TableCard__StyledStatefulTable-q9l5bz-2 kzFKjW Table__StyledTableContainer-sc-1kalfns-0 buETAI bx--data-table-container"
                   >
                     <section
                       aria-label="data table toolbar"
                       className="bx--table-toolbar"
                     >
                       <div
-                        className="bx--batch-actions TableToolbar__StyledTableBatchActions-sc-17lb3av-4 jmgrzH"
+                        className="bx--batch-actions TableToolbar__StyledTableBatchActions-sc-17lb3av-3 gnkbSD"
                       >
                         <div
                           className="bx--action-list"
@@ -20213,7 +20228,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         Alerts
                       </label>
                       <div
-                        className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-3 jTKDEr"
+                        className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-2 ksiTUe"
                       >
                         <div
                           className="bx--toolbar-action bx--toolbar-search-container-expandable"
@@ -20224,7 +20239,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           tabIndex="0"
                         >
                           <div
-                            className="bx--search bx--search--sm TableToolbar__StyledToolbarSearch-sc-17lb3av-1 jCiaXI"
+                            className="bx--search bx--search--sm table-toolbar-search"
                           >
                             <svg
                               aria-hidden={true}
@@ -20288,65 +20303,68 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </button>
                           </div>
                         </div>
-                        <button
-                          className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 dEzVra"
+                        <div
+                          className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 imYKmv"
                           onClick={[Function]}
                         >
                           <svg
                             aria-hidden={true}
                             description="Download table content"
                             focusable="false"
-                            height={16}
+                            height={20}
                             preserveAspectRatio="xMidYMid meet"
                             style={
                               Object {
                                 "willChange": "transform",
                               }
                             }
-                            viewBox="0 0 16 16"
-                            width={16}
+                            viewBox="0 0 32 32"
+                            width={20}
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M13 7l-.7-.7-3.8 3.8V1h-1v9.1L3.7 6.3 3 7l5 5zm0 5v2H3v-2H2v2c0 .6.4 1 1 1h10c.6 0 1-.4 1-1v-2h-1z"
+                              d="M26 15l-1.41-1.41L17 21.17V2h-2v19.17l-7.59-7.58L6 15l10 10 10-10z"
+                            />
+                            <path
+                              d="M26 24v4H6v-4H4v4a2 2 0 0 0 2 2h20a2 2 0 0 0 2-2v-4z"
                             />
                           </svg>
-                        </button>
-                        <button
-                          className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 dEzVra"
+                        </div>
+                        <div
+                          className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 imYKmv"
                           onClick={[Function]}
                         >
                           <svg
                             aria-hidden={true}
                             description="Filters"
                             focusable="false"
-                            height={16}
+                            height={20}
                             preserveAspectRatio="xMidYMid meet"
                             style={
                               Object {
                                 "willChange": "transform",
                               }
                             }
-                            viewBox="0 0 16 16"
-                            width={16}
+                            viewBox="0 0 32 32"
+                            width={20}
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M15 4h-2.1c-.2-1.1-1.2-2-2.4-2s-2.2.9-2.4 2H1v1h7.1c.2 1.1 1.2 2 2.4 2s2.2-.9 2.4-2H15V4zm-4.5 2C9.7 6 9 5.3 9 4.5S9.7 3 10.5 3s1.5.7 1.5 1.5S11.3 6 10.5 6zM1 12h2.1c.2 1.1 1.2 2 2.4 2s2.2-.9 2.4-2H15v-1H7.9c-.2-1.1-1.2-2-2.4-2s-2.2.9-2.4 2H1v1zm4.5-2c.8 0 1.5.7 1.5 1.5S6.3 13 5.5 13 4 12.3 4 11.5 4.7 10 5.5 10z"
+                              d="M18 28h-4a2 2 0 0 1-2-2v-7.59L4.59 11A2 2 0 0 1 4 9.59V6a2 2 0 0 1 2-2h20a2 2 0 0 1 2 2v3.59a2 2 0 0 1-.59 1.41L20 18.41V26a2 2 0 0 1-2 2zM6 6v3.59l8 8V26h4v-8.41l8-8V6z"
                             />
                           </svg>
-                        </button>
+                        </div>
                         <div
                           className="card--toolbar"
                         >
                           <button
-                            className="CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 jeeBWM"
+                            className="CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
                             onClick={[Function]}
                           >
                             <svg
                               description="Expand to fullscreen"
                               focusable="false"
-                              height={16}
+                              height={20}
                               preserveAspectRatio="xMidYMid meet"
                               role="img"
                               style={
@@ -20356,7 +20374,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               }
                               title="Expand to fullscreen"
                               viewBox="0 0 32 32"
-                              width={16}
+                              width={20}
                               xmlns="http://www.w3.org/2000/svg"
                             >
                               <path
@@ -20669,7 +20687,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           aria-label="Last year"
                           className="bx--overflow-menu__icon"
                           focusable="false"
-                          height={16}
+                          height={20}
                           onClick={[Function]}
                           onKeyDown={[Function]}
                           preserveAspectRatio="xMidYMid meet"
@@ -20680,7 +20698,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             }
                           }
                           viewBox="0 0 32 32"
-                          width={16}
+                          width={20}
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <path
@@ -20699,13 +20717,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <button
-                      className="CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 jeeBWM"
+                      className="CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
                       onClick={[Function]}
                     >
                       <svg
                         description="Expand to fullscreen"
                         focusable="false"
-                        height={16}
+                        height={20}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         style={
@@ -20715,7 +20733,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         }
                         title="Expand to fullscreen"
                         viewBox="0 0 32 32"
-                        width={16}
+                        width={20}
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
@@ -20772,13 +20790,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     className="card--toolbar"
                   >
                     <button
-                      className="CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 jeeBWM"
+                      className="CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
                       onClick={[Function]}
                     >
                       <svg
                         description="Expand to fullscreen"
                         focusable="false"
-                        height={16}
+                        height={20}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         style={
@@ -20788,7 +20806,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         }
                         title="Expand to fullscreen"
                         viewBox="0 0 32 32"
-                        width={16}
+                        width={20}
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path

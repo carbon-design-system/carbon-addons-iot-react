@@ -2,8 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import omit from 'lodash/omit';
 import styled from 'styled-components';
-import Close16 from '@carbon/icons-react/lib/close/16';
-import Popup16 from '@carbon/icons-react/lib/popup/16';
+import { Close20, Popup20 } from '@carbon/icons-react';
 import { OverflowMenu, OverflowMenuItem } from 'carbon-components-react';
 
 import CardRangePicker, { CardRangePickerPropTypes } from './CardRangePicker';
@@ -16,8 +15,8 @@ export const ToolbarSVGWrapper = styled.button`
     cursor: pointer;
     height: 3rem;
     width: 3rem;
-    padding: 1rem;
     outline: 2px solid transparent;
+    margin: 0;
 
     :hover {
       background: #e5e5e5;
@@ -133,7 +132,7 @@ const CardToolbar = ({
         <>
           {isExpanded ? (
             <ToolbarSVGWrapper onClick={() => onCardAction('CLOSE_EXPANDED_CARD')}>
-              <Close16 title={i18n.closeLabel} description={i18n.closeLabel} />
+              <Close20 title={i18n.closeLabel} description={i18n.closeLabel} />
             </ToolbarSVGWrapper>
           ) : (
             <ToolbarSVGWrapper
@@ -141,7 +140,7 @@ const CardToolbar = ({
                 onCardAction('OPEN_EXPANDED_CARD');
               }}
             >
-              <Popup16 title={i18n.expandLabel} description={i18n.expandLabel} />
+              <Popup20 title={i18n.expandLabel} description={i18n.expandLabel} />
             </ToolbarSVGWrapper>
           )}
         </>

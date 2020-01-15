@@ -6,10 +6,10 @@ import isNil from 'lodash/isNil';
 import uniqBy from 'lodash/uniqBy';
 import cloneDeep from 'lodash/cloneDeep';
 import capitalize from 'lodash/capitalize';
-import OverFlowMenuIcon from '@carbon/icons-react/lib/overflow-menu--vertical/16';
+import OverFlowMenuIcon from '@carbon/icons-react/lib/overflow-menu--vertical/20';
 
 import { CardPropTypes, TableCardPropTypes } from '../../constants/PropTypes';
-import Card from '../Card/Card';
+import Card, { defaultProps as CardDefaultProps } from '../Card/Card';
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 import StatefulTable from '../Table/StatefulTable';
 import { generateTableSampleValues } from '../TimeSeriesCard/timeSeriesUtils';
@@ -773,4 +773,5 @@ const TableCard = ({
 TableCard.propTypes = { ...CardPropTypes, ...TableCardPropTypes };
 TableCard.displayName = 'TableCard';
 TableCard.defaultProps = defaultProps;
+TableCard.defaultProps.i18n = { ...defaultProps.i18n, ...CardDefaultProps.i18n };
 export default TableCard;

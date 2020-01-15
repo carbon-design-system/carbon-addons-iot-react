@@ -2939,7 +2939,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
                   aria-label="Last 7 days"
                   className="bx--overflow-menu__icon"
                   focusable="false"
-                  height={16}
+                  height={20}
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   preserveAspectRatio="xMidYMid meet"
@@ -2950,7 +2950,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
                     }
                   }
                   viewBox="0 0 32 32"
-                  width={16}
+                  width={20}
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path

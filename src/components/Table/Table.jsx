@@ -27,6 +27,7 @@ import TableBody from './TableBody/TableBody';
 const StyledTableContainer = styled(TableContainer)`
   && {
     min-width: unset;
+    padding-top: 0;
 
     .bx--table-toolbar {
       overflow: hidden;

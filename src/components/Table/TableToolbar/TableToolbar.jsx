@@ -1,9 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import IconColumnSelector from '@carbon/icons-react/lib/column/16';
-import IconFilter from '@carbon/icons-react/lib/filter/16';
+import { Column20, Filter20, Download20 } from '@carbon/icons-react';
 import { DataTable, Button, Tooltip } from 'carbon-components-react';
-import Download16 from '@carbon/icons-react/lib/download/16';
 import styled from 'styled-components';
 
 import deprecate from '../../../internal/deprecate';
@@ -20,15 +18,14 @@ const {
   TableToolbarSearch,
 } = DataTable;
 
-const ToolbarSVGWrapper = styled.button`
+const ToolbarSVGWrapper = styled.div`
   &&& {
     background: transparent;
     border: none;
     display: flex;
     cursor: pointer;
-    height: 3rem;
-    width: 3rem;
-    padding: 1rem;
+    height: auto;
+    min-width: 3rem;
     outline: 2px solid transparent;
 
     :hover {
@@ -40,12 +37,13 @@ const ToolbarSVGWrapper = styled.button`
       outline: 2px solid #0062ff;
       outline-offset: -2px;
     }
-  }
-`;
 
-const StyledToolbarSearch = styled(TableToolbarSearch)`
-  &&& {
-    flex-grow: 2;
+    svg {
+      margin: 0 auto;
+      height: auto;
+      width: auto;
+      fill: #525252;
+    }
   }
 `;
 
@@ -226,8 +224,9 @@ const TableToolbar = ({
     )}
     <StyledTableToolbarContent>
       {hasSearch ? (
-        <StyledToolbarSearch
+        <TableToolbarSearch
           {...search}
+          className="table-toolbar-search"
           translateWithId={(...args) => tableTranslateWithId(i18n, ...args)}
           id={`${tableId}-toolbar-search`}
           onChange={event => onApplySearch(event.currentTarget ? event.currentTarget.value : '')}
@@ -241,17 +240,17 @@ const TableToolbar = ({
       ) : null}
       {onDownloadCSV ? (
         <ToolbarSVGWrapper onClick={onDownloadCSV}>
-          <Download16 description={i18n.downloadIconDescription} />
+          <Download20 description={i18n.downloadIconDescription} />
         </ToolbarSVGWrapper>
       ) : null}
       {hasColumnSelection ? (
         <ToolbarSVGWrapper onClick={onToggleColumnSelection}>
-          <IconColumnSelector description={i18n.columnSelectionButtonAria} />
+          <Column20 description={i18n.columnSelectionButtonAria} />
         </ToolbarSVGWrapper>
       ) : null}
       {hasFilter ? (
         <ToolbarSVGWrapper onClick={onToggleFilter}>
-          <IconFilter description={i18n.filterButtonAria} />
+          <Filter20 description={i18n.filterButtonAria} />
         </ToolbarSVGWrapper>
       ) : null}
 

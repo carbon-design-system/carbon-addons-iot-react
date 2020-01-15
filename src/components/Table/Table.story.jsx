@@ -6,7 +6,7 @@ import { boolean, text, number, select, array } from '@storybook/addon-knobs';
 import styled from 'styled-components';
 import Arrow from '@carbon/icons-react/lib/arrow--right/20';
 import Add from '@carbon/icons-react/lib/add/20';
-import Delete from '@carbon/icons-react/lib/delete/16';
+import Delete from '@carbon/icons-react/lib/delete/20';
 
 import { getSortedData, csvDownloadHandler } from '../../utils/componentUtilityFunctions';
 import FullWidthWrapper from '../../internal/FullWidthWrapper';

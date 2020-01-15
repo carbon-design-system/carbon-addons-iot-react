@@ -3,7 +3,7 @@ import React from 'react';
 /* eslint-disable*/
 import { Tooltip } from 'carbon-components-react';
 import { render, fireEvent, waitForElement } from '@testing-library/react';
-import Popup16 from '@carbon/icons-react/lib/popup/16';
+import { Popup20 } from '@carbon/icons-react';
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 import { ToolbarSVGWrapper } from './CardToolbar';
 
@@ -43,7 +43,7 @@ describe('Card testcases', () => {
 
     // should render CardRangePicker and Expand
     expect(wrapper.find(CardRangePicker)).toHaveLength(1);
-    expect(wrapper.find(Popup16)).toHaveLength(1);
+    expect(wrapper.find(Popup20)).toHaveLength(1);
 
     wrapper = mount(
       <Card {...cardProps} size={CARD_SIZES.XSMALL} isEditable availableActions={{ range: true }} />

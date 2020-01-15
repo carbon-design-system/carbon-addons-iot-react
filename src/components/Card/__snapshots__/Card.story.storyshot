@@ -65,7 +65,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                   aria-label="open and close list of options"
                   className="bx--overflow-menu__icon"
                   focusable="false"
-                  height={16}
+                  height={20}
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   preserveAspectRatio="xMidYMid meet"
@@ -76,7 +76,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                     }
                   }
                   viewBox="0 0 32 32"
-                  width={16}
+                  width={20}
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
@@ -95,13 +95,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
               </div>
             </div>
             <button
-              className="CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 jeeBWM"
+              className="CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
               onClick={[Function]}
             >
               <svg
                 description="Expand to fullscreen"
                 focusable="false"
-                height={16}
+                height={20}
                 preserveAspectRatio="xMidYMid meet"
                 role="img"
                 style={
@@ -111,7 +111,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                 }
                 title="Expand to fullscreen"
                 viewBox="0 0 32 32"
-                width={16}
+                width={20}
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
@@ -561,13 +561,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
             className="card--toolbar"
           >
             <button
-              className="CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 jeeBWM"
+              className="CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
               onClick={[Function]}
             >
               <svg
                 description="Expand to fullscreen"
                 focusable="false"
-                height={16}
+                height={20}
                 preserveAspectRatio="xMidYMid meet"
                 role="img"
                 style={
@@ -577,7 +577,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                 }
                 title="Expand to fullscreen"
                 viewBox="0 0 32 32"
-                width={16}
+                width={20}
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
@@ -730,7 +730,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                   aria-label="open and close list of options"
                   className="bx--overflow-menu__icon"
                   focusable="false"
-                  height={16}
+                  height={20}
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   preserveAspectRatio="xMidYMid meet"
@@ -741,7 +741,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                     }
                   }
                   viewBox="0 0 32 32"
-                  width={16}
+                  width={20}
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
@@ -820,7 +820,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                   aria-label="open and close list of options"
                   className="bx--overflow-menu__icon"
                   focusable="false"
-                  height={16}
+                  height={20}
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   preserveAspectRatio="xMidYMid meet"
@@ -831,7 +831,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                     }
                   }
                   viewBox="0 0 32 32"
-                  width={16}
+                  width={20}
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
@@ -910,7 +910,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                   aria-label="open and close list of options"
                   className="bx--overflow-menu__icon"
                   focusable="false"
-                  height={16}
+                  height={20}
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   preserveAspectRatio="xMidYMid meet"
@@ -921,7 +921,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                     }
                   }
                   viewBox="0 0 32 32"
-                  width={16}
+                  width={20}
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
@@ -1000,7 +1000,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                   aria-label="open and close list of options"
                   className="bx--overflow-menu__icon"
                   focusable="false"
-                  height={16}
+                  height={20}
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   preserveAspectRatio="xMidYMid meet"
@@ -1011,7 +1011,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                     }
                   }
                   viewBox="0 0 32 32"
-                  width={16}
+                  width={20}
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
@@ -1090,7 +1090,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                   aria-label="open and close list of options"
                   className="bx--overflow-menu__icon"
                   focusable="false"
-                  height={16}
+                  height={20}
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   preserveAspectRatio="xMidYMid meet"
@@ -1101,7 +1101,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                     }
                   }
                   viewBox="0 0 32 32"
-                  width={16}
+                  width={20}
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
@@ -1180,7 +1180,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                   aria-label="open and close list of options"
                   className="bx--overflow-menu__icon"
                   focusable="false"
-                  height={16}
+                  height={20}
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   preserveAspectRatio="xMidYMid meet"
@@ -1191,7 +1191,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                     }
                   }
                   viewBox="0 0 32 32"
-                  width={16}
+                  width={20}
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
@@ -1270,7 +1270,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                   aria-label="open and close list of options"
                   className="bx--overflow-menu__icon"
                   focusable="false"
-                  height={16}
+                  height={20}
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   preserveAspectRatio="xMidYMid meet"
@@ -1281,7 +1281,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                     }
                   }
                   viewBox="0 0 32 32"
-                  width={16}
+                  width={20}
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
@@ -1404,7 +1404,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                   aria-label="open and close list of options"
                   className="bx--overflow-menu__icon"
                   focusable="false"
-                  height={16}
+                  height={20}
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   preserveAspectRatio="xMidYMid meet"
@@ -1415,7 +1415,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                     }
                   }
                   viewBox="0 0 32 32"
-                  width={16}
+                  width={20}
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
@@ -1647,7 +1647,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                   aria-label="open and close list of options"
                   className="bx--overflow-menu__icon"
                   focusable="false"
-                  height={16}
+                  height={20}
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   preserveAspectRatio="xMidYMid meet"
@@ -1658,7 +1658,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                     }
                   }
                   viewBox="0 0 32 32"
-                  width={16}
+                  width={20}
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
