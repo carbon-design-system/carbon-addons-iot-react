@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import { OverflowMenuItem } from 'carbon-components-react';
 import { settings } from 'carbon-components';
 import './_breadcrumboverflowitem.scss';
 
@@ -110,7 +111,7 @@ class BreadcrumbOverflowItem extends React.Component {
     // console.log("overflow item: ", this.props);
 
     return (
-      <div
+      <OverflowMenuItem
         className={`${prefix}--overflow-menu-options__option`}
         {...other}
         tabIndex={0}
@@ -124,7 +125,7 @@ class BreadcrumbOverflowItem extends React.Component {
         index={index}
       >
         {children}
-      </div>
+      </OverflowMenuItem>
     );
   }
 }

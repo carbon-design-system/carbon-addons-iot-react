@@ -1,195 +1,101 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, Children } from 'react';
+import useResizeObserver from 'use-resize-observer';
 import PropTypes from 'prop-types';
-import {
-  Breadcrumb as CarbonBreadcrumb,
-  OverflowMenu as CarbonOverflowMenu,
-} from 'carbon-components-react';
-import useResizeObserverHook from 'use-resize-observer';
-import classNames from 'classnames';
 import { settings } from 'carbon-components';
-import OverflowMenuHorizaontal20 from '@carbon/icons-react/lib/overflow-menu--horizontal/20';
+import { OverflowMenuHorizontal20 } from '@carbon/icons-react';
 
-import BreadcrumbOverflowItem from './BreadcrumbOverflowItem';
-import './_breadcrumb.scss';
+import { Breadcrumb as CarbonBreadcrumb, OverflowMenuItem, OverflowMenu } from '../../index';
 
 const { prefix } = settings;
 
 const propTypes = {
-  /** Pass in the BreadcrumbItem's for your Breadcrumb */
+  /**
+   * Specify the label for the breadcrumb container
+   */
+  'aria-label': PropTypes.string,
+
+  /**
+   * Pass in the BreadcrumbItem's for your Breadcrumb
+   */
   children: PropTypes.node,
-  useResizeObserver: PropTypes.bool,
+
+  /**
+   * Specify an optional className to be applied to the container node
+   */
+  className: PropTypes.string,
+
+  /**
+   * Optional prop to omit the trailing slash for the breadcrumbs
+   */
+  noTrailingSlash: PropTypes.bool,
+
+  /**
+   * Allow for collapse of breadcrumbs into overflow menu when not enough space
+   */
+  hasOverflow: PropTypes.bool,
 };
 
 const defaultProps = {
+  className: null,
+  noTrailingSlash: false,
   children: null,
-  useResizeObserver: false,
+  hasOverflow: false,
+  'aria-label': null,
 };
 
-export const keys = {
-  TAB: 9,
-  ENTER: 13,
-  ESC: 27,
-  SPACE: 32,
-  PAGEUP: 33,
-  PAGEDOWN: 34,
-  END: 35,
-  HOME: 36,
-  LEFT: 37,
-  UP: 38,
-  RIGHT: 39,
-  DOWN: 40,
-};
-
-const Breadcrumb = props => {
-  const { children, className, useResizeObserver, ...other } = props;
-
-  const [breadcrumbItemsWidth, setBreadcrumbItemsWidth] = useState([]);
-  const [totalBreadcrumbItemsWidth, setTotalBreadcrumbItemsWidth] = useState(0);
-  const { ref: breadcrumbRef, width: containerWidth } = useResizeObserverHook({
+const Breadcrumb = ({ children, className, hasOverflow, ...other }) => {
+  const breakingWidth = useRef([]);
+  const { ref: breadcrumbRef } = useResizeObserver({
     useDefaults: false,
   });
-  const [overflowIndex, setOverflowIndex] = useState(0);
-  const [truncate, setTruncate] = useState(false);
-  // console.log('rise obeserver: ', containerWidth);
+  const [overflowItems, setOverflowItems] = useState([]);
+  const [afterOverflowItems, setAfterOverflowItems] = useState(children.slice(1));
 
-  const childRef = React.Children.map(children, useRef);
-  const childrenWithRef = React.Children.map(children, (child, index) =>
-    React.cloneElement(child, {
-      ref: childRef[index],
-      key: index,
-    })
-  );
-
-  /** Initial effect on mount to get breadcrumb item widths */
+  /** update breadcrumbs  */
   useEffect(() => {
-    if (useResizeObserver) {
-      setBreadcrumbItemsWidth(
-        childrenWithRef.map(childWithRef => {
-          return Math.ceil(childWithRef.ref.current.getBoundingClientRect().width);
-        })
-      );
-
-      setTotalBreadcrumbItemsWidth(
-        childrenWithRef.reduce((acc, childWithRef) => {
-          return acc + Math.ceil(childWithRef.ref.current.getBoundingClientRect().width);
-        }, 0)
-      );
-    }
-    // console.log('container width in mount: ', containerWidth);
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  /** Subsequent effect to evaluate the container/items width and determine which items should be placed in overflow menu  */
-  useEffect(() => {
-    if (useResizeObserver && containerWidth < totalBreadcrumbItemsWidth) {
-      // Additionally take into account the width of the overflow menu icon, 32px
-      let mutableTotalBreadcrumbItemsWidth = totalBreadcrumbItemsWidth + 32;
-
-      // iterate over the middle breadcrumb items (exclude first, exclude last)
-      for (let i = 1; i <= breadcrumbItemsWidth.length - 2; i += 1) {
-        // pull one item out of the list, to see if the remaining items will fit
-        mutableTotalBreadcrumbItemsWidth -= breadcrumbItemsWidth[i];
-        // console.log('index: ', i);
-        if (containerWidth >= mutableTotalBreadcrumbItemsWidth) {
-          setOverflowIndex(i);
-          break;
-        }
+    // The visible list is overflowing
+    if (breadcrumbRef.current.clientWidth < breadcrumbRef.current.scrollWidth) {
+      // Record the width of the list
+      breakingWidth.current.push(breadcrumbRef.current.scrollWidth);
+      if (afterOverflowItems.length > 1) {
+        // Move item to the hidden list
+        setOverflowItems([...overflowItems, afterOverflowItems.shift()]);
+        setAfterOverflowItems([...afterOverflowItems]);
       }
-
-      // despite collapsing all items into overflow, the container is still too small
-      // we should begin to ellipsis the first/last items
-      if (containerWidth < mutableTotalBreadcrumbItemsWidth) {
-        // setOverflowIndex(-1);
-        setTruncate(true);
-      }
-
-      console.log(
-        'change items: ',
-        overflowIndex,
-        containerWidth,
-        useResizeObserver,
-        breadcrumbItemsWidth,
-        totalBreadcrumbItemsWidth
-      );
-
-      console.log('container width: ', containerWidth);
-      console.log('mutableTotalBreadcrumbItemsWidth: ', mutableTotalBreadcrumbItemsWidth);
+      // The visible list is not overflowing
+    } else if (
+      breakingWidth.current[breakingWidth.current.length - 1] &&
+      breadcrumbRef.current.clientWidth > breakingWidth.current[breakingWidth.current.length - 1]
+    ) {
+      // Move the item to the visible list
+      setAfterOverflowItems([overflowItems.pop(), ...afterOverflowItems]);
+      setOverflowItems([...overflowItems]);
+      breakingWidth.current.pop();
     }
-  }, [
-    children,
-    overflowIndex,
-    containerWidth,
-    useResizeObserver,
-    breadcrumbItemsWidth,
-    totalBreadcrumbItemsWidth,
-  ]);
+  });
 
-  if (useResizeObserver) {
-    return (
-      <div
-        ref={breadcrumbRef}
-        style={{ color: `red` }}
-        role="menu"
-        tabIndex={0}
-        onKeyDown={evt => {
-          console.log(evt.key);
-          if (evt.which === keys.SPACE || evt.which === keys.ENTER) {
-            console.log(evt);
-          }
-        }}
-      >
-        {totalBreadcrumbItemsWidth > containerWidth ? (
-          <>
-            <CarbonBreadcrumb
-              className={classNames(className, {
-                [`${prefix}--breadcrumb-item--hidden`]: typeof containerWidth === 'undefined',
-                [`${prefix}--breadcrumb--truncate`]: truncate === true, // overflowIndex === -1,
-              })}
-              // onKeyDown={evt => {
-              //   console.log(evt);
-              //   if (evt.which === 13 || evt.which === 32) {
-              //     console.log(evt.target);
-              //   }
-              // }}
-              {...other}
-            >
-              {containerWidth}
-              {childrenWithRef[0]}
-              <span className={`${prefix}--breadcrumb-overflow`}>
-                <CarbonOverflowMenu renderIcon={OverflowMenuHorizaontal20}>
-                  {React.Children.map(childrenWithRef, (child, i) => {
-                    // console.log(child.ref.current)
-                    if (i !== 0 && i <= overflowIndex) {
-                      return <BreadcrumbOverflowItem>{child}</BreadcrumbOverflowItem>;
-                    }
-                    return null;
-                  })}
-                </CarbonOverflowMenu>
-              </span>
-              {truncate === true // overflowIndex === -1
-                ? childrenWithRef[childrenWithRef.length - 1]
-                : childrenWithRef.slice(overflowIndex + 1, childrenWithRef.length)}
-            </CarbonBreadcrumb>
-          </>
-        ) : (
-          <CarbonBreadcrumb
-            className={classNames(className, {
-              [`${prefix}--breadcrumb-item--hidden`]: typeof containerWidth === 'undefined',
-              [`${prefix}--breadcrumb--truncate`]: truncate === true,
-            })}
-            {...other}
-          >
-            {childrenWithRef}
-          </CarbonBreadcrumb>
-        )}
-      </div>
-    );
-  }
   return (
-    <CarbonBreadcrumb className={className} {...other}>
-      {children}
-    </CarbonBreadcrumb>
+    <div className="breadcrumb-container" ref={breadcrumbRef}>
+      {hasOverflow ? (
+        <CarbonBreadcrumb className={className} {...other}>
+          {children[0]}
+          {overflowItems.length > 0 && (
+            <span className={`${prefix}--breadcrumb-overflow`}>
+              <OverflowMenu renderIcon={OverflowMenuHorizontal20}>
+                {Children.map(overflowItems, child => (
+                  <OverflowMenuItem itemText={child?.props.children} />
+                ))}
+              </OverflowMenu>
+            </span>
+          )}
+          {afterOverflowItems}
+        </CarbonBreadcrumb>
+      ) : (
+        <CarbonBreadcrumb className={className} {...other}>
+          {children}
+        </CarbonBreadcrumb>
+      )}
+    </div>
   );
 };
 

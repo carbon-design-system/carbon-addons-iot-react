@@ -11,10 +11,9 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, boolean, number } from '@storybook/addon-knobs';
-import { BreadcrumbSkeleton } from 'carbon-components-react';
+import { BreadcrumbSkeleton, BreadcrumbItem } from 'carbon-components-react';
 
 import Breadcrumb from './Breadcrumb';
-import BreadcrumbItem from './BreadcrumbItem';
 
 const props = () => ({
   className: 'some-class',
@@ -42,7 +41,9 @@ storiesOf('Watson IoT | Breadcrumb', module)
         <Breadcrumb {...props()}>
           <BreadcrumbItem href="#">Breadcrumb 1</BreadcrumbItem>
           <BreadcrumbItem href="#">Breadcrumb 2</BreadcrumbItem>
-          <BreadcrumbItem href="#">Breadcrumb 3</BreadcrumbItem>
+          <BreadcrumbItem href="#" isCurrentPage>
+            Breadcrumb 3
+          </BreadcrumbItem>
         </Breadcrumb>
       );
     },
@@ -54,23 +55,7 @@ storiesOf('Watson IoT | Breadcrumb', module)
       },
     }
   )
-  .add(
-    'no trailing slash',
-    () => (
-      <Breadcrumb {...props()} noTrailingSlash>
-        <BreadcrumbItem>
-          <a href="/#">Breadcrumb 1</a>
-        </BreadcrumbItem>
-        <BreadcrumbItem href="#">Breadcrumb 2</BreadcrumbItem>
-        <BreadcrumbItem href="#">Breadcrumb 3</BreadcrumbItem>
-      </Breadcrumb>
-    ),
-    {
-      info: {
-        text: 'You can choose not to render a trailing slash with the `noTrailingSlash` prop',
-      },
-    }
-  )
+
   .add('skeleton', () => <BreadcrumbSkeleton />, {
     info: {
       text: `
@@ -121,18 +106,21 @@ storiesOf('Watson IoT | Breadcrumb', module)
   .add(
     'with useResizeObserver',
     () => {
+      const containerWidth = number('container width', 631);
       return (
         <>
-          <Breadcrumb useResizeObserver {...props()}>
-            <BreadcrumbItem href="#">1 Homexxxxxxxxxxxxxxxxxxxxxx</BreadcrumbItem>
-            <BreadcrumbItem href="#">2 Devices</BreadcrumbItem>
-            <BreadcrumbItem href="#">3 A really long page name</BreadcrumbItem>
-            <BreadcrumbItem href="#">4 Another page</BreadcrumbItem>
-            <BreadcrumbItem href="#">5th level page</BreadcrumbItem>
-            <BreadcrumbItem href="#">6</BreadcrumbItem>
-            <BreadcrumbItem href="#">7 page</BreadcrumbItem>
-            <BreadcrumbItem href="#">8 pages, current level</BreadcrumbItem>
-          </Breadcrumb>
+          <div style={{ width: containerWidth }}>
+            <Breadcrumb hasOverflow {...props()}>
+              <BreadcrumbItem href="#">1 Homexxxxxxxxxxxxxxxxxxxxxx</BreadcrumbItem>
+              <BreadcrumbItem href="#">2 Devices</BreadcrumbItem>
+              <BreadcrumbItem href="#">3 A really long page name</BreadcrumbItem>
+              <BreadcrumbItem href="#">4 Another page</BreadcrumbItem>
+              {/* <BreadcrumbItem href="#">5th level page</BreadcrumbItem>
+              <BreadcrumbItem href="#">6</BreadcrumbItem>
+              <BreadcrumbItem href="#">7 page</BreadcrumbItem>
+              <BreadcrumbItem href="#">8 pages, current level</BreadcrumbItem> */}
+            </Breadcrumb>
+          </div>
           <PolyfillWarning />
         </>
       );
@@ -142,90 +130,6 @@ storiesOf('Watson IoT | Breadcrumb', module)
         text: `
           Breadcrumbs can be automatically collapsed into an overflow menu by toggling 'useResizeObserver'. Note, this requires the containing application to provide a polyfill for ResizeObserver!
         `,
-      },
-    }
-  )
-  .add(
-    'with useResizeObserver, 320px width',
-    () => {
-      const containerWidth = number('container width', 320);
-      return (
-        <>
-          <div style={{ width: containerWidth }}>
-            <Breadcrumb useResizeObserver {...props()}>
-              <BreadcrumbItem>
-                <a href="/#">Breadcrumb 1</a>
-              </BreadcrumbItem>
-              <BreadcrumbItem href="#">Breadcrumb 2</BreadcrumbItem>
-              <BreadcrumbItem href="#">Breadcrumb 3</BreadcrumbItem>
-              <BreadcrumbItem href="#">Breadcrumb 4</BreadcrumbItem>
-              <BreadcrumbItem href="#">Breadcrumb 5</BreadcrumbItem>
-              <BreadcrumbItem href="#">Breadcrumb 6</BreadcrumbItem>
-            </Breadcrumb>
-          </div>
-          <PolyfillWarning />
-        </>
-      );
-    },
-    {
-      info: {
-        text: 'You can set container width, and the Breadcrumb will adjust its length dynamicly',
-      },
-    }
-  )
-  .add(
-    'with useResizeObserver, 672px width',
-    () => {
-      const containerWidth = number('container width', 672);
-      return (
-        <>
-          <div style={{ width: containerWidth }}>
-            <Breadcrumb {...props()}>
-              <BreadcrumbItem>
-                <a href="/#">Breadcrumb 1</a>
-              </BreadcrumbItem>
-              <BreadcrumbItem href="#">Breadcrumb 2</BreadcrumbItem>
-              <BreadcrumbItem href="#">Breadcrumb 3</BreadcrumbItem>
-              <BreadcrumbItem href="#">Breadcrumb 4</BreadcrumbItem>
-              <BreadcrumbItem href="#">Breadcrumb 5</BreadcrumbItem>
-              <BreadcrumbItem href="#">Breadcrumb 6</BreadcrumbItem>
-            </Breadcrumb>
-          </div>
-          <PolyfillWarning />
-        </>
-      );
-    },
-    {
-      info: {
-        text: 'You can set container width, and the Breadcrumb will adjust its length dynamicly',
-      },
-    }
-  )
-  .add(
-    'with useResizeObserver, 1056px width',
-    () => {
-      const containerWidth = number('container width', 1056);
-      return (
-        <>
-          <div style={{ width: containerWidth }}>
-            <Breadcrumb {...props()}>
-              <BreadcrumbItem>
-                <a href="/#">Breadcrumb 1</a>
-              </BreadcrumbItem>
-              <BreadcrumbItem href="#">Breadcrumb 2</BreadcrumbItem>
-              <BreadcrumbItem href="#">Breadcrumb 3</BreadcrumbItem>
-              <BreadcrumbItem href="#">Breadcrumb 4</BreadcrumbItem>
-              <BreadcrumbItem href="#">Breadcrumb 5</BreadcrumbItem>
-              <BreadcrumbItem href="#">Breadcrumb 6</BreadcrumbItem>
-            </Breadcrumb>
-          </div>
-          <PolyfillWarning />
-        </>
-      );
-    },
-    {
-      info: {
-        text: 'You can set container width, and the Breadcrumb will adjust its length dynamicly',
       },
     }
   );

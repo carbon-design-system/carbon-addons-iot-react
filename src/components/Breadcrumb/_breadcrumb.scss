@@ -1,5 +1,10 @@
 @import '~carbon-components/scss/components/breadcrumb/breadcrumb';
 
+.breadcrumb-container {
+  border: 1px solid;
+  width: 60vw;
+}
+
 .#{$prefix}--breadcrumb-item {
   &:last-child {
     margin-right: 0.5rem;
@@ -9,7 +14,7 @@
   // overflow: hidden;
   // white-space: nowrap;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 
   // & > * {
   //   overflow: hidden;
@@ -53,11 +58,12 @@
   display: flex;
   &:after {
     content: '/';
+    margin-left: 0.5rem;
   }
-  margin-left: -0.5rem;
   margin-right: 0.5rem;
 }
 
 .#{$prefix}--overflow-menu {
-  height: 1rem;
+  height: auto;
+  width: auto;
 }
