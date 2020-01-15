@@ -72,6 +72,22 @@ storiesOf('Watson IoT Experimental|SimpleList', module)
         }}
         buttons={buttonsToRender}
         items={getListItems(20)}
+        pageSize="xl"
+      />
+    </div>
+  ))
+
+  .add('list with pageSize', () => (
+    <div style={{ width: 500, height: 500, background: '#fee', padding: 10 }}>
+      <SimpleList
+        title={text('Text', 'Simple List')}
+        hasSearch
+        i18n={{
+          searchPlaceHolderText: 'Enter a search',
+        }}
+        buttons={buttonsToRender}
+        items={getListItems(20)}
+        pageSize="sm"
       />
     </div>
   ));

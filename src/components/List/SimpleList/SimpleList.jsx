@@ -8,6 +8,7 @@ const SimpleList = ({
   items = [],
   i18n,
   isFullHeight,
+  pageSize,
   ...others
 }) => {
   const [searchValue, setSearchValue] = useState(null);
@@ -30,6 +31,7 @@ const SimpleList = ({
       i18n={i18n}
       isFullHeight={isFullHeight}
       items={filteredItems}
+      pageSize={pageSize}
     />
   );
 };
