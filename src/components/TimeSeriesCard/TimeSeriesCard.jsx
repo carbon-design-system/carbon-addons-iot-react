@@ -1,6 +1,7 @@
 import React, { Fragment, useRef, useMemo, useCallback } from 'react';
 import moment from 'moment/min/moment-with-locales.min';
 import LineChart from '@carbon/charts-react/line-chart';
+import StackedBarChart from '@carbon/charts-react/bar-chart-stacked';
 // TODO: waiting for @carbon/charts support https://github.com/carbon-design-system/carbon-charts/pull/389
 import '@carbon/charts/dist/styles.css';
 import styled from 'styled-components';
@@ -12,7 +13,7 @@ import useDeepCompareEffect from 'use-deep-compare-effect';
 
 import { csvDownloadHandler } from '../../utils/componentUtilityFunctions';
 import { TimeSeriesCardPropTypes, CardPropTypes } from '../../constants/PropTypes';
-import { CARD_SIZES } from '../../constants/LayoutConstants';
+import { CARD_SIZES, TIME_SERIES_TYPES } from '../../constants/LayoutConstants';
 import Card from '../Card/Card';
 import StatefulTable from '../Table/StatefulTable';
 
@@ -148,10 +149,15 @@ const memoizedGenerateSampleValues = memoize(generateSampleValues);
  * @param {array} alertRanges Array of alert range information to search
  * @param {string} alertDetected Translated string to indicate that the alert is detected
  */
-export const handleTooltip = (data, defaultTooltip, alertRanges, alertDetected) => {
-  const dateLabel = `<li class='datapoint-tooltip'><p class='label'>${moment(
-    Array.isArray(data) && data[0] ? data[0].date : data.date
-  ).format('L HH:mm:ss')}</p></li>`;
+export const handleTooltip = (dataOrHoveredElement, defaultTooltip, alertRanges, alertDetected) => {
+  // TODO: need to fix this in carbon-charts to support true stacked bar charts in the tooltip
+  const data = dataOrHoveredElement.__data__ ? dataOrHoveredElement.__data__ : dataOrHoveredElement; // eslint-disable-line
+  const timeStamp = Array.isArray(data) && data[0] ? data[0].date : data.date || data.label;
+  const dateLabel = timeStamp
+    ? `<li class='datapoint-tooltip'><p class='label'>${moment(timeStamp).format(
+        'L HH:mm:ss'
+      )}</p></li>`
+    : '';
   const matchingAlertRange = findMatchingAlertRange(alertRanges, data);
   const matchingAlertLabel = matchingAlertRange
     ? `<li class='datapoint-tooltip'><p class='label'>${alertDetected} ${
@@ -178,6 +184,7 @@ const TimeSeriesCard = ({
   interval,
   isEditable,
   values: valuesProp,
+  chartType,
   locale,
   i18n: { alertDetected, noDataLabel },
   i18n,
@@ -327,6 +334,8 @@ const TimeSeriesCard = ({
     [i18n.defaultFilterStringPlaceholdText, series, timeDataSourceId]
   );
 
+  const ChartComponent = chartType === TIME_SERIES_TYPES.BAR ? StackedBarChart : LineChart;
+
   return (
     <Card
       title={title}
@@ -346,7 +355,7 @@ const TimeSeriesCard = ({
             isExpanded={isExpanded}
             numberOfPoints={valueSort && valueSort.length}
           >
-            <LineChart
+            <ChartComponent
               ref={el => {
                 chartRef = el;
               }}
@@ -439,6 +448,7 @@ TimeSeriesCard.defaultProps = {
   i18n: {
     alertDetected: 'Alert detected:',
   },
+  chartType: TIME_SERIES_TYPES.LINE,
 };
 
 export default TimeSeriesCard;

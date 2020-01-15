@@ -57,6 +57,7 @@ export {
   CARD_SIZES,
   DASHBOARD_BREAKPOINTS,
   DASHBOARD_SIZES,
+  TIME_SERIES_TYPES,
 } from './constants/LayoutConstants';
 
 // Experimental
