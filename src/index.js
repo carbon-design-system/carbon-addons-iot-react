@@ -266,3 +266,5 @@ export {
   determineMaxValueCardAttributeCount,
   compareGrains,
 } from './utils/cardUtilityFunctions';
+
+export { csvDownloadHandler } from './utils/componentUtilityFunctions';
