@@ -73,31 +73,32 @@ export const formatGraphTick = (
   index,
   ticks,
   interval,
-  locale,
+  locale = 'en',
   previousTickTimestamp
 ) => {
-  // moment locale default to english
-  moment.locale('en');
-  if (locale) {
-    moment.locale(locale);
-  }
+  moment.locale(locale);
   const currentTimestamp = moment.unix(timestamp / 1000);
 
   const sameDay = moment(previousTickTimestamp).isSame(currentTimestamp, 'day');
   const sameYear = moment(previousTickTimestamp).isSame(currentTimestamp, 'year');
 
+  // This works around a bug in moment where some Chinese languages are missing the day indicator
+  // https://github.com/moment/moment/issues/5350
+  const dailyFormat = !locale.includes('zh') ? 'DD MMM' : 'DD日MMM';
+  const fullFormat = !locale.includes('zh') ? 'DD MMM YYYY' : 'DD日MMM YYYY';
+
   return interval === 'hour' && index === 0
     ? ticks.length > 1
-      ? currentTimestamp.format('DD MMM')
-      : currentTimestamp.format('DD MMM HH:mm')
+      ? currentTimestamp.format(dailyFormat)
+      : currentTimestamp.format(`${dailyFormat} HH:mm`)
     : interval === 'hour' && index !== 0 && !sameDay
-    ? currentTimestamp.format('DD MMM')
+    ? currentTimestamp.format(dailyFormat)
     : interval === 'hour'
     ? currentTimestamp.format('HH:mm')
     : interval === 'day' && index === 0
-    ? currentTimestamp.format('DD MMM')
+    ? currentTimestamp.format(dailyFormat)
     : interval === 'day' && index !== 0
-    ? currentTimestamp.format('DD MMM')
+    ? currentTimestamp.format(dailyFormat)
     : interval === 'month' && !sameYear
     ? currentTimestamp.format('MMM YYYY')
     : interval === 'month' && sameYear && index === 0
@@ -110,7 +111,7 @@ export const formatGraphTick = (
     ? currentTimestamp.format('YYYY')
     : interval === 'minute'
     ? currentTimestamp.format('HH:mm')
-    : currentTimestamp.format('DD MMM YYYY');
+    : currentTimestamp.format(fullFormat);
 };
 
 /** compare the current datapoint to a list of alert ranges */
