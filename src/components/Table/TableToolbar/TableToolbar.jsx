@@ -77,6 +77,8 @@ const StyledTooltipContainer = styled.div`
 const propTypes = {
   /** id of table */
   tableId: PropTypes.string.isRequired,
+  secondaryTitle: PropTypes.string,
+  tooltip: PropTypes.node,
   /** global table options */
   options: PropTypes.shape({
     hasFilter: PropTypes.bool,
@@ -89,8 +91,6 @@ const propTypes = {
       PropTypes.bool,
       '\n The prop `hasRowCountInHeader` has been deprecated in favor `secondaryTitle`'
     ),
-    secondaryTitle: PropTypes.string,
-    tooltip: PropTypes.node,
   }).isRequired,
   /** internationalized labels */
   i18n: PropTypes.shape({
@@ -148,21 +148,17 @@ const defaultProps = {
   i18n: {
     ...defaultI18NPropTypes,
   },
+  secondaryTitle: null,
+  tooltip: null,
 };
 
 const TableToolbar = ({
   tableId,
   className,
   i18n,
-  options: {
-    hasColumnSelection,
-    hasFilter,
-    hasSearch,
-    hasRowSelection,
-    hasRowCountInHeader,
-    secondaryTitle,
-    tooltip,
-  },
+  secondaryTitle,
+  tooltip,
+  options: { hasColumnSelection, hasFilter, hasSearch, hasRowSelection, hasRowCountInHeader },
   actions: {
     onCancelBatchAction,
     onApplyBatchAction,

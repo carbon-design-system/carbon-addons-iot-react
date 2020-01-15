@@ -92,8 +92,13 @@ html[dir='rtl'] {
 }
 
 .table-toolbar-secondary-title {
-  display: flex;
-  position: relative;
-  height: $spacing-09;
   padding: $spacing-05;
+  @include type-style('productive-heading-01');
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  & + * {
+    margin-left: $spacing-05;
+  }
 }

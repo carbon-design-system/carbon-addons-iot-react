@@ -180,7 +180,6 @@ const defaultProps = {
     closeLabel: 'Close',
     expandLabel: 'Expand to fullscreen',
   },
-  content: { tooltip: null },
 };
 /**
  * Returns an array of matching thresholds will only return the highest severity threshold for a column
@@ -251,13 +250,13 @@ const TableCard = ({
   id,
   title,
   isExpanded,
-  content: { columns = [], showHeader, expandedRows, sort, thresholds, emptyMessage, tooltip },
+  content: { columns = [], showHeader, expandedRows, sort, thresholds, emptyMessage },
   size,
   onCardAction,
   values: data,
   isEditable,
   i18n,
-  secondaryTitle,
+  tooltip,
   ...others
 }) => {
   const renderActionCell = cellItem => {
@@ -713,13 +712,13 @@ const TableCard = ({
             columns={columnsToRender}
             data={tableDataWithTimestamp}
             isExpanded={isExpanded}
+            secondaryTitle={title}
+            tooltip={tooltip}
             options={{
               hasPagination: true,
               hasSearch: true,
               hasFilter,
               hasRowExpansion,
-              secondaryTitle: title,
-              tooltip,
             }}
             expandedData={expandedRowsFormatted}
             actions={{

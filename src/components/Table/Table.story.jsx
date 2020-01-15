@@ -445,13 +445,13 @@ storiesOf('Watson IoT|Table', module)
     <FullWidthWrapper>
       <StatefulTable
         {...initialState}
+        secondaryTitle={text('Secondary Title', `Row count: ${initialState.data.length}`)}
         options={{
           hasSearch: boolean('Show Search', true),
           hasPagination: boolean('Show Pagination', true),
           hasRowSelection: 'multi',
           hasFilter: boolean('Show Filter', true),
           hasRowActions: boolean('Show Row Action', true),
-          secondaryTitle: text('Secondary Title', `Row count: ${initialState.data.length}`),
         }}
         view={{
           toolbar: { activeBar: null },

@@ -61,6 +61,9 @@ const StyledPagination = sizeMe({ noPlaceholder: true })(styled(
 const propTypes = {
   /** DOM ID for component */
   id: PropTypes.string,
+  /** Displays smaller title in header */
+  secondaryTitle: PropTypes.string,
+  tooltip: PropTypes.node,
   /** render zebra stripes or not */
   useZebraStyles: PropTypes.bool,
   /**  lighter styling where regular table too visually heavy */
@@ -87,9 +90,6 @@ const propTypes = {
     hasColumnSelectionConfig: PropTypes.bool,
     shouldLazyRender: PropTypes.bool,
     hasRowCountInHeader: PropTypes.bool,
-    /** Displays smaller title in header */
-    secondaryTitle: PropTypes.node,
-    tooltip: PropTypes.string,
   }),
 
   /** Initial state of the table, should be updated via a local state wrapper component implementation or via a central store/redux see StatefulTable component for an example */
@@ -200,6 +200,7 @@ export const defaultProps = baseProps => ({
   isEditable: null,
   timeRange: null,
   onCardAction: null,
+  secondaryTitle: null,
   options: {
     hasPagination: false,
     hasRowSelection: false,
@@ -212,8 +213,6 @@ export const defaultProps = baseProps => ({
     hasColumnSelection: false,
     hasColumnSelectionConfig: false,
     shouldLazyRender: false,
-    secondaryTitle: null,
-    tooltip: null,
   },
   view: {
     pagination: {
@@ -398,9 +397,7 @@ const Table = props => {
           'hasFilter',
           'hasSearch',
           'hasRowSelection',
-          'hasRowCountInHeader',
-          'secondaryTitle',
-          'tooltip'
+          'hasRowCountInHeader'
         )}
         tableState={{
           totalSelected: view.table.selectedIds.length,

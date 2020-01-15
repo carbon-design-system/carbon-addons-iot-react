@@ -35,9 +35,9 @@ storiesOf('Watson IoT|TableCard', module)
         <TableCard
           title={text('title', 'Open Alerts')}
           id="table-list"
+          tooltip="X-Large Card's Tooltip"
           content={{
             columns: tableColumns,
-            tooltip: "X-Large Card's Tooltip",
           }}
           values={tableData}
           onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
