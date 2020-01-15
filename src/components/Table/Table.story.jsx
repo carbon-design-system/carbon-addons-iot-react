@@ -704,7 +704,7 @@ storiesOf('Watson IoT|Table', module)
     }
   )
   .add('with multi select and batch actions', () => (
-    <Table
+    <StatefulTable
       columns={tableColumns}
       data={tableData}
       actions={actions}
