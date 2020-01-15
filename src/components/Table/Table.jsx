@@ -195,11 +195,6 @@ export const defaultProps = baseProps => ({
   lightweight: false,
   title: null,
   tooltip: null,
-  width: null,
-  availableActions: null,
-  isEditable: null,
-  timeRange: null,
-  onCardAction: null,
   secondaryTitle: null,
   options: {
     hasPagination: false,
@@ -317,11 +312,6 @@ const Table = props => {
     // Table Toolbar props
     secondaryTitle,
     tooltip,
-    width,
-    availableActions,
-    isEditable,
-    timeRange,
-    onCardAction,
     ...others
   } = merge({}, defaultProps(props), props);
 
