@@ -94,6 +94,7 @@ html[dir='rtl'] {
 .table-toolbar-secondary-title {
   display: flex;
   position: relative;
+  font-weight: bold;
   height: $spacing-09;
   padding: $spacing-05;
 }

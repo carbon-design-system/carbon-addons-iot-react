@@ -382,6 +382,7 @@ storiesOf('Watson IoT|TableCard', module)
             columns: tableColumns,
           }}
           isEditable
+          availableActions={{ edit: true, clone: true, delete: true }}
           onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
           size={size}
         />
@@ -401,6 +402,7 @@ storiesOf('Watson IoT|TableCard', module)
             expandedRows: [{}],
           }}
           isEditable
+          availableActions={{ edit: true, clone: true, delete: true }}
           onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
           size={size}
         />

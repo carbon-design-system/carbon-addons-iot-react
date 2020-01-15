@@ -30,6 +30,7 @@ export const ToolbarSVGWrapper = styled.button`
   }
 `;
 
+// We need a special div to handle the date label
 const ToolbarDateRangeWrapper = styled.div`
   &&& {
     background: transparent;
@@ -131,11 +132,15 @@ const CardToolbar = ({
       {availableActions.expand ? (
         <>
           {isExpanded ? (
-            <ToolbarSVGWrapper onClick={() => onCardAction('CLOSE_EXPANDED_CARD')}>
+            <ToolbarSVGWrapper
+              className="card--toolbar-action"
+              onClick={() => onCardAction('CLOSE_EXPANDED_CARD')}
+            >
               <Close20 title={i18n.closeLabel} description={i18n.closeLabel} />
             </ToolbarSVGWrapper>
           ) : (
             <ToolbarSVGWrapper
+              className="card--toolbar-action"
               onClick={() => {
                 onCardAction('OPEN_EXPANDED_CARD');
               }}
