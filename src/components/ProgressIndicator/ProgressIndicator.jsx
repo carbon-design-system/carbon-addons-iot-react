@@ -73,13 +73,16 @@ const propTypes = {
 
 const defaultProps = {
   onClickItem: null,
-  showLabels: false,
+  showLabels: true,
   stepWidth: null,
   currentItemId: null,
   isVerticalMode: false,
 };
 
-/** This component extends the default Carbon ProgressIndicator.  It adds the ability to hideLabels on non-current steps and set a maximum stepWidth in pixels */
+/**
+ * This component extends the default Carbon ProgressIndicator.
+ * It adds the ability to hideLabels on non-current steps and set a maximum stepWidth in pixels
+ */
 const ProgressIndicator = ({
   items,
   showLabels,
