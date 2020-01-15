@@ -60,7 +60,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Getting Started|
         </a>
       </p>
       <ul
-        className="bx--accordion"
+        className="bx--accordion bx--accordion--end"
       >
         <li
           className="bx--accordion__item"
@@ -91,7 +91,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Getting Started|
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M11 8l-5 5-.7-.7L9.6 8 5.3 3.7 6 3z"
+                d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
               />
             </svg>
             <div
@@ -657,6 +657,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots Getting Started|
                   >
                     Dropdown
                   </div>
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                  >
+                    ErrorBoundary
+                  </div>
+                  <div
+                    className="bx--structured-list-td"
+                  />
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                  >
+                    ErrorBoundaryContext
+                  </div>
+                  <div
+                    className="bx--structured-list-td"
+                  />
                 </div>
                 <div
                   className="bx--structured-list-row"

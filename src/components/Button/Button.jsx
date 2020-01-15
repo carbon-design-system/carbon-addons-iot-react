@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Button as CarbonButton, Loading } from 'carbon-components-react';
-import { ButtonTypes } from 'carbon-components-react/lib/prop-types/types';
+import { ButtonKinds } from 'carbon-components-react/lib/prop-types/types';
 import styled from 'styled-components';
 import { settings } from 'carbon-components';
 
@@ -31,7 +31,7 @@ const propTypes = {
   onClick: PropTypes.func, // eslint-disable-line
   className: PropTypes.string,
   /** primary, secondary, etc from carbon */
-  kind: ButtonTypes.buttonKind,
+  kind: PropTypes.oneOf(ButtonKinds),
 };
 
 const defaultProps = {

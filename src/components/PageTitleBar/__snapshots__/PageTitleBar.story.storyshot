@@ -430,7 +430,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageT
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M5 6L0 1 .7.3 5 4.6 9.3.3l.7.7z"
+                  d="M5 6L0 1 0.7 0.3 5 4.6 9.3 0.3 10 1z"
                 />
                 <title>
                   show menu options
@@ -499,6 +499,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageT
           </div>
           <div
             aria-hidden={false}
+            className="bx--tab-content"
             hidden={false}
             selected={true}
           >
@@ -508,6 +509,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageT
           </div>
           <div
             aria-hidden={true}
+            className="bx--tab-content"
             hidden={true}
             selected={false}
           >
@@ -517,6 +519,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageT
           </div>
           <div
             aria-hidden={true}
+            className="bx--tab-content"
             hidden={true}
             selected={false}
           >
@@ -1012,7 +1015,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageT
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M5 6L0 1 .7.3 5 4.6 9.3.3l.7.7z"
+                  d="M5 6L0 1 0.7 0.3 5 4.6 9.3 0.3 10 1z"
                 />
                 <title>
                   show menu options
@@ -1081,6 +1084,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageT
           </div>
           <div
             aria-hidden={false}
+            className="bx--tab-content"
             hidden={false}
             selected={true}
           >
@@ -1090,6 +1094,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageT
           </div>
           <div
             aria-hidden={true}
+            className="bx--tab-content"
             hidden={true}
             selected={false}
           >
@@ -1099,6 +1104,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageT
           </div>
           <div
             aria-hidden={true}
+            className="bx--tab-content"
             hidden={true}
             selected={false}
           >

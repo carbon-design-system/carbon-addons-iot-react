@@ -48,18 +48,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Compo
             Dialog with translated string for close icon
           </p>
           <button
+            aria-label="Translated string"
             className="bx--modal-close"
             onClick={[Function]}
             title="Translated string"
             type="button"
           >
             <svg
-              aria-label="Translated string"
+              aria-hidden={true}
               className="bx--modal-close__icon"
               focusable="false"
               height={20}
               preserveAspectRatio="xMidYMid meet"
-              role="img"
               style={
                 Object {
                   "willChange": "transform",
@@ -70,7 +70,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Compo
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4l6.6 6.6L8 22.6 9.4 24l6.6-6.6 6.6 6.6 1.4-1.4-6.6-6.6L24 9.4z"
+                d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
               />
             </svg>
           </button>
@@ -152,18 +152,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Compo
             Needs a lot of space to contain all the info
           </p>
           <button
+            aria-label="Close"
             className="bx--modal-close"
             onClick={[Function]}
             title="Close"
             type="button"
           >
             <svg
-              aria-label="Close"
+              aria-hidden={true}
               className="bx--modal-close__icon"
               focusable="false"
               height={20}
               preserveAspectRatio="xMidYMid meet"
-              role="img"
               style={
                 Object {
                   "willChange": "transform",
@@ -174,7 +174,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Compo
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4l6.6 6.6L8 22.6 9.4 24l6.6-6.6 6.6 6.6 1.4-1.4-6.6-6.6L24 9.4z"
+                d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
               />
             </svg>
           </button>
@@ -283,18 +283,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Compo
             Custom footer element
           </p>
           <button
+            aria-label="Close"
             className="bx--modal-close"
             onClick={[Function]}
             title="Close"
             type="button"
           >
             <svg
-              aria-label="Close"
+              aria-hidden={true}
               className="bx--modal-close__icon"
               focusable="false"
               height={20}
               preserveAspectRatio="xMidYMid meet"
-              role="img"
               style={
                 Object {
                   "willChange": "transform",
@@ -305,7 +305,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Compo
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4l6.6 6.6L8 22.6 9.4 24l6.6-6.6 6.6 6.6 1.4-1.4-6.6-6.6L24 9.4z"
+                d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
               />
             </svg>
           </button>
@@ -387,18 +387,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Compo
             Cannot communicate with server
           </p>
           <button
+            aria-label="Close"
             className="bx--modal-close"
             onClick={[Function]}
             title="Close"
             type="button"
           >
             <svg
-              aria-label="Close"
+              aria-hidden={true}
               className="bx--modal-close__icon"
               focusable="false"
               height={20}
               preserveAspectRatio="xMidYMid meet"
-              role="img"
               style={
                 Object {
                   "willChange": "transform",
@@ -409,7 +409,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Compo
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4l6.6 6.6L8 22.6 9.4 24l6.6-6.6 6.6 6.6 1.4-1.4-6.6-6.6L24 9.4z"
+                d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
               />
             </svg>
           </button>
@@ -438,10 +438,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Compo
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M10 1c-5 0-9 4-9 9s4 9 9 9 9-4 9-9-4-9-9-9zm3.5 13.5l-8-8 1-1 8 8-1 1z"
+                d="M10,1c-5,0-9,4-9,9s4,9,9,9s9-4,9-9S15,1,10,1z M13.5,14.5l-8-8l1-1l8,8L13.5,14.5z"
               />
               <path
-                d="M13.5 14.5l-8-8 1-1 8 8-1 1z"
+                d="M13.5,14.5l-8-8l1-1l8,8L13.5,14.5z"
                 data-icon-path="inner-path"
                 opacity="0"
               />
@@ -488,7 +488,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Compo
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4l6.6 6.6L8 22.6 9.4 24l6.6-6.6 6.6 6.6 1.4-1.4-6.6-6.6L24 9.4z"
+                d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
               />
             </svg>
           </button>
@@ -660,18 +660,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Compo
           className="bx--modal-header"
         >
           <button
+            aria-label="Close"
             className="bx--modal-close"
             onClick={[Function]}
             title="Close"
             type="button"
           >
             <svg
-              aria-label="Close"
+              aria-hidden={true}
               className="bx--modal-close__icon"
               focusable="false"
               height={20}
               preserveAspectRatio="xMidYMid meet"
-              role="img"
               style={
                 Object {
                   "willChange": "transform",
@@ -682,7 +682,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Compo
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4l6.6 6.6L8 22.6 9.4 24l6.6-6.6 6.6 6.6 1.4-1.4-6.6-6.6L24 9.4z"
+                d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
               />
             </svg>
           </button>
@@ -786,18 +786,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Compo
             Dialog without footer
           </p>
           <button
+            aria-label="Close"
             className="bx--modal-close"
             onClick={[Function]}
             title="Close"
             type="button"
           >
             <svg
-              aria-label="Close"
+              aria-hidden={true}
               className="bx--modal-close__icon"
               focusable="false"
               height={20}
               preserveAspectRatio="xMidYMid meet"
-              role="img"
               style={
                 Object {
                   "willChange": "transform",
@@ -808,7 +808,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Compo
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4l6.6 6.6L8 22.6 9.4 24l6.6-6.6 6.6 6.6 1.4-1.4-6.6-6.6L24 9.4z"
+                d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
               />
             </svg>
           </button>
@@ -890,18 +890,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Compo
             We are submitting data to the backend
           </p>
           <button
+            aria-label="Close"
             className="bx--modal-close"
             onClick={[Function]}
             title="Close"
             type="button"
           >
             <svg
-              aria-label="Close"
+              aria-hidden={true}
               className="bx--modal-close__icon"
               focusable="false"
               height={20}
               preserveAspectRatio="xMidYMid meet"
-              role="img"
               style={
                 Object {
                   "willChange": "transform",
@@ -912,7 +912,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Compo
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4l6.6 6.6L8 22.6 9.4 24l6.6-6.6 6.6 6.6 1.4-1.4-6.6-6.6L24 9.4z"
+                d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
               />
             </svg>
           </button>
@@ -1054,18 +1054,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Compo
             Deleting stuff can be hazardous to your health..
           </p>
           <button
+            aria-label="Close"
             className="bx--modal-close"
             onClick={[Function]}
             title="Close"
             type="button"
           >
             <svg
-              aria-label="Close"
+              aria-hidden={true}
               className="bx--modal-close__icon"
               focusable="false"
               height={20}
               preserveAspectRatio="xMidYMid meet"
-              role="img"
               style={
                 Object {
                   "willChange": "transform",
@@ -1076,7 +1076,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Compo
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4l6.6 6.6L8 22.6 9.4 24l6.6-6.6 6.6 6.6 1.4-1.4-6.6-6.6L24 9.4z"
+                d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
               />
             </svg>
           </button>
