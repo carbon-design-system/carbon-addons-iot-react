@@ -80,7 +80,7 @@ const List = ({ title, search = null, buttons, items, isFullHeight, i18n, ...oth
         i18n={i18n}
       />
       <div className="list--content">{listItems}</div>
-      {/*<SimplePagination page="1" maxPage="4" onPage="1" />*/}
+      <SimplePagination page="1" maxPage="4" onPage="1" className="list--page" />
     </div>
   );
 };
