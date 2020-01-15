@@ -63,26 +63,7 @@ storiesOf('Watson IoT | Breadcrumb', module)
           `,
     },
   })
-  .add(
-    'current page',
-    () => (
-      <Breadcrumb {...props()}>
-        <BreadcrumbItem>
-          <a href="/#">Breadcrumb 1</a>
-        </BreadcrumbItem>
-        <BreadcrumbItem href="#">Breadcrumb 2</BreadcrumbItem>
-        <BreadcrumbItem href="#" isCurrentPage>
-          Breadcrumb 3
-        </BreadcrumbItem>
-      </Breadcrumb>
-    ),
-    {
-      info: {
-        text:
-          'You can specify a BreadcrumbItem component as the current page with the `isCurrentPage` prop',
-      },
-    }
-  )
+
   .add(
     'current page with aria-current',
     () => (
@@ -106,19 +87,18 @@ storiesOf('Watson IoT | Breadcrumb', module)
   .add(
     'with useResizeObserver',
     () => {
-      const containerWidth = number('container width', 631);
+      // const containerWidth = number('container width', 584);
       return (
         <>
-          <div style={{ width: containerWidth }}>
+          <div style={{ width: '50vw', border: '1px solid', padding: '1rem' }}>
             <Breadcrumb hasOverflow {...props()}>
               <BreadcrumbItem href="#">1 Homexxxxxxxxxxxxxxxxxxxxxx</BreadcrumbItem>
               <BreadcrumbItem href="#">2 Devices</BreadcrumbItem>
               <BreadcrumbItem href="#">3 A really long page name</BreadcrumbItem>
               <BreadcrumbItem href="#">4 Another page</BreadcrumbItem>
-              {/* <BreadcrumbItem href="#">5th level page</BreadcrumbItem>
-              <BreadcrumbItem href="#">6</BreadcrumbItem>
-              <BreadcrumbItem href="#">7 page</BreadcrumbItem>
-              <BreadcrumbItem href="#">8 pages, current level</BreadcrumbItem> */}
+              <BreadcrumbItem href="#" isCurrentPage>
+                5th level page
+              </BreadcrumbItem>
             </Breadcrumb>
           </div>
           <PolyfillWarning />
