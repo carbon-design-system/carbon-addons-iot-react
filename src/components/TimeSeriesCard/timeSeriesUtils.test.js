@@ -107,7 +107,7 @@ describe('timeSeriesUtils', () => {
     // hour different day
     expect(
       formatGraphTick(1572933600000, 1, [1, 2, 3, 4, 5, 6], 'hour', 'en', 1572912000000)
-    ).toContain('05 Nov');
+    ).toContain('Nov 05');
     // hour same day
     expect(
       formatGraphTick(1572933600000, 1, [1, 2, 3, 4, 5, 6], 'hour', 'en', 1572933600000)

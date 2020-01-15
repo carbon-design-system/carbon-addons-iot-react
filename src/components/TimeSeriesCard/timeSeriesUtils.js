@@ -84,8 +84,8 @@ export const formatGraphTick = (
 
   // This works around a bug in moment where some Chinese languages are missing the day indicator
   // https://github.com/moment/moment/issues/5350
-  const dailyFormat = !locale.includes('zh') ? 'DD MMM' : 'DD日MMM';
-  const fullFormat = !locale.includes('zh') ? 'DD MMM YYYY' : 'DD日MMM YYYY';
+  const dailyFormat = !locale.includes('zh') ? 'MMM DD' : 'MMMDD日';
+  const fullFormat = !locale.includes('zh') ? 'MMM DD YYYY' : 'MMMDD日 YYYY';
 
   return interval === 'hour' && index === 0
     ? ticks.length > 1
