@@ -14,6 +14,19 @@ const getListItems = num =>
       name: `Item ${idx + 1}`,
     }));
 
+const rowActions = [<Edit16 />, <Edit16 />, <Edit16 />];
+const getFatRowListItems = num =>
+  Array(num)
+    .fill(0)
+    .map((i, idx) => ({
+      id: idx + 1,
+      content: {
+        rowTitle: `Item ${idx + 1}`,
+        rowContent: 'hello, this is row content',
+        rowActions: rowActions,
+      },
+    }));
+
 const buttonsToRender = [
   <Edit16 />,
   <Button renderIcon={Close16} hasIconOnly kind="secondary" size="small" onClick={() => {}} />,
@@ -78,6 +91,20 @@ storiesOf('Watson IoT Experimental|SimpleList', module)
   ))
 
   .add('list with pageSize', () => (
+    <div style={{ width: 500, height: 500, background: '#fee', padding: 10 }}>
+      <SimpleList
+        title={text('Text', 'Simple List')}
+        hasSearch
+        i18n={{
+          searchPlaceHolderText: 'Enter a search',
+        }}
+        buttons={buttonsToRender}
+        items={getListItems(20)}
+        pageSize="sm"
+      />
+    </div>
+  ))
+  .add('list with fat row', () => (
     <div style={{ width: 500, height: 500, background: '#fee', padding: 10 }}>
       <SimpleList
         title={text('Text', 'Simple List')}

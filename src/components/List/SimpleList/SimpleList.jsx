@@ -56,8 +56,9 @@ const SimpleList = ({
           ? {
               value: searchValue,
               onChange: evt => {
+                const searchTerm = evt.target.value === undefined ? '' : evt.target.value;
                 const filteredItems = items.filter(
-                  item => item.name.toLowerCase().search(evt.target.value.toLowerCase()) !== -1
+                  item => item.name.toLowerCase().search(searchTerm.toLowerCase()) !== -1
                 );
 
                 setfilteredItems(filteredItems);
