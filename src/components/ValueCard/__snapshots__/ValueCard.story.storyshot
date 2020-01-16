@@ -62,7 +62,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                  
               </span>
               <div
-                className="bx--toolbar card--toolbar"
+                className="card--toolbar"
               />
             </div>
             <div
@@ -236,7 +236,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                  
               </span>
               <div
-                className="bx--toolbar card--toolbar"
+                className="card--toolbar"
               />
             </div>
             <div
@@ -341,7 +341,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                  
               </span>
               <div
-                className="bx--toolbar card--toolbar"
+                className="card--toolbar"
               />
             </div>
             <div
@@ -632,7 +632,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                  
               </span>
               <div
-                className="bx--toolbar card--toolbar"
+                className="card--toolbar"
               />
             </div>
             <div
@@ -767,7 +767,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                  
               </span>
               <div
-                className="bx--toolbar card--toolbar"
+                className="card--toolbar"
               />
             </div>
             <div
@@ -941,7 +941,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                  
               </span>
               <div
-                className="bx--toolbar card--toolbar"
+                className="card--toolbar"
               />
             </div>
             <div
@@ -1154,7 +1154,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                  
               </span>
               <div
-                className="bx--toolbar card--toolbar"
+                className="card--toolbar"
               />
             </div>
             <div
@@ -1328,7 +1328,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                  
               </span>
               <div
-                className="bx--toolbar card--toolbar"
+                className="card--toolbar"
               />
             </div>
             <div
@@ -1502,7 +1502,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                  
               </span>
               <div
-                className="bx--toolbar card--toolbar"
+                className="card--toolbar"
               />
             </div>
             <div
@@ -1765,7 +1765,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                  
               </span>
               <div
-                className="bx--toolbar card--toolbar"
+                className="card--toolbar"
               />
             </div>
             <div
@@ -1978,7 +1978,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                  
               </span>
               <div
-                className="bx--toolbar card--toolbar"
+                className="card--toolbar"
               />
             </div>
             <div
@@ -2113,7 +2113,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                  
               </span>
               <div
-                className="bx--toolbar card--toolbar"
+                className="card--toolbar"
               />
             </div>
             <div
@@ -2482,7 +2482,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                  
               </span>
               <div
-                className="bx--toolbar card--toolbar"
+                className="card--toolbar"
               />
             </div>
             <div
@@ -2695,7 +2695,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                  
               </span>
               <div
-                className="bx--toolbar card--toolbar"
+                className="card--toolbar"
               />
             </div>
             <div
@@ -2834,7 +2834,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                  
               </span>
               <div
-                className="bx--toolbar card--toolbar"
+                className="card--toolbar"
               />
             </div>
             <div
@@ -2966,7 +2966,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                  
               </span>
               <div
-                className="bx--toolbar card--toolbar"
+                className="card--toolbar"
               />
             </div>
             <div
@@ -3098,7 +3098,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                  
               </span>
               <div
-                className="bx--toolbar card--toolbar"
+                className="card--toolbar"
               />
             </div>
             <div
@@ -3263,7 +3263,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                  
               </span>
               <div
-                className="bx--toolbar card--toolbar"
+                className="card--toolbar"
               />
             </div>
             <div
@@ -3420,7 +3420,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                  
               </span>
               <div
-                className="bx--toolbar card--toolbar"
+                className="card--toolbar"
               />
             </div>
             <div
@@ -3552,7 +3552,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                  
               </span>
               <div
-                className="bx--toolbar card--toolbar"
+                className="card--toolbar"
               />
             </div>
             <div
@@ -3687,7 +3687,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                  
               </span>
               <div
-                className="bx--toolbar card--toolbar"
+                className="card--toolbar"
               />
             </div>
             <div
@@ -3819,7 +3819,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                  
               </span>
               <div
-                className="bx--toolbar card--toolbar"
+                className="card--toolbar"
               />
             </div>
             <div
@@ -3951,7 +3951,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                  
               </span>
               <div
-                className="bx--toolbar card--toolbar"
+                className="card--toolbar"
               />
             </div>
             <div
@@ -4083,7 +4083,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                  
               </span>
               <div
-                className="bx--toolbar card--toolbar"
+                className="card--toolbar"
               />
             </div>
             <div
@@ -4249,7 +4249,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                  
               </span>
               <div
-                className="bx--toolbar card--toolbar"
+                className="card--toolbar"
               />
             </div>
             <div
@@ -4406,7 +4406,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                  
               </span>
               <div
-                className="bx--toolbar card--toolbar"
+                className="card--toolbar"
               />
             </div>
             <div

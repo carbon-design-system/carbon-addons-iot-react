@@ -72,7 +72,7 @@ const EmptyMessageWrapper = styled.div`
   line-height: 1.3;
 `;
 
-const defaultProps = {
+export const defaultProps = {
   size: CARD_SIZES.SMALL,
   layout: CARD_SIZES.HORIZONTAL,
   title: undefined,

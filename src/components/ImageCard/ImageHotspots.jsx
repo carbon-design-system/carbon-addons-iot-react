@@ -26,6 +26,7 @@ const propTypes = {
   width: PropTypes.number.isRequired,
   zoomMax: PropTypes.number,
   renderIconByName: PropTypes.func,
+  i18n: PropTypes.objectOf(PropTypes.string),
 };
 
 const defaultProps = {
@@ -39,6 +40,11 @@ const defaultProps = {
   background: '#eee',
   zoomMax: undefined,
   renderIconByName: null,
+  i18n: {
+    zoomIn: 'Zoom in',
+    zoomOut: 'Zoom out',
+    zoomToFit: 'Zoom to fit',
+  },
 };
 
 export const startDrag = (event, element, cursor, setCursor) => {
@@ -273,6 +279,7 @@ const ImageHotspots = ({
   hideHotspots: hideHotspotsProp,
   hideMinimap: hideMinimapProp,
   hotspots,
+  i18n,
   background,
   src,
   height,
@@ -294,9 +301,9 @@ const ImageHotspots = ({
   const [cursor, setCursor] = useState({});
   // Options need to be stored in state because based on the zoom level they may change
   const [options, setOptions] = useState({
-    hideZoomControlsProp,
-    hideHotspotsProp,
-    hideMinimapProp,
+    hideZoomControls: hideZoomControlsProp,
+    hideHotspots: hideHotspotsProp,
+    hideMinimap: hideMinimapProp,
   });
 
   const orientation = width > height ? 'landscape' : 'portrait';
@@ -437,10 +444,11 @@ const ImageHotspots = ({
       )}
       {!hideZoomControls && (
         <ImageControls
+          i18n={i18n}
           minimap={{ ...minimap, src }}
           draggable={draggable}
           dragging={dragging}
-          hideMinimap={hideMinimap}
+          hideMinimap={!dragging || hideMinimap}
           onZoomToFit={() =>
             zoom(1, zoomMax, container, image, setImage, minimap, setMinimap, options, setOptions)
           }

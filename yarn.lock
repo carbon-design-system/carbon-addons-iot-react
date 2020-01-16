@@ -1824,6 +1824,11 @@
   resolved "https://registry.yarnpkg.com/@carbon/layout/-/layout-10.5.0.tgz#02b79bb4713ea750622e432c9e8ada626cdb6555"
   integrity sha512-Ri4lJLDlSrZwvMUWvz4mowY47yegaN4nVhoimxx2252UwJK4Q5EIp8oXkFW6caonM01VU3AJmfUIowU/fdDLWg==
 
+"@carbon/layout@^10.5.0":
+  version "10.7.0"
+  resolved "https://registry.yarnpkg.com/@carbon/layout/-/layout-10.7.0.tgz#4146a68f35ff44d0ec891946523123bdf4094d30"
+  integrity sha512-PXpd9QCIatzGlQkXj7DWlTf7wgFMDCEMNTWj9Wrby93HdJ0veGJ7bLNzTCxe1CVtJmG8iDNj7DBv8J17YazYKQ==
+
 "@carbon/themes@10.7.0":
   version "10.7.0"
   resolved "https://registry.yarnpkg.com/@carbon/themes/-/themes-10.7.0.tgz#dfc795263bd18fdf1257c039c9153a299dbd41b7"

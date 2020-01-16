@@ -10,8 +10,9 @@ import {
 } from 'carbon-components-react/lib/components/UIShell';
 import AppSwitcher from '@carbon/icons-react/lib/app-switcher/20';
 import PropTypes from 'prop-types';
-import React, { useState, useCallback } from 'react';
+import React, { useState } from 'react';
 import { settings } from 'carbon-components';
+import cn from 'classnames';
 
 import HeaderMenu from './HeaderMenu';
 
@@ -33,9 +34,8 @@ const propTypes = {
     PropTypes.shape({
       label: PropTypes.string.isRequired,
       onClick: PropTypes.func,
-      /** declare control of header panel from this action item. Can only be one panel for now */
-      // @TODO: allow  mutliple header panels
-      headerPanel: PropTypes.bool,
+      /** declare control of header panel from this action item.  */
+      hasHeaderPanel: PropTypes.bool,
       btnContent: PropTypes.any.isRequired,
       childContent: PropTypes.arrayOf(
         PropTypes.shape({
@@ -51,7 +51,7 @@ const propTypes = {
   /** Bit to flip that tells header to render the nav toggle button */
   hasSideNav: PropTypes.bool,
   onClickSideNavExpand: PropTypes.func,
-  /** Header panel props */
+  /** Main app switcher Header panel props */
   headerPanel: PropTypes.shape({
     /** Optionally provide a custom class to apply to the underlying <li> node */
     className: PropTypes.string,
@@ -84,15 +84,101 @@ const Header = ({
   headerPanel,
   url,
 }) => {
-  const [expanded, setExpanded] = useState(false);
-  const handleHeaderPanelTriggerClick = useCallback(
-    () => {
-      setExpanded(!expanded);
-    },
-    [expanded]
-  );
-  const actionBtnContent = actionItems.map(item => {
+  const [expandedItem, setExpandedItem] = useState({});
+
+  // expanded state  for headerpanels
+  const handleExpandedState = index => {
+    if (index) {
+      setExpandedItem({
+        [index]: !expandedItem[index],
+      });
+    } else {
+      setExpandedItem(prev => {
+        const oldHeaderPanel = Object.keys(prev)[0];
+        return {
+          [oldHeaderPanel]: false,
+        };
+      });
+    }
+  };
+
+  // close header panel when focus is lost
+  const handleCloseOnTab = e => {
+    if (!e.target.parentNode.contains(e.relatedTarget)) {
+      setExpandedItem(prev => {
+        const oldHeaderPanel = Object.keys(prev)[0];
+        return {
+          [oldHeaderPanel]: false,
+        };
+      });
+    }
+  };
+
+  const handleClickOutside = (e, label) => {
+    if (
+      // not header panel trigger
+      e?.relatedTarget?.title !== label &&
+      // not in headerpanel
+      !e?.target?.parentNode?.parentNode?.parentNode.contains(e.relatedTarget)
+    ) {
+      // close panel
+      handleExpandedState();
+    }
+  };
+
+  const actionBtnHeaderPanels = [];
+  const actionBtnContent = actionItems.map((item, i) => {
     if (item.hasOwnProperty('childContent')) {
+      if (item.hasOwnProperty('hasHeaderPanel')) {
+        const panelChildren = item.childContent.map(childItem => {
+          const ChildElement = childItem?.metaData?.element || 'a';
+          return (
+            <li key={`listitem-${i * Math.random()}`} className="action-btn__headerpanel-li">
+              <ChildElement
+                key={`headerpanelmenu-item-${item.label +
+                  item.childContent.indexOf(childItem)}-child-${i}`}
+                {...childItem.metaData}
+              >
+                {childItem.content}
+              </ChildElement>
+            </li>
+          );
+        });
+
+        return (
+          <div
+            data-testid="action-btn__group"
+            className={`${carbonPrefix}--header__submenu ${carbonPrefix}--header-action-btn action-btn__group`}
+            key={`submenu-${i}`}
+          >
+            <HeaderGlobalAction
+              className={`${carbonPrefix}--header-action-btn action-btn__trigger`}
+              key={`menu-item-${item.label}-global`}
+              title={item.label}
+              aria-label={item.label}
+              aria-haspopup="menu"
+              aria-expanded={expandedItem[item.label]}
+              onClick={() => handleExpandedState(item.label)}
+              onBlur={e => handleCloseOnTab(e)}
+            >
+              {item.btnContent}
+            </HeaderGlobalAction>
+            <HeaderPanel
+              data-testid="action-btn__panel"
+              tabIndex="-1"
+              onBlur={e => handleClickOutside(e, item.label)}
+              key={`panel-${i}`}
+              aria-label="Header Panel"
+              className={cn('action-btn__headerpanel', {
+                'action-btn__headerpanel--closed': !expandedItem[item.label],
+              })}
+              expanded={expandedItem[item.label]}
+            >
+              <ul aria-label={item.label}>{panelChildren}</ul>
+            </HeaderPanel>
+          </div>
+        );
+      }
       const children = item.childContent.map(childItem => (
         <HeaderMenuItem
           key={`menu-item-${item.label + item.childContent.indexOf(childItem)}-child`}
@@ -102,24 +188,34 @@ const Header = ({
         </HeaderMenuItem>
       ));
       return (
-        <HeaderMenu
-          className={`${carbonPrefix}--header-action-btn`}
-          key={`menu-item-${item.label}`}
-          aria-label={item.label}
-          isMenu={false}
-          renderMenuContent={() => item.btnContent}
-          menuLinkName={item.menuLinkName ? item.menuLinkName : ''}
+        <div
+          data-testid="headermenu"
+          onFocus={handleExpandedState}
+          className={`${carbonPrefix}--header__submenu`}
+          key={`wrapper-${i}`}
         >
-          {children}
-        </HeaderMenu>
+          <HeaderMenu
+            className={`${carbonPrefix}--header-action-btn`}
+            key={`menu-item-${item.label}`}
+            aria-label={item.label}
+            isMenu={false}
+            renderMenuContent={() => item.btnContent}
+            menuLinkName={item.menuLinkName ? item.menuLinkName : ''}
+          >
+            {children}
+          </HeaderMenu>
+        </div>
       );
     }
     return (
       <HeaderGlobalAction
         className={`${carbonPrefix}--header-action-btn`}
-        key={`menu-item-${item.label}-global`}
+        key={`menu-item-${item.label}-global-${i}`}
         aria-label={item.label}
-        onClick={item.onClick}
+        onClick={() => {
+          handleExpandedState();
+          item.onClick();
+        }}
       >
         {item.btnContent}
       </HeaderGlobalAction>
@@ -130,7 +226,8 @@ const Header = ({
       <HeaderGlobalAction
         aria-label="header-panel-trigger"
         key="AppSwitcher"
-        onClick={handleHeaderPanelTriggerClick}
+        onClick={() => handleExpandedState('AppSwitcher')}
+        title="AppSwitcher"
       >
         <AppSwitcher fill="white" description="Icon" />
       </HeaderGlobalAction>
@@ -145,11 +242,14 @@ const Header = ({
         {appName}
       </HeaderName>
       <HeaderGlobalBar>{actionBtnContent}</HeaderGlobalBar>
+      {actionBtnHeaderPanels}
       {headerPanel && (
         <HeaderPanel
           aria-label="Header Panel"
-          className={headerPanel.className ? headerPanel.className : null}
-          expanded={expanded}
+          className={cn(`${carbonPrefix}--app-switcher`, {
+            [headerPanel.className]: headerPanel.className,
+          })}
+          expanded={expandedItem.AppSwitcher}
         >
           <div>
             <headerPanel.content />
