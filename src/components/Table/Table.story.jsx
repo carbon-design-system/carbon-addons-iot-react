@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 // import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
@@ -7,7 +7,13 @@ import styled from 'styled-components';
 import Arrow from '@carbon/icons-react/lib/arrow--right/20';
 import Add from '@carbon/icons-react/lib/add/20';
 import Delete from '@carbon/icons-react/lib/delete/16';
-import { TextInput as CarbonTextInput, Select, SelectItem } from 'carbon-components-react';
+import { settings } from 'carbon-components';
+import {
+  TextInput as CarbonTextInput,
+  Select,
+  SelectItem,
+  ToastNotification,
+} from 'carbon-components-react';
 
 import { getSortedData, csvDownloadHandler } from '../../utils/componentUtilityFunctions';
 import FullWidthWrapper from '../../internal/FullWidthWrapper';
@@ -446,6 +452,60 @@ export const initialState = {
       ],
     },
   },
+};
+
+const EditingTable = () => {
+  const { prefix } = settings;
+  const [showToast, setShowToast] = useState(false);
+  const [closeToastClicked, setCloseToastClicked] = useState(false);
+
+  const handleGetShowToast = toast => {
+    setShowToast(toast);
+    setCloseToastClicked(false);
+  };
+  const handleCloseButtonClick = () => {
+    setCloseToastClicked(true);
+  };
+
+  return (
+    <FullWidthWrapper>
+      {showToast ? (
+        <ToastNotification
+          className={`${prefix}--toast`}
+          caption=""
+          hideCloseButton={false}
+          iconDescription="undo changes and close"
+          kind="success"
+          lowContrast
+          notificationType="toast"
+          onCloseButtonClick={handleCloseButtonClick}
+          role="alert"
+          subtitle="Click to undo changes"
+          timeout={0}
+          title="Your changes have been saved."
+        />
+      ) : null}
+      <StatefulTable
+        {...initialState}
+        actions={actions}
+        lightweight={boolean('lightweight', false)}
+        options={{
+          hasFilter: false,
+          hasPagination: true,
+          hasRowSelection: select('hasRowSelection', ['multi', 'single'], 'multi'),
+          hasRowExpansion: false,
+          hasSearch: true,
+          hasColumnSelection: true,
+          hasEdit: true,
+        }}
+        view={{
+          table: { selectedIds: array('selectedIds', []) },
+        }}
+        getShowToast={handleGetShowToast}
+        closeToastClicked={closeToastClicked}
+      />
+    </FullWidthWrapper>
+  );
 };
 
 storiesOf('Watson IoT|Table', module)
@@ -1595,37 +1655,11 @@ storiesOf('Watson IoT|Table', module)
       },
     }
   )
-  .add(
-    'In-line editing of Data Table',
-    () => {
-      return (
-        <FullWidthWrapper>
-          <StatefulTable
-            {...initialState}
-            actions={actions}
-            lightweight={boolean('lightweight', false)}
-            options={{
-              hasFilter: false,
-              hasPagination: true,
-              hasRowSelection: select('hasRowSelection', ['multi', 'single'], 'multi'),
-              hasRowExpansion: false,
-              hasSearch: true,
-              hasColumnSelection: true,
-              hasEdit: true,
-            }}
-            view={{
-              table: { selectedIds: array('selectedIds', []) },
-            }}
-          />
-        </FullWidthWrapper>
-      );
+  .add('In-line editing of Data Table', () => <EditingTable />, {
+    info: {
+      text:
+        'Use can edit the data of visible columns using appropriate component, and save multiple row edits at once.',
+      propTables: [Table],
+      propTablesExclude: [StatefulTable],
     },
-    {
-      info: {
-        text:
-          'Use can edit the data of visible columns using appropriate component, and save multiple row edits at once.',
-        propTables: [Table],
-        propTablesExclude: [StatefulTable],
-      },
-    }
-  );
+  });

@@ -186,6 +186,8 @@ const propTypes = {
     }).isRequired,
   }),
   i18n: I18NPropTypes,
+  getShowToast: PropTypes.func,
+  closeToastClicked: PropTypes.bool,
 };
 
 export const defaultProps = baseProps => ({
@@ -294,6 +296,8 @@ export const defaultProps = baseProps => ({
     filterAscending: 'Sort rows by this header in ascending order',
     filterDescending: 'Sort rows by this header in descending order',
   },
+  getShowToast: () => {},
+  closeToastClicked: false,
 });
 
 const Table = props => {
@@ -309,6 +313,8 @@ const Table = props => {
     className,
     style,
     i18n,
+    getShowToast,
+    closeToastClicked,
     ...others
   } = merge({}, defaultProps(props), props);
 
@@ -347,10 +353,10 @@ const Table = props => {
       !isNil(view.toolbar.search.value) &&
       view.toolbar.search.value !== '');
 
-  const [editBar, setEditBar] = useState(false);
+  const [activeEditBar, setEditBar] = useState(false);
 
-  const handleGetActiveEditBar = activeEditBar => {
-    setEditBar(activeEditBar);
+  const handleGetActiveEditBar = editBar => {
+    setEditBar(editBar);
   };
 
   return (
@@ -408,6 +414,8 @@ const Table = props => {
           ),
         }}
         getActiveEditBar={handleGetActiveEditBar}
+        getShowToast={getShowToast}
+        closeToastClicked={closeToastClicked}
       />
       <CarbonTable {...others}>
         <TableHead
@@ -448,7 +456,7 @@ const Table = props => {
               isSelectAllIndeterminate: view.table.isSelectAllIndeterminate,
             },
           }}
-          editBar={editBar}
+          editBar={activeEditBar}
         />
         {view.table.loadingState.isLoading ? (
           <TableSkeletonWithHeaders
@@ -495,7 +503,7 @@ const Table = props => {
               'onRowExpanded',
               'onRowClicked'
             )}
-            editBar={editBar}
+            editBar={activeEditBar}
           />
         ) : (
           <EmptyTable

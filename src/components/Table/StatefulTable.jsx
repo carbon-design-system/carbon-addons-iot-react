@@ -38,6 +38,8 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
     view: initialState,
     actions: callbackActions,
     lightweight,
+    getShowToast,
+    closeToastClicked,
   } = merge({}, defaultProps({ data: initialData, ...other }), other);
   const [state, dispatch] = useReducer(tableReducer, {
     data: initialData,
@@ -200,6 +202,8 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
       }}
       actions={actions}
       lightweight={lightweight}
+      getShowToast={getShowToast}
+      closeToastClicked={closeToastClicked}
     />
   ) : null;
 };

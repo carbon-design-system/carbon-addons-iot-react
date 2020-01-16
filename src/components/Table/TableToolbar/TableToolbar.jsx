@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import IconColumnSelector from '@carbon/icons-react/lib/column/20';
 import IconFilter from '@carbon/icons-react/lib/filter/20';
 import IconEdit from '@carbon/icons-react/lib/edit/20';
-import { DataTable, Button, ToastNotification } from 'carbon-components-react';
+import { DataTable, Button } from 'carbon-components-react';
 import Download16 from '@carbon/icons-react/lib/download/16';
 import styled from 'styled-components';
 import { settings } from 'carbon-components';
@@ -142,8 +142,8 @@ const propTypes = {
     search: TableSearchPropTypes,
   }).isRequired,
   getActiveEditBar: PropTypes.func,
-  getSaveCurData: PropTypes.func,
-  getUndoEdit: PropTypes.func,
+  getShowToast: PropTypes.func,
+  closeToastClicked: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -151,8 +151,8 @@ const defaultProps = {
     ...defaultI18NPropTypes,
   },
   getActiveEditBar: () => {},
-  getSaveCurData: () => {},
-  getUndoEdit: () => {},
+  getShowToast: () => {},
+  closeToastClicked: false,
 };
 
 const TableToolbar = ({
@@ -189,10 +189,12 @@ const TableToolbar = ({
     totalItemsCount,
   },
   getActiveEditBar,
+  getShowToast,
+  closeToastClicked,
 }) => {
   const [activeEditBar, setActiveEditBar] = useState(false);
-  const [showAlert, setShowAlert] = useState(false);
-  const [isHidingAlert, setIsHidingAlert] = useState(false);
+  const [showToast, setShowToast] = useState(false);
+  const [isHidingToast, setIsHidingToast] = useState(false);
 
   const onToggleEdit = () => {
     setActiveEditBar(true);
@@ -204,14 +206,8 @@ const TableToolbar = ({
   };
   const onSaveEditAction = () => {
     setActiveEditBar(null);
-    setShowAlert(true);
-    setIsHidingAlert(true);
-  };
-  const onAlertClose = () => {
-    setActiveEditBar(false);
-    setShowAlert(false);
-    setIsHidingAlert(false);
-    onUndoEditData();
+    setShowToast(true);
+    setIsHidingToast(true);
   };
 
   useEffect(
@@ -222,19 +218,36 @@ const TableToolbar = ({
   );
   useEffect(
     () => {
+      getShowToast(showToast);
+    },
+    [showToast, getShowToast]
+  );
+  useEffect(
+    () => {
       let timeoutID;
-      if (isHidingAlert) {
+      if (isHidingToast) {
         timeoutID = setTimeout(() => {
           setActiveEditBar(false);
-          setShowAlert(false);
-          setIsHidingAlert(false);
+          setShowToast(false);
+          setIsHidingToast(false);
         }, 4000);
       }
       return () => {
         clearTimeout(timeoutID);
       };
     },
-    [isHidingAlert]
+    [closeToastClicked, isHidingToast, onUndoEditData]
+  );
+  useEffect(
+    () => {
+      if (closeToastClicked) {
+        setActiveEditBar(false);
+        setShowToast(false);
+        setIsHidingToast(false);
+        onUndoEditData();
+      }
+    },
+    [closeToastClicked, onUndoEditData]
   );
 
   return (
@@ -278,22 +291,7 @@ const TableToolbar = ({
             {i18n.batchSave}
           </Button>
         </StyledTableToolbarContent>
-      ) : showAlert ? (
-        <ToastNotification
-          className={`${prefix}--toast`}
-          caption=""
-          hideCloseButton={false}
-          iconDescription="undo changes and close"
-          kind="success"
-          lowContrast
-          notificationType="toast"
-          onCloseButtonClick={onAlertClose}
-          role="alert"
-          subtitle="Click to undo changes"
-          timeout={0}
-          title="Your changes have been saved."
-        />
-      ) : (
+      ) : showToast ? null : (
         <StyledTableToolbarContent>
           {customToolbarContent || null}
           {totalFilters > 0 ? (
