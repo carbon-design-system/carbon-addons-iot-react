@@ -41,9 +41,7 @@ storiesOf('Watson IoT | Breadcrumb', module)
         <Breadcrumb {...props()}>
           <BreadcrumbItem href="#">Breadcrumb 1</BreadcrumbItem>
           <BreadcrumbItem href="#">Breadcrumb 2</BreadcrumbItem>
-          <BreadcrumbItem href="#" isCurrentPage>
-            Breadcrumb 3
-          </BreadcrumbItem>
+          <BreadcrumbItem href="#">Breadcrumb 3</BreadcrumbItem>
         </Breadcrumb>
       );
     },
