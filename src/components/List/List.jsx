@@ -14,7 +14,7 @@ const List = ({
   items,
   isFullHeight,
   i18n,
-  pageSize,
+  pagination,
   ...others
 }) => {
   const [selectedIds, setSelectedIds] = useState([]);
@@ -34,7 +34,6 @@ const List = ({
     children: childrenPropType,
     id: PropTypes.string,
     nextingLevel: PropTypes.string,
-    pageSize: PropTypes.oneOf(['sm', 'lg', 'xl']),
   };
 
   const defaultProps = {
@@ -51,34 +50,6 @@ const List = ({
     isExpandable: false,
     isSelectable: false,
   };
-
-  const totalItems = items.length;
-  let rowPerPage = 0;
-  switch (pageSize) {
-    default:
-      rowPerPage = 5;
-      break;
-    case 'sm':
-      rowPerPage = 5;
-      break;
-    case 'lg':
-      rowPerPage = 10;
-      break;
-    case 'xl':
-      rowPerPage = 20;
-      break;
-  }
-
-  const [currentPageNumber, setCurrentPageNumber] = useState(1);
-  const [currentItems, setCurrentItems] = useState(items.slice(0, rowPerPage));
-  const onPage = page => {
-    const rowUpperLimit = page * rowPerPage;
-    const itemsOnPage = items.slice(rowUpperLimit - rowPerPage, rowUpperLimit);
-    setCurrentPageNumber(page);
-    setCurrentItems(itemsOnPage);
-  };
-
-  console.log(currentItems);
 
   const renderItemAndChildren = (item, level) => {
     const hasChildren = item.children && item.children.length > 0;
@@ -103,7 +74,7 @@ const List = ({
     ];
   };
 
-  const listItems = currentItems.map(item => renderItemAndChildren(item, 0));
+  const listItems = items.map(item => renderItemAndChildren(item, 0));
 
   return (
     <div
@@ -119,12 +90,7 @@ const List = ({
         i18n={i18n}
       />
       <div className="list--content">{listItems}</div>
-      <SimplePagination
-        page={currentPageNumber}
-        onPage={onPage}
-        maxPage={Math.ceil(totalItems / rowPerPage)}
-        className="list--page"
-      />
+      <SimplePagination {...pagination} className="list--page" />
     </div>
   );
 };

@@ -8,14 +8,46 @@ const SimpleList = ({
   items = [],
   i18n,
   isFullHeight,
-  pageSize,
+  pageSize = null,
   ...others
 }) => {
   const [searchValue, setSearchValue] = useState(null);
-  const filteredItems =
-    searchValue !== null
-      ? items.filter(item => item.name.toLowerCase().search(searchValue.toLowerCase()) !== -1)
-      : items;
+  const [filteredItems, setfilteredItems] = useState(items);
+
+  let rowPerPage = 0;
+  switch (pageSize) {
+    default:
+      rowPerPage = 5;
+      break;
+    case 'sm':
+      rowPerPage = 5;
+      break;
+    case 'lg':
+      rowPerPage = 10;
+      break;
+    case 'xl':
+      rowPerPage = 20;
+      break;
+  }
+
+  const [currentPageNumber, setCurrentPageNumber] = useState(1);
+
+  let [itemsToShow, setItemsToShow] = useState(filteredItems.slice(0, rowPerPage));
+
+  const numberOfItems = filteredItems.length;
+  const onPage = page => {
+    const rowUpperLimit = page * rowPerPage;
+    const currentItemsOnPage = filteredItems.slice(rowUpperLimit - rowPerPage, rowUpperLimit);
+    setCurrentPageNumber(page);
+    setItemsToShow(currentItemsOnPage);
+  };
+
+  const pagination = {
+    page: currentPageNumber,
+    onPage: onPage,
+    maxPage: Math.ceil(numberOfItems / rowPerPage),
+  };
+
   return (
     <List
       title={title}
@@ -23,15 +55,24 @@ const SimpleList = ({
         hasSearch
           ? {
               value: searchValue,
-              onChange: evt => setSearchValue(evt.target.value),
+              onChange: evt => {
+                const filteredItems = items.filter(
+                  item => item.name.toLowerCase().search(evt.target.value.toLowerCase()) !== -1
+                );
+
+                setfilteredItems(filteredItems);
+                if (pageSize !== null) {
+                  setItemsToShow(filteredItems.slice(0, rowPerPage));
+                }
+              },
             }
           : null
       }
       buttons={buttons}
       i18n={i18n}
       isFullHeight={isFullHeight}
-      items={filteredItems}
-      pageSize={pageSize}
+      items={pageSize != null ? itemsToShow : filteredItems}
+      pagination={pagination}
     />
   );
 };
