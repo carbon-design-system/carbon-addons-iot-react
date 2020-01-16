@@ -10,7 +10,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { withKnobs, boolean, number } from '@storybook/addon-knobs';
+import { withKnobs, boolean } from '@storybook/addon-knobs';
 import { BreadcrumbSkeleton, BreadcrumbItem } from 'carbon-components-react';
 
 import Breadcrumb from './Breadcrumb';
@@ -90,11 +90,19 @@ storiesOf('Watson IoT | Breadcrumb', module)
         <>
           <div style={{ width: '50vw', border: '1px solid', padding: '1rem' }}>
             <Breadcrumb hasOverflow {...props()}>
-              <BreadcrumbItem href="#">1 Homexxxxxxxxxxxxxxxxxxxxxx</BreadcrumbItem>
-              <BreadcrumbItem href="#">2 Devices</BreadcrumbItem>
-              <BreadcrumbItem href="#">3 A really long page name</BreadcrumbItem>
-              <BreadcrumbItem href="#">4 Another page</BreadcrumbItem>
-              <BreadcrumbItem href="#" isCurrentPage>
+              <BreadcrumbItem href="#" title="1 Homexxxxxxxxxxxxxxxxxxxxxx">
+                1 Homexxxxxxxxxxxxxxxxxxxxxx
+              </BreadcrumbItem>
+              <BreadcrumbItem href="#" title="2 Devices">
+                2 Devices
+              </BreadcrumbItem>
+              <BreadcrumbItem href="#" title="3 A really long page name">
+                3 A really long page name
+              </BreadcrumbItem>
+              <BreadcrumbItem href="#" title="4 Another page">
+                4 Another page
+              </BreadcrumbItem>
+              <BreadcrumbItem href="#" isCurrentPage title="5th level page">
                 5th level page
               </BreadcrumbItem>
             </Breadcrumb>
