@@ -193,6 +193,7 @@ const TimeSeriesCard = ({
 }) => {
   let chartRef = useRef();
   const previousTick = useRef();
+  moment.locale(locale);
 
   const values = isEditable
     ? memoizedGenerateSampleValues(series, timeDataSourceId, interval)
@@ -384,7 +385,8 @@ const TimeSeriesCard = ({
                 containerResizable: true,
                 tooltip: {
                   formatter: tooltipValue => valueFormatter(tooltipValue, size, unit),
-                  customHTML: (...args) => handleTooltip(...args, alertRanges, alertDetected),
+                  customHTML: (...args) =>
+                    handleTooltip(...args, alertRanges, alertDetected, locale),
                   gridline: {
                     enabled: false,
                   },
@@ -449,6 +451,7 @@ TimeSeriesCard.defaultProps = {
     alertDetected: 'Alert detected:',
   },
   chartType: TIME_SERIES_TYPES.LINE,
+  locale: 'en',
 };
 
 export default TimeSeriesCard;
