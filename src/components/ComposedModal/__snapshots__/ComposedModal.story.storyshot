@@ -2,1132 +2,1321 @@
 
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ComposedModal add translated description 1`] = `
 <div
-  className="storybook-container"
   style={
     Object {
       "alignItems": "center",
+      "bottom": "0",
       "display": "flex",
-      "flexDirection": "column",
-      "padding": "3rem",
+      "left": "0",
+      "overflow": "auto",
+      "position": "fixed",
+      "right": "0",
+      "top": "0",
     }
   }
 >
   <div
     style={
       Object {
-        "position": "relative",
-        "zIndex": 0,
+        "margin": "auto",
+        "maxHeight": "100%",
       }
     }
   >
     <div
-      className="bx--modal is-visible ComposedModal__StyledModal-sc-12pj5f-0 eVCcTg"
-      onBlur={[Function]}
-      onClick={[Function]}
-      onClose={[Function]}
-      onKeyDown={[Function]}
-      onTransitionEnd={[Function]}
-      open={true}
-      role="presentation"
-      tabIndex={-1}
+      className="storybook-container"
+      style={
+        Object {
+          "padding": "3rem",
+        }
+      }
     >
       <div
-        className="bx--modal-container"
+        style={
+          Object {
+            "position": "relative",
+            "zIndex": 0,
+          }
+        }
       >
         <div
-          className="bx--modal-header"
+          className="bx--modal is-visible ComposedModal__StyledModal-sc-12pj5f-0 eVCcTg"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onClose={[Function]}
+          onKeyDown={[Function]}
+          onTransitionEnd={[Function]}
+          open={true}
+          role="presentation"
+          tabIndex={-1}
         >
-          <p
-            className="bx--modal-header__label bx--type-delta"
+          <div
+            className="bx--modal-container"
           >
-            Add translation
-          </p>
-          <p
-            className="bx--modal-header__heading bx--type-beta"
-          >
-            Dialog with translated string for close icon
-          </p>
-          <button
-            aria-label="Translated string"
-            className="bx--modal-close"
-            onClick={[Function]}
-            title="Translated string"
-            type="button"
-          >
-            <svg
-              aria-hidden={true}
-              className="bx--modal-close__icon"
-              focusable="false"
-              height={20}
-              preserveAspectRatio="xMidYMid meet"
-              style={
-                Object {
-                  "willChange": "transform",
-                }
-              }
-              viewBox="0 0 32 32"
-              width={20}
-              xmlns="http://www.w3.org/2000/svg"
+            <div
+              className="bx--modal-header"
             >
-              <path
-                d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
-              />
-            </svg>
-          </button>
+              <p
+                className="bx--modal-header__label bx--type-delta"
+              >
+                Add translation
+              </p>
+              <p
+                className="bx--modal-header__heading bx--type-beta"
+              >
+                Dialog with translated string for close icon
+              </p>
+              <button
+                aria-label="Translated string"
+                className="bx--modal-close"
+                onClick={[Function]}
+                title="Translated string"
+                type="button"
+              >
+                <svg
+                  aria-hidden={true}
+                  className="bx--modal-close__icon"
+                  focusable="false"
+                  height={20}
+                  preserveAspectRatio="xMidYMid meet"
+                  style={
+                    Object {
+                      "willChange": "transform",
+                    }
+                  }
+                  viewBox="0 0 32 32"
+                  width={20}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
+      <button
+        className="info__show-button"
+        onClick={[Function]}
+        style={
+          Object {
+            "background": "#027ac5",
+            "border": "none",
+            "borderRadius": "0 0 0 5px",
+            "color": "#fff",
+            "cursor": "pointer",
+            "display": "block",
+            "fontFamily": "sans-serif",
+            "fontSize": "12px",
+            "padding": "5px 15px",
+            "position": "fixed",
+            "right": 0,
+            "top": 0,
+          }
+        }
+        type="button"
+      >
+        Show Info
+      </button>
     </div>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": "12px",
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
 </div>
 `;
 
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ComposedModal big modal 1`] = `
 <div
-  className="storybook-container"
   style={
     Object {
       "alignItems": "center",
+      "bottom": "0",
       "display": "flex",
-      "flexDirection": "column",
-      "padding": "3rem",
+      "left": "0",
+      "overflow": "auto",
+      "position": "fixed",
+      "right": "0",
+      "top": "0",
     }
   }
 >
   <div
     style={
       Object {
-        "position": "relative",
-        "zIndex": 0,
+        "margin": "auto",
+        "maxHeight": "100%",
       }
     }
   >
     <div
-      className="bx--modal is-visible big-modal ComposedModal__StyledModal-sc-12pj5f-0 eVCcTg"
-      onBlur={[Function]}
-      onClick={[Function]}
-      onClose={[Function]}
-      onKeyDown={[Function]}
-      onTransitionEnd={[Function]}
-      open={true}
-      role="presentation"
-      tabIndex={-1}
+      className="storybook-container"
+      style={
+        Object {
+          "padding": "3rem",
+        }
+      }
     >
       <div
-        className="bx--modal-container"
+        style={
+          Object {
+            "position": "relative",
+            "zIndex": 0,
+          }
+        }
       >
         <div
-          className="bx--modal-header"
+          className="bx--modal is-visible big-modal ComposedModal__StyledModal-sc-12pj5f-0 eVCcTg"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onClose={[Function]}
+          onKeyDown={[Function]}
+          onTransitionEnd={[Function]}
+          open={true}
+          role="presentation"
+          tabIndex={-1}
         >
-          <p
-            className="bx--modal-header__label bx--type-delta"
+          <div
+            className="bx--modal-container"
           >
-            Big Modal
-          </p>
-          <p
-            className="bx--modal-header__heading bx--type-beta"
-          >
-            Needs a lot of space to contain all the info
-          </p>
-          <button
-            aria-label="Close"
-            className="bx--modal-close"
-            onClick={[Function]}
-            title="Close"
-            type="button"
-          >
-            <svg
-              aria-hidden={true}
-              className="bx--modal-close__icon"
-              focusable="false"
-              height={20}
-              preserveAspectRatio="xMidYMid meet"
-              style={
-                Object {
-                  "willChange": "transform",
-                }
-              }
-              viewBox="0 0 32 32"
-              width={20}
-              xmlns="http://www.w3.org/2000/svg"
+            <div
+              className="bx--modal-header"
             >
-              <path
-                d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
-              />
-            </svg>
-          </button>
-        </div>
-        <div
-          className="bx--modal-content"
-        >
-          Lots of really wide content here...
-        </div>
-        <div
-          className="bx--modal-footer ComposedModal__StyledModalFooter-sc-12pj5f-2 ctEQpf"
-        >
-          <button
-            className="Button__StyledButton-sc-19kycwu-0 PhzAJ bx--btn bx--btn--secondary"
-            disabled={false}
-            onClick={[Function]}
-            tabIndex={0}
-            type="button"
-          >
-            Cancel
-          </button>
-          <button
-            className="Button__StyledButton-sc-19kycwu-0 PhzAJ bx--btn bx--btn--primary"
-            disabled={false}
-            onClick={[Function]}
-            tabIndex={0}
-            type="button"
-          >
-            Save
-          </button>
+              <p
+                className="bx--modal-header__label bx--type-delta"
+              >
+                Big Modal
+              </p>
+              <p
+                className="bx--modal-header__heading bx--type-beta"
+              >
+                Needs a lot of space to contain all the info
+              </p>
+              <button
+                aria-label="Close"
+                className="bx--modal-close"
+                onClick={[Function]}
+                title="Close"
+                type="button"
+              >
+                <svg
+                  aria-hidden={true}
+                  className="bx--modal-close__icon"
+                  focusable="false"
+                  height={20}
+                  preserveAspectRatio="xMidYMid meet"
+                  style={
+                    Object {
+                      "willChange": "transform",
+                    }
+                  }
+                  viewBox="0 0 32 32"
+                  width={20}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div
+              className="bx--modal-content"
+            >
+              Lots of really wide content here...
+            </div>
+            <div
+              className="bx--modal-footer ComposedModal__StyledModalFooter-sc-12pj5f-2 ctEQpf"
+            >
+              <button
+                className="Button__StyledButton-sc-19kycwu-0 PhzAJ bx--btn bx--btn--secondary"
+                disabled={false}
+                onClick={[Function]}
+                tabIndex={0}
+                type="button"
+              >
+                Cancel
+              </button>
+              <button
+                className="Button__StyledButton-sc-19kycwu-0 PhzAJ bx--btn bx--btn--primary"
+                disabled={false}
+                onClick={[Function]}
+                tabIndex={0}
+                type="button"
+              >
+                Save
+              </button>
+            </div>
+          </div>
         </div>
       </div>
+      <button
+        className="info__show-button"
+        onClick={[Function]}
+        style={
+          Object {
+            "background": "#027ac5",
+            "border": "none",
+            "borderRadius": "0 0 0 5px",
+            "color": "#fff",
+            "cursor": "pointer",
+            "display": "block",
+            "fontFamily": "sans-serif",
+            "fontSize": "12px",
+            "padding": "5px 15px",
+            "position": "fixed",
+            "right": 0,
+            "top": 0,
+          }
+        }
+        type="button"
+      >
+        Show Info
+      </button>
     </div>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": "12px",
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
 </div>
 `;
 
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ComposedModal custom footer 1`] = `
 <div
-  className="storybook-container"
   style={
     Object {
       "alignItems": "center",
+      "bottom": "0",
       "display": "flex",
-      "flexDirection": "column",
-      "padding": "3rem",
+      "left": "0",
+      "overflow": "auto",
+      "position": "fixed",
+      "right": "0",
+      "top": "0",
     }
   }
 >
   <div
     style={
       Object {
-        "position": "relative",
-        "zIndex": 0,
+        "margin": "auto",
+        "maxHeight": "100%",
       }
     }
   >
     <div
-      className="bx--modal is-visible ComposedModal__StyledModal-sc-12pj5f-0 eVCcTg"
-      onBlur={[Function]}
-      onClick={[Function]}
-      onClose={[Function]}
-      onKeyDown={[Function]}
-      onTransitionEnd={[Function]}
-      open={true}
-      role="presentation"
-      tabIndex={-1}
+      className="storybook-container"
+      style={
+        Object {
+          "padding": "3rem",
+        }
+      }
     >
       <div
-        className="bx--modal-container"
+        style={
+          Object {
+            "position": "relative",
+            "zIndex": 0,
+          }
+        }
       >
         <div
-          className="bx--modal-header"
+          className="bx--modal is-visible ComposedModal__StyledModal-sc-12pj5f-0 eVCcTg"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onClose={[Function]}
+          onKeyDown={[Function]}
+          onTransitionEnd={[Function]}
+          open={true}
+          role="presentation"
+          tabIndex={-1}
         >
-          <p
-            className="bx--modal-header__label bx--type-delta"
+          <div
+            className="bx--modal-container"
           >
-            Custom footer
-          </p>
-          <p
-            className="bx--modal-header__heading bx--type-beta"
-          >
-            Custom footer element
-          </p>
-          <button
-            aria-label="Close"
-            className="bx--modal-close"
-            onClick={[Function]}
-            title="Close"
-            type="button"
-          >
-            <svg
-              aria-hidden={true}
-              className="bx--modal-close__icon"
-              focusable="false"
-              height={20}
-              preserveAspectRatio="xMidYMid meet"
-              style={
-                Object {
-                  "willChange": "transform",
-                }
-              }
-              viewBox="0 0 32 32"
-              width={20}
-              xmlns="http://www.w3.org/2000/svg"
+            <div
+              className="bx--modal-header"
             >
-              <path
-                d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
-              />
-            </svg>
-          </button>
+              <p
+                className="bx--modal-header__label bx--type-delta"
+              >
+                Custom footer
+              </p>
+              <p
+                className="bx--modal-header__heading bx--type-beta"
+              >
+                Custom footer element
+              </p>
+              <button
+                aria-label="Close"
+                className="bx--modal-close"
+                onClick={[Function]}
+                title="Close"
+                type="button"
+              >
+                <svg
+                  aria-hidden={true}
+                  className="bx--modal-close__icon"
+                  focusable="false"
+                  height={20}
+                  preserveAspectRatio="xMidYMid meet"
+                  style={
+                    Object {
+                      "willChange": "transform",
+                    }
+                  }
+                  viewBox="0 0 32 32"
+                  width={20}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
+      <button
+        className="info__show-button"
+        onClick={[Function]}
+        style={
+          Object {
+            "background": "#027ac5",
+            "border": "none",
+            "borderRadius": "0 0 0 5px",
+            "color": "#fff",
+            "cursor": "pointer",
+            "display": "block",
+            "fontFamily": "sans-serif",
+            "fontSize": "12px",
+            "padding": "5px 15px",
+            "position": "fixed",
+            "right": 0,
+            "top": 0,
+          }
+        }
+        type="button"
+      >
+        Show Info
+      </button>
     </div>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": "12px",
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
 </div>
 `;
 
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ComposedModal error states 1`] = `
 <div
-  className="storybook-container"
   style={
     Object {
       "alignItems": "center",
+      "bottom": "0",
       "display": "flex",
-      "flexDirection": "column",
-      "padding": "3rem",
+      "left": "0",
+      "overflow": "auto",
+      "position": "fixed",
+      "right": "0",
+      "top": "0",
     }
   }
 >
   <div
     style={
       Object {
-        "position": "relative",
-        "zIndex": 0,
+        "margin": "auto",
+        "maxHeight": "100%",
       }
     }
   >
     <div
-      className="bx--modal is-visible ComposedModal__StyledModal-sc-12pj5f-0 eVCcTg"
-      onBlur={[Function]}
-      onClick={[Function]}
-      onClose={[Function]}
-      onKeyDown={[Function]}
-      onTransitionEnd={[Function]}
-      open={true}
-      role="presentation"
-      tabIndex={-1}
+      className="storybook-container"
+      style={
+        Object {
+          "padding": "3rem",
+        }
+      }
     >
       <div
-        className="bx--modal-container"
+        style={
+          Object {
+            "position": "relative",
+            "zIndex": 0,
+          }
+        }
       >
         <div
-          className="bx--modal-header"
-        >
-          <p
-            className="bx--modal-header__label bx--type-delta"
-          >
-            DataError
-          </p>
-          <p
-            className="bx--modal-header__heading bx--type-beta"
-          >
-            Cannot communicate with server
-          </p>
-          <button
-            aria-label="Close"
-            className="bx--modal-close"
-            onClick={[Function]}
-            title="Close"
-            type="button"
-          >
-            <svg
-              aria-hidden={true}
-              className="bx--modal-close__icon"
-              focusable="false"
-              height={20}
-              preserveAspectRatio="xMidYMid meet"
-              style={
-                Object {
-                  "willChange": "transform",
-                }
-              }
-              viewBox="0 0 32 32"
-              width={20}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
-              />
-            </svg>
-          </button>
-        </div>
-        <div
-          className="bx--inline-notification bx--inline-notification--error ComposedModal__StyledMessageBox-sc-12pj5f-1 cLnoHJ"
-          kind="error"
-          role="alert"
+          className="bx--modal is-visible ComposedModal__StyledModal-sc-12pj5f-0 eVCcTg"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onClose={[Function]}
+          onKeyDown={[Function]}
+          onTransitionEnd={[Function]}
+          open={true}
+          role="presentation"
+          tabIndex={-1}
         >
           <div
-            className="bx--inline-notification__details"
+            className="bx--modal-container"
           >
-            <svg
-              aria-hidden={true}
-              className="bx--inline-notification__icon"
-              focusable="false"
-              height={20}
-              preserveAspectRatio="xMidYMid meet"
-              style={
-                Object {
-                  "willChange": "transform",
-                }
-              }
-              viewBox="0 0 20 20"
-              width={20}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M10,1c-5,0-9,4-9,9s4,9,9,9s9-4,9-9S15,1,10,1z M13.5,14.5l-8-8l1-1l8,8L13.5,14.5z"
-              />
-              <path
-                d="M13.5,14.5l-8-8l1-1l8,8L13.5,14.5z"
-                data-icon-path="inner-path"
-                opacity="0"
-              />
-              <title>
-                closes notification
-              </title>
-            </svg>
             <div
-              className="bx--inline-notification__text-wrapper"
+              className="bx--modal-header"
             >
               <p
-                className="bx--inline-notification__title"
+                className="bx--modal-header__label bx--type-delta"
               >
-                Error sending data to server
+                DataError
               </p>
-              <div
-                className="bx--inline-notification__subtitle"
+              <p
+                className="bx--modal-header__heading bx--type-beta"
               >
-                
+                Cannot communicate with server
+              </p>
+              <button
+                aria-label="Close"
+                className="bx--modal-close"
+                onClick={[Function]}
+                title="Close"
+                type="button"
+              >
+                <svg
+                  aria-hidden={true}
+                  className="bx--modal-close__icon"
+                  focusable="false"
+                  height={20}
+                  preserveAspectRatio="xMidYMid meet"
+                  style={
+                    Object {
+                      "willChange": "transform",
+                    }
+                  }
+                  viewBox="0 0 32 32"
+                  width={20}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div
+              className="bx--inline-notification bx--inline-notification--error ComposedModal__StyledMessageBox-sc-12pj5f-1 cLnoHJ"
+              kind="error"
+              role="alert"
+            >
+              <div
+                className="bx--inline-notification__details"
+              >
+                <svg
+                  aria-hidden={true}
+                  className="bx--inline-notification__icon"
+                  focusable="false"
+                  height={20}
+                  preserveAspectRatio="xMidYMid meet"
+                  style={
+                    Object {
+                      "willChange": "transform",
+                    }
+                  }
+                  viewBox="0 0 20 20"
+                  width={20}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M10,1c-5,0-9,4-9,9s4,9,9,9s9-4,9-9S15,1,10,1z M13.5,14.5l-8-8l1-1l8,8L13.5,14.5z"
+                  />
+                  <path
+                    d="M13.5,14.5l-8-8l1-1l8,8L13.5,14.5z"
+                    data-icon-path="inner-path"
+                    opacity="0"
+                  />
+                  <title>
+                    closes notification
+                  </title>
+                </svg>
+                <div
+                  className="bx--inline-notification__text-wrapper"
+                >
+                  <p
+                    className="bx--inline-notification__title"
+                  >
+                    Error sending data to server
+                  </p>
+                  <div
+                    className="bx--inline-notification__subtitle"
+                  >
+                    
+                  </div>
+                </div>
               </div>
+              <button
+                aria-label="closes notification"
+                className="bx--inline-notification__close-button"
+                onClick={[Function]}
+                title="closes notification"
+                type="button"
+              >
+                <svg
+                  aria-label="close notification"
+                  className="bx--inline-notification__close-icon"
+                  focusable="false"
+                  height={20}
+                  preserveAspectRatio="xMidYMid meet"
+                  role="img"
+                  style={
+                    Object {
+                      "willChange": "transform",
+                    }
+                  }
+                  viewBox="0 0 32 32"
+                  width={20}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div
+              className="bx--modal-footer ComposedModal__StyledModalFooter-sc-12pj5f-2 ctEQpf"
+            >
+              <button
+                className="Button__StyledButton-sc-19kycwu-0 PhzAJ bx--btn bx--btn--secondary"
+                disabled={false}
+                onClick={[Function]}
+                tabIndex={0}
+                type="button"
+              >
+                Cancel
+              </button>
+              <button
+                className="Button__StyledButton-sc-19kycwu-0 PhzAJ bx--btn bx--btn--primary"
+                disabled={false}
+                onClick={[Function]}
+                tabIndex={0}
+                type="button"
+              >
+                Save
+              </button>
             </div>
           </div>
-          <button
-            aria-label="closes notification"
-            className="bx--inline-notification__close-button"
-            onClick={[Function]}
-            title="closes notification"
-            type="button"
-          >
-            <svg
-              aria-label="close notification"
-              className="bx--inline-notification__close-icon"
-              focusable="false"
-              height={20}
-              preserveAspectRatio="xMidYMid meet"
-              role="img"
-              style={
-                Object {
-                  "willChange": "transform",
-                }
-              }
-              viewBox="0 0 32 32"
-              width={20}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
-              />
-            </svg>
-          </button>
-        </div>
-        <div
-          className="bx--modal-footer ComposedModal__StyledModalFooter-sc-12pj5f-2 ctEQpf"
-        >
-          <button
-            className="Button__StyledButton-sc-19kycwu-0 PhzAJ bx--btn bx--btn--secondary"
-            disabled={false}
-            onClick={[Function]}
-            tabIndex={0}
-            type="button"
-          >
-            Cancel
-          </button>
-          <button
-            className="Button__StyledButton-sc-19kycwu-0 PhzAJ bx--btn bx--btn--primary"
-            disabled={false}
-            onClick={[Function]}
-            tabIndex={0}
-            type="button"
-          >
-            Save
-          </button>
         </div>
       </div>
+      <button
+        className="info__show-button"
+        onClick={[Function]}
+        style={
+          Object {
+            "background": "#027ac5",
+            "border": "none",
+            "borderRadius": "0 0 0 5px",
+            "color": "#fff",
+            "cursor": "pointer",
+            "display": "block",
+            "fontFamily": "sans-serif",
+            "fontSize": "12px",
+            "padding": "5px 15px",
+            "position": "fixed",
+            "right": 0,
+            "top": 0,
+          }
+        }
+        type="button"
+      >
+        Show Info
+      </button>
     </div>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": "12px",
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
 </div>
 `;
 
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ComposedModal fetching data 1`] = `
 <div
-  className="storybook-container"
   style={
     Object {
       "alignItems": "center",
+      "bottom": "0",
       "display": "flex",
-      "flexDirection": "column",
-      "padding": "3rem",
+      "left": "0",
+      "overflow": "auto",
+      "position": "fixed",
+      "right": "0",
+      "top": "0",
     }
   }
 >
   <div
     style={
       Object {
-        "position": "relative",
-        "zIndex": 0,
+        "margin": "auto",
+        "maxHeight": "100%",
       }
     }
   >
     <div
-      className="bx--loading-overlay"
+      className="storybook-container"
+      style={
+        Object {
+          "padding": "3rem",
+        }
+      }
     >
       <div
-        aria-atomic="true"
-        aria-labelledby="loading-id-3"
-        aria-live="assertive"
-        className="bx--loading"
+        style={
+          Object {
+            "position": "relative",
+            "zIndex": 0,
+          }
+        }
       >
-        <label
-          className="bx--visually-hidden"
-          id="loading-id-3"
+        <div
+          className="bx--loading-overlay"
         >
-          Active loading indicator
-        </label>
-        <svg
-          className="bx--loading__svg"
-          viewBox="-75 -75 150 150"
-        >
-          <title>
-            Active loading indicator
-          </title>
-          <circle
-            className="bx--loading__stroke"
-            cx="0"
-            cy="0"
-            r="37.5"
-          />
-        </svg>
+          <div
+            aria-atomic="true"
+            aria-labelledby="loading-id-3"
+            aria-live="assertive"
+            className="bx--loading"
+          >
+            <label
+              className="bx--visually-hidden"
+              id="loading-id-3"
+            >
+              Active loading indicator
+            </label>
+            <svg
+              className="bx--loading__svg"
+              viewBox="-75 -75 150 150"
+            >
+              <title>
+                Active loading indicator
+              </title>
+              <circle
+                className="bx--loading__stroke"
+                cx="0"
+                cy="0"
+                r="37.5"
+              />
+            </svg>
+          </div>
+        </div>
       </div>
+      <button
+        className="info__show-button"
+        onClick={[Function]}
+        style={
+          Object {
+            "background": "#027ac5",
+            "border": "none",
+            "borderRadius": "0 0 0 5px",
+            "color": "#fff",
+            "cursor": "pointer",
+            "display": "block",
+            "fontFamily": "sans-serif",
+            "fontSize": "12px",
+            "padding": "5px 15px",
+            "position": "fixed",
+            "right": 0,
+            "top": 0,
+          }
+        }
+        type="button"
+      >
+        Show Info
+      </button>
     </div>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": "12px",
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
 </div>
 `;
 
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ComposedModal i18n 1`] = `
 <div
-  className="storybook-container"
   style={
     Object {
       "alignItems": "center",
+      "bottom": "0",
       "display": "flex",
-      "flexDirection": "column",
-      "padding": "3rem",
+      "left": "0",
+      "overflow": "auto",
+      "position": "fixed",
+      "right": "0",
+      "top": "0",
     }
   }
 >
   <div
     style={
       Object {
-        "position": "relative",
-        "zIndex": 0,
+        "margin": "auto",
+        "maxHeight": "100%",
       }
     }
   >
     <div
-      className="bx--modal is-visible ComposedModal__StyledModal-sc-12pj5f-0 eVCcTg"
-      onBlur={[Function]}
-      onClick={[Function]}
-      onClose={[Function]}
-      onKeyDown={[Function]}
-      onTransitionEnd={[Function]}
-      open={true}
-      role="presentation"
-      tabIndex={-1}
+      className="storybook-container"
+      style={
+        Object {
+          "padding": "3rem",
+        }
+      }
     >
       <div
-        className="bx--modal-container"
+        style={
+          Object {
+            "position": "relative",
+            "zIndex": 0,
+          }
+        }
       >
         <div
-          className="bx--modal-header"
+          className="bx--modal is-visible ComposedModal__StyledModal-sc-12pj5f-0 eVCcTg"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onClose={[Function]}
+          onKeyDown={[Function]}
+          onTransitionEnd={[Function]}
+          open={true}
+          role="presentation"
+          tabIndex={-1}
         >
-          <button
-            aria-label="Close"
-            className="bx--modal-close"
-            onClick={[Function]}
-            title="Close"
-            type="button"
+          <div
+            className="bx--modal-container"
           >
-            <svg
-              aria-hidden={true}
-              className="bx--modal-close__icon"
-              focusable="false"
-              height={20}
-              preserveAspectRatio="xMidYMid meet"
-              style={
-                Object {
-                  "willChange": "transform",
-                }
-              }
-              viewBox="0 0 32 32"
-              width={20}
-              xmlns="http://www.w3.org/2000/svg"
+            <div
+              className="bx--modal-header"
             >
-              <path
-                d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
-              />
-            </svg>
-          </button>
-        </div>
-        <div
-          className="bx--modal-footer ComposedModal__StyledModalFooter-sc-12pj5f-2 ctEQpf"
-        >
-          <button
-            className="Button__StyledButton-sc-19kycwu-0 PhzAJ bx--btn bx--btn--secondary"
-            disabled={false}
-            onClick={[Function]}
-            tabIndex={0}
-            type="button"
-          >
-            My Cancel
-          </button>
-          <button
-            className="Button__StyledButton-sc-19kycwu-0 PhzAJ bx--btn bx--btn--primary"
-            disabled={false}
-            onClick={[Function]}
-            tabIndex={0}
-            type="button"
-          >
-            My Submit
-          </button>
+              <button
+                aria-label="Close"
+                className="bx--modal-close"
+                onClick={[Function]}
+                title="Close"
+                type="button"
+              >
+                <svg
+                  aria-hidden={true}
+                  className="bx--modal-close__icon"
+                  focusable="false"
+                  height={20}
+                  preserveAspectRatio="xMidYMid meet"
+                  style={
+                    Object {
+                      "willChange": "transform",
+                    }
+                  }
+                  viewBox="0 0 32 32"
+                  width={20}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div
+              className="bx--modal-footer ComposedModal__StyledModalFooter-sc-12pj5f-2 ctEQpf"
+            >
+              <button
+                className="Button__StyledButton-sc-19kycwu-0 PhzAJ bx--btn bx--btn--secondary"
+                disabled={false}
+                onClick={[Function]}
+                tabIndex={0}
+                type="button"
+              >
+                My Cancel
+              </button>
+              <button
+                className="Button__StyledButton-sc-19kycwu-0 PhzAJ bx--btn bx--btn--primary"
+                disabled={false}
+                onClick={[Function]}
+                tabIndex={0}
+                type="button"
+              >
+                My Submit
+              </button>
+            </div>
+          </div>
         </div>
       </div>
+      <button
+        className="info__show-button"
+        onClick={[Function]}
+        style={
+          Object {
+            "background": "#027ac5",
+            "border": "none",
+            "borderRadius": "0 0 0 5px",
+            "color": "#fff",
+            "cursor": "pointer",
+            "display": "block",
+            "fontFamily": "sans-serif",
+            "fontSize": "12px",
+            "padding": "5px 15px",
+            "position": "fixed",
+            "right": 0,
+            "top": 0,
+          }
+        }
+        type="button"
+      >
+        Show Info
+      </button>
     </div>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": "12px",
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
 </div>
 `;
 
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ComposedModal no footer 1`] = `
 <div
-  className="storybook-container"
   style={
     Object {
       "alignItems": "center",
+      "bottom": "0",
       "display": "flex",
-      "flexDirection": "column",
-      "padding": "3rem",
+      "left": "0",
+      "overflow": "auto",
+      "position": "fixed",
+      "right": "0",
+      "top": "0",
     }
   }
 >
   <div
     style={
       Object {
-        "position": "relative",
-        "zIndex": 0,
+        "margin": "auto",
+        "maxHeight": "100%",
       }
     }
   >
     <div
-      className="bx--modal is-visible ComposedModal__StyledModal-sc-12pj5f-0 eVCcTg"
-      onBlur={[Function]}
-      onClick={[Function]}
-      onClose={[Function]}
-      onKeyDown={[Function]}
-      onTransitionEnd={[Function]}
-      open={true}
-      role="presentation"
-      tabIndex={-1}
+      className="storybook-container"
+      style={
+        Object {
+          "padding": "3rem",
+        }
+      }
     >
       <div
-        className="bx--modal-container"
+        style={
+          Object {
+            "position": "relative",
+            "zIndex": 0,
+          }
+        }
       >
         <div
-          className="bx--modal-header"
+          className="bx--modal is-visible ComposedModal__StyledModal-sc-12pj5f-0 eVCcTg"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onClose={[Function]}
+          onKeyDown={[Function]}
+          onTransitionEnd={[Function]}
+          open={true}
+          role="presentation"
+          tabIndex={-1}
         >
-          <p
-            className="bx--modal-header__label bx--type-delta"
+          <div
+            className="bx--modal-container"
           >
-            No footer
-          </p>
-          <p
-            className="bx--modal-header__heading bx--type-beta"
-          >
-            Dialog without footer
-          </p>
-          <button
-            aria-label="Close"
-            className="bx--modal-close"
-            onClick={[Function]}
-            title="Close"
-            type="button"
-          >
-            <svg
-              aria-hidden={true}
-              className="bx--modal-close__icon"
-              focusable="false"
-              height={20}
-              preserveAspectRatio="xMidYMid meet"
-              style={
-                Object {
-                  "willChange": "transform",
-                }
-              }
-              viewBox="0 0 32 32"
-              width={20}
-              xmlns="http://www.w3.org/2000/svg"
+            <div
+              className="bx--modal-header"
             >
-              <path
-                d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
-              />
-            </svg>
-          </button>
+              <p
+                className="bx--modal-header__label bx--type-delta"
+              >
+                No footer
+              </p>
+              <p
+                className="bx--modal-header__heading bx--type-beta"
+              >
+                Dialog without footer
+              </p>
+              <button
+                aria-label="Close"
+                className="bx--modal-close"
+                onClick={[Function]}
+                title="Close"
+                type="button"
+              >
+                <svg
+                  aria-hidden={true}
+                  className="bx--modal-close__icon"
+                  focusable="false"
+                  height={20}
+                  preserveAspectRatio="xMidYMid meet"
+                  style={
+                    Object {
+                      "willChange": "transform",
+                    }
+                  }
+                  viewBox="0 0 32 32"
+                  width={20}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
+      <button
+        className="info__show-button"
+        onClick={[Function]}
+        style={
+          Object {
+            "background": "#027ac5",
+            "border": "none",
+            "borderRadius": "0 0 0 5px",
+            "color": "#fff",
+            "cursor": "pointer",
+            "display": "block",
+            "fontFamily": "sans-serif",
+            "fontSize": "12px",
+            "padding": "5px 15px",
+            "position": "fixed",
+            "right": 0,
+            "top": 0,
+          }
+        }
+        type="button"
+      >
+        Show Info
+      </button>
     </div>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": "12px",
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
 </div>
 `;
 
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ComposedModal sending data 1`] = `
 <div
-  className="storybook-container"
   style={
     Object {
       "alignItems": "center",
+      "bottom": "0",
       "display": "flex",
-      "flexDirection": "column",
-      "padding": "3rem",
+      "left": "0",
+      "overflow": "auto",
+      "position": "fixed",
+      "right": "0",
+      "top": "0",
     }
   }
 >
   <div
     style={
       Object {
-        "position": "relative",
-        "zIndex": 0,
+        "margin": "auto",
+        "maxHeight": "100%",
       }
     }
   >
     <div
-      className="bx--modal is-visible ComposedModal__StyledModal-sc-12pj5f-0 eVCcTg"
-      onBlur={[Function]}
-      onClick={[Function]}
-      onClose={[Function]}
-      onKeyDown={[Function]}
-      onTransitionEnd={[Function]}
-      open={true}
-      role="presentation"
-      tabIndex={-1}
+      className="storybook-container"
+      style={
+        Object {
+          "padding": "3rem",
+        }
+      }
     >
       <div
-        className="bx--modal-container"
+        style={
+          Object {
+            "position": "relative",
+            "zIndex": 0,
+          }
+        }
       >
         <div
-          className="bx--modal-header"
+          className="bx--modal is-visible ComposedModal__StyledModal-sc-12pj5f-0 eVCcTg"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onClose={[Function]}
+          onKeyDown={[Function]}
+          onTransitionEnd={[Function]}
+          open={true}
+          role="presentation"
+          tabIndex={-1}
         >
-          <p
-            className="bx--modal-header__label bx--type-delta"
-          >
-            Sending data
-          </p>
-          <p
-            className="bx--modal-header__heading bx--type-beta"
-          >
-            We are submitting data to the backend
-          </p>
-          <button
-            aria-label="Close"
-            className="bx--modal-close"
-            onClick={[Function]}
-            title="Close"
-            type="button"
-          >
-            <svg
-              aria-hidden={true}
-              className="bx--modal-close__icon"
-              focusable="false"
-              height={20}
-              preserveAspectRatio="xMidYMid meet"
-              style={
-                Object {
-                  "willChange": "transform",
-                }
-              }
-              viewBox="0 0 32 32"
-              width={20}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
-              />
-            </svg>
-          </button>
-        </div>
-        <div
-          className="bx--modal-footer ComposedModal__StyledModalFooter-sc-12pj5f-2 ctEQpf"
-        >
-          <button
-            className="Button__StyledButton-sc-19kycwu-0 PhzAJ bx--btn bx--btn--secondary"
-            disabled={false}
-            onClick={[Function]}
-            tabIndex={0}
-            type="button"
-          >
-            Cancel
-          </button>
-          <button
-            className="Button__StyledButton-sc-19kycwu-0 PhzAJ bx--btn bx--btn--primary bx--btn--disabled"
-            disabled={true}
-            onClick={[Function]}
-            tabIndex={0}
-            type="button"
+          <div
+            className="bx--modal-container"
           >
             <div
-              aria-atomic="true"
-              aria-labelledby="loading-id-4"
-              aria-live="assertive"
-              className="bx--loading bx--loading--small"
+              className="bx--modal-header"
             >
-              <label
-                className="bx--visually-hidden"
-                id="loading-id-4"
+              <p
+                className="bx--modal-header__label bx--type-delta"
               >
-                Active loading indicator
-              </label>
-              <svg
-                className="bx--loading__svg"
-                viewBox="-75 -75 150 150"
+                Sending data
+              </p>
+              <p
+                className="bx--modal-header__heading bx--type-beta"
               >
-                <title>
-                  Active loading indicator
-                </title>
-                <circle
-                  className="bx--loading__background"
-                  cx="0"
-                  cy="0"
-                  r="26.8125"
-                />
-                <circle
-                  className="bx--loading__stroke"
-                  cx="0"
-                  cy="0"
-                  r="26.8125"
-                />
-              </svg>
+                We are submitting data to the backend
+              </p>
+              <button
+                aria-label="Close"
+                className="bx--modal-close"
+                onClick={[Function]}
+                title="Close"
+                type="button"
+              >
+                <svg
+                  aria-hidden={true}
+                  className="bx--modal-close__icon"
+                  focusable="false"
+                  height={20}
+                  preserveAspectRatio="xMidYMid meet"
+                  style={
+                    Object {
+                      "willChange": "transform",
+                    }
+                  }
+                  viewBox="0 0 32 32"
+                  width={20}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                  />
+                </svg>
+              </button>
             </div>
-            Save
-          </button>
+            <div
+              className="bx--modal-footer ComposedModal__StyledModalFooter-sc-12pj5f-2 ctEQpf"
+            >
+              <button
+                className="Button__StyledButton-sc-19kycwu-0 PhzAJ bx--btn bx--btn--secondary"
+                disabled={false}
+                onClick={[Function]}
+                tabIndex={0}
+                type="button"
+              >
+                Cancel
+              </button>
+              <button
+                className="Button__StyledButton-sc-19kycwu-0 PhzAJ bx--btn bx--btn--primary bx--btn--disabled"
+                disabled={true}
+                onClick={[Function]}
+                tabIndex={0}
+                type="button"
+              >
+                <div
+                  aria-atomic="true"
+                  aria-labelledby="loading-id-4"
+                  aria-live="assertive"
+                  className="bx--loading bx--loading--small"
+                >
+                  <label
+                    className="bx--visually-hidden"
+                    id="loading-id-4"
+                  >
+                    Active loading indicator
+                  </label>
+                  <svg
+                    className="bx--loading__svg"
+                    viewBox="-75 -75 150 150"
+                  >
+                    <title>
+                      Active loading indicator
+                    </title>
+                    <circle
+                      className="bx--loading__background"
+                      cx="0"
+                      cy="0"
+                      r="26.8125"
+                    />
+                    <circle
+                      className="bx--loading__stroke"
+                      cx="0"
+                      cy="0"
+                      r="26.8125"
+                    />
+                  </svg>
+                </div>
+                Save
+              </button>
+            </div>
+          </div>
         </div>
       </div>
+      <button
+        className="info__show-button"
+        onClick={[Function]}
+        style={
+          Object {
+            "background": "#027ac5",
+            "border": "none",
+            "borderRadius": "0 0 0 5px",
+            "color": "#fff",
+            "cursor": "pointer",
+            "display": "block",
+            "fontFamily": "sans-serif",
+            "fontSize": "12px",
+            "padding": "5px 15px",
+            "position": "fixed",
+            "right": 0,
+            "top": 0,
+          }
+        }
+        type="button"
+      >
+        Show Info
+      </button>
     </div>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": "12px",
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
 </div>
 `;
 
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ComposedModal warning dialog 1`] = `
 <div
-  className="storybook-container"
   style={
     Object {
       "alignItems": "center",
+      "bottom": "0",
       "display": "flex",
-      "flexDirection": "column",
-      "padding": "3rem",
+      "left": "0",
+      "overflow": "auto",
+      "position": "fixed",
+      "right": "0",
+      "top": "0",
     }
   }
 >
   <div
     style={
       Object {
-        "position": "relative",
-        "zIndex": 0,
+        "margin": "auto",
+        "maxHeight": "100%",
       }
     }
   >
     <div
-      className="bx--modal is-visible error-modal ComposedModal__StyledModal-sc-12pj5f-0 eVCcTg"
-      onBlur={[Function]}
-      onClick={[Function]}
-      onClose={[Function]}
-      onKeyDown={[Function]}
-      onTransitionEnd={[Function]}
-      open={true}
-      role="presentation"
-      tabIndex={-1}
+      className="storybook-container"
+      style={
+        Object {
+          "padding": "3rem",
+        }
+      }
     >
       <div
-        className="bx--modal-container"
+        style={
+          Object {
+            "position": "relative",
+            "zIndex": 0,
+          }
+        }
       >
         <div
-          className="bx--modal-header"
+          className="bx--modal is-visible error-modal ComposedModal__StyledModal-sc-12pj5f-0 eVCcTg"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onClose={[Function]}
+          onKeyDown={[Function]}
+          onTransitionEnd={[Function]}
+          open={true}
+          role="presentation"
+          tabIndex={-1}
         >
-          <p
-            className="bx--modal-header__label bx--type-delta"
+          <div
+            className="bx--modal-container"
           >
-            Scary Operation
-          </p>
-          <p
-            className="bx--modal-header__heading bx--type-beta"
-          >
-            Delete Stuff
-          </p>
-          <p
-            className="bx--modal-content__text"
-          >
-            Deleting stuff can be hazardous to your health..
-          </p>
-          <button
-            aria-label="Close"
-            className="bx--modal-close"
-            onClick={[Function]}
-            title="Close"
-            type="button"
-          >
-            <svg
-              aria-hidden={true}
-              className="bx--modal-close__icon"
-              focusable="false"
-              height={20}
-              preserveAspectRatio="xMidYMid meet"
-              style={
-                Object {
-                  "willChange": "transform",
-                }
-              }
-              viewBox="0 0 32 32"
-              width={20}
-              xmlns="http://www.w3.org/2000/svg"
+            <div
+              className="bx--modal-header"
             >
-              <path
-                d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
-              />
-            </svg>
-          </button>
-        </div>
-        <div
-          className="bx--modal-footer ComposedModal__StyledModalFooter-sc-12pj5f-2 ctEQpf"
-        >
-          <button
-            className="Button__StyledButton-sc-19kycwu-0 PhzAJ bx--btn bx--btn--secondary"
-            disabled={false}
-            onClick={[Function]}
-            tabIndex={0}
-            type="button"
-          >
-            Cancel
-          </button>
-          <button
-            className="Button__StyledButton-sc-19kycwu-0 PhzAJ bx--btn bx--btn--danger"
-            disabled={false}
-            onClick={[Function]}
-            tabIndex={0}
-            type="button"
-          >
-            Save
-          </button>
+              <p
+                className="bx--modal-header__label bx--type-delta"
+              >
+                Scary Operation
+              </p>
+              <p
+                className="bx--modal-header__heading bx--type-beta"
+              >
+                Delete Stuff
+              </p>
+              <p
+                className="bx--modal-content__text"
+              >
+                Deleting stuff can be hazardous to your health..
+              </p>
+              <button
+                aria-label="Close"
+                className="bx--modal-close"
+                onClick={[Function]}
+                title="Close"
+                type="button"
+              >
+                <svg
+                  aria-hidden={true}
+                  className="bx--modal-close__icon"
+                  focusable="false"
+                  height={20}
+                  preserveAspectRatio="xMidYMid meet"
+                  style={
+                    Object {
+                      "willChange": "transform",
+                    }
+                  }
+                  viewBox="0 0 32 32"
+                  width={20}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div
+              className="bx--modal-footer ComposedModal__StyledModalFooter-sc-12pj5f-2 ctEQpf"
+            >
+              <button
+                className="Button__StyledButton-sc-19kycwu-0 PhzAJ bx--btn bx--btn--secondary"
+                disabled={false}
+                onClick={[Function]}
+                tabIndex={0}
+                type="button"
+              >
+                Cancel
+              </button>
+              <button
+                className="Button__StyledButton-sc-19kycwu-0 PhzAJ bx--btn bx--btn--danger"
+                disabled={false}
+                onClick={[Function]}
+                tabIndex={0}
+                type="button"
+              >
+                Save
+              </button>
+            </div>
+          </div>
         </div>
       </div>
+      <button
+        className="info__show-button"
+        onClick={[Function]}
+        style={
+          Object {
+            "background": "#027ac5",
+            "border": "none",
+            "borderRadius": "0 0 0 5px",
+            "color": "#fff",
+            "cursor": "pointer",
+            "display": "block",
+            "fontFamily": "sans-serif",
+            "fontSize": "12px",
+            "padding": "5px 15px",
+            "position": "fixed",
+            "right": 0,
+            "top": 0,
+          }
+        }
+        type="button"
+      >
+        Show Info
+      </button>
     </div>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": "12px",
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
 </div>
 `;
