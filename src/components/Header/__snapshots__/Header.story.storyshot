@@ -235,7 +235,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Heade
               <div
                 className="bx--header__submenu"
                 data-testid="headermenu"
-                onFocus={[Function]}
               >
                 <div
                   className="bx--header__submenu bx--header-action-btn"

@@ -162,8 +162,8 @@ describe('Header testcases', () => {
     );
   });
 
-  it('closes when focus goes to next action btn', () => {
-    const { getByTitle, getByTestId } = render(
+  it('closes when focus leaves the current action', () => {
+    const { getByTitle } = render(
       <Header
         title="My Title"
         user="j@test.com"
@@ -177,7 +177,8 @@ describe('Header testcases', () => {
     expect(getByTitle('help').parentNode.lastChild.className).toContain(
       'bx--header-panel bx--header-panel--expanded action-btn__headerpanel'
     );
-    fireEvent.focus(getByTestId('headermenu'));
+    // focus leaves the first button
+    fireEvent.blur(getByTitle('help'));
     expect(getByTitle('help').parentNode.lastChild.className).toContain(
       'bx--header-panel action-btn__headerpanel action-btn__headerpanel--closed'
     );

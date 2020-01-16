@@ -158,8 +158,12 @@ const Header = ({
               aria-label={item.label}
               aria-haspopup="menu"
               aria-expanded={expandedItem[item.label]}
-              onClick={() => handleExpandedState(item.label)}
-              onBlur={e => handleCloseOnTab(e)}
+              onClick={() => {
+                handleExpandedState(item.label);
+              }}
+              onBlur={e => {
+                handleCloseOnTab(e);
+              }}
             >
               {item.btnContent}
             </HeaderGlobalAction>
@@ -190,7 +194,6 @@ const Header = ({
       return (
         <div
           data-testid="headermenu"
-          onFocus={handleExpandedState}
           className={`${carbonPrefix}--header__submenu`}
           key={`wrapper-${i}`}
         >
@@ -213,7 +216,7 @@ const Header = ({
         key={`menu-item-${item.label}-global-${i}`}
         aria-label={item.label}
         onClick={() => {
-          handleExpandedState();
+          handleExpandedState(item.label);
           item.onClick();
         }}
       >
