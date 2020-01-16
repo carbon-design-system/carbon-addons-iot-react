@@ -211,7 +211,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
               </div>
             </section>
             <div
-              className="table-container"
+              className="addons-iot-table-container"
             >
               <table
                 className="bx--data-table bx--data-table--no-border"
@@ -1502,7 +1502,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
               </div>
             </section>
             <div
-              className="table-container"
+              className="addons-iot-table-container"
             >
               <table
                 className="bx--data-table bx--data-table--no-border"
@@ -3239,7 +3239,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
               </div>
             </section>
             <div
-              className="table-container"
+              className="addons-iot-table-container"
             >
               <table
                 className="bx--data-table bx--data-table--no-border"
@@ -3772,7 +3772,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
               </div>
             </section>
             <div
-              className="table-container"
+              className="addons-iot-table-container"
             >
               <table
                 className="bx--data-table bx--data-table--no-border"
@@ -6207,7 +6207,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
               </div>
             </section>
             <div
-              className="table-container"
+              className="addons-iot-table-container"
             >
               <table
                 className="bx--data-table bx--data-table--no-border"
@@ -7540,7 +7540,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
               </div>
             </section>
             <div
-              className="table-container"
+              className="addons-iot-table-container"
             >
               <table
                 className="bx--data-table bx--data-table--no-border"
@@ -8850,7 +8850,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
               </div>
             </section>
             <div
-              className="table-container"
+              className="addons-iot-table-container"
             >
               <table
                 className="bx--data-table bx--data-table--no-border"
@@ -9699,7 +9699,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
               </div>
             </section>
             <div
-              className="table-container"
+              className="addons-iot-table-container"
             >
               <table
                 className="bx--data-table bx--data-table--no-border"
@@ -10539,7 +10539,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
               </div>
             </section>
             <div
-              className="table-container"
+              className="addons-iot-table-container"
             >
               <table
                 className="bx--data-table bx--data-table--no-border"
@@ -12093,7 +12093,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
               </div>
             </section>
             <div
-              className="table-container"
+              className="addons-iot-table-container"
             >
               <table
                 className="bx--data-table bx--data-table--no-border"
@@ -13681,7 +13681,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
               </div>
             </section>
             <div
-              className="table-container"
+              className="addons-iot-table-container"
             >
               <table
                 className="bx--data-table bx--data-table--no-border"
@@ -15014,7 +15014,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
               </div>
             </section>
             <div
-              className="table-container"
+              className="addons-iot-table-container"
             >
               <table
                 className="bx--data-table bx--data-table--no-border"
@@ -16955,7 +16955,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
               </div>
             </section>
             <div
-              className="table-container"
+              className="addons-iot-table-container"
             >
               <table
                 className="bx--data-table bx--data-table--no-border"
@@ -18652,7 +18652,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
               </div>
             </section>
             <div
-              className="table-container"
+              className="addons-iot-table-container"
             >
               <table
                 className="bx--data-table bx--data-table--no-border"
@@ -20280,7 +20280,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
               </div>
             </section>
             <div
-              className="table-container"
+              className="addons-iot-table-container"
             >
               <table
                 className="bx--data-table bx--data-table--no-border"
@@ -22682,7 +22682,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
               </div>
             </section>
             <div
-              className="table-container"
+              className="addons-iot-table-container"
             >
               <table
                 className="bx--data-table bx--data-table--no-border"
@@ -23990,7 +23990,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
               </div>
             </section>
             <div
-              className="table-container"
+              className="addons-iot-table-container"
             >
               <table
                 className="bx--data-table bx--data-table--no-border"
@@ -26789,7 +26789,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
               </div>
             </section>
             <div
-              className="table-container"
+              className="addons-iot-table-container"
             >
               <table
                 className="bx--data-table bx--data-table--no-border"

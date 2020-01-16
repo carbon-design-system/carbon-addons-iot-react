@@ -391,7 +391,7 @@ const Table = props => {
           ),
         }}
       />
-      <div className="table-container">
+      <div className="addons-iot-table-container">
         <CarbonTable {...others}>
           <TableHead
             {...others}
