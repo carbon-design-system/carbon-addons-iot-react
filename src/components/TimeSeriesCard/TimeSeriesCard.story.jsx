@@ -97,6 +97,7 @@ storiesOf('Watson IoT|TimeSeriesCard', module)
             yLabel: text('yLabel', 'Temperature (˚F)'),
             timeDataSourceId: 'timestamp',
           })}
+          locale={select('locale', ['en', 'fr', 'zh_TW'], 'en')}
           values={getIntervalChartData('day', 10, { min: 10, max: 100 }, 100)}
           interval="day"
           breakpoint="lg"
