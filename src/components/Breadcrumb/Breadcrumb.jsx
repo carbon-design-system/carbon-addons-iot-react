@@ -93,7 +93,11 @@ const Breadcrumb = ({ children, className, hasOverflow, ...other }) => {
                 menuOptionsClass="breadcrumb--overflow-item"
               >
                 {overflowItems.map((child, i) => (
-                  <OverflowMenuItem primaryFocus={i === 0} itemText={child?.props.children} />
+                  <OverflowMenuItem
+                    key={`${child?.props.children}-${i}`}
+                    primaryFocus={i === 0}
+                    itemText={child?.props.children}
+                  />
                 ))}
               </OverflowMenu>
             </span>
