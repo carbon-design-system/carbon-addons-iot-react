@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, Children } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import useResizeObserver from 'use-resize-observer';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
@@ -78,9 +78,10 @@ const Breadcrumb = ({ children, className, hasOverflow, ...other }) => {
   return (
     <div
       className={classnames('breadcrumb--container', {
-        'breadcrumb--container__overflowfull': overflowItems.length == children.length - 2,
+        'breadcrumb--container__overflowfull': overflowItems.length === children.length - 2,
       })}
       ref={breadcrumbRef}
+      data-testid="overflow"
     >
       {hasOverflow ? (
         <CarbonBreadcrumb className={className} {...other}>
