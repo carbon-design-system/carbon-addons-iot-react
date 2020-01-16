@@ -6,7 +6,7 @@ import { boolean, text, number, select, array } from '@storybook/addon-knobs';
 import styled from 'styled-components';
 import Arrow from '@carbon/icons-react/lib/arrow--right/20';
 import Add from '@carbon/icons-react/lib/add/20';
-import Delete from '@carbon/icons-react/lib/delete/16';
+import Delete from '@carbon/icons-react/lib/delete/20';
 
 import { getSortedData, csvDownloadHandler } from '../../utils/componentUtilityFunctions';
 import FullWidthWrapper from '../../internal/FullWidthWrapper';
@@ -441,24 +441,20 @@ storiesOf('Watson IoT|Table', module)
       },
     }
   )
-  .add('Stateful Example with Row Count', () => (
+  .add('Stateful Example with Secondary Title', () => (
     <FullWidthWrapper>
       <StatefulTable
         {...initialState}
+        secondaryTitle={text('Secondary Title', `Row count: ${initialState.data.length}`)}
         options={{
           hasSearch: boolean('Show Search', true),
           hasPagination: boolean('Show Pagination', true),
           hasRowSelection: 'multi',
           hasFilter: boolean('Show Filter', true),
           hasRowActions: boolean('Show Row Action', true),
-          hasRowCountInHeader: boolean('Show Row Count', true),
         }}
         view={{
           toolbar: { activeBar: null },
-        }}
-        i18n={{
-          rowCountInHeader: totalRowCount =>
-            `${text('Row Count Label', 'Results')}: ${totalRowCount}`,
         }}
       />
     </FullWidthWrapper>

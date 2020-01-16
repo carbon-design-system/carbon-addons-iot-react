@@ -2,595 +2,721 @@
 
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageHero (Deprecated) has breadcrumb 1`] = `
 <div
-  className="storybook-container"
   style={
     Object {
       "alignItems": "center",
+      "bottom": "0",
       "display": "flex",
-      "flexDirection": "column",
-      "padding": "3rem",
+      "left": "0",
+      "overflow": "auto",
+      "position": "fixed",
+      "right": "0",
+      "top": "0",
     }
   }
 >
   <div
     style={
       Object {
-        "position": "relative",
-        "zIndex": 0,
+        "margin": "auto",
+        "maxHeight": "100%",
       }
     }
   >
     <div
+      className="storybook-container"
       style={
         Object {
-          "width": "calc(100vw - 6rem)",
+          "padding": "3rem",
         }
       }
     >
       <div
-        className="PageHero__StyledPageHero-sc-1k4oefb-0 jZTvNr"
+        style={
+          Object {
+            "position": "relative",
+            "zIndex": 0,
+          }
+        }
       >
-        <div>
-          breadcrumb/mybread
+        <div
+          style={
+            Object {
+              "width": "calc(100vw - 6rem)",
+            }
+          }
+        >
+          <div
+            className="PageHero__StyledPageHero-sc-1k4oefb-0 jZTvNr"
+          >
+            <div>
+              breadcrumb/mybread
+            </div>
+          </div>
         </div>
       </div>
+      <button
+        className="info__show-button"
+        onClick={[Function]}
+        style={
+          Object {
+            "background": "#027ac5",
+            "border": "none",
+            "borderRadius": "0 0 0 5px",
+            "color": "#fff",
+            "cursor": "pointer",
+            "display": "block",
+            "fontFamily": "sans-serif",
+            "fontSize": "12px",
+            "padding": "5px 15px",
+            "position": "fixed",
+            "right": 0,
+            "top": 0,
+          }
+        }
+        type="button"
+      >
+        Show Info
+      </button>
     </div>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": "12px",
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
 </div>
 `;
 
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageHero (Deprecated) has left content 1`] = `
 <div
-  className="storybook-container"
   style={
     Object {
       "alignItems": "center",
+      "bottom": "0",
       "display": "flex",
-      "flexDirection": "column",
-      "padding": "3rem",
+      "left": "0",
+      "overflow": "auto",
+      "position": "fixed",
+      "right": "0",
+      "top": "0",
     }
   }
 >
   <div
     style={
       Object {
-        "position": "relative",
-        "zIndex": 0,
+        "margin": "auto",
+        "maxHeight": "100%",
       }
     }
   >
     <div
+      className="storybook-container"
       style={
         Object {
-          "width": "calc(100vw - 6rem)",
+          "padding": "3rem",
         }
       }
     >
       <div
-        className="PageHero__StyledPageHero-sc-1k4oefb-0 jZTvNr"
+        style={
+          Object {
+            "position": "relative",
+            "zIndex": 0,
+          }
+        }
       >
         <div
-          className="PageHero__StyledLeftContent-sc-1k4oefb-5 nKrTg"
-        >
-          <div>
-            Left Content
-          </div>
-        </div>
-        <div
-          className="PageHero__StyledTitle-sc-1k4oefb-3 dijkPK"
-        >
-          <div
-            className="PageTitle__StyledPageTitle-sc-1x4wg61-0 MhXQw"
-          >
-            <h1
-              className="PageTitle__StyledPageTitleH1-sc-1x4wg61-2 uwbjE"
-            >
-              Your Devices
-            </h1>
-          </div>
-          <div
-            className="PageHero__StyledPageHeroWrap-sc-1k4oefb-1 dymYXa"
-          >
-            <p
-              className="PageHero__StyledPageBlurb-sc-1k4oefb-2 jjUFol"
-            >
-              Your data lake displays a detailed view of the entity types that are connected in Watson IoT Platform. To explore the metrics and dimensions of your entities in more detail, select Entities. To start applying calculations and analyzing your entity data, select Data.
-            </p>
-          </div>
-        </div>
-        <div
-          className="PageHero__StyledRightContent-sc-1k4oefb-4 jzJCmH"
-        >
-          <div
-            style={
-              Object {
-                "textAlign": "right",
-              }
+          style={
+            Object {
+              "width": "calc(100vw - 6rem)",
             }
+          }
+        >
+          <div
+            className="PageHero__StyledPageHero-sc-1k4oefb-0 jZTvNr"
           >
-            Right Content
+            <div
+              className="PageHero__StyledLeftContent-sc-1k4oefb-5 nKrTg"
+            >
+              <div>
+                Left Content
+              </div>
+            </div>
+            <div
+              className="PageHero__StyledTitle-sc-1k4oefb-3 dijkPK"
+            >
+              <div
+                className="PageTitle__StyledPageTitle-sc-1x4wg61-0 MhXQw"
+              >
+                <h1
+                  className="PageTitle__StyledPageTitleH1-sc-1x4wg61-2 uwbjE"
+                >
+                  Your Devices
+                </h1>
+              </div>
+              <div
+                className="PageHero__StyledPageHeroWrap-sc-1k4oefb-1 dymYXa"
+              >
+                <p
+                  className="PageHero__StyledPageBlurb-sc-1k4oefb-2 jjUFol"
+                >
+                  Your data lake displays a detailed view of the entity types that are connected in Watson IoT Platform. To explore the metrics and dimensions of your entities in more detail, select Entities. To start applying calculations and analyzing your entity data, select Data.
+                </p>
+              </div>
+            </div>
+            <div
+              className="PageHero__StyledRightContent-sc-1k4oefb-4 jzJCmH"
+            >
+              <div
+                style={
+                  Object {
+                    "textAlign": "right",
+                  }
+                }
+              >
+                Right Content
+              </div>
+            </div>
           </div>
         </div>
       </div>
+      <button
+        className="info__show-button"
+        onClick={[Function]}
+        style={
+          Object {
+            "background": "#027ac5",
+            "border": "none",
+            "borderRadius": "0 0 0 5px",
+            "color": "#fff",
+            "cursor": "pointer",
+            "display": "block",
+            "fontFamily": "sans-serif",
+            "fontSize": "12px",
+            "padding": "5px 15px",
+            "position": "fixed",
+            "right": 0,
+            "top": 0,
+          }
+        }
+        type="button"
+      >
+        Show Info
+      </button>
     </div>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": "12px",
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
 </div>
 `;
 
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageHero (Deprecated) normal 1`] = `
 <div
-  className="storybook-container"
   style={
     Object {
       "alignItems": "center",
+      "bottom": "0",
       "display": "flex",
-      "flexDirection": "column",
-      "padding": "3rem",
+      "left": "0",
+      "overflow": "auto",
+      "position": "fixed",
+      "right": "0",
+      "top": "0",
     }
   }
 >
   <div
     style={
       Object {
-        "position": "relative",
-        "zIndex": 0,
+        "margin": "auto",
+        "maxHeight": "100%",
       }
     }
   >
     <div
+      className="storybook-container"
       style={
         Object {
-          "width": "calc(100vw - 6rem)",
+          "padding": "3rem",
         }
       }
     >
       <div
-        className="PageHero__StyledPageHero-sc-1k4oefb-0 jZTvNr"
+        style={
+          Object {
+            "position": "relative",
+            "zIndex": 0,
+          }
+        }
       >
         <div
-          className="PageHero__StyledTitle-sc-1k4oefb-3 dijkPK"
-        >
-          <div
-            className="PageTitle__StyledPageTitle-sc-1x4wg61-0 MhXQw"
-          >
-            <h1
-              className="PageTitle__StyledPageTitleH1-sc-1x4wg61-2 uwbjE"
-            >
-              Your Devices
-            </h1>
-          </div>
-          <div
-            className="PageHero__StyledPageHeroWrap-sc-1k4oefb-1 dymYXa"
-          >
-            <p
-              className="PageHero__StyledPageBlurb-sc-1k4oefb-2 jjUFol"
-            >
-              Your data lake displays a detailed view of the entity types that are connected in Watson IoT Platform. To explore the metrics and dimensions of your entities in more detail, select Entities. To start applying calculations and analyzing your entity data, select Data.
-            </p>
-          </div>
-        </div>
-        <div
-          className="PageHero__StyledRightContent-sc-1k4oefb-4 jzJCmH"
-        >
-          <div
-            style={
-              Object {
-                "textAlign": "right",
-              }
+          style={
+            Object {
+              "width": "calc(100vw - 6rem)",
             }
+          }
+        >
+          <div
+            className="PageHero__StyledPageHero-sc-1k4oefb-0 jZTvNr"
           >
-            Right Content
+            <div
+              className="PageHero__StyledTitle-sc-1k4oefb-3 dijkPK"
+            >
+              <div
+                className="PageTitle__StyledPageTitle-sc-1x4wg61-0 MhXQw"
+              >
+                <h1
+                  className="PageTitle__StyledPageTitleH1-sc-1x4wg61-2 uwbjE"
+                >
+                  Your Devices
+                </h1>
+              </div>
+              <div
+                className="PageHero__StyledPageHeroWrap-sc-1k4oefb-1 dymYXa"
+              >
+                <p
+                  className="PageHero__StyledPageBlurb-sc-1k4oefb-2 jjUFol"
+                >
+                  Your data lake displays a detailed view of the entity types that are connected in Watson IoT Platform. To explore the metrics and dimensions of your entities in more detail, select Entities. To start applying calculations and analyzing your entity data, select Data.
+                </p>
+              </div>
+            </div>
+            <div
+              className="PageHero__StyledRightContent-sc-1k4oefb-4 jzJCmH"
+            >
+              <div
+                style={
+                  Object {
+                    "textAlign": "right",
+                  }
+                }
+              >
+                Right Content
+              </div>
+            </div>
           </div>
         </div>
       </div>
+      <button
+        className="info__show-button"
+        onClick={[Function]}
+        style={
+          Object {
+            "background": "#027ac5",
+            "border": "none",
+            "borderRadius": "0 0 0 5px",
+            "color": "#fff",
+            "cursor": "pointer",
+            "display": "block",
+            "fontFamily": "sans-serif",
+            "fontSize": "12px",
+            "padding": "5px 15px",
+            "position": "fixed",
+            "right": 0,
+            "top": 0,
+          }
+        }
+        type="button"
+      >
+        Show Info
+      </button>
     </div>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": "12px",
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
 </div>
 `;
 
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageHero (Deprecated) normal with content switcher 1`] = `
 <div
-  className="storybook-container"
   style={
     Object {
       "alignItems": "center",
+      "bottom": "0",
       "display": "flex",
-      "flexDirection": "column",
-      "padding": "3rem",
+      "left": "0",
+      "overflow": "auto",
+      "position": "fixed",
+      "right": "0",
+      "top": "0",
     }
   }
 >
   <div
     style={
       Object {
-        "position": "relative",
-        "zIndex": 0,
+        "margin": "auto",
+        "maxHeight": "100%",
       }
     }
   >
     <div
+      className="storybook-container"
       style={
         Object {
-          "width": "calc(100vw - 6rem)",
+          "padding": "3rem",
         }
       }
     >
       <div
-        className="PageHero__StyledPageHero-sc-1k4oefb-0 jZTvNr"
+        style={
+          Object {
+            "position": "relative",
+            "zIndex": 0,
+          }
+        }
       >
         <div
-          className="PageHero__StyledTitle-sc-1k4oefb-3 dijkPK"
-        >
-          <div
-            className="PageTitle__StyledPageTitle-sc-1x4wg61-0 MhXQw"
-          >
-            <h1
-              className="PageTitle__StyledPageTitleH1-sc-1x4wg61-2 uwbjE"
-            >
-              Your Devices
-            </h1>
-          </div>
-          <div
-            className="bx--content-switcher PageSwitcher__StyledContentSwitcher-sc-1dcz28n-0 horTRL"
-            onChange={[Function]}
-          >
-            <button
-              aria-selected={false}
-              className="bx--content-switcher-btn"
-              data-tip="All Devices"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              role="tab"
-              tabIndex="-1"
-            >
-              <span
-                className="bx--content-switcher__label"
-              >
-                All Devices
-              </span>
-            </button>
-            <button
-              aria-selected={true}
-              className="bx--content-switcher-btn bx--content-switcher--selected"
-              data-tip="Diagnose"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              role="tab"
-              tabIndex="0"
-            >
-              <span
-                className="bx--content-switcher__label"
-              >
-                Diagnose
-              </span>
-            </button>
-          </div>
-          <div
-            className="PageHero__StyledPageHeroWrap-sc-1k4oefb-1 dymYXa"
-          >
-            <p
-              className="PageHero__StyledPageBlurb-sc-1k4oefb-2 jjUFol"
-            >
-              Your data lake displays a detailed view of the entity types that are connected in Watson IoT Platform. To explore the metrics and dimensions of your entities in more detail, select Entities. To start applying calculations and analyzing your entity data, select Data.
-            </p>
-          </div>
-        </div>
-        <div
-          className="PageHero__StyledRightContent-sc-1k4oefb-4 jzJCmH"
-        >
-          <div
-            style={
-              Object {
-                "textAlign": "right",
-              }
+          style={
+            Object {
+              "width": "calc(100vw - 6rem)",
             }
+          }
+        >
+          <div
+            className="PageHero__StyledPageHero-sc-1k4oefb-0 jZTvNr"
           >
-            Right Content
+            <div
+              className="PageHero__StyledTitle-sc-1k4oefb-3 dijkPK"
+            >
+              <div
+                className="PageTitle__StyledPageTitle-sc-1x4wg61-0 MhXQw"
+              >
+                <h1
+                  className="PageTitle__StyledPageTitleH1-sc-1x4wg61-2 uwbjE"
+                >
+                  Your Devices
+                </h1>
+              </div>
+              <div
+                className="bx--content-switcher PageSwitcher__StyledContentSwitcher-sc-1dcz28n-0 horTRL"
+                onChange={[Function]}
+              >
+                <button
+                  aria-selected={false}
+                  className="bx--content-switcher-btn"
+                  data-tip="All Devices"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="tab"
+                  tabIndex="-1"
+                >
+                  <span
+                    className="bx--content-switcher__label"
+                  >
+                    All Devices
+                  </span>
+                </button>
+                <button
+                  aria-selected={true}
+                  className="bx--content-switcher-btn bx--content-switcher--selected"
+                  data-tip="Diagnose"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="tab"
+                  tabIndex="0"
+                >
+                  <span
+                    className="bx--content-switcher__label"
+                  >
+                    Diagnose
+                  </span>
+                </button>
+              </div>
+              <div
+                className="PageHero__StyledPageHeroWrap-sc-1k4oefb-1 dymYXa"
+              >
+                <p
+                  className="PageHero__StyledPageBlurb-sc-1k4oefb-2 jjUFol"
+                >
+                  Your data lake displays a detailed view of the entity types that are connected in Watson IoT Platform. To explore the metrics and dimensions of your entities in more detail, select Entities. To start applying calculations and analyzing your entity data, select Data.
+                </p>
+              </div>
+            </div>
+            <div
+              className="PageHero__StyledRightContent-sc-1k4oefb-4 jzJCmH"
+            >
+              <div
+                style={
+                  Object {
+                    "textAlign": "right",
+                  }
+                }
+              >
+                Right Content
+              </div>
+            </div>
           </div>
         </div>
       </div>
+      <button
+        className="info__show-button"
+        onClick={[Function]}
+        style={
+          Object {
+            "background": "#027ac5",
+            "border": "none",
+            "borderRadius": "0 0 0 5px",
+            "color": "#fff",
+            "cursor": "pointer",
+            "display": "block",
+            "fontFamily": "sans-serif",
+            "fontSize": "12px",
+            "padding": "5px 15px",
+            "position": "fixed",
+            "right": 0,
+            "top": 0,
+          }
+        }
+        type="button"
+      >
+        Show Info
+      </button>
     </div>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": "12px",
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
 </div>
 `;
 
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageHero (Deprecated) with section 1`] = `
 <div
-  className="storybook-container"
   style={
     Object {
       "alignItems": "center",
+      "bottom": "0",
       "display": "flex",
-      "flexDirection": "column",
-      "padding": "3rem",
+      "left": "0",
+      "overflow": "auto",
+      "position": "fixed",
+      "right": "0",
+      "top": "0",
     }
   }
 >
   <div
     style={
       Object {
-        "position": "relative",
-        "zIndex": 0,
+        "margin": "auto",
+        "maxHeight": "100%",
       }
     }
   >
     <div
+      className="storybook-container"
       style={
         Object {
-          "width": "calc(100vw - 6rem)",
+          "padding": "3rem",
         }
       }
     >
       <div
-        className="PageHero__StyledPageHero-sc-1k4oefb-0 jZTvNr"
+        style={
+          Object {
+            "position": "relative",
+            "zIndex": 0,
+          }
+        }
       >
         <div
-          className="PageHero__StyledTitle-sc-1k4oefb-3 dijkPK"
-        >
-          <div
-            className="PageTitle__StyledPageTitle-sc-1x4wg61-0 MhXQw"
-          >
-            <h1
-              className="PageTitle__StyledPageTitleH1-sc-1x4wg61-2 uwbjE"
-            >
-              <span
-                className="PageTitle__StyledPageSection-sc-1x4wg61-1 dUHWaW"
-              >
-                Explore /
-              </span>
-              Your Devices
-            </h1>
-          </div>
-          <div
-            className="PageHero__StyledPageHeroWrap-sc-1k4oefb-1 dymYXa"
-          >
-            <p
-              className="PageHero__StyledPageBlurb-sc-1k4oefb-2 jjUFol"
-            >
-              Your data lake displays a detailed view of the entity types that are connected in Watson IoT Platform. To explore the metrics and dimensions of your entities in more detail, select Entities. To start applying calculations and analyzing your entity data, select Data.
-            </p>
-          </div>
-        </div>
-        <div
-          className="PageHero__StyledRightContent-sc-1k4oefb-4 jzJCmH"
-        >
-          <div
-            style={
-              Object {
-                "textAlign": "right",
-              }
+          style={
+            Object {
+              "width": "calc(100vw - 6rem)",
             }
+          }
+        >
+          <div
+            className="PageHero__StyledPageHero-sc-1k4oefb-0 jZTvNr"
           >
-            Right Content
+            <div
+              className="PageHero__StyledTitle-sc-1k4oefb-3 dijkPK"
+            >
+              <div
+                className="PageTitle__StyledPageTitle-sc-1x4wg61-0 MhXQw"
+              >
+                <h1
+                  className="PageTitle__StyledPageTitleH1-sc-1x4wg61-2 uwbjE"
+                >
+                  <span
+                    className="PageTitle__StyledPageSection-sc-1x4wg61-1 dUHWaW"
+                  >
+                    Explore /
+                  </span>
+                  Your Devices
+                </h1>
+              </div>
+              <div
+                className="PageHero__StyledPageHeroWrap-sc-1k4oefb-1 dymYXa"
+              >
+                <p
+                  className="PageHero__StyledPageBlurb-sc-1k4oefb-2 jjUFol"
+                >
+                  Your data lake displays a detailed view of the entity types that are connected in Watson IoT Platform. To explore the metrics and dimensions of your entities in more detail, select Entities. To start applying calculations and analyzing your entity data, select Data.
+                </p>
+              </div>
+            </div>
+            <div
+              className="PageHero__StyledRightContent-sc-1k4oefb-4 jzJCmH"
+            >
+              <div
+                style={
+                  Object {
+                    "textAlign": "right",
+                  }
+                }
+              >
+                Right Content
+              </div>
+            </div>
           </div>
         </div>
       </div>
+      <button
+        className="info__show-button"
+        onClick={[Function]}
+        style={
+          Object {
+            "background": "#027ac5",
+            "border": "none",
+            "borderRadius": "0 0 0 5px",
+            "color": "#fff",
+            "cursor": "pointer",
+            "display": "block",
+            "fontFamily": "sans-serif",
+            "fontSize": "12px",
+            "padding": "5px 15px",
+            "position": "fixed",
+            "right": 0,
+            "top": 0,
+          }
+        }
+        type="button"
+      >
+        Show Info
+      </button>
     </div>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": "12px",
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
 </div>
 `;
 
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageHero (Deprecated) ️⛔ Deprecation Notice  1`] = `
 <div
-  className="storybook-container"
   style={
     Object {
       "alignItems": "center",
+      "bottom": "0",
       "display": "flex",
-      "flexDirection": "column",
-      "padding": "3rem",
+      "left": "0",
+      "overflow": "auto",
+      "position": "fixed",
+      "right": "0",
+      "top": "0",
     }
   }
 >
   <div
     style={
       Object {
-        "position": "relative",
-        "zIndex": 0,
+        "margin": "auto",
+        "maxHeight": "100%",
       }
     }
   >
     <div
-      style={Object {}}
+      className="storybook-container"
+      style={
+        Object {
+          "padding": "3rem",
+        }
+      }
     >
       <div
-        className="bx--toast-notification bx--toast-notification--warning"
-        kind="warning"
-        role="alert"
         style={
           Object {
-            "marginBottom": ".5rem",
-            "minWidth": "30rem",
+            "position": "relative",
+            "zIndex": 0,
           }
         }
-        timeout={0}
       >
-        <svg
-          aria-hidden={true}
-          className="bx--toast-notification__icon"
-          focusable="false"
-          height={20}
-          preserveAspectRatio="xMidYMid meet"
-          style={
-            Object {
-              "willChange": "transform",
-            }
-          }
-          viewBox="0 0 20 20"
-          width={20}
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M10 1c-5 0-9 4-9 9s4 9 9 9 9-4 9-9-4-9-9-9zm-.8 4h1.5v7H9.2V5zm.8 11c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1z"
-          />
-          <path
-            d="M9.2 5h1.5v7H9.2V5zm.8 11c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1z"
-            data-icon-path="inner-path"
-            opacity="0"
-          />
-          <title>
-            
-          </title>
-        </svg>
         <div
-          className="bx--toast-notification__details"
+          style={Object {}}
         >
-          <h3
-            className="bx--toast-notification__title"
-          >
-            Deprecation Notice
-          </h3>
           <div
-            className="bx--toast-notification__subtitle"
+            className="bx--toast-notification bx--toast-notification--warning"
+            kind="warning"
+            role="alert"
+            style={
+              Object {
+                "marginBottom": ".5rem",
+                "minWidth": "30rem",
+              }
+            }
+            timeout={0}
           >
-            PageHero has been deprecated and will be removed in the next major version of carbon-addons-iot-react.
-          </div>
-          <div
-            className="bx--toast-notification__caption"
-          >
-            Refactor usages of PageHero to use Hero instead.
+            <svg
+              aria-hidden={true}
+              className="bx--toast-notification__icon"
+              focusable="false"
+              height={20}
+              preserveAspectRatio="xMidYMid meet"
+              style={
+                Object {
+                  "willChange": "transform",
+                }
+              }
+              viewBox="0 0 20 20"
+              width={20}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M10 1c-5 0-9 4-9 9s4 9 9 9 9-4 9-9-4-9-9-9zm-.8 4h1.5v7H9.2V5zm.8 11c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1z"
+              />
+              <path
+                d="M9.2 5h1.5v7H9.2V5zm.8 11c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1z"
+                data-icon-path="inner-path"
+                opacity="0"
+              />
+              <title>
+                
+              </title>
+            </svg>
+            <div
+              className="bx--toast-notification__details"
+            >
+              <h3
+                className="bx--toast-notification__title"
+              >
+                Deprecation Notice
+              </h3>
+              <div
+                className="bx--toast-notification__subtitle"
+              >
+                PageHero has been deprecated and will be removed in the next major version of carbon-addons-iot-react.
+              </div>
+              <div
+                className="bx--toast-notification__caption"
+              >
+                Refactor usages of PageHero to use Hero instead.
+              </div>
+            </div>
           </div>
         </div>
       </div>
+      <button
+        className="info__show-button"
+        onClick={[Function]}
+        style={
+          Object {
+            "background": "#027ac5",
+            "border": "none",
+            "borderRadius": "0 0 0 5px",
+            "color": "#fff",
+            "cursor": "pointer",
+            "display": "block",
+            "fontFamily": "sans-serif",
+            "fontSize": "12px",
+            "padding": "5px 15px",
+            "position": "fixed",
+            "right": 0,
+            "top": 0,
+          }
+        }
+        type="button"
+      >
+        Show Info
+      </button>
     </div>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": "12px",
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
 </div>
 `;

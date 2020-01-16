@@ -14,7 +14,7 @@
   }
 
   &--header {
-    padding: 0 $spacing-05;
+    padding-left: $spacing-05;
     flex: 0 0 $spacing-09;
     display: flex;
     align-items: center;
@@ -23,8 +23,10 @@
   }
 
   &--toolbar {
-    margin-top: 0;
-    margin-bottom: 0;
+    margin: 0;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
   }
 
   &--overflow {
@@ -52,11 +54,6 @@
       outline-offset: -2px;
     }
 
-    .card--toolbar & {
-      margin: 0;
-      padding: 0;
-    }
-
     svg {
       fill: $icon-02;
     }
@@ -65,9 +62,5 @@
       height: auto;
       width: auto;
     }
-  }
-
-  &--toolbar-timerange-lable {
-    margin-right: $spacing-03;
   }
 }

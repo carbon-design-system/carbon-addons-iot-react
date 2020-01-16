@@ -27,6 +27,7 @@ import TableBody from './TableBody/TableBody';
 const StyledTableContainer = styled(TableContainer)`
   && {
     min-width: unset;
+    padding-top: 0;
 
     .bx--table-toolbar {
       overflow: hidden;
@@ -60,6 +61,9 @@ const StyledPagination = sizeMe({ noPlaceholder: true })(styled(
 const propTypes = {
   /** DOM ID for component */
   id: PropTypes.string,
+  /** Displays smaller title in header */
+  secondaryTitle: PropTypes.string,
+  tooltip: PropTypes.node,
   /** render zebra stripes or not */
   useZebraStyles: PropTypes.bool,
   /**  lighter styling where regular table too visually heavy */
@@ -189,6 +193,9 @@ export const defaultProps = baseProps => ({
   id: 'Table',
   useZebraStyles: false,
   lightweight: false,
+  title: null,
+  tooltip: null,
+  secondaryTitle: null,
   options: {
     hasPagination: false,
     hasRowSelection: false,
@@ -302,6 +309,9 @@ const Table = props => {
     className,
     style,
     i18n,
+    // Table Toolbar props
+    secondaryTitle,
+    tooltip,
     ...others
   } = merge({}, defaultProps(props), props);
 
@@ -344,6 +354,8 @@ const Table = props => {
     <StyledTableContainer style={style} className={className}>
       <TableToolbar
         tableId={id}
+        secondaryTitle={secondaryTitle}
+        tooltip={tooltip}
         i18n={{
           clearAllFilters: i18n.clearAllFilters,
           columnSelectionButtonAria: i18n.columnSelectionButtonAria,
