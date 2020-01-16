@@ -33,6 +33,11 @@ const Text = styled.div`
   }
 `;
 
+export const FILE_TYPES = {
+  TEXT: 'TEXT',
+  BINARY: 'BINARY',
+};
+
 const propTypes = {
   /** DOM ID */
   id: PropTypes.string,
@@ -55,6 +60,8 @@ const propTypes = {
   /** Callback for file load errors */
   onError: PropTypes.func,
   dragAndDropLabel: PropTypes.string,
+  /** file type either TEXT or BINARY to determine the correct encoding */
+  fileType: PropTypes.oneOf(Object.values(FILE_TYPES)),
 };
 
 const defaultProps = {
@@ -69,6 +76,7 @@ const defaultProps = {
   onData: () => {},
   onError: () => {},
   dragAndDropLabel: 'Drag and drop your file here or ',
+  fileType: FILE_TYPES.BINARY,
 };
 
 /**
@@ -116,11 +124,16 @@ class FileDrop extends React.Component {
    * actually calls the readAsBinaryString method to trigger the loading of the file.
    */
   readFileContent = files => {
+    const { fileType } = this.props;
     Array.prototype.forEach.call(files, file => {
       this.readers[file.name] = new FileReader();
       this.readers[file.name].onload = () => this.handleFileLoad(file);
       this.readers[file.name].onerror = evt => this.handleFileError(evt, file);
-      this.readers[file.name].readAsBinaryString(file);
+      if (fileType === FILE_TYPES.BINARY) {
+        this.readers[file.name].readAsBinaryString(file);
+      } else {
+        this.readers[file.name].readAsText(file);
+      }
     });
   };
 
@@ -142,11 +155,11 @@ class FileDrop extends React.Component {
     this.setState(state => {
       const newState = {
         files: state.files.map(i =>
-          i.name === file.name
+          i.name === file.name // only change the new reader result, preserve the rest
             ? {
                 name: i.name,
-                uploadState: 'edit', // only change the new reader result, preserve the rest
-                contents: i.name === file.name ? this.readers[file.name].result : i.contents,
+                uploadState: 'edit',
+                contents: this.readers[file.name].result,
               }
             : i
         ),

@@ -49,6 +49,7 @@ const HeaderProps = {
   url: 'http://localhost:8989',
   className: 'custom-class-name',
   appName: 'Watson IoT Platform ',
+  skipto: 'skip',
   actionItems: [
     {
       label: 'alerts',
@@ -57,7 +58,7 @@ const HeaderProps = {
     },
     {
       label: 'help',
-      onClick: action('help drop open'),
+      hasHeaderPanel: true,
       btnContent: (
         <HeaderHelp
           fill="white"
@@ -93,7 +94,6 @@ const HeaderProps = {
     },
     {
       label: 'user',
-      onClick: action('click'),
       btnContent: <Avatar fill="white" description="Icon" />,
       childContent: [
         {
@@ -138,7 +138,10 @@ const headerPanel = {
 
 storiesOf('Watson IoT|Header', module)
   .add('Header action buttons with dropdowns', () => (
-    <StyledHeader {...HeaderProps} headerPanel={headerPanel} />
+    <div style={{ width: '100%', height: '100vh' }}>
+      <StyledHeader {...HeaderProps} headerPanel={headerPanel} />
+      <div id="skip" />
+    </div>
   ))
   .add('Header no submenu', () => (
     <StyledHeader

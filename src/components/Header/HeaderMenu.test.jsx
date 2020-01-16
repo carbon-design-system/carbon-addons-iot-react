@@ -104,28 +104,28 @@ describe('HeaderMenu', () => {
 
   test('onClick expands', () => {
     const menuContent = () => <p>Some other text</p>;
-    const { getAllByRole } = render(
+    const { getByTestId } = render(
       <HeaderMenu renderMenuContent={menuContent} {...mockProps}>
         <HeaderMenuItem href="/a">A</HeaderMenuItem>
         <HeaderMenuItem href="/b">B</HeaderMenuItem>
         <HeaderMenuItem href="/c">C</HeaderMenuItem>
       </HeaderMenu>
     );
-    const menuTrigger = getAllByRole('menuitem')[0];
+    const menuTrigger = getByTestId('menuitem');
     fireEvent.click(menuTrigger);
     expect(menuTrigger.getAttribute('aria-expanded')).toBe('true');
   });
 
   test('onKeyDown expands with enter or space', () => {
     const menuContent = () => <p>Some other text</p>;
-    const { getAllByRole } = render(
+    const { getByTestId } = render(
       <HeaderMenu renderMenuContent={menuContent} {...mockProps}>
         <HeaderMenuItem href="/a">A</HeaderMenuItem>
         <HeaderMenuItem href="/b">B</HeaderMenuItem>
         <HeaderMenuItem href="/c">C</HeaderMenuItem>
       </HeaderMenu>
     );
-    const menuTrigger = getAllByRole('menuitem')[0];
+    const menuTrigger = getByTestId('menuitem');
     fireEvent.keyDown(menuTrigger, { keyCode: keys.ENTER });
     expect(menuTrigger.getAttribute('aria-expanded')).toBe('true');
     fireEvent.keyDown(menuTrigger, { keyCode: keys.SPACE });
@@ -134,7 +134,7 @@ describe('HeaderMenu', () => {
 
   test('onKeyDown esc on parent closes an open menu', () => {
     const menuContent = () => <p>Some other text</p>;
-    const { getByRole, getAllByRole } = render(
+    const { getByRole, getByTestId } = render(
       <HeaderMenu renderMenuContent={menuContent} {...mockProps}>
         <HeaderMenuItem href="/a">A</HeaderMenuItem>
         <HeaderMenuItem href="/b">B</HeaderMenuItem>
@@ -142,7 +142,7 @@ describe('HeaderMenu', () => {
       </HeaderMenu>
     );
     const menuParent = getByRole('listitem');
-    const menuTrigger = getAllByRole('menuitem')[0];
+    const menuTrigger = getByTestId('menuitem');
     fireEvent.keyDown(menuTrigger, { keyCode: keys.ENTER });
     expect(menuTrigger.getAttribute('aria-expanded')).toBe('true');
     fireEvent.keyDown(menuParent, { keyCode: keys.ESC });

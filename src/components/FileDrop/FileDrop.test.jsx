@@ -36,6 +36,7 @@ const mockHoverEvent = {
 
 const mockFileReader = {
   readAsBinaryString: jest.fn(),
+  readAsText: jest.fn(),
 };
 
 const originalFileReader = window.FileReader;
@@ -71,6 +72,16 @@ describe('File Drop', () => {
     wrapper.instance().nodes = mockFileNamesNodes;
     wrapper.instance().handleClick(null, 0);
     expect(wrapper.instance().clearFile).toHaveBeenCalledWith('fileToClear');
+  });
+  test('fileType', () => {
+    const textWrapper = mount(<FileDrop {...commonProps} fileType="TEXT" />);
+    const textInstance = textWrapper.instance();
+    const binaryWrapper = mount(<FileDrop {...commonProps} fileType="BINARY" />);
+    const binaryInstance = binaryWrapper.instance();
+    textInstance.readFileContent([{ name: 'fakeFileName' }]);
+    expect(mockFileReader.readAsText).toHaveBeenCalled();
+    binaryInstance.readFileContent([{ name: 'fakeFileName' }]);
+    expect(mockFileReader.readAsBinaryString).toHaveBeenCalled();
   });
   // Example of how to trigger from direct instance call
   test('fileDragHover', () => {

@@ -57,6 +57,7 @@ export {
   CARD_SIZES,
   DASHBOARD_BREAKPOINTS,
   DASHBOARD_SIZES,
+  TIME_SERIES_TYPES,
 } from './constants/LayoutConstants';
 
 // Experimental
@@ -70,6 +71,18 @@ export {
   PageWizardStepExtraContent,
 } from './components/PageWizard/PageWizard';
 export StatefulPageWizard from './components/PageWizard/StatefulPageWizard';
+
+export TileGallery from './components/TileGallery/TileGallery';
+
+export TileGallerySection from './components/TileGallery/TileGallerySection';
+
+export TileGalleryItem from './components/TileGallery/TileGalleryItem';
+
+export TileGalleryViewSwitcher from './components/TileGallery/TileGalleryViewSwitcher';
+
+export TileGallerySearch from './components/TileGallery/TileGallerySearch';
+
+export StatefulTileGallery from './components/TileGallery/StatefulTileGallery';
 
 // Carbon proxy
 export {
@@ -247,10 +260,11 @@ export {
   SideNavMenuItem,
   SideNavSwitcher,
 } from 'carbon-components-react';
-export { validateDashboardJSON } from './utils/schemas/validators';
 
 export {
   determineCardRange,
   determineMaxValueCardAttributeCount,
   compareGrains,
 } from './utils/cardUtilityFunctions';
+
+export { csvDownloadHandler } from './utils/componentUtilityFunctions';
