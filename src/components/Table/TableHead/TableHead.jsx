@@ -1,4 +1,6 @@
-import React from 'react';
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+
+import React, { useState, useEffect, createRef } from 'react';
 import PropTypes from 'prop-types';
 import { DataTable, Checkbox } from 'carbon-components-react';
 import isNil from 'lodash/isNil';
@@ -11,8 +13,9 @@ import { tableTranslateWithId } from '../../../utils/componentUtilityFunctions';
 
 import ColumnHeaderRow from './ColumnHeaderRow/ColumnHeaderRow';
 import FilterHeaderRow from './FilterHeaderRow/FilterHeaderRow';
+import TableHeader from './TableHeader';
 
-const { TableHead: CarbonTableHead, TableRow, TableExpandHeader, TableHeader } = DataTable;
+const { TableHead: CarbonTableHead, TableRow, TableExpandHeader } = DataTable;
 
 const propTypes = {
   /** Important table options that the head needs to know about */
@@ -69,6 +72,7 @@ const propTypes = {
   /** lightweight  */
   lightweight: PropTypes.bool,
   i18n: I18NPropTypes,
+  hasResize: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -83,6 +87,7 @@ const defaultProps = {
   i18n: {
     ...defaultI18NPropTypes,
   },
+  hasResize: true,
 };
 
 const StyledCheckboxTableHeader = styled(TableHeader)`
@@ -148,9 +153,57 @@ const TableHead = ({
   closeMenuText,
   lightweight,
   i18n,
+  hasResize,
 }) => {
   const filterBarActive = activeBar === 'filter';
-
+  const [columnWidth, setColumnWidth] = useState({});
+  const columnRef = ordering.map(() => createRef());
+  const columnVar = {
+    index: 0,
+    element: Node,
+    startX: 0,
+  };
+  const mousemoveCallback = e => {
+    const leftColumn = columnRef[columnVar.index].current.getBoundingClientRect();
+    const rightColumn = columnRef[
+      columnVar.index
+    ].current.nextElementSibling.getBoundingClientRect();
+    const mousePosition = e.clientX + columnVar.startX;
+    if (mousePosition >= 50 && mousePosition <= leftColumn.width + rightColumn.width - 50) {
+      columnVar.element.style.left = `${mousePosition}px`;
+    } else {
+      document.onmousemove = null;
+    }
+  };
+  const mouseupCallback = () => {
+    const resizePosition = columnVar.element.offsetLeft + columnVar.element.clientWidth;
+    setColumnWidth(psd => ({
+      ...psd,
+      [columnVar.index]: resizePosition,
+      [columnVar.index + 1]:
+        columnWidth[columnVar.index + 1] + (columnWidth[columnVar.index] - resizePosition),
+    }));
+    document.onmouseup = null;
+    document.onmousemove = null;
+    columnVar.element.style.left = null;
+  };
+  const onMouseUpCallback = (e, index) => {
+    columnVar.element = e.target;
+    columnVar.index = index;
+    columnVar.startX = columnVar.element.offsetLeft - e.clientX;
+    document.onmouseup = mouseupCallback;
+    document.onmousemove = mousemoveCallback;
+  };
+  useEffect(
+    () => {
+      const nextWidth = columnRef.map(
+        ref => ref.current && ref.current.getBoundingClientRect().width
+      );
+      setColumnWidth(nextWidth);
+    },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    []
+  );
   return (
     <StyledCarbonTableHead lightweight={`${lightweight}`}>
       <TableRow>
@@ -170,7 +223,7 @@ const TableHead = ({
           </StyledCheckboxTableHeader>
         ) : null}
 
-        {ordering.map(item => {
+        {ordering.map((item, i) => {
           const matchingColumnMeta = columns.find(column => column.id === item.columnId);
           const hasSort = matchingColumnMeta && sort && sort.columnId === matchingColumnMeta.id;
           const align =
@@ -182,7 +235,8 @@ const TableHead = ({
               data-column={matchingColumnMeta.id}
               isSortable={matchingColumnMeta.isSortable}
               isSortHeader={hasSort}
-              width={matchingColumnMeta.width}
+              ref={columnRef[i]}
+              style={{ width: columnWidth[i] }}
               onClick={() => {
                 if (matchingColumnMeta.isSortable && onChangeSort) {
                   onChangeSort(matchingColumnMeta.id);
@@ -196,6 +250,15 @@ const TableHead = ({
               })}
             >
               <TableCellRenderer>{matchingColumnMeta.name}</TableCellRenderer>
+              {hasResize && i < ordering.length - 1 ? (
+                // eslint-disable-next-line jsx-a11y/click-events-have-key-events
+                <div
+                  id={`resize-${matchingColumnMeta.id}`}
+                  className="column-resize-wrapper"
+                  onMouseDown={e => onMouseUpCallback(e, i)}
+                  onClick={e => e.stopPropagation()}
+                />
+              ) : null}
             </StyledCustomTableHeader>
           ) : null;
         })}
