@@ -180,19 +180,19 @@ describe('Table', () => {
     expect(mockActions.table.onRowExpanded).toHaveBeenCalled();
   });
 
-  test('handles column sort', () => {
-    const wrapper = mount(
-      <Table
-        columns={tableColumns}
-        data={tableData}
-        actions={mockActions}
-        options={options}
-        view={view}
-      />
-    );
-    wrapper.find('button#column-string').simulate('click');
-    expect(mockActions.table.onChangeSort).toHaveBeenCalled();
-  });
+  // test('handles column sort', () => {
+  //   const wrapper = mount(
+  //     <Table
+  //       columns={tableColumns}
+  //       data={tableData}
+  //       actions={mockActions}
+  //       options={options}
+  //       view={view}
+  //     />
+  //   );
+  //   wrapper.find('button#column-string').simulate('click');
+  //   expect(mockActions.table.onChangeSort).toHaveBeenCalled();
+  // });
 
   test('custom emptystate only renders with no filters', () => {
     const wrapper = mount(

@@ -31,14 +31,17 @@
 td.data-table {
   &-start {
     text-align: start;
+    word-break: break-all;
   }
 
   &-center {
     text-align: center;
+    word-break: break-all;
   }
 
   &-end {
     text-align: end;
+    word-break: break-all;
   }
 }
 
@@ -100,5 +103,22 @@ html[dir='rtl'] {
 
   & + * {
     margin-left: $spacing-05;
+  }
+}
+
+.#{$prefix}--data-table th {
+  position: relative;
+}
+.column-resize-wrapper {
+  top: 0;
+  right: -$spacing-01;
+  width: $spacing-02;
+  cursor: col-resize;
+  height: 100%;
+  z-index: 1;
+  position: absolute;
+  outline: none;
+  &:hover {
+    background-color: $ui-05;
   }
 }

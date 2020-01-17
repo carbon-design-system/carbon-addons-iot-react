@@ -24,6 +24,13 @@ module.exports = {
       lines: 78,
       functions: 75,
     },
+    // The overrides below are to be fixed/deleted via https://github.com/IBM/carbon-addons-iot-react/issues/834
+    './src/components/Table/TableHead/TableHead.jsx': {
+      statements: 58,
+      branches: 76,
+      lines: 58,
+      functions: 55,
+    },
     './src/components/Table/TableBody/RowActionsCell/RowActionsError.jsx': { functions: 66 },
     './src/components/Table/StatefulTable.jsx': { branches: 66 },
     './src/components/TileCatalog/CatalogContent.jsx': { branches: 50 },
