@@ -35,7 +35,17 @@ const ListItem = ({
       </div>
     )}
 
-    <div className="list-item--content">{content}</div>
+    <div className="list-item--content">
+      <div className="list-item--content--row-title-container">
+        <div className="list-item--content--row-title-container--title">{content.name}</div>
+        <div className="list-item--content--row-title-container--action">
+          {content.rowActions ? <div>{content.rowActions}</div> : null}
+        </div>
+      </div>
+      {content.rowContent ? (
+        <div className="list-item--content--row-content">{content.rowContent}</div>
+      ) : null}
+    </div>
   </div>
 );
 

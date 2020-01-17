@@ -60,7 +60,7 @@ const List = ({
       <ListItem
         id={item.id}
         nestingLevel={level}
-        content={item.name}
+        content={item.content}
         onSelect={handleSelect}
         onExpand={handleExpansion}
         selected={isSelected}

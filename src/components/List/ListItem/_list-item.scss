@@ -24,7 +24,32 @@
   }
 
   &--content {
-    padding: $spacing-03;
+    display: flex;
+    flex-direction: column;
+    background: $ui-01;
+    padding-left: $spacing-04;
+    height: rem(56px);
+    width: 100%;
+    &--row-title-container {
+      display: flex;
+      align-items: center;
+
+      &--title {
+        @include type-style('productive-heading-01');
+        flex: 1;
+      }
+      &--action {
+        display: flex;
+        padding: $spacing-03;
+        align-items: center;
+        & > * {
+          margin-left: $spacing-03;
+        }
+      }
+    }
+
+    &--row-content {
+    }
   }
 }
 

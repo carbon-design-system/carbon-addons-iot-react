@@ -11,7 +11,7 @@ const getListItems = num =>
     .fill(0)
     .map((i, idx) => ({
       id: idx + 1,
-      name: `Item ${idx + 1}`,
+      content: { name: `Item ${idx + 1}` },
     }));
 
 const rowActions = [<Edit16 />, <Edit16 />, <Edit16 />];
@@ -21,7 +21,7 @@ const getFatRowListItems = num =>
     .map((i, idx) => ({
       id: idx + 1,
       content: {
-        rowTitle: `Item ${idx + 1}`,
+        name: `Item ${idx + 1}`,
         rowContent: 'hello, this is row content',
         rowActions: rowActions,
       },
@@ -105,7 +105,7 @@ storiesOf('Watson IoT Experimental|SimpleList', module)
     </div>
   ))
   .add('list with fat row', () => (
-    <div style={{ width: 500, height: 500, background: '#fee', padding: 10 }}>
+    <div style={{ width: 500, height: 600, background: '#fee', padding: 10 }}>
       <SimpleList
         title={text('Text', 'Simple List')}
         hasSearch
@@ -113,7 +113,7 @@ storiesOf('Watson IoT Experimental|SimpleList', module)
           searchPlaceHolderText: 'Enter a search',
         }}
         buttons={buttonsToRender}
-        items={getListItems(20)}
+        items={getFatRowListItems(20)}
         pageSize="sm"
       />
     </div>
