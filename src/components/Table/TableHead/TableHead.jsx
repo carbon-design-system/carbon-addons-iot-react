@@ -169,7 +169,19 @@ const TableHead = ({
       columnVar.index
     ].current.nextElementSibling.getBoundingClientRect();
     const mousePosition = e.clientX + columnVar.startX;
-    if (mousePosition >= 50 && mousePosition <= leftColumn.width + rightColumn.width - 50) {
+    const minColumnWidth = 50;
+    const rightBound =
+      document.dir === 'rtl'
+        ? leftColumn.width - minColumnWidth
+        : leftColumn.width + rightColumn.width - minColumnWidth;
+    const leftBound = document.dir === 'rtl' ? rightColumn.width - minColumnWidth : minColumnWidth;
+    if (mousePosition >= leftBound && mousePosition <= rightBound && document.dir !== 'rtl') {
+      columnVar.element.style.left = `${mousePosition}px`;
+    } else if (
+      mousePosition >= -leftBound &&
+      mousePosition <= rightBound &&
+      document.dir === 'rtl'
+    ) {
       columnVar.element.style.left = `${mousePosition}px`;
     } else {
       document.onmousemove = null;
@@ -177,11 +189,14 @@ const TableHead = ({
   };
   const mouseupCallback = () => {
     const resizePosition = columnVar.element.offsetLeft + columnVar.element.clientWidth;
-    setColumnWidth(psd => ({
-      ...psd,
-      [columnVar.index]: resizePosition,
+    setColumnWidth(cols => ({
+      ...cols,
+      [columnVar.index]:
+        document.dir === 'rtl' ? columnWidth[columnVar.index] - resizePosition : resizePosition,
       [columnVar.index + 1]:
-        columnWidth[columnVar.index + 1] + (columnWidth[columnVar.index] - resizePosition),
+        document.dir === 'rtl'
+          ? columnWidth[columnVar.index + 1] + resizePosition
+          : columnWidth[columnVar.index + 1] + (columnWidth[columnVar.index] - resizePosition),
     }));
     document.onmouseup = null;
     document.onmousemove = null;
