@@ -69,7 +69,7 @@ export default {
         // Sass components
         {
           src: ['src/components/**/*.scss'],
-          dest: 'lib/scss/components',
+          dest: 'lib/scss',
         },
       ],
       verbose: env !== 'development', // logs the file copy list on production builds for easier debugging
