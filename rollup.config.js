@@ -12,18 +12,6 @@ import json from 'rollup-plugin-json';
 const env = process.env.NODE_ENV || 'development';
 const prodSettings = env === 'development' ? [] : [uglify(), filesize()];
 
-// Converts `_component-name.scss` to `ComponentName/_component-name.scss`
-// and handles the word `ui` to be uppercase `UI`
-const sanitizeAndCamelCase = (fileName, extension) => {
-  return `${fileName
-    .replace('_', '')
-    .split('-')
-    .map(word =>
-      word === 'ui' ? `${word.toUpperCase()}` : `${word[0].toUpperCase() + word.substring(1)}`
-    )
-    .join('')}/${fileName}.${extension}`;
-};
-
 export default {
   input: 'src/index.js',
   output: {
@@ -67,6 +55,7 @@ export default {
       plugins: [autoprefixer],
     }),
     copy({
+      flatten: false,
       targets: [
         // Sass entrypoint
         { src: 'src/styles.scss', dest: 'lib/scss' },
@@ -79,23 +68,8 @@ export default {
 
         // Sass components
         {
-          src: [
-            'src/components/**/*.scss',
-            '!src/components/Notification/*.scss',
-            '!src/components/Table/TableHead/*.scss',
-          ],
+          src: ['src/components/**/*.scss'],
           dest: 'lib/scss/components',
-          rename: (name, extension) => sanitizeAndCamelCase(name, extension),
-        },
-
-        // Sass components with non-standard folder structure, or multiple files per folder
-        {
-          src: 'src/components/Notification/*.scss',
-          dest: 'lib/scss/components/Notification',
-        },
-        {
-          src: 'src/components/Table/TableHead/*.scss',
-          dest: 'lib/scss/components/Table/TableHead',
         },
       ],
       verbose: env !== 'development', // logs the file copy list on production builds for easier debugging
