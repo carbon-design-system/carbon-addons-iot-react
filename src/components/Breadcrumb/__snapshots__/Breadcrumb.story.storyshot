@@ -396,6 +396,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT | Bre
                 </li>
                 <li
                   className="bx--breadcrumb-item"
+                  onClick={[Function]}
                   title="2 Devices"
                 >
                   <a

@@ -93,7 +93,14 @@ storiesOf('Watson IoT | Breadcrumb', module)
               <BreadcrumbItem href="#" title="1 Homexxxxxxxxxxxxxxxxxxxxxx">
                 1 Homexxxxxxxxxxxxxxxxxxxxxx
               </BreadcrumbItem>
-              <BreadcrumbItem href="#" title="2 Devices">
+              <BreadcrumbItem
+                href="#"
+                onClick={e => {
+                  e.preventDefault();
+                  console.log('clicked');
+                }}
+                title="2 Devices"
+              >
                 2 Devices
               </BreadcrumbItem>
               <BreadcrumbItem href="#" title="3 A really long page name">

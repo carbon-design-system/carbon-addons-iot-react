@@ -64,8 +64,10 @@ const Breadcrumb = ({ children, className, hasOverflow, ...other }) => {
         }
         // The visible list is not overflowing
       } else if (
-        breakingWidth.current[breakingWidth.current.length - 1] &&
-        breadcrumbRef.current.clientWidth > breakingWidth.current[breakingWidth.current.length - 1]
+        breakingWidth.current[breakingWidth.current.length - 1] >= 0 &&
+        breadcrumbRef.current.clientWidth >
+          breakingWidth.current[breakingWidth.current.length - 1] &&
+        overflowItems.length > 0
       ) {
         // Move the item to the visible list
         setAfterOverflowItems([overflowItems.pop(), ...afterOverflowItems]);
@@ -78,7 +80,7 @@ const Breadcrumb = ({ children, className, hasOverflow, ...other }) => {
   return (
     <div
       className={classnames('breadcrumb--container', {
-        'breadcrumb--container__overflowfull': overflowItems.length === children.length - 2,
+        'breadcrumb--container__overflowfull': afterOverflowItems.length === 1,
       })}
       ref={breadcrumbRef}
       data-testid="overflow"
@@ -90,10 +92,13 @@ const Breadcrumb = ({ children, className, hasOverflow, ...other }) => {
             <span className="breadcrumb--overflow">
               <OverflowMenu
                 renderIcon={OverflowMenuHorizontal20}
-                menuOptionsClass="breadcrumb--overflow-item"
+                menuOptionsClass="breadcrumb--overflow-items"
               >
                 {overflowItems.map((child, i) => (
                   <OverflowMenuItem
+                    href={child?.props.href}
+                    onClick={child.props.onClick}
+                    title={child?.props.children}
                     key={`${child?.props.children}-${i}`}
                     primaryFocus={i === 0}
                     itemText={child?.props.children}
