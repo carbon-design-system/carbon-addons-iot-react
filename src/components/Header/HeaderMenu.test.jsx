@@ -1,13 +1,9 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import { HeaderMenuItem } from 'carbon-components-react/lib/components/UIShell';
-import { render, fireEvent } from '@testing-library/react';
+import { render } from '@testing-library/react';
 
-import HeaderMenu, { matches, keys } from './HeaderMenu';
-
-const event = {
-  which: 13,
-};
+import HeaderMenu from './HeaderMenu';
 
 describe('HeaderMenu', () => {
   let mountNode;
@@ -22,6 +18,7 @@ describe('HeaderMenu', () => {
       // to the underlying menu button
       ref: jest.fn(),
       tabIndex: -1,
+      handleExpandedState: jest.fn(),
     };
 
     document.body.appendChild(mountNode);
@@ -86,10 +83,6 @@ describe('HeaderMenu', () => {
     expect(headerMenuAnchorChildText).toMatch('Some other text');
   });
 
-  it('should match', () => {
-    expect(matches(event, [keys.ENTER, keys.SPACE])).toEqual(true);
-  });
-
   test('renders in action bar', () => {
     const menuContent = () => <p>Some other text</p>;
     const { getByText } = render(
@@ -100,52 +93,5 @@ describe('HeaderMenu', () => {
       </HeaderMenu>
     );
     expect(getByText('Some other text')).toBeDefined();
-  });
-
-  test('onClick expands', () => {
-    const menuContent = () => <p>Some other text</p>;
-    const { getByTestId } = render(
-      <HeaderMenu renderMenuContent={menuContent} {...mockProps}>
-        <HeaderMenuItem href="/a">A</HeaderMenuItem>
-        <HeaderMenuItem href="/b">B</HeaderMenuItem>
-        <HeaderMenuItem href="/c">C</HeaderMenuItem>
-      </HeaderMenu>
-    );
-    const menuTrigger = getByTestId('menuitem');
-    fireEvent.click(menuTrigger);
-    expect(menuTrigger.getAttribute('aria-expanded')).toBe('true');
-  });
-
-  test('onKeyDown expands with enter or space', () => {
-    const menuContent = () => <p>Some other text</p>;
-    const { getByTestId } = render(
-      <HeaderMenu renderMenuContent={menuContent} {...mockProps}>
-        <HeaderMenuItem href="/a">A</HeaderMenuItem>
-        <HeaderMenuItem href="/b">B</HeaderMenuItem>
-        <HeaderMenuItem href="/c">C</HeaderMenuItem>
-      </HeaderMenu>
-    );
-    const menuTrigger = getByTestId('menuitem');
-    fireEvent.keyDown(menuTrigger, { keyCode: keys.ENTER });
-    expect(menuTrigger.getAttribute('aria-expanded')).toBe('true');
-    fireEvent.keyDown(menuTrigger, { keyCode: keys.SPACE });
-    expect(menuTrigger.getAttribute('aria-expanded')).toBe('false');
-  });
-
-  test('onKeyDown esc on parent closes an open menu', () => {
-    const menuContent = () => <p>Some other text</p>;
-    const { getByRole, getByTestId } = render(
-      <HeaderMenu renderMenuContent={menuContent} {...mockProps}>
-        <HeaderMenuItem href="/a">A</HeaderMenuItem>
-        <HeaderMenuItem href="/b">B</HeaderMenuItem>
-        <HeaderMenuItem href="/c">C</HeaderMenuItem>
-      </HeaderMenu>
-    );
-    const menuParent = getByRole('listitem');
-    const menuTrigger = getByTestId('menuitem');
-    fireEvent.keyDown(menuTrigger, { keyCode: keys.ENTER });
-    expect(menuTrigger.getAttribute('aria-expanded')).toBe('true');
-    fireEvent.keyDown(menuParent, { keyCode: keys.ESC });
-    expect(menuTrigger.getAttribute('aria-expanded')).toBe('false');
   });
 });

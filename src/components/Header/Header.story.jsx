@@ -113,10 +113,10 @@ const HeaderProps = {
             element: 'button',
           },
           content: (
-            <React.Fragment>
+            <span>
               JohnDoe@ibm.com
               <Avatar fill="white" description="Icon" />
-            </React.Fragment>
+            </span>
           ),
         },
       ],

@@ -3,14 +3,12 @@
 exports[`HeaderMenu should render 1`] = `
 <ForwardRef>
   <HeaderMenu
+    expanded={false}
     focusRef={null}
-    isMenu={true}
     renderMenuContent={[Function]}
   >
     <li
       className="bx--header__submenu"
-      onBlur={[Function]}
-      onClick={[Function]}
       onKeyDown={[Function]}
     >
        
@@ -61,6 +59,7 @@ exports[`HeaderMenu should render 1`] = `
       </a>
       <ul
         className="bx--header__menu"
+        onKeyDown={[Function]}
         role="menu"
       >
         <ForwardRef(HeaderMenuItem)

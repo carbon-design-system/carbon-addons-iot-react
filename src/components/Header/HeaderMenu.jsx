@@ -4,6 +4,8 @@ import cx from 'classnames';
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 
+import { keyCodes } from '../../constants/KeyCodeConstants';
+
 const { prefix } = settings;
 
 /* eslint-disable */
@@ -15,30 +17,6 @@ const defaultRenderMenuContent = ({ ariaLabel }) => (
   </>
 );
 
-export const keys = {
-  TAB: 9,
-  ENTER: 13,
-  ESC: 27,
-  SPACE: 32,
-  PAGEUP: 33,
-  PAGEDOWN: 34,
-  END: 35,
-  HOME: 36,
-  LEFT: 37,
-  UP: 38,
-  RIGHT: 39,
-  DOWN: 40,
-};
-
-export function matches(event, keysToMatch) {
-  for (let i = 0; i < keysToMatch.length; i++) {
-    if (keysToMatch[i] === event.which) {
-      return true;
-    }
-  }
-  return false;
-}
-
 /**
  * `HeaderMenu` is used to render submenu's in the `Header`. Most often children
  * will be a `HeaderMenuItem`. It handles certain keyboard events to help
@@ -47,10 +25,6 @@ export function matches(event, keysToMatch) {
  */
 class HeaderMenu extends React.Component {
   static propTypes = {
-    /**
-     * Bit to switch if you want HeaderMenu to render inside nav or in action bar
-     */
-    isMenu: PropTypes.bool,
     /**
      * Provide a custom ref handler for the menu button
      */
@@ -65,18 +39,39 @@ class HeaderMenu extends React.Component {
      * Optional component to render instead of string
      */
     renderMenuContent: PropTypes.func,
+
+    /**
+     * Determines if the header panel should be rendered which is decided by Header
+     */
+    expanded: PropTypes.bool,
+
+    /**
+     * Checks if the click was outside of the HeaderMenu, then hides if true
+     */
+    onBlur: PropTypes.func,
+
+    /**
+     * Hides/unhides the header panel
+     */
+    onClick: PropTypes.func,
+
+    /**
+     * Hides/unhides the header panel logic
+     */
+    handleExpandedState: PropTypes.func,
+
+    /** Unique name used by handleExpandedState */
+    label: PropTypes.string,
   };
 
   static defaultProps = {
     renderMenuContent: defaultRenderMenuContent,
-    isMenu: true,
+    expanded: false,
   };
 
   constructor(props) {
     super(props);
     this.state = {
-      // Used to manage the expansion state of the menu
-      expanded: false,
       // Refers to the menuitem that is currently focused
       // Note: children should have `role="menuitem"` on node consuming ref
       selectedIndex: null,
@@ -85,39 +80,17 @@ class HeaderMenu extends React.Component {
   }
 
   /**
-   * Toggle the expanded state of the menu on click.
-   */
-  handleOnClick = () => {
-    this.setState(prevState => ({
-      expanded: !prevState.expanded,
-    }));
-  };
-
-  /**
    * Keyboard event handler for the entire menu.
    */
   handleOnKeyDown = event => {
     // Handle enter or space key for toggling the expanded state of the menu.
-    if (matches(event, [keys.ENTER, keys.SPACE])) {
+    if (event.keyCode === keyCodes.SPACE || keyCodes.ENTER) {
       event.stopPropagation();
       event.preventDefault();
-
-      this.setState(prevState => ({
-        expanded: !prevState.expanded,
+      this.props.handleExpandedState(this.props.label);
+      this.setState(() => ({
+        selectedIndex: null,
       }));
-    }
-  };
-
-  /**
-   * Handle our blur event from our underlying menuitems. Will mostly be used
-   * for toggling the expansion status of our menu in response to a user
-   * clicking off of the menu or menubar.
-   */
-  handleOnBlur = event => {
-    // Rough guess for a blur event that is triggered outside of our menu or
-    // menubar context
-    if (!event.currentTarget.contains(event.relatedTarget)) {
-      this.setState({ expanded: false, selectedIndex: null });
     }
   };
 
@@ -147,12 +120,11 @@ class HeaderMenu extends React.Component {
 
   handleMenuClose = event => {
     // Handle ESC keydown for closing the expanded menu.
-    if (matches(event, [keys.ESC]) && this.state.expanded) {
+    if (event.keyCode === keyCodes.ESC && this.props.expanded) {
       event.stopPropagation();
       event.preventDefault();
-
+      this.props.handleExpandedState(this.props.label);
       this.setState(() => ({
-        expanded: false,
         selectedIndex: null,
       }));
 
@@ -179,8 +151,8 @@ class HeaderMenu extends React.Component {
     const parentProps = {
       className: className,
       onKeyDown: this.handleMenuClose,
-      onClick: this.handleOnClick,
-      onBlur: this.handleOnBlur,
+      onBlur: this.props.onBlur,
+      onClick: this.props.onClick,
     };
     // Notes on eslint comments and based on the examples in:
     // https://www.w3.org/TR/wai-aria-practices/examples/menubar/menubar-1/menubar-1.html#
@@ -194,7 +166,7 @@ class HeaderMenu extends React.Component {
       <Fragment>
         <a // eslint-disable-line jsx-a11y/role-supports-aria-props,jsx-a11y/anchor-is-valid
           aria-haspopup="menu" // eslint-disable-line jsx-a11y/aria-proptypes
-          aria-expanded={this.state.expanded}
+          aria-expanded={this.props.expanded}
           className={cx(`${prefix}--header__menu-item`, `${prefix}--header__menu-title`)}
           href="javascript:void(0)"
           onKeyDown={this.handleOnKeyDown}
@@ -206,12 +178,17 @@ class HeaderMenu extends React.Component {
         >
           <MenuContent ariaLabel={ariaLabel} />
         </a>
-        <ul {...accessibilityLabel} className={`${prefix}--header__menu`} role="menu">
+        <ul
+          {...accessibilityLabel}
+          className={`${prefix}--header__menu`}
+          role="menu"
+          onKeyDown={this.handleOnKeyDown}
+        >
           {React.Children.map(children, this._renderMenuItem)}
         </ul>
       </Fragment>
     );
-    return isMenu ? <li {...parentProps}> {content} </li> : <div {...parentProps}> {content} </div>;
+    return <div {...parentProps}> {content} </div>;
   }
 
   /**
