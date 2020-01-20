@@ -96,12 +96,11 @@ const Breadcrumb = ({ children, className, hasOverflow, ...other }) => {
               >
                 {overflowItems.map((child, i) => (
                   <OverflowMenuItem
-                    href={child?.props.href}
-                    onClick={child.props.onClick}
-                    title={child?.props.children}
-                    key={`${child?.props.children}-${i}`}
+                    {...child.props}
+                    title={child.props.children}
+                    key={`${child.props.children}-${i}`}
                     primaryFocus={i === 0}
-                    itemText={child?.props.children}
+                    itemText={child.props.children}
                   />
                 ))}
               </OverflowMenu>

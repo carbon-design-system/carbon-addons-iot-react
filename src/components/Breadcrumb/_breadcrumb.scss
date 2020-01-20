@@ -71,7 +71,7 @@
     height: 0;
   }
 
-  .#{$prefix}--overflow-menu-options__option:nth-child(odd) {
+  .#{$prefix}--overflow-menu-options__option:nth-child(even) {
     background-color: $field-02;
 
     &:hover {
@@ -79,7 +79,7 @@
     }
   }
 
-  .#{$prefix}--overflow-menu-options__ {
+  .#{$prefix}--overflow-menu-options__btn {
     text-decoration: none;
   }
 }
