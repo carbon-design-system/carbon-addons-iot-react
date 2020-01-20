@@ -83,3 +83,13 @@
     text-decoration: none;
   }
 }
+
+html[dir='rtl'] .breadcrumb--container {
+  .#{$prefix}--breadcrumb-item::after,
+  .breadcrumb--overflow:after,
+  .#{$prefix}--breadcrumb-item:last-child,
+  .#{$prefix}--breadcrumb-item:last-child::after {
+    margin-left: auto;
+    margin-right: $spacing-03;
+  }
+}
