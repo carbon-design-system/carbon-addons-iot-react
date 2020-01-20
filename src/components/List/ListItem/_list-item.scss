@@ -28,7 +28,7 @@
     flex-direction: column;
     background: $ui-01;
     padding-left: $spacing-04;
-    height: rem(56px);
+    height: rem(40px);
     width: 100%;
     &--row-title-container {
       display: flex;
@@ -46,9 +46,6 @@
           margin-left: $spacing-03;
         }
       }
-    }
-
-    &--row-content {
     }
   }
 }
