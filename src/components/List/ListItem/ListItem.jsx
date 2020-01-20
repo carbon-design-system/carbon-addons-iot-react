@@ -35,7 +35,11 @@ const ListItem = ({
       </div>
     )}
 
-    <div className="list-item--content">
+    <div
+      className={classnames('list-item--content', {
+        'list-item--content__selected': selected,
+      })}
+    >
       <div className="list-item--content--row-title-container">
         <div className="list-item--content--row-title-container--title">{content.name}</div>
         <div className="list-item--content--row-title-container--action">

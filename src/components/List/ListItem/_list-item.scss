@@ -47,6 +47,9 @@
         }
       }
     }
+    &__selected {
+      background: $selected-ui;
+    }
   }
 }
 
