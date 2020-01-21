@@ -260,7 +260,7 @@ class FilterHeaderRow extends Component {
                       this.handleApplyFilter
                     );
                   }}
-                  light={!lightweight}
+                  light={lightweight}
                 />
               ) : (
                 <StyledFormItem>
@@ -268,7 +268,7 @@ class FilterHeaderRow extends Component {
                     id={column.id}
                     labelText={column.id}
                     hideLabel
-                    light={!lightweight}
+                    light={lightweight}
                     placeholder={column.placeholderText || 'Type and hit enter to apply'}
                     onKeyDown={event => handleEnterKeyDown(event, this.handleApplyFilter)}
                     onBlur={this.handleApplyFilter}
