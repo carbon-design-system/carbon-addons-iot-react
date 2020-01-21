@@ -14,11 +14,9 @@ const SimpleList = ({
   const [searchValue, setSearchValue] = useState(null);
   const [filteredItems, setfilteredItems] = useState(items);
 
-  let rowPerPage = 0;
+  const numberOfItems = filteredItems.length;
+  let rowPerPage = numberOfItems;
   switch (pageSize) {
-    default:
-      rowPerPage = 5;
-      break;
     case 'sm':
       rowPerPage = 5;
       break;
@@ -47,7 +45,6 @@ const SimpleList = ({
 
   let [itemsToShow, setItemsToShow] = useState(filteredItems.slice(0, rowPerPage));
 
-  const numberOfItems = filteredItems.length;
   const onPage = page => {
     const rowUpperLimit = page * rowPerPage;
     const currentItemsOnPage = filteredItems.slice(rowUpperLimit - rowPerPage, rowUpperLimit);
