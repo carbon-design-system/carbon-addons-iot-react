@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, Children } from 'react';
 import useResizeObserver from 'use-resize-observer';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
@@ -43,12 +43,13 @@ const defaultProps = {
 };
 
 const Breadcrumb = ({ children, className, hasOverflow, ...other }) => {
+  const childrenItems = Children.map(children, child => child);
   const breakingWidth = useRef([]);
   const { ref: breadcrumbRef } = useResizeObserver({
     useDefaults: false,
   });
   const [overflowItems, setOverflowItems] = useState([]);
-  const [afterOverflowItems, setAfterOverflowItems] = useState(children.slice(1));
+  const [afterOverflowItems, setAfterOverflowItems] = useState(childrenItems.slice(1));
 
   /** update breadcrumbs  */
   useEffect(() => {
@@ -87,7 +88,7 @@ const Breadcrumb = ({ children, className, hasOverflow, ...other }) => {
     >
       {hasOverflow ? (
         <CarbonBreadcrumb className={className} {...other}>
-          {children[0]}
+          {childrenItems[0]}
           {overflowItems.length > 0 && (
             <span className="breadcrumb--overflow">
               <OverflowMenu
