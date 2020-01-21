@@ -106,24 +106,7 @@ html[dir='rtl'] {
   }
 }
 
-.#{$prefix}--data-table th {
-  position: relative;
-}
-.column-resize-wrapper {
-  top: 0;
-  width: $spacing-02;
-  cursor: col-resize;
-  height: 100%;
-  z-index: 1;
-  position: absolute;
-  outline: none;
-  &:hover {
-    background-color: $ui-05;
-  }
-}
-html[dir='rtl'] .column-resize-wrapper {
-  left: 0;
-}
-html[dir='ltr'] .column-resize-wrapper {
-  right: 0;
+// Fixes bug when modal is opened, then closed. The toolbar moves to the top
+section.bx--table-toolbar {
+  overflow: unset;
 }
