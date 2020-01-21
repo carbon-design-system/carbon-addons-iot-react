@@ -1,14 +1,14 @@
 .list-item {
   background: $ui-01;
-  padding: $spacing-03;
   border-top: 1px solid $ui-01;
   border-bottom: 1px solid $ui-03;
   border-left: solid 4px $ui-01;
-  color: $text-05;
   display: flex;
   height: rem(40px);
+  padding: $spacing-03;
   &__large {
     height: rem(96px);
+    padding: $spacing-05;
   }
 
   &__selected {
@@ -38,6 +38,7 @@
       &--main {
         display: flex;
         max-width: 100%;
+        color: $text-05;
         div {
           flex: 1;
           margin-right: $spacing-04;
@@ -47,10 +48,12 @@
         }
         &__large {
           @include type-style('productive-heading-01');
+          color: $text-01;
         }
       }
 
       &--secondary {
+        color: $text-05;
         &__large {
         }
       }

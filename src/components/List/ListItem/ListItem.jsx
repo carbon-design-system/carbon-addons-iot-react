@@ -27,6 +27,7 @@ const ListItem = ({
   <div
     className={classnames('list-item', {
       'list-item__selected': selected,
+      'list-item__large': isLargeRow,
     })}
     style={{ paddingLeft: ` ${nestingLevel * 30}px` }}
     onClick={() => {

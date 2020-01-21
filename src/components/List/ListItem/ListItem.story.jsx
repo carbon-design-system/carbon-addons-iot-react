@@ -26,4 +26,9 @@ storiesOf('Watson IoT Experimental|ListItem', module)
         secondaryValue="Secondary Value could also be a really, extraordinarily long value"
       />
     </div>
+  ))
+  .add('with isLargeRow', () => (
+    <div style={{ width: 400 }}>
+      <ListItem value="List Item" secondaryValue="Secondary Value" isLargeRow />
+    </div>
   ));
