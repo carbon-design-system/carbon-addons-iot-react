@@ -17,6 +17,14 @@
   }
 
   &--page {
-    background: $ui-01;
+    position: relative;
+    div {
+      background: $ui-01 !important;
+    }
+    div > span {
+      padding-left: $spacing-03;
+      left: 0;
+      position: absolute;
+    }
   }
 }

@@ -96,7 +96,9 @@ const List = ({
         i18n={i18n}
       />
       <div className="list--content">{listItems}</div>
-      <SimplePagination {...pagination} className="list--page" />
+      <div className="list--page">
+        <SimplePagination {...pagination} />
+      </div>
     </div>
   );
 };
