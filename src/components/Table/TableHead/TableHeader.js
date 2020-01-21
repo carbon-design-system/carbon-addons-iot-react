@@ -12,7 +12,11 @@ import React from 'react';
 import { settings } from 'carbon-components';
 import { ArrowUp20 as Arrow, ArrowsVertical20 as Arrows } from '@carbon/icons-react';
 
-import { sortStates } from './state/sorting';
+const sortStates = {
+  NONE: 'NONE',
+  DESC: 'DESC',
+  ASC: 'ASC',
+};
 
 const { prefix } = settings;
 
@@ -57,6 +61,7 @@ const TableHeader = React.forwardRef(function TableHeader(
     scope,
     sortDirection,
     translateWithId: t,
+    width,
     ...rest
   },
   ref
@@ -64,7 +69,7 @@ const TableHeader = React.forwardRef(function TableHeader(
   if (!isSortable) {
     return (
       // eslint-disable-next-line react/jsx-filename-extension
-      <th {...rest} className={headerClassName} scope={scope} ref={ref}>
+      <th {...rest} className={headerClassName} scope={scope} ref={ref} style={{ width: width }}>
         <span className={`${prefix}--table-header-label`}>{children}</span>
       </th>
     );
@@ -78,8 +83,14 @@ const TableHeader = React.forwardRef(function TableHeader(
   const ariaSort = !isSortHeader ? 'none' : sortDirections[sortDirection];
 
   return (
-    <th scope={scope} className={headerClassName} aria-sort={ariaSort} ref={ref} {...rest}>
-      <button className={className} onClick={onClick}>
+    <th
+      scope={scope}
+      className={headerClassName}
+      aria-sort={ariaSort}
+      ref={ref}
+      style={{ width: width }}
+    >
+      <button className={className} onClick={onClick} {...rest}>
         <span className={`${prefix}--table-header-label`}>{children}</span>
         <Arrow
           className={`${prefix}--table-sort__icon`}
@@ -150,6 +161,7 @@ TableHeader.propTypes = {
    * this component.
    */
   translateWithId: PropTypes.func,
+  width: PropTypes.number,
 };
 
 TableHeader.defaultProps = {
@@ -161,6 +173,7 @@ TableHeader.defaultProps = {
   onClick: onClick => `${onClick}`,
   scope: 'col',
   translateWithId,
+  width: 0,
 };
 
 TableHeader.translationKeys = Object.values(translationKeys);

@@ -172,7 +172,7 @@ const TableHead = ({
     const minColumnWidth = 50;
     const rightBound =
       document.dir === 'rtl'
-        ? leftColumn.width - minColumnWidth
+        ? leftColumn.width + minColumnWidth
         : leftColumn.width + rightColumn.width - minColumnWidth;
     const leftBound = document.dir === 'rtl' ? rightColumn.width - minColumnWidth : minColumnWidth;
     if (mousePosition >= leftBound && mousePosition <= rightBound && document.dir !== 'rtl') {
@@ -251,7 +251,7 @@ const TableHead = ({
               isSortable={matchingColumnMeta.isSortable}
               isSortHeader={hasSort}
               ref={columnRef[i]}
-              style={{ width: columnWidth[i] }}
+              width={columnWidth[i]}
               onClick={() => {
                 if (matchingColumnMeta.isSortable && onChangeSort) {
                   onChangeSort(matchingColumnMeta.id);
