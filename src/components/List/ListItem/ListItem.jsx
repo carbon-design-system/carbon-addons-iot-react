@@ -4,17 +4,24 @@ import { Icon } from 'carbon-components-react';
 import { iconChevronDown, iconChevronUp } from 'carbon-icons';
 
 const ListItem = ({
-  selected,
-  expanded,
   id,
-  onSelect,
+  isLargeRow,
+
+  isExpandable = false,
   onExpand,
-  isExpandable,
-  isSelectable,
-  nestingLevel,
+  expanded,
+
+  isSelectable = false,
+  onSelect,
+  selected,
+
   value,
   secondaryValue,
+
   rowActions,
+  icon,
+
+  nestingLevel,
   ...others
 }) => (
   <div
@@ -32,7 +39,7 @@ const ListItem = ({
     }}
   >
     {isExpandable && (
-      <div className="list-item--icon">
+      <div className="list-item--expand-icon">
         <Icon icon={expanded ? iconChevronUp : iconChevronDown} />
       </div>
     )}
@@ -42,13 +49,42 @@ const ListItem = ({
         'list-item--content__selected': selected,
       })}
     >
-      <div className="list-item--content--row-title-container">
-        <div className="list-item--content--row-title-container--title">{value}</div>
-        <div className="list-item--content--row-title-container--action">{rowActions || null}</div>
+      {icon && <div className="list-item--content--icon">{icon}</div>}
+      <div
+        className={classnames('list-item--content--values', {
+          'list-item--content--values__large': isLargeRow,
+        })}
+      >
+        {isLargeRow ? (
+          <React.Fragment>
+            <div
+              className={classnames(
+                'list-item--content--values--main',
+                'list-item--content--values--main__large'
+              )}
+            >
+              <div title={value}>{value}</div>
+              <div>{rowActions || null}</div>
+            </div>
+            <div
+              className={classnames(
+                'list-item--content--values--secondary',
+                'list-item--content--values--secondary__large'
+              )}
+            >
+              {secondaryValue || null}
+            </div>
+          </React.Fragment>
+        ) : (
+          <React.Fragment>
+            <div className="list-item--content--values--main">
+              <div title={value}>{value}</div>
+              {secondaryValue ? <div title={secondaryValue}>{secondaryValue}</div> : null}
+              {rowActions ? <div>{rowActions}</div> : null}
+            </div>
+          </React.Fragment>
+        )}
       </div>
-      {secondaryValue ? (
-        <div className="list-item--content--row-content">{secondaryValue}</div>
-      ) : null}
     </div>
   </div>
 );

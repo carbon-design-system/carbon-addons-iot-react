@@ -5,37 +5,61 @@
   border-bottom: 1px solid $ui-03;
   border-left: solid 4px $ui-01;
   color: $text-05;
-
   display: flex;
+  height: rem(40px);
+  &__large {
+    height: rem(96px);
+  }
+
   &__selected {
     border-left: solid $interactive-01;
     background: $selected-ui;
   }
 
-  &--icon {
+  &--expand-icon {
     margin: $spacing-01;
     padding: $spacing-01;
     transform: rotate(180deg);
   }
 
-  &--icon__selected {
-    margin: $spacing-01;
-    padding: $spacing-01;
-  }
-
   &--content {
     display: flex;
-    flex-direction: column;
+    align-items: center;
     background: $ui-01;
-    padding-left: $spacing-04;
-    height: rem(40px);
     width: 100%;
+    &--icon {
+    }
+    &--values {
+      flex: 1;
+      max-width: 100%;
+      &__large {
+      }
+
+      &--main {
+        display: flex;
+        max-width: 100%;
+        div {
+          flex: 1;
+          margin-right: $spacing-04;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+        &__large {
+          @include type-style('productive-heading-01');
+        }
+      }
+
+      &--secondary {
+        &__large {
+        }
+      }
+    }
     &--row-title-container {
       display: flex;
       align-items: center;
 
       &--title {
-        @include type-style('productive-heading-01');
         flex: 1;
       }
       &--action {
