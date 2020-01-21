@@ -30,6 +30,19 @@ const SimpleList = ({
       break;
   }
 
+  const [selectedIds, setSelectedIds] = useState([]);
+  const [selectedId, setSelectedId] = useState(null);
+  const [expandedId, setExpandedId] = useState(null);
+
+  const handleSelect = id => {
+    setSelectedId(selectedId === id ? null : id);
+    setSelectedIds(
+      selectedId === id ? selectedIds.filter(item => item.id !== id) : [...selectedIds, id]
+    );
+  };
+
+  const handleExpansion = id => setExpandedId(expandedId === id ? null : id);
+
   const [currentPageNumber, setCurrentPageNumber] = useState(1);
 
   let [itemsToShow, setItemsToShow] = useState(filteredItems.slice(0, rowPerPage));
@@ -90,6 +103,10 @@ const SimpleList = ({
       isFullHeight={isFullHeight}
       items={pageSize != null ? itemsToShow : filteredItems}
       pagination={pagination}
+      selectedId={selectedId}
+      selectedIds={selectedIds}
+      handleSelect={handleSelect}
+      handleExpansion={handleExpansion}
     />
   );
 };
