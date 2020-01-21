@@ -56,6 +56,7 @@ const SimpleList = ({
     page: currentPageNumber,
     onPage: onPage,
     maxPage: Math.ceil(numberOfItems / rowPerPage),
+    pageOfPagesText: page => `Page ${page}`,
   };
 
   return (

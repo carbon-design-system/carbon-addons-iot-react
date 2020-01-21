@@ -18,13 +18,17 @@
 
   &--page {
     position: relative;
-    div {
-      background: $ui-01 !important;
+    div[class^='SimplePagination__StyledContainer'] {
+      border-top: $ui-03;
+      background: $ui-01;
+      height: rem(40px);
     }
     div > span {
-      padding-left: $spacing-03;
+      padding-left: $spacing-05;
       left: 0;
       position: absolute;
+    }
+    div > svg:active {
     }
   }
 }
