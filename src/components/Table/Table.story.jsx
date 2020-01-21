@@ -62,7 +62,6 @@ const renderStatusIcon = ({ value: status }) => {
 };
 // Example custom sort method for the status field.  Will sort the broken to the top, then the running, then the not_running
 const customColumnSort = ({ data, columnId, direction }) => {
-  console.log(`custom sort triggered on ${columnId} for ${direction}`);
   // clone inputData because sort mutates the array
   const sortedData = data.map(i => i);
   sortedData.sort((a, b) => {
