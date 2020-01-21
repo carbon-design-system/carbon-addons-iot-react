@@ -70,7 +70,7 @@ storiesOf('Watson IoT Experimental|SimpleList', module)
             searchPlaceHolderText: 'Enter a search',
           }}
           buttons={buttonsToRender}
-          items={getListItems(5)}
+          items={getListItems(3)}
         />
       </div>
     )),
@@ -89,7 +89,7 @@ storiesOf('Watson IoT Experimental|SimpleList', module)
             searchPlaceHolderText: 'Enter a search',
           }}
           buttons={buttonsToRender}
-          items={getListItems(5)}
+          items={getListItems(3)}
         />
       </div>
     )),
