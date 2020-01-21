@@ -9,7 +9,7 @@
   &--content {
     flex: 1 1;
     background: $ui-01;
-    overflow-y: scroll;
+    overflow-y: auto;
   }
 
   &__full-height {
