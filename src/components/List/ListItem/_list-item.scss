@@ -23,6 +23,7 @@
   }
 
   &--content {
+    @include type-style('body-short-01');
     display: flex;
     align-items: center;
     background: $ui-01;

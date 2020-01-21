@@ -8,7 +8,7 @@ import { handleEnterKeyDown } from '../../utils/componentUtilityFunctions';
 import { COLORS } from '../../styles/styles';
 
 const StyledContainer = styled.div`
-  &&& {
+  && {
     display: flex;
     height: 3rem;
     justify-content: flex-end;

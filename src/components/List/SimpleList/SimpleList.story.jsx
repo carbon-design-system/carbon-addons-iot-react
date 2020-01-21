@@ -25,7 +25,7 @@ const getFatRowListItems = num =>
       id: idx + 1,
       content: {
         value: `Item ${idx + 1}`,
-        secondaryValue: `This is a description or some secondary bit of data for Item ${idx + 1}`,
+        secondaryValue: `This is a description or some secondary bit of data for Item ${idx + 100}`,
         rowActions,
       },
     }));

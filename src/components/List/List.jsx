@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import ListItem from './ListItem/ListItem';
@@ -15,21 +15,13 @@ const List = ({
   isFullHeight,
   i18n,
   pagination,
+  selectedId,
+  selectedIds,
+  expandedId,
+  handleSelect,
+  handleExpansion,
   ...others
 }) => {
-  const [selectedIds, setSelectedIds] = useState([]);
-  const [selectedId, setSelectedId] = useState(null);
-  const [expandedId, setExpandedId] = useState(null);
-
-  const handleSelect = id => {
-    setSelectedId(selectedId === id ? null : id);
-    setSelectedIds(
-      selectedId === id ? selectedIds.filter(item => item.id !== id) : [...selectedIds, id]
-    );
-  };
-
-  const handleExpansion = id => setExpandedId(expandedId === id ? null : id);
-
   const propTypes = {
     children: childrenPropType,
     id: PropTypes.string,
@@ -96,7 +88,9 @@ const List = ({
         i18n={i18n}
       />
       <div className="list--content">{listItems}</div>
-      <SimplePagination {...pagination} className="list--page" />
+      <div className="list--page">
+        <SimplePagination {...pagination} />
+      </div>
     </div>
   );
 };

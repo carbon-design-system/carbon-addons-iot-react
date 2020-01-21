@@ -14,11 +14,9 @@ const SimpleList = ({
   const [searchValue, setSearchValue] = useState(null);
   const [filteredItems, setfilteredItems] = useState(items);
 
-  let rowPerPage = 0;
+  const numberOfItems = filteredItems.length;
+  let rowPerPage = numberOfItems;
   switch (pageSize) {
-    default:
-      rowPerPage = 5;
-      break;
     case 'sm':
       rowPerPage = 5;
       break;
@@ -30,11 +28,23 @@ const SimpleList = ({
       break;
   }
 
+  const [selectedIds, setSelectedIds] = useState([]);
+  const [selectedId, setSelectedId] = useState(null);
+  const [expandedId, setExpandedId] = useState(null);
+
+  const handleSelect = id => {
+    setSelectedId(selectedId === id ? null : id);
+    setSelectedIds(
+      selectedId === id ? selectedIds.filter(item => item.id !== id) : [...selectedIds, id]
+    );
+  };
+
+  const handleExpansion = id => setExpandedId(expandedId === id ? null : id);
+
   const [currentPageNumber, setCurrentPageNumber] = useState(1);
 
   let [itemsToShow, setItemsToShow] = useState(filteredItems.slice(0, rowPerPage));
 
-  const numberOfItems = filteredItems.length;
   const onPage = page => {
     const rowUpperLimit = page * rowPerPage;
     const currentItemsOnPage = filteredItems.slice(rowUpperLimit - rowPerPage, rowUpperLimit);
@@ -46,6 +56,7 @@ const SimpleList = ({
     page: currentPageNumber,
     onPage: onPage,
     maxPage: Math.ceil(numberOfItems / rowPerPage),
+    pageOfPagesText: page => `Page ${page}`,
   };
 
   return (
@@ -57,9 +68,25 @@ const SimpleList = ({
               value: searchValue,
               onChange: evt => {
                 const searchTerm = evt.target.value === undefined ? '' : evt.target.value;
-                const filteredItems = items.filter(
-                  item => item.content.name.toLowerCase().search(searchTerm.toLowerCase()) !== -1
-                );
+                const filteredItems = items.filter(item => {
+                  if (item.content.value !== '' && item.content.value !== undefined) {
+                    if (
+                      item.content.secondaryValue !== '' &&
+                      item.content.secondaryValue !== undefined
+                    ) {
+                      return (
+                        item.content.value.toLowerCase().search(searchTerm.toLowerCase()) !== -1 ||
+                        item.content.secondaryValue
+                          .toLowerCase()
+                          .search(searchTerm.toLowerCase()) !== -1
+                      );
+                    } else {
+                      return (
+                        item.content.value.toLowerCase().search(searchTerm.toLowerCase()) !== -1
+                      );
+                    }
+                  }
+                });
 
                 setfilteredItems(filteredItems);
                 if (pageSize !== null) {
@@ -74,6 +101,10 @@ const SimpleList = ({
       isFullHeight={isFullHeight}
       items={pageSize != null ? itemsToShow : filteredItems}
       pagination={pagination}
+      selectedId={selectedId}
+      selectedIds={selectedIds}
+      handleSelect={handleSelect}
+      handleExpansion={handleExpansion}
     />
   );
 };
