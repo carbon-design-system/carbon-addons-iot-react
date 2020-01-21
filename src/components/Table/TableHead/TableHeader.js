@@ -61,7 +61,7 @@ const TableHeader = React.forwardRef(function TableHeader(
     scope,
     sortDirection,
     translateWithId: t,
-    width,
+    thWidth,
     ...rest
   },
   ref
@@ -69,7 +69,7 @@ const TableHeader = React.forwardRef(function TableHeader(
   if (!isSortable) {
     return (
       // eslint-disable-next-line react/jsx-filename-extension
-      <th {...rest} className={headerClassName} scope={scope} ref={ref} style={{ width: width }}>
+      <th {...rest} className={headerClassName} scope={scope} ref={ref} style={{ width: thWidth }}>
         <span className={`${prefix}--table-header-label`}>{children}</span>
       </th>
     );
@@ -88,7 +88,7 @@ const TableHeader = React.forwardRef(function TableHeader(
       className={headerClassName}
       aria-sort={ariaSort}
       ref={ref}
-      style={{ width: width }}
+      style={{ width: thWidth }}
     >
       <button className={className} onClick={onClick} {...rest}>
         <span className={`${prefix}--table-header-label`}>{children}</span>
@@ -161,7 +161,7 @@ TableHeader.propTypes = {
    * this component.
    */
   translateWithId: PropTypes.func,
-  width: PropTypes.number,
+  thWidth: PropTypes.number,
 };
 
 TableHeader.defaultProps = {
@@ -173,7 +173,7 @@ TableHeader.defaultProps = {
   onClick: onClick => `${onClick}`,
   scope: 'col',
   translateWithId,
-  width: 0,
+  thWidth: undefined,
 };
 
 TableHeader.translationKeys = Object.values(translationKeys);
