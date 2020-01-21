@@ -56,11 +56,17 @@ const List = ({
     const isSelected = item.id === selectedId && selectedIds.indexOf(item.id) !== -1;
     const isExpanded = item.id === expandedId;
 
+    const {
+      content: { value, secondaryValue, rowActions },
+    } = item;
+
     return [
       <ListItem
         id={item.id}
         nestingLevel={level}
-        content={item.content}
+        value={value}
+        secondaryValue={secondaryValue}
+        rowActions={rowActions}
         onSelect={handleSelect}
         onExpand={handleExpansion}
         selected={isSelected}

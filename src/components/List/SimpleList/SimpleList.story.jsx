@@ -14,7 +14,7 @@ const getListItems = num =>
     .fill(0)
     .map((i, idx) => ({
       id: idx + 1,
-      content: { name: `Item ${idx + 1}` },
+      content: { value: `Item ${idx + 1}` },
     }));
 
 const rowActions = [<Edit16 />, <Add16 />, <Close16 />];
@@ -24,9 +24,9 @@ const getFatRowListItems = num =>
     .map((i, idx) => ({
       id: idx + 1,
       content: {
-        name: `Item ${idx + 1}`,
-        rowContent: 'hello, this is row content',
-        rowActions: rowActions,
+        value: `Item ${idx + 1}`,
+        secondaryValue: `This is a description or some secondary bit of data for Item ${idx + 1}`,
+        rowActions,
       },
     }));
 

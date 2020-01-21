@@ -12,7 +12,9 @@ const ListItem = ({
   isExpandable,
   isSelectable,
   nestingLevel,
-  content,
+  value,
+  secondaryValue,
+  rowActions,
   ...others
 }) => (
   <div
@@ -41,13 +43,11 @@ const ListItem = ({
       })}
     >
       <div className="list-item--content--row-title-container">
-        <div className="list-item--content--row-title-container--title">{content.name}</div>
-        <div className="list-item--content--row-title-container--action">
-          {content.rowActions ? <div>{content.rowActions}</div> : null}
-        </div>
+        <div className="list-item--content--row-title-container--title">{value}</div>
+        <div className="list-item--content--row-title-container--action">{rowActions || null}</div>
       </div>
-      {content.rowContent ? (
-        <div className="list-item--content--row-content">{content.rowContent}</div>
+      {secondaryValue ? (
+        <div className="list-item--content--row-content">{secondaryValue}</div>
       ) : null}
     </div>
   </div>

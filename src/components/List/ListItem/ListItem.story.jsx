@@ -97,6 +97,6 @@ storiesOf('Watson IoT Experimental|ListItem', module)
   .add('Simple ListItem', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
 
-    return <ListItemSimple id="List" size={size} content={<div>hi</div>} />;
+    return <ListItemSimple id="List" size={size} value="hi" />;
   })
-  .add('Another ListItem', () => <ListItem content={<div>another list item</div>} />);
+  .add('Another ListItem', () => <ListItem value="another list item" />);
