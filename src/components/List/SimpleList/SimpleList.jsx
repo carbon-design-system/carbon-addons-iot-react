@@ -57,9 +57,25 @@ const SimpleList = ({
               value: searchValue,
               onChange: evt => {
                 const searchTerm = evt.target.value === undefined ? '' : evt.target.value;
-                const filteredItems = items.filter(
-                  item => item.content.name.toLowerCase().search(searchTerm.toLowerCase()) !== -1
-                );
+                const filteredItems = items.filter(item => {
+                  if (item.content.value !== '' && item.content.value !== undefined) {
+                    if (
+                      item.content.secondaryValue !== '' &&
+                      item.content.secondaryValue !== undefined
+                    ) {
+                      return (
+                        item.content.value.toLowerCase().search(searchTerm.toLowerCase()) !== -1 ||
+                        item.content.secondaryValue
+                          .toLowerCase()
+                          .search(searchTerm.toLowerCase()) !== -1
+                      );
+                    } else {
+                      return (
+                        item.content.value.toLowerCase().search(searchTerm.toLowerCase()) !== -1
+                      );
+                    }
+                  }
+                });
 
                 setfilteredItems(filteredItems);
                 if (pageSize !== null) {
