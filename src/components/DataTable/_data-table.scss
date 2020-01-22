@@ -102,3 +102,8 @@ html[dir='rtl'] {
     margin-left: $spacing-05;
   }
 }
+
+// Fixes bug when modal is opened, then closed. The toolbar moves to the top
+section.bx--table-toolbar {
+  overflow: unset;
+}
