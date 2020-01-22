@@ -60,6 +60,30 @@ const renderStatusIcon = ({ value: status }) => {
       );
   }
 };
+// Example custom sort method for the status field.  Will sort the broken to the top, then the running, then the not_running
+const customColumnSort = ({ data, columnId, direction }) => {
+  // clone inputData because sort mutates the array
+  const sortedData = data.map(i => i);
+  sortedData.sort((a, b) => {
+    let compare = -1;
+    // same status
+    if (a.values[columnId] === b.values[columnId]) {
+      compare = 0;
+    } else if (a.values[columnId] === STATUS.RUNNING && b.values[columnId] === STATUS.NOT_RUNNING) {
+      compare = -1;
+    } else if (a.values[columnId] === STATUS.NOT_RUNNING && b.values[columnId] === STATUS.RUNNING) {
+      compare = 1;
+    } else if (b.values[columnId] === STATUS.BROKEN) {
+      compare = 1;
+    } else if (a.values[columnId] === STATUS.BROKEN) {
+      compare = -1;
+    }
+
+    return direction === 'ASC' ? compare : -compare;
+  });
+  return sortedData;
+};
+
 export const tableColumns = [
   {
     id: 'string',
@@ -84,6 +108,7 @@ export const tableColumns = [
     id: 'status',
     name: 'Status',
     renderDataFunction: renderStatusIcon,
+    sortFunction: customColumnSort,
   },
   {
     id: 'number',
@@ -704,7 +729,7 @@ storiesOf('Watson IoT|Table', module)
     }
   )
   .add('with multi select and batch actions', () => (
-    <Table
+    <StatefulTable
       columns={tableColumns}
       data={tableData}
       actions={actions}

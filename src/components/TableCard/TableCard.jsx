@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useCallback } from 'react';
 import { OverflowMenu, OverflowMenuItem, Icon } from 'carbon-components-react';
 import styled from 'styled-components';
 import moment from 'moment';
@@ -259,6 +259,12 @@ const TableCard = ({
   tooltip,
   ...others
 }) => {
+  /** adds the id to the card action */
+  const cachedOnCardAction = useCallback((...args) => onCardAction(id, ...args), [
+    onCardAction,
+    id,
+  ]);
+
   const renderActionCell = cellItem => {
     const actionList = JSON.parse(cellItem.value);
     return actionList && actionList.length === 1 ? (
@@ -689,7 +695,7 @@ const TableCard = ({
       i18n={i18n}
       isEditable={isEditable}
       isExpanded={isExpanded}
-      onCardAction={onCardAction}
+      onCardAction={cachedOnCardAction}
       {...others}
     />
   );
