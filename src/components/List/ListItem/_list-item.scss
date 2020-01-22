@@ -25,17 +25,25 @@
   &--content {
     @include type-style('body-short-01');
     display: flex;
-    align-items: center;
     background: $ui-01;
     width: 100%;
+    align-items: center;
+    &__large {
+      align-items: top;
+    }
     &--icon {
+      padding-top: $spacing-01;
+      &__left {
+        padding-right: $spacing-04;
+      }
+      &__right {
+        padding-left: $spacing-04;
+        order: 9;
+      }
     }
     &--values {
       flex: 1;
       max-width: 100%;
-      &__large {
-      }
-
       &--main {
         display: flex;
         max-width: 100%;
@@ -50,13 +58,14 @@
         &__large {
           @include type-style('productive-heading-01');
           color: $text-01;
+          padding-bottom: $spacing-03;
         }
       }
 
       &--secondary {
         color: $text-05;
-        &__large {
-        }
+        height: rem(36px);
+        overflow: hidden;
       }
     }
     &--row-title-container {
