@@ -531,7 +531,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        d="M11 8l-5 5-.7-.7L9.6 8 5.3 3.7 6 3z"
+                        d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
                       />
                     </svg>
                   </button>
@@ -706,7 +706,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        d="M11 8l-5 5-.7-.7L9.6 8 5.3 3.7 6 3z"
+                        d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
                       />
                     </svg>
                   </button>
@@ -764,7 +764,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                         />
                       </svg>
                     </button>
-                    <div
+                    <button
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="More actions"
@@ -774,7 +774,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                       onClose={[Function]}
                       onKeyDown={[Function]}
                       open={false}
-                      role="button"
                       tabIndex={0}
                     >
                       <svg
@@ -814,7 +813,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                           More actions
                         </title>
                       </svg>
-                    </div>
+                    </button>
                   </div>
                 </td>
               </tr>
@@ -932,7 +931,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        d="M11 8l-5 5-.7-.7L9.6 8 5.3 3.7 6 3z"
+                        d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
                       />
                     </svg>
                   </button>
@@ -1124,7 +1123,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        d="M11 8l-5 5-.7-.7L9.6 8 5.3 3.7 6 3z"
+                        d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
                       />
                     </svg>
                   </button>

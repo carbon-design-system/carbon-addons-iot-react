@@ -69,14 +69,8 @@ describe('StatefulTileCatalog', () => {
         selectedTileId="test7"
       />
     );
-    console.log(wrapper.filter('span'));
     // On page 2 because of the selectedTileId
-    expect(
-      wrapper
-        .find('span')
-        .at(0)
-        .text()
-    ).toContain('Page 2');
+    expect(wrapper.text()).toContain('Page 2');
   });
 
   test('tiles prop change resets page', () => {
@@ -93,33 +87,18 @@ describe('StatefulTileCatalog', () => {
     ).toEqual(true);
 
     // On page 1
-    expect(
-      wrapper
-        .find('span')
-        .at(0)
-        .text()
-    ).toContain('Page 1');
+    expect(wrapper.text()).toContain('Page 1');
     const nextButton = wrapper.find('div[tabIndex=0]');
     nextButton.simulate('click');
     // on Page 2
-    expect(
-      wrapper
-        .find('span')
-        .at(0)
-        .text()
-    ).toContain('Page 2');
+    expect(wrapper.text()).toContain('Page 2');
 
     const newTiles = commonTileProps.tiles.slice(1, 5);
     // Back to Page 1
     mockOnSelection.mockClear();
     wrapper.setProps({ tiles: newTiles });
     wrapper.update();
-    expect(
-      wrapper
-        .find('span')
-        .at(0)
-        .text()
-    ).toContain('Page 1');
+    expect(wrapper.text()).toContain('Page 1');
 
     // Needs to have called the selection callback for the newly default selected row
     expect(mockOnSelection).toHaveBeenCalledTimes(1);
