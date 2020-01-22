@@ -113,6 +113,7 @@ section.bx--table-toolbar {
 
 .#{$prefix}--data-table th {
   position: relative;
+  word-break: break-all;
 }
 
 .column-resize-wrapper {
