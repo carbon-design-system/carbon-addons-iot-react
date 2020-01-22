@@ -54,6 +54,7 @@ exports[`Header testcases should render 1`] = `
         data-testid="action-btn__group"
       >
         <button
+          aria-expanded="false"
           aria-haspopup="menu"
           aria-label="help"
           class="bx--header-action-btn action-btn__trigger bx--header__action"
@@ -134,20 +135,19 @@ exports[`Header testcases should render 1`] = `
         </div>
       </div>
       <div
-        class="bx--header__submenu"
-        data-testid="headermenu"
+        class="bx--header__submenu bx--header-action-btn action-btn__group"
+        data-testid="action-btn__group"
       >
-        <li
+        <div
           class="bx--header__submenu bx--header-action-btn"
         >
-           
           <a
             aria-expanded="false"
             aria-haspopup="menu"
             aria-label="user"
             class="bx--header__menu-item bx--header__menu-title"
             data-testid="menuitem"
-            href="javascript:void(0)"
+            href=""
             role="menuitem"
             tabindex="0"
           >
@@ -175,9 +175,7 @@ exports[`Header testcases should render 1`] = `
             class="bx--header__menu"
             role="menu"
           >
-            <li
-              role="none"
-            >
+            <li>
               <a
                 class="bx--header__menu-item"
                 href="http://google.com"
@@ -196,7 +194,6 @@ exports[`Header testcases should render 1`] = `
             </li>
             <li
               class="this"
-              role="none"
             >
               <button
                 class="bx--header__menu-item"
@@ -231,8 +228,7 @@ exports[`Header testcases should render 1`] = `
               </button>
             </li>
           </ul>
-           
-        </li>
+        </div>
       </div>
     </div>
   </header>

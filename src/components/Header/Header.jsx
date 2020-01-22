@@ -8,21 +8,19 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import AppSwitcher from '@carbon/icons-react/lib/app-switcher/20';
 
-import HeaderBar from './HeaderBar';
+import HeaderActionGroup from './HeaderActionGroup';
 
 /** common proptypes associated with child content for a header action */
-export const ChildContentPropTypes = PropTypes.arrayOf(
-  PropTypes.shape({
-    metaData: PropTypes.shape({
-      /** The specific type of element to render */
-      element: PropTypes.string,
-    }),
-    content: PropTypes.node,
-  })
-);
+export const ChildContentPropTypes = {
+  metaData: PropTypes.shape({
+    /** The specific type of element to render */
+    element: PropTypes.string,
+  }),
+  content: PropTypes.node,
+};
 
 /** common proptypes associated with a header action */
-export const HeaderActionItemPropTypes = PropTypes.shape({
+export const HeaderActionItemPropTypes = {
   /** label for the menu button */
   label: PropTypes.string.isRequired,
   /** should the action render a panel or a submenu */
@@ -30,16 +28,16 @@ export const HeaderActionItemPropTypes = PropTypes.shape({
   /** Menu button that pops out the action panel */
   btnContent: PropTypes.node.isRequired,
   /** content to render in the action panel */
-  childContent: ChildContentPropTypes.isRequired,
+  childContent: PropTypes.arrayOf(PropTypes.shape(ChildContentPropTypes)),
   onClick: PropTypes.func,
-});
+};
 
-export const HeaderPanelPropTypes = PropTypes.shape({
+export const HeaderPanelPropTypes = {
   /** Optionally provide a custom class to apply to the underlying <li> node */
   className: PropTypes.string,
   /** the content of the header panel  */
   content: PropTypes.any,
-});
+};
 
 const propTypes = {
   /** Add a prefix other than IBM */
@@ -53,12 +51,12 @@ const propTypes = {
   /** href optional url to file if you click on title */
   url: PropTypes.string,
   /** Object of action items */
-  actionItems: PropTypes.arrayOf(HeaderActionItemPropTypes).isRequired,
+  actionItems: PropTypes.arrayOf(PropTypes.shape(HeaderActionItemPropTypes)).isRequired,
   /** Bit to flip that tells header to render the nav toggle button */
   hasSideNav: PropTypes.bool,
   onClickSideNavExpand: PropTypes.func,
   /** Main app switcher Header panel props */
-  headerPanel: HeaderPanelPropTypes,
+  headerPanel: PropTypes.shape(HeaderPanelPropTypes),
 };
 
 const defaultProps = {
@@ -79,7 +77,7 @@ export const appSwitcher = 'AppSwitcher';
 const Header = ({
   appName,
   className,
-  actionItems,
+  actionItems: actionItemsProp,
   prefix,
   skipto,
   hasSideNav,
@@ -87,29 +85,32 @@ const Header = ({
   headerPanel,
   url,
 }) => {
-  if (headerPanel) {
-    // Add AppSwitcher
-    actionItems.push({
-      label: appSwitcher,
-      hasHeaderPanel: true,
-      btnContent: (
-        <AppSwitcher
-          fill="white"
-          description="Icon"
-          className="bx--header__menu-item bx--header__menu-title"
-        />
-      ),
-      childContent: [
+  const actionItems = !headerPanel
+    ? actionItemsProp
+    : [
+        ...actionItemsProp,
         {
-          metaData: {
-            className: headerPanel.className,
-            element: 'a',
-          },
-          content: headerPanel.content,
+          label: appSwitcher,
+          hasHeaderPanel: true,
+          btnContent: (
+            <AppSwitcher
+              fill="white"
+              description="Icon"
+              className="bx--header__menu-item bx--header__menu-title"
+            />
+          ),
+          childContent: [
+            {
+              metaData: {
+                className: headerPanel.className,
+                element: 'a',
+              },
+              content: <headerPanel.content />,
+            },
+          ],
         },
-      ],
-    });
-  }
+      ];
+
   return (
     <CarbonHeader className={className} aria-label="main header">
       <SkipToContent href={skipto} />
@@ -117,7 +118,7 @@ const Header = ({
       <HeaderName href={url} prefix={prefix}>
         {appName}
       </HeaderName>
-      <HeaderBar actionItems={actionItems} headerPanel={headerPanel} />
+      <HeaderActionGroup actionItems={actionItems} />
     </CarbonHeader>
   );
 };

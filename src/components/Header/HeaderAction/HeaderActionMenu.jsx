@@ -9,6 +9,7 @@ import { ChildContentPropTypes } from '../Header';
 
 const { prefix } = settings;
 
+// eslint-disable-next-line
 const defaultRenderMenuContent = ({ ariaLabel }) => (
   <>
     {ariaLabel}
@@ -17,15 +18,20 @@ const defaultRenderMenuContent = ({ ariaLabel }) => (
 );
 
 /**
- * `HeaderMenu` is used to render submenu's in the `Header`. Most often children
- * will be a `HeaderMenuItem`. It handles certain keyboard events to help
+ * `HeaderActionMenu` is used to render submenu's in the `Header`. Most often children
+ * will be a `HeaderActionMenuItem`. It handles certain keyboard events to help
  * with managing focus. It also passes along refs to each child so that it can
  * help manage focus state of its children.
  */
-class HeaderMenu extends React.Component {
+class HeaderActionMenu extends React.Component {
   static propTypes = {
     /** Ref object to be attached to the parent that should receive focus when a menu is closed */
-    focusRef: PropTypes.object.isRequired,
+    focusRef: PropTypes.oneOfType([
+      // Either a function
+      PropTypes.func,
+      // Or the instance of a DOM native element (see the note about SSR)
+      PropTypes.shape({ current: PropTypes.instanceOf(Element) }),
+    ]).isRequired,
     /** Optionally provide a tabIndex for the underlying menu button */
     tabIndex: PropTypes.number,
     /** Optional component to render instead of string */
@@ -37,7 +43,7 @@ class HeaderMenu extends React.Component {
     /** Unique name used by handleExpandedState */
     label: PropTypes.string.isRequired,
     /** MenuItem's to be rendered as children */
-    childContent: PropTypes.shape(ChildContentPropTypes).isRequired,
+    childContent: PropTypes.arrayOf(PropTypes.shape(ChildContentPropTypes)).isRequired,
   };
 
   static defaultProps = {
@@ -115,5 +121,5 @@ class HeaderMenu extends React.Component {
 
 // eslint-disable-next-line
 export default React.forwardRef((props, ref) => {
-  return <HeaderMenu {...props} focusRef={ref} />;
+  return <HeaderActionMenu {...props} focusRef={ref} />;
 });

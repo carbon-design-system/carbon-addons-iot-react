@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HeaderActionMenu should render 1`] = `
+<div>
+  <div
+    class="bx--header__submenu custom-class"
+  >
+    <a
+      aria-expanded="false"
+      aria-haspopup="menu"
+      aria-label="Accessibility label"
+      class="bx--header__menu-item bx--header__menu-title"
+      data-testid="menuitem"
+      href=""
+      role="menuitem"
+      tabindex="0"
+    >
+      Accessibility label
+      <svg
+        aria-hidden="true"
+        class="bx--header__menu-arrow"
+        focusable="false"
+        height="6"
+        preserveAspectRatio="xMidYMid meet"
+        viewBox="0 0 10 6"
+        width="10"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M5 6L0 1 .7.3 5 4.6 9.3.3l.7.7z"
+        />
+      </svg>
+    </a>
+    <ul
+      aria-label="Accessibility label"
+      class="bx--header__menu"
+      role="menu"
+    >
+      <li>
+        <a
+          class="bx--header__menu-item"
+          href="http://google.com"
+          rel="noopener noreferrer"
+          role="menuitem"
+          tabindex="0"
+          target="_blank"
+          title="this is a title"
+        >
+          <span
+            class="bx--text-truncate--end"
+          >
+            this is my message to you
+          </span>
+        </a>
+      </li>
+      <li
+        class="this"
+      >
+        <button
+          class="bx--header__menu-item"
+          role="menuitem"
+          tabindex="0"
+        >
+          <span
+            class="bx--text-truncate--end"
+          >
+            <span>
+              JohnDoe@ibm.com
+            </span>
+          </span>
+        </button>
+      </li>
+    </ul>
+  </div>
+</div>
+`;

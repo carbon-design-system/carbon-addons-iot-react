@@ -2,10 +2,11 @@ import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import Avatar from '@carbon/icons-react/lib/user--avatar/20';
 import HeaderHelp from '@carbon/icons-react/lib/help/20';
+import '@testing-library/jest-dom/extend-expect';
 
 import { keyCodes } from '../../constants/KeyCodeConstants';
 
-import Header from './Header';
+import Header, { appSwitcher } from './Header';
 
 React.Fragment = ({ children }) => children;
 
@@ -85,8 +86,8 @@ describe('Header testcases', () => {
   });
 
   it('sidepanel should not render', () => {
-    const { queryByTestId } = render(<Header {...HeaderProps} />);
-    expect(queryByTestId('app-switcher-header-panel')).toBeFalsy();
+    const { queryByLabelText } = render(<Header {...HeaderProps} />);
+    expect(queryByLabelText(appSwitcher)).toBeFalsy();
   });
 
   it('sidepanel should render', () => {
@@ -101,8 +102,8 @@ describe('Header testcases', () => {
       )),
       /* eslint-enable */
     };
-    const { queryByTestId } = render(<Header {...HeaderProps} headerPanel={headerPanel} />);
-    expect(queryByTestId('app-switcher-header-panel')).toBeTruthy();
+    const { queryAllByLabelText } = render(<Header {...HeaderProps} headerPanel={headerPanel} />);
+    expect(queryAllByLabelText(appSwitcher).length).toBeGreaterThan(0);
   });
 
   it('children should render inside UL', () => {
@@ -129,10 +130,10 @@ describe('Header testcases', () => {
   });
 
   it('closes when focus leaves panel', () => {
-    const { getByTestId, getByTitle } = render(<Header {...HeaderProps} />);
+    const { getByTitle, getByText } = render(<Header {...HeaderProps} />);
     fireEvent.click(getByTitle('help'));
-    fireEvent.focus(getByTestId('action-btn__panel'));
-    fireEvent.blur(getByTestId('action-btn__panel'));
+    fireEvent.focus(getByText('This is a link'));
+    fireEvent.blur(getByText('This is a link'));
     expect(getByTitle('help').parentNode.lastChild.className).toContain(
       'bx--header-panel action-btn__headerpanel action-btn__headerpanel--closed'
     );
@@ -179,12 +180,13 @@ describe('Header testcases', () => {
     const { getByTitle } = render(<Header {...HeaderProps} headerPanel={headerPanel} />);
 
     fireEvent.click(getByTitle('AppSwitcher'));
-    expect(getByTitle('AppSwitcher').parentNode.nextSibling.className).toContain(
-      'bx--header-panel bx--header-panel--expanded bx--app-switcher header-panel'
+    expect(getByTitle('AppSwitcher').parentNode.lastChild.className).toContain(
+      'bx--header-panel bx--header-panel--expanded action-btn__headerpanel'
     );
+
     fireEvent.click(getByTitle('AppSwitcher'));
-    expect(getByTitle('AppSwitcher').parentNode.nextSibling.className).toContain(
-      'bx--header-panel bx--app-switcher header-panel'
+    expect(getByTitle('AppSwitcher').parentNode.lastChild.className).toContain(
+      'bx--header-panel action-btn__headerpanel action-btn__headerpanel--closed'
     );
   });
 
@@ -239,8 +241,8 @@ describe('Header testcases', () => {
       )),
       /* eslint-enable */
     };
-    const { getByTestId } = render(<Header {...HeaderProps} headerPanel={headerPanel} />);
-    const menuTrigger = getByTestId('menuitem');
+    const { getByTitle } = render(<Header {...HeaderProps} headerPanel={headerPanel} />);
+    const menuTrigger = getByTitle('help');
     fireEvent.keyDown(menuTrigger, { keyCode: keyCodes.SPACE });
     expect(menuTrigger.getAttribute('aria-expanded')).toBe('true');
     fireEvent.keyDown(menuTrigger, { keyCode: keyCodes.SPACE });

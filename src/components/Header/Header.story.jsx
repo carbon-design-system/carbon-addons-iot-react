@@ -167,7 +167,12 @@ const HeaderMenuProps = {
 const headerPanel = {
   className: 'header-panel',
 
-  content: 'Header panel content',
+  content: React.forwardRef((props, ref) => (
+    // eslint-disable-next-line
+    <a href="#" ref={ref} {...props}>
+      Header panel content
+    </a>
+  )),
 };
 
 storiesOf('Watson IoT|Header', module)

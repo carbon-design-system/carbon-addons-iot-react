@@ -11,7 +11,12 @@ const { prefix: carbonPrefix } = settings;
 const propTypes = {
   ...HeaderActionPropTypes,
   /** Ref object to be attached to the parent that should receive focus when a menu is closed */
-  focusRef: PropTypes.object.isRequired,
+  focusRef: PropTypes.oneOfType([
+    // Either a function
+    PropTypes.func,
+    // Or the instance of a DOM native element (see the note about SSR)
+    PropTypes.shape({ current: PropTypes.instanceOf(Element) }),
+  ]).isRequired,
 };
 
 const defaultProps = {
@@ -24,7 +29,7 @@ const defaultProps = {
  * It has no local state.
  * It calls the onToggleExpansion when it should be opened or closed
  */
-const HeaderPanelAction = ({ item, index, onToggleExpansion, isExpanded, focusRef }) => {
+const HeaderActionPanel = ({ item, index, onToggleExpansion, isExpanded, focusRef }) => {
   return (
     <>
       <HeaderGlobalAction
@@ -55,8 +60,7 @@ const HeaderPanelAction = ({ item, index, onToggleExpansion, isExpanded, focusRe
             return (
               <li key={`listitem-${item.label}-${k}`} className="action-btn__headerpanel-li">
                 <ChildElement
-                  key={`headerpanelmenu-item-${item.label +
-                    item.childContent.indexOf(childItem)}-child-${index}`}
+                  key={`headerpanelmenu-item-${item.label}-${index}-child-${k}`}
                   {...childItem.metaData}
                 >
                   {childItem.content}
@@ -70,9 +74,9 @@ const HeaderPanelAction = ({ item, index, onToggleExpansion, isExpanded, focusRe
   );
 };
 
-HeaderPanelAction.propTypes = propTypes;
-HeaderPanelAction.defaultProps = defaultProps;
+HeaderActionPanel.propTypes = propTypes;
+HeaderActionPanel.defaultProps = defaultProps;
 
 export default React.forwardRef((props, ref) => {
-  return <HeaderPanelAction {...props} focusRef={ref} />;
+  return <HeaderActionPanel {...props} focusRef={ref} />;
 });

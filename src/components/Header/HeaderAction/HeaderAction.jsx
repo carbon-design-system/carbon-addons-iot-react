@@ -6,8 +6,8 @@ import PropTypes from 'prop-types';
 import { keyCodes } from '../../../constants/KeyCodeConstants';
 import { HeaderActionItemPropTypes } from '../Header';
 
-import HeaderMenu from './HeaderMenu';
-import HeaderPanelAction from './HeaderPanelAction';
+import HeaderActionMenu from './HeaderActionMenu';
+import HeaderActionPanel from './HeaderActionPanel';
 
 const { prefix: carbonPrefix } = settings;
 
@@ -54,8 +54,11 @@ const HeaderAction = ({ item, index, onToggleExpansion, isExpanded }) => {
    * Close expanded menu when ESC is pressed, then return focus to menu button
    */
   const handleHeaderKeyDown = event => {
-    // Handle ESC keydown for closing the expanded menu.
-    if (event.keyCode === keyCodes.ESC && isExpanded) {
+    // Handle keydowns for opening and closing the menus
+    if (
+      (event.keyCode === keyCodes.ESC && isExpanded) ||
+      (event.keyCode === keyCodes.SPACE || event.keyCode === keyCodes.ENTER)
+    ) {
       event.stopPropagation();
       event.preventDefault();
       onToggleExpansion(item.label);
@@ -80,15 +83,16 @@ const HeaderAction = ({ item, index, onToggleExpansion, isExpanded }) => {
       >
         {item.hasOwnProperty('hasHeaderPanel') ? (
           // Render a subpanel type action
-          <HeaderPanelAction
+          <HeaderActionPanel
             item={item}
             onToggleExpansion={() => onToggleExpansion(item.label)}
             isExpanded={isExpanded}
             ref={menuButtonRef}
+            index={index}
           />
         ) : (
           // otherwise render a submenu type dropdown
-          <HeaderMenu
+          <HeaderActionMenu
             className={`${carbonPrefix}--header-action-btn`}
             key={`menu-item-${item.label}`}
             aria-label={item.label}
