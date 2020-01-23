@@ -2,24 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Button as CarbonButton, Loading } from 'carbon-components-react';
 import { ButtonTypes } from 'carbon-components-react/lib/prop-types/types';
-import styled from 'styled-components';
 import { settings } from 'carbon-components';
+import classNames from 'classnames';
+
+import { IOT_PREFIX } from '../../constants/NamingConv';
 
 const { prefix } = settings;
-
-const StyledButton = styled(CarbonButton)`
-  &&& {
-    justify-content: flex-start;
-    .${prefix}--loading {
-      margin-top: -1rem;
-      margin-bottom: -1rem;
-    }
-    .${prefix}--loading__stroke {
-      stroke: #8c8c8c;
-    }
-  }
-`;
-
 const propTypes = {
   /** Show loading spinner, only new prop */
   loading: PropTypes.bool,
@@ -48,15 +36,15 @@ const defaultProps = {
 const Button = props => {
   const { children, loading, disabled, className, onClick, ...other } = props;
   return (
-    <StyledButton
+    <CarbonButton
       {...other}
       onClick={onClick}
-      className={className}
+      className={classNames(className, `${prefix}--${IOT_PREFIX}--btn`)}
       disabled={disabled || (loading !== undefined && loading !== false)}
     >
       {loading ? <Loading small withOverlay={false} /> : null}
       {children}
-    </StyledButton>
+    </CarbonButton>
   );
 };
 
