@@ -30,7 +30,6 @@ const SimpleList = ({
 
   const [selectedIds, setSelectedIds] = useState([]);
   const [selectedId, setSelectedId] = useState(null);
-  const [expandedId, setExpandedId] = useState(null);
 
   const handleSelect = id => {
     setSelectedId(selectedId === id ? null : id);
@@ -38,8 +37,6 @@ const SimpleList = ({
       selectedId === id ? selectedIds.filter(item => item.id !== id) : [...selectedIds, id]
     );
   };
-
-  const handleExpansion = id => setExpandedId(expandedId === id ? null : id);
 
   const [currentPageNumber, setCurrentPageNumber] = useState(1);
 
@@ -104,7 +101,6 @@ const SimpleList = ({
       selectedId={selectedId}
       selectedIds={selectedIds}
       handleSelect={handleSelect}
-      handleExpansion={handleExpansion}
     />
   );
 };

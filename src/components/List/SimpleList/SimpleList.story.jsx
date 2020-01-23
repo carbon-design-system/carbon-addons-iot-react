@@ -64,7 +64,31 @@ const getFatRowListItems = num =>
       content: {
         value: `Item ${idx + 1}`,
         secondaryValue: `This is a description or some secondary bit of data for Item ${idx + 100}`,
+        rowActions: [],
+      },
+    }));
+
+const getFatRowListItemsWithActions = num =>
+  Array(num)
+    .fill(0)
+    .map((i, idx) => ({
+      id: idx + 1,
+      content: {
+        value: `Item ${idx + 1}`,
+        secondaryValue: `This is a description or some secondary bit of data for Item ${idx + 100}`,
         rowActions,
+      },
+    }));
+
+const getFatRowListItemsWithOverflowMenu = num =>
+  Array(num)
+    .fill(0)
+    .map((i, idx) => ({
+      id: idx + 1,
+      content: {
+        value: `Item ${idx + 1}`,
+        secondaryValue: `This is a description or some secondary bit of data for Item ${idx + 100}`,
+        rowActions: rowActionsOverFlowMenu,
       },
     }));
 
@@ -223,6 +247,43 @@ storiesOf('Watson IoT Experimental|SimpleList', module)
           }}
           buttons={buttonsToRender}
           items={getListItemsWithOverflowMenu(5)}
+          pageSize="sm"
+        />
+      </div>
+    )),
+    { info: { text: `` } }
+  )
+
+  .add(
+    'fat row list with actions',
+    withReadme(SimpleListREADME, () => (
+      <div style={{ width: 500, height: 600, background: '#fee', padding: 10 }}>
+        <SimpleList
+          title={text('Text', 'Simple List')}
+          hasSearch
+          i18n={{
+            searchPlaceHolderText: 'Enter a search',
+          }}
+          buttons={buttonsToRender}
+          items={getFatRowListItemsWithActions(5)}
+          pageSize="sm"
+        />
+      </div>
+    )),
+    { info: { text: `` } }
+  )
+  .add(
+    'fat row list with overflow menu',
+    withReadme(SimpleListREADME, () => (
+      <div style={{ width: 500, height: 600, background: '#fee', padding: 10 }}>
+        <SimpleList
+          title={text('Text', 'Simple List')}
+          hasSearch
+          i18n={{
+            searchPlaceHolderText: 'Enter a search',
+          }}
+          buttons={buttonsToRender}
+          items={getFatRowListItemsWithOverflowMenu(5)}
           pageSize="sm"
         />
       </div>
