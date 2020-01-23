@@ -52,31 +52,34 @@ const Breadcrumb = ({ children, className, hasOverflow, ...other }) => {
   const [afterOverflowItems, setAfterOverflowItems] = useState(childrenItems.slice(1));
 
   /** update breadcrumbs  */
-  useEffect(() => {
-    if (hasOverflow) {
-      // The visible list is overflowing
-      if (breadcrumbRef.current.clientWidth < breadcrumbRef.current.scrollWidth) {
-        // Record the width of the list
-        breakingWidth.current.push(breadcrumbRef.current.scrollWidth);
-        if (afterOverflowItems.length > 1) {
-          // Move item to the hidden list
-          setOverflowItems([...overflowItems, afterOverflowItems.shift()]);
-          setAfterOverflowItems([...afterOverflowItems]);
+  useEffect(
+    () => {
+      if (hasOverflow) {
+        // The visible list is overflowing
+        if (breadcrumbRef.current.clientWidth < breadcrumbRef.current.scrollWidth) {
+          // Record the width of the list
+          breakingWidth.current.push(breadcrumbRef.current.scrollWidth);
+          if (afterOverflowItems.length > 1) {
+            // Move item to the hidden list
+            setOverflowItems([...overflowItems, afterOverflowItems.shift()]);
+            setAfterOverflowItems([...afterOverflowItems]);
+          }
+          // The visible list is not overflowing
+        } else if (
+          breakingWidth.current[breakingWidth.current.length - 1] >= 0 &&
+          breadcrumbRef.current.clientWidth >
+            breakingWidth.current[breakingWidth.current.length - 1] &&
+          overflowItems.length > 0
+        ) {
+          // Move the item to the visible list
+          setAfterOverflowItems([overflowItems.pop(), ...afterOverflowItems]);
+          setOverflowItems([...overflowItems]);
+          breakingWidth.current.pop();
         }
-        // The visible list is not overflowing
-      } else if (
-        breakingWidth.current[breakingWidth.current.length - 1] >= 0 &&
-        breadcrumbRef.current.clientWidth >
-          breakingWidth.current[breakingWidth.current.length - 1] &&
-        overflowItems.length > 0
-      ) {
-        // Move the item to the visible list
-        setAfterOverflowItems([overflowItems.pop(), ...afterOverflowItems]);
-        setOverflowItems([...overflowItems]);
-        breakingWidth.current.pop();
       }
-    }
-  });
+    }, // eslint-disable-next-line react-hooks/exhaustive-deps
+    [breadcrumbRef.current?.clientWidth, breadcrumbRef.current?.scrollWidth]
+  );
 
   return (
     <div
