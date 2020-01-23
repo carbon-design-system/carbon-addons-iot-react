@@ -16,6 +16,7 @@ const itemPropTypes = {
     icon: PropTypes.node,
   }),
   children: PropTypes.arrayOf(PropTypes.any), // TODO: make this recursive
+  isSelectable: PropTypes.bool,
 };
 
 const propTypes = {
@@ -32,7 +33,6 @@ const propTypes = {
   }), // TODO: fill this in
   pagination: PropTypes.shape(SimplePaginationPropTypes),
   selectedId: PropTypes.string,
-  selectedIds: PropTypes.arrayOf(PropTypes.string),
   expandedIds: PropTypes.arrayOf(PropTypes.string),
   handleSelect: PropTypes.func,
   toggleExpansion: PropTypes.func,
@@ -52,7 +52,6 @@ const defaultProps = {
   },
   pagination: null,
   selectedId: null,
-  selectedIds: [],
   expandedIds: [],
   handleSelect: () => {},
   toggleExpansion: () => {},
@@ -71,7 +70,6 @@ const List = ({
   i18n,
   pagination,
   selectedId,
-  selectedIds,
   expandedIds,
   handleSelect,
   toggleExpansion,
@@ -79,11 +77,12 @@ const List = ({
 }) => {
   const renderItemAndChildren = (item, level) => {
     const hasChildren = item.children && item.children.length > 0;
-    const isSelected = item.id === selectedId && selectedIds.indexOf(item.id) !== -1;
+    const isSelected = item.id === selectedId;
     const isExpanded = expandedIds.filter(rowId => rowId === item.id).length > 0;
 
     const {
       content: { value, secondaryValue, icon, rowActions },
+      isSelectable,
     } = item;
 
     return [
@@ -100,8 +99,8 @@ const List = ({
         selected={isSelected}
         expanded={isExpanded}
         isExpandable={hasChildren}
-        isSelectable={!hasChildren}
         isCategory={item.content.isCategory}
+        isSelectable={isSelectable}
       />,
       ...(hasChildren && isExpanded
         ? item.children.map(child => renderItemAndChildren(child, level + 1))

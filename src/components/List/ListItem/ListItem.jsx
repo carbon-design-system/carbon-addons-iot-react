@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import classnames from 'classnames';
 import { Icon } from 'carbon-components-react';
 import { iconChevronDown, iconChevronUp } from 'carbon-icons';
@@ -51,41 +51,87 @@ const ListItem = ({
   nestingLevel,
   isCategory,
   ...others
-}) => {
-  return (
+}) => (
+  <div
+    className={classnames('list-item', {
+      'list-item__selected': selected,
+      'list-item__large': isLargeRow,
+    })}
+    onClick={() => {
+      if (isSelectable) {
+        onSelect(id);
+      }
+    }}
+  >
+    <div style={{ width: `${nestingLevel * 30}px` }}>&nbsp;</div>
+    {isExpandable && (
+      <div
+        className="list-item--expand-icon"
+        onClick={() => {
+          if (isExpandable) {
+            onExpand(id);
+          }
+        }}
+      >
+        <Icon icon={expanded ? iconChevronUp : iconChevronDown} />
+      </div>
+    )}
     <div
-      className={classnames('list-item', {
-        'list-item__selected': selected,
-        'list-item__large': isLargeRow,
+      className={classnames('list-item--content', {
+        'list-item--content__selected': selected,
+        'list-item--content__large': isLargeRow,
       })}
-      style={{ paddingLeft: ` ${nestingLevel * 30}px` }}
     >
       {isExpandable && (
-        <div
-          className="list-item--expand-icon"
-          onClick={() => {
-            if (isSelectable) {
-              onSelect(id);
-            }
-            if (isExpandable) {
-              onExpand(id);
-            }
-          }}
-        >
-          <Icon icon={expanded ? iconChevronUp : iconChevronDown} description="Expand" />
-        </div>
+        <>
+          <div
+            className="list-item--expand-icon"
+            onClick={() => {
+              if (isSelectable) {
+                onSelect(id);
+              }
+              if (isExpandable) {
+                onExpand(id);
+              }
+            }}
+          >
+            <Icon icon={expanded ? iconChevronUp : iconChevronDown} description="Expand" />
+          </div>
+          {icon && (
+            <div className={`list-item--content--icon list-item--content--icon__${iconPosition}`}>
+              {icon}
+            </div>
+          )}
+        </>
       )}
-
       <div
-        className={classnames('list-item--content', {
-          'list-item--content__selected': selected,
-          'list-item--content__large': isLargeRow,
+        className={classnames('list-item--content--values', {
+          'list-item--content--values__large': isLargeRow,
         })}
       >
-        {icon && (
-          <div className={`list-item--content--icon list-item--content--icon__${iconPosition}`}>
-            {icon}
-          </div>
+        {isLargeRow ? (
+          <React.Fragment>
+            <div
+              className={classnames(
+                'list-item--content--values--main',
+                'list-item--content--values--main__large'
+              )}
+            >
+              <div title={value}>{value}</div>
+              {rowActions ? <div>{rowActions}</div> : null}
+            </div>
+            <div title={secondaryValue} className="list-item--content--values--secondary">
+              {secondaryValue || null}
+            </div>
+          </React.Fragment>
+        ) : (
+          <React.Fragment>
+            <div className="list-item--content--values--main">
+              <div title={value}>{value}</div>
+              {secondaryValue ? <div title={secondaryValue}>{secondaryValue}</div> : null}
+              {rowActions ? <div>{rowActions}</div> : null}
+            </div>
+          </React.Fragment>
         )}
         <div
           className={classnames('list-item--content--values', {
@@ -123,8 +169,8 @@ const ListItem = ({
         </div>
       </div>
     </div>
-  );
-};
+  </div>
+);
 
 ListItem.propTypes = propTypes;
 ListItem.defaultProps = defaultProps;

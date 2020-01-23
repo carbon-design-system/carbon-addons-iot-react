@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Add16, Close16, Edit16 } from '@carbon/icons-react';
 import { storiesOf } from '@storybook/react';
 import { text } from '@storybook/addon-knobs';
@@ -17,6 +17,8 @@ const getListItems = num =>
       id: idx + 1,
       content: { value: `Item ${idx + 1}` },
     }));
+
+const listItemsWithEmptyRow = getListItems(5).concat({ id: 6, content: { value: '' } });
 
 const rowActions = [
   <Edit16 onClick={action('edit')} />,
@@ -200,6 +202,23 @@ storiesOf('Watson IoT Experimental|SimpleList', module)
           buttons={buttonsToRender}
           items={getListItems(20)}
           pageSize="sm"
+        />
+      </div>
+    )),
+    { info: { text: `` } }
+  )
+  .add(
+    'list with empty row',
+    withReadme(SimpleListREADME, () => (
+      <div style={{ width: 500, height: 500, background: '#fee', padding: 10 }}>
+        <SimpleList
+          title={text('Text', 'Simple List')}
+          hasSearch
+          i18n={{
+            searchPlaceHolderText: 'Enter a search',
+          }}
+          buttons={buttonsToRender}
+          items={listItemsWithEmptyRow}
         />
       </div>
     )),
