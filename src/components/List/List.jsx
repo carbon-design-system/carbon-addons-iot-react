@@ -16,6 +16,7 @@ const itemPropTypes = {
     icon: PropTypes.node,
   }),
   children: PropTypes.arrayOf(PropTypes.any), // TODO: make this recursive
+  isSelectable: PropTypes.bool,
 };
 
 const propTypes = {
