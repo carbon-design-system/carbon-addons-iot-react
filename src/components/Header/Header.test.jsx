@@ -6,7 +6,7 @@ import '@testing-library/jest-dom/extend-expect';
 
 import { keyCodes } from '../../constants/KeyCodeConstants';
 
-import Header, { appSwitcher } from './Header';
+import Header, { APP_SWITCHER } from './Header';
 
 React.Fragment = ({ children }) => children;
 
@@ -87,7 +87,7 @@ describe('Header testcases', () => {
 
   it('sidepanel should not render', () => {
     const { queryByLabelText } = render(<Header {...HeaderProps} />);
-    expect(queryByLabelText(appSwitcher)).toBeFalsy();
+    expect(queryByLabelText(APP_SWITCHER)).toBeFalsy();
   });
 
   it('sidepanel should render', () => {
@@ -103,7 +103,7 @@ describe('Header testcases', () => {
       /* eslint-enable */
     };
     const { queryAllByLabelText } = render(<Header {...HeaderProps} headerPanel={headerPanel} />);
-    expect(queryAllByLabelText(appSwitcher).length).toBeGreaterThan(0);
+    expect(queryAllByLabelText(APP_SWITCHER).length).toBeGreaterThan(0);
   });
 
   it('children should render inside UL', () => {
@@ -179,14 +179,14 @@ describe('Header testcases', () => {
     };
     const { getByTitle } = render(<Header {...HeaderProps} headerPanel={headerPanel} />);
 
-    fireEvent.click(getByTitle('AppSwitcher'));
-    expect(getByTitle('AppSwitcher').parentNode.lastChild.className).toContain(
-      'bx--header-panel bx--header-panel--expanded action-btn__headerpanel'
+    fireEvent.click(getByTitle(APP_SWITCHER));
+    expect(getByTitle(APP_SWITCHER).parentNode.lastChild.className).toContain(
+      'bx--header-panel bx--header-panel--expanded bx--app-switcher'
     );
 
-    fireEvent.click(getByTitle('AppSwitcher'));
-    expect(getByTitle('AppSwitcher').parentNode.lastChild.className).toContain(
-      'bx--header-panel action-btn__headerpanel action-btn__headerpanel--closed'
+    fireEvent.click(getByTitle(APP_SWITCHER));
+    expect(getByTitle(APP_SWITCHER).parentNode.lastChild.className).toContain(
+      'bx--header-panel bx--app-switcher'
     );
   });
 

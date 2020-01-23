@@ -7,8 +7,11 @@ import {
 import PropTypes from 'prop-types';
 import React from 'react';
 import AppSwitcher from '@carbon/icons-react/lib/app-switcher/20';
+import { settings } from 'carbon-components';
 
 import HeaderActionGroup from './HeaderActionGroup';
+
+const { prefix: carbonPrefix } = settings;
 
 /** common proptypes associated with child content for a header action */
 export const ChildContentPropTypes = {
@@ -69,7 +72,7 @@ const defaultProps = {
   url: '#',
 };
 
-export const appSwitcher = 'AppSwitcher';
+export const APP_SWITCHER = 'AppSwitcher';
 
 /**
  * UI header with multiple side panels functionality and dropdowns
@@ -90,7 +93,7 @@ const Header = ({
     : [
         ...actionItemsProp,
         {
-          label: appSwitcher,
+          label: APP_SWITCHER,
           hasHeaderPanel: true,
           btnContent: (
             <AppSwitcher
@@ -102,7 +105,7 @@ const Header = ({
           childContent: [
             {
               metaData: {
-                className: headerPanel.className,
+                className: `${carbonPrefix}--app-switcher ${headerPanel.className}`,
                 element: 'a',
               },
               content: <headerPanel.content />,

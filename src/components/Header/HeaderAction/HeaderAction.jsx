@@ -11,8 +11,6 @@ import HeaderActionPanel from './HeaderActionPanel';
 
 const { prefix: carbonPrefix } = settings;
 
-export const appSwitcher = 'AppSwitcher';
-
 export const HeaderActionPropTypes = {
   /** details of the item to render in the action */
   item: PropTypes.shape(HeaderActionItemPropTypes).isRequired,
