@@ -1,11 +1,61 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import ListItem from './ListItem/ListItem';
-import ListHeader from './ListHeader/ListHeader';
+
 import SimplePagination from '../SimplePagination/SimplePagination';
 
+import ListItem from './ListItem/ListItem';
+import ListHeader from './ListHeader/ListHeader';
+
 const childrenPropType = PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]);
+
+const itemPropTypes = {
+  id: PropTypes.string,
+  content: PropTypes.shape({
+    value: PropTypes.string,
+    icon: PropTypes.node,
+  }),
+  children: PropTypes.arrayOf(PropTypes.any), // TODO: make this recursive
+};
+
+const propTypes = {
+  title: PropTypes.string.isRequired,
+  search: PropTypes.func,
+  buttons: PropTypes.arrayOf(PropTypes.node),
+  items: PropTypes.arrayOf(itemPropTypes).isRequired,
+  isFullHeight: PropTypes.bool,
+  i18n: PropTypes.any, // TODO: fill this in
+  pagination: PropTypes.any, // TODO: find this
+  selectedId: PropTypes.string,
+  selectedIds: PropTypes.arrayOf(PropTypes.string),
+  expandedIds: PropTypes.arrayOf(PropTypes.string),
+  handleSelect: PropTypes.func,
+  toggleExpansion: PropTypes.func,
+
+  // Do we need these below?
+  children: childrenPropType,
+  id: PropTypes.string,
+  nestingLevel: PropTypes.string,
+};
+
+const defaultProps = {
+  search: () => {},
+  buttons: [],
+  isFullHeight: false,
+  i18n: {
+    searchPlaceHolderText: 'Enter a value',
+  },
+  pagination: null,
+  selectedId: null,
+  selectedIds: [],
+  expandedIds: [],
+  handleSelect: () => {},
+  toggleExpansion: () => {},
+
+  children: [],
+  id: null,
+  nestingLevel: null,
+};
 
 const List = ({
   title,
@@ -22,29 +72,6 @@ const List = ({
   toggleExpansion,
   ...others
 }) => {
-  const propTypes = {
-    children: childrenPropType,
-    id: PropTypes.string,
-    nextingLevel: PropTypes.string,
-  };
-
-  const defaultProps = {
-    children: [],
-    i18n: {
-      searchPlaceHolderText: 'Enter a value',
-    },
-    id: null,
-    nestingLevel: null,
-    onSelect: () => {},
-    onExpand: () => {},
-    selected: false,
-    expanded: false,
-    selectedId: null,
-    expandedIds: [],
-    isExpandable: false,
-    isSelectable: false,
-  };
-
   const renderItemAndChildren = (item, level) => {
     const hasChildren = item.children && item.children.length > 0;
     const isSelected = item.id === selectedId && selectedIds.indexOf(item.id) !== -1;
@@ -96,5 +123,8 @@ const List = ({
     </div>
   );
 };
+
+List.propTypes = propTypes;
+List.defaultProps = defaultProps;
 
 export default List;
