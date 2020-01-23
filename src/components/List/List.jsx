@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
-import SimplePagination from '../SimplePagination/SimplePagination';
+import SimplePagination, { SimplePaginationPropTypes } from '../SimplePagination/SimplePagination';
 
 import ListItem from './ListItem/ListItem';
 import ListHeader from './ListHeader/ListHeader';
@@ -25,7 +25,7 @@ const propTypes = {
   items: PropTypes.arrayOf(itemPropTypes).isRequired,
   isFullHeight: PropTypes.bool,
   i18n: PropTypes.any, // TODO: fill this in
-  pagination: PropTypes.any, // TODO: find this
+  pagination: SimplePaginationPropTypes, // TODO: find this
   selectedId: PropTypes.string,
   selectedIds: PropTypes.arrayOf(PropTypes.string),
   expandedIds: PropTypes.arrayOf(PropTypes.string),

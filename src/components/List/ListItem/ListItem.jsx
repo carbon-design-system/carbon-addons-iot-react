@@ -1,23 +1,23 @@
 import React, { useState } from 'react';
 import classnames from 'classnames';
-import { Icon, PropTypes } from 'carbon-components-react';
+import { Icon } from 'carbon-components-react';
 import { iconChevronDown, iconChevronUp } from 'carbon-icons';
+import PropTypes from 'prop-types';
 
 const propTypes = {
   id: PropTypes.string.isRequired,
   isLargeRow: PropTypes.bool,
   isExpandable: PropTypes.bool,
   onExpand: PropTypes.func,
-  expanded: PropTypes.any, // TODO
   isSelectable: PropTypes.bool,
   onSelect: PropTypes.func,
-  selected: PropTypes.any, // TODO
   value: PropTypes.string.isRequired,
   secondaryValue: PropTypes.string,
-  rowActions: PropTypes.any, // TODO
+  rowActions: PropTypes.arrayOf(PropTypes.node), // TODO
   icon: PropTypes.node,
   iconPosition: PropTypes.string,
   nestingLevel: PropTypes.string,
+  isCategory: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -27,9 +27,11 @@ const defaultProps = {
   isSelectable: false,
   onSelect: null,
   secondaryValue: null,
+  rowActions: [],
   icon: null,
   iconPosition: 'left',
   nestingLevel: null,
+  isCategory: false,
 };
 
 const ListItem = ({
@@ -47,6 +49,7 @@ const ListItem = ({
   icon,
   iconPosition = 'left', // or "right"
   nestingLevel,
+  isCategory,
   ...others
 }) => {
   console.log(rowActions);

@@ -11,6 +11,10 @@
     padding: $spacing-05;
   }
 
+  &--category {
+    font-weight: bold;
+  }
+
   &__selected {
     border-left: solid $interactive-01;
     background: $selected-ui;
