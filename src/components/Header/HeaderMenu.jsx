@@ -1,8 +1,9 @@
 import ChevronDownGlyph from '@carbon/icons-react/lib/chevron--down';
-import { settings } from 'carbon-components';
 import cx from 'classnames';
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
+
+import { settings } from '../../constants/Settings';
 
 const { prefix } = settings;
 

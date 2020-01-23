@@ -11,8 +11,9 @@ import {
 import AppSwitcher from '@carbon/icons-react/lib/app-switcher/20';
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
-import { settings } from 'carbon-components';
 import cn from 'classnames';
+
+import { settings } from '../../constants/Settings';
 
 import HeaderMenu from './HeaderMenu';
 

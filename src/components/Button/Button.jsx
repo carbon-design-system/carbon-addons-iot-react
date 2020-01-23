@@ -2,12 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Button as CarbonButton, Loading } from 'carbon-components-react';
 import { ButtonTypes } from 'carbon-components-react/lib/prop-types/types';
-import { settings } from 'carbon-components';
 import classNames from 'classnames';
 
-import { IOT_PREFIX } from '../../constants/NamingConv';
+import { settings } from '../../constants/Settings';
 
-const { prefix } = settings;
+const { iotPrefix } = settings;
 const propTypes = {
   /** Show loading spinner, only new prop */
   loading: PropTypes.bool,
@@ -39,7 +38,7 @@ const Button = props => {
     <CarbonButton
       {...other}
       onClick={onClick}
-      className={classNames(className, `${prefix}--${IOT_PREFIX}--btn`)}
+      className={classNames(className, `${iotPrefix}--btn`)}
       disabled={disabled || (loading !== undefined && loading !== false)}
     >
       {loading ? <Loading small withOverlay={false} /> : null}
