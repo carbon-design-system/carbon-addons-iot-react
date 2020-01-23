@@ -57,15 +57,17 @@ const ListItem = ({
       'list-item__selected': selected,
       'list-item__large': isLargeRow,
     })}
-    style={{ paddingLeft: ` ${nestingLevel * 30}px` }}
+    onClick={() => {
+      if (isSelectable) {
+        onSelect(id);
+      }
+    }}
   >
+    <div style={{ width: `${nestingLevel * 30}px` }}>&nbsp;</div>
     {isExpandable && (
       <div
         className="list-item--expand-icon"
         onClick={() => {
-          if (isSelectable) {
-            onSelect(id);
-          }
           if (isExpandable) {
             onExpand(id);
           }

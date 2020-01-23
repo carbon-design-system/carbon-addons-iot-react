@@ -59,7 +59,7 @@ storiesOf('Watson IoT Experimental|ListItem', module)
       <ListItem
         value="List Item"
         secondaryValue="With isLargeRow, the secondary value serves primarily as a description field for the list item"
-        isLargeRow={boolean('isLargeRow', false)}
+        isLargeRow={boolean('isLargeRow', true)}
       />
     </div>
   ))
