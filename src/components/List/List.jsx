@@ -17,9 +17,9 @@ const List = ({
   pagination,
   selectedId,
   selectedIds,
-  expandedId,
+  expandedIds,
   handleSelect,
-  handleExpansion,
+  toggleExpansion,
   ...others
 }) => {
   const propTypes = {
@@ -39,6 +39,8 @@ const List = ({
     onExpand: () => {},
     selected: false,
     expanded: false,
+    selectedId: null,
+    expandedIds: [],
     isExpandable: false,
     isSelectable: false,
   };
@@ -46,7 +48,7 @@ const List = ({
   const renderItemAndChildren = (item, level) => {
     const hasChildren = item.children && item.children.length > 0;
     const isSelected = item.id === selectedId && selectedIds.indexOf(item.id) !== -1;
-    const isExpanded = item.id === expandedId;
+    const isExpanded = expandedIds.filter(rowId => rowId === item.id).length > 0;
 
     const {
       content: { value, secondaryValue, rowActions },
@@ -60,7 +62,7 @@ const List = ({
         secondaryValue={secondaryValue}
         rowActions={rowActions}
         onSelect={handleSelect}
-        onExpand={handleExpansion}
+        onExpand={toggleExpansion}
         selected={isSelected}
         expanded={isExpanded}
         isExpandable={hasChildren}

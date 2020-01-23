@@ -29,7 +29,7 @@
     width: 100%;
     align-items: center;
     &__large {
-      align-items: top;
+      align-items: flex-start;
     }
     &--icon {
       padding-top: $spacing-01;

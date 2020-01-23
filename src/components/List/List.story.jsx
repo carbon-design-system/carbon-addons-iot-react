@@ -1,127 +1,64 @@
-import React, { Component } from 'react';
+import React, { useState, Component } from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { text, select } from '@storybook/addon-knobs';
+import { Add16 } from '@carbon/icons-react';
 
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 import { getCardMinSize } from '../../utils/componentUtilityFunctions';
 import List from './List';
-
-const items = [
-  {
-    id: '1',
-    name: 'Item 1',
-    children: [
-      { id: '6', name: 'item 6' },
-      { id: '7', name: 'item 7' },
-      { id: '8', name: 'item 8' },
-    ],
-  },
-  {
-    id: '2',
-    name: 'Item 2',
-    children: [{ id: '9', name: 'item 9', children: [{ id: '15', name: 'item 15' }] }],
-  },
-  { id: '3', name: 'Item 3', children: [{ id: '10', name: 'item 10' }] },
-  { id: '4', name: 'Item 4', children: [] },
-  { id: '5', name: 'Item 5', children: [{ id: '11', name: 'item 11' }] },
-];
-
-const data2 = [
-  {
-    id: '1',
-    name: 'Item 1',
-    children: [
-      { id: 'ch11', name: 'Child item 1' },
-      { id: 'ch12', name: 'Child item 2' },
-      { id: 'ch13', name: 'Child item 3' },
-    ],
-  },
-  {
-    id: '2',
-    name: 'Item 2',
-    children: [
-      { id: 'ch21', name: 'Child item 1' },
-      { id: 'ch22', name: 'Child item 2' },
-      { id: 'ch23', name: 'Child item 3' },
-    ],
-  },
-  {
-    id: '3',
-    name: 'Item 3',
-    children: [
-      { id: 'ch31', name: 'Child item 1' },
-      { id: 'ch32', name: 'Child item 2' },
-      { id: 'ch33', name: 'Child item 3' },
-    ],
-  },
-];
-
-const data1 = [
-  {
-    id: '1',
-    name: 'Item 1',
-  },
-  {
-    id: '2',
-    name: 'Item 2',
-  },
-  {
-    id: '3',
-    name: 'Item 3',
-  },
-];
+import Button from '../Button/Button';
 
 const data3 = [
   {
     id: '1',
-    name: 'Item 1',
+    content: { value: 'Item 1' },
     children: [
       {
         id: 'ch11',
-        name: 'Child item 1',
+        content: { value: 'Child item 1' },
         children: [
-          { id: 'ch111', name: 'Child item 1' },
-          { id: 'ch112', name: 'Child item 2' },
-          { id: 'ch113', name: 'Child item 3' },
+          { id: 'ch111', content: { value: 'Child item 1' } },
+          { id: 'ch112', content: { value: 'Child item 2' } },
+          { id: 'ch113', content: { value: 'Child item 3' } },
         ],
       },
       {
         id: 'ch12',
-        name: 'Child item 2',
+        content: { value: 'Child item 2' },
         children: [
-          { id: 'ch121', name: 'Child item 1' },
-          { id: 'ch122', name: 'Child item 2' },
-          { id: 'ch123', name: 'Child item 3' },
+          { id: 'ch121', content: { value: 'Child item 1' } },
+          { id: 'ch122', content: { value: 'Child item 2' } },
+          { id: 'ch123', content: { value: 'Child item 3' } },
         ],
       },
       {
         id: 'ch13',
-        name: 'Child item 3',
+        content: { value: 'Child item 3' },
         children: [
-          { id: 'ch131', name: 'Child item 1' },
-          { id: 'ch132', name: 'Child item 2' },
-          { id: 'ch133', name: 'Child item 3' },
+          { id: 'ch131', content: { value: 'Child item 1' } },
+          { id: 'ch132', content: { value: 'Child item 2' } },
+          { id: 'ch133', content: { value: 'Child item 3' } },
         ],
       },
     ],
   },
   {
     id: '2',
-    name: 'Item 2',
+    content: { value: 'Item 2' },
     children: [
-      { id: 'ch21', name: 'Child item 1' },
-      { id: 'ch22', name: 'Child item 2' },
-      { id: 'ch23', name: 'Child item 3' },
+      { id: 'ch21', content: { value: 'Child item 1' } },
+      { id: 'ch22', content: { value: 'Child item 2' } },
+      { id: 'ch23', content: { value: 'Child item 3' } },
     ],
   },
   {
     id: '3',
-    name: 'Item 3',
+    content: { value: 'Item 3' },
     children: [
-      { id: 'ch31', name: 'Child item 1' },
-      { id: 'ch32', name: 'Child item 2' },
-      { id: 'ch33', name: 'Child item 3' },
+      { id: 'ch31', content: { value: 'Child item 1' } },
+      { id: 'ch32', content: { value: 'Child item 2' } },
+      { id: 'ch33', content: { value: 'Child item 3' } },
     ],
   },
 ];
@@ -142,13 +79,44 @@ class ListSimple extends Component {
   };
 }
 
-storiesOf('Watson IoT Experimental|List', module)
-  .add('Simple List', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
+const ExpandableList = () => {
+  const [searchValue, setSearchValue] = useState(null);
+  const [expandedIds, setExpandedIds] = useState([]);
+  return (
+    <List
+      title="List"
+      buttons={[<Button renderIcon={Add16} hasIconOnly size="small" />]}
+      search={{
+        value: searchValue,
+        onChange: evt => setSearchValue(evt.target.value),
+      }}
+      items={data3}
+      expandedIds={expandedIds}
+      toggleExpansion={id => {
+        if (expandedIds.filter(rowId => rowId === id).length > 0) {
+          // remove id from array
+          setExpandedIds(expandedIds.filter(rowId => rowId !== id));
+        } else {
+          setExpandedIds(expandedIds.concat([id]));
+        }
+      }}
+      i18n={{
+        searchPlaceHolderText: 'Search...',
+      }}
+    />
+  );
+};
 
-    return <ListSimple id="List" title={text('Text', 'Simple List')} items={data1} size={size} />;
-  })
+storiesOf('Watson IoT Experimental|List', module).add(
+  'Stateful list with dynamic expansion',
+  () => (
+    <div style={{ width: 400 }}>
+      <ExpandableList />
+    </div>
+  )
+);
 
+/*
   .add('Simple List with title and button in header', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
 
@@ -205,3 +173,4 @@ storiesOf('Watson IoT Experimental|List', module)
       />
     );
   });
+  */
