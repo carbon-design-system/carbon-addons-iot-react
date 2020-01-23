@@ -18503,6 +18503,13 @@ use-deep-compare-effect@^1.2.0:
     "@babel/runtime" "^7.2.0"
     dequal "^1.0.0"
 
+use-resize-observer@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/use-resize-observer/-/use-resize-observer-5.0.0.tgz#2c1a1643bf0891ca094163c60ad0b08948540ec3"
+  integrity sha512-mQGibkHUeXW6iAog7wCv5UduAxWA8CTmhu54Z3s5IMPafvYhFJDRUzj36/9JrybFJ86HeIPZsV58ZhSghQJF/Q==
+  dependencies:
+    resize-observer-polyfill "^1.5.1"
+
 use@^3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/use/-/use-3.1.0.tgz#14716bf03fdfefd03040aef58d8b4b85f3a7c544"
