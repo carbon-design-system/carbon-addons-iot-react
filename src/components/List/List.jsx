@@ -51,7 +51,7 @@ const List = ({
     const isExpanded = expandedIds.filter(rowId => rowId === item.id).length > 0;
 
     const {
-      content: { value, secondaryValue, rowActions },
+      content: { value, secondaryValue, icon, rowActions },
     } = item;
 
     return [
@@ -59,6 +59,7 @@ const List = ({
         id={item.id}
         nestingLevel={level}
         value={value}
+        icon={icon}
         secondaryValue={secondaryValue}
         rowActions={rowActions}
         onSelect={handleSelect}
