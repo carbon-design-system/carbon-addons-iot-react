@@ -3742,7 +3742,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
                   >
                     Last 7 days
                   </div>
-                  <button
+                  <div
                     aria-expanded={false}
                     aria-haspopup={true}
                     aria-label="Menu"
@@ -3751,6 +3751,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
                     onClose={[Function]}
                     onKeyDown={[Function]}
                     open={false}
+                    role="button"
                     tabIndex={0}
                     title="Open and close list of options"
                   >
@@ -3785,7 +3786,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
                         Last 7 days
                       </title>
                     </svg>
-                  </button>
+                  </div>
                 </div>
               </div>
             </div>
