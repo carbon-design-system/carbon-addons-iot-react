@@ -21,7 +21,8 @@
   }
 
   &--expand-icon {
-    margin: $spacing-01;
+    cursor: pointer;
+    margin-right: $spacing-04;
     padding: $spacing-01;
     transform: rotate(180deg);
   }
