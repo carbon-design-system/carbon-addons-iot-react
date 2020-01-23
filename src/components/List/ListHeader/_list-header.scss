@@ -20,9 +20,15 @@
   }
 
   &--search {
+    padding: 0 1rem;
+    height: rem(56px);
+    display: flex;
+    align-items: center;
+    width: 100%;
     background: $ui-01;
-    padding: $spacing-03;
-    width: 10rem;
+    & > div {
+      flex: 1;
+    }
   }
 
   &--search__expanded {

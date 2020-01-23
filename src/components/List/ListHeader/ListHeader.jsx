@@ -9,12 +9,13 @@ const ListHeader = ({ title, buttons, search, i18n, ...others }) => {
         <div className="list-header--btn-container">{buttons}</div>
       </div>
       {search !== null ? (
-        <div>
+        <div className="list-header--search">
           <Search
             placeHolderText={i18n.searchPlaceHolderText}
             onChange={search.onChange}
             size="sm"
-            className="list--search"
+            small
+            className=""
             value={search.value}
           />
         </div>
