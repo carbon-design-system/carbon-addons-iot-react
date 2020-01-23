@@ -1,27 +1,51 @@
 import React, { useState } from 'react';
 import classnames from 'classnames';
-import { Icon } from 'carbon-components-react';
+import { Icon, PropTypes } from 'carbon-components-react';
 import { iconChevronDown, iconChevronUp } from 'carbon-icons';
+
+const propTypes = {
+  id: PropTypes.string.isRequired,
+  isLargeRow: PropTypes.bool,
+  isExpandable: PropTypes.bool,
+  onExpand: PropTypes.func,
+  expanded: PropTypes.any, // TODO
+  isSelectable: PropTypes.bool,
+  onSelect: PropTypes.func,
+  selected: PropTypes.any, // TODO
+  value: PropTypes.string.isRequired,
+  secondaryValue: PropTypes.string,
+  rowActions: PropTypes.any, // TODO
+  icon: PropTypes.node,
+  iconPosition: PropTypes.string,
+  nestingLevel: PropTypes.string,
+};
+
+const defaultProps = {
+  isLargeRow: false,
+  isExpandable: false,
+  onExpand: null,
+  isSelectable: false,
+  onSelect: null,
+  secondaryValue: null,
+  icon: null,
+  iconPosition: 'left',
+  nestingLevel: null,
+};
 
 const ListItem = ({
   id,
   isLargeRow,
-
-  isExpandable = false,
+  isExpandable,
   onExpand,
   expanded,
-
-  isSelectable = false,
+  isSelectable,
   onSelect,
   selected,
-
   value,
   secondaryValue,
-
   rowActions,
   icon,
   iconPosition = 'left', // or "right"
-
   nestingLevel,
   ...others
 }) => {
@@ -95,5 +119,8 @@ const ListItem = ({
     </div>
   );
 };
+
+ListItem.propTypes = propTypes;
+ListItem.defaultProps = defaultProps;
 
 export default ListItem;
