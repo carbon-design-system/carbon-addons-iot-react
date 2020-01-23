@@ -5,11 +5,10 @@ import { text } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import { Button, OverflowMenu, OverflowMenuItem } from 'carbon-components-react';
 import { withReadme } from 'storybook-readme';
+import { Action } from 'rxjs/internal/scheduler/Action';
 
 import SimpleList from './SimpleList';
-
 import SimpleListREADME from './README.md';
-import { Action } from 'rxjs/internal/scheduler/Action';
 
 const getListItems = num =>
   Array(num)
@@ -94,8 +93,15 @@ const getFatRowListItemsWithOverflowMenu = num =>
 
 const buttonsToRender = [
   <Edit16 />,
-  <Button renderIcon={Close16} hasIconOnly kind="secondary" size="small" onClick={() => {}} />,
-  <Button renderIcon={Add16} hasIconOnly size="small" />,
+  <Button
+    renderIcon={Close16}
+    hasIconOnly
+    kind="secondary"
+    size="small"
+    onClick={() => {}}
+    iconDescription="Close"
+  />,
+  <Button renderIcon={Add16} hasIconOnly size="small" iconDescription="Add" />,
 ];
 
 storiesOf('Watson IoT Experimental|SimpleList', module)

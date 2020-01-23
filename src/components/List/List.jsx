@@ -20,12 +20,17 @@ const itemPropTypes = {
 
 const propTypes = {
   title: PropTypes.string.isRequired,
-  search: PropTypes.func,
+  search: PropTypes.shape({
+    onChange: PropTypes.func,
+    value: PropTypes.string,
+  }),
   buttons: PropTypes.arrayOf(PropTypes.node),
-  items: PropTypes.arrayOf(itemPropTypes).isRequired,
+  items: PropTypes.arrayOf(PropTypes.shape(itemPropTypes)).isRequired,
   isFullHeight: PropTypes.bool,
-  i18n: PropTypes.any, // TODO: fill this in
-  pagination: SimplePaginationPropTypes, // TODO: find this
+  i18n: PropTypes.shape({
+    searchPlaceHolderText: PropTypes.string,
+  }), // TODO: fill this in
+  pagination: PropTypes.shape(SimplePaginationPropTypes),
   selectedId: PropTypes.string,
   selectedIds: PropTypes.arrayOf(PropTypes.string),
   expandedIds: PropTypes.arrayOf(PropTypes.string),
@@ -35,11 +40,11 @@ const propTypes = {
   // Do we need these below?
   children: childrenPropType,
   id: PropTypes.string,
-  nestingLevel: PropTypes.string,
+  nestingLevel: PropTypes.number,
 };
 
 const defaultProps = {
-  search: () => {},
+  search: null,
   buttons: [],
   isFullHeight: false,
   i18n: {
@@ -59,7 +64,7 @@ const defaultProps = {
 
 const List = ({
   title,
-  search = null,
+  search,
   buttons,
   items,
   isFullHeight,
@@ -84,6 +89,7 @@ const List = ({
     return [
       <ListItem
         id={item.id}
+        key={`${item.id}-list-item-${level}-${value}`}
         nestingLevel={level}
         value={value}
         icon={icon}
@@ -95,6 +101,7 @@ const List = ({
         expanded={isExpanded}
         isExpandable={hasChildren}
         isSelectable={!hasChildren}
+        isCategory={item.content.isCategory}
       />,
       ...(hasChildren && isExpanded
         ? item.children.map(child => renderItemAndChildren(child, level + 1))

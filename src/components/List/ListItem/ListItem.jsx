@@ -16,7 +16,7 @@ const propTypes = {
   rowActions: PropTypes.arrayOf(PropTypes.node), // TODO
   icon: PropTypes.node,
   iconPosition: PropTypes.string,
-  nestingLevel: PropTypes.string,
+  nestingLevel: PropTypes.number,
   isCategory: PropTypes.bool,
 };
 
@@ -52,7 +52,6 @@ const ListItem = ({
   isCategory,
   ...others
 }) => {
-  console.log(rowActions);
   return (
     <div
       className={classnames('list-item', {
@@ -73,7 +72,7 @@ const ListItem = ({
             }
           }}
         >
-          <Icon icon={expanded ? iconChevronUp : iconChevronDown} />
+          <Icon icon={expanded ? iconChevronUp : iconChevronDown} description="Expand" />
         </div>
       )}
 
@@ -101,7 +100,9 @@ const ListItem = ({
                   'list-item--content--values--main__large'
                 )}
               >
-                <div title={value}>{value}</div>
+                <div title={value} className={isCategory ? 'list-item--category' : null}>
+                  {value}
+                </div>
                 {rowActions ? <div>{rowActions}</div> : null}
               </div>
               <div title={secondaryValue} className="list-item--content--values--secondary">
@@ -111,7 +112,9 @@ const ListItem = ({
           ) : (
             <React.Fragment>
               <div className="list-item--content--values--main">
-                <div title={value}>{value}</div>
+                <div title={value} className={isCategory ? 'list-item--category' : null}>
+                  {value}
+                </div>
                 {secondaryValue ? <div title={secondaryValue}>{secondaryValue}</div> : null}
                 {rowActions ? <div>{rowActions}</div> : null}
               </div>

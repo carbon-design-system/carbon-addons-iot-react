@@ -1,5 +1,26 @@
 import React from 'react';
 import { Search } from 'carbon-components-react';
+import PropTypes from 'prop-types';
+
+const propTypes = {
+  title: PropTypes.string.isRequired,
+  buttons: PropTypes.arrayOf(PropTypes.node),
+  search: PropTypes.shape({
+    onChange: PropTypes.func,
+    value: PropTypes.string,
+  }),
+  i18n: PropTypes.shape({
+    searchPlaceHolderText: PropTypes.string,
+  }).isRequired,
+};
+
+const defaultProps = {
+  buttons: [],
+  search: {
+    onChange: () => {},
+    value: '',
+  },
+};
 
 const ListHeader = ({ title, buttons, search, i18n, ...others }) => {
   return (
@@ -8,7 +29,7 @@ const ListHeader = ({ title, buttons, search, i18n, ...others }) => {
         <div className="list-header--title">{title}</div>
         <div className="list-header--btn-container">{buttons}</div>
       </div>
-      {search !== null ? (
+      {search && (
         <div className="list-header--search">
           <Search
             placeHolderText={i18n.searchPlaceHolderText}
@@ -17,11 +38,15 @@ const ListHeader = ({ title, buttons, search, i18n, ...others }) => {
             small
             className=""
             value={search.value}
+            labelText="Search"
           />
         </div>
-      ) : null}
+      )}
     </div>
   );
 };
+
+ListHeader.propTypes = propTypes;
+ListHeader.defaultProps = defaultProps;
 
 export default ListHeader;

@@ -12,7 +12,9 @@
   }
 
   &--category {
-    font-weight: bold;
+    //font-weight: bold;
+    @include type-style('productive-heading-02');
+    color: black; // TODO: change this to proper variable
   }
 
   &__selected {

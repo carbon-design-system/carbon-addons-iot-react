@@ -71,4 +71,10 @@ storiesOf('Watson IoT Experimental|ListItem', module)
         isLargeRow
       />
     </div>
+  ))
+
+  .add('isCategory', () => (
+    <div style={{ width: 400 }}>
+      <ListItem value="List Item" isCategory />
+    </div>
   ));
