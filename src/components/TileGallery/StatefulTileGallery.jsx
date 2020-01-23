@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import get from 'lodash/get';
 import escapeRegExp from 'lodash/escapeRegExp';
-import { ButtonTypes } from 'carbon-components-react/lib/prop-types/types';
+import { ButtonKinds } from 'carbon-components-react/lib/prop-types/types';
 
 import PageTitleBar from '../PageTitleBar';
 import Button from '../Button';
@@ -69,7 +69,7 @@ const propTypes = {
   /** Custom className for Button component */
   buttonClassName: PropTypes.string,
   /** Button kind */
-  buttonKind: ButtonTypes.buttonKind,
+  buttonKind: PropTypes.oneOf(ButtonKinds),
   /** Button content */
   buttonText: PropTypes.string,
 };
