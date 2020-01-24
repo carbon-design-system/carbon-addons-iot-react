@@ -7,7 +7,8 @@ import {
 import PropTypes from 'prop-types';
 import React from 'react';
 import AppSwitcher from '@carbon/icons-react/lib/app-switcher/20';
-import { settings } from 'carbon-components';
+
+import { settings } from '../../constants/Settings';
 
 import HeaderActionGroup from './HeaderActionGroup';
 

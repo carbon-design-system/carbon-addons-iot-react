@@ -67,7 +67,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                 <div
                   className="CardToolbar__ToolbarDateRangeWrapper-sc-1ekh8ti-1 eWLmmw"
                 >
-                  <div
+                  <button
                     aria-expanded={false}
                     aria-haspopup={true}
                     aria-label="Menu"
@@ -76,7 +76,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                     onClose={[Function]}
                     onKeyDown={[Function]}
                     open={false}
-                    role="button"
                     tabIndex={0}
                     title="Open and close list of options"
                   >
@@ -111,7 +110,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                         open and close list of options
                       </title>
                     </svg>
-                  </div>
+                  </button>
                 </div>
                 <button
                   className="card--toolbar-action CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
@@ -532,7 +531,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                 <div
                   className="CardToolbar__ToolbarDateRangeWrapper-sc-1ekh8ti-1 eWLmmw"
                 >
-                  <div
+                  <button
                     aria-expanded={false}
                     aria-haspopup={true}
                     aria-label="Menu"
@@ -541,7 +540,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                     onClose={[Function]}
                     onKeyDown={[Function]}
                     open={false}
-                    role="button"
                     tabIndex={0}
                     title="Open and close list of options"
                   >
@@ -582,7 +580,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                         open and close list of options
                       </title>
                     </svg>
-                  </div>
+                  </button>
                 </div>
               </div>
             </div>
@@ -858,7 +856,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                 <div
                   className="CardToolbar__ToolbarDateRangeWrapper-sc-1ekh8ti-1 eWLmmw"
                 >
-                  <div
+                  <button
                     aria-expanded={false}
                     aria-haspopup={true}
                     aria-label="Menu"
@@ -867,7 +865,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                     onClose={[Function]}
                     onKeyDown={[Function]}
                     open={false}
-                    role="button"
                     tabIndex={0}
                     title="Open and close list of options"
                   >
@@ -902,7 +899,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                         open and close list of options
                       </title>
                     </svg>
-                  </div>
+                  </button>
                 </div>
               </div>
             </div>
@@ -948,7 +945,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                 <div
                   className="CardToolbar__ToolbarDateRangeWrapper-sc-1ekh8ti-1 eWLmmw"
                 >
-                  <div
+                  <button
                     aria-expanded={false}
                     aria-haspopup={true}
                     aria-label="Menu"
@@ -957,7 +954,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                     onClose={[Function]}
                     onKeyDown={[Function]}
                     open={false}
-                    role="button"
                     tabIndex={0}
                     title="Open and close list of options"
                   >
@@ -992,7 +988,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                         open and close list of options
                       </title>
                     </svg>
-                  </div>
+                  </button>
                 </div>
               </div>
             </div>
@@ -1038,7 +1034,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                 <div
                   className="CardToolbar__ToolbarDateRangeWrapper-sc-1ekh8ti-1 eWLmmw"
                 >
-                  <div
+                  <button
                     aria-expanded={false}
                     aria-haspopup={true}
                     aria-label="Menu"
@@ -1047,7 +1043,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                     onClose={[Function]}
                     onKeyDown={[Function]}
                     open={false}
-                    role="button"
                     tabIndex={0}
                     title="Open and close list of options"
                   >
@@ -1082,7 +1077,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                         open and close list of options
                       </title>
                     </svg>
-                  </div>
+                  </button>
                 </div>
               </div>
             </div>
@@ -1128,7 +1123,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                 <div
                   className="CardToolbar__ToolbarDateRangeWrapper-sc-1ekh8ti-1 eWLmmw"
                 >
-                  <div
+                  <button
                     aria-expanded={false}
                     aria-haspopup={true}
                     aria-label="Menu"
@@ -1137,7 +1132,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                     onClose={[Function]}
                     onKeyDown={[Function]}
                     open={false}
-                    role="button"
                     tabIndex={0}
                     title="Open and close list of options"
                   >
@@ -1172,7 +1166,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                         open and close list of options
                       </title>
                     </svg>
-                  </div>
+                  </button>
                 </div>
               </div>
             </div>
@@ -1218,7 +1212,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                 <div
                   className="CardToolbar__ToolbarDateRangeWrapper-sc-1ekh8ti-1 eWLmmw"
                 >
-                  <div
+                  <button
                     aria-expanded={false}
                     aria-haspopup={true}
                     aria-label="Menu"
@@ -1227,7 +1221,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                     onClose={[Function]}
                     onKeyDown={[Function]}
                     open={false}
-                    role="button"
                     tabIndex={0}
                     title="Open and close list of options"
                   >
@@ -1262,7 +1255,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                         open and close list of options
                       </title>
                     </svg>
-                  </div>
+                  </button>
                 </div>
               </div>
             </div>
@@ -1308,7 +1301,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                 <div
                   className="CardToolbar__ToolbarDateRangeWrapper-sc-1ekh8ti-1 eWLmmw"
                 >
-                  <div
+                  <button
                     aria-expanded={false}
                     aria-haspopup={true}
                     aria-label="Menu"
@@ -1317,7 +1310,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                     onClose={[Function]}
                     onKeyDown={[Function]}
                     open={false}
-                    role="button"
                     tabIndex={0}
                     title="Open and close list of options"
                   >
@@ -1352,7 +1344,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                         open and close list of options
                       </title>
                     </svg>
-                  </div>
+                  </button>
                 </div>
               </div>
             </div>
@@ -1398,7 +1390,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                 <div
                   className="CardToolbar__ToolbarDateRangeWrapper-sc-1ekh8ti-1 eWLmmw"
                 >
-                  <div
+                  <button
                     aria-expanded={false}
                     aria-haspopup={true}
                     aria-label="Menu"
@@ -1407,7 +1399,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                     onClose={[Function]}
                     onKeyDown={[Function]}
                     open={false}
-                    role="button"
                     tabIndex={0}
                     title="Open and close list of options"
                   >
@@ -1442,7 +1433,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                         open and close list of options
                       </title>
                     </svg>
-                  </div>
+                  </button>
                 </div>
               </div>
             </div>
@@ -1553,7 +1544,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                 <div
                   className="CardToolbar__ToolbarDateRangeWrapper-sc-1ekh8ti-1 eWLmmw"
                 >
-                  <div
+                  <button
                     aria-expanded={false}
                     aria-haspopup={true}
                     aria-label="Menu"
@@ -1562,7 +1553,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                     onClose={[Function]}
                     onKeyDown={[Function]}
                     open={false}
-                    role="button"
                     tabIndex={0}
                     title="Open and close list of options"
                   >
@@ -1597,7 +1587,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                         open and close list of options
                       </title>
                     </svg>
-                  </div>
+                  </button>
                 </div>
               </div>
             </div>
@@ -1838,7 +1828,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                 <div
                   className="CardToolbar__ToolbarDateRangeWrapper-sc-1ekh8ti-1 eWLmmw"
                 >
-                  <div
+                  <button
                     aria-expanded={false}
                     aria-haspopup={true}
                     aria-label="Menu"
@@ -1847,7 +1837,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                     onClose={[Function]}
                     onKeyDown={[Function]}
                     open={false}
-                    role="button"
                     tabIndex={0}
                     title="Open and close list of options"
                   >
@@ -1882,7 +1871,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                         open and close list of options
                       </title>
                     </svg>
-                  </div>
+                  </button>
                 </div>
               </div>
             </div>
