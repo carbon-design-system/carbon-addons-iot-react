@@ -11,6 +11,7 @@ const propTypes = {
   onExpand: PropTypes.func,
   isSelectable: PropTypes.bool,
   onSelect: PropTypes.func,
+  selected: PropTypes.bool,
   value: PropTypes.string.isRequired,
   secondaryValue: PropTypes.string,
   rowActions: PropTypes.arrayOf(PropTypes.node), // TODO
@@ -26,6 +27,7 @@ const defaultProps = {
   onExpand: null,
   isSelectable: false,
   onSelect: null,
+  selected: false,
   secondaryValue: null,
   rowActions: [],
   icon: null,
@@ -33,6 +35,24 @@ const defaultProps = {
   nestingLevel: null,
   isCategory: false,
 };
+
+const ListItemWrapper = ({ id, isSelectable, onSelect, selected, isLargeRow, children }) =>
+  isSelectable ? (
+    <div
+      role="button"
+      tabIndex={0}
+      className={classnames('list-item', 'list-item__selectable', {
+        'list-item__selected': selected,
+        'list-item__large': isLargeRow,
+      })}
+      onKeyPress={({ key }) => key === 'Enter' && onSelect(id)}
+      onClick={() => onSelect(id)}
+    >
+      {children}
+    </div>
+  ) : (
+    <div className={classnames('list-item', { 'list-item__large': isLargeRow })}>{children}</div>
+  );
 
 const ListItem = ({
   id,
@@ -51,126 +71,101 @@ const ListItem = ({
   nestingLevel,
   isCategory,
   ...others
-}) => (
-  <div
-    className={classnames('list-item', {
-      'list-item__selected': selected,
-      'list-item__large': isLargeRow,
-    })}
-    onClick={() => {
-      if (isSelectable) {
-        onSelect(id);
-      }
-    }}
-  >
-    <div style={{ width: `${nestingLevel * 30}px` }}>&nbsp;</div>
-    {isExpandable && (
+}) => {
+  const handleExpansionClick = () => isExpandable && onExpand(id);
+
+  const renderNestingOffset = () =>
+    nestingLevel > 0 ? <div style={{ width: `${nestingLevel * 30}px` }}>&nbsp;</div> : null;
+  const renderExpander = () =>
+    isExpandable ? (
       <div
+        role="button"
+        tabIndex={0}
         className="list-item--expand-icon"
-        onClick={() => {
-          if (isExpandable) {
-            onExpand(id);
-          }
-        }}
+        onClick={handleExpansionClick}
+        onKeyPress={({ key }) => key === 'Enter' && handleExpansionClick()}
       >
         <Icon icon={expanded ? iconChevronUp : iconChevronDown} />
       </div>
-    )}
-    <div
-      className={classnames('list-item--content', {
-        'list-item--content__selected': selected,
-        'list-item--content__large': isLargeRow,
-      })}
-    >
-      {isExpandable && (
-        <>
-          <div
-            className="list-item--expand-icon"
-            onClick={() => {
-              if (isSelectable) {
-                onSelect(id);
-              }
-              if (isExpandable) {
-                onExpand(id);
-              }
-            }}
-          >
-            <Icon icon={expanded ? iconChevronUp : iconChevronDown} description="Expand" />
-          </div>
-          {icon && (
-            <div className={`list-item--content--icon list-item--content--icon__${iconPosition}`}>
-              {icon}
-            </div>
-          )}
-        </>
-      )}
+    ) : null;
+  const renderIcon = () =>
+    icon ? (
+      <div className={`list-item--content--icon list-item--content--icon__${iconPosition}`}>
+        {icon}
+      </div>
+    ) : null;
+  const renderRowActions = () =>
+    rowActions && rowActions.length > 0 ? (
+      <div className="list-item--content--row-actions">{rowActions}</div>
+    ) : null;
+
+  return (
+    <ListItemWrapper {...{ id, isSelectable, selected, isLargeRow, onSelect }}>
+      {renderNestingOffset()}
+      {renderExpander()}
       <div
-        className={classnames('list-item--content--values', {
-          'list-item--content--values__large': isLargeRow,
+        className={classnames('list-item--content', {
+          'list-item--content__selected': selected,
+          'list-item--content__large': isLargeRow,
         })}
       >
-        {isLargeRow ? (
-          <React.Fragment>
-            <div
-              className={classnames(
-                'list-item--content--values--main',
-                'list-item--content--values--main__large'
-              )}
-            >
-              <div title={value}>{value}</div>
-              {rowActions ? <div>{rowActions}</div> : null}
-            </div>
-            <div title={secondaryValue} className="list-item--content--values--secondary">
-              {secondaryValue || null}
-            </div>
-          </React.Fragment>
-        ) : (
-          <React.Fragment>
-            <div className="list-item--content--values--main">
-              <div title={value}>{value}</div>
-              {secondaryValue ? <div title={secondaryValue}>{secondaryValue}</div> : null}
-              {rowActions ? <div>{rowActions}</div> : null}
-            </div>
-          </React.Fragment>
-        )}
+        {renderIcon()}
         <div
           className={classnames('list-item--content--values', {
             'list-item--content--values__large': isLargeRow,
           })}
         >
           {isLargeRow ? (
-            <React.Fragment>
+            <>
               <div
                 className={classnames(
                   'list-item--content--values--main',
                   'list-item--content--values--main__large'
                 )}
               >
-                <div title={value} className={isCategory ? 'list-item--category' : null}>
+                <div
+                  className={classnames('list-item--content--values--value', {
+                    'list-item--category': isCategory,
+                  })}
+                  title={value}
+                >
                   {value}
                 </div>
-                {rowActions ? <div>{rowActions}</div> : null}
+                {renderRowActions()}
               </div>
-              <div title={secondaryValue} className="list-item--content--values--secondary">
+              <div
+                title={secondaryValue}
+                className={classnames(
+                  'list-item--content--values--secondary',
+                  'list-item--content--values--secondary__large'
+                )}
+              >
                 {secondaryValue || null}
               </div>
-            </React.Fragment>
+            </>
           ) : (
-            <React.Fragment>
+            <>
               <div className="list-item--content--values--main">
-                <div title={value} className={isCategory ? 'list-item--category' : null}>
+                <div
+                  className={classnames('list-item--content--values--value', {
+                    'list-item--category': isCategory,
+                  })}
+                  title={value}
+                >
                   {value}
                 </div>
-                {secondaryValue ? <div title={secondaryValue}>{secondaryValue}</div> : null}
-                {rowActions ? <div>{rowActions}</div> : null}
+                <div title={secondaryValue} className="list-item--content--values--secondary">
+                  {secondaryValue || null}
+                </div>
+                {renderRowActions()}
               </div>
-            </React.Fragment>
+            </>
           )}
         </div>
       </div>
-    </div>
-  </div>
-);
+    </ListItemWrapper>
+  );
+};
 
 ListItem.propTypes = propTypes;
 ListItem.defaultProps = defaultProps;

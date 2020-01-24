@@ -5,7 +5,6 @@ import { text } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import { Button, OverflowMenu, OverflowMenuItem } from 'carbon-components-react';
 import { withReadme } from 'storybook-readme';
-import { Action } from 'rxjs/internal/scheduler/Action';
 
 import SimpleList from './SimpleList';
 import SimpleListREADME from './README.md';
