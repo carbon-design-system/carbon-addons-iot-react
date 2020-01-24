@@ -311,8 +311,8 @@ storiesOf('Watson IoT Experimental|List', module)
       />
     </div>
   ))
-  .add('with categories', () => (
-    <div style={{ width: 400 }}>
+  .add('with categories, fixed height', () => (
+    <div style={{ width: 400, height: 600 }}>
       <List
         title="Major League Baseball"
         buttons={[headerButton]}
