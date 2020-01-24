@@ -162,25 +162,25 @@ const TableHead = ({
     index: 0,
     element: Node,
     startX: 0,
+    move: 0,
+    direction: 0,
   };
   const mousemoveCallback = e => {
-    const leftColumn = columnRef[columnVar.index].current.getBoundingClientRect();
-    const rightColumn = columnRef[
-      columnVar.index
-    ].current.nextElementSibling.getBoundingClientRect();
     const mousePosition = e.clientX + columnVar.startX;
+    columnVar.direction = e.clientX > columnVar.move ? 'right' : 'left';
     const minColumnWidth = 50;
-    const rightBound =
-      document.dir === 'rtl'
-        ? leftColumn.width + minColumnWidth
-        : leftColumn.width + rightColumn.width - minColumnWidth;
-    const leftBound = document.dir === 'rtl' ? rightColumn.width - minColumnWidth : minColumnWidth;
-    if (mousePosition >= leftBound && mousePosition <= rightBound && document.dir !== 'rtl') {
+    const rightBound = columnWidth[columnVar.index];
+    const leftBound = columnWidth[columnVar.index + 1] - minColumnWidth;
+    if (
+      document.dir !== 'rtl' &&
+      ((columnVar.direction === 'left' && mousePosition > minColumnWidth) ||
+        (columnVar.direction === 'right' && mousePosition < rightBound + leftBound))
+    ) {
       columnVar.element.style.left = `${mousePosition}px`;
     } else if (
-      mousePosition >= -leftBound &&
-      mousePosition <= rightBound &&
-      document.dir === 'rtl'
+      document.dir === 'rtl' &&
+      ((columnVar.direction === 'left' && mousePosition > -leftBound) ||
+        (columnVar.direction === 'right' && mousePosition < rightBound - minColumnWidth))
     ) {
       columnVar.element.style.left = `${mousePosition}px`;
     } else {
@@ -196,16 +196,17 @@ const TableHead = ({
       [columnVar.index + 1]:
         document.dir === 'rtl'
           ? columnWidth[columnVar.index + 1] + resizePosition
-          : columnWidth[columnVar.index + 1] + (columnWidth[columnVar.index] - resizePosition),
+          : columnWidth[columnVar.index + 1] + columnWidth[columnVar.index] - resizePosition,
     }));
     document.onmouseup = null;
     document.onmousemove = null;
     columnVar.element.style.left = null;
   };
-  const onMouseUpCallback = (e, index) => {
+  const onMouseDownCallback = (e, index) => {
     columnVar.element = e.target;
     columnVar.index = index;
     columnVar.startX = columnVar.element.offsetLeft - e.clientX;
+    columnVar.move = e.clientX;
     document.onmouseup = mouseupCallback;
     document.onmousemove = mousemoveCallback;
   };
@@ -270,7 +271,7 @@ const TableHead = ({
                 <div
                   id={`resize-${matchingColumnMeta.id}`}
                   className="column-resize-wrapper"
-                  onMouseDown={e => onMouseUpCallback(e, i)}
+                  onMouseDown={e => onMouseDownCallback(e, i)}
                   onClick={e => e.stopPropagation()}
                 />
               ) : null}
