@@ -35,7 +35,6 @@ module.exports = {
     './src/components/Table/StatefulTable.jsx': { branches: 66 },
     './src/components/TileCatalog/CatalogContent.jsx': { branches: 50 },
     './src/components/FileDrop/FileDrop.jsx': { branches: 53, functions: 75 },
-    './src/components/Header/HeaderMenu.jsx': { branches: 71 },
     './src/components/Dashboard/Dashboard.jsx': { statements: 79, branches: 50, lines: 78 },
     './src/components/Dashboard/CardRenderer.jsx': {
       statements: 51,

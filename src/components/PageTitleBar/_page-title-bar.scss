@@ -18,6 +18,9 @@
       }
     }
   }
+  .#{$prefix}--tab-content {
+    padding: unset;
+  }
 
   &-header {
     display: flex;

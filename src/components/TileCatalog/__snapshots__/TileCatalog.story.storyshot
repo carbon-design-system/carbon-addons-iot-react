@@ -2824,6 +2824,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
                   id="entityType-searchbox"
                   onChange={[Function]}
                   placeholder="Search catalog"
+                  size="sm"
                   type="text"
                   value=""
                 />
