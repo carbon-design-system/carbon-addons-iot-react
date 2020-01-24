@@ -103,7 +103,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Heade
               <button
                 aria-label="alerts"
                 className="bx--header-action-btn bx--header__action"
-                onClick={[Function]}
                 type="button"
               >
                 <svg
@@ -130,12 +129,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Heade
               <div
                 className="bx--header__submenu bx--header-action-btn action-btn__group"
                 data-testid="action-btn__group"
+                onBlur={[Function]}
+                onKeyDown={[Function]}
               >
                 <button
+                  aria-expanded={false}
                   aria-haspopup="menu"
                   aria-label="help"
                   className="bx--header-action-btn action-btn__trigger bx--header__action"
-                  onBlur={[Function]}
                   onClick={[Function]}
                   title="help"
                   type="button"
@@ -174,7 +175,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Heade
                   aria-label="Header Panel"
                   className="bx--header-panel action-btn__headerpanel action-btn__headerpanel--closed"
                   data-testid="action-btn__panel"
-                  onBlur={[Function]}
                   tabIndex="-1"
                 >
                   <ul
@@ -233,25 +233,22 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Heade
                 </div>
               </div>
               <div
-                className="bx--header__submenu"
-                data-testid="headermenu"
-                onFocus={[Function]}
+                className="bx--header__submenu bx--header-action-btn action-btn__group"
+                data-testid="action-btn__group"
+                onBlur={[Function]}
+                onKeyDown={[Function]}
               >
                 <div
                   className="bx--header__submenu bx--header-action-btn"
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
                 >
-                   
                   <a
                     aria-expanded={false}
                     aria-haspopup="menu"
                     aria-label="user"
                     className="bx--header__menu-item bx--header__menu-title"
                     data-testid="menuitem"
-                    href="javascript:void(0)"
-                    onKeyDown={[Function]}
+                    href=""
+                    onClick={[Function]}
                     role="menuitem"
                     tabIndex={0}
                   >
@@ -284,9 +281,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Heade
                     className="bx--header__menu"
                     role="menu"
                   >
-                    <li
-                      role="none"
-                    >
+                    <li>
                       <a
                         className="bx--header__menu-item"
                         href="http://google.com"
@@ -305,7 +300,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Heade
                     </li>
                     <li
                       className="this"
-                      role="none"
                     >
                       <button
                         className="bx--header__menu-item"
@@ -316,76 +310,100 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Heade
                         <span
                           className="bx--text-truncate--end"
                         >
-                          JohnDoe@ibm.com
-                          <svg
-                            aria-hidden={true}
-                            description="Icon"
-                            fill="white"
-                            focusable="false"
-                            height={20}
-                            preserveAspectRatio="xMidYMid meet"
-                            style={
-                              Object {
-                                "willChange": "transform",
+                          <span>
+                            JohnDoe@ibm.com
+                            <svg
+                              aria-hidden={true}
+                              description="Icon"
+                              fill="white"
+                              focusable="false"
+                              height={20}
+                              preserveAspectRatio="xMidYMid meet"
+                              style={
+                                Object {
+                                  "willChange": "transform",
+                                }
                               }
-                            }
-                            viewBox="0 0 32 32"
-                            width={20}
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M16 2a14 14 0 1 0 14 14A14 14 0 0 0 16 2zm-6 24.38v-2A3.22 3.22 0 0 1 13 21h6a3.22 3.22 0 0 1 3 3.39v2a11.92 11.92 0 0 1-12 0zm14-1.46v-.61A5.21 5.21 0 0 0 19 19h-6a5.2 5.2 0 0 0-5 5.31v.59a12 12 0 1 1 16 0z"
-                            />
-                            <path
-                              d="M16 7a5 5 0 1 0 5 5 5 5 0 0 0-5-5zm0 8a3 3 0 1 1 3-3 3 3 0 0 1-3 3z"
-                            />
-                          </svg>
+                              viewBox="0 0 32 32"
+                              width={20}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M16 2a14 14 0 1 0 14 14A14 14 0 0 0 16 2zm-6 24.38v-2A3.22 3.22 0 0 1 13 21h6a3.22 3.22 0 0 1 3 3.39v2a11.92 11.92 0 0 1-12 0zm14-1.46v-.61A5.21 5.21 0 0 0 19 19h-6a5.2 5.2 0 0 0-5 5.31v.59a12 12 0 1 1 16 0z"
+                              />
+                              <path
+                                d="M16 7a5 5 0 1 0 5 5 5 5 0 0 0-5-5zm0 8a3 3 0 1 1 3-3 3 3 0 0 1-3 3z"
+                              />
+                            </svg>
+                          </span>
                         </span>
                       </button>
                     </li>
                   </ul>
-                   
                 </div>
               </div>
-              <button
-                aria-label="header-panel-trigger"
-                className="bx--header__action"
-                onClick={[Function]}
-                title="AppSwitcher"
-                type="button"
+              <div
+                className="bx--header__submenu bx--header-action-btn action-btn__group"
+                data-testid="action-btn__group"
+                onBlur={[Function]}
+                onKeyDown={[Function]}
               >
-                <svg
-                  aria-hidden={true}
-                  description="Icon"
-                  fill="white"
-                  focusable="false"
-                  height={20}
-                  preserveAspectRatio="xMidYMid meet"
-                  style={
-                    Object {
-                      "willChange": "transform",
+                <button
+                  aria-expanded={false}
+                  aria-haspopup="menu"
+                  aria-label="AppSwitcher"
+                  className="bx--header-action-btn action-btn__trigger bx--header__action"
+                  onClick={[Function]}
+                  title="AppSwitcher"
+                  type="button"
+                >
+                  <svg
+                    aria-hidden={true}
+                    className="bx--header__menu-item bx--header__menu-title"
+                    description="Icon"
+                    fill="white"
+                    focusable="false"
+                    height={20}
+                    preserveAspectRatio="xMidYMid meet"
+                    style={
+                      Object {
+                        "willChange": "transform",
+                      }
                     }
-                  }
-                  viewBox="0 0 20 20"
-                  width={20}
-                  xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    width={20}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M15.5 15.5H18V18h-2.5zm-6.75 0h2.5V18h-2.5zM2 15.5h2.5V18H2zm13.5-6.75H18v2.5h-2.5zm-6.75 0h2.5v2.5h-2.5zM2 8.75h2.5v2.5H2zM15.5 2H18v2.5h-2.5zM8.75 2h2.5v2.5h-2.5zM2 2h2.5v2.5H2z"
+                    />
+                  </svg>
+                </button>
+                <div
+                  aria-label="Header Panel"
+                  className="bx--header-panel bx--app-switcher"
+                  data-testid="action-btn__panel"
+                  tabIndex="-1"
                 >
-                  <path
-                    d="M15.5 15.5H18V18h-2.5zm-6.75 0h2.5V18h-2.5zM2 15.5h2.5V18H2zm13.5-6.75H18v2.5h-2.5zm-6.75 0h2.5v2.5h-2.5zM2 8.75h2.5v2.5H2zM15.5 2H18v2.5h-2.5zM8.75 2h2.5v2.5h-2.5zM2 2h2.5v2.5H2z"
-                  />
-                </svg>
-              </button>
-            </div>
-            <div
-              aria-label="Header Panel"
-              className="bx--header-panel bx--app-switcher header-panel"
-            >
-              <div>
-                <a
-                  href="#"
-                >
-                  Header panel content
-                </a>
+                  <ul
+                    aria-label="AppSwitcher"
+                  >
+                    <li
+                      className="action-btn__headerpanel-li"
+                    >
+                      <a
+                        className="bx--app-switcher header-panel"
+                        element="a"
+                      >
+                        <a
+                          href="#"
+                        >
+                          Header panel content
+                        </a>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </header>
@@ -517,7 +535,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Heade
             <button
               aria-label="user"
               className="bx--header-action-btn bx--header__action"
-              onClick={[Function]}
               type="button"
             >
               <svg
@@ -546,6 +563,248 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Heade
             </button>
           </div>
         </header>
+      </div>
+      <button
+        className="info__show-button"
+        onClick={[Function]}
+        style={
+          Object {
+            "background": "#027ac5",
+            "border": "none",
+            "borderRadius": "0 0 0 5px",
+            "color": "#fff",
+            "cursor": "pointer",
+            "display": "block",
+            "fontFamily": "sans-serif",
+            "fontSize": "12px",
+            "padding": "5px 15px",
+            "position": "fixed",
+            "right": 0,
+            "top": 0,
+          }
+        }
+        type="button"
+      >
+        Show Info
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Header header submenu 1`] = `
+<div
+  style={
+    Object {
+      "alignItems": "center",
+      "bottom": "0",
+      "display": "flex",
+      "left": "0",
+      "overflow": "auto",
+      "position": "fixed",
+      "right": "0",
+      "top": "0",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "margin": "auto",
+        "maxHeight": "100%",
+      }
+    }
+  >
+    <div
+      className="storybook-container"
+      style={
+        Object {
+          "padding": "3rem",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "position": "relative",
+            "zIndex": 0,
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "height": "100vh",
+              "width": "100%",
+            }
+          }
+        >
+          <header
+            aria-label="main header"
+            className="bx--header custom-class-name Headerstory__StyledHeader-st8jpc-0 hBPBX"
+            role="banner"
+          >
+            <a
+              className="bx--skip-to-content"
+              href="skip"
+              tabIndex="0"
+            >
+              Skip to main content
+            </a>
+            <button
+              aria-label="Open menu"
+              className="bx--header__action bx--header__menu-trigger bx--header__menu-toggle bx--header__menu-toggle__hidden"
+              onClick={null}
+              title="Open menu"
+              type="button"
+            >
+              <svg
+                aria-hidden={true}
+                focusable="false"
+                height={20}
+                preserveAspectRatio="xMidYMid meet"
+                style={
+                  Object {
+                    "willChange": "transform",
+                  }
+                }
+                viewBox="0 0 20 20"
+                width={20}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M2 14.8H18V16H2zM2 11.2H18V12.399999999999999H2zM2 7.6H18V8.799999999999999H2zM2 4H18V5.2H2z"
+                />
+              </svg>
+            </button>
+            <a
+              className="bx--header__name"
+              href="http://localhost:8989"
+            >
+              <span
+                className="bx--header__name--prefix"
+              >
+                IBM
+              </span>
+               
+              Watson IoT Platform 
+            </a>
+            <div
+              className="bx--header__global"
+            >
+              <div
+                className="bx--header__submenu bx--header-action-btn action-btn__group"
+                data-testid="action-btn__group"
+                onBlur={[Function]}
+                onKeyDown={[Function]}
+              >
+                <div
+                  className="bx--header__submenu bx--header-action-btn"
+                >
+                  <a
+                    aria-expanded={false}
+                    aria-haspopup="menu"
+                    aria-label="user"
+                    className="bx--header__menu-item bx--header__menu-title"
+                    data-testid="menuitem"
+                    href=""
+                    onClick={[Function]}
+                    role="menuitem"
+                    tabIndex={0}
+                  >
+                    <svg
+                      aria-hidden={true}
+                      description="Icon"
+                      fill="white"
+                      focusable="false"
+                      height={20}
+                      preserveAspectRatio="xMidYMid meet"
+                      style={
+                        Object {
+                          "willChange": "transform",
+                        }
+                      }
+                      viewBox="0 0 32 32"
+                      width={20}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M16 2a14 14 0 1 0 14 14A14 14 0 0 0 16 2zm-6 24.38v-2A3.22 3.22 0 0 1 13 21h6a3.22 3.22 0 0 1 3 3.39v2a11.92 11.92 0 0 1-12 0zm14-1.46v-.61A5.21 5.21 0 0 0 19 19h-6a5.2 5.2 0 0 0-5 5.31v.59a12 12 0 1 1 16 0z"
+                      />
+                      <path
+                        d="M16 7a5 5 0 1 0 5 5 5 5 0 0 0-5-5zm0 8a3 3 0 1 1 3-3 3 3 0 0 1-3 3z"
+                      />
+                    </svg>
+                  </a>
+                  <ul
+                    aria-label="user"
+                    className="bx--header__menu"
+                    role="menu"
+                  >
+                    <li>
+                      <a
+                        className="bx--header__menu-item"
+                        href="http://google.com"
+                        rel="noopener noreferrer"
+                        role="menuitem"
+                        tabIndex={0}
+                        target="_blank"
+                        title="this is a title"
+                      >
+                        <span
+                          className="bx--text-truncate--end"
+                        >
+                          this is my message to you
+                        </span>
+                      </a>
+                    </li>
+                    <li
+                      className="this"
+                    >
+                      <button
+                        className="bx--header__menu-item"
+                        onClick={[Function]}
+                        role="menuitem"
+                        tabIndex={0}
+                      >
+                        <span
+                          className="bx--text-truncate--end"
+                        >
+                          <span>
+                            JohnDoe@ibm.com
+                            <svg
+                              aria-hidden={true}
+                              description="Icon"
+                              fill="white"
+                              focusable="false"
+                              height={20}
+                              preserveAspectRatio="xMidYMid meet"
+                              style={
+                                Object {
+                                  "willChange": "transform",
+                                }
+                              }
+                              viewBox="0 0 32 32"
+                              width={20}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M16 2a14 14 0 1 0 14 14A14 14 0 0 0 16 2zm-6 24.38v-2A3.22 3.22 0 0 1 13 21h6a3.22 3.22 0 0 1 3 3.39v2a11.92 11.92 0 0 1-12 0zm14-1.46v-.61A5.21 5.21 0 0 0 19 19h-6a5.2 5.2 0 0 0-5 5.31v.59a12 12 0 1 1 16 0z"
+                              />
+                              <path
+                                d="M16 7a5 5 0 1 0 5 5 5 5 0 0 0-5-5zm0 8a3 3 0 1 1 3-3 3 3 0 0 1-3 3z"
+                              />
+                            </svg>
+                          </span>
+                        </span>
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </header>
+        </div>
       </div>
       <button
         className="info__show-button"
