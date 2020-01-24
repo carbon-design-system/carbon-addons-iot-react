@@ -28,6 +28,8 @@ const propTypes = {
   buttons: PropTypes.arrayOf(PropTypes.node),
   items: PropTypes.arrayOf(PropTypes.shape(itemPropTypes)).isRequired,
   isFullHeight: PropTypes.bool,
+  isLargeRow: PropTypes.bool,
+  iconPosition: PropTypes.oneOf(['left', 'right']),
   i18n: PropTypes.shape({
     searchPlaceHolderText: PropTypes.string,
   }), // TODO: fill this in
@@ -47,9 +49,11 @@ const defaultProps = {
   search: null,
   buttons: [],
   isFullHeight: false,
+  isLargeRow: false,
   i18n: {
     searchPlaceHolderText: 'Enter a value',
   },
+  iconPosition: 'left',
   pagination: null,
   selectedId: null,
   expandedIds: [],
@@ -73,6 +77,8 @@ const List = ({
   expandedIds,
   handleSelect,
   toggleExpansion,
+  iconPosition,
+  isLargeRow,
   ...others
 }) => {
   const renderItemAndChildren = (item, level) => {
@@ -83,6 +89,7 @@ const List = ({
     const {
       content: { value, secondaryValue, icon, rowActions },
       isSelectable,
+      isCategory,
     } = item;
 
     return [
@@ -92,6 +99,7 @@ const List = ({
         nestingLevel={level}
         value={value}
         icon={icon}
+        iconPosition={iconPosition}
         secondaryValue={secondaryValue}
         rowActions={rowActions}
         onSelect={handleSelect}
@@ -99,7 +107,8 @@ const List = ({
         selected={isSelected}
         expanded={isExpanded}
         isExpandable={hasChildren}
-        isCategory={item.content.isCategory}
+        isLargeRow={isLargeRow}
+        isCategory={isCategory}
         isSelectable={isSelectable}
       />,
       ...(hasChildren && isExpanded
@@ -124,9 +133,11 @@ const List = ({
         i18n={i18n}
       />
       <div className="list--content">{listItems}</div>
-      <div className="list--page">
-        <SimplePagination {...pagination} />
-      </div>
+      {pagination !== null ? (
+        <div className="list--page">
+          <SimplePagination {...pagination} />
+        </div>
+      ) : null}
     </div>
   );
 };
