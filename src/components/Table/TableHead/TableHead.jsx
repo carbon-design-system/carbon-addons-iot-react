@@ -252,7 +252,7 @@ const TableHead = ({
               isSortable={matchingColumnMeta.isSortable}
               isSortHeader={hasSort}
               ref={columnRef[i]}
-              thWidth={columnWidth[i]}
+              thStyle={{ width: columnWidth[i] }}
               onClick={() => {
                 if (matchingColumnMeta.isSortable && onChangeSort) {
                   onChangeSort(matchingColumnMeta.id);
