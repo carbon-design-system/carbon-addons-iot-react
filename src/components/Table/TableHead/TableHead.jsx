@@ -133,6 +133,41 @@ const StyledCustomTableHeader = styled(TableHeader)`
   }
 `;
 
+const getColumnDragBounds = (direction, colWidths, index) => {
+  const minColumnWidth = 50;
+  return {
+    direction,
+    minColumnWidth,
+    rightBound: colWidths[index],
+    leftBound: colWidths[index + 1] - minColumnWidth,
+  };
+};
+
+const updateColumnResizeWrapper = (validDrag, wrapperElement) => {
+  const invalidClass = 'column-resize-wrapper--invalid';
+  if (validDrag === false) {
+    wrapperElement.classList.add(invalidClass);
+  } else {
+    wrapperElement.classList.remove(invalidClass);
+  }
+};
+
+const dragIsValidLtr = (mousePosition, bounds) => {
+  const { minColumnWidth, rightBound, leftBound, direction } = bounds;
+  return (
+    (direction === 'left' && mousePosition >= minColumnWidth) ||
+    (direction === 'right' && mousePosition <= rightBound + leftBound)
+  );
+};
+
+const dragIsValidRtl = (mousePosition, bounds) => {
+  const { minColumnWidth, rightBound, leftBound, direction } = bounds;
+  return (
+    (direction === 'left' && mousePosition > -leftBound) ||
+    (direction === 'right' && mousePosition < rightBound - minColumnWidth)
+  );
+};
+
 const TableHead = ({
   options,
   options: { hasRowExpansion, hasRowSelection },
@@ -163,44 +198,39 @@ const TableHead = ({
     element: Node,
     startX: 0,
     move: 0,
-    direction: 0,
+    validDrag: false,
   };
+
   const mousemoveCallback = e => {
     const mousePosition = e.clientX + columnVar.startX;
-    columnVar.direction = e.clientX > columnVar.move ? 'right' : 'left';
-    const minColumnWidth = 50;
-    const rightBound = columnWidth[columnVar.index];
-    const leftBound = columnWidth[columnVar.index + 1] - minColumnWidth;
-    if (
-      document.dir !== 'rtl' &&
-      ((columnVar.direction === 'left' && mousePosition > minColumnWidth) ||
-        (columnVar.direction === 'right' && mousePosition < rightBound + leftBound))
-    ) {
-      columnVar.element.style.left = `${mousePosition}px`;
-    } else if (
-      document.dir === 'rtl' &&
-      ((columnVar.direction === 'left' && mousePosition > -leftBound) ||
-        (columnVar.direction === 'right' && mousePosition < rightBound - minColumnWidth))
-    ) {
-      columnVar.element.style.left = `${mousePosition}px`;
-    } else {
-      document.onmousemove = null;
-    }
+    const direction = e.clientX > columnVar.move ? 'right' : 'left';
+    const dragBounds = getColumnDragBounds(direction, columnWidth, columnVar.index);
+    columnVar.validDrag =
+      document.dir === 'rtl'
+        ? dragIsValidRtl(mousePosition, dragBounds)
+        : dragIsValidLtr(mousePosition, dragBounds);
+    columnVar.element.style.left = `${mousePosition}px`;
+    updateColumnResizeWrapper(columnVar.validDrag, columnVar.element);
   };
   const mouseupCallback = () => {
-    const resizePosition = columnVar.element.offsetLeft + columnVar.element.clientWidth;
-    setColumnWidth(cols => ({
-      ...cols,
-      [columnVar.index]:
-        document.dir === 'rtl' ? columnWidth[columnVar.index] - resizePosition : resizePosition,
-      [columnVar.index + 1]:
-        document.dir === 'rtl'
-          ? columnWidth[columnVar.index + 1] + resizePosition
-          : columnWidth[columnVar.index + 1] + columnWidth[columnVar.index] - resizePosition,
-    }));
+    if (columnVar.validDrag) {
+      const resizePosition = columnVar.element.offsetLeft + columnVar.element.clientWidth;
+      setColumnWidth(cols => ({
+        ...cols,
+        [columnVar.index]:
+          document.dir === 'rtl' ? columnWidth[columnVar.index] - resizePosition : resizePosition,
+        [columnVar.index + 1]:
+          document.dir === 'rtl'
+            ? columnWidth[columnVar.index + 1] + resizePosition
+            : columnWidth[columnVar.index + 1] + columnWidth[columnVar.index] - resizePosition,
+      }));
+    }
+
     document.onmouseup = null;
     document.onmousemove = null;
     columnVar.element.style.left = null;
+    columnVar.validDrag = null;
+    updateColumnResizeWrapper(columnVar.validDrag, columnVar.element);
   };
   const onMouseDownCallback = (e, index) => {
     columnVar.element = e.target;

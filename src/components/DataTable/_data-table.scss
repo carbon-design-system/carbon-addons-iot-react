@@ -129,6 +129,13 @@ section.bx--table-toolbar {
   }
 }
 
+.column-resize-wrapper--invalid {
+  &:hover {
+    background-color: transparent;
+  }
+  cursor: no-drop;
+}
+
 html:not([dir]) .column-resize-wrapper {
   right: 0;
 }
