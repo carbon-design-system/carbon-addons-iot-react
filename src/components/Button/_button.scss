@@ -1,1 +1,14 @@
 @import '~carbon-components/scss/components/button/button';
+@import '../../globals/vars';
+
+.#{$iot-prefix}--btn {
+  justify-content: flex-start;
+
+  .#{$prefix}--loading {
+    margin-top: -1rem;
+    margin-bottom: -1rem;
+  }
+  .#{$prefix}--loading__stroke {
+    stroke: $carbon--gray-50;
+  }
+}

@@ -73,7 +73,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|SideN
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M2 14.8h16V16H2zm0-3.6h16v1.2H2zm0-3.6h16v1.2H2zM2 4h16v1.2H2z"
+                d="M2 14.8H18V16H2zM2 11.2H18V12.399999999999999H2zM2 7.6H18V8.799999999999999H2zM2 4H18V5.2H2z"
               />
             </svg>
           </button>
@@ -95,7 +95,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|SideN
             <button
               aria-label="user"
               className="bx--header-action-btn bx--header__action"
-              onClick={[Function]}
               type="button"
             >
               <svg
@@ -191,7 +190,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|SideN
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      d="M16 22L6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"
+                      d="M16 22L6 12 7.4 10.6 16 19.2 24.6 10.6 26 12z"
                     />
                   </svg>
                 </div>
@@ -317,7 +316,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|SideN
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      d="M16 22L6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"
+                      d="M16 22L6 12 7.4 10.6 16 19.2 24.6 10.6 26 12z"
                     />
                   </svg>
                 </div>

@@ -122,6 +122,7 @@ export {
   // TableToolbarContent,
   // TableToolbarSearch,
   // TableToolbarMenu,
+  DataTable,
   DatePicker,
   DatePickerInput,
   Dropdown,

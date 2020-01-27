@@ -67,18 +67,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
                 Gimme 3 Steps
               </p>
               <button
+                aria-label="Close"
                 className="bx--modal-close"
                 onClick={[Function]}
                 title="Close"
                 type="button"
               >
                 <svg
-                  aria-label="Close"
+                  aria-hidden={true}
                   className="bx--modal-close__icon"
                   focusable="false"
                   height={20}
                   preserveAspectRatio="xMidYMid meet"
-                  role="img"
                   style={
                     Object {
                       "willChange": "transform",
@@ -89,7 +89,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4l6.6 6.6L8 22.6 9.4 24l6.6-6.6 6.6 6.6 1.4-1.4-6.6-6.6L24 9.4z"
+                    d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
                   />
                 </svg>
               </button>
@@ -198,7 +198,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
                 className="WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
               >
                 <button
-                  className="Button__StyledButton-sc-19kycwu-0 PhzAJ bx--btn bx--btn--secondary"
+                  className="iot--btn bx--btn bx--btn--secondary"
                   disabled={false}
                   onClick={[Function]}
                   tabIndex={0}
@@ -207,7 +207,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
                   Cancel
                 </button>
                 <button
-                  className="Button__StyledButton-sc-19kycwu-0 PhzAJ bx--btn bx--btn--primary"
+                  className="iot--btn bx--btn bx--btn--primary"
                   disabled={false}
                   onClick={[Function]}
                   tabIndex={0}
@@ -315,18 +315,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
                 Gimme 3 Steps
               </p>
               <button
+                aria-label="Close"
                 className="bx--modal-close"
                 onClick={[Function]}
                 title="Close"
                 type="button"
               >
                 <svg
-                  aria-label="Close"
+                  aria-hidden={true}
                   className="bx--modal-close__icon"
                   focusable="false"
                   height={20}
                   preserveAspectRatio="xMidYMid meet"
-                  role="img"
                   style={
                     Object {
                       "willChange": "transform",
@@ -337,7 +337,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4l6.6 6.6L8 22.6 9.4 24l6.6-6.6 6.6 6.6 1.4-1.4-6.6-6.6L24 9.4z"
+                    d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
                   />
                 </svg>
               </button>
@@ -453,7 +453,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
                 className="WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
               >
                 <button
-                  className="Button__StyledButton-sc-19kycwu-0 PhzAJ bx--btn bx--btn--secondary"
+                  className="iot--btn bx--btn bx--btn--secondary"
                   disabled={false}
                   onClick={[Function]}
                   tabIndex={0}
@@ -462,7 +462,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
                   I18N Cancel
                 </button>
                 <button
-                  className="Button__StyledButton-sc-19kycwu-0 PhzAJ bx--btn bx--btn--primary"
+                  className="iot--btn bx--btn bx--btn--primary"
                   disabled={false}
                   onClick={[Function]}
                   tabIndex={0}
@@ -570,18 +570,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
                 Gimme 3 Steps
               </p>
               <button
+                aria-label="Close"
                 className="bx--modal-close"
                 onClick={[Function]}
                 title="Close"
                 type="button"
               >
                 <svg
-                  aria-label="Close"
+                  aria-hidden={true}
                   className="bx--modal-close__icon"
                   focusable="false"
                   height={20}
                   preserveAspectRatio="xMidYMid meet"
-                  role="img"
                   style={
                     Object {
                       "willChange": "transform",
@@ -592,7 +592,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4l6.6 6.6L8 22.6 9.4 24l6.6-6.6 6.6 6.6 1.4-1.4-6.6-6.6L24 9.4z"
+                    d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
                   />
                 </svg>
               </button>
@@ -629,10 +629,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        d="M8 1C4.1 1 1 4.1 1 8s3.1 7 7 7 7-3.1 7-7-3.1-7-7-7zm0 13c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6z"
+                        d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M8,14c-3.3,0-6-2.7-6-6s2.7-6,6-6s6,2.7,6,6S11.3,14,8,14z"
                       />
                       <path
-                        d="M7 10.8L4.5 8.3l.8-.8L7 9.2l3.7-3.7.8.8z"
+                        d="M7 10.8L4.5 8.3 5.3 7.5 7 9.2 10.7 5.5 11.5 6.3z"
                       />
                       <title>
                         step1
@@ -673,10 +673,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        d="M8 1C4.1 1 1 4.1 1 8s3.1 7 7 7 7-3.1 7-7-3.1-7-7-7zm0 13c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6z"
+                        d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M8,14c-3.3,0-6-2.7-6-6s2.7-6,6-6s6,2.7,6,6S11.3,14,8,14z"
                       />
                       <path
-                        d="M7 10.8L4.5 8.3l.8-.8L7 9.2l3.7-3.7.8.8z"
+                        d="M7 10.8L4.5 8.3 5.3 7.5 7 9.2 10.7 5.5 11.5 6.3z"
                       />
                       <title>
                         step2
@@ -733,7 +733,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
                 className="WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
               >
                 <button
-                  className="Button__StyledButton-sc-19kycwu-0 PhzAJ bx--btn bx--btn--secondary"
+                  className="iot--btn bx--btn bx--btn--secondary"
                   disabled={false}
                   onClick={[Function]}
                   tabIndex={0}
@@ -742,7 +742,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
                   Previous
                 </button>
                 <button
-                  className="Button__StyledButton-sc-19kycwu-0 PhzAJ bx--btn bx--btn--primary bx--btn--disabled"
+                  className="iot--btn bx--btn bx--btn--primary bx--btn--disabled"
                   disabled={true}
                   onClick={[Function]}
                   tabIndex={0}
