@@ -41,7 +41,7 @@ const HeaderActionPanel = ({ item, index, onToggleExpansion, isExpanded, focusRe
         aria-label={item.label}
         aria-haspopup="menu"
         aria-expanded={isExpanded}
-        onClick={onToggleExpansion}
+        onClick={() => onToggleExpansion()}
         ref={focusRef}
       >
         {item.btnContent}
