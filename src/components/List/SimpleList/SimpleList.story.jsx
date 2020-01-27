@@ -15,6 +15,7 @@ const getListItems = num =>
     .map((i, idx) => ({
       id: idx + 1,
       content: { value: `Item ${idx + 1}` },
+      isSelectable: true,
     }));
 
 const listItemsWithEmptyRow = getListItems(5).concat({ id: 6, content: { value: '' } });

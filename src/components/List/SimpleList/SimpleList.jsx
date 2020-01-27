@@ -84,8 +84,8 @@ const SimpleList = ({
                     }
                   }
                 });
-
                 setfilteredItems(filteredItems);
+                setSearchValue(searchTerm);
                 if (pageSize !== null) {
                   setItemsToShow(filteredItems.slice(0, rowPerPage));
                 }
