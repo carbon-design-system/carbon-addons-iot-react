@@ -15,7 +15,7 @@ export const itemPropTypes = {
     value: PropTypes.string,
     icon: PropTypes.node,
   }),
-  children: PropTypes.arrayOf(PropTypes.any), // TODO: make this recursive
+  children: childrenPropType,
   isSelectable: PropTypes.bool,
 };
 
@@ -70,7 +70,7 @@ const List = ({
   toggleExpansion,
   iconPosition,
   isLargeRow,
-  ...others
+  // ...others TODO: add this in the render
 }) => {
   const renderItemAndChildren = (item, level) => {
     const hasChildren = item.children && item.children.length > 0;

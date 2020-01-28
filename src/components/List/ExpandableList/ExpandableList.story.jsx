@@ -21,11 +21,11 @@ const addButton = (
 );
 
 storiesOf('Watson IoT Experimental|Expandable List', module).add(
-  'Stateful list with dynamic expansion, nested searching, and categories',
+  'Stateful list with nested searching',
   () => (
     <div style={{ width: 400 }}>
       <ExpandableList
-        title="Expandable List"
+        title={text('Title', 'MLB Expanded List')}
         buttons={[addButton]}
         items={[
           ...Object.keys(sampleHierarchy.MLB['American League']).map(team => ({
@@ -40,6 +40,7 @@ storiesOf('Watson IoT Experimental|Expandable List', module).add(
                 value: player,
                 secondaryValue: sampleHierarchy.MLB['American League'][team][player],
               },
+              isSelectable: true,
             })),
           })),
           ...Object.keys(sampleHierarchy.MLB['National League']).map(team => ({
@@ -54,11 +55,12 @@ storiesOf('Watson IoT Experimental|Expandable List', module).add(
                 value: player,
                 secondaryValue: sampleHierarchy.MLB['National League'][team][player],
               },
+              isSelectable: true,
             })),
           })),
         ]}
         hasSearch
-        pageSize="xl"
+        pageSize={select('Page Size', ['sm', 'lg', 'xl'], 'xl')}
       />
     </div>
   )
