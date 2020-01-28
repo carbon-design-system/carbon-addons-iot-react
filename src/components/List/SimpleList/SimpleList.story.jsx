@@ -225,7 +225,7 @@ storiesOf('Watson IoT Experimental|SimpleList', module)
     { info: { text: `` } }
   )
   .add(
-    'list with fat row',
+    'list with large row',
     withReadme(SimpleListREADME, () => (
       <div style={{ width: 500, height: 600, background: '#fee', padding: 10 }}>
         <SimpleList
@@ -244,7 +244,7 @@ storiesOf('Watson IoT Experimental|SimpleList', module)
     { info: { text: `` } }
   )
   .add(
-    'non fat row list with actions',
+    'list with multiple actions',
     withReadme(SimpleListREADME, () => (
       <div style={{ width: 500, height: 600, background: '#fee', padding: 10 }}>
         <SimpleList
@@ -262,7 +262,7 @@ storiesOf('Watson IoT Experimental|SimpleList', module)
     { info: { text: `` } }
   )
   .add(
-    'non fat row list with overflow menu',
+    'list with overflow menu',
     withReadme(SimpleListREADME, () => (
       <div style={{ width: 500, height: 600, background: '#fee', padding: 10 }}>
         <SimpleList
@@ -281,7 +281,7 @@ storiesOf('Watson IoT Experimental|SimpleList', module)
   )
 
   .add(
-    'fat row list with actions',
+    'large row list with multiple actions',
     withReadme(SimpleListREADME, () => (
       <div style={{ width: 500, height: 600, background: '#fee', padding: 10 }}>
         <SimpleList
@@ -300,7 +300,7 @@ storiesOf('Watson IoT Experimental|SimpleList', module)
     { info: { text: `` } }
   )
   .add(
-    'fat row list with overflow menu',
+    'large row list with overflow menu',
     withReadme(SimpleListREADME, () => (
       <div style={{ width: 500, height: 600, background: '#fee', padding: 10 }}>
         <SimpleList
