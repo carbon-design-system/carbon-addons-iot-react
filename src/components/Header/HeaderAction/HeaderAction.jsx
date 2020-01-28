@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { settings } from 'carbon-components';
 import { HeaderGlobalAction } from 'carbon-components-react/lib/components/UIShell';
 import PropTypes from 'prop-types';
@@ -16,14 +16,6 @@ export const HeaderActionPropTypes = {
   item: PropTypes.shape(HeaderActionItemPropTypes).isRequired,
   /** unique index for the menu item */
   index: PropTypes.number.isRequired,
-  /** callback when the menu item should be opened or closed  */
-  onToggleExpansion: PropTypes.func.isRequired,
-  /** is the action panel showing or not */
-  isExpanded: PropTypes.bool,
-};
-
-const defaultProps = {
-  isExpanded: false,
 };
 
 /**
@@ -36,15 +28,23 @@ const defaultProps = {
  * or dropdown menus
  */
 // eslint-disable-next-line
-const HeaderAction = ({ item, index, onToggleExpansion, isExpanded }) => {
+const HeaderAction = ({ item, index }) => {
+  const [isExpanded, setIsExpanded] = useState(false);
   const parentContainerRef = useRef(null);
   const menuButtonRef = useRef(null);
+
+  // expanded state for HeaderAction dropdowns
+  const toggleExpandedState = () => {
+    setIsExpanded(state => !state);
+  };
+
   /**
    * close header panel when focus is lost as long as we didn't enter into the child panel
    * */
   const handleHeaderClose = event => {
     if (!parentContainerRef.current.contains(event.relatedTarget)) {
-      onToggleExpansion();
+      // Only close the header if the header is already expanded
+      if (isExpanded) toggleExpandedState();
     }
   };
 
@@ -59,7 +59,7 @@ const HeaderAction = ({ item, index, onToggleExpansion, isExpanded }) => {
     ) {
       event.stopPropagation();
       event.preventDefault();
-      onToggleExpansion(item.label);
+      toggleExpandedState();
 
       // Return focus to menu button when the user hits ESC.
       if (menuButtonRef && menuButtonRef.current) {
@@ -83,7 +83,7 @@ const HeaderAction = ({ item, index, onToggleExpansion, isExpanded }) => {
           // Render a subpanel type action
           <HeaderActionPanel
             item={item}
-            onToggleExpansion={() => onToggleExpansion(item.label)}
+            onToggleExpansion={toggleExpandedState}
             isExpanded={isExpanded}
             ref={menuButtonRef}
             index={index}
@@ -98,7 +98,7 @@ const HeaderAction = ({ item, index, onToggleExpansion, isExpanded }) => {
             menuLinkName={item.menuLinkName ? item.menuLinkName : ''}
             isExpanded={isExpanded}
             ref={menuButtonRef}
-            onToggleExpansion={() => onToggleExpansion(item.label)}
+            onToggleExpansion={toggleExpandedState}
             label={item.label}
             data-testid="header-menu"
             title="header-menu"
@@ -122,6 +122,5 @@ const HeaderAction = ({ item, index, onToggleExpansion, isExpanded }) => {
 };
 
 HeaderAction.propTypes = HeaderActionPropTypes;
-HeaderAction.defaultProps = defaultProps;
 
 export default HeaderAction;
