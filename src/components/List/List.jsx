@@ -38,11 +38,6 @@ const propTypes = {
   expandedIds: PropTypes.arrayOf(PropTypes.string),
   handleSelect: PropTypes.func,
   toggleExpansion: PropTypes.func,
-
-  // Do we need these below?
-  children: childrenPropType,
-  id: PropTypes.string,
-  nestingLevel: PropTypes.number,
 };
 
 const defaultProps = {
@@ -59,10 +54,6 @@ const defaultProps = {
   expandedIds: [],
   handleSelect: () => {},
   toggleExpansion: () => {},
-
-  children: [],
-  id: null,
-  nestingLevel: null,
 };
 
 const List = ({

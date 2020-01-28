@@ -10,6 +10,7 @@ const SimpleList = ({
   i18n,
   isFullHeight,
   pageSize = null,
+  isLargeRow = false,
   ...others
 }) => {
   const [searchValue, setSearchValue] = useState(null);
@@ -83,8 +84,8 @@ const SimpleList = ({
                     return item.content.value.toLowerCase().search(searchTerm.toLowerCase()) !== -1;
                   }
                 });
-
-                setfilteredItems(tempFilteredItems);
+                setfilteredItems(filteredItems);
+                setSearchValue(searchTerm);
                 if (pageSize !== null) {
                   setItemsToShow(tempFilteredItems.slice(0, rowPerPage));
                 }
@@ -100,6 +101,7 @@ const SimpleList = ({
       selectedId={selectedId}
       selectedIds={selectedIds}
       handleSelect={handleSelect}
+      isLargeRow={isLargeRow}
     />
   );
 };

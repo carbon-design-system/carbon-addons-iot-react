@@ -15,6 +15,7 @@ const getListItems = num =>
     .map((i, idx) => ({
       id: idx + 1,
       content: { value: `Item ${idx + 1}` },
+      isSelectable: true,
     }));
 
 const listItemsWithEmptyRow = getListItems(5).concat({ id: 6, content: { value: '' } });
@@ -224,7 +225,7 @@ storiesOf('Watson IoT Experimental|SimpleList', module)
     { info: { text: `` } }
   )
   .add(
-    'list with fat row',
+    'list with large row',
     withReadme(SimpleListREADME, () => (
       <div style={{ width: 500, height: 600, background: '#fee', padding: 10 }}>
         <SimpleList
@@ -236,13 +237,14 @@ storiesOf('Watson IoT Experimental|SimpleList', module)
           buttons={buttonsToRender}
           items={getFatRowListItems(20)}
           pageSize="sm"
+          isLargeRow
         />
       </div>
     )),
     { info: { text: `` } }
   )
   .add(
-    'non fat row list with actions',
+    'list with multiple actions',
     withReadme(SimpleListREADME, () => (
       <div style={{ width: 500, height: 600, background: '#fee', padding: 10 }}>
         <SimpleList
@@ -260,7 +262,7 @@ storiesOf('Watson IoT Experimental|SimpleList', module)
     { info: { text: `` } }
   )
   .add(
-    'non fat row list with overflow menu',
+    'list with overflow menu',
     withReadme(SimpleListREADME, () => (
       <div style={{ width: 500, height: 600, background: '#fee', padding: 10 }}>
         <SimpleList
@@ -279,7 +281,7 @@ storiesOf('Watson IoT Experimental|SimpleList', module)
   )
 
   .add(
-    'fat row list with actions',
+    'large row list with multiple actions',
     withReadme(SimpleListREADME, () => (
       <div style={{ width: 500, height: 600, background: '#fee', padding: 10 }}>
         <SimpleList
@@ -291,13 +293,14 @@ storiesOf('Watson IoT Experimental|SimpleList', module)
           buttons={buttonsToRender}
           items={getFatRowListItemsWithActions(5)}
           pageSize="sm"
+          isLargeRow
         />
       </div>
     )),
     { info: { text: `` } }
   )
   .add(
-    'fat row list with overflow menu',
+    'large row list with overflow menu',
     withReadme(SimpleListREADME, () => (
       <div style={{ width: 500, height: 600, background: '#fee', padding: 10 }}>
         <SimpleList
@@ -309,6 +312,7 @@ storiesOf('Watson IoT Experimental|SimpleList', module)
           buttons={buttonsToRender}
           items={getFatRowListItemsWithOverflowMenu(5)}
           pageSize="sm"
+          isLargeRow
         />
       </div>
     )),

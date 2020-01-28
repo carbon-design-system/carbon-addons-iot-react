@@ -22,13 +22,12 @@
       border-top: $ui-03;
       background: $ui-01;
       height: rem(40px);
+      border: none;
     }
     div > span {
       padding-left: $spacing-05;
       left: 0;
       position: absolute;
-    }
-    div > svg:active {
     }
   }
 }
