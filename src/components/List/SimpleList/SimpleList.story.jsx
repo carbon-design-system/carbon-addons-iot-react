@@ -237,6 +237,7 @@ storiesOf('Watson IoT Experimental|SimpleList', module)
           buttons={buttonsToRender}
           items={getFatRowListItems(20)}
           pageSize="sm"
+          isLargeRow
         />
       </div>
     )),
@@ -292,6 +293,7 @@ storiesOf('Watson IoT Experimental|SimpleList', module)
           buttons={buttonsToRender}
           items={getFatRowListItemsWithActions(5)}
           pageSize="sm"
+          isLargeRow
         />
       </div>
     )),
@@ -310,6 +312,7 @@ storiesOf('Watson IoT Experimental|SimpleList', module)
           buttons={buttonsToRender}
           items={getFatRowListItemsWithOverflowMenu(5)}
           pageSize="sm"
+          isLargeRow
         />
       </div>
     )),

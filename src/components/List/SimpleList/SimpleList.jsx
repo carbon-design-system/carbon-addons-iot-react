@@ -9,6 +9,7 @@ const SimpleList = ({
   i18n,
   isFullHeight,
   pageSize = null,
+  isLargeRow = false,
   ...others
 }) => {
   const [searchValue, setSearchValue] = useState(null);
@@ -101,6 +102,7 @@ const SimpleList = ({
       selectedId={selectedId}
       selectedIds={selectedIds}
       handleSelect={handleSelect}
+      isLargeRow={isLargeRow}
     />
   );
 };
