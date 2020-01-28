@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+
 import List from '../List';
 
 const SimpleList = ({
@@ -40,7 +41,7 @@ const SimpleList = ({
 
   const [currentPageNumber, setCurrentPageNumber] = useState(1);
 
-  let [itemsToShow, setItemsToShow] = useState(filteredItems.slice(0, rowPerPage));
+  const [itemsToShow, setItemsToShow] = useState(filteredItems.slice(0, rowPerPage));
 
   const onPage = page => {
     const rowUpperLimit = page * rowPerPage;
@@ -51,7 +52,7 @@ const SimpleList = ({
 
   const pagination = {
     page: currentPageNumber,
-    onPage: onPage,
+    onPage,
     maxPage: Math.ceil(numberOfItems / rowPerPage),
     pageOfPagesText: page => `Page ${page}`,
   };
@@ -64,8 +65,9 @@ const SimpleList = ({
           ? {
               value: searchValue,
               onChange: evt => {
+                setSearchValue(evt.target.value);
                 const searchTerm = evt.target.value === undefined ? '' : evt.target.value;
-                const filteredItems = items.filter(item => {
+                const tempFilteredItems = items.filter(item => {
                   if (item.content.value !== '' && item.content.value !== undefined) {
                     if (
                       item.content.secondaryValue !== '' &&
@@ -77,17 +79,14 @@ const SimpleList = ({
                           .toLowerCase()
                           .search(searchTerm.toLowerCase()) !== -1
                       );
-                    } else {
-                      return (
-                        item.content.value.toLowerCase().search(searchTerm.toLowerCase()) !== -1
-                      );
                     }
+                    return item.content.value.toLowerCase().search(searchTerm.toLowerCase()) !== -1;
                   }
                 });
 
-                setfilteredItems(filteredItems);
+                setfilteredItems(tempFilteredItems);
                 if (pageSize !== null) {
-                  setItemsToShow(filteredItems.slice(0, rowPerPage));
+                  setItemsToShow(tempFilteredItems.slice(0, rowPerPage));
                 }
               },
             }

@@ -9,7 +9,7 @@ import ListHeader from './ListHeader/ListHeader';
 
 const childrenPropType = PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]);
 
-const itemPropTypes = {
+export const itemPropTypes = {
   id: PropTypes.string,
   content: PropTypes.shape({
     value: PropTypes.string,

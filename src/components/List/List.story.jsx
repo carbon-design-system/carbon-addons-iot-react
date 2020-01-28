@@ -8,7 +8,7 @@ import { Button, OverflowMenu, OverflowMenuItem } from '../..';
 
 import List from './List';
 
-const sampleHierarchy = {
+export const sampleHierarchy = {
   MLB: {
     'American League': {
       'Chicago White Sox': {
@@ -46,12 +46,22 @@ const sampleHierarchy = {
         'Ozzie Albies': '2B',
         'Kevin Gausman': 'P',
       },
+      'New York Mets': {
+        'Jeff McNeil': '3B',
+        'Amed Rosario': 'SS',
+        'Michael Conforto': 'RF',
+        'Pete Alonso': '1B',
+        'Wilson Ramos': 'C',
+        'Robinson Cano': '2B',
+        'JD Davis': 'LF',
+        'Brandon Nimmo': 'CF',
+        'Jacob Degrom': 'P',
+      },
     },
   },
 };
 
 const buildHierarchy = (obj, renderRowActions, renderIcon, prefix = '', level = 0) => {
-  console.log('buildHierarchy', obj, prefix, level);
   return Object.keys(obj).map(key => ({
     id: `${prefix}${key}`,
     content: {
@@ -123,42 +133,6 @@ const expandedWithCategories = [
     ],
   },
 ];
-
-const ExpandableList = () => {
-  const [searchValue, setSearchValue] = useState('');
-  const [expandedIds, setExpandedIds] = useState([]);
-  return (
-    <List
-      title="List"
-      buttons={[
-        <Button
-          renderIcon={Add16}
-          hasIconOnly
-          size="small"
-          iconDescription="Add"
-          key="expandable-list-button-add"
-        />,
-      ]}
-      search={{
-        value: searchValue,
-        onChange: evt => setSearchValue(evt.target.value),
-      }}
-      items={expandedWithCategories}
-      expandedIds={expandedIds}
-      toggleExpansion={id => {
-        if (expandedIds.filter(rowId => rowId === id).length > 0) {
-          // remove id from array
-          setExpandedIds(expandedIds.filter(rowId => rowId !== id));
-        } else {
-          setExpandedIds(expandedIds.concat([id]));
-        }
-      }}
-      i18n={{
-        searchPlaceHolderText: 'Search...',
-      }}
-    />
-  );
-};
 
 const headerButton = (
   <Button
@@ -349,73 +323,4 @@ storiesOf('Watson IoT Experimental|List', module)
         expandedIds={['New York Yankees', 'Atlanta Braves']}
       />
     </div>
-  ))
-  .add('Stateful list with dynamic expansion', () => (
-    <div style={{ width: 400 }}>
-      <ExpandableList />
-    </div>
-  ))
-  .add('Stateful list with dynamic expansion and categories', () => (
-    <div style={{ width: 400 }}>
-      <ExpandableList />
-    </div>
   ));
-
-/*
-  .add('Simple List with title and button in header', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
-
-    return (
-      <ListSimple
-        id="List"
-        title={text('Text', 'Simple List')}
-        items={data1}
-        size={size}
-        headerHasButton
-      />
-    );
-  })
-  .add('List with search', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
-
-    return (
-      <ListSimple
-        id="List"
-        title={text('Text', 'Simple List')}
-        items={data1}
-        size={size}
-        hasSearch
-      />
-    );
-  })
-  .add('Two level list, expandable list', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
-
-    return (
-      <ListSimple id="List" title={text('Text', 'Two level list')} items={data2} size={size} />
-    );
-  })
-  .add('Three level list, expandable list', () => {
-    const size = select('size', Object.keyrom(CARD_SIZES), CARD_SIZES.MEDIUM);
-
-    return (
-      <ListSimple id="List" title={text('Text', 'Three level list')} items={data3} size={size} />
-    );
-  })
-  .add('expanded list with search', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
-
-    return (
-      <ListSimple
-        id="List"
-        title={text('Text', '2 level List with Search and Button')}
-        items={items}
-        size={size}
-        hasSearch={{
-          placeHolderText: 'Search list',
-          onSearch: action('search'),
-        }}
-      />
-    );
-  });
-  */
