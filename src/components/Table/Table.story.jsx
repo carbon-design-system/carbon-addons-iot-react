@@ -88,12 +88,12 @@ export const tableColumns = [
   {
     id: 'string',
     name: 'String',
-    filter: { placeholderText: 'pick a string' },
+    filter: { placeholderText: 'enter a string' },
   },
   {
     id: 'date',
     name: 'Date',
-    filter: { placeholderText: 'pick a date' },
+    filter: { placeholderText: 'enter a date' },
   },
   {
     id: 'select',
@@ -113,7 +113,7 @@ export const tableColumns = [
   {
     id: 'number',
     name: 'Number',
-    filter: { placeholderText: 'pick a number' },
+    filter: { placeholderText: 'enter a number' },
   },
   {
     id: 'boolean',
@@ -126,14 +126,14 @@ export const tableColumnsWithAlignment = [
   {
     id: 'string',
     name: 'String',
-    filter: { placeholderText: 'pick a string' },
+    filter: { placeholderText: 'enter a string' },
     align: 'start',
     isSortable: true,
   },
   {
     id: 'date',
     name: 'Date',
-    filter: { placeholderText: 'pick a date' },
+    filter: { placeholderText: 'enter a date' },
     align: 'center',
     isSortable: true,
   },
@@ -157,7 +157,7 @@ export const tableColumnsWithAlignment = [
   {
     id: 'number',
     name: 'Number',
-    filter: { placeholderText: 'pick a number' },
+    filter: { placeholderText: 'enter a number' },
     align: 'end',
     isSortable: true,
   },
