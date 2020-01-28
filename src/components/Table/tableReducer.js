@@ -64,14 +64,25 @@ export const searchData = (data, searchString) =>
       )
     : data;
 
+export const getCustomColumnSort = (columns, columnId) => {
+  const currentlySortedColumn =
+    columnId && columns && columns.find(column => column.id === columnId);
+  return currentlySortedColumn && currentlySortedColumn.sortFunction; // see if there's a custom sort function passed
+};
+
 // little utility to both sort and filter
-export const filterSearchAndSort = (data, sort = {}, search = {}, filters = []) => {
+export const filterSearchAndSort = (data, sort = {}, search = {}, filters = [], columns) => {
   const { columnId, direction } = sort;
+
   const { value: searchValue } = search;
   const filteredData = filterData(data, filters);
   const searchedData =
     searchValue && searchValue !== '' ? searchData(filteredData, searchValue) : filteredData;
-  return !isEmpty(sort) ? getSortedData(searchedData, columnId, direction) : searchedData;
+  return !isEmpty(sort)
+    ? getCustomColumnSort(columns, columnId)
+      ? getCustomColumnSort(columns, columnId)({ data: searchedData, columnId, direction })
+      : getSortedData(searchedData, columnId, direction)
+    : searchedData;
 };
 
 /** This reducer handles sort, filter and search that needs data otherwise it proxies for the baseTableReducer */
@@ -99,7 +110,8 @@ export const tableReducer = (state = {}, action) => {
                   state.data,
                   get(state, 'view.table.sort'),
                   get(state, 'view.toolbar.search'),
-                  newFilters
+                  newFilters,
+                  get(state, 'columns')
                 ),
               },
             },
@@ -118,7 +130,8 @@ export const tableReducer = (state = {}, action) => {
                   state.data,
                   get(state, 'view.table.sort'),
                   get(state, 'view.toolbar.search'),
-                  []
+                  [],
+                  get(state, 'columns')
                 ),
               },
             },
@@ -132,7 +145,8 @@ export const tableReducer = (state = {}, action) => {
         state.data,
         get(state, 'view.table.sort'),
         { value: action.payload },
-        get(state, 'view.filters')
+        get(state, 'view.filters'),
+        get(state, 'columns')
       );
       return baseTableReducer(
         update(state, {
@@ -191,6 +205,8 @@ export const tableReducer = (state = {}, action) => {
         action.columns.filter(column => column.id === columnId && column.type === 'TIMESTAMP')
           .length > 0;
 
+      const customColumnSort = getCustomColumnSort(get(state, 'columns'), columnId);
+
       return baseTableReducer(
         update(state, {
           view: {
@@ -198,12 +214,18 @@ export const tableReducer = (state = {}, action) => {
               filteredData: {
                 $set:
                   nextSortDir !== 'NONE'
-                    ? getSortedData(
-                        state.view.table.filteredData || state.data,
-                        columnId,
-                        nextSortDir,
-                        isTimestampColumn
-                      )
+                    ? customColumnSort // if there's a custom column sort apply it
+                      ? customColumnSort({
+                          data: state.view.table.filteredData || state.data,
+                          columnId,
+                          direction: nextSortDir,
+                        })
+                      : getSortedData(
+                          state.view.table.filteredData || state.data,
+                          columnId,
+                          nextSortDir,
+                          isTimestampColumn
+                        )
                     : filterData(state.data, state.view.filters), // reset to original filters
               },
             },
@@ -249,7 +271,8 @@ export const tableReducer = (state = {}, action) => {
                 updatedData,
                 get(state, 'view.table.sort'),
                 get(state, 'view.toolbar.search'),
-                get(state, 'view.filters')
+                get(state, 'view.filters'),
+                get(state, 'columns')
               ),
             },
             loadingState: {

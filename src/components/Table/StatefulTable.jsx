@@ -40,6 +40,7 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
   const [state, dispatch] = useReducer(tableReducer, {
     data: initialData,
     view: initialState,
+    columns,
   });
   const isLoading = get(initialState, 'table.loadingState.isLoading');
   // Need to initially sort and filter the tables data, but preserve the selectedId

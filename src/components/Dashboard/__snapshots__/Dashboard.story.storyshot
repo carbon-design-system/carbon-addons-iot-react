@@ -739,7 +739,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           >
                             Last 7 days
                           </div>
-                          <div
+                          <button
                             aria-expanded={false}
                             aria-haspopup={true}
                             aria-label="Menu"
@@ -748,7 +748,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             onClose={[Function]}
                             onKeyDown={[Function]}
                             open={false}
-                            role="button"
                             tabIndex={0}
                             title="Open and close list of options"
                           >
@@ -783,7 +782,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                 Last 7 days
                               </title>
                             </svg>
-                          </div>
+                          </button>
                         </div>
                         <button
                           className="card--toolbar-action CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
@@ -896,7 +895,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               onBlur={[Function]}
                               onClick={[Function]}
                               onFocus={[Function]}
-                              role="searchbox"
+                              role="search"
                               tabIndex="0"
                             >
                               <div
@@ -918,7 +917,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
                                   <path
-                                    d="M15 14.3L10.7 10c1.9-2.3 1.6-5.8-.7-7.7S4.2.7 2.3 3 .7 8.8 3 10.7c2 1.7 5 1.7 7 0l4.3 4.3.7-.7zM2 6.5C2 4 4 2 6.5 2S11 4 11 6.5 9 11 6.5 11 2 9 2 6.5z"
+                                    d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
                                   />
                                 </svg>
                                 <label
@@ -929,11 +928,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                 </label>
                                 <input
                                   aria-hidden={true}
+                                  autoComplete="off"
                                   className="bx--search-input"
                                   disabled={false}
                                   id="Table-toolbar-search"
                                   onChange={[Function]}
                                   placeholder="Search"
+                                  role="searchbox"
                                   type="text"
                                   value=""
                                 />
@@ -958,7 +959,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                     xmlns="http://www.w3.org/2000/svg"
                                   >
                                     <path
-                                      d="M12 4.7l-.7-.7L8 7.3 4.7 4l-.7.7L7.3 8 4 11.3l.7.7L8 8.7l3.3 3.3.7-.7L8.7 8z"
+                                      d="M12 4.7L11.3 4 8 7.3 4.7 4 4 4.7 7.3 8 4 11.3 4.7 12 8 8.7 11.3 12 12 11.3 8.7 8z"
                                     />
                                   </svg>
                                 </button>
@@ -1096,7 +1097,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M16 4L6 14l1.41 1.41L15 7.83V30h2V7.83l7.59 7.58L26 14 16 4z"
+                                        d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
                                       />
                                     </svg>
                                     <svg
@@ -1116,7 +1117,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M26.59 20.59L23 24.17V4h-2v20.17l-3.59-3.58L16 22l6 6 6-6-1.41-1.41zM10 4l-6 6 1.41 1.41L9 7.83V28h2V7.83l3.59 3.58L16 10l-6-6z"
+                                        d="M26.59 20.59L23 24.17 23 4 21 4 21 24.17 17.41 20.59 16 22 22 28 28 22 26.59 20.59zM10 4L4 10 5.41 11.41 9 7.83 9 28 11 28 11 7.83 14.59 11.41 16 10 10 4z"
                                       />
                                     </svg>
                                   </button>
@@ -1160,7 +1161,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M16 4L6 14l1.41 1.41L15 7.83V30h2V7.83l7.59 7.58L26 14 16 4z"
+                                        d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
                                       />
                                     </svg>
                                     <svg
@@ -1180,7 +1181,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M26.59 20.59L23 24.17V4h-2v20.17l-3.59-3.58L16 22l6 6 6-6-1.41-1.41zM10 4l-6 6 1.41 1.41L9 7.83V28h2V7.83l3.59 3.58L16 10l-6-6z"
+                                        d="M26.59 20.59L23 24.17 23 4 21 4 21 24.17 17.41 20.59 16 22 22 28 28 22 26.59 20.59zM10 4L4 10 5.41 11.41 9 7.83 9 28 11 28 11 7.83 14.59 11.41 16 10 10 4z"
                                       />
                                     </svg>
                                   </button>
@@ -1224,7 +1225,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M16 4L6 14l1.41 1.41L15 7.83V30h2V7.83l7.59 7.58L26 14 16 4z"
+                                        d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
                                       />
                                     </svg>
                                     <svg
@@ -1244,7 +1245,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M26.59 20.59L23 24.17V4h-2v20.17l-3.59-3.58L16 22l6 6 6-6-1.41-1.41zM10 4l-6 6 1.41 1.41L9 7.83V28h2V7.83l3.59 3.58L16 10l-6-6z"
+                                        d="M26.59 20.59L23 24.17 23 4 21 4 21 24.17 17.41 20.59 16 22 22 28 28 22 26.59 20.59zM10 4L4 10 5.41 11.41 9 7.83 9 28 11 28 11 7.83 14.59 11.41 16 10 10 4z"
                                       />
                                     </svg>
                                   </button>
@@ -1333,7 +1334,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           >
                             Last year
                           </div>
-                          <div
+                          <button
                             aria-expanded={false}
                             aria-haspopup={true}
                             aria-label="Menu"
@@ -1342,7 +1343,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             onClose={[Function]}
                             onKeyDown={[Function]}
                             open={false}
-                            role="button"
                             tabIndex={0}
                             title="Open and close list of options"
                           >
@@ -1377,7 +1377,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                 Last year
                               </title>
                             </svg>
-                          </div>
+                          </button>
                         </div>
                         <button
                           className="card--toolbar-action CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
@@ -2514,7 +2514,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           >
                             Last 7 days
                           </div>
-                          <div
+                          <button
                             aria-expanded={false}
                             aria-haspopup={true}
                             aria-label="Menu"
@@ -2523,7 +2523,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             onClose={[Function]}
                             onKeyDown={[Function]}
                             open={false}
-                            role="button"
                             tabIndex={0}
                             title="Open and close list of options"
                           >
@@ -2558,7 +2557,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                 Last 7 days
                               </title>
                             </svg>
-                          </div>
+                          </button>
                         </div>
                         <button
                           className="card--toolbar-action CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
@@ -2671,7 +2670,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               onBlur={[Function]}
                               onClick={[Function]}
                               onFocus={[Function]}
-                              role="searchbox"
+                              role="search"
                               tabIndex="0"
                             >
                               <div
@@ -2693,7 +2692,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
                                   <path
-                                    d="M15 14.3L10.7 10c1.9-2.3 1.6-5.8-.7-7.7S4.2.7 2.3 3 .7 8.8 3 10.7c2 1.7 5 1.7 7 0l4.3 4.3.7-.7zM2 6.5C2 4 4 2 6.5 2S11 4 11 6.5 9 11 6.5 11 2 9 2 6.5z"
+                                    d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
                                   />
                                 </svg>
                                 <label
@@ -2704,11 +2703,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                 </label>
                                 <input
                                   aria-hidden={true}
+                                  autoComplete="off"
                                   className="bx--search-input"
                                   disabled={false}
                                   id="Table-toolbar-search"
                                   onChange={[Function]}
                                   placeholder="Search"
+                                  role="searchbox"
                                   type="text"
                                   value=""
                                 />
@@ -2733,7 +2734,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                     xmlns="http://www.w3.org/2000/svg"
                                   >
                                     <path
-                                      d="M12 4.7l-.7-.7L8 7.3 4.7 4l-.7.7L7.3 8 4 11.3l.7.7L8 8.7l3.3 3.3.7-.7L8.7 8z"
+                                      d="M12 4.7L11.3 4 8 7.3 4.7 4 4 4.7 7.3 8 4 11.3 4.7 12 8 8.7 11.3 12 12 11.3 8.7 8z"
                                     />
                                   </svg>
                                 </button>
@@ -2871,7 +2872,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M16 4L6 14l1.41 1.41L15 7.83V30h2V7.83l7.59 7.58L26 14 16 4z"
+                                        d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
                                       />
                                     </svg>
                                     <svg
@@ -2891,7 +2892,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M26.59 20.59L23 24.17V4h-2v20.17l-3.59-3.58L16 22l6 6 6-6-1.41-1.41zM10 4l-6 6 1.41 1.41L9 7.83V28h2V7.83l3.59 3.58L16 10l-6-6z"
+                                        d="M26.59 20.59L23 24.17 23 4 21 4 21 24.17 17.41 20.59 16 22 22 28 28 22 26.59 20.59zM10 4L4 10 5.41 11.41 9 7.83 9 28 11 28 11 7.83 14.59 11.41 16 10 10 4z"
                                       />
                                     </svg>
                                   </button>
@@ -2935,7 +2936,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M16 4L6 14l1.41 1.41L15 7.83V30h2V7.83l7.59 7.58L26 14 16 4z"
+                                        d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
                                       />
                                     </svg>
                                     <svg
@@ -2955,7 +2956,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M26.59 20.59L23 24.17V4h-2v20.17l-3.59-3.58L16 22l6 6 6-6-1.41-1.41zM10 4l-6 6 1.41 1.41L9 7.83V28h2V7.83l3.59 3.58L16 10l-6-6z"
+                                        d="M26.59 20.59L23 24.17 23 4 21 4 21 24.17 17.41 20.59 16 22 22 28 28 22 26.59 20.59zM10 4L4 10 5.41 11.41 9 7.83 9 28 11 28 11 7.83 14.59 11.41 16 10 10 4z"
                                       />
                                     </svg>
                                   </button>
@@ -2999,7 +3000,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M16 4L6 14l1.41 1.41L15 7.83V30h2V7.83l7.59 7.58L26 14 16 4z"
+                                        d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
                                       />
                                     </svg>
                                     <svg
@@ -3019,7 +3020,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M26.59 20.59L23 24.17V4h-2v20.17l-3.59-3.58L16 22l6 6 6-6-1.41-1.41zM10 4l-6 6 1.41 1.41L9 7.83V28h2V7.83l3.59 3.58L16 10l-6-6z"
+                                        d="M26.59 20.59L23 24.17 23 4 21 4 21 24.17 17.41 20.59 16 22 22 28 28 22 26.59 20.59zM10 4L4 10 5.41 11.41 9 7.83 9 28 11 28 11 7.83 14.59 11.41 16 10 10 4z"
                                       />
                                     </svg>
                                   </button>
@@ -3108,7 +3109,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           >
                             Last year
                           </div>
-                          <div
+                          <button
                             aria-expanded={false}
                             aria-haspopup={true}
                             aria-label="Menu"
@@ -3117,7 +3118,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             onClose={[Function]}
                             onKeyDown={[Function]}
                             open={false}
-                            role="button"
                             tabIndex={0}
                             title="Open and close list of options"
                           >
@@ -3152,7 +3152,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                 Last year
                               </title>
                             </svg>
-                          </div>
+                          </button>
                         </div>
                         <button
                           className="card--toolbar-action CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
@@ -4321,7 +4321,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           >
                             Last 7 days
                           </div>
-                          <div
+                          <button
                             aria-expanded={false}
                             aria-haspopup={true}
                             aria-label="Menu"
@@ -4330,7 +4330,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             onClose={[Function]}
                             onKeyDown={[Function]}
                             open={false}
-                            role="button"
                             tabIndex={0}
                             title="Open and close list of options"
                           >
@@ -4365,7 +4364,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                 Last 7 days
                               </title>
                             </svg>
-                          </div>
+                          </button>
                         </div>
                         <button
                           className="card--toolbar-action CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
@@ -4478,7 +4477,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               onBlur={[Function]}
                               onClick={[Function]}
                               onFocus={[Function]}
-                              role="searchbox"
+                              role="search"
                               tabIndex="0"
                             >
                               <div
@@ -4500,7 +4499,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
                                   <path
-                                    d="M15 14.3L10.7 10c1.9-2.3 1.6-5.8-.7-7.7S4.2.7 2.3 3 .7 8.8 3 10.7c2 1.7 5 1.7 7 0l4.3 4.3.7-.7zM2 6.5C2 4 4 2 6.5 2S11 4 11 6.5 9 11 6.5 11 2 9 2 6.5z"
+                                    d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
                                   />
                                 </svg>
                                 <label
@@ -4511,11 +4510,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                 </label>
                                 <input
                                   aria-hidden={true}
+                                  autoComplete="off"
                                   className="bx--search-input"
                                   disabled={false}
                                   id="Table-toolbar-search"
                                   onChange={[Function]}
                                   placeholder="Search"
+                                  role="searchbox"
                                   type="text"
                                   value=""
                                 />
@@ -4540,7 +4541,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                     xmlns="http://www.w3.org/2000/svg"
                                   >
                                     <path
-                                      d="M12 4.7l-.7-.7L8 7.3 4.7 4l-.7.7L7.3 8 4 11.3l.7.7L8 8.7l3.3 3.3.7-.7L8.7 8z"
+                                      d="M12 4.7L11.3 4 8 7.3 4.7 4 4 4.7 7.3 8 4 11.3 4.7 12 8 8.7 11.3 12 12 11.3 8.7 8z"
                                     />
                                   </svg>
                                 </button>
@@ -4678,7 +4679,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M16 4L6 14l1.41 1.41L15 7.83V30h2V7.83l7.59 7.58L26 14 16 4z"
+                                        d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
                                       />
                                     </svg>
                                     <svg
@@ -4698,7 +4699,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M26.59 20.59L23 24.17V4h-2v20.17l-3.59-3.58L16 22l6 6 6-6-1.41-1.41zM10 4l-6 6 1.41 1.41L9 7.83V28h2V7.83l3.59 3.58L16 10l-6-6z"
+                                        d="M26.59 20.59L23 24.17 23 4 21 4 21 24.17 17.41 20.59 16 22 22 28 28 22 26.59 20.59zM10 4L4 10 5.41 11.41 9 7.83 9 28 11 28 11 7.83 14.59 11.41 16 10 10 4z"
                                       />
                                     </svg>
                                   </button>
@@ -4742,7 +4743,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M16 4L6 14l1.41 1.41L15 7.83V30h2V7.83l7.59 7.58L26 14 16 4z"
+                                        d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
                                       />
                                     </svg>
                                     <svg
@@ -4762,7 +4763,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M26.59 20.59L23 24.17V4h-2v20.17l-3.59-3.58L16 22l6 6 6-6-1.41-1.41zM10 4l-6 6 1.41 1.41L9 7.83V28h2V7.83l3.59 3.58L16 10l-6-6z"
+                                        d="M26.59 20.59L23 24.17 23 4 21 4 21 24.17 17.41 20.59 16 22 22 28 28 22 26.59 20.59zM10 4L4 10 5.41 11.41 9 7.83 9 28 11 28 11 7.83 14.59 11.41 16 10 10 4z"
                                       />
                                     </svg>
                                   </button>
@@ -4806,7 +4807,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M16 4L6 14l1.41 1.41L15 7.83V30h2V7.83l7.59 7.58L26 14 16 4z"
+                                        d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
                                       />
                                     </svg>
                                     <svg
@@ -4826,7 +4827,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M26.59 20.59L23 24.17V4h-2v20.17l-3.59-3.58L16 22l6 6 6-6-1.41-1.41zM10 4l-6 6 1.41 1.41L9 7.83V28h2V7.83l3.59 3.58L16 10l-6-6z"
+                                        d="M26.59 20.59L23 24.17 23 4 21 4 21 24.17 17.41 20.59 16 22 22 28 28 22 26.59 20.59zM10 4L4 10 5.41 11.41 9 7.83 9 28 11 28 11 7.83 14.59 11.41 16 10 10 4z"
                                       />
                                     </svg>
                                   </button>
@@ -4915,7 +4916,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           >
                             Last year
                           </div>
-                          <div
+                          <button
                             aria-expanded={false}
                             aria-haspopup={true}
                             aria-label="Menu"
@@ -4924,7 +4925,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             onClose={[Function]}
                             onKeyDown={[Function]}
                             open={false}
-                            role="button"
                             tabIndex={0}
                             title="Open and close list of options"
                           >
@@ -4959,7 +4959,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                 Last year
                               </title>
                             </svg>
-                          </div>
+                          </button>
                         </div>
                         <button
                           className="card--toolbar-action CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
@@ -6006,7 +6006,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               onBlur={[Function]}
                               onClick={[Function]}
                               onFocus={[Function]}
-                              role="searchbox"
+                              role="search"
                               tabIndex="0"
                             >
                               <div
@@ -6028,7 +6028,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
                                   <path
-                                    d="M15 14.3L10.7 10c1.9-2.3 1.6-5.8-.7-7.7S4.2.7 2.3 3 .7 8.8 3 10.7c2 1.7 5 1.7 7 0l4.3 4.3.7-.7zM2 6.5C2 4 4 2 6.5 2S11 4 11 6.5 9 11 6.5 11 2 9 2 6.5z"
+                                    d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
                                   />
                                 </svg>
                                 <label
@@ -6039,10 +6039,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                 </label>
                                 <input
                                   aria-hidden={true}
+                                  autoComplete="off"
                                   className="bx--search-input"
                                   id="Table-toolbar-search"
                                   onChange={[Function]}
                                   placeholder="Search"
+                                  role="searchbox"
                                   type="text"
                                   value=""
                                 />
@@ -6067,7 +6069,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                     xmlns="http://www.w3.org/2000/svg"
                                   >
                                     <path
-                                      d="M12 4.7l-.7-.7L8 7.3 4.7 4l-.7.7L7.3 8 4 11.3l.7.7L8 8.7l3.3 3.3.7-.7L8.7 8z"
+                                      d="M12 4.7L11.3 4 8 7.3 4.7 4 4 4.7 7.3 8 4 11.3 4.7 12 8 8.7 11.3 12 12 11.3 8.7 8z"
                                     />
                                   </svg>
                                 </button>
@@ -6206,7 +6208,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M16 4L6 14l1.41 1.41L15 7.83V30h2V7.83l7.59 7.58L26 14 16 4z"
+                                        d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
                                       />
                                     </svg>
                                     <svg
@@ -6226,7 +6228,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M26.59 20.59L23 24.17V4h-2v20.17l-3.59-3.58L16 22l6 6 6-6-1.41-1.41zM10 4l-6 6 1.41 1.41L9 7.83V28h2V7.83l3.59 3.58L16 10l-6-6z"
+                                        d="M26.59 20.59L23 24.17 23 4 21 4 21 24.17 17.41 20.59 16 22 22 28 28 22 26.59 20.59zM10 4L4 10 5.41 11.41 9 7.83 9 28 11 28 11 7.83 14.59 11.41 16 10 10 4z"
                                       />
                                     </svg>
                                   </button>
@@ -6270,7 +6272,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M16 4L6 14l1.41 1.41L15 7.83V30h2V7.83l7.59 7.58L26 14 16 4z"
+                                        d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
                                       />
                                     </svg>
                                     <svg
@@ -6290,7 +6292,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M26.59 20.59L23 24.17V4h-2v20.17l-3.59-3.58L16 22l6 6 6-6-1.41-1.41zM10 4l-6 6 1.41 1.41L9 7.83V28h2V7.83l3.59 3.58L16 10l-6-6z"
+                                        d="M26.59 20.59L23 24.17 23 4 21 4 21 24.17 17.41 20.59 16 22 22 28 28 22 26.59 20.59zM10 4L4 10 5.41 11.41 9 7.83 9 28 11 28 11 7.83 14.59 11.41 16 10 10 4z"
                                       />
                                     </svg>
                                   </button>
@@ -6334,7 +6336,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M16 4L6 14l1.41 1.41L15 7.83V30h2V7.83l7.59 7.58L26 14 16 4z"
+                                        d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
                                       />
                                     </svg>
                                     <svg
@@ -6354,7 +6356,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M26.59 20.59L23 24.17V4h-2v20.17l-3.59-3.58L16 22l6 6 6-6-1.41-1.41zM10 4l-6 6 1.41 1.41L9 7.83V28h2V7.83l3.59 3.58L16 10l-6-6z"
+                                        d="M26.59 20.59L23 24.17 23 4 21 4 21 24.17 17.41 20.59 16 22 22 28 28 22 26.59 20.59zM10 4L4 10 5.41 11.41 9 7.83 9 28 11 28 11 7.83 14.59 11.41 16 10 10 4z"
                                       />
                                     </svg>
                                   </button>
@@ -6398,7 +6400,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M16 4L6 14l1.41 1.41L15 7.83V30h2V7.83l7.59 7.58L26 14 16 4z"
+                                        d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
                                       />
                                     </svg>
                                     <svg
@@ -6418,7 +6420,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M26.59 20.59L23 24.17V4h-2v20.17l-3.59-3.58L16 22l6 6 6-6-1.41-1.41zM10 4l-6 6 1.41 1.41L9 7.83V28h2V7.83l3.59 3.58L16 10l-6-6z"
+                                        d="M26.59 20.59L23 24.17 23 4 21 4 21 24.17 17.41 20.59 16 22 22 28 28 22 26.59 20.59zM10 4L4 10 5.41 11.41 9 7.83 9 28 11 28 11 7.83 14.59 11.41 16 10 10 4z"
                                       />
                                     </svg>
                                   </button>
@@ -6462,7 +6464,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M16 4L6 14l1.41 1.41L15 7.83V30h2V7.83l7.59 7.58L26 14 16 4z"
+                                        d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
                                       />
                                     </svg>
                                     <svg
@@ -6482,7 +6484,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M26.59 20.59L23 24.17V4h-2v20.17l-3.59-3.58L16 22l6 6 6-6-1.41-1.41zM10 4l-6 6 1.41 1.41L9 7.83V28h2V7.83l3.59 3.58L16 10l-6-6z"
+                                        d="M26.59 20.59L23 24.17 23 4 21 4 21 24.17 17.41 20.59 16 22 22 28 28 22 26.59 20.59zM10 4L4 10 5.41 11.41 9 7.83 9 28 11 28 11 7.83 14.59 11.41 16 10 10 4z"
                                       />
                                     </svg>
                                   </button>
@@ -7501,12 +7503,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                       </option>
                                     </select>
                                     <svg
-                                      aria-label="open list of options"
+                                      aria-hidden={true}
                                       className="bx--select__arrow"
                                       focusable="false"
                                       height={16}
                                       preserveAspectRatio="xMidYMid meet"
-                                      role="img"
                                       style={
                                         Object {
                                           "willChange": "transform",
@@ -7517,11 +7518,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M8 11L3 6l.7-.7L8 9.6l4.3-4.3.7.7z"
+                                        d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
                                       />
-                                      <title>
-                                        open list of options
-                                      </title>
                                     </svg>
                                   </div>
                                 </div>
@@ -7595,12 +7593,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                       </option>
                                     </select>
                                     <svg
-                                      aria-label="open list of options"
+                                      aria-hidden={true}
                                       className="bx--select__arrow"
                                       focusable="false"
                                       height={16}
                                       preserveAspectRatio="xMidYMid meet"
-                                      role="img"
                                       style={
                                         Object {
                                           "willChange": "transform",
@@ -7611,11 +7608,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M8 11L3 6l.7-.7L8 9.6l4.3-4.3.7.7z"
+                                        d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
                                       />
-                                      <title>
-                                        open list of options
-                                      </title>
                                     </svg>
                                   </div>
                                 </div>
@@ -7648,7 +7642,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                 xmlns="http://www.w3.org/2000/svg"
                               >
                                 <path
-                                  d="M19 23l-8-7 8-7v14z"
+                                  d="M19 23L11 16 19 9 19 23z"
                                 />
                               </svg>
                             </button>
@@ -7674,7 +7668,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                 xmlns="http://www.w3.org/2000/svg"
                               >
                                 <path
-                                  d="M13 9l8 7-8 7V9z"
+                                  d="M13 9L21 16 13 23 13 9z"
                                 />
                               </svg>
                             </button>
@@ -8463,7 +8457,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           >
                             Last 7 days
                           </div>
-                          <div
+                          <button
                             aria-expanded={false}
                             aria-haspopup={true}
                             aria-label="Menu"
@@ -8472,7 +8466,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             onClose={[Function]}
                             onKeyDown={[Function]}
                             open={false}
-                            role="button"
                             tabIndex={0}
                             title="open and close list of options"
                           >
@@ -8507,7 +8500,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                 Last 7 days
                               </title>
                             </svg>
-                          </div>
+                          </button>
                         </div>
                         <button
                           className="card--toolbar-action CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
@@ -8620,7 +8613,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               onBlur={[Function]}
                               onClick={[Function]}
                               onFocus={[Function]}
-                              role="searchbox"
+                              role="search"
                               tabIndex="0"
                             >
                               <div
@@ -8642,7 +8635,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
                                   <path
-                                    d="M15 14.3L10.7 10c1.9-2.3 1.6-5.8-.7-7.7S4.2.7 2.3 3 .7 8.8 3 10.7c2 1.7 5 1.7 7 0l4.3 4.3.7-.7zM2 6.5C2 4 4 2 6.5 2S11 4 11 6.5 9 11 6.5 11 2 9 2 6.5z"
+                                    d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
                                   />
                                 </svg>
                                 <label
@@ -8653,11 +8646,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                 </label>
                                 <input
                                   aria-hidden={true}
+                                  autoComplete="off"
                                   className="bx--search-input"
                                   disabled={false}
                                   id="Table-toolbar-search"
                                   onChange={[Function]}
                                   placeholder="Search"
+                                  role="searchbox"
                                   type="text"
                                   value=""
                                 />
@@ -8682,7 +8677,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                     xmlns="http://www.w3.org/2000/svg"
                                   >
                                     <path
-                                      d="M12 4.7l-.7-.7L8 7.3 4.7 4l-.7.7L7.3 8 4 11.3l.7.7L8 8.7l3.3 3.3.7-.7L8.7 8z"
+                                      d="M12 4.7L11.3 4 8 7.3 4.7 4 4 4.7 7.3 8 4 11.3 4.7 12 8 8.7 11.3 12 12 11.3 8.7 8z"
                                     />
                                   </svg>
                                 </button>
@@ -8818,7 +8813,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M16 4L6 14l1.41 1.41L15 7.83V30h2V7.83l7.59 7.58L26 14 16 4z"
+                                        d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
                                       />
                                     </svg>
                                     <svg
@@ -8838,7 +8833,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M26.59 20.59L23 24.17V4h-2v20.17l-3.59-3.58L16 22l6 6 6-6-1.41-1.41zM10 4l-6 6 1.41 1.41L9 7.83V28h2V7.83l3.59 3.58L16 10l-6-6z"
+                                        d="M26.59 20.59L23 24.17 23 4 21 4 21 24.17 17.41 20.59 16 22 22 28 28 22 26.59 20.59zM10 4L4 10 5.41 11.41 9 7.83 9 28 11 28 11 7.83 14.59 11.41 16 10 10 4z"
                                       />
                                     </svg>
                                   </button>
@@ -8882,7 +8877,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M16 4L6 14l1.41 1.41L15 7.83V30h2V7.83l7.59 7.58L26 14 16 4z"
+                                        d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
                                       />
                                     </svg>
                                     <svg
@@ -8902,7 +8897,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M26.59 20.59L23 24.17V4h-2v20.17l-3.59-3.58L16 22l6 6 6-6-1.41-1.41zM10 4l-6 6 1.41 1.41L9 7.83V28h2V7.83l3.59 3.58L16 10l-6-6z"
+                                        d="M26.59 20.59L23 24.17 23 4 21 4 21 24.17 17.41 20.59 16 22 22 28 28 22 26.59 20.59zM10 4L4 10 5.41 11.41 9 7.83 9 28 11 28 11 7.83 14.59 11.41 16 10 10 4z"
                                       />
                                     </svg>
                                   </button>
@@ -8946,7 +8941,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M16 4L6 14l1.41 1.41L15 7.83V30h2V7.83l7.59 7.58L26 14 16 4z"
+                                        d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
                                       />
                                     </svg>
                                     <svg
@@ -8966,7 +8961,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M26.59 20.59L23 24.17V4h-2v20.17l-3.59-3.58L16 22l6 6 6-6-1.41-1.41zM10 4l-6 6 1.41 1.41L9 7.83V28h2V7.83l3.59 3.58L16 10l-6-6z"
+                                        d="M26.59 20.59L23 24.17 23 4 21 4 21 24.17 17.41 20.59 16 22 22 28 28 22 26.59 20.59zM10 4L4 10 5.41 11.41 9 7.83 9 28 11 28 11 7.83 14.59 11.41 16 10 10 4z"
                                       />
                                     </svg>
                                   </button>
@@ -9055,7 +9050,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           >
                             Last year
                           </div>
-                          <div
+                          <button
                             aria-expanded={false}
                             aria-haspopup={true}
                             aria-label="Menu"
@@ -9064,7 +9059,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             onClose={[Function]}
                             onKeyDown={[Function]}
                             open={false}
-                            role="button"
                             tabIndex={0}
                             title="open and close list of options"
                           >
@@ -9099,7 +9093,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                 Last year
                               </title>
                             </svg>
-                          </div>
+                          </button>
                         </div>
                         <button
                           className="card--toolbar-action CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
@@ -20275,7 +20269,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           >
                             Last 7 days
                           </div>
-                          <div
+                          <button
                             aria-expanded={false}
                             aria-haspopup={true}
                             aria-label="Menu"
@@ -20284,7 +20278,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             onClose={[Function]}
                             onKeyDown={[Function]}
                             open={false}
-                            role="button"
                             tabIndex={0}
                             title="Open and close list of options"
                           >
@@ -20319,7 +20312,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                 Last 7 days
                               </title>
                             </svg>
-                          </div>
+                          </button>
                         </div>
                         <button
                           className="card--toolbar-action CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
@@ -20432,7 +20425,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               onBlur={[Function]}
                               onClick={[Function]}
                               onFocus={[Function]}
-                              role="searchbox"
+                              role="search"
                               tabIndex="0"
                             >
                               <div
@@ -20454,7 +20447,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
                                   <path
-                                    d="M15 14.3L10.7 10c1.9-2.3 1.6-5.8-.7-7.7S4.2.7 2.3 3 .7 8.8 3 10.7c2 1.7 5 1.7 7 0l4.3 4.3.7-.7zM2 6.5C2 4 4 2 6.5 2S11 4 11 6.5 9 11 6.5 11 2 9 2 6.5z"
+                                    d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
                                   />
                                 </svg>
                                 <label
@@ -20465,11 +20458,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                 </label>
                                 <input
                                   aria-hidden={true}
+                                  autoComplete="off"
                                   className="bx--search-input"
                                   disabled={false}
                                   id="Table-toolbar-search"
                                   onChange={[Function]}
                                   placeholder="Search"
+                                  role="searchbox"
                                   type="text"
                                   value=""
                                 />
@@ -20494,7 +20489,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                     xmlns="http://www.w3.org/2000/svg"
                                   >
                                     <path
-                                      d="M12 4.7l-.7-.7L8 7.3 4.7 4l-.7.7L7.3 8 4 11.3l.7.7L8 8.7l3.3 3.3.7-.7L8.7 8z"
+                                      d="M12 4.7L11.3 4 8 7.3 4.7 4 4 4.7 7.3 8 4 11.3 4.7 12 8 8.7 11.3 12 12 11.3 8.7 8z"
                                     />
                                   </svg>
                                 </button>
@@ -20632,7 +20627,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M16 4L6 14l1.41 1.41L15 7.83V30h2V7.83l7.59 7.58L26 14 16 4z"
+                                        d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
                                       />
                                     </svg>
                                     <svg
@@ -20652,7 +20647,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M26.59 20.59L23 24.17V4h-2v20.17l-3.59-3.58L16 22l6 6 6-6-1.41-1.41zM10 4l-6 6 1.41 1.41L9 7.83V28h2V7.83l3.59 3.58L16 10l-6-6z"
+                                        d="M26.59 20.59L23 24.17 23 4 21 4 21 24.17 17.41 20.59 16 22 22 28 28 22 26.59 20.59zM10 4L4 10 5.41 11.41 9 7.83 9 28 11 28 11 7.83 14.59 11.41 16 10 10 4z"
                                       />
                                     </svg>
                                   </button>
@@ -20696,7 +20691,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M16 4L6 14l1.41 1.41L15 7.83V30h2V7.83l7.59 7.58L26 14 16 4z"
+                                        d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
                                       />
                                     </svg>
                                     <svg
@@ -20716,7 +20711,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M26.59 20.59L23 24.17V4h-2v20.17l-3.59-3.58L16 22l6 6 6-6-1.41-1.41zM10 4l-6 6 1.41 1.41L9 7.83V28h2V7.83l3.59 3.58L16 10l-6-6z"
+                                        d="M26.59 20.59L23 24.17 23 4 21 4 21 24.17 17.41 20.59 16 22 22 28 28 22 26.59 20.59zM10 4L4 10 5.41 11.41 9 7.83 9 28 11 28 11 7.83 14.59 11.41 16 10 10 4z"
                                       />
                                     </svg>
                                   </button>
@@ -20760,7 +20755,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M16 4L6 14l1.41 1.41L15 7.83V30h2V7.83l7.59 7.58L26 14 16 4z"
+                                        d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
                                       />
                                     </svg>
                                     <svg
@@ -20780,7 +20775,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M26.59 20.59L23 24.17V4h-2v20.17l-3.59-3.58L16 22l6 6 6-6-1.41-1.41zM10 4l-6 6 1.41 1.41L9 7.83V28h2V7.83l3.59 3.58L16 10l-6-6z"
+                                        d="M26.59 20.59L23 24.17 23 4 21 4 21 24.17 17.41 20.59 16 22 22 28 28 22 26.59 20.59zM10 4L4 10 5.41 11.41 9 7.83 9 28 11 28 11 7.83 14.59 11.41 16 10 10 4z"
                                       />
                                     </svg>
                                   </button>
@@ -20869,7 +20864,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           >
                             Last year
                           </div>
-                          <div
+                          <button
                             aria-expanded={false}
                             aria-haspopup={true}
                             aria-label="Menu"
@@ -20878,7 +20873,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             onClose={[Function]}
                             onKeyDown={[Function]}
                             open={false}
-                            role="button"
                             tabIndex={0}
                             title="Open and close list of options"
                           >
@@ -20913,7 +20907,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                 Last year
                               </title>
                             </svg>
-                          </div>
+                          </button>
                         </div>
                         <button
                           className="card--toolbar-action CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
@@ -21396,6 +21390,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           handleClick={[Function]}
                           handleKeyDown={[Function]}
                           href="https://internetofthings.ibmcloud.com"
+                          light={false}
                           style={
                             Object {
                               "height": "100%",
@@ -21518,6 +21513,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           handleClick={[Function]}
                           handleKeyDown={[Function]}
                           href="https://internetofthings.ibmcloud.com"
+                          light={false}
                           style={
                             Object {
                               "height": "100%",

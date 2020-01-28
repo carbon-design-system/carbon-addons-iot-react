@@ -3,8 +3,8 @@ import VisibilitySensor from 'react-visibility-sensor';
 import { Tooltip, SkeletonText } from 'carbon-components-react';
 import styled from 'styled-components';
 import SizeMe from 'react-sizeme';
-import { settings } from 'carbon-components';
 
+import { settings } from '../../constants/Settings';
 import {
   CARD_TITLE_HEIGHT,
   CARD_CONTENT_PADDING,

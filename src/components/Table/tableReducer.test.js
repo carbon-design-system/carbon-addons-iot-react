@@ -152,6 +152,18 @@ describe('table reducer testcases', () => {
         tableSortedNone.view.table.filteredData
       );
     });
+    test('TABLE_COLUMN_SORT custom sort function', () => {
+      const sortColumnAction = tableColumnSort(tableColumns[4].id);
+      const mockSortFunction = jest.fn().mockReturnValue(initialState.data);
+      // Splice in our custom mock sort function
+      initialState.columns.splice(4, 1, {
+        ...initialState.columns[4],
+        sortFunction: mockSortFunction,
+      });
+      // First sort ASC
+      tableReducer(initialState, sortColumnAction);
+      expect(mockSortFunction).toHaveBeenCalled();
+    });
     test('TABLE_COLUMN_ORDER', () => {
       expect(initialState.view.table.ordering[0].isHidden).toBe(false);
       // Hide the first column
@@ -331,5 +343,23 @@ describe('filter, search and sort', () => {
     expect(
       filterSearchAndSort(mockData, {}, {}, [{ columnId: 'string', value: 'none' }])
     ).toHaveLength(0);
+  });
+  test('filterSearchAndSort with custom sort function', () => {
+    const mockData = [
+      { values: { number: 10, severity: 'High', null: null } },
+      { values: { number: 10, severity: 'Low', null: null } },
+      { values: { number: 10, severity: 'Medium', null: null } },
+    ];
+    const mockSortFunction = jest.fn().mockReturnValue(mockData);
+    expect(
+      filterSearchAndSort(
+        mockData,
+        { columnId: 'severity', direction: 'ASC' },
+        {},
+        [],
+        [{ id: 'severity', sortFunction: mockSortFunction }]
+      )
+    ).toHaveLength(3);
+    expect(mockSortFunction).toHaveBeenCalled();
   });
 });

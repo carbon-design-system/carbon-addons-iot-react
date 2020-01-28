@@ -40,7 +40,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Butto
         }
       >
         <button
-          className="Button__StyledButton-sc-19kycwu-0 PhzAJ bx--btn bx--btn--primary bx--btn--disabled"
+          className="iot--btn bx--btn bx--btn--primary bx--btn--disabled"
           disabled={true}
           onClick={[Function]}
           tabIndex={0}
@@ -150,7 +150,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Butto
         }
       >
         <button
-          className="Button__StyledButton-sc-19kycwu-0 PhzAJ bx--btn bx--btn--secondary bx--btn--disabled"
+          className="iot--btn bx--btn bx--btn--secondary bx--btn--disabled"
           disabled={true}
           onClick={[Function]}
           tabIndex={0}
@@ -260,7 +260,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Butto
         }
       >
         <button
-          className="Button__StyledButton-sc-19kycwu-0 PhzAJ bx--btn bx--btn--primary"
+          className="iot--btn bx--btn bx--btn--primary"
           disabled={false}
           onClick={[Function]}
           tabIndex={0}
