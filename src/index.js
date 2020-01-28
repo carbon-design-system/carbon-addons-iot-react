@@ -7,19 +7,19 @@ sizeMe.noPlaceholders = true;
 export styles from './styles.scss';
 
 // Components
+export AddCard from './components/AddCard';
 export Button from './components/Button';
 export { Breadcrumb, BreadcrumbItem, BreadcrumbSkeleton } from './components/Breadcrumb';
-export Table from './components/Table';
-export AddCard from './components/AddCard';
 export ComposedModal from './components/ComposedModal';
+export EmptyTable from './components/Table/EmptyTable/EmptyTable';
+export Table from './components/Table';
+export TableHead from './components/Table/TableHead/TableHead';
+export TableBody from './components/Table/TableBody/TableBody';
+export TableSkeletonWithHeaders from './components/Table/TableSkeletonWithHeaders/TableSkeletonWithHeaders';
+export TableToolbar from './components/Table/TableToolbar/TableToolbar';
 export WizardModal from './components/WizardModal';
 export WizardInline from './components/WizardInline/WizardInline';
 export StatefulWizardInline from './components/WizardInline/StatefulWizardInline';
-export TableHead from './components/Table/TableHead/TableHead';
-export TableBody from './components/Table/TableBody/TableBody';
-export TableToolbar from './components/Table/TableToolbar/TableToolbar';
-export EmptyTable from './components/Table/EmptyTable/EmptyTable';
-export TableSkeletonWithHeaders from './components/Table/TableSkeletonWithHeaders/TableSkeletonWithHeaders';
 export StatefulTable from './components/Table/StatefulTable';
 export TileCatalog from './components/TileCatalog/TileCatalog';
 export StatefulTileCatalog from './components/TileCatalog/StatefulTileCatalog';
