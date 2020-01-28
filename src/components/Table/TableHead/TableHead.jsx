@@ -18,6 +18,8 @@ import TableHeader from './TableHeader';
 const { TableHead: CarbonTableHead, TableRow, TableExpandHeader } = DataTable;
 
 const propTypes = {
+  /** Used to set a fixed min.width max-width on all TableHeaders */
+  headerWidth: PropTypes.number,
   /** Important table options that the head needs to know about */
   options: PropTypes.shape({
     hasRowExpansion: PropTypes.bool,
@@ -88,6 +90,7 @@ const defaultProps = {
     ...defaultI18NPropTypes,
   },
   hasResize: true,
+  headerWidth: undefined,
 };
 
 const StyledCheckboxTableHeader = styled(TableHeader)`
@@ -169,6 +172,7 @@ const dragIsValidRtl = (mousePosition, bounds) => {
 };
 
 const TableHead = ({
+  headerWidth,
   options,
   options: { hasRowExpansion, hasRowSelection },
   columns,
@@ -242,9 +246,9 @@ const TableHead = ({
   };
   useEffect(
     () => {
-      const nextWidth = columnRef.map(
-        ref => ref.current && ref.current.getBoundingClientRect().width
-      );
+      const nextWidth = columnRef.map(ref => {
+        return headerWidth || (ref.current && ref.current.getBoundingClientRect().width);
+      });
       setColumnWidth(nextWidth);
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -276,6 +280,7 @@ const TableHead = ({
             matchingColumnMeta && matchingColumnMeta.align ? matchingColumnMeta.align : 'start';
           return !item.isHidden && matchingColumnMeta ? (
             <StyledCustomTableHeader
+              width={headerWidth}
               id={`column-${matchingColumnMeta.id}`}
               key={`column-${matchingColumnMeta.id}`}
               data-column={matchingColumnMeta.id}
