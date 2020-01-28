@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { HeaderGlobalBar } from 'carbon-components-react/lib/components/UIShell';
 import PropTypes from 'prop-types';
 
@@ -16,26 +16,11 @@ const propTypes = {
  * or dropdown menus, passing an onToggleExpansion to each action
  */
 const HeaderActionGroup = ({ actionItems }) => {
-  const [expandedItem, setExpandedItem] = useState({});
-
-  // expanded state for header dropdowns
-  const toggleExpandedState = index => {
-    setExpandedItem({
-      [index]: !expandedItem[index],
-    });
-  };
-
   return (
     <>
       <HeaderGlobalBar>
         {actionItems.map((item, i) => (
-          <HeaderAction
-            item={item}
-            index={i}
-            onToggleExpansion={toggleExpandedState}
-            isExpanded={expandedItem[item.label]}
-            key={`header-action-item-${item.label}-${i}`}
-          />
+          <HeaderAction item={item} index={i} key={`header-action-item-${item.label}-${i}`} />
         ))}
       </HeaderGlobalBar>
     </>
