@@ -17,7 +17,7 @@ const propTypes = {
  */
 const AddCard = ({ onClick, title, className }) => (
   <ClickableTile className={classNames('add-card', className)} handleClick={onClick}>
-    <p className="title">{title}</p>
+    <p className="addcard-title">{title}</p>
     <Add fill={g10.icon01} description={title} />
   </ClickableTile>
 );

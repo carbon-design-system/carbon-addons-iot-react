@@ -45,7 +45,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|AddCa
           onKeyDown={[Function]}
         >
           <p
-            className="title"
+            className="addcard-title"
           >
             Click me
           </p>
