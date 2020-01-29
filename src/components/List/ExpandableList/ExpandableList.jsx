@@ -28,6 +28,32 @@ const defaultProps = {
 };
 
 /**
+ * Searches an item for a specific value
+ * @param {Object} item to be searched
+ * @returns {Boolean} found or not
+ */
+const searchItem = (item, searchTerm) => {
+  // Check that the value is not empty
+  if (item.content.value !== '' && item.content.value !== undefined) {
+    // Check that the secondary value is not empty
+    if (
+      item.content.secondaryValue !== '' &&
+      item.content.secondaryValue !== undefined &&
+      // Check if the value or secondary value has a match
+      (item.content.value.toLowerCase().search(searchTerm.toLowerCase()) !== -1 ||
+        item.content.secondaryValue.toLowerCase().search(searchTerm.toLowerCase()) !== -1)
+    ) {
+      return true;
+    }
+    if (item.content.value.toLowerCase().search(searchTerm.toLowerCase()) !== -1) {
+      return true;
+    }
+    return false;
+  }
+  return false;
+};
+
+/**
  * Assumes that the first level of items is not searchable and is only uses to categorize the
  * items. Because of that, only search through the children. If a child is found while filtering,
  * it needs to be returned to the filtered array. Deep clone is required because spread syntax is
@@ -36,42 +62,28 @@ const defaultProps = {
  * @param {String} value what to search for
  * @returns {Array<Object>}
  */
-export const searchForNestedValue = (items, value) => {
-  const filteredItems = cloneDeep(items);
-  items.forEach((item, i) => {
-    // if the item has children, filter the children
+export const searchNestedItems = (items, value) => {
+  const filteredItems = [];
+  cloneDeep(items).forEach((item, i) => {
+    // if the item has children, recurse and search children
     if (item.children) {
       // eslint-disable-next-line
-      const filteredChildren = item.children.filter(childItem => {
-        if (childItem.content.value !== '' && childItem.content.value !== undefined) {
-          if (
-            childItem.content.secondaryValue !== '' &&
-            childItem.content.secondaryValue !== undefined
-          ) {
-            return (
-              childItem.content.value.toLowerCase().search(value.toLowerCase()) !== -1 ||
-              childItem.content.secondaryValue.toLowerCase().search(value.toLowerCase()) !== -1
-            );
-          }
-          return childItem.content.value.toLowerCase().search(value.toLowerCase()) !== -1;
-        }
-      });
-      // If there was a match, add children to result
-      if (filteredChildren.length > 0) {
-        filteredItems[i].children = cloneDeep(filteredChildren);
-      } else {
-        filteredItems[i].children = [];
+      item.children = searchNestedItems(item.children, value);
+      // if it's children did, we still need the item
+      if (item.children.length > 0) {
+        filteredItems.push(item);
       }
+    } // if the item matches, add it to the filterItems array
+    else if (searchItem(item, value)) {
+      filteredItems.push(item);
     }
   });
-  // Remove the items that have no children
-  // eslint-disable-next-line
-  const trimmedFilteredItems = filteredItems.filter(categoryItem => {
-    if (categoryItem.children.length > 0) {
-      return categoryItem;
-    }
-  });
-  return trimmedFilteredItems;
+  return filteredItems;
+};
+
+const searchItems = (items, value) => {
+  const filteredItems = searchNestedItems(items, value);
+  return filteredItems;
 };
 
 const ExpandableList = ({ title, hasSearch, buttons, items, i18n, isFullHeight, pageSize }) => {
@@ -128,10 +140,10 @@ const ExpandableList = ({ title, hasSearch, buttons, items, i18n, isFullHeight, 
         array needs to be added to the total filtered array. The next
         category's children then needs to be searched in the same fashion.
      */
-    const tempFilteredItems = searchForNestedValue(items, text);
+    const tempFilteredItems = searchItems(items, text);
     const tempExpandedIds = [];
+    // Expand the categories that have found results
     tempFilteredItems.forEach(categoryItem => {
-      // Expand the categories that have found results
       tempExpandedIds.push(categoryItem.id);
     });
     setExpandedIds(tempExpandedIds);
