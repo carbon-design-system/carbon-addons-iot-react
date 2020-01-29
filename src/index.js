@@ -1,6 +1,8 @@
 // Needed so that any component that uses sizeme can be jest tested
 import sizeMe from 'react-sizeme';
 
+import ExpandableList from './components/List/ExpandableList';
+
 sizeMe.noPlaceholders = true;
 
 // Styles
@@ -29,6 +31,7 @@ export ComposedStructuredList from './components/ComposedStructuredList/Composed
 export ResourceList from './components/ResourceList/ResourceList';
 export FileDrop from './components/FileDrop/FileDrop';
 export PageTitleBar from './components/PageTitleBar/PageTitleBar';
+export ExpandableList from './components/List/ExpandableList';
 
 // reusable reducers
 export { baseTableReducer } from './components/Table/baseTableReducer';
