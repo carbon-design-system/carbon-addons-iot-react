@@ -97,6 +97,55 @@ storiesOf('Watson IoT|ValueCard', module)
       </div>
     );
   })
+  .add('xsmall /donut with trend down', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.XSMALL);
+    return (
+      <div style={{ width: text('cardWidth', `150px`), margin: 20 }}>
+        <ValueCard
+          title={text('title', '')}
+          id="donutCard"
+          content={{
+            attributes: object('attributes', [
+              {
+                dataSourceId: 'score',
+                cardType: 'DONUT',
+                thresholdRange: [
+                  {
+                    lower: 80,
+                    upper: 100,
+                    color: '#4b8400',
+                    rangename: 'GOOD',
+                  },
+                  {
+                    lower: 50,
+                    upper: 80,
+                    color: '#be9b00',
+                    rangename: 'FAIR',
+                  },
+                  {
+                    lower: 40,
+                    upper: 50,
+                    color: '#d74108',
+                    rangename: 'POOR',
+                  },
+                  {
+                    lower: 0,
+                    upper: 40,
+                    color: '#4b8400',
+                    rangename: 'PSD',
+                  },
+                ],
+                secondaryValue: { dataSourceId: 'trend', trend: 'down', color: 'red' },
+              },
+            ]),
+          }}
+          breakpoint="lg"
+          size={size}
+          values={{ score: number('score', 90), trend: text('trend', '22%') }}
+        />
+      </div>
+    );
+  })
   .add('xsmall / trend down', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.XSMALL);
     return (

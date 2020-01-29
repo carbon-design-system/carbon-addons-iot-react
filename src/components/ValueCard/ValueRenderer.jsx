@@ -16,6 +16,7 @@ const propTypes = {
   size: PropTypes.string.isRequired,
   color: PropTypes.string,
   isVertical: PropTypes.bool,
+  isVisible: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -25,6 +26,7 @@ const defaultProps = {
   precision: 1,
   color: null,
   isVertical: false,
+  isVisible: true,
 };
 
 const Attribute = styled.div`
@@ -82,6 +84,7 @@ const determinePrecision = (size, value, precision) => {
 
 /** This components job is determining how to render different kinds of card values */
 const ValueRenderer = ({
+  isVisible,
   value,
   size,
   unit,
@@ -111,7 +114,7 @@ const ValueRenderer = ({
   } else if (isNil(value)) {
     renderValue = '--';
   }
-  return (
+  return isVisible ? (
     <Attribute unit={unit} isSmall={isSmall} isMini={isMini} color={color} isVertical={isVertical}>
       <AttributeValue
         size={size}
@@ -124,7 +127,7 @@ const ValueRenderer = ({
         {renderValue}
       </AttributeValue>
     </Attribute>
-  );
+  ) : null;
 };
 
 ValueRenderer.propTypes = propTypes;

@@ -654,42 +654,62 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             size="XSMALLWIDE"
                           >
                             <div
-                              className="ValueRenderer__Attribute-f4stpz-0 loxLrG"
-                              color={null}
+                              className="GraphRenderer__GraphWrapper-sc-1clzo2q-0 XQgjE"
                             >
-                              <span
-                                className="ValueRenderer__AttributeValue-f4stpz-1 fgQTCd"
-                                size="XSMALLWIDE"
-                                title="Healthy "
-                                value="Healthy"
+                              <svg
+                                className="donutchart"
+                                height="100%"
+                                viewBox="0 0 50 50"
+                                width="100%"
                               >
-                                Healthy
-                              </span>
-                            </div>
-                            <div
-                              className="Attribute__StyledIcon-dhraql-5 gssLPC"
-                            >
-                              <div
-                                className="Attribute__ThresholdIconWrapper-dhraql-2 iEsJiF"
-                              >
-                                <svg
-                                  aria-label="= Healthy"
-                                  className="Attribute__ThresholdIcon-dhraql-3 elzdlt"
-                                  fill="green"
-                                  fillRule="evenodd"
-                                  height="16"
-                                  role="img"
-                                  viewBox="0 0 16 16"
-                                  width="16"
+                                <circle
+                                  className="donutchart-track"
+                                  cx={25}
+                                  cy={25}
+                                  fill="transparent"
+                                  r={22.5}
+                                  stroke="#DAE2E5"
+                                  style={
+                                    Object {
+                                      "strokeWidth": 5,
+                                    }
+                                  }
+                                  transform="rotate(-90 25,25)"
+                                />
+                                <circle
+                                  className="donutchart-indicator"
+                                  cx={25}
+                                  cy={25}
+                                  fill="transparent"
+                                  r={22.5}
+                                  stroke="#4b8400"
+                                  style={
+                                    Object {
+                                      "strokeDasharray": "127.23450247038663 141.3716694115407",
+                                      "strokeWidth": 5,
+                                    }
+                                  }
+                                  transform="rotate(-90 25,25)"
+                                />
+                                <g
+                                  className="donutchart-text"
                                 >
-                                  <title>
-                                    = Healthy
-                                  </title>
-                                  <path
-                                    d="M8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16zm3.293-11.332L6.75 9.21 4.707 7.168 3.293 8.582 6.75 12.04l5.957-5.957-1.414-1.414z"
-                                  />
-                                </svg>
-                              </div>
+                                  <text
+                                    className="donutchart-text-value"
+                                    x="50%"
+                                    y="50%"
+                                  >
+                                    90
+                                  </text>
+                                  <text
+                                    className="donutchart-text-label"
+                                    x="50%"
+                                    y="50%"
+                                  >
+                                    GOOD
+                                  </text>
+                                </g>
+                              </svg>
                             </div>
                           </div>
                           <div
@@ -2431,42 +2451,62 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             size="XSMALLWIDE"
                           >
                             <div
-                              className="ValueRenderer__Attribute-f4stpz-0 loxLrG"
-                              color={null}
+                              className="GraphRenderer__GraphWrapper-sc-1clzo2q-0 XQgjE"
                             >
-                              <span
-                                className="ValueRenderer__AttributeValue-f4stpz-1 fgQTCd"
-                                size="XSMALLWIDE"
-                                title="Healthy "
-                                value="Healthy"
+                              <svg
+                                className="donutchart"
+                                height="100%"
+                                viewBox="0 0 50 50"
+                                width="100%"
                               >
-                                Healthy
-                              </span>
-                            </div>
-                            <div
-                              className="Attribute__StyledIcon-dhraql-5 gssLPC"
-                            >
-                              <div
-                                className="Attribute__ThresholdIconWrapper-dhraql-2 iEsJiF"
-                              >
-                                <svg
-                                  aria-label="= Healthy"
-                                  className="Attribute__ThresholdIcon-dhraql-3 elzdlt"
-                                  fill="green"
-                                  fillRule="evenodd"
-                                  height="16"
-                                  role="img"
-                                  viewBox="0 0 16 16"
-                                  width="16"
+                                <circle
+                                  className="donutchart-track"
+                                  cx={25}
+                                  cy={25}
+                                  fill="transparent"
+                                  r={22.5}
+                                  stroke="#DAE2E5"
+                                  style={
+                                    Object {
+                                      "strokeWidth": 5,
+                                    }
+                                  }
+                                  transform="rotate(-90 25,25)"
+                                />
+                                <circle
+                                  className="donutchart-indicator"
+                                  cx={25}
+                                  cy={25}
+                                  fill="transparent"
+                                  r={22.5}
+                                  stroke="#4b8400"
+                                  style={
+                                    Object {
+                                      "strokeDasharray": "127.23450247038663 141.3716694115407",
+                                      "strokeWidth": 5,
+                                    }
+                                  }
+                                  transform="rotate(-90 25,25)"
+                                />
+                                <g
+                                  className="donutchart-text"
                                 >
-                                  <title>
-                                    = Healthy
-                                  </title>
-                                  <path
-                                    d="M8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16zm3.293-11.332L6.75 9.21 4.707 7.168 3.293 8.582 6.75 12.04l5.957-5.957-1.414-1.414z"
-                                  />
-                                </svg>
-                              </div>
+                                  <text
+                                    className="donutchart-text-value"
+                                    x="50%"
+                                    y="50%"
+                                  >
+                                    90
+                                  </text>
+                                  <text
+                                    className="donutchart-text-label"
+                                    x="50%"
+                                    y="50%"
+                                  >
+                                    GOOD
+                                  </text>
+                                </g>
+                              </svg>
                             </div>
                           </div>
                           <div
@@ -4240,42 +4280,62 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             size="XSMALLWIDE"
                           >
                             <div
-                              className="ValueRenderer__Attribute-f4stpz-0 loxLrG"
-                              color={null}
+                              className="GraphRenderer__GraphWrapper-sc-1clzo2q-0 XQgjE"
                             >
-                              <span
-                                className="ValueRenderer__AttributeValue-f4stpz-1 fgQTCd"
-                                size="XSMALLWIDE"
-                                title="Healthy "
-                                value="Healthy"
+                              <svg
+                                className="donutchart"
+                                height="100%"
+                                viewBox="0 0 50 50"
+                                width="100%"
                               >
-                                Healthy
-                              </span>
-                            </div>
-                            <div
-                              className="Attribute__StyledIcon-dhraql-5 gssLPC"
-                            >
-                              <div
-                                className="Attribute__ThresholdIconWrapper-dhraql-2 iEsJiF"
-                              >
-                                <svg
-                                  aria-label="= Healthy"
-                                  className="Attribute__ThresholdIcon-dhraql-3 elzdlt"
-                                  fill="green"
-                                  fillRule="evenodd"
-                                  height="16"
-                                  role="img"
-                                  viewBox="0 0 16 16"
-                                  width="16"
+                                <circle
+                                  className="donutchart-track"
+                                  cx={25}
+                                  cy={25}
+                                  fill="transparent"
+                                  r={22.5}
+                                  stroke="#DAE2E5"
+                                  style={
+                                    Object {
+                                      "strokeWidth": 5,
+                                    }
+                                  }
+                                  transform="rotate(-90 25,25)"
+                                />
+                                <circle
+                                  className="donutchart-indicator"
+                                  cx={25}
+                                  cy={25}
+                                  fill="transparent"
+                                  r={22.5}
+                                  stroke="#4b8400"
+                                  style={
+                                    Object {
+                                      "strokeDasharray": "127.23450247038663 141.3716694115407",
+                                      "strokeWidth": 5,
+                                    }
+                                  }
+                                  transform="rotate(-90 25,25)"
+                                />
+                                <g
+                                  className="donutchart-text"
                                 >
-                                  <title>
-                                    = Healthy
-                                  </title>
-                                  <path
-                                    d="M8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16zm3.293-11.332L6.75 9.21 4.707 7.168 3.293 8.582 6.75 12.04l5.957-5.957-1.414-1.414z"
-                                  />
-                                </svg>
-                              </div>
+                                  <text
+                                    className="donutchart-text-value"
+                                    x="50%"
+                                    y="50%"
+                                  >
+                                    90
+                                  </text>
+                                  <text
+                                    className="donutchart-text-label"
+                                    x="50%"
+                                    y="50%"
+                                  >
+                                    GOOD
+                                  </text>
+                                </g>
+                              </svg>
                             </div>
                           </div>
                           <div
@@ -8380,42 +8440,62 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             size="XSMALLWIDE"
                           >
                             <div
-                              className="ValueRenderer__Attribute-f4stpz-0 loxLrG"
-                              color={null}
+                              className="GraphRenderer__GraphWrapper-sc-1clzo2q-0 XQgjE"
                             >
-                              <span
-                                className="ValueRenderer__AttributeValue-f4stpz-1 fgQTCd"
-                                size="XSMALLWIDE"
-                                title="Healthy "
-                                value="Healthy"
+                              <svg
+                                className="donutchart"
+                                height="100%"
+                                viewBox="0 0 50 50"
+                                width="100%"
                               >
-                                Healthy
-                              </span>
-                            </div>
-                            <div
-                              className="Attribute__StyledIcon-dhraql-5 gssLPC"
-                            >
-                              <div
-                                className="Attribute__ThresholdIconWrapper-dhraql-2 iEsJiF"
-                              >
-                                <svg
-                                  aria-label="= Healthy"
-                                  className="Attribute__ThresholdIcon-dhraql-3 elzdlt"
-                                  fill="green"
-                                  fillRule="evenodd"
-                                  height="16"
-                                  role="img"
-                                  viewBox="0 0 16 16"
-                                  width="16"
+                                <circle
+                                  className="donutchart-track"
+                                  cx={25}
+                                  cy={25}
+                                  fill="transparent"
+                                  r={22.5}
+                                  stroke="#DAE2E5"
+                                  style={
+                                    Object {
+                                      "strokeWidth": 5,
+                                    }
+                                  }
+                                  transform="rotate(-90 25,25)"
+                                />
+                                <circle
+                                  className="donutchart-indicator"
+                                  cx={25}
+                                  cy={25}
+                                  fill="transparent"
+                                  r={22.5}
+                                  stroke="#4b8400"
+                                  style={
+                                    Object {
+                                      "strokeDasharray": "127.23450247038663 141.3716694115407",
+                                      "strokeWidth": 5,
+                                    }
+                                  }
+                                  transform="rotate(-90 25,25)"
+                                />
+                                <g
+                                  className="donutchart-text"
                                 >
-                                  <title>
-                                    = Healthy
-                                  </title>
-                                  <path
-                                    d="M8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16zm3.293-11.332L6.75 9.21 4.707 7.168 3.293 8.582 6.75 12.04l5.957-5.957-1.414-1.414z"
-                                  />
-                                </svg>
-                              </div>
+                                  <text
+                                    className="donutchart-text-value"
+                                    x="50%"
+                                    y="50%"
+                                  >
+                                    90
+                                  </text>
+                                  <text
+                                    className="donutchart-text-label"
+                                    x="50%"
+                                    y="50%"
+                                  >
+                                    GOOD
+                                  </text>
+                                </g>
+                              </svg>
                             </div>
                           </div>
                           <div
@@ -20194,42 +20274,62 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             size="XSMALLWIDE"
                           >
                             <div
-                              className="ValueRenderer__Attribute-f4stpz-0 loxLrG"
-                              color={null}
+                              className="GraphRenderer__GraphWrapper-sc-1clzo2q-0 XQgjE"
                             >
-                              <span
-                                className="ValueRenderer__AttributeValue-f4stpz-1 fgQTCd"
-                                size="XSMALLWIDE"
-                                title="Healthy "
-                                value="Healthy"
+                              <svg
+                                className="donutchart"
+                                height="100%"
+                                viewBox="0 0 50 50"
+                                width="100%"
                               >
-                                Healthy
-                              </span>
-                            </div>
-                            <div
-                              className="Attribute__StyledIcon-dhraql-5 gssLPC"
-                            >
-                              <div
-                                className="Attribute__ThresholdIconWrapper-dhraql-2 iEsJiF"
-                              >
-                                <svg
-                                  aria-label="= Healthy"
-                                  className="Attribute__ThresholdIcon-dhraql-3 elzdlt"
-                                  fill="green"
-                                  fillRule="evenodd"
-                                  height="16"
-                                  role="img"
-                                  viewBox="0 0 16 16"
-                                  width="16"
+                                <circle
+                                  className="donutchart-track"
+                                  cx={25}
+                                  cy={25}
+                                  fill="transparent"
+                                  r={22.5}
+                                  stroke="#DAE2E5"
+                                  style={
+                                    Object {
+                                      "strokeWidth": 5,
+                                    }
+                                  }
+                                  transform="rotate(-90 25,25)"
+                                />
+                                <circle
+                                  className="donutchart-indicator"
+                                  cx={25}
+                                  cy={25}
+                                  fill="transparent"
+                                  r={22.5}
+                                  stroke="#4b8400"
+                                  style={
+                                    Object {
+                                      "strokeDasharray": "127.23450247038663 141.3716694115407",
+                                      "strokeWidth": 5,
+                                    }
+                                  }
+                                  transform="rotate(-90 25,25)"
+                                />
+                                <g
+                                  className="donutchart-text"
                                 >
-                                  <title>
-                                    = Healthy
-                                  </title>
-                                  <path
-                                    d="M8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16zm3.293-11.332L6.75 9.21 4.707 7.168 3.293 8.582 6.75 12.04l5.957-5.957-1.414-1.414z"
-                                  />
-                                </svg>
-                              </div>
+                                  <text
+                                    className="donutchart-text-value"
+                                    x="50%"
+                                    y="50%"
+                                  >
+                                    90
+                                  </text>
+                                  <text
+                                    className="donutchart-text-label"
+                                    x="50%"
+                                    y="50%"
+                                  >
+                                    GOOD
+                                  </text>
+                                </g>
+                              </svg>
                             </div>
                           </div>
                           <div

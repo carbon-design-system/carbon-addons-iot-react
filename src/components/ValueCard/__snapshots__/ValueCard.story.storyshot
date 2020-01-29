@@ -4021,6 +4021,183 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
 </div>
 `;
 
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ValueCard xsmall /donut with trend down 1`] = `
+<div
+  style={
+    Object {
+      "alignItems": "center",
+      "bottom": "0",
+      "display": "flex",
+      "left": "0",
+      "overflow": "auto",
+      "position": "fixed",
+      "right": "0",
+      "top": "0",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "margin": "auto",
+        "maxHeight": "100%",
+      }
+    }
+  >
+    <div
+      className="storybook-container"
+      style={
+        Object {
+          "padding": "3rem",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "position": "relative",
+            "zIndex": 0,
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "margin": 20,
+              "width": "150px",
+            }
+          }
+        >
+          <div
+            className="Card__CardWrapper-v5r71h-0 fbzdtE"
+            id="donutCard"
+          >
+            <div
+              className="card--header"
+            >
+              <span
+                className="card--title"
+                title=""
+              >
+                
+                 
+              </span>
+              <div
+                className="card--toolbar"
+              />
+            </div>
+            <div
+              className="Card__CardContent-v5r71h-1 hoCWQe"
+            >
+              <div
+                className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
+              >
+                <div
+                  className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
+                  size="XSMALL"
+                >
+                  <div
+                    className="Attribute__StyledAttribute-dhraql-0 eCIOAU"
+                    label={null}
+                    size="XSMALL"
+                  >
+                    <div
+                      className="GraphRenderer__GraphWrapper-sc-1clzo2q-0 XQgjE"
+                    >
+                      <svg
+                        className="donutchart"
+                        height="100%"
+                        viewBox="0 0 50 50"
+                        width="100%"
+                      >
+                        <circle
+                          className="donutchart-track"
+                          cx={25}
+                          cy={25}
+                          fill="transparent"
+                          r={22.5}
+                          stroke="#DAE2E5"
+                          style={
+                            Object {
+                              "strokeWidth": 5,
+                            }
+                          }
+                          transform="rotate(-90 25,25)"
+                        />
+                        <circle
+                          className="donutchart-indicator"
+                          cx={25}
+                          cy={25}
+                          fill="transparent"
+                          r={22.5}
+                          stroke="#4b8400"
+                          style={
+                            Object {
+                              "strokeDasharray": "127.23450247038663 141.3716694115407",
+                              "strokeWidth": 5,
+                            }
+                          }
+                          transform="rotate(-90 25,25)"
+                        />
+                        <g
+                          className="donutchart-text"
+                        >
+                          <text
+                            className="donutchart-text-value"
+                            x="50%"
+                            y="50%"
+                          >
+                            90
+                          </text>
+                          <text
+                            className="donutchart-text-label"
+                            x="50%"
+                            y="50%"
+                          >
+                            GOOD
+                          </text>
+                        </g>
+                      </svg>
+                    </div>
+                  </div>
+                  <div
+                    className="ValueCard__AttributeLabel-hyxf2q-4 cAOhas"
+                    size="XSMALL"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button
+        className="info__show-button"
+        onClick={[Function]}
+        style={
+          Object {
+            "background": "#027ac5",
+            "border": "none",
+            "borderRadius": "0 0 0 5px",
+            "color": "#fff",
+            "cursor": "pointer",
+            "display": "block",
+            "fontFamily": "sans-serif",
+            "fontSize": "12px",
+            "padding": "5px 15px",
+            "position": "fixed",
+            "right": 0,
+            "top": 0,
+          }
+        }
+        type="button"
+      >
+        Show Info
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ValueCard xsmallwide / horizontal 2 1`] = `
 <div
   style={

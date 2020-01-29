@@ -204,7 +204,7 @@ const isLabelAboveValue = (size, layout, attributes, measuredSize) => {
   }
 };
 
-const ValueCard = ({ title, content, size, values, isEditable, i18n, ...others }) => {
+const ValueCard = ({ title, content, size, values, cardType, isEditable, i18n, ...others }) => {
   const availableActions = {
     expand: false,
     ...others.availableActions,
@@ -271,6 +271,7 @@ const ValueCard = ({ title, content, size, values, isEditable, i18n, ...others }
                             : determineValue(attribute.secondaryValue.dataSourceId, values),
                         }
                       }
+                      cardType={attribute.cardType}
                     />
                     {isMini && <Spacer />}
                     <AttributeLabel

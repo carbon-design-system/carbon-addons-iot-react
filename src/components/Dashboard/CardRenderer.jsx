@@ -169,7 +169,7 @@ const CardRenderer = React.memo(
     };
 
     return type === CARD_TYPES.VALUE ? (
-      <ValueCard {...commonCardProps} />
+      <ValueCard {...commonCardProps} cardType="DONUT" />
     ) : type === CARD_TYPES.IMAGE ? (
       <ImageCard {...commonCardProps} error={card.setupError || card.error} />
     ) : type === CARD_TYPES.TIMESERIES ? (

@@ -148,14 +148,38 @@ export const originalCards = [
       attributes: [
         {
           dataSourceId: 'health',
-          thresholds: [
-            { comparison: '=', value: 'Healthy', icon: 'checkmark', color: 'green' },
-            { comparison: '=', value: 'Unhealthy', icon: 'close', color: 'red' },
+          cardType: 'DONUT',
+          thresholdRange: [
+            {
+              lower: 80,
+              upper: 100,
+              color: '#4b8400',
+              rangename: 'GOOD',
+            },
+            {
+              lower: 50,
+              upper: 80,
+              color: '#be9b00',
+              rangename: 'FAIR',
+            },
+            {
+              lower: 40,
+              upper: 50,
+              color: '#d74108',
+              rangename: 'POOR',
+            },
+            {
+              lower: 0,
+              upper: 40,
+              color: '#4b8400',
+              rangename: 'PSD',
+            },
           ],
+          secondaryValue: { dataSourceId: 'trend', trend: 'up', color: 'green' },
         },
       ],
     },
-    values: { health: 'Healthy' },
+    values: { health: 90, trend: '22%' },
   },
   {
     title: 'Temperature',

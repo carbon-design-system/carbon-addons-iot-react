@@ -8,6 +8,7 @@ import withSize from 'react-sizeme';
 import icons from '../../utils/bundledIcons';
 import { CARD_LAYOUTS, CARD_SIZES } from '../../constants/LayoutConstants';
 
+import GraphRenderer from './GraphRenderer';
 import ValueRenderer from './ValueRenderer';
 import UnitRenderer from './UnitRenderer';
 
@@ -81,14 +82,24 @@ const propTypes = {
       icon: PropTypes.string,
     })
   ),
+  thresholdRange: PropTypes.arrayOf(
+    PropTypes.shape({
+      lower: PropTypes.number,
+      upper: PropTypes.number,
+      color: PropTypes.string,
+      rangename: PropTypes.string,
+    })
+  ),
   renderIconByName: PropTypes.func,
   precision: PropTypes.number,
+  cardType: PropTypes.string,
 };
 
 const defaultProps = {
   layout: null,
   precision: 1,
   thresholds: [],
+  thresholdRange: [],
   isVertical: false,
   alignValue: null,
   isSmall: false,
@@ -96,6 +107,7 @@ const defaultProps = {
   label: null,
   renderIconByName: null,
   secondaryValue: null,
+  cardType: 'VALUE',
 };
 
 /**
@@ -114,6 +126,8 @@ const Attribute = ({
   isMini,
   label,
   renderIconByName,
+  cardType,
+  thresholdRange,
   size, // eslint-disable-line
 }) => {
   // matching threshold will be the first match in the list, or a value of null
@@ -173,6 +187,7 @@ const Attribute = ({
             label={label}
           >
             <ValueRenderer
+              isVisible={cardType && cardType === 'VALUE'}
               value={value}
               unit={unit}
               layout={layout}
@@ -185,12 +200,24 @@ const Attribute = ({
               color={valueColor}
             />
             <UnitRenderer
-              isVisible={!measuredSize || measuredSize.width > 100}
+              isVisible={
+                cardType && cardType === 'VALUE' && (!measuredSize || measuredSize.width > 100)
+              }
               value={value}
               unit={unit}
               layout={layout}
               isMini={isMini}
             />
+            {cardType && cardType === 'DONUT' ? (
+              <GraphRenderer
+                size={size}
+                score={value}
+                layout={layout}
+                isSmall={isSmall}
+                isMini={isMini}
+                thresholdRange={thresholdRange}
+              />
+            ) : null}
             {!isNil(secondaryValue) && (!measuredSize || measuredSize.width > 100) ? (
               <AttributeSecondaryValue
                 color={secondaryValue.color}
