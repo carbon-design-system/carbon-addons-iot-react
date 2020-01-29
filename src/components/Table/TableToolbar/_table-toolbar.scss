@@ -10,3 +10,11 @@ div.bx--toolbar-action.bx--toolbar-search-container-expandable {
     }
   }
 }
+
+.table-toolbar-secondary-title {
+  padding: $spacing-05;
+  @include type-style('productive-heading-01');
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
