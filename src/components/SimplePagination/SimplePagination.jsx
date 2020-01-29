@@ -1,44 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
 import CaretLeft from '@carbon/icons-react/lib/caret--left/20';
 import CaretRight from '@carbon/icons-react/lib/caret--right/20';
 
 import { handleEnterKeyDown } from '../../utils/componentUtilityFunctions';
-import { COLORS } from '../../styles/styles';
-
-const StyledContainer = styled.div`
-  &&& {
-    display: flex;
-    height: 3rem;
-    justify-content: flex-end;
-    width: 100%;
-    border: 1px solid ${COLORS.gray20};
-    background-color: ${COLORS.gray10};
-    align-items: center;
-  }
-`;
-
-const StyledPageLabel = styled.span`
-  padding-right: 1rem;
-  font-size: 0.875rem;
-`;
-
-const StyledButton = styled.div`
-  ${props =>
-    props.onClick
-      ? `` // If the item isn't clickable remove the focus outline
-      : `&:focus {
-          outline: none;
-          border: 1px solid ${COLORS.blue};
-        }
-        cursor: default;
-  `}
-
-  svg path {
-    fill: ${COLORS.gray100};
-  }
-`;
 
 const propTypes = {
   /** current page number */
@@ -81,33 +46,41 @@ const SimplePagination = ({
   const handlePrev = () => onPage(page - 1);
 
   return (
-    <StyledContainer>
-      <StyledPageLabel maxPage={maxPage}>
+    <div className="simple-pagination-container">
+      <span className="simple-pagination-page-label" maxPage={maxPage}>
         {pageText ? `${pageText} ${page}` : pageOfPagesText(page, maxPage)}
-      </StyledPageLabel>
+      </span>
       {maxPage > 1 ? (
         <>
-          <StyledButton
-            className="bx--pagination__button bx--pagination__button--backward"
+          <div
+            className={
+              hasPrev
+                ? 'bx--pagination__button bx--pagination__button--backward addons-simple-pagination-button'
+                : 'bx--pagination__button bx--pagination__button--backward'
+            }
             role="button"
             tabIndex={hasPrev ? 0 : -1}
             onClick={hasPrev ? handlePrev : undefined}
             onKeyDown={hasPrev ? evt => handleEnterKeyDown(evt, handlePrev) : undefined}
           >
-            <CaretLeft description={prevPageText} />
-          </StyledButton>
-          <StyledButton
-            className="bx--pagination__button bx--pagination__button--forward"
+            <CaretLeft description={prevPageText} className="simple-pagination-caret" />
+          </div>
+          <div
+            className={
+              hasNext
+                ? 'bx--pagination__button bx--pagination__button--forward addons-simple-pagination-button'
+                : 'bx--pagination__button bx--pagination__button--forward'
+            }
             role="button"
             tabIndex={hasNext ? 0 : -1}
             onClick={hasNext ? handleNext : undefined}
             onKeyDown={hasNext ? evt => handleEnterKeyDown(evt, handleNext) : undefined}
           >
-            <CaretRight description={nextPageText} />
-          </StyledButton>
+            <CaretRight description={nextPageText} className="simple-pagination-caret" />
+          </div>
         </>
       ) : null}
-    </StyledContainer>
+    </div>
   );
 };
 
