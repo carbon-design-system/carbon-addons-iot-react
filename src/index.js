@@ -8,7 +8,7 @@ export styles from './styles.scss';
 
 // Components
 export Button from './components/Button';
-export { Breadcrumb, BreadcrumbItem, BreadcrumbSkeleton } from './components/Breadcrumb';
+export Breadcrumb, { BreadcrumbItem, BreadcrumbSkeleton } from './components/Breadcrumb';
 export Table from './components/Table';
 export AddCard from './components/AddCard';
 export ComposedModal from './components/ComposedModal';
