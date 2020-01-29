@@ -49,6 +49,7 @@ const HeaderProps = {
   url: 'http://localhost:8989',
   className: 'custom-class-name',
   appName: 'Watson IoT Platform ',
+  skipto: 'skip',
   actionItems: [
     {
       label: 'alerts',
@@ -57,7 +58,7 @@ const HeaderProps = {
     },
     {
       label: 'help',
-      onClick: action('help drop open'),
+      hasHeaderPanel: true,
       btnContent: (
         <HeaderHelp
           fill="white"
@@ -93,7 +94,6 @@ const HeaderProps = {
     },
     {
       label: 'user',
-      onClick: action('click'),
       btnContent: <Avatar fill="white" description="Icon" />,
       childContent: [
         {
@@ -113,10 +113,50 @@ const HeaderProps = {
             element: 'button',
           },
           content: (
-            <React.Fragment>
+            <span>
               JohnDoe@ibm.com
               <Avatar fill="white" description="Icon" />
-            </React.Fragment>
+            </span>
+          ),
+        },
+      ],
+    },
+  ],
+};
+
+const HeaderMenuProps = {
+  user: 'JohnDoe@ibm.com',
+  tenant: 'TenantId: Acme',
+  url: 'http://localhost:8989',
+  className: 'custom-class-name',
+  appName: 'Watson IoT Platform ',
+  skipto: 'skip',
+  actionItems: [
+    {
+      label: 'user',
+      btnContent: <Avatar fill="white" description="Icon" />,
+      childContent: [
+        {
+          metaData: {
+            href: 'http://google.com',
+            title: 'this is a title',
+            target: '_blank',
+            rel: 'noopener noreferrer',
+            element: 'a',
+          },
+          content: 'this is my message to you',
+        },
+        {
+          metaData: {
+            onClick: action('do another action'),
+            className: 'this',
+            element: 'button',
+          },
+          content: (
+            <span>
+              JohnDoe@ibm.com
+              <Avatar fill="white" description="Icon" />
+            </span>
           ),
         },
       ],
@@ -126,19 +166,26 @@ const HeaderProps = {
 
 const headerPanel = {
   className: 'header-panel',
-  /* eslint-disable */
 
   content: React.forwardRef((props, ref) => (
+    // eslint-disable-next-line
     <a href="#" ref={ref} {...props}>
       Header panel content
     </a>
   )),
-  /* eslint-enable */
 };
 
 storiesOf('Watson IoT|Header', module)
   .add('Header action buttons with dropdowns', () => (
-    <StyledHeader {...HeaderProps} headerPanel={headerPanel} />
+    <div style={{ width: '100%', height: '100vh' }}>
+      <StyledHeader {...HeaderProps} headerPanel={headerPanel} />
+      <div id="skip" />
+    </div>
+  ))
+  .add('header submenu', () => (
+    <div style={{ width: '100%', height: '100vh' }}>
+      <StyledHeader {...HeaderMenuProps} />
+    </div>
   ))
   .add('Header no submenu', () => (
     <StyledHeader

@@ -1,17 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { DragSource, DropTarget } from 'react-dnd';
-import styled from 'styled-components';
 import { Button } from 'carbon-components-react';
 import Draggable from '@carbon/icons-react/lib/draggable/16';
-
-const StyledColumnSelectContainer = styled(Button)`
-  & {
-    margin: 0 1rem 1rem 0;
-    cursor: pointer;
-    opacity: ${props => (props['data-ishidden'] ? 0.5 : 1)};
-  }
-`;
+import classNames from 'classnames';
 
 const ColumnHeaderSelect = ({
   connectDragSource,
@@ -20,29 +12,28 @@ const ColumnHeaderSelect = ({
   isHidden,
   children,
   onClick,
-}) => (
-  <StyledColumnSelectContainer
-    kind="secondary"
-    key={columnId}
-    onClick={() => onClick()}
-    role="presentation"
-    data-ishidden={isHidden}
-    renderIcon={Draggable}
-    size="small"
-    ref={instance => {
-      connectDragSource(instance);
-      connectDropTarget(instance);
-    }}
-  >
-    {children}
-    {/* <IconStyled
-      style={{ cursor: 'move' }}
-      icon={iconDraggable}
-      description="Dragable column"
-      focusable="false"
-    /> */}
-  </StyledColumnSelectContainer>
-);
+}) => {
+  return (
+    <Button
+      className={classNames('column-header__btn', 'column-header__select', {
+        'column-header__select--hidden': isHidden,
+      })}
+      kind="secondary"
+      key={columnId}
+      onClick={() => onClick()}
+      role="presentation"
+      data-ishidden={isHidden}
+      renderIcon={Draggable}
+      size="small"
+      ref={instance => {
+        connectDragSource(instance);
+        connectDropTarget(instance);
+      }}
+    >
+      {children}
+    </Button>
+  );
+};
 
 ColumnHeaderSelect.propTypes = {
   columnId: PropTypes.string.isRequired,

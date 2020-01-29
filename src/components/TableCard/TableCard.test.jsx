@@ -115,21 +115,6 @@ describe('TableCard', () => {
     const totalColumns = tableColumns.filter(item => item.priority === 1 || item.priority === 2);
     expect(wrapper.find('TableHeader').length).toBe(totalColumns.length);
   });
-  test('Columns displayed Tall', () => {
-    const wrapper = mount(
-      <TableCard
-        title="Open Alerts"
-        content={{
-          columns: tableColumns,
-        }}
-        values={tableData}
-        size={CARD_SIZES.TALL}
-      />
-    );
-
-    const totalColumns = tableColumns.filter(item => item.priority === 1);
-    expect(wrapper.find('TableHeader').length).toBe(totalColumns.length);
-  });
   test('Columns displayed Large with actions', () => {
     const tableDataWithActions = tableData.map(item => {
       return {

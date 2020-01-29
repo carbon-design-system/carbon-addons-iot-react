@@ -3,8 +3,8 @@ import VisibilitySensor from 'react-visibility-sensor';
 import { Tooltip, SkeletonText } from 'carbon-components-react';
 import styled from 'styled-components';
 import SizeMe from 'react-sizeme';
-import { settings } from 'carbon-components';
 
+import { settings } from '../../constants/Settings';
 import {
   CARD_TITLE_HEIGHT,
   CARD_CONTENT_PADDING,
@@ -72,7 +72,7 @@ const EmptyMessageWrapper = styled.div`
   line-height: 1.3;
 `;
 
-const defaultProps = {
+export const defaultProps = {
   size: CARD_SIZES.SMALL,
   layout: CARD_SIZES.HORIZONTAL,
   title: undefined,
@@ -182,17 +182,28 @@ const Card = ({
     id,
   ]);
 
+  const getChildSize = (cardSize, cardTitle) => {
+    const childSize = {
+      ...cardSize,
+      height:
+        cardTitle === null || cardTitle === undefined
+          ? cardSize.height
+          : cardSize.height - CARD_TITLE_HEIGHT,
+    };
+    return childSize;
+  };
+
   const card = (
     <VisibilitySensor partialVisibility offset={{ top: 10 }}>
       {({ isVisible }) => (
         <SizeMe.SizeMe monitorHeight>
-          {({ size: sizeWidth }) => (
+          {({ size: cardSize }) => (
             <CardWrapper
               {...others}
               id={id}
               dimensions={dimensions}
               isExpanded={isExpanded}
-              cardWidthSize={sizeWidth.width}
+              cardWidthSize={cardSize.width}
               style={
                 !isExpanded ? style : { height: 'calc(100% - 50px)', width: 'calc(100% - 50px)' }
               }
@@ -213,7 +224,7 @@ const Card = ({
                     )}
                   </CardTitle>
                   <CardToolbar
-                    width={sizeWidth.width}
+                    width={cardSize.width}
                     availableActions={mergedAvailableActions}
                     i18n={strings}
                     isEditable={isEditable}
@@ -247,7 +258,7 @@ const Card = ({
                     {isXS ? strings.noDataShortLabel : strings.noDataLabel}
                   </EmptyMessageWrapper>
                 ) : typeof children === 'function' ? ( // pass the measured size down to the children if it's an render function
-                  children(sizeWidth)
+                  children(getChildSize(cardSize, title))
                 ) : (
                   children
                 )}

@@ -1,26 +1,28 @@
 import React from 'react';
-import { mount } from 'enzyme';
-import Notification from '@carbon/icons-react/lib/notification/20';
+import { render, fireEvent } from '@testing-library/react';
 import Avatar from '@carbon/icons-react/lib/user--avatar/20';
 import HeaderHelp from '@carbon/icons-react/lib/help/20';
+import '@testing-library/jest-dom/extend-expect';
 
-import Header from './Header';
+import { keyCodes } from '../../constants/KeyCodeConstants';
+
+import Header, { APP_SWITCHER } from './Header';
 
 React.Fragment = ({ children }) => children;
 
 describe('Header testcases', () => {
-  // it.skip('skip this suite', () => {});
-  it('should render', () => {
-    const onClick = jest.fn();
-    const actionItems = [
-      {
-        label: 'alerts',
-        onClick,
-        btnContent: <Notification fill="white" description="Icon" />,
-      },
+  const onClick = jest.fn();
+  const HeaderProps = {
+    user: 'JohnDoe@ibm.com',
+    tenant: 'TenantId: Acme',
+    url: 'http://localhost:8989',
+    className: 'custom-class-name',
+    appName: 'Watson IoT Platform ',
+    skipto: 'skip',
+    actionItems: [
       {
         label: 'help',
-        onClick,
+        hasHeaderPanel: true,
         btnContent: (
           <HeaderHelp
             fill="white"
@@ -46,18 +48,227 @@ describe('Header testcases', () => {
           },
         ],
       },
-    ];
+      {
+        label: 'user',
+        btnContent: <Avatar fill="white" description="Icon" />,
+        childContent: [
+          {
+            metaData: {
+              href: 'http://google.com',
+              title: 'this is a title',
+              target: '_blank',
+              rel: 'noopener noreferrer',
+              element: 'a',
+            },
+            content: 'this is my message to you',
+          },
+          {
+            metaData: {
+              onClick,
+              className: 'this',
+              element: 'button',
+            },
+            content: (
+              <span>
+                JohnDoe@ibm.com
+                <Avatar fill="white" description="Icon" />
+              </span>
+            ),
+          },
+        ],
+      },
+    ],
+  };
 
-    const header = mount(
-      <Header
-        title="My Title"
-        user="j@test.com"
-        tenant="acme"
-        appName="platform"
-        actionItems={actionItems}
-      />
+  it('should render', () => {
+    const { container } = render(<Header {...HeaderProps} />);
+    expect(container).toMatchSnapshot();
+  });
+
+  it('sidepanel should not render', () => {
+    const { queryByLabelText } = render(<Header {...HeaderProps} />);
+    expect(queryByLabelText(APP_SWITCHER)).toBeFalsy();
+  });
+
+  it('sidepanel should render', () => {
+    const headerPanel = {
+      className: 'header-panel',
+      /* eslint-disable */
+
+      content: React.forwardRef((props, ref) => (
+        <a href="#" ref={ref} {...props}>
+          Header panel content
+        </a>
+      )),
+      /* eslint-enable */
+    };
+    const { queryAllByLabelText } = render(<Header {...HeaderProps} headerPanel={headerPanel} />);
+    expect(queryAllByLabelText(APP_SWITCHER).length).toBeGreaterThan(0);
+  });
+
+  it('children should render inside UL', () => {
+    const { getByText } = render(<Header {...HeaderProps} />);
+    expect(getByText('This is a link').parentElement.parentElement.nodeName).toBe('LI');
+    expect(getByText('This is a link').parentElement.parentElement.className).toEqual(
+      'action-btn__headerpanel-li'
+    );
+    expect(
+      getByText('This is a link').parentElement.parentElement.parentNode.childElementCount
+    ).toEqual(2);
+  });
+
+  it('clicking trigger button should expand the header panel', () => {
+    const { getByTitle } = render(<Header {...HeaderProps} />);
+    fireEvent.click(getByTitle('help'));
+    expect(getByTitle('help').parentNode.lastChild.className).toContain(
+      'bx--header-panel bx--header-panel--expanded action-btn__headerpanel'
+    );
+    fireEvent.click(getByTitle('help'));
+    expect(getByTitle('help').parentNode.lastChild.className).toContain(
+      'bx--header-panel action-btn__headerpanel action-btn__headerpanel--closed'
+    );
+  });
+
+  it('closes when focus leaves panel', () => {
+    const { getByTitle, getByText } = render(<Header {...HeaderProps} />);
+    fireEvent.click(getByTitle('help'));
+    fireEvent.focus(getByText('This is a link'));
+    fireEvent.blur(getByText('This is a link'));
+    expect(getByTitle('help').parentNode.lastChild.className).toContain(
+      'bx--header-panel action-btn__headerpanel action-btn__headerpanel--closed'
+    );
+  });
+
+  it('closes when focus leaves trigger', () => {
+    const { getByTitle } = render(<Header {...HeaderProps} />);
+    fireEvent.click(getByTitle('help'));
+    expect(getByTitle('help').parentNode.lastChild.className).toContain(
+      'bx--header-panel bx--header-panel--expanded action-btn__headerpanel'
+    );
+    fireEvent.blur(getByTitle('help'));
+    expect(getByTitle('help').parentNode.lastChild.className).toContain(
+      'bx--header-panel action-btn__headerpanel action-btn__headerpanel--closed'
+    );
+  });
+
+  it('closes when focus leaves the current action', () => {
+    const { getByTitle } = render(<Header {...HeaderProps} />);
+
+    fireEvent.click(getByTitle('help'));
+    expect(getByTitle('help').parentNode.lastChild.className).toContain(
+      'bx--header-panel bx--header-panel--expanded action-btn__headerpanel'
+    );
+    // focus leaves the first button
+    fireEvent.blur(getByTitle('help'));
+    expect(getByTitle('help').parentNode.lastChild.className).toContain(
+      'bx--header-panel action-btn__headerpanel action-btn__headerpanel--closed'
+    );
+  });
+
+  it('App switcher opens', () => {
+    const headerPanel = {
+      className: 'header-panel',
+      /* eslint-disable */
+
+      content: React.forwardRef((props, ref) => (
+        <a href="#" ref={ref} {...props}>
+          Header panel content
+        </a>
+      )),
+      /* eslint-enable */
+    };
+    const { getByTitle } = render(<Header {...HeaderProps} headerPanel={headerPanel} />);
+
+    fireEvent.click(getByTitle(APP_SWITCHER));
+    expect(getByTitle(APP_SWITCHER).parentNode.lastChild.className).toContain(
+      'bx--header-panel bx--header-panel--expanded bx--app-switcher'
     );
 
-    expect(header).toMatchSnapshot();
+    fireEvent.click(getByTitle(APP_SWITCHER));
+    expect(getByTitle(APP_SWITCHER).parentNode.lastChild.className).toContain(
+      'bx--header-panel bx--app-switcher'
+    );
+  });
+
+  test('onClick expands', () => {
+    const headerPanel = {
+      className: 'header-panel',
+      /* eslint-disable */
+
+      content: React.forwardRef((props, ref) => (
+        <a href="#" ref={ref} {...props}>
+          Header panel content
+        </a>
+      )),
+      /* eslint-enable */
+    };
+    const { getByTestId } = render(<Header {...HeaderProps} headerPanel={headerPanel} />);
+
+    const menuItem = getByTestId('menuitem');
+    fireEvent.click(menuItem);
+    expect(menuItem.getAttribute('aria-expanded')).toBeTruthy();
+  });
+
+  test('onKeyDown expands with enter', () => {
+    const headerPanel = {
+      className: 'header-panel',
+      /* eslint-disable */
+
+      content: React.forwardRef((props, ref) => (
+        <a href="#" ref={ref} {...props}>
+          Header panel content
+        </a>
+      )),
+      /* eslint-enable */
+    };
+    const { getByTestId } = render(<Header {...HeaderProps} headerPanel={headerPanel} />);
+    const menuTrigger = getByTestId('menuitem');
+    fireEvent.keyDown(menuTrigger, { keyCode: keyCodes.ENTER });
+    expect(menuTrigger.getAttribute('aria-expanded')).toBe('true');
+    fireEvent.keyDown(menuTrigger, { keyCode: keyCodes.SPACE });
+    expect(menuTrigger.getAttribute('aria-expanded')).toBe('false');
+  });
+
+  test('onKeyDown expands with space', () => {
+    const headerPanel = {
+      className: 'header-panel',
+      /* eslint-disable */
+
+      content: React.forwardRef((props, ref) => (
+        <a href="#" ref={ref} {...props}>
+          Header panel content
+        </a>
+      )),
+      /* eslint-enable */
+    };
+    const { getByTitle } = render(<Header {...HeaderProps} headerPanel={headerPanel} />);
+    const menuTrigger = getByTitle('help');
+    fireEvent.keyDown(menuTrigger, { keyCode: keyCodes.SPACE });
+    expect(menuTrigger.getAttribute('aria-expanded')).toBe('true');
+    fireEvent.keyDown(menuTrigger, { keyCode: keyCodes.SPACE });
+    expect(menuTrigger.getAttribute('aria-expanded')).toBe('false');
+  });
+
+  test('onKeyDown esc on parent closes an open menu', () => {
+    const headerPanel = {
+      className: 'header-panel',
+      /* eslint-disable */
+
+      content: React.forwardRef((props, ref) => (
+        <a href="#" ref={ref} {...props}>
+          Header panel content
+        </a>
+      )),
+      /* eslint-enable */
+    };
+    const { getByTestId, getByRole } = render(
+      <Header {...HeaderProps} headerPanel={headerPanel} />
+    );
+    const menuParent = getByRole('menu');
+    const menuTrigger = getByTestId('menuitem');
+    fireEvent.keyDown(menuTrigger, { keyCode: keyCodes.ENTER });
+    expect(menuTrigger.getAttribute('aria-expanded')).toBe('true');
+    fireEvent.keyDown(menuParent, { keyCode: keyCodes.ESC });
+    expect(menuTrigger.getAttribute('aria-expanded')).toBe('false');
   });
 });

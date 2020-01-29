@@ -1,8 +1,6 @@
 // Needed so that any component that uses sizeme can be jest tested
 import sizeMe from 'react-sizeme';
 
-import ExpandableList from './components/List/ExpandableList';
-
 sizeMe.noPlaceholders = true;
 
 // Styles
@@ -42,6 +40,7 @@ export * as tableActions from './components/Table/tableActionCreators';
 // Page related helpers
 export PageHero from './components/Page/PageHero';
 export PageWorkArea from './components/Page/PageWorkArea';
+export EditPage from './components/Page/EditPage';
 export NavigationBar from './components/NavigationBar/NavigationBar';
 export Header from './components/Header';
 export SideNav from './components/SideNav';
@@ -59,6 +58,7 @@ export {
   CARD_SIZES,
   DASHBOARD_BREAKPOINTS,
   DASHBOARD_SIZES,
+  TIME_SERIES_TYPES,
 } from './constants/LayoutConstants';
 
 // Experimental
@@ -72,6 +72,18 @@ export {
   PageWizardStepExtraContent,
 } from './components/PageWizard/PageWizard';
 export StatefulPageWizard from './components/PageWizard/StatefulPageWizard';
+
+export TileGallery from './components/TileGallery/TileGallery';
+
+export TileGallerySection from './components/TileGallery/TileGallerySection';
+
+export TileGalleryItem from './components/TileGallery/TileGalleryItem';
+
+export TileGalleryViewSwitcher from './components/TileGallery/TileGalleryViewSwitcher';
+
+export TileGallerySearch from './components/TileGallery/TileGallerySearch';
+
+export StatefulTileGallery from './components/TileGallery/StatefulTileGallery';
 
 // Carbon proxy
 export {
@@ -111,6 +123,7 @@ export {
   // TableToolbarContent,
   // TableToolbarSearch,
   // TableToolbarMenu,
+  DataTable,
   DatePicker,
   DatePickerInput,
   Dropdown,
@@ -249,10 +262,11 @@ export {
   SideNavMenuItem,
   SideNavSwitcher,
 } from 'carbon-components-react';
-export { validateDashboardJSON } from './utils/schemas/validators';
 
 export {
   determineCardRange,
   determineMaxValueCardAttributeCount,
   compareGrains,
 } from './utils/cardUtilityFunctions';
+
+export { csvDownloadHandler } from './utils/componentUtilityFunctions';

@@ -14,7 +14,7 @@ const commonTableHeadProps = {
   ],
   /** Ordering list */
   ordering: [{ columnId: 'col1', isHidden: false }, { columnId: 'col2', isHidden: false }],
-  tableOptions: {
+  options: {
     hasRowSelection: false,
     hasRowExpansion: false,
   },
@@ -47,6 +47,19 @@ describe('TableHead', () => {
     backend.simulateEndDrag();
     expect(commonTableHeadProps.onChangeOrdering).toHaveBeenCalled();
   });
+  it('does not reorder columns when placed upon themselves', () => {
+    const dragSource = wrapper
+      .find("DragSource(DropTarget(ColumnHeaderSelect))[columnId='col1']")
+      .instance();
+    const dropTarget = wrapper.find("DropTarget(ColumnHeaderSelect)[columnId='col1']").instance();
+    backend.simulateBeginDrag([dragSource.getHandlerId()]);
+    backend.simulateHover([dropTarget.getHandlerId()]);
+    backend.simulateEndDrag();
+    expect(commonTableHeadProps.onChangeOrdering).toHaveBeenCalledWith([
+      { columnId: 'col2', isHidden: false },
+      { columnId: 'col1', isHidden: false },
+    ]);
+  });
   it('can click to toggle visibility', () => {
     const headerButton = wrapper.find("ColumnHeaderSelect[columnId='col1']");
     headerButton.simulate('click');
@@ -58,7 +71,7 @@ describe('ColumnHeaderRow test', () => {
   test('when hasRowExpansion set to true', () => {
     const tableHeadProps = {
       ...commonTableHeadProps,
-      tableOptions: { ...commonTableHeadProps.tableOptions, hasRowExpansion: true },
+      options: { ...commonTableHeadProps.options, hasRowExpansion: true },
     };
 
     const Wrapped = wrapInTestContext(UnconnectedColumnHeaderRow, tableHeadProps);
@@ -83,7 +96,7 @@ describe('ColumnHeaderRow test', () => {
   test('when hasRowActions set to true', () => {
     const tableHeadProps = {
       ...commonTableHeadProps,
-      tableOptions: { ...commonTableHeadProps.tableOptions, hasRowActions: true },
+      options: { ...commonTableHeadProps.options, hasRowActions: true },
     };
 
     const Wrapped = wrapInTestContext(UnconnectedColumnHeaderRow, tableHeadProps);
@@ -92,5 +105,35 @@ describe('ColumnHeaderRow test', () => {
     expect(renderedElement.container.innerHTML).toContain('Column 1');
     expect(renderedElement.container.innerHTML).toContain('Column 2');
     expect(renderedElement.container.innerHTML).toContain('colspan="3"');
+  });
+
+  test('column selection config renders and fires callback on click', () => {
+    const onColumnSelectionConfig = jest.fn();
+    const tableHeadProps = {
+      ...commonTableHeadProps,
+      options: {
+        ...commonTableHeadProps.options,
+        hasColumnSelectionConfig: true,
+      },
+      onColumnSelectionConfig,
+      columnSelectionConfigText: 'button_text',
+    };
+
+    const Wrapped = wrapInTestContext(UnconnectedColumnHeaderRow, tableHeadProps);
+    const renderedElement = mount(<Wrapped />);
+
+    expect(
+      renderedElement
+        .find('.column-header__btn')
+        .last()
+        .text()
+    ).toContain('button_text');
+
+    renderedElement
+      .find('.column-header__btn')
+      .last()
+      .simulate('click');
+
+    expect(onColumnSelectionConfig).toHaveBeenCalledTimes(1);
   });
 });

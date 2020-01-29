@@ -106,19 +106,19 @@ describe('timeSeriesUtils', () => {
   test('formatGraphTick', () => {
     // hour different day
     expect(
-      formatGraphTick(1572933600000, 1, [1, 2, 3, 4, 5, 6], 'hour', null, 1572912000000)
-    ).toContain('05 Nov');
+      formatGraphTick(1572933600000, 1, [1, 2, 3, 4, 5, 6], 'hour', 'en', 1572912000000)
+    ).toContain('Nov 05');
     // hour same day
     expect(
-      formatGraphTick(1572933600000, 1, [1, 2, 3, 4, 5, 6], 'hour', null, 1572933600000)
+      formatGraphTick(1572933600000, 1, [1, 2, 3, 4, 5, 6], 'hour', 'en', 1572933600000)
     ).toContain('00:00');
     // month different year
     expect(
-      formatGraphTick(1546322400000, 1, [1, 2, 3, 4, 5, 6], 'month', null, 1522558800000)
+      formatGraphTick(1546322400000, 1, [1, 2, 3, 4, 5, 6], 'month', 'en', 1522558800000)
     ).toContain('Jan 2019');
     // month same year
     expect(
-      formatGraphTick(1561957200000, 1, [1, 2, 3, 4, 5, 6], 'month', null, 1572584400000)
+      formatGraphTick(1561957200000, 1, [1, 2, 3, 4, 5, 6], 'month', 'en', 1572584400000)
     ).toContain('Jul');
   });
   test('findMatchingAlertRange', () => {

@@ -2513,7 +2513,7 @@ export const tableColumns = [
     dataSourceId: 'count',
     label: 'Count',
     priority: 3,
-    filter: { placeholderText: 'pick a string' },
+    filter: { placeholderText: 'enter a string' },
   },
   {
     dataSourceId: 'hour',

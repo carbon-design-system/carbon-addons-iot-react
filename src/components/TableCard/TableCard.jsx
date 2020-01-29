@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useCallback } from 'react';
 import { OverflowMenu, OverflowMenuItem, Icon } from 'carbon-components-react';
 import styled from 'styled-components';
 import moment from 'moment';
@@ -6,14 +6,15 @@ import isNil from 'lodash/isNil';
 import uniqBy from 'lodash/uniqBy';
 import cloneDeep from 'lodash/cloneDeep';
 import capitalize from 'lodash/capitalize';
-import OverFlowMenuIcon from '@carbon/icons-react/lib/overflow-menu--vertical/16';
+import OverFlowMenuIcon from '@carbon/icons-react/lib/overflow-menu--vertical/20';
 
 import { CardPropTypes, TableCardPropTypes } from '../../constants/PropTypes';
-import Card from '../Card/Card';
+import Card, { defaultProps as CardDefaultProps } from '../Card/Card';
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 import StatefulTable from '../Table/StatefulTable';
 import { generateTableSampleValues } from '../TimeSeriesCard/timeSeriesUtils';
 import { csvDownloadHandler } from '../../utils/componentUtilityFunctions';
+import CardToolbar from '../Card/CardToolbar';
 
 const StyledOverflowMenu = styled(OverflowMenu)`
   &&& {
@@ -43,11 +44,13 @@ const StyledStatefulTable = styled(({ showHeader, isExpanded, data, ...rest }) =
   flex: inherit;
   height: 100%;
   position: relative;
-  overflow-y: hidden;
+  overflow-y: ${props => (!props.isExpanded ? 'hidden' : 'auto')};
+  padding-bottom: ${props => (props.isExpanded ? '3rem' : '')};
   &&& {
     .bx--pagination {
-      position: absolute;
-      bottom: 0;
+      position: ${props => (!props.isExpanded ? 'absolute' : 'fixed')};
+      bottom: ${props => (!props.isExpanded ? '0px' : '25px')};
+      ${props => (props.isExpanded ? `width: calc(100% - 50px)` : ``)}
     }
     .bx--data-table-container {
       ${props =>
@@ -158,6 +161,24 @@ const defaultProps = {
     downloadIconDescription: 'Download table content',
     severityLabel: 'Severity',
     emptyMessage: 'There is no data for this time range.',
+    // Card-specific labels needed for combo with table toolbar
+    last24HoursLabel: 'Last 24 hrs',
+    last7DaysLabel: 'Last 7 days',
+    lastMonthLabel: 'Last month',
+    lastQuarterLabel: 'Last quarter',
+    lastYearLabel: 'Last year',
+    periodToDateLabel: 'Period to date',
+    thisWeekLabel: 'This week',
+    thisMonthLabel: 'This month',
+    thisQuarterLabel: 'This quarter',
+    thisYearLabel: 'This year',
+    hourlyLabel: 'Hourly',
+    dailyLabel: 'Daily',
+    weeklyLabel: 'Weekly',
+    monthlyLabel: 'Monthly',
+    defaultLabel: 'Default',
+    closeLabel: 'Close',
+    expandLabel: 'Expand to fullscreen',
   },
 };
 /**
@@ -235,8 +256,15 @@ const TableCard = ({
   values: data,
   isEditable,
   i18n,
+  tooltip,
   ...others
 }) => {
+  /** adds the id to the card action */
+  const cachedOnCardAction = useCallback((...args) => onCardAction(id, ...args), [
+    onCardAction,
+    id,
+  ]);
+
   const renderActionCell = cellItem => {
     const actionList = JSON.parse(cellItem.value);
     return actionList && actionList.length === 1 ? (
@@ -661,10 +689,20 @@ const TableCard = ({
     ? columnsToRender.find(item => item.priority === 1)
     : columnStartSortDefined;
 
+  const cardToolbar = (
+    <CardToolbar
+      availableActions={{ expand: isExpandable, range: true }}
+      i18n={i18n}
+      isEditable={isEditable}
+      isExpanded={isExpanded}
+      onCardAction={cachedOnCardAction}
+      {...others}
+    />
+  );
+
   return (
     <Card
       id={id}
-      title={title}
       size={size}
       onCardAction={onCardAction}
       availableActions={{ expand: isExpandable, range: true }}
@@ -680,6 +718,8 @@ const TableCard = ({
             columns={columnsToRender}
             data={tableDataWithTimestamp}
             isExpanded={isExpanded}
+            secondaryTitle={title}
+            tooltip={tooltip}
             options={{
               hasPagination: true,
               hasSearch: true,
@@ -703,12 +743,13 @@ const TableCard = ({
             view={{
               pagination: {
                 pageSize: numberOfRowsPerPage,
-                pageSizes: [numberOfRowsPerPage],
-                isItemPerPageHidden: true,
+                pageSizes: [numberOfRowsPerPage, 25, 100],
+                isItemPerPageHidden: !isExpanded,
               },
               toolbar: {
                 activeBar: null,
                 isDisabled: isEditable,
+                customToolbarContent: cardToolbar,
               },
               filters: [],
               table: {
@@ -726,7 +767,7 @@ const TableCard = ({
               },
             }}
             showHeader={showHeader !== undefined ? showHeader : true}
-            i18n={i18n}
+            i18n={i18n} // TODO: add Card defaultprops ?
           />
         );
       }}
@@ -737,4 +778,5 @@ const TableCard = ({
 TableCard.propTypes = { ...CardPropTypes, ...TableCardPropTypes };
 TableCard.displayName = 'TableCard';
 TableCard.defaultProps = defaultProps;
+TableCard.defaultProps.i18n = { ...defaultProps.i18n, ...CardDefaultProps.i18n };
 export default TableCard;

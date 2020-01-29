@@ -108,7 +108,6 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 // 🍕 Components
 //-------------------------
 
-@import 'components/Button/button';
 @import 'components/CopyButton/copy-button';
 @import 'components/FileUploader/file-uploader';
 @import 'components/Checkbox/checkbox';
@@ -185,3 +184,7 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 @import 'components/List/list';
 @import 'components/List/ListItem/list-item';
 @import 'components/List/ListHeader/list-header';
+@import 'components/TileGallery/tile-gallery';
+@import 'components/Table/TableToolbar/table-toolbar';
+@import 'components/Table/table';
+@import 'components/Button/button';

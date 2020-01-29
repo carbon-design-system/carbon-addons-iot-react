@@ -63,6 +63,7 @@ const propTypes = {
     onSelectAll: PropTypes.func,
     onChangeSort: PropTypes.func,
     onChangeOrdering: PropTypes.func,
+    onColumnSelectionConfig: PropTypes.func,
     onApplyFilter: PropTypes.func,
   }).isRequired,
   /** lightweight  */
@@ -138,7 +139,7 @@ const TableHead = ({
     ordering,
     filters,
   },
-  actions: { onSelectAll, onChangeSort, onApplyFilter, onChangeOrdering },
+  actions: { onSelectAll, onChangeSort, onApplyFilter, onChangeOrdering, onColumnSelectionConfig },
   selectAllText,
   clearFilterText,
   filterText,
@@ -228,9 +229,11 @@ const TableHead = ({
             name: column.name,
           }))}
           ordering={ordering}
-          tableOptions={options}
+          options={options}
           onChangeOrdering={onChangeOrdering}
           lightweight={lightweight}
+          onColumnSelectionConfig={onColumnSelectionConfig}
+          columnSelectionConfigText={i18n.columnSelectionConfig}
         />
       )}
     </StyledCarbonTableHead>
