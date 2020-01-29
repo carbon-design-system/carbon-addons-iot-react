@@ -32,7 +32,7 @@ const propTypes = {
   iconPosition: PropTypes.oneOf(['left', 'right']),
   i18n: PropTypes.shape({
     searchPlaceHolderText: PropTypes.string,
-  }), // TODO: fill this in
+  }),
   pagination: PropTypes.shape(SimplePaginationPropTypes),
   selectedId: PropTypes.string,
   expandedIds: PropTypes.arrayOf(PropTypes.string),

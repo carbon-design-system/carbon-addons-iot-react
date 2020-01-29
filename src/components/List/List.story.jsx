@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { text, select } from '@storybook/addon-knobs';
-import { Add16, Edit16, Star16, StarFilled16 } from '@carbon/icons-react';
+import { text } from '@storybook/addon-knobs';
+import { Add16, Edit16, Star16 } from '@carbon/icons-react';
 
 import { Button, OverflowMenu, OverflowMenuItem } from '../..';
 
@@ -22,8 +22,41 @@ export const sampleHierarchy = {
         'Yolmer Sanchez': '2B',
         'Dylan Covey': 'P',
       },
+      'New York Yankees': {
+        'DJ LeMahieu': '2B',
+        'Luke Voit': '1B',
+        'Gary Sanchez': 'C',
+        'Kendrys Morales': 'DH',
+        'Gleyber Torres': 'SS',
+        'Clint Frazier': 'RF',
+        'Brett Gardner': 'LF',
+        'Gio Urshela': '3B',
+        'Cameron Maybin': 'RF',
+      },
+      'Houston Astros': {
+        'George Springer': 'RF',
+        'Jose Altuve': '2B',
+        'Michael Brantley': 'LF',
+        'Alex Bregman': '3B',
+        'Yuli Gurriel': '1B',
+        'Yordan Alvarez': 'DH',
+        'Carlos Correa': 'SS',
+        'Robinson Chirinos': 'C',
+        'Josh Reddick': 'CF',
+      },
     },
     'National League': {
+      'Atlanta Braves': {
+        'Ronald Acuna Jr.': 'CF',
+        'Dansby Swanson': 'SS',
+        'Freddie Freeman': '1B',
+        'Josh Donaldson': '3B',
+        'Nick Markakis': 'RF',
+        'Austin Riley': 'LF',
+        'Brian McCann': 'C',
+        'Ozzie Albies': '2B',
+        'Kevin Gausman': 'P',
+      },
       'New York Mets': {
         'Jeff McNeil': '3B',
         'Amed Rosario': 'SS',
@@ -34,6 +67,17 @@ export const sampleHierarchy = {
         'JD Davis': 'LF',
         'Brandon Nimmo': 'CF',
         'Jacob Degrom': 'P',
+      },
+      'Washington Nationals': {
+        'Trea Turner': 'SS',
+        'Adam Eaton': 'RF',
+        'Anthony Rendon': '3B',
+        'Juan Soto': 'LF',
+        'Howie Kendrick': '2B',
+        'Ryan Zimmerman': '1B',
+        'Yian Gomes': 'C',
+        'Victor Robles': 'CF',
+        'Max Scherzer': 'P',
       },
     },
   },
@@ -54,63 +98,6 @@ const buildHierarchy = (obj, renderRowActions, renderIcon, prefix = '', level = 
         : null,
   }));
 };
-
-const expandedWithCategories = [
-  {
-    id: '1',
-    content: { value: 'Item 1' },
-    isCategory: true,
-    children: [
-      {
-        id: 'ch11',
-        content: { value: 'Child item 1' },
-        children: [
-          { id: 'ch111', content: { value: 'Child item 1' } },
-          { id: 'ch112', content: { value: 'Child item 2' } },
-          { id: 'ch113', content: { value: 'Child item 3' } },
-        ],
-      },
-      {
-        id: 'ch12',
-        content: { value: 'Child item 2' },
-        children: [
-          { id: 'ch121', content: { value: 'Child item 1' } },
-          { id: 'ch122', content: { value: 'Child item 2' } },
-          { id: 'ch123', content: { value: 'Child item 3' } },
-        ],
-      },
-      {
-        id: 'ch13',
-        content: { value: 'Child item 3' },
-        children: [
-          { id: 'ch131', content: { value: 'Child item 1' } },
-          { id: 'ch132', content: { value: 'Child item 2' } },
-          { id: 'ch133', content: { value: 'Child item 3' } },
-        ],
-      },
-    ],
-  },
-  {
-    id: '2',
-    content: { value: 'Item 2' },
-    isCategory: true,
-    children: [
-      { id: 'ch21', content: { value: 'Child item 1' } },
-      { id: 'ch22', content: { value: 'Child item 2' } },
-      { id: 'ch23', content: { value: 'Child item 3' } },
-    ],
-  },
-  {
-    id: '3',
-    content: { value: 'Item 3' },
-    isCategory: true,
-    children: [
-      { id: 'ch31', content: { value: 'Child item 1' } },
-      { id: 'ch32', content: { value: 'Child item 2' } },
-      { id: 'ch33', content: { value: 'Child item 3' } },
-    ],
-  },
-];
 
 const headerButton = (
   <Button

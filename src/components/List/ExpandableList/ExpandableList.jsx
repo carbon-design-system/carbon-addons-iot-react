@@ -1,18 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import cloneDeep from 'lodash/cloneDeep';
+import debounce from 'lodash/debounce';
 
 import List from '../List';
 
 const propTypes = {
+  /** List heading */
   title: PropTypes.string,
+  /** Determines whether the search function is enabled */
   hasSearch: PropTypes.bool,
+  /** Buttons to be presented in List header */
   buttons: PropTypes.arrayOf(PropTypes.node),
+  /** ListItems to be displayed */
   items: PropTypes.arrayOf(PropTypes.any).isRequired,
+  /** Internationalization text */
   i18n: PropTypes.shape({
+    /** Text displayed in search bar */
     searchPlaceHolderText: PropTypes.string,
   }),
+  /** Displays the List as full height */
   isFullHeight: PropTypes.bool,
+  /** Determines the number of rows per page */
   pageSize: PropTypes.string,
 };
 
@@ -32,7 +41,7 @@ const defaultProps = {
  * @param {Object} item to be searched
  * @returns {Boolean} found or not
  */
-const searchItem = (item, searchTerm) => {
+export const searchItem = (item, searchTerm) => {
   // Check that the value is not empty
   if (item.content.value !== '' && item.content.value !== undefined) {
     // Check that the secondary value is not empty
@@ -64,7 +73,7 @@ const searchItem = (item, searchTerm) => {
  */
 export const searchNestedItems = (items, value) => {
   const filteredItems = [];
-  cloneDeep(items).forEach((item, i) => {
+  cloneDeep(items).forEach(item => {
     // if the item has children, recurse and search children
     if (item.children) {
       // eslint-disable-next-line
@@ -78,11 +87,6 @@ export const searchNestedItems = (items, value) => {
       filteredItems.push(item);
     }
   });
-  return filteredItems;
-};
-
-const searchItems = (items, value) => {
-  const filteredItems = searchNestedItems(items, value);
   return filteredItems;
 };
 
@@ -102,26 +106,26 @@ const ExpandableList = ({ title, hasSearch, buttons, items, i18n, isFullHeight, 
   };
 
   const numberOfItems = filteredItems.length;
-  let rowPerPage = numberOfItems;
+  let rowsPerPage = numberOfItems;
   switch (pageSize) {
     case 'sm':
-      rowPerPage = 5;
+      rowsPerPage = 5;
       break;
     case 'lg':
-      rowPerPage = 10;
+      rowsPerPage = 10;
       break;
     case 'xl':
-      rowPerPage = 20;
+      rowsPerPage = 20;
       break;
     default:
-      rowPerPage = 5;
+      rowsPerPage = null;
   }
 
-  const [itemsToShow, setItemsToShow] = useState(filteredItems.slice(0, rowPerPage));
+  const [itemsToShow, setItemsToShow] = useState(filteredItems.slice(0, rowsPerPage));
 
   const onPage = page => {
-    const rowUpperLimit = page * rowPerPage;
-    const currentItemsOnPage = filteredItems.slice(rowUpperLimit - rowPerPage, rowUpperLimit);
+    const rowUpperLimit = page * rowsPerPage;
+    const currentItemsOnPage = filteredItems.slice(rowUpperLimit - rowsPerPage, rowUpperLimit);
     setCurrentPageNumber(page);
     setItemsToShow(currentItemsOnPage);
   };
@@ -129,18 +133,17 @@ const ExpandableList = ({ title, hasSearch, buttons, items, i18n, isFullHeight, 
   const pagination = {
     page: currentPageNumber,
     onPage,
-    maxPage: Math.ceil(numberOfItems / rowPerPage),
+    maxPage: Math.ceil(numberOfItems / rowsPerPage),
     pageOfPagesText: page => `Page ${page}`,
   };
 
   const handleSearch = text => {
-    setSearchValue(text);
     /** Once the array is finished, the category
         needs to be expanded to show the found results and the filter children
         array needs to be added to the total filtered array. The next
         category's children then needs to be searched in the same fashion.
      */
-    const tempFilteredItems = searchItems(items, text);
+    const tempFilteredItems = searchNestedItems(items, text);
     const tempExpandedIds = [];
     // Expand the categories that have found results
     tempFilteredItems.forEach(categoryItem => {
@@ -149,9 +152,18 @@ const ExpandableList = ({ title, hasSearch, buttons, items, i18n, isFullHeight, 
     setExpandedIds(tempExpandedIds);
     setFilteredItems(tempFilteredItems);
     if (pageSize !== null) {
-      setItemsToShow(tempFilteredItems.slice(0, rowPerPage));
+      setItemsToShow(tempFilteredItems.slice(0, rowsPerPage));
     }
   };
+
+  /**
+   * Searching the nested items array is computationally expensive so delay the
+   * search by 150ms which is a reasonable amount of time for a single word to
+   * be typed. UseRef is needed because the component is being re-rendered on
+   * search value changes, meaning the onChange event is being thrown away. The
+   * ref holds on to the last event's information the event.target.value
+   */
+  const delayedSearch = useRef(debounce(textInput => handleSearch(textInput), 150)).current;
 
   return (
     <List
@@ -161,7 +173,10 @@ const ExpandableList = ({ title, hasSearch, buttons, items, i18n, isFullHeight, 
         hasSearch
           ? {
               value: searchValue,
-              onChange: evt => handleSearch(evt.target.value),
+              onChange: evt => {
+                setSearchValue(evt.target.value);
+                delayedSearch(evt.target.value);
+              },
             }
           : null
       }

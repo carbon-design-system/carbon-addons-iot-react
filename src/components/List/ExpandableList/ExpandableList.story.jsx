@@ -60,7 +60,7 @@ storiesOf('Watson IoT Experimental|Expandable List', module).add(
           })),
         ]}
         hasSearch
-        pageSize={select('Page Size', ['sm', 'lg', 'xl'], 'xl')}
+        pageSize={select('Page Size', ['sm', 'lg', 'xl'], 'sm')}
       />
     </div>
   )
