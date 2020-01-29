@@ -28,6 +28,31 @@ storiesOf('Watson IoT|Card', module)
       </div>
     );
   })
+  .add('basic with render prop', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
+    return (
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+        <Card
+          title={text('title', 'Card with render prop')}
+          id="render-prop-basic"
+          size={size}
+          isLoading={boolean('isLoading', false)}
+          isEmpty={boolean('isEmpty', false)}
+          isEditable={boolean('isEditable', false)}
+          isExpanded={boolean('isExpanded', false)}
+          breakpoint="lg"
+          availableActions={{ range: true, expand: true }}
+          onCardAction={action('onCardAction')}
+          // eslint-disable-next-line
+          children={childSize => (
+            <p>
+              Content width is {childSize.width} and height is {childSize.height}
+            </p>
+          )}
+        />
+      </div>
+    );
+  })
   .add('with loading', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
     return (
