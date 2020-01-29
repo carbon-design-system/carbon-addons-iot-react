@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { Simulate } from 'react-dom/test-utils';
+import { Simulate, act } from 'react-dom/test-utils';
 
 import TableHead from './TableHead';
 import TableHeader from './TableHeader';
@@ -172,8 +172,11 @@ describe('TableHead', () => {
 
       expect(resizerNode.classList.contains('column-resize-wrapper')).toBe(true);
       expect(resizerNode.classList.contains('column-resize-wrapper--invalid')).toBe(false);
-      simulateMovementWithoutMouseUp(resizer, 0, 0, 900, 0);
-      simulateMovementWithoutMouseUp(resizer, 100, 0, 30, 0);
+
+      act(() => {
+        simulateMovementWithoutMouseUp(resizer, 0, 0, 900, 0);
+        simulateMovementWithoutMouseUp(resizer, 100, 0, 30, 0);
+      });
       expect(resizerNode.classList.contains('column-resize-wrapper--invalid')).toBe(true);
     });
 
@@ -188,7 +191,9 @@ describe('TableHead', () => {
       const resizerNode = resizer.getDOMNode();
       expect(resizerNode.classList.contains('column-resize-wrapper')).toBe(true);
       expect(resizerNode.classList.contains('column-resize-wrapper--invalid')).toBe(false);
-      simulateMovementWithMouseUp(resizer, 0, 0, 900, 0);
+      act(() => {
+        simulateMovementWithMouseUp(resizer, 0, 0, 900, 0);
+      });
       expect(resizerNode.classList.contains('column-resize-wrapper--invalid')).toBe(false);
     });
 
@@ -204,7 +209,9 @@ describe('TableHead', () => {
       const resizerNode = resizer.getDOMNode();
       expect(resizerNode.classList.contains('column-resize-wrapper')).toBe(true);
       expect(resizerNode.classList.contains('column-resize-wrapper--invalid')).toBe(false);
-      simulateMovementWithoutMouseUp(resizer, 0, 0, 900, 0);
+      act(() => {
+        simulateMovementWithoutMouseUp(resizer, 0, 0, 900, 0);
+      });
       expect(resizerNode.classList.contains('column-resize-wrapper--invalid')).toBe(true);
     });
 
@@ -219,7 +226,9 @@ describe('TableHead', () => {
       const resizerNode = resizer.getDOMNode();
       expect(resizerNode.classList.contains('column-resize-wrapper')).toBe(true);
       expect(resizerNode.classList.contains('column-resize-wrapper--invalid')).toBe(false);
-      simulateMovementWithoutMouseUp(resizer, 30, 0, 50, 0);
+      act(() => {
+        simulateMovementWithoutMouseUp(resizer, 30, 0, 50, 0);
+      });
       expect(resizerNode.classList.contains('column-resize-wrapper--invalid')).toBe(false);
     });
 
@@ -235,8 +244,10 @@ describe('TableHead', () => {
       const resizerNode = resizer.getDOMNode();
       expect(resizerNode.classList.contains('column-resize-wrapper')).toBe(true);
       expect(resizerNode.classList.contains('column-resize-wrapper--invalid')).toBe(false);
-      simulateMovementWithoutMouseUp(resizer, 0, 0, 900, 0);
-      simulateMovementWithoutMouseUp(resizer, 50, 0, 30, 0);
+      act(() => {
+        simulateMovementWithoutMouseUp(resizer, 0, 0, 900, 0);
+        simulateMovementWithoutMouseUp(resizer, 50, 0, 30, 0);
+      });
       expect(resizerNode.classList.contains('column-resize-wrapper--invalid')).toBe(false);
     });
   });

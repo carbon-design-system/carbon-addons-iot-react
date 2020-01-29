@@ -146,15 +146,6 @@ const getColumnDragBounds = (direction, colWidths, index) => {
   };
 };
 
-const updateColumnResizeWrapper = (validDrag, wrapperElement) => {
-  const invalidClass = 'column-resize-wrapper--invalid';
-  if (validDrag === false) {
-    wrapperElement.classList.add(invalidClass);
-  } else {
-    wrapperElement.classList.remove(invalidClass);
-  }
-};
-
 const dragIsValidLtr = (mousePosition, bounds) => {
   const { minColumnWidth, rightBound, leftBound, direction } = bounds;
   return (
@@ -196,13 +187,14 @@ const TableHead = ({
 }) => {
   const filterBarActive = activeBar === 'filter';
   const [columnWidth, setColumnWidth] = useState({});
+  const [validDragCursor, setValidDragCursor] = useState(true);
   const columnRef = ordering.map(() => createRef());
   const columnVar = {
     index: 0,
     element: Node,
     startX: 0,
     move: 0,
-    validDrag: false,
+    validDrag: null,
   };
 
   const mousemoveCallback = e => {
@@ -214,7 +206,7 @@ const TableHead = ({
         ? dragIsValidRtl(mousePosition, dragBounds)
         : dragIsValidLtr(mousePosition, dragBounds);
     columnVar.element.style.left = `${mousePosition}px`;
-    updateColumnResizeWrapper(columnVar.validDrag, columnVar.element);
+    setValidDragCursor(columnVar.validDrag);
   };
   const mouseupCallback = () => {
     if (columnVar.validDrag) {
@@ -234,7 +226,7 @@ const TableHead = ({
     document.onmousemove = null;
     columnVar.element.style.left = null;
     columnVar.validDrag = null;
-    updateColumnResizeWrapper(columnVar.validDrag, columnVar.element);
+    setValidDragCursor(true);
   };
   const onMouseDownCallback = (e, index) => {
     columnVar.element = e.target;
@@ -305,7 +297,9 @@ const TableHead = ({
                 // eslint-disable-next-line jsx-a11y/click-events-have-key-events
                 <div
                   id={`resize-${matchingColumnMeta.id}`}
-                  className="column-resize-wrapper"
+                  className={classnames('column-resize-wrapper', {
+                    'column-resize-wrapper--invalid': !validDragCursor,
+                  })}
                   onMouseDown={e => onMouseDownCallback(e, i)}
                   onClick={e => e.stopPropagation()}
                 />
