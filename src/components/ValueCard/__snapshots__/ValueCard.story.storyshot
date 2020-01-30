@@ -4077,9 +4077,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
             >
               <span
                 className="card--title"
-                title=""
+                title="Health"
               >
-                
+                Health
                  
               </span>
               <div

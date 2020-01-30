@@ -102,7 +102,7 @@ storiesOf('Watson IoT|ValueCard', module)
     return (
       <div style={{ width: text('cardWidth', `150px`), margin: 20 }}>
         <ValueCard
-          title={text('title', '')}
+          title={text('title', 'Health')}
           id="donutCard"
           content={{
             attributes: object('attributes', [
