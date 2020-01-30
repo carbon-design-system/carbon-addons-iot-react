@@ -2,8 +2,6 @@ import delay from 'lodash/delay';
 import moment from 'moment';
 import { sortStates } from 'carbon-components-react/lib/components/DataTable/state/sorting';
 import fileDownload from 'js-file-download';
-import find from 'lodash/find';
-import some from 'lodash/some';
 
 import {
   GUTTER,
@@ -142,7 +140,6 @@ export const stopPropagationAndCallback = (evt, callback, ...args) => {
 const gridHeight = 50;
 
 export const printGrid = grid => {
-  // console.log(`printGrid: ${grid}`);
   let result = '';
   for (let j = 0; j < gridHeight; j += 1) {
     for (let i = 0; i < grid.length; i += 1) {
@@ -162,7 +159,6 @@ export const printGrid = grid => {
  * @param {*} grid nested array of rows and columns with the current card index that is occupying them. for example, if the entire top row was taken by the first card it would look like this [[1, 1, 1, 1], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]]
  */
 export const canFit = (x, y, w, h, grid) => {
-  // console.log(`canFit? x=${x}, y=${y}, w=${w}, h=${h}`);
   for (let i = x; i < x + w; i += 1) {
     for (let j = y; j < y + h; j += 1) {
       if (grid.length === i) return false;
@@ -189,7 +185,6 @@ export const getLayout = (layoutName, cards, dashboardColumns, cardDimensions) =
     .map(() => Array(gridHeight).fill(0));
 
   const placeCard = (x, y, w, h, num) => {
-    // console.log(`placeCard: x=${x}, y=${y}, w=${w}, h=${h}, cardNum=${num}`);
     for (let i = x; i < x + w; i += 1) {
       for (let j = y; j < y + h; j += 1) {
         grid[i][j] = num;
@@ -200,9 +195,7 @@ export const getLayout = (layoutName, cards, dashboardColumns, cardDimensions) =
   const layout = cards
     .map((card, index) => {
       const { w, h } = cardDimensions[card.size][layoutName];
-      // console.log(`trying ${card.id} (w = ${w}, h = ${h}) at ${currX},${currY}`);
       while (!canFit(currX, currY, w, h, grid)) {
-        // console.log('didnt fit...');
         currX += 1;
         if (currX > dashboardColumns[layoutName]) {
           currX = 0;
@@ -212,7 +205,6 @@ export const getLayout = (layoutName, cards, dashboardColumns, cardDimensions) =
           }
         }
       }
-      // console.log('it fits!');
       placeCard(currX, currY, w, h, index + 1);
       // printGrid(grid);
       const cardLayout = {
@@ -223,7 +215,6 @@ export const getLayout = (layoutName, cards, dashboardColumns, cardDimensions) =
         h,
       };
       currX += w;
-      // console.log(`adding ${card.id} (w = ${w}, h = ${h}) at ${cardLayout.x},${cardLayout.y}`);
       return cardLayout;
     })
     .filter(i => i !== null);
@@ -252,6 +243,5 @@ export const getCardMinSize = (
     x: cardColumns * columnWidth + (cardColumns - 1) * GUTTER,
     y: cardRows * rowHeight[breakpoint] + (cardRows - 1) * GUTTER,
   };
-  // console.log('getCardMinSize', breakpoint, size, rowHeight, ` = ${JSON.stringify(cardSize)}`);
   return cardSize;
 };
