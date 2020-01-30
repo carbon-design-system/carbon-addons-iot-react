@@ -137,52 +137,6 @@ const StyledCustomTableHeader = styled(TableHeader)`
   }
 `;
 
-const getUpdatedColumnWidths = (dropXPos, columnWidth, leftSideIndex) => {
-  const origLeftSideColWidth = columnWidth[leftSideIndex];
-  const leftSideColWidth = document.dir === 'rtl' ? origLeftSideColWidth - dropXPos : dropXPos;
-
-  const rightSideIndex = leftSideIndex + 1;
-  const origRightSideColWidth = columnWidth[rightSideIndex];
-  const rightSideColWidth =
-    document.dir === 'rtl'
-      ? origRightSideColWidth + dropXPos
-      : origRightSideColWidth + origLeftSideColWidth - dropXPos;
-
-  console.info(
-    origLeftSideColWidth + origRightSideColWidth === leftSideColWidth + rightSideColWidth
-  );
-  return {
-    [leftSideIndex]: leftSideColWidth,
-    [rightSideIndex]: rightSideColWidth,
-  };
-};
-
-const getColumnDragBounds = (direction, colWidths, index) => {
-  const minColumnWidth = 64;
-  return {
-    direction,
-    minColumnWidth,
-    rightBound: colWidths[index],
-    leftBound: colWidths[index + 1] - minColumnWidth,
-  };
-};
-
-const dragIsValidLtr = (mousePosition, bounds) => {
-  const { minColumnWidth, rightBound, leftBound, direction } = bounds;
-  return (
-    (direction === 'left' && mousePosition >= minColumnWidth) ||
-    (direction === 'right' && mousePosition <= rightBound + leftBound)
-  );
-};
-
-const dragIsValidRtl = (mousePosition, bounds) => {
-  const { minColumnWidth, rightBound, leftBound, direction } = bounds;
-  return (
-    (direction === 'left' && mousePosition > -leftBound) ||
-    (direction === 'right' && mousePosition < rightBound - minColumnWidth)
-  );
-};
-
 const TableHead = ({
   headerWidth,
   options,
@@ -211,34 +165,12 @@ const TableHead = ({
   const columnRef = ordering.map(() => createRef());
   const columnResizeRef = ordering.map(() => createRef());
 
-  const [columnResize, setColumnResize] = useState({
-    index: 0,
-    startX: 0,
-    leftPosition: 0,
-    move: 0,
-    valid: true,
-    columnIsBeingResized: false,
-  });
-
   const onMouseMoveCallback = e => {
     columnResizeRef.forEach(ref => {
       if (ref.current) {
         ref.current.forwardMouseMove(e);
       }
     });
-
-    return;
-    if (columnResize.columnIsBeingResized) {
-      const mousePosition = e.clientX + columnResize.startX;
-      const direction = e.clientX > columnResize.move ? 'right' : 'left';
-      const dragBounds = getColumnDragBounds(direction, columnWidth, columnResize.index);
-      const valid =
-        document.dir === 'rtl'
-          ? dragIsValidRtl(mousePosition, dragBounds)
-          : dragIsValidLtr(mousePosition, dragBounds);
-
-      setColumnResize({ ...columnResize, valid, leftPosition: mousePosition });
-    }
   };
   const onMouseUpCallback = () => {
     columnResizeRef.forEach(ref => {
@@ -246,25 +178,6 @@ const TableHead = ({
         ref.current.forwardMouseUp();
       }
     });
-    return;
-
-    if (columnResize.columnIsBeingResized) {
-      if (columnResize.valid) {
-        const resizePosition = columnResize.leftPosition + 4; // Width of drag handle
-        const colWidths = getUpdatedColumnWidths(resizePosition, columnWidth, columnResize.index);
-        setColumnWidth(old => ({
-          ...old,
-          ...colWidths,
-        }));
-      }
-
-      setColumnResize({
-        ...columnResize,
-        columnIsBeingResized: false,
-        valid: true,
-        leftPosition: 0,
-      });
-    }
   };
 
   const updateColumnWidthsAfterResize = updatedColumnWidths => {
@@ -291,7 +204,6 @@ const TableHead = ({
       onMouseUp={onMouseUpCallback}
     >
       <TableRow>
-        {console.info('I render')}
         {hasRowExpansion ? <TableExpandHeader /> : null}
         {hasRowSelection === 'multi' ? (
           <StyledCheckboxTableHeader translateWithId={(...args) => tableTranslateWithId(...args)}>
@@ -337,7 +249,6 @@ const TableHead = ({
             >
               <TableCellRenderer>{matchingColumnMeta.name}</TableCellRenderer>
               {hasResize && i < ordering.length - 1 ? (
-                // eslint-disable-next-line jsx-a11y/click-events-have-key-events
                 <ColumnResize
                   setNewWidths={updateColumnWidthsAfterResize}
                   columnIndex={i}

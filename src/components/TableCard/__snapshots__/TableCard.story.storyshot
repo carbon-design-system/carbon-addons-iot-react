@@ -292,6 +292,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   >
                     <thead
                       className="TableHead__StyledCarbonTableHead-sc-1fviaow-1 jDaLBC"
+                      onMouseMove={[Function]}
+                      onMouseUp={[Function]}
                     >
                       <tr>
                         <th
@@ -321,9 +323,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                               </span>
                               <div
                                 className="column-resize-handle"
-                                id="resize-alert"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
+                                style={
+                                  Object {
+                                    "left": "auto",
+                                    "width": 4,
+                                  }
+                                }
                               />
                             </span>
                             <svg
@@ -395,9 +402,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                               </span>
                               <div
                                 className="column-resize-handle"
-                                id="resize-hour"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
+                                style={
+                                  Object {
+                                    "left": "auto",
+                                    "width": 4,
+                                  }
+                                }
                               />
                             </span>
                             <svg
@@ -1676,6 +1688,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   >
                     <thead
                       className="TableHead__StyledCarbonTableHead-sc-1fviaow-1 jDaLBC"
+                      onMouseMove={[Function]}
+                      onMouseUp={[Function]}
                     >
                       <tr>
                         <th
@@ -1709,9 +1723,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                               </span>
                               <div
                                 className="column-resize-handle"
-                                id="resize-alert"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
+                                style={
+                                  Object {
+                                    "left": "auto",
+                                    "width": 4,
+                                  }
+                                }
                               />
                             </span>
                             <svg
@@ -1783,9 +1802,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                               </span>
                               <div
                                 className="column-resize-handle"
-                                id="resize-hour"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
+                                style={
+                                  Object {
+                                    "left": "auto",
+                                    "width": 4,
+                                  }
+                                }
                               />
                             </span>
                             <svg
@@ -3445,6 +3469,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   >
                     <thead
                       className="TableHead__StyledCarbonTableHead-sc-1fviaow-1 jDaLBC"
+                      onMouseMove={[Function]}
+                      onMouseUp={[Function]}
                     >
                       <tr>
                         <th
@@ -3474,9 +3500,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                               </span>
                               <div
                                 className="column-resize-handle"
-                                id="resize-alert"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
+                                style={
+                                  Object {
+                                    "left": "auto",
+                                    "width": 4,
+                                  }
+                                }
                               />
                             </span>
                             <svg
@@ -3548,9 +3579,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                               </span>
                               <div
                                 className="column-resize-handle"
-                                id="resize-hour"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
+                                style={
+                                  Object {
+                                    "left": "auto",
+                                    "width": 4,
+                                  }
+                                }
                               />
                             </span>
                             <svg
@@ -4022,6 +4058,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   >
                     <thead
                       className="TableHead__StyledCarbonTableHead-sc-1fviaow-1 jDaLBC"
+                      onMouseMove={[Function]}
+                      onMouseUp={[Function]}
                     >
                       <tr>
                         <th
@@ -4051,9 +4089,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                               </span>
                               <div
                                 className="column-resize-handle"
-                                id="resize-alert"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
+                                style={
+                                  Object {
+                                    "left": "auto",
+                                    "width": 4,
+                                  }
+                                }
                               />
                             </span>
                             <svg
@@ -4125,9 +4168,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                               </span>
                               <div
                                 className="column-resize-handle"
-                                id="resize-iconColumn-count"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
+                                style={
+                                  Object {
+                                    "left": "auto",
+                                    "width": 4,
+                                  }
+                                }
                               />
                             </span>
                             <svg
@@ -4199,9 +4247,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                               </span>
                               <div
                                 className="column-resize-handle"
-                                id="resize-count"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
+                                style={
+                                  Object {
+                                    "left": "auto",
+                                    "width": 4,
+                                  }
+                                }
                               />
                             </span>
                             <svg
@@ -4273,9 +4326,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                               </span>
                               <div
                                 className="column-resize-handle"
-                                id="resize-hour"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
+                                style={
+                                  Object {
+                                    "left": "auto",
+                                    "width": 4,
+                                  }
+                                }
                               />
                             </span>
                             <svg
@@ -4347,9 +4405,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                               </span>
                               <div
                                 className="column-resize-handle"
-                                id="resize-iconColumn-pressure"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
+                                style={
+                                  Object {
+                                    "left": "auto",
+                                    "width": 4,
+                                  }
+                                }
                               />
                             </span>
                             <svg
@@ -6519,6 +6582,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   >
                     <thead
                       className="TableHead__StyledCarbonTableHead-sc-1fviaow-1 jDaLBC"
+                      onMouseMove={[Function]}
+                      onMouseUp={[Function]}
                     >
                       <tr>
                         <th
@@ -6548,9 +6613,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                               </span>
                               <div
                                 className="column-resize-handle"
-                                id="resize-alert"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
+                                style={
+                                  Object {
+                                    "left": "auto",
+                                    "width": 4,
+                                  }
+                                }
                               />
                             </span>
                             <svg
@@ -6622,9 +6692,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                               </span>
                               <div
                                 className="column-resize-handle"
-                                id="resize-hour"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
+                                style={
+                                  Object {
+                                    "left": "auto",
+                                    "width": 4,
+                                  }
+                                }
                               />
                             </span>
                             <svg
@@ -7884,6 +7959,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   >
                     <thead
                       className="TableHead__StyledCarbonTableHead-sc-1fviaow-1 jDaLBC"
+                      onMouseMove={[Function]}
+                      onMouseUp={[Function]}
                     >
                       <tr>
                         <th
@@ -7913,9 +7990,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                               </span>
                               <div
                                 className="column-resize-handle"
-                                id="resize-alert"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
+                                style={
+                                  Object {
+                                    "left": "auto",
+                                    "width": 4,
+                                  }
+                                }
                               />
                             </span>
                             <svg
@@ -7987,9 +8069,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                               </span>
                               <div
                                 className="column-resize-handle"
-                                id="resize-hour"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
+                                style={
+                                  Object {
+                                    "left": "auto",
+                                    "width": 4,
+                                  }
+                                }
                               />
                             </span>
                             <svg
@@ -9268,6 +9355,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   >
                     <thead
                       className="TableHead__StyledCarbonTableHead-sc-1fviaow-1 jDaLBC"
+                      onMouseMove={[Function]}
+                      onMouseUp={[Function]}
                     >
                       <tr>
                         <th
@@ -9297,9 +9386,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                               </span>
                               <div
                                 className="column-resize-handle"
-                                id="resize-alert"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
+                                style={
+                                  Object {
+                                    "left": "auto",
+                                    "width": 4,
+                                  }
+                                }
                               />
                             </span>
                             <svg
@@ -9371,9 +9465,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                               </span>
                               <div
                                 className="column-resize-handle"
-                                id="resize-count"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
+                                style={
+                                  Object {
+                                    "left": "auto",
+                                    "width": 4,
+                                  }
+                                }
                               />
                             </span>
                             <svg
@@ -9445,9 +9544,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                               </span>
                               <div
                                 className="column-resize-handle"
-                                id="resize-hour"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
+                                style={
+                                  Object {
+                                    "left": "auto",
+                                    "width": 4,
+                                  }
+                                }
                               />
                             </span>
                             <svg
@@ -10869,6 +10973,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   >
                     <thead
                       className="TableHead__StyledCarbonTableHead-sc-1fviaow-1 jDaLBC"
+                      onMouseMove={[Function]}
+                      onMouseUp={[Function]}
                     >
                       <tr>
                         <th
@@ -10898,9 +11004,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                               </span>
                               <div
                                 className="column-resize-handle"
-                                id="resize-alert"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
+                                style={
+                                  Object {
+                                    "left": "auto",
+                                    "width": 4,
+                                  }
+                                }
                               />
                             </span>
                             <svg
@@ -10972,9 +11083,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                               </span>
                               <div
                                 className="column-resize-handle"
-                                id="resize-count"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
+                                style={
+                                  Object {
+                                    "left": "auto",
+                                    "width": 4,
+                                  }
+                                }
                               />
                             </span>
                             <svg
@@ -11046,9 +11162,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                               </span>
                               <div
                                 className="column-resize-handle"
-                                id="resize-hour"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
+                                style={
+                                  Object {
+                                    "left": "auto",
+                                    "width": 4,
+                                  }
+                                }
                               />
                             </span>
                             <svg
@@ -12498,6 +12619,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   >
                     <thead
                       className="TableHead__StyledCarbonTableHead-sc-1fviaow-1 jDaLBC"
+                      onMouseMove={[Function]}
+                      onMouseUp={[Function]}
                     >
                       <tr>
                         <th
@@ -12527,9 +12650,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                               </span>
                               <div
                                 className="column-resize-handle"
-                                id="resize-alert"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
+                                style={
+                                  Object {
+                                    "left": "auto",
+                                    "width": 4,
+                                  }
+                                }
                               />
                             </span>
                             <svg
@@ -12601,9 +12729,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                               </span>
                               <div
                                 className="column-resize-handle"
-                                id="resize-hour"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
+                                style={
+                                  Object {
+                                    "left": "auto",
+                                    "width": 4,
+                                  }
+                                }
                               />
                             </span>
                             <svg
@@ -13863,6 +13996,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   >
                     <thead
                       className="TableHead__StyledCarbonTableHead-sc-1fviaow-1 jDaLBC"
+                      onMouseMove={[Function]}
+                      onMouseUp={[Function]}
                     >
                       <tr>
                         <th
@@ -13892,9 +14027,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                               </span>
                               <div
                                 className="column-resize-handle"
-                                id="resize-alert"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
+                                style={
+                                  Object {
+                                    "left": "auto",
+                                    "width": 4,
+                                  }
+                                }
                               />
                             </span>
                             <svg
@@ -13966,9 +14106,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                               </span>
                               <div
                                 className="column-resize-handle"
-                                id="resize-hour"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
+                                style={
+                                  Object {
+                                    "left": "auto",
+                                    "width": 4,
+                                  }
+                                }
                               />
                             </span>
                             <svg
@@ -14040,9 +14185,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                               </span>
                               <div
                                 className="column-resize-handle"
-                                id="resize-pressure"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
+                                style={
+                                  Object {
+                                    "left": "auto",
+                                    "width": 4,
+                                  }
+                                }
                               />
                             </span>
                             <svg
@@ -15836,6 +15986,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   >
                     <thead
                       className="TableHead__StyledCarbonTableHead-sc-1fviaow-1 jDaLBC"
+                      onMouseMove={[Function]}
+                      onMouseUp={[Function]}
                     >
                       <tr>
                         <th
@@ -15869,9 +16021,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                               </span>
                               <div
                                 className="column-resize-handle"
-                                id="resize-alert"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
+                                style={
+                                  Object {
+                                    "left": "auto",
+                                    "width": 4,
+                                  }
+                                }
                               />
                             </span>
                             <svg
@@ -15943,9 +16100,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                               </span>
                               <div
                                 className="column-resize-handle"
-                                id="resize-hour"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
+                                style={
+                                  Object {
+                                    "left": "auto",
+                                    "width": 4,
+                                  }
+                                }
                               />
                             </span>
                             <svg
@@ -17565,6 +17727,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   >
                     <thead
                       className="TableHead__StyledCarbonTableHead-sc-1fviaow-1 jDaLBC"
+                      onMouseMove={[Function]}
+                      onMouseUp={[Function]}
                     >
                       <tr>
                         <th
@@ -17594,9 +17758,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                               </span>
                               <div
                                 className="column-resize-handle"
-                                id="resize-alert"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
+                                style={
+                                  Object {
+                                    "left": "auto",
+                                    "width": 4,
+                                  }
+                                }
                               />
                             </span>
                             <svg
@@ -17668,9 +17837,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                               </span>
                               <div
                                 className="column-resize-handle"
-                                id="resize-hour"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
+                                style={
+                                  Object {
+                                    "left": "auto",
+                                    "width": 4,
+                                  }
+                                }
                               />
                             </span>
                             <svg
@@ -17742,9 +17916,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                               </span>
                               <div
                                 className="column-resize-handle"
-                                id="resize-pressure"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
+                                style={
+                                  Object {
+                                    "left": "auto",
+                                    "width": 4,
+                                  }
+                                }
                               />
                             </span>
                             <svg
@@ -19240,6 +19419,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   >
                     <thead
                       className="TableHead__StyledCarbonTableHead-sc-1fviaow-1 jDaLBC"
+                      onMouseMove={[Function]}
+                      onMouseUp={[Function]}
                     >
                       <tr>
                         <th
@@ -19269,9 +19450,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                               </span>
                               <div
                                 className="column-resize-handle"
-                                id="resize-alert"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
+                                style={
+                                  Object {
+                                    "left": "auto",
+                                    "width": 4,
+                                  }
+                                }
                               />
                             </span>
                             <svg
@@ -19343,9 +19529,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                               </span>
                               <div
                                 className="column-resize-handle"
-                                id="resize-iconColumn-count"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
+                                style={
+                                  Object {
+                                    "left": "auto",
+                                    "width": 4,
+                                  }
+                                }
                               />
                             </span>
                             <svg
@@ -19417,9 +19608,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                               </span>
                               <div
                                 className="column-resize-handle"
-                                id="resize-count"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
+                                style={
+                                  Object {
+                                    "left": "auto",
+                                    "width": 4,
+                                  }
+                                }
                               />
                             </span>
                             <svg
@@ -19491,9 +19687,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                               </span>
                               <div
                                 className="column-resize-handle"
-                                id="resize-hour"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
+                                style={
+                                  Object {
+                                    "left": "auto",
+                                    "width": 4,
+                                  }
+                                }
                               />
                             </span>
                             <svg
@@ -19565,9 +19766,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                               </span>
                               <div
                                 className="column-resize-handle"
-                                id="resize-iconColumn-pressure"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
+                                style={
+                                  Object {
+                                    "left": "auto",
+                                    "width": 4,
+                                  }
+                                }
                               />
                             </span>
                             <svg
@@ -21709,6 +21915,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   >
                     <thead
                       className="TableHead__StyledCarbonTableHead-sc-1fviaow-1 jDaLBC"
+                      onMouseMove={[Function]}
+                      onMouseUp={[Function]}
                     >
                       <tr>
                         <th
@@ -21738,9 +21946,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                               </span>
                               <div
                                 className="column-resize-handle"
-                                id="resize-alert"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
+                                style={
+                                  Object {
+                                    "left": "auto",
+                                    "width": 4,
+                                  }
+                                }
                               />
                             </span>
                             <svg
@@ -21812,9 +22025,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                               </span>
                               <div
                                 className="column-resize-handle"
-                                id="resize-iconColumn-count"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
+                                style={
+                                  Object {
+                                    "left": "auto",
+                                    "width": 4,
+                                  }
+                                }
                               />
                             </span>
                             <svg
@@ -21886,9 +22104,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                               </span>
                               <div
                                 className="column-resize-handle"
-                                id="resize-count"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
+                                style={
+                                  Object {
+                                    "left": "auto",
+                                    "width": 4,
+                                  }
+                                }
                               />
                             </span>
                             <svg
@@ -21960,9 +22183,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                               </span>
                               <div
                                 className="column-resize-handle"
-                                id="resize-hour"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
+                                style={
+                                  Object {
+                                    "left": "auto",
+                                    "width": 4,
+                                  }
+                                }
                               />
                             </span>
                             <svg
@@ -22034,9 +22262,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                               </span>
                               <div
                                 className="column-resize-handle"
-                                id="resize-iconColumn-pressure"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
+                                style={
+                                  Object {
+                                    "left": "auto",
+                                    "width": 4,
+                                  }
+                                }
                               />
                             </span>
                             <svg
@@ -23084,6 +23317,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   >
                     <thead
                       className="TableHead__StyledCarbonTableHead-sc-1fviaow-1 jDaLBC"
+                      onMouseMove={[Function]}
+                      onMouseUp={[Function]}
                     >
                       <tr>
                         <th
@@ -23117,9 +23352,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                               </span>
                               <div
                                 className="column-resize-handle"
-                                id="resize-alert"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
+                                style={
+                                  Object {
+                                    "left": "auto",
+                                    "width": 4,
+                                  }
+                                }
                               />
                             </span>
                             <svg
@@ -23191,9 +23431,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                               </span>
                               <div
                                 className="column-resize-handle"
-                                id="resize-iconColumn-count"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
+                                style={
+                                  Object {
+                                    "left": "auto",
+                                    "width": 4,
+                                  }
+                                }
                               />
                             </span>
                             <svg
@@ -23265,9 +23510,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                               </span>
                               <div
                                 className="column-resize-handle"
-                                id="resize-count"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
+                                style={
+                                  Object {
+                                    "left": "auto",
+                                    "width": 4,
+                                  }
+                                }
                               />
                             </span>
                             <svg
@@ -23339,9 +23589,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                               </span>
                               <div
                                 className="column-resize-handle"
-                                id="resize-hour"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
+                                style={
+                                  Object {
+                                    "left": "auto",
+                                    "width": 4,
+                                  }
+                                }
                               />
                             </span>
                             <svg
@@ -23413,9 +23668,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                               </span>
                               <div
                                 className="column-resize-handle"
-                                id="resize-iconColumn-pressure"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
+                                style={
+                                  Object {
+                                    "left": "auto",
+                                    "width": 4,
+                                  }
+                                }
                               />
                             </span>
                             <svg
@@ -25945,6 +26205,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   >
                     <thead
                       className="TableHead__StyledCarbonTableHead-sc-1fviaow-1 jDaLBC"
+                      onMouseMove={[Function]}
+                      onMouseUp={[Function]}
                     >
                       <tr>
                         <th
@@ -25978,9 +26240,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                               </span>
                               <div
                                 className="column-resize-handle"
-                                id="resize-alert"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
+                                style={
+                                  Object {
+                                    "left": "auto",
+                                    "width": 4,
+                                  }
+                                }
                               />
                             </span>
                             <svg
@@ -26052,9 +26319,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                               </span>
                               <div
                                 className="column-resize-handle"
-                                id="resize-iconColumn-count"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
+                                style={
+                                  Object {
+                                    "left": "auto",
+                                    "width": 4,
+                                  }
+                                }
                               />
                             </span>
                             <svg
@@ -26126,9 +26398,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                               </span>
                               <div
                                 className="column-resize-handle"
-                                id="resize-hour"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
+                                style={
+                                  Object {
+                                    "left": "auto",
+                                    "width": 4,
+                                  }
+                                }
                               />
                             </span>
                             <svg

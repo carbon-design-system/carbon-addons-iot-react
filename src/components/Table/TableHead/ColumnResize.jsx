@@ -1,8 +1,15 @@
 import React, { useState, useImperativeHandle } from 'react';
 import classnames from 'classnames';
+import PropTypes from 'prop-types';
 
-const propTypes = {};
-const defaultProps = {};
+const propTypes = {
+  // eslint-disable-next-line react/forbid-prop-types
+  columnWidths: PropTypes.any.isRequired,
+  columnIndex: PropTypes.number.isRequired,
+  setNewWidths: PropTypes.func.isRequired,
+};
+
+const dragHandleWidth = 4;
 
 const getColumnDragBounds = (direction, colWidths, index) => {
   const minColumnWidth = 64;
@@ -41,9 +48,6 @@ const getUpdatedColumnWidths = (dropXPos, columnWidth, leftSideIndex) => {
       ? origRightSideColWidth + dropXPos
       : origRightSideColWidth + origLeftSideColWidth - dropXPos;
 
-  console.info(
-    origLeftSideColWidth + origRightSideColWidth === leftSideColWidth + rightSideColWidth
-  );
   return {
     [leftSideIndex]: leftSideColWidth,
     [rightSideIndex]: rightSideColWidth,
@@ -74,28 +78,22 @@ const ColumnResize = React.forwardRef((props, ref) => {
       const mousePosition = e.clientX + startX;
       const direction = e.clientX > move ? 'right' : 'left';
       const dragBounds = getColumnDragBounds(direction, columnWidths, columnIndex);
-      const valid =
+      const isValid =
         document.dir === 'rtl'
           ? dragIsValidRtl(mousePosition, dragBounds)
           : dragIsValidLtr(mousePosition, dragBounds);
 
-      setValid(valid);
+      setValid(isValid);
       setLeftPosition(mousePosition);
     }
   };
 
   const onMouseUp = () => {
     if (columnIsBeingResized) {
-      console.info('onMouseUp');
       if (valid) {
-        const resizePosition = leftPosition + 4; // Width of drag handle
+        const resizePosition = leftPosition + dragHandleWidth;
         const colWidths = getUpdatedColumnWidths(resizePosition, columnWidths, columnIndex);
-        console.info(colWidths);
         setNewWidths(colWidths);
-        // setColumnWidth(old => ({
-        //   ...old,
-        //   ...colWidths,
-        // }));
       }
 
       setColumnIsBeingResized(false);
@@ -121,10 +119,11 @@ const ColumnResize = React.forwardRef((props, ref) => {
   }));
 
   return (
+    // eslint-disable-next-line
     <div
-      onMouseDown={e => onMouseDown(e)}
       onClick={e => e.stopPropagation()}
-      style={{ left: leftPosition ? leftPosition : 'auto' }}
+      onMouseDown={e => onMouseDown(e)}
+      style={{ width: dragHandleWidth, left: leftPosition || 'auto' }}
       className={classnames('column-resize-handle', {
         'column-resize-handle--invalid': !valid,
         'column-resize-handle--dragging': columnIsBeingResized,
@@ -134,6 +133,5 @@ const ColumnResize = React.forwardRef((props, ref) => {
 });
 
 ColumnResize.propTypes = propTypes;
-ColumnResize.defaultProps = defaultProps;
 
 export default ColumnResize;

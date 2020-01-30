@@ -118,7 +118,6 @@ section.bx--table-toolbar {
 
 .column-resize-handle {
   top: 0;
-  width: $spacing-02;
   cursor: col-resize;
   height: 100%;
   z-index: 1;
@@ -130,15 +129,11 @@ section.bx--table-toolbar {
 }
 
 .column-resize-handle--dragging {
-  &:hover {
-    background-color: black;
-  }
+  background-color: $ui-05;
 }
 
 .column-resize-handle--dragging.column-resize-handle--invalid {
-  &:hover {
-    background-color: gray;
-  }
+  background-color: gray;
   cursor: no-drop;
 }
 

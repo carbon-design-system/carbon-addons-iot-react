@@ -44,6 +44,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
         >
           <thead
             className="TableHead__StyledCarbonTableHead-sc-1fviaow-1 jDaLBC"
+            onMouseMove={[Function]}
+            onMouseUp={[Function]}
           >
             <tr>
               <th
@@ -191,6 +193,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
         >
           <thead
             className="TableHead__StyledCarbonTableHead-sc-1fviaow-1 jDaLBC"
+            onMouseMove={[Function]}
+            onMouseUp={[Function]}
           >
             <tr>
               <th
@@ -216,9 +220,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </span>
                   <div
                     className="column-resize-handle"
-                    id="resize-col1"
                     onClick={[Function]}
                     onMouseDown={[Function]}
+                    style={
+                      Object {
+                        "left": "auto",
+                        "width": 4,
+                      }
+                    }
                   />
                 </span>
               </th>
@@ -245,9 +254,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </span>
                   <div
                     className="column-resize-handle"
-                    id="resize-col2"
                     onClick={[Function]}
                     onMouseDown={[Function]}
+                    style={
+                      Object {
+                        "left": "auto",
+                        "width": 4,
+                      }
+                    }
                   />
                 </span>
               </th>
