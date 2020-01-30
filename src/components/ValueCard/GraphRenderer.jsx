@@ -2,29 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import { CARD_LAYOUTS } from '../../constants/LayoutConstants';
-
 const GraphWrapper = styled.div`
   display: flex;
-  width: 100%;
-  height: 100%;
-  ${props =>
-    props.layout === CARD_LAYOUTS.HORIZONTAL &&
-    `
-    flex-direction: row;
-    align-items: flex-end;
-    justify-content: space-around;
-    padding: 0 1rem;
-    `}
-  ${props =>
-    props.layout === CARD_LAYOUTS.VERTICAL &&
-    `
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    padding: 0 0 0.5rem;
-    `}
+  width: 3rem;
+  height: 3rem;
 `;
 
 const propTypes = {

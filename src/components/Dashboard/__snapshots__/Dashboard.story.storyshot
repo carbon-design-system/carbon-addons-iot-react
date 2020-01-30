@@ -654,7 +654,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             size="XSMALLWIDE"
                           >
                             <div
-                              className="GraphRenderer__GraphWrapper-sc-1clzo2q-0 XQgjE"
+                              className="GraphRenderer__GraphWrapper-sc-1clzo2q-0 eFsDRY"
                             >
                               <svg
                                 className="donutchart"
@@ -2451,7 +2451,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             size="XSMALLWIDE"
                           >
                             <div
-                              className="GraphRenderer__GraphWrapper-sc-1clzo2q-0 XQgjE"
+                              className="GraphRenderer__GraphWrapper-sc-1clzo2q-0 eFsDRY"
                             >
                               <svg
                                 className="donutchart"
@@ -4280,7 +4280,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             size="XSMALLWIDE"
                           >
                             <div
-                              className="GraphRenderer__GraphWrapper-sc-1clzo2q-0 XQgjE"
+                              className="GraphRenderer__GraphWrapper-sc-1clzo2q-0 eFsDRY"
                             >
                               <svg
                                 className="donutchart"
@@ -8440,7 +8440,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             size="XSMALLWIDE"
                           >
                             <div
-                              className="GraphRenderer__GraphWrapper-sc-1clzo2q-0 XQgjE"
+                              className="GraphRenderer__GraphWrapper-sc-1clzo2q-0 eFsDRY"
                             >
                               <svg
                                 className="donutchart"
@@ -20274,7 +20274,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             size="XSMALLWIDE"
                           >
                             <div
-                              className="GraphRenderer__GraphWrapper-sc-1clzo2q-0 XQgjE"
+                              className="GraphRenderer__GraphWrapper-sc-1clzo2q-0 eFsDRY"
                             >
                               <svg
                                 className="donutchart"

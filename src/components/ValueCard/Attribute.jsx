@@ -92,7 +92,7 @@ const propTypes = {
   ),
   renderIconByName: PropTypes.func,
   precision: PropTypes.number,
-  cardType: PropTypes.string,
+  cardType: PropTypes.oneOf(['VALUE', 'DONUT']),
 };
 
 const defaultProps = {
