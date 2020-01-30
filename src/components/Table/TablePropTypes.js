@@ -212,4 +212,5 @@ export const defaultI18NPropTypes = {
 
 export const TableSearchPropTypes = PropTypes.shape({
   value: PropTypes.string,
+  expanded: PropTypes.bool,
 });

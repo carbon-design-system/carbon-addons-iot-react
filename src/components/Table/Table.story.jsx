@@ -467,19 +467,36 @@ storiesOf('Watson IoT|Table', module)
     }
   )
   .add('Stateful Example with Secondary Title', () => (
+    <StatefulTable
+      {...initialState}
+      secondaryTitle={text('Secondary Title', `Row count: ${initialState.data.length}`)}
+      options={{
+        hasSearch: boolean('Show Search', true),
+        hasPagination: boolean('Show Pagination', true),
+        hasRowSelection: 'multi',
+        hasFilter: boolean('Show Filter', true),
+        hasRowActions: boolean('Show Row Action', true),
+      }}
+      view={{
+        toolbar: { activeBar: null },
+      }}
+    />
+  ))
+  .add('Stateful Example with initial search value', () => (
     <FullWidthWrapper>
       <StatefulTable
         {...initialState}
-        secondaryTitle={text('Secondary Title', `Row count: ${initialState.data.length}`)}
         options={{
-          hasSearch: boolean('Show Search', true),
-          hasPagination: boolean('Show Pagination', true),
-          hasRowSelection: 'multi',
-          hasFilter: boolean('Show Filter', true),
-          hasRowActions: boolean('Show Row Action', true),
+          hasSearch: true,
         }}
         view={{
-          toolbar: { activeBar: null },
+          toolbar: {
+            activeBar: null,
+            search: {
+              value: 'option-A',
+              expanded: true,
+            },
+          },
         }}
       />
     </FullWidthWrapper>
@@ -703,11 +720,41 @@ storiesOf('Watson IoT|Table', module)
         data={tableData}
         actions={actions}
         options={{ hasSearch: true }}
+        view={{
+          toolbar: {
+            activeBar: null,
+          },
+        }}
       />
     ),
     {
       info: {
-        text: `To enable simple search on a table, simply set the prop options.hasSearch=true.  We wouldn't recommend enabling column filters on a table and simple search for UX reasons, but it is supported.`,
+        text: `To enable simple search on a table, simply set the prop options.hasSearch=true.  We wouldn't recommend enabling column filters on a table and simple search for UX reasons, but it is supported. To programmatically pass a value to the search field, you can set the prop view.toolbar.search.value='your value'`,
+      },
+    }
+  )
+  .add(
+    'with pre-filled simple search',
+    () => (
+      <Table
+        columns={tableColumns}
+        data={tableData}
+        actions={actions}
+        options={{ hasSearch: true }}
+        view={{
+          toolbar: {
+            activeBar: null,
+            search: {
+              value: text('Search Value', 'hello world.'),
+              expanded: true,
+            },
+          },
+        }}
+      />
+    ),
+    {
+      info: {
+        text: `To programmatically pass a value to the search field, you can set the prop view.toolbar.search.value='your value' and view.toolbar.search.expanded=true`,
       },
     }
   )

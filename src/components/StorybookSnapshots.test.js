@@ -82,8 +82,10 @@ describe(`Storybook Snapshot tests and console checks`, () => {
         const storiesNeedingNestedInputRefs = [
           'Watson IoT|Table.minitable',
           'Watson IoT|Table.with simple search',
+          'Watson IoT|Table.with pre-filled simple search',
           'Watson IoT|Table.Stateful Example with row nesting',
           'Watson IoT|Table.Stateful Example with expansion',
+          'Watson IoT|Table.Stateful Example with initial search value',
           'Watson IoT|TileCatalog.with search',
           'Watson IoT|TableCard',
         ];
