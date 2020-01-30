@@ -116,7 +116,7 @@ section.bx--table-toolbar {
   word-break: break-all;
 }
 
-.column-resize-wrapper {
+.column-resize-handle {
   top: 0;
   width: $spacing-02;
   cursor: col-resize;
@@ -129,19 +129,25 @@ section.bx--table-toolbar {
   }
 }
 
-.column-resize-wrapper--invalid {
+.column-resize-handle--invalid {
   &:hover {
     background-color: transparent;
   }
   cursor: no-drop;
 }
 
-html:not([dir]) .column-resize-wrapper {
+.column-resize-handle--dragging {
+  &:hover {
+    background-color: red;
+  }
+}
+
+html:not([dir]) .column-resize-handle {
   right: 0;
 }
-html[dir='rtl'] .column-resize-wrapper {
+html[dir='rtl'] .column-resize-handle {
   left: 0;
 }
-html[dir='ltr'] .column-resize-wrapper {
+html[dir='ltr'] .column-resize-handle {
   right: 0;
 }

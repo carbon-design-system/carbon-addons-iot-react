@@ -124,14 +124,14 @@ describe('TableHead', () => {
 
   test('check has resize if has resize is true ', () => {
     const wrapper = mount(<TableHead {...commonTableHeadProps} />);
-    const tableHeaders = wrapper.find('div.column-resize-wrapper');
+    const tableHeaders = wrapper.find('div.column-resize-handle');
     expect(tableHeaders).toHaveLength(2);
   });
 
   test('check not resize if has resize is false ', () => {
     const myProps = { ...commonTableHeadProps, hasResize: false };
     const wrapper = mount(<TableHead {...myProps} />);
-    const tableHeaders = wrapper.find('div.column-resize-wrapper');
+    const tableHeaders = wrapper.find('div.column-resize-handle');
     expect(tableHeaders).toHaveLength(0);
   });
 
@@ -170,14 +170,14 @@ describe('TableHead', () => {
 
       Simulate.click(resizerNode);
 
-      expect(resizerNode.classList.contains('column-resize-wrapper')).toBe(true);
-      expect(resizerNode.classList.contains('column-resize-wrapper--invalid')).toBe(false);
+      expect(resizerNode.classList.contains('column-resize-handle')).toBe(true);
+      expect(resizerNode.classList.contains('column-resize-handle--invalid')).toBe(false);
 
       act(() => {
         simulateMovementWithoutMouseUp(resizer, 0, 0, 900, 0);
         simulateMovementWithoutMouseUp(resizer, 100, 0, 30, 0);
       });
-      expect(resizerNode.classList.contains('column-resize-wrapper--invalid')).toBe(true);
+      expect(resizerNode.classList.contains('column-resize-handle--invalid')).toBe(true);
     });
 
     test('drag and drop outside bounds removes invalid (LTR)', () => {
@@ -189,12 +189,12 @@ describe('TableHead', () => {
       const wrapper = mount(<TableHead {...myProps} />);
       const resizer = wrapper.find('#resize-col1');
       const resizerNode = resizer.getDOMNode();
-      expect(resizerNode.classList.contains('column-resize-wrapper')).toBe(true);
-      expect(resizerNode.classList.contains('column-resize-wrapper--invalid')).toBe(false);
+      expect(resizerNode.classList.contains('column-resize-handle')).toBe(true);
+      expect(resizerNode.classList.contains('column-resize-handle--invalid')).toBe(false);
       act(() => {
         simulateMovementWithMouseUp(resizer, 0, 0, 900, 0);
       });
-      expect(resizerNode.classList.contains('column-resize-wrapper--invalid')).toBe(false);
+      expect(resizerNode.classList.contains('column-resize-handle--invalid')).toBe(false);
     });
 
     test('drag outside bounds shows invalid RTL', () => {
@@ -207,12 +207,12 @@ describe('TableHead', () => {
       const wrapper = mount(<TableHead {...myProps} />);
       const resizer = wrapper.find('#resize-col1');
       const resizerNode = resizer.getDOMNode();
-      expect(resizerNode.classList.contains('column-resize-wrapper')).toBe(true);
-      expect(resizerNode.classList.contains('column-resize-wrapper--invalid')).toBe(false);
+      expect(resizerNode.classList.contains('column-resize-handle')).toBe(true);
+      expect(resizerNode.classList.contains('column-resize-handle--invalid')).toBe(false);
       act(() => {
         simulateMovementWithoutMouseUp(resizer, 0, 0, 900, 0);
       });
-      expect(resizerNode.classList.contains('column-resize-wrapper--invalid')).toBe(true);
+      expect(resizerNode.classList.contains('column-resize-handle--invalid')).toBe(true);
     });
 
     test('drag valid LTR shows as valid', () => {
@@ -224,12 +224,12 @@ describe('TableHead', () => {
       const wrapper = mount(<TableHead {...myProps} />);
       const resizer = wrapper.find('#resize-col1');
       const resizerNode = resizer.getDOMNode();
-      expect(resizerNode.classList.contains('column-resize-wrapper')).toBe(true);
-      expect(resizerNode.classList.contains('column-resize-wrapper--invalid')).toBe(false);
+      expect(resizerNode.classList.contains('column-resize-handle')).toBe(true);
+      expect(resizerNode.classList.contains('column-resize-handle--invalid')).toBe(false);
       act(() => {
         simulateMovementWithoutMouseUp(resizer, 30, 0, 50, 0);
       });
-      expect(resizerNode.classList.contains('column-resize-wrapper--invalid')).toBe(false);
+      expect(resizerNode.classList.contains('column-resize-handle--invalid')).toBe(false);
     });
 
     test('drag valid RTL shows as valid', () => {
@@ -242,13 +242,13 @@ describe('TableHead', () => {
       const wrapper = mount(<TableHead {...myProps} />);
       const resizer = wrapper.find('#resize-col1');
       const resizerNode = resizer.getDOMNode();
-      expect(resizerNode.classList.contains('column-resize-wrapper')).toBe(true);
-      expect(resizerNode.classList.contains('column-resize-wrapper--invalid')).toBe(false);
+      expect(resizerNode.classList.contains('column-resize-handle')).toBe(true);
+      expect(resizerNode.classList.contains('column-resize-handle--invalid')).toBe(false);
       act(() => {
         simulateMovementWithoutMouseUp(resizer, 0, 0, 900, 0);
         simulateMovementWithoutMouseUp(resizer, 50, 0, 30, 0);
       });
-      expect(resizerNode.classList.contains('column-resize-wrapper--invalid')).toBe(false);
+      expect(resizerNode.classList.contains('column-resize-handle--invalid')).toBe(false);
     });
   });
 });

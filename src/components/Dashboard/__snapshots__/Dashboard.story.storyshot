@@ -1087,7 +1087,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                         Alert
                                       </span>
                                       <div
-                                        className="column-resize-wrapper"
+                                        className="column-resize-handle"
                                         id="resize-alert"
                                         onClick={[Function]}
                                         onMouseDown={[Function]}
@@ -1161,7 +1161,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                         Hour
                                       </span>
                                       <div
-                                        className="column-resize-wrapper"
+                                        className="column-resize-handle"
                                         id="resize-hour"
                                         onClick={[Function]}
                                         onMouseDown={[Function]}
@@ -2889,7 +2889,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                         Alert
                                       </span>
                                       <div
-                                        className="column-resize-wrapper"
+                                        className="column-resize-handle"
                                         id="resize-alert"
                                         onClick={[Function]}
                                         onMouseDown={[Function]}
@@ -2963,7 +2963,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                         Hour
                                       </span>
                                       <div
-                                        className="column-resize-wrapper"
+                                        className="column-resize-handle"
                                         id="resize-hour"
                                         onClick={[Function]}
                                         onMouseDown={[Function]}
@@ -4723,7 +4723,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                         Alert
                                       </span>
                                       <div
-                                        className="column-resize-wrapper"
+                                        className="column-resize-handle"
                                         id="resize-alert"
                                         onClick={[Function]}
                                         onMouseDown={[Function]}
@@ -4797,7 +4797,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                         Hour
                                       </span>
                                       <div
-                                        className="column-resize-wrapper"
+                                        className="column-resize-handle"
                                         id="resize-hour"
                                         onClick={[Function]}
                                         onMouseDown={[Function]}
@@ -6278,7 +6278,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                         Timestamp
                                       </span>
                                       <div
-                                        className="column-resize-wrapper"
+                                        className="column-resize-handle"
                                         id="resize-timestamp"
                                         onClick={[Function]}
                                         onMouseDown={[Function]}
@@ -6352,7 +6352,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                         Campus
                                       </span>
                                       <div
-                                        className="column-resize-wrapper"
+                                        className="column-resize-handle"
                                         id="resize-Campus_EGL"
                                         onClick={[Function]}
                                         onMouseDown={[Function]}
@@ -6426,7 +6426,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                         People
                                       </span>
                                       <div
-                                        className="column-resize-wrapper"
+                                        className="column-resize-handle"
                                         id="resize-peopleCount_EnterpriseBuilding_mean"
                                         onClick={[Function]}
                                         onMouseDown={[Function]}
@@ -6500,7 +6500,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                         Headcount
                                       </span>
                                       <div
-                                        className="column-resize-wrapper"
+                                        className="column-resize-handle"
                                         id="resize-headCount_EnterpriseBuilding_mean"
                                         onClick={[Function]}
                                         onMouseDown={[Function]}
@@ -8930,7 +8930,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                         Alert
                                       </span>
                                       <div
-                                        className="column-resize-wrapper"
+                                        className="column-resize-handle"
                                         id="resize-alert"
                                         onClick={[Function]}
                                         onMouseDown={[Function]}
@@ -9004,7 +9004,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                         Hour
                                       </span>
                                       <div
-                                        className="column-resize-wrapper"
+                                        className="column-resize-handle"
                                         id="resize-hour"
                                         onClick={[Function]}
                                         onMouseDown={[Function]}
@@ -20771,7 +20771,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                         Alert
                                       </span>
                                       <div
-                                        className="column-resize-wrapper"
+                                        className="column-resize-handle"
                                         id="resize-alert"
                                         onClick={[Function]}
                                         onMouseDown={[Function]}
@@ -20845,7 +20845,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                         Hour
                                       </span>
                                       <div
-                                        className="column-resize-wrapper"
+                                        className="column-resize-handle"
                                         id="resize-hour"
                                         onClick={[Function]}
                                         onMouseDown={[Function]}

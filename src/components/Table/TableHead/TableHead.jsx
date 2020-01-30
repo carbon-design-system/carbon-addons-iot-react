@@ -136,8 +136,28 @@ const StyledCustomTableHeader = styled(TableHeader)`
   }
 `;
 
+const getUpdatedColumnWidths = (dropXPos, columnWidth, leftSideIndex) => {
+  const origLeftSideColWidth = columnWidth[leftSideIndex];
+  const leftSideColWidth = document.dir === 'rtl' ? origLeftSideColWidth - dropXPos : dropXPos;
+
+  const rightSideIndex = leftSideIndex + 1;
+  const origRightSideColWidth = columnWidth[rightSideIndex];
+  const rightSideColWidth =
+    document.dir === 'rtl'
+      ? origRightSideColWidth + dropXPos
+      : origRightSideColWidth + origLeftSideColWidth - dropXPos;
+
+  console.info(
+    origLeftSideColWidth + origRightSideColWidth === leftSideColWidth + rightSideColWidth
+  );
+  return {
+    [leftSideIndex]: leftSideColWidth,
+    [rightSideIndex]: rightSideColWidth,
+  };
+};
+
 const getColumnDragBounds = (direction, colWidths, index) => {
-  const minColumnWidth = 50;
+  const minColumnWidth = 64;
   return {
     direction,
     minColumnWidth,
@@ -187,54 +207,59 @@ const TableHead = ({
 }) => {
   const filterBarActive = activeBar === 'filter';
   const [columnWidth, setColumnWidth] = useState({});
-  const [validDragCursor, setValidDragCursor] = useState(true);
   const columnRef = ordering.map(() => createRef());
-  const columnVar = {
+  const [columnResize, setColumnResize] = useState({
     index: 0,
-    element: Node,
     startX: 0,
+    leftPosition: 0,
     move: 0,
-    validDrag: null,
-  };
+    valid: true,
+    columnIsBeingResized: false,
+  });
 
-  const mousemoveCallback = e => {
-    const mousePosition = e.clientX + columnVar.startX;
-    const direction = e.clientX > columnVar.move ? 'right' : 'left';
-    const dragBounds = getColumnDragBounds(direction, columnWidth, columnVar.index);
-    columnVar.validDrag =
-      document.dir === 'rtl'
-        ? dragIsValidRtl(mousePosition, dragBounds)
-        : dragIsValidLtr(mousePosition, dragBounds);
-    columnVar.element.style.left = `${mousePosition}px`;
-    setValidDragCursor(columnVar.validDrag);
-  };
-  const mouseupCallback = () => {
-    if (columnVar.validDrag) {
-      const resizePosition = columnVar.element.offsetLeft + columnVar.element.clientWidth;
-      setColumnWidth(cols => ({
-        ...cols,
-        [columnVar.index]:
-          document.dir === 'rtl' ? columnWidth[columnVar.index] - resizePosition : resizePosition,
-        [columnVar.index + 1]:
-          document.dir === 'rtl'
-            ? columnWidth[columnVar.index + 1] + resizePosition
-            : columnWidth[columnVar.index + 1] + columnWidth[columnVar.index] - resizePosition,
-      }));
+  const onMouseMoveCallback = e => {
+    if (columnResize.columnIsBeingResized) {
+      const mousePosition = e.clientX + columnResize.startX;
+      const direction = e.clientX > columnResize.move ? 'right' : 'left';
+      const dragBounds = getColumnDragBounds(direction, columnWidth, columnResize.index);
+      const valid =
+        document.dir === 'rtl'
+          ? dragIsValidRtl(mousePosition, dragBounds)
+          : dragIsValidLtr(mousePosition, dragBounds);
+
+      setColumnResize({ ...columnResize, valid, leftPosition: mousePosition });
     }
+  };
+  const onMouseUpCallback = () => {
+    if (columnResize.columnIsBeingResized) {
+      if (columnResize.valid) {
+        const resizePosition = columnResize.leftPosition + 4; // Width of drag handle
+        const colWidths = getUpdatedColumnWidths(resizePosition, columnWidth, columnResize.index);
+        setColumnWidth(old => ({
+          ...old,
+          ...colWidths,
+        }));
+      }
 
-    document.onmouseup = null;
-    document.onmousemove = null;
-    columnVar.element.style.left = null;
-    columnVar.validDrag = null;
-    setValidDragCursor(true);
+      setColumnResize({
+        ...columnResize,
+        columnIsBeingResized: false,
+        valid: true,
+        leftPosition: 0,
+      });
+    }
   };
   const onMouseDownCallback = (e, index) => {
-    columnVar.element = e.target;
-    columnVar.index = index;
-    columnVar.startX = columnVar.element.offsetLeft - e.clientX;
-    columnVar.move = e.clientX;
-    document.onmouseup = mouseupCallback;
-    document.onmousemove = mousemoveCallback;
+    const startX = e.target.offsetLeft - e.clientX;
+    const mousePosition = e.clientX + startX;
+    setColumnResize({
+      index,
+      startX,
+      leftPosition: mousePosition,
+      move: e.clientX,
+      columnIsBeingResized: true,
+      valid: true,
+    });
   };
   useEffect(
     () => {
@@ -247,7 +272,11 @@ const TableHead = ({
     []
   );
   return (
-    <StyledCarbonTableHead lightweight={`${lightweight}`}>
+    <StyledCarbonTableHead
+      lightweight={`${lightweight}`}
+      onMouseMove={onMouseMoveCallback}
+      onMouseUp={onMouseUpCallback}
+    >
       <TableRow>
         {hasRowExpansion ? <TableExpandHeader /> : null}
         {hasRowSelection === 'multi' ? (
@@ -295,13 +324,16 @@ const TableHead = ({
               <TableCellRenderer>{matchingColumnMeta.name}</TableCellRenderer>
               {hasResize && i < ordering.length - 1 ? (
                 // eslint-disable-next-line jsx-a11y/click-events-have-key-events
+
                 <div
-                  id={`resize-${matchingColumnMeta.id}`}
-                  className={classnames('column-resize-wrapper', {
-                    'column-resize-wrapper--invalid': !validDragCursor,
-                  })}
                   onMouseDown={e => onMouseDownCallback(e, i)}
                   onClick={e => e.stopPropagation()}
+                  style={{ left: columnResize.leftPosition ? columnResize.leftPosition : 'auto' }}
+                  id={`resize-${matchingColumnMeta.id}`}
+                  className={classnames('column-resize-handle', {
+                    'column-resize-handle--invalid': !columnResize.valid,
+                    'column-resize-handle--dragging': columnResize.columnIsBeingResized,
+                  })}
                 />
               ) : null}
             </StyledCustomTableHeader>

@@ -320,7 +320,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                                 Alert
                               </span>
                               <div
-                                className="column-resize-wrapper"
+                                className="column-resize-handle"
                                 id="resize-alert"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
@@ -394,7 +394,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                                 Hour
                               </span>
                               <div
-                                className="column-resize-wrapper"
+                                className="column-resize-handle"
                                 id="resize-hour"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
@@ -1708,7 +1708,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                                 Alert
                               </span>
                               <div
-                                className="column-resize-wrapper"
+                                className="column-resize-handle"
                                 id="resize-alert"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
@@ -1782,7 +1782,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                                 Hour
                               </span>
                               <div
-                                className="column-resize-wrapper"
+                                className="column-resize-handle"
                                 id="resize-hour"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
@@ -3473,7 +3473,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                                 Alert
                               </span>
                               <div
-                                className="column-resize-wrapper"
+                                className="column-resize-handle"
                                 id="resize-alert"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
@@ -3547,7 +3547,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                                 Hour
                               </span>
                               <div
-                                className="column-resize-wrapper"
+                                className="column-resize-handle"
                                 id="resize-hour"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
@@ -4050,7 +4050,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                                 Alert
                               </span>
                               <div
-                                className="column-resize-wrapper"
+                                className="column-resize-handle"
                                 id="resize-alert"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
@@ -4124,7 +4124,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                                 Count __Severity__
                               </span>
                               <div
-                                className="column-resize-wrapper"
+                                className="column-resize-handle"
                                 id="resize-iconColumn-count"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
@@ -4198,7 +4198,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                                 Count
                               </span>
                               <div
-                                className="column-resize-wrapper"
+                                className="column-resize-handle"
                                 id="resize-count"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
@@ -4272,7 +4272,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                                 Hour
                               </span>
                               <div
-                                className="column-resize-wrapper"
+                                className="column-resize-handle"
                                 id="resize-hour"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
@@ -4346,7 +4346,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                                 Pressure Sev
                               </span>
                               <div
-                                className="column-resize-wrapper"
+                                className="column-resize-handle"
                                 id="resize-iconColumn-pressure"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
@@ -6547,7 +6547,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                                 Alert
                               </span>
                               <div
-                                className="column-resize-wrapper"
+                                className="column-resize-handle"
                                 id="resize-alert"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
@@ -6621,7 +6621,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                                 Hour
                               </span>
                               <div
-                                className="column-resize-wrapper"
+                                className="column-resize-handle"
                                 id="resize-hour"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
@@ -7912,7 +7912,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                                 Alert
                               </span>
                               <div
-                                className="column-resize-wrapper"
+                                className="column-resize-handle"
                                 id="resize-alert"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
@@ -7986,7 +7986,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                                 Hour
                               </span>
                               <div
-                                className="column-resize-wrapper"
+                                className="column-resize-handle"
                                 id="resize-hour"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
@@ -9296,7 +9296,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                                 Alert
                               </span>
                               <div
-                                className="column-resize-wrapper"
+                                className="column-resize-handle"
                                 id="resize-alert"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
@@ -9370,7 +9370,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                                 Count
                               </span>
                               <div
-                                className="column-resize-wrapper"
+                                className="column-resize-handle"
                                 id="resize-count"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
@@ -9444,7 +9444,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                                 Hour
                               </span>
                               <div
-                                className="column-resize-wrapper"
+                                className="column-resize-handle"
                                 id="resize-hour"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
@@ -10897,7 +10897,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                                 Alert
                               </span>
                               <div
-                                className="column-resize-wrapper"
+                                className="column-resize-handle"
                                 id="resize-alert"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
@@ -10971,7 +10971,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                                 Count
                               </span>
                               <div
-                                className="column-resize-wrapper"
+                                className="column-resize-handle"
                                 id="resize-count"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
@@ -11045,7 +11045,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                                 Hour
                               </span>
                               <div
-                                className="column-resize-wrapper"
+                                className="column-resize-handle"
                                 id="resize-hour"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
@@ -12526,7 +12526,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                                 Alert
                               </span>
                               <div
-                                className="column-resize-wrapper"
+                                className="column-resize-handle"
                                 id="resize-alert"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
@@ -12600,7 +12600,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                                 Hour
                               </span>
                               <div
-                                className="column-resize-wrapper"
+                                className="column-resize-handle"
                                 id="resize-hour"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
@@ -13891,7 +13891,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                                 Alert
                               </span>
                               <div
-                                className="column-resize-wrapper"
+                                className="column-resize-handle"
                                 id="resize-alert"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
@@ -13965,7 +13965,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                                 Hour
                               </span>
                               <div
-                                className="column-resize-wrapper"
+                                className="column-resize-handle"
                                 id="resize-hour"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
@@ -14039,7 +14039,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                                 Pressure
                               </span>
                               <div
-                                className="column-resize-wrapper"
+                                className="column-resize-handle"
                                 id="resize-pressure"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
@@ -15868,7 +15868,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                                 Alert
                               </span>
                               <div
-                                className="column-resize-wrapper"
+                                className="column-resize-handle"
                                 id="resize-alert"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
@@ -15942,7 +15942,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                                 Hour
                               </span>
                               <div
-                                className="column-resize-wrapper"
+                                className="column-resize-handle"
                                 id="resize-hour"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
@@ -17593,7 +17593,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                                 Alert
                               </span>
                               <div
-                                className="column-resize-wrapper"
+                                className="column-resize-handle"
                                 id="resize-alert"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
@@ -17667,7 +17667,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                                 Hour
                               </span>
                               <div
-                                className="column-resize-wrapper"
+                                className="column-resize-handle"
                                 id="resize-hour"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
@@ -17741,7 +17741,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                                 Pressure
                               </span>
                               <div
-                                className="column-resize-wrapper"
+                                className="column-resize-handle"
                                 id="resize-pressure"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
@@ -19268,7 +19268,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                                 Alert
                               </span>
                               <div
-                                className="column-resize-wrapper"
+                                className="column-resize-handle"
                                 id="resize-alert"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
@@ -19342,7 +19342,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                                 Count Severity
                               </span>
                               <div
-                                className="column-resize-wrapper"
+                                className="column-resize-handle"
                                 id="resize-iconColumn-count"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
@@ -19416,7 +19416,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                                 Count
                               </span>
                               <div
-                                className="column-resize-wrapper"
+                                className="column-resize-handle"
                                 id="resize-count"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
@@ -19490,7 +19490,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                                 Hour
                               </span>
                               <div
-                                className="column-resize-wrapper"
+                                className="column-resize-handle"
                                 id="resize-hour"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
@@ -19564,7 +19564,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                                 Pressure Sev
                               </span>
                               <div
-                                className="column-resize-wrapper"
+                                className="column-resize-handle"
                                 id="resize-iconColumn-pressure"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
@@ -21737,7 +21737,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                                 Alert
                               </span>
                               <div
-                                className="column-resize-wrapper"
+                                className="column-resize-handle"
                                 id="resize-alert"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
@@ -21811,7 +21811,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                                 Count Severity
                               </span>
                               <div
-                                className="column-resize-wrapper"
+                                className="column-resize-handle"
                                 id="resize-iconColumn-count"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
@@ -21885,7 +21885,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                                 Count
                               </span>
                               <div
-                                className="column-resize-wrapper"
+                                className="column-resize-handle"
                                 id="resize-count"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
@@ -21959,7 +21959,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                                 Hour
                               </span>
                               <div
-                                className="column-resize-wrapper"
+                                className="column-resize-handle"
                                 id="resize-hour"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
@@ -22033,7 +22033,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                                 Pressure Sev
                               </span>
                               <div
-                                className="column-resize-wrapper"
+                                className="column-resize-handle"
                                 id="resize-iconColumn-pressure"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
@@ -23116,7 +23116,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                                 Alert
                               </span>
                               <div
-                                className="column-resize-wrapper"
+                                className="column-resize-handle"
                                 id="resize-alert"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
@@ -23190,7 +23190,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                                 Count Severity
                               </span>
                               <div
-                                className="column-resize-wrapper"
+                                className="column-resize-handle"
                                 id="resize-iconColumn-count"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
@@ -23264,7 +23264,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                                 Count
                               </span>
                               <div
-                                className="column-resize-wrapper"
+                                className="column-resize-handle"
                                 id="resize-count"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
@@ -23338,7 +23338,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                                 Hour
                               </span>
                               <div
-                                className="column-resize-wrapper"
+                                className="column-resize-handle"
                                 id="resize-hour"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
@@ -23412,7 +23412,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                                 Pressure Sev
                               </span>
                               <div
-                                className="column-resize-wrapper"
+                                className="column-resize-handle"
                                 id="resize-iconColumn-pressure"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
@@ -25977,7 +25977,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                                 Alert
                               </span>
                               <div
-                                className="column-resize-wrapper"
+                                className="column-resize-handle"
                                 id="resize-alert"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
@@ -26051,7 +26051,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                                 Severity
                               </span>
                               <div
-                                className="column-resize-wrapper"
+                                className="column-resize-handle"
                                 id="resize-iconColumn-count"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}
@@ -26125,7 +26125,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                                 Hour
                               </span>
                               <div
-                                className="column-resize-wrapper"
+                                className="column-resize-handle"
                                 id="resize-hour"
                                 onClick={[Function]}
                                 onMouseDown={[Function]}

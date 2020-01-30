@@ -215,7 +215,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                     Column 1
                   </span>
                   <div
-                    className="column-resize-wrapper"
+                    className="column-resize-handle"
                     id="resize-col1"
                     onClick={[Function]}
                     onMouseDown={[Function]}
@@ -244,7 +244,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                     Column 2
                   </span>
                   <div
-                    className="column-resize-wrapper"
+                    className="column-resize-handle"
                     id="resize-col2"
                     onClick={[Function]}
                     onMouseDown={[Function]}
