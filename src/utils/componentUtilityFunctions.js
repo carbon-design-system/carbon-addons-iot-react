@@ -2,6 +2,8 @@ import delay from 'lodash/delay';
 import moment from 'moment';
 import { sortStates } from 'carbon-components-react/lib/components/DataTable/state/sorting';
 import fileDownload from 'js-file-download';
+import find from 'lodash/find';
+import some from 'lodash/some';
 
 import {
   GUTTER,
@@ -125,6 +127,12 @@ export const getSortedData = (inputData, columnId, direction, isTimestampColumn)
   });
 };
 
+/**
+ * A simple helper function that stops prop on an event before calling back the callback function
+ * @param {*} evt  event to stop
+ * @param {*} callback  callback to call
+ * @param  {...any} args
+ */
 export const stopPropagationAndCallback = (evt, callback, ...args) => {
   evt.stopPropagation();
   callback(...args);
@@ -145,6 +153,14 @@ export const printGrid = grid => {
   console.log(result); // eslint-disable-line
 };
 
+/**
+ *
+ * @param {*} x  the current x location of a card
+ * @param {*} y  the current y location of a card
+ * @param {*} w  current width of a card
+ * @param {*} h  current height of a card
+ * @param {*} grid nested array of rows and columns with the current card index that is occupying them. for example, if the entire top row was taken by the first card it would look like this [[1, 1, 1, 1], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]]
+ */
 export const canFit = (x, y, w, h, grid) => {
   // console.log(`canFit? x=${x}, y=${y}, w=${w}, h=${h}`);
   for (let i = x; i < x + w; i += 1) {
@@ -157,7 +173,14 @@ export const canFit = (x, y, w, h, grid) => {
   return true;
 };
 
-/** Generates a non overlapping layout given the cards and column/dimension configuration for a given layout */
+/**
+ * Generates a non overlapping layout given the cards and column/dimension configuration for a given layout
+ * @param {*} layoutName
+ * @param {*} cards
+ * @param {*} dashboardColumns array of column counts for the different breakpoints (see DASHBOARD_COLUMNS)
+ * @param {*} cardDimensions double object of card height and width keyed by card size and layout (see CARD_DIMENSIONS)
+ * returns
+ */
 export const getLayout = (layoutName, cards, dashboardColumns, cardDimensions) => {
   let currX = 0;
   let currY = 0;
