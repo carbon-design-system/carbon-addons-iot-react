@@ -557,7 +557,7 @@ storiesOf('Watson IoT|Table', module)
     }
   )
   .add(
-    'Stateful Example with row nesting',
+    'Stateful Example with row nesting and fixed columns',
     () => {
       const tableData = initialState.data.map((i, idx) => ({
         ...i,

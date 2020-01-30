@@ -23,9 +23,9 @@ module.exports = {
     },
 
     './src/components/Table/TableHead/ColumnResize.jsx': {
-      statements: 34,
+      statements: 33,
       branches: 4,
-      lines: 33,
+      lines: 32,
       functions: 15,
     },
 

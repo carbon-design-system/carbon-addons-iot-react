@@ -4166,17 +4166,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                               >
                                 Count __Severity__
                               </span>
-                              <div
-                                className="column-resize-handle"
-                                onClick={[Function]}
-                                onMouseDown={[Function]}
-                                style={
-                                  Object {
-                                    "left": "auto",
-                                    "width": 4,
-                                  }
-                                }
-                              />
                             </span>
                             <svg
                               aria-label="Sort rows by this header in ascending order"
@@ -4403,17 +4392,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                               >
                                 Pressure Sev
                               </span>
-                              <div
-                                className="column-resize-handle"
-                                onClick={[Function]}
-                                onMouseDown={[Function]}
-                                style={
-                                  Object {
-                                    "left": "auto",
-                                    "width": 4,
-                                  }
-                                }
-                              />
                             </span>
                             <svg
                               aria-label="Sort rows by this header in ascending order"
@@ -12648,17 +12626,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                               >
                                 Alert
                               </span>
-                              <div
-                                className="column-resize-handle"
-                                onClick={[Function]}
-                                onMouseDown={[Function]}
-                                style={
-                                  Object {
-                                    "left": "auto",
-                                    "width": 4,
-                                  }
-                                }
-                              />
                             </span>
                             <svg
                               aria-label="Sort rows by this header in ascending order"
@@ -19527,17 +19494,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                               >
                                 Count Severity
                               </span>
-                              <div
-                                className="column-resize-handle"
-                                onClick={[Function]}
-                                onMouseDown={[Function]}
-                                style={
-                                  Object {
-                                    "left": "auto",
-                                    "width": 4,
-                                  }
-                                }
-                              />
                             </span>
                             <svg
                               aria-label="Sort rows by this header in ascending order"
@@ -19764,17 +19720,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                               >
                                 Pressure Sev
                               </span>
-                              <div
-                                className="column-resize-handle"
-                                onClick={[Function]}
-                                onMouseDown={[Function]}
-                                style={
-                                  Object {
-                                    "left": "auto",
-                                    "width": 4,
-                                  }
-                                }
-                              />
                             </span>
                             <svg
                               aria-label="Sort rows by this header in ascending order"
@@ -22023,17 +21968,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                               >
                                 Count Severity
                               </span>
-                              <div
-                                className="column-resize-handle"
-                                onClick={[Function]}
-                                onMouseDown={[Function]}
-                                style={
-                                  Object {
-                                    "left": "auto",
-                                    "width": 4,
-                                  }
-                                }
-                              />
                             </span>
                             <svg
                               aria-label="Sort rows by this header in ascending order"
@@ -22260,17 +22194,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                               >
                                 Pressure Sev
                               </span>
-                              <div
-                                className="column-resize-handle"
-                                onClick={[Function]}
-                                onMouseDown={[Function]}
-                                style={
-                                  Object {
-                                    "left": "auto",
-                                    "width": 4,
-                                  }
-                                }
-                              />
                             </span>
                             <svg
                               aria-label="Sort rows by this header in ascending order"
@@ -23429,17 +23352,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                               >
                                 Count Severity
                               </span>
-                              <div
-                                className="column-resize-handle"
-                                onClick={[Function]}
-                                onMouseDown={[Function]}
-                                style={
-                                  Object {
-                                    "left": "auto",
-                                    "width": 4,
-                                  }
-                                }
-                              />
                             </span>
                             <svg
                               aria-label="Sort rows by this header in ascending order"
@@ -23666,17 +23578,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                               >
                                 Pressure Sev
                               </span>
-                              <div
-                                className="column-resize-handle"
-                                onClick={[Function]}
-                                onMouseDown={[Function]}
-                                style={
-                                  Object {
-                                    "left": "auto",
-                                    "width": 4,
-                                  }
-                                }
-                              />
                             </span>
                             <svg
                               aria-label="Sort rows by this header in ascending order"
@@ -26317,17 +26218,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                               >
                                 Severity
                               </span>
-                              <div
-                                className="column-resize-handle"
-                                onClick={[Function]}
-                                onMouseDown={[Function]}
-                                style={
-                                  Object {
-                                    "left": "auto",
-                                    "width": 4,
-                                  }
-                                }
-                              />
                             </span>
                             <svg
                               aria-label="Sort rows by this header in ascending order"

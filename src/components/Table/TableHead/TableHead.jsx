@@ -163,19 +163,12 @@ const TableHead = ({
   const filterBarActive = activeBar === 'filter';
   const [columnWidth, setColumnWidth] = useState({});
   const columnRef = ordering.map(() => createRef());
-  const columnResizeRef = ordering.map(() => createRef());
+  const columnResizeRefs = ordering.map(() => createRef());
 
-  const onMouseMoveCallback = e => {
-    columnResizeRef.forEach(ref => {
+  const forwardMouseEvent = e => {
+    columnResizeRefs.forEach(ref => {
       if (ref.current) {
-        ref.current.forwardMouseMove(e);
-      }
-    });
-  };
-  const onMouseUpCallback = () => {
-    columnResizeRef.forEach(ref => {
-      if (ref.current) {
-        ref.current.forwardMouseUp();
+        ref.current.forwardMouseEvent(e);
       }
     });
   };
@@ -200,8 +193,8 @@ const TableHead = ({
   return (
     <StyledCarbonTableHead
       lightweight={`${lightweight}`}
-      onMouseMove={onMouseMoveCallback}
-      onMouseUp={onMouseUpCallback}
+      onMouseMove={forwardMouseEvent}
+      onMouseUp={forwardMouseEvent}
     >
       <TableRow>
         {hasRowExpansion ? <TableExpandHeader /> : null}
@@ -248,11 +241,11 @@ const TableHead = ({
               })}
             >
               <TableCellRenderer>{matchingColumnMeta.name}</TableCellRenderer>
-              {hasResize && i < ordering.length - 1 ? (
+              {hasResize && i < ordering.length - 1 && !matchingColumnMeta.width ? (
                 <ColumnResize
                   setNewWidths={updateColumnWidthsAfterResize}
                   columnIndex={i}
-                  ref={columnResizeRef[i]}
+                  ref={columnResizeRefs[i]}
                   columnWidths={columnWidth}
                 />
               ) : null}

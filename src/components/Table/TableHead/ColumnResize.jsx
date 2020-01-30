@@ -110,11 +110,12 @@ const ColumnResize = React.forwardRef((props, ref) => {
   // a sluggish rendering since the parent component would have to render for all events
   // during the mouse move.
   useImperativeHandle(ref, () => ({
-    forwardMouseMove(e) {
-      onMouseMove(e);
-    },
-    forwardMouseUp() {
-      onMouseUp();
+    forwardMouseEvent(e) {
+      if (e.nativeEvent.type === 'mousemove') {
+        onMouseMove(e);
+      } else if (e.nativeEvent.type === 'mouseup') {
+        onMouseUp();
+      }
     },
   }));
 
