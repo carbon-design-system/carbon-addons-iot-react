@@ -129,17 +129,17 @@ section.bx--table-toolbar {
   }
 }
 
-.column-resize-handle--invalid {
-  &:hover {
-    background-color: transparent;
-  }
-  cursor: no-drop;
-}
-
 .column-resize-handle--dragging {
   &:hover {
-    background-color: red;
+    background-color: black;
   }
+}
+
+.column-resize-handle--dragging.column-resize-handle--invalid {
+  &:hover {
+    background-color: gray;
+  }
+  cursor: no-drop;
 }
 
 html:not([dir]) .column-resize-handle {

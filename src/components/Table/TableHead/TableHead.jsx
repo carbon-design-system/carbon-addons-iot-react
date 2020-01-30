@@ -14,6 +14,7 @@ import { tableTranslateWithId } from '../../../utils/componentUtilityFunctions';
 import ColumnHeaderRow from './ColumnHeaderRow/ColumnHeaderRow';
 import FilterHeaderRow from './FilterHeaderRow/FilterHeaderRow';
 import TableHeader from './TableHeader';
+import ColumnResize from './ColumnResize';
 
 const { TableHead: CarbonTableHead, TableRow, TableExpandHeader } = DataTable;
 
@@ -208,6 +209,8 @@ const TableHead = ({
   const filterBarActive = activeBar === 'filter';
   const [columnWidth, setColumnWidth] = useState({});
   const columnRef = ordering.map(() => createRef());
+  const columnResizeRef = ordering.map(() => createRef());
+
   const [columnResize, setColumnResize] = useState({
     index: 0,
     startX: 0,
@@ -218,6 +221,13 @@ const TableHead = ({
   });
 
   const onMouseMoveCallback = e => {
+    columnResizeRef.forEach(ref => {
+      if (ref.current) {
+        ref.current.forwardMouseMove(e);
+      }
+    });
+
+    return;
     if (columnResize.columnIsBeingResized) {
       const mousePosition = e.clientX + columnResize.startX;
       const direction = e.clientX > columnResize.move ? 'right' : 'left';
@@ -231,6 +241,13 @@ const TableHead = ({
     }
   };
   const onMouseUpCallback = () => {
+    columnResizeRef.forEach(ref => {
+      if (ref.current) {
+        ref.current.forwardMouseUp();
+      }
+    });
+    return;
+
     if (columnResize.columnIsBeingResized) {
       if (columnResize.valid) {
         const resizePosition = columnResize.leftPosition + 4; // Width of drag handle
@@ -249,18 +266,14 @@ const TableHead = ({
       });
     }
   };
-  const onMouseDownCallback = (e, index) => {
-    const startX = e.target.offsetLeft - e.clientX;
-    const mousePosition = e.clientX + startX;
-    setColumnResize({
-      index,
-      startX,
-      leftPosition: mousePosition,
-      move: e.clientX,
-      columnIsBeingResized: true,
-      valid: true,
-    });
+
+  const updateColumnWidthsAfterResize = updatedColumnWidths => {
+    setColumnWidth(old => ({
+      ...old,
+      ...updatedColumnWidths,
+    }));
   };
+
   useEffect(
     () => {
       const nextWidth = columnRef.map(ref => {
@@ -278,6 +291,7 @@ const TableHead = ({
       onMouseUp={onMouseUpCallback}
     >
       <TableRow>
+        {console.info('I render')}
         {hasRowExpansion ? <TableExpandHeader /> : null}
         {hasRowSelection === 'multi' ? (
           <StyledCheckboxTableHeader translateWithId={(...args) => tableTranslateWithId(...args)}>
@@ -324,16 +338,11 @@ const TableHead = ({
               <TableCellRenderer>{matchingColumnMeta.name}</TableCellRenderer>
               {hasResize && i < ordering.length - 1 ? (
                 // eslint-disable-next-line jsx-a11y/click-events-have-key-events
-
-                <div
-                  onMouseDown={e => onMouseDownCallback(e, i)}
-                  onClick={e => e.stopPropagation()}
-                  style={{ left: columnResize.leftPosition ? columnResize.leftPosition : 'auto' }}
-                  id={`resize-${matchingColumnMeta.id}`}
-                  className={classnames('column-resize-handle', {
-                    'column-resize-handle--invalid': !columnResize.valid,
-                    'column-resize-handle--dragging': columnResize.columnIsBeingResized,
-                  })}
+                <ColumnResize
+                  setNewWidths={updateColumnWidthsAfterResize}
+                  columnIndex={i}
+                  ref={columnResizeRef[i]}
+                  columnWidths={columnWidth}
                 />
               ) : null}
             </StyledCustomTableHeader>
