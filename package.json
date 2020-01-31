@@ -78,6 +78,7 @@
     "carbon-icons": "7.0.7",
     "classnames": "^2.2.5",
     "core-js": "2.6.5",
+    "deepdash-es": "^4.4.2",
     "immutability-helper": "^2.9.0",
     "js-file-download": "^0.4.7",
     "lodash": "^4.17.13",

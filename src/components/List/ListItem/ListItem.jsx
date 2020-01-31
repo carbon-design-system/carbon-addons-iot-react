@@ -85,7 +85,10 @@ const ListItem = ({
         onClick={handleExpansionClick}
         onKeyPress={({ key }) => key === 'Enter' && handleExpansionClick()}
       >
-        <Icon icon={expanded ? iconChevronUp : iconChevronDown} />
+        <Icon
+          icon={expanded ? iconChevronUp : iconChevronDown}
+          description={expanded ? 'Expand' : 'Close'}
+        />
       </div>
     ) : null;
   const renderIcon = () =>

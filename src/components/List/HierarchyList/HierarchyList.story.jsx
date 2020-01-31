@@ -7,7 +7,7 @@ import { Add16 } from '@carbon/icons-react';
 import { Button } from '../../..';
 import { sampleHierarchy } from '../List.story';
 
-import ExpandableList from './ExpandableList';
+import HierarchyList from './HierarchyList';
 
 const addButton = (
   <Button
@@ -15,18 +15,19 @@ const addButton = (
     hasIconOnly
     size="small"
     iconDescription="Add"
-    key="expandable-list-button-add"
+    key="hierarchy-list-button-add"
     onClick={() => action('header button clicked')}
   />
 );
 
-storiesOf('Watson IoT Experimental|Expandable List', module).add(
+storiesOf('Watson IoT Experimental|Hierarchy List', module).add(
   'Stateful list with nested searching',
   () => (
-    <div style={{ width: 400 }}>
-      <ExpandableList
+    <div style={{ width: 400, height: 400 }}>
+      <HierarchyList
         title={text('Title', 'MLB Expanded List')}
         buttons={[addButton]}
+        isFullHeight
         items={[
           ...Object.keys(sampleHierarchy.MLB['American League']).map(team => ({
             id: team,

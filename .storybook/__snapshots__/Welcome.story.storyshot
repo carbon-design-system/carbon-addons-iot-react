@@ -2696,7 +2696,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Getting Started|
                       <div
                         className="bx--structured-list-td"
                       >
-                        ExpandableList
+                        HierarchyList
                       </div>
                     </div>
                     <div

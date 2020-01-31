@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import cloneDeep from 'lodash/cloneDeep';
 import debounce from 'lodash/debounce';
@@ -10,6 +10,8 @@ const propTypes = {
   title: PropTypes.string,
   /** Determines whether the search function is enabled */
   hasSearch: PropTypes.bool,
+  /** Determines whether the pagination should appear */
+  hasPagination: PropTypes.bool,
   /** Buttons to be presented in List header */
   buttons: PropTypes.arrayOf(PropTypes.node),
   /** ListItems to be displayed */
@@ -23,17 +25,24 @@ const propTypes = {
   isFullHeight: PropTypes.bool,
   /** Determines the number of rows per page */
   pageSize: PropTypes.string,
+  /** Item id to be pre-selected */
+  defaultSelectedId: PropTypes.string,
+  /** Optional function to be called when item is selected */
+  onSelect: PropTypes.func,
 };
 
 const defaultProps = {
   title: null,
   hasSearch: false,
+  hasPagination: true,
   buttons: null,
   i18n: {
     searchPlaceHolderText: 'Enter a value',
   },
   isFullHeight: true,
   pageSize: null,
+  defaultSelectedId: null,
+  onSelect: null,
 };
 
 /**
@@ -90,23 +99,37 @@ export const searchNestedItems = (items, value) => {
   return filteredItems;
 };
 
-const ExpandableList = ({ title, hasSearch, buttons, items, i18n, isFullHeight, pageSize }) => {
+const HierarchyList = ({
+  title,
+  hasSearch,
+  hasPagination,
+  buttons,
+  items,
+  i18n,
+  isFullHeight,
+  pageSize,
+  defaultSelectedId,
+  onSelect,
+}) => {
   const [expandedIds, setExpandedIds] = useState([]);
   const [searchValue, setSearchValue] = useState('');
   const [filteredItems, setFilteredItems] = useState(cloneDeep(items));
   const [currentPageNumber, setCurrentPageNumber] = useState(1);
   const [selectedIds, setSelectedIds] = useState([]);
-  const [selectedId, setSelectedId] = useState(null);
+  const [selectedId, setSelectedId] = useState(defaultSelectedId);
 
   const handleSelect = id => {
     setSelectedId(selectedId === id ? null : id);
     setSelectedIds(
       selectedId === id ? selectedIds.filter(item => item.id !== id) : [...selectedIds, id]
     );
+    if (onSelect) {
+      onSelect(id);
+    }
   };
 
   const numberOfItems = filteredItems.length;
-  let rowsPerPage = numberOfItems;
+  let rowsPerPage;
   switch (pageSize) {
     case 'sm':
       rowsPerPage = 5;
@@ -118,10 +141,18 @@ const ExpandableList = ({ title, hasSearch, buttons, items, i18n, isFullHeight, 
       rowsPerPage = 20;
       break;
     default:
-      rowsPerPage = null;
+      rowsPerPage = numberOfItems;
   }
 
   const [itemsToShow, setItemsToShow] = useState(filteredItems.slice(0, rowsPerPage));
+
+  // Needed for updates to the filteredItems state on pageSize change
+  useEffect(
+    () => {
+      setItemsToShow(filteredItems.slice(0, rowsPerPage));
+    },
+    [filteredItems, rowsPerPage]
+  );
 
   const onPage = page => {
     const rowUpperLimit = page * rowsPerPage;
@@ -137,11 +168,15 @@ const ExpandableList = ({ title, hasSearch, buttons, items, i18n, isFullHeight, 
     pageOfPagesText: page => `Page ${page}`,
   };
 
+  /**
+   * Once the array is finished, the category needs to be expanded to show
+   * the found results and the filter children array needs to be added to
+   * the total filtered array. The next category's children then needs to
+   * be searched in the same fashion.
+   * @param {String} text keyed values from search input
+   */
   const handleSearch = text => {
-    /** Once the array is finished, the category
-        needs to be expanded to show the found results and the filter children
-        array needs to be added to the total filtered array. The next
-        category's children then needs to be searched in the same fashion.
+    /**
      */
     const tempFilteredItems = searchNestedItems(items, text);
     const tempExpandedIds = [];
@@ -191,7 +226,7 @@ const ExpandableList = ({ title, hasSearch, buttons, items, i18n, isFullHeight, 
         }
       }}
       i18n={i18n}
-      pagination={pagination}
+      pagination={hasPagination ? pagination : null}
       isFullHeight={isFullHeight}
       selectedId={selectedId}
       selectedIds={selectedIds}
@@ -200,7 +235,7 @@ const ExpandableList = ({ title, hasSearch, buttons, items, i18n, isFullHeight, 
   );
 };
 
-ExpandableList.propTypes = propTypes;
-ExpandableList.defaultProps = defaultProps;
+HierarchyList.propTypes = propTypes;
+HierarchyList.defaultProps = defaultProps;
 
-export default ExpandableList;
+export default HierarchyList;

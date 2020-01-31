@@ -8,9 +8,9 @@ import {
 
 import { sampleHierarchy } from '../List.story';
 
-import ExpandableList, { searchNestedItems, searchItem } from './ExpandableList';
+import HierarchyList, { searchNestedItems, searchItem } from './HierarchyList';
 
-describe('ExpandableList', () => {
+describe('HierarchyList', () => {
   const items = [
     ...Object.keys(sampleHierarchy.MLB['American League']).map(team => ({
       id: team,
@@ -93,7 +93,7 @@ describe('ExpandableList', () => {
 
   test('clicking expansion caret should expand item', () => {
     const { getByTitle, getAllByRole } = render(
-      <ExpandableList items={items} title="Expandable List" pageSize="xl" />
+      <HierarchyList items={items} title="Hierarchy List" pageSize="xl" />
     );
     fireEvent.click(getAllByRole('button')[0]);
     // Category item should be expanded
@@ -111,7 +111,7 @@ describe('ExpandableList', () => {
 
   test('clicking nextpage should display the second page', () => {
     const { getByTitle, queryByTitle, getAllByRole } = render(
-      <ExpandableList items={items} title="Expandable List" pageSize="sm" />
+      <HierarchyList items={items} title="Hierarchy List" pageSize="sm" />
     );
     // Only 5 categories should be showing by default
     expect(getByTitle('Chicago White Sox')).toBeTruthy();
@@ -139,7 +139,7 @@ describe('ExpandableList', () => {
 
   test('found search result categories should be expanded', () => {
     const { getByLabelText, getByTitle, queryByTitle } = render(
-      <ExpandableList items={items} hasSearch title="Expandable List" pageSize="xl" />
+      <HierarchyList items={items} hasSearch title="Hierarchy List" pageSize="xl" />
     );
     fireEvent.change(getByLabelText('Search'), { target: { value: 'jd' } });
     /** Need to wait for the element to be removed because the search function
@@ -161,7 +161,7 @@ describe('ExpandableList', () => {
 
   test('all items should return if search value is empty string', async () => {
     const { getByLabelText, getByTitle, queryByTitle } = render(
-      <ExpandableList items={items} hasSearch title="Expandable List" pageSize="xl" />
+      <HierarchyList items={items} hasSearch title="Hierarchy List" pageSize="xl" />
     );
     fireEvent.change(getByLabelText('Search'), { target: { value: 'jd davis' } });
     /** Need to wait for the element to be removed because the search function

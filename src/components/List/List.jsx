@@ -15,7 +15,7 @@ export const itemPropTypes = {
     value: PropTypes.string,
     icon: PropTypes.node,
   }),
-  children: childrenPropType,
+  children: PropTypes.arrayOf(PropTypes.any), // TODO: make this recursive on items?
   isSelectable: PropTypes.bool,
 };
 
@@ -34,7 +34,10 @@ const propTypes = {
     searchPlaceHolderText: PropTypes.string,
   }),
   pagination: PropTypes.shape(SimplePaginationPropTypes),
+  /** Currently selected item */
   selectedId: PropTypes.string,
+  /** Multiple currently selected items */
+  selectedIds: PropTypes.arrayOf(PropTypes.string),
   expandedIds: PropTypes.arrayOf(PropTypes.string),
   handleSelect: PropTypes.func,
   toggleExpansion: PropTypes.func,
@@ -51,6 +54,7 @@ const defaultProps = {
   iconPosition: 'left',
   pagination: null,
   selectedId: null,
+  selectedIds: [],
   expandedIds: [],
   handleSelect: () => {},
   toggleExpansion: () => {},
@@ -65,6 +69,7 @@ const List = ({
   i18n,
   pagination,
   selectedId,
+  selectedIds,
   expandedIds,
   handleSelect,
   toggleExpansion,
@@ -74,7 +79,7 @@ const List = ({
 }) => {
   const renderItemAndChildren = (item, level) => {
     const hasChildren = item.children && item.children.length > 0;
-    const isSelected = item.id === selectedId;
+    const isSelected = item.id === selectedId || selectedIds.some(id => item.id === id);
     const isExpanded = expandedIds.filter(rowId => rowId === item.id).length > 0;
 
     const {
