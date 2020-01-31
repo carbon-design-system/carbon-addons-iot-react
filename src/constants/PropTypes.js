@@ -229,6 +229,8 @@ export const CardPropTypes = {
   isEditable: PropTypes.bool,
   /** goes full screen if expanded */
   isExpanded: PropTypes.bool,
+  /** should hide the header */
+  hideHeader: PropTypes.bool,
   size: PropTypes.oneOf(Object.values(CARD_SIZES)),
   layout: PropTypes.oneOf(Object.values(CARD_LAYOUTS)),
   breakpoint: PropTypes.oneOf(Object.values(DASHBOARD_SIZES)),

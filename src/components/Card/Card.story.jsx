@@ -5,6 +5,7 @@ import { action } from '@storybook/addon-actions';
 
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 import { getCardMinSize } from '../../utils/componentUtilityFunctions';
+import Table from '../Table/Table';
 
 import Card from './Card';
 
@@ -211,17 +212,43 @@ storiesOf('Watson IoT|Card', module)
   .add(
     'implementing a custom card',
     () => {
-      const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.XSMALL);
-      const SampleCustomCard = ({ values, isEditable, ...others }) => (
-        <Card {...others}>{!isEditable ? JSON.stringify(values) : 'Fake Sample Data'}</Card>
+      const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
+      const SampleCustomCard = ({ title, isEditable, ...others }) => (
+        <Card {...others} hideHeader>
+          {!isEditable
+            ? (_$, { cardToolbar, values }) => (
+                <Table
+                  id="my table"
+                  secondaryTitle={title}
+                  columns={[
+                    {
+                      id: 'value1',
+                      name: 'String',
+                      filter: { placeholderText: 'enter a string' },
+                    },
+                    {
+                      id: 'timestamp',
+                      name: 'Date',
+                      filter: { placeholderText: 'enter a date' },
+                    },
+                  ]}
+                  data={values.map((value, index) => ({ id: `rowid-${index}`, values: value }))}
+                  view={{ toolbar: { customToolbarContent: cardToolbar } }}
+                />
+              )
+            : 'Fake Sample Data'}
+        </Card>
       );
 
       return (
         <SampleCustomCard
-          id={text('title', 'Card Title')}
+          id="mycard"
+          title={text('title', 'Card Title')}
           size={size}
           isEditable={boolean('isEditable', false)}
           values={[{ timestamp: 12341231231, value1: 'my value' }]}
+          availableActions={{ range: size !== CARD_SIZES.XSMALL, expand: true }}
+          onCardAction={action('onCardAction')}
         />
       );
     },
