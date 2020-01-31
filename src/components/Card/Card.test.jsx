@@ -30,20 +30,26 @@ describe('Card testcases', () => {
     const childRenderInTitleCard = jest.fn();
 
     mount(<Card title="My Title" size={CARD_SIZES.MEDIUM} children={childRenderInTitleCard} />);
-    expect(childRenderInTitleCard).toHaveBeenCalledWith({
-      width: 0,
-      height: -CARD_TITLE_HEIGHT,
-      position: null,
-    });
+    expect(childRenderInTitleCard).toHaveBeenCalledWith(
+      {
+        width: 0,
+        height: -CARD_TITLE_HEIGHT,
+        position: null,
+      },
+      expect.anything()
+    );
 
     const childRenderInNoTitleCard = jest.fn();
 
     mount(<Card size={CARD_SIZES.MEDIUM} children={childRenderInNoTitleCard} />);
-    expect(childRenderInNoTitleCard).toHaveBeenCalledWith({
-      width: 0,
-      height: 0,
-      position: null,
-    });
+    expect(childRenderInNoTitleCard).toHaveBeenCalledWith(
+      {
+        width: 0,
+        height: 0,
+        position: null,
+      },
+      expect.anything()
+    );
   });
 
   test('render icons', () => {

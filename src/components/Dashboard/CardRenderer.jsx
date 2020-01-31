@@ -109,7 +109,8 @@ const CardRenderer = React.memo(
           expand:
             type === CARD_TYPES.IMAGE ||
             type === CARD_TYPES.TIMESERIES ||
-            type === CARD_TYPES.TABLE, // image and line chart cards should have expand
+            type === CARD_TYPES.TABLE ||
+            availableActions?.expand, // image and line chart cards should have expand
         }),
       [availableActions, dataSource, type]
     );

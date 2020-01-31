@@ -3,6 +3,7 @@ import VisibilitySensor from 'react-visibility-sensor';
 import { Tooltip, SkeletonText } from 'carbon-components-react';
 import styled from 'styled-components';
 import SizeMe from 'react-sizeme';
+import isNil from 'lodash/isNil';
 
 import { settings } from '../../constants/Settings';
 import {
@@ -130,28 +131,29 @@ export const defaultProps = {
 };
 
 /** Dumb component that renders the card basics */
-const Card = ({
-  size,
-  children,
-  title,
-  layout,
-  isLoading,
-  isEmpty,
-  isEditable,
-  isExpanded,
-  isLazyLoading,
-  error,
-  id,
-  tooltip,
-  timeRange,
-  onCardAction,
-  availableActions,
-  breakpoint,
-  i18n,
-  style,
-  className,
-  ...others
-}) => {
+const Card = props => {
+  const {
+    size,
+    children,
+    title,
+    layout,
+    isLoading,
+    isEmpty,
+    isEditable,
+    isExpanded,
+    isLazyLoading,
+    error,
+    id,
+    tooltip,
+    timeRange,
+    onCardAction,
+    availableActions,
+    breakpoint,
+    i18n,
+    style,
+    className,
+    ...others
+  } = props;
   const isXS = size === CARD_SIZES.XSMALL;
   const dimensions = getCardMinSize(
     breakpoint,
@@ -197,74 +199,81 @@ const Card = ({
     <VisibilitySensor partialVisibility offset={{ top: 10 }}>
       {({ isVisible }) => (
         <SizeMe.SizeMe monitorHeight>
-          {({ size: cardSize }) => (
-            <CardWrapper
-              {...others}
-              id={id}
-              dimensions={dimensions}
-              isExpanded={isExpanded}
-              cardWidthSize={cardSize.width}
-              style={
-                !isExpanded ? style : { height: 'calc(100% - 50px)', width: 'calc(100% - 50px)' }
-              }
-              className={className}
-            >
-              {title !== undefined && (
-                <CardHeader>
-                  <CardTitle title={title}>
-                    {title}&nbsp;
-                    {tooltip && (
-                      <Tooltip
-                        triggerId={`card-tooltip-trigger-${id}`}
-                        tooltipId={`card-tooltip-${id}`}
-                        triggerText=""
-                      >
-                        {tooltip}
-                      </Tooltip>
-                    )}
-                  </CardTitle>
-                  <CardToolbar
-                    width={cardSize.width}
-                    availableActions={mergedAvailableActions}
-                    i18n={strings}
-                    isEditable={isEditable}
-                    isExpanded={isExpanded}
-                    timeRange={timeRange}
-                    onCardAction={cachedOnCardAction}
-                  />
-                </CardHeader>
-              )}
-              <CardContent dimensions={dimensions}>
-                {!isVisible && isLazyLoading ? ( // if not visible don't show anything
-                  ''
-                ) : isLoading ? (
-                  <SkeletonWrapper>
-                    <OptimizedSkeletonText
-                      paragraph
-                      lineCount={
-                        size === CARD_SIZES.XSMALL || size === CARD_SIZES.XSMALLWIDE ? 2 : 3
-                      }
-                      width="100%"
-                    />
-                  </SkeletonWrapper>
-                ) : error ? (
-                  <EmptyMessageWrapper>
-                    {size === CARD_SIZES.XSMALL || size === CARD_SIZES.XSMALLWIDE
-                      ? strings.errorLoadingDataShortLabel
-                      : `${strings.errorLoadingDataLabel} ${error}`}
-                  </EmptyMessageWrapper>
-                ) : isEmpty && !isEditable ? (
-                  <EmptyMessageWrapper>
-                    {isXS ? strings.noDataShortLabel : strings.noDataLabel}
-                  </EmptyMessageWrapper>
-                ) : typeof children === 'function' ? ( // pass the measured size down to the children if it's an render function
-                  children(getChildSize(cardSize, title))
-                ) : (
-                  children
+          {({ size: cardSize }) => {
+            // support passing the card toolbar through to the custom card
+            const cardToolbar = (
+              <CardToolbar
+                width={cardSize.width}
+                availableActions={mergedAvailableActions}
+                i18n={strings}
+                isEditable={isEditable}
+                isExpanded={isExpanded}
+                timeRange={timeRange}
+                onCardAction={cachedOnCardAction}
+              />
+            );
+
+            return (
+              <CardWrapper
+                {...others}
+                id={id}
+                dimensions={dimensions}
+                isExpanded={isExpanded}
+                cardWidthSize={cardSize.width}
+                style={
+                  !isExpanded ? style : { height: 'calc(100% - 50px)', width: 'calc(100% - 50px)' }
+                }
+                className={className}
+              >
+                {!isNil(title) && (
+                  <CardHeader>
+                    <CardTitle title={title}>
+                      {title}&nbsp;
+                      {tooltip && (
+                        <Tooltip
+                          triggerId={`card-tooltip-trigger-${id}`}
+                          tooltipId={`card-tooltip-${id}`}
+                          triggerText=""
+                        >
+                          {tooltip}
+                        </Tooltip>
+                      )}
+                    </CardTitle>
+                    {cardToolbar}
+                  </CardHeader>
                 )}
-              </CardContent>
-            </CardWrapper>
-          )}
+                <CardContent dimensions={dimensions}>
+                  {!isVisible && isLazyLoading ? ( // if not visible don't show anything
+                    ''
+                  ) : isLoading ? (
+                    <SkeletonWrapper>
+                      <OptimizedSkeletonText
+                        paragraph
+                        lineCount={
+                          size === CARD_SIZES.XSMALL || size === CARD_SIZES.XSMALLWIDE ? 2 : 3
+                        }
+                        width="100%"
+                      />
+                    </SkeletonWrapper>
+                  ) : error ? (
+                    <EmptyMessageWrapper>
+                      {size === CARD_SIZES.XSMALL || size === CARD_SIZES.XSMALLWIDE
+                        ? strings.errorLoadingDataShortLabel
+                        : `${strings.errorLoadingDataLabel} ${error}`}
+                    </EmptyMessageWrapper>
+                  ) : isEmpty && !isEditable ? (
+                    <EmptyMessageWrapper>
+                      {isXS ? strings.noDataShortLabel : strings.noDataLabel}
+                    </EmptyMessageWrapper>
+                  ) : typeof children === 'function' ? ( // pass the measured size down to the children if it's an render function
+                    children(getChildSize(cardSize, title), { cardToolbar, ...props })
+                  ) : (
+                    children
+                  )}
+                </CardContent>
+              </CardWrapper>
+            );
+          }}
         </SizeMe.SizeMe>
       )}
     </VisibilitySensor>
