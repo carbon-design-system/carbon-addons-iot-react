@@ -3,7 +3,6 @@ import VisibilitySensor from 'react-visibility-sensor';
 import { Tooltip, SkeletonText } from 'carbon-components-react';
 import styled from 'styled-components';
 import SizeMe from 'react-sizeme';
-import isNil from 'lodash/isNil';
 
 import { settings } from '../../constants/Settings';
 import {
