@@ -1,28 +1,29 @@
 @import '~carbon-components/scss/globals/scss/vars';
+@import '../../globals/vars';
 
-div.simple-pagination-container {
+.#{$iot-prefix}-simple-pagination-container {
   display: flex;
-  height: 3rem;
+  height: $spacing-09;
   justify-content: flex-end;
   width: 100%;
   border: 1px solid $ui-03;
-  background-color: $ui-background;
+  background-color: $ui-01;
   align-items: center;
+}
 
-  span.simple-pagination-page-label {
-    padding-right: 1rem;
-    font-size: 0.875rem;
-  }
+.#{$iot-prefix}-simple-pagination-page-label {
+  padding-right: $spacing-05;
+  font-size: 0.875rem;
+}
 
-  .addons-simple-pagination-button {
-    &:focus {
-      outline: none;
-      border: 1px solid $focus;
-    }
-    cursor: default;
+.#{$iot-prefix}-addons-simple-pagination-button {
+  &:focus {
+    outline: none;
+    border: 1px solid $focus;
   }
+  cursor: default;
+}
 
-  svg.simple-pagination-caret {
-    fill: $icon-01;
-  }
+.#{$iot-prefix}-simple-pagination-caret {
+  fill: $icon-01;
 }

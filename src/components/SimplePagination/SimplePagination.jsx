@@ -3,8 +3,10 @@ import PropTypes from 'prop-types';
 import CaretLeft from '@carbon/icons-react/lib/caret--left/20';
 import CaretRight from '@carbon/icons-react/lib/caret--right/20';
 
+import { settings } from '../../constants/Settings';
 import { handleEnterKeyDown } from '../../utils/componentUtilityFunctions';
 
+const { iotPrefix } = settings;
 const propTypes = {
   /** current page number */
   page: PropTypes.number.isRequired,
@@ -46,8 +48,8 @@ const SimplePagination = ({
   const handlePrev = () => onPage(page - 1);
 
   return (
-    <div className="simple-pagination-container">
-      <span className="simple-pagination-page-label" maxPage={maxPage}>
+    <div className={`${iotPrefix}-simple-pagination-container`}>
+      <span className={`${iotPrefix}-simple-pagination-page-label`} maxpage={maxPage}>
         {pageText ? `${pageText} ${page}` : pageOfPagesText(page, maxPage)}
       </span>
       {maxPage > 1 ? (
@@ -55,7 +57,7 @@ const SimplePagination = ({
           <div
             className={
               hasPrev
-                ? 'bx--pagination__button bx--pagination__button--backward addons-simple-pagination-button'
+                ? `bx--pagination__button bx--pagination__button--backward ${iotPrefix}-simple-pagination-button`
                 : 'bx--pagination__button bx--pagination__button--backward'
             }
             role="button"
@@ -63,12 +65,15 @@ const SimplePagination = ({
             onClick={hasPrev ? handlePrev : undefined}
             onKeyDown={hasPrev ? evt => handleEnterKeyDown(evt, handlePrev) : undefined}
           >
-            <CaretLeft description={prevPageText} className="simple-pagination-caret" />
+            <CaretLeft
+              description={prevPageText}
+              className={`${iotPrefix}-simple-pagination-caret`}
+            />
           </div>
           <div
             className={
               hasNext
-                ? 'bx--pagination__button bx--pagination__button--forward addons-simple-pagination-button'
+                ? `bx--pagination__button bx--pagination__button--forward ${iotPrefix}-simple-pagination-button`
                 : 'bx--pagination__button bx--pagination__button--forward'
             }
             role="button"
@@ -76,7 +81,10 @@ const SimplePagination = ({
             onClick={hasNext ? handleNext : undefined}
             onKeyDown={hasNext ? evt => handleEnterKeyDown(evt, handleNext) : undefined}
           >
-            <CaretRight description={nextPageText} className="simple-pagination-caret" />
+            <CaretRight
+              description={nextPageText}
+              className={`${iotPrefix}-simple-pagination-caret`}
+            />
           </div>
         </>
       ) : null}
