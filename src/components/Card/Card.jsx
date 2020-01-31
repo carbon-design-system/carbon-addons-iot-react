@@ -78,6 +78,7 @@ export const defaultProps = {
   layout: CARD_SIZES.HORIZONTAL,
   title: undefined,
   toolbar: undefined,
+  hideHeader: false,
   timeRange: undefined,
   isLoading: false,
   isEmpty: false,
@@ -143,6 +144,7 @@ const Card = props => {
     isExpanded,
     isLazyLoading,
     error,
+    hideHeader,
     id,
     tooltip,
     timeRange,
@@ -225,7 +227,7 @@ const Card = props => {
                 }
                 className={className}
               >
-                {!isNil(title) && (
+                {!hideHeader && (
                   <CardHeader>
                     <CardTitle title={title}>
                       {title}&nbsp;
