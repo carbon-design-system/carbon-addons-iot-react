@@ -1,7 +1,8 @@
 @import '~carbon-components/scss/globals/scss/vars';
 @import '~carbon-components/scss/globals/scss/layout';
+@import '../../globals/vars';
 
-.add-card {
+.#{$iot-prefix}-add-card {
   border: 1px solid transparent;
   display: inline-flex;
   flex-direction: column;
@@ -15,8 +16,8 @@
   svg {
     margin: auto 0 0 auto;
   }
+}
 
-  p.addcard-title {
-    color: $text-01;
-  }
+.#{$iot-prefix}-addcard-title {
+  color: $text-01;
 }

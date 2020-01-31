@@ -40,12 +40,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|AddCa
         }
       >
         <a
-          className="bx--link bx--tile bx--tile--clickable add-card"
+          className="bx--link bx--tile bx--tile--clickable iot-add-card"
           onClick={[Function]}
           onKeyDown={[Function]}
         >
           <p
-            className="addcard-title"
+            className="iot-addcard-title"
           >
             Click me
           </p>
