@@ -1,24 +1,40 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+/* eslint-disable */
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import classnames from 'classnames';
 import { InlineLoading } from 'carbon-components-react';
 
 import { CARD_CONTENT_PADDING } from '../../constants/LayoutConstants';
-import { CardPropTypes } from '../../constants/PropTypes';
+import { CardPropTypes, GaugeCardPropTypes } from '../../constants/PropTypes';
 import Card from '../Card/Card';
+import { settings } from '../../constants/Settings';
+
+const { iotPrefix } = settings;
+// r value of the circle in SVG
+const radius = 30;
+// radius doubled plus stroke
+const gaugeSize = radius * 2 + 8;
 
 const GaugeCard = ({
   id,
   title,
-  size,
+  description,
+  content: { gauges },
+  values,
   data,
   isLoading,
   loadData,
   hasMoreData,
-  layout,
+  size,
   className,
   ...others
 }) => {
+  const [loadedState, setLoadedState] = useState(false);
+  useEffect(() => {
+    setTimeout(() => {
+      setLoadedState(true);
+    }, 1500);
+  }, []);
   const handleScroll = e => {
     const element = e.target;
     //  height of the elements content - height element’s content is scrolled vertically === height of the scrollable part of the element
@@ -30,11 +46,15 @@ const GaugeCard = ({
       loadData();
     }
   };
-
+  const findStrokeDash = value => {
+    //circumference of SVG. If r attribute changes this must also be changed here.
+    const circum = 2 * Math.PI * radius;
+    return (value * circum) / 100;
+  };
   return (
     <Card id={id} title={title} size={size} onScroll={handleScroll} {...others}>
       <div
-        className={classNames('list-card', className)}
+        className={classnames(`${iotPrefix}--gauge-container`, className)}
         style={{
           paddingTop: 0,
           paddingRight: CARD_CONTENT_PADDING,
@@ -42,34 +62,61 @@ const GaugeCard = ({
           paddingLeft: CARD_CONTENT_PADDING,
         }}
       >
-        <StructuredGaugeWrapper>
-          <StructuredGaugeBody>
-            {data
-              ? data.map(item => {
-                  return (
-                    <StructuredGaugeRow key={item.id}>
-                      <StructuredGaugeCell className="list-card--item" key={`${item.id}-cell`}>
-                        <div className="list-card--item--value">
-                          {item.link ? (
-                            <Link style={{ display: 'inherit' }} target="_blank" href={item.link}>
-                              {item.value}
-                            </Link>
-                          ) : (
-                            item.value
-                          )}
-                        </div>
-                        {item.extraContent ? (
-                          <div className="list-card--item--extra-content">{item.extraContent}</div>
-                        ) : null}
-                      </StructuredGaugeCell>
-                    </StructuredGaugeRow>
-                  );
-                })
-              : null}
-
-            {isLoading ? <InlineLoading description="Loading data..." status="active" /> : null}
-          </StructuredGaugeBody>
-        </StructuredGaugeWrapper>
+        {gauges.map((gauge, i) => (
+          <meter
+            key={`${gauge.dataSourceId}-${i}`}
+            value={values[gauge.dataSourceId]}
+            min={gauge.minimumValue}
+            max={gauge.maximumValue}
+            title={gauge.units}
+          >
+            <svg
+              className={classnames(
+                `${iotPrefix}--gauge`,
+                { [`${iotPrefix}--gauge__loaded`]: loadedState },
+                className
+              )}
+              percent="0"
+              style={{
+                '--gauge-value': values[gauge.dataSourceId] || 0,
+                '--gauge-max-value': gauge.maximumValue,
+                '--gauge-colors': gauge.color,
+                '--gauge-bg': gauge.backgroundColor,
+                '--stroke-dash': findStrokeDash(values[gauge.dataSourceId]) || 0,
+                '--gauge-size': gaugeSize + 'px',
+              }}
+            >
+              <circle
+                className={`${iotPrefix}--gauge-bg`}
+                cx={gaugeSize / 2}
+                cy={gaugeSize / 2}
+                r={radius}
+              />
+              <circle
+                className={`${iotPrefix}--gauge-fg`}
+                cx={gaugeSize / 2}
+                cy={gaugeSize / 2}
+                r={radius}
+              />
+              <text
+                className={`${iotPrefix}--gauge-value`}
+                x={gaugeSize / 2}
+                y="32"
+                textAnchor="middle"
+              >
+                <tspan>{values[gauge.dataSourceId]}</tspan>
+              </text>
+              <text
+                className={`${iotPrefix}--gauge-rating`}
+                x={gaugeSize / 2}
+                y="50"
+                textAnchor="middle"
+              >
+                <tspan>CPU</tspan>
+              </text>
+            </svg>
+          </meter>
+        ))}
       </div>
     </Card>
   );
@@ -77,24 +124,29 @@ const GaugeCard = ({
 
 GaugeCard.propTypes = {
   ...CardPropTypes,
-  data: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      value: PropTypes.string.isRequired,
-      link: PropTypes.string,
-      extraContent: PropTypes.element,
-    })
-  ).isRequired,
-  isLoading: PropTypes.bool,
-  hasMoreData: PropTypes.bool,
-  loadData: PropTypes.func.isRequired,
-  layout: PropTypes.string,
+  ...GaugeCardPropTypes,
 };
 
 GaugeCard.defaultProps = {
   isLoading: false,
-  hasMoreData: false,
-  layout: '',
+  description: null,
+  content: {
+    gauges: [
+      {
+        dataSourceId: null,
+        units: '%',
+        minimumValue: 0,
+        maximumValue: 100,
+        renderValueFunction: null,
+        color: 'yellow',
+        backgroundColor: 'gray',
+        shape: 'half-circle',
+        trend: null,
+        thresholds: null,
+      },
+    ],
+  },
+  values: [],
 };
 
 GaugeCard.displayName = 'GaugeCard';

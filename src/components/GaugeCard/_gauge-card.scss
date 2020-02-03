@@ -1,0 +1,53 @@
+@import '../../globals/vars';
+
+meter {
+  appearance: none;
+  height: var(--gauge-size);
+  position: relative;
+  width: var(--gauge-size);
+
+  &::after {
+    content: '';
+    width: rem(25px);
+    position: absolute;
+    top: 45.5%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-top: 1px dashed $text-02;
+  }
+}
+
+.#{$iot-prefix}--gauge {
+  fill: none;
+  height: var(--gauge-size);
+  stroke-width: 5px;
+  width: var(--gauge-size);
+
+  text {
+    fill: $text-02;
+  }
+}
+
+.#{$iot-prefix}--gauge-bg {
+  stroke: var(--gauge-bg);
+  stroke-width: 4px;
+}
+
+.#{$iot-prefix}--gauge-fg {
+  paint-order: stroke;
+  stroke: var(--gauge-colors);
+  stroke-dasharray: 0 188.1910858154297;
+  transform: rotate(-90deg);
+  transform-origin: center;
+  transition: all 0.2s ease-in;
+
+  .#{$iot-prefix}--gauge__loaded & {
+    stroke-dasharray: var(--stroke-dash) 188.1910858154297;
+  }
+}
+
+.#{$iot-prefix}--gauge-container {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
