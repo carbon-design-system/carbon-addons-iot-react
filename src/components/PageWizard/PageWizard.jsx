@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { ProgressIndicator, ProgressStep } from 'carbon-components-react';
+import classNames from 'classnames';
 
 import { settings } from '../../constants/Settings';
 
@@ -16,9 +17,9 @@ export const PageWizardPropTypes = {
   /** Id of current step */
   currentStepId: PropTypes.string,
   /** action when click next button called with no param */
-  onNext: PropTypes.func.isRequired,
+  onNext: PropTypes.func,
   /** action when click back button called with no param */
-  onBack: PropTypes.func.isRequired,
+  onBack: PropTypes.func,
   /** action if the inline wizard is closed or canceled */
   onClose: PropTypes.func.isRequired,
   /** action triggered if the inline wizard has submitted final step */
@@ -36,7 +37,7 @@ export const PageWizardPropTypes = {
     close: PropTypes.string,
   }),
   /** function to go to step when click ProgressIndicator step. */
-  setStep: PropTypes.func.isRequired,
+  setStep: PropTypes.func,
   /** next button disabled */
   nextDisabled: PropTypes.bool,
   /** show progress indicator on finish button */
@@ -66,6 +67,9 @@ export const defaultProps = {
   error: null,
   hasStickyFooter: false,
   isProgressIndicatorVertical: true,
+  onNext: null,
+  onBack: null,
+  setStep: null,
 };
 
 const PageWizard = ({
@@ -108,11 +112,11 @@ const PageWizard = ({
 
   return (
     <div
-      className={[
-        isProgressIndicatorVertical ? `${iotPrefix}--page-wizard` : '',
+      className={classNames(
+        isProgressIndicatorVertical ? `${iotPrefix}--page-wizard` : null,
         className,
-        hasStickyFooter ? `${iotPrefix}--page-wizard__sticky` : '',
-      ].join(' ')}
+        hasStickyFooter ? `${iotPrefix}--page-wizard__sticky` : null
+      )}
     >
       {steps.length > 1 ? (
         <div

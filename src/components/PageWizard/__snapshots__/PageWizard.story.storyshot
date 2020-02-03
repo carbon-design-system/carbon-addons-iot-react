@@ -41,7 +41,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageW
       >
         <div>
           <div
-            className="  "
+            className=""
           >
             <div
               className="iot--page-wizard--progress--horizontal"
@@ -380,7 +380,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageW
               className="page-title-bar-content"
             >
               <div
-                className="iot--page-wizard  iot--page-wizard__sticky"
+                className="iot--page-wizard iot--page-wizard__sticky"
               >
                 <div
                   className="iot--page-wizard--progress--vertical"
@@ -742,7 +742,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageW
               className="page-title-bar-content"
             >
               <div
-                className="iot--page-wizard  "
+                className="iot--page-wizard"
               >
                 <div
                   className="iot--page-wizard--content"
@@ -889,7 +889,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageW
       >
         <div>
           <div
-            className="iot--page-wizard  "
+            className="iot--page-wizard"
           >
             <div
               className="iot--page-wizard--progress--vertical"
@@ -1228,7 +1228,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageW
               className="page-title-bar-content"
             >
               <div
-                className="iot--page-wizard  "
+                className="iot--page-wizard"
               >
                 <div
                   className="iot--page-wizard--progress--vertical"
@@ -1482,7 +1482,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageW
       >
         <div>
           <div
-            className="iot--page-wizard  "
+            className="iot--page-wizard"
           >
             <div
               className="iot--page-wizard--progress--vertical"
@@ -1821,7 +1821,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageW
               className="page-title-bar-content"
             >
               <div
-                className="iot--page-wizard  "
+                className="iot--page-wizard"
               >
                 <div
                   className="iot--page-wizard--progress--vertical"

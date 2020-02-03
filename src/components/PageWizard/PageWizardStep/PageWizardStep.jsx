@@ -30,11 +30,11 @@ const PageWizardStepPropTypes = {
   /** Determines if Next or Submit button is rendered */
   hasNext: PropTypes.bool,
   /** Callback function when Next button is clicked */
-  onNext: PropTypes.func.isRequired,
+  onNext: PropTypes.func,
   /** Optionally determines if Next button is disabled */
   nextDisabled: PropTypes.bool,
   /** Callback function when Previous button is clicked */
-  onBack: PropTypes.func.isRequired,
+  onBack: PropTypes.func,
   /** Renders a loading icon in the Next button */
   sendingData: PropTypes.bool,
   /** Callback function when Submit button is clicked */
@@ -58,6 +58,8 @@ const PageWizardStepDefaultProps = {
   },
   hasPrev: false,
   hasNext: false,
+  onNext: null,
+  onBack: null,
 };
 
 const PageWizardStep = ({
@@ -107,7 +109,14 @@ const PageWizardStep = ({
         </Button>
       ) : null}
       {hasNext ? (
-        <Button onClick={() => onValidate() && onNext()} disabled={nextDisabled}>
+        <Button
+          onClick={() => {
+            if (onValidate()) {
+              if (onNext) onNext();
+            }
+          }}
+          disabled={nextDisabled}
+        >
           {i18n.next}
         </Button>
       ) : (
