@@ -31,6 +31,12 @@
     }
     th {
       background-color: $ui-01;
+      .#{$prefix}--table-sort {
+        background-color: $ui-01;
+        &:hover {
+          background-color: $ui-03;
+        }
+      }
     }
   }
 }
