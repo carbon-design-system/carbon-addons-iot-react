@@ -113,6 +113,8 @@ export const TableColumnsPropTypes = PropTypes.arrayOf(
           text: PropTypes.string.isRequired,
         })
       ),
+      /** should the filter use an exact match? by default this is false and does an includes search */
+      exactMatch: PropTypes.bool,
     }),
   })
 );

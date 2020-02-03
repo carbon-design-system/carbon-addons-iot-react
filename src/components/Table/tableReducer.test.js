@@ -324,6 +324,28 @@ describe('filter, search and sort', () => {
     expect(filterData(mockData, [numberFilter])).toHaveLength(1);
   });
 
+  test('filterData with exact comparison', () => {
+    const mockData = [{ values: { number: 10, string: 'string', null: null } }];
+    const stringFilter = { columnId: 'string', value: 'String' };
+    const numberFilter = { columnId: 'number', value: 10 };
+    expect(
+      filterData(mockData, [stringFilter], [{ id: 'string', filter: { exactMatch: true } }])
+    ).toHaveLength(0);
+    // partial
+    expect(
+      filterData(
+        mockData,
+        [{ columnId: 'string', value: 'str' }],
+        [{ id: 'string', filter: { exactMatch: true } }]
+      )
+    ).toHaveLength(0);
+    // case insensitive
+    expect(filterData(mockData, [stringFilter])).toHaveLength(1);
+    expect(
+      filterData(mockData, [numberFilter], [{ id: 'number', filter: { exactMatch: true } }])
+    ).toHaveLength(1);
+  });
+
   test('searchData', () => {
     const mockData = [{ values: { number: 10, string: 'string', null: null } }];
     expect(searchData(mockData, 10)).toHaveLength(1);
