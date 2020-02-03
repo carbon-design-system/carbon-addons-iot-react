@@ -32,7 +32,7 @@ const propTypes = {
   ),
   cards: PropTypes.arrayOf(
     PropTypes.shape({
-      content: PropTypes.object,
+      content: PropTypes.oneOfType([PropTypes.object, PropTypes.func]),
       values: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
       /** is the card actively loading, it will override the dashboard loading state if true */
       isLoading: PropTypes.bool,
