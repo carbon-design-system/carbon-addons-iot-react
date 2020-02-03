@@ -324,7 +324,7 @@ describe('filter, search and sort', () => {
     expect(filterData(mockData, [numberFilter])).toHaveLength(1);
   });
 
-  test('filterData with exact comparison', () => {
+  test('filterData with custom comparison', () => {
     const mockData = [{ values: { number: 10, string: 'string', null: null } }];
     const stringFilter = { columnId: 'string', value: 'String' };
     const numberFilter = { columnId: 'number', value: 10 };

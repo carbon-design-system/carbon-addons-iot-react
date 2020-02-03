@@ -28,18 +28,19 @@ import { baseTableReducer } from './baseTableReducer';
 
 /**
  * Default function to compare value 1 and 2
- * @param {*} value1, stringable value
- * @param {*} value2, stringable value
- * returns true if value1 contains value2
+ * @param {*} value1, filter value
+ * @param {*} value2, actual
+ * returns true if value1 contains value2 for strings, and true if value1 === value2 for numbers
  */
 export const defaultComparison = (value1, value2) =>
-  !isNil(value1) && // only if the values is not null/undefined
-  value1 &&
-  value1.toString &&
-  value1
-    .toString()
-    .toLowerCase()
-    .includes(value2.toString().toLowerCase());
+  !isNil(value1) && typeof value1 === 'number' // only if the column value filter is not null/undefined
+    ? value1 === value2 // type number do a direct comparison
+    : value1 && // type string do a lowercase includes comparison
+      value1.toString &&
+      value1
+        .toString()
+        .toLowerCase()
+        .includes(value2.toString().toLowerCase());
 
 /**
  * Little utility to filter data
@@ -52,7 +53,6 @@ export const filterData = (data, filters, columns) => {
     ? data
     : data.filter(({ values }) =>
         // return false if a value doesn't match a valid filter
-        // TODO Currently assumes every value has a toString method, need to support filtering on custom cell contents
         filters.reduce((acc, { columnId, value }) => {
           if (!isNil(columns)) {
             const { filter } = find(columns, { id: columnId }) || {};
