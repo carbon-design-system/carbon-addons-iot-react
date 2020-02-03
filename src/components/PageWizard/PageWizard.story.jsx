@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { boolean } from '@storybook/addon-knobs';
+import { boolean, text } from '@storybook/addon-knobs';
 import { Form, FormGroup, FormItem, Link, TextInput } from 'carbon-components-react';
 
 import PageTitleBar from '../PageTitleBar/PageTitleBar';
@@ -159,9 +159,9 @@ export const StepValidation = ({ ...props }) => {
   );
 };
 
-storiesOf('Watson IoT Experimental|PageWizard', module)
+storiesOf('Watson IoT|PageWizard', module)
   .add('stateful example', () => (
-    <div style={{ position: 'fixed', left: 0, right: 0, top: 0, bottom: 0, padding: '2rem' }}>
+    <div>
       <StatefulPageWizard
         onClearError={() => {}}
         onClose={() => {}}
@@ -175,7 +175,7 @@ storiesOf('Watson IoT Experimental|PageWizard', module)
     </div>
   ))
   .add('stateful example w/ validation in PageTitleBar', () => (
-    <div style={{ position: 'fixed', left: 0, right: 0, top: 0, bottom: 0 }}>
+    <div>
       <PageTitleBar
         title="A cool PageWizard!"
         description="The description from the PageTitleBar"
@@ -201,7 +201,7 @@ storiesOf('Watson IoT Experimental|PageWizard', module)
     </div>
   ))
   .add('wrapped in PageTitleBar', () => (
-    <div style={{ position: 'fixed', left: 0, right: 0, top: 0, bottom: 0 }}>
+    <div>
       <PageTitleBar
         title="A cool PageWizard!"
         description="The description from the PageTitleBar"
@@ -227,8 +227,8 @@ storiesOf('Watson IoT Experimental|PageWizard', module)
       />
     </div>
   ))
-  .add('horizontal progress indicator', () => (
-    <div style={{ position: 'fixed', left: 0, right: 0, top: 0, bottom: 0 }}>
+  .add('With Horizontal ProgressIndicator', () => (
+    <div>
       <PageWizard
         currentStepId="step1"
         onClose={action('closed', () => {})}
@@ -244,7 +244,7 @@ storiesOf('Watson IoT Experimental|PageWizard', module)
     </div>
   ))
   .add('only one step, in PageTitleBar', () => (
-    <div style={{ position: 'fixed', left: 0, right: 0, top: 0, bottom: 0 }}>
+    <div>
       <PageTitleBar
         title="A cool PageWizard!"
         description="The description from the PageTitleBar"
@@ -272,7 +272,7 @@ storiesOf('Watson IoT Experimental|PageWizard', module)
     </div>
   ))
   .add('With Sticky Footer: stateful example w/ validation in PageTitleBar', () => (
-    <div style={{ position: 'fixed', left: 0, right: 0, top: 0, bottom: 0 }}>
+    <div>
       <PageTitleBar
         title="A cool PageWizard!"
         description="The description from the PageTitleBar"
@@ -300,4 +300,27 @@ storiesOf('Watson IoT Experimental|PageWizard', module)
     </div>
   ))
 
-  .add('w/ i18n', () => <div>TODO</div>);
+  .add('w/ i18n', () => (
+    <div>
+      <PageWizard
+        currentStepId="step1"
+        onClose={action('closed', () => {})}
+        onSubmit={action('submit', () => {})}
+        onNext={action('next', () => {})}
+        onBack={action('back', () => {})}
+        onClearError={() => {}}
+        setStep={action('step clicked', () => {})}
+        sendingData={boolean('sendingData', false)}
+        hasStickyFooter={boolean('hasStickyFooter', false)}
+        i18={{
+          close: text('Close label', 'Close'),
+          cancel: text('Cancel label', 'Cancel'),
+          back: text('Back label', 'Back'),
+          next: text('Next label', 'Next'),
+          submit: text('Submit label', 'Submit'),
+        }}
+      >
+        {content}
+      </PageWizard>
+    </div>
+  ));
