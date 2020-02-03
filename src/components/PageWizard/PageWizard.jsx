@@ -16,13 +16,13 @@ export const PageWizardPropTypes = {
   /** Id of current step */
   currentStepId: PropTypes.string,
   /** action when click next button called with no param */
-  onNext: PropTypes.func,
+  onNext: PropTypes.func.isRequired,
   /** action when click back button called with no param */
-  onBack: PropTypes.func,
+  onBack: PropTypes.func.isRequired,
   /** action if the inline wizard is closed or canceled */
-  onClose: PropTypes.func,
+  onClose: PropTypes.func.isRequired,
   /** action triggered if the inline wizard has submitted final step */
-  onSubmit: PropTypes.func,
+  onSubmit: PropTypes.func.isRequired,
   i18n: PropTypes.shape({
     /** label to show on the cancel button */
     cancel: PropTypes.string,
@@ -36,7 +36,7 @@ export const PageWizardPropTypes = {
     close: PropTypes.string,
   }),
   /** function to go to step when click ProgressIndicator step. */
-  setStep: PropTypes.func,
+  setStep: PropTypes.func.isRequired,
   /** next button disabled */
   nextDisabled: PropTypes.bool,
   /** show progress indicator on finish button */
@@ -55,11 +55,6 @@ export const defaultProps = {
   children: [],
   nextDisabled: false,
   currentStepId: null,
-  onNext: () => {},
-  onBack: () => {},
-  setStep: () => {},
-  onClose: () => {},
-  onSubmit: () => {},
   i18n: {
     back: 'Back',
     next: 'Next',
@@ -132,8 +127,8 @@ const PageWizard = ({
             currentIndex={currentStepIdx}
             onChange={idx => setStep(steps[idx].id)}
           >
-            {steps.map((i, idx) => (
-              <ProgressStep key={idx} description={i.description} label={i.label} />
+            {steps.map((step, idx) => (
+              <ProgressStep key={idx} description={step.description} label={step.label} />
             ))}
           </ProgressIndicator>
         </div>

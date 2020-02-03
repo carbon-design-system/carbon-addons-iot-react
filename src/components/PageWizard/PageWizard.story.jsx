@@ -19,6 +19,7 @@ export const content = [
   <PageWizardStep
     id="step1"
     label="Step 1"
+    key="step1"
     onClose={() => {}}
     onSubmit={() => {}}
     onNext={() => {}}
@@ -49,6 +50,7 @@ export const content = [
   </PageWizardStep>,
   <PageWizardStep
     id="step2"
+    key="step2"
     label="Step 2"
     onClose={() => {}}
     onSubmit={() => {}}
@@ -88,6 +90,7 @@ export const content = [
   </PageWizardStep>,
   <PageWizardStep
     id="step3"
+    key="step3"
     label="Step 3"
     onClose={() => {}}
     onSubmit={() => {}}
@@ -159,7 +162,16 @@ export const StepValidation = ({ ...props }) => {
 storiesOf('Watson IoT Experimental|PageWizard', module)
   .add('stateful example', () => (
     <div style={{ position: 'fixed', left: 0, right: 0, top: 0, bottom: 0, padding: '2rem' }}>
-      <StatefulPageWizard>{content}</StatefulPageWizard>
+      <StatefulPageWizard
+        onClearError={() => {}}
+        onClose={() => {}}
+        onSubmit={() => {}}
+        onNext={() => {}}
+        onBack={() => {}}
+        setStep={() => {}}
+      >
+        {content}
+      </StatefulPageWizard>
     </div>
   ))
   .add('stateful example w/ validation in PageTitleBar', () => (
@@ -173,7 +185,14 @@ storiesOf('Watson IoT Experimental|PageWizard', module)
           <Link to="www.ibm.com">Something Else</Link>,
         ]}
         content={
-          <StatefulPageWizard>
+          <StatefulPageWizard
+            onClearError={() => {}}
+            onClose={() => {}}
+            onSubmit={() => {}}
+            onNext={() => {}}
+            onBack={() => {}}
+            setStep={() => {}}
+          >
             <StepValidation id="step1" label="Step with validation" />
             {content[1]}
           </StatefulPageWizard>
@@ -196,6 +215,7 @@ storiesOf('Watson IoT Experimental|PageWizard', module)
             currentStepId="step1"
             onClose={action('closed', () => {})}
             onSubmit={action('submit', () => {})}
+            onClearError={action('Clear error', () => {})}
             onNext={action('next', () => {})}
             onBack={action('back', () => {})}
             setStep={action('step clicked', () => {})}
@@ -216,6 +236,7 @@ storiesOf('Watson IoT Experimental|PageWizard', module)
         onNext={action('next', () => {})}
         onBack={action('back', () => {})}
         setStep={action('step clicked', () => {})}
+        onClearError={action('Clear error', () => {})}
         isProgressIndicatorVertical={boolean('Toggle Progress Indicator Alignment', false)}
       >
         {content}
@@ -239,6 +260,7 @@ storiesOf('Watson IoT Experimental|PageWizard', module)
             onSubmit={action('submit', () => {})}
             onNext={action('next', () => {})}
             onBack={action('back', () => {})}
+            onClearError={() => {}}
             setStep={action('step clicked', () => {})}
             sendingData={boolean('sendingData', false)}
             hasStickyFooter={boolean('hasStickyFooter', false)}
@@ -259,10 +281,16 @@ storiesOf('Watson IoT Experimental|PageWizard', module)
           <Link to="www.ibm.com">Something</Link>,
           <Link to="www.ibm.com">Something Else</Link>,
         ]}
-        tabs={
+        content={
           <StatefulPageWizard
             hasStickyFooter={boolean('hasStickyFooter', true)}
             isProgressIndicatorVertical={boolean('Toggle Progress Indicator Alignment', true)}
+            onClearError={() => {}}
+            onClose={() => {}}
+            onSubmit={() => {}}
+            onNext={() => {}}
+            onBack={() => {}}
+            setStep={() => {}}
           >
             <StepValidation id="step1" label="Step with validation" />
             {content[1]}

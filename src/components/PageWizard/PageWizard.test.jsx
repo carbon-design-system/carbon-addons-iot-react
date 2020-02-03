@@ -1,6 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { render, fireEvent } from '@testing-library/react';
+import { ProgressIndicator } from 'carbon-components-react';
 
 import PageWizard from './PageWizard';
 import { content, StepValidation } from './PageWizard.story';
@@ -26,10 +27,12 @@ describe('PageWizard tests', () => {
     expect(mocks.onClearError).toHaveBeenCalledTimes(1);
     expect(queryByText('My Custom Error')).toBeNull();
   });
+
   test('currentStepId prop', () => {
     const wrapper = shallow(<PageWizard currentStepId="step1">{content}</PageWizard>);
     expect(wrapper.find('PageWizardStep').prop('id')).toEqual('step1');
   });
+
   test('button events during first step (no validation)', () => {
     const mocks = {
       onNext: jest.fn(),
@@ -101,7 +104,7 @@ describe('PageWizard tests', () => {
       cancel: 'Cancel',
     };
     const { getByTestId, getByText } = render(
-      <PageWizard currentStepId="step1" {...mocks} i18n={i18n}>
+      <PageWizard currentStepId="step1" {...mocks} i18n={i18n} isProgressIndicatorVertical={false}>
         <StepValidation id="step1" label="Step with validation" />
         {content[1]}
         {content[2]}
@@ -116,5 +119,10 @@ describe('PageWizard tests', () => {
     fireEvent.change(getByTestId('last-name'), { target: { value: 'Last Name' } });
     fireEvent.click(getByText(i18n.next));
     expect(mocks.onNext).toHaveBeenCalledTimes(1);
+  });
+
+  test('progress indicator should not render if there is only 1 step', () => {
+    const wrapper = shallow(<PageWizard currentStepId="step1">{content[0]}</PageWizard>);
+    expect(wrapper.find(ProgressIndicator)).toHaveLength(0);
   });
 });
