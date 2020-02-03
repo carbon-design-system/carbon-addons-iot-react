@@ -1,4 +1,5 @@
 import every from 'lodash/every';
+import keyBy from 'lodash/keyBy';
 
 import {
   generateSampleValues,
@@ -127,13 +128,12 @@ describe('timeSeriesUtils', () => {
     };
     const alertRange = [
       {
-        startTimestamp: 1573073950,
-        endTimestamp: 1573073951,
+        timestamp: 1573073951,
         color: '#FF0000',
         details: 'Alert details',
       },
     ];
-    const matchingAlertRange = findMatchingAlertRange(alertRange, data);
+    const matchingAlertRange = findMatchingAlertRange(keyBy(alertRange, 'timestamp'), data);
     expect(matchingAlertRange.color).toEqual('#FF0000');
     expect(matchingAlertRange.details).toEqual('Alert details');
   });

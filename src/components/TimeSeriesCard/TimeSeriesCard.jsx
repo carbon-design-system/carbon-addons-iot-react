@@ -7,6 +7,7 @@ import '@carbon/charts/dist/styles.css';
 import styled from 'styled-components';
 import isNil from 'lodash/isNil';
 import omit from 'lodash/omit';
+import keyBy from 'lodash/keyBy';
 import memoize from 'lodash/memoize';
 import capitalize from 'lodash/capitalize';
 import useDeepCompareEffect from 'use-deep-compare-effect';
@@ -179,7 +180,14 @@ export const handleTooltip = (dataOrHoveredElement, defaultTooltip, alertRanges,
 
 const TimeSeriesCard = ({
   title,
-  content: { series, timeDataSourceId = 'timestamp', alertRanges, xLabel, yLabel, unit },
+  content: {
+    series,
+    timeDataSourceId = 'timestamp',
+    alertRanges: alertRangesProp,
+    xLabel,
+    yLabel,
+    unit,
+  },
   size,
   interval,
   isEditable,
@@ -194,6 +202,14 @@ const TimeSeriesCard = ({
   let chartRef = useRef();
   const previousTick = useRef();
   moment.locale(locale);
+
+  // Need to memoize these into a map for performance reasons.  This will have memory scalability issues if we get more than a certain number of alert points on a map
+  const alertRanges = useMemo(
+    () => {
+      return keyBy(alertRangesProp, 'timestamp');
+    },
+    [alertRangesProp]
+  );
 
   const values = isEditable
     ? memoizedGenerateSampleValues(series, timeDataSourceId, interval)

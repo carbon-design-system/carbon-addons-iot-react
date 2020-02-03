@@ -1018,14 +1018,12 @@ storiesOf('Watson IoT|TimeSeriesCard', module)
             timeDataSourceId: 'timestamp',
             alertRanges: [
               {
-                startTimestamp: 1572313622000,
-                endTimestamp: 1572486422000,
+                timestamp: 1564267120000,
                 color: '#FF0000',
                 details: 'Alert name',
               },
               {
-                startTimestamp: 1572804320000,
-                endTimestamp: 1572824320000,
+                timestamp: 1564353520000,
                 color: '#FFFF00',
                 details: 'Less severe',
               },
