@@ -328,21 +328,31 @@ describe('filter, search and sort', () => {
     const mockData = [{ values: { number: 10, string: 'string', null: null } }];
     const stringFilter = { columnId: 'string', value: 'String' };
     const numberFilter = { columnId: 'number', value: 10 };
+
+    const customFilterFunction = (columnFilterValue, value) => columnFilterValue === value;
     expect(
-      filterData(mockData, [stringFilter], [{ id: 'string', filter: { exactMatch: true } }])
+      filterData(
+        mockData,
+        [stringFilter],
+        [{ id: 'string', filter: { filterFunction: customFilterFunction } }]
+      )
     ).toHaveLength(0);
     // partial
     expect(
       filterData(
         mockData,
         [{ columnId: 'string', value: 'str' }],
-        [{ id: 'string', filter: { exactMatch: true } }]
+        [{ id: 'string', filter: { filterFunction: customFilterFunction } }]
       )
     ).toHaveLength(0);
     // case insensitive
     expect(filterData(mockData, [stringFilter])).toHaveLength(1);
     expect(
-      filterData(mockData, [numberFilter], [{ id: 'number', filter: { exactMatch: true } }])
+      filterData(
+        mockData,
+        [numberFilter],
+        [{ id: 'number', filter: { filterFunction: customFilterFunction } }]
+      )
     ).toHaveLength(1);
   });
 

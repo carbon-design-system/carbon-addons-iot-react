@@ -56,10 +56,12 @@ export const filterData = (data, filters, columns) => {
         filters.reduce((acc, { columnId, value }) => {
           if (!isNil(columns)) {
             const { filter } = find(columns, { id: columnId }) || {};
-            const exactMatch = filter?.exactMatch;
+            const filterFunction = filter?.filterFunction;
             return (
               acc &&
-              (exactMatch ? values[columnId] === value : defaultComparison(values[columnId], value))
+              (filterFunction
+                ? filterFunction(values[columnId], value)
+                : defaultComparison(values[columnId], value))
             );
           }
           return acc && defaultComparison(values[columnId], value);
