@@ -1,0 +1,10 @@
+@import '~carbon-components/scss/globals/scss/vars';
+@import 'TableHead/table-head';
+
+.addons-iot-table-container {
+  overflow-x: auto;
+}
+
+table.#{$prefix}--side-nav--data-table {
+  white-space: nowrap;
+}

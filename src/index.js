@@ -7,18 +7,19 @@ sizeMe.noPlaceholders = true;
 export styles from './styles.scss';
 
 // Components
-export Button from './components/Button';
-export Table from './components/Table';
 export AddCard from './components/AddCard';
+export Button from './components/Button';
+export Breadcrumb, { BreadcrumbItem, BreadcrumbSkeleton } from './components/Breadcrumb';
 export ComposedModal from './components/ComposedModal';
+export EmptyTable from './components/Table/EmptyTable/EmptyTable';
+export Table from './components/Table';
+export TableHead from './components/Table/TableHead/TableHead';
+export TableBody from './components/Table/TableBody/TableBody';
+export TableSkeletonWithHeaders from './components/Table/TableSkeletonWithHeaders/TableSkeletonWithHeaders';
+export TableToolbar from './components/Table/TableToolbar/TableToolbar';
 export WizardModal from './components/WizardModal';
 export WizardInline from './components/WizardInline/WizardInline';
 export StatefulWizardInline from './components/WizardInline/StatefulWizardInline';
-export TableHead from './components/Table/TableHead/TableHead';
-export TableBody from './components/Table/TableBody/TableBody';
-export TableToolbar from './components/Table/TableToolbar/TableToolbar';
-export EmptyTable from './components/Table/EmptyTable/EmptyTable';
-export TableSkeletonWithHeaders from './components/Table/TableSkeletonWithHeaders/TableSkeletonWithHeaders';
 export StatefulTable from './components/Table/StatefulTable';
 export TileCatalog from './components/TileCatalog/TileCatalog';
 export StatefulTileCatalog from './components/TileCatalog/StatefulTileCatalog';
@@ -39,6 +40,7 @@ export * as tableActions from './components/Table/tableActionCreators';
 // Page related helpers
 export PageHero from './components/Page/PageHero';
 export PageWorkArea from './components/Page/PageWorkArea';
+export EditPage from './components/Page/EditPage';
 export NavigationBar from './components/NavigationBar/NavigationBar';
 export Header from './components/Header';
 export SideNav from './components/SideNav';
@@ -56,6 +58,7 @@ export {
   CARD_SIZES,
   DASHBOARD_BREAKPOINTS,
   DASHBOARD_SIZES,
+  TIME_SERIES_TYPES,
 } from './constants/LayoutConstants';
 
 // Experimental
@@ -70,12 +73,22 @@ export {
 } from './components/PageWizard/PageWizard';
 export StatefulPageWizard from './components/PageWizard/StatefulPageWizard';
 
+export TileGallery from './components/TileGallery/TileGallery';
+
+export TileGallerySection from './components/TileGallery/TileGallerySection';
+
+export TileGalleryItem from './components/TileGallery/TileGalleryItem';
+
+export TileGalleryViewSwitcher from './components/TileGallery/TileGalleryViewSwitcher';
+
+export TileGallerySearch from './components/TileGallery/TileGallerySearch';
+
+export StatefulTileGallery from './components/TileGallery/StatefulTileGallery';
+
 // Carbon proxy
 export {
   Accordion,
   AccordionItem,
-  Breadcrumb,
-  BreadcrumbItem,
   Checkbox,
   CodeSnippet,
   ComboBox,
@@ -108,6 +121,7 @@ export {
   // TableToolbarContent,
   // TableToolbarSearch,
   // TableToolbarMenu,
+  DataTable,
   DatePicker,
   DatePickerInput,
   Dropdown,
@@ -191,7 +205,6 @@ export {
   SkeletonPlaceholder,
   DataTableSkeleton,
   AccordionSkeleton,
-  BreadcrumbSkeleton,
   ButtonSkeleton,
   CheckboxSkeleton,
   CodeSnippetSkeleton,
@@ -246,10 +259,11 @@ export {
   SideNavMenuItem,
   SideNavSwitcher,
 } from 'carbon-components-react';
-export { validateDashboardJSON } from './utils/schemas/validators';
 
 export {
   determineCardRange,
   determineMaxValueCardAttributeCount,
   compareGrains,
 } from './utils/cardUtilityFunctions';
+
+export { csvDownloadHandler } from './utils/componentUtilityFunctions';

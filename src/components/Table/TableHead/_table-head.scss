@@ -1,0 +1,21 @@
+@import '~carbon-components/scss/globals/scss/vars';
+@import '~carbon-components/scss/globals/scss/layout';
+
+.#{$prefix}--data-table {
+  .#{$prefix}--table-header-label {
+    display: flex;
+  }
+
+  .column-header__btn {
+    margin: 0 $spacing-05 $spacing-05 0;
+    max-height: $spacing-07;
+  }
+
+  .column-header__select {
+    opacity: 1;
+  }
+
+  .column-header__select--hidden {
+    opacity: 0.5;
+  }
+}

@@ -132,7 +132,7 @@ const TileCatalog = ({
       <StyledCatalogHeader>
         {search && search.placeHolderText ? (
           <TableToolbarSearch
-            small
+            size="sm"
             value={searchState}
             labelText={search.placeHolderText}
             placeHolderText={search.placeHolderText}

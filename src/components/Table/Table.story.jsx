@@ -6,7 +6,7 @@ import { boolean, text, number, select, array } from '@storybook/addon-knobs';
 import styled from 'styled-components';
 import Arrow from '@carbon/icons-react/lib/arrow--right/20';
 import Add from '@carbon/icons-react/lib/add/20';
-import Delete from '@carbon/icons-react/lib/delete/16';
+import Delete from '@carbon/icons-react/lib/delete/20';
 
 import { getSortedData, csvDownloadHandler } from '../../utils/componentUtilityFunctions';
 import FullWidthWrapper from '../../internal/FullWidthWrapper';
@@ -60,16 +60,40 @@ const renderStatusIcon = ({ value: status }) => {
       );
   }
 };
+// Example custom sort method for the status field.  Will sort the broken to the top, then the running, then the not_running
+const customColumnSort = ({ data, columnId, direction }) => {
+  // clone inputData because sort mutates the array
+  const sortedData = data.map(i => i);
+  sortedData.sort((a, b) => {
+    let compare = -1;
+    // same status
+    if (a.values[columnId] === b.values[columnId]) {
+      compare = 0;
+    } else if (a.values[columnId] === STATUS.RUNNING && b.values[columnId] === STATUS.NOT_RUNNING) {
+      compare = -1;
+    } else if (a.values[columnId] === STATUS.NOT_RUNNING && b.values[columnId] === STATUS.RUNNING) {
+      compare = 1;
+    } else if (b.values[columnId] === STATUS.BROKEN) {
+      compare = 1;
+    } else if (a.values[columnId] === STATUS.BROKEN) {
+      compare = -1;
+    }
+
+    return direction === 'ASC' ? compare : -compare;
+  });
+  return sortedData;
+};
+
 export const tableColumns = [
   {
     id: 'string',
     name: 'String',
-    filter: { placeholderText: 'pick a string' },
+    filter: { placeholderText: 'enter a string' },
   },
   {
     id: 'date',
     name: 'Date',
-    filter: { placeholderText: 'pick a date' },
+    filter: { placeholderText: 'enter a date' },
   },
   {
     id: 'select',
@@ -84,11 +108,12 @@ export const tableColumns = [
     id: 'status',
     name: 'Status',
     renderDataFunction: renderStatusIcon,
+    sortFunction: customColumnSort,
   },
   {
     id: 'number',
     name: 'Number',
-    filter: { placeholderText: 'pick a number' },
+    filter: { placeholderText: 'enter a number' },
   },
   {
     id: 'boolean',
@@ -101,14 +126,14 @@ export const tableColumnsWithAlignment = [
   {
     id: 'string',
     name: 'String',
-    filter: { placeholderText: 'pick a string' },
+    filter: { placeholderText: 'enter a string' },
     align: 'start',
     isSortable: true,
   },
   {
     id: 'date',
     name: 'Date',
-    filter: { placeholderText: 'pick a date' },
+    filter: { placeholderText: 'enter a date' },
     align: 'center',
     isSortable: true,
   },
@@ -132,7 +157,7 @@ export const tableColumnsWithAlignment = [
   {
     id: 'number',
     name: 'Number',
-    filter: { placeholderText: 'pick a number' },
+    filter: { placeholderText: 'enter a number' },
     align: 'end',
     isSortable: true,
   },
@@ -290,6 +315,7 @@ const actions = {
     onApplyRowAction: action('onApplyRowAction'),
     onRowExpanded: action('onRowExpanded'),
     onChangeOrdering: action('onChangeOrdering'),
+    onColumnSelectionConfig: action('onColumnSelectionConfig'),
     onChangeSort: action('onChangeSort'),
   },
 };
@@ -440,24 +466,20 @@ storiesOf('Watson IoT|Table', module)
       },
     }
   )
-  .add('Stateful Example with Row Count', () => (
+  .add('Stateful Example with Secondary Title', () => (
     <FullWidthWrapper>
       <StatefulTable
         {...initialState}
+        secondaryTitle={text('Secondary Title', `Row count: ${initialState.data.length}`)}
         options={{
           hasSearch: boolean('Show Search', true),
           hasPagination: boolean('Show Pagination', true),
           hasRowSelection: 'multi',
           hasFilter: boolean('Show Filter', true),
           hasRowActions: boolean('Show Row Action', true),
-          hasRowCountInHeader: boolean('Show Row Count', true),
         }}
         view={{
           toolbar: { activeBar: null },
-        }}
-        i18n={{
-          rowCountInHeader: totalRowCount =>
-            `${text('Row Count Label', 'Results')}: ${totalRowCount}`,
         }}
       />
     </FullWidthWrapper>
@@ -707,7 +729,7 @@ storiesOf('Watson IoT|Table', module)
     }
   )
   .add('with multi select and batch actions', () => (
-    <Table
+    <StatefulTable
       columns={tableColumns}
       data={tableData}
       actions={actions}
@@ -1109,7 +1131,7 @@ storiesOf('Watson IoT|Table', module)
       />
     );
   })
-  .add('with customized columns', () => (
+  .add('with column selection', () => (
     <Table
       columns={tableColumns}
       data={tableData}
@@ -1118,6 +1140,7 @@ storiesOf('Watson IoT|Table', module)
         hasPagination: true,
         hasRowSelection: 'multi',
         hasColumnSelection: true,
+        hasColumnSelectionConfig: boolean('hasColumnSelectionConfig', true),
       }}
       view={{
         toolbar: {
@@ -1127,6 +1150,7 @@ storiesOf('Watson IoT|Table', module)
           ordering: defaultOrdering,
         },
       }}
+      i18n={{ columnSelectionConfig: text('i18n.columnSelectionConfig', '__Manage columns__') }}
     />
   ))
   .add('with no results', () => (

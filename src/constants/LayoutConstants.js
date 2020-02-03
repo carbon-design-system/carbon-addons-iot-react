@@ -148,3 +148,8 @@ export const CARD_LAYOUTS = {
 
 export const CARD_TITLE_HEIGHT = 48;
 export const CARD_CONTENT_PADDING = 16;
+
+export const TIME_SERIES_TYPES = {
+  BAR: 'BAR',
+  LINE: 'LINE',
+};

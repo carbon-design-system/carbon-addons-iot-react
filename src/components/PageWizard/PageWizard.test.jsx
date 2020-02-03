@@ -6,11 +6,30 @@ import { PageWizard } from './PageWizard';
 import { content, StepValidation } from './PageWizard.story';
 
 describe('PageWizard tests', () => {
+  test('error states', () => {
+    const i18n = {
+      close: 'Close',
+    };
+    const mocks = {
+      onClearError: jest.fn(),
+    };
+    const { getByText, queryByText, getAllByTitle } = render(
+      <PageWizard error="My Custom Error" currentStepId="step1" {...mocks} i18n={i18n}>
+        {content}
+      </PageWizard>
+    );
+    // The error should show
+    expect(getByText('My Custom Error')).toBeDefined();
+    // The first close is the SVG
+    fireEvent.click(getAllByTitle(i18n.close)[1]);
+    // The error should go away
+    expect(mocks.onClearError).toHaveBeenCalledTimes(1);
+    expect(queryByText('My Custom Error')).toBeNull();
+  });
   test('currentStepId prop', () => {
     const wrapper = shallow(<PageWizard currentStepId="step1">{content}</PageWizard>);
     expect(wrapper.find('PageWizardStep').prop('id')).toEqual('step1');
   });
-
   test('button events during first step (no validation)', () => {
     const mocks = {
       onNext: jest.fn(),

@@ -2,234 +2,297 @@
 
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Button loading 1`] = `
 <div
-  className="storybook-container"
   style={
     Object {
       "alignItems": "center",
+      "bottom": "0",
       "display": "flex",
-      "flexDirection": "column",
-      "padding": "3rem",
+      "left": "0",
+      "overflow": "auto",
+      "position": "fixed",
+      "right": "0",
+      "top": "0",
     }
   }
 >
   <div
     style={
       Object {
-        "position": "relative",
-        "zIndex": 0,
+        "margin": "auto",
+        "maxHeight": "100%",
       }
     }
   >
-    <button
-      className="Button__StyledButton-sc-19kycwu-0 PhzAJ bx--btn bx--btn--primary bx--btn--disabled"
-      disabled={true}
-      onClick={[Function]}
-      tabIndex={0}
-      type="button"
+    <div
+      className="storybook-container"
+      style={
+        Object {
+          "padding": "3rem",
+        }
+      }
     >
       <div
-        aria-atomic="true"
-        aria-labelledby="loading-id-1"
-        aria-live="assertive"
-        className="bx--loading bx--loading--small"
+        style={
+          Object {
+            "position": "relative",
+            "zIndex": 0,
+          }
+        }
       >
-        <label
-          className="bx--visually-hidden"
-          id="loading-id-1"
+        <button
+          className="iot--btn bx--btn bx--btn--primary bx--btn--disabled"
+          disabled={true}
+          onClick={[Function]}
+          tabIndex={0}
+          type="button"
         >
-          Active loading indicator
-        </label>
-        <svg
-          className="bx--loading__svg"
-          viewBox="-75 -75 150 150"
-        >
-          <title>
-            Active loading indicator
-          </title>
-          <circle
-            className="bx--loading__background"
-            cx="0"
-            cy="0"
-            r="26.8125"
-          />
-          <circle
-            className="bx--loading__stroke"
-            cx="0"
-            cy="0"
-            r="26.8125"
-          />
-        </svg>
+          <div
+            aria-atomic="true"
+            aria-labelledby="loading-id-1"
+            aria-live="assertive"
+            className="bx--loading bx--loading--small"
+          >
+            <label
+              className="bx--visually-hidden"
+              id="loading-id-1"
+            >
+              Active loading indicator
+            </label>
+            <svg
+              className="bx--loading__svg"
+              viewBox="-75 -75 150 150"
+            >
+              <title>
+                Active loading indicator
+              </title>
+              <circle
+                className="bx--loading__background"
+                cx="0"
+                cy="0"
+                r="26.8125"
+              />
+              <circle
+                className="bx--loading__stroke"
+                cx="0"
+                cy="0"
+                r="26.8125"
+              />
+            </svg>
+          </div>
+          Test Button
+        </button>
       </div>
-      Test Button
-    </button>
+      <button
+        className="info__show-button"
+        onClick={[Function]}
+        style={
+          Object {
+            "background": "#027ac5",
+            "border": "none",
+            "borderRadius": "0 0 0 5px",
+            "color": "#fff",
+            "cursor": "pointer",
+            "display": "block",
+            "fontFamily": "sans-serif",
+            "fontSize": "12px",
+            "padding": "5px 15px",
+            "position": "fixed",
+            "right": 0,
+            "top": 0,
+          }
+        }
+        type="button"
+      >
+        Show Info
+      </button>
+    </div>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": "12px",
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
 </div>
 `;
 
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Button loading with secondary 1`] = `
 <div
-  className="storybook-container"
   style={
     Object {
       "alignItems": "center",
+      "bottom": "0",
       "display": "flex",
-      "flexDirection": "column",
-      "padding": "3rem",
+      "left": "0",
+      "overflow": "auto",
+      "position": "fixed",
+      "right": "0",
+      "top": "0",
     }
   }
 >
   <div
     style={
       Object {
-        "position": "relative",
-        "zIndex": 0,
+        "margin": "auto",
+        "maxHeight": "100%",
       }
     }
   >
-    <button
-      className="Button__StyledButton-sc-19kycwu-0 PhzAJ bx--btn bx--btn--secondary bx--btn--disabled"
-      disabled={true}
-      onClick={[Function]}
-      tabIndex={0}
-      type="button"
+    <div
+      className="storybook-container"
+      style={
+        Object {
+          "padding": "3rem",
+        }
+      }
     >
       <div
-        aria-atomic="true"
-        aria-labelledby="loading-id-2"
-        aria-live="assertive"
-        className="bx--loading bx--loading--small"
+        style={
+          Object {
+            "position": "relative",
+            "zIndex": 0,
+          }
+        }
       >
-        <label
-          className="bx--visually-hidden"
-          id="loading-id-2"
+        <button
+          className="iot--btn bx--btn bx--btn--secondary bx--btn--disabled"
+          disabled={true}
+          onClick={[Function]}
+          tabIndex={0}
+          type="button"
         >
-          Active loading indicator
-        </label>
-        <svg
-          className="bx--loading__svg"
-          viewBox="-75 -75 150 150"
-        >
-          <title>
-            Active loading indicator
-          </title>
-          <circle
-            className="bx--loading__background"
-            cx="0"
-            cy="0"
-            r="26.8125"
-          />
-          <circle
-            className="bx--loading__stroke"
-            cx="0"
-            cy="0"
-            r="26.8125"
-          />
-        </svg>
+          <div
+            aria-atomic="true"
+            aria-labelledby="loading-id-2"
+            aria-live="assertive"
+            className="bx--loading bx--loading--small"
+          >
+            <label
+              className="bx--visually-hidden"
+              id="loading-id-2"
+            >
+              Active loading indicator
+            </label>
+            <svg
+              className="bx--loading__svg"
+              viewBox="-75 -75 150 150"
+            >
+              <title>
+                Active loading indicator
+              </title>
+              <circle
+                className="bx--loading__background"
+                cx="0"
+                cy="0"
+                r="26.8125"
+              />
+              <circle
+                className="bx--loading__stroke"
+                cx="0"
+                cy="0"
+                r="26.8125"
+              />
+            </svg>
+          </div>
+          Test Button
+        </button>
       </div>
-      Test Button
-    </button>
+      <button
+        className="info__show-button"
+        onClick={[Function]}
+        style={
+          Object {
+            "background": "#027ac5",
+            "border": "none",
+            "borderRadius": "0 0 0 5px",
+            "color": "#fff",
+            "cursor": "pointer",
+            "display": "block",
+            "fontFamily": "sans-serif",
+            "fontSize": "12px",
+            "padding": "5px 15px",
+            "position": "fixed",
+            "right": 0,
+            "top": 0,
+          }
+        }
+        type="button"
+      >
+        Show Info
+      </button>
+    </div>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": "12px",
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
 </div>
 `;
 
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Button not loading 1`] = `
 <div
-  className="storybook-container"
   style={
     Object {
       "alignItems": "center",
+      "bottom": "0",
       "display": "flex",
-      "flexDirection": "column",
-      "padding": "3rem",
+      "left": "0",
+      "overflow": "auto",
+      "position": "fixed",
+      "right": "0",
+      "top": "0",
     }
   }
 >
   <div
     style={
       Object {
-        "position": "relative",
-        "zIndex": 0,
+        "margin": "auto",
+        "maxHeight": "100%",
       }
     }
   >
-    <button
-      className="Button__StyledButton-sc-19kycwu-0 PhzAJ bx--btn bx--btn--primary"
-      disabled={false}
-      onClick={[Function]}
-      tabIndex={0}
-      type="button"
+    <div
+      className="storybook-container"
+      style={
+        Object {
+          "padding": "3rem",
+        }
+      }
     >
-      Test Button
-    </button>
+      <div
+        style={
+          Object {
+            "position": "relative",
+            "zIndex": 0,
+          }
+        }
+      >
+        <button
+          className="iot--btn bx--btn bx--btn--primary"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          Test Button
+        </button>
+      </div>
+      <button
+        className="info__show-button"
+        onClick={[Function]}
+        style={
+          Object {
+            "background": "#027ac5",
+            "border": "none",
+            "borderRadius": "0 0 0 5px",
+            "color": "#fff",
+            "cursor": "pointer",
+            "display": "block",
+            "fontFamily": "sans-serif",
+            "fontSize": "12px",
+            "padding": "5px 15px",
+            "position": "fixed",
+            "right": 0,
+            "top": 0,
+          }
+        }
+        type="button"
+      >
+        Show Info
+      </button>
+    </div>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": "12px",
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
 </div>
 `;

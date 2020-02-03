@@ -32,7 +32,7 @@ const propTypes = {
   ),
   cards: PropTypes.arrayOf(
     PropTypes.shape({
-      content: PropTypes.object,
+      content: PropTypes.oneOfType([PropTypes.object, PropTypes.func]),
       values: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
       /** is the card actively loading, it will override the dashboard loading state if true */
       isLoading: PropTypes.bool,
@@ -100,6 +100,11 @@ const propTypes = {
     editCardLabel: PropTypes.string,
     cloneCardLabel: PropTypes.string,
     deleteCardLabel: PropTypes.string,
+
+    // image card labels:
+    zoomIn: PropTypes.string,
+    zoomOut: PropTypes.string,
+    zoomToFit: PropTypes.string,
 
     // labels for table card
     criticalLabel: PropTypes.string,

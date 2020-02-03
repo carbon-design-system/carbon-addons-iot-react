@@ -85,6 +85,11 @@ export const TableColumnsPropTypes = PropTypes.arrayOf(
     id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     isSortable: PropTypes.bool,
+    /** optional sort function for this column, called back with the column to sort on and the in-memory data as parameters
+     * { columnId: PropTypes.string, direction: PropTypes.oneOf(['ASC','DESC']), data: PropTypes.array }
+     * You should return the updated data
+     */
+    sortFunction: PropTypes.func,
     width: PropTypes.string, // ex: 150px, or 2rem
     align: PropTypes.oneOf(['start', 'center', 'end']), // ex: start, center, end
     /** for each column you can register a render callback function that is called with this object payload
@@ -137,6 +142,7 @@ export const I18NPropTypes = PropTypes.shape({
   searchPlaceholder: PropTypes.string,
   clearAllFilters: PropTypes.string,
   columnSelectionButtonAria: PropTypes.string,
+  columnSelectionConfig: PropTypes.string,
   filterButtonAria: PropTypes.string,
   clearFilterAria: PropTypes.string,
   filterAria: PropTypes.string,
@@ -181,6 +187,7 @@ export const defaultI18NPropTypes = {
   /** toolbar */
   clearAllFilters: 'Clear all filters',
   columnSelectionButtonAria: 'Column Selection',
+  columnSelectionConfig: 'Manage columns',
   filterButtonAria: 'Filters',
   searchLabel: 'Search',
   searchPlaceholder: 'Search',

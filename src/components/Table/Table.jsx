@@ -27,6 +27,7 @@ import TableBody from './TableBody/TableBody';
 const StyledTableContainer = styled(TableContainer)`
   && {
     min-width: unset;
+    padding-top: 0;
 
     .bx--table-toolbar {
       overflow: hidden;
@@ -60,6 +61,9 @@ const StyledPagination = sizeMe({ noPlaceholder: true })(styled(
 const propTypes = {
   /** DOM ID for component */
   id: PropTypes.string,
+  /** Displays smaller title in header */
+  secondaryTitle: PropTypes.string,
+  tooltip: PropTypes.node,
   /** render zebra stripes or not */
   useZebraStyles: PropTypes.bool,
   /**  lighter styling where regular table too visually heavy */
@@ -83,6 +87,7 @@ const propTypes = {
     /** has simple search capability */
     hasSearch: PropTypes.bool,
     hasColumnSelection: PropTypes.bool,
+    hasColumnSelectionConfig: PropTypes.bool,
     shouldLazyRender: PropTypes.bool,
     hasRowCountInHeader: PropTypes.bool,
   }),
@@ -178,6 +183,7 @@ const propTypes = {
       onClearRowError: PropTypes.func,
       onEmptyStateAction: PropTypes.func,
       onChangeOrdering: PropTypes.func,
+      onColumnSelectionConfig: PropTypes.func,
     }).isRequired,
   }),
   i18n: I18NPropTypes,
@@ -187,6 +193,9 @@ export const defaultProps = baseProps => ({
   id: 'Table',
   useZebraStyles: false,
   lightweight: false,
+  title: null,
+  tooltip: null,
+  secondaryTitle: null,
   options: {
     hasPagination: false,
     hasRowSelection: false,
@@ -197,6 +206,7 @@ export const defaultProps = baseProps => ({
     hasOnlyPageData: false,
     hasSearch: false,
     hasColumnSelection: false,
+    hasColumnSelectionConfig: false,
     shouldLazyRender: false,
   },
   view: {
@@ -239,6 +249,7 @@ export const defaultProps = baseProps => ({
       onApplyRowAction: defaultFunction('actions.table.onApplyRowAction'),
       onEmptyStateAction: defaultFunction('actions.table.onEmptyStateAction'),
       onChangeOrdering: defaultFunction('actions.table.onChangeOrdering'),
+      onColumnSelectionConfig: defaultFunction('actions.table.onColumnSelectionConfig'),
     },
   },
   i18n: {
@@ -260,6 +271,7 @@ export const defaultProps = baseProps => ({
     /** toolbar */
     clearAllFilters: 'Clear all filters',
     columnSelectionButtonAria: 'Column Selection',
+    columnSelectionConfig: 'Manage Columns',
     filterButtonAria: 'Filters',
     searchLabel: 'Search',
     searchPlaceholder: 'Search',
@@ -297,6 +309,9 @@ const Table = props => {
     className,
     style,
     i18n,
+    // Table Toolbar props
+    secondaryTitle,
+    tooltip,
     ...others
   } = merge({}, defaultProps(props), props);
 
@@ -339,6 +354,8 @@ const Table = props => {
     <StyledTableContainer style={style} className={className}>
       <TableToolbar
         tableId={id}
+        secondaryTitle={secondaryTitle}
+        tooltip={tooltip}
         i18n={{
           clearAllFilters: i18n.clearAllFilters,
           columnSelectionButtonAria: i18n.columnSelectionButtonAria,
@@ -386,100 +403,116 @@ const Table = props => {
           ),
         }}
       />
-      <CarbonTable {...others}>
-        <TableHead
-          {...others}
-          i18n={i18n}
-          lightweight={lightweight}
-          options={pick(options, 'hasRowSelection', 'hasRowExpansion', 'hasRowActions')}
-          columns={columns}
-          filters={view.filters}
-          actions={{
-            ...pick(actions.toolbar, 'onApplyFilter'),
-            ...pick(actions.table, 'onSelectAll', 'onChangeSort', 'onChangeOrdering'),
-          }}
-          selectAllText={i18n.selectAllAria}
-          clearFilterText={i18n.clearFilterAria}
-          filterText={i18n.filterAria}
-          clearSelectionText={i18n.clearSelectionAria}
-          openMenuText={i18n.openMenuAria}
-          closeMenuText={i18n.closeMenuAria}
-          tableState={{
-            activeBar: view.toolbar.activeBar,
-            filters: view.filters,
-            ...view.table,
-            selection: {
-              isSelectAllSelected: view.table.isSelectAllSelected,
-              isSelectAllIndeterminate: view.table.isSelectAllIndeterminate,
-            },
-          }}
-        />
-        {view.table.loadingState.isLoading ? (
-          <TableSkeletonWithHeaders
-            columns={visibleColumns}
-            {...pick(options, 'hasRowSelection', 'hasRowExpansion', 'hasRowActions')}
-            rowCount={view.table.loadingState.rowCount}
-          />
-        ) : visibleData && visibleData.length ? (
-          <TableBody
-            tableId={id}
-            rows={visibleData}
-            rowActionsState={view.table.rowActions}
-            expandedRows={expandedData}
-            columns={visibleColumns}
-            expandedIds={view.table.expandedIds}
-            selectedIds={view.table.selectedIds}
-            {...pick(
-              i18n,
-              'overflowMenuAria',
-              'clickToExpandAria',
-              'clickToCollapseAria',
-              'inProgressText',
-              'actionFailedText',
-              'learnMoreText',
-              'dismissText',
-              'selectRowAria'
-            )}
-            totalColumns={totalColumns}
-            {...pick(
+      <div className="addons-iot-table-container">
+        <CarbonTable {...others}>
+          <TableHead
+            {...others}
+            i18n={i18n}
+            lightweight={lightweight}
+            options={pick(
               options,
               'hasRowSelection',
               'hasRowExpansion',
               'hasRowActions',
-              'hasRowNesting',
-              'shouldExpandOnRowClick',
-              'shouldLazyRender'
+              'hasColumnSelectionConfig'
             )}
-            ordering={view.table.ordering}
-            actions={pick(
-              actions.table,
-              'onRowSelected',
-              'onApplyRowAction',
-              'onClearRowError',
-              'onRowExpanded',
-              'onRowClicked'
-            )}
+            columns={columns}
+            filters={view.filters}
+            actions={{
+              ...pick(actions.toolbar, 'onApplyFilter'),
+              ...pick(
+                actions.table,
+                'onSelectAll',
+                'onChangeSort',
+                'onChangeOrdering',
+                'onColumnSelectionConfig'
+              ),
+            }}
+            selectAllText={i18n.selectAllAria}
+            clearFilterText={i18n.clearFilterAria}
+            filterText={i18n.filterAria}
+            clearSelectionText={i18n.clearSelectionAria}
+            openMenuText={i18n.openMenuAria}
+            closeMenuText={i18n.closeMenuAria}
+            tableState={{
+              activeBar: view.toolbar.activeBar,
+              filters: view.filters,
+              ...view.table,
+              selection: {
+                isSelectAllSelected: view.table.isSelectAllSelected,
+                isSelectAllIndeterminate: view.table.isSelectAllIndeterminate,
+              },
+            }}
           />
-        ) : (
-          <EmptyTable
-            id={id}
-            totalColumns={totalColumns}
-            isFiltered={isFiltered}
-            emptyState={
-              // only show emptyState if no filters or search is applied
-              view.table.emptyState && !isFiltered
-                ? view.table.emptyState
-                : {
-                    message: i18n.emptyMessage,
-                    messageWithFilters: i18n.emptyMessageWithFilters,
-                    buttonLabel: i18n.emptyButtonLabel,
-                    buttonLabelWithFilters: i18n.emptyButtonLabelWithFilters,
-                  }
-            }
-            onEmptyStateAction={isFiltered ? handleClearFilters : actions.table.onEmptyStateAction}
-          />
-        )}
-      </CarbonTable>
+          {view.table.loadingState.isLoading ? (
+            <TableSkeletonWithHeaders
+              columns={visibleColumns}
+              {...pick(options, 'hasRowSelection', 'hasRowExpansion', 'hasRowActions')}
+              rowCount={view.table.loadingState.rowCount}
+            />
+          ) : visibleData && visibleData.length ? (
+            <TableBody
+              tableId={id}
+              rows={visibleData}
+              rowActionsState={view.table.rowActions}
+              expandedRows={expandedData}
+              columns={visibleColumns}
+              expandedIds={view.table.expandedIds}
+              selectedIds={view.table.selectedIds}
+              {...pick(
+                i18n,
+                'overflowMenuAria',
+                'clickToExpandAria',
+                'clickToCollapseAria',
+                'inProgressText',
+                'actionFailedText',
+                'learnMoreText',
+                'dismissText',
+                'selectRowAria'
+              )}
+              totalColumns={totalColumns}
+              {...pick(
+                options,
+                'hasRowSelection',
+                'hasRowExpansion',
+                'hasRowActions',
+                'hasRowNesting',
+                'shouldExpandOnRowClick',
+                'shouldLazyRender'
+              )}
+              ordering={view.table.ordering}
+              actions={pick(
+                actions.table,
+                'onRowSelected',
+                'onApplyRowAction',
+                'onClearRowError',
+                'onRowExpanded',
+                'onRowClicked'
+              )}
+            />
+          ) : (
+            <EmptyTable
+              id={id}
+              totalColumns={totalColumns}
+              isFiltered={isFiltered}
+              emptyState={
+                // only show emptyState if no filters or search is applied
+                view.table.emptyState && !isFiltered
+                  ? view.table.emptyState
+                  : {
+                      message: i18n.emptyMessage,
+                      messageWithFilters: i18n.emptyMessageWithFilters,
+                      buttonLabel: i18n.emptyButtonLabel,
+                      buttonLabelWithFilters: i18n.emptyButtonLabelWithFilters,
+                    }
+              }
+              onEmptyStateAction={
+                isFiltered ? handleClearFilters : actions.table.onEmptyStateAction
+              }
+            />
+          )}
+        </CarbonTable>
+      </div>
       {options.hasPagination &&
       !view.table.loadingState.isLoading &&
       visibleData &&
