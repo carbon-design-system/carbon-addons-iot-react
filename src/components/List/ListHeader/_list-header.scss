@@ -1,4 +1,6 @@
-.list-header {
+@import '../../../globals/vars';
+
+.#{$iot-prefix}--list-header {
   display: flex;
   align-items: center;
   background: $ui-01;
