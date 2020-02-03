@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { render, fireEvent } from '@testing-library/react';
 
-import { PageWizard } from './PageWizard';
+import PageWizard from './PageWizard';
 import { content, StepValidation } from './PageWizard.story';
 
 describe('PageWizard tests', () => {

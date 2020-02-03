@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { PageWizard, propTypes, defaultProps } from './PageWizard';
+import PageWizard, { PageWizardPropTypes, defaultProps } from './PageWizard';
 
 const StatefulPageWizard = ({
   currentStepId: currentStepIdProp,
@@ -40,6 +40,6 @@ const StatefulPageWizard = ({
   );
 };
 
-StatefulPageWizard.propTypes = propTypes;
+StatefulPageWizard.propTypes = PageWizardPropTypes;
 StatefulPageWizard.defaultProps = defaultProps;
 export default StatefulPageWizard;

@@ -1,126 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { InlineNotification, ProgressIndicator, ProgressStep } from 'carbon-components-react';
+import { ProgressIndicator, ProgressStep } from 'carbon-components-react';
 
-import Button from '../Button/Button';
+import { settings } from '../../constants/Settings';
 
-const childrenPropType = PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]);
+const { iotPrefix, prefix: carbonPrefix } = settings;
 
-/* TODO: move these components to separate files */
-const PageWizardStep = ({
-  children,
-  onValidate,
-  error,
-  onClearError,
-  i18n,
-  hasStickyFooter,
-  onClose,
-  hasPrev,
-  hasNext,
-  onNext,
-  nextDisabled,
-  onBack,
-  sendingData,
-  onSubmit,
-}) => (
-  <div className="page-wizard--step">
-    {error ? (
-      <InlineNotification
-        lowContrast
-        title={error}
-        subtitle=""
-        kind="error"
-        onCloseButtonClick={onClearError}
-        iconDescription={i18n.close}
-      />
-    ) : null}
-    {children}
-    <div
-      className={
-        hasStickyFooter ? 'page-wizard--content--actions--sticky' : 'page-wizard--content--actions'
-      }
-    >
-      {!hasPrev ? (
-        <Button onClick={onClose} kind="secondary">
-          {i18n.cancel}
-        </Button>
-      ) : null}
-      {hasPrev ? (
-        <Button onClick={onBack} kind="secondary">
-          {i18n.back}
-        </Button>
-      ) : null}
-      {hasNext ? (
-        <Button onClick={() => onValidate() && onNext()} disabled={nextDisabled}>
-          {i18n.next}
-        </Button>
-      ) : (
-        <Button
-          onClick={() => onValidate() && onSubmit()}
-          disabled={nextDisabled}
-          loading={sendingData}
-        >
-          {i18n.submit}
-        </Button>
-      )}
-    </div>
-  </div>
-);
-PageWizardStep.propTypes = {
-  id: PropTypes.string.isRequired, // eslint-disable-line
-  onValidate: PropTypes.func, // eslint-disable-line
-  children: childrenPropType,
-  /** optional error to show for this step */
-  error: PropTypes.node,
-  /** optional callback to clear the error */
-  onClearError: PropTypes.func,
-  /** Internationalized strings */
-  i18n: PropTypes.objectOf(PropTypes.string).isRequired,
-  hasStickyFooter: PropTypes.bool,
-  onClose: PropTypes.func.isRequired,
-  hasPrev: PropTypes.bool.isRequired,
-  hasNext: PropTypes.bool.isRequired,
-  onNext: PropTypes.func.isRequired,
-  nextDisabled: PropTypes.bool,
-  onBack: PropTypes.func.isRequired,
-  sendingData: PropTypes.bool,
-  onSubmit: PropTypes.func.isRequired,
-};
-PageWizardStep.defaultProps = {
-  children: [],
-  error: null,
-  onClearError: null,
-  onValidate: () => true,
-  hasStickyFooter: false,
-  nextDisabled: false,
-  sendingData: false,
-};
+export const childrenPropType = PropTypes.oneOfType([
+  PropTypes.arrayOf(PropTypes.node),
+  PropTypes.node,
+]);
 
-const PageWizardStepTitle = ({ children }) => (
-  <div className="page-wizard--step--title">{children}</div>
-);
-PageWizardStepTitle.propTypes = { children: childrenPropType };
-PageWizardStepTitle.defaultProps = { children: [] };
-
-const PageWizardStepDescription = ({ children }) => (
-  <div className="page-wizard--step--description">{children}</div>
-);
-PageWizardStepDescription.propTypes = { children: childrenPropType };
-PageWizardStepDescription.defaultProps = { children: [] };
-
-const PageWizardStepContent = ({ children }) => (
-  <div className="page-wizard--step--content">{children}</div>
-);
-PageWizardStepContent.propTypes = { children: childrenPropType };
-PageWizardStepContent.defaultProps = { children: [] };
-
-const PageWizardStepExtraContent = ({ children }) => (
-  <div className="page-wizard--step--extra-content">{children}</div>
-);
-PageWizardStepExtraContent.propTypes = { children: childrenPropType };
-PageWizardStepExtraContent.defaultProps = { children: [] };
-
-export const propTypes = {
+export const PageWizardPropTypes = {
   children: childrenPropType,
   /** Id of current step */
   currentStepId: PropTypes.string,
@@ -144,21 +35,20 @@ export const propTypes = {
     /** label to show on the close notification button */
     close: PropTypes.string,
   }),
-  /** label to show on the cancel button */
   /** function to go to step when click ProgressIndicator step. */
   setStep: PropTypes.func,
   /** next button disabled */
   nextDisabled: PropTypes.bool,
   /** show progress indicator on finish button */
   sendingData: PropTypes.bool,
-
   /** Form Error Details */
   error: PropTypes.string,
   /** required callback to clear the error */
   onClearError: PropTypes.func.isRequired,
-
   /** use sticky footer to show buttons at the bottom */
   hasStickyFooter: PropTypes.bool,
+  /** Displays the progress indicator vertically */
+  isProgressIndicatorVertical: PropTypes.bool,
 };
 
 export const defaultProps = {
@@ -180,6 +70,7 @@ export const defaultProps = {
   sendingData: false,
   error: null,
   hasStickyFooter: false,
+  isProgressIndicatorVertical: true,
 };
 
 const PageWizard = ({
@@ -197,6 +88,7 @@ const PageWizard = ({
   error,
   hasStickyFooter,
   onClearError,
+  isProgressIndicatorVertical,
 }) => {
   const children = ch.length ? ch : [ch];
   const steps = React.Children.map(children, step => step.props);
@@ -221,12 +113,22 @@ const PageWizard = ({
 
   return (
     <div
-      className={['page-wizard', className, hasStickyFooter ? 'page-wizard__sticky' : ''].join(' ')}
+      className={[
+        isProgressIndicatorVertical ? `${iotPrefix}--page-wizard` : '',
+        className,
+        hasStickyFooter ? `${iotPrefix}--page-wizard__sticky` : '',
+      ].join(' ')}
     >
       {steps.length > 1 ? (
-        <div className="page-wizard--progress">
+        <div
+          className={
+            isProgressIndicatorVertical
+              ? `${iotPrefix}--page-wizard--progress--vertical`
+              : `${iotPrefix}--page-wizard--progress--horizontal`
+          }
+        >
           <ProgressIndicator
-            className="bx--progress--vertical"
+            className={isProgressIndicatorVertical ? `${carbonPrefix}--progress--vertical` : null}
             currentIndex={currentStepIdx}
             onChange={idx => setStep(steps[idx].id)}
           >
@@ -236,18 +138,12 @@ const PageWizard = ({
           </ProgressIndicator>
         </div>
       ) : null}
-      <div className="page-wizard--content">{currentStepToRender}</div>
+      <div className={`${iotPrefix}--page-wizard--content`}>{currentStepToRender}</div>
     </div>
   );
 };
 
-PageWizard.propTypes = propTypes;
+PageWizard.propTypes = PageWizardPropTypes;
 PageWizard.defaultProps = defaultProps;
-export {
-  PageWizard,
-  PageWizardStep,
-  PageWizardStepTitle,
-  PageWizardStepDescription,
-  PageWizardStepContent,
-  PageWizardStepExtraContent,
-};
+
+export default PageWizard;
