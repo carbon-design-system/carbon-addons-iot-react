@@ -4,7 +4,7 @@ import React from 'react';
 import { Tooltip } from 'carbon-components-react';
 import { render, fireEvent, waitForElement } from '@testing-library/react';
 import { Popup20 } from '@carbon/icons-react';
-import { CARD_SIZES } from '../../constants/LayoutConstants';
+import { CARD_SIZES, CARD_TITLE_HEIGHT } from '../../constants/LayoutConstants';
 import { ToolbarSVGWrapper } from './CardToolbar';
 
 import CardRangePicker from './CardRangePicker';
@@ -24,6 +24,32 @@ describe('Card testcases', () => {
 
     // small should have full header
     expect(wrapper.find('.card--header')).toHaveLength(1);
+  });
+
+  test('child size prop', () => {
+    const childRenderInTitleCard = jest.fn();
+
+    mount(<Card title="My Title" size={CARD_SIZES.MEDIUM} children={childRenderInTitleCard} />);
+    expect(childRenderInTitleCard).toHaveBeenCalledWith(
+      {
+        width: 0,
+        height: -CARD_TITLE_HEIGHT,
+        position: null,
+      },
+      expect.anything()
+    );
+
+    const childRenderInNoTitleCard = jest.fn();
+
+    mount(<Card size={CARD_SIZES.MEDIUM} children={childRenderInNoTitleCard} />);
+    expect(childRenderInNoTitleCard).toHaveBeenCalledWith(
+      {
+        width: 0,
+        height: 0,
+        position: null,
+      },
+      expect.anything()
+    );
   });
 
   test('render icons', () => {

@@ -709,6 +709,7 @@ const TableCard = ({
       isEditable={isEditable}
       isExpanded={isExpanded}
       i18n={i18n}
+      hideHeader
       {...others}
     >
       {({ height }) => {
