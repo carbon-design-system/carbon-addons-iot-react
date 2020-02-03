@@ -34,6 +34,7 @@ const CardWrapper = styled.div`
   span#timeRange {
     display: ${props => (props.cardWidthSize < 230 ? `none` : `flex`)};
   }
+  overflow: hidden;
 `;
 
 /** Header components */
@@ -52,7 +53,6 @@ export const CardTitle = (
 export const CardContent = styled.div`
   flex: 1;
   position: relative;
-  overflow: hidden;
   height: ${props => props.dimensions.y - CARD_TITLE_HEIGHT}px;
 `;
 
