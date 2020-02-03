@@ -2,6 +2,7 @@ import React, { useMemo, useState, useCallback, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import merge from 'lodash/merge';
 import isEmpty from 'lodash/isEmpty';
+import isNil from 'lodash/isNil';
 import omit from 'lodash/omit';
 import useDeepCompareEffect from 'use-deep-compare-effect';
 
@@ -109,7 +110,8 @@ const CardRenderer = React.memo(
           expand:
             type === CARD_TYPES.IMAGE ||
             type === CARD_TYPES.TIMESERIES ||
-            type === CARD_TYPES.TABLE, // image and line chart cards should have expand
+            type === CARD_TYPES.TABLE ||
+            availableActions?.expand, // image and line chart cards should have expand
         }),
       [availableActions, dataSource, type]
     );
@@ -179,7 +181,9 @@ const CardRenderer = React.memo(
     ) : type === CARD_TYPES.LIST ? (
       <ListCard {...commonCardProps} data={card.content.data} loadData={card.content.loadData} />
     ) : type === CARD_TYPES.CUSTOM ? (
-      <Card {...commonCardProps}>{card.content}</Card>
+      <Card hideHeader={isNil(card.title)} {...commonCardProps}>
+        {card.content}
+      </Card>
     ) : null;
   }
 );
