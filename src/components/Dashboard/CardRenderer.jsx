@@ -12,7 +12,7 @@ import TableCard from '../TableCard/TableCard';
 import TimeSeriesCard from '../TimeSeriesCard/TimeSeriesCard';
 import ListCard from '../ListCard/ListCard';
 import Card from '../Card/Card';
-import { CARD_TYPES } from '../../constants/LayoutConstants';
+import { CARD_TYPES, CARD_ACTIONS } from '../../constants/LayoutConstants';
 import { determineCardRange, compareGrains } from '../../utils/cardUtilityFunctions';
 
 /**
@@ -122,7 +122,7 @@ const CardRenderer = React.memo(
     const cachedOnCardAction = useCallback(
       async (id, actionType, payload) => {
         // callback time grain change from parent
-        if (actionType === 'CHANGE_TIME_RANGE') {
+        if (actionType === CARD_ACTIONS.CHANGE_TIME_RANGE) {
           // First update the range
           const range =
             payload && payload.range !== 'default'
@@ -144,12 +144,18 @@ const CardRenderer = React.memo(
           };
           // Then trigger a load of the card data
           loadCardData(cardWithUpdatedRange, setCard, onFetchData, timeGrain);
-        } else if (actionType === 'OPEN_EXPANDED_CARD') {
+        } else if (actionType === CARD_ACTIONS.OPEN_EXPANDED_CARD) {
           setIsExpanded(true);
+        } else if (actionType === CARD_ACTIONS.UPDATE_DATA) {
+          // New action type where we pass the updated values data
+          setCard(currentCardState => ({
+            ...currentCardState,
+            values: payload?.values,
+          }));
         }
 
         // close expanded card
-        if (actionType === 'CLOSE_EXPANDED_CARD') {
+        if (actionType === CARD_ACTIONS.CLOSE_EXPANDED_CARD) {
           setIsExpanded(false);
         }
       },
@@ -157,7 +163,7 @@ const CardRenderer = React.memo(
     );
 
     const commonCardProps = {
-      ...card,
+      ...card, // pass all the card props, including the card data to the card
       style: cardProp.style, // these come from grid layout and not state
       className: cardProp.className, // these come from grid layout and not state
       key: cardProp.id,

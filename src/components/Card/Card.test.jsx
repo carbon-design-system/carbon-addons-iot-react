@@ -4,7 +4,7 @@ import React from 'react';
 import { Tooltip } from 'carbon-components-react';
 import { render, fireEvent, waitForElement } from '@testing-library/react';
 import { Popup20 } from '@carbon/icons-react';
-import { CARD_SIZES, CARD_TITLE_HEIGHT } from '../../constants/LayoutConstants';
+import { CARD_SIZES, CARD_TITLE_HEIGHT, CARD_ACTIONS } from '../../constants/LayoutConstants';
 import { ToolbarSVGWrapper } from './CardToolbar';
 
 import CardRangePicker from './CardRangePicker';
@@ -113,7 +113,7 @@ describe('Card testcases', () => {
       .find(ToolbarSVGWrapper)
       .get(0)
       .props.onClick();
-    expect(mockOnCardAction).toHaveBeenCalledWith(cardProps.id, 'CLOSE_EXPANDED_CARD');
+    expect(mockOnCardAction).toHaveBeenCalledWith(cardProps.id, CARD_ACTIONS.CLOSE_EXPANDED_CARD);
 
     mockOnCardAction.mockClear();
     let wrapper2 = mount(
@@ -129,7 +129,7 @@ describe('Card testcases', () => {
       .find(ToolbarSVGWrapper)
       .get(0)
       .props.onClick();
-    expect(mockOnCardAction).toHaveBeenCalledWith(cardProps.id, 'OPEN_EXPANDED_CARD');
+    expect(mockOnCardAction).toHaveBeenCalledWith(cardProps.id, CARD_ACTIONS.OPEN_EXPANDED_CARD);
   });
   test('card editable actions', async done => {
     const mockOnCardAction = jest.fn();
@@ -147,20 +147,20 @@ describe('Card testcases', () => {
     // Click on the first overflow menu item
     const firstMenuItem = await waitForElement(() => getByText('Edit card'));
     fireEvent.click(firstMenuItem);
-    expect(mockOnCardAction).toHaveBeenCalledWith(cardProps.id, 'EDIT_CARD');
+    expect(mockOnCardAction).toHaveBeenCalledWith(cardProps.id, CARD_ACTIONS.EDIT_CARD);
     mockOnCardAction.mockClear();
     // Reopen menu
     fireEvent.click(getByTitle('Open and close list of options'));
     const secondElement = await waitForElement(() => getByText('Clone card'));
     fireEvent.click(secondElement);
-    expect(mockOnCardAction).toHaveBeenCalledWith(cardProps.id, 'CLONE_CARD');
+    expect(mockOnCardAction).toHaveBeenCalledWith(cardProps.id, CARD_ACTIONS.CLONE_CARD);
 
     // Reopen menu
     fireEvent.click(getByTitle('Open and close list of options'));
     mockOnCardAction.mockClear();
     const thirdElement = await waitForElement(() => getByText('Delete card'));
     fireEvent.click(thirdElement);
-    expect(mockOnCardAction).toHaveBeenCalledWith(cardProps.id, 'DELETE_CARD');
+    expect(mockOnCardAction).toHaveBeenCalledWith(cardProps.id, CARD_ACTIONS.DELETE_CARD);
     done();
   });
 });

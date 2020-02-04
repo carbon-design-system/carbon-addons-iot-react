@@ -1,6 +1,8 @@
 import { render, fireEvent, waitForElement } from '@testing-library/react';
 import React from 'react';
 
+import { CARD_ACTIONS } from '../../constants/LayoutConstants';
+
 import CardRangePicker from './CardRangePicker';
 
 describe('CardRangePicker', () => {
@@ -10,7 +12,6 @@ describe('CardRangePicker', () => {
     const defaultLabel = 'Default';
     const last24HoursLabel = 'Last 24 Hours';
     const thisWeekLabel = 'This week';
-    const CHANGE_TIME_RANGE = 'CHANGE_TIME_RANGE';
     const { getByTitle, getByText } = render(
       <CardRangePicker
         i18n={{
@@ -26,13 +27,17 @@ describe('CardRangePicker', () => {
     // Click on the default
     const defaultRange = await waitForElement(() => getByText(defaultLabel));
     fireEvent.click(defaultRange);
-    expect(mockOnCardAction).toHaveBeenCalledWith(CHANGE_TIME_RANGE, { range: 'default' });
+    expect(mockOnCardAction).toHaveBeenCalledWith(CARD_ACTIONS.CHANGE_TIME_RANGE, {
+      range: 'default',
+    });
     mockOnCardAction.mockClear();
     // Reopen menu
     fireEvent.click(getByTitle(overflowMenuDescription));
     const last24Hours = await waitForElement(() => getByText(last24HoursLabel));
     fireEvent.click(last24Hours);
-    expect(mockOnCardAction).toHaveBeenCalledWith(CHANGE_TIME_RANGE, { range: 'last24Hours' });
+    expect(mockOnCardAction).toHaveBeenCalledWith(CARD_ACTIONS.CHANGE_TIME_RANGE, {
+      range: 'last24Hours',
+    });
     mockOnCardAction.mockClear();
 
     // Reopen menu
@@ -40,7 +45,9 @@ describe('CardRangePicker', () => {
     mockOnCardAction.mockClear();
     const thisWeek = await waitForElement(() => getByText(thisWeekLabel));
     fireEvent.click(thisWeek);
-    expect(mockOnCardAction).toHaveBeenCalledWith(CHANGE_TIME_RANGE, { range: 'thisWeek' });
+    expect(mockOnCardAction).toHaveBeenCalledWith(CARD_ACTIONS.CHANGE_TIME_RANGE, {
+      range: 'thisWeek',
+    });
     done();
   });
 });
