@@ -1,20 +1,64 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
 import List from '../List';
 
+const itemPropTypes = {
+  id: PropTypes.string,
+  content: PropTypes.shape({
+    value: PropTypes.string,
+    icon: PropTypes.node,
+  }),
+  children: PropTypes.arrayOf(PropTypes.any), // TODO: make this recursive
+  isSelectable: PropTypes.bool,
+};
+
+const propTypes = {
+  /** list title */
+  title: PropTypes.string.isRequired,
+  /** use search with default behavior */
+  hasSearch: PropTypes.bool,
+  /** action buttons on right side of list title */
+  buttons: PropTypes.arrayOf(PropTypes.node),
+  /** data source of list items */
+  items: PropTypes.arrayOf(PropTypes.shape(itemPropTypes)).isRequired,
+  /** use full height in list */
+  isFullHeight: PropTypes.bool,
+  /** use large/fat row in list */
+  isLargeRow: PropTypes.bool,
+  /** i18n strings */
+  i18n: PropTypes.shape({
+    searchPlaceHolderText: PropTypes.string,
+    pageOfPagesText: PropTypes.func,
+  }),
+  /** pageSize */
+  pageSize: PropTypes.string,
+};
+
+const defaultProps = {
+  hasSearch: false,
+  buttons: [],
+  pageSize: null,
+  isLargeRow: false,
+  isFullHeight: false,
+  i18n: {
+    searchPlaceHolderText: 'Enter a value',
+    pageOfPagesText: page => `Page ${page}`,
+  },
+};
+
 const SimpleList = ({
   title,
-  hasSearch = false,
-  buttons = [],
-  items = [],
+  hasSearch,
+  buttons,
+  items,
   i18n,
   isFullHeight,
-  pageSize = null,
-  isLargeRow = false,
-  ...others
+  pageSize,
+  isLargeRow,
 }) => {
   const [searchValue, setSearchValue] = useState(null);
-  const [filteredItems, setfilteredItems] = useState(items);
+  const [filteredItems, setFilteredItems] = useState(items);
 
   const numberOfItems = filteredItems.length;
   let rowPerPage = numberOfItems;
@@ -26,6 +70,7 @@ const SimpleList = ({
       rowPerPage = 10;
       break;
     case 'xl':
+    default:
       rowPerPage = 20;
       break;
   }
@@ -55,7 +100,7 @@ const SimpleList = ({
     page: currentPageNumber,
     onPage,
     maxPage: Math.ceil(numberOfItems / rowPerPage),
-    pageOfPagesText: page => `Page ${page}`,
+    pageOfPagesText: page => i18n.pageOfPagesText(page),
   };
 
   return (
@@ -68,7 +113,7 @@ const SimpleList = ({
               onChange: evt => {
                 setSearchValue(evt.target.value);
                 const searchTerm = evt.target.value === undefined ? '' : evt.target.value;
-                const tempFilteredItems = items.filter(item => {
+                const searchFilteredItems = items.filter(item => {
                   if (item.content.value !== '' && item.content.value !== undefined) {
                     if (
                       item.content.secondaryValue !== '' &&
@@ -83,11 +128,12 @@ const SimpleList = ({
                     }
                     return item.content.value.toLowerCase().search(searchTerm.toLowerCase()) !== -1;
                   }
+                  return false;
                 });
-                setfilteredItems(filteredItems);
+                setFilteredItems(searchFilteredItems);
                 setSearchValue(searchTerm);
                 if (pageSize !== null) {
-                  setItemsToShow(tempFilteredItems.slice(0, rowPerPage));
+                  setItemsToShow(searchFilteredItems.slice(0, rowPerPage));
                 }
               },
             }
@@ -106,4 +152,6 @@ const SimpleList = ({
   );
 };
 
+SimpleList.propTypes = propTypes;
+SimpleList.defaultProps = defaultProps;
 export default SimpleList;

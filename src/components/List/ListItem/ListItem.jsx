@@ -4,6 +4,10 @@ import { Icon } from 'carbon-components-react';
 import { iconChevronDown, iconChevronUp } from 'carbon-icons';
 import PropTypes from 'prop-types';
 
+import { settings } from '../../../constants/Settings';
+
+const { iotPrefix } = settings;
+
 const propTypes = {
   id: PropTypes.string.isRequired,
   isLargeRow: PropTypes.bool,
@@ -12,6 +16,7 @@ const propTypes = {
   isSelectable: PropTypes.bool,
   onSelect: PropTypes.func,
   selected: PropTypes.bool,
+  expanded: PropTypes.bool,
   value: PropTypes.string.isRequired,
   secondaryValue: PropTypes.string,
   rowActions: PropTypes.arrayOf(PropTypes.node), // TODO
@@ -28,6 +33,7 @@ const defaultProps = {
   isSelectable: false,
   onSelect: null,
   selected: false,
+  expanded: false,
   secondaryValue: null,
   rowActions: [],
   icon: null,
@@ -36,22 +42,33 @@ const defaultProps = {
   isCategory: false,
 };
 
+// internal component
+// eslint-disable-next-line
 const ListItemWrapper = ({ id, isSelectable, onSelect, selected, isLargeRow, children }) =>
   isSelectable ? (
     <div
       role="button"
       tabIndex={0}
-      className={classnames('list-item', 'list-item__selectable', {
-        'list-item__selected': selected,
-        'list-item__large': isLargeRow,
-      })}
+      className={classnames(
+        `${iotPrefix}--list-item
+        ${iotPrefix}--list-item__selectable
+        ${selected ? `${iotPrefix}--list-item__selected` : ''}
+        ${isLargeRow ? `${iotPrefix}--list-item__large` : ''}`
+      )}
       onKeyPress={({ key }) => key === 'Enter' && onSelect(id)}
       onClick={() => onSelect(id)}
     >
       {children}
     </div>
   ) : (
-    <div className={classnames('list-item', { 'list-item__large': isLargeRow })}>{children}</div>
+    <div
+      className={classnames(
+        `${iotPrefix}--list-item 
+        ${isLargeRow ? `${iotPrefix}--list-item__large` : ''}`
+      )}
+    >
+      {children}
+    </div>
   );
 
 const ListItem = ({
@@ -67,10 +84,9 @@ const ListItem = ({
   secondaryValue,
   rowActions,
   icon,
-  iconPosition = 'left', // or "right"
+  iconPosition, // or "right"
   nestingLevel,
   isCategory,
-  ...others
 }) => {
   const handleExpansionClick = () => isExpandable && onExpand(id);
 
@@ -81,7 +97,7 @@ const ListItem = ({
       <div
         role="button"
         tabIndex={0}
-        className="list-item--expand-icon"
+        className={`${iotPrefix}--list-item--expand-icon`}
         onClick={handleExpansionClick}
         onKeyPress={({ key }) => key === 'Enter' && handleExpansionClick()}
       >
@@ -93,13 +109,15 @@ const ListItem = ({
     ) : null;
   const renderIcon = () =>
     icon ? (
-      <div className={`list-item--content--icon list-item--content--icon__${iconPosition}`}>
+      <div
+        className={`${iotPrefix}--list-item--content--icon ${iotPrefix}--list-item--content--icon__${iconPosition}`}
+      >
         {icon}
       </div>
     ) : null;
   const renderRowActions = () =>
     rowActions && rowActions.length > 0 ? (
-      <div className="list-item--content--row-actions">{rowActions}</div>
+      <div className={`${iotPrefix}--list-item--content--row-actions`}>{rowActions}</div>
     ) : null;
 
   return (
@@ -107,28 +125,26 @@ const ListItem = ({
       {renderNestingOffset()}
       {renderExpander()}
       <div
-        className={classnames('list-item--content', {
-          'list-item--content__selected': selected,
-          'list-item--content__large': isLargeRow,
-        })}
+        className={classnames(
+          `${iotPrefix}--list-item--content`,
+          { [`${iotPrefix}--list-item--content__selected`]: selected },
+          { [`${iotPrefix}--list-item--content__large`]: isLargeRow }
+        )}
       >
         {renderIcon()}
         <div
-          className={classnames('list-item--content--values', {
-            'list-item--content--values__large': isLargeRow,
+          className={classnames(`${iotPrefix}--list-item--content--values`, {
+            [`${iotPrefix}--list-item--content--values__large`]: isLargeRow,
           })}
         >
           {isLargeRow ? (
             <>
               <div
-                className={classnames(
-                  'list-item--content--values--main',
-                  'list-item--content--values--main__large'
-                )}
+                className={`${iotPrefix}--list-item--content--values--main ${iotPrefix}--list-item--content--values--main__large`}
               >
                 <div
-                  className={classnames('list-item--content--values--value', {
-                    'list-item--category': isCategory,
+                  className={classnames(`${iotPrefix}--list-item--content--values--value`, {
+                    [`${iotPrefix}--list-item--category`]: isCategory,
                   })}
                   title={value}
                 >
@@ -138,26 +154,27 @@ const ListItem = ({
               </div>
               <div
                 title={secondaryValue}
-                className={classnames(
-                  'list-item--content--values--secondary',
-                  'list-item--content--values--secondary__large'
-                )}
+                className={`${iotPrefix}--list-item--content--values--secondary
+                   ${iotPrefix}--list-item--content--values--secondary__large`}
               >
                 {secondaryValue || null}
               </div>
             </>
           ) : (
             <>
-              <div className="list-item--content--values--main">
+              <div className={`${iotPrefix}--list-item--content--values--main`}>
                 <div
-                  className={classnames('list-item--content--values--value', {
-                    'list-item--category': isCategory,
+                  className={classnames(`${iotPrefix}--list-item--content--values--value`, {
+                    [`${iotPrefix}--list-item--category`]: isCategory,
                   })}
                   title={value}
                 >
                   {value}
                 </div>
-                <div title={secondaryValue} className="list-item--content--values--secondary">
+                <div
+                  title={secondaryValue}
+                  className={`${iotPrefix}--list-item--content--values--secondary`}
+                >
                   {secondaryValue || null}
                 </div>
                 {renderRowActions()}

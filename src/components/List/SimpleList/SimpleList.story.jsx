@@ -9,7 +9,7 @@ import { withReadme } from 'storybook-readme';
 import SimpleList from './SimpleList';
 import SimpleListREADME from './README.md';
 
-const getListItems = num =>
+export const getListItems = num =>
   Array(num)
     .fill(0)
     .map((i, idx) => ({
@@ -116,6 +116,7 @@ storiesOf('Watson IoT Experimental|SimpleList', module)
           hasSearch
           i18n={{
             searchPlaceHolderText: 'Enter a search',
+            pageOfPagesText: pageNumber => `Page ${pageNumber}`,
           }}
           buttons={buttonsToRender}
           items={getListItems(30)}
@@ -138,6 +139,7 @@ storiesOf('Watson IoT Experimental|SimpleList', module)
           isFullHeight
           i18n={{
             searchPlaceHolderText: 'Enter a search',
+            pageOfPagesText: pageNumber => `Page ${pageNumber}`,
           }}
           buttons={buttonsToRender}
           items={getListItems(3)}
@@ -157,6 +159,7 @@ storiesOf('Watson IoT Experimental|SimpleList', module)
           hasSearch
           i18n={{
             searchPlaceHolderText: 'Enter a search',
+            pageOfPagesText: pageNumber => `Page ${pageNumber}`,
           }}
           buttons={buttonsToRender}
           items={getListItems(3)}
@@ -179,6 +182,7 @@ storiesOf('Watson IoT Experimental|SimpleList', module)
           hasSearch
           i18n={{
             searchPlaceHolderText: 'Enter a search',
+            pageOfPagesText: pageNumber => `Page ${pageNumber}`,
           }}
           buttons={buttonsToRender}
           items={getListItems(20)}
@@ -198,6 +202,7 @@ storiesOf('Watson IoT Experimental|SimpleList', module)
           hasSearch
           i18n={{
             searchPlaceHolderText: 'Enter a search',
+            pageOfPagesText: pageNumber => `Page ${pageNumber}`,
           }}
           buttons={buttonsToRender}
           items={getListItems(20)}
@@ -216,6 +221,7 @@ storiesOf('Watson IoT Experimental|SimpleList', module)
           hasSearch
           i18n={{
             searchPlaceHolderText: 'Enter a search',
+            pageOfPagesText: pageNumber => `Page ${pageNumber}`,
           }}
           buttons={buttonsToRender}
           items={listItemsWithEmptyRow}
@@ -233,6 +239,7 @@ storiesOf('Watson IoT Experimental|SimpleList', module)
           hasSearch
           i18n={{
             searchPlaceHolderText: 'Enter a search',
+            pageOfPagesText: pageNumber => `Page ${pageNumber}`,
           }}
           buttons={buttonsToRender}
           items={getFatRowListItems(20)}
@@ -252,6 +259,7 @@ storiesOf('Watson IoT Experimental|SimpleList', module)
           hasSearch
           i18n={{
             searchPlaceHolderText: 'Enter a search',
+            pageOfPagesText: pageNumber => `Page ${pageNumber}`,
           }}
           buttons={buttonsToRender}
           items={getListItemsWithActions(5)}
@@ -270,6 +278,7 @@ storiesOf('Watson IoT Experimental|SimpleList', module)
           hasSearch
           i18n={{
             searchPlaceHolderText: 'Enter a search',
+            pageOfPagesText: pageNumber => `Page ${pageNumber}`,
           }}
           buttons={buttonsToRender}
           items={getListItemsWithOverflowMenu(5)}
@@ -289,6 +298,7 @@ storiesOf('Watson IoT Experimental|SimpleList', module)
           hasSearch
           i18n={{
             searchPlaceHolderText: 'Enter a search',
+            pageOfPagesText: pageNumber => `Page ${pageNumber}`,
           }}
           buttons={buttonsToRender}
           items={getFatRowListItemsWithActions(5)}
@@ -308,6 +318,7 @@ storiesOf('Watson IoT Experimental|SimpleList', module)
           hasSearch
           i18n={{
             searchPlaceHolderText: 'Enter a search',
+            pageOfPagesText: pageNumber => `Page ${pageNumber}`,
           }}
           buttons={buttonsToRender}
           items={getFatRowListItemsWithOverflowMenu(5)}

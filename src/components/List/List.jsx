@@ -2,12 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
+import { settings } from '../../constants/Settings';
 import SimplePagination, { SimplePaginationPropTypes } from '../SimplePagination/SimplePagination';
 
 import ListItem from './ListItem/ListItem';
 import ListHeader from './ListHeader/ListHeader';
 
-const childrenPropType = PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]);
+const { iotPrefix } = settings;
 
 export const itemPropTypes = {
   id: PropTypes.string,
@@ -20,26 +21,38 @@ export const itemPropTypes = {
 };
 
 const propTypes = {
+  /** list title */
   title: PropTypes.string.isRequired,
+  /** search bar call back function and search value */
   search: PropTypes.shape({
     onChange: PropTypes.func,
     value: PropTypes.string,
   }),
+  /** action buttons on right side of list title */
   buttons: PropTypes.arrayOf(PropTypes.node),
+  /** data source of list items */
   items: PropTypes.arrayOf(PropTypes.shape(itemPropTypes)).isRequired,
+  /** use full height in list */
   isFullHeight: PropTypes.bool,
+  /** use large/fat row in list */
   isLargeRow: PropTypes.bool,
+  /** icon can be left or right side of list row primary value */
   iconPosition: PropTypes.oneOf(['left', 'right']),
+  /** i18n strings */
   i18n: PropTypes.shape({
     searchPlaceHolderText: PropTypes.string,
   }),
-  pagination: PropTypes.shape(SimplePaginationPropTypes),
   /** Currently selected item */
   selectedId: PropTypes.string,
   /** Multiple currently selected items */
   selectedIds: PropTypes.arrayOf(PropTypes.string),
+  /** pagination at the bottom of list */
+  pagination: PropTypes.shape(SimplePaginationPropTypes),
+  /** ids of row expanded */
   expandedIds: PropTypes.arrayOf(PropTypes.string),
+  /** call back function of select */
   handleSelect: PropTypes.func,
+  /** call back function of expansion */
   toggleExpansion: PropTypes.func,
 };
 
@@ -75,7 +88,6 @@ const List = ({
   toggleExpansion,
   iconPosition,
   isLargeRow,
-  // ...others TODO: add this in the render
 }) => {
   const renderItemAndChildren = (item, level) => {
     const hasChildren = item.children && item.children.length > 0;
@@ -117,20 +129,20 @@ const List = ({
 
   return (
     <div
-      className={classnames('list', {
-        'list__full-height': isFullHeight,
+      className={classnames(`${iotPrefix}--list`, {
+        [`${iotPrefix}--list__full-height`]: isFullHeight,
       })}
     >
       <ListHeader
-        className="list--header"
+        className={`${iotPrefix}--list--header`}
         title={title}
         buttons={buttons}
         search={search}
         i18n={i18n}
       />
-      <div className="list--content">{listItems}</div>
+      <div className={`${iotPrefix}--list--content`}>{listItems}</div>
       {pagination !== null ? (
-        <div className="list--page">
+        <div className={`${iotPrefix}--list--page`}>
           <SimplePagination {...pagination} />
         </div>
       ) : null}

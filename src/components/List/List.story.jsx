@@ -4,7 +4,7 @@ import { action } from '@storybook/addon-actions';
 import { text } from '@storybook/addon-knobs';
 import { Add16, Edit16, Star16 } from '@carbon/icons-react';
 import cloneDeep from 'lodash/cloneDeep';
-import filterDeep from 'deepdash-es/filterDeep';
+import filterDeep from 'deepdash/filterDeep';
 
 import { Button, OverflowMenu, OverflowMenuItem, Checkbox } from '../..';
 
@@ -340,6 +340,7 @@ storiesOf('Watson IoT Experimental|List', module)
       };
 
       const checkSelectedChildren = items => {
+        // eslint-disable-next-line consistent-return
         const selectedChildren = filterDeep(items, (value, key) => {
           if (selectedIds.some(id => key === id)) {
             return true;

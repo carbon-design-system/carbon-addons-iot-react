@@ -2,6 +2,10 @@ import React from 'react';
 import { Search } from 'carbon-components-react';
 import PropTypes from 'prop-types';
 
+import { settings } from '../../../constants/Settings';
+
+const { iotPrefix } = settings;
+
 const propTypes = {
   title: PropTypes.string.isRequired,
   buttons: PropTypes.arrayOf(PropTypes.node),
@@ -22,22 +26,22 @@ const defaultProps = {
   },
 };
 
-const ListHeader = ({ title, buttons, search, i18n, ...others }) => {
+const ListHeader = ({ title, buttons, search, i18n }) => {
   return (
-    <div className="list-header-container">
-      <div className="list-header">
-        <div className="list-header--title">{title}</div>
-        <div className="list-header--btn-container">{buttons}</div>
+    <div className={`${iotPrefix}--list-header-container`}>
+      <div className={`${iotPrefix}--list-header`}>
+        <div className={`${iotPrefix}--list-header--title`}>{title}</div>
+        <div className={`${iotPrefix}--list-header--btn-container`}>{buttons}</div>
       </div>
       {search && (
-        <div className="list-header--search">
+        <div className={`${iotPrefix}--list-header--search`}>
           <Search
             placeHolderText={i18n.searchPlaceHolderText}
             onChange={search.onChange}
             size="sm"
-            className=""
+            small
             value={search.value}
-            labelText="Search"
+            labelText={i18n.searchPlaceHolderText}
           />
         </div>
       )}

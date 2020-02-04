@@ -141,7 +141,7 @@ describe('HierarchyList', () => {
     const { getByLabelText, getByTitle, queryByTitle } = render(
       <HierarchyList items={items} hasSearch title="Hierarchy List" pageSize="xl" />
     );
-    fireEvent.change(getByLabelText('Search'), { target: { value: 'jd' } });
+    fireEvent.change(getByLabelText('Enter a value'), { target: { value: 'jd' } });
     /** Need to wait for the element to be removed because the search function
         has a debouncing timeout */
     // eslint-disable-next-line
@@ -163,7 +163,7 @@ describe('HierarchyList', () => {
     const { getByLabelText, getByTitle, queryByTitle } = render(
       <HierarchyList items={items} hasSearch title="Hierarchy List" pageSize="xl" />
     );
-    fireEvent.change(getByLabelText('Search'), { target: { value: 'jd davis' } });
+    fireEvent.change(getByLabelText('Enter a value'), { target: { value: 'jd davis' } });
     /** Need to wait for the element to be removed because the search function
         has a debouncing timeout */
     // eslint-disable-next-line
@@ -180,7 +180,7 @@ describe('HierarchyList', () => {
       expect(getByTitle('JD Davis')).toBeTruthy();
 
       // Change search to empty string
-      fireEvent.change(getByLabelText('Search'), { target: { value: '' } });
+      fireEvent.change(getByLabelText('Enter a value'), { target: { value: '' } });
       /** Need to wait for an element to appear because the search function
       has a debouncing timeout */
       const braves = await waitForElement(() => getByTitle('Atlanta Braves'));

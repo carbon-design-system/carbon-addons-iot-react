@@ -1,8 +1,10 @@
-.list-header {
+@import '../../../globals/vars';
+
+.#{$iot-prefix}--list-header {
   display: flex;
   align-items: center;
   background: $ui-01;
-  padding-left: $spacing-04;
+  padding: $spacing-04;
   border-bottom: 1px solid $ui-03;
   height: rem(56px);
   &--title {
@@ -20,7 +22,7 @@
   }
 
   &--search {
-    padding: 0 1rem;
+    padding: 0 $spacing-05;
     height: rem(56px);
     display: flex;
     align-items: center;
