@@ -1,9 +1,11 @@
 @import '~carbon-components/scss/globals/scss/vars';
 @import '~carbon-components/scss/globals/scss/layout';
+@import 'column-resize';
 
 .#{$prefix}--data-table {
   .#{$prefix}--table-header-label {
     display: flex;
+    user-select: none;
   }
 
   .column-header__btn {

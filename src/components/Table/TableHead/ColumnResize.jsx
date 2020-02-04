@@ -1,105 +1,89 @@
 import React, { useState, useImperativeHandle } from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
+import { settings } from '../../../constants/Settings';
 
 const propTypes = {
-  // eslint-disable-next-line react/forbid-prop-types
-  columnWidths: PropTypes.any.isRequired,
-  columnIndex: PropTypes.number.isRequired,
-  setNewWidths: PropTypes.func.isRequired,
+  allColumns: PropTypes.object.isRequired,
+  columnId: PropTypes.string.isRequired,
+  onResize: PropTypes.func.isRequired,
 };
 
 const dragHandleWidth = 4;
+const { iotPrefix } = settings;
 
-const getColumnDragBounds = (direction, colWidths, index) => {
-  const minColumnWidth = 64;
+const getColumnDragBounds = (myColumn, siblingColumn) => {
+  const minColumnWidth = 32;
   return {
-    direction,
     minColumnWidth,
-    rightBound: colWidths[index],
-    leftBound: colWidths[index + 1] - minColumnWidth,
+    left: document.dir === 'rtl' ? minColumnWidth - siblingColumn.width : minColumnWidth,
+    right:
+      document.dir === 'rtl'
+        ? myColumn.width - minColumnWidth
+        : myColumn.width + siblingColumn.width - minColumnWidth,
   };
 };
 
-const dragIsValidLtr = (mousePosition, bounds) => {
-  const { minColumnWidth, rightBound, leftBound, direction } = bounds;
-  return (
-    (direction === 'left' && mousePosition >= minColumnWidth) ||
-    (direction === 'right' && mousePosition <= rightBound + leftBound)
-  );
-};
-
-const dragIsValidRtl = (mousePosition, bounds) => {
-  const { minColumnWidth, rightBound, leftBound, direction } = bounds;
-  return (
-    (direction === 'left' && mousePosition > -leftBound) ||
-    (direction === 'right' && mousePosition < rightBound - minColumnWidth)
-  );
-};
-
-const getUpdatedColumnWidths = (dropXPos, columnWidth, leftSideIndex) => {
-  const origLeftSideColWidth = columnWidth[leftSideIndex];
-  const leftSideColWidth = document.dir === 'rtl' ? origLeftSideColWidth - dropXPos : dropXPos;
-
-  const rightSideIndex = leftSideIndex + 1;
-  const origRightSideColWidth = columnWidth[rightSideIndex];
-  const rightSideColWidth =
+const getUpdatedColumnWidths = (dropXPos, myColumn, affectedSiblingColumn) => {
+  const myColumnNewWidth = document.dir === 'rtl' ? myColumn.width - dropXPos : dropXPos;
+  const newAffectedSiblingColumnWidth =
     document.dir === 'rtl'
-      ? origRightSideColWidth + dropXPos
-      : origRightSideColWidth + origLeftSideColWidth - dropXPos;
+      ? affectedSiblingColumn.width + dropXPos
+      : affectedSiblingColumn.width + myColumn.width - dropXPos;
 
-  return {
-    [leftSideIndex]: leftSideColWidth,
-    [rightSideIndex]: rightSideColWidth,
-  };
+  return [
+    { id: myColumn.id, width: myColumnNewWidth },
+    { id: affectedSiblingColumn.id, width: newAffectedSiblingColumnWidth },
+  ];
 };
 
 const ColumnResize = React.forwardRef((props, ref) => {
-  const { columnWidths, columnIndex, setNewWidths } = props;
+  const { allColumns, columnId } = props;
   const [startX, setStartX] = useState(0);
   const [leftPosition, setLeftPosition] = useState(0);
-  const [move, setMove] = useState(0);
-  const [valid, setValid] = useState(true);
   const [columnIsBeingResized, setColumnIsBeingResized] = useState(false);
+  const [myColumn, setMyColumn] = useState();
+  const [affectedSiblingColumn, setAffectedSiblingColumn] = useState();
 
   const onMouseDown = e => {
     const startingX = e.target.offsetLeft - e.clientX;
-    const mousePosition = e.clientX + startingX;
-
     setStartX(startingX);
-    setLeftPosition(mousePosition);
-    setMove(e.clientX);
-    setValid(true);
+    setLeftPosition(e.target.offsetLeft);
     setColumnIsBeingResized(true);
+    setAffectedColumns(columnId, allColumns);
   };
 
   const onMouseMove = e => {
     if (columnIsBeingResized) {
       const mousePosition = e.clientX + startX;
-      const direction = e.clientX > move ? 'right' : 'left';
-      const dragBounds = getColumnDragBounds(direction, columnWidths, columnIndex);
-      const isValid =
-        document.dir === 'rtl'
-          ? dragIsValidRtl(mousePosition, dragBounds)
-          : dragIsValidLtr(mousePosition, dragBounds);
-
-      setValid(isValid);
-      setLeftPosition(mousePosition);
+      const bounds = getColumnDragBounds(myColumn, affectedSiblingColumn);
+      if (mousePosition > bounds.left && mousePosition < bounds.right) {
+        setLeftPosition(mousePosition);
+      }
     }
   };
 
   const onMouseUp = () => {
     if (columnIsBeingResized) {
-      if (valid) {
-        const resizePosition = leftPosition + dragHandleWidth;
-        const colWidths = getUpdatedColumnWidths(resizePosition, columnWidths, columnIndex);
-        setNewWidths(colWidths);
-      }
-
+      const resizePosition = leftPosition + (document.dir === 'rtl' ? 0 : dragHandleWidth);
+      const colWidths = getUpdatedColumnWidths(resizePosition, myColumn, affectedSiblingColumn);
+      props.onResize(colWidths);
       setColumnIsBeingResized(false);
-      setValid(true);
       setLeftPosition(0);
     }
+  };
+
+  const setAffectedColumns = (columnId, allColumns) => {
+    const myColumn = allColumns[columnId];
+    const sortedVisibleColumns = Object.keys(allColumns)
+      .map(key => allColumns[key])
+      .filter(col => col.visible)
+      .sort((a, b) => a.index - b.index);
+    const myColumnVisiblePosition = sortedVisibleColumns.findIndex(col => col.id === columnId);
+    const affectedSiblingColumn = sortedVisibleColumns[myColumnVisiblePosition + 1];
+
+    setMyColumn(myColumn);
+    setAffectedSiblingColumn(affectedSiblingColumn);
   };
 
   // We extend this instance with mouse move/up event forward functions which the parent
@@ -124,10 +108,12 @@ const ColumnResize = React.forwardRef((props, ref) => {
     <div
       onClick={e => e.stopPropagation()}
       onMouseDown={e => onMouseDown(e)}
-      style={{ width: dragHandleWidth, left: leftPosition || 'auto' }}
-      className={classnames('column-resize-handle', {
-        'column-resize-handle--invalid': !valid,
-        'column-resize-handle--dragging': columnIsBeingResized,
+      style={{
+        width: dragHandleWidth,
+        left: leftPosition || (document.dir === 'rtl' ? 0 : 'auto'),
+      }}
+      className={classnames(`${iotPrefix}--column-resize-handle`, {
+        [`${iotPrefix}--column-resize-handle--dragging`]: columnIsBeingResized,
       })}
     />
   );

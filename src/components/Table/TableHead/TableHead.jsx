@@ -1,9 +1,9 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 
-import React, { useState, useEffect, createRef } from 'react';
+import React, { useState, useEffect, useLayoutEffect, createRef } from 'react';
 import PropTypes from 'prop-types';
 import { DataTable, Checkbox } from 'carbon-components-react';
-import isNil from 'lodash/isNil';
+import { isNil, isEmpty } from 'lodash';
 import styled from 'styled-components';
 import classnames from 'classnames';
 
@@ -19,13 +19,12 @@ import ColumnResize from './ColumnResize';
 const { TableHead: CarbonTableHead, TableRow, TableExpandHeader } = DataTable;
 
 const propTypes = {
-  /** Used to set a fixed min.width max-width on all TableHeaders */
-  headerWidth: PropTypes.number,
   /** Important table options that the head needs to know about */
   options: PropTypes.shape({
     hasRowExpansion: PropTypes.bool,
     hasRowSelection: PropTypes.oneOf(['multi', 'single', false]),
     hasRowActions: PropTypes.bool,
+    hasResize: PropTypes.bool,
   }),
   /** List of columns */
   columns: TableColumnsPropTypes.isRequired,
@@ -71,11 +70,11 @@ const propTypes = {
     onChangeOrdering: PropTypes.func,
     onColumnSelectionConfig: PropTypes.func,
     onApplyFilter: PropTypes.func,
+    onColumnResize: PropTypes.func,
   }).isRequired,
   /** lightweight  */
   lightweight: PropTypes.bool,
   i18n: I18NPropTypes,
-  hasResize: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -90,8 +89,6 @@ const defaultProps = {
   i18n: {
     ...defaultI18NPropTypes,
   },
-  hasResize: true,
-  headerWidth: undefined,
 };
 
 const StyledCheckboxTableHeader = styled(TableHeader)`
@@ -138,9 +135,8 @@ const StyledCustomTableHeader = styled(TableHeader)`
 `;
 
 const TableHead = ({
-  headerWidth,
   options,
-  options: { hasRowExpansion, hasRowSelection },
+  options: { hasRowExpansion, hasRowSelection, hasResize },
   columns,
   tableState: {
     selection: { isSelectAllIndeterminate, isSelectAllSelected },
@@ -149,7 +145,14 @@ const TableHead = ({
     ordering,
     filters,
   },
-  actions: { onSelectAll, onChangeSort, onApplyFilter, onChangeOrdering, onColumnSelectionConfig },
+  actions: {
+    onSelectAll,
+    onChangeSort,
+    onApplyFilter,
+    onChangeOrdering,
+    onColumnSelectionConfig,
+    onColumnResize,
+  },
   selectAllText,
   clearFilterText,
   filterText,
@@ -158,12 +161,20 @@ const TableHead = ({
   closeMenuText,
   lightweight,
   i18n,
-  hasResize,
 }) => {
   const filterBarActive = activeBar === 'filter';
-  const [columnWidth, setColumnWidth] = useState({});
+  const initialColumnWidths = {};
   const columnRef = ordering.map(() => createRef());
   const columnResizeRefs = ordering.map(() => createRef());
+
+  const [currentColumnWidths, setCurrentColumnWidths] = useState({});
+  const [emitUpdatedColumnWidths, setEmitUpdatedColumnWidths] = useState(false);
+
+  if (isEmpty(currentColumnWidths)) {
+    columns.forEach(col => {
+      initialColumnWidths[col.id] = col.width;
+    });
+  }
 
   const forwardMouseEvent = e => {
     columnResizeRefs.forEach(ref => {
@@ -173,19 +184,54 @@ const TableHead = ({
     });
   };
 
-  const updateColumnWidthsAfterResize = updatedColumnWidths => {
-    setColumnWidth(old => ({
-      ...old,
-      ...updatedColumnWidths,
-    }));
+  const getRenderedWidths = () => {
+    return columnRef.map(ref => ref.current && ref.current.getBoundingClientRect().width);
   };
 
-  useEffect(
-    () => {
-      const nextWidth = columnRef.map(ref => {
-        return headerWidth || (ref.current && ref.current.getBoundingClientRect().width);
+  const getRenderedWidthsMap = () => {
+    const widths = getRenderedWidths();
+    const widthsMap = {};
+
+    ordering.forEach((orderedColumn, index) => {
+      widthsMap[orderedColumn.columnId] = {
+        width: widths[index],
+        index: index,
+        id: orderedColumn.columnId,
+        visible: !orderedColumn.isHidden,
+      };
+    });
+    return widthsMap;
+  };
+
+  const updateColumnWidthsAfterResize = modifiedColumnWidths => {
+    setCurrentColumnWidths(prevColumnWidths => {
+      const merged = { ...prevColumnWidths };
+      modifiedColumnWidths.forEach(modCol => {
+        merged[modCol.id].width = modCol.width;
       });
-      setColumnWidth(nextWidth);
+      return merged;
+    });
+    if (onColumnResize) {
+      setEmitUpdatedColumnWidths(true);
+    }
+  };
+
+  useEffect(() => {
+    if (emitUpdatedColumnWidths) {
+      const updatedColumns = getRenderedWidths().map((width, index) => ({
+        ...columns[index],
+        width,
+      }));
+      onColumnResize(updatedColumns);
+      setEmitUpdatedColumnWidths(false);
+    }
+  });
+
+  useLayoutEffect(
+    () => {
+      if (hasResize) {
+        setCurrentColumnWidths(getRenderedWidthsMap());
+      }
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
     []
@@ -220,14 +266,18 @@ const TableHead = ({
             matchingColumnMeta && matchingColumnMeta.align ? matchingColumnMeta.align : 'start';
           return !item.isHidden && matchingColumnMeta ? (
             <StyledCustomTableHeader
-              width={headerWidth}
+              width={initialColumnWidths[matchingColumnMeta.id]}
               id={`column-${matchingColumnMeta.id}`}
               key={`column-${matchingColumnMeta.id}`}
               data-column={matchingColumnMeta.id}
               isSortable={matchingColumnMeta.isSortable}
               isSortHeader={hasSort}
               ref={columnRef[i]}
-              thStyle={{ width: columnWidth[i] }}
+              thStyle={{
+                width:
+                  currentColumnWidths[matchingColumnMeta.id] &&
+                  currentColumnWidths[matchingColumnMeta.id].width,
+              }}
               onClick={() => {
                 if (matchingColumnMeta.isSortable && onChangeSort) {
                   onChangeSort(matchingColumnMeta.id);
@@ -241,12 +291,12 @@ const TableHead = ({
               })}
             >
               <TableCellRenderer>{matchingColumnMeta.name}</TableCellRenderer>
-              {hasResize && i < ordering.length - 1 && !matchingColumnMeta.width ? (
+              {hasResize && i < ordering.length - 1 ? (
                 <ColumnResize
-                  setNewWidths={updateColumnWidthsAfterResize}
-                  columnIndex={i}
+                  onResize={updateColumnWidthsAfterResize}
                   ref={columnResizeRefs[i]}
-                  columnWidths={columnWidth}
+                  allColumns={currentColumnWidths}
+                  columnId={matchingColumnMeta.id}
                 />
               ) : null}
             </StyledCustomTableHeader>
