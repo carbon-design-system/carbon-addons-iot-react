@@ -1,6 +1,7 @@
 import React from 'react';
 import { Search } from 'carbon-components-react';
 import PropTypes from 'prop-types';
+
 import { settings } from '../../../constants/Settings';
 
 const { iotPrefix } = settings;
@@ -25,7 +26,7 @@ const defaultProps = {
   },
 };
 
-const ListHeader = ({ title, buttons, search, i18n, ...others }) => {
+const ListHeader = ({ title, buttons, search, i18n }) => {
   return (
     <div className={`${iotPrefix}--list-header-container`}>
       <div className={`${iotPrefix}--list-header`}>
@@ -39,9 +40,8 @@ const ListHeader = ({ title, buttons, search, i18n, ...others }) => {
             onChange={search.onChange}
             size="sm"
             small
-            className=""
             value={search.value}
-            labelText="Search"
+            labelText={i18n.searchPlaceHolderText}
           />
         </div>
       )}

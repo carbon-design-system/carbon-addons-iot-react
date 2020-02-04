@@ -3,6 +3,7 @@ import classnames from 'classnames';
 import { Icon } from 'carbon-components-react';
 import { iconChevronDown, iconChevronUp } from 'carbon-icons';
 import PropTypes from 'prop-types';
+
 import { settings } from '../../../constants/Settings';
 
 const { iotPrefix } = settings;
@@ -15,6 +16,7 @@ const propTypes = {
   isSelectable: PropTypes.bool,
   onSelect: PropTypes.func,
   selected: PropTypes.bool,
+  expanded: PropTypes.bool,
   value: PropTypes.string.isRequired,
   secondaryValue: PropTypes.string,
   rowActions: PropTypes.arrayOf(PropTypes.node), // TODO
@@ -31,6 +33,7 @@ const defaultProps = {
   isSelectable: false,
   onSelect: null,
   selected: false,
+  expanded: false,
   secondaryValue: null,
   rowActions: [],
   icon: null,
@@ -39,6 +42,8 @@ const defaultProps = {
   isCategory: false,
 };
 
+// internal component
+// eslint-disable-next-line
 const ListItemWrapper = ({ id, isSelectable, onSelect, selected, isLargeRow, children }) =>
   isSelectable ? (
     <div
@@ -82,7 +87,6 @@ const ListItem = ({
   iconPosition = 'left', // or "right"
   nestingLevel,
   isCategory,
-  ...others
 }) => {
   const handleExpansionClick = () => isExpandable && onExpand(id);
 
