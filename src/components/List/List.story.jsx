@@ -8,7 +8,7 @@ import { Button, OverflowMenu, OverflowMenuItem } from '../..';
 
 import List from './List';
 
-const sampleHierarchy = {
+export const sampleHierarchy = {
   MLB: {
     'American League': {
       'Chicago White Sox': {
