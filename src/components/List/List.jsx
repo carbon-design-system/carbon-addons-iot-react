@@ -125,9 +125,9 @@ const List = ({
 
   return (
     <div
-      className={classnames(
-        `${iotPrefix}--list ${isFullHeight ? `${iotPrefix}--list__full-height` : ''}`
-      )}
+      className={classnames(`${iotPrefix}--list`, {
+        [`${iotPrefix}--list__full-height`]: isFullHeight,
+      })}
     >
       <ListHeader
         className={`${iotPrefix}--list--header`}

@@ -123,30 +123,26 @@ const ListItem = ({
       {renderExpander()}
       <div
         className={classnames(
-          `${iotPrefix}--list-item--content
-           ${selected ? `${iotPrefix}--list-item--content__selected` : ''}
-           ${isLargeRow ? `${iotPrefix}--list-item--content__large` : ''}`
+          `${iotPrefix}--list-item--content`,
+          { [`${iotPrefix}--list-item--content__selected`]: selected },
+          { [`${iotPrefix}--list-item--content__large`]: isLargeRow }
         )}
       >
         {renderIcon()}
         <div
-          className={classnames(
-            `${iotPrefix}--list-item--content--values
-             ${isLargeRow ? `${iotPrefix}--list-item--content--values__large` : ''}`
-          )}
+          className={classnames(`${iotPrefix}--list-item--content--values`, {
+            [`${iotPrefix}--list-item--content--values__large`]: isLargeRow,
+          })}
         >
           {isLargeRow ? (
             <>
               <div
-                className={classnames(
-                  `${iotPrefix}--list-item--content--values--main ${iotPrefix}--list-item--content--values--main__large`
-                )}
+                className={`${iotPrefix}--list-item--content--values--main ${iotPrefix}--list-item--content--values--main__large`}
               >
                 <div
-                  className={classnames(
-                    `${iotPrefix}--list-item--content--values--value 
-                     ${isCategory ? `${iotPrefix}--list-item--category` : ''}`
-                  )}
+                  className={classnames(`${iotPrefix}--list-item--content--values--value`, {
+                    [`${iotPrefix}--list-item--category`]: isCategory,
+                  })}
                   title={value}
                 >
                   {value}
@@ -155,10 +151,8 @@ const ListItem = ({
               </div>
               <div
                 title={secondaryValue}
-                className={classnames(
-                  `${iotPrefix}--list-item--content--values--secondary
-                   ${iotPrefix}--list-item--content--values--secondary__large`
-                )}
+                className={`${iotPrefix}--list-item--content--values--secondary
+                   ${iotPrefix}--list-item--content--values--secondary__large`}
               >
                 {secondaryValue || null}
               </div>
@@ -167,10 +161,9 @@ const ListItem = ({
             <>
               <div className={`${iotPrefix}--list-item--content--values--main`}>
                 <div
-                  className={classnames(
-                    `${iotPrefix}--list-item--content--values--value
-                     ${isCategory ? `${iotPrefix}--list-item--category` : ''}`
-                  )}
+                  className={classnames(`${iotPrefix}--list-item--content--values--value`, {
+                    [`${iotPrefix}--list-item--category`]: isCategory,
+                  })}
                   title={value}
                 >
                   {value}
