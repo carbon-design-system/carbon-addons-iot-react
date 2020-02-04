@@ -24,7 +24,7 @@ describe('SimpleList component tests', () => {
     expect(renderedElement.container.innerHTML).toBeTruthy();
   });
 
-  test('pageSize is set to lg', () => {
+  test('pageSize is set to xl', () => {
     const renderedElement = render(
       <SimpleList title="simple list" items={getListItems(5)} pageSize="xl" />
     );

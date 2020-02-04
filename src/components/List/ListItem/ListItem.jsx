@@ -84,7 +84,7 @@ const ListItem = ({
   secondaryValue,
   rowActions,
   icon,
-  iconPosition = 'left', // or "right"
+  iconPosition, // or "right"
   nestingLevel,
   isCategory,
 }) => {
