@@ -32,5 +32,19 @@ describe('DashboardGrid', () => {
     expect(componentUtilityFunctions.getLayout).not.toHaveBeenCalled();
     expect(newLayouts.max[0]).toHaveProperty('w');
     expect(newLayouts.max[0]).toHaveProperty('h');
+    // handle old layouts with bogus cards
+    const emptyLayouts = findLayoutOrGenerate(
+      {
+        max: [{ i: 'boguscard', x: 0, y: 0 }, { i: 'mycard', x: 0, y: 0 }],
+        xl: [{ i: 'boguscard', x: 0, y: 0 }],
+        lg: [{ i: 'boguscard', x: 0, y: 0 }],
+        md: [{ i: 'boguscard', x: 0, y: 0 }],
+        sm: [{ i: 'boguscard', x: 0, y: 0 }],
+        xs: [{ i: 'boguscard', x: 0, y: 0 }],
+      },
+      [{ id: 'mycard', size: CARD_SIZES.SMALL }]
+    );
+    // the bogus card was quietly removed from the layout
+    expect(emptyLayouts.max).toHaveLength(1);
   });
 });
