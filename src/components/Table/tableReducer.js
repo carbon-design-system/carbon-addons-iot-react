@@ -2,6 +2,7 @@ import update from 'immutability-helper';
 import isNil from 'lodash/isNil';
 import isEmpty from 'lodash/isEmpty';
 import get from 'lodash/get';
+import find from 'lodash/find';
 
 import { getSortedData } from '../../utils/componentUtilityFunctions';
 
@@ -25,26 +26,48 @@ import {
 } from './tableActionCreators';
 import { baseTableReducer } from './baseTableReducer';
 
-// Little utility to filter data
-export const filterData = (data, filters) =>
-  !filters || filters.length === 0
+/**
+ * Default function to compare value 1 and 2
+ * @param {*} value1, filter value
+ * @param {*} value2, actual
+ * returns true if value1 contains value2 for strings, and true if value1 === value2 for numbers
+ */
+export const defaultComparison = (value1, value2) =>
+  !isNil(value1) && typeof value1 === 'number' // only if the column value filter is not null/undefined
+    ? value1 === value2 // type number do a direct comparison
+    : value1 && // type string do a lowercase includes comparison
+      value1.toString &&
+      value1
+        .toString()
+        .toLowerCase()
+        .includes(value2.toString().toLowerCase());
+
+/**
+ * Little utility to filter data
+ * @param {*} data data to filter
+ * @param {*} filters [{columnId: 'columnName', value: any}]
+ * @param {*} columns
+ */
+export const filterData = (data, filters, columns) => {
+  return !filters || filters.length === 0
     ? data
     : data.filter(({ values }) =>
         // return false if a value doesn't match a valid filter
-        // TODO Currently assumes every value has a toString method, need to support filtering on custom cell contents
-        filters.reduce(
-          (acc, { columnId, value }) =>
-            acc &&
-            (!isNil(values[columnId]) && // only if the values is not null/undefined
-              values[columnId] &&
-              values[columnId].toString &&
-              values[columnId]
-                .toString()
-                .toLowerCase()
-                .includes(value.toString().toLowerCase())),
-          true
-        )
+        filters.reduce((acc, { columnId, value }) => {
+          if (!isNil(columns)) {
+            const { filter } = find(columns, { id: columnId }) || {};
+            const filterFunction = filter?.filterFunction;
+            return (
+              acc &&
+              (filterFunction
+                ? filterFunction(values[columnId], value)
+                : defaultComparison(values[columnId], value))
+            );
+          }
+          return acc && defaultComparison(values[columnId], value);
+        }, true)
       );
+};
 // Little utility to search
 
 export const searchData = (data, searchString) =>
@@ -75,7 +98,7 @@ export const filterSearchAndSort = (data, sort = {}, search = {}, filters = [], 
   const { columnId, direction } = sort;
 
   const { value: searchValue } = search;
-  const filteredData = filterData(data, filters);
+  const filteredData = filterData(data, filters, columns);
   const searchedData =
     searchValue && searchValue !== '' ? searchData(filteredData, searchValue) : filteredData;
   return !isEmpty(sort)
@@ -226,7 +249,7 @@ export const tableReducer = (state = {}, action) => {
                           nextSortDir,
                           isTimestampColumn
                         )
-                    : filterData(state.data, state.view.filters), // reset to original filters
+                    : filterData(state.data, state.view.filters, state.columns), // reset to original filters
               },
             },
           },

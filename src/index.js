@@ -56,6 +56,7 @@ export TableCard, { findMatchingThresholds } from './components/TableCard/TableC
 export {
   CARD_TYPES,
   CARD_SIZES,
+  CARD_ACTIONS,
   DASHBOARD_BREAKPOINTS,
   DASHBOARD_SIZES,
   TIME_SERIES_TYPES,
@@ -63,14 +64,13 @@ export {
 
 // Experimental
 export ListCard from './components/ListCard/ListCard';
-export {
-  PageWizard,
-  PageWizardStep,
-  PageWizardStepContent,
-  PageWizardStepTitle,
-  PageWizardStepDescription,
-  PageWizardStepExtraContent,
-} from './components/PageWizard/PageWizard';
+
+export PageWizard from './components/PageWizard/PageWizard';
+export PageWizardStep from './components/PageWizard/PageWizardStep/PageWizardStep';
+export PageWizardStepContent from './components/PageWizard/PageWizardStep/PageWizardStepContent';
+export PageWizardStepDescription from './components/PageWizard/PageWizardStep/PageWizardStepDescription';
+export PageWizardStepExtraContent from './components/PageWizard/PageWizardStep/PageWizardStepExtraContent';
+export PageWizardStepTitle from './components/PageWizard/PageWizardStep/PageWizardStepTitle';
 export StatefulPageWizard from './components/PageWizard/StatefulPageWizard';
 
 export TileGallery from './components/TileGallery/TileGallery';
