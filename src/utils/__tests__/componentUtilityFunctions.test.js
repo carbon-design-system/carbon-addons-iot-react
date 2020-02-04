@@ -1,4 +1,4 @@
-import { getSortedData } from '../componentUtilityFunctions';
+import { getSortedData, canFit } from '../componentUtilityFunctions';
 
 const mockData = [
   { values: { number: 10, string: 'string', null: null } },
@@ -16,5 +16,13 @@ describe('componentUtilityFunctions', () => {
     expect(getSortedData(mockData, 'number', 'ASC')[0].values.number).toEqual(10);
     expect(getSortedData(mockData, 'number', 'ASC')[1].values.number).toEqual(20);
     expect(getSortedData(mockData, 'number', 'ASC')[2].values.number).toEqual(100);
+  });
+  test('canFit', () => {
+    expect(canFit(0, 0, 1, 1, [[1, 1, 1, 1], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]])).toEqual(
+      false
+    );
+    expect(canFit(0, 0, 1, 1, [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]])).toEqual(
+      true
+    );
   });
 });

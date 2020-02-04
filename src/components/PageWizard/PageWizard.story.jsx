@@ -2,23 +2,29 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { boolean } from '@storybook/addon-knobs';
+import { boolean, text } from '@storybook/addon-knobs';
 import { Form, FormGroup, FormItem, Link, TextInput } from 'carbon-components-react';
 
 import PageTitleBar from '../PageTitleBar/PageTitleBar';
 
-import {
-  PageWizard,
-  PageWizardStep,
-  PageWizardStepContent,
-  PageWizardStepTitle,
-  PageWizardStepDescription,
-  PageWizardStepExtraContent,
-} from './PageWizard';
+import PageWizard from './PageWizard';
+import PageWizardStep from './PageWizardStep/PageWizardStep';
+import PageWizardStepContent from './PageWizardStep/PageWizardStepContent';
+import PageWizardStepDescription from './PageWizardStep/PageWizardStepDescription';
+import PageWizardStepTitle from './PageWizardStep/PageWizardStepTitle';
+import PageWizardStepExtraContent from './PageWizardStep/PageWizardStepExtraContent';
 import StatefulPageWizard from './StatefulPageWizard';
 
 export const content = [
-  <PageWizardStep id="step1" label="Step 1">
+  <PageWizardStep
+    id="step1"
+    label="Step 1"
+    key="step1"
+    onClose={() => {}}
+    onSubmit={() => {}}
+    onNext={() => {}}
+    onBack={() => {}}
+  >
     <PageWizardStepTitle>Step 1: Define the data</PageWizardStepTitle>
     <PageWizardStepDescription>
       You can create summaries lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eros
@@ -42,7 +48,15 @@ export const content = [
       </p>
     </PageWizardStepExtraContent>
   </PageWizardStep>,
-  <PageWizardStep id="step2" label="Step 2">
+  <PageWizardStep
+    id="step2"
+    key="step2"
+    label="Step 2"
+    onClose={() => {}}
+    onSubmit={() => {}}
+    onNext={() => {}}
+    onBack={() => {}}
+  >
     <PageWizardStepTitle>Step 2: Pick the contents</PageWizardStepTitle>
     <PageWizardStepDescription>
       You can add content lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eros
@@ -74,7 +88,15 @@ export const content = [
       </p>
     </PageWizardStepExtraContent>
   </PageWizardStep>,
-  <PageWizardStep id="step3" label="Step 3">
+  <PageWizardStep
+    id="step3"
+    key="step3"
+    label="Step 3"
+    onClose={() => {}}
+    onSubmit={() => {}}
+    onNext={() => {}}
+    onBack={() => {}}
+  >
     <PageWizardStepTitle>Step 3: Define your dashboard</PageWizardStepTitle>
     <PageWizardStepDescription>
       Dashboards are useful lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eros
@@ -137,14 +159,23 @@ export const StepValidation = ({ ...props }) => {
   );
 };
 
-storiesOf('Watson IoT Experimental|PageWizard', module)
+storiesOf('Watson IoT|PageWizard', module)
   .add('stateful example', () => (
-    <div style={{ position: 'fixed', left: 0, right: 0, top: 0, bottom: 0, padding: '2rem' }}>
-      <StatefulPageWizard>{content}</StatefulPageWizard>
+    <div>
+      <StatefulPageWizard
+        onClearError={() => {}}
+        onClose={() => {}}
+        onSubmit={() => {}}
+        onNext={() => {}}
+        onBack={() => {}}
+        setStep={() => {}}
+      >
+        {content}
+      </StatefulPageWizard>
     </div>
   ))
   .add('stateful example w/ validation in PageTitleBar', () => (
-    <div style={{ position: 'fixed', left: 0, right: 0, top: 0, bottom: 0 }}>
+    <div>
       <PageTitleBar
         title="A cool PageWizard!"
         description="The description from the PageTitleBar"
@@ -154,7 +185,14 @@ storiesOf('Watson IoT Experimental|PageWizard', module)
           <Link to="www.ibm.com">Something Else</Link>,
         ]}
         content={
-          <StatefulPageWizard>
+          <StatefulPageWizard
+            onClearError={() => {}}
+            onClose={() => {}}
+            onSubmit={() => {}}
+            onNext={() => {}}
+            onBack={() => {}}
+            setStep={() => {}}
+          >
             <StepValidation id="step1" label="Step with validation" />
             {content[1]}
           </StatefulPageWizard>
@@ -163,7 +201,7 @@ storiesOf('Watson IoT Experimental|PageWizard', module)
     </div>
   ))
   .add('wrapped in PageTitleBar', () => (
-    <div style={{ position: 'fixed', left: 0, right: 0, top: 0, bottom: 0 }}>
+    <div>
       <PageTitleBar
         title="A cool PageWizard!"
         description="The description from the PageTitleBar"
@@ -175,11 +213,13 @@ storiesOf('Watson IoT Experimental|PageWizard', module)
         content={
           <PageWizard
             currentStepId="step1"
-            onClose={action('closed')}
-            onSubmit={action('submit')}
-            onNext={action('next')}
-            onBack={action('back')}
-            setStep={action('step clicked')}
+            onClose={action('closed', () => {})}
+            onSubmit={action('submit', () => {})}
+            onClearError={action('Clear error', () => {})}
+            onNext={action('next', () => {})}
+            onBack={action('back', () => {})}
+            setStep={action('step clicked', () => {})}
+            isProgressIndicatorVertical={boolean('Toggle Progress Indicator Alignment', true)}
           >
             {content}
           </PageWizard>
@@ -187,8 +227,24 @@ storiesOf('Watson IoT Experimental|PageWizard', module)
       />
     </div>
   ))
+  .add('With Horizontal ProgressIndicator', () => (
+    <div>
+      <PageWizard
+        currentStepId="step1"
+        onClose={action('closed', () => {})}
+        onSubmit={action('submit', () => {})}
+        onNext={action('next', () => {})}
+        onBack={action('back', () => {})}
+        setStep={action('step clicked', () => {})}
+        onClearError={action('Clear error', () => {})}
+        isProgressIndicatorVertical={boolean('Toggle Progress Indicator Alignment', false)}
+      >
+        {content}
+      </PageWizard>
+    </div>
+  ))
   .add('only one step, in PageTitleBar', () => (
-    <div style={{ position: 'fixed', left: 0, right: 0, top: 0, bottom: 0 }}>
+    <div>
       <PageTitleBar
         title="A cool PageWizard!"
         description="The description from the PageTitleBar"
@@ -200,11 +256,14 @@ storiesOf('Watson IoT Experimental|PageWizard', module)
         content={
           <PageWizard
             currentStepId="step1"
-            onClose={action('closed')}
-            onSubmit={action('submit')}
-            onNext={action('next')}
-            onBack={action('back')}
-            setStep={action('step clicked')}
+            onClose={action('closed', () => {})}
+            onSubmit={action('submit', () => {})}
+            onNext={action('next', () => {})}
+            onBack={action('back', () => {})}
+            onClearError={() => {}}
+            setStep={action('step clicked', () => {})}
+            sendingData={boolean('sendingData', false)}
+            hasStickyFooter={boolean('hasStickyFooter', false)}
           >
             {[content[0]]}
           </PageWizard>
@@ -213,52 +272,7 @@ storiesOf('Watson IoT Experimental|PageWizard', module)
     </div>
   ))
   .add('With Sticky Footer: stateful example w/ validation in PageTitleBar', () => (
-    <div style={{ position: 'fixed', left: 0, right: 0, top: 0, bottom: 0 }}>
-      <PageTitleBar
-        title="A cool PageWizard!"
-        description="The description from the PageTitleBar"
-        breadcrumb={[
-          <Link to="www.ibm.com">Home</Link>,
-          <Link to="www.ibm.com">Something</Link>,
-          <Link to="www.ibm.com">Something Else</Link>,
-        ]}
-        tabs={
-          <StatefulPageWizard hasStickyFooter={boolean('hasStickyFooter', true)}>
-            <StepValidation id="step1" label="Step with validation" />
-            {content[1]}
-          </StatefulPageWizard>
-        }
-      />
-    </div>
-  ))
-  .add('With Sticky Footer: only one step, in PageTitleBar', () => (
-    <div style={{ position: 'fixed', left: 0, right: 0, top: 0, bottom: 0 }}>
-      <PageTitleBar
-        title="A cool PageWizard!"
-        description="The description from the PageTitleBar"
-        breadcrumb={[
-          <Link to="www.ibm.com">Home</Link>,
-          <Link to="www.ibm.com">Something</Link>,
-          <Link to="www.ibm.com">Something Else</Link>,
-        ]}
-        tabs={
-          <PageWizard
-            currentStepId="step1"
-            onClose={action('closed')}
-            onSubmit={action('submit')}
-            onNext={action('next')}
-            onBack={action('back')}
-            setStep={action('step clicked')}
-            hasStickyFooter={boolean('hasStickyFooter', true)}
-          >
-            {[content[0]]}
-          </PageWizard>
-        }
-      />
-    </div>
-  ))
-  .add('One step page with loading button in sticky footer, in PageTitleBar', () => (
-    <div style={{ position: 'fixed', left: 0, right: 0, top: 0, bottom: 0 }}>
+    <div>
       <PageTitleBar
         title="A cool PageWizard!"
         description="The description from the PageTitleBar"
@@ -268,20 +282,45 @@ storiesOf('Watson IoT Experimental|PageWizard', module)
           <Link to="www.ibm.com">Something Else</Link>,
         ]}
         content={
-          <PageWizard
-            currentStepId="step1"
-            onClose={action('closed')}
-            onSubmit={action('submit')}
-            onNext={action('next')}
-            onBack={action('back')}
-            setStep={action('step clicked')}
-            sendingData={boolean('sendingData', true)}
+          <StatefulPageWizard
             hasStickyFooter={boolean('hasStickyFooter', true)}
+            isProgressIndicatorVertical={boolean('Toggle Progress Indicator Alignment', true)}
+            onClearError={() => {}}
+            onClose={() => {}}
+            onSubmit={() => {}}
+            onNext={() => {}}
+            onBack={() => {}}
+            setStep={() => {}}
           >
-            {[content[0]]}
-          </PageWizard>
+            <StepValidation id="step1" label="Step with validation" />
+            {content[1]}
+          </StatefulPageWizard>
         }
       />
     </div>
   ))
-  .add('w/ i18n', () => <div>TODO</div>);
+
+  .add('w/ i18n', () => (
+    <div>
+      <PageWizard
+        currentStepId="step1"
+        onClose={action('closed', () => {})}
+        onSubmit={action('submit', () => {})}
+        onNext={action('next', () => {})}
+        onBack={action('back', () => {})}
+        onClearError={() => {}}
+        setStep={action('step clicked', () => {})}
+        sendingData={boolean('sendingData', false)}
+        hasStickyFooter={boolean('hasStickyFooter', false)}
+        i18={{
+          close: text('Close label', 'Close'),
+          cancel: text('Cancel label', 'Cancel'),
+          back: text('Back label', 'Back'),
+          next: text('Next label', 'Next'),
+          submit: text('Submit label', 'Submit'),
+        }}
+      >
+        {content}
+      </PageWizard>
+    </div>
+  ));
