@@ -56,6 +56,7 @@ export TableCard, { findMatchingThresholds } from './components/TableCard/TableC
 export {
   CARD_TYPES,
   CARD_SIZES,
+  CARD_ACTIONS,
   DASHBOARD_BREAKPOINTS,
   DASHBOARD_SIZES,
   TIME_SERIES_TYPES,
