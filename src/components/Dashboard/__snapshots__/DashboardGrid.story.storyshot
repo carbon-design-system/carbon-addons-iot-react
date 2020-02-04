@@ -63,7 +63,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
               }
             >
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 SZEPp"
+                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 cynIXT"
                 content="My Facility Metrics"
                 id="facility"
                 style={
@@ -99,7 +99,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 />
               </div>
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fRbMaq"
+                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
                 content="My Humidity Values"
                 id="humidity"
                 style={
@@ -135,7 +135,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 />
               </div>
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fRbMaq"
+                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
                 content="My utilization chart"
                 id="utilization"
                 style={
@@ -265,7 +265,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
               }
             >
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 SZEPp"
+                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 cynIXT"
                 content="My Facility Metrics"
                 id="facility"
                 style={
@@ -301,7 +301,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 />
               </div>
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fRbMaq"
+                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
                 content="My Humidity Values"
                 id="humidity"
                 style={
@@ -337,7 +337,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 />
               </div>
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fRbMaq"
+                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
                 content="My utilization chart"
                 id="utilization"
                 style={
@@ -467,7 +467,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
               }
             >
               <div
-                className="react-grid-item react-draggable cssTransforms Card__CardWrapper-v5r71h-0 SZEPp"
+                className="react-grid-item react-draggable cssTransforms Card__CardWrapper-v5r71h-0 cynIXT"
                 content="My Facility Metrics"
                 id="facility"
                 onMouseDown={[Function]}
@@ -508,7 +508,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 />
               </div>
               <div
-                className="react-grid-item react-draggable cssTransforms Card__CardWrapper-v5r71h-0 fRbMaq"
+                className="react-grid-item react-draggable cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
                 content="My Humidity Values"
                 id="humidity"
                 onMouseDown={[Function]}
@@ -549,7 +549,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 />
               </div>
               <div
-                className="react-grid-item react-draggable cssTransforms Card__CardWrapper-v5r71h-0 fRbMaq"
+                className="react-grid-item react-draggable cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
                 content="My utilization chart"
                 id="utilization"
                 onMouseDown={[Function]}
