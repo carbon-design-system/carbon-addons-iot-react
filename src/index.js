@@ -85,6 +85,10 @@ export TileGallerySearch from './components/TileGallery/TileGallerySearch';
 
 export StatefulTileGallery from './components/TileGallery/StatefulTileGallery';
 
+export List from './components/List/List';
+
+export SimpleList from './components/List/SimpleList/SimpleList';
+
 // Carbon proxy
 export {
   Accordion,
