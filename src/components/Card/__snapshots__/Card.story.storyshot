@@ -610,14 +610,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
         <div
           className="Card__CardWrapper-v5r71h-0 cynIXT"
           id="mycard"
-          values={
-            Array [
-              Object {
-                "timestamp": 12341231231,
-                "value1": "my value",
-              },
-            ]
-          }
         >
           <div
             className="Card__CardContent-v5r71h-1 coBfbV"

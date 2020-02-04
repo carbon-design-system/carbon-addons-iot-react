@@ -154,6 +154,7 @@ const Card = props => {
     i18n,
     style,
     className,
+    values,
     ...others
   } = props;
   const isXS = size === CARD_SIZES.XSMALL;
@@ -217,7 +218,7 @@ const Card = props => {
 
             return (
               <CardWrapper
-                {...others}
+                {...others} // you need all of these to support dynamic positioning during edit
                 id={id}
                 dimensions={dimensions}
                 isExpanded={isExpanded}
