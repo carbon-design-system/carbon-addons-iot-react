@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { text, select } from '@storybook/addon-knobs';
-import { Add16, Edit16, Star16, StarFilled16 } from '@carbon/icons-react';
+import { text } from '@storybook/addon-knobs';
+import { Add16, Edit16, Star16 } from '@carbon/icons-react';
 
 import { Button, OverflowMenu, OverflowMenuItem } from '../..';
 
@@ -360,62 +360,3 @@ storiesOf('Watson IoT Experimental|List', module)
       <ExpandableList />
     </div>
   ));
-
-/*
-  .add('Simple List with title and button in header', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
-
-    return (
-      <ListSimple
-        id="List"
-        title={text('Text', 'Simple List')}
-        items={data1}
-        size={size}
-        headerHasButton
-      />
-    );
-  })
-  .add('List with search', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
-
-    return (
-      <ListSimple
-        id="List"
-        title={text('Text', 'Simple List')}
-        items={data1}
-        size={size}
-        hasSearch
-      />
-    );
-  })
-  .add('Two level list, expandable list', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
-
-    return (
-      <ListSimple id="List" title={text('Text', 'Two level list')} items={data2} size={size} />
-    );
-  })
-  .add('Three level list, expandable list', () => {
-    const size = select('size', Object.keyrom(CARD_SIZES), CARD_SIZES.MEDIUM);
-
-    return (
-      <ListSimple id="List" title={text('Text', 'Three level list')} items={data3} size={size} />
-    );
-  })
-  .add('expanded list with search', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
-
-    return (
-      <ListSimple
-        id="List"
-        title={text('Text', '2 level List with Search and Button')}
-        items={items}
-        size={size}
-        hasSearch={{
-          placeHolderText: 'Search list',
-          onSearch: action('search'),
-        }}
-      />
-    );
-  });
-  */
