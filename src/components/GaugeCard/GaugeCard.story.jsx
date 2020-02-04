@@ -27,26 +27,26 @@ const content = {
           comparison: '>',
           value: 0,
           color: '#fa4d56', // red
-          label: 'poor',
+          label: 'Poor',
         },
         {
           comparison: '>',
           value: 60,
           color: '#f1c21b', // yellow
-          label: 'fair',
+          label: 'Fair',
         },
         {
           comparison: '>',
-          value: 60,
+          value: 80,
           color: '#42be65', // green
-          label: 'good',
+          label: 'Good',
         },
       ],
     },
   ],
 };
 const data = {
-  usage: 68,
+  usage: 48,
   usageTrend: 12,
 };
 

@@ -8,9 +8,9 @@ meter {
 
   &::after {
     content: '';
-    width: rem(25px);
+    width: 1rem;
     position: absolute;
-    top: 45.5%;
+    top: 43.5%;
     left: 50%;
     transform: translateX(-50%);
     border-top: 1px dashed $text-02;
@@ -19,6 +19,7 @@ meter {
 
 .#{$iot-prefix}--gauge {
   fill: none;
+  font-size: 0.75rem;
   height: var(--gauge-size);
   stroke-width: 5px;
   width: var(--gauge-size);
@@ -50,4 +51,11 @@ meter {
   display: flex;
   height: 100%;
   width: 100%;
+}
+
+.#{$iot-prefix}--gauge-value__centered {
+  transform: translateY(10px);
+}
+.#{$iot-prefix}--meter__centered::after {
+  display: none;
 }
