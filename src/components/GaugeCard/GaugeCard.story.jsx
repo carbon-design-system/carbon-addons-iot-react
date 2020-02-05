@@ -16,7 +16,7 @@ storiesOf('Watson IoT Experimental|GaugeCard', module).add('basic', () => {
         maximumValue: 100,
         color: 'orange',
         backgroundColor: '#e0e0e0',
-        shape: 'half-circle',
+        shape: 'circle',
         trend: {
           /** the key to load the trend value from the values object. */
           dataSourceId: 'usageTrend',
@@ -40,7 +40,7 @@ storiesOf('Watson IoT Experimental|GaugeCard', module).add('basic', () => {
             comparison: '>',
             value: 80,
             color: '#42be65', // green
-            label: select('No threshold label (above 81%)', ['Good', null], null),
+            label: select('Threshold label (> 80%)', ['Good', null], 'Good'),
           },
         ],
       },
@@ -56,7 +56,7 @@ storiesOf('Watson IoT Experimental|GaugeCard', module).add('basic', () => {
         title={text('Text', 'Health')}
         size={CARD_SIZES.XSMALL}
         values={{
-          usage: number('Gauge value', 79),
+          usage: number('Gauge value', 81),
           usageTrend: '12%',
         }}
         content={content}

@@ -202,7 +202,7 @@ export const GaugeCardPropTypes = {
         renderValueFunction: PropTypes.func,
         color: PropTypes.string,
         backgroundColor: PropTypes.string,
-        shape: PropTypes.oneOf(['half-circle', 'line']),
+        shape: PropTypes.oneOf(['half-circle', 'line', 'circle']),
         trend: PropTypes.shape({
           /** the key to load the trend value from the values object. */
           dataSourceId: PropTypes.string,

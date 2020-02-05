@@ -105,11 +105,21 @@ meter {
       width: 0;
     }
   }
+
+  p {
+    color: var(--gauge-trend-color);
+  }
 }
 
 .#{$iot-prefix}--gauge-card {
   .card--title {
     width: 100%;
+
+    span {
+      max-width: calc(100% - 40px);
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
   }
 
   .#{$prefix}--tooltip__trigger {

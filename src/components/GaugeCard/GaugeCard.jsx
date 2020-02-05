@@ -124,6 +124,7 @@ const GaugeCard = ({
                     '--gauge-bg': gauge.backgroundColor,
                     '--stroke-dash': getStrokeDash(values[gauge.dataSourceId]) || 0,
                     '--gauge-size': gaugeSize + 'px',
+                    '--gauge-trend-color': gauge.trend.color,
                   }}
                 >
                   <circle
@@ -165,7 +166,7 @@ const GaugeCard = ({
                 })}
                 key={`${gauge.trend.dataSourceId}-${i}`}
               >
-                <p style={{ color: gauge.trend.color }}>{values[gauge.trend.dataSourceId]}</p>
+                <p>{values[gauge.trend.dataSourceId]}</p>
               </div>
             </>
           );
@@ -193,7 +194,8 @@ GaugeCard.defaultProps = {
         renderValueFunction: null,
         color: 'yellow',
         backgroundColor: 'gray',
-        shape: 'half-circle',
+        // @TODO: support half-circle and line gauge
+        shape: 'circle',
         trend: null,
         thresholds: null,
       },
