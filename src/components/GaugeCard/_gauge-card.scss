@@ -67,12 +67,6 @@ meter {
   flex: 2;
   justify-content: center;
 
-  p {
-    font-size: inherit;
-    margin-top: $spacing-06;
-    position: relative;
-  }
-
   &__up {
     color: $support-02;
 
@@ -107,12 +101,18 @@ meter {
   }
 
   p {
+    // --gauge-trend-color: blue;
     color: var(--gauge-trend-color);
+    font-size: inherit;
+    margin-top: $spacing-06;
+    position: relative;
   }
 }
 
 .#{$iot-prefix}--gauge-card {
   .card--title {
+    padding-bottom: $spacing-02;
+    padding-top: $spacing-02;
     width: 100%;
 
     span {

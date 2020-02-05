@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from 'react';
-/* eslint-disable */
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import { InlineLoading } from 'carbon-components-react';
 
 import { CARD_CONTENT_PADDING } from '../../constants/LayoutConstants';
 import { CardPropTypes, GaugeCardPropTypes } from '../../constants/PropTypes';
@@ -14,6 +11,34 @@ const { iotPrefix } = settings;
 const radius = 30;
 // radius doubled plus stroke
 const gaugeSize = radius * 2 + 8;
+export const getStrokeDash = value => {
+  // circumference of SVG.
+  const circum = 2 * Math.PI * radius;
+  // length of stroke to match percentage
+  return (value * circum) / 100;
+};
+
+export const getColor = async (gauge, value, setGaugeColor, setGaugeGrade) => {
+  let { color } = gauge;
+  let grade = '';
+  const comparisons = {
+    '<': (a, b) => a < b,
+    '>': (a, b) => a > b,
+    '=': (a, b) => a === b,
+    '<=': (a, b) => a <= b,
+    '>=': (a, b) => a >= b,
+  };
+  if (gauge.thresholds) {
+    await gauge.thresholds.forEach(thresh => {
+      if (comparisons[thresh.comparison](value, thresh.value)) {
+        color = thresh.color; /* eslint-disable-line */
+        grade = thresh.label;
+      }
+    });
+  }
+  setGaugeColor(color);
+  setGaugeGrade(grade);
+};
 
 const GaugeCard = ({
   id,
@@ -23,7 +48,6 @@ const GaugeCard = ({
   values,
   data,
   isLoading,
-  loadData,
   hasMoreData,
   size,
   className,
@@ -37,52 +61,13 @@ const GaugeCard = ({
       setLoadedState(true);
     }, 1000);
   }, []);
-  const handleScroll = e => {
-    const element = e.target;
-    //  height of the elements content - height element’s content is scrolled vertically === height of the scrollable part of the element
-    if (
-      element.scrollHeight - element.scrollTop === element.clientHeight &&
-      hasMoreData &&
-      !isLoading
-    ) {
-      loadData();
-    }
-  };
-  const getStrokeDash = value => {
-    //circumference of SVG.
-    const circum = 2 * Math.PI * radius;
-    // length of stroke to match percentage
-    return (value * circum) / 100;
-  };
 
-  const getColor = async (gauge, value) => {
-    let color = gauge.color;
-    let grade = '';
-    const comparisons = {
-      '<': (a, b) => a < b,
-      '>': (a, b) => a > b,
-      '=': (a, b) => (a = b),
-      '<=': (a, b) => a <= b,
-      '>=': (a, b) => a >= b,
-    };
-    if (gauge.thresholds) {
-      await gauge.thresholds.map(thresh => {
-        if (comparisons[thresh.comparison](value, thresh.value)) {
-          color = thresh.color;
-          grade = thresh.label;
-        }
-      });
-    }
-    setGaugeColor(color);
-    setGaugeGrade(grade);
-  };
   return (
     <Card
       id={id}
       className={`${iotPrefix}--gauge-card`}
       title={title}
       size={size}
-      onScroll={handleScroll}
       {...others}
       tooltip={tooltip}
       isLoading={isLoading}
@@ -97,9 +82,9 @@ const GaugeCard = ({
         }}
       >
         {gauges.map((gauge, i) => {
-          getColor(gauge, values[gauge.dataSourceId]);
+          getColor(gauge, values[gauge.dataSourceId], setGaugeColor, setGaugeGrade);
           return (
-            <>
+            <React.Fragment key={`${iotPrefix}-gauge-${i}`}>
               <meter
                 className={classnames({
                   [`${iotPrefix}--meter__centered`]: !gaugeGrade,
@@ -123,7 +108,7 @@ const GaugeCard = ({
                     '--gauge-colors': gaugeColor,
                     '--gauge-bg': gauge.backgroundColor,
                     '--stroke-dash': getStrokeDash(values[gauge.dataSourceId]) || 0,
-                    '--gauge-size': gaugeSize + 'px',
+                    '--gauge-size': `${gaugeSize}px`,
                     '--gauge-trend-color': gauge.trend.color,
                   }}
                 >
@@ -166,9 +151,11 @@ const GaugeCard = ({
                 })}
                 key={`${gauge.trend.dataSourceId}-${i}`}
               >
-                <p>{values[gauge.trend.dataSourceId]}</p>
+                <p style={{ '--gauge-trend-color': gauge.trend.color }}>
+                  {values[gauge.trend.dataSourceId]}
+                </p>
               </div>
-            </>
+            </React.Fragment>
           );
         })}
       </div>
