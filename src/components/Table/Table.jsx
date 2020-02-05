@@ -6,8 +6,10 @@ import { Pagination, Table as CarbonTable, TableContainer } from 'carbon-compone
 import isNil from 'lodash/isNil';
 import styled from 'styled-components';
 import sizeMe from 'react-sizeme';
+import classNames from 'classnames';
 
 import { defaultFunction } from '../../utils/componentUtilityFunctions';
+import { settings } from '../../constants/Settings';
 
 import {
   TableColumnsPropTypes,
@@ -23,8 +25,6 @@ import TableToolbar from './TableToolbar/TableToolbar';
 import EmptyTable from './EmptyTable/EmptyTable';
 import TableSkeletonWithHeaders from './TableSkeletonWithHeaders/TableSkeletonWithHeaders';
 import TableBody from './TableBody/TableBody';
-import { settings } from '../../constants/Settings';
-import classNames from 'classnames';
 
 const { iotPrefix } = settings;
 const StyledTableContainer = styled(TableContainer)`

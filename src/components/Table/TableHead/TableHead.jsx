@@ -3,19 +3,21 @@
 import React, { useState, useEffect, useLayoutEffect, createRef } from 'react';
 import PropTypes from 'prop-types';
 import { DataTable, Checkbox } from 'carbon-components-react';
-import { isNil, isEmpty } from 'lodash';
+import isNil from 'lodash/isNil';
+import isEmpty from 'lodash/isEmpty';
 import styled from 'styled-components';
 import classnames from 'classnames';
 
 import { TableColumnsPropTypes, I18NPropTypes, defaultI18NPropTypes } from '../TablePropTypes';
 import TableCellRenderer from '../TableCellRenderer/TableCellRenderer';
 import { tableTranslateWithId } from '../../../utils/componentUtilityFunctions';
+import { settings } from '../../../constants/Settings';
 
 import ColumnHeaderRow from './ColumnHeaderRow/ColumnHeaderRow';
 import FilterHeaderRow from './FilterHeaderRow/FilterHeaderRow';
 import TableHeader from './TableHeader';
 import ColumnResize from './ColumnResize';
-import { settings } from '../../../constants/Settings';
+
 const { iotPrefix } = settings;
 
 const { TableHead: CarbonTableHead, TableRow, TableExpandHeader } = DataTable;
@@ -92,22 +94,6 @@ const defaultProps = {
     ...defaultI18NPropTypes,
   },
 };
-
-const StyledCheckboxTableHeader = styled(TableHeader)`
-  && {
-    vertical-align: middle;
-    ${props => {
-      const { hasResize } = props;
-      return hasResize
-        ? `
-        width: 54px;
-      `
-        : '';
-    }}
-    & > span {
-      padding: 0;
-    }
-`;
 
 const StyledCarbonTableHead = styled(({ lightweight, ...others }) => (
   <CarbonTableHead {...others} />
@@ -204,7 +190,7 @@ const TableHead = ({
     ordering.forEach((orderedColumn, index) => {
       widthsMap[orderedColumn.columnId] = {
         width: widths[index],
-        index: index,
+        index,
         id: orderedColumn.columnId,
         visible: !orderedColumn.isHidden,
       };

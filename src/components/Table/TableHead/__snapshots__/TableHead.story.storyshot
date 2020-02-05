@@ -43,14 +43,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
           className="bx--data-table bx--data-table--no-border"
         >
           <thead
-            className="TableHead__StyledCarbonTableHead-sc-1fviaow-1 jDaLBC"
+            className="TableHead__StyledCarbonTableHead-sc-1fviaow-0 cnjfsc"
             onMouseMove={[Function]}
             onMouseUp={[Function]}
           >
             <tr>
               <th
                 align="start"
-                className="table-header-label-start TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB"
+                className="table-header-label-start TableHead__StyledCustomTableHeader-sc-1fviaow-1 iEEfpV"
                 data-column="col1"
                 id="column-col1"
                 scope="col"
@@ -83,7 +83,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
               </th>
               <th
                 align="start"
-                className="table-header-label-start TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB"
+                className="table-header-label-start TableHead__StyledCustomTableHeader-sc-1fviaow-1 iEEfpV"
                 data-column="col2"
                 id="column-col2"
                 scope="col"
@@ -116,7 +116,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
               </th>
               <th
                 align="start"
-                className="table-header-label-start TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB"
+                className="table-header-label-start TableHead__StyledCustomTableHeader-sc-1fviaow-1 iEEfpV"
                 data-column="col3"
                 id="column-col3"
                 scope="col"
@@ -211,14 +211,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
           className="bx--data-table bx--data-table--no-border"
         >
           <thead
-            className="TableHead__StyledCarbonTableHead-sc-1fviaow-1 jDaLBC"
+            className="TableHead__StyledCarbonTableHead-sc-1fviaow-0 cnjfsc"
             onMouseMove={[Function]}
             onMouseUp={[Function]}
           >
             <tr>
               <th
                 align="start"
-                className="table-header-label-start TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB"
+                className="table-header-label-start TableHead__StyledCustomTableHeader-sc-1fviaow-1 iEEfpV"
                 data-column="col1"
                 id="column-col1"
                 scope="col"
@@ -251,7 +251,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
               </th>
               <th
                 align="start"
-                className="table-header-label-start TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB"
+                className="table-header-label-start TableHead__StyledCustomTableHeader-sc-1fviaow-1 iEEfpV"
                 data-column="col2"
                 id="column-col2"
                 scope="col"
@@ -284,7 +284,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
               </th>
               <th
                 align="start"
-                className="table-header-label-start TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB"
+                className="table-header-label-start TableHead__StyledCustomTableHeader-sc-1fviaow-1 iEEfpV"
                 data-column="col3"
                 id="column-col3"
                 scope="col"

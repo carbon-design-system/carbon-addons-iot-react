@@ -1,10 +1,16 @@
 import React, { useState, useImperativeHandle } from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
+
 import { settings } from '../../../constants/Settings';
 
 const propTypes = {
-  allColumns: PropTypes.object.isRequired,
+  allColumns: PropTypes.shape({
+    width: PropTypes.number,
+    index: PropTypes.number,
+    id: PropTypes.string,
+    visible: PropTypes.boolean,
+  }).isRequired,
   columnId: PropTypes.string.isRequired,
   onResize: PropTypes.func.isRequired,
 };
@@ -45,12 +51,24 @@ const ColumnResize = React.forwardRef((props, ref) => {
   const [myColumn, setMyColumn] = useState();
   const [affectedSiblingColumn, setAffectedSiblingColumn] = useState();
 
+  const setAffectedColumns = () => {
+    const myCol = allColumns[columnId];
+    const sortedVisibleColumns = Object.keys(allColumns)
+      .map(key => allColumns[key])
+      .filter(col => col.visible)
+      .sort((a, b) => a.index - b.index);
+    const myColumnVisiblePosition = sortedVisibleColumns.findIndex(col => col.id === columnId);
+
+    setMyColumn(myCol);
+    setAffectedSiblingColumn(sortedVisibleColumns[myColumnVisiblePosition + 1]);
+  };
+
   const onMouseDown = e => {
     const startingX = e.target.offsetLeft - e.clientX;
     setStartX(startingX);
     setLeftPosition(e.target.offsetLeft);
     setColumnIsBeingResized(true);
-    setAffectedColumns(columnId, allColumns);
+    setAffectedColumns();
   };
 
   const onMouseMove = e => {
@@ -71,19 +89,6 @@ const ColumnResize = React.forwardRef((props, ref) => {
       setColumnIsBeingResized(false);
       setLeftPosition(0);
     }
-  };
-
-  const setAffectedColumns = (columnId, allColumns) => {
-    const myColumn = allColumns[columnId];
-    const sortedVisibleColumns = Object.keys(allColumns)
-      .map(key => allColumns[key])
-      .filter(col => col.visible)
-      .sort((a, b) => a.index - b.index);
-    const myColumnVisiblePosition = sortedVisibleColumns.findIndex(col => col.id === columnId);
-    const affectedSiblingColumn = sortedVisibleColumns[myColumnVisiblePosition + 1];
-
-    setMyColumn(myColumn);
-    setAffectedSiblingColumn(affectedSiblingColumn);
   };
 
   // We extend this instance with mouse move/up event forward functions which the parent
