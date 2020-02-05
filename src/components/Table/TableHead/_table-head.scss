@@ -24,4 +24,15 @@
   .#{$iot-prefix}--table-expand-resize {
     width: 40px;
   }
+
+  .#{$iot-prefix}--table-header-checkbox {
+    vertical-align: middle;
+    & > span {
+      padding: 0;
+    }
+  }
+
+  .#{$iot-prefix}--table-header-checkbox-resize {
+    width: 54px;
+  }
 }

@@ -258,8 +258,10 @@ const TableHead = ({
           />
         ) : null}
         {hasRowSelection === 'multi' ? (
-          <StyledCheckboxTableHeader
-            hasResize={hasResize}
+          <TableHeader
+            className={classnames(`${iotPrefix}--table-header-checkbox`, {
+              [`${iotPrefix}--table-header-checkbox-resize`]: hasResize,
+            })}
             translateWithId={(...args) => tableTranslateWithId(...args)}
           >
             {/* TODO: Replace checkbox with TableSelectAll component when onChange bug is fixed
@@ -272,7 +274,7 @@ const TableHead = ({
               checked={isSelectAllSelected}
               onChange={() => onSelectAll(!isSelectAllSelected)}
             />
-          </StyledCheckboxTableHeader>
+          </TableHeader>
         ) : null}
 
         {ordering.map((item, i) => {
