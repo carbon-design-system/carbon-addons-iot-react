@@ -39,7 +39,6 @@ export const getColor = async (gauge, value, setGaugeColor, setGaugeGrade) => {
   setGaugeColor(color);
   setGaugeGrade(grade);
 };
-
 const GaugeCard = ({
   id,
   title,
