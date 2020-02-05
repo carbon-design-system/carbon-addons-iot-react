@@ -3,10 +3,17 @@
 
 .card {
   &--title {
+    display: flex;
     @include type-style('productive-heading-01');
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+
+    span {
+      max-width: calc(100% - 40px);
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
 
     & + * {
       margin-left: $spacing-05;

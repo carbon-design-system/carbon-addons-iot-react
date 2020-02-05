@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { text, number, select } from '@storybook/addon-knobs';
+import { text, number, select, boolean } from '@storybook/addon-knobs';
 
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 
@@ -20,8 +20,8 @@ storiesOf('Watson IoT Experimental|GaugeCard', module).add('basic', () => {
         trend: {
           /** the key to load the trend value from the values object. */
           dataSourceId: 'usageTrend',
-          color: 'green',
-          trend: select('trend', ['up', 'down'], 'up'),
+          color: text('Trend color', ''),
+          trend: select('Trend', ['up', 'down'], 'up'),
         },
         thresholds: [
           {
@@ -47,19 +47,17 @@ storiesOf('Watson IoT Experimental|GaugeCard', module).add('basic', () => {
     ],
   };
 
-  const data = {
-    usage: 48,
-    usageTrend: '12%',
-  };
   return (
     <div style={{ width: '142px', margin: 20 }}>
       <GaugeCard
+        isLoading={boolean('Is loading', false)}
+        tooltip={<p>Health - of floor 8</p>}
         id="GaugeCard"
         title={text('Text', 'Health')}
         size={CARD_SIZES.XSMALL}
         values={{
-          ...data,
           usage: number('Gauge value', 79),
+          usageTrend: '12%',
         }}
         content={content}
       />

@@ -69,6 +69,7 @@ meter {
 
   p {
     font-size: inherit;
+    margin-top: $spacing-06;
     position: relative;
   }
 
@@ -103,5 +104,15 @@ meter {
       transform: translateX(-50%);
       width: 0;
     }
+  }
+}
+
+.#{$iot-prefix}--gauge-card {
+  .card--title {
+    width: 100%;
+  }
+
+  .#{$prefix}--tooltip__trigger {
+    margin-right: $spacing-03;
   }
 }

@@ -18,7 +18,7 @@ const gaugeSize = radius * 2 + 8;
 const GaugeCard = ({
   id,
   title,
-  description,
+  tooltip,
   content: { gauges },
   values,
   data,
@@ -35,7 +35,7 @@ const GaugeCard = ({
   useEffect(() => {
     setTimeout(() => {
       setLoadedState(true);
-    }, 1500);
+    }, 1000);
   }, []);
   const handleScroll = e => {
     const element = e.target;
@@ -51,8 +51,7 @@ const GaugeCard = ({
   const getStrokeDash = value => {
     //circumference of SVG.
     const circum = 2 * Math.PI * radius;
-
-    console.log(value, circum, (value * circum) / 100);
+    // length of stroke to match percentage
     return (value * circum) / 100;
   };
 
@@ -78,7 +77,16 @@ const GaugeCard = ({
     setGaugeGrade(grade);
   };
   return (
-    <Card id={id} title={title} size={size} onScroll={handleScroll} {...others}>
+    <Card
+      id={id}
+      className={`${iotPrefix}--gauge-card`}
+      title={title}
+      size={size}
+      onScroll={handleScroll}
+      {...others}
+      tooltip={tooltip}
+      isLoading={isLoading}
+    >
       <div
         className={classnames(`${iotPrefix}--gauge-container`, className)}
         style={{
@@ -157,7 +165,7 @@ const GaugeCard = ({
                 })}
                 key={`${gauge.trend.dataSourceId}-${i}`}
               >
-                <p>{values[gauge.trend.dataSourceId]}</p>
+                <p style={{ color: gauge.trend.color }}>{values[gauge.trend.dataSourceId]}</p>
               </div>
             </>
           );

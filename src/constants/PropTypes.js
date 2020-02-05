@@ -191,7 +191,7 @@ export const ImageCardPropTypes = {
 
 export const PieCardPropTypes = DonutCardPropTypes;
 export const GaugeCardPropTypes = {
-  description: PropTypes.string,
+  tooltip: PropTypes.element,
   content: PropTypes.shape({
     gauges: PropTypes.arrayOf(
       PropTypes.shape({
