@@ -91,64 +91,75 @@ const GaugeCard = ({
         {gauges.map((gauge, i) => {
           getColor(gauge, values[gauge.dataSourceId]);
           return (
-            <meter
-              className={classnames({
-                [`${iotPrefix}--meter__centered`]: !gaugeGrade,
-              })}
-              key={`${gauge.dataSourceId}-${i}`}
-              value={values[gauge.dataSourceId]}
-              min={gauge.minimumValue}
-              max={gauge.maximumValue}
-              title={gauge.units}
-            >
-              <svg
-                className={classnames(
-                  `${iotPrefix}--gauge`,
-                  { [`${iotPrefix}--gauge__loaded`]: loadedState },
-                  className
-                )}
-                percent="0"
-                style={{
-                  '--gauge-value': values[gauge.dataSourceId] || 0,
-                  '--gauge-max-value': gauge.maximumValue,
-                  '--gauge-colors': gaugeColor,
-                  '--gauge-bg': gauge.backgroundColor,
-                  '--stroke-dash': getStrokeDash(values[gauge.dataSourceId]) || 0,
-                  '--gauge-size': gaugeSize + 'px',
-                }}
+            <>
+              <meter
+                className={classnames({
+                  [`${iotPrefix}--meter__centered`]: !gaugeGrade,
+                })}
+                key={`${gauge.dataSourceId}-${i}`}
+                value={values[gauge.dataSourceId]}
+                min={gauge.minimumValue}
+                max={gauge.maximumValue}
+                title={gauge.units}
               >
-                <circle
-                  className={`${iotPrefix}--gauge-bg`}
-                  cx={gaugeSize / 2}
-                  cy={gaugeSize / 2}
-                  r={radius}
-                />
-                <circle
-                  className={`${iotPrefix}--gauge-fg`}
-                  cx={gaugeSize / 2}
-                  cy={gaugeSize / 2}
-                  r={radius}
-                />
-                <text
-                  className={classnames(`${iotPrefix}--gauge-value`, {
-                    [`${iotPrefix}--gauge-value__centered`]: !gaugeGrade,
-                  })}
-                  x={gaugeSize / 2}
-                  y="29"
-                  textAnchor="middle"
+                <svg
+                  className={classnames(
+                    `${iotPrefix}--gauge`,
+                    { [`${iotPrefix}--gauge__loaded`]: loadedState },
+                    className
+                  )}
+                  percent="0"
+                  style={{
+                    '--gauge-value': values[gauge.dataSourceId] || 0,
+                    '--gauge-max-value': gauge.maximumValue,
+                    '--gauge-colors': gaugeColor,
+                    '--gauge-bg': gauge.backgroundColor,
+                    '--stroke-dash': getStrokeDash(values[gauge.dataSourceId]) || 0,
+                    '--gauge-size': gaugeSize + 'px',
+                  }}
                 >
-                  <tspan>{values[gauge.dataSourceId] + gauge.units}</tspan>
-                </text>
-                <text
-                  className={`${iotPrefix}--gauge-rating`}
-                  x={gaugeSize / 2}
-                  y="50"
-                  textAnchor="middle"
-                >
-                  <tspan>{gaugeGrade}</tspan>
-                </text>
-              </svg>
-            </meter>
+                  <circle
+                    className={`${iotPrefix}--gauge-bg`}
+                    cx={gaugeSize / 2}
+                    cy={gaugeSize / 2}
+                    r={radius}
+                  />
+                  <circle
+                    className={`${iotPrefix}--gauge-fg`}
+                    cx={gaugeSize / 2}
+                    cy={gaugeSize / 2}
+                    r={radius}
+                  />
+                  <text
+                    className={classnames(`${iotPrefix}--gauge-value`, {
+                      [`${iotPrefix}--gauge-value__centered`]: !gaugeGrade,
+                    })}
+                    x={gaugeSize / 2}
+                    y="29"
+                    textAnchor="middle"
+                  >
+                    <tspan>{values[gauge.dataSourceId] + gauge.units}</tspan>
+                  </text>
+                  <text
+                    className={`${iotPrefix}--gauge-rating`}
+                    x={gaugeSize / 2}
+                    y="50"
+                    textAnchor="middle"
+                  >
+                    <tspan>{gaugeGrade}</tspan>
+                  </text>
+                </svg>
+              </meter>
+              <div
+                className={classnames(`${iotPrefix}--gauge-trend`, {
+                  [`${iotPrefix}--gauge-trend__up`]: gauge.trend.trend === 'up',
+                  [`${iotPrefix}--gauge-trend__down`]: gauge.trend.trend === 'down',
+                })}
+                key={`${gauge.trend.dataSourceId}-${i}`}
+              >
+                <p>{values[gauge.trend.dataSourceId]}</p>
+              </div>
+            </>
           );
         })}
       </div>

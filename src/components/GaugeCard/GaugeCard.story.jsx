@@ -1,63 +1,66 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { text, select } from '@storybook/addon-knobs';
+import { text, number, select } from '@storybook/addon-knobs';
 
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 
 import GaugeCard from './GaugeCard';
 
-const content = {
-  gauges: [
-    {
-      dataSourceId: 'usage',
-      units: '%',
-      minimumValue: 0,
-      maximumValue: 100,
-      color: 'orange',
-      backgroundColor: 'gray',
-      shape: 'half-circle',
-      trend: {
-        /** the key to load the trend value from the values object. */
-        dataSourceId: 'usageTrend',
-        color: 'green',
-        trend: 'up',
-      },
-      thresholds: [
-        {
-          comparison: '>',
-          value: 0,
-          color: '#fa4d56', // red
-          label: 'Poor',
-        },
-        {
-          comparison: '>',
-          value: 60,
-          color: '#f1c21b', // yellow
-          label: 'Fair',
-        },
-        {
-          comparison: '>',
-          value: 80,
-          color: '#42be65', // green
-          label: 'Good',
-        },
-      ],
-    },
-  ],
-};
-const data = {
-  usage: 48,
-  usageTrend: 12,
-};
-
 storiesOf('Watson IoT Experimental|GaugeCard', module).add('basic', () => {
+  const content = {
+    gauges: [
+      {
+        dataSourceId: 'usage',
+        units: '%',
+        minimumValue: 0,
+        maximumValue: 100,
+        color: 'orange',
+        backgroundColor: '#e0e0e0',
+        shape: 'half-circle',
+        trend: {
+          /** the key to load the trend value from the values object. */
+          dataSourceId: 'usageTrend',
+          color: 'green',
+          trend: select('trend', ['up', 'down'], 'up'),
+        },
+        thresholds: [
+          {
+            comparison: '>',
+            value: 0,
+            color: '#fa4d56', // red
+            label: 'Poor',
+          },
+          {
+            comparison: '>',
+            value: 60,
+            color: '#f1c21b', // yellow
+            label: 'Fair',
+          },
+          {
+            comparison: '>',
+            value: 80,
+            color: '#42be65', // green
+            label: select('No threshold label (above 81%)', ['Good', null], null),
+          },
+        ],
+      },
+    ],
+  };
+
+  const data = {
+    usage: 48,
+    usageTrend: '12%',
+  };
   return (
     <div style={{ width: '142px', margin: 20 }}>
       <GaugeCard
         id="GaugeCard"
         title={text('Text', 'Health')}
         size={CARD_SIZES.XSMALL}
-        values={data}
+        values={{
+          ...data,
+          usage: number('Gauge value', 79),
+        }}
         content={content}
       />
     </div>
