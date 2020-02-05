@@ -8,7 +8,7 @@ import { handleEnterKeyDown } from '../../utils/componentUtilityFunctions';
 import { COLORS } from '../../styles/styles';
 
 const StyledContainer = styled.div`
-  &&& {
+  && {
     display: flex;
     height: 3rem;
     justify-content: flex-end;
@@ -40,7 +40,7 @@ const StyledButton = styled.div`
   }
 `;
 
-const propTypes = {
+export const SimplePaginationPropTypes = {
   /** current page number */
   page: PropTypes.number.isRequired,
   /** The maximum page number that can be navigated to */
@@ -111,7 +111,7 @@ const SimplePagination = ({
   );
 };
 
-SimplePagination.propTypes = propTypes;
+SimplePagination.propTypes = SimplePaginationPropTypes;
 SimplePagination.defaultProps = defaultProps;
 
 export default SimplePagination;
