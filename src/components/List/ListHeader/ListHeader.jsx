@@ -39,7 +39,6 @@ const ListHeader = ({ title, buttons, search, i18n }) => {
             placeHolderText={i18n.searchPlaceHolderText}
             onChange={search.onChange}
             size="sm"
-            small
             value={search.value}
             labelText={i18n.searchPlaceHolderText}
           />
