@@ -12,6 +12,8 @@ const propTypes = {
   hasSearch: PropTypes.bool,
   /** Determines whether the pagination should appear */
   hasPagination: PropTypes.bool,
+  /** Determines if multi-select is enabled */
+  hasMultiSelect: PropTypes.bool,
   /** Buttons to be presented in List header */
   buttons: PropTypes.arrayOf(PropTypes.node),
   /** ListItems to be displayed */
@@ -37,6 +39,7 @@ const defaultProps = {
   title: null,
   hasSearch: false,
   hasPagination: true,
+  hasMultiSelect: false,
   buttons: null,
   i18n: {
     searchPlaceHolderText: 'Enter a value',
@@ -107,6 +110,7 @@ const HierarchyList = ({
   title,
   hasSearch,
   hasPagination,
+  hasMultiSelect,
   buttons,
   items,
   i18n,
@@ -123,12 +127,20 @@ const HierarchyList = ({
   const [selectedId, setSelectedId] = useState(defaultSelectedId);
 
   const handleSelect = id => {
-    setSelectedId(selectedId === id ? null : id);
-    setSelectedIds(
-      selectedId === id ? selectedIds.filter(item => item.id !== id) : [...selectedIds, id]
-    );
-    if (onSelect) {
-      onSelect(id);
+    if (selectedIds.includes(id)) {
+      setSelectedId(null);
+      if (hasMultiSelect) {
+        setSelectedIds(selectedIds.filter(item => item !== id));
+      }
+    } else {
+      setSelectedId(id);
+      if (hasMultiSelect) {
+        setSelectedIds([...selectedIds, id]);
+      }
+
+      if (onSelect) {
+        onSelect(id);
+      }
     }
   };
 
