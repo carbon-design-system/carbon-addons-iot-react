@@ -427,7 +427,6 @@ storiesOf('Watson IoT|Table', module)
           options={{
             hasRowSelection: select('hasRowSelection', ['multi', 'single'], 'multi'),
             hasRowExpansion: false,
-            hasResize: true,
           }}
           view={{ table: { selectedIds: array('selectedIds', []) } }}
         />
@@ -1264,6 +1263,23 @@ storiesOf('Watson IoT|Table', module)
   ))
   .add('with zebra striping', () => (
     <Table useZebraStyles columns={tableColumns} data={tableData} actions={actions} />
+  ))
+  .add('with resize and initial column widths on Simple Stateful and row selection', () => (
+    <StatefulTable
+      {...initialState}
+      actions={actions}
+      lightweight={boolean('lightweight', false)}
+      columns={tableColumns.map((i, idx) => ({
+        width: idx % 2 === 0 ? '100px' : '200px',
+        ...i,
+      }))}
+      options={{
+        hasRowSelection: select('hasRowSelection', ['multi', 'single'], 'multi'),
+        hasRowExpansion: false,
+        hasResize: true,
+      }}
+      view={{ table: { selectedIds: array('selectedIds', []) } }}
+    />
   ))
   .add(
     'with resize and initial column widths and hidden column',

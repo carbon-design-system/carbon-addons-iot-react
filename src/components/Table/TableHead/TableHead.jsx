@@ -94,7 +94,14 @@ const defaultProps = {
 const StyledCheckboxTableHeader = styled(TableHeader)`
   && {
     vertical-align: middle;
-
+    ${props => {
+      const { hasResize } = props;
+      return hasResize
+        ? `
+        width: 54px;
+      `
+        : '';
+    }}
     & > span {
       padding: 0;
     }
@@ -245,7 +252,10 @@ const TableHead = ({
       <TableRow>
         {hasRowExpansion ? <TableExpandHeader /> : null}
         {hasRowSelection === 'multi' ? (
-          <StyledCheckboxTableHeader translateWithId={(...args) => tableTranslateWithId(...args)}>
+          <StyledCheckboxTableHeader
+            hasResize={hasResize}
+            translateWithId={(...args) => tableTranslateWithId(...args)}
+          >
             {/* TODO: Replace checkbox with TableSelectAll component when onChange bug is fixed
                     https://github.com/IBM/carbon-components-react/issues/1088 */}
             <Checkbox
