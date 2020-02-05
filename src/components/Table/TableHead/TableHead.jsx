@@ -15,6 +15,8 @@ import ColumnHeaderRow from './ColumnHeaderRow/ColumnHeaderRow';
 import FilterHeaderRow from './FilterHeaderRow/FilterHeaderRow';
 import TableHeader from './TableHeader';
 import ColumnResize from './ColumnResize';
+import { settings } from '../../../constants/Settings';
+const { iotPrefix } = settings;
 
 const { TableHead: CarbonTableHead, TableRow, TableExpandHeader } = DataTable;
 
@@ -250,7 +252,11 @@ const TableHead = ({
       onMouseUp={forwardMouseEvent}
     >
       <TableRow>
-        {hasRowExpansion ? <TableExpandHeader /> : null}
+        {hasRowExpansion ? (
+          <TableExpandHeader
+            className={classnames({ [`${iotPrefix}--table-expand-resize`]: hasResize })}
+          />
+        ) : null}
         {hasRowSelection === 'multi' ? (
           <StyledCheckboxTableHeader
             hasResize={hasResize}

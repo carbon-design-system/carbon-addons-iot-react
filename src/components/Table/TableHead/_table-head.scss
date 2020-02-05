@@ -1,4 +1,4 @@
-@import '~carbon-components/scss/globals/scss/vars';
+@import '../../../globals/vars';
 @import '~carbon-components/scss/globals/scss/layout';
 @import 'column-resize';
 
@@ -19,5 +19,9 @@
 
   .column-header__select--hidden {
     opacity: 0.5;
+  }
+
+  .#{$iot-prefix}--table-expand-resize {
+    width: 40px;
   }
 }

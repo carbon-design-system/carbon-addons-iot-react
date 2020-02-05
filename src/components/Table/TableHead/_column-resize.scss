@@ -16,6 +16,10 @@
   background-color: $ui-05;
 }
 
+.#{$iot-prefix}--table-expand-resize {
+  width: '40px';
+}
+
 html:not([dir]) .#{$iot-prefix}--column-resize-handle {
   right: 0;
 }
