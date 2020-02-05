@@ -58,8 +58,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                 className="card--title"
                 title="Card Title"
               >
-                Card Title
-                 
+                <span>
+                  Card Title
+                </span>
               </span>
               <div
                 className="card--toolbar"
@@ -234,8 +235,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                 className="card--title"
                 title="Card with render prop"
               >
-                Card with render prop
-                 
+                <span>
+                  Card with render prop
+                </span>
               </span>
               <div
                 className="card--toolbar"
@@ -416,8 +418,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                 className="card--title"
                 title="Card Title"
               >
-                Card Title
-                 
+                <span>
+                  Card Title
+                </span>
               </span>
               <div
                 className="card--toolbar"
@@ -521,8 +524,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                 className="card--title"
                 title="Card Title"
               >
-                Card Title
-                 
+                <span>
+                  Card Title
+                </span>
               </span>
               <div
                 className="card--toolbar"
@@ -704,8 +708,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                 className="card--title"
                 title="Card Title"
               >
-                Card Title
-                 
+                <span>
+                  Card Title
+                </span>
               </span>
               <div
                 className="card--toolbar"
@@ -858,8 +863,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                 className="card--title"
                 title="Card Title"
               >
-                Card Title
-                 
+                <span>
+                  Card Title
+                </span>
               </span>
               <div
                 className="card--toolbar"
@@ -989,8 +995,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                 className="card--title"
                 title="Card Title"
               >
-                Card Title
-                 
+                <span>
+                  Card Title
+                </span>
               </span>
               <div
                 className="card--toolbar"
@@ -1029,8 +1036,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                 className="card--title"
                 title="Card Title"
               >
-                Card Title
-                 
+                <span>
+                  Card Title
+                </span>
               </span>
               <div
                 className="card--toolbar"
@@ -1118,8 +1126,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                 className="card--title"
                 title="Card Title"
               >
-                Card Title
-                 
+                <span>
+                  Card Title
+                </span>
               </span>
               <div
                 className="card--toolbar"
@@ -1207,8 +1216,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                 className="card--title"
                 title="Card Title"
               >
-                Card Title
-                 
+                <span>
+                  Card Title
+                </span>
               </span>
               <div
                 className="card--toolbar"
@@ -1296,8 +1306,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                 className="card--title"
                 title="Card Title"
               >
-                Card Title
-                 
+                <span>
+                  Card Title
+                </span>
               </span>
               <div
                 className="card--toolbar"
@@ -1385,8 +1396,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                 className="card--title"
                 title="Card Title"
               >
-                Card Title
-                 
+                <span>
+                  Card Title
+                </span>
               </span>
               <div
                 className="card--toolbar"
@@ -1474,8 +1486,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                 className="card--title"
                 title="Card Title"
               >
-                Card Title
-                 
+                <span>
+                  Card Title
+                </span>
               </span>
               <div
                 className="card--toolbar"
@@ -1563,8 +1576,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                 className="card--title"
                 title="Card Title"
               >
-                Card Title
-                 
+                <span>
+                  Card Title
+                </span>
               </span>
               <div
                 className="card--toolbar"
@@ -1717,8 +1731,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                 className="card--title"
                 title="Card Title"
               >
-                Card Title
-                 
+                <span>
+                  Card Title
+                </span>
               </span>
               <div
                 className="card--toolbar"
@@ -1871,8 +1886,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                 className="card--title"
                 title="Card Title"
               >
-                Card Title
-                 
+                <span>
+                  Card Title
+                </span>
               </span>
               <div
                 className="card--toolbar"
@@ -2001,8 +2017,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                 className="card--title"
                 title="Card Title"
               >
-                Card Title
-                 
+                <span>
+                  Card Title
+                </span>
               </span>
               <div
                 className="card--toolbar"

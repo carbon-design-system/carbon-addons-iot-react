@@ -58,8 +58,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
                 className="card--title"
                 title="Temperature"
               >
-                Temperature
-                 
+                <span>
+                  Temperature
+                </span>
               </span>
               <div
                 className="card--toolbar"
@@ -166,8 +167,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
                 className="card--title"
                 title="Temperature"
               >
-                Temperature
-                 
+                <span>
+                  Temperature
+                </span>
               </span>
               <div
                 className="card--toolbar"
@@ -274,8 +276,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
                 className="card--title"
                 title="Temperature"
               >
-                Temperature
-                 
+                <span>
+                  Temperature
+                </span>
               </span>
               <div
                 className="card--toolbar"
@@ -379,8 +382,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
                 className="card--title"
                 title="Temperature"
               >
-                Temperature
-                 
+                <span>
+                  Temperature
+                </span>
               </span>
               <div
                 className="card--toolbar"
@@ -487,8 +491,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
                 className="card--title"
                 title="Temperature"
               >
-                Temperature
-                 
+                <span>
+                  Temperature
+                </span>
               </span>
               <div
                 className="card--toolbar"
@@ -595,8 +600,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
                 className="card--title"
                 title="Temperature"
               >
-                Temperature
-                 
+                <span>
+                  Temperature
+                </span>
               </span>
               <div
                 className="card--toolbar"
@@ -703,8 +709,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
                 className="card--title"
                 title="Temperature"
               >
-                Temperature
-                 
+                <span>
+                  Temperature
+                </span>
               </span>
               <div
                 className="card--toolbar"
@@ -811,8 +818,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
                 className="card--title"
                 title="Temperature"
               >
-                Temperature
-                 
+                <span>
+                  Temperature
+                </span>
               </span>
               <div
                 className="card--toolbar"
@@ -919,8 +927,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
                 className="card--title"
                 title="Temperature"
               >
-                Temperature
-                 
+                <span>
+                  Temperature
+                </span>
               </span>
               <div
                 className="card--toolbar"
@@ -1027,8 +1036,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
                 className="card--title"
                 title="Temperature"
               >
-                Temperature
-                 
+                <span>
+                  Temperature
+                </span>
               </span>
               <div
                 className="card--toolbar"
@@ -1135,8 +1145,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
                 className="card--title"
                 title="Temperature"
               >
-                Temperature
-                 
+                <span>
+                  Temperature
+                </span>
               </span>
               <div
                 className="card--toolbar"
@@ -1243,8 +1254,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
                 className="card--title"
                 title="Temperature"
               >
-                Temperature
-                 
+                <span>
+                  Temperature
+                </span>
               </span>
               <div
                 className="card--toolbar"
@@ -1351,8 +1363,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
                 className="card--title"
                 title="Pressure"
               >
-                Pressure
-                 
+                <span>
+                  Pressure
+                </span>
               </span>
               <div
                 className="card--toolbar"
@@ -1459,8 +1472,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
                 className="card--title"
                 title="Temperature"
               >
-                Temperature
-                 
+                <span>
+                  Temperature
+                </span>
               </span>
               <div
                 className="card--toolbar"
@@ -1567,8 +1581,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
                 className="card--title"
                 title="Temperature"
               >
-                Temperature
-                 
+                <span>
+                  Temperature
+                </span>
               </span>
               <div
                 className="card--toolbar"
@@ -1675,8 +1690,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
                 className="card--title"
                 title="Temperature"
               >
-                Temperature
-                 
+                <span>
+                  Temperature
+                </span>
               </span>
               <div
                 className="card--toolbar"
@@ -1783,8 +1799,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
                 className="card--title"
                 title="Temperature"
               >
-                Temperature
-                 
+                <span>
+                  Temperature
+                </span>
               </span>
               <div
                 className="card--toolbar"
@@ -1891,8 +1908,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
                 className="card--title"
                 title="Temperature"
               >
-                Temperature
-                 
+                <span>
+                  Temperature
+                </span>
               </span>
               <div
                 className="card--toolbar"
@@ -1999,8 +2017,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
                 className="card--title"
                 title="Temperature"
               >
-                Temperature
-                 
+                <span>
+                  Temperature
+                </span>
               </span>
               <div
                 className="card--toolbar"
@@ -2107,8 +2126,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
                 className="card--title"
                 title="Temperature"
               >
-                Temperature
-                 
+                <span>
+                  Temperature
+                </span>
               </span>
               <div
                 className="card--toolbar"
@@ -2215,8 +2235,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
                 className="card--title"
                 title="Temperature"
               >
-                Temperature
-                 
+                <span>
+                  Temperature
+                </span>
               </span>
               <div
                 className="card--toolbar"
@@ -2323,8 +2344,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
                 className="card--title"
                 title="Temperature"
               >
-                Temperature
-                 
+                <span>
+                  Temperature
+                </span>
               </span>
               <div
                 className="card--toolbar"
@@ -2431,8 +2453,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
                 className="card--title"
                 title="Temperature"
               >
-                Temperature
-                 
+                <span>
+                  Temperature
+                </span>
               </span>
               <div
                 className="card--toolbar"
@@ -2539,8 +2562,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
                 className="card--title"
                 title="Temperature"
               >
-                Temperature
-                 
+                <span>
+                  Temperature
+                </span>
               </span>
               <div
                 className="card--toolbar"
@@ -2647,8 +2671,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
                 className="card--title"
                 title="Temperature"
               >
-                Temperature
-                 
+                <span>
+                  Temperature
+                </span>
               </span>
               <div
                 className="card--toolbar"
@@ -2755,8 +2780,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
                 className="card--title"
                 title="Temperature"
               >
-                Temperature
-                 
+                <span>
+                  Temperature
+                </span>
               </span>
               <div
                 className="card--toolbar"
@@ -2863,8 +2889,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
                 className="card--title"
                 title="Temperature"
               >
-                Temperature
-                 
+                <span>
+                  Temperature
+                </span>
               </span>
               <div
                 className="card--toolbar"
@@ -2971,8 +2998,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
                 className="card--title"
                 title="Temperature"
               >
-                Temperature
-                 
+                <span>
+                  Temperature
+                </span>
               </span>
               <div
                 className="card--toolbar"
@@ -3079,8 +3107,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
                 className="card--title"
                 title="Temperature"
               >
-                Temperature
-                 
+                <span>
+                  Temperature
+                </span>
               </span>
               <div
                 className="card--toolbar"
@@ -3187,8 +3216,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
                 className="card--title"
                 title="Temperature"
               >
-                Temperature
-                 
+                <span>
+                  Temperature
+                </span>
               </span>
               <div
                 className="card--toolbar"
@@ -3295,8 +3325,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
                 className="card--title"
                 title="Temperature"
               >
-                Temperature
-                 
+                <span>
+                  Temperature
+                </span>
               </span>
               <div
                 className="card--toolbar"
@@ -3403,8 +3434,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
                 className="card--title"
                 title="Temperature"
               >
-                Temperature
-                 
+                <span>
+                  Temperature
+                </span>
               </span>
               <div
                 className="card--toolbar"
@@ -3511,8 +3543,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
                 className="card--title"
                 title="Temperature"
               >
-                Temperature
-                 
+                <span>
+                  Temperature
+                </span>
               </span>
               <div
                 className="card--toolbar"
@@ -3619,8 +3652,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
                 className="card--title"
                 title="Temperature"
               >
-                Temperature
-                 
+                <span>
+                  Temperature
+                </span>
               </span>
               <div
                 className="card--toolbar"
@@ -3727,8 +3761,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
                 className="card--title"
                 title="Temperature"
               >
-                Temperature
-                 
+                <span>
+                  Temperature
+                </span>
               </span>
               <div
                 className="card--toolbar"
@@ -3890,8 +3925,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
                 className="card--title"
                 title="Temperature"
               >
-                Temperature
-                 
+                <span>
+                  Temperature
+                </span>
               </span>
               <div
                 className="card--toolbar"
