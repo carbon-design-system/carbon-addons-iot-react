@@ -137,7 +137,7 @@ export const stopPropagationAndCallback = (evt, callback, ...args) => {
 };
 
 // Dashboard layout
-const gridHeight = 50;
+const gridHeight = 200;
 
 export const printGrid = grid => {
   let result = '';
