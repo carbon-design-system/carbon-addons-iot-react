@@ -50,16 +50,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
             <tr>
               <th
                 align="start"
-                className="table-header-label-start TableHead__StyledCustomTableHeader-sc-1fviaow-2 fyKiqP"
+                className="table-header-label-start TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB"
                 data-column="col1"
                 id="column-col1"
                 scope="col"
                 style={
                   Object {
-                    "width": 300,
+                    "width": 0,
                   }
                 }
-                width={300}
               >
                 <span
                   className="bx--table-header-label"
@@ -69,20 +68,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   >
                     Column 1
                   </span>
+                  <div
+                    className="iot--column-resize-handle"
+                    onClick={[Function]}
+                    onMouseDown={[Function]}
+                    style={
+                      Object {
+                        "left": "auto",
+                        "width": 4,
+                      }
+                    }
+                  />
                 </span>
               </th>
               <th
                 align="start"
-                className="table-header-label-start TableHead__StyledCustomTableHeader-sc-1fviaow-2 fyKiqP"
+                className="table-header-label-start TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB"
                 data-column="col2"
                 id="column-col2"
                 scope="col"
                 style={
                   Object {
-                    "width": 300,
+                    "width": 0,
                   }
                 }
-                width={300}
               >
                 <span
                   className="bx--table-header-label"
@@ -92,20 +101,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   >
                     Column 2
                   </span>
+                  <div
+                    className="iot--column-resize-handle"
+                    onClick={[Function]}
+                    onMouseDown={[Function]}
+                    style={
+                      Object {
+                        "left": "auto",
+                        "width": 4,
+                      }
+                    }
+                  />
                 </span>
               </th>
               <th
                 align="start"
-                className="table-header-label-start TableHead__StyledCustomTableHeader-sc-1fviaow-2 fyKiqP"
+                className="table-header-label-start TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB"
                 data-column="col3"
                 id="column-col3"
                 scope="col"
                 style={
                   Object {
-                    "width": 300,
+                    "width": 0,
                   }
                 }
-                width={300}
               >
                 <span
                   className="bx--table-header-label"
@@ -199,16 +218,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
             <tr>
               <th
                 align="start"
-                className="table-header-label-start TableHead__StyledCustomTableHeader-sc-1fviaow-2 fyKiqP"
+                className="table-header-label-start TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB"
                 data-column="col1"
                 id="column-col1"
                 scope="col"
                 style={
                   Object {
-                    "width": 300,
+                    "width": 0,
                   }
                 }
-                width={300}
               >
                 <span
                   className="bx--table-header-label"
@@ -219,7 +237,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                     Column 1
                   </span>
                   <div
-                    className="column-resize-handle"
+                    className="iot--column-resize-handle"
                     onClick={[Function]}
                     onMouseDown={[Function]}
                     style={
@@ -233,16 +251,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
               </th>
               <th
                 align="start"
-                className="table-header-label-start TableHead__StyledCustomTableHeader-sc-1fviaow-2 fyKiqP"
+                className="table-header-label-start TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB"
                 data-column="col2"
                 id="column-col2"
                 scope="col"
                 style={
                   Object {
-                    "width": 300,
+                    "width": 0,
                   }
                 }
-                width={300}
               >
                 <span
                   className="bx--table-header-label"
@@ -253,7 +270,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                     Column 2
                   </span>
                   <div
-                    className="column-resize-handle"
+                    className="iot--column-resize-handle"
                     onClick={[Function]}
                     onMouseDown={[Function]}
                     style={
@@ -267,16 +284,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
               </th>
               <th
                 align="start"
-                className="table-header-label-start TableHead__StyledCustomTableHeader-sc-1fviaow-2 fyKiqP"
+                className="table-header-label-start TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB"
                 data-column="col3"
                 id="column-col3"
                 scope="col"
                 style={
                   Object {
-                    "width": 300,
+                    "width": 0,
                   }
                 }
-                width={300}
               >
                 <span
                   className="bx--table-header-label"

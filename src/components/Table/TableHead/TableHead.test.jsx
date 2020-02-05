@@ -1,8 +1,12 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
+import { settings } from '../../../constants/Settings';
+
 import TableHead from './TableHead';
 import TableHeader from './TableHeader';
+
+const { iotPrefix } = settings;
 
 const commonTableHeadProps = {
   /** List of columns */
@@ -24,7 +28,6 @@ const commonTableHeadProps = {
     ],
   },
   actions: { onChangeOrdering: jest.fn() },
-  hasResize: true,
 };
 
 describe('TableHead', () => {
@@ -85,13 +88,15 @@ describe('TableHead', () => {
   });
 
   test('check has resize if has resize is true ', () => {
-    const wrapper = mount(<TableHead {...commonTableHeadProps} />);
-    const tableHeaders = wrapper.find('div.column-resize-handle');
+    const myProps = { ...commonTableHeadProps, options: { hasResize: true } };
+    const wrapper = mount(<TableHead {...myProps} />);
+    const tableHeaders = wrapper.find(`div.${iotPrefix}--column-resize-handle`);
+    tableHeaders.first().simulate('click');
     expect(tableHeaders).toHaveLength(2);
   });
 
   test('check not resize if has resize is false ', () => {
-    const myProps = { ...commonTableHeadProps, hasResize: false };
+    const myProps = { ...commonTableHeadProps, options: { hasResize: false } };
     const wrapper = mount(<TableHead {...myProps} />);
     const tableHeaders = wrapper.find('div.column-resize-handle');
     expect(tableHeaders).toHaveLength(0);

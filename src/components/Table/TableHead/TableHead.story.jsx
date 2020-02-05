@@ -23,7 +23,7 @@ const commonTableHeadProps = {
     ],
   },
   actions: {},
-  hasResize: true,
+  options: { hasResize: true },
 };
 
 storiesOf('Watson IoT|TableHead', module)

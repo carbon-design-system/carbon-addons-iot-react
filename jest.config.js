@@ -23,10 +23,10 @@ module.exports = {
     },
 
     './src/components/Table/TableHead/ColumnResize.jsx': {
-      statements: 33,
-      branches: 4,
-      lines: 32,
-      functions: 15,
+      statements: 36,
+      branches: 11,
+      lines: 36,
+      functions: 20,
     },
 
     // The overrides below are to be fixed/deleted via https://github.com/IBM/carbon-addons-iot-react/issues/707
