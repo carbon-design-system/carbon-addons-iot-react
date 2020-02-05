@@ -20,6 +20,8 @@ const propTypes = {
   i18n: PropTypes.shape({
     /** Text displayed in search bar */
     searchPlaceHolderText: PropTypes.string,
+    expand: PropTypes.string,
+    close: PropTypes.string,
   }),
   /** Displays the List as full height */
   isFullHeight: PropTypes.bool,
@@ -38,6 +40,8 @@ const defaultProps = {
   buttons: null,
   i18n: {
     searchPlaceHolderText: 'Enter a value',
+    expand: 'Expand',
+    close: 'Close',
   },
   isFullHeight: true,
   pageSize: null,

@@ -16,7 +16,7 @@ export const itemPropTypes = {
     value: PropTypes.string,
     icon: PropTypes.node,
   }),
-  children: PropTypes.arrayOf(PropTypes.any), // TODO: make this recursive on items?
+  children: PropTypes.arrayOf(PropTypes.object),
   isSelectable: PropTypes.bool,
 };
 
@@ -41,6 +41,8 @@ const propTypes = {
   /** i18n strings */
   i18n: PropTypes.shape({
     searchPlaceHolderText: PropTypes.string,
+    expand: PropTypes.string,
+    close: PropTypes.string,
   }),
   /** Currently selected item */
   selectedId: PropTypes.string,
@@ -63,6 +65,8 @@ const defaultProps = {
   isLargeRow: false,
   i18n: {
     searchPlaceHolderText: 'Enter a value',
+    expand: 'Expand',
+    close: 'Close',
   },
   iconPosition: 'left',
   pagination: null,
@@ -118,6 +122,7 @@ const List = ({
         isLargeRow={isLargeRow}
         isCategory={isCategory}
         isSelectable={isSelectable}
+        i18n={i18n}
       />,
       ...(hasChildren && isExpanded
         ? item.children.map(child => renderItemAndChildren(child, level + 1))

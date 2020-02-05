@@ -8,7 +8,35 @@ import { settings } from '../../../constants/Settings';
 
 const { iotPrefix } = settings;
 
-const propTypes = {
+// internal component
+// eslint-disable-next-line
+const ListItemWrapper = ({ id, isSelectable, onSelect, selected, isLargeRow, children }) =>
+  isSelectable ? (
+    <div
+      role="button"
+      tabIndex={0}
+      className={classnames(
+        `${iotPrefix}--list-item`,
+        `${iotPrefix}--list-item__selectable`,
+        { [`${iotPrefix}--list-item__selected`]: selected },
+        { [`${iotPrefix}--list-item__large`]: isLargeRow }
+      )}
+      onKeyPress={({ key }) => key === 'Enter' && onSelect(id)}
+      onClick={() => onSelect(id)}
+    >
+      {children}
+    </div>
+  ) : (
+    <div
+      className={classnames(`${iotPrefix}--list-item`, {
+        [`${iotPrefix}--list-item__large`]: isLargeRow,
+      })}
+    >
+      {children}
+    </div>
+  );
+
+const ListItemPropTypes = {
   id: PropTypes.string.isRequired,
   isLargeRow: PropTypes.bool,
   isExpandable: PropTypes.bool,
@@ -24,9 +52,14 @@ const propTypes = {
   iconPosition: PropTypes.string,
   nestingLevel: PropTypes.number,
   isCategory: PropTypes.bool,
+  /** i18n strings */
+  i18n: PropTypes.shape({
+    expand: PropTypes.string,
+    close: PropTypes.string,
+  }),
 };
 
-const defaultProps = {
+const ListItemDefaultProps = {
   isLargeRow: false,
   isExpandable: false,
   onExpand: null,
@@ -40,36 +73,11 @@ const defaultProps = {
   iconPosition: 'left',
   nestingLevel: null,
   isCategory: false,
+  i18n: {
+    expand: 'Expand',
+    close: 'Close',
+  },
 };
-
-// internal component
-// eslint-disable-next-line
-const ListItemWrapper = ({ id, isSelectable, onSelect, selected, isLargeRow, children }) =>
-  isSelectable ? (
-    <div
-      role="button"
-      tabIndex={0}
-      className={classnames(
-        `${iotPrefix}--list-item
-        ${iotPrefix}--list-item__selectable
-        ${selected ? `${iotPrefix}--list-item__selected` : ''}
-        ${isLargeRow ? `${iotPrefix}--list-item__large` : ''}`
-      )}
-      onKeyPress={({ key }) => key === 'Enter' && onSelect(id)}
-      onClick={() => onSelect(id)}
-    >
-      {children}
-    </div>
-  ) : (
-    <div
-      className={classnames(
-        `${iotPrefix}--list-item 
-        ${isLargeRow ? `${iotPrefix}--list-item__large` : ''}`
-      )}
-    >
-      {children}
-    </div>
-  );
 
 const ListItem = ({
   id,
@@ -87,6 +95,7 @@ const ListItem = ({
   iconPosition, // or "right"
   nestingLevel,
   isCategory,
+  i18n,
 }) => {
   const handleExpansionClick = () => isExpandable && onExpand(id);
 
@@ -103,7 +112,7 @@ const ListItem = ({
       >
         <Icon
           icon={expanded ? iconChevronUp : iconChevronDown}
-          description={expanded ? 'Expand' : 'Close'}
+          description={expanded ? i18n.expand : i18n.close}
         />
       </div>
     ) : null;
@@ -187,7 +196,7 @@ const ListItem = ({
   );
 };
 
-ListItem.propTypes = propTypes;
-ListItem.defaultProps = defaultProps;
+ListItem.propTypes = ListItemPropTypes;
+ListItem.defaultProps = ListItemDefaultProps;
 
 export default ListItem;
