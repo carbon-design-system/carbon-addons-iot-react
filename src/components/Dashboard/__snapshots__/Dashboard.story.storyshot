@@ -897,7 +897,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="bx--table-toolbar"
                         >
                           <div
-                            className="bx--batch-actions TableToolbar__StyledTableBatchActions-sc-17lb3av-3 gnkbSD"
+                            className="bx--batch-actions iot--table-batch-actions"
                           >
                             <div
                               className="bx--action-list"
@@ -925,12 +925,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </div>
                           </div>
                           <label
-                            className="table-toolbar-secondary-title"
+                            className="iot--table-toolbar-secondary-title"
                           >
                             Alerts
                           </label>
                           <div
-                            className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-2 ksiTUe"
+                            className="bx--toolbar-content iot--table-toolbar-content"
                           >
                             <div
                               className="bx--toolbar-action bx--toolbar-search-container-expandable"
@@ -1008,8 +1008,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               </div>
                             </div>
                             <div
-                              className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 imYKmv"
+                              className="iot--tooltip-svg-wrapper"
+                              data-testid="download-button"
                               onClick={[Function]}
+                              onKeyDown={[Function]}
+                              role="button"
+                              tabIndex={0}
                             >
                               <svg
                                 aria-hidden={true}
@@ -1035,8 +1039,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               </svg>
                             </div>
                             <div
-                              className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 imYKmv"
+                              className="iot--tooltip-svg-wrapper"
+                              data-testid="filter-button"
                               onClick={[Function]}
+                              onKeyDown={[Function]}
+                              role="button"
+                              tabIndex={0}
                             >
                               <svg
                                 aria-hidden={true}
@@ -2716,7 +2724,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="bx--table-toolbar"
                         >
                           <div
-                            className="bx--batch-actions TableToolbar__StyledTableBatchActions-sc-17lb3av-3 gnkbSD"
+                            className="bx--batch-actions iot--table-batch-actions"
                           >
                             <div
                               className="bx--action-list"
@@ -2744,12 +2752,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </div>
                           </div>
                           <label
-                            className="table-toolbar-secondary-title"
+                            className="iot--table-toolbar-secondary-title"
                           >
                             Alerts
                           </label>
                           <div
-                            className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-2 ksiTUe"
+                            className="bx--toolbar-content iot--table-toolbar-content"
                           >
                             <div
                               className="bx--toolbar-action bx--toolbar-search-container-expandable"
@@ -2827,8 +2835,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               </div>
                             </div>
                             <div
-                              className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 imYKmv"
+                              className="iot--tooltip-svg-wrapper"
+                              data-testid="download-button"
                               onClick={[Function]}
+                              onKeyDown={[Function]}
+                              role="button"
+                              tabIndex={0}
                             >
                               <svg
                                 aria-hidden={true}
@@ -2854,8 +2866,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               </svg>
                             </div>
                             <div
-                              className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 imYKmv"
+                              className="iot--tooltip-svg-wrapper"
+                              data-testid="filter-button"
                               onClick={[Function]}
+                              onKeyDown={[Function]}
+                              role="button"
+                              tabIndex={0}
                             >
                               <svg
                                 aria-hidden={true}
@@ -4567,7 +4583,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="bx--table-toolbar"
                         >
                           <div
-                            className="bx--batch-actions TableToolbar__StyledTableBatchActions-sc-17lb3av-3 gnkbSD"
+                            className="bx--batch-actions iot--table-batch-actions"
                           >
                             <div
                               className="bx--action-list"
@@ -4595,12 +4611,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </div>
                           </div>
                           <label
-                            className="table-toolbar-secondary-title"
+                            className="iot--table-toolbar-secondary-title"
                           >
                             Alerts
                           </label>
                           <div
-                            className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-2 ksiTUe"
+                            className="bx--toolbar-content iot--table-toolbar-content"
                           >
                             <div
                               className="bx--toolbar-action bx--toolbar-search-container-expandable"
@@ -4678,8 +4694,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               </div>
                             </div>
                             <div
-                              className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 imYKmv"
+                              className="iot--tooltip-svg-wrapper"
+                              data-testid="download-button"
                               onClick={[Function]}
+                              onKeyDown={[Function]}
+                              role="button"
+                              tabIndex={0}
                             >
                               <svg
                                 aria-hidden={true}
@@ -4705,8 +4725,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               </svg>
                             </div>
                             <div
-                              className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 imYKmv"
+                              className="iot--tooltip-svg-wrapper"
+                              data-testid="filter-button"
                               onClick={[Function]}
+                              onKeyDown={[Function]}
+                              role="button"
+                              tabIndex={0}
                             >
                               <svg
                                 aria-hidden={true}
@@ -6098,7 +6122,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="bx--table-toolbar"
                         >
                           <div
-                            className="bx--batch-actions TableToolbar__StyledTableBatchActions-sc-17lb3av-3 gnkbSD"
+                            className="bx--batch-actions iot--table-batch-actions"
                           >
                             <div
                               className="bx--action-list"
@@ -6126,12 +6150,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </div>
                           </div>
                           <label
-                            className="table-toolbar-secondary-title"
+                            className="iot--table-toolbar-secondary-title"
                           >
                             Expanded card
                           </label>
                           <div
-                            className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-2 ksiTUe"
+                            className="bx--toolbar-content iot--table-toolbar-content"
                           >
                             <div
                               className="bx--toolbar-action bx--toolbar-search-container-expandable"
@@ -6208,8 +6232,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               </div>
                             </div>
                             <div
-                              className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 imYKmv"
+                              className="iot--tooltip-svg-wrapper"
+                              data-testid="download-button"
                               onClick={[Function]}
+                              onKeyDown={[Function]}
+                              role="button"
+                              tabIndex={0}
                             >
                               <svg
                                 aria-hidden={true}
@@ -6235,8 +6263,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               </svg>
                             </div>
                             <div
-                              className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 imYKmv"
+                              className="iot--tooltip-svg-wrapper"
+                              data-testid="filter-button"
                               onClick={[Function]}
+                              onKeyDown={[Function]}
+                              role="button"
+                              tabIndex={0}
                             >
                               <svg
                                 aria-hidden={true}
@@ -8749,7 +8781,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="bx--table-toolbar"
                         >
                           <div
-                            className="bx--batch-actions TableToolbar__StyledTableBatchActions-sc-17lb3av-3 gnkbSD"
+                            className="bx--batch-actions iot--table-batch-actions"
                           >
                             <div
                               className="bx--action-list"
@@ -8777,12 +8809,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </div>
                           </div>
                           <label
-                            className="table-toolbar-secondary-title"
+                            className="iot--table-toolbar-secondary-title"
                           >
                             Alerts
                           </label>
                           <div
-                            className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-2 ksiTUe"
+                            className="bx--toolbar-content iot--table-toolbar-content"
                           >
                             <div
                               className="bx--toolbar-action bx--toolbar-search-container-expandable"
@@ -8860,8 +8892,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               </div>
                             </div>
                             <div
-                              className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 imYKmv"
+                              className="iot--tooltip-svg-wrapper"
+                              data-testid="download-button"
                               onClick={[Function]}
+                              onKeyDown={[Function]}
+                              role="button"
+                              tabIndex={0}
                             >
                               <svg
                                 aria-hidden={true}
@@ -8887,8 +8923,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               </svg>
                             </div>
                             <div
-                              className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 imYKmv"
+                              className="iot--tooltip-svg-wrapper"
+                              data-testid="filter-button"
                               onClick={[Function]}
+                              onKeyDown={[Function]}
+                              role="button"
+                              tabIndex={0}
                             >
                               <svg
                                 aria-hidden={true}
@@ -20605,7 +20645,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="bx--table-toolbar"
                         >
                           <div
-                            className="bx--batch-actions TableToolbar__StyledTableBatchActions-sc-17lb3av-3 gnkbSD"
+                            className="bx--batch-actions iot--table-batch-actions"
                           >
                             <div
                               className="bx--action-list"
@@ -20633,12 +20673,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </div>
                           </div>
                           <label
-                            className="table-toolbar-secondary-title"
+                            className="iot--table-toolbar-secondary-title"
                           >
                             Alerts
                           </label>
                           <div
-                            className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-2 ksiTUe"
+                            className="bx--toolbar-content iot--table-toolbar-content"
                           >
                             <div
                               className="bx--toolbar-action bx--toolbar-search-container-expandable"
@@ -20716,8 +20756,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               </div>
                             </div>
                             <div
-                              className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 imYKmv"
+                              className="iot--tooltip-svg-wrapper"
+                              data-testid="download-button"
                               onClick={[Function]}
+                              onKeyDown={[Function]}
+                              role="button"
+                              tabIndex={0}
                             >
                               <svg
                                 aria-hidden={true}
@@ -20743,8 +20787,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               </svg>
                             </div>
                             <div
-                              className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 imYKmv"
+                              className="iot--tooltip-svg-wrapper"
+                              data-testid="filter-button"
                               onClick={[Function]}
+                              onKeyDown={[Function]}
+                              role="button"
+                              tabIndex={0}
                             >
                               <svg
                                 aria-hidden={true}
