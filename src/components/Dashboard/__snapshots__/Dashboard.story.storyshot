@@ -119,7 +119,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       />
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 hDVRgE"
+                      className="Card__CardContent-v5r71h-1 coBfbV"
                     >
                       <div
                         className="ValueCard__ContentWrapper-hyxf2q-0 jWmKBV"
@@ -268,7 +268,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       />
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 hoCWQe"
+                      className="Card__CardContent-v5r71h-1 bVgaXY"
                     >
                       <div
                         className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -336,7 +336,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       />
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 hoCWQe"
+                      className="Card__CardContent-v5r71h-1 bVgaXY"
                     >
                       <div
                         className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -407,7 +407,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       />
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 hoCWQe"
+                      className="Card__CardContent-v5r71h-1 bVgaXY"
                     >
                       <div
                         className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -478,7 +478,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       />
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 hoCWQe"
+                      className="Card__CardContent-v5r71h-1 bVgaXY"
                     >
                       <div
                         className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -571,7 +571,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       />
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 hoCWQe"
+                      className="Card__CardContent-v5r71h-1 bVgaXY"
                     >
                       <div
                         className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -639,7 +639,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       />
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 hoCWQe"
+                      className="Card__CardContent-v5r71h-1 bVgaXY"
                     >
                       <div
                         className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -815,7 +815,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 hDVRgE"
+                      className="Card__CardContent-v5r71h-1 coBfbV"
                     >
                       <div
                         className="TimeSeriesCard__LineChartWrapper-q25vbg-1 ldWnXS"
@@ -845,7 +845,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     type="TABLE"
                   >
                     <div
-                      className="Card__CardContent-v5r71h-1 jAGfWa"
+                      className="Card__CardContent-v5r71h-1 hUPzK"
                     >
                       <div
                         className="TableCard__StyledStatefulTable-q9l5bz-2 kzFKjW Table__StyledTableContainer-sc-1kalfns-0 buETAI bx--data-table-container"
@@ -1420,7 +1420,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 jAGfWa"
+                      className="Card__CardContent-v5r71h-1 hUPzK"
                     >
                       <div
                         className="TimeSeriesCard__LineChartWrapper-q25vbg-1 ldWnXS"
@@ -1493,7 +1493,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 hDVRgE"
+                      className="Card__CardContent-v5r71h-1 coBfbV"
                     >
                       <div
                         className="ImageCard__ContentWrapper-sc-1p2j9dm-0 jJnAwR"
@@ -1904,7 +1904,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       />
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 hDVRgE"
+                      className="Card__CardContent-v5r71h-1 coBfbV"
                     >
                       <div
                         className="ValueCard__ContentWrapper-hyxf2q-0 jWmKBV"
@@ -2053,7 +2053,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       />
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 hoCWQe"
+                      className="Card__CardContent-v5r71h-1 bVgaXY"
                     >
                       <div
                         className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -2121,7 +2121,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       />
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 hoCWQe"
+                      className="Card__CardContent-v5r71h-1 bVgaXY"
                     >
                       <div
                         className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -2192,7 +2192,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       />
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 hoCWQe"
+                      className="Card__CardContent-v5r71h-1 bVgaXY"
                     >
                       <div
                         className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -2263,7 +2263,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       />
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 hoCWQe"
+                      className="Card__CardContent-v5r71h-1 bVgaXY"
                     >
                       <div
                         className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -2356,7 +2356,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       />
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 hoCWQe"
+                      className="Card__CardContent-v5r71h-1 bVgaXY"
                     >
                       <div
                         className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -2424,7 +2424,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       />
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 hoCWQe"
+                      className="Card__CardContent-v5r71h-1 bVgaXY"
                     >
                       <div
                         className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -2600,7 +2600,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 hDVRgE"
+                      className="Card__CardContent-v5r71h-1 coBfbV"
                     >
                       <div
                         className="TimeSeriesCard__LineChartWrapper-q25vbg-1 ldWnXS"
@@ -2630,7 +2630,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     type="TABLE"
                   >
                     <div
-                      className="Card__CardContent-v5r71h-1 jAGfWa"
+                      className="Card__CardContent-v5r71h-1 hUPzK"
                     >
                       <div
                         className="TableCard__StyledStatefulTable-q9l5bz-2 kzFKjW Table__StyledTableContainer-sc-1kalfns-0 buETAI bx--data-table-container"
@@ -3205,7 +3205,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 jAGfWa"
+                      className="Card__CardContent-v5r71h-1 hUPzK"
                     >
                       <div
                         className="TimeSeriesCard__LineChartWrapper-q25vbg-1 ldWnXS"
@@ -3278,7 +3278,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 hDVRgE"
+                      className="Card__CardContent-v5r71h-1 coBfbV"
                     >
                       <div
                         className="ImageCard__ContentWrapper-sc-1p2j9dm-0 jJnAwR"
@@ -3721,7 +3721,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       />
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 hDVRgE"
+                      className="Card__CardContent-v5r71h-1 coBfbV"
                     >
                       <div
                         className="ValueCard__ContentWrapper-hyxf2q-0 jWmKBV"
@@ -3870,7 +3870,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       />
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 hoCWQe"
+                      className="Card__CardContent-v5r71h-1 bVgaXY"
                     >
                       <div
                         className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -3938,7 +3938,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       />
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 hoCWQe"
+                      className="Card__CardContent-v5r71h-1 bVgaXY"
                     >
                       <div
                         className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -4009,7 +4009,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       />
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 hoCWQe"
+                      className="Card__CardContent-v5r71h-1 bVgaXY"
                     >
                       <div
                         className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -4080,7 +4080,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       />
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 hoCWQe"
+                      className="Card__CardContent-v5r71h-1 bVgaXY"
                     >
                       <div
                         className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -4173,7 +4173,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       />
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 hoCWQe"
+                      className="Card__CardContent-v5r71h-1 bVgaXY"
                     >
                       <div
                         className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -4241,7 +4241,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       />
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 hoCWQe"
+                      className="Card__CardContent-v5r71h-1 bVgaXY"
                     >
                       <div
                         className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -4417,7 +4417,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 hDVRgE"
+                      className="Card__CardContent-v5r71h-1 coBfbV"
                     >
                       <div
                         className="TimeSeriesCard__LineChartWrapper-q25vbg-1 ldWnXS"
@@ -4447,7 +4447,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     type="TABLE"
                   >
                     <div
-                      className="Card__CardContent-v5r71h-1 jAGfWa"
+                      className="Card__CardContent-v5r71h-1 hUPzK"
                     >
                       <div
                         className="TableCard__StyledStatefulTable-q9l5bz-2 kzFKjW Table__StyledTableContainer-sc-1kalfns-0 buETAI bx--data-table-container"
@@ -5022,7 +5022,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 jAGfWa"
+                      className="Card__CardContent-v5r71h-1 hUPzK"
                     >
                       <div
                         className="TimeSeriesCard__LineChartWrapper-q25vbg-1 ldWnXS"
@@ -5095,7 +5095,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 hDVRgE"
+                      className="Card__CardContent-v5r71h-1 coBfbV"
                     >
                       <div
                         className="ImageCard__ContentWrapper-sc-1p2j9dm-0 jJnAwR"
@@ -5542,7 +5542,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 jAGfWa"
+                      className="Card__CardContent-v5r71h-1 hUPzK"
                     >
                       <div
                         className="ImageCard__ContentWrapper-sc-1p2j9dm-0 jJnAwR"
@@ -5825,7 +5825,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     </div>
                   </div>
                   <div
-                    className="Card__CardContent-v5r71h-1 jAGfWa"
+                    className="Card__CardContent-v5r71h-1 hUPzK"
                   >
                     <div
                       className="TimeSeriesCard__LineChartWrapper-q25vbg-1 ldWnXS"
@@ -5986,7 +5986,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     type="TABLE"
                   >
                     <div
-                      className="Card__CardContent-v5r71h-1 jAGfWa"
+                      className="Card__CardContent-v5r71h-1 hUPzK"
                     >
                       <div
                         className="TableCard__StyledStatefulTable-q9l5bz-2 SdwkD Table__StyledTableContainer-sc-1kalfns-0 buETAI bx--data-table-container"
@@ -7877,7 +7877,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       />
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 hDVRgE"
+                      className="Card__CardContent-v5r71h-1 coBfbV"
                     >
                       <div
                         className="ValueCard__ContentWrapper-hyxf2q-0 jWmKBV"
@@ -8026,7 +8026,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       />
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 hoCWQe"
+                      className="Card__CardContent-v5r71h-1 bVgaXY"
                     >
                       <div
                         className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -8094,7 +8094,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       />
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 hoCWQe"
+                      className="Card__CardContent-v5r71h-1 bVgaXY"
                     >
                       <div
                         className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -8165,7 +8165,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       />
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 hoCWQe"
+                      className="Card__CardContent-v5r71h-1 bVgaXY"
                     >
                       <div
                         className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -8236,7 +8236,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       />
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 hoCWQe"
+                      className="Card__CardContent-v5r71h-1 bVgaXY"
                     >
                       <div
                         className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -8329,7 +8329,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       />
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 hoCWQe"
+                      className="Card__CardContent-v5r71h-1 bVgaXY"
                     >
                       <div
                         className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -8397,7 +8397,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       />
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 hoCWQe"
+                      className="Card__CardContent-v5r71h-1 bVgaXY"
                     >
                       <div
                         className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -8573,7 +8573,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 hDVRgE"
+                      className="Card__CardContent-v5r71h-1 coBfbV"
                     >
                       <div
                         className="TimeSeriesCard__LineChartWrapper-q25vbg-1 ldWnXS"
@@ -8603,7 +8603,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     type="TABLE"
                   >
                     <div
-                      className="Card__CardContent-v5r71h-1 jAGfWa"
+                      className="Card__CardContent-v5r71h-1 hUPzK"
                     >
                       <div
                         className="TableCard__StyledStatefulTable-q9l5bz-2 kzFKjW Table__StyledTableContainer-sc-1kalfns-0 buETAI bx--data-table-container"
@@ -9176,7 +9176,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 jAGfWa"
+                      className="Card__CardContent-v5r71h-1 hUPzK"
                     >
                       <div
                         className="TimeSeriesCard__LineChartWrapper-q25vbg-1 ldWnXS"
@@ -9249,7 +9249,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 hDVRgE"
+                      className="Card__CardContent-v5r71h-1 coBfbV"
                     >
                       <div
                         className="ImageCard__ContentWrapper-sc-1p2j9dm-0 jJnAwR"
@@ -9668,7 +9668,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -9736,7 +9736,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -9804,7 +9804,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -9872,7 +9872,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -9940,7 +9940,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -10008,7 +10008,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -10080,7 +10080,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -10217,7 +10217,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -10285,7 +10285,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -10353,7 +10353,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -10421,7 +10421,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -10489,7 +10489,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -10557,7 +10557,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -10629,7 +10629,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -10766,7 +10766,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -10834,7 +10834,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -10905,7 +10905,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -10973,7 +10973,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -11109,7 +11109,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -11177,7 +11177,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -11248,7 +11248,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -11316,7 +11316,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -11452,7 +11452,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -11545,7 +11545,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -11638,7 +11638,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -11731,7 +11731,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -11889,7 +11889,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -11982,7 +11982,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -12075,7 +12075,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -12168,7 +12168,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -12326,7 +12326,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -12394,7 +12394,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -12462,7 +12462,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -12530,7 +12530,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -12598,7 +12598,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -12731,7 +12731,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -12799,7 +12799,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -12867,7 +12867,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -12935,7 +12935,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -13003,7 +13003,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -13136,7 +13136,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -13204,7 +13204,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -13272,7 +13272,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -13340,7 +13340,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -13408,7 +13408,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -13476,7 +13476,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -13548,7 +13548,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -13620,7 +13620,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -13688,7 +13688,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -13759,7 +13759,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -13827,7 +13827,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -13898,7 +13898,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -13991,7 +13991,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -14084,7 +14084,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -14177,7 +14177,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -14270,7 +14270,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -14338,7 +14338,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -14406,7 +14406,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -14474,7 +14474,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -14542,7 +14542,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -14675,7 +14675,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -14743,7 +14743,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -14811,7 +14811,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -14879,7 +14879,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -14947,7 +14947,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -15015,7 +15015,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -15087,7 +15087,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -15159,7 +15159,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -15227,7 +15227,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -15298,7 +15298,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -15366,7 +15366,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -15437,7 +15437,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -15530,7 +15530,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -15623,7 +15623,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -15716,7 +15716,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -15809,7 +15809,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -15877,7 +15877,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -15945,7 +15945,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -16013,7 +16013,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -16081,7 +16081,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -16214,7 +16214,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -16316,7 +16316,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -16418,7 +16418,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -16585,7 +16585,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -16687,7 +16687,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -16789,7 +16789,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -16956,7 +16956,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -17058,7 +17058,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -17160,7 +17160,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -17327,7 +17327,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -17429,7 +17429,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -17531,7 +17531,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -17698,7 +17698,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -17850,7 +17850,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -18067,7 +18067,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -18219,7 +18219,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -18436,7 +18436,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hDVRgE"
+                        className="Card__CardContent-v5r71h-1 coBfbV"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 jWmKBV"
@@ -18585,7 +18585,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hDVRgE"
+                        className="Card__CardContent-v5r71h-1 coBfbV"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 jWmKBV"
@@ -18734,7 +18734,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hDVRgE"
+                        className="Card__CardContent-v5r71h-1 coBfbV"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 jWmKBV"
@@ -19023,7 +19023,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hDVRgE"
+                        className="Card__CardContent-v5r71h-1 coBfbV"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 jWmKBV"
@@ -19172,7 +19172,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hDVRgE"
+                        className="Card__CardContent-v5r71h-1 coBfbV"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 jWmKBV"
@@ -19321,7 +19321,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hDVRgE"
+                        className="Card__CardContent-v5r71h-1 coBfbV"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 jWmKBV"
@@ -19699,7 +19699,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       />
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 hDVRgE"
+                      className="Card__CardContent-v5r71h-1 coBfbV"
                     >
                       <div
                         className="ValueCard__ContentWrapper-hyxf2q-0 jWmKBV"
@@ -19848,7 +19848,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       />
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 hoCWQe"
+                      className="Card__CardContent-v5r71h-1 bVgaXY"
                     >
                       <div
                         className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -19916,7 +19916,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       />
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 hoCWQe"
+                      className="Card__CardContent-v5r71h-1 bVgaXY"
                     >
                       <div
                         className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -19987,7 +19987,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       />
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 hoCWQe"
+                      className="Card__CardContent-v5r71h-1 bVgaXY"
                     >
                       <div
                         className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -20058,7 +20058,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       />
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 hoCWQe"
+                      className="Card__CardContent-v5r71h-1 bVgaXY"
                     >
                       <div
                         className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -20151,7 +20151,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       />
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 hoCWQe"
+                      className="Card__CardContent-v5r71h-1 bVgaXY"
                     >
                       <div
                         className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -20219,7 +20219,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       />
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 hoCWQe"
+                      className="Card__CardContent-v5r71h-1 bVgaXY"
                     >
                       <div
                         className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -20395,7 +20395,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 hDVRgE"
+                      className="Card__CardContent-v5r71h-1 coBfbV"
                     >
                       <div
                         className="TimeSeriesCard__LineChartWrapper-q25vbg-1 ldWnXS"
@@ -20425,7 +20425,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     type="TABLE"
                   >
                     <div
-                      className="Card__CardContent-v5r71h-1 jAGfWa"
+                      className="Card__CardContent-v5r71h-1 hUPzK"
                     >
                       <div
                         className="TableCard__StyledStatefulTable-q9l5bz-2 kzFKjW Table__StyledTableContainer-sc-1kalfns-0 buETAI bx--data-table-container"
@@ -21000,7 +21000,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 jAGfWa"
+                      className="Card__CardContent-v5r71h-1 hUPzK"
                     >
                       <div
                         className="TimeSeriesCard__LineChartWrapper-q25vbg-1 ldWnXS"
@@ -21073,7 +21073,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 hDVRgE"
+                      className="Card__CardContent-v5r71h-1 coBfbV"
                     >
                       <div
                         className="ImageCard__ContentWrapper-sc-1p2j9dm-0 jJnAwR"
@@ -21512,7 +21512,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       type="CUSTOM"
                     >
                       <div
-                        className="Card__CardContent-v5r71h-1 hDVRgE"
+                        className="Card__CardContent-v5r71h-1 coBfbV"
                       >
                         <a
                           className="bx--link bx--tile bx--tile--clickable"
@@ -21635,7 +21635,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       type="CUSTOM"
                     >
                       <div
-                        className="Card__CardContent-v5r71h-1 hDVRgE"
+                        className="Card__CardContent-v5r71h-1 coBfbV"
                       >
                         <a
                           className="bx--link bx--tile bx--tile--clickable"
@@ -21744,7 +21744,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       type="CUSTOM"
                     >
                       <div
-                        className="Card__CardContent-v5r71h-1 hDVRgE"
+                        className="Card__CardContent-v5r71h-1 coBfbV"
                       >
                         <div
                           style={
@@ -21831,7 +21831,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       type="CUSTOM"
                     >
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           style={
@@ -21925,7 +21925,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       type="CUSTOM"
                     >
                       <div
-                        className="Card__CardContent-v5r71h-1 hoCWQe"
+                        className="Card__CardContent-v5r71h-1 bVgaXY"
                       >
                         <div
                           style={
@@ -22036,7 +22036,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hDVRgE"
+                        className="Card__CardContent-v5r71h-1 coBfbV"
                       >
                         <div
                           className="list-card react-grid-item cssTransforms"
@@ -22215,7 +22215,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 hDVRgE"
+                        className="Card__CardContent-v5r71h-1 coBfbV"
                       >
                         <div
                           className="list-card react-grid-item cssTransforms"
