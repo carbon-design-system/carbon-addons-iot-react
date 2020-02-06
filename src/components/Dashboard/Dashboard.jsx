@@ -303,7 +303,10 @@ const Dashboard = ({
         if (cardsLoadingRef.current && !cardsLoadingRef.current.includes(card.id)) {
           cardsLoadingRef.current.push(card.id);
           // If the card array count matches the card count, we call setIsLoading to false, and clear the array
-          if (cardsLoadingRef.current.length === cards.length) {
+          if (
+            cardsLoadingRef.current.length ===
+            cards.filter(cardsToLoad => cardsToLoad.dataSource).length
+          ) {
             setIsLoading(false);
             onSetRefresh(Date.now());
           }
