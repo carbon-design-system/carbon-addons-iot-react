@@ -125,16 +125,21 @@ export const getSortedData = (inputData, columnId, direction, isTimestampColumn)
   });
 };
 
+/**
+ * A simple helper function that stops prop on an event before calling back the callback function
+ * @param {*} evt  event to stop
+ * @param {*} callback  callback to call
+ * @param  {...any} args
+ */
 export const stopPropagationAndCallback = (evt, callback, ...args) => {
   evt.stopPropagation();
   callback(...args);
 };
 
 // Dashboard layout
-const gridHeight = 50;
+const gridHeight = 200;
 
 export const printGrid = grid => {
-  // console.log(`printGrid: ${grid}`);
   let result = '';
   for (let j = 0; j < gridHeight; j += 1) {
     for (let i = 0; i < grid.length; i += 1) {
@@ -145,8 +150,15 @@ export const printGrid = grid => {
   console.log(result); // eslint-disable-line
 };
 
+/**
+ *
+ * @param {*} x  the current x location of a card
+ * @param {*} y  the current y location of a card
+ * @param {*} w  current width of a card
+ * @param {*} h  current height of a card
+ * @param {*} grid nested array of rows and columns with the current card index that is occupying them. for example, if the entire top row was taken by the first card it would look like this [[1, 1, 1, 1], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]]
+ */
 export const canFit = (x, y, w, h, grid) => {
-  // console.log(`canFit? x=${x}, y=${y}, w=${w}, h=${h}`);
   for (let i = x; i < x + w; i += 1) {
     for (let j = y; j < y + h; j += 1) {
       if (grid.length === i) return false;
@@ -157,7 +169,14 @@ export const canFit = (x, y, w, h, grid) => {
   return true;
 };
 
-/** Generates a non overlapping layout given the cards and column/dimension configuration for a given layout */
+/**
+ * Generates a non overlapping layout given the cards and column/dimension configuration for a given layout
+ * @param {*} layoutName
+ * @param {*} cards
+ * @param {*} dashboardColumns array of column counts for the different breakpoints (see DASHBOARD_COLUMNS)
+ * @param {*} cardDimensions double object of card height and width keyed by card size and layout (see CARD_DIMENSIONS)
+ * returns
+ */
 export const getLayout = (layoutName, cards, dashboardColumns, cardDimensions) => {
   let currX = 0;
   let currY = 0;
@@ -166,7 +185,6 @@ export const getLayout = (layoutName, cards, dashboardColumns, cardDimensions) =
     .map(() => Array(gridHeight).fill(0));
 
   const placeCard = (x, y, w, h, num) => {
-    // console.log(`placeCard: x=${x}, y=${y}, w=${w}, h=${h}, cardNum=${num}`);
     for (let i = x; i < x + w; i += 1) {
       for (let j = y; j < y + h; j += 1) {
         grid[i][j] = num;
@@ -177,9 +195,7 @@ export const getLayout = (layoutName, cards, dashboardColumns, cardDimensions) =
   const layout = cards
     .map((card, index) => {
       const { w, h } = cardDimensions[card.size][layoutName];
-      // console.log(`trying ${card.id} (w = ${w}, h = ${h}) at ${currX},${currY}`);
       while (!canFit(currX, currY, w, h, grid)) {
-        // console.log('didnt fit...');
         currX += 1;
         if (currX > dashboardColumns[layoutName]) {
           currX = 0;
@@ -189,7 +205,6 @@ export const getLayout = (layoutName, cards, dashboardColumns, cardDimensions) =
           }
         }
       }
-      // console.log('it fits!');
       placeCard(currX, currY, w, h, index + 1);
       // printGrid(grid);
       const cardLayout = {
@@ -200,7 +215,6 @@ export const getLayout = (layoutName, cards, dashboardColumns, cardDimensions) =
         h,
       };
       currX += w;
-      // console.log(`adding ${card.id} (w = ${w}, h = ${h}) at ${cardLayout.x},${cardLayout.y}`);
       return cardLayout;
     })
     .filter(i => i !== null);
@@ -229,6 +243,5 @@ export const getCardMinSize = (
     x: cardColumns * columnWidth + (cardColumns - 1) * GUTTER,
     y: cardRows * rowHeight[breakpoint] + (cardRows - 1) * GUTTER,
   };
-  // console.log('getCardMinSize', breakpoint, size, rowHeight, ` = ${JSON.stringify(cardSize)}`);
   return cardSize;
 };

@@ -52,8 +52,9 @@ export const CardTitle = (
 export const CardContent = styled.div`
   flex: 1;
   position: relative;
-  overflow: hidden;
   height: ${props => props.dimensions.y - CARD_TITLE_HEIGHT}px;
+  overflow-x: hidden;
+  overflow-y: auto;
 `;
 
 export const SkeletonWrapper = styled.div`
@@ -77,6 +78,7 @@ export const defaultProps = {
   layout: CARD_SIZES.HORIZONTAL,
   title: undefined,
   toolbar: undefined,
+  hideHeader: false,
   timeRange: undefined,
   isLoading: false,
   isEmpty: false,
@@ -130,28 +132,31 @@ export const defaultProps = {
 };
 
 /** Dumb component that renders the card basics */
-const Card = ({
-  size,
-  children,
-  title,
-  layout,
-  isLoading,
-  isEmpty,
-  isEditable,
-  isExpanded,
-  isLazyLoading,
-  error,
-  id,
-  tooltip,
-  timeRange,
-  onCardAction,
-  availableActions,
-  breakpoint,
-  i18n,
-  style,
-  className,
-  ...others
-}) => {
+const Card = props => {
+  const {
+    size,
+    children,
+    title,
+    layout,
+    isLoading,
+    isEmpty,
+    isEditable,
+    isExpanded,
+    isLazyLoading,
+    error,
+    hideHeader,
+    id,
+    tooltip,
+    timeRange,
+    onCardAction,
+    availableActions,
+    breakpoint,
+    i18n,
+    style,
+    className,
+    values,
+    ...others
+  } = props;
   const isXS = size === CARD_SIZES.XSMALL;
   const dimensions = getCardMinSize(
     breakpoint,
@@ -182,78 +187,96 @@ const Card = ({
     id,
   ]);
 
+  const getChildSize = (cardSize, cardTitle) => {
+    const childSize = {
+      ...cardSize,
+      height:
+        cardTitle === null || cardTitle === undefined
+          ? cardSize.height
+          : cardSize.height - CARD_TITLE_HEIGHT,
+    };
+    return childSize;
+  };
+
   const card = (
     <VisibilitySensor partialVisibility offset={{ top: 10 }}>
       {({ isVisible }) => (
         <SizeMe.SizeMe monitorHeight>
-          {({ size: sizeWidth }) => (
-            <CardWrapper
-              {...others}
-              id={id}
-              dimensions={dimensions}
-              isExpanded={isExpanded}
-              cardWidthSize={sizeWidth.width}
-              style={
-                !isExpanded ? style : { height: 'calc(100% - 50px)', width: 'calc(100% - 50px)' }
-              }
-              className={className}
-            >
-              {title !== undefined && (
-                <CardHeader>
-                  <CardTitle title={title}>
-                    {title}&nbsp;
-                    {tooltip && (
-                      <Tooltip
-                        triggerId={`card-tooltip-trigger-${id}`}
-                        tooltipId={`card-tooltip-${id}`}
-                        triggerText=""
-                      >
-                        {tooltip}
-                      </Tooltip>
-                    )}
-                  </CardTitle>
-                  <CardToolbar
-                    width={sizeWidth.width}
-                    availableActions={mergedAvailableActions}
-                    i18n={strings}
-                    isEditable={isEditable}
-                    isExpanded={isExpanded}
-                    timeRange={timeRange}
-                    onCardAction={cachedOnCardAction}
-                  />
-                </CardHeader>
-              )}
-              <CardContent dimensions={dimensions}>
-                {!isVisible && isLazyLoading ? ( // if not visible don't show anything
-                  ''
-                ) : isLoading ? (
-                  <SkeletonWrapper>
-                    <OptimizedSkeletonText
-                      paragraph
-                      lineCount={
-                        size === CARD_SIZES.XSMALL || size === CARD_SIZES.XSMALLWIDE ? 2 : 3
-                      }
-                      width="100%"
-                    />
-                  </SkeletonWrapper>
-                ) : error ? (
-                  <EmptyMessageWrapper>
-                    {size === CARD_SIZES.XSMALL || size === CARD_SIZES.XSMALLWIDE
-                      ? strings.errorLoadingDataShortLabel
-                      : `${strings.errorLoadingDataLabel} ${error}`}
-                  </EmptyMessageWrapper>
-                ) : isEmpty && !isEditable ? (
-                  <EmptyMessageWrapper>
-                    {isXS ? strings.noDataShortLabel : strings.noDataLabel}
-                  </EmptyMessageWrapper>
-                ) : typeof children === 'function' ? ( // pass the measured size down to the children if it's an render function
-                  children(sizeWidth)
-                ) : (
-                  children
+          {({ size: cardSize }) => {
+            // support passing the card toolbar through to the custom card
+            const cardToolbar = (
+              <CardToolbar
+                width={cardSize.width}
+                availableActions={mergedAvailableActions}
+                i18n={strings}
+                isEditable={isEditable}
+                isExpanded={isExpanded}
+                timeRange={timeRange}
+                onCardAction={cachedOnCardAction}
+              />
+            );
+
+            return (
+              <CardWrapper
+                {...others} // you need all of these to support dynamic positioning during edit
+                id={id}
+                dimensions={dimensions}
+                isExpanded={isExpanded}
+                cardWidthSize={cardSize.width}
+                style={
+                  !isExpanded ? style : { height: 'calc(100% - 50px)', width: 'calc(100% - 50px)' }
+                }
+                className={className}
+              >
+                {!hideHeader && (
+                  <CardHeader>
+                    <CardTitle title={title}>
+                      {title}&nbsp;
+                      {tooltip && (
+                        <Tooltip
+                          triggerId={`card-tooltip-trigger-${id}`}
+                          tooltipId={`card-tooltip-${id}`}
+                          triggerText=""
+                        >
+                          {tooltip}
+                        </Tooltip>
+                      )}
+                    </CardTitle>
+                    {cardToolbar}
+                  </CardHeader>
                 )}
-              </CardContent>
-            </CardWrapper>
-          )}
+                <CardContent dimensions={dimensions}>
+                  {!isVisible && isLazyLoading ? ( // if not visible don't show anything
+                    ''
+                  ) : isLoading ? (
+                    <SkeletonWrapper>
+                      <OptimizedSkeletonText
+                        paragraph
+                        lineCount={
+                          size === CARD_SIZES.XSMALL || size === CARD_SIZES.XSMALLWIDE ? 2 : 3
+                        }
+                        width="100%"
+                      />
+                    </SkeletonWrapper>
+                  ) : error ? (
+                    <EmptyMessageWrapper>
+                      {size === CARD_SIZES.XSMALL || size === CARD_SIZES.XSMALLWIDE
+                        ? strings.errorLoadingDataShortLabel
+                        : `${strings.errorLoadingDataLabel} ${error}`}
+                    </EmptyMessageWrapper>
+                  ) : isEmpty && !isEditable ? (
+                    <EmptyMessageWrapper>
+                      {isXS ? strings.noDataShortLabel : strings.noDataLabel}
+                    </EmptyMessageWrapper>
+                  ) : typeof children === 'function' ? ( // pass the measured size down to the children if it's an render function
+                    children(getChildSize(cardSize, title), { cardToolbar, ...props })
+                  ) : (
+                    children
+                  )}
+                </CardContent>
+              </CardWrapper>
+            );
+          }}
         </SizeMe.SizeMe>
       )}
     </VisibilitySensor>

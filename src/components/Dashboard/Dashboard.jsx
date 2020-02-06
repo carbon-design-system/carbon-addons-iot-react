@@ -32,7 +32,7 @@ const propTypes = {
   ),
   cards: PropTypes.arrayOf(
     PropTypes.shape({
-      content: PropTypes.object,
+      content: PropTypes.oneOfType([PropTypes.object, PropTypes.func]),
       values: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
       /** is the card actively loading, it will override the dashboard loading state if true */
       isLoading: PropTypes.bool,
@@ -326,6 +326,16 @@ const Dashboard = ({
     [onBreakpointChange]
   );
 
+  const cachedRenderIconByName = useCallback(
+    renderIconByName,
+    [] //eslint-disable-line
+  );
+
+  const cachedOnSetupCard = useCallback(
+    onSetupCard,
+    [] // eslint-disable-line
+  );
+
   // Uses our shared renderer for each card that knows how to render a fixed set of card types
   const gridContents = useMemo(
     () =>
@@ -338,9 +348,9 @@ const Dashboard = ({
             isLoading={isLoading}
             isEditable={isEditable}
             breakpoint={breakpoint}
-            onSetupCard={onSetupCard}
+            onSetupCard={cachedOnSetupCard}
             onFetchData={handleOnFetchData}
-            renderIconByName={renderIconByName}
+            renderIconByName={cachedRenderIconByName}
             timeGrain={timeGrain}
           />
         ) : null

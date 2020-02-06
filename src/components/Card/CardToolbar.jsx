@@ -5,6 +5,8 @@ import styled from 'styled-components';
 import { Close20, Popup20 } from '@carbon/icons-react';
 import { OverflowMenu, OverflowMenuItem } from 'carbon-components-react';
 
+import { CARD_ACTIONS } from '../../constants/LayoutConstants';
+
 import CardRangePicker, { CardRangePickerPropTypes } from './CardRangePicker';
 
 export const ToolbarSVGWrapper = styled.button`
@@ -91,7 +93,7 @@ const CardToolbar = ({
             {availableActions.edit && (
               <OverflowMenuItem
                 onClick={() => {
-                  onCardAction('EDIT_CARD');
+                  onCardAction(CARD_ACTIONS.EDIT_CARD);
                 }}
                 itemText={i18n.editCardLabel}
               />
@@ -99,7 +101,7 @@ const CardToolbar = ({
             {availableActions.clone && (
               <OverflowMenuItem
                 onClick={() => {
-                  onCardAction('CLONE_CARD');
+                  onCardAction(CARD_ACTIONS.CLONE_CARD);
                 }}
                 itemText={i18n.cloneCardLabel}
               />
@@ -108,7 +110,7 @@ const CardToolbar = ({
               <OverflowMenuItem
                 isDelete
                 onClick={() => {
-                  onCardAction('DELETE_CARD');
+                  onCardAction(CARD_ACTIONS.DELETE_CARD);
                 }}
                 itemText={i18n.deleteCardLabel}
               />
@@ -134,7 +136,7 @@ const CardToolbar = ({
           {isExpanded ? (
             <ToolbarSVGWrapper
               className="card--toolbar-action"
-              onClick={() => onCardAction('CLOSE_EXPANDED_CARD')}
+              onClick={() => onCardAction(CARD_ACTIONS.CLOSE_EXPANDED_CARD)}
             >
               <Close20 title={i18n.closeLabel} description={i18n.closeLabel} />
             </ToolbarSVGWrapper>
@@ -142,7 +144,7 @@ const CardToolbar = ({
             <ToolbarSVGWrapper
               className="card--toolbar-action"
               onClick={() => {
-                onCardAction('OPEN_EXPANDED_CARD');
+                onCardAction(CARD_ACTIONS.OPEN_EXPANDED_CARD);
               }}
             >
               <Popup20 title={i18n.expandLabel} description={i18n.expandLabel} />

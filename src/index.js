@@ -7,18 +7,19 @@ sizeMe.noPlaceholders = true;
 export styles from './styles.scss';
 
 // Components
-export Button from './components/Button';
-export Table from './components/Table';
 export AddCard from './components/AddCard';
+export Button from './components/Button';
+export Breadcrumb, { BreadcrumbItem, BreadcrumbSkeleton } from './components/Breadcrumb';
 export ComposedModal from './components/ComposedModal';
+export EmptyTable from './components/Table/EmptyTable/EmptyTable';
+export Table from './components/Table';
+export TableHead from './components/Table/TableHead/TableHead';
+export TableBody from './components/Table/TableBody/TableBody';
+export TableSkeletonWithHeaders from './components/Table/TableSkeletonWithHeaders/TableSkeletonWithHeaders';
+export TableToolbar from './components/Table/TableToolbar/TableToolbar';
 export WizardModal from './components/WizardModal';
 export WizardInline from './components/WizardInline/WizardInline';
 export StatefulWizardInline from './components/WizardInline/StatefulWizardInline';
-export TableHead from './components/Table/TableHead/TableHead';
-export TableBody from './components/Table/TableBody/TableBody';
-export TableToolbar from './components/Table/TableToolbar/TableToolbar';
-export EmptyTable from './components/Table/EmptyTable/EmptyTable';
-export TableSkeletonWithHeaders from './components/Table/TableSkeletonWithHeaders/TableSkeletonWithHeaders';
 export StatefulTable from './components/Table/StatefulTable';
 export TileCatalog from './components/TileCatalog/TileCatalog';
 export StatefulTileCatalog from './components/TileCatalog/StatefulTileCatalog';
@@ -55,6 +56,7 @@ export TableCard, { findMatchingThresholds } from './components/TableCard/TableC
 export {
   CARD_TYPES,
   CARD_SIZES,
+  CARD_ACTIONS,
   DASHBOARD_BREAKPOINTS,
   DASHBOARD_SIZES,
   TIME_SERIES_TYPES,
@@ -62,14 +64,13 @@ export {
 
 // Experimental
 export ListCard from './components/ListCard/ListCard';
-export {
-  PageWizard,
-  PageWizardStep,
-  PageWizardStepContent,
-  PageWizardStepTitle,
-  PageWizardStepDescription,
-  PageWizardStepExtraContent,
-} from './components/PageWizard/PageWizard';
+
+export PageWizard from './components/PageWizard/PageWizard';
+export PageWizardStep from './components/PageWizard/PageWizardStep/PageWizardStep';
+export PageWizardStepContent from './components/PageWizard/PageWizardStep/PageWizardStepContent';
+export PageWizardStepDescription from './components/PageWizard/PageWizardStep/PageWizardStepDescription';
+export PageWizardStepExtraContent from './components/PageWizard/PageWizardStep/PageWizardStepExtraContent';
+export PageWizardStepTitle from './components/PageWizard/PageWizardStep/PageWizardStepTitle';
 export StatefulPageWizard from './components/PageWizard/StatefulPageWizard';
 
 export TileGallery from './components/TileGallery/TileGallery';
@@ -84,12 +85,14 @@ export TileGallerySearch from './components/TileGallery/TileGallerySearch';
 
 export StatefulTileGallery from './components/TileGallery/StatefulTileGallery';
 
+export List from './components/List/List';
+
+export SimpleList from './components/List/SimpleList/SimpleList';
+
 // Carbon proxy
 export {
   Accordion,
   AccordionItem,
-  Breadcrumb,
-  BreadcrumbItem,
   Checkbox,
   CodeSnippet,
   ComboBox,
@@ -206,7 +209,6 @@ export {
   SkeletonPlaceholder,
   DataTableSkeleton,
   AccordionSkeleton,
-  BreadcrumbSkeleton,
   ButtonSkeleton,
   CheckboxSkeleton,
   CodeSnippetSkeleton,
