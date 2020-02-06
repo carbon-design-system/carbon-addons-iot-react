@@ -622,7 +622,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                 className="bx--table-toolbar"
               >
                 <div
-                  className="bx--batch-actions TableToolbar__StyledTableBatchActions-sc-17lb3av-3 gnkbSD"
+                  className="bx--batch-actions iot--table-batch-actions"
                 >
                   <div
                     className="bx--action-list"
@@ -650,12 +650,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                   </div>
                 </div>
                 <label
-                  className="table-toolbar-secondary-title"
+                  className="iot--table-toolbar-secondary-title"
                 >
                   Card Title
                 </label>
                 <div
-                  className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-2 ksiTUe"
+                  className="bx--toolbar-content iot--table-toolbar-content"
                 >
                   <div
                     className="card--toolbar"

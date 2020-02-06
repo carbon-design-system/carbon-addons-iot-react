@@ -327,7 +327,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         "msTransform": "translate(490px,16px)",
                         "position": "absolute",
                         "transform": "translate(490px,16px)",
-                        "width": "142px",
+                        "width": "300px",
                       }
                     }
                     type="CUSTOM"
@@ -351,13 +351,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="facilitycard-xs2"
                     style={
                       Object {
-                        "MozTransform": "translate(648px,16px)",
-                        "OTransform": "translate(648px,16px)",
-                        "WebkitTransform": "translate(648px,16px)",
+                        "MozTransform": "translate(806px,16px)",
+                        "OTransform": "translate(806px,16px)",
+                        "WebkitTransform": "translate(806px,16px)",
                         "height": "128px",
-                        "msTransform": "translate(648px,16px)",
+                        "msTransform": "translate(806px,16px)",
                         "position": "absolute",
-                        "transform": "translate(648px,16px)",
+                        "transform": "translate(806px,16px)",
                         "width": "142px",
                       }
                     }
@@ -422,13 +422,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="facilitycard-xs3"
                     style={
                       Object {
-                        "MozTransform": "translate(806px,16px)",
-                        "OTransform": "translate(806px,16px)",
-                        "WebkitTransform": "translate(806px,16px)",
+                        "MozTransform": "translate(964px,16px)",
+                        "OTransform": "translate(964px,16px)",
+                        "WebkitTransform": "translate(964px,16px)",
                         "height": "128px",
-                        "msTransform": "translate(806px,16px)",
+                        "msTransform": "translate(964px,16px)",
                         "position": "absolute",
-                        "transform": "translate(806px,16px)",
+                        "transform": "translate(964px,16px)",
                         "width": "142px",
                       }
                     }
@@ -493,13 +493,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="facilitycard-comfort-level"
                     style={
                       Object {
-                        "MozTransform": "translate(964px,16px)",
-                        "OTransform": "translate(964px,16px)",
-                        "WebkitTransform": "translate(964px,16px)",
+                        "MozTransform": "translate(1122px,16px)",
+                        "OTransform": "translate(1122px,16px)",
+                        "WebkitTransform": "translate(1122px,16px)",
                         "height": "128px",
-                        "msTransform": "translate(964px,16px)",
+                        "msTransform": "translate(1122px,16px)",
                         "position": "absolute",
-                        "transform": "translate(964px,16px)",
+                        "transform": "translate(1122px,16px)",
                         "width": "142px",
                       }
                     }
@@ -586,13 +586,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="facilitycard-xs4"
                     style={
                       Object {
-                        "MozTransform": "translate(1122px,16px)",
-                        "OTransform": "translate(1122px,16px)",
-                        "WebkitTransform": "translate(1122px,16px)",
+                        "MozTransform": "translate(332px,160px)",
+                        "OTransform": "translate(332px,160px)",
+                        "WebkitTransform": "translate(332px,160px)",
                         "height": "128px",
-                        "msTransform": "translate(1122px,16px)",
+                        "msTransform": "translate(332px,160px)",
                         "position": "absolute",
-                        "transform": "translate(1122px,16px)",
+                        "transform": "translate(332px,160px)",
                         "width": "142px",
                       }
                     }
@@ -654,13 +654,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="facilitycard-health"
                     style={
                       Object {
-                        "MozTransform": "translate(332px,160px)",
-                        "OTransform": "translate(332px,160px)",
-                        "WebkitTransform": "translate(332px,160px)",
+                        "MozTransform": "translate(490px,160px)",
+                        "OTransform": "translate(490px,160px)",
+                        "WebkitTransform": "translate(490px,160px)",
                         "height": "128px",
-                        "msTransform": "translate(332px,160px)",
+                        "msTransform": "translate(490px,160px)",
                         "position": "absolute",
-                        "transform": "translate(332px,160px)",
+                        "transform": "translate(490px,160px)",
                         "width": "300px",
                       }
                     }
@@ -747,13 +747,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="facility-temperature-timeseries"
                     style={
                       Object {
-                        "MozTransform": "translate(648px,160px)",
-                        "OTransform": "translate(648px,160px)",
-                        "WebkitTransform": "translate(648px,160px)",
+                        "MozTransform": "translate(16px,304px)",
+                        "OTransform": "translate(16px,304px)",
+                        "WebkitTransform": "translate(16px,304px)",
                         "height": "272px",
-                        "msTransform": "translate(648px,160px)",
+                        "msTransform": "translate(16px,304px)",
                         "position": "absolute",
-                        "transform": "translate(648px,160px)",
+                        "transform": "translate(16px,304px)",
                         "width": "616px",
                       }
                     }
@@ -874,13 +874,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="alert-table1"
                     style={
                       Object {
-                        "MozTransform": "translate(16px,304px)",
-                        "OTransform": "translate(16px,304px)",
-                        "WebkitTransform": "translate(16px,304px)",
+                        "MozTransform": "translate(648px,304px)",
+                        "OTransform": "translate(648px,304px)",
+                        "WebkitTransform": "translate(648px,304px)",
                         "height": "560px",
-                        "msTransform": "translate(16px,304px)",
+                        "msTransform": "translate(648px,304px)",
                         "position": "absolute",
-                        "transform": "translate(16px,304px)",
+                        "transform": "translate(648px,304px)",
                         "width": "616px",
                       }
                     }
@@ -1370,13 +1370,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="facility-multi-timeseries"
                     style={
                       Object {
-                        "MozTransform": "translate(648px,448px)",
-                        "OTransform": "translate(648px,448px)",
-                        "WebkitTransform": "translate(648px,448px)",
+                        "MozTransform": "translate(16px,592px)",
+                        "OTransform": "translate(16px,592px)",
+                        "WebkitTransform": "translate(16px,592px)",
                         "height": "560px",
-                        "msTransform": "translate(648px,448px)",
+                        "msTransform": "translate(16px,592px)",
                         "position": "absolute",
-                        "transform": "translate(648px,448px)",
+                        "transform": "translate(16px,592px)",
                         "width": "616px",
                       }
                     }
@@ -1497,13 +1497,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="floor map picture"
                     style={
                       Object {
-                        "MozTransform": "translate(16px,880px)",
-                        "OTransform": "translate(16px,880px)",
-                        "WebkitTransform": "translate(16px,880px)",
+                        "MozTransform": "translate(648px,880px)",
+                        "OTransform": "translate(648px,880px)",
+                        "WebkitTransform": "translate(648px,880px)",
                         "height": "272px",
-                        "msTransform": "translate(16px,880px)",
+                        "msTransform": "translate(648px,880px)",
                         "position": "absolute",
-                        "transform": "translate(16px,880px)",
+                        "transform": "translate(648px,880px)",
                         "width": "616px",
                       }
                     }
@@ -2172,7 +2172,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         "msTransform": "translate(490px,16px)",
                         "position": "absolute",
                         "transform": "translate(490px,16px)",
-                        "width": "142px",
+                        "width": "300px",
                       }
                     }
                     type="CUSTOM"
@@ -2196,13 +2196,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="facilitycard-xs2"
                     style={
                       Object {
-                        "MozTransform": "translate(648px,16px)",
-                        "OTransform": "translate(648px,16px)",
-                        "WebkitTransform": "translate(648px,16px)",
+                        "MozTransform": "translate(806px,16px)",
+                        "OTransform": "translate(806px,16px)",
+                        "WebkitTransform": "translate(806px,16px)",
                         "height": "128px",
-                        "msTransform": "translate(648px,16px)",
+                        "msTransform": "translate(806px,16px)",
                         "position": "absolute",
-                        "transform": "translate(648px,16px)",
+                        "transform": "translate(806px,16px)",
                         "width": "142px",
                       }
                     }
@@ -2267,13 +2267,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="facilitycard-xs3"
                     style={
                       Object {
-                        "MozTransform": "translate(806px,16px)",
-                        "OTransform": "translate(806px,16px)",
-                        "WebkitTransform": "translate(806px,16px)",
+                        "MozTransform": "translate(964px,16px)",
+                        "OTransform": "translate(964px,16px)",
+                        "WebkitTransform": "translate(964px,16px)",
                         "height": "128px",
-                        "msTransform": "translate(806px,16px)",
+                        "msTransform": "translate(964px,16px)",
                         "position": "absolute",
-                        "transform": "translate(806px,16px)",
+                        "transform": "translate(964px,16px)",
                         "width": "142px",
                       }
                     }
@@ -2338,13 +2338,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="facilitycard-comfort-level"
                     style={
                       Object {
-                        "MozTransform": "translate(964px,16px)",
-                        "OTransform": "translate(964px,16px)",
-                        "WebkitTransform": "translate(964px,16px)",
+                        "MozTransform": "translate(1122px,16px)",
+                        "OTransform": "translate(1122px,16px)",
+                        "WebkitTransform": "translate(1122px,16px)",
                         "height": "128px",
-                        "msTransform": "translate(964px,16px)",
+                        "msTransform": "translate(1122px,16px)",
                         "position": "absolute",
-                        "transform": "translate(964px,16px)",
+                        "transform": "translate(1122px,16px)",
                         "width": "142px",
                       }
                     }
@@ -2431,13 +2431,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="facilitycard-xs4"
                     style={
                       Object {
-                        "MozTransform": "translate(1122px,16px)",
-                        "OTransform": "translate(1122px,16px)",
-                        "WebkitTransform": "translate(1122px,16px)",
+                        "MozTransform": "translate(332px,160px)",
+                        "OTransform": "translate(332px,160px)",
+                        "WebkitTransform": "translate(332px,160px)",
                         "height": "128px",
-                        "msTransform": "translate(1122px,16px)",
+                        "msTransform": "translate(332px,160px)",
                         "position": "absolute",
-                        "transform": "translate(1122px,16px)",
+                        "transform": "translate(332px,160px)",
                         "width": "142px",
                       }
                     }
@@ -2499,13 +2499,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="facilitycard-health"
                     style={
                       Object {
-                        "MozTransform": "translate(332px,160px)",
-                        "OTransform": "translate(332px,160px)",
-                        "WebkitTransform": "translate(332px,160px)",
+                        "MozTransform": "translate(490px,160px)",
+                        "OTransform": "translate(490px,160px)",
+                        "WebkitTransform": "translate(490px,160px)",
                         "height": "128px",
-                        "msTransform": "translate(332px,160px)",
+                        "msTransform": "translate(490px,160px)",
                         "position": "absolute",
-                        "transform": "translate(332px,160px)",
+                        "transform": "translate(490px,160px)",
                         "width": "300px",
                       }
                     }
@@ -2592,13 +2592,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="facility-temperature-timeseries"
                     style={
                       Object {
-                        "MozTransform": "translate(648px,160px)",
-                        "OTransform": "translate(648px,160px)",
-                        "WebkitTransform": "translate(648px,160px)",
+                        "MozTransform": "translate(16px,304px)",
+                        "OTransform": "translate(16px,304px)",
+                        "WebkitTransform": "translate(16px,304px)",
                         "height": "272px",
-                        "msTransform": "translate(648px,160px)",
+                        "msTransform": "translate(16px,304px)",
                         "position": "absolute",
-                        "transform": "translate(648px,160px)",
+                        "transform": "translate(16px,304px)",
                         "width": "616px",
                       }
                     }
@@ -2719,13 +2719,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="alert-table1"
                     style={
                       Object {
-                        "MozTransform": "translate(16px,304px)",
-                        "OTransform": "translate(16px,304px)",
-                        "WebkitTransform": "translate(16px,304px)",
+                        "MozTransform": "translate(648px,304px)",
+                        "OTransform": "translate(648px,304px)",
+                        "WebkitTransform": "translate(648px,304px)",
                         "height": "560px",
-                        "msTransform": "translate(16px,304px)",
+                        "msTransform": "translate(648px,304px)",
                         "position": "absolute",
-                        "transform": "translate(16px,304px)",
+                        "transform": "translate(648px,304px)",
                         "width": "616px",
                       }
                     }
@@ -3215,13 +3215,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="facility-multi-timeseries"
                     style={
                       Object {
-                        "MozTransform": "translate(648px,448px)",
-                        "OTransform": "translate(648px,448px)",
-                        "WebkitTransform": "translate(648px,448px)",
+                        "MozTransform": "translate(16px,592px)",
+                        "OTransform": "translate(16px,592px)",
+                        "WebkitTransform": "translate(16px,592px)",
                         "height": "560px",
-                        "msTransform": "translate(648px,448px)",
+                        "msTransform": "translate(16px,592px)",
                         "position": "absolute",
-                        "transform": "translate(648px,448px)",
+                        "transform": "translate(16px,592px)",
                         "width": "616px",
                       }
                     }
@@ -3342,13 +3342,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="floor map picture"
                     style={
                       Object {
-                        "MozTransform": "translate(16px,880px)",
-                        "OTransform": "translate(16px,880px)",
-                        "WebkitTransform": "translate(16px,880px)",
+                        "MozTransform": "translate(648px,880px)",
+                        "OTransform": "translate(648px,880px)",
+                        "WebkitTransform": "translate(648px,880px)",
                         "height": "272px",
-                        "msTransform": "translate(16px,880px)",
+                        "msTransform": "translate(648px,880px)",
                         "position": "absolute",
-                        "transform": "translate(16px,880px)",
+                        "transform": "translate(648px,880px)",
                         "width": "616px",
                       }
                     }
@@ -4049,7 +4049,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         "msTransform": "translate(490px,16px)",
                         "position": "absolute",
                         "transform": "translate(490px,16px)",
-                        "width": "142px",
+                        "width": "300px",
                       }
                     }
                     type="CUSTOM"
@@ -4073,13 +4073,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="facilitycard-xs2"
                     style={
                       Object {
-                        "MozTransform": "translate(648px,16px)",
-                        "OTransform": "translate(648px,16px)",
-                        "WebkitTransform": "translate(648px,16px)",
+                        "MozTransform": "translate(806px,16px)",
+                        "OTransform": "translate(806px,16px)",
+                        "WebkitTransform": "translate(806px,16px)",
                         "height": "128px",
-                        "msTransform": "translate(648px,16px)",
+                        "msTransform": "translate(806px,16px)",
                         "position": "absolute",
-                        "transform": "translate(648px,16px)",
+                        "transform": "translate(806px,16px)",
                         "width": "142px",
                       }
                     }
@@ -4144,13 +4144,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="facilitycard-xs3"
                     style={
                       Object {
-                        "MozTransform": "translate(806px,16px)",
-                        "OTransform": "translate(806px,16px)",
-                        "WebkitTransform": "translate(806px,16px)",
+                        "MozTransform": "translate(964px,16px)",
+                        "OTransform": "translate(964px,16px)",
+                        "WebkitTransform": "translate(964px,16px)",
                         "height": "128px",
-                        "msTransform": "translate(806px,16px)",
+                        "msTransform": "translate(964px,16px)",
                         "position": "absolute",
-                        "transform": "translate(806px,16px)",
+                        "transform": "translate(964px,16px)",
                         "width": "142px",
                       }
                     }
@@ -4215,13 +4215,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="facilitycard-comfort-level"
                     style={
                       Object {
-                        "MozTransform": "translate(964px,16px)",
-                        "OTransform": "translate(964px,16px)",
-                        "WebkitTransform": "translate(964px,16px)",
+                        "MozTransform": "translate(1122px,16px)",
+                        "OTransform": "translate(1122px,16px)",
+                        "WebkitTransform": "translate(1122px,16px)",
                         "height": "128px",
-                        "msTransform": "translate(964px,16px)",
+                        "msTransform": "translate(1122px,16px)",
                         "position": "absolute",
-                        "transform": "translate(964px,16px)",
+                        "transform": "translate(1122px,16px)",
                         "width": "142px",
                       }
                     }
@@ -4308,13 +4308,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="facilitycard-xs4"
                     style={
                       Object {
-                        "MozTransform": "translate(1122px,16px)",
-                        "OTransform": "translate(1122px,16px)",
-                        "WebkitTransform": "translate(1122px,16px)",
+                        "MozTransform": "translate(332px,160px)",
+                        "OTransform": "translate(332px,160px)",
+                        "WebkitTransform": "translate(332px,160px)",
                         "height": "128px",
-                        "msTransform": "translate(1122px,16px)",
+                        "msTransform": "translate(332px,160px)",
                         "position": "absolute",
-                        "transform": "translate(1122px,16px)",
+                        "transform": "translate(332px,160px)",
                         "width": "142px",
                       }
                     }
@@ -4376,13 +4376,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="facilitycard-health"
                     style={
                       Object {
-                        "MozTransform": "translate(332px,160px)",
-                        "OTransform": "translate(332px,160px)",
-                        "WebkitTransform": "translate(332px,160px)",
+                        "MozTransform": "translate(490px,160px)",
+                        "OTransform": "translate(490px,160px)",
+                        "WebkitTransform": "translate(490px,160px)",
                         "height": "128px",
-                        "msTransform": "translate(332px,160px)",
+                        "msTransform": "translate(490px,160px)",
                         "position": "absolute",
-                        "transform": "translate(332px,160px)",
+                        "transform": "translate(490px,160px)",
                         "width": "300px",
                       }
                     }
@@ -4469,13 +4469,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="facility-temperature-timeseries"
                     style={
                       Object {
-                        "MozTransform": "translate(648px,160px)",
-                        "OTransform": "translate(648px,160px)",
-                        "WebkitTransform": "translate(648px,160px)",
+                        "MozTransform": "translate(16px,304px)",
+                        "OTransform": "translate(16px,304px)",
+                        "WebkitTransform": "translate(16px,304px)",
                         "height": "272px",
-                        "msTransform": "translate(648px,160px)",
+                        "msTransform": "translate(16px,304px)",
                         "position": "absolute",
-                        "transform": "translate(648px,160px)",
+                        "transform": "translate(16px,304px)",
                         "width": "616px",
                       }
                     }
@@ -4596,13 +4596,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="alert-table1"
                     style={
                       Object {
-                        "MozTransform": "translate(16px,304px)",
-                        "OTransform": "translate(16px,304px)",
-                        "WebkitTransform": "translate(16px,304px)",
+                        "MozTransform": "translate(648px,304px)",
+                        "OTransform": "translate(648px,304px)",
+                        "WebkitTransform": "translate(648px,304px)",
                         "height": "560px",
-                        "msTransform": "translate(16px,304px)",
+                        "msTransform": "translate(648px,304px)",
                         "position": "absolute",
-                        "transform": "translate(16px,304px)",
+                        "transform": "translate(648px,304px)",
                         "width": "616px",
                       }
                     }
@@ -5092,13 +5092,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="facility-multi-timeseries"
                     style={
                       Object {
-                        "MozTransform": "translate(648px,448px)",
-                        "OTransform": "translate(648px,448px)",
-                        "WebkitTransform": "translate(648px,448px)",
+                        "MozTransform": "translate(16px,592px)",
+                        "OTransform": "translate(16px,592px)",
+                        "WebkitTransform": "translate(16px,592px)",
                         "height": "560px",
-                        "msTransform": "translate(648px,448px)",
+                        "msTransform": "translate(16px,592px)",
                         "position": "absolute",
-                        "transform": "translate(648px,448px)",
+                        "transform": "translate(16px,592px)",
                         "width": "616px",
                       }
                     }
@@ -5219,13 +5219,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="floor map picture"
                     style={
                       Object {
-                        "MozTransform": "translate(16px,880px)",
-                        "OTransform": "translate(16px,880px)",
-                        "WebkitTransform": "translate(16px,880px)",
+                        "MozTransform": "translate(648px,880px)",
+                        "OTransform": "translate(648px,880px)",
+                        "WebkitTransform": "translate(648px,880px)",
                         "height": "272px",
-                        "msTransform": "translate(16px,880px)",
+                        "msTransform": "translate(648px,880px)",
                         "position": "absolute",
-                        "transform": "translate(16px,880px)",
+                        "transform": "translate(648px,880px)",
                         "width": "616px",
                       }
                     }
@@ -8242,7 +8242,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         "msTransform": "translate(490px,16px)",
                         "position": "absolute",
                         "transform": "translate(490px,16px)",
-                        "width": "142px",
+                        "width": "300px",
                       }
                     }
                     type="CUSTOM"
@@ -8266,13 +8266,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="facilitycard-xs2"
                     style={
                       Object {
-                        "MozTransform": "translate(648px,16px)",
-                        "OTransform": "translate(648px,16px)",
-                        "WebkitTransform": "translate(648px,16px)",
+                        "MozTransform": "translate(806px,16px)",
+                        "OTransform": "translate(806px,16px)",
+                        "WebkitTransform": "translate(806px,16px)",
                         "height": "128px",
-                        "msTransform": "translate(648px,16px)",
+                        "msTransform": "translate(806px,16px)",
                         "position": "absolute",
-                        "transform": "translate(648px,16px)",
+                        "transform": "translate(806px,16px)",
                         "width": "142px",
                       }
                     }
@@ -8337,13 +8337,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="facilitycard-xs3"
                     style={
                       Object {
-                        "MozTransform": "translate(806px,16px)",
-                        "OTransform": "translate(806px,16px)",
-                        "WebkitTransform": "translate(806px,16px)",
+                        "MozTransform": "translate(964px,16px)",
+                        "OTransform": "translate(964px,16px)",
+                        "WebkitTransform": "translate(964px,16px)",
                         "height": "128px",
-                        "msTransform": "translate(806px,16px)",
+                        "msTransform": "translate(964px,16px)",
                         "position": "absolute",
-                        "transform": "translate(806px,16px)",
+                        "transform": "translate(964px,16px)",
                         "width": "142px",
                       }
                     }
@@ -8408,13 +8408,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="facilitycard-comfort-level"
                     style={
                       Object {
-                        "MozTransform": "translate(964px,16px)",
-                        "OTransform": "translate(964px,16px)",
-                        "WebkitTransform": "translate(964px,16px)",
+                        "MozTransform": "translate(1122px,16px)",
+                        "OTransform": "translate(1122px,16px)",
+                        "WebkitTransform": "translate(1122px,16px)",
                         "height": "128px",
-                        "msTransform": "translate(964px,16px)",
+                        "msTransform": "translate(1122px,16px)",
                         "position": "absolute",
-                        "transform": "translate(964px,16px)",
+                        "transform": "translate(1122px,16px)",
                         "width": "142px",
                       }
                     }
@@ -8501,13 +8501,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="facilitycard-xs4"
                     style={
                       Object {
-                        "MozTransform": "translate(1122px,16px)",
-                        "OTransform": "translate(1122px,16px)",
-                        "WebkitTransform": "translate(1122px,16px)",
+                        "MozTransform": "translate(332px,160px)",
+                        "OTransform": "translate(332px,160px)",
+                        "WebkitTransform": "translate(332px,160px)",
                         "height": "128px",
-                        "msTransform": "translate(1122px,16px)",
+                        "msTransform": "translate(332px,160px)",
                         "position": "absolute",
-                        "transform": "translate(1122px,16px)",
+                        "transform": "translate(332px,160px)",
                         "width": "142px",
                       }
                     }
@@ -8569,13 +8569,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="facilitycard-health"
                     style={
                       Object {
-                        "MozTransform": "translate(332px,160px)",
-                        "OTransform": "translate(332px,160px)",
-                        "WebkitTransform": "translate(332px,160px)",
+                        "MozTransform": "translate(490px,160px)",
+                        "OTransform": "translate(490px,160px)",
+                        "WebkitTransform": "translate(490px,160px)",
                         "height": "128px",
-                        "msTransform": "translate(332px,160px)",
+                        "msTransform": "translate(490px,160px)",
                         "position": "absolute",
-                        "transform": "translate(332px,160px)",
+                        "transform": "translate(490px,160px)",
                         "width": "300px",
                       }
                     }
@@ -8662,13 +8662,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="facility-temperature-timeseries"
                     style={
                       Object {
-                        "MozTransform": "translate(648px,160px)",
-                        "OTransform": "translate(648px,160px)",
-                        "WebkitTransform": "translate(648px,160px)",
+                        "MozTransform": "translate(16px,304px)",
+                        "OTransform": "translate(16px,304px)",
+                        "WebkitTransform": "translate(16px,304px)",
                         "height": "272px",
-                        "msTransform": "translate(648px,160px)",
+                        "msTransform": "translate(16px,304px)",
                         "position": "absolute",
-                        "transform": "translate(648px,160px)",
+                        "transform": "translate(16px,304px)",
                         "width": "616px",
                       }
                     }
@@ -8789,13 +8789,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="alert-table1"
                     style={
                       Object {
-                        "MozTransform": "translate(16px,304px)",
-                        "OTransform": "translate(16px,304px)",
-                        "WebkitTransform": "translate(16px,304px)",
+                        "MozTransform": "translate(648px,304px)",
+                        "OTransform": "translate(648px,304px)",
+                        "WebkitTransform": "translate(648px,304px)",
                         "height": "560px",
-                        "msTransform": "translate(16px,304px)",
+                        "msTransform": "translate(648px,304px)",
                         "position": "absolute",
-                        "transform": "translate(16px,304px)",
+                        "transform": "translate(648px,304px)",
                         "width": "616px",
                       }
                     }
@@ -9283,13 +9283,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="facility-multi-timeseries"
                     style={
                       Object {
-                        "MozTransform": "translate(648px,448px)",
-                        "OTransform": "translate(648px,448px)",
-                        "WebkitTransform": "translate(648px,448px)",
+                        "MozTransform": "translate(16px,592px)",
+                        "OTransform": "translate(16px,592px)",
+                        "WebkitTransform": "translate(16px,592px)",
                         "height": "560px",
-                        "msTransform": "translate(648px,448px)",
+                        "msTransform": "translate(16px,592px)",
                         "position": "absolute",
-                        "transform": "translate(648px,448px)",
+                        "transform": "translate(16px,592px)",
                         "width": "616px",
                       }
                     }
@@ -9410,13 +9410,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="floor map picture"
                     style={
                       Object {
-                        "MozTransform": "translate(16px,880px)",
-                        "OTransform": "translate(16px,880px)",
-                        "WebkitTransform": "translate(16px,880px)",
+                        "MozTransform": "translate(648px,880px)",
+                        "OTransform": "translate(648px,880px)",
+                        "WebkitTransform": "translate(648px,880px)",
                         "height": "272px",
-                        "msTransform": "translate(16px,880px)",
+                        "msTransform": "translate(648px,880px)",
                         "position": "absolute",
-                        "transform": "translate(16px,880px)",
+                        "transform": "translate(648px,880px)",
                         "width": "616px",
                       }
                     }
@@ -20124,7 +20124,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         "msTransform": "translate(490px,16px)",
                         "position": "absolute",
                         "transform": "translate(490px,16px)",
-                        "width": "142px",
+                        "width": "300px",
                       }
                     }
                     type="CUSTOM"
@@ -20148,13 +20148,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="facilitycard-xs2"
                     style={
                       Object {
-                        "MozTransform": "translate(648px,16px)",
-                        "OTransform": "translate(648px,16px)",
-                        "WebkitTransform": "translate(648px,16px)",
+                        "MozTransform": "translate(806px,16px)",
+                        "OTransform": "translate(806px,16px)",
+                        "WebkitTransform": "translate(806px,16px)",
                         "height": "128px",
-                        "msTransform": "translate(648px,16px)",
+                        "msTransform": "translate(806px,16px)",
                         "position": "absolute",
-                        "transform": "translate(648px,16px)",
+                        "transform": "translate(806px,16px)",
                         "width": "142px",
                       }
                     }
@@ -20219,13 +20219,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="facilitycard-xs3"
                     style={
                       Object {
-                        "MozTransform": "translate(806px,16px)",
-                        "OTransform": "translate(806px,16px)",
-                        "WebkitTransform": "translate(806px,16px)",
+                        "MozTransform": "translate(964px,16px)",
+                        "OTransform": "translate(964px,16px)",
+                        "WebkitTransform": "translate(964px,16px)",
                         "height": "128px",
-                        "msTransform": "translate(806px,16px)",
+                        "msTransform": "translate(964px,16px)",
                         "position": "absolute",
-                        "transform": "translate(806px,16px)",
+                        "transform": "translate(964px,16px)",
                         "width": "142px",
                       }
                     }
@@ -20290,13 +20290,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="facilitycard-comfort-level"
                     style={
                       Object {
-                        "MozTransform": "translate(964px,16px)",
-                        "OTransform": "translate(964px,16px)",
-                        "WebkitTransform": "translate(964px,16px)",
+                        "MozTransform": "translate(1122px,16px)",
+                        "OTransform": "translate(1122px,16px)",
+                        "WebkitTransform": "translate(1122px,16px)",
                         "height": "128px",
-                        "msTransform": "translate(964px,16px)",
+                        "msTransform": "translate(1122px,16px)",
                         "position": "absolute",
-                        "transform": "translate(964px,16px)",
+                        "transform": "translate(1122px,16px)",
                         "width": "142px",
                       }
                     }
@@ -20383,13 +20383,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="facilitycard-xs4"
                     style={
                       Object {
-                        "MozTransform": "translate(1122px,16px)",
-                        "OTransform": "translate(1122px,16px)",
-                        "WebkitTransform": "translate(1122px,16px)",
+                        "MozTransform": "translate(332px,160px)",
+                        "OTransform": "translate(332px,160px)",
+                        "WebkitTransform": "translate(332px,160px)",
                         "height": "128px",
-                        "msTransform": "translate(1122px,16px)",
+                        "msTransform": "translate(332px,160px)",
                         "position": "absolute",
-                        "transform": "translate(1122px,16px)",
+                        "transform": "translate(332px,160px)",
                         "width": "142px",
                       }
                     }
@@ -20451,13 +20451,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="facilitycard-health"
                     style={
                       Object {
-                        "MozTransform": "translate(332px,160px)",
-                        "OTransform": "translate(332px,160px)",
-                        "WebkitTransform": "translate(332px,160px)",
+                        "MozTransform": "translate(490px,160px)",
+                        "OTransform": "translate(490px,160px)",
+                        "WebkitTransform": "translate(490px,160px)",
                         "height": "128px",
-                        "msTransform": "translate(332px,160px)",
+                        "msTransform": "translate(490px,160px)",
                         "position": "absolute",
-                        "transform": "translate(332px,160px)",
+                        "transform": "translate(490px,160px)",
                         "width": "300px",
                       }
                     }
@@ -20544,13 +20544,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="facility-temperature-timeseries"
                     style={
                       Object {
-                        "MozTransform": "translate(648px,160px)",
-                        "OTransform": "translate(648px,160px)",
-                        "WebkitTransform": "translate(648px,160px)",
+                        "MozTransform": "translate(16px,304px)",
+                        "OTransform": "translate(16px,304px)",
+                        "WebkitTransform": "translate(16px,304px)",
                         "height": "272px",
-                        "msTransform": "translate(648px,160px)",
+                        "msTransform": "translate(16px,304px)",
                         "position": "absolute",
-                        "transform": "translate(648px,160px)",
+                        "transform": "translate(16px,304px)",
                         "width": "616px",
                       }
                     }
@@ -20671,13 +20671,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="alert-table1"
                     style={
                       Object {
-                        "MozTransform": "translate(16px,304px)",
-                        "OTransform": "translate(16px,304px)",
-                        "WebkitTransform": "translate(16px,304px)",
+                        "MozTransform": "translate(648px,304px)",
+                        "OTransform": "translate(648px,304px)",
+                        "WebkitTransform": "translate(648px,304px)",
                         "height": "560px",
-                        "msTransform": "translate(16px,304px)",
+                        "msTransform": "translate(648px,304px)",
                         "position": "absolute",
-                        "transform": "translate(16px,304px)",
+                        "transform": "translate(648px,304px)",
                         "width": "616px",
                       }
                     }
@@ -21167,13 +21167,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="facility-multi-timeseries"
                     style={
                       Object {
-                        "MozTransform": "translate(648px,448px)",
-                        "OTransform": "translate(648px,448px)",
-                        "WebkitTransform": "translate(648px,448px)",
+                        "MozTransform": "translate(16px,592px)",
+                        "OTransform": "translate(16px,592px)",
+                        "WebkitTransform": "translate(16px,592px)",
                         "height": "560px",
-                        "msTransform": "translate(648px,448px)",
+                        "msTransform": "translate(16px,592px)",
                         "position": "absolute",
-                        "transform": "translate(648px,448px)",
+                        "transform": "translate(16px,592px)",
                         "width": "616px",
                       }
                     }
@@ -21294,13 +21294,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="floor map picture"
                     style={
                       Object {
-                        "MozTransform": "translate(16px,880px)",
-                        "OTransform": "translate(16px,880px)",
-                        "WebkitTransform": "translate(16px,880px)",
+                        "MozTransform": "translate(648px,880px)",
+                        "OTransform": "translate(648px,880px)",
+                        "WebkitTransform": "translate(648px,880px)",
                         "height": "272px",
-                        "msTransform": "translate(16px,880px)",
+                        "msTransform": "translate(648px,880px)",
                         "position": "absolute",
-                        "transform": "translate(16px,880px)",
+                        "transform": "translate(648px,880px)",
                         "width": "616px",
                       }
                     }
