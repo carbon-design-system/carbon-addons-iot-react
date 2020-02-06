@@ -1,9 +1,10 @@
 @import '~carbon-components/scss/globals/scss/vars';
-div.bx--toolbar-action.bx--toolbar-search-container-expandable {
-  > div.bx--search.bx--search--sm.table-toolbar-search {
+@import '../../../globals/vars';
+div.#{$prefix}--toolbar-action.#{$prefix}--toolbar-search-container-expandable {
+  > div.#{$prefix}--search.#{$prefix}--search--sm.table-toolbar-search {
     flex-grow: 2;
 
-    > svg.bx--search-magnifier {
+    > svg.#{$prefix}--search-magnifier {
       height: 20px;
       fill: $icon-02;
       padding: 0;
@@ -11,10 +12,59 @@ div.bx--toolbar-action.bx--toolbar-search-container-expandable {
   }
 }
 
-.table-toolbar-secondary-title {
+.#{$iot-prefix}--table-toolbar-secondary-title {
   padding: $spacing-05;
   @include type-style('productive-heading-01');
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.#{$iot-prefix}--tooltip-svg-wrapper {
+  background: transparent;
+  border: none;
+  display: flex;
+  cursor: pointer;
+  height: auto;
+  min-width: $spacing-09;
+  outline: 2px solid transparent;
+
+  :hover {
+    background: #e5e5e5;
+  }
+
+  &:active,
+  &:focus {
+    outline: 2px solid #0062ff;
+    outline-offset: -2px;
+  }
+
+  svg {
+    margin: 0 auto;
+    height: auto;
+    width: auto;
+    fill: #525252;
+  }
+}
+
+.#{$iot-prefix}--table-toolbar {
+  width: 100%;
+  padding-top: $spacing-01;
+}
+
+.#{$iot-prefix}--table-toolbar-content {
+  flex: 1;
+  font-size: 0.875rem;
+}
+
+.#{$iot-prefix}--table-batch-actions {
+  z-index: 3;
+
+  & + .bx--toolbar-action {
+    padding: 0;
+  }
+}
+
+.#{$iot-prefix}--table-tooltip-container {
+  padding: $spacing-05 0;
 }

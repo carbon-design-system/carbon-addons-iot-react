@@ -2,12 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Column20, Filter20, Download20 } from '@carbon/icons-react';
 import { DataTable, Button, Tooltip } from 'carbon-components-react';
-import styled from 'styled-components';
+import classNames from 'classnames';
 
+import { keyCodes } from '../../../constants/KeyCodeConstants';
 import deprecate from '../../../internal/deprecate';
 import { TableSearchPropTypes, defaultI18NPropTypes } from '../TablePropTypes';
 import { tableTranslateWithId } from '../../../utils/componentUtilityFunctions';
-// import { COLORS } from '../../../styles/styles';
+import { settings } from '../../../constants/Settings';
+
+const { iotPrefix } = settings;
 
 const {
   TableToolbar: CarbonTableToolbar,
@@ -17,62 +20,6 @@ const {
   TableBatchAction,
   TableToolbarSearch,
 } = DataTable;
-
-const ToolbarSVGWrapper = styled.div`
-  &&& {
-    background: transparent;
-    border: none;
-    display: flex;
-    cursor: pointer;
-    height: auto;
-    min-width: 3rem;
-    outline: 2px solid transparent;
-
-    :hover {
-      background: #e5e5e5;
-    }
-
-    &:active,
-    &:focus {
-      outline: 2px solid #0062ff;
-      outline-offset: -2px;
-    }
-
-    svg {
-      margin: 0 auto;
-      height: auto;
-      width: auto;
-      fill: #525252;
-    }
-  }
-`;
-
-const StyledCarbonTableToolbar = styled(CarbonTableToolbar)`
-  &&& {
-    width: 100%;
-    padding-top: 0.125rem;
-  }
-`;
-
-// Need to save one px on the right for the focus
-const StyledTableToolbarContent = styled(TableToolbarContent)`
-  &&& {
-    flex: 1;
-    font-size: 0.875rem;
-  }
-`;
-
-const StyledTableBatchActions = styled(TableBatchActions)`
-  z-index: 3;
-
-  & + .bx--toolbar-action {
-    padding: 0;
-  }
-`;
-
-const StyledTooltipContainer = styled.div`
-  padding: 1rem 0;
-`;
 
 const propTypes = {
   /** id of table */
@@ -179,8 +126,9 @@ const TableToolbar = ({
     totalItemsCount,
   },
 }) => (
-  <StyledCarbonTableToolbar className={className}>
-    <StyledTableBatchActions
+  <CarbonTableToolbar className={classNames(`${iotPrefix}--table-toolbar`, className)}>
+    <TableBatchActions
+      className={`${iotPrefix}--table-batch-actions`}
       onCancel={onCancelBatchAction}
       shouldShowBatchActions={hasRowSelection === 'multi' && totalSelected > 0}
       totalSelected={totalSelected}
@@ -191,10 +139,10 @@ const TableToolbar = ({
           {labelText}
         </TableBatchAction>
       ))}
-    </StyledTableBatchActions>
+    </TableBatchActions>
     {secondaryTitle ? (
       <label // eslint-disable-line
-        className="table-toolbar-secondary-title"
+        className={`${iotPrefix}--table-toolbar-secondary-title`}
       >
         {secondaryTitle}
       </label>
@@ -202,13 +150,13 @@ const TableToolbar = ({
     {// Deprecated in favor of secondaryTitle for a more general use-case
     hasRowCountInHeader ? (
       <label // eslint-disable-line
-        className="table-toolbar-secondary-title"
+        className={`${iotPrefix}--table-toolbar-secondary-title`}
       >
         {i18n.rowCountInHeader(totalItemsCount)}
       </label>
     ) : null}
     {tooltip && (
-      <StyledTooltipContainer>
+      <div className={`${iotPrefix}--table-tooltip-container`}>
         <Tooltip
           triggerId={`card-tooltip-trigger-${tableId}`}
           tooltipId={`card-tooltip-${tableId}`}
@@ -216,9 +164,9 @@ const TableToolbar = ({
         >
           {tooltip}
         </Tooltip>
-      </StyledTooltipContainer>
+      </div>
     )}
-    <StyledTableToolbarContent>
+    <TableToolbarContent className={`${iotPrefix}--table-toolbar-content`}>
       {hasSearch ? (
         <TableToolbarSearch
           {...search}
@@ -235,25 +183,52 @@ const TableToolbar = ({
         </Button>
       ) : null}
       {onDownloadCSV ? (
-        <ToolbarSVGWrapper onClick={onDownloadCSV}>
+        <div
+          className={`${iotPrefix}--tooltip-svg-wrapper`}
+          onClick={onDownloadCSV}
+          role="button"
+          tabIndex={0}
+          onKeyDown={e => {
+            if (e.keyCode === keyCodes.ENTER) onDownloadCSV();
+          }}
+          data-testid="download-button"
+        >
           <Download20 description={i18n.downloadIconDescription} />
-        </ToolbarSVGWrapper>
+        </div>
       ) : null}
       {hasColumnSelection ? (
-        <ToolbarSVGWrapper onClick={onToggleColumnSelection}>
+        <div
+          className={`${iotPrefix}--tooltip-svg-wrapper`}
+          onClick={onToggleColumnSelection}
+          role="button"
+          tabIndex={0}
+          onKeyDown={e => {
+            if (e.keyCode === keyCodes.ENTER) onToggleColumnSelection();
+          }}
+          data-testid="column-selection-button"
+        >
           <Column20 description={i18n.columnSelectionButtonAria} />
-        </ToolbarSVGWrapper>
+        </div>
       ) : null}
       {hasFilter ? (
-        <ToolbarSVGWrapper onClick={onToggleFilter}>
+        <div
+          className={`${iotPrefix}--tooltip-svg-wrapper`}
+          onClick={onToggleFilter}
+          role="button"
+          tabIndex={0}
+          onKeyDown={e => {
+            if (e.keyCode === keyCodes.ENTER) onToggleFilter();
+          }}
+          data-testid="filter-button"
+        >
           <Filter20 description={i18n.filterButtonAria} />
-        </ToolbarSVGWrapper>
+        </div>
       ) : null}
 
       {// Default card header actions should be to the right of the table-specific actions
       customToolbarContent || null}
-    </StyledTableToolbarContent>
-  </StyledCarbonTableToolbar>
+    </TableToolbarContent>
+  </CarbonTableToolbar>
 );
 
 TableToolbar.propTypes = propTypes;
