@@ -10,13 +10,13 @@ import ListHeader from './ListHeader/ListHeader';
 
 const { iotPrefix } = settings;
 
-const itemPropTypes = {
+export const itemPropTypes = {
   id: PropTypes.string,
   content: PropTypes.shape({
     value: PropTypes.string,
     icon: PropTypes.node,
   }),
-  children: PropTypes.arrayOf(PropTypes.any), // TODO: make this recursive
+  children: PropTypes.arrayOf(PropTypes.object),
   isSelectable: PropTypes.bool,
 };
 
@@ -41,11 +41,15 @@ const propTypes = {
   /** i18n strings */
   i18n: PropTypes.shape({
     searchPlaceHolderText: PropTypes.string,
+    expand: PropTypes.string,
+    close: PropTypes.string,
   }),
+  /** Currently selected item */
+  selectedId: PropTypes.string,
+  /** Multiple currently selected items */
+  selectedIds: PropTypes.arrayOf(PropTypes.string),
   /** pagination at the bottom of list */
   pagination: PropTypes.shape(SimplePaginationPropTypes),
-  /** id of row selected */
-  selectedId: PropTypes.string,
   /** ids of row expanded */
   expandedIds: PropTypes.arrayOf(PropTypes.string),
   /** call back function of select */
@@ -61,10 +65,13 @@ const defaultProps = {
   isLargeRow: false,
   i18n: {
     searchPlaceHolderText: 'Enter a value',
+    expand: 'Expand',
+    close: 'Close',
   },
   iconPosition: 'left',
   pagination: null,
   selectedId: null,
+  selectedIds: [],
   expandedIds: [],
   handleSelect: () => {},
   toggleExpansion: () => {},
@@ -79,6 +86,7 @@ const List = ({
   i18n,
   pagination,
   selectedId,
+  selectedIds,
   expandedIds,
   handleSelect,
   toggleExpansion,
@@ -87,7 +95,7 @@ const List = ({
 }) => {
   const renderItemAndChildren = (item, level) => {
     const hasChildren = item.children && item.children.length > 0;
-    const isSelected = item.id === selectedId;
+    const isSelected = item.id === selectedId || selectedIds.some(id => item.id === id);
     const isExpanded = expandedIds.filter(rowId => rowId === item.id).length > 0;
 
     const {
@@ -114,6 +122,7 @@ const List = ({
         isLargeRow={isLargeRow}
         isCategory={isCategory}
         isSelectable={isSelectable}
+        i18n={i18n}
       />,
       ...(hasChildren && isExpanded
         ? item.children.map(child => renderItemAndChildren(child, level + 1))
