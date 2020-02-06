@@ -30,6 +30,8 @@ const propTypes = {
   i18n: PropTypes.shape({
     searchPlaceHolderText: PropTypes.string,
     pageOfPagesText: PropTypes.func,
+    expand: PropTypes.string,
+    close: PropTypes.string,
   }),
   /** pageSize */
   pageSize: PropTypes.string,
@@ -111,6 +113,7 @@ const SimpleList = ({
           ? {
               value: searchValue,
               onChange: evt => {
+                setSearchValue(evt.target.value);
                 const searchTerm = evt.target.value === undefined ? '' : evt.target.value;
                 const searchFilteredItems = items.filter(item => {
                   if (item.content.value !== '' && item.content.value !== undefined) {
