@@ -703,7 +703,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         }
                       >
                         <meter
-                          className="iot--meter__centered"
+                          className=""
                           max={100}
                           min={0}
                           title="%"
@@ -715,7 +715,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             style={
                               Object {
                                 "--gauge-bg": "#e0e0e0",
-                                "--gauge-colors": undefined,
+                                "--gauge-colors": "#f1c21b",
                                 "--gauge-max-value": 100,
                                 "--gauge-size": "68px",
                                 "--gauge-trend-color": undefined,
@@ -737,7 +737,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               r={30}
                             />
                             <text
-                              className="iot--gauge-value iot--gauge-value__centered"
+                              className="iot--gauge-value"
                               textAnchor="middle"
                               x={34}
                               y="29"
@@ -752,7 +752,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               x={34}
                               y="50"
                             >
-                              <tspan />
+                              <tspan>
+                                Fair
+                              </tspan>
                             </text>
                           </svg>
                         </meter>
@@ -2649,7 +2651,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         }
                       >
                         <meter
-                          className="iot--meter__centered"
+                          className=""
                           max={100}
                           min={0}
                           title="%"
@@ -2661,7 +2663,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             style={
                               Object {
                                 "--gauge-bg": "#e0e0e0",
-                                "--gauge-colors": undefined,
+                                "--gauge-colors": "#f1c21b",
                                 "--gauge-max-value": 100,
                                 "--gauge-size": "68px",
                                 "--gauge-trend-color": undefined,
@@ -2683,7 +2685,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               r={30}
                             />
                             <text
-                              className="iot--gauge-value iot--gauge-value__centered"
+                              className="iot--gauge-value"
                               textAnchor="middle"
                               x={34}
                               y="29"
@@ -2698,7 +2700,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               x={34}
                               y="50"
                             >
-                              <tspan />
+                              <tspan>
+                                Fair
+                              </tspan>
                             </text>
                           </svg>
                         </meter>
@@ -4627,7 +4631,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         }
                       >
                         <meter
-                          className="iot--meter__centered"
+                          className=""
                           max={100}
                           min={0}
                           title="%"
@@ -4639,7 +4643,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             style={
                               Object {
                                 "--gauge-bg": "#e0e0e0",
-                                "--gauge-colors": undefined,
+                                "--gauge-colors": "#f1c21b",
                                 "--gauge-max-value": 100,
                                 "--gauge-size": "68px",
                                 "--gauge-trend-color": undefined,
@@ -4661,7 +4665,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               r={30}
                             />
                             <text
-                              className="iot--gauge-value iot--gauge-value__centered"
+                              className="iot--gauge-value"
                               textAnchor="middle"
                               x={34}
                               y="29"
@@ -4676,7 +4680,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               x={34}
                               y="50"
                             >
-                              <tspan />
+                              <tspan>
+                                Fair
+                              </tspan>
                             </text>
                           </svg>
                         </meter>
@@ -8938,7 +8944,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         }
                       >
                         <meter
-                          className="iot--meter__centered"
+                          className=""
                           max={100}
                           min={0}
                           title="%"
@@ -8950,7 +8956,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             style={
                               Object {
                                 "--gauge-bg": "#e0e0e0",
-                                "--gauge-colors": undefined,
+                                "--gauge-colors": "#f1c21b",
                                 "--gauge-max-value": 100,
                                 "--gauge-size": "68px",
                                 "--gauge-trend-color": undefined,
@@ -8972,7 +8978,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               r={30}
                             />
                             <text
-                              className="iot--gauge-value iot--gauge-value__centered"
+                              className="iot--gauge-value"
                               textAnchor="middle"
                               x={34}
                               y="29"
@@ -8987,7 +8993,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               x={34}
                               y="50"
                             >
-                              <tspan />
+                              <tspan>
+                                Fair
+                              </tspan>
                             </text>
                           </svg>
                         </meter>
@@ -21023,7 +21031,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         }
                       >
                         <meter
-                          className="iot--meter__centered"
+                          className=""
                           max={100}
                           min={0}
                           title="%"
@@ -21035,7 +21043,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             style={
                               Object {
                                 "--gauge-bg": "#e0e0e0",
-                                "--gauge-colors": undefined,
+                                "--gauge-colors": "#f1c21b",
                                 "--gauge-max-value": 100,
                                 "--gauge-size": "68px",
                                 "--gauge-trend-color": undefined,
@@ -21057,7 +21065,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               r={30}
                             />
                             <text
-                              className="iot--gauge-value iot--gauge-value__centered"
+                              className="iot--gauge-value"
                               textAnchor="middle"
                               x={34}
                               y="29"
@@ -21072,7 +21080,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               x={34}
                               y="50"
                             >
-                              <tspan />
+                              <tspan>
+                                Fair
+                              </tspan>
                             </text>
                           </svg>
                         </meter>
