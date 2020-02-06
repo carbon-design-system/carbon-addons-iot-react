@@ -1,10 +1,16 @@
 import { mount } from 'enzyme';
+import { render, fireEvent } from '@testing-library/react';
 import React from 'react';
 import merge from 'lodash/merge';
+
+import { keyCodes } from '../../constants/KeyCodeConstants';
+import { settings } from '../../constants/Settings';
 
 import Table from './Table';
 import TableToolbar from './TableToolbar/TableToolbar';
 import EmptyTable from './EmptyTable/EmptyTable';
+
+const { iotPrefix } = settings;
 
 const selectData = [
   {
@@ -97,6 +103,7 @@ export const mockActions = {
     onCancelBatchAction: jest.fn(),
     onApplyBatchAction: jest.fn(),
     onApplySearch: jest.fn(),
+    onDownloadCSV: jest.fn(),
   },
   table: {
     onRowSelected: jest.fn(),
@@ -265,14 +272,59 @@ describe('Table', () => {
       <TableToolbar actions={mockActions} options={options} tableState={tableState} />
     );
     //  Should render Row count label when hasRowCountInHeader (option) property is true
-    const renderRowCountLabel = tableHeaderWrapper.find('.table-toolbar-secondary-title');
+    const renderRowCountLabel = tableHeaderWrapper.find(
+      `.${iotPrefix}--table-toolbar-secondary-title`
+    );
     expect(renderRowCountLabel).toHaveLength(1);
 
     const tableHeaderWrapper2 = mount(
       <TableToolbar actions={mockActions} options={options2} tableState={tableState} />
     );
     //  Should not render Row count label when hasRowCountInHeader (option2) property is false
-    const renderRowCountLabel2 = tableHeaderWrapper2.find('.table-toolbar-secondary-title');
+    const renderRowCountLabel2 = tableHeaderWrapper2.find(
+      `.${iotPrefix}--table-toolbar-secondary-title`
+    );
     expect(renderRowCountLabel2).toHaveLength(0);
+  });
+
+  test('enter key should trigger onDownload', () => {
+    const { getByTestId } = render(
+      <TableToolbar actions={mockActions.toolbar} options={options2} tableState={tableState} />
+    );
+
+    const downloadButton = getByTestId('download-button');
+    expect(downloadButton).toBeTruthy();
+    fireEvent.keyDown(downloadButton, { keyCode: keyCodes.ENTER });
+    expect(mockActions.toolbar.onDownloadCSV).toHaveBeenCalledTimes(1);
+  });
+
+  test('enter key should trigger onColumnSelection', () => {
+    const { getByTestId } = render(
+      <TableToolbar
+        actions={mockActions.toolbar}
+        options={{ hasColumnSelection: true }}
+        tableState={tableState}
+      />
+    );
+
+    const columnSelectButton = getByTestId('column-selection-button');
+    expect(columnSelectButton).toBeTruthy();
+    fireEvent.keyDown(columnSelectButton, { keyCode: keyCodes.ENTER });
+    expect(mockActions.toolbar.onToggleColumnSelection).toHaveBeenCalledTimes(1);
+  });
+
+  test('enter key should trigger onFilter', () => {
+    const { getByTestId } = render(
+      <TableToolbar
+        actions={mockActions.toolbar}
+        options={{ hasFilter: true }}
+        tableState={tableState}
+      />
+    );
+
+    const filterButton = getByTestId('filter-button');
+    expect(filterButton).toBeTruthy();
+    fireEvent.keyDown(filterButton, { keyCode: keyCodes.ENTER });
+    expect(mockActions.toolbar.onToggleFilter).toHaveBeenCalledTimes(1);
   });
 });

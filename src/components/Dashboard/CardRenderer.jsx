@@ -36,17 +36,20 @@ const CachedCardRenderer = ({
 
 /** Asynchronous reusable function to load Card Data */
 export const loadCardData = async (card, setCard, onFetchData, timeGrain) => {
-  // Set state to loading
-  setCard({ ...card, isLoading: true });
-  const cardWithData = await onFetchData(
-    card,
-    card.type !== CARD_TYPES.IMAGE && card.type !== CARD_TYPES.VALUE
-  );
-  setCard({
-    ...cardWithData,
-    timeGrain: compareGrains(timeGrain, card.timeGrain) < 1 ? card.timeGrain : timeGrain,
-    isLoading: false,
-  });
+  // Only set the card to loading if it has a datasource to support simple cards
+  if (card.dataSource) {
+    // Set state to loading
+    setCard({ ...card, isLoading: true });
+    const cardWithData = await onFetchData(
+      card,
+      card.type !== CARD_TYPES.IMAGE && card.type !== CARD_TYPES.VALUE
+    );
+    setCard({
+      ...cardWithData,
+      timeGrain: compareGrains(timeGrain, card.timeGrain) < 1 ? card.timeGrain : timeGrain,
+      isLoading: false,
+    });
+  }
 };
 
 /**

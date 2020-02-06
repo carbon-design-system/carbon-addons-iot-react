@@ -82,10 +82,15 @@ export const findLayoutOrGenerate = (layouts, cards) => {
         layout = getLayout(layoutName, cards, DASHBOARD_COLUMNS, CARD_DIMENSIONS);
       } else {
         // if we're using an existing layout, we need to add CARD_DIMENSIONS because they are not stored in our JSON document
-        layout = layout.map(cardFromLayout => {
+        layout = layout.reduce((updatedLayout, cardFromLayout) => {
           const matchingCard = find(cards, { id: cardFromLayout.i });
-          return { ...cardFromLayout, ...CARD_DIMENSIONS[matchingCard.size][layoutName] };
-        });
+          if (matchingCard)
+            updatedLayout.push({
+              ...cardFromLayout,
+              ...CARD_DIMENSIONS[matchingCard.size][layoutName],
+            });
+          return updatedLayout;
+        }, []);
       }
     } else {
       // generate the layout if we're not passed from the parent

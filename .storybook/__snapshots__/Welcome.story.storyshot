@@ -2696,6 +2696,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Getting Started|
                       <div
                         className="bx--structured-list-td"
                       >
+                        HierarchyList
+                      </div>
+                    </div>
+                    <div
+                      className="bx--structured-list-row"
+                    >
+                      <div
+                        className="bx--structured-list-td"
+                      />
+                      <div
+                        className="bx--structured-list-td"
+                      >
                         baseTableReducer
                       </div>
                     </div>
@@ -3105,6 +3117,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots Getting Started|
                         className="bx--structured-list-td"
                       >
                         StatefulTileGallery
+                      </div>
+                    </div>
+                    <div
+                      className="bx--structured-list-row"
+                    >
+                      <div
+                        className="bx--structured-list-td"
+                      />
+                      <div
+                        className="bx--structured-list-td"
+                      >
+                        List
+                      </div>
+                    </div>
+                    <div
+                      className="bx--structured-list-row"
+                    >
+                      <div
+                        className="bx--structured-list-td"
+                      />
+                      <div
+                        className="bx--structured-list-td"
+                      >
+                        SimpleList
                       </div>
                     </div>
                     <div
