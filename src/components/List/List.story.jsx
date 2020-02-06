@@ -3,8 +3,10 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { text } from '@storybook/addon-knobs';
 import { Add16, Edit16, Star16 } from '@carbon/icons-react';
+import cloneDeep from 'lodash/cloneDeep';
+import filterDeep from 'deepdash/filterDeep';
 
-import { Button, OverflowMenu, OverflowMenuItem } from '../..';
+import { Button, OverflowMenu, OverflowMenuItem, Checkbox } from '../..';
 
 import List from './List';
 
@@ -33,6 +35,17 @@ export const sampleHierarchy = {
         'Gio Urshela': '3B',
         'Cameron Maybin': 'RF',
       },
+      'Houston Astros': {
+        'George Springer': 'RF',
+        'Jose Altuve': '2B',
+        'Michael Brantley': 'LF',
+        'Alex Bregman': '3B',
+        'Yuli Gurriel': '1B',
+        'Yordan Alvarez': 'DH',
+        'Carlos Correa': 'SS',
+        'Robinson Chirinos': 'C',
+        'Josh Reddick': 'CF',
+      },
     },
     'National League': {
       'Atlanta Braves': {
@@ -46,12 +59,33 @@ export const sampleHierarchy = {
         'Ozzie Albies': '2B',
         'Kevin Gausman': 'P',
       },
+      'New York Mets': {
+        'Jeff McNeil': '3B',
+        'Amed Rosario': 'SS',
+        'Michael Conforto': 'RF',
+        'Pete Alonso': '1B',
+        'Wilson Ramos': 'C',
+        'Robinson Cano': '2B',
+        'JD Davis': 'LF',
+        'Brandon Nimmo': 'CF',
+        'Jacob Degrom': 'P',
+      },
+      'Washington Nationals': {
+        'Trea Turner': 'SS',
+        'Adam Eaton': 'RF',
+        'Anthony Rendon': '3B',
+        'Juan Soto': 'LF',
+        'Howie Kendrick': '2B',
+        'Ryan Zimmerman': '1B',
+        'Yian Gomes': 'C',
+        'Victor Robles': 'CF',
+        'Max Scherzer': 'P',
+      },
     },
   },
 };
 
 const buildHierarchy = (obj, renderRowActions, renderIcon, prefix = '', level = 0) => {
-  console.log('buildHierarchy', obj, prefix, level);
   return Object.keys(obj).map(key => ({
     id: `${prefix}${key}`,
     content: {
@@ -65,99 +99,6 @@ const buildHierarchy = (obj, renderRowActions, renderIcon, prefix = '', level = 
         ? buildHierarchy(obj[key], renderRowActions, renderIcon, `${prefix}${key}_`, level + 1)
         : null,
   }));
-};
-
-const expandedWithCategories = [
-  {
-    id: '1',
-    content: { value: 'Item 1' },
-    isCategory: true,
-    children: [
-      {
-        id: 'ch11',
-        content: { value: 'Child item 1' },
-        children: [
-          { id: 'ch111', content: { value: 'Child item 1' } },
-          { id: 'ch112', content: { value: 'Child item 2' } },
-          { id: 'ch113', content: { value: 'Child item 3' } },
-        ],
-      },
-      {
-        id: 'ch12',
-        content: { value: 'Child item 2' },
-        children: [
-          { id: 'ch121', content: { value: 'Child item 1' } },
-          { id: 'ch122', content: { value: 'Child item 2' } },
-          { id: 'ch123', content: { value: 'Child item 3' } },
-        ],
-      },
-      {
-        id: 'ch13',
-        content: { value: 'Child item 3' },
-        children: [
-          { id: 'ch131', content: { value: 'Child item 1' } },
-          { id: 'ch132', content: { value: 'Child item 2' } },
-          { id: 'ch133', content: { value: 'Child item 3' } },
-        ],
-      },
-    ],
-  },
-  {
-    id: '2',
-    content: { value: 'Item 2' },
-    isCategory: true,
-    children: [
-      { id: 'ch21', content: { value: 'Child item 1' } },
-      { id: 'ch22', content: { value: 'Child item 2' } },
-      { id: 'ch23', content: { value: 'Child item 3' } },
-    ],
-  },
-  {
-    id: '3',
-    content: { value: 'Item 3' },
-    isCategory: true,
-    children: [
-      { id: 'ch31', content: { value: 'Child item 1' } },
-      { id: 'ch32', content: { value: 'Child item 2' } },
-      { id: 'ch33', content: { value: 'Child item 3' } },
-    ],
-  },
-];
-
-const ExpandableList = () => {
-  const [searchValue, setSearchValue] = useState('');
-  const [expandedIds, setExpandedIds] = useState([]);
-  return (
-    <List
-      title="List"
-      buttons={[
-        <Button
-          renderIcon={Add16}
-          hasIconOnly
-          size="small"
-          iconDescription="Add"
-          key="expandable-list-button-add"
-        />,
-      ]}
-      search={{
-        value: searchValue,
-        onChange: evt => setSearchValue(evt.target.value),
-      }}
-      items={expandedWithCategories}
-      expandedIds={expandedIds}
-      toggleExpansion={id => {
-        if (expandedIds.filter(rowId => rowId === id).length > 0) {
-          // remove id from array
-          setExpandedIds(expandedIds.filter(rowId => rowId !== id));
-        } else {
-          setExpandedIds(expandedIds.concat([id]));
-        }
-      }}
-      i18n={{
-        searchPlaceHolderText: 'Search...',
-      }}
-    />
-  );
 };
 
 const headerButton = (
@@ -350,13 +291,167 @@ storiesOf('Watson IoT Experimental|List', module)
       />
     </div>
   ))
-  .add('Stateful list with dynamic expansion', () => (
-    <div style={{ width: 400 }}>
-      <ExpandableList />
-    </div>
-  ))
-  .add('Stateful list with dynamic expansion and categories', () => (
-    <div style={{ width: 400 }}>
-      <ExpandableList />
-    </div>
-  ));
+  .add('with checkbox multi-selection', () => {
+    const MultiSelectList = () => {
+      const [selectedIds, setSelectedIds] = useState([]);
+      const [expandedIds, setExpandedIds] = useState([]);
+
+      const searchNestedItems = (items, value, parentMatch) => {
+        let filteredItems = [];
+        cloneDeep(items).forEach(item => {
+          if (item.id === value) {
+            filteredItems.push(item.id);
+            if (item.children) {
+              const children = searchNestedItems(item.children, value, true);
+              filteredItems = filteredItems.concat(children);
+            }
+          } else if (parentMatch) {
+            filteredItems.push(item.id);
+          }
+        });
+        return filteredItems;
+      };
+
+      const handleCheckboxChange = (event, items) => {
+        // If checked, add to selectedIds
+        if (event.target.checked) {
+          // find item and children being changed
+          const nestedIds = searchNestedItems(items, event.target.name);
+          let tempSelectedIds = [...selectedIds];
+          if (nestedIds.length > 0) {
+            tempSelectedIds = tempSelectedIds.concat(nestedIds);
+          } else {
+            tempSelectedIds.push(event.target.name);
+          }
+          setSelectedIds(tempSelectedIds);
+        } // If unchecked, remove from selectedIds
+        else {
+          // find children
+          const deselectedNestedIds = searchNestedItems(items, event.target.name);
+          let tempSelectedIds = [...selectedIds];
+          if (deselectedNestedIds.length === 0) {
+            deselectedNestedIds.push(event.target.name);
+          }
+          deselectedNestedIds.forEach(deselectedId => {
+            tempSelectedIds = tempSelectedIds.filter(id => id !== deselectedId);
+          });
+          setSelectedIds(tempSelectedIds);
+        }
+      };
+
+      const checkSelectedChildren = items => {
+        // eslint-disable-next-line consistent-return
+        const selectedChildren = filterDeep(items, (value, key) => {
+          if (selectedIds.some(id => key === id)) {
+            return true;
+          }
+        });
+        if (selectedChildren) {
+          if (Object.keys(selectedChildren).length > 0) {
+            return true;
+          }
+        }
+
+        return false;
+      };
+
+      const nestedItems = [
+        ...Object.keys(sampleHierarchy.MLB['American League']).map(team => ({
+          id: team,
+          isCategory: true,
+          isSelectable: true,
+          content: {
+            value: team,
+            icon: (
+              <Checkbox
+                id={`${team}-checkbox`}
+                name={team}
+                onClick={e => handleCheckboxChange(e, nestedItems)}
+                checked={selectedIds.some(id => team === id)}
+                indeterminate={
+                  selectedIds.some(id => team === id)
+                    ? false
+                    : checkSelectedChildren(sampleHierarchy.MLB['American League'][team])
+                }
+              />
+            ),
+          },
+          children: Object.keys(sampleHierarchy.MLB['American League'][team]).map(player => ({
+            id: player,
+            isSelectable: true,
+            content: {
+              value: player,
+              secondaryValue: sampleHierarchy.MLB['American League'][team][player],
+              icon: (
+                <Checkbox
+                  id={`${player}-checkbox`}
+                  name={player}
+                  onClick={e => handleCheckboxChange(e, nestedItems)}
+                  checked={selectedIds.some(id => player === id)}
+                />
+              ),
+            },
+          })),
+        })),
+        ...Object.keys(sampleHierarchy.MLB['National League']).map(team => ({
+          id: team,
+          isCategory: true,
+          isSelectable: true,
+          content: {
+            value: team,
+            icon: (
+              <Checkbox
+                id={`${team}-checkbox`}
+                name={team}
+                onClick={e => handleCheckboxChange(e, nestedItems)}
+                checked={selectedIds.some(id => team === id)}
+                indeterminate={
+                  selectedIds.some(id => team === id)
+                    ? false
+                    : checkSelectedChildren(sampleHierarchy.MLB['American League'][team])
+                }
+              />
+            ),
+          },
+          children: Object.keys(sampleHierarchy.MLB['National League'][team]).map(player => ({
+            id: player,
+            isSelectable: true,
+            content: {
+              value: player,
+              secondaryValue: sampleHierarchy.MLB['National League'][team][player],
+              icon: (
+                <Checkbox
+                  id={`${player}-checkbox`}
+                  name={player}
+                  onClick={e => handleCheckboxChange(e, nestedItems)}
+                  checked={selectedIds.some(id => player === id)}
+                />
+              ),
+            },
+          })),
+        })),
+      ];
+
+      return (
+        <div style={{ width: 400 }}>
+          <List
+            title="Sports Teams"
+            buttons={[headerButton]}
+            iconPosition="left"
+            items={nestedItems}
+            selectedIds={selectedIds}
+            expandedIds={expandedIds}
+            toggleExpansion={id => {
+              if (expandedIds.filter(rowId => rowId === id).length > 0) {
+                // remove id from array
+                setExpandedIds(expandedIds.filter(rowId => rowId !== id));
+              } else {
+                setExpandedIds(expandedIds.concat([id]));
+              }
+            }}
+          />
+        </div>
+      );
+    };
+    return <MultiSelectList />;
+  });
