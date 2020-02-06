@@ -2,6 +2,7 @@ import React, { useMemo, useState, useCallback, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import merge from 'lodash/merge';
 import isEmpty from 'lodash/isEmpty';
+import isNil from 'lodash/isNil';
 import omit from 'lodash/omit';
 import useDeepCompareEffect from 'use-deep-compare-effect';
 
@@ -12,7 +13,7 @@ import TimeSeriesCard from '../TimeSeriesCard/TimeSeriesCard';
 import ListCard from '../ListCard/ListCard';
 import GaugeCard from '../GaugeCard/GaugeCard';
 import Card from '../Card/Card';
-import { CARD_TYPES } from '../../constants/LayoutConstants';
+import { CARD_TYPES, CARD_ACTIONS } from '../../constants/LayoutConstants';
 import { determineCardRange, compareGrains } from '../../utils/cardUtilityFunctions';
 
 /**
@@ -110,7 +111,8 @@ const CardRenderer = React.memo(
           expand:
             type === CARD_TYPES.IMAGE ||
             type === CARD_TYPES.TIMESERIES ||
-            type === CARD_TYPES.TABLE, // image and line chart cards should have expand
+            type === CARD_TYPES.TABLE ||
+            availableActions?.expand, // image and line chart cards should have expand
         }),
       [availableActions, dataSource, type]
     );
@@ -121,7 +123,7 @@ const CardRenderer = React.memo(
     const cachedOnCardAction = useCallback(
       async (id, actionType, payload) => {
         // callback time grain change from parent
-        if (actionType === 'CHANGE_TIME_RANGE') {
+        if (actionType === CARD_ACTIONS.CHANGE_TIME_RANGE) {
           // First update the range
           const range =
             payload && payload.range !== 'default'
@@ -143,12 +145,18 @@ const CardRenderer = React.memo(
           };
           // Then trigger a load of the card data
           loadCardData(cardWithUpdatedRange, setCard, onFetchData, timeGrain);
-        } else if (actionType === 'OPEN_EXPANDED_CARD') {
+        } else if (actionType === CARD_ACTIONS.OPEN_EXPANDED_CARD) {
           setIsExpanded(true);
+        } else if (actionType === CARD_ACTIONS.UPDATE_DATA) {
+          // New action type where we pass the updated values data
+          setCard(currentCardState => ({
+            ...currentCardState,
+            values: payload?.values,
+          }));
         }
 
         // close expanded card
-        if (actionType === 'CLOSE_EXPANDED_CARD') {
+        if (actionType === CARD_ACTIONS.CLOSE_EXPANDED_CARD) {
           setIsExpanded(false);
         }
       },
@@ -156,7 +164,7 @@ const CardRenderer = React.memo(
     );
 
     const commonCardProps = {
-      ...card,
+      ...card, // pass all the card props, including the card data to the card
       style: cardProp.style, // these come from grid layout and not state
       className: cardProp.className, // these come from grid layout and not state
       key: cardProp.id,
@@ -182,7 +190,9 @@ const CardRenderer = React.memo(
     ) : type === CARD_TYPES.GAUGE ? (
       <GaugeCard {...commonCardProps} />
     ) : type === CARD_TYPES.CUSTOM ? (
-      <Card {...commonCardProps}>{card.content}</Card>
+      <Card hideHeader={isNil(card.title)} {...commonCardProps}>
+        {card.content}
+      </Card>
     ) : null;
   }
 );
