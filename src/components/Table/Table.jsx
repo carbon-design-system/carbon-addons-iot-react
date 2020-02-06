@@ -94,6 +94,7 @@ const propTypes = {
     shouldLazyRender: PropTypes.bool,
     hasRowCountInHeader: PropTypes.bool,
     hasResize: PropTypes.bool,
+    /** If true removes the "table-layout: fixed" for resizable tables  */
     useAutoTableLayoutForResize: PropTypes.bool,
   }),
 
