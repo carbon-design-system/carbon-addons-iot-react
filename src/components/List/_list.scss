@@ -9,7 +9,7 @@
     flex: 0;
   }
   &--content {
-    flex: 1 1;
+    flex: 1 1 0 0;
     background: $ui-01;
     overflow-y: auto;
   }
@@ -28,8 +28,7 @@
     }
     div > span {
       padding-left: $spacing-05;
-      left: 0;
-      position: absolute;
+      margin-right: auto;
     }
   }
 }
