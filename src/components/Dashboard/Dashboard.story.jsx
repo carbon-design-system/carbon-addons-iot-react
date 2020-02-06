@@ -38,7 +38,7 @@ export const originalCards = [
     },
   },
   {
-    title: 'Humidity',
+    title: 'Humidity prabha shankar dixit prabhasha nakr dixit',
     id: 'facilitycard-xs',
     size: CARD_SIZES.XSMALL,
     type: CARD_TYPES.VALUE,

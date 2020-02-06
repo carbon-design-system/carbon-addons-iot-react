@@ -85,17 +85,82 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 >
                   <span
                     className="card--title"
-                    title="Facility Metrics"
                   >
-                    Facility Metrics
-                     
+                    <div
+                      aria-describedby={null}
+                      aria-haspopup="true"
+                      aria-labelledby="card-tooltip-trigger-facility"
+                      className="bx--tooltip__label card--title-label"
+                      id="card-tooltip-trigger-facility"
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      onMouseOut={[Function]}
+                      onMouseOver={[Function]}
+                      role="button"
+                      tabIndex={0}
+                    >
+                      <div
+                        className="card--title-wrapper Card__CardTitleWrapper-v5r71h-1 GLYDM"
+                      >
+                        Facility Metrics
+                      </div>
+                    </div>
+                    <div
+                      className="bx--tooltip__label"
+                      id="card-tooltip-trigger-facility"
+                    >
+                      
+                      <div
+                        aria-describedby={null}
+                        aria-haspopup="true"
+                        className="bx--tooltip__trigger"
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
+                        onKeyDown={[Function]}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
+                        onMouseOut={[Function]}
+                        onMouseOver={[Function]}
+                        role="button"
+                        tabIndex={0}
+                      >
+                        <svg
+                          aria-hidden={true}
+                          description={null}
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          role={null}
+                          style={
+                            Object {
+                              "willChange": "transform",
+                            }
+                          }
+                          viewBox="0 0 16 16"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M8.5 11V6.5h-2v1h1V11H6v1h4v-1zM8 3.5c-.4 0-.8.3-.8.8s.4.7.8.7.8-.3.8-.8-.4-.7-.8-.7z"
+                          />
+                          <path
+                            d="M8 15c-3.9 0-7-3.1-7-7s3.1-7 7-7 7 3.1 7 7-3.1 7-7 7zM8 2C4.7 2 2 4.7 2 8s2.7 6 6 6 6-2.7 6-6-2.7-6-6-6z"
+                          />
+                        </svg>
+                      </div>
+                    </div>
                   </span>
                   <div
                     className="card--toolbar"
                   />
                 </div>
                 <div
-                  className="Card__CardContent-v5r71h-1 hDVRgE"
+                  className="Card__CardContent-v5r71h-2 jALRne"
                 />
               </div>
               <div
@@ -121,17 +186,82 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 >
                   <span
                     className="card--title"
-                    title="Humidity"
                   >
-                    Humidity
-                     
+                    <div
+                      aria-describedby={null}
+                      aria-haspopup="true"
+                      aria-labelledby="card-tooltip-trigger-humidity"
+                      className="bx--tooltip__label card--title-label"
+                      id="card-tooltip-trigger-humidity"
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      onMouseOut={[Function]}
+                      onMouseOver={[Function]}
+                      role="button"
+                      tabIndex={0}
+                    >
+                      <div
+                        className="card--title-wrapper Card__CardTitleWrapper-v5r71h-1 GLYDM"
+                      >
+                        Humidity
+                      </div>
+                    </div>
+                    <div
+                      className="bx--tooltip__label"
+                      id="card-tooltip-trigger-humidity"
+                    >
+                      
+                      <div
+                        aria-describedby={null}
+                        aria-haspopup="true"
+                        className="bx--tooltip__trigger"
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
+                        onKeyDown={[Function]}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
+                        onMouseOut={[Function]}
+                        onMouseOver={[Function]}
+                        role="button"
+                        tabIndex={0}
+                      >
+                        <svg
+                          aria-hidden={true}
+                          description={null}
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          role={null}
+                          style={
+                            Object {
+                              "willChange": "transform",
+                            }
+                          }
+                          viewBox="0 0 16 16"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M8.5 11V6.5h-2v1h1V11H6v1h4v-1zM8 3.5c-.4 0-.8.3-.8.8s.4.7.8.7.8-.3.8-.8-.4-.7-.8-.7z"
+                          />
+                          <path
+                            d="M8 15c-3.9 0-7-3.1-7-7s3.1-7 7-7 7 3.1 7 7-3.1 7-7 7zM8 2C4.7 2 2 4.7 2 8s2.7 6 6 6 6-2.7 6-6-2.7-6-6-6z"
+                          />
+                        </svg>
+                      </div>
+                    </div>
                   </span>
                   <div
                     className="card--toolbar"
                   />
                 </div>
                 <div
-                  className="Card__CardContent-v5r71h-1 hoCWQe"
+                  className="Card__CardContent-v5r71h-2 fCsOPw"
                 />
               </div>
               <div
@@ -157,17 +287,82 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 >
                   <span
                     className="card--title"
-                    title="Utilization"
                   >
-                    Utilization
-                     
+                    <div
+                      aria-describedby={null}
+                      aria-haspopup="true"
+                      aria-labelledby="card-tooltip-trigger-utilization"
+                      className="bx--tooltip__label card--title-label"
+                      id="card-tooltip-trigger-utilization"
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      onMouseOut={[Function]}
+                      onMouseOver={[Function]}
+                      role="button"
+                      tabIndex={0}
+                    >
+                      <div
+                        className="card--title-wrapper Card__CardTitleWrapper-v5r71h-1 GLYDM"
+                      >
+                        Utilization
+                      </div>
+                    </div>
+                    <div
+                      className="bx--tooltip__label"
+                      id="card-tooltip-trigger-utilization"
+                    >
+                      
+                      <div
+                        aria-describedby={null}
+                        aria-haspopup="true"
+                        className="bx--tooltip__trigger"
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
+                        onKeyDown={[Function]}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
+                        onMouseOut={[Function]}
+                        onMouseOver={[Function]}
+                        role="button"
+                        tabIndex={0}
+                      >
+                        <svg
+                          aria-hidden={true}
+                          description={null}
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          role={null}
+                          style={
+                            Object {
+                              "willChange": "transform",
+                            }
+                          }
+                          viewBox="0 0 16 16"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M8.5 11V6.5h-2v1h1V11H6v1h4v-1zM8 3.5c-.4 0-.8.3-.8.8s.4.7.8.7.8-.3.8-.8-.4-.7-.8-.7z"
+                          />
+                          <path
+                            d="M8 15c-3.9 0-7-3.1-7-7s3.1-7 7-7 7 3.1 7 7-3.1 7-7 7zM8 2C4.7 2 2 4.7 2 8s2.7 6 6 6 6-2.7 6-6-2.7-6-6-6z"
+                          />
+                        </svg>
+                      </div>
+                    </div>
                   </span>
                   <div
                     className="card--toolbar"
                   />
                 </div>
                 <div
-                  className="Card__CardContent-v5r71h-1 hoCWQe"
+                  className="Card__CardContent-v5r71h-2 fCsOPw"
                 />
               </div>
             </div>
@@ -287,17 +482,82 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 >
                   <span
                     className="card--title"
-                    title="Facility Metrics"
                   >
-                    Facility Metrics
-                     
+                    <div
+                      aria-describedby={null}
+                      aria-haspopup="true"
+                      aria-labelledby="card-tooltip-trigger-facility"
+                      className="bx--tooltip__label card--title-label"
+                      id="card-tooltip-trigger-facility"
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      onMouseOut={[Function]}
+                      onMouseOver={[Function]}
+                      role="button"
+                      tabIndex={0}
+                    >
+                      <div
+                        className="card--title-wrapper Card__CardTitleWrapper-v5r71h-1 GLYDM"
+                      >
+                        Facility Metrics
+                      </div>
+                    </div>
+                    <div
+                      className="bx--tooltip__label"
+                      id="card-tooltip-trigger-facility"
+                    >
+                      
+                      <div
+                        aria-describedby={null}
+                        aria-haspopup="true"
+                        className="bx--tooltip__trigger"
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
+                        onKeyDown={[Function]}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
+                        onMouseOut={[Function]}
+                        onMouseOver={[Function]}
+                        role="button"
+                        tabIndex={0}
+                      >
+                        <svg
+                          aria-hidden={true}
+                          description={null}
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          role={null}
+                          style={
+                            Object {
+                              "willChange": "transform",
+                            }
+                          }
+                          viewBox="0 0 16 16"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M8.5 11V6.5h-2v1h1V11H6v1h4v-1zM8 3.5c-.4 0-.8.3-.8.8s.4.7.8.7.8-.3.8-.8-.4-.7-.8-.7z"
+                          />
+                          <path
+                            d="M8 15c-3.9 0-7-3.1-7-7s3.1-7 7-7 7 3.1 7 7-3.1 7-7 7zM8 2C4.7 2 2 4.7 2 8s2.7 6 6 6 6-2.7 6-6-2.7-6-6-6z"
+                          />
+                        </svg>
+                      </div>
+                    </div>
                   </span>
                   <div
                     className="card--toolbar"
                   />
                 </div>
                 <div
-                  className="Card__CardContent-v5r71h-1 hDVRgE"
+                  className="Card__CardContent-v5r71h-2 jALRne"
                 />
               </div>
               <div
@@ -323,17 +583,82 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 >
                   <span
                     className="card--title"
-                    title="Humidity"
                   >
-                    Humidity
-                     
+                    <div
+                      aria-describedby={null}
+                      aria-haspopup="true"
+                      aria-labelledby="card-tooltip-trigger-humidity"
+                      className="bx--tooltip__label card--title-label"
+                      id="card-tooltip-trigger-humidity"
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      onMouseOut={[Function]}
+                      onMouseOver={[Function]}
+                      role="button"
+                      tabIndex={0}
+                    >
+                      <div
+                        className="card--title-wrapper Card__CardTitleWrapper-v5r71h-1 GLYDM"
+                      >
+                        Humidity
+                      </div>
+                    </div>
+                    <div
+                      className="bx--tooltip__label"
+                      id="card-tooltip-trigger-humidity"
+                    >
+                      
+                      <div
+                        aria-describedby={null}
+                        aria-haspopup="true"
+                        className="bx--tooltip__trigger"
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
+                        onKeyDown={[Function]}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
+                        onMouseOut={[Function]}
+                        onMouseOver={[Function]}
+                        role="button"
+                        tabIndex={0}
+                      >
+                        <svg
+                          aria-hidden={true}
+                          description={null}
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          role={null}
+                          style={
+                            Object {
+                              "willChange": "transform",
+                            }
+                          }
+                          viewBox="0 0 16 16"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M8.5 11V6.5h-2v1h1V11H6v1h4v-1zM8 3.5c-.4 0-.8.3-.8.8s.4.7.8.7.8-.3.8-.8-.4-.7-.8-.7z"
+                          />
+                          <path
+                            d="M8 15c-3.9 0-7-3.1-7-7s3.1-7 7-7 7 3.1 7 7-3.1 7-7 7zM8 2C4.7 2 2 4.7 2 8s2.7 6 6 6 6-2.7 6-6-2.7-6-6-6z"
+                          />
+                        </svg>
+                      </div>
+                    </div>
                   </span>
                   <div
                     className="card--toolbar"
                   />
                 </div>
                 <div
-                  className="Card__CardContent-v5r71h-1 hoCWQe"
+                  className="Card__CardContent-v5r71h-2 fCsOPw"
                 />
               </div>
               <div
@@ -359,17 +684,82 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 >
                   <span
                     className="card--title"
-                    title="Utilization"
                   >
-                    Utilization
-                     
+                    <div
+                      aria-describedby={null}
+                      aria-haspopup="true"
+                      aria-labelledby="card-tooltip-trigger-utilization"
+                      className="bx--tooltip__label card--title-label"
+                      id="card-tooltip-trigger-utilization"
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      onMouseOut={[Function]}
+                      onMouseOver={[Function]}
+                      role="button"
+                      tabIndex={0}
+                    >
+                      <div
+                        className="card--title-wrapper Card__CardTitleWrapper-v5r71h-1 GLYDM"
+                      >
+                        Utilization
+                      </div>
+                    </div>
+                    <div
+                      className="bx--tooltip__label"
+                      id="card-tooltip-trigger-utilization"
+                    >
+                      
+                      <div
+                        aria-describedby={null}
+                        aria-haspopup="true"
+                        className="bx--tooltip__trigger"
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
+                        onKeyDown={[Function]}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
+                        onMouseOut={[Function]}
+                        onMouseOver={[Function]}
+                        role="button"
+                        tabIndex={0}
+                      >
+                        <svg
+                          aria-hidden={true}
+                          description={null}
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          role={null}
+                          style={
+                            Object {
+                              "willChange": "transform",
+                            }
+                          }
+                          viewBox="0 0 16 16"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M8.5 11V6.5h-2v1h1V11H6v1h4v-1zM8 3.5c-.4 0-.8.3-.8.8s.4.7.8.7.8-.3.8-.8-.4-.7-.8-.7z"
+                          />
+                          <path
+                            d="M8 15c-3.9 0-7-3.1-7-7s3.1-7 7-7 7 3.1 7 7-3.1 7-7 7zM8 2C4.7 2 2 4.7 2 8s2.7 6 6 6 6-2.7 6-6-2.7-6-6-6z"
+                          />
+                        </svg>
+                      </div>
+                    </div>
                   </span>
                   <div
                     className="card--toolbar"
                   />
                 </div>
                 <div
-                  className="Card__CardContent-v5r71h-1 hoCWQe"
+                  className="Card__CardContent-v5r71h-2 fCsOPw"
                 />
               </div>
             </div>
@@ -494,17 +884,82 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 >
                   <span
                     className="card--title"
-                    title="Facility Metrics"
                   >
-                    Facility Metrics
-                     
+                    <div
+                      aria-describedby={null}
+                      aria-haspopup="true"
+                      aria-labelledby="card-tooltip-trigger-facility"
+                      className="bx--tooltip__label card--title-label"
+                      id="card-tooltip-trigger-facility"
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      onMouseOut={[Function]}
+                      onMouseOver={[Function]}
+                      role="button"
+                      tabIndex={0}
+                    >
+                      <div
+                        className="card--title-wrapper Card__CardTitleWrapper-v5r71h-1 GLYDM"
+                      >
+                        Facility Metrics
+                      </div>
+                    </div>
+                    <div
+                      className="bx--tooltip__label"
+                      id="card-tooltip-trigger-facility"
+                    >
+                      
+                      <div
+                        aria-describedby={null}
+                        aria-haspopup="true"
+                        className="bx--tooltip__trigger"
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
+                        onKeyDown={[Function]}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
+                        onMouseOut={[Function]}
+                        onMouseOver={[Function]}
+                        role="button"
+                        tabIndex={0}
+                      >
+                        <svg
+                          aria-hidden={true}
+                          description={null}
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          role={null}
+                          style={
+                            Object {
+                              "willChange": "transform",
+                            }
+                          }
+                          viewBox="0 0 16 16"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M8.5 11V6.5h-2v1h1V11H6v1h4v-1zM8 3.5c-.4 0-.8.3-.8.8s.4.7.8.7.8-.3.8-.8-.4-.7-.8-.7z"
+                          />
+                          <path
+                            d="M8 15c-3.9 0-7-3.1-7-7s3.1-7 7-7 7 3.1 7 7-3.1 7-7 7zM8 2C4.7 2 2 4.7 2 8s2.7 6 6 6 6-2.7 6-6-2.7-6-6-6z"
+                          />
+                        </svg>
+                      </div>
+                    </div>
                   </span>
                   <div
                     className="card--toolbar"
                   />
                 </div>
                 <div
-                  className="Card__CardContent-v5r71h-1 hDVRgE"
+                  className="Card__CardContent-v5r71h-2 jALRne"
                 />
               </div>
               <div
@@ -535,17 +990,82 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 >
                   <span
                     className="card--title"
-                    title="Humidity"
                   >
-                    Humidity
-                     
+                    <div
+                      aria-describedby={null}
+                      aria-haspopup="true"
+                      aria-labelledby="card-tooltip-trigger-humidity"
+                      className="bx--tooltip__label card--title-label"
+                      id="card-tooltip-trigger-humidity"
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      onMouseOut={[Function]}
+                      onMouseOver={[Function]}
+                      role="button"
+                      tabIndex={0}
+                    >
+                      <div
+                        className="card--title-wrapper Card__CardTitleWrapper-v5r71h-1 GLYDM"
+                      >
+                        Humidity
+                      </div>
+                    </div>
+                    <div
+                      className="bx--tooltip__label"
+                      id="card-tooltip-trigger-humidity"
+                    >
+                      
+                      <div
+                        aria-describedby={null}
+                        aria-haspopup="true"
+                        className="bx--tooltip__trigger"
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
+                        onKeyDown={[Function]}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
+                        onMouseOut={[Function]}
+                        onMouseOver={[Function]}
+                        role="button"
+                        tabIndex={0}
+                      >
+                        <svg
+                          aria-hidden={true}
+                          description={null}
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          role={null}
+                          style={
+                            Object {
+                              "willChange": "transform",
+                            }
+                          }
+                          viewBox="0 0 16 16"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M8.5 11V6.5h-2v1h1V11H6v1h4v-1zM8 3.5c-.4 0-.8.3-.8.8s.4.7.8.7.8-.3.8-.8-.4-.7-.8-.7z"
+                          />
+                          <path
+                            d="M8 15c-3.9 0-7-3.1-7-7s3.1-7 7-7 7 3.1 7 7-3.1 7-7 7zM8 2C4.7 2 2 4.7 2 8s2.7 6 6 6 6-2.7 6-6-2.7-6-6-6z"
+                          />
+                        </svg>
+                      </div>
+                    </div>
                   </span>
                   <div
                     className="card--toolbar"
                   />
                 </div>
                 <div
-                  className="Card__CardContent-v5r71h-1 hoCWQe"
+                  className="Card__CardContent-v5r71h-2 fCsOPw"
                 />
               </div>
               <div
@@ -576,17 +1096,82 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 >
                   <span
                     className="card--title"
-                    title="Utilization"
                   >
-                    Utilization
-                     
+                    <div
+                      aria-describedby={null}
+                      aria-haspopup="true"
+                      aria-labelledby="card-tooltip-trigger-utilization"
+                      className="bx--tooltip__label card--title-label"
+                      id="card-tooltip-trigger-utilization"
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      onMouseOut={[Function]}
+                      onMouseOver={[Function]}
+                      role="button"
+                      tabIndex={0}
+                    >
+                      <div
+                        className="card--title-wrapper Card__CardTitleWrapper-v5r71h-1 GLYDM"
+                      >
+                        Utilization
+                      </div>
+                    </div>
+                    <div
+                      className="bx--tooltip__label"
+                      id="card-tooltip-trigger-utilization"
+                    >
+                      
+                      <div
+                        aria-describedby={null}
+                        aria-haspopup="true"
+                        className="bx--tooltip__trigger"
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
+                        onKeyDown={[Function]}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
+                        onMouseOut={[Function]}
+                        onMouseOver={[Function]}
+                        role="button"
+                        tabIndex={0}
+                      >
+                        <svg
+                          aria-hidden={true}
+                          description={null}
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          role={null}
+                          style={
+                            Object {
+                              "willChange": "transform",
+                            }
+                          }
+                          viewBox="0 0 16 16"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M8.5 11V6.5h-2v1h1V11H6v1h4v-1zM8 3.5c-.4 0-.8.3-.8.8s.4.7.8.7.8-.3.8-.8-.4-.7-.8-.7z"
+                          />
+                          <path
+                            d="M8 15c-3.9 0-7-3.1-7-7s3.1-7 7-7 7 3.1 7 7-3.1 7-7 7zM8 2C4.7 2 2 4.7 2 8s2.7 6 6 6 6-2.7 6-6-2.7-6-6-6z"
+                          />
+                        </svg>
+                      </div>
+                    </div>
                   </span>
                   <div
                     className="card--toolbar"
                   />
                 </div>
                 <div
-                  className="Card__CardContent-v5r71h-1 hoCWQe"
+                  className="Card__CardContent-v5r71h-2 fCsOPw"
                 />
               </div>
             </div>

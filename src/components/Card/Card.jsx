@@ -1,8 +1,9 @@
-import React, { useCallback, useMemo } from 'react';
+import React, { useCallback, useMemo, useState, useEffect, createRef } from 'react';
 import VisibilitySensor from 'react-visibility-sensor';
-import { Tooltip, SkeletonText } from 'carbon-components-react';
+import { SkeletonText } from 'carbon-components-react';
 import styled from 'styled-components';
 import SizeMe from 'react-sizeme';
+import classNames from 'classnames';
 
 import { settings } from '../../constants/Settings';
 import {
@@ -18,7 +19,9 @@ import {
 import { CardPropTypes } from '../../constants/PropTypes';
 import { getCardMinSize } from '../../utils/componentUtilityFunctions';
 
+import Tooltip from './tooltip/Tooltip';
 import CardToolbar from './CardToolbar';
+import { useRef } from '@storybook/addons';
 
 const { prefix } = settings;
 
@@ -48,6 +51,14 @@ export const CardTitle = (
     {children}
   </span>
 );
+
+export const CardTitleWrapper = styled.div`
+  // max-width: ${props => props.width - CARD_CONTENT_PADDING}px;
+  // padding-right: ${CARD_CONTENT_PADDING}px; //width: 84%;
+  // overflow: hidden;
+  // text-overflow: ellipsis;
+  width : '100%'
+`;
 
 export const CardContent = styled.div`
   flex: 1;
@@ -195,6 +206,17 @@ const Card = props => {
     };
     return childSize;
   };
+  const elmRef = createRef();
+  const [showTooltip, setSowTooltip] = useState(false);
+  useEffect(() => {
+    const element = elmRef.current;
+    const tooltiptimer = setTimeout(() => {
+      if (element && element.offsetWidth < element.scrollWidth) {
+        setSowTooltip(true);
+      }
+    }, 1000);
+    return () => clearTimeout(tooltiptimer);
+  }, []);
 
   const card = (
     <VisibilitySensor partialVisibility offset={{ top: 10 }}>
@@ -228,17 +250,36 @@ const Card = props => {
               >
                 {!hideHeader && (
                   <CardHeader>
-                    <CardTitle title={title}>
-                      {title}&nbsp;
-                      {tooltip && (
-                        <Tooltip
-                          triggerId={`card-tooltip-trigger-${id}`}
-                          tooltipId={`card-tooltip-${id}`}
-                          triggerText=""
-                        >
-                          {tooltip}
-                        </Tooltip>
-                      )}
+                    <CardTitle>
+                      <Tooltip
+                        triggerId={`card-tooltip-trigger-${id}`}
+                        tooltipId={`card-tooltip-${id}`}
+                        triggerClassName={classNames(`card--title-label`, {
+                          'card--title-icon': tooltip,
+                        })}
+                        triggerText={
+                          <CardTitleWrapper
+                            ref={elmRef}
+                            // width={cardSize.width}
+                            className="card--title-wrapper"
+                          >
+                            {title}
+                          </CardTitleWrapper>
+                        }
+                        showIcon={false}
+                        showonhover={showTooltip}
+                      >
+                        {title}
+                      </Tooltip>
+                      {/* {tooltip && ( */}
+                      <Tooltip
+                        triggerId={`card-tooltip-trigger-${id}`}
+                        tooltipId={`card-tooltip-${id}`}
+                        triggerText=""
+                      >
+                        {'prabhat'}
+                      </Tooltip>
+                      {/* )} */}
                     </CardTitle>
                     {cardToolbar}
                   </CardHeader>
