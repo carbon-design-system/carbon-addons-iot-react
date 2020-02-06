@@ -1380,7 +1380,7 @@ storiesOf('Watson IoT|Table', module)
         <Table
           options={{ hasResize: false, hasColumnSelection: true }}
           columns={tableColumns.map((i, idx) => ({
-            width: idx % 2 === 0 ? '100px' : '100px',
+            width: idx % 2 === 0 ? '20rem' : '10rem',
             ...i,
           }))}
           data={tableData}
