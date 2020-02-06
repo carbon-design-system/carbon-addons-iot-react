@@ -308,7 +308,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   </div>
                   <div
                     className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
-                    id="facilitycard-xs2"
+                    content={
+                      <h2
+                        style={
+                          Object {
+                            "padding": "1rem",
+                          }
+                        }
+                      >
+                        Section Header
+                      </h2>
+                    }
+                    id="section-card"
                     style={
                       Object {
                         "MozTransform": "translate(490px,16px)",
@@ -318,6 +329,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         "msTransform": "translate(490px,16px)",
                         "position": "absolute",
                         "transform": "translate(490px,16px)",
+                        "width": "142px",
+                      }
+                    }
+                    type="CUSTOM"
+                  >
+                    <div
+                      className="Card__CardContent-v5r71h-1 bVgaXY"
+                    >
+                      <h2
+                        style={
+                          Object {
+                            "padding": "1rem",
+                          }
+                        }
+                      >
+                        Section Header
+                      </h2>
+                    </div>
+                  </div>
+                  <div
+                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                    id="facilitycard-xs2"
+                    style={
+                      Object {
+                        "MozTransform": "translate(648px,16px)",
+                        "OTransform": "translate(648px,16px)",
+                        "WebkitTransform": "translate(648px,16px)",
+                        "height": "128px",
+                        "msTransform": "translate(648px,16px)",
+                        "position": "absolute",
+                        "transform": "translate(648px,16px)",
                         "width": "142px",
                       }
                     }
@@ -383,13 +425,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="facilitycard-xs3"
                     style={
                       Object {
-                        "MozTransform": "translate(648px,16px)",
-                        "OTransform": "translate(648px,16px)",
-                        "WebkitTransform": "translate(648px,16px)",
+                        "MozTransform": "translate(806px,16px)",
+                        "OTransform": "translate(806px,16px)",
+                        "WebkitTransform": "translate(806px,16px)",
                         "height": "128px",
-                        "msTransform": "translate(648px,16px)",
+                        "msTransform": "translate(806px,16px)",
                         "position": "absolute",
-                        "transform": "translate(648px,16px)",
+                        "transform": "translate(806px,16px)",
                         "width": "142px",
                       }
                     }
@@ -455,13 +497,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="facilitycard-comfort-level"
                     style={
                       Object {
-                        "MozTransform": "translate(806px,16px)",
-                        "OTransform": "translate(806px,16px)",
-                        "WebkitTransform": "translate(806px,16px)",
+                        "MozTransform": "translate(964px,16px)",
+                        "OTransform": "translate(964px,16px)",
+                        "WebkitTransform": "translate(964px,16px)",
                         "height": "128px",
-                        "msTransform": "translate(806px,16px)",
+                        "msTransform": "translate(964px,16px)",
                         "position": "absolute",
-                        "transform": "translate(806px,16px)",
+                        "transform": "translate(964px,16px)",
                         "width": "142px",
                       }
                     }
@@ -549,13 +591,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="facilitycard-xs4"
                     style={
                       Object {
-                        "MozTransform": "translate(964px,16px)",
-                        "OTransform": "translate(964px,16px)",
-                        "WebkitTransform": "translate(964px,16px)",
+                        "MozTransform": "translate(1122px,16px)",
+                        "OTransform": "translate(1122px,16px)",
+                        "WebkitTransform": "translate(1122px,16px)",
                         "height": "128px",
-                        "msTransform": "translate(964px,16px)",
+                        "msTransform": "translate(1122px,16px)",
                         "position": "absolute",
-                        "transform": "translate(964px,16px)",
+                        "transform": "translate(1122px,16px)",
                         "width": "142px",
                       }
                     }
@@ -1024,7 +1066,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="bx--table-toolbar"
                         >
                           <div
-                            className="bx--batch-actions TableToolbar__StyledTableBatchActions-sc-17lb3av-3 gnkbSD"
+                            className="bx--batch-actions iot--table-batch-actions"
                           >
                             <div
                               className="bx--action-list"
@@ -1052,12 +1094,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </div>
                           </div>
                           <label
-                            className="table-toolbar-secondary-title"
+                            className="iot--table-toolbar-secondary-title"
                           >
                             Alerts
                           </label>
                           <div
-                            className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-2 ksiTUe"
+                            className="bx--toolbar-content iot--table-toolbar-content"
                           >
                             <div
                               className="bx--toolbar-action bx--toolbar-search-container-expandable"
@@ -1135,8 +1177,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               </div>
                             </div>
                             <div
-                              className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 imYKmv"
+                              className="iot--tooltip-svg-wrapper"
+                              data-testid="download-button"
                               onClick={[Function]}
+                              onKeyDown={[Function]}
+                              role="button"
+                              tabIndex={0}
                             >
                               <svg
                                 aria-hidden={true}
@@ -1162,8 +1208,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               </svg>
                             </div>
                             <div
-                              className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 imYKmv"
+                              className="iot--tooltip-svg-wrapper"
+                              data-testid="filter-button"
                               onClick={[Function]}
+                              onKeyDown={[Function]}
+                              role="button"
+                              tabIndex={0}
                             >
                               <svg
                                 aria-hidden={true}
@@ -2256,7 +2306,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   </div>
                   <div
                     className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
-                    id="facilitycard-xs2"
+                    content={
+                      <h2
+                        style={
+                          Object {
+                            "padding": "1rem",
+                          }
+                        }
+                      >
+                        Section Header
+                      </h2>
+                    }
+                    id="section-card"
                     style={
                       Object {
                         "MozTransform": "translate(490px,16px)",
@@ -2266,6 +2327,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         "msTransform": "translate(490px,16px)",
                         "position": "absolute",
                         "transform": "translate(490px,16px)",
+                        "width": "142px",
+                      }
+                    }
+                    type="CUSTOM"
+                  >
+                    <div
+                      className="Card__CardContent-v5r71h-1 bVgaXY"
+                    >
+                      <h2
+                        style={
+                          Object {
+                            "padding": "1rem",
+                          }
+                        }
+                      >
+                        Section Header
+                      </h2>
+                    </div>
+                  </div>
+                  <div
+                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                    id="facilitycard-xs2"
+                    style={
+                      Object {
+                        "MozTransform": "translate(648px,16px)",
+                        "OTransform": "translate(648px,16px)",
+                        "WebkitTransform": "translate(648px,16px)",
+                        "height": "128px",
+                        "msTransform": "translate(648px,16px)",
+                        "position": "absolute",
+                        "transform": "translate(648px,16px)",
                         "width": "142px",
                       }
                     }
@@ -2331,13 +2423,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="facilitycard-xs3"
                     style={
                       Object {
-                        "MozTransform": "translate(648px,16px)",
-                        "OTransform": "translate(648px,16px)",
-                        "WebkitTransform": "translate(648px,16px)",
+                        "MozTransform": "translate(806px,16px)",
+                        "OTransform": "translate(806px,16px)",
+                        "WebkitTransform": "translate(806px,16px)",
                         "height": "128px",
-                        "msTransform": "translate(648px,16px)",
+                        "msTransform": "translate(806px,16px)",
                         "position": "absolute",
-                        "transform": "translate(648px,16px)",
+                        "transform": "translate(806px,16px)",
                         "width": "142px",
                       }
                     }
@@ -2403,13 +2495,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="facilitycard-comfort-level"
                     style={
                       Object {
-                        "MozTransform": "translate(806px,16px)",
-                        "OTransform": "translate(806px,16px)",
-                        "WebkitTransform": "translate(806px,16px)",
+                        "MozTransform": "translate(964px,16px)",
+                        "OTransform": "translate(964px,16px)",
+                        "WebkitTransform": "translate(964px,16px)",
                         "height": "128px",
-                        "msTransform": "translate(806px,16px)",
+                        "msTransform": "translate(964px,16px)",
                         "position": "absolute",
-                        "transform": "translate(806px,16px)",
+                        "transform": "translate(964px,16px)",
                         "width": "142px",
                       }
                     }
@@ -2497,13 +2589,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="facilitycard-xs4"
                     style={
                       Object {
-                        "MozTransform": "translate(964px,16px)",
-                        "OTransform": "translate(964px,16px)",
-                        "WebkitTransform": "translate(964px,16px)",
+                        "MozTransform": "translate(1122px,16px)",
+                        "OTransform": "translate(1122px,16px)",
+                        "WebkitTransform": "translate(1122px,16px)",
                         "height": "128px",
-                        "msTransform": "translate(964px,16px)",
+                        "msTransform": "translate(1122px,16px)",
                         "position": "absolute",
-                        "transform": "translate(964px,16px)",
+                        "transform": "translate(1122px,16px)",
                         "width": "142px",
                       }
                     }
@@ -2972,7 +3064,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="bx--table-toolbar"
                         >
                           <div
-                            className="bx--batch-actions TableToolbar__StyledTableBatchActions-sc-17lb3av-3 gnkbSD"
+                            className="bx--batch-actions iot--table-batch-actions"
                           >
                             <div
                               className="bx--action-list"
@@ -3000,12 +3092,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </div>
                           </div>
                           <label
-                            className="table-toolbar-secondary-title"
+                            className="iot--table-toolbar-secondary-title"
                           >
                             Alerts
                           </label>
                           <div
-                            className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-2 ksiTUe"
+                            className="bx--toolbar-content iot--table-toolbar-content"
                           >
                             <div
                               className="bx--toolbar-action bx--toolbar-search-container-expandable"
@@ -3083,8 +3175,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               </div>
                             </div>
                             <div
-                              className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 imYKmv"
+                              className="iot--tooltip-svg-wrapper"
+                              data-testid="download-button"
                               onClick={[Function]}
+                              onKeyDown={[Function]}
+                              role="button"
+                              tabIndex={0}
                             >
                               <svg
                                 aria-hidden={true}
@@ -3110,8 +3206,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               </svg>
                             </div>
                             <div
-                              className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 imYKmv"
+                              className="iot--tooltip-svg-wrapper"
+                              data-testid="filter-button"
                               onClick={[Function]}
+                              onKeyDown={[Function]}
+                              role="button"
+                              tabIndex={0}
                             >
                               <svg
                                 aria-hidden={true}
@@ -4236,7 +4336,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   </div>
                   <div
                     className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
-                    id="facilitycard-xs2"
+                    content={
+                      <h2
+                        style={
+                          Object {
+                            "padding": "1rem",
+                          }
+                        }
+                      >
+                        Section Header
+                      </h2>
+                    }
+                    id="section-card"
                     style={
                       Object {
                         "MozTransform": "translate(490px,16px)",
@@ -4246,6 +4357,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         "msTransform": "translate(490px,16px)",
                         "position": "absolute",
                         "transform": "translate(490px,16px)",
+                        "width": "142px",
+                      }
+                    }
+                    type="CUSTOM"
+                  >
+                    <div
+                      className="Card__CardContent-v5r71h-1 bVgaXY"
+                    >
+                      <h2
+                        style={
+                          Object {
+                            "padding": "1rem",
+                          }
+                        }
+                      >
+                        Section Header
+                      </h2>
+                    </div>
+                  </div>
+                  <div
+                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                    id="facilitycard-xs2"
+                    style={
+                      Object {
+                        "MozTransform": "translate(648px,16px)",
+                        "OTransform": "translate(648px,16px)",
+                        "WebkitTransform": "translate(648px,16px)",
+                        "height": "128px",
+                        "msTransform": "translate(648px,16px)",
+                        "position": "absolute",
+                        "transform": "translate(648px,16px)",
                         "width": "142px",
                       }
                     }
@@ -4311,13 +4453,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="facilitycard-xs3"
                     style={
                       Object {
-                        "MozTransform": "translate(648px,16px)",
-                        "OTransform": "translate(648px,16px)",
-                        "WebkitTransform": "translate(648px,16px)",
+                        "MozTransform": "translate(806px,16px)",
+                        "OTransform": "translate(806px,16px)",
+                        "WebkitTransform": "translate(806px,16px)",
                         "height": "128px",
-                        "msTransform": "translate(648px,16px)",
+                        "msTransform": "translate(806px,16px)",
                         "position": "absolute",
-                        "transform": "translate(648px,16px)",
+                        "transform": "translate(806px,16px)",
                         "width": "142px",
                       }
                     }
@@ -4383,13 +4525,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="facilitycard-comfort-level"
                     style={
                       Object {
-                        "MozTransform": "translate(806px,16px)",
-                        "OTransform": "translate(806px,16px)",
-                        "WebkitTransform": "translate(806px,16px)",
+                        "MozTransform": "translate(964px,16px)",
+                        "OTransform": "translate(964px,16px)",
+                        "WebkitTransform": "translate(964px,16px)",
                         "height": "128px",
-                        "msTransform": "translate(806px,16px)",
+                        "msTransform": "translate(964px,16px)",
                         "position": "absolute",
-                        "transform": "translate(806px,16px)",
+                        "transform": "translate(964px,16px)",
                         "width": "142px",
                       }
                     }
@@ -4477,13 +4619,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="facilitycard-xs4"
                     style={
                       Object {
-                        "MozTransform": "translate(964px,16px)",
-                        "OTransform": "translate(964px,16px)",
-                        "WebkitTransform": "translate(964px,16px)",
+                        "MozTransform": "translate(1122px,16px)",
+                        "OTransform": "translate(1122px,16px)",
+                        "WebkitTransform": "translate(1122px,16px)",
                         "height": "128px",
-                        "msTransform": "translate(964px,16px)",
+                        "msTransform": "translate(1122px,16px)",
                         "position": "absolute",
-                        "transform": "translate(964px,16px)",
+                        "transform": "translate(1122px,16px)",
                         "width": "142px",
                       }
                     }
@@ -4952,7 +5094,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="bx--table-toolbar"
                         >
                           <div
-                            className="bx--batch-actions TableToolbar__StyledTableBatchActions-sc-17lb3av-3 gnkbSD"
+                            className="bx--batch-actions iot--table-batch-actions"
                           >
                             <div
                               className="bx--action-list"
@@ -4980,12 +5122,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </div>
                           </div>
                           <label
-                            className="table-toolbar-secondary-title"
+                            className="iot--table-toolbar-secondary-title"
                           >
                             Alerts
                           </label>
                           <div
-                            className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-2 ksiTUe"
+                            className="bx--toolbar-content iot--table-toolbar-content"
                           >
                             <div
                               className="bx--toolbar-action bx--toolbar-search-container-expandable"
@@ -5063,8 +5205,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               </div>
                             </div>
                             <div
-                              className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 imYKmv"
+                              className="iot--tooltip-svg-wrapper"
+                              data-testid="download-button"
                               onClick={[Function]}
+                              onKeyDown={[Function]}
+                              role="button"
+                              tabIndex={0}
                             >
                               <svg
                                 aria-hidden={true}
@@ -5090,8 +5236,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               </svg>
                             </div>
                             <div
-                              className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 imYKmv"
+                              className="iot--tooltip-svg-wrapper"
+                              data-testid="filter-button"
                               onClick={[Function]}
+                              onKeyDown={[Function]}
+                              role="button"
+                              tabIndex={0}
                             >
                               <svg
                                 aria-hidden={true}
@@ -6487,7 +6637,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="bx--table-toolbar"
                         >
                           <div
-                            className="bx--batch-actions TableToolbar__StyledTableBatchActions-sc-17lb3av-3 gnkbSD"
+                            className="bx--batch-actions iot--table-batch-actions"
                           >
                             <div
                               className="bx--action-list"
@@ -6515,12 +6665,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </div>
                           </div>
                           <label
-                            className="table-toolbar-secondary-title"
+                            className="iot--table-toolbar-secondary-title"
                           >
                             Expanded card
                           </label>
                           <div
-                            className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-2 ksiTUe"
+                            className="bx--toolbar-content iot--table-toolbar-content"
                           >
                             <div
                               className="bx--toolbar-action bx--toolbar-search-container-expandable"
@@ -6597,8 +6747,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               </div>
                             </div>
                             <div
-                              className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 imYKmv"
+                              className="iot--tooltip-svg-wrapper"
+                              data-testid="download-button"
                               onClick={[Function]}
+                              onKeyDown={[Function]}
+                              role="button"
+                              tabIndex={0}
                             >
                               <svg
                                 aria-hidden={true}
@@ -6624,8 +6778,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               </svg>
                             </div>
                             <div
-                              className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 imYKmv"
+                              className="iot--tooltip-svg-wrapper"
+                              data-testid="filter-button"
                               onClick={[Function]}
+                              onKeyDown={[Function]}
+                              role="button"
+                              tabIndex={0}
                             >
                               <svg
                                 aria-hidden={true}
@@ -8549,7 +8707,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   </div>
                   <div
                     className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
-                    id="facilitycard-xs2"
+                    content={
+                      <h2
+                        style={
+                          Object {
+                            "padding": "1rem",
+                          }
+                        }
+                      >
+                        Section Header
+                      </h2>
+                    }
+                    id="section-card"
                     style={
                       Object {
                         "MozTransform": "translate(490px,16px)",
@@ -8559,6 +8728,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         "msTransform": "translate(490px,16px)",
                         "position": "absolute",
                         "transform": "translate(490px,16px)",
+                        "width": "142px",
+                      }
+                    }
+                    type="CUSTOM"
+                  >
+                    <div
+                      className="Card__CardContent-v5r71h-1 bVgaXY"
+                    >
+                      <h2
+                        style={
+                          Object {
+                            "padding": "1rem",
+                          }
+                        }
+                      >
+                        Section Header
+                      </h2>
+                    </div>
+                  </div>
+                  <div
+                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                    id="facilitycard-xs2"
+                    style={
+                      Object {
+                        "MozTransform": "translate(648px,16px)",
+                        "OTransform": "translate(648px,16px)",
+                        "WebkitTransform": "translate(648px,16px)",
+                        "height": "128px",
+                        "msTransform": "translate(648px,16px)",
+                        "position": "absolute",
+                        "transform": "translate(648px,16px)",
                         "width": "142px",
                       }
                     }
@@ -8624,13 +8824,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="facilitycard-xs3"
                     style={
                       Object {
-                        "MozTransform": "translate(648px,16px)",
-                        "OTransform": "translate(648px,16px)",
-                        "WebkitTransform": "translate(648px,16px)",
+                        "MozTransform": "translate(806px,16px)",
+                        "OTransform": "translate(806px,16px)",
+                        "WebkitTransform": "translate(806px,16px)",
                         "height": "128px",
-                        "msTransform": "translate(648px,16px)",
+                        "msTransform": "translate(806px,16px)",
                         "position": "absolute",
-                        "transform": "translate(648px,16px)",
+                        "transform": "translate(806px,16px)",
                         "width": "142px",
                       }
                     }
@@ -8696,13 +8896,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="facilitycard-comfort-level"
                     style={
                       Object {
-                        "MozTransform": "translate(806px,16px)",
-                        "OTransform": "translate(806px,16px)",
-                        "WebkitTransform": "translate(806px,16px)",
+                        "MozTransform": "translate(964px,16px)",
+                        "OTransform": "translate(964px,16px)",
+                        "WebkitTransform": "translate(964px,16px)",
                         "height": "128px",
-                        "msTransform": "translate(806px,16px)",
+                        "msTransform": "translate(964px,16px)",
                         "position": "absolute",
-                        "transform": "translate(806px,16px)",
+                        "transform": "translate(964px,16px)",
                         "width": "142px",
                       }
                     }
@@ -8790,13 +8990,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="facilitycard-xs4"
                     style={
                       Object {
-                        "MozTransform": "translate(964px,16px)",
-                        "OTransform": "translate(964px,16px)",
-                        "WebkitTransform": "translate(964px,16px)",
+                        "MozTransform": "translate(1122px,16px)",
+                        "OTransform": "translate(1122px,16px)",
+                        "WebkitTransform": "translate(1122px,16px)",
                         "height": "128px",
-                        "msTransform": "translate(964px,16px)",
+                        "msTransform": "translate(1122px,16px)",
                         "position": "absolute",
-                        "transform": "translate(964px,16px)",
+                        "transform": "translate(1122px,16px)",
                         "width": "142px",
                       }
                     }
@@ -9265,7 +9465,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="bx--table-toolbar"
                         >
                           <div
-                            className="bx--batch-actions TableToolbar__StyledTableBatchActions-sc-17lb3av-3 gnkbSD"
+                            className="bx--batch-actions iot--table-batch-actions"
                           >
                             <div
                               className="bx--action-list"
@@ -9293,12 +9493,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </div>
                           </div>
                           <label
-                            className="table-toolbar-secondary-title"
+                            className="iot--table-toolbar-secondary-title"
                           >
                             Alerts
                           </label>
                           <div
-                            className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-2 ksiTUe"
+                            className="bx--toolbar-content iot--table-toolbar-content"
                           >
                             <div
                               className="bx--toolbar-action bx--toolbar-search-container-expandable"
@@ -9376,8 +9576,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               </div>
                             </div>
                             <div
-                              className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 imYKmv"
+                              className="iot--tooltip-svg-wrapper"
+                              data-testid="download-button"
                               onClick={[Function]}
+                              onKeyDown={[Function]}
+                              role="button"
+                              tabIndex={0}
                             >
                               <svg
                                 aria-hidden={true}
@@ -9403,8 +9607,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               </svg>
                             </div>
                             <div
-                              className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 imYKmv"
+                              className="iot--tooltip-svg-wrapper"
+                              data-testid="filter-button"
                               onClick={[Function]}
+                              onKeyDown={[Function]}
+                              role="button"
+                              tabIndex={0}
                             >
                               <svg
                                 aria-hidden={true}
@@ -20636,7 +20844,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   </div>
                   <div
                     className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
-                    id="facilitycard-xs2"
+                    content={
+                      <h2
+                        style={
+                          Object {
+                            "padding": "1rem",
+                          }
+                        }
+                      >
+                        Section Header
+                      </h2>
+                    }
+                    id="section-card"
                     style={
                       Object {
                         "MozTransform": "translate(490px,16px)",
@@ -20646,6 +20865,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         "msTransform": "translate(490px,16px)",
                         "position": "absolute",
                         "transform": "translate(490px,16px)",
+                        "width": "142px",
+                      }
+                    }
+                    type="CUSTOM"
+                  >
+                    <div
+                      className="Card__CardContent-v5r71h-1 bVgaXY"
+                    >
+                      <h2
+                        style={
+                          Object {
+                            "padding": "1rem",
+                          }
+                        }
+                      >
+                        Section Header
+                      </h2>
+                    </div>
+                  </div>
+                  <div
+                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                    id="facilitycard-xs2"
+                    style={
+                      Object {
+                        "MozTransform": "translate(648px,16px)",
+                        "OTransform": "translate(648px,16px)",
+                        "WebkitTransform": "translate(648px,16px)",
+                        "height": "128px",
+                        "msTransform": "translate(648px,16px)",
+                        "position": "absolute",
+                        "transform": "translate(648px,16px)",
                         "width": "142px",
                       }
                     }
@@ -20711,13 +20961,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="facilitycard-xs3"
                     style={
                       Object {
-                        "MozTransform": "translate(648px,16px)",
-                        "OTransform": "translate(648px,16px)",
-                        "WebkitTransform": "translate(648px,16px)",
+                        "MozTransform": "translate(806px,16px)",
+                        "OTransform": "translate(806px,16px)",
+                        "WebkitTransform": "translate(806px,16px)",
                         "height": "128px",
-                        "msTransform": "translate(648px,16px)",
+                        "msTransform": "translate(806px,16px)",
                         "position": "absolute",
-                        "transform": "translate(648px,16px)",
+                        "transform": "translate(806px,16px)",
                         "width": "142px",
                       }
                     }
@@ -20783,13 +21033,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="facilitycard-comfort-level"
                     style={
                       Object {
-                        "MozTransform": "translate(806px,16px)",
-                        "OTransform": "translate(806px,16px)",
-                        "WebkitTransform": "translate(806px,16px)",
+                        "MozTransform": "translate(964px,16px)",
+                        "OTransform": "translate(964px,16px)",
+                        "WebkitTransform": "translate(964px,16px)",
                         "height": "128px",
-                        "msTransform": "translate(806px,16px)",
+                        "msTransform": "translate(964px,16px)",
                         "position": "absolute",
-                        "transform": "translate(806px,16px)",
+                        "transform": "translate(964px,16px)",
                         "width": "142px",
                       }
                     }
@@ -20877,13 +21127,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="facilitycard-xs4"
                     style={
                       Object {
-                        "MozTransform": "translate(964px,16px)",
-                        "OTransform": "translate(964px,16px)",
-                        "WebkitTransform": "translate(964px,16px)",
+                        "MozTransform": "translate(1122px,16px)",
+                        "OTransform": "translate(1122px,16px)",
+                        "WebkitTransform": "translate(1122px,16px)",
                         "height": "128px",
-                        "msTransform": "translate(964px,16px)",
+                        "msTransform": "translate(1122px,16px)",
                         "position": "absolute",
-                        "transform": "translate(964px,16px)",
+                        "transform": "translate(1122px,16px)",
                         "width": "142px",
                       }
                     }
@@ -21352,7 +21602,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="bx--table-toolbar"
                         >
                           <div
-                            className="bx--batch-actions TableToolbar__StyledTableBatchActions-sc-17lb3av-3 gnkbSD"
+                            className="bx--batch-actions iot--table-batch-actions"
                           >
                             <div
                               className="bx--action-list"
@@ -21380,12 +21630,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </div>
                           </div>
                           <label
-                            className="table-toolbar-secondary-title"
+                            className="iot--table-toolbar-secondary-title"
                           >
                             Alerts
                           </label>
                           <div
-                            className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-2 ksiTUe"
+                            className="bx--toolbar-content iot--table-toolbar-content"
                           >
                             <div
                               className="bx--toolbar-action bx--toolbar-search-container-expandable"
@@ -21463,8 +21713,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               </div>
                             </div>
                             <div
-                              className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 imYKmv"
+                              className="iot--tooltip-svg-wrapper"
+                              data-testid="download-button"
                               onClick={[Function]}
+                              onKeyDown={[Function]}
+                              role="button"
+                              tabIndex={0}
                             >
                               <svg
                                 aria-hidden={true}
@@ -21490,8 +21744,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               </svg>
                             </div>
                             <div
-                              className="TableToolbar__ToolbarSVGWrapper-sc-17lb3av-0 imYKmv"
+                              className="iot--tooltip-svg-wrapper"
+                              data-testid="filter-button"
                               onClick={[Function]}
+                              onKeyDown={[Function]}
+                              role="button"
+                              tabIndex={0}
                             >
                               <svg
                                 aria-hidden={true}

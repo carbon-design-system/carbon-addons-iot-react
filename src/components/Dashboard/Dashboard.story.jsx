@@ -63,6 +63,15 @@ export const originalCards = [
     },
   },
   {
+    id: 'section-card',
+    size: CARD_SIZES.XSMALLWIDE,
+    type: CARD_TYPES.CUSTOM,
+    availableActions: {
+      delete: true,
+    },
+    content: <h2 style={{ padding: '1rem' }}>Section Header</h2>,
+  },
+  {
     title: 'Utilization',
     id: 'facilitycard-xs2',
     size: CARD_SIZES.XSMALL,
@@ -340,15 +349,16 @@ export const originalCards = [
 const commonDashboardProps = {
   title: text('title', 'Munich Building'),
   cards: originalCards,
-  onFetchData: (card, isTimeseriesData) => {
-    action('onFetchData')(card, isTimeseriesData);
-    return Promise.resolve({ ...card, values: [] });
-  },
   lastUpdated: new Date('2019-10-22T00:00:00').toUTCString(),
   isEditable: boolean('isEditable', false),
   isLoading: boolean('isLoading', false),
   onBreakpointChange: action('onBreakpointChange'),
   onLayoutChange: action('onLayoutChange'),
+  onSetRefresh: action('onSetRefresh'),
+  setIsLoading: action('setIsLoading'),
+  onFetchData: card => {
+    return new Promise(resolve => setTimeout(() => resolve(card), 5000));
+  },
 };
 
 storiesOf('Watson IoT|Dashboard', module)
@@ -357,7 +367,7 @@ storiesOf('Watson IoT|Dashboard', module)
     () => {
       return (
         <FullWidthWrapper>
-          <Dashboard {...commonDashboardProps} />
+          <Dashboard {...commonDashboardProps} isLoading={boolean('isLoading', false)} />
         </FullWidthWrapper>
       );
     },
