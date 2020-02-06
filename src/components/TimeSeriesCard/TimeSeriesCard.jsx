@@ -188,6 +188,7 @@ const TimeSeriesCard = ({
   i18n: { alertDetected, noDataLabel },
   i18n,
   isExpanded,
+  isLazyLoading,
   ...others
 }) => {
   let chartRef = useRef();
@@ -345,7 +346,7 @@ const TimeSeriesCard = ({
       isExpanded={isExpanded}
       isEditable={isEditable}
       isEmpty={isAllValuesEmpty}
-      isLazyLoading={valueSort && valueSort.length > 200}
+      isLazyLoading={isLazyLoading || (valueSort && valueSort.length > 200)}
     >
       {!others.isLoading && !isAllValuesEmpty ? (
         <Fragment>

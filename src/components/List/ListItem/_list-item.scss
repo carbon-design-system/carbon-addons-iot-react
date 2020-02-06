@@ -1,0 +1,103 @@
+@import '../../../globals/vars';
+
+.#{$iot-prefix}--list-item {
+  background: $ui-01;
+  border-bottom: 1px solid $ui-03;
+  display: flex;
+  height: rem(40px);
+  color: $text-02;
+  padding: $spacing-03 $spacing-03 $spacing-03 $spacing-05;
+  align-items: center;
+  &__large {
+    height: rem(96px);
+    padding: $spacing-05;
+    align-items: start;
+  }
+
+  &--category {
+    @include type-style('productive-heading-01');
+    color: $text-01;
+  }
+
+  &__selectable {
+    cursor: pointer;
+    &:hover {
+      background: $hover-row;
+      color: $text-01;
+    }
+  }
+
+  &__selected {
+    border-left: solid $spacing-02 $interactive-01;
+    padding-left: $spacing-04;
+    color: $text-01;
+    background: $selected-ui;
+  }
+
+  &--expand-icon {
+    cursor: pointer;
+    padding: $spacing-01;
+    margin-right: $spacing-04;
+    transform: rotate(180deg);
+  }
+
+  &--content {
+    @include type-style('body-short-01');
+    display: flex;
+    width: 100%;
+    align-items: center;
+    &__large {
+      align-items: flex-start;
+    }
+    &--icon {
+      padding-top: $spacing-01;
+      &__left {
+        padding-right: $spacing-04;
+      }
+      &__right {
+        padding-left: $spacing-04;
+        order: 9;
+      }
+    }
+    &--values {
+      flex: 1;
+      max-width: 100%;
+      &--main {
+        display: flex;
+        max-width: 100%;
+        align-items: center;
+        &__large {
+          @include type-style('productive-heading-01');
+          color: $text-01;
+          padding-bottom: $spacing-03;
+        }
+      }
+      &--value {
+        flex: 1;
+        margin-right: $spacing-04;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      &--secondary {
+        flex: 1;
+        margin-right: $spacing-04;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        &__large {
+          color: $text-05;
+          white-space: wrap;
+          height: rem(36px);
+          overflow: hidden;
+        }
+      }
+    }
+    &--row-actions {
+      flex: 0;
+      margin-right: 0;
+      overflow: none;
+      display: flex;
+    }
+  }
+}

@@ -30,6 +30,7 @@ export ComposedStructuredList from './components/ComposedStructuredList/Composed
 export ResourceList from './components/ResourceList/ResourceList';
 export FileDrop from './components/FileDrop/FileDrop';
 export PageTitleBar from './components/PageTitleBar/PageTitleBar';
+export HierarchyList from './components/List/HierarchyList';
 
 // reusable reducers
 export { baseTableReducer } from './components/Table/baseTableReducer';
@@ -56,6 +57,7 @@ export TableCard, { findMatchingThresholds } from './components/TableCard/TableC
 export {
   CARD_TYPES,
   CARD_SIZES,
+  CARD_ACTIONS,
   DASHBOARD_BREAKPOINTS,
   DASHBOARD_SIZES,
   TIME_SERIES_TYPES,
@@ -63,14 +65,13 @@ export {
 
 // Experimental
 export ListCard from './components/ListCard/ListCard';
-export {
-  PageWizard,
-  PageWizardStep,
-  PageWizardStepContent,
-  PageWizardStepTitle,
-  PageWizardStepDescription,
-  PageWizardStepExtraContent,
-} from './components/PageWizard/PageWizard';
+
+export PageWizard from './components/PageWizard/PageWizard';
+export PageWizardStep from './components/PageWizard/PageWizardStep/PageWizardStep';
+export PageWizardStepContent from './components/PageWizard/PageWizardStep/PageWizardStepContent';
+export PageWizardStepDescription from './components/PageWizard/PageWizardStep/PageWizardStepDescription';
+export PageWizardStepExtraContent from './components/PageWizard/PageWizardStep/PageWizardStepExtraContent';
+export PageWizardStepTitle from './components/PageWizard/PageWizardStep/PageWizardStepTitle';
 export StatefulPageWizard from './components/PageWizard/StatefulPageWizard';
 
 export TileGallery from './components/TileGallery/TileGallery';
@@ -84,6 +85,10 @@ export TileGalleryViewSwitcher from './components/TileGallery/TileGalleryViewSwi
 export TileGallerySearch from './components/TileGallery/TileGallerySearch';
 
 export StatefulTileGallery from './components/TileGallery/StatefulTileGallery';
+
+export List from './components/List/List';
+
+export SimpleList from './components/List/SimpleList/SimpleList';
 
 // Carbon proxy
 export {

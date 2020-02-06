@@ -2,11 +2,11 @@ import React, { useMemo, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { Responsive, WidthProvider } from 'react-grid-layout';
 import styled from 'styled-components';
+import some from 'lodash/some';
 import find from 'lodash/find';
 
 import { getLayout } from '../../utils/componentUtilityFunctions';
 import {
-  CARD_SIZES,
   GUTTER,
   ROW_HEIGHT,
   CARD_DIMENSIONS,
@@ -67,6 +67,44 @@ const defaultProps = {
 };
 
 /**
+ * This function finds an existing layout for each dashboard breakpoint, validates it, and or generates a new one to return
+ * @param {*} layouts an keyed object of each layout for each breakpoint
+ * @param {*} cards an array of the card props for each card
+ */
+export const findLayoutOrGenerate = (layouts, cards) => {
+  // iterate through each breakpoint
+  return Object.keys(DASHBOARD_BREAKPOINTS).reduce((acc, layoutName) => {
+    let layout = layouts && layouts[layoutName];
+    // If layout exists for this breakpoint, make sure it contains all the cards
+    if (layout) {
+      // If you find a card that's missing from the current layout, you need to regenerate the layout
+      if (cards.some(card => !some(layouts[layoutName], { i: card.id }))) {
+        layout = getLayout(layoutName, cards, DASHBOARD_COLUMNS, CARD_DIMENSIONS);
+      } else {
+        // if we're using an existing layout, we need to add CARD_DIMENSIONS because they are not stored in our JSON document
+        layout = layout.reduce((updatedLayout, cardFromLayout) => {
+          const matchingCard = find(cards, { id: cardFromLayout.i });
+          if (matchingCard)
+            updatedLayout.push({
+              ...cardFromLayout,
+              ...CARD_DIMENSIONS[matchingCard.size][layoutName],
+            });
+          return updatedLayout;
+        }, []);
+      }
+    } else {
+      // generate the layout if we're not passed from the parent
+      layout = getLayout(layoutName, cards, DASHBOARD_COLUMNS, CARD_DIMENSIONS);
+    }
+
+    return {
+      ...acc,
+      [layoutName]: layout,
+    };
+  }, {});
+};
+
+/**
  * Renders the grid of cards according to the standardized PAL patterns for IoT.
  *
  * This is a stateless component but it does have some caching to help optimize performance.
@@ -98,31 +136,7 @@ const DashboardGrid = ({
     children,
   ]);
   const generatedLayouts = useMemo(
-    () =>
-      // iterate through each breakpoint
-      Object.keys(DASHBOARD_BREAKPOINTS).reduce((acc, layoutName) => {
-        return {
-          ...acc, // only generate the layout if we're not passed from the parent
-          [layoutName]:
-            layouts && layouts[layoutName]
-              ? layouts[layoutName].map(layout => {
-                  // iterate through all the cards of the laout
-                  // if we can't find the card from the layout, assume small
-                  let matchingCard = find(childrenArray, { props: { id: layout.i } });
-                  if (!matchingCard) {
-                    console.warn(`Error with your layout. Card with id: ${layout.i} not found`); //eslint-disable-line
-                    matchingCard = { props: { size: CARD_SIZES.SMALL } };
-                  }
-                  return { ...layout, ...CARD_DIMENSIONS[matchingCard.props.size][layoutName] };
-                })
-              : getLayout(
-                  layoutName,
-                  childrenArray.map(card => card.props),
-                  DASHBOARD_COLUMNS,
-                  CARD_DIMENSIONS
-                ),
-        };
-      }, {}),
+    () => findLayoutOrGenerate(layouts, childrenArray.map(card => card.props)),
     [childrenArray, layouts]
   );
   const cachedMargin = useMemo(() => [GUTTER, GUTTER], []);
